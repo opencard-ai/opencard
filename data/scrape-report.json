@@ -1,6 +1,6 @@
 {
-  "saved": 2,
-  "failed": 9,
+  "saved": 10,
+  "failed": 0,
   "report": [
     {
       "cardId": "chase-sapphire-reserve",
@@ -16,49 +16,50 @@
     },
     {
       "cardId": "amex-platinum-personal",
-      "status": "fail",
-      "error": "const可得Match is not defined"
-    },
-    {
-      "cardId": "amex-gold",
-      "status": "fail",
-      "error": "const可得Match is not defined"
+      "status": "ok",
+      "fee": 695,
+      "bonus": 175000
     },
     {
       "cardId": "amex-hilton-aspire",
-      "status": "fail",
-      "error": "const可得Match is not defined"
+      "status": "ok",
+      "fee": 450,
+      "bonus": 175000
     },
     {
       "cardId": "amex-hilton-honors",
-      "status": "fail",
-      "error": "HTTP 404"
+      "status": "ok",
+      "fee": 2026,
+      "bonus": 70000
     },
     {
       "cardId": "amex-hilton-surpass",
-      "status": "fail",
-      "error": "const可得Match is not defined"
+      "status": "ok",
+      "fee": 95,
+      "bonus": 130000
     },
     {
       "cardId": "citi-strata-elite",
-      "status": "fail",
-      "error": "const可得Match is not defined"
+      "status": "ok",
+      "fee": 200,
+      "bonus": 100000
     },
     {
       "cardId": "discover-it",
-      "status": "fail",
-      "error": "const可得Match is not defined"
+      "status": "ok",
+      "fee": 2022
     },
     {
       "cardId": "bofa-travel-rewards",
-      "status": "fail",
-      "error": "const可得Match is not defined"
+      "status": "ok",
+      "fee": 2026,
+      "bonus": 20000
     },
     {
       "cardId": "apple-card",
-      "status": "fail",
-      "error": "const可得Match is not defined"
+      "status": "ok",
+      "fee": 2024
     }
   ],
-  "updated": "2026-04-12T17:44:20.892Z"
+  "updated": "2026-04-12T17:47:21.006Z"
 }
