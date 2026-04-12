@@ -39,6 +39,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-slate-50 text-slate-900 antialiased`}
       >
+        <link rel="icon" href="/brand/logo.jpg" />
         <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
           <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
             <a href={`/${lang}`} className="flex items-center gap-2">
