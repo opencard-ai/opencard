@@ -1,0 +1,56 @@
+{
+  "card_id": "chase-sapphire-preferred",
+  "name": "Chase Sapphire Preferred Card",
+  "issuer": "Chase",
+  "network": "Visa Signature",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good-Excellent",
+  "welcome_offer": {
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "bonus_points": 60000,
+    "estimated_value": 750,
+    "point_program": "Chase Ultimate Rewards"
+  },
+  "earning_rates": [
+    { "category": "travel", "rate": 5, "program": "Chase Ultimate Rewards", "notes": "Via Chase Travel" },
+    { "category": "restaurant", "rate": 3, "program": "Chase Ultimate Rewards" },
+    { "category": "online_grocery", "rate": 3, "program": "Chase Ultimate Rewards" },
+    { "category": "streaming", "rate": 3, "program": "Chase Ultimate Rewards" },
+    { "category": "travel_other", "rate": 2, "program": "Chase Ultimate Rewards" },
+    { "category": "default", "rate": 1, "program": "Chase Ultimate Rewards" }
+  ],
+  "annual_credits": [
+    { "name": "Chase Travel Hotel Credit", "amount": 50, "description": "$50 annual credit on Chase Travel hotel bookings", "frequency": "annual" }
+  ],
+  "travel_benefits": {
+    "lounge_access": [],
+    "hotel_status": [],
+    "other_benefits": [
+      { "name": "1.25x Point Value", "description": "1.25 cpp when redeemed via Chase Travel Portal" },
+      { "name": "Point Transfer Partners", "description": "1:1 transfer to Hyatt, United, Southwest, Marriott, and more" },
+      { "name": "Primary Rental Insurance", "description": "Primary auto rental coverage" },
+      { "name": "Trip Cancellation/Delay Insurance", "description": "Up to $10,000 per person for trip cancellation, $500 per trip for delays" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "hotel_program": {
+    "program": null,
+    "points_per_dollar": null
+  },
+  "application_rules": {
+    "rules": ["5/24 Rule", "Sapphire Rule (48 months)"],
+    "notes": "Cannot get bonus if received any Sapphire card bonus in past 48 months"
+  },
+  "last_updated": "2026-04-09",
+  "sources": [{ "url": "https://www.chase.com/personal/credit-cards/sapphire-preferred" }],
+  "tags": ["chase", "travel", "mid-tier", "ur", " Points"]
+}

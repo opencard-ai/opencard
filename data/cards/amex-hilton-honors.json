@@ -1,0 +1,46 @@
+{
+  "card_id": "amex-hilton-honors",
+  "name": "Hilton Honors American Express Card",
+  "issuer": "American Express",
+  "network": "American Express",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good-Excellent",
+  "welcome_offer": {
+    "spending_requirement": 2000,
+    "time_period_months": 3,
+    "bonus_points": 80000,
+    "point_program": "Hilton Honors"
+  },
+  "earning_rates": [
+    { "category": "hotel", "rate": 7, "program": "Hilton Honors" },
+    { "category": "restaurant", "rate": 5 },
+    { "category": "grocery", "rate": 5 },
+    { "category": "gas", "rate": 5 },
+    { "category": "default", "rate": 3 }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [
+      { "program": "Hilton Honors", "tier": "Silver", "complimentary": true }
+    ],
+    "other_benefits": [
+      { "name": "Silver Status", "description": "Earn 20% bonus points on stays, Fifth Night Free on reward stays" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {},
+  "hotel_program": {
+    "program": "Hilton Honors",
+    "points_per_dollar": 7,
+    "free_night_award": false,
+    "elite_night_credits": 0
+  },
+  "application_rules": {
+    "rules": ["Once-Per-Lifetime", "Family Rule (Amex)"],
+    "notes": "May not receive bonus if currently holds Surpass or Aspire"
+  },
+  "last_updated": "2026-04-09",
+  "sources": [{ "url": "https://www.americanexpress.com/us/credit-cards/hilton-honors/" }],
+  "tags": ["amex", "hilton", "no-annual-fee", "entry-level"]
+}

@@ -1,0 +1,58 @@
+{
+  "card_id": "bofa-atmos-ascent",
+  "name": "Atmos Rewards Ascent Visa Signature (Alaska Airlines)",
+  "issuer": "Bank of America",
+  "network": "Visa Signature",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 4000,
+    "time_period_months": 4,
+    "bonus_points": 80000,
+    "description": "80,000 bonus points + 50% airfare discount code",
+    "point_program": "Alaska Airlines / Atmos Rewards"
+  },
+  "earning_rates": [
+    { "category": "airline", "rate": 3, "program": "Alaska Airlines / Hawaiian Airlines", "notes": "Alaska and Hawaiian flights" },
+    { "category": "gas", "rate": 2 },
+    { "category": "ev_charging", "rate": 2 },
+    { "category": "cable", "rate": 2 },
+    { "category": "streaming", "rate": 2 },
+    { "category": "rideshare", "rate": 2 },
+    { "category": "default", "rate": 1 }
+  ],
+  "annual_credits": [
+    { "name": "Companion Fare", "amount": 99, "description": "Annual $99 companion fare (requires $6,000 spend previous year, taxes apply $23+)", "frequency": "annual" }
+  ],
+  "travel_benefits": {
+    "lounge_access": [
+      { "name": "Alaska Lounge+ Discount", "type": "Alaska Lounges", "notes": "$100 annual credit towards Lounge+ membership" }
+    ],
+    "hotel_status": [],
+    "other_benefits": [
+      { "name": "Free Checked Bag", "description": "Cardholder + up to 6 companions on Alaska/Hawaiian" },
+      { "name": "Priority Boarding", "description": "Cardholder + up to 6 companions" },
+      { "name": "20% Back on In-Flight", "description": "20% rebate on Alaska/Hawaiian in-flight purchases (food, Wi-Fi, etc.)" },
+      { "name": "No Blackout Dates", "description": "Mileage flights on Alaska, Hawaiian, and partner airlines" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "hotel_program": {
+    "program": "Alaska Airlines / Hawaiian Airlines",
+    "points_per_dollar": 3
+  },
+  "application_rules": {
+    "rules": ["Once-Per-Lifetime"],
+    "notes": "Preferred Rewards members earn 10% more points on every redemption"
+  },
+  "last_updated": "2026-04-09",
+  "sources": [{ "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/" }],
+  "tags": ["bank-of-america", "alaska-airlines", "airline", "mid-tier", "companion-fare"]
+}

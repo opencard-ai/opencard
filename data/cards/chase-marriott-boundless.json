@@ -1,0 +1,55 @@
+{
+  "card_id": "chase-marriott-boundless",
+  "name": "Marriott Bonvoy Boundless Credit Card",
+  "issuer": "Chase",
+  "network": "Visa Signature",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good-Excellent",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 3,
+    "description": "3 Free Night Awards (each up to 50,000 points)",
+    "point_program": "Marriott Bonvoy"
+  },
+  "earning_rates": [
+    { "category": "hotel", "rate": 6, "program": "Marriott Bonvoy" },
+    { "category": "grocery", "rate": 3, "notes": "Up to $6,000 combined annually" },
+    { "category": "gas", "rate": 3, "notes": "Up to $6,000 combined annually" },
+    { "category": "restaurant", "rate": 3, "notes": "Up to $6,000 combined annually" },
+    { "category": "default", "rate": 2 }
+  ],
+  "annual_credits": [
+    { "name": "Free Night Award", "amount": 1, "description": "Annual free night (up to 35,000 points, can top-up 15,000)", "frequency": "annual" }
+  ],
+  "travel_benefits": {
+    "hotel_status": [
+      { "program": "Marriott Bonvoy", "tier": "Silver Elite", "complimentary": true }
+    ],
+    "other_benefits": [
+      { "name": "15 Elite Night Credits annually", "description": "Towards Marriott elite status" },
+      { "name": "Gold Elite Path", "description": "Upgrade to Gold at $35k annual spend" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "hotel_program": {
+    "program": "Marriott Bonvoy",
+    "points_per_dollar": 6,
+    "free_night_award": true,
+    "elite_night_credits": 15
+  },
+  "application_rules": {
+    "rules": ["5/24 Rule", "Marriott Family Rule"],
+    "notes": "May not qualify if recently received Amex Marriott SUB"
+  },
+  "last_updated": "2026-04-09",
+  "sources": [{ "url": "https://www.chase.com/personal/credit-cards/marriott-bonvoy-boundless" }],
+  "tags": ["chase", "marriott", "hotel", "mid-tier", "travel"]
+}

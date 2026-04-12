@@ -1,0 +1,62 @@
+{
+  "card_id": "chase-sapphire-reserve",
+  "name": "Chase Sapphire Reserve",
+  "issuer": "Chase",
+  "network": "Visa Infinite",
+  "annual_fee": 795,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "bonus_points": 60000,
+    "estimated_value": 900,
+    "point_program": "Chase Ultimate Rewards"
+  },
+  "earning_rates": [
+    { "category": "travel", "rate": 8, "program": "Chase Ultimate Rewards", "notes": "Via Chase Travel (airfare, hotels, car rentals)" },
+    { "category": "airline", "rate": 4, "program": "Chase Ultimate Rewards", "notes": "Direct bookings" },
+    { "category": "hotel", "rate": 4, "program": "Chase Ultimate Rewards", "notes": "Direct bookings" },
+    { "category": "restaurant", "rate": 3, "program": "Chase Ultimate Rewards" },
+    { "category": "lyft", "rate": 10, "program": "Chase Ultimate Rewards" },
+    { "category": "default", "rate": 1, "program": "Chase Ultimate Rewards" }
+  ],
+  "annual_credits": [
+    { "name": "Annual Travel Credit", "amount": 300, "description": "Automatic annual credit", "frequency": "annual" }
+  ],
+  "travel_benefits": {
+    "lounge_access": [
+      { "name": "Priority Pass Select", "type": "Priority Pass" },
+      { "name": "Chase Sapphire Lounges", "type": "Chase Sapphire" }
+    ],
+    "hotel_status": [
+      { "program": "IHG Hotels", "tier": "Platinum", "complimentary": true }
+    ],
+    "other_benefits": [
+      { "name": "Global Entry/TSA PreCheck/NEXUS Credit", "description": "Up to $100 every 4 years", "frequency": "annual" },
+      { "name": "1.5x Point Value", "description": "1.5 cpp when redeemed via Chase Travel Portal" },
+      { "name": "Primary Rental Insurance", "description": "Primary auto rental coverage" },
+      { "name": "Trip Delay Insurance", "description": "$500 per person for delays over 6 hours" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "hotel_program": {
+    "program": "IHG Rewards",
+    "points_per_dollar": null,
+    "elite_status": "Platinum"
+  },
+  "application_rules": {
+    "rules": ["5/24 Rule", "Sapphire Rule (48 months)"],
+    "notes": "Annual fee increased from $550 to $795 in June 2025"
+  },
+  "last_updated": "2026-04-09",
+  "sources": [{ "url": "https://www.chase.com/personal/credit-cards/sapphire-reserve" }],
+  "tags": ["chase", "travel", "premium", "ur", "premium-travel"]
+}

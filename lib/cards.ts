@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const CARDS_DIR = "/Users/kaceyc/.openclaw/workspace/credit-card-wiki/cards";
+const CARDS_DIR = path.join(process.cwd(), "data/cards");
 
 export interface EarningRate {
   category: string;
