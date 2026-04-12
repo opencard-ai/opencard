@@ -179,10 +179,11 @@ async function discoverFromSitemap() {
 async function main() {
   const expand = process.env.EXPAND === 'true';
   const limit = parseInt(process.env.LIMIT || '1000', 10);
+  const offset = parseInt(process.env.OFFSET || '0', 10);
   console.log('Discovering cards...');
   const discovered = await discoverFromSitemap();
-  const targets = discovered.slice(0, limit);
-  console.log(`Scraping ${targets.length} targets...\n`);
+  const targets = discovered.slice(offset, offset + limit);
+  console.log(`Scraping ${targets.length} targets (offset ${offset})...\n`);
   for (let i = 0; i < targets.length; i++) {
     const t = targets[i];
     try {

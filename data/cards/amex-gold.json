@@ -1,9 +1,9 @@
 {
   "card_id": "amex-gold",
-  "name": "AmEx Gold Card Old Version Review",
+  "name": "AmEx Gold 旧版“信用卡”",
   "issuer": "Unknown",
   "network": "Unknown",
-  "annual_fee": 5,
+  "annual_fee": 160,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {

@@ -199,6 +199,31 @@ export default async function WikiCardPage({ params }: Props) {
         </Section>
       )}
 
+      {/* Amazon Affiliate CTA */}
+      <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-xl p-6 text-center">
+        <h3 className="font-bold text-slate-800 mb-2">
+          {lang === "zh" ? "準備好申請了嗎？" : lang === "es" ? "¿Listo para solicitar?" : "Ready to apply?"}
+        </h3>
+        <p className="text-sm text-slate-600 mb-4">
+          {lang === "zh" 
+            ? "透過我們的連結申請，支持 OpenCard AI 持續為您提供免費服務。" 
+            : lang === "es" 
+            ? "Apoya a OpenCard AI usando nuestro enlace para mantener este servicio gratuito."
+            : "Support OpenCard AI by applying through our links - at no extra cost to you."}
+        </p>
+        <a
+          href="https://www.amazon.com/b?node=163444011"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3 rounded-full transition-colors"
+        >
+          {lang === "zh" ? "立即申請 →" : lang === "es" ? "Solicitar ahora →" : "Apply Now →"}
+        </a>
+        <p className="text-xs text-slate-400 mt-3">
+          {lang === "zh" ? "使用我們的連結，您可以獲得額外獎勵，我們也會獲得一小筆佣金支持營運。" : lang === "es" ? "Usando nuestro enlace, puede ganar recompensas adicionales y nosotros recibimos una pequeña comisión." : "Using our link may earn you rewards, and we receive a small commission to keep the site running."}
+        </p>
+      </div>
+
       <p className="text-xs text-slate-400 text-center">
         {lang === "zh" ? "最後更新" : lang === "es" ? "Última actualización" : "Last updated"}: {card.last_updated}
       </p>
