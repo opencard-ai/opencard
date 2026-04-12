@@ -2,135 +2,139 @@
 
 import { useState } from "react";
 
-interface ChatWidgetProps {
-  cardName: string;
-  cardId: string;
-}
-
-export default function ChatWidget({ cardName, cardId }: ChatWidgetProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: "assistant",
-      content: `嗨！歡迎來到 ${cardName} 的 AI 助理。我可以幫你分析這張卡片的優缺點、比較回饋，或回答任何相關問題。`,
-    },
-  ]);
-  const [input, setInput] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const handleSend = async () => {
-    if (!input.trim() || loading) return;
-    const userMsg: Message = { role: "user", content: input.trim() };
-    setMessages((prev) => [...prev, userMsg]);
-    setInput("");
-    setLoading(true);
-
-    try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          messages: [...messages, userMsg],
-          cardName,
-        }),
-      });
-
-      const data = await res.json();
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content: data.reply || "抱歉，AI 目前無法回覆。",
-        },
-      ]);
-    } catch {
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content: "網路錯誤，請稍後再試。",
-        },
-      ]);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
-      {/* Header */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-4 bg-blue-600 text-white hover:bg-blue-700 transition-colors"
-      >
-        <div className="flex items-center gap-2">
-          <span>🤖</span>
-          <span className="font-semibold text-sm">AI 卡片助理</span>
-        </div>
-        <span className="text-xs">{isOpen ? "▲" : "▼"}</span>
-      </button>
-
-      {/* Chat body */}
-      {isOpen && (
-        <div className="flex flex-col" style={{ height: "360px" }}>
-          {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-3">
-            {messages.map((msg, i) => (
-              <div
-                key={i}
-                className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
-              >
-                <div
-                  className={`max-w-[85%] rounded-xl px-3 py-2 text-sm leading-relaxed ${
-                    msg.role === "user"
-                      ? "bg-blue-600 text-white"
-                      : "bg-slate-100 text-slate-800"
-                  }`}
-                >
-                  {msg.content}
-                </div>
-              </div>
-            ))}
-            {loading && (
-              <div className="flex justify-start">
-                <div className="bg-slate-100 text-slate-500 rounded-xl px-3 py-2 text-sm">
-                  思考中...
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Input */}
-          <div className="p-3 border-t border-slate-200">
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleSend()}
-                placeholder="問我關於這張卡的事..."
-                className="flex-1 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                disabled={loading}
-              />
-              <button
-                onClick={handleSend}
-                disabled={loading || !input.trim()}
-                className="bg-blue-600 text-white rounded-lg px-4 py-2 text-sm hover:bg-blue-700 transition-colors disabled:opacity-50"
-              >
-                送出
-              </button>
-            </div>
-            <p className="text-xs text-slate-400 mt-2 text-center">
-              AI 回覆僅供參考，核卡結果由銀行決定
-            </p>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
 interface Message {
   role: "user" | "assistant";
   content: string;
+}
+
+interface ChatWidgetProps {
+  cardName: string;
+  cardId: string;
+  locale?: string;
+}
+
+const MESSAGES: Record<string, { welcome: string; placeholder: string; send: string; thinking: string; disclaimer: string }> = {
+  en: {
+    welcome: "Hi! Welcome to the AI assistant for this card. I can help you analyze pros & cons, compare rewards, or answer any questions.",
+    placeholder: "Ask about this card...",
+    send: "Send",
+    thinking: "Thinking...",
+    disclaimer: "AI responses are for reference only. Approval decisions are made by the bank.",
+  },
+  zh: {
+    welcome: "嗨！歡迎來到這張卡片的 AI 助理。我可以幫你分析這張卡片的優缺點、比較回饋，或回答任何相關問題。",
+    placeholder: "問我關於這張卡的事...",
+    send: "送出",
+    thinking: "思考中...",
+    disclaimer: "AI 回覆僅供參考，核卡結果由銀行決定",
+  },
+  es: {
+    welcome: "¡Hola! Bienvenido al asistente AI de esta tarjeta. Puedo ayudarte a analizar pros y contras, comparar recompensas o responder cualquier pregunta.",
+    placeholder: "Pregunta sobre esta tarjeta...",
+    send: "Enviar",
+    thinking: "Pensando...",
+    disclaimer: "Las respuestas de IA son solo para referencia. Las decisiones de aprobación las toma el banco.",
+  },
+};
+
+function getMsg(locale: string) {
+  return MESSAGES[locale] || MESSAGES.en;
+}
+
+export default function ChatWidget({ cardName, cardId, locale = "en" }: ChatWidgetProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const msg = getMsg(locale);
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      role: "assistant",
+      content: msg.welcome,
+    },
+  ]);
+  const [input, setInput] = useState("");
+
+  const handleSend = () => {
+    if (!input.trim()) return;
+    const userMsg: Message = { role: "user", content: input.trim() };
+    setMessages((prev) => [...prev, userMsg]);
+    const currentInput = input.trim();
+    setInput("");
+    setMessages((prev) => [...prev, { role: "assistant", content: msg.thinking }]);
+
+    fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ cardId, cardName, message: currentInput, locale }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setMessages((prev) =>
+          prev.map((m) =>
+            m.content === msg.thinking ? { role: "assistant", content: data.reply || "Sorry, something went wrong." } : m
+          )
+        );
+      })
+      .catch(() => {
+        setMessages((prev) =>
+          prev.map((m) =>
+            m.content === msg.thinking ? { role: "assistant", content: "Sorry, I couldn't process that. Please try again." } : m
+          )
+        );
+      });
+  };
+
+  if (!isOpen) {
+    return (
+      <button
+        onClick={() => setIsOpen(true)}
+        className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl p-4 flex items-center gap-3 transition-colors"
+      >
+        <span className="text-xl">💬</span>
+        <span className="font-semibold">AI {msg.placeholder.includes("Ask") ? "Card Assistant" : msg.placeholder.includes("問") ? "卡片助理" : "Asistente"}</span>
+      </button>
+    );
+  }
+
+  return (
+    <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+      <div className="bg-blue-600 text-white px-4 py-3 flex items-center justify-between">
+        <span className="font-semibold text-sm">💬 AI {msg.disclaimer.includes("銀行") ? "卡片助理" : "Card Assistant"}</span>
+        <button onClick={() => setIsOpen(false)} className="text-white/80 hover:text-white text-sm">
+          ✕
+        </button>
+      </div>
+      <div className="h-64 overflow-y-auto p-4 space-y-3 bg-slate-50">
+        {messages.map((m, i) => (
+          <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+            <div
+              className={`max-w-[85%] rounded-xl px-3 py-2 text-sm ${
+                m.role === "user"
+                  ? "bg-blue-600 text-white"
+                  : "bg-white border border-slate-200 text-slate-800"
+              }`}
+            >
+              {m.content}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="p-3 border-t border-slate-200">
+        <div className="flex gap-2">
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleSend()}
+            placeholder={msg.placeholder}
+            className="flex-1 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            onClick={handleSend}
+            className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+          >
+            {msg.send}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }

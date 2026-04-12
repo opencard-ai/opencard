@@ -9,18 +9,92 @@ interface CardGridProps {
   cards: CreditCard[];
   issuers: string[];
   tags: string[];
+  locale: any;
 }
 
-export default function CardGrid({ cards, issuers, tags }: CardGridProps) {
+const LABELS: Record<string, { en: string; zh: string; es: string }> = {
+  searchPlaceholder: {
+    en: "Search cards...",
+    zh: "搜尋卡片名稱...",
+    es: "Buscar tarjetas...",
+  },
+  allIssuers: {
+    en: "All Issuers",
+    zh: "所有發卡機構",
+    es: "Todos los Emisores",
+  },
+  allTags: {
+    en: "All Types",
+    zh: "所有類型",
+    es: "Todos los Tipos",
+  },
+  clear: {
+    en: "Clear",
+    zh: "清除",
+    es: "Limpiar",
+  },
+  annualFee: {
+    en: "Annual Fee",
+    zh: "年費",
+    es: "Cuota Anual",
+  },
+  noFee: {
+    en: "No Annual Fee",
+    zh: "免年費",
+    es: "Sin Cuota Anual",
+  },
+  noResults: {
+    en: "No cards match your criteria",
+    zh: "找不到符合條件的卡片",
+    es: "No hay tarjetas que coincidan",
+  },
+  tryAdjust: {
+    en: "Try adjusting your filters",
+    zh: "試著調整篩選條件",
+    es: "Intenta ajustar tus filtros",
+  },
+  showing: {
+    en: "Showing",
+    zh: "顯示",
+    es: "Mostrando",
+  },
+  of: {
+    en: "of",
+    zh: "/",
+    es: "de",
+  },
+  cards: {
+    en: "cards",
+    zh: "張卡片",
+    es: "tarjetas",
+  },
+  issuer: {
+    en: "Issuer",
+    zh: "發卡機構",
+    es: "Emisor",
+  },
+  tag: {
+    en: "Tag",
+    zh: "類型",
+    es: "Tipo",
+  },
+};
+
+function l(key: string, locale: string): string {
+  const map = LABELS[key]?.[locale as keyof typeof LABELS[key]] || LABELS[key]?.en || key;
+  return map;
+}
+
+export default function CardGrid({ cards, issuers, tags, locale }: CardGridProps) {
   return (
     <>
-      <FilterBar issuers={issuers} tags={tags} />
-      <CardList cards={cards} />
+      <FilterBar issuers={issuers} tags={tags} locale={locale} />
+      <CardList cards={cards} locale={locale} />
     </>
   );
 }
 
-function FilterBar({ issuers, tags }: { issuers: string[]; tags: string[] }) {
+function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[]; locale: string }) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -41,7 +115,7 @@ function FilterBar({ issuers, tags }: { issuers: string[]; tags: string[] }) {
       <div className="flex gap-2 mb-3">
         <input
           type="text"
-          placeholder="搜尋卡片名稱..."
+          placeholder={l("searchPlaceholder", locale)}
           defaultValue={search}
           onChange={(e) => updateParam("search", e.target.value)}
           className="flex-1 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -51,7 +125,7 @@ function FilterBar({ issuers, tags }: { issuers: string[]; tags: string[] }) {
           onChange={(e) => updateParam("issuer", e.target.value)}
           className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden sm:block"
         >
-          <option value="">所有發卡機構</option>
+          <option value="">{l("allIssuers", locale)}</option>
           {issuers.map((issuer) => (
             <option key={issuer} value={issuer}>
               {issuer}
@@ -63,7 +137,7 @@ function FilterBar({ issuers, tags }: { issuers: string[]; tags: string[] }) {
           onChange={(e) => updateParam("tag", e.target.value)}
           className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden sm:block"
         >
-          <option value="">所有類型</option>
+          <option value="">{l("allTags", locale)}</option>
           {tags.map((tag) => (
             <option key={tag} value={tag}>
               {tag}
@@ -75,7 +149,7 @@ function FilterBar({ issuers, tags }: { issuers: string[]; tags: string[] }) {
             onClick={() => router.push(`${pathname}#cards`)}
             className="px-3 py-2.5 text-sm text-red-600 hover:bg-red-50 rounded-lg transition-colors"
           >
-            清除
+            {l("clear", locale)}
           </button>
         )}
       </div>
@@ -87,7 +161,7 @@ function FilterBar({ issuers, tags }: { issuers: string[]; tags: string[] }) {
           onChange={(e) => updateParam("issuer", e.target.value)}
           className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm bg-white flex-1 min-w-[120px]"
         >
-          <option value="">發卡機構</option>
+          <option value="">{l("issuer", locale)}</option>
           {issuers.map((issuer) => (
             <option key={issuer} value={issuer}>
               {issuer}
@@ -99,7 +173,7 @@ function FilterBar({ issuers, tags }: { issuers: string[]; tags: string[] }) {
           onChange={(e) => updateParam("tag", e.target.value)}
           className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm bg-white flex-1 min-w-[120px]"
         >
-          <option value="">卡片類型</option>
+          <option value="">{l("tag", locale)}</option>
           {tags.map((tag) => (
             <option key={tag} value={tag}>
               {tag}
@@ -111,11 +185,14 @@ function FilterBar({ issuers, tags }: { issuers: string[]; tags: string[] }) {
   );
 }
 
-function CardList({ cards }: { cards: CreditCard[] }) {
+function CardList({ cards, locale }: { cards: CreditCard[]; locale: string }) {
   const searchParams = useSearchParams();
+  const pathname = usePathname();
   const selectedIssuer = searchParams.get("issuer") || "";
   const selectedTag = searchParams.get("tag") || "";
   const search = searchParams.get("search") || "";
+
+  const lang = pathname.split("/")[1] || "en";
 
   const filtered = useMemo(() => {
     return cards.filter((card) => {
@@ -137,8 +214,8 @@ function CardList({ cards }: { cards: CreditCard[] }) {
   if (filtered.length === 0) {
     return (
       <div className="text-center py-12 text-slate-500">
-        <p className="text-lg mb-2">找不到符合條件的卡片</p>
-        <p className="text-sm">試著調整篩選條件</p>
+        <p className="text-lg mb-2">{l("noResults", locale)}</p>
+        <p className="text-sm">{l("tryAdjust", locale)}</p>
       </div>
     );
   }
@@ -149,7 +226,7 @@ function CardList({ cards }: { cards: CreditCard[] }) {
         {filtered.map((card) => (
           <Link
             key={card.card_id}
-            href={`/cards/${card.card_id}`}
+            href={`/${lang}/cards/${card.card_id}`}
             className="group bg-white rounded-xl border border-slate-200 p-5 hover:shadow-md hover:border-slate-300 transition-all duration-200 block"
           >
             <div className="flex items-start justify-between mb-3">
@@ -165,14 +242,14 @@ function CardList({ cards }: { cards: CreditCard[] }) {
             </div>
 
             <div className="flex items-center gap-1 mb-3">
-              <span className="text-xs text-slate-500">年費</span>
+              <span className="text-xs text-slate-500">{l("annualFee", locale)}</span>
               <span
                 className={`text-sm font-medium ${
                   card.annual_fee === 0 ? "text-green-600" : "text-slate-800"
                 }`}
               >
                 {card.annual_fee === 0
-                  ? "免年費"
+                  ? l("noFee", locale)
                   : `$${card.annual_fee.toLocaleString()}`}
               </span>
             </div>
@@ -205,7 +282,7 @@ function CardList({ cards }: { cards: CreditCard[] }) {
         ))}
       </div>
       <div className="mt-8 text-center text-sm text-slate-500">
-        顯示 {filtered.length} / {cards.length} 張卡片
+        {l("showing", locale)} {filtered.length} {l("of", locale)} {cards.length} {l("cards", locale)}
       </div>
     </>
   );
