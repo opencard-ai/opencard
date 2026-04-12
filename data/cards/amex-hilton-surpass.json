@@ -1,9 +1,9 @@
 {
   "card_id": "amex-hilton-surpass",
-  "name": "Hilton Honors American Express Surpass Card",
+  "name": "AmEx Hilton Surpass Credit Card Review",
   "issuer": "American Express",
   "network": "American Express",
-  "annual_fee": 150,
+  "annual_fee": 95,
   "foreign_transaction_fee": 0,
   "credit_required": "Good-Excellent",
   "welcome_offer": {
@@ -17,26 +17,63 @@
     "source": "KC confirmed 2026-04-12"
   },
   "earning_rates": [
-    { "category": "hotel", "rate": 12, "program": "Hilton Honors" },
-    { "category": "restaurant", "rate": 6 },
-    { "category": "grocery", "rate": 6 },
-    { "category": "gas", "rate": 6 },
-    { "category": "online_shopping_us", "rate": 4 },
-    { "category": "default", "rate": 3 }
+    {
+      "category": "hotel",
+      "rate": 12,
+      "program": "Hilton Honors"
+    },
+    {
+      "category": "restaurant",
+      "rate": 6
+    },
+    {
+      "category": "grocery",
+      "rate": 6
+    },
+    {
+      "category": "gas",
+      "rate": 6
+    },
+    {
+      "category": "online_shopping_us",
+      "rate": 4
+    },
+    {
+      "category": "default",
+      "rate": 3
+    }
   ],
   "annual_credits": [
-    { "name": "Hilton Credit", "amount": 200, "description": "$50 per quarter for direct Hilton bookings", "frequency": "quarterly" }
+    {
+      "name": "Hilton Credit",
+      "amount": 200,
+      "description": "$50 per quarter for direct Hilton bookings",
+      "frequency": "quarterly"
+    }
   ],
   "travel_benefits": {
     "hotel_status": [
-      { "program": "Hilton Honors", "tier": "Gold", "complimentary": true }
+      {
+        "program": "Hilton Honors",
+        "tier": "Gold",
+        "complimentary": true
+      }
     ],
     "other_benefits": [
-      { "name": "Free Night Reward", "description": "Annual free night at $15k spend" },
-      { "name": "15 elite night credits annually", "description": "Towards Hilton elite status" }
+      {
+        "name": "Free Night Reward",
+        "description": "Annual free night at $15k spend"
+      },
+      {
+        "name": "15 elite night credits annually",
+        "description": "Towards Hilton elite status"
+      }
     ]
   },
-  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
   "insurance": {},
   "hotel_program": {
     "program": "Hilton Honors",
@@ -45,9 +82,27 @@
     "elite_night_credits": 15
   },
   "application_rules": {
-    "rules": ["Once-Per-Lifetime", "Family Rule (Amex)"]
+    "rules": [
+      "Once-Per-Lifetime",
+      "Family Rule (Amex)"
+    ]
   },
-  "last_updated": "2026-04-09",
-  "sources": [{ "url": "https://www.americanexpress.com/us/credit-cards/hilton/hilton-honors-surpass/" }],
-  "tags": ["amex", "hilton", "mid-tier", "travel"]
+  "last_updated": "2026-04-12",
+  "sources": [
+    {
+      "name": "US Credit Card Guide",
+      "url": "https://www.uscreditcardguide.com/amex-hilton-surpass-credit-card/",
+      "updated": "2026-04-12"
+    },
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/hilton/hilton-honors-surpass/"
+    }
+  ],
+  "tags": [
+    "amex",
+    "hilton",
+    "mid-tier",
+    "travel"
+  ],
+  "image_url": "https://www.uscreditcardguide.com/wp-content/uploads/hilton-honors-surpass-2-300x190.png"
 }

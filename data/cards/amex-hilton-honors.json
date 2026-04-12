@@ -1,9 +1,9 @@
 {
   "card_id": "amex-hilton-honors",
-  "name": "Hilton Honors American Express Card",
+  "name": "AmEx Hilton Credit Card Review",
   "issuer": "American Express",
   "network": "American Express",
-  "annual_fee": 0,
+  "annual_fee": 2026,
   "foreign_transaction_fee": 0,
   "credit_required": "Good-Excellent",
   "welcome_offer": {
@@ -17,22 +17,48 @@
     "source": "KC confirmed 2026-04-12"
   },
   "earning_rates": [
-    { "category": "hotel", "rate": 7, "program": "Hilton Honors" },
-    { "category": "restaurant", "rate": 5 },
-    { "category": "grocery", "rate": 5 },
-    { "category": "gas", "rate": 5 },
-    { "category": "default", "rate": 3 }
+    {
+      "category": "hotel",
+      "rate": 7,
+      "program": "Hilton Honors"
+    },
+    {
+      "category": "restaurant",
+      "rate": 5
+    },
+    {
+      "category": "grocery",
+      "rate": 5
+    },
+    {
+      "category": "gas",
+      "rate": 5
+    },
+    {
+      "category": "default",
+      "rate": 3
+    }
   ],
   "annual_credits": [],
   "travel_benefits": {
     "hotel_status": [
-      { "program": "Hilton Honors", "tier": "Silver", "complimentary": true }
+      {
+        "program": "Hilton Honors",
+        "tier": "Silver",
+        "complimentary": true
+      }
     ],
     "other_benefits": [
-      { "name": "Silver Status", "description": "Earn 20% bonus points on stays, Fifth Night Free on reward stays" }
+      {
+        "name": "Silver Status",
+        "description": "Earn 20% bonus points on stays, Fifth Night Free on reward stays"
+      }
     ]
   },
-  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
   "insurance": {},
   "hotel_program": {
     "program": "Hilton Honors",
@@ -41,10 +67,28 @@
     "elite_night_credits": 0
   },
   "application_rules": {
-    "rules": ["Once-Per-Lifetime", "Family Rule (Amex)"],
+    "rules": [
+      "Once-Per-Lifetime",
+      "Family Rule (Amex)"
+    ],
     "notes": "May not receive bonus if currently holds Surpass or Aspire"
   },
-  "last_updated": "2026-04-09",
-  "sources": [{ "url": "https://www.americanexpress.com/us/credit-cards/hilton-honors/" }],
-  "tags": ["amex", "hilton", "no-annual-fee", "entry-level"]
+  "last_updated": "2026-04-12",
+  "sources": [
+    {
+      "name": "US Credit Card Guide",
+      "url": "https://www.uscreditcardguide.com/amex-hilton-credit-card/",
+      "updated": "2026-04-12"
+    },
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/hilton-honors/"
+    }
+  ],
+  "tags": [
+    "amex",
+    "hilton",
+    "no-annual-fee",
+    "entry-level"
+  ],
+  "image_url": "https://www.uscreditcardguide.com/wp-content/uploads/hilton-honors-1-300x190.png"
 }

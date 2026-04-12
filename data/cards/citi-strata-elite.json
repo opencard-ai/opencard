@@ -1,9 +1,9 @@
 {
   "card_id": "citi-strata-elite",
-  "name": "Citi Strata Elite",
+  "name": "Citi Strata Elite Credit Card Review",
   "issuer": "Citibank",
   "network": "Mastercard",
-  "annual_fee": 595,
+  "annual_fee": 200,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
@@ -15,28 +15,82 @@
     "source": "https://www.uscreditcardguide.com/citi-strata-elite-credit-card/"
   },
   "earning_rates": [
-    { "category": "hotel", "rate": 10, "program": "Citi ThankYou Points", "notes": "Via Citi Travel" },
-    { "category": "car_rental", "rate": 10, "program": "Citi ThankYou Points", "notes": "Via Citi Travel" },
-    { "category": "airline", "rate": 5, "program": "Citi ThankYou Points", "notes": "Direct bookings" },
-    { "category": "restaurant", "rate": 3, "program": "Citi ThankYou Points" },
-    { "category": "grocery", "rate": 3, "program": "Citi ThankYou Points" },
-    { "category": "gas", "rate": 3, "program": "Citi ThankYou Points" },
-    { "category": "ev_charging", "rate": 3, "program": "Citi ThankYou Points" },
-    { "category": "default", "rate": 1, "program": "Citi ThankYou Points" }
+    {
+      "category": "hotel",
+      "rate": 10,
+      "program": "Citi ThankYou Points",
+      "notes": "Via Citi Travel"
+    },
+    {
+      "category": "car_rental",
+      "rate": 10,
+      "program": "Citi ThankYou Points",
+      "notes": "Via Citi Travel"
+    },
+    {
+      "category": "airline",
+      "rate": 5,
+      "program": "Citi ThankYou Points",
+      "notes": "Direct bookings"
+    },
+    {
+      "category": "restaurant",
+      "rate": 3,
+      "program": "Citi ThankYou Points"
+    },
+    {
+      "category": "grocery",
+      "rate": 3,
+      "program": "Citi ThankYou Points"
+    },
+    {
+      "category": "gas",
+      "rate": 3,
+      "program": "Citi ThankYou Points"
+    },
+    {
+      "category": "ev_charging",
+      "rate": 3,
+      "program": "Citi ThankYou Points"
+    },
+    {
+      "category": "default",
+      "rate": 1,
+      "program": "Citi ThankYou Points"
+    }
   ],
   "annual_credits": [
-    { "name": "Hotel Credit", "amount": 300, "description": "Citi Travel hotel bookings of 2+ nights", "frequency": "annual" },
-    { "name": "Air Flight Credit", "amount": 100, "description": "Annual airfare spending over $100", "frequency": "annual" }
+    {
+      "name": "Hotel Credit",
+      "amount": 300,
+      "description": "Citi Travel hotel bookings of 2+ nights",
+      "frequency": "annual"
+    },
+    {
+      "name": "Air Flight Credit",
+      "amount": 100,
+      "description": "Annual airfare spending over $100",
+      "frequency": "annual"
+    }
   ],
   "travel_benefits": {
     "lounge_access": [],
     "hotel_status": [],
     "other_benefits": [
-      { "name": "Point Transfer Partners", "description": "1:1 transfer to partner airlines including Etihad, Qatar, Virgin Atlantic, and more" },
-      { "name": "No Blackout Dates", "description": "For award bookings via Citi ThankYou Travel" }
+      {
+        "name": "Point Transfer Partners",
+        "description": "1:1 transfer to partner airlines including Etihad, Qatar, Virgin Atlantic, and more"
+      },
+      {
+        "name": "No Blackout Dates",
+        "description": "For award bookings via Citi ThankYou Travel"
+      }
     ]
   },
-  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
   "insurance": {
     "trip_cancellation": true,
     "trip_delay": true,
@@ -49,13 +103,28 @@
     "points_per_dollar": null
   },
   "application_rules": {
-    "rules": ["8/65 Rule", "48 Months Rule"],
+    "rules": [
+      "8/65 Rule",
+      "48 Months Rule"
+    ],
     "notes": "Annual fee reduced to $450 for Citigold members. New card launched July 2025."
   },
   "last_updated": "2026-04-12",
   "sources": [
-    { "url": "https://www.citi.com/credit-cards/citi-strata-elite-credit-card" },
-    { "url": "https://www.uscreditcardguide.com/citi-strata-elite-credit-card/" }
+    {
+      "name": "US Credit Card Guide",
+      "url": "https://www.uscreditcardguide.com/citi-strata-elite-credit-card/",
+      "updated": "2026-04-12"
+    },
+    {
+      "url": "https://www.citi.com/credit-cards/citi-strata-elite-credit-card"
+    }
   ],
-  "tags": ["citi", "travel", "premium", "thankyou-points"]
+  "tags": [
+    "citi",
+    "travel",
+    "premium",
+    "thankyou-points"
+  ],
+  "image_url": "https://www.uscreditcardguide.com/wp-content/uploads/IMG_4048-300x189.webp"
 }

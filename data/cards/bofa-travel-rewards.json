@@ -1,42 +1,76 @@
 {
   "card_id": "bofa-travel-rewards",
-  "name": "Bank of America Travel Rewards Credit Card",
+  "name": "BoA Travel Rewards",
   "issuer": "Bank of America",
   "network": "Visa Signature",
-  "annual_fee": 0,
+  "annual_fee": 2026,
   "foreign_transaction_fee": 0,
   "credit_required": "Good-Excellent",
   "welcome_offer": {
     "spending_requirement": 1000,
     "time_period_months": 3,
-    "bonus_points": 25000,
+    "bonus_points": 20000,
     "description": "25,000 points = $250 travel statement credit",
     "point_program": "Bank of America Travel Rewards"
   },
   "earning_rates": [
-    { "category": "default", "rate": 1.5, "notes": "All purchases, up to 2.625x with Preferred Rewards" }
+    {
+      "category": "default",
+      "rate": 1.5,
+      "notes": "All purchases, up to 2.625x with Preferred Rewards"
+    }
   ],
   "annual_credits": [],
   "travel_benefits": {
     "lounge_access": [],
     "hotel_status": [],
     "other_benefits": [
-      { "name": "No Foreign Transaction Fee", "description": "Rare $0 AF card with no FTF" },
-      { "name": "Preferred Rewards Bonus", "description": "25%-75% earning bonus for BofA Preferred Rewards members (Gold/Platinum/Platinum Honors)" },
-      { "name": "Flexible Redemption", "description": "Statement credit for travel/dining purchases or cash" }
+      {
+        "name": "No Foreign Transaction Fee",
+        "description": "Rare $0 AF card with no FTF"
+      },
+      {
+        "name": "Preferred Rewards Bonus",
+        "description": "25%-75% earning bonus for BofA Preferred Rewards members (Gold/Platinum/Platinum Honors)"
+      },
+      {
+        "name": "Flexible Redemption",
+        "description": "Statement credit for travel/dining purchases or cash"
+      }
     ]
   },
-  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
   "insurance": {},
   "hotel_program": {
     "program": null,
     "points_per_dollar": null
   },
   "application_rules": {
-    "rules": ["2/3/4 Rule (BofA)"],
+    "rules": [
+      "2/3/4 Rule (BofA)"
+    ],
     "notes": "Best no-AF travel card from BofA; Preferred Rewards members get up to 2.625x"
   },
-  "last_updated": "2026-04-09",
-  "sources": [{ "url": "https://www.bankofamerica.com/credit-cards/travel-rewards-credit-card/" }],
-  "tags": ["bank-of-america", "travel", "no-annual-fee", "entry-level", "no-ftf"]
+  "last_updated": "2026-04-12",
+  "sources": [
+    {
+      "name": "US Credit Card Guide",
+      "url": "https://www.uscreditcardguide.com/boa-travel-rewards/",
+      "updated": "2026-04-12"
+    },
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/travel-rewards-credit-card/"
+    }
+  ],
+  "tags": [
+    "bank-of-america",
+    "travel",
+    "no-annual-fee",
+    "entry-level",
+    "no-ftf"
+  ],
+  "image_url": "https://www.uscreditcardguide.com/wp-content/uploads/8blm_trvsigcm_v_250x158-1.png"
 }
