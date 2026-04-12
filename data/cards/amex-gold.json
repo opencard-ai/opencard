@@ -1,0 +1,24 @@
+{
+  "card_id": "amex-gold",
+  "name": "AmEx Gold Card Old Version Review",
+  "issuer": "Unknown",
+  "network": "Unknown",
+  "annual_fee": 5,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "bonus_points": 25000,
+    "spending_requirement": null
+  },
+  "earning_rates": [],
+  "tags": [],
+  "image_url": "https://www.uscreditcardguide.com/wp-content/uploads/american-express-gold-card-300x189.jpg",
+  "sources": [
+    {
+      "name": "US Credit Card Guide",
+      "url": "https://www.uscreditcardguide.com/amex-gold-card/",
+      "updated": "2026-04-12"
+    }
+  ],
+  "last_updated": "2026-04-12"
+}
