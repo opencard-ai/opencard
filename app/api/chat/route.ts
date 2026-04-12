@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const MINIMAX_API_URL = "https://api.minimax.io/v1/text/chatcompletion_pro";
+const MINIMAX_API_URL = "https://api.minimax.io/v1/chat/completions";
 
 const CARD_CONTEXT = `你是 OpenCard 的 AI 信用卡助理。以下是你知道的卡片資訊：
 
@@ -29,16 +29,6 @@ const CARD_CONTEXT = `你是 OpenCard 的 AI 信用卡助理。以下是你知�
 export async function POST(req: NextRequest) {
   const { messages, cardName } = await req.json();
 
-  // Rate limiting: simple check
-  const now = Date.now();
-  const windowMs = 60 * 1000; // 1 minute
-  const maxRequests = 10;
-  
-  // Simple in-memory rate limit (resets on cold start, fine for MVP)
-  if (process.env.RATE_LIMIT_RESET && now > parseInt(process.env.RATE_LIMIT_RESET) + windowMs) {
-    // reset
-  }
-
   if (!messages || !Array.isArray(messages)) {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
@@ -57,7 +47,7 @@ export async function POST(req: NextRequest) {
 
     const chatMessages = [
       { role: "system", content: systemPrompt },
-      ...messages.slice(-10) // 只傳最近 10 條，避免 token 過多
+      ...messages.slice(-10)
     ];
 
     const response = await fetch(MINIMAX_API_URL, {
@@ -69,8 +59,6 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({
         model: "MiniMax-Text-01",
         messages: chatMessages,
-        temperature: 0.7,
-        max_tokens: 500
       })
     });
 
