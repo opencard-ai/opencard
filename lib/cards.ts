@@ -93,6 +93,13 @@ export function getAllCards(): CreditCard[] {
       const content = fs.readFileSync(path.join(CARDS_DIR, file), "utf-8");
       return JSON.parse(content) as CreditCard;
     })
+    .filter((card) => 
+      card.card_id && 
+      card.name && 
+      card.annual_fee !== undefined && 
+      card.earning_rates && 
+      card.earning_rates.length > 0
+    ) // Filter out non-card entries (articles, guides, etc.)
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 
