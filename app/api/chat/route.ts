@@ -1,33 +1,55 @@
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
 const MINIMAX_API_URL = "https://api.minimax.io/v1/chat/completions";
 
-const CARD_CONTEXT = `你是 OpenCard 的 AI 信用卡助理。以下是你知道的卡片資訊：
+const CARD_CONTEXT = `You are a helpful US credit card assistant on OpenCard. You have knowledge of 14 US credit cards.
 
-卡片列表（14張）：
-1. Apple Card (Goldman Sachs) - 免年費，3% Apple消費，2% Apple Pay
-2. Atmos Rewards Ascent Visa (Alaska Airlines, Bank of America) - 年費$95，3% airline
-3. Atmos Rewards Summit Visa (Alaska Airlines, Bank of America) - 年費$395，3% restaurant/foreign
-4. Bank of America Customized Cash Rewards - 免年費，3% 自選類別
-5. Bank of America Travel Rewards - 免年費，1.5% 全額回饋
-6. Chase Sapphire Preferred - 年費$95，5% travel, 3% restaurant
-7. Chase Sapphire Reserve - 年費$795，8% travel, 4% airline
-8. Citi Strata Elite - 年費$595，10% hotel/airline
-9. Discover it Cash Back - 免年費，5% rotating category
-10. Hilton Honors Aspire (Amex) - 年費$550，14% hotel
-11. Hilton Honors Card (Amex) - 免年費，7% hotel
-12. Hilton Honors Surpass (Amex) - 年費$150，12% hotel
-13. Marriott Bonvoy Boundless (Chase) - 年費$95，6% hotel
-14. The Platinum Card (Amex) - 年費$895，5% airline/hotel，附多種福利
+Card list:
+1. Apple Card (Goldman Sachs) - No annual fee, 3% Apple purchases, 2% Apple Pay
+2. Atmos Rewards Ascent Visa (Alaska Airlines, Bank of America) - $95 annual fee, 3% airline
+3. Atmos Rewards Summit Visa (Alaska Airlines, Bank of America) - $395 annual fee, 3% restaurant/foreign
+4. Bank of America Customized Cash Rewards - No annual fee, 3% select category
+5. Bank of America Travel Rewards - No annual fee, 1.5% flat rate
+6. Chase Sapphire Preferred - $95 annual fee, 5% travel, 3% restaurant
+7. Chase Sapphire Reserve - $295 annual fee, 8% travel, 4% dining
+8. Citi Strata Elite - $595 annual fee, 10% hotel/airline
+9. Discover it Cash Back - No annual fee, 5% rotating category
+10. Hilton Honors Aspire (Amex) - $550 annual fee, 14% hotel
+11. Hilton Honors Card (Amex) - No annual fee, 7% hotel
+12. Hilton Honors Surpass (Amex) - $150 annual fee, 12% hotel
+13. Marriott Bonvoy Boundless (Chase) - $95 annual fee, 6% hotel
+14. The Platinum Card (Amex) - $695 annual fee, 5% airline/hotel, many benefits
 
-重要規則：
-- 不得承諾核卡結果或保證回饋
-- 所有資訊僅供參考，申請前請以官方公告為準
-- 不得協助用戶偽造申請資料
-- 附屬連結僅為參考，不影響推薦的客觀性`;
+IMPORTANT RULES:
+- Never promise approval or guarantee rewards.
+- All information is for reference only; check official sources before applying.
+- Never help users falsify application information.
+- Affiliate links are for reference and do not affect recommendation objectivity.`;
 
 export async function POST(req: NextRequest) {
-  const { messages, cardName } = await req.json();
+  // Rate limit check
+  const ip = getClientIp(req);
+  const { allowed, remaining, resetAt } = rateLimit(ip);
+  if (!allowed) {
+    return NextResponse.json(
+      { error: "Too many requests. Please slow down." },
+      { status: 429, headers: { "X-RateLimit-Remaining": String(remaining), "X-RateLimit-Reset": String(resetAt) } }
+    );
+  }
+
+  let locale = "en";
+  let messages: any[] = [];
+  let cardName = "";
+
+  try {
+    const body = await req.json();
+    messages = body.messages;
+    cardName = body.cardName || "";
+    locale = body.locale || "en";
+  } catch {
+    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+  }
 
   if (!messages || !Array.isArray(messages)) {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
@@ -38,12 +60,20 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "AI not configured" }, { status: 500 });
   }
 
+  const langMap: Record<string, string> = {
+    en: "English",
+    zh: "Chinese (Traditional)",
+    es: "Spanish",
+  };
+  const lang = langMap[locale] || "English";
+
   try {
     const systemPrompt = `${CARD_CONTEXT}
 
-目前用戶正在查看的卡片：${cardName || "未指定"}
+The user is currently viewing: ${cardName || "No specific card"}
+IMPORTANT: Always respond in ${lang} only. Never switch languages.
 
-請根據用戶問題，結合卡片資料回答。`;
+User question:`;
 
     const chatMessages = [
       { role: "system", content: systemPrompt },
@@ -59,6 +89,7 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({
         model: "MiniMax-Text-01",
         messages: chatMessages,
+        temperature: 0.7,
       })
     });
 
@@ -72,7 +103,7 @@ export async function POST(req: NextRequest) {
     }
 
     const data = await response.json();
-    const reply = data.choices?.[0]?.message?.content || "抱歉，AI 目前無法回覆。";
+    const reply = data.choices?.[0]?.message?.content || "Sorry, AI is temporarily unavailable.";
 
     return NextResponse.json({ reply });
   } catch (error) {

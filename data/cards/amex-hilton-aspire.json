@@ -1,38 +1,84 @@
 {
   "card_id": "amex-hilton-aspire",
-  "name": "Hilton Honors American Express Aspire Card",
+  "name": "AmEx Hilton Aspire Credit Card Review",
   "issuer": "American Express",
   "network": "American Express",
-  "annual_fee": 550,
+  "annual_fee": 450,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
     "spending_requirement": 6000,
     "time_period_months": 3,
-    "bonus_points": 150000,
-    "estimated_value": 750,
-    "point_program": "Hilton Honors"
+    "bonus_points": 175000,
+    "estimated_value": 875,
+    "point_program": "Hilton Honors",
+    "source": "KC confirmed 2026-04-12"
   },
   "earning_rates": [
-    { "category": "hotel", "rate": 14, "program": "Hilton Honors" },
-    { "category": "airline", "rate": 7, "notes": "Via Amex Travel, car rentals" },
-    { "category": "restaurant", "rate": 7, "notes": "US restaurants" },
-    { "category": "default", "rate": 3 }
+    {
+      "category": "hotel",
+      "rate": 14,
+      "program": "Hilton Honors"
+    },
+    {
+      "category": "airline",
+      "rate": 7,
+      "notes": "Via Amex Travel, car rentals"
+    },
+    {
+      "category": "restaurant",
+      "rate": 7,
+      "notes": "US restaurants"
+    },
+    {
+      "category": "default",
+      "rate": 3
+    }
   ],
   "annual_credits": [
-    { "name": "Free Night Reward", "amount": 1, "description": "Annual free night (unlimited tier). Extra night at $30k, another at $60k spend", "frequency": "annual" },
-    { "name": "Hilton Resort Credit", "amount": 400, "description": "$200 per half-year, eligible Hilton Resorts worldwide", "frequency": "semi-annual" },
-    { "name": "Flight Credit", "amount": 200, "description": "$50 per quarter for airfare", "frequency": "quarterly" },
-    { "name": "CLEAR Plus Credit", "amount": 189, "description": "Annual CLEAR Plus membership reimbursement", "frequency": "annual" }
+    {
+      "name": "Free Night Reward",
+      "amount": 1,
+      "description": "Annual free night (unlimited tier). Extra night at $30k, another at $60k spend",
+      "frequency": "annual"
+    },
+    {
+      "name": "Hilton Resort Credit",
+      "amount": 400,
+      "description": "$200 per half-year, eligible Hilton Resorts worldwide",
+      "frequency": "semi-annual"
+    },
+    {
+      "name": "Flight Credit",
+      "amount": 200,
+      "description": "$50 per quarter for airfare",
+      "frequency": "quarterly"
+    },
+    {
+      "name": "CLEAR Plus Credit",
+      "amount": 189,
+      "description": "Annual CLEAR Plus membership reimbursement",
+      "frequency": "annual"
+    }
   ],
   "travel_benefits": {
     "lounge_access": [],
     "hotel_status": [
-      { "program": "Hilton Honors", "tier": "Diamond", "complimentary": true }
+      {
+        "program": "Hilton Honors",
+        "tier": "Diamond",
+        "complimentary": true
+      }
     ],
     "other_benefits": [
-      { "name": "Hilton Honors Diamond Status", "description": "Top-tier status: free breakfast/dining credit, room upgrades, executive lounge access" },
-      { "name": "15 elite night credits annually", "description": "Towards Hilton elite status" }
+      {
+        "name": "Hilton Honors Diamond Status",
+        "description": "Top-tier status: free breakfast/dining credit, room upgrades, executive lounge access"
+      },
+      {
+        "name": "15 elite night credits annually",
+        "description": "Towards Hilton elite status"
+      }
     ]
   },
   "fhr_thc": {
@@ -55,12 +101,29 @@
     "elite_night_credits": 15
   },
   "application_rules": {
-    "rules": ["Once-Per-Lifetime", "Family Rule (Amex)"],
+    "rules": [
+      "Once-Per-Lifetime",
+      "Family Rule (Amex)"
+    ],
     "notes": "Amex family of cards restriction applies"
   },
-  "last_updated": "2026-04-09",
+  "last_updated": "2026-04-12",
   "sources": [
-    { "url": "https://www.americanexpress.com/us/credit-cards/hilton/hilton-honors-aspire/" }
+    {
+      "name": "US Credit Card Guide",
+      "url": "https://www.uscreditcardguide.com/amex-hilton-aspire-credit-card/",
+      "updated": "2026-04-12"
+    },
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/hilton/hilton-honors-aspire/"
+    }
   ],
-  "tags": ["amex", "hilton", "hotel", "premium", "travel"]
+  "tags": [
+    "amex",
+    "hilton",
+    "hotel",
+    "premium",
+    "travel"
+  ],
+  "image_url": "https://www.uscreditcardguide.com/wp-content/uploads/hilton-honors-aspire-300x190.png"
 }

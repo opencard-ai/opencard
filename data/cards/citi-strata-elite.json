@@ -9,8 +9,10 @@
   "welcome_offer": {
     "spending_requirement": 4000,
     "time_period_months": 3,
-    "bonus_points": 70000,
-    "point_program": "Citi ThankYou Points"
+    "bonus_points": 100000,
+    "estimated_value": 1000,
+    "point_program": "Citi ThankYou Points",
+    "source": "https://www.uscreditcardguide.com/citi-strata-elite-credit-card/"
   },
   "earning_rates": [
     { "category": "hotel", "rate": 10, "program": "Citi ThankYou Points", "notes": "Via Citi Travel" },
@@ -50,7 +52,10 @@
     "rules": ["8/65 Rule", "48 Months Rule"],
     "notes": "Annual fee reduced to $450 for Citigold members. New card launched July 2025."
   },
-  "last_updated": "2026-04-09",
-  "sources": [{ "url": "https://www.citi.com/credit-cards/citi-strata-elite-credit-card" }],
+  "last_updated": "2026-04-12",
+  "sources": [
+    { "url": "https://www.citi.com/credit-cards/citi-strata-elite-credit-card" },
+    { "url": "https://www.uscreditcardguide.com/citi-strata-elite-credit-card/" }
+  ],
   "tags": ["citi", "travel", "premium", "thankyou-points"]
 }

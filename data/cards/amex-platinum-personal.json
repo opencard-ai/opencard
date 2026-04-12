@@ -1,52 +1,149 @@
 {
   "card_id": "amex-platinum-personal",
-  "name": "The Platinum Card from American Express",
+  "name": "AmEx Platinum “信用卡”",
   "issuer": "American Express",
   "network": "American Express",
-  "annual_fee": 895,
+  "annual_fee": 695,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
     "spending_requirement": 8000,
     "time_period_months": 6,
-    "bonus_points": 80000,
-    "estimated_value": 1600,
-    "point_program": "American Express Membership Rewards"
+    "bonus_points": 175000,
+    "estimated_value": 3500,
+    "point_program": "American Express Membership Rewards",
+    "source": "https://www.uscreditcardguide.com/amex-platinum-card/",
+    "notes": "Up to 175K targeted offer; public offer typically 100K"
   },
   "earning_rates": [
-    { "category": "airline", "rate": 5, "program": "Amex MR", "notes": "Direct bookings with airlines or Amex Travel" },
-    { "category": "hotel", "rate": 5, "program": "Amex MR", "notes": "Prepaid hotels via Amex Travel" },
-    { "category": "default", "rate": 1, "program": "Amex MR" }
+    {
+      "category": "airline",
+      "rate": 5,
+      "program": "Amex MR",
+      "notes": "Direct bookings with airlines or Amex Travel"
+    },
+    {
+      "category": "hotel",
+      "rate": 5,
+      "program": "Amex MR",
+      "notes": "Prepaid hotels via Amex Travel"
+    },
+    {
+      "category": "default",
+      "rate": 1,
+      "program": "Amex MR"
+    }
   ],
   "annual_credits": [
-    { "name": "Hotel Credit", "amount": 200, "description": "Prepay FHR or THC 2+ nights, get $200 credit", "frequency": "annual" },
-    { "name": "Airline Fee Credit", "amount": 200, "description": "Selected airline, incidental fees", "frequency": "annual" },
-    { "name": "Uber Cash", "amount": 200, "description": "$15/month + $20 December", "frequency": "monthly" },
-    { "name": "Digital Entertainment", "amount": 240, "description": "$20/month on Disney+, Hulu, WSJ, etc.", "frequency": "monthly" },
-    { "name": "Walmart+", "amount": 155, "description": "$12.95/month credit", "frequency": "monthly" },
-    { "name": "Equinox", "amount": 300, "description": "Annual Equinox gym membership", "frequency": "annual" },
-    { "name": "CLEAR Plus", "amount": 199, "description": "Annual CLEAR membership reimbursement", "frequency": "annual" },
-    { "name": "Global Entry / TSA PreCheck", "amount": 120, "description": "Every 4-4.5 years", "frequency": "quadrennial" },
-    { "name": "Saks Fifth Avenue", "amount": 100, "description": "$50 every 6 months", "frequency": "semi-annual" }
+    {
+      "name": "Hotel Credit",
+      "amount": 200,
+      "description": "Prepay FHR or THC 2+ nights, get $200 credit",
+      "frequency": "annual"
+    },
+    {
+      "name": "Airline Fee Credit",
+      "amount": 200,
+      "description": "Selected airline, incidental fees",
+      "frequency": "annual"
+    },
+    {
+      "name": "Uber Cash",
+      "amount": 200,
+      "description": "$15/month + $20 December",
+      "frequency": "monthly"
+    },
+    {
+      "name": "Digital Entertainment",
+      "amount": 240,
+      "description": "$20/month on Disney+, Hulu, WSJ, etc.",
+      "frequency": "monthly"
+    },
+    {
+      "name": "Walmart+",
+      "amount": 155,
+      "description": "$12.95/month credit",
+      "frequency": "monthly"
+    },
+    {
+      "name": "Equinox",
+      "amount": 300,
+      "description": "Annual Equinox gym membership",
+      "frequency": "annual"
+    },
+    {
+      "name": "CLEAR Plus",
+      "amount": 199,
+      "description": "Annual CLEAR membership reimbursement",
+      "frequency": "annual"
+    },
+    {
+      "name": "Global Entry / TSA PreCheck",
+      "amount": 120,
+      "description": "Every 4-4.5 years",
+      "frequency": "quadrennial"
+    },
+    {
+      "name": "Saks Fifth Avenue",
+      "amount": 100,
+      "description": "$50 every 6 months",
+      "frequency": "semi-annual"
+    }
   ],
   "travel_benefits": {
     "lounge_access": [
-      { "name": "Centurion Lounges", "type": "Amex Centurion" },
-      { "name": "Priority Pass Select", "type": "Priority Pass" },
-      { "name": "Delta Sky Club", "type": "Delta Sky Club", "notes": "When flying Delta same-day" },
-      { "name": "Escape Lounges", "type": "Escape" },
-      { "name": "Airspace Lounges", "type": "Airspace" }
+      {
+        "name": "Centurion Lounges",
+        "type": "Amex Centurion"
+      },
+      {
+        "name": "Priority Pass Select",
+        "type": "Priority Pass"
+      },
+      {
+        "name": "Delta Sky Club",
+        "type": "Delta Sky Club",
+        "notes": "When flying Delta same-day"
+      },
+      {
+        "name": "Escape Lounges",
+        "type": "Escape"
+      },
+      {
+        "name": "Airspace Lounges",
+        "type": "Airspace"
+      }
     ],
     "hotel_status": [
-      { "program": "Hilton Honors", "tier": "Gold", "complimentary": true },
-      { "program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true }
+      {
+        "program": "Hilton Honors",
+        "tier": "Gold",
+        "complimentary": true
+      },
+      {
+        "program": "Marriott Bonvoy",
+        "tier": "Gold Elite",
+        "complimentary": true
+      }
     ],
     "other_benefits": {
       "benefits": [
-        { "name": "FHR (Fine Hotels & Resorts)", "description": "Access to FHR program with credits and perks" },
-        { "name": "THC (The Hotel Collection)", "description": "Access to THC with $100 credit and room upgrade" },
-        { "name": "Fine Dining by Resy", "description": "Access to exclusive dining experiences" },
-        { "name": "Global Lounge Collection", "description": "1000+ lounges worldwide" }
+        {
+          "name": "FHR (Fine Hotels & Resorts)",
+          "description": "Access to FHR program with credits and perks"
+        },
+        {
+          "name": "THC (The Hotel Collection)",
+          "description": "Access to THC with $100 credit and room upgrade"
+        },
+        {
+          "name": "Fine Dining by Resy",
+          "description": "Access to exclusive dining experiences"
+        },
+        {
+          "name": "Global Lounge Collection",
+          "description": "1000+ lounges worldwide"
+        }
       ]
     }
   },
@@ -70,10 +167,30 @@
     "points_per_dollar": null
   },
   "application_rules": {
-    "rules": ["Once-Per-Lifetime", "Family Rule (Amex)"],
+    "rules": [
+      "Once-Per-Lifetime",
+      "Family Rule (Amex)"
+    ],
     "notes": "Annual fee increased from $695 to $895 in September 2025"
   },
-  "last_updated": "2026-04-09",
-  "sources": [{ "url": "https://www.americanexpress.com/us/credit-cards/the-platinum-card/" }],
-  "tags": ["amex", "premium", "travel", "mr", "fhr", "lounge-access"]
+  "last_updated": "2026-04-12",
+  "sources": [
+    {
+      "name": "US Credit Card Guide",
+      "url": "https://www.uscreditcardguide.com/amex-platinum/",
+      "updated": "2026-04-12"
+    },
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/the-platinum-card/"
+    }
+  ],
+  "tags": [
+    "amex",
+    "premium",
+    "travel",
+    "mr",
+    "fhr",
+    "lounge-access"
+  ],
+  "image_url": "https://www.uscreditcardguide.com/wp-content/uploads/NUS000000237_480x304_straight_withname.png-300x190.webp"
 }

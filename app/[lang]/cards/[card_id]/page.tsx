@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getCardById, getAllCards } from "@/lib/cards";
-import ChatWidget from "../../components/ChatWidget";
+import ChatWidget from "../../../components/ChatWidget";
 import type { Metadata } from "next";
 import { locales, t } from "@/lib/i18n";
 
@@ -39,7 +39,7 @@ export default async function CardDetailPage({ params }: Props) {
   const card = getCardById(card_id);
   if (!card) notFound();
 
-  const l = (key: string) => t(key, locale);
+  const l = (key: string, p?: Record<string, string | number>) => t(key, locale, p);
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -106,12 +106,12 @@ export default async function CardDetailPage({ params }: Props) {
               )}
               {card.welcome_offer.estimated_value && (
                 <span className="ml-1">
-                  ({l("detail.estimatedValue", locale, { value: `$${card.welcome_offer.estimated_value}` })})
+                  ({l("detail.estimatedValue", { value: `$${card.welcome_offer.estimated_value}` })})
                 </span>
               )}
               {card.welcome_offer.spending_requirement && (
                 <span className="text-xs text-amber-700 block mt-1">
-                  {l("detail.spendingReq", locale, { amount: card.welcome_offer.spending_requirement.toLocaleString(), months: card.welcome_offer.time_period_months })}
+                  {l("detail.spendingReq", { amount: card.welcome_offer.spending_requirement.toLocaleString(), months: card.welcome_offer.time_period_months ?? 3 })}
                 </span>
               )}
             </div>

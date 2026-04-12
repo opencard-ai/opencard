@@ -1,0 +1,475 @@
+{
+  "timestamp": "2026-04-12",
+  "summary": {
+    "high": 9,
+    "medium": 0,
+    "low": 0
+  },
+  "results": [
+    {
+      "card_id": "amex-hilton-aspire",
+      "name": "Hilton Honors American Express Aspire Card",
+      "issues": [
+        {
+          "field": "welcome_offer.bonus_points",
+          "severity": "HIGH",
+          "current": 150000,
+          "live": 32373,
+          "source": "doctor_of_credit",
+          "message": "DoC shows 32,373 but we have 150,000"
+        }
+      ],
+      "current": {
+        "annual_fee": 550,
+        "welcome_bonus": 150000,
+        "spending_req": 6000
+      },
+      "live": {
+        "doc_bonuses": [
+          32373
+        ],
+        "doc_fees": [
+          0,
+          1,
+          11
+        ],
+        "usccg_bonuses": [
+          37062,
+          161611,
+          300150,
+          292929,
+          333333
+        ]
+      },
+      "checked": [
+        "doc",
+        "usccg"
+      ]
+    },
+    {
+      "card_id": "amex-hilton-honors",
+      "name": "Hilton Honors American Express Card",
+      "issues": [
+        {
+          "field": "welcome_offer.bonus_points",
+          "severity": "HIGH",
+          "current": 80000,
+          "live": 100000,
+          "source": "doctor_of_credit",
+          "message": "DoC shows 100,000 but we have 80,000"
+        }
+      ],
+      "current": {
+        "annual_fee": 0,
+        "welcome_bonus": 80000,
+        "spending_req": 2000
+      },
+      "live": {
+        "doc_bonuses": [
+          100000,
+          32373
+        ],
+        "doc_fees": [
+          0,
+          1,
+          11
+        ],
+        "usccg_bonuses": [
+          37062,
+          161611,
+          300150,
+          292929,
+          333333
+        ]
+      },
+      "checked": [
+        "doc",
+        "usccg"
+      ]
+    },
+    {
+      "card_id": "amex-hilton-surpass",
+      "name": "Hilton Honors American Express Surpass Card",
+      "issues": [
+        {
+          "field": "welcome_offer.bonus_points",
+          "severity": "HIGH",
+          "current": 130000,
+          "live": 20000,
+          "source": "doctor_of_credit",
+          "message": "DoC shows 20,000 but we have 130,000"
+        }
+      ],
+      "current": {
+        "annual_fee": 150,
+        "welcome_bonus": 130000,
+        "spending_req": 3000
+      },
+      "live": {
+        "doc_bonuses": [
+          20000,
+          100000,
+          32373
+        ],
+        "doc_fees": [
+          0,
+          1,
+          11
+        ],
+        "usccg_bonuses": [
+          37062,
+          161611,
+          300150,
+          292929,
+          333333
+        ]
+      },
+      "checked": [
+        "doc",
+        "usccg"
+      ]
+    },
+    {
+      "card_id": "amex-platinum-personal",
+      "name": "The Platinum Card from American Express",
+      "issues": [
+        {
+          "field": "welcome_offer.bonus_points",
+          "severity": "HIGH",
+          "current": 175000,
+          "live": 100000,
+          "source": "doctor_of_credit",
+          "message": "DoC shows 100,000 but we have 175,000"
+        }
+      ],
+      "current": {
+        "annual_fee": 895,
+        "welcome_bonus": 175000,
+        "spending_req": 12000
+      },
+      "live": {
+        "doc_bonuses": [
+          100000,
+          32373
+        ],
+        "doc_fees": [
+          0,
+          1,
+          11
+        ],
+        "usccg_bonuses": [
+          12000,
+          25229,
+          161611,
+          300150
+        ]
+      },
+      "checked": [
+        "doc",
+        "usccg"
+      ]
+    },
+    {
+      "card_id": "apple-card",
+      "name": "Apple Card",
+      "issues": [],
+      "current": {
+        "annual_fee": 0
+      },
+      "live": {
+        "doc_bonuses": [
+          32373
+        ],
+        "doc_fees": [
+          0,
+          1,
+          11
+        ],
+        "usccg_bonuses": [
+          37062,
+          90016,
+          31604,
+          78968,
+          17830
+        ]
+      },
+      "checked": [
+        "doc",
+        "usccg"
+      ]
+    },
+    {
+      "card_id": "bofa-atmos-ascent",
+      "name": "Atmos Rewards Ascent Visa Signature (Alaska Airlines)",
+      "issues": [
+        {
+          "field": "welcome_offer.bonus_points",
+          "severity": "HIGH",
+          "current": 80000,
+          "live": 32373,
+          "source": "doctor_of_credit",
+          "message": "DoC shows 32,373 but we have 80,000"
+        }
+      ],
+      "current": {
+        "annual_fee": 95,
+        "welcome_bonus": 80000,
+        "spending_req": 4000
+      },
+      "live": {
+        "doc_bonuses": [
+          32373
+        ],
+        "doc_fees": [
+          0,
+          1,
+          11
+        ]
+      },
+      "checked": [
+        "doc"
+      ]
+    },
+    {
+      "card_id": "bofa-atmos-summit",
+      "name": "Atmos Rewards Summit Visa Infinite (Alaska Airlines)",
+      "issues": [
+        {
+          "field": "welcome_offer.bonus_points",
+          "severity": "HIGH",
+          "current": 100000,
+          "live": 32373,
+          "source": "doctor_of_credit",
+          "message": "DoC shows 32,373 but we have 100,000"
+        }
+      ],
+      "current": {
+        "annual_fee": 395,
+        "welcome_bonus": 100000,
+        "spending_req": 6500
+      },
+      "live": {
+        "doc_bonuses": [
+          32373
+        ],
+        "doc_fees": [
+          0,
+          1,
+          11
+        ]
+      },
+      "checked": [
+        "doc"
+      ]
+    },
+    {
+      "card_id": "bofa-customized-cash",
+      "name": "Bank of America Customized Cash Rewards Credit Card",
+      "issues": [],
+      "current": {
+        "annual_fee": 0,
+        "spending_req": 1000
+      },
+      "live": {
+        "doc_bonuses": [
+          32373
+        ],
+        "doc_fees": [
+          0,
+          1,
+          11
+        ]
+      },
+      "checked": [
+        "doc"
+      ]
+    },
+    {
+      "card_id": "bofa-travel-rewards",
+      "name": "Bank of America Travel Rewards Credit Card",
+      "issues": [],
+      "current": {
+        "annual_fee": 0,
+        "welcome_bonus": 25000,
+        "spending_req": 1000
+      },
+      "live": {
+        "doc_bonuses": [
+          25000,
+          32373
+        ],
+        "doc_fees": [
+          0,
+          1,
+          11
+        ]
+      },
+      "checked": [
+        "doc"
+      ]
+    },
+    {
+      "card_id": "chase-marriott-boundless",
+      "name": "Marriott Bonvoy Boundless Credit Card",
+      "issues": [
+        {
+          "field": "welcome_offer.bonus_points",
+          "severity": "HIGH",
+          "current": 3,
+          "live": 100000,
+          "source": "doctor_of_credit",
+          "message": "DoC shows 100,000 but we have 3"
+        }
+      ],
+      "current": {
+        "annual_fee": 95,
+        "welcome_bonus": 3,
+        "spending_req": 3000
+      },
+      "live": {
+        "doc_bonuses": [
+          100000,
+          32373
+        ],
+        "doc_fees": [
+          0,
+          1,
+          11
+        ],
+        "usccg_bonuses": [
+          37062,
+          161611,
+          300150,
+          292929,
+          333333
+        ]
+      },
+      "checked": [
+        "doc",
+        "usccg"
+      ]
+    },
+    {
+      "card_id": "chase-sapphire-preferred",
+      "name": "Chase Sapphire Preferred Card",
+      "issues": [
+        {
+          "field": "welcome_offer.bonus_points",
+          "severity": "HIGH",
+          "current": 75000,
+          "live": 100000,
+          "source": "doctor_of_credit",
+          "message": "DoC shows 100,000 but we have 75,000"
+        }
+      ],
+      "current": {
+        "annual_fee": 95,
+        "welcome_bonus": 75000,
+        "spending_req": 5000
+      },
+      "live": {
+        "doc_bonuses": [
+          100000,
+          32373
+        ],
+        "doc_fees": [
+          0,
+          1,
+          11
+        ],
+        "usccg_bonuses": [
+          37062,
+          25229,
+          161611,
+          300150
+        ]
+      },
+      "checked": [
+        "doc",
+        "usccg"
+      ]
+    },
+    {
+      "card_id": "chase-sapphire-reserve",
+      "name": "Chase Sapphire Reserve",
+      "issues": [
+        {
+          "field": "welcome_offer.bonus_points",
+          "severity": "HIGH",
+          "current": 125000,
+          "live": 32373,
+          "source": "doctor_of_credit",
+          "message": "DoC shows 32,373 but we have 125,000"
+        }
+      ],
+      "current": {
+        "annual_fee": 795,
+        "welcome_bonus": 125000,
+        "spending_req": 6000
+      },
+      "live": {
+        "doc_bonuses": [
+          32373
+        ],
+        "doc_fees": [
+          0,
+          1,
+          11
+        ],
+        "usccg_bonuses": [
+          450717,
+          31604,
+          78968,
+          17830,
+          161611
+        ]
+      },
+      "checked": [
+        "doc",
+        "usccg"
+      ]
+    },
+    {
+      "card_id": "citi-strata-elite",
+      "name": "Citi Strata Elite",
+      "issues": [],
+      "current": {
+        "annual_fee": 595,
+        "welcome_bonus": 100000,
+        "spending_req": 4000
+      },
+      "live": {
+        "usccg_bonuses": [
+          100000,
+          25229,
+          161611
+        ]
+      },
+      "checked": [
+        "usccg"
+      ]
+    },
+    {
+      "card_id": "discover-customized-cash",
+      "name": "Discover it Cash Back",
+      "issues": [],
+      "current": {
+        "annual_fee": 0
+      },
+      "live": {
+        "doc_bonuses": [
+          32373,
+          333333
+        ],
+        "doc_fees": [
+          0,
+          1,
+          11
+        ]
+      },
+      "checked": [
+        "doc"
+      ]
+    }
+  ]
+}

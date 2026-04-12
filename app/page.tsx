@@ -1,20 +1,22 @@
-import { NextRequest, NextResponse } from "next/server";
-import { locales, defaultLocale } from "@/lib/i18n";
+"use client";
 
-export function GET(req: NextRequest) {
-  const cookieLocale = req.cookies.get("NEXT_LOCALE")?.value;
-  const acceptLang = req.headers.get("accept-language");
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-  let locale = defaultLocale;
-  if (cookieLocale && locales.includes(cookieLocale as typeof locales[number])) {
-    locale = cookieLocale as typeof locales[number];
-  } else if (acceptLang) {
-    const lang = acceptLang.toLowerCase();
-    if (lang.includes("zh")) locale = "zh";
-    else if (lang.includes("es")) locale = "es";
-  }
+export default function RootPage() {
+  const router = useRouter();
 
-  return NextResponse.redirect(new URL(`/${locale}`, req.url));
+  useEffect(() => {
+    const locale = navigator.language.toLowerCase();
+    let target = "/en";
+    if (locale.includes("zh")) target = "/zh";
+    else if (locale.includes("es")) target = "/es";
+    router.replace(target);
+  }, [router]);
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-slate-50">
+      <div className="text-slate-500">Redirecting...</div>
+    </div>
+  );
 }
-
-export const dynamic = "force-dynamic";

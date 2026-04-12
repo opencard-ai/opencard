@@ -9,8 +9,12 @@
   "welcome_offer": {
     "spending_requirement": 2000,
     "time_period_months": 3,
-    "bonus_points": 80000,
-    "point_program": "Hilton Honors"
+    "bonus_points": 70000,
+    "free_nights": 1,
+    "free_night_value": null,
+    "estimated_value": 700,
+    "point_program": "Hilton Honors",
+    "source": "KC confirmed 2026-04-12"
   },
   "earning_rates": [
     { "category": "hotel", "rate": 7, "program": "Hilton Honors" },

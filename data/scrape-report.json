@@ -1,0 +1,64 @@
+{
+  "saved": 2,
+  "failed": 9,
+  "report": [
+    {
+      "cardId": "chase-sapphire-reserve",
+      "status": "ok",
+      "fee": 795,
+      "bonus": 125000
+    },
+    {
+      "cardId": "chase-sapphire-preferred",
+      "status": "ok",
+      "fee": 95,
+      "bonus": 75000
+    },
+    {
+      "cardId": "amex-platinum-personal",
+      "status": "fail",
+      "error": "const可得Match is not defined"
+    },
+    {
+      "cardId": "amex-gold",
+      "status": "fail",
+      "error": "const可得Match is not defined"
+    },
+    {
+      "cardId": "amex-hilton-aspire",
+      "status": "fail",
+      "error": "const可得Match is not defined"
+    },
+    {
+      "cardId": "amex-hilton-honors",
+      "status": "fail",
+      "error": "HTTP 404"
+    },
+    {
+      "cardId": "amex-hilton-surpass",
+      "status": "fail",
+      "error": "const可得Match is not defined"
+    },
+    {
+      "cardId": "citi-strata-elite",
+      "status": "fail",
+      "error": "const可得Match is not defined"
+    },
+    {
+      "cardId": "discover-it",
+      "status": "fail",
+      "error": "const可得Match is not defined"
+    },
+    {
+      "cardId": "bofa-travel-rewards",
+      "status": "fail",
+      "error": "const可得Match is not defined"
+    },
+    {
+      "cardId": "apple-card",
+      "status": "fail",
+      "error": "const可得Match is not defined"
+    }
+  ],
+  "updated": "2026-04-12T17:44:20.892Z"
+}

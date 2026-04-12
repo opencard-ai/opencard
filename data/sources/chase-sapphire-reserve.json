@@ -1,0 +1,27 @@
+{
+  "card_id": "chase-sapphire-reserve",
+  "sources": {
+    "chase_official": {
+      "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+      "check_fields": ["annual_fee", "welcome_offer"],
+      "type": "bank"
+    },
+    "us_credit_card_guide": {
+      "url": "https://www.uscreditcardguide.com/chase-sapphire-reserve/",
+      "check_fields": ["welcome_offer", "earning_rates", "annual_credits"],
+      "type": "curated"
+    },
+    "doctor_of_credit": {
+      "url": "https://www.doctorofcredit.com/credit-cards/chase-sapphire-reserve/",
+      "check_fields": ["welcome_offer", "annual_credits", "benefit_changes"],
+      "type": "curated"
+    }
+  },
+  "update_rules": {
+    "annual_fee": { "tolerance": 0, "auto_update": true },
+    "welcome_offer.bonus_points": { "tolerance": 0.05, "auto_update": true, "min_sources": 2 },
+    "foreign_transaction_fee": { "tolerance": 0, "auto_update": true },
+    "earning_rates": { "tolerance": 0.1, "auto_update": false }
+  },
+  "last_full_check": null
+}

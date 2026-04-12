@@ -81,8 +81,9 @@ const LABELS: Record<string, { en: string; zh: string; es: string }> = {
 };
 
 function l(key: string, locale: string): string {
-  const map = LABELS[key]?.[locale as keyof typeof LABELS[key]] || LABELS[key]?.en || key;
-  return map;
+  const entry = LABELS[key];
+  if (!entry) return key;
+  return (entry as Record<string, string>)[locale] || entry.en || key;
 }
 
 export default function CardGrid({ cards, issuers, tags, locale }: CardGridProps) {

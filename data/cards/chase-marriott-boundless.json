@@ -9,8 +9,10 @@
   "welcome_offer": {
     "spending_requirement": 3000,
     "time_period_months": 3,
-    "bonus_points": 3,
-    "description": "3 Free Night Awards (each up to 50,000 points)",
+    "bonus_points": null,
+    "free_nights": 4,
+    "free_night_value": 35000,
+    "description": "4 Free Night Awards (each up to 35,000 points)",
     "point_program": "Marriott Bonvoy"
   },
   "earning_rates": [
@@ -49,7 +51,7 @@
     "rules": ["5/24 Rule", "Marriott Family Rule"],
     "notes": "May not qualify if recently received Amex Marriott SUB"
   },
-  "last_updated": "2026-04-09",
+  "last_updated": "2026-04-12",
   "sources": [{ "url": "https://www.chase.com/personal/credit-cards/marriott-bonvoy-boundless" }],
   "tags": ["chase", "marriott", "hotel", "mid-tier", "travel"]
 }

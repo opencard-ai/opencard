@@ -11,7 +11,8 @@
     "time_period_months": 3,
     "bonus_points": 100000,
     "description": "100,000 bonus points + 25,000-point Global Companion Award + 50% airfare discount code",
-    "point_program": "Alaska Airlines / Atmos Rewards"
+    "point_program": "Alaska Airlines / Atmos Rewards",
+    "source": "KC confirmed 2026-04-12"
   },
   "earning_rates": [
     { "category": "restaurant", "rate": 3 },
