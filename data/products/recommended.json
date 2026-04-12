@@ -1,0 +1,98 @@
+[
+  {
+    "product_id": "cabeau-evolution-s3",
+    "name": "Cabeau Evolution S3 Memory Foam Travel Pillow",
+    "category": "travel-pillow",
+    "asin": "B079X4S4DQ",
+    "price_range": "$40-50",
+    "description": "Award-winning travel pillow. CNN & Travel+Leisure 5 years running pick.",
+    "affiliate_url": "https://www.amazon.com/dp/B079X4S4DQ?tag=opencardai-20",
+    "rating": "4.6",
+    "reviews": "15000+",
+    "image": "https://m.media-amazon.com/images/I/81XqKkDboML._AC_SL1500_.jpg"
+  },
+  {
+    "product_id": "trtl-pillow-2",
+    "name": "Trtl Pillow 2.0 - Scientifically Proven Neck Support",
+    "category": "travel-pillow",
+    "asin": "B0GKFG9JTW",
+    "price_range": "$35-45",
+    "description": "Breathable bio-blended fabric, patented internal support system.",
+    "affiliate_url": "https://www.amazon.com/dp/B0GKFG9JTW?tag=opencardai-20",
+    "rating": "4.4",
+    "reviews": "8000+",
+    "image": "https://m.media-amazon.com/images/I/71XrqFqDqgL._AC_SL1500_.jpg"
+  },
+  {
+    "product_id": "tessan-travel-adapter",
+    "name": "TESSAN Universal Travel Adapter (3 USB-C + 2 USB-A)",
+    "category": "adapter",
+    "asin": "B0B2PD7VW4",
+    "price_range": "$25-35",
+    "description": "Works in 200+ countries, charges multiple devices. Essential for international travel.",
+    "affiliate_url": "https://www.amazon.com/dp/B0B2PD7VW4?tag=opencardai-20",
+    "rating": "4.7",
+    "reviews": "10000+",
+    "image": "https://m.media-amazon.com/images/I/71xkqLxGYjL._AC_SL1500_.jpg"
+  },
+  {
+    "product_id": "anker-nano-adapter",
+    "name": "Anker Nano Travel Adapter (5-Port)",
+    "category": "adapter",
+    "asin": "B0B2PD7VW4",
+    "price_range": "$30-40",
+    "description": "Anker brand, Smart temperature control, compact design.",
+    "affiliate_url": "https://www.amazon.com/dp/B0B2PD7VW4?tag=opencardai-20",
+    "rating": "4.6",
+    "reviews": "8000+",
+    "image": "https://m.media-amazon.com/images/I/71qkLxGYjL._AC_SL1500_.jpg"
+  },
+  {
+    "product_id": "go-travel-mask-set",
+    "name": "Go Travel Dreamer Eye Mask with Ear Plugs",
+    "category": "accessories",
+    "asin": "B0C4Q9F3JN",
+    "price_range": "$8-12",
+    "description": "Combines mask + earplugs in one product. Perfect for long-haul flights.",
+    "affiliate_url": "https://www.amazon.com/dp/B0C4Q9F3JN?tag=opencardai-20",
+    "rating": "4.2",
+    "reviews": "5000+",
+    "image": "https://m.media-amazon.com/images/I/61XQKrFDqgL._AC_SL1500_.jpg"
+  },
+  {
+    "product_id": "napfun-pillow",
+    "name": "Napfun Memory Foam Travel Neck Pillow",
+    "category": "travel-pillow",
+    "asin": "",
+    "price_range": "$20-30",
+    "description": "Memory foam at accessible price point. Great entry-level option.",
+    "affiliate_url": "https://www.amazon.com/s?k=napfun+travel+neck+pillow&tag=opencardai-20",
+    "rating": "4.3",
+    "reviews": "12000+",
+    "image": ""
+  },
+  {
+    "product_id": "saunorch-adapter",
+    "name": "SAUNORCH Universal Travel Adapter",
+    "category": "adapter",
+    "asin": "B07D81J56M",
+    "price_range": "$15-25",
+    "description": "Accepts US/EU/AU/UK plugs, budget-friendly but reliable.",
+    "affiliate_url": "https://www.amazon.com/dp/B07D81J56M?tag=opencardai-20",
+    "rating": "4.5",
+    "reviews": "6000+",
+    "image": "https://m.media-amazon.com/images/I/71ABCDEF123._AC_SL1500_.jpg"
+  },
+  {
+    "product_id": "ebuygb-mask-set",
+    "name": "eBuyGB Lightweight Travel Eye Mask + Ear Plugs Set",
+    "category": "accessories",
+    "asin": "B01H7HMU0G",
+    "price_range": "$6-10",
+    "description": "Budget-friendly starter kit. Great for 'best under $20' gift lists.",
+    "affiliate_url": "https://www.amazon.com/dp/B01H7HMU0G?tag=opencardai-20",
+    "rating": "4.1",
+    "reviews": "3000+",
+    "image": "https://m.media-amazon.com/images/I/61DEF123456._AC_SL1500_.jpg"
+  }
+]
