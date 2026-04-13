@@ -1,0 +1,52 @@
+{
+  "card_id": "citi-premier",
+  "name": "Citi Strata Premier® Card",
+  "issuer": "Citi",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "bonus_points": 60000,
+    "description": "60,000 bonus ThankYou® Points after spending $4,000 in the first 3 months of account opening.",
+    "free_nights": null,
+    "point_program": "Citi ThankYou"
+  },
+  "earning_rates": [
+    {"category": "Hotels, Car Rentals & Attractions (CitiTravel.com)", "rate": 10, "notes": "On bookings through CitiTravel.com."},
+    {"category": "Air Travel", "rate": 3, "notes": "On air travel purchased directly from airlines or through CitiTravel.com."},
+    {"category": "Hotels", "rate": 3, "notes": "On hotel stays purchased directly or through CitiTravel.com."},
+    {"category": "Restaurants", "rate": 3, "notes": "Including eligible delivery and takeout."},
+    {"category": "Supermarkets", "rate": 3, "notes": ""},
+    {"category": "Gas Stations", "rate": 3, "notes": "Including EV charging stations."},
+    {"category": "EV Charging", "rate": 3, "notes": "Stations other than at Costco."},
+    {"category": "Default", "rate": 1, "notes": "On all other purchases."}
+  ],
+  "annual_credits": [
+    {"name": "Annual Hotel Benefit", "amount": 100, "frequency": "Anniversary", "description": "$100 off a single hotel stay of $500 or more (excluding taxes and fees) when booked through CitiTravel.com. Once per calendar year."}
+  ],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      {"name": "Points Transfer", "description": "Transfer points to Citi's airline and hotel partners including Singapore Airlines, Air France/KLM, Emirates, JetBlue, and more at 1:1."}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_interruption": true,
+    "trip_delay": true,
+    "lost_luggage": true,
+    "rental_insurance": "MasterRental Coverage"
+  },
+  "sources": [
+    {"url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card", "notes": "Official Citi page confirms 60K bonus, $95 AF, 10x on CitiTravel, 3x on travel/dining/supermarkets/gas, $100 annual hotel credit, no FTf."},
+    {"url": "https://www.dailydrop.com/credit-cards/citi-strata-premier-card", "notes": "Daily Drop review confirms current offer of 60K points, $100 annual hotel benefit, no FTf, travel protections."},
+    {"url": "https://thepointsguy.com/credit-cards/how-to-choose-citi-strata-credit-card/", "notes": "TPG comparison of Strata cards confirms current 60K offer for Strata Premier."},
+    {"url": "https://www.cnbc.com/select/citi-strata-premier-review/", "notes": "CNBC review confirms $95 AF, 60K welcome bonus, 3x on dining/supermarkets/gas/travel."}
+  ],
+  "notes": "Card was renamed from 'Citi Premier' to 'Citi Strata Premier'. No foreign transaction fees. $100 annual hotel credit offsets annual fee. Strong transfer partners. No FHR/THC eligibility. Confirmed travel protections include trip cancellation/interruption, trip delay, lost luggage, and MasterRental car coverage.",
+  "confidence": "High"
+}

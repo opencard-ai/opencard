@@ -1,0 +1,58 @@
+{
+  "card_id": "chase-sapphire-reserve",
+  "name": "Chase Sapphire Reserve®",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 795,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 6000,
+    "time_period_months": 3,
+    "bonus_points": 125000,
+    "description": "Earn 125,000 bonus points after you spend $6,000 on purchases in the first 3 months from account opening.",
+    "free_nights": null,
+    "point_program": "Ultimate Rewards"
+  },
+  "earning_rates": [
+    {"category": "Chase Travel", "rate": 8, "notes": "On all purchases through Chase Travel, including The Edit."},
+    {"category": "Flights Direct", "rate": 4, "notes": "On flights booked direct with airlines."},
+    {"category": "Hotels Direct", "rate": 4, "notes": "On hotels booked direct with hotel chains."},
+    {"category": "Dining", "rate": 3, "notes": "Worldwide dining, including takeout and delivery services."},
+    {"category": "Default", "rate": 1, "notes": "On all other purchases."}
+  ],
+  "annual_credits": [
+    {"name": "Travel Credit", "amount": 300, "frequency": "Anniversary", "description": "$300 in statement credits for travel purchases each account anniversary year."},
+    {"name": "The Edit Credit", "amount": 500, "frequency": "Calendar Year", "description": "$250 credit from Jan-Jun and $250 from Jul-Dec for prepaid bookings with The Edit (2-night min)."},
+    {"name": "Dining Credit", "amount": 300, "frequency": "Calendar Year", "description": "$150 credit from Jan-Jun and $150 from Jul-Dec for Sapphire Exclusive Tables on OpenTable."},
+    {"name": "Apple TV/Music", "amount": 288, "frequency": "Monthly", "description": "Complimentary Apple TV and Apple Music subscriptions through 6/22/2027."},
+    {"name": "DoorDash Promo", "amount": 300, "frequency": "Monthly", "description": "$25 monthly for DoorDash ($5 restaurant, $20 grocery/retail)."},
+    {"name": "StubHub Credits", "amount": 300, "frequency": "Calendar Year", "description": "$150 credit from Jan-Jun and $150 from Jul-Dec for StubHub/viagogo."},
+    {"name": "Lyft Credits", "amount": 120, "frequency": "Monthly", "description": "$10 monthly credit for Lyft rides."},
+    {"name": "Peloton Credits", "amount": 120, "frequency": "Monthly", "description": "$10 monthly credit for Peloton memberships."}
+  ],
+  "travel_benefits": {
+    "hotel_status": [
+      {"program": "IHG One Rewards", "tier": "Platinum Elite"}
+    ],
+    "other_benefits": [
+      {"name": "Priority Pass Select", "description": "Complimentary Priority Pass Select Membership for lounge access."},
+      {"name": "Sapphire Lounge Network", "description": "Access to Chase Sapphire Lounges by The Club."},
+      {"name": "Reserve Travel Designer", "description": "Personalized service valued at up to $300 per trip."},
+      {"name": "Points Transfer", "description": "1 to 1 value to leading airline and hotel partners."}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": true, "thc_eligible": true},
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "sources": [
+    {"url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve", "notes": "Official Chase page Apr 2026."},
+    {"url": "https://roamingcactus.com/credit-cards/2026/4/1/chase-sapphire-reserve-review-2026", "notes": "Review Apr 2026."}
+  ],
+  "notes": "Premium travel card with massive credits offsetting the high $795 annual fee. High confidence in 2026 updates.",
+  "confidence": "High"
+}

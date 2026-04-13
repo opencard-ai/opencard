@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { getAllCards, getAllIssuers, getAllTags } from "@/lib/cards";
 import CardGrid from "@/app/components/CardGrid";
-import RecommendWidget from "@/app/components/RecommendWidget";
+import TravelProducts from "@/app/components/TravelProducts";
 import { t, locales } from "@/lib/i18n";
 
 export const dynamic = "force-static";
@@ -24,15 +24,16 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
-      {/* AI Card Finder Widget */}
-      <div className="mb-10">
-        <RecommendWidget locale={locale} />
+      {/* Page Header */}
+      <div className="mb-8">
+        <h1 className="text-2xl font-bold text-slate-900 mb-2">Find Your Perfect Card</h1>
+        <p className="text-slate-500">Browse {cards.length} cards from top issuers</p>
       </div>
 
       {/* Divider */}
       <div className="flex items-center gap-4 mb-8">
         <div className="flex-1 h-px bg-slate-200" />
-        <span className="text-sm text-slate-400 font-medium">or browse all {cards.length} cards</span>
+        <span className="text-sm text-slate-400 font-medium">{cards.length} cards available</span>
         <div className="flex-1 h-px bg-slate-200" />
       </div>
 
@@ -60,6 +61,11 @@ export default async function HomePage({ params }: Props) {
           {t("about.text", locale)}
         </p>
       </section>
+
+      {/* Travel Products - 主頁底部嵌入 */}
+      <div className="mt-12">
+        <TravelProducts lang={lang} />
+      </div>
     </div>
   );
 }

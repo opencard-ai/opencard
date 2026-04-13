@@ -1,0 +1,4869 @@
+{
+  "cards": [
+    {
+      "card_id": "amex-business-gold",
+      "name": "American Express Business Gold Card",
+      "issuer": "American Express",
+      "network": "American Express",
+      "annual_fee": 375,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good to Excellent",
+      "welcome_offer": {
+        "spending_requirement": 15000,
+        "time_period_months": 3,
+        "bonus_points": 200000,
+        "description": "As High As 200,000 Membership Rewards points after spending $15,000 in eligible purchases on your new Card in your first 3 months of Membership. Welcome offers vary and you may not be eligible for an offer.",
+        "free_nights": null,
+        "point_program": "American Express Membership Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "Top 2 eligible business categories",
+          "rate": 4,
+          "notes": "First $150,000 in combined purchases from top 2 categories each calendar year, then 1X. Categories include: advertising (online, TV, radio at U.S. media providers), U.S. electronic goods/software/cloud providers, U.S. gas stations, U.S. restaurants (including takeout/delivery), transit (rideshare, trains, taxis, ferries, parking, buses, tolls, subways), and U.S. wireless phone service providers"
+        },
+        {
+          "category": "Flights and prepaid hotels booked via Amex Travel",
+          "rate": 3,
+          "notes": null
+        },
+        {
+          "category": "All other purchases",
+          "rate": 1,
+          "notes": "After $150,000 annual cap on 4X categories"
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "FedEx, Grubhub, Office Supply Stores Credit",
+          "amount": 240,
+          "frequency": "annual",
+          "description": "Up to $20 in statement credits monthly after using the Business Gold Card for eligible U.S. purchases at FedEx, Grubhub, and Office Supply Stores. Enrollment required."
+        },
+        {
+          "name": "Walmart+ Membership Credit",
+          "amount": 155,
+          "frequency": "annual",
+          "description": "Up to $12.95 statement credit each month after paying for a Walmart+ membership (subject to auto-renewal) with the Business Gold Card. Up to $155.40 annually."
+        }
+      ],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          "Secondary rental car coverage (in U.S. and abroad when paying for rental with card and declining CDW)",
+          "Access to Amex Offers"
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.nerdwallet.com/business/credit-cards/reviews/american-express-business-gold",
+          "notes": "NerdWallet 2026 review with annual fee $375, welcome offer up to 200K points, earning rates, and benefits"
+        },
+        {
+          "url": "https://thepointsguy.com/credit-cards/amex-business-gold-current-offer/",
+          "notes": "The Points Guy current offer page noting $375 annual fee and welcome offer details"
+        },
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
+          "notes": "Amex official card page with earning categories and statement credits"
+        }
+      ],
+      "confidence": "high",
+      "notes": "Annual fee increased to $375 on February 1, 2024. The 4X categories are dynamic based on your top 2 spending categories each billing cycle - this provides flexibility but requires tracking. The $240 in annual credits ($20/month on dining/deli/delivery, office supply, and FedEx) can largely offset the annual fee. 6 transferable airline partners and 3 hotel partners. The personal Gold Card ($325 annual fee) may be a better choice for many, but the Business Gold offers similar earning with business-friendly category structure."
+    },
+    {
+      "card_id": "amex-gold",
+      "name": "American Express® Gold Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 325,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Excellent",
+      "welcome_offer": {
+        "spending_requirement": 6000,
+        "time_period_months": 6,
+        "bonus_points": 60000,
+        "description": "Earn 60,000 Membership Rewards® Points after you spend $6,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
+        "free_nights": null,
+        "point_program": "Membership Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "Restaurants",
+          "rate": 4,
+          "notes": "Worldwide, on up to $50,000 in purchases per calendar year."
+        },
+        {
+          "category": "Groceries",
+          "rate": 4,
+          "notes": "At U.S. supermarkets, on up to $25,000 in purchases per calendar year."
+        },
+        {
+          "category": "Flights",
+          "rate": 3,
+          "notes": "Booked directly with airlines or on AmexTravel.com."
+        },
+        {
+          "category": "Hotels",
+          "rate": 2,
+          "notes": "On prepaid hotels booked through AmexTravel.com."
+        },
+        {
+          "category": "Other",
+          "rate": 1,
+          "notes": null
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Uber Cash",
+          "amount": 120,
+          "frequency": "Monthly",
+          "description": "$10 monthly for Uber rides or Uber Eats in the US."
+        },
+        {
+          "name": "Dunkin' Credit",
+          "amount": 84,
+          "frequency": "Monthly",
+          "description": "$7 monthly credit at U.S. Dunkin' locations."
+        },
+        {
+          "name": "Resy Credit",
+          "amount": 100,
+          "frequency": "Semi-Annual",
+          "description": "$50 semi-annually for eligible purchases with Resy."
+        },
+        {
+          "name": "Dining Credit",
+          "amount": 120,
+          "frequency": "Monthly",
+          "description": "$10 monthly at participating partners (Shake Shack, Cheesecake Factory, etc.)."
+        }
+      ],
+      "travel_benefits": {
+        "lounge_access": {
+          "centurion": false,
+          "priority_pass": false,
+          "other": "None"
+        },
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "The Hotel Collection",
+            "description": "$100 credit on eligible charges when booking 2+ nights via Amex Travel."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": true
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": true,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+          "notes": "Official Amex Page"
+        },
+        {
+          "url": "https://upgradedpoints.com/credit-cards/reviews/american-express-gold-card/travel-insurance-benefits/",
+          "notes": "Insurance Details"
+        }
+      ],
+      "confidence": 0.95,
+      "notes": "Trip delay insurance requires a 12-hour wait. No trip cancellation insurance."
+    },
+    {
+      "card_id": "amex-green",
+      "name": "American Express® Green Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 150,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good",
+      "welcome_offer": {
+        "spending_requirement": 3000,
+        "time_period_months": 6,
+        "bonus_points": 40000,
+        "description": "Earn 40,000 Membership Rewards® Points after you spend $3,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
+        "free_nights": null,
+        "point_program": "Membership Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "Travel",
+          "rate": 3,
+          "notes": "Including airfare, hotels, tours, car rentals, cruises, etc."
+        },
+        {
+          "category": "Transit",
+          "rate": 3,
+          "notes": "Including trains, buses, ferries, subways."
+        },
+        {
+          "category": "Restaurants",
+          "rate": 3,
+          "notes": "Worldwide, including takeout and delivery in the US."
+        },
+        {
+          "category": "Other",
+          "rate": 1,
+          "notes": null
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "CLEAR+ Credit",
+          "amount": 209,
+          "frequency": "Annual",
+          "description": "Covers cost of CLEAR+ membership."
+        }
+      ],
+      "travel_benefits": {
+        "lounge_access": {
+          "centurion": false,
+          "priority_pass": false,
+          "other": "None"
+        },
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "No Foreign Transaction Fees",
+            "description": "Save on purchases abroad."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": true,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/green/",
+          "notes": "Official Amex Page"
+        }
+      ],
+      "confidence": 0.95,
+      "notes": "Trip delay insurance requires a 12-hour wait and covers up to $300."
+    },
+    {
+      "card_id": "amex-everyday-preferred",
+      "name": "Amex EveryDay Preferred Credit Card",
+      "issuer": "American Express",
+      "network": "American Express",
+      "annual_fee": 95,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good to Excellent",
+      "welcome_offer": {
+        "spending_requirement": 2000,
+        "time_period_months": 6,
+        "bonus_points": 15000,
+        "description": "Earn 15,000 Membership Rewards points after you use your new Card to make $2,000 in purchases within the first 6 months (as of July 2024)",
+        "free_nights": null,
+        "point_program": "American Express Membership Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "U.S. supermarkets",
+          "rate": 3,
+          "notes": "On up to $6,000 per year in purchases, then 1X thereafter"
+        },
+        {
+          "category": "U.S. gas stations",
+          "rate": 2,
+          "notes": null
+        },
+        {
+          "category": "Eligible travel booked through American Express Travel",
+          "rate": 2,
+          "notes": null
+        },
+        {
+          "category": "All other eligible purchases",
+          "rate": 1,
+          "notes": null
+        }
+      ],
+      "annual_credits": [],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          "50% bonus points when using card 30+ times in a billing period"
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.nerdwallet.com/credit-cards/learn/amex-everyday-preferred",
+          "notes": "NerdWallet review noting card is no longer accepting applications as of September 2024"
+        },
+        {
+          "url": "https://global.americanexpress.com/card-benefits/view-all/amex-everyday-preferred",
+          "notes": "Amex official benefits page with earning rates"
+        }
+      ],
+      "confidence": "high",
+      "notes": "DISCONTINTUED - American Express confirmed in September 2024 that the card is no longer accepting applications. Existing cardholders can continue using the card. The $95 annual fee, 3X at U.S. supermarkets (up to $6K/year), 2X at gas stations and Amex Travel, 0% intro APR for 12 months, and 50% bonus points for 30+ transactions per billing cycle remain for existing cardholders. No foreign transaction fees. No longer available to new applicants."
+    },
+    {
+      "card_id": "amex-bce",
+      "name": "Blue Cash Everyday® Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 0,
+      "foreign_transaction_fee": 2.7,
+      "credit_required": "Good",
+      "welcome_offer": {
+        "spending_requirement": 2000,
+        "time_period_months": 6,
+        "bonus_points": 150,
+        "description": "Earn $150 Cash Back after you spend $2,000 in purchases on your new Card within the first 6 months of Card Membership.",
+        "free_nights": null,
+        "point_program": "Cash Back"
+      },
+      "earning_rates": [
+        {
+          "category": "Groceries",
+          "rate": 3,
+          "notes": "At U.S. supermarkets, on up to $6,000 per year in purchases (then 1%)."
+        },
+        {
+          "category": "Online Retail",
+          "rate": 3,
+          "notes": "On U.S. online retail purchases, on up to $6,000 per year in purchases (then 1%)."
+        },
+        {
+          "category": "Gas",
+          "rate": 3,
+          "notes": "At U.S. gas stations, on up to $6,000 per year in purchases (then 1%)."
+        },
+        {
+          "category": "Other",
+          "rate": 1,
+          "notes": null
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Disney Streaming Credit",
+          "amount": 84,
+          "frequency": "Monthly",
+          "description": "$7 monthly credit at Disney+, Hulu, or ESPN+."
+        }
+      ],
+      "travel_benefits": {
+        "lounge_access": {
+          "centurion": false,
+          "priority_pass": false,
+          "other": "None"
+        },
+        "hotel_status": [],
+        "other_benefits": []
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": false,
+        "purchase_protection": true,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/",
+          "notes": "Official Amex Page"
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "Cash back received as Reward Dollars. Extended warranty may not be included for no-fee cash back cards in 2026 (Verify)."
+    },
+    {
+      "card_id": "amex-bcp",
+      "name": "Blue Cash Preferred® Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 95,
+      "foreign_transaction_fee": 2.7,
+      "credit_required": "Good",
+      "welcome_offer": {
+        "spending_requirement": 3000,
+        "time_period_months": 6,
+        "bonus_points": 200,
+        "description": "Earn $200 Cash Back after you spend $3,000 in purchases on your new Card within the first 6 months of Card Membership.",
+        "free_nights": null,
+        "point_program": "Cash Back"
+      },
+      "earning_rates": [
+        {
+          "category": "Groceries",
+          "rate": 6,
+          "notes": "At U.S. supermarkets, on up to $6,000 per year in purchases (then 1%)."
+        },
+        {
+          "category": "Streaming",
+          "rate": 6,
+          "notes": "On select U.S. streaming subscriptions."
+        },
+        {
+          "category": "Transit",
+          "rate": 3,
+          "notes": "Includes taxis, rideshare, parking, tolls, trains, buses."
+        },
+        {
+          "category": "Gas",
+          "rate": 3,
+          "notes": "At U.S. gas stations."
+        },
+        {
+          "category": "Other",
+          "rate": 1,
+          "notes": null
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Disney Streaming Credit",
+          "amount": 120,
+          "frequency": "Monthly",
+          "description": "$10 monthly credit at Disney+, Hulu, or ESPN+."
+        }
+      ],
+      "travel_benefits": {
+        "lounge_access": {
+          "centurion": false,
+          "priority_pass": false,
+          "other": "None"
+        },
+        "hotel_status": [],
+        "other_benefits": []
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": false,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/",
+          "notes": "Official Amex Page"
+        }
+      ],
+      "confidence": 0.95,
+      "notes": "Intro annual fee of $0 for the first year. Cash back received as Reward Dollars."
+    },
+    {
+      "card_id": "amex-delta-gold",
+      "name": "Delta SkyMiles® Gold American Express Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 150,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good to Excellent",
+      "welcome_offer": {
+        "spending_requirement": 2000,
+        "time_period_months": 6,
+        "bonus_points": 80000,
+        "description": "Earn up to 80,000 Bonus Miles after you spend $2,000 in eligible purchases on your new Card in your first 6 months of Card Membership.",
+        "free_nights": null,
+        "point_program": "Delta SkyMiles"
+      },
+      "earning_rates": [
+        {
+          "category": "Delta purchases",
+          "rate": 2,
+          "notes": "Per $1 on Delta purchases"
+        },
+        {
+          "category": "Restaurants",
+          "rate": 2,
+          "notes": "Worldwide, including takeout and delivery in the U.S."
+        },
+        {
+          "category": "U.S. Supermarkets",
+          "rate": 2,
+          "notes": null
+        },
+        {
+          "category": "Other",
+          "rate": 1,
+          "notes": null
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Delta Stays Credit",
+          "amount": 100,
+          "frequency": "Annual",
+          "description": "Up to $100 back per year as a statement credit after booking prepaid hotels or vacation rentals through Delta Stays on delta.com."
+        },
+        {
+          "name": "Delta Flight Credit",
+          "amount": 200,
+          "frequency": "Annual",
+          "description": "$200 Delta Flight Credit after spending $10,000 in purchases on your Card in a calendar year, towards future Delta travel."
+        }
+      ],
+      "travel_benefits": {
+        "lounge_access": {
+          "centurion": false,
+          "priority_pass": false,
+          "delta_skyclub": false,
+          "other": "None"
+        },
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Free Checked Bag",
+            "description": "First checked bag free for you and up to 8 companions on Delta flights, saving up to $35-$315 per round trip."
+          },
+          {
+            "name": "Priority Boarding",
+            "description": "Zone 5 priority boarding on Delta flights for you and up to 8 companions."
+          },
+          {
+            "name": "In-Flight Discount",
+            "description": "20% statement credit on eligible Delta in-flight purchases (food, alcoholic beverages, headsets)."
+          },
+          {
+            "name": "15% Off Award Travel",
+            "description": "15% off when using miles to book Award Travel on Delta flights through delta.com and the Fly Delta app."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": true,
+        "trip_cancellation": false,
+        "purchase_protection": false,
+        "extended_warranty": false,
+        "baggage_insurance": true,
+        "notes": "Trip delay insurance requires delay >12 hours. Baggage insurance covers up to $1,250 for carry-on and $500 for checked bags."
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.dailydrop.com/credit-cards/delta-skymiles-gold-american-express-card",
+          "notes": "Current offer, rewards rate, benefits, offer history"
+        },
+        {
+          "url": "https://upgradedpoints.com/credit-cards/reviews/gold-delta-skymiles-credit-card-american-express/",
+          "notes": "Annual fee, foreign transaction fee, benefits details"
+        }
+      ],
+      "confidence": 0.92,
+      "notes": "No Delta Sky Club access. No MQD earning on card spend. Annual fee goes from $0 intro to $150 after year 1. Delta SkyMiles never expire."
+    },
+    {
+      "card_id": "amex-delta-platinum",
+      "name": "Delta SkyMiles® Platinum American Express Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 350,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good to Excellent",
+      "welcome_offer": {
+        "spending_requirement": 3000,
+        "time_period_months": 6,
+        "bonus_points": 90000,
+        "description": "Earn up to 90,000 Bonus Miles after you spend $3,000 in eligible purchases on your new Card in your first 6 months of Card Membership. Welcome offers vary and you may not be eligible.",
+        "free_nights": null,
+        "point_program": "Delta SkyMiles"
+      },
+      "earning_rates": [
+        {
+          "category": "Delta purchases",
+          "rate": 3,
+          "notes": "Per $1 on Delta purchases"
+        },
+        {
+          "category": "Hotels",
+          "rate": 3,
+          "notes": "On eligible hotel purchases"
+        },
+        {
+          "category": "Restaurants",
+          "rate": 2,
+          "notes": "Worldwide, including takeout and delivery in the U.S."
+        },
+        {
+          "category": "U.S. Supermarkets",
+          "rate": 2,
+          "notes": null
+        },
+        {
+          "category": "Other",
+          "rate": 1,
+          "notes": null
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Resy Credit",
+          "amount": 120,
+          "frequency": "Annual",
+          "description": "Up to $10 per month ($120/year) in statement credits at U.S. Resy restaurants."
+        },
+        {
+          "name": "Rideshare Credit",
+          "amount": 120,
+          "frequency": "Annual",
+          "description": "Up to $10 per month ($120/year) on U.S. rideshare purchases with select providers."
+        },
+        {
+          "name": "Global Entry/TSA PreCheck",
+          "amount": 100,
+          "frequency": "Every 4 years",
+          "description": "Up to $120 statement credit for Global Entry or up to $85 for TSA PreCheck every 4 years."
+        }
+      ],
+      "travel_benefits": {
+        "lounge_access": {
+          "centurion": false,
+          "priority_pass": false,
+          "delta_skyclub": false,
+          "other": "Complimentary upgrade list after Medallion Members and Reserve Card Members when holding an eligible ticket on Delta."
+        },
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Companion Certificate",
+            "description": "Annual companion certificate valid for a Main Cabin round-trip flight to select destinations after renewal. Taxes/fees of $22-$250 apply."
+          },
+          {
+            "name": "MQD Headstart",
+            "description": "$2,500 Medallion Qualification Dollars each Medallion Qualification Year to help reach status."
+          },
+          {
+            "name": "MQD Boost",
+            "description": "Earn $1 MQD for each $20 in purchases on the card."
+          },
+          {
+            "name": "Free Checked Bag",
+            "description": "First checked bag free for you and up to 8 companions on Delta flights."
+          },
+          {
+            "name": "Priority Boarding",
+            "description": "Zone 5 priority boarding on Delta flights."
+          },
+          {
+            "name": "15% Off Award Travel",
+            "description": "15% off when using miles to book Award Travel on Delta flights."
+          },
+          {
+            "name": "Clear Discount",
+            "description": "Discount on Clear+ membership based on SkyMiles status."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": true,
+        "trip_cancellation": false,
+        "purchase_protection": true,
+        "extended_warranty": true,
+        "baggage_insurance": true,
+        "notes": "Trip delay requires delay >12 hours. Includes trip cancellation/interruption coverage."
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.dailydrop.com/credit-cards/delta-skymiles-platinum-american-express-card",
+          "notes": "Current offer, earning rates, benefits, offer history, annual credits"
+        },
+        {
+          "url": "https://upgradedpoints.com/credit-cards/reviews/gold-delta-skymiles-credit-card-american-express/",
+          "notes": "Card comparison and benefit details"
+        }
+      ],
+      "confidence": 0.93,
+      "notes": "No Delta Sky Club lounge access (unlike Reserve). The card accelerates MQD earnings for status. Annual companion certificate can easily offset the annual fee."
+    },
+    {
+      "card_id": "amex-delta-reserve",
+      "name": "Delta SkyMiles® Reserve American Express Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 650,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Excellent",
+      "welcome_offer": {
+        "spending_requirement": 5000,
+        "time_period_months": 6,
+        "bonus_points": 100000,
+        "description": "Earn up to 100,000 Bonus Miles after you spend $5,000 in eligible purchases on your new Card in your first 6 months of Card Membership. Welcome offers vary and you may not be eligible.",
+        "free_nights": null,
+        "point_program": "Delta SkyMiles"
+      },
+      "earning_rates": [
+        {
+          "category": "Delta purchases",
+          "rate": 3,
+          "notes": "Per $1 on Delta purchases"
+        },
+        {
+          "category": "Other",
+          "rate": 1,
+          "notes": null
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Resy Credit",
+          "amount": 240,
+          "frequency": "Annual",
+          "description": "Up to $20 per month ($240/year) in statement credits at U.S. Resy restaurants."
+        },
+        {
+          "name": "Rideshare Credit",
+          "amount": 120,
+          "frequency": "Annual",
+          "description": "Up to $10 per month ($120/year) on U.S. rideshare purchases."
+        },
+        {
+          "name": "Global Entry/TSA PreCheck",
+          "amount": 120,
+          "frequency": "Every 4 years",
+          "description": "Up to $120 statement credit for Global Entry or up to $85 for TSA PreCheck every 4-4.5 years."
+        }
+      ],
+      "travel_benefits": {
+        "lounge_access": {
+          "centurion": true,
+          "delta_skyclub": true,
+          "priority_pass": false,
+          "other": "15 visits per year to Delta Sky Club when flying Delta; unlimited visits after spending $75,000 in a calendar year. Also receives complimentary access to The Centurion Lounge and Escape Lounges when flying Delta. 4 One-Time Guest Passes per Medallion Year."
+        },
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Companion Certificate",
+            "description": "Annual companion certificate valid for a First Class, Delta Comfort+, or Main Cabin round-trip flight to select destinations after renewal. Taxes/fees of $22-$250 apply."
+          },
+          {
+            "name": "MQD Headstart",
+            "description": "$2,500 Medallion Qualification Dollars each Medallion Qualification Year."
+          },
+          {
+            "name": "MQD Boost",
+            "description": "Earn $1 MQD for each $10 in purchases on the card (stronger than Platinum tier)."
+          },
+          {
+            "name": "Free Checked Bag",
+            "description": "First checked bag free for you and up to 8 companions on Delta flights."
+          },
+          {
+            "name": "Priority Boarding",
+            "description": "Zone 5 priority boarding on Delta flights."
+          },
+          {
+            "name": "15% Off Award Travel",
+            "description": "15% off when using miles to book Award Travel on Delta flights."
+          },
+          {
+            "name": "Upgrade Priority",
+            "description": "Upgrade priority over others with the same Medallion tier, product, and fare experience."
+          },
+          {
+            "name": "Clear Discount",
+            "description": "Discount on Clear+ membership based on SkyMiles status."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": true,
+        "trip_cancellation": true,
+        "purchase_protection": true,
+        "extended_warranty": true,
+        "baggage_insurance": true,
+        "notes": "Strong travel protections including trip cancellation/interruption. Trip delay requires delay >12 hours."
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.dailydrop.com/credit-cards/delta-skymiles-reserve-american-express-card",
+          "notes": "Current offer, lounge access details, earning rates, offer history, annual credits"
+        },
+        {
+          "url": "https://upgradedpoints.com/credit-cards/reviews/delta-reserve-credit-card-american-express/welcome-offer-history/",
+          "notes": "Offer history and MQD headstart details"
+        }
+      ],
+      "confidence": 0.94,
+      "notes": "Delta Sky Club access: 15 visits/year when flying Delta, unlimited after $75K spend. Also gets Centurion Lounge access when flying Delta. Companion cert valid for First Class, Comfort+, or Main Cabin (domestic/Caribbean/Central America). MQD Headstart + MQD Boost makes this the best card for status seekers."
+    },
+    {
+      "card_id": "amex-hilton-aspire",
+      "name": "Hilton Honors American Express Aspire Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 550,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Excellent",
+      "welcome_offer": {
+        "spending_requirement": 6000,
+        "time_period_months": 6,
+        "bonus_points": 175000,
+        "description": "Earn 175,000 Hilton Honors Bonus Points after spending $6,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
+        "free_nights": null,
+        "point_program": "Hilton Honors"
+      },
+      "earning_rates": [
+        {
+          "category": "hotel_hilton",
+          "rate": 14,
+          "notes": "Hilton Honors Bonus Points per dollar at hotels and resorts within the Hilton portfolio"
+        },
+        {
+          "category": "airline",
+          "rate": 7,
+          "notes": "Flights booked directly with the airline or through Amex Travel"
+        },
+        {
+          "category": "restaurant",
+          "rate": 7,
+          "notes": "U.S. restaurants, including takeout and delivery"
+        },
+        {
+          "category": "car_rental",
+          "rate": 7,
+          "notes": "Car rentals booked directly with select car rental companies"
+        },
+        {
+          "category": "default",
+          "rate": 3,
+          "notes": "All other eligible purchases"
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Hilton Resort Credit",
+          "amount": 400,
+          "frequency": "semi-annually",
+          "description": "Up to $200 statement credit per half-year for eligible purchases made directly with participating Hilton resorts ($400 total annually)"
+        },
+        {
+          "name": "Airline Fee Credit",
+          "amount": 200,
+          "frequency": "annually",
+          "description": "Up to $200 ($50 per quarter) statement credit for eligible flight purchases booked directly with airlines or through Amex Travel"
+        },
+        {
+          "name": "CLEAR Plus Credit",
+          "amount": 209,
+          "frequency": "annually",
+          "description": "Up to $209 statement credit for CLEAR Plus membership"
+        },
+        {
+          "name": "Free Night Reward",
+          "amount": null,
+          "frequency": "annually",
+          "description": "One free night reward every year on card renewal; second free night after $30,000 spend; third free night after $60,000 spend in a calendar year"
+        }
+      ],
+      "travel_benefits": {
+        "lounge_access": {
+          "priority_pass": false,
+          "centurion": false,
+          "other": "Complimentary Amazon Room Access at select Hiltons; other lounge benefits through Premium Lodging events"
+        },
+        "hotel_status": [
+          {
+            "program": "Hilton Honors",
+            "tier": "Diamond",
+            "method": "Automatic for as long as card is open"
+          }
+        ],
+        "other_benefits": [
+          {
+            "name": "National Emerald Club Executive Status",
+            "description": "Car rental status with National Car Rental (enrollment required)"
+          },
+          {
+            "name": "Space-Access Room Upgrades",
+            "description": "Space-available room upgrades on each stay for Diamond members"
+          },
+          {
+            "name": "Complimentary Breakfast",
+            "description": "Complimentary breakfast or daily food-and-beverage credit at U.S. properties"
+          },
+          {
+            "name": "Fifth Night Free",
+            "description": "Fifth night free on reward stays (all Honors members)"
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": true,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://thepointsguy.com/credit-cards/hilton-honors-amex-current-offers/",
+          "notes": "Current welcome offers and earnings rates, April 2026"
+        },
+        {
+          "url": "https://onemileatatime.com/deals/hilton-amex-card-bonus/",
+          "notes": "Detailed benefits overview including $400 resort credit, $200 airline credit, CLEAR+ credit, and free night rewards"
+        },
+        {
+          "url": "https://global.americanexpress.com/card-benefits/view-all/hilton-aspire",
+          "notes": "Official Amex benefits page"
+        },
+        {
+          "url": "https://upgradedpoints.com/credit-cards/reviews/hilton-honors-american-express-aspire-card/benefits/",
+          "notes": "Travel protections and rental insurance details"
+        }
+      ],
+      "confidence": "high",
+      "notes": "The Hilton Aspire is the premium Hilton co-branded card offering automatic Diamond status (top-tier). The $550 annual fee is offset by up to $809 in annual credits ($400 resort + $200 airline + $209 CLEAR+). No Priority Pass lounge access but offers premium on-property benefits. The free night rewards earned at $30K and $60K spend are valuable at high-end properties. Offer ends April 15, 2026."
+    },
+    {
+      "card_id": "amex-hilton-honors-business",
+      "name": "Hilton Honors American Express Business Card",
+      "issuer": "American Express",
+      "network": "American Express",
+      "annual_fee": 195,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Excellent",
+      "welcome_offer": {
+        "spending_requirement": 8000,
+        "time_period_months": 6,
+        "bonus_points": 175000,
+        "description": "Earn 175,000 Hilton Honors Bonus Points plus a Free Night Reward after you spend $8,000 in purchases on the Hilton Honors Business Card in the first six months of Card Membership. Offer ends 4/15/2026.",
+        "free_nights": 1,
+        "point_program": "Hilton Honors"
+      },
+      "earning_rates": [
+        {
+          "category": "Hilton hotels and resorts",
+          "rate": 12,
+          "notes": "Earned on eligible purchases made directly with hotels and resorts within the Hilton portfolio"
+        },
+        {
+          "category": "All other purchases",
+          "rate": 5,
+          "notes": "First $100,000 in purchases each calendar year, then 3X thereafter"
+        },
+        {
+          "category": "All other purchases (above $100K)",
+          "rate": 3,
+          "notes": "After $100,000 annual cap on 5X category"
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Hilton Property Credit",
+          "amount": 240,
+          "frequency": "annual",
+          "description": "Up to $60 in statement credits each quarter for purchases made directly with a property in the Hilton portfolio"
+        }
+      ],
+      "travel_benefits": {
+        "hotel_status": [
+          "Hilton Honors Gold status (automatic)",
+          "Hilton Honors Diamond status upgrade upon spending $40,000 in a calendar year"
+        ],
+        "other_benefits": [
+          "National Car Rental Emerald Club Executive status",
+          "Complimentary airport lounge access (10 visits per year - removed in 2024 overhaul)"
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.nerdwallet.com/business/credit-cards/reviews/hilton-honors-american-express-business",
+          "notes": "NerdWallet 2026 review with annual fee, earning rates, benefits, and welcome offer details"
+        },
+        {
+          "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+          "notes": "Hilton Honors credit cards official page with current welcome offer of 175,000 points + free night"
+        },
+        {
+          "url": "https://global.americanexpress.com/card-benefits/view-all/hilton-business",
+          "notes": "Amex official benefits page with earning rates and status information"
+        }
+      ],
+      "confidence": "high",
+      "notes": "Card underwent major overhaul in March 2024: annual fee increased from $95 to $195, lounge access and free night earning via spending thresholds were removed, but $60/quarter Hilton credits and 5X on non-Hilton purchases were added. Hilton Gold status remains automatic. Offer ends 4/15/2026."
+    },
+    {
+      "card_id": "amex-hilton-honors",
+      "name": "Hilton Honors American Express Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 0,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good",
+      "welcome_offer": {
+        "spending_requirement": 2000,
+        "time_period_months": 6,
+        "bonus_points": 70000,
+        "description": "Earn 70,000 Hilton Honors Bonus Points plus a Free Night Reward after spending $2,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
+        "free_nights": 1,
+        "point_program": "Hilton Honors"
+      },
+      "earning_rates": [
+        {
+          "category": "hotel_hilton",
+          "rate": 7,
+          "notes": "Hilton Honors Bonus Points per dollar at hotels and resorts within the Hilton portfolio"
+        },
+        {
+          "category": "restaurant",
+          "rate": 5,
+          "notes": "U.S. restaurants"
+        },
+        {
+          "category": "grocery",
+          "rate": 5,
+          "notes": "U.S. supermarkets"
+        },
+        {
+          "category": "gas",
+          "rate": 5,
+          "notes": "U.S. gas stations"
+        },
+        {
+          "category": "default",
+          "rate": 3,
+          "notes": "All other eligible purchases"
+        }
+      ],
+      "annual_credits": [],
+      "travel_benefits": {
+        "lounge_access": {
+          "priority_pass": false,
+          "centurion": false,
+          "other": null
+        },
+        "hotel_status": [
+          {
+            "program": "Hilton Honors",
+            "tier": "Silver",
+            "method": "Automatic for as long as card is open"
+          },
+          {
+            "program": "Hilton Honors",
+            "tier": "Gold",
+            "method": "Earned by spending $20,000 on eligible purchases in a calendar year (valid through end of next calendar year)"
+          }
+        ],
+        "other_benefits": [
+          {
+            "name": "Fifth Night Free",
+            "description": "Fifth night free on reward stays (all Honors members)"
+          },
+          {
+            "name": "No Foreign Transaction Fees",
+            "description": "No fees on purchases made outside the United States"
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://thepointsguy.com/credit-cards/hilton-honors-amex-current-offers/",
+          "notes": "Current welcome offer 70K points + Free Night after $2K spend in 6 months, ends 4/15/26"
+        },
+        {
+          "url": "https://onemileatatime.com/deals/hilton-amex-card-bonus/",
+          "notes": "Earning rates and status benefits including Silver automatic and Gold with $20K spend"
+        },
+        {
+          "url": "https://www.nerdwallet.com/credit-cards/news/hilton-new-welcome-offer-march-2026",
+          "notes": "New limited-time offer details confirmed from March 2026 update"
+        }
+      ],
+      "confidence": "high",
+      "notes": "The no-annual-fee Hilton card is a solid entry-level hotel credit card. The new limited-time welcome offer adds a Free Night Reward (up to 250,000 points) alongside the 70K bonus points. No Priority Pass or travel protections beyond basic purchase/extended warranty. Gold status at $20K annual spend is a reasonable goal for moderate spenders. Foreign transaction fee is $0, making it useful for international travel despite being a no-AF card."
+    },
+    {
+      "card_id": "amex-hilton-surpass",
+      "name": "Hilton Honors American Express Surpass Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 150,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good",
+      "welcome_offer": {
+        "spending_requirement": 3000,
+        "time_period_months": 6,
+        "bonus_points": 130000,
+        "description": "Earn 130,000 Hilton Honors Bonus Points plus a Free Night Reward after spending $3,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
+        "free_nights": 1,
+        "point_program": "Hilton Honors"
+      },
+      "earning_rates": [
+        {
+          "category": "hotel_hilton",
+          "rate": 12,
+          "notes": "Hilton Honors Bonus Points per dollar at hotels and resorts within the Hilton portfolio"
+        },
+        {
+          "category": "gas",
+          "rate": 6,
+          "notes": "U.S. gas stations"
+        },
+        {
+          "category": "grocery",
+          "rate": 6,
+          "notes": "U.S. supermarkets"
+        },
+        {
+          "category": "restaurant",
+          "rate": 6,
+          "notes": "U.S. restaurants"
+        },
+        {
+          "category": "online_retail",
+          "rate": 4,
+          "notes": "U.S. online retail purchases"
+        },
+        {
+          "category": "default",
+          "rate": 3,
+          "notes": "All other eligible purchases"
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Hilton Credits",
+          "amount": 200,
+          "frequency": "quarterly",
+          "description": "Up to $50 statement credit each quarter for eligible purchases made directly with a property in the Hilton portfolio ($200 total annually)"
+        },
+        {
+          "name": "Free Night Reward (spending)",
+          "amount": null,
+          "frequency": "annually",
+          "description": "One free night reward after spending $15,000 on eligible purchases in a calendar year"
+        }
+      ],
+      "travel_benefits": {
+        "lounge_access": {
+          "priority_pass": false,
+          "centurion": false,
+          "other": null
+        },
+        "hotel_status": [
+          {
+            "program": "Hilton Honors",
+            "tier": "Gold",
+            "method": "Automatic for as long as the card is open"
+          },
+          {
+            "program": "Hilton Honors",
+            "tier": "Diamond",
+            "method": "Earned by spending $40,000 on eligible purchases in a calendar year (valid through end of next calendar year)"
+          }
+        ],
+        "other_benefits": [
+          {
+            "name": "National Emerald Club Executive Status",
+            "description": "Car rental status with National Car Rental (enrollment required)"
+          },
+          {
+            "name": "Fifth Night Free",
+            "description": "Fifth night free on reward stays (all Honors members)"
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": true,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://thepointsguy.com/credit-cards/hilton-honors-amex-current-offers/",
+          "notes": "130K points + Free Night after $3K spend in 6 months, ends 4/15/26; earning rates 12x/6x/4x/3x"
+        },
+        {
+          "url": "https://www.nerdwallet.com/credit-cards/news/hilton-new-welcome-offer-march-2026",
+          "notes": "Confirmed 130K + 1FN offer per US Credit Card Guide 2026.2 update, offer ends 4/15/26"
+        },
+        {
+          "url": "https://onemileatatime.com/deals/hilton-amex-card-bonus/",
+          "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold→Diamond path at $40K, National status"
+        }
+      ],
+      "confidence": "high",
+      "notes": "The mid-tier Hilton Surpass card at $150 AF offers strong value with 12x at Hiltons and path to Diamond status. The $200 annual Hilton credits (4x $50 quarters) effectively offset most of the annual fee. The limited-time welcome offer adds a Free Night Reward on top of the 130K points — this is the first time a complimentary free night has been attached to this offer. Spending $15K earns a second free night. Diamond status at $40K spend unlocks space-available upgrades and executive lounge access. Offer ends April 15, 2026."
+    },
+    {
+      "card_id": "amex-marriott-bonvoy-amex",
+      "name": "Marriott Bonvoy American Express Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 250,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good",
+      "welcome_offer": {
+        "spending_requirement": 5000,
+        "time_period_months": 6,
+        "bonus_points": 175000,
+        "description": "Earn 175,000 Marriott Bonvoy Bonus Points after spending $5,000 on eligible purchases within the first 6 months of card membership. Offer ends 5/13/26.",
+        "free_nights": null,
+        "point_program": "Marriott Bonvoy"
+      },
+      "earning_rates": [
+        {
+          "category": "hotel_marriott",
+          "rate": 6,
+          "notes": "Marriott Bonvoy points per dollar at hotels participating in Marriott Bonvoy (includes base member rate of 10x plus 6x from card = up to 18.5x total with Gold Elite bonus)"
+        },
+        {
+          "category": "restaurant",
+          "rate": 4,
+          "notes": "Restaurants worldwide (first $15,000 in combined restaurant and U.S. supermarket purchases per calendar year; then 2x)"
+        },
+        {
+          "category": "grocery",
+          "rate": 4,
+          "notes": "U.S. supermarkets (first $15,000 in combined restaurant and U.S. supermarket purchases per calendar year; then 2x)"
+        },
+        {
+          "category": "default",
+          "rate": 2,
+          "notes": "All other eligible purchases"
+        }
+      ],
+      "annual_credits": [],
+      "travel_benefits": {
+        "lounge_access": {
+          "priority_pass": false,
+          "centurion": false,
+          "other": null
+        },
+        "hotel_status": [
+          {
+            "program": "Marriott Bonvoy",
+            "tier": "Gold Elite",
+            "method": "Automatic for as long as the card is open"
+          }
+        ],
+        "other_benefits": [
+          {
+            "name": "15 Elite Night Credits",
+            "description": "Receive 15 elite qualifying night credits each calendar year toward Marriott Bonvoy Elite status (can be stacked with other Marriott cards)"
+          },
+          {
+            "name": "1,000 Bonus Points per Stay",
+            "description": "Earn 1,000 bonus Marriott Bonvoy points for every paid eligible stay booked directly with Marriott"
+          },
+          {
+            "name": "Free Night Award (Spending-Based)",
+            "description": "Earn 1 Free Night Award (up to 50,000 points) after spending $15,000 on eligible purchases in a calendar year; can be topped up with up to 25,000 additional points"
+          },
+          {
+            "name": "Premium In-Room Internet",
+            "description": "Complimentary in-room premium internet access at Marriott Bonvoy properties"
+          },
+          {
+            "name": "No Foreign Transaction Fees",
+            "description": "No fees on purchases made outside the United States"
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": true,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://thepointsguy.com/credit-cards/reviews/marriott-bonvoy-bevy-american-express-card-review/",
+          "notes": "Detailed review: $250 AF, 175K bonus after $5K/6 months, Gold Elite, 15 elite nights, earning 6x/4x/2x, secondary rental insurance, trip delay after 12 hours"
+        },
+        {
+          "url": "https://thepointsguy.com/credit-cards/eligibility-chart-marriott-bonvoy-cards/",
+          "notes": "Eligibility chart confirms Bonvoy Bevy as currently available Amex Marriott card (the original $95 Marriott Bonvoy Amex is no longer open to new applicants)"
+        },
+        {
+          "url": "https://www.marriott.com/credit-cards/marriott-bonvoy-bevy-american-express-card.mi",
+          "notes": "Official Marriott page: 175K points offer, $250 AF, Gold Elite, 6x Marriott, 4x restaurants/supermarkets (cap $15K), 2x other, 15 elite nights"
+        }
+      ],
+      "confidence": "high",
+      "notes": "Note: The original Marriott Bonvoy American Express Card (formerly Starwood Preferred Guest Amex, $95 AF) is no longer open to new applicants. This profile covers the Marriott Bonvoy Bevy Amex ($250 AF, current offer 175K points after $5K/6mo, ends 5/13/26). The Bevy sits awkwardly at $250 AF with no complimentary annual free night — the similar annual-fee Marriott Boundless from Chase ($95 AF) includes an annual free night by default. The $15K spending requirement for a 50K-point free night is steep. Best value is from the automatic Gold Elite status and 15 elite night credits that stack with other Marriott cards for fast-tracking to Platinum (50 nights). No Priority Pass, no FHR/THC eligibility."
+    },
+    {
+      "card_id": "amex-marriott-brilliant",
+      "name": "Marriott Bonvoy Brilliant® American Express® Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 650,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Excellent",
+      "welcome_offer": {
+        "spending_requirement": 6000,
+        "time_period_months": 6,
+        "bonus_points": 200000,
+        "description": "Earn 200,000 Marriott Bonvoy bonus points after you use your new Card to make $6,000 in purchases within the first 6 months of Card Membership. Offer Ends 5/13/2026.",
+        "free_nights": null,
+        "point_program": "Marriott Bonvoy"
+      },
+      "earning_rates": [
+        {
+          "category": "Marriott hotels",
+          "rate": 6,
+          "notes": "6x per $1 on eligible purchases at hotels participating in Marriott Bonvoy. Combined with 10x base member bonus = up to 16x total for Platinum Elite members."
+        },
+        {
+          "category": "Restaurants worldwide",
+          "rate": 3,
+          "notes": null
+        },
+        {
+          "category": "Flights",
+          "rate": 3,
+          "notes": "Booked directly with airlines"
+        },
+        {
+          "category": "Other",
+          "rate": 2,
+          "notes": null
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Brilliant Dining Credit",
+          "amount": 300,
+          "frequency": "Annual",
+          "description": "Up to $300 per year (up to $25 per month) in statement credits for eligible purchases at restaurants worldwide."
+        },
+        {
+          "name": "Marriott Property Credit",
+          "amount": 100,
+          "frequency": "Per stay",
+          "description": "Up to $100 property credit for qualifying charges at The Ritz-Carlton or St. Regis when booking direct for a two-night minimum stay using the card."
+        }
+      ],
+      "travel_benefits": {
+        "lounge_access": {
+          "centurion": false,
+          "priority_pass": true,
+          "delta_skyclub": false,
+          "other": "Priority Pass Select membership with unlimited visits to 1,200+ airport lounges worldwide."
+        },
+        "hotel_status": [
+          {
+            "program": "Marriott Bonvoy",
+            "tier": "Platinum Elite",
+            "description": "Automatic Platinum Elite status with the card. Includes room upgrades (including suites when available), late checkout, welcome gift, and 50% bonus on base points."
+          }
+        ],
+        "other_benefits": [
+          {
+            "name": "Annual Free Night Award",
+            "description": "One Free Night Award each year after card renewal month, valid for one night at or under 85,000 Marriott Bonvoy points at participating hotels."
+          },
+          {
+            "name": "Brilliant Earned Choice Award",
+            "description": "After spending $60,000 on eligible purchases in a calendar year, choose one benefit (e.g., additional free night, suite upgrade award, etc.)."
+          },
+          {
+            "name": "25 Elite Night Credits",
+            "description": "25 Elite Night Credits each calendar year toward Marriott Bonvoy Elite status."
+          },
+          {
+            "name": "Global Entry/TSA PreCheck Credit",
+            "description": "Up to $120 every 4 years for Global Entry or up to $85 for TSA PreCheck every 4.5 years."
+          },
+          {
+            "name": "The Hotel Collection",
+            "description": "$100 hotel credit on qualifying charges plus room upgrade when available for 2+ night stays via Amex Travel."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": true
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": true,
+        "trip_cancellation": true,
+        "purchase_protection": true,
+        "extended_warranty": true,
+        "baggage_insurance": true,
+        "notes": "Trip cancellation/interruption coverage when round-trip is purchased entirely with the card. Strong all-around travel protections."
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.dailydrop.com/credit-cards/marriott-bonvoy-brilliant-american-express-card",
+          "notes": "Current 200K offer, earning rates, Platinum Elite status, annual credits, offer history"
+        },
+        {
+          "url": "https://upgradedpoints.com/credit-cards/reviews/marriott-bonvoy-brilliant-card/welcome-offer-history/",
+          "notes": "200K offer details and offer history confirmation"
+        }
+      ],
+      "confidence": 0.95,
+      "notes": "The $300 dining credit (up to $25/month) and $100 property credit at Ritz-Carlton/St. Regis help offset the $650 annual fee. Annual Free Night Award up to 85K points can be very valuable at high-end Marriott properties. 25 Elite Night Credits stack with actual stays. Points transfer to 39 airline partners at 3:1 ratio."
+    },
+    {
+      "card_id": "amex-blue-business-cash",
+      "name": "The American Express Blue Business Cash™ Card",
+      "issuer": "American Express",
+      "network": "American Express",
+      "annual_fee": 0,
+      "foreign_transaction_fee": 2.7,
+      "credit_required": "Good to Excellent",
+      "welcome_offer": {
+        "spending_requirement": 3000,
+        "time_period_months": 3,
+        "bonus_points": 250,
+        "description": "Earn a $250 statement credit after you make $3,000 in purchases on your Card in your first 3 months.",
+        "free_nights": null,
+        "point_program": "Statement Credit"
+      },
+      "earning_rates": [
+        {
+          "category": "All Purchases",
+          "rate": 2,
+          "notes": "2% cash back on all eligible purchases on up to $50,000 per calendar year, then 1%."
+        },
+        {
+          "category": "Default",
+          "rate": 1,
+          "notes": "1% cash back after the $50,000 annual threshold is reached."
+        }
+      ],
+      "annual_credits": [],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Expanded Buying Power",
+            "description": "The ability to spend above your credit limit to help handle large business purchases."
+          },
+          {
+            "name": "Global Assist Hotline",
+            "description": "Emergency coordination and assistance services when traveling more than 100 miles from home."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": false,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.americanexpress.com/en-us/business/credit-cards/blue-business-cash/",
+          "notes": "Official Amex business page."
+        },
+        {
+          "url": "https://upgradedpoints.com/credit-cards/reviews/amex-blue-business-cash-card/welcome-offer-history/",
+          "notes": "Upgraded Points offer history review, Mar 2026."
+        }
+      ],
+      "confidence": "High",
+      "notes": "A staple business card for small businesses. Note that it does charge a foreign transaction fee (2.7%), making it less ideal for international business travel."
+    },
+    {
+      "card_id": "amex-platinum",
+      "name": "The Platinum Card® from American Express",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 895,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Excellent",
+      "welcome_offer": {
+        "spending_requirement": 12000,
+        "time_period_months": 6,
+        "bonus_points": 80000,
+        "description": "Earn 80,000 Membership Rewards® Points after you spend $12,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
+        "free_nights": null,
+        "point_program": "Membership Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "Flights",
+          "rate": 5,
+          "notes": "Booked directly with airlines or through American Express Travel, on up to $500,000 per calendar year."
+        },
+        {
+          "category": "Hotels",
+          "rate": 5,
+          "notes": "On prepaid hotels booked through American Express Travel."
+        },
+        {
+          "category": "Other",
+          "rate": 1,
+          "notes": null
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Hotel Credit",
+          "amount": 600,
+          "frequency": "Annual",
+          "description": "Up to $300 semi-annually on prepaid Fine Hotels + Resorts or The Hotel Collection bookings via Amex Travel."
+        },
+        {
+          "name": "Uber Cash",
+          "amount": 200,
+          "frequency": "Monthly",
+          "description": "$15 monthly plus $20 in December for Uber rides or Uber Eats in the US."
+        },
+        {
+          "name": "Uber One Credit",
+          "amount": 120,
+          "frequency": "Annual",
+          "description": "Statement credits for auto-renewing Uber One membership."
+        },
+        {
+          "name": "Airline Fee Credit",
+          "amount": 200,
+          "frequency": "Annual",
+          "description": "Statement credits for incidental fees at one selected qualifying airline."
+        },
+        {
+          "name": "CLEAR+ Credit",
+          "amount": 209,
+          "frequency": "Annual",
+          "description": "Covers cost of CLEAR+ membership."
+        },
+        {
+          "name": "Resy Credit",
+          "amount": 400,
+          "frequency": "Quarterly",
+          "description": "$100 quarterly for eligible purchases with Resy."
+        },
+        {
+          "name": "Digital Entertainment Credit",
+          "amount": 300,
+          "frequency": "Monthly",
+          "description": "$25 monthly for eligible subscriptions (Disney+, Hulu, etc.)."
+        },
+        {
+          "name": "lululemon Credit",
+          "amount": 300,
+          "frequency": "Quarterly",
+          "description": "$75 quarterly for eligible purchases at lululemon."
+        },
+        {
+          "name": "Walmart+ Credit",
+          "amount": 155,
+          "frequency": "Monthly",
+          "description": "$12.95 monthly credit for Walmart+ membership."
+        },
+        {
+          "name": "Oura Ring Credit",
+          "amount": 200,
+          "frequency": "Annual",
+          "description": "Credit for Oura Ring purchase at ouraring.com."
+        },
+        {
+          "name": "Equinox Credit",
+          "amount": 300,
+          "frequency": "Annual",
+          "description": "Credit for Equinox+ or club membership."
+        }
+      ],
+      "travel_benefits": {
+        "lounge_access": {
+          "centurion": true,
+          "priority_pass": true,
+          "other": "Delta Sky Club (10 visits/yr), Escape, Plaza Premium, Airspace, Lufthansa, Universal."
+        },
+        "hotel_status": [
+          {
+            "program": "Marriott Bonvoy",
+            "tier": "Gold Elite"
+          },
+          {
+            "program": "Hilton Honors",
+            "tier": "Gold"
+          }
+        ],
+        "other_benefits": [
+          {
+            "name": "Fine Hotels + Resorts",
+            "description": "Average $550 value in perks like 4pm late checkout, breakfast, room upgrade."
+          },
+          {
+            "name": "Global Dining Access by Resy",
+            "description": "Special access to sought-after restaurants."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": true,
+        "thc_eligible": true
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": true,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
+          "notes": "Official Amex Page"
+        },
+        {
+          "url": "https://upgradedpoints.com/travel/amex-travel-insurance-benefits-guide/",
+          "notes": "Insurance Details"
+        }
+      ],
+      "confidence": 0.95,
+      "notes": "Annual fee increased to $895 in 2026. Welcome offer and credits updated for April 2026."
+    },
+    {
+      "card_id": "boa-alaska-ascent",
+      "name": "Alaska Airlines Atmos™ Ascent Visa Signature® Card",
+      "issuer": "Bank of America",
+      "network": "Visa",
+      "annual_fee": 95,
+      "foreign_transaction_fee": "None",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 4,
+        "time_period_months": 4,
+        "bonus_points": 8000099,
+        "description": "80,000 bonus points + $99 Companion Fare (intro)",
+        "point_program": "Bank of America"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "Alaska/Hawaiian Airlines purchases",
+            "rate": "3X points per dollar spent"
+          },
+          {
+            "category": "Everyday purchases",
+            "rate": "1X point per dollar spent"
+          }
+        ]
+      },
+      "annual_credits": [
+        {
+          "name": "Annual Companion Fare",
+          "amount": 122,
+          "frequency": "annual",
+          "description": "From $122 ($99 plus taxes and fees from $23) every year on your card anniversary"
+        },
+        {
+          "name": "Free Checked Bag",
+          "amount": null,
+          "frequency": "annual",
+          "description": "For you and up to 6 guests on the same Alaska/Hawaiian flight"
+        },
+        {
+          "name": "Lounge Discount",
+          "amount": 100,
+          "frequency": "annual",
+          "description": "$100 off an Alaska Lounge+ membership"
+        }
+      ],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/",
+        "https://thepointsguy.com/credit-cards/atmos-ascent-vs-atmos-summit/"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "boa-alaska-summit",
+      "name": "Alaska Airlines Atmos™ Summit Visa Infinite® Card",
+      "issuer": "Bank of America",
+      "network": "Visa",
+      "annual_fee": 395,
+      "foreign_transaction_fee": "None",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 5,
+        "time_period_months": 4,
+        "bonus_points": 100000,
+        "description": "TBD (Estimate 100,000 points)",
+        "point_program": "Bank of America"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "Alaska/Hawaiian Airlines purchases",
+            "rate": "4X points per dollar spent"
+          },
+          {
+            "category": "Travel & Dining",
+            "rate": "2X points per dollar spent"
+          },
+          {
+            "category": "Everyday purchases",
+            "rate": "1X point per dollar spent"
+          }
+        ]
+      },
+      "annual_credits": [
+        {
+          "name": "8 Alaska Lounge Passes",
+          "amount": null,
+          "frequency": "annual",
+          "description": "Provided annually (2 per quarter)"
+        },
+        {
+          "name": "Elite Status Boost",
+          "amount": null,
+          "frequency": "annual",
+          "description": "1 status point per $2 spent"
+        },
+        {
+          "name": "10,000 Anniversary Points",
+          "amount": 100,
+          "frequency": "annual",
+          "description": "Awarded every year on cardholder anniversary"
+        },
+        {
+          "name": "Global Companion Award",
+          "amount": null,
+          "frequency": "annual",
+          "description": "Earned with $30k spend; valid for international/partner flights"
+        }
+      ],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://www.alaskaair.com/atmosrewards/",
+        "https://thepointsguy.com/credit-cards/atmos-rewards-summit-tpg-awards-2026/"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "boa-customized-cash-rewards",
+      "name": "Bank of America® Customized Cash Rewards Credit Card",
+      "issuer": "Bank of America",
+      "network": "Visa",
+      "annual_fee": 0,
+      "foreign_transaction_fee": "3%",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 1,
+        "time_period_months": 3,
+        "bonus_points": 200,
+        "description": "$200 Online Cash Rewards Bonus",
+        "point_program": "Bank of America"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "Choice Category (up to $2,500/qtr)",
+            "rate": "3% cash back (6% for first year intro offer for some)"
+          },
+          {
+            "category": "Grocery Stores/Wholesale Clubs",
+            "rate": "2% cash back"
+          },
+          {
+            "category": "All other purchases",
+            "rate": "1% cash back"
+          }
+        ],
+        "choice_category_options": [
+          "Gas & EV Charging",
+          "Online Shopping (including Cable, Internet, Phone, Streaming)",
+          "Dining",
+          "Travel",
+          "Drugstores",
+          "Home Improvement & Furnishings"
+        ]
+      },
+      "annual_credits": [
+        {
+          "name": "Preferred Rewards Bonus",
+          "amount": 0,
+          "frequency": "annual",
+          "description": "Bank of America Preferred Rewards members can earn a 25%-75% bonus on all cash rewards"
+        }
+      ],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
+        "https://www.bankrate.com/credit-cards/issuers/bank-of-america/"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "boa-travel-rewards",
+      "name": "Bank of America® Travel Rewards Credit Card",
+      "issuer": "Bank of America",
+      "network": "Visa",
+      "annual_fee": 0,
+      "foreign_transaction_fee": "None",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 1,
+        "time_period_months": 3,
+        "bonus_points": 25000,
+        "description": "25,000 Online Bonus Points",
+        "point_program": "Bank of America"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "All Purchases",
+            "rate": "1.5X points per dollar spent"
+          },
+          {
+            "category": "Travel & Dining (via BofA Travel Center)",
+            "rate": "3X points per dollar spent (note: some sources say 2x, verify current)"
+          }
+        ]
+      },
+      "annual_credits": [
+        {
+          "name": "Preferred Rewards Bonus",
+          "amount": 0,
+          "frequency": "annual",
+          "description": "Preferred Rewards members can earn a 25%-75% bonus on all points"
+        }
+      ],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://www.bankofamerica.com/credit-cards/products/travel-rewards-credit-card/",
+        "https://upgradedpoints.com/credit-cards/reviews/bank-of-america-travel-rewards-credit-card/"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "capital-one-quicksilver",
+      "name": "Capital One Quicksilver Cash Rewards Credit Card",
+      "issuer": "Capital One",
+      "network": "Visa",
+      "annual_fee": 0,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Excellent",
+      "welcome_offer": {
+        "spending_requirement": 500,
+        "time_period_months": 3,
+        "bonus_points": null,
+        "description": "Earn a $200 cash bonus once you spend $500 on purchases within the first three months of opening an account",
+        "free_nights": null,
+        "point_program": "Capital One Cash Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "All purchases",
+          "rate": 1.5,
+          "notes": "Unlimited 1.5% cash back on every purchase, every day"
+        },
+        {
+          "category": "Hotels, rental cars, vacation rentals, activities via Capital One Travel",
+          "rate": 5,
+          "notes": null
+        },
+        {
+          "category": "Capital One Entertainment purchases",
+          "rate": 5,
+          "notes": null
+        }
+      ],
+      "annual_credits": [],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          "Hertz Five Star status - skip rental counter at select locations and enjoy wider vehicle selection",
+          "Complimentary concierge service 24/7",
+          "Travel accident insurance",
+          "24-hour travel assistance with emergency card replacement and cash advance"
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Travel Accident Insurance",
+        "trip_delay": false,
+        "purchase_protection": "Up to $1,000 per loss, $25,000 per year for damage/theft within 90 days",
+        "extended_warranty": "Extends manufacturer warranty on eligible items"
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.capitalone.com/learn-grow/money-management/quicksilver-card-benefits/",
+          "notes": "Capital One official benefits page with full details on earning rates, travel benefits, and protections"
+        },
+        {
+          "url": "https://www.capitalone.com/credit-cards/quicksilver/",
+          "notes": "Capital One official card page with $200 welcome bonus and 1.5% cash back offer"
+        },
+        {
+          "url": "https://wallethub.com/d/capital-one-quicksilver-76c",
+          "notes": "WalletHub card overview confirming $200 bonus and no annual fee"
+        }
+      ],
+      "confidence": "high",
+      "notes": "Simple flat-rate cash back card with no annual fee and no foreign transaction fees. The 5% on Capital One Travel and Entertainment makes it more valuable for travelers who use those portals. No minimum to redeem, rewards don't expire. Extended warranty and purchase protection included. Best for those who want simple, consistent earning with no annual fee."
+    },
+    {
+      "card_id": "capital-one-savor",
+      "name": "Capital One Savor Rewards Credit Card",
+      "issuer": "Capital One",
+      "network": "Visa",
+      "annual_fee": 0,
+      "foreign_transaction_fee": "None",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 500,
+        "time_period_months": 3,
+        "bonus_points": 200,
+        "description": "$200 Cash Bonus",
+        "point_program": "Capital One"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "Dining, Entertainment, Popular Streaming Services",
+            "rate": "3% cash back"
+          },
+          {
+            "category": "Grocery Stores",
+            "rate": "3% cash back (excludes superstores like Walmart/Target)"
+          },
+          {
+            "category": "Capital One Entertainment (Concerts/Sports)",
+            "rate": "8% cash back"
+          },
+          {
+            "category": "Capital One Travel (Hotels/Rental Cars)",
+            "rate": "5% cash back"
+          },
+          {
+            "category": "All other purchases",
+            "rate": "1% cash back"
+          }
+        ]
+      },
+      "annual_credits": [
+        {
+          "name": "No Foreign Transaction Fees",
+          "amount": 0,
+          "frequency": "annual",
+          "description": "Standard across all Capital One cards"
+        },
+        {
+          "name": "Uber One Benefit",
+          "amount": 0,
+          "frequency": "annual",
+          "description": "Complimentary Uber One membership (ended late 2024; need to verify 2026 status)"
+        }
+      ],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Primary",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://www.capitalone.com/credit-cards/savor/",
+        "https://www.nerdwallet.com/credit-cards/learn/benefits-capital-one-savor-savor-one"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "capital-one-savorone",
+      "name": "Capital One SavorOne Cash Rewards Credit Card",
+      "issuer": "Capital One",
+      "network": "Visa",
+      "annual_fee": 39,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good to Excellent",
+      "welcome_offer": {
+        "spending_requirement": 500,
+        "time_period_months": 3,
+        "bonus_points": null,
+        "description": "Earn a one-time $200 cash bonus once you spend $500 on purchases within the first 3 months from account opening",
+        "free_nights": null,
+        "point_program": "Capital One Cash Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "Grocery stores",
+          "rate": 3,
+          "notes": "Excludes superstores like Walmart and Target. Includes supermarkets, meat lockers, freezer, dairy product stores and specialty markets."
+        },
+        {
+          "category": "Dining",
+          "rate": 3,
+          "notes": "Restaurants, cafes, bars, lounges, fast-food chains and bakeries"
+        },
+        {
+          "category": "Entertainment",
+          "rate": 3,
+          "notes": "Movie theaters, sports events, theatrical promoters, amusement parks, tourist attractions, aquariums, zoos, dance halls, record stores, pool halls, bowling alleys. Excludes golf courses and streaming services."
+        },
+        {
+          "category": "Popular streaming services",
+          "rate": 3,
+          "notes": null
+        },
+        {
+          "category": "All other purchases",
+          "rate": 1,
+          "notes": null
+        }
+      ],
+      "annual_credits": [],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          "No foreign transaction fees",
+          "Access to Capital One Shopping and Capital One Entertainment"
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.capitalone.com/credit-cards/savorone/",
+          "notes": "Capital One official SavorOne page confirming 3% on dining, groceries, entertainment, streaming and $39 annual fee"
+        },
+        {
+          "url": "https://www.bankrate.com/credit-cards/news/capital-one-savorone-changes/",
+          "notes": "Bankrate article on SavorOne $39 annual fee update (August 2025)"
+        },
+        {
+          "url": "https://www.capitalone.com/learn-grow/money-management/everything-about-savorone/",
+          "notes": "Capital One SavorOne overview confirming earning categories and $200 welcome bonus"
+        }
+      ],
+      "confidence": "medium",
+      "notes": "Capital One rebranded SavorOne with a $39 annual fee (previously $0). The $200 welcome bonus offer remains the same. Some Redditors and reviewers have noted the $39 annual fee makes the card less attractive versus the $0 Savor card or other 3% dining cards. Note: There is also a new Capital One Savor card ($0 annual fee) which may be a replacement or alternative to this product."
+    },
+    {
+      "card_id": "capital-one-spark-miles",
+      "name": "Capital One Spark Miles for Business",
+      "issuer": "Capital One",
+      "network": "Visa",
+      "annual_fee": 95,
+      "foreign_transaction_fee": "None",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 4,
+        "time_period_months": 3,
+        "bonus_points": 50000,
+        "description": "50,000 miles",
+        "point_program": "Capital One"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "All Purchases",
+            "rate": "2X miles per dollar spent"
+          },
+          {
+            "category": "Hotels & Rental Cars (via Capital One Travel)",
+            "rate": "5X miles per dollar spent"
+          }
+        ]
+      },
+      "annual_credits": [
+        {
+          "name": "Global Entry or TSA PreCheck Credit",
+          "amount": 100,
+          "frequency": "annual",
+          "description": "Up to $100 every 4 years"
+        },
+        {
+          "name": "Lounge Access",
+          "amount": 0,
+          "frequency": "annual",
+          "description": "Two complimentary visits per year to Capital One Lounges or Plaza Premium Lounges"
+        },
+        {
+          "name": "Free Employee Cards",
+          "amount": null,
+          "frequency": "annual",
+          "description": "Available for business cardholders"
+        }
+      ],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://www.capitalone.com/small-business/credit-cards/spark-miles/",
+        "https://onemileatatime.com/reviews/credit-cards/capital-one/capital-one-spark-miles-business-card/"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "capital-one-venture",
+      "name": "Capital One Venture Rewards Credit Card",
+      "issuer": "Capital One",
+      "network": "Visa",
+      "annual_fee": 95,
+      "foreign_transaction_fee": "None",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 4,
+        "time_period_months": 3,
+        "bonus_points": 75000250,
+        "description": "75,000 miles + $250 Capital One Travel credit",
+        "point_program": "Capital One"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "Everyday Purchases",
+            "rate": "2X miles per dollar spent"
+          },
+          {
+            "category": "Hotels & Rental Cars (via Capital One Travel)",
+            "rate": "5X miles per dollar spent"
+          }
+        ]
+      },
+      "annual_credits": [
+        {
+          "name": "$250 Travel Credit",
+          "amount": 250,
+          "frequency": "annual",
+          "description": "One-time credit for Capital One Travel (introductory offer)"
+        },
+        {
+          "name": "Global Entry or TSA PreCheck Credit",
+          "amount": 100,
+          "frequency": "annual",
+          "description": "Up to $100 every 4 years"
+        },
+        {
+          "name": "Lounge Access",
+          "amount": 0,
+          "frequency": "annual",
+          "description": "Two complimentary visits per year to Capital One Lounges or Plaza Premium Lounges (Note: Lounges access was being removed in late 2024 for this card; currently limited)"
+        }
+      ],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Primary",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://www.capitalone.com/credit-cards/venture/",
+        "https://thepointsguy.com/credit-cards/capital-one-venture-current-offer/"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "capital-one-venture-x",
+      "name": "Capital One Venture X Rewards Credit Card",
+      "issuer": "Capital One",
+      "network": "Visa",
+      "annual_fee": 395,
+      "foreign_transaction_fee": "None",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 4,
+        "time_period_months": 3,
+        "bonus_points": 75000,
+        "description": "75,000 miles",
+        "point_program": "Capital One"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "Everyday Purchases",
+            "rate": "2X miles per dollar spent"
+          },
+          {
+            "category": "Hotels & Rental Cars (via Capital One Travel)",
+            "rate": "10X miles per dollar spent"
+          },
+          {
+            "category": "Flights (via Capital One Travel)",
+            "rate": "5X miles per dollar spent"
+          }
+        ]
+      },
+      "annual_credits": [
+        {
+          "name": "$300 Annual Travel Credit",
+          "amount": 300,
+          "frequency": "annual",
+          "description": "For bookings made through Capital One Travel"
+        },
+        {
+          "name": "10,000 Anniversary Miles",
+          "amount": 100,
+          "frequency": "annual",
+          "description": "Awarded every year on cardholder anniversary"
+        },
+        {
+          "name": "Global Entry or TSA PreCheck Credit",
+          "amount": 100,
+          "frequency": "annual",
+          "description": "Up to $100 every 4 years"
+        },
+        {
+          "name": "Lounge Access",
+          "amount": null,
+          "frequency": "annual",
+          "description": "Unlimited access to Capital One Lounges, Priority Pass, and Plaza Premium Lounges"
+        },
+        {
+          "name": "Authorized Users",
+          "amount": null,
+          "frequency": "annual",
+          "description": "Add up to 4 authorized users for free, each with lounge access"
+        }
+      ],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Primary",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://www.capitalone.com/credit-cards/venture-x/",
+        "https://thepointsguy.com/credit-cards/capital-one-venture-x/"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "chase-freedom-flex",
+      "name": "Chase Freedom Flex®",
+      "issuer": "Chase",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "foreign_transaction_fee": 3,
+      "credit_required": "Good",
+      "welcome_offer": {
+        "spending_requirement": 500,
+        "time_period_months": 3,
+        "bonus_points": 20000,
+        "description": "Earn a $200 (20,000 pts) bonus after you spend $500 on purchases in the first 3 months from account opening.",
+        "free_nights": null,
+        "point_program": "Ultimate Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "Rotating",
+          "rate": 5,
+          "notes": "On up to $1,500 in combined purchases in bonus categories each quarter you activate."
+        },
+        {
+          "category": "Chase Travel",
+          "rate": 5,
+          "notes": "On travel purchased through Chase Travel."
+        },
+        {
+          "category": "Dining",
+          "rate": 3,
+          "notes": "Including takeout and eligible delivery services."
+        },
+        {
+          "category": "Drugstores",
+          "rate": 3,
+          "notes": "On all drugstore purchases."
+        },
+        {
+          "category": "Default",
+          "rate": 1,
+          "notes": "On all other purchases."
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "DoorDash Promo",
+          "amount": 40,
+          "frequency": "Quarterly",
+          "description": "Up to $10 off quarterly on DoorDash non-restaurant orders."
+        }
+      ],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Mastercard World Elite",
+            "description": "Includes cell phone protection and other Mastercard-specific benefits."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": false,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
+          "notes": "Official Chase page Apr 2026."
+        },
+        {
+          "url": "https://www.bankrate.com/credit-cards/cash-back/chase-freedom-flex-q2-2026-categories/",
+          "notes": "Bankrate review Mar 2026."
+        }
+      ],
+      "confidence": "High",
+      "notes": "Excellent no-annual-fee card for rotating 5% categories. Note the 3% foreign transaction fee."
+    },
+    {
+      "card_id": "chase-freedom-rise",
+      "name": "Chase Freedom Rise Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 0,
+      "foreign_transaction_fee": 3,
+      "credit_required": "New to Credit / Limited Credit",
+      "welcome_offer": {
+        "spending_requirement": 0,
+        "time_period_months": 3,
+        "bonus_points": null,
+        "description": "Earn a $25 statement credit after signing up for automatic payments within the first 3 months from account opening and remaining enrolled for at least 90 consecutive days",
+        "free_nights": null,
+        "point_program": "Chase Ultimate Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "All purchases",
+          "rate": 1.5,
+          "notes": "Unlimited 1.5% cash back on every purchase"
+        }
+      ],
+      "annual_credits": [],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          "Complimentary 6 months of DashPass (DoorDash and Caviar) for first-time activators between 02/01/2025 and 12/31/2027",
+          "$10 off quarterly on DoorDash non-restaurant orders (when DashPass is active)"
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/rise",
+          "notes": "Chase official card page with $25 statement credit welcome offer and 1.5% cash back"
+        },
+        {
+          "url": "https://www.forbes.com/advisor/credit-cards/reviews/chase-freedom-rise/",
+          "notes": "Forbes review confirming $25 welcome offer and $0 annual fee"
+        },
+        {
+          "url": "https://www.nerdwallet.com/credit-cards/reviews/chase-freedom-rise",
+          "notes": "NerdWallet review of Chase Freedom Rise as a credit-building card"
+        }
+      ],
+      "confidence": "high",
+      "notes": "Designed as a credit-builder card for those with no credit or limited credit history. Applicants with a Chase checking/savings account with $250+ balance may have improved approval odds. 3% foreign transaction fee applies. DashPass and DoorDash quarterly discount are valuable added benefits for a starter card. Note: Older versions of this card offered $150-200 sign-up bonuses - current offer is $25 statement credit for autopay sign-up. The $25 offer may be considered a low welcome bonus for a Chase card."
+    },
+    {
+      "card_id": "chase-freedom-unlimited",
+      "name": "Chase Freedom Unlimited®",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 0,
+      "foreign_transaction_fee": 3,
+      "credit_required": "Good",
+      "welcome_offer": {
+        "spending_requirement": 500,
+        "time_period_months": 3,
+        "bonus_points": 25000,
+        "description": "Earn a $250 (25,000 pts) bonus after you spend $500 on purchases in the first 3 months from account opening.",
+        "free_nights": null,
+        "point_program": "Ultimate Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "Chase Travel",
+          "rate": 5,
+          "notes": "On travel purchased through Chase Travel."
+        },
+        {
+          "category": "Dining",
+          "rate": 3,
+          "notes": "Including takeout and eligible delivery services."
+        },
+        {
+          "category": "Drugstores",
+          "rate": 3,
+          "notes": "On all drugstore purchases."
+        },
+        {
+          "category": "Default",
+          "rate": 1.5,
+          "notes": "On all other purchases."
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "DoorDash Promo",
+          "amount": 40,
+          "frequency": "Quarterly",
+          "description": "Up to $10 off quarterly on DoorDash non-restaurant orders."
+        }
+      ],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Unlimited 1.5% Base",
+            "description": "One of the best flat-rate cash back cards."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": false,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
+          "notes": "Official Chase page Apr 2026."
+        },
+        {
+          "url": "https://www.nerdwallet.com/credit-cards/news/chase-freedom-unlimited-changes-welcome-bonus-march-2026",
+          "notes": "NerdWallet review Mar 2026."
+        }
+      ],
+      "confidence": "High",
+      "notes": "Excellent flat-rate cash back card, especially when paired with CSP/CSR to transfer points to partners."
+    },
+    {
+      "card_id": "chase-ink-business-cash",
+      "name": "Chase Ink Business Cash® Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 0,
+      "foreign_transaction_fee": 3,
+      "credit_required": "Excellent",
+      "welcome_offer": {
+        "spending_requirement": 6000,
+        "time_period_months": 3,
+        "bonus_cash": 750,
+        "description": "$750 cash back after you spend $6,000 on purchases in the first 3 months after account opening.",
+        "point_program": "Chase Ultimate Rewards (cash back option)"
+      },
+      "earning_rates": [
+        {
+          "category": "Office Supply Stores",
+          "rate": 5,
+          "notes": "On the first $25,000 spent in combined purchases each account anniversary year."
+        },
+        {
+          "category": "Internet, Cable & Phone Services",
+          "rate": 5,
+          "notes": "On the first $25,000 spent in combined purchases each account anniversary year."
+        },
+        {
+          "category": "Gas Stations",
+          "rate": 2,
+          "notes": "On the first $25,000 spent in combined purchases each account anniversary year (combined with restaurants)."
+        },
+        {
+          "category": "Restaurants",
+          "rate": 2,
+          "notes": "On the first $25,000 spent in combined purchases each account anniversary year (combined with gas stations)."
+        },
+        {
+          "category": "Lyft Rides",
+          "rate": 5,
+          "notes": "Through September 30, 2027."
+        },
+        {
+          "category": "Default",
+          "rate": 1,
+          "notes": "Unlimited 1% cash back on all other purchases."
+        }
+      ],
+      "annual_credits": [],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Employee Cards",
+            "description": "Add employee cards at no additional cost."
+          },
+          {
+            "name": "Auto Credit Limit Increase",
+            "description": "Automatically considered for a credit line increase every 6 months."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Primary",
+        "trip_delay": true,
+        "trip_cancellation": true,
+        "purchase_protection": true,
+        "extended_warranty": true,
+        "baggage_delay": true,
+        "lost_luggage": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/business-credit-cards/ink/cash",
+          "notes": "Official Chase page confirms $750 bonus after $6K spend in 3 months, 5% at office supply and internet/cable/phone, 2% at gas and restaurants."
+        },
+        {
+          "url": "https://thepointsguy.com/credit-cards/chase-ink-card-showdown/",
+          "notes": "TPG confirms $0 AF, $750 bonus, 5%/2%/1% earning, 3% FTf, primary rental, trip cancellation."
+        },
+        {
+          "url": "https://www.dailydrop.com/credit-cards/ink-business-cash-credit-card",
+          "notes": "Daily Drop review confirms current offer."
+        },
+        {
+          "url": "https://www.cardratings.com/credit-card/chase-ink-cash-business-card",
+          "notes": "Confirms 3% foreign transaction fee."
+        }
+      ],
+      "confidence": "High",
+      "notes": "No annual fee but charges 3% foreign transaction fee. Rewards can be combined with other Ultimate Rewards cards (Sapphire Preferred, etc.) for better redemption value. No FHR/THC eligibility. Bonus eligibility restricted for those who have had other no-annual-fee Chase business cards."
+    },
+    {
+      "card_id": "chase-ink-business-preferred",
+      "name": "Chase Ink Business Preferred® Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 95,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Excellent",
+      "welcome_offer": {
+        "spending_requirement": 8000,
+        "time_period_months": 3,
+        "bonus_points": 100000,
+        "description": "100,000 bonus points after you spend $8,000 on purchases in the first 3 months from account opening.",
+        "free_nights": null,
+        "point_program": "Chase Ultimate Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "Travel",
+          "rate": 3,
+          "notes": "On the first $150,000 spent in combined purchases each account anniversary year."
+        },
+        {
+          "category": "Advertising (Social Media & Search Engines)",
+          "rate": 3,
+          "notes": "On the first $150,000 spent in combined purchases each account anniversary year."
+        },
+        {
+          "category": "Shipping",
+          "rate": 3,
+          "notes": "On the first $150,000 spent in combined purchases each account anniversary year."
+        },
+        {
+          "category": "Internet, Cable & Phone Services",
+          "rate": 3,
+          "notes": "On the first $150,000 spent in combined purchases each account anniversary year."
+        },
+        {
+          "category": "Lyft Rides",
+          "rate": 5,
+          "notes": "Through September 30, 2027."
+        },
+        {
+          "category": "Default",
+          "rate": 1,
+          "notes": "On all other purchases."
+        }
+      ],
+      "annual_credits": [],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Points Transfer",
+            "description": "Transfer points to leading airline and hotel frequent travel programs at 1:1 ratio."
+          },
+          {
+            "name": "Chase Travel",
+            "description": "Book travel through Chase Travel for competitive rates and premium benefits."
+          },
+          {
+            "name": "DashPass",
+            "description": "Complimentary access to DoorDash DashPass (activation required)."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Primary",
+        "trip_delay": true,
+        "trip_cancellation": true,
+        "purchase_protection": true,
+        "extended_warranty": true,
+        "baggage_delay": true,
+        "lost_luggage": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.dailydrop.com/credit-cards/ink-business-preferred-credit-card",
+          "notes": "Daily Drop review, confirmed current offer of 100K points after $8K spend in 3 months (active since Dec 2025)."
+        },
+        {
+          "url": "https://thepointsguy.com/credit-cards/chase-ink-card-showdown/",
+          "notes": "TPG overview of Ink card family, confirms $95 AF, 3x on travel/advertising/shipping/cable/phone, primary rental, trip cancellation."
+        },
+        {
+          "url": "https://upgradedpoints.com/credit-cards/reviews/chase-ink-business-preferred-credit-card/benefits/",
+          "notes": "Benefit breakdown confirming $5K trip cancellation, primary rental, purchase protection."
+        },
+        {
+          "url": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
+          "notes": "Official Chase page confirms no foreign transaction fees and travel/purchase coverage."
+        }
+      ],
+      "confidence": "High",
+      "notes": "Only Ink card that earns full Ultimate Rewards points (transferable to airline/hotel partners). No FHR/THC eligibility. Bonus eligibility restricted for those who have had other Ink or Chase business cards. Current offer 100K points since Dec 2025."
+    },
+    {
+      "card_id": "chase-ink-business-unlimited",
+      "name": "Chase Ink Business Unlimited® Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 0,
+      "foreign_transaction_fee": 3,
+      "credit_required": "Excellent",
+      "welcome_offer": {
+        "spending_requirement": 6000,
+        "time_period_months": 3,
+        "bonus_cash": 750,
+        "description": "$750 cash back after you spend $6,000 on purchases in the first 3 months from account opening.",
+        "point_program": "Chase Ultimate Rewards (cash back option)"
+      },
+      "earning_rates": [
+        {
+          "category": "All Purchases (Flat)",
+          "rate": 1.5,
+          "notes": "Unlimited 1.5% cash back on every purchase for your business."
+        },
+        {
+          "category": "Lyft Rides",
+          "rate": 5,
+          "notes": "Through September 30, 2027."
+        }
+      ],
+      "annual_credits": [],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Intro APR",
+            "description": "0% intro APR for 12 months from account opening on purchases. After that, 16.74%–24.74% variable APR."
+          },
+          {
+            "name": "Employee Cards",
+            "description": "Add employee cards at no additional cost."
+          },
+          {
+            "name": "Auto Credit Limit Increase",
+            "description": "Automatically considered for a credit line increase every 6 months."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Primary",
+        "trip_delay": true,
+        "trip_cancellation": true,
+        "purchase_protection": true,
+        "extended_warranty": true,
+        "baggage_delay": true,
+        "lost_luggage": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/business-credit-cards/ink/unlimited",
+          "notes": "Official Chase page confirms $750 bonus after $6K spend in 3 months, 1.5% flat, 0% intro APR for 12 months."
+        },
+        {
+          "url": "https://thepointsguy.com/credit-cards/chase-ink-card-showdown/",
+          "notes": "TPG confirms $0 AF, $750 bonus, 1.5% flat, 3% FTf, primary rental, trip cancellation."
+        },
+        {
+          "url": "https://upgradedpoints.com/credit-cards/reviews/chase-ink-business-unlimited-credit-card/welcome-offer-history/",
+          "notes": "Welcome offer history confirms current $750 offer (since Nov 2025)."
+        },
+        {
+          "url": "https://www.nerdwallet.com/business/credit-cards/reviews/chase-ink-business-unlimited",
+          "notes": "Confirms 3% foreign transaction fee."
+        }
+      ],
+      "confidence": "High",
+      "notes": "No annual fee but charges 3% foreign transaction fee. Simple flat-rate earning makes it easy to maximize without category tracking. Rewards can be combined with other Ultimate Rewards cards. No FHR/THC eligibility. Bonus eligibility restricted for those who have had other no-annual-fee Chase business cards."
+    },
+    {
+      "card_id": "chase-sapphire-preferred",
+      "name": "Chase Sapphire Preferred® Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 95,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Excellent",
+      "welcome_offer": {
+        "spending_requirement": 5000,
+        "time_period_months": 3,
+        "bonus_points": 75000,
+        "description": "75,000 bonus points after you spend $5,000 on purchases in the first 3 months from account opening.",
+        "free_nights": null,
+        "point_program": "Ultimate Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "Chase Travel",
+          "rate": 5,
+          "notes": "On travel purchased through Chase Travel (hotels, car rentals, flights)."
+        },
+        {
+          "category": "Dining",
+          "rate": 3,
+          "notes": "Including takeout and eligible delivery services."
+        },
+        {
+          "category": "Online Grocery",
+          "rate": 3,
+          "notes": "Excludes Target, Walmart, and wholesale clubs."
+        },
+        {
+          "category": "Streaming",
+          "rate": 3,
+          "notes": "On select streaming services."
+        },
+        {
+          "category": "Other Travel",
+          "rate": 2,
+          "notes": "On all other travel purchases."
+        },
+        {
+          "category": "Default",
+          "rate": 1,
+          "notes": "On all other purchases."
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Chase Travel Hotel Credit",
+          "amount": 50,
+          "frequency": "Anniversary",
+          "description": "$50 annual credit on hotel stays purchased through Chase Travel."
+        }
+      ],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Anniversary Point Bonus",
+            "description": "10% of total spend in pts on each account anniversary."
+          },
+          {
+            "name": "Points Transfer",
+            "description": "Transfer points to leading airline and hotel frequent travel programs at 1 to 1 value."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": true
+      },
+      "insurance": {
+        "rental_insurance": "Primary",
+        "trip_delay": true,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+          "notes": "Official Chase page."
+        },
+        {
+          "url": "https://www.nerdwallet.com/travel/learn/how-to-get-the-most-from-the-chase-sapphire-preferred-card",
+          "notes": "NerdWallet review Apr 2026."
+        }
+      ],
+      "confidence": "High",
+      "notes": "Excellent mid-tier travel card with strong transfer partners and primary rental insurance."
+    },
+    {
+      "card_id": "chase-sapphire-reserve",
+      "name": "Chase Sapphire Reserve®",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 795,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Excellent",
+      "welcome_offer": {
+        "spending_requirement": 6000,
+        "time_period_months": 3,
+        "bonus_points": 125000,
+        "description": "Earn 125,000 bonus points after you spend $6,000 on purchases in the first 3 months from account opening.",
+        "free_nights": null,
+        "point_program": "Ultimate Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "Chase Travel",
+          "rate": 8,
+          "notes": "On all purchases through Chase Travel, including The Edit."
+        },
+        {
+          "category": "Flights Direct",
+          "rate": 4,
+          "notes": "On flights booked direct with airlines."
+        },
+        {
+          "category": "Hotels Direct",
+          "rate": 4,
+          "notes": "On hotels booked direct with hotel chains."
+        },
+        {
+          "category": "Dining",
+          "rate": 3,
+          "notes": "Worldwide dining, including takeout and delivery services."
+        },
+        {
+          "category": "Default",
+          "rate": 1,
+          "notes": "On all other purchases."
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Travel Credit",
+          "amount": 300,
+          "frequency": "Anniversary",
+          "description": "$300 in statement credits for travel purchases each account anniversary year."
+        },
+        {
+          "name": "The Edit Credit",
+          "amount": 500,
+          "frequency": "Calendar Year",
+          "description": "$250 credit from Jan-Jun and $250 from Jul-Dec for prepaid bookings with The Edit (2-night min)."
+        },
+        {
+          "name": "Dining Credit",
+          "amount": 300,
+          "frequency": "Calendar Year",
+          "description": "$150 credit from Jan-Jun and $150 from Jul-Dec for Sapphire Exclusive Tables on OpenTable."
+        },
+        {
+          "name": "Apple TV/Music",
+          "amount": 288,
+          "frequency": "Monthly",
+          "description": "Complimentary Apple TV and Apple Music subscriptions through 6/22/2027."
+        },
+        {
+          "name": "DoorDash Promo",
+          "amount": 300,
+          "frequency": "Monthly",
+          "description": "$25 monthly for DoorDash ($5 restaurant, $20 grocery/retail)."
+        },
+        {
+          "name": "StubHub Credits",
+          "amount": 300,
+          "frequency": "Calendar Year",
+          "description": "$150 credit from Jan-Jun and $150 from Jul-Dec for StubHub/viagogo."
+        },
+        {
+          "name": "Lyft Credits",
+          "amount": 120,
+          "frequency": "Monthly",
+          "description": "$10 monthly credit for Lyft rides."
+        },
+        {
+          "name": "Peloton Credits",
+          "amount": 120,
+          "frequency": "Monthly",
+          "description": "$10 monthly credit for Peloton memberships."
+        }
+      ],
+      "travel_benefits": {
+        "hotel_status": [
+          {
+            "program": "IHG One Rewards",
+            "tier": "Platinum Elite"
+          }
+        ],
+        "other_benefits": [
+          {
+            "name": "Priority Pass Select",
+            "description": "Complimentary Priority Pass Select Membership for lounge access."
+          },
+          {
+            "name": "Sapphire Lounge Network",
+            "description": "Access to Chase Sapphire Lounges by The Club."
+          },
+          {
+            "name": "Reserve Travel Designer",
+            "description": "Personalized service valued at up to $300 per trip."
+          },
+          {
+            "name": "Points Transfer",
+            "description": "1 to 1 value to leading airline and hotel partners."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": true,
+        "thc_eligible": true
+      },
+      "insurance": {
+        "rental_insurance": "Primary",
+        "trip_delay": true,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+          "notes": "Official Chase page Apr 2026."
+        },
+        {
+          "url": "https://roamingcactus.com/credit-cards/2026/4/1/chase-sapphire-reserve-review-2026",
+          "notes": "Review Apr 2026."
+        }
+      ],
+      "confidence": "High",
+      "notes": "Premium travel card with massive credits offsetting the high $795 annual fee. High confidence in 2026 updates."
+    },
+    {
+      "card_id": "chase-disney-inspire",
+      "name": "Disney Inspire Visa Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 149,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good to Excellent",
+      "welcome_offer": {
+        "spending_requirement": 1000,
+        "time_period_months": 3,
+        "bonus_points": null,
+        "description": "Earn a $300 Disney Gift Card upon approval and a $300 statement credit after spending $1,000 on purchases within the first three months from account opening. Total welcome value up to $600.",
+        "free_nights": null,
+        "point_program": "Disney Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "DisneyPlus.com, Hulu.com, ESPN+ purchases",
+          "rate": 10,
+          "notes": "Earned as Disney Rewards Dollars"
+        },
+        {
+          "category": "Gas stations",
+          "rate": 3,
+          "notes": "Earned as Disney Rewards Dollars"
+        },
+        {
+          "category": "Most Disney U.S. locations",
+          "rate": 3,
+          "notes": "Earned as Disney Rewards Dollars; includes Disney World, Disneyland, Disney Cruise Line, Aulani"
+        },
+        {
+          "category": "Grocery stores",
+          "rate": 2,
+          "notes": "Earned as Disney Rewards Dollars"
+        },
+        {
+          "category": "Restaurants",
+          "rate": 2,
+          "notes": "Earned as Disney Rewards Dollars"
+        },
+        {
+          "category": "All other purchases",
+          "rate": 1,
+          "notes": "Earned as Disney Rewards Dollars"
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Disney Streaming Credit",
+          "amount": 120,
+          "frequency": "annual",
+          "description": "$10 monthly statement credit for spending $10 or more on qualifying subscriptions or add-on purchases made directly at DisneyPlus.com, Hulu.com or ESPN+ (requires yearly activation). Up to $120 per year."
+        },
+        {
+          "name": "Disney Theme Park Tickets Credit",
+          "amount": 100,
+          "frequency": "per anniversary year",
+          "description": "$100 statement credit after spending $200 per anniversary year on Disney Theme Park Ticket purchases in the U.S."
+        },
+        {
+          "name": "Disney Resorts and Cruise Bonus",
+          "amount": null,
+          "frequency": "per anniversary year",
+          "description": "Earn 200 Disney Rewards Dollars after spending $2,000 per anniversary year on Disney Resorts in the U.S. and Disney Cruise Line bookings"
+        }
+      ],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          "No interest on eligible Disney vacation packages for 6 months",
+          "Character photo opportunities at Disneyland and Disney World",
+          "10% off select merchandise at Disney World and Disneyland",
+          "10% off select dining at Disney World and Disneyland",
+          "15% off select guided tours at Disney World and Disneyland",
+          "10% off select recreation experiences at Disney World and Disneyland",
+          "Special savings on Disney Cruise Line (digital photo packages, merchandise, island experience packages, onboard spa)",
+          "Savings at Aulani Resort (merchandise, snorkeling, activities)",
+          "VIP Broadway package for Aladdin or Lion King (premium seating, beverage, commemorative print)",
+          "10% off select Disney Store purchases"
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://thepointsguy.com/credit-cards/disney-inspire-visa-new-premium-card-benefits/",
+          "notes": "The Points Guy detailed review: $149 annual fee, $600 welcome bonus ($300 gift card + $300 statement credit), earning rates, and annual benefits"
+        },
+        {
+          "url": "https://www.chase.com/personal/credit-cards/disney-inspire",
+          "notes": "Chase official Disney Inspire page with earning rates, $100 park tickets credit, $10 monthly streaming credit, and 200 Disney Rewards Dollars annual bonus"
+        },
+        {
+          "url": "https://www.cnbc.com/select/new-disney-inspire-visa-card-launch-600-in-bonuses-420-in-perks/",
+          "notes": "CNBC on Disney Inspire launch: $600 welcome offer, $149 annual fee, $420 in annual perks"
+        }
+      ],
+      "confidence": "high",
+      "notes": "New premium Disney card launched February 2026 by Chase and Disney. Replaces/disrupts the previous Disney Premier Visa ($49 annual fee). The $600 welcome bonus ($300 Disney gift card upon approval + $300 statement credit after $1,000 spend) is the strongest Disney card bonus ever. The $149 annual fee is higher than the Disney Premier ($49) and Disney Visa ($0), but annual credits ($120 streaming + $100 park tickets = $220) largely offset it for frequent Disney travelers. The 3% at Disney locations and gas stations and 2% at grocery stores and restaurants provides solid everyday earning for Disney fans. Disney Rewards Dollars redeem 1:$1 on park tickets, resort stays, Disney store, movies at AMC, Disney Cruise Line, and airline purchases via Pay Yourself Back. Best for frequent Disney visitors who will maximize the annual credits."
+    },
+    {
+      "card_id": "chase-ihg-premier",
+      "name": "IHG One Rewards Premier Credit Card",
+      "issuer": "Chase",
+      "network": "Mastercard",
+      "annual_fee": 99,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good",
+      "welcome_offer": {
+        "spending_requirement": 3000,
+        "time_period_months": 3,
+        "bonus_points": 140000,
+        "description": "Earn 140,000 bonus points after you spend $3,000 on purchases in the first 3 months from account opening.",
+        "free_nights": null,
+        "point_program": "IHG One Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "IHG",
+          "rate": 10,
+          "notes": "Earn up to 26X total points when you stay at IHG (10x with card, up to 10x member, 6x Platinum)."
+        },
+        {
+          "category": "Travel",
+          "rate": 5,
+          "notes": "On travel purchases."
+        },
+        {
+          "category": "Dining",
+          "rate": 5,
+          "notes": "On dining purchases."
+        },
+        {
+          "category": "Gas",
+          "rate": 5,
+          "notes": "On gas station purchases."
+        },
+        {
+          "category": "Default",
+          "rate": 3,
+          "notes": "On all other purchases."
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Anniversary Free Night",
+          "amount": null,
+          "frequency": "Anniversary",
+          "description": "Free Night Award each anniversary (40,000 point cap, with option to top off)."
+        },
+        {
+          "name": "Spend Credit",
+          "amount": 100,
+          "frequency": "Calendar Year",
+          "description": "$100 statement credit after spending $20,000 each calendar year (plus 10k bonus pts)."
+        },
+        {
+          "name": "United TravelBank",
+          "amount": 50,
+          "frequency": "Calendar Year",
+          "description": "Up to $50 in United TravelBank Cash annually."
+        }
+      ],
+      "travel_benefits": {
+        "hotel_status": [
+          {
+            "program": "IHG One Rewards",
+            "tier": "Platinum Elite"
+          }
+        ],
+        "other_benefits": [
+          {
+            "name": "4th Night Free",
+            "description": "When you redeem points for a consecutive 4-night IHG hotel stay."
+          },
+          {
+            "name": "Global Entry/TSA PreCheck",
+            "description": "Up to $120 statement credit every 4 years."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": false,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier",
+          "notes": "Official Chase page Apr 2026."
+        },
+        {
+          "url": "https://www.dailydrop.com/credit-cards/ihg-rewards-premier-credit-card",
+          "notes": "Daily Drop review 2025."
+        }
+      ],
+      "confidence": "High",
+      "notes": "Excellent card for IHG loyalists. 4th Night Free and Anniversary FNA are major highlights."
+    },
+    {
+      "card_id": "chase-marriott-boundless",
+      "name": "Marriott Bonvoy Boundless® Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 95,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good",
+      "welcome_offer": {
+        "spending_requirement": 4000,
+        "time_period_months": 4,
+        "bonus_points": null,
+        "description": "Earn up to 4 Free Night Awards (35k pts each): 3 after $3,000 spend in 3 months, plus 1 after total $4,000 spend in 4 months. Plus $100 airline credit.",
+        "free_nights": 4,
+        "point_program": "Marriott Bonvoy"
+      },
+      "earning_rates": [
+        {
+          "category": "Marriott",
+          "rate": 6,
+          "notes": "At hotels participating in Marriott Bonvoy."
+        },
+        {
+          "category": "Grocery/Gas/Dining",
+          "rate": 3,
+          "notes": "On first $6,000 spent combined annually on grocery stores, gas stations, and dining."
+        },
+        {
+          "category": "Default",
+          "rate": 2,
+          "notes": "On all other purchases."
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Anniversary Free Night",
+          "amount": null,
+          "frequency": "Anniversary",
+          "description": "Free Night Award (up to 35,000 points) each account anniversary year."
+        },
+        {
+          "name": "Airline Credit",
+          "amount": 100,
+          "frequency": "Calendar Year",
+          "description": "Up to $100 in statement credits ($50 every 6 months) for airline purchases through 12/31/2026."
+        }
+      ],
+      "travel_benefits": {
+        "hotel_status": [
+          {
+            "program": "Marriott Bonvoy",
+            "tier": "Silver Elite"
+          }
+        ],
+        "other_benefits": [
+          {
+            "name": "15 Elite Night Credits",
+            "description": "Jump-start to next status level every calendar year."
+          },
+          {
+            "name": "Pathway to Gold",
+            "description": "Earn Gold Elite status by spending $35,000 on purchases each calendar year."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": true,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless",
+          "notes": "Official Chase page Apr 2026."
+        },
+        {
+          "url": "https://www.msn.com/en-us/travel/tips/new-marriott-boundless-card-welcome-bonus-offer-up-to-4-free-night-awards",
+          "notes": "News report Apr 2026."
+        }
+      ],
+      "confidence": "High",
+      "notes": "Solid hotel card for Marriott loyalists. Anniversary FNA easily offsets the $95 annual fee."
+    },
+    {
+      "card_id": "chase-united-quest",
+      "name": "United Quest Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 350,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good to Excellent",
+      "welcome_offer": {
+        "spending_requirement": 4000,
+        "time_period_months": 3,
+        "bonus_points": 90000,
+        "description": "Earn 90,000 bonus miles after you spend $4,000 on purchases in the first 3 months your account is open. Plus earn 3,000 PQP (Premier Qualifying Points) after spending $4,000. Additional 10,000 bonus miles if you add an authorized user in first 3 months.",
+        "free_nights": null,
+        "point_program": "United MileagePlus"
+      },
+      "earning_rates": [
+        {
+          "category": "United purchases (airline tickets, seat upgrades, Economy Plus, inflight food/beverages/Wi-Fi, United fees)",
+          "rate": 4,
+          "notes": "Earned on United purchases made directly with United"
+        },
+        {
+          "category": "Dining at restaurants (including takeout and eligible delivery services)",
+          "rate": 2,
+          "notes": null
+        },
+        {
+          "category": "Select streaming services",
+          "rate": 2,
+          "notes": null
+        },
+        {
+          "category": "Other travel",
+          "rate": 2,
+          "notes": "Excludes United purchases that qualify for 4 miles"
+        },
+        {
+          "category": "All other purchases",
+          "rate": 1,
+          "notes": null
+        },
+        {
+          "category": "Renowned Hotels and Resorts via Chase Travel",
+          "rate": 5,
+          "notes": "Prepaid hotel accommodations booked through Chase Travel with Renowned Hotels and Resorts"
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "United TravelBank Cash",
+          "amount": 200,
+          "frequency": "annual",
+          "description": "$200 annually in TravelBank cash for United- or United Express-operated flights"
+        },
+        {
+          "name": "Renowned Hotels and Resorts Credit",
+          "amount": 150,
+          "frequency": "annual",
+          "description": "Up to $150 in statement credits per anniversary year when booking prepaid stays through Renowned Hotels and Resorts program via Chase Travel"
+        }
+      ],
+      "travel_benefits": {
+        "hotel_status": [
+          "United Premier Silver status (complimentary)"
+        ],
+        "other_benefits": [
+          "2 free checked bags for you and one companion on same reservation on United-operated flights",
+          "10,000-mile discount on award flights each year after first cardmember anniversary",
+          "25% back on inflight purchases (food, beverages, Wi-Fi) as statement credit",
+          "Global Entry or TSA PreCheck credit up to $120 every 4 years",
+          "Primary rental car coverage (up to $60,000 for theft/collision damage)",
+          "Trip cancellation insurance (up to $1,500/person, $6,000/trip)",
+          "Trip delay insurance (up to $500 for expenses after 12-hour delay)",
+          "Delayed baggage insurance (up to $100/day for 3 days)",
+          "Complimentary DashPass membership for 1 year (activate by 12/31/2027)"
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Primary (up to $60,000)",
+        "trip_delay": true,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/travel-credit-cards/united/united-quest",
+          "notes": "Chase official United Quest page with 90,000 mile welcome bonus and earning rates"
+        },
+        {
+          "url": "https://www.nerdwallet.com/travel/learn/united-quest-card-underrated-reasons",
+          "notes": "NerdWallet article on United Quest benefits including $350 annual fee, $200 TravelBank credit, and 4X United earning"
+        },
+        {
+          "url": "https://thepointsguy.com/news/united-credit-card-refresh-2025/",
+          "notes": "The Points Guy on 2025 United card overhaul: annual fee increased from $250 to $350"
+        }
+      ],
+      "confidence": "high",
+      "notes": "Annual fee increased from $250 to $350 in March 2025. The $200 annual TravelBank credit significantly offsets the $350 annual fee for United flyers. The $150 Renowned Hotels credit and complimentary Premier Silver status add additional value. With 4X on United purchases and 2X on dining/streaming/other travel, frequent United travelers can earn substantial miles. The 10,000-mile award flight discount each year after the first anniversary is valuable for award bookings. PQP earning (1 per $20 spent, up to 18,000/year) helps toward Premier status. Note: The $0 annual fee United Gateway card may be better for those who don't fly United frequently."
+    },
+    {
+      "card_id": "chase-united-explorer",
+      "name": "United℠ Explorer Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 150,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good",
+      "welcome_offer": {
+        "spending_requirement": 3000,
+        "time_period_months": 3,
+        "bonus_points": 80000,
+        "description": "Earn 70,000 bonus miles after $3,000 spend in 3 months, plus 10,000 bonus miles after adding an AU in the first 3 months.",
+        "free_nights": null,
+        "point_program": "United MileagePlus"
+      },
+      "earning_rates": [
+        {
+          "category": "United Flights",
+          "rate": 9,
+          "notes": "6x member + 3x card for MileagePlus member's fare."
+        },
+        {
+          "category": "United Purchases",
+          "rate": 3,
+          "notes": "On all other United purchases."
+        },
+        {
+          "category": "Hotel Direct",
+          "rate": 2,
+          "notes": "On hotel stays when booked with the hotel."
+        },
+        {
+          "category": "Dining",
+          "rate": 2,
+          "notes": "On dining, including delivery services."
+        },
+        {
+          "category": "Default",
+          "rate": 1,
+          "notes": "On all other purchases."
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "United Travel Credit",
+          "amount": 100,
+          "frequency": "Calendar Year",
+          "description": "$100 TravelBank cash after spending $10,000."
+        },
+        {
+          "name": "United Hotels Credit",
+          "amount": 100,
+          "frequency": "Calendar Year",
+          "description": "Up to $100 annually on prepaid hotel stays via United Hotels."
+        },
+        {
+          "name": "Rideshare Credit",
+          "amount": 60,
+          "frequency": "Calendar Year",
+          "description": "Up to $60 in statement credits for rideshare purchases."
+        },
+        {
+          "name": "Avis/Budget Credit",
+          "amount": 50,
+          "frequency": "Calendar Year",
+          "description": "Up to $50 annually when booking through cars.united.com."
+        },
+        {
+          "name": "Instacart Credit",
+          "amount": 120,
+          "frequency": "Calendar Year",
+          "description": "Up to $120 annually for Instacart purchases."
+        },
+        {
+          "name": "JSX Credit",
+          "amount": 100,
+          "frequency": "Calendar Year",
+          "description": "Up to $100 annually for JSX flights."
+        }
+      ],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "United Club Passes",
+            "description": "2 one-time passes every account anniversary year."
+          },
+          {
+            "name": "Free 1st Checked Bag",
+            "description": "Primary cardmember and one companion save up to $160 per roundtrip."
+          },
+          {
+            "name": "Priority Boarding",
+            "description": "Board United-operated flights prior to general boarding."
+          },
+          {
+            "name": "Global Entry/TSA PreCheck",
+            "description": "Up to $120 statement credit every 4 years."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Primary",
+        "trip_delay": true,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/travel-credit-cards/united/united-explorer",
+          "notes": "Official Chase page Apr 2026."
+        },
+        {
+          "url": "https://thepointsguy.com/news/united-credit-card-refresh-2025/",
+          "notes": "TPG report on annual fee increase Mar 2025."
+        }
+      ],
+      "confidence": "High",
+      "notes": "Annual fee increased from $95 to $150 in 2025/2026. $0 intro fee still applies for new members."
+    },
+    {
+      "card_id": "citi-custom-cash",
+      "name": "Citi Custom Cash® Card",
+      "issuer": "Citi",
+      "network": "Visa",
+      "annual_fee": 0,
+      "foreign_transaction_fee": "3%",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 1,
+        "time_period_months": 3,
+        "bonus_points": 200,
+        "description": "$200 Cash Back",
+        "point_program": "Citi"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "Top Spend Category (up to $500/mo)",
+            "rate": "5% cash back"
+          },
+          {
+            "category": "All other purchases",
+            "rate": "1% cash back"
+          }
+        ],
+        "top_category_options": [
+          "Restaurants",
+          "Gas Stations",
+          "Grocery Stores",
+          "Select Travel",
+          "Select Transit",
+          "Select Streaming Services",
+          "Drugstores",
+          "Home Improvement Stores",
+          "Fitness Clubs",
+          "Live Entertainment"
+        ]
+      },
+      "annual_credits": [],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
+        "https://www.bankrate.com/credit-cards/reviews/citi-custom-cash-card/"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "citi-double-cash",
+      "name": "Citi Double Cash® Card",
+      "issuer": "Citi",
+      "network": "Visa",
+      "annual_fee": 0,
+      "foreign_transaction_fee": 3,
+      "credit_required": "Good",
+      "welcome_offer": {
+        "spending_requirement": 1500,
+        "time_period_months": 6,
+        "bonus_cash": 200,
+        "description": "$200 cash back after you spend $1,500 on purchases in the first 6 months of account opening. Delivered as 20,000 ThankYou® Points (equivalent to $200)."
+      },
+      "earning_rates": [
+        {
+          "category": "All Purchases (Buy)",
+          "rate": 1,
+          "notes": "1% cash back when you make a purchase."
+        },
+        {
+          "category": "All Purchases (Pay)",
+          "rate": 1,
+          "notes": "1% cash back when you pay off your balance. Total of 2% back per dollar spent."
+        },
+        {
+          "category": "Travel (Citi Travel Portal)",
+          "rate": 5,
+          "notes": "5% cash back on travel purchased through Citi TravelSM (promotion ended 12/31/25 - may have been extended, verify current)."
+        }
+      ],
+      "annual_credits": [],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Intro Balance Transfer APR",
+            "description": "0% intro APR for 18 months on balance transfers completed within 4 months of account opening. After that, 18.24% - 28.24% variable APR."
+          },
+          {
+            "name": "Citi Entertainment",
+            "description": "Access to Citi Entertainment for special event access."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": false,
+        "trip_delay": false,
+        "trip_cancellation": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+          "notes": "Official Citi page confirms $200 bonus after $1,500 spend in 6 months, 2% (1%+1%) on all purchases."
+        },
+        {
+          "url": "https://www.creditkarma.com/credit-cards/insights/citi-double-cash-card",
+          "notes": "Credit Karma review confirms $0 AF, $200 bonus for new cardholders (as of Mar 31 2026), 2% flat rate."
+        },
+        {
+          "url": "https://www.cnbc.com/select/citi-double-cash-card-welcome-bonus-offer/",
+          "notes": "CNBC confirms $200 cash back after $1,500 spend in first 6 months, 2% on every purchase."
+        },
+        {
+          "url": "https://upgradedpoints.com/news/citi-double-cash-card-200-welcome-bonus/",
+          "notes": "Confirms $200 welcome offer returned (Oct 2025)."
+        }
+      ],
+      "confidence": "High",
+      "notes": "Simple 2% flat cash back (1% when you buy + 1% when you pay). No annual fee but charges 3% foreign transaction fee. Cash back can be converted to Citi ThankYou points if paired with a ThankYou-earning Citi card (like Strata Premier). No travel protections. No FHR/THC eligibility. No category caps. The $200 welcome offer has historically come and gone; current as of early 2026."
+    },
+    {
+      "card_id": "citi-strata-elite",
+      "name": "Citi Strata Elite℠ Card",
+      "issuer": "Citi",
+      "network": "Visa",
+      "annual_fee": 595,
+      "foreign_transaction_fee": "None",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 5,
+        "time_period_months": 3,
+        "bonus_points": 75000,
+        "description": "75,000 ThankYou® Points",
+        "point_program": "Citi"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "Hotels, Rental Cars (via CitiTravel)",
+            "rate": "12X points per dollar spent"
+          },
+          {
+            "category": "Air Travel",
+            "rate": "5X points per dollar spent"
+          },
+          {
+            "category": "Everyday purchases",
+            "rate": "1.5X points per dollar spent"
+          }
+        ]
+      },
+      "annual_credits": [
+        {
+          "name": "$300 Annual Hotel Benefit",
+          "amount": 300,
+          "frequency": "annual",
+          "description": "Annual credit for hotel bookings made through CitiTravel"
+        },
+        {
+          "name": "Priority Pass™ Select Membership",
+          "amount": null,
+          "frequency": "annual",
+          "description": "Unlimited lounge access for cardholder and guests"
+        },
+        {
+          "name": "AA Admirals Club Passes",
+          "amount": null,
+          "frequency": "annual",
+          "description": "Four one-day passes for American Airlines lounges annually"
+        },
+        {
+          "name": "Global Entry or TSA PreCheck Credit",
+          "amount": 100,
+          "frequency": "annual",
+          "description": "Up to $100 every 4 years"
+        }
+      ],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://www.citi.com/credit-cards/citi-strata-elite-credit-card",
+        "https://onemileatatime.com/guides/citi-strata-elite/"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "citi-premier",
+      "name": "Citi Strata Premier® Card",
+      "issuer": "Citi",
+      "network": "Visa",
+      "annual_fee": 95,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Excellent",
+      "welcome_offer": {
+        "spending_requirement": 4000,
+        "time_period_months": 3,
+        "bonus_points": 60000,
+        "description": "60,000 bonus ThankYou® Points after spending $4,000 in the first 3 months of account opening.",
+        "free_nights": null,
+        "point_program": "Citi ThankYou"
+      },
+      "earning_rates": [
+        {
+          "category": "Hotels, Car Rentals & Attractions (CitiTravel.com)",
+          "rate": 10,
+          "notes": "On bookings through CitiTravel.com."
+        },
+        {
+          "category": "Air Travel",
+          "rate": 3,
+          "notes": "On air travel purchased directly from airlines or through CitiTravel.com."
+        },
+        {
+          "category": "Hotels",
+          "rate": 3,
+          "notes": "On hotel stays purchased directly or through CitiTravel.com."
+        },
+        {
+          "category": "Restaurants",
+          "rate": 3,
+          "notes": "Including eligible delivery and takeout."
+        },
+        {
+          "category": "Supermarkets",
+          "rate": 3,
+          "notes": ""
+        },
+        {
+          "category": "Gas Stations",
+          "rate": 3,
+          "notes": "Including EV charging stations."
+        },
+        {
+          "category": "EV Charging",
+          "rate": 3,
+          "notes": "Stations other than at Costco."
+        },
+        {
+          "category": "Default",
+          "rate": 1,
+          "notes": "On all other purchases."
+        }
+      ],
+      "annual_credits": [
+        {
+          "name": "Annual Hotel Benefit",
+          "amount": 100,
+          "frequency": "Anniversary",
+          "description": "$100 off a single hotel stay of $500 or more (excluding taxes and fees) when booked through CitiTravel.com. Once per calendar year."
+        }
+      ],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Points Transfer",
+            "description": "Transfer points to Citi's airline and hotel partners including Singapore Airlines, Air France/KLM, Emirates, JetBlue, and more at 1:1."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "trip_cancellation": true,
+        "trip_interruption": true,
+        "trip_delay": true,
+        "lost_luggage": true,
+        "rental_insurance": "MasterRental Coverage"
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+          "notes": "Official Citi page confirms 60K bonus, $95 AF, 10x on CitiTravel, 3x on travel/dining/supermarkets/gas, $100 annual hotel credit, no FTf."
+        },
+        {
+          "url": "https://www.dailydrop.com/credit-cards/citi-strata-premier-card",
+          "notes": "Daily Drop review confirms current offer of 60K points, $100 annual hotel benefit, no FTf, travel protections."
+        },
+        {
+          "url": "https://thepointsguy.com/credit-cards/how-to-choose-citi-strata-credit-card/",
+          "notes": "TPG comparison of Strata cards confirms current 60K offer for Strata Premier."
+        },
+        {
+          "url": "https://www.cnbc.com/select/citi-strata-premier-review/",
+          "notes": "CNBC review confirms $95 AF, 60K welcome bonus, 3x on dining/supermarkets/gas/travel."
+        }
+      ],
+      "confidence": "High",
+      "notes": "Card was renamed from 'Citi Premier' to 'Citi Strata Premier'. No foreign transaction fees. $100 annual hotel credit offsets annual fee. Strong transfer partners. No FHR/THC eligibility. Confirmed travel protections include trip cancellation/interruption, trip delay, lost luggage, and MasterRental car coverage."
+    },
+    {
+      "card_id": "citi-strata-premier",
+      "name": "Citi Strata Premier℠ Card",
+      "issuer": "Citi",
+      "network": "Visa",
+      "annual_fee": 95,
+      "foreign_transaction_fee": "None",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 4,
+        "time_period_months": 3,
+        "bonus_points": 60000,
+        "description": "60,000 ThankYou® Points",
+        "point_program": "Citi"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "Air Travel & Hotels (via CitiTravel)",
+            "rate": "10X points per dollar spent"
+          },
+          {
+            "category": "Hotels, Air Travel & EV Charging",
+            "rate": "3X points per dollar spent"
+          },
+          {
+            "category": "Restaurants & Supermarkets",
+            "rate": "3X points per dollar spent"
+          },
+          {
+            "category": "Gas Stations",
+            "rate": "3X points per dollar spent"
+          },
+          {
+            "category": "All other purchases",
+            "rate": "1X point per dollar spent"
+          }
+        ]
+      },
+      "annual_credits": [
+        {
+          "name": "$100 Annual Hotel Benefit",
+          "amount": 100,
+          "frequency": "annual",
+          "description": "Once per calendar year, enjoy $100 off a single hotel stay of $500 or more (excluding taxes and fees) when booked through CitiTravel"
+        }
+      ],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": true,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+        "https://finance.yahoo.com/personal-finance/credit-cards/article/best-citi-credit-cards-195110694.html"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "citi-costco-anywhere",
+      "name": "Costco Anywhere Visa® Card by Citi",
+      "issuer": "Citi",
+      "network": "Visa",
+      "annual_fee": 0,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good",
+      "welcome_offer": {
+        "description": "No traditional welcome bonus. Earning starts immediately upon card use."
+      },
+      "earning_rates": [
+        {
+          "category": "Gas (Costco)",
+          "rate": 5,
+          "notes": "5% cash back on gas at Costco and Costco Gas stations. On the first $7,000 spent per year (combined with other gas/EV); then 1% thereafter."
+        },
+        {
+          "category": "Gas (Other)",
+          "rate": 4,
+          "notes": "4% cash back on other eligible gas and EV charging (outside Costco). On the first $7,000 spent per year (combined with Costco gas); then 1% thereafter."
+        },
+        {
+          "category": "Restaurants & Eligible Travel",
+          "rate": 3,
+          "notes": "3% cash back on restaurants and eligible travel. Includes Costco Travel bookings."
+        },
+        {
+          "category": "Costco & Costco.com Purchases",
+          "rate": 2,
+          "notes": "2% cash back on all purchases from Costco and Costco.com."
+        },
+        {
+          "category": "Default",
+          "rate": 1,
+          "notes": "1% cash back on all other purchases."
+        }
+      ],
+      "annual_credits": [],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Worldwide Acceptance",
+            "description": "Visa Signature benefits accepted at millions of locations worldwide."
+          },
+          {
+            "name": "Citi Entertainment",
+            "description": "Access to Citi Entertainment for special event access."
+          },
+          {
+            "name": "Costco Travel",
+            "description": "Exclusive travel bookings through Costco Travel."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": true,
+        "trip_delay": false,
+        "trip_cancellation": false,
+        "lost_luggage": true,
+        "emergency_medical": true,
+        "roadside_assistance": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.costco.com/credit-card.html",
+          "notes": "Official Costco page confirms 5% at Costco gas, 4% on other gas, 3% on dining/travel, 2% at Costco, 1% default. No annual fee with paid Costco membership. No FTf."
+        },
+        {
+          "url": "https://www.dailydrop.com/credit-cards/costco-anywhere-visa-card-by-citi",
+          "notes": "Daily Drop review confirms earning rates and no annual fee."
+        },
+        {
+          "url": "https://www.cnbc.com/select/key-things-to-know-about-the-costco-anywhere-visa-card/",
+          "notes": "CNBC confirms 5% on Costco gas, 4% other gas (combined $7K/year cap), no AF, no FTf."
+        },
+        {
+          "url": "https://www.costcotravel.com/Info/Credit-Card",
+          "notes": "Costco Travel page confirms no FTf, $0 AF with paid Costco membership, 3% on travel."
+        }
+      ],
+      "confidence": "High",
+      "notes": "Requires a paid Costco membership ($60+ annually) to use the card. Cash back is paid out annually as a reward certificate redeemable only at Costco warehouses. The 5%/4% gas categories are capped at $7,000 combined spend per year, then 1%. No FHR/THC eligibility. No traditional sign-up bonus. No foreign transaction fees."
+    },
+    {
+      "card_id": "discover-it",
+      "name": "Discover it® Cash Back",
+      "issuer": "Discover",
+      "network": "Discover",
+      "annual_fee": 0,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good",
+      "welcome_offer": {
+        "spending_requirement": null,
+        "time_period_months": null,
+        "bonus_points": null,
+        "description": "Unlimited Cashback Match: Discover automatically matches all cash back earned at the end of your first year. No minimum spending, no maximum cap.",
+        "free_nights": null,
+        "point_program": "Discover Cashback"
+      },
+      "earning_rates": [
+        {
+          "category": "Rotating 5% Categories",
+          "rate": 5,
+          "notes": "5% cash back on rotating bonus categories on up to $1,500 in combined quarterly purchases (requires activation each quarter). 2026 Q1: Grocery stores, wholesale clubs, select streaming services. Q2: Restaurants, home improvement stores."
+        },
+        {
+          "category": "Default",
+          "rate": 1,
+          "notes": "Earn 1% cash back on all other purchases."
+        }
+      ],
+      "annual_credits": [],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Cashback Match",
+            "description": "Discover matches ALL cash back earned at the end of your first year — effectively doubling your earnings."
+          },
+          {
+            "name": "Free FICO Score",
+            "description": "Free FICO credit score on your monthly statement."
+          },
+          {
+            "name": "No Annual Fee Forever",
+            "description": "No annual fee; all rewards are pure upside."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "No",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://wallethub.com/edu/cc/discover-it-card-review/25936",
+          "notes": "WalletHub - Discover it Cash Back Editor's Review April 2026."
+        },
+        {
+          "url": "https://www.bankrate.com/credit-cards/cash-back/guide-to-discover-it-cash-back-bonus-categories/",
+          "notes": "Bankrate - Guide to the 2026 Discover Cash Back Calendar, Dec 2025."
+        }
+      ],
+      "confidence": "High",
+      "notes": "Discover is accepted by 99%+ of US merchants. International acceptance is lower than Visa/Mastercard. The rotating 5% categories require quarterly activation at Discover's website. The Unlimited Cashback Match is the card's standout feature — effectively a 100% bonus match on all first-year earnings."
+    },
+    {
+      "card_id": "discover-it-cash-back",
+      "name": "Discover it® Cash Back",
+      "issuer": "Discover",
+      "network": "Discover",
+      "annual_fee": 0,
+      "foreign_transaction_fee": "None",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 0,
+        "time_period_months": 3,
+        "bonus_points": null,
+        "description": "Unlimited Cashback Match™",
+        "point_program": "Discover"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "Rotating Quarterly Categories (up to $1,500 cap/qtr)",
+            "rate": "5% cash back"
+          },
+          {
+            "category": "All other purchases",
+            "rate": "1% cash back"
+          }
+        ],
+        "2026_categories_sample": [
+          "Q1: Groceries, Drugstores",
+          "Q2: Restaurants, Home Improvement",
+          "Q3: TBD (usually Gas, Digital Wallets)",
+          "Q4: TBD (usually Amazon, Target)"
+        ]
+      },
+      "annual_credits": [
+        {
+          "name": "No Foreign Transaction Fees",
+          "amount": 0,
+          "frequency": "annual",
+          "description": "Standard across all Discover cards"
+        }
+      ],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://www.discover.com/credit-cards/cash-back/",
+        "https://thepointsguy.com/credit-cards/discover-it-cash-back-review/"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "discover-it-miles",
+      "name": "Discover it® Miles",
+      "issuer": "Discover",
+      "network": "Discover",
+      "annual_fee": 0,
+      "foreign_transaction_fee": "None",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 0,
+        "time_period_months": 3,
+        "bonus_points": null,
+        "description": "Unlimited Match™",
+        "point_program": "Discover"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "All Purchases",
+            "rate": "1.5X miles per dollar spent"
+          }
+        ]
+      },
+      "annual_credits": [
+        {
+          "name": "No Foreign Transaction Fees",
+          "amount": 0,
+          "frequency": "annual",
+          "description": "Standard across all Discover cards"
+        }
+      ],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://www.discover.com/credit-cards/travel/",
+        "https://www.nerdwallet.com/reviews/credit-cards/discover-it-miles"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "usbank-altitude-connect",
+      "name": "U.S. Bank Altitude® Connect Visa Signature® Card",
+      "issuer": "U.S. Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "foreign_transaction_fee": "None",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 1,
+        "time_period_months": 3,
+        "bonus_points": 20000,
+        "description": "20,000 Bonus Points",
+        "point_program": "U.S. Bank"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "Travel, Gas, EV Charging Stations",
+            "rate": "4X points per dollar spent"
+          },
+          {
+            "category": "Dining, Streaming Services, Grocery Stores",
+            "rate": "2X points per dollar spent"
+          },
+          {
+            "category": "All other purchases",
+            "rate": "1X point per dollar spent"
+          },
+          {
+            "category": "Prepaid Hotels/Car Rentals (via U.S. Bank Travel Center)",
+            "rate": "5X points per dollar spent"
+          }
+        ]
+      },
+      "annual_credits": [
+        {
+          "name": "No Annual Fee",
+          "amount": 95,
+          "frequency": "annual",
+          "description": "U.S. Bank removed the $95 fee in mid-2024"
+        },
+        {
+          "name": "Priority Pass™ Digital",
+          "amount": 0,
+          "frequency": "annual",
+          "description": "Four complimentary lounge visits per year"
+        }
+      ],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://www.usbank.com/credit-cards/altitude-connect-visa-signature-credit-card.html",
+        "https://www.doctorofcredit.com/major-changes-to-u-s-bank-altitude-connect-card/"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "usbank-altitude-reserve",
+      "name": "U.S. Bank Altitude® Reserve Visa Infinite® Card",
+      "issuer": "U.S. Bank",
+      "network": "Visa",
+      "annual_fee": 400,
+      "foreign_transaction_fee": "None",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 4,
+        "time_period_months": 3,
+        "bonus_points": 50000,
+        "description": "50,000 Bonus Points",
+        "point_program": "U.S. Bank"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "Mobile Wallet (Apple Pay, Google Pay, Samsung Pay)",
+            "rate": "3X points per dollar spent"
+          },
+          {
+            "category": "Travel (direct with airline/hotel/rental car)",
+            "rate": "3X points per dollar spent"
+          },
+          {
+            "category": "Hotels & Rental Cars (via U.S. Bank Travel Center)",
+            "rate": "10X points per dollar spent (formerly 5X; updated late 2025)"
+          },
+          {
+            "category": "All other purchases",
+            "rate": "1X point per dollar spent"
+          }
+        ]
+      },
+      "annual_credits": [
+        {
+          "name": "Annual Travel & Dining Credit",
+          "amount": 325,
+          "frequency": "annual",
+          "description": "Up to $325 annually for travel and dining purchases (including fast food/bars)"
+        },
+        {
+          "name": "Real-Time Rewards",
+          "amount": null,
+          "frequency": "annual",
+          "description": "Points worth 1.5 cents each when redeemed via text for travel purchases"
+        },
+        {
+          "name": "Priority Pass™ Select",
+          "amount": 0,
+          "frequency": "annual",
+          "description": "Eight complimentary lounge visits per year (including restaurant credit at select airports)"
+        },
+        {
+          "name": "TSA PreCheck or Global Entry Credit",
+          "amount": 100,
+          "frequency": "annual",
+          "description": "Up to $100 every 4 years"
+        }
+      ],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": true
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html",
+        "https://awardwallet.com/news/credit-cards/us-bank-altitude-reserve-card-2025-changes/"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "wellsfargo-attune",
+      "name": "Wells Fargo Attune® Card",
+      "issuer": "Wells Fargo",
+      "network": "Visa",
+      "annual_fee": 0,
+      "foreign_transaction_fee": "None",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 500,
+        "time_period_months": 3,
+        "bonus_points": 100,
+        "description": "$100 Cash Rewards Bonus",
+        "point_program": "Wells Fargo"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "Self-Care (Gyms, Salons, Spas, Sports, Pets)",
+            "rate": "4% cash back"
+          },
+          {
+            "category": "Sustainability & Local Transit",
+            "rate": "4% cash back"
+          },
+          {
+            "category": "Live Entertainment (Concerts, Theaters)",
+            "rate": "4% cash back"
+          },
+          {
+            "category": "All other purchases",
+            "rate": "1% cash back"
+          }
+        ],
+        "4x_category_details": [
+          "Fitness: Gym memberships, yoga studios, sports clubs",
+          "Care: Hair salons, spas, massage, acupuncture",
+          "Pet: Veterinary care, pet stores, pet grooming",
+          "Public Transit: Busses, trains, rideshares",
+          "Eco: Thrift shops, electric vehicle charging"
+        ]
+      },
+      "annual_credits": [],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://creditcards.wellsfargo.com/attune-credit-card/",
+        "https://thepointsguy.com/credit-cards/reviews/wells-fargo-attune-review/"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "wellsfargo-autograph",
+      "name": "Wells Fargo Autograph® Card",
+      "issuer": "Wells Fargo",
+      "network": "Visa",
+      "annual_fee": 0,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good to Excellent",
+      "welcome_offer": {
+        "spending_requirement": 1000,
+        "time_period_months": 3,
+        "bonus_points": 20000,
+        "description": "Earn 20,000 bonus points when you spend $1,000 on purchases in the first 3 months from account opening (worth $200 in travel).",
+        "free_nights": null,
+        "point_program": "Wells Fargo Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "Restaurants",
+          "rate": 3,
+          "notes": "Earn 3x points on restaurant purchases."
+        },
+        {
+          "category": "Travel",
+          "rate": 3,
+          "notes": "Earn 3x points on travel purchases."
+        },
+        {
+          "category": "Gas Stations",
+          "rate": 3,
+          "notes": "Earn 3x points at gas stations."
+        },
+        {
+          "category": "Transit",
+          "rate": 3,
+          "notes": "Earn 3x points on transit including trains, rideshare, and EV charging stations."
+        },
+        {
+          "category": "Streaming Services",
+          "rate": 3,
+          "notes": "Earn 3x points on popular streaming services."
+        },
+        {
+          "category": "Select Phone Plans",
+          "rate": 3,
+          "notes": "Earn 3x points on select phone plan purchases."
+        },
+        {
+          "category": "Default",
+          "rate": 1,
+          "notes": "Earn 1 point per dollar on all other purchases."
+        }
+      ],
+      "annual_credits": [],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Cell Phone Protection",
+            "description": "Up to $600 protection against damage or theft when you pay your monthly cell phone bill with the Wells Fargo Autograph Card ($25 deductible)."
+          },
+          {
+            "name": "Rental Car Coverage",
+            "description": "Collision damage waiver coverage for rental cars."
+          },
+          {
+            "name": "Travel Emergency Services",
+            "description": "Travel and emergency services including roadside dispatch."
+          },
+          {
+            "name": "My Wells Fargo Deals",
+            "description": "Discounts in the form of statement credits at participating merchants."
+          },
+          {
+            "name": "Event Access",
+            "description": "Access to exclusive concert and entertainment events via Autograph Card Exclusives."
+          },
+          {
+            "name": "0% Intro APR",
+            "description": "0% intro APR for 12 months from account opening on purchases; ongoing APR 18.49%-28.49% Variable."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.nerdwallet.com/credit-cards/learn/wells-fargo-autograph-vs-competitors",
+          "notes": "NerdWallet - Wells Fargo Autograph vs competitors review, Mar 2026."
+        },
+        {
+          "url": "https://thepointsguy.com/credit-cards/wells-fargo-autograph-tpg-awards-2026/",
+          "notes": "The Points Guy - Wells Fargo Autograph named No-Annual-Fee Card of the Year 2026, Feb 2026."
+        }
+      ],
+      "confidence": "High",
+      "notes": "The Wells Fargo Autograph was named 'No-Annual-Fee Card of the Year' by The Points Guy for 2026. Wells Fargo has added airline and hotel transfer partners including Virgin Red. Card has no foreign transaction fees, making it a strong travel card."
+    },
+    {
+      "card_id": "wellsfargo-propel",
+      "name": "Wells Fargo Propel American Express® Card",
+      "issuer": "Wells Fargo",
+      "network": "Visa",
+      "annual_fee": 0,
+      "foreign_transaction_fee": "None",
+      "credit_required": null,
+      "welcome_offer": {
+        "spending_requirement": 0,
+        "time_period_months": 3,
+        "bonus_points": null,
+        "description": "Discontinued",
+        "point_program": "Wells Fargo"
+      },
+      "earning_rates": {
+        "categories": [
+          {
+            "category": "Dining, Gas, Rideshare, Transit",
+            "rate": "3X points per dollar spent"
+          },
+          {
+            "category": "Travel, Streaming Services",
+            "rate": "3X points per dollar spent"
+          },
+          {
+            "category": "All other purchases",
+            "rate": "1X point per dollar spent"
+          }
+        ]
+      },
+      "annual_credits": [],
+      "travel_benefits": {},
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "None",
+        "trip_delay": false,
+        "purchase_protection": false,
+        "extended_warranty": false
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        "https://awardwallet.com/credit-cards/wells-fargo-rewards/wells-fargo-propel/",
+        "https://thepointsguy.com/credit-cards/wells-fargo-propel-discontinued/"
+      ],
+      "confidence": "medium",
+      "notes": ""
+    },
+    {
+      "card_id": "bilt-mastercard",
+      "name": "Bilt Mastercard®",
+      "issuer": "Wells Fargo (Bilt Rewards)",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "foreign_transaction_fee": 0,
+      "credit_required": "Good to Excellent",
+      "welcome_offer": {
+        "spending_requirement": 1000,
+        "time_period_months": 3,
+        "bonus_points": 30000,
+        "description": "30,000 bonus points after spending $1,000 on purchases in the first 3 months from account opening.",
+        "free_nights": null,
+        "point_program": "Bilt Rewards"
+      },
+      "earning_rates": [
+        {
+          "category": "Rent Payments",
+          "rate": 1,
+          "notes": "Earn 1x on rent payments up to $100,000/year via Bilt Alliance (no transaction fee)."
+        },
+        {
+          "category": "Dining",
+          "rate": 2,
+          "notes": "Earn 2x points on dining purchases."
+        },
+        {
+          "category": "Travel (Bilt App)",
+          "rate": 3,
+          "notes": "Earn 3x points on travel when paying rent through the Bilt app."
+        },
+        {
+          "category": "Default",
+          "rate": 1,
+          "notes": "Earn 1 point per dollar on all other purchases."
+        }
+      ],
+      "annual_credits": [],
+      "travel_benefits": {
+        "hotel_status": [],
+        "other_benefits": [
+          {
+            "name": "Rent Payments",
+            "description": "Earn points on rent payments without any transaction fee, unique among credit cards."
+          },
+          {
+            "name": "Points Transfer",
+            "description": "Transfer Bilt Points to leading airline and hotel frequent travel programs including United, American Airlines, Hyatt, IHG, and more."
+          },
+          {
+            "name": "Cell Phone Protection",
+            "description": "Cell phone protection against damage or theft when you pay your monthly bill with the card."
+          }
+        ]
+      },
+      "fhr_thc": {
+        "fhr_eligible": false,
+        "thc_eligible": false
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": true,
+        "purchase_protection": true,
+        "extended_warranty": true
+      },
+      "reward_type": null,
+      "categories": null,
+      "sources": [
+        {
+          "url": "https://www.cnet.com/personal-finance/credit-cards/the-bilt-mastercard-features-rent-rewards-and-premium-travel-benefits/",
+          "notes": "CNET review of Bilt Mastercard features and benefits."
+        },
+        {
+          "url": "https://thepointsguy.com/credit-cards/bilt-card-biggest-questions-answered/",
+          "notes": "The Points Guy - Bilt card 2.0 transition and eligibility details, Jan 2026."
+        }
+      ],
+      "confidence": "Medium",
+      "notes": "NOTE: The legacy Bilt Mastercard (Wells Fargo) was discontinued on February 6, 2026 and replaced by Bilt Card 2.0 (Bilt Blue, Bilt Obsidian, Bilt Palladium). This file documents the legacy card. The Bilt Mastercard was the first no-annual-fee card to allow users to earn transferable points on rent payments without a transaction fee."
+    }
+  ],
+  "metadata": {
+    "total_cards": 55,
+    "verified_cards": 43,
+    "needs_review": 12,
+    "last_updated": "2026-04-13T02:09:53.619Z",
+    "sources": [
+      "Chase.com",
+      "AmericanExpress.com",
+      "CapitalOne.com",
+      "Citi.com",
+      "Discover.com",
+      "BankOfAmerica.com",
+      "USBank.com",
+      "WellsFargo.com",
+      "Doctor of Credit",
+      "US Credit Card Guide",
+      "The Points Guy",
+      "NerdWallet"
+    ]
+  }
+}

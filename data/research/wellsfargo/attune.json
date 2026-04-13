@@ -1,0 +1,73 @@
+{
+  "card_id": "wellsfargo-attune",
+  "issuer": "Wells Fargo",
+  "card_name": "Wells Fargo Attune® Card",
+  "welcome_bonus": {
+    "amount": "$100 Cash Rewards Bonus",
+    "requirement": "Spend $500 on purchases within the first 3 months from account opening",
+    "value_estimate": "$100"
+  },
+  "annual_fee": 0,
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Self-Care (Gyms, Salons, Spas, Sports, Pets)",
+        "rate": "4% cash back"
+      },
+      {
+        "category": "Sustainability & Local Transit",
+        "rate": "4% cash back"
+      },
+      {
+        "category": "Live Entertainment (Concerts, Theaters)",
+        "rate": "4% cash back"
+      },
+      {
+        "category": "All other purchases",
+        "rate": "1% cash back"
+      }
+    ],
+    "4x_category_details": [
+      "Fitness: Gym memberships, yoga studios, sports clubs",
+      "Care: Hair salons, spas, massage, acupuncture",
+      "Pet: Veterinary care, pet stores, pet grooming",
+      "Public Transit: Busses, trains, rideshares",
+      "Eco: Thrift shops, electric vehicle charging"
+    ]
+  },
+  "credits_and_benefits": [],
+  "foreign_transaction_fee": "None",
+  "key_protections": [
+    "Cell Phone Protection",
+    "Zero Liability Protection"
+  ],
+  "fhr_thc_eligibility": false,
+  "sources": [
+    "https://creditcards.wellsfargo.com/attune-credit-card/",
+    "https://thepointsguy.com/credit-cards/reviews/wells-fargo-attune-review/"
+  ],
+  "uncertain_data": [
+    "Exact merchant list for 4% back is category-based and may vary by MCC (Merchant Category Code)"
+  ],
+  "name": "Wells Fargo Attune® Card",
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": 100,
+    "description": "$100 Cash Rewards Bonus",
+    "point_program": "Wells Fargo"
+  },
+  "annual_credits": [],
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "network": "Visa",
+  "confidence": "medium"
+}

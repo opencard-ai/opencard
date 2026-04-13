@@ -1,0 +1,94 @@
+{
+  "card_id": "capital-one-venture",
+  "issuer": "Capital One",
+  "card_name": "Capital One Venture Rewards Credit Card",
+  "welcome_bonus": {
+    "amount": "75,000 miles + $250 Capital One Travel credit",
+    "requirement": "Spend $4,000 on purchases within the first 3 months from account opening",
+    "value_estimate": "$1,000 total"
+  },
+  "annual_fee": 95,
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Everyday Purchases",
+        "rate": "2X miles per dollar spent"
+      },
+      {
+        "category": "Hotels & Rental Cars (via Capital One Travel)",
+        "rate": "5X miles per dollar spent"
+      }
+    ]
+  },
+  "credits_and_benefits": [
+    {
+      "name": "$250 Travel Credit",
+      "description": "One-time credit for Capital One Travel (introductory offer)",
+      "value": "$250"
+    },
+    {
+      "name": "Global Entry or TSA PreCheck Credit",
+      "description": "Up to $100 every 4 years",
+      "value": "$100"
+    },
+    {
+      "name": "Lounge Access",
+      "description": "Two complimentary visits per year to Capital One Lounges or Plaza Premium Lounges (Note: Lounges access was being removed in late 2024 for this card; currently limited)",
+      "value": "Limited"
+    }
+  ],
+  "foreign_transaction_fee": "None",
+  "key_protections": [
+    "Auto Rental Collision Damage Waiver",
+    "Travel Accident Insurance",
+    "Extended Warranty Protection"
+  ],
+  "fhr_thc_eligibility": false,
+  "sources": [
+    "https://www.capitalone.com/credit-cards/venture/",
+    "https://thepointsguy.com/credit-cards/capital-one-venture-current-offer/"
+  ],
+  "uncertain_data": [
+    "Lounge access availability for 2026 for new cardholders"
+  ],
+  "name": "Capital One Venture Rewards Credit Card",
+  "welcome_offer": {
+    "spending_requirement": 4,
+    "time_period_months": 3,
+    "bonus_points": 75000250,
+    "description": "75,000 miles + $250 Capital One Travel credit",
+    "point_program": "Capital One"
+  },
+  "annual_credits": [
+    {
+      "name": "$250 Travel Credit",
+      "amount": 250,
+      "frequency": "annual",
+      "description": "One-time credit for Capital One Travel (introductory offer)"
+    },
+    {
+      "name": "Global Entry or TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "description": "Up to $100 every 4 years"
+    },
+    {
+      "name": "Lounge Access",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Two complimentary visits per year to Capital One Lounges or Plaza Premium Lounges (Note: Lounges access was being removed in late 2024 for this card; currently limited)"
+    }
+  ],
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "network": "Visa",
+  "confidence": "medium"
+}

@@ -1,0 +1,95 @@
+{
+  "card_id": "capital-one-savor",
+  "issuer": "Capital One",
+  "card_name": "Capital One Savor Rewards Credit Card",
+  "welcome_bonus": {
+    "amount": "$200 Cash Bonus",
+    "requirement": "Spend $500 on purchases within the first 3 months from account opening",
+    "value_estimate": "$200"
+  },
+  "annual_fee": 0,
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Dining, Entertainment, Popular Streaming Services",
+        "rate": "3% cash back"
+      },
+      {
+        "category": "Grocery Stores",
+        "rate": "3% cash back (excludes superstores like Walmart/Target)"
+      },
+      {
+        "category": "Capital One Entertainment (Concerts/Sports)",
+        "rate": "8% cash back"
+      },
+      {
+        "category": "Capital One Travel (Hotels/Rental Cars)",
+        "rate": "5% cash back"
+      },
+      {
+        "category": "All other purchases",
+        "rate": "1% cash back"
+      }
+    ]
+  },
+  "credits_and_benefits": [
+    {
+      "name": "No Foreign Transaction Fees",
+      "description": "Standard across all Capital One cards",
+      "value": "Varies"
+    },
+    {
+      "name": "Uber One Benefit",
+      "description": "Complimentary Uber One membership (ended late 2024; need to verify 2026 status)",
+      "value": "Uncertain"
+    }
+  ],
+  "foreign_transaction_fee": "None",
+  "key_protections": [
+    "Extended Warranty Protection",
+    "Travel Accident Insurance",
+    "Auto Rental Collision Damage Waiver"
+  ],
+  "fhr_thc_eligibility": false,
+  "sources": [
+    "https://www.capitalone.com/credit-cards/savor/",
+    "https://www.nerdwallet.com/credit-cards/learn/benefits-capital-one-savor-savor-one"
+  ],
+  "uncertain_data": [
+    "The distinction between Savor and SavorOne name was simplified in late 2025; this refers to the $0 fee version formerly known as SavorOne"
+  ],
+  "name": "Capital One Savor Rewards Credit Card",
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": 200,
+    "description": "$200 Cash Bonus",
+    "point_program": "Capital One"
+  },
+  "annual_credits": [
+    {
+      "name": "No Foreign Transaction Fees",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Standard across all Capital One cards"
+    },
+    {
+      "name": "Uber One Benefit",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Complimentary Uber One membership (ended late 2024; need to verify 2026 status)"
+    }
+  ],
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "network": "Visa",
+  "confidence": "medium"
+}

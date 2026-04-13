@@ -1,0 +1,90 @@
+{
+  "card_id": "usbank-altitude-connect",
+  "issuer": "U.S. Bank",
+  "card_name": "U.S. Bank Altitude® Connect Visa Signature® Card",
+  "welcome_bonus": {
+    "amount": "20,000 Bonus Points",
+    "requirement": "Spend $1,000 on purchases within the first 90 days from account opening",
+    "value_estimate": "$200 (direct travel) to $160 (cash back @ 0.8cpp)"
+  },
+  "annual_fee": 0,
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Travel, Gas, EV Charging Stations",
+        "rate": "4X points per dollar spent"
+      },
+      {
+        "category": "Dining, Streaming Services, Grocery Stores",
+        "rate": "2X points per dollar spent"
+      },
+      {
+        "category": "All other purchases",
+        "rate": "1X point per dollar spent"
+      },
+      {
+        "category": "Prepaid Hotels/Car Rentals (via U.S. Bank Travel Center)",
+        "rate": "5X points per dollar spent"
+      }
+    ]
+  },
+  "credits_and_benefits": [
+    {
+      "name": "No Annual Fee",
+      "description": "U.S. Bank removed the $95 fee in mid-2024",
+      "value": "$95 saved annually"
+    },
+    {
+      "name": "Priority Pass™ Digital",
+      "description": "Four complimentary lounge visits per year",
+      "value": "Limited"
+    }
+  ],
+  "foreign_transaction_fee": "None",
+  "key_protections": [
+    "Cell Phone Protection",
+    "Standard Visa Signature Protections"
+  ],
+  "fhr_thc_eligibility": false,
+  "sources": [
+    "https://www.usbank.com/credit-cards/altitude-connect-visa-signature-credit-card.html",
+    "https://www.doctorofcredit.com/major-changes-to-u-s-bank-altitude-connect-card/"
+  ],
+  "uncertain_data": [
+    "Redemption value for cash back was reported to drop to 0.8cpp in late 2024/2025; travel value remains 1cpp"
+  ],
+  "name": "U.S. Bank Altitude® Connect Visa Signature® Card",
+  "welcome_offer": {
+    "spending_requirement": 1,
+    "time_period_months": 3,
+    "bonus_points": 20000,
+    "description": "20,000 Bonus Points",
+    "point_program": "U.S. Bank"
+  },
+  "annual_credits": [
+    {
+      "name": "No Annual Fee",
+      "amount": 95,
+      "frequency": "annual",
+      "description": "U.S. Bank removed the $95 fee in mid-2024"
+    },
+    {
+      "name": "Priority Pass™ Digital",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Four complimentary lounge visits per year"
+    }
+  ],
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "network": "Visa",
+  "confidence": "medium"
+}

@@ -1,0 +1,45 @@
+{
+  "card_id": "citi-costco-anywhere",
+  "name": "Costco Anywhere Visa® Card by Citi",
+  "issuer": "Citi",
+  "network": "Visa",
+  "annual_fee": 0,
+  "credit_required": "Good",
+  "foreign_transaction_fee": 0,
+  "welcome_offer": {
+    "description": "No traditional welcome bonus. Earning starts immediately upon card use."
+  },
+  "earning_rates": [
+    {"category": "Gas (Costco)", "rate": 5, "notes": "5% cash back on gas at Costco and Costco Gas stations. On the first $7,000 spent per year (combined with other gas/EV); then 1% thereafter."},
+    {"category": "Gas (Other)", "rate": 4, "notes": "4% cash back on other eligible gas and EV charging (outside Costco). On the first $7,000 spent per year (combined with Costco gas); then 1% thereafter."},
+    {"category": "Restaurants & Eligible Travel", "rate": 3, "notes": "3% cash back on restaurants and eligible travel. Includes Costco Travel bookings."},
+    {"category": "Costco & Costco.com Purchases", "rate": 2, "notes": "2% cash back on all purchases from Costco and Costco.com."},
+    {"category": "Default", "rate": 1, "notes": "1% cash back on all other purchases."}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      {"name": "Worldwide Acceptance", "description": "Visa Signature benefits accepted at millions of locations worldwide."},
+      {"name": "Citi Entertainment", "description": "Access to Citi Entertainment for special event access."},
+      {"name": "Costco Travel", "description": "Exclusive travel bookings through Costco Travel."}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "rental_insurance": true,
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "lost_luggage": true,
+    "emergency_medical": true,
+    "roadside_assistance": true
+  },
+  "sources": [
+    {"url": "https://www.costco.com/credit-card.html", "notes": "Official Costco page confirms 5% at Costco gas, 4% on other gas, 3% on dining/travel, 2% at Costco, 1% default. No annual fee with paid Costco membership. No FTf."},
+    {"url": "https://www.dailydrop.com/credit-cards/costco-anywhere-visa-card-by-citi", "notes": "Daily Drop review confirms earning rates and no annual fee."},
+    {"url": "https://www.cnbc.com/select/key-things-to-know-about-the-costco-anywhere-visa-card/", "notes": "CNBC confirms 5% on Costco gas, 4% other gas (combined $7K/year cap), no AF, no FTf."},
+    {"url": "https://www.costcotravel.com/Info/Credit-Card", "notes": "Costco Travel page confirms no FTf, $0 AF with paid Costco membership, 3% on travel."}
+  ],
+  "notes": "Requires a paid Costco membership ($60+ annually) to use the card. Cash back is paid out annually as a reward certificate redeemable only at Costco warehouses. The 5%/4% gas categories are capped at $7,000 combined spend per year, then 1%. No FHR/THC eligibility. No traditional sign-up bonus. No foreign transaction fees.",
+  "confidence": "High"
+}

@@ -1,0 +1,93 @@
+{
+  "card_id": "boa-alaska-ascent",
+  "issuer": "Bank of America",
+  "card_name": "Alaska Airlines Atmos™ Ascent Visa Signature® Card",
+  "welcome_bonus": {
+    "amount": "80,000 bonus points + $99 Companion Fare (intro)",
+    "requirement": "Spend $4,000 on purchases within the first 120 days from account opening",
+    "value_estimate": "$800+ plus value of companion fare"
+  },
+  "annual_fee": 95,
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Alaska/Hawaiian Airlines purchases",
+        "rate": "3X points per dollar spent"
+      },
+      {
+        "category": "Everyday purchases",
+        "rate": "1X point per dollar spent"
+      }
+    ]
+  },
+  "credits_and_benefits": [
+    {
+      "name": "Annual Companion Fare",
+      "description": "From $122 ($99 plus taxes and fees from $23) every year on your card anniversary",
+      "value": "$122+"
+    },
+    {
+      "name": "Free Checked Bag",
+      "description": "For you and up to 6 guests on the same Alaska/Hawaiian flight",
+      "value": "High"
+    },
+    {
+      "name": "Lounge Discount",
+      "description": "$100 off an Alaska Lounge+ membership",
+      "value": "$100"
+    }
+  ],
+  "foreign_transaction_fee": "None",
+  "key_protections": [
+    "Purchase Protection",
+    "Extended Warranty"
+  ],
+  "fhr_thc_eligibility": false,
+  "sources": [
+    "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/",
+    "https://thepointsguy.com/credit-cards/atmos-ascent-vs-atmos-summit/"
+  ],
+  "uncertain_data": [
+    "Transition from Alaska Visa to Atmos Ascent was in progress; name reflects Atmos for 2026"
+  ],
+  "name": "Alaska Airlines Atmos™ Ascent Visa Signature® Card",
+  "welcome_offer": {
+    "spending_requirement": 4,
+    "time_period_months": 4,
+    "bonus_points": 8000099,
+    "description": "80,000 bonus points + $99 Companion Fare (intro)",
+    "point_program": "Bank of America"
+  },
+  "annual_credits": [
+    {
+      "name": "Annual Companion Fare",
+      "amount": 122,
+      "frequency": "annual",
+      "description": "From $122 ($99 plus taxes and fees from $23) every year on your card anniversary"
+    },
+    {
+      "name": "Free Checked Bag",
+      "amount": null,
+      "frequency": "annual",
+      "description": "For you and up to 6 guests on the same Alaska/Hawaiian flight"
+    },
+    {
+      "name": "Lounge Discount",
+      "amount": 100,
+      "frequency": "annual",
+      "description": "$100 off an Alaska Lounge+ membership"
+    }
+  ],
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "network": "Visa",
+  "confidence": "medium"
+}

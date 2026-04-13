@@ -1,0 +1,95 @@
+{
+  "card_id": "capital-one-spark-miles",
+  "issuer": "Capital One",
+  "card_name": "Capital One Spark Miles for Business",
+  "welcome_bonus": {
+    "amount": "50,000 miles",
+    "requirement": "Spend $4,500 on purchases within the first 3 months from account opening",
+    "value_estimate": "$500 (direct travel)"
+  },
+  "annual_fee": 95,
+  "annual_fee_details": "Introductory $0 fee for the first year; $95 thereafter",
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "All Purchases",
+        "rate": "2X miles per dollar spent"
+      },
+      {
+        "category": "Hotels & Rental Cars (via Capital One Travel)",
+        "rate": "5X miles per dollar spent"
+      }
+    ]
+  },
+  "credits_and_benefits": [
+    {
+      "name": "Global Entry or TSA PreCheck Credit",
+      "description": "Up to $100 every 4 years",
+      "value": "$100"
+    },
+    {
+      "name": "Lounge Access",
+      "description": "Two complimentary visits per year to Capital One Lounges or Plaza Premium Lounges",
+      "value": "Limited"
+    },
+    {
+      "name": "Free Employee Cards",
+      "description": "Available for business cardholders",
+      "value": "High"
+    }
+  ],
+  "foreign_transaction_fee": "None",
+  "key_protections": [
+    "Primary Rental Car Coverage (Business)",
+    "Purchase Security",
+    "Extended Warranty"
+  ],
+  "fhr_thc_eligibility": false,
+  "sources": [
+    "https://www.capitalone.com/small-business/credit-cards/spark-miles/",
+    "https://onemileatatime.com/reviews/credit-cards/capital-one/capital-one-spark-miles-business-card/"
+  ],
+  "uncertain_data": [
+    "Lounge visit benefit was undergoing changes in 2025/2026; need to verify current count"
+  ],
+  "name": "Capital One Spark Miles for Business",
+  "welcome_offer": {
+    "spending_requirement": 4,
+    "time_period_months": 3,
+    "bonus_points": 50000,
+    "description": "50,000 miles",
+    "point_program": "Capital One"
+  },
+  "annual_credits": [
+    {
+      "name": "Global Entry or TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "description": "Up to $100 every 4 years"
+    },
+    {
+      "name": "Lounge Access",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Two complimentary visits per year to Capital One Lounges or Plaza Premium Lounges"
+    },
+    {
+      "name": "Free Employee Cards",
+      "amount": null,
+      "frequency": "annual",
+      "description": "Available for business cardholders"
+    }
+  ],
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": true
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "network": "Visa",
+  "confidence": "medium"
+}

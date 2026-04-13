@@ -1,0 +1,68 @@
+{
+  "card_id": "citi-custom-cash",
+  "issuer": "Citi",
+  "card_name": "Citi Custom Cash® Card",
+  "welcome_bonus": {
+    "amount": "$200 Cash Back",
+    "requirement": "Spend $1,500 on purchases within the first 6 months from account opening",
+    "value_estimate": "$200"
+  },
+  "annual_fee": 0,
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Top Spend Category (up to $500/mo)",
+        "rate": "5% cash back"
+      },
+      {
+        "category": "All other purchases",
+        "rate": "1% cash back"
+      }
+    ],
+    "top_category_options": [
+      "Restaurants",
+      "Gas Stations",
+      "Grocery Stores",
+      "Select Travel",
+      "Select Transit",
+      "Select Streaming Services",
+      "Drugstores",
+      "Home Improvement Stores",
+      "Fitness Clubs",
+      "Live Entertainment"
+    ]
+  },
+  "credits_and_benefits": [],
+  "foreign_transaction_fee": "3%",
+  "key_protections": [
+    "Citi Entertainment Access",
+    "Standard World Mastercard protections"
+  ],
+  "fhr_thc_eligibility": false,
+  "sources": [
+    "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
+    "https://www.bankrate.com/credit-cards/reviews/citi-custom-cash-card/"
+  ],
+  "uncertain_data": [],
+  "name": "Citi Custom Cash® Card",
+  "welcome_offer": {
+    "spending_requirement": 1,
+    "time_period_months": 3,
+    "bonus_points": 200,
+    "description": "$200 Cash Back",
+    "point_program": "Citi"
+  },
+  "annual_credits": [],
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "network": "Visa",
+  "confidence": "medium"
+}

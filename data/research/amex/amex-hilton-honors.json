@@ -1,0 +1,50 @@
+{
+  "card_id": "amex-hilton-honors",
+  "name": "Hilton Honors American Express Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 2000,
+    "time_period_months": 6,
+    "bonus_points": 70000,
+    "description": "Earn 70,000 Hilton Honors Bonus Points plus a Free Night Reward after spending $2,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
+    "free_nights": 1,
+    "point_program": "Hilton Honors"
+  },
+  "earning_rates": [
+    {"category": "hotel_hilton", "rate": 7, "notes": "Hilton Honors Bonus Points per dollar at hotels and resorts within the Hilton portfolio"},
+    {"category": "restaurant", "rate": 5, "notes": "U.S. restaurants"},
+    {"category": "grocery", "rate": 5, "notes": "U.S. supermarkets"},
+    {"category": "gas", "rate": 5, "notes": "U.S. gas stations"},
+    {"category": "default", "rate": 3, "notes": "All other eligible purchases"}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {"priority_pass": false, "centurion": false, "other": null},
+    "hotel_status": [
+      {"program": "Hilton Honors", "tier": "Silver", "method": "Automatic for as long as card is open"},
+      {"program": "Hilton Honors", "tier": "Gold", "method": "Earned by spending $20,000 on eligible purchases in a calendar year (valid through end of next calendar year)"}
+    ],
+    "other_benefits": [
+      {"name": "Fifth Night Free", "description": "Fifth night free on reward stays (all Honors members)"},
+      {"name": "No Foreign Transaction Fees", "description": "No fees on purchases made outside the United States"}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "sources": [
+    {"url": "https://thepointsguy.com/credit-cards/hilton-honors-amex-current-offers/", "notes": "Current welcome offer 70K points + Free Night after $2K spend in 6 months, ends 4/15/26"},
+    {"url": "https://onemileatatime.com/deals/hilton-amex-card-bonus/", "notes": "Earning rates and status benefits including Silver automatic and Gold with $20K spend"},
+    {"url": "https://www.nerdwallet.com/credit-cards/news/hilton-new-welcome-offer-march-2026", "notes": "New limited-time offer details confirmed from March 2026 update"}
+  ],
+  "notes": "The no-annual-fee Hilton card is a solid entry-level hotel credit card. The new limited-time welcome offer adds a Free Night Reward (up to 250,000 points) alongside the 70K bonus points. No Priority Pass or travel protections beyond basic purchase/extended warranty. Gold status at $20K annual spend is a reasonable goal for moderate spenders. Foreign transaction fee is $0, making it useful for international travel despite being a no-AF card.",
+  "confidence": "high"
+}

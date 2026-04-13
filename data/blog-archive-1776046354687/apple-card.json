@@ -1,0 +1,87 @@
+{
+  "card_id": "apple-card",
+  "name": "Apple Card Review",
+  "issuer": "Goldman Sachs",
+  "network": "Mastercard",
+  "annual_fee": 2024,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good-Excellent",
+  "welcome_offer": {
+    "description": "No standard welcome offer; occasional promotions for Apple product purchases or referrals",
+    "point_program": "Daily Cash (Apple)"
+  },
+  "earning_rates": [
+    {
+      "category": "apple",
+      "rate": 3,
+      "notes": "Apple.com, Apple Store, App Store, Apple services, and select partners via Apple Pay"
+    },
+    {
+      "category": "apple_pay",
+      "rate": 2,
+      "notes": "All Apple Pay purchases"
+    },
+    {
+      "category": "default",
+      "rate": 1,
+      "notes": "Physical card or manual card number entry"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": [],
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Daily Cash",
+        "description": "Cash back daily; can be sent to Apple Cash or deposited to Apple Savings"
+      },
+      {
+        "name": "0% Installments",
+        "description": "0% APR on Apple product installments"
+      },
+      {
+        "name": "No Fees",
+        "description": "No annual fee, no late fee, no foreign transaction fee, no over-limit fee"
+      },
+      {
+        "name": "Apple Wallet Integration",
+        "description": "Manage card entirely in iPhone Wallet app"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {},
+  "hotel_program": {
+    "program": null,
+    "points_per_dollar": null
+  },
+  "application_rules": {
+    "rules": [
+      "Requires Apple ID and iPhone"
+    ],
+    "notes": "Not a traditional credit card; managed through Apple Wallet. Physical titanium card has no numbers."
+  },
+  "last_updated": "2026-04-12",
+  "sources": [
+    {
+      "name": "US Credit Card Guide",
+      "url": "https://www.uscreditcardguide.com/apple-card-credit-card/",
+      "updated": "2026-04-12"
+    },
+    {
+      "url": "https://www.apple.com/apple-card/"
+    }
+  ],
+  "tags": [
+    "apple",
+    "no-annual-fee",
+    "apple-ecosystem",
+    "daily-cash",
+    "mastercard"
+  ],
+  "image_url": "https://www.uscreditcardguide.com/wp-content/uploads/Apple_Card-300x189.png"
+}

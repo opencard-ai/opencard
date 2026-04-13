@@ -1,0 +1,56 @@
+{
+  "card_id": "amex-marriott-brilliant",
+  "name": "Marriott Bonvoy Brilliant® American Express® Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 650,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 6000,
+    "time_period_months": 6,
+    "bonus_points": 200000,
+    "description": "Earn 200,000 Marriott Bonvoy bonus points after you use your new Card to make $6,000 in purchases within the first 6 months of Card Membership. Offer Ends 5/13/2026.",
+    "free_nights": null,
+    "point_program": "Marriott Bonvoy"
+  },
+  "earning_rates": [
+    {"category": "Marriott hotels", "rate": 6, "notes": "6x per $1 on eligible purchases at hotels participating in Marriott Bonvoy. Combined with 10x base member bonus = up to 16x total for Platinum Elite members."},
+    {"category": "Restaurants worldwide", "rate": 3, "notes": null},
+    {"category": "Flights", "rate": 3, "notes": "Booked directly with airlines"},
+    {"category": "Other", "rate": 2, "notes": null}
+  ],
+  "annual_credits": [
+    {"name": "Brilliant Dining Credit", "amount": 300, "frequency": "Annual", "description": "Up to $300 per year (up to $25 per month) in statement credits for eligible purchases at restaurants worldwide."},
+    {"name": "Marriott Property Credit", "amount": 100, "frequency": "Per stay", "description": "Up to $100 property credit for qualifying charges at The Ritz-Carlton or St. Regis when booking direct for a two-night minimum stay using the card."}
+  ],
+  "travel_benefits": {
+    "lounge_access": {"centurion": false, "priority_pass": true, "delta_skyclub": false, "other": "Priority Pass Select membership with unlimited visits to 1,200+ airport lounges worldwide."},
+    "hotel_status": [
+      {"program": "Marriott Bonvoy", "tier": "Platinum Elite", "description": "Automatic Platinum Elite status with the card. Includes room upgrades (including suites when available), late checkout, welcome gift, and 50% bonus on base points."}
+    ],
+    "other_benefits": [
+      {"name": "Annual Free Night Award", "description": "One Free Night Award each year after card renewal month, valid for one night at or under 85,000 Marriott Bonvoy points at participating hotels."},
+      {"name": "Brilliant Earned Choice Award", "description": "After spending $60,000 on eligible purchases in a calendar year, choose one benefit (e.g., additional free night, suite upgrade award, etc.)."},
+      {"name": "25 Elite Night Credits", "description": "25 Elite Night Credits each calendar year toward Marriott Bonvoy Elite status."},
+      {"name": "Global Entry/TSA PreCheck Credit", "description": "Up to $120 every 4 years for Global Entry or up to $85 for TSA PreCheck every 4.5 years."},
+      {"name": "The Hotel Collection", "description": "$100 hotel credit on qualifying charges plus room upgrade when available for 2+ night stays via Amex Travel."}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": true},
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "trip_cancellation": true,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "baggage_insurance": true,
+    "notes": "Trip cancellation/interruption coverage when round-trip is purchased entirely with the card. Strong all-around travel protections."
+  },
+  "sources": [
+    {"url": "https://www.dailydrop.com/credit-cards/marriott-bonvoy-brilliant-american-express-card", "notes": "Current 200K offer, earning rates, Platinum Elite status, annual credits, offer history"},
+    {"url": "https://upgradedpoints.com/credit-cards/reviews/marriott-bonvoy-brilliant-card/welcome-offer-history/", "notes": "200K offer details and offer history confirmation"}
+  ],
+  "notes": "The $300 dining credit (up to $25/month) and $100 property credit at Ritz-Carlton/St. Regis help offset the $650 annual fee. Annual Free Night Award up to 85K points can be very valuable at high-end Marriott properties. 25 Elite Night Credits stack with actual stays. Points transfer to 39 airline partners at 3:1 ratio.",
+  "confidence": 0.95
+}

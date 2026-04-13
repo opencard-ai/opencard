@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getCardById, getAllCards } from "@/lib/cards";
 import ChatWidget from "../../../components/ChatWidget";
+import TravelProducts from "../../../components/TravelProducts";
 import type { Metadata } from "next";
 import { locales, t } from "@/lib/i18n";
 
@@ -339,6 +340,9 @@ export default async function CardDetailPage({ params }: Props) {
         <div className="space-y-6">
           {/* AI Chat Widget */}
           <ChatWidget cardName={card.name} cardId={card.card_id} locale={locale} />
+
+          {/* Travel Products - 旅遊配件推薦 */}
+          <TravelProducts lang={lang} />
 
           {/* Quick Info */}
           <div className="bg-white rounded-xl border border-slate-200 p-5">

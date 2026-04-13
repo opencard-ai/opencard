@@ -1,0 +1,78 @@
+{
+  "card_id": "discover-it-cash-back",
+  "issuer": "Discover",
+  "card_name": "Discover it® Cash Back",
+  "welcome_bonus": {
+    "amount": "Unlimited Cashback Match™",
+    "requirement": "Discover automatically matches all the cash back you’ve earned at the end of your first year",
+    "value_estimate": "Depends on spending (can be high)"
+  },
+  "annual_fee": 0,
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Rotating Quarterly Categories (up to $1,500 cap/qtr)",
+        "rate": "5% cash back"
+      },
+      {
+        "category": "All other purchases",
+        "rate": "1% cash back"
+      }
+    ],
+    "2026_categories_sample": [
+      "Q1: Groceries, Drugstores",
+      "Q2: Restaurants, Home Improvement",
+      "Q3: TBD (usually Gas, Digital Wallets)",
+      "Q4: TBD (usually Amazon, Target)"
+    ]
+  },
+  "credits_and_benefits": [
+    {
+      "name": "No Foreign Transaction Fees",
+      "description": "Standard across all Discover cards",
+      "value": "None"
+    }
+  ],
+  "foreign_transaction_fee": "None",
+  "key_protections": [
+    "FICO® Score for Free",
+    "Identity Alerts",
+    "Online Privacy Protection"
+  ],
+  "fhr_thc_eligibility": false,
+  "sources": [
+    "https://www.discover.com/credit-cards/cash-back/",
+    "https://thepointsguy.com/credit-cards/discover-it-cash-back-review/"
+  ],
+  "uncertain_data": [
+    "Q3 and Q4 categories for 2026 are not yet announced"
+  ],
+  "name": "Discover it® Cash Back",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 3,
+    "bonus_points": null,
+    "description": "Unlimited Cashback Match™",
+    "point_program": "Discover"
+  },
+  "annual_credits": [
+    {
+      "name": "No Foreign Transaction Fees",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Standard across all Discover cards"
+    }
+  ],
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "network": "Discover",
+  "confidence": "medium"
+}

@@ -1,0 +1,42 @@
+{
+  "card_id": "amex-blue-business-cash",
+  "name": "The American Express Blue Business Cash™ Card",
+  "issuer": "American Express",
+  "network": "American Express",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 2.7,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 250,
+    "description": "Earn a $250 statement credit after you make $3,000 in purchases on your Card in your first 3 months.",
+    "free_nights": null,
+    "point_program": "Statement Credit"
+  },
+  "earning_rates": [
+    {"category": "All Purchases", "rate": 2, "notes": "2% cash back on all eligible purchases on up to $50,000 per calendar year, then 1%."},
+    {"category": "Default", "rate": 1, "notes": "1% cash back after the $50,000 annual threshold is reached."}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      {"name": "Expanded Buying Power", "description": "The ability to spend above your credit limit to help handle large business purchases."},
+      {"name": "Global Assist Hotline", "description": "Emergency coordination and assistance services when traveling more than 100 miles from home."}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "sources": [
+    {"url": "https://www.americanexpress.com/en-us/business/credit-cards/blue-business-cash/", "notes": "Official Amex business page."},
+    {"url": "https://upgradedpoints.com/credit-cards/reviews/amex-blue-business-cash-card/welcome-offer-history/", "notes": "Upgraded Points offer history review, Mar 2026."}
+  ],
+  "notes": "A staple business card for small businesses. Note that it does charge a foreign transaction fee (2.7%), making it less ideal for international business travel.",
+  "confidence": "High"
+}

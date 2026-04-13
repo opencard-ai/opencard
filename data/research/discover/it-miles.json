@@ -1,0 +1,66 @@
+{
+  "card_id": "discover-it-miles",
+  "issuer": "Discover",
+  "card_name": "Discover it® Miles",
+  "welcome_bonus": {
+    "amount": "Unlimited Match™",
+    "requirement": "Discover automatically matches all the miles you’ve earned at the end of your first year",
+    "value_estimate": "Depends on spending"
+  },
+  "annual_fee": 0,
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "All Purchases",
+        "rate": "1.5X miles per dollar spent"
+      }
+    ]
+  },
+  "credits_and_benefits": [
+    {
+      "name": "No Foreign Transaction Fees",
+      "description": "Standard across all Discover cards",
+      "value": "None"
+    }
+  ],
+  "foreign_transaction_fee": "None",
+  "key_protections": [
+    "FICO® Score for Free",
+    "Identity Alerts",
+    "Online Privacy Protection"
+  ],
+  "fhr_thc_eligibility": false,
+  "sources": [
+    "https://www.discover.com/credit-cards/travel/",
+    "https://www.nerdwallet.com/reviews/credit-cards/discover-it-miles"
+  ],
+  "uncertain_data": [],
+  "name": "Discover it® Miles",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 3,
+    "bonus_points": null,
+    "description": "Unlimited Match™",
+    "point_program": "Discover"
+  },
+  "annual_credits": [
+    {
+      "name": "No Foreign Transaction Fees",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Standard across all Discover cards"
+    }
+  ],
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "network": "Discover",
+  "confidence": "medium"
+}

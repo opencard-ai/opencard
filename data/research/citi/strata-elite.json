@@ -1,0 +1,111 @@
+{
+  "card_id": "citi-strata-elite",
+  "issuer": "Citi",
+  "card_name": "Citi Strata Elite℠ Card",
+  "welcome_bonus": {
+    "amount": "75,000 ThankYou® Points",
+    "requirement": "Uncertain - typically $5,000 to $10,000 spend in 3 months",
+    "value_estimate": "$750 (direct travel)"
+  },
+  "annual_fee": 595,
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Hotels, Rental Cars (via CitiTravel)",
+        "rate": "12X points per dollar spent"
+      },
+      {
+        "category": "Air Travel",
+        "rate": "5X points per dollar spent"
+      },
+      {
+        "category": "Everyday purchases",
+        "rate": "1.5X points per dollar spent"
+      }
+    ]
+  },
+  "credits_and_benefits": [
+    {
+      "name": "$300 Annual Hotel Benefit",
+      "description": "Annual credit for hotel bookings made through CitiTravel",
+      "value": "$300"
+    },
+    {
+      "name": "Priority Pass™ Select Membership",
+      "description": "Unlimited lounge access for cardholder and guests",
+      "value": "High"
+    },
+    {
+      "name": "AA Admirals Club Passes",
+      "description": "Four one-day passes for American Airlines lounges annually",
+      "value": "High"
+    },
+    {
+      "name": "Global Entry or TSA PreCheck Credit",
+      "description": "Up to $100 every 4 years",
+      "value": "$100"
+    }
+  ],
+  "foreign_transaction_fee": "None",
+  "key_protections": [
+    "Premium Travel Protections",
+    "Trip Cancellation/Interruption Insurance",
+    "Primary Rental Car Coverage (via World Elite Mastercard benefits)",
+    "Cell Phone Protection"
+  ],
+  "fhr_thc_eligibility": false,
+  "sources": [
+    "https://www.citi.com/credit-cards/citi-strata-elite-credit-card",
+    "https://onemileatatime.com/guides/citi-strata-elite/"
+  ],
+  "uncertain_data": [
+    "Welcome bonus requirement for 2026",
+    "Availability of Admirals Club passes for authorized users"
+  ],
+  "name": "Citi Strata Elite℠ Card",
+  "welcome_offer": {
+    "spending_requirement": 5,
+    "time_period_months": 3,
+    "bonus_points": 75000,
+    "description": "75,000 ThankYou® Points",
+    "point_program": "Citi"
+  },
+  "annual_credits": [
+    {
+      "name": "$300 Annual Hotel Benefit",
+      "amount": 300,
+      "frequency": "annual",
+      "description": "Annual credit for hotel bookings made through CitiTravel"
+    },
+    {
+      "name": "Priority Pass™ Select Membership",
+      "amount": null,
+      "frequency": "annual",
+      "description": "Unlimited lounge access for cardholder and guests"
+    },
+    {
+      "name": "AA Admirals Club Passes",
+      "amount": null,
+      "frequency": "annual",
+      "description": "Four one-day passes for American Airlines lounges annually"
+    },
+    {
+      "name": "Global Entry or TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "description": "Up to $100 every 4 years"
+    }
+  ],
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "network": "Visa",
+  "confidence": "medium"
+}

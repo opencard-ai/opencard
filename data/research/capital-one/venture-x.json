@@ -1,0 +1,120 @@
+{
+  "card_id": "capital-one-venture-x",
+  "issuer": "Capital One",
+  "card_name": "Capital One Venture X Rewards Credit Card",
+  "welcome_bonus": {
+    "amount": "75,000 miles",
+    "requirement": "Spend $4,000 on purchases within the first 3 months from account opening",
+    "value_estimate": "$750 (direct travel) to $1,388 (TPG valuation)"
+  },
+  "annual_fee": 395,
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Everyday Purchases",
+        "rate": "2X miles per dollar spent"
+      },
+      {
+        "category": "Hotels & Rental Cars (via Capital One Travel)",
+        "rate": "10X miles per dollar spent"
+      },
+      {
+        "category": "Flights (via Capital One Travel)",
+        "rate": "5X miles per dollar spent"
+      }
+    ]
+  },
+  "credits_and_benefits": [
+    {
+      "name": "$300 Annual Travel Credit",
+      "description": "For bookings made through Capital One Travel",
+      "value": "$300"
+    },
+    {
+      "name": "10,000 Anniversary Miles",
+      "description": "Awarded every year on cardholder anniversary",
+      "value": "$100"
+    },
+    {
+      "name": "Global Entry or TSA PreCheck Credit",
+      "description": "Up to $100 every 4 years",
+      "value": "$100"
+    },
+    {
+      "name": "Lounge Access",
+      "description": "Unlimited access to Capital One Lounges, Priority Pass, and Plaza Premium Lounges",
+      "value": "High"
+    },
+    {
+      "name": "Authorized Users",
+      "description": "Add up to 4 authorized users for free, each with lounge access",
+      "value": "High"
+    }
+  ],
+  "foreign_transaction_fee": "None",
+  "key_protections": [
+    "Cell Phone Protection",
+    "Visa Infinite Benefits",
+    "Trip Cancellation/Interruption Insurance",
+    "Auto Rental Collision Damage Waiver"
+  ],
+  "fhr_thc_eligibility": false,
+  "equivalent_hotel_program": "Capital One Premier Collection",
+  "sources": [
+    "https://www.capitalone.com/credit-cards/venture-x/",
+    "https://thepointsguy.com/credit-cards/capital-one-venture-x/"
+  ],
+  "uncertain_data": [],
+  "name": "Capital One Venture X Rewards Credit Card",
+  "welcome_offer": {
+    "spending_requirement": 4,
+    "time_period_months": 3,
+    "bonus_points": 75000,
+    "description": "75,000 miles",
+    "point_program": "Capital One"
+  },
+  "annual_credits": [
+    {
+      "name": "$300 Annual Travel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "description": "For bookings made through Capital One Travel"
+    },
+    {
+      "name": "10,000 Anniversary Miles",
+      "amount": 100,
+      "frequency": "annual",
+      "description": "Awarded every year on cardholder anniversary"
+    },
+    {
+      "name": "Global Entry or TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "description": "Up to $100 every 4 years"
+    },
+    {
+      "name": "Lounge Access",
+      "amount": null,
+      "frequency": "annual",
+      "description": "Unlimited access to Capital One Lounges, Priority Pass, and Plaza Premium Lounges"
+    },
+    {
+      "name": "Authorized Users",
+      "amount": null,
+      "frequency": "annual",
+      "description": "Add up to 4 authorized users for free, each with lounge access"
+    }
+  ],
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "network": "Visa",
+  "confidence": "medium"
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import LanguageSwitcher from "@/app/components/LanguageSwitcher";
+import FloatingRecommend from "@/app/components/FloatingRecommend";
 import { locales, t } from "@/lib/i18n";
 
 const geistSans = Geist({
@@ -70,6 +71,8 @@ export default async function LocaleLayout({ children, params }: Props) {
             <FTCDisclosure locale={lang as any} />
           </div>
         </footer>
+        {/* Floating AI Card Finder */}
+        <FloatingRecommend locale={lang} />
       </body>
     </html>
   );

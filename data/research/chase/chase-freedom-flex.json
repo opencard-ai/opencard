@@ -1,0 +1,46 @@
+{
+  "card_id": "chase-freedom-flex",
+  "name": "Chase Freedom Flex®",
+  "issuer": "Chase",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 3,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": 20000,
+    "description": "Earn a $200 (20,000 pts) bonus after you spend $500 on purchases in the first 3 months from account opening.",
+    "free_nights": null,
+    "point_program": "Ultimate Rewards"
+  },
+  "earning_rates": [
+    {"category": "Rotating", "rate": 5, "notes": "On up to $1,500 in combined purchases in bonus categories each quarter you activate."},
+    {"category": "Chase Travel", "rate": 5, "notes": "On travel purchased through Chase Travel."},
+    {"category": "Dining", "rate": 3, "notes": "Including takeout and eligible delivery services."},
+    {"category": "Drugstores", "rate": 3, "notes": "On all drugstore purchases."},
+    {"category": "Default", "rate": 1, "notes": "On all other purchases."}
+  ],
+  "annual_credits": [
+    {"name": "DoorDash Promo", "amount": 40, "frequency": "Quarterly", "description": "Up to $10 off quarterly on DoorDash non-restaurant orders."}
+  ],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      {"name": "Mastercard World Elite", "description": "Includes cell phone protection and other Mastercard-specific benefits."}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "sources": [
+    {"url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex", "notes": "Official Chase page Apr 2026."},
+    {"url": "https://www.bankrate.com/credit-cards/cash-back/chase-freedom-flex-q2-2026-categories/", "notes": "Bankrate review Mar 2026."}
+  ],
+  "notes": "Excellent no-annual-fee card for rotating 5% categories. Note the 3% foreign transaction fee.",
+  "confidence": "High"
+}

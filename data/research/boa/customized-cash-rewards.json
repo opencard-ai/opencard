@@ -1,0 +1,83 @@
+{
+  "card_id": "boa-customized-cash-rewards",
+  "issuer": "Bank of America",
+  "card_name": "Bank of America® Customized Cash Rewards Credit Card",
+  "welcome_bonus": {
+    "amount": "$200 Online Cash Rewards Bonus",
+    "requirement": "Spend $1,000 on purchases within the first 90 days from account opening",
+    "value_estimate": "$200"
+  },
+  "annual_fee": 0,
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Choice Category (up to $2,500/qtr)",
+        "rate": "3% cash back (6% for first year intro offer for some)"
+      },
+      {
+        "category": "Grocery Stores/Wholesale Clubs",
+        "rate": "2% cash back"
+      },
+      {
+        "category": "All other purchases",
+        "rate": "1% cash back"
+      }
+    ],
+    "choice_category_options": [
+      "Gas & EV Charging",
+      "Online Shopping (including Cable, Internet, Phone, Streaming)",
+      "Dining",
+      "Travel",
+      "Drugstores",
+      "Home Improvement & Furnishings"
+    ]
+  },
+  "credits_and_benefits": [
+    {
+      "name": "Preferred Rewards Bonus",
+      "description": "Bank of America Preferred Rewards members can earn a 25%-75% bonus on all cash rewards",
+      "value": "Significant"
+    }
+  ],
+  "foreign_transaction_fee": "3%",
+  "key_protections": [
+    "Fraud Protection",
+    "Overdraft Protection (optional)"
+  ],
+  "fhr_thc_eligibility": false,
+  "sources": [
+    "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
+    "https://www.bankrate.com/credit-cards/issuers/bank-of-america/"
+  ],
+  "uncertain_data": [
+    "6% introductory rate for first year choice category varies by applicant"
+  ],
+  "name": "Bank of America® Customized Cash Rewards Credit Card",
+  "welcome_offer": {
+    "spending_requirement": 1,
+    "time_period_months": 3,
+    "bonus_points": 200,
+    "description": "$200 Online Cash Rewards Bonus",
+    "point_program": "Bank of America"
+  },
+  "annual_credits": [
+    {
+      "name": "Preferred Rewards Bonus",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Bank of America Preferred Rewards members can earn a 25%-75% bonus on all cash rewards"
+    }
+  ],
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "network": "Visa",
+  "confidence": "medium"
+}

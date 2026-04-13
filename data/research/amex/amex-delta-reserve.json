@@ -1,0 +1,61 @@
+{
+  "card_id": "amex-delta-reserve",
+  "name": "Delta SkyMiles® Reserve American Express Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 650,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 5000,
+    "time_period_months": 6,
+    "bonus_points": 100000,
+    "description": "Earn up to 100,000 Bonus Miles after you spend $5,000 in eligible purchases on your new Card in your first 6 months of Card Membership. Welcome offers vary and you may not be eligible.",
+    "free_nights": null,
+    "point_program": "Delta SkyMiles"
+  },
+  "earning_rates": [
+    {"category": "Delta purchases", "rate": 3, "notes": "Per $1 on Delta purchases"},
+    {"category": "Other", "rate": 1, "notes": null}
+  ],
+  "annual_credits": [
+    {"name": "Resy Credit", "amount": 240, "frequency": "Annual", "description": "Up to $20 per month ($240/year) in statement credits at U.S. Resy restaurants."},
+    {"name": "Rideshare Credit", "amount": 120, "frequency": "Annual", "description": "Up to $10 per month ($120/year) on U.S. rideshare purchases."},
+    {"name": "Global Entry/TSA PreCheck", "amount": 120, "frequency": "Every 4 years", "description": "Up to $120 statement credit for Global Entry or up to $85 for TSA PreCheck every 4-4.5 years."}
+  ],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": true,
+      "delta_skyclub": true,
+      "priority_pass": false,
+      "other": "15 visits per year to Delta Sky Club when flying Delta; unlimited visits after spending $75,000 in a calendar year. Also receives complimentary access to The Centurion Lounge and Escape Lounges when flying Delta. 4 One-Time Guest Passes per Medallion Year."
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      {"name": "Companion Certificate", "description": "Annual companion certificate valid for a First Class, Delta Comfort+, or Main Cabin round-trip flight to select destinations after renewal. Taxes/fees of $22-$250 apply."},
+      {"name": "MQD Headstart", "description": "$2,500 Medallion Qualification Dollars each Medallion Qualification Year."},
+      {"name": "MQD Boost", "description": "Earn $1 MQD for each $10 in purchases on the card (stronger than Platinum tier)."},
+      {"name": "Free Checked Bag", "description": "First checked bag free for you and up to 8 companions on Delta flights."},
+      {"name": "Priority Boarding", "description": "Zone 5 priority boarding on Delta flights."},
+      {"name": "15% Off Award Travel", "description": "15% off when using miles to book Award Travel on Delta flights."},
+      {"name": "Upgrade Priority", "description": "Upgrade priority over others with the same Medallion tier, product, and fare experience."},
+      {"name": "Clear Discount", "description": "Discount on Clear+ membership based on SkyMiles status."}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "trip_cancellation": true,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "baggage_insurance": true,
+    "notes": "Strong travel protections including trip cancellation/interruption. Trip delay requires delay >12 hours."
+  },
+  "sources": [
+    {"url": "https://www.dailydrop.com/credit-cards/delta-skymiles-reserve-american-express-card", "notes": "Current offer, lounge access details, earning rates, offer history, annual credits"},
+    {"url": "https://upgradedpoints.com/credit-cards/reviews/delta-reserve-credit-card-american-express/welcome-offer-history/", "notes": "Offer history and MQD headstart details"}
+  ],
+  "notes": "Delta Sky Club access: 15 visits/year when flying Delta, unlimited after $75K spend. Also gets Centurion Lounge access when flying Delta. Companion cert valid for First Class, Comfort+, or Main Cabin (domestic/Caribbean/Central America). MQD Headstart + MQD Boost makes this the best card for status seekers.",
+  "confidence": 0.94
+}

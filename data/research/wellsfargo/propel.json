@@ -1,0 +1,64 @@
+{
+  "card_id": "wellsfargo-propel",
+  "issuer": "Wells Fargo",
+  "card_name": "Wells Fargo Propel American Express® Card",
+  "status": "Legacy/Discontinued (Not available for new applicants)",
+  "welcome_bonus": {
+    "amount": "Discontinued",
+    "requirement": "Discontinued",
+    "value_estimate": "N/A"
+  },
+  "annual_fee": 0,
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Dining, Gas, Rideshare, Transit",
+        "rate": "3X points per dollar spent"
+      },
+      {
+        "category": "Travel, Streaming Services",
+        "rate": "3X points per dollar spent"
+      },
+      {
+        "category": "All other purchases",
+        "rate": "1X point per dollar spent"
+      }
+    ]
+  },
+  "credits_and_benefits": [],
+  "foreign_transaction_fee": "None",
+  "key_protections": [
+    "Cell Phone Protection",
+    "Lost Luggage Reimbursement",
+    "American Express Retail Protection"
+  ],
+  "fhr_thc_eligibility": false,
+  "sources": [
+    "https://awardwallet.com/credit-cards/wells-fargo-rewards/wells-fargo-propel/",
+    "https://thepointsguy.com/credit-cards/wells-fargo-propel-discontinued/"
+  ],
+  "uncertain_data": [
+    "Propel has been replaced by the Autograph card for new applications since 2022; existing holders may still have these terms"
+  ],
+  "name": "Wells Fargo Propel American Express® Card",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 3,
+    "bonus_points": null,
+    "description": "Discontinued",
+    "point_program": "Wells Fargo"
+  },
+  "annual_credits": [],
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "network": "Visa",
+  "confidence": "medium"
+}

@@ -1,0 +1,60 @@
+{
+  "card_id": "amex-hilton-honors-business",
+  "name": "Hilton Honors American Express Business Card",
+  "issuer": "American Express",
+  "network": "American Express",
+  "annual_fee": 195,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 8000,
+    "time_period_months": 6,
+    "bonus_points": 175000,
+    "description": "Earn 175,000 Hilton Honors Bonus Points plus a Free Night Reward after you spend $8,000 in purchases on the Hilton Honors Business Card in the first six months of Card Membership. Offer ends 4/15/2026.",
+    "free_nights": 1,
+    "point_program": "Hilton Honors"
+  },
+  "earning_rates": [
+    {"category": "Hilton hotels and resorts", "rate": 12, "notes": "Earned on eligible purchases made directly with hotels and resorts within the Hilton portfolio"},
+    {"category": "All other purchases", "rate": 5, "notes": "First $100,000 in purchases each calendar year, then 3X thereafter"},
+    {"category": "All other purchases (above $100K)", "rate": 3, "notes": "After $100,000 annual cap on 5X category"}
+  ],
+  "annual_credits": [
+    {
+      "name": "Hilton Property Credit",
+      "amount": 240,
+      "frequency": "annual",
+      "description": "Up to $60 in statement credits each quarter for purchases made directly with a property in the Hilton portfolio"
+    }
+  ],
+  "travel_benefits": {
+    "hotel_status": ["Hilton Honors Gold status (automatic)", "Hilton Honors Diamond status upgrade upon spending $40,000 in a calendar year"],
+    "other_benefits": ["National Car Rental Emerald Club Executive status", "Complimentary airport lounge access (10 visits per year - removed in 2024 overhaul)"]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "sources": [
+    {
+      "url": "https://www.nerdwallet.com/business/credit-cards/reviews/hilton-honors-american-express-business",
+      "notes": "NerdWallet 2026 review with annual fee, earning rates, benefits, and welcome offer details"
+    },
+    {
+      "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+      "notes": "Hilton Honors credit cards official page with current welcome offer of 175,000 points + free night"
+    },
+    {
+      "url": "https://global.americanexpress.com/card-benefits/view-all/hilton-business",
+      "notes": "Amex official benefits page with earning rates and status information"
+    }
+  ],
+  "notes": "Card underwent major overhaul in March 2024: annual fee increased from $95 to $195, lounge access and free night earning via spending thresholds were removed, but $60/quarter Hilton credits and 5X on non-Hilton purchases were added. Hilton Gold status remains automatic. Offer ends 4/15/2026.",
+  "confidence": "high"
+}

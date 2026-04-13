@@ -1,0 +1,70 @@
+{
+  "card_id": "boa-travel-rewards",
+  "issuer": "Bank of America",
+  "card_name": "Bank of America® Travel Rewards Credit Card",
+  "welcome_bonus": {
+    "amount": "25,000 Online Bonus Points",
+    "requirement": "Spend $1,000 on purchases within the first 90 days from account opening",
+    "value_estimate": "$250"
+  },
+  "annual_fee": 0,
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "All Purchases",
+        "rate": "1.5X points per dollar spent"
+      },
+      {
+        "category": "Travel & Dining (via BofA Travel Center)",
+        "rate": "3X points per dollar spent (note: some sources say 2x, verify current)"
+      }
+    ]
+  },
+  "credits_and_benefits": [
+    {
+      "name": "Preferred Rewards Bonus",
+      "description": "Preferred Rewards members can earn a 25%-75% bonus on all points",
+      "value": "Significant"
+    }
+  ],
+  "foreign_transaction_fee": "None",
+  "key_protections": [
+    "Fraud Protection"
+  ],
+  "fhr_thc_eligibility": false,
+  "sources": [
+    "https://www.bankofamerica.com/credit-cards/products/travel-rewards-credit-card/",
+    "https://upgradedpoints.com/credit-cards/reviews/bank-of-america-travel-rewards-credit-card/"
+  ],
+  "uncertain_data": [
+    "Point earning rate via BofA Travel Center is reportedly 3X but sometimes listed as 2X"
+  ],
+  "name": "Bank of America® Travel Rewards Credit Card",
+  "welcome_offer": {
+    "spending_requirement": 1,
+    "time_period_months": 3,
+    "bonus_points": 25000,
+    "description": "25,000 Online Bonus Points",
+    "point_program": "Bank of America"
+  },
+  "annual_credits": [
+    {
+      "name": "Preferred Rewards Bonus",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Preferred Rewards members can earn a 25%-75% bonus on all points"
+    }
+  ],
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "network": "Visa",
+  "confidence": "medium"
+}

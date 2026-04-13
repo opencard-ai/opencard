@@ -1,0 +1,43 @@
+{
+  "card_id": "discover-it",
+  "name": "Discover it® Cash Back",
+  "issuer": "Discover",
+  "network": "Discover",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "time_period_months": null,
+    "bonus_points": null,
+    "description": "Unlimited Cashback Match: Discover automatically matches all cash back earned at the end of your first year. No minimum spending, no maximum cap.",
+    "free_nights": null,
+    "point_program": "Discover Cashback"
+  },
+  "earning_rates": [
+    {"category": "Rotating 5% Categories", "rate": 5, "notes": "5% cash back on rotating bonus categories on up to $1,500 in combined quarterly purchases (requires activation each quarter). 2026 Q1: Grocery stores, wholesale clubs, select streaming services. Q2: Restaurants, home improvement stores."},
+    {"category": "Default", "rate": 1, "notes": "Earn 1% cash back on all other purchases."}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      {"name": "Cashback Match", "description": "Discover matches ALL cash back earned at the end of your first year — effectively doubling your earnings."},
+      {"name": "Free FICO Score", "description": "Free FICO credit score on your monthly statement."},
+      {"name": "No Annual Fee Forever", "description": "No annual fee; all rewards are pure upside."}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "rental_insurance": "No",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "sources": [
+    {"url": "https://wallethub.com/edu/cc/discover-it-card-review/25936", "notes": "WalletHub - Discover it Cash Back Editor's Review April 2026."},
+    {"url": "https://www.bankrate.com/credit-cards/cash-back/guide-to-discover-it-cash-back-bonus-categories/", "notes": "Bankrate - Guide to the 2026 Discover Cash Back Calendar, Dec 2025."}
+  ],
+  "notes": "Discover is accepted by 99%+ of US merchants. International acceptance is lower than Visa/Mastercard. The rotating 5% categories require quarterly activation at Discover's website. The Unlimited Cashback Match is the card's standout feature — effectively a 100% bonus match on all first-year earnings.",
+  "confidence": "High"
+}

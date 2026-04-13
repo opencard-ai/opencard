@@ -1,0 +1,54 @@
+{
+  "card_id": "amex-delta-gold",
+  "name": "Delta SkyMiles® Gold American Express Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 150,
+  "annual_fee_intro": "$0 introductory annual fee for the first year, then $150",
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 2000,
+    "time_period_months": 6,
+    "bonus_points": 80000,
+    "description": "Earn up to 80,000 Bonus Miles after you spend $2,000 in eligible purchases on your new Card in your first 6 months of Card Membership.",
+    "free_nights": null,
+    "point_program": "Delta SkyMiles"
+  },
+  "earning_rates": [
+    {"category": "Delta purchases", "rate": 2, "notes": "Per $1 on Delta purchases"},
+    {"category": "Restaurants", "rate": 2, "notes": "Worldwide, including takeout and delivery in the U.S."},
+    {"category": "U.S. Supermarkets", "rate": 2, "notes": null},
+    {"category": "Other", "rate": 1, "notes": null}
+  ],
+  "annual_credits": [
+    {"name": "Delta Stays Credit", "amount": 100, "frequency": "Annual", "description": "Up to $100 back per year as a statement credit after booking prepaid hotels or vacation rentals through Delta Stays on delta.com."},
+    {"name": "Delta Flight Credit", "amount": 200, "frequency": "Annual", "description": "$200 Delta Flight Credit after spending $10,000 in purchases on your Card in a calendar year, towards future Delta travel."}
+  ],
+  "travel_benefits": {
+    "lounge_access": {"centurion": false, "priority_pass": false, "delta_skyclub": false, "other": "None"},
+    "hotel_status": [],
+    "other_benefits": [
+      {"name": "Free Checked Bag", "description": "First checked bag free for you and up to 8 companions on Delta flights, saving up to $35-$315 per round trip."},
+      {"name": "Priority Boarding", "description": "Zone 5 priority boarding on Delta flights for you and up to 8 companions."},
+      {"name": "In-Flight Discount", "description": "20% statement credit on eligible Delta in-flight purchases (food, alcoholic beverages, headsets)."},
+      {"name": "15% Off Award Travel", "description": "15% off when using miles to book Award Travel on Delta flights through delta.com and the Fly Delta app."}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "trip_cancellation": false,
+    "purchase_protection": false,
+    "extended_warranty": false,
+    "baggage_insurance": true,
+    "notes": "Trip delay insurance requires delay >12 hours. Baggage insurance covers up to $1,250 for carry-on and $500 for checked bags."
+  },
+  "sources": [
+    {"url": "https://www.dailydrop.com/credit-cards/delta-skymiles-gold-american-express-card", "notes": "Current offer, rewards rate, benefits, offer history"},
+    {"url": "https://upgradedpoints.com/credit-cards/reviews/gold-delta-skymiles-credit-card-american-express/", "notes": "Annual fee, foreign transaction fee, benefits details"}
+  ],
+  "notes": "No Delta Sky Club access. No MQD earning on card spend. Annual fee goes from $0 intro to $150 after year 1. Delta SkyMiles never expire.",
+  "confidence": 0.92
+}

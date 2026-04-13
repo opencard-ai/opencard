@@ -1,6 +1,7 @@
 import { getAllCards } from "@/lib/cards";
 import { t, locales } from "@/lib/i18n";
 import Link from "next/link";
+import TravelProducts from "@/app/components/TravelProducts";
 
 type Props = {
   params: Promise<{ lang: string; card_id: string }>;
@@ -199,30 +200,8 @@ export default async function WikiCardPage({ params }: Props) {
         </Section>
       )}
 
-      {/* Amazon Affiliate CTA */}
-      <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-xl p-6 text-center">
-        <h3 className="font-bold text-slate-800 mb-2">
-          {lang === "zh" ? "想要獲得獎勵？" : lang === "es" ? "¿Quieres ganar recompensas?" : "Want to earn rewards?"}
-        </h3>
-        <p className="text-sm text-slate-600 mb-4">
-          {lang === "zh" 
-            ? "登入 Amazon Associates 後台，搜尋您喜歡的信用卡並取得專屬Affiliate連結。" 
-            : lang === "es" 
-            ? "Inicia sesión en Amazon Associates, busca tu tarjeta preferida y obtén tu enlace de afiliado."
-            : "Log in to Amazon Associates, search for your favorite card, and get your unique affiliate link."}
-        </p>
-        <a
-          href="https://affiliate-program.amazon.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3 rounded-full transition-colors"
-        >
-          {lang === "zh" ? "獲得連結 →" : lang === "es" ? "Obtener enlace →" : "Get Links →"}
-        </a>
-        <p className="text-xs text-slate-400 mt-3">
-          {lang === "zh" ? "使用我們的連結，您可以獲得額外獎勵，我們也會獲得一小筆佣金支持營運。" : lang === "es" ? "Usando nuestro enlace, puede ganar recompensas adicionales y nosotros recibimos una pequeña comisión." : "Using our link may earn you rewards, and we receive a small commission to keep the site running."}
-        </p>
-      </div>
+      {/* Travel Products - 自然嵌入在頁面底部 */}
+      <TravelProducts lang={lang} />
 
       <p className="text-xs text-slate-400 text-center">
         {lang === "zh" ? "最後更新" : lang === "es" ? "Última actualización" : "Last updated"}: {card.last_updated}

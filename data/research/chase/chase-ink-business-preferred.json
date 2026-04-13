@@ -1,0 +1,52 @@
+{
+  "card_id": "chase-ink-business-preferred",
+  "name": "Chase Ink Business Preferred® Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 8000,
+    "time_period_months": 3,
+    "bonus_points": 100000,
+    "description": "100,000 bonus points after you spend $8,000 on purchases in the first 3 months from account opening.",
+    "free_nights": null,
+    "point_program": "Chase Ultimate Rewards"
+  },
+  "earning_rates": [
+    {"category": "Travel", "rate": 3, "notes": "On the first $150,000 spent in combined purchases each account anniversary year."},
+    {"category": "Advertising (Social Media & Search Engines)", "rate": 3, "notes": "On the first $150,000 spent in combined purchases each account anniversary year."},
+    {"category": "Shipping", "rate": 3, "notes": "On the first $150,000 spent in combined purchases each account anniversary year."},
+    {"category": "Internet, Cable & Phone Services", "rate": 3, "notes": "On the first $150,000 spent in combined purchases each account anniversary year."},
+    {"category": "Lyft Rides", "rate": 5, "notes": "Through September 30, 2027."},
+    {"category": "Default", "rate": 1, "notes": "On all other purchases."}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      {"name": "Points Transfer", "description": "Transfer points to leading airline and hotel frequent travel programs at 1:1 ratio."},
+      {"name": "Chase Travel", "description": "Book travel through Chase Travel for competitive rates and premium benefits."},
+      {"name": "DashPass", "description": "Complimentary access to DoorDash DashPass (activation required)."}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "trip_cancellation": true,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "baggage_delay": true,
+    "lost_luggage": true
+  },
+  "sources": [
+    {"url": "https://www.dailydrop.com/credit-cards/ink-business-preferred-credit-card", "notes": "Daily Drop review, confirmed current offer of 100K points after $8K spend in 3 months (active since Dec 2025)."},
+    {"url": "https://thepointsguy.com/credit-cards/chase-ink-card-showdown/", "notes": "TPG overview of Ink card family, confirms $95 AF, 3x on travel/advertising/shipping/cable/phone, primary rental, trip cancellation."},
+    {"url": "https://upgradedpoints.com/credit-cards/reviews/chase-ink-business-preferred-credit-card/benefits/", "notes": "Benefit breakdown confirming $5K trip cancellation, primary rental, purchase protection."},
+    {"url": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred", "notes": "Official Chase page confirms no foreign transaction fees and travel/purchase coverage."}
+  ],
+  "notes": "Only Ink card that earns full Ultimate Rewards points (transferable to airline/hotel partners). No FHR/THC eligibility. Bonus eligibility restricted for those who have had other Ink or Chase business cards. Current offer 100K points since Dec 2025.",
+  "confidence": "High"
+}

@@ -1,0 +1,48 @@
+{
+  "card_id": "chase-marriott-boundless",
+  "name": "Marriott Bonvoy Boundless® Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 4000,
+    "time_period_months": 4,
+    "bonus_points": null,
+    "description": "Earn up to 4 Free Night Awards (35k pts each): 3 after $3,000 spend in 3 months, plus 1 after total $4,000 spend in 4 months. Plus $100 airline credit.",
+    "free_nights": 4,
+    "point_program": "Marriott Bonvoy"
+  },
+  "earning_rates": [
+    {"category": "Marriott", "rate": 6, "notes": "At hotels participating in Marriott Bonvoy."},
+    {"category": "Grocery/Gas/Dining", "rate": 3, "notes": "On first $6,000 spent combined annually on grocery stores, gas stations, and dining."},
+    {"category": "Default", "rate": 2, "notes": "On all other purchases."}
+  ],
+  "annual_credits": [
+    {"name": "Anniversary Free Night", "amount": null, "frequency": "Anniversary", "description": "Free Night Award (up to 35,000 points) each account anniversary year."},
+    {"name": "Airline Credit", "amount": 100, "frequency": "Calendar Year", "description": "Up to $100 in statement credits ($50 every 6 months) for airline purchases through 12/31/2026."}
+  ],
+  "travel_benefits": {
+    "hotel_status": [
+      {"program": "Marriott Bonvoy", "tier": "Silver Elite"}
+    ],
+    "other_benefits": [
+      {"name": "15 Elite Night Credits", "description": "Jump-start to next status level every calendar year."},
+      {"name": "Pathway to Gold", "description": "Earn Gold Elite status by spending $35,000 on purchases each calendar year."}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "sources": [
+    {"url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless", "notes": "Official Chase page Apr 2026."},
+    {"url": "https://www.msn.com/en-us/travel/tips/new-marriott-boundless-card-welcome-bonus-offer-up-to-4-free-night-awards", "notes": "News report Apr 2026."}
+  ],
+  "notes": "Solid hotel card for Marriott loyalists. Anniversary FNA easily offsets the $95 annual fee.",
+  "confidence": "High"
+}
