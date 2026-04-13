@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { getAllCards, getAllIssuers, getAllTags } from "@/lib/cards";
 import CardGrid from "@/app/components/CardGrid";
 import TravelProducts from "@/app/components/TravelProducts";
+import NewsFeed from "@/app/components/NewsFeed";
 import { t, locales } from "@/lib/i18n";
 
 export const dynamic = "force-static";
@@ -51,6 +52,11 @@ export default async function HomePage({ params }: Props) {
         }
       >
         <CardGrid cards={cards} issuers={issuers} tags={tags} locale={locale} />
+      </Suspense>
+
+      {/* Daily Finance News Feed */}
+      <Suspense fallback={null}>
+        <NewsFeed />
       </Suspense>
 
       <section id="about" className="mt-16 bg-white rounded-xl border border-slate-200 p-6">
