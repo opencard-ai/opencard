@@ -1,0 +1,77 @@
+{
+  "card_id": "boa-alaska-summit",
+  "name": "Alaska Airlines Atmos™ Summit Visa Infinite® Card",
+  "issuer": "Bank of America",
+  "network": "Visa",
+  "annual_fee": 395,
+  "foreign_transaction_fee": "None",
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 5,
+    "time_period_months": 4,
+    "bonus_points": 100000,
+    "description": "TBD (Estimate 100,000 points)",
+    "point_program": "Bank of America"
+  },
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Alaska/Hawaiian Airlines purchases",
+        "rate": "4X points per dollar spent"
+      },
+      {
+        "category": "Travel & Dining",
+        "rate": "2X points per dollar spent"
+      },
+      {
+        "category": "Everyday purchases",
+        "rate": "1X point per dollar spent"
+      }
+    ]
+  },
+  "annual_credits": [
+    {
+      "name": "8 Alaska Lounge Passes",
+      "amount": null,
+      "frequency": "annual",
+      "description": "Provided annually (2 per quarter)"
+    },
+    {
+      "name": "Elite Status Boost",
+      "amount": null,
+      "frequency": "annual",
+      "description": "1 status point per $2 spent"
+    },
+    {
+      "name": "10,000 Anniversary Points",
+      "amount": 100,
+      "frequency": "annual",
+      "description": "Awarded every year on cardholder anniversary"
+    },
+    {
+      "name": "Global Companion Award",
+      "amount": null,
+      "frequency": "annual",
+      "description": "Earned with $30k spend; valid for international/partner flights"
+    }
+  ],
+  "travel_benefits": {},
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "bank-of america"
+  ],
+  "last_updated": "2026-04-13T02:11:53.969Z",
+  "sources": [
+    "https://www.alaskaair.com/atmosrewards/",
+    "https://thepointsguy.com/credit-cards/atmos-rewards-summit-tpg-awards-2026/"
+  ]
+}

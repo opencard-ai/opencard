@@ -1,0 +1,113 @@
+{
+  "card_id": "chase-disney-inspire",
+  "name": "Disney Inspire Visa Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 149,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": null,
+    "description": "Earn a $300 Disney Gift Card upon approval and a $300 statement credit after spending $1,000 on purchases within the first three months from account opening. Total welcome value up to $600.",
+    "free_nights": null,
+    "point_program": "Disney Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "DisneyPlus.com, Hulu.com, ESPN+ purchases",
+      "rate": 10,
+      "notes": "Earned as Disney Rewards Dollars"
+    },
+    {
+      "category": "Gas stations",
+      "rate": 3,
+      "notes": "Earned as Disney Rewards Dollars"
+    },
+    {
+      "category": "Most Disney U.S. locations",
+      "rate": 3,
+      "notes": "Earned as Disney Rewards Dollars; includes Disney World, Disneyland, Disney Cruise Line, Aulani"
+    },
+    {
+      "category": "Grocery stores",
+      "rate": 2,
+      "notes": "Earned as Disney Rewards Dollars"
+    },
+    {
+      "category": "Restaurants",
+      "rate": 2,
+      "notes": "Earned as Disney Rewards Dollars"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "Earned as Disney Rewards Dollars"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Disney Streaming Credit",
+      "amount": 120,
+      "frequency": "annual",
+      "description": "$10 monthly statement credit for spending $10 or more on qualifying subscriptions or add-on purchases made directly at DisneyPlus.com, Hulu.com or ESPN+ (requires yearly activation). Up to $120 per year."
+    },
+    {
+      "name": "Disney Theme Park Tickets Credit",
+      "amount": 100,
+      "frequency": "per anniversary year",
+      "description": "$100 statement credit after spending $200 per anniversary year on Disney Theme Park Ticket purchases in the U.S."
+    },
+    {
+      "name": "Disney Resorts and Cruise Bonus",
+      "amount": null,
+      "frequency": "per anniversary year",
+      "description": "Earn 200 Disney Rewards Dollars after spending $2,000 per anniversary year on Disney Resorts in the U.S. and Disney Cruise Line bookings"
+    }
+  ],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      "No interest on eligible Disney vacation packages for 6 months",
+      "Character photo opportunities at Disneyland and Disney World",
+      "10% off select merchandise at Disney World and Disneyland",
+      "10% off select dining at Disney World and Disneyland",
+      "15% off select guided tours at Disney World and Disneyland",
+      "10% off select recreation experiences at Disney World and Disneyland",
+      "Special savings on Disney Cruise Line (digital photo packages, merchandise, island experience packages, onboard spa)",
+      "Savings at Aulani Resort (merchandise, snorkeling, activities)",
+      "VIP Broadway package for Aladdin or Lion King (premium seating, beverage, commemorative print)",
+      "10% off select Disney Store purchases"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "chase",
+    "disneyplus.com, hulu.com, espn+ purchases"
+  ],
+  "last_updated": "2026-04-13T02:11:53.970Z",
+  "sources": [
+    {
+      "url": "https://thepointsguy.com/credit-cards/disney-inspire-visa-new-premium-card-benefits/",
+      "notes": "The Points Guy detailed review: $149 annual fee, $600 welcome bonus ($300 gift card + $300 statement credit), earning rates, and annual benefits"
+    },
+    {
+      "url": "https://www.chase.com/personal/credit-cards/disney-inspire",
+      "notes": "Chase official Disney Inspire page with earning rates, $100 park tickets credit, $10 monthly streaming credit, and 200 Disney Rewards Dollars annual bonus"
+    },
+    {
+      "url": "https://www.cnbc.com/select/new-disney-inspire-visa-card-launch-600-in-bonuses-420-in-perks/",
+      "notes": "CNBC on Disney Inspire launch: $600 welcome offer, $149 annual fee, $420 in annual perks"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "card_id": "amex-marriott-bonvoy-amex",
+  "name": "Marriott Bonvoy American Express Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 250,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 5000,
+    "time_period_months": 6,
+    "bonus_points": 175000,
+    "description": "Earn 175,000 Marriott Bonvoy Bonus Points after spending $5,000 on eligible purchases within the first 6 months of card membership. Offer ends 5/13/26.",
+    "free_nights": null,
+    "point_program": "Marriott Bonvoy"
+  },
+  "earning_rates": [
+    {
+      "category": "hotel_marriott",
+      "rate": 6,
+      "notes": "Marriott Bonvoy points per dollar at hotels participating in Marriott Bonvoy (includes base member rate of 10x plus 6x from card = up to 18.5x total with Gold Elite bonus)"
+    },
+    {
+      "category": "restaurant",
+      "rate": 4,
+      "notes": "Restaurants worldwide (first $15,000 in combined restaurant and U.S. supermarket purchases per calendar year; then 2x)"
+    },
+    {
+      "category": "grocery",
+      "rate": 4,
+      "notes": "U.S. supermarkets (first $15,000 in combined restaurant and U.S. supermarket purchases per calendar year; then 2x)"
+    },
+    {
+      "category": "default",
+      "rate": 2,
+      "notes": "All other eligible purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "priority_pass": false,
+      "centurion": false,
+      "other": null
+    },
+    "hotel_status": [
+      {
+        "program": "Marriott Bonvoy",
+        "tier": "Gold Elite",
+        "method": "Automatic for as long as the card is open"
+      }
+    ],
+    "other_benefits": [
+      {
+        "name": "15 Elite Night Credits",
+        "description": "Receive 15 elite qualifying night credits each calendar year toward Marriott Bonvoy Elite status (can be stacked with other Marriott cards)"
+      },
+      {
+        "name": "1,000 Bonus Points per Stay",
+        "description": "Earn 1,000 bonus Marriott Bonvoy points for every paid eligible stay booked directly with Marriott"
+      },
+      {
+        "name": "Free Night Award (Spending-Based)",
+        "description": "Earn 1 Free Night Award (up to 50,000 points) after spending $15,000 on eligible purchases in a calendar year; can be topped up with up to 25,000 additional points"
+      },
+      {
+        "name": "Premium In-Room Internet",
+        "description": "Complimentary in-room premium internet access at Marriott Bonvoy properties"
+      },
+      {
+        "name": "No Foreign Transaction Fees",
+        "description": "No fees on purchases made outside the United States"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "american-express",
+    "hotel_marriott"
+  ],
+  "last_updated": "2026-04-13T02:11:53.968Z",
+  "sources": [
+    {
+      "url": "https://thepointsguy.com/credit-cards/reviews/marriott-bonvoy-bevy-american-express-card-review/",
+      "notes": "Detailed review: $250 AF, 175K bonus after $5K/6 months, Gold Elite, 15 elite nights, earning 6x/4x/2x, secondary rental insurance, trip delay after 12 hours"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/eligibility-chart-marriott-bonvoy-cards/",
+      "notes": "Eligibility chart confirms Bonvoy Bevy as currently available Amex Marriott card (the original $95 Marriott Bonvoy Amex is no longer open to new applicants)"
+    },
+    {
+      "url": "https://www.marriott.com/credit-cards/marriott-bonvoy-bevy-american-express-card.mi",
+      "notes": "Official Marriott page: 175K points offer, $250 AF, Gold Elite, 6x Marriott, 4x restaurants/supermarkets (cap $15K), 2x other, 15 elite nights"
+    }
+  ]
+}

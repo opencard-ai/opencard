@@ -1,0 +1,109 @@
+{
+  "card_id": "wellsfargo-autograph",
+  "name": "Wells Fargo Autograph® Card",
+  "issuer": "Wells Fargo",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 20000,
+    "description": "Earn 20,000 bonus points when you spend $1,000 on purchases in the first 3 months from account opening (worth $200 in travel).",
+    "free_nights": null,
+    "point_program": "Wells Fargo Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "Restaurants",
+      "rate": 3,
+      "notes": "Earn 3x points on restaurant purchases."
+    },
+    {
+      "category": "Travel",
+      "rate": 3,
+      "notes": "Earn 3x points on travel purchases."
+    },
+    {
+      "category": "Gas Stations",
+      "rate": 3,
+      "notes": "Earn 3x points at gas stations."
+    },
+    {
+      "category": "Transit",
+      "rate": 3,
+      "notes": "Earn 3x points on transit including trains, rideshare, and EV charging stations."
+    },
+    {
+      "category": "Streaming Services",
+      "rate": 3,
+      "notes": "Earn 3x points on popular streaming services."
+    },
+    {
+      "category": "Select Phone Plans",
+      "rate": 3,
+      "notes": "Earn 3x points on select phone plan purchases."
+    },
+    {
+      "category": "Default",
+      "rate": 1,
+      "notes": "Earn 1 point per dollar on all other purchases."
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Cell Phone Protection",
+        "description": "Up to $600 protection against damage or theft when you pay your monthly cell phone bill with the Wells Fargo Autograph Card ($25 deductible)."
+      },
+      {
+        "name": "Rental Car Coverage",
+        "description": "Collision damage waiver coverage for rental cars."
+      },
+      {
+        "name": "Travel Emergency Services",
+        "description": "Travel and emergency services including roadside dispatch."
+      },
+      {
+        "name": "My Wells Fargo Deals",
+        "description": "Discounts in the form of statement credits at participating merchants."
+      },
+      {
+        "name": "Event Access",
+        "description": "Access to exclusive concert and entertainment events via Autograph Card Exclusives."
+      },
+      {
+        "name": "0% Intro APR",
+        "description": "0% intro APR for 12 months from account opening on purchases; ongoing APR 18.49%-28.49% Variable."
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "wells-fargo",
+    "restaurants"
+  ],
+  "last_updated": "2026-04-13T02:11:53.971Z",
+  "sources": [
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/wells-fargo-autograph-vs-competitors",
+      "notes": "NerdWallet - Wells Fargo Autograph vs competitors review, Mar 2026."
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/wells-fargo-autograph-tpg-awards-2026/",
+      "notes": "The Points Guy - Wells Fargo Autograph named No-Annual-Fee Card of the Year 2026, Feb 2026."
+    }
+  ]
+}

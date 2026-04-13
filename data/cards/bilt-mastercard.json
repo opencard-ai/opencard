@@ -1,0 +1,82 @@
+{
+  "card_id": "bilt-mastercard",
+  "name": "Bilt Mastercard®",
+  "issuer": "Wells Fargo (Bilt Rewards)",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 30000,
+    "description": "30,000 bonus points after spending $1,000 on purchases in the first 3 months from account opening.",
+    "free_nights": null,
+    "point_program": "Bilt Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "Rent Payments",
+      "rate": 1,
+      "notes": "Earn 1x on rent payments up to $100,000/year via Bilt Alliance (no transaction fee)."
+    },
+    {
+      "category": "Dining",
+      "rate": 2,
+      "notes": "Earn 2x points on dining purchases."
+    },
+    {
+      "category": "Travel (Bilt App)",
+      "rate": 3,
+      "notes": "Earn 3x points on travel when paying rent through the Bilt app."
+    },
+    {
+      "category": "Default",
+      "rate": 1,
+      "notes": "Earn 1 point per dollar on all other purchases."
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Rent Payments",
+        "description": "Earn points on rent payments without any transaction fee, unique among credit cards."
+      },
+      {
+        "name": "Points Transfer",
+        "description": "Transfer Bilt Points to leading airline and hotel frequent travel programs including United, American Airlines, Hyatt, IHG, and more."
+      },
+      {
+        "name": "Cell Phone Protection",
+        "description": "Cell phone protection against damage or theft when you pay your monthly bill with the card."
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "wells-fargo (bilt rewards)",
+    "rent payments"
+  ],
+  "last_updated": "2026-04-13T02:11:53.971Z",
+  "sources": [
+    {
+      "url": "https://www.cnet.com/personal-finance/credit-cards/the-bilt-mastercard-features-rent-rewards-and-premium-travel-benefits/",
+      "notes": "CNET review of Bilt Mastercard features and benefits."
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/bilt-card-biggest-questions-answered/",
+      "notes": "The Points Guy - Bilt card 2.0 transition and eligibility details, Jan 2026."
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "card_id": "capital-one-savorone",
+  "name": "Capital One SavorOne Cash Rewards Credit Card",
+  "issuer": "Capital One",
+  "network": "Visa",
+  "annual_fee": 39,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": null,
+    "description": "Earn a one-time $200 cash bonus once you spend $500 on purchases within the first 3 months from account opening",
+    "free_nights": null,
+    "point_program": "Capital One Cash Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "Grocery stores",
+      "rate": 3,
+      "notes": "Excludes superstores like Walmart and Target. Includes supermarkets, meat lockers, freezer, dairy product stores and specialty markets."
+    },
+    {
+      "category": "Dining",
+      "rate": 3,
+      "notes": "Restaurants, cafes, bars, lounges, fast-food chains and bakeries"
+    },
+    {
+      "category": "Entertainment",
+      "rate": 3,
+      "notes": "Movie theaters, sports events, theatrical promoters, amusement parks, tourist attractions, aquariums, zoos, dance halls, record stores, pool halls, bowling alleys. Excludes golf courses and streaming services."
+    },
+    {
+      "category": "Popular streaming services",
+      "rate": 3,
+      "notes": null
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": null
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      "No foreign transaction fees",
+      "Access to Capital One Shopping and Capital One Entertainment"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "capital-one",
+    "grocery stores"
+  ],
+  "last_updated": "2026-04-13T02:11:53.969Z",
+  "sources": [
+    {
+      "url": "https://www.capitalone.com/credit-cards/savorone/",
+      "notes": "Capital One official SavorOne page confirming 3% on dining, groceries, entertainment, streaming and $39 annual fee"
+    },
+    {
+      "url": "https://www.bankrate.com/credit-cards/news/capital-one-savorone-changes/",
+      "notes": "Bankrate article on SavorOne $39 annual fee update (August 2025)"
+    },
+    {
+      "url": "https://www.capitalone.com/learn-grow/money-management/everything-about-savorone/",
+      "notes": "Capital One SavorOne overview confirming earning categories and $200 welcome bonus"
+    }
+  ]
+}

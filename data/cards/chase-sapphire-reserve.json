@@ -1,154 +1,145 @@
 {
   "card_id": "chase-sapphire-reserve",
-  "name": "Chase Sapphire Reserve",
+  "name": "Chase Sapphire Reserve®",
   "issuer": "Chase",
-  "network": "Visa Infinite",
+  "network": "Visa",
   "annual_fee": 795,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 75,
+    "spending_requirement": 6000,
     "time_period_months": 3,
     "bonus_points": 125000,
-    "estimated_value": 2000,
-    "point_program": "Chase Ultimate Rewards",
-    "source": "https://www.uscreditcardguide.com/chase-sapphire-reserve/"
+    "description": "Earn 125,000 bonus points after you spend $6,000 on purchases in the first 3 months from account opening.",
+    "free_nights": null,
+    "point_program": "Ultimate Rewards"
   },
   "earning_rates": [
     {
-      "category": "travel",
+      "category": "Chase Travel",
       "rate": 8,
-      "program": "Chase Ultimate Rewards",
-      "notes": "Via Chase Travel only"
+      "notes": "On all purchases through Chase Travel, including The Edit."
     },
     {
-      "category": "airline",
+      "category": "Flights Direct",
       "rate": 4,
-      "program": "Chase Ultimate Rewards",
-      "notes": "Direct bookings on chase.com"
+      "notes": "On flights booked direct with airlines."
     },
     {
-      "category": "hotel",
+      "category": "Hotels Direct",
       "rate": 4,
-      "program": "Chase Ultimate Rewards",
-      "notes": "Direct bookings on chase.com"
+      "notes": "On hotels booked direct with hotel chains."
     },
     {
-      "category": "restaurant",
+      "category": "Dining",
       "rate": 3,
-      "program": "Chase Ultimate Rewards"
+      "notes": "Worldwide dining, including takeout and delivery services."
     },
     {
-      "category": "lyft",
-      "rate": 10,
-      "program": "Chase Ultimate Rewards"
-    },
-    {
-      "category": "default",
+      "category": "Default",
       "rate": 1,
-      "program": "Chase Ultimate Rewards"
+      "notes": "On all other purchases."
     }
   ],
   "annual_credits": [
     {
-      "name": "Annual Travel Credit",
+      "name": "Travel Credit",
       "amount": 300,
-      "description": "Automatic annual credit",
-      "frequency": "annual"
+      "frequency": "Anniversary",
+      "description": "$300 in statement credits for travel purchases each account anniversary year."
+    },
+    {
+      "name": "The Edit Credit",
+      "amount": 500,
+      "frequency": "Calendar Year",
+      "description": "$250 credit from Jan-Jun and $250 from Jul-Dec for prepaid bookings with The Edit (2-night min)."
+    },
+    {
+      "name": "Dining Credit",
+      "amount": 300,
+      "frequency": "Calendar Year",
+      "description": "$150 credit from Jan-Jun and $150 from Jul-Dec for Sapphire Exclusive Tables on OpenTable."
+    },
+    {
+      "name": "Apple TV/Music",
+      "amount": 288,
+      "frequency": "Monthly",
+      "description": "Complimentary Apple TV and Apple Music subscriptions through 6/22/2027."
+    },
+    {
+      "name": "DoorDash Promo",
+      "amount": 300,
+      "frequency": "Monthly",
+      "description": "$25 monthly for DoorDash ($5 restaurant, $20 grocery/retail)."
+    },
+    {
+      "name": "StubHub Credits",
+      "amount": 300,
+      "frequency": "Calendar Year",
+      "description": "$150 credit from Jan-Jun and $150 from Jul-Dec for StubHub/viagogo."
+    },
+    {
+      "name": "Lyft Credits",
+      "amount": 120,
+      "frequency": "Monthly",
+      "description": "$10 monthly credit for Lyft rides."
+    },
+    {
+      "name": "Peloton Credits",
+      "amount": 120,
+      "frequency": "Monthly",
+      "description": "$10 monthly credit for Peloton memberships."
     }
   ],
   "travel_benefits": {
-    "lounge_access": [
-      {
-        "name": "Priority Pass Select",
-        "type": "Priority Pass"
-      },
-      {
-        "name": "Chase Sapphire Lounges",
-        "type": "Chase Sapphire"
-      }
-    ],
     "hotel_status": [
       {
-        "program": "IHG Hotels",
-        "tier": "Platinum",
-        "complimentary": true
+        "program": "IHG One Rewards",
+        "tier": "Platinum Elite"
       }
     ],
     "other_benefits": [
       {
-        "name": "Global Entry/TSA PreCheck/NEXUS Credit",
-        "description": "Up to $100 every 4 years",
-        "frequency": "annual"
+        "name": "Priority Pass Select",
+        "description": "Complimentary Priority Pass Select Membership for lounge access."
       },
       {
-        "name": "1.5x Point Value",
-        "description": "1.5 cpp when redeemed via Chase Travel Portal"
+        "name": "Sapphire Lounge Network",
+        "description": "Access to Chase Sapphire Lounges by The Club."
       },
       {
-        "name": "Primary Rental Insurance",
-        "description": "Primary auto rental coverage"
+        "name": "Reserve Travel Designer",
+        "description": "Personalized service valued at up to $300 per trip."
       },
       {
-        "name": "Trip Delay Insurance",
-        "description": "$500 per person for delays over 6 hours"
+        "name": "Points Transfer",
+        "description": "1 to 1 value to leading airline and hotel partners."
       }
     ]
   },
   "fhr_thc": {
-    "fhr_eligible": false,
-    "thc_eligible": false
+    "fhr_eligible": true,
+    "thc_eligible": true
   },
   "insurance": {
     "rental_insurance": "Primary",
-    "trip_cancellation": true,
     "trip_delay": true,
     "purchase_protection": true,
     "extended_warranty": true
   },
-  "hotel_program": {
-    "program": "IHG Rewards",
-    "points_per_dollar": null,
-    "elite_status": "Platinum"
-  },
-  "application_rules": {
-    "rules": [
-      "5/24 Rule",
-      "Sapphire Rule (48 months)"
-    ],
-    "notes": "Annual fee increased from $550 to $795 in June 2025"
-  },
-  "last_updated": "2026-04-12",
-  "sources": [
-    {
-      "name": "US Credit Card Guide",
-      "url": "https://www.uscreditcardguide.com/chase-sapphire-reserve/",
-      "updated": "2026-04-12"
-    },
-    {
-      "url": "https://www.chase.com/personal/credit-cards/sapphire-reserve"
-    },
-    {
-      "url": "https://www.doctorofcredit.com/credit-cards/chase-sapphire-reserve/"
-    }
-  ],
-  "news_sources": {
-    "doctro_of_credit": [
-      "https://www.doctorofcredit.com/credit-cards/chase-sapphire-reserve/"
-    ],
-    "us_credit_card_guide": [
-      "https://www.uscreditcardguide.com/chase-sapphire-reserve/"
-    ],
-    "chase_official": [
-      "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve"
-    ]
-  },
   "tags": [
     "chase",
-    "travel",
-    "premium",
-    "ur",
-    "premium-travel"
+    "chase travel"
   ],
-  "image_url": "https://www.uscreditcardguide.com/wp-content/uploads/CSR2025.webp"
+  "last_updated": "2026-04-13T02:11:53.970Z",
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+      "notes": "Official Chase page Apr 2026."
+    },
+    {
+      "url": "https://roamingcactus.com/credit-cards/2026/4/1/chase-sapphire-reserve-review-2026",
+      "notes": "Review Apr 2026."
+    }
+  ]
 }

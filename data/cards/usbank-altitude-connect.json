@@ -1,0 +1,69 @@
+{
+  "card_id": "usbank-altitude-connect",
+  "name": "U.S. Bank Altitude® Connect Visa Signature® Card",
+  "issuer": "U.S. Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": "None",
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1,
+    "time_period_months": 3,
+    "bonus_points": 20000,
+    "description": "20,000 Bonus Points",
+    "point_program": "U.S. Bank"
+  },
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Travel, Gas, EV Charging Stations",
+        "rate": "4X points per dollar spent"
+      },
+      {
+        "category": "Dining, Streaming Services, Grocery Stores",
+        "rate": "2X points per dollar spent"
+      },
+      {
+        "category": "All other purchases",
+        "rate": "1X point per dollar spent"
+      },
+      {
+        "category": "Prepaid Hotels/Car Rentals (via U.S. Bank Travel Center)",
+        "rate": "5X points per dollar spent"
+      }
+    ]
+  },
+  "annual_credits": [
+    {
+      "name": "No Annual Fee",
+      "amount": 95,
+      "frequency": "annual",
+      "description": "U.S. Bank removed the $95 fee in mid-2024"
+    },
+    {
+      "name": "Priority Pass™ Digital",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Four complimentary lounge visits per year"
+    }
+  ],
+  "travel_benefits": {},
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "u.s.-bank"
+  ],
+  "last_updated": "2026-04-13T02:11:53.971Z",
+  "sources": [
+    "https://www.usbank.com/credit-cards/altitude-connect-visa-signature-credit-card.html",
+    "https://www.doctorofcredit.com/major-changes-to-u-s-bank-altitude-connect-card/"
+  ]
+}

@@ -1,160 +1,95 @@
 {
   "card_id": "chase-sapphire-preferred",
-  "name": "Chase Sapphire Preferred",
+  "name": "Chase Sapphire Preferred® Card",
   "issuer": "Chase",
-  "network": "Visa Signature",
+  "network": "Visa",
   "annual_fee": 95,
   "foreign_transaction_fee": 0,
-  "credit_required": "Good-Excellent",
+  "credit_required": "Excellent",
   "welcome_offer": {
     "spending_requirement": 5000,
     "time_period_months": 3,
     "bonus_points": 75000,
-    "estimated_value": 1200,
-    "point_program": "Chase Ultimate Rewards",
-    "source": "https://www.uscreditcardguide.com/chase-sapphire-preferred/"
+    "description": "75,000 bonus points after you spend $5,000 on purchases in the first 3 months from account opening.",
+    "free_nights": null,
+    "point_program": "Ultimate Rewards"
   },
   "earning_rates": [
     {
-      "category": "travel",
+      "category": "Chase Travel",
       "rate": 5,
-      "program": "Chase Ultimate Rewards",
-      "notes": "Via Chase Travel"
+      "notes": "On travel purchased through Chase Travel (hotels, car rentals, flights)."
     },
     {
-      "category": "restaurant",
+      "category": "Dining",
       "rate": 3,
-      "program": "Chase Ultimate Rewards"
+      "notes": "Including takeout and eligible delivery services."
     },
     {
-      "category": "online_grocery",
+      "category": "Online Grocery",
       "rate": 3,
-      "program": "Chase Ultimate Rewards"
+      "notes": "Excludes Target, Walmart, and wholesale clubs."
     },
     {
-      "category": "streaming",
+      "category": "Streaming",
       "rate": 3,
-      "program": "Chase Ultimate Rewards"
+      "notes": "On select streaming services."
     },
     {
-      "category": "travel_other",
+      "category": "Other Travel",
       "rate": 2,
-      "program": "Chase Ultimate Rewards"
+      "notes": "On all other travel purchases."
     },
     {
-      "category": "default",
+      "category": "Default",
       "rate": 1,
-      "program": "Chase Ultimate Rewards"
-    },
-    {
-      "rate": 20,
-      "category": "25"
-    },
-    {
-      "rate": 6,
-      "category": "更新】 新的开卡奖励是 75k。同时更新的内容还有：此卡也引"
-    },
-    {
-      "rate": 5,
-      "category": "更新】 盛宴已过，100k 开卡奖励如期结束了，现在只有60"
-    },
-    {
-      "rate": 20,
-      "category": "25"
-    },
-    {
-      "rate": 4,
-      "category": "更新】 100k 史高开卡奖励上线了！ Contents 申"
-    },
-    {
-      "rate": 6,
-      "category": "cents/point，简介见下文。因此其100k的最高开卡"
-    },
-    {
-      "rate": 5,
-      "category": "点数；吃饭、流媒体、网上买菜（排除 Target"
-    },
-    {
-      "rate": 3,
-      "category": "点数；其他旅行消费可得 2x 点数；其他类别可得 1x UR"
-    },
-    {
-      "rate": 10,
-      "category": "那么多的UR点数。这条福利很容易引起误解，所以澄清一下：比如"
-    },
-    {
-      "rate": 3,
-      "category": "点数，考虑到10% bonus的意思是最后你可以获得3"
+      "notes": "On all other purchases."
     }
   ],
   "annual_credits": [
     {
       "name": "Chase Travel Hotel Credit",
       "amount": 50,
-      "description": "$50 annual credit on Chase Travel hotel bookings",
-      "frequency": "annual"
+      "frequency": "Anniversary",
+      "description": "$50 annual credit on hotel stays purchased through Chase Travel."
     }
   ],
   "travel_benefits": {
-    "lounge_access": [],
     "hotel_status": [],
     "other_benefits": [
       {
-        "name": "1.25x Point Value",
-        "description": "1.25 cpp when redeemed via Chase Travel Portal"
+        "name": "Anniversary Point Bonus",
+        "description": "10% of total spend in pts on each account anniversary."
       },
       {
-        "name": "Point Transfer Partners",
-        "description": "1:1 transfer to Hyatt, United, Southwest, Marriott, and more"
-      },
-      {
-        "name": "Primary Rental Insurance",
-        "description": "Primary auto rental coverage"
-      },
-      {
-        "name": "Trip Cancellation/Delay Insurance",
-        "description": "Up to $10,000 per person for trip cancellation, $500 per trip for delays"
+        "name": "Points Transfer",
+        "description": "Transfer points to leading airline and hotel frequent travel programs at 1 to 1 value."
       }
     ]
   },
   "fhr_thc": {
     "fhr_eligible": false,
-    "thc_eligible": false
+    "thc_eligible": true
   },
   "insurance": {
     "rental_insurance": "Primary",
-    "trip_cancellation": true,
     "trip_delay": true,
     "purchase_protection": true,
     "extended_warranty": true
   },
-  "hotel_program": {
-    "program": null,
-    "points_per_dollar": null
-  },
-  "application_rules": {
-    "rules": [
-      "5/24 Rule",
-      "Sapphire Rule (48 months)"
-    ],
-    "notes": "Cannot get bonus if received any Sapphire card bonus in past 48 months"
-  },
-  "last_updated": "2026-04-12",
-  "sources": [
-    {
-      "name": "US Credit Card Guide",
-      "url": "https://www.uscreditcardguide.com/chase-sapphire-preferred/",
-      "updated": "2026-04-12"
-    },
-    {
-      "url": "https://www.chase.com/personal/credit-cards/sapphire-preferred"
-    }
-  ],
   "tags": [
     "chase",
-    "travel",
-    "mid-tier",
-    "ur"
+    "chase travel"
   ],
-  "image_url": "https://www.uscreditcardguide.com/wp-content/uploads/csp-e1629138224670-300x191.png"
+  "last_updated": "2026-04-13T02:11:53.970Z",
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+      "notes": "Official Chase page."
+    },
+    {
+      "url": "https://www.nerdwallet.com/travel/learn/how-to-get-the-most-from-the-chase-sapphire-preferred-card",
+      "notes": "NerdWallet review Apr 2026."
+    }
+  ]
 }

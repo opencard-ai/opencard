@@ -1,0 +1,128 @@
+{
+  "card_id": "chase-united-explorer",
+  "name": "United℠ Explorer Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 150,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 80000,
+    "description": "Earn 70,000 bonus miles after $3,000 spend in 3 months, plus 10,000 bonus miles after adding an AU in the first 3 months.",
+    "free_nights": null,
+    "point_program": "United MileagePlus"
+  },
+  "earning_rates": [
+    {
+      "category": "United Flights",
+      "rate": 9,
+      "notes": "6x member + 3x card for MileagePlus member's fare."
+    },
+    {
+      "category": "United Purchases",
+      "rate": 3,
+      "notes": "On all other United purchases."
+    },
+    {
+      "category": "Hotel Direct",
+      "rate": 2,
+      "notes": "On hotel stays when booked with the hotel."
+    },
+    {
+      "category": "Dining",
+      "rate": 2,
+      "notes": "On dining, including delivery services."
+    },
+    {
+      "category": "Default",
+      "rate": 1,
+      "notes": "On all other purchases."
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "United Travel Credit",
+      "amount": 100,
+      "frequency": "Calendar Year",
+      "description": "$100 TravelBank cash after spending $10,000."
+    },
+    {
+      "name": "United Hotels Credit",
+      "amount": 100,
+      "frequency": "Calendar Year",
+      "description": "Up to $100 annually on prepaid hotel stays via United Hotels."
+    },
+    {
+      "name": "Rideshare Credit",
+      "amount": 60,
+      "frequency": "Calendar Year",
+      "description": "Up to $60 in statement credits for rideshare purchases."
+    },
+    {
+      "name": "Avis/Budget Credit",
+      "amount": 50,
+      "frequency": "Calendar Year",
+      "description": "Up to $50 annually when booking through cars.united.com."
+    },
+    {
+      "name": "Instacart Credit",
+      "amount": 120,
+      "frequency": "Calendar Year",
+      "description": "Up to $120 annually for Instacart purchases."
+    },
+    {
+      "name": "JSX Credit",
+      "amount": 100,
+      "frequency": "Calendar Year",
+      "description": "Up to $100 annually for JSX flights."
+    }
+  ],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "United Club Passes",
+        "description": "2 one-time passes every account anniversary year."
+      },
+      {
+        "name": "Free 1st Checked Bag",
+        "description": "Primary cardmember and one companion save up to $160 per roundtrip."
+      },
+      {
+        "name": "Priority Boarding",
+        "description": "Board United-operated flights prior to general boarding."
+      },
+      {
+        "name": "Global Entry/TSA PreCheck",
+        "description": "Up to $120 statement credit every 4 years."
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "united flights"
+  ],
+  "last_updated": "2026-04-13T02:11:53.970Z",
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/united/united-explorer",
+      "notes": "Official Chase page Apr 2026."
+    },
+    {
+      "url": "https://thepointsguy.com/news/united-credit-card-refresh-2025/",
+      "notes": "TPG report on annual fee increase Mar 2025."
+    }
+  ]
+}

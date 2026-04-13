@@ -1,0 +1,67 @@
+{
+  "card_id": "boa-customized-cash-rewards",
+  "name": "Bank of America® Customized Cash Rewards Credit Card",
+  "issuer": "Bank of America",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": "3%",
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1,
+    "time_period_months": 3,
+    "bonus_points": 200,
+    "description": "$200 Online Cash Rewards Bonus",
+    "point_program": "Bank of America"
+  },
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Choice Category (up to $2,500/qtr)",
+        "rate": "3% cash back (6% for first year intro offer for some)"
+      },
+      {
+        "category": "Grocery Stores/Wholesale Clubs",
+        "rate": "2% cash back"
+      },
+      {
+        "category": "All other purchases",
+        "rate": "1% cash back"
+      }
+    ],
+    "choice_category_options": [
+      "Gas & EV Charging",
+      "Online Shopping (including Cable, Internet, Phone, Streaming)",
+      "Dining",
+      "Travel",
+      "Drugstores",
+      "Home Improvement & Furnishings"
+    ]
+  },
+  "annual_credits": [
+    {
+      "name": "Preferred Rewards Bonus",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Bank of America Preferred Rewards members can earn a 25%-75% bonus on all cash rewards"
+    }
+  ],
+  "travel_benefits": {},
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "bank-of america"
+  ],
+  "last_updated": "2026-04-13T02:11:53.969Z",
+  "sources": [
+    "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
+    "https://www.bankrate.com/credit-cards/issuers/bank-of-america/"
+  ]
+}

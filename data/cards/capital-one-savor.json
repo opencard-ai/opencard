@@ -1,0 +1,73 @@
+{
+  "card_id": "capital-one-savor",
+  "name": "Capital One Savor Rewards Credit Card",
+  "issuer": "Capital One",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": "None",
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": 200,
+    "description": "$200 Cash Bonus",
+    "point_program": "Capital One"
+  },
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Dining, Entertainment, Popular Streaming Services",
+        "rate": "3% cash back"
+      },
+      {
+        "category": "Grocery Stores",
+        "rate": "3% cash back (excludes superstores like Walmart/Target)"
+      },
+      {
+        "category": "Capital One Entertainment (Concerts/Sports)",
+        "rate": "8% cash back"
+      },
+      {
+        "category": "Capital One Travel (Hotels/Rental Cars)",
+        "rate": "5% cash back"
+      },
+      {
+        "category": "All other purchases",
+        "rate": "1% cash back"
+      }
+    ]
+  },
+  "annual_credits": [
+    {
+      "name": "No Foreign Transaction Fees",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Standard across all Capital One cards"
+    },
+    {
+      "name": "Uber One Benefit",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Complimentary Uber One membership (ended late 2024; need to verify 2026 status)"
+    }
+  ],
+  "travel_benefits": {},
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "capital-one"
+  ],
+  "last_updated": "2026-04-13T02:11:53.969Z",
+  "sources": [
+    "https://www.capitalone.com/credit-cards/savor/",
+    "https://www.nerdwallet.com/credit-cards/learn/benefits-capital-one-savor-savor-one"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "card_id": "citi-double-cash",
+  "name": "Citi Double Cash® Card",
+  "issuer": "Citi",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 3,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1500,
+    "time_period_months": 6,
+    "bonus_cash": 200,
+    "description": "$200 cash back after you spend $1,500 on purchases in the first 6 months of account opening. Delivered as 20,000 ThankYou® Points (equivalent to $200)."
+  },
+  "earning_rates": [
+    {
+      "category": "All Purchases (Buy)",
+      "rate": 1,
+      "notes": "1% cash back when you make a purchase."
+    },
+    {
+      "category": "All Purchases (Pay)",
+      "rate": 1,
+      "notes": "1% cash back when you pay off your balance. Total of 2% back per dollar spent."
+    },
+    {
+      "category": "Travel (Citi Travel Portal)",
+      "rate": 5,
+      "notes": "5% cash back on travel purchased through Citi TravelSM (promotion ended 12/31/25 - may have been extended, verify current)."
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Intro Balance Transfer APR",
+        "description": "0% intro APR for 18 months on balance transfers completed within 4 months of account opening. After that, 18.24% - 28.24% variable APR."
+      },
+      {
+        "name": "Citi Entertainment",
+        "description": "Access to Citi Entertainment for special event access."
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": false,
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "citi",
+    "all purchases (buy)"
+  ],
+  "last_updated": "2026-04-13T02:11:53.970Z",
+  "sources": [
+    {
+      "url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+      "notes": "Official Citi page confirms $200 bonus after $1,500 spend in 6 months, 2% (1%+1%) on all purchases."
+    },
+    {
+      "url": "https://www.creditkarma.com/credit-cards/insights/citi-double-cash-card",
+      "notes": "Credit Karma review confirms $0 AF, $200 bonus for new cardholders (as of Mar 31 2026), 2% flat rate."
+    },
+    {
+      "url": "https://www.cnbc.com/select/citi-double-cash-card-welcome-bonus-offer/",
+      "notes": "CNBC confirms $200 cash back after $1,500 spend in first 6 months, 2% on every purchase."
+    },
+    {
+      "url": "https://upgradedpoints.com/news/citi-double-cash-card-200-welcome-bonus/",
+      "notes": "Confirms $200 welcome offer returned (Oct 2025)."
+    }
+  ]
+}

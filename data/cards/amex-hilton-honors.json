@@ -1,57 +1,73 @@
 {
   "card_id": "amex-hilton-honors",
-  "name": "AmEx Hilton Credit Card Review",
+  "name": "Hilton Honors American Express Card",
   "issuer": "American Express",
-  "network": "American Express",
-  "annual_fee": 2026,
+  "network": "Amex",
+  "annual_fee": 0,
   "foreign_transaction_fee": 0,
-  "credit_required": "Good-Excellent",
+  "credit_required": "Good",
   "welcome_offer": {
     "spending_requirement": 2000,
-    "time_period_months": 3,
+    "time_period_months": 6,
     "bonus_points": 70000,
+    "description": "Earn 70,000 Hilton Honors Bonus Points plus a Free Night Reward after spending $2,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
     "free_nights": 1,
-    "free_night_value": null,
-    "estimated_value": 700,
-    "point_program": "Hilton Honors",
-    "source": "KC confirmed 2026-04-12"
+    "point_program": "Hilton Honors"
   },
   "earning_rates": [
     {
-      "category": "hotel",
+      "category": "hotel_hilton",
       "rate": 7,
-      "program": "Hilton Honors"
+      "notes": "Hilton Honors Bonus Points per dollar at hotels and resorts within the Hilton portfolio"
     },
     {
       "category": "restaurant",
-      "rate": 5
+      "rate": 5,
+      "notes": "U.S. restaurants"
     },
     {
       "category": "grocery",
-      "rate": 5
+      "rate": 5,
+      "notes": "U.S. supermarkets"
     },
     {
       "category": "gas",
-      "rate": 5
+      "rate": 5,
+      "notes": "U.S. gas stations"
     },
     {
       "category": "default",
-      "rate": 3
+      "rate": 3,
+      "notes": "All other eligible purchases"
     }
   ],
   "annual_credits": [],
   "travel_benefits": {
+    "lounge_access": {
+      "priority_pass": false,
+      "centurion": false,
+      "other": null
+    },
     "hotel_status": [
       {
         "program": "Hilton Honors",
         "tier": "Silver",
-        "complimentary": true
+        "method": "Automatic for as long as card is open"
+      },
+      {
+        "program": "Hilton Honors",
+        "tier": "Gold",
+        "method": "Earned by spending $20,000 on eligible purchases in a calendar year (valid through end of next calendar year)"
       }
     ],
     "other_benefits": [
       {
-        "name": "Silver Status",
-        "description": "Earn 20% bonus points on stays, Fifth Night Free on reward stays"
+        "name": "Fifth Night Free",
+        "description": "Fifth night free on reward stays (all Honors members)"
+      },
+      {
+        "name": "No Foreign Transaction Fees",
+        "description": "No fees on purchases made outside the United States"
       }
     ]
   },
@@ -59,36 +75,29 @@
     "fhr_eligible": false,
     "thc_eligible": false
   },
-  "insurance": {},
-  "hotel_program": {
-    "program": "Hilton Honors",
-    "points_per_dollar": 7,
-    "free_night_award": false,
-    "elite_night_credits": 0
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
   },
-  "application_rules": {
-    "rules": [
-      "Once-Per-Lifetime",
-      "Family Rule (Amex)"
-    ],
-    "notes": "May not receive bonus if currently holds Surpass or Aspire"
-  },
-  "last_updated": "2026-04-12",
+  "tags": [
+    "american-express",
+    "hotel_hilton"
+  ],
+  "last_updated": "2026-04-13T02:11:53.968Z",
   "sources": [
     {
-      "name": "US Credit Card Guide",
-      "url": "https://www.uscreditcardguide.com/amex-hilton-credit-card/",
-      "updated": "2026-04-12"
+      "url": "https://thepointsguy.com/credit-cards/hilton-honors-amex-current-offers/",
+      "notes": "Current welcome offer 70K points + Free Night after $2K spend in 6 months, ends 4/15/26"
     },
     {
-      "url": "https://www.americanexpress.com/us/credit-cards/hilton-honors/"
+      "url": "https://onemileatatime.com/deals/hilton-amex-card-bonus/",
+      "notes": "Earning rates and status benefits including Silver automatic and Gold with $20K spend"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/news/hilton-new-welcome-offer-march-2026",
+      "notes": "New limited-time offer details confirmed from March 2026 update"
     }
-  ],
-  "tags": [
-    "amex",
-    "hilton",
-    "no-annual-fee",
-    "entry-level"
-  ],
-  "image_url": "https://www.uscreditcardguide.com/wp-content/uploads/hilton-honors-1-300x190.png"
+  ]
 }

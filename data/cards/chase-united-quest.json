@@ -1,0 +1,108 @@
+{
+  "card_id": "chase-united-quest",
+  "name": "United Quest Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 350,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "bonus_points": 90000,
+    "description": "Earn 90,000 bonus miles after you spend $4,000 on purchases in the first 3 months your account is open. Plus earn 3,000 PQP (Premier Qualifying Points) after spending $4,000. Additional 10,000 bonus miles if you add an authorized user in first 3 months.",
+    "free_nights": null,
+    "point_program": "United MileagePlus"
+  },
+  "earning_rates": [
+    {
+      "category": "United purchases (airline tickets, seat upgrades, Economy Plus, inflight food/beverages/Wi-Fi, United fees)",
+      "rate": 4,
+      "notes": "Earned on United purchases made directly with United"
+    },
+    {
+      "category": "Dining at restaurants (including takeout and eligible delivery services)",
+      "rate": 2,
+      "notes": null
+    },
+    {
+      "category": "Select streaming services",
+      "rate": 2,
+      "notes": null
+    },
+    {
+      "category": "Other travel",
+      "rate": 2,
+      "notes": "Excludes United purchases that qualify for 4 miles"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": null
+    },
+    {
+      "category": "Renowned Hotels and Resorts via Chase Travel",
+      "rate": 5,
+      "notes": "Prepaid hotel accommodations booked through Chase Travel with Renowned Hotels and Resorts"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "United TravelBank Cash",
+      "amount": 200,
+      "frequency": "annual",
+      "description": "$200 annually in TravelBank cash for United- or United Express-operated flights"
+    },
+    {
+      "name": "Renowned Hotels and Resorts Credit",
+      "amount": 150,
+      "frequency": "annual",
+      "description": "Up to $150 in statement credits per anniversary year when booking prepaid stays through Renowned Hotels and Resorts program via Chase Travel"
+    }
+  ],
+  "travel_benefits": {
+    "hotel_status": [
+      "United Premier Silver status (complimentary)"
+    ],
+    "other_benefits": [
+      "2 free checked bags for you and one companion on same reservation on United-operated flights",
+      "10,000-mile discount on award flights each year after first cardmember anniversary",
+      "25% back on inflight purchases (food, beverages, Wi-Fi) as statement credit",
+      "Global Entry or TSA PreCheck credit up to $120 every 4 years",
+      "Primary rental car coverage (up to $60,000 for theft/collision damage)",
+      "Trip cancellation insurance (up to $1,500/person, $6,000/trip)",
+      "Trip delay insurance (up to $500 for expenses after 12-hour delay)",
+      "Delayed baggage insurance (up to $100/day for 3 days)",
+      "Complimentary DashPass membership for 1 year (activate by 12/31/2027)"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Primary (up to $60,000)",
+    "trip_delay": true,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "chase",
+    "united purchases (airline tickets, seat upgrades, economy plus, inflight food/beverages/wi-fi, united fees)"
+  ],
+  "last_updated": "2026-04-13T02:11:53.970Z",
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/united/united-quest",
+      "notes": "Chase official United Quest page with 90,000 mile welcome bonus and earning rates"
+    },
+    {
+      "url": "https://www.nerdwallet.com/travel/learn/united-quest-card-underrated-reasons",
+      "notes": "NerdWallet article on United Quest benefits including $350 annual fee, $200 TravelBank credit, and 4X United earning"
+    },
+    {
+      "url": "https://thepointsguy.com/news/united-credit-card-refresh-2025/",
+      "notes": "The Points Guy on 2025 United card overhaul: annual fee increased from $250 to $350"
+    }
+  ]
+}

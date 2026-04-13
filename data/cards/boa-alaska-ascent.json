@@ -1,0 +1,67 @@
+{
+  "card_id": "boa-alaska-ascent",
+  "name": "Alaska Airlines Atmos™ Ascent Visa Signature® Card",
+  "issuer": "Bank of America",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": "None",
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 4,
+    "time_period_months": 4,
+    "bonus_points": 8000099,
+    "description": "80,000 bonus points + $99 Companion Fare (intro)",
+    "point_program": "Bank of America"
+  },
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Alaska/Hawaiian Airlines purchases",
+        "rate": "3X points per dollar spent"
+      },
+      {
+        "category": "Everyday purchases",
+        "rate": "1X point per dollar spent"
+      }
+    ]
+  },
+  "annual_credits": [
+    {
+      "name": "Annual Companion Fare",
+      "amount": 122,
+      "frequency": "annual",
+      "description": "From $122 ($99 plus taxes and fees from $23) every year on your card anniversary"
+    },
+    {
+      "name": "Free Checked Bag",
+      "amount": null,
+      "frequency": "annual",
+      "description": "For you and up to 6 guests on the same Alaska/Hawaiian flight"
+    },
+    {
+      "name": "Lounge Discount",
+      "amount": 100,
+      "frequency": "annual",
+      "description": "$100 off an Alaska Lounge+ membership"
+    }
+  ],
+  "travel_benefits": {},
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "bank-of america"
+  ],
+  "last_updated": "2026-04-13T02:11:53.969Z",
+  "sources": [
+    "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/",
+    "https://thepointsguy.com/credit-cards/atmos-ascent-vs-atmos-summit/"
+  ]
+}

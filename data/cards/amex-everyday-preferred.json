@@ -1,0 +1,71 @@
+{
+  "card_id": "amex-everyday-preferred",
+  "name": "Amex EveryDay Preferred Credit Card",
+  "issuer": "American Express",
+  "network": "American Express",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 2000,
+    "time_period_months": 6,
+    "bonus_points": 15000,
+    "description": "Earn 15,000 Membership Rewards points after you use your new Card to make $2,000 in purchases within the first 6 months (as of July 2024)",
+    "free_nights": null,
+    "point_program": "American Express Membership Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "U.S. supermarkets",
+      "rate": 3,
+      "notes": "On up to $6,000 per year in purchases, then 1X thereafter"
+    },
+    {
+      "category": "U.S. gas stations",
+      "rate": 2,
+      "notes": null
+    },
+    {
+      "category": "Eligible travel booked through American Express Travel",
+      "rate": 2,
+      "notes": null
+    },
+    {
+      "category": "All other eligible purchases",
+      "rate": 1,
+      "notes": null
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      "50% bonus points when using card 30+ times in a billing period"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "american-express",
+    "u.s. supermarkets"
+  ],
+  "last_updated": "2026-04-13T02:11:53.968Z",
+  "sources": [
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/amex-everyday-preferred",
+      "notes": "NerdWallet review noting card is no longer accepting applications as of September 2024"
+    },
+    {
+      "url": "https://global.americanexpress.com/card-benefits/view-all/amex-everyday-preferred",
+      "notes": "Amex official benefits page with earning rates"
+    }
+  ]
+}

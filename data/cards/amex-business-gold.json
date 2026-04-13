@@ -1,0 +1,84 @@
+{
+  "card_id": "amex-business-gold",
+  "name": "American Express Business Gold Card",
+  "issuer": "American Express",
+  "network": "American Express",
+  "annual_fee": 375,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 15000,
+    "time_period_months": 3,
+    "bonus_points": 200000,
+    "description": "As High As 200,000 Membership Rewards points after spending $15,000 in eligible purchases on your new Card in your first 3 months of Membership. Welcome offers vary and you may not be eligible for an offer.",
+    "free_nights": null,
+    "point_program": "American Express Membership Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "Top 2 eligible business categories",
+      "rate": 4,
+      "notes": "First $150,000 in combined purchases from top 2 categories each calendar year, then 1X. Categories include: advertising (online, TV, radio at U.S. media providers), U.S. electronic goods/software/cloud providers, U.S. gas stations, U.S. restaurants (including takeout/delivery), transit (rideshare, trains, taxis, ferries, parking, buses, tolls, subways), and U.S. wireless phone service providers"
+    },
+    {
+      "category": "Flights and prepaid hotels booked via Amex Travel",
+      "rate": 3,
+      "notes": null
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "After $150,000 annual cap on 4X categories"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "FedEx, Grubhub, Office Supply Stores Credit",
+      "amount": 240,
+      "frequency": "annual",
+      "description": "Up to $20 in statement credits monthly after using the Business Gold Card for eligible U.S. purchases at FedEx, Grubhub, and Office Supply Stores. Enrollment required."
+    },
+    {
+      "name": "Walmart+ Membership Credit",
+      "amount": 155,
+      "frequency": "annual",
+      "description": "Up to $12.95 statement credit each month after paying for a Walmart+ membership (subject to auto-renewal) with the Business Gold Card. Up to $155.40 annually."
+    }
+  ],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      "Secondary rental car coverage (in U.S. and abroad when paying for rental with card and declining CDW)",
+      "Access to Amex Offers"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "american-express",
+    "top 2 eligible business categories"
+  ],
+  "last_updated": "2026-04-13T02:11:53.966Z",
+  "sources": [
+    {
+      "url": "https://www.nerdwallet.com/business/credit-cards/reviews/american-express-business-gold",
+      "notes": "NerdWallet 2026 review with annual fee $375, welcome offer up to 200K points, earning rates, and benefits"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/amex-business-gold-current-offer/",
+      "notes": "The Points Guy current offer page noting $375 annual fee and welcome offer details"
+    },
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
+      "notes": "Amex official card page with earning categories and statement credits"
+    }
+  ]
+}

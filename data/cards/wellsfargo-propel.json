@@ -1,0 +1,52 @@
+{
+  "card_id": "wellsfargo-propel",
+  "name": "Wells Fargo Propel American Express® Card",
+  "issuer": "Wells Fargo",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": "None",
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 3,
+    "bonus_points": null,
+    "description": "Discontinued",
+    "point_program": "Wells Fargo"
+  },
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Dining, Gas, Rideshare, Transit",
+        "rate": "3X points per dollar spent"
+      },
+      {
+        "category": "Travel, Streaming Services",
+        "rate": "3X points per dollar spent"
+      },
+      {
+        "category": "All other purchases",
+        "rate": "1X point per dollar spent"
+      }
+    ]
+  },
+  "annual_credits": [],
+  "travel_benefits": {},
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "wells-fargo"
+  ],
+  "last_updated": "2026-04-13T02:11:53.971Z",
+  "sources": [
+    "https://awardwallet.com/credit-cards/wells-fargo-rewards/wells-fargo-propel/",
+    "https://thepointsguy.com/credit-cards/wells-fargo-propel-discontinued/"
+  ]
+}

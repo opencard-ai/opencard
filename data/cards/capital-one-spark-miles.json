@@ -1,0 +1,67 @@
+{
+  "card_id": "capital-one-spark-miles",
+  "name": "Capital One Spark Miles for Business",
+  "issuer": "Capital One",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": "None",
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 4,
+    "time_period_months": 3,
+    "bonus_points": 50000,
+    "description": "50,000 miles",
+    "point_program": "Capital One"
+  },
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "All Purchases",
+        "rate": "2X miles per dollar spent"
+      },
+      {
+        "category": "Hotels & Rental Cars (via Capital One Travel)",
+        "rate": "5X miles per dollar spent"
+      }
+    ]
+  },
+  "annual_credits": [
+    {
+      "name": "Global Entry or TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "description": "Up to $100 every 4 years"
+    },
+    {
+      "name": "Lounge Access",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Two complimentary visits per year to Capital One Lounges or Plaza Premium Lounges"
+    },
+    {
+      "name": "Free Employee Cards",
+      "amount": null,
+      "frequency": "annual",
+      "description": "Available for business cardholders"
+    }
+  ],
+  "travel_benefits": {},
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": true
+  },
+  "tags": [
+    "capital-one"
+  ],
+  "last_updated": "2026-04-13T02:11:53.969Z",
+  "sources": [
+    "https://www.capitalone.com/small-business/credit-cards/spark-miles/",
+    "https://onemileatatime.com/reviews/credit-cards/capital-one/capital-one-spark-miles-business-card/"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "card_id": "usbank-altitude-reserve",
+  "name": "U.S. Bank Altitude® Reserve Visa Infinite® Card",
+  "issuer": "U.S. Bank",
+  "network": "Visa",
+  "annual_fee": 400,
+  "foreign_transaction_fee": "None",
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 4,
+    "time_period_months": 3,
+    "bonus_points": 50000,
+    "description": "50,000 Bonus Points",
+    "point_program": "U.S. Bank"
+  },
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Mobile Wallet (Apple Pay, Google Pay, Samsung Pay)",
+        "rate": "3X points per dollar spent"
+      },
+      {
+        "category": "Travel (direct with airline/hotel/rental car)",
+        "rate": "3X points per dollar spent"
+      },
+      {
+        "category": "Hotels & Rental Cars (via U.S. Bank Travel Center)",
+        "rate": "10X points per dollar spent (formerly 5X; updated late 2025)"
+      },
+      {
+        "category": "All other purchases",
+        "rate": "1X point per dollar spent"
+      }
+    ]
+  },
+  "annual_credits": [
+    {
+      "name": "Annual Travel & Dining Credit",
+      "amount": 325,
+      "frequency": "annual",
+      "description": "Up to $325 annually for travel and dining purchases (including fast food/bars)"
+    },
+    {
+      "name": "Real-Time Rewards",
+      "amount": null,
+      "frequency": "annual",
+      "description": "Points worth 1.5 cents each when redeemed via text for travel purchases"
+    },
+    {
+      "name": "Priority Pass™ Select",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Eight complimentary lounge visits per year (including restaurant credit at select airports)"
+    },
+    {
+      "name": "TSA PreCheck or Global Entry Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "description": "Up to $100 every 4 years"
+    }
+  ],
+  "travel_benefits": {},
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": true
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "u.s.-bank"
+  ],
+  "last_updated": "2026-04-13T02:11:53.971Z",
+  "sources": [
+    "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html",
+    "https://awardwallet.com/news/credit-cards/us-bank-altitude-reserve-card-2025-changes/"
+  ]
+}

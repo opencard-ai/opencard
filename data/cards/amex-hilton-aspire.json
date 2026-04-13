@@ -1,129 +1,135 @@
 {
   "card_id": "amex-hilton-aspire",
-  "name": "AmEx Hilton Aspire Credit Card Review",
+  "name": "Hilton Honors American Express Aspire Card",
   "issuer": "American Express",
-  "network": "American Express",
-  "annual_fee": 450,
+  "network": "Amex",
+  "annual_fee": 550,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
     "spending_requirement": 6000,
-    "time_period_months": 3,
+    "time_period_months": 6,
     "bonus_points": 175000,
-    "estimated_value": 875,
-    "point_program": "Hilton Honors",
-    "source": "KC confirmed 2026-04-12"
+    "description": "Earn 175,000 Hilton Honors Bonus Points after spending $6,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
+    "free_nights": null,
+    "point_program": "Hilton Honors"
   },
   "earning_rates": [
     {
-      "category": "hotel",
+      "category": "hotel_hilton",
       "rate": 14,
-      "program": "Hilton Honors"
+      "notes": "Hilton Honors Bonus Points per dollar at hotels and resorts within the Hilton portfolio"
     },
     {
       "category": "airline",
       "rate": 7,
-      "notes": "Via Amex Travel, car rentals"
+      "notes": "Flights booked directly with the airline or through Amex Travel"
     },
     {
       "category": "restaurant",
       "rate": 7,
-      "notes": "US restaurants"
+      "notes": "U.S. restaurants, including takeout and delivery"
+    },
+    {
+      "category": "car_rental",
+      "rate": 7,
+      "notes": "Car rentals booked directly with select car rental companies"
     },
     {
       "category": "default",
-      "rate": 3
+      "rate": 3,
+      "notes": "All other eligible purchases"
     }
   ],
   "annual_credits": [
     {
-      "name": "Free Night Reward",
-      "amount": 1,
-      "description": "Annual free night (unlimited tier). Extra night at $30k, another at $60k spend",
-      "frequency": "annual"
-    },
-    {
       "name": "Hilton Resort Credit",
       "amount": 400,
-      "description": "$200 per half-year, eligible Hilton Resorts worldwide",
-      "frequency": "semi-annual"
+      "frequency": "semi-annually",
+      "description": "Up to $200 statement credit per half-year for eligible purchases made directly with participating Hilton resorts ($400 total annually)"
     },
     {
-      "name": "Flight Credit",
+      "name": "Airline Fee Credit",
       "amount": 200,
-      "description": "$50 per quarter for airfare",
-      "frequency": "quarterly"
+      "frequency": "annually",
+      "description": "Up to $200 ($50 per quarter) statement credit for eligible flight purchases booked directly with airlines or through Amex Travel"
     },
     {
       "name": "CLEAR Plus Credit",
-      "amount": 189,
-      "description": "Annual CLEAR Plus membership reimbursement",
-      "frequency": "annual"
+      "amount": 209,
+      "frequency": "annually",
+      "description": "Up to $209 statement credit for CLEAR Plus membership"
+    },
+    {
+      "name": "Free Night Reward",
+      "amount": null,
+      "frequency": "annually",
+      "description": "One free night reward every year on card renewal; second free night after $30,000 spend; third free night after $60,000 spend in a calendar year"
     }
   ],
   "travel_benefits": {
-    "lounge_access": [],
+    "lounge_access": {
+      "priority_pass": false,
+      "centurion": false,
+      "other": "Complimentary Amazon Room Access at select Hiltons; other lounge benefits through Premium Lodging events"
+    },
     "hotel_status": [
       {
         "program": "Hilton Honors",
         "tier": "Diamond",
-        "complimentary": true
+        "method": "Automatic for as long as card is open"
       }
     ],
     "other_benefits": [
       {
-        "name": "Hilton Honors Diamond Status",
-        "description": "Top-tier status: free breakfast/dining credit, room upgrades, executive lounge access"
+        "name": "National Emerald Club Executive Status",
+        "description": "Car rental status with National Car Rental (enrollment required)"
       },
       {
-        "name": "15 elite night credits annually",
-        "description": "Towards Hilton elite status"
+        "name": "Space-Access Room Upgrades",
+        "description": "Space-available room upgrades on each stay for Diamond members"
+      },
+      {
+        "name": "Complimentary Breakfast",
+        "description": "Complimentary breakfast or daily food-and-beverage credit at U.S. properties"
+      },
+      {
+        "name": "Fifth Night Free",
+        "description": "Fifth night free on reward stays (all Honors members)"
       }
     ]
   },
   "fhr_thc": {
     "fhr_eligible": false,
-    "thc_eligible": false,
-    "notes": "Cobrand Hilton card — access via Hilton Honors app / direct booking"
+    "thc_eligible": false
   },
   "insurance": {
-    "trip_cancellation": false,
-    "trip_delay": false,
     "rental_insurance": "Secondary",
-    "purchase_protection": false,
-    "return_protection": false,
-    "extended_warranty": false
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
   },
-  "hotel_program": {
-    "program": "Hilton Honors",
-    "points_per_dollar": 14,
-    "free_night_award": true,
-    "elite_night_credits": 15
-  },
-  "application_rules": {
-    "rules": [
-      "Once-Per-Lifetime",
-      "Family Rule (Amex)"
-    ],
-    "notes": "Amex family of cards restriction applies"
-  },
-  "last_updated": "2026-04-12",
+  "tags": [
+    "american-express",
+    "hotel_hilton"
+  ],
+  "last_updated": "2026-04-13T02:11:53.968Z",
   "sources": [
     {
-      "name": "US Credit Card Guide",
-      "url": "https://www.uscreditcardguide.com/amex-hilton-aspire-credit-card/",
-      "updated": "2026-04-12"
+      "url": "https://thepointsguy.com/credit-cards/hilton-honors-amex-current-offers/",
+      "notes": "Current welcome offers and earnings rates, April 2026"
     },
     {
-      "url": "https://www.americanexpress.com/us/credit-cards/hilton/hilton-honors-aspire/"
+      "url": "https://onemileatatime.com/deals/hilton-amex-card-bonus/",
+      "notes": "Detailed benefits overview including $400 resort credit, $200 airline credit, CLEAR+ credit, and free night rewards"
+    },
+    {
+      "url": "https://global.americanexpress.com/card-benefits/view-all/hilton-aspire",
+      "notes": "Official Amex benefits page"
+    },
+    {
+      "url": "https://upgradedpoints.com/credit-cards/reviews/hilton-honors-american-express-aspire-card/benefits/",
+      "notes": "Travel protections and rental insurance details"
     }
-  ],
-  "tags": [
-    "amex",
-    "hilton",
-    "hotel",
-    "premium",
-    "travel"
-  ],
-  "image_url": "https://www.uscreditcardguide.com/wp-content/uploads/hilton-honors-aspire-300x190.png"
+  ]
 }

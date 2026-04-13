@@ -1,0 +1,61 @@
+{
+  "card_id": "discover-it-cash-back",
+  "name": "Discover it® Cash Back",
+  "issuer": "Discover",
+  "network": "Discover",
+  "annual_fee": 0,
+  "foreign_transaction_fee": "None",
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 3,
+    "bonus_points": null,
+    "description": "Unlimited Cashback Match™",
+    "point_program": "Discover"
+  },
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Rotating Quarterly Categories (up to $1,500 cap/qtr)",
+        "rate": "5% cash back"
+      },
+      {
+        "category": "All other purchases",
+        "rate": "1% cash back"
+      }
+    ],
+    "2026_categories_sample": [
+      "Q1: Groceries, Drugstores",
+      "Q2: Restaurants, Home Improvement",
+      "Q3: TBD (usually Gas, Digital Wallets)",
+      "Q4: TBD (usually Amazon, Target)"
+    ]
+  },
+  "annual_credits": [
+    {
+      "name": "No Foreign Transaction Fees",
+      "amount": 0,
+      "frequency": "annual",
+      "description": "Standard across all Discover cards"
+    }
+  ],
+  "travel_benefits": {},
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "discover"
+  ],
+  "last_updated": "2026-04-13T02:11:53.971Z",
+  "sources": [
+    "https://www.discover.com/credit-cards/cash-back/",
+    "https://thepointsguy.com/credit-cards/discover-it-cash-back-review/"
+  ]
+}

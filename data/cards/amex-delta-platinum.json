@@ -1,0 +1,131 @@
+{
+  "card_id": "amex-delta-platinum",
+  "name": "Delta SkyMiles® Platinum American Express Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 350,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 6,
+    "bonus_points": 90000,
+    "description": "Earn up to 90,000 Bonus Miles after you spend $3,000 in eligible purchases on your new Card in your first 6 months of Card Membership. Welcome offers vary and you may not be eligible.",
+    "free_nights": null,
+    "point_program": "Delta SkyMiles"
+  },
+  "earning_rates": [
+    {
+      "category": "Delta purchases",
+      "rate": 3,
+      "notes": "Per $1 on Delta purchases"
+    },
+    {
+      "category": "Hotels",
+      "rate": 3,
+      "notes": "On eligible hotel purchases"
+    },
+    {
+      "category": "Restaurants",
+      "rate": 2,
+      "notes": "Worldwide, including takeout and delivery in the U.S."
+    },
+    {
+      "category": "U.S. Supermarkets",
+      "rate": 2,
+      "notes": null
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": null
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Resy Credit",
+      "amount": 120,
+      "frequency": "Annual",
+      "description": "Up to $10 per month ($120/year) in statement credits at U.S. Resy restaurants."
+    },
+    {
+      "name": "Rideshare Credit",
+      "amount": 120,
+      "frequency": "Annual",
+      "description": "Up to $10 per month ($120/year) on U.S. rideshare purchases with select providers."
+    },
+    {
+      "name": "Global Entry/TSA PreCheck",
+      "amount": 100,
+      "frequency": "Every 4 years",
+      "description": "Up to $120 statement credit for Global Entry or up to $85 for TSA PreCheck every 4 years."
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "delta_skyclub": false,
+      "other": "Complimentary upgrade list after Medallion Members and Reserve Card Members when holding an eligible ticket on Delta."
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Companion Certificate",
+        "description": "Annual companion certificate valid for a Main Cabin round-trip flight to select destinations after renewal. Taxes/fees of $22-$250 apply."
+      },
+      {
+        "name": "MQD Headstart",
+        "description": "$2,500 Medallion Qualification Dollars each Medallion Qualification Year to help reach status."
+      },
+      {
+        "name": "MQD Boost",
+        "description": "Earn $1 MQD for each $20 in purchases on the card."
+      },
+      {
+        "name": "Free Checked Bag",
+        "description": "First checked bag free for you and up to 8 companions on Delta flights."
+      },
+      {
+        "name": "Priority Boarding",
+        "description": "Zone 5 priority boarding on Delta flights."
+      },
+      {
+        "name": "15% Off Award Travel",
+        "description": "15% off when using miles to book Award Travel on Delta flights."
+      },
+      {
+        "name": "Clear Discount",
+        "description": "Discount on Clear+ membership based on SkyMiles status."
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "baggage_insurance": true,
+    "notes": "Trip delay requires delay >12 hours. Includes trip cancellation/interruption coverage."
+  },
+  "tags": [
+    "american-express",
+    "delta purchases"
+  ],
+  "last_updated": "2026-04-13T02:11:53.968Z",
+  "sources": [
+    {
+      "url": "https://www.dailydrop.com/credit-cards/delta-skymiles-platinum-american-express-card",
+      "notes": "Current offer, earning rates, benefits, offer history, annual credits"
+    },
+    {
+      "url": "https://upgradedpoints.com/credit-cards/reviews/gold-delta-skymiles-credit-card-american-express/",
+      "notes": "Card comparison and benefit details"
+    }
+  ]
+}

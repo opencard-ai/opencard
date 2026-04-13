@@ -1,72 +1,91 @@
 {
   "card_id": "amex-hilton-surpass",
-  "name": "AmEx Hilton Surpass Credit Card Review",
+  "name": "Hilton Honors American Express Surpass Card",
   "issuer": "American Express",
-  "network": "American Express",
-  "annual_fee": 95,
+  "network": "Amex",
+  "annual_fee": 150,
   "foreign_transaction_fee": 0,
-  "credit_required": "Good-Excellent",
+  "credit_required": "Good",
   "welcome_offer": {
     "spending_requirement": 3000,
-    "time_period_months": 3,
+    "time_period_months": 6,
     "bonus_points": 130000,
+    "description": "Earn 130,000 Hilton Honors Bonus Points plus a Free Night Reward after spending $3,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
     "free_nights": 1,
-    "free_night_value": null,
-    "estimated_value": 1300,
-    "point_program": "Hilton Honors",
-    "source": "KC confirmed 2026-04-12"
+    "point_program": "Hilton Honors"
   },
   "earning_rates": [
     {
-      "category": "hotel",
+      "category": "hotel_hilton",
       "rate": 12,
-      "program": "Hilton Honors"
-    },
-    {
-      "category": "restaurant",
-      "rate": 6
-    },
-    {
-      "category": "grocery",
-      "rate": 6
+      "notes": "Hilton Honors Bonus Points per dollar at hotels and resorts within the Hilton portfolio"
     },
     {
       "category": "gas",
-      "rate": 6
+      "rate": 6,
+      "notes": "U.S. gas stations"
     },
     {
-      "category": "online_shopping_us",
-      "rate": 4
+      "category": "grocery",
+      "rate": 6,
+      "notes": "U.S. supermarkets"
+    },
+    {
+      "category": "restaurant",
+      "rate": 6,
+      "notes": "U.S. restaurants"
+    },
+    {
+      "category": "online_retail",
+      "rate": 4,
+      "notes": "U.S. online retail purchases"
     },
     {
       "category": "default",
-      "rate": 3
+      "rate": 3,
+      "notes": "All other eligible purchases"
     }
   ],
   "annual_credits": [
     {
-      "name": "Hilton Credit",
+      "name": "Hilton Credits",
       "amount": 200,
-      "description": "$50 per quarter for direct Hilton bookings",
-      "frequency": "quarterly"
+      "frequency": "quarterly",
+      "description": "Up to $50 statement credit each quarter for eligible purchases made directly with a property in the Hilton portfolio ($200 total annually)"
+    },
+    {
+      "name": "Free Night Reward (spending)",
+      "amount": null,
+      "frequency": "annually",
+      "description": "One free night reward after spending $15,000 on eligible purchases in a calendar year"
     }
   ],
   "travel_benefits": {
+    "lounge_access": {
+      "priority_pass": false,
+      "centurion": false,
+      "other": null
+    },
     "hotel_status": [
       {
         "program": "Hilton Honors",
         "tier": "Gold",
-        "complimentary": true
+        "method": "Automatic for as long as the card is open"
+      },
+      {
+        "program": "Hilton Honors",
+        "tier": "Diamond",
+        "method": "Earned by spending $40,000 on eligible purchases in a calendar year (valid through end of next calendar year)"
       }
     ],
     "other_benefits": [
       {
-        "name": "Free Night Reward",
-        "description": "Annual free night at $15k spend"
+        "name": "National Emerald Club Executive Status",
+        "description": "Car rental status with National Car Rental (enrollment required)"
       },
       {
-        "name": "15 elite night credits annually",
-        "description": "Towards Hilton elite status"
+        "name": "Fifth Night Free",
+        "description": "Fifth night free on reward stays (all Honors members)"
       }
     ]
   },
@@ -74,35 +93,29 @@
     "fhr_eligible": false,
     "thc_eligible": false
   },
-  "insurance": {},
-  "hotel_program": {
-    "program": "Hilton Honors",
-    "points_per_dollar": 12,
-    "free_night_award": true,
-    "elite_night_credits": 15
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
   },
-  "application_rules": {
-    "rules": [
-      "Once-Per-Lifetime",
-      "Family Rule (Amex)"
-    ]
-  },
-  "last_updated": "2026-04-12",
+  "tags": [
+    "american-express",
+    "hotel_hilton"
+  ],
+  "last_updated": "2026-04-13T02:11:53.968Z",
   "sources": [
     {
-      "name": "US Credit Card Guide",
-      "url": "https://www.uscreditcardguide.com/amex-hilton-surpass-credit-card/",
-      "updated": "2026-04-12"
+      "url": "https://thepointsguy.com/credit-cards/hilton-honors-amex-current-offers/",
+      "notes": "130K points + Free Night after $3K spend in 6 months, ends 4/15/26; earning rates 12x/6x/4x/3x"
     },
     {
-      "url": "https://www.americanexpress.com/us/credit-cards/hilton/hilton-honors-surpass/"
+      "url": "https://www.nerdwallet.com/credit-cards/news/hilton-new-welcome-offer-march-2026",
+      "notes": "Confirmed 130K + 1FN offer per US Credit Card Guide 2026.2 update, offer ends 4/15/26"
+    },
+    {
+      "url": "https://onemileatatime.com/deals/hilton-amex-card-bonus/",
+      "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold→Diamond path at $40K, National status"
     }
-  ],
-  "tags": [
-    "amex",
-    "hilton",
-    "mid-tier",
-    "travel"
-  ],
-  "image_url": "https://www.uscreditcardguide.com/wp-content/uploads/hilton-honors-surpass-2-300x190.png"
+  ]
 }

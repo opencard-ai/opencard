@@ -1,0 +1,107 @@
+{
+  "card_id": "chase-ihg-premier",
+  "name": "IHG One Rewards Premier Credit Card",
+  "issuer": "Chase",
+  "network": "Mastercard",
+  "annual_fee": 99,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 140000,
+    "description": "Earn 140,000 bonus points after you spend $3,000 on purchases in the first 3 months from account opening.",
+    "free_nights": null,
+    "point_program": "IHG One Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "IHG",
+      "rate": 10,
+      "notes": "Earn up to 26X total points when you stay at IHG (10x with card, up to 10x member, 6x Platinum)."
+    },
+    {
+      "category": "Travel",
+      "rate": 5,
+      "notes": "On travel purchases."
+    },
+    {
+      "category": "Dining",
+      "rate": 5,
+      "notes": "On dining purchases."
+    },
+    {
+      "category": "Gas",
+      "rate": 5,
+      "notes": "On gas station purchases."
+    },
+    {
+      "category": "Default",
+      "rate": 3,
+      "notes": "On all other purchases."
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Anniversary Free Night",
+      "amount": null,
+      "frequency": "Anniversary",
+      "description": "Free Night Award each anniversary (40,000 point cap, with option to top off)."
+    },
+    {
+      "name": "Spend Credit",
+      "amount": 100,
+      "frequency": "Calendar Year",
+      "description": "$100 statement credit after spending $20,000 each calendar year (plus 10k bonus pts)."
+    },
+    {
+      "name": "United TravelBank",
+      "amount": 50,
+      "frequency": "Calendar Year",
+      "description": "Up to $50 in United TravelBank Cash annually."
+    }
+  ],
+  "travel_benefits": {
+    "hotel_status": [
+      {
+        "program": "IHG One Rewards",
+        "tier": "Platinum Elite"
+      }
+    ],
+    "other_benefits": [
+      {
+        "name": "4th Night Free",
+        "description": "When you redeem points for a consecutive 4-night IHG hotel stay."
+      },
+      {
+        "name": "Global Entry/TSA PreCheck",
+        "description": "Up to $120 statement credit every 4 years."
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "ihg"
+  ],
+  "last_updated": "2026-04-13T02:11:53.970Z",
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier",
+      "notes": "Official Chase page Apr 2026."
+    },
+    {
+      "url": "https://www.dailydrop.com/credit-cards/ihg-rewards-premier-credit-card",
+      "notes": "Daily Drop review 2025."
+    }
+  ]
+}

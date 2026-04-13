@@ -1,0 +1,61 @@
+{
+  "card_id": "chase-freedom-rise",
+  "name": "Chase Freedom Rise Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 3,
+  "credit_required": "New to Credit / Limited Credit",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 3,
+    "bonus_points": null,
+    "description": "Earn a $25 statement credit after signing up for automatic payments within the first 3 months from account opening and remaining enrolled for at least 90 consecutive days",
+    "free_nights": null,
+    "point_program": "Chase Ultimate Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "All purchases",
+      "rate": 1.5,
+      "notes": "Unlimited 1.5% cash back on every purchase"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      "Complimentary 6 months of DashPass (DoorDash and Caviar) for first-time activators between 02/01/2025 and 12/31/2027",
+      "$10 off quarterly on DoorDash non-restaurant orders (when DashPass is active)"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "chase",
+    "all purchases"
+  ],
+  "last_updated": "2026-04-13T02:11:53.969Z",
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/rise",
+      "notes": "Chase official card page with $25 statement credit welcome offer and 1.5% cash back"
+    },
+    {
+      "url": "https://www.forbes.com/advisor/credit-cards/reviews/chase-freedom-rise/",
+      "notes": "Forbes review confirming $25 welcome offer and $0 annual fee"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/chase-freedom-rise",
+      "notes": "NerdWallet review of Chase Freedom Rise as a credit-building card"
+    }
+  ]
+}

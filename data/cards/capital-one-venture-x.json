@@ -1,0 +1,83 @@
+{
+  "card_id": "capital-one-venture-x",
+  "name": "Capital One Venture X Rewards Credit Card",
+  "issuer": "Capital One",
+  "network": "Visa",
+  "annual_fee": 395,
+  "foreign_transaction_fee": "None",
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 4,
+    "time_period_months": 3,
+    "bonus_points": 75000,
+    "description": "75,000 miles",
+    "point_program": "Capital One"
+  },
+  "earning_rates": {
+    "categories": [
+      {
+        "category": "Everyday Purchases",
+        "rate": "2X miles per dollar spent"
+      },
+      {
+        "category": "Hotels & Rental Cars (via Capital One Travel)",
+        "rate": "10X miles per dollar spent"
+      },
+      {
+        "category": "Flights (via Capital One Travel)",
+        "rate": "5X miles per dollar spent"
+      }
+    ]
+  },
+  "annual_credits": [
+    {
+      "name": "$300 Annual Travel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "description": "For bookings made through Capital One Travel"
+    },
+    {
+      "name": "10,000 Anniversary Miles",
+      "amount": 100,
+      "frequency": "annual",
+      "description": "Awarded every year on cardholder anniversary"
+    },
+    {
+      "name": "Global Entry or TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "description": "Up to $100 every 4 years"
+    },
+    {
+      "name": "Lounge Access",
+      "amount": null,
+      "frequency": "annual",
+      "description": "Unlimited access to Capital One Lounges, Priority Pass, and Plaza Premium Lounges"
+    },
+    {
+      "name": "Authorized Users",
+      "amount": null,
+      "frequency": "annual",
+      "description": "Add up to 4 authorized users for free, each with lounge access"
+    }
+  ],
+  "travel_benefits": {},
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "capital-one"
+  ],
+  "last_updated": "2026-04-13T02:11:53.969Z",
+  "sources": [
+    "https://www.capitalone.com/credit-cards/venture-x/",
+    "https://thepointsguy.com/credit-cards/capital-one-venture-x/"
+  ]
+}
