@@ -63,15 +63,15 @@ async function translateBatch(items, lang) {
   const langNames = { zh: "Chinese (Traditional)", es: "Spanish" };
   const dataList = items.map((u, i) => ({ idx: i, title: u.title }));
   
-  const prompt = `Act as a financial news translator. Translate the following news titles to ${langNames[lang]} and provide a 1-sentence factual summary for each.
-Output ONLY a valid JSON object: {"results":[{"idx":number,"title":"translated title","summary":"1-sentence summary"}]}
+  const prompt = `Convert this news list into ${langNames[lang]}. 
+Output ONLY a JSON object: {"results":[{"idx":number,"title":"translated title","summary":"1-sentence summary"}]}
 List: ${JSON.stringify(dataList)}`;
 
   const res = await fetch("https://api.minimax.io/v1/chat/completions", {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${MINIMAX_API_KEY}` },
     body: JSON.stringify({ 
-      model: "MiniMax-M2.7", 
+      model: "MiniMax-M2.5", 
       messages: [{ role: "user", content: prompt }], 
       temperature: 0.1,
       internal_thought: false
@@ -85,17 +85,11 @@ List: ${JSON.stringify(dataList)}`;
   }
 
   const data = await res.json();
-  const raw = data.choices?.[0]?.message?.content || "";
+  let raw = data.choices?.[0]?.message?.content || "";
   try {
-    // Robust parsing: strip thinking blocks and find the first {
-    const cleanText = raw.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
-    const startIdx = cleanText.indexOf('{');
-    const endIdx = cleanText.lastIndexOf('}');
-    if (startIdx === -1 || endIdx === -1) throw new Error("No JSON object found");
-    
-    const jsonStr = cleanText.substring(startIdx, endIdx + 1);
-    const parsed = JSON.parse(jsonStr);
-    
+    raw = raw.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
+    const jsonMatch = raw.match(/\{.*\}/s);
+    const parsed = JSON.parse(jsonMatch ? jsonMatch[0] : raw);
     return items.map((item, i) => {
       const translation = (parsed.results || []).find(r => r.idx === i);
       return {
@@ -105,7 +99,7 @@ List: ${JSON.stringify(dataList)}`;
       };
     });
   } catch (e) {
-    console.error(`Parse failed for ${lang}:`, e, raw.substring(0, 500));
+    console.error(`Parse failed for ${lang}:`, e, raw.substring(0, 300));
     return items.map(i => ({ ...i, [`title_${lang}`]: i.title, [`summary_${lang}`]: "" }));
   }
 }
