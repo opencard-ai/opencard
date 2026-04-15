@@ -46,7 +46,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       >
         <header className="bg-white border-b border-slate-200 sticky top-0 z-10 pt-[env(safe-area-inset-top)]">
           <div className="max-w-5xl mx-auto px-4 py-1 flex items-center justify-between">
-            <a href={`/${lang}`} className="flex items-center gap-2 ml-16">
+            <a href={`/${lang}`} className="flex items-center gap-2 ml-0">
               <img src="/brand/logo-header.png?v=2" alt="OpenCard AI" className="h-12 w-auto object-contain" />
             </a>
             <div className="flex items-center gap-3 whitespace-nowrap">
