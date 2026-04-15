@@ -105,6 +105,9 @@ const LABELS: Record<string, Record<string, string>> = {
   clear: { en: "Clear", zh: "清除", es: "Limpiar" },
   annualFee: { en: "Annual Fee", zh: "年費", es: "Cuota Anual" },
   noFee: { en: "No Annual Fee", zh: "免年費", es: "Sin Cuota Anual" },
+  allAf: { en: "All Fees", zh: "所有年費", es: "Todas las Cuotas" },
+  afUnder95: { en: "Under $95", zh: "低於 $95", es: "Menos de $95" },
+  afOver95: { en: "$95+", zh: "$95 以上", es: "$95+" },
   noResults: { en: "No cards match your criteria", zh: "找不到符合條件的卡片", es: "No hay tarjetas que coincidan" },
   tryAdjust: { en: "Try adjusting your filters", zh: "試著調整篩選條件", es: "Intenta ajustar tus filtros" },
   showing: { en: "Showing", zh: "顯示", es: "Mostrando" },
@@ -133,6 +136,7 @@ function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[
 
   const selectedIssuer = searchParams.get("issuer") || "";
   const selectedTag = searchParams.get("tag") || "";
+  const selectedAf = searchParams.get("af") || "";
   const search = searchParams.get("search") || "";
 
   const updateParam = (key: string, value: string) => {
@@ -172,7 +176,17 @@ function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[
             <option key={value} value={value}>{label}</option>
           ))}
         </select>
-        {(selectedIssuer || selectedTag || search) && (
+        <select
+          value={selectedAf}
+          onChange={(e) => updateParam("af", e.target.value)}
+          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden sm:block min-w-[110px]"
+        >
+          <option value="">{l("allAf", locale)}</option>
+          <option value="no">{l("noFee", locale)}</option>
+          <option value="lt95">{l("afUnder95", locale)}</option>
+          <option value="ge95">{l("afOver95", locale)}</option>
+        </select>
+        {(selectedIssuer || selectedTag || selectedAf || search) && (
           <button
             onClick={() => router.push(`${pathname}#cards`)}
             className="px-3 py-2.5 text-sm text-red-600 hover:bg-red-50 rounded-lg transition-colors"
@@ -214,6 +228,7 @@ function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]
   const pathname = usePathname();
   const selectedIssuer = searchParams.get("issuer") || "";
   const selectedTag = searchParams.get("tag") || "";
+  const selectedAf = searchParams.get("af") || "";
   const search = searchParams.get("search") || "";
 
   const lang = pathname.split("/")[1] || "en";
@@ -222,6 +237,9 @@ function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]
     return cards.filter((card) => {
       if (selectedIssuer && card.issuer !== selectedIssuer) return false;
       if (!cardMatchesTag(card, selectedTag, tags)) return false;
+      if (selectedAf === "no" && card.annual_fee !== 0) return false;
+      if (selectedAf === "lt95" && card.annual_fee >= 95) return false;
+      if (selectedAf === "ge95" && card.annual_fee < 95) return false;
       if (search) {
         const q = search.toLowerCase();
         if (
