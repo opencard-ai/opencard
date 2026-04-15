@@ -1,6 +1,6 @@
 {
   "card_id": "boa-travel-rewards",
-  "name": "Bank of America® Travel Rewards Credit Card",
+  "name": "Bank of America\u00ae Travel Rewards Credit Card",
   "issuer": "Bank of America",
   "network": "Visa",
   "annual_fee": 0,
@@ -13,18 +13,12 @@
     "description": "25,000 Online Bonus Points",
     "point_program": "Bank of America"
   },
-  "earning_rates": {
-    "categories": [
-      {
-        "category": "All Purchases",
-        "rate": "1.5X points per dollar spent"
-      },
-      {
-        "category": "Travel & Dining (via BofA Travel Center)",
-        "rate": "3X points per dollar spent (note: some sources say 2x, verify current)"
-      }
-    ]
-  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "multiplier": 1
+    }
+  ],
   "annual_credits": [
     {
       "name": "Preferred Rewards Bonus",

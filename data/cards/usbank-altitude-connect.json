@@ -1,6 +1,6 @@
 {
   "card_id": "usbank-altitude-connect",
-  "name": "U.S. Bank Altitude® Connect Visa Signature® Card",
+  "name": "U.S. Bank Altitude\u00ae Connect Visa Signature\u00ae Card",
   "issuer": "U.S. Bank",
   "network": "Visa",
   "annual_fee": 0,
@@ -13,26 +13,12 @@
     "description": "20,000 Bonus Points",
     "point_program": "U.S. Bank"
   },
-  "earning_rates": {
-    "categories": [
-      {
-        "category": "Travel, Gas, EV Charging Stations",
-        "rate": "4X points per dollar spent"
-      },
-      {
-        "category": "Dining, Streaming Services, Grocery Stores",
-        "rate": "2X points per dollar spent"
-      },
-      {
-        "category": "All other purchases",
-        "rate": "1X point per dollar spent"
-      },
-      {
-        "category": "Prepaid Hotels/Car Rentals (via U.S. Bank Travel Center)",
-        "rate": "5X points per dollar spent"
-      }
-    ]
-  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "multiplier": 1
+    }
+  ],
   "annual_credits": [
     {
       "name": "No Annual Fee",
@@ -41,7 +27,7 @@
       "description": "U.S. Bank removed the $95 fee in mid-2024"
     },
     {
-      "name": "Priority Pass™ Digital",
+      "name": "Priority Pass\u2122 Digital",
       "amount": 0,
       "frequency": "annual",
       "description": "Four complimentary lounge visits per year"

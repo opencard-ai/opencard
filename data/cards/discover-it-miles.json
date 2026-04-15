@@ -1,6 +1,6 @@
 {
   "card_id": "discover-it-miles",
-  "name": "Discover it® Miles",
+  "name": "Discover it\u00ae Miles",
   "issuer": "Discover",
   "network": "Discover",
   "annual_fee": 0,
@@ -10,17 +10,15 @@
     "spending_requirement": 0,
     "time_period_months": 3,
     "bonus_points": null,
-    "description": "Unlimited Match™",
+    "description": "Unlimited Match\u2122",
     "point_program": "Discover"
   },
-  "earning_rates": {
-    "categories": [
-      {
-        "category": "All Purchases",
-        "rate": "1.5X miles per dollar spent"
-      }
-    ]
-  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "multiplier": 1
+    }
+  ],
   "annual_credits": [
     {
       "name": "No Foreign Transaction Fees",

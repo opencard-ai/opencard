@@ -13,30 +13,12 @@
     "description": "$200 Cash Bonus",
     "point_program": "Capital One"
   },
-  "earning_rates": {
-    "categories": [
-      {
-        "category": "Dining, Entertainment, Popular Streaming Services",
-        "rate": "3% cash back"
-      },
-      {
-        "category": "Grocery Stores",
-        "rate": "3% cash back (excludes superstores like Walmart/Target)"
-      },
-      {
-        "category": "Capital One Entertainment (Concerts/Sports)",
-        "rate": "8% cash back"
-      },
-      {
-        "category": "Capital One Travel (Hotels/Rental Cars)",
-        "rate": "5% cash back"
-      },
-      {
-        "category": "All other purchases",
-        "rate": "1% cash back"
-      }
-    ]
-  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "multiplier": 1
+    }
+  ],
   "annual_credits": [
     {
       "name": "No Foreign Transaction Fees",

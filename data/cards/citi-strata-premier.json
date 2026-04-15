@@ -1,6 +1,6 @@
 {
   "card_id": "citi-strata-premier",
-  "name": "Citi Strata Premier℠ Card",
+  "name": "Citi Strata Premier\u2120 Card",
   "issuer": "Citi",
   "network": "Visa",
   "annual_fee": 95,
@@ -10,33 +10,15 @@
     "spending_requirement": 4,
     "time_period_months": 3,
     "bonus_points": 60000,
-    "description": "60,000 ThankYou® Points",
+    "description": "60,000 ThankYou\u00ae Points",
     "point_program": "Citi"
   },
-  "earning_rates": {
-    "categories": [
-      {
-        "category": "Air Travel & Hotels (via CitiTravel)",
-        "rate": "10X points per dollar spent"
-      },
-      {
-        "category": "Hotels, Air Travel & EV Charging",
-        "rate": "3X points per dollar spent"
-      },
-      {
-        "category": "Restaurants & Supermarkets",
-        "rate": "3X points per dollar spent"
-      },
-      {
-        "category": "Gas Stations",
-        "rate": "3X points per dollar spent"
-      },
-      {
-        "category": "All other purchases",
-        "rate": "1X point per dollar spent"
-      }
-    ]
-  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "multiplier": 1
+    }
+  ],
   "annual_credits": [
     {
       "name": "$100 Annual Hotel Benefit",

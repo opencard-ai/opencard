@@ -13,18 +13,12 @@
     "description": "50,000 miles",
     "point_program": "Capital One"
   },
-  "earning_rates": {
-    "categories": [
-      {
-        "category": "All Purchases",
-        "rate": "2X miles per dollar spent"
-      },
-      {
-        "category": "Hotels & Rental Cars (via Capital One Travel)",
-        "rate": "5X miles per dollar spent"
-      }
-    ]
-  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "multiplier": 1
+    }
+  ],
   "annual_credits": [
     {
       "name": "Global Entry or TSA PreCheck Credit",
