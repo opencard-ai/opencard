@@ -88,7 +88,8 @@ export interface CreditCard {
 }
 
 export function getAllCards(): CreditCard[] {
-  const files = fs.readdirSync(CARDS_DIR).filter((f) => f.endsWith(".json"));
+  const files = fs.readdirSync(path.join(process.cwd(), "data/cards")).filter((f) => f.endsWith(".json") && !f.endsWith(".bak"));
+  console.log("ACTUAL_FILE_LIST_COUNT:", files.length);
           return files
     .map((file) => {
       const content = fs.readFileSync(path.join(CARDS_DIR, file), "utf-8");
