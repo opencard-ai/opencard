@@ -49,6 +49,7 @@ type Props = {
 };
 
 export default function NewsFeed({ lang }: Props) {
+  const [refreshKey, setRefreshKey] = useState(0);
   const [items, setItems] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -118,7 +119,7 @@ export default function NewsFeed({ lang }: Props) {
         {filterTabs.map((tab) => (
           <button
             key={tab.key}
-            onClick={() => setFilter(tab.key)}
+            onClick={() => { setFilter(tab.key); setRefreshKey(k => k + 1); }}
             className={`text-sm px-3 py-1.5 rounded-full border transition duration-200 ${
               filter === tab.key
                 ? "bg-slate-900 text-white border-slate-900 shadow-sm"
