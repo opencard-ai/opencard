@@ -20,6 +20,7 @@ const MESSAGES = {
     thinking: "Thinking...",
     intro: "Hi! I'm your AI card finder. I'll help you find the best US credit card for your needs.\n\nWhat's your preference?",
     alreadyHave: "⚠️ You already have this card",
+    options: ["💰 Cash Back", "✈️ Travel Rewards", "🏅 Points/Miles", "💎 Multiple Types"],
   },
   zh: {
     title: "✨ AI 卡片推薦",
@@ -29,6 +30,7 @@ const MESSAGES = {
     thinking: "思考中...",
     intro: "嗨！我是你的 AI 卡片推薦師。我會幫你找到最適合的美國信用卡。\n\n你想要什麼類型的回饋？",
     alreadyHave: "⚠️ 你已有這張卡",
+    options: ["💰 現金回饋", "✈️ 旅遊獎勵", "🏅 點數/里程", "💎 多種类型"],
   },
   es: {
     title: "✨ Buscador AI de Tarjetas",
@@ -38,6 +40,7 @@ const MESSAGES = {
     thinking: "Pensando...",
     intro: "¡Hola! Soy tu buscador AI de tarjetas. Te ayudaré a encontrar la mejor tarjeta.\n\n¿Qué tipo de recompensas prefieres?",
     alreadyHave: "⚠️ Ya tienes esta tarjeta",
+    options: ["💰 Efectivo", "✈️ Viajes", "🏅 Puntos/Millas", "💎 Múltiples Tipos"],
   },
 };
 
@@ -76,7 +79,7 @@ export default function RecommendWidget({ lang = "en" }: { lang?: string }) {
   const msg = MESSAGES[lang as keyof typeof MESSAGES] || MESSAGES.en;
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: "assistant", content: msg.intro, options: ["💰 Cash Back", "✈️ Travel Rewards", "🏅 Points/Miles", "💎 Multiple Types"] }
+    { role: "assistant", content: msg.intro, options: msg.options }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -156,7 +159,12 @@ export default function RecommendWidget({ lang = "en" }: { lang?: string }) {
             </button>
           </div>
 
-          <div className="h-[450px] overflow-y-auto p-4 space-y-4 bg-slate-50">
+          <div
+            className="h-[450px] overflow-y-auto p-4 space-y-4 bg-slate-50"
+            style={{ overscrollBehavior: "contain" }}
+            onWheel={(e) => e.stopPropagation()}
+            onTouchMove={(e) => e.stopPropagation()}
+          >
             {messages.map((m, i) => (
               <div key={i}>
                 <div className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>

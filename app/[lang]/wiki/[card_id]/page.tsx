@@ -72,7 +72,11 @@ export default async function WikiCardPage({ params }: Props) {
         />
         <StatBox
           label={lang === "zh" ? "開卡禮" : lang === "es" ? "Bono de Bienvenida" : "Welcome Bonus"}
-          value={card.welcome_offer ? `${((card.welcome_offer.bonus_points ?? 0) / 1000).toFixed(0)}K pts` : "N/A"}
+          value={
+            card.welcome_offer && (card.welcome_offer.bonus_points ?? 0) > 0
+              ? `${((card.welcome_offer.bonus_points ?? 0) / 1000).toFixed(0)}K pts`
+              : "N/A"
+          }
           highlight
         />
         <StatBox
