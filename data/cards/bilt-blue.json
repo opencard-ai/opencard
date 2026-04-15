@@ -1,75 +1,41 @@
 {
   "card_id": "bilt-blue",
-  "name": "Bilt Blue Card",
+  "name": "Bilt Blue",
   "issuer": "First Electronic Bank",
-  "network": "Visa",
+  "network": "Mastercard",
   "annual_fee": 0,
-  "foreign_transaction_fee": 0,
-  "credit_required": "Good",
-  "welcome_offer": {
-    "spending_requirement": null,
-    "time_period_months": null,
-    "bonus_points": null,
-    "description": "No welcome bonus currently offered",
-    "free_nights": null,
-    "point_program": "Bilt Rewards"
-  },
   "earning_rates": [
     {
       "category": "Dining",
-      "rate": 3,
-      "notes": "On dining purchases"
+      "multiplier": 3
     },
     {
       "category": "Travel",
-      "rate": 3,
-      "notes": "On travel purchases"
+      "multiplier": 2
     },
     {
-      "category": "Other",
-      "rate": 2,
-      "notes": "On all other purchases"
+      "category": "Rent",
+      "multiplier": 1
+    },
+    {
+      "category": "All Other",
+      "multiplier": 1
     }
   ],
-  "annual_credits": [],
-  "travel_benefits": {
-    "lounge_access": {
-      "centurion": false,
-      "priority_pass": false,
-      "other": "None"
-    },
-    "hotel_status": [],
-    "other_benefits": [
-      {
-        "name": "Rent Payments",
-        "description": "Earn points on rent payments (up to 100,000 points per year) with no transaction fees"
-      },
-      {
-        "name": "Bilt Collection",
-        "description": "Use points to book stays at over 1 million properties worldwide via Bilt Travel portal"
-      }
-    ]
-  },
-  "fhr_thc": {
-    "fhr_eligible": false,
-    "thc_eligible": false
-  },
-  "insurance": {
-    "rental_insurance": "Secondary",
-    "trip_delay": false,
-    "purchase_protection": false,
-    "extended_warranty": false
-  },
-  "tags": [
-    "bilt",
-    "no-annual-fee",
-    "dining"
+  "benefits": [
+    "No foreign transaction fees",
+    "Rent rewards"
   ],
-  "last_updated": "2026-04-14T05:44:00.000Z",
+  "tags": [
+    "travel",
+    "no-annual-fee",
+    "dining",
+    "rent"
+  ],
   "sources": [
     {
-      "url": "https://www.bilt.com/credit-card",
-      "notes": "Official Bilt Website"
+      "name": "Bilt Rewards",
+      "url": "https://www.biltrewards.com/"
     }
   ]
 }

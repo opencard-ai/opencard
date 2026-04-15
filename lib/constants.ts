@@ -6,6 +6,9 @@ export interface CardOption {
 }
 
 export const CARD_OPTIONS: CardOption[] = [
+  { card_id: "bilt-blue", name: "Bilt Blue", issuer: "First Electronic Bank", annual_fee: 0 },
+  { card_id: "bilt-obsidian", name: "Bilt Obsidian", issuer: "First Electronic Bank", annual_fee: 0 },
+  { card_id: "bilt-palladian", name: "Bilt Palladian", issuer: "First Electronic Bank", annual_fee: 0 },
   { card_id: "amex-bce", name: "Blue Cash Everyday® Card", issuer: "American Express", annual_fee: 0 },
   { card_id: "amex-bcp", name: "Blue Cash Preferred® Card", issuer: "American Express", annual_fee: 95 },
   { card_id: "amex-blue-business-cash", name: "The American Express Blue Business Cash™ Card", issuer: "American Express", annual_fee: 0 },
