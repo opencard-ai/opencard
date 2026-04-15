@@ -26,8 +26,6 @@ function timeAgo(ts: string) {
 
 function SourceIcon({ source }: { source: string }) {
   if (source === "Doctor of Credit") return <span className="text-emerald-500 font-bold text-xs">DoC</span>;
-  if (source === "r/churning" || source === "r/CreditCards")
-    return <span className="text-orange-500 font-bold text-xs">Reddit</span>;
   return <span className="text-slate-400 text-xs">{source}</span>;
 }
 
@@ -58,6 +56,7 @@ export default function NewsFeed({ lang }: Props) {
   const [expanded, setExpanded] = useState(false);
 
   const fetchNews = async () => {
+    setLoading(true);
     try {
       const res = await fetch(`/${lang}/api/daily-digest?lang=${lang}`);
       if (!res.ok) throw new Error(res.statusText);
@@ -73,7 +72,7 @@ export default function NewsFeed({ lang }: Props) {
 
   useEffect(() => {
     fetchNews();
-  }, []);
+  }, [lang]);
 
   const filtered = items.filter((item) => {
     if (item.isError) return false;
@@ -87,7 +86,9 @@ export default function NewsFeed({ lang }: Props) {
       );
     }
     if (filter === "cards") {
-      return item.source !== "Doctor of Credit" || !item.categories?.some((c) => c.toLowerCase().includes("banking"));
+      // 確保卡片類別包含 credit card 相關，且不含 banking
+      const isBanking = item.categories?.some((c) => c.toLowerCase().includes("banking"));
+      return !isBanking;
     }
     return true;
   });
@@ -104,7 +105,6 @@ export default function NewsFeed({ lang }: Props) {
 
   return (
     <section className="mt-10">
-      {/* Section Header */}
       <div className="flex items-center justify-between mb-4">
         <div>
           <h2 className="text-xl font-bold text-slate-900">{t("feed.title", lang as any)}</h2>
@@ -114,15 +114,14 @@ export default function NewsFeed({ lang }: Props) {
         </div>
       </div>
 
-      {/* Filters */}
       <div className="flex gap-2 mb-4">
         {filterTabs.map((tab) => (
           <button
             key={tab.key}
             onClick={() => setFilter(tab.key)}
-            className={`text-sm px-3 py-1.5 rounded-full border transition ${
+            className={`text-sm px-3 py-1.5 rounded-full border transition duration-200 ${
               filter === tab.key
-                ? "bg-slate-900 text-white border-slate-900"
+                ? "bg-slate-900 text-white border-slate-900 shadow-sm"
                 : "bg-white text-slate-600 border-slate-200 hover:border-slate-400"
             }`}
           >
@@ -131,20 +130,16 @@ export default function NewsFeed({ lang }: Props) {
         ))}
       </div>
 
-      {/* News List */}
-      <div className="bg-white rounded-xl border border-slate-200 divide-y divide-slate-100 overflow-hidden">
+      <div className="bg-white rounded-xl border border-slate-200 divide-y divide-slate-100 overflow-hidden shadow-sm">
         {loading && items.length === 0 ? (
           <div className="p-8 text-center text-slate-400 text-sm">
-            <svg className="w-5 h-5 mx-auto mb-2 animate-spin" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 0 1 8-8" />
-            </svg>
+            <div className="w-5 h-5 mx-auto mb-2 animate-spin border-2 border-blue-500 border-t-transparent rounded-full"></div>
             {t("feed.loading", lang as any)}
           </div>
         ) : error && items.length === 0 ? (
           <div className="p-6 text-center">
             <p className="text-red-500 text-sm">{error}</p>
-            <button onClick={fetchNews} className="mt-2 text-sm text-slate-500 hover:text-slate-700">Retry</button>
+            <button onClick={fetchNews} className="mt-2 text-sm text-blue-600 hover:underline">Retry</button>
           </div>
         ) : displayItems.length === 0 ? (
           <div className="p-6 text-center text-slate-400 text-sm">{t("feed.noItems", lang as any)}</div>
@@ -159,39 +154,31 @@ export default function NewsFeed({ lang }: Props) {
                       <CategoryBadge key={cat} cat={cat} />
                     ))}
                     <span className="text-xs text-slate-400">{timeAgo(item.ts)}</span>
-                    {item.score !== undefined && (
-                      <span className="text-xs text-slate-400">⬆ {item.score}</span>
-                    )}
                   </div>
                   <a
-                    href={item.url || item.permalink || "#"}
+                    href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-slate-800 hover:text-slate-600 line-clamp-2 leading-snug"
+                    className="text-sm font-medium text-slate-800 hover:text-blue-600 line-clamp-2 leading-snug"
                   >
                     {item.title}
                   </a>
                   {item.summary && (
-                    <p className="text-xs text-slate-500 mt-0.5 line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">
                       {item.summary}
                     </p>
                   )}
                 </div>
-                <svg className="w-4 h-4 text-slate-300 group-hover:text-slate-500 flex-shrink-0 mt-0.5 transition"
-                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
               </div>
             </div>
           ))
         )}
       </div>
 
-      {/* Expand/Collapse */}
       {hasMore && (
         <button
           onClick={() => setExpanded((v) => !v)}
-          className="mt-3 w-full py-2 text-sm text-slate-500 hover:text-slate-700 border border-slate-200 rounded-lg bg-white transition"
+          className="mt-3 w-full py-2.5 text-sm font-medium text-slate-600 hover:text-slate-900 border border-slate-200 rounded-lg bg-white hover:bg-slate-50 transition shadow-sm"
         >
           {expanded ? t("feed.showLess", lang as any) : t("feed.loadMore", lang as any, { count: filtered.length - 8 })}
         </button>
