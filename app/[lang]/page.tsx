@@ -6,7 +6,7 @@ import NewsFeed from "@/app/components/NewsFeed";
 import { t, locales } from "@/lib/i18n";
 
 export const dynamic = "force-static";
-export const revalidate = 60; // 縮短快取時間從 1h 改為 1m 確保更新穩定
+export const revalidate = 0; // 縮短快取時間從 1h 改為 1m 確保更新穩定
 
 type Props = {
   params: Promise<{ lang: string }>;
