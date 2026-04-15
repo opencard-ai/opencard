@@ -1,6 +1,6 @@
 {
   "card_id": "discover-it-cash-back",
-  "name": "Discover it® Cash Back",
+  "name": "Discover it\u00ae Cash Back",
   "issuer": "Discover",
   "network": "Discover",
   "annual_fee": 0,
@@ -10,27 +10,15 @@
     "spending_requirement": 0,
     "time_period_months": 3,
     "bonus_points": null,
-    "description": "Unlimited Cashback Match™",
+    "description": "Unlimited Cashback Match\u2122",
     "point_program": "Discover"
   },
-  "earning_rates": {
-    "categories": [
-      {
-        "category": "Rotating Quarterly Categories (up to $1,500 cap/qtr)",
-        "rate": "5% cash back"
-      },
-      {
-        "category": "All other purchases",
-        "rate": "1% cash back"
-      }
-    ],
-    "2026_categories_sample": [
-      "Q1: Groceries, Drugstores",
-      "Q2: Restaurants, Home Improvement",
-      "Q3: TBD (usually Gas, Digital Wallets)",
-      "Q4: TBD (usually Amazon, Target)"
-    ]
-  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "multiplier": 1
+    }
+  ],
   "annual_credits": [
     {
       "name": "No Foreign Transaction Fees",

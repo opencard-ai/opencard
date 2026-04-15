@@ -1,6 +1,6 @@
 {
   "card_id": "citi-strata-elite",
-  "name": "Citi Strata Elite℠ Card",
+  "name": "Citi Strata Elite\u2120 Card",
   "issuer": "Citi",
   "network": "Visa",
   "annual_fee": 595,
@@ -10,25 +10,15 @@
     "spending_requirement": 5,
     "time_period_months": 3,
     "bonus_points": 75000,
-    "description": "75,000 ThankYou® Points",
+    "description": "75,000 ThankYou\u00ae Points",
     "point_program": "Citi"
   },
-  "earning_rates": {
-    "categories": [
-      {
-        "category": "Hotels, Rental Cars (via CitiTravel)",
-        "rate": "12X points per dollar spent"
-      },
-      {
-        "category": "Air Travel",
-        "rate": "5X points per dollar spent"
-      },
-      {
-        "category": "Everyday purchases",
-        "rate": "1.5X points per dollar spent"
-      }
-    ]
-  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "multiplier": 1
+    }
+  ],
   "annual_credits": [
     {
       "name": "$300 Annual Hotel Benefit",
@@ -37,7 +27,7 @@
       "description": "Annual credit for hotel bookings made through CitiTravel"
     },
     {
-      "name": "Priority Pass™ Select Membership",
+      "name": "Priority Pass\u2122 Select Membership",
       "amount": null,
       "frequency": "annual",
       "description": "Unlimited lounge access for cardholder and guests"

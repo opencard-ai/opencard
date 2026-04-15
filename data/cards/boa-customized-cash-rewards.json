@@ -1,6 +1,6 @@
 {
   "card_id": "boa-customized-cash-rewards",
-  "name": "Bank of America® Customized Cash Rewards Credit Card",
+  "name": "Bank of America\u00ae Customized Cash Rewards Credit Card",
   "issuer": "Bank of America",
   "network": "Visa",
   "annual_fee": 0,
@@ -13,30 +13,12 @@
     "description": "$200 Online Cash Rewards Bonus",
     "point_program": "Bank of America"
   },
-  "earning_rates": {
-    "categories": [
-      {
-        "category": "Choice Category (up to $2,500/qtr)",
-        "rate": "3% cash back (6% for first year intro offer for some)"
-      },
-      {
-        "category": "Grocery Stores/Wholesale Clubs",
-        "rate": "2% cash back"
-      },
-      {
-        "category": "All other purchases",
-        "rate": "1% cash back"
-      }
-    ],
-    "choice_category_options": [
-      "Gas & EV Charging",
-      "Online Shopping (including Cable, Internet, Phone, Streaming)",
-      "Dining",
-      "Travel",
-      "Drugstores",
-      "Home Improvement & Furnishings"
-    ]
-  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "multiplier": 1
+    }
+  ],
   "annual_credits": [
     {
       "name": "Preferred Rewards Bonus",

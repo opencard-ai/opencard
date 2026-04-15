@@ -1,6 +1,6 @@
 {
   "card_id": "boa-alaska-ascent",
-  "name": "Alaska Airlines Atmos™ Ascent Visa Signature® Card",
+  "name": "Alaska Airlines Atmos\u2122 Ascent Visa Signature\u00ae Card",
   "issuer": "Bank of America",
   "network": "Visa",
   "annual_fee": 95,
@@ -13,18 +13,12 @@
     "description": "80,000 bonus points + $99 Companion Fare (intro)",
     "point_program": "Bank of America"
   },
-  "earning_rates": {
-    "categories": [
-      {
-        "category": "Alaska/Hawaiian Airlines purchases",
-        "rate": "3X points per dollar spent"
-      },
-      {
-        "category": "Everyday purchases",
-        "rate": "1X point per dollar spent"
-      }
-    ]
-  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "multiplier": 1
+    }
+  ],
   "annual_credits": [
     {
       "name": "Annual Companion Fare",

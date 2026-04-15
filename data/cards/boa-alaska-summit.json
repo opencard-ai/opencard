@@ -1,6 +1,6 @@
 {
   "card_id": "boa-alaska-summit",
-  "name": "Alaska Airlines Atmos™ Summit Visa Infinite® Card",
+  "name": "Alaska Airlines Atmos\u2122 Summit Visa Infinite\u00ae Card",
   "issuer": "Bank of America",
   "network": "Visa",
   "annual_fee": 395,
@@ -13,22 +13,12 @@
     "description": "TBD (Estimate 100,000 points)",
     "point_program": "Bank of America"
   },
-  "earning_rates": {
-    "categories": [
-      {
-        "category": "Alaska/Hawaiian Airlines purchases",
-        "rate": "4X points per dollar spent"
-      },
-      {
-        "category": "Travel & Dining",
-        "rate": "2X points per dollar spent"
-      },
-      {
-        "category": "Everyday purchases",
-        "rate": "1X point per dollar spent"
-      }
-    ]
-  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "multiplier": 1
+    }
+  ],
   "annual_credits": [
     {
       "name": "8 Alaska Lounge Passes",

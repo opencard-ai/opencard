@@ -1,6 +1,6 @@
 {
   "card_id": "citi-custom-cash",
-  "name": "Citi Custom Cash® Card",
+  "name": "Citi Custom Cash\u00ae Card",
   "issuer": "Citi",
   "network": "Visa",
   "annual_fee": 0,
@@ -13,30 +13,12 @@
     "description": "$200 Cash Back",
     "point_program": "Citi"
   },
-  "earning_rates": {
-    "categories": [
-      {
-        "category": "Top Spend Category (up to $500/mo)",
-        "rate": "5% cash back"
-      },
-      {
-        "category": "All other purchases",
-        "rate": "1% cash back"
-      }
-    ],
-    "top_category_options": [
-      "Restaurants",
-      "Gas Stations",
-      "Grocery Stores",
-      "Select Travel",
-      "Select Transit",
-      "Select Streaming Services",
-      "Drugstores",
-      "Home Improvement Stores",
-      "Fitness Clubs",
-      "Live Entertainment"
-    ]
-  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "multiplier": 1
+    }
+  ],
   "annual_credits": [],
   "travel_benefits": {},
   "fhr_thc": {

@@ -100,8 +100,7 @@ export function getAllCards(): CreditCard[] {
       card.card_id && 
       card.name && 
       card.annual_fee !== undefined && 
-      card.earning_rates && 
-      card.earning_rates.length > 0
+      Array.isArray(card.earning_rates)
     ) // Filter out non-card entries (articles, guides, etc.)
     .sort((a, b) => a.name.localeCompare(b.name));
 }
