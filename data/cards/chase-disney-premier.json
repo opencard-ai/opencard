@@ -15,8 +15,34 @@
   },
   "earning_rates": [
     {
-      "category": "All Purchases",
-      "multiplier": 1
+      "category": "DisneyPlus.com, Hulu.com, ESPN.com",
+      "rate": 5,
+      "notes": ""
+    },
+    {
+      "category": "Gas stations",
+      "rate": 2,
+      "notes": ""
+    },
+    {
+      "category": "Restaurants",
+      "rate": 2,
+      "notes": ""
+    },
+    {
+      "category": "Grocery stores",
+      "rate": 2,
+      "notes": ""
+    },
+    {
+      "category": "Most U.S. Disney locations",
+      "rate": 2,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
     }
   ],
   "annual_credits": [],

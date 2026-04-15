@@ -1,6 +1,6 @@
 {
   "card_id": "citi-strata-premier",
-  "name": "Citi Strata Premier\u2120 Card",
+  "name": "Citi Strata Premier℠ Card",
   "issuer": "Citi",
   "network": "Visa",
   "annual_fee": 95,
@@ -10,13 +10,29 @@
     "spending_requirement": 4,
     "time_period_months": 3,
     "bonus_points": 60000,
-    "description": "60,000 ThankYou\u00ae Points",
+    "description": "60,000 ThankYou® Points",
     "point_program": "Citi"
   },
   "earning_rates": [
     {
-      "category": "All Purchases",
-      "multiplier": 1
+      "category": "Air travel",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "Hotels",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "Dining",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
     }
   ],
   "annual_credits": [

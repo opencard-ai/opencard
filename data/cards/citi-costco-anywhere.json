@@ -1,6 +1,6 @@
 {
   "card_id": "citi-costco-anywhere",
-  "name": "Costco Anywhere Visa\u00ae Card by Citi",
+  "name": "Costco Anywhere Visa® Card by Citi",
   "issuer": "Citi",
   "network": "Visa",
   "annual_fee": 0,
@@ -11,29 +11,24 @@
   },
   "earning_rates": [
     {
-      "category": "Gas (Costco)",
-      "rate": 5,
-      "notes": "5% cash back on gas at Costco and Costco Gas stations. On the first $7,000 spent per year (combined with other gas/EV); then 1% thereafter."
-    },
-    {
-      "category": "Gas (Other)",
+      "category": "Gas stations",
       "rate": 4,
-      "notes": "4% cash back on other eligible gas and EV charging (outside Costco). On the first $7,000 spent per year (combined with Costco gas); then 1% thereafter."
+      "notes": ""
     },
     {
-      "category": "Restaurants & Eligible Travel",
+      "category": "Restaurants",
+      "rate": 4,
+      "notes": ""
+    },
+    {
+      "category": "Eligible travel",
       "rate": 3,
-      "notes": "3% cash back on restaurants and eligible travel. Includes Costco Travel bookings."
+      "notes": ""
     },
     {
-      "category": "Costco & Costco.com Purchases",
+      "category": "All other purchases",
       "rate": 2,
-      "notes": "2% cash back on all purchases from Costco and Costco.com."
-    },
-    {
-      "category": "Default",
-      "rate": 1,
-      "notes": "1% cash back on all other purchases."
+      "notes": ""
     }
   ],
   "annual_credits": [],

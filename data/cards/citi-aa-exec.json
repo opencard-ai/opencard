@@ -15,8 +15,14 @@
   },
   "earning_rates": [
     {
-      "category": "All Purchases",
-      "multiplier": 1
+      "category": "American Airlines purchases",
+      "rate": 2,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
     }
   ],
   "annual_credits": [],

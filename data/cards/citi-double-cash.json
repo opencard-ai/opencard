@@ -1,6 +1,6 @@
 {
   "card_id": "citi-double-cash",
-  "name": "Citi Double Cash\u00ae Card",
+  "name": "Citi Double Cash® Card",
   "issuer": "Citi",
   "network": "Visa",
   "annual_fee": 0,
@@ -10,23 +10,13 @@
     "spending_requirement": 1500,
     "time_period_months": 6,
     "bonus_cash": 200,
-    "description": "$200 cash back after you spend $1,500 on purchases in the first 6 months of account opening. Delivered as 20,000 ThankYou\u00ae Points (equivalent to $200)."
+    "description": "$200 cash back after you spend $1,500 on purchases in the first 6 months of account opening. Delivered as 20,000 ThankYou® Points (equivalent to $200)."
   },
   "earning_rates": [
     {
-      "category": "All Purchases (Buy)",
-      "rate": 1,
-      "notes": "1% cash back when you make a purchase."
-    },
-    {
-      "category": "All Purchases (Pay)",
-      "rate": 1,
-      "notes": "1% cash back when you pay off your balance. Total of 2% back per dollar spent."
-    },
-    {
-      "category": "Travel (Citi Travel Portal)",
-      "rate": 5,
-      "notes": "5% cash back on travel purchased through Citi TravelSM (promotion ended 12/31/25 - may have been extended, verify current)."
+      "category": "All Purchases",
+      "rate": 2,
+      "notes": "1% when you buy, 1% when you pay"
     }
   ],
   "annual_credits": [],

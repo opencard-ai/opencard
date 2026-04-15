@@ -1,0 +1,41 @@
+{
+  "card_id": "amex-everyday",
+  "name": "American Express EveryDay® Card",
+  "issuer": "American Express",
+  "network": "American Express",
+  "annual_fee": 0,
+  "welcome_offer": {
+    "bonus_points": 0,
+    "description": "No welcome bonus",
+    "estimated_value": null,
+    "spending_requirement": null,
+    "time_period_months": null
+  },
+  "earning_rates": [
+    {
+      "category": "U.S. supermarkets",
+      "rate": 2,
+      "notes": "up to $6K/year"
+    },
+    {
+      "category": "U.S. gas stations",
+      "rate": 2,
+      "notes": "up to $6K/year"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
+    }
+  ],
+  "annual_credits": [],
+  "insurance": [],
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good/Excellent",
+  "tags": [
+    "american-express",
+    "groceries",
+    "gas",
+    "no-annual-fee"
+  ]
+}

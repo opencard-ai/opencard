@@ -1,0 +1,40 @@
+{
+  "card_id": "barclays-harley-davidson",
+  "name": "Harley-Davidson Credit Card",
+  "issuer": "Barclays",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "welcome_offer": {
+    "bonus_points": null,
+    "description": "No welcome bonus",
+    "estimated_value": null,
+    "spending_requirement": null,
+    "time_period_months": null
+  },
+  "earning_rates": [
+    {
+      "category": "Harley-Davidson purchases",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "Gas stations",
+      "rate": 2,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
+    }
+  ],
+  "annual_credits": [],
+  "insurance": [],
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "tags": [
+    "barclays",
+    "rotating",
+    "no-annual-fee"
+  ]
+}

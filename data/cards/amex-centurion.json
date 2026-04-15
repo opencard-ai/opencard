@@ -7,16 +7,17 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 0,
-    "time_period_months": 0,
     "bonus_points": 0,
-    "description": "N/A",
-    "point_program": "Points"
+    "description": "Invitation only",
+    "estimated_value": null,
+    "spending_requirement": null,
+    "time_period_months": null
   },
   "earning_rates": [
     {
       "category": "All Purchases",
-      "multiplier": 1
+      "rate": 1,
+      "notes": "Invitation only"
     }
   ],
   "annual_credits": [],

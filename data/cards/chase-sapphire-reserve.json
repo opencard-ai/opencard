@@ -1,6 +1,6 @@
 {
   "card_id": "chase-sapphire-reserve",
-  "name": "Chase Sapphire Reserve\u00ae",
+  "name": "Chase Sapphire Reserve®",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 795,
@@ -17,28 +17,23 @@
   "earning_rates": [
     {
       "category": "Chase Travel",
-      "rate": 8,
-      "notes": "On all purchases through Chase Travel, including The Edit."
-    },
-    {
-      "category": "Flights Direct",
-      "rate": 4,
-      "notes": "On flights booked direct with airlines."
-    },
-    {
-      "category": "Hotels Direct",
-      "rate": 4,
-      "notes": "On hotels booked direct with hotel chains."
+      "rate": 5,
+      "notes": ""
     },
     {
       "category": "Dining",
       "rate": 3,
-      "notes": "Worldwide dining, including takeout and delivery services."
+      "notes": ""
     },
     {
-      "category": "Default",
+      "category": "All other travel",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
       "rate": 1,
-      "notes": "On all other purchases."
+      "notes": ""
     }
   ],
   "annual_credits": [

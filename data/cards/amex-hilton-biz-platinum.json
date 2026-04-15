@@ -7,12 +7,22 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "description": "N/A"
+    "bonus_points": 0,
+    "description": "No welcome bonus",
+    "estimated_value": null,
+    "spending_requirement": null,
+    "time_period_months": null
   },
   "earning_rates": [
     {
-      "category": "All",
-      "multiplier": 1
+      "category": "Hilton",
+      "rate": 12,
+      "notes": "on paid rates"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
     }
   ],
   "annual_credits": [],

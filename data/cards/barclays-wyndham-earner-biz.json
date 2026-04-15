@@ -7,16 +7,27 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 0,
-    "time_period_months": 0,
-    "bonus_points": 0,
-    "description": "N/A",
-    "point_program": "Points"
+    "bonus_points": 100000,
+    "description": "100,000 Wyndham bonus points after $3,000 in first 3 months",
+    "estimated_value": 500,
+    "spending_requirement": 3000,
+    "time_period_months": 3
   },
   "earning_rates": [
     {
-      "category": "All Purchases",
-      "multiplier": 1
+      "category": "Wyndham Hotels",
+      "rate": 6,
+      "notes": ""
+    },
+    {
+      "category": "Gas stations",
+      "rate": 4,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
     }
   ],
   "annual_credits": [],

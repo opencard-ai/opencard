@@ -7,12 +7,22 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "description": "N/A"
+    "bonus_points": 50000,
+    "description": "50,000 JetBlue bonus miles after first purchase",
+    "estimated_value": 500,
+    "spending_requirement": 0,
+    "time_period_months": null
   },
   "earning_rates": [
     {
-      "category": "All",
-      "multiplier": 1
+      "category": "JetBlue purchases",
+      "rate": 2,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
     }
   ],
   "annual_credits": [],

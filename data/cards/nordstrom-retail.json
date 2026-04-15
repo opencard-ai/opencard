@@ -16,7 +16,8 @@
   "earning_rates": [
     {
       "category": "All Purchases",
-      "multiplier": 1
+      "rate": 2,
+      "notes": "at Nordstrom only"
     }
   ],
   "annual_credits": [],

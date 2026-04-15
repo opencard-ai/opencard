@@ -1,6 +1,6 @@
 {
   "card_id": "boa-alaska-summit",
-  "name": "Alaska Airlines Atmos\u2122 Summit Visa Infinite\u00ae Card",
+  "name": "Alaska Airlines Atmos™ Summit Visa Infinite® Card",
   "issuer": "Bank of America",
   "network": "Visa",
   "annual_fee": 395,
@@ -15,8 +15,19 @@
   },
   "earning_rates": [
     {
-      "category": "All Purchases",
-      "multiplier": 1
+      "category": "Alaska Airlines purchases",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "Gas stations",
+      "rate": 2,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
     }
   ],
   "annual_credits": [
