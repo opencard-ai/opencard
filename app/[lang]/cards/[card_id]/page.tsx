@@ -80,7 +80,7 @@ export default async function CardDetailPage({ params }: Props) {
           </span>
           {card.foreign_transaction_fee === 0 && (
             <span className="text-xs bg-green-100 text-green-700 rounded-full px-3 py-1">
-              {l("detail.none")} Foreign Fee
+              {l("detail.noForeignFee")}
             </span>
           )}
           {card.tags.map((tag) => (

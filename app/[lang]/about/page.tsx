@@ -52,7 +52,7 @@ export default async function AboutPage({ params }: Props) {
 
       <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-10">
         <section>
-          <h2 className="text-2xl font-bold text-slate-800 mb-4">Our Mission</h2>
+          <h2 className="text-2xl font-bold text-slate-800 mb-4">{t("about.mission", locale)}</h2>
           <p className="text-slate-600 leading-relaxed text-lg">{c.mission}</p>
         </section>
 
@@ -68,7 +68,7 @@ export default async function AboutPage({ params }: Props) {
             </ul>
           </div>
           <div className="bg-blue-600 rounded-xl p-6 text-white">
-            <h3 className="font-bold mb-3">Our Story</h3>
+            <h3 className="font-bold mb-3">{t("about.story", locale)}</h3>
             <p className="text-blue-50 leading-relaxed text-sm">{c.story}</p>
           </div>
         </section>
