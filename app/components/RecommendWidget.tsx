@@ -30,7 +30,7 @@ const MESSAGES = {
     thinking: "思考中...",
     intro: "嗨！我是你的 AI 卡片推薦師。我會幫你找到最適合的美國信用卡。\n\n你想要什麼類型的回饋？",
     alreadyHave: "⚠️ 你已有這張卡",
-    options: ["💰 現金回饋", "✈️ 旅遊獎勵", "🏅 點數/里程", "💎 多種类型"],
+    options: ["💰 現金回饋", "✈️ 旅遊獎勵", "🏅 點數/里程", "💎 多種類型"],
   },
   es: {
     title: "✨ Buscador AI de Tarjetas",

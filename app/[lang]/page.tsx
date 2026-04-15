@@ -62,7 +62,7 @@ export default async function HomePage({ params }: Props) {
         </form>
         <p className="text-xs text-blue-500 mt-2">
           {lang === "zh" ? "或試用 " : lang === "es" ? "O prueba el " : "Or try the "}
-          <a href="#ai-finder" className="underline hover:no-underline font-medium">AI Card Finder →</a>
+          <a href="#ai-finder" className="underline hover:no-underline font-medium">{t("home.aiFinder", lang as any)}</a>
           {lang === "zh" ? " 智慧推薦" : lang === "es" ? " buscardor AI" : " for smart recommendations"}
         </p>
       </div>
