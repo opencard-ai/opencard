@@ -85,7 +85,7 @@ export default function TravelProducts({ lang }: Props) {
                   href={product.affiliate_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`block p-4 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group text-center`}
+                  className={`relative block p-4 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group text-center`}
                 >
                   {imgUrl ? (
                     <img
@@ -104,6 +104,7 @@ export default function TravelProducts({ lang }: Props) {
                     <span className="text-xs text-slate-500">{product.price_range}</span>
                     <span className="text-xs text-amber-600">⭐ {product.rating}</span>
                   </div>
+                  <span className="absolute top-1.5 right-1.5 text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-medium">AD</span>
                 </a>
               );
             })}
@@ -127,7 +128,7 @@ export default function TravelProducts({ lang }: Props) {
                   href={product.affiliate_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`block p-4 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group text-center`}
+                  className={`relative block p-4 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group text-center`}
                 >
                   {imgUrl ? (
                     <img
@@ -146,6 +147,7 @@ export default function TravelProducts({ lang }: Props) {
                     <span className="text-xs text-slate-500">{product.price_range}</span>
                     <span className="text-xs text-amber-600">⭐ {product.rating}</span>
                   </div>
+                  <span className="absolute top-1.5 right-1.5 text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-medium">AD</span>
                 </a>
               );
             })}
@@ -169,7 +171,7 @@ export default function TravelProducts({ lang }: Props) {
                   href={product.affiliate_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`block p-4 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group text-center`}
+                  className={`relative block p-4 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group text-center`}
                 >
                   {imgUrl ? (
                     <img
@@ -188,6 +190,7 @@ export default function TravelProducts({ lang }: Props) {
                     <span className="text-xs text-slate-500">{product.price_range}</span>
                     <span className="text-xs text-amber-600">⭐ {product.rating}</span>
                   </div>
+                  <span className="absolute top-1.5 right-1.5 text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-medium">AD</span>
                 </a>
               );
             })}
