@@ -14,6 +14,7 @@ const STORAGE_KEY = "opencard_existing_cards";
 const MESSAGES = {
   en: {
     title: "✨ AI Card Finder",
+    trigger: "Find Your Card",
     placeholder: "Type your answer here...",
     send: "Send",
     thinking: "Thinking...",
@@ -22,6 +23,7 @@ const MESSAGES = {
   },
   zh: {
     title: "✨ AI 卡片推薦",
+    trigger: "卡片推薦",
     placeholder: "輸入你的答案...",
     send: "送出",
     thinking: "思考中...",
@@ -30,6 +32,7 @@ const MESSAGES = {
   },
   es: {
     title: "✨ Buscador AI de Tarjetas",
+    trigger: "Buscador AI",
     placeholder: "Escribe tu respuesta aquí...",
     send: "Enviar",
     thinking: "Pensando...",
@@ -58,11 +61,6 @@ function parseOptions(text: string): string[] {
       options.push(line.replace(/^[1-9][.)]\s+/, ''));
       continue;
     }
-
-    const letterMatch = line.match(/^[A-Za-z][.)]\s+(.+)$/);
-    if (letterMatch && letterMatch[1].length < 65) {
-      options.push(line.replace(/^[A-Za-z][.)]\s+/, ''));
-    }
   }
 
   return options.slice(0, 8);
@@ -74,13 +72,9 @@ function renderContent(text: string) {
   ));
 }
 
-interface RecommendWidgetProps {
-  locale?: string;
-  onClose?: () => void;
-}
-
-export default function RecommendWidget({ locale = "en", onClose }: RecommendWidgetProps) {
-  const msg = MESSAGES[locale as keyof typeof MESSAGES] || MESSAGES.en;
+export default function RecommendWidget({ lang = "en" }: { lang?: string }) {
+  const msg = MESSAGES[lang as keyof typeof MESSAGES] || MESSAGES.en;
+  const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     { role: "assistant", content: msg.intro, options: ["💰 Cash Back", "✈️ Travel Rewards", "🏅 Points/Miles", "💎 Multiple Types"] }
   ]);
@@ -89,13 +83,11 @@ export default function RecommendWidget({ locale = "en", onClose }: RecommendWid
   const [selectedCards, setSelectedCards] = useState<string[]>([]);
 
   useEffect(() => {
-    // Initial load
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       try { setSelectedCards(JSON.parse(saved)); } catch (e) {}
     }
 
-    // Sync from MyCardsWidget
     const handleSync = (e: any) => {
       setSelectedCards(e.detail);
     };
@@ -115,7 +107,7 @@ export default function RecommendWidget({ locale = "en", onClose }: RecommendWid
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         message: userMsg,
-        locale,
+        locale: lang,
         existingCards: selectedCards,
       }),
     })
@@ -147,89 +139,104 @@ export default function RecommendWidget({ locale = "en", onClose }: RecommendWid
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xl">
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-3.5 flex items-center justify-between">
-        <div>
-          <h3 className="font-bold text-white">{msg.title}</h3>
-          <p className="text-blue-200 text-xs mt-0.5">AI recommendations are for reference only.</p>
-        </div>
-        <button
-          onClick={onClose}
-          className="text-white/70 hover:text-white text-xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors flex-shrink-0"
-        >
-          ✕
-        </button>
-      </div>
-
-      <div className="h-[400px] overflow-y-auto p-4 space-y-4 bg-slate-50">
-        {messages.map((m, i) => (
-          <div key={i}>
-            <div className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
-              <div
-                className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm ${
-                  m.role === "user"
-                    ? "bg-blue-600 text-white rounded-br-md"
-                    : "bg-white border border-slate-200 text-slate-800 rounded-bl-md"
-                }`}
-              >
-                {renderContent(m.content)}
-              </div>
+    <div className="flex flex-col items-end gap-3">
+      {isOpen && (
+        <div className="w-80 sm:w-[400px] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col mb-2 animate-in fade-in slide-in-from-bottom-4 duration-200">
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 flex items-center justify-between">
+            <div>
+              <h3 className="text-white font-bold text-sm">{msg.title}</h3>
+              <p className="text-blue-100 text-[10px]">AI-powered credit card assistant</p>
             </div>
+            <button
+              onClick={() => setIsOpen(false)}
+              className="text-white/70 hover:text-white transition-colors"
+            >
+              ✕
+            </button>
+          </div>
 
-            {m.role === "assistant" && m.options && m.options.length > 0 && (
-              <div className="mt-2 ml-2">
-                <div className="flex flex-wrap gap-2">
-                  {m.options.slice(0, 6).map((option, j) => (
-                    <button
-                      key={j}
-                      onClick={() => sendMessage(option)}
-                      className="text-xs bg-blue-50 border-2 border-blue-400 hover:border-blue-600 hover:bg-blue-100 text-blue-700 rounded-full px-3 py-1.5 transition-colors shadow-sm font-medium"
-                    >
-                      {option}
-                    </button>
-                  ))}
+          <div className="h-[450px] overflow-y-auto p-4 space-y-4 bg-slate-50">
+            {messages.map((m, i) => (
+              <div key={i}>
+                <div className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+                  <div
+                    className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm ${
+                      m.role === "user"
+                        ? "bg-blue-600 text-white rounded-br-md"
+                        : "bg-white border border-slate-200 text-slate-800 rounded-bl-md shadow-sm"
+                    }`}
+                  >
+                    {renderContent(m.content)}
+                  </div>
+                </div>
+
+                {m.role === "assistant" && m.options && m.options.length > 0 && (
+                  <div className="mt-2 ml-1 flex flex-wrap gap-1.5">
+                    {m.options.map((option, j) => (
+                      <button
+                        key={j}
+                        onClick={() => sendMessage(option)}
+                        className="text-[10px] bg-blue-50 border border-blue-200 hover:border-blue-400 hover:bg-blue-100 text-blue-700 rounded-full px-2.5 py-1 transition-colors font-medium"
+                      >
+                        {option}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+
+            {isLoading && (
+              <div className="flex justify-start">
+                <div className="bg-white border border-slate-200 rounded-2xl rounded-bl-md px-4 py-3 shadow-sm">
+                  <div className="flex items-center gap-2 text-xs text-slate-400">
+                    <div className="flex gap-1">
+                      <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                      <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                      <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                    </div>
+                    {msg.thinking}
+                  </div>
                 </div>
               </div>
             )}
           </div>
-        ))}
 
-        {isLoading && (
-          <div className="flex justify-start">
-            <div className="bg-white border border-slate-200 rounded-2xl rounded-bl-md px-4 py-3">
-              <div className="flex items-center gap-2 text-sm text-slate-500">
-                <div className="flex gap-1">
-                  <span className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                  <span className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                  <span className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
-                </div>
-                {msg.thinking}
-              </div>
+          <div className="p-3 border-t border-slate-100 bg-white">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={input}
+                onChange={e => setInput(e.target.value)}
+                onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMessage(input); } }}
+                placeholder={msg.placeholder}
+                disabled={isLoading}
+                className="flex-1 bg-slate-50 border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 disabled:bg-slate-100"
+              />
+              <button
+                onClick={() => sendMessage(input)}
+                disabled={isLoading || !input.trim()}
+                className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-300 text-white rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+              >
+                {msg.send}
+              </button>
             </div>
           </div>
-        )}
-      </div>
-
-      <div className="p-3 border-t border-slate-200 bg-white">
-        <div className="flex gap-2">
-          <input
-            type="text"
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMessage(input); } }}
-            placeholder={msg.placeholder}
-            disabled={isLoading}
-            className="flex-1 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-slate-100"
-          />
-          <button
-            onClick={() => sendMessage(input)}
-            disabled={isLoading || !input.trim()}
-            className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-300 text-white rounded-xl px-5 py-2.5 text-sm font-medium transition-colors"
-          >
-            {msg.send}
-          </button>
         </div>
-      </div>
+      )}
+
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 ${
+          isOpen 
+            ? "bg-blue-600 text-white" 
+            : "bg-white text-blue-600 border border-blue-200"
+        }`}
+        style={{ boxShadow: isOpen ? "0 8px 32px rgba(59, 130, 246, 0.5)" : "0 4px 12px rgba(0,0,0,0.1)" }}
+      >
+        <span className="text-xl leading-none">✨</span>
+        <span className="font-bold text-sm">{msg.trigger}</span>
+      </button>
     </div>
   );
 }

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import LanguageSwitcher from "@/app/components/LanguageSwitcher";
-import FloatingRecommend from "@/app/components/FloatingRecommend";
+import RecommendWidget from "@/app/components/RecommendWidget";
 import MyCardsWidget from "@/app/components/MyCardsWidget";
 import { locales, t } from "@/lib/i18n";
 
@@ -71,9 +70,15 @@ export default async function LocaleLayout({ children, params }: Props) {
             <FTCDisclosure locale={lang as any} />
           </div>
         </footer>
-        {/* Floating AI Card Finder */}
-        <FloatingRecommend locale={lang} />
-        <MyCardsWidget lang={lang} />
+        {/* Floating Widgets Container */}
+        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 pointer-events-none">
+          <div className="pointer-events-auto">
+            <MyCardsWidget lang={lang} />
+          </div>
+          <div className="pointer-events-auto">
+            <RecommendWidget lang={lang} />
+          </div>
+        </div>
       </body>
     </html>
   );
