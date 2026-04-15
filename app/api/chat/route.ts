@@ -41,17 +41,24 @@ export async function POST(req: NextRequest) {
   let locale = "en";
   let messages: any[] = [];
   let cardName = "";
+  let cardId = "";
 
   try {
     const body = await req.json();
-    messages = body.messages;
+    // Support both array messages (conversational) and single message string (ChatWidget)
+    if (Array.isArray(body.messages)) {
+      messages = body.messages;
+    } else if (typeof body.message === "string" && body.message.trim()) {
+      messages = [{ role: "user", content: body.message.trim() }];
+    }
     cardName = body.cardName || "";
+    cardId = body.cardId || "";
     locale = body.locale || "en";
   } catch {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 
-  if (!messages || !Array.isArray(messages)) {
+  if (messages.length === 0) {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 
@@ -70,7 +77,7 @@ export async function POST(req: NextRequest) {
   try {
     const systemPrompt = `${CARD_CONTEXT}
 
-The user is currently viewing: ${cardName || "No specific card"}
+The user is currently viewing: ${cardName || "No specific card"}${cardId ? ` (card ID: ${cardId})` : ""}
 IMPORTANT: Always respond in ${lang} only. Never switch languages.
 
 User question:`;
