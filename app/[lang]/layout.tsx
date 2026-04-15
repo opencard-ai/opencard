@@ -54,10 +54,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                 <a href={`/${lang}`} className="hover:text-slate-900 transition-colors">
                   {t("nav.allCards", lang as any)}
                 </a>
-                <a href={`/${lang}/wiki`} className="hover:text-slate-900 transition-colors">
-                  Wiki
-                </a>
-                <a href={`/${lang}/#about`} className="hover:text-slate-900 transition-colors">
+<a href={`/${lang}/#about`} className="hover:text-slate-900 transition-colors">
                   {t("nav.about", lang as any)}
                 </a>
               </nav>
