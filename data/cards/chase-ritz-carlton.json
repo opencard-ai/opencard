@@ -1,9 +1,9 @@
 {
-  "card_id": "chase-ihg-premier",
-  "name": "Chase IHG Premier",
+  "card_id": "chase-ritz-carlton",
+  "name": "Chase Ritz-Carlton",
   "issuer": "Chase",
   "network": "Visa/Mastercard",
-  "annual_fee": 99,
+  "annual_fee": 450,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {

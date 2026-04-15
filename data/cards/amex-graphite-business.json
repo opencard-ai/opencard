@@ -1,9 +1,9 @@
 {
-  "card_id": "chase-ihg-premier",
-  "name": "Chase IHG Premier",
-  "issuer": "Chase",
+  "card_id": "amex-graphite-business",
+  "name": "Amex Graphite Business Cash",
+  "issuer": "American Express",
   "network": "Visa/Mastercard",
-  "annual_fee": 99,
+  "annual_fee": 295,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
