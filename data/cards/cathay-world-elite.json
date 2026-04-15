@@ -1,0 +1,43 @@
+{
+  "card_id": "cathay-world-elite",
+  "name": "Cathay World Elite Mastercard",
+  "issuer": "Synchrony Bank",
+  "network": "Mastercard",
+  "annual_fee": 99,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "time_period_months": null,
+    "bonus_points": null,
+    "description": "Welcome offer varies. Check current offer at pay.cathaypacific.com — re-launched May 2025 with Synchrony Bank.",
+    "free_nights": null,
+    "point_program": "Cathay Pacific"
+  },
+  "earning_rates": [
+    {
+      "category": "All",
+      "multiplier": 1
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [],
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false
+    }
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {},
+  "tags": [
+    "travel"
+  ],
+  "sources": [],
+  "benefits": [],
+  "annual_fee_note": "$99 annual fee. Replaced the previous Visa version (discontinued 2024)."
+}
