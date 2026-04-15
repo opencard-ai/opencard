@@ -84,11 +84,20 @@ export default async function LocaleLayout({ children, params }: Props) {
 
 function FTCDisclosure({ locale }: { locale: any }) {
   return (
-    <div className="text-xs text-slate-500 leading-relaxed">
+    <div className="text-xs text-slate-500 leading-relaxed space-y-2">
       <p className="font-semibold text-slate-600 mb-1">
         {t("ftc.disclosure", locale)}
       </p>
       <p>{t("ftc.text", locale)}</p>
+      <div className="flex gap-4 pt-1">
+        <a href={`/${locale}/privacy`} className="hover:text-blue-600 transition-colors">
+          {locale === "zh" ? "隱私權政策" : locale === "es" ? "Política de Privacidad" : "Privacy Policy"}
+        </a>
+        <span>·</span>
+        <a href={`/${locale}/terms`} className="hover:text-blue-600 transition-colors">
+          {locale === "zh" ? "服務條款" : locale === "es" ? "Términos de Servicio" : "Terms of Service"}
+        </a>
+      </div>
     </div>
   );
 }
