@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 
 const CARDS_DIR = path.join(process.cwd(), "data/cards");
+// Force scan
 
 export interface EarningRate {
   category: string;

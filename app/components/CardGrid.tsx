@@ -292,7 +292,7 @@ function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]
         ))}
       </div>
       <div className="mt-8 text-center text-sm text-slate-500">
-        {l("showing", locale)} {filtered.length} {l("of", locale)} {cards.length} {l("cards", locale)}
+        {/* COUNT_CHECK: {cards.length} */} {l("showing", locale)} {filtered.length} {l("of", locale)} {cards.length} {l("cards", locale)}
       </div>
     </>
   );
