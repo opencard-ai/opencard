@@ -7,12 +7,27 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "description": "N/A"
+    "bonus_points": 45000,
+    "description": "45,000 bonus points after $2,000 in first 4 months",
+    "estimated_value": 450,
+    "spending_requirement": 2000,
+    "time_period_months": 4
   },
   "earning_rates": [
     {
-      "category": "All",
-      "multiplier": 1
+      "category": "Travel",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "Streaming",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
     }
   ],
   "annual_credits": [],

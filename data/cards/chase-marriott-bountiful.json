@@ -11,8 +11,24 @@
   },
   "earning_rates": [
     {
-      "category": "All",
-      "multiplier": 1
+      "category": "Marriott",
+      "rate": 6,
+      "notes": ""
+    },
+    {
+      "category": "Gas stations",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "Dining",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 2,
+      "notes": ""
     }
   ],
   "annual_credits": [],

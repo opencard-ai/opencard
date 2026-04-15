@@ -1,0 +1,45 @@
+{
+  "card_id": "discover-it-chrome",
+  "name": "Discover it® Chrome",
+  "issuer": "Discover",
+  "network": "Discover",
+  "annual_fee": 0,
+  "welcome_offer": {
+    "bonus_points": null,
+    "description": "Unlimited Cashback Match™ at end of first year",
+    "estimated_value": null,
+    "spending_requirement": null,
+    "time_period_months": null
+  },
+  "earning_rates": [
+    {
+      "category": "Gas Stations",
+      "rate": 2,
+      "notes": "up to $1,000 combined quarterly"
+    },
+    {
+      "category": "Dining at restaurants",
+      "rate": 2,
+      "notes": "up to $1,000 combined quarterly"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "after $1,000"
+    }
+  ],
+  "annual_credits": [],
+  "insurance": [
+    "Trip Cancellation",
+    "Travel Accident"
+  ],
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good/Excellent",
+  "tags": [
+    "discover",
+    "gas",
+    "dining",
+    "rotating",
+    "no-annual-fee"
+  ]
+}

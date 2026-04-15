@@ -11,8 +11,24 @@
   },
   "earning_rates": [
     {
-      "category": "All",
-      "multiplier": 1
+      "category": "Gas stations",
+      "rate": 4,
+      "notes": ""
+    },
+    {
+      "category": "Restaurants",
+      "rate": 4,
+      "notes": ""
+    },
+    {
+      "category": "Eligible travel",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 2,
+      "notes": ""
     }
   ],
   "annual_credits": [],

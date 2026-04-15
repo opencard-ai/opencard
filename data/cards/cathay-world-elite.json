@@ -7,17 +7,22 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
+    "bonus_points": 0,
+    "description": "No welcome bonus",
+    "estimated_value": null,
     "spending_requirement": null,
-    "time_period_months": null,
-    "bonus_points": null,
-    "description": "Welcome offer varies. Check current offer at pay.cathaypacific.com — re-launched May 2025 with Synchrony Bank.",
-    "free_nights": null,
-    "point_program": "Cathay Pacific"
+    "time_period_months": null
   },
   "earning_rates": [
     {
-      "category": "All",
-      "multiplier": 1
+      "category": "Cathay Pacific",
+      "rate": 2,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
     }
   ],
   "annual_credits": [],

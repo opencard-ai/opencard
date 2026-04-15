@@ -11,8 +11,19 @@
   },
   "earning_rates": [
     {
-      "category": "All",
-      "multiplier": 1
+      "category": "Southwest",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "Gas stations",
+      "rate": 2,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
     }
   ],
   "annual_credits": [],

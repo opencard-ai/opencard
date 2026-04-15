@@ -7,16 +7,32 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
+    "bonus_points": 60000,
+    "description": "60,000 AAdvantage bonus miles after first purchase and paying $99 annual fee",
+    "estimated_value": 750,
     "spending_requirement": 0,
-    "time_period_months": 0,
-    "bonus_points": 0,
-    "description": "N/A",
-    "point_program": "Points"
+    "time_period_months": null
   },
   "earning_rates": [
     {
-      "category": "All Purchases",
-      "multiplier": 1
+      "category": "AAdvantage purchases",
+      "rate": 2,
+      "notes": ""
+    },
+    {
+      "category": "Gas stations",
+      "rate": 2,
+      "notes": ""
+    },
+    {
+      "category": "Restaurants",
+      "rate": 2,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
     }
   ],
   "annual_credits": [],

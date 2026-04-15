@@ -1,6 +1,6 @@
 {
   "card_id": "chase-freedom-flex",
-  "name": "Chase Freedom Flex\u00ae",
+  "name": "Chase Freedom Flex®",
   "issuer": "Chase",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -16,29 +16,24 @@
   },
   "earning_rates": [
     {
-      "category": "Rotating",
+      "category": "Rotating 5% Categories",
       "rate": 5,
-      "notes": "On up to $1,500 in combined purchases in bonus categories each quarter you activate."
-    },
-    {
-      "category": "Chase Travel",
-      "rate": 5,
-      "notes": "On travel purchased through Chase Travel."
+      "notes": "up to $1,500/quarter"
     },
     {
       "category": "Dining",
       "rate": 3,
-      "notes": "Including takeout and eligible delivery services."
+      "notes": ""
     },
     {
       "category": "Drugstores",
       "rate": 3,
-      "notes": "On all drugstore purchases."
+      "notes": ""
     },
     {
-      "category": "Default",
+      "category": "All other purchases",
       "rate": 1,
-      "notes": "On all other purchases."
+      "notes": ""
     }
   ],
   "annual_credits": [

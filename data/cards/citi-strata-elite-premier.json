@@ -11,8 +11,24 @@
   },
   "earning_rates": [
     {
-      "category": "All",
-      "multiplier": 1
+      "category": "Air travel",
+      "rate": 4,
+      "notes": ""
+    },
+    {
+      "category": "Hotels",
+      "rate": 4,
+      "notes": ""
+    },
+    {
+      "category": "Dining",
+      "rate": 4,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
     }
   ],
   "annual_credits": [],

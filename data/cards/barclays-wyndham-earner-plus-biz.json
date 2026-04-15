@@ -7,12 +7,22 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "description": "N/A"
+    "bonus_points": 75000,
+    "description": "75,000 Wyndham bonus points after $2,000 in first 90 days",
+    "estimated_value": 375,
+    "spending_requirement": 2000,
+    "time_period_months": 3
   },
   "earning_rates": [
     {
-      "category": "All",
-      "multiplier": 1
+      "category": "Wyndham Hotels",
+      "rate": 6,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
     }
   ],
   "annual_credits": [],

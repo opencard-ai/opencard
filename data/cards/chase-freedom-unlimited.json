@@ -1,6 +1,6 @@
 {
   "card_id": "chase-freedom-unlimited",
-  "name": "Chase Freedom Unlimited\u00ae",
+  "name": "Chase Freedom Unlimited®",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 0,
@@ -16,24 +16,19 @@
   },
   "earning_rates": [
     {
-      "category": "Chase Travel",
-      "rate": 5,
-      "notes": "On travel purchased through Chase Travel."
+      "category": "Travel",
+      "rate": 3,
+      "notes": "through Chase"
     },
     {
       "category": "Dining",
       "rate": 3,
-      "notes": "Including takeout and eligible delivery services."
+      "notes": ""
     },
     {
-      "category": "Drugstores",
-      "rate": 3,
-      "notes": "On all drugstore purchases."
-    },
-    {
-      "category": "Default",
+      "category": "All other purchases",
       "rate": 1.5,
-      "notes": "On all other purchases."
+      "notes": ""
     }
   ],
   "annual_credits": [

@@ -1,0 +1,46 @@
+{
+  "card_id": "barclays-ubereats",
+  "name": "Uber Visa Card",
+  "issuer": "Barclays",
+  "network": "Visa",
+  "annual_fee": 0,
+  "welcome_offer": {
+    "bonus_points": null,
+    "description": "No welcome bonus (card retired by Barclays)",
+    "estimated_value": null,
+    "spending_requirement": null,
+    "time_period_months": null
+  },
+  "earning_rates": [
+    {
+      "category": "Online subscriptions",
+      "rate": 3,
+      "notes": "Netflix, Spotify, etc."
+    },
+    {
+      "category": "Dining",
+      "rate": 2,
+      "notes": ""
+    },
+    {
+      "category": "Rideshare",
+      "rate": 2,
+      "notes": "Uber/Lyft"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
+    }
+  ],
+  "annual_credits": [],
+  "insurance": [],
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "tags": [
+    "barclays",
+    "dining",
+    "rideshare",
+    "no-annual-fee"
+  ]
+}

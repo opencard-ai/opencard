@@ -1,22 +1,33 @@
 {
   "card_id": "usbank-altitude-connect",
-  "name": "U.S. Bank Altitude\u00ae Connect Visa Signature\u00ae Card",
+  "name": "U.S. Bank Altitude® Connect Visa Signature® Card",
   "issuer": "U.S. Bank",
   "network": "Visa",
   "annual_fee": 0,
   "foreign_transaction_fee": "None",
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 1,
-    "time_period_months": 3,
-    "bonus_points": 20000,
-    "description": "20,000 Bonus Points",
-    "point_program": "U.S. Bank"
+    "bonus_points": 50000,
+    "description": "50,000 bonus points after $2,000 in first 4 months",
+    "estimated_value": 500,
+    "spending_requirement": 2000,
+    "time_period_months": 4
   },
   "earning_rates": [
     {
-      "category": "All Purchases",
-      "multiplier": 1
+      "category": "Travel",
+      "rate": 3,
+      "notes": "including gas stations/EV charging"
+    },
+    {
+      "category": "Streaming",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
     }
   ],
   "annual_credits": [
@@ -27,7 +38,7 @@
       "description": "U.S. Bank removed the $95 fee in mid-2024"
     },
     {
-      "name": "Priority Pass\u2122 Digital",
+      "name": "Priority Pass™ Digital",
       "amount": 0,
       "frequency": "annual",
       "description": "Four complimentary lounge visits per year"

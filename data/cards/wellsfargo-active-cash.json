@@ -7,16 +7,17 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 0,
-    "time_period_months": 0,
-    "bonus_points": 0,
-    "description": "N/A",
-    "point_program": "Points"
+    "bonus_points": 200,
+    "description": "$200 Cash Rewards bonus after $500 in first 3 months",
+    "estimated_value": 200,
+    "spending_requirement": 500,
+    "time_period_months": 3
   },
   "earning_rates": [
     {
       "category": "All Purchases",
-      "multiplier": 1
+      "rate": 2,
+      "notes": "unlimited"
     }
   ],
   "annual_credits": [],
