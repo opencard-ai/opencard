@@ -88,7 +88,7 @@ export default function NewsFeed({ lang }: Props) {
     if (filter === "cards") {
       // 確保卡片類別包含 credit card 相關，且不含 banking
       const isBanking = item.categories?.some((c) => c.toLowerCase().includes("banking"));
-      return !isBanking;
+      return filter === "cards" ? !isBanking : true; // 測試用：強迫 Cards 分類不顯示 DoC 的 Banking 內容
     }
     return true;
   });
