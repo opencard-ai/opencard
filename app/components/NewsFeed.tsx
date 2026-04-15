@@ -29,7 +29,13 @@ function SourceIcon({ source }: { source: string }) {
   return <span className="text-slate-400 text-xs">{source}</span>;
 }
 
-function CategoryBadge({ cat }: { cat: string }) {
+const NEWS_CAT_TRANSLATIONS: Record<string, Record<string, string>> = {
+  en: { banking: "Banking", "credit cards": "Credit Cards", "sign-up bonus": "Sign-up Bonus", rewards: "Rewards", travel: "Travel" },
+  zh: { banking: "銀行", "credit cards": "信用卡", "sign-up bonus": "開卡獎勵", rewards: "回饋", travel: "旅遊" },
+  es: { banking: "Banca", "credit cards": "Tarjetas de Crédito", "sign-up bonus": "Bono de Inscripción", rewards: "Recompensas", travel: "Viajes" },
+};
+
+function CategoryBadge({ cat, lang }: { cat: string; lang: string }) {
   const label = cat.toLowerCase();
   const colors: Record<string, string> = {
     banking: "bg-blue-100 text-blue-700",
@@ -39,8 +45,10 @@ function CategoryBadge({ cat }: { cat: string }) {
     travel: "bg-sky-100 text-sky-700",
   };
   const c = colors[label] || "bg-slate-100 text-slate-600";
+  const translations = NEWS_CAT_TRANSLATIONS[lang] || NEWS_CAT_TRANSLATIONS["en"];
+  const displayLabel = translations[label] || cat;
   return (
-    <span className={`text-xs px-1.5 py-0.5 rounded ${c}`}>{cat}</span>
+    <span className={`text-xs px-1.5 py-0.5 rounded ${c}`}>{displayLabel}</span>
   );
 }
 
@@ -153,7 +161,7 @@ export default function NewsFeed({ lang }: Props) {
                   <div className="flex items-center gap-2 mb-1 flex-wrap">
                     <SourceIcon source={item.source} />
                     {item.categories?.slice(0, 2).map((cat) => (
-                      <CategoryBadge key={cat} cat={cat} />
+                      <CategoryBadge key={cat} cat={cat} lang={lang} />
                     ))}
                     <span className="text-xs text-slate-400">{timeAgo(item.ts)}</span>
                   </div>
