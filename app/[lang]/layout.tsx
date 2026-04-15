@@ -49,8 +49,8 @@ export default async function LocaleLayout({ children, params }: Props) {
             <a href={`/${lang}`} className="flex items-center gap-2">
               <img src="/brand/logo-header.png?v=2" alt="OpenCard AI" className="h-12 w-auto object-contain" />
             </a>
-            <div className="flex items-center gap-4">
-              <nav className="flex items-center gap-4 text-sm text-slate-600">
+            <div className="flex items-center gap-3 whitespace-nowrap">
+              <nav className="flex items-center gap-3 text-sm text-slate-600 whitespace-nowrap">
                 <a href={`/${lang}`} className="hover:text-slate-900 transition-colors">
                   {t("nav.allCards", lang as any)}
                 </a>
