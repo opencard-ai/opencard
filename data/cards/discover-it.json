@@ -1,6 +1,6 @@
 {
   "card_id": "discover-it",
-  "name": "Discover it® Cash Back",
+  "name": "Discover it\u00ae Cash Back",
   "issuer": "Discover",
   "network": "Discover",
   "annual_fee": 0,
@@ -32,7 +32,7 @@
     "other_benefits": [
       {
         "name": "Cashback Match",
-        "description": "Discover matches ALL cash back earned at the end of your first year — effectively doubling your earnings."
+        "description": "Discover matches ALL cash back earned at the end of your first year \u2014 effectively doubling your earnings."
       },
       {
         "name": "Free FICO Score",
@@ -58,7 +58,6 @@
     "discover",
     "rotating 5% categories"
   ],
-  "last_updated": "2026-04-13T02:11:53.970Z",
   "sources": [
     {
       "url": "https://wallethub.com/edu/cc/discover-it-card-review/25936",
@@ -68,5 +67,6 @@
       "url": "https://www.bankrate.com/credit-cards/cash-back/guide-to-discover-it-cash-back-bonus-categories/",
       "notes": "Bankrate - Guide to the 2026 Discover Cash Back Calendar, Dec 2025."
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.970Z"
 }

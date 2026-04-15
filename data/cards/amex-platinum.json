@@ -1,6 +1,6 @@
 {
   "card_id": "amex-platinum",
-  "name": "The Platinum Card® from American Express",
+  "name": "The Platinum Card\u00ae from American Express",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 895,
@@ -10,7 +10,7 @@
     "spending_requirement": 12000,
     "time_period_months": 6,
     "bonus_points": 80000,
-    "description": "Earn 80,000 Membership Rewards® Points after you spend $12,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
+    "description": "Earn 80,000 Membership Rewards\u00ae Points after you spend $12,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
     "free_nights": null,
     "point_program": "Membership Rewards"
   },
@@ -140,7 +140,6 @@
     "american-express",
     "flights"
   ],
-  "last_updated": "2026-04-13T02:11:53.969Z",
   "sources": [
     {
       "url": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
@@ -150,5 +149,6 @@
       "url": "https://upgradedpoints.com/travel/amex-travel-insurance-benefits-guide/",
       "notes": "Insurance Details"
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.969Z"
 }

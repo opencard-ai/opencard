@@ -1,6 +1,6 @@
 {
   "card_id": "chase-freedom-unlimited",
-  "name": "Chase Freedom Unlimited®",
+  "name": "Chase Freedom Unlimited\u00ae",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 0,
@@ -67,7 +67,6 @@
     "chase",
     "chase travel"
   ],
-  "last_updated": "2026-04-13T02:11:53.969Z",
   "sources": [
     {
       "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
@@ -77,5 +76,6 @@
       "url": "https://www.nerdwallet.com/credit-cards/news/chase-freedom-unlimited-changes-welcome-bonus-march-2026",
       "notes": "NerdWallet review Mar 2026."
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.969Z"
 }

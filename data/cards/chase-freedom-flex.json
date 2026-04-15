@@ -1,6 +1,6 @@
 {
   "card_id": "chase-freedom-flex",
-  "name": "Chase Freedom Flex®",
+  "name": "Chase Freedom Flex\u00ae",
   "issuer": "Chase",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -72,7 +72,6 @@
     "chase",
     "rotating"
   ],
-  "last_updated": "2026-04-13T02:11:53.969Z",
   "sources": [
     {
       "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
@@ -82,5 +81,6 @@
       "url": "https://www.bankrate.com/credit-cards/cash-back/chase-freedom-flex-q2-2026-categories/",
       "notes": "Bankrate review Mar 2026."
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.969Z"
 }

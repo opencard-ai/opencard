@@ -43,7 +43,6 @@
     "chase",
     "all purchases"
   ],
-  "last_updated": "2026-04-13T02:11:53.969Z",
   "sources": [
     {
       "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/rise",
@@ -57,5 +56,6 @@
       "url": "https://www.nerdwallet.com/credit-cards/reviews/chase-freedom-rise",
       "notes": "NerdWallet review of Chase Freedom Rise as a credit-building card"
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.969Z"
 }

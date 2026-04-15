@@ -57,7 +57,6 @@
     "american-express",
     "u.s. supermarkets"
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z",
   "sources": [
     {
       "url": "https://www.nerdwallet.com/credit-cards/learn/amex-everyday-preferred",
@@ -67,5 +66,6 @@
       "url": "https://global.americanexpress.com/card-benefits/view-all/amex-everyday-preferred",
       "notes": "Amex official benefits page with earning rates"
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.968Z"
 }

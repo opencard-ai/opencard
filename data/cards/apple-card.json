@@ -73,11 +73,11 @@
     "no-annual-fee",
     "apple-pay"
   ],
-  "last_updated": "2026-04-14T05:44:00.000Z",
   "sources": [
     {
       "url": "https://www.apple.com/apple-card/",
       "notes": "Official Apple Website"
     }
-  ]
+  ],
+  "last_updated": "2026-04-14T05:44:00.000Z"
 }

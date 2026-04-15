@@ -1,0 +1,37 @@
+{
+  "card_id": "chase-marriott-bountiful",
+  "name": "Marriott Bonvoy Bountiful",
+  "issuer": "Chase",
+  "network": "Visa/Mastercard",
+  "annual_fee": 250,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "description": "N/A"
+  },
+  "earning_rates": [
+    {
+      "category": "All",
+      "multiplier": 1
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [],
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false
+    }
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {},
+  "tags": [
+    "travel"
+  ],
+  "sources": [],
+  "benefits": []
+}

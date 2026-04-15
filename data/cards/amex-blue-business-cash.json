@@ -1,6 +1,6 @@
 {
   "card_id": "amex-blue-business-cash",
-  "name": "The American Express Blue Business Cash™ Card",
+  "name": "The American Express Blue Business Cash\u2122 Card",
   "issuer": "American Express",
   "network": "American Express",
   "annual_fee": 0,
@@ -54,7 +54,6 @@
     "american-express",
     "all purchases"
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z",
   "sources": [
     {
       "url": "https://www.americanexpress.com/en-us/business/credit-cards/blue-business-cash/",
@@ -64,5 +63,6 @@
       "url": "https://upgradedpoints.com/credit-cards/reviews/amex-blue-business-cash-card/welcome-offer-history/",
       "notes": "Upgraded Points offer history review, Mar 2026."
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.968Z"
 }

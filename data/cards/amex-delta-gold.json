@@ -1,6 +1,6 @@
 {
   "card_id": "amex-delta-gold",
-  "name": "Delta SkyMiles® Gold American Express Card",
+  "name": "Delta SkyMiles\u00ae Gold American Express Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 150,
@@ -94,7 +94,6 @@
     "american-express",
     "delta purchases"
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z",
   "sources": [
     {
       "url": "https://www.dailydrop.com/credit-cards/delta-skymiles-gold-american-express-card",
@@ -104,5 +103,6 @@
       "url": "https://upgradedpoints.com/credit-cards/reviews/gold-delta-skymiles-credit-card-american-express/",
       "notes": "Annual fee, foreign transaction fee, benefits details"
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.968Z"
 }
