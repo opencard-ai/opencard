@@ -1,6 +1,6 @@
 {
   "card_id": "chase-ink-business-cash",
-  "name": "Chase Ink Business Cash® Credit Card",
+  "name": "Chase Ink Business Cash\u00ae Credit Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 0,
@@ -76,7 +76,6 @@
     "chase",
     "office supply stores"
   ],
-  "last_updated": "2026-04-13T02:11:53.969Z",
   "sources": [
     {
       "url": "https://creditcards.chase.com/business-credit-cards/ink/cash",
@@ -94,5 +93,6 @@
       "url": "https://www.cardratings.com/credit-card/chase-ink-cash-business-card",
       "notes": "Confirms 3% foreign transaction fee."
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.969Z"
 }

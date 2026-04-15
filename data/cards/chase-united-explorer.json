@@ -1,6 +1,6 @@
 {
   "card_id": "chase-united-explorer",
-  "name": "United℠ Explorer Card",
+  "name": "United\u2120 Explorer Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 150,
@@ -114,7 +114,6 @@
     "chase",
     "united flights"
   ],
-  "last_updated": "2026-04-13T02:11:53.970Z",
   "sources": [
     {
       "url": "https://creditcards.chase.com/travel-credit-cards/united/united-explorer",
@@ -124,5 +123,6 @@
       "url": "https://thepointsguy.com/news/united-credit-card-refresh-2025/",
       "notes": "TPG report on annual fee increase Mar 2025."
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.970Z"
 }

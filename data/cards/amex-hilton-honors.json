@@ -85,7 +85,6 @@
     "american-express",
     "hotel_hilton"
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z",
   "sources": [
     {
       "url": "https://thepointsguy.com/credit-cards/hilton-honors-amex-current-offers/",
@@ -99,5 +98,6 @@
       "url": "https://www.nerdwallet.com/credit-cards/news/hilton-new-welcome-offer-march-2026",
       "notes": "New limited-time offer details confirmed from March 2026 update"
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.968Z"
 }

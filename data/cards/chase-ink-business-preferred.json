@@ -1,6 +1,6 @@
 {
   "card_id": "chase-ink-business-preferred",
-  "name": "Chase Ink Business Preferred® Credit Card",
+  "name": "Chase Ink Business Preferred\u00ae Credit Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 95,
@@ -81,7 +81,6 @@
     "chase",
     "travel"
   ],
-  "last_updated": "2026-04-13T02:11:53.970Z",
   "sources": [
     {
       "url": "https://www.dailydrop.com/credit-cards/ink-business-preferred-credit-card",
@@ -99,5 +98,6 @@
       "url": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
       "notes": "Official Chase page confirms no foreign transaction fees and travel/purchase coverage."
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.970Z"
 }

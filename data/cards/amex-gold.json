@@ -1,6 +1,6 @@
 {
   "card_id": "amex-gold",
-  "name": "American Express® Gold Card",
+  "name": "American Express\u00ae Gold Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 325,
@@ -10,7 +10,7 @@
     "spending_requirement": 6000,
     "time_period_months": 6,
     "bonus_points": 60000,
-    "description": "Earn 60,000 Membership Rewards® Points after you spend $6,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
+    "description": "Earn 60,000 Membership Rewards\u00ae Points after you spend $6,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
     "free_nights": null,
     "point_program": "Membership Rewards"
   },
@@ -95,7 +95,6 @@
     "american-express",
     "restaurants"
   ],
-  "last_updated": "2026-04-13T02:11:53.967Z",
   "sources": [
     {
       "url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
@@ -105,5 +104,6 @@
       "url": "https://upgradedpoints.com/credit-cards/reviews/american-express-gold-card/travel-insurance-benefits/",
       "notes": "Insurance Details"
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.967Z"
 }

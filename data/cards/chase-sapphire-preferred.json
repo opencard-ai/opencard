@@ -1,6 +1,6 @@
 {
   "card_id": "chase-sapphire-preferred",
-  "name": "Chase Sapphire Preferred® Card",
+  "name": "Chase Sapphire Preferred\u00ae Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 95,
@@ -81,7 +81,6 @@
     "chase",
     "chase travel"
   ],
-  "last_updated": "2026-04-13T02:11:53.970Z",
   "sources": [
     {
       "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
@@ -91,5 +90,6 @@
       "url": "https://www.nerdwallet.com/travel/learn/how-to-get-the-most-from-the-chase-sapphire-preferred-card",
       "notes": "NerdWallet review Apr 2026."
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.970Z"
 }

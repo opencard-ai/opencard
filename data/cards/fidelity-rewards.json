@@ -55,11 +55,11 @@
     "no-annual-fee",
     "flat-rate-cash-back"
   ],
-  "last_updated": "2026-04-14T05:44:00.000Z",
   "sources": [
     {
       "url": "https://www.fidelity.com/credit-card/fidelity-rewards-visa",
       "notes": "Official Fidelity Website"
     }
-  ]
+  ],
+  "last_updated": "2026-04-14T05:44:00.000Z"
 }

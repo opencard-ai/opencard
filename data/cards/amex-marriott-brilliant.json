@@ -1,6 +1,6 @@
 {
   "card_id": "amex-marriott-brilliant",
-  "name": "Marriott Bonvoy Brilliant® American Express® Card",
+  "name": "Marriott Bonvoy Brilliant\u00ae American Express\u00ae Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 650,
@@ -104,7 +104,6 @@
     "american-express",
     "marriott hotels"
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z",
   "sources": [
     {
       "url": "https://www.dailydrop.com/credit-cards/marriott-bonvoy-brilliant-american-express-card",
@@ -114,5 +113,6 @@
       "url": "https://upgradedpoints.com/credit-cards/reviews/marriott-bonvoy-brilliant-card/welcome-offer-history/",
       "notes": "200K offer details and offer history confirmation"
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.968Z"
 }

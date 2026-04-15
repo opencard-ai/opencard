@@ -42,7 +42,7 @@
     "other_benefits": [
       {
         "name": "Crypto Rewards",
-        "description": "Earn cryptocurrency rewards (BTC, ETH, USDC, etc.) as cash back — user chooses the crypto"
+        "description": "Earn cryptocurrency rewards (BTC, ETH, USDC, etc.) as cash back \u2014 user chooses the crypto"
       },
       {
         "name": "Coinbase One",
@@ -71,11 +71,11 @@
     "dining",
     "travel"
   ],
-  "last_updated": "2026-04-14T05:44:00.000Z",
   "sources": [
     {
       "url": "https://www.coinbase.com/card",
       "notes": "Official Coinbase Website"
     }
-  ]
+  ],
+  "last_updated": "2026-04-14T05:44:00.000Z"
 }

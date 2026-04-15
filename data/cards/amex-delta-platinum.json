@@ -1,6 +1,6 @@
 {
   "card_id": "amex-delta-platinum",
-  "name": "Delta SkyMiles® Platinum American Express Card",
+  "name": "Delta SkyMiles\u00ae Platinum American Express Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 350,
@@ -117,7 +117,6 @@
     "american-express",
     "delta purchases"
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z",
   "sources": [
     {
       "url": "https://www.dailydrop.com/credit-cards/delta-skymiles-platinum-american-express-card",
@@ -127,5 +126,6 @@
       "url": "https://upgradedpoints.com/credit-cards/reviews/gold-delta-skymiles-credit-card-american-express/",
       "notes": "Card comparison and benefit details"
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.968Z"
 }

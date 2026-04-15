@@ -1,6 +1,6 @@
 {
   "card_id": "citi-costco-anywhere",
-  "name": "Costco Anywhere Visa® Card by Citi",
+  "name": "Costco Anywhere Visa\u00ae Card by Citi",
   "issuer": "Citi",
   "network": "Visa",
   "annual_fee": 0,
@@ -70,7 +70,6 @@
     "citi",
     "gas (costco)"
   ],
-  "last_updated": "2026-04-13T02:11:53.970Z",
   "sources": [
     {
       "url": "https://www.costco.com/credit-card.html",
@@ -88,5 +87,6 @@
       "url": "https://www.costcotravel.com/Info/Credit-Card",
       "notes": "Costco Travel page confirms no FTf, $0 AF with paid Costco membership, 3% on travel."
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.970Z"
 }

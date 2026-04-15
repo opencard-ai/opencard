@@ -55,7 +55,6 @@
     "capital-one",
     "all purchases"
   ],
-  "last_updated": "2026-04-13T02:11:53.969Z",
   "sources": [
     {
       "url": "https://www.capitalone.com/learn-grow/money-management/quicksilver-card-benefits/",
@@ -69,5 +68,6 @@
       "url": "https://wallethub.com/d/capital-one-quicksilver-76c",
       "notes": "WalletHub card overview confirming $200 bonus and no annual fee"
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.969Z"
 }

@@ -1,6 +1,6 @@
 {
   "card_id": "chase-sapphire-reserve",
-  "name": "Chase Sapphire Reserve®",
+  "name": "Chase Sapphire Reserve\u00ae",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 795,
@@ -131,7 +131,6 @@
     "chase",
     "chase travel"
   ],
-  "last_updated": "2026-04-13T02:11:53.970Z",
   "sources": [
     {
       "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
@@ -141,5 +140,6 @@
       "url": "https://roamingcactus.com/credit-cards/2026/4/1/chase-sapphire-reserve-review-2026",
       "notes": "Review Apr 2026."
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.970Z"
 }

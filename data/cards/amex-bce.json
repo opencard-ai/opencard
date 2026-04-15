@@ -1,6 +1,6 @@
 {
   "card_id": "amex-bce",
-  "name": "Blue Cash Everyday® Card",
+  "name": "Blue Cash Everyday\u00ae Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 0,
@@ -67,11 +67,11 @@
     "american-express",
     "groceries"
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z",
   "sources": [
     {
       "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/",
       "notes": "Official Amex Page"
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.968Z"
 }

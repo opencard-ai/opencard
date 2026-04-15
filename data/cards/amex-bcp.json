@@ -1,6 +1,6 @@
 {
   "card_id": "amex-bcp",
-  "name": "Blue Cash Preferred® Card",
+  "name": "Blue Cash Preferred\u00ae Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 95,
@@ -72,11 +72,11 @@
     "american-express",
     "groceries"
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z",
   "sources": [
     {
       "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/",
       "notes": "Official Amex Page"
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.968Z"
 }

@@ -63,7 +63,6 @@
     "american-express",
     "hilton hotels and resorts"
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z",
   "sources": [
     {
       "url": "https://www.nerdwallet.com/business/credit-cards/reviews/hilton-honors-american-express-business",
@@ -77,5 +76,6 @@
       "url": "https://global.americanexpress.com/card-benefits/view-all/hilton-business",
       "notes": "Amex official benefits page with earning rates and status information"
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.968Z"
 }

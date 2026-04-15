@@ -66,7 +66,6 @@
     "american-express",
     "top 2 eligible business categories"
   ],
-  "last_updated": "2026-04-13T02:11:53.966Z",
   "sources": [
     {
       "url": "https://www.nerdwallet.com/business/credit-cards/reviews/american-express-business-gold",
@@ -80,5 +79,6 @@
       "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
       "notes": "Amex official card page with earning categories and statement credits"
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.966Z"
 }

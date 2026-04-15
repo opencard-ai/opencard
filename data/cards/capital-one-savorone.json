@@ -63,7 +63,6 @@
     "capital-one",
     "grocery stores"
   ],
-  "last_updated": "2026-04-13T02:11:53.969Z",
   "sources": [
     {
       "url": "https://www.capitalone.com/credit-cards/savorone/",
@@ -77,5 +76,6 @@
       "url": "https://www.capitalone.com/learn-grow/money-management/everything-about-savorone/",
       "notes": "Capital One SavorOne overview confirming earning categories and $200 welcome bonus"
     }
-  ]
+  ],
+  "last_updated": "2026-04-13T02:11:53.969Z"
 }
