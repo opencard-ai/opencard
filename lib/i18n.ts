@@ -6,7 +6,7 @@ export const defaultLocale: Locale = "en";
 
 export const localeNames: Record<Locale, string> = {
   en: "English",
-  zh: "繁體中文",
+  zh: "中文",
   es: "Español",
 };
 
