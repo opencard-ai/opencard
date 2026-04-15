@@ -30,6 +30,9 @@ export default async function HomePage({ params }: Props) {
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-slate-900 mb-1">{t("home.title", lang as any)}</h1>
         <p className="text-slate-500 text-sm">{t("home.subtitle", lang as any, { count: cards.length })}</p>
+        <p className="text-xs text-slate-400 mt-1">
+          {lang === "zh" ? "📌 本站僅涵蓋美國信用卡，優惠資訊以美國居民為主" : lang === "es" ? "📌 Este sitio cubre solo tarjetas de crédito de EE.UU." : "📌 This site covers US credit cards only"}
+        </p>
       </div>
 
       {/* Quick Search CTA — prominent AI card finder entry */}
