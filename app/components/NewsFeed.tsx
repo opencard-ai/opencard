@@ -59,7 +59,7 @@ export default function NewsFeed({ lang }: Props) {
   const fetchNews = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`/${lang}/api/daily-digest?lang=${lang}&cache_bust=${Date.now()}`);
+      const res = await fetch(`/${lang}/api/daily-digest?lang=${lang}&v=1776235290`);
       if (!res.ok) throw new Error(res.statusText);
       const data = await res.json();
       setItems(data.items || []);

@@ -1,0 +1,1710 @@
+{
+  "cards": [
+    {
+      "card_id": "amazon-store-card",
+      "name": "Amazon Store Card",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-amazon-business-prime",
+      "name": "Amazon Business Prime Card",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-bce",
+      "name": "Blue Cash Everyday\u00ae Card",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-bcp",
+      "name": "Blue Cash Preferred\u00ae Card",
+      "issuer": "American Express",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "amex-blue-business-cash",
+      "name": "The American Express Blue Business Cash\u2122 Card",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-blue-business-plus",
+      "name": "Amex Blue Business Plus",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-business-gold",
+      "name": "American Express Business Gold Card",
+      "issuer": "American Express",
+      "annual_fee": 375
+    },
+    {
+      "card_id": "amex-cash-magnet",
+      "name": "Amex Cash Magnet",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-centurion",
+      "name": "Amex Centurion Card",
+      "issuer": "American Express",
+      "annual_fee": 5000
+    },
+    {
+      "card_id": "amex-delta-blue",
+      "name": "Amex Delta Blue",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-delta-gold-biz",
+      "name": "Delta SkyMiles Gold Business",
+      "issuer": "American Express",
+      "annual_fee": 150
+    },
+    {
+      "card_id": "amex-delta-gold",
+      "name": "Delta SkyMiles\u00ae Gold American Express Card",
+      "issuer": "American Express",
+      "annual_fee": 150
+    },
+    {
+      "card_id": "amex-delta-platinum",
+      "name": "Delta SkyMiles\u00ae Platinum American Express Card",
+      "issuer": "American Express",
+      "annual_fee": 350
+    },
+    {
+      "card_id": "amex-delta-reserve",
+      "name": "Delta SkyMiles\u00ae Reserve American Express Card",
+      "issuer": "American Express",
+      "annual_fee": 650
+    },
+    {
+      "card_id": "amex-everyday-preferred",
+      "name": "Amex EveryDay Preferred Credit Card",
+      "issuer": "American Express",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "amex-gold",
+      "name": "American Express\u00ae Gold Card",
+      "issuer": "American Express",
+      "annual_fee": 325
+    },
+    {
+      "card_id": "amex-graphite-business",
+      "name": "Amex Graphite Business Cash",
+      "issuer": "American Express",
+      "annual_fee": 295
+    },
+    {
+      "card_id": "amex-green",
+      "name": "American Express\u00ae Green Card",
+      "issuer": "American Express",
+      "annual_fee": 150
+    },
+    {
+      "card_id": "amex-hilton-aspire",
+      "name": "Hilton Honors American Express Aspire Card",
+      "issuer": "American Express",
+      "annual_fee": 550
+    },
+    {
+      "card_id": "amex-hilton-biz-platinum",
+      "name": "Hilton Business Platinum",
+      "issuer": "American Express",
+      "annual_fee": 695
+    },
+    {
+      "card_id": "amex-hilton-honors-business",
+      "name": "Hilton Honors American Express Business Card",
+      "issuer": "American Express",
+      "annual_fee": 195
+    },
+    {
+      "card_id": "amex-hilton-honors",
+      "name": "Hilton Honors American Express Card",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-hilton-surpass",
+      "name": "Hilton Honors American Express Surpass Card",
+      "issuer": "American Express",
+      "annual_fee": 150
+    },
+    {
+      "card_id": "amex-marriott-bonvoy-amex",
+      "name": "Marriott Bonvoy American Express Card",
+      "issuer": "American Express",
+      "annual_fee": 250
+    },
+    {
+      "card_id": "amex-marriott-brilliant",
+      "name": "Marriott Bonvoy Brilliant\u00ae American Express\u00ae Card",
+      "issuer": "American Express",
+      "annual_fee": 650
+    },
+    {
+      "card_id": "amex-morgan-stanley-blue",
+      "name": "Amex Morgan Stanley Blue",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-morgan-stanley-platinum",
+      "name": "Amex Morgan Stanley Platinum",
+      "issuer": "American Express",
+      "annual_fee": 895
+    },
+    {
+      "card_id": "amex-platinum",
+      "name": "The Platinum Card\u00ae from American Express",
+      "issuer": "American Express",
+      "annual_fee": 895
+    },
+    {
+      "card_id": "apple-card",
+      "name": "Apple Card",
+      "issuer": "Goldman Sachs",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "barclays-aadvantage-red",
+      "name": "AAdvantage Aviator Red",
+      "issuer": "Barclays",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "barclays-aadvantage-silver",
+      "name": "AAdvantage Aviator Silver",
+      "issuer": "Barclays",
+      "annual_fee": 199
+    },
+    {
+      "card_id": "barclays-jetblue-biz",
+      "name": "JetBlue Business Card",
+      "issuer": "Barclays",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "barclays-jetblue-plus",
+      "name": "JetBlue Plus Card",
+      "issuer": "Barclays",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "barclays-uber-card",
+      "name": "Uber Visa Card (Legacy)",
+      "issuer": "Barclays",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "barclays-wyndham-earner-biz",
+      "name": "Wyndham Earner Business",
+      "issuer": "Barclays",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "barclays-wyndham-earner-plus-biz",
+      "name": "Wyndham Earner+ Business",
+      "issuer": "Barclays",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "barclays-wyndham-earner-plus",
+      "name": "Wyndham Earner Plus",
+      "issuer": "Barclays",
+      "annual_fee": 75
+    },
+    {
+      "card_id": "barclays-wyndham-earner",
+      "name": "Wyndham Earner Card",
+      "issuer": "Barclays",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "bilt-blue",
+      "name": "Bilt Blue",
+      "issuer": "First Electronic Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "bilt-obsidian",
+      "name": "Bilt Obsidian",
+      "issuer": "First Electronic Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "bilt-palladium",
+      "name": "Bilt Palladium",
+      "issuer": "First Electronic Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "boa-alaska-ascent",
+      "name": "Alaska Airlines Atmos\u2122 Ascent Visa Signature\u00ae Card",
+      "issuer": "Bank of America",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "boa-alaska-summit",
+      "name": "Alaska Airlines Atmos\u2122 Summit Visa Infinite\u00ae Card",
+      "issuer": "Bank of America",
+      "annual_fee": 395
+    },
+    {
+      "card_id": "boa-customized-cash-rewards",
+      "name": "Bank of America\u00ae Customized Cash Rewards Credit Card",
+      "issuer": "Bank of America",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "boa-travel-rewards",
+      "name": "Bank of America\u00ae Travel Rewards Credit Card",
+      "issuer": "Bank of America",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "capital-one-quicksilver",
+      "name": "Capital One Quicksilver Cash Rewards Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "capital-one-savor",
+      "name": "Capital One Savor Rewards Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "capital-one-savorone",
+      "name": "Capital One SavorOne Cash Rewards Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 39
+    },
+    {
+      "card_id": "capital-one-spark-miles",
+      "name": "Capital One Spark Miles for Business",
+      "issuer": "Capital One",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "capital-one-venture-x",
+      "name": "Capital One Venture X Rewards Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 395
+    },
+    {
+      "card_id": "capital-one-venture",
+      "name": "Capital One Venture Rewards Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "cathay-pacific-card",
+      "name": "Cathay Pacific Visa",
+      "issuer": "TD Bank",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "chase-aeroplan",
+      "name": "Chase Aeroplan Card",
+      "issuer": "Chase",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "chase-disney-inspire",
+      "name": "Disney Inspire Visa Card",
+      "issuer": "Chase",
+      "annual_fee": 149
+    },
+    {
+      "card_id": "chase-disney-premier",
+      "name": "Disney Premier Visa",
+      "issuer": "Chase",
+      "annual_fee": 49
+    },
+    {
+      "card_id": "chase-disney-visa",
+      "name": "Chase Disney Visa Card",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "chase-freedom-flex",
+      "name": "Chase Freedom Flex\u00ae",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "chase-freedom-rise",
+      "name": "Chase Freedom Rise Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "chase-freedom-unlimited",
+      "name": "Chase Freedom Unlimited\u00ae",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "chase-hyatt",
+      "name": "Chase Hyatt",
+      "issuer": "Chase",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "chase-ihg-premier",
+      "name": "Chase IHG Premier",
+      "issuer": "Chase",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "chase-ink-business-cash",
+      "name": "Chase Ink Business Cash\u00ae Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "chase-ink-business-preferred",
+      "name": "Chase Ink Business Preferred\u00ae Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "chase-ink-business-unlimited",
+      "name": "Chase Ink Business Unlimited\u00ae Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "chase-ink-preferred-plus",
+      "name": "Ink Business Preferred Plus",
+      "issuer": "Chase",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "chase-marriott-boundless",
+      "name": "Marriott Bonvoy Boundless\u00ae Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "chase-marriott-bountiful",
+      "name": "Marriott Bonvoy Bountiful",
+      "issuer": "Chase",
+      "annual_fee": 250
+    },
+    {
+      "card_id": "chase-ritz-carlton",
+      "name": "Chase Ritz-Carlton",
+      "issuer": "Chase",
+      "annual_fee": 450
+    },
+    {
+      "card_id": "chase-sapphire-preferred",
+      "name": "Chase Sapphire Preferred\u00ae Card",
+      "issuer": "Chase",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "chase-sapphire-reserve",
+      "name": "Chase Sapphire Reserve\u00ae",
+      "issuer": "Chase",
+      "annual_fee": 795
+    },
+    {
+      "card_id": "chase-southwest-performance-biz",
+      "name": "Southwest Performance Business",
+      "issuer": "Chase",
+      "annual_fee": 199
+    },
+    {
+      "card_id": "chase-southwest-performance-plus",
+      "name": "Southwest Performance Plus",
+      "issuer": "Chase",
+      "annual_fee": 199
+    },
+    {
+      "card_id": "chase-southwest-priority",
+      "name": "Chase Southwest Priority",
+      "issuer": "Chase",
+      "annual_fee": 229
+    },
+    {
+      "card_id": "chase-united-biz",
+      "name": "United Business Card",
+      "issuer": "Chase",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "chase-united-explorer",
+      "name": "United\u2120 Explorer Card",
+      "issuer": "Chase",
+      "annual_fee": 150
+    },
+    {
+      "card_id": "chase-united-gateway",
+      "name": "United Gateway Card",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "chase-united-infinite",
+      "name": "Chase United Infinite",
+      "issuer": "Chase",
+      "annual_fee": 695
+    },
+    {
+      "card_id": "chase-united-quest-biz",
+      "name": "United Quest Business",
+      "issuer": "Chase",
+      "annual_fee": 350
+    },
+    {
+      "card_id": "chase-united-quest",
+      "name": "United Quest Card",
+      "issuer": "Chase",
+      "annual_fee": 350
+    },
+    {
+      "card_id": "citi-aa-exec",
+      "name": "Citi AA Exec",
+      "issuer": "Citi",
+      "annual_fee": 595
+    },
+    {
+      "card_id": "citi-aa-mileup-biz",
+      "name": "AA MileUp Business",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "citi-aa-mileup",
+      "name": "AA AAdvantage MileUp",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "citi-aa-platinum-select",
+      "name": "AAdvantage Platinum Select",
+      "issuer": "Citi",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "citi-costco-anywhere",
+      "name": "Costco Anywhere Visa\u00ae Card by Citi",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "citi-costco-biz",
+      "name": "Costco Anywhere Business",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "citi-custom-cash",
+      "name": "Citi Custom Cash\u00ae Card",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "citi-dividend",
+      "name": "Citi Dividend",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "citi-double-cash",
+      "name": "Citi Double Cash\u00ae Card",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "citi-premier",
+      "name": "Citi Strata Premier\u00ae Card",
+      "issuer": "Citi",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "citi-prestige",
+      "name": "Citi Prestige",
+      "issuer": "Citi",
+      "annual_fee": 495
+    },
+    {
+      "card_id": "citi-strata-elite-premier",
+      "name": "Strata Elite Premier",
+      "issuer": "Citi",
+      "annual_fee": 595
+    },
+    {
+      "card_id": "citi-strata-elite",
+      "name": "Citi Strata Elite\u2120 Card",
+      "issuer": "Citi",
+      "annual_fee": 595
+    },
+    {
+      "card_id": "citi-strata-premier",
+      "name": "Citi Strata Premier\u2120 Card",
+      "issuer": "Citi",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "coinbase-one",
+      "name": "Coinbase One Card",
+      "issuer": "First Electronic Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "discover-it-cash-back",
+      "name": "Discover it\u00ae Cash Back",
+      "issuer": "Discover",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "discover-it-miles",
+      "name": "Discover it\u00ae Miles",
+      "issuer": "Discover",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "discover-it",
+      "name": "Discover it\u00ae Cash Back",
+      "issuer": "Discover",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "fidelity-rewards-visa",
+      "name": "Fidelity Rewards Visa Signature",
+      "issuer": "Fidelity",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "fidelity-rewards",
+      "name": "Fidelity Rewards Visa",
+      "issuer": "Fidelity",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "hsbc-elite",
+      "name": "HSBC Elite",
+      "issuer": "HSBC",
+      "annual_fee": 495
+    },
+    {
+      "card_id": "hsbc-premier",
+      "name": "HSBC Premier Credit Card",
+      "issuer": "HSBC",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "nordstrom-card",
+      "name": "Nordstrom Visa",
+      "issuer": "TD Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "nordstrom-retail",
+      "name": "Nordstrom Card",
+      "issuer": "TD Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "paypal-cashback",
+      "name": "PayPal Cashback Mastercard",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "pnc-cash-rewards",
+      "name": "PNC Cash Rewards",
+      "issuer": "PNC Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "robinhood-gold-card",
+      "name": "Robinhood Gold Card",
+      "issuer": "Robinhood Credit",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "robinhood-gold",
+      "name": "Robinhood Gold Card",
+      "issuer": "Robinhood Credit",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "robinhood-platinum",
+      "name": "Robinhood Platinum Card",
+      "issuer": "Robinhood Credit",
+      "annual_fee": 695
+    },
+    {
+      "card_id": "state-farm-cash-medallion",
+      "name": "State Farm Cash Medallion",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "synchrony-cathay-biz",
+      "name": "Cathay Pacific Business",
+      "issuer": "Synchrony",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "usbank-altitude-connect-biz",
+      "name": "Altitude Connect Business",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "usbank-altitude-connect",
+      "name": "U.S. Bank Altitude\u00ae Connect Visa Signature\u00ae Card",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "usbank-altitude-go-biz",
+      "name": "Altitude Go Business",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "usbank-altitude-go",
+      "name": "U.S. Bank Altitude Go",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "usbank-altitude-reserve",
+      "name": "U.S. Bank Altitude\u00ae Reserve Visa Infinite\u00ae Card",
+      "issuer": "U.S. Bank",
+      "annual_fee": 400
+    },
+    {
+      "card_id": "usbank-business-triple-cash",
+      "name": "Business Triple Cash",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "usbank-cash-plus",
+      "name": "U.S. Bank Cash+",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "usbank-smartly",
+      "name": "U.S. Bank Smartly",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "venmo-card",
+      "name": "Venmo Credit Card",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "verizon-visa",
+      "name": "Verizon Visa Card",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "walgreens-mastercard",
+      "name": "myWalgreens Mastercard",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "wellsfargo-active-cash-biz",
+      "name": "Active Cash Business",
+      "issuer": "Wells Fargo",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "wellsfargo-active-cash",
+      "name": "Wells Fargo Active Cash",
+      "issuer": "Wells Fargo",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "wellsfargo-autograph-journey",
+      "name": "Wells Fargo Autograph Journey",
+      "issuer": "Wells Fargo",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "wellsfargo-choice-privileges",
+      "name": "Choice Privileges Select",
+      "issuer": "Wells Fargo",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "wellsfargo-one-key-plus",
+      "name": "One Key+ Card",
+      "issuer": "Wells Fargo",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "wellsfargo-one-key",
+      "name": "One Key Card",
+      "issuer": "Wells Fargo",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "wellsfargo-reflect",
+      "name": "Wells Fargo Reflect",
+      "issuer": "Wells Fargo",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-1",
+      "name": "Credit Card 1",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-2",
+      "name": "Credit Card 2",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-3",
+      "name": "Credit Card 3",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-4",
+      "name": "Credit Card 4",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-5",
+      "name": "Credit Card 5",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-6",
+      "name": "Credit Card 6",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-7",
+      "name": "Credit Card 7",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-8",
+      "name": "Credit Card 8",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-9",
+      "name": "Credit Card 9",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-10",
+      "name": "Credit Card 10",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-11",
+      "name": "Credit Card 11",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-12",
+      "name": "Credit Card 12",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-13",
+      "name": "Credit Card 13",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-14",
+      "name": "Credit Card 14",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-15",
+      "name": "Credit Card 15",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-16",
+      "name": "Credit Card 16",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-17",
+      "name": "Credit Card 17",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-18",
+      "name": "Credit Card 18",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-19",
+      "name": "Credit Card 19",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-20",
+      "name": "Credit Card 20",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-21",
+      "name": "Credit Card 21",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-22",
+      "name": "Credit Card 22",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-23",
+      "name": "Credit Card 23",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-24",
+      "name": "Credit Card 24",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-25",
+      "name": "Credit Card 25",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-26",
+      "name": "Credit Card 26",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-27",
+      "name": "Credit Card 27",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-28",
+      "name": "Credit Card 28",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-29",
+      "name": "Credit Card 29",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-30",
+      "name": "Credit Card 30",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-31",
+      "name": "Credit Card 31",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-32",
+      "name": "Credit Card 32",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-33",
+      "name": "Credit Card 33",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-34",
+      "name": "Credit Card 34",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-35",
+      "name": "Credit Card 35",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-36",
+      "name": "Credit Card 36",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-37",
+      "name": "Credit Card 37",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-38",
+      "name": "Credit Card 38",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-39",
+      "name": "Credit Card 39",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-40",
+      "name": "Credit Card 40",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-41",
+      "name": "Credit Card 41",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-42",
+      "name": "Credit Card 42",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-43",
+      "name": "Credit Card 43",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-44",
+      "name": "Credit Card 44",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-45",
+      "name": "Credit Card 45",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-46",
+      "name": "Credit Card 46",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-47",
+      "name": "Credit Card 47",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-48",
+      "name": "Credit Card 48",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-49",
+      "name": "Credit Card 49",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-50",
+      "name": "Credit Card 50",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-51",
+      "name": "Credit Card 51",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-52",
+      "name": "Credit Card 52",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-53",
+      "name": "Credit Card 53",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-54",
+      "name": "Credit Card 54",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-55",
+      "name": "Credit Card 55",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-56",
+      "name": "Credit Card 56",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-57",
+      "name": "Credit Card 57",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-58",
+      "name": "Credit Card 58",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-59",
+      "name": "Credit Card 59",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-60",
+      "name": "Credit Card 60",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-61",
+      "name": "Credit Card 61",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-62",
+      "name": "Credit Card 62",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-63",
+      "name": "Credit Card 63",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-64",
+      "name": "Credit Card 64",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-65",
+      "name": "Credit Card 65",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-66",
+      "name": "Credit Card 66",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-67",
+      "name": "Credit Card 67",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-68",
+      "name": "Credit Card 68",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-69",
+      "name": "Credit Card 69",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-70",
+      "name": "Credit Card 70",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-71",
+      "name": "Credit Card 71",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-72",
+      "name": "Credit Card 72",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-73",
+      "name": "Credit Card 73",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-74",
+      "name": "Credit Card 74",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-75",
+      "name": "Credit Card 75",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-76",
+      "name": "Credit Card 76",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-77",
+      "name": "Credit Card 77",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-78",
+      "name": "Credit Card 78",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-79",
+      "name": "Credit Card 79",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-80",
+      "name": "Credit Card 80",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-81",
+      "name": "Credit Card 81",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-82",
+      "name": "Credit Card 82",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-83",
+      "name": "Credit Card 83",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-84",
+      "name": "Credit Card 84",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-85",
+      "name": "Credit Card 85",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-86",
+      "name": "Credit Card 86",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-87",
+      "name": "Credit Card 87",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-88",
+      "name": "Credit Card 88",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-89",
+      "name": "Credit Card 89",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-90",
+      "name": "Credit Card 90",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-91",
+      "name": "Credit Card 91",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-92",
+      "name": "Credit Card 92",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-93",
+      "name": "Credit Card 93",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-94",
+      "name": "Credit Card 94",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-95",
+      "name": "Credit Card 95",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-96",
+      "name": "Credit Card 96",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-97",
+      "name": "Credit Card 97",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-98",
+      "name": "Credit Card 98",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-99",
+      "name": "Credit Card 99",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-100",
+      "name": "Credit Card 100",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-101",
+      "name": "Credit Card 101",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-102",
+      "name": "Credit Card 102",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-103",
+      "name": "Credit Card 103",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-104",
+      "name": "Credit Card 104",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-105",
+      "name": "Credit Card 105",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-106",
+      "name": "Credit Card 106",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-107",
+      "name": "Credit Card 107",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-108",
+      "name": "Credit Card 108",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-109",
+      "name": "Credit Card 109",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-110",
+      "name": "Credit Card 110",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-111",
+      "name": "Credit Card 111",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-112",
+      "name": "Credit Card 112",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-113",
+      "name": "Credit Card 113",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-114",
+      "name": "Credit Card 114",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-115",
+      "name": "Credit Card 115",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-116",
+      "name": "Credit Card 116",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-117",
+      "name": "Credit Card 117",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-118",
+      "name": "Credit Card 118",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-119",
+      "name": "Credit Card 119",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-120",
+      "name": "Credit Card 120",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-121",
+      "name": "Credit Card 121",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-122",
+      "name": "Credit Card 122",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-123",
+      "name": "Credit Card 123",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-124",
+      "name": "Credit Card 124",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-125",
+      "name": "Credit Card 125",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-126",
+      "name": "Credit Card 126",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-127",
+      "name": "Credit Card 127",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-128",
+      "name": "Credit Card 128",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-129",
+      "name": "Credit Card 129",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-130",
+      "name": "Credit Card 130",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-131",
+      "name": "Credit Card 131",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-132",
+      "name": "Credit Card 132",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-133",
+      "name": "Credit Card 133",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-134",
+      "name": "Credit Card 134",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-135",
+      "name": "Credit Card 135",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-136",
+      "name": "Credit Card 136",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-137",
+      "name": "Credit Card 137",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-138",
+      "name": "Credit Card 138",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-139",
+      "name": "Credit Card 139",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-140",
+      "name": "Credit Card 140",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-141",
+      "name": "Credit Card 141",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-142",
+      "name": "Credit Card 142",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-143",
+      "name": "Credit Card 143",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-144",
+      "name": "Credit Card 144",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-145",
+      "name": "Credit Card 145",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-146",
+      "name": "Credit Card 146",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-147",
+      "name": "Credit Card 147",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-148",
+      "name": "Credit Card 148",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-149",
+      "name": "Credit Card 149",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-150",
+      "name": "Credit Card 150",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-151",
+      "name": "Credit Card 151",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-152",
+      "name": "Credit Card 152",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-153",
+      "name": "Credit Card 153",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-154",
+      "name": "Credit Card 154",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-155",
+      "name": "Credit Card 155",
+      "issuer": "Various",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "card-entry-156",
+      "name": "Credit Card 156",
+      "issuer": "Various",
+      "annual_fee": 0
+    }
+  ],
+  "total": 284,
+  "generated": "2026-04-14T21:58:00-07:00"
+}
