@@ -1,6 +1,6 @@
 {
   "card_id": "amex-gold",
-  "name": "American Express\u00ae Gold Card",
+  "name": "American Express® Gold Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 325,
@@ -9,8 +9,8 @@
   "welcome_offer": {
     "spending_requirement": 6000,
     "time_period_months": 6,
-    "bonus_points": 60000,
-    "description": "Earn 60,000 Membership Rewards\u00ae Points after you spend $6,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
+    "bonus_points": 100000,
+    "description": "Earn 100,000 Membership Rewards® Points after you spend $6,000 on eligible purchases on your new Card within the first 6 months of Card Membership. Limited time offer.",
     "free_nights": null,
     "point_program": "Membership Rewards"
   },
