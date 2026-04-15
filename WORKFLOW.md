@@ -154,6 +154,154 @@ node bin/auto-check.mjs
 
 ---
 
+## 流程六：AI 功能開發規範
+
+### 核心原則
+AI Card Assistant / AI Card Finder 是 OpenCard 的核心賣點功能。每次部署前必須確保 AI 功能正常運作。
+
+### 部署前 AI 功能檢查
+- [ ] 測試 `/api/chat` endpoint 回應正常（200 OK + 有效 JSON）
+- [ ] 在網站 UI 實際發送一則訊息，確認 AI 回覆正確
+- [ ] 確認所有語言版本的 AI 功能入口都能正常使用
+
+### 對話狀態管理
+- **禁止在用戶輸入後清除對話歷史**：用戶送出訊息後，歷史紀錄必須保留
+- 對話 reset 只能由用戶主動觸發（例如按「新對話」按鈕）
+- 所有路徑（`/chat`、`/ai-assistant`、卡片詳情頁內嵌等）必須使用**同一套對話邏輯**
+- 禁止不同路由有不同的 state management 實作
+
+### 選項晶片（Suggestion Chips）
+- 所有選項晶片文字必須在**所有語言版本同步翻譯**
+- 新增晶片時，必須同時更新所有 locale 檔案
+- 翻譯不到位時寧可不顯示，也不要顯示英文原文混雜
+
+### UX 基本要求
+- **Enter 鍵送出訊息**是基本 UX 要求，不可移除
+- Shift+Enter 換行
+- 送出按鈕與 Enter 鍵行為必須一致
+
+---
+
+## 流程七：多語言 UI 翻譯覆蓋率標準
+
+### 原則
+翻譯要嘛做到位，要嘛不做。半翻譯比不翻譯更糟——它讓網站看起來像壞掉的。
+
+### 必須翻譯的項目
+
+#### earning_rates 類別名稱
+- 所有 `earning_rates[].category` 的值必須有對應翻譯
+- 新增 earning category 時，必須同步更新所有 locale 的翻譯檔
+- 範例對照：
+  - Dining → 餐飲 / 飲食 / 레스토랑
+  - Travel → 旅行 / 여행
+  - Groceries → 超市 / 식료품
+
+#### 靜態標題與頁面文字
+- 「Our Mission」「About Us」「How It Works」等靜態標題**必須翻譯**
+- 頁尾（Footer）所有文字必須翻譯
+- 導航列（Navbar）所有項目必須翻譯
+
+#### 半翻譯標籤處理原則
+- 如果一個標籤無法準確翻譯，**保留英文原文**而非硬翻
+- 禁止出現「半中半英」的標籤（例如「Travel 旅行」這種混合）
+- 專有名詞（如 Amex、Chase）保留英文
+
+#### 新聞標籤翻譯對照表
+維護一份標籤翻譯對照表於 `locales/tag-mapping.json`：
+```json
+{
+  "credit-cards": { "en": "Credit Cards", "zh-TW": "信用卡", "zh-CN": "信用卡", "ko": "신용카드" },
+  "rewards": { "en": "Rewards", "zh-TW": "回饋", "zh-CN": "回馈", "ko": "리워드" },
+  "travel": { "en": "Travel", "zh-TW": "旅行", "zh-CN": "旅行", "ko": "여행" }
+}
+```
+
+### 發布前翻譯覆蓋率檢查清單
+- [ ] 所有 locale 檔案的 key 數量一致（無遺漏 key）
+- [ ] earning_rates 類別名稱全部有翻譯
+- [ ] 靜態標題全部有翻譯
+- [ ] 新聞標籤全部有翻譯
+- [ ] 選項晶片全部有翻譯
+- [ ] 無「半翻譯」混合文字出現
+- [ ] 執行 `diff` 比對各 locale 檔案 key 差異
+
+---
+
+## 流程八：頁面驗收標準
+
+### 資料顯示規範
+- 無資料時顯示 **「N/A」** 或 **「—」**，**禁止顯示「00」「0」或空白**
+- 數字欄位無資料時：`N/A`
+- 文字欄位無資料時：`—`
+- 列表欄位無資料時：不顯示該區塊，或顯示「暫無資料」
+
+### 導航與按鈕
+- 返回按鈕**只能有一個** ←（禁止出現重複的返回按鈕）
+- 返回按鈕行為：回到上一頁（`router.back()`），而非固定路由
+- 麵包屑（breadcrumb）與返回按鈕不可同時出現在同一行
+
+### 元件渲染檢查
+- 頁面不可出現**大片空白區域**（通常是元件未正確載入或 CSS 問題）
+- 卡片列表頁：至少要有 loading skeleton 或 empty state
+- 圖片：必須有 fallback（預設圖片或 placeholder）
+- 所有頁面在 mobile / tablet / desktop 三種寬度下檢查
+
+### AI 功能命名統一
+- AI 功能在所有語言版本中的命名必須統一：
+  - EN: "AI Card Finder" / "AI Card Assistant"
+  - ZH-TW: 「AI 選卡助手」/「AI 卡片助理」
+  - ZH-CN: 「AI 选卡助手」/「AI 卡片助理」
+  - KO: 「AI 카드 파인더」/「AI 카드 어시스턴트」
+- 禁止同一語言版本中出現不同名稱指涉同一功能
+
+---
+
+## 流程九：網站定位說明
+
+### 市場範圍聲明
+- 網站必須在顯眼位置（首頁 hero 區、About 頁面）明確標示：
+  > **「OpenCard 目前僅涵蓋美國信用卡市場」**
+- 英文版："OpenCard currently covers US credit cards only."
+- 此聲明不可隱藏在 FAQ 或 footer 小字中
+
+### 非英語市場的說明
+- 繁體中文版：「本站資訊僅適用於美國信用卡，提供中文介面方便華語使用者查閱」
+- 簡體中文版：「本站信息仅适用于美国信用卡，提供中文界面方便华语用户查阅」
+- 韓文版：「본 사이트는 미국 신용카드 정보만 제공합니다. 한국어 인터페이스는 편의를 위해 제공됩니다」
+- 目的：避免非美國用戶誤以為涵蓋當地市場
+
+---
+
+## 流程十：上線前合規檢查
+
+### Privacy Policy 頁面
+- [ ] 必須有獨立的 Privacy Policy 頁面（`/privacy`）
+- [ ] 說明收集哪些用戶資料（cookies、analytics、聊天紀錄等）
+- [ ] 說明資料如何使用與儲存
+- [ ] 說明第三方服務（Google Analytics、AI API 等）的資料共享
+- [ ] 提供聯絡方式供用戶查詢資料處理
+
+### Terms of Service 頁面
+- [ ] 必須有獨立的 Terms of Service 頁面（`/terms`）
+- [ ] 聲明網站資訊僅供參考，不構成金融建議
+- [ ] 免責聲明：資料可能有誤，以銀行官方為準
+- [ ] 使用條款：禁止爬蟲、資料轉售等
+
+### FTC 廣告揭露要求
+- [ ] 如有聯盟行銷連結（affiliate links），必須在**顯眼位置**揭露
+- [ ] 揭露文字範例："Some links on this site are affiliate links. We may earn a commission at no extra cost to you."
+- [ ] 揭露必須在連結**之前或旁邊**，不可只放在頁尾
+- [ ] 每個含有 affiliate link 的頁面都必須有揭露
+
+### 金融廣告合規
+- [ ] 信用卡資訊頁面加上免責聲明："Information is for reference only. Please verify with the card issuer."
+- [ ] 不可使用「保證核卡」「一定拿到」等誤導性語言
+- [ ] Welcome bonus 資訊標注「條件適用」（terms apply）
+- [ ] 年費與費率資訊標注「可能變動」（subject to change）
+
+---
+
 ## 常見問題
 
 **Q：研究 agent 逾時怎麼辦？**
@@ -170,4 +318,4 @@ A：
 
 ---
 
-*最後更新：2026-04-13*
+*最後更新：2026-04-15*
