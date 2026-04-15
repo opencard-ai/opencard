@@ -1,0 +1,41 @@
+{
+  "card_id": "verizon-visa",
+  "name": "Verizon Visa Card",
+  "issuer": "Synchrony",
+  "network": "Visa/Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "description": "N/A",
+    "point_program": "Points"
+  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "multiplier": 1
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "travel"
+  ],
+  "sources": []
+}
