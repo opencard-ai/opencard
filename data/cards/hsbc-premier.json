@@ -3,7 +3,7 @@
   "name": "HSBC Premier Credit Card",
   "issuer": "HSBC",
   "network": "Visa/Mastercard",
-  "annual_fee": 0,
+  "annual_fee": 95,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
@@ -37,5 +37,6 @@
   "tags": [
     "travel"
   ],
-  "sources": []
+  "sources": [],
+  "annual_fee_note": "$0 annual fee for HSBC Premier relationship customers (must maintain qualifying deposits/investments). Standard fee: $95."
 }
