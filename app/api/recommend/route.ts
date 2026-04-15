@@ -18,12 +18,15 @@ export async function POST(req: NextRequest) {
   let message = "";
   let locale = "en";
   let preferences: any = null;
+  let conversationHistory: any[] = [];
 
   try {
     const body = await req.json();
     message = body.message || "";
     locale = body.locale || "en";
     preferences = body.preferences || null;
+    // Accept full conversation history from widget
+    conversationHistory = Array.isArray(body.messages) ? body.messages : [];
     const existingCards: string[] = body.existingCards || [];
     if (preferences && existingCards.length > 0) {
       preferences.currentCards = existingCards;
@@ -79,6 +82,12 @@ Respond conversationally, like a helpful friend who knows credit cards well.`;
     return NextResponse.json({ reply: "AI configuration error. Please try again later." }, { status: 500 });
   }
 
+  // Build conversation history for MiniMax
+  const historyMessages = conversationHistory.map(m => ({
+    role: m.role as "user" | "assistant",
+    content: m.content as string,
+  }));
+
   const response = await fetch("https://api.minimax.io/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -89,6 +98,7 @@ Respond conversationally, like a helpful friend who knows credit cards well.`;
       model: "MiniMax-Text-01",
       messages: [
         { role: "system", content: systemPrompt },
+        ...historyMessages,
         { role: "user", content: message }
       ],
       temperature: 0.7,
