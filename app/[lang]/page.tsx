@@ -1,3 +1,4 @@
+// FORCE_UPDATE_KEY = "7214affe-c79d-4e23-921e-0d93a53a227e"
 import { Suspense } from "react";
 import { getAllCards, getAllIssuers, getAllTags } from "@/lib/cards";
 import CardGrid from "@/app/components/CardGrid";
