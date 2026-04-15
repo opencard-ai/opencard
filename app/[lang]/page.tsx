@@ -32,6 +32,38 @@ export default async function HomePage({ params }: Props) {
         <p className="text-slate-500 text-sm">{t("home.subtitle", lang as any, { count: cards.length })}</p>
       </div>
 
+      {/* Quick Search CTA — prominent AI card finder entry */}
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-5 mb-6">
+        <p className="text-blue-700 text-sm font-medium mb-2">
+          {lang === "zh" ? "✨ 不知道哪張卡適合你？" : lang === "es" ? "✨ ¿No sabes qué tarjeta elegir?" : "✨ Not sure which card is right for you?"}
+        </p>
+        <form method="get" action={`/${lang}/cards`}>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              name="search"
+              placeholder={
+                lang === "zh" ? "例如：超市現金回饋、機場貴賓室..."
+                : lang === "es" ? "Ej: efectivo en supermercados, salas VIP..."
+                : "e.g. grocery cash back, airport lounge access..."
+              }
+              className="flex-1 border border-blue-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            <button
+              type="submit"
+              className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2.5 rounded-lg transition-colors"
+            >
+              {lang === "zh" ? "搜尋卡片" : lang === "es" ? "Buscar" : "Search Cards"}
+            </button>
+          </div>
+        </form>
+        <p className="text-xs text-blue-500 mt-2">
+          {lang === "zh" ? "或試用 " : lang === "es" ? "O prueba el " : "Or try the "}
+          <a href="#ai-finder" className="underline hover:no-underline font-medium">AI Card Finder →</a>
+          {lang === "zh" ? " 智慧推薦" : lang === "es" ? " buscardor AI" : " for smart recommendations"}
+        </p>
+      </div>
+
       {/* Daily Finance News Feed — before card search */}
       <Suspense fallback={null}>
         <NewsFeed lang={lang} />
