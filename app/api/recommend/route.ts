@@ -24,6 +24,10 @@ export async function POST(req: NextRequest) {
     message = body.message || "";
     locale = body.locale || "en";
     preferences = body.preferences || null;
+    const existingCards: string[] = body.existingCards || [];
+    if (preferences && existingCards.length > 0) {
+      preferences.currentCards = existingCards;
+    }
   } catch {
     return NextResponse.json({ reply: "Invalid request" }, { status: 400 });
   }

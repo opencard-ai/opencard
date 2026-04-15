@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { CARD_OPTIONS } from "@/lib/constants";
 
 interface Message {
   role: "user" | "assistant";
@@ -8,27 +9,32 @@ interface Message {
   options?: string[];
 }
 
+const STORAGE_KEY = "opencard_existing_cards";
+
 const MESSAGES = {
   en: {
-    title: "🧠 AI Card Finder",
+    title: "✨ AI Card Finder",
     placeholder: "Type your answer here...",
     send: "Send",
     thinking: "Thinking...",
     intro: "Hi! I'm your AI card finder. I'll help you find the best US credit card for your needs.\n\nWhat's your preference?",
+    alreadyHave: "⚠️ You already have this card",
   },
   zh: {
-    title: "🧠 AI 卡片推薦",
+    title: "✨ AI 卡片推薦",
     placeholder: "輸入你的答案...",
     send: "送出",
     thinking: "思考中...",
     intro: "嗨！我是你的 AI 卡片推薦師。我會幫你找到最適合的美國信用卡。\n\n你想要什麼類型的回饋？",
+    alreadyHave: "⚠️ 你已有這張卡",
   },
   es: {
-    title: "🧠 Buscador AI de Tarjetas",
+    title: "✨ Buscador AI de Tarjetas",
     placeholder: "Escribe tu respuesta aquí...",
     send: "Enviar",
     thinking: "Pensando...",
     intro: "¡Hola! Soy tu buscador AI de tarjetas. Te ayudaré a encontrar la mejor tarjeta.\n\n¿Qué tipo de recompensas prefieres?",
+    alreadyHave: "⚠️ Ya tienes esta tarjeta",
   },
 };
 
@@ -68,16 +74,34 @@ function renderContent(text: string) {
   ));
 }
 
-export default function RecommendWidget({ locale = "en" }: { locale?: string }) {
+interface RecommendWidgetProps {
+  locale?: string;
+  onClose?: () => void;
+}
+
+export default function RecommendWidget({ locale = "en", onClose }: RecommendWidgetProps) {
   const msg = MESSAGES[locale as keyof typeof MESSAGES] || MESSAGES.en;
-  const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     { role: "assistant", content: msg.intro, options: ["💰 Cash Back", "✈️ Travel Rewards", "🏅 Points/Miles", "💎 Multiple Types"] }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedCards, setSelectedCards] = useState<string[]>([]);
 
+  useEffect(() => {
+    // Initial load
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      try { setSelectedCards(JSON.parse(saved)); } catch (e) {}
+    }
 
+    // Sync from MyCardsWidget
+    const handleSync = (e: any) => {
+      setSelectedCards(e.detail);
+    };
+    window.addEventListener("opencard_cards_updated", handleSync);
+    return () => window.removeEventListener("opencard_cards_updated", handleSync);
+  }, []);
 
   const sendMessage = (text: string) => {
     if (!text.trim() || isLoading) return;
@@ -89,12 +113,24 @@ export default function RecommendWidget({ locale = "en" }: { locale?: string }) 
     fetch("/api/recommend", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: userMsg, locale }),
+      body: JSON.stringify({
+        message: userMsg,
+        locale,
+        existingCards: selectedCards,
+      }),
     })
       .then(res => res.json())
       .then(data => {
         setIsLoading(false);
-        const reply = data.reply || "Sorry, I couldn't get a response.";
+        let reply = data.reply || "Sorry, I couldn't get a response.";
+        if (selectedCards.length > 0) {
+          for (const cid of selectedCards) {
+            const card = CARD_OPTIONS.find(c => c.card_id === cid);
+            if (card && reply.includes(card.name)) {
+              reply = reply.replace(card.name, `${card.name} ${msg.alreadyHave}`);
+            }
+          }
+        }
         const options = parseOptions(reply);
         setMessages(prev => [
           ...prev,
@@ -110,47 +146,24 @@ export default function RecommendWidget({ locale = "en" }: { locale?: string }) 
       });
   };
 
-  if (!isOpen) {
-    return (
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 text-white">
-        <div className="flex items-start gap-4">
-          <div className="text-4xl">🧠</div>
-          <div className="flex-1">
-            <h3 className="font-bold text-lg">{msg.title}</h3>
-            <p className="text-blue-100 text-sm mt-1">Answer a few questions to find your perfect card</p>
-            <button
-              onClick={() => setIsOpen(true)}
-              className="mt-4 bg-white text-blue-600 font-semibold px-5 py-2.5 rounded-xl hover:bg-blue-50 transition-colors text-sm"
-            >
-              Start Finding →
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-lg">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-4 flex items-center justify-between">
+    <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xl">
+      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-3.5 flex items-center justify-between">
         <div>
           <h3 className="font-bold text-white">{msg.title}</h3>
           <p className="text-blue-200 text-xs mt-0.5">AI recommendations are for reference only.</p>
         </div>
         <button
-          onClick={() => setIsOpen(false)}
-          className="text-white/70 hover:text-white text-xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
+          onClick={onClose}
+          className="text-white/70 hover:text-white text-xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors flex-shrink-0"
         >
           ✕
         </button>
       </div>
 
-      {/* Chat area */}
-      <div className="h-96 overflow-y-auto p-4 space-y-4 bg-slate-50">
+      <div className="h-[400px] overflow-y-auto p-4 space-y-4 bg-slate-50">
         {messages.map((m, i) => (
           <div key={i}>
-            {/* Message bubble */}
             <div className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
               <div
                 className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm ${
@@ -163,7 +176,6 @@ export default function RecommendWidget({ locale = "en" }: { locale?: string }) 
               </div>
             </div>
 
-            {/* Options below the message */}
             {m.role === "assistant" && m.options && m.options.length > 0 && (
               <div className="mt-2 ml-2">
                 <div className="flex flex-wrap gap-2">
@@ -177,7 +189,6 @@ export default function RecommendWidget({ locale = "en" }: { locale?: string }) 
                     </button>
                   ))}
                 </div>
-                {!isLoading && <div className="text-xs text-green-600 mt-1">Options: {m.options.length}</div>}
               </div>
             )}
           </div>
@@ -199,7 +210,6 @@ export default function RecommendWidget({ locale = "en" }: { locale?: string }) 
         )}
       </div>
 
-      {/* Input */}
       <div className="p-3 border-t border-slate-200 bg-white">
         <div className="flex gap-2">
           <input
@@ -220,8 +230,6 @@ export default function RecommendWidget({ locale = "en" }: { locale?: string }) 
           </button>
         </div>
       </div>
-
-
     </div>
   );
 }
