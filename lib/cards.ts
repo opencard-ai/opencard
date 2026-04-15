@@ -1,3 +1,4 @@
+const HARDCODED_CARDS = ['amex-bce', 'amex-bcp', 'amex-blue-business-cash', 'amex-business-gold', 'amex-delta-gold', 'amex-delta-platinum', 'amex-delta-reserve', 'amex-everyday-preferred', 'amex-gold', 'amex-green', 'amex-hilton-aspire', 'amex-hilton-honors', 'amex-hilton-honors-business', 'amex-hilton-surpass', 'amex-marriott-bonvoy-amex', 'amex-marriott-brilliant', 'amex-platinum', 'apple-card', 'bilt-blue', 'bilt-obsidian', 'bilt-palladium', 'boa-alaska-ascent', 'boa-alaska-summit', 'boa-customized-cash-rewards', 'boa-travel-rewards', 'capital-one-quicksilver', 'capital-one-savor', 'capital-one-savorone', 'capital-one-spark-miles', 'capital-one-venture', 'capital-one-venture-x', 'chase-disney-inspire', 'chase-freedom-flex', 'chase-freedom-rise', 'chase-freedom-unlimited', 'chase-ihg-premier', 'chase-ink-business-cash', 'chase-ink-business-preferred', 'chase-ink-business-unlimited', 'chase-marriott-boundless', 'chase-sapphire-preferred', 'chase-sapphire-reserve', 'chase-united-explorer', 'chase-united-quest', 'citi-costco-anywhere', 'citi-custom-cash', 'citi-double-cash', 'citi-premier', 'citi-strata-elite', 'citi-strata-premier', 'coinbase-one', 'discover-it', 'discover-it-cash-back', 'discover-it-miles', 'fidelity-rewards', 'usbank-altitude-connect', 'usbank-altitude-reserve'];
 import fs from "fs";
 import path from "path";
 
@@ -87,7 +88,9 @@ export interface CreditCard {
 }
 
 export function getAllCards(): CreditCard[] {
-  const files = fs.readdirSync(CARDS_DIR).filter((f) => f.endsWith(".json"));
+  let files = fs.readdirSync(CARDS_DIR).filter((f) => f.endsWith(".json"));
+  console.log(`[BUILD] Files in dir: ${files.length}`);
+  if (files.length < 50) files = HARDCODED_CARDS.map(id => `${id}.json`);
   console.log(`[DEBUG] CARDS_DIR: ${CARDS_DIR}`);
   console.log(`[DEBUG] Found ${files.length} JSON files in ${CARDS_DIR}`);
   return files
