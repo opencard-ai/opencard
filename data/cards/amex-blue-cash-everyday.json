@@ -1,0 +1,29 @@
+{
+  "card_id": "amex-blue-cash-everyday",
+  "name": "Blue Cash Everyday® Card from American Express",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 2000,
+    "time_period_months": 6,
+    "bonus_points": 200,
+    "description": "Earn $200 Cash Back after you spend $2,000 in purchases on your new Card within the first 6 months of Card Membership. Welcome offer varies and is personalized.",
+    "free_nights": null,
+    "point_program": "Cash Back"
+  },
+  "earning_rates": [
+    {"category": "U.S. Supermarkets", "rate": 3, "notes": "On up to $6K per year, then 1%"},
+    {"category": "U.S. Gas Stations", "rate": 3, "notes": "On up to $6K per year, then 1%"},
+    {"category": "U.S. Online Retail", "rate": 3, "notes": "On up to $6K per year, then 1%"},
+    {"category": "Other", "rate": 1, "notes": null}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {"other_benefits": [{"name": "Extended Warranty", "description": "Adds up to 1 extra year to original manufacturer warranty"}]},
+  "insurance": {"rental_insurance": "Secondary", "trip_delay": false, "purchase_protection": true, "extended_warranty": true},
+  "tags": ["american-express", "cash-back", "no-annual-fee", "groceries", "gas"],
+  "sources": [{"url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/", "notes": "Official Amex Page"}],
+  "last_updated": "2026-04-15T16:20:00Z"
+}
