@@ -5,6 +5,7 @@ import ChatWidget from "../../../components/ChatWidget";
 import TravelProducts from "../../../components/TravelProducts";
 import type { Metadata } from "next";
 import { locales, t } from "@/lib/i18n";
+import { translateCategory } from "@/lib/category-translations";
 
 export const dynamic = "force-static";
 export const revalidate = 3600;
@@ -137,7 +138,7 @@ export default async function CardDetailPage({ params }: Props) {
                       {rate.rate}×
                     </span>
                     <span className="text-slate-700 ml-2 capitalize">
-                      {rate.category}
+                      {translateCategory(rate.category, lang as "en" | "zh" | "es")}
                     </span>
                     {rate.notes && (
                       <span className="text-xs text-slate-400 block">
