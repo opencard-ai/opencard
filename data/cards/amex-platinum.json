@@ -1,16 +1,16 @@
 {
   "card_id": "amex-platinum",
-  "name": "The Platinum Card\u00ae from American Express",
+  "name": "The Platinum Card® from American Express",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 895,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 12000,
-    "time_period_months": 6,
-    "bonus_points": 80000,
-    "description": "Earn 80,000 Membership Rewards\u00ae Points after you spend $12,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
+    "spending_requirement": null,
+    "time_period_months": null,
+    "bonus_points": null,
+    "description": "Welcome offers are now personalized by American Express. Check your approved offer at americanexpress.com/us/credit-cards/card/platinum/ — offers vary and you may not be eligible.",
     "free_nights": null,
     "point_program": "Membership Rewards"
   },
