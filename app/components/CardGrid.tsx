@@ -12,85 +12,115 @@ interface CardGridProps {
   locale: any;
 }
 
-const LABELS: Record<string, { en: string; zh: string; es: string }> = {
-  searchPlaceholder: {
-    en: "Search cards...",
-    zh: "搜尋卡片名稱...",
-    es: "Buscar tarjetas...",
+// Tag groups — map display keys to readable labels and their matching DB tags
+const TAG_GROUPS: Record<string, { label: string; tags: string[] }> = {
+  "travel": {
+    label: "✈️ Travel",
+    tags: ["travel", "flights", "hotel_hilton", "hotel_marriott", "hilton hotels and resorts", "marriott hotels", "ihg", "chase travel", "hotels, car rentals & attractions (cititravel.com)"],
   },
-  allIssuers: {
-    en: "All Issuers",
-    zh: "所有發卡機構",
-    es: "Todos los Emisores",
+  "airline": {
+    label: "✈️ Airline Miles",
+    tags: ["united flights", "united purchases (airline tickets, seat upgrades, economy plus, inflight food/beverages/wi-fi, united fees)", "delta purchases"],
   },
-  allTags: {
-    en: "All Types",
-    zh: "所有類型",
-    es: "Todos los Tipos",
+  "hotel": {
+    label: "🏨 Hotel",
+    tags: ["hotel_hilton", "hotel_marriott", "hilton hotels and resorts", "marriott hotels", "ihg"],
   },
-  clear: {
-    en: "Clear",
-    zh: "清除",
-    es: "Limpiar",
+  "cashback": {
+    label: "💰 Cash Back",
+    tags: ["all purchases", "all purchases (flat)", "all purchases (buy)", "groceries", "grocery stores", "u.s. supermarkets", "rotating", "rotating 5% categories", "restaurants"],
   },
-  annualFee: {
-    en: "Annual Fee",
-    zh: "年費",
-    es: "Cuota Anual",
+  "business": {
+    label: "💼 Business",
+    tags: ["top 2 eligible business categories", "office supply stores"],
   },
-  noFee: {
-    en: "No Annual Fee",
-    zh: "免年費",
-    es: "Sin Cuota Anual",
+  "dining": {
+    label: "🍽️ Dining",
+    tags: ["restaurants"],
   },
-  noResults: {
-    en: "No cards match your criteria",
-    zh: "找不到符合條件的卡片",
-    es: "No hay tarjetas que coincidan",
+  "groceries": {
+    label: "🛒 Groceries",
+    tags: ["groceries", "grocery stores", "u.s. supermarkets"],
   },
-  tryAdjust: {
-    en: "Try adjusting your filters",
-    zh: "試著調整篩選條件",
-    es: "Intenta ajustar tus filtros",
+  "gas": {
+    label: "⛽ Gas & Costco",
+    tags: ["gas (costco)"],
   },
-  showing: {
-    en: "Showing",
-    zh: "顯示",
-    es: "Mostrando",
-  },
-  of: {
-    en: "of",
-    zh: "/",
-    es: "de",
-  },
-  cards: {
-    en: "cards",
-    zh: "張卡片",
-    es: "tarjetas",
-  },
-  issuer: {
-    en: "Issuer",
-    zh: "發卡機構",
-    es: "Emisor",
-  },
-  tag: {
-    en: "Tag",
-    zh: "類型",
-    es: "Tipo",
+  "streaming": {
+    label: "📺 Streaming",
+    tags: ["disneyplus.com, hulu.com, espn+ purchases"],
   },
 };
 
+// Build display list from tag groups
+function buildDisplayTags(allTags: string[]) {
+  const usedGroupTags = new Set<string>();
+  const groups: { value: string; label: string }[] = [];
+
+  for (const [groupKey, group] of Object.entries(TAG_GROUPS)) {
+    const matchingTags = group.tags.filter((t) => allTags.includes(t));
+    if (matchingTags.length > 0) {
+      groups.push({ value: groupKey, label: group.label });
+      matchingTags.forEach((t) => usedGroupTags.add(t));
+    }
+  }
+
+  // Skip issuer tags that slipped into the raw tags DB
+  const skipTags = new Set([
+    "american-express","capital-one","chase","citi","discover","marriott",
+    "wells-fargo","wells-fargo (bilt rewards)","bank-of america","u.s.-bank","united flights",
+    "delta purchases","ihg","hilton hotels and resorts","hotel_hilton","hotel_marriott",
+    "chase travel","hotels, car rentals & attractions (cititravel.com)",
+    "united purchases (airline tickets, seat upgrades, economy plus, inflight food/beverages/wi-fi, united fees)",
+    "disneyplus.com, hulu.com, espn+ purchases",
+  ]);
+  for (const tag of allTags) {
+    if (usedGroupTags.has(tag)) continue;
+    if (skipTags.has(tag)) continue;
+    groups.push({ value: tag, label: tag });
+  }
+
+  return groups;
+}
+
+// Check if a card matches a tag filter value
+function cardMatchesTag(card: CreditCard, tagValue: string, allTags: string[]): boolean {
+  if (!tagValue) return true;
+  if (tagValue === "__no-af__") return card.annual_fee === 0;
+
+  // Check if it's a group key
+  const group = TAG_GROUPS[tagValue];
+  if (group) {
+    return group.tags.some((t) => card.tags.includes(t));
+  }
+
+  // Fallback to direct tag match
+  return card.tags.includes(tagValue);
+}
+
+const LABELS: Record<string, Record<string, string>> = {
+  searchPlaceholder: { en: "Search cards...", zh: "搜尋卡片名稱...", es: "Buscar tarjetas..." },
+  allIssuers: { en: "All Issuers", zh: "所有發卡機構", es: "Todos los Emisores" },
+  allTags: { en: "All Types", zh: "所有類型", es: "Todos los Tipos" },
+  clear: { en: "Clear", zh: "清除", es: "Limpiar" },
+  annualFee: { en: "Annual Fee", zh: "年費", es: "Cuota Anual" },
+  noFee: { en: "No Annual Fee", zh: "免年費", es: "Sin Cuota Anual" },
+  noResults: { en: "No cards match your criteria", zh: "找不到符合條件的卡片", es: "No hay tarjetas que coincidan" },
+  tryAdjust: { en: "Try adjusting your filters", zh: "試著調整篩選條件", es: "Intenta ajustar tus filtros" },
+  showing: { en: "Showing", zh: "顯示", es: "Mostrando" },
+  of: { en: "of", zh: "/", es: "de" },
+  cards: { en: "cards", zh: "張卡片", es: "tarjetas" },
+};
+
 function l(key: string, locale: string): string {
-  const entry = LABELS[key];
-  if (!entry) return key;
-  return (entry as Record<string, string>)[locale] || entry.en || key;
+  return LABELS[key]?.[locale] || LABELS[key]?.en || key;
 }
 
 export default function CardGrid({ cards, issuers, tags, locale }: CardGridProps) {
   return (
     <>
       <FilterBar issuers={issuers} tags={tags} locale={locale} />
-      <CardList cards={cards} locale={locale} />
+      <CardList cards={cards} tags={tags} locale={locale} />
     </>
   );
 }
@@ -99,6 +129,7 @@ function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
+  const displayTags = useMemo(() => buildDisplayTags(tags), [tags]);
 
   const selectedIssuer = searchParams.get("issuer") || "";
   const selectedTag = searchParams.get("tag") || "";
@@ -128,21 +159,17 @@ function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[
         >
           <option value="">{l("allIssuers", locale)}</option>
           {issuers.map((issuer) => (
-            <option key={issuer} value={issuer}>
-              {issuer}
-            </option>
+            <option key={issuer} value={issuer}>{issuer}</option>
           ))}
         </select>
         <select
           value={selectedTag}
           onChange={(e) => updateParam("tag", e.target.value)}
-          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden sm:block"
+          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden sm:block min-w-[140px]"
         >
           <option value="">{l("allTags", locale)}</option>
-          {tags.map((tag) => (
-            <option key={tag} value={tag}>
-              {tag}
-            </option>
+          {displayTags.map(({ value, label }) => (
+            <option key={value} value={value}>{label}</option>
           ))}
         </select>
         {(selectedIssuer || selectedTag || search) && (
@@ -162,11 +189,9 @@ function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[
           onChange={(e) => updateParam("issuer", e.target.value)}
           className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm bg-white flex-1 min-w-[120px]"
         >
-          <option value="">{l("issuer", locale)}</option>
+          <option value="">{l("allIssuers", locale)}</option>
           {issuers.map((issuer) => (
-            <option key={issuer} value={issuer}>
-              {issuer}
-            </option>
+            <option key={issuer} value={issuer}>{issuer}</option>
           ))}
         </select>
         <select
@@ -174,11 +199,9 @@ function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[
           onChange={(e) => updateParam("tag", e.target.value)}
           className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm bg-white flex-1 min-w-[120px]"
         >
-          <option value="">{l("tag", locale)}</option>
-          {tags.map((tag) => (
-            <option key={tag} value={tag}>
-              {tag}
-            </option>
+          <option value="">{l("allTags", locale)}</option>
+          {displayTags.map(({ value, label }) => (
+            <option key={value} value={value}>{label}</option>
           ))}
         </select>
       </div>
@@ -186,7 +209,7 @@ function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[
   );
 }
 
-function CardList({ cards, locale }: { cards: CreditCard[]; locale: string }) {
+function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]; locale: string }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const selectedIssuer = searchParams.get("issuer") || "";
@@ -198,7 +221,7 @@ function CardList({ cards, locale }: { cards: CreditCard[]; locale: string }) {
   const filtered = useMemo(() => {
     return cards.filter((card) => {
       if (selectedIssuer && card.issuer !== selectedIssuer) return false;
-      if (selectedTag && !card.tags.includes(selectedTag)) return false;
+      if (!cardMatchesTag(card, selectedTag, tags)) return false;
       if (search) {
         const q = search.toLowerCase();
         if (
@@ -210,7 +233,7 @@ function CardList({ cards, locale }: { cards: CreditCard[]; locale: string }) {
       }
       return true;
     });
-  }, [cards, selectedIssuer, selectedTag, search]);
+  }, [cards, selectedIssuer, selectedTag, search, tags]);
 
   if (filtered.length === 0) {
     return (
@@ -244,26 +267,15 @@ function CardList({ cards, locale }: { cards: CreditCard[]; locale: string }) {
 
             <div className="flex items-center gap-1 mb-3">
               <span className="text-xs text-slate-500">{l("annualFee", locale)}</span>
-              <span
-                className={`text-sm font-medium ${
-                  card.annual_fee === 0 ? "text-green-600" : "text-slate-800"
-                }`}
-              >
-                {card.annual_fee === 0
-                  ? l("noFee", locale)
-                  : `$${card.annual_fee.toLocaleString()}`}
+              <span className={`text-sm font-medium ${card.annual_fee === 0 ? "text-green-600" : "text-slate-800"}`}>
+                {card.annual_fee === 0 ? l("noFee", locale) : `$${card.annual_fee.toLocaleString()}`}
               </span>
             </div>
 
             <div className="mb-3 space-y-0.5">
               {card.earning_rates.slice(0, 2).map((rate, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-1 text-xs text-slate-600"
-                >
-                  <span className="text-blue-600 font-medium">
-                    {rate.rate}×
-                  </span>
+                <div key={i} className="flex items-center gap-1 text-xs text-slate-600">
+                  <span className="text-blue-600 font-medium">{rate.rate}×</span>
                   <span>{rate.category}</span>
                 </div>
               ))}
@@ -271,10 +283,7 @@ function CardList({ cards, locale }: { cards: CreditCard[]; locale: string }) {
 
             <div className="flex flex-wrap gap-1">
               {card.tags.slice(0, 3).map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs bg-blue-50 text-blue-700 rounded px-1.5 py-0.5"
-                >
+                <span key={tag} className="text-xs bg-blue-50 text-blue-700 rounded px-1.5 py-0.5">
                   {tag}
                 </span>
               ))}

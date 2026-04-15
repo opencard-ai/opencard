@@ -104,6 +104,11 @@ function evaluateCard(card: CreditCard, prefs: UserPreferences): { score: number
     score += 10;
   }
 
+  // === 8. PENALIZE ALREADY-OWNED CARDS ===
+  if (prefs.currentCards && prefs.currentCards.includes(card.card_id)) {
+    score = score * 0.1; // severe penalty — mark as "already have"
+  }
+
   return { score: Math.round(score * 10) / 10, reasons, matchTags };
 }
 

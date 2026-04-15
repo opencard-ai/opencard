@@ -8,6 +8,89 @@ interface CardFilterProps {
   tags: string[];
 }
 
+// Clean tag groupings — map raw DB tags to display groups
+const TAG_GROUPS: Record<string, { label: string; tags: string[] }> = {
+  "no-annual-fee": {
+    label: "No Annual Fee",
+    tags: [],
+  },
+  "travel": {
+    label: "✈️ Travel",
+    tags: ["travel", "flights", "hotels, car rentals & attractions (cititravel.com)", "hotel_hilton", "hotel_marriott", "hilton hotels and resorts", "marriott hotels", "ihg", "chase travel"],
+  },
+  "airline": {
+    label: "✈️ Airline",
+    tags: ["united flights", "united purchases (airline tickets, seat upgrades, economy plus, inflight food/beverages/wi-fi, united fees)", "delta purchases"],
+  },
+  "hotel": {
+    label: "🏨 Hotel",
+    tags: ["hotel_hilton", "hotel_marriott", "hilton hotels and resorts", "marriott hotels", "ihg"],
+  },
+  "cashback": {
+    label: "💰 Cash Back",
+    tags: ["all purchases", "all purchases (flat)", "all purchases (buy)", "groceries", "grocery stores", "gas (costco)", "restaurants", "u.s. supermarkets", "rotating", "rotating 5% categories"],
+  },
+  "points": {
+    label: "🏅 Points & Miles",
+    tags: ["travel", "flights"],
+  },
+  "business": {
+    label: "💼 Business",
+    tags: ["top 2 eligible business categories", "office supply stores"],
+  },
+  "dining": {
+    label: "🍽️ Dining",
+    tags: ["restaurants"],
+  },
+  "groceries": {
+    label: "🛒 Groceries",
+    tags: ["groceries", "grocery stores", "u.s. supermarkets"],
+  },
+};
+
+// Build display list: group labels for known groups, raw tags for unknown ones
+function buildDisplayTags(allTags: string[]) {
+  const usedGroupTags = new Set<string>();
+  const groups: { value: string; label: string }[] = [];
+
+  // Add known groups (only if they have matching tags)
+  for (const [groupKey, group] of Object.entries(TAG_GROUPS)) {
+    if (groupKey === "no-annual-fee") {
+      // No AF group — always show
+      groups.push({ value: groupKey, label: "✅ No Annual Fee" });
+      continue;
+    }
+    const matchingTags = group.tags.filter((t) => allTags.includes(t));
+    if (matchingTags.length > 0) {
+      groups.push({ value: groupKey, label: group.label });
+      matchingTags.forEach((t) => usedGroupTags.add(t));
+    }
+  }
+
+  // Add remaining raw tags that aren't covered by any group
+  for (const tag of allTags) {
+    if (usedGroupTags.has(tag)) continue;
+    // Skip generic tags already covered
+    if (["travel", "flights", "all purchases", "all purchases (flat)", "all purchases (buy)", "groceries", "grocery stores", "restaurants", "u.s. supermarkets", "rotating", "rotating 5% categories"].includes(tag)) continue;
+    groups.push({ value: tag, label: tag });
+  }
+
+  return groups;
+}
+
+// Map selected tag value back to actual DB tags to filter
+function resolveTagFilter(selectedValue: string, allTags: string[]): string {
+  if (!selectedValue) return "";
+  const group = TAG_GROUPS[selectedValue];
+  if (!group) return selectedValue;
+  if (selectedValue === "no-annual-fee") {
+    // No AF is special — return a magic value the CardGrid will handle
+    return "__no-af__";
+  }
+  // Return first matching tag for this group
+  return group.tags.find((t) => allTags.includes(t)) || "";
+}
+
 export default function CardFilter({ issuers, tags }: CardFilterProps) {
   const router = useRouter();
   const pathname = usePathname();
@@ -31,6 +114,8 @@ export default function CardFilter({ issuers, tags }: CardFilterProps) {
     },
     [router, pathname, searchParams]
   );
+
+  const displayTags = buildDisplayTags(tags);
 
   return (
     <div>
@@ -75,12 +160,12 @@ export default function CardFilter({ issuers, tags }: CardFilterProps) {
         <select
           value={selectedTag}
           onChange={(e) => updateParams("tag", e.target.value)}
-          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white min-w-[140px]"
         >
           <option value="">所有類型</option>
-          {tags.map((tag) => (
-            <option key={tag} value={tag}>
-              {tag}
+          {displayTags.map(({ value, label }) => (
+            <option key={value} value={value}>
+              {label}
             </option>
           ))}
         </select>
@@ -97,3 +182,6 @@ export default function CardFilter({ issuers, tags }: CardFilterProps) {
     </div>
   );
 }
+
+// Export helper for CardGrid to use
+export { resolveTagFilter, TAG_GROUPS };

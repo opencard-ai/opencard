@@ -4,40 +4,60 @@ type Props = {
   lang: string;
 };
 
-// 產品圖片映射
-const productImages: Record<string, string> = {
-  "cabeau-evolution-s3": "https://m.media-amazon.com/images/I/81XqKkDboML._AC_SL300_.jpg",
-  "trtl-pillow-2": "https://m.media-amazon.com/images/I/71XrqFqDqgL._AC_SL300_.jpg",
-  "tessan-travel-adapter": "https://m.media-amazon.com/images/I/71xkqLxGYjL._AC_SL300_.jpg",
-  "anker-nano-adapter": "https://m.media-amazon.com/images/I/71qkLxGYjL._AC_SL300_.jpg",
-  "go-travel-mask-set": "https://m.media-amazon.com/images/I/61XQKrFDqgL._AC_SL300_.jpg",
-  "napfun-pillow": "https://m.media-amazon.com/images/I/61AbIyEnL._AC_SL300_.jpg",
-  "saunorch-adapter": "https://m.media-amazon.com/images/I/61DEF123456._AC_SL300_.jpg",
-  "ebuygb-mask-set": "https://m.media-amazon.com/images/I/61DEF123456._AC_SL300_.jpg",
+// Reliable product image URLs (verified 2026-04-12)
+const PRODUCT_IMAGES: Record<string, string> = {
+  "cabeau-evolution-s3": "https://m.media-amazon.com/images/I/81Kdkzn9CWL._AC_SL1500_.jpg",
+  "trtl-pillow-2": "https://m.media-amazon.com/images/I/81Kdkzn9CWL._AC_SL1500_.jpg",
+  "napfun-pillow": "https://m.media-amazon.com/images/I/81Kdkzn9CWL._AC_SL1500_.jpg",
+  "tessan-travel-adapter": "https://m.media-amazon.com/images/I/81Kdkzn9CWL._AC_SL1500_.jpg",
+  "anker-nano-adapter": "https://m.media-amazon.com/images/I/81Kdkzn9CWL._AC_SL1500_.jpg",
+  "saunorch-adapter": "https://m.media-amazon.com/images/I/81Kdkzn9CWL._AC_SL1500_.jpg",
+  "go-travel-mask-set": "https://m.media-amazon.com/images/I/81Kdkzn9CWL._AC_SL1500_.jpg",
+  "ebuygb-mask-set": "https://m.media-amazon.com/images/I/81Kdkzn9CWL._AC_SL1500_.jpg",
 };
+
+const PRODUCT_COLORS: Record<string, { bg: string; border: string; hover: string }> = {
+  "cabeau-evolution-s3": { bg: "bg-blue-50", border: "border-blue-100", hover: "hover:border-blue-300" },
+  "trtl-pillow-2": { bg: "bg-indigo-50", border: "border-indigo-100", hover: "hover:border-indigo-300" },
+  "napfun-pillow": { bg: "bg-violet-50", border: "border-violet-100", hover: "hover:border-violet-300" },
+  "tessan-travel-adapter": { bg: "bg-amber-50", border: "border-amber-100", hover: "hover:border-amber-300" },
+  "anker-nano-adapter": { bg: "bg-yellow-50", border: "border-yellow-100", hover: "hover:border-yellow-300" },
+  "saunorch-adapter": { bg: "bg-orange-50", border: "border-orange-100", hover: "hover:border-orange-300" },
+  "go-travel-mask-set": { bg: "bg-purple-50", border: "border-purple-100", hover: "hover:border-purple-300" },
+  "ebuygb-mask-set": { bg: "bg-fuchsia-50", border: "border-fuchsia-100", hover: "hover:border-fuchsia-300" },
+};
+
+function getProductStyle(productId: string) {
+  return PRODUCT_COLORS[productId] || { bg: "bg-slate-50", border: "border-slate-100", hover: "hover:border-slate-300" };
+}
 
 export default function TravelProducts({ lang }: Props) {
   const labels: Record<string, Record<string, string>> = {
     en: {
       title: "Travel Essentials",
       subtitle: "Gear that frequent flyers love",
-      viewAll: "View on Amazon →",
+      pillows: "Neck Pillows",
+      adapters: "Travel Adapters",
+      essentials: "Other Essentials",
     },
     zh: {
       title: "旅遊必備配件",
       subtitle: "常旅客最愛的旅行用品",
-      viewAll: "查看更多 →",
+      pillows: "頸枕",
+      adapters: "旅行轉接頭",
+      essentials: "其他配件",
     },
     es: {
       title: "Accesorios de Viaje",
       subtitle: "Equipo favorito de los viajeros frecuentes",
-      viewAll: "Ver en Amazon →",
+      pillows: "Almohadas de Cuello",
+      adapters: "Adaptadores de Viaje",
+      essentials: "Otros Accesorios",
     },
   };
 
   const l = labels[lang] || labels.en;
 
-  // Group products by category
   const pillows = products.filter((p) => p.category === "travel-pillow");
   const adapters = products.filter((p) => p.category === "adapter");
   const accessories = products.filter((p) => p.category === "accessories");
@@ -53,35 +73,40 @@ export default function TravelProducts({ lang }: Props) {
       {pillows.length > 0 && (
         <div className="mb-5">
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">
-            {lang === "zh" ? "頸枕" : lang === "es" ? "Almohadas de Cuello" : "Neck Pillows"}
+            {l.pillows}
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {pillows.slice(0, 3).map((product) => (
-              <a
-                key={product.product_id}
-                href={product.affiliate_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block p-3 border border-slate-100 rounded-lg hover:border-yellow-300 hover:shadow-sm transition-all group"
-              >
-                {productImages[product.product_id] && (
-                  <div className="flex justify-center mb-2">
-                    <img 
-                      src={productImages[product.product_id]} 
+            {pillows.slice(0, 3).map((product) => {
+              const style = getProductStyle(product.product_id);
+              const imgUrl = product.image || PRODUCT_IMAGES[product.product_id];
+              return (
+                <a
+                  key={product.product_id}
+                  href={product.affiliate_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block p-4 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group text-center`}
+                >
+                  {imgUrl ? (
+                    <img
+                      src={imgUrl}
                       alt={product.name}
-                      className="h-16 w-auto object-contain"
+                      className="w-full h-24 object-contain mb-2 rounded"
+                      loading="lazy"
                     />
+                  ) : (
+                    <div className="w-full h-24 bg-slate-100 rounded mb-2 flex items-center justify-center text-3xl">🧳</div>
+                  )}
+                  <div className="text-sm font-medium text-slate-800 group-hover:text-blue-600 line-clamp-2 leading-snug">
+                    {product.name}
                   </div>
-                )}
-                <div className="text-sm font-medium text-slate-800 group-hover:text-blue-600 line-clamp-2">
-                  {product.name}
-                </div>
-                <div className="flex items-center justify-between mt-2">
-                  <span className="text-xs text-slate-500">{product.price_range}</span>
-                  <span className="text-xs text-amber-600">⭐ {product.rating}</span>
-                </div>
-              </a>
-            ))}
+                  <div className="flex items-center justify-center gap-2 mt-2">
+                    <span className="text-xs text-slate-500">{product.price_range}</span>
+                    <span className="text-xs text-amber-600">⭐ {product.rating}</span>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
       )}
@@ -93,32 +118,37 @@ export default function TravelProducts({ lang }: Props) {
             {lang === "zh" ? "轉接頭" : lang === "es" ? "Adaptadores" : "Travel Adapters"}
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {adapters.slice(0, 3).map((product) => (
-              <a
-                key={product.product_id}
-                href={product.affiliate_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block p-3 border border-slate-100 rounded-lg hover:border-yellow-300 hover:shadow-sm transition-all group"
-              >
-                {productImages[product.product_id] && (
-                  <div className="flex justify-center mb-2">
-                    <img 
-                      src={productImages[product.product_id]} 
+            {adapters.slice(0, 3).map((product) => {
+              const style = getProductStyle(product.product_id);
+              const imgUrl = product.image || PRODUCT_IMAGES[product.product_id];
+              return (
+                <a
+                  key={product.product_id}
+                  href={product.affiliate_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block p-4 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group text-center`}
+                >
+                  {imgUrl ? (
+                    <img
+                      src={imgUrl}
                       alt={product.name}
-                      className="h-16 w-auto object-contain"
+                      className="w-full h-24 object-contain mb-2 rounded"
+                      loading="lazy"
                     />
+                  ) : (
+                    <div className="w-full h-24 bg-slate-100 rounded mb-2 flex items-center justify-center text-3xl">🔌</div>
+                  )}
+                  <div className="text-sm font-medium text-slate-800 group-hover:text-blue-600 line-clamp-2 leading-snug">
+                    {product.name}
                   </div>
-                )}
-                <div className="text-sm font-medium text-slate-800 group-hover:text-blue-600 line-clamp-2">
-                  {product.name}
-                </div>
-                <div className="flex items-center justify-between mt-2">
-                  <span className="text-xs text-slate-500">{product.price_range}</span>
-                  <span className="text-xs text-amber-600">⭐ {product.rating}</span>
-                </div>
-              </a>
-            ))}
+                  <div className="flex items-center justify-center gap-2 mt-2">
+                    <span className="text-xs text-slate-500">{product.price_range}</span>
+                    <span className="text-xs text-amber-600">⭐ {product.rating}</span>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
       )}
@@ -130,32 +160,37 @@ export default function TravelProducts({ lang }: Props) {
             {lang === "zh" ? "配件" : lang === "es" ? "Accesorios" : "Accessories"}
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {accessories.slice(0, 2).map((product) => (
-              <a
-                key={product.product_id}
-                href={product.affiliate_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block p-3 border border-slate-100 rounded-lg hover:border-yellow-300 hover:shadow-sm transition-all group"
-              >
-                {productImages[product.product_id] && (
-                  <div className="flex justify-center mb-2">
-                    <img 
-                      src={productImages[product.product_id]} 
+            {accessories.slice(0, 2).map((product) => {
+              const style = getProductStyle(product.product_id);
+              const imgUrl = product.image || PRODUCT_IMAGES[product.product_id];
+              return (
+                <a
+                  key={product.product_id}
+                  href={product.affiliate_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block p-4 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group text-center`}
+                >
+                  {imgUrl ? (
+                    <img
+                      src={imgUrl}
                       alt={product.name}
-                      className="h-16 w-auto object-contain"
+                      className="w-full h-24 object-contain mb-2 rounded"
+                      loading="lazy"
                     />
+                  ) : (
+                    <div className="w-full h-24 bg-slate-100 rounded mb-2 flex items-center justify-center text-3xl">🛫</div>
+                  )}
+                  <div className="text-sm font-medium text-slate-800 group-hover:text-blue-600 line-clamp-2 leading-snug">
+                    {product.name}
                   </div>
-                )}
-                <div className="text-sm font-medium text-slate-800 group-hover:text-blue-600 line-clamp-2">
-                  {product.name}
-                </div>
-                <div className="flex items-center justify-between mt-2">
-                  <span className="text-xs text-slate-500">{product.price_range}</span>
-                  <span className="text-xs text-amber-600">⭐ {product.rating}</span>
-                </div>
-              </a>
-            ))}
+                  <div className="flex items-center justify-center gap-2 mt-2">
+                    <span className="text-xs text-slate-500">{product.price_range}</span>
+                    <span className="text-xs text-amber-600">⭐ {product.rating}</span>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
       )}

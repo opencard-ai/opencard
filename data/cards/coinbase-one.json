@@ -1,0 +1,81 @@
+{
+  "card_id": "coinbase-one",
+  "name": "Coinbase One Card",
+  "issuer": "First Electronic Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "time_period_months": null,
+    "bonus_points": null,
+    "description": "Requires Coinbase One subscription ($29.99/month)",
+    "free_nights": null,
+    "point_program": "Coinbase Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "Travel",
+      "rate": 3,
+      "notes": "3% back in crypto rewards on travel and dining"
+    },
+    {
+      "category": "Dining",
+      "rate": 3,
+      "notes": "3% back in crypto rewards on travel and dining"
+    },
+    {
+      "category": "Other",
+      "rate": 2,
+      "notes": "2% back in crypto rewards on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Crypto Rewards",
+        "description": "Earn cryptocurrency rewards (BTC, ETH, USDC, etc.) as cash back — user chooses the crypto"
+      },
+      {
+        "name": "Coinbase One",
+        "description": "Requires active Coinbase One subscription ($29.99/month) for the highest rewards tier"
+      },
+      {
+        "name": "No FX Fees",
+        "description": "No foreign transaction fees when spending abroad"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "coinbase",
+    "crypto",
+    "no-annual-fee",
+    "dining",
+    "travel"
+  ],
+  "last_updated": "2026-04-14T05:44:00.000Z",
+  "sources": [
+    {
+      "url": "https://www.coinbase.com/card",
+      "notes": "Official Coinbase Website"
+    }
+  ]
+}

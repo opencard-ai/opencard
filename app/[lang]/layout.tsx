@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import LanguageSwitcher from "@/app/components/LanguageSwitcher";
 import FloatingRecommend from "@/app/components/FloatingRecommend";
+import MyCardsWidget from "@/app/components/MyCardsWidget";
 import { locales, t } from "@/lib/i18n";
 
 const geistSans = Geist({
@@ -29,6 +30,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t("site.title", lang as any),
     description: t("site.subtitle", lang as any),
+    icons: {
+      icon: "/favicon-v6.ico",
+    },
   };
 }
 
@@ -40,14 +44,10 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-slate-50 text-slate-900 antialiased`}
       >
-        <link rel="icon" href="/brand/logo.jpg" />
         <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
-          <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="max-w-5xl mx-auto px-4 py-1 flex items-center justify-between">
             <a href={`/${lang}`} className="flex items-center gap-2">
-              <span className="text-2xl">💳</span>
-              <span className="font-bold text-xl text-slate-900">
-                OpenCard
-              </span>
+              <img src="/brand/logo-header.png?v=2" alt="OpenCard AI" className="h-12 w-auto object-contain" />
             </a>
             <div className="flex items-center gap-4">
               <nav className="flex items-center gap-4 text-sm text-slate-600">
@@ -73,6 +73,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         </footer>
         {/* Floating AI Card Finder */}
         <FloatingRecommend locale={lang} />
+        <MyCardsWidget lang={lang} />
       </body>
     </html>
   );

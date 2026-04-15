@@ -9,7 +9,7 @@
     "affiliate_url": "https://www.amazon.com/dp/B079X4S4DQ?tag=opencardai-20",
     "rating": "4.6",
     "reviews": "15000+",
-    "image": "https://m.media-amazon.com/images/I/81XqKkDboML._AC_SL1500_.jpg"
+    "image": "https://m.media-amazon.com/images/I/41x7STeqz2L._AC_SL1500_.jpg"
   },
   {
     "product_id": "trtl-pillow-2",
@@ -21,7 +21,7 @@
     "affiliate_url": "https://www.amazon.com/dp/B0GKFG9JTW?tag=opencardai-20",
     "rating": "4.4",
     "reviews": "8000+",
-    "image": "https://m.media-amazon.com/images/I/71XrqFqDqgL._AC_SL1500_.jpg"
+    "image": "https://m.media-amazon.com/images/I/61ZKcSCy8bL._AC_SL1500_.jpg"
   },
   {
     "product_id": "tessan-travel-adapter",
@@ -33,19 +33,19 @@
     "affiliate_url": "https://www.amazon.com/dp/B0B2PD7VW4?tag=opencardai-20",
     "rating": "4.7",
     "reviews": "10000+",
-    "image": "https://m.media-amazon.com/images/I/71xkqLxGYjL._AC_SL1500_.jpg"
+    "image": "https://m.media-amazon.com/images/I/31WcRFivXhL._AC_SL1500_.jpg"
   },
   {
     "product_id": "anker-nano-adapter",
     "name": "Anker Nano Travel Adapter (5-Port)",
     "category": "adapter",
-    "asin": "B0B2PD7VW4",
+    "asin": "B0DHVNW1CN",
     "price_range": "$30-40",
     "description": "Anker brand, Smart temperature control, compact design.",
-    "affiliate_url": "https://www.amazon.com/dp/B0B2PD7VW4?tag=opencardai-20",
+    "affiliate_url": "https://www.amazon.com/dp/B0DHVNW1CN?tag=opencardai-20",
     "rating": "4.6",
     "reviews": "8000+",
-    "image": "https://m.media-amazon.com/images/I/71qkLxGYjL._AC_SL1500_.jpg"
+    "image": "https://m.media-amazon.com/images/I/61YSuy6Q8UL._AC_SL1500_.jpg"
   },
   {
     "product_id": "go-travel-mask-set",
@@ -57,19 +57,19 @@
     "affiliate_url": "https://www.amazon.com/dp/B0C4Q9F3JN?tag=opencardai-20",
     "rating": "4.2",
     "reviews": "5000+",
-    "image": "https://m.media-amazon.com/images/I/61XQKrFDqgL._AC_SL1500_.jpg"
+    "image": "https://m.media-amazon.com/images/I/81XNTpCM3+L._AC_SL1500_.jpg"
   },
   {
     "product_id": "napfun-pillow",
     "name": "Napfun Memory Foam Travel Neck Pillow",
     "category": "travel-pillow",
-    "asin": "",
+    "asin": "B07SRRQS5B",
     "price_range": "$20-30",
     "description": "Memory foam at accessible price point. Great entry-level option.",
-    "affiliate_url": "https://www.amazon.com/s?k=napfun+travel+neck+pillow&tag=opencardai-20",
+    "affiliate_url": "https://www.amazon.com/dp/B07SRRQS5B?tag=opencardai-20",
     "rating": "4.3",
     "reviews": "12000+",
-    "image": ""
+    "image": "https://m.media-amazon.com/images/I/51GpDEiYc8L._AC_SL1500_.jpg"
   },
   {
     "product_id": "saunorch-adapter",
@@ -81,7 +81,7 @@
     "affiliate_url": "https://www.amazon.com/dp/B07D81J56M?tag=opencardai-20",
     "rating": "4.5",
     "reviews": "6000+",
-    "image": "https://m.media-amazon.com/images/I/71ABCDEF123._AC_SL1500_.jpg"
+    "image": "https://m.media-amazon.com/images/I/61CYJgJZbsL._AC_SL1500_.jpg"
   },
   {
     "product_id": "ebuygb-mask-set",
@@ -93,6 +93,6 @@
     "affiliate_url": "https://www.amazon.com/dp/B01H7HMU0G?tag=opencardai-20",
     "rating": "4.1",
     "reviews": "3000+",
-    "image": "https://m.media-amazon.com/images/I/61DEF123456._AC_SL1500_.jpg"
+    "image": "https://m.media-amazon.com/images/I/41wFCxSKWbL._AC_SL1500_.jpg"
   }
 ]

@@ -1,0 +1,83 @@
+{
+  "card_id": "apple-card",
+  "name": "Apple Card",
+  "issuer": "Goldman Sachs",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "time_period_months": null,
+    "bonus_points": null,
+    "description": "No welcome bonus currently offered",
+    "free_nights": null,
+    "point_program": "Apple Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "Apple Purchases",
+      "rate": 3,
+      "notes": "3x on Apple products, apps, subscriptions, and services purchased directly from Apple"
+    },
+    {
+      "category": "Other Purchases",
+      "rate": 2,
+      "notes": "2x on all other purchases (except cash back category)"
+    },
+    {
+      "category": "Daily Cash",
+      "rate": 1,
+      "notes": "1% cash back on everything else"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Daily Cash",
+        "description": "Instant cash back (not points) deposited daily to your Apple Cash card"
+      },
+      {
+        "name": "No Fees",
+        "description": "No annual fees, no late fees, no foreign transaction fees, no penalty APR"
+      },
+      {
+        "name": "Apple Pay Integration",
+        "description": "Seamless integration with Apple Pay for secure mobile payments"
+      },
+      {
+        "name": "Titanium Card",
+        "description": "Physical titanium credit card with no card number embossed (for use where Apple Pay is not accepted)"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "apple",
+    "no-annual-fee",
+    "apple-pay"
+  ],
+  "last_updated": "2026-04-14T05:44:00.000Z",
+  "sources": [
+    {
+      "url": "https://www.apple.com/apple-card/",
+      "notes": "Official Apple Website"
+    }
+  ]
+}

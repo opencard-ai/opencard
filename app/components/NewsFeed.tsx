@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { t } from "@/lib/i18n";
 
 interface NewsItem {
   title: string;
@@ -12,6 +13,7 @@ interface NewsItem {
   ts: string;
   categories?: string[];
   isError?: boolean;
+  summary?: string;
 }
 
 function timeAgo(ts: string) {
@@ -44,7 +46,11 @@ function CategoryBadge({ cat }: { cat: string }) {
   );
 }
 
-export default function NewsFeed() {
+type Props = {
+  lang: string;
+};
+
+export default function NewsFeed({ lang }: Props) {
   const [items, setItems] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -55,7 +61,7 @@ export default function NewsFeed() {
 
   const fetchNews = async () => {
     try {
-      const res = await fetch("/api/daily-digest");
+      const res = await fetch(`/${lang}/api/daily-digest?lang=${lang}`);
       if (!res.ok) throw new Error(res.statusText);
       const data = await res.json();
       setItems(data.items || []);
@@ -96,31 +102,27 @@ export default function NewsFeed() {
   const displayItems = expanded ? filtered : filtered.slice(0, 8);
   const hasMore = filtered.length > 8;
 
-  const filterTabs = [
-    { key: "all", label: "All News" },
-    { key: "cards", label: "💳 Cards" },
-    { key: "banking", label: "🏦 Banking" },
-  ] as const;
+  type FilterKey = "all" | "cards" | "banking";
+  const filterTabs: { key: FilterKey; label: string }[] = [
+    { key: "all", label: t("feed.all", lang as any) },
+    { key: "cards", label: t("feed.cards", lang as any) },
+    { key: "banking", label: t("feed.banking", lang as any) },
+  ];
 
   return (
     <section className="mt-10">
       {/* Section Header */}
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h2 className="text-xl font-bold text-slate-900">Daily Finance Feed</h2>
+          <h2 className="text-xl font-bold text-slate-900">{t("feed.title", lang as any)}</h2>
           <p className="text-sm text-slate-500 mt-0.5">
-            Real-time credit card &amp; banking news
-            {lastRefresh && (
-              <span className="ml-2 text-slate-400">
-                · Updated {timeAgo(lastRefresh.toISOString())}
-              </span>
-            )}
+            {t("feed.subtitle", lang as any)}
           </p>
         </div>
         <button
           onClick={fetchNews}
           className="text-sm text-slate-500 hover:text-slate-700 flex items-center gap-1 transition"
-          title="Refresh"
+          title={t("feed.refresh", lang as any)}
         >
           <svg className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
@@ -154,7 +156,7 @@ export default function NewsFeed() {
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 0 1 8-8" />
             </svg>
-            Loading latest news...
+            {t("feed.loading", lang as any)}
           </div>
         ) : error && items.length === 0 ? (
           <div className="p-6 text-center">
@@ -162,7 +164,7 @@ export default function NewsFeed() {
             <button onClick={fetchNews} className="mt-2 text-sm text-slate-500 hover:text-slate-700">Retry</button>
           </div>
         ) : displayItems.length === 0 ? (
-          <div className="p-6 text-center text-slate-400 text-sm">No items in this category yet</div>
+          <div className="p-6 text-center text-slate-400 text-sm">{t("feed.noItems", lang as any)}</div>
         ) : (
           displayItems.map((item, idx) => (
             <div key={`${item.url}-${idx}`} className="p-4 hover:bg-slate-50 transition group">
@@ -186,6 +188,11 @@ export default function NewsFeed() {
                   >
                     {item.title}
                   </a>
+                  {item.summary && (
+                    <p className="text-xs text-slate-500 mt-0.5 line-clamp-2 leading-relaxed">
+                      {item.summary}
+                    </p>
+                  )}
                 </div>
                 <svg className="w-4 h-4 text-slate-300 group-hover:text-slate-500 flex-shrink-0 mt-0.5 transition"
                   fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -203,7 +210,7 @@ export default function NewsFeed() {
           onClick={() => setExpanded((v) => !v)}
           className="mt-3 w-full py-2 text-sm text-slate-500 hover:text-slate-700 border border-slate-200 rounded-lg bg-white transition"
         >
-          {expanded ? `↑ Show less` : `↓ Load ${filtered.length - 8} more items`}
+          {expanded ? t("feed.showLess", lang as any) : t("feed.loadMore", lang as any, { count: filtered.length - 8 })}
         </button>
       )}
     </section>
