@@ -63,7 +63,7 @@ export default function NewsFeed({ lang }: Props) {
   const [items, setItems] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [filter, setFilter] = useState<"all" | "cards" | "banking">("all");
+  const [filter, setFilter] = useState<"all" | "cards" | "banking" | "deals" | "others">("all");
   const [expanded, setExpanded] = useState(false);
 
   const fetchNews = async () => {
@@ -96,8 +96,31 @@ export default function NewsFeed({ lang }: Props) {
     }
     if (filter === "cards") {
       return item.categories?.some((c) =>
-        ["credit cards"].some((cc) => c.toLowerCase().includes(cc))
+        c.toLowerCase().includes("credit cards")
       );
+    }
+    if (filter === "deals") {
+      return item.categories?.some((c) =>
+        ["deals", "free drinks", "freebies", "crypto", "cryptocurrency"].some((d) =>
+          c.toLowerCase().includes(d)
+        )
+      );
+    }
+    if (filter === "others") {
+      const isBanking = item.categories?.some((c) =>
+        ["banking", "savings", "checking", "bank account"].some((b) =>
+          c.toLowerCase().includes(b)
+        )
+      );
+      const isCards = item.categories?.some((c) =>
+        c.toLowerCase().includes("credit cards")
+      );
+      const isDeals = item.categories?.some((c) =>
+        ["deals", "free drinks", "freebies", "crypto", "cryptocurrency"].some((d) =>
+          c.toLowerCase().includes(d)
+        )
+      );
+      return !isBanking && !isCards && !isDeals;
     }
     return true;
   });
@@ -105,11 +128,13 @@ export default function NewsFeed({ lang }: Props) {
   const displayItems = expanded ? filtered : filtered.slice(0, 8);
   const hasMore = filtered.length > 8;
 
-  type FilterKey = "all" | "cards" | "banking";
+  type FilterKey = "all" | "cards" | "banking" | "deals" | "others";
   const filterTabs: { key: FilterKey; label: string }[] = [
     { key: "all", label: t("feed.all", lang as any) },
     { key: "cards", label: t("feed.cards", lang as any) },
+    { key: "deals", label: t("feed.deals", lang as any) },
     { key: "banking", label: t("feed.banking", lang as any) },
+    { key: "others", label: t("feed.others", lang as any) },
   ];
 
   return (
