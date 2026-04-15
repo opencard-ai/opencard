@@ -25,7 +25,9 @@ function timeAgo(ts: string) {
 }
 
 function SourceIcon({ source }: { source: string }) {
-  if (source === "Doctor of Credit") return <span className="text-emerald-500 font-bold text-xs">DoC</span>;
+  if (source === "Doctor of Credit") return (
+    <span title="Doctor of Credit — leading US credit card news & offers" className="text-emerald-500 font-bold text-xs cursor-help">DoC</span>
+  );
   return <span className="text-slate-400 text-xs">{source}</span>;
 }
 
