@@ -78,12 +78,10 @@ export default function NewsFeed({ lang }: Props) {
   const filtered = items.filter((item) => {
     if (item.isError) return false;
     if (filter === "banking") {
-      return (
-        item.categories?.some((c) =>
-          ["banking", "savings", "checking", "bank account"].some((b) =>
-            c.toLowerCase().includes(b)
-          )
-        ) || item.source === "Doctor of Credit"
+      return item.categories?.some((c) =>
+        ["banking", "savings", "checking", "bank account"].some((b) =>
+          c.toLowerCase().includes(b)
+        )
       );
     }
     if (filter === "cards") {
