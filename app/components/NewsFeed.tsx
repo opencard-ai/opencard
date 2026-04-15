@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { t } from "@/lib/i18n";
 
 interface NewsItem {
@@ -56,8 +56,6 @@ export default function NewsFeed({ lang }: Props) {
   const [error, setError] = useState("");
   const [filter, setFilter] = useState<"all" | "cards" | "banking">("all");
   const [expanded, setExpanded] = useState(false);
-  const [lastRefresh, setLastRefresh] = useState<Date | null>(null);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const fetchNews = async () => {
     try {
@@ -65,7 +63,6 @@ export default function NewsFeed({ lang }: Props) {
       if (!res.ok) throw new Error(res.statusText);
       const data = await res.json();
       setItems(data.items || []);
-      setLastRefresh(new Date());
       setError("");
     } catch (e) {
       setError(e instanceof Error ? e.message : "Failed to load");
@@ -76,10 +73,6 @@ export default function NewsFeed({ lang }: Props) {
 
   useEffect(() => {
     fetchNews();
-    intervalRef.current = setInterval(fetchNews, 10 * 60 * 1000); // refresh every 10 min
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
   }, []);
 
   const filtered = items.filter((item) => {
@@ -119,16 +112,6 @@ export default function NewsFeed({ lang }: Props) {
             {t("feed.subtitle", lang as any)}
           </p>
         </div>
-        <button
-          onClick={fetchNews}
-          className="text-sm text-slate-500 hover:text-slate-700 flex items-center gap-1 transition"
-          title={t("feed.refresh", lang as any)}
-        >
-          <svg className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-              d="M4 4v5h.582m15.356 2A8 0012 0 0 0 4.582 9m0 0H9m11 11v-5h-.581m0 0a8 8 0 0 1-15.357-2M12 12a8 8 0 0 1 8-8" />
-          </svg>
-        </button>
       </div>
 
       {/* Filters */}
