@@ -95,12 +95,9 @@ export default function NewsFeed({ lang }: Props) {
       );
     }
     if (filter === "cards") {
-      const isBanking = item.categories?.some((c) =>
-        ["banking", "savings", "checking", "bank account"].some((b) =>
-          c.toLowerCase().includes(b)
-        )
+      return item.categories?.some((c) =>
+        ["credit cards"].some((cc) => c.toLowerCase().includes(cc))
       );
-      return !isBanking;
     }
     return true;
   });
