@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
+import LanguageSwitcher from "@/app/components/LanguageSwitcher";
 import RecommendWidget from "@/app/components/RecommendWidget";
 import MyCardsWidget from "@/app/components/MyCardsWidget";
 import { locales, t } from "@/lib/i18n";
