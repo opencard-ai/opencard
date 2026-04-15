@@ -49,7 +49,7 @@ export default async function CardDetailPage({ params }: Props) {
         href={`/${lang}`}
         className="inline-flex items-center gap-1 text-sm text-slate-500 hover:text-slate-800 mb-6 transition-colors"
       >
-        ← {l("detail.backToList")}
+        {l("detail.backToList")}
       </Link>
 
       {/* Header */}
