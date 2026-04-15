@@ -107,6 +107,7 @@ export default function RecommendWidget({ lang = "en" }: { lang?: string }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         message: userMsg,
+        messages: messages, // send full history so LLM has context
         locale: lang,
         existingCards: selectedCards,
       }),
