@@ -1,5 +1,6 @@
 import { getAllCards } from "@/lib/cards";
 import { t, locales } from "@/lib/i18n";
+import { translateCategory } from "@/lib/category-translations";
 import Link from "next/link";
 import TravelProducts from "@/app/components/TravelProducts";
 
@@ -91,7 +92,7 @@ export default async function WikiCardPage({ params }: Props) {
           {card.earning_rates.map((rate, i) => (
             <div key={i} className="flex items-center justify-between py-2 border-b border-slate-100 last:border-0">
               <div>
-                <span className="font-medium text-slate-800">{rate.category}</span>
+                <span className="font-medium text-slate-800">{translateCategory(rate.category, lang as "en" | "zh" | "es")}</span>
                 {rate.notes && <span className="text-slate-400 text-xs ml-2">({rate.notes})</span>}
               </div>
               <span className="font-bold text-blue-600">{rate.rate}×</span>
