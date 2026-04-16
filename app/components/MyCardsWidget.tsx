@@ -163,7 +163,7 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 ${
-          isOpen ? "bg-slate-900 text-white" : "bg-white text-slate-900 border border-slate-200"
+          isOpen ? "bg-blue-700 text-white shadow-2xl" : "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-xl hover:shadow-2xl"
         }`}
       >
         <img src="/brand/my-cards-icon.png" alt="Wallet" className="w-6 h-6 object-contain" />

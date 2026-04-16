@@ -238,8 +238,8 @@ export default function RecommendWidget({ lang = "en" }: { lang?: string }) {
         onClick={() => setIsOpen(!isOpen)}
         className={`h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 ${
           isOpen 
-            ? "bg-blue-600 text-white" 
-            : "bg-white text-blue-600 border border-blue-200"
+            ? "bg-blue-700 text-white shadow-2xl" 
+            : "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-xl hover:shadow-2xl"
         }`}
         style={{ boxShadow: isOpen ? "0 8px 32px rgba(59, 130, 246, 0.5)" : "0 4px 12px rgba(0,0,0,0.1)" }}
       >
