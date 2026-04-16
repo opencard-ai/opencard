@@ -35,8 +35,9 @@ export default async function HomePage({ params }: Props) {
         </p>
       </div>
 
-      {/* Jump to cards */}
-      <div className="mb-4">
+      {/* Jump to cards + description */}
+      <div className="mb-4 space-y-2">
+        <p className="text-slate-600 text-sm">{t("site.subtitle", locale)}</p>
         <a href="#cards-section" className="text-sm text-blue-600 hover:text-blue-700 font-medium underline">
           {t("home.jumpToCards", lang as any)}
         </a>
@@ -56,8 +57,6 @@ export default async function HomePage({ params }: Props) {
 
       {/* Card Grid Header */}
       <section id="cards-section" className="mb-4">
-        <h2 className="text-xl font-bold text-slate-900 mb-1">{t("site.title", locale)}</h2>
-        <p className="text-slate-500 text-sm">{t("site.subtitle", locale)}</p>
       </section>
 
       <Suspense
