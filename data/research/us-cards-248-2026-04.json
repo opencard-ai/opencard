@@ -1,0 +1,1497 @@
+{
+  "cards": [
+    {
+      "card_id": "amex-amazon-business",
+      "name": "Amazon Business American Express Card",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-amazon-business-prime",
+      "name": "Amazon Business Prime American Express Card",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-blue-business-cash",
+      "name": "American Express Blue Business Cash™ Card",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-blue-business-plus",
+      "name": "American Express Blue Business Plus Credit Card",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-business-gold",
+      "name": "American Express® Business Gold Card",
+      "issuer": "American Express",
+      "annual_fee": 375
+    },
+    {
+      "card_id": "amex-gold",
+      "name": "American Express® Gold Card",
+      "issuer": "American Express",
+      "annual_fee": 325
+    },
+    {
+      "card_id": "amex-green",
+      "name": "American Express® Green Card",
+      "issuer": "American Express",
+      "annual_fee": 150
+    },
+    {
+      "card_id": "amex-everyday",
+      "name": "Amex EveryDay® Credit Card",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-everyday-preferred",
+      "name": "Amex EveryDay® Preferred Credit Card",
+      "issuer": "American Express",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "amex-blue-cash-everyday",
+      "name": "Blue Cash Everyday® Card from American Express",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-blue-cash-preferred",
+      "name": "Blue Cash Preferred® Card from American Express",
+      "issuer": "American Express",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "amex-blue-from-american-express",
+      "name": "Blue from American Express®",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amex-cash-magnet",
+      "name": "Cash Magnet® Card",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "delta-skymiles-blue-amex",
+      "name": "Delta SkyMiles® Blue American Express Card",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "delta-skymiles-gold-amex",
+      "name": "Delta SkyMiles® Gold American Express Card",
+      "issuer": "American Express",
+      "annual_fee": 150
+    },
+    {
+      "card_id": "delta-skymiles-gold-business-amex",
+      "name": "Delta SkyMiles® Gold Business American Express Card",
+      "issuer": "American Express",
+      "annual_fee": 150
+    },
+    {
+      "card_id": "delta-skymiles-platinum-amex",
+      "name": "Delta SkyMiles® Platinum American Express Card",
+      "issuer": "American Express",
+      "annual_fee": 350
+    },
+    {
+      "card_id": "delta-skymiles-platinum-business-amex",
+      "name": "Delta SkyMiles® Platinum Business American Express Card",
+      "issuer": "American Express",
+      "annual_fee": 350
+    },
+    {
+      "card_id": "delta-skymiles-reserve-amex",
+      "name": "Delta SkyMiles® Reserve American Express Card",
+      "issuer": "American Express",
+      "annual_fee": 650
+    },
+    {
+      "card_id": "delta-skymiles-reserve-business-amex",
+      "name": "Delta SkyMiles® Reserve Business American Express Card",
+      "issuer": "American Express",
+      "annual_fee": 650
+    },
+    {
+      "card_id": "hilton-honors-amex-aspire",
+      "name": "Hilton Honors American Express Aspire Card",
+      "issuer": "American Express",
+      "annual_fee": 550
+    },
+    {
+      "card_id": "hilton-honors-amex-business",
+      "name": "Hilton Honors American Express Business Card",
+      "issuer": "American Express",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "hilton-honors-amex",
+      "name": "Hilton Honors American Express Card",
+      "issuer": "American Express",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "hilton-honors-amex-surpass",
+      "name": "Hilton Honors American Express Surpass® Card",
+      "issuer": "American Express",
+      "annual_fee": 150
+    },
+    {
+      "card_id": "marriott-bonvoy-bevy-amex",
+      "name": "Marriott Bonvoy Bevy® American Express® Card",
+      "issuer": "American Express",
+      "annual_fee": 250
+    },
+    {
+      "card_id": "marriott-bonvoy-brilliant-amex",
+      "name": "Marriott Bonvoy Brilliant® American Express® Card",
+      "issuer": "American Express",
+      "annual_fee": 650
+    },
+    {
+      "card_id": "marriott-bonvoy-business-amex",
+      "name": "Marriott Bonvoy Business® American Express® Card",
+      "issuer": "American Express",
+      "annual_fee": 125
+    },
+    {
+      "card_id": "amex-business-platinum",
+      "name": "The Business Platinum Card® from American Express",
+      "issuer": "American Express",
+      "annual_fee": 895
+    },
+    {
+      "card_id": "centurion-card-amex",
+      "name": "The Centurion® Card from American Express",
+      "issuer": "American Express",
+      "annual_fee": 5000
+    },
+    {
+      "card_id": "amex-platinum",
+      "name": "The Platinum Card® from American Express",
+      "issuer": "American Express",
+      "annual_fee": 895
+    },
+    {
+      "card_id": "amex-plum-card",
+      "name": "The Plum Card® from American Express",
+      "issuer": "American Express",
+      "annual_fee": 250
+    },
+    {
+      "card_id": "avianca-vida-visa",
+      "name": "Avianca LifeMiles Visa Card",
+      "issuer": "Avianca / Barclays",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "chime-credit-builder-visa",
+      "name": "Chime Credit Builder Secured Visa® Credit Card",
+      "issuer": "Bancorp Bank / Stride Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "alaska-airlines-visa-signature-boa",
+      "name": "Alaska Airlines Visa Signature® Credit Card",
+      "issuer": "Bank of America",
+      "annual_fee": 75
+    },
+    {
+      "card_id": "alaska-airlines-visa-business-boa",
+      "name": "Alaska Airlines Visa® Business Credit Card",
+      "issuer": "Bank of America",
+      "annual_fee": 75
+    },
+    {
+      "card_id": "boa-alaska-business-visa",
+      "name": "Alaska Airlines Visa® Business Credit Card",
+      "issuer": "Bank of America",
+      "annual_fee": 75
+    },
+    {
+      "card_id": "alaska-airlines-visa-platinum-boa",
+      "name": "Alaska Airlines Visa® Platinum Plus® Credit Card",
+      "issuer": "Bank of America",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "boa-business-advantage-customized-cash",
+      "name": "Bank of America® Business Advantage Customized Cash Rewards Mastercard®",
+      "issuer": "Bank of America",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "boa-business-advantage-travel",
+      "name": "Bank of America® Business Advantage Travel Rewards World Mastercard®",
+      "issuer": "Bank of America",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "boa-business-advantage-unlimited-cash",
+      "name": "Bank of America® Business Advantage Unlimited Cash Rewards Mastercard®",
+      "issuer": "Bank of America",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "boa-customized-cash-rewards",
+      "name": "Bank of America® Customized Cash Rewards Credit Card",
+      "issuer": "Bank of America",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "boa-student-customized-cash-rewards",
+      "name": "Bank of America® Customized Cash Rewards Credit Card for Students",
+      "issuer": "Bank of America",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "boa-customized-cash-rewards-secured",
+      "name": "Bank of America® Customized Cash Rewards Secured Credit Card",
+      "issuer": "Bank of America",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "boa-premium-rewards",
+      "name": "Bank of America® Premium Rewards® Credit Card",
+      "issuer": "Bank of America",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "boa-premium-rewards-elite",
+      "name": "Bank of America® Premium Rewards® Elite Credit Card",
+      "issuer": "Bank of America",
+      "annual_fee": 550
+    },
+    {
+      "card_id": "boa-travel-rewards",
+      "name": "Bank of America® Travel Rewards Credit Card",
+      "issuer": "Bank of America",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "boa-student-travel-rewards",
+      "name": "Bank of America® Travel Rewards Credit Card for Students",
+      "issuer": "Bank of America",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "boa-unlimited-cash-rewards",
+      "name": "Bank of America® Unlimited Cash Rewards Credit Card",
+      "issuer": "Bank of America",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "spirit-airlines-mastercard",
+      "name": "Free Spirit® Travel More World Elite Mastercard®",
+      "issuer": "Bank of America",
+      "annual_fee": 79
+    },
+    {
+      "card_id": "aarp-essential-rewards-mastercard-barclays",
+      "name": "AARP® Essential Rewards Mastercard® from Barclays",
+      "issuer": "Barclays",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "aarp-travel-rewards-mastercard-barclays",
+      "name": "AARP® Travel Rewards Mastercard® from Barclays",
+      "issuer": "Barclays",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "athleta-rewards-mastercard-barclays",
+      "name": "Athleta Rewards Mastercard®",
+      "issuer": "Barclays",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "banana-republic-rewards-mastercard-barclays",
+      "name": "Banana Republic Rewards Mastercard®",
+      "issuer": "Barclays",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "carnival-world-mastercard-barclays",
+      "name": "Carnival® World Mastercard®",
+      "issuer": "Barclays",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "celebrity-cruises-visa-signature-barclays",
+      "name": "Celebrity Cruises Visa Signature® Card",
+      "issuer": "Barclays",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "emirates-skywards-mastercard",
+      "name": "Emirates Skywards Premium World Elite Mastercard®",
+      "issuer": "Barclays",
+      "annual_fee": 499
+    },
+    {
+      "card_id": "frontier-airlines-world-mastercard-barclays",
+      "name": "Frontier Airlines World Mastercard®",
+      "issuer": "Barclays",
+      "annual_fee": 89
+    },
+    {
+      "card_id": "gap-good-rewards-mastercard-barclays",
+      "name": "Gap Good Rewards Mastercard®",
+      "issuer": "Barclays",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "hawaiian-airlines-world-elite-mastercard",
+      "name": "Hawaiian Airlines World Elite Mastercard®",
+      "issuer": "Barclays",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "jetblue-business-card-barclays",
+      "name": "JetBlue Business Card",
+      "issuer": "Barclays",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "jetblue-card-barclays",
+      "name": "JetBlue Card",
+      "issuer": "Barclays",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "jetblue-plus-card-barclays",
+      "name": "JetBlue Plus Card",
+      "issuer": "Barclays",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "luxury-card-black",
+      "name": "Luxury Card Mastercard® Black Card™",
+      "issuer": "Barclays",
+      "annual_fee": 699
+    },
+    {
+      "card_id": "luxury-card-gold",
+      "name": "Luxury Card Mastercard® Gold Card™",
+      "issuer": "Barclays",
+      "annual_fee": 1199
+    },
+    {
+      "card_id": "luxury-card-titanium",
+      "name": "Luxury Card Mastercard® Titanium Card™",
+      "issuer": "Barclays",
+      "annual_fee": 299
+    },
+    {
+      "card_id": "old-navy-navyist-rewards-mastercard-barclays",
+      "name": "Old Navy Navyist Rewards Mastercard®",
+      "issuer": "Barclays",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "royal-caribbean-visa-signature-barclays",
+      "name": "Royal Caribbean Visa Signature® Card",
+      "issuer": "Barclays",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "wyndham-rewards-earner-business-barclays",
+      "name": "Wyndham Rewards Earner® Business Card",
+      "issuer": "Barclays",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "wyndham-rewards-earner-barclays",
+      "name": "Wyndham Rewards Earner® Card",
+      "issuer": "Barclays",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "wyndham-rewards-earner-plus-barclays",
+      "name": "Wyndham Rewards Earner® Plus Card",
+      "issuer": "Barclays",
+      "annual_fee": 75
+    },
+    {
+      "card_id": "bilt-blue-card",
+      "name": "Bilt Blue Card",
+      "issuer": "Bilt Rewards / Cardless",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "bilt-obsidian-card",
+      "name": "Bilt Obsidian Card",
+      "issuer": "Bilt Rewards / Cardless",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "bilt-palladium-card",
+      "name": "Bilt Palladium Card",
+      "issuer": "Bilt Rewards / Cardless",
+      "annual_fee": 495
+    },
+    {
+      "card_id": "bread-cashback-american-express",
+      "name": "Bread Cashback™ American Express® Credit Card",
+      "issuer": "Bread Financial",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "kayak-credit-card-comenity",
+      "name": "KAYAK Credit Card",
+      "issuer": "Bread Financial",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "pottery-barn-visa",
+      "name": "Pottery Barn Visa® Credit Card",
+      "issuer": "Bread Financial",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "ulta-beauty-mastercard-comenity",
+      "name": "Ulta Beauty Mastercard®",
+      "issuer": "Bread Financial",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "victoria-secret-credit-card-comenity",
+      "name": "Victoria's Secret Credit Card",
+      "issuer": "Bread Financial",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "bed-bath-beyond-mastercard-comenity",
+      "name": "Wayfair Mastercard®",
+      "issuer": "Bread Financial",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "west-elm-visa",
+      "name": "West Elm Key Rewards Visa® Credit Card",
+      "issuer": "Bread Financial",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "williams-sonoma-visa",
+      "name": "Williams Sonoma Visa® Credit Card",
+      "issuer": "Bread Financial",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "opensky-plus-secured-visa",
+      "name": "OpenSky® Plus Secured Visa® Credit Card",
+      "issuer": "Capital Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "opensky-secured-visa",
+      "name": "OpenSky® Secured Visa® Credit Card",
+      "issuer": "Capital Bank",
+      "annual_fee": 35
+    },
+    {
+      "card_id": "capital-one-journey-student",
+      "name": "Capital One Journey Student Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "capital-one-platinum",
+      "name": "Capital One Platinum Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "capital-one-platinum-secured",
+      "name": "Capital One Platinum Secured Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "capital-one-quicksilver",
+      "name": "Capital One Quicksilver Cash Rewards Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "capital-one-quicksilver-secured",
+      "name": "Capital One Quicksilver Secured Cash Rewards Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "capital-one-quicksilver-one",
+      "name": "Capital One QuicksilverOne Cash Rewards Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 39
+    },
+    {
+      "card_id": "capital-one-savor",
+      "name": "Capital One Savor Cash Rewards Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "capital-one-savor-one",
+      "name": "Capital One SavorOne Cash Rewards Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "capital-one-spark-cash-plus",
+      "name": "Capital One Spark Cash Plus",
+      "issuer": "Capital One",
+      "annual_fee": 150
+    },
+    {
+      "card_id": "capital-one-spark-cash-select",
+      "name": "Capital One Spark Cash Select for Excellent Credit",
+      "issuer": "Capital One",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "capital-one-spark-miles-for-business",
+      "name": "Capital One Spark Miles for Business",
+      "issuer": "Capital One",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "capital-one-spark-miles-select",
+      "name": "Capital One Spark Miles Select for Business",
+      "issuer": "Capital One",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "capital-one-venture",
+      "name": "Capital One Venture Rewards Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "capital-one-venture-x-business",
+      "name": "Capital One Venture X Business",
+      "issuer": "Capital One",
+      "annual_fee": 395
+    },
+    {
+      "card_id": "capital-one-venture-x",
+      "name": "Capital One Venture X Rewards Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 395
+    },
+    {
+      "card_id": "capital-one-venture-one",
+      "name": "Capital One VentureOne Rewards Credit Card",
+      "issuer": "Capital One",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "capital-one-walmart-rewards",
+      "name": "Capital One Walmart Rewards® Mastercard®",
+      "issuer": "Capital One",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "kohls-charge-card",
+      "name": "Kohl's Charge Card",
+      "issuer": "Capital One",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "aer-lingus-visa-signature",
+      "name": "Aer Lingus Visa Signature® Card",
+      "issuer": "Chase",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "amazon-business-prime-visa",
+      "name": "Amazon Business Prime American Express Card",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amazon-prime-visa",
+      "name": "Amazon Prime Visa",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amazon-visa",
+      "name": "Amazon Visa",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "british-airways-visa-signature",
+      "name": "British Airways Visa Signature® Card",
+      "issuer": "Chase",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "chase-freedom-flex",
+      "name": "Chase Freedom Flex®",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "chase-freedom-rise",
+      "name": "Chase Freedom Rise℠",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "chase-freedom-unlimited",
+      "name": "Chase Freedom Unlimited®",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "chase-sapphire-preferred",
+      "name": "Chase Sapphire Preferred® Card",
+      "issuer": "Chase",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "chase-sapphire-reserve",
+      "name": "Chase Sapphire Reserve®",
+      "issuer": "Chase",
+      "annual_fee": 795
+    },
+    {
+      "card_id": "chase-slate-edge",
+      "name": "Chase Slate Edge℠",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "disney-premier-visa-card",
+      "name": "Disney® Premier Visa® Card",
+      "issuer": "Chase",
+      "annual_fee": 49
+    },
+    {
+      "card_id": "disney-visa-card",
+      "name": "Disney® Visa® Card",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "doordash-rewards-mastercard",
+      "name": "DoorDash Rewards Mastercard®",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "iberia-visa-signature",
+      "name": "Iberia Visa Signature® Card",
+      "issuer": "Chase",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "ihg-one-rewards-premier-business",
+      "name": "IHG One Rewards Premier Business Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "ihg-one-rewards-premier",
+      "name": "IHG One Rewards Premier Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "ihg-one-rewards-traveler",
+      "name": "IHG One Rewards Traveler Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "ink-business-cash",
+      "name": "Ink Business Cash® Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "ink-business-preferred",
+      "name": "Ink Business Preferred® Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "ink-business-premier",
+      "name": "Ink Business Premier® Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 195
+    },
+    {
+      "card_id": "ink-business-unlimited",
+      "name": "Ink Business Unlimited® Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "jpmorgan-reserve-card",
+      "name": "J.P. Morgan Reserve Card",
+      "issuer": "Chase",
+      "annual_fee": 595
+    },
+    {
+      "card_id": "marriott-bonvoy-bold",
+      "name": "Marriott Bonvoy Bold® Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "marriott-bonvoy-boundless",
+      "name": "Marriott Bonvoy Boundless® Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "marriott-bonvoy-bountiful",
+      "name": "Marriott Bonvoy Bountiful™ Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 250
+    },
+    {
+      "card_id": "chase-sapphire-reserve-for-business",
+      "name": "Sapphire Reserve℠ for Business",
+      "issuer": "Chase",
+      "annual_fee": 550
+    },
+    {
+      "card_id": "southwest-rapid-rewards-performance-business",
+      "name": "Southwest Rapid Rewards® Performance Business Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 199
+    },
+    {
+      "card_id": "southwest-rapid-rewards-plus",
+      "name": "Southwest Rapid Rewards® Plus Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 69
+    },
+    {
+      "card_id": "southwest-rapid-rewards-premier-business",
+      "name": "Southwest Rapid Rewards® Premier Business Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "southwest-rapid-rewards-premier",
+      "name": "Southwest Rapid Rewards® Premier Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "southwest-rapid-rewards-priority",
+      "name": "Southwest Rapid Rewards® Priority Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 149
+    },
+    {
+      "card_id": "starbucks-rewards-visa-card",
+      "name": "Starbucks® Rewards Visa® Card",
+      "issuer": "Chase",
+      "annual_fee": 49
+    },
+    {
+      "card_id": "united-club-business-card",
+      "name": "United Club℠ Business Card",
+      "issuer": "Chase",
+      "annual_fee": 450
+    },
+    {
+      "card_id": "united-club-card",
+      "name": "United Club℠ Card",
+      "issuer": "Chase",
+      "annual_fee": 350
+    },
+    {
+      "card_id": "united-club-infinite-card",
+      "name": "United Club℠ Infinite Card",
+      "issuer": "Chase",
+      "annual_fee": 525
+    },
+    {
+      "card_id": "united-gateway-card",
+      "name": "United Gateway℠ Card",
+      "issuer": "Chase",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "united-quest-card",
+      "name": "United Quest℠ Card",
+      "issuer": "Chase",
+      "annual_fee": 250
+    },
+    {
+      "card_id": "united-business-card",
+      "name": "United℠ Business Card",
+      "issuer": "Chase",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "united-explorer-card",
+      "name": "United℠ Explorer Card",
+      "issuer": "Chase",
+      "annual_fee": 150
+    },
+    {
+      "card_id": "world-of-hyatt-business-card",
+      "name": "World of Hyatt Business Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 199
+    },
+    {
+      "card_id": "world-of-hyatt-credit-card",
+      "name": "World of Hyatt Credit Card",
+      "issuer": "Chase",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "citi-custom-cash",
+      "name": "Citi Custom Cash® Card",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "citi-double-cash",
+      "name": "Citi Double Cash® Card",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "citi-rewards-plus",
+      "name": "Citi Rewards+® Card",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "citi-simplicity",
+      "name": "Citi Simplicity® Card",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "citi-strata-elite",
+      "name": "Citi Strata Elite℠ Card",
+      "issuer": "Citi",
+      "annual_fee": 595
+    },
+    {
+      "card_id": "citi-strata-premier",
+      "name": "Citi Strata Premier® Card",
+      "issuer": "Citi",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "citi-strata",
+      "name": "Citi Strata℠ Card",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "citi-aadvantage-executive",
+      "name": "Citi® / AAdvantage® Executive World Elite Mastercard®",
+      "issuer": "Citi",
+      "annual_fee": 595
+    },
+    {
+      "card_id": "citi-aadvantage-globe",
+      "name": "Citi® / AAdvantage® Globe™ Mastercard®",
+      "issuer": "Citi",
+      "annual_fee": 350
+    },
+    {
+      "card_id": "citi-aadvantage-mileup",
+      "name": "Citi® / AAdvantage® MileUp® Card",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "american-airlines-citi-mastercard",
+      "name": "Citi® / AAdvantage® Platinum Select® Mastercard®",
+      "issuer": "Citi",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "citi-aadvantage-platinum-select",
+      "name": "Citi® / AAdvantage® Platinum Select® World Elite Mastercard®",
+      "issuer": "Citi",
+      "annual_fee": 99
+    },
+    {
+      "card_id": "citi-diamond-preferred",
+      "name": "Citi® Diamond Preferred® Card",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "citi-secured-mastercard",
+      "name": "Citi® Secured Mastercard®",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "costco-anywhere-visa-business-citi",
+      "name": "Costco Anywhere Visa® Business Card by Citi",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "costco-anywhere-visa-citi",
+      "name": "Costco Anywhere Visa® Card by Citi",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "macy-american-express-card",
+      "name": "Macy's American Express® Card",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "macys-credit-card",
+      "name": "Macy's Credit Card",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "best-buy-credit-card",
+      "name": "My Best Buy® Credit Card",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "best-buy-visa-credit-card",
+      "name": "My Best Buy® Visa® Card",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "home-depot-consumer-credit-card",
+      "name": "The Home Depot® Consumer Credit Card",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "home-depot-home-improver-card",
+      "name": "The Home Depot® Home Improver Card",
+      "issuer": "Citi",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "x1-card",
+      "name": "X1 Card",
+      "issuer": "Coastal Community Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "credit-one-platinum-visa",
+      "name": "Credit One Bank® Platinum Visa®",
+      "issuer": "Credit One Bank",
+      "annual_fee": 75
+    },
+    {
+      "card_id": "credit-one-platinum-visa-cb",
+      "name": "Credit One Bank® Platinum X5 Visa®",
+      "issuer": "Credit One Bank",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "deserve-edu-mastercard",
+      "name": "Deserve® EDU Mastercard for Students",
+      "issuer": "Deserve",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "discover-it-cash-back",
+      "name": "Discover it® Cash Back",
+      "issuer": "Discover",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "discover-it-chrome",
+      "name": "Discover it® Chrome",
+      "issuer": "Discover",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "discover-it-miles",
+      "name": "Discover it® Miles",
+      "issuer": "Discover",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "discover-it-secured",
+      "name": "Discover it® Secured Credit Card",
+      "issuer": "Discover",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "discover-it-student-cash-back",
+      "name": "Discover it® Student Cash Back",
+      "issuer": "Discover",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "discover-it-student-chrome",
+      "name": "Discover it® Student Chrome",
+      "issuer": "Discover",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "elan-max-cash-everyday",
+      "name": "Elan Max Cash Everyday Card",
+      "issuer": "Elan Financial",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "elan-max-cash-preferred",
+      "name": "Elan Max Cash Preferred Card",
+      "issuer": "Fidelity",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "fidelity-rewards-visa-signature",
+      "name": "Fidelity® Rewards Visa Signature® Card",
+      "issuer": "Fidelity",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "apple-card",
+      "name": "Apple Card",
+      "issuer": "Goldman Sachs",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "marcus-cash-rewards",
+      "name": "Marcus by Goldman Sachs Cash Rewards Credit Card",
+      "issuer": "Goldman Sachs",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "my-gm-rewards-mastercard",
+      "name": "My GM Rewards Mastercard®",
+      "issuer": "Goldman Sachs",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "health-equity-visa",
+      "name": "HealthEquity Visa Health Savings Card",
+      "issuer": "HealthEquity",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "hsbc-elite-credit-card",
+      "name": "HSBC Elite Credit Card",
+      "issuer": "HSBC",
+      "annual_fee": 395
+    },
+    {
+      "card_id": "hsbc-premier-world-mastercard",
+      "name": "HSBC Premier World Mastercard®",
+      "issuer": "HSBC",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "navy-federal-cashrewards",
+      "name": "Navy Federal Credit Union cashRewards Credit Card",
+      "issuer": "Navy Federal CU",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "navy-federal-cashrewards-plus",
+      "name": "Navy Federal Credit Union cashRewards Plus Credit Card",
+      "issuer": "Navy Federal CU",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "navy-federal-go-rewards",
+      "name": "Navy Federal Credit Union GO REWARDS® Credit Card",
+      "issuer": "Navy Federal CU",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "navy-federal-more-rewards-amex",
+      "name": "Navy Federal Credit Union More Rewards American Express® Card",
+      "issuer": "Navy Federal CU",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "navy-federal-nrewards-secured",
+      "name": "Navy Federal Credit Union nRewards® Secured Credit Card",
+      "issuer": "Navy Federal CU",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "navy-federal-platinum",
+      "name": "Navy Federal Credit Union Platinum Credit Card",
+      "issuer": "Navy Federal CU",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "navy-federal-flagship-rewards",
+      "name": "Navy Federal Credit Union Visa Signature® Flagship Rewards Credit Card",
+      "issuer": "Navy Federal CU",
+      "annual_fee": 49
+    },
+    {
+      "card_id": "patelco-travel-rewards-visa",
+      "name": "Patelco Travel Rewards Visa® Card",
+      "issuer": "Patelco CU",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "penfed-gold-visa",
+      "name": "PenFed Gold Visa® Card",
+      "issuer": "PenFed CU",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "penfed-pathfinder-rewards",
+      "name": "PenFed Pathfinder® Rewards Visa Signature® Card",
+      "issuer": "PenFed CU",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "penfed-platinum-rewards",
+      "name": "PenFed Platinum Rewards Visa Signature® Card",
+      "issuer": "PenFed CU",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "penfed-power-cash-rewards",
+      "name": "PenFed Power Cash Rewards Visa Signature® Card",
+      "issuer": "PenFed CU",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "pnc-cash-rewards-visa",
+      "name": "PNC Cash Rewards® Visa® Credit Card",
+      "issuer": "PNC",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "pnc-core-visa",
+      "name": "PNC Core® Visa® Credit Card",
+      "issuer": "PNC",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "pnc-points-visa",
+      "name": "PNC Points® Visa® Credit Card",
+      "issuer": "PNC",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "ramp-corporate-card",
+      "name": "Ramp Corporate Card",
+      "issuer": "Ramp",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "robinhood-gold-card",
+      "name": "Robinhood Gold Card",
+      "issuer": "Robinhood",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "self-secured-visa",
+      "name": "Self - Credit Builder Account + Secured Visa® Credit Card",
+      "issuer": "Self Financial",
+      "annual_fee": 25
+    },
+    {
+      "card_id": "amazon-prime-store-card-synchrony",
+      "name": "Amazon Prime Store Card",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "amazon-store-card-synchrony",
+      "name": "Amazon Store Card",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "carecredit-card-synchrony",
+      "name": "CareCredit Card",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "care-credit-rewards-mastercard-synchrony",
+      "name": "CareCredit Rewards Mastercard®",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "ebay-mastercard-synchrony",
+      "name": "eBay Mastercard®",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "jcpenney-mastercard-synchrony",
+      "name": "JCPenney Mastercard®",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "lowes-advantage-card-synchrony",
+      "name": "Lowe's Advantage Card",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "paypal-cashback-mastercard-synchrony",
+      "name": "PayPal Cashback Mastercard®",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "sams-club-mastercard-synchrony",
+      "name": "Sam's Club® Mastercard®",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "sears-mastercard-synchrony",
+      "name": "Sears Mastercard®",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "tjx-rewards-credit-card",
+      "name": "TJX Rewards® Credit Card",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "tjx-rewards-mastercard",
+      "name": "TJX Rewards® Platinum Mastercard®",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "verizon-visa-synchrony",
+      "name": "Verizon Visa® Card",
+      "issuer": "Synchrony",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "first-progress-secured-mastercard",
+      "name": "First Progress Platinum Prestige Mastercard® Secured Credit Card",
+      "issuer": "Synovus Bank",
+      "annual_fee": 49
+    },
+    {
+      "card_id": "target-redcard-credit",
+      "name": "Target Circle™ Card (Credit)",
+      "issuer": "TD Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "target-mastercard-redcard",
+      "name": "Target Circle™ Mastercard®",
+      "issuer": "TD Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "td-business-solutions-credit-card",
+      "name": "TD Business Solutions Credit Card",
+      "issuer": "TD Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "td-cash-credit-card",
+      "name": "TD Cash Credit Card",
+      "issuer": "TD Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "td-double-up-credit-card",
+      "name": "TD Double Up Credit Card",
+      "issuer": "TD Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "td-first-class-visa-signature",
+      "name": "TD First Class Visa Signature® Credit Card",
+      "issuer": "TD Bank",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "sofi-credit-card",
+      "name": "SoFi Credit Card",
+      "issuer": "The Bank of Missouri",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "radisson-rewards-premier-visa-signature",
+      "name": "Radisson Rewards™ Visa® Premier Card",
+      "issuer": "U.S. Bank",
+      "annual_fee": 75
+    },
+    {
+      "card_id": "radisson-rewards-visa-signature",
+      "name": "Radisson Rewards™ Visa® Signature Card",
+      "issuer": "U.S. Bank",
+      "annual_fee": 75
+    },
+    {
+      "card_id": "us-bank-altitude-connect",
+      "name": "U.S. Bank Altitude® Connect Visa Signature® Card",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "us-bank-altitude-go-secured",
+      "name": "U.S. Bank Altitude® Go Secured Visa® Card",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "us-bank-altitude-go",
+      "name": "U.S. Bank Altitude® Go Visa Signature® Card",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "us-bank-altitude-reserve",
+      "name": "U.S. Bank Altitude® Reserve Visa Infinite® Card",
+      "issuer": "U.S. Bank",
+      "annual_fee": 400
+    },
+    {
+      "card_id": "us-bank-business-altitude-connect",
+      "name": "U.S. Bank Business Altitude® Connect Visa Signature® Card",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "us-bank-business-leverage-visa",
+      "name": "U.S. Bank Business Leverage® Visa Signature® Card",
+      "issuer": "U.S. Bank",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "us-bank-business-triple-cash",
+      "name": "U.S. Bank Business Triple Cash Rewards World Elite Mastercard®",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "us-bank-cash-plus",
+      "name": "U.S. Bank Cash+® Visa Signature® Card",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "us-bank-secured-visa",
+      "name": "U.S. Bank Secured Visa® Card",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "us-bank-smartly-visa",
+      "name": "U.S. Bank Smartly™ Visa Signature® Card",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "us-bank-visa-platinum",
+      "name": "U.S. Bank Visa® Platinum Card",
+      "issuer": "U.S. Bank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "upgrade-bitcoin-rewards-visa",
+      "name": "Upgrade Bitcoin Rewards Visa®",
+      "issuer": "Upgrade",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "upgrade-triple-cash-rewards-visa",
+      "name": "Upgrade Triple Cash Rewards Visa®",
+      "issuer": "Upgrade",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "petal-1-visa",
+      "name": "Petal® 1 \"No Annual Fee\" Visa® Credit Card",
+      "issuer": "WebBank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "petal-2-visa",
+      "name": "Petal® 2 \"Cash Back, No Fees\" Visa® Credit Card",
+      "issuer": "WebBank",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "choice-privileges-select-visa",
+      "name": "Choice Privileges® Select Visa® Card",
+      "issuer": "Wells Fargo",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "choice-privileges-visa",
+      "name": "Choice Privileges® Visa Signature® Card",
+      "issuer": "Wells Fargo",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "wells-fargo-active-cash",
+      "name": "Wells Fargo Active Cash® Card",
+      "issuer": "Wells Fargo",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "wells-fargo-attune",
+      "name": "Wells Fargo Attune℠ World Elite Mastercard®",
+      "issuer": "Wells Fargo",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "wells-fargo-autograph-journey",
+      "name": "Wells Fargo Autograph Journey℠ Card",
+      "issuer": "Wells Fargo",
+      "annual_fee": 95
+    },
+    {
+      "card_id": "wells-fargo-autograph",
+      "name": "Wells Fargo Autograph℠ Card",
+      "issuer": "Wells Fargo",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "wells-fargo-reflect",
+      "name": "Wells Fargo Reflect® Card",
+      "issuer": "Wells Fargo",
+      "annual_fee": 0
+    },
+    {
+      "card_id": "wells-fargo-signify-business-cash",
+      "name": "Wells Fargo Signify Business Cash℠ Card",
+      "issuer": "Wells Fargo",
+      "annual_fee": 0
+    }
+  ],
+  "meta": {
+    "total": 248,
+    "generated": "2026-04-16T03:56:10.066Z",
+    "note": "Comprehensive US credit card list. Merge with existing consolidated-cards-list.json to deduplicate. Annual fees updated to April 2026 where confirmed via web search."
+  }
+}
