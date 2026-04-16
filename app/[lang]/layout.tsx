@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
@@ -74,7 +75,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <MyCardsWidget lang={lang} />
           </div>
           <div className="pointer-events-auto">
-            <RecommendWidget lang={lang} />
+            <Suspense fallback={null}><RecommendWidget lang={lang} /></Suspense>
           </div>
         </div>
       </body>

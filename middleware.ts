@@ -38,6 +38,8 @@ export function middleware(req: NextRequest) {
 
   // Redirect to locale-prefixed URL
   const newUrl = new URL(`/${locale}${pathname}`, req.url);
+  // Preserve query string (e.g. ?ask=...)
+  newUrl.search = req.nextUrl.search;
   return NextResponse.redirect(newUrl);
 }
 
