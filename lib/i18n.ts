@@ -44,8 +44,8 @@ export interface CardLabels {
 }
 
 const zh: Record<string, string> = {
-  "site.title": "OpenCard AI 信用卡百科",
-  "site.subtitle": "整理全美國熱門信用卡的回饋、優惠與詳細比較，幫你找到最適合的卡片。",
+  "site.title": "AI 幫你選對卡",
+  "site.subtitle": "利用 AI 幫你挑選最適合的信用卡，收錄個人福利總覽。",
   "card.name": "卡片名稱",
   "card.issuer": "發卡機構",
   "card.annualFee": "年費",
@@ -63,6 +63,7 @@ const zh: Record<string, string> = {
   "nav.allCards": "信用卡",
   "nav.about": "關於",
   "home.aiFinder": "AI 智慧選卡 →",
+  "home.jumpToCards": "前往卡片總覽 ↓",
   "detail.backToList": "返回列表",
   "detail.quickInfo": "快速資訊",
   "detail.creditRequired": "信用要求",
@@ -135,8 +136,8 @@ const zh: Record<string, string> = {
 };
 
 const en: Record<string, string> = {
-  "site.title": "OpenCard AI — Credit Card Wiki",
-  "site.subtitle": "Compare the best US credit cards — rewards, benefits, and detailed reviews to find your perfect card.",
+  "site.title": "AI-Powered Credit Card Selection",
+  "site.subtitle": "Use AI to find the perfect card for you. Browse rewards, benefits, and manage your card portfolio.",
   "card.name": "Card Name",
   "card.issuer": "Issuer",
   "card.annualFee": "Annual Fee",
@@ -154,6 +155,7 @@ const en: Record<string, string> = {
   "nav.allCards": "Cards",
   "nav.about": "About",
   "home.aiFinder": "AI Card Finder →",
+  "home.jumpToCards": "Jump to Cards ↓",
   "detail.backToList": "← Back to List",
   "detail.quickInfo": "Quick Info",
   "detail.creditRequired": "Credit Required",
@@ -226,8 +228,8 @@ const en: Record<string, string> = {
 };
 
 const es: Record<string, string> = {
-  "site.title": "OpenCard AI — Wiki de Tarjetas de Crédito",
-  "site.subtitle": "Compara las mejores tarjetas de crédito de EE.UU. — recompensas, beneficios y reseñas detalladas para encontrar tu tarjeta perfecta.",
+  "site.title": "Selección de Tarjetas con IA",
+  "site.subtitle": "Usa IA para encontrar tu tarjeta perfecta. Explora recompensas, beneficios y gestiona tu portafolio.",
   "card.name": "Nombre de Tarjeta",
   "card.issuer": "Emisor",
   "card.annualFee": "Cuota Anual",
@@ -245,6 +247,7 @@ const es: Record<string, string> = {
   "nav.allCards": "Tarjetas",
   "nav.about": "Acerca de",
   "home.aiFinder": "Buscador AI →",
+  "home.jumpToCards": "Ir a Tarjetas ↓",
   "detail.backToList": "← Volver a la Lista",
   "detail.quickInfo": "Información Rápida",
   "detail.creditRequired": "Crédito Requerido",
