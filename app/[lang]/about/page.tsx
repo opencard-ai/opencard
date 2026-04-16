@@ -44,7 +44,7 @@ export default async function AboutPage({ params }: Props) {
   const c = content[locale] || content.en;
 
   return (
-    <div id="about" className="max-w-4xl mx-auto px-4 py-12 scroll-mt-24">
+    <div id="about" className="max-w-4xl mx-auto px-4 py-12" style={{ scrollMarginTop: "120px" }}>
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-slate-900 mb-4">{c.title}</h1>
         <p className="text-xl text-blue-600 font-medium">{c.subtitle}</p>
