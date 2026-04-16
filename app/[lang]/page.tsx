@@ -71,7 +71,7 @@ export default async function HomePage({ params }: Props) {
       </div>
 
       {/* Card Grid Header */}
-      <section id="cards-section" className="mb-4">
+      <section id="cards-section" className="mb-4" style={{ scrollMarginTop: "73px" }}>
       </section>
 
       <Suspense
@@ -84,7 +84,7 @@ export default async function HomePage({ params }: Props) {
         <CardGrid cards={cards} issuers={issuers} tags={tags} locale={locale} />
       </Suspense>
 
-      <section id="about" className="mt-12 bg-white rounded-xl border border-slate-200 p-6">
+      <section id="about" className="mt-12 bg-white rounded-xl border border-slate-200 p-6" style={{ scrollMarginTop: "73px" }}>
         <h2 className="text-lg font-bold text-slate-900 mb-3">
           {t("about.title", locale)}
         </h2>

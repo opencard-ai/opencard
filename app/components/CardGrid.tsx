@@ -188,7 +188,7 @@ function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[
         </select>
         {(selectedIssuer || selectedTag || selectedAf || search) && (
           <button
-            onClick={() => router.push(`${pathname}#cards`)}
+            onClick={() => router.push(`${pathname}#cards-section`, { scroll: false })}
             className="px-3 py-2.5 text-sm text-red-600 hover:bg-red-50 rounded-lg transition-colors"
           >
             {l("clear", locale)}
