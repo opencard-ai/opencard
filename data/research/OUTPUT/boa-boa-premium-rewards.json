@@ -1,0 +1,43 @@
+{
+  "card_id": "boa-premium-rewards",
+  "name": "Bank of America® Premium Rewards® Credit Card",
+  "issuer": "Bank of America",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 60000,
+    "description": "Earn 60,000 online bonus points (a $600 value) after making at least $3,000 in purchases in the first 90 days.",
+    "free_nights": null,
+    "point_program": "Bank of America Travel Points"
+  },
+  "earning_rates": [
+    {"category": "Travel", "rate": 2, "notes": "2x points on travel purchases (directly-booked travel, airlines, hotels, etc.)"},
+    {"category": "Dining", "rate": 2, "notes": "2x points on dining purchases"},
+    {"category": "Other", "rate": 1.5, "notes": "1.5x points on all other purchases"}
+  ],
+  "annual_credits": [
+    {"name": "Travel Statement Credit", "amount": 200, "frequency": "Annual", "description": "Up to $200 in travel statement credits annually"}
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "TSA PreCheck/Global Entry Credit", "description": "Up to $100 credit for TSA PreCheck or Global Entry"},
+      {"name": "No Foreign Transaction Fees", "description": "No foreign transaction fees"}
+    ]
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["bank-of-america", "travel", "premium", "points", "lounge-access"],
+  "sources": [
+    {"url": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/", "notes": "Official BOA Page"},
+    {"url": "https://www.nerdwallet.com/credit-cards/reviews/bank-of-america-premium-rewards-credit-card/", "notes": "NerdWallet review"}
+  ],
+  "last_updated": "2026-04-16T13:00:00Z"
+}

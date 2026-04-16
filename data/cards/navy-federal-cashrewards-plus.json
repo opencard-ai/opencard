@@ -8,16 +8,30 @@
   "credit_required": "Good to Excellent",
   "welcome_offer": null,
   "earning_rates": [
-    { "category": "Gas Stations", "rate": 3, "notes": "3% unlimited cash back at gas stations" },
-    { "category": "All Other Purchases", "rate": 1.5, "notes": "1.5% unlimited cash back on everything else" }
+    {
+      "category": "Gas Stations",
+      "rate": 3,
+      "notes": "3% unlimited cash back at gas stations"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1.5,
+      "notes": "1.5% unlimited cash back on everything else"
+    }
   ],
   "annual_credits": [],
   "travel_benefits": {
     "other_benefits": [
-      { "name": "Balance transfer intro APR", "description": "0% intro APR on balance transfers for 12 months" }
+      {
+        "name": "Balance transfer intro APR",
+        "description": "0% intro APR on balance transfers for 12 months"
+      }
     ]
   },
-  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
   "insurance": {
     "rental_insurance": "Secondary",
     "trip_delay": false,
@@ -25,11 +39,18 @@
     "purchase_protection": true,
     "extended_warranty": true
   },
-  "tags": ["navy-federal", "cash-back", "gas"],
-  "sources": [
-    { "url": "https://www.navyfederal.org/loans-cards/credit-cards/cash-rewards.html", "notes": "Official Navy Federal page" }
+  "tags": [
+    "navy-federal",
+    "cash-back",
+    "gas"
   ],
-  "last_updated": "2026-04-16T00:00:00Z",
+  "sources": [
+    {
+      "url": "https://www.navyfederal.org/loans-cards/credit-cards/cash-rewards.html",
+      "notes": "Official Navy Federal page"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.313Z",
   "status": "active",
   "notes": "Higher gas earning (3%) than standard cashRewards. Navy Federal members only. $0 annual fee."
 }

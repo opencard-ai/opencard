@@ -1,0 +1,35 @@
+{
+  "card_id": "credit-one-platinum-visa-cb",
+  "name": "Credit One Bank Platinum Visa® (Cash Back Version)",
+  "issuer": "Credit One Bank",
+  "network": "Visa",
+  "annual_fee": 75,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Good",
+  "welcome_offer": null,
+  "earning_rates": [
+    { "category": "Gas Stations, Groceries, and Dining", "rate": 4, "notes": "4% cash back on gas, groceries, and dining (on first $10K/year then 1%)" },
+    { "category": "All Other Purchases", "rate": 1, "notes": "1% cash back on all other purchases" }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      { "name": "Credit rebuilder features", "description": "Reports to all 3 bureaus monthly" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": false
+  },
+  "tags": ["credit-one", "cash-back", "gas", "groceries"],
+  "sources": [
+    { "url": "https://www.creditonebank.com/credit-cards/platinum-visa", "notes": "Official Credit One page" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "$75 annual fee. 4% on gas, groceries, dining. $95 version adds 5% on utilities. Both are for credit building and report to all 3 bureaus."
+}

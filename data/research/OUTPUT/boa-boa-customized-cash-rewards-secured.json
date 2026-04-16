@@ -1,0 +1,42 @@
+{
+  "card_id": "boa-customized-cash-rewards-secured",
+  "name": "Bank of America® Customized Cash Rewards Secured Credit Card",
+  "issuer": "Bank of America",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair/Poor",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 200,
+    "description": "Earn a $200 cash rewards bonus after making at least $1,000 in purchases in the first 90 days of account opening.",
+    "free_nights": null,
+    "point_program": "Cash Back"
+  },
+  "earning_rates": [
+    {"category": "Choice Category (6%)", "rate": 6, "notes": "6% (3% + 3% first-year bonus) in your choice of category for the first year. Choose from: gas, online shopping, dining, travel, drug stores, or home improvement/furnishings. On up to $2,500/quarter, then 1%"},
+    {"category": "Grocery & Wholesale (3%)", "rate": 3, "notes": "On up to $2,500 combined with choice category per quarter. Automatic 2% at grocery stores and wholesale clubs."},
+    {"category": "Other", "rate": 1, "notes": null}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "Credit Building", "description": "Help strengthen or build your credit history"},
+      {"name": "Fraud Protection", "description": "Zero Liability protection for unauthorized transactions"},
+      {"name": "FICO Score", "description": "Free monthly FICO score access"}
+    ]
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["bank-of-america", "secured", "cash-back", "no-annual-fee", "credit-building", "choice-category"],
+  "sources": [
+    {"url": "https://www.bankofamerica.com/credit-cards/products/cash-back-secured-credit-card/", "notes": "Official BOA Page"},
+    {"url": "https://www.bankrate.com/credit-cards/reviews/bank-of-america-customized-cash-rewards-secured/", "notes": "Bankrate review"}
+  ],
+  "last_updated": "2026-04-16T13:00:00Z"
+}

@@ -1,98 +1,38 @@
 {
   "card_id": "navy-federal-more-rewards-amex",
-  "name": "Navy Federal More Rewards American Express",
+  "name": "Navy Federal More Rewards American Express® Card",
   "issuer": "Navy Federal Credit Union",
-  "network": "American Express",
+  "network": "Amex",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
-  "credit_required": "Average to Excellent",
-  "welcome_offer": {
-    "spending_requirement": 2000,
-    "time_period_months": 3,
-    "bonus_points": 20000,
-    "estimated_value": 200,
-    "point_program": "Navy Federal More Rewards",
-    "description": "20,000 bonus points ($200 value) when you spend $2,000 within 90 days. Expires Jun 30, 2026."
-  },
+  "credit_required": "Good to Excellent",
+  "welcome_offer": null,
   "earning_rates": [
-    {
-      "category": "Restaurants and Food Delivery",
-      "rate": 3
-    },
-    {
-      "category": "Supermarkets",
-      "rate": 3
-    },
-    {
-      "category": "Gas",
-      "rate": 3
-    },
-    {
-      "category": "Transit",
-      "rate": 3,
-      "notes": "Including ride-sharing, parking, tolls, ferries"
-    },
-    {
-      "category": "All Other Purchases",
-      "rate": 1
-    }
+    { "category": "Dining", "rate": 4, "notes": "4x points at restaurants" },
+    { "category": "Gas Stations", "rate": 3, "notes": "3x points at gas stations" },
+    { "category": "Groceries", "rate": 3, "notes": "3x points at grocery stores" },
+    { "category": "Travel (airfare, hotels)", "rate": 2, "notes": "2x points on travel (airfare, hotels)" },
+    { "category": "All Other Purchases", "rate": 1, "notes": "1x point on all other purchases" }
   ],
   "annual_credits": [],
   "travel_benefits": {
-    "lounge_access": [],
-    "hotel_status": [],
     "other_benefits": [
-      {
-        "name": "Entertainment Access",
-        "description": "Early access to presale tickets for shows, sports, and concerts via Amex Entertainment."
-      },
-      {
-        "name": "Up to 30% off Hotel Bookings",
-        "description": "Through Booking.com on the Amex Benefits platform."
-      },
-      {
-        "name": "Up to 25% off Car Rentals",
-        "description": "With major car rental companies worldwide."
-      },
-      {
-        "name": "Car Rental Loss & Damage Insurance",
-        "description": "Coverage against damage to or loss of a rental automobile in the US or Canada."
-      },
-      {
-        "name": "Roadside Assistance",
-        "description": "Including towing, transport, vehicle replacement, and continuation of journey."
-      },
-      {
-        "name": "Collision Damage Waiver",
-        "description": "Secondary CDW coverage when renting a car."
-      }
+      { "name": "American Express benefits", "description": "Access to Amex-specific perks and protections" }
     ]
   },
-  "fhr_thc": {
-    "fhr_eligible": false,
-    "thc_eligible": false
-  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
   "insurance": {
-    "trip_cancellation": false,
-    "trip_delay": false,
     "rental_insurance": "Secondary",
-    "purchase_protection": false,
-    "extended_warranty": false
+    "trip_delay": true,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
   },
-  "tags": ["navy-federal", "american-express", "rewards", "dining", "groceries", "gas", "no-annual-fee"],
+  "tags": ["navy-federal", "rewards", "dining", "american-express"],
   "sources": [
-    {
-      "url": "https://www.navyfederal.org/loans-cards/credit-cards/more-rewards.html",
-      "notes": "Official product page"
-    },
-    {
-      "url": "https://www.navyfederal.org/loans-cards/credit-cards/offers/more-rewards.html",
-      "notes": "Current welcome offer"
-    },
-    {
-      "url": "https://upgradedpoints.com/credit-cards/reviews/navy-federal-more-rewards/",
-      "notes": "UpgradedPoints review Feb 2026"
-    }
+    { "url": "https://www.navyfederal.org/loans-cards/credit-cards/more-rewards.html", "notes": "Official Navy Federal page" }
   ],
-  "last_updated": "2026-04-16"
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Highest earning rate for dining (4x) among Navy Federal cards. Amex network. Exclusive to Navy Federal members."
 }

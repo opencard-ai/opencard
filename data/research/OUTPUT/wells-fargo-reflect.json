@@ -1,0 +1,49 @@
+{
+  "card_id": "wells-fargo-reflect",
+  "name": "Wells Fargo Reflect",
+  "issuer": "Wells Fargo",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 3,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "description": "No rewards — focused on 0% intro APR promotion."
+  },
+  "earning_rates": [
+    {
+      "category": "No Rewards — Balance Transfer / 0% APR Card",
+      "rate": 0,
+      "notes": "This is a 0% intro APR card, not a rewards card."
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": [],
+    "hotel_status": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": false,
+    "trip_delay": false,
+    "rental_insurance": "None",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "notes": "0% intro APR for 21 months from account opening on purchases and qualifying balance transfers. Balance transfer fee: 5% (minimum $5). After intro period: 17.49%, 23.99%, or 28.24% variable APR. Foreign transaction fee: 3%. Card is focused on debt consolidation and interest-free financing.",
+  "tags": ["wells-fargo", "visa", "balance-transfer", "0-apr", "no-annual-fee"],
+  "sources": [
+    {
+      "url": "https://creditcards.wellsfargo.com/reflect-visa-credit-card/",
+      "notes": "Official product page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/wells-fargo-reflect-card",
+      "notes": "NerdWallet review"
+    }
+  ],
+  "last_updated": "2026-04-16"
+}

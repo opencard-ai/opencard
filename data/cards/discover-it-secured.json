@@ -1,0 +1,76 @@
+{
+  "card_id": "discover-it-secured",
+  "name": "Discover it® Secured Credit Card",
+  "issuer": "Discover",
+  "network": "Discover",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Poor",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 12,
+    "bonus_points": 0,
+    "estimated_value": 0,
+    "point_program": "Discover Cashback Match",
+    "description": "Discover matches ALL cash back earned at the end of first year (unlimited dollar-for-dollar match)"
+  },
+  "earning_rates": [
+    {
+      "category": "Rotating Categories (activate quarterly)",
+      "rate": 5,
+      "notes": "5% cash back on rotating categories (up to $1,500/quarter then 1%)"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1% unlimited cash back on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Free FICO score",
+        "description": "Free access to your FICO credit score"
+      },
+      {
+        "name": "No credit score required to apply",
+        "description": "Can apply with no credit history"
+      },
+      {
+        "name": "Fraud protection",
+        "description": "$0 fraud liability for unauthorized charges"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": false
+  },
+  "tags": [
+    "discover",
+    "secured",
+    "cash-back",
+    "building-credit"
+  ],
+  "sources": [
+    {
+      "url": "https://www.discover.com/credit-cards/secured-credit-card/",
+      "notes": "Official Discover page"
+    },
+    {
+      "url": "https://money.usnews.com/credit-cards/discover/discover-it-secured-credit-card",
+      "notes": "U.S. News review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.308Z",
+  "status": "active",
+  "notes": "Requires refundable security deposit ($200-$2,500). Deposit becomes credit limit. After 7 months, Discover may transition to unsecured. Rotating 5% categories include Amazon, Gas, Restaurants, etc. Cashback Match makes first year effectively 10%/2%."
+}

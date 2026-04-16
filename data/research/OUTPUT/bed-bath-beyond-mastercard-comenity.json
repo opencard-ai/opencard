@@ -1,0 +1,35 @@
+{
+  "card_id": "bed-bath-beyond-mastercard-comenity",
+  "name": "Bed Bath & Beyond Mastercard®",
+  "issuer": "Bread Financial / Comenity Bank",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Good",
+  "welcome_offer": null,
+  "earning_rates": [
+    { "category": "Bed Bath & Beyond Purchases", "rate": 5, "notes": "5% cash back on Bed Bath & Beyond purchases" },
+    { "category": "All Other Purchases", "rate": 1, "notes": "1% cash back on all other purchases" }
+  ],
+  "annual_credits": [
+    { "name": "Birthday discount", "amount": 0, "frequency": "Annual", "description": "20% off coupon for birthday purchase" }
+  ],
+  "travel_benefits": {
+    "other_benefits": []
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["bread-financial", "bed-bath-beyond", "retail", "mastercard"],
+  "sources": [
+    { "url": "https://www.bedbathandbeyond.com/", "notes": "Bed Bath & Beyond" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Bed Bath & Beyond went through bankruptcy in 2023. Card may still be serviced by Bread Financial/Comenity for existing cardholders. Verify availability."
+}

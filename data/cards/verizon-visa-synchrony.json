@@ -1,0 +1,94 @@
+{
+  "card_id": "verizon-visa-synchrony",
+  "name": "Verizon Visa® Card",
+  "issuer": "Synchrony Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": 500,
+    "estimated_value": 500,
+    "point_program": "Verizon Dollars",
+    "description": "Up to $500 Verizon Dollars for new cardholders (varies by Verizon plan)"
+  },
+  "earning_rates": [
+    {
+      "category": "Gas Stations",
+      "rate": 4,
+      "notes": "4% back at gas stations (Verizon Dollars)"
+    },
+    {
+      "category": "Grocery Stores",
+      "rate": 4,
+      "notes": "4% back at grocery stores (Verizon Dollars)"
+    },
+    {
+      "category": "Dining (restaurants, takeout, delivery)",
+      "rate": 3,
+      "notes": "3% back on dining (Verizon Dollars)"
+    },
+    {
+      "category": "Verizon Purchases (bill payments excluded)",
+      "rate": 2,
+      "notes": "2% back on Verizon purchases, excluding bill payment (Verizon Dollars)"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1% back on all other purchases (Verizon Dollars)"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "TravelPass days",
+      "amount": 0,
+      "frequency": "Annual",
+      "description": "2 free TravelPass days per calendar year ($24 value for international calling)"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Visa Luxury Hotel Collection",
+        "description": "Access to Visa Luxury Hotel Collection properties"
+      },
+      {
+        "name": "Verizon Up rewards",
+        "description": "Additional Verizon rewards through Verizon Up program"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "synchrony",
+    "verizon",
+    "rewards",
+    "wireless"
+  ],
+  "sources": [
+    {
+      "url": "https://www.verizon.com/financial-services/verizon-visa-card/",
+      "notes": "Official Verizon page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/verizon-credit-card",
+      "notes": "NerdWallet review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.327Z",
+  "status": "active",
+  "notes": "Rewards are Verizon Dollars, redeemable for Verizon bills, devices, and accessories. Strong 4% on gas and groceries. Requires Verizon service."
+}

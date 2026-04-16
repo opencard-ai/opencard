@@ -1,0 +1,45 @@
+{
+  "card_id": "td-cash-credit-card",
+  "name": "TD Cash Credit Card",
+  "issuer": "TD Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": 150,
+    "estimated_value": 150,
+    "point_program": "TD Cash",
+    "description": "$150 cash back after spending $500 in first 3 months"
+  },
+  "earning_rates": [
+    { "category": "Gas Stations", "rate": 3, "notes": "3% cash back at gas stations" },
+    { "category": "Groceries", "rate": 2, "notes": "2% cash back at grocery stores" },
+    { "category": "Dining", "rate": 2, "notes": "2% cash back at dining (restaurants)" },
+    { "category": "All Other Purchases", "rate": 1, "notes": "1% unlimited cash back on all other purchases" }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      { "name": "Cell phone protection", "description": "Cell phone protection up to $600 for stolen/damaged phones" },
+      { "name": "0% intro APR", "description": "0% intro APR for 15 billing cycles on balance transfers" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["td-bank", "cash-back", "gas", "groceries"],
+  "sources": [
+    { "url": "https://www.td.com/us/en/personal-banking/credit-cards/cash-card", "notes": "Official TD Bank page" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Strong 3% at gas, 2% on groceries/dining. No annual fee. TD Bank relationship recommended."
+}

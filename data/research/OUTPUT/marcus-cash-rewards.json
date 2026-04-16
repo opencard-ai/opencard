@@ -1,0 +1,42 @@
+{
+  "card_id": "marcus-cash-rewards",
+  "name": "Marcus by Goldman Sachs Credit Card",
+  "issuer": "Goldman Sachs",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 6,
+    "bonus_points": 0,
+    "estimated_value": 0,
+    "point_program": "Marcus Rewards",
+    "description": "No traditional welcome offer"
+  },
+  "earning_rates": [
+    { "category": "All Purchases", "rate": 1.5, "notes": "1.5% unlimited cash back on every purchase" }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      { "name": "No fees", "description": "No annual fee, no foreign transaction fees, no late fees, no returned payment fees" },
+      { "name": "High credit limit", "description": "Potentially high credit limits based on income and creditworthiness" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["goldman-sachs", "cash-back", "flat-rate"],
+  "sources": [
+    { "url": "https://www.marcus.com/us/en/personal-loans/credit-card/", "notes": "Official Marcus page" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Simple 1.5% flat-rate card from Goldman Sachs/Marcus. Fee-free structure. Linked to Marcus banking customers."
+}

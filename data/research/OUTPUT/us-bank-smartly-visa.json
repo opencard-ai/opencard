@@ -1,0 +1,36 @@
+{
+  "card_id": "us-bank-smartly-visa",
+  "name": "U.S. Bank Smartly™ Visa Signature® Card",
+  "issuer": "U.S. Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 3,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": null,
+  "earning_rates": [
+    { "category": "All Purchases", "rate": 2, "notes": "Unlimited 2% cash back on every purchase" }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      { "name": "Smart Rewards benefits", "description": "Enhanced rewards when paired with U.S. Bank Smart Rewards checking account" },
+      { "name": "Extended warranty", "description": "Extended warranty protection on purchases" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["u-s-bank", "cash-back", "flat-rate"],
+  "sources": [
+    { "url": "https://www.usbank.com/credit-cards/bank-smartly-visa-signature-credit-card.html", "notes": "Official U.S. Bank page" },
+    { "url": "https://www.cnbc.com/select/us-bank-smartly-visa-signature-card-review/", "notes": "CNBC review" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Simple 2% flat-rate cash back. No welcome bonus. Requires U.S. Bank Smart Rewards enrollment for best benefits. 3% foreign transaction fee."
+}

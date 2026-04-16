@@ -1,62 +1,37 @@
 {
   "card_id": "navy-federal-go-rewards",
-  "name": "Navy Federal Credit Union GO REWARDS",
+  "name": "Navy Federal GO REWARDS® Credit Card",
   "issuer": "Navy Federal Credit Union",
-  "network": "Visa/Mastercard",
+  "network": "Visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
-  "credit_required": "Average to Excellent",
-  "welcome_offer": {
-    "description": "No current welcome offer disclosed on official page. Check offers page for active promotions."
-  },
+  "credit_required": "Fair to Good",
+  "welcome_offer": null,
   "earning_rates": [
-    {
-      "category": "Restaurants",
-      "rate": 3,
-      "notes": "Including dine-in, take-out, catering, delivery"
-    },
-    {
-      "category": "Gas",
-      "rate": 2,
-      "notes": "Gas stations only; superstores/supermarkets may not qualify"
-    },
-    {
-      "category": "All Other Purchases",
-      "rate": 1
-    }
+    { "category": "Restaurants", "rate": 3, "notes": "3x points at restaurants" },
+    { "category": "Gas Stations", "rate": 2, "notes": "2x points at gas stations" },
+    { "category": "All Other Purchases", "rate": 1, "notes": "1x point on all other purchases" }
   ],
   "annual_credits": [],
   "travel_benefits": {
-    "lounge_access": [],
-    "hotel_status": [],
     "other_benefits": [
-      {
-        "name": "Collision Damage Waiver",
-        "description": "Secondary CDW coverage when renting a car for 15 days or less."
-      }
+      { "name": "No balance transfer fees", "description": "No balance transfer fees" },
+      { "name": "Cash advance fee waiver", "description": "No cash advance fees" }
     ]
   },
-  "fhr_thc": {
-    "fhr_eligible": false,
-    "thc_eligible": false
-  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
   "insurance": {
-    "trip_cancellation": false,
-    "trip_delay": false,
     "rental_insurance": "Secondary",
-    "purchase_protection": false,
-    "extended_warranty": false
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
   },
-  "tags": ["navy-federal", "rewards", "dining", "gas", "no-annual-fee"],
+  "tags": ["navy-federal", "rewards", "dining", "gas"],
   "sources": [
-    {
-      "url": "https://www.navyfederal.org/loans-cards/credit-cards/go-rewards.html",
-      "notes": "Official product page"
-    },
-    {
-      "url": "https://wallethub.com/d/navy-federal-credit-union-go-rewards-credit-card-1850c",
-      "notes": "WalletHub review"
-    }
+    { "url": "https://www.navyfederal.org/loans-cards/credit-cards/go-rewards.html", "notes": "Official Navy Federal page" }
   ],
-  "last_updated": "2026-04-16"
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Strong for dining (3x) and gas (2x). No annual fee, no foreign transaction fees. Exclusive to Navy Federal members."
 }

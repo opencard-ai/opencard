@@ -1,0 +1,46 @@
+{
+  "card_id": "wells-fargo-attune",
+  "name": "Wells Fargo Attune World Elite Mastercard®",
+  "issuer": "Wells Fargo",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 200,
+    "estimated_value": 200,
+    "point_program": "Wells Fargo Rewards",
+    "description": "$200 cash rewards after spending $1,000 in first 3 months"
+  },
+  "earning_rates": [
+    { "category": "Self-care (gyms, fitness studios, salons, spas)", "rate": 4, "notes": "4% cash rewards on self-care (gyms, fitness studios, salons, spas)" },
+    { "category": "Sports/Recreation/Entertainment", "rate": 4, "notes": "4% cash rewards on sports, recreation, and entertainment (theme parks, golf, sporting events)" },
+    { "category": "Pet Care", "rate": 4, "notes": "4% cash rewards on pet care (veterinarians, pet stores)" },
+    { "category": "All Other Purchases", "rate": 1, "notes": "1% unlimited cash rewards on all other purchases" }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      { "name": "Cell phone protection", "description": "Up to $600 reimbursement for stolen/damaged cell phones ($25 deductible)" },
+      { "name": "0% intro APR", "description": "0% intro APR on purchases for 12 months" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["wells-fargo", "cash-back", "lifestyle", "rewards"],
+  "sources": [
+    { "url": "https://creditcards.wellsfargo.com/attune-credit-card/", "notes": "Official Wells Fargo page" },
+    { "url": "https://www.nerdwallet.com/credit-cards/reviews/wells-fargo-attune", "notes": "NerdWallet review" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Unique 4% categories (self-care, sports/recreation, pet care) not commonly found on other cards. Strong for wellness and pet owners."
+}

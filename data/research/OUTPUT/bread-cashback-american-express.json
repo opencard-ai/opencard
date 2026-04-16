@@ -1,0 +1,38 @@
+{
+  "card_id": "bread-cashback-american-express",
+  "name": "Bread Rewards™ American Express® Credit Card",
+  "issuer": "Bread Financial",
+  "network": "Amex",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Good",
+  "welcome_offer": null,
+  "earning_rates": [
+    { "category": "Gas Stations", "rate": 3, "notes": "3x points on gas station purchases" },
+    { "category": "Groceries", "rate": 3, "notes": "3x points on grocery store purchases" },
+    { "category": "Dining", "rate": 3, "notes": "3x points on dining purchases" },
+    { "category": "Utility Bills", "rate": 3, "notes": "3x points on utility bill payments" },
+    { "category": "All Other Purchases", "rate": 1, "notes": "1x point on all other purchases" }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      { "name": "Bread financial tools", "description": "Access to Bread Financial's buy now pay later options" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": ["bread-financial", "american-express", "cash-back", "utility"],
+  "sources": [
+    { "url": "https://www.breadfinancial.com/en/bread-rewards-credit-card.html", "notes": "Official Bread Financial page" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Bread Financial's rewards Amex. No annual fee. 3x on gas, groceries, dining, and utilities. Bread Financial also issues store cards via Comenity."
+}

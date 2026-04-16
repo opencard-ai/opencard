@@ -1,0 +1,50 @@
+{
+  "card_id": "us-bank-altitude-reserve",
+  "name": "U.S. Bank Altitude® Reserve Visa Infinite® Card",
+  "issuer": "U.S. Bank",
+  "network": "Visa",
+  "annual_fee": 400,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 60000,
+    "estimated_value": 900,
+    "point_program": "U.S. Bank Rewards",
+    "description": "60,000 bonus points after spending $3,000 in first 3 months"
+  },
+  "earning_rates": [
+    { "category": "Travel (hotels, airfare, car rentals)", "rate": 3, "notes": "3x points on travel purchased directly from airlines, hotels, car rentals" },
+    { "category": "Mobile Wallet (Apple Pay, Google Pay, Samsung Pay)", "rate": 3, "notes": "3x points on mobile wallet purchases" },
+    { "category": "All Other Purchases", "rate": 1, "notes": "1x point per $1 on all other purchases" }
+  ],
+  "annual_credits": [
+    { "name": "Travel credit", "amount": 325, "frequency": "Annual", "description": "$325 annual credit for travel purchases (must be booked through US Bank Travel Center or direct with airline)" }
+  ],
+  "travel_benefits": {
+    "lounge_access": [
+      { "name": "Priority Pass Select", "type": "Lounge Access" }
+    ],
+    "other_benefits": [
+      { "name": "12 Wi-Fi passes", "description": "12 Boingo Wi-Fi passes annually for Gogo inflight Wi-Fi" },
+      { "name": "Cell phone protection", "description": "Up to $600 coverage for stolen/damaged cell phones" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "trip_cancellation": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["u-s-bank", "premium", "travel", "lounge-access"],
+  "sources": [
+    { "url": "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html", "notes": "Official U.S. Bank page" },
+    { "url": "https://www.nerdwallet.com/credit-cards/reviews/us-bank-altitude-reserve", "notes": "NerdWallet review" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Points transferable to airline/hotel partners. $325 annual travel credit essentially offsets much of annual fee. Strong 3x mobile wallet earning."
+}

@@ -1,0 +1,76 @@
+{
+  "card_id": "discover-it-student-chrome",
+  "name": "Discover it® Student Chrome",
+  "issuer": "Discover",
+  "network": "Discover",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Good (Student)",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 12,
+    "bonus_points": 0,
+    "estimated_value": 0,
+    "point_program": "Discover Cashback Match",
+    "description": "Discover matches ALL cash back earned at the end of first year (unlimited dollar-for-dollar match)"
+  },
+  "earning_rates": [
+    {
+      "category": "Gas Stations and Restaurants",
+      "rate": 2,
+      "notes": "2% cash back at gas stations and restaurants (up to $1,000/quarter then 1%)"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1% unlimited cash back on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Free FICO score",
+        "description": "Free access to your FICO credit score"
+      },
+      {
+        "name": "Good Grade Reward",
+        "description": "$20 statement credit each school year you maintain a 3.5 GPA or above"
+      },
+      {
+        "name": "0% intro APR",
+        "description": "0% intro APR for 6 months on purchases, then 16.49%-25.49% variable"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": false
+  },
+  "tags": [
+    "discover",
+    "student",
+    "gas",
+    "restaurants"
+  ],
+  "sources": [
+    {
+      "url": "https://www.discover.com/credit-cards/student-credit-card/chrome-card.html",
+      "notes": "Official Discover page"
+    },
+    {
+      "url": "https://wallethub.com/d/discover-it-chrome-for-students-credit-card-548c",
+      "notes": "WalletHub review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.309Z",
+  "status": "active",
+  "notes": "Student card with fixed 2% on gas and dining (not rotating). Cashback Match doubles first year earnings. No category activation required unlike Cash Back version."
+}

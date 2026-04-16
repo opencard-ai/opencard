@@ -37,12 +37,12 @@ ISSER: [issuer 名稱]
 | 2 | American Express | ~31 | ✅ 研究完成（31張已寫入 research/OUTPUT/） | Rosé |
 | 3 | Citi | ~22 | ✅ 研究完成（16張缺口卡已寫入 research/OUTPUT/） | Lisa |
 | 4 | Barclays | ~21 | ✅ 研究完成（18張缺口卡已寫入 research/OUTPUT/） | Jennie |
-| 5 | Bank of America | ~16 | ⬜ 待認領 | |
+| 5 | Bank of America | ~16 | ✅ 研究完成（14張缺口卡已寫入 research/OUTPUT/boa-*.json） | Jisoo |
 | 6 | Capital One | ~18 | ✅ 研究完成（11張缺口卡已寫入 research/capital-one/） | Jennie |
 | 7 | U.S. Bank | ~13 | ✅ 研究完成（3張缺口卡已寫入 research/OUTPUT/） | Lisa |
 | 8 | Synchrony | ~13 | ✅ 研究完成（11張缺口卡已寫入 research/OUTPUT/） | Lisa |
-| 9 | Wells Fargo | ~8 | ⬜ 待認領 | |
-| 10 | Navy Federal CU | ~7 | ⬜ 待認領 | |
+| 9 | Wells Fargo | ~8 | ✅ 研究完成（7張缺口卡已寫入 research/OUTPUT/） | Rosé |
+| 10 | Navy Federal CU | ~7 | ✅ 研究完成（7張缺口卡已寫入 research/OUTPUT/） | Rosé |
 | 11 | Discover | ~6 | ⬜ 待認領 | |
 | 12 | TD Bank | ~6 | ⬜ 待認領 | |
 | 13 | PenFed CU | ~4 | ⬜ 待認領 | |

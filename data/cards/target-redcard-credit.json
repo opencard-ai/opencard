@@ -1,0 +1,67 @@
+{
+  "card_id": "target-redcard-credit",
+  "name": "Target RedCard™ Credit Card",
+  "issuer": "TD Bank",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Good",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "estimated_value": 0,
+    "point_program": "Target Circle",
+    "description": "10% off first Target shopping trip with RedCard"
+  },
+  "earning_rates": [
+    {
+      "category": "Target Purchases",
+      "rate": 5,
+      "notes": "5% off every Target purchase (applied as statement credit)"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Free two-day shipping",
+      "amount": 0,
+      "frequency": "Ongoing",
+      "description": "Free two-day shipping on Target.com orders"
+    },
+    {
+      "name": "Extra 30 days",
+      "amount": 0,
+      "frequency": "Ongoing",
+      "description": "An extra 30 days to return items"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "td-bank",
+    "target",
+    "retail",
+    "store-card"
+  ],
+  "sources": [
+    {
+      "url": "https://www.target.com/redcard/about-redcard-credit",
+      "notes": "Official Target RedCard page"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.323Z",
+  "status": "active",
+  "notes": "5% off at Target on every purchase (best retail co-brand). Free shipping, extended returns. Issued by TD Bank. Note: separate from Target Debit Card."
+}

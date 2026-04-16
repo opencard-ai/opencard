@@ -1,0 +1,107 @@
+{
+  "card_id": "wells-fargo-autograph",
+  "name": "Wells Fargo Autograph Visa Signature® Card",
+  "issuer": "Wells Fargo",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 20000,
+    "estimated_value": 200,
+    "point_program": "Wells Fargo Rewards",
+    "description": "20,000 bonus points ($200 cash redemption) after spending $1,000 in first 3 months"
+  },
+  "earning_rates": [
+    {
+      "category": "Travel (airlines, hotels, car rentals, cruises)",
+      "rate": 3,
+      "notes": "3x points on travel (airlines, hotels, car rentals, cruises)"
+    },
+    {
+      "category": "Restaurants",
+      "rate": 3,
+      "notes": "3x points at restaurants (including takeout and delivery)"
+    },
+    {
+      "category": "Gas Stations",
+      "rate": 3,
+      "notes": "3x points at gas stations"
+    },
+    {
+      "category": "Transit (rideshare, parking, trains, buses)",
+      "rate": 3,
+      "notes": "3x points on transit (rideshare, parking, trains, buses)"
+    },
+    {
+      "category": "Popular Streaming Services",
+      "rate": 3,
+      "notes": "3x points on popular streaming services"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1x point on all other purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "$50 annual airline credit",
+      "amount": 50,
+      "frequency": "Annual",
+      "description": "$50 annual statement credit for airline purchases (requires $50 minimum airline purchase)"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Auto rental collision damage waiver",
+        "description": "Primary auto rental CDW"
+      },
+      {
+        "name": "Trip cancellation insurance",
+        "description": "Trip cancellation protection"
+      },
+      {
+        "name": "Lost baggage reimbursement",
+        "description": "Up to $3,000 per passenger for lost baggage"
+      },
+      {
+        "name": "Roadside Dispatch",
+        "description": "Emergency roadside assistance"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "trip_cancellation": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "wells-fargo",
+    "travel",
+    "rewards",
+    "dining"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.wellsfargo.com/autograph-visa-credit-card/",
+      "notes": "Official Wells Fargo page"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/wells-fargo-autograph-tpg-awards-2026/",
+      "notes": "TPG 2026 No Annual Fee Card of the Year"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.327Z",
+  "status": "active",
+  "notes": "Named TPG's 2026 No Annual Fee Card of the Year. 3x on travel, dining, gas, transit, streaming. $50 annual airline credit. Strong travel protections. Points worth ~1 cent each."
+}

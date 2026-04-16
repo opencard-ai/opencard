@@ -1,0 +1,87 @@
+{
+  "card_id": "spirit-airlines-mastercard",
+  "name": "Free Spirit® Travel More World Elite Mastercard®",
+  "issuer": "Bank of America",
+  "network": "Mastercard",
+  "annual_fee": 79,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 30000,
+    "description": "Earn 30,000 bonus points after spending $1,000 on purchases in the first 90 days.",
+    "free_nights": null,
+    "point_program": "Spirit Airlines Free Spirit Points"
+  },
+  "earning_rates": [
+    {
+      "category": "Spirit Airlines purchases",
+      "rate": 3,
+      "notes": "Earn 3 points per $1 spent on eligible Spirit purchases"
+    },
+    {
+      "category": "Dining",
+      "rate": 2,
+      "notes": "2x points at restaurants (worldwide)"
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": "1x points on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Companion Travel",
+        "description": "Complimentary companion flight voucher annually (on anniversary)"
+      },
+      {
+        "name": "Free Checked Bag",
+        "description": "First checked bag free for cardholder on each reservation"
+      },
+      {
+        "name": "Priority Boarding",
+        "description": "Early boarding on Spirit flights"
+      },
+      {
+        "name": "10% Mileage Boost",
+        "description": "10% points bonus on base miles earned on Spirit flights"
+      },
+      {
+        "name": "No Foreign Transaction Fees",
+        "description": "No foreign transaction fees on international purchases"
+      }
+    ]
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": false
+  },
+  "tags": [
+    "bank-of-america",
+    "spirit-airlines",
+    "airline",
+    "travel",
+    "co-branded"
+  ],
+  "sources": [
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/products/spirit-airlines-credit-card/",
+      "notes": "Official BOA Page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/free-spirit-travel-more/",
+      "notes": "NerdWallet review"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/reviews/free-spirit-travel-more-mastercard-review/",
+      "notes": "TPG review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.292Z"
+}

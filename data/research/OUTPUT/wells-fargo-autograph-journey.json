@@ -1,0 +1,84 @@
+{
+  "card_id": "wells-fargo-autograph-journey",
+  "name": "Wells Fargo Autograph Journey",
+  "issuer": "Wells Fargo",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "bonus_points": 60000,
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "estimated_value": 600,
+    "point_program": "Wells Fargo Rewards",
+    "description": "60,000 bonus points when you spend $3,000 in purchases in the first 3 months."
+  },
+  "earning_rates": [
+    {
+      "category": "Hotels",
+      "rate": 5,
+      "notes": "Unlimited 5x points on hotels"
+    },
+    {
+      "category": "Airlines",
+      "rate": 4,
+      "notes": "Unlimited 4x points on airlines"
+    },
+    {
+      "category": "Dining",
+      "rate": 3,
+      "notes": "Unlimited 3x points on restaurants"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 3,
+      "notes": "Unlimited 3x points on other purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Airline Incidentals",
+      "amount": 50,
+      "frequency": "Annual",
+      "description": "$50 annual statement credit after spending at least $50 each year on airline purchases."
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": [],
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Auto Rental Collision Damage Waiver",
+        "description": "Secondary coverage for rental vehicle damage or theft."
+      },
+      {
+        "name": "Travel and Lifestyle Services",
+        "description": "Concierge and lifestyle assistance for travel issues."
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": false,
+    "trip_delay": false,
+    "rental_insurance": "Secondary",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": ["wells-fargo", "visa", "travel", "rewards", "premium"],
+  "sources": [
+    {
+      "url": "https://creditcards.wellsfargo.com/autograph-journey-visa-credit-card/",
+      "notes": "Official product page"
+    },
+    {
+      "url": "https://money.usnews.com/credit-cards/wells-fargo/wells-fargo-autograph-journey-card",
+      "notes": "U.S. News review"
+    }
+  ],
+  "last_updated": "2026-04-16"
+}

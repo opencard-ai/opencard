@@ -1,0 +1,39 @@
+{
+  "card_id": "credit-one-platinum-visa",
+  "name": "Credit One Bank Platinum Visa®",
+  "issuer": "Credit One Bank",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Good",
+  "welcome_offer": null,
+  "earning_rates": [
+    { "category": "Gas Stations", "rate": 5, "notes": "5% cash back at gas stations (on first $10K/year then 1%)" },
+    { "category": "Groceries", "rate": 5, "notes": "5% cash back at grocery stores (on first $10K/year then 1%)" },
+    { "category": "Internet, Cable, Phone Services", "rate": 5, "notes": "5% cash back on utilities (on first $10K/year then 1%)" },
+    { "category": "All Other Purchases", "rate": 1, "notes": "1% cash back on all other purchases" }
+  ],
+  "annual_credits": [
+    { "name": "Monthly fee offset", "amount": 0, "frequency": "Annual", "description": "Annual fee partially offset by rewards in categories" }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      { "name": "Credit rebuilder features", "description": "Reports to all 3 bureaus monthly" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": false
+  },
+  "tags": ["credit-one", "cash-back", "gas", "utilities"],
+  "sources": [
+    { "url": "https://www.creditonebank.com/credit-cards/platinum-visa", "notes": "Official Credit One page" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Targeted at credit building. $95 annual fee partially offset by 5% categories. Cap of $10K/year on 5% categories. Reports to all 3 bureaus."
+}
