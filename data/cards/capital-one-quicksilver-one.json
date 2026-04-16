@@ -1,0 +1,52 @@
+{
+  "card_id": "capital-one-quicksilver-one",
+  "name": "Capital One QuicksilverOne Cash Rewards Credit Card",
+  "issuer": "Capital One",
+  "network": "Visa",
+  "annual_fee": 39,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair",
+  "welcome_offer": null,
+  "earning_rates": [
+    {
+      "category": "All purchases",
+      "rate": 1.5,
+      "notes": "Unlimited 1.5% cash back on every purchase, every day"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      "No foreign transaction fees"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "sources": [
+    {
+      "url": "https://www.forbes.com/advisor/credit-cards/reviews/capital-one-quicksilverone-cash-rewards-credit-card/",
+      "notes": "Forbes: 1.5% cash back on all purchases for those with average credit"
+    },
+    {
+      "url": "https://www.creditkarma.com/credit-cards/insights/capital-one-quicksilverone-cash-rewards-credit-card",
+      "notes": "Credit Karma: accessible to fair credit, no sign-up bonus, high APR"
+    },
+    {
+      "url": "https://www.capitalone.com/credit-cards/quicksilverone/",
+      "notes": "Capital One official card page"
+    }
+  ],
+  "notes": "QuicksilverOne sits between the no-fee Quicksilver and secured options. Earns 1.5% on everything with a $39 annual fee — only worthwhile if you can't qualify for the no-fee Quicksilver. No welcome bonus. No protections. High APR. Capital One may upgrade QuicksilverOne holders to regular Quicksilver after demonstrating responsible use. Better options exist (SavorOne has no annual fee and higher dining/grocery rates).",
+  "confidence": "medium",
+  "last_updated": "2026-04-16T13:16:57.271Z",
+  "tags": []
+}

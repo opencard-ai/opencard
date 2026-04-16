@@ -1,30 +1,42 @@
 {
-  "card_id": "wells-fargo-active-cash",
-  "name": "Wells Fargo Active Cash® Card",
+  "card_id": "wellsfargo-active-cash",
+  "name": "Wells Fargo Active Cash",
   "issuer": "Wells Fargo",
-  "network": "Visa",
+  "network": "Visa/Mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 500,
-    "time_period_months": 3,
     "bonus_points": 200,
-    "description": "Earn a $200 Cash Rewards bonus when you spend $500 in purchases in the first 3 months from account opening.",
-    "free_nights": null,
-    "point_program": "Cash Back"
+    "description": "$200 Cash Rewards bonus after $500 in first 3 months",
+    "estimated_value": 200,
+    "spending_requirement": 500,
+    "time_period_months": 3
   },
   "earning_rates": [
-    {"category": "All Purchases", "rate": 2, "notes": "Unlimited 2% cash rewards on all purchases"},
-    {"category": "Other", "rate": 2, "notes": "Same flat rate on everything"}
+    {
+      "category": "All Purchases",
+      "rate": 2,
+      "notes": "unlimited"
+    }
   ],
   "annual_credits": [],
-  "travel_benefits": {"other_benefits": [
-    {"name": "0% Intro APR", "description": "0% intro APR for 12 months on purchases and qualifying balance transfers"},
-    {"name": "Cell Phone Protection", "description": "Up to $600 protection on cell phone theft/damage when paying bill with card"}
-  ]},
-  "insurance": {"rental_insurance": "Secondary", "trip_delay": false, "purchase_protection": true, "extended_warranty": true},
-  "tags": ["wells-fargo", "cash-back", "no-annual-fee", "flat-rate"],
-  "sources": [{"url": "https://creditcards.wellsfargo.com/active-cash-credit-card/", "notes": "Official Wells Fargo Page"}],
-  "last_updated": "2026-04-15T16:20:00Z"
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "travel"
+  ],
+  "sources": []
 }

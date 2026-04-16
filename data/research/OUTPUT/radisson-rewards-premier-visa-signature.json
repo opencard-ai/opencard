@@ -1,0 +1,39 @@
+{
+  "card_id": "radisson-rewards-premier-visa-signature",
+  "name": "Radisson Rewards Premier Visa Signature® Card",
+  "issuer": "U.S. Bank",
+  "network": "Visa",
+  "annual_fee": 75,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": null,
+  "earning_rates": [
+    { "category": "Radisson Family of Hotels", "rate": 10, "notes": "10 points per $1 at participating Radisson hotels" },
+    { "category": "All Other Purchases", "rate": 5, "notes": "5x points on all other purchases" }
+  ],
+  "annual_credits": [
+    { "name": "Free night certificate", "amount": 0, "frequency": "Annual", "description": "Free award night at any Radisson property after $10K annual spend (up to $30K = 3 nights)" },
+    { "name": "Gold status", "amount": 0, "frequency": "Ongoing", "description": "Automatic Radisson Gold status as cardholder" }
+  ],
+  "travel_benefits": {
+    "hotel_status": [
+      { "program": "Radisson Rewards", "tier": "Gold", "complimentary": true }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["u-s-bank", "radisson", "hotel", "rewards", "discontinued"],
+  "sources": [
+    { "url": "https://www.nerdwallet.com/credit-cards/reviews/radisson-rewards-premier", "notes": "NerdWallet review - card discontinued" },
+    { "url": "https://financebuzz.com/radisson-rewards-premier-visa-signature-card-review", "notes": "FinanceBuzz historical review" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "discontinued",
+  "notes": "Card discontinued in 2022. Cardholders were transitioned to U.S. Bank Altitude Go Visa Signature. No longer accepting new applications."
+}

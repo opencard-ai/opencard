@@ -1,0 +1,87 @@
+{
+  "card_id": "navy-federal-flagship-rewards",
+  "name": "Navy Federal Visa Signature Flagship Rewards",
+  "issuer": "Navy Federal Credit Union",
+  "network": "Visa Signature",
+  "annual_fee": 49,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 3500,
+    "time_period_months": 3,
+    "bonus_points": 35000,
+    "estimated_value": 350,
+    "point_program": "Navy Federal Flagship Rewards",
+    "description": "35,000 bonus points ($350 value) when you spend $3,500 within 90 days of account opening. Expires Jun 30, 2026."
+  },
+  "earning_rates": [
+    {
+      "category": "Travel",
+      "rate": 3,
+      "notes": "Including airlines, hotels, car rentals, cruise lines, campgrounds, RV parks, ride-sharing, parking, tolls, ferries, museums, amusement parks, golf courses"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 2
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Amazon Prime Annual Membership",
+      "amount": 139,
+      "frequency": "Annual",
+      "description": "Statement credit for Amazon Prime annual membership fee charged to the card. Limit one per year."
+    },
+    {
+      "name": "Global Entry / TSA PreCheck",
+      "amount": 120,
+      "frequency": "Every 4 years",
+      "description": "Up to $120 statement credit for Global Entry or TSA PreCheck application fees."
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": [],
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Worldwide Automatic Travel Accident Insurance",
+        "description": "Up to $250,000 coverage for bodily injury/loss on covered trips when common carrier fare is charged to the card."
+      },
+      {
+        "name": "Collision Damage Waiver",
+        "description": "Secondary CDW coverage when renting a car for 15 days or less."
+      },
+      {
+        "name": "Travel and Emergency Assistance",
+        "description": "Medical referral, lost luggage locator, prescription assistance available 24/7."
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": false,
+    "trip_delay": false,
+    "rental_insurance": "Secondary",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": ["navy-federal", "visa-signature", "travel", "rewards", "premium"],
+  "sources": [
+    {
+      "url": "https://www.navyfederal.org/loans-cards/credit-cards/flagship-visa-signature.html",
+      "notes": "Official product page"
+    },
+    {
+      "url": "https://www.navyfederal.org/loans-cards/credit-cards/offers/flagship-visa-signature.html",
+      "notes": "Current welcome offer"
+    },
+    {
+      "url": "https://www.forbes.com/advisor/credit-cards/reviews/navy-federal-visa-flagship-rewards/",
+      "notes": "Forbes Advisor review Jan 2026"
+    }
+  ],
+  "last_updated": "2026-04-16"
+}

@@ -1,0 +1,60 @@
+{
+  "card_id": "capital-one-spark-miles-select",
+  "name": "Capital One Spark Miles Select for Business",
+  "issuer": "Capital One",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 4500,
+    "time_period_months": 3,
+    "bonus_points": 50000,
+    "description": "Earn 50,000 bonus miles once you spend $4,500 on purchases within the first 3 months of opening an account",
+    "point_program": "Capital One Miles"
+  },
+  "earning_rates": [
+    {
+      "category": "All purchases",
+      "rate": 1.5,
+      "notes": "Earn 1.5X miles on every purchase, everywhere — no categories, no limits"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      "No foreign transaction fees",
+      "Miles can be transferred to 15+ Capital One travel partners",
+      "Employee cards available"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "sources": [
+    {
+      "url": "https://www.cardratings.com/credit-card/capital-one-spark-miles-select-for-business-review",
+      "notes": "CardRatings review: no brand loyalty required, flexible miles redemption"
+    },
+    {
+      "url": "https://www.capitalone.com/small-business/credit-cards/spark-miles/",
+      "notes": "Capital One official page: 50,000 mile bonus for $4,500 in 3 months"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/credit-cards-capital-one-spark-business-cards/",
+      "notes": "The Points Guy: Spark Miles Select is the no-fee entry to Capital One business miles ecosystem"
+    }
+  ],
+  "notes": "No annual fee business travel card. 1.5X miles on all purchases (same earning as Spark Cash Select but in miles). 50,000 mile welcome bonus ($500 value). Miles are transferable to 15+ airline/hotel partners including British Airways, Avianca, and Flying Blue. Ideal for businesses that want travel rewards without paying an annual fee. Compare to Spark Cash Select if you prefer cash back.",
+  "confidence": "high",
+  "last_updated": "2026-04-16T13:16:57.273Z",
+  "tags": []
+}

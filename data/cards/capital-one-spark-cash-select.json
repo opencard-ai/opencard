@@ -1,0 +1,59 @@
+{
+  "card_id": "capital-one-spark-cash-select",
+  "name": "Capital One Spark Cash Select for Excellent Credit",
+  "issuer": "Capital One",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 6000,
+    "time_period_months": 3,
+    "bonus_points": null,
+    "description": "Earn a $750 cash bonus once you spend $6,000 on purchases within the first 3 months of opening an account",
+    "point_program": "Capital One Spark Cash"
+  },
+  "earning_rates": [
+    {
+      "category": "All purchases",
+      "rate": 1.5,
+      "notes": "Unlimited 1.5% cash back on every purchase, every day"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      "No foreign transaction fees",
+      "Employee cards available"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "sources": [
+    {
+      "url": "https://www.businessinsider.com/personal-finance/credit-cards/capital-one-spark-cash-select-review",
+      "notes": "Business Insider: no annual fee, $750 sign-up bonus, decent flat-rate cash back for small businesses"
+    },
+    {
+      "url": "https://www.nerdwallet.com/business/credit-cards/reviews/capital-one-spark-cash-select",
+      "notes": "NerdWallet: 1.5% on all purchases, no bonus categories, no foreign transaction fees"
+    },
+    {
+      "url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-select/",
+      "notes": "Capital One official page"
+    }
+  ],
+  "notes": "No annual fee business card for excellent credit. 1.5% flat cash back with no spending categories — simple and predictable. $750 welcome bonus for $6,000 spend in 3 months. Good for business owners with strong credit who don't want an annual fee. Compare to Spark Miles Select (1.5X miles) for travel-oriented businesses. No protections. Better than personal Quicksilver for business due to employee cards and business tools.",
+  "confidence": "high",
+  "last_updated": "2026-04-16T13:16:57.272Z",
+  "tags": []
+}

@@ -1,0 +1,39 @@
+{
+  "card_id": "us-bank-altitude-go-secured",
+  "name": "U.S. Bank Altitude® Go Visa® Secured Card",
+  "issuer": "U.S. Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Good",
+  "welcome_offer": null,
+  "earning_rates": [
+    { "category": "Dining", "rate": 4, "notes": "4x points on dining, takeout and restaurant delivery" },
+    { "category": "Gas Stations", "rate": 2, "notes": "2x points on gas stations, EV charging" },
+    { "category": "Groceries", "rate": 2, "notes": "2x points on grocery stores" },
+    { "category": "Streaming", "rate": 2, "notes": "2x points on streaming services" },
+    { "category": "All Other Purchases", "rate": 1, "notes": "1x point per $1 on all other purchases" }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      { "name": "Cell phone protection", "description": "Up to $600 in coverage for stolen or damaged cell phones when paying monthly bill with card" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["u-s-bank", "secured", "rewards", "dining"],
+  "sources": [
+    { "url": "https://www.usbank.com/credit-cards/altitude-go-secured-visa-credit-card.html", "notes": "Official U.S. Bank page" },
+    { "url": "https://maxrewards.com/credit-cards/u-s-bank-altitude-go-secured", "notes": "MaxRewards review" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Secured card requiring $300-$5,000 deposit. Reports to all 3 credit bureaus. Good for credit building with rewards."
+}

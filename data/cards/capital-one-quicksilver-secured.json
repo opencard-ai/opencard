@@ -1,0 +1,54 @@
+{
+  "card_id": "capital-one-quicksilver-secured",
+  "name": "Capital One Quicksilver Secured Cash Rewards Credit Card",
+  "issuer": "Capital One",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Poor",
+  "welcome_offer": null,
+  "earning_rates": [
+    {
+      "category": "All purchases",
+      "rate": 1.5,
+      "notes": "Unlimited 1.5% cash back on every purchase, every day — rare for a secured card"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      "Card does not say 'secured' on it — looks like a regular Capital One card",
+      "Reports to all three major credit bureaus",
+      "No foreign transaction fees"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "sources": [
+    {
+      "url": "https://www.businessinsider.com/personal-finance/credit-cards/capital-one-quicksilver-secured-card-review",
+      "notes": "Business Insider: rare secured card offering decent rewards (1.5% cash back)"
+    },
+    {
+      "url": "https://www.capitalone.com/credit-cards/quicksilver-secured/",
+      "notes": "Capital One official page: 4.3/5 stars based on 866 reviews, 85% recommend"
+    },
+    {
+      "url": "https://wallethub.com/d/capital-one-quicksilver-secured-credit-card-2033c",
+      "notes": "WalletHub: $0 annual fee, available to those with poor credit, 1.5% cash back"
+    }
+  ],
+  "notes": "Exceptional secured card: 1.5% unlimited cash back on everything with no annual fee — same earning rate as the unsecured Quicksilver. Security deposit required. Card doesn't display 'secured' label. Upgrade path available. One of the best secured cards available if you want rewards while rebuilding credit. Reviews note Capital One's system is automated with no human credit limit increases.",
+  "confidence": "high",
+  "last_updated": "2026-04-16T13:16:57.271Z",
+  "tags": []
+}

@@ -1,0 +1,52 @@
+{
+  "card_id": "capital-one-journey-student",
+  "name": "Capital One Journey Student Credit Card",
+  "issuer": "Capital One",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair",
+  "welcome_offer": null,
+  "earning_rates": [
+    {
+      "category": "All purchases",
+      "rate": 1.25,
+      "notes": "1% cash back on all purchases + 0.25% bonus when you pay on time = 1.25% total"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      "Access to CreditWise® credit monitoring tool"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "sources": [
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/capital-one-journey",
+      "notes": "NerdWallet review confirming 1.25% total cash back (1% base + 0.25% on-time payment bonus)"
+    },
+    {
+      "url": "https://wallethub.com/d/capital-one-journey-381c",
+      "notes": "WalletHub confirming 29.99% variable APR"
+    },
+    {
+      "url": "https://www.capitalone.com/credit-cards/students/",
+      "notes": "Capital One official student card page"
+    }
+  ],
+  "notes": "Basic student credit card with modest 1.25% total cash back (1% + 0.25% bonus for on-time payments). No sign-up bonus. No annual fee. APR is high at 29.99% variable. The 0.25% extra when paying on time incentivizes good habits. Limited to students or those with limited credit. No travel or purchase protections. Consider SavorOne Student for better earning rates.",
+  "confidence": "medium",
+  "last_updated": "2026-04-16T13:16:57.264Z",
+  "tags": []
+}
