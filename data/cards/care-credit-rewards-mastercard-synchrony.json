@@ -1,0 +1,68 @@
+{
+  "card_id": "care-credit-rewards-mastercard-synchrony",
+  "name": "CareCredit Rewards Mastercard®",
+  "issuer": "Synchrony",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Excellent",
+  "welcome_offer": null,
+  "earning_rates": [
+    {
+      "category": "CareCredit provider network (purchases under $200)",
+      "rate": 2,
+      "notes": "2+ points per $1 at CareCredit enrolled provider locations for purchases under $200"
+    },
+    {
+      "category": "CareCredit provider network (purchases $200+)",
+      "rate": 1,
+      "notes": "1 point per $1 for purchases $200+ at CareCredit enrolled locations"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1 point per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Mastercard acceptance",
+        "description": "Can be used anywhere Mastercard is accepted (unlike the store-only CareCredit card)"
+      },
+      {
+        "name": "Promotional financing",
+        "description": "Same promotional financing options as CareCredit card at enrolled provider locations"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "synchrony",
+    "healthcare",
+    "mastercard",
+    "rewards"
+  ],
+  "sources": [
+    {
+      "url": "https://www.carecredit.com/mastercard/",
+      "notes": "Official CareCredit Mastercard page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/carecredit-card",
+      "notes": "NerdWallet"
+    }
+  ],
+  "last_updated": "2026-04-16T13:10:26.518Z",
+  "status": "active",
+  "notes": "Upgrade from CareCredit Card. Earns points on healthcare and general spending. Retains promotional financing at CareCredit providers while adding rewards on everyday spending. Points redeemable for statement credit."
+}

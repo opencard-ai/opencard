@@ -1,0 +1,51 @@
+{
+  "card_id": "carecredit-card-synchrony",
+  "name": "CareCredit Card",
+  "issuer": "Synchrony",
+  "network": "Synchrony (healthcare network)",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Excellent",
+  "welcome_offer": null,
+  "earning_rates": [],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Promotional financing",
+        "description": "0% intro financing for 6, 12, 18, or 24 months on purchases $200+ at 285,000+ CareCredit enrolled providers and select retail locations"
+      },
+      {
+        "name": "Wide provider network",
+        "description": "Use at doctors, dentists, veterinarians, optometrists, dermatologists, hearing care, and more"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": ["synchrony", "healthcare", "financing", "medical"],
+  "sources": [
+    {
+      "url": "https://www.carecredit.com/",
+      "notes": "Official CareCredit website"
+    },
+    {
+      "url": "https://www.carecredit.com/howcarecreditworks/prospective/",
+      "notes": "How it works"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/carecredit-card",
+      "notes": "NerdWallet"
+    }
+  ],
+  "last_updated": "2026-04-16T13:00:00Z",
+  "status": "active",
+  "notes": "Healthcare/medical financing card. NOT a rewards card — no cash back or points. High regular APR (~26.99%). Use only for promotional financing; carrying a balance is costly. Can be upgraded to CareCredit Rewards Mastercard (separate card)."
+}

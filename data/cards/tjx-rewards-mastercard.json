@@ -1,0 +1,73 @@
+{
+  "card_id": "tjx-rewards-mastercard",
+  "name": "TJX Rewards® Platinum Mastercard®",
+  "issuer": "Synchrony",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "bonus_value": null,
+    "description": "$30 off first purchase of $75+ with the TJX Rewards Platinum Mastercard"
+  },
+  "earning_rates": [
+    {
+      "category": "T.J. Maxx, Marshalls, HomeGoods, Sierra, and Homesense",
+      "rate": 5,
+      "notes": "5% back in rewards at TJX family stores"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1% back on all other purchases everywhere Mastercard is accepted"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Mastercard acceptance",
+        "description": "Use anywhere Mastercard is accepted — unlike store-only TJX card"
+      },
+      {
+        "name": "Exclusive cardholder perks",
+        "description": "Early access to sales, birthday bonus, and special promotions"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "synchrony",
+    "tjx",
+    "tjmaxx",
+    "marshalls",
+    "homegoods",
+    "mastercard"
+  ],
+  "sources": [
+    {
+      "url": "https://upgradedpoints.com/credit-cards/reviews/tjx-rewards-platinum-mastercard/",
+      "notes": "UpgradedPoints review"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/tjx-rewards-platinum-mastercard",
+      "notes": "NerdWallet"
+    },
+    {
+      "url": "https://maxrewards.com/credit-cards/tjx-rewards",
+      "notes": "MaxRewards"
+    }
+  ],
+  "last_updated": "2026-04-16T13:10:26.531Z",
+  "status": "active",
+  "notes": "Mastercard version of TJX Rewards — accepted anywhere Mastercard is accepted, not just TJX stores. Same 5% at TJX family as the store-only version, but also earns 1% on everything else. Best of both worlds for TJX shoppers who also want a general-purpose card."
+}

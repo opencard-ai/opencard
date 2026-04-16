@@ -38,9 +38,9 @@ ISSER: [issuer 名稱]
 | 3 | Citi | ~22 | ✅ 研究完成（16張缺口卡已寫入 research/OUTPUT/） | Lisa |
 | 4 | Barclays | ~21 | ✅ 研究完成（18張缺口卡已寫入 research/OUTPUT/） | Jennie |
 | 5 | Bank of America | ~16 | ⬜ 待認領 | |
-| 6 | Capital One | ~18 | ⬜ 待認領 | |
-| 7 | U.S. Bank | ~13 | ⬜ 待認領 | |
-| 8 | Synchrony | ~13 | ⬜ 待認領 | |
+| 6 | Capital One | ~18 | ✅ 研究完成（11張缺口卡已寫入 research/capital-one/） | Jennie |
+| 7 | U.S. Bank | ~13 | ✅ 研究完成（3張缺口卡已寫入 research/OUTPUT/） | Lisa |
+| 8 | Synchrony | ~13 | ✅ 研究完成（11張缺口卡已寫入 research/OUTPUT/） | Lisa |
 | 9 | Wells Fargo | ~8 | ⬜ 待認領 | |
 | 10 | Navy Federal CU | ~7 | ⬜ 待認領 | |
 | 11 | Discover | ~6 | ⬜ 待認領 | |
@@ -121,4 +121,4 @@ ISSER: [issuer 名稱]
 
 ---
 
-*更新時間：2026-04-16T08:52:00Z*
+*更新時間：2026-04-16T13:10:00Z*

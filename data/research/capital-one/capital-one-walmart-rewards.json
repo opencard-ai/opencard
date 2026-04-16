@@ -1,0 +1,47 @@
+{
+  "card_id": "capital-one-walmart-rewards",
+  "name": "Capital One Walmart Rewards® Mastercard®",
+  "issuer": "Capital One",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": null,
+  "earning_rates": [
+    {"category": "Walmart.com and app purchases", "rate": 5, "notes": "Earn 5% back on Walmart online purchases including grocery pickup and delivery"},
+    {"category": "Walmart in-store purchases", "rate": 2, "notes": "Earn 2% back in Walmart stores"},
+    {"category": "All other purchases", "rate": 1, "notes": "Earn 1% back on all other purchases"}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "sources": [
+    {
+      "url": "https://www.bankrate.com/credit-cards/reviews/walmart-rewards-card/",
+      "notes": "Bankrate: Capital One Walmart Rewards discontinued following Capital One/Walmart partnership ending"
+    },
+    {
+      "url": "https://money.usnews.com/credit-cards/articles/is-the-new-walmart-credit-card-worth-it",
+      "notes": "U.S. News: OnePay CashRewards Card replaced Capital One Walmart Rewards Card"
+    },
+    {
+      "url": "https://www.reddit.com/r/CreditCards/comments/1e36lzo/capital_one_walmart_mastercard_ending_992024_and/",
+      "notes": "Reddit: Capital One Walmart Mastercard ending 9/9/2024, transitioning to new issuer"
+    }
+  ],
+  "notes": "⚠️ DISCONTNUED: Capital One and Walmart ended their credit card partnership in September 2024. The Capital One Walmart Rewards Mastercard is no longer available for new applications. Existing cardholders were migrated to the OnePay CashRewards Card (issued by a different bank), which earns 3% at Walmart (or 5% with Walmart+ membership) and 1.5% elsewhere. This card should be marked as discontinued in the database.",
+  "confidence": "high",
+  "status": "discontinued"
+}

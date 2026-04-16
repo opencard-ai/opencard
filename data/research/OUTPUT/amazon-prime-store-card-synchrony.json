@@ -1,0 +1,67 @@
+{
+  "card_id": "amazon-prime-store-card-synchrony",
+  "name": "Amazon Prime Store Card",
+  "issuer": "Synchrony",
+  "network": "Synchrony (store-only)",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Excellent",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "bonus_value": 100,
+    "description": "$100 Amazon gift card upon approval (special financing offer, varies)"
+  },
+  "earning_rates": [
+    {
+      "category": "Amazon.com purchases (Prime members)",
+      "rate": 5,
+      "notes": "5% cash back on Amazon.com purchases"
+    },
+    {
+      "category": "Whole Foods Market (with promo code)",
+      "rate": 5,
+      "notes": "5% back at Whole Foods with eligible Prime membership"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 0,
+      "notes": "No rewards on non-Amazon purchases — store-only card"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Special financing",
+        "description": "0% intro financing on eligible Amazon purchases $800+ for 24 months"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": ["synchrony", "amazon", "store-card", "prime", "cash-back"],
+  "sources": [
+    {
+      "url": "https://www.amazon.com/Synchrony-Bank-Amazon-com-Store-Card/dp/B008A0GNA8",
+      "notes": "Amazon product page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/making-the-most-of-amazon-com-prime-store-card",
+      "notes": "NerdWallet review"
+    },
+    {
+      "url": "https://www.cnbc.com/select/when-and-why-the-amazon-prime-credit-card-is-worth-getting/",
+      "notes": "CNBC"
+    }
+  ],
+  "last_updated": "2026-04-16T13:00:00Z",
+  "status": "active",
+  "notes": "Separate from Amazon Prime Visa (Chase) and Amazon Store Card (Synchrony). This is the store-only card with 5% for Prime members. Cannot be used outside Amazon ecosystem. Prime membership required to earn 5%. Special financing offer may vary."
+}
