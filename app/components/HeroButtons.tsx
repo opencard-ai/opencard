@@ -2,8 +2,6 @@
 import { t } from "@/lib/i18n";
 
 export default function HeroButtons({ lang }: { lang: string }) {
-  const locale = lang as "en" | "zh" | "es";
-
   const openMyCards = () => {
     if (typeof window !== "undefined") {
       window.dispatchEvent(new CustomEvent("opencard_open_mycards"));
@@ -12,21 +10,28 @@ export default function HeroButtons({ lang }: { lang: string }) {
 
   return (
     <div className="flex flex-wrap items-center gap-2">
+      {/* AI 推薦按鈕 - 和 RecommendWidget 懸浮按鈕一致 */}
       <a
         href="/?ask=Best%20card%20for%20my%20needs"
-        className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-sm px-5 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95"
+        className="h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-xl hover:shadow-2xl"
       >
-        {t("home.heroAiCta", lang as any)}
+        <span className="text-xl leading-none">✨</span>
+        <span className="font-bold text-sm">{t("home.heroAiCta", lang as any)}</span>
       </a>
+
+      {/* 我的卡片按鈕 - 和 MyCardsWidget 懸浮按鈕一致 */}
       <button
         onClick={openMyCards}
-        className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-700 font-medium text-sm px-5 py-2.5 rounded-full border-2 border-slate-200 shadow-md hover:shadow-lg transition-all hover:scale-105 active:scale-95"
+        className="h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 bg-white text-slate-700 border-2 border-slate-200 shadow-md hover:shadow-lg hover:border-slate-300"
       >
-        {t("home.heroMyCards", lang as any)}
+        <img src="/brand/my-cards-icon.png" alt="Wallet" className="w-6 h-6 object-contain" />
+        <span className="font-bold text-sm">{t("home.heroMyCards", lang as any)}</span>
       </button>
+
+      {/* 瀏覽所有卡片 */}
       <a
         href="#cards-section"
-        className="text-sm text-slate-500 hover:text-slate-700 font-medium ml-1"
+        className="h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 bg-white text-slate-700 border-2 border-slate-200 shadow-md hover:shadow-lg hover:border-slate-300 font-bold text-sm"
       >
         {t("home.heroBrowseAll", lang as any)}
       </a>
