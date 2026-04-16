@@ -35,12 +35,39 @@ export default async function HomePage({ params }: Props) {
         </p>
       </div>
 
-      {/* Jump to cards + description */}
-      <div className="mb-4 space-y-2">
+      {/* Hero AI Section */}
+      <div className="mb-6 space-y-3">
         <p className="text-slate-600 text-sm">{t("site.subtitle", locale)}</p>
-        <a href="#cards-section" className="text-sm text-blue-600 hover:text-blue-700 font-medium underline">
-          {t("home.jumpToCards", lang as any)}
-        </a>
+        <div className="flex flex-wrap items-center gap-2">
+          <a
+            href="/?ask=Best%20card%20for%20my%20needs"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-sm px-5 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95"
+          >
+            {t("home.heroAiCta", lang as any)}
+          </a>
+          <a
+            href="#cards-section"
+            className="text-sm text-slate-500 hover:text-slate-700 font-medium"
+          >
+            {t("home.heroBrowseAll", lang as any)}
+          </a>
+        </div>
+        <div className="flex flex-wrap gap-2 pt-1">
+          {[
+            t("home.heroChip1", lang as any),
+            t("home.heroChip2", lang as any),
+            t("home.heroChip3", lang as any),
+            t("home.heroChip4", lang as any),
+          ].map((chip, i) => (
+            <a
+              key={i}
+              href={`/?ask=${encodeURIComponent(chip)}`}
+              className="text-xs px-3 py-1.5 rounded-full border border-blue-200 text-blue-600 bg-blue-50 hover:bg-blue-100 hover:border-blue-300 transition-colors"
+            >
+              {chip}
+            </a>
+          ))}
+        </div>
       </div>
 
       {/* Daily Finance News Feed — before card search */}

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import { CARD_OPTIONS } from "@/lib/constants";
 
 interface Message {
@@ -77,6 +78,8 @@ function renderContent(text: string) {
 
 export default function RecommendWidget({ lang = "en" }: { lang?: string }) {
   const msg = MESSAGES[lang as keyof typeof MESSAGES] || MESSAGES.en;
+  const searchParams = useSearchParams();
+  const hasOpened = useRef(false);
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     { role: "assistant", content: msg.intro, options: msg.options }
@@ -84,6 +87,19 @@ export default function RecommendWidget({ lang = "en" }: { lang?: string }) {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCards, setSelectedCards] = useState<string[]>([]);
+
+  // Auto-open and send when ?ask= query param is present
+  useEffect(() => {
+    const askParam = searchParams?.get("ask");
+    if (askParam && !hasOpened.current) {
+      hasOpened.current = true;
+      setInput(askParam);
+      setMessages([{ role: "user", content: askParam }, { role: "assistant", content: msg.intro }]);
+      setIsOpen(true);
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
