@@ -71,7 +71,7 @@ export default async function HomePage({ params }: Props) {
       </div>
 
       {/* Card Grid Header */}
-      <section id="cards-section" className="mb-4">
+      <section id="cards-section" className="mb-4 scroll-mt-24">
       </section>
 
       <Suspense

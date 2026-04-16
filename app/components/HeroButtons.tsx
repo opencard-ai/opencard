@@ -30,7 +30,7 @@ export default function HeroButtons({ lang }: { lang: string }) {
 
       {/* 瀏覽所有卡片 */}
       <a
-        href="#cards-section"
+        href={`/${lang}/#cards-section`}
         className="h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 bg-white text-slate-700 border-2 border-slate-200 shadow-md hover:shadow-lg hover:border-slate-300 font-bold text-sm"
       >
         {t("home.heroBrowseAll", lang as any)}
