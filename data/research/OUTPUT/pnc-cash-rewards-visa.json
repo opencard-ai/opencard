@@ -1,0 +1,44 @@
+{
+  "card_id": "pnc-cash-rewards-visa",
+  "name": "PNC Cash Rewards® Visa® Credit Card",
+  "issuer": "PNC Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 200,
+    "estimated_value": 200,
+    "point_program": "PNC Cash Rewards",
+    "description": "$200 cash back after spending $1,000 in first 3 months"
+  },
+  "earning_rates": [
+    { "category": "Gas Stations", "rate": 4, "notes": "4% cash back at gas stations" },
+    { "category": "Dining", "rate": 3, "notes": "3% cash back at restaurants" },
+    { "category": "Grocery Stores", "rate": 2, "notes": "2% cash back at grocery stores" },
+    { "category": "All Other Purchases", "rate": 1, "notes": "1% unlimited cash back on all other purchases" }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      { "name": "Cell phone protection", "description": "Cell phone protection up to $600 for stolen/damaged phones when paying monthly bill" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["pnc", "cash-back", "gas", "dining"],
+  "sources": [
+    { "url": "https://www.pnc.com/en/personal-banking/banking/credit-cards/pnc-cash-rewards-visa-credit-card.html", "notes": "Official PNC page" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Strong 4% at gas stations, 3% dining. No annual fee. No foreign transaction fees."
+}

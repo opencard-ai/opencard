@@ -1,0 +1,43 @@
+{
+  "card_id": "penfed-power-cash-rewards",
+  "name": "PenFed Power Cash Rewards® Visa Signature® Card",
+  "issuer": "PenFed Credit Union",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1500,
+    "time_period_months": 3,
+    "bonus_points": 100,
+    "estimated_value": 100,
+    "point_program": "PenFed Power Cash",
+    "description": "$100 statement credit after spending $1,500 in first 90 days"
+  },
+  "earning_rates": [
+    { "category": "All Purchases (Honors Advantage)", "rate": 2, "notes": "2% cash back on all purchases for PenFed Honors Advantage members" },
+    { "category": "All Purchases (standard)", "rate": 1.5, "notes": "1.5% cash back on all purchases for non-Honors Advantage members" }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      { "name": "Balance transfer intro APR", "description": "0% intro APR for 12 months on balance transfers" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["penfed", "cash-back", "flat-rate"],
+  "sources": [
+    { "url": "https://www.penfed.org/credit-cards/power-cash-rewards-visa", "notes": "Official PenFed page" },
+    { "url": "https://www.nerdwallet.com/credit-cards/learn/penfed-power-cash-rewards-card", "notes": "NerdWallet review" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Simple flat-rate cash back. Honors Advantage (qualifying products) bumps to 2%. No annual fee, no foreign transaction fees. Strong flat-rate alternative to 1.5% cards."
+}

@@ -1,0 +1,47 @@
+{
+  "card_id": "choice-privileges-visa",
+  "name": "Choice Privileges Mastercard®",
+  "issuer": "Wells Fargo",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 60000,
+    "estimated_value": 420,
+    "point_program": "Choice Privileges",
+    "description": "60,000 bonus points after spending $1,000 in first 3 months (enough for up to 7 free nights)"
+  },
+  "earning_rates": [
+    { "category": "Choice Hotels", "rate": 10, "notes": "10x points on Choice Hotels stays" },
+    { "category": "Gas Stations", "rate": 3, "notes": "3x points on gas station purchases" },
+    { "category": "Dining", "rate": 2, "notes": "2x points on dining purchases" },
+    { "category": "All Other Purchases", "rate": 1, "notes": "1x point on all other purchases" }
+  ],
+  "annual_credits": [
+    { "name": "Anniversary bonus", "amount": 0, "frequency": "Annual", "description": "8,000 bonus points when you spend $10,000+ annually on purchases" }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      { "name": "Automatic Gold status", "description": "Automatic Choice Privileges Gold status (15% point bonus on stays)" },
+      { "name": "Cell phone protection", "description": "Cell phone protection up to $600" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["wells-fargo", "choice-hotels", "hotel", "rewards"],
+  "sources": [
+    { "url": "https://creditcards.wellsfargo.com/wells-fargo-choice-privileges-credit-cards/", "notes": "Official Wells Fargo page" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "No annual fee hotel card. Strong 60K welcome offer (~$420 value). 10x at Choice Hotels. Issued by Wells Fargo."
+}

@@ -1,0 +1,98 @@
+{
+  "card_id": "alaska-airlines-visa-signature-boa",
+  "name": "Alaska Airlines Visa Signature® Credit Card",
+  "issuer": "Bank of America",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 4000,
+    "time_period_months": 4,
+    "bonus_points": 80000,
+    "description": "Earn 80,000 bonus points and a $99 Companion Fare (plus taxes and fees from $23) after spending $4,000 or more on purchases within the first 120 days.",
+    "free_nights": null,
+    "point_program": "Alaska Airlines Miles"
+  },
+  "earning_rates": [
+    {
+      "category": "Alaska Airlines purchases",
+      "rate": 3,
+      "notes": "On Alaska Airlines tickets, vacation packages, and cargo purchases"
+    },
+    {
+      "category": "Gas & EV charging",
+      "rate": 2,
+      "notes": "On gas, local transit including rideshare, and shipping"
+    },
+    {
+      "category": "Groceries",
+      "rate": 2,
+      "notes": null
+    },
+    {
+      "category": "Dining",
+      "rate": 2,
+      "notes": null
+    },
+    {
+      "category": "Transit",
+      "rate": 2,
+      "notes": "Includes rideshare and local transit"
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": null
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Companion Fare",
+        "description": "$99 Companion Fare (plus taxes and fees from $23) each account anniversary"
+      },
+      {
+        "name": "Free First Checked Bag",
+        "description": "First checked bag free for cardholder when booking with card"
+      },
+      {
+        "name": "Priority Boarding",
+        "description": "Priority boarding when paying with card"
+      },
+      {
+        "name": "Alaska Lounge+ Discount",
+        "description": "$100 discount off an annual Alaska Lounge+ Membership"
+      },
+      {
+        "name": "10% Rewards Bonus",
+        "description": "10% bonus on all miles earned from card purchases with eligible BofA business account"
+      }
+    ]
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "bank-of-america",
+    "alaska-airlines",
+    "airline",
+    "travel",
+    "atmos"
+  ],
+  "sources": [
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/",
+      "notes": "Official BOA Page"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/alaska-atmos-rewards-current-offers/",
+      "notes": "TPG current offers"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.288Z"
+}

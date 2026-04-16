@@ -1,0 +1,62 @@
+{
+  "card_id": "td-business-solutions-credit-card",
+  "name": "TD Business Solutions Credit Card",
+  "issuer": "TD Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 200,
+    "estimated_value": 200,
+    "point_program": "TD Points",
+    "description": "$200 statement credit after spending $1,000 in first 3 months"
+  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "rate": 2,
+      "notes": "2x TD Points on all purchases (no caps)"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Employee cards",
+        "description": "Free employee cards"
+      },
+      {
+        "name": "Travel and emergency assistance",
+        "description": "24/7 travel and emergency assistance"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "td-bank",
+    "business",
+    "flat-rate"
+  ],
+  "sources": [
+    {
+      "url": "https://www.td.com/us/en/personal-banking/credit-cards/business-solutions-card",
+      "notes": "Official TD Bank page"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.324Z",
+  "status": "active",
+  "notes": "Simple 2x flat-rate business card. No annual fee. Good for small businesses wanting straightforward earning."
+}

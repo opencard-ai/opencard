@@ -1,0 +1,71 @@
+{
+  "card_id": "west-elm-visa",
+  "name": "West Elm Credit Card",
+  "issuer": "Bread Financial / Comenity Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Good",
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 0,
+    "bonus_points": 20000,
+    "estimated_value": 100,
+    "point_program": "West Elm Rewards",
+    "description": "20% off first purchase with card at West Elm"
+  },
+  "earning_rates": [
+    {
+      "category": "West Elm",
+      "rate": 6,
+      "notes": "6x points on West Elm purchases"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1x point on all other purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Free shipping benefit",
+      "amount": 0,
+      "frequency": "Ongoing",
+      "description": "Free standard shipping on West Elm orders"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Special financing",
+        "description": "Special financing options on large West Elm purchases"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "bread-financial",
+    "west-elm",
+    "retail",
+    "store-card"
+  ],
+  "sources": [
+    {
+      "url": "https://www.westelm.com/products/credit-card/",
+      "notes": "West Elm credit card page"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.328Z",
+  "status": "active",
+  "notes": "Store card for West Elm home goods retailer. 6x points at West Elm. Issued via Comenity Bank. Part of Williams-Sonoma Inc. portfolio."
+}

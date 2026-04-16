@@ -1,0 +1,82 @@
+{
+  "card_id": "penfed-platinum-rewards",
+  "name": "PenFed Platinum Rewards Visa Signature® Card",
+  "issuer": "PenFed Credit Union",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1500,
+    "time_period_months": 3,
+    "bonus_points": 15000,
+    "estimated_value": 150,
+    "point_program": "PenFed Platinum Rewards",
+    "description": "15,000 bonus points after spending $1,500 in first 90 days"
+  },
+  "earning_rates": [
+    {
+      "category": "Gas Stations",
+      "rate": 5,
+      "notes": "5x points on gas stations"
+    },
+    {
+      "category": "Groceries",
+      "rate": 3,
+      "notes": "3x points on groceries"
+    },
+    {
+      "category": "Dining",
+      "rate": 3,
+      "notes": "3x points on dining out"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1x point on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Cell phone protection",
+        "description": "Up to $1,000 per year in cell phone protection when paying monthly wireless bill"
+      },
+      {
+        "name": "Balance transfer intro APR",
+        "description": "0% intro APR for 12 months on balance transfers"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "penfed",
+    "gas",
+    "groceries",
+    "rewards"
+  ],
+  "sources": [
+    {
+      "url": "https://www.penfed.org/credit-cards/platinum-rewards-visa",
+      "notes": "Official PenFed page"
+    },
+    {
+      "url": "https://www.cnbc.com/select/penfed-platinum-rewards-card-review/",
+      "notes": "CNBC review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.316Z",
+  "status": "active",
+  "notes": "No annual fee. Strong 5x gas and 3x groceries/dining. Points redeemable for gift cards, travel, or cash."
+}

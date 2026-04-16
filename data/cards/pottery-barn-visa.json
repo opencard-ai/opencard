@@ -1,0 +1,71 @@
+{
+  "card_id": "pottery-barn-visa",
+  "name": "Pottery Barn Credit Card",
+  "issuer": "Bread Financial / Comenity Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Good",
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 0,
+    "bonus_points": 10000,
+    "estimated_value": 100,
+    "point_program": "Pottery Barn Rewards",
+    "description": "10% off first purchase with card at Pottery Barn"
+  },
+  "earning_rates": [
+    {
+      "category": "Pottery Barn",
+      "rate": 6,
+      "notes": "6x points on Pottery Barn purchases"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1x point on all other purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Free shipping benefit",
+      "amount": 0,
+      "frequency": "Ongoing",
+      "description": "Free standard shipping on Pottery Barn orders"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Special financing",
+        "description": "Special financing options on large Pottery Barn purchases"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "bread-financial",
+    "pottery-barn",
+    "retail",
+    "store-card"
+  ],
+  "sources": [
+    {
+      "url": "https://www.potterybarn.com/products/pottery-barn-credit-card/",
+      "notes": "Pottery Barn credit card page"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.317Z",
+  "status": "active",
+  "notes": "Store card for Pottery Barn furniture/home goods retailer. 6x points at Pottery Barn. Issued via Comenity Bank."
+}

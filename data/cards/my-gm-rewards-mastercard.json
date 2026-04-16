@@ -1,0 +1,81 @@
+{
+  "card_id": "my-gm-rewards-mastercard",
+  "name": "My GM Rewards Card Mastercard®",
+  "issuer": "Goldman Sachs",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 20000,
+    "estimated_value": 200,
+    "point_program": "My GM Rewards",
+    "description": "20,000 bonus points ($200 toward GM) after spending $1,000 in first 3 months"
+  },
+  "earning_rates": [
+    {
+      "category": "GM (new vehicle purchases, service, parts, Super Cruise)",
+      "rate": 10,
+      "notes": "10x points on GM purchases (new vehicle down payment, service, parts, GM Financial)"
+    },
+    {
+      "category": "Gas Stations",
+      "rate": 3,
+      "notes": "3x points at gas stations"
+    },
+    {
+      "category": "Dining",
+      "rate": 3,
+      "notes": "3x points on dining (restaurants, takeout, delivery)"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1x point on all other purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "GM tier upgrade",
+      "amount": 0,
+      "frequency": "Ongoing",
+      "description": "Cardmembers start at Gold tier in My GM Rewards (normally requires 20K spend)"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Super Cruise access",
+        "description": "Access to GM Super Cruise hands-free driving with points"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "goldman-sachs",
+    "gm",
+    "auto",
+    "rewards"
+  ],
+  "sources": [
+    {
+      "url": "https://www.mygmrewardscard.com/",
+      "notes": "Official GM Rewards Card page"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.311Z",
+  "status": "active",
+  "notes": "Co-branded GM card from Goldman Sachs. 10x on GM purchases is excellent for GM vehicle owners. Points redeemable for GM vehicle purchases, service, parts."
+}

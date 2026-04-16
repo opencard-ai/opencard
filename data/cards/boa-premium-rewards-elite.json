@@ -1,0 +1,107 @@
+{
+  "card_id": "boa-premium-rewards-elite",
+  "name": "Bank of America® Premium Rewards® Elite Credit Card",
+  "issuer": "Bank of America",
+  "network": "Visa",
+  "annual_fee": 550,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 75000,
+    "description": "Earn 75,000 bonus points (a $750 value) after making at least $3,000 in purchases in the first 90 days.",
+    "free_nights": null,
+    "point_program": "Bank of America Travel Points"
+  },
+  "earning_rates": [
+    {
+      "category": "Travel & Dining",
+      "rate": 2,
+      "notes": "Unlimited 2x points on travel and dining purchases"
+    },
+    {
+      "category": "Other",
+      "rate": 1.5,
+      "notes": "Unlimited 1.5x points on all other purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Travel Credit",
+      "amount": 300,
+      "frequency": "Annual",
+      "description": "Up to $300 annual travel statement credit"
+    },
+    {
+      "name": "Airline Incidental Credit",
+      "amount": 150,
+      "frequency": "Annual",
+      "description": "Up to $150 annually for airline incidentals (bag fees, lounge passes, etc.)"
+    },
+    {
+      "name": "Lifestyle Credit",
+      "amount": 120,
+      "frequency": "Annual",
+      "description": "Up to $120 annually for lifestyle conveniences (video streaming, food delivery, fitness, rideshare)"
+    },
+    {
+      "name": "TSA PreCheck/Global Entry Credit",
+      "amount": 120,
+      "frequency": "Annual",
+      "description": "Up to $120 reimbursement for TSA PreCheck or Global Entry"
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": [
+      {
+        "name": "Priority Pass Select",
+        "type": "Lounge Access"
+      }
+    ],
+    "other_benefits": [
+      {
+        "name": "No Foreign Transaction Fees",
+        "description": "No foreign transaction fees"
+      },
+      {
+        "name": "FHR Eligible",
+        "description": "Fine Hotels & Resorts program eligible (for high-balance BofA clients)"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "trip_cancellation": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "bank-of-america",
+    "travel",
+    "premium",
+    "points",
+    "lounge-access",
+    "high-annual-fee"
+  ],
+  "sources": [
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-elite-credit-card/",
+      "notes": "Official BOA Page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/5-things-to-know-about-the-bank-of-america-premium-rewards-elite-credit-card",
+      "notes": "NerdWallet 5-things review"
+    },
+    {
+      "url": "https://pointsnav.com/credit-cards/bank-america-premium-rewards-elite",
+      "notes": "PointsNav review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.290Z"
+}

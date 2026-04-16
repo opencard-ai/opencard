@@ -1,0 +1,72 @@
+{
+  "card_id": "td-first-class-visa-signature",
+  "name": "TD First Class Visa Signature® Credit Card",
+  "issuer": "TD Bank",
+  "network": "Visa",
+  "annual_fee": 89,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 6,
+    "bonus_points": 25000,
+    "estimated_value": 375,
+    "point_program": "TD Points",
+    "description": "25,000 bonus miles/points after spending $3,000 in first 6 billing cycles"
+  },
+  "earning_rates": [
+    {
+      "category": "Travel (airfare, hotels, car rentals, travel agencies)",
+      "rate": 3,
+      "notes": "3x TD Points on travel purchased through any travel provider"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1x TD Point on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Priority Pass Select",
+        "description": "Complimentary Priority Pass Select membership with lounge visits"
+      },
+      {
+        "name": "Cell phone protection",
+        "description": "Cell phone protection up to $1,000"
+      },
+      {
+        "name": "TSA PreCheck/Global Entry credit",
+        "description": "Up to $100 credit for TSA PreCheck or Global Entry"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "trip_cancellation": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "td-bank",
+    "travel",
+    "rewards",
+    "lounge-access"
+  ],
+  "sources": [
+    {
+      "url": "https://www.td.com/us/en/personal-banking/credit-cards/first-class-card",
+      "notes": "Official TD Bank page"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.324Z",
+  "status": "active",
+  "notes": "Annual fee $89 (waived first year). 3x on all travel. Priority Pass Select lounge access. Strong for frequent travelers with TD Bank relationship."
+}

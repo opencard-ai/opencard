@@ -1,0 +1,45 @@
+{
+  "card_id": "us-bank-cash-plus",
+  "name": "U.S. Bank Cash+™ Visa Signature® Card",
+  "issuer": "U.S. Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 200,
+    "estimated_value": 200,
+    "point_program": "U.S. Bank Cash+",
+    "description": "$200 cash bonus after spending $1,000 in first 3 months"
+  },
+  "earning_rates": [
+    { "category": "Custom Category 1 (choose one)", "rate": 5, "notes": "5% cash back on purchases in category of your choice (e.g., gas, groceries, utilities)" },
+    { "category": "Custom Category 2 (choose one)", "rate": 2, "notes": "2% cash back on purchases in second category of your choice" },
+    { "category": "All Other Purchases", "rate": 1, "notes": "1% unlimited cash back on all other purchases" }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      { "name": "Cell phone protection", "description": "Up to $600 reimbursement for stolen/damaged cell phone when paying monthly bill with card" },
+      { "name": "Extended Pay Plan", "description": "0% intro APR for 12 months with U.S. Bank ExtendPay" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["u-s-bank", "cash-back", "customizable"],
+  "sources": [
+    { "url": "https://www.usbank.com/credit-cards/cash-visa-signature-credit-card.html", "notes": "Official U.S. Bank page" },
+    { "url": "https://www.nerdwallet.com/credit-cards/reviews/us-bank-cash-plus", "notes": "NerdWallet review" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Choose your own 5% and 2% categories. Must activate categories quarterly. $100 minimum redemption."
+}

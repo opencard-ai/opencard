@@ -1,0 +1,40 @@
+{
+  "card_id": "boa-unlimited-cash-rewards",
+  "name": "Bank of America® Unlimited Cash Rewards Credit Card",
+  "issuer": "Bank of America",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 200,
+    "description": "Earn a $200 cash rewards bonus after making at least $1,000 in purchases in the first 90 days of account opening. Earn unlimited 2% cash back on purchases for the first year.",
+    "free_nights": null,
+    "point_program": "Cash Back"
+  },
+  "earning_rates": [
+    {"category": "All purchases", "rate": 1.5, "notes": "Unlimited 1.5% cash back on all purchases (2% first year). Rate boosted up to 2.62% with Preferred Rewards Gold/Platinum/Platinum Honors tiers."}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "Preferred Rewards Boost", "description": "25%-75% bonus cash back via Preferred Rewards program (Gold/Platinum/Platinum Honors tiers)"},
+      {"name": "Fraud Protection", "description": "Zero Liability protection for unauthorized transactions"}
+    ]
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["bank-of-america", "cash-back", "no-annual-fee", "flat-rate"],
+  "sources": [
+    {"url": "https://www.bankofamerica.com/credit-cards/products/unlimited-cash-back-credit-card/", "notes": "Official BOA Page"},
+    {"url": "https://www.forbes.com/advisor/credit-cards/reviews/bank-of-america-unlimited-cash-rewards-credit-card/", "notes": "Forbes review"},
+    {"url": "https://money.usnews.com/credit-cards/bank-of-america/bank-of-america-unlimited-cash-rewards-credit-card", "notes": "US News review"}
+  ],
+  "last_updated": "2026-04-16T13:00:00Z"
+}

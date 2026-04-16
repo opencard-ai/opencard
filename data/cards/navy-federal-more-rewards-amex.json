@@ -1,0 +1,72 @@
+{
+  "card_id": "navy-federal-more-rewards-amex",
+  "name": "Navy Federal More Rewards American Express® Card",
+  "issuer": "Navy Federal Credit Union",
+  "network": "Amex",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": null,
+  "earning_rates": [
+    {
+      "category": "Dining",
+      "rate": 4,
+      "notes": "4x points at restaurants"
+    },
+    {
+      "category": "Gas Stations",
+      "rate": 3,
+      "notes": "3x points at gas stations"
+    },
+    {
+      "category": "Groceries",
+      "rate": 3,
+      "notes": "3x points at grocery stores"
+    },
+    {
+      "category": "Travel (airfare, hotels)",
+      "rate": 2,
+      "notes": "2x points on travel (airfare, hotels)"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1x point on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "American Express benefits",
+        "description": "Access to Amex-specific perks and protections"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "navy-federal",
+    "rewards",
+    "dining",
+    "american-express"
+  ],
+  "sources": [
+    {
+      "url": "https://www.navyfederal.org/loans-cards/credit-cards/more-rewards.html",
+      "notes": "Official Navy Federal page"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.314Z",
+  "status": "active",
+  "notes": "Highest earning rate for dining (4x) among Navy Federal cards. Amex network. Exclusive to Navy Federal members."
+}

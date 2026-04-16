@@ -1,0 +1,67 @@
+{
+  "card_id": "penfed-gold-visa",
+  "name": "PenFed Gold Visa® Card",
+  "issuer": "PenFed Credit Union",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": null,
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "rate": 1,
+      "notes": "1x point per $1 on all purchases (no rewards in traditional sense - primarily a low APR card)"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Cell phone protection",
+        "description": "Up to $500 per claim ($50 deductible) for stolen or damaged cell phone when paying monthly wireless bill"
+      },
+      {
+        "name": "Travel Accident Coverage",
+        "description": "Up to $100,000 in travel accident insurance when booking travel with card"
+      },
+      {
+        "name": "Roadside Dispatch",
+        "description": "Emergency roadside assistance services"
+      },
+      {
+        "name": "ExtendedPay Plan",
+        "description": "0% intro APR for 15 months on purchases and balance transfers"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "penfed",
+    "low-apr",
+    "visa"
+  ],
+  "sources": [
+    {
+      "url": "https://www.penfed.org/credit-cards/gold-visa",
+      "notes": "Official PenFed page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/penfed-gold",
+      "notes": "NerdWallet review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.316Z",
+  "status": "active",
+  "notes": "Primarily a low APR card (0% for 15 months) rather than a rewards card. $0 annual fee, no foreign transaction fees. Cell phone protection up to $500/claim."
+}

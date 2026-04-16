@@ -1,0 +1,48 @@
+{
+  "card_id": "us-bank-altitude-go",
+  "name": "U.S. Bank Altitude® Go Visa Signature® Card",
+  "issuer": "U.S. Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 20000,
+    "estimated_value": 250,
+    "point_program": "U.S. Bank Rewards",
+    "description": "20,000 bonus points after spending $1,000 in first 90 days"
+  },
+  "earning_rates": [
+    { "category": "Dining, Takeout, and Restaurant Delivery", "rate": 4, "notes": "4x points on dining, takeout and restaurant delivery (first $2,000 per quarter)" },
+    { "category": "Gas Stations and EV Charging", "rate": 2, "notes": "2x points at gas stations and EV charging stations" },
+    { "category": "Groceries", "rate": 2, "notes": "2x points on grocery stores" },
+    { "category": "Streaming", "rate": 2, "notes": "2x points on streaming services" },
+    { "category": "All Other Purchases", "rate": 1, "notes": "1x point per $1 on all other purchases" }
+  ],
+  "annual_credits": [
+    { "name": "$15 streaming credit", "amount": 15, "frequency": "Quarterly", "description": "$15 statement credit for streaming subscriptions (activated quarterly)" }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      { "name": "Cell phone protection", "description": "Up to $600 coverage for stolen/damaged cell phones when paying monthly bill" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["u-s-bank", "dining", "rewards", "streaming"],
+  "sources": [
+    { "url": "https://www.usbank.com/credit-cards/altitude-go-visa-signature-credit-card.html", "notes": "Official U.S. Bank page" },
+    { "url": "https://www.nerdwallet.com/credit-cards/reviews/us-bank-altitude-go", "notes": "NerdWallet review" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "No annual fee with strong 4x dining. $15 quarterly streaming credit effectively gives $60/year in streaming credits. Successor to Radisson Rewards card."
+}

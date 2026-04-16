@@ -1,0 +1,48 @@
+{
+  "card_id": "penfed-pathfinder-rewards",
+  "name": "PenFed Pathfinder® Rewards Visa Signature® Card",
+  "issuer": "PenFed Credit Union",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 50000,
+    "estimated_value": 625,
+    "point_program": "PenFed Pathfinder Rewards",
+    "description": "50,000 bonus points after spending $3,000 in first 3 months"
+  },
+  "earning_rates": [
+    { "category": "Travel (airlines, cruises, taxis, public transit)", "rate": 4, "notes": "4x points on all travel purchases including airlines, cruises, taxis and public transit" },
+    { "category": "Restaurants and Dining", "rate": 3, "notes": "3x points on dining" },
+    { "category": "All Other Purchases", "rate": 1.5, "notes": "1.5x points on all other purchases" }
+  ],
+  "annual_credits": [
+    { "name": "$100 annual credit for travel", "amount": 100, "frequency": "Annual", "description": "$100 statement credit for travel purchases each year (for Honors Advantage members)" }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      { "name": "Cell phone protection", "description": "Up to $1,000 per year in cell phone protection when paying monthly wireless bill" },
+      { "name": "Priority Pass Select", "description": "Complimentary Priority Pass Select lounge membership for cardholders" },
+      { "name": "Visa Signature Benefits", "description": "Access to Visa Signature concierge services and benefits" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "trip_cancellation": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["penfed", "travel", "rewards", "premium"],
+  "sources": [
+    { "url": "https://www.penfed.org/credit-cards/pathfinder-rewards-visa", "notes": "Official PenFed page" },
+    { "url": "https://money.usnews.com/credit-cards/penfed/penfed-pathfinder-rewards-visa-signature-card", "notes": "U.S. News review" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Annual fee waived for Honors Advantage members (those with qualifying PenFed products). Strong 4x on travel and 3x on dining. Points worth ~1.25 cents each."
+}

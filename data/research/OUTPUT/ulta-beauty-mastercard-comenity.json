@@ -1,0 +1,38 @@
+{
+  "card_id": "ulta-beauty-mastercard-comenity",
+  "name": "Ulta Beauty Mastercard®",
+  "issuer": "Bread Financial / Comenity Bank",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Good",
+  "welcome_offer": null,
+  "earning_rates": [
+    { "category": "Ulta Beauty Purchases", "rate": 4, "notes": "4x points per $1 on Ulta Beauty purchases" },
+    { "category": "Gas Stations", "rate": 2, "notes": "2x points on gas station purchases" },
+    { "category": "Dining", "rate": 2, "notes": "2x points on dining purchases" },
+    { "category": "All Other Purchases", "rate": 1, "notes": "1x point on all other purchases" }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      { "name": "Free birthday gift", "description": "Birthday gift from Ulta Beauty" },
+      { "name": "Ulta Beauty events", "description": "Access to exclusive Ulta Beauty member events" }
+    ]
+  },
+  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["bread-financial", "ulta", "beauty", "rewards"],
+  "sources": [
+    { "url": "https://www.ulta.com/credit-card/", "notes": "Ulta Beauty credit card page" }
+  ],
+  "last_updated": "2026-04-16T00:00:00Z",
+  "status": "active",
+  "notes": "Co-branded Mastercard usable anywhere (unlike store-only cards). 4x at Ulta, 2x gas/dining, 1x elsewhere. Issued via Comenity Bank."
+}

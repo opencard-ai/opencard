@@ -1,0 +1,41 @@
+{
+  "card_id": "boa-student-travel-rewards",
+  "name": "Bank of America® Travel Rewards Credit Card for Students",
+  "issuer": "Bank of America",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 25000,
+    "description": "25,000 online bonus points after making at least $1,000 in purchases in the first 90 days (redeemable for $250 travel statement credit).",
+    "free_nights": null,
+    "point_program": "Bank of America Travel Points"
+  },
+  "earning_rates": [
+    {"category": "BofA Travel Center", "rate": 3, "notes": "3x points on travel booked through Bank of America Travel Center"},
+    {"category": "All other purchases", "rate": 1.5, "notes": "Unlimited 1.5x points on all other purchases"}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "No Foreign Transaction Fees", "description": "No foreign transaction fees - ideal for students studying abroad"},
+      {"name": "Points Never Expire", "description": "Points don't expire as long as account is open"}
+    ]
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": ["bank-of-america", "student", "travel", "points", "no-annual-fee", "no-foreign-fee"],
+  "sources": [
+    {"url": "https://www.bankofamerica.com/credit-cards/products/student-rewards-credit-card/", "notes": "Official BOA Page"},
+    {"url": "https://www.forbes.com/advisor/credit-cards/reviews/bank-of-america-travel-rewards-for-students-card/", "notes": "Forbes review"},
+    {"url": "https://maxrewards.com/credit-cards/bank-of-america-travel-rewards-for-students", "notes": "MaxRewards"}
+  ],
+  "last_updated": "2026-04-16T13:00:00Z"
+}

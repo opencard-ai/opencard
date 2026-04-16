@@ -1,0 +1,95 @@
+{
+  "card_id": "us-bank-business-altitude-connect",
+  "name": "U.S. Bank Business Altitude® Connect Visa Signature® Card",
+  "issuer": "U.S. Bank",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 6000,
+    "time_period_months": 6,
+    "bonus_points": 60000,
+    "estimated_value": 750,
+    "point_program": "U.S. Bank Rewards",
+    "description": "60,000 bonus points after spending $6,000 in first 180 days"
+  },
+  "earning_rates": [
+    {
+      "category": "Travel (hotels, airfare, car rentals)",
+      "rate": 4,
+      "notes": "4x points on prepaid hotels and car rentals booked in Travel Center"
+    },
+    {
+      "category": "Gas Stations",
+      "rate": 2,
+      "notes": "2x points at gas stations"
+    },
+    {
+      "category": "Cellular Service Providers",
+      "rate": 2,
+      "notes": "2x points on cellular service providers"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1x point per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Priority Pass Digital membership",
+      "amount": 0,
+      "frequency": "Annual",
+      "description": "Complimentary Priority Pass Digital membership with 4 lounge visits per year"
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": [
+      {
+        "name": "Priority Pass Digital",
+        "type": "Lounge Access"
+      }
+    ],
+    "other_benefits": [
+      {
+        "name": "Cell phone protection",
+        "description": "Up to $600 coverage for stolen/damaged cell phones"
+      },
+      {
+        "name": "Travel and Emergency Assistance",
+        "description": "24/7 travel and emergency assistance services"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "trip_cancellation": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "u-s-bank",
+    "business",
+    "travel",
+    "rewards"
+  ],
+  "sources": [
+    {
+      "url": "https://www.usbank.com/credit-cards/business-altitude-connect-visa-signature-credit-card.html",
+      "notes": "Official U.S. Bank page"
+    },
+    {
+      "url": "https://money.usnews.com/credit-cards/us-bank/us-bank-business-altitude-connect-visa-signature-card",
+      "notes": "U.S. News review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:24:48.326Z",
+  "status": "active",
+  "notes": "Annual fee waived first year. $25 ride-share credit after 3 consecutive monthly rides. Strong for gas and cellular spend."
+}
