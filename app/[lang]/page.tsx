@@ -1,5 +1,6 @@
 // FORCE_UPDATE_KEY = "7214affe-c79d-4e23-921e-0d93a53a227e"
 import { Suspense } from "react";
+import HeroButtons from "@/app/components/HeroButtons";
 import { getAllCards, getAllIssuers, getAllTags } from "@/lib/cards";
 import CardGrid from "@/app/components/CardGrid";
 import TravelProducts from "@/app/components/TravelProducts";
@@ -45,6 +46,12 @@ export default async function HomePage({ params }: Props) {
           >
             {t("home.heroAiCta", lang as any)}
           </a>
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent("opencard_open_mycards"))}
+            className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-700 font-medium text-sm px-5 py-2.5 rounded-full border-2 border-slate-200 shadow-md hover:shadow-lg transition-all hover:scale-105 active:scale-95"
+          >
+            {t("home.heroMyCards", lang as any)}
+          </button>
           <a
             href="#cards-section"
             className="text-sm text-slate-500 hover:text-slate-700 font-medium"

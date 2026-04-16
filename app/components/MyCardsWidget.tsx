@@ -42,6 +42,13 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
   const [search, setSearch] = useState("");
   const m = MESSAGES[lang as keyof typeof MESSAGES] || MESSAGES.en;
 
+  // Listen for external open event
+  useEffect(() => {
+    const handleOpen = () => setIsOpen(true);
+    window.addEventListener("opencard_open_mycards", handleOpen);
+    return () => window.removeEventListener("opencard_open_mycards", handleOpen);
+  }, []);
+
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
