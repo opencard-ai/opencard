@@ -1,0 +1,56 @@
+{
+  "card_id": "costco-anywhere-visa-citi",
+  "name": "Costco Anywhere Visa by Citi",
+  "issuer": "Citi",
+  "network": "Visa",
+  "annual_fee": 0,
+  "annual_fee_description": "$0 annual fee (with paid Costco membership)",
+  "welcome_offer": null,
+  "welcome_offer_description": "No welcome bonus",
+  "earning_rates": [
+    {
+      "category": "gas_costco",
+      "rate": 5,
+      "rate_type": "cashback",
+      "description": "5% cash back on gas at Costco (up to $7,000/year combined with other gas, then 1%)"
+    },
+    {
+      "category": "gas_other",
+      "rate": 4,
+      "rate_type": "cashback",
+      "description": "4% cash back on other eligible gas and EV charging (up to $7,000/year combined, then 1%)"
+    },
+    {
+      "category": "travel",
+      "rate": 3,
+      "rate_type": "cashback",
+      "description": "3% cash back on travel and dining (restaurants)"
+    },
+    {
+      "category": "costco_purchases",
+      "rate": 2,
+      "rate_type": "cashback",
+      "description": "2% cash back on Costco purchases"
+    },
+    {
+      "category": "all_other",
+      "rate": 1,
+      "rate_type": "cashback",
+      "description": "1% cash back on all other purchases"
+    }
+  ],
+  "features": [
+    "Cash back paid as annual reward certificate",
+    "No foreign transaction fees",
+    "Extended warranty protection",
+    "Travel accident insurance",
+    "Worldwide car rental insurance"
+  ],
+  "tags": ["cashback", "costco", "gas", "travel", "dining", "no-annual-fee"],
+  "sources": [
+    "https://www.costco.com/credit-card.html",
+    "https://www.citi.com/credit-cards/understanding-credit-cards/costco-citi-credit-card-benefits",
+    "https://money.usnews.com/credit-cards/citi/costco-anywhere-visa-card-by-citi"
+  ],
+  "last_updated": "2026-04-16"
+}

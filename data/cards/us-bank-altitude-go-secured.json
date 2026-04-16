@@ -70,7 +70,12 @@
       "notes": "MaxRewards review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.325Z",
+  "last_updated": "2026-04-16T13:41:50.005Z",
   "status": "active",
-  "notes": "Secured card requiring $300-$5,000 deposit. Reports to all 3 credit bureaus. Good for credit building with rewards."
+  "notes": "Secured card requiring $300-$5,000 deposit. Reports to all 3 credit bureaus. Good for credit building with rewards.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

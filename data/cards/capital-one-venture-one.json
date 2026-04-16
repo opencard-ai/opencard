@@ -55,6 +55,11 @@
   ],
   "notes": "Best no-annual-fee Capital One travel card. Earn 1.25 miles on all purchases (lower than Venture's 2X). 20,000 mile welcome bonus ($200 travel value). Miles are transferable to Capital One's 15+ travel partners. No annual fee and no foreign transaction fees make it a solid first travel card or backup for international travel. Upgrade path to regular Venture (2X) or Venture X ($395). No lounge access or high-end travel protections.",
   "confidence": "high",
-  "last_updated": "2026-04-16T13:16:57.273Z",
-  "tags": []
+  "last_updated": "2026-04-16T13:41:49.963Z",
+  "tags": [],
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

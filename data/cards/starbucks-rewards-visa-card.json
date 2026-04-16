@@ -68,5 +68,10 @@
     }
   ],
   "notes": "DISCONTINUED: Stopped accepting new applications mid-2022; fully discontinued July 2023. Existing cardholders were migrated to Chase Freedom cards. No new applications accepted. Earning rates were Stars-based (Starbucks loyalty currency). No longer in production.",
-  "last_updated": "2026-04-16T12:42:25.905Z"
+  "last_updated": "2026-04-16T13:41:49.996Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

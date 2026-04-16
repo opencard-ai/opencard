@@ -58,7 +58,12 @@
       "notes": "WalletHub"
     }
   ],
-  "last_updated": "2026-04-16T13:10:26.530Z",
+  "last_updated": "2026-04-16T13:41:49.992Z",
   "status": "active",
-  "notes": "Synchrony-issued version of PayPal Cashback Mastercard. Distinct from the Chase-issued PayPal Mastercard. Best for heavy PayPal users who want elevated cash back on PayPal transactions. Cash back as statement credit."
+  "notes": "Synchrony-issued version of PayPal Cashback Mastercard. Distinct from the Chase-issued PayPal Mastercard. Best for heavy PayPal users who want elevated cash back on PayPal transactions. Cash back as statement credit.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

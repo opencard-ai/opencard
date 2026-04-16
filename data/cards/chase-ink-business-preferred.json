@@ -1,6 +1,6 @@
 {
   "card_id": "chase-ink-business-preferred",
-  "name": "Chase Ink Business Preferred\u00ae Credit Card",
+  "name": "Chase Ink Business Preferred® Credit Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 95,
@@ -99,5 +99,10 @@
       "notes": "Official Chase page confirms no foreign transaction fees and travel/purchase coverage."
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.970Z"
+  "last_updated": "2026-04-16T13:41:49.967Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

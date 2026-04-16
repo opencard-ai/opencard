@@ -83,5 +83,10 @@
       "notes": "Costco Travel page confirms no FTf, $0 AF with paid Costco membership, 3% on travel."
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.970Z"
+  "last_updated": "2026-04-16T13:41:49.976Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

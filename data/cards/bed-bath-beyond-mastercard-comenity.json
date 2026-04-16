@@ -53,7 +53,12 @@
       "notes": "Bed Bath & Beyond"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.287Z",
+  "last_updated": "2026-04-16T13:41:49.954Z",
   "status": "active",
-  "notes": "Bed Bath & Beyond went through bankruptcy in 2023. Card may still be serviced by Bread Financial/Comenity for existing cardholders. Verify availability."
+  "notes": "Bed Bath & Beyond went through bankruptcy in 2023. Card may still be serviced by Bread Financial/Comenity for existing cardholders. Verify availability.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

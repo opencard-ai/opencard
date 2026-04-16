@@ -1,6 +1,6 @@
 {
   "card_id": "amex-bce",
-  "name": "Blue Cash Everyday\u00ae Card",
+  "name": "Blue Cash Everyday® Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 0,
@@ -73,5 +73,10 @@
       "notes": "Official Amex Page"
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z"
+  "last_updated": "2026-04-16T13:41:49.938Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

@@ -44,5 +44,11 @@
     "travel"
   ],
   "sources": [],
-  "benefits": []
+  "benefits": [],
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
+  "last_updated": "2026-04-16T13:41:49.971Z"
 }

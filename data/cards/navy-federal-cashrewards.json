@@ -57,7 +57,12 @@
       "notes": "Official Navy Federal page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.314Z",
+  "last_updated": "2026-04-16T13:41:49.991Z",
   "status": "active",
-  "notes": "Exclusive to Navy Federal members (military, veterans, DoD). 2% at gas, 1.5% everywhere. $0 annual fee, no balance transfer fee."
+  "notes": "Exclusive to Navy Federal members (military, veterans, DoD). 2% at gas, 1.5% everywhere. $0 annual fee, no balance transfer fee.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

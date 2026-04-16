@@ -115,5 +115,10 @@
     }
   ],
   "notes": "Business version of World of Hyatt. Same $199 AF and anniversary night benefit. Wide range of 3x bonus categories (advertising, gas, dining, shipping, etc.) makes it valuable for businesses. Can hold alongside personal Hyatt card for 2 free nights (one from each). 75K welcome bonus is higher than personal version.",
-  "last_updated": "2026-04-16T12:42:25.907Z"
+  "last_updated": "2026-04-16T13:41:50.012Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

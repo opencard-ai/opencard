@@ -1,0 +1,86 @@
+{
+  "card_id": "capital-one-savor-one",
+  "name": "Capital One SavorOne Cash Rewards",
+  "issuer": "Capital One",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "annual_fee_description": "$0 annual fee",
+  "welcome_offer": {
+    "bonus": "$200 cash bonus",
+    "requirement": "Spend $500 on purchases within the first 3 months from account opening"
+  },
+  "earning_rates": [
+    {
+      "category": "grocery_stores",
+      "rate": 3,
+      "rate_type": "cashback",
+      "description": "3% cash back at grocery stores"
+    },
+    {
+      "category": "dining",
+      "rate": 3,
+      "rate_type": "cashback",
+      "description": "3% cash back on dining"
+    },
+    {
+      "category": "entertainment",
+      "rate": 3,
+      "rate_type": "cashback",
+      "description": "3% cash back on entertainment"
+    },
+    {
+      "category": "streaming",
+      "rate": 3,
+      "rate_type": "cashback",
+      "description": "3% cash back on popular streaming services"
+    },
+    {
+      "category": "all_other",
+      "rate": 1,
+      "rate_type": "cashback",
+      "description": "1% cash back on all other purchases"
+    }
+  ],
+  "features": [
+    "$0 annual fee",
+    "No foreign transaction fees",
+    "Capital One Travel $0 intro annual fee for the first year",
+    "Instant access to credit score monitoring",
+    "No bonus cap — unlimited 3% on qualifying categories"
+  ],
+  "tags": [
+    "cashback",
+    "dining",
+    "grocery",
+    "entertainment",
+    "no-annual-fee"
+  ],
+  "sources": [
+    {
+      "url": "https://www.capitalone.com/credit-cards/savorone/"
+    },
+    {
+      "url": "https://www.capitalone.com/credit-cards/compare/"
+    },
+    {
+      "url": "https://www.bankrate.com/credit-cards/news/capital-one-savorone-changes/"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.959Z",
+  "travel_benefits": {
+    "hotel_status": [],
+    "lounge_access": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {},
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
+  "annual_credits": []
+}

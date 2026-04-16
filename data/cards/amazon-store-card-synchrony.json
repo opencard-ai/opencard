@@ -55,7 +55,12 @@
       "notes": "Amazon product page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.275Z",
+  "last_updated": "2026-04-16T13:41:49.935Z",
   "status": "active",
-  "notes": "Store card (not Visa/MC). Can only be used at Amazon. Special financing offers changing after Feb 2026. Not a traditional credit card."
+  "notes": "Store card (not Visa/MC). Can only be used at Amazon. Special financing offers changing after Feb 2026. Not a traditional credit card.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

@@ -83,7 +83,12 @@
       "notes": "NerdWallet review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.326Z",
+  "last_updated": "2026-04-16T13:41:50.006Z",
   "status": "active",
-  "notes": "Strong for gas, cell phone bills, and software subscriptions. $750 welcome offer is notable. 3% foreign transaction fee."
+  "notes": "Strong for gas, cell phone bills, and software subscriptions. $750 welcome offer is notable. 3% foreign transaction fee.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

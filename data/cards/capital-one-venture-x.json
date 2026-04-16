@@ -77,8 +77,17 @@
     "capital-one"
   ],
   "sources": [
-    "https://www.capitalone.com/credit-cards/venture-x/",
-    "https://thepointsguy.com/credit-cards/capital-one-venture-x/"
+    {
+      "url": "https://www.capitalone.com/credit-cards/venture-x/"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/capital-one-venture-x/"
+    }
   ],
-  "last_updated": "2026-04-13T02:11:53.969Z"
+  "last_updated": "2026-04-16T13:41:49.963Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

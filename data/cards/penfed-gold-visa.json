@@ -61,7 +61,12 @@
       "notes": "NerdWallet review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.316Z",
+  "last_updated": "2026-04-16T13:41:49.993Z",
   "status": "active",
-  "notes": "Primarily a low APR card (0% for 15 months) rather than a rewards card. $0 annual fee, no foreign transaction fees. Cell phone protection up to $500/claim."
+  "notes": "Primarily a low APR card (0% for 15 months) rather than a rewards card. $0 annual fee, no foreign transaction fees. Cell phone protection up to $500/claim.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

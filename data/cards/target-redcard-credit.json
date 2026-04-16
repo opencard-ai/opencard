@@ -61,7 +61,12 @@
       "notes": "Official Target RedCard page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.323Z",
+  "last_updated": "2026-04-16T13:41:49.996Z",
   "status": "active",
-  "notes": "5% off at Target on every purchase (best retail co-brand). Free shipping, extended returns. Issued by TD Bank. Note: separate from Target Debit Card."
+  "notes": "5% off at Target on every purchase (best retail co-brand). Free shipping, extended returns. Issued by TD Bank. Note: separate from Target Debit Card.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

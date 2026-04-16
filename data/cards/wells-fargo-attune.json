@@ -76,7 +76,12 @@
       "notes": "NerdWallet review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.327Z",
+  "last_updated": "2026-04-16T13:41:50.010Z",
   "status": "active",
-  "notes": "Unique 4% categories (self-care, sports/recreation, pet care) not commonly found on other cards. Strong for wellness and pet owners."
+  "notes": "Unique 4% categories (self-care, sports/recreation, pet care) not commonly found on other cards. Strong for wellness and pet owners.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

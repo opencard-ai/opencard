@@ -1,0 +1,78 @@
+{
+  "card_id": "wyndham-rewards-earner-plus-barclays",
+  "name": "Wyndham Rewards Earner Plus Card",
+  "issuer": "Barclays",
+  "network": "Visa",
+  "annual_fee": 75,
+  "annual_fee_description": "$75 annual fee",
+  "welcome_offer": {
+    "bonus": "75,000 Wyndham Rewards bonus points total",
+    "breakdown": "45,000 points after spending $1,000 in first 90 days + 30,000 points after another spending threshold"
+  },
+  "earning_rates": [
+    {
+      "category": "wyndham_hotels",
+      "rate": 7,
+      "rate_type": "points_per_dollar",
+      "description": "7X points at Wyndham hotels and resorts"
+    },
+    {
+      "category": "gas",
+      "rate": 6,
+      "rate_type": "points_per_dollar",
+      "description": "6X points on gas (including at Wyndham properties)"
+    },
+    {
+      "category": "dining",
+      "rate": 3,
+      "rate_type": "points_per_dollar",
+      "description": "3X points on dining"
+    },
+    {
+      "category": "all_other",
+      "rate": 1,
+      "rate_type": "points_per_dollar",
+      "description": "1X point on all other purchases"
+    }
+  ],
+  "features": [
+    "Annual bonus: 7,500 Wyndham Rewards points upon card renewal",
+    "Platinum membership status",
+    "No foreign transaction fees",
+    "Up to 10,000 bonus points per anniversary for booking Wyndham stays with card"
+  ],
+  "tags": [
+    "hotel",
+    "wyndham",
+    "travel",
+    "premium"
+  ],
+  "sources": [
+    {
+      "url": "https://www.wyndhamrewardscreditcard.com/"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/best-wyndham-credit-cards/"
+    },
+    {
+      "url": "https://upgradedpoints.com/credit-cards/reviews/wyndham-rewards-earner-plus-card/"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:50.013Z",
+  "travel_benefits": {
+    "hotel_status": [],
+    "lounge_access": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {},
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
+  "annual_credits": []
+}

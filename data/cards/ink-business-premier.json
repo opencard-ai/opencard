@@ -77,5 +77,10 @@
     }
   ],
   "notes": "Replaced the old Ink Business Preferred for cash back users. High AF ($195) for a cash back card, but valuable for businesses with large purchases. No points transfer to travel partners - pure cash back via Chase Ultimate Rewards.",
-  "last_updated": "2026-04-16T12:42:25.903Z"
+  "last_updated": "2026-04-16T13:41:49.987Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

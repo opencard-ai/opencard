@@ -62,5 +62,10 @@
     }
   ],
   "notes": "⚠️ IMPORTANT: This card was issued by American Express (NOT Chase). It is transitioning to U.S. Bank as of August 2026 (per March 2026 announcement). The 248-card reference list may have an incorrect issuer. Card stopped accepting new applications from Amex in March 2026. Existing Amex cardholders will be migrated to U.S. Bank Amazon Business card. The 248 list may need to be corrected to show issuer as 'U.S. Bank' or this entry may be removed.",
-  "last_updated": "2026-04-16T12:42:25.898Z"
+  "last_updated": "2026-04-16T13:41:49.934Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

@@ -1,0 +1,92 @@
+{
+  "card_id": "petal-2-visa",
+  "name": "Petal 2 Visa",
+  "issuer": "Petal (WebBank)",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Limited/No Credit History",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "bonus_value": null,
+    "description": "No welcome bonus. Earn cash back through Petal Offers at select merchants."
+  },
+  "earning_rates": [
+    {
+      "category": "Petal Offers at select merchants",
+      "rate": 2,
+      "notes": "Earn 2% to 10% cash back at select merchants through Petal Offers"
+    },
+    {
+      "category": "All other purchases (initial)",
+      "rate": 1,
+      "notes": "1% cash back on all purchases to start"
+    },
+    {
+      "category": "All other purchases (after 6 on-time payments)",
+      "rate": 1.25,
+      "notes": "1.25% cash back after 6 consecutive on-time monthly payments"
+    },
+    {
+      "category": "All other purchases (after 12 on-time payments)",
+      "rate": 1.5,
+      "notes": "1.5% cash back after 12 consecutive on-time monthly payments (max rate)"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Credit building",
+        "description": "Reports to all three major credit bureaus; strong on-time payment history builds credit"
+      },
+      {
+        "name": "No fees — ever",
+        "description": "Unlike the Petal 1, the Petal 2 charges NO fees of any kind for new cardholders — no annual fee, no foreign transaction fees, no late fees, no account fees"
+      },
+      {
+        "name": "Credit limit increase path",
+        "description": "Automatic review for credit limit increases with responsible use"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "petal",
+    "credit-builder",
+    "student",
+    "no-fee",
+    "cash-back",
+    "beginner"
+  ],
+  "sources": [
+    {
+      "url": "https://www.petalcard.com/petal-2",
+      "notes": "Petal 2 official page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/is-the-petal-card-legit",
+      "notes": "NerdWallet — Petal card legitimacy review"
+    },
+    {
+      "url": "https://www.cnbc.com/select/visa-petal-1-vs-petal-2/",
+      "notes": "CNBC — Petal 1 vs Petal 2 comparison"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.993Z",
+  "status": "active",
+  "notes": "Petal 2 is Petal's flagship no-fee credit builder card. Unlike Petal 1, it has NO fees of any kind for new cardholders. Earns 1% cash back initially, increasing to 1.25% after 6 on-time payments and 1.5% after 12 on-time payments — making it one of the best flat-rate cash back rates among secured/no-credit-required cards. Variable APR: 28.24%–33.24%. Petal uses bank account cash flow data (rather than credit score alone) for approvals. Highly regarded among credit-builder cards.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

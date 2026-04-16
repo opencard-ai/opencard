@@ -89,7 +89,12 @@
       "notes": "U.S. News review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.326Z",
+  "last_updated": "2026-04-16T13:41:50.006Z",
   "status": "active",
-  "notes": "Annual fee waived first year. $25 ride-share credit after 3 consecutive monthly rides. Strong for gas and cellular spend."
+  "notes": "Annual fee waived first year. $25 ride-share credit after 3 consecutive monthly rides. Strong for gas and cellular spend.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

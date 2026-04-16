@@ -46,6 +46,11 @@
       "url": "https://www.homedepot.com/c/Credit_Center"
     }
   ],
-  "last_updated": "2026-04-16T12:42:25.911Z",
-  "notes": "Business/professional version of Home Depot financing card issued by Citi. For contractors and larger home improvement projects. Not a rewards card."
+  "last_updated": "2026-04-16T13:41:49.984Z",
+  "notes": "Business/professional version of Home Depot financing card issued by Citi. For contractors and larger home improvement projects. Not a rewards card.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

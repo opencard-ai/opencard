@@ -1,6 +1,6 @@
 {
   "card_id": "amex-marriott-brilliant",
-  "name": "Marriott Bonvoy Brilliant\u00ae American Express\u00ae Card",
+  "name": "Marriott Bonvoy Brilliant® American Express® Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 650,
@@ -114,5 +114,10 @@
       "notes": "200K offer details and offer history confirmation"
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z"
+  "last_updated": "2026-04-16T13:41:49.948Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

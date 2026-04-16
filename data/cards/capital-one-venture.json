@@ -55,8 +55,17 @@
     "capital-one"
   ],
   "sources": [
-    "https://www.capitalone.com/credit-cards/venture/",
-    "https://thepointsguy.com/credit-cards/capital-one-venture-current-offer/"
+    {
+      "url": "https://www.capitalone.com/credit-cards/venture/"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/capital-one-venture-current-offer/"
+    }
   ],
-  "last_updated": "2026-04-13T02:11:53.969Z"
+  "last_updated": "2026-04-16T13:41:49.963Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

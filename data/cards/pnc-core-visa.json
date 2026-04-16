@@ -40,7 +40,12 @@
       "notes": "Official PNC page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.316Z",
+  "last_updated": "2026-04-16T13:41:49.993Z",
   "status": "active",
-  "notes": "Simple 1.5% flat-rate cash back. No annual fee, no foreign transaction fees. Good PNC account holders may get 2% rate."
+  "notes": "Simple 1.5% flat-rate cash back. No annual fee, no foreign transaction fees. Good PNC account holders may get 2% rate.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

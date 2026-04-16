@@ -70,7 +70,12 @@
       "notes": "U.S. News review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.308Z",
+  "last_updated": "2026-04-16T13:41:49.981Z",
   "status": "active",
-  "notes": "Student version of Discover it Cash Back. Rotating 5% categories (Amazon, Gas, Restaurants, etc.). Cashback Match doubles first year earnings. Good for students building credit."
+  "notes": "Student version of Discover it Cash Back. Rotating 5% categories (Amazon, Gas, Restaurants, etc.). Cashback Match doubles first year earnings. Good for students building credit.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

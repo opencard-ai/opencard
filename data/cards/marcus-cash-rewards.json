@@ -56,7 +56,12 @@
       "notes": "Official Marcus page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.311Z",
+  "last_updated": "2026-04-16T13:41:49.989Z",
   "status": "active",
-  "notes": "Simple 1.5% flat-rate card from Goldman Sachs/Marcus. Fee-free structure. Linked to Marcus banking customers."
+  "notes": "Simple 1.5% flat-rate card from Goldman Sachs/Marcus. Fee-free structure. Linked to Marcus banking customers.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

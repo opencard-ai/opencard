@@ -1,6 +1,6 @@
 {
   "card_id": "chase-ink-business-cash",
-  "name": "Chase Ink Business Cash\u00ae Credit Card",
+  "name": "Chase Ink Business Cash® Credit Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 0,
@@ -94,5 +94,10 @@
       "notes": "Confirms 3% foreign transaction fee."
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.969Z"
+  "last_updated": "2026-04-16T13:41:49.967Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

@@ -65,7 +65,12 @@
       "notes": "Williams-Sonoma credit card page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.328Z",
+  "last_updated": "2026-04-16T13:41:50.012Z",
   "status": "active",
-  "notes": "Store card for Williams-Sonoma kitchen/home goods retailer. 6x points at Williams-Sonoma. Issued via Comenity Bank. Part of Williams-Sonoma Inc. portfolio."
+  "notes": "Store card for Williams-Sonoma kitchen/home goods retailer. 6x points at Williams-Sonoma. Issued via Comenity Bank. Part of Williams-Sonoma Inc. portfolio.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

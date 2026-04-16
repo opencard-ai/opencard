@@ -1,0 +1,78 @@
+{
+  "card_id": "sofi-credit-card",
+  "name": "SoFi Credit Card (Unlimited 2%)",
+  "issuer": "SoFi / First Bank",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent (invitation-only / pre-qualification required)",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "bonus_value": "Varies",
+    "description": "Welcome bonus varies by targeted offer. New applicants should check SoFi for current promotions. Note: Some existing cardholders are now being charged a monthly fee (not annual); new applicants are not charged a monthly fee."
+  },
+  "earning_rates": [
+    {
+      "category": "All eligible purchases",
+      "rate": 2,
+      "notes": "Unlimited 2% cash back (2 points per $1). Points worth 1 cent each when redeemed into SoFi checking, savings, investment, or toward qualifying loans/card."
+    },
+    {
+      "category": "Travel booked through SoFi Travel",
+      "rate": 3,
+      "notes": "3% back on travel booked through SoFi Travel"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "SoFi ecosystem integration",
+        "description": "Redeem rewards into SoFi checking, savings, investment accounts, or toward SoFi personal/student loans, or SoFi credit card balance"
+      },
+      {
+        "name": "SoFi Travel",
+        "description": "3% back on travel booked through SoFi Travel portal"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Auto Rental Collision Damage Waiver",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "sofi",
+    "cash-back",
+    "2-percent",
+    "no-annual-fee",
+    "no-foreign-fee",
+    "mastercard"
+  ],
+  "sources": [
+    {
+      "url": "https://www.sofi.com/credit-card/unlimited/",
+      "notes": "SoFi official page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/sofi-credit-card",
+      "notes": "NerdWallet review"
+    },
+    {
+      "url": "https://www.creditkarma.com/credit-cards/insights/sofi-unlimited-credit-card",
+      "notes": "Credit Karma review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.995Z",
+  "status": "active",
+  "notes": "SoFi Unlimited 2% Credit Card is invitation-only or requires pre-qualification through SoFi account. Not available to general public. Best redemption value is 1 cent/point into SoFi ecosystem (checking, savings, investment, or loan paydown). Cannot redeem for cash directly — must be SoFi ecosystem. Some existing cardholders transitioned to a monthly fee model as of Jan 2026; new applicants are not charged monthly fee.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

@@ -1,6 +1,6 @@
 {
   "card_id": "amex-blue-business-cash",
-  "name": "The American Express Blue Business Cash\u2122 Card",
+  "name": "The American Express Blue Business Cash™ Card",
   "issuer": "American Express",
   "network": "American Express",
   "annual_fee": 0,
@@ -64,5 +64,10 @@
       "notes": "Upgraded Points offer history review, Mar 2026."
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z"
+  "last_updated": "2026-04-16T13:41:49.940Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

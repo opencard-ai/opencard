@@ -51,5 +51,10 @@
       "url": "https://global.americanexpress.com/card-benefits/view-all/blue"
     }
   ],
-  "last_updated": "2026-04-16T12:42:25.889Z"
+  "last_updated": "2026-04-16T13:41:49.941Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

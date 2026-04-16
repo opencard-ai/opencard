@@ -1,0 +1,85 @@
+{
+  "card_id": "citi-aadvantage-platinum-select",
+  "name": "Citi AAdvantage Platinum Select",
+  "issuer": "Citi",
+  "network": "Mastercard",
+  "annual_fee": 99,
+  "annual_fee_description": "$99 annual fee; $0 intro annual fee for the first year",
+  "welcome_offer": {
+    "bonus": "75,000 AAdvantage bonus miles",
+    "requirement": "Spend $5,000 on purchases within the first 5 months of account opening"
+  },
+  "earning_rates": [
+    {
+      "category": "american_airlines",
+      "rate": 2,
+      "rate_type": "miles_per_dollar",
+      "description": "2X AAdvantage miles on American Airlines purchases"
+    },
+    {
+      "category": "hotels",
+      "rate": 2,
+      "rate_type": "miles_per_dollar",
+      "description": "2X AAdvantage miles on hotels"
+    },
+    {
+      "category": "dining",
+      "rate": 2,
+      "rate_type": "miles_per_dollar",
+      "description": "2X AAdvantage miles on dining"
+    },
+    {
+      "category": "gas",
+      "rate": 2,
+      "rate_type": "miles_per_dollar",
+      "description": "2X AAdvantage miles on gas"
+    },
+    {
+      "category": "all_other",
+      "rate": 1,
+      "rate_type": "miles_per_dollar",
+      "description": "1X AAdvantage miles on all other purchases"
+    }
+  ],
+  "features": [
+    "First checked bag free for cardholder and up to 8 companions on American Airlines domestic flights",
+    "25% off in-flight food and beverage purchases",
+    "No foreign transaction fees",
+    "Companion certificate: 10% discount on American Airlines award redemptions",
+    "10% AAdvantage bonus on eligible awards"
+  ],
+  "tags": [
+    "airline",
+    "american-airlines",
+    "travel",
+    "frequent-flyer"
+  ],
+  "sources": [
+    {
+      "url": "https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-world-elite-mastercard"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/aadvantage-citi-best-welcome-offers/"
+    },
+    {
+      "url": "https://maxrewards.com/credit-cards/citi-aadvantage-platinum-select"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.976Z",
+  "travel_benefits": {
+    "hotel_status": [],
+    "lounge_access": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {},
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
+  "annual_credits": []
+}

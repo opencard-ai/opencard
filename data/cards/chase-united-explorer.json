@@ -1,6 +1,6 @@
 {
   "card_id": "chase-united-explorer",
-  "name": "United\u2120 Explorer Card",
+  "name": "United℠ Explorer Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 150,
@@ -124,5 +124,10 @@
       "notes": "TPG report on annual fee increase Mar 2025."
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.970Z"
+  "last_updated": "2026-04-16T13:41:49.971Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

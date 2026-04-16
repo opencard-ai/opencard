@@ -1,0 +1,78 @@
+{
+  "card_id": "wyndham-rewards-earner-barclays",
+  "name": "Wyndham Rewards Earner Card",
+  "issuer": "Barclays",
+  "network": "Visa",
+  "annual_fee": 0,
+  "annual_fee_description": "$0 annual fee",
+  "welcome_offer": {
+    "bonus": "30,000 Wyndham Rewards bonus points",
+    "requirement": "Spend $1,000 on purchases in the first 90 days"
+  },
+  "earning_rates": [
+    {
+      "category": "wyndham_hotels",
+      "rate": 5,
+      "rate_type": "points_per_dollar",
+      "description": "5X points at Wyndham hotels and resorts"
+    },
+    {
+      "category": "gas",
+      "rate": 5,
+      "rate_type": "points_per_dollar",
+      "description": "5X points on qualifying gas purchases"
+    },
+    {
+      "category": "dining",
+      "rate": 2,
+      "rate_type": "points_per_dollar",
+      "description": "2X points on dining"
+    },
+    {
+      "category": "all_other",
+      "rate": 1,
+      "rate_type": "points_per_dollar",
+      "description": "1X point on all other purchases"
+    }
+  ],
+  "features": [
+    "No annual fee",
+    "Wyndham Rewards membership",
+    "No foreign transaction fees",
+    "0% introductory APR on balance transfers for 12 billing cycles"
+  ],
+  "tags": [
+    "hotel",
+    "wyndham",
+    "travel",
+    "no-annual-fee"
+  ],
+  "sources": [
+    {
+      "url": "https://www.wyndhamrewardscreditcard.com/"
+    },
+    {
+      "url": "https://cards.barclaycardus.com/credit-card/e13b0d51-fce2-4a3c-af61-9a1b2b51a51a"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/best-wyndham-credit-cards/"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:50.012Z",
+  "travel_benefits": {
+    "hotel_status": [],
+    "lounge_access": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {},
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
+  "annual_credits": []
+}

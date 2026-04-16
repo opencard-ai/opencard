@@ -67,6 +67,11 @@
       "url": "https://www.macys.com/credit-card"
     }
   ],
-  "last_updated": "2026-04-16T12:42:25.911Z",
-  "notes": "Mastercard version of Macy's store card issued by Citi. Has broader acceptance than Amex version outside Macy's stores. Store rewards program only valuable if you shop at Macy's frequently."
+  "last_updated": "2026-04-16T13:41:49.989Z",
+  "notes": "Mastercard version of Macy's store card issued by Citi. Has broader acceptance than Amex version outside Macy's stores. Store rewards program only valuable if you shop at Macy's frequently.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

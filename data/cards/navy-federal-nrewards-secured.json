@@ -40,7 +40,12 @@
       "notes": "Official Navy Federal page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.314Z",
+  "last_updated": "2026-04-16T13:41:49.991Z",
   "status": "active",
-  "notes": "Secured card for credit building. Requires security deposit. Navy Federal membership required. Simple 1x earning."
+  "notes": "Secured card for credit building. Requires security deposit. Navy Federal membership required. Simple 1x earning.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

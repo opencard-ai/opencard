@@ -69,7 +69,12 @@
       "notes": "U.S. News review"
     }
   ],
-  "last_updated": "2026-04-16T13:10:26.532Z",
+  "last_updated": "2026-04-16T13:41:50.006Z",
   "status": "active",
-  "notes": "Card URL redirects to U.S. Bank Shield Visa. May have been rebranded or is the same product. 0% intro APR for 21 billing cycles on purchases and balance transfers. Ideal for those seeking low APR and cell phone protection rather than rewards."
+  "notes": "Card URL redirects to U.S. Bank Shield Visa. May have been rebranded or is the same product. 0% intro APR for 21 billing cycles on purchases and balance transfers. Ideal for those seeking low APR and cell phone protection rather than rewards.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

@@ -44,5 +44,11 @@
     "travel"
   ],
   "sources": [],
-  "annual_fee_note": "$0 annual fee for HSBC Premier relationship customers (must maintain qualifying deposits/investments). Standard fee: $95."
+  "annual_fee_note": "$0 annual fee for HSBC Premier relationship customers (must maintain qualifying deposits/investments). Standard fee: $95.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
+  "last_updated": "2026-04-16T13:41:49.986Z"
 }

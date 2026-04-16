@@ -70,7 +70,12 @@
       "notes": "WalletHub review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.309Z",
+  "last_updated": "2026-04-16T13:41:49.981Z",
   "status": "active",
-  "notes": "Student card with fixed 2% on gas and dining (not rotating). Cashback Match doubles first year earnings. No category activation required unlike Cash Back version."
+  "notes": "Student card with fixed 2% on gas and dining (not rotating). Cashback Match doubles first year earnings. No category activation required unlike Cash Back version.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

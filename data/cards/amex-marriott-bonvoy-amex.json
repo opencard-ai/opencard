@@ -101,5 +101,10 @@
       "notes": "Official Marriott page: 175K points offer, $250 AF, Gold Elite, 6x Marriott, 4x restaurants/supermarkets (cap $15K), 2x other, 15 elite nights"
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z"
+  "last_updated": "2026-04-16T13:41:49.948Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

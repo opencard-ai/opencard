@@ -68,10 +68,23 @@
     "carnival"
   ],
   "sources": [
-    "nerdwallet.com",
-    "barclaycardus.com",
-    "carnival.com",
-    "awardwallet.com"
+    {
+      "url": "nerdwallet.com"
+    },
+    {
+      "url": "barclaycardus.com"
+    },
+    {
+      "url": "carnival.com"
+    },
+    {
+      "url": "awardwallet.com"
+    }
   ],
-  "last_updated": "2026-04-16T12:42:25.895Z"
+  "last_updated": "2026-04-16T13:41:49.964Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

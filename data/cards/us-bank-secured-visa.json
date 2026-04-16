@@ -54,7 +54,12 @@
       "notes": "NerdWallet"
     }
   ],
-  "last_updated": "2026-04-16T13:10:26.532Z",
+  "last_updated": "2026-04-16T13:41:50.006Z",
   "status": "active",
-  "notes": "Secured card requiring $300–$5,000 refundable deposit. Deposit held in U.S. Bank savings account; becomes credit limit. Credit limit matches deposit amount. Can graduate to unsecured based on payment history."
+  "notes": "Secured card requiring $300–$5,000 refundable deposit. Deposit held in U.S. Bank savings account; becomes credit limit. Credit limit matches deposit amount. Can graduate to unsecured based on payment history.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

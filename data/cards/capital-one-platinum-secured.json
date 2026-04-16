@@ -44,6 +44,11 @@
   ],
   "notes": "Secured credit card requiring a refundable deposit. No rewards earned. Best for those with poor/no credit who need to build credit history. Prequalification available (no hard pull). After responsible use, Capital One may upgrade to unsecured or refund deposit. High APR. No protections. 4.4/5 stars from 14,000+ reviews — customers praise ease of use and credit-building path.",
   "confidence": "high",
-  "last_updated": "2026-04-16T13:16:57.270Z",
-  "tags": []
+  "last_updated": "2026-04-16T13:41:49.958Z",
+  "tags": [],
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

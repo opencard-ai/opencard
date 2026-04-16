@@ -79,7 +79,12 @@
       "notes": "Official Choice Hotels page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.304Z",
+  "last_updated": "2026-04-16T13:41:49.972Z",
   "status": "active",
-  "notes": "Similar to the Choice Privileges Mastercard but Visa version. Same earning structure and benefits. Choice Privileges program has 7,500+ properties."
+  "notes": "Similar to the Choice Privileges Mastercard but Visa version. Same earning structure and benefits. Choice Privileges program has 7,500+ properties.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

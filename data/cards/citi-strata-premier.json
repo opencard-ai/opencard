@@ -58,8 +58,17 @@
     "citi"
   ],
   "sources": [
-    "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
-    "https://finance.yahoo.com/personal-finance/credit-cards/article/best-citi-credit-cards-195110694.html"
+    {
+      "url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card"
+    },
+    {
+      "url": "https://finance.yahoo.com/personal-finance/credit-cards/article/best-citi-credit-cards-195110694.html"
+    }
   ],
-  "last_updated": "2026-04-13T02:11:53.970Z"
+  "last_updated": "2026-04-16T13:41:49.978Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

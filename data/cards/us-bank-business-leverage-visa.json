@@ -74,7 +74,12 @@
       "notes": "DoC welcome offer tracking"
     }
   ],
-  "last_updated": "2026-04-16T13:10:26.532Z",
+  "last_updated": "2026-04-16T13:41:50.006Z",
   "status": "active",
-  "notes": "Annual fee waived first year. Automatically earns 2x in top 2 categories — no need to activate."
+  "notes": "Annual fee waived first year. Automatically earns 2x in top 2 categories — no need to activate.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

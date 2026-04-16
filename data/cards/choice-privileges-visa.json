@@ -79,7 +79,12 @@
       "notes": "Official Wells Fargo page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.304Z",
+  "last_updated": "2026-04-16T13:41:49.973Z",
   "status": "active",
-  "notes": "No annual fee hotel card. Strong 60K welcome offer (~$420 value). 10x at Choice Hotels. Issued by Wells Fargo."
+  "notes": "No annual fee hotel card. Strong 60K welcome offer (~$420 value). 10x at Choice Hotels. Issued by Wells Fargo.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

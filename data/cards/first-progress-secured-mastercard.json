@@ -1,0 +1,72 @@
+{
+  "card_id": "first-progress-secured-mastercard",
+  "name": "First Progress Platinum Mastercard (Secured)",
+  "issuer": "First Progress (Pinnacle Bank)",
+  "network": "Mastercard",
+  "annual_fee": 39,
+  "foreign_transaction_fee": 3,
+  "credit_required": "No minimum credit score required (secured, credit-builder)",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "bonus_value": null,
+    "description": "No welcome bonus."
+  },
+  "earning_rates": [
+    {
+      "category": "All purchases",
+      "rate": 0,
+      "notes": "No rewards on standard purchases. Note: The Prestige variant offers up to 10% cash back at select merchants and 1% on payments."
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Credit building",
+        "description": "Reports to all three major credit bureaus monthly"
+      },
+      {
+        "name": "Instant approval",
+        "description": "Instant approval available online or by phone"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "secured",
+    "credit-builder",
+    "first-progress",
+    "mastercard",
+    "no-rewards"
+  ],
+  "sources": [
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/first-progress-secured-credit-cards-review",
+      "notes": "NerdWallet — 5 Things to Know"
+    },
+    {
+      "url": "https://www.creditkarma.com/credit-cards/insights/first-progress-platinum-elite-mastercard-secured-credit-card",
+      "notes": "Credit Karma — Platinum Elite review"
+    },
+    {
+      "url": "https://wallethub.com/d/first-progress-select-mastercard-589c",
+      "notes": "WalletHub — First Progress cards comparison"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.983Z",
+  "status": "active",
+  "notes": "First Progress offers multiple secured card variants issued by Pinnacle Bank: Platinum Select ($39 annual fee, 17.49% APR), Platinum Elite ($39 annual fee, 17.49% APR), and Platinum Prestige ($49 annual fee, 13.49% APR — lowest rate but highest fee). All require $200–$2,000 security deposit. Annual fee is charged upon account opening and deducted from credit limit. Cards are not upgradeable to unsecured. Not suitable for international travel due to 3% foreign transaction fee.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

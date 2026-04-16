@@ -60,10 +60,23 @@
     "apparel"
   ],
   "sources": [
-    "nerdwallet.com",
-    "maxrewards.com",
-    "barclaycardus.com",
-    "wallethub.com"
+    {
+      "url": "nerdwallet.com"
+    },
+    {
+      "url": "maxrewards.com"
+    },
+    {
+      "url": "barclaycardus.com"
+    },
+    {
+      "url": "wallethub.com"
+    }
   ],
-  "last_updated": "2026-04-16T12:42:25.895Z"
+  "last_updated": "2026-04-16T13:41:49.951Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

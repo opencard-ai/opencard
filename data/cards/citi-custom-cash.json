@@ -41,8 +41,17 @@
     "citi"
   ],
   "sources": [
-    "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
-    "https://www.bankrate.com/credit-cards/reviews/citi-custom-cash-card/"
+    {
+      "url": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card"
+    },
+    {
+      "url": "https://www.bankrate.com/credit-cards/reviews/citi-custom-cash-card/"
+    }
   ],
-  "last_updated": "2026-04-13T02:11:53.970Z"
+  "last_updated": "2026-04-16T13:41:49.976Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

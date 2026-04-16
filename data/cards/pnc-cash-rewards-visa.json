@@ -68,7 +68,12 @@
       "notes": "Official PNC page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.316Z",
+  "last_updated": "2026-04-16T13:41:49.993Z",
   "status": "active",
-  "notes": "Strong 4% at gas stations, 3% dining. No annual fee. No foreign transaction fees."
+  "notes": "Strong 4% at gas stations, 3% dining. No annual fee. No foreign transaction fees.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

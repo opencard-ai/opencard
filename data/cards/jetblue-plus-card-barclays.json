@@ -1,0 +1,79 @@
+{
+  "card_id": "jetblue-plus-card-barclays",
+  "name": "JetBlue Plus Card",
+  "issuer": "Barclays",
+  "network": "Mastercard",
+  "annual_fee": 99,
+  "annual_fee_description": "$99 annual fee",
+  "welcome_offer": {
+    "bonus": "70,000 TrueBlue points",
+    "requirement": "Spend $1,000 on purchases and pay the annual fee, both within the first 90 days"
+  },
+  "earning_rates": [
+    {
+      "category": "jetblue",
+      "rate": 6,
+      "rate_type": "points_per_dollar",
+      "description": "6X points on eligible JetBlue purchases"
+    },
+    {
+      "category": "restaurants",
+      "rate": 2,
+      "rate_type": "points_per_dollar",
+      "description": "2X points at restaurants"
+    },
+    {
+      "category": "grocery",
+      "rate": 2,
+      "rate_type": "points_per_dollar",
+      "description": "2X points at grocery stores"
+    },
+    {
+      "category": "all_other",
+      "rate": 1,
+      "rate_type": "points_per_dollar",
+      "description": "1X points on all other purchases"
+    }
+  ],
+  "features": [
+    "10% TrueBlue points rebate on award bookings",
+    "Free first checked bag for cardholder and up to 3 companions on JetBlue flights",
+    "Annual bonus: 5,000 TrueBlue points upon renewal (worth ~$65 at 1.3cpp)",
+    "No foreign transaction fees",
+    "0% introductory APR on balance transfers for 12 billing cycles"
+  ],
+  "tags": [
+    "airline",
+    "jetblue",
+    "travel",
+    "premium"
+  ],
+  "sources": [
+    {
+      "url": "https://www.jetbluepluscard.com/"
+    },
+    {
+      "url": "https://cards.barclaycardus.com/banking/cards/jetblue-plus-card/"
+    },
+    {
+      "url": "https://frequentmiler.com/b6plus/"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.988Z",
+  "travel_benefits": {
+    "hotel_status": [],
+    "lounge_access": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {},
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
+  "annual_credits": []
+}

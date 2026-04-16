@@ -49,7 +49,12 @@
       "notes": "Official Navy Federal page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.315Z",
+  "last_updated": "2026-04-16T13:41:49.991Z",
   "status": "active",
-  "notes": "Low APR card, not a rewards card. Designed for debt consolidation and balance transfers. No annual fee. Navy Federal membership required."
+  "notes": "Low APR card, not a rewards card. Designed for debt consolidation and balance transfers. No annual fee. Navy Federal membership required.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

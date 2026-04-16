@@ -57,11 +57,26 @@
     "premium"
   ],
   "sources": [
-    "nerdwallet.com",
-    "barclaycardus.com",
-    "onemileatatime.com",
-    "maxrewards.com",
-    "finance.yahoo.com"
+    {
+      "url": "nerdwallet.com"
+    },
+    {
+      "url": "barclaycardus.com"
+    },
+    {
+      "url": "onemileatatime.com"
+    },
+    {
+      "url": "maxrewards.com"
+    },
+    {
+      "url": "finance.yahoo.com"
+    }
   ],
-  "last_updated": "2026-04-16T12:42:25.896Z"
+  "last_updated": "2026-04-16T13:41:49.982Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

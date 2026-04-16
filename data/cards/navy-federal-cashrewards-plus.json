@@ -50,7 +50,12 @@
       "notes": "Official Navy Federal page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.313Z",
+  "last_updated": "2026-04-16T13:41:49.991Z",
   "status": "active",
-  "notes": "Higher gas earning (3%) than standard cashRewards. Navy Federal members only. $0 annual fee."
+  "notes": "Higher gas earning (3%) than standard cashRewards. Navy Federal members only. $0 annual fee.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

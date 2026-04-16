@@ -70,7 +70,12 @@
       "notes": "NerdWallet review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.326Z",
+  "last_updated": "2026-04-16T13:41:50.006Z",
   "status": "active",
-  "notes": "Choose your own 5% and 2% categories. Must activate categories quarterly. $100 minimum redemption."
+  "notes": "Choose your own 5% and 2% categories. Must activate categories quarterly. $100 minimum redemption.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

@@ -1,0 +1,78 @@
+{
+  "card_id": "elan-max-cash-everyday",
+  "name": "Elan Max Cash Everyday Card",
+  "issuer": "Elan Financial Services",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 3,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "bonus_value": null,
+    "description": "No welcome bonus; sign-up bonus varies by issuing bank"
+  },
+  "earning_rates": [
+    {
+      "category": "Two categories of your choice (5% category options include: Gas/EV, Dining, Grocery, Amazon, Streaming, Home utility, Phone/Internet, etc.)",
+      "rate": 5,
+      "notes": "5% cash back on first $2,000 in combined eligible purchases each quarter on two categories you choose; then 1%"
+    },
+    {
+      "category": "One everyday category of your choice (e.g., gas, grocery, dining, streaming, etc.)",
+      "rate": 3,
+      "notes": "3% unlimited cash back on one everyday category of your choice each quarter (up to $1,500 spend)"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1% unlimited cash back on all other eligible purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Flexible category selection",
+        "description": "Choose and change your 5% and 3% categories quarterly"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None specified",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "elan",
+    "cash-back",
+    "5-percent",
+    "category-rotating",
+    "no-annual-fee"
+  ],
+  "sources": [
+    {
+      "url": "https://www.elanfinancialservices.com/credit-card/what-we-offer/product-suites/consumer-products.html",
+      "notes": "Elan Financial Services product page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/what-is-elan-financial",
+      "notes": "NerdWallet — Elan Financial overview"
+    },
+    {
+      "url": "https://www.doctorofcredit.com/elan-max-cash-preferred-5-on-two-categories/",
+      "notes": "Doctor of Credit — category details"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.982Z",
+  "status": "active",
+  "notes": "Elan issues cards through partner banks (e.g., Associated Bank, Fremont Bank, Credit Unions). The Everyday version earns 3% on one everyday category; the Preferred version earns 5% on two chosen categories and 2% on one everyday category. No sign-up bonus standard, but some issuing banks may offer targeted bonuses.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

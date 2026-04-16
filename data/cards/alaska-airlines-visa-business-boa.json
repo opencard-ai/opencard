@@ -85,5 +85,14 @@
       "notes": "DoC 85K offer details"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.287Z"
+  "last_updated": "2026-04-16T13:41:49.933Z",
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

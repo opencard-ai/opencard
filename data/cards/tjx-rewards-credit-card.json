@@ -62,7 +62,12 @@
       "notes": "FinanceBuzz"
     }
   ],
-  "last_updated": "2026-04-16T13:10:26.531Z",
+  "last_updated": "2026-04-16T13:41:49.997Z",
   "status": "active",
-  "notes": "Store-only card accepted at T.J. Maxx, Marshalls, HomeGoods, Sierra, and Homesense. 5% back is solid for bargain shoppers. Cannot be used outside TJX family of stores. Separate from TJX Rewards Platinum Mastercard which can be used anywhere."
+  "notes": "Store-only card accepted at T.J. Maxx, Marshalls, HomeGoods, Sierra, and Homesense. 5% back is solid for bargain shoppers. Cannot be used outside TJX family of stores. Separate from TJX Rewards Platinum Mastercard which can be used anywhere.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

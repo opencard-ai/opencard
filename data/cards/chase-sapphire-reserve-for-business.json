@@ -137,5 +137,10 @@
     }
   ],
   "notes": "Business version of Sapphire Reserve. Same $795 AF and credits. 150,000 point welcome bonus (higher than personal) makes it very attractive. Employee cards are free. Can combine points with personal Sapphire Reserve for larger balances. Key for business travelers who want same premium benefits as personal Reserve.",
-  "last_updated": "2026-04-16T12:42:25.904Z"
+  "last_updated": "2026-04-16T13:41:49.969Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

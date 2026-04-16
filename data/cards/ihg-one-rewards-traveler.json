@@ -88,5 +88,10 @@
     }
   ],
   "notes": "No AF version of IHG card. Lower earning than Premier (17x vs 26x at IHG) and no free night per year, but Gold status (not Platinum) and $0 AF. Good for occasional IHG guests who don't want to pay an annual fee. The 4th night free still applies to award bookings.",
-  "last_updated": "2026-04-16T12:42:25.902Z"
+  "last_updated": "2026-04-16T13:41:49.987Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

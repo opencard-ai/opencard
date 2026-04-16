@@ -42,6 +42,11 @@
   ],
   "notes": "The most basic Capital One card. No rewards, no sign-up bonus, no annual fee. Value comes purely from credit-building: accessible to those with fair/average credit, no foreign transaction fees, and path to credit limit increases after 6 months. No purchase protections, no travel benefits. Not recommended for anyone who can qualify for a rewards card. Best use: first credit card to establish credit history.",
   "confidence": "medium",
-  "last_updated": "2026-04-16T13:16:57.270Z",
-  "tags": []
+  "last_updated": "2026-04-16T13:41:49.958Z",
+  "tags": [],
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

@@ -64,7 +64,12 @@
       "notes": "Official Target RedCard page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.323Z",
+  "last_updated": "2026-04-16T13:41:49.996Z",
   "status": "active",
-  "notes": "Mastercard version of RedCard usable anywhere (unlike store-only credit card). 5% at Target, 0.5% elsewhere. Issued by TD Bank."
+  "notes": "Mastercard version of RedCard usable anywhere (unlike store-only credit card). 5% at Target, 0.5% elsewhere. Issued by TD Bank.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

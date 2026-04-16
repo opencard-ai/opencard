@@ -50,7 +50,12 @@
       "notes": "NerdWallet"
     }
   ],
-  "last_updated": "2026-04-16T13:10:26.518Z",
+  "last_updated": "2026-04-16T13:41:49.963Z",
   "status": "active",
-  "notes": "Healthcare/medical financing card. NOT a rewards card — no cash back or points. High regular APR (~26.99%). Use only for promotional financing; carrying a balance is costly. Can be upgraded to CareCredit Rewards Mastercard (separate card)."
+  "notes": "Healthcare/medical financing card. NOT a rewards card — no cash back or points. High regular APR (~26.99%). Use only for promotional financing; carrying a balance is costly. Can be upgraded to CareCredit Rewards Mastercard (separate card).",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

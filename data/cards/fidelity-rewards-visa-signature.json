@@ -1,0 +1,73 @@
+{
+  "card_id": "fidelity-rewards-visa-signature",
+  "name": "Fidelity Rewards Visa Signature Card",
+  "issuer": "Fidelity Investments / Elan Financial Services",
+  "network": "Visa Signature",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "bonus_value": null,
+    "description": "No welcome bonus. Rewards start earning immediately at 2%."
+  },
+  "earning_rates": [
+    {
+      "category": "All eligible net purchases",
+      "rate": 2,
+      "notes": "Unlimited 2% cash back (2 points per $1) on all net purchases when deposited into an eligible Fidelity account. 1.5% flat rate if redeemed as statement credit or to non-Fidelity account."
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "TSA PreCheck/Global Entry credit",
+        "description": "$100 statement credit for TSA PreCheck or Global Entry fee"
+      },
+      {
+        "name": "Visa Signature Benefits",
+        "description": "Travel and Emergency Assistance, Lost Wallet Service, Luxury Hotel Collection, etc."
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Auto Rental Collision Damage Waiver",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "fidelity",
+    "cash-back",
+    "2-percent",
+    "no-annual-fee",
+    "no-foreign-fee",
+    "visa-signature"
+  ],
+  "sources": [
+    {
+      "url": "https://www.fidelity.com/spend-save/visa-signature-card",
+      "notes": "Fidelity official page"
+    },
+    {
+      "url": "https://www.fidelityrewards.com/credit/benefits.do",
+      "notes": "Fidelity Rewards benefits page"
+    },
+    {
+      "url": "https://www.forbes.com/advisor/credit-cards/reviews/fidelity-rewards-visa-signature/",
+      "notes": "Forbes Advisor review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.982Z",
+  "status": "active",
+  "notes": "Effective April 22, 2025, some changes to the rewards program were announced — cardholders should refer to their November statement or new account materials. The card requires a Fidelity account to redeem rewards at best rate (2%). Redemption to non-Fidelity accounts caps at 1.5%. No annual fee and no foreign transaction fees.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

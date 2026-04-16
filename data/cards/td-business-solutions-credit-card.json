@@ -56,7 +56,12 @@
       "notes": "Official TD Bank page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.324Z",
+  "last_updated": "2026-04-16T13:41:49.996Z",
   "status": "active",
-  "notes": "Simple 2x flat-rate business card. No annual fee. Good for small businesses wanting straightforward earning."
+  "notes": "Simple 2x flat-rate business card. No annual fee. Good for small businesses wanting straightforward earning.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

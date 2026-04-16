@@ -48,8 +48,17 @@
     "discover"
   ],
   "sources": [
-    "https://www.discover.com/credit-cards/cash-back/",
-    "https://thepointsguy.com/credit-cards/discover-it-cash-back-review/"
+    {
+      "url": "https://www.discover.com/credit-cards/cash-back/"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/discover-it-cash-back-review/"
+    }
   ],
-  "last_updated": "2026-04-13T02:11:53.971Z"
+  "last_updated": "2026-04-16T13:41:49.980Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

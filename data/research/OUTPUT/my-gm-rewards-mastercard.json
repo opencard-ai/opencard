@@ -1,46 +1,66 @@
 {
   "card_id": "my-gm-rewards-mastercard",
-  "name": "My GM Rewards Card Mastercard®",
-  "issuer": "Goldman Sachs",
+  "name": "My GM Rewards Mastercard",
+  "issuer": "Barclays",
   "network": "Mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
-  "credit_required": "Good",
+  "credit_required": "Good to Excellent",
   "welcome_offer": {
     "spending_requirement": 1000,
-    "time_period_months": 3,
-    "bonus_points": 20000,
-    "estimated_value": 200,
-    "point_program": "My GM Rewards",
-    "description": "20,000 bonus points ($200 toward GM) after spending $1,000 in first 3 months"
+    "bonus_value": "30,000 points ($300 value)",
+    "description": "Earn 30,000 bonus points after spending $1,000 on purchases in the first 90 days of account opening"
   },
   "earning_rates": [
-    { "category": "GM (new vehicle purchases, service, parts, Super Cruise)", "rate": 10, "notes": "10x points on GM purchases (new vehicle down payment, service, parts, GM Financial)" },
-    { "category": "Gas Stations", "rate": 3, "notes": "3x points at gas stations" },
-    { "category": "Dining", "rate": 3, "notes": "3x points on dining (restaurants, takeout, delivery)" },
-    { "category": "All Other Purchases", "rate": 1, "notes": "1x point on all other purchases" }
+    {
+      "category": "Eligible GM purchases (vehicle purchases, service, parts, accessories at GM dealers)",
+      "rate": 7,
+      "notes": "7x points per $1 on eligible GM purchases when using the card, plus up to 3x points as a GM Rewards member (up to 10x total)"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 3,
+      "notes": "3x points per $1 on all other purchases (updated as of May 2025 program revamp — previously 4x)"
+    }
   ],
-  "annual_credits": [
-    { "name": "GM tier upgrade", "amount": 0, "frequency": "Ongoing", "description": "Cardmembers start at Gold tier in My GM Rewards (normally requires 20K spend)" }
-  ],
+  "annual_credits": [],
   "travel_benefits": {
     "other_benefits": [
-      { "name": "Super Cruise access", "description": "Access to GM Super Cruise hands-free driving with points" }
+      {
+        "name": "0% intro APR",
+        "description": "0% intro APR for 9 months on qualifying GM purchases over $499; then 22.24%–32.24% variable APR"
+      },
+      {
+        "name": "GM Rewards program integration",
+        "description": "Points can be redeemed toward new GM vehicles, services, parts, and accessories"
+      }
     ]
   },
-  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
   "insurance": {
-    "rental_insurance": "Primary",
-    "trip_delay": false,
-    "trip_cancellation": false,
+    "rental_insurance": "Auto Rental Collision Damage Waiver",
     "purchase_protection": true,
     "extended_warranty": true
   },
-  "tags": ["goldman-sachs", "gm", "auto", "rewards"],
+  "tags": ["gm", "barclays", "mastercard", "rewards", "auto", "no-annual-fee", "gm-rewards"],
   "sources": [
-    { "url": "https://www.mygmrewardscard.com/", "notes": "Official GM Rewards Card page" }
+    {
+      "url": "https://experience.gm.com/rewards/card",
+      "notes": "GM Rewards Mastercard official page"
+    },
+    {
+      "url": "https://home.barclays/news/press-releases/2025/05/gm-enhances-loyalty-program-and-unveils-new-gm-rewards-mastercar/",
+      "notes": "Barclays/GM press release — May 2025 program revamp"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/gm-credit-card",
+      "notes": "NerdWallet — 5 Things to Know About GM Credit Card"
+    }
   ],
-  "last_updated": "2026-04-16T00:00:00Z",
+  "last_updated": "2026-04-16T13:00:00Z",
   "status": "active",
-  "notes": "Co-branded GM card from Goldman Sachs. 10x on GM purchases is excellent for GM vehicle owners. Points redeemable for GM vehicle purchases, service, parts."
+  "notes": "The new GM Rewards Mastercard launched May 20, 2025, replacing the previous Marcus-issued GM card. Earns up to 10x points on GM purchases (7x from card + up to 3x as GM Rewards member). Previously offered 4x on all purchases; updated to 3x on non-GM as of the 2025 revamp. 30,000 point bonus worth ~$300 toward GM. Points worth 1 cent each toward GM purchases."
 }

@@ -1,0 +1,89 @@
+{
+  "card_id": "upgrade-triple-cash-rewards-visa",
+  "name": "Upgrade Triple Cash Rewards Visa",
+  "issuer": "Upgrade (Cross River Bank)",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 3,
+  "credit_required": "Fair to Excellent",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "bonus_value": "$200",
+    "description": "$200 bonus when you also open a Rewards Checking Preferred account and make 3 debit card transactions. Requires opening Upgrade Rewards Checking Preferred."
+  },
+  "earning_rates": [
+    {
+      "category": "Home purchases (furniture, appliances, home improvement, etc.)",
+      "rate": 3,
+      "notes": "Unlimited 3% cash back on home category"
+    },
+    {
+      "category": "Auto purchases (car washes, auto parts, service, etc.)",
+      "rate": 3,
+      "notes": "Unlimited 3% cash back on auto category"
+    },
+    {
+      "category": "Health purchases (doctor visits, pharmacy, gym, etc.)",
+      "rate": 3,
+      "notes": "Unlimited 3% cash back on health category"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "Unlimited 1% cash back on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Credit/loan hybrid",
+        "description": "Like other Upgrade cards, functions as both credit card and installment loan — remaining balance converts to fixed-rate repayment in equal monthly installments"
+      },
+      {
+        "name": "Upgrade Shopping discounts",
+        "description": "Additional discounts available through Upgrade Shopping portal"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "upgrade",
+    "cash-back",
+    "3-percent",
+    "home",
+    "auto",
+    "health",
+    "no-annual-fee"
+  ],
+  "sources": [
+    {
+      "url": "https://www.upgrade.com/upgrade-card/triple-cash/",
+      "notes": "Upgrade official page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/upgrade-triple-cash-rewards",
+      "notes": "NerdWallet review"
+    },
+    {
+      "url": "https://www.cardratings.com/credit-card/upgrade-triple-cash-rewards-visa.html",
+      "notes": "CardRatings review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:50.004Z",
+  "status": "active",
+  "notes": "Upgrade Triple Cash Rewards earns 3% on home, auto, and health categories — unusual category combinations that cover everyday spending areas. $200 welcome bonus requires opening a Rewards Checking Preferred account. APR: 14.99%–29.99% variable. Balance transfer fee: up to 5%. Credit lines range $500–$25,000. Card acts as a hybrid credit card/installment loan — any remaining balance can be converted to fixed monthly payments at a fixed rate. No cash withdrawal at ATMs.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}
