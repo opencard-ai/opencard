@@ -1,0 +1,49 @@
+{
+  "card_id": "marriott-bonvoy-boundless",
+  "name": "Marriott Bonvoy Boundless® Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 5000,
+    "time_period_months": 3,
+    "bonus_points": 100000,
+    "estimated_value": 700,
+    "point_program": "Marriott Bonvoy",
+    "description": "100,000 bonus Marriott Bonvoy points after spending $5,000 in first 3 months (worth ~$700 toward Marriott hotel stays at 0.7¢/point)"
+  },
+  "earning_rates": [
+    {"category": "Marriott Hotels & Resorts", "rate": 6, "notes": "6x points at Marriott hotels (earn 6x as the base card earning)"}, 
+    {"category": "Gas Stations", "rate": 3},
+    {"category": "Grocery Stores", "rate": 3},
+    {"category": "All Other Purchases", "rate": 2}
+  ],
+  "annual_credits": [
+    {"name": "Anniversary Free Night", "amount": 35000, "frequency": "Annual", "description": "Free night certificate each year valid at Marriott hotels costing up to 35,000 points"}
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "Automatic Silver Elite Status", "description": "Marriott Bonvoy Silver Elite status (10% bonus on earned points, priority late checkout, and more)"},
+      {"name": "15 Elite Night Credits", "description": "15 qualifying nights toward higher Marriott elite status each year"},
+      {"name": "Free Night Award", "description": "Earn a free night award every 60,000 qualifying points spent"},
+      {"name": "No Foreign Transaction Fees", "description": "Use card internationally without FTF"}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["chase", "marriott", "hotel", "co-branded", "travel"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/travel-credit-cards/marriott/bonvoy-boundless", "notes": "Official Chase page"},
+    {"url": "https://thepointsguy.com/credit-cards/marriott-bonvoy-boundless-annual-fee-worth-it/", "notes": "TPG review"}
+  ],
+  "notes": "Popular mid-tier Marriott card. $95 AF is offset by annual free night (up to 35K = often $70-100 value). 15 elite nights + Silver status provides decent base perks. Gas/grocery bonus categories help offset the AF. Good companion for Bonvoy members who stay at Marriott properties a few times a year.",
+  "last_updated": "2026-04-16T08:35:00.000Z"
+}

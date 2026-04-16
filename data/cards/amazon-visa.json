@@ -1,0 +1,92 @@
+{
+  "card_id": "amazon-visa",
+  "name": "Amazon Visa",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": null,
+    "bonus_points": 50,
+    "estimated_value": 50,
+    "point_program": "Amazon Points (Cash Back)",
+    "description": "$50 Amazon Gift Card instantly on approval (no Prime membership required)"
+  },
+  "earning_rates": [
+    {
+      "category": "Amazon.com, Amazon Fresh, Whole Foods Market",
+      "rate": 3,
+      "notes": "3% cash back (no Prime required)"
+    },
+    {
+      "category": "Chase Travel",
+      "rate": 3,
+      "notes": "3% cash back on travel purchased through Chase Travel"
+    },
+    {
+      "category": "Gas Stations",
+      "rate": 2,
+      "notes": "2% cash back at gas stations"
+    },
+    {
+      "category": "Restaurants",
+      "rate": 2,
+      "notes": "2% cash back at restaurants"
+    },
+    {
+      "category": "Local Transit & Commuting",
+      "rate": 2,
+      "notes": "2% cash back on local transit and commuting (including rideshare)"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1% cash back on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Travel Protections",
+        "description": "Travel Accident Insurance ($500K), Lost Luggage Reimbursement ($3,000), Baggage Delay Insurance ($100/day x 3 days), Auto Rental Coverage (secondary), Roadside Assistance, Travel & Emergency Assistance"
+      },
+      {
+        "name": "Purchase Protections",
+        "description": "Purchase Protection (120 days, $500/item), Extended Warranty (adds 1 year)"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": false,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "amazon",
+    "cash-back",
+    "no-annual-fee",
+    "no-prime-required"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/cash-back-credit-cards/amazon-rewards",
+      "notes": "Official Chase page"
+    },
+    {
+      "url": "https://www.cnbc.com/select/amazon-visa-review/",
+      "notes": "CNBC Select review"
+    }
+  ],
+  "notes": "No Prime membership required (unlike Prime Visa). Lower earning rates than Prime Visa but no Prime subscription needed. Good option for non-Prime Amazon shoppers who want Amazon rewards without paying $139/year for Prime.",
+  "last_updated": "2026-04-16T12:42:25.899Z"
+}

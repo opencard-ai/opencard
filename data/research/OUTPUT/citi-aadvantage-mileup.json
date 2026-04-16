@@ -1,0 +1,62 @@
+{
+  "card_id": "citi-aadvantage-mileup",
+  "name": "American Airlines AAdvantage® MileUp® Card",
+  "issuer": "Citi",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_miles": 15000,
+    "estimated_value": 15000,
+    "description": "Earn 15,000 AAdvantage bonus miles after spending $1,000 in first 3 months"
+  },
+  "earning_rates": [
+    {
+      "category": "American Airlines Purchases",
+      "rate": 2,
+      "notes": "Earn 2 AAdvantage miles per $1 on American Airlines purchases"
+    },
+    {
+      "category": "Grocery Stores",
+      "rate": 2,
+      "notes": "Earn 2 AAdvantage miles per $1 at grocery stores"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "Earn 1 AAdvantage mile per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "5% Miles Redemption Discount",
+        "description": "Receive a 5% AAdvantage miles discount on award redemptions"
+      },
+      {
+        "name": "No Mileage Cap",
+        "description": "No limit on the number of miles you can earn"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "purchase_protection": false,
+    "extended_warranty": true
+  },
+  "tags": ["citi", "american-airlines", "airline", "no-annual-fee", "aadvantage"],
+  "sources": [
+    { "url": "https://creditcards.aa.com/credit-cards/citi-mileup-card-american-airlines-direct/" },
+    { "url": "https://www.forbes.com/advisor/credit-cards/reviews/american-airlines-aadvantage-mileup-card/", "notes": "Jan 2026 review" },
+    { "url": "https://www.dailydrop.com/credit-cards/american-airlines-aadvantage-mileup", "notes": "70k offer reported" }
+  ],
+  "last_updated": "2026-04-16T08:23:00.000Z"
+}

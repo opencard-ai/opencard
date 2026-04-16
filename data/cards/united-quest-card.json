@@ -1,0 +1,126 @@
+{
+  "card_id": "united-quest-card",
+  "name": "United Quest℠ Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 350,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "bonus_points": 100000,
+    "estimated_value": 130000,
+    "point_program": "United MileagePlus",
+    "description": "90,000 bonus miles + 3,000 PQP after $4,000 in 3 months + 10,000 miles for adding authorized user in first 3 months"
+  },
+  "earning_rates": [
+    {
+      "category": "United Airlines Tickets",
+      "rate": 4,
+      "notes": "4X miles on United tickets purchased directly from United (3 bonus + 1 base mile)"
+    },
+    {
+      "category": "United Seat Upgrades & Inflight",
+      "rate": 4,
+      "notes": "4X miles on seat upgrades, Economy Plus, inflight purchases, and baggage fees from United"
+    },
+    {
+      "category": "United Card Events",
+      "rate": 4,
+      "notes": "4X miles on United Card Events from Chase"
+    },
+    {
+      "category": "Dining",
+      "rate": 2,
+      "notes": "2X miles at restaurants including takeout and eligible delivery services"
+    },
+    {
+      "category": "Select Streaming Services",
+      "rate": 2
+    },
+    {
+      "category": "Travel (Non-United)",
+      "rate": 2,
+      "notes": "2X miles on travel excluding United purchases"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "United Travel Credit",
+      "amount": 200,
+      "frequency": "Annual",
+      "description": "$200 statement credit each year for United purchases — offsets most of the $350 AF"
+    },
+    {
+      "name": "Award Flight Discount",
+      "amount": 10000,
+      "frequency": "Annual",
+      "description": "10,000-mile award flight discount each year when booking United flights with miles"
+    },
+    {
+      "name": "Free Checked Bags",
+      "amount": 120,
+      "frequency": "Annual",
+      "description": "2 free checked bags for cardmember and one companion on United (~$60 each way, up to $240 value roundtrip)"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Priority Boarding",
+        "description": "United Premier Access priority boarding on United flights"
+      },
+      {
+        "name": "Free Checked Bags",
+        "description": "2 free checked bags for cardmember and companion on United-operated flights"
+      },
+      {
+        "name": "PQP Earning",
+        "description": "Earn PQP toward United Premier status: up to 6,000 PQP per year (1 PQP per $20 spent on general purchases, 1 PQP per $10 spent on United flights), up to 18,000 PQP calendar year max"
+      },
+      {
+        "name": "Award Flight Discount",
+        "description": "10,000-mile annual discount on award flights booked with miles; save 10-15% vs standard mileage redemptions"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "united",
+    "airline",
+    "mid-tier",
+    "good-value"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/united/united-quest",
+      "notes": "Official Chase page"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/who-should-get-united-quest-card/",
+      "notes": "TPG review"
+    },
+    {
+      "url": "https://awardwallet.com/credit-cards/united-mileageplus/united-quest-card/",
+      "notes": "AwardWallet review"
+    }
+  ],
+  "notes": "AF increased from $250 to $350 in March 2025. The $200 annual United credit alone nearly offsets the AF. Good mid-tier United card for occasional flyers who want checked bags and travel credits without paying $695 for Club access. 4X on United flights is solid. Annual value easily exceeds $350 with credits.",
+  "last_updated": "2026-04-16T12:42:25.907Z"
+}

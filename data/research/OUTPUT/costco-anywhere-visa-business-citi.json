@@ -1,0 +1,81 @@
+{
+  "card_id": "costco-anywhere-visa-business-citi",
+  "name": "Costco Anywhere Visa® Business Card by Citi",
+  "issuer": "Citi",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "description": "No welcome offer; cash back card"
+  },
+  "earning_rates": [
+    {
+      "category": "Gas and EV Charging",
+      "rate": 4,
+      "notes": "4% cash back on the first $7,000 per year, then 1% thereafter"
+    },
+    {
+      "category": "Restaurants",
+      "rate": 3,
+      "notes": "3% cash back on restaurants (no annual cap)"
+    },
+    {
+      "category": "Travel",
+      "rate": 3,
+      "notes": "3% cash back on eligible travel (no annual cap)"
+    },
+    {
+      "category": "Costco",
+      "rate": 2,
+      "notes": "2% cash back at Costco (no annual cap)"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1% cash back on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "No Foreign Transaction Fee",
+        "description": "Use the card internationally with no added fees"
+      },
+      {
+        "name": "Extended Warranty",
+        "description": "Extends manufacturer warranty by up to 2 years on eligible items"
+      },
+      {
+        "name": "Travel Accident Insurance",
+        "description": "Coverage for common carrier travel accidents"
+      },
+      {
+        "name": "Roadside Dispatch",
+        "description": "Access to roadside assistance services"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_cancellation": false,
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": true,
+    "travel_accident_insurance": true,
+    "roadside_dispatch": true
+  },
+  "notes": "Requires a paid Costco membership. Cash back paid as an annual credit on the February statement of the following year. Card is issued by Citi but branded Costco Anywhere Visa.",
+  "tags": ["citi", "costco", "cash-back", "no-annual-fee", "business"],
+  "sources": [
+    { "url": "https://www.costco.com/credit-card.html" },
+    { "url": "https://www.citi.com/credit-cards/citi-costco-anywhere-visa-business-credit-card" },
+    { "url": "https://upgradedpoints.com/credit-cards/reviews/costco-anywhere-visa-business-card-by-citi/", "notes": "Feb 2026 review" }
+  ],
+  "last_updated": "2026-04-16T08:24:00.000Z"
+}

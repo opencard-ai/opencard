@@ -1,0 +1,108 @@
+{
+  "card_id": "ihg-one-rewards-premier",
+  "name": "IHG One Rewards Premier Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 99,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "bonus_points": 140000,
+    "estimated_value": 700,
+    "point_program": "IHG Rewards",
+    "description": "140,000 bonus points after spending $4,000 in first 3 months (points worth ~0.5¢ each toward IHG hotel stays)"
+  },
+  "earning_rates": [
+    {
+      "category": "IHG Hotels & Resorts",
+      "rate": 26,
+      "notes": "26x total points per $1 at IHG Hotels & Resorts (10x from card + 6x IHG Rewards members + 10x as Platinum elite or higher)"
+    },
+    {
+      "category": "Chase Travel",
+      "rate": 5
+    },
+    {
+      "category": "Gas Stations",
+      "rate": 3
+    },
+    {
+      "category": "Restaurants",
+      "rate": 3
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Anniversary Free Night",
+      "amount": 40000,
+      "frequency": "Annual",
+      "description": "Free night certificate each year (up to 40,000 points), redeemable at any IHG hotel worldwide"
+    },
+    {
+      "name": "Global Entry/TSA PreCheck",
+      "amount": 100,
+      "frequency": "Every 4 years",
+      "description": "Reimbursement for Global Entry, TSA PreCheck, or NEXUS application fee (once every 4 years)"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Automatic Platinum Elite Status",
+        "description": "IHG Platinum Elite status (20% bonus points, complimentary upgrades, late checkout, and more)"
+      },
+      {
+        "name": "Fourth Night Free",
+        "description": "Fourth night free on award stays (book 3 nights, get 4th free — automatically applied)"
+      },
+      {
+        "name": "Points Spending Discount",
+        "description": "20% off when purchasing IHG points (up to 50% off on larger purchases)"
+      },
+      {
+        "name": "No Foreign Transaction Fees",
+        "description": "Use card internationally without FTF"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "ihg",
+    "hotel",
+    "co-branded",
+    "travel"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier",
+      "notes": "Official Chase page"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/ihg-premier-annual-fee-worth-it/",
+      "notes": "TPG review"
+    },
+    {
+      "url": "https://www.nerdwallet.com/travel/learn/reasons-to-get-the-ihg-one-rewards-premier",
+      "notes": "NerdWallet review"
+    }
+  ],
+  "notes": "$99 AF is well-justified by the annual free night (up to 40K points = often $70-150 value) + Global Entry credit amortized + Platinum status. IHG hotels include Holiday Inn, Crowne Plaza, InterContinental, Kimpton, etc. The 26x earning at IHG is among the best hotel co-brand rates. The 4th night free on award stays is a valuable perk for frequent IHG guests.",
+  "last_updated": "2026-04-16T12:42:25.901Z"
+}

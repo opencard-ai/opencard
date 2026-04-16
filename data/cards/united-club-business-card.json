@@ -1,0 +1,148 @@
+{
+  "card_id": "united-club-business-card",
+  "name": "United Club℠ Business Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 695,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 5000,
+    "time_period_months": 3,
+    "bonus_points": 110000,
+    "estimated_value": 143000,
+    "point_program": "United MileagePlus",
+    "description": "100,000 bonus miles + 2,000 PQP after $5,000 in 3 months + 10,000 miles after adding employee card in first 3 months"
+  },
+  "earning_rates": [
+    {
+      "category": "United Flights",
+      "rate": 8,
+      "notes": "6X miles as MileagePlus member + 2X miles with United Club Business Card. Excludes Basic Economy."
+    },
+    {
+      "category": "Other United Purchases",
+      "rate": 2,
+      "notes": "2X miles on all other eligible United purchases"
+    },
+    {
+      "category": "Renowned Hotels (Prepaid via United)",
+      "rate": 5,
+      "notes": "5X miles on hotel stays prepaid directly through Renowned Hotels and Resorts for United Cardmembers"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1.5
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Renowned Hotels Credit",
+      "amount": 200,
+      "frequency": "Annual",
+      "description": "Up to $200 credit on prepaid hotel stays through Renowned Hotels and Resorts for United Cardmembers"
+    },
+    {
+      "name": "Rideshare Credit",
+      "amount": 150,
+      "frequency": "Annual",
+      "description": "Up to $150 credit on rideshare purchases (enrollment required)"
+    },
+    {
+      "name": "Avis/Budget Car Rental Credit",
+      "amount": 100,
+      "frequency": "Annual",
+      "description": "Up to $100 credit on Avis or Budget rentals booked via cars.united.com"
+    },
+    {
+      "name": "Instacart Credit",
+      "amount": 240,
+      "frequency": "Annual",
+      "description": "Up to $240 in Instacart credits each calendar year"
+    },
+    {
+      "name": "JSX Credit",
+      "amount": 200,
+      "frequency": "Annual",
+      "description": "Up to $200 credit on flights purchased directly through JSX"
+    },
+    {
+      "name": "FareLock Credit",
+      "amount": 50,
+      "frequency": "Annual",
+      "description": "Up to $50 credit on FareLock purchases on United flights"
+    },
+    {
+      "name": "Better Together Bonus",
+      "amount": 5000,
+      "frequency": "Annual",
+      "description": "5,000-mile bonus each year when you also hold a personal United credit card"
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": [
+      {
+        "name": "United Club",
+        "type": "Unlimited lounge access",
+        "notes": "Primary cardmember and eligible companions get access to all United Club locations worldwide.~$750 value."
+      }
+    ],
+    "other_benefits": [
+      {
+        "name": "Premier Access",
+        "description": "Priority check-in, security screening, boarding, and baggage handling where available"
+      },
+      {
+        "name": "Free Checked Bags",
+        "description": "First and second checked bags free for primary cardmember and one companion on United (save up to $360 roundtrip)"
+      },
+      {
+        "name": "Economy Plus Upgrades",
+        "description": "2 global Economy Plus seat upgrades after spending $40,000 each calendar year"
+      },
+      {
+        "name": "PQP Earning",
+        "description": "1 PQP per $15 spent on card purchases, up to 28,000 PQP per year — can help earn Premier status"
+      },
+      {
+        "name": "Award Flight Discount",
+        "description": "Save at least 10% when booking United flights with miles. Premier members earn even more."
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Primary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "united",
+    "airline",
+    "business",
+    "lounge-access",
+    "premier-status"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/business-credit-cards/united/united-club-business",
+      "notes": "Official Chase page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/business/credit-cards/reviews/united-club-business",
+      "notes": "NerdWallet review"
+    },
+    {
+      "url": "https://media.chase.com/news/united-refresh-2025",
+      "notes": "Chase March 2025 refresh announcement"
+    }
+  ],
+  "notes": "AF increased from $450 to $695 in March 2025. One of the most expensive business cards but offers $925+ in annual partner credits + United Club lounge access (~$750 value) + PQP earning for Premier status. Total annual value exceeds $2,000 per Chase's own estimate.",
+  "last_updated": "2026-04-16T12:42:25.906Z"
+}

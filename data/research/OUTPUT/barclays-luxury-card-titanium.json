@@ -1,0 +1,57 @@
+{
+  "card_id": "luxury-card-titanium",
+  "name": "Luxury Card Mastercard® Titanium Card™",
+  "issuer": "Barclays",
+  "network": "Mastercard",
+  "annual_fee": 299,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "description": "No welcome bonus; value in travel benefits",
+    "point_program": "Luxury Card Points"
+  },
+  "earning_rates": [
+    {
+      "category": "Airfare and hotels booked through LuxuryCardTravel.com",
+      "rate": 2,
+      "notes": "2x points per $1 on airfare and hotel reservations booked through LuxuryCardTravel.com"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1x point per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": true,
+      "other": "Priority Pass Select membership (unlimited guests)"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "Mastercard ID Theft Protection",
+      "24/7 Concierge service",
+      "2% value for airfare redemptions",
+      "1.5% value for cash back redemptions",
+      "No foreign transaction fees",
+      "Metal titanium card"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": ["premium", "travel", "lounge-access", "metal"],
+  "sources": ["nerdwallet.com", "luxurycard.com", "barclaycardus.com", "awardwallet.com", "upgradedpoints.com"]
+}

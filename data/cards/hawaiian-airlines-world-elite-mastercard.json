@@ -1,0 +1,80 @@
+{
+  "card_id": "hawaiian-airlines-world-elite-mastercard",
+  "name": "Hawaiian Airlines World Elite Mastercard®",
+  "issuer": "Barclays",
+  "network": "Mastercard World Elite",
+  "annual_fee": 99,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 60000,
+    "description": "60,000 Atmos Rewards points after spending $1,000 in first 90 days",
+    "point_program": "Atmos Rewards Points"
+  },
+  "earning_rates": [
+    {
+      "category": "Hawaiian Airlines and Alaska Airlines purchases",
+      "rate": 3,
+      "notes": "3x Atmos Rewards Points on Hawaiian Airlines and Alaska Airlines purchases"
+    },
+    {
+      "category": "Gas stations",
+      "rate": 2,
+      "notes": "2x Atmos Rewards Points on gas"
+    },
+    {
+      "category": "Dining",
+      "rate": 2,
+      "notes": "2x Atmos Rewards Points on dining"
+    },
+    {
+      "category": "Eligible grocery stores",
+      "rate": 2,
+      "notes": "2x Atmos Rewards Points on eligible grocery stores"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1x Atmos Rewards Point on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "Two free checked bags on eligible Hawaiian Airlines flights (primary cardholder)",
+      "Companion discounts available",
+      "No foreign transaction fees"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "airline",
+    "travel",
+    "hawaiian",
+    "alaska"
+  ],
+  "sources": [
+    "nerdwallet.com",
+    "barclaycardus.com",
+    "maxrewards.com",
+    "reddit.com/r/HawaiianAirlines"
+  ],
+  "last_updated": "2026-04-16T12:42:25.896Z"
+}

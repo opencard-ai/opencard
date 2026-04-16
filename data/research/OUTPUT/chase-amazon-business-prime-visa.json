@@ -1,0 +1,32 @@
+{
+  "card_id": "amazon-business-prime-visa",
+  "name": "Amazon Business Prime American Express Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "status": "discontinued",
+  "welcome_offer": null,
+  "earning_rates": [
+    {"category": "Amazon.com", "rate": 5, "notes": "5% back or 5x points at Amazon.com and Whole Foods with Prime membership"},
+    {"category": "Amazon Web Services (AWS)", "rate": 3, "notes": "3% back or 3x points on AWS purchases"},
+    {"category": "Whole Foods", "rate": 3, "notes": "3% back or 3x points at Whole Foods Market"},
+    {"category": "Restaurants, Gas Stations, and Travel", "rate": 2, "notes": "2% back or 2x points at restaurants, gas stations, and US shipping"},
+    {"category": "All Other Purchases", "rate": 1, "notes": "1% back or 1x points on all other purchases"}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {},
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["amazon", "business", "discontinued", "american-express"],
+  "sources": [
+    {"url": "https://www.americanexpress.com/us/customer-service/faq.amazon-program-update.html", "notes": "Amex transition notice to U.S. Bank"},
+    {"url": "https://www.nav.com/blog/amazon-prime-business-card/", "notes": "Nav review (discontinued)"}
+  ],
+  "notes": "⚠️ IMPORTANT: This card was issued by American Express (NOT Chase). It is transitioning to U.S. Bank as of August 2026 (per March 2026 announcement). The 248-card reference list may have an incorrect issuer. Card stopped accepting new applications from Amex in March 2026. Existing Amex cardholders will be migrated to U.S. Bank Amazon Business card. The 248 list may need to be corrected to show issuer as 'U.S. Bank' or this entry may be removed.",
+  "last_updated": "2026-04-16T08:30:00.000Z"
+}

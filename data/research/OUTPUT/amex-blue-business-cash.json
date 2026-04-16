@@ -1,0 +1,52 @@
+{
+  "card_id": "amex-blue-business-cash",
+  "name": "American Express Blue Business Cash™ Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 6000,
+    "time_period_months": 6,
+    "bonus_cashback": 750,
+    "description": "Earn up to $750 cash back in the form of a statement credit after you spend $6,000 in eligible purchases on your Card within your first 6 months of Card Membership.",
+    "cashback": true
+  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "rate": 2,
+      "notes": "2% cash back on all eligible purchases on the first $50,000 per calendar year; then 1%"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "Expanded buying power (ability to spend beyond credit limit when needed)",
+      "No Foreign Transaction Fees",
+      "0% intro APR on purchases for 12 months from account opening (then variable APR)"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["american-express", "cash-back", "business", "flat-rate"],
+  "sources": [
+    {"url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/amex-blue-business-cash/"}
+  ],
+  "last_updated": "2026-04-16T08:48:00.000Z"
+}

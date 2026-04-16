@@ -1,0 +1,53 @@
+{
+  "card_id": "citi-secured-mastercard",
+  "name": "Citi® Secured Mastercard®",
+  "issuer": "Citi",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Poor",
+  "welcome_offer": {
+    "description": "No welcome offer; designed for credit building"
+  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "rate": 1,
+      "notes": "1 point per $1 spent; points can be redeemed for cash credit"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Credit Bureau Reporting",
+        "description": "Reports to all three major credit bureaus (Equifax, Experian, TransUnion)"
+      },
+      {
+        "name": "Security Deposit",
+        "description": "Refundable deposit required: $200 minimum, $2,500 maximum. Deposit equals your credit limit."
+      },
+      {
+        "name": "Graduation Program",
+        "description": "May graduate to an unsecured Citi card after about 18 months of on-time payments"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "notes": "No rewards focus. Security deposit is fully refundable when account is closed. Max credit limit $2,500. Average credit limit around $1,000-$2,706 per Credit Karma data.",
+  "tags": ["citi", "secured", "credit-building", "no-annual-fee"],
+  "sources": [
+    { "url": "https://www.citi.com/credit-cards/understanding-credit-cards/build-credit-with-a-secured-credit-card" },
+    { "url": "https://wallethub.com/d/citi-secured-credit-card-1524c", "notes": "2026 review" },
+    { "url": "https://www.cnbc.com/select/citi-secured-mastercard-review/", "notes": "CNBC review" }
+  ],
+  "last_updated": "2026-04-16T08:23:00.000Z"
+}

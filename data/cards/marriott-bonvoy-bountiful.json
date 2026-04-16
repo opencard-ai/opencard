@@ -1,0 +1,110 @@
+{
+  "card_id": "marriott-bonvoy-bountiful",
+  "name": "Marriott Bonvoy Bountiful® Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 250,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 5000,
+    "time_period_months": 3,
+    "bonus_points": 100000,
+    "estimated_value": 700,
+    "point_program": "Marriott Bonvoy",
+    "description": "100,000 bonus Marriott Bonvoy points after spending $5,000 in first 3 months (worth ~$700 at 0.7¢/point)"
+  },
+  "earning_rates": [
+    {
+      "category": "Marriott Hotels & Resorts",
+      "rate": 6,
+      "notes": "6x points at Marriott hotels"
+    },
+    {
+      "category": "Gas Stations, Costco, Wholesale Clubs",
+      "rate": 4,
+      "notes": "4x points at gas stations, Costco, and wholesale clubs"
+    },
+    {
+      "category": "Grocery Stores",
+      "rate": 4
+    },
+    {
+      "category": "Dining",
+      "rate": 4
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 2
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Marriott Statement Credit",
+      "amount": 25,
+      "frequency": "Monthly",
+      "description": "$25 monthly credit for Marriott purchases ($300/year total)"
+    },
+    {
+      "name": "Free Night Award",
+      "amount": 35000,
+      "frequency": "Annual",
+      "description": "Annual free night at Marriott hotels up to 35,000 points"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Automatic Gold Elite Status",
+        "description": "Marriott Bonvoy Gold Elite status (25% bonus on earned points, complimentary upgrades, late checkout, and more)"
+      },
+      {
+        "name": "15 Elite Night Credits",
+        "description": "15 qualifying nights toward higher Marriott elite status each year"
+      },
+      {
+        "name": "Priority Pass Select",
+        "description": "Unlimited Priority Pass Select lounge access (2,000+ lounges)"
+      },
+      {
+        "name": "Enhanced Reservation Availability",
+        "description": "Access to exclusive reservation availability at Marriott properties"
+      },
+      {
+        "name": "No Foreign Transaction Fees",
+        "description": "Use card internationally without FTF"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "marriott",
+    "hotel",
+    "co-branded",
+    "travel",
+    "premium"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/marriott/bonvoy-bountiful",
+      "notes": "Official Chase page"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/marriott-bonvoy-bountiful-card/",
+      "notes": "TPG review"
+    }
+  ],
+  "notes": "$250 AF card positioned between Boundless and the premium Bonvoy Brilliant. The $300 annual Marriott credit essentially offsets the AF. Gold Elite status + Priority Pass Select makes it valuable. Earning rates are strong (4x on dining/gas/grocery). Best for heavy Marriott guests who want elevated status without the $650 AF on Bonvoy Brilliant.",
+  "last_updated": "2026-04-16T12:42:25.904Z"
+}

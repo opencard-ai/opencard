@@ -1,0 +1,101 @@
+{
+  "card_id": "marriott-bonvoy-brilliant-amex",
+  "name": "Marriott Bonvoy Brilliant® American Express® Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 650,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 6000,
+    "time_period_months": 6,
+    "bonus_points": 200000,
+    "description": "Earn 200,000 Marriott Bonvoy bonus points after you use your new Card to make $6,000 in purchases within the first 6 months of Card Membership. Offer ends 5/13/2026.",
+    "point_program": "Marriott Bonvoy"
+  },
+  "earning_rates": [
+    {
+      "category": "Marriott hotels",
+      "rate": 6,
+      "notes": "6x per $1 on eligible purchases at hotels participating in Marriott Bonvoy"
+    },
+    {
+      "category": "Restaurants worldwide",
+      "rate": 3,
+      "notes": null
+    },
+    {
+      "category": "Flights",
+      "rate": 3,
+      "notes": "Booked directly with airlines"
+    },
+    {
+      "category": "Other",
+      "rate": 2,
+      "notes": "All other eligible purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Free Night Award",
+      "amount": 0,
+      "frequency": "Annual",
+      "description": "1 Free Night Award each year after card account anniversary. Award can be used at participating Marriott Bonvoy properties with a redemption level at or under 85,000 points."
+    },
+    {
+      "name": " Marriott Bonvoy Instant Elite Nights",
+      "amount": 0,
+      "frequency": "Annual",
+      "description": "25 Elite Night Credits each year (counts toward lifetime status)"
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": true,
+      "other": "Priority Pass Select lounge access (enrollment required)"
+    },
+    "hotel_status": [
+      {
+        "program": "Marriott Bonvoy",
+        "tier": "Gold Elite",
+        "complimentary": true,
+        "method": "Automatic for as long as card is open"
+      }
+    ],
+    "other_benefits": [
+      "$300 Marriott Bonvoy statement credit (credit up to $300 in eligible charges at Marriott Bonvoy properties annually)",
+      "Priority Pass Select lounge access (enrollment required)",
+      "No Foreign Transaction Fees",
+      "Premium Internet access at Marriott hotels"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "american-express",
+    "marriott",
+    "hotel",
+    "premium"
+  ],
+  "sources": [
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-brilliant/"
+    },
+    {
+      "url": "https://www.marriott.com/credit-cards/marriott-bonvoy-brilliant-american-express-card.mi"
+    },
+    {
+      "url": "https://thepointsguy.com/news/how-good-are-best-ever-marriott-amex-offers/"
+    }
+  ],
+  "last_updated": "2026-04-16T12:42:25.893Z"
+}

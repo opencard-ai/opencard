@@ -1,0 +1,65 @@
+{
+  "card_id": "macy-american-express-card",
+  "name": "Macy's American Express® Card",
+  "issuer": "Citi",
+  "network": "Amex",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair",
+  "welcome_offer": {
+    "description": "20% off first purchase (periodic promotional offer); no standard welcome bonus"
+  },
+  "earning_rates": [
+    {
+      "category": "Macy's",
+      "rate": 3,
+      "notes": "3 Star Money Rewards per $1 spent at Macy's"
+    },
+    {
+      "category": "Macy's Furniture/Mattresses",
+      "rate": 2,
+      "notes": "2 Star Money Rewards per $1 on furniture and mattresses"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1 Star Money Reward per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Star Money Rewards",
+        "description": "$100 in Star Money Rewards for every 1,000 points earned"
+      },
+      {
+        "name": "Free Shipping",
+        "description": "Free shipping on Macy's purchases"
+      },
+      {
+        "name": "Birthday Bonus",
+        "description": "Extra Star Money bonus during birthday month"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {},
+  "tags": [
+    "citi",
+    "store-card",
+    "macys",
+    "american-express",
+    "rewards"
+  ],
+  "sources": [
+    {
+      "url": "https://www.macys.com/credit-card"
+    }
+  ],
+  "last_updated": "2026-04-16T12:42:25.911Z",
+  "notes": "American Express version of Macy's store card issued by Citi. Note: 'American Express' here refers to the network/brand, not the company American Express (which issues different cards). Store rewards program only valuable if you shop at Macy's frequently."
+}

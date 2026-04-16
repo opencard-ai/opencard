@@ -1,0 +1,32 @@
+{
+  "card_id": "iberia-visa-signature",
+  "name": "Iberia Visa Signature® Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "earning_rates": [
+    {"category": "Iberia, British Airways, LEVEL, Aer Lingus flights", "rate": 3, "type": "Avios"},
+    {"category": "Hotels (direct)", "rate": 2, "type": "Avios"},
+    {"category": "All Other Purchases", "rate": 1, "type": "Avios"}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "airfare_discount_voucher": "After $30,000 annual spend, receive a $1,000 discount voucher usable on two same-flight Iberia tickets",
+    "iberia_10_percent_discount": "10% discount on new Iberia flight bookings made through iberia.com/Chase10"
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "auto_rental_insurance": "Primary auto rental collision damage waiver",
+    "travel_accident_insurance": "Common for travel cards",
+    "purchase_protection": "120 days against damage/theft, $500 per claim"
+  },
+  "tags": ["chase", "avios", "airline", "iberia"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/travel-credit-cards/avios/iberia"},
+    {"url": "https://upgradedpoints.com/credit-cards/reviews/iberia-visa-signature-card/"},
+    {"url": "https://www.nerdwallet.com/credit-cards/reviews/iberia-visa"}
+  ],
+  "last_updated": "2026-04-16T04:45:00.000Z"
+}

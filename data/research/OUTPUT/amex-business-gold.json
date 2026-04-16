@@ -1,0 +1,65 @@
+{
+  "card_id": "amex-business-gold",
+  "name": "American Express® Business Gold Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 375,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 15000,
+    "time_period_months": 6,
+    "bonus_points": 200000,
+    "description": "You may be eligible for as high as 200,000 Membership Rewards® Points after spending $15,000 in eligible purchases on your new Card in your first 6 months of Card Membership. Welcome offers vary and you may not be eligible.",
+    "point_program": "Membership Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "Top 2 Business Categories",
+      "rate": 4,
+      "notes": "Earn 4X in the 2 categories where your business spends the most each billing cycle (on first $150,000 combined purchases per calendar year, then 1X)"
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": "All other eligible purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Business Supplies Credit",
+      "amount": 240,
+      "frequency": "Annual ($20/month)",
+      "description": "Up to $20 per month in statement credits for purchases at FedEx, Grubhub, or Office Supply Stores with your Business Gold Card. Enrollment required."
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "No Foreign Transaction Fees",
+      "Amex Business Open savings",
+      "Access to Amex's unique 4x category rotation based on your spending"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["american-express", "membership-rewards", "business", "flexible-categories"],
+  "sources": [
+    {"url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/"},
+    {"url": "https://thepointsguy.com/credit-cards/amex-business-gold-current-offer/"}
+  ],
+  "last_updated": "2026-04-16T08:43:00.000Z"
+}

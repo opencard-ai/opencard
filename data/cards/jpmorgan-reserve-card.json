@@ -1,0 +1,138 @@
+{
+  "card_id": "jpmorgan-reserve-card",
+  "name": "JPMorgan Reserve Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 995,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "status": "invitation_only",
+  "welcome_offer": null,
+  "earning_rates": [
+    {
+      "category": "Travel",
+      "rate": 10,
+      "notes": "10x points on travel purchased through Chase Travel"
+    },
+    {
+      "category": "All Other Travel",
+      "rate": 5,
+      "notes": "5x points on all other travel purchases"
+    },
+    {
+      "category": "Dining",
+      "rate": 3,
+      "notes": "3x points at restaurants worldwide"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1x points on all other purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Travel Credit",
+      "amount": 300,
+      "frequency": "Annual",
+      "description": "$300 annual credit on travel purchases"
+    },
+    {
+      "name": "DoorDash Credit",
+      "amount": 15,
+      "frequency": "Monthly",
+      "description": "$15 monthly DoorDash credit ($180/year)"
+    },
+    {
+      "name": "Instacart Credit",
+      "amount": 15,
+      "frequency": "Monthly",
+      "description": "$15 monthly Instacart credit ($180/year)"
+    },
+    {
+      "name": "Gopuff Credit",
+      "amount": 10,
+      "frequency": "Monthly",
+      "description": "$10 monthly Gopuff credit ($120/year)"
+    },
+    {
+      "name": "Peloton Credit",
+      "amount": 30,
+      "frequency": "Annual",
+      "description": "Up to $30 back on Peloton App"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Priority Pass Select",
+        "description": "Unlimited Priority Pass Select lounge access for cardmember and guests"
+      },
+      {
+        "name": "Global Entry/TSA PreCheck",
+        "description": "Up to $120 reimbursement every 4 years for Global Entry/TSA PreCheck"
+      },
+      {
+        "name": "Transfer Partners",
+        "description": "1:1 transfer to Chase Ultimate Rewards airline/hotel partners"
+      },
+      {
+        "name": "FHR Benefits",
+        "description": "Access to Chase's Luxury Hotel & Resort Collection (FHR) with breakfast, upgrades, and $100 experience credit"
+      },
+      {
+        "name": "The Hotel Collection",
+        "description": "THC: Complimentary room upgrade and $100 food/beverage credit"
+      },
+      {
+        "name": "24/7 Concierge",
+        "description": "Dedicated concierge service"
+      },
+      {
+        "name": "Primary Auto Rental Collision Damage Waiver",
+        "description": "Primary rental car coverage worldwide"
+      },
+      {
+        "name": "Trip Cancellation/Interruption",
+        "description": "Up to $20,000 per person and $40,000 per trip"
+      },
+      {
+        "name": "JPMorgan Private Client",
+        "description": "Exclusive to JPMorgan Private Client clients (typically $2M+ assets under management)"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": true,
+    "thc_eligible": true,
+    "notes": "Full FHR and THC access, same as Sapphire Reserve but with higher AF and more exclusive access."
+  },
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Primary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "jpmorgan",
+    "ultra-premium",
+    " invitation-only",
+    "travel",
+    "fhr",
+    "thc"
+  ],
+  "sources": [
+    {
+      "url": "https://www.chase.com/jpmorgan-reserve",
+      "notes": "Chase JPMorgan Reserve page"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/jpmorgan-reserve-card/",
+      "notes": "TPG review"
+    }
+  ],
+  "notes": "Ultra-exclusive invitation-only card for JPMorgan Private Client customers (typically requires $2M+ at JPMorgan Chase). Replaced the JPM Palladium card. Similar benefits to Sapphire Reserve but more exclusive and higher AF ($995). Benefits exceed Sapphire Reserve slightly. Not publicly available — must be invited by JPMorgan.",
+  "last_updated": "2026-04-16T12:42:25.903Z"
+}

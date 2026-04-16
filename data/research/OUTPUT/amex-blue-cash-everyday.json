@@ -1,0 +1,67 @@
+{
+  "card_id": "amex-blue-cash-everyday",
+  "name": "Blue Cash Everyday® Card from American Express",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 2.7,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 2000,
+    "time_period_months": 6,
+    "bonus_cashback": 200,
+    "description": "Earn a $200 cash rewards bonus after spending $2,000 in purchases on your new Card within the first 6 months of Card Membership.",
+    "cashback": true
+  },
+  "earning_rates": [
+    {
+      "category": "U.S. Supermarkets",
+      "rate": 3,
+      "notes": "On up to $6,000 per calendar year in each category; then 1%"
+    },
+    {
+      "category": "U.S. Gas Stations",
+      "rate": 3,
+      "notes": "On up to $6,000 per calendar year in each category; then 1%"
+    },
+    {
+      "category": "U.S. Online Retail",
+      "rate": 3,
+      "notes": "On up to $6,000 per calendar year in each category; then 1%"
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": "All other eligible purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "0% intro APR on purchases for 15 months from account opening (then variable APR 19.49%-28.49%)",
+      "Amex Offers access",
+      "Access to Bluebird prepaid card features"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["american-express", "cash-back", "groceries", "gas", "no-annual-fee"],
+  "sources": [
+    {"url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/"}
+  ],
+  "last_updated": "2026-04-16T08:44:00.000Z"
+}

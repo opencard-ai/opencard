@@ -1,0 +1,73 @@
+{
+  "card_id": "delta-skymiles-blue-amex",
+  "name": "Delta SkyMiles® Blue American Express Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 6,
+    "bonus_points": 10000,
+    "description": "Earn 10,000 bonus miles after you spend $1,000 in purchases on your new Card in your first 6 months.",
+    "point_program": "Delta SkyMiles"
+  },
+  "earning_rates": [
+    {
+      "category": "Delta purchases",
+      "rate": 2,
+      "notes": "Per $1 on eligible Delta purchases"
+    },
+    {
+      "category": "Restaurants",
+      "rate": 2,
+      "notes": "Worldwide restaurants"
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": "All other eligible purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "delta_sky_club": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "No Annual Fee",
+      "No Foreign Transaction Fees",
+      "15% off Delta flight awards"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "american-express",
+    "delta",
+    "airline",
+    "no-annual-fee"
+  ],
+  "sources": [
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-blue-american-express-card/"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/delta-amex-current-offers/"
+    }
+  ],
+  "last_updated": "2026-04-16T12:42:25.890Z"
+}

@@ -1,0 +1,64 @@
+{
+  "card_id": "chase-sapphire-reserve",
+  "name": "Chase Sapphire Reserve®",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 795,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 5000,
+    "time_period_months": 3,
+    "bonus_points": 80000,
+    "estimated_value": 1200,
+    "point_program": "Chase Ultimate Rewards",
+    "description": "80,000 bonus points after spending $5,000 in first 3 months (valued at ~$1,200 toward travel via Chase Travel or transfer partners)"
+  },
+  "earning_rates": [
+    {"category": "Chase Travel (Hotels, Flights, Car Rental, Dining)", "rate": 10, "notes": "10x points on travel purchased through Chase Travel (including hotels, flights, car rentals, dining)"},
+    {"category": "Other Travel", "rate": 5, "notes": "5x points on all other travel purchases worldwide"},
+    {"category": "Dining", "rate": 3, "notes": "3x points at restaurants worldwide (including takeout and delivery)"},
+    {"category": "All Other Purchases", "rate": 1, "notes": "1x points on all other purchases"}
+  ],
+  "annual_credits": [
+    {"name": "Travel Credit", "amount": 300, "frequency": "Annual", "description": "$300 annual credit on travel purchases (auto-applied, no enrollment)"},
+    {"name": "DoorDash Credit", "amount": 15, "frequency": "Monthly", "description": "$15 monthly DoorDash credit (enrollment required, $180/year total)"},
+    {"name": "Instacart Credit", "amount": 15, "frequency": "Monthly", "description": "$15 monthly Instacart credit (enrollment required, $180/year total)"},
+    {"name": "Peloton Credit", "amount": 30, "frequency": "Annual", "description": "Up to $30 back on Peloton App (enrollment required)"},
+    {"name": "Gopuff Credit", "amount": 10, "frequency": "Annual", "description": "$10 monthly Gopuff credit (enrollment required, $120/year total)"}
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "Chase Travel Portal Multiplier", "description": "Points worth 50% more when redeemed for travel via Chase Travel (1.5¢ per point)"},
+      {"name": "Priority Pass Select", "description": "Unlimited Priority Pass Select lounge access (1,300+ airport lounges worldwide) for cardmember and guests"},
+      {"name": "Global Entry/TSA PreCheck", "description": "Up to $120 reimbursement for Global Entry, TSA PreCheck, or NEXUS every 4 years"},
+      {"name": "Transfer Partners", "description": "1:1 point transfer to 14+ airline/hotel partners including United, Southwest, Hyatt, Marriott, British Airways, Air France/KLM"},
+      {"name": "Primary Auto Rental Collision Damage Waiver", "description": "Primary rental car coverage worldwide (covers theft and collision)"},
+      {"name": "Emergency Evacuation Coverage", "description": "Up to $100,000 for emergency medical evacuation"},
+      {"name": "Trip Cancellation/Interruption", "description": "Up to $20,000 per person and $40,000 per trip"},
+      {"name": "24/7 Concierge", "description": "Access to travel and lifestyle concierge services"},
+      {"name": "FHR Benefits", "description": "Access to Chase's Luxury Hotel & Resort Collection with breakfast, early check-in, upgrades, and $100 experience credit"},
+      {"name": "The Hotel Collection", "description": "THC: Complimentary room upgrade and $100 food/beverage credit at THC properties"}
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": true,
+    "thc_eligible": true,
+    "notes": "Full FHR access with breakfast, early check-in, potential room upgrade, and $100 experience credit. THC access also included."
+  },
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Primary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["chase", "travel", "ultimate-rewards", "premium", "lounge-access", "fhr", "thc"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve", "notes": "Official Chase page"},
+    {"url": "https://thepointsguy.com/news/chase-sapphire-reserve-refresh-2025/", "notes": "TPG 2025 overhaul coverage"},
+    {"url": "https://media.chase.com/news/the-most-rewarding-cards-are-here", "notes": "Chase press release on 2025 changes"}
+  ],
+  "notes": "As of June 2025, annual fee increased from $550 to $795. New cardholders see the $795 AF immediately; existing cardholders see it at renewal on/after Oct 26, 2025. Total estimated annual credits exceed $1,000 ($300 travel + $180 DoorDash + $180 Instacart + $120 Gopuff + $30 Peloton + $120 Global Entry amortized). The 50% redemption bonus on Chase Travel was removed for new cardholders (replaced with enhanced earning rates). Best for heavy travelers who maximize the monthly credits.",
+  "last_updated": "2026-04-16T08:35:00.000Z"
+}

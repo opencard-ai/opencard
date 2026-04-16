@@ -1,0 +1,96 @@
+{
+  "card_id": "amazon-prime-visa",
+  "name": "Prime Visa",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": null,
+    "bonus_points": 150,
+    "estimated_value": 150,
+    "point_program": "Amazon Points (Cash Back)",
+    "description": "$150 Amazon Gift Card instantly loaded into your Amazon account on approval (requires eligible Prime membership)"
+  },
+  "earning_rates": [
+    {
+      "category": "Amazon.com, Amazon Fresh, Whole Foods Market",
+      "rate": 5,
+      "notes": "5% cash back with eligible Prime membership. Without Prime: 3%."
+    },
+    {
+      "category": "Chase Travel",
+      "rate": 5,
+      "notes": "5% back on travel purchased through Chase Travel with eligible Prime membership"
+    },
+    {
+      "category": "Gas Stations",
+      "rate": 2,
+      "notes": "2% cash back at gas stations"
+    },
+    {
+      "category": "Restaurants",
+      "rate": 2,
+      "notes": "2% cash back at restaurants"
+    },
+    {
+      "category": "Local Transit & Commuting",
+      "rate": 2,
+      "notes": "2% cash back on local transit and commuting (including rideshare)"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1% cash back on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Travel Protections",
+        "description": "Travel Accident Insurance ($500K), Lost Luggage Reimbursement ($3,000), Baggage Delay Insurance ($100/day x 3 days), Auto Rental Coverage (secondary), Roadside Assistance, Travel & Emergency Assistance"
+      },
+      {
+        "name": "Purchase Protections",
+        "description": "Purchase Protection (120 days, $500/item), Extended Warranty (adds 1 year)"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": false,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "amazon",
+    "cash-back",
+    "prime",
+    "no-annual-fee"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/cash-back-credit-cards/amazon-prime-rewards",
+      "notes": "Official Chase page"
+    },
+    {
+      "url": "https://www.businessinsider.com/personal-finance/credit-cards/amazon-prime-rewards-visa-signature-card-review",
+      "notes": "Business Insider review"
+    },
+    {
+      "url": "https://www.cnn.com/cnn-underscored/money/prime-visa-credit-card",
+      "notes": "CNN Underscored review"
+    }
+  ],
+  "notes": "No annual credit card fee (but requires $139/year Amazon Prime membership). The 5% rate requires Prime membership. Without Prime, earn 3% at Amazon/Whole Foods. Points are Amazon Reward Dollars redeemable at checkout or as cash back via Chase.",
+  "last_updated": "2026-04-16T12:42:25.898Z"
+}

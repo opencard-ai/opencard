@@ -1,0 +1,92 @@
+{
+  "card_id": "ihg-one-rewards-traveler",
+  "name": "IHG One Rewards Traveler Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 80000,
+    "estimated_value": 400,
+    "point_program": "IHG Rewards",
+    "description": "80,000 bonus IHG points after spending $3,000 in first 3 months (worth ~$400 at 0.5¢/point)"
+  },
+  "earning_rates": [
+    {
+      "category": "IHG Hotels & Resorts",
+      "rate": 17,
+      "notes": "17x total points per $1 at IHG Hotels & Resorts (5x from card + 6x IHG members + 6x as Platinum elite)"
+    },
+    {
+      "category": "Chase Travel",
+      "rate": 3
+    },
+    {
+      "category": "Gas Stations",
+      "rate": 3
+    },
+    {
+      "category": "Grocery Stores",
+      "rate": 3
+    },
+    {
+      "category": "Restaurants",
+      "rate": 3
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Automatic Gold Status",
+        "description": "IHG Rewards Gold status (20% bonus on base points, priority late checkout)"
+      },
+      {
+        "name": "Fourth Night Free",
+        "description": "Fourth night free on award stays (automatically applied)"
+      },
+      {
+        "name": "No Foreign Transaction Fees",
+        "description": "Use card internationally without FTF"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "ihg",
+    "hotel",
+    "co-branded",
+    "travel",
+    "no-annual-fee"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/ihg/traveler",
+      "notes": "Official Chase page"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/ihg-one-rewards-traveler/",
+      "notes": "TPG review"
+    }
+  ],
+  "notes": "No AF version of IHG card. Lower earning than Premier (17x vs 26x at IHG) and no free night per year, but Gold status (not Platinum) and $0 AF. Good for occasional IHG guests who don't want to pay an annual fee. The 4th night free still applies to award bookings.",
+  "last_updated": "2026-04-16T12:42:25.902Z"
+}

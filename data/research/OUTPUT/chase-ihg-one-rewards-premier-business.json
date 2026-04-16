@@ -1,0 +1,58 @@
+{
+  "card_id": "ihg-one-rewards-premier-business",
+  "name": "IHG One Rewards Premier Business Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 99,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 9000,
+    "time_period_months": 6,
+    "bonus_points": 200000,
+    "estimated_value": 70000,
+    "point_program": "IHG One Rewards",
+    "description": "140,000 points after $4,000 in 3 months + 60,000 points after $9,000 in 6 months = up to 200,000 total points"
+  },
+  "earning_rates": [
+    {"category": "IHG Hotels & Resorts", "rate": 10, "notes": "10X points per $1 at IHG properties. Additional IHG base points + Platinum Elite bonus earned separately via IHG membership."},
+    {"category": "Travel", "rate": 5, "notes": "Excluding IHG hotel purchases"},
+    {"category": "Dining", "rate": 5},
+    {"category": "Social Media & Search Engine Advertising", "rate": 5},
+    {"category": "Office Supply Stores", "rate": 5},
+    {"category": "Gas Stations", "rate": 5},
+    {"category": "All Other Purchases", "rate": 3}
+  ],
+  "annual_credits": [
+    {
+      "name": "Anniversary Free Night",
+      "amount": 1,
+      "frequency": "Annual",
+      "description": "Free night valid at IHG properties with a redemption value of 40,000 points or less. Can top up with additional IHG points for higher-tier hotels."
+    }
+  ],
+  "travel_benefits": {
+    "hotel_status": [
+      {"program": "IHG One Rewards", "tier": "Platinum Elite", "complimentary": true, "notes": "Automatic Platinum Elite status as long as card is open"}
+    ],
+    "other_benefits": [
+      {"name": "Fourth Night Free", "description": "Receive a fourth reward night free when redeeming 3+ consecutive award nights at IHG properties"},
+      {"name": "Elite Bonus", "description": "60% bonus on IHG base earning at hotels (Platinum Elite level)"}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "trip_cancellation": false,
+    "trip_delay": false,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["chase", "ihg", "hotel", "business", "platinum-elite"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/business-credit-cards/ihg/business-premier", "notes": "Official Chase page"},
+    {"url": "https://thepointsguy.com/credit-cards/reviews/ihg-premier-business-credit-card-review/", "notes": "TPG review"},
+    {"url": "https://onemileatatime.com/guides/ihg-premier-business-card/", "notes": "One Mile at a Time review"}
+  ],
+  "last_updated": "2026-04-16T08:25:00.000Z"
+}

@@ -1,0 +1,106 @@
+{
+  "card_id": "citi-aadvantage-globe",
+  "name": "Citi® / AAdvantage® Globe™ Mastercard®",
+  "issuer": "Citi",
+  "network": "Mastercard",
+  "annual_fee": 350,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "bonus_miles": 60000,
+    "estimated_value": 60000,
+    "description": "Earn 60,000 AAdvantage bonus miles after spending $4,000 in first 3 months"
+  },
+  "earning_rates": [
+    {
+      "category": "American Airlines Purchases",
+      "rate": 4,
+      "notes": "Earn 4 AAdvantage miles per $1 on American Airlines purchases"
+    },
+    {
+      "category": "Restaurants",
+      "rate": 3,
+      "notes": "Earn 3 AAdvantage miles per $1 at restaurants"
+    },
+    {
+      "category": "Hotels",
+      "rate": 3,
+      "notes": "Earn 3 AAdvantage miles per $1 at hotels (booked directly with hotel or through aa.com)"
+    },
+    {
+      "category": "Other Travel",
+      "rate": 2,
+      "notes": "Earn 2 AAdvantage miles per $1 on other eligible travel"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "Earn 1 AAdvantage mile per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Air Travel Credit",
+      "amount": 150,
+      "frequency": "Annual",
+      "description": "$150 credit annually toward air travel charged to the card"
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": [
+      {
+        "name": "Admirals Club® Globe™ Passes",
+        "type": "Day passes",
+        "notes": "4 Admirals Club® passes per year"
+      }
+    ],
+    "other_benefits": [
+      {
+        "name": "Free Checked Bag",
+        "description": "First checked bag free for cardholder and up to 8 companions on domestic AA flights"
+      },
+      {
+        "name": "Priority Boarding",
+        "description": "Priority boarding on American Airlines flights"
+      },
+      {
+        "name": "10% AAdvantage Miles Redemption Bonus",
+        "description": "10% back on AAdvantage miles redeemed for award flights"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_cancellation": false,
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "citi",
+    "american-airlines",
+    "airline",
+    "premium",
+    "aadvantage"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.aa.com/credit-cards/citi-globe-card-american-airlines-direct/"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/american-airlines-citi-aadvantage-globe-mastercard-benefits/",
+      "notes": "Dec 2025"
+    },
+    {
+      "url": "https://www.forbes.com/advisor/credit-cards/reviews/citi-aadvantage-globe-mastercard/",
+      "notes": "Mar 2026"
+    }
+  ],
+  "last_updated": "2026-04-16T12:42:25.908Z"
+}

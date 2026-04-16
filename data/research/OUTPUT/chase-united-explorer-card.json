@@ -1,0 +1,55 @@
+{
+  "card_id": "united-explorer-card",
+  "name": "United℠ Explorer Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 150,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 50000,
+    "estimated_value": 625,
+    "point_program": "United MileagePlus",
+    "description": "50,000 bonus United miles after spending $3,000 in first 3 months (worth ~$625 at 1.25¢/mile toward United flights)"
+  },
+  "earning_rates": [
+    {"category": "United Airlines Purchases", "rate": 2},
+    {"category": "Hotels", "rate": 2},
+    {"category": "Restaurants", "rate": 2},
+    {"category": "All Other Purchases", "rate": 1}
+  ],
+  "annual_credits": [
+    {"name": "United Travel Credit", "amount": 100, "frequency": "Annual", "description": "$100 United travel credit after spending $10,000 on purchases per year"},
+    {"name": "United Hotel Credit", "amount": 100, "frequency": "Annual", "description": "Up to $100 United hotel credit (after spending $10,000 per year, usable on United Hotel Collection bookings)"},
+    {"name": "Lounge Passes", "amount": 2, "frequency": "Annual", "description": "2 one-time United Club passes per year (valid for single visits to United Club lounges)"}
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "First Checked Bag Free", "description": "First checked bag free for cardmember and one companion on the same reservation (when paying with the card) — saves $40-80 per round trip"},
+      {"name": "Priority Boarding", "description": "Priority boarding on United flights (Group 2)"},
+      {"name": "25% Back on United Purchases", "description": "25% back on United inflight purchases (economy drinks, meals, Wi-Fi) as statement credits"},
+      {"name": "No Foreign Transaction Fees", "description": "Use card internationally without FTF"},
+      {"name": "Global Entry/TSA PreCheck", "description": "Up to $100 credit for Global Entry or TSA PreCheck every 4 years"},
+      {"name": "Expanded Award Availability", "description": "Access to expanded United MileagePlus award availability"},
+      {"name": "Card Member Only Award Flash Sales", "description": "Access to cardmember-only United award sale events"}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["chase", "united", "airline", "co-branded", "travel"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/travel-credit-cards/united/united-explorer", "notes": "Official Chase page"},
+    {"url": "https://media.chase.com/news/united-refresh-2025", "notes": "Chase/United 2025 refresh press release"},
+    {"url": "https://upgradedpoints.com/credit-cards/reviews/chase-united-mileageplus-explorer-card/benefits/", "notes": "Upgraded Points benefits breakdown"}
+  ],
+  "notes": "$150 AF (waived first year). The $100 United travel credit after $10K spend and 2 Club passes make it valuable for regular United flyers. First checked bag savings ($40-80 round trip) + priority boarding are practical perks. As of 2025, AF increased from $95 to $150. Good entry-level United card with solid perks.",
+  "last_updated": "2026-04-16T08:45:00.000Z"
+}

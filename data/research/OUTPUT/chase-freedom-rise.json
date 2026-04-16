@@ -1,0 +1,42 @@
+{
+  "card_id": "chase-freedom-rise",
+  "name": "Chase Freedom Rise℠",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 3,
+    "bonus_points": 25,
+    "estimated_value": 25,
+    "point_program": "Chase Ultimate Rewards",
+    "description": "$25 statement credit after setting up automatic payments in first 3 months and keeping for 90 consecutive days"
+  },
+  "earning_rates": [
+    {"category": "All Purchases", "rate": 1.5, "notes": "1.5% cash back on all purchases (flat rate)"},
+    {"category": "Lyft", "rate": 2, "notes": "2% cash back on Lyft rides through September 30, 2027"}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "Credit Building", "description": "Designed for first-time cardholders and those building/rebuilding credit. Chase may approve applicants with no prior credit history."},
+      {"name": "DashPass", "description": "Complimentary 6 months of DashPass (then $12.99/month) — activated by 12/31/2027"},
+      {"name": "Chase Offers", "description": "Access to Chase Offers for additional cash back at participating merchants"}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["chase", "cash-back", "credit-building", "no-annual-fee", "student-friendly"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/rise", "notes": "Official Chase page"},
+    {"url": "https://upgradedpoints.com/credit-cards/reviews/chase-freedom-rise-credit-card/", "notes": "Upgraded Points review"},
+    {"url": "https://www.forbes.com/advisor/credit-cards/reviews/chase-freedom-rise/", "notes": "Forbes Advisor review"}
+  ],
+  "notes": "Entry-level card for credit building. Chase may approve applicants with no prior credit history if they have $250+ in a Chase checking/savings account. Higher approval odds for thin-file applicants. No credit history required. Simple flat 1.5% rate is competitive for a starter card.",
+  "last_updated": "2026-04-16T08:30:00.000Z"
+}

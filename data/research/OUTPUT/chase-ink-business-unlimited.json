@@ -1,0 +1,45 @@
+{
+  "card_id": "ink-business-unlimited",
+  "name": "Ink Business Unlimited® Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 3,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 6000,
+    "time_period_months": 3,
+    "bonus_points": 75000,
+    "estimated_value": 750,
+    "point_program": "Chase Ultimate Rewards",
+    "description": "$750 cash back (or 75,000 points if transferred) after spending $6,000 in first 3 months"
+  },
+  "earning_rates": [
+    {"category": "All Purchases", "rate": 1.5, "notes": "1.5% cash back (or 1.5x points) on all purchases, unlimited (no caps)"}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "Employee Cards at No Cost", "description": "Add employee cards at no additional cost"},
+      {"name": "Intro APR", "description": "0% intro APR for 12 months from account opening on purchases"},
+      {"name": "Auto Rental Collision Damage Waiver", "description": "Secondary coverage for rental vehicles"},
+      {"name": "Travel and Emergency Assistance", "description": "Access to travel and emergency services"},
+      {"name": "Purchase Protection", "description": "Covers new purchases against damage or theft for 120 days"},
+      {"name": "Extended Warranty", "description": "Extends U.S. manufacturer warranty by 1 year"}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["chase", "business", "cash-back", "flat-rate", "no-annual-fee"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/business-credit-cards/ink/unlimited", "notes": "Official Chase page"},
+    {"url": "https://thepointsguy.com/credit-cards/chase-ink-card-showdown/", "notes": "TPG Ink card comparison"},
+    {"url": "https://www.cnbc.com/select/ink-business-card-unlimited-welcome-bonus/", "notes": "CNBC Select on $750 offer"}
+  ],
+  "notes": "No annual fee flat-rate business card (1.5% on everything). Unlike Ink Business Cash, no bonus categories — just a simple flat rate. The 3% foreign transaction fee makes it less suitable for international use (use Sapphire Reserve instead for travel). Must pair with Ink Preferred to transfer points to partners. Good for businesses with irregular/unpredictable spending.",
+  "last_updated": "2026-04-16T08:45:00.000Z"
+}

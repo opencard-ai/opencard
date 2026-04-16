@@ -1,0 +1,51 @@
+{
+  "card_id": "disney-premier-visa-card",
+  "name": "Disney® Premier Visa® Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 49,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 40000,
+    "estimated_value": 400,
+    "point_program": "Disney Rewards Dollars",
+    "description": "$200 Disney Gift Card + $100 statement credit = $400 total value after $1,000 spending in first 3 months. $49 annual fee then applies."
+  },
+  "earning_rates": [
+    {"category": "Disneyland, Disney World, Disney Cruise Line", "rate": 2, "notes": "2% back at Disneyland, Disney World, and Disney Cruise Line"},
+    {"category": "Gas Stations", "rate": 2},
+    {"category": "Grocery Stores", "rate": 2},
+    {"category": "Disney Store, DisneyPlus.com, Hulu, ESPN+", "rate": 1, "notes": "1% back at Disney Store and select Disney purchases"},
+    {"category": "All Other Purchases", "rate": 1}
+  ],
+  "annual_credits": [
+    {"name": "Theme Park Ticket Credit", "amount": 100, "frequency": "Annual", "description": "$100 statement credit after spending $200+ per anniversary year on U.S. Disney Theme Park tickets"},
+    {"name": "Streaming Credit", "amount": 120, "frequency": "Annual", "description": "Up to $120 annual credit on Disney+, Hulu, and ESPN+ (enrollment required)"}
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "Disney Character Photo", "description": "Complimentary Disney Character Photo at Disney Parks for cardmember"},
+      {"name": "Disney Vacation Financing", "description": "Special financing on Disney vacation packages"},
+      {"name": "Shoprunner", "description": "Free 2-day shipping at hundreds of merchants with ShopRunner"}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "trip_cancellation": false,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["chase", "disney", "co-branded", "theme-park", "streaming"],
+  "sources": [
+    {"url": "https://disneyrewards.com/compare-credit-cards/", "notes": "Official Disney Rewards page"},
+    {"url": "https://thepointsguy.com/credit-cards/is-disney-visa-worth-it/", "notes": "TPG review"},
+    {"url": "https://money.usnews.com/credit-cards/chase/disney-premier-visa-card", "notes": "U.S. News review"}
+  ],
+  "notes": "$49 AF is offset by up to $220 in annual credits ($100 theme park ticket + $120 streaming). Net value is positive for Disney regulars. $200 gift card + $100 credit welcome offer makes first year very valuable. Great companion for Disney vacation planners.",
+  "last_updated": "2026-04-16T08:30:00.000Z"
+}

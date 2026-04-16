@@ -1,0 +1,85 @@
+{
+  "card_id": "hilton-honors-amex-surpass",
+  "name": "Hilton Honors American Express Surpass® Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 150,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 6,
+    "bonus_points": 130000,
+    "description": "Earn 130,000 Hilton Honors Bonus Points plus a Free Night Reward after spending $3,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
+    "free_nights": 1,
+    "point_program": "Hilton Honors"
+  },
+  "earning_rates": [
+    {
+      "category": "hotel_hilton",
+      "rate": 12,
+      "notes": "Hilton Honors Bonus Points per dollar at hotels and resorts within the Hilton portfolio"
+    },
+    {
+      "category": "gas",
+      "rate": 6,
+      "notes": "U.S. gas stations"
+    },
+    {
+      "category": "grocery",
+      "rate": 6,
+      "notes": "U.S. supermarkets"
+    },
+    {
+      "category": "restaurant",
+      "rate": 6,
+      "notes": "U.S. restaurants"
+    },
+    {
+      "category": "online_retail",
+      "rate": 4,
+      "notes": "U.S. online retail purchases"
+    },
+    {
+      "category": "default",
+      "rate": 3,
+      "notes": "All other eligible purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": null
+    },
+    "hotel_status": [
+      {
+        "program": "Hilton Honors",
+        "tier": "Gold",
+        "complimentary": true,
+        "method": "Automatic for as long as card is open"
+      }
+    ],
+    "other_benefits": [
+      "Fifth Night Free on reward stays",
+      "No Foreign Transaction Fees"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["american-express", "hotel_hilton"],
+  "sources": [
+    {"url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/"},
+    {"url": "https://www.hilton.com/en/hilton-honors/credit-cards/"}
+  ],
+  "last_updated": "2026-04-16T08:34:00.000Z"
+}

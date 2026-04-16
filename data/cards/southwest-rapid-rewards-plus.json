@@ -1,0 +1,93 @@
+{
+  "card_id": "southwest-rapid-rewards-plus",
+  "name": "Southwest Rapid Rewards® Plus Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 99,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 50000,
+    "estimated_value": 745,
+    "point_program": "Southwest Rapid Rewards",
+    "description": "50,000 bonus Rapid Rewards points after spending $1,000 in first 3 months (worth ~$745 toward Southwest flights at 1.49¢/point)"
+  },
+  "earning_rates": [
+    {
+      "category": "Southwest Airlines Purchases",
+      "rate": 2
+    },
+    {
+      "category": "Gas Stations",
+      "rate": 2
+    },
+    {
+      "category": "Grocery Stores",
+      "rate": 2
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Anniversary Points",
+      "amount": 3000,
+      "frequency": "Annual",
+      "description": "3,000 Rapid Rewards anniversary points each year (worth ~$45 at 1.5¢/point)"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Complimentary Boarding",
+        "description": "Complimentary standard seat within 48 hours of departure when available"
+      },
+      {
+        "name": "No Foreign Transaction Fees",
+        "description": "Use card internationally without FTF"
+      },
+      {
+        "name": "Earn Qualifying Points",
+        "description": "Card spend counts toward Southwest A-List status (1 qualifying point per $1 on Southwest purchases)"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "southwest",
+    "airline",
+    "co-branded",
+    "travel"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/southwest/plus",
+      "notes": "Official Chase page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/benefits-southwest-airlines-credit-cards",
+      "notes": "NerdWallet benefits overview"
+    },
+    {
+      "url": "https://finance.yahoo.com/personal-finance/credit-cards/article/southwest-airlines-credit-cards-new-annual-fees-211555417.html",
+      "notes": "Yahoo Finance on 2025 AF changes"
+    }
+  ],
+  "notes": "Entry-level Southwest card. The 3,000 anniversary points (~$45 value) covers about 45% of the $99 AF. As of 2025, the $75 annual travel credit was removed from the Plus card. Better for occasional Southwest flyers. The $1,000 min spend for welcome bonus is very low.",
+  "last_updated": "2026-04-16T12:42:25.905Z"
+}

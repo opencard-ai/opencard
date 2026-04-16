@@ -1,0 +1,55 @@
+{
+  "card_id": "world-of-hyatt-business-card",
+  "name": "World of Hyatt Business Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 199,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "bonus_points": 75000,
+    "estimated_value": 1125,
+    "point_program": "World of Hyatt",
+    "description": "75,000 bonus Hyatt points after spending $4,000 in first 3 months (or possibly 2 free nights at higher category)"
+  },
+  "earning_rates": [
+    {"category": "Hyatt Hotels & Resorts", "rate": 9, "notes": "9x total points per $1 (4x from card + 5x as Discoverist) at Hyatt properties"},
+    {"category": "Advertising", "rate": 3},
+    {"category": "Airline Tickets", "rate": 3},
+    {"category": "Car Rental Agencies", "rate": 3},
+    {"category": "Commuting", "rate": 3},
+    {"category": "Gas Stations", "rate": 3},
+    {"category": "Internet/Cable/Phone", "rate": 3},
+    {"category": "Restaurant", "rate": 3},
+    {"category": "Shipping", "rate": 3},
+    {"category": "All Other Purchases", "rate": 1}
+  ],
+  "annual_credits": [
+    {"name": "Anniversary Free Night", "amount": 15000, "frequency": "Annual", "description": "One complimentary anniversary night at any Hyatt Category 1-4 hotel (up to 15,000 points)"}
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "Automatic Hyatt Discoverist Status", "description": "Hyatt Discoverist status through the business card"},
+      {"name": "5 Tier-Qualifying Nights", "description": "5 bonus tier-qualifying nights credited each year"},
+      {"name": "Employee Cards Bonus", "description": "Employee cards at no additional cost"},
+      {"name": "No Foreign Transaction Fees", "description": "Use card internationally without FTF"}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["chase", "hyatt", "hotel", "business", "co-branded", "travel"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/business-credit-cards/world-of-hyatt-business", "notes": "Official Chase business page"},
+    {"url": "https://thepointsguy.com/credit-cards/hyatt-chase-best-welcome-offers/", "notes": "TPG offer history"}
+  ],
+  "notes": "Business version of World of Hyatt. Same $199 AF and anniversary night benefit. Wide range of 3x bonus categories (advertising, gas, dining, shipping, etc.) makes it valuable for businesses. Can hold alongside personal Hyatt card for 2 free nights (one from each). 75K welcome bonus is higher than personal version.",
+  "last_updated": "2026-04-16T08:40:00.000Z"
+}

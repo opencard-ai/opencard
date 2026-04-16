@@ -1,0 +1,76 @@
+{
+  "card_id": "citi-rewards-plus",
+  "name": "Citi Rewards+® Card",
+  "issuer": "Citi",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1500,
+    "time_period_months": 3,
+    "bonus_points": 25000,
+    "estimated_value": 25000,
+    "point_program": "Citi ThankYou Points",
+    "description": "Earn 25,000 ThankYou Points after spending $1,500 in first 3 months"
+  },
+  "earning_rates": [
+    {
+      "category": "Gas Stations",
+      "rate": 5,
+      "notes": "On first $6,000 per year, then 1x"
+    },
+    {
+      "category": "Supermarkets",
+      "rate": 5,
+      "notes": "On first $6,000 per year, then 1x"
+    },
+    {
+      "category": "All Purchases",
+      "rate": 2,
+      "notes": "Rounds up every purchase to nearest 10 points; on first $6,000 per year, then 1x"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Points Rounding",
+        "description": "Every purchase rounds up to the nearest 10 points"
+      },
+      {
+        "name": "10% Points Redemption Bonus",
+        "description": "Get 10% of your points back when redeeming for travel, up to 100,000 redeemed points per year"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "citi",
+    "rewards",
+    "no-annual-fee",
+    "thankyou-points"
+  ],
+  "sources": [
+    {
+      "url": "https://www.citi.com/credit-cards/citi-rewards-plus-credit-card"
+    },
+    {
+      "url": "https://upgradedpoints.com/news/citi-rewards-plus-card-25k-point-offer/",
+      "notes": "Dec 2025 elevated offer"
+    },
+    {
+      "url": "https://cardtier.com/cards/citi-rewards-plus",
+      "notes": "Current offer review"
+    }
+  ],
+  "last_updated": "2026-04-16T12:42:25.909Z"
+}
