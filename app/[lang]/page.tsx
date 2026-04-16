@@ -7,8 +7,8 @@ import TravelProducts from "@/app/components/TravelProducts";
 import NewsFeed from "@/app/components/NewsFeed";
 import { t, locales } from "@/lib/i18n";
 
-export const dynamic = "force-dynamic";
- // 縮短快取時間從 1h 改為 1m 確保更新穩定
+// Homepage pre-rendered at build time for stability
+// Card data is static; NewsFeed refreshes client-side
 
 type Props = {
   params: Promise<{ lang: string }>;
