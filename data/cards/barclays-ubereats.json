@@ -44,5 +44,19 @@
     "no-annual-fee"
   ],
   "sources": [],
-  "last_updated": "2026-04-16T13:16:12.412Z"
+  "last_updated": "2026-04-16T13:41:49.953Z",
+  "travel_benefits": {
+    "hotel_status": [],
+    "lounge_access": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

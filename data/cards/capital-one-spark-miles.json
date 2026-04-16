@@ -55,8 +55,17 @@
     "capital-one"
   ],
   "sources": [
-    "https://www.capitalone.com/small-business/credit-cards/spark-miles/",
-    "https://onemileatatime.com/reviews/credit-cards/capital-one/capital-one-spark-miles-business-card/"
+    {
+      "url": "https://www.capitalone.com/small-business/credit-cards/spark-miles/"
+    },
+    {
+      "url": "https://onemileatatime.com/reviews/credit-cards/capital-one/capital-one-spark-miles-business-card/"
+    }
   ],
-  "last_updated": "2026-04-13T02:11:53.969Z"
+  "last_updated": "2026-04-16T13:41:49.962Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

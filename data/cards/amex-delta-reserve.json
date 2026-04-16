@@ -1,6 +1,6 @@
 {
   "card_id": "amex-delta-reserve",
-  "name": "Delta SkyMiles\u00ae Reserve American Express Card",
+  "name": "Delta SkyMiles® Reserve American Express Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 650,
@@ -116,5 +116,10 @@
       "notes": "Offer history and MQD headstart details"
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z"
+  "last_updated": "2026-04-16T13:41:49.945Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

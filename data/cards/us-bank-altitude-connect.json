@@ -100,7 +100,12 @@
       "notes": "WalletHub review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.324Z",
+  "last_updated": "2026-04-16T13:41:50.004Z",
   "status": "active",
-  "notes": "No annual fee with Priority Pass lounge access (4 visits). $100 credit for TSA PreCheck/Global Entry. Strong 4x on travel and gas."
+  "notes": "No annual fee with Priority Pass lounge access (4 visits). $100 credit for TSA PreCheck/Global Entry. Strong 4x on travel and gas.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

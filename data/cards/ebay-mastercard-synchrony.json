@@ -58,8 +58,13 @@
       "notes": "ValueAddedResource discontinuation"
     }
   ],
-  "last_updated": "2026-04-16T13:10:26.528Z",
+  "last_updated": "2026-04-16T13:41:49.982Z",
   "status": "discontinued",
   "discontinued_date": "2026-03-24",
-  "notes": "Card program ended March 24, 2026. Accounts closed by Synchrony. Points could be redeemed at eBay checkout until March 24, 2026. New rewards program reportedly shifting to flat 2% on everything but account migration details unclear. Mark as discontinued — do not add as new applicant card."
+  "notes": "Card program ended March 24, 2026. Accounts closed by Synchrony. Points could be redeemed at eBay checkout until March 24, 2026. New rewards program reportedly shifting to flat 2% on everything but account migration details unclear. Mark as discontinued — do not add as new applicant card.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

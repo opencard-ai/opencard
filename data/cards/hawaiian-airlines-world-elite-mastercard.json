@@ -71,10 +71,23 @@
     "alaska"
   ],
   "sources": [
-    "nerdwallet.com",
-    "barclaycardus.com",
-    "maxrewards.com",
-    "reddit.com/r/HawaiianAirlines"
+    {
+      "url": "nerdwallet.com"
+    },
+    {
+      "url": "barclaycardus.com"
+    },
+    {
+      "url": "maxrewards.com"
+    },
+    {
+      "url": "reddit.com/r/HawaiianAirlines"
+    }
   ],
-  "last_updated": "2026-04-16T12:42:25.896Z"
+  "last_updated": "2026-04-16T13:41:49.983Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

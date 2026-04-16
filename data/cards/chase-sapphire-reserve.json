@@ -136,5 +136,10 @@
       "notes": "Review Apr 2026."
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.970Z"
+  "last_updated": "2026-04-16T13:41:49.969Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

@@ -84,7 +84,12 @@
       "notes": "NerdWallet review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.325Z",
+  "last_updated": "2026-04-16T13:41:50.005Z",
   "status": "active",
-  "notes": "No annual fee with strong 4x dining. $15 quarterly streaming credit effectively gives $60/year in streaming credits. Successor to Radisson Rewards card."
+  "notes": "No annual fee with strong 4x dining. $15 quarterly streaming credit effectively gives $60/year in streaming credits. Successor to Radisson Rewards card.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

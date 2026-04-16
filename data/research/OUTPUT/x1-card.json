@@ -1,0 +1,42 @@
+{
+  "card_id": "x1-card",
+  "name": "X1 Card",
+  "issuer": "Coastal Community Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "annual_fee_description": "$0 annual fee (standard); X1+ package adds $75 annual fee with enhanced benefits",
+  "welcome_offer": {
+    "bonus": "75,000 bonus points (on X1+ package)",
+    "requirement": "Spend $5,000 on purchases in the first 3 months from account opening (X1+ offer)"
+  },
+  "earning_rates": [
+    {
+      "category": "all",
+      "rate": 2,
+      "rate_type": "points_per_dollar",
+      "description": "2X points on every dollar spent"
+    },
+    {
+      "category": "all_high_spenders",
+      "rate": 3,
+      "rate_type": "points_per_dollar",
+      "description": "3X points on every dollar if cardholder spends $12,000+ annually"
+    }
+  ],
+  "features": [
+    "No annual fee (base card)",
+    "No foreign transaction fees",
+    "No late fees (as of November 2025 update)",
+    "Virtual card numbers",
+    "Automatic mobile fraud protection",
+    "Price matching",
+    "X1+ package ($75): includes 75,000 bonus points welcome offer, enhanced benefits, and priority support"
+  ],
+  "tags": ["no-annual-fee", "points", "everyday-spend", "modern"],
+  "sources": [
+    "https://x1creditcard.com/legal/program-terms",
+    "https://www.nerdwallet.com/credit-cards/learn/x1-card-no-hard-credit-inquiry-income-over-credit-scores",
+    "https://wallethub.com/d/x1-credit-card-3369c"
+  ],
+  "last_updated": "2026-04-16"
+}

@@ -1,0 +1,39 @@
+{
+  "card_id": "opensky-plus-secured-visa",
+  "name": "OpenSky Plus Secured Visa",
+  "issuer": "Coastal Community Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "annual_fee_description": "$0 annual fee",
+  "welcome_offer": null,
+  "welcome_offer_description": "No welcome bonus",
+  "earning_rates": [
+    {
+      "category": "all",
+      "rate": 1.5,
+      "rate_type": "cashback",
+      "description": "1.5% cash back on every purchase, every day"
+    },
+    {
+      "category": "select_retailers",
+      "rate": 10,
+      "rate_type": "cashback",
+      "description": "Up to 10% cash back with select retailers"
+    }
+  ],
+  "features": [
+    "No credit check to apply",
+    "No annual fee",
+    "Secured card — minimum deposit $300",
+    "Build credit with on-time payments",
+    "Up to 10% cash back rewards",
+    "Variable APR: 28.24%"
+  ],
+  "tags": ["secured", "credit-building", "no-annual-fee", "cashback"],
+  "sources": [
+    "https://www.openskycc.com/secured-credit-cards",
+    "https://www.openskycc.com/plus-secured-visa",
+    "https://www.nerdwallet.com/credit-cards/reviews/opensky-plus-secured"
+  ],
+  "last_updated": "2026-04-16"
+}

@@ -57,7 +57,12 @@
       "notes": "U.S. News"
     }
   ],
-  "last_updated": "2026-04-16T13:10:26.529Z",
+  "last_updated": "2026-04-16T13:41:49.988Z",
   "status": "active",
-  "notes": "Store-only card for Lowe's. Not usable at other retailers. 5% discount is substantial for home improvement shoppers. High APR if carrying balance. Also known as MyLowe's Rewards Credit Card."
+  "notes": "Store-only card for Lowe's. Not usable at other retailers. 5% discount is substantial for home improvement shoppers. High APR if carrying balance. Also known as MyLowe's Rewards Credit Card.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

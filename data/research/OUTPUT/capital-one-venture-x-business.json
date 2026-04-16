@@ -1,0 +1,47 @@
+{
+  "card_id": "capital-one-venture-x-business",
+  "name": "Capital One Venture X Business",
+  "issuer": "Capital One",
+  "network": "Mastercard",
+  "annual_fee": 395,
+  "annual_fee_description": "$395 annual fee",
+  "welcome_offer": {
+    "bonus": "150,000 bonus miles",
+    "requirement": "Spend $30,000 on purchases in the first 3 months from account opening"
+  },
+  "earning_rates": [
+    {
+      "category": "all",
+      "rate": 2,
+      "rate_type": "miles_per_dollar",
+      "description": "2X miles on every purchase"
+    },
+    {
+      "category": "travel_capital_one",
+      "rate": 10,
+      "rate_type": "miles_per_dollar",
+      "description": "10X miles on hotels and rental cars booked through Capital One Travel"
+    },
+    {
+      "category": "flights_capital_one",
+      "rate": 10,
+      "rate_type": "miles_per_dollar",
+      "description": "10X miles on flights booked through Capital One Travel"
+    }
+  ],
+  "features": [
+    "$300 annual Capital One Travel credit",
+    "10,000 anniversary bonus miles each year starting with first anniversary",
+    "Priority Pass, Capital One Lounge, and Plaza Premium access",
+    "Global Entry / TSA PreCheck credit (up to $120)",
+    "No foreign transaction fees",
+    "Up to $100 credit for Expedia, Hotels.com, or Vrbo bookings through Capital One Travel"
+  ],
+  "tags": ["business", "travel", "premium", "miles", "lounge-access"],
+  "sources": [
+    "https://www.capitalone.com/small-business/credit-cards/venture-x-business/",
+    "https://www.dailydrop.com/credit-cards/capital-one-venture-x-business",
+    "https://www.nerdwallet.com/business/credit-cards/learn/venture-x-business-april-2025-bonus-350000-miles"
+  ],
+  "last_updated": "2026-04-16"
+}

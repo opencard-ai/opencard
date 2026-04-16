@@ -92,5 +92,10 @@
     }
   ],
   "notes": "No annual credit card fee (but requires $139/year Amazon Prime membership). The 5% rate requires Prime membership. Without Prime, earn 3% at Amazon/Whole Foods. Points are Amazon Reward Dollars redeemable at checkout or as cash back via Chase.",
-  "last_updated": "2026-04-16T12:42:25.898Z"
+  "last_updated": "2026-04-16T13:41:49.935Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

@@ -65,9 +65,20 @@
     "jetblue"
   ],
   "sources": [
-    "barclaycardus.com",
-    "maxrewards.com",
-    "wallethub.com"
+    {
+      "url": "barclaycardus.com"
+    },
+    {
+      "url": "maxrewards.com"
+    },
+    {
+      "url": "wallethub.com"
+    }
   ],
-  "last_updated": "2026-04-16T12:42:25.896Z"
+  "last_updated": "2026-04-16T13:41:49.987Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

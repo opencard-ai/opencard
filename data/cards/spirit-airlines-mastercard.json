@@ -83,5 +83,14 @@
       "notes": "TPG review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.292Z"
+  "last_updated": "2026-04-16T13:41:49.996Z",
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

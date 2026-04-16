@@ -84,7 +84,12 @@
       "notes": "NerdWallet review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.325Z",
+  "last_updated": "2026-04-16T13:41:50.006Z",
   "status": "active",
-  "notes": "Points transferable to airline/hotel partners. $325 annual travel credit essentially offsets much of annual fee. Strong 3x mobile wallet earning."
+  "notes": "Points transferable to airline/hotel partners. $325 annual travel credit essentially offsets much of annual fee. Strong 3x mobile wallet earning.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

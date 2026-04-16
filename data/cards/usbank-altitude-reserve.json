@@ -66,8 +66,17 @@
     "u.s.-bank"
   ],
   "sources": [
-    "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html",
-    "https://awardwallet.com/news/credit-cards/us-bank-altitude-reserve-card-2025-changes/"
+    {
+      "url": "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html"
+    },
+    {
+      "url": "https://awardwallet.com/news/credit-cards/us-bank-altitude-reserve-card-2025-changes/"
+    }
   ],
-  "last_updated": "2026-04-13T02:11:53.971Z"
+  "last_updated": "2026-04-16T13:41:50.009Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

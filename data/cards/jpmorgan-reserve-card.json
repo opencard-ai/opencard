@@ -134,5 +134,10 @@
     }
   ],
   "notes": "Ultra-exclusive invitation-only card for JPMorgan Private Client customers (typically requires $2M+ at JPMorgan Chase). Replaced the JPM Palladium card. Similar benefits to Sapphire Reserve but more exclusive and higher AF ($995). Benefits exceed Sapphire Reserve slightly. Not publicly available — must be invited by JPMorgan.",
-  "last_updated": "2026-04-16T12:42:25.903Z"
+  "last_updated": "2026-04-16T13:41:49.988Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

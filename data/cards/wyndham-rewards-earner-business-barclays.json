@@ -73,11 +73,26 @@
     "business"
   ],
   "sources": [
-    "nerdwallet.com",
-    "barclaycardus.com",
-    "thepointsguy.com",
-    "maxrewards.com",
-    "pointsnav.com"
+    {
+      "url": "nerdwallet.com"
+    },
+    {
+      "url": "barclaycardus.com"
+    },
+    {
+      "url": "thepointsguy.com"
+    },
+    {
+      "url": "maxrewards.com"
+    },
+    {
+      "url": "pointsnav.com"
+    }
   ],
-  "last_updated": "2026-04-16T12:42:25.897Z"
+  "last_updated": "2026-04-16T13:41:50.013Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

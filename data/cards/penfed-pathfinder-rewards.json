@@ -82,7 +82,12 @@
       "notes": "U.S. News review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.316Z",
+  "last_updated": "2026-04-16T13:41:49.993Z",
   "status": "active",
-  "notes": "Annual fee waived for Honors Advantage members (those with qualifying PenFed products). Strong 4x on travel and 3x on dining. Points worth ~1.25 cents each."
+  "notes": "Annual fee waived for Honors Advantage members (those with qualifying PenFed products). Strong 4x on travel and 3x on dining. Points worth ~1.25 cents each.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

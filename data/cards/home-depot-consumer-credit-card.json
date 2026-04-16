@@ -46,6 +46,11 @@
       "url": "https://www.homedepot.com/c/Credit_Center"
     }
   ],
-  "last_updated": "2026-04-16T12:42:25.910Z",
-  "notes": "Consumer version of Home Depot card issued by Citi. Primarily for project financing rather than rewards. Not typically covered in standard credit card reward comparisons."
+  "last_updated": "2026-04-16T13:41:49.984Z",
+  "notes": "Consumer version of Home Depot card issued by Citi. Primarily for project financing rather than rewards. Not typically covered in standard credit card reward comparisons.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

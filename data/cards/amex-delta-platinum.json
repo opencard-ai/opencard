@@ -1,6 +1,6 @@
 {
   "card_id": "amex-delta-platinum",
-  "name": "Delta SkyMiles\u00ae Platinum American Express Card",
+  "name": "Delta SkyMiles® Platinum American Express Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 350,
@@ -127,5 +127,10 @@
       "notes": "Card comparison and benefit details"
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z"
+  "last_updated": "2026-04-16T13:41:49.945Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

@@ -81,5 +81,14 @@
       "notes": "DoC"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.288Z"
+  "last_updated": "2026-04-16T13:41:49.955Z",
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

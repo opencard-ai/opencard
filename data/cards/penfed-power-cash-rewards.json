@@ -61,7 +61,12 @@
       "notes": "NerdWallet review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.316Z",
+  "last_updated": "2026-04-16T13:41:49.993Z",
   "status": "active",
-  "notes": "Simple flat-rate cash back. Honors Advantage (qualifying products) bumps to 2%. No annual fee, no foreign transaction fees. Strong flat-rate alternative to 1.5% cards."
+  "notes": "Simple flat-rate cash back. Honors Advantage (qualifying products) bumps to 2%. No annual fee, no foreign transaction fees. Strong flat-rate alternative to 1.5% cards.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

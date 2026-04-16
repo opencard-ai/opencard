@@ -1,0 +1,62 @@
+{
+  "card_id": "capital-one-spark-miles-for-business",
+  "name": "Capital One Spark Miles for Business",
+  "issuer": "Capital One",
+  "network": "Mastercard",
+  "annual_fee": 95,
+  "annual_fee_description": "$95 annual fee (waived first year for Spark Miles; note: brand has been rebranded to Venture Business)",
+  "welcome_offer": {
+    "bonus": "50,000 bonus miles",
+    "requirement": "Spend $4,500 on purchases in the first 3 months (original Spark Miles offer)"
+  },
+  "earning_rates": [
+    {
+      "category": "all",
+      "rate": 2,
+      "rate_type": "miles_per_dollar",
+      "description": "Earn unlimited 2X miles on every purchase"
+    }
+  ],
+  "features": [
+    "Note: Capital One has rebranded Spark Miles to Venture Business — the Venture Business card earns 2X miles on every purchase",
+    "No foreign transaction fees",
+    "Free authorized cards",
+    "Quarterly and annual spending summaries",
+    "Travel accident insurance",
+    "Roadside dispatch"
+  ],
+  "tags": [
+    "business",
+    "travel",
+    "miles",
+    "flights"
+  ],
+  "sources": [
+    {
+      "url": "https://www.capitalone.com/small-business/credit-cards/spark-miles/"
+    },
+    {
+      "url": "https://www.dailydrop.com/credit-cards/capital-one-spark-miles-for-business"
+    },
+    {
+      "url": "https://thepointsguy.com/news/capital-one-spark-miles-venture-business/"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.960Z",
+  "travel_benefits": {
+    "hotel_status": [],
+    "lounge_access": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {},
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
+  "annual_credits": []
+}

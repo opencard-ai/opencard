@@ -81,5 +81,10 @@
     }
   ],
   "notes": "No annual fee flat-rate business card (1.5% on everything). Unlike Ink Business Cash, no bonus categories — just a simple flat rate. The 3% foreign transaction fee makes it less suitable for international use (use Sapphire Reserve instead for travel). Must pair with Ink Preferred to transfer points to partners. Good for businesses with irregular/unpredictable spending.",
-  "last_updated": "2026-04-16T12:42:25.903Z"
+  "last_updated": "2026-04-16T13:41:49.987Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

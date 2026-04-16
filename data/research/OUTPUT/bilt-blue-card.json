@@ -1,0 +1,41 @@
+{
+  "card_id": "bilt-blue-card",
+  "name": "Bilt Blue Card",
+  "issuer": "Bilt Rewards",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "annual_fee_description": "$0 annual fee",
+  "welcome_offer": {
+    "bonus": "$100 Bilt Cash",
+    "requirement": "Apply and get approved"
+  },
+  "earning_rates": [
+    {
+      "category": "all",
+      "rate": 1,
+      "rate_type": "points_per_dollar",
+      "description": "1X Bilt points on all purchases"
+    },
+    {
+      "category": "bilt_cash_option",
+      "rate": 4,
+      "rate_type": "bilt_cash_percent",
+      "description": "Earn 4% Bilt Cash on everyday transactions (can be redeemed toward rent)"
+    }
+  ],
+  "features": [
+    "No annual fee",
+    "No foreign transaction fees",
+    "Use card 5+ times per statement period to earn points",
+    "Rent Day perk: double points on the 1st of each month",
+    "No transaction fees on rent payments via Bilt",
+    "Earn up to 1.25X points on rent (up to 75% of rent as points)"
+  ],
+  "tags": ["rent", "rewards", "no-annual-fee", "bilt", "everyday-spend"],
+  "sources": [
+    "https://support.biltrewards.com/hc/en-us/articles/42897766682381-Bilt-Card-2-0-Program-Overview",
+    "https://newsroom.biltrewards.com/meetbiltcard2.0",
+    "https://onemileatatime.com/guides/bilt-blue-card/"
+  ],
+  "last_updated": "2026-04-16"
+}

@@ -76,7 +76,12 @@
       "notes": "CNBC review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.316Z",
+  "last_updated": "2026-04-16T13:41:49.993Z",
   "status": "active",
-  "notes": "No annual fee. Strong 5x gas and 3x groceries/dining. Points redeemable for gift cards, travel, or cash."
+  "notes": "No annual fee. Strong 5x gas and 3x groceries/dining. Points redeemable for gift cards, travel, or cash.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

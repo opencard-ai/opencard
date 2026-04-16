@@ -65,8 +65,17 @@
     "bank-of america"
   ],
   "sources": [
-    "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/",
-    "https://thepointsguy.com/credit-cards/atmos-ascent-vs-atmos-summit/"
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/atmos-ascent-vs-atmos-summit/"
+    }
   ],
-  "last_updated": "2026-04-13T02:11:53.969Z"
+  "last_updated": "2026-04-16T13:41:49.955Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

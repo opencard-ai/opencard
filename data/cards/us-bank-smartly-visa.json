@@ -53,7 +53,12 @@
       "notes": "CNBC review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.327Z",
+  "last_updated": "2026-04-16T13:41:50.006Z",
   "status": "active",
-  "notes": "Simple 2% flat-rate cash back. No welcome bonus. Requires U.S. Bank Smart Rewards enrollment for best benefits. 3% foreign transaction fee."
+  "notes": "Simple 2% flat-rate cash back. No welcome bonus. Requires U.S. Bank Smart Rewards enrollment for best benefits. 3% foreign transaction fee.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

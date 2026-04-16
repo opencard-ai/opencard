@@ -1,0 +1,78 @@
+{
+  "card_id": "patelco-travel-rewards-visa",
+  "name": "Patelco Travel Rewards Visa",
+  "issuer": "Patelco Credit Union",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "bonus_value": null,
+    "description": "No welcome bonus. Patelco credit union may offer periodic targeted bonuses."
+  },
+  "earning_rates": [
+    {
+      "category": "School and grocery purchases",
+      "rate": 2,
+      "notes": "2x Patelco Rewards points per $1 on school and grocery purchases"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1x point per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Visa Travel benefits",
+        "description": "Emergency travel assistance, lost luggage reimbursement"
+      },
+      {
+        "name": "No foreign transaction fees",
+        "description": "No FTF for international purchases"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Auto Rental Collision Damage Waiver",
+    "purchase_protection": true,
+    "extended_warranty": false
+  },
+  "tags": [
+    "patelco",
+    "credit-union",
+    "travel",
+    "points",
+    "no-annual-fee",
+    "no-foreign-fee"
+  ],
+  "sources": [
+    {
+      "url": "https://www.patelco.org/credit-cards-and-loans/credit-cards/rewards",
+      "notes": "Patelco Rewards credit cards page"
+    },
+    {
+      "url": "https://www.patelco.org/credit-cards-and-loans/credit-cards",
+      "notes": "Patelco all credit cards page"
+    },
+    {
+      "url": "https://wallethub.com/credit-cards/patelco-credit-union-13314035i",
+      "notes": "WalletHub — Patelco credit card overview"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.992Z",
+  "status": "active",
+  "notes": "Issued by Patelco Credit Union (California-based). Earns Patelco Rewards points rather than cash back. Membership in Patelco Credit Union required (open to those who live/work in certain California counties or are affiliated with partner organizations). No annual fee and no foreign transaction fees. Note: The specific 'Travel Rewards' variant may refer to Patelco's Points Rewards World Mastercard which earns 2x on school/grocery and 1x elsewhere.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

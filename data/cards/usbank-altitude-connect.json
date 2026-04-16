@@ -59,8 +59,17 @@
     "u.s.-bank"
   ],
   "sources": [
-    "https://www.usbank.com/credit-cards/altitude-connect-visa-signature-credit-card.html",
-    "https://www.doctorofcredit.com/major-changes-to-u-s-bank-altitude-connect-card/"
+    {
+      "url": "https://www.usbank.com/credit-cards/altitude-connect-visa-signature-credit-card.html"
+    },
+    {
+      "url": "https://www.doctorofcredit.com/major-changes-to-u-s-bank-altitude-connect-card/"
+    }
   ],
-  "last_updated": "2026-04-13T02:11:53.971Z"
+  "last_updated": "2026-04-16T13:41:50.008Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

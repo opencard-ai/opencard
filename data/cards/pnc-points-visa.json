@@ -40,7 +40,12 @@
       "notes": "Official PNC page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.317Z",
+  "last_updated": "2026-04-16T13:41:49.994Z",
   "status": "active",
-  "notes": "Simple points-based card. 1.5x points on all purchases. Points value varies by redemption (cash, travel, gift cards)."
+  "notes": "Simple points-based card. 1.5x points on all purchases. Points value varies by redemption (cash, travel, gift cards).",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

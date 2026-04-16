@@ -62,7 +62,12 @@
       "notes": "NerdWallet"
     }
   ],
-  "last_updated": "2026-04-16T13:10:26.518Z",
+  "last_updated": "2026-04-16T13:41:49.963Z",
   "status": "active",
-  "notes": "Upgrade from CareCredit Card. Earns points on healthcare and general spending. Retains promotional financing at CareCredit providers while adding rewards on everyday spending. Points redeemable for statement credit."
+  "notes": "Upgrade from CareCredit Card. Earns points on healthcare and general spending. Retains promotional financing at CareCredit providers while adding rewards on everyday spending. Points redeemable for statement credit.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

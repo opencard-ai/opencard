@@ -1,6 +1,6 @@
 {
   "card_id": "amex-delta-gold",
-  "name": "Delta SkyMiles\u00ae Gold American Express Card",
+  "name": "Delta SkyMiles® Gold American Express Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 150,
@@ -104,5 +104,10 @@
       "notes": "Annual fee, foreign transaction fee, benefits details"
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z"
+  "last_updated": "2026-04-16T13:41:49.944Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

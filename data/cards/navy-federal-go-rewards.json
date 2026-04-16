@@ -60,7 +60,12 @@
       "notes": "Official Navy Federal page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.314Z",
+  "last_updated": "2026-04-16T13:41:49.991Z",
   "status": "active",
-  "notes": "Strong for dining (3x) and gas (2x). No annual fee, no foreign transaction fees. Exclusive to Navy Federal members."
+  "notes": "Strong for dining (3x) and gas (2x). No annual fee, no foreign transaction fees. Exclusive to Navy Federal members.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

@@ -44,5 +44,11 @@
   ],
   "sources": [],
   "benefits": [],
-  "annual_fee_note": "$99 annual fee. Replaced the previous Visa version (discontinued 2024)."
+  "annual_fee_note": "$99 annual fee. Replaced the previous Visa version (discontinued 2024).",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
+  "last_updated": "2026-04-16T13:41:49.964Z"
 }

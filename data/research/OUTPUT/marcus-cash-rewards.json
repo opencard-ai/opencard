@@ -1,42 +1,66 @@
 {
   "card_id": "marcus-cash-rewards",
-  "name": "Marcus by Goldman Sachs Credit Card",
+  "name": "Marcus by Goldman Sachs Cash Rewards",
   "issuer": "Goldman Sachs",
   "network": "Visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",
   "welcome_offer": {
-    "spending_requirement": 500,
-    "time_period_months": 6,
-    "bonus_points": 0,
-    "estimated_value": 0,
-    "point_program": "Marcus Rewards",
-    "description": "No traditional welcome offer"
+    "spending_requirement": null,
+    "bonus_value": null,
+    "description": "No welcome bonus offered."
   },
   "earning_rates": [
-    { "category": "All Purchases", "rate": 1.5, "notes": "1.5% unlimited cash back on every purchase" }
+    {
+      "category": "GM purchases (GM dealers, GM-related purchases)",
+      "rate": 4,
+      "notes": "4x points on eligible GM purchases"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1x point per $1 on all other purchases"
+    }
   ],
   "annual_credits": [],
   "travel_benefits": {
     "other_benefits": [
-      { "name": "No fees", "description": "No annual fee, no foreign transaction fees, no late fees, no returned payment fees" },
-      { "name": "High credit limit", "description": "Potentially high credit limits based on income and creditworthiness" }
+      {
+        "name": "0% intro APR",
+        "description": "0% introductory APR for 9 months on qualifying GM purchases over $499"
+      },
+      {
+        "name": "No redemption limits",
+        "description": "Points do not expire; earnings valid for 7 years"
+      }
     ]
   },
-  "fhr_thc": { "fhr_eligible": false, "thc_eligible": false },
-  "insurance": {
-    "rental_insurance": "Secondary",
-    "trip_delay": false,
-    "trip_cancellation": false,
-    "purchase_protection": true,
-    "extended_warranty": true
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
   },
-  "tags": ["goldman-sachs", "cash-back", "flat-rate"],
+  "insurance": {
+    "rental_insurance": "None specified",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": ["marcus", "gm", "goldman-sachs", "gas", "points", "no-annual-fee"],
   "sources": [
-    { "url": "https://www.marcus.com/us/en/personal-loans/credit-card/", "notes": "Official Marcus page" }
+    {
+      "url": "https://www.hustlermoneyblog.com/marcus-by-goldman-sachs-credit-card-bonuses/",
+      "notes": "Hustler Money Blog — card bonuses history"
+    },
+    {
+      "url": "https://www.reddit.com/r/CreditCards/comments/14sd6a0/planning_to_open_a_new_card_is_the_my_gm_rewards/",
+      "notes": "Reddit discussion — confirms GM Rewards via Marcus"
+    },
+    {
+      "url": "https://marcus.com/us/en/credit-cards/gm-cards/rates-and-fees",
+      "notes": "Marcus GM card rates and fees page"
+    }
   ],
-  "last_updated": "2026-04-16T00:00:00Z",
+  "last_updated": "2026-04-16T13:00:00Z",
   "status": "active",
-  "notes": "Simple 1.5% flat-rate card from Goldman Sachs/Marcus. Fee-free structure. Linked to Marcus banking customers."
+  "notes": "The Marcus by Goldman Sachs credit card was a GM co-branded card. The card was previously issued by Goldman Sachs but the program has since moved to Barclays (My GM Rewards Mastercard as of 2025). The Marcus GM card earned 4x points on GM purchases and 1x elsewhere. Note: GM Rewards Mastercard (Barclays) now supersedes this card as of May 2025. Some sources suggest Marcus card may be discontinued for new applications."
 }

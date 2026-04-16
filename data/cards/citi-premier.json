@@ -1,6 +1,6 @@
 {
   "card_id": "citi-premier",
-  "name": "Citi Strata Premier\u00ae Card",
+  "name": "Citi Strata Premier® Card",
   "issuer": "Citi",
   "network": "Visa",
   "annual_fee": 95,
@@ -10,7 +10,7 @@
     "spending_requirement": 4000,
     "time_period_months": 3,
     "bonus_points": 60000,
-    "description": "60,000 bonus ThankYou\u00ae Points after spending $4,000 in the first 3 months of account opening.",
+    "description": "60,000 bonus ThankYou® Points after spending $4,000 in the first 3 months of account opening.",
     "free_nights": null,
     "point_program": "Citi ThankYou"
   },
@@ -106,5 +106,10 @@
       "notes": "CNBC review confirms $95 AF, 60K welcome bonus, 3x on dining/supermarkets/gas/travel."
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.970Z"
+  "last_updated": "2026-04-16T13:41:49.977Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

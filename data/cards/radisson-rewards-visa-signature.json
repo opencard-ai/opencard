@@ -66,7 +66,12 @@
       "notes": "NerdWallet - card discontinued"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.322Z",
+  "last_updated": "2026-04-16T13:41:49.994Z",
   "status": "discontinued",
-  "notes": "Card discontinued in 2022. Converted to U.S. Bank Altitude Go Visa Signature. No longer accepting new applications."
+  "notes": "Card discontinued in 2022. Converted to U.S. Bank Altitude Go Visa Signature. No longer accepting new applications.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

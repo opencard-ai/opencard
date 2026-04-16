@@ -101,7 +101,12 @@
       "notes": "TPG 2026 No Annual Fee Card of the Year"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.327Z",
+  "last_updated": "2026-04-16T13:41:50.011Z",
   "status": "active",
-  "notes": "Named TPG's 2026 No Annual Fee Card of the Year. 3x on travel, dining, gas, transit, streaming. $50 annual airline credit. Strong travel protections. Points worth ~1 cent each."
+  "notes": "Named TPG's 2026 No Annual Fee Card of the Year. 3x on travel, dining, gas, transit, streaming. $50 annual airline credit. Strong travel protections. Points worth ~1 cent each.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

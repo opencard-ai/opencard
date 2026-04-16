@@ -61,7 +61,12 @@
       "notes": "Official Navy Federal page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.314Z",
+  "last_updated": "2026-04-16T13:41:49.991Z",
   "status": "active",
-  "notes": "Best Navy Federal travel card. 3x on travel, 1.5x elsewhere. No annual fee for members. Points worth ~1 cent each."
+  "notes": "Best Navy Federal travel card. 3x on travel, 1.5x elsewhere. No annual fee for members. Points worth ~1 cent each.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

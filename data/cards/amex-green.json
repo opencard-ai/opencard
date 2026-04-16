@@ -1,6 +1,6 @@
 {
   "card_id": "amex-green",
-  "name": "American Express\u00ae Green Card",
+  "name": "American Express® Green Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 150,
@@ -10,7 +10,7 @@
     "spending_requirement": 3000,
     "time_period_months": 6,
     "bonus_points": 40000,
-    "description": "Earn 40,000 Membership Rewards\u00ae Points after you spend $3,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
+    "description": "Earn 40,000 Membership Rewards® Points after you spend $3,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
     "free_nights": null,
     "point_program": "Membership Rewards"
   },
@@ -78,5 +78,10 @@
       "notes": "Official Amex Page"
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z"
+  "last_updated": "2026-04-16T13:41:49.947Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

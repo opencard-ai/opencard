@@ -67,7 +67,12 @@
       "notes": "MaxRewards"
     }
   ],
-  "last_updated": "2026-04-16T13:10:26.531Z",
+  "last_updated": "2026-04-16T13:41:49.997Z",
   "status": "active",
-  "notes": "Mastercard version of TJX Rewards — accepted anywhere Mastercard is accepted, not just TJX stores. Same 5% at TJX family as the store-only version, but also earns 1% on everything else. Best of both worlds for TJX shoppers who also want a general-purpose card."
+  "notes": "Mastercard version of TJX Rewards — accepted anywhere Mastercard is accepted, not just TJX stores. Same 5% at TJX family as the store-only version, but also earns 1% on everything else. Best of both worlds for TJX shoppers who also want a general-purpose card.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

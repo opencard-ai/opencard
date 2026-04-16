@@ -65,7 +65,12 @@
       "notes": "Pottery Barn credit card page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.317Z",
+  "last_updated": "2026-04-16T13:41:49.994Z",
   "status": "active",
-  "notes": "Store card for Pottery Barn furniture/home goods retailer. 6x points at Pottery Barn. Issued via Comenity Bank."
+  "notes": "Store card for Pottery Barn furniture/home goods retailer. 6x points at Pottery Barn. Issued via Comenity Bank.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

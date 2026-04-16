@@ -15,14 +15,57 @@
     "point_program": "Cash Back"
   },
   "earning_rates": [
-    {"category": "Choice Category (6%)", "rate": 6, "notes": "Choose 1: gas, online shopping, dining, travel, drug stores, or home improvement/furnishings. 6% on up to $2,500/quarter, then 1%"},
-    {"category": "Grocery & Wholesale (3%)", "rate": 3, "notes": "On up to $2,500 combined with choice category per quarter"},
-    {"category": "Other", "rate": 1, "notes": null}
+    {
+      "category": "Choice Category (6%)",
+      "rate": 6,
+      "notes": "Choose 1: gas, online shopping, dining, travel, drug stores, or home improvement/furnishings. 6% on up to $2,500/quarter, then 1%"
+    },
+    {
+      "category": "Grocery & Wholesale (3%)",
+      "rate": 3,
+      "notes": "On up to $2,500 combined with choice category per quarter"
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": null
+    }
   ],
   "annual_credits": [],
-  "travel_benefits": {"other_benefits": [{"name": "Fraud Protection", "description": "零責任防盜刷保障"}]},
-  "insurance": {"rental_insurance": "Secondary", "trip_delay": false, "purchase_protection": true, "extended_warranty": true},
-  "tags": ["bank-of-america", "cash-back", "no-annual-fee", "choice-category"],
-  "sources": [{"url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/", "notes": "Official BOA Page"}],
-  "last_updated": "2026-04-15T16:20:00Z"
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Fraud Protection",
+        "description": "零責任防盜刷保障"
+      }
+    ]
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "bank-of-america",
+    "cash-back",
+    "no-annual-fee",
+    "choice-category"
+  ],
+  "sources": [
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
+      "notes": "Official BOA Page"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.957Z",
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

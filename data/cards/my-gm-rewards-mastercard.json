@@ -75,7 +75,12 @@
       "notes": "Official GM Rewards Card page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.311Z",
+  "last_updated": "2026-04-16T13:41:49.990Z",
   "status": "active",
-  "notes": "Co-branded GM card from Goldman Sachs. 10x on GM purchases is excellent for GM vehicle owners. Points redeemable for GM vehicle purchases, service, parts."
+  "notes": "Co-branded GM card from Goldman Sachs. 10x on GM purchases is excellent for GM vehicle owners. Points redeemable for GM vehicle purchases, service, parts.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

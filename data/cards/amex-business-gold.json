@@ -80,5 +80,10 @@
       "notes": "Amex official card page with earning categories and statement credits"
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.966Z"
+  "last_updated": "2026-04-16T13:41:49.942Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

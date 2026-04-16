@@ -60,6 +60,11 @@
       "url": "https://www.macys.com/credit-card"
     }
   ],
-  "last_updated": "2026-04-16T12:42:25.911Z",
-  "notes": "American Express version of Macy's store card issued by Citi. Note: 'American Express' here refers to the network/brand, not the company American Express (which issues different cards). Store rewards program only valuable if you shop at Macy's frequently."
+  "last_updated": "2026-04-16T13:41:49.989Z",
+  "notes": "American Express version of Macy's store card issued by Citi. Note: 'American Express' here refers to the network/brand, not the company American Express (which issues different cards). Store rewards program only valuable if you shop at Macy's frequently.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

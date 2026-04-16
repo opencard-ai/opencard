@@ -99,5 +99,10 @@
       "notes": "New limited-time offer details confirmed from March 2026 update"
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.968Z"
+  "last_updated": "2026-04-16T13:41:49.948Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

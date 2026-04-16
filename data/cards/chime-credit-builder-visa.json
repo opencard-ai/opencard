@@ -1,0 +1,72 @@
+{
+  "card_id": "chime-credit-builder-visa",
+  "name": "Chime Credit Builder Visa",
+  "issuer": "The Bancorp Bank / Stride Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "annual_fee_description": "$0 annual fee",
+  "welcome_offer": null,
+  "welcome_offer_description": "No welcome bonus",
+  "earning_rates": [
+    {
+      "category": "all",
+      "rate": 1.5,
+      "rate_type": "cashback",
+      "description": "1.5% cash back in rotating categories (restaurants, groceries, gas, and more)"
+    },
+    {
+      "category": "all_with_prime",
+      "rate": 5,
+      "rate_type": "cashback",
+      "description": "5% cash back for Chime Prime members on up to $1,500/month in eligible categories with qualifying direct deposit"
+    },
+    {
+      "category": "all_with_plus",
+      "rate": 2,
+      "rate_type": "cashback",
+      "description": "2% cash back for Chime Plus members on up to $1,500/month in eligible categories with qualifying direct deposit"
+    }
+  ],
+  "features": [
+    "No credit check to apply",
+    "No interest charges",
+    "No late fees",
+    "No foreign transaction fees",
+    "Secured card — deposit required",
+    "Build credit with on-time payments"
+  ],
+  "tags": [
+    "secured",
+    "credit-building",
+    "no-annual-fee",
+    "cashback"
+  ],
+  "sources": [
+    {
+      "url": "https://www.chime.com/credit/credit-builder/"
+    },
+    {
+      "url": "https://www.chime.com/credit/chime-card/"
+    },
+    {
+      "url": "https://www.forbes.com/advisor/credit-cards/things-to-know-about-the-chime-credit-builder-visa-secured-credit-card/"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.972Z",
+  "travel_benefits": {
+    "hotel_status": [],
+    "lounge_access": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {},
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
+  "annual_credits": []
+}

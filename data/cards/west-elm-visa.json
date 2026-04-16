@@ -65,7 +65,12 @@
       "notes": "West Elm credit card page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.328Z",
+  "last_updated": "2026-04-16T13:41:50.011Z",
   "status": "active",
-  "notes": "Store card for West Elm home goods retailer. 6x points at West Elm. Issued via Comenity Bank. Part of Williams-Sonoma Inc. portfolio."
+  "notes": "Store card for West Elm home goods retailer. 6x points at West Elm. Issued via Comenity Bank. Part of Williams-Sonoma Inc. portfolio.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

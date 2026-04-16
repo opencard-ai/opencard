@@ -88,7 +88,12 @@
       "notes": "NerdWallet review"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.327Z",
+  "last_updated": "2026-04-16T13:41:50.009Z",
   "status": "active",
-  "notes": "Rewards are Verizon Dollars, redeemable for Verizon bills, devices, and accessories. Strong 4% on gas and groceries. Requires Verizon service."
+  "notes": "Rewards are Verizon Dollars, redeemable for Verizon bills, devices, and accessories. Strong 4% on gas and groceries. Requires Verizon service.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

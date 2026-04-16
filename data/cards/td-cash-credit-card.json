@@ -72,7 +72,12 @@
       "notes": "Official TD Bank page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.324Z",
+  "last_updated": "2026-04-16T13:41:49.997Z",
   "status": "active",
-  "notes": "Strong 3% at gas, 2% on groceries/dining. No annual fee. TD Bank relationship recommended."
+  "notes": "Strong 3% at gas, 2% on groceries/dining. No annual fee. TD Bank relationship recommended.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

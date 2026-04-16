@@ -47,6 +47,8 @@ ISSER: [issuer 名稱]
 | 12 | TD Bank | ~6 | ⬜ 待認領 | |
 | 13 | PenFed CU | ~4 | ⬜ 待認領 | |
 | 14 | 其他（~31張） | ~31 | ⬜ 待認領 | |
+| 15 | 第一批缺口卡（Chime, Bilt, OpenSky, X1等） | 16 | ✅ 研究完成（16張已寫入 research/OUTPUT/） | Jisoo |
+| 16 | 第二批缺口卡（Deserve EDU, Elan Max Cash, Fidelity, Marcus, GM Rewards, HealthEquity, HSBC Elite, HSBC Premier, Patelco, Ramp, Self, First Progress, SoFi, Upgrade, Petal） | 18 | ✅ 研究完成（18張已寫入 research/OUTPUT/） | Rosé |
 
 ---
 
@@ -121,4 +123,4 @@ ISSER: [issuer 名稱]
 
 ---
 
-*更新時間：2026-04-16T13:10:00Z*
+*更新時間：2026-04-16T13:40:00Z*

@@ -1,0 +1,70 @@
+{
+  "card_id": "petal-1-visa",
+  "name": "Petal 1 Visa",
+  "issuer": "Petal (WebBank)",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Limited/No Credit History",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "bonus_value": null,
+    "description": "No welcome bonus. Earn cash back through Petal Offers at select merchants."
+  },
+  "earning_rates": [
+    {
+      "category": "Petal Offers at select merchants",
+      "rate": 2,
+      "notes": "Earn 2% to 10% cash back at select merchants through Petal Offers"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1% cash back on all other eligible purchases (introductory); increases to up to 1.5% after 6 months of on-time payments (for qualifying cardholders)"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Credit building",
+        "description": "Reports to all three major credit bureaus; on-time payments build credit history"
+      },
+      {
+        "name": "Credit limit increase path",
+        "description": "Potential for credit limit increase in as little as 6 months with responsible use"
+      },
+      {
+        "name": "No fees",
+        "description": "No annual fee, no foreign transaction fees, no late fees, no penalty fees"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": ["petal", "credit-builder", "student", "no-fee", "cash-back", "beginner"],
+  "sources": [
+    {
+      "url": "https://www.petalcard.com/petal-1",
+      "notes": "Petal 1 official page"
+    },
+    {
+      "url": "https://www.cnbc.com/select/visa-petal-1-vs-petal-2/",
+      "notes": "CNBC — Petal 1 vs Petal 2 comparison"
+    },
+    {
+      "url": "https://money.usnews.com/credit-cards/webbank/petal-no-annual-fee-visa-credit-card",
+      "notes": "U.S. News review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:00:00Z",
+  "status": "active",
+  "notes": "Petal 1 is a no-fee credit card designed for people with limited or no credit history. $0 annual fee and no foreign transaction fees. Variable APR: 28.99%–33.99% (high). Credit limits: $300–$5,000. Earn 1%–10% cash back through Petal Offers at select merchants; base rate starts at 1% and can increase to up to 1.5% after demonstrating responsible use. Reports to all three credit bureaus. Petal uses cash flow analysis (bank account history) for underwriting rather than traditional credit score alone."
+}

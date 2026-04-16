@@ -106,5 +106,10 @@
       "notes": "One Mile at a Time review"
     }
   ],
-  "last_updated": "2026-04-16T12:42:25.901Z"
+  "last_updated": "2026-04-16T13:41:49.986Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

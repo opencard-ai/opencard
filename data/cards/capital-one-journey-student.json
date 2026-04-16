@@ -47,6 +47,11 @@
   ],
   "notes": "Basic student credit card with modest 1.25% total cash back (1% + 0.25% bonus for on-time payments). No sign-up bonus. No annual fee. APR is high at 29.99% variable. The 0.25% extra when paying on time incentivizes good habits. Limited to students or those with limited credit. No travel or purchase protections. Consider SavorOne Student for better earning rates.",
   "confidence": "medium",
-  "last_updated": "2026-04-16T13:16:57.264Z",
-  "tags": []
+  "last_updated": "2026-04-16T13:41:49.958Z",
+  "tags": [],
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

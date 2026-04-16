@@ -77,5 +77,10 @@
       "notes": "Capital One SavorOne overview confirming earning categories and $200 welcome bonus"
     }
   ],
-  "last_updated": "2026-04-13T02:11:53.969Z"
+  "last_updated": "2026-04-16T13:41:49.959Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }

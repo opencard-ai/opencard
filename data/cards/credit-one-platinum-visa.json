@@ -68,7 +68,12 @@
       "notes": "Official Credit One page"
     }
   ],
-  "last_updated": "2026-04-16T13:24:48.307Z",
+  "last_updated": "2026-04-16T13:41:49.978Z",
   "status": "active",
-  "notes": "Targeted at credit building. $95 annual fee partially offset by 5% categories. Cap of $10K/year on 5% categories. Reports to all 3 bureaus."
+  "notes": "Targeted at credit building. $95 annual fee partially offset by 5% categories. Cap of $10K/year on 5% categories. Reports to all 3 bureaus.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
 }
