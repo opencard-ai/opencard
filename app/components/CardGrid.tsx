@@ -143,7 +143,7 @@ function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[
     const params = new URLSearchParams(searchParams.toString());
     if (value) params.set(key, value);
     else params.delete(key);
-    router.push(`${pathname}?${params.toString()}#cards`, { scroll: true });
+    router.push(`${pathname}?${params.toString()}#cards-section`, { scroll: false });
   };
 
   return (

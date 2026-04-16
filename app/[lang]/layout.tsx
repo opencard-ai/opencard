@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import ScrollAnchorHandler from "@/app/components/ScrollAnchorHandler";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
@@ -42,7 +43,9 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={lang}>
-      <body
+      
+
+<body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-slate-50 text-slate-900 antialiased pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]`}
       >
         <header className="bg-white border-b border-slate-200 sticky top-0 z-10 pt-[env(safe-area-inset-top)]">
@@ -75,7 +78,8 @@ export default async function LocaleLayout({ children, params }: Props) {
             <MyCardsWidget lang={lang} />
           </div>
           <div className="pointer-events-auto">
-            <Suspense fallback={null}><RecommendWidget lang={lang} /></Suspense>
+            <ScrollAnchorHandler />
+          <Suspense fallback={null}><RecommendWidget lang={lang} /></Suspense>
           </div>
         </div>
       </body>
