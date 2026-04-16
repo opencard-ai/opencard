@@ -3,6 +3,13 @@ import { t } from "@/lib/i18n";
 
 export default function HeroButtons({ lang }: { lang: string }) {
   const locale = lang as "en" | "zh" | "es";
+
+  const openMyCards = () => {
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("opencard_open_mycards"));
+    }
+  };
+
   return (
     <div className="flex flex-wrap items-center gap-2">
       <a
@@ -12,7 +19,7 @@ export default function HeroButtons({ lang }: { lang: string }) {
         {t("home.heroAiCta", lang as any)}
       </a>
       <button
-        onClick={() => window.dispatchEvent(new CustomEvent("opencard_open_mycards"))}
+        onClick={openMyCards}
         className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-700 font-medium text-sm px-5 py-2.5 rounded-full border-2 border-slate-200 shadow-md hover:shadow-lg transition-all hover:scale-105 active:scale-95"
       >
         {t("home.heroMyCards", lang as any)}
