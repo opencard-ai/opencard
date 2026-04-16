@@ -18,7 +18,7 @@ const MESSAGES = {
   },
   zh: {
     title: "👛 我的皮夾",
-    trigger: "我擁有的卡片",
+    trigger: "我的卡片",
     hint: "勾選你已有的卡片。AI 會避免推薦重複項目，並為你尋找互補的福利。",
     searchPlaceholder: "搜尋卡片...",
     clearAll: "清除全部",
