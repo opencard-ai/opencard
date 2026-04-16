@@ -1,0 +1,70 @@
+{
+  "card_id": "us-bank-visa-platinum",
+  "name": "U.S. Bank Visa® Platinum Card",
+  "issuer": "U.S. Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": null,
+  "earning_rates": [
+    {
+      "category": "Prepaid air, hotel, car reservations (Travel Center)",
+      "rate": 4,
+      "notes": "4% cash back on prepaid travel booked directly via U.S. Bank Travel Center"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "$20 annual statement credit",
+      "amount": 20,
+      "frequency": "Annual",
+      "description": "$20 credit for 11 consecutive months of purchases (requires enrolled in U.S. Bank ExtendPay)"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Cell phone protection",
+        "description": "Up to $600 reimbursed if cell phone is stolen or damaged when paying monthly cellular bill with card"
+      },
+      {
+        "name": "ExtendedPay Plan",
+        "description": "One 3-month $0 fee ExtendPay Plan annually after intro APR offer expires"
+      },
+      {
+        "name": "Free credit score access",
+        "description": "View credit score anytime via mobile app or online banking"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["u-s-bank", "low-apr", "travel", "platinum"],
+  "sources": [
+    {
+      "url": "https://www.usbank.com/credit-cards/visa-platinum-credit-card.html",
+      "notes": "Official U.S. Bank page (redirects to shield-visa)"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/us-bank-platinum",
+      "notes": "NerdWallet review"
+    },
+    {
+      "url": "https://money.usnews.com/credit-cards/us-bank/us-bank-visa-platinum-card",
+      "notes": "U.S. News review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:00:00Z",
+  "status": "active",
+  "notes": "Card URL redirects to U.S. Bank Shield Visa. May have been rebranded or is the same product. 0% intro APR for 21 billing cycles on purchases and balance transfers. Ideal for those seeking low APR and cell phone protection rather than rewards."
+}

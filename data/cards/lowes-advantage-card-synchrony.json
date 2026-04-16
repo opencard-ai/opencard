@@ -1,0 +1,63 @@
+{
+  "card_id": "lowes-advantage-card-synchrony",
+  "name": "Lowe's Advantage Card",
+  "issuer": "Synchrony",
+  "network": "Synchrony (store-only)",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Good",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "bonus_value": null,
+    "description": "20% off first purchase (up to $100 discount) when opening a new account"
+  },
+  "earning_rates": [
+    {
+      "category": "Lowe's purchases",
+      "rate": 5,
+      "notes": "5% off every day on eligible purchases at Lowe's US stores and Lowes.com"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "MyLowe's Rewards",
+        "description": "Unlock free MyLowe's Rewards benefits with cardholder status"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "synchrony",
+    "lowes",
+    "store-card",
+    "discount",
+    "home-improvement"
+  ],
+  "sources": [
+    {
+      "url": "https://www.lowes.com/l/Credit/lowes-advantage-card-credit-offers",
+      "notes": "Official Lowe's page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/lowes-advantage",
+      "notes": "NerdWallet"
+    },
+    {
+      "url": "https://money.usnews.com/credit-cards/synchrony-bank/mylowes-rewards-credit-card",
+      "notes": "U.S. News"
+    }
+  ],
+  "last_updated": "2026-04-16T13:10:26.529Z",
+  "status": "active",
+  "notes": "Store-only card for Lowe's. Not usable at other retailers. 5% discount is substantial for home improvement shoppers. High APR if carrying balance. Also known as MyLowe's Rewards Credit Card."
+}

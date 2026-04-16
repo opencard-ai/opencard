@@ -1,0 +1,58 @@
+{
+  "card_id": "paypal-cashback-mastercard-synchrony",
+  "name": "PayPal Cashback Mastercard®",
+  "issuer": "Synchrony",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": null,
+  "earning_rates": [
+    {
+      "category": "PayPal Checkout",
+      "rate": 3,
+      "notes": "3% cash back when checking out with PayPal"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 2,
+      "notes": "2% cash back on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Mastercard benefits",
+        "description": "Standard Mastercard benefits including fraud protection and purchase security"
+      },
+      {
+        "name": "PayPal integration",
+        "description": "Seamless integration with PayPal balance and checkout"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["synchrony", "paypal", "mastercard", "cash-back", "digital-payments"],
+  "sources": [
+    {
+      "url": "https://www.paypal.com/us/credit-cards",
+      "notes": "Official PayPal Credit Cards page"
+    },
+    {
+      "url": "https://wallethub.com/d/paypal-cashback-mastercard-3350c",
+      "notes": "WalletHub"
+    }
+  ],
+  "last_updated": "2026-04-16T13:00:00Z",
+  "status": "active",
+  "notes": "Synchrony-issued version of PayPal Cashback Mastercard. Distinct from the Chase-issued PayPal Mastercard. Best for heavy PayPal users who want elevated cash back on PayPal transactions. Cash back as statement credit."
+}

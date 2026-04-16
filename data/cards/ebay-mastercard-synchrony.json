@@ -1,0 +1,65 @@
+{
+  "card_id": "ebay-mastercard-synchrony",
+  "name": "eBay Mastercard®",
+  "issuer": "Synchrony",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": null,
+  "earning_rates": [
+    {
+      "category": "eBay purchases",
+      "rate": 3,
+      "notes": "3 points per $1 spent on eBay purchases"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1 point per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Mastercard benefits",
+        "description": "Standard Mastercard benefits including fraud protection"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "synchrony",
+    "ebay",
+    "mastercard",
+    "rewards",
+    "discontinued"
+  ],
+  "sources": [
+    {
+      "url": "https://pages.ebay.com/creditcard/",
+      "notes": "Official eBay Credit Card page"
+    },
+    {
+      "url": "https://www.doctorofcredit.com/synchrony-closing-ebay-extras-mastercards-on-march-25-2026/",
+      "notes": "DoC discontinuation notice"
+    },
+    {
+      "url": "https://www.valueaddedresource.net/ebay-mastercard-ends-march-24-2026/",
+      "notes": "ValueAddedResource discontinuation"
+    }
+  ],
+  "last_updated": "2026-04-16T13:10:26.528Z",
+  "status": "discontinued",
+  "discontinued_date": "2026-03-24",
+  "notes": "Card program ended March 24, 2026. Accounts closed by Synchrony. Points could be redeemed at eBay checkout until March 24, 2026. New rewards program reportedly shifting to flat 2% on everything but account migration details unclear. Mark as discontinued — do not add as new applicant card."
+}
