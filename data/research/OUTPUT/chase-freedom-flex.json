@@ -1,0 +1,48 @@
+{
+  "card_id": "chase-freedom-flex",
+  "name": "Chase Freedom Flex®",
+  "issuer": "Chase",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": 20000,
+    "estimated_value": 200,
+    "point_program": "Chase Ultimate Rewards",
+    "description": "$200 cash back (20,000 points) after spending $500 in first 3 months"
+  },
+  "earning_rates": [
+    {"category": "Rotating Quarterly Bonus Categories", "rate": 5, "notes": "5% cash back on up to $1,500 in combined purchases per quarter (must activate each quarter). After cap, earn 1%."},
+    {"category": "Chase Travel", "rate": 5, "notes": "5% cash back on travel purchased through Chase Travel"},
+    {"category": "Dining", "rate": 3, "notes": "3% cash back at restaurants including takeout and delivery"},
+    {"category": "Drugstores", "rate": 3, "notes": "3% cash back at drugstores"},
+    {"category": "All Other Purchases", "rate": 1, "notes": "1% cash back on all other purchases"}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "Cell Phone Protection", "description": "Up to $1,000 per year in cell phone protection (subject to $100 deductible) when paying bills with the card"},
+      {"name": "DashPass", "description": "Complimentary 6 months of DashPass (then $12.99/month) — activated by 12/31/2027"},
+      {"name": "Trip Interruption/Cancellation", "description": "Up to $1,500 per person and $6,000 per trip for trip interruption/cancellation when travel is booked with the card"}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["chase", "cash-back", "rotating-categories", "no-annual-fee", "mastercard"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex", "notes": "Official Chase page"},
+    {"url": "https://www.nerdwallet.com/travel/learn/chase-freedom-flex-things-to-know", "notes": "NerdWallet overview"},
+    {"url": "https://www.businessinsider.com/personal-finance/credit-cards/chase-freedom-flex-credit-card-review", "notes": "Business Insider review"}
+  ],
+  "notes": "One of Chase's most popular no-AF cards. The rotating 5% categories require activation each quarter. Often has gas/grocery/wholesale in Q2. Can be powerful when combined with Chase Sapphire Preferred/Reserve for 1.5x/3x point transfer. Note: earning is 'cash back' but tracked as Ultimate Rewards points.",
+  "last_updated": "2026-04-16T08:30:00.000Z"
+}

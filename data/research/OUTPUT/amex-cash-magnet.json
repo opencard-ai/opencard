@@ -1,0 +1,52 @@
+{
+  "card_id": "amex-cash-magnet",
+  "name": "Cash Magnet® Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 2.7,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_cashback": 200,
+    "description": "Earn a $200 cash bonus after spending $1,000 in purchases on your new Card within the first 3 months of Card Membership.",
+    "cashback": true
+  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "rate": 1.5,
+      "notes": "Unlimited 1.5% cash back on all purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "0% intro APR on purchases for 15 months from account opening (then variable APR)",
+      "Amex Offers access",
+      "Cash back is received in the form of Reward Dollars that can be applied toward purchases"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["american-express", "cash-back", "flat-rate", "no-annual-fee"],
+  "sources": [
+    {"url": "https://www.americanexpress.com/us/credit-cards/card/cash-magnet/"}
+  ],
+  "last_updated": "2026-04-16T08:47:00.000Z"
+}

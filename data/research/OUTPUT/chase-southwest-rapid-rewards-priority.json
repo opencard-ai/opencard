@@ -1,0 +1,50 @@
+{
+  "card_id": "southwest-rapid-rewards-priority",
+  "name": "Southwest Rapid Rewards® Priority Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 229,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 60000,
+    "estimated_value": 894,
+    "point_program": "Southwest Rapid Rewards",
+    "description": "60,000 bonus Rapid Rewards points after spending $3,000 in first 3 months (worth ~$894 toward Southwest flights at 1.49¢/point)"
+  },
+  "earning_rates": [
+    {"category": "Southwest Airlines Purchases", "rate": 4},
+    {"category": "Gas Stations, Restaurants", "rate": 2},
+    {"category": "All Other Purchases", "rate": 1}
+  ],
+  "annual_credits": [
+    {"name": "Anniversary Points", "amount": 7500, "frequency": "Annual", "description": "7,500 Rapid Rewards anniversary points each year (worth ~$112 at 1.5¢/point)"},
+    {"name": "Southwest Annual Travel Credit", "amount": 75, "frequency": "Annual", "description": "$75 annual credit for Southwest purchases (flights, drinks, Wi-Fi, movies)"}
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "Upgraded Boardings", "description": "Up to 4 upgraded boardings per year (A-List priority boarding for you and companions)"},
+      {"name": "25% Back on Inflight", "description": "25% back on all inflight purchases (Wi-Fi, movies, drinks, messaging) as statement credits"},
+      {"name": "First Bag Free", "description": "First checked bag free for cardmember and up to 8 companions on the same reservation"},
+      {"name": "EarlyBird Check-In", "description": "Complimentary EarlyBird Check-In automatically applied to all reservations"}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["chase", "southwest", "airline", "co-branded", "travel", "premium"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/travel-credit-cards/southwest/priority", "notes": "Official Chase page"},
+    {"url": "https://www.chrishutchins.com/blog/southwest-card-refresh-2025/", "notes": "Chris Hutchins 2025 refresh analysis"},
+    {"url": "https://money.usnews.com/credit-cards/chase/southwest-rapid-rewards-priority-credit-card", "notes": "U.S. News review"}
+  ],
+  "notes": "Southwest's premium consumer card. $229 AF but $75 travel credit + 7,500 anniversary points (~$112) + 4 upgraded boardings (~$60-120) + first bag free = strong value. Upgraded boardings are especially valuable during peak periods. As of 2025, AF increased from $149 to $229. Best for frequent Southwest flyers who want maximum perks.",
+  "last_updated": "2026-04-16T08:40:00.000Z"
+}

@@ -1,0 +1,79 @@
+{
+  "card_id": "united-gateway-card",
+  "name": "United℠ Gateway Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 20000,
+    "estimated_value": 250,
+    "point_program": "United MileagePlus",
+    "description": "20,000 bonus United miles after spending $1,000 in first 3 months (worth ~$250 at 1.25¢/mile)"
+  },
+  "earning_rates": [
+    {
+      "category": "United Airlines Purchases",
+      "rate": 2
+    },
+    {
+      "category": "Gas Stations",
+      "rate": 2
+    },
+    {
+      "category": "Local Transit and Commuting",
+      "rate": 2
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "No Foreign Transaction Fees",
+        "description": "Use card internationally without FTF"
+      },
+      {
+        "name": "Expanded Award Availability",
+        "description": "Access to expanded United MileagePlus award availability"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "united",
+    "airline",
+    "co-branded",
+    "travel",
+    "no-annual-fee"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/united/gateway",
+      "notes": "Official Chase page"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/united-gateway-card/",
+      "notes": "TPG review"
+    }
+  ],
+  "notes": "Entry-level United co-brand card with $0 AF. Lower earning rates and fewer perks than Explorer or Club cards. The 2x on gas + transit + United is decent but not exceptional. No checked bag benefit or lounge passes. Best as a supplement for non-frequent United flyers who want to earn miles without paying an AF.",
+  "last_updated": "2026-04-16T12:42:25.907Z"
+}

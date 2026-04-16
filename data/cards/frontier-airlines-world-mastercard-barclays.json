@@ -1,0 +1,67 @@
+{
+  "card_id": "frontier-airlines-world-mastercard-barclays",
+  "name": "Frontier Airlines World Mastercard®",
+  "issuer": "Barclays",
+  "network": "Mastercard World",
+  "annual_fee": 89,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 50000,
+    "description": "50,000 travel miles after spending $1,000 on purchases and paying annual fee in first 90 days",
+    "point_program": "Frontier Miles"
+  },
+  "earning_rates": [
+    {
+      "category": "FlyFrontier.com purchases",
+      "rate": 15,
+      "notes": "Up to 15x Frontier Miles per $1 on eligible FlyFrontier.com purchases (including airfare)"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1x Frontier Mile per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "Instant Frontier Elite Gold status (with annual fee paid)",
+      "Two free checked bags for primary cardholder (with Elite Gold status)",
+      "No award redemption fees",
+      "Miles never expire for active members",
+      "No foreign transaction fees",
+      "Note: First-year annual fee sometimes waived as promotional offer"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "airline",
+    "travel",
+    "frontier"
+  ],
+  "sources": [
+    "nerdwallet.com",
+    "barclaycardus.com",
+    "flyfrontier.com",
+    "businessinsider.com"
+  ],
+  "last_updated": "2026-04-16T12:42:25.896Z"
+}

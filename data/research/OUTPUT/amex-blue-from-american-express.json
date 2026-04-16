@@ -1,0 +1,48 @@
+{
+  "card_id": "amex-blue-from-american-express",
+  "name": "Blue from American Express®",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Good",
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "rate": 1,
+      "notes": "1 Membership Rewards point per dollar on all purchases."
+    },
+    {
+      "category": "U.S. Supermarkets",
+      "rate": 2,
+      "notes": "2X at U.S. supermarkets on up to $6,500 per calendar year, then 1X."
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": ["american-express", "discontinued"],
+  "notes": "DISCONTINUED: This card is no longer accepting new applications as of approximately April 2018. Existing cardholders may still use the card. Basic Membership Rewards earning card with no annual fee.",
+  "sources": [
+    {"url": "https://www.doctorofcredit.com/rumor-american-express-to-discontinue-blue-from-american-express-not-obc-or-any-other-useful-card/"},
+    {"url": "https://global.americanexpress.com/card-benefits/view-all/blue"}
+  ],
+  "last_updated": "2026-04-16T04:45:00.000Z"
+}

@@ -1,0 +1,95 @@
+{
+  "card_id": "southwest-rapid-rewards-premier",
+  "name": "Southwest Rapid Rewards® Premier Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 149,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 60000,
+    "estimated_value": 894,
+    "point_program": "Southwest Rapid Rewards",
+    "description": "60,000 bonus Rapid Rewards points after spending $3,000 in first 3 months (worth ~$894 toward Southwest flights at 1.49¢/point)"
+  },
+  "earning_rates": [
+    {
+      "category": "Southwest Airlines Purchases",
+      "rate": 3
+    },
+    {
+      "category": "Grocery Stores",
+      "rate": 2
+    },
+    {
+      "category": "Restaurants",
+      "rate": 2
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Anniversary Points",
+      "amount": 6000,
+      "frequency": "Annual",
+      "description": "6,000 Rapid Rewards anniversary points each year (worth ~$90 at 1.5¢/point)"
+    },
+    {
+      "name": "EarlyBird Check-In",
+      "amount": 1,
+      "frequency": "Annual",
+      "description": "1 complimentary EarlyBird Check-In per year (worth ~$15-30)"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Two EarlyBird Check-Ins Per Year",
+        "description": "Complimentary EarlyBird Check-In automatically applied to reservation when booked with card (up to 2 per year)"
+      },
+      {
+        "name": "First Bag Free",
+        "description": "First checked bag free for cardmember and up to 8 companions on the same reservation (when using the card)"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "southwest",
+    "airline",
+    "co-branded",
+    "travel"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/southwest/premier",
+      "notes": "Official Chase page"
+    },
+    {
+      "url": "https://www.swamedia.com/news-and-stories/news-release/chase-and-southwest-airlines-introduce-new-benefits-on-southwest-rapid-rewards-c-MC7BWJWDE2MZA5DLJDR7CI2FM7JE",
+      "notes": "Chase/Southwest press release 2025"
+    },
+    {
+      "url": "https://upgradedpoints.com/credit-cards/reviews/southwest-rapid-rewards-premier-credit-card/benefits/",
+      "notes": "Upgraded Points review"
+    }
+  ],
+  "notes": "Mid-tier Southwest card. $149 AF, but 6,000 anniversary points (~$90) covers ~60%. First bag free + EarlyBird Check-In are practical perks. As of 2025, AF increased from $99 to $149. Better earning on Southwest (3x vs 2x) than Plus. Good for regular Southwest flyers who want A-List qualifying points.",
+  "last_updated": "2026-04-16T12:42:25.905Z"
+}

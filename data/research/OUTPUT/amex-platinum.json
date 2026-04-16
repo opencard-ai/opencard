@@ -1,0 +1,134 @@
+{
+  "card_id": "amex-platinum",
+  "name": "The Platinum Card® from American Express",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 695,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 12000,
+    "time_period_months": 6,
+    "bonus_points": 175000,
+    "description": "You may be eligible for as high as 175,000 Membership Rewards® points after spending $12,000 in eligible purchases on your new Card in your first 6 months of Card Membership. Welcome offers vary and you may not be eligible.",
+    "point_program": "Membership Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "Flights",
+      "rate": 5,
+      "notes": "Per $1 on flights booked directly with airlines or through Amex Travel (on up to $500,000 per calendar year)"
+    },
+    {
+      "category": "Hotels",
+      "rate": 5,
+      "notes": "Per $1 on hotels booked through Amex Travel"
+    },
+    {
+      "category": "Other Travel",
+      "rate": 5,
+      "notes": "Per $1 on prepaid hotels and rental cars booked through Amex Travel"
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": "All other eligible purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": " Airline Fee Credit",
+      "amount": 200,
+      "frequency": "Annual",
+      "description": "Up to $200 in statement credits per calendar year for incidental fees on a selected qualifying airline"
+    },
+    {
+      "name": "Uber Cash",
+      "amount": 200,
+      "frequency": "Annual ($15/month + $35 in December)",
+      "description": "Up to $200 in Uber Cash each year for U.S. rides and Uber Eats orders. Enrollment required."
+    },
+    {
+      "name": "Saks Fifth Avenue",
+      "amount": 100,
+      "frequency": "Semi-annual ($50 per half-year)",
+      "description": "Up to $100 statement credit per calendar year at Saks Fifth Avenue (up to $50 Jan-June, up to $50 July-Dec). Enrollment required."
+    },
+    {
+      "name": "Equinox",
+      "amount": 300,
+      "frequency": "Annual",
+      "description": "Up to $300 in statement credits annually for Equinox gym memberships. Enrollment required."
+    },
+    {
+      "name": "Streaming & Digital Entertainment",
+      "amount": 240,
+      "frequency": "Annual ($20/month)",
+      "description": "Up to $240 in statement credits annually ($20 per month) for select streaming and digital entertainment subscriptions. Enrollment required."
+    },
+    {
+      "name": "Walmart+",
+      "amount": 155,
+      "frequency": "Annual",
+      "description": "Up to $155 in statement credits annually for Walmart+ membership (subject to usage). Enrollment required."
+    },
+    {
+      "name": "Fine Hotels + Resorts (FHR) Credit",
+      "amount": 300,
+      "frequency": "Semi-annual ($300 per half-year)",
+      "description": "Up to $300 credit per calendar year for prepaid Fine Hotels + Resorts® or The Hotel Collection bookings with a minimum 2-night stay through Amex Travel."
+    },
+    {
+      "name": "Clear Plus",
+      "amount": 209,
+      "frequency": "Annual",
+      "description": "Up to $209 in statement credits per calendar year for CLEAR+ membership. Enrollment required."
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": true,
+      "priority_pass": true,
+      "delta_sky_club": true,
+      "other": "Centurion Lounges, Priority Pass Select, Delta Sky Club (when flying Delta), Escape Lounges, Airspace Lounges"
+    },
+    "hotel_status": [
+      {
+        "program": "Hilton Honors",
+        "tier": "Gold",
+        "complimentary": true,
+        "method": "Enroll through Amex"
+      },
+      {
+        "program": "Marriott Bonvoy",
+        "tier": "Gold",
+        "complimentary": true,
+        "method": "Enroll through Amex"
+      }
+    ],
+    "other_benefits": [
+      "Fine Hotels + Resorts (FHR) access with breakfast credits and late checkout",
+      "The Hotel Collection (THC) with $75 credit and room upgrade",
+      "No Foreign Transaction Fees",
+      "Global Entry/TSA PreCheck fee credit",
+      "American Express Global Lounge Collection"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": true,
+    "thc_eligible": true
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "trip_cancellation": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["american-express", "membership-rewards", "premium", "travel", "lounge-access"],
+  "sources": [
+    {"url": "https://www.americanexpress.com/us/credit-cards/card/platinum/"},
+    {"url": "https://upgradedpoints.com/news/amex-platinum-card-increases-spending-requirement/"}
+  ],
+  "last_updated": "2026-04-16T08:41:00.000Z"
+}

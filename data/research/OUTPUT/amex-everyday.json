@@ -1,0 +1,54 @@
+{
+  "card_id": "amex-everyday",
+  "name": "Amex EveryDay® Credit Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "description": "No current welcome offer",
+    "point_program": "Membership Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "U.S. Supermarkets",
+      "rate": 2,
+      "notes": "On up to $6,000 in purchases per calendar year; then 1x"
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": "All other eligible purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "20% extra points when you use your card 30 or more times on purchases in a billing period",
+      "No Foreign Transaction Fees",
+      "Amex Offers access"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": ["american-express", "membership-rewards", "no-annual-fee", "groceries"],
+  "sources": [
+    {"url": "https://www.americanexpress.com/us/credit-cards/card/everyday/"}
+  ],
+  "last_updated": "2026-04-16T08:45:00.000Z"
+}

@@ -1,0 +1,85 @@
+{
+  "card_id": "hilton-honors-amex-business",
+  "name": "Hilton Honors American Express Business Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 195,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 6,
+    "bonus_points": 175000,
+    "description": "Earn 175,000 Hilton Honors Bonus Points after spending $3,000 on eligible purchases within the first 6 months of card membership.",
+    "point_program": "Hilton Honors"
+  },
+  "earning_rates": [
+    {
+      "category": "hotel_hilton",
+      "rate": 12,
+      "notes": "Hilton Honors Bonus Points per dollar at hotels and resorts within the Hilton portfolio"
+    },
+    {
+      "category": "Gas",
+      "rate": 6,
+      "notes": "U.S. gas stations"
+    },
+    {
+      "category": "Grocery",
+      "rate": 6,
+      "notes": "U.S. supermarkets"
+    },
+    {
+      "category": "Restaurant",
+      "rate": 6,
+      "notes": "U.S. restaurants"
+    },
+    {
+      "category": "Travel",
+      "rate": 5,
+      "notes": "Flights booked directly with airlines or Amex Travel, car rentals booked directly from agencies"
+    },
+    {
+      "category": "Other",
+      "rate": 3,
+      "notes": "All other eligible purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [
+      {
+        "program": "Hilton Honors",
+        "tier": "Gold",
+        "complimentary": true,
+        "method": "Automatic for as long as card is open"
+      }
+    ],
+    "other_benefits": [
+      "Fifth Night Free on reward stays",
+      "No Foreign Transaction Fees",
+      "14x Priority Pass"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["american-express", "hilton", "hotel", "business"],
+  "sources": [
+    {"url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/hilton-honors/"},
+    {"url": "https://www.hilton.com/en/hilton-honors/credit-cards/"}
+  ],
+  "last_updated": "2026-04-16T08:32:00.000Z"
+}

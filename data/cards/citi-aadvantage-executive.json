@@ -1,0 +1,100 @@
+{
+  "card_id": "citi-aadvantage-executive",
+  "name": "Citi® / AAdvantage® Executive World Elite Mastercard®",
+  "issuer": "Citi",
+  "network": "Mastercard",
+  "annual_fee": 595,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "bonus_miles": 75000,
+    "estimated_value": 75000,
+    "description": "Earn 75,000 AAdvantage bonus miles after spending $4,000 in first 3 months"
+  },
+  "earning_rates": [
+    {
+      "category": "American Airlines Purchases",
+      "rate": 4,
+      "notes": "Earn 4 AAdvantage miles per $1 on American Airlines purchases"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "Earn 1 AAdvantage mile per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Loyalty Bonus",
+      "amount": 0,
+      "frequency": "Per $100 spent",
+      "description": "Earn 10 AAdvantage® elite qualifying miles (EQMs) for every $100 spent on American Airlines purchases"
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": [
+      {
+        "name": "Admirals Club®",
+        "type": "Full membership",
+        "notes": "Primary cardmember and up to 2 guests; access to 100+ Admirals Club® and partner lounges worldwide (valued up to $850)"
+      }
+    ],
+    "other_benefits": [
+      {
+        "name": "Global Entry / TSA PreCheck Credit",
+        "description": "Up to $120 every 5 years toward Global Entry or TSA PreCheck application fee"
+      },
+      {
+        "name": "Companion Certificate",
+        "description": "Annual companion certificate (requires $4,000 spend in anniversary year)"
+      },
+      {
+        "name": "10% AAdvantage Miles Redemption Bonus",
+        "description": "10% back on AAdvantage miles redeemed for award flights"
+      },
+      {
+        "name": "First Bag Free",
+        "description": "First checked bag free for cardholder and up to 8 companions on domestic AA flights booked with the card"
+      },
+      {
+        "name": "Priority Boarding",
+        "description": "Priority boarding on American Airlines flights"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "citi",
+    "american-airlines",
+    "airline",
+    "premium",
+    "lounge-access",
+    "aadvantage"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.aa.com/credit-cards/citi-executive-card-american-airlines-direct/"
+    },
+    {
+      "url": "https://onemileatatime.com/guides/american-airlines-executive-card/",
+      "notes": "Feb 2026 offer"
+    },
+    {
+      "url": "https://awardwallet.com/credit-cards/american-aadvantage/citi-aadvantage-executive/",
+      "notes": "Nov 2025 review"
+    }
+  ],
+  "last_updated": "2026-04-16T12:42:25.908Z"
+}

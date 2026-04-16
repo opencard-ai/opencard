@@ -1,0 +1,56 @@
+{
+  "card_id": "american-airlines-citi-mastercard",
+  "name": "American Airlines AAdvantage® Mastercard® (Citi)",
+  "issuer": "Citi",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "description": "No elevated welcome offer historically; earn AAdvantage miles on spending"
+  },
+  "earning_rates": [
+    {
+      "category": "American Airlines Purchases",
+      "rate": 2,
+      "notes": "Earn 2 AAdvantage miles per $1"
+    },
+    {
+      "category": "Grocery Stores",
+      "rate": 2,
+      "notes": "Earn 2 AAdvantage miles per $1 at grocery stores"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "Earn 1 AAdvantage mile per $1"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "No Annual Fee",
+        "description": "$0 annual fee American Airlines co-branded card"
+      },
+      {
+        "name": "5% Miles Redemption Discount",
+        "description": "5% discount on AAdvantage award redemptions"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "extended_warranty": true
+  },
+  "tags": ["citi", "american-airlines", "airline", "no-annual-fee", "aadvantage"],
+  "sources": [
+    { "url": "https://www.nerdwallet.com/travel/learn/american-airlines-aadvantage-mileup-mastercard-benefits", "notes": "NerdWallet review (similar card)" }
+  ],
+  "last_updated": "2026-04-16T08:25:00.000Z",
+  "notes": "This is the basic-tier AA Mastercard. Less premium than MileUp card. Often no sign-up bonus historically."
+}

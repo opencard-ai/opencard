@@ -1,0 +1,52 @@
+{
+  "card_id": "amex-blue-business-plus",
+  "name": "American Express Blue Business Plus Credit Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 15000,
+    "description": "Earn 15,000 Membership Rewards® points after spending $3,000 in eligible purchases on the Card within the first 3 months of Card Membership.",
+    "point_program": "Membership Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "rate": 2,
+      "notes": "2X Membership Rewards points on all eligible purchases (no limit, no category restrictions)"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "Expanded buying power",
+      "No Foreign Transaction Fees",
+      "0% intro APR on purchases for 12 months from account opening"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["american-express", "membership-rewards", "business", "flat-rate"],
+  "sources": [
+    {"url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-blue-business-plus-credit-card-amex/"}
+  ],
+  "last_updated": "2026-04-16T08:49:00.000Z"
+}

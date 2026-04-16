@@ -1,0 +1,45 @@
+{
+  "card_id": "ink-business-premier",
+  "name": "Ink Business Premier® Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 195,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 10000,
+    "time_period_months": 3,
+    "bonus_points": 1000,
+    "estimated_value": 1000,
+    "point_program": "Chase Ultimate Rewards (Cash Back)",
+    "description": "$1,000 cash back after spending $10,000 in first 3 months"
+  },
+  "earning_rates": [
+    {"category": "Chase Travel", "rate": 5, "notes": "Unlimited 5% cash back on travel purchased through Chase Travel℠"},
+    {"category": "Lyft", "rate": 5, "notes": "5% on Lyft rides through September 30, 2027"},
+    {"category": "All Purchases $5,000+", "rate": 2.5, "notes": "2.5% on every purchase of $5,000 or more"},
+    {"category": "All Other Purchases", "rate": 2, "notes": "2% cash back on all other business purchases"}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "Flex for Business", "description": "Pay-in-full card with optional installment financing. Can pay balances over time with interest on the Flex for Business portion."}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "trip_cancellation": false,
+    "trip_delay": false,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["chase", "business", "cash-back", "high-spend"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/business-credit-cards/ink/premier", "notes": "Official Chase page"},
+    {"url": "https://www.cnbc.com/select/chase-ink-business-premier-credit-card-launch/", "notes": "CNBC launch coverage"},
+    {"url": "https://www.dailydrop.com/credit-cards/ink-business-premier-credit-card", "notes": "Daily Drop review"}
+  ],
+  "notes": "Replaced the old Ink Business Preferred for cash back users. High AF ($195) for a cash back card, but valuable for businesses with large purchases. No points transfer to travel partners - pure cash back via Chase Ultimate Rewards.",
+  "last_updated": "2026-04-16T08:25:00.000Z"
+}

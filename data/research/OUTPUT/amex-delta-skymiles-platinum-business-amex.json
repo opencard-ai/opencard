@@ -1,0 +1,82 @@
+{
+  "card_id": "delta-skymiles-platinum-business-amex",
+  "name": "Delta SkyMiles® Platinum Business American Express Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 350,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 6000,
+    "time_period_months": 6,
+    "bonus_points": 70000,
+    "description": "Earn 70,000 Bonus Miles after spending $6,000 in purchases on your new Card in your first 6 months of Card Membership.",
+    "point_program": "Delta SkyMiles"
+  },
+  "earning_rates": [
+    {
+      "category": "Delta purchases",
+      "rate": 3,
+      "notes": "Per $1 on Delta purchases"
+    },
+    {
+      "category": "Hotels",
+      "rate": 3,
+      "notes": "On eligible hotel purchases"
+    },
+    {
+      "category": "Restaurants",
+      "rate": 2,
+      "notes": "Worldwide, including takeout and delivery in the U.S."
+    },
+    {
+      "category": "U.S. Supermarkets",
+      "rate": 2,
+      "notes": null
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": null
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Global Entry/TSA PreCheck Credit",
+      "amount": 120,
+      "frequency": "Every 4 years",
+      "description": "Statement credit every 4 years after you apply for Global Entry ($120) or TSA PreCheck ($85)."
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "delta_sky_club": true,
+      "other": "Delta Sky Club access (complimentary for cardholder when flying Delta; subject to occupancy and guest policies)"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "First checked bag free on Delta flights",
+      "15% discount on Delta award flights",
+      "No Foreign Transaction Fees",
+      "Medallion Qualification Dollar (MQD) credits"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["american-express", "delta", "airline", "business", "lounge-access"],
+  "sources": [
+    {"url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-platinum/"},
+    {"url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards"}
+  ],
+  "last_updated": "2026-04-16T08:27:00.000Z"
+}

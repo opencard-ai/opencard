@@ -1,0 +1,61 @@
+{
+  "card_id": "best-buy-visa-credit-card",
+  "name": "Best Buy® Visa® Credit Card",
+  "issuer": "Citi",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair",
+  "welcome_offer": {
+    "description": "No welcome offer"
+  },
+  "earning_rates": [
+    {
+      "category": "Gas Stations",
+      "rate": 3,
+      "notes": "3% back at gas stations"
+    },
+    {
+      "category": "Grocery Stores",
+      "rate": 3,
+      "notes": "3% back at grocery stores"
+    },
+    {
+      "category": "Dining",
+      "rate": 3,
+      "notes": "3% back at restaurants"
+    },
+    {
+      "category": "Best Buy",
+      "rate": 2,
+      "notes": "2% back at Best Buy"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1% back on everything else"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Visa Benefits",
+        "description": "Standard Visa benefits including auto rental collision damage waiver"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary"
+  },
+  "tags": ["citi", "store-card", "best-buy", "cash-back", "no-annual-fee"],
+  "sources": [
+    { "url": "https://www.bestbuy.com/site/clp/credit-card/pcmcat204400050003.c?id=pcmcat204400050003" }
+  ],
+  "last_updated": "2026-04-16T08:25:00.000Z",
+  "notes": "Visa version of Best Buy card with broader acceptance and cash back outside Best Buy. Issued by Citi. Less commonly featured in major credit card comparison sites."
+}

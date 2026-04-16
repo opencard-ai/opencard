@@ -1,0 +1,59 @@
+{
+  "card_id": "centurion-card-amex",
+  "name": "The Centurion® Card from American Express",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": null,
+  "foreign_transaction_fee": 0,
+  "credit_required": "By Invitation Only",
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "rate": 1,
+      "notes": "1 Membership Rewards point per dollar on all purchases."
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": true,
+      "priority_pass": true,
+      "delta_sky_club": true,
+      "other": "Amex Global Lounge Collection (1,400+ lounges across 140 countries)"
+    },
+    "hotel_status": [
+      "Marriott Bonvoy Gold Elite",
+      "Hilton Honors Gold"
+    ],
+    "other_benefits": [
+      "Centurion airport concierge services",
+      "50% Pay With Points bonus (use points to cover charges at 1 cent per point value)",
+      "Delta SkyMiles Platinum Medallion status",
+      "Complimentary upgrades at Fine Hotels & Resorts properties",
+      "Exclusive Centurion club access",
+      "Global Entry/TSA PreCheck credit",
+      "Travel accident insurance",
+      "Emergency evacuation and transportation",
+      "24/7 concierge service",
+      "Return and purchase protection"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": true,
+    "thc_eligible": true
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["american-express", "invitation-only", "ultra-premium", "black-card"],
+  "notes": "INVITATION-ONLY: The Centurion Card (Black Card) is not available for public application. Invitations are extended by Amex based on spending history and relationship. Annual fee is not publicly disclosed; estimates range from $5,000-$10,000 annually.",
+  "sources": [
+    {"url": "https://www.forbes.com/advisor/credit-cards/reviews/centurion-from-american-express/"},
+    {"url": "https://thepointsguy.com/credit-cards/amex-centurion-black-card/"},
+    {"url": "https://upgradedpoints.com/credit-cards/reviews/amex-centurion-black-card/how-to-get/"}
+  ],
+  "last_updated": "2026-04-16T04:45:00.000Z"
+}

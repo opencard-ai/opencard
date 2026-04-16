@@ -1,0 +1,57 @@
+{
+  "card_id": "united-business-card",
+  "name": "United℠ Business Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 150,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 5000,
+    "time_period_months": 3,
+    "bonus_points": 100000,
+    "estimated_value": 1250,
+    "point_program": "United MileagePlus",
+    "description": "100,000 bonus United miles + 2,000 Premier Qualifying Points (PQP) after spending $5,000 in first 3 months. Additional 10,000 miles when adding an authorized user."
+  },
+  "earning_rates": [
+    {"category": "United Airlines Purchases", "rate": 2},
+    {"category": "Gas Stations", "rate": 2},
+    {"category": "Transit and Commuting", "rate": 2},
+    {"category": "Rideshare (Uber/Lyft)", "rate": 2},
+    {"category": "Office Supplies", "rate": 2},
+    {"category": "Lodging", "rate": 2},
+    {"category": "All Other Purchases", "rate": 1}
+  ],
+  "annual_credits": [
+    {"name": "United Travel Credit", "amount": 125, "frequency": "Annual", "description": "$125 United travel credit each year (for flights, club purchases, and other United purchases)"},
+    {"name": "United Club Passes", "amount": 2, "frequency": "Annual", "description": "2 one-time United Club passes per year"}
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "First Checked Bag Free", "description": "First checked bag free for cardmember and up to 4 companions on the same reservation (when paying with the card)"},
+      {"name": "Priority Boarding", "description": "Priority boarding on United flights (Group 2)"},
+      {"name": "Premier Access", "description": "Premier Access travel services including priority check-in, security, and boarding"},
+      {"name": "No Foreign Transaction Fees", "description": "Use card internationally without FTF"},
+      {"name": "PQP Earnings", "description": "Earn up to 2,000 PQP per year (100 PQP per $5,000 spent, up to $20,000 = 2,000 PQP)"},
+      {"name": "Expanded Award Availability", "description": "Access to expanded United MileagePlus award availability"},
+      {"name": "Employee Cards at No Cost", "description": "Add employee cards at no additional cost"}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["chase", "united", "airline", "business", "co-branded", "travel"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/business-credit-cards/united/united-business-card", "notes": "Official Chase business page"},
+    {"url": "https://media.chase.com/news/united-refresh-2025", "notes": "Chase/United 2025 refresh"},
+    {"url": "https://thepointsguy.com/news/united-credit-card-refresh-2025/", "notes": "TPG on United 2025 refresh"}
+  ],
+  "notes": "Business version of United card. $150 AF. The $125 travel credit and 2 Club passes help offset the fee. PQP earnings (Premier Qualifying Points) are valuable for United elite status. 7 categories with 2x earning is broad. As of 2025, AF increased from $95 to $150. Best for business travelers who fly United frequently and want to earn toward status.",
+  "last_updated": "2026-04-16T08:50:00.000Z"
+}

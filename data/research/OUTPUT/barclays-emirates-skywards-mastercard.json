@@ -1,0 +1,55 @@
+{
+  "card_id": "emirates-skywards-mastercard",
+  "name": "Emirates Skywards Premium World Elite Mastercard®",
+  "issuer": "Barclays",
+  "network": "Mastercard World Elite",
+  "annual_fee": 499,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 50000,
+    "description": "50,000 bonus Skywards Miles after spending $3,000 in first 90 days (some sources report 70,000)",
+    "point_program": "Skywards Miles"
+  },
+  "earning_rates": [
+    {
+      "category": "Emirates purchases",
+      "rate": 3,
+      "notes": "3x Skywards Miles per $1 on eligible Emirates purchases"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1x Skywards Mile per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "Emirates lounge access (Emirates Business Class lounge access with qualifying spend)"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "Emirates Gold tier status for first year (with ability to retain through spend)",
+      "Silver tier status with $20K annual spend",
+      "No foreign transaction fees",
+      "0% introductory APR on balance transfers (first 12 billing cycles, within 45 days of account opening)"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": ["airline", "travel", "emirates", "premium"],
+  "sources": ["nerdwallet.com", "barclaycardus.com", "onemileatatime.com", "maxrewards.com", "finance.yahoo.com"]
+}

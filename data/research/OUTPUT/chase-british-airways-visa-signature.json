@@ -1,0 +1,34 @@
+{
+  "card_id": "british-airways-visa-signature",
+  "name": "British Airways Visa Signature® Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "earning_rates": [
+    {"category": "British Airways, Aer Lingus, Iberia, LEVEL flights", "rate": 3, "type": "Avios"},
+    {"category": "Hotels (direct)", "rate": 2, "type": "Avios"},
+    {"category": "All Other Purchases", "rate": 1, "type": "Avios"}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "travel_together_ticket": "After $30,000 annual spend, receive a Travel Together Ticket (companion pass) valid for 12 months",
+    "reward_flight_credits": "Up to $200 statement credit per booking (3x per year = $600 total) when redeeming Avios for British Airways reward flights",
+    "ba_10_percent_discount": "10% discount on British Airways flights booked through ba.com/Chase10",
+    "priority_boarding": "Priority boarding on British Airways flights"
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "auto_rental_insurance": "Primary auto rental collision damage waiver",
+    "travel_accident_insurance": "Common for travel cards",
+    "purchase_protection": "120 days against damage/theft, $500 per claim"
+  },
+  "tags": ["chase", "avios", "airline", "british-airways"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/travel-credit-cards/avios/british-airways"},
+    {"url": "https://thepointsguy.com/credit-cards/british-airways-visa-signature-card/"},
+    {"url": "https://www.nerdwallet.com/credit-cards/reviews/british-airways-card"}
+  ],
+  "last_updated": "2026-04-16T04:45:00.000Z"
+}

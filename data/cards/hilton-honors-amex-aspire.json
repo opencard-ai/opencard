@@ -1,0 +1,114 @@
+{
+  "card_id": "hilton-honors-amex-aspire",
+  "name": "Hilton Honors American Express Aspire Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 550,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 6000,
+    "time_period_months": 6,
+    "bonus_points": 175000,
+    "description": "Earn 175,000 Hilton Honors Bonus Points after spending $6,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
+    "point_program": "Hilton Honors"
+  },
+  "earning_rates": [
+    {
+      "category": "hotel_hilton",
+      "rate": 14,
+      "notes": "Hilton Honors Bonus Points per dollar at hotels and resorts within the Hilton portfolio"
+    },
+    {
+      "category": "airline",
+      "rate": 7,
+      "notes": "Flights booked directly with the airline or through Amex Travel"
+    },
+    {
+      "category": "restaurant",
+      "rate": 7,
+      "notes": "U.S. restaurants, including takeout and delivery"
+    },
+    {
+      "category": "car_rental",
+      "rate": 7,
+      "notes": "Car rentals booked directly with select car rental companies"
+    },
+    {
+      "category": "default",
+      "rate": 3,
+      "notes": "All other eligible purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Hilton Resort Credit",
+      "amount": 250,
+      "frequency": "Annual",
+      "description": "$250 statement credit each calendar year for charges at participating Hilton Resorts"
+    },
+    {
+      "name": "Airline Fee Credit",
+      "amount": 250,
+      "frequency": "Annual",
+      "description": "$250 airline fee credit per calendar year for incidental charges (baggage, seat selection) on a selected airline"
+    },
+    {
+      "name": "Free Night Award",
+      "amount": 0,
+      "frequency": "Annual",
+      "description": "One Free Night Award each year after card renewal (valid at properties up to 150,000 points)"
+    },
+    {
+      "name": "Second Free Night",
+      "amount": 0,
+      "frequency": "Annual (upon $60,000 spend)",
+      "description": "Second Free Night Award after spending $60,000 on eligible purchases in a calendar year"
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": true,
+      "other": "Priority Pass Select (enrollment required)"
+    },
+    "hotel_status": [
+      {
+        "program": "Hilton Honors",
+        "tier": "Diamond",
+        "complimentary": true,
+        "method": "Automatic for as long as card is open"
+      }
+    ],
+    "other_benefits": [
+      "Priority Pass Select lounge access (enrollment required)",
+      "Fifth Night Free on reward stays",
+      "No Foreign Transaction Fees",
+      "National Car Rental Emerald Club Executive status"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "american-express",
+    "hotel_hilton",
+    "premium"
+  ],
+  "sources": [
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/"
+    },
+    {
+      "url": "https://www.hilton.com/en/hilton-honors/credit-cards/"
+    }
+  ],
+  "last_updated": "2026-04-16T12:42:25.893Z"
+}

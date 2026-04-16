@@ -1,0 +1,59 @@
+{
+  "card_id": "citi-diamond-preferred",
+  "name": "Citi® Diamond Preferred® Card",
+  "issuer": "Citi",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "description": "No welcome offer (focused on 0% intro APR)"
+  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "rate": 0,
+      "notes": "No rewards; this is a 0% intro APR card"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "0% Intro APR on Balance Transfers",
+        "description": "0% intro APR for 21 months on balance transfers (from date of account opening)"
+      },
+      {
+        "name": "0% Intro APR on Purchases",
+        "description": "0% intro APR for 12 months on purchases"
+      },
+      {
+        "name": "Citi Entertainment",
+        "description": "Special access to purchase tickets for concerts, sporting events, dining experiences"
+      },
+      {
+        "name": "Choose Your Due Date",
+        "description": "Pay on any available date in the beginning, middle or end of the month"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": false,
+    "trip_delay": false,
+    "rental_insurance": "None",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "notes": "Balance transfer fee: 5% or $5 (whichever is greater) during intro period. Variable APR 16.49%-28.99% after intro. Designed for debt consolidation.",
+  "tags": ["citi", "balance-transfer", "0-apr", "no-annual-fee"],
+  "sources": [
+    { "url": "https://www.citi.com/credit-cards/citi-diamond-preferred-credit-card" },
+    { "url": "https://financebuzz.com/citi-diamond-preferred-review", "notes": "2026 review" },
+    { "url": "https://www.fool.com/money/credit-cards/citi/citi-diamond-preferred-review/", "notes": " Motley Fool review" }
+  ],
+  "last_updated": "2026-04-16T08:22:00.000Z"
+}

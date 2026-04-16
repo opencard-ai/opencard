@@ -1,0 +1,61 @@
+{
+  "card_id": "doordash-rewards-mastercard",
+  "name": "DoorDash Rewards Mastercard®",
+  "issuer": "Chase",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "earning_rates": [
+    {
+      "category": "DoorDash and Caviar orders",
+      "rate": 4
+    },
+    {
+      "category": "Dining (direct from restaurant)",
+      "rate": 3
+    },
+    {
+      "category": "Grocery stores (online or in-store)",
+      "rate": 2
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1
+    }
+  ],
+  "annual_credits": [
+    {
+      "type": "DashPass",
+      "value": 96,
+      "condition": "Free for 1 year upon account opening; renewable with $10,000 annual spend"
+    }
+  ],
+  "travel_benefits": {},
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "auto_rental_insurance": "Secondary auto rental collision damage waiver",
+    "purchase_protection": "120 days against damage/theft, $500 per claim"
+  },
+  "tags": [
+    "chase",
+    "dining",
+    "delivery",
+    "cash-back"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/cash-back-credit-cards/doordash"
+    },
+    {
+      "url": "https://www.cnbc.com/select/doordash-rewards-mastercard-review/"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/doordash-rewards"
+    }
+  ],
+  "last_updated": "2026-04-16T12:42:25.900Z"
+}

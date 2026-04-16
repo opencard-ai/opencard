@@ -1,0 +1,67 @@
+{
+  "card_id": "amex-green",
+  "name": "American Express® Green Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 150,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 6,
+    "bonus_points": 40000,
+    "description": "Earn 40,000 Membership Rewards points after spending $3,000 in eligible purchases on your new Card in your first 6 months. (Higher targeted offers of up to 75,000 points after $5,000 spend may be available.)",
+    "point_program": "Membership Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "Travel",
+      "rate": 3,
+      "notes": "Flights, hotels, cruises, tours, and car rentals booked directly with travel providers or amextravel.com"
+    },
+    {
+      "category": "Transit",
+      "rate": 3,
+      "notes": "Trains, taxicabs, rideshare services, ferries, tolls, subways, buses, and parking"
+    },
+    {
+      "category": "Restaurants Worldwide",
+      "rate": 3,
+      "notes": null
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": "All other eligible purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": true,
+      "other": "Priority Pass Select lounge access (enrollment required)"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "Priority Pass Select lounge access (enrollment required)",
+      "No Foreign Transaction Fees",
+      "Amex Offers access"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["american-express", "membership-rewards", "travel", "lounge-access"],
+  "sources": [
+    {"url": "https://www.americanexpress.com/us/credit-cards/card/green/"}
+  ],
+  "last_updated": "2026-04-16T08:42:00.000Z"
+}

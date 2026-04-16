@@ -1,0 +1,87 @@
+{
+  "card_id": "luxury-card-gold",
+  "name": "Luxury Card Mastercard® Gold Card™",
+  "issuer": "Barclays",
+  "network": "Mastercard",
+  "annual_fee": 1199,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "description": "No welcome bonus; value in travel benefits",
+    "point_program": "Luxury Card Points"
+  },
+  "earning_rates": [
+    {
+      "category": "Airfare and hotels booked through LuxuryCardTravel.com",
+      "rate": 2,
+      "notes": "2x points per $1 on airfare and hotel reservations booked through LuxuryCardTravel.com"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1x point per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Annual Airline Credit",
+      "amount": 300,
+      "frequency": "Annual",
+      "description": "Up to $300 in annual statement credits toward flight-related purchases"
+    },
+    {
+      "name": "Annual Dining Credit",
+      "amount": 100,
+      "frequency": "Annual",
+      "description": "$100 annual dining credit at select restaurants"
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": true,
+      "other": "Priority Pass Select membership (unlimited guests)"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "Global Entry / TSA PreCheck application credit ($120)",
+      "Mastercard ID Theft Protection",
+      "Up to $750 in annual hotel travel benefits (breakfast, upgrades, etc.)",
+      "Travel insurance (trip cancellation/interruption)",
+      "Car rental insurance (secondary)",
+      "24/7 Concierge service",
+      "2% value for airfare redemptions",
+      "1.5% value for cash back redemptions",
+      "No foreign transaction fees",
+      "24-karat gold metal card"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "premium",
+    "travel",
+    "lounge-access",
+    "metal",
+    "gold"
+  ],
+  "sources": [
+    "nerdwallet.com",
+    "luxurycard.com",
+    "barclaycardus.com",
+    "upgradedpoints.com",
+    "awardwallet.com"
+  ],
+  "last_updated": "2026-04-16T12:42:25.897Z"
+}

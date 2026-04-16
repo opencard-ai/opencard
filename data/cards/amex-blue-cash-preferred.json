@@ -1,0 +1,85 @@
+{
+  "card_id": "amex-blue-cash-preferred",
+  "name": "Blue Cash Preferred® Card from American Express",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 2.7,
+  "credit_required": "Good",
+  "earning_rates": [
+    {
+      "category": "U.S. Supermarkets",
+      "rate": 6,
+      "notes": "On up to $6,000 per calendar year in purchases (then 1%)."
+    },
+    {
+      "category": "Select U.S. Streaming Subscriptions",
+      "rate": 6,
+      "notes": "On select U.S. streaming subscriptions."
+    },
+    {
+      "category": "Transit",
+      "rate": 3,
+      "notes": "Includes taxis, rideshare, parking, tolls, trains, buses."
+    },
+    {
+      "category": "U.S. Gas Stations",
+      "rate": 3,
+      "notes": "At U.S. gas stations."
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": null
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Disney+ Streaming Credit",
+      "amount": 120,
+      "frequency": "Monthly",
+      "description": "$10 monthly statement credit at DisneyPlus.com, Hulu.com, or Stream.ESPN.com (U.S. websites). Enrollment required; subject to auto-renewal."
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "Amex Offers access",
+      "Plan It® (split purchases of $100+ into monthly payments with fixed fee)",
+      "Send and Split (Venmo/PayPal integration)"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "return_protection": true
+  },
+  "tags": [
+    "american-express",
+    "groceries",
+    "cash-back"
+  ],
+  "sources": [
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/reviews/blue-cash-preferred-american-express-credit-card-review/"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/american-express-blue-cash-preferred"
+    }
+  ],
+  "last_updated": "2026-04-16T12:42:25.889Z"
+}

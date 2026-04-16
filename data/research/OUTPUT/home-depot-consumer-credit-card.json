@@ -1,0 +1,43 @@
+{
+  "card_id": "home-depot-consumer-credit-card",
+  "name": "Home Depot Consumer Credit Card",
+  "issuer": "Citi",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair",
+  "welcome_offer": {
+    "description": "No standard welcome offer; promotional financing on purchases"
+  },
+  "earning_rates": [
+    {
+      "category": "Home Depot",
+      "rate": 0,
+      "notes": "No cash back; primarily a financing tool for Home Depot purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Promotional Financing",
+        "description": "0% APR for 6-18 months on Home Depot purchases (subject to credit approval)"
+      },
+      {
+        "name": "Project Financing",
+        "description": "Special financing for large projects"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {},
+  "tags": ["citi", "store-card", "home-depot", "financing", "no-rewards"],
+  "sources": [
+    { "url": "https://www.homedepot.com/c/Credit_Center" }
+  ],
+  "last_updated": "2026-04-16T08:25:00.000Z",
+  "notes": "Consumer version of Home Depot card issued by Citi. Primarily for project financing rather than rewards. Not typically covered in standard credit card reward comparisons."
+}

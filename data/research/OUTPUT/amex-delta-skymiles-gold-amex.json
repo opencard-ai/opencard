@@ -1,0 +1,71 @@
+{
+  "card_id": "delta-skymiles-gold-amex",
+  "name": "Delta SkyMiles® Gold American Express Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 150,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 2000,
+    "time_period_months": 6,
+    "bonus_points": 80000,
+    "description": "Earn up to 80,000 Bonus Miles after you spend $2,000 in eligible purchases on your new Card in your first 6 months of Card Membership. Welcome offers vary and you may not be eligible.",
+    "point_program": "Delta SkyMiles"
+  },
+  "earning_rates": [
+    {
+      "category": "Delta purchases",
+      "rate": 2,
+      "notes": "Per $1 on Delta purchases"
+    },
+    {
+      "category": "Restaurants",
+      "rate": 2,
+      "notes": "Worldwide, including takeout and delivery in the U.S."
+    },
+    {
+      "category": "U.S. Supermarkets",
+      "rate": 2,
+      "notes": null
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": null
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "delta_sky_club": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "First checked bag free on Delta flights (saves up to $70 per round-trip per person)",
+      "No Foreign Transaction Fees",
+      "Delta Flight Discounter Program",
+      "20% off in-flight purchases"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["american-express", "delta", "airline", "travel"],
+  "sources": [
+    {"url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/"},
+    {"url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards"},
+    {"url": "https://thepointsguy.com/credit-cards/delta-amex-current-offers/"}
+  ],
+  "last_updated": "2026-04-16T08:25:00.000Z"
+}

@@ -1,0 +1,46 @@
+{
+  "card_id": "chase-freedom-unlimited",
+  "name": "Chase Freedom Unlimited®",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": 25000,
+    "estimated_value": 250,
+    "point_program": "Chase Ultimate Rewards",
+    "description": "$250 cash back (25,000 points) after spending $500 in first 3 months"
+  },
+  "earning_rates": [
+    {"category": "Chase Travel", "rate": 5, "notes": "5% cash back on travel purchased through Chase Travel (3.5% bonus on top of 1.5% base)"},
+    {"category": "Dining", "rate": 3, "notes": "3% cash back at restaurants including takeout and eligible delivery services (1.5% bonus on top of 1.5% base)"},
+    {"category": "Drugstores", "rate": 3, "notes": "3% cash back at drugstores (1.5% bonus on top of 1.5% base)"},
+    {"category": "All Other Purchases", "rate": 1.5, "notes": "1.5% cash back on all other purchases (unlimited flat rate)"}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "Trip Cancellation/Interruption", "description": "Up to $1,500 per person and $6,000 per trip for trip cancellation/interruption when travel is booked with the card"},
+      {"name": "DashPass", "description": "Complimentary 6 months of DashPass (then $12.99/month) — activated by 12/31/2027"}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["chase", "cash-back", "flat-rate", "no-annual-fee", "beginner-friendly"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited", "notes": "Official Chase page"},
+    {"url": "https://www.nerdwallet.com/credit-cards/reviews/chase-freedom-unlimited", "notes": "NerdWallet review"},
+    {"url": "https://www.businessinsider.com/personal-finance/credit-cards/chase-freedom-unlimited-review", "notes": "Business Insider review"}
+  ],
+  "notes": "One of the best flat-rate no-AF cards. The 1.5% base + bonus categories in dining/drugstores/travel make it versatile. Can pair with Chase Sapphire Preferred/Reserve to boost Ultimate Rewards value (points transfer to travel partners at 1.5x/3x multiplier). Often combined with Freedom Flex for rotating categories.",
+  "last_updated": "2026-04-16T08:30:00.000Z"
+}

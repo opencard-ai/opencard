@@ -1,0 +1,86 @@
+{
+  "card_id": "disney-visa-card",
+  "name": "Disney® Visa® Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": null,
+    "bonus_points": 0,
+    "estimated_value": 0,
+    "point_program": "Disney Rewards Dollars",
+    "description": "No current welcome offer listed"
+  },
+  "earning_rates": [
+    {
+      "category": "Gas Stations",
+      "rate": 2
+    },
+    {
+      "category": "Grocery Stores",
+      "rate": 2
+    },
+    {
+      "category": "Disney Store, DisneyPlus.com, Hulu, ESPN+",
+      "rate": 1,
+      "notes": "1% back at Disney Store and select Disney purchases"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Streaming Credit",
+      "amount": 60,
+      "frequency": "Annual",
+      "description": "Up to $60 annual credit on Disney+, Hulu, and ESPN+ (enrollment required)"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Disney Character Photo",
+        "description": "Complimentary Disney Character Photo at Disney Parks for cardmember"
+      },
+      {
+        "name": "Shoprunner",
+        "description": "Free 2-day shipping at hundreds of merchants with ShopRunner"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "disney",
+    "co-branded",
+    "theme-park",
+    "no-annual-fee",
+    "streaming"
+  ],
+  "sources": [
+    {
+      "url": "https://disneyrewards.com/compare-credit-cards/",
+      "notes": "Official Disney Rewards page"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/is-disney-visa-worth-it/",
+      "notes": "TPG review"
+    }
+  ],
+  "notes": "$0 AF version of Disney Visa. Lower earning rates than Premier (no 2% at Disney parks). Streaming credit is $60 vs $120 on Premier. Good intro card for Disney fans who don't want to pay an annual fee. The $0 AF and modest earning make it a supplementary card rather than a primary driver.",
+  "last_updated": "2026-04-16T12:42:25.899Z"
+}

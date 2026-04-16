@@ -1,0 +1,47 @@
+{
+  "card_id": "marriott-bonvoy-bold",
+  "name": "Marriott Bonvoy Bold® Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 30000,
+    "estimated_value": 21000,
+    "point_program": "Marriott Bonvoy",
+    "description": "30,000 bonus points after spending $1,000 in first 3 months"
+  },
+  "earning_rates": [
+    {"category": "Marriott Bonvoy Hotels", "rate": 14, "notes": "Up to 14X total points per $1 at Marriott Bonvoy properties (3X from card + up to 10X base + 1X Silver Elite bonus)"},
+    {"category": "Select Categories", "rate": 2, "notes": "2X points on dining and gas stations (per 2025 refresh)"},
+    {"category": "All Other Purchases", "rate": 1}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [
+      {"program": "Marriott Bonvoy", "tier": "Silver Elite", "complimentary": true, "notes": "Automatic Silver Elite status as long as card is open"}
+    ],
+    "other_benefits": [
+      {"name": "Elite Night Credits", "description": "5 Elite Night Credits each calendar year toward Marriott Bonvoy Elite status"},
+      {"name": "Redemption Discount", "description": "Earn 2,000 bonus Bonvoy points per calendar year after spending $10,000 on purchases"}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": false, "thc_eligible": false},
+  "insurance": {
+    "trip_cancellation": false,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["chase", "marriott", "hotel", "no-annual-fee", "silver-elite"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/bold", "notes": "Official Chase page"},
+    {"url": "https://thepointsguy.com/credit-cards/reviews/marriott-bonvoy-bold-credit-card-review/", "notes": "TPG review"},
+    {"url": "https://upgradedpoints.com/news/marriott-bold-card-changes/", "notes": "2026 refresh analysis"}
+  ],
+  "last_updated": "2026-04-16T08:25:00.000Z"
+}

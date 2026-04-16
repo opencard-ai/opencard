@@ -1,0 +1,59 @@
+{
+  "card_id": "aarp-essential-rewards-mastercard-barclays",
+  "name": "AARP® Essential Rewards Mastercard® from Barclays",
+  "issuer": "Barclays",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair",
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": 100,
+    "description": "$100 cash back after spending $500 in first 90 days",
+    "point_program": "Cash Back"
+  },
+  "earning_rates": [
+    {
+      "category": "Gas stations and drugstores",
+      "rate": 3,
+      "notes": "Excludes Target and Walmart"
+    },
+    {
+      "category": "Eligible medical expenses",
+      "rate": 2,
+      "notes": "Doctor visits, prescriptions, etc."
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": null
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "No annual fee",
+      "No foreign transaction fees",
+      "0% introductory APR on balance transfers (first 45 days, then variable APR)"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": ["cash-back", "seniors", "everyday"],
+  "sources": ["nerdwallet.com", "aarp.org", "businessinsider.com"]
+}

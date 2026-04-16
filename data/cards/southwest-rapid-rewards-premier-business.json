@@ -1,0 +1,116 @@
+{
+  "card_id": "southwest-rapid-rewards-premier-business",
+  "name": "Southwest Rapid Rewards® Premier Business Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 149,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 60000,
+    "estimated_value": 894,
+    "point_program": "Southwest Rapid Rewards",
+    "description": "60,000 bonus Rapid Rewards points after spending $3,000 in first 3 months. Additional 10,000 bonus miles when adding an authorized user."
+  },
+  "earning_rates": [
+    {
+      "category": "Southwest Airlines Purchases",
+      "rate": 3
+    },
+    {
+      "category": "Gas Stations",
+      "rate": 2,
+      "notes": "Up to $8,000 per year in combined gas and restaurant purchases"
+    },
+    {
+      "category": "Restaurants",
+      "rate": 2,
+      "notes": "Up to $8,000 per year in combined gas and restaurant purchases"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Anniversary Points",
+      "amount": 6000,
+      "frequency": "Annual",
+      "description": "6,000 Rapid Rewards anniversary points each year (worth ~$89 at 1.49¢/point)"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "First Bag Free",
+        "description": "First checked bag free for cardmember and up to 8 companions on the same reservation"
+      },
+      {
+        "name": "Priority Boarding",
+        "description": "Priority boarding on United flights (Group 2)"
+      },
+      {
+        "name": "EarlyBird Check-In",
+        "description": "Complimentary EarlyBird Check-In automatically applied to all reservations"
+      },
+      {
+        "name": "Employee Cards at No Cost",
+        "description": "Add employee cards at no additional cost"
+      },
+      {
+        "name": "No Foreign Transaction Fees",
+        "description": "Use card internationally without FTF"
+      },
+      {
+        "name": "Global Entry/TSA PreCheck",
+        "description": "Up to $120 credit for Global Entry or TSA PreCheck every 4 years"
+      },
+      {
+        "name": "Earn Companion Pass Qualifying Points",
+        "description": "Earn 1,000 toward Companion Pass qualification for each $10,000 spent annually"
+      },
+      {
+        "name": "Earn PQP",
+        "description": "Earn 1,000 Premier Qualifying Points (PQP) per $12,000 spent, up to 2,000 PQP per year"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "southwest",
+    "airline",
+    "business",
+    "co-branded",
+    "travel"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/business-credit-cards/southwest/premier-business",
+      "notes": "Official Chase page"
+    },
+    {
+      "url": "https://www.swamedia.com/news-and-stories/news-release/chase-and-southwest-airlines-introduce-new-benefits-on-southwest-rapid-rewards-c-MC7BWJWDE2MZA5DLJDR7CI2FM7JE",
+      "notes": "Chase/Southwest press release 2025"
+    },
+    {
+      "url": "https://www.nerdwallet.com/business/credit-cards/reviews/southwest-rapid-rewards-premier-business",
+      "notes": "NerdWallet review"
+    }
+  ],
+  "notes": "Mid-tier Southwest business card. $149 AF. 6,000 anniversary points (~$89) covers ~60% of AF. First bag free + EarlyBird Check-In are practical perks. As of 2025, AF increased from $99 to $149. PQP earnings help toward Southwest elite status. The $8K combined cap on gas/restaurant 2x is limited but useful for small businesses. Similar to personal Premier but with employee card benefits.",
+  "last_updated": "2026-04-16T12:42:25.905Z"
+}

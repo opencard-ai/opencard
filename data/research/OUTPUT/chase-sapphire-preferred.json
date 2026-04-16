@@ -1,0 +1,55 @@
+{
+  "card_id": "chase-sapphire-preferred",
+  "name": "Chase Sapphire Preferred® Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 5000,
+    "time_period_months": 3,
+    "bonus_points": 75000,
+    "estimated_value": 937,
+    "point_program": "Chase Ultimate Rewards",
+    "description": "75,000 bonus points after spending $5,000 in first 3 months (points worth $0.0125 each toward travel via Chase Travel, or ~$937 if transferred to travel partners)"
+  },
+  "earning_rates": [
+    {"category": "Chase Travel (Flights, Hotels, Rental Cars, Cruises, Activities)", "rate": 5, "notes": "5x points on travel purchased through Chase Travel"},
+    {"category": "Dining", "rate": 3, "notes": "3x points at restaurants including takeout and delivery"},
+    {"category": "Streaming Services", "rate": 3, "notes": "3x points on select streaming services"},
+    {"category": "Online Grocery Shopping", "rate": 3, "notes": "3x points at grocery stores (excluding Target, Walmart, wholesale clubs)"},
+    {"category": "All Other Travel", "rate": 2, "notes": "2x points on all other travel purchases"},
+    {"category": "All Other Purchases", "rate": 1, "notes": "1x points on all other purchases"}
+  ],
+  "annual_credits": [
+    {"name": "Hotel Stay Credit", "amount": 50, "frequency": "Annual", "description": "Up to $50 in statement credits each account anniversary year for hotel stays purchased through Chase Travel"}
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "Chase Travel Portal Multiplier", "description": "Points worth 25% more when redeemed for travel via Chase Travel (1.25¢ per point)"},
+      {"name": "Transfer Partners", "description": "1:1 point transfer to leading airline/hotel partners including United, Southwest, Hyatt, Marriott, British Airways, Air France/KLM, and more"},
+      {"name": "Trip Cancellation/Interruption Insurance", "description": "Up to $10,000 per person and $20,000 per trip for trip cancellation/interruption"},
+      {"name": "Auto Rental Collision Damage Waiver", "description": "Primary rental car coverage (earn 3x points on rental cars)"},
+      {"name": "Emergency Evacuation Coverage", "description": "Up to $100,000 for emergency medical evacuation"},
+      {"name": "No Foreign Transaction Fees", "description": "Use your card abroad with no additional fees"},
+      {"name": "24/7 concierge", "description": "Access to travel and lifestyle concierge services"}
+    ]
+  },
+  "fhr_thc": {"fhr_eligible": true, "thc_eligible": true, "notes": "Sapphire Preferred cardholders can book FHR properties with special amenities and THC experiences"},
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Primary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": ["chase", "travel", "ultimate-rewards", "premium", "transfer-partners"],
+  "sources": [
+    {"url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred", "notes": "Official Chase page"},
+    {"url": "https://thepointsguy.com/credit-cards/chase-sapphire-preferred-current-offer/", "notes": "TPG current offer"},
+    {"url": "https://www.nerdwallet.com/credit-cards/reviews/chase-sapphire-preferred", "notes": "NerdWallet review"}
+  ],
+  "notes": "One of the best mid-tier travel cards. The $95 AF is often justified by the $50 hotel credit alone. Dining + travel earning is strong. Ultimate Rewards points transfer to 14+ airline/hotel partners. Great starter card for Chase ecosystem before upgrading to Sapphire Reserve.",
+  "last_updated": "2026-04-16T08:35:00.000Z"
+}

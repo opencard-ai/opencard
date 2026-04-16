@@ -1,0 +1,105 @@
+{
+  "card_id": "amex-business-platinum",
+  "name": "The Business Platinum Card® from American Express",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 895,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "earning_rates": [
+    {
+      "category": "Flights and Prepaid Hotels via Amex Travel",
+      "rate": 5,
+      "notes": "5X Membership Rewards points on flights and prepaid hotels booked through Amex Travel."
+    },
+    {
+      "category": "Selected Business Categories (4th quarter 2025)",
+      "rate": 3,
+      "notes": "Rotating quarterly categories (up to $150,000 combined annual spend). In Q4 2025: U.S. shipping, wireless telephone services, advertising, and tech."
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1X on all other purchases."
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Amex Travel Credit",
+      "amount": 200,
+      "frequency": "Annual",
+      "description": "$200 annual credit for incidental fees at one selected airline."
+    },
+    {
+      "name": "Dell Technologies Credit",
+      "amount": 400,
+      "frequency": "Annual",
+      "description": "Up to $400 statement credit per year for U.S. Dell Technologies purchases (up to $200 through July 2025, increased to $400 after)."
+    },
+    {
+      "name": "Hotel Collection Credit",
+      "amount": 600,
+      "frequency": "Annual",
+      "description": "$600 in statement credits when booking The Hotel Collection properties through Amex Travel."
+    },
+    {
+      "name": "American Express Global Lounge Collection",
+      "amount": 0,
+      "frequency": "Included",
+      "description": "Complimentary access to Centurion Lounges, Delta Sky Clubs (when flying Delta), Priority Pass, and other lounges in the Amex Global Lounge Collection."
+    },
+    {
+      "name": "Walmart+ Membership Credit",
+      "amount": 155,
+      "frequency": "Annual",
+      "description": "Up to $155.40 per year in Walmart+ credits (~$12.95/month)."
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": true,
+      "priority_pass": true,
+      "delta_sky_club": true,
+      "other": "Airspace, Escape, and other partner lounges"
+    },
+    "hotel_status": [
+      "Hilton Honors Gold (when booking through Amex Travel)",
+      "Marriott Bonvoy Gold (when booking through Amex Travel)"
+    ],
+    "other_benefits": [
+      "35% Airline Bonus: Use Pay With Points to get 35% of points back on flights booked through Amex Travel (up to 500,000 points per year)",
+      "FHR (Fine Hotels & Resorts) program access",
+      "THC (The Hotel Collection) program access",
+      "Global Entry/TSA PreCheck statement credit ($120, up to $200 with renewal)",
+      "Secondary rental car coverage (when declining CDW)"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": true,
+    "thc_eligible": true
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "american-express",
+    "business",
+    "travel",
+    "premium"
+  ],
+  "sources": [
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/amex-business-platinum-2025-refresh/"
+    },
+    {
+      "url": "https://www.nerdwallet.com/business/credit-cards/learn/amex-business-platinum-refresh-2025"
+    }
+  ],
+  "last_updated": "2026-04-16T12:42:25.890Z"
+}

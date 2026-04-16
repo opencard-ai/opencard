@@ -1,0 +1,79 @@
+{
+  "card_id": "delta-skymiles-reserve-amex",
+  "name": "Delta SkyMiles® Reserve American Express Card",
+  "issuer": "American Express",
+  "network": "Amex",
+  "annual_fee": 650,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 5000,
+    "time_period_months": 6,
+    "bonus_points": 100000,
+    "description": "Earn up to 100,000 Bonus Miles after spending $5,000 on eligible purchases on your new Card in your first 6 months of Card Membership. Welcome offers vary and you may not be eligible.",
+    "point_program": "Delta SkyMiles"
+  },
+  "earning_rates": [
+    {
+      "category": "Delta purchases",
+      "rate": 3,
+      "notes": "Per $1 on Delta purchases"
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": "All other eligible purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Global Entry/TSA PreCheck Credit",
+      "amount": 120,
+      "frequency": "Every 4 years",
+      "description": "Statement credit every 4 years after you apply for Global Entry ($120)."
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": true,
+      "priority_pass": false,
+      "delta_sky_club": true,
+      "other": "Delta Sky Club: 15 visits per Medallion Year (unlocks unlimited when you spend $75,000+ in a calendar year); Centurion Lounge access when flying Delta"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "Companion Certificate each year upon renewal (domestic First Class or ComfortPlus)",
+      "First checked bag free on Delta flights",
+      "Priority boarding on Delta flights",
+      "15% discount on Delta award flights",
+      "No Foreign Transaction Fees",
+      "$3,000 Medallion Qualification Dollars (MQD) each year"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "american-express",
+    "delta",
+    "airline",
+    "premium",
+    "lounge-access"
+  ],
+  "sources": [
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-reserve-american-express-card/"
+    },
+    {
+      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards"
+    }
+  ],
+  "last_updated": "2026-04-16T12:42:25.892Z"
+}

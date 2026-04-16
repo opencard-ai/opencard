@@ -1,0 +1,83 @@
+{
+  "card_id": "wyndham-rewards-earner-business-barclays",
+  "name": "Wyndham Rewards Earner® Business Card",
+  "issuer": "Barclays",
+  "network": "Mastercard",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 45000,
+    "description": "45,000 bonus Wyndham Rewards points after spending $3,000 and paying annual fee in full within first 90 days (enough for up to 6 free nights)",
+    "point_program": "Wyndham Rewards Points"
+  },
+  "earning_rates": [
+    {
+      "category": "Wyndham Hotels & Resorts",
+      "rate": 6,
+      "notes": "6x Wyndham Rewards points per $1 at Wyndham Hotels & Resorts"
+    },
+    {
+      "category": "Gas",
+      "rate": 4,
+      "notes": "4x Wyndham Rewards points per $1 on gas"
+    },
+    {
+      "category": "Dining",
+      "rate": 4,
+      "notes": "4x Wyndham Rewards points per $1 on dining"
+    },
+    {
+      "category": "Office supply stores",
+      "rate": 4,
+      "notes": "4x Wyndham Rewards points per $1 at office supply stores"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1x Wyndham Rewards point per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [
+      "Wyndham Diamond elite status"
+    ],
+    "other_benefits": [
+      "Wyndham Diamond elite status (15,000 anniversary points annually, enough for free nights)",
+      "10% discount on paid award nights (pay less points for redemptions)",
+      "No foreign transaction fees"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "hotel",
+    "travel",
+    "wyndham",
+    "business"
+  ],
+  "sources": [
+    "nerdwallet.com",
+    "barclaycardus.com",
+    "thepointsguy.com",
+    "maxrewards.com",
+    "pointsnav.com"
+  ],
+  "last_updated": "2026-04-16T12:42:25.897Z"
+}

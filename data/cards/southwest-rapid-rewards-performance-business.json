@@ -1,0 +1,118 @@
+{
+  "card_id": "southwest-rapid-rewards-performance-business",
+  "name": "Southwest Rapid Rewards® Performance Business Credit Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 299,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 5000,
+    "time_period_months": 3,
+    "bonus_points": 80000,
+    "estimated_value": 1192,
+    "point_program": "Southwest Rapid Rewards",
+    "description": "80,000 bonus Rapid Rewards points after spending $5,000 in first 3 months. Additional 10,000 bonus miles when adding an authorized user."
+  },
+  "earning_rates": [
+    {
+      "category": "Southwest Airlines Purchases",
+      "rate": 4
+    },
+    {
+      "category": "Rapid Rewards Hotel and Car Rental Partners",
+      "rate": 3
+    },
+    {
+      "category": "Dining",
+      "rate": 3
+    },
+    {
+      "category": "Gas Stations",
+      "rate": 2
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Anniversary Points",
+      "amount": 9000,
+      "frequency": "Annual",
+      "description": "9,000 Rapid Rewards anniversary points each year (worth ~$134 at 1.49¢/point)"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Three EarlyBird Check-In Per Year",
+        "description": "Complimentary EarlyBird Check-In on up to 3 reservations per year"
+      },
+      {
+        "name": "Upgraded Boardings",
+        "description": "Up to 4 upgraded boardings per year (A-List priority)"
+      },
+      {
+        "name": "First Bag Free",
+        "description": "First checked bag free for cardmember and up to 8 companions on the same reservation"
+      },
+      {
+        "name": "25% Back on Inflight",
+        "description": "25% back on all inflight purchases (Wi-Fi, movies, drinks, messaging) as statement credits"
+      },
+      {
+        "name": "Employee Cards at No Cost",
+        "description": "Add employee cards at no additional cost"
+      },
+      {
+        "name": "No Foreign Transaction Fees",
+        "description": "Use card internationally without FTF"
+      },
+      {
+        "name": "Earn Companion Pass Qualifying Points",
+        "description": "Earn 1,500 toward Companion Pass qualification for each $10,000 spent annually"
+      },
+      {
+        "name": "Earn PQP",
+        "description": "Earn 1,500 Premier Qualifying Points (PQP) per $12,000 spent, up to 3,000 PQP per year"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "chase",
+    "southwest",
+    "airline",
+    "business",
+    "co-branded",
+    "travel"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/business-credit-cards/southwest/performance-business",
+      "notes": "Official Chase page"
+    },
+    {
+      "url": "https://www.swamedia.com/news-and-stories/news-release/chase-and-southwest-airlines-introduce-new-benefits-on-southwest-rapid-rewards-c-MC7BWJWDE2MZA5DLJDR7CI2FM7JE",
+      "notes": "Chase/Southwest press release 2025"
+    },
+    {
+      "url": "https://www.nerdwallet.com/business/credit-cards/reviews/southwest-rapid-rewards-performance-business",
+      "notes": "NerdWallet review"
+    }
+  ],
+  "notes": "Southwest's top-tier business card. $299 AF (increased from $199 in 2025). 9,000 anniversary points (~$134) covers ~45% of AF. The 4 upgraded boardings per year are very valuable during peak travel. 3 EarlyBird Check-Ins and enhanced PQP earnings make it a strong option for businesses with heavy Southwest spend. As of 2025, AF increased from $199 to $299. Best for businesses that fly Southwest frequently.",
+  "last_updated": "2026-04-16T12:42:25.904Z"
+}
