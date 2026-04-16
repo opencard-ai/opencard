@@ -1,7 +1,3 @@
-const FORCE_CARDS_LIST = ["amazon-store-card","amex-amazon-business-prime","amex-bce","amex-bcp","amex-blue-business-cash","amex-blue-business-plus","amex-blue-cash-everyday","amex-business-gold","amex-cash-magnet","amex-centurion","amex-delta-blue","amex-delta-gold","amex-delta-gold-biz","amex-delta-platinum","amex-delta-reserve","amex-everyday-preferred","amex-gold","amex-graphite-business","amex-green","amex-hilton-aspire","amex-hilton-biz-platinum","amex-hilton-honors","amex-hilton-honors-business","amex-hilton-surpass","amex-marriott-bonvoy-amex","amex-marriott-brilliant","amex-morgan-stanley-blue","amex-morgan-stanley-platinum","amex-platinum","apple-card","barclays-aadvantage-red","barclays-aadvantage-silver","barclays-jetblue-biz","barclays-jetblue-plus","barclays-uber-card","barclays-wyndham-earner","barclays-wyndham-earner-biz","barclays-wyndham-earner-plus","barclays-wyndham-earner-plus-biz","bilt-blue","bilt-obsidian","bilt-palladium","boa-alaska-ascent","boa-alaska-summit","boa-customized-cash-rewards","boa-travel-rewards","capital-one-quicksilver","capital-one-savor","capital-one-savorone","capital-one-spark-miles","capital-one-venture","capital-one-venture-x","cathay-world-elite","chase-aeroplan","chase-disney-inspire","chase-disney-premier","chase-disney-visa","chase-freedom-flex","chase-freedom-rise","chase-freedom-unlimited","chase-hyatt","chase-ihg-premier","chase-ink-business-cash","chase-ink-business-preferred","chase-ink-business-unlimited","chase-ink-preferred-plus","chase-marriott-boundless","chase-marriott-bountiful","chase-ritz-carlton","chase-sapphire-preferred","chase-sapphire-reserve","chase-southwest-performance-biz","chase-southwest-performance-plus","chase-southwest-priority","chase-united-biz","chase-united-explorer","chase-united-gateway","chase-united-infinite","chase-united-quest","chase-united-quest-biz","citi-aa-exec","citi-aa-mileup","citi-aa-mileup-biz","citi-aa-platinum-select","citi-costco-anywhere","citi-costco-biz","citi-custom-cash","citi-dividend","citi-double-cash","citi-premier","citi-prestige","citi-strata-elite","citi-strata-elite-premier","citi-strata-premier","coinbase-one","discover-it","discover-it-cash-back","discover-it-miles","fidelity-rewards-visa","hsbc-elite","hsbc-premier","nordstrom-card","nordstrom-retail","paypal-cashback","pnc-cash-rewards","robinhood-gold","robinhood-gold-card","robinhood-platinum","state-farm-cash-medallion","usbank-altitude-connect","usbank-altitude-connect-biz","usbank-altitude-go","usbank-altitude-go-biz","usbank-altitude-reserve","usbank-business-triple-cash","usbank-cash-plus","usbank-smartly","venmo-card","verizon-visa","walgreens-mastercard","wells-fargo-active-cash","wellsfargo-active-cash","wellsfargo-active-cash-biz","wellsfargo-autograph-journey","wellsfargo-choice-privileges","wellsfargo-one-key","wellsfargo-one-key-plus","wellsfargo-reflect"];
-
-
-
 
 
 
@@ -9,7 +5,6 @@ import fs from "fs";
 import path from "path";
 
 const CARDS_DIR = path.join(process.cwd(), "data/cards");
-// Force scan
 
 export interface EarningRate {
   category: string;
@@ -95,10 +90,8 @@ export interface CreditCard {
 }
 
 export function getAllCards(): CreditCard[] {
-  const files = FORCE_CARDS_LIST.map(id => `${id}.json`);
-  console.log("FORCE_COUNT:", files.length);
-  console.log("ACTUAL_FILE_LIST_COUNT:", files.length);
-          return files
+  const files = fs.readdirSync(CARDS_DIR).filter(f => f.endsWith('.json'));
+  return files
     .map((file) => {
       const content = fs.readFileSync(path.join(CARDS_DIR, file), "utf-8");
       return JSON.parse(content) as CreditCard;
