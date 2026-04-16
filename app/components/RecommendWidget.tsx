@@ -93,10 +93,33 @@ export default function RecommendWidget({ lang = "en" }: { lang?: string }) {
     const askParam = searchParams?.get("ask");
     if (askParam && !hasOpened.current) {
       hasOpened.current = true;
-      setInput(askParam);
-      setMessages([{ role: "user", content: askParam }, { role: "assistant", content: msg.intro }]);
       setIsOpen(true);
+      // Set user message immediately, then call API
+      setMessages([{ role: "user", content: askParam }]);
+      setIsLoading(true);
       window.history.replaceState(null, "", window.location.pathname);
+      // Call API to get AI response
+      fetch("/api/recommend", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: askParam,
+          messages: [],
+          locale: lang,
+          existingCards: selectedCards,
+        }),
+      })
+        .then(res => res.json())
+        .then(data => {
+          setIsLoading(false);
+          let reply = data.reply || "Sorry, I couldn't get a response.";
+          const options = parseOptions(reply);
+          setMessages([{ role: "user", content: askParam }, { role: "assistant", content: reply, options: options.length > 0 ? options : undefined }]);
+        })
+        .catch(() => {
+          setIsLoading(false);
+          setMessages([{ role: "user", content: askParam }, { role: "assistant", content: "Something went wrong. Please try again." }]);
+        });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
