@@ -87,6 +87,7 @@ export interface CreditCard {
   last_updated: string;
   sources: Source[];
   tags: string[];
+  status?: string;
 }
 
 export function getAllCards(): CreditCard[] {
