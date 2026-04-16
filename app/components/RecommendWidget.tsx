@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useSearchParams } from "next/navigation";
 import { CARD_OPTIONS } from "@/lib/constants";
 
 interface Message {
@@ -78,7 +77,6 @@ function renderContent(text: string) {
 
 export default function RecommendWidget({ lang = "en" }: { lang?: string }) {
   const msg = MESSAGES[lang as keyof typeof MESSAGES] || MESSAGES.en;
-  const searchParams = useSearchParams();
   const hasOpened = useRef(false);
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
@@ -90,7 +88,8 @@ export default function RecommendWidget({ lang = "en" }: { lang?: string }) {
 
   // Auto-open and send when ?ask= query param is present
   useEffect(() => {
-    const askParam = searchParams?.get("ask");
+    const params = new URLSearchParams(window.location.search);
+    const askParam = params.get("ask");
     if (askParam && !hasOpened.current) {
       hasOpened.current = true;
       setIsOpen(true);
@@ -122,7 +121,7 @@ export default function RecommendWidget({ lang = "en" }: { lang?: string }) {
         });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchParams]);
+  }, []);
 
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
