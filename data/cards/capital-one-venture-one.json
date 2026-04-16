@@ -1,0 +1,60 @@
+{
+  "card_id": "capital-one-venture-one",
+  "name": "Capital One VentureOne Rewards Credit Card",
+  "issuer": "Capital One",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": 20000,
+    "description": "Earn 20,000 bonus miles once you spend $500 on purchases within the first 3 months — worth $200 in travel",
+    "point_program": "Capital One Miles"
+  },
+  "earning_rates": [
+    {
+      "category": "All purchases",
+      "rate": 1.25,
+      "notes": "Earn 1.25 miles per dollar on every purchase, every day"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      "No foreign transaction fees",
+      "Miles transfer to 15+ airline/hotel partners",
+      "No annual fee"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "sources": [
+    {
+      "url": "https://www.businessinsider.com/personal-finance/credit-cards/capital-one-ventureone-rewards-card-review",
+      "notes": "Business Insider: 1.25 miles per dollar, no annual fee, no foreign transaction fees"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/capital-one-ventureone-rewards-credit-card/",
+      "notes": "The Points Guy: flat 1.25 miles, introduction to Capital One miles ecosystem"
+    },
+    {
+      "url": "https://www.cnn.com/cnn-underscored/money/capital-one-ventureone-rewards-credit-card-review",
+      "notes": "CNN Underscored: simplicity, Capital One miles access, lack of annual and foreign fees"
+    }
+  ],
+  "notes": "Best no-annual-fee Capital One travel card. Earn 1.25 miles on all purchases (lower than Venture's 2X). 20,000 mile welcome bonus ($200 travel value). Miles are transferable to Capital One's 15+ travel partners. No annual fee and no foreign transaction fees make it a solid first travel card or backup for international travel. Upgrade path to regular Venture (2X) or Venture X ($395). No lounge access or high-end travel protections.",
+  "confidence": "high",
+  "last_updated": "2026-04-16T13:16:57.273Z",
+  "tags": []
+}

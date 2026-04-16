@@ -1,0 +1,54 @@
+{
+  "card_id": "navy-federal-nrewards-secured",
+  "name": "Navy Federal Credit Union cashRewards Secured",
+  "issuer": "Navy Federal Credit Union",
+  "network": "Visa/Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Building Credit",
+  "welcome_offer": {
+    "description": "No welcome offer. Secured card for building credit."
+  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "rate": 1,
+      "notes": "Unlimited 1% cash back on all purchases."
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": [],
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Collision Damage Waiver",
+        "description": "Secondary CDW coverage when renting a car for 15 days or less."
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": false,
+    "trip_delay": false,
+    "rental_insurance": "Secondary",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "notes": "Formerly called 'nRewards Secured'. Renamed to 'cashRewards Secured' on April 2, 2025. Requires security deposit of $200-$5,000 (deposit = credit limit). After 3 months: eligible for CLI review. After 6 months: eligible for upgrade to unsecured cashRewards card.",
+  "tags": ["navy-federal", "secured", "cash-back", "building-credit", "no-annual-fee"],
+  "sources": [
+    {
+      "url": "https://www.navyfederal.org/loans-cards/credit-cards/cash-rewards-secured.html",
+      "notes": "Official product page"
+    },
+    {
+      "url": "https://www.navyfederal.org/about/press-releases/2025-press-releases/navy-federal-credit-union-launches-cashrewards-secured-credit-card.html",
+      "notes": "Launch press release"
+    }
+  ],
+  "last_updated": "2026-04-16"
+}

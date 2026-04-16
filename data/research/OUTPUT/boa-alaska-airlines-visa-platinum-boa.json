@@ -1,0 +1,34 @@
+{
+  "card_id": "alaska-airlines-visa-platinum-boa",
+  "name": "Alaska Airlines Visa® Platinum Plus® Credit Card",
+  "issuer": "Bank of America",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair",
+  "welcome_offer": null,
+  "earning_rates": [
+    {"category": "Alaska Airlines purchases", "rate": 3, "notes": null},
+    {"category": "Gas", "rate": 2, "notes": null},
+    {"category": "Other", "rate": 1, "notes": null}
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {"name": "Free Checked Bag", "description": "One free checked bag on Alaska Airlines"},
+      {"name": "10% Miles Bonus", "description": "10% bonus on Alaska Airlines miles earned with eligible BofA account"}
+    ]
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": ["bank-of-america", "alaska-airlines", "airline", "travel", "discontinued-product"],
+  "sources": [
+    {"url": "https://www.reddit.com/r/CreditCards/comments/j9f9bh/did_b_of_a_get_rid_of_the_alaska_air_platinum/", "notes": "Reddit confirming discontinuation ~2020"},
+    {"url": "https://www.rewardexpert.com/blog/is-the-alaska-platinum-plus-credit-card-being-eliminated/", "notes": "RewardExpert article"}
+  ],
+  "last_updated": "2026-04-16T13:00:00Z"
+}

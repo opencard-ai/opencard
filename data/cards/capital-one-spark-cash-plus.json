@@ -1,0 +1,66 @@
+{
+  "card_id": "capital-one-spark-cash-plus",
+  "name": "Capital One Spark Cash Plus",
+  "issuer": "Capital One",
+  "network": "Visa",
+  "annual_fee": 150,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 4500,
+    "time_period_months": 3,
+    "bonus_points": null,
+    "description": "Earn up to $2,000 cash bonus — $1,000 once you spend $4,500, $2,000 once you spend $10,000 (first 3 months)",
+    "point_program": "Capital One Spark Cash"
+  },
+  "earning_rates": [
+    {
+      "category": "All purchases",
+      "rate": 2,
+      "notes": "Unlimited 2% cash back on every purchase, every day"
+    },
+    {
+      "category": "Hotels and rental cars booked through Capital One Business Travel",
+      "rate": 5,
+      "notes": "5% on Capital One Business Travel bookings"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      "Free employee cards",
+      "Up to $100,000 in free global travel accident insurance",
+      "Roadside assistance",
+      "No foreign transaction fees"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "sources": [
+    {
+      "url": "https://www.forbes.com/advisor/credit-cards/reviews/capital-one-spark-cash-plus/",
+      "notes": "Forbes: high 2% cash-back rate on all purchases, unlimited 5% on Capital One Business Travel"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/capital-one-spark-cash-plus/",
+      "notes": "The Points Guy: great cash back for high-spending businesses, 2% on all purchases"
+    },
+    {
+      "url": "https://www.cnn.com/cnn-underscored/money/capital-one-spark-cash-plus-review",
+      "notes": "CNN Underscored: competitive 2% rate, employee cards earn 2%"
+    }
+  ],
+  "notes": "Charge card (balance must be paid in full monthly). $150 annual fee. 2% unlimited cash back on everything — best flat-rate business card for spending. Up to $2,000 welcome bonus for high spenders. Employee cards earn 2% and are free. No preset spending limit. For businesses that can pay in full monthly and spend heavily, this is one of the best business cards available. Compare to Spark Cash Select (1.5% no-fee) for lower spenders.",
+  "confidence": "high",
+  "last_updated": "2026-04-16T13:16:57.272Z",
+  "tags": []
+}

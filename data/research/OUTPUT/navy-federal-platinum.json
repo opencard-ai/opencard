@@ -1,0 +1,58 @@
+{
+  "card_id": "navy-federal-platinum",
+  "name": "Navy Federal Credit Union Platinum",
+  "issuer": "Navy Federal Credit Union",
+  "network": "Visa/Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Average to Excellent",
+  "welcome_offer": {
+    "description": "0% intro APR for 12 months on balance transfers made within 60 days of account opening. No balance transfer fee. Expires Jun 30, 2026."
+  },
+  "earning_rates": [
+    {
+      "category": "No Rewards — Low Interest Card",
+      "rate": 0,
+      "notes": "This is a low-interest/balance transfer card, not a rewards card."
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": [],
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Collision Damage Waiver",
+        "description": "Secondary CDW coverage when renting a car for 15 days or less."
+      },
+      {
+        "name": "Travel and Emergency Assistance",
+        "description": "Medical referral, lost luggage locator, prescription assistance available 24/7."
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": false,
+    "trip_delay": false,
+    "rental_insurance": "Secondary",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "notes": "Designed for balance transfers and low-interest financing. APR: 10.24%-18.00% variable. Platinum cardholders receive statement credit (not cash back) through Member Deals.",
+  "tags": ["navy-federal", "low-interest", "balance-transfer", "no-annual-fee"],
+  "sources": [
+    {
+      "url": "https://www.navyfederal.org/loans-cards/credit-cards/platinum.html",
+      "notes": "Official product page"
+    },
+    {
+      "url": "https://www.navyfederal.org/loans-cards/credit-cards/offers/platinum.html",
+      "notes": "Balance transfer offer"
+    }
+  ],
+  "last_updated": "2026-04-16"
+}
