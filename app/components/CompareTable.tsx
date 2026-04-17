@@ -44,6 +44,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
       foreignFee: "Foreign Transaction Fee", network: "Network", issuer: "Issuer",
       earningRates: "Earning Rates", travelBenefits: "Travel Benefits",
       insurance: "Insurance", tags: "Tags", maxRate: "Best Rate",
+      noAf: "No Annual Fee", has: "Yes", none: "None",
     },
     zh: {
       feature: "項目", annualFee: "年費", welcomeBonus: "開卡禮",
@@ -51,6 +52,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
       foreignFee: "國外交易手續費", network: "卡片類型", issuer: "發卡機構",
       earningRates: "回饋倍率", travelBenefits: "旅遊福利",
       insurance: "保險", tags: "標籤", maxRate: "最高倍率",
+      noAf: "免年費", has: "有", none: "無",
     },
     es: {
       feature: "Característica", annualFee: "Cuota Anual", welcomeBonus: "Bono de Bienvenida",
@@ -58,15 +60,15 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
       foreignFee: "Tarifa Extranjera", network: "Red", issuer: "Emisor",
       earningRates: "Tasas de Ganancias", travelBenefits: "Beneficios de Viaje",
       insurance: "Seguro", tags: "Etiquetas", maxRate: "Mejor Tasa",
+      noAf: "Sin Cuota Anual", has: "Sí", none: "Ninguno",
     },
   }[lang] || {
-    en: {
-      feature: "Feature", annualFee: "Annual Fee", welcomeBonus: "Welcome Offer",
-      welcomeReq: "Spend Requirement", creditRequired: "Credit Required",
-      foreignFee: "Foreign Transaction Fee", network: "Network", issuer: "Issuer",
-      earningRates: "Earning Rates", travelBenefits: "Travel Benefits",
-      insurance: "Insurance", tags: "Tags", maxRate: "Best Rate",
-    },
+    feature: "Feature", annualFee: "Annual Fee", welcomeBonus: "Welcome Offer",
+    welcomeReq: "Spend Requirement", creditRequired: "Credit Required",
+    foreignFee: "Foreign Transaction Fee", network: "Network", issuer: "Issuer",
+    earningRates: "Earning Rates", travelBenefits: "Travel Benefits",
+    insurance: "Insurance", tags: "Tags", maxRate: "Best Rate",
+    noAf: "No Annual Fee", has: "Yes", none: "None",
   };
 
   return (
@@ -101,7 +103,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
             {cards.map((card) => (
               <td key={card.card_id} className="py-3 px-4">
                 <span className={`font-bold ${card.annual_fee === 0 ? "text-green-600" : "text-slate-800"}`}>
-                  {card.annual_fee === 0 ? "免年費" : formatCurrency(card.annual_fee)}
+                  {card.annual_fee === 0 ? l.noAf : formatCurrency(card.annual_fee)}
                 </span>
               </td>
             ))}
@@ -117,14 +119,14 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                     <div className="font-bold text-amber-700">
                       {card.welcome_offer.estimated_value
                         ? formatCurrency(card.welcome_offer.estimated_value)
-                        : card.welcome_offer.bonus_value || "有"}
+                        : card.welcome_offer.bonus_value || l.has}
                     </div>
                     {card.welcome_offer.description && (
                       <div className="text-xs text-slate-500 mt-0.5">{card.welcome_offer.description}</div>
                     )}
                   </div>
                 ) : (
-                  <span className="text-slate-400 text-sm">無</span>
+                  <span className="text-slate-400 text-sm">{l.none}</span>
                 )}
               </td>
             ))}
@@ -156,7 +158,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
             {cards.map((card) => (
               <td key={card.card_id} className="py-3 px-4">
                 <span className={card.foreign_transaction_fee === 0 ? "text-green-600 font-medium" : "text-red-500"}>
-                  {card.foreign_transaction_fee === 0 ? "免費" : formatCurrency(card.foreign_transaction_fee)}
+                  {card.foreign_transaction_fee === 0 ? l.noAf : formatCurrency(card.foreign_transaction_fee)}
                 </span>
               </td>
             ))}
