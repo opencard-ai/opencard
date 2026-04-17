@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import ScrollFix from "@/app/components/ScrollFix";
+import Analytics from "@/app/components/Analytics";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
@@ -72,6 +73,8 @@ export default async function LocaleLayout({ children, params }: Props) {
             <FTCDisclosure locale={lang as any} />
           </div>
         </footer>
+        {/* Analytics */}
+        <Analytics />
         {/* Floating Widgets Container */}
         <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 pointer-events-none">
           <div className="pointer-events-auto">
