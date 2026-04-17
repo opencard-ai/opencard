@@ -60,9 +60,7 @@
     "purchase_protection": false,
     "extended_warranty": false
   },
-  "tags": [
-    "capital-one"
-  ],
+  "tags": [],
   "sources": [
     {
       "url": "https://www.capitalone.com/credit-cards/savor/"

@@ -61,9 +61,7 @@
     "purchase_protection": true,
     "extended_warranty": true
   },
-  "tags": [
-    "bank-of america"
-  ],
+  "tags": [],
   "sources": [
     {
       "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/"

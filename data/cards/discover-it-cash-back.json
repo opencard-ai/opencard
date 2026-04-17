@@ -44,9 +44,7 @@
     "purchase_protection": false,
     "extended_warranty": false
   },
-  "tags": [
-    "discover"
-  ],
+  "tags": [],
   "sources": [
     {
       "url": "https://www.discover.com/credit-cards/cash-back/"

@@ -67,9 +67,7 @@
     "purchase_protection": false,
     "extended_warranty": false
   },
-  "tags": [
-    "bank-of america"
-  ],
+  "tags": [],
   "sources": [
     {
       "url": "https://www.alaskaair.com/atmosrewards/"
