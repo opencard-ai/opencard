@@ -44,7 +44,7 @@ export default async function CardDetailPage({ params }: Props) {
   const l = (key: string, p?: Record<string, string | number>) => t(key, locale, p);
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
+    <div className="max-w-3xl mx-auto px-4 py-8" style={{ scrollMarginTop: "73px" }}>
       {/* Back */}
       <BackToCards lang={lang} label={l("detail.backToList")} />
 
