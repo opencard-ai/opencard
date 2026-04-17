@@ -92,7 +92,7 @@ export default function ChatWidget({ cardName, cardId, locale = "en" }: ChatWidg
         className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl p-4 flex items-center gap-3 transition-colors"
       >
         <span className="text-xl">💬</span>
-        <span className="font-semibold">💬 {msg.label}</span>
+        <span className="font-semibold">{msg.label}</span>
       </button>
     );
   }
