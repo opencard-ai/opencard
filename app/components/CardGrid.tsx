@@ -1,6 +1,8 @@
 "use client";
 
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useState, useCallback } from "react";
+import CompareBar from "./CompareBar";
 import Link from "next/link";
 import { useMemo } from "react";
 import type { CreditCard } from "@/lib/cards";
@@ -280,12 +282,24 @@ function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[
 function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]; locale: string }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
+  const [compareIds, setCompareIds] = useState<string[]>([]);
+
   const selectedIssuer = searchParams.get("issuer") || "";
   const selectedTag = searchParams.get("tag") || "";
   const selectedAf = searchParams.get("af") || "";
   const search = searchParams.get("search") || "";
 
   const lang = pathname.split("/")[1] || "en";
+
+  const toggleCompare = useCallback((cardId: string) => {
+    setCompareIds((prev) => {
+      if (prev.includes(cardId)) return prev.filter((id) => id !== cardId);
+      if (prev.length >= 3) return prev;
+      return [...prev, cardId];
+    });
+  }, []);
+
+  const selectedCards = cards.filter((c) => compareIds.includes(c.card_id));
 
   const filtered = useMemo(() => {
     return cards.filter((card) => {
@@ -319,53 +333,90 @@ function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
-        {filtered.map((card) => (
-          <Link
-            key={card.card_id}
-            href={`/${lang}/cards/${card.card_id}`}
-            className="group bg-white rounded-xl border border-slate-200 p-5 hover:shadow-md hover:border-slate-300 transition-all duration-200 block"
-          >
-            <div className="flex items-start justify-between mb-3">
-              <div className="min-w-0 pr-2">
-                <h2 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
-                  {card.name}
-                </h2>
-                <p className="text-xs text-slate-500 mt-1">{card.issuer}</p>
-              </div>
-              <span className="text-xs bg-slate-100 text-slate-600 rounded-full px-2 py-0.5 shrink-0">
-                {card.network}
-              </span>
-            </div>
-
-            <div className="flex items-center gap-1 mb-3">
-              <span className="text-xs text-slate-500">{l("annualFee", locale)}</span>
-              <span className={`text-sm font-medium ${card.annual_fee === 0 ? "text-green-600" : "text-slate-800"}`}>
-                {card.annual_fee === 0 ? l("noFee", locale) : `$${card.annual_fee.toLocaleString()}`}
-              </span>
-            </div>
-
-            <div className="mb-3 space-y-0.5">
-              {card.earning_rates.slice(0, 2).map((rate, i) => (
-                <div key={i} className="flex items-center gap-1 text-xs text-slate-600">
-                  <span className="text-blue-600 font-medium">{rate.rate}×</span>
-                  <span>{rate.category}</span>
+        {filtered.map((card) => {
+          const isCompared = compareIds.includes(card.card_id);
+          const isMaxed = compareIds.length >= 3 && !isCompared;
+          return (
+            <div key={card.card_id} className={`relative bg-white rounded-xl border transition-all duration-200 hover:shadow-md hover:border-slate-300 ${isCompared ? "ring-2 ring-blue-500 border-blue-500" : "border-slate-200"}`}>
+              <Link
+                href={`/${lang}/cards/${card.card_id}`}
+                className="block p-5"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="min-w-0 pr-2">
+                    <h2 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+                      {card.name}
+                    </h2>
+                    <p className="text-xs text-slate-500 mt-1">{card.issuer}</p>
+                  </div>
+                  <span className="text-xs bg-slate-100 text-slate-600 rounded-full px-2 py-0.5 shrink-0">
+                    {card.network}
+                  </span>
                 </div>
-              ))}
-            </div>
 
-            <div className="flex flex-wrap gap-1">
-              {card.tags.slice(0, 3).map((tag) => (
-                <span key={tag} className="text-xs bg-blue-50 text-blue-700 rounded px-1.5 py-0.5">
-                  {tag}
-                </span>
-              ))}
+                <div className="flex items-center gap-1 mb-3">
+                  <span className="text-xs text-slate-500">{l("annualFee", locale)}</span>
+                  <span className={`text-sm font-medium ${card.annual_fee === 0 ? "text-green-600" : "text-slate-800"}`}>
+                    {card.annual_fee === 0 ? l("noFee", locale) : `$${card.annual_fee.toLocaleString()}`}
+                  </span>
+                </div>
+
+                <div className="mb-3 space-y-0.5">
+                  {card.earning_rates.slice(0, 2).map((rate, i) => (
+                    <div key={i} className="flex items-center gap-1 text-xs text-slate-600">
+                      <span className="text-blue-600 font-medium">{rate.rate}×</span>
+                      <span>{rate.category}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-1">
+                  {card.tags.slice(0, 3).map((tag) => (
+                    <span key={tag} className="text-xs bg-blue-50 text-blue-700 rounded px-1.5 py-0.5">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </Link>
+
+              {/* Compare toggle */}
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleCompare(card.card_id);
+                }}
+                disabled={isMaxed}
+                title={
+                  isCompared ? "移除比較" :
+                  isMaxed ? "已選滿 3 張" :
+                  "加入比較"
+                }
+                className={`absolute top-3 right-3 w-7 h-7 rounded-full border text-xs font-bold transition-all ${
+                  isCompared
+                    ? "bg-blue-600 border-blue-600 text-white"
+                    : isMaxed
+                    ? "bg-slate-100 border-slate-200 text-slate-300 cursor-not-allowed"
+                    : "bg-white border-slate-300 text-slate-500 hover:border-blue-400 hover:text-blue-600"
+                }`}
+              >
+                {isCompared ? "✓" : "+"}
+              </button>
             </div>
-          </Link>
-        ))}
+          );
+        })}
       </div>
+
       <div className="mt-8 text-center text-sm text-slate-500">
-        {/* COUNT_CHECK: {cards.length} */} {l("showing", locale)} {filtered.length} {l("of", locale)} {cards.length} {l("cards", locale)}
+        {l("showing", locale)} {filtered.length} {l("of", locale)} {cards.length} {l("cards", locale)}
       </div>
+
+      {/* Compare floating bar */}
+      <CompareBar
+        selected={selectedCards}
+        onRemove={toggleCompare}
+        onClear={() => setCompareIds([])}
+        lang={lang}
+      />
     </>
   );
 }
