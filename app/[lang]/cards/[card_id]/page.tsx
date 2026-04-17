@@ -47,7 +47,7 @@ export default async function CardDetailPage({ params }: Props) {
     <div className="max-w-3xl mx-auto px-4 py-8">
       {/* Back */}
       <Link
-        href={`/${lang}`}
+        href={`/${lang}/cards`}
         className="inline-flex items-center gap-1 text-sm text-slate-500 hover:text-slate-800 mb-6 transition-colors"
       >
         {l("detail.backToList")}
