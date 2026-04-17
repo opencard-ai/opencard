@@ -6,7 +6,7 @@ const STORAGE_KEY = "opencard_existing_cards";
 
 const MESSAGES = {
   en: {
-    title: "👛 My Wallet",
+    title: "👛 My Cards",
     trigger: "My Cards",
     hint: "Select cards you already own. AI will avoid recommending these.",
     searchPlaceholder: "Search cards...",
@@ -16,7 +16,7 @@ const MESSAGES = {
     empty: "No cards match",
   },
   zh: {
-    title: "👛 我的皮夾",
+    title: "👛 我的卡片",
     trigger: "我的卡片",
     hint: "勾選你已有的卡片。AI 會避免推薦重複項目。",
     searchPlaceholder: "搜尋卡片...",
@@ -26,7 +26,7 @@ const MESSAGES = {
     empty: "沒有符合的卡片",
   },
   es: {
-    title: "👛 Mi Cartera",
+    title: "👛 Mis Tarjetas",
     trigger: "Mis Tarjetas",
     hint: "Selecciona las tarjetas que ya tienes.",
     searchPlaceholder: "Buscar tarjetas...",
