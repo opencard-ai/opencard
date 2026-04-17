@@ -117,9 +117,9 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                 {card.welcome_offer ? (
                   <div>
                     <div className="font-bold text-amber-700">
-                      {card.welcome_offer.estimated_value
+                      {card.welcome_offer.estimated_value != null && card.welcome_offer.estimated_value !== 0
                         ? formatCurrency(card.welcome_offer.estimated_value)
-                        : card.welcome_offer.bonus_value || l.has}
+                        : card.welcome_offer.bonus_value || "—"}
                     </div>
                     {card.welcome_offer.description && (
                       <div className="text-xs text-slate-500 mt-0.5">{card.welcome_offer.description}</div>
