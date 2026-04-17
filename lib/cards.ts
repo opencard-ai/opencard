@@ -109,10 +109,9 @@ export function getAllCards(): CreditCard[] {
 }
 
 export function getCardById(cardId: string): CreditCard | null {
-  const filePath = path.join(CARDS_DIR, `${cardId}.json`);
-  if (!fs.existsSync(filePath)) return null;
-  const content = fs.readFileSync(filePath, "utf-8");
-  return JSON.parse(content) as CreditCard;
+  // Look up by card_id field (not filename) to handle mismatches gracefully
+  const cards = getAllCards();
+  return cards.find((c) => c.card_id === cardId) || null;
 }
 
 export function getAllIssuers(): string[] {
