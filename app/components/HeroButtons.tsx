@@ -24,7 +24,7 @@ export default function HeroButtons({ lang }: { lang: string }) {
         onClick={openMyCards}
         className="h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 bg-white text-slate-700 border-2 border-slate-200 shadow-md hover:shadow-lg hover:border-slate-300"
       >
-        <img src="/brand/my-cards-icon.png" alt="Wallet" className="w-6 h-6 object-contain" />
+        <span className="text-xl leading-none">💳</span>
         <span className="font-bold text-sm">{t("home.heroMyCards", lang as any)}</span>
       </button>
 
