@@ -1,6 +1,6 @@
 import { getAllCards } from "@/lib/cards";
 import CompareTable from "@/app/components/CompareTable";
-import Link from "next/link";
+import BackToSection from "@/app/components/BackToSection";
 import { locales } from "@/lib/i18n";
 
 type Props = {
@@ -44,12 +44,12 @@ export default async function ComparePage({ params, searchParams }: Props) {
       <div className="max-w-2xl mx-auto py-16 px-4 text-center">
         <h1 className="text-2xl font-bold text-slate-800 mb-4">{l.title}</h1>
         <p className="text-slate-500 mb-8">{l.noCards}</p>
-        <Link
-          href={`/${lang}/cards`}
+        <BackToSection
+          href={`/${lang}#cards-section`}
           className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold"
         >
           {l.back}
-        </Link>
+        </BackToSection>
       </div>
     );
   }
@@ -57,12 +57,12 @@ export default async function ComparePage({ params, searchParams }: Props) {
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
       <div className="mb-6">
-        <Link
-          href={`/${lang}/cards`}
+        <BackToSection
+          href={`/${lang}#cards-section`}
           className="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1"
         >
           {l.back}
-        </Link>
+        </BackToSection>
         <h1 className="text-2xl font-bold text-slate-900 mt-2">
           {l.title}: {selectedCards.map((c) => c.name).join(" vs. ")}
         </h1>
