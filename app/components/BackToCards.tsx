@@ -1,18 +1,14 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-
 interface BackToCardsProps {
   lang: string;
   label: string;
 }
 
 export default function BackToCards({ lang, label }: BackToCardsProps) {
-  const router = useRouter();
-
   const handleBack = () => {
-    // Navigate to homepage card section
-    router.push(`/${lang}#cards-section`);
+    // Use window.location to reliably navigate with hash scroll
+    window.location.href = `/${lang}#cards-section`;
   };
 
   return (
@@ -20,7 +16,7 @@ export default function BackToCards({ lang, label }: BackToCardsProps) {
       onClick={handleBack}
       className="inline-flex items-center gap-1 text-sm text-slate-500 hover:text-slate-800 mb-6 transition-colors bg-none border-0 cursor-pointer"
     >
-      ← {label}
+      {label}
     </button>
   );
 }
