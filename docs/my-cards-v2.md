@@ -150,6 +150,7 @@
 UserProfile {
   email: string          // 用戶 email
   cards: string[]        // 持有的 card_id 清單
+  card_open_dates?: { [card_id]: string }  // 可選：用戶自填開卡日
   marketing_optin: bool  // 行銷同意
   created_at: timestamp
 }
@@ -236,3 +237,16 @@ CardRecurringCredits (卡片資料庫新增欄位) {
 - [ ] Email 收集 UI
 - [ ] My Cards V2 頁面
 - [ ] 第一批旗艦卡福利補錄（10-15 張）
+
+## 9. V2 / V3 待討論項目（暫緩）
+
+以下項目已討論確認可以做，但 MVP 先不做，列入未來規劃：
+
+| 項目 | 說明 | 所需資料 |
+|------|------|---------|
+| **Push Notification** | 瀏覽器推播通知 | 需要 Service Worker + 用戶授權 |
+| **加卡雷達** | 定期 AI 推薦新卡 | 需要 cron job 跑推薦模型 |
+| **消費缺口計算** | 計算「還差幾次刷」才免年費 | 需要用戶自填已刷次數/金額 |
+| **年費到期日** | 結合 A（用戶自填開卡日，精準計算）+ B（不填則用 annual_fee 一般提醒）| 需要用戶自填持卡日期（可選欄位）|
+
+> 筆記時間：2026-04-17（KC 確認 MVP 方向）
