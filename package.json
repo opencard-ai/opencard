@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "lint:tags": "node scripts/lint-tags.js"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
