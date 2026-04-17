@@ -64,10 +64,6 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
         .then((r) => r.json())
         .then((data: IssuerGroup[]) => {
           setIssuers(data);
-          // Expand first issuer by default
-          if (data.length > 0) {
-            setExpandedIssuers(new Set([data[0].issuer]));
-          }
           setLoaded(true);
         })
         .catch(() => setLoaded(true));
