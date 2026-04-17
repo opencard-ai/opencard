@@ -67,7 +67,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             </div>
           </div>
         </header>
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pb-48 sm:pb-0">{children}</main>
         <footer className="bg-white border-t border-slate-200 mt-16">
           <div className="max-w-5xl mx-auto px-4 py-8">
             <FTCDisclosure locale={lang as any} />
