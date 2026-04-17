@@ -76,7 +76,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         {/* Analytics */}
         <Analytics />
         {/* Floating Widgets Container */}
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 pointer-events-none">
+        <div className="fixed bottom-28 sm:bottom-6 right-3 sm:right-6 z-50 flex flex-col items-end gap-3 pointer-events-none">
           <div className="pointer-events-auto">
             <MyCardsWidget lang={lang} />
           </div>
