@@ -42,7 +42,7 @@ export default async function CardsIndexPage({ params }: Props) {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div id="cards-section" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {cards.map(card => {
           const bonus = card.welcome_offer?.bonus_points ?? 0;
           const bonusDisplay = bonus >= 1000 ? `${(bonus / 1000).toFixed(0)}K pts` : bonus > 0 ? `${bonus} pts` : "—";
