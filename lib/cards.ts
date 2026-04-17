@@ -55,6 +55,8 @@ export interface WelcomeOffer {
   bonus_points?: number;
   estimated_value?: number;
   point_program?: string;
+  description?: string;
+  bonus_value?: string;
 }
 
 export interface Source {
