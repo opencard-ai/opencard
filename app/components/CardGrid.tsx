@@ -190,7 +190,7 @@ export default function CardGrid({ cards, issuers, tags, locale }: CardGridProps
   }, []);
 
   return (
-    <div id="cards-section" style={{ scrollMarginTop: "73px" }}>
+    <div id="cards-section" style={{ scrollMarginTop: "73px" }} className="mb-20 sm:mb-0">
       <FilterBar issuers={issuers} tags={tags} locale={locale} />
       <p className={`text-xs px-1 mb-3 ${locale === "en" ? "text-slate-400" : "text-slate-400"}`}>
         💡 {locale === "zh" ? "點擊卡面上的 + 即可加入比較（最多 3 張）" : locale === "es" ? "Haz clic en + en cualquier tarjeta para agregarla a la comparación (hasta 3)" : "Tip: Click + on any card to add it to comparison (up to 3 cards)"}
