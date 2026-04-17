@@ -7,7 +7,7 @@ interface BackToCardsProps {
 
 export default function BackToCards({ lang, label }: BackToCardsProps) {
   const handleBack = () => {
-    // Use window.location to reliably navigate with hash scroll
+    // Just navigate to homepage with hash — CardGrid's useEffect handles the scroll adjustment
     window.location.href = `/${lang}#cards-section`;
   };
 

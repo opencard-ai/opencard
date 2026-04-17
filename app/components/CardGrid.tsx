@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import CompareBar from "./CompareBar";
 import Link from "next/link";
 import { useMemo } from "react";
@@ -176,6 +176,19 @@ function l(key: string, locale: string): string {
 }
 
 export default function CardGrid({ cards, issuers, tags, locale }: CardGridProps) {
+  // Handle #cards-section hash scroll when arriving from another page
+  useEffect(() => {
+    if (window.location.hash === "#cards-section") {
+      const el = document.getElementById("cards-section");
+      if (el) {
+        const headerHeight = 73;
+        const elTop = el.getBoundingClientRect().top + window.scrollY;
+        // Scroll so the element is just below the sticky header
+        window.scrollTo({ top: elTop - headerHeight, behavior: "instant" });
+      }
+    }
+  }, []);
+
   return (
     <div id="cards-section" style={{ scrollMarginTop: "73px" }}>
       <FilterBar issuers={issuers} tags={tags} locale={locale} />
