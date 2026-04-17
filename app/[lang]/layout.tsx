@@ -7,6 +7,7 @@ import "../globals.css";
 import LanguageSwitcher from "@/app/components/LanguageSwitcher";
 import RecommendWidget from "@/app/components/RecommendWidget";
 import MyCardsWidget from "@/app/components/MyCardsWidget";
+import FloatingButtons from "@/app/components/FloatingButtons";
 import { locales, t } from "@/lib/i18n";
 
 const geistSans = Geist({
@@ -76,15 +77,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         {/* Analytics */}
         <Analytics />
         {/* Floating Widgets Container */}
-        <div className="fixed bottom-[71px] sm:bottom-6 right-3 sm:right-6 z-50 flex flex-col items-end gap-3 pointer-events-none">
-          <div className="pointer-events-auto">
-            <MyCardsWidget lang={lang} />
-          </div>
-          <div className="pointer-events-auto">
-            <ScrollFix />
-          <Suspense fallback={null}><RecommendWidget lang={lang} /></Suspense>
-          </div>
-        </div>
+        <FloatingButtons lang={lang} />
       </body>
     </html>
   );

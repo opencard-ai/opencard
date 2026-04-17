@@ -16,7 +16,9 @@ export default function CompareBar({ selected, onRemove, onClear, lang }: Compar
   const [justAdded, setJustAdded] = useState<string | null>(null);
 
   useEffect(() => {
-    setVisible(selected.length > 0);
+    const isVisible = selected.length > 0;
+    setVisible(isVisible);
+    window.dispatchEvent(new CustomEvent(isVisible ? "comparebar:show" : "comparebar:hide"));
   }, [selected]);
 
   if (!visible || selected.length === 0) return null;
