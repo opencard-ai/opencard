@@ -177,10 +177,10 @@ function l(key: string, locale: string): string {
 
 export default function CardGrid({ cards, issuers, tags, locale }: CardGridProps) {
   return (
-    <>
+    <div id="cards-section" style={{ scrollMarginTop: "73px" }}>
       <FilterBar issuers={issuers} tags={tags} locale={locale} />
       <CardList cards={cards} tags={tags} locale={locale} />
-    </>
+    </div>
   );
 }
 
@@ -332,7 +332,7 @@ function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]
 
   return (
     <>
-      <div id="cards-section" style={{ scrollMarginTop: "73px" }} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
         {filtered.map((card) => {
           const isCompared = compareIds.includes(card.card_id);
           const isMaxed = compareIds.length >= 3 && !isCompared;
