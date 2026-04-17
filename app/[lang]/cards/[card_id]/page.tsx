@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { getCardById, getAllCards } from "@/lib/cards";
 import ChatWidget from "../../../components/ChatWidget";
 import TravelProducts from "../../../components/TravelProducts";
+import BackToCards from "../../../components/BackToCards";
 import type { Metadata } from "next";
 import { locales, t } from "@/lib/i18n";
 import { translateCategory } from "@/lib/category-translations";
@@ -46,12 +46,7 @@ export default async function CardDetailPage({ params }: Props) {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       {/* Back */}
-      <Link
-        href={`/${lang}#cards-section`}
-        className="inline-flex items-center gap-1 text-sm text-slate-500 hover:text-slate-800 mb-6 transition-colors"
-      >
-        {l("detail.backToList")}
-      </Link>
+      <BackToCards lang={lang} label={l("detail.backToList")} />
 
       {/* Header */}
       <div className="bg-white rounded-xl border border-slate-200 p-6 mb-6">
