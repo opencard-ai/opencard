@@ -54,9 +54,7 @@
     "purchase_protection": true,
     "extended_warranty": false
   },
-  "tags": [
-    "citi"
-  ],
+  "tags": [],
   "sources": [
     {
       "url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card"

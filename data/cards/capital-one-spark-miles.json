@@ -51,9 +51,7 @@
     "purchase_protection": false,
     "extended_warranty": true
   },
-  "tags": [
-    "capital-one"
-  ],
+  "tags": [],
   "sources": [
     {
       "url": "https://www.capitalone.com/small-business/credit-cards/spark-miles/"

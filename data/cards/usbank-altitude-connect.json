@@ -55,9 +55,7 @@
     "purchase_protection": false,
     "extended_warranty": false
   },
-  "tags": [
-    "u.s.-bank"
-  ],
+  "tags": [],
   "sources": [
     {
       "url": "https://www.usbank.com/credit-cards/altitude-connect-visa-signature-credit-card.html"

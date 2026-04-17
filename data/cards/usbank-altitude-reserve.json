@@ -62,9 +62,7 @@
     "purchase_protection": false,
     "extended_warranty": false
   },
-  "tags": [
-    "u.s.-bank"
-  ],
+  "tags": [],
   "sources": [
     {
       "url": "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html"
