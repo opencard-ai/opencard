@@ -29,7 +29,7 @@ export default function CompareBar({ selected, onRemove, onClear, lang }: Compar
   const l = labels[lang as keyof typeof labels] || labels.en;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-200 shadow-2xl">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-200 shadow-2xl pb-20 sm:pb-3">
       <div className="max-w-5xl mx-auto px-4 py-3">
         <div className="flex items-center gap-4">
           {/* Selected cards pills */}
