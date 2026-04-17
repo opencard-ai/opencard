@@ -6,7 +6,7 @@ const STORAGE_KEY = "opencard_existing_cards";
 
 const MESSAGES = {
   en: {
-    title: "👛 My Cards",
+    title: "💳 My Cards",
     trigger: "My Cards",
     hint: "Select cards you already own. AI will avoid recommending these.",
     searchPlaceholder: "Search cards...",
@@ -16,7 +16,7 @@ const MESSAGES = {
     empty: "No cards match",
   },
   zh: {
-    title: "👛 我的卡片",
+    title: "💳 我的卡片",
     trigger: "我的卡片",
     hint: "勾選你已有的卡片。AI 會避免推薦重複項目。",
     searchPlaceholder: "搜尋卡片...",
@@ -26,7 +26,7 @@ const MESSAGES = {
     empty: "沒有符合的卡片",
   },
   es: {
-    title: "👛 Mis Tarjetas",
+    title: "💳 Mis Tarjetas",
     trigger: "Mis Tarjetas",
     hint: "Selecciona las tarjetas que ya tienes.",
     searchPlaceholder: "Buscar tarjetas...",
@@ -283,7 +283,7 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
             : "bg-white text-slate-700 border-2 border-slate-200 shadow-md hover:shadow-lg hover:border-slate-300"
         }`}
       >
-        <img src="/brand/my-cards-icon.png" alt="Wallet" className="w-6 h-6 object-contain" />
+        <span className="text-xl leading-none">💳</span>
         <span className="font-bold text-sm">{m.trigger}</span>
         {selectedCards.length > 0 && (
           <span className="bg-blue-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
