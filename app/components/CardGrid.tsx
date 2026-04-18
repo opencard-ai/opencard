@@ -14,7 +14,7 @@ interface CardGridProps {
   locale: any;
 }
 
-// Tag groups — map display keys to readable labels and their matching DB tags
+// Tag groups — simplified to only the most useful filter categories
 const TAG_GROUPS: Record<string, { label: string; tags: string[] }> = {
   "travel": {
     label: "✈️ Travel",
@@ -54,7 +54,7 @@ const TAG_GROUPS: Record<string, { label: string; tags: string[] }> = {
   },
 };
 
-// Build display list from tag groups
+// Build display list — ONLY show predefined tag groups; skip ALL individual tags
 function buildDisplayTags(allTags: string[]) {
   const usedGroupTags = new Set<string>();
   const groups: { value: string; label: string }[] = [];
@@ -65,75 +65,6 @@ function buildDisplayTags(allTags: string[]) {
       groups.push({ value: groupKey, label: group.label });
       matchingTags.forEach((t) => usedGroupTags.add(t));
     }
-  }
-
-  // Comprehensive skip list: issuer names, card networks, co-brand merchants,
-  // airline names, hotel chain names, and overly specific tags that clutter the UI
-  const skipTags = new Set([
-    // Issuers / Banks
-    "american-express","capital-one","chase","citi","discover","marriott",
-    "wells-fargo","bank-of america","bank-of-america","u.s.-bank","u-s-bank",
-    "barclays","capital one","usbank","navy-federal","hsbc","pnc","td-bank",
-    "goldman-sachs","synchrony","bread-financial","first-progress","elan","penfed",
-    "upgrade","sofi","self","patelco","credit-one","jpmorgan","goldman-sachs",
-    // Card networks
-    "visa","mastercard","world-elite","world-mastercard","visa-signature",
-    // Airlines (names)
-    "united","united flights","delta","delta purchases","southwest","jetblue",
-    "american-airlines","alaska-airlines","alaska","british-airways","avios",
-    "aer-lingus","iberia","frontier","spirit-airlines","hawaiian","latam",
-    "carnival","royal-caribbean","celebrity",
-    // Airline spend categories (too specific)
-    "united purchases (airline tickets, seat upgrades, economy plus, inflight food/beverages/wi-fi, united fees)",
-    // Hotels (names)
-    "hilton","hilton hotels and resorts","hotel_hilton","marriott hotels",
-    "hotel_marriott","ihg","hyatt","radisson","choice-hotels","wyndham",
-    // Hotel travel (covered by groups)
-    "chase travel","hotels, car rentals & attractions (cititravel.com)",
-    // Co-brand / Store brands
-    "amazon","costco","sams-club","target","walmart","best-buy","lowes",
-    "home-depot","macys","sears","kmart","tjmaxx","marshalls","bed-bath-beyond",
-    "pottery-barn","williams-sonoma","homegoods","starbucks","ulta","ebay",
-    "verizon","atmos","auto","apple","paypal","coinbase","bitcoin","fitness",
-    "gm","health","healthcare","healthequity","hsa","medical","seniors",
-    "apple-pay","digital-payments","theme-park","beauty","apparel","home-improvement",
-    "home","lifestyle","delivery","rent","utilities","utility","wireless",
-    "balancetransfer","balance-transfer","0-apr","low-apr","financing","hybrid-loan",
-    // Credit type tags (too generic or already covered)
-    "credit-builder","credit-building","secured","student","beginner","no-ssn",
-    "international-students","no-credit-required","no-rewards","no-annual-fee","no-fee",
-    "no-foreign-fee","no-late-fee","no-prime-required","annual-fee","high-annual-fee",
-    "low-annual-fee","good-value","premier","mid-tier","premium","ultra-premium",
-    "platinum","platinum-elite","gold","silver-elite","metal","black-card","charge-card",
-    // Rewards type (covered by groups)
-    "cash-back","cashback","rewards","points","miles","transfer-partners",
-    "ultimate-rewards","thankyou-points","aadvantage","frequent-flyer","lounge-access",
-    // Travel-related (covered by groups)
-    "travel","flights","airline","hotel","cruise","travel","rideshare",
-    "rental-insurance","rental car","airfare","travel-insurance",
-    // Business (covered by groups)
-    "business","corporate","expense-management","office","office supply stores","top 2 eligible business categories",
-    // Dining/Groceries/Gas (covered by groups)
-    "dining","groceries","grocery","grocery stores","u.s. supermarkets","gas","gas (costco)",
-    "restaurants","coffee","food","grocery","delivery",
-    // Streaming (covered by groups)
-    "disneyplus.com, hulu.com, espn+ purchases","streaming","disney","entertainment",
-    // Flat/category rates
-    "flat-rate","category-rotating","category-select","rotating","rotating 5% categories",
-    "rotating-categories","choice-category","customizable",
-    // General spend categories
-    "all purchases","all purchases (flat)","all purchases (buy)","everyday","everyday-spend",
-    "high-spend","lifestyle","department-stores","retail","store-card","warehouse-club",
-    // Status/perks
-    "fhr","thc","premier-status","invitation-only","no-late-fee",
-    // Other noise
-    "discontinued","discontinued-product","co-branded","debit-card","rewards",
-    "annual-fee","high-af","modern","good-value","best-category","rewards",
-  ]);
-  for (const tag of allTags) {
-    if (usedGroupTags.has(tag)) continue;
-    if (skipTags.has(tag)) continue;
-    groups.push({ value: tag, label: tag });
   }
 
   return groups;
