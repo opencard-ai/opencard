@@ -367,6 +367,18 @@ function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]
 
   return (
     <>
+      {/* Card action legend */}
+      <div className="flex flex-wrap items-center gap-4 mb-3 text-xs text-slate-500">
+        <div className="flex items-center gap-1.5">
+          <span className="w-5 h-5 rounded-full border border-slate-300 bg-white flex items-center justify-center text-slate-500">⚖</span>
+          <span>{locale === "zh" ? "加入比價（最多3張）" : locale === "es" ? "Comparar (máx 3)" : "Compare (up to 3 cards)"}</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <span className="w-5 h-5 rounded-full border border-slate-300 bg-white flex items-center justify-center">💾</span>
+          <span>{locale === "zh" ? "儲存到我的卡片" : locale === "es" ? "Guardar en Mis Tarjetas" : "Save to My Cards"}</span>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
         {filtered.map((card) => {
           const isCompared = compareIds.includes(card.card_id);
