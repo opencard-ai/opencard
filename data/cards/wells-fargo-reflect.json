@@ -1,5 +1,5 @@
 {
-  "card_id": "wellsfargo-reflect",
+  "card_id": "wells-fargo-reflect",
   "name": "Wells Fargo Reflect",
   "issuer": "Wells Fargo",
   "network": "Visa/Mastercard",
@@ -39,7 +39,7 @@
     "travel"
   ],
   "recurring_credits": [],
-    "sources": [],
+  "sources": [],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
