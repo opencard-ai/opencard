@@ -95,6 +95,8 @@ const LABELS: Record<string, Record<string, string>> = {
   sortName: { en: "Name", zh: "名稱", es: "Nombre" },
   sortFeeAsc: { en: "Fee: Low → High", zh: "年費由低到高", es: "Cuota ↓" },
   sortFeeDesc: { en: "Fee: High → Low", zh: "年費由高到低", es: "Cuota ↑" },
+  sortBonus: { en: "Welcome Bonus: Highest", zh: "開卡禮：最高", es: "Bono de bienvenida ↑" },
+  sortCredit: { en: "Credit Level", zh: "信用等級", es: "Nivel de crédito" },
 };
 
 function l(key: string, locale: string): string {
@@ -184,12 +186,14 @@ function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[
         <select
           value={searchParams.get("sort") || ""}
           onChange={(e) => updateParam("sort", e.target.value)}
-          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden md:block min-w-[140px]"
+          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white min-w-[150px]"
         >
           <option value="">{l("sortBy", locale)}</option>
           <option value="name">{l("sortName", locale)}</option>
           <option value="fee-asc">{l("sortFeeAsc", locale)}</option>
           <option value="fee-desc">{l("sortFeeDesc", locale)}</option>
+          <option value="bonus">{l("sortBonus", locale)}</option>
+          <option value="credit">{l("sortCredit", locale)}</option>
         </select>
         {(selectedIssuer || selectedTag || selectedAf || search || searchParams.get("sort")) && (
           <button
@@ -271,6 +275,23 @@ function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]
     }).sort((a, b) => {
       if (selectedSort === "fee-asc") return a.annual_fee - b.annual_fee;
       if (selectedSort === "fee-desc") return b.annual_fee - a.annual_fee;
+      if (selectedSort === "bonus") {
+        const getBonus = (c: CreditCard) => {
+          if (c.welcome_offer?.estimated_value != null) return Number(c.welcome_offer.estimated_value);
+          if (c.welcome_offer?.bonus_value != null) {
+            const parsed = parseFloat(String(c.welcome_offer.bonus_value).replace(/[^0-9.]/g, ""));
+            return isNaN(parsed) ? 0 : parsed;
+          }
+          return 0;
+        };
+        return getBonus(b) - getBonus(a);
+      }
+      if (selectedSort === "credit") {
+        const order: Record<string, number> = { "Excellent": 4, "Good": 3, "Fair": 2, "Secured": 1 };
+        const aVal = order[a.credit_required] ?? 0;
+        const bVal = order[b.credit_required] ?? 0;
+        return bVal - aVal;
+      }
       return a.name.localeCompare(b.name);
     });
   }, [cards, selectedIssuer, selectedTag, search, tags]);
