@@ -13,159 +13,173 @@ export async function generateStaticParams() {
 export default async function PrivacyPage({ params }: Props) {
   const { lang } = await params;
 
-  const content = {
+  const c = {
     en: {
       title: "Privacy Policy",
-      lastUpdated: "Last updated: April 17, 2026",
+      lastUpdated: "Last updated: April 18, 2026",
+      intro: "OpenCard AI is committed to protecting your privacy. This policy explains how we collect, use, and protect your information when you use our credit card benefits management service.",
       sections: [
         {
           heading: "1. Information We Collect",
-          body: "We do not require users to create accounts to use our AI recommendation engine. We may collect non-personal data such as browser type, referring pages, and time spent on the site to improve our service."
+          body: "We collect the following information:\n\n• Email address: When you subscribe to benefit reminders, you provide your email. We store it using industry-standard one-way hashing (SHA-256). We never store your plaintext email in our database.\n\n• Saved card IDs: When you add cards to \"My Cards,\" we store only the card identifiers (e.g., \"amex-platinum\"), not your actual credit card numbers or personal financial data.\n\n• Usage data: Browser type, referring pages, and time spent on the site to improve our service."
         },
         {
-          heading: "2. Information You Provide",
-          body: "When you sign up for credit card benefit reminders, you may voluntarily provide your email address. The credit cards you select in \"My Cards\" are stored locally in your browser (localStorage) and are not transmitted to our servers unless you opt in to email reminders."
+          heading: "2. How We Protect Your Data",
+          body: "We take data security seriously:\n\n• Email hashing: Your email is hashed with SHA-256 before storage. We cannot reverse the hash to recover your email.\n\n• Secure transmission: All data is transmitted over HTTPS (TLS encryption).\n\n• Minimal data collection: We only store what is necessary to provide the service.\n\n• Third-party email service: We use AgentMail to send reminder emails. Your email is obfuscated (reversed and base64 encoded) when passed to our email service, and is deleted from that service after sending."
         },
         {
-          heading: "3. Email Reminders",
-          body: "If you opt in to receive credit card benefit reminders, we will send you periodic emails about upcoming or expiring benefits on cards you own (such as quarterly credits, annual credits, and fee deadlines). We use a third-party email service provider to deliver these messages. You may unsubscribe at any time via the unsubscribe link in any email. We do not sell or rent your email address to third parties."
+          heading: "3. Email Reminders (Opt-In)",
+          body: "If you opt in to receive benefit reminders:\n\n• We send periodic emails about upcoming or expiring credits on cards you own.\n\n• Every email includes an unsubscribe link. Clicking it immediately removes you from all future mailings.\n\n• You can also request full data deletion at any time (see Section 6).\n\n• We never sell, rent, or share your email with advertisers or third parties."
         },
         {
-          heading: "4. Cookies and Web Beacons",
-          body: "Like any other website, OpenCard AI uses cookies to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience."
+          heading: "4. Double Opt-In Verification",
+          body: "When you subscribe, we send a verification email to confirm your address. Your subscription is only activated after you click the verification link. This prevents unauthorized signups and ensures email deliverability."
         },
         {
-          heading: "5. Third-Party Advertising",
-          body: "We may use third-party advertising companies (including Google) to serve ads when you visit our website. These companies may use information about your visits to this and other websites in order to provide relevant advertisements."
+          heading: "5. Cookies",
+          body: "We use minimal cookies to:\n\n• Store your language preference\n• Maintain basic session state\n\nWe do not use advertising cookies or tracking pixels."
         },
         {
-          heading: "6. Affiliate Disclosure",
-          body: "OpenCard AI participates in various affiliate marketing programs. We may earn commissions when you purchase products through links on our site. This does not affect our editorial independence or card recommendations."
+          heading: "6. Data Retention and Deletion",
+          body: "You have full control over your data:\n\n• Unsubscribe: Click the \"Unsubscribe\" link in any email, or visit /my-cards to update your preferences.\n\n• Delete all data: Send a DELETE request to /api/my-cards/delete with your email. All your data is permanently removed within 30 days.\n\n• Local data: Cards saved in your browser (localStorage) are only on your device. Clear your browser cache to remove them."
         },
         {
-          heading: "7. AI and Data Processing",
-          body: "Our chat interface uses Large Language Models (LLMs) to process your queries. Any data you enter is used solely to provide recommendations and is not sold to third parties."
+          heading: "7. Third-Party Services",
+          body: "We use the following third-party services:\n\n• Vercel: Website hosting and serverless functions\n• Upstash Redis: Encrypted data storage\n• AgentMail: Transactional email delivery\n• Google (optional): Google Sign-In for future authentication features\n\nThese providers have their own privacy policies."
         },
         {
-          heading: "8. Data Retention and Deletion",
-          body: "If you have subscribed to email reminders and wish to delete your data, contact us at support@opencardai.com. We will remove your email and associated card preferences from our systems within 30 days. Your locally stored data in your browser can be cleared by clearing your browser cache."
+          heading: "8. Children's Privacy",
+          body: "Our service is not intended for users under 18 years of age. We do not knowingly collect information from minors."
         },
         {
-          heading: "9. Your Consent",
-          body: "By using our website, you hereby consent to our Privacy Policy and agree to its terms. If you opt in to receive email reminders, you consent to receive periodic reminder emails and agree that you may unsubscribe at any time."
+          heading: "9. Changes to This Policy",
+          body: "We may update this policy from time to time. Significant changes will be communicated via email to subscribers. Continued use of the service after changes constitutes acceptance of the new policy."
         },
         {
           heading: "10. Contact Us",
-          body: "If you have any questions about this Privacy Policy, please contact us at support@opencardai.com."
+          body: "For privacy-related questions, data deletion requests, or concerns:\n\nEmail: opencard@opencardai.com\nWebsite: https://opencardai.com"
         }
       ]
     },
     zh: {
       title: "隱私權政策",
-      lastUpdated: "最後更新：2026年4月17日",
+      lastUpdated: "最後更新：2026年4月18日",
+      intro: "OpenCard AI 致力於保護您的隱私。本政策說明我們如何收集、使用及保護您在使用信用卡福利管理服務時的資訊。",
       sections: [
         {
           heading: "1. 我們收集的資訊",
-          body: "我們不需要用戶創建帳戶即可使用 AI 推薦引擎。我們可能會收集非個人資料，例如瀏覽器類型、引用頁面以及在網站上停留的時間，以改進我們的服務。"
+          body: "我們收集以下資訊：\n\n• 電子信箱：當您訂閱福利提醒時提供。我們使用產業標準單向雜湊（SHA-256）儲存，絕不以明文形式存放。\n\n• 卡片 ID：當您將卡片加入「我的卡片」時，我們只儲存卡片識別符（如 \"amex-platinum\"），而非您的實際信用卡號碼或財務資料。\n\n• 使用資料：瀏覽器類型、引用頁面及網站停留時間，以改善服務品質。"
         },
         {
-          heading: "2. 您主動提供的資訊",
-          body: "當您訂閱信用卡福利提醒時，可能會自願提供您的電子信箱。您在「我的卡片」中選擇的信用卡會儲存在本機瀏覽器（localStorage）中，在您未訂閱郵件提醒前不會傳輸到我們的伺服器。"
+          heading: "2. 我們如何保護您的資料",
+          body: "我們重視資料安全：\n\n• 信箱雜湊：您的 email 經 SHA-256 雜湊後儲存，無法逆向還原。\n\n• 安全傳輸：所有資料透過 HTTPS（TLS 加密）傳輸。\n\n• 最小化收集：只儲存提供服務所必需的資料。\n\n• 第三方郵件服務：我們使用 AgentMail 傳送提醒郵件。您的 email 在傳遞至郵件服務時經過混淆處理，且在發送後從該服務中刪除。"
         },
         {
-          heading: "3. 郵件提醒服務",
-          body: "若您選擇接收信用卡福利提醒，我們將定期發送電子郵件，通知您持有的卡片中即將到來或即將到期的福利（如季費回饋、年費優惠及年費截止日期）。我們使用第三方郵件服務供應商傳送郵件。您可隨時透過任何郵件中的取消訂閱連結退出。我們不會將您的電子信箱出售或出租給第三方。"
+          heading: "3. 郵件提醒（自願訂閱）",
+          body: "若您選擇接收福利提醒：\n\n• 我們會定期發送關於您持有卡片即將到來或即將到期的回饋通知。\n\n• 每封郵件皆含取消訂閱連結，點擊後立即移除所有未來郵件。\n\n• 您也可隨時申請完全刪除資料（見第6節）。\n\n• 我們絕不會出售、出租或與廣告商或第三方分享您的 email。"
         },
         {
-          heading: "4. Cookie 和網路信標",
-          body: "與其他網站一樣，OpenCard AI 使用 Cookie 來儲存訪問者的偏好設定以及他們訪問過的頁面資訊。這些資訊用於優化用戶體驗。"
+          heading: "4. 雙重驗證訂閱",
+          body: "當您訂閱時，我們會發送驗證郵件確認您的地址。點擊驗證連結後，訂閱才會啟用。這能防止未經授權的註冊並確保郵件送達。"
         },
         {
-          heading: "5. 第三方廣告",
-          body: "我們可能使用第三方廣告公司（包括 Google）在您訪問我們網站時投放廣告。這些公司可能使用您訪問本網站及其他網站的資訊來提供相關廣告。"
+          heading: "5. Cookie",
+          body: "我們使用最少量 Cookie：\n\n• 儲存您的語言偏好\n• 維持基本工作階段狀態\n\n我們不使用廣告追蹤 Cookie 或追蹤像素。"
         },
         {
-          heading: "6. 聯盟行銷揭露",
-          body: "OpenCard AI 參與多項聯盟行銷計劃。當您通過我們網站上的鏈接購買產品時，我們可能會獲得佣金。這不會影響我們的編輯獨立性或卡片推薦。"
+          heading: "6. 資料保留與刪除",
+          body: "您對資料擁有完整控制權：\n\n• 取消訂閱：點擊任意郵件中的「取消訂閱」連結，或訪問 /my-cards 更新偏好設定。\n\n• 刪除所有資料：發送 DELETE 請求至 /api/my-cards/delete（附上您的 email）。所有資料將在30天內永久移除。\n\n• 本機資料：儲存在瀏覽器（localStorage）中的卡片資料僅在您的裝置上，清除瀏覽器緩存即可移除。"
         },
         {
-          heading: "7. AI 和資料處理",
-          body: "我們的聊天介面使用大型語言模型 (LLM) 來處理您的查詢。您輸入的任何資料僅用於提供推薦，不會出售給第三方。"
+          heading: "7. 第三方服務",
+          body: "我們使用以下第三方服務：\n\n• Vercel：網站代管與無伺服器函式\n• Upstash Redis：加密資料儲存\n• AgentMail：交易郵件傳送\n• Google（可選）：用於未來驗證功能\n\n各服務供應商均有其專屬隱私權政策。"
         },
         {
-          heading: "8. 資料保留與刪除",
-          body: "若您已訂閱郵件提醒並希望刪除您的資料，請聯繫 support@opencardai.com。我們將在 30 天內從系統中移除您的電子信箱及相關卡片偏好。您瀏覽器中的本地資料可通過清除瀏覽器緩存來清除。"
+          heading: "8. 兒童隱私",
+          body: "本服務不適用於未滿18歲的用戶。我們不會故意收集未成年人的資訊。"
         },
         {
-          heading: "9. 您的同意",
-          body: "使用我們的網站即表示您同意本隱私權政策並接受其條款。若您選擇訂閱郵件提醒，即表示您同意接收定期福利提醒郵件，並可隨時取消訂閱。"
+          heading: "9. 政策變更",
+          body: "我們可能不時更新本政策。重大變更將透過電子郵件通知訂閱者。於變更後繼續使用服務即表示接受新政策。"
         },
         {
           heading: "10. 聯繫我們",
-          body: "如果您對本隱私權政策有任何疑問，請通過 support@opencardai.com 與我們聯繫。"
+          body: "關於隱私權相關問題、資料刪除請求或疑慮：\n\n電子郵件：opencard@opencardai.com\n網站：https://opencardai.com"
         }
       ]
     },
     es: {
       title: "Política de Privacidad",
-      lastUpdated: "Última actualización: 17 de abril de 2026",
+      lastUpdated: "Última actualización: 18 de abril de 2026",
+      intro: "OpenCard AI se compromete a proteger su privacidad. Esta política explica cómo recopilamos, usamos y protegemos su información cuando usa nuestro servicio de gestión de beneficios de tarjetas de crédito.",
       sections: [
         {
           heading: "1. Información que Recopilamos",
-          body: "No requerimos que los usuarios creen cuentas para usar nuestro motor de recomendaciones de IA. Podemos recopilar datos no personales como el tipo de navegador, páginas de referencia y tiempo transcurrido en el sitio."
+          body: "Recopilamos la siguiente información:\n\n• Correo electrónico: Cuando se suscribe a recordatorios de beneficios. Lo almacenamos usando hash unidireccional estándar de la industria (SHA-256). Nunca almacenamos su correo en texto plano.\n\n• IDs de tarjetas: Cuando agrega tarjetas a \"Mis Tarjetas\", solo almacenamos los identificadores de tarjetas (p. ej., \"amex-platinum\"), no sus números reales de tarjetas de crédito ni datos financieros.\n\n• Datos de uso: Tipo de navegador, páginas de referencia y tiempo en el sitio para mejorar nuestro servicio."
         },
         {
-          heading: "2. Información que Usted Proporciona",
-          body: "Cuando se registre para recibir recordatorios de beneficios de tarjetas de crédito, puede proporcionar voluntariamente su dirección de correo electrónico. Las tarjetas de crédito que seleccione en \"Mis Tarjetas\" se almacenan localmente en su navegador (localStorage) y no se transmiten a nuestros servidores a menos que acepte recibir recordatorios por correo."
+          heading: "2. Cómo Protegemos sus Datos",
+          body: "Tomamos la seguridad de datos en serio:\n\n• Hash de correo: Su correo se procesa con SHA-256 antes del almacenamiento. No podemos revertir el hash para recuperar su correo.\n\n• Transmisión segura: Todos los datos se transmiten por HTTPS (cifrado TLS).\n\n• Recopilación mínima: Solo almacenamos lo necesario para prestar el servicio.\n\n• Servicio de correo de terceros: Usamos AgentMail para enviar recordatorios. Su correo se ofusca al pasarse al servicio de correo y se elimina después del envío."
         },
         {
-          heading: "3. Servicio de Recordatorios por Correo",
-          body: "Si acepta recibir recordatorios de beneficios de tarjetas de crédito, le enviaremos correos electrónicos periódicos sobre beneficios próximos o que caducan en las tarjetas que posee (como créditos trimestrales, créditos anuales y fechas límite de tarifas). Utilizamos un proveedor de servicios de correo electrónico de terceros para entregar estos mensajes. Puede cancelar la suscripción en cualquier momento a través del enlace en cualquier correo. No vendemos ni alquilamos su dirección de correo a terceros."
+          heading: "3. Recordatorios por Correo (Suscripción Voluntaria)",
+          body: "Si acepta recibir recordatorios de beneficios:\n\n• Enviamos correos periódicos sobre créditos próximos o que caducan en sus tarjetas.\n\n• Cada correo incluye un enlace para cancelar la suscripción. Al hacer clic, se le elimina inmediatamente de futuros envíos.\n\n• También puede solicitar la eliminación total de sus datos en cualquier momento (ver Sección 6).\n\n• Nunca vendemos, alquilamos ni compartimos su correo con anunciantes o terceros."
         },
         {
-          heading: "4. Cookies y Web Beacons",
-          body: "Al igual que cualquier otro sitio web, OpenCard AI utiliza cookies para almacenar información, incluidas las preferencias de los visitantes y las páginas que han visitado. Esta información se utiliza para optimizar la experiencia del usuario."
+          heading: "4. Verificación de Doble Opt-In",
+          body: "Cuando se suscribe, enviamos un correo de verificación para confirmar su dirección. Su suscripción solo se activa después de hacer clic en el enlace de verificación. Esto previene registros no autorizados y garantiza la entrega de correos."
         },
         {
-          heading: "5. Publicidad de Terceros",
-          body: "Podemos utilizar empresas de publicidad de terceros (incluidos Google) para mostrar anuncios cuando visite nuestro sitio web. Estas empresas pueden utilizar información sobre sus visitas a este y otros sitios web para mostrar anuncios relevantes."
+          heading: "5. Cookies",
+          body: "Usamos cookies mínimas para:\n\n• Almacenar su preferencia de idioma\n• Mantener el estado básico de la sesión\n\nNo usamos cookies publicitarias ni píxeles de seguimiento."
         },
         {
-          heading: "6. Divulgación de Afiliados",
-          body: "OpenCard AI participa en varios programas de marketing de afiliados. Podemos ganar comisiones cuando compre productos a través de enlaces en nuestro sitio. Esto no afecta nuestra independencia editorial ni las recomendaciones de tarjetas."
+          heading: "6. Retención y Eliminación de Datos",
+          body: "Tiene control total sobre sus datos:\n\n• Cancelar suscripción: Haga clic en \"Cancelar suscripción\" en cualquier correo, o visite /my-cards.\n\n• Eliminar todos los datos: Envíe una solicitud DELETE a /api/my-cards/delete con su correo. Todos sus datos se eliminan permanentemente en 30 días.\n\n• Datos locales: Las tarjetas guardadas en su navegador (localStorage) solo están en su dispositivo. Borre la caché del navegador para eliminarlas."
         },
         {
-          heading: "7. IA y Procesamiento de Datos",
-          body: "Nuestra interfaz de chat utiliza modelos de lenguaje grandes (LLM) para procesar sus consultas. Cualquier dato que ingrese se utiliza únicamente para proporcionar recomendaciones y no se vende a terceros."
+          heading: "7. Servicios de Terceros",
+          body: "Usamos los siguientes servicios de terceros:\n\n• Vercel: Alojamiento web y funciones sin servidor\n• Upstash Redis: Almacenamiento de datos cifrado\n• AgentMail: Entrega de correos transaccionales\n• Google (opcional): Inicio de sesión con Google para futuras funciones de autenticación\n\nEstos proveedores tienen sus propias políticas de privacidad."
         },
         {
-          heading: "8. Retención y Eliminación de Datos",
-          body: "Si se ha inscrito en recordatorios por correo y desea eliminar sus datos, contáctenos en support@opencardai.com. Eliminaremos su correo electrónico y las preferencias de tarjetas asociadas de nuestros sistemas dentro de 30 días. Los datos almacenados localmente en su navegador se pueden borrar clearing la caché del navegador."
+          heading: "8. Privacidad de Menores",
+          body: "Nuestro servicio no está dirigido a usuarios menores de 18 años. No recopilamos intencionalmente información de menores."
         },
         {
-          heading: "9. Su Consentimiento",
-          body: "Al usar nuestro sitio web, usted acepta esta Política de Privacidad y está de acuerdo con sus términos. Si acepta recibir recordatorios por correo, acepta recibir correos electrónicos periódicos y puede cancelar la suscripción en cualquier momento."
+          heading: "9. Cambios a Esta Política",
+          body: "Podemos actualizar esta política ocasionalmente. Los cambios importantes se comunicarán por correo a los suscriptores. El uso continuado del servicio después de los cambios constituye la aceptación de la nueva política."
         },
         {
           heading: "10. Contáctenos",
-          body: "Si tiene alguna pregunta sobre esta Política de Privacidad, contáctenos en support@opencardai.com."
+          body: "Para preguntas relacionadas con la privacidad, solicitudes de eliminación de datos o inquietudes:\n\nCorreo: opencard@opencardai.com\nSitio web: https://opencardai.com"
         }
       ]
     }
   };
 
-  const c = content[lang as keyof typeof content] || content.en;
+  const content = c[lang as keyof typeof c] || c.en;
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-2">{c.title}</h1>
-      <p className="text-slate-500 text-sm mb-8">{c.lastUpdated}</p>
-      
-      <div className="space-y-8 text-slate-700 leading-relaxed">
-        {c.sections.map((section, i) => (
+      <h1 className="text-3xl font-bold mb-2 text-slate-900">{content.title}</h1>
+      <p className="text-slate-500 text-sm mb-6">{content.lastUpdated}</p>
+      <p className="text-slate-600 leading-relaxed mb-8">{content.intro}</p>
+
+      <div className="space-y-10 text-slate-700 leading-relaxed">
+        {content.sections.map((section, i) => (
           <section key={i}>
             <h2 className="text-xl font-bold text-slate-900 mb-3">{section.heading}</h2>
-            <p>{section.body}</p>
+            {section.body.split('\n\n').map((para, j) => (
+              para.startsWith('•') ? (
+                <ul key={j} className="list-disc pl-5 space-y-1">
+                  {para.split('\n').map((item, k) => (
+                    <li key={k} className="text-sm">{item.replace(/^• /, '')}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p key={j} className="text-sm mb-2">{para}</p>
+              )
+            ))}
           </section>
         ))}
       </div>
