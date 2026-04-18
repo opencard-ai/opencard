@@ -169,6 +169,10 @@ const LABELS: Record<string, Record<string, string>> = {
   showing: { en: "Showing", zh: "顯示", es: "Mostrando" },
   of: { en: "of", zh: "/", es: "de" },
   cards: { en: "cards", zh: "張卡片", es: "tarjetas" },
+  sortBy: { en: "Sort", zh: "排序", es: "Ordenar" },
+  sortName: { en: "Name", zh: "名稱", es: "Nombre" },
+  sortFeeAsc: { en: "Fee: Low → High", zh: "年費由低到高", es: "Cuota ↓" },
+  sortFeeDesc: { en: "Fee: High → Low", zh: "年費由高到低", es: "Cuota ↑" },
 };
 
 function l(key: string, locale: string): string {
@@ -258,7 +262,17 @@ function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[
           <option value="lt95">{l("afUnder95", locale)}</option>
           <option value="ge95">{l("afOver95", locale)}</option>
         </select>
-        {(selectedIssuer || selectedTag || selectedAf || search) && (
+        <select
+          value={searchParams.get("sort") || ""}
+          onChange={(e) => updateParam("sort", e.target.value)}
+          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden md:block min-w-[140px]"
+        >
+          <option value="">{l("sortBy", locale)}</option>
+          <option value="name">{l("sortName", locale)}</option>
+          <option value="fee-asc">{l("sortFeeAsc", locale)}</option>
+          <option value="fee-desc">{l("sortFeeDesc", locale)}</option>
+        </select>
+        {(selectedIssuer || selectedTag || selectedAf || search || searchParams.get("sort")) && (
           <button
             onClick={() => router.push(`${pathname}#cards-section`, { scroll: false })}
             className="px-3 py-2.5 text-sm text-red-600 hover:bg-red-50 rounded-lg transition-colors"
@@ -306,6 +320,7 @@ function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]
   const search = searchParams.get("search") || "";
 
   const lang = pathname.split("/")[1] || "en";
+  const selectedSort = searchParams.get("sort") || "name";
 
   const toggleCompare = useCallback((cardId: string) => {
     setCompareIds((prev) => {
@@ -334,6 +349,10 @@ function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]
           return false;
       }
       return true;
+    }).sort((a, b) => {
+      if (selectedSort === "fee-asc") return a.annual_fee - b.annual_fee;
+      if (selectedSort === "fee-desc") return b.annual_fee - a.annual_fee;
+      return a.name.localeCompare(b.name);
     });
   }, [cards, selectedIssuer, selectedTag, search, tags]);
 
