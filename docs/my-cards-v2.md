@@ -324,3 +324,41 @@ recurring_credits 維護遵循 MAINTENANCE.md 的邏輯：
 **收到錯誤回報：** opencard@opencardai.com → 確認 → 查官方來源 → 48 小時內更新 + 回覆用戶
 
 詳細維護流程見：docs/MAINTENANCE.md
+
+---
+
+## 11. Bazaar 策略審查結論（2026-04-17）
+
+### 覆蓋率策略
+- 34張年費卡覆蓋已足夠（命中率而非數量）
+- 監控：用戶加入卡後無 recurring_credits 記錄 → 自動列入優先擴展清單
+- 目標：50-60張覆蓋可撐過前3-6個月
+
+### 資料品質機制
+- 每筆 recurring_credits 需有 `source` + `last_verified` 欄位
+- 用戶回報機制：opencard@opencardai.com（已有）
+- Automated smoke test script（待建）
+- 每季維護 diff log（已有 MAINTENANCE.md）
+
+### 競爭定位
+- 差異化口號：「你的信用卡 benefits cheat sheet」
+- 不是 MaxRewards 替代品，是不同品類
+- 核心：用戶不需連結銀行帳戶、免費、隱私安全
+
+### MVP 北極星指標
+- **7-day retention**：加卡後 7 天內回訪率
+- 追蹤事件：`card_added` + `credits_viewed` + `email_subscribed`
+- 不是加卡數量（vanity metric），是回訪率
+
+### Growth 優先順序
+1. OpenCard 現有用戶：卡片詳情頁加「Add to My Cards」CTA
+2. Reddit r/creditcards + r/churning
+3. SEO 長尾（public-facing credits 頁面）
+
+### 上線前三個 P0 行動
+| 優先序 | 行動 |
+|---|---|
+| P0 | 用戶回報資料錯誤機制（已有 email）|
+| P0 | 設定 retention tracking（7-day 回訪）|
+| P1 | 卡片詳情頁加「Add to My Cards」CTA |
+
