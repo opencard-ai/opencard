@@ -56,7 +56,7 @@ export default function FloatingButtons({ lang }: FloatingButtonsProps) {
       <div className="pointer-events-auto">
         <a
           href={`/${lang}/my-cards`}
-          className="h-12 px-5 rounded-full shadow-lg bg-gradient-to-r from-amber-50 to-yellow-50 border-2 border-yellow-300 text-slate-700 shadow-md hover:shadow-lg hover:border-yellow-400 transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
+          className="h-12 px-5 rounded-full shadow-lg bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-300 text-slate-700 shadow-md hover:shadow-lg hover:border-blue-400 transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
         >
           <span className="text-xl leading-none">✨</span>
           <span className="font-bold text-sm">{l.benefits}</span>
