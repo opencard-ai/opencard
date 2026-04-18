@@ -7,11 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 6000,
+    "spending_requirement": 9000,
     "time_period_months": 6,
-    "bonus_points": 105000,
-    "description": "Earn 3 Free Night Awards after spending $6,000 on eligible purchases within the first 6 months of card membership. Each Free Night Award is worth up to 35,000 Marriott Bonvoy points.",
-    "free_nights": 3,
+    "bonus_points": 0,
+    "bonus_value": 0,
+    "description": "3 Free Night Awards after $6,000 spend in 6 months, plus 2 additional Free Night Awards after additional $3,000 ($9,000 total) in first 6 months. Each FN up to 50K points.",
+    "free_nights": 5,
     "point_program": "Marriott Bonvoy"
   },
   "earning_rates": [

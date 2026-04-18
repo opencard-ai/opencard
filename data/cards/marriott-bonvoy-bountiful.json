@@ -7,12 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 5000,
+    "spending_requirement": 4000,
     "time_period_months": 3,
-    "bonus_points": 100000,
-    "estimated_value": 700,
-    "point_program": "Marriott Bonvoy",
-    "description": "100,000 bonus Marriott Bonvoy points after spending $5,000 in first 3 months (worth ~$700 at 0.7¢/point)"
+    "bonus_points": 85000,
+    "bonus_value": 0,
+    "description": "85,000 bonus points after spending $4,000 in first 3 months",
+    "point_program": "Marriott Bonvoy"
   },
   "earning_rates": [
     {
