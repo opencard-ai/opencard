@@ -1,0 +1,466 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
+
+const STORAGE_KEY = "opencard_existing_cards";
+
+const MESSAGES = {
+  en: {
+    title: "💳 My Cards",
+    subtitle: "Your personal credit card benefits manager",
+    emailSection: "Get monthly benefit reminders",
+    emailHint: "Leave your email and we'll remind you when credits are about to expire.",
+    emailPlaceholder: "your@email.com",
+    subscribe: "Subscribe",
+    subscribed: "Subscribed ✓",
+    marketingLabel: "I agree to receive personalized benefit reminders (no spam)",
+    noCards: "No cards added yet",
+    addCards: "Browse all cards",
+    benefits: "Benefits & Credits",
+    noBenefits: "No recurring benefits recorded",
+    reportError: "Report error",
+    errorSent: "Error reported!",
+    thisMonth: "This month",
+    upcoming: "Upcoming",
+    expiresSoon: "Expires soon",
+    annualFeeReminder: "Annual fee due",
+    noSubscriptions: "No benefit reminders set up yet",
+    footer: "Data accuracy matters. Help us improve.",
+    perMonth: "/month",
+    perQuarter: "/quarter",
+    perYear: "/year",
+    perHalfYear: "/6mo",
+    noEmail: "Enter your email above to get started",
+    loading: "Loading your cards...",
+    creditsRemaining: "remaining",
+    creditsUsed: "used",
+    viewAll: "View all cards →",
+  },
+  zh: {
+    title: "💳 我的卡片",
+    subtitle: "個人信用卡福利管理中心",
+    emailSection: "每月收取福利到期提醒",
+    emailHint: "留下 email，我們會在福利即將到期時提醒你。",
+    emailPlaceholder: "your@email.com",
+    subscribe: "訂閱提醒",
+    subscribed: "已訂閱 ✓",
+    marketingLabel: "我同意接收個人化福利提醒（絕不打擾）",
+    noCards: "還沒有新增任何卡片",
+    addCards: "瀏覽所有卡片",
+    benefits: "福利與回饋",
+    noBenefits: "尚無定期福利記錄",
+    reportError: "回報錯誤",
+    errorSent: "已回報！",
+    thisMonth: "本月可用",
+    upcoming: "即將到來",
+    expiresSoon: "即將到期",
+    annualFeeReminder: "年費即將到期",
+    noSubscriptions: "還沒有設定福利提醒",
+    footer: "資料準確性是我們的生命線。幫助我們改進。",
+    perMonth: "/月",
+    perQuarter: "/季",
+    perYear: "/年",
+    perHalfYear: "/半年",
+    noEmail: "請在上方輸入 email 開始使用",
+    loading: "載入中...",
+    creditsRemaining: "剩餘",
+    creditsUsed: "已使用",
+    viewAll: "查看所有卡片 →",
+  },
+  es: {
+    title: "💳 Mis Tarjetas",
+    subtitle: "Tu gestor personal de beneficios",
+    emailSection: "Recibe recordatorios mensuales",
+    emailHint: "Deja tu email y te lembraremos cuando los créditos estén por vencer.",
+    emailPlaceholder: "tu@email.com",
+    subscribe: "Suscribirse",
+    subscribed: "Suscrito ✓",
+    marketingLabel: "Acepto recibir recordatorios personalizados (sin spam)",
+    noCards: "No hay tarjetas agregadas",
+    addCards: "Ver todas las tarjetas",
+    benefits: "Beneficios y Créditos",
+    noBenefits: "Sin beneficios recurrentes",
+    reportError: "Reportar error",
+    errorSent: "¡Reportado!",
+    thisMonth: "Este mes",
+    upcoming: "Próximamente",
+    expiresSoon: "Vence pronto",
+    annualFeeReminder: "Cuota anual",
+    noSubscriptions: "Sin recordatorios configurados",
+    footer: "La precisión de los datos importa.",
+    perMonth: "/mes",
+    perQuarter: "/trimestre",
+    perYear: "/año",
+    perHalfYear: "/6meses",
+    noEmail: "Ingresa tu email arriba para comenzar",
+    loading: "Cargando...",
+    creditsRemaining: "restante",
+    creditsUsed: "usado",
+    viewAll: "Ver todas →",
+  },
+};
+
+interface RecurringCredit {
+  name: string;
+  amount?: number;
+  frequency: string;
+  category: string;
+  description?: string;
+}
+
+interface Card {
+  card_id: string;
+  name: string;
+  issuer: string;
+  annual_fee: number;
+  network?: string;
+  recurring_credits?: RecurringCredit[];
+  url?: string;
+  image_url?: string;
+}
+
+const FREQUENCY_LABELS: Record<string, string> = {
+  monthly: "/month",
+  quarterly: "/quarter",
+  semi_annual: "/6mo",
+  annual: "/year",
+};
+
+const CATEGORY_EMOJI: Record<string, string> = {
+  travel: "✈️",
+  dining: "🍽️",
+  entertainment: "🎬",
+  shopping: "🛍️",
+  gas: "⛽",
+  grocery: "🛒",
+  streaming: "📺",
+  other: "💳",
+};
+
+function getBenefitsThisMonth(credits: RecurringCredit[]) {
+  const now = new Date();
+  const month = now.getMonth(); // 0-indexed
+  const year = now.getFullYear();
+  
+  return credits.filter((c) => {
+    if (c.frequency === "monthly") return true;
+    if (c.frequency === "quarterly") {
+      // Q1: Jan-Mar, Q2: Apr-Jun, Q3: Jul-Sep, Q4: Oct-Dec
+      const quarter = Math.floor(month / 3);
+      return true; // Show all quarterly as "available this quarter"
+    }
+    if (c.frequency === "semi_annual") {
+      // Jan-Jun = first half, Jul-Dec = second half
+      const half = month < 6 ? 1 : 2;
+      return true;
+    }
+    if (c.frequency === "annual") {
+      // Show annual credits as "upcoming" unless it's been used
+      return false;
+    }
+    return false;
+  });
+}
+
+function getUpcomingBenefits(credits: RecurringCredit[]) {
+  const now = new Date();
+  const month = now.getMonth();
+  
+  return credits.filter((c) => {
+    if (c.frequency === "annual") return true;
+    if (c.frequency === "semi_annual") {
+      const half = month < 6 ? 1 : 2;
+      return half === 2; // Second half of year
+    }
+    return false;
+  });
+}
+
+function formatFrequency(freq: string, lang: string): string {
+  const labels: Record<string, Record<string, string>> = {
+    en: { monthly: "/month", quarterly: "/quarter", semi_annual: "/6mo", annual: "/year", cardmember_year: "/year" },
+    zh: { monthly: "/月", quarterly: "/季", semi_annual: "/半年", annual: "/年", cardmember_year: "/年" },
+    es: { monthly: "/mes", quarterly: "/trimestre", semi_annual: "/6mes", annual: "/año", cardmember_year: "/año" },
+  };
+  return labels[lang]?.[freq] || `/${freq}`;
+}
+
+export default function MyCardsPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const [lang, setLang] = useState<"en" | "zh" | "es">("en");
+  const [selectedCards, setSelectedCards] = useState<string[]>([]);
+  const [cardsData, setCardsData] = useState<Record<string, Card>>({});
+  const [email, setEmail] = useState("");
+  const [marketingOptin, setMarketingOptin] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const [subscribeError, setSubscribeError] = useState("");
+  const [errorReported, setErrorReported] = useState<Record<string, boolean>>({});
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    params.then((p) => {
+      if (["en", "zh", "es"].includes(p.lang)) setLang(p.lang as "en" | "zh" | "es");
+    });
+  }, [params]);
+
+  // Load selected cards from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      try {
+        setSelectedCards(JSON.parse(saved));
+      } catch {}
+    }
+  }, []);
+
+  // Fetch full card data
+  useEffect(() => {
+    if (selectedCards.length === 0) {
+      setLoaded(true);
+      return;
+    }
+    fetch(`/api/cards?full=1`)
+      .then((r) => r.json())
+      .then((data: Card[]) => {
+        const map: Record<string, Card> = {};
+        for (const card of data) {
+          map[card.card_id] = card;
+        }
+        setCardsData(map);
+        setLoaded(true);
+      })
+      .catch(() => setLoaded(true));
+  }, [selectedCards]);
+
+  const m = MESSAGES[lang];
+
+  const handleSubscribe = useCallback(async () => {
+    if (!email) return;
+    setIsSubscribing(true);
+    setSubscribeError("");
+    try {
+      const res = await fetch("/api/my-cards/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, cards: selectedCards, marketing_optin: marketingOptin }),
+      });
+      if (res.ok) {
+        setIsSubscribed(true);
+      } else {
+        const data = await res.json();
+        setSubscribeError(data.error || "Failed to subscribe");
+      }
+    } catch {
+      setSubscribeError("Network error");
+    } finally {
+      setIsSubscribing(false);
+    }
+  }, [email, selectedCards, marketingOptin]);
+
+  const selectedCardsList = selectedCards
+    .map((id) => cardsData[id])
+    .filter(Boolean) as Card[];
+
+  const totalMonthlyCredits = selectedCardsList.reduce((sum, card) => {
+    return sum + (card.recurring_credits || []).filter((c) => c.frequency === "monthly").reduce((s, c) => s + (c.amount || 0), 0);
+  }, 0);
+
+  return (
+    <div className="min-h-screen bg-slate-50">
+      {/* Header */}
+      <div className="bg-slate-900 text-white">
+        <div className="max-w-2xl mx-auto px-4 py-8">
+          <h1 className="text-2xl font-bold mb-1">{m.title}</h1>
+          <p className="text-slate-400 text-sm">{m.subtitle}</p>
+        </div>
+      </div>
+
+      <div className="max-w-2xl mx-auto px-4 py-6 space-y-4">
+        {/* Email Subscription */}
+        {!isSubscribed ? (
+          <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+            <h2 className="font-bold text-slate-800 mb-1">{m.emailSection}</h2>
+            <p className="text-xs text-slate-500 mb-4">{m.emailHint}</p>
+            <div className="flex gap-2">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={m.emailPlaceholder}
+                className="flex-1 bg-slate-100 border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-slate-900"
+              />
+              <button
+                onClick={handleSubscribe}
+                disabled={!email || isSubscribing}
+                className="bg-slate-900 text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                {isSubscribing ? "..." : m.subscribe}
+              </button>
+            </div>
+            <label className="flex items-start gap-2 mt-3 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={marketingOptin}
+                onChange={(e) => setMarketingOptin(e.target.checked)}
+                className="mt-0.5 rounded border-slate-300"
+              />
+              <span className="text-xs text-slate-500 leading-relaxed">{m.marketingLabel}</span>
+            </label>
+            {subscribeError && (
+              <p className="text-red-500 text-xs mt-2">{subscribeError}</p>
+            )}
+          </div>
+        ) : (
+          <div className="bg-green-50 border border-green-200 rounded-2xl p-5">
+            <p className="text-green-700 font-medium text-sm">✓ {m.subscribed}</p>
+            <p className="text-green-600 text-xs mt-1">{m.noEmail}</p>
+          </div>
+        )}
+
+        {/* Monthly Summary */}
+        {totalMonthlyCredits > 0 && (
+          <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs text-slate-500 mb-0.5">{m.thisMonth}</p>
+                <p className="text-2xl font-bold text-slate-800">
+                  ${totalMonthlyCredits.toFixed(0)}
+                  <span className="text-sm font-normal text-slate-400">/mo</span>
+                </p>
+              </div>
+              <div className="text-right">
+                <p className="text-xs text-slate-500">{selectedCardsList.length} {m.benefits}</p>
+                <p className="text-xs text-green-600 mt-0.5">
+                  {selectedCardsList.reduce((sum, c) => sum + (c.recurring_credits?.length || 0), 0)} credits
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Cards List */}
+        {!loaded ? (
+          <div className="bg-white rounded-2xl p-8 text-center">
+            <p className="text-slate-400 text-sm">{m.loading}</p>
+          </div>
+        ) : selectedCardsList.length === 0 ? (
+          <div className="bg-white rounded-2xl p-8 text-center">
+            <p className="text-slate-400 text-sm mb-4">{m.noCards}</p>
+            <Link
+              href={`/${lang}/cards`}
+              className="inline-block bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-medium"
+            >
+              {m.addCards}
+            </Link>
+          </div>
+        ) : (
+          <div className="space-y-3">
+            {selectedCardsList.map((card) => {
+              const credits = card.recurring_credits || [];
+              const thisMonth = getBenefitsThisMonth(credits);
+              const upcoming = getUpcomingBenefits(credits);
+
+              return (
+                <div key={card.card_id} className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                  {/* Card Header */}
+                  <div className="px-4 py-3 bg-slate-50 border-b border-slate-100 flex items-center justify-between">
+                    <div className="flex items-center gap-2 overflow-hidden">
+                      <span className="text-sm font-semibold text-slate-800 truncate">{card.name}</span>
+                      {card.annual_fee > 0 && (
+                        <span className="text-xs text-slate-400">${card.annual_fee}/yr</span>
+                      )}
+                    </div>
+                    <span className="text-xs text-slate-400 font-medium shrink-0">{card.issuer}</span>
+                  </div>
+
+                  {/* Benefits */}
+                  {credits.length === 0 ? (
+                    <div className="px-4 py-4 text-center">
+                      <p className="text-xs text-slate-400">{m.noBenefits}</p>
+                    </div>
+                  ) : (
+                    <div className="divide-y divide-slate-100">
+                      {thisMonth.length > 0 && (
+                        <div className="px-4 py-3">
+                          <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wide mb-2">{m.thisMonth}</p>
+                          <div className="space-y-1.5">
+                            {thisMonth.map((credit, i) => (
+                              <div key={i} className="flex items-center justify-between">
+                                <div className="flex items-center gap-1.5">
+                                  <span className="text-sm">{CATEGORY_EMOJI[credit.category] || "💳"}</span>
+                                  <span className="text-xs text-slate-700">{credit.name}</span>
+                                </div>
+                                <div className="flex items-center gap-1.5">
+                                  {credit.amount && credit.amount > 0 && (
+                                    <span className="text-xs font-semibold text-slate-800">${credit.amount}</span>
+                                  )}
+                                  <span className="text-[10px] text-slate-400">{formatFrequency(credit.frequency, lang)}</span>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {upcoming.length > 0 && (
+                        <div className="px-4 py-3">
+                          <p className="text-[10px] font-semibold text-amber-600 uppercase tracking-wide mb-2">{m.upcoming}</p>
+                          <div className="space-y-1.5">
+                            {upcoming.map((credit, i) => (
+                              <div key={i} className="flex items-center justify-between">
+                                <div className="flex items-center gap-1.5">
+                                  <span className="text-sm">{CATEGORY_EMOJI[credit.category] || "💳"}</span>
+                                  <span className="text-xs text-slate-600">{credit.name}</span>
+                                </div>
+                                <div className="flex items-center gap-1.5">
+                                  {credit.amount && credit.amount > 0 && (
+                                    <span className="text-xs font-semibold text-amber-600">${credit.amount}</span>
+                                  )}
+                                  <span className="text-[10px] text-amber-500">{formatFrequency(credit.frequency, lang)}</span>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Footer */}
+                  <div className="px-4 py-2 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                    <Link
+                      href={`/${lang}/cards/${card.card_id}`}
+                      className="text-xs text-slate-500 hover:text-slate-800 transition-colors"
+                    >
+                      {m.viewAll}
+                    </Link>
+                    <button
+                      onClick={() => {
+                        setErrorReported((prev) => ({ ...prev, [card.card_id]: true }));
+                        setTimeout(() => setErrorReported((prev) => ({ ...prev, [card.card_id]: false })), 3000);
+                      }}
+                      className="text-xs text-slate-400 hover:text-red-500 transition-colors"
+                    >
+                      {errorReported[card.card_id] ? m.errorSent : m.reportError}
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Footer */}
+        <div className="text-center py-4">
+          <p className="text-xs text-slate-400">{m.footer}</p>
+          <p className="text-xs text-slate-300 mt-1">opencard@opencardai.com</p>
+        </div>
+      </div>
+    </div>
+  );
+}
