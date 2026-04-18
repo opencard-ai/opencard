@@ -3,6 +3,7 @@ import { getCardById, getAllCards } from "@/lib/cards";
 import ChatWidget from "../../../components/ChatWidget";
 import TravelProducts from "../../../components/TravelProducts";
 import BackToCards from "../../../components/BackToCards";
+import AddToMyCardsButton from "../../../components/AddToMyCardsButton";
 import type { Metadata } from "next";
 import { locales, t } from "@/lib/i18n";
 import { translateCategory } from "@/lib/category-translations";
@@ -114,6 +115,9 @@ export default async function CardDetailPage({ params }: Props) {
             </div>
           </div>
         )}
+
+        {/* Add to My Cards CTA */}
+        <AddToMyCardsButton cardId={card.card_id} cardName={card.name} lang={lang} />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -290,12 +294,13 @@ export default async function CardDetailPage({ params }: Props) {
             <section className="bg-white rounded-xl border border-slate-200 p-6">
               <h2 className="text-lg font-bold text-slate-900 mb-3">{l("detail.applicationRules")}</h2>
               <div className="flex flex-wrap gap-2">
-                {card.application_rules.rules.map((rule, i) => (
+                {card.application_rules.rules.map((r, i) => (
                   <span
                     key={i}
-                    className="text-xs bg-red-50 text-red-700 rounded-full px-3 py-1"
+                    title={r.description}
+                    className="text-xs bg-red-50 text-red-700 rounded-full px-3 py-1 cursor-help"
                   >
-                    {rule}
+                    {r.rule}
                   </span>
                 ))}
               </div>
