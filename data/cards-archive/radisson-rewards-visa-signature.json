@@ -1,0 +1,76 @@
+{
+  "card_id": "radisson-rewards-visa-signature",
+  "name": "Radisson Rewards Visa Signature® Card",
+  "issuer": "U.S. Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": null,
+  "earning_rates": [
+    {
+      "category": "Radisson Family of Hotels",
+      "rate": 5,
+      "notes": "5 points per $1 at participating Radisson hotels"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 2,
+      "notes": "2x points on all other purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Free night certificate",
+      "amount": 0,
+      "frequency": "Annual",
+      "description": "Free award night at any Radisson property after $10K annual spend"
+    },
+    {
+      "name": "Silver status",
+      "amount": 0,
+      "frequency": "Ongoing",
+      "description": "Automatic Radisson Silver status as cardholder"
+    }
+  ],
+  "travel_benefits": {
+    "hotel_status": [
+      {
+        "program": "Radisson Rewards",
+        "tier": "Silver",
+        "complimentary": true
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "radisson",
+    "hotel",
+    "rewards",
+    "discontinued"
+  ],
+  "sources": [
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/radisson-rewards-card",
+      "notes": "NerdWallet - card discontinued"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.994Z",
+  "status": "discontinued",
+  "notes": "Card discontinued in 2022. Converted to U.S. Bank Altitude Go Visa Signature. No longer accepting new applications.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

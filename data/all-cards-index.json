@@ -1097,14 +1097,6 @@
       "tags": []
     },
     {
-      "card_id": "capital-one-walmart-rewards",
-      "name": "Capital One Walmart Rewards® Mastercard®",
-      "issuer": "Capital One",
-      "network": "Mastercard",
-      "annual_fee": 0,
-      "tags": []
-    },
-    {
       "card_id": "cathay-world-elite",
       "name": "Cathay World Elite Mastercard",
       "issuer": "Synchrony Bank",
@@ -1410,19 +1402,6 @@
       "annual_fee": 229,
       "tags": [
         "travel"
-      ]
-    },
-    {
-      "card_id": "chase-starbucks-rewards",
-      "name": "Starbucks® Rewards Visa® Card",
-      "issuer": "Chase",
-      "network": "Visa",
-      "annual_fee": 49,
-      "tags": [
-        "starbucks",
-        "co-branded",
-        "discontinued",
-        "coffee"
       ]
     },
     {
@@ -2440,32 +2419,6 @@
       ]
     },
     {
-      "card_id": "radisson-rewards-premier-visa-signature",
-      "name": "Radisson Rewards Premier Visa Signature® Card",
-      "issuer": "U.S. Bank",
-      "network": "Visa",
-      "annual_fee": 75,
-      "tags": [
-        "radisson",
-        "hotel",
-        "rewards",
-        "discontinued"
-      ]
-    },
-    {
-      "card_id": "radisson-rewards-visa-signature",
-      "name": "Radisson Rewards Visa Signature® Card",
-      "issuer": "U.S. Bank",
-      "network": "Visa",
-      "annual_fee": 0,
-      "tags": [
-        "radisson",
-        "hotel",
-        "rewards",
-        "discontinued"
-      ]
-    },
-    {
       "card_id": "robinhood-gold",
       "name": "Robinhood Gold Card",
       "issuer": "Robinhood Credit",
@@ -2595,19 +2548,6 @@
         "healthcare",
         "mastercard",
         "rewards"
-      ]
-    },
-    {
-      "card_id": "synchrony-ebay-mastercard",
-      "name": "eBay Mastercard®",
-      "issuer": "Synchrony",
-      "network": "Mastercard",
-      "annual_fee": 0,
-      "tags": [
-        "ebay",
-        "mastercard",
-        "rewards",
-        "discontinued"
       ]
     },
     {
@@ -2783,20 +2723,6 @@
         "marshalls",
         "homegoods",
         "mastercard"
-      ]
-    },
-    {
-      "card_id": "upgrade-bitcoin-rewards-visa",
-      "name": "Upgrade Bitcoin Rewards Visa",
-      "issuer": "Upgrade (Cross River Bank)",
-      "network": "Visa",
-      "annual_fee": 0,
-      "tags": [
-        "bitcoin",
-        "crypto",
-        "discontinued",
-        "cash-back",
-        "hybrid-loan"
       ]
     },
     {
