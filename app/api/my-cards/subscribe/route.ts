@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@vercel/kv";
 
-const kv = createClient({
-  url: process.env.KV_REST_API_URL!,
-  token: process.env.KV_REST_API_TOKEN!,
+// @ts-ignore
+const Redis = (await import("@upstash/redis")).Redis;
+
+const redis = new Redis({
+  url: process.env.UPSTASH_KV_REST_API_URL!,
+  token: process.env.UPSTASH_KV_REST_API_TOKEN!,
 });
 
 const USER_PREFIX = "opencard:user:";
@@ -18,7 +20,6 @@ export async function POST(req: NextRequest) {
 
     const normalizedEmail = email.toLowerCase().trim();
     
-    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(normalizedEmail)) {
       return NextResponse.json({ error: "Invalid email format" }, { status: 400 });
@@ -26,8 +27,7 @@ export async function POST(req: NextRequest) {
 
     const userKey = `${USER_PREFIX}${normalizedEmail}`;
     
-    // Get existing data (if any)
-    const existing = (await kv.hgetall(userKey)) as Record<string, unknown> | null;
+    const existing = await redis.hgetall(userKey) as Record<string, unknown> | null;
     
     const userData = {
       email: normalizedEmail,
@@ -37,10 +37,8 @@ export async function POST(req: NextRequest) {
       updated_at: Date.now(),
     };
 
-    await kv.hset(userKey, userData);
-
-    // Add to email index set for cron job遍历
-    await kv.sadd("opencard:subscribers", normalizedEmail);
+    await redis.hset(userKey, userData);
+    await redis.sadd("opencard:subscribers", normalizedEmail);
 
     return NextResponse.json({ success: true, message: "Subscribed successfully" });
   } catch (err) {
@@ -50,7 +48,6 @@ export async function POST(req: NextRequest) {
 }
 
 export async function PUT(req: NextRequest) {
-  // Update existing subscription (e.g., update cards list or marketing_optin)
   try {
     const { email, cards, marketing_optin } = await req.json();
 
@@ -61,7 +58,7 @@ export async function PUT(req: NextRequest) {
     const normalizedEmail = email.toLowerCase().trim();
     const userKey = `${USER_PREFIX}${normalizedEmail}`;
 
-    const existing = (await kv.hgetall(userKey)) as Record<string, unknown> | null;
+    const existing = await redis.hgetall(userKey) as Record<string, unknown> | null;
     if (!existing || !(existing.created_at as number)) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
@@ -70,7 +67,7 @@ export async function PUT(req: NextRequest) {
     if (cards !== undefined) updates.cards = cards;
     if (marketing_optin !== undefined) updates.marketing_optin = marketing_optin;
 
-    await kv.hset(userKey, updates);
+    await redis.hset(userKey, updates);
 
     return NextResponse.json({ success: true });
   } catch (err) {

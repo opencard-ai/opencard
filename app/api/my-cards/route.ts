@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@vercel/kv";
 
-const kv = createClient({
-  url: process.env.KV_REST_API_URL!,
-  token: process.env.KV_REST_API_TOKEN!,
+// @ts-ignore
+const Redis = (await import("@upstash/redis")).Redis;
+
+const redis = new Redis({
+  url: process.env.UPSTASH_KV_REST_API_URL!,
+  token: process.env.UPSTASH_KV_REST_API_TOKEN!,
 });
 
 const USER_PREFIX = "opencard:user:";
@@ -19,7 +21,7 @@ export async function GET(req: NextRequest) {
 
     const normalizedEmail = email.toLowerCase().trim();
     const userKey = `${USER_PREFIX}${normalizedEmail}`;
-    const userData = await kv.hgetall(userKey);
+    const userData = await redis.hgetall(userKey) as Record<string, unknown> | null;
 
     if (!userData || !userData.created_at) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
