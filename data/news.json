@@ -1,6 +1,43 @@
 {
   "items": [
     {
+      "title": "[CA] USC Credit Union $400",
+      "url": "https://www.doctorofcredit.com/ca-usc-credit-union-250-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "ca bank bonuses",
+        "direct deposit required",
+        "soft pull"
+      ],
+      "ts": "2026-04-18T14:00:33.000Z",
+      "title_en": "[CA] USC Credit Union $400",
+      "summary_en": "",
+      "title_zh": "[CA] USC Credit Union $400",
+      "summary_zh": "",
+      "title_es": "[CA] Cooperativa de Crédito USC $400",
+      "summary_es": "Bono de $400 disponible en USC Credit Union para residentes de California."
+    },
+    {
+      "title": "[OK & KS] Communication Federal Credit Union $300 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/ok-ks-communication-federal-credit-union-300-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "credit card funding",
+        "direct deposit required",
+        "ks bank bonuses",
+        "ok bank bonuses"
+      ],
+      "ts": "2026-04-18T12:00:53.000Z",
+      "title_en": "[OK & KS] Communication Federal Credit Union $300 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[OK & KS] Communication Federal Credit Union $300 Checking Bonus",
+      "summary_zh": "",
+      "title_es": "[OK & KS] Cooperativa de Crédito Federal Communication $300 Bono de Cuenta Corriente",
+      "summary_es": "Bono de $300 al abrir una cuenta corriente en Communication Federal Credit Union para Oklahoma y Kansas."
+    },
+    {
       "title": "EVgo: $10 EV Charging Credit With Promo Code UBER26",
       "url": "https://www.doctorofcredit.com/evgo-5-ev-charging-credit-with-promo-code-backtoschool5/",
       "source": "Doctor of Credit",
@@ -12,10 +49,10 @@
       "ts": "2026-04-17T23:44:14.000Z",
       "title_en": "EVgo: $10 EV Charging Credit With Promo Code UBER26",
       "summary_en": "",
-      "title_zh": "EVgo：使用優惠碼 UBER26 可獲得 10 美元 EV 充電額度",
-      "summary_zh": "EVgo 提供使用優惠碼 UBER26 充值 10 美元的 EV 充電優惠",
-      "title_es": "EVgo: $10 de crédito para carga de VE con código promocional UBER26",
-      "summary_es": "Recibe $10 de crédito para cargar tu vehículo eléctrico usando el código UBER26."
+      "title_zh": "EVgo: $10 EV Charging Credit With Promo Code UBER26",
+      "summary_zh": "",
+      "title_es": "EVgo: $10 de Crédito de Carga de VE Con Código Promocional UBER26",
+      "summary_es": "Obtén $10 de crédito para cargar vehículos eléctricos usando el código promocional UBER26."
     },
     {
       "title": "[Targeted] Signup for Venmo Credit Card & Get Triple Rewards (9% Back On Top Category)",
@@ -29,10 +66,10 @@
       "ts": "2026-04-17T21:13:59.000Z",
       "title_en": "[Targeted] Signup for Venmo Credit Card & Get Triple Rewards (9% Back On Top Category)",
       "summary_en": "",
-      "title_zh": "[目標用戶] 註冊 Venmo 信用卡可獲得三倍回饋（頂級類別最高 9% 回饋）",
-      "summary_zh": "Venmo 信用卡新戶註冊優惠，頂級消費類別可享 9% 回饋",
-      "title_es": "[Dirigido] Regístrate en la tarjeta de crédito Venmo y obtén Triple recompensas (9% de regreso en la categoría principal)",
-      "summary_es": "Regístrate en la tarjeta de crédito Venmo y gana el triple de recompensas, incluyendo un 9% de devolución en la categoría principal."
+      "title_zh": "[Targeted] Signup for Venmo Credit Card & Get Triple Rewards (9% Back On Top Category)",
+      "summary_zh": "",
+      "title_es": "[Dirigido] Regístrate para la Tarjeta de Crédito Venmo y Obtén Recompensas Triple (9% de Vuelta en la Categoría Principal)",
+      "summary_es": "Oferta dirigida para nuevos usuarios de Venmo que ofrezca triple recompensas con 9% de devolución en la categoría principal."
     },
     {
       "title": "Site Updates/Requests + DDoS Attack",
@@ -44,10 +81,10 @@
       "ts": "2026-04-17T21:09:31.000Z",
       "title_en": "Site Updates/Requests + DDoS Attack",
       "summary_en": "",
-      "title_zh": "網站更新/請求 + DDoS 攻擊",
-      "summary_zh": "網站正在進行更新，同時遭受 DDoS 攻擊",
-      "title_es": "Actualizaciones/Solicitudes del sitio + Ataque DDoS",
-      "summary_es": "El sitio experimentó un ataque DDoS y se están realizando actualizaciones y solicitudes."
+      "title_zh": "Site Updates/Requests + DDoS Attack",
+      "summary_zh": "",
+      "title_es": "Actualizaciones/Solicitudes del Sitio + Ataque DDoS",
+      "summary_es": "El sitio experimentó actualizaciones junto con un ataque de denegación de servicio distribuido."
     },
     {
       "title": "[IL] American Airlines: 1,000 Free Miles + LP",
@@ -61,10 +98,10 @@
       "ts": "2026-04-17T21:08:59.000Z",
       "title_en": "[IL] American Airlines: 1,000 Free Miles + LP",
       "summary_en": "",
-      "title_zh": "[伊利諾州] 美國航空：1,000 英里免費飛行里程 + LP",
-      "summary_zh": "美國航空提供伊利諾州居民 1,000 英里免費里程及 LP 獎勵",
-      "title_es": "[IL] American Airlines: 1,000 millas gratis + LP",
-      "summary_es": "American Airlines ofrece 1,000 millas gratuitas y puntos de recompensa por volar."
+      "title_zh": "[IL] American Airlines: 1,000 Free Miles + LP",
+      "summary_zh": "",
+      "title_es": "[IL] American Airlines: 1,000 Millas Gratis + LP",
+      "summary_es": "American Airlines ofrece 1,000 millas gratuitas más puntos de recompensas Link en Illinois."
     },
     {
       "title": "Rakuten Adds Bank Of America Cards To Portal – Up To $250 ($500 Total On Travel Rewards)",
@@ -78,10 +115,10 @@
       "ts": "2026-04-17T20:56:05.000Z",
       "title_en": "Rakuten Adds Bank Of America Cards To Portal – Up To $250 ($500 Total On Travel Rewards)",
       "summary_en": "",
-      "title_zh": "Rakuten 新增美國銀行卡至入口網站 — 最高可獲得 250 美元（旅遊獎勵總計 500 美元）",
-      "summary_zh": "Rakuten 平台上新增美國銀行卡，最高可享 500 美元旅遊獎勵",
-      "title_es": "Rakuten añade tarjetas de Banco de América al portal – hasta $250 (hasta $500 total en recompensas de viaje)",
-      "summary_es": "Rakuten permite usar tarjetas de Bank of America para ganar hasta $250 en recompensas de viaje, hasta $500 en total."
+      "title_zh": "Rakuten Adds Bank Of America Cards To Portal – Up To $250 ($500 Total On Travel Rewards)",
+      "summary_zh": "",
+      "title_es": "Rakuten Añade Tarjetas de Bank of America al Portal – Hasta $250 ($500 Total en Recompensas de Viaje)",
+      "summary_es": "Rakuten ahora acepta tarjetas de Bank of America con hasta $250 en recompensas, totalizando $500 para viajes."
     },
     {
       "title": "[Targeted] AmEx Offer: The Leading Hotels of the World, Spend $700+ & Receive $150 Statement Credit",
@@ -95,10 +132,10 @@
       "ts": "2026-04-17T20:54:50.000Z",
       "title_en": "[Targeted] AmEx Offer: The Leading Hotels of the World, Spend $700+ & Receive $150 Statement Credit",
       "summary_en": "",
-      "title_zh": "[目標用戶] AmEx 優惠：全球領袖飯店消費 700 美元以上可獲得 150 美元帳單回饋",
-      "summary_zh": "美國運通針對特定用戶提供全球頂級飯店消費滿 700 美元可獲 150 美元回饋",
-      "title_es": "[Dirigido] Oferta de AmEx: The Leading Hotels of the World, gasta $700+ y recibe $150 de crédito en estado de cuenta",
-      "summary_es": "Gasta al menos $700 en The Leading Hotels of the World con tu tarjeta AmEx y obtén $150 de crédito."
+      "title_zh": "[Targeted] AmEx Offer: The Leading Hotels of the World, Spend $700+ & Receive $150 Statement Credit",
+      "summary_zh": "",
+      "title_es": "[Dirigido] Oferta de AmEx: The Leading Hotels of the World, Gasta $700+ y Recibe $150 de Crédito en Estado de Cuenta",
+      "summary_es": "Oferta seleccionada de American Express que otorga $150 de crédito al gastar $700 o más en The Leading Hotels of the World."
     },
     {
       "title": "Chase Offers: Up to 20% Cashback at Select Hyatt Properties",
@@ -113,10 +150,10 @@
       "ts": "2026-04-17T19:40:03.000Z",
       "title_en": "Chase Offers: Up to 20% Cashback at Select Hyatt Properties",
       "summary_en": "",
-      "title_zh": "Chase 優惠：特定凱悅飯店最高可獲得 20% 現金回饋",
-      "summary_zh": "Chase 信用卡在特定凱悅飯店消費可享最高 20% 回饋",
-      "title_es": "Chase ofrece: hasta 20% de reembolso en algunas propiedades Hyatt",
-      "summary_es": "Recibe hasta un 20% de reembolso al reservar en hoteles Hyatt seleccionados con Chase."
+      "title_zh": "Chase Offers: Up to 20% Cashback at Select Hyatt Properties",
+      "summary_zh": "",
+      "title_es": "Chase Ofrece: Hasta 20% de Devolución en Propiedades Hyatt Seleccionadas",
+      "summary_es": "Chase ofrece hasta 20% de devolución en efectivo en hoteles Hyatt seleccionados."
     },
     {
       "title": "HSBC $1,500 – $7,000 Checking Bonus + $1,000 Brokerage Bonus",
@@ -131,10 +168,10 @@
       "ts": "2026-04-17T19:00:51.000Z",
       "title_en": "HSBC $1,500 – $7,000 Checking Bonus + $1,000 Brokerage Bonus",
       "summary_en": "",
-      "title_zh": "HSBC 1,500 至 7,000 美元帳戶獎金 + 1,000 美元經紀帳戶獎金",
-      "summary_zh": "匯豐銀行提供新客戶帳戶及經紀帳戶獎金，總額最高可達 8,000 美元",
-      "title_es": "HSBC $1,500 – $7,000 de bono por cuenta corriente + $1,000 de bono de corretaje",
-      "summary_es": "HSBC ofrece un bono de entre $1,500 y $7,000 por abrir una cuenta corriente y un bono adicional de $1,000 por abrir una cuenta de corretaje."
+      "title_zh": "HSBC $1,500 – $7,000 Checking Bonus + $1,000 Brokerage Bonus",
+      "summary_zh": "",
+      "title_es": "HSBC $1,500 – $7,000 Bono de Cuenta Corriente + $1,000 Bono de Corretaje",
+      "summary_es": "HSBC ofrece bonos de $1,500 a $7,000 por abrir cuenta corriente más $1,000 adicional por cuenta de corretaje."
     },
     {
       "title": "[Existing Users] Grasshopper Bank Up To $750 Business Checking Bonus",
@@ -146,10 +183,10 @@
       "ts": "2026-04-17T15:00:36.000Z",
       "title_en": "[Existing Users] Grasshopper Bank Up To $750 Business Checking Bonus",
       "summary_en": "",
-      "title_zh": "[現有用戶] Grasshopper Bank 商業帳戶最高 750 美元獎金",
-      "summary_zh": "Grasshopper Bank 現有商業客戶可獲得最高 750 美元帳戶獎金",
-      "title_es": "[Usuarios existentes] Grasshopper Bank hasta $750 de bono por cuenta empresarial",
-      "summary_es": "Los clientes actuales de Grasshopper Bank pueden obtener hasta $750 de bono al abrir una cuenta empresarial."
+      "title_zh": "[Existing Users] Grasshopper Bank Up To $750 Business Checking Bonus",
+      "summary_zh": "",
+      "title_es": "[Usuarios Existentes] Grasshopper Bank Hasta $750 Bono de Cuenta Corriente Empresarial",
+      "summary_es": "Bono de hasta $750 para usuarios existentes de Grasshopper Bank que abran cuenta empresarial."
     },
     {
       "title": "[Targeted] PayPal: Earn Up To $50-$300 For Receiving Direct Deposits",
@@ -161,10 +198,10 @@
       "ts": "2026-04-17T14:00:49.000Z",
       "title_en": "[Targeted] PayPal: Earn Up To $50-$300 For Receiving Direct Deposits",
       "summary_en": "",
-      "title_zh": "[目標用戶] PayPal：收款可獲得 50 至 300 美元獎金",
-      "summary_zh": "PayPal 針對特定用戶提供直接存款收款獎金，最高可達 300 美元",
-      "title_es": "[Dirigido] PayPal: Gana hasta $50-$300 por recibir depósitos directos",
-      "summary_es": "Recibe depósitos directos en tu cuenta PayPal y ganarás entre $50 y $300."
+      "title_zh": "[Targeted] PayPal: Earn Up To $50-$300 For Receiving Direct Deposits",
+      "summary_zh": "",
+      "title_es": "[Dirigido] PayPal: Gana Hasta $50-$300 Por Recibir Depósitos Directos",
+      "summary_es": "Oferta dirigida de PayPal que permite ganar entre $50 y $300 por recibir depósitos directos."
     },
     {
       "title": "Chase $900 Checking Bonus",
@@ -180,10 +217,10 @@
       "ts": "2026-04-17T13:00:00.000Z",
       "title_en": "Chase $900 Checking Bonus",
       "summary_en": "",
-      "title_zh": "Chase 900 美元帳戶獎金",
-      "summary_zh": "Chase 提供新客戶 900 美元帳戶開戶獎金",
-      "title_es": "Chase $900 de bono por cuenta corriente",
-      "summary_es": "Chase ofrece un bono de $900 al abrir una cuenta corriente."
+      "title_zh": "Chase $900 Checking Bonus",
+      "summary_zh": "",
+      "title_es": "Chase $900 Bono de Cuenta Corriente",
+      "summary_es": "Chase ofrece un bono de $900 por abrir una nueva cuenta corriente."
     },
     {
       "title": "Netspend $100 Checking Bonus",
@@ -199,10 +236,10 @@
       "ts": "2026-04-17T11:00:19.000Z",
       "title_en": "Netspend $100 Checking Bonus",
       "summary_en": "",
-      "title_zh": "Netspend 100 美元帳戶獎金",
-      "summary_zh": "Netspend 提供 100 美元帳戶開戶獎金",
-      "title_es": "Netspend $100 de bono por cuenta corriente",
-      "summary_es": "Netspend regala $100 al abrir una cuenta corriente."
+      "title_zh": "Netspend $100 Checking Bonus",
+      "summary_zh": "",
+      "title_es": "Netspend $100 Bono de Cuenta Corriente",
+      "summary_es": "Bono de $100 disponible al abrir una cuenta corriente con Netspend."
     },
     {
       "title": "[YMMV] DoorDash: Apple Airpods Pro 3 For $170-$187",
@@ -216,46 +253,11 @@
       "ts": "2026-04-17T03:08:25.000Z",
       "title_en": "[YMMV] DoorDash: Apple Airpods Pro 3 For $170-$187",
       "summary_en": "",
-      "title_zh": "[依地區而異] DoorDash：Apple Airpods Pro 3 售價 170 至 187 美元",
-      "summary_zh": "DoorDash 提供蘋果 Airpods Pro 3 優惠，價格因地區不同而有所差異",
-      "title_es": "[YMMV] DoorDash: Apple Airpods Pro 3 por $170-$187",
-      "summary_es": "DoorDash ofrece los Apple Airpods Pro 3 a un precio reducido de $170-$187, aunque puede variar."
-    },
-    {
-      "title": "Groupon: Cinemark Six Month Movie Club For $42 With Code GPNLOVE",
-      "url": "https://www.doctorofcredit.com/groupon-cinemark-six-month-movie-club-for-44-80-with-code-topdeals/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "cinemark",
-        "groupon"
-      ],
-      "ts": "2026-04-17T02:33:42.000Z",
-      "title_en": "Groupon: Cinemark Six Month Movie Club For $42 With Code GPNLOVE",
-      "summary_en": "",
-      "title_zh": "Groupon：Cinemark 六個月電影俱樂部，使用優惠碼 GPNLOVE 可享 42 美元",
-      "summary_zh": "Groupon 推出 Cinemark 電影俱樂部六個月訂閱優惠，透過 GPNLOVE 優惠碼僅需 42 美元",
-      "title_es": "Groupon: Club de cine de seis meses de Cinemark por $42 con código GPNLOVE",
-      "summary_es": "Consigue seis meses de membresía en el Club de Cine de Cinemark por $42 usando el código GPNLOVE."
-    },
-    {
-      "title": "Capital One $300-$1,500 Savings Bonus, Requires $20,000-$100,000 Deposit",
-      "url": "https://www.doctorofcredit.com/capital-one-300-1500-savings-bonus-requires-20000-100000-deposit/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "nationwide bank bonuses",
-        "no credit card funding",
-        "soft pull"
-      ],
-      "ts": "2026-04-17T02:10:39.000Z",
-      "title_en": "Capital One $300-$1,500 Savings Bonus, Requires $20,000-$100,000 Deposit",
-      "summary_en": "",
-      "title_zh": "Capital One 300 至 1,500 美元儲蓄帳戶獎金，需存款 20,000 至 100,000 美元",
-      "summary_zh": "Capital One 提供儲蓄帳戶獎金，需存放 20,000 至 100,000 美元",
-      "title_es": "Capital One bono de ahorro de $300-$1,500, requiere depósito de $20,000-$100,000",
-      "summary_es": "Capital One ofrece un bono de ahorro entre $300 y $1,500 si depositas entre $20,000 y $100,000."
+      "title_zh": "[YMMV] DoorDash: Apple Airpods Pro 3 For $170-$187",
+      "summary_zh": "",
+      "title_es": "[YMMV] DoorDash: Apple Airpods Pro 3 Por $170-$187",
+      "summary_es": "DoorDash ofrece Apple Airpods Pro 3 a precios entre $170 y $187, sujeto a variación según ubicación."
     }
   ],
-  "fetched": "2026-04-18T08:00:53.816Z"
+  "fetched": "2026-04-18T14:12:00.355Z"
 }
