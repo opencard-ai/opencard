@@ -68,5 +68,14 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "$100 Annual Hotel Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$100 annual credit for prepaid hotels via Citi Travel."
+    }
+  ]
 }

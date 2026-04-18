@@ -87,5 +87,21 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "$300 Annual Travel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$300 annual credit for bookings through Capital One Travel."
+    },
+    {
+      "name": "Priority Pass Plus Plaza Premium",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Unlimited lounge access for cardholder + 2 guests at 1,300+ lounges worldwide."
+    }
+  ]
 }

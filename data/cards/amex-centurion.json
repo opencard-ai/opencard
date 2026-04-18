@@ -44,5 +44,21 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.943Z"
+  "last_updated": "2026-04-16T13:41:49.943Z",
+  "recurring_credits": [
+    {
+      "name": "Centurion Lounge Access",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Complimentary access to Centurion Lounges worldwide for cardholder + 2 guests."
+    },
+    {
+      "name": "Fine Hotels + Resorts Access",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "FHR benefits - upgrades, late checkout, food & beverage credits at luxury properties."
+    }
+  ]
 }

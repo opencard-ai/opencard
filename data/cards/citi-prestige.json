@@ -54,5 +54,21 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.977Z"
+  "last_updated": "2026-04-16T13:41:49.977Z",
+  "recurring_credits": [
+    {
+      "name": "$250 Hotel Credit",
+      "amount": 250,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$250 annual credit for hotel bookings via Citi Travel."
+    },
+    {
+      "name": "$100 Airport Concierge Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$100 credit for airport concierge services."
+    }
+  ]
 }

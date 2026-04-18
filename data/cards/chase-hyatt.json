@@ -59,5 +59,21 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.966Z"
+  "last_updated": "2026-04-16T13:41:49.966Z",
+  "recurring_credits": [
+    {
+      "name": "Free Anniversary Night",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "1 free night certificate each year at any Category 1-4 Hyatt property."
+    },
+    {
+      "name": "Hyatt Discoverist Status",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Complimentary Discoverist status - waived resort fees, expedited check-in."
+    }
+  ]
 }

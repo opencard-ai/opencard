@@ -141,5 +141,42 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "$300 Annual Travel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$300 annual credit for travel purchases. Automatically applied."
+    },
+    {
+      "name": "$500 The Edit Credit",
+      "amount": 500,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$500 annual credit for prepaid hotels via The Edit by Chase Travel."
+    },
+    {
+      "name": "$120 Lyft Credits",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "other",
+      "description": "$120 annual ($10/month) for Lyft rides. Enrollment required."
+    },
+    {
+      "name": "$200 Google Workspace Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "other",
+      "description": "$200 annual credit for Google Workspace purchases."
+    },
+    {
+      "name": "$100 Global Entry Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $100 every 4 years for Global Entry or TSA PreCheck."
+    }
+  ]
 }
