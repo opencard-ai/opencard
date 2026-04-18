@@ -82,5 +82,21 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "$100 Lounge Access Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$100 annual credit for lounge access (Centurion Lounges, Priority Pass, etc.)."
+    },
+    {
+      "name": "$100 Resy Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "dining",
+      "description": "$100 annually for Resy restaurant bookings."
+    }
+  ]
 }

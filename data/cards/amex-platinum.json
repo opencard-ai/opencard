@@ -154,5 +154,84 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "$200 Airline Fee Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$200 annual credit for airline incidentals (seat upgrades, baggage, etc.). Enrollment required."
+    },
+    {
+      "name": "$300 Fine Hotels + Resorts Credit",
+      "amount": 300,
+      "frequency": "semi_annual",
+      "category": "travel",
+      "description": "$300 semi-annual ($600/year) for prepaid FHR or THC bookings via Amex Travel."
+    },
+    {
+      "name": "$20 Digital Entertainment Credit",
+      "amount": 20,
+      "frequency": "monthly",
+      "category": "entertainment",
+      "description": "$20 monthly credit for digital entertainment (Paramount+, Audible, Peacock, etc.). Enrollment required."
+    },
+    {
+      "name": "$10 Equinox Credit",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "other",
+      "description": "$10 monthly credit for Equinox gym membership or Equinox+ app."
+    },
+    {
+      "name": "$10 Walmart+ Credit",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "shopping",
+      "description": "$10 monthly credit for Walmart+ membership (formerly called Walmart+. Enrollment required."
+    },
+    {
+      "name": "$100 Resy Credit",
+      "amount": 100,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "$100 quarterly ($400/year) for Resy restaurant bookings. Must pay with Amex Gold."
+    },
+    {
+      "name": "$75 lululemon Credit",
+      "amount": 75,
+      "frequency": "quarterly",
+      "category": "shopping",
+      "description": "$75 quarterly ($300/year) at lululemon. Must pay with Amex Gold."
+    },
+    {
+      "name": "$15 Uber Cash",
+      "amount": 15,
+      "frequency": "monthly",
+      "category": "other",
+      "description": "$15 monthly ($180/year) for Uber rides and Uber Eats in the US. Enrollment required."
+    },
+    {
+      "name": "Global Entry / PreCheck Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $100 credit every 4 years for Global Entry or $85 for TSA PreCheck."
+    },
+    {
+      "name": "Marriott Bonvoy Gold Elite Status",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Complimentary Gold Elite status with Marriott Bonvoy (25% bonus on base points, late checkout, upgraded room when available)."
+    },
+    {
+      "name": "Hilton Honors Gold Status",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Complimentary Gold status with Hilton (80% bonus on base points, 5th night free on award stays, breakfast at select properties)."
+    }
+  ]
 }
