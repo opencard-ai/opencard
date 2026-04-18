@@ -343,12 +343,52 @@ export default function MyCardsPage({
           </div>
         )}
 
+        {/* Landing banner for new visitors */}
+        {!isSubscribed && selectedCardsList.length === 0 && (
+          <div className="space-y-3">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 text-white">
+              <h2 className="text-lg font-bold mb-2">💳 Never miss a credit card benefit again</h2>
+              <p className="text-slate-300 text-sm mb-4 leading-relaxed">
+                We track your Amex, Chase, Capital One & more — and email you before credits expire. No app needed.
+              </p>
+              <div className="grid grid-cols-3 gap-2 mb-4">
+                {["✈️ Travel", "🍽️ Dining", "📺 Streaming"].map((item) => (
+                  <div key={item} className="bg-white/10 rounded-lg px-3 py-2 text-center text-xs text-slate-200">{item}</div>
+                ))}
+              </div>
+              <p className="text-xs text-slate-400 mb-3">Supported issuers: Amex · Chase · Capital One · Citi · US Bank · Bilt · Discover</p>
+              <div className="bg-white/10 rounded-xl p-4">
+                <p className="text-xs text-slate-300 mb-2 font-medium">📬 Get a free monthly reminder — enter your email above!</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+              <p className="text-xs text-slate-500 mb-3 font-medium">How it works</p>
+              <div className="space-y-2">
+                {[
+                  { step: "1", title: "Enter your email", desc: "30 seconds, no password" },
+                  { step: "2", title: "Select your cards", desc: "Pick from 290+ supported cards" },
+                  { step: "3", title: "Get monthly reminders", desc: "Before your credits expire" },
+                ].map(({ step, title, desc }) => (
+                  <div key={step} className="flex items-center gap-3">
+                    <span className="w-6 h-6 bg-slate-900 text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">{step}</span>
+                    <div>
+                      <p className="text-sm font-medium text-slate-800">{title}</p>
+                      <p className="text-xs text-slate-400">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Cards List */}
         {!loaded ? (
           <div className="bg-white rounded-2xl p-8 text-center">
             <p className="text-slate-400 text-sm">{m.loading}</p>
           </div>
-        ) : selectedCardsList.length === 0 ? (
+        ) : selectedCardsList.length === 0 && isSubscribed ? (
           <div className="bg-white rounded-2xl p-8 text-center">
             <p className="text-slate-400 text-sm mb-4">{m.noCards}</p>
             <Link
