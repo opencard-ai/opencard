@@ -82,5 +82,14 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Disney+ Streaming Credit",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "streaming",
+      "description": "$10/month Disney+ streaming credit"
+    }
+  ]
 }
