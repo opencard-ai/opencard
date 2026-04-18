@@ -197,7 +197,7 @@ export default function CardGrid({ cards, issuers, tags, locale }: CardGridProps
     <div id="cards-section" style={{ scrollMarginTop: "73px" }}>
       <FilterBar issuers={issuers} tags={tags} locale={locale} />
       <p className={`text-xs px-1 mb-3 ${locale === "en" ? "text-slate-400" : "text-slate-400"}`}>
-        💡 {locale === "zh" ? "點擊卡面上的 + 即可加入比較（最多 3 張）" : locale === "es" ? "Haz clic en + en cualquier tarjeta para agregarla a la comparación (hasta 3)" : "Tip: Click + on any card to add it to comparison (up to 3 cards)"}
+        💡 {locale === "zh" ? "⚖ 比較卡片（最多3張）· 💾 儲存到我的卡片" : locale === "es" ? "💡 ⚖ Compara hasta 3 tarjetas · 💾 Guarda en Mis Tarjetas" : "💡 ⚖ Compare up to 3 cards · 💾 Save to My Cards"}
       </p>
       <CardList cards={cards} tags={tags} locale={locale} />
     </div>
@@ -453,18 +453,18 @@ function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]
                     e.preventDefault();
                     const key = "opencard_existing_cards";
                     const stored = localStorage.getItem(key);
-                    const existing = stored ? JSON.parse(stored) : [];
-                    const alreadySaved = existing.some((c: any) => c.card_id === card.card_id);
+                    const existing: string[] = stored ? JSON.parse(stored) : [];
+                    const alreadySaved = existing.includes(card.card_id);
                     if (alreadySaved) {
                       // Remove from saved
-                      const updated = existing.filter((c: any) => c.card_id !== card.card_id);
+                      const updated = existing.filter((id) => id !== card.card_id);
                       localStorage.setItem(key, JSON.stringify(updated));
                     } else {
-                      // Add to saved
-                      existing.push(card);
+                      // Add card_id only (My Cards page fetches fresh data from DB)
+                      existing.push(card.card_id);
                       localStorage.setItem(key, JSON.stringify(existing));
                     }
-                    // Force re-render via a custom event
+                    // Notify My Cards page to refresh
                     window.dispatchEvent(new CustomEvent("opencard-my-cards-changed"));
                   }}
                   title="儲存到我的卡片"

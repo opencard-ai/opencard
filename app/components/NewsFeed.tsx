@@ -125,8 +125,8 @@ export default function NewsFeed({ lang }: Props) {
     return true;
   });
 
-  const displayItems = expanded ? filtered : filtered.slice(0, 8);
-  const hasMore = filtered.length > 8;
+  const displayItems = expanded ? filtered : filtered.slice(0, 3);
+  const hasMore = filtered.length > 3;
 
   type FilterKey = "all" | "cards" | "banking" | "deals" | "others";
   const filterTabs: { key: FilterKey; label: string }[] = [
