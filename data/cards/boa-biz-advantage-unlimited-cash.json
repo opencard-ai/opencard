@@ -1,0 +1,77 @@
+{
+  "card_id": "boa-biz-advantage-unlimited-cash",
+  "name": "Bank of America® Business Advantage Unlimited Cash Rewards Mastercard®",
+  "issuer": "Bank of America",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 5000,
+    "time_period_months": 3,
+    "bonus_points": 300,
+    "description": "$300 cash rewards bonus after making at least $5,000 in purchases in the first 90 days of account opening.",
+    "free_nights": null,
+    "point_program": "Cash Back"
+  },
+  "earning_rates": [
+    {
+      "category": "All purchases",
+      "rate": 1.5,
+      "notes": "Unlimited 1.5% cash back on all purchases. Rate boosted to 1.87%-2.62% with Preferred Rewards for Business."
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Purchase Protection",
+        "description": "Purchase protection on eligible items"
+      },
+      {
+        "name": "Free Employee Cards",
+        "description": "Free employee cards"
+      },
+      {
+        "name": "Flexible Redemption",
+        "description": "Redeem as deposit into BofA business checking or statement credit"
+      },
+      {
+        "name": "Preferred Rewards Boost",
+        "description": "25%-75% bonus rewards via Preferred Rewards for Business (Gold/Platinum/Platinum Honors)"
+      }
+    ]
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "business",
+    "cash-back",
+    "no-annual-fee",
+    "flat-rate"
+  ],
+  "sources": [
+    {
+      "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/unlimited-cash-rewards-business-credit-card/",
+      "notes": "Official BOA Business Page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/business/credit-cards/reviews/bank-of-america-business-advantage-unlimited-cash-rewards",
+      "notes": "NerdWallet review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.957Z",
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

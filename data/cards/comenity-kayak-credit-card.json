@@ -1,0 +1,67 @@
+{
+  "card_id": "comenity-kayak-credit-card",
+  "name": "KAYAK Credit Card",
+  "issuer": "Bread Financial / Comenity Bank",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": null,
+  "earning_rates": [
+    {
+      "category": "KAYAK Bookings",
+      "rate": 3,
+      "notes": "3x points on KAYAK bookings"
+    },
+    {
+      "category": "Travel (flights, hotels, rental cars)",
+      "rate": 2,
+      "notes": "2x points on travel (flights, hotels, car rentals) outside KAYAK"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1x point on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "KAYAK price freeze",
+        "description": "Free price freeze on KAYAK bookings"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "trip_cancellation": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "bread-financial",
+    "kayak",
+    "travel",
+    "rewards"
+  ],
+  "sources": [
+    {
+      "url": "https://www.breadfinancial.com/en/bread-financial-overview.html",
+      "notes": "Bread Financial overview"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.988Z",
+  "status": "active",
+  "notes": "Co-branded KAYAK travel card issued by Bread Financial/Comenity. Useful for KAYAK users. Points worth approximately 1 cent each.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "card_id": "tjx-rewards-credit",
+  "name": "TJX Rewards® Credit Card",
+  "issuer": "Synchrony",
+  "network": "Synchrony (store-only)",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Good",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "bonus_value": null,
+    "description": "10% off first purchase with the TJX Rewards Credit Card"
+  },
+  "earning_rates": [
+    {
+      "category": "T.J. Maxx, Marshalls, HomeGoods, Sierra, and Homesense",
+      "rate": 5,
+      "notes": "5% back in rewards at T.J. Maxx, Marshalls, HomeGoods, Sierra, and Homesense stores"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Exclusive cardholder perks",
+        "description": "Early access to sales and special promotions for cardholders"
+      },
+      {
+        "name": "Birthday bonus",
+        "description": "Extra rewards during birthday month (varies)"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "tjx",
+    "tjmaxx",
+    "marshalls",
+    "homegoods",
+    "store-card"
+  ],
+  "sources": [
+    {
+      "url": "https://m.marshalls.com/us/m/jump/topic/TJX-Rewards-Credit-Card/6500011p",
+      "notes": "Official TJX page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/tjx-rewards-platinum-mastercard",
+      "notes": "NerdWallet TJX overview"
+    },
+    {
+      "url": "https://financebuzz.com/tjmaxx-credit-card",
+      "notes": "FinanceBuzz"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.997Z",
+  "status": "active",
+  "notes": "Store-only card accepted at T.J. Maxx, Marshalls, HomeGoods, Sierra, and Homesense. 5% back is solid for bargain shoppers. Cannot be used outside TJX family of stores. Separate from TJX Rewards Platinum Mastercard which can be used anywhere.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

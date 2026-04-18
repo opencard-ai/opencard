@@ -1,0 +1,86 @@
+{
+  "card_id": "boa-biz-advantage-travel",
+  "name": "Bank of America® Business Advantage Travel Rewards World Mastercard®",
+  "issuer": "Bank of America",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 5000,
+    "time_period_months": 3,
+    "bonus_points": 50000,
+    "description": "50,000 online bonus points after making at least $5,000 in purchases in the first 90 days (redeemable for $500 travel statement credit).",
+    "free_nights": null,
+    "point_program": "Bank of America Travel Points"
+  },
+  "earning_rates": [
+    {
+      "category": "All purchases",
+      "rate": 1.5,
+      "notes": "Unlimited 1.5 points per $1 on all purchases, everywhere, every time"
+    },
+    {
+      "category": "BofA Travel Center",
+      "rate": 3,
+      "notes": "3x points on travel booked through Bank of America Travel Center"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "No Foreign Transaction Fees",
+        "description": "No foreign transaction fees"
+      },
+      {
+        "name": "Travel Accident Insurance",
+        "description": "$100,000 in travel accident insurance"
+      },
+      {
+        "name": "Auto Rental Insurance",
+        "description": "Auto rental insurance"
+      },
+      {
+        "name": "Lost Luggage Assistance",
+        "description": "Lost luggage assistance"
+      },
+      {
+        "name": "Preferred Rewards Boost",
+        "description": "25%-75% bonus rewards via Preferred Rewards for Business"
+      }
+    ]
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": false,
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "business",
+    "travel",
+    "points",
+    "no-annual-fee"
+  ],
+  "sources": [
+    {
+      "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/travel-rewards-business-credit-card/",
+      "notes": "Official BOA Business Page"
+    },
+    {
+      "url": "https://www.forbes.com/advisor/credit-cards/increased-bank-of-america-business-credit-cards-welcome-offers-are-live/",
+      "notes": "Forbes - elevated offers Mar 2026"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.956Z",
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

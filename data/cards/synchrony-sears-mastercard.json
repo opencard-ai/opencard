@@ -1,0 +1,72 @@
+{
+  "card_id": "synchrony-sears-mastercard",
+  "name": "Sears Mastercard®",
+  "issuer": "Synchrony",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Good",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "bonus_value": null,
+    "description": "$15 off first purchase with the Sears Mastercard"
+  },
+  "earning_rates": [
+    {
+      "category": "Sears, Kmart, Sears Home Services",
+      "rate": 2,
+      "notes": "20 points per $1 (2% back) at Sears, Kmart, and Sears Home Services"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "10 points per $1 (1% back) on all other eligible purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Shop Your Way Rewards",
+        "description": "Points redeemable through Shop Your Way rewards program"
+      },
+      {
+        "name": "Mastercard acceptance",
+        "description": "Use anywhere Mastercard is accepted"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "sears",
+    "kmart",
+    "mastercard",
+    "rewards"
+  ],
+  "sources": [
+    {
+      "url": "https://upgradedpoints.com/credit-cards/sears-credit-cards/",
+      "notes": "UpgradedPoints review"
+    },
+    {
+      "url": "https://wallethub.com/answers/cc/sears-credit-card-rewards-2140600209/",
+      "notes": "WalletHub rewards explainer"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.995Z",
+  "status": "transferred",
+  "notes": "IMPORTANT: The Sears Mastercard (Synchrony) has been discontinued/transferred to Citi — the Sears Mastercard became the Citi ThankYou Mastercard. The Shop Your Way Mastercard is now issued by Citi. Mark this record as historical/reference only. No longer available as new Synchrony product. The Sears store card may still be with Synchrony.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "card_id": "chase-sapphire-reserve-biz",
+  "name": "Chase Sapphire Reserve® for Business",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 795,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "spending_requirement": 5000,
+    "time_period_months": 3,
+    "bonus_points": 150000,
+    "estimated_value": 2250,
+    "point_program": "Chase Ultimate Rewards",
+    "description": "150,000 bonus points after spending $5,000 in first 3 months (estimated $2,250 toward travel via Chase Travel or transfer partners)"
+  },
+  "earning_rates": [
+    {
+      "category": "Chase Travel",
+      "rate": 8,
+      "notes": "8x points on travel purchased through Chase Travel"
+    },
+    {
+      "category": "All Other Travel",
+      "rate": 5,
+      "notes": "5x points on all other travel purchases worldwide"
+    },
+    {
+      "category": "Dining",
+      "rate": 3,
+      "notes": "3x points at restaurants worldwide including takeout and delivery"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1x points on all other purchases"
+    }
+  ],
+  "annual_credits": [
+    {
+      "name": "Travel Credit",
+      "amount": 300,
+      "frequency": "Annual",
+      "description": "$300 annual credit on travel purchases (auto-applied, no enrollment)"
+    },
+    {
+      "name": "DoorDash Credit",
+      "amount": 15,
+      "frequency": "Monthly",
+      "description": "$15 monthly DoorDash credit (enrollment required, $180/year total)"
+    },
+    {
+      "name": "Instacart Credit",
+      "amount": 15,
+      "frequency": "Monthly",
+      "description": "$15 monthly Instacart credit (enrollment required, $180/year total)"
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Priority Pass Select",
+        "description": "Unlimited Priority Pass Select lounge access for cardmember and guests"
+      },
+      {
+        "name": "Global Entry/TSA PreCheck",
+        "description": "Up to $120 reimbursement for Global Entry, TSA PreCheck, or NEXUS every 4 years"
+      },
+      {
+        "name": "Transfer Partners",
+        "description": "1:1 point transfer to 14+ airline/hotel partners including United, Southwest, Hyatt, Marriott, British Airways"
+      },
+      {
+        "name": "Primary Auto Rental Collision Damage Waiver",
+        "description": "Primary rental car coverage worldwide"
+      },
+      {
+        "name": "Emergency Evacuation Coverage",
+        "description": "Up to $100,000 for emergency medical evacuation"
+      },
+      {
+        "name": "Trip Cancellation/Interruption",
+        "description": "Up to $20,000 per person and $40,000 per trip"
+      },
+      {
+        "name": "24/7 Concierge",
+        "description": "Access to travel and lifestyle concierge services"
+      },
+      {
+        "name": "Employee Cards at No Cost",
+        "description": "Add employee cards at no additional annual fee"
+      },
+      {
+        "name": "FHR Benefits",
+        "description": "Access to Chase's Luxury Hotel & Resort Collection (FHR) with breakfast, early check-in, upgrades, $100 experience credit"
+      },
+      {
+        "name": "The Hotel Collection",
+        "description": "THC: Complimentary room upgrade and $100 food/beverage credit at THC properties"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": true,
+    "thc_eligible": true,
+    "notes": "Full FHR and THC access for business travelers. Can be combined with personal Sapphire Reserve for doubled lounge access and credits."
+  },
+  "insurance": {
+    "trip_cancellation": true,
+    "trip_delay": true,
+    "rental_insurance": "Primary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "business",
+    "travel",
+    "ultimate-rewards",
+    "premium",
+    "lounge-access",
+    "fhr",
+    "thc"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/business-credit-cards/sapphire/reserve",
+      "notes": "Official Chase business page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/business/credit-cards/reviews/sapphire-reserve-business",
+      "notes": "NerdWallet business review"
+    },
+    {
+      "url": "https://www.cnbc.com/select/chase-sapphire-reserve-for-business-review/",
+      "notes": "CNBC Select review"
+    }
+  ],
+  "notes": "Business version of Sapphire Reserve. Same $795 AF and credits. 150,000 point welcome bonus (higher than personal) makes it very attractive. Employee cards are free. Can combine points with personal Sapphire Reserve for larger balances. Key for business travelers who want same premium benefits as personal Reserve.",
+  "last_updated": "2026-04-16T13:41:49.969Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
+  "recurring_credits": [
+    {
+      "name": "$300 Annual Travel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$300 annual credit for travel purchases. Automatically applied.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "$500 The Edit Credit",
+      "amount": 500,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$500 annual credit for prepaid hotels via The Edit by Chase Travel.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "$120 Lyft Credits",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "other",
+      "description": "$120 annual ($10/month) for Lyft rides. Enrollment required.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "$200 Google Workspace Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "other",
+      "description": "$200 annual credit for Google Workspace purchases.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "$100 Global Entry Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $100 every 4 years for Global Entry or TSA PreCheck.",
+      "reset_type": "cardmember_year"
+    }
+  ]
+}
