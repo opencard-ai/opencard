@@ -1,0 +1,86 @@
+{
+  "card_id": "synchrony-jcpenney-mastercard",
+  "name": "JCPenney Mastercard®",
+  "issuer": "Synchrony",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair to Good",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "bonus_value": null,
+    "description": "5%–35% back on select items on first purchase as new cardholder"
+  },
+  "earning_rates": [
+    {
+      "category": "JCPenney purchases",
+      "rate": 5,
+      "notes": "5% back in JCPenney rewards (typically 5 points per $1, worth about 5%)"
+    },
+    {
+      "category": "Gas stations",
+      "rate": 2,
+      "notes": "2% back at U.S. gas stations"
+    },
+    {
+      "category": "Restaurant purchases",
+      "rate": 2,
+      "notes": "2% back at U.S. restaurants"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1% back on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "JCPenney Rewards",
+        "description": "$10 JCPenney reward certificate for every 200 points earned"
+      },
+      {
+        "name": "Mastercard acceptance",
+        "description": "Use anywhere Mastercard is accepted"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "jcpenney",
+    "mastercard",
+    "store-card",
+    "cash-back"
+  ],
+  "sources": [
+    {
+      "url": "https://maxrewards.com/credit-cards/jcpenney",
+      "notes": "MaxRewards"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/jcpenney-credit-card",
+      "notes": "NerdWallet"
+    },
+    {
+      "url": "https://www.creditkarma.com/credit-cards/insights/jcpenney-credit-card",
+      "notes": "Credit Karma"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.987Z",
+  "status": "active",
+  "notes": "JCPenney-branded Mastercard from Synchrony. Earns points usable at JCPenney. Points expire if no activity. Card criticized for poor customer service but offers decent rewards for heavy JCPenney shoppers.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

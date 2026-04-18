@@ -1,0 +1,84 @@
+{
+  "card_id": "us-bank-biz-leverage-visa",
+  "name": "U.S. Bank Business Leverage® Visa Signature® Card",
+  "issuer": "U.S. Bank",
+  "network": "Visa",
+  "annual_fee": 95,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 7500,
+    "time_period_months": 4,
+    "bonus_value": 750,
+    "description": "$750 cash back after spending $7,500 within first 120 days"
+  },
+  "earning_rates": [
+    {
+      "category": "Top 2 spending categories (auto)",
+      "rate": 2,
+      "notes": "Automatic 2x points in your top 2 eligible spending categories each month; no caps"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1x points on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "No preset spending limit",
+        "description": "Flexible spending powered by Visa Signature"
+      },
+      {
+        "name": "Employee cards at no extra cost",
+        "description": "Add employee cards with no annual fee"
+      },
+      {
+        "name": "Extended warranty coverage",
+        "description": "Purchase protection and extended warranty"
+      },
+      {
+        "name": "No foreign transaction fees",
+        "description": "Use internationally without fees"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "extended_warranty": true,
+    "purchase_protection": true
+  },
+  "tags": [
+    "business",
+    "cash-back",
+    "visa"
+  ],
+  "sources": [
+    {
+      "url": "https://www.usbank.com/business-banking/business-credit-cards/business-leverage-rewards-credit-card.html",
+      "notes": "Official U.S. Bank page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/business/credit-cards/reviews/us-bank-business-leverage",
+      "notes": "NerdWallet review"
+    },
+    {
+      "url": "https://www.doctorofcredit.com/us-bank-business-leverage-card-bonus-750-after-7500-spend/",
+      "notes": "DoC welcome offer tracking"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:50.006Z",
+  "status": "active",
+  "notes": "Annual fee waived first year. Automatically earns 2x in top 2 categories — no need to activate.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

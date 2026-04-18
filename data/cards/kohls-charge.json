@@ -1,0 +1,70 @@
+{
+  "card_id": "kohls-charge",
+  "name": "Kohl's Charge Card",
+  "issuer": "Capital One",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Fair",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "time_period_months": null,
+    "bonus_points": null,
+    "description": "Get 40% off your first purchase at Kohl's within 30 days of credit approval — in store or online",
+    "point_program": "Kohl's Rewards"
+  },
+  "earning_rates": [
+    {
+      "category": "Kohl's purchases (Rewards Members)",
+      "rate": 7.5,
+      "notes": "Earn 7.5% back in Kohl's Rewards on all Kohl's purchases"
+    },
+    {
+      "category": "Kohl's purchases (non-Rewards Members)",
+      "rate": 5,
+      "notes": "Earn 5% back in Kohl's Rewards without Kohl's Rewards membership"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      "Monthly exclusive savings opportunities for cardholders",
+      "Special anniversary offer every year",
+      "40% first-purchase discount for new cardholders"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "sources": [
+    {
+      "url": "https://www.forbes.com/advisor/credit-cards/reviews/kohls-card/",
+      "notes": "Forbes: Kohl's Credit Card from Capital One earns 7.5% rewards for Kohl's Rewards members"
+    },
+    {
+      "url": "https://money.usnews.com/credit-cards/capital-one/kohls-credit-card",
+      "notes": "U.S. News: 40% discount on first purchase for new cardholders within 30 days"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/kohls-credit-card",
+      "notes": "NerdWallet: variety of discounts available, good for frequent Kohl's shoppers"
+    }
+  ],
+  "notes": "Store card for Kohl's shoppers only. Earns 7.5% back at Kohl's for Rewards Members (5% otherwise). No annual fee. New cardholders get 40% off first purchase within 30 days. Card has no value outside Kohl's — cannot be used elsewhere. Anniversary discounts and monthly exclusive offers add value for frequent Kohl's shoppers. Issued as both a Mastercard (usable anywhere) and a store-only card. Not worth getting just for the discount unless you shop at Kohl's regularly.",
+  "confidence": "high",
+  "last_updated": "2026-04-16T13:41:49.988Z",
+  "tags": [],
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

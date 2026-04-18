@@ -1,0 +1,53 @@
+{
+  "card_id": "amex-graphite-biz",
+  "name": "Amex Graphite Business Cash",
+  "issuer": "American Express",
+  "network": "Visa/Mastercard",
+  "annual_fee": 295,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "bonus_points": 0,
+    "description": "No welcome bonus",
+    "estimated_value": null,
+    "spending_requirement": null,
+    "time_period_months": null
+  },
+  "earning_rates": [
+    {
+      "category": "Travel",
+      "rate": 2,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "travel"
+  ],
+  "sources": [],
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
+  "last_updated": "2026-04-16T13:41:49.947Z"
+}

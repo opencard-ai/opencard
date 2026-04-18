@@ -1,0 +1,78 @@
+{
+  "card_id": "barclays-royal-caribbean-visa-signature",
+  "name": "Royal Caribbean Visa Signature® Card",
+  "issuer": "Barclays",
+  "network": "Visa Signature",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 50000,
+    "description": "50,000 Royal Caribbean points after spending $1,000 in first 90 days (worth $500 onboard credit per some sources)",
+    "point_program": "Royal Caribbean Points"
+  },
+  "earning_rates": [
+    {
+      "category": "Royal Caribbean, Celebrity Cruises, and Silversea purchases",
+      "rate": 2,
+      "notes": "2x points per $1 on qualifying purchases with Royal Caribbean Group brands"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1x point per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "Onboard credit and discounts",
+      "No annual fee",
+      "No foreign transaction fees",
+      "⚠️ NOTE: Royal Caribbean has transitioned to new Royal ONE/Royal ONE Plus cards with Bank of America (March 2026). Barclays-issued version may be discontinued."
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "cruise",
+    "travel",
+    "royal-caribbean"
+  ],
+  "sources": [
+    {
+      "url": "nerdwallet.com"
+    },
+    {
+      "url": "maxrewards.com"
+    },
+    {
+      "url": "royalcaribbean.com"
+    },
+    {
+      "url": "cruisecritic.com"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.994Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

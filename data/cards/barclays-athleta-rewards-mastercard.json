@@ -1,0 +1,81 @@
+{
+  "card_id": "barclays-athleta-rewards-mastercard",
+  "name": "Athleta Rewards Mastercard®",
+  "issuer": "Barclays",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "description": "20% off first purchase with new card at Athleta",
+    "point_program": "Points"
+  },
+  "earning_rates": [
+    {
+      "category": "Gap Inc. brands (Athleta, Gap, Banana Republic, Old Navy)",
+      "rate": 5,
+      "notes": "5x points per $1 at Athleta and all Gap Inc. family of brands"
+    },
+    {
+      "category": "All eligible retail apparel brands",
+      "rate": 3,
+      "notes": "3x points per $1 spent at all other eligible retail apparel brands"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1x point per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "Free shipping on Athleta orders",
+      "Birthday bonus points",
+      "Obe Fitness access (complimentary membership)",
+      "No annual fee",
+      "No foreign transaction fees"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "retail",
+    "fitness",
+    "apparel"
+  ],
+  "sources": [
+    {
+      "url": "nerdwallet.com"
+    },
+    {
+      "url": "maxrewards.com"
+    },
+    {
+      "url": "barclaycardus.com"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.951Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}

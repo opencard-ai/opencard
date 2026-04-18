@@ -1,0 +1,66 @@
+{
+  "card_id": "bilt-obsidian",
+  "name": "Bilt Obsidian Card",
+  "issuer": "First Electronic Bank",
+  "network": "Mastercard",
+  "annual_fee": 95,
+  "annual_fee_description": "$95 annual fee",
+  "welcome_offer": {
+    "bonus": "75,000 Bilt bonus points",
+    "requirement": "Spend $5,000 on purchases in the first 3 months from account opening"
+  },
+  "earning_rates": [
+    {
+      "category": "all",
+      "rate": 2,
+      "rate_type": "points_per_dollar",
+      "description": "2X Bilt points on all purchases (base rate)"
+    },
+    {
+      "category": "choice_category",
+      "rate": 5,
+      "rate_type": "points_per_dollar",
+      "description": "Up to 5X points on a choice of category (up to $25,000/year) — dining, travel, or online shopping"
+    }
+  ],
+  "features": [
+    "Annual travel credit: $100 Bilt Travel portal credit",
+    "Priority Pass lounge access (for cardholder)",
+    "No foreign transaction fees",
+    "Earn up to 1.33X points on rent (up to 100% of rent as points)",
+    "Rent Day perk: double points on the 1st of each month"
+  ],
+  "tags": [
+    "rent",
+    "travel",
+    "premium"
+  ],
+  "sources": [
+    {
+      "url": "https://newsroom.biltrewards.com/meetbiltcard2.0"
+    },
+    {
+      "url": "https://awardwallet.com/credit-cards/bilt-rewards/bilt-obsidian-card/"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/bilt-credit-cards-current-offers/"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.955Z",
+  "travel_benefits": {
+    "hotel_status": [],
+    "lounge_access": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {},
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
+  "annual_credits": []
+}

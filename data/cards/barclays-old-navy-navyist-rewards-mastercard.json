@@ -1,0 +1,84 @@
+{
+  "card_id": "barclays-old-navy-navyist-rewards-mastercard",
+  "name": "Old Navy Navyist Rewards Mastercard®",
+  "issuer": "Barclays",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "spending_requirement": 1,
+    "time_period_months": 0,
+    "bonus_points": 30,
+    "description": "30 points after spending $1 on purchases with new card (first purchase discount)",
+    "point_program": "Points"
+  },
+  "earning_rates": [
+    {
+      "category": "Old Navy and Gap Inc. brands",
+      "rate": 5,
+      "notes": "5x points per $1 at Old Navy and Gap Inc. family of brands"
+    },
+    {
+      "category": "All eligible retail apparel brands",
+      "rate": 3,
+      "notes": "3x points per $1 spent at all other eligible retail apparel brands"
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "1x point per $1 on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": [
+      "30% off first purchase with new card at Old Navy",
+      "Free shipping on Old Navy orders",
+      "Birthday bonus",
+      "Exclusive cardmember events",
+      "No annual fee",
+      "No foreign transaction fees"
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "retail",
+    "apparel"
+  ],
+  "sources": [
+    {
+      "url": "nerdwallet.com"
+    },
+    {
+      "url": "maxrewards.com"
+    },
+    {
+      "url": "barclaycardus.com"
+    },
+    {
+      "url": "forbes.com"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.992Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}
