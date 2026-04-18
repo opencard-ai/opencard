@@ -58,8 +58,12 @@
       }
     ],
     "other_benefits": [
+      "No Foreign Transaction Fees",
+      "1,000 Bonus Points per Stay",
+      "15 Elite Night Credits",
+      "Free Night Award (Spending-Based)",
       "15 Elite Night Credits per year (counts toward Bonvoy lifetime status)",
-      "No Foreign Transaction Fees"
+      "Premium In-Room Internet"
     ]
   },
   "fhr_thc": {
@@ -73,8 +77,9 @@
     "extended_warranty": true
   },
   "tags": [
+    "hotel",
     "marriott",
-    "hotel"
+    "hotel_marriott"
   ],
   "sources": [
     {
@@ -87,7 +92,7 @@
       "url": "https://thepointsguy.com/news/how-good-are-best-ever-marriott-amex-offers/"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.989Z",
+  "last_updated": "2026-04-18T05:57:34.749534+00:00",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
