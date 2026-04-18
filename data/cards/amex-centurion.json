@@ -51,14 +51,16 @@
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "Complimentary access to Centurion Lounges worldwide for cardholder + 2 guests."
+      "description": "Complimentary access to Centurion Lounges worldwide for cardholder + 2 guests.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "Fine Hotels + Resorts Access",
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "FHR benefits - upgrades, late checkout, food & beverage credits at luxury properties."
+      "description": "FHR benefits - upgrades, late checkout, food & beverage credits at luxury properties.",
+      "reset_type": "calendar_year"
     }
   ]
 }

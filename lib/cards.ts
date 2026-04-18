@@ -13,6 +13,15 @@ export interface EarningRate {
   notes?: string;
 }
 
+export interface RecurringCredit {
+  name: string;
+  amount: number;
+  frequency: "monthly" | "quarterly" | "semi_annual" | "annual";
+  category: string;
+  description: string;
+  reset_type?: "calendar_year" | "cardmember_year";
+}
+
 export interface AnnualCredit {
   name: string;
   amount: number;
@@ -90,6 +99,7 @@ export interface CreditCard {
   sources: Source[];
   tags: string[];
   status?: string;
+  recurring_credits?: RecurringCredit[];
 }
 
 export function getAllCards(): CreditCard[] {

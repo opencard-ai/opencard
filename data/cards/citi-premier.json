@@ -117,7 +117,8 @@
       "amount": 100,
       "frequency": "annual",
       "category": "travel",
-      "description": "$100 annual credit for prepaid hotels booked through Citi Travel ($500+ booking required)."
+      "description": "$100 annual credit for prepaid hotels booked through Citi Travel ($500+ booking required).",
+      "reset_type": "calendar_year"
     }
   ]
 }

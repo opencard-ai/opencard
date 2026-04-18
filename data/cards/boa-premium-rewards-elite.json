@@ -114,28 +114,32 @@
       "amount": 200,
       "frequency": "annual",
       "category": "travel",
-      "description": "$200 annual credit for travel or dining purchases."
+      "description": "$200 annual credit for travel or dining purchases.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "$100 Airline Incidentals Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "travel",
-      "description": "$100 annual credit for airline incidentals."
+      "description": "$100 annual credit for airline incidentals.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "$200 Annual Lifestyle Credit",
       "amount": 200,
       "frequency": "annual",
       "category": "other",
-      "description": "$200 annual credit for streaming, food delivery, fitness, and more."
+      "description": "$200 annual credit for streaming, food delivery, fitness, and more.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "Global Entry/PreCheck Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "travel",
-      "description": "Up to $100 every 4 years for Global Entry or TSA PreCheck."
+      "description": "Up to $100 every 4 years for Global Entry or TSA PreCheck.",
+      "reset_type": "calendar_year"
     }
   ]
 }

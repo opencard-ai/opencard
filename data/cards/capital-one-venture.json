@@ -72,21 +72,24 @@
       "amount": 300,
       "frequency": "annual",
       "category": "travel",
-      "description": "$300 annual credit for bookings made through Capital One Travel. Automatically applied."
+      "description": "$300 annual credit for bookings made through Capital One Travel. Automatically applied.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "Global Entry / PreCheck Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "travel",
-      "description": "Up to $100 credit every 4 years for Global Entry or TSA PreCheck."
+      "description": "Up to $100 credit every 4 years for Global Entry or TSA PreCheck.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "Priority Pass + Plaza Premium Lounges",
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "Complimentary Priority Pass Select + Plaza Premium lounge access for cardholder + 2 guests at 1,300+ airport lounges worldwide."
+      "description": "Complimentary Priority Pass Select + Plaza Premium lounge access for cardholder + 2 guests at 1,300+ airport lounges worldwide.",
+      "reset_type": "calendar_year"
     }
   ]
 }

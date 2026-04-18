@@ -98,14 +98,16 @@
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "1 free night certificate each year at Marriott properties."
+      "description": "1 free night certificate each year at Marriott properties.",
+      "reset_type": "cardmember_year"
     },
     {
       "name": "Marriott Bonvoy Gold Elite Status",
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "Complimentary Gold Elite status with Marriott Bonvoy."
+      "description": "Complimentary Gold Elite status with Marriott Bonvoy.",
+      "reset_type": "cardmember_year"
     }
   ]
 }

@@ -99,21 +99,24 @@
       "amount": 200,
       "frequency": "annual",
       "category": "travel",
-      "description": "$200 annual credit for airline incidentals."
+      "description": "$200 annual credit for airline incidentals.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "$100 Hilton Resort Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "travel",
-      "description": "$100 annual credit for qualifying charges at Hilton resort properties."
+      "description": "$100 annual credit for qualifying charges at Hilton resort properties.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "Hilton Gold Status",
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "Complimentary Gold status with Hilton - free breakfast and upgrades at select properties."
+      "description": "Complimentary Gold status with Hilton - free breakfast and upgrades at select properties.",
+      "reset_type": "calendar_year"
     }
   ]
 }

@@ -121,28 +121,32 @@
       "amount": 250,
       "frequency": "annual",
       "category": "travel",
-      "description": "$250 annual credit for airline incidentals."
+      "description": "$250 annual credit for airline incidentals.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "$250 Hilton Resort Credit",
       "amount": 250,
       "frequency": "annual",
       "category": "travel",
-      "description": "$250 annual credit for Hilton resort properties."
+      "description": "$250 annual credit for Hilton resort properties.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "Hilton Diamond Status",
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "Complimentary Diamond status - top tier with free breakfast, upgrades, late checkout."
+      "description": "Complimentary Diamond status - top tier with free breakfast, upgrades, late checkout.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "10 Free Night Credits",
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "10 free night credits each year (up to 80k points each, excludes Conrad and Waldorf Astoria)."
+      "description": "10 free night credits each year (up to 80k points each, excludes Conrad and Waldorf Astoria).",
+      "reset_type": "calendar_year"
     }
   ]
 }

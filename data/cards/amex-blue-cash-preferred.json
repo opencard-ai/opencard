@@ -92,21 +92,24 @@
       "amount": 180,
       "frequency": "annual",
       "category": "shopping",
-      "description": "$15 monthly ($180/year) back at US supermarkets. Automatically applied as statement credit."
+      "description": "$15 monthly ($180/year) back at US supermarkets. Automatically applied as statement credit.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "$84 Streaming Credit",
       "amount": 84,
       "frequency": "annual",
       "category": "entertainment",
-      "description": "$7 monthly ($84/year) for streaming subscriptions."
+      "description": "$7 monthly ($84/year) for streaming subscriptions.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "$100 Disney Bundle Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "entertainment",
-      "description": "$100 annual credit for Disney+ bundle (Disney+, Hulu, ESPN+). Enrollment required."
+      "description": "$100 annual credit for Disney+ bundle (Disney+, Hulu, ESPN+). Enrollment required.",
+      "reset_type": "calendar_year"
     }
   ]
 }
