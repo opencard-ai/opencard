@@ -123,19 +123,22 @@ function getCreditsThisPeriod(cards: CardData[]) {
 // Send email via AgentMail API
 async function sendEmail(to: string, subject: string, html: string): Promise<boolean> {
   try {
-    const res = await fetch("https://api.agentmail.to/v1/inboxes/messages/send", {
+    const res = await fetch(`https://api.agentmail.to/v0/inboxes/${FROM_INBOX}/messages/send`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${AGENTMAIL_API_KEY}`,
       },
       body: JSON.stringify({
-        inbox_id: FROM_INBOX,
         to: [to],
         subject,
         html,
       }),
     });
+    if (!res.ok) {
+      const err = await res.text();
+      console.error("AgentMail error:", err);
+    }
     return res.ok;
   } catch (err) {
     console.error("AgentMail send error:", err);
