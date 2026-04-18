@@ -83,7 +83,7 @@ export interface CreditCard {
   insurance: Insurance;
   hotel_program?: HotelProgram;
   application_rules?: {
-    rules: string[];
+    rules: Array<{ rule: string; description: string }>;
     notes?: string;
   };
   last_updated: string;
