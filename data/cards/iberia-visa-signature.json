@@ -58,5 +58,13 @@
   "application_rules": {
     "rules": [],
     "notes": null
+  },
+  "welcome_offer": {
+    "spending_requirement": 5000,
+    "time_period_months": 3,
+    "bonus_points": 75000,
+    "bonus_value": 0,
+    "description": "75,000 Avios after $5,000 spend within 3 months",
+    "point_program": "Avios"
   }
 }

@@ -7,7 +7,11 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "description": "No traditional welcome bonus. Earning starts immediately upon card use."
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "bonus_value": 0,
+    "description": "No welcome offer - ongoing cash back only"
   },
   "earning_rates": [
     {

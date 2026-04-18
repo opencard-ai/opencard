@@ -10,9 +10,8 @@
     "spending_requirement": 0,
     "time_period_months": 0,
     "bonus_points": 0,
-    "estimated_value": 0,
-    "point_program": "Target Circle",
-    "description": "10% off first Target shopping trip with RedCard"
+    "bonus_value": 0,
+    "description": "Store card - no welcome offer"
   },
   "earning_rates": [
     {
