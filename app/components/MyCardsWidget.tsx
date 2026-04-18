@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { trackCreditsViewed } from "@/lib/analytics";
 
 const STORAGE_KEY = "opencard_existing_cards";
 
@@ -56,6 +57,14 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
   const [issuers, setIssuers] = useState<IssuerGroup[]>([]);
   const [loaded, setLoaded] = useState(false);
   const m = MESSAGES[lang as keyof typeof MESSAGES] || MESSAGES.en;
+
+  // Track My Cards opened event (once per session)
+  useEffect(() => {
+    if (isOpen) {
+      const count = selectedCards.length;
+      trackCreditsViewed(count);
+    }
+  }, [isOpen]);
 
   // Fetch all cards grouped by issuer
   useEffect(() => {

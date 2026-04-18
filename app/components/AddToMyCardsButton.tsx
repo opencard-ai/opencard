@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { trackCardAdded } from '@/lib/analytics';
 
 interface AddToMyCardsButtonProps {
   cardId: string;
@@ -23,6 +24,7 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
       myCards.push(cardId);
       localStorage.setItem('opencard_my_cards', JSON.stringify(myCards));
       setAdded(true);
+      trackCardAdded(cardId);
     }
   };
 
