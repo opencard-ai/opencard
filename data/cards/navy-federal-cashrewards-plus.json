@@ -7,11 +7,11 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",
   "welcome_offer": {
-    "spending_requirement": 0,
-    "time_period_months": 0,
+    "spending_requirement": 2500,
+    "time_period_months": 3,
     "bonus_points": 0,
-    "bonus_value": 0,
-    "description": "Navy Federal - no public welcome offer"
+    "bonus_value": 250,
+    "description": "$250 cash back after $2,500 spend in 90 days"
   },
   "earning_rates": [
     {

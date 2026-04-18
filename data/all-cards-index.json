@@ -1825,21 +1825,6 @@
       ]
     },
     {
-      "card_id": "costco-anywhere-visa-citi",
-      "name": "Costco Anywhere Visa by Citi",
-      "issuer": "Citi",
-      "network": "Visa",
-      "annual_fee": 0,
-      "tags": [
-        "cashback",
-        "costco",
-        "gas",
-        "travel",
-        "dining",
-        "no-annual-fee"
-      ]
-    },
-    {
       "card_id": "delta-skymiles-blue-amex",
       "name": "Delta SkyMiles® Blue American Express Card",
       "issuer": "American Express",

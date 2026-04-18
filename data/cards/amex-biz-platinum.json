@@ -133,10 +133,11 @@
     }
   ],
   "welcome_offer": {
-    "spending_requirement": 0,
-    "time_period_months": 0,
-    "bonus_points": 0,
+    "spending_requirement": 20000,
+    "time_period_months": 3,
+    "bonus_points": 300000,
     "bonus_value": 0,
-    "description": "Verify current offer - check DoC"
+    "description": "Up to 300,000 Membership Rewards points after $20,000 spend in 3 months (targeted offer)",
+    "point_program": "Membership Rewards"
   }
 }
