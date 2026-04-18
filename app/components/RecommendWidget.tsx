@@ -274,7 +274,7 @@ export default function RecommendWidget({ lang = "en" }: { lang?: string }) {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 ${
+        className={`h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 min-w-[140px] justify-center ${
           isOpen 
             ? "bg-blue-700 text-white shadow-2xl" 
             : "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-xl hover:shadow-2xl"

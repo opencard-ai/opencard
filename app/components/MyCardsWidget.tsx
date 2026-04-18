@@ -286,7 +286,7 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 ${
+        className={`h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 min-w-[140px] justify-center ${
           isOpen
             ? "bg-slate-800 text-white shadow-xl"
             : "bg-white text-slate-700 border-2 border-slate-200 shadow-md hover:shadow-lg hover:border-slate-300"
