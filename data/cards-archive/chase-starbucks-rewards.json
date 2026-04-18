@@ -1,0 +1,76 @@
+{
+  "card_id": "chase-starbucks-rewards",
+  "name": "Starbucks® Rewards Visa® Card",
+  "issuer": "Chase",
+  "network": "Visa",
+  "annual_fee": 49,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "status": "discontinued",
+  "welcome_offer": null,
+  "earning_rates": [
+    {
+      "category": "Starbucks (App Load)",
+      "rate": 1,
+      "notes": "1 Star per $1 when loading Starbucks Card via Starbucks mobile app with the Visa"
+    },
+    {
+      "category": "Starbucks (Direct Pay)",
+      "rate": 2,
+      "notes": "2 Stars per $1 paid directly with the Starbucks Rewards Visa Card at Starbucks"
+    },
+    {
+      "category": "Groceries",
+      "rate": 0.5,
+      "notes": "1 Star per $2 spent at grocery stores"
+    },
+    {
+      "category": "Local Transit & Commuting",
+      "rate": 0.5,
+      "notes": "1 Star per $2 spent on local transit and commuting"
+    },
+    {
+      "category": "Internet, Cable & Phone Services",
+      "rate": 0.5,
+      "notes": "1 Star per $2 spent on internet, cable and phone services"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 0.25,
+      "notes": "1 Star per $4 spent on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {},
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "purchase_protection": true,
+    "extended_warranty": true
+  },
+  "tags": [
+    "starbucks",
+    "co-branded",
+    "discontinued",
+    "coffee"
+  ],
+  "sources": [
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/starbucks-rewards",
+      "notes": "NerdWallet review (discontinued card)"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/reviews/starbucks-rewards-visa-card-review/",
+      "notes": "TPG archived review"
+    }
+  ],
+  "notes": "DISCONTINUED: Stopped accepting new applications mid-2022; fully discontinued July 2023. Existing cardholders were migrated to Chase Freedom cards. No new applications accepted. Earning rates were Stars-based (Starbucks loyalty currency). No longer in production.",
+  "last_updated": "2026-04-16T13:41:49.996Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}
