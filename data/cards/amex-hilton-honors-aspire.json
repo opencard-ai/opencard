@@ -11,7 +11,8 @@
     "time_period_months": 6,
     "bonus_points": 175000,
     "description": "Earn 175,000 Hilton Honors Bonus Points after spending $6,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
-    "point_program": "Hilton Honors"
+    "point_program": "Hilton Honors",
+    "estimated_value": 700
   },
   "earning_rates": [
     {

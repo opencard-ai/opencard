@@ -12,7 +12,8 @@
     "bonus_points": 90000,
     "description": "Earn 90,000 bonus miles after you spend $4,000 on purchases in the first 3 months your account is open. Plus earn 3,000 PQP (Premier Qualifying Points) after spending $4,000. Additional 10,000 bonus miles if you add an authorized user in first 3 months.",
     "free_nights": null,
-    "point_program": "United MileagePlus"
+    "point_program": "United MileagePlus",
+    "estimated_value": 1200
   },
   "earning_rates": [
     {

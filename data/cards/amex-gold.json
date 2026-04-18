@@ -12,7 +12,8 @@
     "bonus_points": 100000,
     "description": "Earn 100,000 Membership Rewards® Points after you spend $6,000 on eligible purchases on your new Card within the first 6 months of Card Membership. Limited time offer.",
     "free_nights": null,
-    "point_program": "Membership Rewards"
+    "point_program": "Membership Rewards",
+    "estimated_value": 2000
   },
   "earning_rates": [
     {

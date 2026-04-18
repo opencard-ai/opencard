@@ -11,7 +11,8 @@
     "time_period_months": 6,
     "bonus_points": 70000,
     "description": "Earn 70,000 Bonus Miles after spending $6,000 in purchases on your new Card in your first 6 months of Card Membership.",
-    "point_program": "Delta SkyMiles"
+    "point_program": "Delta SkyMiles",
+    "estimated_value": 800
   },
   "earning_rates": [
     {

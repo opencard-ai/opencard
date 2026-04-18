@@ -138,6 +138,7 @@
     "bonus_points": 300000,
     "bonus_value": 0,
     "description": "Up to 300,000 Membership Rewards points after $20,000 spend in 3 months (targeted offer)",
-    "point_program": "Membership Rewards"
+    "point_program": "Membership Rewards",
+    "estimated_value": 6000
   }
 }

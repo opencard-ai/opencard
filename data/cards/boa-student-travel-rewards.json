@@ -12,7 +12,8 @@
     "bonus_points": 25000,
     "description": "25,000 online bonus points after making at least $1,000 in purchases in the first 90 days (redeemable for $250 travel statement credit).",
     "free_nights": null,
-    "point_program": "Bank of America Travel Points"
+    "point_program": "Bank of America Travel Points",
+    "estimated_value": 400
   },
   "earning_rates": [
     {

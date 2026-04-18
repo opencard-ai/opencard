@@ -12,7 +12,8 @@
     "bonus_points": 200000,
     "description": "Earn 200,000 Marriott Bonvoy bonus points after you use your new Card to make $6,000 in purchases within the first 6 months of Card Membership. Offer Ends 5/13/2026.",
     "free_nights": null,
-    "point_program": "Marriott Bonvoy"
+    "point_program": "Marriott Bonvoy",
+    "estimated_value": 1500
   },
   "earning_rates": [
     {

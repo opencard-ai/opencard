@@ -11,7 +11,8 @@
     "time_period_months": 3,
     "bonus_points": 30000,
     "description": "30,000 MyCruise bonus points (worth $300 onboard credit) after spending $1,000 in first 90 days",
-    "point_program": "MyCruise Points"
+    "point_program": "MyCruise Points",
+    "estimated_value": 300
   },
   "earning_rates": [
     {

@@ -11,7 +11,8 @@
     "time_period_months": 3,
     "bonus_points": 50000,
     "description": "50,000 Royal Caribbean points after spending $1,000 in first 90 days (worth $500 onboard credit per some sources)",
-    "point_program": "Royal Caribbean Points"
+    "point_program": "Royal Caribbean Points",
+    "estimated_value": 500
   },
   "earning_rates": [
     {

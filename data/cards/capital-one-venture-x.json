@@ -11,7 +11,8 @@
     "time_period_months": 3,
     "bonus_points": 75000,
     "description": "75,000 miles",
-    "point_program": "Capital One"
+    "point_program": "Capital One",
+    "estimated_value": 1400
   },
   "earning_rates": [
     {

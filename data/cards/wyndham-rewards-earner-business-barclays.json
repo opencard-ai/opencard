@@ -11,7 +11,8 @@
     "time_period_months": 3,
     "bonus_points": 45000,
     "description": "45,000 bonus Wyndham Rewards points after spending $3,000 and paying annual fee in full within first 90 days (enough for up to 6 free nights)",
-    "point_program": "Wyndham Rewards Points"
+    "point_program": "Wyndham Rewards Points",
+    "estimated_value": 300
   },
   "earning_rates": [
     {

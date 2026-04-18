@@ -9,9 +9,10 @@
   "welcome_offer": {
     "spending_requirement": 4,
     "time_period_months": 3,
-    "bonus_points": 75000250,
+    "bonus_points": 75000,
     "description": "75,000 miles + $250 Capital One Travel credit",
-    "point_program": "Capital One"
+    "point_program": "Capital One",
+    "estimated_value": 1400
   },
   "earning_rates": [
     {

@@ -11,7 +11,8 @@
     "time_period_months": 3,
     "bonus_points": 60000,
     "description": "60,000 Atmos Rewards points after spending $1,000 in first 90 days",
-    "point_program": "Atmos Rewards Points"
+    "point_program": "Atmos Rewards Points",
+    "estimated_value": 600
   },
   "earning_rates": [
     {
