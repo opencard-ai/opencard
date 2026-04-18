@@ -111,5 +111,12 @@
       "description": "$100 annual credit for Disney+ bundle (Disney+, Hulu, ESPN+). Enrollment required.",
       "reset_type": "calendar_year"
     }
-  ]
+  ],
+  "welcome_offer": {
+    "spending_requirement": 3000,
+    "time_period_months": 6,
+    "bonus_points": 0,
+    "bonus_value": 300,
+    "description": "Up to $300 cash back after $3,000 spend within 6 months"
+  }
 }

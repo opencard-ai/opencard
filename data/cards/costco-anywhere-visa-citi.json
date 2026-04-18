@@ -5,7 +5,13 @@
   "network": "Visa",
   "annual_fee": 0,
   "annual_fee_description": "$0 annual fee (with paid Costco membership)",
-  "welcome_offer": null,
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "bonus_value": 0,
+    "description": "No welcome offer - ongoing cash back only"
+  },
   "welcome_offer_description": "No welcome bonus",
   "earning_rates": [
     {

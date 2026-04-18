@@ -55,5 +55,12 @@
   "application_rules": {
     "rules": [],
     "notes": null
+  },
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "bonus_value": 0,
+    "description": "Card reportedly discontinued"
   }
 }

@@ -61,5 +61,12 @@
   "application_rules": {
     "rules": [],
     "notes": null
+  },
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": 0,
+    "bonus_value": 250,
+    "description": "$250 cash back after $500 spend within 3 months"
   }
 }

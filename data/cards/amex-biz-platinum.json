@@ -131,5 +131,12 @@
       "description": "$100 quarterly ($400/year) for Dell purchases. Enrollment required.",
       "reset_type": "calendar_year"
     }
-  ]
+  ],
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "bonus_value": 0,
+    "description": "Verify current offer - check DoC"
+  }
 }
