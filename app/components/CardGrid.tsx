@@ -1,10 +1,9 @@
 "use client";
 
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import CompareBar from "./CompareBar";
 import Link from "next/link";
-import { useMemo } from "react";
 import type { CreditCard } from "@/lib/cards";
 
 interface CardGridProps {
@@ -81,8 +80,8 @@ function cardMatchesTag(card: CreditCard, tagValue: string, allTags: string[]): 
     return group.tags.some((t) => card.tags.includes(t));
   }
 
-  // Fallback to direct tag match
-  return card.tags.includes(tagValue);
+  // Only predefined tag groups are valid filter values; no individual tag fallback
+  return false;
 }
 
 const LABELS: Record<string, Record<string, string>> = {
