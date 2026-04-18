@@ -10,17 +10,27 @@ const redis = new Redis({
 
 const USER_PREFIX = "opencard:user:";
 
+async function hashEmail(email: string): Promise<string> {
+  const normalized = email.toLowerCase().trim();
+  const { createHash } = await import("node:crypto");
+  return createHash("sha256").update(normalized).digest("hex");
+}
+
+function isValidEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.toLowerCase().trim());
+}
+
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
     const email = searchParams.get("email");
 
-    if (!email) {
-      return NextResponse.json({ error: "Email is required" }, { status: 400 });
+    if (!email || !isValidEmail(email)) {
+      return NextResponse.json({ error: "Valid email is required" }, { status: 400 });
     }
 
-    const normalizedEmail = email.toLowerCase().trim();
-    const userKey = `${USER_PREFIX}${normalizedEmail}`;
+    const emailHash = await hashEmail(email);
+    const userKey = `${USER_PREFIX}${emailHash}`;
     const userData = await redis.hgetall(userKey) as Record<string, unknown> | null;
 
     if (!userData || !userData.created_at) {
@@ -29,7 +39,6 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json({
       subscribed: true,
-      email: normalizedEmail,
       card_count: ((userData.cards as string[]) || []).length,
       created_at: userData.created_at,
     });

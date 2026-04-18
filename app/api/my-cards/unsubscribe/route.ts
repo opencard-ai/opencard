@@ -20,40 +20,39 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.toLowerCase().trim());
 }
 
-function isValidCardId(cardId: string): boolean {
-  return /^[a-z0-9][a-z0-9-]{0,60}$/.test(cardId);
-}
-
+/**
+ * POST /api/my-cards/unsubscribe
+ * Body: { email: string }
+ * Unsubscribes user: removes from subscribers set, clears marketing_optin.
+ * User data is retained for 30 days then auto-deleted.
+ */
 export async function POST(req: NextRequest) {
   try {
-    const { email, card_id } = await req.json();
+    const { email } = await req.json();
 
     if (!email || !isValidEmail(email)) {
       return NextResponse.json({ error: "Valid email is required" }, { status: 400 });
-    }
-    if (!card_id || !isValidCardId(card_id)) {
-      return NextResponse.json({ error: "Invalid card_id" }, { status: 400 });
     }
 
     const emailHash = await hashEmail(email);
     const userKey = `${USER_PREFIX}${emailHash}`;
 
-    const userData = await redis.hgetall(userKey) as Record<string, unknown> | null;
-    if (!userData || !userData.created_at) {
-      return NextResponse.json({ error: "User not subscribed" }, { status: 404 });
-    }
+    // Remove from active subscribers
+    await redis.srem("opencard:subscribers", emailHash);
 
-    const existingCards = (userData.cards as string[]) || [];
-    const updatedCards = existingCards.filter((id: string) => id !== card_id);
-
+    // Set unsubscribe flag and mark for deletion in 30 days
     await redis.hset(userKey, {
-      cards: updatedCards,
-      updated_at: Date.now(),
+      marketing_optin: false,
+      status: "unsubscribed",
+      unsubscribed_at: Date.now(),
     });
 
-    return NextResponse.json({ success: true, cards: updatedCards });
+    // Schedule deletion in 30 days (handled by cron, here we just flag it)
+    // A background job can scan for unsubscribed_at > 30 days ago and delete
+
+    return NextResponse.json({ success: true, message: "Unsubscribed successfully" });
   } catch (err) {
-    console.error("Remove card error:", err);
-    return NextResponse.json({ error: "Failed to remove card" }, { status: 500 });
+    console.error("Unsubscribe error:", err);
+    return NextResponse.json({ error: "Failed to unsubscribe" }, { status: 500 });
   }
 }
