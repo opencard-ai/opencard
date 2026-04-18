@@ -1,6 +1,6 @@
 import { getAllCards } from "@/lib/cards";
-import { t, locales } from "@/lib/i18n";
-import Link from "next/link";
+import { locales } from "@/lib/i18n";
+import CardsGrid from "./CardsGrid";
 
 export const dynamic = "force-static";
 export const revalidate = 3600;
@@ -42,66 +42,7 @@ export default async function CardsIndexPage({ params }: Props) {
         </p>
       </div>
 
-      <div id="cards-section" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {cards.map(card => {
-          const bonus = card.welcome_offer?.bonus_points ?? 0;
-          const bonusDisplay = bonus >= 1000 ? `${(bonus / 1000).toFixed(0)}K pts` : bonus > 0 ? `${bonus} pts` : "—";
-          const topRate = card.earning_rates?.[0];
-
-          return (
-            <Link
-              key={card.card_id}
-              href={`/${lang}/cards/${card.card_id}`}
-              className="block bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-sm transition-all group"
-            >
-              <div className="flex items-start justify-between mb-3">
-                <div>
-                  <h2 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">
-                    {card.name}
-                  </h2>
-                  <p className="text-xs text-slate-400 mt-0.5">{card.issuer} · {card.network}</p>
-                </div>
-                <span className="text-2xl">💳</span>
-              </div>
-
-              <div className="space-y-1.5">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-slate-500">
-                    {locale === "zh" ? "開卡禮" : locale === "es" ? "Bono" : "Welcome Bonus"}
-                  </span>
-                  <span className="text-sm font-bold text-blue-600">{bonusDisplay}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-slate-500">
-                    {locale === "zh" ? "年費" : locale === "es" ? "Cuota" : "Annual Fee"}
-                  </span>
-                  <span className={`text-sm font-medium ${card.annual_fee === 0 ? "text-green-600" : "text-slate-700"}`}>
-                    {card.annual_fee === 0
-                      ? (locale === "zh" ? "免年費" : locale === "es" ? "Sin cuota" : "No AF")
-                      : `$${card.annual_fee}`}
-                  </span>
-                </div>
-                {topRate && (
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-slate-500">
-                      {locale === "zh" ? "回饋" : locale === "es" ? "Recompra" : "Earning"}
-                    </span>
-                    <span className="text-sm font-medium text-slate-700">
-                      {topRate.rate}× {topRate.category.replace(/_/g, ' ')}
-                    </span>
-                  </div>
-                )}
-              </div>
-
-              <div className="mt-4 pt-3 border-t border-slate-100">
-                <span className="text-xs text-blue-500 font-medium group-hover:text-blue-700 transition-colors">
-                  {locale === "zh" ? "查看詳情 →" : locale === "es" ? "Ver detalles →" : "View details →"}
-                </span>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
+      <CardsGrid cards={cards} lang={locale} />
     </div>
   );
 }
