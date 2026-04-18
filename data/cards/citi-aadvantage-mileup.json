@@ -10,8 +10,9 @@
     "spending_requirement": 1000,
     "time_period_months": 3,
     "bonus_miles": 15000,
-    "estimated_value": 15000,
-    "description": "Earn 15,000 AAdvantage bonus miles after spending $1,000 in first 3 months"
+    "estimated_value": 200,
+    "description": "Earn 15,000 AAdvantage bonus miles after spending $1,000 in first 3 months",
+    "point_program": "American Airlines AAdvantage"
   },
   "earning_rates": [
     {
