@@ -15,24 +15,44 @@
   },
   "earning_rates": [
     {
-      "category": "Air travel",
+      "category": "Hotels, Car Rentals & Attractions (CitiTravel.com)",
+      "rate": 10,
+      "notes": "On bookings through CitiTravel.com."
+    },
+    {
+      "category": "Air Travel",
       "rate": 3,
-      "notes": ""
+      "notes": "On air travel purchased directly from airlines or through CitiTravel.com."
     },
     {
       "category": "Hotels",
       "rate": 3,
-      "notes": ""
+      "notes": "On hotel stays purchased directly or through CitiTravel.com."
     },
     {
-      "category": "Dining",
+      "category": "Restaurants",
+      "rate": 3,
+      "notes": "Including eligible delivery and takeout."
+    },
+    {
+      "category": "Supermarkets",
       "rate": 3,
       "notes": ""
     },
     {
-      "category": "All other purchases",
+      "category": "Gas Stations",
+      "rate": 3,
+      "notes": "Including EV charging stations."
+    },
+    {
+      "category": "EV Charging",
+      "rate": 3,
+      "notes": "Stations other than at Costco."
+    },
+    {
+      "category": "Default",
       "rate": 1,
-      "notes": ""
+      "notes": "On all other purchases."
     }
   ],
   "annual_credits": [
@@ -43,7 +63,15 @@
       "description": "Once per calendar year, enjoy $100 off a single hotel stay of $500 or more (excluding taxes and fees) when booked through CitiTravel"
     }
   ],
-  "travel_benefits": {},
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Points Transfer",
+        "description": "Transfer points to Citi's airline and hotel partners including Singapore Airlines, Air France/KLM, Emirates, JetBlue, and more at 1:1."
+      }
+    ]
+  },
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
@@ -54,13 +82,25 @@
     "purchase_protection": true,
     "extended_warranty": false
   },
-  "tags": [],
+  "tags": [
+    "hotels, car rentals & attractions (cititravel.com)"
+  ],
   "sources": [
     {
-      "url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card"
+      "url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+      "notes": "Official Citi page confirms 60K bonus, $95 AF, 10x on CitiTravel, 3x on travel/dining/supermarkets/gas, $100 annual hotel credit, no FTf."
     },
     {
-      "url": "https://finance.yahoo.com/personal-finance/credit-cards/article/best-citi-credit-cards-195110694.html"
+      "url": "https://www.dailydrop.com/credit-cards/citi-strata-premier-card",
+      "notes": "Daily Drop review confirms current offer of 60K points, $100 annual hotel benefit, no FTf, travel protections."
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/how-to-choose-citi-strata-credit-card/",
+      "notes": "TPG comparison of Strata cards confirms current 60K offer for Strata Premier."
+    },
+    {
+      "url": "https://www.cnbc.com/select/citi-strata-premier-review/",
+      "notes": "CNBC review confirms $95 AF, 60K welcome bonus, 3x on dining/supermarkets/gas/travel."
     }
   ],
   "last_updated": "2026-04-16T13:41:49.978Z",
