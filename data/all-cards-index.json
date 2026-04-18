@@ -1695,19 +1695,6 @@
       ]
     },
     {
-      "card_id": "citi-best-buy-visa",
-      "name": "Best Buy® Visa® Credit Card",
-      "issuer": "Citi",
-      "network": "Visa",
-      "annual_fee": 0,
-      "tags": [
-        "store-card",
-        "best-buy",
-        "cash-back",
-        "no-annual-fee"
-      ]
-    },
-    {
       "card_id": "citi-costco-anywhere",
       "name": "Costco Anywhere Visa® Card by Citi",
       "issuer": "Citi",
@@ -2171,32 +2158,6 @@
       ]
     },
     {
-      "card_id": "macy-american-express-card",
-      "name": "Macy's American Express® Card",
-      "issuer": "Citi",
-      "network": "Amex",
-      "annual_fee": 0,
-      "tags": [
-        "store-card",
-        "macys",
-        "american-express",
-        "rewards"
-      ]
-    },
-    {
-      "card_id": "macys-credit",
-      "name": "Macy's Credit Card",
-      "issuer": "Citi",
-      "network": "Mastercard",
-      "annual_fee": 0,
-      "tags": [
-        "store-card",
-        "macys",
-        "mastercard",
-        "rewards"
-      ]
-    },
-    {
       "card_id": "marriott-bonvoy-bold",
       "name": "Marriott Bonvoy Bold® Credit Card",
       "issuer": "Chase",
@@ -2431,19 +2392,6 @@
       ]
     },
     {
-      "card_id": "pottery-barn-visa",
-      "name": "Pottery Barn Credit Card",
-      "issuer": "Bread Financial / Comenity Bank",
-      "network": "Visa",
-      "annual_fee": 0,
-      "tags": [
-        "bread-financial",
-        "pottery-barn",
-        "retail",
-        "store-card"
-      ]
-    },
-    {
       "card_id": "robinhood-gold",
       "name": "Robinhood Gold Card",
       "issuer": "Robinhood Credit",
@@ -2576,32 +2524,6 @@
       ]
     },
     {
-      "card_id": "synchrony-jcpenney-mastercard",
-      "name": "JCPenney Mastercard®",
-      "issuer": "Synchrony",
-      "network": "Mastercard",
-      "annual_fee": 0,
-      "tags": [
-        "jcpenney",
-        "mastercard",
-        "store-card",
-        "cash-back"
-      ]
-    },
-    {
-      "card_id": "synchrony-lowes-advantage-card",
-      "name": "Lowe's Advantage Card",
-      "issuer": "Synchrony",
-      "network": "Synchrony (store-only)",
-      "annual_fee": 0,
-      "tags": [
-        "lowes",
-        "store-card",
-        "discount",
-        "home-improvement"
-      ]
-    },
-    {
       "card_id": "synchrony-paypal-cashback-mastercard",
       "name": "PayPal Cashback Mastercard®",
       "issuer": "Synchrony",
@@ -2720,34 +2642,6 @@
         "travel",
         "rewards",
         "lounge-access"
-      ]
-    },
-    {
-      "card_id": "tjx-rewards-credit",
-      "name": "TJX Rewards® Credit Card",
-      "issuer": "Synchrony",
-      "network": "Synchrony (store-only)",
-      "annual_fee": 0,
-      "tags": [
-        "tjx",
-        "tjmaxx",
-        "marshalls",
-        "homegoods",
-        "store-card"
-      ]
-    },
-    {
-      "card_id": "tjx-rewards-mastercard",
-      "name": "TJX Rewards® Platinum Mastercard®",
-      "issuer": "Synchrony",
-      "network": "Mastercard",
-      "annual_fee": 0,
-      "tags": [
-        "tjx",
-        "tjmaxx",
-        "marshalls",
-        "homegoods",
-        "mastercard"
       ]
     },
     {
@@ -3037,32 +2931,6 @@
         "business",
         "cash-back",
         "flat-rate"
-      ]
-    },
-    {
-      "card_id": "west-elm-visa",
-      "name": "West Elm Credit Card",
-      "issuer": "Bread Financial / Comenity Bank",
-      "network": "Visa",
-      "annual_fee": 0,
-      "tags": [
-        "bread-financial",
-        "west-elm",
-        "retail",
-        "store-card"
-      ]
-    },
-    {
-      "card_id": "williams-sonoma-visa",
-      "name": "Williams-Sonoma Credit Card",
-      "issuer": "Bread Financial / Comenity Bank",
-      "network": "Visa",
-      "annual_fee": 0,
-      "tags": [
-        "bread-financial",
-        "williams-sonoma",
-        "retail",
-        "store-card"
       ]
     },
     {
