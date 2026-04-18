@@ -12,7 +12,8 @@
     "bonus_points": 85000,
     "description": "85,000 bonus miles after $5,000 spend on purchases in the first 90 days, plus companion fare.",
     "free_nights": null,
-    "point_program": "Alaska Airlines Miles"
+    "point_program": "Alaska Airlines Miles",
+    "estimated_value": 1200
   },
   "earning_rates": [
     {

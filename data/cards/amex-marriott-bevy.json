@@ -11,7 +11,8 @@
     "time_period_months": 6,
     "bonus_points": 175000,
     "description": "Earn 175,000 Marriott Bonvoy bonus points after you use your new Card to make $5,000 in purchases within the first 6 months of Card Membership.",
-    "point_program": "Marriott Bonvoy"
+    "point_program": "Marriott Bonvoy",
+    "estimated_value": 1300
   },
   "earning_rates": [
     {

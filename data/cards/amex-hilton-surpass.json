@@ -12,7 +12,8 @@
     "bonus_points": 130000,
     "description": "Earn 130,000 Hilton Honors Bonus Points plus a Free Night Reward after spending $3,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
     "free_nights": 1,
-    "point_program": "Hilton Honors"
+    "point_program": "Hilton Honors",
+    "estimated_value": 500
   },
   "earning_rates": [
     {

@@ -12,7 +12,8 @@
     "bonus_points": 85000,
     "bonus_value": 0,
     "description": "85,000 bonus points after spending $4,000 in first 3 months",
-    "point_program": "Marriott Bonvoy"
+    "point_program": "Marriott Bonvoy",
+    "estimated_value": 600
   },
   "earning_rates": [
     {

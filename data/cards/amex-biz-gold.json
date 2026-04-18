@@ -12,7 +12,8 @@
     "bonus_points": 200000,
     "description": "As High As 200,000 Membership Rewards points after spending $15,000 in eligible purchases on your new Card in your first 3 months of Membership. Welcome offers vary and you may not be eligible for an offer.",
     "free_nights": null,
-    "point_program": "American Express Membership Rewards"
+    "point_program": "American Express Membership Rewards",
+    "estimated_value": 4000
   },
   "earning_rates": [
     {

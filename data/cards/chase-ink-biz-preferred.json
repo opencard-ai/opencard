@@ -12,7 +12,8 @@
     "bonus_points": 100000,
     "description": "100,000 bonus points after you spend $8,000 on purchases in the first 3 months from account opening.",
     "free_nights": null,
-    "point_program": "Chase Ultimate Rewards"
+    "point_program": "Chase Ultimate Rewards",
+    "estimated_value": 2000
   },
   "earning_rates": [
     {

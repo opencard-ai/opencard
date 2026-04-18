@@ -10,7 +10,7 @@
     "spending_requirement": 10000,
     "time_period_months": 3,
     "bonus_points": 1000,
-    "estimated_value": 1000,
+    "estimated_value": 0,
     "point_program": "Chase Ultimate Rewards (Cash Back)",
     "description": "$1,000 cash back after spending $10,000 in first 3 months"
   },
