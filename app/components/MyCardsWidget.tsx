@@ -98,6 +98,22 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
     }
   }, []);
 
+  // Listen for external save events (from CardGrid save buttons)
+  useEffect(() => {
+    const handler = () => {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        try {
+          setSelectedCards(JSON.parse(saved));
+        } catch (e) {
+          console.error("Failed to reload cards", e);
+        }
+      }
+    };
+    window.addEventListener("opencard_cards_updated", handler);
+    return () => window.removeEventListener("opencard_cards_updated", handler);
+  }, []);
+
   const toggleCard = useCallback((cardId: string) => {
     setSelectedCards((prev) => {
       const next = prev.includes(cardId) ? prev.filter((id) => id !== cardId) : [...prev, cardId];
