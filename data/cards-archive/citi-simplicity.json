@@ -1,0 +1,81 @@
+{
+  "card_id": "citi-simplicity",
+  "name": "Citi Simplicity® Card",
+  "issuer": "Citi",
+  "network": "Mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "description": "No welcome offer (focused on 0% intro APR)"
+  },
+  "earning_rates": [
+    {
+      "category": "All Purchases",
+      "rate": 0,
+      "notes": "No rewards; this is a 0% intro APR card with no fees"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "No Late Fees",
+        "description": "Never charged a late fee"
+      },
+      {
+        "name": "No Penalty APR",
+        "description": "No penalty rate for late payments"
+      },
+      {
+        "name": "0% Intro APR on Balance Transfers",
+        "description": "0% intro APR for 21 months on balance transfers (must complete within 4 months of account opening)"
+      },
+      {
+        "name": "0% Intro APR on Purchases",
+        "description": "0% intro APR for 12 months on purchases"
+      },
+      {
+        "name": "Choose Your Due Date",
+        "description": "Pay on any available date in the beginning, middle or end of the month"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "trip_cancellation": false,
+    "trip_delay": false,
+    "rental_insurance": "None",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "notes": "Balance transfer fee: 5% or $5 (whichever is greater) during intro period; 5% or $5 after. Variable APR 17.49%-28.24% after intro. Designed for debt payoff without fee penalties.",
+  "tags": [
+    "balance-transfer",
+    "0-apr",
+    "no-annual-fee",
+    "no-late-fee"
+  ],
+  "sources": [
+    {
+      "url": "https://www.citi.com/credit-cards/citi-simplicity-credit-card"
+    },
+    {
+      "url": "https://www.cnbc.com/select/citi-simplicity-card-review/",
+      "notes": "2026 review"
+    },
+    {
+      "url": "https://money.usnews.com/credit-cards/citi/citi-simplicity-card",
+      "notes": "U.S. News review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.977Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}
