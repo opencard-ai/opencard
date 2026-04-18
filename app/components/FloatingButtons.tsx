@@ -25,9 +25,9 @@ export default function FloatingButtons({ lang }: FloatingButtonsProps) {
   }, []);
 
   const labels = {
-    en: { benefits: "My Benefits" },
-    zh: { benefits: "我的福利" },
-    es: { benefits: "Mis Beneficios" },
+    en: { benefits: "Track Benefits" },
+    zh: { benefits: "追蹤福利" },
+    es: { benefits: "Seguir Beneficios" },
   };
   const l = labels[lang as keyof typeof labels] || labels.en;
 
