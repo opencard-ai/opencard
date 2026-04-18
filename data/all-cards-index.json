@@ -1865,19 +1865,6 @@
       ]
     },
     {
-      "card_id": "comenity-victoria-secret-credit-card",
-      "name": "Victoria's Secret Credit Card",
-      "issuer": "Bread Financial / Comenity Bank",
-      "network": "Comenity (Store Card)",
-      "annual_fee": 0,
-      "tags": [
-        "bread-financial",
-        "victoria-secret",
-        "retail",
-        "store-card"
-      ]
-    },
-    {
       "card_id": "costco-anywhere-visa-business-citi",
       "name": "Costco Anywhere Visa® Business Card by Citi",
       "issuer": "Citi",
