@@ -42,7 +42,8 @@
   "tags": [
     "all purchases"
   ],
-  "sources": [
+  "recurring_credits": [],
+    "sources": [
     {
       "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/rise",
       "notes": "Chase official card page with $25 statement credit welcome offer and 1.5% cash back"

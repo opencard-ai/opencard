@@ -41,7 +41,8 @@
     "cash-back",
     "charge-card"
   ],
-  "sources": [
+  "recurring_credits": [],
+    "sources": [
     {
       "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/plum-card/"
     },

@@ -38,7 +38,8 @@
   "tags": [
     "travel"
   ],
-  "sources": [],
+  "recurring_credits": [],
+    "sources": [],
   "hotel_program": null,
   "application_rules": {
     "rules": [],

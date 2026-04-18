@@ -56,7 +56,8 @@
   "tags": [
     "u.s. supermarkets"
   ],
-  "sources": [
+  "recurring_credits": [],
+    "sources": [
     {
       "url": "https://www.nerdwallet.com/credit-cards/learn/amex-everyday-preferred",
       "notes": "NerdWallet review noting card is no longer accepting applications as of September 2024"

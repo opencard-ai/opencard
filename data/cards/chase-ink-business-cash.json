@@ -75,7 +75,8 @@
   "tags": [
     "office supply stores"
   ],
-  "sources": [
+  "recurring_credits": [],
+    "sources": [
     {
       "url": "https://creditcards.chase.com/business-credit-cards/ink/cash",
       "notes": "Official Chase page confirms $750 bonus after $6K spend in 3 months, 5% at office supply and internet/cable/phone, 2% at gas and restaurants."
