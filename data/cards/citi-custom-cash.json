@@ -37,7 +37,10 @@
     "purchase_protection": false,
     "extended_warranty": false
   },
-  "tags": [],
+  "tags": [
+    "cash-back",
+    "category-select"
+  ],
   "sources": [
     {
       "url": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card"

@@ -61,7 +61,13 @@
     "purchase_protection": true,
     "extended_warranty": true
   },
-  "tags": [],
+  "tags": [
+    "travel",
+    "airline",
+    "hotel",
+    "alaska-airlines",
+    "good-value"
+  ],
   "sources": [
     {
       "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/"

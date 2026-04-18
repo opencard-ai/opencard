@@ -72,7 +72,11 @@
     "purchase_protection": false,
     "extended_warranty": false
   },
-  "tags": [],
+  "tags": [
+    "travel",
+    "rewards",
+    "premium"
+  ],
   "sources": [
     {
       "url": "https://www.citi.com/credit-cards/citi-strata-elite-credit-card"

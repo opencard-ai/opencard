@@ -89,5 +89,7 @@
       "description": "Unlimited lounge access for cardholder + 2 guests.",
       "reset_type": "calendar_year"
     }
-  ]
+  ],
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent"
 }

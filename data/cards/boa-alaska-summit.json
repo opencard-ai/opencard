@@ -67,7 +67,13 @@
     "purchase_protection": false,
     "extended_warranty": false
   },
-  "tags": [],
+  "tags": [
+    "travel",
+    "airline",
+    "hotel",
+    "alaska-airlines",
+    "premium"
+  ],
   "sources": [
     {
       "url": "https://www.alaskaair.com/atmosrewards/"
