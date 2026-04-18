@@ -31,11 +31,23 @@ async function rateLimit(req: NextRequest): Promise<{ allowed: boolean; remainin
   }
 }
 
-// Simple SHA-256 hash
+// SHA-256 hash of email (for lookups, never stored in plaintext)
 async function hashEmail(email: string): Promise<string> {
   const normalized = email.toLowerCase().trim();
   const { createHash } = await import("node:crypto");
   return createHash("sha256").update(normalized).digest("hex");
+}
+
+// Obfuscated email for sending (easily reversible server-side)
+async function encodeEmailForSend(email: string): Promise<string> {
+  const reversed = email.toLowerCase().trim().split("").reverse().join("");
+  return Buffer.from(reversed).toString("base64");
+}
+
+async function decodeEmailFromStorage(encoded: string): Promise<string> {
+  try {
+    return Buffer.from(encoded, "base64").toString("ascii").split("").reverse().join("");
+  } catch { return ""; }
 }
 
 function isValidEmail(email: string): boolean {
@@ -58,20 +70,21 @@ export async function POST(req: NextRequest) {
 
     const normalizedEmail = email.toLowerCase().trim();
     const emailHash = await hashEmail(normalizedEmail);
+    const emailForSend = await encodeEmailForSend(normalizedEmail);
     const userKey = `${USER_PREFIX}${emailHash}`;
 
     const existing = await redis.hgetall(userKey) as Record<string, unknown> | null;
 
-    // If already subscribed (confirmed), update silently
-    // If pending, keep pending state
+    // If already subscribed, update silently
     const userData = {
-      email_hash: emailHash, // hashed, never store plaintext
-      email_hint: normalizedEmail.substring(0, 3) + "***" + normalizedEmail.split("@")[1], // for display only
+      email_hash: emailHash,           // SHA-256, never stored in plaintext
+      email_for_send: emailForSend,     // obfuscated but reversible, for sending emails
+      email_hint: normalizedEmail.substring(0, 3) + "***@" + normalizedEmail.split("@")[1], // for display only
       cards: cards && Array.isArray(cards) ? cards : ((existing?.cards as string[]) || []),
       marketing_optin: Boolean(marketing_optin),
       created_at: (existing?.created_at as number) || Date.now(),
       updated_at: Date.now(),
-      status: "confirmed", // Skip double opt-in for now, can enable later
+      status: "confirmed",
     };
 
     await redis.hset(userKey, userData);

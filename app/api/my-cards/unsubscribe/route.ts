@@ -10,49 +10,84 @@ const redis = new Redis({
 
 const USER_PREFIX = "opencard:user:";
 
+/**
+ * POST /api/my-cards/unsubscribe
+ * Body: { email: string } — hash is computed server-side
+ *
+ * GET /api/my-cards/unsubscribe?hash=xxx
+ * Direct unsubscribe link clicked from email (no body needed)
+ */
 async function hashEmail(email: string): Promise<string> {
   const normalized = email.toLowerCase().trim();
   const { createHash } = await import("node:crypto");
   return createHash("sha256").update(normalized).digest("hex");
 }
 
-function isValidEmail(email: string): boolean {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.toLowerCase().trim());
+async function decodeEmailFromStorage(encoded: string): Promise<string> {
+  try {
+    return Buffer.from(encoded, "base64").toString("ascii").split("").reverse().join("");
+  } catch { return ""; }
 }
 
-/**
- * POST /api/my-cards/unsubscribe
- * Body: { email: string }
- * Unsubscribes user: removes from subscribers set, clears marketing_optin.
- * User data is retained for 30 days then auto-deleted.
- */
 export async function POST(req: NextRequest) {
   try {
     const { email } = await req.json();
 
-    if (!email || !isValidEmail(email)) {
-      return NextResponse.json({ error: "Valid email is required" }, { status: 400 });
+    if (!email || typeof email !== "string") {
+      return NextResponse.json({ error: "Email is required" }, { status: 400 });
     }
 
     const emailHash = await hashEmail(email);
     const userKey = `${USER_PREFIX}${emailHash}`;
 
-    // Remove from active subscribers
     await redis.srem("opencard:subscribers", emailHash);
-
-    // Set unsubscribe flag and mark for deletion in 30 days
     await redis.hset(userKey, {
       marketing_optin: false,
       status: "unsubscribed",
       unsubscribed_at: Date.now(),
     });
 
-    // Schedule deletion in 30 days (handled by cron, here we just flag it)
-    // A background job can scan for unsubscribed_at > 30 days ago and delete
-
     return NextResponse.json({ success: true, message: "Unsubscribed successfully" });
   } catch (err) {
     console.error("Unsubscribe error:", err);
     return NextResponse.json({ error: "Failed to unsubscribe" }, { status: 500 });
+  }
+}
+
+/**
+ * GET unsubscribe via hash link (from email).
+ * We need to find the user by hash. Since we store hash as key prefix,
+ * we look up the hash directly.
+ */
+export async function GET(req: NextRequest) {
+  const { searchParams } = new URL(req.url);
+  const hash = searchParams.get("hash");
+
+  if (!hash || !/^[a-f0-9]{64}$/.test(hash)) {
+    return new Response("Invalid unsubscribe link.", { status: 400 });
+  }
+
+  try {
+    const userKey = `${USER_PREFIX}${hash}`;
+    const userData = await redis.hgetall(userKey) as Record<string, unknown> | null;
+
+    if (!userData) {
+      return new Response("Subscription not found.", { status: 404 });
+    }
+
+    await redis.srem("opencard:subscribers", hash);
+    await redis.hset(userKey, {
+      marketing_optin: false,
+      status: "unsubscribed",
+      unsubscribed_at: Date.now(),
+    });
+
+    // Return a simple HTML success page
+    return new Response(`<!DOCTYPE html><html><body style="font-family:-apple-system,sans-serif;max-width:480px;margin:60px auto;padding:20px;text-align:center"><h2 style="color:#16a34a">✓ Unsubscribed</h2><p style="color:#666">You've been removed from OpenCard reminders.</p><p style="color:#999;font-size:13px;margin-top:24px">OpenCard · <a href="https://opencardai.com" style="color:#666">opencardai.com</a></p></body></html>`, {
+      headers: { "Content-Type": "text/html" },
+    });
+  } catch (err) {
+    console.error("Unsubscribe GET error:", err);
+    return new Response("Failed to unsubscribe. Please try again.", { status: 500 });
   }
 }
