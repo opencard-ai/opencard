@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { trackCreditsViewed } from "@/lib/analytics";
 
 const STORAGE_KEY = "opencard_existing_cards";
+const SUBSCRIBED_EMAIL_KEY = "opencard_subscribed_email";
 
 const MESSAGES = {
   en: {
@@ -56,15 +57,21 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
   const [expandedIssuers, setExpandedIssuers] = useState<Set<string>>(new Set());
   const [issuers, setIssuers] = useState<IssuerGroup[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const [subscribedEmail, setSubscribedEmail] = useState<string | null>(null);
   const m = MESSAGES[lang as keyof typeof MESSAGES] || MESSAGES.en;
 
-  // Track My Cards opened event (once per session)
+  // Track My Cards opened event
   useEffect(() => {
     if (isOpen) {
-      const count = selectedCards.length;
-      trackCreditsViewed(count);
+      trackCreditsViewed(selectedCards.length);
     }
-  }, [isOpen]);
+  }, [isOpen, selectedCards.length]);
+
+  // Check subscription status
+  useEffect(() => {
+    const email = localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
+    setSubscribedEmail(email);
+  }, []);
 
   // Fetch all cards grouped by issuer
   useEffect(() => {
@@ -79,6 +86,37 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
     }
   }, [loaded]);
 
+  // Load saved cards: cloud-first if subscribed, then localStorage fallback
+  useEffect(() => {
+    const loadSavedCards = async () => {
+      const email = localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
+
+      if (email) {
+        try {
+          const res = await fetch(`/api/my-cards?email=${encodeURIComponent(email)}`);
+          if (res.ok) {
+            const data = await res.json();
+            const cloudCards: string[] = data.cards || [];
+            setSelectedCards(cloudCards);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(cloudCards));
+            setSubscribedEmail(email);
+            return;
+          }
+        } catch {}
+      }
+
+      // Fallback: localStorage
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        try {
+          setSelectedCards(JSON.parse(stored));
+        } catch {}
+      }
+    };
+
+    loadSavedCards();
+  }, []);
+
   // Listen for external open event
   useEffect(() => {
     const handleOpen = () => setIsOpen(true);
@@ -86,48 +124,47 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
     return () => window.removeEventListener("opencard_open_mycards", handleOpen);
   }, []);
 
-  // Load saved cards
-  useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      try {
-        setSelectedCards(JSON.parse(saved));
-      } catch (e) {
-        console.error("Failed to load cards", e);
-      }
-    }
-  }, []);
-
   // Listen for external save events (from CardGrid save buttons)
   useEffect(() => {
-    const handler = () => {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        try {
-          setSelectedCards(JSON.parse(saved));
-        } catch (e) {
-          console.error("Failed to reload cards", e);
-        }
-      }
+    const handler = (e: CustomEvent<string[]>) => {
+      setSelectedCards(e.detail);
     };
-    window.addEventListener("opencard_cards_updated", handler);
-    return () => window.removeEventListener("opencard_cards_updated", handler);
+    window.addEventListener("opencard_cards_updated", handler as EventListener);
+    return () => window.removeEventListener("opencard_cards_updated", handler as EventListener);
+  }, []);
+
+  // Sync to cloud when subscribed, always update localStorage
+  const syncCards = useCallback(async (next: string[]) => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    window.dispatchEvent(new CustomEvent("opencard_cards_updated", { detail: next }));
+
+    const email = localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
+    if (email) {
+      try {
+        // Update cloud with full card list
+        await fetch("/api/my-cards/subscribe", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, cards: next }),
+        });
+      } catch {
+        // Cloud failed — localStorage is already saved
+      }
+    }
   }, []);
 
   const toggleCard = useCallback((cardId: string) => {
     setSelectedCards((prev) => {
       const next = prev.includes(cardId) ? prev.filter((id) => id !== cardId) : [...prev, cardId];
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-      window.dispatchEvent(new CustomEvent("opencard_cards_updated", { detail: next }));
+      syncCards(next);
       return next;
     });
-  }, []);
+  }, [syncCards]);
 
   const clearAll = useCallback(() => {
     setSelectedCards([]);
-    localStorage.removeItem(STORAGE_KEY);
-    window.dispatchEvent(new CustomEvent("opencard_cards_updated", { detail: [] }));
-  }, []);
+    syncCards([]);
+  }, [syncCards]);
 
   const toggleIssuer = (issuer: string) => {
     setExpandedIssuers((prev) => {
@@ -143,10 +180,7 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
     .map(({ issuer, cards }) => ({
       issuer,
       cards: search.trim()
-        ? cards.filter(
-            (c) =>
-              c.name.toLowerCase().includes(search.toLowerCase())
-          )
+        ? cards.filter((c) => c.name.toLowerCase().includes(search.toLowerCase()))
         : cards,
     }))
     .filter(({ cards }) => cards.length > 0);
@@ -154,18 +188,14 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
   const toggleAll = (issuer: string, cards: CardInfo[]) => {
     const allSelected = cards.every((c) => selectedCards.includes(c.card_id));
     if (allSelected) {
-      // Deselect all in this issuer
       const ids = new Set(cards.map((c) => c.card_id));
       const next = selectedCards.filter((id) => !ids.has(id));
       setSelectedCards(next);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-      window.dispatchEvent(new CustomEvent("opencard_cards_updated", { detail: next }));
+      syncCards(next);
     } else {
-      // Select all in this issuer
       const next = [...new Set([...selectedCards, ...cards.map((c) => c.card_id)])];
       setSelectedCards(next);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-      window.dispatchEvent(new CustomEvent("opencard_cards_updated", { detail: next }));
+      syncCards(next);
     }
   };
 
@@ -179,16 +209,16 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
           {/* Header */}
           <div className="bg-slate-900 px-4 py-3 flex items-center justify-between shrink-0">
             <h3 className="text-white font-bold text-sm">{m.title}</h3>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-white/70 hover:text-white transition-colors"
-            >
-              ✕
-            </button>
+            <button onClick={() => setIsOpen(false)} className="text-white/70 hover:text-white transition-colors">✕</button>
           </div>
 
           {/* Body */}
           <div className="p-4 flex flex-col overflow-hidden max-h-[70vh]">
+            {subscribedEmail && (
+              <div className="text-xs text-green-600 bg-green-50 border border-green-200 rounded px-2 py-1.5 mb-3">
+                ☁️ Synced to cloud
+              </div>
+            )}
             <p className="text-xs text-slate-500 mb-3 leading-relaxed">{m.hint}</p>
 
             <input
@@ -214,7 +244,7 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
 
                   return (
                     <div key={issuer} className="border border-slate-100 rounded-lg overflow-hidden">
-                      {/* Issuer header — always visible */}
+                      {/* Issuer header */}
                       <button
                         onClick={() => toggleIssuer(issuer)}
                         className={`w-full flex items-center justify-between px-3 py-2.5 text-sm transition-colors ${
@@ -253,18 +283,11 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
                               <label
                                 key={card.card_id}
                                 className={`flex items-center justify-between px-3 py-2 cursor-pointer transition-colors ${
-                                  isSelected
-                                    ? "bg-slate-900 text-white"
-                                    : "hover:bg-slate-50 text-slate-700"
+                                  isSelected ? "bg-slate-900 text-white" : "hover:bg-slate-50 text-slate-700"
                                 }`}
                               >
                                 <div className="flex items-center gap-2 overflow-hidden">
-                                  <input
-                                    type="checkbox"
-                                    checked={isSelected}
-                                    onChange={() => toggleCard(card.card_id)}
-                                    className="hidden"
-                                  />
+                                  <input type="checkbox" checked={isSelected} onChange={() => toggleCard(card.card_id)} className="hidden" />
                                   <span className="text-xs truncate">{card.name}</span>
                                 </div>
                                 {card.annual_fee > 0 && (
@@ -288,10 +311,7 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
                 <div className="text-xs text-slate-400">
                   {selectedCards.length} {m.selected}
                 </div>
-                <button
-                  onClick={clearAll}
-                  className="text-xs text-red-500 font-medium hover:text-red-600 transition-colors"
-                >
+                <button onClick={clearAll} className="text-xs text-red-500 font-medium hover:text-red-600 transition-colors">
                   {m.clearAll}
                 </button>
               </div>

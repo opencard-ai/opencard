@@ -267,6 +267,8 @@ export default function MyCardsPage({
       });
       if (res.ok) {
         setIsSubscribed(true);
+        // Store email so AddToMyCardsButton and MyCardsWidget know user is subscribed
+        localStorage.setItem('opencard_subscribed_email', email.toLowerCase().trim());
       } else {
         const data = await res.json();
         setSubscribeError(data.error || "Failed to subscribe");
