@@ -184,4 +184,43 @@ scripts/batch-add-cards.js
 
 ---
 
+---
+
+## recurring_credits 維護（新增章節，2026-04-17）
+
+### 維護頻率
+
+recurring_credits 跟一般卡片資料不同——銀行**隨時可能調整福利**，所以維護比 welcome offer 更頻繁。
+
+| 維護項目 | 頻率 |
+|---------|------|
+| 旗艦卡（年費 $250+）| 每季結束前 7 天內確認 |
+| 一般卡片 | 每半年一次 |
+| 緊急異動（如銀行突然公告）| 收到社群反饋後 48 小時內更新 |
+
+### 維護行事曆
+
+| 季度 | 專注維護 |
+|------|---------|
+| Q2 2026（4-6月）| Amex Platinum/Gold/Green、Chase CSR/CSP |
+| Q3 2026（7-9月）| Capital One Venture X/Savor、Amex BCP/BCE |
+| Q4 2026（10-12月）| Citi Premier/Custom Cash、Wells Fargo Autograph、其餘旗艦卡 |
+
+### 資料錯誤回報處理流程
+
+收到用戶回報（opencard@opencardai.com）後：
+1. 24 小時內確認收到回報
+2. 查證官方來源
+3. 確認有誤 → 48 小時內更新 + 回覆用戶
+4. 每筆更新附上 `last_updated` 時間戳
+
+### 品質標準（recurring_credits）
+
+每張卡的 recurring_credits 必須：
+- ✅ `name` — 官方名稱（如 "$100 Resy Credit"）
+- ✅ `amount` — 金額（numeric）
+- ✅ `frequency` — monthly / quarterly / semi_annual / annual / cardmember_year
+- ✅ `category` — dining / travel / shopping / gas / entertainment / other
+- ✅ `description` — 限制條件說明（如 "Enrollment required"）
+
 *本文件隨專案演化持續更新。*
