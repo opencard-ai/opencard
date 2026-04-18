@@ -13,43 +13,35 @@ interface CardGridProps {
   locale: any;
 }
 
-// Tag groups — simplified to only the most useful filter categories
+// Tag groups — consolidated to 7 non-overlapping categories
 const TAG_GROUPS: Record<string, { label: string; tags: string[] }> = {
   "travel": {
-    label: "✈️ Travel",
-    tags: ["travel", "flights", "hotel_hilton", "hotel_marriott", "hilton hotels and resorts", "marriott hotels", "ihg", "chase travel", "hotels, car rentals & attractions (cititravel.com)"],
+    label: "✈️ Travel Rewards",
+    tags: ["travel", "flights", "chase travel", "hotels, car rentals & attractions (cititravel.com)", "cruise", "gas", "gas (costco)"],
   },
   "airline": {
     label: "✈️ Airline Miles",
-    tags: ["united flights", "united purchases (airline tickets, seat upgrades, economy plus, inflight food/beverages/wi-fi, united fees)", "delta purchases"],
+    tags: ["united flights", "united purchases (airline tickets, seat upgrades, economy plus, inflight food/beverages/wi-fi, united fees)", "delta purchases", "delta", "american-airlines", "aadvantage", "british-airways", "aer-lingus", "iberia", "southwest", "jetblue", "alaska", "frontier", "spirit-airlines", "hawaiian", "emirates", "carnival", "royal-caribbean"],
   },
   "hotel": {
     label: "🏨 Hotel",
-    tags: ["hotel_hilton", "hotel_marriott", "hilton hotels and resorts", "marriott hotels", "ihg"],
+    tags: ["hotel_hilton", "hotel_marriott", "hilton hotels and resorts", "marriott hotels", "ihg", "hyatt", "choice-hotels", "wyndham"],
   },
   "cashback": {
     label: "💰 Cash Back",
-    tags: ["all purchases", "all purchases (flat)", "all purchases (buy)", "groceries", "grocery stores", "u.s. supermarkets", "rotating", "rotating 5% categories", "restaurants"],
+    tags: ["all purchases", "all purchases (flat)", "all purchases (buy)", "rotating", "rotating 5% categories", "rotating-categories", "groceries", "grocery stores", "u.s. supermarkets", "restaurants", "entertainment", "paypal", "amazon", "apple-pay", "digital-payments", "delivery", "warehouse-club"],
   },
   "business": {
     label: "💼 Business",
-    tags: ["top 2 eligible business categories", "office supply stores"],
+    tags: ["business", "top 2 eligible business categories", "office supply stores"],
   },
-  "dining": {
-    label: "🍽️ Dining",
-    tags: ["restaurants"],
+  "student-secured": {
+    label: "🎓 Student & Secured",
+    tags: ["student", "beginner", "credit-builder", "credit-building", "fair-credit", "building-credit", "secured", "credit-builder"],
   },
-  "groceries": {
-    label: "🛒 Groceries",
-    tags: ["groceries", "grocery stores", "u.s. supermarkets"],
-  },
-  "gas": {
-    label: "⛽ Gas & Costco",
-    tags: ["gas (costco)"],
-  },
-  "streaming": {
-    label: "📺 Streaming",
-    tags: ["disneyplus.com, hulu.com, espn+ purchases"],
+  "no-annual-fee": {
+    label: "💳 No Annual Fee",
+    tags: ["no-annual-fee", "no-fee"],
   },
 };
 
