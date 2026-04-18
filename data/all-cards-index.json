@@ -167,13 +167,15 @@
       ]
     },
     {
-      "card_id": "amex-centurion",
-      "name": "Amex Centurion Card",
+      "card_id": "centurion-card-amex",
+      "name": "The Centurion® Card from American Express",
       "issuer": "American Express",
-      "network": "Visa/Mastercard",
+      "network": "Amex",
       "annual_fee": 5000,
       "tags": [
-        "travel"
+        "invitation-only",
+        "ultra-premium",
+        "black-card"
       ]
     },
     {
@@ -1104,18 +1106,6 @@
       "annual_fee": 99,
       "tags": [
         "travel"
-      ]
-    },
-    {
-      "card_id": "centurion-card-amex",
-      "name": "The Centurion® Card from American Express",
-      "issuer": "American Express",
-      "network": "Amex",
-      "annual_fee": 5000,
-      "tags": [
-        "invitation-only",
-        "ultra-premium",
-        "black-card"
       ]
     },
     {
@@ -2886,44 +2876,6 @@
         "low-apr",
         "travel",
         "platinum"
-      ]
-    },
-    {
-      "card_id": "usbank-altitude-go",
-      "name": "U.S. Bank Altitude Go",
-      "issuer": "U.S. Bank",
-      "network": "Visa/Mastercard",
-      "annual_fee": 0,
-      "tags": [
-        "travel"
-      ]
-    },
-    {
-      "card_id": "usbank-altitude-reserve",
-      "name": "U.S. Bank Altitude® Reserve Visa Infinite® Card",
-      "issuer": "U.S. Bank",
-      "network": "Visa",
-      "annual_fee": 400,
-      "tags": []
-    },
-    {
-      "card_id": "usbank-business-triple-cash",
-      "name": "Business Triple Cash",
-      "issuer": "U.S. Bank",
-      "network": "Visa/Mastercard",
-      "annual_fee": 0,
-      "tags": [
-        "travel"
-      ]
-    },
-    {
-      "card_id": "usbank-cash-plus",
-      "name": "U.S. Bank Cash+",
-      "issuer": "U.S. Bank",
-      "network": "Visa/Mastercard",
-      "annual_fee": 0,
-      "tags": [
-        "travel"
       ]
     },
     {
