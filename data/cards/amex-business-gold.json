@@ -65,7 +65,25 @@
   "tags": [
     "top 2 eligible business categories"
   ],
-  "sources": [
+  "recurring_credits": [
+        {
+          "name": "$240 Flexible Business Credit",
+          "amount": 240,
+          "frequency": "annual",
+          "category": "business",
+          "description": "Up to $20 in statement credits each month for eligible U.S. purchases at FedEx, Grubhub, and Office Supply Stores. Enrollment required.",
+          "reset_type": "calendar_year"
+        },
+        {
+          "name": "Walmart+ Membership Credit",
+          "amount": 155,
+          "frequency": "annual",
+          "category": "shopping",
+          "description": "Up to $12.95 statement credit each month after paying for a Walmart+ membership. Up to $155.40 annually.",
+          "reset_type": "calendar_year"
+        }
+      ],
+    "sources": [
     {
       "url": "https://www.nerdwallet.com/business/credit-cards/reviews/american-express-business-gold",
       "notes": "NerdWallet 2026 review with annual fee $375, welcome offer up to 200K points, earning rates, and benefits"

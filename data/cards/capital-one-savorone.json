@@ -62,7 +62,8 @@
   "tags": [
     "grocery stores"
   ],
-  "sources": [
+  "recurring_credits": [],
+    "sources": [
     {
       "url": "https://www.capitalone.com/credit-cards/savorone/",
       "notes": "Capital One official SavorOne page confirming 3% on dining, groceries, entertainment, streaming and $39 annual fee"

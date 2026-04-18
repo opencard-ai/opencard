@@ -59,7 +59,8 @@
   "tags": [
     "all purchases (flat)"
   ],
-  "sources": [
+  "recurring_credits": [],
+    "sources": [
     {
       "url": "https://creditcards.chase.com/business-credit-cards/ink/unlimited",
       "notes": "Official Chase page confirms $750 bonus after $6K spend in 3 months, 1.5% flat, 0% intro APR for 12 months."

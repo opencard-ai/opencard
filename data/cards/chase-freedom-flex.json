@@ -66,7 +66,8 @@
   "tags": [
     "rotating"
   ],
-  "sources": [
+  "recurring_credits": [],
+    "sources": [
     {
       "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
       "notes": "Official Chase page Apr 2026."
