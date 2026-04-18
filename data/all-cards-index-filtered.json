@@ -1,68 +1,64 @@
 {
   "cards": [
     {
-      "card_id": "amex-business-gold",
-      "name": "American Express Business Gold Card",
-      "issuer": "American Express",
-      "network": "American Express",
-      "annual_fee": 375,
-      "welcome_offer": {
-        "spending_requirement": 15000,
-        "time_period_months": 3,
-        "bonus_points": 200000,
-        "description": "As High As 200,000 Membership Rewards points after spending $15,000 in eligible purchases on your new Card in your first 3 months of Membership. Welcome offers vary and you may not be eligible for an offer.",
-        "free_nights": null,
-        "point_program": "American Express Membership Rewards"
-      },
-      "earning_rates_count": 3
-    },
-    {
-      "card_id": "amex-gold",
-      "name": "American Express® Gold Card",
-      "issuer": "American Express",
-      "network": "Amex",
-      "annual_fee": 325,
-      "welcome_offer": {
-        "spending_requirement": 6000,
-        "time_period_months": 6,
-        "bonus_points": 60000,
-        "description": "Earn 60,000 Membership Rewards® Points after you spend $6,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
-        "free_nights": null,
-        "point_program": "Membership Rewards"
-      },
-      "earning_rates_count": 5
-    },
-    {
-      "card_id": "amex-green",
-      "name": "American Express® Green Card",
-      "issuer": "American Express",
-      "network": "Amex",
-      "annual_fee": 150,
-      "welcome_offer": {
-        "spending_requirement": 3000,
-        "time_period_months": 6,
-        "bonus_points": 40000,
-        "description": "Earn 40,000 Membership Rewards® Points after you spend $3,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
-        "free_nights": null,
-        "point_program": "Membership Rewards"
-      },
-      "earning_rates_count": 4
-    },
-    {
-      "card_id": "amex-everyday-preferred",
-      "name": "Amex EveryDay Preferred Credit Card",
-      "issuer": "American Express",
-      "network": "American Express",
+      "card_id": "aer-lingus-visa-signature",
+      "name": "Aer Lingus Visa Signature® Card",
+      "issuer": "Chase",
+      "network": "Visa",
       "annual_fee": 95,
-      "welcome_offer": {
-        "spending_requirement": 2000,
-        "time_period_months": 6,
-        "bonus_points": 15000,
-        "description": "Earn 15,000 Membership Rewards points after you use your new Card to make $2,000 in purchases within the first 6 months (as of July 2024)",
-        "free_nights": null,
-        "point_program": "American Express Membership Rewards"
-      },
-      "earning_rates_count": 4
+      "tags": [
+        "avios",
+        "airline",
+        "aer-lingus"
+      ]
+    },
+    {
+      "card_id": "amazon-prime-visa",
+      "name": "Prime Visa",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "amazon",
+        "cash-back",
+        "prime",
+        "no-annual-fee"
+      ]
+    },
+    {
+      "card_id": "amazon-visa",
+      "name": "Amazon Visa",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "amazon",
+        "cash-back",
+        "no-annual-fee",
+        "no-prime-required"
+      ]
+    },
+    {
+      "card_id": "amex-amazon-biz-prime",
+      "name": "Amazon Business Prime Card",
+      "issuer": "American Express",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "amex-amazon-biz",
+      "name": "Amazon Business American Express Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 0,
+      "tags": [
+        "amazon",
+        "business",
+        "no-annual-fee"
+      ]
     },
     {
       "card_id": "amex-bce",
@@ -70,15 +66,9 @@
       "issuer": "American Express",
       "network": "Amex",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 2000,
-        "time_period_months": 6,
-        "bonus_points": 150,
-        "description": "Earn $150 Cash Back after you spend $2,000 in purchases on your new Card within the first 6 months of Card Membership.",
-        "free_nights": null,
-        "point_program": "Cash Back"
-      },
-      "earning_rates_count": 4
+      "tags": [
+        "groceries"
+      ]
     },
     {
       "card_id": "amex-bcp",
@@ -86,15 +76,125 @@
       "issuer": "American Express",
       "network": "Amex",
       "annual_fee": 95,
-      "welcome_offer": {
-        "spending_requirement": 3000,
-        "time_period_months": 6,
-        "bonus_points": 200,
-        "description": "Earn $200 Cash Back after you spend $3,000 in purchases on your new Card within the first 6 months of Card Membership.",
-        "free_nights": null,
-        "point_program": "Cash Back"
-      },
-      "earning_rates_count": 5
+      "tags": [
+        "groceries"
+      ]
+    },
+    {
+      "card_id": "amex-biz-gold",
+      "name": "American Express Business Gold Card",
+      "issuer": "American Express",
+      "network": "American Express",
+      "annual_fee": 375,
+      "tags": [
+        "top 2 eligible business categories"
+      ]
+    },
+    {
+      "card_id": "amex-biz-platinum",
+      "name": "The Business Platinum Card® from American Express",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 895,
+      "tags": [
+        "business",
+        "travel",
+        "premium"
+      ]
+    },
+    {
+      "card_id": "amex-blue-biz-cash",
+      "name": "The American Express Blue Business Cash™ Card",
+      "issuer": "American Express",
+      "network": "American Express",
+      "annual_fee": 0,
+      "tags": [
+        "all purchases"
+      ]
+    },
+    {
+      "card_id": "amex-blue-biz-plus",
+      "name": "Amex Blue Business Plus",
+      "issuer": "American Express",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "amex-blue-cash-everyday",
+      "name": "Blue Cash Everyday® Card from American Express",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 0,
+      "tags": [
+        "cash-back",
+        "no-annual-fee",
+        "groceries",
+        "gas"
+      ]
+    },
+    {
+      "card_id": "amex-blue-cash-preferred",
+      "name": "Blue Cash Preferred® Card from American Express",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 0,
+      "tags": [
+        "groceries",
+        "cash-back"
+      ]
+    },
+    {
+      "card_id": "amex-blue-from-american-express",
+      "name": "Blue from American Express®",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 0,
+      "tags": [
+        "discontinued"
+      ]
+    },
+    {
+      "card_id": "amex-cash-magnet",
+      "name": "Amex Cash Magnet",
+      "issuer": "American Express",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "amex-centurion",
+      "name": "Amex Centurion Card",
+      "issuer": "American Express",
+      "network": "Visa/Mastercard",
+      "annual_fee": 5000,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "amex-delta-blue",
+      "name": "Amex Delta Blue",
+      "issuer": "American Express",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "amex-delta-gold-biz",
+      "name": "Delta SkyMiles Gold Business",
+      "issuer": "American Express",
+      "network": "Visa/Mastercard",
+      "annual_fee": 150,
+      "tags": [
+        "travel"
+      ]
     },
     {
       "card_id": "amex-delta-gold",
@@ -102,15 +202,9 @@
       "issuer": "American Express",
       "network": "Amex",
       "annual_fee": 150,
-      "welcome_offer": {
-        "spending_requirement": 2000,
-        "time_period_months": 6,
-        "bonus_points": 80000,
-        "description": "Earn up to 80,000 Bonus Miles after you spend $2,000 in eligible purchases on your new Card in your first 6 months of Card Membership.",
-        "free_nights": null,
-        "point_program": "Delta SkyMiles"
-      },
-      "earning_rates_count": 4
+      "tags": [
+        "delta purchases"
+      ]
     },
     {
       "card_id": "amex-delta-platinum",
@@ -118,15 +212,9 @@
       "issuer": "American Express",
       "network": "Amex",
       "annual_fee": 350,
-      "welcome_offer": {
-        "spending_requirement": 3000,
-        "time_period_months": 6,
-        "bonus_points": 90000,
-        "description": "Earn up to 90,000 Bonus Miles after you spend $3,000 in eligible purchases on your new Card in your first 6 months of Card Membership. Welcome offers vary and you may not be eligible.",
-        "free_nights": null,
-        "point_program": "Delta SkyMiles"
-      },
-      "earning_rates_count": 5
+      "tags": [
+        "delta purchases"
+      ]
     },
     {
       "card_id": "amex-delta-reserve",
@@ -134,47 +222,133 @@
       "issuer": "American Express",
       "network": "Amex",
       "annual_fee": 650,
-      "welcome_offer": {
-        "spending_requirement": 5000,
-        "time_period_months": 6,
-        "bonus_points": 100000,
-        "description": "Earn up to 100,000 Bonus Miles after you spend $5,000 in eligible purchases on your new Card in your first 6 months of Card Membership. Welcome offers vary and you may not be eligible.",
-        "free_nights": null,
-        "point_program": "Delta SkyMiles"
-      },
-      "earning_rates_count": 2
+      "tags": [
+        "delta purchases"
+      ]
     },
     {
-      "card_id": "amex-hilton-aspire",
+      "card_id": "amex-delta-skymiles-gold-biz",
+      "name": "Delta SkyMiles® Gold Business American Express Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 150,
+      "tags": [
+        "delta",
+        "airline",
+        "business"
+      ]
+    },
+    {
+      "card_id": "amex-delta-skymiles-platinum-biz",
+      "name": "Delta SkyMiles® Platinum Business American Express Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 350,
+      "tags": [
+        "delta",
+        "airline",
+        "business",
+        "lounge-access"
+      ]
+    },
+    {
+      "card_id": "amex-delta-skymiles-reserve-biz",
+      "name": "Delta SkyMiles® Reserve Business American Express Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 650,
+      "tags": [
+        "delta",
+        "airline",
+        "business",
+        "lounge-access",
+        "premium"
+      ]
+    },
+    {
+      "card_id": "amex-everyday-preferred",
+      "name": "Amex EveryDay Preferred Credit Card",
+      "issuer": "American Express",
+      "network": "American Express",
+      "annual_fee": 95,
+      "tags": [
+        "u.s. supermarkets"
+      ]
+    },
+    {
+      "card_id": "amex-everyday",
+      "name": "American Express EveryDay® Card",
+      "issuer": "American Express",
+      "network": "American Express",
+      "annual_fee": 0,
+      "tags": [
+        "groceries",
+        "gas",
+        "no-annual-fee"
+      ]
+    },
+    {
+      "card_id": "amex-gold",
+      "name": "American Express® Gold Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 325,
+      "tags": [
+        "restaurants"
+      ]
+    },
+    {
+      "card_id": "amex-graphite-biz",
+      "name": "Amex Graphite Business Cash",
+      "issuer": "American Express",
+      "network": "Visa/Mastercard",
+      "annual_fee": 295,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "amex-green",
+      "name": "American Express® Green Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 150,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "amex-hilton-biz-platinum",
+      "name": "Hilton Business Platinum",
+      "issuer": "American Express",
+      "network": "Visa/Mastercard",
+      "annual_fee": 695,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "amex-hilton-honors-aspire",
       "name": "Hilton Honors American Express Aspire Card",
       "issuer": "American Express",
       "network": "Amex",
       "annual_fee": 550,
-      "welcome_offer": {
-        "spending_requirement": 6000,
-        "time_period_months": 6,
-        "bonus_points": 175000,
-        "description": "Earn 175,000 Hilton Honors Bonus Points after spending $6,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
-        "free_nights": null,
-        "point_program": "Hilton Honors"
-      },
-      "earning_rates_count": 5
+      "tags": [
+        "hotel_hilton",
+        "premium"
+      ]
     },
     {
-      "card_id": "amex-hilton-honors-business",
+      "card_id": "amex-hilton-honors-biz",
       "name": "Hilton Honors American Express Business Card",
       "issuer": "American Express",
-      "network": "American Express",
+      "network": "Amex",
       "annual_fee": 195,
-      "welcome_offer": {
-        "spending_requirement": 8000,
-        "time_period_months": 6,
-        "bonus_points": 175000,
-        "description": "Earn 175,000 Hilton Honors Bonus Points plus a Free Night Reward after you spend $8,000 in purchases on the Hilton Honors Business Card in the first six months of Card Membership. Offer ends 4/15/2026.",
-        "free_nights": 1,
-        "point_program": "Hilton Honors"
-      },
-      "earning_rates_count": 3
+      "tags": [
+        "hilton",
+        "hotel",
+        "business"
+      ]
     },
     {
       "card_id": "amex-hilton-honors",
@@ -182,15 +356,10 @@
       "issuer": "American Express",
       "network": "Amex",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 2000,
-        "time_period_months": 6,
-        "bonus_points": 70000,
-        "description": "Earn 70,000 Hilton Honors Bonus Points plus a Free Night Reward after spending $2,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
-        "free_nights": 1,
-        "point_program": "Hilton Honors"
-      },
-      "earning_rates_count": 5
+      "tags": [
+        "hotel_hilton",
+        "no-annual-fee"
+      ]
     },
     {
       "card_id": "amex-hilton-surpass",
@@ -198,31 +367,33 @@
       "issuer": "American Express",
       "network": "Amex",
       "annual_fee": 150,
-      "welcome_offer": {
-        "spending_requirement": 3000,
-        "time_period_months": 6,
-        "bonus_points": 130000,
-        "description": "Earn 130,000 Hilton Honors Bonus Points plus a Free Night Reward after spending $3,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
-        "free_nights": 1,
-        "point_program": "Hilton Honors"
-      },
-      "earning_rates_count": 6
+      "tags": [
+        "hotel_hilton"
+      ]
     },
     {
-      "card_id": "amex-marriott-bonvoy-amex",
-      "name": "Marriott Bonvoy American Express Card",
+      "card_id": "amex-marriott-bevy",
+      "name": "Marriott Bonvoy Bevy® American Express® Card",
       "issuer": "American Express",
       "network": "Amex",
       "annual_fee": 250,
-      "welcome_offer": {
-        "spending_requirement": 5000,
-        "time_period_months": 6,
-        "bonus_points": 175000,
-        "description": "Earn 175,000 Marriott Bonvoy Bonus Points after spending $5,000 on eligible purchases within the first 6 months of card membership. Offer ends 5/13/26.",
-        "free_nights": null,
-        "point_program": "Marriott Bonvoy"
-      },
-      "earning_rates_count": 4
+      "tags": [
+        "hotel",
+        "marriott",
+        "hotel_marriott"
+      ]
+    },
+    {
+      "card_id": "amex-marriott-bonvoy-biz",
+      "name": "Marriott Bonvoy Business® American Express® Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 125,
+      "tags": [
+        "marriott",
+        "hotel",
+        "business"
+      ]
     },
     {
       "card_id": "amex-marriott-brilliant",
@@ -230,31 +401,29 @@
       "issuer": "American Express",
       "network": "Amex",
       "annual_fee": 650,
-      "welcome_offer": {
-        "spending_requirement": 6000,
-        "time_period_months": 6,
-        "bonus_points": 200000,
-        "description": "Earn 200,000 Marriott Bonvoy bonus points after you use your new Card to make $6,000 in purchases within the first 6 months of Card Membership. Offer Ends 5/13/2026.",
-        "free_nights": null,
-        "point_program": "Marriott Bonvoy"
-      },
-      "earning_rates_count": 4
+      "tags": [
+        "marriott hotels"
+      ]
     },
     {
-      "card_id": "amex-blue-business-cash",
-      "name": "The American Express Blue Business Cash™ Card",
+      "card_id": "amex-morgan-stanley-blue",
+      "name": "Amex Morgan Stanley Blue",
       "issuer": "American Express",
-      "network": "American Express",
+      "network": "Visa/Mastercard",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 3000,
-        "time_period_months": 3,
-        "bonus_points": 250,
-        "description": "Earn a $250 statement credit after you make $3,000 in purchases on your Card in your first 3 months.",
-        "free_nights": null,
-        "point_program": "Statement Credit"
-      },
-      "earning_rates_count": 2
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "amex-morgan-stanley-platinum",
+      "name": "Amex Morgan Stanley Platinum",
+      "issuer": "American Express",
+      "network": "Visa/Mastercard",
+      "annual_fee": 895,
+      "tags": [
+        "travel"
+      ]
     },
     {
       "card_id": "amex-platinum",
@@ -262,15 +431,355 @@
       "issuer": "American Express",
       "network": "Amex",
       "annual_fee": 895,
-      "welcome_offer": {
-        "spending_requirement": 12000,
-        "time_period_months": 6,
-        "bonus_points": 80000,
-        "description": "Earn 80,000 Membership Rewards® Points after you spend $12,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
-        "free_nights": null,
-        "point_program": "Membership Rewards"
-      },
-      "earning_rates_count": 3
+      "tags": [
+        "flights"
+      ]
+    },
+    {
+      "card_id": "amex-plum",
+      "name": "The Plum Card® from American Express",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 250,
+      "tags": [
+        "business",
+        "cash-back",
+        "charge-card"
+      ]
+    },
+    {
+      "card_id": "apple-card",
+      "name": "Apple Card",
+      "issuer": "Goldman Sachs",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "apple",
+        "no-annual-fee",
+        "apple-pay"
+      ]
+    },
+    {
+      "card_id": "barclays-aadvantage-red",
+      "name": "AAdvantage Aviator Red",
+      "issuer": "Barclays",
+      "network": "Visa/Mastercard",
+      "annual_fee": 99,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "barclays-aadvantage-silver",
+      "name": "AAdvantage Aviator Silver",
+      "issuer": "Barclays",
+      "network": "Visa/Mastercard",
+      "annual_fee": 199,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "barclays-aarp-essential-rewards-mastercard",
+      "name": "AARP® Essential Rewards Mastercard® from Barclays",
+      "issuer": "Barclays",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "cash-back",
+        "seniors",
+        "everyday"
+      ]
+    },
+    {
+      "card_id": "barclays-aarp-travel-rewards-mastercard",
+      "name": "AARP® Travel Rewards Mastercard® from Barclays",
+      "issuer": "Barclays",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel",
+        "cash-back",
+        "seniors"
+      ]
+    },
+    {
+      "card_id": "barclays-athleta-rewards-mastercard",
+      "name": "Athleta Rewards Mastercard®",
+      "issuer": "Barclays",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "retail",
+        "fitness",
+        "apparel"
+      ]
+    },
+    {
+      "card_id": "barclays-banana-republic-rewards-mastercard",
+      "name": "Banana Republic Rewards Mastercard®",
+      "issuer": "Barclays",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "retail",
+        "apparel"
+      ]
+    },
+    {
+      "card_id": "barclays-carnival-world-mastercard",
+      "name": "Carnival® World Mastercard®",
+      "issuer": "Barclays",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "cruise",
+        "travel",
+        "carnival"
+      ]
+    },
+    {
+      "card_id": "barclays-celebrity-cruises-visa-signature",
+      "name": "Celebrity Cruises Visa Signature® Card",
+      "issuer": "Barclays",
+      "network": "Visa Signature",
+      "annual_fee": 0,
+      "tags": [
+        "cruise",
+        "travel",
+        "celebrity"
+      ]
+    },
+    {
+      "card_id": "barclays-frontier-airlines-world-mastercard",
+      "name": "Frontier Airlines World Mastercard®",
+      "issuer": "Barclays",
+      "network": "Mastercard World",
+      "annual_fee": 89,
+      "tags": [
+        "airline",
+        "travel",
+        "frontier"
+      ]
+    },
+    {
+      "card_id": "barclays-gap-good-rewards-mastercard",
+      "name": "Gap Good Rewards Mastercard®",
+      "issuer": "Barclays",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "retail",
+        "apparel"
+      ]
+    },
+    {
+      "card_id": "barclays-harley-davidson",
+      "name": "Harley-Davidson Credit Card",
+      "issuer": "Barclays",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "rotating",
+        "no-annual-fee"
+      ]
+    },
+    {
+      "card_id": "barclays-jetblue-biz",
+      "name": "JetBlue Business Card",
+      "issuer": "Barclays",
+      "network": "Mastercard",
+      "annual_fee": 99,
+      "tags": [
+        "airline",
+        "business",
+        "jetblue",
+        "travel"
+      ]
+    },
+    {
+      "card_id": "barclays-jetblue-plus",
+      "name": "JetBlue Plus Card",
+      "issuer": "Barclays",
+      "network": "Visa/Mastercard",
+      "annual_fee": 99,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "barclays-jetblue",
+      "name": "JetBlue Card",
+      "issuer": "Barclays",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "airline",
+        "travel",
+        "jetblue"
+      ]
+    },
+    {
+      "card_id": "barclays-old-navy-navyist-rewards-mastercard",
+      "name": "Old Navy Navyist Rewards Mastercard®",
+      "issuer": "Barclays",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "retail",
+        "apparel"
+      ]
+    },
+    {
+      "card_id": "barclays-royal-caribbean-visa-signature",
+      "name": "Royal Caribbean Visa Signature® Card",
+      "issuer": "Barclays",
+      "network": "Visa Signature",
+      "annual_fee": 0,
+      "tags": [
+        "cruise",
+        "travel",
+        "royal-caribbean"
+      ]
+    },
+    {
+      "card_id": "barclays-uber",
+      "name": "Uber Visa Card (Legacy)",
+      "issuer": "Barclays",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "barclays-ubereats",
+      "name": "Uber Visa Card",
+      "issuer": "Barclays",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "dining",
+        "rideshare",
+        "no-annual-fee"
+      ]
+    },
+    {
+      "card_id": "barclays-wyndham-earner-biz",
+      "name": "Wyndham Earner Business",
+      "issuer": "Barclays",
+      "network": "Visa/Mastercard",
+      "annual_fee": 95,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "barclays-wyndham-earner-plus-biz",
+      "name": "Wyndham Earner+ Business",
+      "issuer": "Barclays",
+      "network": "Visa/Mastercard",
+      "annual_fee": 95,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "barclays-wyndham-earner-plus",
+      "name": "Wyndham Earner Plus",
+      "issuer": "Barclays",
+      "network": "Visa/Mastercard",
+      "annual_fee": 75,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "barclays-wyndham-earner",
+      "name": "Wyndham Earner Card",
+      "issuer": "Barclays",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "bilt-blue",
+      "name": "Bilt Blue Card",
+      "issuer": "First Electronic Bank",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "rent",
+        "no-annual-fee",
+        "everyday-spend"
+      ]
+    },
+    {
+      "card_id": "bilt-obsidian",
+      "name": "Bilt Obsidian Card",
+      "issuer": "First Electronic Bank",
+      "network": "Mastercard",
+      "annual_fee": 95,
+      "tags": [
+        "rent",
+        "travel",
+        "premium"
+      ]
+    },
+    {
+      "card_id": "bilt-palladium",
+      "name": "Bilt Palladium Card",
+      "issuer": "First Electronic Bank",
+      "network": "Mastercard",
+      "annual_fee": 495,
+      "tags": [
+        "rent",
+        "travel",
+        "premium",
+        "luxury"
+      ]
+    },
+    {
+      "card_id": "boa-alaska-airlines-visa-biz",
+      "name": "Alaska Airlines Visa® Business Credit Card",
+      "issuer": "Bank of America",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": [
+        "alaska-airlines",
+        "airline",
+        "travel",
+        "business",
+        "atmos"
+      ]
+    },
+    {
+      "card_id": "boa-alaska-airlines-visa-platinum",
+      "name": "Alaska Airlines Visa® Platinum Plus® Credit Card",
+      "issuer": "Bank of America",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "alaska-airlines",
+        "airline",
+        "travel",
+        "discontinued-product"
+      ]
+    },
+    {
+      "card_id": "boa-alaska-airlines-visa-signature",
+      "name": "Alaska Airlines Visa Signature® Credit Card",
+      "issuer": "Bank of America",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": [
+        "alaska-airlines",
+        "airline",
+        "travel",
+        "atmos"
+      ]
     },
     {
       "card_id": "boa-alaska-ascent",
@@ -278,14 +787,7 @@
       "issuer": "Bank of America",
       "network": "Visa",
       "annual_fee": 95,
-      "welcome_offer": {
-        "spending_requirement": 4,
-        "time_period_months": 4,
-        "bonus_points": 8000099,
-        "description": "80,000 bonus points + $99 Companion Fare (intro)",
-        "point_program": "Bank of America"
-      },
-      "earning_rates_count": 0
+      "tags": []
     },
     {
       "card_id": "boa-alaska-summit",
@@ -293,14 +795,60 @@
       "issuer": "Bank of America",
       "network": "Visa",
       "annual_fee": 395,
-      "welcome_offer": {
-        "spending_requirement": 5,
-        "time_period_months": 4,
-        "bonus_points": 100000,
-        "description": "TBD (Estimate 100,000 points)",
-        "point_program": "Bank of America"
-      },
-      "earning_rates_count": 0
+      "tags": []
+    },
+    {
+      "card_id": "boa-biz-advantage-customized-cash",
+      "name": "Bank of America® Business Advantage Customized Cash Rewards Mastercard®",
+      "issuer": "Bank of America",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "business",
+        "cash-back",
+        "no-annual-fee",
+        "choice-category"
+      ]
+    },
+    {
+      "card_id": "boa-biz-advantage-travel",
+      "name": "Bank of America® Business Advantage Travel Rewards World Mastercard®",
+      "issuer": "Bank of America",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "business",
+        "travel",
+        "points",
+        "no-annual-fee"
+      ]
+    },
+    {
+      "card_id": "boa-biz-advantage-unlimited-cash",
+      "name": "Bank of America® Business Advantage Unlimited Cash Rewards Mastercard®",
+      "issuer": "Bank of America",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "business",
+        "cash-back",
+        "no-annual-fee",
+        "flat-rate"
+      ]
+    },
+    {
+      "card_id": "boa-customized-cash-rewards-secured",
+      "name": "Bank of America® Customized Cash Rewards Secured Credit Card",
+      "issuer": "Bank of America",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "secured",
+        "cash-back",
+        "no-annual-fee",
+        "credit-building",
+        "choice-category"
+      ]
     },
     {
       "card_id": "boa-customized-cash-rewards",
@@ -308,14 +856,65 @@
       "issuer": "Bank of America",
       "network": "Visa",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 1,
-        "time_period_months": 3,
-        "bonus_points": 200,
-        "description": "$200 Online Cash Rewards Bonus",
-        "point_program": "Bank of America"
-      },
-      "earning_rates_count": 0
+      "tags": [
+        "cash-back",
+        "no-annual-fee",
+        "choice-category"
+      ]
+    },
+    {
+      "card_id": "boa-premium-rewards-elite",
+      "name": "Bank of America® Premium Rewards® Elite Credit Card",
+      "issuer": "Bank of America",
+      "network": "Visa",
+      "annual_fee": 550,
+      "tags": [
+        "travel",
+        "premium",
+        "points",
+        "lounge-access",
+        "high-annual-fee"
+      ]
+    },
+    {
+      "card_id": "boa-premium-rewards",
+      "name": "Bank of America® Premium Rewards® Credit Card",
+      "issuer": "Bank of America",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": [
+        "travel",
+        "premium",
+        "points",
+        "lounge-access"
+      ]
+    },
+    {
+      "card_id": "boa-student-customized-cash-rewards",
+      "name": "Bank of America® Customized Cash Rewards Credit Card for Students",
+      "issuer": "Bank of America",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "student",
+        "cash-back",
+        "no-annual-fee",
+        "choice-category"
+      ]
+    },
+    {
+      "card_id": "boa-student-travel-rewards",
+      "name": "Bank of America® Travel Rewards Credit Card for Students",
+      "issuer": "Bank of America",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "student",
+        "travel",
+        "points",
+        "no-annual-fee",
+        "no-foreign-fee"
+      ]
     },
     {
       "card_id": "boa-travel-rewards",
@@ -323,14 +922,67 @@
       "issuer": "Bank of America",
       "network": "Visa",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 1,
-        "time_period_months": 3,
-        "bonus_points": 25000,
-        "description": "25,000 Online Bonus Points",
-        "point_program": "Bank of America"
-      },
-      "earning_rates_count": 0
+      "tags": []
+    },
+    {
+      "card_id": "boa-unlimited-cash-rewards",
+      "name": "Bank of America® Unlimited Cash Rewards Credit Card",
+      "issuer": "Bank of America",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "cash-back",
+        "no-annual-fee",
+        "flat-rate"
+      ]
+    },
+    {
+      "card_id": "bread-cashback-american-express",
+      "name": "Bread Rewards™ American Express® Credit Card",
+      "issuer": "Bread Financial",
+      "network": "Amex",
+      "annual_fee": 0,
+      "tags": [
+        "american-express",
+        "cash-back",
+        "utility"
+      ]
+    },
+    {
+      "card_id": "british-airways-visa-signature",
+      "name": "British Airways Visa Signature® Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": [
+        "avios",
+        "airline",
+        "british-airways"
+      ]
+    },
+    {
+      "card_id": "capital-one-journey-student",
+      "name": "Capital One Journey Student Credit Card",
+      "issuer": "Capital One",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": []
+    },
+    {
+      "card_id": "capital-one-quicksilver-one",
+      "name": "Capital One QuicksilverOne Cash Rewards Credit Card",
+      "issuer": "Capital One",
+      "network": "Visa",
+      "annual_fee": 39,
+      "tags": []
+    },
+    {
+      "card_id": "capital-one-quicksilver-secured",
+      "name": "Capital One Quicksilver Secured Cash Rewards Credit Card",
+      "issuer": "Capital One",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": []
     },
     {
       "card_id": "capital-one-quicksilver",
@@ -338,15 +990,23 @@
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 500,
-        "time_period_months": 3,
-        "bonus_points": null,
-        "description": "Earn a $200 cash bonus once you spend $500 on purchases within the first three months of opening an account",
-        "free_nights": null,
-        "point_program": "Capital One Cash Rewards"
-      },
-      "earning_rates_count": 3
+      "tags": [
+        "all purchases"
+      ]
+    },
+    {
+      "card_id": "capital-one-savor-one",
+      "name": "Capital One SavorOne Cash Rewards",
+      "issuer": "Capital One",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "cashback",
+        "dining",
+        "grocery",
+        "entertainment",
+        "no-annual-fee"
+      ]
     },
     {
       "card_id": "capital-one-savor",
@@ -354,14 +1014,7 @@
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 500,
-        "time_period_months": 3,
-        "bonus_points": 200,
-        "description": "$200 Cash Bonus",
-        "point_program": "Capital One"
-      },
-      "earning_rates_count": 0
+      "tags": []
     },
     {
       "card_id": "capital-one-savorone",
@@ -369,15 +1022,33 @@
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 39,
-      "welcome_offer": {
-        "spending_requirement": 500,
-        "time_period_months": 3,
-        "bonus_points": null,
-        "description": "Earn a one-time $200 cash bonus once you spend $500 on purchases within the first 3 months from account opening",
-        "free_nights": null,
-        "point_program": "Capital One Cash Rewards"
-      },
-      "earning_rates_count": 5
+      "tags": [
+        "grocery stores"
+      ]
+    },
+    {
+      "card_id": "capital-one-spark-cash-plus",
+      "name": "Capital One Spark Cash Plus",
+      "issuer": "Capital One",
+      "network": "Visa",
+      "annual_fee": 150,
+      "tags": []
+    },
+    {
+      "card_id": "capital-one-spark-cash-select",
+      "name": "Capital One Spark Cash Select for Excellent Credit",
+      "issuer": "Capital One",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": []
+    },
+    {
+      "card_id": "capital-one-spark-miles-select",
+      "name": "Capital One Spark Miles Select for Business",
+      "issuer": "Capital One",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": []
     },
     {
       "card_id": "capital-one-spark-miles",
@@ -385,29 +1056,29 @@
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 95,
-      "welcome_offer": {
-        "spending_requirement": 4,
-        "time_period_months": 3,
-        "bonus_points": 50000,
-        "description": "50,000 miles",
-        "point_program": "Capital One"
-      },
-      "earning_rates_count": 0
+      "tags": []
     },
     {
-      "card_id": "capital-one-venture",
-      "name": "Capital One Venture Rewards Credit Card",
+      "card_id": "capital-one-venture-one",
+      "name": "Capital One VentureOne Rewards Credit Card",
       "issuer": "Capital One",
       "network": "Visa",
-      "annual_fee": 95,
-      "welcome_offer": {
-        "spending_requirement": 4,
-        "time_period_months": 3,
-        "bonus_points": 75000250,
-        "description": "75,000 miles + $250 Capital One Travel credit",
-        "point_program": "Capital One"
-      },
-      "earning_rates_count": 0
+      "annual_fee": 0,
+      "tags": []
+    },
+    {
+      "card_id": "capital-one-venture-x-biz",
+      "name": "Capital One Venture X Business",
+      "issuer": "Capital One",
+      "network": "Mastercard",
+      "annual_fee": 395,
+      "tags": [
+        "business",
+        "travel",
+        "premium",
+        "miles",
+        "lounge-access"
+      ]
     },
     {
       "card_id": "capital-one-venture-x",
@@ -415,140 +1086,55 @@
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 395,
-      "welcome_offer": {
-        "spending_requirement": 4,
-        "time_period_months": 3,
-        "bonus_points": 75000,
-        "description": "75,000 miles",
-        "point_program": "Capital One"
-      },
-      "earning_rates_count": 0
+      "tags": []
     },
     {
-      "card_id": "chase-freedom-flex",
-      "name": "Chase Freedom Flex®",
-      "issuer": "Chase",
+      "card_id": "capital-one-venture",
+      "name": "Capital One Venture Rewards Credit Card",
+      "issuer": "Capital One",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": []
+    },
+    {
+      "card_id": "capital-one-walmart-rewards",
+      "name": "Capital One Walmart Rewards® Mastercard®",
+      "issuer": "Capital One",
       "network": "Mastercard",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 500,
-        "time_period_months": 3,
-        "bonus_points": 20000,
-        "description": "Earn a $200 (20,000 pts) bonus after you spend $500 on purchases in the first 3 months from account opening.",
-        "free_nights": null,
-        "point_program": "Ultimate Rewards"
-      },
-      "earning_rates_count": 5
+      "tags": []
     },
     {
-      "card_id": "chase-freedom-rise",
-      "name": "Chase Freedom Rise Credit Card",
-      "issuer": "Chase",
-      "network": "Visa",
-      "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 0,
-        "time_period_months": 3,
-        "bonus_points": null,
-        "description": "Earn a $25 statement credit after signing up for automatic payments within the first 3 months from account opening and remaining enrolled for at least 90 consecutive days",
-        "free_nights": null,
-        "point_program": "Chase Ultimate Rewards"
-      },
-      "earning_rates_count": 1
+      "card_id": "cathay-world-elite",
+      "name": "Cathay World Elite Mastercard",
+      "issuer": "Synchrony Bank",
+      "network": "Mastercard",
+      "annual_fee": 99,
+      "tags": [
+        "travel"
+      ]
     },
     {
-      "card_id": "chase-freedom-unlimited",
-      "name": "Chase Freedom Unlimited®",
-      "issuer": "Chase",
-      "network": "Visa",
-      "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 500,
-        "time_period_months": 3,
-        "bonus_points": 25000,
-        "description": "Earn a $250 (25,000 pts) bonus after you spend $500 on purchases in the first 3 months from account opening.",
-        "free_nights": null,
-        "point_program": "Ultimate Rewards"
-      },
-      "earning_rates_count": 4
+      "card_id": "centurion-card-amex",
+      "name": "The Centurion® Card from American Express",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 5000,
+      "tags": [
+        "invitation-only",
+        "ultra-premium",
+        "black-card"
+      ]
     },
     {
-      "card_id": "chase-ink-business-cash",
-      "name": "Chase Ink Business Cash® Credit Card",
+      "card_id": "chase-aeroplan",
+      "name": "Chase Aeroplan Card",
       "issuer": "Chase",
-      "network": "Visa",
-      "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 6000,
-        "time_period_months": 3,
-        "bonus_cash": 750,
-        "description": "$750 cash back after you spend $6,000 on purchases in the first 3 months after account opening.",
-        "point_program": "Chase Ultimate Rewards (cash back option)"
-      },
-      "earning_rates_count": 6
-    },
-    {
-      "card_id": "chase-ink-business-preferred",
-      "name": "Chase Ink Business Preferred® Credit Card",
-      "issuer": "Chase",
-      "network": "Visa",
+      "network": "Visa/Mastercard",
       "annual_fee": 95,
-      "welcome_offer": {
-        "spending_requirement": 8000,
-        "time_period_months": 3,
-        "bonus_points": 100000,
-        "description": "100,000 bonus points after you spend $8,000 on purchases in the first 3 months from account opening.",
-        "free_nights": null,
-        "point_program": "Chase Ultimate Rewards"
-      },
-      "earning_rates_count": 6
-    },
-    {
-      "card_id": "chase-ink-business-unlimited",
-      "name": "Chase Ink Business Unlimited® Credit Card",
-      "issuer": "Chase",
-      "network": "Visa",
-      "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 6000,
-        "time_period_months": 3,
-        "bonus_cash": 750,
-        "description": "$750 cash back after you spend $6,000 on purchases in the first 3 months from account opening.",
-        "point_program": "Chase Ultimate Rewards (cash back option)"
-      },
-      "earning_rates_count": 2
-    },
-    {
-      "card_id": "chase-sapphire-preferred",
-      "name": "Chase Sapphire Preferred® Card",
-      "issuer": "Chase",
-      "network": "Visa",
-      "annual_fee": 95,
-      "welcome_offer": {
-        "spending_requirement": 5000,
-        "time_period_months": 3,
-        "bonus_points": 75000,
-        "description": "75,000 bonus points after you spend $5,000 on purchases in the first 3 months from account opening.",
-        "free_nights": null,
-        "point_program": "Ultimate Rewards"
-      },
-      "earning_rates_count": 6
-    },
-    {
-      "card_id": "chase-sapphire-reserve",
-      "name": "Chase Sapphire Reserve®",
-      "issuer": "Chase",
-      "network": "Visa",
-      "annual_fee": 795,
-      "welcome_offer": {
-        "spending_requirement": 6000,
-        "time_period_months": 3,
-        "bonus_points": 125000,
-        "description": "Earn 125,000 bonus points after you spend $6,000 on purchases in the first 3 months from account opening.",
-        "free_nights": null,
-        "point_program": "Ultimate Rewards"
-      },
-      "earning_rates_count": 5
+      "tags": [
+        "travel"
+      ]
     },
     {
       "card_id": "chase-disney-inspire",
@@ -556,31 +1142,172 @@
       "issuer": "Chase",
       "network": "Visa",
       "annual_fee": 149,
-      "welcome_offer": {
-        "spending_requirement": 1000,
-        "time_period_months": 3,
-        "bonus_points": null,
-        "description": "Earn a $300 Disney Gift Card upon approval and a $300 statement credit after spending $1,000 on purchases within the first three months from account opening. Total welcome value up to $600.",
-        "free_nights": null,
-        "point_program": "Disney Rewards"
-      },
-      "earning_rates_count": 6
+      "tags": [
+        "disneyplus.com, hulu.com, espn+ purchases"
+      ]
+    },
+    {
+      "card_id": "chase-disney-premier",
+      "name": "Disney Premier Visa",
+      "issuer": "Chase",
+      "network": "Visa/Mastercard",
+      "annual_fee": 49,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "chase-disney-visa",
+      "name": "Chase Disney Visa Card",
+      "issuer": "Chase",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "chase-disney",
+      "name": "Disney® Visa® Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "disney",
+        "co-branded",
+        "theme-park",
+        "no-annual-fee",
+        "streaming"
+      ]
+    },
+    {
+      "card_id": "chase-freedom-flex",
+      "name": "Chase Freedom Flex®",
+      "issuer": "Chase",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "rotating"
+      ]
+    },
+    {
+      "card_id": "chase-freedom-rise",
+      "name": "Chase Freedom Rise Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "all purchases"
+      ]
+    },
+    {
+      "card_id": "chase-freedom-unlimited",
+      "name": "Chase Freedom Unlimited®",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "chase travel"
+      ]
+    },
+    {
+      "card_id": "chase-hyatt-biz",
+      "name": "World of Hyatt Business Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 199,
+      "tags": [
+        "hyatt",
+        "hotel",
+        "business",
+        "co-branded",
+        "travel"
+      ]
+    },
+    {
+      "card_id": "chase-hyatt",
+      "name": "Chase Hyatt",
+      "issuer": "Chase",
+      "network": "Visa/Mastercard",
+      "annual_fee": 95,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "chase-ihg-premier-biz",
+      "name": "IHG One Rewards Premier Business Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 99,
+      "tags": [
+        "ihg",
+        "hotel",
+        "business",
+        "platinum-elite"
+      ]
     },
     {
       "card_id": "chase-ihg-premier",
-      "name": "IHG One Rewards Premier Credit Card",
+      "name": "Chase IHG Premier",
       "issuer": "Chase",
-      "network": "Mastercard",
+      "network": "Visa/Mastercard",
       "annual_fee": 99,
-      "welcome_offer": {
-        "spending_requirement": 3000,
-        "time_period_months": 3,
-        "bonus_points": 140000,
-        "description": "Earn 140,000 bonus points after you spend $3,000 on purchases in the first 3 months from account opening.",
-        "free_nights": null,
-        "point_program": "IHG One Rewards"
-      },
-      "earning_rates_count": 5
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "chase-ink-biz-cash",
+      "name": "Chase Ink Business Cash® Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "office supply stores"
+      ]
+    },
+    {
+      "card_id": "chase-ink-biz-preferred",
+      "name": "Chase Ink Business Preferred® Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "chase-ink-biz-premier",
+      "name": "Ink Business Premier® Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 195,
+      "tags": [
+        "business",
+        "cash-back",
+        "high-spend"
+      ]
+    },
+    {
+      "card_id": "chase-ink-biz-unlimited",
+      "name": "Chase Ink Business Unlimited® Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "all purchases (flat)"
+      ]
+    },
+    {
+      "card_id": "chase-ink-preferred-plus",
+      "name": "Ink Business Preferred Plus",
+      "issuer": "Chase",
+      "network": "Visa/Mastercard",
+      "annual_fee": 95,
+      "tags": [
+        "travel"
+      ]
     },
     {
       "card_id": "chase-marriott-boundless",
@@ -588,31 +1315,172 @@
       "issuer": "Chase",
       "network": "Visa",
       "annual_fee": 95,
-      "welcome_offer": {
-        "spending_requirement": 4000,
-        "time_period_months": 4,
-        "bonus_points": null,
-        "description": "Earn up to 4 Free Night Awards (35k pts each): 3 after $3,000 spend in 3 months, plus 1 after total $4,000 spend in 4 months. Plus $100 airline credit.",
-        "free_nights": 4,
-        "point_program": "Marriott Bonvoy"
-      },
-      "earning_rates_count": 3
+      "tags": [
+        "marriott"
+      ]
     },
     {
-      "card_id": "chase-united-quest",
-      "name": "United Quest Card",
+      "card_id": "chase-ritz-carlton",
+      "name": "Chase Ritz-Carlton Credit Card",
       "issuer": "Chase",
       "network": "Visa",
-      "annual_fee": 350,
-      "welcome_offer": {
-        "spending_requirement": 4000,
-        "time_period_months": 3,
-        "bonus_points": 90000,
-        "description": "Earn 90,000 bonus miles after you spend $4,000 on purchases in the first 3 months your account is open. Plus earn 3,000 PQP (Premier Qualifying Points) after spending $4,000. Additional 10,000 bonus miles if you add an authorized user in first 3 months.",
-        "free_nights": null,
-        "point_program": "United MileagePlus"
-      },
-      "earning_rates_count": 6
+      "annual_fee": 450,
+      "tags": [
+        "travel",
+        "hotel",
+        "premium",
+        "discontinued"
+      ]
+    },
+    {
+      "card_id": "chase-sapphire-preferred",
+      "name": "Chase Sapphire Preferred® Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": [
+        "chase travel"
+      ]
+    },
+    {
+      "card_id": "chase-sapphire-reserve-biz",
+      "name": "Chase Sapphire Reserve® for Business",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 795,
+      "tags": [
+        "business",
+        "travel",
+        "ultimate-rewards",
+        "premium",
+        "lounge-access",
+        "fhr",
+        "thc"
+      ]
+    },
+    {
+      "card_id": "chase-sapphire-reserve",
+      "name": "Chase Sapphire Reserve®",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 795,
+      "tags": [
+        "chase travel"
+      ]
+    },
+    {
+      "card_id": "chase-southwest-performance-biz",
+      "name": "Southwest Performance Business",
+      "issuer": "Chase",
+      "network": "Visa/Mastercard",
+      "annual_fee": 199,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "chase-southwest-performance-plus",
+      "name": "Southwest Performance Plus",
+      "issuer": "Chase",
+      "network": "Visa/Mastercard",
+      "annual_fee": 199,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "chase-southwest-premier-biz",
+      "name": "Southwest Rapid Rewards® Premier Business Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 149,
+      "tags": [
+        "southwest",
+        "airline",
+        "business",
+        "co-branded",
+        "travel"
+      ]
+    },
+    {
+      "card_id": "chase-southwest-priority",
+      "name": "Chase Southwest Priority",
+      "issuer": "Chase",
+      "network": "Visa/Mastercard",
+      "annual_fee": 229,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "chase-starbucks-rewards",
+      "name": "Starbucks® Rewards Visa® Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 49,
+      "tags": [
+        "starbucks",
+        "co-branded",
+        "discontinued",
+        "coffee"
+      ]
+    },
+    {
+      "card_id": "chase-united-biz",
+      "name": "United℠ Business Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 150,
+      "tags": [
+        "united",
+        "airline",
+        "business",
+        "co-branded",
+        "travel"
+      ]
+    },
+    {
+      "card_id": "chase-united-club-biz",
+      "name": "United Club℠ Business Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 695,
+      "tags": [
+        "united",
+        "airline",
+        "business",
+        "lounge-access",
+        "premier-status"
+      ]
+    },
+    {
+      "card_id": "chase-united-club-infinite",
+      "name": "United Club℠ Visa Infinite Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 695,
+      "tags": [
+        "united",
+        "airline",
+        "premium",
+        "lounge-access",
+        "co-branded",
+        "travel"
+      ]
+    },
+    {
+      "card_id": "chase-united-club",
+      "name": "United Club℠ Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 695,
+      "tags": [
+        "united",
+        "airline",
+        "lounge-access",
+        "premier-status",
+        "high-af"
+      ]
     },
     {
       "card_id": "chase-united-explorer",
@@ -620,90 +1488,183 @@
       "issuer": "Chase",
       "network": "Visa",
       "annual_fee": 150,
-      "welcome_offer": {
-        "spending_requirement": 3000,
-        "time_period_months": 3,
-        "bonus_points": 80000,
-        "description": "Earn 70,000 bonus miles after $3,000 spend in 3 months, plus 10,000 bonus miles after adding an AU in the first 3 months.",
-        "free_nights": null,
-        "point_program": "United MileagePlus"
-      },
-      "earning_rates_count": 5
+      "tags": [
+        "united flights"
+      ]
     },
     {
-      "card_id": "citi-custom-cash",
-      "name": "Citi Custom Cash® Card",
-      "issuer": "Citi",
+      "card_id": "chase-united-gateway",
+      "name": "United℠ Gateway Card",
+      "issuer": "Chase",
       "network": "Visa",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 1,
-        "time_period_months": 3,
-        "bonus_points": 200,
-        "description": "$200 Cash Back",
-        "point_program": "Citi"
-      },
-      "earning_rates_count": 0
+      "tags": [
+        "united",
+        "airline",
+        "co-branded",
+        "travel",
+        "no-annual-fee"
+      ]
     },
     {
-      "card_id": "citi-double-cash",
-      "name": "Citi Double Cash® Card",
-      "issuer": "Citi",
+      "card_id": "chase-united-infinite",
+      "name": "Chase United Infinite",
+      "issuer": "Chase",
+      "network": "Visa/Mastercard",
+      "annual_fee": 695,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "chase-united-quest-biz",
+      "name": "United Quest Business",
+      "issuer": "Chase",
+      "network": "Visa/Mastercard",
+      "annual_fee": 350,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "chase-united-quest",
+      "name": "United Quest Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 350,
+      "tags": [
+        "united purchases (airline tickets, seat upgrades, economy plus, inflight food/beverages/wi-fi, united fees)"
+      ]
+    },
+    {
+      "card_id": "choice-privileges-select-visa",
+      "name": "Choice Privileges® Visa Signature® Card",
+      "issuer": "Wells Fargo",
       "network": "Visa",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 1500,
-        "time_period_months": 6,
-        "bonus_cash": 200,
-        "description": "$200 cash back after you spend $1,500 on purchases in the first 6 months of account opening. Delivered as 20,000 ThankYou® Points (equivalent to $200)."
-      },
-      "earning_rates_count": 3
+      "tags": [
+        "choice-hotels",
+        "hotel",
+        "rewards"
+      ]
     },
     {
-      "card_id": "citi-strata-elite",
-      "name": "Citi Strata Elite℠ Card",
+      "card_id": "choice-privileges-visa",
+      "name": "Choice Privileges Mastercard®",
+      "issuer": "Wells Fargo",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "choice-hotels",
+        "hotel",
+        "rewards"
+      ]
+    },
+    {
+      "card_id": "citi-aa-exec",
+      "name": "Citi AA Exec",
       "issuer": "Citi",
-      "network": "Visa",
+      "network": "Visa/Mastercard",
       "annual_fee": 595,
-      "welcome_offer": {
-        "spending_requirement": 5,
-        "time_period_months": 3,
-        "bonus_points": 75000,
-        "description": "75,000 ThankYou® Points",
-        "point_program": "Citi"
-      },
-      "earning_rates_count": 0
+      "tags": [
+        "travel"
+      ]
     },
     {
-      "card_id": "citi-premier",
-      "name": "Citi Strata Premier® Card",
+      "card_id": "citi-aa-mileup-biz",
+      "name": "AA MileUp Business",
       "issuer": "Citi",
-      "network": "Visa",
-      "annual_fee": 95,
-      "welcome_offer": {
-        "spending_requirement": 4000,
-        "time_period_months": 3,
-        "bonus_points": 60000,
-        "description": "60,000 bonus ThankYou® Points after spending $4,000 in the first 3 months of account opening.",
-        "free_nights": null,
-        "point_program": "Citi ThankYou"
-      },
-      "earning_rates_count": 8
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
     },
     {
-      "card_id": "citi-strata-premier",
-      "name": "Citi Strata Premier℠ Card",
+      "card_id": "citi-aa-mileup",
+      "name": "AA AAdvantage MileUp",
+      "issuer": "Citi",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "citi-aa-platinum-select",
+      "name": "AAdvantage Platinum Select",
+      "issuer": "Citi",
+      "network": "Visa/Mastercard",
+      "annual_fee": 99,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "citi-aadvantage-executive",
+      "name": "Citi® / AAdvantage® Executive World Elite Mastercard®",
+      "issuer": "Citi",
+      "network": "Mastercard",
+      "annual_fee": 595,
+      "tags": [
+        "american-airlines",
+        "airline",
+        "premium",
+        "lounge-access",
+        "aadvantage"
+      ]
+    },
+    {
+      "card_id": "citi-aadvantage-globe",
+      "name": "Citi® / AAdvantage® Globe™ Mastercard®",
+      "issuer": "Citi",
+      "network": "Mastercard",
+      "annual_fee": 350,
+      "tags": [
+        "american-airlines",
+        "airline",
+        "premium",
+        "aadvantage"
+      ]
+    },
+    {
+      "card_id": "citi-aadvantage-mileup",
+      "name": "American Airlines AAdvantage® MileUp® Card",
+      "issuer": "Citi",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "american-airlines",
+        "airline",
+        "no-annual-fee",
+        "aadvantage"
+      ]
+    },
+    {
+      "card_id": "citi-american-airlines-mastercard",
+      "name": "American Airlines AAdvantage® Mastercard® (Citi)",
+      "issuer": "Citi",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "american-airlines",
+        "airline",
+        "no-annual-fee",
+        "aadvantage"
+      ]
+    },
+    {
+      "card_id": "citi-best-buy-visa",
+      "name": "Best Buy® Visa® Credit Card",
       "issuer": "Citi",
       "network": "Visa",
-      "annual_fee": 95,
-      "welcome_offer": {
-        "spending_requirement": 4,
-        "time_period_months": 3,
-        "bonus_points": 60000,
-        "description": "60,000 ThankYou® Points",
-        "point_program": "Citi"
-      },
-      "earning_rates_count": 0
+      "annual_fee": 0,
+      "tags": [
+        "store-card",
+        "best-buy",
+        "cash-back",
+        "no-annual-fee"
+      ]
     },
     {
       "card_id": "citi-costco-anywhere",
@@ -711,41 +1672,228 @@
       "issuer": "Citi",
       "network": "Visa",
       "annual_fee": 0,
-      "welcome_offer": {
-        "description": "No traditional welcome bonus. Earning starts immediately upon card use."
-      },
-      "earning_rates_count": 5
+      "tags": [
+        "gas (costco)"
+      ]
     },
     {
-      "card_id": "discover-it",
-      "name": "Discover it® Cash Back",
+      "card_id": "citi-costco-biz",
+      "name": "Costco Anywhere Business",
+      "issuer": "Citi",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "citi-custom-cash",
+      "name": "Citi Custom Cash® Card",
+      "issuer": "Citi",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": []
+    },
+    {
+      "card_id": "citi-dividend",
+      "name": "Citi Dividend",
+      "issuer": "Citi",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "citi-double-cash",
+      "name": "Citi Double Cash® Card",
+      "issuer": "Citi",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "all purchases (buy)"
+      ]
+    },
+    {
+      "card_id": "citi-prestige",
+      "name": "Citi Prestige",
+      "issuer": "Citi",
+      "network": "Visa/Mastercard",
+      "annual_fee": 495,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "citi-rewards-plus",
+      "name": "Citi Rewards+® Card",
+      "issuer": "Citi",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "rewards",
+        "no-annual-fee",
+        "thankyou-points"
+      ]
+    },
+    {
+      "card_id": "citi-secured-mastercard",
+      "name": "Citi® Secured Mastercard®",
+      "issuer": "Citi",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "secured",
+        "credit-building",
+        "no-annual-fee"
+      ]
+    },
+    {
+      "card_id": "citi-strata-elite-premier",
+      "name": "Strata Elite Premier",
+      "issuer": "Citi",
+      "network": "Visa/Mastercard",
+      "annual_fee": 595,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "citi-strata-elite",
+      "name": "Citi Strata Elite℠ Card",
+      "issuer": "Citi",
+      "network": "Visa",
+      "annual_fee": 595,
+      "tags": []
+    },
+    {
+      "card_id": "citi-strata-premier",
+      "name": "Citi Strata Premier℠ Card",
+      "issuer": "Citi",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": [
+        "hotels, car rentals & attractions (cititravel.com)"
+      ]
+    },
+    {
+      "card_id": "citi-strata",
+      "name": "Citi Strata℠ Card",
+      "issuer": "Citi",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "rewards",
+        "no-annual-fee",
+        "thankyou-points",
+        "dining",
+        "groceries"
+      ]
+    },
+    {
+      "card_id": "comenity-bed-bath-beyond-mastercard",
+      "name": "Bed Bath & Beyond Mastercard®",
+      "issuer": "Bread Financial / Comenity Bank",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "bread-financial",
+        "bed-bath-beyond",
+        "retail",
+        "mastercard"
+      ]
+    },
+    {
+      "card_id": "comenity-kayak-credit-card",
+      "name": "KAYAK Credit Card",
+      "issuer": "Bread Financial / Comenity Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "bread-financial",
+        "kayak",
+        "travel",
+        "rewards"
+      ]
+    },
+    {
+      "card_id": "comenity-ulta-beauty-mastercard",
+      "name": "Ulta Beauty Mastercard®",
+      "issuer": "Bread Financial / Comenity Bank",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "bread-financial",
+        "ulta",
+        "beauty",
+        "rewards"
+      ]
+    },
+    {
+      "card_id": "comenity-victoria-secret-credit-card",
+      "name": "Victoria's Secret Credit Card",
+      "issuer": "Bread Financial / Comenity Bank",
+      "network": "Comenity (Store Card)",
+      "annual_fee": 0,
+      "tags": [
+        "bread-financial",
+        "victoria-secret",
+        "retail",
+        "store-card"
+      ]
+    },
+    {
+      "card_id": "costco-anywhere-visa-business-citi",
+      "name": "Costco Anywhere Visa® Business Card by Citi",
+      "issuer": "Citi",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "costco",
+        "cash-back",
+        "no-annual-fee",
+        "business"
+      ]
+    },
+    {
+      "card_id": "costco-anywhere-visa-citi",
+      "name": "Costco Anywhere Visa by Citi",
+      "issuer": "Citi",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "cashback",
+        "costco",
+        "gas",
+        "travel",
+        "dining",
+        "no-annual-fee"
+      ]
+    },
+    {
+      "card_id": "delta-skymiles-blue-amex",
+      "name": "Delta SkyMiles® Blue American Express Card",
+      "issuer": "American Express",
+      "network": "Amex",
+      "annual_fee": 0,
+      "tags": [
+        "delta",
+        "airline",
+        "no-annual-fee"
+      ]
+    },
+    {
+      "card_id": "discover-it-chrome",
+      "name": "Discover it® Chrome",
       "issuer": "Discover",
       "network": "Discover",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": null,
-        "time_period_months": null,
-        "bonus_points": null,
-        "description": "Unlimited Cashback Match: Discover automatically matches all cash back earned at the end of your first year. No minimum spending, no maximum cap.",
-        "free_nights": null,
-        "point_program": "Discover Cashback"
-      },
-      "earning_rates_count": 2
-    },
-    {
-      "card_id": "discover-it-cash-back",
-      "name": "Discover it® Cash Back",
-      "issuer": "Discover",
-      "network": "Discover",
-      "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 0,
-        "time_period_months": 3,
-        "bonus_points": null,
-        "description": "Unlimited Cashback Match™",
-        "point_program": "Discover"
-      },
-      "earning_rates_count": 0
+      "tags": [
+        "gas",
+        "dining",
+        "rotating",
+        "no-annual-fee"
+      ]
     },
     {
       "card_id": "discover-it-miles",
@@ -753,29 +1901,1076 @@
       "issuer": "Discover",
       "network": "Discover",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 0,
-        "time_period_months": 3,
-        "bonus_points": null,
-        "description": "Unlimited Match™",
-        "point_program": "Discover"
-      },
-      "earning_rates_count": 0
+      "tags": []
     },
     {
-      "card_id": "usbank-altitude-connect",
+      "card_id": "discover-it-secured",
+      "name": "Discover it® Secured Credit Card",
+      "issuer": "Discover",
+      "network": "Discover",
+      "annual_fee": 0,
+      "tags": [
+        "secured",
+        "cash-back",
+        "building-credit"
+      ]
+    },
+    {
+      "card_id": "discover-it-student-cash-back",
+      "name": "Discover it® Student Cash Back",
+      "issuer": "Discover",
+      "network": "Discover",
+      "annual_fee": 0,
+      "tags": [
+        "student",
+        "cash-back",
+        "rotating-categories"
+      ]
+    },
+    {
+      "card_id": "discover-it-student-chrome",
+      "name": "Discover it® Student Chrome",
+      "issuer": "Discover",
+      "network": "Discover",
+      "annual_fee": 0,
+      "tags": [
+        "student",
+        "gas",
+        "restaurants"
+      ]
+    },
+    {
+      "card_id": "discover-it",
+      "name": "Discover it® Cash Back",
+      "issuer": "Discover",
+      "network": "Discover",
+      "annual_fee": 0,
+      "tags": [
+        "rotating 5% categories"
+      ]
+    },
+    {
+      "card_id": "doordash-rewards-mastercard",
+      "name": "DoorDash Rewards Mastercard®",
+      "issuer": "Chase",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "dining",
+        "delivery",
+        "cash-back"
+      ]
+    },
+    {
+      "card_id": "emirates-skywards-mastercard",
+      "name": "Emirates Skywards Premium World Elite Mastercard®",
+      "issuer": "Barclays",
+      "network": "Mastercard World Elite",
+      "annual_fee": 499,
+      "tags": [
+        "airline",
+        "travel",
+        "emirates",
+        "premium"
+      ]
+    },
+    {
+      "card_id": "fidelity-rewards-visa-signature",
+      "name": "Fidelity Rewards Visa Signature Card",
+      "issuer": "Fidelity Investments / Elan Financial Services",
+      "network": "Visa Signature",
+      "annual_fee": 0,
+      "tags": [
+        "cash-back",
+        "2-percent",
+        "no-annual-fee",
+        "no-foreign-fee",
+        "visa-signature"
+      ]
+    },
+    {
+      "card_id": "hawaiian-airlines-world-elite-mastercard",
+      "name": "Hawaiian Airlines World Elite Mastercard®",
+      "issuer": "Barclays",
+      "network": "Mastercard World Elite",
+      "annual_fee": 99,
+      "tags": [
+        "airline",
+        "travel",
+        "hawaiian",
+        "alaska"
+      ]
+    },
+    {
+      "card_id": "hsbc-elite-credit",
+      "name": "HSBC Elite Credit Card",
+      "issuer": "HSBC",
+      "network": "World Elite Mastercard",
+      "annual_fee": 495,
+      "tags": [
+        "premium",
+        "travel",
+        "world-elite",
+        "lounge-access",
+        "annual-fee"
+      ]
+    },
+    {
+      "card_id": "hsbc-premier-world-mastercard",
+      "name": "HSBC Premier World Mastercard",
+      "issuer": "HSBC",
+      "network": "World Mastercard",
+      "annual_fee": 95,
+      "tags": [
+        "premier",
+        "world-mastercard",
+        "travel",
+        "dining",
+        "gas",
+        "grocery"
+      ]
+    },
+    {
+      "card_id": "hsbc-premier",
+      "name": "HSBC Premier Credit Card",
+      "issuer": "HSBC",
+      "network": "Visa/Mastercard",
+      "annual_fee": 95,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "iberia-visa-signature",
+      "name": "Iberia Visa Signature® Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": [
+        "avios",
+        "airline",
+        "iberia"
+      ]
+    },
+    {
+      "card_id": "ihg-one-rewards-premier",
+      "name": "IHG One Rewards Premier Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 99,
+      "tags": [
+        "ihg",
+        "hotel",
+        "co-branded",
+        "travel"
+      ]
+    },
+    {
+      "card_id": "ihg-one-rewards-traveler",
+      "name": "IHG One Rewards Traveler Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "ihg",
+        "hotel",
+        "co-branded",
+        "travel",
+        "no-annual-fee"
+      ]
+    },
+    {
+      "card_id": "jpmorgan-reserve",
+      "name": "JPMorgan Reserve Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 995,
+      "tags": [
+        "jpmorgan",
+        "ultra-premium",
+        " invitation-only",
+        "travel",
+        "fhr",
+        "thc"
+      ]
+    },
+    {
+      "card_id": "kohls-charge",
+      "name": "Kohl's Charge Card",
+      "issuer": "Capital One",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": []
+    },
+    {
+      "card_id": "luxury-card-black",
+      "name": "Luxury Card Mastercard® Black Card™",
+      "issuer": "Barclays",
+      "network": "Mastercard",
+      "annual_fee": 699,
+      "tags": [
+        "premium",
+        "travel",
+        "lounge-access",
+        "metal"
+      ]
+    },
+    {
+      "card_id": "luxury-card-gold",
+      "name": "Luxury Card Mastercard® Gold Card™",
+      "issuer": "Barclays",
+      "network": "Mastercard",
+      "annual_fee": 1199,
+      "tags": [
+        "premium",
+        "travel",
+        "lounge-access",
+        "metal",
+        "gold"
+      ]
+    },
+    {
+      "card_id": "luxury-card-titanium",
+      "name": "Luxury Card Mastercard® Titanium Card™",
+      "issuer": "Barclays",
+      "network": "Mastercard",
+      "annual_fee": 299,
+      "tags": [
+        "premium",
+        "travel",
+        "lounge-access",
+        "metal"
+      ]
+    },
+    {
+      "card_id": "macy-american-express-card",
+      "name": "Macy's American Express® Card",
+      "issuer": "Citi",
+      "network": "Amex",
+      "annual_fee": 0,
+      "tags": [
+        "store-card",
+        "macys",
+        "american-express",
+        "rewards"
+      ]
+    },
+    {
+      "card_id": "macys-credit",
+      "name": "Macy's Credit Card",
+      "issuer": "Citi",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "store-card",
+        "macys",
+        "mastercard",
+        "rewards"
+      ]
+    },
+    {
+      "card_id": "marriott-bonvoy-bold",
+      "name": "Marriott Bonvoy Bold® Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "marriott",
+        "hotel",
+        "no-annual-fee",
+        "silver-elite"
+      ]
+    },
+    {
+      "card_id": "marriott-bonvoy-boundless",
+      "name": "Marriott Bonvoy Boundless® Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": [
+        "marriott",
+        "hotel",
+        "co-branded",
+        "travel"
+      ]
+    },
+    {
+      "card_id": "marriott-bonvoy-bountiful",
+      "name": "Marriott Bonvoy Bountiful® Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 250,
+      "tags": [
+        "marriott",
+        "hotel",
+        "co-branded",
+        "travel",
+        "premium"
+      ]
+    },
+    {
+      "card_id": "my-gm-rewards-mastercard",
+      "name": "My GM Rewards Card Mastercard®",
+      "issuer": "Goldman Sachs",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "gm",
+        "auto",
+        "rewards"
+      ]
+    },
+    {
+      "card_id": "navy-federal-cashrewards-plus",
+      "name": "Navy Federal cashRewards PLUS® Credit Card",
+      "issuer": "Navy Federal Credit Union",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "cash-back",
+        "gas"
+      ]
+    },
+    {
+      "card_id": "navy-federal-cashrewards",
+      "name": "Navy Federal cashRewards® Credit Card",
+      "issuer": "Navy Federal Credit Union",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "cash-back",
+        "gas"
+      ]
+    },
+    {
+      "card_id": "navy-federal-flagship-rewards",
+      "name": "Navy Federal Flagship Rewards® Credit Card",
+      "issuer": "Navy Federal Credit Union",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "travel",
+        "rewards"
+      ]
+    },
+    {
+      "card_id": "navy-federal-go-rewards",
+      "name": "Navy Federal GO REWARDS® Credit Card",
+      "issuer": "Navy Federal Credit Union",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "rewards",
+        "dining",
+        "gas"
+      ]
+    },
+    {
+      "card_id": "navy-federal-more-rewards",
+      "name": "Navy Federal More Rewards American Express® Card",
+      "issuer": "Navy Federal Credit Union",
+      "network": "Amex",
+      "annual_fee": 0,
+      "tags": [
+        "rewards",
+        "dining",
+        "american-express"
+      ]
+    },
+    {
+      "card_id": "navy-federal-nrewards-secured",
+      "name": "Navy Federal nRewards® Secured Credit Card",
+      "issuer": "Navy Federal Credit Union",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "secured",
+        "building-credit"
+      ]
+    },
+    {
+      "card_id": "nordstrom-retail",
+      "name": "Nordstrom Card",
+      "issuer": "TD Bank",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "nordstrom",
+      "name": "Nordstrom Visa",
+      "issuer": "TD Bank",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "penfed-gold-visa",
+      "name": "PenFed Gold Visa® Card",
+      "issuer": "PenFed Credit Union",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "low-apr",
+        "visa"
+      ]
+    },
+    {
+      "card_id": "penfed-pathfinder-rewards",
+      "name": "PenFed Pathfinder® Rewards Visa Signature® Card",
+      "issuer": "PenFed Credit Union",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": [
+        "travel",
+        "rewards",
+        "premium"
+      ]
+    },
+    {
+      "card_id": "penfed-platinum-rewards",
+      "name": "PenFed Platinum Rewards Visa Signature® Card",
+      "issuer": "PenFed Credit Union",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "gas",
+        "groceries",
+        "rewards"
+      ]
+    },
+    {
+      "card_id": "penfed-power-cash-rewards",
+      "name": "PenFed Power Cash Rewards® Visa Signature® Card",
+      "issuer": "PenFed Credit Union",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "cash-back",
+        "flat-rate"
+      ]
+    },
+    {
+      "card_id": "petal-1-visa",
+      "name": "Petal 1 Visa",
+      "issuer": "Petal (WebBank)",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "credit-builder",
+        "student",
+        "no-fee",
+        "cash-back",
+        "beginner"
+      ]
+    },
+    {
+      "card_id": "petal-2-visa",
+      "name": "Petal 2 Visa",
+      "issuer": "Petal (WebBank)",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "credit-builder",
+        "student",
+        "no-fee",
+        "cash-back",
+        "beginner"
+      ]
+    },
+    {
+      "card_id": "pnc-cash-rewards-visa",
+      "name": "PNC Cash Rewards® Visa® Credit Card",
+      "issuer": "PNC Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "cash-back",
+        "gas",
+        "dining"
+      ]
+    },
+    {
+      "card_id": "pnc-cash-rewards",
+      "name": "PNC Cash Rewards",
+      "issuer": "PNC Bank",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "pnc-core-visa",
+      "name": "PNC Core Visa® Credit Card",
+      "issuer": "PNC Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "cash-back",
+        "flat-rate"
+      ]
+    },
+    {
+      "card_id": "pnc-points-visa",
+      "name": "PNC Points Visa® Credit Card",
+      "issuer": "PNC Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "points",
+        "rewards"
+      ]
+    },
+    {
+      "card_id": "pottery-barn-visa",
+      "name": "Pottery Barn Credit Card",
+      "issuer": "Bread Financial / Comenity Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "bread-financial",
+        "pottery-barn",
+        "retail",
+        "store-card"
+      ]
+    },
+    {
+      "card_id": "radisson-rewards-premier-visa-signature",
+      "name": "Radisson Rewards Premier Visa Signature® Card",
+      "issuer": "U.S. Bank",
+      "network": "Visa",
+      "annual_fee": 75,
+      "tags": [
+        "radisson",
+        "hotel",
+        "rewards",
+        "discontinued"
+      ]
+    },
+    {
+      "card_id": "radisson-rewards-visa-signature",
+      "name": "Radisson Rewards Visa Signature® Card",
+      "issuer": "U.S. Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "radisson",
+        "hotel",
+        "rewards",
+        "discontinued"
+      ]
+    },
+    {
+      "card_id": "robinhood-gold",
+      "name": "Robinhood Gold Card",
+      "issuer": "Robinhood Credit",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "robinhood-platinum",
+      "name": "Robinhood Platinum Card",
+      "issuer": "Robinhood Credit",
+      "network": "Visa/Mastercard",
+      "annual_fee": 695,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "sofi-credit",
+      "name": "SoFi Credit Card (Unlimited 2%)",
+      "issuer": "SoFi / First Bank",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "cash-back",
+        "2-percent",
+        "no-annual-fee",
+        "no-foreign-fee",
+        "mastercard"
+      ]
+    },
+    {
+      "card_id": "southwest-rapid-rewards-plus",
+      "name": "Southwest Rapid Rewards® Plus Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 99,
+      "tags": [
+        "southwest",
+        "airline",
+        "co-branded",
+        "travel"
+      ]
+    },
+    {
+      "card_id": "southwest-rapid-rewards-premier",
+      "name": "Southwest Rapid Rewards® Premier Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 149,
+      "tags": [
+        "southwest",
+        "airline",
+        "co-branded",
+        "travel"
+      ]
+    },
+    {
+      "card_id": "southwest-rapid-rewards-priority",
+      "name": "Southwest Rapid Rewards® Priority Credit Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 229,
+      "tags": [
+        "southwest",
+        "airline",
+        "co-branded",
+        "travel",
+        "premium"
+      ]
+    },
+    {
+      "card_id": "spirit-airlines-mastercard",
+      "name": "Free Spirit® Travel More World Elite Mastercard®",
+      "issuer": "Bank of America",
+      "network": "Mastercard",
+      "annual_fee": 79,
+      "tags": [
+        "spirit-airlines",
+        "airline",
+        "travel",
+        "co-branded"
+      ]
+    },
+    {
+      "card_id": "state-farm-cash-medallion",
+      "name": "State Farm Cash Medallion",
+      "issuer": "U.S. Bank",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "synchrony-amazon-prime-store-card",
+      "name": "Amazon Prime Store Card",
+      "issuer": "Synchrony",
+      "network": "Synchrony (store-only)",
+      "annual_fee": 0,
+      "tags": [
+        "amazon",
+        "store-card",
+        "prime",
+        "cash-back"
+      ]
+    },
+    {
+      "card_id": "synchrony-amazon-store",
+      "name": "Amazon Store Card",
+      "issuer": "Synchrony",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "synchrony-care-credit-rewards-mastercard",
+      "name": "CareCredit Rewards Mastercard®",
+      "issuer": "Synchrony",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "healthcare",
+        "mastercard",
+        "rewards"
+      ]
+    },
+    {
+      "card_id": "synchrony-ebay-mastercard",
+      "name": "eBay Mastercard®",
+      "issuer": "Synchrony",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "ebay",
+        "mastercard",
+        "rewards",
+        "discontinued"
+      ]
+    },
+    {
+      "card_id": "synchrony-jcpenney-mastercard",
+      "name": "JCPenney Mastercard®",
+      "issuer": "Synchrony",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "jcpenney",
+        "mastercard",
+        "store-card",
+        "cash-back"
+      ]
+    },
+    {
+      "card_id": "synchrony-lowes-advantage-card",
+      "name": "Lowe's Advantage Card",
+      "issuer": "Synchrony",
+      "network": "Synchrony (store-only)",
+      "annual_fee": 0,
+      "tags": [
+        "lowes",
+        "store-card",
+        "discount",
+        "home-improvement"
+      ]
+    },
+    {
+      "card_id": "synchrony-paypal-cashback-mastercard",
+      "name": "PayPal Cashback Mastercard®",
+      "issuer": "Synchrony",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "paypal",
+        "mastercard",
+        "cash-back",
+        "digital-payments"
+      ]
+    },
+    {
+      "card_id": "synchrony-sams-club-mastercard",
+      "name": "Sam's Club® Mastercard®",
+      "issuer": "Synchrony",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "sams-club",
+        "mastercard",
+        "cash-back",
+        "warehouse-club"
+      ]
+    },
+    {
+      "card_id": "synchrony-sears-mastercard",
+      "name": "Sears Mastercard®",
+      "issuer": "Synchrony",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "sears",
+        "kmart",
+        "mastercard",
+        "rewards"
+      ]
+    },
+    {
+      "card_id": "synchrony-verizon-visa",
+      "name": "Verizon Visa® Card",
+      "issuer": "Synchrony Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "verizon",
+        "rewards",
+        "wireless"
+      ]
+    },
+    {
+      "card_id": "target-mastercard-redcard",
+      "name": "Target RedCard™ Mastercard®",
+      "issuer": "TD Bank",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "target",
+        "retail",
+        "mastercard"
+      ]
+    },
+    {
+      "card_id": "target-redcard-credit",
+      "name": "Target RedCard™ Credit Card",
+      "issuer": "TD Bank",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "target",
+        "retail",
+        "store-card"
+      ]
+    },
+    {
+      "card_id": "td-biz-solutions-credit",
+      "name": "TD Business Solutions Credit Card",
+      "issuer": "TD Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "business",
+        "flat-rate"
+      ]
+    },
+    {
+      "card_id": "td-cash-credit",
+      "name": "TD Cash Credit Card",
+      "issuer": "TD Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "cash-back",
+        "gas",
+        "groceries"
+      ]
+    },
+    {
+      "card_id": "td-double-up-credit",
+      "name": "TD Double Up Credit Card",
+      "issuer": "TD Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "cash-back",
+        "flat-rate"
+      ]
+    },
+    {
+      "card_id": "td-first-class-visa-signature",
+      "name": "TD First Class Visa Signature® Credit Card",
+      "issuer": "TD Bank",
+      "network": "Visa",
+      "annual_fee": 89,
+      "tags": [
+        "travel",
+        "rewards",
+        "lounge-access"
+      ]
+    },
+    {
+      "card_id": "tjx-rewards-credit",
+      "name": "TJX Rewards® Credit Card",
+      "issuer": "Synchrony",
+      "network": "Synchrony (store-only)",
+      "annual_fee": 0,
+      "tags": [
+        "tjx",
+        "tjmaxx",
+        "marshalls",
+        "homegoods",
+        "store-card"
+      ]
+    },
+    {
+      "card_id": "tjx-rewards-mastercard",
+      "name": "TJX Rewards® Platinum Mastercard®",
+      "issuer": "Synchrony",
+      "network": "Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "tjx",
+        "tjmaxx",
+        "marshalls",
+        "homegoods",
+        "mastercard"
+      ]
+    },
+    {
+      "card_id": "upgrade-bitcoin-rewards-visa",
+      "name": "Upgrade Bitcoin Rewards Visa",
+      "issuer": "Upgrade (Cross River Bank)",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "bitcoin",
+        "crypto",
+        "discontinued",
+        "cash-back",
+        "hybrid-loan"
+      ]
+    },
+    {
+      "card_id": "upgrade-triple-cash-rewards-visa",
+      "name": "Upgrade Triple Cash Rewards Visa",
+      "issuer": "Upgrade (Cross River Bank)",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "cash-back",
+        "3-percent",
+        "home",
+        "auto",
+        "health",
+        "no-annual-fee"
+      ]
+    },
+    {
+      "card_id": "us-bank-altitude-connect-biz",
+      "name": "Altitude Connect Business",
+      "issuer": "U.S. Bank",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "us-bank-altitude-connect",
       "name": "U.S. Bank Altitude® Connect Visa Signature® Card",
       "issuer": "U.S. Bank",
       "network": "Visa",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 1,
-        "time_period_months": 3,
-        "bonus_points": 20000,
-        "description": "20,000 Bonus Points",
-        "point_program": "U.S. Bank"
-      },
-      "earning_rates_count": 0
+      "tags": [
+        "travel",
+        "rewards",
+        "lounge-access"
+      ]
+    },
+    {
+      "card_id": "us-bank-altitude-go-biz",
+      "name": "Altitude Go Business",
+      "issuer": "U.S. Bank",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "us-bank-altitude-go-secured",
+      "name": "U.S. Bank Altitude® Go Visa® Secured Card",
+      "issuer": "U.S. Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "secured",
+        "rewards",
+        "dining"
+      ]
+    },
+    {
+      "card_id": "us-bank-altitude-go",
+      "name": "U.S. Bank Altitude® Go Visa Signature® Card",
+      "issuer": "U.S. Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "dining",
+        "rewards",
+        "streaming"
+      ]
+    },
+    {
+      "card_id": "us-bank-altitude-reserve",
+      "name": "U.S. Bank Altitude® Reserve Visa Infinite® Card",
+      "issuer": "U.S. Bank",
+      "network": "Visa",
+      "annual_fee": 400,
+      "tags": [
+        "premium",
+        "travel",
+        "lounge-access"
+      ]
+    },
+    {
+      "card_id": "us-bank-biz-altitude-connect",
+      "name": "U.S. Bank Business Altitude® Connect Visa Signature® Card",
+      "issuer": "U.S. Bank",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": [
+        "business",
+        "travel",
+        "rewards"
+      ]
+    },
+    {
+      "card_id": "us-bank-biz-leverage-visa",
+      "name": "U.S. Bank Business Leverage® Visa Signature® Card",
+      "issuer": "U.S. Bank",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": [
+        "business",
+        "cash-back",
+        "visa"
+      ]
+    },
+    {
+      "card_id": "us-bank-biz-triple-cash",
+      "name": "U.S. Bank Triple Cash Rewards Visa® Business Card",
+      "issuer": "U.S. Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "business",
+        "cash-back",
+        "gas"
+      ]
+    },
+    {
+      "card_id": "us-bank-cash-plus",
+      "name": "U.S. Bank Cash+™ Visa Signature® Card",
+      "issuer": "U.S. Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "cash-back",
+        "customizable"
+      ]
+    },
+    {
+      "card_id": "us-bank-smartly-visa",
+      "name": "U.S. Bank Smartly™ Visa Signature® Card",
+      "issuer": "U.S. Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "cash-back",
+        "flat-rate"
+      ]
+    },
+    {
+      "card_id": "us-bank-smartly",
+      "name": "U.S. Bank Smartly",
+      "issuer": "U.S. Bank",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "us-bank-visa-platinum",
+      "name": "U.S. Bank Visa® Platinum Card",
+      "issuer": "U.S. Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "low-apr",
+        "travel",
+        "platinum"
+      ]
+    },
+    {
+      "card_id": "usbank-altitude-go",
+      "name": "U.S. Bank Altitude Go",
+      "issuer": "U.S. Bank",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
     },
     {
       "card_id": "usbank-altitude-reserve",
@@ -783,79 +2978,218 @@
       "issuer": "U.S. Bank",
       "network": "Visa",
       "annual_fee": 400,
-      "welcome_offer": {
-        "spending_requirement": 4,
-        "time_period_months": 3,
-        "bonus_points": 50000,
-        "description": "50,000 Bonus Points",
-        "point_program": "U.S. Bank"
-      },
-      "earning_rates_count": 0
+      "tags": []
     },
     {
-      "card_id": "wellsfargo-attune",
-      "name": "Wells Fargo Attune® Card",
-      "issuer": "Wells Fargo",
-      "network": "Visa",
+      "card_id": "usbank-business-triple-cash",
+      "name": "Business Triple Cash",
+      "issuer": "U.S. Bank",
+      "network": "Visa/Mastercard",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 500,
-        "time_period_months": 3,
-        "bonus_points": 100,
-        "description": "$100 Cash Rewards Bonus",
-        "point_program": "Wells Fargo"
-      },
-      "earning_rates_count": 0
+      "tags": [
+        "travel"
+      ]
     },
     {
-      "card_id": "wellsfargo-autograph",
-      "name": "Wells Fargo Autograph® Card",
-      "issuer": "Wells Fargo",
-      "network": "Visa",
+      "card_id": "usbank-cash-plus",
+      "name": "U.S. Bank Cash+",
+      "issuer": "U.S. Bank",
+      "network": "Visa/Mastercard",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 1000,
-        "time_period_months": 3,
-        "bonus_points": 20000,
-        "description": "Earn 20,000 bonus points when you spend $1,000 on purchases in the first 3 months from account opening (worth $200 in travel).",
-        "free_nights": null,
-        "point_program": "Wells Fargo Rewards"
-      },
-      "earning_rates_count": 7
+      "tags": [
+        "travel"
+      ]
     },
     {
-      "card_id": "wellsfargo-propel",
-      "name": "Wells Fargo Propel American Express® Card",
-      "issuer": "Wells Fargo",
-      "network": "Visa",
+      "card_id": "venmo-card",
+      "name": "Venmo Credit Card",
+      "issuer": "Synchrony",
+      "network": "Visa/Mastercard",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 0,
-        "time_period_months": 3,
-        "bonus_points": null,
-        "description": "Discontinued",
-        "point_program": "Wells Fargo"
-      },
-      "earning_rates_count": 0
+      "tags": [
+        "travel"
+      ]
     },
     {
-      "card_id": "bilt-mastercard",
-      "name": "Bilt Mastercard®",
-      "issuer": "Wells Fargo (Bilt Rewards)",
+      "card_id": "walgreens-mastercard",
+      "name": "myWalgreens Mastercard",
+      "issuer": "Synchrony",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "wells-fargo-active-cash-biz",
+      "name": "Active Cash Business",
+      "issuer": "Wells Fargo",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "wells-fargo-active-cash",
+      "name": "Wells Fargo Active Cash",
+      "issuer": "Wells Fargo",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "wells-fargo-attune",
+      "name": "Wells Fargo Attune World Elite Mastercard®",
+      "issuer": "Wells Fargo",
       "network": "Mastercard",
       "annual_fee": 0,
-      "welcome_offer": {
-        "spending_requirement": 1000,
-        "time_period_months": 3,
-        "bonus_points": 30000,
-        "description": "30,000 bonus points after spending $1,000 on purchases in the first 3 months from account opening.",
-        "free_nights": null,
-        "point_program": "Bilt Rewards"
-      },
-      "earning_rates_count": 4
+      "tags": [
+        "cash-back",
+        "lifestyle",
+        "rewards"
+      ]
+    },
+    {
+      "card_id": "wells-fargo-autograph-journey",
+      "name": "Wells Fargo Autograph Journey",
+      "issuer": "Wells Fargo",
+      "network": "Visa/Mastercard",
+      "annual_fee": 95,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "wells-fargo-autograph",
+      "name": "Wells Fargo Autograph Visa Signature® Card",
+      "issuer": "Wells Fargo",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "travel",
+        "rewards",
+        "dining"
+      ]
+    },
+    {
+      "card_id": "wells-fargo-choice-privileges",
+      "name": "Choice Privileges Select",
+      "issuer": "Wells Fargo",
+      "network": "Visa/Mastercard",
+      "annual_fee": 95,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "wells-fargo-one-key-plus",
+      "name": "One Key+ Card",
+      "issuer": "Wells Fargo",
+      "network": "Visa/Mastercard",
+      "annual_fee": 99,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "wells-fargo-one-key",
+      "name": "One Key Card",
+      "issuer": "Wells Fargo",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "wells-fargo-reflect",
+      "name": "Wells Fargo Reflect",
+      "issuer": "Wells Fargo",
+      "network": "Visa/Mastercard",
+      "annual_fee": 0,
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "card_id": "wells-fargo-signify-biz-cash",
+      "name": "Wells Fargo Signify Business Cash® Card",
+      "issuer": "Wells Fargo",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "business",
+        "cash-back",
+        "flat-rate"
+      ]
+    },
+    {
+      "card_id": "west-elm-visa",
+      "name": "West Elm Credit Card",
+      "issuer": "Bread Financial / Comenity Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "bread-financial",
+        "west-elm",
+        "retail",
+        "store-card"
+      ]
+    },
+    {
+      "card_id": "williams-sonoma-visa",
+      "name": "Williams-Sonoma Credit Card",
+      "issuer": "Bread Financial / Comenity Bank",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "bread-financial",
+        "williams-sonoma",
+        "retail",
+        "store-card"
+      ]
+    },
+    {
+      "card_id": "wyndham-rewards-earner-barclays",
+      "name": "Wyndham Rewards Earner Card",
+      "issuer": "Barclays",
+      "network": "Visa",
+      "annual_fee": 0,
+      "tags": [
+        "hotel",
+        "wyndham",
+        "travel",
+        "no-annual-fee"
+      ]
+    },
+    {
+      "card_id": "wyndham-rewards-earner-business-barclays",
+      "name": "Wyndham Rewards Earner® Business Card",
+      "issuer": "Barclays",
+      "network": "Mastercard",
+      "annual_fee": 95,
+      "tags": [
+        "hotel",
+        "travel",
+        "wyndham",
+        "business"
+      ]
+    },
+    {
+      "card_id": "wyndham-rewards-earner-plus-barclays",
+      "name": "Wyndham Rewards Earner Plus Card",
+      "issuer": "Barclays",
+      "network": "Visa",
+      "annual_fee": 75,
+      "tags": [
+        "hotel",
+        "wyndham",
+        "travel",
+        "premium"
+      ]
     }
-  ],
-  "total": 55,
-  "last_updated": "2026-04-13T02:11:53.971Z",
-  "source": "consensus/MASTER.json"
+  ]
 }

@@ -1,0 +1,75 @@
+{
+  "card_id": "self-secured-visa",
+  "name": "Self Credit Builder + Secured Visa",
+  "issuer": "Self (WebBank)",
+  "network": "Visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "No credit history required (secured, credit-builder)",
+  "welcome_offer": {
+    "spending_requirement": null,
+    "bonus_value": null,
+    "description": "No welcome bonus. This is a secured credit-builder card."
+  },
+  "earning_rates": [
+    {
+      "category": "All purchases",
+      "rate": 0,
+      "notes": "No rewards — this card does not earn cash back or points. Purpose is credit-building, not rewards."
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "other_benefits": [
+      {
+        "name": "Credit building",
+        "description": "Reports to all three major credit bureaus (TransUnion, Equifax, Experian) monthly"
+      },
+      {
+        "name": "Credit limit",
+        "description": "Credit limit equal to security deposit ($300–$1,000 minimum)"
+      },
+      {
+        "name": "Path to upgrade",
+        "description": "On-time payments can lead to credit limit increases and graduation to unsecured card"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "purchase_protection": false,
+    "extended_warranty": false
+  },
+  "tags": [
+    "secured",
+    "credit-builder",
+    "no-rewards",
+    "beginner"
+  ],
+  "sources": [
+    {
+      "url": "https://www.self.inc/visa-secured-credit-card",
+      "notes": "Self official page"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/self",
+      "notes": "NerdWallet review"
+    },
+    {
+      "url": "https://www.cnbc.com/select/self-visa-secured-credit-card-review/",
+      "notes": "CNBC review"
+    }
+  ],
+  "last_updated": "2026-04-16T13:41:49.995Z",
+  "status": "active",
+  "notes": "The Self Secured Visa is a credit-builder card that requires a security deposit (minimum $300). $0 annual fee for the first year for new customers; $25 annual fee thereafter. Variable APR of 27.49%. No rewards offered — this is purely a credit-building tool. Also available as a credit-builder loan + card combo product (Self Credit Builder Account). Reports to all three bureaus. High approval rate for those with limited credit.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  }
+}
