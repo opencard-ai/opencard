@@ -214,7 +214,7 @@ export default function NewsFeed({ lang }: Props) {
           onClick={() => setExpanded((v) => !v)}
           className="mt-3 w-full py-2.5 text-sm font-medium text-slate-600 hover:text-slate-900 border border-slate-200 rounded-lg bg-white hover:bg-slate-50 transition shadow-sm"
         >
-          {expanded ? t("feed.showLess", lang as any) : t("feed.loadMore", lang as any, { count: filtered.length - 8 })}
+          {expanded ? t("feed.showLess", lang as any) : t("feed.loadMore", lang as any, { count: filtered.length - 3 })}
         </button>
       )}
     </section>
