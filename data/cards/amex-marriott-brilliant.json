@@ -118,5 +118,28 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "$300 Marriott Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$300 annual credit for Marriott purchases. Automatically applied."
+    },
+    {
+      "name": "$100 Property Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$100 credit for qualifying charges at Ritz-Carlton properties."
+    },
+    {
+      "name": "Marriott Bonvoy Platinum Elite Status",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Complimentary Platinum Elite status with Marriott Bonvoy."
+    }
+  ]
 }

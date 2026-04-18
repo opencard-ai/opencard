@@ -103,5 +103,21 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "$150 Delta Flight Credit",
+      "amount": 150,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$150 annual credit for Delta flights."
+    },
+    {
+      "name": "$100 Lyft Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "other",
+      "description": "$100 annual credit for Lyft rides."
+    }
+  ]
 }

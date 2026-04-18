@@ -91,5 +91,21 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Free Anniversary Night",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "1 free night certificate each year at Marriott properties."
+    },
+    {
+      "name": "Marriott Bonvoy Gold Elite Status",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Complimentary Gold Elite status with Marriott Bonvoy."
+    }
+  ]
 }

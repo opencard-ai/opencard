@@ -54,5 +54,21 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.967Z"
+  "last_updated": "2026-04-16T13:41:49.967Z",
+  "recurring_credits": [
+    {
+      "name": "Free Anniversary Night",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "1 free night certificate each year at any IHG property (no cap on points)."
+    },
+    {
+      "name": "IHG Platinum Elite Status",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Complimentary Platinum Elite status - 60% bonus on base points, guaranteed 4pm checkout."
+    }
+  ]
 }
