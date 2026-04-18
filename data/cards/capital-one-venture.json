@@ -51,7 +51,10 @@
     "purchase_protection": false,
     "extended_warranty": false
   },
-  "tags": [],
+  "tags": [
+    "travel",
+    "miles"
+  ],
   "sources": [
     {
       "url": "https://www.capitalone.com/credit-cards/venture/"

@@ -60,7 +60,12 @@
     "purchase_protection": false,
     "extended_warranty": false
   },
-  "tags": [],
+  "tags": [
+    "dining",
+    "groceries",
+    "entertainment",
+    "cash-back"
+  ],
   "sources": [
     {
       "url": "https://www.capitalone.com/credit-cards/savor/"

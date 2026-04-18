@@ -39,7 +39,11 @@
     "purchase_protection": false,
     "extended_warranty": false
   },
-  "tags": [],
+  "tags": [
+    "travel",
+    "miles",
+    "no-annual-fee"
+  ],
   "sources": [
     {
       "url": "https://www.discover.com/credit-cards/travel/"

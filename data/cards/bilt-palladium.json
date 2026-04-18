@@ -65,5 +65,7 @@
     "rules": [],
     "notes": null
   },
-  "annual_credits": []
+  "annual_credits": [],
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent"
 }

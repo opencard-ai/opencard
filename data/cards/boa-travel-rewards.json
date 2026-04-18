@@ -39,7 +39,11 @@
     "purchase_protection": false,
     "extended_warranty": false
   },
-  "tags": [],
+  "tags": [
+    "travel",
+    "flat-rate",
+    "no-annual-fee"
+  ],
   "sources": [
     {
       "url": "https://www.bankofamerica.com/credit-cards/products/travel-rewards-credit-card/"

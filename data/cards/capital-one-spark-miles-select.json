@@ -56,7 +56,11 @@
   "notes": "No annual fee business travel card. 1.5X miles on all purchases (same earning as Spark Cash Select but in miles). 50,000 mile welcome bonus ($500 value). Miles are transferable to 15+ airline/hotel partners including British Airways, Avianca, and Flying Blue. Ideal for businesses that want travel rewards without paying an annual fee. Compare to Spark Cash Select if you prefer cash back.",
   "confidence": "high",
   "last_updated": "2026-04-16T13:41:49.962Z",
-  "tags": [],
+  "tags": [
+    "business",
+    "travel",
+    "miles"
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
