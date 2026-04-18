@@ -427,7 +427,7 @@ function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]
               </Link>
 
               {/* Action buttons: Compare + Save */}
-              <div className="absolute top-3 right-3 flex gap-1.5">
+              <div className="absolute bottom-3 right-3 flex gap-1.5">
                 {/* Compare button */}
                 <button
                   onClick={(e) => {
