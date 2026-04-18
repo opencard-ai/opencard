@@ -218,6 +218,22 @@ export default function MyCardsPage({
     }
   }, []);
 
+  // Listen for card save/remove events from other pages
+  useEffect(() => {
+    const handleUpdate = () => {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        try {
+          setSelectedCards(JSON.parse(saved));
+        } catch {}
+      } else {
+        setSelectedCards([]);
+      }
+    };
+    window.addEventListener('opencard_cards_updated', handleUpdate);
+    return () => window.removeEventListener('opencard_cards_updated', handleUpdate);
+  }, []);
+
   // Fetch full card data
   useEffect(() => {
     if (selectedCards.length === 0) {

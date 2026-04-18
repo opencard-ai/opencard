@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { trackCardAdded } from '@/lib/analytics';
 
 interface AddToMyCardsButtonProps {
@@ -9,8 +9,20 @@ interface AddToMyCardsButtonProps {
   lang: string;
 }
 
+const STORAGE_KEY = 'opencard_existing_cards';
+
 export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCardsButtonProps) {
   const [added, setAdded] = useState(false);
+
+  useEffect(() => {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      try {
+        const ids: string[] = JSON.parse(stored);
+        setAdded(ids.includes(cardId));
+      } catch {}
+    }
+  }, [cardId]);
 
   const labels: Record<string, { add: string; added: string }> = {
     en: { add: '💳 Add to My Cards', added: '✓ Added to My Cards' },
@@ -19,12 +31,13 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
   };
 
   const handleAdd = () => {
-    const myCards = JSON.parse(localStorage.getItem('opencard_my_cards') || '[]');
+    const myCards: string[] = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
     if (!myCards.includes(cardId)) {
       myCards.push(cardId);
-      localStorage.setItem('opencard_my_cards', JSON.stringify(myCards));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(myCards));
       setAdded(true);
       trackCardAdded(cardId);
+      window.dispatchEvent(new CustomEvent('opencard_cards_updated', { detail: myCards }));
     }
   };
 
