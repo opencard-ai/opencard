@@ -72,5 +72,14 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "$84 Streaming Credit",
+      "amount": 84,
+      "frequency": "annual",
+      "category": "entertainment",
+      "description": "$7 monthly ($84/year) for streaming subscriptions (Netflix, Hulu, Disney+, etc.)."
+    }
+  ]
 }

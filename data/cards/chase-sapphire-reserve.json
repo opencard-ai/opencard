@@ -140,5 +140,49 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "$300 Annual Travel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$300 annual credit for travel purchases (airfare, hotels, car rentals) worldwide. Automatically applied."
+    },
+    {
+      "name": "$150 Semi-Annual Dining Credit",
+      "amount": 150,
+      "frequency": "semi_annual",
+      "category": "dining",
+      "description": "$150 every 6 months ($300/year) for dining at restaurants worldwide. Credit loaded to Chase Dining credit."
+    },
+    {
+      "name": "$250 Hotel Credit",
+      "amount": 250,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$250 annual credit for prepaid hotel bookings made through The Edit by Chase Travel."
+    },
+    {
+      "name": "$500 Flexible Travel Credit",
+      "amount": 500,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$500 annual credit for prepaid travel via The Edit by Chase Travel (flexible, can be used for flights, hotels, etc.)."
+    },
+    {
+      "name": "Global Entry / PreCheck Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $100 credit every 4 years for Global Entry or $85 for TSA PreCheck."
+    },
+    {
+      "name": "Priority Pass Membership",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Complimentary Priority Pass Select membership — unlimited lounge access for cardholder + guests at 1,300+ airport lounges worldwide."
+    }
+  ]
 }

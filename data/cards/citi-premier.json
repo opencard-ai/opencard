@@ -110,5 +110,21 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "$100 Annual Hotel Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$100 annual credit for prepaid hotels booked through Citi Travel portal."
+    },
+    {
+      "name": "$100 Airline Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$100 annual credit for airlines (incidentals like seat selection, baggage fees, etc.)."
+    }
+  ]
 }

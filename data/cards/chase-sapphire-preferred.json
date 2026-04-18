@@ -95,5 +95,14 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "$50 Annual Hotel Credit",
+      "amount": 50,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$50 annual credit for hotel bookings made through Chase Travel."
+    }
+  ]
 }
