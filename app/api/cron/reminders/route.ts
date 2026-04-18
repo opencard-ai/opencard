@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@vercel/kv";
 
-const kv = createClient({
-  url: process.env.KV_REST_API_URL!,
-  token: process.env.KV_REST_API_TOKEN!,
-});
+// @ts-ignore
+// @ts-ignore
+const RedisClass = (await import("@upstash/redis")).Redis;
+const redis = new RedisClass({
+  url: process.env.UPSTASH_KV_REST_API_URL!,
+  token: process.env.UPSTASH_KV_REST_API_TOKEN!,
+}) as unknown as Record<string, (...args: unknown[]) => Promise<unknown>>;
 
 const AGENTMAIL_API_KEY = process.env.AGENTMAIL_API_KEY!;
 const FROM_INBOX = process.env.AGENTMAIL_FROM_INBOX!; // e.g. "delightfulschool306@agentmail.to"
@@ -253,17 +255,17 @@ export async function GET(req: NextRequest) {
 
   try {
     // Get all subscriber emails
-    const subscriberEmails = await kv.smembers("opencard:subscribers");
-    if (!subscriberEmails || subscriberEmails.length === 0) {
+    const subscriberEmails = await redis.smembers("opencard:subscribers") as unknown as string[];
+    if (!subscriberEmails || (subscriberEmails as string[]).length === 0) {
       return NextResponse.json({ message: "No subscribers", sent: 0 });
     }
 
     let sent = 0;
     let failed = 0;
 
-    for (const email of subscriberEmails) {
+    for (const email of subscriberEmails as string[]) {
       const userKey = `opencard:user:${email}`;
-      const userData = (await kv.hgetall(userKey)) as UserProfile | null;
+      const userData = (await redis.hgetall(userKey)) as unknown as UserProfile | null;
       
       if (!userData || !userData.cards || userData.cards.length === 0) continue;
       if (!userData.marketing_optin) continue; // Skip if no marketing consent
@@ -294,7 +296,7 @@ export async function GET(req: NextRequest) {
       await new Promise((resolve) => setTimeout(resolve, 100));
     }
 
-    return NextResponse.json({ sent, failed, total: subscriberEmails.length });
+    return NextResponse.json({ sent, failed, total: (subscriberEmails as string[]).length });
   } catch (err) {
     console.error("Cron error:", err);
     return NextResponse.json({ error: "Cron failed" }, { status: 500 });
