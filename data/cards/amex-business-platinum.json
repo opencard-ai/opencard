@@ -112,21 +112,24 @@
       "amount": 200,
       "frequency": "annual",
       "category": "travel",
-      "description": "$200 annual credit for airline incidentals. Enrollment required."
+      "description": "$200 annual credit for airline incidentals. Enrollment required.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "$209 CLEAR Plus Credit",
       "amount": 209,
       "frequency": "annual",
       "category": "travel",
-      "description": "$209 annual credit for CLEAR+ membership."
+      "description": "$209 annual credit for CLEAR+ membership.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "$100 Dell Credit",
       "amount": 100,
       "frequency": "quarterly",
       "category": "shopping",
-      "description": "$100 quarterly ($400/year) for Dell purchases. Enrollment required."
+      "description": "$100 quarterly ($400/year) for Dell purchases. Enrollment required.",
+      "reset_type": "calendar_year"
     }
   ]
 }

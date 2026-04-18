@@ -125,21 +125,24 @@
       "amount": 300,
       "frequency": "annual",
       "category": "travel",
-      "description": "$300 annual credit for Marriott purchases. Automatically applied."
+      "description": "$300 annual credit for Marriott purchases. Automatically applied.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "$100 Property Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "travel",
-      "description": "$100 credit for qualifying charges at Ritz-Carlton properties."
+      "description": "$100 credit for qualifying charges at Ritz-Carlton properties.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "Marriott Bonvoy Platinum Elite Status",
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "Complimentary Platinum Elite status with Marriott Bonvoy."
+      "description": "Complimentary Platinum Elite status with Marriott Bonvoy.",
+      "reset_type": "calendar_year"
     }
   ]
 }

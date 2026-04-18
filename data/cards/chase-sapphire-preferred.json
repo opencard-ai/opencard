@@ -102,7 +102,8 @@
       "amount": 50,
       "frequency": "annual",
       "category": "travel",
-      "description": "$50 annual credit for hotel bookings made through Chase Travel."
+      "description": "$50 annual credit for hotel bookings made through Chase Travel.",
+      "reset_type": "cardmember_year"
     }
   ]
 }

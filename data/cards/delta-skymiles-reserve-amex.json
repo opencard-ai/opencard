@@ -86,21 +86,24 @@
       "amount": 250,
       "frequency": "annual",
       "category": "travel",
-      "description": "$250 annual credit for Delta flights."
+      "description": "$250 annual credit for Delta flights.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "$120 Resy Credit",
       "amount": 120,
       "frequency": "annual",
       "category": "dining",
-      "description": "$120 annual ($10/month) for Resy restaurant purchases."
+      "description": "$120 annual ($10/month) for Resy restaurant purchases.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "Companion Certificate",
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "Complimentary companion ticket each year (main cabin, roundtrip)."
+      "description": "Complimentary companion ticket each year (main cabin, roundtrip).",
+      "reset_type": "calendar_year"
     }
   ]
 }

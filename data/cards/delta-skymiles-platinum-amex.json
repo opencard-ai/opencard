@@ -110,14 +110,16 @@
       "amount": 150,
       "frequency": "annual",
       "category": "travel",
-      "description": "$150 annual credit for Delta flights."
+      "description": "$150 annual credit for Delta flights.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "$100 Lyft Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "other",
-      "description": "$100 annual credit for Lyft rides."
+      "description": "$100 annual credit for Lyft rides.",
+      "reset_type": "calendar_year"
     }
   ]
 }

@@ -66,14 +66,16 @@
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "1 free night certificate each year at any Category 1-4 Hyatt property."
+      "description": "1 free night certificate each year at any Category 1-4 Hyatt property.",
+      "reset_type": "cardmember_year"
     },
     {
       "name": "Hyatt Discoverist Status",
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "Complimentary Discoverist status - waived resort fees, expedited check-in."
+      "description": "Complimentary Discoverist status - waived resort fees, expedited check-in.",
+      "reset_type": "cardmember_year"
     }
   ]
 }

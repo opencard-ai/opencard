@@ -83,21 +83,24 @@
       "amount": 325,
       "frequency": "annual",
       "category": "travel",
-      "description": "$325 annual credit for travel and dining purchases via Chase Travel."
+      "description": "$325 annual credit for travel and dining purchases via Chase Travel.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "12 Gogo Inflight Passes",
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "Complimentary Gogo inflight internet passes (12 per year)."
+      "description": "Complimentary Gogo inflight internet passes (12 per year).",
+      "reset_type": "calendar_year"
     },
     {
       "name": "Lounge Access",
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "Complimentary Priority Pass and Chase Sapphire Reserve lounge access."
+      "description": "Complimentary Priority Pass and Chase Sapphire Reserve lounge access.",
+      "reset_type": "calendar_year"
     }
   ]
 }

@@ -75,7 +75,8 @@
       "amount": 100,
       "frequency": "annual",
       "category": "travel",
-      "description": "$100 annual credit for prepaid hotels via Citi Travel."
+      "description": "$100 annual credit for prepaid hotels via Citi Travel.",
+      "reset_type": "calendar_year"
     }
   ]
 }

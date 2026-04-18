@@ -145,21 +145,24 @@
       "amount": 300,
       "frequency": "annual",
       "category": "travel",
-      "description": "$300 annual credit for travel purchases."
+      "description": "$300 annual credit for travel purchases.",
+      "reset_type": "cardmember_year"
     },
     {
       "name": "Priority Pass Membership",
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "Complimentary Priority Pass Select membership."
+      "description": "Complimentary Priority Pass Select membership.",
+      "reset_type": "cardmember_year"
     },
     {
       "name": "Global Entry Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "travel",
-      "description": "Up to $100 every 4 years for Global Entry."
+      "description": "Up to $100 every 4 years for Global Entry.",
+      "reset_type": "cardmember_year"
     }
   ]
 }
