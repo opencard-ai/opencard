@@ -196,9 +196,6 @@ export default function CardGrid({ cards, issuers, tags, locale }: CardGridProps
   return (
     <div id="cards-section" style={{ scrollMarginTop: "73px" }}>
       <FilterBar issuers={issuers} tags={tags} locale={locale} />
-      <p className={`text-xs px-1 mb-3 ${locale === "en" ? "text-slate-400" : "text-slate-400"}`}>
-        💡 {locale === "zh" ? "⚖ 比較卡片（最多3張）· 💾 儲存到我的卡片" : locale === "es" ? "💡 ⚖ Compara hasta 3 tarjetas · 💾 Guarda en Mis Tarjetas" : "💡 ⚖ Compare up to 3 cards · 💾 Save to My Cards"}
-      </p>
       <CardList cards={cards} tags={tags} locale={locale} />
     </div>
   );
