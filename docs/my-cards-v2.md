@@ -99,28 +99,26 @@ Chase Freedom Flex 的 5% 回饋類別每季不同（Q1 加油、Q2 超市、Q3 
 
 ## 4. Email 收集 UX
 
-### 4.1 最佳時機
+### 4.1 收集方式：被動式（不做主動彈窗）
 
-**第一次進入 My Cards 頁面**，配合價值引導：
+不主動彈出 email 收集。My Cards 頁面上有一個 **email 輸入框**（非必填），用戶有興趣自己填。
 
 ```
-用戶新增第一張卡片 → 首次進入 My Cards 頁面
+用戶進入 My Cards 頁面
         ↓
-引導：「開啟個人化福利提醒，確保每季回饋不漏接」
+看到自己的卡片福利列表
         ↓
-一行解釋 + email 輸入框 + 行銷同意勾選
+如果感興趣 → 自己找到 email 輸入框填寫
+        ↓
+行銷同意 checkbox（預設不打勾）
 ```
 
-### 4.2 Email 價值交換（必須立即可見）
+### 4.2 被動式 email 收集的 UX 位置
 
-收集時就預覽「你會收到什麼」，而非空口說「我們會通知你」。
-
-```
-開通福利提醒後，每月 1 號你會收到：
-✅ $100 Resy 餐飲 credit 可使用（Amex Platinum）
-✅ 本季度加油回饋還有 $40 未刷滿（Chase Freedom）
-✅ 3 張卡年費即將到期，價值 $450
-```
+email 輸入框建議放在 My Cards 頁面頂部或設定區域：
+- 非彈窗、非橫幅
+- 可搭配一句話：「想要每月福利提醒？留下 email」
+- 行銷同意 checkbox（預設不打勾）
 
 ### 4.3 隱私合規
 
@@ -228,8 +226,8 @@ CardRecurringCredits (卡片資料庫新增欄位) {
    - 每張卡加「回報錯誤」連結
 
 3. **Email 收集**
-   - 首次進入 My Cards 頁面時引導
-   - 行銷同意勾選
+   - 被動式 email 輸入框（非主動彈窗）
+   - 行銷同意勾選（預設不打勾）
 
 4. **每月 1 號 + 20 號提醒 cron job**
    - 用 Vercel Cron + AgentMail
@@ -260,15 +258,18 @@ CardRecurringCredits (卡片資料庫新增欄位) {
 
 ## 8. 待完成項目
 
-- [ ] `recurring_credits` 欄位結構確認（需加入 "monthly"）
+- [x] recurring_credits 欄位結構確認（已有 monthly/quarterly/semi_annual/annual）
 - [ ] AgentMail API 整合測試
-- [ ] Resend/ SendGrid 備援方案文件化
+- [ ] AgentMail deliverability 測試（SPF/DKIM/DMARC + inbox placement）— 上線前必做
+- [ ] Resend/SendGrid 備援方案文件化
 - [ ] Vercel KV 串接
 - [ ] Cron job 實作
-- [ ] Email 收集 UI
-- [ ] My Cards V2 頁面
+- [ ] 被動式 Email 收集 UI（非主動彈窗，用戶自願填寫）
+- [ ] My Cards V2 頁面（福利列表顯示）
 - [ ] 福利資料錯誤回報機制（opencard@opencardai.com）
-- [ ] 第一批旗艦卡福利補錄（10-15 張，**Chase Freedom Flex  MVP 階段排除**）
+- [ ] 第一批旗艦卡福利補錄（14 張已完成）
+- [ ] recurring_credits 加入 `cardmember_year` 頻率支援
+- [ ] 14 張旗艦卡之外的卡片覆蓋評估
 
 ## 9. V2 / V3 待討論項目（暫緩）
 
