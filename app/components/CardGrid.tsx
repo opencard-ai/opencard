@@ -414,28 +414,53 @@ function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]
                 </div>
               </Link>
 
-              {/* Compare toggle */}
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleCompare(card.card_id);
-                }}
-                disabled={isMaxed}
-                title={
-                  isCompared ? "移除比較" :
-                  isMaxed ? "已選滿 3 張" :
-                  "加入比較"
-                }
-                className={`absolute top-3 right-3 w-7 h-7 rounded-full border text-xs font-bold transition-all ${
-                  isCompared
-                    ? "bg-blue-600 border-blue-600 text-white"
-                    : isMaxed
-                    ? "bg-slate-100 border-slate-200 text-slate-300 cursor-not-allowed"
-                    : "bg-white border-slate-300 text-slate-500 hover:border-blue-400 hover:text-blue-600"
-                }`}
-              >
-                {isCompared ? "✓" : "+"}
-              </button>
+              {/* Action buttons: Compare + Save */}
+              <div className="absolute top-3 right-3 flex gap-1.5">
+                {/* Compare button */}
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleCompare(card.card_id);
+                  }}
+                  disabled={isMaxed}
+                  title={isCompared ? "移除比較" : isMaxed ? "已選滿 3 張" : "加入比較"}
+                  className={`w-7 h-7 rounded-full border flex items-center justify-center text-xs font-bold transition-all ${
+                    isCompared
+                      ? "bg-blue-600 border-blue-600 text-white"
+                      : isMaxed
+                      ? "bg-slate-100 border-slate-200 text-slate-300 cursor-not-allowed"
+                      : "bg-white border-slate-300 text-slate-500 hover:border-blue-400 hover:text-blue-600"
+                  }`}
+                >
+                  {isCompared ? "✓" : "⚖"}
+                </button>
+
+                {/* Save to My Cards button */}
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const key = "opencard_existing_cards";
+                    const stored = localStorage.getItem(key);
+                    const existing = stored ? JSON.parse(stored) : [];
+                    const alreadySaved = existing.some((c: any) => c.card_id === card.card_id);
+                    if (alreadySaved) {
+                      // Remove from saved
+                      const updated = existing.filter((c: any) => c.card_id !== card.card_id);
+                      localStorage.setItem(key, JSON.stringify(updated));
+                    } else {
+                      // Add to saved
+                      existing.push(card);
+                      localStorage.setItem(key, JSON.stringify(existing));
+                    }
+                    // Force re-render via a custom event
+                    window.dispatchEvent(new CustomEvent("opencard-my-cards-changed"));
+                  }}
+                  title="儲存到我的卡片"
+                  className="w-7 h-7 rounded-full border bg-white border-slate-300 text-slate-500 hover:border-green-400 hover:text-green-600 transition-all flex items-center justify-center text-sm"
+                >
+                  💾
+                </button>
+              </div>
             </div>
           );
         })}

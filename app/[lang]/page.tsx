@@ -63,8 +63,34 @@ export default async function HomePage({ params }: Props) {
         <NewsFeed lang={lang} />
       </Suspense>
 
+      {/* My Cards Banner */}
+      <div className="mb-4">
+        <a
+          href={`/${lang}/my-cards`}
+          className="flex items-center justify-between bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl px-5 py-3.5 hover:from-blue-100 hover:to-indigo-100 transition-all group"
+        >
+          <div className="flex items-center gap-3">
+            <span className="text-2xl">💾</span>
+            <div>
+              <div className="font-semibold text-slate-800 text-sm group-hover:text-blue-700 transition-colors">
+                {lang === "zh" ? "我的卡片" : lang === "es" ? "Mis Tarjetas" : "My Cards"}
+              </div>
+              <div className="text-xs text-slate-500">
+                {lang === "zh" ? "儲存並管理你的信用卡組合" : lang === "es" ? "Guarda y gestiona tu cartera de tarjetas" : "Save and manage your card portfolio"}
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-blue-500 font-medium group-hover:translate-x-0.5 transition-transform">
+              {lang === "zh" ? "開啟" : lang === "es" ? "Abrir" : "Open"}
+            </span>
+            <span className="text-blue-400 group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
+      </div>
+
       {/* Divider */}
-      <div className="flex items-center gap-4 mb-6 mt-6">
+      <div className="flex items-center gap-4 mb-6 mt-2">
         <div className="flex-1 h-px bg-slate-200" />
         <span className="text-sm text-slate-400 font-medium">{t("home.cardsAvailable", lang as any, { count: cards.length })}</span>
         <div className="flex-1 h-px bg-slate-200" />
