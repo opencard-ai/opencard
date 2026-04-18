@@ -25,6 +25,7 @@
 │  📊 儀表板（Dashboard）                      │
 │  ・即將到期福利（30天內）                      │
 │  ・本月可刷額外回饋的機會                      │
+│  ・剪卡評估（年費性價比，⚠️靜態估算）          │
 ├─────────────────────────────────────────────┤
 │  💳 我的卡片（Card Portfolio）                 │
 │  ・已持有卡片清單                            │
@@ -39,6 +40,8 @@
 
 **設計原則：** 用戶第一眼看到「我該做什麼」，而不是「我有哪些卡片」。價值在 action，不在 inventory。
 
+**⚠️ 剪卡評估說明：** Dashboard 第三區塊的「年費性價比」是靜態計算（年費 vs. 已知信用額度加總）。在沒有用戶消費資料的情況下，這是**估算值**，必須明確標示「此為靜態估算，實際節省視個人消費習慣而定」。
+
 ---
 
 ## 3. 福利提醒邏輯
@@ -50,6 +53,7 @@
 ```json
 // Amex Platinum 資料庫範例
 "recurring_credits": [
+  { "name": "$20 Digital Entertainment Credit", "frequency": "monthly", "category": "entertainment" },
   { "name": "$100 Resy Credit", "frequency": "quarterly", "category": "dining" },
   { "name": "$75 lululemon", "frequency": "quarterly", "category": "shopping" },
   { "name": "$300 Hotel Credit", "frequency": "semi_annual", "category": "travel" },
@@ -74,6 +78,7 @@
 
 | 福利類型 | 提醒時機 |
 |---------|---------|
+| 月度福利（數位娛樂/Uber 等）| 每月 1 號 + 20 號 |
 | 季租回饋（加油/超市/外送）| 每月 1 號 + 20 號 |
 | 上/下半年特定優惠 | 該半年度最後 45 天 |
 | 年度點數/回饋清零 | 到期前 14 天 + 7 天 |
@@ -83,6 +88,12 @@
 - 用戶加卡時詢問「持卡日期（選填）」
 - 方案 A：用戶自填開卡日 → 精準算到期日
 - 方案 B：用戶不填 → 照樣顯示「持卡年費 $X，提醒每年重新評估是否值得續持」
+
+**⚠️ 特例：Chase Freedom Flex 旋轉類別**
+Chase Freedom Flex 的 5% 回饋類別每季不同（Q1 加油、Q2 超市、Q3 餐廳等），並非靜態資料。
+- MVP 階段：只收錄靜態福利（如 Disney+ 5%）
+- 每季手動更新一次旋轉類別（社群反饋機制）
+- 不依賴自動抓取銀行官網
 
 ---
 
@@ -117,17 +128,29 @@
 - 行銷同意需主動勾選（不預設打勾）
 - 說明用途：「用於發送個人化福利到期提醒」
 
+### 4.4 資料錯誤回報機制
+
+提醒內容的準確性是這個功能的生死線。
+- 每封 email 底部附帶：「這筆資料有誤？告訴我們 → opencard@opencardai.com」
+- My Cards 頁面每張卡的福利列表旁邊加「回報錯誤」連結
+- 回報統一收到 opencard@opencardai.com，由團隊確認後更新資料庫
+
 ---
 
 ## 5. 技術方案
 
 ### 5.1 架構選擇
 
-| 組件 | 方案 |
-|------|------|
-| Email 發送 | AgentMail API（已有 key）|
-| 用戶資料儲存 | Vercel KV（email + card_id 清單）|
-| 提醒排程 | Vercel Cron Job（每天檢查一次）|
+| 組件 | 方案 | 備援 |
+|------|------|------|
+| Email 發送 | AgentMail API（已有 key）| Resend / SendGrid 作為備援 |
+| 用戶資料儲存 | Vercel KV（email + card_id 清單）| — |
+| 提醒排程 | Vercel Cron Job（每天檢查一次）| — |
+
+**⚠️ AgentMail 單點風險對策：**
+- 主要：AgentMail API
+- 備援：Resend 或 SendGrid（切換時需更新 cron job 中的寄送函式）
+- 切換路徑：只更換寄送 API key，不改 cron job 邏輯
 
 ### 5.2 cron job 邏輯
 
@@ -164,8 +187,8 @@ CardRecurringCredits (卡片資料庫新增欄位) {
   recurring_credits: [
     {
       name: string       // "$100 Resy Credit"
-      frequency: string   // "quarterly" | "semi_annual" | "annual"
-      category: string   // "dining" | "travel" | "shopping" | "gas"
+      frequency: string   // "monthly" | "quarterly" | "semi_annual" | "annual"
+      category: string   // "dining" | "travel" | "shopping" | "gas" | "entertainment" | "other"
     }
   ]
 }
@@ -196,12 +219,13 @@ CardRecurringCredits (卡片資料庫新增欄位) {
 ### ✅ MVP 先做
 
 1. **卡片資料庫新增 `recurring_credits` 欄位**
-   - 先補旗艦卡（Amex Platinum, Chase Sapphire Reserve, CSR, Amex Gold 等 10-15 張）
+   - 先補旗艦卡（Amex Platinum, Chase Sapphire Reserve, Amex Gold 等 10-15 張）
    - 志願者模式：社群幫忙補其餘卡片
 
 2. **My Cards 頁面改版**
    - 每張卡下面顯示自動帶出的福利列表
    - 用戶無需任何設定
+   - 每張卡加「回報錯誤」連結
 
 3. **Email 收集**
    - 首次進入 My Cards 頁面時引導
@@ -217,6 +241,7 @@ CardRecurringCredits (卡片資料庫新增欄位) {
 - 用戶自填福利到期日（MVP 全自動）
 - 加卡雷達（新卡推薦）
 - 消費缺口計算
+- Chase Freedom Flex 旋轉類別（MVP 只記靜態福利）
 
 ---
 
@@ -235,13 +260,15 @@ CardRecurringCredits (卡片資料庫新增欄位) {
 
 ## 8. 待完成項目
 
-- [ ] `recurring_credits` 欄位結構確認
+- [ ] `recurring_credits` 欄位結構確認（需加入 "monthly"）
 - [ ] AgentMail API 整合測試
+- [ ] Resend/ SendGrid 備援方案文件化
 - [ ] Vercel KV 串接
 - [ ] Cron job 實作
 - [ ] Email 收集 UI
 - [ ] My Cards V2 頁面
-- [ ] 第一批旗艦卡福利補錄（10-15 張）
+- [ ] 福利資料錯誤回報機制（opencard@opencardai.com）
+- [ ] 第一批旗艦卡福利補錄（10-15 張，**Chase Freedom Flex  MVP 階段排除**）
 
 ## 9. V2 / V3 待討論項目（暫緩）
 
@@ -253,5 +280,30 @@ CardRecurringCredits (卡片資料庫新增欄位) {
 | **加卡雷達** | 定期 AI 推薦新卡 | 需要 cron job 跑推薦模型 |
 | **消費缺口計算** | 計算「還差幾次刷」才免年費 | 需要用戶自填已刷次數/金額 |
 | **年費到期日** | 結合 A（用戶自填開卡日，精準計算）+ B（不填則用 annual_fee 一般提醒）| 需要用戶自填持卡日期（可選欄位）|
+| **Chase Freedom Flex 旋轉類別** | 每季自動更新 5% 回饋類別 | 需要每季手動更新或自動化抓取 |
 
-> 筆記時間：2026-04-17（KC 確認 MVP 方向）
+> 筆記時間：2026-04-17（KC 確認 MVP 方向 + 五項 review 更新）
+
+---
+
+## 附錄：第一批待補錄福利的旗艦卡（14 張）
+
+*MVP 階段排除 Chase Freedom Flex，只補靜態福利*
+
+| 銀行 | 卡片 | 備註 |
+|------|------|------|
+| Amex | Platinum | — |
+| Amex | Gold | — |
+| Amex | Green | — |
+| Amex | Blue Cash Preferred | — |
+| Chase | Sapphire Reserve | — |
+| Chase | Sapphire Preferred | — |
+| ~~Chase~~ | ~~Freedom Flex~~ | ~~MVP 排除，旋轉類別非靜態~~ |
+| Chase | Freedom Unlimited | — |
+| Capital One | Venture X | — |
+| Capital One | Savor | — |
+| Citi | Custom Cash | — |
+| Citi | Premier | — |
+| Discover | It Miles | — |
+| Wells Fargo | Autograph | — |
+| US Bank | Altitude Reserve | — |
