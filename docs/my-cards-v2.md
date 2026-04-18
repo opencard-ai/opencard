@@ -308,3 +308,19 @@ CardRecurringCredits (卡片資料庫新增欄位) {
 | Discover | It Miles | — |
 | Wells Fargo | Autograph | — |
 | US Bank | Altitude Reserve | — |
+
+---
+
+## 10. 資料維護計劃
+
+recurring_credits 維護遵循 MAINTENANCE.md 的邏輯：
+
+| 維護項目 | 頻率 |
+|---------|------|
+| 旗艦卡（年費 $250+）| 每季結束前 7 天內確認 |
+| 一般卡片 | 每半年一次 |
+| 緊急異動 | 收到社群反饋後 48 小時內更新 |
+
+**收到錯誤回報：** opencard@opencardai.com → 確認 → 查官方來源 → 48 小時內更新 + 回覆用戶
+
+詳細維護流程見：docs/MAINTENANCE.md
