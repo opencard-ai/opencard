@@ -1,7 +1,7 @@
 {
   "card_id": "bilt-palladium-card",
   "name": "Bilt Palladium Card",
-  "issuer": "Bilt Rewards",
+  "issuer": "First Electronic Bank",
   "network": "Mastercard",
   "annual_fee": 495,
   "annual_fee_description": "$495 annual fee; $95 per authorized user",
