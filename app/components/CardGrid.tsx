@@ -462,7 +462,7 @@ function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]
                       localStorage.setItem(key, JSON.stringify(existing));
                     }
                     // Notify My Cards page to refresh
-                    window.dispatchEvent(new CustomEvent("opencard-my-cards-changed"));
+                    window.dispatchEvent(new CustomEvent("opencard_cards_updated"));
                   }}
                   title="儲存到我的卡片"
                   className="w-7 h-7 rounded-full border bg-white border-slate-300 text-slate-500 hover:border-green-400 hover:text-green-600 transition-all flex items-center justify-center text-sm"
