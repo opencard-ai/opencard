@@ -20,7 +20,11 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.toLowerCase().trim());
 }
 
-export async function GET(req: NextRequest) {
+/**
+ * DELETE /api/my-cards/delete?email=xxx
+ * Permanently deletes all user data. This is GDPR/CCPA compliant.
+ */
+export async function DELETE(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
     const email = searchParams.get("email");
@@ -31,20 +35,16 @@ export async function GET(req: NextRequest) {
 
     const emailHash = await hashEmail(email);
     const userKey = `${USER_PREFIX}${emailHash}`;
-    const userData = await redis.hgetall(userKey) as Record<string, unknown> | null;
 
-    if (!userData || !userData.created_at) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 });
-    }
+    // Delete user record
+    await redis.del(userKey);
 
-    return NextResponse.json({
-      // Never return the hash — only card data
-      cards: userData.cards || [],
-      marketing_optin: userData.marketing_optin || false,
-      created_at: userData.created_at,
-    });
+    // Remove from subscribers set
+    await redis.srem("opencard:subscribers", emailHash);
+
+    return NextResponse.json({ success: true, message: "All data deleted" });
   } catch (err) {
-    console.error("GET user error:", err);
-    return NextResponse.json({ error: "Failed to fetch user" }, { status: 500 });
+    console.error("Delete user error:", err);
+    return NextResponse.json({ error: "Failed to delete user" }, { status: 500 });
   }
 }

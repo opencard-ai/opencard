@@ -10,21 +10,35 @@ const redis = new Redis({
 
 const USER_PREFIX = "opencard:user:";
 
+async function hashEmail(email: string): Promise<string> {
+  const normalized = email.toLowerCase().trim();
+  const { createHash } = await import("node:crypto");
+  return createHash("sha256").update(normalized).digest("hex");
+}
+
+function isValidEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.toLowerCase().trim());
+}
+
+// Validate card_id format: lowercase, hyphen, alphanumeric only
+function isValidCardId(cardId: string): boolean {
+  return /^[a-z0-9][a-z0-9-]{0,60}$/.test(cardId);
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { email, card_id } = await req.json();
 
-    if (!email || typeof email !== "string") {
-      return NextResponse.json({ error: "Email is required" }, { status: 400 });
+    if (!email || !isValidEmail(email)) {
+      return NextResponse.json({ error: "Valid email is required" }, { status: 400 });
     }
-    if (!card_id || typeof card_id !== "string") {
-      return NextResponse.json({ error: "card_id is required" }, { status: 400 });
+    if (!card_id || !isValidCardId(card_id)) {
+      return NextResponse.json({ error: "Invalid card_id" }, { status: 400 });
     }
 
-    const normalizedEmail = email.toLowerCase().trim();
-    const userKey = `${USER_PREFIX}${normalizedEmail}`;
+    const emailHash = await hashEmail(email);
+    const userKey = `${USER_PREFIX}${emailHash}`;
 
-    // Get existing cards array
     const userData = await redis.hgetall(userKey) as Record<string, unknown> | null;
     if (!userData || !userData.created_at) {
       return NextResponse.json({ error: "User not subscribed" }, { status: 404 });
@@ -32,7 +46,6 @@ export async function POST(req: NextRequest) {
 
     const existingCards = (userData.cards as string[]) || [];
 
-    // Add card if not already present
     if (!existingCards.includes(card_id)) {
       const updatedCards = [...existingCards, card_id];
       await redis.hset(userKey, {
