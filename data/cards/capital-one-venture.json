@@ -75,13 +75,6 @@
       "description": "$300 annual credit for bookings made through Capital One Travel. Automatically applied."
     },
     {
-      "name": "$120 Equinox Credit",
-      "amount": 120,
-      "frequency": "annual",
-      "category": "other",
-      "description": "$120 annual credit for Equinox gym membership or Equinox+ app. Enrollment required."
-    },
-    {
       "name": "Global Entry / PreCheck Credit",
       "amount": 100,
       "frequency": "annual",
@@ -93,14 +86,7 @@
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "Complimentary Priority Pass Select + Plaza Premium lounge access for cardholder + 2 guests."
-    },
-    {
-      "name": "10x Miles Anniversary Bonus",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other",
-      "description": "Cardholder receives 10x miles on hotels and rental cars booked via Capital One Travel. Anniversary bonus: 10x miles on total purchases."
+      "description": "Complimentary Priority Pass Select + Plaza Premium lounge access for cardholder + 2 guests at 1,300+ airport lounges worldwide."
     }
   ]
 }

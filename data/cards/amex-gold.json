@@ -119,11 +119,11 @@
       "description": "$10 monthly ($120/year) for Uber rides and Uber Eats in the US. Enrollment required."
     },
     {
-      "name": "$100 Resy Credit",
-      "amount": 100,
-      "frequency": "annual",
+      "name": "$50 Resy Credit",
+      "amount": 50,
+      "frequency": "semi_annual",
       "category": "dining",
-      "description": "$100 annually ($50 semi-annually) for Resy restaurant bookings. Must pay with Amex Gold."
+      "description": "$50 semi-annually ($100/year) for Resy restaurant bookings. January-June and July-December."
     },
     {
       "name": "$100 Airline Fee Credit",
