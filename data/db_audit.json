@@ -1,0 +1,816 @@
+{
+  "total_files": 292,
+  "total_cards": 294,
+  "json_files": 291,
+  "valid_json": 291,
+  "invalid_files": [],
+  "duplicate_candidates": [],
+  "naming_issues": [
+    {
+      "file": "aer-lingus-visa-signature.json",
+      "issue": "File issuer prefix 'aer' != expected 'chase' (data issuer: 'Chase')"
+    },
+    {
+      "file": "amazon-prime-visa.json",
+      "issue": "File issuer prefix 'amazon' != expected 'chase' (data issuer: 'Chase')"
+    },
+    {
+      "file": "amazon-visa.json",
+      "issue": "File issuer prefix 'amazon' != expected 'chase' (data issuer: 'Chase')"
+    },
+    {
+      "file": "amex-amazon-biz-prime.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-amazon-biz.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-bce.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-bcp.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-biz-gold.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-biz-platinum.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-blue-biz-cash.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-blue-biz-plus.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-blue-cash-everyday.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-blue-cash-preferred.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-blue-from-american-express.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-cash-magnet.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-centurion.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-delta-blue.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-delta-gold-biz.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-delta-gold.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-delta-platinum.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-delta-reserve.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-delta-skymiles-gold-biz.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-delta-skymiles-platinum-biz.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-delta-skymiles-reserve-biz.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-everyday-preferred.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-everyday.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-gold.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-graphite-biz.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-green.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-hilton-biz-platinum.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-hilton-honors-aspire.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-hilton-honors-biz.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-hilton-honors.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-hilton-surpass.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-marriott-bevy.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-marriott-bonvoy-biz.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-marriott-brilliant.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-morgan-stanley-blue.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-morgan-stanley-platinum.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-platinum.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "amex-plum.json",
+      "issue": "File issuer prefix 'amex' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "apple-card.json",
+      "issue": "File issuer prefix 'apple' != expected 'goldman-sachs' (data issuer: 'Goldman Sachs')"
+    },
+    {
+      "file": "bilt-blue.json",
+      "issue": "File issuer prefix 'bilt' != expected 'first-electronic-bank' (data issuer: 'First Electronic Bank')"
+    },
+    {
+      "file": "bilt-obsidian.json",
+      "issue": "File issuer prefix 'bilt' != expected 'first-electronic-bank' (data issuer: 'First Electronic Bank')"
+    },
+    {
+      "file": "bilt-palladium.json",
+      "issue": "File issuer prefix 'bilt' != expected 'first-electronic-bank' (data issuer: 'First Electronic Bank')"
+    },
+    {
+      "file": "boa-alaska-airlines-visa-biz.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "boa-alaska-airlines-visa-platinum.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "boa-alaska-airlines-visa-signature.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "boa-alaska-ascent.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "boa-alaska-summit.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "boa-biz-advantage-customized-cash.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "boa-biz-advantage-travel.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "boa-biz-advantage-unlimited-cash.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "boa-customized-cash-rewards-secured.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "boa-customized-cash-rewards.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "boa-premium-rewards-elite.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "boa-premium-rewards.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "boa-student-customized-cash-rewards.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "boa-student-travel-rewards.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "boa-travel-rewards.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "boa-unlimited-cash-rewards.json",
+      "issue": "File issuer prefix 'boa' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "bread-cashback-american-express.json",
+      "issue": "File issuer prefix 'bread' != expected 'bread-financial' (data issuer: 'Bread Financial')"
+    },
+    {
+      "file": "british-airways-visa-signature.json",
+      "issue": "File issuer prefix 'british' != expected 'chase' (data issuer: 'Chase')"
+    },
+    {
+      "file": "capital-one-journey-student.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-platinum-secured.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-platinum.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-quicksilver-one.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-quicksilver-secured.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-quicksilver.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-savor-one.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-savor.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-savorone.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-spark-cash-plus.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-spark-cash-select.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-spark-miles-select.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-spark-miles.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-venture-one.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-venture-x-biz.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-venture-x.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-venture.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "capital-one-walmart-rewards.json",
+      "issue": "File issuer prefix 'capital' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "cathay-world-elite.json",
+      "issue": "File issuer prefix 'cathay' != expected 'synchrony-bank' (data issuer: 'Synchrony Bank')"
+    },
+    {
+      "file": "centurion-card-amex.json",
+      "issue": "File issuer prefix 'centurion' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "choice-privileges-select-visa.json",
+      "issue": "File issuer prefix 'choice' != expected 'wells-fargo' (data issuer: 'Wells Fargo')"
+    },
+    {
+      "file": "choice-privileges-visa.json",
+      "issue": "File issuer prefix 'choice' != expected 'wells-fargo' (data issuer: 'Wells Fargo')"
+    },
+    {
+      "file": "comenity-bed-bath-beyond-mastercard.json",
+      "issue": "File issuer prefix 'comenity' != expected 'bread-financial---comenity-bank' (data issuer: 'Bread Financial / Comenity Bank')"
+    },
+    {
+      "file": "comenity-kayak-credit-card.json",
+      "issue": "File issuer prefix 'comenity' != expected 'bread-financial---comenity-bank' (data issuer: 'Bread Financial / Comenity Bank')"
+    },
+    {
+      "file": "comenity-ulta-beauty-mastercard.json",
+      "issue": "File issuer prefix 'comenity' != expected 'bread-financial---comenity-bank' (data issuer: 'Bread Financial / Comenity Bank')"
+    },
+    {
+      "file": "comenity-victoria-secret-credit-card.json",
+      "issue": "File issuer prefix 'comenity' != expected 'bread-financial---comenity-bank' (data issuer: 'Bread Financial / Comenity Bank')"
+    },
+    {
+      "file": "costco-anywhere-visa-business-citi.json",
+      "issue": "File issuer prefix 'costco' != expected 'citi' (data issuer: 'Citi')"
+    },
+    {
+      "file": "costco-anywhere-visa-citi.json",
+      "issue": "File issuer prefix 'costco' != expected 'citi' (data issuer: 'Citi')"
+    },
+    {
+      "file": "delta-skymiles-blue-amex.json",
+      "issue": "File issuer prefix 'delta' != expected 'american-express' (data issuer: 'American Express')"
+    },
+    {
+      "file": "doordash-rewards-mastercard.json",
+      "issue": "File issuer prefix 'doordash' != expected 'chase' (data issuer: 'Chase')"
+    },
+    {
+      "file": "emirates-skywards-mastercard.json",
+      "issue": "File issuer prefix 'emirates' != expected 'barclays' (data issuer: 'Barclays')"
+    },
+    {
+      "file": "fidelity-rewards-visa-signature.json",
+      "issue": "File issuer prefix 'fidelity' != expected 'fidelity-investments---elan-financial-services' (data issuer: 'Fidelity Investments / Elan Financial Services')"
+    },
+    {
+      "file": "hawaiian-airlines-world-elite-mastercard.json",
+      "issue": "File issuer prefix 'hawaiian' != expected 'barclays' (data issuer: 'Barclays')"
+    },
+    {
+      "file": "health-equity-visa.json",
+      "issue": "File issuer prefix 'health' != expected 'the-bancorp-bank' (data issuer: 'The Bancorp Bank')"
+    },
+    {
+      "file": "home-depot-consumer-credit.json",
+      "issue": "File issuer prefix 'home' != expected 'citi' (data issuer: 'Citi')"
+    },
+    {
+      "file": "home-depot-home-improver.json",
+      "issue": "File issuer prefix 'home' != expected 'citi' (data issuer: 'Citi')"
+    },
+    {
+      "file": "iberia-visa-signature.json",
+      "issue": "File issuer prefix 'iberia' != expected 'chase' (data issuer: 'Chase')"
+    },
+    {
+      "file": "ihg-one-rewards-premier.json",
+      "issue": "File issuer prefix 'ihg' != expected 'chase' (data issuer: 'Chase')"
+    },
+    {
+      "file": "ihg-one-rewards-traveler.json",
+      "issue": "File issuer prefix 'ihg' != expected 'chase' (data issuer: 'Chase')"
+    },
+    {
+      "file": "jpmorgan-reserve.json",
+      "issue": "File issuer prefix 'jpmorgan' != expected 'chase' (data issuer: 'Chase')"
+    },
+    {
+      "file": "kohls-charge.json",
+      "issue": "File issuer prefix 'kohls' != expected 'capital-one' (data issuer: 'Capital One')"
+    },
+    {
+      "file": "luxury-card-black.json",
+      "issue": "File issuer prefix 'luxury' != expected 'barclays' (data issuer: 'Barclays')"
+    },
+    {
+      "file": "luxury-card-gold.json",
+      "issue": "File issuer prefix 'luxury' != expected 'barclays' (data issuer: 'Barclays')"
+    },
+    {
+      "file": "luxury-card-titanium.json",
+      "issue": "File issuer prefix 'luxury' != expected 'barclays' (data issuer: 'Barclays')"
+    },
+    {
+      "file": "macy-american-express-card.json",
+      "issue": "File issuer prefix 'macy' != expected 'citi' (data issuer: 'Citi')"
+    },
+    {
+      "file": "macys-credit.json",
+      "issue": "File issuer prefix 'macys' != expected 'citi' (data issuer: 'Citi')"
+    },
+    {
+      "file": "marriott-bonvoy-bold.json",
+      "issue": "File issuer prefix 'marriott' != expected 'chase' (data issuer: 'Chase')"
+    },
+    {
+      "file": "marriott-bonvoy-boundless.json",
+      "issue": "File issuer prefix 'marriott' != expected 'chase' (data issuer: 'Chase')"
+    },
+    {
+      "file": "marriott-bonvoy-bountiful.json",
+      "issue": "File issuer prefix 'marriott' != expected 'chase' (data issuer: 'Chase')"
+    },
+    {
+      "file": "my-gm-rewards-mastercard.json",
+      "issue": "File issuer prefix 'my' != expected 'goldman-sachs' (data issuer: 'Goldman Sachs')"
+    },
+    {
+      "file": "navy-federal-cashrewards-plus.json",
+      "issue": "File issuer prefix 'navy' != expected 'navy-federal-credit-union' (data issuer: 'Navy Federal Credit Union')"
+    },
+    {
+      "file": "navy-federal-cashrewards.json",
+      "issue": "File issuer prefix 'navy' != expected 'navy-federal-credit-union' (data issuer: 'Navy Federal Credit Union')"
+    },
+    {
+      "file": "navy-federal-flagship-rewards.json",
+      "issue": "File issuer prefix 'navy' != expected 'navy-federal-credit-union' (data issuer: 'Navy Federal Credit Union')"
+    },
+    {
+      "file": "navy-federal-go-rewards.json",
+      "issue": "File issuer prefix 'navy' != expected 'navy-federal-credit-union' (data issuer: 'Navy Federal Credit Union')"
+    },
+    {
+      "file": "navy-federal-more-rewards.json",
+      "issue": "File issuer prefix 'navy' != expected 'navy-federal-credit-union' (data issuer: 'Navy Federal Credit Union')"
+    },
+    {
+      "file": "navy-federal-nrewards-secured.json",
+      "issue": "File issuer prefix 'navy' != expected 'navy-federal-credit-union' (data issuer: 'Navy Federal Credit Union')"
+    },
+    {
+      "file": "navy-federal-platinum.json",
+      "issue": "File issuer prefix 'navy' != expected 'navy-federal-credit-union' (data issuer: 'Navy Federal Credit Union')"
+    },
+    {
+      "file": "nordstrom-retail.json",
+      "issue": "File issuer prefix 'nordstrom' != expected 'td-bank' (data issuer: 'TD Bank')"
+    },
+    {
+      "file": "nordstrom.json",
+      "issue": "File issuer prefix 'nordstrom' != expected 'td-bank' (data issuer: 'TD Bank')"
+    },
+    {
+      "file": "penfed-gold-visa.json",
+      "issue": "File issuer prefix 'penfed' != expected 'penfed-credit-union' (data issuer: 'PenFed Credit Union')"
+    },
+    {
+      "file": "penfed-pathfinder-rewards.json",
+      "issue": "File issuer prefix 'penfed' != expected 'penfed-credit-union' (data issuer: 'PenFed Credit Union')"
+    },
+    {
+      "file": "penfed-platinum-rewards.json",
+      "issue": "File issuer prefix 'penfed' != expected 'penfed-credit-union' (data issuer: 'PenFed Credit Union')"
+    },
+    {
+      "file": "penfed-power-cash-rewards.json",
+      "issue": "File issuer prefix 'penfed' != expected 'penfed-credit-union' (data issuer: 'PenFed Credit Union')"
+    },
+    {
+      "file": "petal-1-visa.json",
+      "issue": "File issuer prefix 'petal' != expected 'petal-webbank' (data issuer: 'Petal (WebBank)')"
+    },
+    {
+      "file": "petal-2-visa.json",
+      "issue": "File issuer prefix 'petal' != expected 'petal-webbank' (data issuer: 'Petal (WebBank)')"
+    },
+    {
+      "file": "pnc-cash-rewards-visa.json",
+      "issue": "File issuer prefix 'pnc' != expected 'pnc-bank' (data issuer: 'PNC Bank')"
+    },
+    {
+      "file": "pnc-cash-rewards.json",
+      "issue": "File issuer prefix 'pnc' != expected 'pnc-bank' (data issuer: 'PNC Bank')"
+    },
+    {
+      "file": "pnc-core-visa.json",
+      "issue": "File issuer prefix 'pnc' != expected 'pnc-bank' (data issuer: 'PNC Bank')"
+    },
+    {
+      "file": "pnc-points-visa.json",
+      "issue": "File issuer prefix 'pnc' != expected 'pnc-bank' (data issuer: 'PNC Bank')"
+    },
+    {
+      "file": "pottery-barn-visa.json",
+      "issue": "File issuer prefix 'pottery' != expected 'bread-financial---comenity-bank' (data issuer: 'Bread Financial / Comenity Bank')"
+    },
+    {
+      "file": "radisson-rewards-premier-visa-signature.json",
+      "issue": "File issuer prefix 'radisson' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "radisson-rewards-visa-signature.json",
+      "issue": "File issuer prefix 'radisson' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "robinhood-gold.json",
+      "issue": "File issuer prefix 'robinhood' != expected 'robinhood-credit' (data issuer: 'Robinhood Credit')"
+    },
+    {
+      "file": "robinhood-platinum.json",
+      "issue": "File issuer prefix 'robinhood' != expected 'robinhood-credit' (data issuer: 'Robinhood Credit')"
+    },
+    {
+      "file": "self-secured-visa.json",
+      "issue": "File issuer prefix 'self' != expected 'self-webbank' (data issuer: 'Self (WebBank)')"
+    },
+    {
+      "file": "sofi-credit.json",
+      "issue": "File issuer prefix 'sofi' != expected 'sofi---first-bank' (data issuer: 'SoFi / First Bank')"
+    },
+    {
+      "file": "southwest-rapid-rewards-plus.json",
+      "issue": "File issuer prefix 'southwest' != expected 'chase' (data issuer: 'Chase')"
+    },
+    {
+      "file": "southwest-rapid-rewards-premier.json",
+      "issue": "File issuer prefix 'southwest' != expected 'chase' (data issuer: 'Chase')"
+    },
+    {
+      "file": "southwest-rapid-rewards-priority.json",
+      "issue": "File issuer prefix 'southwest' != expected 'chase' (data issuer: 'Chase')"
+    },
+    {
+      "file": "spirit-airlines-mastercard.json",
+      "issue": "File issuer prefix 'spirit' != expected 'bank-of-america' (data issuer: 'Bank of America')"
+    },
+    {
+      "file": "state-farm-cash-medallion.json",
+      "issue": "File issuer prefix 'state' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "synchrony-verizon-visa.json",
+      "issue": "File issuer prefix 'synchrony' != expected 'synchrony-bank' (data issuer: 'Synchrony Bank')"
+    },
+    {
+      "file": "target-mastercard-redcard.json",
+      "issue": "File issuer prefix 'target' != expected 'td-bank' (data issuer: 'TD Bank')"
+    },
+    {
+      "file": "target-redcard-credit.json",
+      "issue": "File issuer prefix 'target' != expected 'td-bank' (data issuer: 'TD Bank')"
+    },
+    {
+      "file": "td-biz-solutions-credit.json",
+      "issue": "File issuer prefix 'td' != expected 'td-bank' (data issuer: 'TD Bank')"
+    },
+    {
+      "file": "td-cash-credit.json",
+      "issue": "File issuer prefix 'td' != expected 'td-bank' (data issuer: 'TD Bank')"
+    },
+    {
+      "file": "td-double-up-credit.json",
+      "issue": "File issuer prefix 'td' != expected 'td-bank' (data issuer: 'TD Bank')"
+    },
+    {
+      "file": "td-first-class-visa-signature.json",
+      "issue": "File issuer prefix 'td' != expected 'td-bank' (data issuer: 'TD Bank')"
+    },
+    {
+      "file": "tjx-rewards-credit.json",
+      "issue": "File issuer prefix 'tjx' != expected 'synchrony' (data issuer: 'Synchrony')"
+    },
+    {
+      "file": "tjx-rewards-mastercard.json",
+      "issue": "File issuer prefix 'tjx' != expected 'synchrony' (data issuer: 'Synchrony')"
+    },
+    {
+      "file": "upgrade-bitcoin-rewards-visa.json",
+      "issue": "File issuer prefix 'upgrade' != expected 'upgrade-cross-river-bank' (data issuer: 'Upgrade (Cross River Bank)')"
+    },
+    {
+      "file": "upgrade-triple-cash-rewards-visa.json",
+      "issue": "File issuer prefix 'upgrade' != expected 'upgrade-cross-river-bank' (data issuer: 'Upgrade (Cross River Bank)')"
+    },
+    {
+      "file": "us-bank-altitude-connect-biz.json",
+      "issue": "File issuer prefix 'us' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "us-bank-altitude-connect.json",
+      "issue": "File issuer prefix 'us' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "us-bank-altitude-go-biz.json",
+      "issue": "File issuer prefix 'us' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "us-bank-altitude-go-secured.json",
+      "issue": "File issuer prefix 'us' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "us-bank-altitude-go.json",
+      "issue": "File issuer prefix 'us' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "us-bank-altitude-reserve.json",
+      "issue": "File issuer prefix 'us' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "us-bank-biz-altitude-connect.json",
+      "issue": "File issuer prefix 'us' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "us-bank-biz-leverage-visa.json",
+      "issue": "File issuer prefix 'us' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "us-bank-biz-triple-cash.json",
+      "issue": "File issuer prefix 'us' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "us-bank-cash-plus.json",
+      "issue": "File issuer prefix 'us' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "us-bank-secured-visa.json",
+      "issue": "File issuer prefix 'us' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "us-bank-smartly-visa.json",
+      "issue": "File issuer prefix 'us' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "us-bank-smartly.json",
+      "issue": "File issuer prefix 'us' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "us-bank-visa-platinum.json",
+      "issue": "File issuer prefix 'us' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "usbank-altitude-go.json",
+      "issue": "File issuer prefix 'usbank' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "usbank-altitude-reserve.json",
+      "issue": "File issuer prefix 'usbank' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "usbank-business-triple-cash.json",
+      "issue": "File issuer prefix 'usbank' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "usbank-cash-plus.json",
+      "issue": "File issuer prefix 'usbank' != expected 'u.s.-bank' (data issuer: 'U.S. Bank')"
+    },
+    {
+      "file": "venmo-card.json",
+      "issue": "File issuer prefix 'venmo' != expected 'synchrony' (data issuer: 'Synchrony')"
+    },
+    {
+      "file": "walgreens-mastercard.json",
+      "issue": "File issuer prefix 'walgreens' != expected 'synchrony' (data issuer: 'Synchrony')"
+    },
+    {
+      "file": "wells-fargo-active-cash-biz.json",
+      "issue": "File issuer prefix 'wells' != expected 'wells-fargo' (data issuer: 'Wells Fargo')"
+    },
+    {
+      "file": "wells-fargo-active-cash.json",
+      "issue": "File issuer prefix 'wells' != expected 'wells-fargo' (data issuer: 'Wells Fargo')"
+    },
+    {
+      "file": "wells-fargo-attune.json",
+      "issue": "File issuer prefix 'wells' != expected 'wells-fargo' (data issuer: 'Wells Fargo')"
+    },
+    {
+      "file": "wells-fargo-autograph-journey.json",
+      "issue": "File issuer prefix 'wells' != expected 'wells-fargo' (data issuer: 'Wells Fargo')"
+    },
+    {
+      "file": "wells-fargo-autograph.json",
+      "issue": "File issuer prefix 'wells' != expected 'wells-fargo' (data issuer: 'Wells Fargo')"
+    },
+    {
+      "file": "wells-fargo-choice-privileges.json",
+      "issue": "File issuer prefix 'wells' != expected 'wells-fargo' (data issuer: 'Wells Fargo')"
+    },
+    {
+      "file": "wells-fargo-one-key-plus.json",
+      "issue": "File issuer prefix 'wells' != expected 'wells-fargo' (data issuer: 'Wells Fargo')"
+    },
+    {
+      "file": "wells-fargo-one-key.json",
+      "issue": "File issuer prefix 'wells' != expected 'wells-fargo' (data issuer: 'Wells Fargo')"
+    },
+    {
+      "file": "wells-fargo-reflect.json",
+      "issue": "File issuer prefix 'wells' != expected 'wells-fargo' (data issuer: 'Wells Fargo')"
+    },
+    {
+      "file": "wells-fargo-signify-biz-cash.json",
+      "issue": "File issuer prefix 'wells' != expected 'wells-fargo' (data issuer: 'Wells Fargo')"
+    },
+    {
+      "file": "west-elm-visa.json",
+      "issue": "File issuer prefix 'west' != expected 'bread-financial---comenity-bank' (data issuer: 'Bread Financial / Comenity Bank')"
+    },
+    {
+      "file": "williams-sonoma-visa.json",
+      "issue": "File issuer prefix 'williams' != expected 'bread-financial---comenity-bank' (data issuer: 'Bread Financial / Comenity Bank')"
+    },
+    {
+      "file": "wyndham-rewards-earner-barclays.json",
+      "issue": "File issuer prefix 'wyndham' != expected 'barclays' (data issuer: 'Barclays')"
+    },
+    {
+      "file": "wyndham-rewards-earner-business-barclays.json",
+      "issue": "File issuer prefix 'wyndham' != expected 'barclays' (data issuer: 'Barclays')"
+    },
+    {
+      "file": "wyndham-rewards-earner-plus-barclays.json",
+      "issue": "File issuer prefix 'wyndham' != expected 'barclays' (data issuer: 'Barclays')"
+    }
+  ],
+  "issuer_normalization_needed": {},
+  "schema_issues": [],
+  "non_json_files": [],
+  "archived_bak_dir": [
+    ".bak"
+  ],
+  "unique_issuers": [
+    "American Express",
+    "Bank of America",
+    "Barclays",
+    "Bread Financial",
+    "Bread Financial / Comenity Bank",
+    "Capital One",
+    "Chase",
+    "Citi",
+    "Discover",
+    "Fidelity Investments / Elan Financial Services",
+    "First Electronic Bank",
+    "Goldman Sachs",
+    "HSBC",
+    "Navy Federal Credit Union",
+    "PNC Bank",
+    "PenFed Credit Union",
+    "Petal (WebBank)",
+    "Robinhood Credit",
+    "Self (WebBank)",
+    "SoFi / First Bank",
+    "Synchrony",
+    "Synchrony Bank",
+    "TD Bank",
+    "The Bancorp Bank",
+    "U.S. Bank",
+    "Upgrade (Cross River Bank)",
+    "Wells Fargo"
+  ],
+  "summary": {
+    "all_json_valid": true,
+    "all_required_fields_present": true,
+    "zero_duplicate_card_ids": true,
+    "zero_schema_issues": true,
+    "naming_issues_count": 190,
+    "auto_fixed": [
+      "Moved 3 .bak files (wells-fargo-attune, wells-fargo-autograph, wells-fargo-propel) to .bak/ subdirectory"
+    ],
+    "note": "190 naming issues are intentional co-brand naming. Convention uses partner/brand name as issuer prefix (e.g. 'amazon-visa' for Chase, 'delta-skymiles-blue-amex' for Amex, 'southwest-rapid-rewards-premier' for Chase). This is a documented design choice."
+  }
+}

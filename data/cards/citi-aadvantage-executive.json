@@ -100,5 +100,28 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Lyft Credit",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "travel",
+      "description": "$10/month Lyft credit"
+    },
+    {
+      "name": "Grubhub Credit",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "$10/month Grubhub credit"
+    },
+    {
+      "name": "Inflight WiFi Credit",
+      "amount": 25,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$25 annual inflight WiFi credit"
+    }
+  ]
 }

@@ -1,0 +1,154 @@
+{
+  "research_date": "2026-04-18",
+  "researcher": "jisoo-subagent",
+  "summary": "Researched P0 and P1 priority cards for recurring credits. Verified credits from official issuer pages and Doctor of Credit / NerdWallet / The Points Guy / Upgraded Points.",
+  "cards_researched": [
+    {
+      "card_id": "amex-bce.json",
+      "name": "Blue Cash Everyday® Card",
+      "annual_fee": 0,
+      "notes": "P1 - Common cards"
+    },
+    {
+      "card_id": "amex-bcp.json",
+      "name": "Blue Cash Preferred® Card",
+      "annual_fee": 95,
+      "notes": "P1 - Common cards"
+    },
+    {
+      "card_id": "chase-ink-biz-preferred.json",
+      "name": "Chase Ink Business Preferred® Credit Card",
+      "annual_fee": 95,
+      "notes": "P1 - Common cards"
+    },
+    {
+      "card_id": "citi-aadvantage-executive.json",
+      "name": "Citi® / AAdvantage® Executive World Elite Mastercard®",
+      "annual_fee": 595,
+      "notes": "P2 - Other cards with significant benefits"
+    },
+    {
+      "card_id": "chase-freedom-flex.json",
+      "name": "Chase Freedom Flex®",
+      "annual_fee": 0,
+      "notes": "P0 - High value flagship (no recurring credits found)"
+    },
+    {
+      "card_id": "discover-it.json",
+      "name": "Discover it® Cash Back",
+      "annual_fee": 0,
+      "notes": "P0 - High value flagship (no recurring credits found)"
+    },
+    {
+      "card_id": "capital-one-venture-one.json",
+      "name": "Capital One VentureOne Rewards Credit Card",
+      "annual_fee": 0,
+      "notes": "P0 - High value flagship (no recurring credits found)"
+    },
+    {
+      "card_id": "chase-freedom-unlimited.json",
+      "name": "Chase Freedom Unlimited®",
+      "annual_fee": 0,
+      "notes": "P1 - Common cards (no recurring credits found)"
+    },
+    {
+      "card_id": "amazon-prime-visa.json",
+      "name": "Prime Visa",
+      "annual_fee": 0,
+      "notes": "P1 - Common cards (no recurring credits found)"
+    },
+    {
+      "card_id": "citi-double-cash.json",
+      "name": "Citi Double Cash® Card",
+      "annual_fee": 0,
+      "notes": "P1 - Common cards (no recurring credits found)"
+    },
+    {
+      "card_id": "navy-federal-cashrewards.json",
+      "name": "Navy Federal cashRewards® Credit Card",
+      "annual_fee": 0,
+      "notes": "P1 - Navy Federal cards (no recurring credits found)"
+    }
+  ],
+  "findings": [
+    {
+      "card_id": "amex-bce.json",
+      "recurring_credits": [
+        {
+          "name": "Disney Streaming Credit",
+          "amount": 84,
+          "frequency": "annual",
+          "category": "streaming",
+          "description": "$7/month ($84/year) for streaming services including Disney+, Hulu, ESPN+. Since Aug 2025 update: no minimum spend required, expanded to cover many streaming services beyond Disney bundle. Enrollment required.",
+          "source": "American Express official page, Doctor of Credit"
+        },
+        {
+          "name": "Home Chef Credit",
+          "amount": 180,
+          "frequency": "annual",
+          "category": "dining",
+          "description": "$15/month ($180/year) statement credit for Home Chef meal kit purchases. Enrollment required.",
+          "source": "American Express official page, Doctor of Credit"
+        }
+      ]
+    },
+    {
+      "card_id": "amex-bcp.json",
+      "recurring_credits": [
+        {
+          "name": "Disney Streaming Credit",
+          "amount": 120,
+          "frequency": "annual",
+          "category": "streaming",
+          "description": "$10/month ($120/year) for streaming services including Disney+, Hulu, ESPN+. Since Aug 2025 update: no minimum spend required, expanded to cover many streaming services beyond Disney bundle. Enrollment required.",
+          "source": "American Express official page, Doctor of Credit"
+        }
+      ]
+    },
+    {
+      "card_id": "citi-aadvantage-executive.json",
+      "recurring_credits": [
+        {
+          "name": "Lyft Credit",
+          "amount": 120,
+          "frequency": "annual",
+          "category": "travel",
+          "description": "Up to $10/month ($120/year) in Lyft credits after taking 3 eligible rides. Active through September 30, 2027.",
+          "source": "The Points Guy, NerdWallet, Upgraded Points"
+        },
+        {
+          "name": "Grubhub Credit",
+          "amount": 120,
+          "frequency": "annual",
+          "category": "dining",
+          "description": "Up to $10 per billing cycle ($120/year) in Grubhub credits for eligible food delivery orders.",
+          "source": "US Credit Card Guide, AwardWallet, Upgraded Points"
+        },
+        {
+          "name": "Inflight WiFi Credit",
+          "amount": 25,
+          "frequency": "annual",
+          "category": "travel",
+          "description": "$25 annual credit for inflight WiFi on American Airlines flights when paying with the card.",
+          "source": "Frequent Miler"
+        }
+      ]
+    }
+  ],
+  "no_recurring_credits": [
+    "chase-freedom-flex.json",
+    "discover-it.json",
+    "capital-one-venture-one.json",
+    "chase-freedom-unlimited.json",
+    "amazon-prime-visa.json",
+    "citi-double-cash.json",
+    "navy-federal-cashrewards.json"
+  ],
+  "notes": [
+    "Chase Freedom Flex has no recurring credits - only quarterly rotating 5% categories (require activation) and elevated earnings on travel/dining/drugstores.",
+    "Discover it has no recurring credits - only quarterly rotating 5% categories (require activation) and first-year cash back match.",
+    "Capital One VentureOne is a flat-rate no-annual-fee card with no statement credits.",
+    "Chase Ink Business Preferred has DoorDash DashPass (12 months free, then auto-renews at $9.99/month) and $10/month DoorDash credit, but these require DashPass activation - not included as they're conditional subscriptions rather than clear recurring credits.",
+    "Citi Premier (citi-strata-premier.json) already has $100 annual hotel credit populated."
+  ]
+}

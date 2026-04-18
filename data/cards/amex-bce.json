@@ -77,5 +77,21 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Disney+ Streaming Credit",
+      "amount": 7,
+      "frequency": "monthly",
+      "category": "streaming",
+      "description": "$7/month Disney+ streaming credit"
+    },
+    {
+      "name": "Home Chef Credit",
+      "amount": 15,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "$15/month Home Chef credit"
+    }
+  ]
 }
