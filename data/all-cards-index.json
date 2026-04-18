@@ -1,18 +1,6 @@
 {
   "cards": [
     {
-      "card_id": "aer-lingus-visa-signature",
-      "name": "Aer Lingus Visa Signature® Card",
-      "issuer": "Chase",
-      "network": "Visa",
-      "annual_fee": 95,
-      "tags": [
-        "avios",
-        "airline",
-        "aer-lingus"
-      ]
-    },
-    {
       "card_id": "amazon-prime-visa",
       "name": "Prime Visa",
       "issuer": "Chase",
@@ -336,7 +324,7 @@
       "network": "Amex",
       "annual_fee": 550,
       "tags": [
-        "hotel_hilton",
+        "hotel-hilton",
         "premium"
       ]
     },
@@ -359,7 +347,7 @@
       "network": "Amex",
       "annual_fee": 0,
       "tags": [
-        "hotel_hilton",
+        "hotel-hilton",
         "no-annual-fee"
       ]
     },
@@ -370,7 +358,7 @@
       "network": "Amex",
       "annual_fee": 150,
       "tags": [
-        "hotel_hilton"
+        "hotel-hilton"
       ]
     },
     {
@@ -382,7 +370,7 @@
       "tags": [
         "hotel",
         "marriott",
-        "hotel_marriott"
+        "hotel-marriott"
       ]
     },
     {
@@ -789,7 +777,13 @@
       "issuer": "Bank of America",
       "network": "Visa",
       "annual_fee": 95,
-      "tags": []
+      "tags": [
+        "travel",
+        "airline",
+        "hotel",
+        "alaska-airlines",
+        "good-value"
+      ]
     },
     {
       "card_id": "boa-alaska-summit",
@@ -797,7 +791,13 @@
       "issuer": "Bank of America",
       "network": "Visa",
       "annual_fee": 395,
-      "tags": []
+      "tags": [
+        "travel",
+        "airline",
+        "hotel",
+        "alaska-airlines",
+        "premium"
+      ]
     },
     {
       "card_id": "boa-biz-advantage-customized-cash",
@@ -924,7 +924,11 @@
       "issuer": "Bank of America",
       "network": "Visa",
       "annual_fee": 0,
-      "tags": []
+      "tags": [
+        "travel",
+        "flat-rate",
+        "no-annual-fee"
+      ]
     },
     {
       "card_id": "boa-unlimited-cash-rewards",
@@ -951,24 +955,17 @@
       ]
     },
     {
-      "card_id": "british-airways-visa-signature",
-      "name": "British Airways Visa Signature® Card",
-      "issuer": "Chase",
-      "network": "Visa",
-      "annual_fee": 95,
-      "tags": [
-        "avios",
-        "airline",
-        "british-airways"
-      ]
-    },
-    {
       "card_id": "capital-one-journey-student",
       "name": "Capital One Journey Student Credit Card",
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 0,
-      "tags": []
+      "tags": [
+        "student",
+        "cash-back",
+        "beginner",
+        "no-annual-fee"
+      ]
     },
     {
       "card_id": "capital-one-quicksilver-one",
@@ -976,7 +973,11 @@
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 39,
-      "tags": []
+      "tags": [
+        "cash-back",
+        "flat-rate",
+        "fair-credit"
+      ]
     },
     {
       "card_id": "capital-one-quicksilver-secured",
@@ -984,7 +985,12 @@
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 0,
-      "tags": []
+      "tags": [
+        "secured",
+        "cash-back",
+        "credit-builder",
+        "no-annual-fee"
+      ]
     },
     {
       "card_id": "capital-one-quicksilver",
@@ -1016,7 +1022,12 @@
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 0,
-      "tags": []
+      "tags": [
+        "dining",
+        "groceries",
+        "entertainment",
+        "cash-back"
+      ]
     },
     {
       "card_id": "capital-one-savorone",
@@ -1034,7 +1045,10 @@
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 150,
-      "tags": []
+      "tags": [
+        "business",
+        "cash-back"
+      ]
     },
     {
       "card_id": "capital-one-spark-cash-select",
@@ -1042,7 +1056,10 @@
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 0,
-      "tags": []
+      "tags": [
+        "business",
+        "cash-back"
+      ]
     },
     {
       "card_id": "capital-one-spark-miles-select",
@@ -1050,7 +1067,11 @@
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 0,
-      "tags": []
+      "tags": [
+        "business",
+        "travel",
+        "miles"
+      ]
     },
     {
       "card_id": "capital-one-spark-miles",
@@ -1058,7 +1079,11 @@
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 95,
-      "tags": []
+      "tags": [
+        "business",
+        "travel",
+        "miles"
+      ]
     },
     {
       "card_id": "capital-one-venture-one",
@@ -1066,7 +1091,11 @@
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 0,
-      "tags": []
+      "tags": [
+        "travel",
+        "flat-rate",
+        "no-annual-fee"
+      ]
     },
     {
       "card_id": "capital-one-venture-x-biz",
@@ -1088,7 +1117,11 @@
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 395,
-      "tags": []
+      "tags": [
+        "travel",
+        "premium",
+        "lounge-access"
+      ]
     },
     {
       "card_id": "capital-one-venture",
@@ -1096,7 +1129,10 @@
       "issuer": "Capital One",
       "network": "Visa",
       "annual_fee": 95,
-      "tags": []
+      "tags": [
+        "travel",
+        "miles"
+      ]
     },
     {
       "card_id": "cathay-world-elite",
@@ -1109,6 +1145,18 @@
       ]
     },
     {
+      "card_id": "chase-aer-lingus-visa-signature",
+      "name": "Aer Lingus Visa Signature® Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": [
+        "avios",
+        "airline",
+        "aer-lingus"
+      ]
+    },
+    {
       "card_id": "chase-aeroplan",
       "name": "Chase Aeroplan Card",
       "issuer": "Chase",
@@ -1116,6 +1164,18 @@
       "annual_fee": 95,
       "tags": [
         "travel"
+      ]
+    },
+    {
+      "card_id": "chase-british-airways-visa-signature",
+      "name": "British Airways Visa Signature® Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": [
+        "avios",
+        "airline",
+        "british-airways"
       ]
     },
     {
@@ -1214,6 +1274,18 @@
       "annual_fee": 95,
       "tags": [
         "travel"
+      ]
+    },
+    {
+      "card_id": "chase-iberia-visa-signature",
+      "name": "Iberia Visa Signature® Card",
+      "issuer": "Chase",
+      "network": "Visa",
+      "annual_fee": 95,
+      "tags": [
+        "avios",
+        "airline",
+        "iberia"
       ]
     },
     {
@@ -1661,7 +1733,10 @@
       "issuer": "Citi",
       "network": "Visa",
       "annual_fee": 0,
-      "tags": []
+      "tags": [
+        "cash-back",
+        "category-select"
+      ]
     },
     {
       "card_id": "citi-dividend",
@@ -1733,7 +1808,11 @@
       "issuer": "Citi",
       "network": "Visa",
       "annual_fee": 595,
-      "tags": []
+      "tags": [
+        "travel",
+        "rewards",
+        "premium"
+      ]
     },
     {
       "card_id": "citi-strata-premier",
@@ -1855,7 +1934,11 @@
       "issuer": "Discover",
       "network": "Discover",
       "annual_fee": 0,
-      "tags": []
+      "tags": [
+        "travel",
+        "miles",
+        "no-annual-fee"
+      ]
     },
     {
       "card_id": "discover-it-secured",
@@ -1995,18 +2078,6 @@
       ]
     },
     {
-      "card_id": "iberia-visa-signature",
-      "name": "Iberia Visa Signature® Card",
-      "issuer": "Chase",
-      "network": "Visa",
-      "annual_fee": 95,
-      "tags": [
-        "avios",
-        "airline",
-        "iberia"
-      ]
-    },
-    {
       "card_id": "ihg-one-rewards-premier",
       "name": "IHG One Rewards Premier Credit Card",
       "issuer": "Chase",
@@ -2054,7 +2125,10 @@
       "issuer": "Capital One",
       "network": "Mastercard",
       "annual_fee": 0,
-      "tags": []
+      "tags": [
+        "store-card",
+        "retail"
+      ]
     },
     {
       "card_id": "luxury-card-black",
@@ -2133,19 +2207,6 @@
         "hotel",
         "no-annual-fee",
         "silver-elite"
-      ]
-    },
-    {
-      "card_id": "marriott-bonvoy-boundless",
-      "name": "Marriott Bonvoy Boundless® Credit Card",
-      "issuer": "Chase",
-      "network": "Visa",
-      "annual_fee": 95,
-      "tags": [
-        "marriott",
-        "hotel",
-        "co-branded",
-        "travel"
       ]
     },
     {
@@ -2229,17 +2290,6 @@
         "rewards",
         "dining",
         "american-express"
-      ]
-    },
-    {
-      "card_id": "navy-federal-nrewards-secured",
-      "name": "Navy Federal nRewards® Secured Credit Card",
-      "issuer": "Navy Federal Credit Union",
-      "network": "Visa",
-      "annual_fee": 0,
-      "tags": [
-        "secured",
-        "building-credit"
       ]
     },
     {

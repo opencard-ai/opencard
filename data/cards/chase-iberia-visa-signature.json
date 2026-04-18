@@ -1,6 +1,6 @@
 {
-  "card_id": "aer-lingus-visa-signature",
-  "name": "Aer Lingus Visa Signature® Card",
+  "card_id": "chase-iberia-visa-signature",
+  "name": "Iberia Visa Signature® Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 95,
@@ -8,7 +8,7 @@
   "credit_required": "Good",
   "earning_rates": [
     {
-      "category": "Aer Lingus, British Airways, Iberia, LEVEL flights",
+      "category": "Iberia, British Airways, LEVEL, Aer Lingus flights",
       "rate": 3,
       "type": "Avios"
     },
@@ -25,8 +25,8 @@
   ],
   "annual_credits": [],
   "travel_benefits": {
-    "economy_companion_ticket": "After $30,000 annual spend, receive an economy companion ticket for Aer Lingus-operated flights originating from the US to Ireland",
-    "priority_boarding": "Priority boarding on Aer Lingus-operated flights for primary cardmembers and authorized users"
+    "airfare_discount_voucher": "After $30,000 annual spend, receive a $1,000 discount voucher usable on two same-flight Iberia tickets",
+    "iberia_10_percent_discount": "10% discount on new Iberia flight bookings made through iberia.com/Chase10"
   },
   "fhr_thc": {
     "fhr_eligible": false,
@@ -40,20 +40,20 @@
   "tags": [
     "avios",
     "airline",
-    "aer-lingus"
+    "iberia"
   ],
   "sources": [
     {
-      "url": "https://creditcards.chase.com/travel-credit-cards/avios/aer-lingus"
+      "url": "https://creditcards.chase.com/travel-credit-cards/avios/iberia"
     },
     {
-      "url": "https://www.businessinsider.com/personal-finance/credit-cards/aer-lingus-visa-credit-card-review"
+      "url": "https://upgradedpoints.com/credit-cards/reviews/iberia-visa-signature-card/"
     },
     {
-      "url": "https://www.forbes.com/advisor/credit-cards/reviews/chase-aer-lingus/"
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/iberia-visa"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.933Z",
+  "last_updated": "2026-04-16T13:41:49.986Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
