@@ -337,11 +337,18 @@ function CardList({ cards, tags, locale, selectedSort }: { cards: CreditCard[]; 
                   </span>
                 </div>
                 {card.welcome_offer?.estimated_value != null && card.welcome_offer.estimated_value > 0 && (
-                  <div className="flex items-center gap-1 mb-3 bg-amber-50 border border-amber-200 rounded px-2 py-1">
+                  <div className="mb-3 bg-amber-50 border border-amber-200 rounded px-2 py-1">
                     <span className="text-xs text-amber-700">🎁 {locale === "zh" ? "開卡禮" : locale === "es" ? "Bono" : "Welcome Bonus"}</span>
-                    <span className="text-sm font-semibold text-amber-800">
-                      ${card.welcome_offer.estimated_value.toLocaleString()}
-                    </span>
+                    <div className="flex items-center gap-2 mt-0.5">
+                      {(card.welcome_offer.bonus_points ?? 0) > 0 && (
+                        <span className="text-sm font-semibold text-amber-800">
+                          {(card.welcome_offer.bonus_points ?? 0).toLocaleString()} pts
+                        </span>
+                      )}
+                      <span className="text-sm font-semibold text-amber-800">
+                        (~${Number(card.welcome_offer.estimated_value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")})
+                      </span>
+                    </div>
                   </div>
                 )}
 
