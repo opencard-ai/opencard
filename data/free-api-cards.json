@@ -1,0 +1,690 @@
+{
+  "Delta SkyMiles Blue": {
+    "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-blue-american-express-card/",
+    "pts": 10000
+  },
+  "Delta SkyMiles Gold": {
+    "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/",
+    "pts": 50000
+  },
+  "Delta SkyMiles Gold Business": {
+    "url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-gold/",
+    "pts": 60000
+  },
+  "Delta SkyMiles Platinum": {
+    "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-platinum-american-express-card/",
+    "pts": 60000
+  },
+  "Delta SkyMiles Platinum Business": {
+    "url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-platinum/",
+    "pts": 70000
+  },
+  "Delta SkyMiles Reserve": {
+    "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-reserve-american-express-card/",
+    "pts": 70000
+  },
+  "Delta SkyMiles Reserve Business": {
+    "url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-reserve/",
+    "pts": 80000
+  },
+  "Blue Business Cash": {
+    "url": "https://www.americanexpress.com/en-us/business/credit-cards/blue-business-cash/",
+    "pts": 250
+  },
+  "Blue Business Plus": {
+    "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-blue-business-plus-credit-card-amex/",
+    "pts": 15000
+  },
+  "Blue Cash Everyday": {
+    "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/",
+    "pts": 200
+  },
+  "Blue Cash Preferred": {
+    "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/",
+    "pts": 250
+  },
+  "Blue Cash Preferred (Morgan Stanley)": {
+    "url": "https://us.etrade.com/l/morgan-stanley-blue-cash-preferred",
+    "pts": 250
+  },
+  "Business Gold": {
+    "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
+    "pts": 100000
+  },
+  "Business Green": {
+    "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-green-card-amex/",
+    "pts": 15000
+  },
+  "Business Platinum": {
+    "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/",
+    "pts": 200000
+  },
+  "Cash Magnet": {
+    "url": "https://www.americanexpress.com/us/credit-cards/card/cash-magnet/",
+    "pts": 0
+  },
+  "Everyday": {
+    "url": "https://global.americanexpress.com/card-benefits/view-all/amex-everyday",
+    "pts": 0
+  },
+  "Everyday Preferred": {
+    "url": "https://www.americanexpress.com/us/credit-cards/card/amex-everyday-preferred/",
+    "pts": 0
+  },
+  "Gold": {
+    "url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+    "pts": 60000
+  },
+  "Green": {
+    "url": "https://www.americanexpress.com/us/credit-cards/card/green/",
+    "pts": 40000
+  },
+  "Hilton Honors": {
+    "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+    "pts": 80000
+  },
+  "Hilton Honors Aspire": {
+    "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+    "pts": 150000
+  },
+  "Hilton Honors Business": {
+    "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+    "pts": 130000
+  },
+  "Hilton Honors Surpass": {
+    "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+    "pts": 130000
+  },
+  "Marriott Bonvoy Brilliant": {
+    "url": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-brilliant/",
+    "pts": 200000
+  },
+  "Marriott Bonvoy Business": {
+    "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/amex-marriott-bonvoy-business-credit-card/",
+    "pts": 0
+  },
+  "Platinum": {
+    "url": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
+    "pts": 100000
+  },
+  "Platinum (Schwab)": {
+    "url": "https://www.schwab.com/credit-cards/platinum-card",
+    "pts": 80000
+  },
+  "Platinum (Morgan Stanley)": {
+    "url": "https://us.etrade.com/l/morgan-stanley-platinum",
+    "pts": 80000
+  },
+  "Marriott Bonvoy Bevy": {
+    "url": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-bevy/",
+    "pts": 175000
+  },
+  "Lowes": {
+    "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/lowes-credit-cards/",
+    "pts": 0
+  },
+  "Schwab Investor": {
+    "url": "https://www.schwab.com/public/schwab/investing/accounts_products/credit_cards",
+    "pts": 200
+  },
+  "Amazon Business": {
+    "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/amazon-business-card/",
+    "pts": 100
+  },
+  "Rakuten": {
+    "url": "https://www.rakuten.com/american-express-card/",
+    "pts": 25
+  },
+  "Air France KLM": {
+    "url": "https://wwws.airfrance.us/information/flyingblue/carte-bancaire-partenaire",
+    "pts": 70000
+  },
+  "Customized Cash Rewards": {
+    "url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
+    "pts": 200
+  },
+  "Premium Rewards": {
+    "url": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/",
+    "pts": 60000
+  },
+  "Premium Rewards Elite": {
+    "url": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-elite-credit-card/",
+    "pts": 75000
+  },
+  "Travel Rewards": {
+    "url": "https://www.bankofamerica.com/credit-cards/products/travel-rewards-credit-card/",
+    "pts": 25000
+  },
+  "Unlimited Cash Rewards": {
+    "url": "https://www.bankofamerica.com/credit-cards/products/unlimited-cash-back-credit-card/",
+    "pts": 200
+  },
+  "Business Advantage Customized Cash": {
+    "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/cash-rewards-business-credit-card",
+    "pts": 500
+  },
+  "Business Advantage Unlimited Cash": {
+    "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/unlimited-cash-rewards-business-credit-card",
+    "pts": 500
+  },
+  "Business Advantage Travel Rewards": {
+    "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/travel-rewards-business-credit-card",
+    "pts": 50000
+  },
+  "Platinum Plus": {
+    "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/platinum-plus-business-credit-card",
+    "pts": 300
+  },
+  "Free Spirit": {
+    "url": "https://www.bankofamerica.com/credit-cards/products/spirit-airlines-credit-card/",
+    "pts": 65000
+  },
+  "Atmos Rewards Ascent": {
+    "url": "https://www.alaskaair.com/atmosrewards/content/credit-cards",
+    "pts": 85000
+  },
+  "Atmos Rewards Summit": {
+    "url": "https://www.alaskaair.com/atmosrewards/content/credit-cards",
+    "pts": 100000
+  },
+  "Atmos Rewards Business": {
+    "url": "https://www.alaskaair.com/atmosrewards/content/credit-cards",
+    "pts": 80000
+  },
+  "AAdvantage Aviator Red World Elite": {
+    "url": "https://cards.barclaycardus.com/banking/cards/aadvantage-aviator-red-world-elite-mastercard/",
+    "pts": 0
+  },
+  "AAdvantage Aviator World Elite Business": {
+    "url": "https://creditcards.aa.com/barclay-credit-card-aviator-business-american-airlines-aadvantage/",
+    "pts": 0
+  },
+  "AARP Essential Rewards": {
+    "url": "https://www.aarp.org/membership/benefits/finance/aarp-essential-rewards-mastercard-from-barclays/",
+    "pts": 100
+  },
+  "AARP Travel Rewards": {
+    "url": "https://www.aarp.org/membership/benefits/finance/aarp-travel-rewards-mastercard-from-barclays/",
+    "pts": 100
+  },
+  "Carnival World Mastercard": {
+    "url": "https://cards.barclaycardus.com/banking/cards/carnival-world-mastercard/",
+    "pts": 20000
+  },
+  "Emirates Skywards Premium World Elite": {
+    "url": "https://cards.barclaycardus.com/banking/cards/emirates-skywards-premium-world-elite-mastercard/",
+    "pts": 70000
+  },
+  "Emirates Skywards Rewards World Elite": {
+    "url": "https://cards.barclaycardus.com/banking/cards/emirates-skywards-rewards-world-elite-mastercard/",
+    "pts": 40000
+  },
+  "Frontier Airlines World": {
+    "url": "https://cards.barclaycardus.com/banking/cards/frontier-airlines-world-mastercard/",
+    "pts": 50000
+  },
+  "Hawaiian Airlines World Elite": {
+    "url": "https://cards.barclaycardus.com/banking/credit-card/hawaiian-airlines/child/hawaiian-hcl-inflight-landing-page/",
+    "pts": 80000
+  },
+  "JetBlue": {
+    "url": "https://cards.barclaycardus.com/banking/cards/jetblue-card/",
+    "pts": 10000
+  },
+  "JetBlue Business": {
+    "url": "https://cards.barclaycardus.com/banking/cards/jetblue-business-card/",
+    "pts": 60000
+  },
+  "JetBlue Plus": {
+    "url": "https://cards.barclaycardus.com/banking/cards/jetblue-plus-card/",
+    "pts": 75000
+  },
+  "JetBlue Premier": {
+    "url": "https://cards.barclaycardus.com/banking/cards/jetblue-premier-card/",
+    "pts": 80000
+  },
+  "Lufthansa Miles & More": {
+    "url": "https://cards.barclaycardus.com/banking/cards/lufthansa-miles-more-world-elite-mastercard",
+    "pts": 60000
+  },
+  "Upromise": {
+    "url": "https://cards.barclaycardus.com/banking/cards/upromise-world-mastercard/",
+    "pts": 300
+  },
+  "Wyndham Rewards Earner": {
+    "url": "https://www.wyndhamrewardscreditcard.com/#earner",
+    "pts": 30000
+  },
+  "Wyndham Rewards Earner Business": {
+    "url": "https://www.wyndhamrewardscreditcard.com/#earnerbusiness",
+    "pts": 45000
+  },
+  "Wyndham Rewards Earner Plus": {
+    "url": "https://www.wyndhamrewardscreditcard.com/#earnerplus",
+    "pts": 45000
+  },
+  "Hawaiian Airlines World Elite Business": {
+    "url": "https://cards.barclaycardus.com/banking/credit-card/hawaiian-airlines/combo-app/hawaiian-bha-boh---combo-app/",
+    "pts": 50000
+  },
+  "Breeze": {
+    "url": "https://cards.barclaycardus.com/banking/cards/breeze-airways/",
+    "pts": 30000
+  },
+  "Xbox": {
+    "url": "https://cards.barclaycardus.com/banking/cards/xbox-mastercard/",
+    "pts": 5000
+  },
+  "Brex": {
+    "url": "https://www.brex.com/product/credit-card/",
+    "pts": 0
+  },
+  "Marriott Bonvoy Bountiful": {
+    "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/bountiful",
+    "pts": 85000
+  },
+  "Marriott Bonvoy Bold": {
+    "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/bold",
+    "pts": 60000
+  },
+  "Marriott Bonvoy Boundless": {
+    "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless",
+    "pts": 200000
+  },
+  "Southwest Performance Business": {
+    "url": "https://creditcards.chase.com/business-credit-cards/southwest/performance-business",
+    "pts": 80000
+  },
+  "Southwest Plus": {
+    "url": "https://creditcards.chase.com/travel-credit-cards/southwest/plus",
+    "pts": 20000
+  },
+  "Southwest Premier": {
+    "url": "https://creditcards.chase.com/travel-credit-cards/southwest/premier",
+    "pts": 30000
+  },
+  "Southwest Premier Business": {
+    "url": "https://creditcards.chase.com/business-credit-cards/southwest/premier-business",
+    "pts": 60000
+  },
+  "Southwest Priority": {
+    "url": "https://creditcards.chase.com/travel-credit-cards/southwest/priority",
+    "pts": 40000
+  },
+  "United Business": {
+    "url": "https://www.theexplorercard.com/business-rewards-cards/business-card",
+    "pts": 100000
+  },
+  "United Club": {
+    "url": "https://www.theexplorercard.com/rewards-cards/club-card",
+    "pts": 110000
+  },
+  "United Club Business": {
+    "url": "https://www.theexplorercard.com/business-rewards-cards/club-card",
+    "pts": 100000
+  },
+  "United Explorer": {
+    "url": "https://www.theexplorercard.com/rewards-cards/explorer-card",
+    "pts": 85000
+  },
+  "United Gateway": {
+    "url": "https://www.theexplorercard.com/rewards-cards/gateway-card",
+    "pts": 30000
+  },
+  "United Quest": {
+    "url": "https://www.theexplorercard.com/rewards-cards/quest-card",
+    "pts": 100000
+  },
+  "Ink Business Cash": {
+    "url": "https://creditcards.chase.com/business-credit-cards/ink/cash",
+    "pts": 75000
+  },
+  "Ink Business Preferred": {
+    "url": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
+    "pts": 100000
+  },
+  "Ink Business Unlimited": {
+    "url": "https://creditcards.chase.com/business-credit-cards/ink/unlimited",
+    "pts": 75000
+  },
+  "Ink Business Premier": {
+    "url": "https://creditcards.chase.com/business-credit-cards/ink/premier",
+    "pts": 1000
+  },
+  "IHG Premier": {
+    "url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier",
+    "pts": 175000
+  },
+  "IHG Premier Business": {
+    "url": "https://creditcards.chase.com/business-credit-cards/IHG/business-premier",
+    "pts": 200000
+  },
+  "IHG Traveler": {
+    "url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/traveler",
+    "pts": 90000
+  },
+  "Sapphire Preferred": {
+    "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+    "pts": 75000
+  },
+  "Sapphire Reserve": {
+    "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+    "pts": 125000
+  },
+  "Sapphire Reserve Business": {
+    "url": "https://creditcards.chase.com/business-credit-cards/sapphire/reserve",
+    "pts": 150000
+  },
+  "Aer Lingus Signature": {
+    "url": "https://creditcards.chase.com/travel-credit-cards/avios/aer-lingus",
+    "pts": 75000
+  },
+  "Aeroplan": {
+    "url": "https://creditcards.chase.com/travel-credit-cards/aircanada/aeroplan",
+    "pts": 85000
+  },
+  "British Airways Signature": {
+    "url": "https://creditcards.chase.com/travel-credit-cards/avios/british-airways",
+    "pts": 90000
+  },
+  "Disney Premier": {
+    "url": "https://creditcards.chase.com/rewards-credit-cards/disney/premier",
+    "pts": 300
+  },
+  "Disney": {
+    "url": "https://creditcards.chase.com/rewards-credit-cards/disney/rewards",
+    "pts": 150
+  },
+  "Freedom Flex": {
+    "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
+    "pts": 20000
+  },
+  "Freedom Unlimited": {
+    "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
+    "pts": 25000
+  },
+  "Iberia Signature": {
+    "url": "https://creditcards.chase.com/travel-credit-cards/avios/iberia",
+    "pts": 75000
+  },
+  "World of Hyatt": {
+    "url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card",
+    "pts": 30000
+  },
+  "World of Hyatt Business": {
+    "url": "https://creditcards.chase.com/business-credit-cards/world-of-hyatt/hyatt-business-card",
+    "pts": 80000
+  },
+  "Amazon Prime": {
+    "url": "https://www.amazon.com/dp/BT00LN946S",
+    "pts": 150
+  },
+  "Quicksilver": {
+    "url": "https://www.capitalone.com/credit-cards/quicksilver/",
+    "pts": 200
+  },
+  "Savor": {
+    "url": "https://www.capitalone.com/credit-cards/savor/",
+    "pts": 200
+  },
+  "Spark 1.5% Cash Select": {
+    "url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-select",
+    "pts": 750
+  },
+  "Spark 1.5% Miles Select": {
+    "url": "https://www.capitalone.com/small-business/credit-cards/spark-miles-select/",
+    "pts": 50000
+  },
+  "Spark 2% Cash Plus": {
+    "url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-plus/",
+    "pts": 0
+  },
+  "Spark 2x Miles": {
+    "url": "https://www.capitalone.com/small-business/credit-cards/spark-miles/",
+    "pts": 50000
+  },
+  "Venture Rewards": {
+    "url": "https://www.capitalone.com/credit-cards/venture/",
+    "pts": 75000
+  },
+  "Venture X": {
+    "url": "https://www.capitalone.com/credit-cards/venture-x/",
+    "pts": 75000
+  },
+  "Venture X Business": {
+    "url": "https://www.capitalone.com/small-business/credit-cards/venture-x-business/",
+    "pts": 0
+  },
+  "VentureOne": {
+    "url": "https://www.capitalone.com/credit-cards/ventureone/",
+    "pts": 20000
+  },
+  "AAdvantage Executive": {
+    "url": "https://creditcards.aa.com/citi-executive-card-american-airlines-direct/",
+    "pts": 100000
+  },
+  "AAdvantage MileUp": {
+    "url": "https://creditcards.aa.com/citi-mileup-card-american-airlines-direct/",
+    "pts": 15000
+  },
+  "AAdvantage Platinum Select World Elite": {
+    "url": "https://creditcards.aa.com/credit-cards/citi-platinum-card-american-airlines-direct/",
+    "pts": 80000
+  },
+  "AAdvantage Globe": {
+    "url": "https://creditcards.aa.com/credit-cards/citi-globe-card-american-airlines-direct/",
+    "pts": 90000
+  },
+  "AAdvantage Business World Elite": {
+    "url": "https://creditcards.aa.com/credit-cards/citi-business-card-american-airlines-direct/",
+    "pts": 75000
+  },
+  "Double Cash": {
+    "url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+    "pts": 200
+  },
+  "Custom Cash": {
+    "url": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
+    "pts": 200
+  },
+  "Strata Elite": {
+    "url": "https://www.citi.com/credit-cards/citi-strata-elite-credit-card",
+    "pts": 75000
+  },
+  "Strata Premier": {
+    "url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+    "pts": 60000
+  },
+  "Strata": {
+    "url": "https://www.citi.com/credit-cards/citi-strata-credit-card",
+    "pts": 20000
+  },
+  "AT&T Points Plus": {
+    "url": "https://www.att.com/deals/att-points-plus-citi/",
+    "pts": 200
+  },
+  "AAA Daily Advantage": {
+    "url": "https://www.ace.aaa.com/financial/aaa-credit-card.html",
+    "pts": 100
+  },
+  "AAA Travel Advantage": {
+    "url": "https://www.ace.aaa.com/financial/aaa-credit-card.html",
+    "pts": 100
+  },
+  "Discover It": {
+    "url": "https://www.discover.com/credit-cards/",
+    "pts": 100
+  },
+  "LATAM Airlines": {
+    "url": "https://latampass.latam.com/en_us/earn-miles/latam-airlines-credit-cards",
+    "pts": 15000
+  },
+  "LATAM Airlines World Elite": {
+    "url": "https://latampass.latam.com/en_us/earn-miles/latam-airlines-credit-cards",
+    "pts": 40000
+  },
+  "Cardless Qatar Signature": {
+    "url": "https://qatarairways.cardless.com/compare",
+    "pts": 40000
+  },
+  "Cardless Qatar Infinite": {
+    "url": "https://qatarairways.cardless.com/compare",
+    "pts": 50000
+  },
+  "Avianca LifeMiles": {
+    "url": "https://www.lifemiles.com/discover/landing-page/avianca-lifemiles-creditcard",
+    "pts": 40000
+  },
+  "Avianca LifeMiles Elite": {
+    "url": "https://www.lifemiles.com/discover/landing-page/avianca-lifemiles-creditcard",
+    "pts": 60000
+  },
+  "ANA Card USA Plus": {
+    "url": "https://www.anacardusa.com/en/",
+    "pts": 5000
+  },
+  "Amtrak Guest Rewards": {
+    "url": "https://www.amtrak.com/Apply",
+    "pts": 12000
+  },
+  "Amtrak Guest Rewards Preferred": {
+    "url": "https://www.amtrak.com/Apply",
+    "pts": 40000
+  },
+  "Best Western Rewards": {
+    "url": "https://www.bestwestern.com/en_US/offers/hotel-discounts/best-western-rewards-visa.html",
+    "pts": 40000
+  },
+  "Best Western Rewards Premium": {
+    "url": "https://www.bestwestern.com/en_US/offers/hotel-discounts/best-western-rewards-visa.html",
+    "pts": 80000
+  },
+  "Power Cash Rewards": {
+    "url": "https://www.penfed.org/credit-cards/power-cash-rewards-visa",
+    "pts": 100
+  },
+  "Platinum Rewards": {
+    "url": "https://www.penfed.org/credit-cards/platinum-rewards-visa",
+    "pts": 15000
+  },
+  "Pathfinder": {
+    "url": "https://www.penfed.org/credit-cards/pathfinder-rewards",
+    "pts": 50000
+  },
+  "Cash Rewards Visa Signature Business": {
+    "url": "https://www.pnc.com/en/small-business/borrowing/business-credit-cards/pnc-cash-rewards-visa-signature-business-credit-card.html",
+    "pts": 0
+  },
+  "Cathay Pacific": {
+    "url": "https://pay.cathaypacific.com/en_US/offers/uscreditcard.html",
+    "pts": 38000
+  },
+  "Virgin Red Rewards": {
+    "url": "https://www.virgin.com/en-us/virgin-red/rewards-credit-card",
+    "pts": 60000
+  },
+  "Amazon Prime Store Card": {
+    "url": "https://www.amazon.com/Synchrony-Bank-Amazon-com-Store-Card/dp/B008A0GNA8",
+    "pts": 60
+  },
+  "Business Altitude Power": {
+    "url": "https://www.usbank.com/business-banking/business-credit-cards/business-altitude-power-world-elite-mastercard.html",
+    "pts": 75000
+  },
+  "Business Altitude Connect": {
+    "url": "https://www.usbank.com/business-banking/business-credit-cards/business-altitude-connect-world-elite-mastercard.html",
+    "pts": 60000
+  },
+  "Altitude Connect": {
+    "url": "https://www.usbank.com/credit-cards/altitude-connect-visa-signature-credit-card.html",
+    "pts": 30000
+  },
+  "Altitude Reserve": {
+    "url": "https://www.nerdwallet.com/article/credit-cards/u-s-bank-altitude-reserve-closed-to-new-applications",
+    "pts": 0
+  },
+  "Altitude Go": {
+    "url": "https://www.usbank.com/credit-cards/altitude-go-visa-signature-credit-card.html",
+    "pts": 20000
+  },
+  "Cash+": {
+    "url": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html",
+    "pts": 200
+  },
+  "FlexPerks Gold": {
+    "url": "https://www.usbank.com/credit-cards/flexperks-gold-american-express-credit-card.html",
+    "pts": 0
+  },
+  "Business Leverage": {
+    "url": "https://www.usbank.com/business-banking/business-credit-cards/business-leverage-rewards-credit-card.html",
+    "pts": 750
+  },
+  "Business Triple Cash Rewards": {
+    "url": "https://www.usbank.com/business-banking/business-credit-cards/business-triple-cash-back-credit-card.html",
+    "pts": 750
+  },
+  "Skypass Blue": {
+    "url": "https://www.skypassvisa.com/credit/visaSkyBlueCard.do",
+    "pts": 10000
+  },
+  "Skypass": {
+    "url": "https://www.skypassvisa.com/credit/visaSignatureCard.do",
+    "pts": 40000
+  },
+  "Skypass Select": {
+    "url": "https://www.skypassvisa.com/credit/visaSelectCard.do",
+    "pts": 60000
+  },
+  "Skypass Business": {
+    "url": "https://www.skypassvisa.com/credit/visaBusinessCard.do",
+    "pts": 50000
+  },
+  "Shopper Cash Rewards": {
+    "url": "https://www.usbank.com/credit-cards/shopper-cash-rewards-visa-signature-credit-card.html",
+    "pts": 250
+  },
+  "Smartly": {
+    "url": "https://www.usbank.com/credit-cards/bank-smartly-visa-signature-credit-card.html",
+    "pts": 0
+  },
+  "Signify Business Cash": {
+    "url": "https://creditcards.wellsfargo.com/business-credit-cards/signify-business-cash-credit-card",
+    "pts": 500
+  },
+  "Active Cash": {
+    "url": "https://creditcards.wellsfargo.com/active-cash-credit-card/",
+    "pts": 200
+  },
+  "Autograph": {
+    "url": "https://creditcards.wellsfargo.com/autograph-visa-credit-card",
+    "pts": 20000
+  },
+  "Autograph Journey": {
+    "url": "https://creditcards.wellsfargo.com/autograph-journey-visa-credit-card",
+    "pts": 60000
+  },
+  "Choice Privileges": {
+    "url": "https://creditcards.wellsfargo.com/wells-fargo-choice-privileges-credit-cards",
+    "pts": 60000
+  },
+  "Choice Privileges Select": {
+    "url": "https://creditcards.wellsfargo.com/wells-fargo-choice-privileges-credit-cards",
+    "pts": 60000
+  },
+  "Bilt": {
+    "url": "https://www.biltrewards.com/card",
+    "pts": 0
+  },
+  "Expedia One Key": {
+    "url": "https://www.expedia.com/one-key-cards",
+    "pts": 300
+  },
+  "Expedia One Key+": {
+    "url": "https://www.expedia.com/one-key-cards",
+    "pts": 350
+  },
+  "Gemini": {
+    "url": "https://www.gemini.com/credit-card",
+    "pts": 200
+  }
+}
