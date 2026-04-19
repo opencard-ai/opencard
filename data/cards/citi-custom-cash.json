@@ -7,11 +7,11 @@
   "foreign_transaction_fee": "3%",
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 1,
-    "time_period_months": 3,
+    "spending_requirement": 1500,
+    "time_period_months": 6,
     "bonus_points": 200,
-    "description": "$200 Cash Back",
-    "point_program": "Citi",
+    "description": "Earn $200 cash back bonus after you spend $1,500 on purchases in the first 6 months of account opening.",
+    "point_program": "Citi ThankYou",
     "estimated_value": 200
   },
   "earning_rates": [

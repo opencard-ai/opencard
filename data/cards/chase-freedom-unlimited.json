@@ -9,11 +9,10 @@
   "welcome_offer": {
     "spending_requirement": 500,
     "time_period_months": 3,
-    "bonus_points": 25000,
-    "description": "Earn a $250 (25,000 pts) bonus after you spend $500 on purchases in the first 3 months from account opening.",
-    "free_nights": null,
-    "point_program": "Ultimate Rewards",
-    "estimated_value": 300
+    "bonus_points": 250,
+    "description": "Earn a $250 bonus after you spend $500 on purchases in the first 3 months from account opening.",
+    "point_program": "Chase Ultimate Rewards",
+    "estimated_value": 250
   },
   "earning_rates": [
     {
