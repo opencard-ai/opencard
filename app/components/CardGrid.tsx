@@ -104,28 +104,18 @@ function l(key: string, locale: string): string {
 }
 
 export default function CardGrid({ cards, issuers, tags, locale }: CardGridProps) {
-  // Handle #cards-section hash scroll when arriving from another page
-  useEffect(() => {
-    if (window.location.hash === "#cards-section") {
-      const el = document.getElementById("cards-section");
-      if (el) {
-        const headerHeight = 73;
-        const elTop = el.getBoundingClientRect().top + window.scrollY;
-        // Scroll so the element is just below the sticky header
-        window.scrollTo({ top: elTop - headerHeight, behavior: "instant" });
-      }
-    }
-  }, []);
+  const searchParams = useSearchParams();
+  const [selectedSort, setSelectedSort] = useState(() => searchParams.get("sort") || "name");
 
   return (
     <div id="cards-section" style={{ scrollMarginTop: "73px" }}>
-      <FilterBar issuers={issuers} tags={tags} locale={locale} />
-      <CardList cards={cards} tags={tags} locale={locale} />
+      <FilterBar issuers={issuers} tags={tags} locale={locale} selectedSort={selectedSort} setSelectedSort={setSelectedSort} />
+      <CardList cards={cards} tags={tags} locale={locale} selectedSort={selectedSort} />
     </div>
   );
 }
 
-function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[]; locale: string }) {
+function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort }: { issuers: string[]; tags: string[]; locale: string; selectedSort: string; setSelectedSort: (v: string) => void }) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -184,8 +174,8 @@ function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[
           <option value="ge95">{l("afOver95", locale)}</option>
         </select>
         <select
-          value={searchParams.get("sort") || ""}
-          onChange={(e) => updateParam("sort", e.target.value)}
+          value={selectedSort}
+          onChange={(e) => setSelectedSort(e.target.value)}
           className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white min-w-[150px]"
         >
           <option value="">{l("sortBy", locale)}</option>
@@ -232,7 +222,7 @@ function FilterBar({ issuers, tags, locale }: { issuers: string[]; tags: string[
   );
 }
 
-function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]; locale: string }) {
+function CardList({ cards, tags, locale, selectedSort }: { cards: CreditCard[]; tags: string[]; locale: string; selectedSort: string }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const [compareIds, setCompareIds] = useState<string[]>([]);
@@ -243,7 +233,6 @@ function CardList({ cards, tags, locale }: { cards: CreditCard[]; tags: string[]
   const search = searchParams.get("search") || "";
 
   const lang = pathname.split("/")[1] || "en";
-  const selectedSort = searchParams.get("sort") || "name";
 
   const toggleCompare = useCallback((cardId: string) => {
     setCompareIds((prev) => {
