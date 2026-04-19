@@ -9,7 +9,10 @@
   "welcome_offer": {
     "spending_requirement": null,
     "bonus_value": "60,000 points",
-    "description": "Earn 60,000 bonus HSBC Reward Points (worth ~$360 toward travel redemption or $300 statement credit). Points worth 0.6 cents each toward travel, 0.5 cents toward cash."
+    "description": "Earn 60,000 bonus HSBC Reward Points (worth ~$360 toward travel redemption or $300 statement credit). Points worth 0.6 cents each toward travel, 0.5 cents toward cash.",
+    "bonus_points": 60000,
+    "point_program": "HSBC Rewards",
+    "estimated_value": 300
   },
   "earning_rates": [
     {

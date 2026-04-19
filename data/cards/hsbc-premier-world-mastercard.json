@@ -9,7 +9,10 @@
   "welcome_offer": {
     "spending_requirement": 4000,
     "bonus_value": "50,000 points",
-    "description": "Earn 50,000 HSBC Reward Points after spending $4,000 in the first 3 months. Points worth ~0.6 cents each toward travel."
+    "description": "Earn 50,000 HSBC Reward Points after spending $4,000 in the first 3 months. Points worth ~0.6 cents each toward travel.",
+    "bonus_points": 50000,
+    "point_program": "HSBC Rewards",
+    "estimated_value": 250
   },
   "earning_rates": [
     {
