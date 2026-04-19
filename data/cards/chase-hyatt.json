@@ -7,11 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 0,
-    "time_period_months": 0,
-    "bonus_points": 0,
-    "description": "N/A",
-    "point_program": "Points"
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "bonus_points": 30000,
+    "description": "Earn 30,000 Bonus Points after you spend $3,000 on purchases in your first 3 months from account opening.",
+    "point_program": "World of Hyatt",
+    "estimated_value": 360
   },
   "earning_rates": [
     {
