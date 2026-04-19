@@ -7,12 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": null,
-    "time_period_months": null,
-    "bonus_points": null,
-    "description": "Welcome offers are now personalized by American Express. Check your approved offer at americanexpress.com/us/credit-cards/card/platinum/ — offers vary and you may not be eligible.",
-    "free_nights": null,
-    "point_program": "Membership Rewards"
+    "spending_requirement": 12000,
+    "time_period_months": 6,
+    "bonus_points": 175000,
+    "description": "Earn up to 175,000 Membership Rewards points after spending $12,000 in eligible purchases in the first 6 months.",
+    "point_program": "Amex Membership Rewards",
+    "estimated_value": 2100
   },
   "earning_rates": [
     {

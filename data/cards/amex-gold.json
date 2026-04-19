@@ -10,9 +10,8 @@
     "spending_requirement": 6000,
     "time_period_months": 6,
     "bonus_points": 100000,
-    "description": "Earn 100,000 Membership Rewards® Points after you spend $6,000 on eligible purchases on your new Card within the first 6 months of Card Membership. Limited time offer.",
-    "free_nights": null,
-    "point_program": "Membership Rewards",
+    "description": "Earn up to 100,000 Membership Rewards points after spending $6,000 in eligible purchases in the first 6 months.",
+    "point_program": "Amex Membership Rewards",
     "estimated_value": 1200
   },
   "earning_rates": [
