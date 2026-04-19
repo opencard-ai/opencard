@@ -12,7 +12,8 @@
     "bonus_points": 250,
     "description": "Earn a $250 statement credit after you make $3,000 in purchases on your Card in your first 3 months.",
     "free_nights": null,
-    "point_program": "Statement Credit"
+    "point_program": "Statement Credit",
+    "estimated_value": 250
   },
   "earning_rates": [
     {

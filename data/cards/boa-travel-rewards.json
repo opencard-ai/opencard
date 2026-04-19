@@ -11,7 +11,8 @@
     "time_period_months": 3,
     "bonus_points": 25000,
     "description": "25,000 Online Bonus Points",
-    "point_program": "Bank of America"
+    "point_program": "Bank of America",
+    "estimated_value": 300
   },
   "earning_rates": [
     {

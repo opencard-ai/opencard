@@ -10,7 +10,8 @@
     "spending_requirement": 7500,
     "time_period_months": 4,
     "bonus_value": 750,
-    "description": "$750 cash back after spending $7,500 within first 120 days"
+    "description": "$750 cash back after spending $7,500 within first 120 days",
+    "estimated_value": 750
   },
   "earning_rates": [
     {

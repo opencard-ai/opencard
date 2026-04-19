@@ -12,7 +12,8 @@
     "bonus_points": 300,
     "description": "$300 cash rewards bonus after making at least $5,000 in purchases in the first 90 days of account opening.",
     "free_nights": null,
-    "point_program": "Cash Back"
+    "point_program": "Cash Back",
+    "estimated_value": 300
   },
   "earning_rates": [
     {

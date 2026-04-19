@@ -12,7 +12,8 @@
     "bonus_points": 200,
     "description": "Earn $200 Cash Back after you spend $2,000 in purchases on your new Card within the first 6 months of Card Membership. Welcome offer varies and is personalized.",
     "free_nights": null,
-    "point_program": "Cash Back"
+    "point_program": "Cash Back",
+    "estimated_value": 200
   },
   "earning_rates": [
     {

@@ -11,7 +11,8 @@
     "time_period_months": 3,
     "bonus_points": 100,
     "description": "$100 cash back after spending $500 in first 90 days",
-    "point_program": "Cash Back"
+    "point_program": "Cash Back",
+    "estimated_value": 100
   },
   "earning_rates": [
     {

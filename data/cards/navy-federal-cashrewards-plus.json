@@ -11,7 +11,8 @@
     "time_period_months": 3,
     "bonus_points": 0,
     "bonus_value": 250,
-    "description": "$250 cash back after $2,500 spend in 90 days"
+    "description": "$250 cash back after $2,500 spend in 90 days",
+    "estimated_value": 250
   },
   "earning_rates": [
     {

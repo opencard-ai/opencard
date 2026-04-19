@@ -11,7 +11,8 @@
     "time_period_months": 4,
     "bonus_points": 80000,
     "description": "80,000 bonus points + $99 Companion Fare (intro)",
-    "point_program": "Bank of America"
+    "point_program": "Bank of America",
+    "estimated_value": 1000
   },
   "earning_rates": [
     {

@@ -12,7 +12,8 @@
     "bonus_points": 200,
     "description": "Earn a $200 cash rewards bonus after making at least $1,000 in purchases in the first 90 days of account opening. Earn unlimited 2% cash back on purchases for the first year.",
     "free_nights": null,
-    "point_program": "Cash Back"
+    "point_program": "Cash Back",
+    "estimated_value": 200
   },
   "earning_rates": [
     {
