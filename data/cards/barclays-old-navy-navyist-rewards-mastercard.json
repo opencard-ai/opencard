@@ -11,7 +11,8 @@
     "time_period_months": 0,
     "bonus_points": 30,
     "description": "30 points after spending $1 on purchases with new card (first purchase discount)",
-    "point_program": "Points"
+    "point_program": "Points",
+    "estimated_value": 30
   },
   "earning_rates": [
     {

@@ -11,7 +11,8 @@
     "time_period_months": 3,
     "bonus_points": 200,
     "description": "$200 Cash Back",
-    "point_program": "Citi"
+    "point_program": "Citi",
+    "estimated_value": 200
   },
   "earning_rates": [
     {
