@@ -91,12 +91,7 @@
     "extended_warranty": true,
     "extended_warranty_details": "Extends U.S. manufacturer's warranty by an additional year on eligible warranties of 3 years or less."
   },
-  "tags": [
-    "travel",
-    "hotel",
-    "premium",
-    "discontinued"
-  ],
+  "tags": [],
   "sources": [
     "Doctor of Credit",
     "Chase Official (archived)"

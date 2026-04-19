@@ -17,31 +17,31 @@ interface CardGridProps {
 const TAG_GROUPS: Record<string, { label: string; tags: string[] }> = {
   "travel": {
     label: "✈️ Travel Rewards",
-    tags: ["travel", "flights", "chase travel", "hotels, car rentals & attractions (cititravel.com)", "cruise", "gas", "gas (costco)"],
+    tags: ["travel", "transferable"],
   },
   "airline": {
     label: "✈️ Airline Miles",
-    tags: ["united flights", "united purchases (airline tickets, seat upgrades, economy plus, inflight food/beverages/wi-fi, united fees)", "delta purchases", "delta", "american-airlines", "aadvantage", "british-airways", "aer-lingus", "iberia", "southwest", "jetblue", "alaska", "frontier", "spirit-airlines", "hawaiian", "emirates", "carnival", "royal-caribbean"],
+    tags: ["airline"],
   },
   "hotel": {
     label: "🏨 Hotel",
-    tags: ["hotel_hilton", "hotel_marriott", "hilton hotels and resorts", "marriott hotels", "ihg", "hyatt", "choice-hotels", "wyndham"],
+    tags: ["hotel"],
   },
   "cashback": {
     label: "💰 Cash Back",
-    tags: ["all purchases", "all purchases (flat)", "all purchases (buy)", "rotating", "rotating 5% categories", "rotating-categories", "groceries", "grocery stores", "u.s. supermarkets", "restaurants", "entertainment", "paypal", "amazon", "apple-pay", "digital-payments", "delivery", "warehouse-club"],
+    tags: ["cash-back"],
   },
   "business": {
     label: "💼 Business",
-    tags: ["business", "top 2 eligible business categories", "office supply stores"],
+    tags: ["business"],
   },
   "student-secured": {
     label: "🎓 Student & Secured",
-    tags: ["student", "beginner", "credit-builder", "credit-building", "fair-credit", "building-credit", "secured", "credit-builder"],
+    tags: ["student", "secured"],
   },
   "no-annual-fee": {
     label: "💳 No Annual Fee",
-    tags: ["no-annual-fee", "no-fee"],
+    tags: ["no-annual-fee"],
   },
 };
 

@@ -83,9 +83,7 @@
     "purchase_protection": true,
     "extended_warranty": false
   },
-  "tags": [
-    "hotels, car rentals & attractions (cititravel.com)"
-  ],
+  "tags": [],
   "sources": [
     {
       "url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",

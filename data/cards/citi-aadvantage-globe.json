@@ -83,12 +83,7 @@
     "purchase_protection": true,
     "extended_warranty": true
   },
-  "tags": [
-    "american-airlines",
-    "airline",
-    "premium",
-    "aadvantage"
-  ],
+  "tags": [],
   "sources": [
     {
       "url": "https://creditcards.aa.com/credit-cards/citi-globe-card-american-airlines-direct/"

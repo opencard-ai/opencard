@@ -79,8 +79,10 @@
     "extended_warranty": true
   },
   "tags": [
-    "hotel-hilton",
-    "no-annual-fee"
+    "hotel",
+    "lounge-access",
+    "no-annual-fee",
+    "premium"
   ],
   "sources": [
     {

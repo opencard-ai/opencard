@@ -33,7 +33,6 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "tags": [
-    "rotating",
     "no-annual-fee"
   ],
   "sources": [],

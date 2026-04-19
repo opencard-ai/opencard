@@ -52,7 +52,8 @@
     "extended_warranty": "Extends manufacturer warranty on eligible items"
   },
   "tags": [
-    "all purchases"
+    "cash-back",
+    "no-annual-fee"
   ],
   "sources": [
     {

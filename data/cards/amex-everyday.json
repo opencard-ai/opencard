@@ -33,8 +33,6 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good/Excellent",
   "tags": [
-    "groceries",
-    "gas",
     "no-annual-fee"
   ],
   "sources": [],
