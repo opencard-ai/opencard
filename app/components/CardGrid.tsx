@@ -336,6 +336,14 @@ function CardList({ cards, tags, locale, selectedSort }: { cards: CreditCard[]; 
                     {card.annual_fee === 0 ? l("noFee", locale) : `$${card.annual_fee.toLocaleString()}`}
                   </span>
                 </div>
+                {card.welcome_offer?.estimated_value != null && card.welcome_offer.estimated_value > 0 && (
+                  <div className="flex items-center gap-1 mb-3 bg-amber-50 border border-amber-200 rounded px-2 py-1">
+                    <span className="text-xs text-amber-700">🎁 {locale === "zh" ? "開卡禮" : locale === "es" ? "Bono" : "Welcome Bonus"}</span>
+                    <span className="text-sm font-semibold text-amber-800">
+                      ${card.welcome_offer.estimated_value.toLocaleString()}
+                    </span>
+                  </div>
+                )}
 
                 <div className="mb-3 space-y-0.5">
                   {card.earning_rates.slice(0, 2).map((rate, i) => (
