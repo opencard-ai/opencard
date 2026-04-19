@@ -283,7 +283,7 @@ function CardList({ cards, tags, locale, selectedSort }: { cards: CreditCard[]; 
       }
       return a.name.localeCompare(b.name);
     });
-  }, [cards, selectedIssuer, selectedTag, search, tags]);
+  }, [cards, selectedIssuer, selectedTag, selectedAf, search, selectedSort, tags]);
 
   if (filtered.length === 0) {
     return (
