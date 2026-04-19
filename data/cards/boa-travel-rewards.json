@@ -41,9 +41,8 @@
     "extended_warranty": false
   },
   "tags": [
-    "travel",
-    "flat-rate",
-    "no-annual-fee"
+    "no-annual-fee",
+    "travel"
   ],
   "sources": [
     {

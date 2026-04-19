@@ -84,14 +84,7 @@
     "trip_cancellation": false,
     "travel_delay": false
   },
-  "tags": [
-    "premier",
-    "world-mastercard",
-    "travel",
-    "dining",
-    "gas",
-    "grocery"
-  ],
+  "tags": [],
   "sources": [
     {
       "url": "https://www.us.hsbc.com/credit-cards/products/premier/",

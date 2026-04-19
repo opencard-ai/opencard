@@ -50,9 +50,7 @@
     "purchase_protection": false,
     "extended_warranty": false
   },
-  "tags": [
-    "travel"
-  ],
+  "tags": [],
   "sources": [],
   "hotel_program": null,
   "application_rules": {

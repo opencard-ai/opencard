@@ -40,10 +40,11 @@
     "extended_warranty": false
   },
   "tags": [
-    "all purchases"
+    "cash-back",
+    "no-annual-fee"
   ],
   "recurring_credits": [],
-    "sources": [
+  "sources": [
     {
       "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/rise",
       "notes": "Chase official card page with $25 statement credit welcome offer and 1.5% cash back"

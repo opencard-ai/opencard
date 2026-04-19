@@ -137,7 +137,9 @@
     "extended_warranty": true
   },
   "tags": [
-    "flights"
+    "lounge-access",
+    "premium",
+    "transferable"
   ],
   "sources": [
     {
