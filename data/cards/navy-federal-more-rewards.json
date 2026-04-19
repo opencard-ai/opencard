@@ -12,7 +12,8 @@
     "bonus_points": 20000,
     "bonus_value": 0,
     "description": "20,000 bonus points ($200 value) after $2,000 spend in 90 days",
-    "point_program": "Navy Federal"
+    "point_program": "Navy Federal",
+    "estimated_value": 200
   },
   "earning_rates": [
     {

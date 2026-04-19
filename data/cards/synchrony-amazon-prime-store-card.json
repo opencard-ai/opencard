@@ -9,7 +9,8 @@
   "welcome_offer": {
     "spending_requirement": null,
     "bonus_value": 100,
-    "description": "$100 Amazon gift card upon approval (special financing offer, varies)"
+    "description": "$100 Amazon gift card upon approval (special financing offer, varies)",
+    "estimated_value": 100
   },
   "earning_rates": [
     {

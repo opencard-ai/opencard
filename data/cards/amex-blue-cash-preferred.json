@@ -117,6 +117,7 @@
     "time_period_months": 6,
     "bonus_points": 0,
     "bonus_value": 300,
-    "description": "Up to $300 cash back after $3,000 spend within 6 months"
+    "description": "Up to $300 cash back after $3,000 spend within 6 months",
+    "estimated_value": 300
   }
 }

@@ -9,7 +9,8 @@
   "welcome_offer": {
     "spending_requirement": null,
     "bonus_value": "$200",
-    "description": "$200 bonus when you also open a Rewards Checking Preferred account and make 3 debit card transactions. Requires opening Upgrade Rewards Checking Preferred."
+    "description": "$200 bonus when you also open a Rewards Checking Preferred account and make 3 debit card transactions. Requires opening Upgrade Rewards Checking Preferred.",
+    "estimated_value": 200
   },
   "earning_rates": [
     {
