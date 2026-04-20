@@ -1,6 +1,58 @@
 {
   "items": [
     {
+      "title": "[YMMV] PayPal: 10% Cashback When You Pay In 4 (Up To $20 Back)",
+      "url": "https://www.doctorofcredit.com/ymmv-paypal-10-cashback-when-you-pay-in-4-up-to-20-back/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "paypal"
+      ],
+      "ts": "2026-04-20T00:06:44.000Z",
+      "title_en": "[YMMV] PayPal: 10% Cashback When You Pay In 4 (Up To $20 Back)",
+      "summary_en": "",
+      "title_zh": "【YMMV】PayPal：分4期付款，享10%現金回饋（最高回饋20美元）",
+      "summary_zh": "使用 PayPal 分4期付款可獲得最高 20 美元的 10% 現金回饋。",
+      "title_es": "[YMMV] PayPal: 10% de reembolso cuando pagas en 4 (hasta $20 de vuelta)",
+      "summary_es": "PayPal ofrece un 10% de reembolso en compras realizadas en 4 cuotas, con un máximo de $20 de vuelta."
+    },
+    {
+      "title": "[YMMV] Citi Travel: Spend $300, Get $50 Off",
+      "url": "https://www.doctorofcredit.com/ymmv-citi-travel-spend-300-get-50-off/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Travel",
+        "Citi",
+        "citi travel"
+      ],
+      "ts": "2026-04-20T00:01:42.000Z",
+      "title_en": "[YMMV] Citi Travel: Spend $300, Get $50 Off",
+      "summary_en": "",
+      "title_zh": "【YMMV】Citi Travel：消費300美元，即可享有50美元折扣",
+      "summary_zh": "在 Citi Travel 消費 300 美元可得 50 美元折扣。",
+      "title_es": "[YMMV] Citi Travel: Gasta $300, Obtén $50 de descuento",
+      "summary_es": "Citi Travel ofrece $50 de descuento al gastar $300 en servicios de viaje."
+    },
+    {
+      "title": "Citi ThankYou Points 25% Transfer Bonus To Leading Hotels Of The World (1,000:250)",
+      "url": "https://www.doctorofcredit.com/citi-thankyou-points-25-transfer-bonus-to-leading-hotels-of-the-world-1000250-3/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Travel",
+        "Citi",
+        "citi transfer bonuses",
+        "Leading Hotels of the World",
+        "The Leading Hotels of the World"
+      ],
+      "ts": "2026-04-19T23:52:40.000Z",
+      "title_en": "Citi ThankYou Points 25% Transfer Bonus To Leading Hotels Of The World (1,000:250)",
+      "summary_en": "",
+      "title_zh": "Citi ThankYou 積分轉換至 Leading Hotels of the World，享有25%加成（1,000點可兌換250點）",
+      "summary_zh": "將 Citi ThankYou 積分轉換為 Leading Hotels 積分可獲得25%額外積分。",
+      "title_es": "Citi ThankYou Points: Bono de transferencia de 25% a Leading Hotels of the World (1,000:250)",
+      "summary_es": "Citi ThankYou Points ofrece un bono de transferencia del 25% a Leading Hotels of the World con una proporción de 1,000 puntos por 250 de bonificación."
+    },
+    {
       "title": "[TX only] Texas Capital Bank $200 Checking Bonus",
       "url": "https://www.doctorofcredit.com/tx-only-texas-capital-bank-500-checking-bonus-25000-deposit-required/",
       "source": "Doctor of Credit",
@@ -14,9 +66,10 @@
       "ts": "2026-04-19T19:00:55.000Z",
       "title_en": "[TX only] Texas Capital Bank $200 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[僅德州] 德州首都銀行 200美元支票帳戶獎金",
-      "title_es": "Texas Capital Bank: $200 de bono por cuenta corriente [Solo TX]",
-      "summary_es": "Oferta de bono de $200 al abrir una cuenta corriente en Texas Capital Bank."
+      "title_zh": "【僅限德州】Texas Capital Bank 200美元支票帳戶獎金",
+      "summary_zh": "在德州的 Texas Capital Bank 開立支票帳戶可獲得 200 美元獎金。",
+      "title_es": "[Solo TX] Texas Capital Bank: Bono de $200 por cuenta corriente",
+      "summary_es": "Texas Capital Bank ofrece un bono de $200 por abrir una cuenta corriente en Texas."
     },
     {
       "title": "[CA only] Credit Union of Southern California: 4 Month 7% APY CD On Up To $7,000",
@@ -28,9 +81,10 @@
       "ts": "2026-04-19T19:00:48.000Z",
       "title_en": "[CA only] Credit Union of Southern California: 4 Month 7% APY CD On Up To $7,000",
       "summary_en": "",
-      "title_zh": "[僅加州] 南加州信用合作社：4個月7%年利率定存 最高7,000美元",
-      "title_es": "Credit Union of Southern California: 7% APY por 4 meses en CD hasta $7,000 [Solo CA]",
-      "summary_es": "Depósito a plazo con 7% APY por 4 meses disponible hasta $7,000."
+      "title_zh": "【僅限加州】南加州信用合作社：4個月7%年利率定期存款（最高7,000美元）",
+      "summary_zh": "在加州信用合作社存入最高 7,000 美元的四個月 CD，可享 7% 年利率。",
+      "title_es": "[Solo CA] Credit Union of Southern California: CD de 7% APY por 4 meses hasta $7,000",
+      "summary_es": "Credit Union of Southern California ofrece un CD de 7% APY por 4 meses con un máximo de $7,000 en California."
     },
     {
       "title": "(Update) Elan Max Cash Preferred – 5% On Two Categories",
@@ -42,9 +96,10 @@
       "ts": "2026-04-19T17:33:32.000Z",
       "title_en": "(Update) Elan Max Cash Preferred – 5% On Two Categories",
       "summary_en": "",
-      "title_zh": "（更新）Elan Max Cash Preferred – 兩類別5%現金回饋",
-      "title_es": "Actualización: Elan Max Cash Preferred – 5% en dos categorías",
-      "summary_es": "Tarjeta de crédito con 5% de devolución de dinero en dos categorías elegibles."
+      "title_zh": "（更新）Elan Max Cash Preferred：5% 現金回饋適用於兩類消費",
+      "summary_zh": "Elan Max Cash Preferred 信用卡有兩類消費可享 5% 現金回饋。",
+      "title_es": "(Actualización) Elan Max Cash Preferred – 5% en dos categorías",
+      "summary_es": "Elan Max Cash Preferred ofrece un 5% de reembolso en dos categorías de compra."
     },
     {
       "title": "[CA Only] Logix Credit Union $200 Checking Promotion",
@@ -58,9 +113,10 @@
       "ts": "2026-04-19T17:00:46.000Z",
       "title_en": "[CA Only] Logix Credit Union $200 Checking Promotion",
       "summary_en": "",
-      "title_zh": "[僅加州] Logix信用合作社 200美元支票帳戶推廣活動",
-      "title_es": "Logix Credit Union: $200 de bono por cuenta corriente [Solo CA]",
-      "summary_es": "Bono de $200 al abrir una cuenta corrente en Logix Credit Union."
+      "title_zh": "【僅限加州】Logix 信用合作社 200美元支票帳戶推廣",
+      "summary_zh": "在加州 Logix 信用合作社開立支票帳戶可獲得 200 美元獎金。",
+      "title_es": "[Solo CA] Logix Credit Union: Promoción de $200 por cuenta corriente",
+      "summary_es": "Logix Credit Union ofrece un bono de $200 por abrir una cuenta corriente en California."
     },
     {
       "title": "Office Depot/Max Stores: Buy $300 In Visa Giftcards & Get $15 Instant Discount (4/19-4/25)",
@@ -74,9 +130,10 @@
       "ts": "2026-04-19T16:02:14.000Z",
       "title_en": "Office Depot/Max Stores: Buy $300 In Visa Giftcards & Get $15 Instant Discount (4/19-4/25)",
       "summary_en": "",
-      "title_zh": "Office Depot/Max商店：購買300美元Visa禮卡 享15美元即時折扣（4/19-4/25）",
-      "title_es": "Office Depot/Max Stores: Compra $300 en tarjetas de regalo Visa y obtén $15 de descuento inmediato (4/19-4/25)",
-      "summary_es": "Promoción especial: compra $300 en tarjetas de regalo Visa y recibe $15 de descuento al instante."
+      "title_zh": "Office Depot/Max：購買300美元Visa禮卡，即可享有15美元折扣（4/19-4/25）",
+      "summary_zh": "在 Office Depot/Max 購買 300 美元 Visa 禮卡可即時省下 15 美元。",
+      "title_es": "Office Depot/Max Stores: Compra $300 en tarjetas de regalo Visa y Obtén $15 de descuento instantáneo (4/19-4/25)",
+      "summary_es": "Office Depot/Max Stores ofrece $15 de descuento instantáneo al comprar $300 en tarjetas de regalo Visa del 19 al 25 de abril."
     },
     {
       "title": "[MD, D.C., VA] Lafayette Federal Credit Union $150 Checking Bonus",
@@ -93,9 +150,10 @@
       "ts": "2026-04-19T15:00:28.000Z",
       "title_en": "[MD, D.C., VA] Lafayette Federal Credit Union $150 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[馬里蘭州、華盛頓特區、維吉尼亞州] 拉斐特聯邦信用合作社 150美元支票帳戶獎金",
-      "title_es": "Lafayette Federal Credit Union: $150 de bono por cuenta corriente [MD, D.C., VA]",
-      "summary_es": "Bono de $150 por abrir cuenta corriente en Lafayette Federal Credit Union."
+      "title_zh": "【僅限馬里蘭州、華盛頓特區、維吉尼亞州】Lafayette 聯邦信用合作社 150美元支票帳戶獎金",
+      "summary_zh": "在馬里蘭州、華盛頓特區或維吉尼亞州的 Lafayette 信用合作社開立支票帳戶可獲得 150 美元獎金。",
+      "title_es": "[MD, D.C., VA] Lafayette Federal Credit Union: Bono de $150 por cuenta corriente",
+      "summary_es": "Lafayette Federal Credit Union ofrece un bono de $150 por abrir una cuenta corriente en Maryland, D.C. o Virginia."
     },
     {
       "title": "[AZ only] OneAZ Credit Union $350 Checking Bonus",
@@ -111,9 +169,10 @@
       "ts": "2026-04-19T15:00:24.000Z",
       "title_en": "[AZ only] OneAZ Credit Union $350 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[僅亞利桑那州] OneAZ信用合作社 350美元支票帳戶獎金",
-      "title_es": "OneAZ Credit Union: $350 de bono por cuenta corriente [Solo AZ]",
-      "summary_es": "Oferta de bono de $350 al abrir una cuenta corriente en OneAZ Credit Union."
+      "title_zh": "【僅限亞利桑那州】OneAZ 信用合作社 350美元支票帳戶獎金",
+      "summary_zh": "在亞利桑那州的 OneAZ 信用合作社開立支票帳戶可獲得 350 美元獎金。",
+      "title_es": "[Solo AZ] OneAZ Credit Union: Bono de $350 por cuenta corriente",
+      "summary_es": "OneAZ Credit Union ofrece un bono de $350 por abrir una cuenta corriente en Arizona."
     },
     {
       "title": "[KY only] Transcend Credit Union $150 Referral Checking Bonus, Direct Deposit Optional",
@@ -127,9 +186,10 @@
       "ts": "2026-04-19T15:00:20.000Z",
       "title_en": "[KY only] Transcend Credit Union $150 Referral Checking Bonus, Direct Deposit Optional",
       "summary_en": "",
-      "title_zh": "[僅肯塔基州] Transcend信用合作社 150美元推薦支票帳戶獎金 可選擇不設定直接存款",
-      "title_es": "Transcend Credit Union: $150 de bono por referido en cuenta corriente, depósito directo opcional [Solo KY]",
-      "summary_es": "Gana $150 por cada referido que abra una cuenta corriente, con depósito directo opcional."
+      "title_zh": "【僅限肯塔基州】Transcend 信用合作社 150美元推薦支票帳戶獎金（免直存）",
+      "summary_zh": "在肯塔基州推薦新客戶開立支票帳戶可獲得150美元獎金，且可免直存。",
+      "title_es": "[Solo KY] Transdescuent Credit Union: Bono de $150 por cuenta corriente con referido, Depósito directo opcional",
+      "summary_es": "Transcend Credit Union ofrece un bono de $150 por cuenta corriente con referido en Kentucky, sin necesidad de depósito directo."
     },
     {
       "title": "[AL] Local Bank $250 Checking Bonus",
@@ -144,9 +204,10 @@
       "ts": "2026-04-19T15:00:19.000Z",
       "title_en": "[AL] Local Bank $250 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[阿拉巴馬州] 當地銀行 250美元支票帳戶獎金",
-      "title_es": "Banco local: $250 de bono por cuenta corriente [AL]",
-      "summary_es": "Bono de $250 al abrir una cuenta corriente en bancos locales de Alabama."
+      "title_zh": "【阿拉巴馬州】本地銀行 250美元支票帳戶獎金",
+      "summary_zh": "阿拉巴馬州的本地銀行提供250美元開戶獎金。",
+      "title_es": "[AL] Banco local: Bono de $250 por cuenta corriente",
+      "summary_es": "Un banco local en Alabama ofrece un bono de $250 por abrir una cuenta corriente."
     },
     {
       "title": "Topcashback: 130% Back On PureVPN",
@@ -160,9 +221,10 @@
       "ts": "2026-04-18T22:54:43.000Z",
       "title_en": "Topcashback: 130% Back On PureVPN",
       "summary_en": "",
-      "title_zh": "Topcashback：PureVPN最高130%回饋",
+      "title_zh": "Topcashback：PureVPN 130% 回饋",
+      "summary_zh": "透過 Topcashback 購買 PureVPN 可獲得 130% 返現。",
       "title_es": "Topcashback: 130% de reembolso en PureVPN",
-      "summary_es": "Oferta especial de 130% de reembolso en la suscripción de PureVPN."
+      "summary_es": "Topcashback ofrece un 130% de reembolso en la suscripción de PureVPN."
     },
     {
       "title": "[MI, FL only] Dort Federal Credit Union 7% APY On Balances Up To $10,000 + $50 Referral",
@@ -174,9 +236,10 @@
       "ts": "2026-04-18T22:45:45.000Z",
       "title_en": "[MI, FL only] Dort Federal Credit Union 7% APY On Balances Up To $10,000 + $50 Referral",
       "summary_en": "",
-      "title_zh": "[僅密西根州、佛羅里達州] 多特聯邦信用合作社 10,000美元以內7%年利率 加50美元推薦獎金",
-      "title_es": "Dort Federal Credit Union: 7% APY en saldos hasta $10,000 + $50 por referido [Solo MI, FL]",
-      "summary_es": "7% APY en saldos de hasta $10,000 más bono de $50 por cada referido."
+      "title_zh": "【僅限密歇根州、佛羅里達州】Dort 聯邦信用合作社：帳戶餘額最高10,000美元享有7%年利率，另外推薦可獲50美元",
+      "summary_zh": "在 Dort 信用合作社存款最高10,000美元可享7%年利率，並可透過推薦獲得50美元獎金。",
+      "title_es": "[Solo MI, FL] Dort Federal Credit Union: 7% APY en saldos hasta $10,000 + Referido de $50",
+      "summary_es": "Dort Federal Credit Union ofrece un 7% APY en saldos hasta $10,000 más un bono de referido de $50 en Michigan y Florida."
     },
     {
       "title": "[YMMV] Capital One Shopping: Chewy, Spend $50+ & Get $50 Back [Stack For Money Maker]",
@@ -190,60 +253,11 @@
       "ts": "2026-04-18T22:16:15.000Z",
       "title_en": "[YMMV] Capital One Shopping: Chewy, Spend $50+ & Get $50 Back [Stack For Money Maker]",
       "summary_en": "",
-      "title_zh": "[視情況而定] Capital One Shopping：消費Chewy 50美元以上 回饋50美元 [疊加可賺取]",
-      "title_es": "Capital One Shopping: Chewy, gasta $50+ y obtén $50 de regreso [Apilar para ganar dinero]",
-      "summary_es": "Gasta $50 o más en Chewy a través de Capital One Shopping y recibe $50 de reembolso."
-    },
-    {
-      "title": "Rakuten: Get Up To $75 When Signing Up For Chase Freedom Unlimited",
-      "url": "https://www.doctorofcredit.com/rakuten-get-50-5000-when-signing-up-for-chase-sapphire-preferred-freedom-unlimited-ink-unlimited/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "big",
-        "chase",
-        "rakuten",
-        "signup bonus"
-      ],
-      "ts": "2026-04-18T21:59:01.000Z",
-      "title_en": "Rakuten: Get Up To $75 When Signing Up For Chase Freedom Unlimited",
-      "summary_en": "",
-      "title_zh": "Rakuten：註冊Chase Freedom Unlimited 最高可獲得75美元",
-      "title_es": "Rakuten: Hasta $75 al registrarse en Chase Freedom Unlimited",
-      "summary_es": "Recibe hasta $75 cuando te registres para Chase Freedom Unlimited a través de Rakuten."
-    },
-    {
-      "title": "Kona: $2.5 Rebate When You Purchase Salty Snacks $2.5+ (No Beer Purchase Necessary) [AK, AZ, CA, CO, DC, FL, GA, IA, ID, IL, KS, KY, MD, MI, MN, MS, MT, ND, NE, NH, NV, NY, OK, OR, SC, SD, TN, VT, WA, WI, and WY only]",
-      "url": "https://www.doctorofcredit.com/kona-2-5-rebate-when-you-purchase-salty-snacks-2-5-no-beer-purchase-necessary-ak-az-ca-co-dc-fl-ga-ia-id-il-ks-ky-md-mi-mn-ms-mt-nd-ne-nh-nv-ny-ok-or-sc-sd-tn-vt-wa/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "beer rebates",
-        "free after rebate",
-        "freebies"
-      ],
-      "ts": "2026-04-18T21:35:40.000Z",
-      "title_en": "Kona: $2.5 Rebate When You Purchase Salty Snacks $2.5+ (No Beer Purchase Necessary) [AK, AZ, CA, CO, DC, FL, GA, IA, ID, IL, KS, KY, MD, MI, MN, MS, MT, ND, NE, NH, NV, NY, OK, OR, SC, SD, TN, VT, WA, WI, and WY only]",
-      "summary_en": "",
-      "title_zh": "Kona：購買2.5美元以上鹹零食 可獲得2.5美元回饋（無需購買啤酒）[僅限阿拉斯加、亞利桑那、加州、科羅拉多、華盛頓特區、佛羅里達、喬治亞、愛荷華、愛達荷、伊利諾、堪薩斯、肯塔基、馬里蘭、密西根、明尼蘇達、密西西比、蒙大拿、北達科他、內布拉斯加、新罕布什爾、內華達、紐約、奧克拉荷馬、俄勒岡、南卡羅來納、南達科他、田納西、佛蒙特、華盛頓、威斯康辛及懷俄明州]",
-      "title_es": "Kona: $2.50 de reembolso al comprar snacks salados de $2.5+ (Sin compra de cerveza necesaria)",
-      "summary_es": "Rebajo de $2.50 al comprar snacks salados de $2.50 o más, sin necesidad de comprar cerveza."
-    },
-    {
-      "title": "[Targeted] Ikea Family: $10 Off $10 (In Store)",
-      "url": "https://www.doctorofcredit.com/targeted-ikea-family-10-off-10-in-store/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "ikea"
-      ],
-      "ts": "2026-04-18T21:26:36.000Z",
-      "title_en": "[Targeted] Ikea Family: $10 Off $10 (In Store)",
-      "summary_en": "",
-      "title_zh": "[針對目標] IKEA Family：消費10美元 折價10美元（店內）",
-      "title_es": "IKEA Family: $10 de descuento en $10 (En tienda) [Dirigida]",
-      "summary_es": "Descuento de $10 en compras de $10 o más para miembros de IKEA Family en tienda."
+      "title_zh": "【YMMV】Capital One Shopping：於 Chewy 消費滿50美元即可獲得50美元回饋（可疊加賺錢）",
+      "summary_zh": "使用 Capital One Shopping 在 Chewy 消費滿 50 美元可獲得 50 美元回饋。",
+      "title_es": "[YMMV] Capital One Shopping: Chewy, Gasta $50+ y Obtén $50 de vuelta [Apilar para ganar dinero]",
+      "summary_es": "Capital One Shopping ofrece $50 de reembolso al gastar $50 o más en Chewy, apilable para ganar dinero."
     }
   ],
-  "fetched": "2026-04-19T20:00:38.988Z"
+  "fetched": "2026-04-20T01:01:15.833Z"
 }
