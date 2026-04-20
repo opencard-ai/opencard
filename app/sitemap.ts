@@ -5,8 +5,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const cards = getAllCards();
   const baseUrl = "https://opencardai.com";
 
+  // Note: baseUrl (opencardai.com/) is excluded - it redirects via middleware, not indexable
   const staticPages: MetadataRoute.Sitemap = [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: "daily", priority: 1 },
     { url: `${baseUrl}/en`, lastModified: new Date(), changeFrequency: "daily", priority: 1 },
     { url: `${baseUrl}/zh`, lastModified: new Date(), changeFrequency: "daily", priority: 1 },
     { url: `${baseUrl}/es`, lastModified: new Date(), changeFrequency: "daily", priority: 1 },

@@ -37,6 +37,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     icons: {
       icon: "/favicon-v6.ico",
     },
+    alternates: {
+      languages: {
+        en: "https://opencardai.com/en",
+        zh: "https://opencardai.com/zh",
+        es: "https://opencardai.com/es",
+        "x-default": "https://opencardai.com/en",
+      },
+    },
   };
 }
 
