@@ -29,6 +29,11 @@ const CREDIT_LABELS: Record<string, string> = {
 function creditLabel(raw: string): string {
   return CREDIT_LABELS[raw] || raw;
 }
+function formatValue(val: string | number): string {
+  const str = String(val);
+  return str.startsWith('$') ? str : `$${str}`;
+}
+
 
 export const dynamic = "force-static";
 export const revalidate = 3600;
@@ -130,7 +135,7 @@ export default async function CardDetailPage({ params }: Props) {
                   )}
                   {card.welcome_offer.estimated_value && (
                     <span className="ml-1">
-                      ({l("detail.estimatedValue", { value: `$${card.welcome_offer.estimated_value}` })})
+                      ({l("detail.estimatedValue", { value: formatValue(card.welcome_offer.estimated_value) })})
                     </span>
                   )}
                   {card.welcome_offer.spending_requirement && (
