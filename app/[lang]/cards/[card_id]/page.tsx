@@ -248,17 +248,26 @@ export default async function CardDetailPage({ params }: Props) {
                   </div>
                 )}
 
-                {Object.keys(card.travel_benefits.lounge_access || {}).length > 0 && (
+                {Object.entries(card.travel_benefits.lounge_access || {})
+                    .filter(([, v]) => v)
+                    .map(([key]) => (
+                      <div key={key} className="text-sm text-slate-700">
+                        {key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}
+                      </div>
+                    ))
+                    .length > 0 && (
                   <div className="mb-4">
                     <h3 className="text-xs font-semibold text-slate-500 uppercase mb-2">
                       {l("detail.loungeAccess")}
                     </h3>
                     <div className="space-y-1">
-                      {Object.entries(card.travel_benefits.lounge_access || {}).map(([key, enabled], i) => enabled ? (
-                        <div key={i} className="text-sm text-slate-700">
-                          {key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}
-                        </div>
-                      ) : null)}
+                      {Object.entries(card.travel_benefits.lounge_access || {})
+                        .filter(([, v]) => v)
+                        .map(([key]) => (
+                          <div key={key} className="text-sm text-slate-700">
+                            {key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}
+                          </div>
+                        ))}
                     </div>
                   </div>
                 )}
