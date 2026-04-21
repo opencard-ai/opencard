@@ -1,4 +1,4 @@
-import { getAllCards } from "@/lib/cards";
+import { getCardById } from "@/lib/cards";
 import CompareTable from "@/app/components/CompareTable";
 import BackToSection from "@/app/components/BackToSection";
 import { locales } from "@/lib/i18n";
@@ -11,14 +11,13 @@ type Props = {
 export default async function ComparePage({ params, searchParams }: Props) {
   const { lang } = await params;
   const { cards: cardsParam } = await searchParams;
-  const allCards = getAllCards();
 
   const cardIds = cardsParam
     ? cardsParam.split(",").filter(Boolean)
     : [];
   const selectedCards = cardIds
-    .map((id) => allCards.find((c) => c.card_id === id))
-    .filter(Boolean) as ReturnType<typeof getAllCards>;
+    .map((id) => getCardById(id))
+    .filter((c): c is NonNullable<typeof c> => c !== null);
 
   const labels: Record<string, { title: string; back: string; noCards: string }> = {
     en: {

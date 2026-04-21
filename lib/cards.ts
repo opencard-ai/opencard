@@ -103,7 +103,8 @@ export interface CreditCard {
 }
 
 export function getAllCards(): CreditCard[] {
-  const files = fs.readdirSync(CARDS_DIR).filter(f => f.endsWith('.json'));
+  try {
+    const files = fs.readdirSync(CARDS_DIR).filter(f => f.endsWith('.json'));
   return files
     .map((file) => {
       const content = fs.readFileSync(path.join(CARDS_DIR, file), "utf-8");
@@ -116,6 +117,10 @@ export function getAllCards(): CreditCard[] {
       Array.isArray(card.earning_rates)
     ) // Filter out non-card entries (articles, guides, etc.)
     .sort((a, b) => a.name.localeCompare(b.name));
+  } catch (e) {
+    console.error("getAllCards error:", e);
+    return [];
+  }
 }
 
 export function getCardById(cardId: string): CreditCard | null {
