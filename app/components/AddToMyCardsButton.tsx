@@ -120,13 +120,13 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
   if (added) {
     return (
       <div className="flex flex-row gap-2 w-full">
-        <div className="flex-1 flex items-center justify-center bg-indigo-50 border border-indigo-200 rounded-lg py-2.5 px-3 text-center">
+        <div className="flex-1 flex items-center justify-center bg-indigo-50 border border-indigo-200 rounded-lg h-11 px-3 text-center">
           <span className="text-indigo-600 font-semibold text-sm">{label.added}</span>
         </div>
         <button
           onClick={handleRemove}
           disabled={saving}
-          className="flex-1 bg-white border border-red-200 hover:border-red-400 hover:bg-red-50 disabled:opacity-60 text-red-500 font-semibold py-2.5 px-3 rounded-lg transition-colors text-sm"
+          className="flex-1 bg-white border border-red-200 hover:border-red-400 hover:bg-red-50 disabled:opacity-60 text-red-500 font-semibold h-11 px-3 rounded-lg transition-colors text-sm"
         >
           {saving ? '...' : label.remove}
         </button>
