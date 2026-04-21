@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
     await redis.expire(pendingKey, 86400);
 
     // Send verification email
-    const verifyLink = `${BASE_URL}/verify?token=${token}`;
+    const verifyLink = `${BASE_URL}/api/my-cards/verify-confirm?token=${token}`;
     const html = `<div style="font-family:-apple-system,sans-serif;max-width:480px;margin:0 auto;padding:32px;text-align:center">
       <div style="background:#1a1a1a;color:#fff;padding:20px;border-radius:12px 12px 0 0;text-align:center">
         <h1 style="margin:0;font-size:20px;">💳 OpenCard</h1>
