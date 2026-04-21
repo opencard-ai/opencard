@@ -228,74 +228,66 @@ export default async function CardDetailPage({ params }: Props) {
                   </div>
                 ))}
               </div>
+
+              {/* Travel Privileges — merged into Benefits section */}
+              {card.travel_benefits &&
+                ((card.travel_benefits.hotel_status?.length ?? 0) > 0 ||
+                  Object.entries(card.travel_benefits.lounge_access || {}).some(([, v]) => v) ||
+                  (card.travel_benefits.other_benefits?.length ?? 0) > 0) && (
+                  <div className="mt-4 pt-4 border-t border-slate-200">
+                    <div className="space-y-3">
+                      {(card.travel_benefits.hotel_status?.length ?? 0) > 0 && (
+                        <div>
+                          <h3 className="text-xs font-semibold text-slate-500 uppercase mb-2">
+                            {l("detail.hotelStatus")}
+                          </h3>
+                          <div className="space-y-1">
+                            {card.travel_benefits.hotel_status!.map((hs, i) => (
+                              <div key={i} className="text-sm">
+                                <span className="text-slate-800">{hs.program}</span>
+                                <span className="text-blue-600 ml-2 font-medium">{hs.tier}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                      {Object.entries(card.travel_benefits.lounge_access || {})
+                          .filter(([, v]) => v).length > 0 && (
+                        <div>
+                          <h3 className="text-xs font-semibold text-slate-500 uppercase mb-2">
+                            {l("detail.loungeAccess")}
+                          </h3>
+                          <div className="space-y-1">
+                            {Object.entries(card.travel_benefits.lounge_access || {})
+                              .filter(([, v]) => v)
+                              .map(([key]) => (
+                                <div key={key} className="text-sm text-slate-700">
+                                  {key.replace(/_/g, ' ').replace(/\b\w/g, x => x.toUpperCase())}
+                                </div>
+                              ))}
+                          </div>
+                        </div>
+                      )}
+                      {(card.travel_benefits.other_benefits?.length ?? 0) > 0 && (
+                        <div>
+                          <h3 className="text-xs font-semibold text-slate-500 uppercase mb-2">
+                            {l("detail.otherBenefits")}
+                          </h3>
+                          <div className="space-y-2">
+                            {card.travel_benefits.other_benefits!.map((ob, i) => (
+                              <div key={i}>
+                                <span className="text-sm text-slate-800 font-medium">{ob.name}</span>
+                                <p className="text-xs text-slate-500">{ob.description}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
             </section>
           )}
-
-          {/* Travel Benefits */}
-          {card.travel_benefits &&
-            ((card.travel_benefits.hotel_status?.length ?? 0) > 0 ||
-              Object.entries(card.travel_benefits.lounge_access || {}).some(([, v]) => v) ||
-              (card.travel_benefits.other_benefits?.length ?? 0) > 0) && (
-              <section className="bg-white rounded-xl border border-slate-200 p-6">
-                <h2 className="text-lg font-bold text-slate-900 mb-4">
-                  {l("detail.travelBenefits")}
-                </h2>
-
-                {(card.travel_benefits.hotel_status?.length ?? 0) > 0 && (
-                  <div className="mb-4">
-                    <h3 className="text-xs font-semibold text-slate-500 uppercase mb-2">
-                      {l("detail.hotelStatus")}
-                    </h3>
-                    <div className="space-y-1">
-                      {card.travel_benefits.hotel_status!.map((hs, i) => (
-                        <div key={i} className="text-sm">
-                          <span className="text-slate-800">{hs.program}</span>
-                          <span className="text-blue-600 ml-2 font-medium">
-                            {hs.tier}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {Object.entries(card.travel_benefits.lounge_access || {})
-                    .filter(([, v]) => v).length > 0 && (
-                  <div className="mb-4">
-                    <h3 className="text-xs font-semibold text-slate-500 uppercase mb-2">
-                      {l("detail.loungeAccess")}
-                    </h3>
-                    <div className="space-y-1">
-                      {Object.entries(card.travel_benefits.lounge_access || {})
-                        .filter(([, v]) => v)
-                        .map(([key]) => (
-                          <div key={key} className="text-sm text-slate-700">
-                            {key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}
-                          </div>
-                        ))}
-                    </div>
-                  </div>
-                )}
-
-                {(card.travel_benefits.other_benefits?.length ?? 0) > 0 && (
-                  <div>
-                    <h3 className="text-xs font-semibold text-slate-500 uppercase mb-2">
-                      {l("detail.otherBenefits")}
-                    </h3>
-                    <div className="space-y-2">
-                      {card.travel_benefits.other_benefits!.map((ob, i) => (
-                        <div key={i}>
-                          <span className="text-sm text-slate-800 font-medium">
-                            {ob.name}
-                          </span>
-                          <p className="text-xs text-slate-500">{ob.description}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </section>
-            )}
 
           {/* Insurance */}
           {card.insurance &&
