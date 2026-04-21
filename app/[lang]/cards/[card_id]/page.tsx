@@ -145,7 +145,7 @@ export default async function CardDetailPage({ params }: Props) {
         )}
 
         {/* CTA Row: Add to My Cards + AI Assistant */}
-        <div className="flex flex-col sm:flex-row gap-3 items-stretch">
+        <div className="flex flex-col sm:flex-row gap-3 items-stretch mt-4">
           <div className="flex-1 flex">
             <AddToMyCardsButton cardId={card.card_id} cardName={card.name} lang={lang} />
           </div>
