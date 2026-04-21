@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 
 const STORAGE_KEY = "opencard_existing_cards";
+const SUBSCRIBED_EMAIL_KEY = "opencard_subscribed_email";
 
 const MESSAGES = {
   en: {
@@ -231,14 +232,40 @@ export default function MyCardsPage({
     });
   }, [params]);
 
-  // Load selected cards from localStorage
+  // Load selected cards — cloud-first if subscribed, localStorage fallback
   useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      try {
-        setSelectedCards(JSON.parse(saved));
-      } catch {}
-    }
+    const loadCards = async () => {
+      const savedEmail = localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
+      
+      if (savedEmail) {
+        try {
+          // Cloud-first: fetch from Redis
+          const res = await fetch(`/api/my-cards?email=${encodeURIComponent(savedEmail)}`);
+          if (res.ok) {
+            const data = await res.json();
+            const cloudCards = data.cards || [];
+            if (cloudCards.length > 0) {
+              setSelectedCards(cloudCards);
+              localStorage.setItem(STORAGE_KEY, JSON.stringify(cloudCards));
+              setIsSubscribed(true);
+              setLoaded(true);
+              return;
+            }
+          }
+        } catch {}
+      }
+      
+      // Fallback: load from localStorage
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        try {
+          setSelectedCards(JSON.parse(saved));
+        } catch {}
+      }
+      setLoaded(true);
+    };
+    
+    loadCards();
   }, []);
 
   // Listen for card save/remove events from other pages
