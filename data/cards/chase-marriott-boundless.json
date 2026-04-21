@@ -9,9 +9,9 @@
   "welcome_offer": {
     "spending_requirement": 4000,
     "time_period_months": 4,
-    "bonus_points": 0,
-    "bonus_value": 0,
-    "description": "3 Free Night Awards (up to 50K points each) after $3,000 spend in 3 months, plus 1 additional Free Night Award after $4,000 total spend in 4 months. Up to $100 airline statement credits annually.",
+    "bonus_points": 3,
+    "bonus_value": "$500",
+    "description": "3 Free Night Awards (up to 50K points each) + 1 additional Free Night after $4K spend. Up to $100 airline credit annually.",
     "free_nights": 4,
     "point_program": "Marriott Bonvoy"
   },
