@@ -1,6 +1,6 @@
 {
   "card_id": "chase-freedom-unlimited",
-  "name": "Chase Freedom Unlimited\u00ae",
+  "name": "Chase Freedom Unlimited®",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 0,
@@ -82,7 +82,7 @@
     {
       "name": "DoorDash Promo",
       "amount": 40,
-      "frequency": "Quarterly",
+      "frequency": "quarterly",
       "category": "dining"
     }
   ]

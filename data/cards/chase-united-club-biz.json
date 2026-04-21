@@ -1,6 +1,6 @@
 {
   "card_id": "chase-united-club-biz",
-  "name": "United Club\u2120 Business Card",
+  "name": "United Club℠ Business Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 695,
@@ -102,7 +102,7 @@
       },
       {
         "name": "PQP Earning",
-        "description": "1 PQP per $15 spent on card purchases, up to 28,000 PQP per year \u2014 can help earn Premier status"
+        "description": "1 PQP per $15 spent on card purchases, up to 28,000 PQP per year — can help earn Premier status"
       },
       {
         "name": "Award Flight Discount",
@@ -150,43 +150,43 @@
     {
       "name": "Renowned Hotels Credit",
       "amount": 200,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "hotel"
     },
     {
       "name": "Rideshare Credit",
       "amount": 150,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     },
     {
       "name": "Avis/Budget Car Rental Credit",
       "amount": 100,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     },
     {
       "name": "Instacart Credit",
       "amount": 240,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     },
     {
       "name": "JSX Credit",
       "amount": 200,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     },
     {
       "name": "FareLock Credit",
       "amount": 50,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     },
     {
       "name": "Better Together Bonus",
       "amount": 5000,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     }
   ]

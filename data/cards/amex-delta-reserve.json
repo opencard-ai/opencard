@@ -1,6 +1,6 @@
 {
   "card_id": "amex-delta-reserve",
-  "name": "Delta SkyMiles\u00ae Reserve American Express Card",
+  "name": "Delta SkyMiles® Reserve American Express Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 650,
@@ -127,19 +127,19 @@
     {
       "name": "Resy Credit",
       "amount": 240,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     },
     {
       "name": "Rideshare Credit",
       "amount": 120,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     },
     {
       "name": "Global Entry/TSA PreCheck",
       "amount": 120,
-      "frequency": "Every 4 years",
+      "frequency": "annual",
       "category": "other"
     }
   ]

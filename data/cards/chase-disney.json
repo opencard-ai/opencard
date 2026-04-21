@@ -1,6 +1,6 @@
 {
   "card_id": "chase-disney",
-  "name": "Disney\u00ae Visa\u00ae Card",
+  "name": "Disney® Visa® Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 0,
@@ -87,7 +87,7 @@
     {
       "name": "Streaming Credit",
       "amount": 60,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     }
   ]

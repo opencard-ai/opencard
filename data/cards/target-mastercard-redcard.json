@@ -1,6 +1,6 @@
 {
   "card_id": "target-mastercard-redcard",
-  "name": "Target RedCard\u2122 Mastercard\u00ae",
+  "name": "Target RedCard™ Mastercard®",
   "issuer": "TD Bank",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -79,13 +79,13 @@
     {
       "name": "Free two-day shipping",
       "amount": 0,
-      "frequency": "Ongoing",
+      "frequency": "annual",
       "category": "other"
     },
     {
       "name": "Extra 30 days returns",
       "amount": 0,
-      "frequency": "Ongoing",
+      "frequency": "annual",
       "category": "other"
     }
   ]

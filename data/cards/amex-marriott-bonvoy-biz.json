@@ -1,6 +1,6 @@
 {
   "card_id": "amex-marriott-bonvoy-biz",
-  "name": "Marriott Bonvoy Business\u00ae American Express\u00ae Card",
+  "name": "Marriott Bonvoy Business® American Express® Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 125,
@@ -107,7 +107,7 @@
     {
       "name": "Free Night Award",
       "amount": 0,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     }
   ]

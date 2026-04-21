@@ -1,6 +1,6 @@
 {
   "card_id": "citi-aadvantage-globe",
-  "name": "Citi\u00ae / AAdvantage\u00ae Globe\u2122 Mastercard\u00ae",
+  "name": "Citi® / AAdvantage® Globe™ Mastercard®",
   "issuer": "Citi",
   "network": "Mastercard",
   "annual_fee": 350,
@@ -52,9 +52,9 @@
   "travel_benefits": {
     "lounge_access": [
       {
-        "name": "Admirals Club\u00ae Globe\u2122 Passes",
+        "name": "Admirals Club® Globe™ Passes",
         "type": "Day passes",
-        "notes": "4 Admirals Club\u00ae passes per year"
+        "notes": "4 Admirals Club® passes per year"
       }
     ],
     "other_benefits": [
@@ -107,7 +107,7 @@
     {
       "name": "Air Travel Credit",
       "amount": 150,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "travel"
     }
   ]

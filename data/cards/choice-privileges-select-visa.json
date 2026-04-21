@@ -1,6 +1,6 @@
 {
   "card_id": "choice-privileges-select-visa",
-  "name": "Choice Privileges\u00ae Visa Signature\u00ae Card",
+  "name": "Choice Privileges® Visa Signature® Card",
   "issuer": "Wells Fargo",
   "network": "Visa",
   "annual_fee": 0,
@@ -89,7 +89,7 @@
     {
       "name": "Anniversary bonus",
       "amount": 0,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     }
   ]

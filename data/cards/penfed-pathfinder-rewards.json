@@ -1,6 +1,6 @@
 {
   "card_id": "penfed-pathfinder-rewards",
-  "name": "PenFed Pathfinder\u00ae Rewards Visa Signature\u00ae Card",
+  "name": "PenFed Pathfinder® Rewards Visa Signature® Card",
   "issuer": "PenFed Credit Union",
   "network": "Visa",
   "annual_fee": 95,
@@ -92,7 +92,7 @@
     {
       "name": "$100 annual credit for travel",
       "amount": 100,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "travel"
     }
   ]
