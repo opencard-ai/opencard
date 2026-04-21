@@ -145,11 +145,11 @@ export default async function CardDetailPage({ params }: Props) {
         )}
 
         {/* CTA Row: Add to My Cards + AI Assistant */}
-        <div className="flex flex-col sm:flex-row gap-3">
-          <div className="flex-1">
+        <div className="flex flex-col sm:flex-row gap-3 items-stretch">
+          <div className="flex-1 flex">
             <AddToMyCardsButton cardId={card.card_id} cardName={card.name} lang={lang} />
           </div>
-          <div className="sm:w-56">
+          <div className="sm:w-56 flex">
             <ChatWidget cardName={card.name} cardId={card.card_id} locale={locale} />
           </div>
         </div>
