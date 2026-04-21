@@ -1,6 +1,6 @@
 {
   "card_id": "boa-travel-rewards",
-  "name": "Bank of America® Travel Rewards Credit Card",
+  "name": "Bank of America\u00ae Travel Rewards Credit Card",
   "issuer": "Bank of America",
   "network": "Visa",
   "annual_fee": 0,
@@ -57,5 +57,13 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Preferred Rewards Bonus",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "other"
+    }
+  ]
 }

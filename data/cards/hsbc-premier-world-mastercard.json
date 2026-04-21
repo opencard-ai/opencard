@@ -92,11 +92,11 @@
     },
     {
       "url": "https://maxrewards.com/credit-cards/hsbc-premier",
-      "notes": "MaxRewards — earn rates"
+      "notes": "MaxRewards \u2014 earn rates"
     },
     {
       "url": "https://milelion.com/2025/07/19/buffed-hsbc-premier-mastercard-boosts-earn-rates-adds-unlimited-lounge-access-and-other-perks/",
-      "notes": "The MileLion — August 2025 earn rate enhancements"
+      "notes": "The MileLion \u2014 August 2025 earn rate enhancements"
     }
   ],
   "last_updated": "2026-04-16T13:41:49.986Z",
@@ -106,5 +106,19 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Lounge passes",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "other"
+    },
+    {
+      "name": "Streaming credit",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "other"
+    }
+  ]
 }

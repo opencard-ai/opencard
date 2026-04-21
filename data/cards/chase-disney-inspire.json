@@ -111,5 +111,25 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Disney Streaming Credit",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "other"
+    },
+    {
+      "name": "Disney Theme Park Tickets Credit",
+      "amount": 100,
+      "frequency": "per anniversary year",
+      "category": "other"
+    },
+    {
+      "name": "Disney Resorts and Cruise Bonus",
+      "amount": null,
+      "frequency": "per anniversary year",
+      "category": "other"
+    }
+  ]
 }

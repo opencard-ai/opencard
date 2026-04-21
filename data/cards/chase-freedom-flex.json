@@ -1,6 +1,6 @@
 {
   "card_id": "chase-freedom-flex",
-  "name": "Chase Freedom Flex®",
+  "name": "Chase Freedom Flex\u00ae",
   "issuer": "Chase",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -68,7 +68,14 @@
     "cash-back",
     "no-annual-fee"
   ],
-  "recurring_credits": [],
+  "recurring_credits": [
+    {
+      "name": "DoorDash Promo",
+      "amount": 40,
+      "frequency": "Quarterly",
+      "category": "dining"
+    }
+  ],
   "sources": [
     {
       "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",

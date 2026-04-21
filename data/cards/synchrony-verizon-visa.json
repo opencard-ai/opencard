@@ -1,6 +1,6 @@
 {
   "card_id": "synchrony-verizon-visa",
-  "name": "Verizon Visa® Card",
+  "name": "Verizon Visa\u00ae Card",
   "issuer": "Synchrony Bank",
   "network": "Visa",
   "annual_fee": 0,
@@ -92,5 +92,13 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "TravelPass days",
+      "amount": 0,
+      "frequency": "Annual",
+      "category": "travel"
+    }
+  ]
 }

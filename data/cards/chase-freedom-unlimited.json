@@ -1,6 +1,6 @@
 {
   "card_id": "chase-freedom-unlimited",
-  "name": "Chase Freedom Unlimited®",
+  "name": "Chase Freedom Unlimited\u00ae",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 0,
@@ -78,5 +78,12 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": []
+  "recurring_credits": [
+    {
+      "name": "DoorDash Promo",
+      "amount": 40,
+      "frequency": "Quarterly",
+      "category": "dining"
+    }
+  ]
 }

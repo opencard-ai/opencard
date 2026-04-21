@@ -1,6 +1,6 @@
 {
   "card_id": "us-bank-biz-altitude-connect",
-  "name": "U.S. Bank Business Altitude® Connect Visa Signature® Card",
+  "name": "U.S. Bank Business Altitude\u00ae Connect Visa Signature\u00ae Card",
   "issuer": "U.S. Bank",
   "network": "Visa",
   "annual_fee": 95,
@@ -94,5 +94,13 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Priority Pass Digital membership",
+      "amount": 0,
+      "frequency": "Annual",
+      "category": "other"
+    }
+  ]
 }

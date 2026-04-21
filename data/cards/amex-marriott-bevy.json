@@ -1,6 +1,6 @@
 {
   "card_id": "amex-marriott-bevy",
-  "name": "Marriott Bonvoy Bevy® American Express® Card",
+  "name": "Marriott Bonvoy Bevy\u00ae American Express\u00ae Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 250,
@@ -96,5 +96,13 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Free Night Award",
+      "amount": 0,
+      "frequency": "Annual (upon $15,000 spend)",
+      "category": "other"
+    }
+  ]
 }

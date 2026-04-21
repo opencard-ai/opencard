@@ -1,6 +1,6 @@
 {
   "card_id": "doordash-rewards-mastercard",
-  "name": "DoorDash Rewards Mastercard®",
+  "name": "DoorDash Rewards Mastercard\u00ae",
   "issuer": "Chase",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -68,5 +68,13 @@
     "bonus_value": 250,
     "description": "$250 cash back after $500 spend within 3 months",
     "estimated_value": 250
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "other"
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "card_id": "discover-it-miles",
-  "name": "Discover it® Miles",
+  "name": "Discover it\u00ae Miles",
   "issuer": "Discover",
   "network": "Discover",
   "annual_fee": 0,
@@ -8,7 +8,7 @@
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": null,
-    "description": "Unlimited Miles Match™ at end of first year",
+    "description": "Unlimited Miles Match\u2122 at end of first year",
     "estimated_value": null,
     "spending_requirement": null,
     "time_period_months": null
@@ -57,5 +57,12 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": []
+  "recurring_credits": [
+    {
+      "name": "No Foreign Transaction Fees",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "other"
+    }
+  ]
 }

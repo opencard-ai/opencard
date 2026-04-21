@@ -1,6 +1,6 @@
 {
   "card_id": "amex-delta-gold",
-  "name": "Delta SkyMiles® Gold American Express Card",
+  "name": "Delta SkyMiles\u00ae Gold American Express Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 150,
@@ -109,5 +109,19 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Delta Stays Credit",
+      "amount": 100,
+      "frequency": "Annual",
+      "category": "airline"
+    },
+    {
+      "name": "Delta Flight Credit",
+      "amount": 200,
+      "frequency": "Annual",
+      "category": "airline"
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "card_id": "chase-united-explorer",
-  "name": "United℠ Explorer Card",
+  "name": "United\u2120 Explorer Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 150,
@@ -129,5 +129,43 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "United Travel Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "airline"
+    },
+    {
+      "name": "United Hotels Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "airline"
+    },
+    {
+      "name": "Rideshare Credit",
+      "amount": 60,
+      "frequency": "annual",
+      "category": "other"
+    },
+    {
+      "name": "Avis/Budget Credit",
+      "amount": 50,
+      "frequency": "annual",
+      "category": "other"
+    },
+    {
+      "name": "Instacart Credit",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "other"
+    },
+    {
+      "name": "JSX Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "other"
+    }
+  ]
 }

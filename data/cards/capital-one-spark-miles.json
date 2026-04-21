@@ -68,5 +68,25 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Global Entry or TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "other"
+    },
+    {
+      "name": "Lounge Access",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "other"
+    },
+    {
+      "name": "Free Employee Cards",
+      "amount": null,
+      "frequency": "annual",
+      "category": "other"
+    }
+  ]
 }

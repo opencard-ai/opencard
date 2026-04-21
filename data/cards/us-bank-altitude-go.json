@@ -1,6 +1,6 @@
 {
   "card_id": "us-bank-altitude-go",
-  "name": "U.S. Bank Altitude® Go Visa Signature® Card",
+  "name": "U.S. Bank Altitude\u00ae Go Visa Signature\u00ae Card",
   "issuer": "U.S. Bank",
   "network": "Visa",
   "annual_fee": 0,
@@ -89,5 +89,13 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "$15 streaming credit",
+      "amount": 15,
+      "frequency": "Quarterly",
+      "category": "other"
+    }
+  ]
 }
