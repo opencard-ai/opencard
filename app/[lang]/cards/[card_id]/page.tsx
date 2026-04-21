@@ -188,14 +188,16 @@ export default async function CardDetailPage({ params }: Props) {
             <section className="bg-white rounded-xl border border-slate-200 p-6">
               <h2 className="text-lg font-bold text-slate-900 mb-4">{l("detail.annualCredits")}</h2>
               <div className="space-y-3">
-                {card.annual_credits.map((credit, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-3 py-2 border-b border-slate-100 last:border-0"
-                  >
-                    <span className="text-green-600 font-bold text-sm shrink-0">
-                      ${credit.amount}
-                    </span>
+                {card.annual_credits
+                      .filter((c) => c.amount > 0)
+                      .map((credit, i) => (
+                        <div
+                          key={i}
+                          className="flex items-start gap-3 py-2 border-b border-slate-100 last:border-0"
+                        >
+                          <span className="text-green-600 font-bold text-sm shrink-0">
+                            ${credit.amount}
+                          </span>
                     <div>
                       <span className="text-slate-800 font-medium text-sm">
                         {credit.name}
