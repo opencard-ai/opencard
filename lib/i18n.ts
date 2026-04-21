@@ -353,7 +353,7 @@ export function t(key: string, locale: Locale = "en", params?: Record<string, st
   if (params) {
     Object.entries(params).forEach(([k, v]) => {
       text = text.replace(`{${k}}`, String(v));
-      text = text.replace(`[[${k}]]`, String(v));
+      text = text.split(`[[${k}]]`).join(String(v));
       text = text.replace(`{{${k}}}`, String(v));
     });
   }
