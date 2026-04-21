@@ -131,7 +131,7 @@
     {
       "name": "$400 Hilton Resort Credit",
       "amount": 400,
-      "frequency": "semi-annual",
+      "frequency": "semi_annual",
       "category": "travel",
       "description": "$200 every 6 months for Hilton resort properties.",
       "reset_type": "calendar_year"
