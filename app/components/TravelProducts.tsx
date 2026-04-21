@@ -75,7 +75,7 @@ export default function TravelProducts({ lang }: Props) {
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">
             {l.pillows}
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {pillows.slice(0, 3).map((product) => {
               const style = getProductStyle(product.product_id);
               const imgUrl = product.image || PRODUCT_IMAGES[product.product_id];
@@ -85,26 +85,28 @@ export default function TravelProducts({ lang }: Props) {
                   href={product.affiliate_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`relative block p-4 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group text-center`}
+                  className={`relative flex items-center gap-3 p-3 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group`}
                 >
                   {imgUrl ? (
                     <img
                       src={imgUrl}
                       alt={product.name}
-                      className="w-full h-24 object-contain mb-2 rounded"
+                      className="w-20 h-20 object-contain rounded shrink-0"
                       loading="lazy"
                     />
                   ) : (
-                    <div className="w-full h-24 bg-slate-100 rounded mb-2 flex items-center justify-center text-3xl">🧳</div>
+                    <div className="w-20 h-20 bg-slate-100 rounded flex items-center justify-center text-3xl shrink-0">🧳</div>
                   )}
-                  <div className="text-sm font-medium text-slate-800 group-hover:text-blue-600 line-clamp-2 leading-snug">
-                    {product.name}
+                  <div className="flex-1 min-w-0 text-left">
+                    <div className="text-sm font-medium text-slate-800 group-hover:text-blue-600 leading-snug">
+                      {product.name}
+                    </div>
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="text-xs text-slate-500">{product.price_range}</span>
+                      <span className="text-xs text-amber-600">⭐ {product.rating}</span>
+                    </div>
+                    <span className="absolute top-1.5 right-1.5 text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-medium">AD</span>
                   </div>
-                  <div className="flex items-center justify-center gap-2 mt-2">
-                    <span className="text-xs text-slate-500">{product.price_range}</span>
-                    <span className="text-xs text-amber-600">⭐ {product.rating}</span>
-                  </div>
-                  <span className="absolute top-1.5 right-1.5 text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-medium">AD</span>
                 </a>
               );
             })}
@@ -118,7 +120,7 @@ export default function TravelProducts({ lang }: Props) {
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">
             {lang === "zh" ? "轉接頭" : lang === "es" ? "Adaptadores" : "Travel Adapters"}
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {adapters.slice(0, 3).map((product) => {
               const style = getProductStyle(product.product_id);
               const imgUrl = product.image || PRODUCT_IMAGES[product.product_id];
@@ -128,26 +130,28 @@ export default function TravelProducts({ lang }: Props) {
                   href={product.affiliate_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`relative block p-4 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group text-center`}
+                  className={`relative flex items-center gap-3 p-3 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group`}
                 >
                   {imgUrl ? (
                     <img
                       src={imgUrl}
                       alt={product.name}
-                      className="w-full h-24 object-contain mb-2 rounded"
+                      className="w-20 h-20 object-contain rounded shrink-0"
                       loading="lazy"
                     />
                   ) : (
-                    <div className="w-full h-24 bg-slate-100 rounded mb-2 flex items-center justify-center text-3xl">🔌</div>
+                    <div className="w-20 h-20 bg-slate-100 rounded flex items-center justify-center text-3xl shrink-0">🔌</div>
                   )}
-                  <div className="text-sm font-medium text-slate-800 group-hover:text-blue-600 line-clamp-2 leading-snug">
-                    {product.name}
+                  <div className="flex-1 min-w-0 text-left">
+                    <div className="text-sm font-medium text-slate-800 group-hover:text-blue-600 leading-snug">
+                      {product.name}
+                    </div>
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="text-xs text-slate-500">{product.price_range}</span>
+                      <span className="text-xs text-amber-600">⭐ {product.rating}</span>
+                    </div>
+                    <span className="absolute top-1.5 right-1.5 text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-medium">AD</span>
                   </div>
-                  <div className="flex items-center justify-center gap-2 mt-2">
-                    <span className="text-xs text-slate-500">{product.price_range}</span>
-                    <span className="text-xs text-amber-600">⭐ {product.rating}</span>
-                  </div>
-                  <span className="absolute top-1.5 right-1.5 text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-medium">AD</span>
                 </a>
               );
             })}
@@ -161,7 +165,7 @@ export default function TravelProducts({ lang }: Props) {
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">
             {lang === "zh" ? "配件" : lang === "es" ? "Accesorios" : "Accessories"}
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {accessories.slice(0, 2).map((product) => {
               const style = getProductStyle(product.product_id);
               const imgUrl = product.image || PRODUCT_IMAGES[product.product_id];
@@ -171,26 +175,28 @@ export default function TravelProducts({ lang }: Props) {
                   href={product.affiliate_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`relative block p-4 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group text-center`}
+                  className={`relative flex items-center gap-3 p-3 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group`}
                 >
                   {imgUrl ? (
                     <img
                       src={imgUrl}
                       alt={product.name}
-                      className="w-full h-24 object-contain mb-2 rounded"
+                      className="w-20 h-20 object-contain rounded shrink-0"
                       loading="lazy"
                     />
                   ) : (
-                    <div className="w-full h-24 bg-slate-100 rounded mb-2 flex items-center justify-center text-3xl">🛫</div>
+                    <div className="w-20 h-20 bg-slate-100 rounded flex items-center justify-center text-3xl shrink-0">🛫</div>
                   )}
-                  <div className="text-sm font-medium text-slate-800 group-hover:text-blue-600 line-clamp-2 leading-snug">
-                    {product.name}
+                  <div className="flex-1 min-w-0 text-left">
+                    <div className="text-sm font-medium text-slate-800 group-hover:text-blue-600 leading-snug">
+                      {product.name}
+                    </div>
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="text-xs text-slate-500">{product.price_range}</span>
+                      <span className="text-xs text-amber-600">⭐ {product.rating}</span>
+                    </div>
+                    <span className="absolute top-1.5 right-1.5 text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-medium">AD</span>
                   </div>
-                  <div className="flex items-center justify-center gap-2 mt-2">
-                    <span className="text-xs text-slate-500">{product.price_range}</span>
-                    <span className="text-xs text-amber-600">⭐ {product.rating}</span>
-                  </div>
-                  <span className="absolute top-1.5 right-1.5 text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-medium">AD</span>
                 </a>
               );
             })}
