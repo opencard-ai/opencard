@@ -1,6 +1,40 @@
 {
   "items": [
     {
+      "title": "T-Life (T-Mobile Tuesday): Free Reusable Bag & More",
+      "url": "https://www.doctorofcredit.com/t-life-t-mobile-tuesday-free-reusable-bag-more/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "t-life"
+      ],
+      "ts": "2026-04-21T13:00:01.000Z",
+      "title_en": "T-Life (T-Mobile Tuesday): Free Reusable Bag & More",
+      "summary_en": "",
+      "title_zh": "T-Life（T-Mobile 星期二）：免費可重用袋子及更多優惠",
+      "summary_zh": "本週 T-Mobile 星期二可獲得免費可重用袋子及其他優惠。",
+      "title_es": "T-Life (Martes de T-Mobile): Bolsa reutilizable gratuita y más",
+      "summary_es": "T-Mobile ofrece una bolsa reutilizable gratis y otras ventajas en su martes."
+    },
+    {
+      "title": "Live Oak Bank $200 Savings Bonus",
+      "url": "https://www.doctorofcredit.com/243542-2/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "nationwide bank bonuses",
+        "no credit card funding",
+        "soft pull"
+      ],
+      "ts": "2026-04-21T12:00:33.000Z",
+      "title_en": "Live Oak Bank $200 Savings Bonus",
+      "summary_en": "",
+      "title_zh": "Live Oak Bank 新戶 200 美元存款獎金",
+      "summary_zh": "新戶於 Live Oak Bank 存款可獲 200 美元獎金。",
+      "title_es": "Live Oak Bank: Bono de $200 por ahorro",
+      "summary_es": "Abre una cuenta de ahorro en Live Oak Bank y recibe un bono de $200."
+    },
+    {
       "title": "Staples: No Purchase Fee On $200 Visa Gift Cards (4/19-4/25)",
       "url": "https://www.doctorofcredit.com/staples-no-purchase-fee-on-200-visa-gift-cards-10-31-11-6-limit-5/",
       "source": "Doctor of Credit",
@@ -12,10 +46,10 @@
       "ts": "2026-04-21T04:55:28.000Z",
       "title_en": "Staples: No Purchase Fee On $200 Visa Gift Cards (4/19-4/25)",
       "summary_en": "",
-      "title_zh": "Staples：$200 Visa 禮品卡免購買費（4月19日至4月25日）",
-      "summary_zh": "Staples 在 4 月 19 日至 25 日提供 $200 Visa 禮品卡免購買費優惠。",
-      "title_es": "Staples: Sin cargo de compra en tarjetas de regalo Visa de $200 (del 19 al 25 de abril)",
-      "summary_es": "Staples ofrece tarjetas de regalo Visa de $200 sin cuota de compra del 19 al 25 de abril."
+      "title_zh": "Staples：200美元 Visa 禮卡免手續費（4/19-4/25）",
+      "summary_zh": "於 4 月 19 日至 25 日在 Staples 購買 200 美元 Visa 禮卡可免手續費。",
+      "title_es": "Staples: Sin tarifa de compra en tarjetas de regalo Visa de $200",
+      "summary_es": "Puedes comprar tarjetas de regalo Visa de $200 en Staples sin comisión hasta el 25 de abril."
     },
     {
       "title": "[YMMV] Capital One Shopping: Farmer’s Dog, Get $260 Back On First Purchase",
@@ -29,10 +63,10 @@
       "ts": "2026-04-21T03:49:57.000Z",
       "title_en": "[YMMV] Capital One Shopping: Farmer’s Dog, Get $260 Back On First Purchase",
       "summary_en": "",
-      "title_zh": "[YMMV] Capital One Shopping：Farmer's Dog，首單可獲得 $260 回饋",
-      "summary_zh": "Capital One Shopping 與 Farmer's Dog 合作，首單消費可獲 $260 回饋，實際回饋可能因人而異。",
-      "title_es": "[YMMV] Capital One Shopping: Farmer’s Dog, Obtén $260 de reembolso en tu primera compra",
-      "summary_es": "Con la compra inicial en Farmer’s Dog a través de Capital One Shopping puedes obtener $260 de reembolso."
+      "title_zh": "【視情況】Capital One Shopping：Farmer's Dog，首單可獲得 260 美元回饋",
+      "summary_zh": "在 Capital One Shopping 首次購買 Farmer's Dog 商品可獲得 260 美元回饋，視當地情況而定。",
+      "title_es": "Capital One Shopping: Farmer’s Dog, Obtén $260 de reembolso en tu primera compra",
+      "summary_es": "Al comprar Farmer’s Dog en Capital One Shopping recibes $260 de regreso."
     },
     {
       "title": "[YMMV New $0.5 Off Code] 7-Eleven: Stackable Fuel Codes ($1.41 Off Per Gal)",
@@ -45,10 +79,10 @@
       "ts": "2026-04-21T01:32:30.000Z",
       "title_en": "[YMMV New $0.5 Off Code] 7-Eleven: Stackable Fuel Codes ($1.41 Off Per Gal)",
       "summary_en": "",
-      "title_zh": "[YMMV 新 $0.5 優惠碼] 7-Eleven：可叠加的加油優惠碼（每加侖省 $1.41）",
-      "summary_zh": "7-Eleven 推出可叠加的加油優惠碼，每加侖可省 $1.41（實際可能有所不同）。",
-      "title_es": "[YMMV Nuevo código de $0.5 de descuento] 7-Eleven: Códigos de combustible apilables ($1.41 de descuento por galón)",
-      "summary_es": "7-Eleven ofrece códigos de combustible apilables que dan $1.41 de descuento por galón, más un nuevo código de $0.5."
+      "title_zh": "【新規 0.5 美元折扣碼】7-Eleven：可疊加燃油碼（每加侖可減 1.41 美元）",
+      "summary_zh": "在 7-Eleven 使用新規 0.5 美元折扣碼購買燃油，每加侖可減 1.41 美元。",
+      "title_es": "7-Eleven: Códigos de combustible apilables ($1,41 de descuento por galón)",
+      "summary_es": "En 7‑Eleven puedes usar códigos de combustible que se acumulan para ahorrar $1,41 por galón."
     },
     {
       "title": "Southwest: Up To 40% Off Base Fares With Promo Code FLOWERS",
@@ -61,10 +95,10 @@
       "ts": "2026-04-21T01:09:32.000Z",
       "title_en": "Southwest: Up To 40% Off Base Fares With Promo Code FLOWERS",
       "summary_en": "",
-      "title_zh": "Southwest：使用優惠碼 FLOWERS 可享最高 40% 折扣的基礎票價",
-      "summary_zh": "西南航空使用 FLOWERS 優惠碼可享最高 40% 的基礎票價折扣。",
-      "title_es": "Southwest: Hasta 40% de descuento en tarifas base con el código promocional FLOWERS",
-      "summary_es": "Southwest ofrece hasta un 40% de descuento en tarifas base al usar el código FLOWERS."
+      "title_zh": "西南航空：使用優惠碼 FLOWERS 可享最高 40% 基本票價折扣",
+      "summary_zh": "使用 FLOWERS 優惠碼購買西南航空航班，最高可享 40% 基本票價折扣。",
+      "title_es": "Southwest: Hasta 40% de descuento en tarifas base con código promocional FLOWERS",
+      "summary_es": "Usa el código FLOWERS en Southwest y obtén hasta 40% de descuento en tus vuelos."
     },
     {
       "title": "Bank of America & Alaska Air Announce Expansion Of Partnership (New Cards/Refreshes?)",
@@ -86,10 +120,10 @@
       "ts": "2026-04-21T00:50:34.000Z",
       "title_en": "Bank of America & Alaska Air Announce Expansion Of Partnership (New Cards/Refreshes?)",
       "summary_en": "",
-      "title_zh": "Bank of America 與 Alaska Air 宣佈擴大合作關係（新信用卡或更新）",
-      "summary_zh": "美國銀行與阿拉斯加航空宣佈將擴大合作，可能推出新信用卡或進行卡片更新。",
-      "title_es": "Bank of America y Alaska Air Anuncian Expansión de su Asociación (¿Nuevas Tarjetas/Actualizaciones?)",
-      "summary_es": "Bank of America y Alaska Air amplían su alianza, posiblemente añadiendo nuevas tarjetas o actualizando las existentes."
+      "title_zh": "美國銀行與阿拉斯加航空宣布擴大合作（新卡/更新？）",
+      "summary_zh": "美國銀行與阿拉斯加航空將擴大合作，可能推出新卡或更新現有卡。",
+      "title_es": "Bank of America y Alaska Air amplían su asociación (¿Nuevas tarjetas o actualizaciones?)",
+      "summary_es": "Bank of America y Alaska Air lanzan nuevas tarjetas o actualizaciones de su alianza."
     },
     {
       "title": "JAL & ANA Announce Fuel Surcharges To Almost Double (Tickets Booked In May And June)",
@@ -104,10 +138,10 @@
       "ts": "2026-04-21T00:40:53.000Z",
       "title_en": "JAL & ANA Announce Fuel Surcharges To Almost Double (Tickets Booked In May And June)",
       "summary_en": "",
-      "title_zh": "日本航空與全日空宣布燃油附加費幾乎翻倍（5 月與 6 月預訂的機票）",
-      "summary_zh": "日本航空與全日空表示燃油附加費將近翻倍，適用於 5 月及 6 月開票的航班。",
-      "title_es": "JAL y ANA Anuncian que las tasas de combustible prácticamente se duplicarán (billetes comprados en mayo y junio)",
-      "summary_es": "Japan Airlines y All Nippon Airways prácticamente duplicarán los recargos por combustible para billetes comprados en mayo y junio."
+      "title_zh": "日本航空與全日空宣布燃油附加費將近翻倍（5 月及 6 月訂票）",
+      "summary_zh": "5 月及 6 月的機票燃油附加費將近是原本的兩倍。",
+      "title_es": "JAL y ANA anuncian que los recargos de combustible se duplicarán casi para vuelos en mayo y junio",
+      "summary_es": "Los vuelos de JAL y ANA reservados para mayo y junio tendrán recargos de combustible casi el doble."
     },
     {
       "title": "[YMMV] Best Buy: $5/$10 Rewards Certificate",
@@ -120,10 +154,10 @@
       "ts": "2026-04-21T00:30:27.000Z",
       "title_en": "[YMMV] Best Buy: $5/$10 Rewards Certificate",
       "summary_en": "",
-      "title_zh": "[YMMV] Best Buy：$5/$10 獎勵券",
-      "summary_zh": "Best Buy 推出 $5/$10 獎勵券，實際使用可能因人而異。",
-      "title_es": "[YMMV] Best Buy: Certificado de recompensa de $5/$10",
-      "summary_es": "Best Buy ofrece un certificado de recompensa de $5 por cada $10 gastado."
+      "title_zh": "【視情況】Best Buy：5/10 美元獎勵券",
+      "summary_zh": "在 Best Buy 消費可獲得 5 美元或 10 美元的獎勵券，視當地情況而定。",
+      "title_es": "Best Buy: Certificado de recompensas de $5/$10",
+      "summary_es": "En Best Buy puedes obtener certificados de recompensa de $5 o $10."
     },
     {
       "title": "Target In Store Events: Free Pampers (4/25) & Free Baby Box (4/26)",
@@ -140,10 +174,10 @@
       "ts": "2026-04-20T23:54:25.000Z",
       "title_en": "Target In Store Events: Free Pampers (4/25) & Free Baby Box (4/26)",
       "summary_en": "",
-      "title_zh": "Target 店內活動：免費送 Pampers 紙尿褲（4月25日）及免費寶寶禮盒（4月26日）",
-      "summary_zh": "Target 於 4 月 25 日提供免費 Pampers 紙尿褲，4 月 26 日提供免費寶寶禮盒。",
-      "title_es": "Target: Eventos en Tienda: Pañales Gratis (25 de abril) y Caja de Bebé Gratis (26 de abril)",
-      "summary_es": "Target regalará pañales el 25 de abril y una caja de bebé el 26 de abril en sus tiendas."
+      "title_zh": "Target 店內活動：免費幫寶適紙尿布（4/25）與免費嬰兒禮盒（4/26）",
+      "summary_zh": "Target 店內活動在 4 月 25 日提供免費幫寶適紙尿布，4 月 26 日提供免費嬰兒禮盒。",
+      "title_es": "Target: Eventos en tienda: Pampers gratis (25/4) y caja de bebé gratuita (26/4)",
+      "summary_es": "Target ofrece Pampers sin costo el 25 de abril y una caja de bebé gratis el día siguiente."
     },
     {
       "title": "Postmates: $10 Off $25 With Promo Code GOTMUNCHIES (Nationwide), Delivery Only",
@@ -156,10 +190,10 @@
       "ts": "2026-04-20T23:43:13.000Z",
       "title_en": "Postmates: $10 Off $25 With Promo Code GOTMUNCHIES (Nationwide), Delivery Only",
       "summary_en": "",
-      "title_zh": "Postmates：使用優惠碼 GOTMUNCHIES 可享滿 $25 減 $10（僅限全國外送）",
-      "summary_zh": "Postmates 推出優惠碼 GOTMUNCHIES，消費滿 $25 可減 $10（全國外送限定）。",
-      "title_es": "Postmates: $10 de descuento en $25 con el código promocional GOTMUNCHIES (Nacional), solo entrega a domicilio",
-      "summary_es": "Postmates ofrece $10 de descuento en pedidos de al menos $25 usando el código GOTMUNCHIES, solo para entrega a domicilio en todo el país."
+      "title_zh": "Postmates：使用優惠碼 GOTMUNCHIES，全國配送滿 25 美元可減 10 美元",
+      "summary_zh": "在 Postmates 全國配送消費滿 25 美元，使用 GOTMUNCHIES 優惠碼可減 10 美元。",
+      "title_es": "Postmates: $10 de descuento en $25 con código GOTMUNCHIES (solo entrega)",
+      "summary_es": "Usa el código GOTMUNCHIES en Postmates para obtener $10 de descuento en un pedido de $25, solo para entrega."
     },
     {
       "title": "[Targeted] Chase Offers: Save 10% At Marriott Hotels",
@@ -173,10 +207,10 @@
       "ts": "2026-04-20T17:48:53.000Z",
       "title_en": "[Targeted] Chase Offers: Save 10% At Marriott Hotels",
       "summary_en": "",
-      "title_zh": "[定向] Chase 優惠：Marriott 酒店享 10% 折扣",
-      "summary_zh": "Chase 定向優惠可在 Marriott 酒店消費時享受 10% 折扣。",
-      "title_es": "[Dirigido] Chase Ofertas: Ahorra 10% en Hoteles Marriott",
-      "summary_es": "Los clientes de Chase pueden ahorrar un 10% en estancias en hoteles Marriott."
+      "title_zh": "【定向】Chase 優惠：Marriott 酒店享 10% 折扣",
+      "summary_zh": "Chase 用戶在 Marriott 酒店住宿可享 10% 折扣。",
+      "title_es": "Ofertas de Chase: Ahorra 10% en hoteles Marriott",
+      "summary_es": "Chase ofrece un 10% de ahorro en estancias en hoteles Marriott."
     },
     {
       "title": "AmEx Offers: Get 10-45% Back On UPS Shipping Online (Up To $1,500 Cashback)",
@@ -190,10 +224,10 @@
       "ts": "2026-04-20T17:02:23.000Z",
       "title_en": "AmEx Offers: Get 10-45% Back On UPS Shipping Online (Up To $1,500 Cashback)",
       "summary_en": "",
-      "title_zh": "AmEx 優惠：UPS 線上寄送可獲得 10-45% 回饋（最高 $1,500 現金回饋）",
-      "summary_zh": "美國運通提供 UPS 線上寄送 10-45% 回饋，最高可達 $1,500 現金回饋。",
-      "title_es": "AmEx Ofrece: Obtén entre 10% y 45% de reembolso en envíos UPS en línea (hasta $1,500 en efectivo)",
-      "summary_es": "American Express ofrece entre un 10% y 45% de reembolso en envíos UPS en línea, hasta $1,500."
+      "title_zh": "AmEx 優惠：UPS 網上運費可獲得 10-45% 現金回扣（最高 1,500 美元）",
+      "summary_zh": "使用 AmEx 支付 UPS 網上運費可獲 10% 至 45% 現金回扣，最高可達 1,500 美元。",
+      "title_es": "AmEx: Obtén entre 10% y 45% de reembolso en envíos UPS en línea (hasta $1 500 en efectivo)",
+      "summary_es": "Con las ofertas de AmEx puedes recibir hasta 45% de reembolso en envíos UPS, con un máximo de $1 500."
     },
     {
       "title": "Amex Offers: Air France/KLM, Get $250 with $1,250 Spend",
@@ -205,10 +239,10 @@
       "ts": "2026-04-20T17:00:47.000Z",
       "title_en": "Amex Offers: Air France/KLM, Get $250 with $1,250 Spend",
       "summary_en": "",
-      "title_zh": "Amex 優惠：消費 $1,250 可獲 $250 回饋（適用於法航/荷航）",
-      "summary_zh": "美國運通優惠在法航/荷航消費滿 $1,250 可獲得 $250 回饋。",
-      "title_es": "Amex Ofrece: Air France/KLM, Obtén $250 al gastar $1,250",
-      "summary_es": "Con la tarjeta American Express puedes obtener $250 de crédito al gastar $1,250 en Air France o KLM."
+      "title_zh": "AmEx 優惠：法航/荷航，消費 1,250 美元可獲得 250 美元",
+      "summary_zh": "使用 AmEx 購買法航或荷航機票，消費滿 1,250 美元可兌換 250 美元回饋。",
+      "title_es": "Amex: Air France/KLM, Obtén $250 al gastar $1 250",
+      "summary_es": "Al gastar $1 250 en Air France/KLM a través de Amex recibes $250 de reembolso."
     },
     {
       "title": "Discover To Disconnect Bank Prepaid Accounts Linked To Discover On 5/29/26",
@@ -220,45 +254,11 @@
       "ts": "2026-04-20T16:00:32.000Z",
       "title_en": "Discover To Disconnect Bank Prepaid Accounts Linked To Discover On 5/29/26",
       "summary_en": "",
-      "title_zh": "Discover 將於 2026 年 5 月 29 日停止與 Discover 連結的銀行預付帳戶",
-      "summary_zh": "Discover 宣布將於 2026 年 5 月 29 日中斷其銀行預付帳戶的連接。",
-      "title_es": "Discover Desconectará Cuentas Bancarias Prepagadas Vinculadas a Discover el 29 de mayo de 2026",
-      "summary_es": "Discover eliminará las cuentas bancarias prepagadas asociadas a su servicio el 29 de mayo de 2026."
-    },
-    {
-      "title": "Staples.com: Save 15% On Chipotle, Ulta and more",
-      "url": "https://www.doctorofcredit.com/staples-com-save-15-on-chipotle-ulta-and-more/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Gift Card Deals",
-        "staples",
-        "staples.com"
-      ],
-      "ts": "2026-04-20T15:39:24.000Z",
-      "title_en": "Staples.com: Save 15% On Chipotle, Ulta and more",
-      "summary_en": "",
-      "title_zh": "Staples.com：Chipotle、Ulta 等品牌享 15% 折扣",
-      "summary_zh": "Staples.com 提供 Chipotle、Ulta 等商戶 15% 的折扣優惠。",
-      "title_es": "Staples.com: Ahorra 15% en Chipotle, Ulta y más",
-      "summary_es": "En Staples.com puedes obtener un 15% de descuento en Chipotle, Ulta y otras tiendas."
-    },
-    {
-      "title": "Trader Joe’s Class Action Settlement: FACTA Violation [3/5/19 – 7/19/19]",
-      "url": "https://www.doctorofcredit.com/trader-joes-class-action-settlement-facta-violation-3-5-19-7-19-19/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Uncategorized",
-        "class action lawsuits",
-        "trader joe's"
-      ],
-      "ts": "2026-04-20T15:00:38.000Z",
-      "title_en": "Trader Joe’s Class Action Settlement: FACTA Violation [3/5/19 – 7/19/19]",
-      "summary_en": "",
-      "title_zh": "Trader Joe’s 集體訴訟和解：FACTA 違規 [2019 年 3 月 5 日至 2019 年 7 月 19 日]",
-      "summary_zh": "Trader Joe’s 因 FACTA 違規達成和解，受害期間為 2019 年 3 月 5 日至 7 月 19 日。",
-      "title_es": "Acuerdo de Acción Colectiva de Trader Joe’s: Violación de FACTA [del 5 de marzo de 2019 al 19 de julio de 2019]",
-      "summary_es": "Trader Joe’s ha llegado a un acuerdo por demanda colectiva debido a una violación de la Ley FACTA entre marzo y julio de 2019."
+      "title_zh": "Discover 將於 2026 年 5 月 29 日中斷與 Discover 連結的銀行預付帳戶",
+      "summary_zh": "Discover 預定於 2026 年 5 月 29 日停止其銀行預付帳戶的連結服務。",
+      "title_es": "Discover desconectará cuentas bancarias prepagadas vinculadas a Discover el 29/5/26",
+      "summary_es": "Las cuentas prepagadas de Discover serán desconectadas el 29 de mayo de 2026."
     }
   ],
-  "fetched": "2026-04-21T08:05:31.937Z"
+  "fetched": "2026-04-21T14:00:55.912Z"
 }
