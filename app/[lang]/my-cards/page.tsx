@@ -35,7 +35,7 @@ const MESSAGES = {
     loading: "Loading your cards...",
     creditsRemaining: "remaining",
     creditsUsed: "used",
-    viewAll: "View all cards →",
+    viewAll: "View details →",
   },
   zh: {
     title: "💳 我的卡片",
@@ -66,7 +66,7 @@ const MESSAGES = {
     loading: "載入中...",
     creditsRemaining: "剩餘",
     creditsUsed: "已使用",
-    viewAll: "查看所有卡片 →",
+    viewAll: "查看詳情 →",
   },
   es: {
     title: "💳 Mis Tarjetas",
@@ -97,7 +97,7 @@ const MESSAGES = {
     loading: "Cargando...",
     creditsRemaining: "restante",
     creditsUsed: "usado",
-    viewAll: "Ver todas →",
+    viewAll: "Ver detalles →",
   },
 };
 
