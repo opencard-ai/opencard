@@ -119,20 +119,26 @@ export default async function CardDetailPage({ params }: Props) {
               🎁 {l("detail.welcomeBonus")}
             </h3>
             <div className="text-sm text-amber-900">
-              {card.welcome_offer.bonus_points && (
-                <span className="font-bold">
-                  {card.welcome_offer.bonus_points.toLocaleString()} {l("detail.points")}
-                </span>
-              )}
-              {card.welcome_offer.estimated_value && (
-                <span className="ml-1">
-                  ({l("detail.estimatedValue", { value: `$${card.welcome_offer.estimated_value}` })})
-                </span>
-              )}
-              {card.welcome_offer.spending_requirement && (
-                <span className="text-xs text-amber-700 block mt-1">
-                  {l("detail.spendingReq", { amount: card.welcome_offer.spending_requirement.toLocaleString(), months: card.welcome_offer.time_period_months ?? 3 })}
-                </span>
+              {card.welcome_offer.bonus_points === 0 ? (
+                <span className="text-amber-700">{l("detail.noWelcomeOffer")}</span>
+              ) : (
+                <>
+                  {card.welcome_offer.bonus_points && (
+                    <span className="font-bold">
+                      {card.welcome_offer.bonus_points.toLocaleString()} {l("detail.points")}
+                    </span>
+                  )}
+                  {card.welcome_offer.estimated_value && (
+                    <span className="ml-1">
+                      ({l("detail.estimatedValue", { value: `$${card.welcome_offer.estimated_value}` })})
+                    </span>
+                  )}
+                  {card.welcome_offer.spending_requirement && (
+                    <span className="text-xs text-amber-700 block mt-1">
+                      {l("detail.spendingReq", { amount: card.welcome_offer.spending_requirement.toLocaleString(), months: card.welcome_offer.time_period_months ?? 3 })}
+                    </span>
+                  )}
+                </>
               )}
             </div>
           </div>
