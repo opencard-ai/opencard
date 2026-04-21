@@ -75,7 +75,7 @@ export default function TravelProducts({ lang }: Props) {
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">
             {l.pillows}
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {pillows.slice(0, 3).map((product) => {
               const style = getProductStyle(product.product_id);
               const imgUrl = product.image || PRODUCT_IMAGES[product.product_id];
@@ -91,11 +91,11 @@ export default function TravelProducts({ lang }: Props) {
                     <img
                       src={imgUrl}
                       alt={product.name}
-                      className="w-20 h-20 object-contain rounded shrink-0"
+                      className="w-24 h-24 object-contain rounded shrink-0"
                       loading="lazy"
                     />
                   ) : (
-                    <div className="w-20 h-20 bg-slate-100 rounded flex items-center justify-center text-3xl shrink-0">🧳</div>
+                    <div className="w-24 h-24 bg-slate-100 rounded flex items-center justify-center text-3xl shrink-0">🧳</div>
                   )}
                   <div className="flex-1 min-w-0 text-left">
                     <div className="text-sm font-medium text-slate-800 group-hover:text-blue-600 leading-snug">
@@ -120,7 +120,7 @@ export default function TravelProducts({ lang }: Props) {
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">
             {lang === "zh" ? "轉接頭" : lang === "es" ? "Adaptadores" : "Travel Adapters"}
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {adapters.slice(0, 3).map((product) => {
               const style = getProductStyle(product.product_id);
               const imgUrl = product.image || PRODUCT_IMAGES[product.product_id];
@@ -136,11 +136,11 @@ export default function TravelProducts({ lang }: Props) {
                     <img
                       src={imgUrl}
                       alt={product.name}
-                      className="w-20 h-20 object-contain rounded shrink-0"
+                      className="w-24 h-24 object-contain rounded shrink-0"
                       loading="lazy"
                     />
                   ) : (
-                    <div className="w-20 h-20 bg-slate-100 rounded flex items-center justify-center text-3xl shrink-0">🔌</div>
+                    <div className="w-24 h-24 bg-slate-100 rounded flex items-center justify-center text-3xl shrink-0">🔌</div>
                   )}
                   <div className="flex-1 min-w-0 text-left">
                     <div className="text-sm font-medium text-slate-800 group-hover:text-blue-600 leading-snug">
@@ -165,7 +165,7 @@ export default function TravelProducts({ lang }: Props) {
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">
             {lang === "zh" ? "配件" : lang === "es" ? "Accesorios" : "Accessories"}
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {accessories.slice(0, 2).map((product) => {
               const style = getProductStyle(product.product_id);
               const imgUrl = product.image || PRODUCT_IMAGES[product.product_id];
@@ -181,11 +181,11 @@ export default function TravelProducts({ lang }: Props) {
                     <img
                       src={imgUrl}
                       alt={product.name}
-                      className="w-20 h-20 object-contain rounded shrink-0"
+                      className="w-24 h-24 object-contain rounded shrink-0"
                       loading="lazy"
                     />
                   ) : (
-                    <div className="w-20 h-20 bg-slate-100 rounded flex items-center justify-center text-3xl shrink-0">🛫</div>
+                    <div className="w-24 h-24 bg-slate-100 rounded flex items-center justify-center text-3xl shrink-0">🛫</div>
                   )}
                   <div className="flex-1 min-w-0 text-left">
                     <div className="text-sm font-medium text-slate-800 group-hover:text-blue-600 leading-snug">

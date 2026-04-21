@@ -342,9 +342,6 @@ export default async function CardDetailPage({ params }: Props) {
           {/* AI Chat Widget */}
           <ChatWidget cardName={card.name} cardId={card.card_id} locale={locale} />
 
-          {/* Travel Products - 旅遊配件推薦 */}
-          <TravelProducts lang={lang} />
-
           {/* Quick Info */}
           <div className="bg-white rounded-xl border border-slate-200 p-5">
             <h3 className="font-semibold text-slate-900 mb-3">{l("detail.quickInfo")}</h3>
@@ -372,6 +369,11 @@ export default async function CardDetailPage({ params }: Props) {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Travel Products - full width at bottom */}
+      <div className="mt-8">
+        <TravelProducts lang={lang} />
       </div>
     </div>
   );
