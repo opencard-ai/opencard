@@ -44,34 +44,46 @@
   "annual_credits": [
     {
       "name": "Hilton Resort Credit",
-      "amount": 250,
-      "frequency": "Annual",
-      "description": "$250 statement credit each calendar year for charges at participating Hilton Resorts"
+      "amount": 400,
+      "frequency": "Semi-Annual ($200 every 6 months)",
+      "description": "$400 annual Hilton Resort Credit ($200 semi-annually) for room rate or charges at participating Hilton resort properties"
     },
     {
-      "name": "Airline Fee Credit",
-      "amount": 250,
-      "frequency": "Annual",
-      "description": "$250 airline fee credit per calendar year for incidental charges (baggage, seat selection) on a selected airline"
+      "name": "Airline Credit",
+      "amount": 200,
+      "frequency": "Quarterly ($50 per quarter)",
+      "description": "$200 annual airline credit ($50 quarterly) for airline charges including airfare booked directly or through amextravel.com"
     },
     {
-      "name": "Free Night Award",
+      "name": "CLEAR+ Credit",
+      "amount": 209,
+      "frequency": "Annual",
+      "description": "Up to $209 credit towards a CLEAR+ membership each year"
+    },
+    {
+      "name": "Free Night Certificate",
       "amount": 0,
+      "frequency": "Annual (cardmember year)",
+      "description": "One Free Night Certificate each cardmember year, valid for a standard room at almost any Hilton Honors property worldwide"
+    },
+    {
+      "name": "Luxury Property Credit",
+      "amount": 100,
       "frequency": "Annual",
-      "description": "One Free Night Award each year after card renewal (valid at properties up to 150,000 points)"
+      "description": "Up to $100 property credit at Waldorf Astoria and Conrad hotels when booking a 2-night minimum stay through hiltonhonorsaspirecard.com"
     },
     {
       "name": "Second Free Night",
       "amount": 0,
-      "frequency": "Annual (upon $60,000 spend)",
-      "description": "Second Free Night Award after spending $60,000 on eligible purchases in a calendar year"
+      "frequency": "Annual (upon $30,000 spend)",
+      "description": "Earn an additional Free Night Certificate after spending $30,000 on eligible purchases in a calendar year"
     }
   ],
   "travel_benefits": {
     "lounge_access": {
       "centurion": false,
-      "priority_pass": true,
-      "other": "Priority Pass Select (enrollment required)"
+      "priority_pass": false,
+      "other": ""
     },
     "hotel_status": [
       {
@@ -82,10 +94,10 @@
       }
     ],
     "other_benefits": [
-      "Priority Pass Select lounge access (enrollment required)",
-      "Fifth Night Free on reward stays",
+      "Fifth Night Free on reward stays (Silver status or higher)",
       "No Foreign Transaction Fees",
-      "National Car Rental Emerald Club Executive status"
+      "National Car Rental Executive status",
+      "Cell Phone Protection ($50 deductible, up to $800 per claim)"
     ]
   },
   "fhr_thc": {
@@ -93,7 +105,7 @@
     "thc_eligible": false
   },
   "insurance": {
-    "rental_insurance": "Primary",
+    "rental_insurance": "Secondary",
     "trip_delay": true,
     "purchase_protection": true,
     "extended_warranty": true
@@ -117,19 +129,35 @@
   },
   "recurring_credits": [
     {
-      "name": "$250 Airline Fee Credit",
-      "amount": 250,
-      "frequency": "annual",
+      "name": "$400 Hilton Resort Credit",
+      "amount": 400,
+      "frequency": "semi-annual",
       "category": "travel",
-      "description": "$250 annual credit for airline incidentals.",
+      "description": "$200 every 6 months for Hilton resort properties.",
       "reset_type": "calendar_year"
     },
     {
-      "name": "$250 Hilton Resort Credit",
-      "amount": 250,
+      "name": "$200 Airline Credit",
+      "amount": 200,
+      "frequency": "quarterly",
+      "category": "travel",
+      "description": "$50 per quarter for airline charges.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "$209 CLEAR+ Credit",
+      "amount": 209,
+      "frequency": "annual",
+      "category": "other",
+      "description": "Up to $209 credit towards CLEAR+ membership.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "$100 Luxury Property Credit",
+      "amount": 100,
       "frequency": "annual",
       "category": "travel",
-      "description": "$250 annual credit for Hilton resort properties.",
+      "description": "$100 property credit at Waldorf Astoria and Conrad (2-night min).",
       "reset_type": "calendar_year"
     },
     {
@@ -141,12 +169,12 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "10 Free Night Credits",
+      "name": "Free Night Certificate",
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "10 free night credits each year (up to 80k points each, excludes Conrad and Waldorf Astoria).",
-      "reset_type": "calendar_year"
+      "description": "One free night at almost any Hilton property worldwide.",
+      "reset_type": "cardmember_year"
     }
   ]
 }
