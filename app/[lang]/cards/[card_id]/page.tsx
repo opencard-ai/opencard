@@ -300,7 +300,7 @@ export default async function CardDetailPage({ params }: Props) {
                     const val = card.insurance[
                       item.key as keyof typeof card.insurance
                     ] as boolean | string | undefined;
-                    if (!val) return null;
+                    if (!val || val === "0" || val === "None" || val === "No") return null;
                     return (
                       <div
                         key={item.key}
