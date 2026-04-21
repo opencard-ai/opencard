@@ -110,7 +110,7 @@
   },
   "recurring_credits": [
     {
-      "name": "$50 annual airline credit",
+      "name": "annual airline credit",
       "amount": 50,
       "frequency": "annual",
       "category": "airline"

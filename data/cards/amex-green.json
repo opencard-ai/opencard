@@ -87,7 +87,7 @@
   },
   "recurring_credits": [
     {
-      "name": "$209 CLEAR Plus Credit",
+      "name": "CLEAR Plus Credit",
       "amount": 209,
       "frequency": "annual",
       "category": "travel",
@@ -95,7 +95,7 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$100 LoungeBuddy Credit",
+      "name": "LoungeBuddy Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "travel",

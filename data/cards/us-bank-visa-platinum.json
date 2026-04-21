@@ -82,7 +82,7 @@
   },
   "recurring_credits": [
     {
-      "name": "$20 annual statement credit",
+      "name": "annual statement credit",
       "amount": 20,
       "frequency": "annual",
       "category": "other"

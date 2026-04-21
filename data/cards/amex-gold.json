@@ -112,7 +112,7 @@
   },
   "recurring_credits": [
     {
-      "name": "$120 Uber Cash",
+      "name": "Uber Cash",
       "amount": 120,
       "frequency": "annual",
       "category": "other",
@@ -120,7 +120,7 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$50 Resy Credit",
+      "name": "Resy Credit",
       "amount": 50,
       "frequency": "semi_annual",
       "category": "dining",
@@ -128,7 +128,7 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$100 Airline Fee Credit",
+      "name": "Airline Fee Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "travel",

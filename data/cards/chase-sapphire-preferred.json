@@ -99,7 +99,7 @@
   },
   "recurring_credits": [
     {
-      "name": "$50 Annual Hotel Credit",
+      "name": "Annual Hotel Credit",
       "amount": 50,
       "frequency": "annual",
       "category": "travel",

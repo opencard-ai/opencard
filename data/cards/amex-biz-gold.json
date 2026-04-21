@@ -68,7 +68,7 @@
   ],
   "recurring_credits": [
     {
-      "name": "$240 Flexible Business Credit",
+      "name": "Flexible Business Credit",
       "amount": 240,
       "frequency": "annual",
       "category": "business",

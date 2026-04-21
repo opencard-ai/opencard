@@ -109,7 +109,7 @@
   },
   "recurring_credits": [
     {
-      "name": "$200 Annual Travel Credit",
+      "name": "Annual Travel Credit",
       "amount": 200,
       "frequency": "annual",
       "category": "travel",
@@ -117,7 +117,7 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$100 Airline Incidentals Credit",
+      "name": "Airline Incidentals Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "travel",
@@ -125,7 +125,7 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$200 Annual Lifestyle Credit",
+      "name": "Annual Lifestyle Credit",
       "amount": 200,
       "frequency": "annual",
       "category": "other",

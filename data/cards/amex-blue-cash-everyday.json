@@ -74,7 +74,7 @@
   },
   "recurring_credits": [
     {
-      "name": "$84 Streaming Credit",
+      "name": "Streaming Credit",
       "amount": 84,
       "frequency": "annual",
       "category": "entertainment",

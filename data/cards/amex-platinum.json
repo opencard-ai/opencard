@@ -159,7 +159,7 @@
   },
   "recurring_credits": [
     {
-      "name": "$200 Airline Fee Credit",
+      "name": "Airline Fee Credit",
       "amount": 200,
       "frequency": "annual",
       "category": "travel",
@@ -167,7 +167,7 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$300 Fine Hotels + Resorts Credit",
+      "name": "Fine Hotels + Resorts Credit",
       "amount": 300,
       "frequency": "semi_annual",
       "category": "travel",
@@ -175,7 +175,7 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$20 Digital Entertainment Credit",
+      "name": "Digital Entertainment Credit",
       "amount": 20,
       "frequency": "monthly",
       "category": "entertainment",
@@ -183,7 +183,7 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$10 Equinox Credit",
+      "name": "Equinox Credit",
       "amount": 10,
       "frequency": "monthly",
       "category": "other",
@@ -191,7 +191,7 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$10 Walmart+ Credit",
+      "name": "Walmart+ Credit",
       "amount": 10,
       "frequency": "monthly",
       "category": "shopping",
@@ -199,7 +199,7 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$100 Resy Credit",
+      "name": "Resy Credit",
       "amount": 100,
       "frequency": "quarterly",
       "category": "dining",
@@ -207,7 +207,7 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$75 lululemon Credit",
+      "name": "lululemon Credit",
       "amount": 75,
       "frequency": "quarterly",
       "category": "shopping",
@@ -215,7 +215,7 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$15 Uber Cash",
+      "name": "Uber Cash",
       "amount": 15,
       "frequency": "monthly",
       "category": "other",

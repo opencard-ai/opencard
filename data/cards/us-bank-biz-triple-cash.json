@@ -92,7 +92,7 @@
   },
   "recurring_credits": [
     {
-      "name": "$100 annual software credit",
+      "name": "annual software credit",
       "amount": 100,
       "frequency": "annual",
       "category": "other"

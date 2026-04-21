@@ -25,7 +25,6 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
       } catch {}
     }
 
-    // Listen for external saves (e.g., from other components)
     const handler = (e: CustomEvent) => {
       const ids: string[] = e.detail;
       setAdded(ids.includes(cardId));
@@ -38,6 +37,39 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
     return localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
   };
 
+  const handleRemove = async () => {
+    if (saving) return;
+    setSaving(true);
+
+    const subscribedEmail = getSubscribedEmail();
+
+    if (subscribedEmail) {
+      try {
+        const res = await fetch('/api/my-cards/remove', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: subscribedEmail, card_id: cardId }),
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          setAdded(false);
+          window.dispatchEvent(new CustomEvent('opencard_cards_updated', { detail: data.cards || [] }));
+          setSaving(false);
+          return;
+        }
+      } catch {}
+    }
+
+    // Fallback: localStorage
+    const myCards: string[] = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    const updated = myCards.filter((id: string) => id !== cardId);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    setAdded(false);
+    window.dispatchEvent(new CustomEvent('opencard_cards_updated', { detail: updated }));
+    setSaving(false);
+  };
+
   const handleAdd = async () => {
     if (saving) return;
     setSaving(true);
@@ -45,7 +77,6 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
     const subscribedEmail = getSubscribedEmail();
 
     if (subscribedEmail) {
-      // Cloud-first: save to Redis
       try {
         const res = await fetch('/api/my-cards/save', {
           method: 'POST',
@@ -61,7 +92,6 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
           setSaving(false);
           return;
         }
-        // If API fails (e.g., not really subscribed), fall through to localStorage
       } catch {}
     }
 
@@ -77,19 +107,29 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
     setSaving(false);
   };
 
-  const labels: Record<string, { add: string; added: string; saving: string }> = {
-    en: { add: '💳 Add to My Cards', added: '✓ Added to My Cards', saving: '...' },
-    zh: { add: '💳 加入我的卡片', added: '✓ 已加入我的卡片', saving: '...' },
-    es: { add: '💳 Agregar a Mis Tarjetas', added: '✓ Agregado a Mis Tarjetas', saving: '...' },
+  const labels: Record<string, { add: string; added: string; saving: string; remove: string }> = {
+    en: { add: '💳 Add to My Cards', added: '✓ Added', saving: '...', remove: '✕ Remove' },
+    zh: { add: '💳 加入我的卡片', added: '✓ 已加入', saving: '...', remove: '✕ 移除' },
+    es: { add: '💳 Agregar a Mis Tarjetas', added: '✓ Agregado', saving: '...', remove: '✕ Quitar' },
   };
 
   const langKey = (['en', 'zh', 'es'] as const).includes(lang as any) ? lang : 'en';
   const label = labels[langKey];
 
+  // When added, show a two-button row: "✓ Added" + "✕ Remove"
   if (added) {
     return (
-      <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-3 mt-4 text-center">
-        <span className="text-indigo-600 font-medium text-sm">{label.added}</span>
+      <div className="flex flex-row gap-2">
+        <div className="flex-1 flex items-center justify-center bg-indigo-50 border border-indigo-200 rounded-lg py-2.5 px-3 text-center">
+          <span className="text-indigo-600 font-semibold text-sm">{label.added}</span>
+        </div>
+        <button
+          onClick={handleRemove}
+          disabled={saving}
+          className="flex-1 bg-white border border-red-200 hover:border-red-400 hover:bg-red-50 disabled:opacity-60 text-red-500 font-semibold py-2.5 px-3 rounded-lg transition-colors text-sm"
+        >
+          {saving ? '...' : label.remove}
+        </button>
       </div>
     );
   }

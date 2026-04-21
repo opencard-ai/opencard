@@ -81,7 +81,7 @@
   },
   "recurring_credits": [
     {
-      "name": "$120 Disney Bundle Credit",
+      "name": "Disney Bundle Credit",
       "amount": 120,
       "frequency": "annual",
       "category": "entertainment",

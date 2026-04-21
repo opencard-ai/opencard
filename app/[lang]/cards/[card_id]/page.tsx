@@ -193,30 +193,36 @@ export default async function CardDetailPage({ params }: Props) {
             </div>
           </section>
 
-          {/* Annual Credits */}
-          {card.annual_credits.length > 0 && (
+          {/* Benefits & Credits */}
+          {(card.recurring_credits || []).filter(c => c.amount != null).length > 0 && (
             <section className="bg-white rounded-xl border border-slate-200 p-6">
               <h2 className="text-lg font-bold text-slate-900 mb-4">{l("detail.annualCredits")}</h2>
               <div className="space-y-3">
-                {card.annual_credits
-                      .filter((c) => c.amount > 0)
+                {(card.recurring_credits || [])
+                      .filter((c) => c.amount != null)
                       .map((credit, i) => (
                         <div
                           key={i}
                           className="flex items-start gap-3 py-2 border-b border-slate-100 last:border-0"
                         >
-                          <span className="text-green-600 font-bold text-sm shrink-0">
-                            ${credit.amount}
+                          <span className="text-green-600 font-bold text-sm shrink-0 w-12 text-right">
+                            {credit.amount && credit.amount > 0 ? `$${credit.amount}` : ''}
                           </span>
                     <div>
                       <span className="text-slate-800 font-medium text-sm">
                         {credit.name}
                       </span>
-                      <p className="text-xs text-slate-500 mt-0.5">
-                        {credit.description}
-                      </p>
+                      {credit.description && (
+                        <p className="text-xs text-slate-500 mt-0.5">
+                          {credit.description}
+                        </p>
+                      )}
                       <span className="text-xs text-slate-400">
-                        {credit.frequency}
+                        {credit.frequency === 'annual' || credit.frequency === 'cardmember_year' ? '/year' :
+                         credit.frequency === 'quarterly' ? '/quarter' :
+                         credit.frequency === 'monthly' ? '/month' :
+                         credit.frequency === 'semi_annual' ? '/6mo' :
+                         credit.frequency === 'per_stay' ? '/stay' : ''}
                       </span>
                     </div>
                   </div>
