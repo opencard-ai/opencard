@@ -23,48 +23,40 @@ function RateBar({ rate, maxRate }: { rate: number; maxRate: number }) {
   );
 }
 
+const INSURANCE_KEYS = [
+  { key: "trip_cancellation", label: "Trip Cancellation" },
+  { key: "trip_delay", label: "Trip Delay" },
+  { key: "rental_insurance", label: "Rental Insurance" },
+  { key: "purchase_protection", label: "Purchase Protection" },
+  { key: "return_protection", label: "Return Protection" },
+  { key: "extended_warranty", label: "Extended Warranty" },
+] as const;
+
 export default function CompareTable({ cards, lang }: CompareTableProps) {
   if (cards.length === 0) return null;
 
-  // Collect all earning categories from all cards
   const allCategories = [...new Set(cards.flatMap((c) => c.earning_rates.map((r) => r.category)))].sort();
   const maxRate = Math.max(...cards.flatMap((c) => c.earning_rates.map((r) => r.rate)), 1);
 
-  // Combine annual_credits and recurring_credits for each card
-  const getAllCredits = (card: CreditCard) => {
-    const credits: { name: string; amount: number; description: string }[] = [];
-    if (card.annual_credits) {
-      card.annual_credits.forEach((ac: AnnualCredit) => {
-        credits.push({ name: ac.name || "Annual Credit", amount: ac.amount, description: ac.description || "" });
-      });
-    }
-    if (card.recurring_credits) {
-      card.recurring_credits.forEach((rc: RecurringCredit) => {
-        credits.push({ name: rc.name || "Credit", amount: rc.amount, description: rc.description || "" });
-      });
-    }
-    return credits;
-  };
-
-  // Check if any card has FHR/THC
-  const hasFhrThc = cards.some((c) => c.fhr_thc?.fhr_eligible || c.fhr_thc?.thc_eligible);
-
-  // Labels
   const l = (() => {
     const en = {
       annualFee: "Annual Fee", welcomeBonus: "Welcome Offer",
       welcomeReq: "Spend Requirement", creditRequired: "Credit Required",
       foreignFee: "Foreign Fee", network: "Network",
-      earningRates: "Earning Rates", travelBenefits: "Travel Benefits",
-      annualCredits: "Annual Credits",
+      earningRates: "Earning Rates", annualCredits: "Annual Credits",
+      travelBenefits: "Travel Benefits",
+      hotelStatus: "Hotel Status", loungeAccess: "Lounge Access",
+      otherBenefits: "Other Benefits",
       insurance: "Insurance", noAf: "Waived", yes: "Yes", none: "—",
     };
     const zh = {
       annualFee: "年費", welcomeBonus: "開卡禮",
       welcomeReq: "消費門檻", creditRequired: "信用分要求",
       foreignFee: "國外手續費", network: "卡片類型",
-      earningRates: "回饋倍率", travelBenefits: "旅遊福利",
-      annualCredits: "年費回饋",
+      earningRates: "回饋倍率", annualCredits: "年費回饋",
+      travelBenefits: "旅遊福利",
+      hotelStatus: "飯店會籍", loungeAccess: "貴賓室",
+      otherBenefits: "其他福利",
       insurance: "保險", noAf: "免費", yes: "有", none: "無",
     };
     return { en, zh, es: en }[lang] || en;
@@ -109,75 +101,15 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
             ))}
           </tr>
 
-          {/* Annual Credits (combined from annual_credits + recurring_credits) */}
-          {cards.some((c) => getAllCredits(c).length > 0) && (
-            <tr className="bg-blue-50/30">
-              <td className="py-3 pr-4 font-medium text-blue-700 sticky left-0 bg-blue-50/30 z-10">{l.annualCredits}</td>
-              {cards.map((card) => {
-                const allCredits = getAllCredits(card);
-                return (
-                  <td key={card.card_id} className="py-3 px-4">
-                    {allCredits.length > 0 ? (
-                      <div className="flex flex-wrap gap-1">
-                        {allCredits.slice(0, 6).map((credit, i) => (
-                          <span key={i} className="inline-flex items-center gap-1 text-xs text-green-700 bg-green-50 px-1.5 py-0.5 rounded border border-green-200">
-                            <span className="font-medium">{formatCurrency(credit.amount)}</span>
-                            <span className="max-w-[120px] truncate">{credit.description.split(".")[0]}</span>
-                          </span>
-                        ))}
-                        {allCredits.length > 6 && (
-                          <span className="text-xs text-slate-500">+{allCredits.length - 6} more</span>
-                        )}
-                      </div>
-                    ) : (
-                      <span className="text-slate-400 text-xs">{l.none}</span>
-                    )}
-                  </td>
-                );
-              })}
-            </tr>
-          )}
-
-          {/* Welcome Offer */}
-          <tr className="bg-amber-50/50">
-            <td className="py-3 pr-4 font-medium text-amber-700 sticky left-0 bg-amber-50/50 z-10">{l.welcomeBonus}</td>
-            {cards.map((card) => (
-              <td key={card.card_id} className="py-3 px-4">
-                {card.welcome_offer ? (
-                  <div>
-                    <div className="font-bold text-amber-700">
-                      {card.welcome_offer.estimated_value != null && card.welcome_offer.estimated_value !== 0
-                        ? formatCurrency(card.welcome_offer.estimated_value)
-                        : card.welcome_offer.bonus_value || "—"}
-                    </div>
-                    {card.welcome_offer.description && (
-                      <div className="text-xs text-slate-500 mt-0.5">{card.welcome_offer.description}</div>
-                    )}
-                  </div>
-                ) : (
-                  <span className="text-slate-400 text-xs">{l.none}</span>
-                )}
-              </td>
-            ))}
-          </tr>
-
-          {/* Spend Requirement */}
-          <tr>
-            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10">{l.welcomeReq}</td>
-            {cards.map((card) => (
-              <td key={card.card_id} className="py-3 px-4 text-sm text-slate-700">
-                {card.welcome_offer?.spending_requirement
-                  ? `$${card.welcome_offer.spending_requirement.toLocaleString()} / ${card.welcome_offer.time_period_months || "?"} mo`
-                  : "—"}
-              </td>
-            ))}
-          </tr>
-
           {/* Credit Required */}
           <tr className="bg-slate-50/50">
             <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-slate-50/50 z-10">{l.creditRequired}</td>
             {cards.map((card) => (
-              <td key={card.card_id} className="py-3 px-4 text-sm">{card.credit_required}</td>
+              <td key={card.card_id} className="py-3 px-4 text-sm">
+                <span className="bg-slate-100 text-slate-700 rounded-full px-2 py-0.5">
+                  {card.credit_required}
+                </span>
+              </td>
             ))}
           </tr>
 
@@ -189,6 +121,38 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                 <span className={card.foreign_transaction_fee === 0 ? "text-green-600 font-medium" : "text-red-500"}>
                   {card.foreign_transaction_fee === 0 ? l.noAf : formatCurrency(card.foreign_transaction_fee)}
                 </span>
+              </td>
+            ))}
+          </tr>
+
+          {/* Welcome Offer */}
+          <tr className="bg-amber-50/50">
+            <td className="py-3 pr-4 font-medium text-amber-700 sticky left-0 bg-amber-50/50 z-10">{l.welcomeBonus}</td>
+            {cards.map((card) => (
+              <td key={card.card_id} className="py-3 px-4">
+                {card.welcome_offer ? (
+                  <div>
+                    {card.welcome_offer.bonus_points ? (
+                      <div className="font-bold text-amber-700">
+                        {card.welcome_offer.bonus_points.toLocaleString()} pts
+                      </div>
+                    ) : card.welcome_offer.estimated_value != null && card.welcome_offer.estimated_value !== 0 ? (
+                      <div className="font-bold text-amber-700">{formatCurrency(card.welcome_offer.estimated_value)}</div>
+                    ) : (
+                      <span className="text-slate-400 text-xs">{l.none}</span>
+                    )}
+                    {card.welcome_offer.description && (
+                      <div className="text-xs text-slate-500 mt-0.5">{card.welcome_offer.description}</div>
+                    )}
+                    {card.welcome_offer.spending_requirement && (
+                      <div className="text-xs text-slate-400 mt-0.5">
+                        Spend ${card.welcome_offer.spending_requirement.toLocaleString()} in {card.welcome_offer.time_period_months || 3} mo
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <span className="text-slate-400 text-xs">{l.none}</span>
+                )}
               </td>
             ))}
           </tr>
@@ -234,44 +198,99 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
             </tr>
           ))}
 
+          {/* Annual Credits (recurring_credits) */}
+          <tr>
+            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10 align-top">{l.annualCredits}</td>
+            {cards.map((card) => {
+              const credits = card.recurring_credits?.filter((c) => c.amount !== undefined && c.amount !== 0) || [];
+              return (
+                <td key={card.card_id} className="py-3 px-4 text-xs">
+                  {credits.length > 0 ? (
+                    <ul className="space-y-1">
+                      {credits.map((rc: RecurringCredit, i: number) => (
+                        <li key={i} className="text-slate-700">
+                          {rc.description}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <span className="text-slate-400">—</span>
+                  )}
+                </td>
+              );
+            })}
+          </tr>
+
           {/* Travel Benefits */}
           <tr className="bg-slate-50/50">
-            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-slate-50/50 z-10">{l.travelBenefits}</td>
+            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-slate-50/50 z-10 align-top">{l.travelBenefits}</td>
             {cards.map((card) => (
               <td key={card.card_id} className="py-3 px-4 text-xs">
-                {card.travel_benefits?.other_benefits && card.travel_benefits.other_benefits.length > 0 ? (
-                  <ul className="space-y-1">
-                    {card.travel_benefits.other_benefits.map((b: { name?: string; description: string }, i: number) => (
-                      <li key={i} className="text-slate-700">
-                        {b.name && <span className="font-medium">{b.name}: </span>}{b.description}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <span className="text-slate-400">—</span>
-                )}
+                <div className="space-y-3">
+                  {/* Hotel Status */}
+                  {card.travel_benefits?.hotel_status?.length ? (
+                    <div>
+                      <div className="text-xs font-semibold text-slate-500 uppercase mb-1">{l.hotelStatus}</div>
+                      {card.travel_benefits.hotel_status.map((hs, i) => (
+                        <div key={i} className="text-slate-700">
+                          {hs.program}{hs.tier && <span className="text-blue-600 ml-1 font-medium">{hs.tier}</span>}
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
+                  {/* Lounge Access */}
+                  {card.travel_benefits?.lounge_access ? (
+                    <div>
+                      <div className="text-xs font-semibold text-slate-500 uppercase mb-1">{l.loungeAccess}</div>
+                      {Object.entries(card.travel_benefits.lounge_access)
+                        .filter(([, v]) => v).length > 0 ? (
+                        Object.entries(card.travel_benefits.lounge_access)
+                          .filter(([, v]) => v)
+                          .map(([key]) => (
+                            <div key={key} className="text-slate-700">
+                              {key.replace(/_/g, " ").replace(/\b\w/g, (x) => x.toUpperCase())}
+                            </div>
+                          ))
+                      ) : null}
+                    </div>
+                  ) : null}
+                  {/* Other Benefits */}
+                  {card.travel_benefits?.other_benefits?.length ? (
+                    <div>
+                      <div className="text-xs font-semibold text-slate-500 uppercase mb-1">{l.otherBenefits}</div>
+                      {card.travel_benefits.other_benefits.map((ob, i) => (
+                        <div key={i} className="text-slate-700">
+                          {ob.name && <span className="font-medium">{ob.name}: </span>}
+                          {ob.description}
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
+                  {!card.travel_benefits?.hotel_status?.length &&
+                   !card.travel_benefits?.lounge_access &&
+                   !card.travel_benefits?.other_benefits?.length ? (
+                    <span className="text-slate-400">—</span>
+                  ) : null}
+                </div>
               </td>
             ))}
           </tr>
 
           {/* Insurance */}
           <tr>
-            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10">{l.insurance}</td>
+            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10 align-top">{l.insurance}</td>
             {cards.map((card) => (
-              <td key={card.card_id} className="py-3 px-4 text-xs">
-                <div className="space-y-1">
-                  {card.insurance?.rental_insurance && card.insurance.rental_insurance !== "None" && (
-                    <div className="text-slate-700">🚗 {card.insurance.rental_insurance}</div>
-                  )}
-                  {card.insurance?.trip_cancellation && <div className="text-slate-700">✈️ Trip Cancellation</div>}
-                  {card.insurance?.trip_delay && <div className="text-slate-700">⏰ Trip Delay</div>}
-                  {card.insurance?.extended_warranty && <div className="text-slate-700">🔧 Extended Warranty</div>}
-                  {card.insurance?.purchase_protection && <div className="text-slate-700">🛡️ Purchase Protection</div>}
-                  {!card.insurance?.rental_insurance && !card.insurance?.trip_cancellation &&
-                    !card.insurance?.trip_delay && !card.insurance?.extended_warranty &&
-                    !card.insurance?.purchase_protection && (
-                      <span className="text-slate-400">—</span>
-                    )}
+              <td key={card.card_id} className="py-3 px-4">
+                <div className="grid grid-cols-2 gap-1">
+                  {INSURANCE_KEYS.map(({ key, label }) => {
+                    const val = card.insurance?.[key as keyof typeof card.insurance];
+                    if (!val || val === "0" || val === "None" || val === "No") return null;
+                    return (
+                      <div key={key} className="text-xs text-slate-700">
+                        ✓ {val === true ? label : val}
+                      </div>
+                    );
+                  })}
                 </div>
               </td>
             ))}
