@@ -194,12 +194,12 @@ export default async function CardDetailPage({ params }: Props) {
           </section>
 
           {/* Benefits & Credits */}
-          {(card.recurring_credits || []).filter(c => c.amount != null).length > 0 && (
+          {(card.recurring_credits || []).filter(c => c.amount !== undefined).length > 0 && (
             <section className="bg-white rounded-xl border border-slate-200 p-6">
               <h2 className="text-lg font-bold text-slate-900 mb-4">{l("detail.annualCredits")}</h2>
               <div className="space-y-3">
                 {(card.recurring_credits || [])
-                      .filter((c) => c.amount != null)
+                      .filter((c) => c.amount !== undefined)
                       .map((credit, i) => (
                         <div
                           key={i}
