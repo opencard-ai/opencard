@@ -8,6 +8,28 @@ import type { Metadata } from "next";
 import { locales, t } from "@/lib/i18n";
 import { translateCategory } from "@/lib/category-translations";
 
+const CREDIT_LABELS: Record<string, string> = {
+  "Excellent": "Excellent",
+  "Good to Excellent": "Good → Excellent",
+  "Good": "Good",
+  "Good/Excellent": "Good/Excellent",
+  "Fair to Good": "Fair → Good",
+  "Fair to Excellent": "Fair → Excellent",
+  "Fair to Poor": "Fair → Poor",
+  "Fair/Poor": "Fair/Poor",
+  "Fair": "Fair",
+  "Poor": "Poor",
+  "Limited/No Credit History": "New Credit",
+  "New to Credit / Limited Credit": "New Credit",
+  "By Invitation Only": "Invitation Only",
+  "Fair to Good (Student)": "Fair → Good (Student)",
+  "Good to Excellent (invitation-only / pre-qualification required)": "Good → Excellent (Pre-qual)",
+};
+
+function creditLabel(raw: string): string {
+  return CREDIT_LABELS[raw] || raw;
+}
+
 export const dynamic = "force-static";
 export const revalidate = 3600;
 
@@ -72,8 +94,8 @@ export default async function CardDetailPage({ params }: Props) {
           <span className="text-xs bg-slate-100 text-slate-700 rounded-full px-3 py-1">
             {card.network}
           </span>
-          <span className="text-xs bg-slate-100 text-slate-700 rounded-full px-3 py-1">
-            {card.credit_required}
+          <span className="text-xs bg-slate-100 text-slate-700 rounded-full px-3 py-1" title={l("detail.creditRequired")}>
+            {creditLabel(card.credit_required)}
           </span>
           {card.foreign_transaction_fee === 0 && (
             <span className="text-xs bg-green-100 text-green-700 rounded-full px-3 py-1">
@@ -342,32 +364,6 @@ export default async function CardDetailPage({ params }: Props) {
           {/* AI Chat Widget */}
           <ChatWidget cardName={card.name} cardId={card.card_id} locale={locale} />
 
-          {/* Quick Info */}
-          <div className="bg-white rounded-xl border border-slate-200 p-5">
-            <h3 className="font-semibold text-slate-900 mb-3">{l("detail.quickInfo")}</h3>
-            <div className="space-y-2 text-sm">
-              <div className="flex justify-between">
-                <span className="text-slate-500">{l("card.issuer")}</span>
-                <span className="text-slate-800">{card.issuer}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-slate-500">{l("detail.network")}</span>
-                <span className="text-slate-800">{card.network}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-slate-500">{l("detail.creditRequired")}</span>
-                <span className="text-slate-800">{card.credit_required}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-slate-500">{l("detail.foreignFee")}</span>
-                <span className="text-slate-800">
-                  {card.foreign_transaction_fee === 0
-                    ? l("detail.none")
-                    : `${card.foreign_transaction_fee}%`}
-                </span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
