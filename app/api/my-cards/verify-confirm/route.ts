@@ -40,7 +40,8 @@ export async function GET(req: NextRequest) {
       );
     }
 
-    const { email_hash, email_for_send, email_hint } = JSON.parse(pendingData);
+    const parsed = typeof pendingData === "string" ? JSON.parse(pendingData) : pendingData;
+    const { email_hash, email_for_send, email_hint } = parsed;
     const userKey = `${USER_PREFIX}${email_hash}`;
 
     // Check if already confirmed
