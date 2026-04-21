@@ -110,12 +110,6 @@ interface RecurringCredit {
   description?: string;
 }
 
-interface AnnualCredit {
-  name: string;
-  amount: number | null;
-  frequency: string;
-  description?: string;
-}
 
 interface Card {
   card_id: string;
@@ -124,7 +118,6 @@ interface Card {
   annual_fee: number;
   network?: string;
   recurring_credits?: RecurringCredit[];
-  annual_credits?: AnnualCredit[];
   url?: string;
   image_url?: string;
 }
@@ -147,20 +140,6 @@ const CATEGORY_EMOJI: Record<string, string> = {
   streaming: "📺",
   other: "💳",
 };
-
-function transformAnnualCredits(ac: AnnualCredit[]): RecurringCredit[] {
-  return (ac || []).map(a => ({
-    name: a.name,
-    amount: a.amount ?? 0,
-    frequency: a.frequency === 'Anniversary' ? 'annual' : a.frequency.toLowerCase().replace(/ /g, '_'),
-    category: a.name.toLowerCase().includes('airline') ? 'travel' :
-              a.name.toLowerCase().includes('hotel') || a.name.toLowerCase().includes('night') || a.name.toLowerCase().includes('marriott') || a.name.toLowerCase().includes('hilton') ? 'travel' :
-              a.name.toLowerCase().includes('dining') ? 'dining' :
-              a.name.toLowerCase().includes('gas') ? 'gas' :
-              a.name.toLowerCase().includes('grocery') ? 'grocery' : 'other',
-    description: a.description,
-  }));
-}
 
 function getBenefitsThisMonth(credits: RecurringCredit[]) {
   const now = new Date();
@@ -469,7 +448,7 @@ export default function MyCardsPage({
         ) : (
           <div className="space-y-3">
             {selectedCardsList.map((card) => {
-              const allCredits = [...(card.recurring_credits || []), ...transformAnnualCredits(card.annual_credits || [])];
+              const allCredits = card.recurring_credits || [];
               const credits = allCredits;
               const thisMonth = getBenefitsThisMonth(credits);
               const upcoming = getUpcomingBenefits(credits);

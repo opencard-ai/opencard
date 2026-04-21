@@ -119,7 +119,7 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
   // When added, show a two-button row: "✓ Added" + "✕ Remove"
   if (added) {
     return (
-      <div className="flex flex-row gap-2">
+      <div className="flex flex-row gap-2 w-full">
         <div className="flex-1 flex items-center justify-center bg-indigo-50 border border-indigo-200 rounded-lg py-2.5 px-3 text-center">
           <span className="text-indigo-600 font-semibold text-sm">{label.added}</span>
         </div>
