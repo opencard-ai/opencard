@@ -133,7 +133,8 @@ const FREQUENCY_LABELS: Record<string, string> = {
   quarterly: "/quarter",
   semi_annual: "/6mo",
   annual: "/year",
-};
+  per_stay: "/stay",
+};;
 
 const CATEGORY_EMOJI: Record<string, string> = {
   travel: "✈️",
@@ -201,7 +202,7 @@ function getUpcomingBenefits(credits: RecurringCredit[]) {
 
 function formatFrequency(freq: string, lang: string): string {
   const labels: Record<string, Record<string, string>> = {
-    en: { monthly: "/month", quarterly: "/quarter", semi_annual: "/6mo", annual: "/year", cardmember_year: "/year" },
+    en: { monthly: "/month", quarterly: "/quarter", semi_annual: "/6mo", annual: "/year", per_stay: "/stay", cardmember_year: "/year" },
     zh: { monthly: "/月", quarterly: "/季", semi_annual: "/半年", annual: "/年", cardmember_year: "/年" },
     es: { monthly: "/mes", quarterly: "/trimestre", semi_annual: "/6mes", annual: "/año", cardmember_year: "/año" },
   };

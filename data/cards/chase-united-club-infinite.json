@@ -1,6 +1,6 @@
 {
   "card_id": "chase-united-club-infinite",
-  "name": "United Club℠ Visa Infinite Card",
+  "name": "United Club\u2120 Visa Infinite Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 695,
@@ -56,7 +56,7 @@
     "other_benefits": [
       {
         "name": "United Club Membership",
-        "description": "United Club all-access membership — unlimited entry to United Club lounges worldwide and Star Alliance lounges when flying United or partners"
+        "description": "United Club all-access membership \u2014 unlimited entry to United Club lounges worldwide and Star Alliance lounges when flying United or partners"
       },
       {
         "name": "Two Free Checked Bags",
@@ -121,11 +121,31 @@
       "notes": "Chase/United 2025 refresh press release"
     }
   ],
-  "notes": "Ultra-premium United card with full United Club access ($650+ value alone). $695 AF (increased from $525 in 2025). Total annual credits (Instacart $300 + Streaming $120 + Rideshare $150 = $570) significantly offset the AF for those who use them. PQP earnings (up to 10,000/year) can fast-track United 1K elite status. Primary competitor is United Club Business Card. Both are essentially the same card (Club membership) — personal version vs business version.",
+  "notes": "Ultra-premium United card with full United Club access ($650+ value alone). $695 AF (increased from $525 in 2025). Total annual credits (Instacart $300 + Streaming $120 + Rideshare $150 = $570) significantly offset the AF for those who use them. PQP earnings (up to 10,000/year) can fast-track United 1K elite status. Primary competitor is United Club Business Card. Both are essentially the same card (Club membership) \u2014 personal version vs business version.",
   "last_updated": "2026-04-16T13:41:49.998Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Rideshare Credit",
+      "amount": 150,
+      "frequency": "Annual",
+      "category": "other"
+    },
+    {
+      "name": "Instacart Credit",
+      "amount": 75,
+      "frequency": "Quarterly",
+      "category": "other"
+    },
+    {
+      "name": "Streaming Credit",
+      "amount": 30,
+      "frequency": "Quarterly",
+      "category": "other"
+    }
+  ]
 }

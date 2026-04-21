@@ -1,6 +1,6 @@
 {
   "card_id": "boa-premium-rewards",
-  "name": "Bank of America® Premium Rewards® Credit Card",
+  "name": "Bank of America\u00ae Premium Rewards\u00ae Credit Card",
   "issuer": "Bank of America",
   "network": "Visa",
   "annual_fee": 95,
@@ -81,5 +81,13 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Travel Statement Credit",
+      "amount": 200,
+      "frequency": "Annual",
+      "category": "travel"
+    }
+  ]
 }

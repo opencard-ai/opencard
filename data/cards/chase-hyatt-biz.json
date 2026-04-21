@@ -116,5 +116,13 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Anniversary Free Night",
+      "amount": 15000,
+      "frequency": "Annual",
+      "category": "other"
+    }
+  ]
 }

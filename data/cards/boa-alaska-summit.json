@@ -1,6 +1,6 @@
 {
   "card_id": "boa-alaska-summit",
-  "name": "Alaska Airlines Atmos™ Summit Visa Infinite® Card",
+  "name": "Alaska Airlines Atmos\u2122 Summit Visa Infinite\u00ae Card",
   "issuer": "Bank of America",
   "network": "Visa",
   "annual_fee": 395,
@@ -85,5 +85,31 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "8 Alaska Lounge Passes",
+      "amount": null,
+      "frequency": "annual",
+      "category": "airline"
+    },
+    {
+      "name": "Elite Status Boost",
+      "amount": null,
+      "frequency": "annual",
+      "category": "other"
+    },
+    {
+      "name": "10,000 Anniversary Points",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "other"
+    },
+    {
+      "name": "Global Companion Award",
+      "amount": null,
+      "frequency": "annual",
+      "category": "other"
+    }
+  ]
 }

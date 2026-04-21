@@ -109,5 +109,19 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "United TravelBank Cash",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "airline"
+    },
+    {
+      "name": "Renowned Hotels and Resorts Credit",
+      "amount": 150,
+      "frequency": "annual",
+      "category": "hotel"
+    }
+  ]
 }

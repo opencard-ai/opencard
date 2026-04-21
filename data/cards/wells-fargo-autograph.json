@@ -1,6 +1,6 @@
 {
   "card_id": "wells-fargo-autograph",
-  "name": "Wells Fargo Autograph Visa Signature® Card",
+  "name": "Wells Fargo Autograph Visa Signature\u00ae Card",
   "issuer": "Wells Fargo",
   "network": "Visa",
   "annual_fee": 0,
@@ -108,5 +108,12 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": []
+  "recurring_credits": [
+    {
+      "name": "$50 annual airline credit",
+      "amount": 50,
+      "frequency": "Annual",
+      "category": "airline"
+    }
+  ]
 }

@@ -92,7 +92,7 @@
     },
     {
       "url": "https://www.doctorofcredit.com/hsbc-premier-elite-card-review-60000-points-signup-bonus-and-495-annual-fee/",
-      "notes": "Doctor of Credit — card details"
+      "notes": "Doctor of Credit \u2014 card details"
     }
   ],
   "last_updated": "2026-04-16T13:41:49.984Z",
@@ -102,5 +102,19 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Airline incidental credit",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "airline"
+    },
+    {
+      "name": "Global Entry/TSA PreCheck",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "other"
+    }
+  ]
 }

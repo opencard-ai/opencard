@@ -1,6 +1,6 @@
 {
   "card_id": "my-gm-rewards-mastercard",
-  "name": "My GM Rewards Card Mastercard®",
+  "name": "My GM Rewards Card Mastercard\u00ae",
   "issuer": "Goldman Sachs",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -80,5 +80,13 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "GM tier upgrade",
+      "amount": 0,
+      "frequency": "Ongoing",
+      "category": "other"
+    }
+  ]
 }

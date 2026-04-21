@@ -1,6 +1,6 @@
 {
   "card_id": "luxury-card-black",
-  "name": "Luxury Card Mastercard® Black Card™",
+  "name": "Luxury Card Mastercard\u00ae Black Card\u2122",
   "issuer": "Barclays",
   "network": "Mastercard",
   "annual_fee": 699,
@@ -85,5 +85,13 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Annual Airline Credit",
+      "amount": 50,
+      "frequency": "Annual",
+      "category": "airline"
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "card_id": "boa-alaska-ascent",
-  "name": "Alaska Airlines Atmos™ Ascent Visa Signature® Card",
+  "name": "Alaska Airlines Atmos\u2122 Ascent Visa Signature\u00ae Card",
   "issuer": "Bank of America",
   "network": "Visa",
   "annual_fee": 95,
@@ -79,5 +79,25 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Annual Companion Fare",
+      "amount": 122,
+      "frequency": "annual",
+      "category": "other"
+    },
+    {
+      "name": "Free Checked Bag",
+      "amount": null,
+      "frequency": "annual",
+      "category": "other"
+    },
+    {
+      "name": "Lounge Discount",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "other"
+    }
+  ]
 }

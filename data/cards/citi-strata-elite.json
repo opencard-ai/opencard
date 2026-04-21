@@ -1,6 +1,6 @@
 {
   "card_id": "citi-strata-elite",
-  "name": "Citi Strata Elite℠ Card",
+  "name": "Citi Strata Elite\u2120 Card",
   "issuer": "Citi",
   "network": "Visa",
   "annual_fee": 595,
@@ -10,7 +10,7 @@
     "spending_requirement": 5,
     "time_period_months": 3,
     "bonus_points": 75000,
-    "description": "75,000 ThankYou® Points",
+    "description": "75,000 ThankYou\u00ae Points",
     "point_program": "Citi",
     "estimated_value": 900
   },
@@ -44,7 +44,7 @@
       "description": "Annual credit for hotel bookings made through CitiTravel"
     },
     {
-      "name": "Priority Pass™ Select Membership",
+      "name": "Priority Pass\u2122 Select Membership",
       "amount": null,
       "frequency": "annual",
       "description": "Unlimited lounge access for cardholder and guests"
@@ -90,5 +90,31 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "$300 Annual Hotel Benefit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "hotel"
+    },
+    {
+      "name": "Priority Pass\u2122 Select Membership",
+      "amount": null,
+      "frequency": "annual",
+      "category": "other"
+    },
+    {
+      "name": "AA Admirals Club Passes",
+      "amount": null,
+      "frequency": "annual",
+      "category": "other"
+    },
+    {
+      "name": "Global Entry or TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "other"
+    }
+  ]
 }

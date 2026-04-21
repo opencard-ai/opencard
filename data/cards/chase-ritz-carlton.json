@@ -81,11 +81,11 @@
     "thc_eligible": false
   },
   "insurance": {
-    "rental_insurance": "Primary Auto Rental Collision Damage Waiver — covers rental vehicles worldwide, up to $75,000.",
+    "rental_insurance": "Primary Auto Rental Collision Damage Waiver \u2014 covers rental vehicles worldwide, up to $75,000.",
     "trip_delay": true,
     "trip_delay_details": "Reimbursement of up to $500 per ticket for trip delays over 6 hours (requires tickets purchased with the card).",
     "trip_cancellation": true,
-    "trip_cancellation_details": "Trip Cancellation Insurance — up to $10,000 per person / $20,000 per trip for covered cancellations.",
+    "trip_cancellation_details": "Trip Cancellation Insurance \u2014 up to $10,000 per person / $20,000 per trip for covered cancellations.",
     "purchase_protection": true,
     "purchase_protection_details": "Covers new purchases against damage or theft for 120 days, up to $50,000 per claim / $100,000 per year.",
     "extended_warranty": true,
@@ -112,5 +112,19 @@
   },
   "discontinued": true,
   "discontinued_notes": "Discontinued to new applicants. Existing cardholders may keep the card open. Marriott Bonvoy Boundless is a similar alternative with lower annual fee ($95).",
-  "last_updated": "2026-04-17T19:04:00.000Z"
+  "last_updated": "2026-04-17T19:04:00.000Z",
+  "recurring_credits": [
+    {
+      "name": "$300 Travel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "travel"
+    },
+    {
+      "name": "Priority Pass Membership",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "other"
+    }
+  ]
 }

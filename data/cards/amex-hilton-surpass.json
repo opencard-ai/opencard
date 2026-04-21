@@ -115,7 +115,7 @@
     },
     {
       "url": "https://onemileatatime.com/deals/hilton-amex-card-bonus/",
-      "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold→Diamond path at $40K, National status"
+      "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold\u2192Diamond path at $40K, National status"
     }
   ],
   "last_updated": "2026-04-16T13:41:49.948Z",
@@ -123,5 +123,19 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Hilton Credits",
+      "amount": 200,
+      "frequency": "quarterly",
+      "category": "hotel"
+    },
+    {
+      "name": "Free Night Reward (spending)",
+      "amount": null,
+      "frequency": "annually",
+      "category": "other"
+    }
+  ]
 }

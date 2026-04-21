@@ -1,6 +1,6 @@
 {
   "card_id": "southwest-rapid-rewards-premier",
-  "name": "Southwest Rapid Rewards® Premier Credit Card",
+  "name": "Southwest Rapid Rewards\u00ae Premier Credit Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 149,
@@ -12,7 +12,7 @@
     "bonus_points": 60000,
     "estimated_value": 600,
     "point_program": "Southwest Rapid Rewards",
-    "description": "60,000 bonus Rapid Rewards points after spending $3,000 in first 3 months (worth ~$894 toward Southwest flights at 1.49¢/point)"
+    "description": "60,000 bonus Rapid Rewards points after spending $3,000 in first 3 months (worth ~$894 toward Southwest flights at 1.49\u00a2/point)"
   },
   "earning_rates": [
     {
@@ -37,7 +37,7 @@
       "name": "Anniversary Points",
       "amount": 6000,
       "frequency": "Annual",
-      "description": "6,000 Rapid Rewards anniversary points each year (worth ~$90 at 1.5¢/point)"
+      "description": "6,000 Rapid Rewards anniversary points each year (worth ~$90 at 1.5\u00a2/point)"
     },
     {
       "name": "EarlyBird Check-In",
@@ -93,5 +93,19 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Anniversary Points",
+      "amount": 6000,
+      "frequency": "Annual",
+      "category": "other"
+    },
+    {
+      "name": "EarlyBird Check-In",
+      "amount": 1,
+      "frequency": "Annual",
+      "category": "other"
+    }
+  ]
 }
