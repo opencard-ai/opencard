@@ -1,6 +1,101 @@
 {
   "items": [
     {
+      "title": "Bank of America & Alaska Air Announce Expansion Of Partnership (New Cards/Refreshes?)",
+      "url": "https://www.doctorofcredit.com/bank-of-america-alaska-air-announce-expansion-of-partnership-new-cards-refreshes/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "alaska airlines",
+        "atmos",
+        "bank of america",
+        "bank of america alaska",
+        "bank of america alaska airlines",
+        "bank of america atmos",
+        "barclays",
+        "barclays hawaiian",
+        "hawaiian",
+        "hawaiian airlines"
+      ],
+      "ts": "2026-04-21T00:50:34.000Z",
+      "title_en": "Bank of America & Alaska Air Announce Expansion Of Partnership (New Cards/Refreshes?)",
+      "summary_en": "",
+      "title_zh": "美國銀行與阿拉斯加航空宣佈擴大合作夥伴關係 (新卡片/更新？)",
+      "summary_zh": "美國銀行與阿拉斯加航空宣布擴大雙方合作關係，可能推出新的聯名信用卡或更新現有卡片。",
+      "title_es": "Bank of America y Alaska Air anuncian expansión de su asociación (¿Nuevas tarjetas/actualizaciones?)",
+      "summary_es": "Bank of America y Alaska Air amplían su alianza para ofrecer nuevas tarjetas de crédito."
+    },
+    {
+      "title": "JAL & ANA Announce Fuel Surcharges To Almost Double (Tickets Booked In May And June)",
+      "url": "https://www.doctorofcredit.com/jal-ana-announce-fuel-surcharges-to-almost-double-tickets-booked-in-may-and-june/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Travel",
+        "ana",
+        "fuel surcharges",
+        "japan airlines"
+      ],
+      "ts": "2026-04-21T00:40:53.000Z",
+      "title_en": "JAL & ANA Announce Fuel Surcharges To Almost Double (Tickets Booked In May And June)",
+      "summary_en": "",
+      "title_zh": "日航與全日空宣布燃油附加費幾乎翻倍 (5月及6月機票)",
+      "summary_zh": "日本航空與全日空宣布燃油附加費將近翻漲，適用於5月及6月預訂的機票。",
+      "title_es": "JAL y ANA announce recargos de combustible que casi se duplican (billetes comprados en mayo y junio)",
+      "summary_es": "Los recargos de combustible de JAL y ANA prácticamente se duplicarán para billetes comprados en mayo y junio."
+    },
+    {
+      "title": "[YMMV] Best Buy: $5/$10 Rewards Certificate",
+      "url": "https://www.doctorofcredit.com/ymmv-best-buy-10-rewards-certificate-2/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "best buy"
+      ],
+      "ts": "2026-04-21T00:30:27.000Z",
+      "title_en": "[YMMV] Best Buy: $5/$10 Rewards Certificate",
+      "summary_en": "",
+      "title_zh": "[優惠視情況] 百思買：5美元/10美元獎勵券",
+      "summary_zh": "百思買提供5美元或10美元獎勵券，優惠程度依消費情況而定。",
+      "title_es": "[YMMV] Best Buy: Certificado de recompensa de $5/$10",
+      "summary_es": "Best Buy ofrece certificados de recompensa de $5 o $10."
+    },
+    {
+      "title": "Target In Store Events: Free Pampers (4/25) & Free Baby Box (4/26)",
+      "url": "https://www.doctorofcredit.com/target-in-store-events-free-pampers-4-25-free-baby-box-4-26/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "baby",
+        "diapers",
+        "freebies",
+        "pampers",
+        "target"
+      ],
+      "ts": "2026-04-20T23:54:25.000Z",
+      "title_en": "Target In Store Events: Free Pampers (4/25) & Free Baby Box (4/26)",
+      "summary_en": "",
+      "title_zh": "Target實體店活動：免費幫寶適紙尿布 (4/25) & 免費寶寶禮盒 (4/26)",
+      "summary_zh": "Target實體門市舉辦免費送活動，4月25日送幫寶適紙尿布，4月26日送寶寶禮盒。",
+      "title_es": "Eventos en tienda Target: Pañales gratis (25/4) y Caja de bebé gratis (26/4)",
+      "summary_es": "Target regalará pañales y una caja de bebé en sus eventos en tienda."
+    },
+    {
+      "title": "Postmates: $10 Off $25 With Promo Code GOTMUNCHIES (Nationwide)",
+      "url": "https://www.doctorofcredit.com/postmates-15-off-45-with-promo-code-dodgers/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "postmates"
+      ],
+      "ts": "2026-04-20T23:43:13.000Z",
+      "title_en": "Postmates: $10 Off $25 With Promo Code GOTMUNCHIES (Nationwide)",
+      "summary_en": "",
+      "title_zh": "Postmates：使用優惠碼GOTMUNCHIES滿25美元減10美元 (全國)",
+      "summary_zh": "Postmates外送平台推出優惠，使用GOTMUNCHIES碼消費滿25美元可減10美元，全國有效。",
+      "title_es": "Postmates: $10 de descuento en $25 con código promocional GOTMUNCHIES (a nivel nacional)",
+      "summary_es": "Postmates ofrece $10 de descuento en pedidos de $25 con el código GOTMUNCHIES."
+    },
+    {
       "title": "Staples: No Purchase Fee On $200 Visa Gift Cards (4/19-4/25)",
       "url": "https://www.doctorofcredit.com/staples-no-purchase-fee-on-200-visa-gift-cards-10-31-11-6-limit-5/",
       "source": "Doctor of Credit",
@@ -12,10 +107,10 @@
       "ts": "2026-04-20T17:52:28.000Z",
       "title_en": "Staples: No Purchase Fee On $200 Visa Gift Cards (4/19-4/25)",
       "summary_en": "",
-      "title_zh": "Staples：$200 Visa 禮品卡免購買手續費 (4/19-4/25)",
-      "summary_zh": "在 4 月 19 日至 25 日期間，Staples 提供 $200 Visa 禮品卡免手續費優惠。",
-      "title_es": "Staples: Sin comisión de compra en tarjetas de regalo Visa de $200 (4/19-4/25)",
-      "summary_es": "Staples ofrece tarjetas de regalo Visa de $200 sin comisión de compra hasta el 25 de abril."
+      "title_zh": "Staples：200美元Visa禮品卡免購買手續費 (4/19-4/25)",
+      "summary_zh": "Staples門市推出200美元Visa禮品卡限時免手續費優惠，活動至4月25日截止。",
+      "title_es": "Staples: Sin tarifa de compra en tarjetas de regalo Visa de $200 (19/4-25/4)",
+      "summary_es": "Staples permite adquirir tarjetas de regalo Visa de $200 sin comisión."
     },
     {
       "title": "[Targeted] Chase Offers: Save 10% At Marriott Hotels",
@@ -29,8 +124,8 @@
       "ts": "2026-04-20T17:48:53.000Z",
       "title_en": "[Targeted] Chase Offers: Save 10% At Marriott Hotels",
       "summary_en": "",
-      "title_zh": "[目標] Chase 優惠：Marriott 飯店享 10% 折扣",
-      "summary_zh": "使用 Chase 信用卡在 Marriott 飯店住宿可享 10% 折扣。",
+      "title_zh": "[限定] Chase優惠：萬豪酒店享10%折扣",
+      "summary_zh": "Chase銀行針對特定用戶提供萬豪酒店住宿10%折扣優惠。",
       "title_es": "[Dirigido] Ofertas de Chase: Ahorra 10% en hoteles Marriott",
       "summary_es": "Chase ofrece un 10% de descuento en hoteles Marriott."
     },
@@ -46,10 +141,10 @@
       "ts": "2026-04-20T17:02:23.000Z",
       "title_en": "AmEx Offers: Get 10-45% Back On UPS Shipping Online (Up To $1,500 Cashback)",
       "summary_en": "",
-      "title_zh": "AmEx 優惠：UPS 線上寄件可獲得 10-45% 回饋 (最高 $1,500 現金回饋)",
-      "summary_zh": "AMEX 卡的持卡人在 UPS 官網寄送包裹可獲得 10% 至 45% 的現金回饋，最高上限 $1,500。",
-      "title_es": "Ofertas de AmEx: Obtén entre 10% y 45% de reembolso en envíos de UPS en línea (hasta $1,500 en efectivo)",
-      "summary_es": "AmEx ofrece entre 10% y 45% de reembolso en envíos de UPS, con un máximo de $1,500."
+      "title_zh": "AmEx優惠：UPS郵寄可享10-45%回饋 (最高1,500美元現金回饋)",
+      "summary_zh": "美國運通提供UPS線上郵寄回饋優惠，滿50美元可享10-45%回饋，最高可獲得1,500美元現金回饋。",
+      "title_es": "AmEx ofrece: Obtén entre 10% y 45% de reembolso en envíos UPS en línea (hasta $1,500)",
+      "summary_es": "American Express devuelve entre 10% y 45% en envíos por UPS, con un reembolso máximo de $1,500."
     },
     {
       "title": "Amex Offers: Air France/KLM, Get $250 with $1,250 Spend",
@@ -61,10 +156,10 @@
       "ts": "2026-04-20T17:00:47.000Z",
       "title_en": "Amex Offers: Air France/KLM, Get $250 with $1,250 Spend",
       "summary_en": "",
-      "title_zh": "Amex 優惠：Air France/KLM，消费 $1,250 可獲得 $250",
-      "summary_zh": "使用 Amex 信用卡購買 Air France 或 KLM 機票，消费滿 $1,250 可獲 $250 回饋。",
-      "title_es": "Ofertas de AmEx: Air France/KLM, Obtén $250 al gastar $1,250",
-      "summary_es": "AmEx ofrece $250 de recompensa al gastar $1,250 en Air France o KLM."
+      "title_zh": "AmEx優惠：法航/荷航，消費滿1,250美元獲250美元",
+      "summary_zh": "美國運通信用卡持有人在法航或荷航消費1,250美元可獲得250美元回饋。",
+      "title_es": "Amex ofrece: Air France/KLM, Obtén $250 al gastar $1,250",
+      "summary_es": "American Express otorga $250 de crédito por gastar $1,250 en Air France/KLM."
     },
     {
       "title": "Discover To Disconnect Bank Prepaid Accounts Linked To Discover On 5/29/26",
@@ -76,10 +171,10 @@
       "ts": "2026-04-20T16:00:32.000Z",
       "title_en": "Discover To Disconnect Bank Prepaid Accounts Linked To Discover On 5/29/26",
       "summary_en": "",
-      "title_zh": "Discover 將於 2026 年 5 月 29 日切斷與銀行預付帳戶的連結",
-      "summary_zh": "Discover 計劃在 2026 年 5 月 29 日停止與部分銀行預付帳戶的關聯。",
-      "title_es": "Discover desconectará las cuentas bancarias prepagas vinculadas a Discover el 29/5/26",
-      "summary_es": "Discover eliminará las cuentas bancarias prepagas vinculadas el 29 de mayo de 2026."
+      "title_zh": "Discover將於2026年5月29日中斷與銀行預付帳戶的連結",
+      "summary_zh": "Discover銀行宣布將於2026年5月29日中斷與銀行預付帳戶的連結服務。",
+      "title_es": "Discover desconectará cuentas bancarias prepago vinculadas a Discover el 29/5/26",
+      "summary_es": "Discover eliminará las cuentas prepago vinculadas el 29 de mayo de 2026."
     },
     {
       "title": "Staples.com: Save 15% On Chipotle, Ulta and more",
@@ -93,10 +188,10 @@
       "ts": "2026-04-20T15:39:24.000Z",
       "title_en": "Staples.com: Save 15% On Chipotle, Ulta and more",
       "summary_en": "",
-      "title_zh": "Staples.com：Chipotle、Ulta 等可享 15% 折扣",
-      "summary_zh": "在 Staples.com 官網購買 Chipotle、Ulta 等品牌商品可獲得 15% 的折扣。",
+      "title_zh": "Staples.com：Chipotle、Ulta等享15%折扣",
+      "summary_zh": "Staples網站推出Chipotle、Ulta等餐飲和美妝品牌15%折扣優惠。",
       "title_es": "Staples.com: Ahorra 15% en Chipotle, Ulta y más",
-      "summary_es": "Staples.com ofrece 15% de descuento en Chipotle, Ulta y otras marcas."
+      "summary_es": "Staples.com ofrece un 15% de descuento en Chipotle, Ulta y otras marcas."
     },
     {
       "title": "Trader Joe’s Class Action Settlement: FACTA Violation [3/5/19 – 7/19/19]",
@@ -110,10 +205,10 @@
       "ts": "2026-04-20T15:00:38.000Z",
       "title_en": "Trader Joe’s Class Action Settlement: FACTA Violation [3/5/19 – 7/19/19]",
       "summary_en": "",
-      "title_zh": "Trader Joe’s 集體訴訟和解：FACTA 違規 [3/5/19 – 7/19/19]",
-      "summary_zh": "Trader Joe’s 因違反 FACTA 法規，將在 2019 年 3 月 5 日至 7 月 19 日期間進行集體訴訟和解。",
-      "title_es": "Acuerdo de acción colectiva de Trader Joe’s: Violación de FACTA [3/5/19 – 7/19/19]",
-      "summary_es": "Trader Joe’s paga en un acuerdo por violación de FACTA entre marzo y julio de 2019."
+      "title_zh": "Trader Joe's集體訴訟和解：FACTA違規 [2019年3月5日 – 2019年7月19日]",
+      "summary_zh": "Trader Joe's因違反FACTA法規達成集體訴訟和解，受影響的顧客可獲得賠償。",
+      "title_es": "Acuerdo extrajudicial de Trader Joe’s por violación de FACTA [5/3/19 – 19/7/19]",
+      "summary_es": "Trader Joe’s ha llegado a un acuerdo por violar la ley FACTA en el período indicado."
     },
     {
       "title": "(Revamped) Citi AT&T Points Plus Card: Easy $250 Signup Bonus, $20 Monthly Credit, No Fee",
@@ -130,10 +225,10 @@
       "ts": "2026-04-20T14:18:05.000Z",
       "title_en": "(Revamped) Citi AT&T Points Plus Card: Easy $250 Signup Bonus, $20 Monthly Credit, No Fee",
       "summary_en": "",
-      "title_zh": "(新版) Citi AT&T Points Plus 卡：輕鬆獲得 $250 註冊獎金、每月 $20 消費回饋、無年費",
-      "summary_zh": "申請 Citi AT&T Points Plus 信用卡可獲得 $250 註冊獎金，每月消費可獲 $20 回饋，且免年費。",
-      "title_es": "(Renovada) Tarjeta Citi AT&T Points Plus: Bono fácil de $250 por inscripción, crédito mensual de $20, sin comisión",
-      "summary_es": "La tarjeta Citi AT&T Points Plus ofrece un bono de $250, $20 mensuales y sin cuota."
+      "title_zh": "(煥新) 花旗AT&T Points Plus卡：輕鬆獲250美元註冊獎金、每月20美元回饋、免年費",
+      "summary_zh": "花旗銀行AT&T Points Plus信用卡煥新推出，無需消費門檻即可獲得250美元註冊獎金及每月20美元回饋。",
+      "title_es": "(Renovada) Tarjeta Citi AT&T Points Plus: Bono fácil de $250 por registro, crédito mensual de $20, sin cargo",
+      "summary_es": "Citi lanza la tarjeta AT&T Points Plus con un bono de $250, crédito mensual de $20 y sin cuota."
     },
     {
       "title": "National Nurses Week Freebies: Sonny’s BBQ (5/4 – 5/6)",
@@ -148,10 +243,10 @@
       "ts": "2026-04-20T14:00:27.000Z",
       "title_en": "National Nurses Week Freebies: Sonny’s BBQ (5/4 – 5/6)",
       "summary_en": "",
-      "title_zh": "國家護士週免費餐點：Sonny’s BBQ (5/4 – 5/6)",
-      "summary_zh": "在國家護士週（5 月 4 日至 6 日）期間，Sonny’s BBQ 為護士提供免費餐點。",
-      "title_es": "Semana Nacional de Enfermeros gratis: Sonny’s BBQ (5/4 – 5/6)",
-      "summary_es": "Sonny’s BBQ ofrece gratuitos durante la Semana Nacional de Enfermeros del 4 al 6 de mayo."
+      "title_zh": "護士節免費優惠：Sonny's BBQ (5/4 – 5/6)",
+      "summary_zh": "全國護士節期間，Sonny's BBQ為護理人員提供免費餐點優惠。",
+      "title_es": "Semana Nacional de Enfermeras: GratuitOS de Sonny’s BBQ (4/5 – 6/5)",
+      "summary_es": "Sonny’s BBQ ofrece alimentos gratis del 4 al 6 de mayo para celebrar a las enfermeras."
     },
     {
       "title": "Chipotle: Wear A Hockey Jersey & Get BOGO (4/20 After 3PM)",
@@ -164,104 +259,11 @@
       "ts": "2026-04-20T13:30:38.000Z",
       "title_en": "Chipotle: Wear A Hockey Jersey & Get BOGO (4/20 After 3PM)",
       "summary_en": "",
-      "title_zh": "Chipotle：穿著冰球球衣可獲免費餐點 (4/20 下午 3 點後)",
-      "summary_zh": "在 4 月 20 日下午 3 點後，穿著冰球球衣到 Chipotle 可獲免費餐點（買一送一）。",
-      "title_es": "Chipotle: Usa una camiseta de hockey y obtén BOGO (4/20 Después de las 3PM)",
-      "summary_es": "Chipotle regala una compra (BOGO) al usar una camiseta de hockey el 20 de abril después de las 15:00."
-    },
-    {
-      "title": "Best Posts Last Week: $0.95 Off Per Gallon, $900 Chase Checking & Charity Partner",
-      "url": "https://www.doctorofcredit.com/best-posts-last-week-0-95-off-per-gallon-900-chase-checking-charity-partner/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Sunday Roundup"
-      ],
-      "ts": "2026-04-20T13:00:20.000Z",
-      "title_en": "Best Posts Last Week: $0.95 Off Per Gallon, $900 Chase Checking & Charity Partner",
-      "summary_en": "",
-      "title_zh": "上週最佳文章：每加侖 $0.95 折扣、$900 Chase 帳戶及慈善合作夥伴",
-      "summary_zh": "上週熱門文章摘要包括油價每加侖降 $0.95、Chase 支票帳戶 $900 獎金及與慈善機構合作等優惠。",
-      "title_es": "Mejores publicaciones de la semana pasada: $0.95 por galón, $900 Chase cuenta corriente y socio benéfico",
-      "summary_es": "Lo mejor de la semana incluye descuentos de $0.95 por galón, $900 de Chase y un socio benéfico."
-    },
-    {
-      "title": "[IA, IL, IN, KS, MI, MN, MO, OH and WI only] Associated Bank $600 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/il-in-mn-wi-only-associated-bank-500-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "credit card funding",
-        "direct deposit required",
-        "IL bank bonuses",
-        "in bank bonuses",
-        "ks bank bonuses",
-        "mi bank bonuses",
-        "mn bank bonuses",
-        "mo bank bonuses",
-        "oh bank bonuses",
-        "soft pull",
-        "wi bank bonuses"
-      ],
-      "ts": "2026-04-20T12:00:40.000Z",
-      "title_en": "[IA, IL, IN, KS, MI, MN, MO, OH and WI only] Associated Bank $600 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[僅限 IA、IL、IN、KS、MI、MN、MO、OH 和 WI] Associated Bank $600 支票帳戶獎金",
-      "summary_zh": "居住於指定州別的居民新開 Associated Bank 支票帳戶可獲得 $600 獎金。",
-      "title_es": "[Solo IA, IL, IN, KS, MI, MN, MO, OH y WI] Bono de $600 de cuenta corriente en Associated Bank",
-      "summary_es": "Associated Bank ofrece un bono de $600 para cuentas corrientes en ciertos estados."
-    },
-    {
-      "title": "[YMMV] PayPal: 10% Cashback When You Pay In 4 (Up To $20 Back)",
-      "url": "https://www.doctorofcredit.com/ymmv-paypal-10-cashback-when-you-pay-in-4-up-to-20-back/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "paypal"
-      ],
-      "ts": "2026-04-20T00:06:44.000Z",
-      "title_en": "[YMMV] PayPal: 10% Cashback When You Pay In 4 (Up To $20 Back)",
-      "summary_en": "",
-      "title_zh": "[YMMV] PayPal：分 4 期付款可享 10% 現金回饋 (最高 $20 回饋)",
-      "summary_zh": "使用 PayPal 分 4 期付款可獲得 10% 現金回饋，最高上限 $20（實際回饋視個人情況而定）。",
-      "title_es": "[YMMV] PayPal: 10% de reembolso cuando pagas en 4 (hasta $20 de reembolso)",
-      "summary_es": "PayPal devuelve 10% al pagar en 4 cuotas, hasta $20."
-    },
-    {
-      "title": "[YMMV] Citi Travel: Spend $300, Get $50 Off",
-      "url": "https://www.doctorofcredit.com/ymmv-citi-travel-spend-300-get-50-off/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Travel",
-        "Citi",
-        "citi travel"
-      ],
-      "ts": "2026-04-20T00:01:42.000Z",
-      "title_en": "[YMMV] Citi Travel: Spend $300, Get $50 Off",
-      "summary_en": "",
-      "title_zh": "[YMMV] Citi Travel：消費 $300 可減免 $50",
-      "summary_zh": "Citi Travel 信用卡消費滿 $300 可獲得 $50 折扣（實際折扣視個人狀況而定）。",
-      "title_es": "[YMMV] Citi Travel: Gasta $300, obtén $50 de descuento",
-      "summary_es": "Citi Travel ofrece $50 de descuento al gastar $300."
-    },
-    {
-      "title": "Citi ThankYou Points 25% Transfer Bonus To Leading Hotels Of The World (1,000:250)",
-      "url": "https://www.doctorofcredit.com/citi-thankyou-points-25-transfer-bonus-to-leading-hotels-of-the-world-1000250-3/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Travel",
-        "Citi",
-        "citi transfer bonuses",
-        "Leading Hotels of the World",
-        "The Leading Hotels of the World"
-      ],
-      "ts": "2026-04-19T23:52:40.000Z",
-      "title_en": "Citi ThankYou Points 25% Transfer Bonus To Leading Hotels Of The World (1,000:250)",
-      "summary_en": "",
-      "title_zh": "Citi ThankYou Points 25% 轉讓獎金至 Leading Hotels Of The World (1,000:250)",
-      "summary_zh": "將 Citi ThankYou 點數轉換至 Leading Hotels of the World 飯店可獲得 25% 額外加成，相當於 1,000 點數兌換 250 點額外回饋。",
-      "title_es": "Citi ThankYou Points: Bono de transferencia del 25% a Leading Hotels of the World (1,000:250)",
-      "summary_es": "Citi ofrece un 25% de bonificación al transferir puntos ThankYou a Leading Hotels of the World."
+      "title_zh": "Chipotle：穿冰球球衣享買一送一 (4/20下午3點後)",
+      "summary_zh": "Chipotle舉辦促銷活動，穿冰球球衣可享受買一送一優惠。",
+      "title_es": "Chipotle: Usa una jersey de hockey y obtén BOGO (20/4 después de las 15:00)",
+      "summary_es": "Chipotle regalará una comida gratis al llevar jersey de hockey después de las 3pm."
     }
   ],
-  "fetched": "2026-04-20T20:02:01.741Z"
+  "fetched": "2026-04-21T01:00:57.724Z"
 }
