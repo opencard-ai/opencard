@@ -222,21 +222,21 @@ export default async function CardDetailPage({ params }: Props) {
 
           {/* Travel Benefits */}
           {card.travel_benefits &&
-            (card.travel_benefits.hotel_status?.length ||
-              Object.keys(card.travel_benefits.lounge_access || {}).length ||
-              card.travel_benefits.other_benefits?.length) && (
+            ((card.travel_benefits.hotel_status?.length ?? 0) > 0 ||
+              Object.entries(card.travel_benefits.lounge_access || {}).some(([, v]) => v) ||
+              (card.travel_benefits.other_benefits?.length ?? 0) > 0) && (
               <section className="bg-white rounded-xl border border-slate-200 p-6">
                 <h2 className="text-lg font-bold text-slate-900 mb-4">
                   {l("detail.travelBenefits")}
                 </h2>
 
-                {card.travel_benefits.hotel_status?.length && (
+                {(card.travel_benefits.hotel_status?.length ?? 0) > 0 && (
                   <div className="mb-4">
                     <h3 className="text-xs font-semibold text-slate-500 uppercase mb-2">
                       {l("detail.hotelStatus")}
                     </h3>
                     <div className="space-y-1">
-                      {card.travel_benefits.hotel_status.map((hs, i) => (
+                      {card.travel_benefits.hotel_status!.map((hs, i) => (
                         <div key={i} className="text-sm">
                           <span className="text-slate-800">{hs.program}</span>
                           <span className="text-blue-600 ml-2 font-medium">
@@ -249,13 +249,7 @@ export default async function CardDetailPage({ params }: Props) {
                 )}
 
                 {Object.entries(card.travel_benefits.lounge_access || {})
-                    .filter(([, v]) => v)
-                    .map(([key]) => (
-                      <div key={key} className="text-sm text-slate-700">
-                        {key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}
-                      </div>
-                    ))
-                    .length > 0 && (
+                    .filter(([, v]) => v).length > 0 && (
                   <div className="mb-4">
                     <h3 className="text-xs font-semibold text-slate-500 uppercase mb-2">
                       {l("detail.loungeAccess")}
@@ -272,13 +266,13 @@ export default async function CardDetailPage({ params }: Props) {
                   </div>
                 )}
 
-                {card.travel_benefits.other_benefits?.length && (
+                {(card.travel_benefits.other_benefits?.length ?? 0) > 0 && (
                   <div>
                     <h3 className="text-xs font-semibold text-slate-500 uppercase mb-2">
                       {l("detail.otherBenefits")}
                     </h3>
                     <div className="space-y-2">
-                      {card.travel_benefits.other_benefits.map((ob, i) => (
+                      {card.travel_benefits.other_benefits!.map((ob, i) => (
                         <div key={i}>
                           <span className="text-sm text-slate-800 font-medium">
                             {ob.name}
