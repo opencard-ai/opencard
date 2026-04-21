@@ -1,6 +1,6 @@
 {
   "card_id": "choice-privileges-visa",
-  "name": "Choice Privileges Mastercard\u00ae",
+  "name": "Choice Privileges Mastercard®",
   "issuer": "Wells Fargo",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -89,7 +89,7 @@
     {
       "name": "Anniversary bonus",
       "amount": 0,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     }
   ]

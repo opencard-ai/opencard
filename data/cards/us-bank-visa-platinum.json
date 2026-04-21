@@ -1,6 +1,6 @@
 {
   "card_id": "us-bank-visa-platinum",
-  "name": "U.S. Bank Visa\u00ae Platinum Card",
+  "name": "U.S. Bank Visa® Platinum Card",
   "issuer": "U.S. Bank",
   "network": "Visa",
   "annual_fee": 0,
@@ -84,7 +84,7 @@
     {
       "name": "$20 annual statement credit",
       "amount": 20,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     }
   ]

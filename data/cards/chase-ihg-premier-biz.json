@@ -114,7 +114,7 @@
     {
       "name": "Anniversary Free Night",
       "amount": 1,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     }
   ]

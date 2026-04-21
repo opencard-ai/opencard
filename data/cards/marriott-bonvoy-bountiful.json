@@ -1,6 +1,6 @@
 {
   "card_id": "marriott-bonvoy-bountiful",
-  "name": "Marriott Bonvoy Bountiful\u00ae Credit Card",
+  "name": "Marriott Bonvoy Bountiful® Credit Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 250,
@@ -112,13 +112,13 @@
     {
       "name": "Marriott Statement Credit",
       "amount": 25,
-      "frequency": "Monthly",
+      "frequency": "monthly",
       "category": "hotel"
     },
     {
       "name": "Free Night Award",
       "amount": 35000,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     }
   ]

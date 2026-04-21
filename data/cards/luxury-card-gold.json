@@ -1,6 +1,6 @@
 {
   "card_id": "luxury-card-gold",
-  "name": "Luxury Card Mastercard\u00ae Gold Card\u2122",
+  "name": "Luxury Card Mastercard® Gold Card™",
   "issuer": "Barclays",
   "network": "Mastercard",
   "annual_fee": 1199,
@@ -97,13 +97,13 @@
     {
       "name": "Annual Airline Credit",
       "amount": 300,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "airline"
     },
     {
       "name": "Annual Dining Credit",
       "amount": 100,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "dining"
     }
   ]

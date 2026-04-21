@@ -1,6 +1,6 @@
 {
   "card_id": "us-bank-altitude-connect",
-  "name": "U.S. Bank Altitude\u00ae Connect Visa Signature\u00ae Card",
+  "name": "U.S. Bank Altitude® Connect Visa Signature® Card",
   "issuer": "U.S. Bank",
   "network": "Visa",
   "annual_fee": 0,
@@ -110,13 +110,13 @@
     {
       "name": "Priority Pass Select",
       "amount": 0,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     },
     {
       "name": "TSA PreCheck/Global Entry credit",
       "amount": 100,
-      "frequency": "Every 4 years",
+      "frequency": "annual",
       "category": "other"
     }
   ]

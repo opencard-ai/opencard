@@ -1,6 +1,6 @@
 {
   "card_id": "comenity-bed-bath-beyond-mastercard",
-  "name": "Bed Bath & Beyond Mastercard\u00ae",
+  "name": "Bed Bath & Beyond Mastercard®",
   "issuer": "Bread Financial / Comenity Bank",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -68,7 +68,7 @@
     {
       "name": "Birthday discount",
       "amount": 0,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     }
   ]

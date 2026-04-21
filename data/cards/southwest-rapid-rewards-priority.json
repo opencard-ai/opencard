@@ -1,6 +1,6 @@
 {
   "card_id": "southwest-rapid-rewards-priority",
-  "name": "Southwest Rapid Rewards\u00ae Priority Credit Card",
+  "name": "Southwest Rapid Rewards® Priority Credit Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 229,
@@ -12,7 +12,7 @@
     "bonus_points": 60000,
     "estimated_value": 600,
     "point_program": "Southwest Rapid Rewards",
-    "description": "60,000 bonus Rapid Rewards points after spending $3,000 in first 3 months (worth ~$894 toward Southwest flights at 1.49\u00a2/point)"
+    "description": "60,000 bonus Rapid Rewards points after spending $3,000 in first 3 months (worth ~$894 toward Southwest flights at 1.49¢/point)"
   },
   "earning_rates": [
     {
@@ -33,7 +33,7 @@
       "name": "Anniversary Points",
       "amount": 7500,
       "frequency": "Annual",
-      "description": "7,500 Rapid Rewards anniversary points each year (worth ~$112 at 1.5\u00a2/point)"
+      "description": "7,500 Rapid Rewards anniversary points each year (worth ~$112 at 1.5¢/point)"
     },
     {
       "name": "Southwest Annual Travel Credit",
@@ -102,13 +102,13 @@
     {
       "name": "Anniversary Points",
       "amount": 7500,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     },
     {
       "name": "Southwest Annual Travel Credit",
       "amount": 75,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "airline"
     }
   ]

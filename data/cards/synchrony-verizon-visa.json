@@ -1,6 +1,6 @@
 {
   "card_id": "synchrony-verizon-visa",
-  "name": "Verizon Visa\u00ae Card",
+  "name": "Verizon Visa® Card",
   "issuer": "Synchrony Bank",
   "network": "Visa",
   "annual_fee": 0,
@@ -97,7 +97,7 @@
     {
       "name": "TravelPass days",
       "amount": 0,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "travel"
     }
   ]

@@ -1,6 +1,6 @@
 {
   "card_id": "amex-delta-skymiles-reserve-biz",
-  "name": "Delta SkyMiles\u00ae Reserve Business American Express Card",
+  "name": "Delta SkyMiles® Reserve Business American Express Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 650,
@@ -83,7 +83,7 @@
     {
       "name": "Global Entry/TSA PreCheck Credit",
       "amount": 120,
-      "frequency": "Every 4 years",
+      "frequency": "annual",
       "category": "other"
     }
   ]

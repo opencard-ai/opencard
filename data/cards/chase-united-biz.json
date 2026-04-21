@@ -1,6 +1,6 @@
 {
   "card_id": "chase-united-biz",
-  "name": "United\u2120 Business Card",
+  "name": "United℠ Business Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 150,
@@ -130,13 +130,13 @@
     {
       "name": "United Travel Credit",
       "amount": 125,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "airline"
     },
     {
       "name": "United Club Passes",
       "amount": 2,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "airline"
     }
   ]

@@ -1,6 +1,6 @@
 {
   "card_id": "amex-delta-platinum",
-  "name": "Delta SkyMiles\u00ae Platinum American Express Card",
+  "name": "Delta SkyMiles® Platinum American Express Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 350,
@@ -137,19 +137,19 @@
     {
       "name": "Resy Credit",
       "amount": 120,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     },
     {
       "name": "Rideshare Credit",
       "amount": 120,
-      "frequency": "Annual",
+      "frequency": "annual",
       "category": "other"
     },
     {
       "name": "Global Entry/TSA PreCheck",
       "amount": 100,
-      "frequency": "Every 4 years",
+      "frequency": "annual",
       "category": "other"
     }
   ]
