@@ -144,13 +144,18 @@ export default async function CardDetailPage({ params }: Props) {
           </div>
         )}
 
-        {/* Add to My Cards CTA */}
-        <AddToMyCardsButton cardId={card.card_id} cardName={card.name} lang={lang} />
+        {/* CTA Row: Add to My Cards + AI Assistant */}
+        <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex-1">
+            <AddToMyCardsButton cardId={card.card_id} cardName={card.name} lang={lang} />
+          </div>
+          <div className="sm:w-56">
+            <ChatWidget cardName={card.name} cardId={card.card_id} locale={locale} />
+          </div>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Main content */}
-        <div className="lg:col-span-2 space-y-6">
+      <div className="space-y-6">
           {/* Earning Rates */}
           <section className="bg-white rounded-xl border border-slate-200 p-6">
             <h2 className="text-lg font-bold text-slate-900 mb-4">{l("detail.earningRates")}</h2>
@@ -365,14 +370,6 @@ export default async function CardDetailPage({ params }: Props) {
               </p>
             </section>
           )}
-        </div>
-
-        {/* Sidebar */}
-        <div className="space-y-6">
-          {/* AI Chat Widget */}
-          <ChatWidget cardName={card.name} cardId={card.card_id} locale={locale} />
-
-        </div>
       </div>
 
       {/* Travel Products - full width at bottom */}
