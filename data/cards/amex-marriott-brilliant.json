@@ -124,7 +124,7 @@
   },
   "recurring_credits": [
     {
-      "name": "$300 Marriott Credit",
+      "name": "Marriott Credit",
       "amount": 300,
       "frequency": "annual",
       "category": "travel",
@@ -132,7 +132,7 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$100 Property Credit",
+      "name": "Property Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "travel",

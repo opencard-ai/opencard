@@ -16,7 +16,7 @@ export interface EarningRate {
 export interface RecurringCredit {
   name: string;
   amount: number;
-  frequency: "monthly" | "quarterly" | "semi_annual" | "annual";
+  frequency: "monthly" | "quarterly" | "semi_annual" | "annual" | "per_stay" | "cardmember_year" | string;
   category: string;
   description: string;
   reset_type?: "calendar_year" | "cardmember_year";

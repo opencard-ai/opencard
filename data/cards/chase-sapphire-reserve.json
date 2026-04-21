@@ -145,7 +145,7 @@
   },
   "recurring_credits": [
     {
-      "name": "$300 Annual Travel Credit",
+      "name": "Annual Travel Credit",
       "amount": 300,
       "frequency": "annual",
       "category": "travel",
@@ -153,7 +153,7 @@
       "reset_type": "cardmember_year"
     },
     {
-      "name": "$150 Semi-Annual Dining Credit",
+      "name": "Semi-Annual Dining Credit",
       "amount": 150,
       "frequency": "semi_annual",
       "category": "dining",
@@ -161,7 +161,7 @@
       "reset_type": "cardmember_year"
     },
     {
-      "name": "$250 Hotel Credit",
+      "name": "Hotel Credit",
       "amount": 250,
       "frequency": "annual",
       "category": "travel",
@@ -169,7 +169,7 @@
       "reset_type": "cardmember_year"
     },
     {
-      "name": "$500 Flexible Travel Credit",
+      "name": "Flexible Travel Credit",
       "amount": 500,
       "frequency": "annual",
       "category": "travel",

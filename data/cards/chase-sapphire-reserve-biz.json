@@ -141,7 +141,7 @@
   },
   "recurring_credits": [
     {
-      "name": "$300 Annual Travel Credit",
+      "name": "Annual Travel Credit",
       "amount": 300,
       "frequency": "annual",
       "category": "travel",
@@ -149,7 +149,7 @@
       "reset_type": "cardmember_year"
     },
     {
-      "name": "$500 The Edit Credit",
+      "name": "The Edit Credit",
       "amount": 500,
       "frequency": "annual",
       "category": "travel",
@@ -157,7 +157,7 @@
       "reset_type": "cardmember_year"
     },
     {
-      "name": "$120 Lyft Credits",
+      "name": "Lyft Credits",
       "amount": 120,
       "frequency": "annual",
       "category": "other",
@@ -165,7 +165,7 @@
       "reset_type": "cardmember_year"
     },
     {
-      "name": "$200 Google Workspace Credit",
+      "name": "Google Workspace Credit",
       "amount": 200,
       "frequency": "annual",
       "category": "other",
@@ -173,7 +173,7 @@
       "reset_type": "cardmember_year"
     },
     {
-      "name": "$100 Global Entry Credit",
+      "name": "Global Entry Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "travel",

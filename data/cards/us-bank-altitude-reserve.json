@@ -93,7 +93,7 @@
   },
   "recurring_credits": [
     {
-      "name": "$325 Annual Travel Credit",
+      "name": "Annual Travel Credit",
       "amount": 325,
       "frequency": "annual",
       "category": "travel",

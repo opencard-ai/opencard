@@ -129,15 +129,15 @@
   },
   "recurring_credits": [
     {
-      "name": "$400 Hilton Resort Credit",
-      "amount": 400,
+      "name": "Hilton Resort Credit",
+      "amount": 200,
       "frequency": "semi_annual",
       "category": "travel",
       "description": "$200 every 6 months for Hilton resort properties.",
       "reset_type": "calendar_year"
     },
     {
-      "name": "$200 Airline Credit",
+      "name": "Airline Credit",
       "amount": 200,
       "frequency": "quarterly",
       "category": "travel",
@@ -145,7 +145,7 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$209 CLEAR+ Credit",
+      "name": "CLEAR+ Credit",
       "amount": 209,
       "frequency": "annual",
       "category": "other",
@@ -153,7 +153,7 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$100 Luxury Property Credit",
+      "name": "Luxury Property Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "travel",

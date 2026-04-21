@@ -92,7 +92,7 @@
   },
   "recurring_credits": [
     {
-      "name": "$15 streaming credit",
+      "name": "streaming credit",
       "amount": 15,
       "frequency": "quarterly",
       "category": "other"
