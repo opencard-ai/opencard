@@ -81,7 +81,7 @@ const zh: Record<string, string> = {
   "detail.welcomeBonus": "開卡禮",
   "detail.noWelcomeOffer": "無開卡禮",
   "detail.spendingReq": "需在 {months} 個月內消費 ${amount}",
-  "detail.estimatedValue": "約 ${value}",
+  "detail.estimatedValue": "約 {{value}}",
   "detail.points": "點",
   "detail.earningRates": "回饋比率",
   "detail.annualCredits": "福利與回饋",
@@ -182,7 +182,7 @@ const en: Record<string, string> = {
   "detail.welcomeBonus": "Welcome Offer",
   "detail.noWelcomeOffer": "No Welcome Offer",
   "detail.spendingReq": "Spend ${amount} within {months} months",
-  "detail.estimatedValue": "≈ ${value}",
+  "detail.estimatedValue": "≈ {{value}}",
   "detail.points": "pts",
   "detail.earningRates": "Earning Rates",
   "detail.annualCredits": "Benefits & Credits",
@@ -283,7 +283,7 @@ const es: Record<string, string> = {
   "detail.welcomeBonus": "Oferta de Bienvenida",
   "detail.noWelcomeOffer": "Sin Oferta de Bienvenida",
   "detail.spendingReq": "Gasta ${amount} en {months} meses",
-  "detail.estimatedValue": "≈ ${value}",
+  "detail.estimatedValue": "≈ {{value}}",
   "detail.points": "pts",
   "detail.earningRates": "Tasas de Recompensa",
   "detail.annualCredits": "Beneficios y Créditos",
@@ -353,6 +353,8 @@ export function t(key: string, locale: Locale = "en", params?: Record<string, st
   if (params) {
     Object.entries(params).forEach(([k, v]) => {
       text = text.replace(`{${k}}`, String(v));
+      text = text.replace(`[[${k}]]`, String(v));
+      text = text.replace(`{{${k}}}`, String(v));
     });
   }
   return text;
