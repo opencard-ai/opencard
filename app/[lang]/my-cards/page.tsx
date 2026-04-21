@@ -199,7 +199,7 @@ export default function MyCardsPage({
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isSubscribing, setIsSubscribing] = useState(false);
   const [subscribeError, setSubscribeError] = useState("");
-  const [errorReported, setErrorReported] = useState<Record<string, boolean>>({});
+
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -497,15 +497,14 @@ export default function MyCardsPage({
                     >
                       {m.viewAll}
                     </Link>
-                    <button
-                      onClick={() => {
-                        setErrorReported((prev) => ({ ...prev, [card.card_id]: true }));
-                        setTimeout(() => setErrorReported((prev) => ({ ...prev, [card.card_id]: false })), 3000);
-                      }}
+                    <a
+                      href={`https://github.com/opencard-ai/opencard/issues/new?title=${encodeURIComponent(`[Data Error] ${card.name}`)}&body=${encodeURIComponent(`**Card:** ${card.name}\n**Page:** https://opencardai.com/${lang}/cards/${card.card_id}\n\n**What's wrong:**\n\n(Please describe the incorrect information)\n`)}&labels=data-error`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-xs text-slate-400 hover:text-red-500 transition-colors"
                     >
-                      {errorReported[card.card_id] ? m.errorSent : m.reportError}
-                    </button>
+                      {m.reportError}
+                    </a>
                   </div>
                 </div>
               );

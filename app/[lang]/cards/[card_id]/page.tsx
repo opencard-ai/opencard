@@ -368,9 +368,19 @@ export default async function CardDetailPage({ params }: Props) {
                   </li>
                 ))}
               </ul>
-              <p className="text-xs text-slate-400 mt-3">
-                {l("detail.lastUpdated")}: {card.last_updated}
-              </p>
+              <div className="flex items-center justify-between mt-3">
+                <p className="text-xs text-slate-400">
+                  {l("detail.lastUpdated")}: {card.last_updated}
+                </p>
+                <a
+                  href={`https://github.com/opencard-ai/opencard/issues/new?title=${encodeURIComponent(`[Data Error] ${card.name}`)}&body=${encodeURIComponent(`**Card:** ${card.name}\n**Page:** https://opencardai.com/${lang}/cards/${card.card_id}\n\n**What's wrong:**\n\n(Please describe the incorrect information)\n`)}&labels=data-error`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-slate-400 hover:text-red-500 transition-colors"
+                >
+                  {l("detail.reportError")}
+                </a>
+              </div>
             </section>
           )}
       </div>
