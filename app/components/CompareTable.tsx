@@ -23,48 +23,52 @@ function RateBar({ rate, maxRate }: { rate: number; maxRate: number }) {
   );
 }
 
-function CreditTag({ label, value }: { label: string; value: string }) {
-  return (
-    <span className="inline-flex items-center gap-1 text-xs text-green-700 bg-green-50 px-1.5 py-0.5 rounded border border-green-200">
-      {value && <span className="font-medium">{value}</span>}
-      <span>{label}</span>
-    </span>
-  );
-}
-
 export default function CompareTable({ cards, lang }: CompareTableProps) {
   if (cards.length === 0) return null;
 
+  // Collect all earning categories from all cards
   const allCategories = [...new Set(cards.flatMap((c) => c.earning_rates.map((r) => r.category)))].sort();
-  const maxRate = Math.max(...cards.flatMap((c) => c.earning_rates.map((r) => r.rate)));
+  const maxRate = Math.max(...cards.flatMap((c) => c.earning_rates.map((r) => r.rate)), 1);
 
+  // Combine annual_credits and recurring_credits for each card
+  const getAllCredits = (card: CreditCard) => {
+    const credits: { name: string; amount: number; description: string }[] = [];
+    if (card.annual_credits) {
+      card.annual_credits.forEach((ac: AnnualCredit) => {
+        credits.push({ name: ac.name || "Annual Credit", amount: ac.amount, description: ac.description || "" });
+      });
+    }
+    if (card.recurring_credits) {
+      card.recurring_credits.forEach((rc: RecurringCredit) => {
+        credits.push({ name: rc.name || "Credit", amount: rc.amount, description: rc.description || "" });
+      });
+    }
+    return credits;
+  };
+
+  // Check if any card has FHR/THC
+  const hasFhrThc = cards.some((c) => c.fhr_thc?.fhr_eligible || c.fhr_thc?.thc_eligible);
+
+  // Labels
   const l = (() => {
     const en = {
       annualFee: "Annual Fee", welcomeBonus: "Welcome Offer",
       welcomeReq: "Spend Requirement", creditRequired: "Credit Required",
       foreignFee: "Foreign Fee", network: "Network",
       earningRates: "Earning Rates", travelBenefits: "Travel Benefits",
-      annualCredits: "Annual Credits", recurringCredits: "Recurring Credits",
-      hotelCredits: "Hotel Credits", fhrThc: "FHR / THC",
+      annualCredits: "Annual Credits",
       insurance: "Insurance", noAf: "Waived", yes: "Yes", none: "—",
-      credits: "credits",
     };
     const zh = {
       annualFee: "年費", welcomeBonus: "開卡禮",
       welcomeReq: "消費門檻", creditRequired: "信用分要求",
       foreignFee: "國外手續費", network: "卡片類型",
       earningRates: "回饋倍率", travelBenefits: "旅遊福利",
-      annualCredits: "年費回饋", recurringCredits: "定期回饋",
-      hotelCredits: "飯店積分", fhrThc: "FHR / THC",
+      annualCredits: "年費回饋",
       insurance: "保險", noAf: "免費", yes: "有", none: "無",
-      credits: "筆",
     };
     return { en, zh, es: en }[lang] || en;
   })();
-
-  function labelCell(className = "bg-white") {
-    return className;
-  }
 
   return (
     <div className="overflow-x-auto">
@@ -105,43 +109,32 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
             ))}
           </tr>
 
-          {/* Annual Credits */}
-          {cards.some((c) => c.annual_credits && c.annual_credits.length > 0) && (
+          {/* Annual Credits (combined from annual_credits + recurring_credits) */}
+          {cards.some((c) => getAllCredits(c).length > 0) && (
             <tr className="bg-blue-50/30">
               <td className="py-3 pr-4 font-medium text-blue-700 sticky left-0 bg-blue-50/30 z-10">{l.annualCredits}</td>
-              {cards.map((card) => (
-                <td key={card.card_id} className="py-3 px-4">
-                  {card.annual_credits && card.annual_credits.length > 0 ? (
-                    <div className="flex flex-wrap gap-1">
-                      {card.annual_credits.map((ac: AnnualCredit, i: number) => (
-                        <CreditTag key={i} label={ac.description || `${formatCurrency(ac.amount)} ${l.credits}`} value={formatCurrency(ac.amount)} />
-                      ))}
-                    </div>
-                  ) : (
-                    <span className="text-slate-400 text-xs">{l.none}</span>
-                  )}
-                </td>
-              ))}
-            </tr>
-          )}
-
-          {/* Recurring Credits */}
-          {cards.some((c) => c.recurring_credits && c.recurring_credits.length > 0) && (
-            <tr className="bg-blue-50/30">
-              <td className="py-3 pr-4 font-medium text-blue-700 sticky left-0 bg-blue-50/30 z-10">{l.recurringCredits}</td>
-              {cards.map((card) => (
-                <td key={card.card_id} className="py-3 px-4">
-                  {card.recurring_credits && card.recurring_credits.length > 0 ? (
-                    <div className="flex flex-wrap gap-1">
-                      {card.recurring_credits.map((rc: RecurringCredit, i: number) => (
-                        <CreditTag key={i} label={rc.description} value={formatCurrency(rc.amount)} />
-                      ))}
-                    </div>
-                  ) : (
-                    <span className="text-slate-400 text-xs">{l.none}</span>
-                  )}
-                </td>
-              ))}
+              {cards.map((card) => {
+                const allCredits = getAllCredits(card);
+                return (
+                  <td key={card.card_id} className="py-3 px-4">
+                    {allCredits.length > 0 ? (
+                      <div className="flex flex-wrap gap-1">
+                        {allCredits.slice(0, 6).map((credit, i) => (
+                          <span key={i} className="inline-flex items-center gap-1 text-xs text-green-700 bg-green-50 px-1.5 py-0.5 rounded border border-green-200">
+                            <span className="font-medium">{formatCurrency(credit.amount)}</span>
+                            <span className="max-w-[120px] truncate">{credit.description.split(".")[0]}</span>
+                          </span>
+                        ))}
+                        {allCredits.length > 6 && (
+                          <span className="text-xs text-slate-500">+{allCredits.length - 6} more</span>
+                        )}
+                      </div>
+                    ) : (
+                      <span className="text-slate-400 text-xs">{l.none}</span>
+                    )}
+                  </td>
+                );
+              })}
             </tr>
           )}
 
@@ -208,10 +201,9 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
             ))}
           </tr>
 
-          {/* Earning Rates — section header spanning all data columns */}
+          {/* Earning Rates Section Header */}
           <tr>
-            <td className="py-2 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-wide bg-slate-100 sticky left-0 z-10 border-y border-slate-200"
-              colSpan={cards.length + 1}>
+            <td className="py-2 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-wide bg-slate-100 sticky left-0 z-10 border-y border-slate-200" colSpan={cards.length + 1}>
               {l.earningRates}
             </td>
           </tr>
@@ -241,32 +233,6 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
               })}
             </tr>
           ))}
-
-          {/* FHR / THC */}
-          {cards.some((c) => c.fhr_thc?.fhr_eligible || c.fhr_thc?.thc_eligible) && (
-            <tr>
-              <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10">{l.fhrThc}</td>
-              {cards.map((card) => (
-                <td key={card.card_id} className="py-3 px-4">
-                  {card.fhr_thc?.fhr_eligible || card.fhr_thc?.thc_eligible ? (
-                    <div className="flex flex-wrap gap-1">
-                      {card.fhr_thc?.fhr_eligible && (
-                        <span className="text-xs bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded font-medium border border-amber-300">FHR</span>
-                      )}
-                      {card.fhr_thc?.thc_eligible && (
-                        <span className="text-xs bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded font-medium border border-amber-300">THC</span>
-                      )}
-                      {card.fhr_thc?.notes && (
-                        <span className="text-xs text-slate-400">{card.fhr_thc.notes}</span>
-                      )}
-                    </div>
-                  ) : (
-                    <span className="text-slate-400 text-xs">{l.none}</span>
-                  )}
-                </td>
-              ))}
-            </tr>
-          )}
 
           {/* Travel Benefits */}
           <tr className="bg-slate-50/50">
