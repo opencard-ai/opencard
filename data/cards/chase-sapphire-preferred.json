@@ -97,20 +97,12 @@
   },
   "recurring_credits": [
     {
-      "name": "Annual Hotel Credit",
+      "name": "Hotel Credit",
       "amount": 50,
       "frequency": "annual",
       "category": "travel",
-      "description": "$50 annual credit for hotel bookings made through Chase Travel.",
+      "description": "$50 annual credit for prepaid hotels booked via Chase Travel.",
       "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Chase Travel Hotel Credit",
-      "amount": 50,
-      "frequency": "annual",
-      "category": "Anniversary",
-      "description": "$50 annual credit on hotel stays purchased through Chase Travel.",
-      "reset_type": "calendar_year"
     }
   ]
 }
