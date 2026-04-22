@@ -1,6 +1,6 @@
 {
   "card_id": "chase-sapphire-preferred",
-  "name": "Chase Sapphire Preferred® Card",
+  "name": "Chase Sapphire Preferred\u00ae Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 95,
@@ -45,14 +45,6 @@
       "category": "Default",
       "rate": 1,
       "notes": "On all other purchases."
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Chase Travel Hotel Credit",
-      "amount": 50,
-      "frequency": "Anniversary",
-      "description": "$50 annual credit on hotel stays purchased through Chase Travel."
     }
   ],
   "travel_benefits": {
@@ -105,6 +97,14 @@
       "category": "travel",
       "description": "$50 annual credit for hotel bookings made through Chase Travel.",
       "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Chase Travel Hotel Credit",
+      "amount": 50,
+      "frequency": "annual",
+      "category": "Anniversary",
+      "description": "$50 annual credit on hotel stays purchased through Chase Travel.",
+      "reset_type": "calendar_year"
     }
   ]
 }

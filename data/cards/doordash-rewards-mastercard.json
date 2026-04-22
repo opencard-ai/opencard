@@ -1,6 +1,6 @@
 {
   "card_id": "doordash-rewards-mastercard",
-  "name": "DoorDash Rewards Mastercard®",
+  "name": "DoorDash Rewards Mastercard\u00ae",
   "issuer": "Chase",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -22,14 +22,6 @@
     {
       "category": "All Other Purchases",
       "rate": 1
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "DashPass",
-      "amount": 96,
-      "frequency": "Annual",
-      "description": "Free for 1 year upon account opening; renewable with $10,000 annual spend"
     }
   ],
   "travel_benefits": {},

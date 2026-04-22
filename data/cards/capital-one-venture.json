@@ -21,26 +21,6 @@
       "notes": "unlimited"
     }
   ],
-  "annual_credits": [
-    {
-      "name": "$250 Travel Credit",
-      "amount": 250,
-      "frequency": "annual",
-      "description": "One-time credit for Capital One Travel (introductory offer)"
-    },
-    {
-      "name": "Global Entry or TSA PreCheck Credit",
-      "amount": 100,
-      "frequency": "annual",
-      "description": "Up to $100 every 4 years"
-    },
-    {
-      "name": "Lounge Access",
-      "amount": 0,
-      "frequency": "annual",
-      "description": "Two complimentary visits per year to Capital One Lounges or Plaza Premium Lounges (Note: Lounges access was being removed in late 2024 for this card; currently limited)"
-    }
-  ],
   "travel_benefits": {},
   "fhr_thc": {
     "fhr_eligible": false,
@@ -92,6 +72,30 @@
       "frequency": "annual",
       "category": "travel",
       "description": "Complimentary Priority Pass Select + Plaza Premium lounge access for cardholder + 2 guests at 1,300+ airport lounges worldwide.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "$250 Travel Credit",
+      "amount": 250,
+      "frequency": "annual",
+      "category": "annual",
+      "description": "One-time credit for Capital One Travel (introductory offer)",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Global Entry or TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "annual",
+      "description": "Up to $100 every 4 years",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Lounge Access",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "annual",
+      "description": "Two complimentary visits per year to Capital One Lounges or Plaza Premium Lounges (Note: Lounges access was being removed in late 2024 for this card; currently limited)",
       "reset_type": "calendar_year"
     }
   ]

@@ -1,6 +1,6 @@
 {
   "card_id": "us-bank-altitude-reserve",
-  "name": "U.S. Bank Altitude® Reserve Visa Infinite® Card",
+  "name": "U.S. Bank Altitude\u00ae Reserve Visa Infinite\u00ae Card",
   "issuer": "U.S. Bank",
   "network": "Visa",
   "annual_fee": 400,
@@ -29,14 +29,6 @@
       "category": "All Other Purchases",
       "rate": 1,
       "notes": "1x point per $1 on all other purchases"
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Travel credit",
-      "amount": 325,
-      "frequency": "Annual",
-      "description": "$325 annual credit for travel purchases (must be booked through US Bank Travel Center or direct with airline)"
     }
   ],
   "travel_benefits": {
@@ -114,6 +106,14 @@
       "frequency": "annual",
       "category": "travel",
       "description": "Complimentary Priority Pass and Chase Sapphire Reserve lounge access.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Travel credit",
+      "amount": 325,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "$325 annual credit for travel purchases (must be booked through US Bank Travel Center or direct with airline)",
       "reset_type": "calendar_year"
     }
   ]

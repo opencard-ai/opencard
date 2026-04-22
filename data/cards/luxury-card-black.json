@@ -1,6 +1,6 @@
 {
   "card_id": "luxury-card-black",
-  "name": "Luxury Card Mastercard® Black Card™",
+  "name": "Luxury Card Mastercard\u00ae Black Card\u2122",
   "issuer": "Barclays",
   "network": "Mastercard",
   "annual_fee": 699,
@@ -23,14 +23,6 @@
       "category": "All other purchases",
       "rate": 1,
       "notes": "1x point per $1 on all other purchases"
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Annual Airline Credit",
-      "amount": 200,
-      "frequency": "Annual",
-      "description": "Up to $200 in annual statement credits toward flight-related purchases including airline tickets, baggage fees, upgrades"
     }
   ],
   "travel_benefits": {

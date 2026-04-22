@@ -1,6 +1,6 @@
 {
   "card_id": "amex-blue-cash-preferred",
-  "name": "Blue Cash Preferred® Card from American Express",
+  "name": "Blue Cash Preferred\u00ae Card from American Express",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 0,
@@ -33,14 +33,6 @@
       "notes": null
     }
   ],
-  "annual_credits": [
-    {
-      "name": "Disney+ Streaming Credit",
-      "amount": 120,
-      "frequency": "Monthly",
-      "description": "$10 monthly statement credit at DisneyPlus.com, Hulu.com, or Stream.ESPN.com (U.S. websites). Enrollment required; subject to auto-renewal."
-    }
-  ],
   "travel_benefits": {
     "lounge_access": {
       "centurion": false,
@@ -50,7 +42,7 @@
     "hotel_status": [],
     "other_benefits": [
       "Amex Offers access",
-      "Plan It® (split purchases of $100+ into monthly payments with fixed fee)",
+      "Plan It\u00ae (split purchases of $100+ into monthly payments with fixed fee)",
       "Send and Split (Venmo/PayPal integration)"
     ]
   },
@@ -109,6 +101,14 @@
       "frequency": "annual",
       "category": "entertainment",
       "description": "$100 annual credit for Disney+ bundle (Disney+, Hulu, ESPN+). Enrollment required.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Disney+ Streaming Credit",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "Monthly",
+      "description": "$10 monthly statement credit at DisneyPlus.com, Hulu.com, or Stream.ESPN.com (U.S. websites). Enrollment required; subject to auto-renewal.",
       "reset_type": "calendar_year"
     }
   ],

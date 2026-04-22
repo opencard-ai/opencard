@@ -12,7 +12,7 @@
     "bonus_points": 140000,
     "estimated_value": 700,
     "point_program": "IHG Rewards",
-    "description": "140,000 bonus points after spending $4,000 in first 3 months (points worth ~0.5¢ each toward IHG hotel stays)"
+    "description": "140,000 bonus points after spending $4,000 in first 3 months (points worth ~0.5\u00a2 each toward IHG hotel stays)"
   },
   "earning_rates": [
     {
@@ -37,20 +37,6 @@
       "rate": 1
     }
   ],
-  "annual_credits": [
-    {
-      "name": "Anniversary Free Night",
-      "amount": 40000,
-      "frequency": "Annual",
-      "description": "Free night certificate each year (up to 40,000 points), redeemable at any IHG hotel worldwide"
-    },
-    {
-      "name": "Global Entry/TSA PreCheck",
-      "amount": 100,
-      "frequency": "Every 4 years",
-      "description": "Reimbursement for Global Entry, TSA PreCheck, or NEXUS application fee (once every 4 years)"
-    }
-  ],
   "travel_benefits": {
     "other_benefits": [
       {
@@ -59,7 +45,7 @@
       },
       {
         "name": "Fourth Night Free",
-        "description": "Fourth night free on award stays (book 3 nights, get 4th free — automatically applied)"
+        "description": "Fourth night free on award stays (book 3 nights, get 4th free \u2014 automatically applied)"
       },
       {
         "name": "Points Spending Discount",

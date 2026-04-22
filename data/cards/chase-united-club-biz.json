@@ -1,6 +1,6 @@
 {
   "card_id": "chase-united-club-biz",
-  "name": "United Club℠ Business Card",
+  "name": "United Club\u2120 Business Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 695,
@@ -35,50 +35,6 @@
       "rate": 1.5
     }
   ],
-  "annual_credits": [
-    {
-      "name": "Renowned Hotels Credit",
-      "amount": 200,
-      "frequency": "Annual",
-      "description": "Up to $200 credit on prepaid hotel stays through Renowned Hotels and Resorts for United Cardmembers"
-    },
-    {
-      "name": "Rideshare Credit",
-      "amount": 150,
-      "frequency": "Annual",
-      "description": "Up to $150 credit on rideshare purchases (enrollment required)"
-    },
-    {
-      "name": "Avis/Budget Car Rental Credit",
-      "amount": 100,
-      "frequency": "Annual",
-      "description": "Up to $100 credit on Avis or Budget rentals booked via cars.united.com"
-    },
-    {
-      "name": "Instacart Credit",
-      "amount": 240,
-      "frequency": "Annual",
-      "description": "Up to $240 in Instacart credits each calendar year"
-    },
-    {
-      "name": "JSX Credit",
-      "amount": 200,
-      "frequency": "Annual",
-      "description": "Up to $200 credit on flights purchased directly through JSX"
-    },
-    {
-      "name": "FareLock Credit",
-      "amount": 50,
-      "frequency": "Annual",
-      "description": "Up to $50 credit on FareLock purchases on United flights"
-    },
-    {
-      "name": "Better Together Bonus",
-      "amount": 5000,
-      "frequency": "Annual",
-      "description": "5,000-mile bonus each year when you also hold a personal United credit card"
-    }
-  ],
   "travel_benefits": {
     "lounge_access": [
       {
@@ -102,7 +58,7 @@
       },
       {
         "name": "PQP Earning",
-        "description": "1 PQP per $15 spent on card purchases, up to 28,000 PQP per year — can help earn Premier status"
+        "description": "1 PQP per $15 spent on card purchases, up to 28,000 PQP per year \u2014 can help earn Premier status"
       },
       {
         "name": "Award Flight Discount",

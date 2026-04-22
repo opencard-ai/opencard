@@ -1,6 +1,6 @@
 {
   "card_id": "chase-sapphire-reserve",
-  "name": "Chase Sapphire Reserve®",
+  "name": "Chase Sapphire Reserve\u00ae",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 795,
@@ -34,56 +34,6 @@
       "category": "All other purchases",
       "rate": 1,
       "notes": ""
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Travel Credit",
-      "amount": 300,
-      "frequency": "Anniversary",
-      "description": "$300 in statement credits for travel purchases each account anniversary year."
-    },
-    {
-      "name": "The Edit Credit",
-      "amount": 500,
-      "frequency": "Calendar Year",
-      "description": "$250 credit from Jan-Jun and $250 from Jul-Dec for prepaid bookings with The Edit (2-night min)."
-    },
-    {
-      "name": "Dining Credit",
-      "amount": 300,
-      "frequency": "Calendar Year",
-      "description": "$150 credit from Jan-Jun and $150 from Jul-Dec for Sapphire Exclusive Tables on OpenTable."
-    },
-    {
-      "name": "Apple TV/Music",
-      "amount": 288,
-      "frequency": "Monthly",
-      "description": "Complimentary Apple TV and Apple Music subscriptions through 6/22/2027."
-    },
-    {
-      "name": "DoorDash Promo",
-      "amount": 300,
-      "frequency": "Monthly",
-      "description": "$25 monthly for DoorDash ($5 restaurant, $20 grocery/retail)."
-    },
-    {
-      "name": "StubHub Credits",
-      "amount": 300,
-      "frequency": "Calendar Year",
-      "description": "$150 credit from Jan-Jun and $150 from Jul-Dec for StubHub/viagogo."
-    },
-    {
-      "name": "Lyft Credits",
-      "amount": 120,
-      "frequency": "Monthly",
-      "description": "$10 monthly credit for Lyft rides."
-    },
-    {
-      "name": "Peloton Credits",
-      "amount": 120,
-      "frequency": "Monthly",
-      "description": "$10 monthly credit for Peloton memberships."
     }
   ],
   "travel_benefits": {
@@ -189,8 +139,72 @@
       "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "Complimentary Priority Pass Select membership — unlimited lounge access for cardholder + guests at 1,300+ airport lounges worldwide.",
+      "description": "Complimentary Priority Pass Select membership \u2014 unlimited lounge access for cardholder + guests at 1,300+ airport lounges worldwide.",
       "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Travel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "Anniversary",
+      "description": "$300 in statement credits for travel purchases each account anniversary year.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "The Edit Credit",
+      "amount": 500,
+      "frequency": "annual",
+      "category": "Calendar Year",
+      "description": "$250 credit from Jan-Jun and $250 from Jul-Dec for prepaid bookings with The Edit (2-night min).",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Dining Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "Calendar Year",
+      "description": "$150 credit from Jan-Jun and $150 from Jul-Dec for Sapphire Exclusive Tables on OpenTable.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Apple TV/Music",
+      "amount": 288,
+      "frequency": "annual",
+      "category": "Monthly",
+      "description": "Complimentary Apple TV and Apple Music subscriptions through 6/22/2027.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "DoorDash Promo",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "Monthly",
+      "description": "$25 monthly for DoorDash ($5 restaurant, $20 grocery/retail).",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "StubHub Credits",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "Calendar Year",
+      "description": "$150 credit from Jan-Jun and $150 from Jul-Dec for StubHub/viagogo.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Lyft Credits",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "Monthly",
+      "description": "$10 monthly credit for Lyft rides.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Peloton Credits",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "Monthly",
+      "description": "$10 monthly credit for Peloton memberships.",
+      "reset_type": "calendar_year"
     }
   ]
 }

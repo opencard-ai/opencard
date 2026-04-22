@@ -152,11 +152,13 @@ function getAnnualFeeScore(card: CreditCard, tolerance: number): number {
   if (tolerance === 0) return card.annual_fee === 0 ? 100 : 20;
 
   // How much value does the card give relative to its fee?
-  const valueFromCredits = card.annual_credits.reduce((sum, c) => {
-    if (c.frequency === "per year" || c.frequency === "annually") return sum + c.amount;
-    if (c.frequency === "per month") return sum + c.amount * 12;
+  const valueFromCredits = card.recurring_credits?.reduce((sum, c) => {
+    if (c.frequency === "annual" || c.frequency === "cardmember_year") return sum + c.amount;
+    if (c.frequency === "monthly") return sum + c.amount * 12;
+    if (c.frequency === "quarterly") return sum + c.amount * 4;
+    if (c.frequency === "semi_annual") return sum + c.amount * 2;
     return sum;
-  }, 0);
+  }, 0) || 0;
 
   // Net cost after credits
   const netCost = Math.max(0, card.annual_fee - valueFromCredits);

@@ -1,6 +1,6 @@
 {
   "card_id": "amex-green",
-  "name": "American Express® Green Card",
+  "name": "American Express\u00ae Green Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 150,
@@ -10,7 +10,7 @@
     "spending_requirement": 3000,
     "time_period_months": 6,
     "bonus_points": 40000,
-    "description": "Earn 40,000 Membership Rewards® Points after you spend $3,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
+    "description": "Earn 40,000 Membership Rewards\u00ae Points after you spend $3,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
     "free_nights": null,
     "point_program": "Membership Rewards",
     "estimated_value": 500
@@ -35,14 +35,6 @@
       "category": "Other",
       "rate": 1,
       "notes": null
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "CLEAR+ Credit",
-      "amount": 209,
-      "frequency": "Annual",
-      "description": "Covers cost of CLEAR+ membership."
     }
   ],
   "travel_benefits": {
@@ -100,6 +92,14 @@
       "frequency": "annual",
       "category": "travel",
       "description": "$100 annual credit for LoungeBuddy passes to access airport lounges worldwide.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "CLEAR+ Credit",
+      "amount": 209,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "Covers cost of CLEAR+ membership.",
       "reset_type": "calendar_year"
     }
   ]

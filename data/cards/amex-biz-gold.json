@@ -32,20 +32,6 @@
       "notes": "After $150,000 annual cap on 4X categories"
     }
   ],
-  "annual_credits": [
-    {
-      "name": "FedEx, Grubhub, Office Supply Stores Credit",
-      "amount": 240,
-      "frequency": "annual",
-      "description": "Up to $20 in statement credits monthly after using the Business Gold Card for eligible U.S. purchases at FedEx, Grubhub, and Office Supply Stores. Enrollment required."
-    },
-    {
-      "name": "Walmart+ Membership Credit",
-      "amount": 155,
-      "frequency": "annual",
-      "description": "Up to $12.95 statement credit each month after paying for a Walmart+ membership (subject to auto-renewal) with the Business Gold Card. Up to $155.40 annually."
-    }
-  ],
   "travel_benefits": {
     "hotel_status": [],
     "other_benefits": [
@@ -81,6 +67,14 @@
       "frequency": "annual",
       "category": "shopping",
       "description": "Up to $12.95 statement credit each month after paying for a Walmart+ membership. Up to $155.40 annually.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "FedEx, Grubhub, Office Supply Stores Credit",
+      "amount": 240,
+      "frequency": "annual",
+      "category": "annual",
+      "description": "Up to $20 in statement credits monthly after using the Business Gold Card for eligible U.S. purchases at FedEx, Grubhub, and Office Supply Stores. Enrollment required.",
       "reset_type": "calendar_year"
     }
   ],

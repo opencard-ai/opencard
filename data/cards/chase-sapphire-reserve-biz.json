@@ -1,6 +1,6 @@
 {
   "card_id": "chase-sapphire-reserve-biz",
-  "name": "Chase Sapphire Reserve® for Business",
+  "name": "Chase Sapphire Reserve\u00ae for Business",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 795,
@@ -34,26 +34,6 @@
       "category": "All Other Purchases",
       "rate": 1,
       "notes": "1x points on all other purchases"
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Travel Credit",
-      "amount": 300,
-      "frequency": "Annual",
-      "description": "$300 annual credit on travel purchases (auto-applied, no enrollment)"
-    },
-    {
-      "name": "DoorDash Credit",
-      "amount": 15,
-      "frequency": "Monthly",
-      "description": "$15 monthly DoorDash credit (enrollment required, $180/year total)"
-    },
-    {
-      "name": "Instacart Credit",
-      "amount": 15,
-      "frequency": "Monthly",
-      "description": "$15 monthly Instacart credit (enrollment required, $180/year total)"
     }
   ],
   "travel_benefits": {
@@ -179,6 +159,30 @@
       "category": "travel",
       "description": "Up to $100 every 4 years for Global Entry or TSA PreCheck.",
       "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Travel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "$300 annual credit on travel purchases (auto-applied, no enrollment)",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "DoorDash Credit",
+      "amount": 15,
+      "frequency": "annual",
+      "category": "Monthly",
+      "description": "$15 monthly DoorDash credit (enrollment required, $180/year total)",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Instacart Credit",
+      "amount": 15,
+      "frequency": "annual",
+      "category": "Monthly",
+      "description": "$15 monthly Instacart credit (enrollment required, $180/year total)",
+      "reset_type": "calendar_year"
     }
   ]
 }

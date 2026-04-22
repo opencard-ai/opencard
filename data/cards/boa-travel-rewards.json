@@ -21,14 +21,6 @@
       "notes": ""
     }
   ],
-  "annual_credits": [
-    {
-      "name": "Preferred Rewards Bonus",
-      "amount": 0,
-      "frequency": "annual",
-      "description": "Preferred Rewards members can earn a 25%-75% bonus on all points"
-    }
-  ],
   "travel_benefits": {},
   "fhr_thc": {
     "fhr_eligible": false,

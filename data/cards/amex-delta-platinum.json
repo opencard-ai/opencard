@@ -1,6 +1,6 @@
 {
   "card_id": "amex-delta-platinum",
-  "name": "Delta SkyMiles® Platinum American Express Card",
+  "name": "Delta SkyMiles\u00ae Platinum American Express Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 350,
@@ -40,26 +40,6 @@
       "category": "Other",
       "rate": 1,
       "notes": null
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Resy Credit",
-      "amount": 120,
-      "frequency": "Annual",
-      "description": "Up to $10 per month ($120/year) in statement credits at U.S. Resy restaurants."
-    },
-    {
-      "name": "Rideshare Credit",
-      "amount": 120,
-      "frequency": "Annual",
-      "description": "Up to $10 per month ($120/year) on U.S. rideshare purchases with select providers."
-    },
-    {
-      "name": "Global Entry/TSA PreCheck",
-      "amount": 100,
-      "frequency": "Every 4 years",
-      "description": "Up to $120 statement credit for Global Entry or up to $85 for TSA PreCheck every 4 years."
     }
   ],
   "travel_benefits": {

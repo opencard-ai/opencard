@@ -1,6 +1,6 @@
 {
   "card_id": "choice-privileges-visa",
-  "name": "Choice Privileges Mastercard®",
+  "name": "Choice Privileges Mastercard\u00ae",
   "issuer": "Wells Fargo",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -34,14 +34,6 @@
       "category": "All Other Purchases",
       "rate": 1,
       "notes": "1x point on all other purchases"
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Anniversary bonus",
-      "amount": 0,
-      "frequency": "Annual",
-      "description": "8,000 bonus points when you spend $10,000+ annually on purchases"
     }
   ],
   "travel_benefits": {

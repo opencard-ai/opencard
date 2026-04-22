@@ -20,14 +20,6 @@
       "notes": "unlimited"
     }
   ],
-  "annual_credits": [
-    {
-      "name": "No Foreign Transaction Fees",
-      "amount": 0,
-      "frequency": "annual",
-      "description": "Standard across all Discover cards"
-    }
-  ],
   "travel_benefits": {},
   "fhr_thc": {
     "fhr_eligible": false,

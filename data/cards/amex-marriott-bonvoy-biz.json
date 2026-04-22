@@ -1,6 +1,6 @@
 {
   "card_id": "amex-marriott-bonvoy-biz",
-  "name": "Marriott Bonvoy Business® American Express® Card",
+  "name": "Marriott Bonvoy Business\u00ae American Express\u00ae Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 125,
@@ -45,14 +45,6 @@
       "category": "Other",
       "rate": 2,
       "notes": "All other eligible purchases"
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Free Night Award",
-      "amount": 0,
-      "frequency": "Annual",
-      "description": "1 Free Night Award each year after card account anniversary. Award can be used for one night at a property with a redemption level at or under 35,000 Marriott Bonvoy points."
     }
   ],
   "travel_benefits": {

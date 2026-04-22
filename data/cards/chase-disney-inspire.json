@@ -46,26 +46,6 @@
       "notes": "Earned as Disney Rewards Dollars"
     }
   ],
-  "annual_credits": [
-    {
-      "name": "Disney Streaming Credit",
-      "amount": 120,
-      "frequency": "annual",
-      "description": "$10 monthly statement credit for spending $10 or more on qualifying subscriptions or add-on purchases made directly at DisneyPlus.com, Hulu.com or ESPN+ (requires yearly activation). Up to $120 per year."
-    },
-    {
-      "name": "Disney Theme Park Tickets Credit",
-      "amount": 100,
-      "frequency": "per anniversary year",
-      "description": "$100 statement credit after spending $200 per anniversary year on Disney Theme Park Ticket purchases in the U.S."
-    },
-    {
-      "name": "Disney Resorts and Cruise Bonus",
-      "amount": null,
-      "frequency": "per anniversary year",
-      "description": "Earn 200 Disney Rewards Dollars after spending $2,000 per anniversary year on Disney Resorts in the U.S. and Disney Cruise Line bookings"
-    }
-  ],
   "travel_benefits": {
     "hotel_status": [],
     "other_benefits": [
