@@ -57,5 +57,23 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.947Z"
+  "last_updated": "2026-04-16T13:41:49.947Z",
+  "recurring_credits": [
+    {
+      "name": "Hilton Resort Credit",
+      "amount": 250,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$250 annual credit at Hilton resorts.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Hilton Honors Diamond Status",
+      "amount": null,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Complimentary Hilton Honors Diamond status.",
+      "reset_type": "cardmember_year"
+    }
+  ]
 }

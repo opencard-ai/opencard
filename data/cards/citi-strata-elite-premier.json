@@ -67,5 +67,23 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.977Z"
+  "last_updated": "2026-04-16T13:41:49.977Z",
+  "recurring_credits": [
+    {
+      "name": "Hotel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$300 annual hotel credit via Citi Travel.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Global Entry Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $100 every 4 years for Global Entry.",
+      "reset_type": "cardmember_year"
+    }
+  ]
 }

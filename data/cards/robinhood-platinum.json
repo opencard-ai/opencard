@@ -44,5 +44,23 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.994Z"
+  "last_updated": "2026-04-16T13:41:49.994Z",
+  "recurring_credits": [
+    {
+      "name": "3% MATCH",
+      "amount": null,
+      "frequency": "annual",
+      "category": "other",
+      "description": "3% match on IRA contributions.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "0% Foreign Transaction Fee",
+      "amount": null,
+      "frequency": "annual",
+      "category": "other",
+      "description": "No foreign transaction fees.",
+      "reset_type": "cardmember_year"
+    }
+  ]
 }

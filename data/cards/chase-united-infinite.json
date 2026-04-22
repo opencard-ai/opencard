@@ -62,5 +62,31 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.971Z"
+  "last_updated": "2026-04-16T13:41:49.971Z",
+  "recurring_credits": [
+    {
+      "name": "United Club Access",
+      "amount": null,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Complimentary United Club access.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Premier Access",
+      "amount": null,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Premier boarding + same-day upgrade.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Global Entry Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $100 every 4 years for Global Entry.",
+      "reset_type": "cardmember_year"
+    }
+  ]
 }

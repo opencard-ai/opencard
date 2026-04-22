@@ -92,10 +92,20 @@
   },
   "recurring_credits": [
     {
-      "name": "Global Entry/TSA PreCheck Credit",
-      "amount": 120,
+      "name": "Delta Sky Club Access",
+      "amount": null,
       "frequency": "annual",
-      "category": "other"
+      "category": "travel",
+      "description": "Complimentary Delta Sky Club access.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Global Entry Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $100 every 4 years for Global Entry.",
+      "reset_type": "cardmember_year"
     }
   ]
 }

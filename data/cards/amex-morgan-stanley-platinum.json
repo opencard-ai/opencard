@@ -48,5 +48,47 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.949Z"
+  "last_updated": "2026-04-16T13:41:49.949Z",
+  "recurring_credits": [
+    {
+      "name": "Airline Fee Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$200 annual airline fee credit.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Fine Hotels Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$200 annual Fine Hotels credit.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Uber Cash",
+      "amount": 15,
+      "frequency": "monthly",
+      "category": "travel",
+      "description": "$15/month Uber Cash.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Global Entry Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $100 every 4 years for Global Entry.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Morgan Stanley Benefits",
+      "amount": null,
+      "frequency": "annual",
+      "category": "other",
+      "description": "Morgan Stanley exclusive benefits.",
+      "reset_type": "cardmember_year"
+    }
+  ]
 }
