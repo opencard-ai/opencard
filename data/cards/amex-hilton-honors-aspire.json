@@ -101,32 +101,24 @@
       "amount": 200,
       "frequency": "semi_annual",
       "category": "travel",
-      "description": "$200 every 6 months for Hilton resort properties.",
-      "reset_type": "calendar_year"
+      "description": "$200 credit per stay at Hilton resorts ($400/year).",
+      "reset_type": "cardmember_year"
     },
     {
-      "name": "Airline Credit",
+      "name": "Airline Fee Credit",
       "amount": 200,
-      "frequency": "quarterly",
-      "category": "travel",
-      "description": "$50 per quarter for airline charges.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "CLEAR+ Credit",
-      "amount": 209,
-      "frequency": "annual",
-      "category": "other",
-      "description": "Up to $209 credit towards CLEAR+ membership.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Luxury Property Credit",
-      "amount": 100,
       "frequency": "annual",
       "category": "travel",
-      "description": "$100 property credit at Waldorf Astoria and Conrad (2-night min).",
-      "reset_type": "calendar_year"
+      "description": "$200 annual ($50/quarter) for airline fees (checked bags, seat selection).",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "CLEAR Plus Credit",
+      "amount": 189,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$189/year for CLEAR Plus membership.",
+      "reset_type": "cardmember_year"
     }
   ]
 }

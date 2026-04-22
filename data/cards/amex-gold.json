@@ -92,44 +92,28 @@
   },
   "recurring_credits": [
     {
-      "name": "Uber Cash",
-      "amount": 120,
-      "frequency": "annual",
-      "category": "other",
-      "description": "$10 monthly ($120/year) for Uber rides and Uber Eats in the US. Enrollment required.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Resy Credit",
-      "amount": 50,
-      "frequency": "semi_annual",
-      "category": "dining",
-      "description": "$50 semi-annually ($100/year) for Resy restaurant bookings. January-June and July-December.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Airline Fee Credit",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "$100 annual credit for airline incidentals. Enrollment required.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Dunkin' Credit",
-      "amount": 84,
-      "frequency": "annual",
-      "category": "Monthly",
-      "description": "$7 monthly credit at U.S. Dunkin' locations.",
-      "reset_type": "calendar_year"
-    },
-    {
       "name": "Dining Credit",
       "amount": 120,
       "frequency": "annual",
-      "category": "Monthly",
-      "description": "$10 monthly at participating partners (Shake Shack, Cheesecake Factory, etc.).",
-      "reset_type": "calendar_year"
+      "category": "dining",
+      "description": "$120/year ($10/month) at select restaurants. Enrollment required.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Uber Cash",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$100/year Uber Cash for rides or Uber Eats.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": " airline Fee Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$100 annual credit for checked bags with one selected airline.",
+      "reset_type": "cardmember_year"
     }
   ]
 }
