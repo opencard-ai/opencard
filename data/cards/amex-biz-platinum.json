@@ -122,14 +122,6 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "American Express Global Lounge Collection",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "Included",
-      "description": "Complimentary access to Centurion Lounges, Delta Sky Clubs (when flying Delta), Priority Pass, and other lounges in the Amex Global Lounge Collection.",
-      "reset_type": "calendar_year"
-    },
-    {
       "name": "Walmart+ Membership Credit",
       "amount": 155,
       "frequency": "annual",

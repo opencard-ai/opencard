@@ -73,22 +73,6 @@
       "category": "entertainment",
       "description": "$120 annual credit for Disney+ bundle (Disney+, Hulu, ESPN+). Enrollment required.",
       "reset_type": "calendar_year"
-    },
-    {
-      "name": "No Foreign Transaction Fees",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "annual",
-      "description": "Standard across all Capital One cards",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Uber One Benefit",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "annual",
-      "description": "Complimentary Uber One membership (ended late 2024; need to verify 2026 status)",
-      "reset_type": "calendar_year"
     }
   ]
 }

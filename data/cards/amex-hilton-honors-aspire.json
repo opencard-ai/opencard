@@ -121,30 +121,6 @@
       "category": "travel",
       "description": "$100 property credit at Waldorf Astoria and Conrad (2-night min).",
       "reset_type": "calendar_year"
-    },
-    {
-      "name": "Hilton Diamond Status",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Diamond status - top tier with free breakfast, upgrades, late checkout.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Free Night Certificate",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "One free night at almost any Hilton property worldwide.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Second Free Night",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "Annual (upon $30,000 spend)",
-      "description": "Earn an additional Free Night Certificate after spending $30,000 on eligible purchases in a calendar year",
-      "reset_type": "calendar_year"
     }
   ]
 }

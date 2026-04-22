@@ -79,14 +79,6 @@
       "category": "travel",
       "description": "$300 annual credit for bookings through Capital One Travel.",
       "reset_type": "calendar_year"
-    },
-    {
-      "name": "Priority Pass Plus Plaza Premium",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Unlimited lounge access for cardholder + 2 guests.",
-      "reset_type": "calendar_year"
     }
   ],
   "foreign_transaction_fee": 0,

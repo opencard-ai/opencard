@@ -93,22 +93,6 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "12 Gogo Inflight Passes",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Gogo inflight internet passes (12 per year).",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Lounge Access",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Priority Pass and Chase Sapphire Reserve lounge access.",
-      "reset_type": "calendar_year"
-    },
-    {
       "name": "Travel credit",
       "amount": 325,
       "frequency": "annual",

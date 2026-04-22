@@ -62,12 +62,5 @@
     "description": "$250 cash back after $500 spend within 3 months",
     "estimated_value": 250
   },
-  "recurring_credits": [
-    {
-      "name": "DashPass",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other"
-    }
-  ]
+  "recurring_credits": []
 }

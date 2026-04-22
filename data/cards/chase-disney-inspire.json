@@ -104,12 +104,6 @@
       "amount": 100,
       "frequency": "annual",
       "category": "other"
-    },
-    {
-      "name": "Disney Resorts and Cruise Bonus",
-      "amount": null,
-      "frequency": "annual",
-      "category": "other"
     }
   ]
 }

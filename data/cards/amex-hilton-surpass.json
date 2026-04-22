@@ -116,12 +116,6 @@
       "amount": 200,
       "frequency": "quarterly",
       "category": "hotel"
-    },
-    {
-      "name": "Free Night Reward (spending)",
-      "amount": null,
-      "frequency": "annual",
-      "category": "other"
     }
   ]
 }

@@ -61,18 +61,5 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "name": "Free two-day shipping",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other"
-    },
-    {
-      "name": "Extra 30 days returns",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other"
-    }
-  ]
+  "recurring_credits": []
 }

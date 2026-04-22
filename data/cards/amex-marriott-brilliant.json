@@ -126,14 +126,6 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "Marriott Bonvoy Platinum Elite Status",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Platinum Elite status with Marriott Bonvoy.",
-      "reset_type": "calendar_year"
-    },
-    {
       "name": "Brilliant Dining Credit",
       "amount": 300,
       "frequency": "annual",

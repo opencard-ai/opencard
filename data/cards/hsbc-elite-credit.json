@@ -93,18 +93,5 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "name": "Airline incidental credit",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "airline"
-    },
-    {
-      "name": "Global Entry/TSA PreCheck",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other"
-    }
-  ]
+  "recurring_credits": []
 }

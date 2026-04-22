@@ -120,14 +120,6 @@
       "reset_type": "cardmember_year"
     },
     {
-      "name": "Priority Pass Membership",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Priority Pass Select membership.",
-      "reset_type": "cardmember_year"
-    },
-    {
       "name": "Global Entry Credit",
       "amount": 100,
       "frequency": "annual",
