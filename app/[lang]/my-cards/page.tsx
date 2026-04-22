@@ -252,17 +252,17 @@ export default function MyCardsPage({
   }, []);
 
   
-  // Load open dates on mount
+  // Load open dates after email is set
   useEffect(() => {
-    if (!savedEmail) return;
-    fetch('/api/my-cards/set-open-date?email=' + encodeURIComponent(savedEmail))
+    if (!email) return;
+    fetch('/api/my-cards/set-open-date?email=' + encodeURIComponent(email))
       .then(r => r.json())
       .then(d => { if (d.open_dates) setOpenDates(d.open_dates); });
-  }, []);
+  }, [email]);
 
   // Handle edit open date
   const handleEditOpenDate = useCallback(async (cardId: string) => {
-    if (!savedEmail) return;
+    if (!email) return;
     // Simple prompt for now (can be modal later)
     const input = prompt('Enter open month/year (e.g., 3 2024):');
     if (!input) return;
@@ -272,12 +272,12 @@ export default function MyCardsPage({
     const res = await fetch('/api/my-cards/set-open-date', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: savedEmail, card_id: cardId, month: m, year: y }),
+      body: JSON.stringify({ email: email, card_id: cardId, month: m, year: y }),
     });
     if (res.ok) {
       setOpenDates(prev => ({ ...prev, [cardId]: { month: m, year: y } }));
     }
-  }, [savedEmail]);
+  }, [email]);
 
 
 // Listen for card save/remove events from other pages
