@@ -264,8 +264,8 @@ export default function MyCardsPage({
   // Handle edit open date
   const handleEditOpenDate = useCallback(async (cardId: string) => {
     // Get email from localStorage or state
-    const currentEmail = email || localStorage.getItem(SUBSCRIBED_EMAIL_KEY) || '';
-    console.log('handleEditOpenDate called, email:', currentEmail);
+    const currentEmail = email || localStorage.getItem(SUBSCRIBED_EMAIL_KEY) || localStorage.getItem('opencard_subscribed_email') || '';
+    console.log('handleEditOpenDate called, email from state:', email, 'from LS:', localStorage.getItem(SUBSCRIBED_EMAIL_KEY), 'from alt LS:', localStorage.getItem('opencard_subscribed_email'));
     if (!currentEmail) { alert('Please enter your email first'); return; }
     
     // Use simple window.prompt - works on desktop, show alert for mobile
