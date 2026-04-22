@@ -68,16 +68,12 @@
   },
   "recurring_credits": [
     {
-      "name": "Annual Companion Fare",
-      "amount": 122,
+      "name": "Alaska Lounge Access",
+      "amount": null,
       "frequency": "annual",
-      "category": "other"
-    },
-    {
-      "name": "Lounge Discount",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "other"
+      "category": "travel",
+      "description": "Complimentary Alaska Airlines Lounge access.",
+      "reset_type": "cardmember_year"
     }
   ]
 }

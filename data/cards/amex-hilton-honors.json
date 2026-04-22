@@ -99,5 +99,15 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Hilton Honors Gold Status",
+      "amount": null,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Complimentary Hilton Honors Gold status.",
+      "reset_type": "cardmember_year"
+    }
+  ]
 }

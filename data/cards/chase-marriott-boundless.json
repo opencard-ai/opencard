@@ -87,12 +87,20 @@
   },
   "recurring_credits": [
     {
-      "name": "Airline Credit",
-      "amount": 100,
+      "name": "Marriott Bonvoy Free Night",
+      "amount": null,
       "frequency": "annual",
-      "category": "Calendar Year",
-      "description": "Up to $100 in statement credits ($50 every 6 months) for airline purchases through 12/31/2026.",
-      "reset_type": "calendar_year"
+      "category": "travel",
+      "description": "1 Free Night Award (up to 35,000 points) annually.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Marriott Bonvoy Elite Nights",
+      "amount": null,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "15 Elite nights credit toward Marriott status.",
+      "reset_type": "cardmember_year"
     }
   ]
 }

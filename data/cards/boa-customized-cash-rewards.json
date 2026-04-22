@@ -72,5 +72,15 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "2025 Quarterly Bonus",
+      "amount": 200,
+      "frequency": "quarterly",
+      "category": "shopping",
+      "description": "$200 bonus cash when you redeem for travel.",
+      "reset_type": "cardmember_year"
+    }
+  ]
 }
