@@ -88,7 +88,7 @@
     },
     {
       "url": "https://www.doctorofcredit.com/hsbc-premier-elite-card-review-60000-points-signup-bonus-and-495-annual-fee/",
-      "notes": "Doctor of Credit \u2014 card details"
+      "notes": "Doctor of Credit — card details"
     }
   ],
   "last_updated": "2026-04-16T13:41:49.984Z",
@@ -99,5 +99,30 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": []
+  "recurring_credits": [
+    {
+      "name": "Airport Lounge Access",
+      "amount": null,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Complimentary lounge access.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Global Entry Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $100 every 4 years for Global Entry.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Travel Credit",
+      "amount": 250,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$250 annual travel credit.",
+      "reset_type": "cardmember_year"
+    }
+  ]
 }
