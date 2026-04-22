@@ -1,8 +1,8 @@
 {
   "card_id": "wyndham-rewards-earner-business-barclays",
-  "name": "Wyndham Rewards Earner\u00ae Business Card",
+  "name": "Wyndham Rewards Earner® Business Card",
   "issuer": "Barclays",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 95,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

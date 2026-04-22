@@ -1,8 +1,8 @@
 {
   "card_id": "centurion-card-amex",
-  "name": "The Centurion\u00ae Card from American Express",
+  "name": "The Centurion® Card from American Express",
   "issuer": "American Express",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 5000,
   "foreign_transaction_fee": 0,
   "credit_required": "By Invitation Only",

@@ -1,8 +1,8 @@
 {
   "card_id": "pnc-points-visa",
-  "name": "PNC Points Visa\u00ae Credit Card",
+  "name": "PNC Points Visa® Credit Card",
   "issuer": "PNC Bank",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

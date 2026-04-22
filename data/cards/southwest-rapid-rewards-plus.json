@@ -1,8 +1,8 @@
 {
   "card_id": "southwest-rapid-rewards-plus",
-  "name": "Southwest Rapid Rewards\u00ae Plus Credit Card",
+  "name": "Southwest Rapid Rewards® Plus Credit Card",
   "issuer": "Chase",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 99,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
@@ -12,7 +12,7 @@
     "bonus_points": 50000,
     "estimated_value": 500,
     "point_program": "Southwest Rapid Rewards",
-    "description": "50,000 bonus Rapid Rewards points after spending $1,000 in first 3 months (worth ~$745 toward Southwest flights at 1.49\u00a2/point)"
+    "description": "50,000 bonus Rapid Rewards points after spending $1,000 in first 3 months (worth ~$745 toward Southwest flights at 1.49¢/point)"
   },
   "earning_rates": [
     {

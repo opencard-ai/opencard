@@ -1,8 +1,8 @@
 {
   "card_id": "citi-aadvantage-executive",
-  "name": "Citi\u00ae / AAdvantage\u00ae Executive World Elite Mastercard\u00ae",
+  "name": "Citi® / AAdvantage® Executive World Elite Mastercard®",
   "issuer": "Citi",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 595,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
@@ -29,9 +29,9 @@
   "travel_benefits": {
     "lounge_access": [
       {
-        "name": "Admirals Club\u00ae",
+        "name": "Admirals Club®",
         "type": "Full membership",
-        "notes": "Primary cardmember and up to 2 guests; access to 100+ Admirals Club\u00ae and partner lounges worldwide (valued up to $850)"
+        "notes": "Primary cardmember and up to 2 guests; access to 100+ Admirals Club® and partner lounges worldwide (valued up to $850)"
       }
     ],
     "other_benefits": [

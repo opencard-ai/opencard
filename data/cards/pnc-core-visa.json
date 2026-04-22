@@ -1,8 +1,8 @@
 {
   "card_id": "pnc-core-visa",
-  "name": "PNC Core Visa\u00ae Credit Card",
+  "name": "PNC Core Visa® Credit Card",
   "issuer": "PNC Bank",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

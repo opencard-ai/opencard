@@ -1,8 +1,8 @@
 {
   "card_id": "boa-alaska-ascent",
-  "name": "Alaska Airlines Atmos\u2122 Ascent Visa Signature\u00ae Card",
+  "name": "Alaska Airlines Atmos™ Ascent Visa Signature® Card",
   "issuer": "Bank of America",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 95,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

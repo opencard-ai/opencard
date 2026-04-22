@@ -1,8 +1,8 @@
 {
   "card_id": "boa-unlimited-cash-rewards",
-  "name": "Bank of America\u00ae Unlimited Cash Rewards Credit Card",
+  "name": "Bank of America® Unlimited Cash Rewards Credit Card",
   "issuer": "Bank of America",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

@@ -1,8 +1,8 @@
 {
   "card_id": "discover-it-student-cash-back",
-  "name": "Discover it\u00ae Student Cash Back",
+  "name": "Discover it® Student Cash Back",
   "issuer": "Discover",
-  "network": "Discover",
+  "network": "discover",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Fair to Good (Student)",

@@ -1,8 +1,8 @@
 {
   "card_id": "choice-privileges-visa",
-  "name": "Choice Privileges Mastercard\u00ae",
+  "name": "Choice Privileges Mastercard®",
   "issuer": "Wells Fargo",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

@@ -2,7 +2,7 @@
   "card_id": "capital-one-spark-cash-plus",
   "name": "Capital One Spark Cash Plus",
   "issuer": "Capital One",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 150,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
@@ -10,7 +10,7 @@
     "spending_requirement": 4500,
     "time_period_months": 3,
     "bonus_points": null,
-    "description": "Earn up to $2,000 cash bonus \u2014 $1,000 once you spend $4,500, $2,000 once you spend $10,000 (first 3 months)",
+    "description": "Earn up to $2,000 cash bonus — $1,000 once you spend $4,500, $2,000 once you spend $10,000 (first 3 months)",
     "point_program": "Capital One Spark Cash"
   },
   "earning_rates": [
@@ -65,7 +65,7 @@
       "notes": "CNN Underscored: competitive 2% rate, employee cards earn 2%"
     }
   ],
-  "notes": "Charge card (balance must be paid in full monthly). $150 annual fee. 2% unlimited cash back on everything \u2014 best flat-rate business card for spending. Up to $2,000 welcome bonus for high spenders. Employee cards earn 2% and are free. No preset spending limit. For businesses that can pay in full monthly and spend heavily, this is one of the best business cards available. Compare to Spark Cash Select (1.5% no-fee) for lower spenders.",
+  "notes": "Charge card (balance must be paid in full monthly). $150 annual fee. 2% unlimited cash back on everything — best flat-rate business card for spending. Up to $2,000 welcome bonus for high spenders. Employee cards earn 2% and are free. No preset spending limit. For businesses that can pay in full monthly and spend heavily, this is one of the best business cards available. Compare to Spark Cash Select (1.5% no-fee) for lower spenders.",
   "confidence": "high",
   "last_updated": "2026-04-16T13:41:49.960Z",
   "tags": [

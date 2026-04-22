@@ -2,7 +2,7 @@
   "card_id": "bilt-blue",
   "name": "Bilt Blue Card",
   "issuer": "First Electronic Bank",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "annual_fee_description": "$0 annual fee",
   "welcome_offer": {

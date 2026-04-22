@@ -1,8 +1,8 @@
 {
   "card_id": "amex-delta-gold",
-  "name": "Delta SkyMiles\u00ae Gold American Express Card",
+  "name": "Delta SkyMiles® Gold American Express Card",
   "issuer": "American Express",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 150,
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",

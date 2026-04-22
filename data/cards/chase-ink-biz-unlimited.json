@@ -1,8 +1,8 @@
 {
   "card_id": "chase-ink-biz-unlimited",
-  "name": "Chase Ink Business Unlimited\u00ae Credit Card",
+  "name": "Chase Ink Business Unlimited® Credit Card",
   "issuer": "Chase",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 3,
   "credit_required": "Excellent",
@@ -31,7 +31,7 @@
     "other_benefits": [
       {
         "name": "Intro APR",
-        "description": "0% intro APR for 12 months from account opening on purchases. After that, 16.74%\u201324.74% variable APR."
+        "description": "0% intro APR for 12 months from account opening on purchases. After that, 16.74%–24.74% variable APR."
       },
       {
         "name": "Employee Cards",

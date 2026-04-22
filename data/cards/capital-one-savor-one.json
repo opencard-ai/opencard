@@ -2,7 +2,7 @@
   "card_id": "capital-one-savor-one",
   "name": "Capital One SavorOne Cash Rewards",
   "issuer": "Capital One",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "annual_fee_description": "$0 annual fee",
   "welcome_offer": {
@@ -46,7 +46,7 @@
     "No foreign transaction fees",
     "Capital One Travel $0 intro annual fee for the first year",
     "Instant access to credit score monitoring",
-    "No bonus cap \u2014 unlimited 3% on qualifying categories"
+    "No bonus cap — unlimited 3% on qualifying categories"
   ],
   "tags": [
     "cash-back",

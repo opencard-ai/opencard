@@ -1,8 +1,8 @@
 {
   "card_id": "barclays-carnival-world-mastercard",
-  "name": "Carnival\u00ae World Mastercard\u00ae",
+  "name": "Carnival® World Mastercard®",
   "issuer": "Barclays",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

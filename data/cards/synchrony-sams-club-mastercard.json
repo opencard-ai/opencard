@@ -1,8 +1,8 @@
 {
   "card_id": "synchrony-sams-club-mastercard",
-  "name": "Sam's Club\u00ae Mastercard\u00ae",
+  "name": "Sam's Club® Mastercard®",
   "issuer": "Synchrony",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",

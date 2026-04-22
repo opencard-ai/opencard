@@ -1,8 +1,8 @@
 {
   "card_id": "amex-plum",
-  "name": "The Plum Card\u00ae from American Express",
+  "name": "The Plum Card® from American Express",
   "issuer": "American Express",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 250,
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",

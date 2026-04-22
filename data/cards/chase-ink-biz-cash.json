@@ -1,8 +1,8 @@
 {
   "card_id": "chase-ink-biz-cash",
-  "name": "Chase Ink Business Cash\u00ae Credit Card",
+  "name": "Chase Ink Business Cash® Credit Card",
   "issuer": "Chase",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 3,
   "credit_required": "Excellent",

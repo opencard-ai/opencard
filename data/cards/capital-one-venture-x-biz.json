@@ -2,7 +2,7 @@
   "card_id": "capital-one-venture-x-biz",
   "name": "Capital One Venture X Business",
   "issuer": "Capital One",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 395,
   "annual_fee_description": "$395 annual fee",
   "welcome_offer": {

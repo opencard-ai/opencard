@@ -2,7 +2,7 @@
   "card_id": "amex-everyday-preferred",
   "name": "Amex EveryDay Preferred Credit Card",
   "issuer": "American Express",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 95,
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",

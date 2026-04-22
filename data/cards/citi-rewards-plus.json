@@ -1,8 +1,8 @@
 {
   "card_id": "citi-rewards-plus",
-  "name": "Citi Rewards+\u00ae Card",
+  "name": "Citi Rewards+® Card",
   "issuer": "Citi",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

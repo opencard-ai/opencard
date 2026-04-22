@@ -2,7 +2,7 @@
   "card_id": "amex-hilton-honors-biz",
   "name": "Hilton Honors American Express Business Card",
   "issuer": "American Express",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 195,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

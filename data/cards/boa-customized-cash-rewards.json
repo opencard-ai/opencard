@@ -1,8 +1,8 @@
 {
   "card_id": "boa-customized-cash-rewards",
-  "name": "Bank of America\u00ae Customized Cash Rewards Credit Card",
+  "name": "Bank of America® Customized Cash Rewards Credit Card",
   "issuer": "Bank of America",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
@@ -37,7 +37,7 @@
     "other_benefits": [
       {
         "name": "Fraud Protection",
-        "description": "\u96f6\u8cac\u4efb\u9632\u76dc\u5237\u4fdd\u969c"
+        "description": "零責任防盜刷保障"
       }
     ]
   },

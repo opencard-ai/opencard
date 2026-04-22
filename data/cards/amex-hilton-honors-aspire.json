@@ -2,7 +2,7 @@
   "card_id": "amex-hilton-honors-aspire",
   "name": "Hilton Honors American Express Aspire Card",
   "issuer": "American Express",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 550,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",

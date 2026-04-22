@@ -1,8 +1,8 @@
 {
   "card_id": "boa-student-customized-cash-rewards",
-  "name": "Bank of America\u00ae Customized Cash Rewards Credit Card for Students",
+  "name": "Bank of America® Customized Cash Rewards Credit Card for Students",
   "issuer": "Bank of America",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Fair",

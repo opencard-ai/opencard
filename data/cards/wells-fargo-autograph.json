@@ -1,8 +1,8 @@
 {
   "card_id": "wells-fargo-autograph",
-  "name": "Wells Fargo Autograph Visa Signature\u00ae Card",
+  "name": "Wells Fargo Autograph Visa Signature® Card",
   "issuer": "Wells Fargo",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",

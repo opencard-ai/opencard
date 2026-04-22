@@ -1,8 +1,8 @@
 {
   "card_id": "chase-marriott-boundless",
-  "name": "Marriott Bonvoy Boundless\u00ae Credit Card",
+  "name": "Marriott Bonvoy Boundless® Credit Card",
   "issuer": "Chase",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 95,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

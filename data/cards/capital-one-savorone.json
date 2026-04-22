@@ -2,7 +2,7 @@
   "card_id": "capital-one-savorone",
   "name": "Capital One SavorOne Cash Rewards Credit Card",
   "issuer": "Capital One",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 39,
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",

@@ -1,8 +1,8 @@
 {
   "card_id": "chase-sapphire-preferred",
-  "name": "Chase Sapphire Preferred\u00ae Card",
+  "name": "Chase Sapphire Preferred® Card",
   "issuer": "Chase",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 95,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",

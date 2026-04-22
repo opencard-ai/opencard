@@ -1,8 +1,8 @@
 {
   "card_id": "comenity-bed-bath-beyond-mastercard",
-  "name": "Bed Bath & Beyond Mastercard\u00ae",
+  "name": "Bed Bath & Beyond Mastercard®",
   "issuer": "Bread Financial",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Fair to Good",

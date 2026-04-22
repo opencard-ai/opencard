@@ -1,8 +1,8 @@
 {
   "card_id": "boa-student-travel-rewards",
-  "name": "Bank of America\u00ae Travel Rewards Credit Card for Students",
+  "name": "Bank of America® Travel Rewards Credit Card for Students",
   "issuer": "Bank of America",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Fair",

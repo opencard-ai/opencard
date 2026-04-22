@@ -1,8 +1,8 @@
 {
   "card_id": "amex-everyday",
-  "name": "American Express EveryDay\u00ae Card",
+  "name": "American Express EveryDay® Card",
   "issuer": "American Express",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 0,
   "welcome_offer": {
     "bonus_points": 0,

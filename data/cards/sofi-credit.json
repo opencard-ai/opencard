@@ -2,7 +2,7 @@
   "card_id": "sofi-credit",
   "name": "SoFi Credit Card (Unlimited 2%)",
   "issuer": "SoFi / First Bank",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent (invitation-only / pre-qualification required)",
@@ -67,7 +67,7 @@
   ],
   "last_updated": "2026-04-16T13:41:49.995Z",
   "status": "active",
-  "notes": "SoFi Unlimited 2% Credit Card is invitation-only or requires pre-qualification through SoFi account. Not available to general public. Best redemption value is 1 cent/point into SoFi ecosystem (checking, savings, investment, or loan paydown). Cannot redeem for cash directly \u2014 must be SoFi ecosystem. Some existing cardholders transitioned to a monthly fee model as of Jan 2026; new applicants are not charged monthly fee.",
+  "notes": "SoFi Unlimited 2% Credit Card is invitation-only or requires pre-qualification through SoFi account. Not available to general public. Best redemption value is 1 cent/point into SoFi ecosystem (checking, savings, investment, or loan paydown). Cannot redeem for cash directly — must be SoFi ecosystem. Some existing cardholders transitioned to a monthly fee model as of Jan 2026; new applicants are not charged monthly fee.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

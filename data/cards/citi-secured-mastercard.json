@@ -1,8 +1,8 @@
 {
   "card_id": "citi-secured-mastercard",
-  "name": "Citi\u00ae Secured Mastercard\u00ae",
+  "name": "Citi® Secured Mastercard®",
   "issuer": "Citi",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Poor",

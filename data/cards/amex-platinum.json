@@ -1,8 +1,8 @@
 {
   "card_id": "amex-platinum",
-  "name": "The Platinum Card\u00ae from American Express",
+  "name": "The Platinum Card® from American Express",
   "issuer": "American Express",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 895,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",

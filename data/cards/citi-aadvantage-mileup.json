@@ -1,8 +1,8 @@
 {
   "card_id": "citi-aadvantage-mileup",
-  "name": "American Airlines AAdvantage\u00ae MileUp\u00ae Card",
+  "name": "American Airlines AAdvantage® MileUp® Card",
   "issuer": "Citi",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

@@ -1,8 +1,8 @@
 {
   "card_id": "us-bank-visa-platinum",
-  "name": "U.S. Bank Visa\u00ae Platinum Card",
+  "name": "U.S. Bank Visa® Platinum Card",
   "issuer": "U.S. Bank",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",

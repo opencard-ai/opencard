@@ -2,7 +2,7 @@
   "card_id": "chase-disney-inspire",
   "name": "Disney Inspire Visa Card",
   "issuer": "Chase",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 149,
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",

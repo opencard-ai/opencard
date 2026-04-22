@@ -2,7 +2,7 @@
   "card_id": "capital-one-spark-miles",
   "name": "Capital One Spark Miles for Business",
   "issuer": "Capital One",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 95,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

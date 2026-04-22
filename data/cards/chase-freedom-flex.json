@@ -1,8 +1,8 @@
 {
   "card_id": "chase-freedom-flex",
-  "name": "Chase Freedom Flex\u00ae",
+  "name": "Chase Freedom Flex®",
   "issuer": "Chase",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 3,
   "credit_required": "Good",

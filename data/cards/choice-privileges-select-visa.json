@@ -1,8 +1,8 @@
 {
   "card_id": "choice-privileges-select-visa",
-  "name": "Choice Privileges\u00ae Visa Signature\u00ae Card",
+  "name": "Choice Privileges® Visa Signature® Card",
   "issuer": "Wells Fargo",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

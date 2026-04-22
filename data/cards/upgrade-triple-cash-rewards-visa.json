@@ -2,7 +2,7 @@
   "card_id": "upgrade-triple-cash-rewards-visa",
   "name": "Upgrade Triple Cash Rewards Visa",
   "issuer": "Upgrade (Cross River Bank)",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 3,
   "credit_required": "Fair to Excellent",
@@ -39,7 +39,7 @@
     "other_benefits": [
       {
         "name": "Credit/loan hybrid",
-        "description": "Like other Upgrade cards, functions as both credit card and installment loan \u2014 remaining balance converts to fixed-rate repayment in equal monthly installments"
+        "description": "Like other Upgrade cards, functions as both credit card and installment loan — remaining balance converts to fixed-rate repayment in equal monthly installments"
       },
       {
         "name": "Upgrade Shopping discounts",
@@ -83,7 +83,7 @@
   ],
   "last_updated": "2026-04-16T13:41:50.004Z",
   "status": "active",
-  "notes": "Upgrade Triple Cash Rewards earns 3% on home, auto, and health categories \u2014 unusual category combinations that cover everyday spending areas. $200 welcome bonus requires opening a Rewards Checking Preferred account. APR: 14.99%\u201329.99% variable. Balance transfer fee: up to 5%. Credit lines range $500\u2013$25,000. Card acts as a hybrid credit card/installment loan \u2014 any remaining balance can be converted to fixed monthly payments at a fixed rate. No cash withdrawal at ATMs.",
+  "notes": "Upgrade Triple Cash Rewards earns 3% on home, auto, and health categories — unusual category combinations that cover everyday spending areas. $200 welcome bonus requires opening a Rewards Checking Preferred account. APR: 14.99%–29.99% variable. Balance transfer fee: up to 5%. Credit lines range $500–$25,000. Card acts as a hybrid credit card/installment loan — any remaining balance can be converted to fixed monthly payments at a fixed rate. No cash withdrawal at ATMs.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

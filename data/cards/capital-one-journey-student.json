@@ -2,7 +2,7 @@
   "card_id": "capital-one-journey-student",
   "name": "Capital One Journey Student Credit Card",
   "issuer": "Capital One",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Fair",
@@ -24,7 +24,7 @@
   "travel_benefits": {
     "hotel_status": [],
     "other_benefits": [
-      "Access to CreditWise\u00ae credit monitoring tool"
+      "Access to CreditWise® credit monitoring tool"
     ]
   },
   "fhr_thc": {

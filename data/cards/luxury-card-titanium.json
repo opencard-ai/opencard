@@ -1,8 +1,8 @@
 {
   "card_id": "luxury-card-titanium",
-  "name": "Luxury Card Mastercard\u00ae Titanium Card\u2122",
+  "name": "Luxury Card Mastercard® Titanium Card™",
   "issuer": "Barclays",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 299,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
