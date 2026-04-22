@@ -580,13 +580,13 @@ export default function MyCardsPage({
     console.log('CLICK FIRED', e);
     e.preventDefault();
     e.stopPropagation();
-    const input = prompt('Enter: email month year (e.g., test@test.com 3 2024)');
+    const input = prompt('Enter month year (e.g., 3 2024)');
     if (!input) return;
-    const parts = input.split(' ');
-    const em = parts[0];
-    const m = parseInt(parts[1]);
-    const y = parseInt(parts[2]);
-    if (!em || !m || !y) { alert('Format: email month year'); return; }
+    const parts = input.split(/\s+/);
+    const m = parseInt(parts[0]);
+    const y = parseInt(parts[1]);
+    const em = localStorage.getItem('opencard_subscribed_email') || '';
+    if (!em) { alert('No email - subscribe first'); return; }
     fetch('/api/my-cards/set-open-date', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -608,13 +608,13 @@ export default function MyCardsPage({
     console.log('CLICK FIRED', e);
     e.preventDefault();
     e.stopPropagation();
-    const input = prompt('Enter: email month year (e.g., test@test.com 3 2024)');
+    const input = prompt('Enter month year (e.g., 3 2024)');
     if (!input) return;
-    const parts = input.split(' ');
-    const em = parts[0];
-    const m = parseInt(parts[1]);
-    const y = parseInt(parts[2]);
-    if (!em || !m || !y) { alert('Format: email month year'); return; }
+    const parts = input.split(/\s+/);
+    const m = parseInt(parts[0]);
+    const y = parseInt(parts[1]);
+    const em = localStorage.getItem('opencard_subscribed_email') || '';
+    if (!em) { alert('No email - subscribe first'); return; }
     fetch('/api/my-cards/set-open-date', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
