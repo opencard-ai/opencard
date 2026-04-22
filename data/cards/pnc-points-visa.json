@@ -1,6 +1,6 @@
 {
   "card_id": "pnc-points-visa",
-  "name": "PNC Points Visa® Credit Card",
+  "name": "PNC Points Visa\u00ae Credit Card",
   "issuer": "PNC Bank",
   "network": "Visa",
   "annual_fee": 0,
@@ -33,7 +33,8 @@
     "trip_delay": false,
     "trip_cancellation": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "return_protection": null
   },
   "tags": [
     "no-annual-fee"

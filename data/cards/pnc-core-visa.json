@@ -1,6 +1,6 @@
 {
   "card_id": "pnc-core-visa",
-  "name": "PNC Core Visa® Credit Card",
+  "name": "PNC Core Visa\u00ae Credit Card",
   "issuer": "PNC Bank",
   "network": "Visa",
   "annual_fee": 0,
@@ -33,7 +33,12 @@
     "trip_delay": false,
     "trip_cancellation": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "no-annual-fee"

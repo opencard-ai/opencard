@@ -1,6 +1,6 @@
 {
   "card_id": "barclays-aarp-essential-rewards-mastercard",
-  "name": "AARP® Essential Rewards Mastercard® from Barclays",
+  "name": "AARP\u00ae Essential Rewards Mastercard\u00ae from Barclays",
   "issuer": "Barclays",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -53,7 +53,9 @@
     "rental_insurance": "None",
     "trip_delay": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null
   },
   "tags": [
     "cash-back",

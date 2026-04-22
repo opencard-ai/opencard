@@ -85,7 +85,8 @@
     "purchase_protection": true,
     "extended_warranty": true,
     "baggage_insurance": true,
-    "notes": "Trip cancellation/interruption coverage when round-trip is purchased entirely with the card. Strong all-around travel protections."
+    "notes": "Trip cancellation/interruption coverage when round-trip is purchased entirely with the card. Strong all-around travel protections.",
+    "return_protection": null
   },
   "tags": [
     "hotel",

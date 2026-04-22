@@ -1,6 +1,6 @@
 {
   "card_id": "wyndham-rewards-earner-business-barclays",
-  "name": "Wyndham Rewards Earner® Business Card",
+  "name": "Wyndham Rewards Earner\u00ae Business Card",
   "issuer": "Barclays",
   "network": "Mastercard",
   "annual_fee": 95,
@@ -65,7 +65,13 @@
     "rental_insurance": "None",
     "trip_delay": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "business",

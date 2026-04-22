@@ -1,12 +1,12 @@
 {
   "card_id": "discover-it-chrome",
-  "name": "Discover it® Chrome",
+  "name": "Discover it\u00ae Chrome",
   "issuer": "Discover",
   "network": "Discover",
   "annual_fee": 0,
   "welcome_offer": {
     "bonus_points": null,
-    "description": "Unlimited Cashback Match™ at end of first year",
+    "description": "Unlimited Cashback Match\u2122 at end of first year",
     "estimated_value": null,
     "spending_requirement": null,
     "time_period_months": null
@@ -29,10 +29,14 @@
     }
   ],
   "annual_credits": [],
-  "insurance": [
-    "Trip Cancellation",
-    "Travel Accident"
-  ],
+  "insurance": {
+    "trip_cancellation": null,
+    "trip_delay": null,
+    "rental_insurance": null,
+    "purchase_protection": null,
+    "return_protection": null,
+    "extended_warranty": null
+  },
   "foreign_transaction_fee": 0,
   "credit_required": "Good/Excellent",
   "tags": [

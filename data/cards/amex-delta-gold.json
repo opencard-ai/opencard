@@ -75,7 +75,8 @@
     "purchase_protection": false,
     "extended_warranty": false,
     "baggage_insurance": true,
-    "notes": "Trip delay insurance requires delay >12 hours. Baggage insurance covers up to $1,250 for carry-on and $500 for checked bags."
+    "notes": "Trip delay insurance requires delay >12 hours. Baggage insurance covers up to $1,250 for carry-on and $500 for checked bags.",
+    "return_protection": null
   },
   "tags": [
     "airline"

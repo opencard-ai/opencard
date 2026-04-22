@@ -1,6 +1,6 @@
 {
   "card_id": "us-bank-smartly-visa",
-  "name": "U.S. Bank Smartly™ Visa Signature® Card",
+  "name": "U.S. Bank Smartly\u2122 Visa Signature\u00ae Card",
   "issuer": "U.S. Bank",
   "network": "Visa",
   "annual_fee": 0,
@@ -42,7 +42,8 @@
     "trip_delay": false,
     "trip_cancellation": false,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null
   },
   "tags": [
     "no-annual-fee",

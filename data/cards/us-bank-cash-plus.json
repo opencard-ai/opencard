@@ -1,6 +1,6 @@
 {
   "card_id": "us-bank-cash-plus",
-  "name": "U.S. Bank Cash+™ Visa Signature® Card",
+  "name": "U.S. Bank Cash+\u2122 Visa Signature\u00ae Card",
   "issuer": "U.S. Bank",
   "network": "Visa",
   "annual_fee": 0,
@@ -53,7 +53,8 @@
     "trip_delay": false,
     "trip_cancellation": false,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null
   },
   "tags": [
     "no-annual-fee",

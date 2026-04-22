@@ -1,6 +1,6 @@
 {
   "card_id": "citi-strata",
-  "name": "Citi Strata℠ Card",
+  "name": "Citi Strata\u2120 Card",
   "issuer": "Citi",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -56,7 +56,10 @@
   "insurance": {
     "rental_insurance": "Secondary",
     "purchase_protection": false,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "trip_delay": null,
+    "return_protection": null
   },
   "tags": [
     "no-annual-fee"

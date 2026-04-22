@@ -1,6 +1,6 @@
 {
   "card_id": "pnc-cash-rewards-visa",
-  "name": "PNC Cash Rewards® Visa® Credit Card",
+  "name": "PNC Cash Rewards\u00ae Visa\u00ae Credit Card",
   "issuer": "PNC Bank",
   "network": "Visa",
   "annual_fee": 0,
@@ -54,7 +54,8 @@
     "trip_delay": false,
     "trip_cancellation": false,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null
   },
   "tags": [
     "cash-back",

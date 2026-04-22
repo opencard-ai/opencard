@@ -84,7 +84,9 @@
     "rental_insurance": "Secondary",
     "trip_delay": true,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "return_protection": null
   },
   "tags": [
     "hotel",

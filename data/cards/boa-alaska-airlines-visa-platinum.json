@@ -1,6 +1,6 @@
 {
   "card_id": "boa-alaska-airlines-visa-platinum",
-  "name": "Alaska Airlines Visa® Platinum Plus® Credit Card",
+  "name": "Alaska Airlines Visa\u00ae Platinum Plus\u00ae Credit Card",
   "issuer": "Bank of America",
   "network": "Visa",
   "annual_fee": 0,
@@ -47,7 +47,9 @@
     "rental_insurance": "Secondary",
     "trip_delay": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null
   },
   "tags": [
     "airline",

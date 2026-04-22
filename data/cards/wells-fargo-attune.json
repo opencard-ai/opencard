@@ -1,6 +1,6 @@
 {
   "card_id": "wells-fargo-attune",
-  "name": "Wells Fargo Attune World Elite Mastercard®",
+  "name": "Wells Fargo Attune World Elite Mastercard\u00ae",
   "issuer": "Wells Fargo",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -58,7 +58,8 @@
     "trip_delay": false,
     "trip_cancellation": false,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null
   },
   "tags": [
     "no-annual-fee",

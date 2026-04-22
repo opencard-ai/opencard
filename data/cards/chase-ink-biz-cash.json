@@ -1,6 +1,6 @@
 {
   "card_id": "chase-ink-biz-cash",
-  "name": "Chase Ink Business Cash® Credit Card",
+  "name": "Chase Ink Business Cash\u00ae Credit Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 0,
@@ -70,7 +70,8 @@
     "purchase_protection": true,
     "extended_warranty": true,
     "baggage_delay": true,
-    "lost_luggage": true
+    "lost_luggage": true,
+    "return_protection": null
   },
   "tags": [
     "business",

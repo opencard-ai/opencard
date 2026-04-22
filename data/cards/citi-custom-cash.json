@@ -1,6 +1,6 @@
 {
   "card_id": "citi-custom-cash",
-  "name": "Citi Custom Cash® Card",
+  "name": "Citi Custom Cash\u00ae Card",
   "issuer": "Citi",
   "network": "Visa",
   "annual_fee": 0,
@@ -36,7 +36,13 @@
     "rental_insurance": "None",
     "trip_delay": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "no-annual-fee"

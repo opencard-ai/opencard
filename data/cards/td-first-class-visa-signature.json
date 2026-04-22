@@ -1,6 +1,6 @@
 {
   "card_id": "td-first-class-visa-signature",
-  "name": "TD First Class Visa Signature® Credit Card",
+  "name": "TD First Class Visa Signature\u00ae Credit Card",
   "issuer": "TD Bank",
   "network": "Visa",
   "annual_fee": 89,
@@ -52,7 +52,8 @@
     "trip_delay": true,
     "trip_cancellation": true,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null
   },
   "tags": [
     "premium",

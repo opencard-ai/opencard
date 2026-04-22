@@ -1,6 +1,6 @@
 {
   "card_id": "amex-blue-cash-everyday",
-  "name": "Blue Cash Everyday® Card from American Express",
+  "name": "Blue Cash Everyday\u00ae Card from American Express",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 0,
@@ -50,7 +50,9 @@
     "rental_insurance": "Secondary",
     "trip_delay": false,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "return_protection": null
   },
   "tags": [
     "cash-back",

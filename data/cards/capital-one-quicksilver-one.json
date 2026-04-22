@@ -35,7 +35,13 @@
     "rental_insurance": "None",
     "trip_delay": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "sources": [
     {
@@ -51,7 +57,7 @@
       "notes": "Capital One official card page"
     }
   ],
-  "notes": "QuicksilverOne sits between the no-fee Quicksilver and secured options. Earns 1.5% on everything with a $39 annual fee — only worthwhile if you can't qualify for the no-fee Quicksilver. No welcome bonus. No protections. High APR. Capital One may upgrade QuicksilverOne holders to regular Quicksilver after demonstrating responsible use. Better options exist (SavorOne has no annual fee and higher dining/grocery rates).",
+  "notes": "QuicksilverOne sits between the no-fee Quicksilver and secured options. Earns 1.5% on everything with a $39 annual fee \u2014 only worthwhile if you can't qualify for the no-fee Quicksilver. No welcome bonus. No protections. High APR. Capital One may upgrade QuicksilverOne holders to regular Quicksilver after demonstrating responsible use. Better options exist (SavorOne has no annual fee and higher dining/grocery rates).",
   "confidence": "medium",
   "last_updated": "2026-04-16T13:41:49.958Z",
   "tags": [

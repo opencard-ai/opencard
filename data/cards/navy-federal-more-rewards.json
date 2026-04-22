@@ -1,6 +1,6 @@
 {
   "card_id": "navy-federal-more-rewards",
-  "name": "Navy Federal More Rewards American Express® Card",
+  "name": "Navy Federal More Rewards American Express\u00ae Card",
   "issuer": "Navy Federal Credit Union",
   "network": "Amex",
   "annual_fee": 0,
@@ -60,7 +60,8 @@
     "trip_delay": true,
     "trip_cancellation": false,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null
   },
   "tags": [
     "cash-back",

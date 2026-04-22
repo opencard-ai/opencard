@@ -55,7 +55,8 @@
     "trip_delay": false,
     "purchase_protection": true,
     "extended_warranty": true,
-    "return_protection": true
+    "return_protection": true,
+    "trip_cancellation": null
   },
   "tags": [
     "cash-back",

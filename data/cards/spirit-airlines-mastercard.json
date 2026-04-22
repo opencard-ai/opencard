@@ -1,6 +1,6 @@
 {
   "card_id": "spirit-airlines-mastercard",
-  "name": "Free Spirit® Travel More World Elite Mastercard®",
+  "name": "Free Spirit\u00ae Travel More World Elite Mastercard\u00ae",
   "issuer": "Bank of America",
   "network": "Mastercard",
   "annual_fee": 79,
@@ -61,7 +61,9 @@
     "rental_insurance": "Secondary",
     "trip_delay": false,
     "purchase_protection": true,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null
   },
   "tags": [
     "airline",

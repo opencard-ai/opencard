@@ -1,6 +1,6 @@
 {
   "card_id": "chase-ink-biz-preferred",
-  "name": "Chase Ink Business Preferred® Credit Card",
+  "name": "Chase Ink Business Preferred\u00ae Credit Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 95,
@@ -76,7 +76,8 @@
     "purchase_protection": true,
     "extended_warranty": true,
     "baggage_delay": true,
-    "lost_luggage": true
+    "lost_luggage": true,
+    "return_protection": null
   },
   "tags": [
     "business"

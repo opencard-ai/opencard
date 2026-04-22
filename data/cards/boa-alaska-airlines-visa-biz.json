@@ -1,6 +1,6 @@
 {
   "card_id": "boa-alaska-airlines-visa-biz",
-  "name": "Alaska Airlines Visa® Business Credit Card",
+  "name": "Alaska Airlines Visa\u00ae Business Credit Card",
   "issuer": "Bank of America",
   "network": "Visa",
   "annual_fee": 95,
@@ -66,7 +66,13 @@
     "rental_insurance": "Secondary",
     "trip_delay": false,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "airline",

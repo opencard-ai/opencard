@@ -1,6 +1,6 @@
 {
   "card_id": "discover-it-student-cash-back",
-  "name": "Discover it® Student Cash Back",
+  "name": "Discover it\u00ae Student Cash Back",
   "issuer": "Discover",
   "network": "Discover",
   "annual_fee": 0,
@@ -52,7 +52,12 @@
     "trip_delay": false,
     "trip_cancellation": false,
     "purchase_protection": true,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "cash-back",

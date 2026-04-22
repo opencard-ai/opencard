@@ -1,6 +1,6 @@
 {
   "card_id": "centurion-card-amex",
-  "name": "The Centurion® Card from American Express",
+  "name": "The Centurion\u00ae Card from American Express",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 5000,
@@ -46,7 +46,9 @@
     "rental_insurance": "Primary",
     "trip_delay": true,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "return_protection": null
   },
   "tags": [
     "lounge-access",

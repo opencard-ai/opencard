@@ -1,6 +1,6 @@
 {
   "card_id": "citi-secured-mastercard",
-  "name": "Citi® Secured Mastercard®",
+  "name": "Citi\u00ae Secured Mastercard\u00ae",
   "issuer": "Citi",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -40,7 +40,14 @@
   "insurance": {
     "rental_insurance": "None",
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "trip_delay": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "notes": "No rewards focus. Security deposit is fully refundable when account is closed. Max credit limit $2,500. Average credit limit around $1,000-$2,706 per Credit Karma data.",
   "tags": [

@@ -1,6 +1,6 @@
 {
   "card_id": "citi-costco-anywhere",
-  "name": "Costco Anywhere Visa® Card by Citi",
+  "name": "Costco Anywhere Visa\u00ae Card by Citi",
   "issuer": "Citi",
   "network": "Visa",
   "annual_fee": 0,
@@ -63,7 +63,10 @@
     "trip_cancellation": false,
     "lost_luggage": true,
     "emergency_medical": true,
-    "roadside_assistance": true
+    "roadside_assistance": true,
+    "purchase_protection": null,
+    "return_protection": null,
+    "extended_warranty": null
   },
   "tags": [
     "no-annual-fee"
