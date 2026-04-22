@@ -596,8 +596,8 @@ export default function MyCardsPage({
     if (win) {
       win.document.write('<html><body style="margin:0">'+html+'</body></html>');
       win.document.getElementById('save-btn').onclick = () => {
-        const m = win.document.getElementById('sel-month').value;
-        const y = win.document.getElementById('sel-year').value;
+        const m = (win.document.getElementById('sel-month') as HTMLSelectElement).value;
+        const y = (win.document.getElementById('sel-year') as HTMLSelectElement).value;
         const em = localStorage.getItem('opencard_subscribed_email');
         if (!em) { alert('No email'); return; }
         fetch('/api/my-cards/set-open-date', {
@@ -639,8 +639,8 @@ export default function MyCardsPage({
     if (win) {
       win.document.write('<html><body style="margin:0">'+html+'</body></html>');
       win.document.getElementById('save-btn').onclick = () => {
-        const m = win.document.getElementById('sel-month').value;
-        const y = win.document.getElementById('sel-year').value;
+        const m = (win.document.getElementById('sel-month') as HTMLSelectElement).value;
+        const y = (win.document.getElementById('sel-year') as HTMLSelectElement).value;
         const em = localStorage.getItem('opencard_subscribed_email');
         if (!em) { alert('No email'); return; }
         fetch('/api/my-cards/set-open-date', {
