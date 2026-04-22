@@ -2,7 +2,7 @@
   "card_id": "barclays-jetblue-plus",
   "name": "JetBlue Plus Card",
   "issuer": "Barclays",
-  "network": "Visa/Mastercard",
+  "network": "Visa",
   "annual_fee": 99,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

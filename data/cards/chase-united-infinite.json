@@ -2,7 +2,7 @@
   "card_id": "chase-united-infinite",
   "name": "Chase United Infinite",
   "issuer": "Chase",
-  "network": "Visa/Mastercard",
+  "network": "Visa",
   "annual_fee": 695,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

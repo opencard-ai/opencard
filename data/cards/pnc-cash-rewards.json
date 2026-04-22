@@ -2,7 +2,7 @@
   "card_id": "pnc-cash-rewards",
   "name": "PNC Cash Rewards",
   "issuer": "PNC Bank",
-  "network": "Visa/Mastercard",
+  "network": "Visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

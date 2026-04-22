@@ -2,7 +2,7 @@
   "card_id": "amex-amazon-biz-prime",
   "name": "Amazon Business Prime Card",
   "issuer": "American Express",
-  "network": "Visa/Mastercard",
+  "network": "Visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

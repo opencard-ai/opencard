@@ -1,8 +1,8 @@
 {
   "card_id": "amex-blue-biz-cash",
-  "name": "The American Express Blue Business Cash™ Card",
+  "name": "The American Express Blue Business Cash\u2122 Card",
   "issuer": "American Express",
-  "network": "American Express",
+  "network": "Amex",
   "annual_fee": 0,
   "foreign_transaction_fee": 2.7,
   "credit_required": "Good to Excellent",

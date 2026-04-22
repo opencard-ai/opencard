@@ -2,7 +2,7 @@
   "card_id": "citi-aa-mileup-biz",
   "name": "AA MileUp Business",
   "issuer": "Citi",
-  "network": "Visa/Mastercard",
+  "network": "Visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

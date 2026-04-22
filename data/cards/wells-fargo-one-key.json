@@ -2,7 +2,7 @@
   "card_id": "wells-fargo-one-key",
   "name": "One Key Card",
   "issuer": "Wells Fargo",
-  "network": "Visa/Mastercard",
+  "network": "Visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

@@ -2,7 +2,7 @@
   "card_id": "wells-fargo-choice-privileges",
   "name": "Choice Privileges Select",
   "issuer": "Wells Fargo",
-  "network": "Visa/Mastercard",
+  "network": "Visa",
   "annual_fee": 95,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
