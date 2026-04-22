@@ -595,8 +595,11 @@ export default function MyCardsPage({
     const win = window.open('', 'OpenDate', 'width=300,height=250');
     if (win) {
       win.document.write('<html><body style="margin:0">'+html+'</body></html>');
-      win.document.getElementById('save-btn').onclick = () => {
-        const m = win.document.getElementById('sel-month').value;
+
+// @ts-ignore
+win.document.getElementById("save-btn")!.onclick = () => {
+  const m = win.document.getElementById("sel-month")!.value;
+  const y = win.document.getElementById("sel-year")!.value;
         const y = win.document.getElementById('sel-year').value;
         const em = localStorage.getItem('opencard_subscribed_email');
         if (!em) { alert('No email'); return; }
