@@ -4,7 +4,7 @@
   "issuer": "Bank of America",
   "network": "Visa",
   "annual_fee": 395,
-  "foreign_transaction_fee": "None",
+  "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
     "spending_requirement": 5,
