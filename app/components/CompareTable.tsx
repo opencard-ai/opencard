@@ -1,6 +1,6 @@
 "use client";
 
-import type { CreditCard, AnnualCredit, RecurringCredit } from "@/lib/cards";
+import type { CreditCard, RecurringCredit } from "@/lib/cards";
 
 interface CompareTableProps {
   cards: CreditCard[];
@@ -41,22 +41,20 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
   const l = (() => {
     const en = {
       annualFee: "Annual Fee", welcomeBonus: "Welcome Offer",
-      welcomeReq: "Spend Requirement", creditRequired: "Credit Required",
-      foreignFee: "Foreign Fee", network: "Network",
-      earningRates: "Earning Rates", annualCredits: "Annual Credits",
-      travelBenefits: "Travel Benefits",
-      hotelStatus: "Hotel Status", loungeAccess: "Lounge Access",
-      otherBenefits: "Other Benefits",
+      creditRequired: "Credit Required", foreignFee: "Foreign Fee", network: "Network",
+      earningRates: "Earning Rates",
+      benefitsCredits: "Benefits & Credits",
+      credits: "Annual Credits",
+      hotelStatus: "Hotel Status", loungeAccess: "Lounge Access", otherBenefits: "Other Benefits",
       insurance: "Insurance", noAf: "Waived", yes: "Yes", none: "—",
     };
     const zh = {
       annualFee: "年費", welcomeBonus: "開卡禮",
-      welcomeReq: "消費門檻", creditRequired: "信用分要求",
-      foreignFee: "國外手續費", network: "卡片類型",
-      earningRates: "回饋倍率", annualCredits: "年費回饋",
-      travelBenefits: "旅遊福利",
-      hotelStatus: "飯店會籍", loungeAccess: "貴賓室",
-      otherBenefits: "其他福利",
+      creditRequired: "信用分要求", foreignFee: "國外手續費", network: "卡片類型",
+      earningRates: "回饋倍率",
+      benefitsCredits: "福利與回饋",
+      credits: "年費回饋",
+      hotelStatus: "飯店會籍", loungeAccess: "貴賓室", otherBenefits: "其他福利",
       insurance: "保險", noAf: "免費", yes: "有", none: "無",
     };
     return { en, zh, es: en }[lang] || en;
@@ -198,35 +196,29 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
             </tr>
           ))}
 
-          {/* Annual Credits (recurring_credits) */}
+          {/* Benefits & Credits (MERGED: Annual Credits + Travel Benefits) */}
           <tr>
-            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10 align-top">{l.annualCredits}</td>
-            {cards.map((card) => {
-              const credits = card.recurring_credits?.filter((c) => c.amount !== undefined && c.amount !== 0) || [];
-              return (
-                <td key={card.card_id} className="py-3 px-4 text-xs">
-                  {credits.length > 0 ? (
-                    <ul className="space-y-1">
-                      {credits.map((rc: RecurringCredit, i: number) => (
-                        <li key={i} className="text-slate-700">
-                          {rc.description}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <span className="text-slate-400">—</span>
-                  )}
-                </td>
-              );
-            })}
-          </tr>
-
-          {/* Travel Benefits */}
-          <tr className="bg-slate-50/50">
-            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-slate-50/50 z-10 align-top">{l.travelBenefits}</td>
+            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10 align-top">{l.benefitsCredits}</td>
             {cards.map((card) => (
-              <td key={card.card_id} className="py-3 px-4 text-xs">
+              <td key={card.card_id} className="py-3 px-4 text-xs align-top">
                 <div className="space-y-3">
+                  {/* Annual Credits */}
+                  {card.recurring_credits?.filter((c) => c.amount !== undefined && c.amount !== 0).length ? (
+                    <div>
+                      <div className="text-xs font-semibold text-slate-500 uppercase mb-1">{l.credits}</div>
+                      <ul className="space-y-1">
+                        {card.recurring_credits
+                          .filter((c) => c.amount !== undefined && c.amount !== 0)
+                          .map((rc: RecurringCredit, i: number) => (
+                            <li key={i} className="text-slate-700">
+                              {rc.name}
+                              {rc.description && <span className="text-slate-400"> - {rc.description.split(".")[0]}</span>}
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  ) : null}
+
                   {/* Hotel Status */}
                   {card.travel_benefits?.hotel_status?.length ? (
                     <div>
@@ -238,22 +230,23 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                       ))}
                     </div>
                   ) : null}
+
                   {/* Lounge Access */}
                   {card.travel_benefits?.lounge_access ? (
-                    <div>
-                      <div className="text-xs font-semibold text-slate-500 uppercase mb-1">{l.loungeAccess}</div>
-                      {Object.entries(card.travel_benefits.lounge_access)
-                        .filter(([, v]) => v).length > 0 ? (
-                        Object.entries(card.travel_benefits.lounge_access)
+                    Object.entries(card.travel_benefits.lounge_access).filter(([, v]) => v).length > 0 ? (
+                      <div>
+                        <div className="text-xs font-semibold text-slate-500 uppercase mb-1">{l.loungeAccess}</div>
+                        {Object.entries(card.travel_benefits.lounge_access)
                           .filter(([, v]) => v)
                           .map(([key]) => (
                             <div key={key} className="text-slate-700">
                               {key.replace(/_/g, " ").replace(/\b\w/g, (x) => x.toUpperCase())}
                             </div>
-                          ))
-                      ) : null}
-                    </div>
+                          ))}
+                      </div>
+                    ) : null
                   ) : null}
+
                   {/* Other Benefits */}
                   {card.travel_benefits?.other_benefits?.length ? (
                     <div>
@@ -261,12 +254,14 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                       {card.travel_benefits.other_benefits.map((ob, i) => (
                         <div key={i} className="text-slate-700">
                           {ob.name && <span className="font-medium">{ob.name}: </span>}
-                          {ob.description}
+                          {ob.description.split(".")[0]}
                         </div>
                       ))}
                     </div>
                   ) : null}
-                  {!card.travel_benefits?.hotel_status?.length &&
+
+                  {!card.recurring_credits?.length &&
+                   !card.travel_benefits?.hotel_status?.length &&
                    !card.travel_benefits?.lounge_access &&
                    !card.travel_benefits?.other_benefits?.length ? (
                     <span className="text-slate-400">—</span>
@@ -277,8 +272,8 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
           </tr>
 
           {/* Insurance */}
-          <tr>
-            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10 align-top">{l.insurance}</td>
+          <tr className="bg-slate-50/50">
+            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-slate-50/50 z-10 align-top">{l.insurance}</td>
             {cards.map((card) => (
               <td key={card.card_id} className="py-3 px-4">
                 <div className="grid grid-cols-2 gap-1">
