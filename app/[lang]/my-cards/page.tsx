@@ -21,6 +21,7 @@ const MESSAGES = {
     benefits: "Benefits & Credits",
     noBenefits: "No recurring benefits recorded",
     reportError: "Report error",
+    setOpenDate: "Set date",
     errorSent: "Error reported!",
     thisMonth: "This month",
     upcoming: "Upcoming",
@@ -52,6 +53,7 @@ const MESSAGES = {
     benefits: "福利與回饋",
     noBenefits: "尚無定期福利記錄",
     reportError: "回報錯誤",
+    setOpenDate: "設定日期",
     errorSent: "已回報！",
     thisMonth: "本月可用",
     upcoming: "即將到來",
@@ -83,6 +85,7 @@ const MESSAGES = {
     benefits: "Beneficios y Créditos",
     noBenefits: "Sin beneficios recurrentes",
     reportError: "Reportar error",
+    setOpenDate: "Establecer fecha",
     errorSent: "¡Reportado!",
     thisMonth: "Este mes",
     upcoming: "Próximamente",
@@ -204,6 +207,7 @@ export default function MyCardsPage({
   const [subscribeError, setSubscribeError] = useState("");
 
   const [loaded, setLoaded] = useState(false);
+  const [openDates, setOpenDates] = useState<Record<string, {month: number, year: number}>>({});
 
   useEffect(() => {
     params.then((p) => {
@@ -247,7 +251,36 @@ export default function MyCardsPage({
     loadCards();
   }, []);
 
-  // Listen for card save/remove events from other pages
+  
+  // Load open dates on mount
+  useEffect(() => {
+    if (!savedEmail) return;
+    fetch('/api/my-cards/set-open-date?email=' + encodeURIComponent(savedEmail))
+      .then(r => r.json())
+      .then(d => { if (d.open_dates) setOpenDates(d.open_dates); });
+  }, []);
+
+  // Handle edit open date
+  const handleEditOpenDate = useCallback(async (cardId: string) => {
+    if (!savedEmail) return;
+    // Simple prompt for now (can be modal later)
+    const input = prompt('Enter open month/year (e.g., 3 2024):');
+    if (!input) return;
+    const [m, y] = input.split(' ').map(Number);
+    if (!m || !y || m < 1 || m > 12 || y < 2020) return;
+    
+    const res = await fetch('/api/my-cards/set-open-date', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: savedEmail, card_id: cardId, month: m, year: y }),
+    });
+    if (res.ok) {
+      setOpenDates(prev => ({ ...prev, [cardId]: { month: m, year: y } }));
+    }
+  }, [savedEmail]);
+
+
+// Listen for card save/remove events from other pages
   useEffect(() => {
     const handleUpdate = () => {
       const saved = localStorage.getItem(STORAGE_KEY);
@@ -496,7 +529,12 @@ export default function MyCardsPage({
                         <span className="text-xs text-slate-400">${card.annual_fee}/yr</span>
                       )}
                     </div>
-                    <span className="text-xs text-slate-400 font-medium shrink-0">{card.issuer}</span>
+                    <button 
+                    onClick={() => handleEditOpenDate(card.card_id)}
+                    className="text-xs text-blue-600 hover:text-blue-800 font-medium shrink-0"
+                  >
+                    📅 {openDates[card.card_id] ? `${openDates[card.card_id].month}/${openDates[card.card_id].year}` : 'Set date'}
+                  </button>
                   </div>
 
                   {/* Benefits */}

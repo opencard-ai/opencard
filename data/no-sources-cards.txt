@@ -1,0 +1,66 @@
+61 Cards Without Sources (no official data in OpenCard database)
+============================================================
+
+amex-amazon-biz-prime | American Express | Amazon Business Prime Card
+amex-blue-biz-plus | American Express | Amex Blue Business Plus
+amex-cash-magnet | American Express | Amex Cash Magnet
+amex-delta-blue | American Express | Amex Delta Blue
+amex-delta-gold-biz | American Express | Delta SkyMiles Gold Business
+amex-everyday | American Express | American Express EveryDay® Card
+amex-graphite-biz | American Express | Amex Graphite Business Cash
+amex-hilton-biz-platinum | American Express | Hilton Business Platinum
+amex-morgan-stanley-blue | American Express | Amex Morgan Stanley Blue
+amex-morgan-stanley-platinum | American Express | Amex Morgan Stanley Platinum
+barclays-aadvantage-red | Barclays | AAdvantage Aviator Red
+barclays-aadvantage-silver | Barclays | AAdvantage Aviator Silver
+barclays-harley-davidson | Barclays | Harley-Davidson Credit Card
+barclays-jetblue-plus | Barclays | JetBlue Plus Card
+barclays-uber | Barclays | Uber Visa Card (Legacy)
+barclays-ubereats | Barclays | Uber Visa Card
+barclays-wyndham-earner | Barclays | Wyndham Earner Card
+barclays-wyndham-earner-biz | Barclays | Wyndham Earner Business
+barclays-wyndham-earner-plus | Barclays | Wyndham Earner Plus
+barclays-wyndham-earner-plus-biz | Barclays | Wyndham Earner+ Business
+cathay-world-elite | Synchrony Bank | Cathay World Elite Mastercard
+chase-aeroplan | Chase | Chase Aeroplan Card
+chase-disney-premier | Chase | Disney Premier Visa
+chase-disney-visa | Chase | Chase Disney Visa Card
+chase-hyatt | Chase | Chase Hyatt
+chase-ihg-premier | Chase | Chase IHG Premier
+chase-ink-preferred-plus | Chase | Ink Business Preferred Plus
+chase-southwest-performance-biz | Chase | Southwest Performance Business
+chase-southwest-performance-plus | Chase | Southwest Performance Plus
+chase-southwest-priority | Chase | Chase Southwest Priority
+chase-united-infinite | Chase | Chase United Infinite
+chase-united-quest-biz | Chase | United Quest Business
+citi-aa-exec | Citi | Citi AA Exec
+citi-aa-mileup | Citi | AA AAdvantage MileUp
+citi-aa-mileup-biz | Citi | AA MileUp Business
+citi-aa-platinum-select | Citi | AAdvantage Platinum Select
+citi-costco-biz | Citi | Costco Anywhere Business
+citi-dividend | Citi | Citi Dividend
+citi-prestige | Citi | Citi Prestige
+citi-strata-elite-premier | Citi | Strata Elite Premier
+discover-it-chrome | Discover | Discover it® Chrome
+hsbc-premier | HSBC | HSBC Premier Credit Card
+nordstrom | TD Bank | Nordstrom Visa
+nordstrom-retail | TD Bank | Nordstrom Card
+pnc-cash-rewards | PNC Bank | PNC Cash Rewards
+robinhood-gold | Robinhood Credit | Robinhood Gold Card
+robinhood-platinum | Robinhood Credit | Robinhood Platinum Card
+state-farm-cash-medallion | U.S. Bank | State Farm Cash Medallion
+synchrony-amazon-store | Synchrony | Amazon Store Card
+us-bank-altitude-connect-biz | U.S. Bank | Altitude Connect Business
+us-bank-altitude-go-biz | U.S. Bank | Altitude Go Business
+us-bank-smartly | U.S. Bank | U.S. Bank Smartly
+venmo-card | Synchrony | Venmo Credit Card
+walgreens-mastercard | Synchrony | myWalgreens Mastercard
+wells-fargo-active-cash | Wells Fargo | Wells Fargo Active Cash
+wells-fargo-active-cash-biz | Wells Fargo | Active Cash Business
+wells-fargo-autograph-journey | Wells Fargo | Wells Fargo Autograph Journey
+wells-fargo-choice-privileges | Wells Fargo | Choice Privileges Select
+wells-fargo-one-key | Wells Fargo | One Key Card
+wells-fargo-one-key-plus | Wells Fargo | One Key+ Card
+wells-fargo-reflect | Wells Fargo | Wells Fargo Reflect
+
+Total: 61 cards
