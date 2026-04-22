@@ -2,10 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 
 // @ts-ignore
 const Redis = (await import("@upstash/redis")).Redis;
+
 const redis = new Redis({
-  url: process.env.UPSTASH_KV_REST_API_URL || '',
-  token: process.env.UPSTASH_KV_REST_API_TOKEN || '',
+  url: process.env.UPSTASH_KV_REST_API_URL || "MISSING_URL",
+  token: process.env.UPSTASH_KV_REST_API_TOKEN || "MISSING_TOKEN",
 });
+
+console.log("set-open-date: URL:", process.env.UPSTASH_KV_REST_API_URL);
+console.log("set-open-date: TOKEN:", process.env.UPSTASH_KV_REST_API_TOKEN?.slice(0, 10));
 
 const USER_PREFIX = "opencard:user:";
 
@@ -39,7 +43,7 @@ export async function POST(req: NextRequest) {
     await redis.set(openDatesKey, JSON.stringify(dates));
 
     return NextResponse.json({ success: true, card_id, month, year });
-  } catch (err) {
+  } catch (err: any) {
     console.error("set-open-date error:", err);
     return NextResponse.json({ error: "Failed to set open date" }, { status: 500 });
   }
@@ -60,8 +64,10 @@ export async function GET(req: NextRequest) {
     const existing = await redis.get<string>(openDatesKey);
     const dates = existing ? JSON.parse(existing) : {};
 
+    console.log("get-open-dates: key=", openDatesKey, "result=", existing);
+
     return NextResponse.json({ open_dates: dates });
-  } catch (err) {
+  } catch (err: any) {
     console.error("get-open-dates error:", err);
     return NextResponse.json({ error: "Failed to fetch open dates" }, { status: 500 });
   }
