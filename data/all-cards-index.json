@@ -240,7 +240,16 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/amazon-business-prime-card/",
+        "notes": "Official card page"
+      },
+      {
+        "url": "https://global.americanexpress.com/card-benefits/view-all/amazon-business",
+        "notes": "Official benefits page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -320,7 +329,7 @@
   },
   {
     "card_id": "amex-bce",
-    "name": "Blue Cash Everyday® Card",
+    "name": "Blue Cash Everyday\u00ae Card",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 0,
@@ -417,7 +426,7 @@
   },
   {
     "card_id": "amex-bcp",
-    "name": "Blue Cash Preferred® Card",
+    "name": "Blue Cash Preferred\u00ae Card",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 95,
@@ -619,7 +628,7 @@
   },
   {
     "card_id": "amex-biz-platinum",
-    "name": "The Business Platinum Card® from American Express",
+    "name": "The Business Platinum Card\u00ae from American Express",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 895,
@@ -763,7 +772,7 @@
   },
   {
     "card_id": "amex-blue-biz-cash",
-    "name": "The American Express Blue Business Cash™ Card",
+    "name": "The American Express Blue Business Cash\u2122 Card",
     "issuer": "American Express",
     "network": "American Express",
     "annual_fee": 0,
@@ -879,7 +888,12 @@
       "travel"
     ],
     "recurring_credits": [],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-blue-business-plus-credit-card-amex/",
+        "notes": "Official card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -889,7 +903,7 @@
   },
   {
     "card_id": "amex-blue-cash-everyday",
-    "name": "Blue Cash Everyday® Card from American Express",
+    "name": "Blue Cash Everyday\u00ae Card from American Express",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 0,
@@ -975,7 +989,7 @@
   },
   {
     "card_id": "amex-blue-cash-preferred",
-    "name": "Blue Cash Preferred® Card from American Express",
+    "name": "Blue Cash Preferred\u00ae Card from American Express",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 0,
@@ -1025,7 +1039,7 @@
       "hotel_status": [],
       "other_benefits": [
         "Amex Offers access",
-        "Plan It® (split purchases of $100+ into monthly payments with fixed fee)",
+        "Plan It\u00ae (split purchases of $100+ into monthly payments with fixed fee)",
         "Send and Split (Venmo/PayPal integration)"
       ]
     },
@@ -1097,7 +1111,7 @@
   },
   {
     "card_id": "amex-blue-from-american-express",
-    "name": "Blue from American Express®",
+    "name": "Blue from American Express\u00ae",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 0,
@@ -1201,7 +1215,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://global.americanexpress.com/card-benefits/view-all/cash-magnet",
+        "notes": "Official benefits page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -1211,7 +1230,7 @@
   },
   {
     "card_id": "centurion-card-amex",
-    "name": "The Centurion® Card from American Express",
+    "name": "The Centurion\u00ae Card from American Express",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 5000,
@@ -1335,7 +1354,16 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-blue-american-express-card/",
+        "notes": "Official card page"
+      },
+      {
+        "url": "https://global.americanexpress.com/card-benefits/view-all/delta-blue",
+        "notes": "Official benefits page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -1392,7 +1420,16 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-gold/",
+        "notes": "Official card page"
+      },
+      {
+        "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
+        "notes": "Delta official page"
+      }
+    ],
     "benefits": [],
     "hotel_program": null,
     "application_rules": {
@@ -1403,7 +1440,7 @@
   },
   {
     "card_id": "amex-delta-gold",
-    "name": "Delta SkyMiles® Gold American Express Card",
+    "name": "Delta SkyMiles\u00ae Gold American Express Card",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 150,
@@ -1516,7 +1553,7 @@
   },
   {
     "card_id": "amex-delta-platinum",
-    "name": "Delta SkyMiles® Platinum American Express Card",
+    "name": "Delta SkyMiles\u00ae Platinum American Express Card",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 350,
@@ -1652,7 +1689,7 @@
   },
   {
     "card_id": "amex-delta-reserve",
-    "name": "Delta SkyMiles® Reserve American Express Card",
+    "name": "Delta SkyMiles\u00ae Reserve American Express Card",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 650,
@@ -1777,7 +1814,7 @@
   },
   {
     "card_id": "amex-delta-skymiles-gold-biz",
-    "name": "Delta SkyMiles® Gold Business American Express Card",
+    "name": "Delta SkyMiles\u00ae Gold Business American Express Card",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 150,
@@ -1855,7 +1892,7 @@
   },
   {
     "card_id": "amex-delta-skymiles-platinum-biz",
-    "name": "Delta SkyMiles® Platinum Business American Express Card",
+    "name": "Delta SkyMiles\u00ae Platinum Business American Express Card",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 350,
@@ -1952,7 +1989,7 @@
   },
   {
     "card_id": "amex-delta-skymiles-reserve-biz",
-    "name": "Delta SkyMiles® Reserve Business American Express Card",
+    "name": "Delta SkyMiles\u00ae Reserve Business American Express Card",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 650,
@@ -2113,7 +2150,7 @@
   },
   {
     "card_id": "amex-everyday",
-    "name": "American Express EveryDay® Card",
+    "name": "American Express EveryDay\u00ae Card",
     "issuer": "American Express",
     "network": "American Express",
     "annual_fee": 0,
@@ -2150,7 +2187,12 @@
       "gas",
       "no-annual-fee"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://global.americanexpress.com/card-benefits/view-all/amex-everyday",
+        "notes": "Official benefits page"
+      }
+    ],
     "last_updated": "2026-04-16T13:41:49.946Z",
     "travel_benefits": {
       "hotel_status": [],
@@ -2169,7 +2211,7 @@
   },
   {
     "card_id": "amex-gold",
-    "name": "American Express® Gold Card",
+    "name": "American Express\u00ae Gold Card",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 325,
@@ -2179,7 +2221,7 @@
       "spending_requirement": 6000,
       "time_period_months": 6,
       "bonus_points": 100000,
-      "description": "Earn 100,000 Membership Rewards® Points after you spend $6,000 on eligible purchases on your new Card within the first 6 months of Card Membership. Limited time offer.",
+      "description": "Earn 100,000 Membership Rewards\u00ae Points after you spend $6,000 on eligible purchases on your new Card within the first 6 months of Card Membership. Limited time offer.",
       "free_nights": null,
       "point_program": "Membership Rewards",
       "estimated_value": 1200
@@ -2352,7 +2394,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/graphite-business-cash-unlimited-card/",
+        "notes": "Official card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -2362,7 +2409,7 @@
   },
   {
     "card_id": "amex-green",
-    "name": "American Express® Green Card",
+    "name": "American Express\u00ae Green Card",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 150,
@@ -2372,7 +2419,7 @@
       "spending_requirement": 3000,
       "time_period_months": 6,
       "bonus_points": 40000,
-      "description": "Earn 40,000 Membership Rewards® Points after you spend $3,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
+      "description": "Earn 40,000 Membership Rewards\u00ae Points after you spend $3,000 on eligible purchases on your new Card within the first 6 months of Card Membership.",
       "free_nights": null,
       "point_program": "Membership Rewards",
       "estimated_value": 500
@@ -2509,7 +2556,16 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/hilton-honors/",
+        "notes": "Official card page"
+      },
+      {
+        "url": "https://global.americanexpress.com/card-benefits/view-all/hilton-business",
+        "notes": "Official benefits page"
+      }
+    ],
     "benefits": [],
     "hotel_program": null,
     "application_rules": {
@@ -2985,7 +3041,7 @@
       },
       {
         "url": "https://onemileatatime.com/deals/hilton-amex-card-bonus/",
-        "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold→Diamond path at $40K, National status"
+        "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold\u2192Diamond path at $40K, National status"
       }
     ],
     "last_updated": "2026-04-16T13:41:49.948Z",
@@ -2997,7 +3053,7 @@
   },
   {
     "card_id": "amex-marriott-bevy",
-    "name": "Marriott Bonvoy Bevy® American Express® Card",
+    "name": "Marriott Bonvoy Bevy\u00ae American Express\u00ae Card",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 250,
@@ -3099,7 +3155,7 @@
   },
   {
     "card_id": "amex-marriott-bonvoy-biz",
-    "name": "Marriott Bonvoy Business® American Express® Card",
+    "name": "Marriott Bonvoy Business\u00ae American Express\u00ae Card",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 125,
@@ -3206,7 +3262,7 @@
   },
   {
     "card_id": "amex-marriott-brilliant",
-    "name": "Marriott Bonvoy Brilliant® American Express® Card",
+    "name": "Marriott Bonvoy Brilliant\u00ae American Express\u00ae Card",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 650,
@@ -3392,7 +3448,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://global.americanexpress.com/card-benefits/view-all/morgan-stanley-blue-cash-preferred",
+        "notes": "Official benefits page"
+      }
+    ],
     "benefits": [],
     "hotel_program": null,
     "application_rules": {
@@ -3441,7 +3502,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://global.americanexpress.com/card-benefits/view-all/morgan-stanley-platinum-card",
+        "notes": "Official benefits page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -3451,7 +3517,7 @@
   },
   {
     "card_id": "amex-platinum",
-    "name": "The Platinum Card® from American Express",
+    "name": "The Platinum Card\u00ae from American Express",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 895,
@@ -3461,7 +3527,7 @@
       "spending_requirement": null,
       "time_period_months": null,
       "bonus_points": null,
-      "description": "Welcome offers are now personalized by American Express. Check your approved offer at americanexpress.com/us/credit-cards/card/platinum/ — offers vary and you may not be eligible.",
+      "description": "Welcome offers are now personalized by American Express. Check your approved offer at americanexpress.com/us/credit-cards/card/platinum/ \u2014 offers vary and you may not be eligible.",
       "free_nights": null,
       "point_program": "Membership Rewards"
     },
@@ -3699,7 +3765,7 @@
   },
   {
     "card_id": "amex-plum",
-    "name": "The Plum Card® from American Express",
+    "name": "The Plum Card\u00ae from American Express",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 250,
@@ -3977,7 +4043,7 @@
   },
   {
     "card_id": "barclays-aarp-essential-rewards-mastercard",
-    "name": "AARP® Essential Rewards Mastercard® from Barclays",
+    "name": "AARP\u00ae Essential Rewards Mastercard\u00ae from Barclays",
     "issuer": "Barclays",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -4056,7 +4122,7 @@
   },
   {
     "card_id": "barclays-aarp-travel-rewards-mastercard",
-    "name": "AARP® Travel Rewards Mastercard® from Barclays",
+    "name": "AARP\u00ae Travel Rewards Mastercard\u00ae from Barclays",
     "issuer": "Barclays",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -4143,7 +4209,7 @@
   },
   {
     "card_id": "barclays-athleta-rewards-mastercard",
-    "name": "Athleta Rewards Mastercard®",
+    "name": "Athleta Rewards Mastercard\u00ae",
     "issuer": "Barclays",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -4224,7 +4290,7 @@
   },
   {
     "card_id": "barclays-banana-republic-rewards-mastercard",
-    "name": "Banana Republic Rewards Mastercard®",
+    "name": "Banana Republic Rewards Mastercard\u00ae",
     "issuer": "Barclays",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -4306,7 +4372,7 @@
   },
   {
     "card_id": "barclays-carnival-world-mastercard",
-    "name": "Carnival® World Mastercard®",
+    "name": "Carnival\u00ae World Mastercard\u00ae",
     "issuer": "Barclays",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -4396,7 +4462,7 @@
   },
   {
     "card_id": "barclays-celebrity-cruises-visa-signature",
-    "name": "Celebrity Cruises Visa Signature® Card",
+    "name": "Celebrity Cruises Visa Signature\u00ae Card",
     "issuer": "Barclays",
     "network": "Visa Signature",
     "annual_fee": 0,
@@ -4434,7 +4500,7 @@
         "Onboard credit discounts",
         "No annual fee",
         "No foreign transaction fees",
-        "⚠️ NOTE: Celebrity Cruises card program has transitioned to Bank of America as of March 2026. Barclays-issued version may be discontinued."
+        "\u26a0\ufe0f NOTE: Celebrity Cruises card program has transitioned to Bank of America as of March 2026. Barclays-issued version may be discontinued."
       ]
     },
     "fhr_thc": {
@@ -4475,7 +4541,7 @@
   },
   {
     "card_id": "barclays-frontier-airlines-world-mastercard",
-    "name": "Frontier Airlines World Mastercard®",
+    "name": "Frontier Airlines World Mastercard\u00ae",
     "issuer": "Barclays",
     "network": "Mastercard World",
     "annual_fee": 89,
@@ -4556,7 +4622,7 @@
   },
   {
     "card_id": "barclays-gap-good-rewards-mastercard",
-    "name": "Gap Good Rewards Mastercard®",
+    "name": "Gap Good Rewards Mastercard\u00ae",
     "issuer": "Barclays",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -4915,7 +4981,7 @@
   },
   {
     "card_id": "barclays-old-navy-navyist-rewards-mastercard",
-    "name": "Old Navy Navyist Rewards Mastercard®",
+    "name": "Old Navy Navyist Rewards Mastercard\u00ae",
     "issuer": "Barclays",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -4999,7 +5065,7 @@
   },
   {
     "card_id": "barclays-royal-caribbean-visa-signature",
-    "name": "Royal Caribbean Visa Signature® Card",
+    "name": "Royal Caribbean Visa Signature\u00ae Card",
     "issuer": "Barclays",
     "network": "Visa Signature",
     "annual_fee": 0,
@@ -5037,7 +5103,7 @@
         "Onboard credit and discounts",
         "No annual fee",
         "No foreign transaction fees",
-        "⚠️ NOTE: Royal Caribbean has transitioned to new Royal ONE/Royal ONE Plus cards with Bank of America (March 2026). Barclays-issued version may be discontinued."
+        "\u26a0\ufe0f NOTE: Royal Caribbean has transitioned to new Royal ONE/Royal ONE Plus cards with Bank of America (March 2026). Barclays-issued version may be discontinued."
       ]
     },
     "fhr_thc": {
@@ -5518,7 +5584,7 @@
         "category": "choice_category",
         "rate": 5,
         "rate_type": "points_per_dollar",
-        "description": "Up to 5X points on a choice of category (up to $25,000/year) — dining, travel, or online shopping"
+        "description": "Up to 5X points on a choice of category (up to $25,000/year) \u2014 dining, travel, or online shopping"
       }
     ],
     "features": [
@@ -5586,7 +5652,7 @@
         "category": "choice_category",
         "rate": 5,
         "rate_type": "points_per_dollar",
-        "description": "Up to 5X points on a choice of category (up to $25,000/year) — dining, travel, or online shopping"
+        "description": "Up to 5X points on a choice of category (up to $25,000/year) \u2014 dining, travel, or online shopping"
       }
     ],
     "features": [
@@ -5637,7 +5703,7 @@
   },
   {
     "card_id": "boa-alaska-airlines-visa-biz",
-    "name": "Alaska Airlines Visa® Business Credit Card",
+    "name": "Alaska Airlines Visa\u00ae Business Credit Card",
     "issuer": "Bank of America",
     "network": "Visa",
     "annual_fee": 95,
@@ -5735,7 +5801,7 @@
   },
   {
     "card_id": "boa-alaska-airlines-visa-platinum",
-    "name": "Alaska Airlines Visa® Platinum Plus® Credit Card",
+    "name": "Alaska Airlines Visa\u00ae Platinum Plus\u00ae Credit Card",
     "issuer": "Bank of America",
     "network": "Visa",
     "annual_fee": 0,
@@ -5813,7 +5879,7 @@
   },
   {
     "card_id": "boa-alaska-airlines-visa-signature",
-    "name": "Alaska Airlines Visa Signature® Credit Card",
+    "name": "Alaska Airlines Visa Signature\u00ae Credit Card",
     "issuer": "Bank of America",
     "network": "Visa",
     "annual_fee": 95,
@@ -5920,7 +5986,7 @@
   },
   {
     "card_id": "boa-alaska-ascent",
-    "name": "Alaska Airlines Atmos™ Ascent Visa Signature® Card",
+    "name": "Alaska Airlines Atmos\u2122 Ascent Visa Signature\u00ae Card",
     "issuer": "Bank of America",
     "network": "Visa",
     "annual_fee": 95,
@@ -6005,7 +6071,7 @@
   },
   {
     "card_id": "boa-alaska-summit",
-    "name": "Alaska Airlines Atmos™ Summit Visa Infinite® Card",
+    "name": "Alaska Airlines Atmos\u2122 Summit Visa Infinite\u00ae Card",
     "issuer": "Bank of America",
     "network": "Visa",
     "annual_fee": 395,
@@ -6096,7 +6162,7 @@
   },
   {
     "card_id": "boa-biz-advantage-customized-cash",
-    "name": "Bank of America® Business Advantage Customized Cash Rewards Mastercard®",
+    "name": "Bank of America\u00ae Business Advantage Customized Cash Rewards Mastercard\u00ae",
     "issuer": "Bank of America",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -6191,7 +6257,7 @@
   },
   {
     "card_id": "boa-biz-advantage-travel",
-    "name": "Bank of America® Business Advantage Travel Rewards World Mastercard®",
+    "name": "Bank of America\u00ae Business Advantage Travel Rewards World Mastercard\u00ae",
     "issuer": "Bank of America",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -6278,7 +6344,7 @@
   },
   {
     "card_id": "boa-biz-advantage-unlimited-cash",
-    "name": "Bank of America® Business Advantage Unlimited Cash Rewards Mastercard®",
+    "name": "Bank of America\u00ae Business Advantage Unlimited Cash Rewards Mastercard\u00ae",
     "issuer": "Bank of America",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -6355,7 +6421,7 @@
   },
   {
     "card_id": "boa-customized-cash-rewards-secured",
-    "name": "Bank of America® Customized Cash Rewards Secured Credit Card",
+    "name": "Bank of America\u00ae Customized Cash Rewards Secured Credit Card",
     "issuer": "Bank of America",
     "network": "Visa",
     "annual_fee": 0,
@@ -6439,7 +6505,7 @@
   },
   {
     "card_id": "boa-customized-cash-rewards",
-    "name": "Bank of America® Customized Cash Rewards Credit Card",
+    "name": "Bank of America\u00ae Customized Cash Rewards Credit Card",
     "issuer": "Bank of America",
     "network": "Visa",
     "annual_fee": 0,
@@ -6475,7 +6541,7 @@
       "other_benefits": [
         {
           "name": "Fraud Protection",
-          "description": "零責任防盜刷保障"
+          "description": "\u96f6\u8cac\u4efb\u9632\u76dc\u5237\u4fdd\u969c"
         }
       ]
     },
@@ -6509,7 +6575,7 @@
   },
   {
     "card_id": "boa-premium-rewards-elite",
-    "name": "Bank of America® Premium Rewards® Elite Credit Card",
+    "name": "Bank of America\u00ae Premium Rewards\u00ae Elite Credit Card",
     "issuer": "Bank of America",
     "network": "Visa",
     "annual_fee": 550,
@@ -6655,7 +6721,7 @@
   },
   {
     "card_id": "boa-premium-rewards",
-    "name": "Bank of America® Premium Rewards® Credit Card",
+    "name": "Bank of America\u00ae Premium Rewards\u00ae Credit Card",
     "issuer": "Bank of America",
     "network": "Visa",
     "annual_fee": 95,
@@ -6742,7 +6808,7 @@
   },
   {
     "card_id": "boa-student-customized-cash-rewards",
-    "name": "Bank of America® Customized Cash Rewards Credit Card for Students",
+    "name": "Bank of America\u00ae Customized Cash Rewards Credit Card for Students",
     "issuer": "Bank of America",
     "network": "Visa",
     "annual_fee": 0,
@@ -6817,7 +6883,7 @@
   },
   {
     "card_id": "boa-student-travel-rewards",
-    "name": "Bank of America® Travel Rewards Credit Card for Students",
+    "name": "Bank of America\u00ae Travel Rewards Credit Card for Students",
     "issuer": "Bank of America",
     "network": "Visa",
     "annual_fee": 0,
@@ -6897,7 +6963,7 @@
   },
   {
     "card_id": "boa-travel-rewards",
-    "name": "Bank of America® Travel Rewards Credit Card",
+    "name": "Bank of America\u00ae Travel Rewards Credit Card",
     "issuer": "Bank of America",
     "network": "Visa",
     "annual_fee": 0,
@@ -6958,7 +7024,7 @@
   },
   {
     "card_id": "boa-unlimited-cash-rewards",
-    "name": "Bank of America® Unlimited Cash Rewards Credit Card",
+    "name": "Bank of America\u00ae Unlimited Cash Rewards Credit Card",
     "issuer": "Bank of America",
     "network": "Visa",
     "annual_fee": 0,
@@ -7030,7 +7096,7 @@
   },
   {
     "card_id": "bread-cashback-american-express",
-    "name": "Bread Rewards™ American Express® Credit Card",
+    "name": "Bread Rewards\u2122 American Express\u00ae Credit Card",
     "issuer": "Bread Financial",
     "network": "Amex",
     "annual_fee": 0,
@@ -7136,7 +7202,7 @@
     "travel_benefits": {
       "hotel_status": [],
       "other_benefits": [
-        "Access to CreditWise® credit monitoring tool"
+        "Access to CreditWise\u00ae credit monitoring tool"
       ]
     },
     "fhr_thc": {
@@ -7231,7 +7297,7 @@
         "notes": "Capital One official card page"
       }
     ],
-    "notes": "QuicksilverOne sits between the no-fee Quicksilver and secured options. Earns 1.5% on everything with a $39 annual fee — only worthwhile if you can't qualify for the no-fee Quicksilver. No welcome bonus. No protections. High APR. Capital One may upgrade QuicksilverOne holders to regular Quicksilver after demonstrating responsible use. Better options exist (SavorOne has no annual fee and higher dining/grocery rates).",
+    "notes": "QuicksilverOne sits between the no-fee Quicksilver and secured options. Earns 1.5% on everything with a $39 annual fee \u2014 only worthwhile if you can't qualify for the no-fee Quicksilver. No welcome bonus. No protections. High APR. Capital One may upgrade QuicksilverOne holders to regular Quicksilver after demonstrating responsible use. Better options exist (SavorOne has no annual fee and higher dining/grocery rates).",
     "confidence": "medium",
     "last_updated": "2026-04-16T13:41:49.958Z",
     "tags": [
@@ -7264,14 +7330,14 @@
       {
         "category": "All purchases",
         "rate": 1.5,
-        "notes": "Unlimited 1.5% cash back on every purchase, every day — rare for a secured card"
+        "notes": "Unlimited 1.5% cash back on every purchase, every day \u2014 rare for a secured card"
       }
     ],
     "annual_credits": [],
     "travel_benefits": {
       "hotel_status": [],
       "other_benefits": [
-        "Card does not say 'secured' on it — looks like a regular Capital One card",
+        "Card does not say 'secured' on it \u2014 looks like a regular Capital One card",
         "Reports to all three major credit bureaus",
         "No foreign transaction fees"
       ]
@@ -7300,7 +7366,7 @@
         "notes": "WalletHub: $0 annual fee, available to those with poor credit, 1.5% cash back"
       }
     ],
-    "notes": "Exceptional secured card: 1.5% unlimited cash back on everything with no annual fee — same earning rate as the unsecured Quicksilver. Security deposit required. Card doesn't display 'secured' label. Upgrade path available. One of the best secured cards available if you want rewards while rebuilding credit. Reviews note Capital One's system is automated with no human credit limit increases.",
+    "notes": "Exceptional secured card: 1.5% unlimited cash back on everything with no annual fee \u2014 same earning rate as the unsecured Quicksilver. Security deposit required. Card doesn't display 'secured' label. Upgrade path available. One of the best secured cards available if you want rewards while rebuilding credit. Reviews note Capital One's system is automated with no human credit limit increases.",
     "confidence": "high",
     "last_updated": "2026-04-16T13:41:49.959Z",
     "tags": [
@@ -7440,7 +7506,7 @@
       "No foreign transaction fees",
       "Capital One Travel $0 intro annual fee for the first year",
       "Instant access to credit score monitoring",
-      "No bonus cap — unlimited 3% on qualifying categories"
+      "No bonus cap \u2014 unlimited 3% on qualifying categories"
     ],
     "tags": [
       "cashback",
@@ -7671,7 +7737,7 @@
       "spending_requirement": 4500,
       "time_period_months": 3,
       "bonus_points": null,
-      "description": "Earn up to $2,000 cash bonus — $1,000 once you spend $4,500, $2,000 once you spend $10,000 (first 3 months)",
+      "description": "Earn up to $2,000 cash bonus \u2014 $1,000 once you spend $4,500, $2,000 once you spend $10,000 (first 3 months)",
       "point_program": "Capital One Spark Cash"
     },
     "earning_rates": [
@@ -7720,7 +7786,7 @@
         "notes": "CNN Underscored: competitive 2% rate, employee cards earn 2%"
       }
     ],
-    "notes": "Charge card (balance must be paid in full monthly). $150 annual fee. 2% unlimited cash back on everything — best flat-rate business card for spending. Up to $2,000 welcome bonus for high spenders. Employee cards earn 2% and are free. No preset spending limit. For businesses that can pay in full monthly and spend heavily, this is one of the best business cards available. Compare to Spark Cash Select (1.5% no-fee) for lower spenders.",
+    "notes": "Charge card (balance must be paid in full monthly). $150 annual fee. 2% unlimited cash back on everything \u2014 best flat-rate business card for spending. Up to $2,000 welcome bonus for high spenders. Employee cards earn 2% and are free. No preset spending limit. For businesses that can pay in full monthly and spend heavily, this is one of the best business cards available. Compare to Spark Cash Select (1.5% no-fee) for lower spenders.",
     "confidence": "high",
     "last_updated": "2026-04-16T13:41:49.960Z",
     "tags": [
@@ -7787,7 +7853,7 @@
         "notes": "Capital One official page"
       }
     ],
-    "notes": "No annual fee business card for excellent credit. 1.5% flat cash back with no spending categories — simple and predictable. $750 welcome bonus for $6,000 spend in 3 months. Good for business owners with strong credit who don't want an annual fee. Compare to Spark Miles Select (1.5X miles) for travel-oriented businesses. No protections. Better than personal Quicksilver for business due to employee cards and business tools.",
+    "notes": "No annual fee business card for excellent credit. 1.5% flat cash back with no spending categories \u2014 simple and predictable. $750 welcome bonus for $6,000 spend in 3 months. Good for business owners with strong credit who don't want an annual fee. Compare to Spark Miles Select (1.5X miles) for travel-oriented businesses. No protections. Better than personal Quicksilver for business due to employee cards and business tools.",
     "confidence": "high",
     "last_updated": "2026-04-16T13:41:49.960Z",
     "tags": [
@@ -7820,7 +7886,7 @@
       {
         "category": "All purchases",
         "rate": 1.5,
-        "notes": "Earn 1.5X miles on every purchase, everywhere — no categories, no limits"
+        "notes": "Earn 1.5X miles on every purchase, everywhere \u2014 no categories, no limits"
       }
     ],
     "annual_credits": [],
@@ -7956,7 +8022,7 @@
       "spending_requirement": 500,
       "time_period_months": 3,
       "bonus_points": 20000,
-      "description": "Earn 20,000 bonus miles once you spend $500 on purchases within the first 3 months — worth $200 in travel",
+      "description": "Earn 20,000 bonus miles once you spend $500 on purchases within the first 3 months \u2014 worth $200 in travel",
       "point_program": "Capital One Miles",
       "estimated_value": 200
     },
@@ -8378,7 +8444,7 @@
   },
   {
     "card_id": "chase-aer-lingus-visa-signature",
-    "name": "Aer Lingus Visa Signature® Card",
+    "name": "Aer Lingus Visa Signature\u00ae Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 95,
@@ -8507,7 +8573,7 @@
   },
   {
     "card_id": "chase-british-airways-visa-signature",
-    "name": "British Airways Visa Signature® Card",
+    "name": "British Airways Visa Signature\u00ae Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 95,
@@ -8818,7 +8884,7 @@
   },
   {
     "card_id": "chase-disney",
-    "name": "Disney® Visa® Card",
+    "name": "Disney\u00ae Visa\u00ae Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 0,
@@ -8908,7 +8974,7 @@
   },
   {
     "card_id": "chase-freedom-flex",
-    "name": "Chase Freedom Flex®",
+    "name": "Chase Freedom Flex\u00ae",
     "issuer": "Chase",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -9061,7 +9127,7 @@
   },
   {
     "card_id": "chase-freedom-unlimited",
-    "name": "Chase Freedom Unlimited®",
+    "name": "Chase Freedom Unlimited\u00ae",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 0,
@@ -9347,7 +9413,7 @@
   },
   {
     "card_id": "chase-iberia-visa-signature",
-    "name": "Iberia Visa Signature® Card",
+    "name": "Iberia Visa Signature\u00ae Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 95,
@@ -9608,7 +9674,7 @@
   },
   {
     "card_id": "chase-ink-biz-cash",
-    "name": "Chase Ink Business Cash® Credit Card",
+    "name": "Chase Ink Business Cash\u00ae Credit Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 0,
@@ -9711,7 +9777,7 @@
   },
   {
     "card_id": "chase-ink-biz-preferred",
-    "name": "Chase Ink Business Preferred® Credit Card",
+    "name": "Chase Ink Business Preferred\u00ae Credit Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 95,
@@ -9820,7 +9886,7 @@
   },
   {
     "card_id": "chase-ink-biz-premier",
-    "name": "Ink Business Premier® Credit Card",
+    "name": "Ink Business Premier\u00ae Credit Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 195,
@@ -9838,7 +9904,7 @@
       {
         "category": "Chase Travel",
         "rate": 5,
-        "notes": "Unlimited 5% cash back on travel purchased through Chase Travel℠"
+        "notes": "Unlimited 5% cash back on travel purchased through Chase Travel\u2120"
       },
       {
         "category": "Lyft",
@@ -9905,7 +9971,7 @@
   },
   {
     "card_id": "chase-ink-biz-unlimited",
-    "name": "Chase Ink Business Unlimited® Credit Card",
+    "name": "Chase Ink Business Unlimited\u00ae Credit Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 0,
@@ -9936,7 +10002,7 @@
       "other_benefits": [
         {
           "name": "Intro APR",
-          "description": "0% intro APR for 12 months from account opening on purchases. After that, 16.74%–24.74% variable APR."
+          "description": "0% intro APR for 12 months from account opening on purchases. After that, 16.74%\u201324.74% variable APR."
         },
         {
           "name": "Employee Cards",
@@ -10046,7 +10112,7 @@
   },
   {
     "card_id": "chase-marriott-boundless",
-    "name": "Marriott Bonvoy Boundless® Credit Card",
+    "name": "Marriott Bonvoy Boundless\u00ae Credit Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 95,
@@ -10241,11 +10307,11 @@
       "thc_eligible": false
     },
     "insurance": {
-      "rental_insurance": "Primary Auto Rental Collision Damage Waiver — covers rental vehicles worldwide, up to $75,000.",
+      "rental_insurance": "Primary Auto Rental Collision Damage Waiver \u2014 covers rental vehicles worldwide, up to $75,000.",
       "trip_delay": true,
       "trip_delay_details": "Reimbursement of up to $500 per ticket for trip delays over 6 hours (requires tickets purchased with the card).",
       "trip_cancellation": true,
-      "trip_cancellation_details": "Trip Cancellation Insurance — up to $10,000 per person / $20,000 per trip for covered cancellations.",
+      "trip_cancellation_details": "Trip Cancellation Insurance \u2014 up to $10,000 per person / $20,000 per trip for covered cancellations.",
       "purchase_protection": true,
       "purchase_protection_details": "Covers new purchases against damage or theft for 120 days, up to $50,000 per claim / $100,000 per year.",
       "extended_warranty": true,
@@ -10281,7 +10347,7 @@
   },
   {
     "card_id": "chase-sapphire-preferred",
-    "name": "Chase Sapphire Preferred® Card",
+    "name": "Chase Sapphire Preferred\u00ae Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 95,
@@ -10391,7 +10457,7 @@
   },
   {
     "card_id": "chase-sapphire-reserve-biz",
-    "name": "Chase Sapphire Reserve® for Business",
+    "name": "Chase Sapphire Reserve\u00ae for Business",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 795,
@@ -10578,7 +10644,7 @@
   },
   {
     "card_id": "chase-sapphire-reserve",
-    "name": "Chase Sapphire Reserve®",
+    "name": "Chase Sapphire Reserve\u00ae",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 795,
@@ -10766,7 +10832,7 @@
         "amount": 0,
         "frequency": "annual",
         "category": "travel",
-        "description": "Complimentary Priority Pass Select membership — unlimited lounge access for cardholder + guests at 1,300+ airport lounges worldwide.",
+        "description": "Complimentary Priority Pass Select membership \u2014 unlimited lounge access for cardholder + guests at 1,300+ airport lounges worldwide.",
         "reset_type": "cardmember_year"
       }
     ]
@@ -10885,7 +10951,7 @@
   },
   {
     "card_id": "chase-southwest-premier-biz",
-    "name": "Southwest Rapid Rewards® Premier Business Credit Card",
+    "name": "Southwest Rapid Rewards\u00ae Premier Business Credit Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 149,
@@ -10924,7 +10990,7 @@
         "name": "Anniversary Points",
         "amount": 6000,
         "frequency": "Annual",
-        "description": "6,000 Rapid Rewards anniversary points each year (worth ~$89 at 1.49¢/point)"
+        "description": "6,000 Rapid Rewards anniversary points each year (worth ~$89 at 1.49\u00a2/point)"
       }
     ],
     "travel_benefits": {
@@ -11058,7 +11124,7 @@
   },
   {
     "card_id": "chase-united-biz",
-    "name": "United℠ Business Card",
+    "name": "United\u2120 Business Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 150,
@@ -11190,7 +11256,7 @@
   },
   {
     "card_id": "chase-united-club-biz",
-    "name": "United Club℠ Business Card",
+    "name": "United Club\u2120 Business Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 695,
@@ -11292,7 +11358,7 @@
         },
         {
           "name": "PQP Earning",
-          "description": "1 PQP per $15 spent on card purchases, up to 28,000 PQP per year — can help earn Premier status"
+          "description": "1 PQP per $15 spent on card purchases, up to 28,000 PQP per year \u2014 can help earn Premier status"
         },
         {
           "name": "Award Flight Discount",
@@ -11342,7 +11408,7 @@
   },
   {
     "card_id": "chase-united-club-infinite",
-    "name": "United Club℠ Visa Infinite Card",
+    "name": "United Club\u2120 Visa Infinite Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 695,
@@ -11398,7 +11464,7 @@
       "other_benefits": [
         {
           "name": "United Club Membership",
-          "description": "United Club all-access membership — unlimited entry to United Club lounges worldwide and Star Alliance lounges when flying United or partners"
+          "description": "United Club all-access membership \u2014 unlimited entry to United Club lounges worldwide and Star Alliance lounges when flying United or partners"
         },
         {
           "name": "Two Free Checked Bags",
@@ -11467,7 +11533,7 @@
         "notes": "Chase/United 2025 refresh press release"
       }
     ],
-    "notes": "Ultra-premium United card with full United Club access ($650+ value alone). $695 AF (increased from $525 in 2025). Total annual credits (Instacart $300 + Streaming $120 + Rideshare $150 = $570) significantly offset the AF for those who use them. PQP earnings (up to 10,000/year) can fast-track United 1K elite status. Primary competitor is United Club Business Card. Both are essentially the same card (Club membership) — personal version vs business version.",
+    "notes": "Ultra-premium United card with full United Club access ($650+ value alone). $695 AF (increased from $525 in 2025). Total annual credits (Instacart $300 + Streaming $120 + Rideshare $150 = $570) significantly offset the AF for those who use them. PQP earnings (up to 10,000/year) can fast-track United 1K elite status. Primary competitor is United Club Business Card. Both are essentially the same card (Club membership) \u2014 personal version vs business version.",
     "last_updated": "2026-04-16T13:41:49.998Z",
     "hotel_program": null,
     "application_rules": {
@@ -11477,7 +11543,7 @@
   },
   {
     "card_id": "chase-united-club",
-    "name": "United Club℠ Card",
+    "name": "United Club\u2120 Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 695,
@@ -11532,7 +11598,7 @@
         "name": "United Club Membership",
         "amount": 750,
         "frequency": "Annual",
-        "description": "Included United Club membership (~$750 value per year) — unlimited access for cardmember + 2 guests or immediate family"
+        "description": "Included United Club membership (~$750 value per year) \u2014 unlimited access for cardmember + 2 guests or immediate family"
       },
       {
         "name": "Annual Travel Credit",
@@ -11596,7 +11662,7 @@
     "sources": [
       {
         "url": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite",
-        "notes": "Official Chase page (also marketed as United Club℠ Infinite Card)"
+        "notes": "Official Chase page (also marketed as United Club\u2120 Infinite Card)"
       },
       {
         "url": "https://thepointsguy.com/credit-cards/reviews/united-infinite-club-card-review/",
@@ -11607,7 +11673,7 @@
         "notes": "CNN Underscored review"
       }
     ],
-    "notes": "AF increased from $525 to $695 in March 2025. The United Club℠ Card is also referred to as the United Club℠ Infinite Card. Offers over $2,000 in total annual value per Chase (Club membership ~$750 + credits). Competes with Amex Platinum for frequent United travelers. Note: also in 248 list as 'united-club-infinite-card' which appears to be the same product with different naming.",
+    "notes": "AF increased from $525 to $695 in March 2025. The United Club\u2120 Card is also referred to as the United Club\u2120 Infinite Card. Offers over $2,000 in total annual value per Chase (Club membership ~$750 + credits). Competes with Amex Platinum for frequent United travelers. Note: also in 248 list as 'united-club-infinite-card' which appears to be the same product with different naming.",
     "last_updated": "2026-04-16T13:41:49.998Z",
     "hotel_program": null,
     "application_rules": {
@@ -11617,7 +11683,7 @@
   },
   {
     "card_id": "chase-united-explorer",
-    "name": "United℠ Explorer Card",
+    "name": "United\u2120 Explorer Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 150,
@@ -11750,7 +11816,7 @@
   },
   {
     "card_id": "chase-united-gateway",
-    "name": "United℠ Gateway Card",
+    "name": "United\u2120 Gateway Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 0,
@@ -11762,7 +11828,7 @@
       "bonus_points": 20000,
       "estimated_value": 200,
       "point_program": "United MileagePlus",
-      "description": "20,000 bonus United miles after spending $1,000 in first 3 months (worth ~$250 at 1.25¢/mile)"
+      "description": "20,000 bonus United miles after spending $1,000 in first 3 months (worth ~$250 at 1.25\u00a2/mile)"
     },
     "earning_rates": [
       {
@@ -12063,7 +12129,7 @@
   },
   {
     "card_id": "choice-privileges-select-visa",
-    "name": "Choice Privileges® Visa Signature® Card",
+    "name": "Choice Privileges\u00ae Visa Signature\u00ae Card",
     "issuer": "Wells Fargo",
     "network": "Visa",
     "annual_fee": 0,
@@ -12152,7 +12218,7 @@
   },
   {
     "card_id": "choice-privileges-visa",
-    "name": "Choice Privileges Mastercard®",
+    "name": "Choice Privileges Mastercard\u00ae",
     "issuer": "Wells Fargo",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -12460,7 +12526,7 @@
   },
   {
     "card_id": "citi-aadvantage-executive",
-    "name": "Citi® / AAdvantage® Executive World Elite Mastercard®",
+    "name": "Citi\u00ae / AAdvantage\u00ae Executive World Elite Mastercard\u00ae",
     "issuer": "Citi",
     "network": "Mastercard",
     "annual_fee": 595,
@@ -12491,15 +12557,15 @@
         "name": "Loyalty Bonus",
         "amount": 0,
         "frequency": "Per $100 spent",
-        "description": "Earn 10 AAdvantage® elite qualifying miles (EQMs) for every $100 spent on American Airlines purchases"
+        "description": "Earn 10 AAdvantage\u00ae elite qualifying miles (EQMs) for every $100 spent on American Airlines purchases"
       }
     ],
     "travel_benefits": {
       "lounge_access": [
         {
-          "name": "Admirals Club®",
+          "name": "Admirals Club\u00ae",
           "type": "Full membership",
-          "notes": "Primary cardmember and up to 2 guests; access to 100+ Admirals Club® and partner lounges worldwide (valued up to $850)"
+          "notes": "Primary cardmember and up to 2 guests; access to 100+ Admirals Club\u00ae and partner lounges worldwide (valued up to $850)"
         }
       ],
       "other_benefits": [
@@ -12588,7 +12654,7 @@
   },
   {
     "card_id": "citi-aadvantage-globe",
-    "name": "Citi® / AAdvantage® Globe™ Mastercard®",
+    "name": "Citi\u00ae / AAdvantage\u00ae Globe\u2122 Mastercard\u00ae",
     "issuer": "Citi",
     "network": "Mastercard",
     "annual_fee": 350,
@@ -12640,9 +12706,9 @@
     "travel_benefits": {
       "lounge_access": [
         {
-          "name": "Admirals Club® Globe™ Passes",
+          "name": "Admirals Club\u00ae Globe\u2122 Passes",
           "type": "Day passes",
-          "notes": "4 Admirals Club® passes per year"
+          "notes": "4 Admirals Club\u00ae passes per year"
         }
       ],
       "other_benefits": [
@@ -12699,7 +12765,7 @@
   },
   {
     "card_id": "citi-aadvantage-mileup",
-    "name": "American Airlines AAdvantage® MileUp® Card",
+    "name": "American Airlines AAdvantage\u00ae MileUp\u00ae Card",
     "issuer": "Citi",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -12780,7 +12846,7 @@
   },
   {
     "card_id": "citi-american-airlines-mastercard",
-    "name": "American Airlines AAdvantage® Mastercard® (Citi)",
+    "name": "American Airlines AAdvantage\u00ae Mastercard\u00ae (Citi)",
     "issuer": "Citi",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -12849,7 +12915,7 @@
   },
   {
     "card_id": "citi-costco-anywhere",
-    "name": "Costco Anywhere Visa® Card by Citi",
+    "name": "Costco Anywhere Visa\u00ae Card by Citi",
     "issuer": "Citi",
     "network": "Visa",
     "annual_fee": 0,
@@ -13003,7 +13069,7 @@
   },
   {
     "card_id": "citi-custom-cash",
-    "name": "Citi Custom Cash® Card",
+    "name": "Citi Custom Cash\u00ae Card",
     "issuer": "Citi",
     "network": "Visa",
     "annual_fee": 0,
@@ -13110,7 +13176,7 @@
   },
   {
     "card_id": "citi-double-cash",
-    "name": "Citi Double Cash® Card",
+    "name": "Citi Double Cash\u00ae Card",
     "issuer": "Citi",
     "network": "Visa",
     "annual_fee": 0,
@@ -13120,7 +13186,7 @@
       "spending_requirement": 1500,
       "time_period_months": 6,
       "bonus_cash": 200,
-      "description": "$200 cash back after you spend $1,500 on purchases in the first 6 months of account opening. Delivered as 20,000 ThankYou® Points (equivalent to $200)."
+      "description": "$200 cash back after you spend $1,500 on purchases in the first 6 months of account opening. Delivered as 20,000 ThankYou\u00ae Points (equivalent to $200)."
     },
     "earning_rates": [
       {
@@ -13260,7 +13326,7 @@
   },
   {
     "card_id": "citi-rewards-plus",
-    "name": "Citi Rewards+® Card",
+    "name": "Citi Rewards+\u00ae Card",
     "issuer": "Citi",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -13340,7 +13406,7 @@
   },
   {
     "card_id": "citi-secured-mastercard",
-    "name": "Citi® Secured Mastercard®",
+    "name": "Citi\u00ae Secured Mastercard\u00ae",
     "issuer": "Citi",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -13469,7 +13535,7 @@
   },
   {
     "card_id": "citi-strata-elite",
-    "name": "Citi Strata Elite℠ Card",
+    "name": "Citi Strata Elite\u2120 Card",
     "issuer": "Citi",
     "network": "Visa",
     "annual_fee": 595,
@@ -13479,7 +13545,7 @@
       "spending_requirement": 5,
       "time_period_months": 3,
       "bonus_points": 75000,
-      "description": "75,000 ThankYou® Points",
+      "description": "75,000 ThankYou\u00ae Points",
       "point_program": "Citi",
       "estimated_value": 900
     },
@@ -13513,7 +13579,7 @@
         "description": "Annual credit for hotel bookings made through CitiTravel"
       },
       {
-        "name": "Priority Pass™ Select Membership",
+        "name": "Priority Pass\u2122 Select Membership",
         "amount": null,
         "frequency": "annual",
         "description": "Unlimited lounge access for cardholder and guests"
@@ -13564,7 +13630,7 @@
   },
   {
     "card_id": "citi-strata-premier",
-    "name": "Citi Strata Premier℠ Card",
+    "name": "Citi Strata Premier\u2120 Card",
     "issuer": "Citi",
     "network": "Visa",
     "annual_fee": 95,
@@ -13574,7 +13640,7 @@
       "spending_requirement": 4,
       "time_period_months": 3,
       "bonus_points": 60000,
-      "description": "60,000 ThankYou® Points",
+      "description": "60,000 ThankYou\u00ae Points",
       "point_program": "Citi",
       "estimated_value": 700
     },
@@ -13687,7 +13753,7 @@
   },
   {
     "card_id": "citi-strata",
-    "name": "Citi Strata℠ Card",
+    "name": "Citi Strata\u2120 Card",
     "issuer": "Citi",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -13774,7 +13840,7 @@
   },
   {
     "card_id": "comenity-bed-bath-beyond-mastercard",
-    "name": "Bed Bath & Beyond Mastercard®",
+    "name": "Bed Bath & Beyond Mastercard\u00ae",
     "issuer": "Bread Financial / Comenity Bank",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -13917,7 +13983,7 @@
   },
   {
     "card_id": "comenity-ulta-beauty-mastercard",
-    "name": "Ulta Beauty Mastercard®",
+    "name": "Ulta Beauty Mastercard\u00ae",
     "issuer": "Bread Financial / Comenity Bank",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -13999,7 +14065,7 @@
   },
   {
     "card_id": "costco-anywhere-visa-business-citi",
-    "name": "Costco Anywhere Visa® Business Card by Citi",
+    "name": "Costco Anywhere Visa\u00ae Business Card by Citi",
     "issuer": "Citi",
     "network": "Visa",
     "annual_fee": 0,
@@ -14097,7 +14163,7 @@
   },
   {
     "card_id": "delta-skymiles-blue-amex",
-    "name": "Delta SkyMiles® Blue American Express Card",
+    "name": "Delta SkyMiles\u00ae Blue American Express Card",
     "issuer": "American Express",
     "network": "Amex",
     "annual_fee": 0,
@@ -14175,13 +14241,13 @@
   },
   {
     "card_id": "discover-it-chrome",
-    "name": "Discover it® Chrome",
+    "name": "Discover it\u00ae Chrome",
     "issuer": "Discover",
     "network": "Discover",
     "annual_fee": 0,
     "welcome_offer": {
       "bonus_points": null,
-      "description": "Unlimited Cashback Match™ at end of first year",
+      "description": "Unlimited Cashback Match\u2122 at end of first year",
       "estimated_value": null,
       "spending_requirement": null,
       "time_period_months": null
@@ -14235,7 +14301,7 @@
   },
   {
     "card_id": "discover-it-miles",
-    "name": "Discover it® Miles",
+    "name": "Discover it\u00ae Miles",
     "issuer": "Discover",
     "network": "Discover",
     "annual_fee": 0,
@@ -14243,7 +14309,7 @@
     "credit_required": "Good",
     "welcome_offer": {
       "bonus_points": null,
-      "description": "Unlimited Miles Match™ at end of first year",
+      "description": "Unlimited Miles Match\u2122 at end of first year",
       "estimated_value": null,
       "spending_requirement": null,
       "time_period_months": null
@@ -14297,7 +14363,7 @@
   },
   {
     "card_id": "discover-it-secured",
-    "name": "Discover it® Secured Credit Card",
+    "name": "Discover it\u00ae Secured Credit Card",
     "issuer": "Discover",
     "network": "Discover",
     "annual_fee": 0,
@@ -14377,7 +14443,7 @@
   },
   {
     "card_id": "discover-it-student-cash-back",
-    "name": "Discover it® Student Cash Back",
+    "name": "Discover it\u00ae Student Cash Back",
     "issuer": "Discover",
     "network": "Discover",
     "annual_fee": 0,
@@ -14457,7 +14523,7 @@
   },
   {
     "card_id": "discover-it-student-chrome",
-    "name": "Discover it® Student Chrome",
+    "name": "Discover it\u00ae Student Chrome",
     "issuer": "Discover",
     "network": "Discover",
     "annual_fee": 0,
@@ -14537,7 +14603,7 @@
   },
   {
     "card_id": "discover-it",
-    "name": "Discover it® Cash Back",
+    "name": "Discover it\u00ae Cash Back",
     "issuer": "Discover",
     "network": "Discover",
     "annual_fee": 0,
@@ -14545,7 +14611,7 @@
     "credit_required": "Good",
     "welcome_offer": {
       "bonus_points": null,
-      "description": "Unlimited Cashback Match™ at end of first year",
+      "description": "Unlimited Cashback Match\u2122 at end of first year",
       "estimated_value": null,
       "spending_requirement": null,
       "time_period_months": null
@@ -14568,7 +14634,7 @@
       "other_benefits": [
         {
           "name": "Cashback Match",
-          "description": "Discover matches ALL cash back earned at the end of your first year — effectively doubling your earnings."
+          "description": "Discover matches ALL cash back earned at the end of your first year \u2014 effectively doubling your earnings."
         },
         {
           "name": "Free FICO Score",
@@ -14612,7 +14678,7 @@
   },
   {
     "card_id": "doordash-rewards-mastercard",
-    "name": "DoorDash Rewards Mastercard®",
+    "name": "DoorDash Rewards Mastercard\u00ae",
     "issuer": "Chase",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -14684,7 +14750,7 @@
   },
   {
     "card_id": "emirates-skywards-mastercard",
-    "name": "Emirates Skywards Premium World Elite Mastercard®",
+    "name": "Emirates Skywards Premium World Elite Mastercard\u00ae",
     "issuer": "Barclays",
     "network": "Mastercard World Elite",
     "annual_fee": 499,
@@ -14830,7 +14896,7 @@
     ],
     "last_updated": "2026-04-16T13:41:49.982Z",
     "status": "active",
-    "notes": "Effective April 22, 2025, some changes to the rewards program were announced — cardholders should refer to their November statement or new account materials. The card requires a Fidelity account to redeem rewards at best rate (2%). Redemption to non-Fidelity accounts caps at 1.5%. No annual fee and no foreign transaction fees.",
+    "notes": "Effective April 22, 2025, some changes to the rewards program were announced \u2014 cardholders should refer to their November statement or new account materials. The card requires a Fidelity account to redeem rewards at best rate (2%). Redemption to non-Fidelity accounts caps at 1.5%. No annual fee and no foreign transaction fees.",
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -14839,7 +14905,7 @@
   },
   {
     "card_id": "hawaiian-airlines-world-elite-mastercard",
-    "name": "Hawaiian Airlines World Elite Mastercard®",
+    "name": "Hawaiian Airlines World Elite Mastercard\u00ae",
     "issuer": "Barclays",
     "network": "Mastercard World Elite",
     "annual_fee": 99,
@@ -15025,7 +15091,7 @@
       },
       {
         "url": "https://www.doctorofcredit.com/hsbc-premier-elite-card-review-60000-points-signup-bonus-and-495-annual-fee/",
-        "notes": "Doctor of Credit — card details"
+        "notes": "Doctor of Credit \u2014 card details"
       }
     ],
     "last_updated": "2026-04-16T13:41:49.984Z",
@@ -15135,11 +15201,11 @@
       },
       {
         "url": "https://maxrewards.com/credit-cards/hsbc-premier",
-        "notes": "MaxRewards — earn rates"
+        "notes": "MaxRewards \u2014 earn rates"
       },
       {
         "url": "https://milelion.com/2025/07/19/buffed-hsbc-premier-mastercard-boosts-earn-rates-adds-unlimited-lounge-access-and-other-perks/",
-        "notes": "The MileLion — August 2025 earn rate enhancements"
+        "notes": "The MileLion \u2014 August 2025 earn rate enhancements"
       }
     ],
     "last_updated": "2026-04-16T13:41:49.986Z",
@@ -15219,7 +15285,7 @@
       "bonus_points": 140000,
       "estimated_value": 700,
       "point_program": "IHG Rewards",
-      "description": "140,000 bonus points after spending $4,000 in first 3 months (points worth ~0.5¢ each toward IHG hotel stays)"
+      "description": "140,000 bonus points after spending $4,000 in first 3 months (points worth ~0.5\u00a2 each toward IHG hotel stays)"
     },
     "earning_rates": [
       {
@@ -15266,7 +15332,7 @@
         },
         {
           "name": "Fourth Night Free",
-          "description": "Fourth night free on award stays (book 3 nights, get 4th free — automatically applied)"
+          "description": "Fourth night free on award stays (book 3 nights, get 4th free \u2014 automatically applied)"
         },
         {
           "name": "Points Spending Discount",
@@ -15331,7 +15397,7 @@
       "bonus_points": 80000,
       "estimated_value": 400,
       "point_program": "IHG Rewards",
-      "description": "80,000 bonus IHG points after spending $3,000 in first 3 months (worth ~$400 at 0.5¢/point)"
+      "description": "80,000 bonus IHG points after spending $3,000 in first 3 months (worth ~$400 at 0.5\u00a2/point)"
     },
     "earning_rates": [
       {
@@ -15553,7 +15619,7 @@
         "notes": "TPG review"
       }
     ],
-    "notes": "Ultra-exclusive invitation-only card for JPMorgan Private Client customers (typically requires $2M+ at JPMorgan Chase). Replaced the JPM Palladium card. Similar benefits to Sapphire Reserve but more exclusive and higher AF ($995). Benefits exceed Sapphire Reserve slightly. Not publicly available — must be invited by JPMorgan.",
+    "notes": "Ultra-exclusive invitation-only card for JPMorgan Private Client customers (typically requires $2M+ at JPMorgan Chase). Replaced the JPM Palladium card. Similar benefits to Sapphire Reserve but more exclusive and higher AF ($995). Benefits exceed Sapphire Reserve slightly. Not publicly available \u2014 must be invited by JPMorgan.",
     "last_updated": "2026-04-16T13:41:49.988Z",
     "hotel_program": null,
     "application_rules": {
@@ -15599,7 +15665,7 @@
       "spending_requirement": null,
       "time_period_months": null,
       "bonus_points": null,
-      "description": "Get 40% off your first purchase at Kohl's within 30 days of credit approval — in store or online",
+      "description": "Get 40% off your first purchase at Kohl's within 30 days of credit approval \u2014 in store or online",
       "point_program": "Kohl's Rewards"
     },
     "earning_rates": [
@@ -15647,7 +15713,7 @@
         "notes": "NerdWallet: variety of discounts available, good for frequent Kohl's shoppers"
       }
     ],
-    "notes": "Store card for Kohl's shoppers only. Earns 7.5% back at Kohl's for Rewards Members (5% otherwise). No annual fee. New cardholders get 40% off first purchase within 30 days. Card has no value outside Kohl's — cannot be used elsewhere. Anniversary discounts and monthly exclusive offers add value for frequent Kohl's shoppers. Issued as both a Mastercard (usable anywhere) and a store-only card. Not worth getting just for the discount unless you shop at Kohl's regularly.",
+    "notes": "Store card for Kohl's shoppers only. Earns 7.5% back at Kohl's for Rewards Members (5% otherwise). No annual fee. New cardholders get 40% off first purchase within 30 days. Card has no value outside Kohl's \u2014 cannot be used elsewhere. Anniversary discounts and monthly exclusive offers add value for frequent Kohl's shoppers. Issued as both a Mastercard (usable anywhere) and a store-only card. Not worth getting just for the discount unless you shop at Kohl's regularly.",
     "confidence": "high",
     "last_updated": "2026-04-16T13:41:49.988Z",
     "tags": [
@@ -15662,7 +15728,7 @@
   },
   {
     "card_id": "luxury-card-black",
-    "name": "Luxury Card Mastercard® Black Card™",
+    "name": "Luxury Card Mastercard\u00ae Black Card\u2122",
     "issuer": "Barclays",
     "network": "Mastercard",
     "annual_fee": 699,
@@ -15756,7 +15822,7 @@
   },
   {
     "card_id": "luxury-card-gold",
-    "name": "Luxury Card Mastercard® Gold Card™",
+    "name": "Luxury Card Mastercard\u00ae Gold Card\u2122",
     "issuer": "Barclays",
     "network": "Mastercard",
     "annual_fee": 1199,
@@ -15858,7 +15924,7 @@
   },
   {
     "card_id": "luxury-card-titanium",
-    "name": "Luxury Card Mastercard® Titanium Card™",
+    "name": "Luxury Card Mastercard\u00ae Titanium Card\u2122",
     "issuer": "Barclays",
     "network": "Mastercard",
     "annual_fee": 299,
@@ -15942,7 +16008,7 @@
   },
   {
     "card_id": "marriott-bonvoy-bold",
-    "name": "Marriott Bonvoy Bold® Credit Card",
+    "name": "Marriott Bonvoy Bold\u00ae Credit Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 0,
@@ -16033,7 +16099,7 @@
   },
   {
     "card_id": "marriott-bonvoy-bountiful",
-    "name": "Marriott Bonvoy Bountiful® Credit Card",
+    "name": "Marriott Bonvoy Bountiful\u00ae Credit Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 250,
@@ -16148,7 +16214,7 @@
   },
   {
     "card_id": "my-gm-rewards-mastercard",
-    "name": "My GM Rewards Card Mastercard®",
+    "name": "My GM Rewards Card Mastercard\u00ae",
     "issuer": "Goldman Sachs",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -16233,7 +16299,7 @@
   },
   {
     "card_id": "navy-federal-cashrewards-plus",
-    "name": "Navy Federal cashRewards PLUS® Credit Card",
+    "name": "Navy Federal cashRewards PLUS\u00ae Credit Card",
     "issuer": "Navy Federal Credit Union",
     "network": "Visa",
     "annual_fee": 0,
@@ -16299,7 +16365,7 @@
   },
   {
     "card_id": "navy-federal-cashrewards",
-    "name": "Navy Federal cashRewards® Credit Card",
+    "name": "Navy Federal cashRewards\u00ae Credit Card",
     "issuer": "Navy Federal Credit Union",
     "network": "Visa",
     "annual_fee": 0,
@@ -16366,7 +16432,7 @@
   },
   {
     "card_id": "navy-federal-flagship-rewards",
-    "name": "Navy Federal Flagship Rewards® Credit Card",
+    "name": "Navy Federal Flagship Rewards\u00ae Credit Card",
     "issuer": "Navy Federal Credit Union",
     "network": "Visa",
     "annual_fee": 0,
@@ -16437,7 +16503,7 @@
   },
   {
     "card_id": "navy-federal-go-rewards",
-    "name": "Navy Federal GO REWARDS® Credit Card",
+    "name": "Navy Federal GO REWARDS\u00ae Credit Card",
     "issuer": "Navy Federal Credit Union",
     "network": "Visa",
     "annual_fee": 0,
@@ -16513,7 +16579,7 @@
   },
   {
     "card_id": "navy-federal-more-rewards",
-    "name": "Navy Federal More Rewards American Express® Card",
+    "name": "Navy Federal More Rewards American Express\u00ae Card",
     "issuer": "Navy Federal Credit Union",
     "network": "Amex",
     "annual_fee": 0,
@@ -16692,7 +16758,7 @@
   },
   {
     "card_id": "penfed-gold-visa",
-    "name": "PenFed Gold Visa® Card",
+    "name": "PenFed Gold Visa\u00ae Card",
     "issuer": "PenFed Credit Union",
     "network": "Visa",
     "annual_fee": 0,
@@ -16769,7 +16835,7 @@
   },
   {
     "card_id": "penfed-pathfinder-rewards",
-    "name": "PenFed Pathfinder® Rewards Visa Signature® Card",
+    "name": "PenFed Pathfinder\u00ae Rewards Visa Signature\u00ae Card",
     "issuer": "PenFed Credit Union",
     "network": "Visa",
     "annual_fee": 95,
@@ -16861,7 +16927,7 @@
   },
   {
     "card_id": "penfed-platinum-rewards",
-    "name": "PenFed Platinum Rewards Visa Signature® Card",
+    "name": "PenFed Platinum Rewards Visa Signature\u00ae Card",
     "issuer": "PenFed Credit Union",
     "network": "Visa",
     "annual_fee": 0,
@@ -16947,7 +17013,7 @@
   },
   {
     "card_id": "penfed-power-cash-rewards",
-    "name": "PenFed Power Cash Rewards® Visa Signature® Card",
+    "name": "PenFed Power Cash Rewards\u00ae Visa Signature\u00ae Card",
     "issuer": "PenFed Credit Union",
     "network": "Visa",
     "annual_fee": 0,
@@ -17081,7 +17147,7 @@
       },
       {
         "url": "https://www.cnbc.com/select/visa-petal-1-vs-petal-2/",
-        "notes": "CNBC — Petal 1 vs Petal 2 comparison"
+        "notes": "CNBC \u2014 Petal 1 vs Petal 2 comparison"
       },
       {
         "url": "https://money.usnews.com/credit-cards/webbank/petal-no-annual-fee-visa-credit-card",
@@ -17090,7 +17156,7 @@
     ],
     "last_updated": "2026-04-16T13:41:49.993Z",
     "status": "active",
-    "notes": "Petal 1 is a no-fee credit card designed for people with limited or no credit history. $0 annual fee and no foreign transaction fees. Variable APR: 28.99%–33.99% (high). Credit limits: $300–$5,000. Earn 1%–10% cash back through Petal Offers at select merchants; base rate starts at 1% and can increase to up to 1.5% after demonstrating responsible use. Reports to all three credit bureaus. Petal uses cash flow analysis (bank account history) for underwriting rather than traditional credit score alone.",
+    "notes": "Petal 1 is a no-fee credit card designed for people with limited or no credit history. $0 annual fee and no foreign transaction fees. Variable APR: 28.99%\u201333.99% (high). Credit limits: $300\u2013$5,000. Earn 1%\u201310% cash back through Petal Offers at select merchants; base rate starts at 1% and can increase to up to 1.5% after demonstrating responsible use. Reports to all three credit bureaus. Petal uses cash flow analysis (bank account history) for underwriting rather than traditional credit score alone.",
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -17140,8 +17206,8 @@
           "description": "Reports to all three major credit bureaus; strong on-time payment history builds credit"
         },
         {
-          "name": "No fees — ever",
-          "description": "Unlike the Petal 1, the Petal 2 charges NO fees of any kind for new cardholders — no annual fee, no foreign transaction fees, no late fees, no account fees"
+          "name": "No fees \u2014 ever",
+          "description": "Unlike the Petal 1, the Petal 2 charges NO fees of any kind for new cardholders \u2014 no annual fee, no foreign transaction fees, no late fees, no account fees"
         },
         {
           "name": "Credit limit increase path",
@@ -17172,16 +17238,16 @@
       },
       {
         "url": "https://www.nerdwallet.com/credit-cards/learn/is-the-petal-card-legit",
-        "notes": "NerdWallet — Petal card legitimacy review"
+        "notes": "NerdWallet \u2014 Petal card legitimacy review"
       },
       {
         "url": "https://www.cnbc.com/select/visa-petal-1-vs-petal-2/",
-        "notes": "CNBC — Petal 1 vs Petal 2 comparison"
+        "notes": "CNBC \u2014 Petal 1 vs Petal 2 comparison"
       }
     ],
     "last_updated": "2026-04-16T13:41:49.993Z",
     "status": "active",
-    "notes": "Petal 2 is Petal's flagship no-fee credit builder card. Unlike Petal 1, it has NO fees of any kind for new cardholders. Earns 1% cash back initially, increasing to 1.25% after 6 on-time payments and 1.5% after 12 on-time payments — making it one of the best flat-rate cash back rates among secured/no-credit-required cards. Variable APR: 28.24%–33.24%. Petal uses bank account cash flow data (rather than credit score alone) for approvals. Highly regarded among credit-builder cards.",
+    "notes": "Petal 2 is Petal's flagship no-fee credit builder card. Unlike Petal 1, it has NO fees of any kind for new cardholders. Earns 1% cash back initially, increasing to 1.25% after 6 on-time payments and 1.5% after 12 on-time payments \u2014 making it one of the best flat-rate cash back rates among secured/no-credit-required cards. Variable APR: 28.24%\u201333.24%. Petal uses bank account cash flow data (rather than credit score alone) for approvals. Highly regarded among credit-builder cards.",
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -17190,7 +17256,7 @@
   },
   {
     "card_id": "pnc-cash-rewards-visa",
-    "name": "PNC Cash Rewards® Visa® Credit Card",
+    "name": "PNC Cash Rewards\u00ae Visa\u00ae Credit Card",
     "issuer": "PNC Bank",
     "network": "Visa",
     "annual_fee": 0,
@@ -17321,7 +17387,7 @@
   },
   {
     "card_id": "pnc-core-visa",
-    "name": "PNC Core Visa® Credit Card",
+    "name": "PNC Core Visa\u00ae Credit Card",
     "issuer": "PNC Bank",
     "network": "Visa",
     "annual_fee": 0,
@@ -17377,7 +17443,7 @@
   },
   {
     "card_id": "pnc-points-visa",
-    "name": "PNC Points Visa® Credit Card",
+    "name": "PNC Points Visa\u00ae Credit Card",
     "issuer": "PNC Bank",
     "network": "Visa",
     "annual_fee": 0,
@@ -17597,7 +17663,7 @@
     ],
     "last_updated": "2026-04-16T13:41:49.995Z",
     "status": "active",
-    "notes": "SoFi Unlimited 2% Credit Card is invitation-only or requires pre-qualification through SoFi account. Not available to general public. Best redemption value is 1 cent/point into SoFi ecosystem (checking, savings, investment, or loan paydown). Cannot redeem for cash directly — must be SoFi ecosystem. Some existing cardholders transitioned to a monthly fee model as of Jan 2026; new applicants are not charged monthly fee.",
+    "notes": "SoFi Unlimited 2% Credit Card is invitation-only or requires pre-qualification through SoFi account. Not available to general public. Best redemption value is 1 cent/point into SoFi ecosystem (checking, savings, investment, or loan paydown). Cannot redeem for cash directly \u2014 must be SoFi ecosystem. Some existing cardholders transitioned to a monthly fee model as of Jan 2026; new applicants are not charged monthly fee.",
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -17606,7 +17672,7 @@
   },
   {
     "card_id": "southwest-rapid-rewards-plus",
-    "name": "Southwest Rapid Rewards® Plus Credit Card",
+    "name": "Southwest Rapid Rewards\u00ae Plus Credit Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 99,
@@ -17618,7 +17684,7 @@
       "bonus_points": 50000,
       "estimated_value": 500,
       "point_program": "Southwest Rapid Rewards",
-      "description": "50,000 bonus Rapid Rewards points after spending $1,000 in first 3 months (worth ~$745 toward Southwest flights at 1.49¢/point)"
+      "description": "50,000 bonus Rapid Rewards points after spending $1,000 in first 3 months (worth ~$745 toward Southwest flights at 1.49\u00a2/point)"
     },
     "earning_rates": [
       {
@@ -17643,7 +17709,7 @@
         "name": "Anniversary Points",
         "amount": 3000,
         "frequency": "Annual",
-        "description": "3,000 Rapid Rewards anniversary points each year (worth ~$45 at 1.5¢/point)"
+        "description": "3,000 Rapid Rewards anniversary points each year (worth ~$45 at 1.5\u00a2/point)"
       }
     ],
     "travel_benefits": {
@@ -17703,7 +17769,7 @@
   },
   {
     "card_id": "southwest-rapid-rewards-premier",
-    "name": "Southwest Rapid Rewards® Premier Credit Card",
+    "name": "Southwest Rapid Rewards\u00ae Premier Credit Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 149,
@@ -17715,7 +17781,7 @@
       "bonus_points": 60000,
       "estimated_value": 600,
       "point_program": "Southwest Rapid Rewards",
-      "description": "60,000 bonus Rapid Rewards points after spending $3,000 in first 3 months (worth ~$894 toward Southwest flights at 1.49¢/point)"
+      "description": "60,000 bonus Rapid Rewards points after spending $3,000 in first 3 months (worth ~$894 toward Southwest flights at 1.49\u00a2/point)"
     },
     "earning_rates": [
       {
@@ -17740,7 +17806,7 @@
         "name": "Anniversary Points",
         "amount": 6000,
         "frequency": "Annual",
-        "description": "6,000 Rapid Rewards anniversary points each year (worth ~$90 at 1.5¢/point)"
+        "description": "6,000 Rapid Rewards anniversary points each year (worth ~$90 at 1.5\u00a2/point)"
       },
       {
         "name": "EarlyBird Check-In",
@@ -17802,7 +17868,7 @@
   },
   {
     "card_id": "southwest-rapid-rewards-priority",
-    "name": "Southwest Rapid Rewards® Priority Credit Card",
+    "name": "Southwest Rapid Rewards\u00ae Priority Credit Card",
     "issuer": "Chase",
     "network": "Visa",
     "annual_fee": 229,
@@ -17814,7 +17880,7 @@
       "bonus_points": 60000,
       "estimated_value": 600,
       "point_program": "Southwest Rapid Rewards",
-      "description": "60,000 bonus Rapid Rewards points after spending $3,000 in first 3 months (worth ~$894 toward Southwest flights at 1.49¢/point)"
+      "description": "60,000 bonus Rapid Rewards points after spending $3,000 in first 3 months (worth ~$894 toward Southwest flights at 1.49\u00a2/point)"
     },
     "earning_rates": [
       {
@@ -17835,7 +17901,7 @@
         "name": "Anniversary Points",
         "amount": 7500,
         "frequency": "Annual",
-        "description": "7,500 Rapid Rewards anniversary points each year (worth ~$112 at 1.5¢/point)"
+        "description": "7,500 Rapid Rewards anniversary points each year (worth ~$112 at 1.5\u00a2/point)"
       },
       {
         "name": "Southwest Annual Travel Credit",
@@ -17906,7 +17972,7 @@
   },
   {
     "card_id": "spirit-airlines-mastercard",
-    "name": "Free Spirit® Travel More World Elite Mastercard®",
+    "name": "Free Spirit\u00ae Travel More World Elite Mastercard\u00ae",
     "issuer": "Bank of America",
     "network": "Mastercard",
     "annual_fee": 79,
@@ -18170,7 +18236,7 @@
   },
   {
     "card_id": "synchrony-care-credit-rewards-mastercard",
-    "name": "CareCredit Rewards Mastercard®",
+    "name": "CareCredit Rewards Mastercard\u00ae",
     "issuer": "Synchrony",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -18248,7 +18314,7 @@
   },
   {
     "card_id": "synchrony-paypal-cashback-mastercard",
-    "name": "PayPal Cashback Mastercard®",
+    "name": "PayPal Cashback Mastercard\u00ae",
     "issuer": "Synchrony",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -18322,7 +18388,7 @@
   },
   {
     "card_id": "synchrony-sams-club-mastercard",
-    "name": "Sam's Club® Mastercard®",
+    "name": "Sam's Club\u00ae Mastercard\u00ae",
     "issuer": "Synchrony",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -18408,7 +18474,7 @@
   },
   {
     "card_id": "synchrony-sears-mastercard",
-    "name": "Sears Mastercard®",
+    "name": "Sears Mastercard\u00ae",
     "issuer": "Synchrony",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -18471,7 +18537,7 @@
     ],
     "last_updated": "2026-04-16T13:41:49.995Z",
     "status": "transferred",
-    "notes": "IMPORTANT: The Sears Mastercard (Synchrony) has been discontinued/transferred to Citi — the Sears Mastercard became the Citi ThankYou Mastercard. The Shop Your Way Mastercard is now issued by Citi. Mark this record as historical/reference only. No longer available as new Synchrony product. The Sears store card may still be with Synchrony.",
+    "notes": "IMPORTANT: The Sears Mastercard (Synchrony) has been discontinued/transferred to Citi \u2014 the Sears Mastercard became the Citi ThankYou Mastercard. The Shop Your Way Mastercard is now issued by Citi. Mark this record as historical/reference only. No longer available as new Synchrony product. The Sears store card may still be with Synchrony.",
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -18480,7 +18546,7 @@
   },
   {
     "card_id": "synchrony-verizon-visa",
-    "name": "Verizon Visa® Card",
+    "name": "Verizon Visa\u00ae Card",
     "issuer": "Synchrony Bank",
     "network": "Visa",
     "annual_fee": 0,
@@ -18578,7 +18644,7 @@
   },
   {
     "card_id": "target-mastercard-redcard",
-    "name": "Target RedCard™ Mastercard®",
+    "name": "Target RedCard\u2122 Mastercard\u00ae",
     "issuer": "TD Bank",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -18658,7 +18724,7 @@
   },
   {
     "card_id": "target-redcard-credit",
-    "name": "Target RedCard™ Credit Card",
+    "name": "Target RedCard\u2122 Credit Card",
     "issuer": "TD Bank",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -18933,7 +18999,7 @@
   },
   {
     "card_id": "td-first-class-visa-signature",
-    "name": "TD First Class Visa Signature® Credit Card",
+    "name": "TD First Class Visa Signature\u00ae Credit Card",
     "issuer": "TD Bank",
     "network": "Visa",
     "annual_fee": 89,
@@ -19047,7 +19113,7 @@
       "other_benefits": [
         {
           "name": "Credit/loan hybrid",
-          "description": "Like other Upgrade cards, functions as both credit card and installment loan — remaining balance converts to fixed-rate repayment in equal monthly installments"
+          "description": "Like other Upgrade cards, functions as both credit card and installment loan \u2014 remaining balance converts to fixed-rate repayment in equal monthly installments"
         },
         {
           "name": "Upgrade Shopping discounts",
@@ -19088,7 +19154,7 @@
     ],
     "last_updated": "2026-04-16T13:41:50.004Z",
     "status": "active",
-    "notes": "Upgrade Triple Cash Rewards earns 3% on home, auto, and health categories — unusual category combinations that cover everyday spending areas. $200 welcome bonus requires opening a Rewards Checking Preferred account. APR: 14.99%–29.99% variable. Balance transfer fee: up to 5%. Credit lines range $500–$25,000. Card acts as a hybrid credit card/installment loan — any remaining balance can be converted to fixed monthly payments at a fixed rate. No cash withdrawal at ATMs.",
+    "notes": "Upgrade Triple Cash Rewards earns 3% on home, auto, and health categories \u2014 unusual category combinations that cover everyday spending areas. $200 welcome bonus requires opening a Rewards Checking Preferred account. APR: 14.99%\u201329.99% variable. Balance transfer fee: up to 5%. Credit lines range $500\u2013$25,000. Card acts as a hybrid credit card/installment loan \u2014 any remaining balance can be converted to fixed monthly payments at a fixed rate. No cash withdrawal at ATMs.",
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -19155,7 +19221,7 @@
   },
   {
     "card_id": "us-bank-altitude-connect",
-    "name": "U.S. Bank Altitude® Connect Visa Signature® Card",
+    "name": "U.S. Bank Altitude\u00ae Connect Visa Signature\u00ae Card",
     "issuer": "U.S. Bank",
     "network": "Visa",
     "annual_fee": 0,
@@ -19313,7 +19379,7 @@
   },
   {
     "card_id": "us-bank-altitude-go-secured",
-    "name": "U.S. Bank Altitude® Go Visa® Secured Card",
+    "name": "U.S. Bank Altitude\u00ae Go Visa\u00ae Secured Card",
     "issuer": "U.S. Bank",
     "network": "Visa",
     "annual_fee": 0,
@@ -19399,7 +19465,7 @@
   },
   {
     "card_id": "us-bank-altitude-go",
-    "name": "U.S. Bank Altitude® Go Visa Signature® Card",
+    "name": "U.S. Bank Altitude\u00ae Go Visa Signature\u00ae Card",
     "issuer": "U.S. Bank",
     "network": "Visa",
     "annual_fee": 0,
@@ -19493,7 +19559,7 @@
   },
   {
     "card_id": "us-bank-altitude-reserve",
-    "name": "U.S. Bank Altitude® Reserve Visa Infinite® Card",
+    "name": "U.S. Bank Altitude\u00ae Reserve Visa Infinite\u00ae Card",
     "issuer": "U.S. Bank",
     "network": "Visa",
     "annual_fee": 400,
@@ -19613,7 +19679,7 @@
   },
   {
     "card_id": "us-bank-biz-altitude-connect",
-    "name": "U.S. Bank Business Altitude® Connect Visa Signature® Card",
+    "name": "U.S. Bank Business Altitude\u00ae Connect Visa Signature\u00ae Card",
     "issuer": "U.S. Bank",
     "network": "Visa",
     "annual_fee": 95,
@@ -19712,7 +19778,7 @@
   },
   {
     "card_id": "us-bank-biz-leverage-visa",
-    "name": "U.S. Bank Business Leverage® Visa Signature® Card",
+    "name": "U.S. Bank Business Leverage\u00ae Visa Signature\u00ae Card",
     "issuer": "U.S. Bank",
     "network": "Visa",
     "annual_fee": 95,
@@ -19787,7 +19853,7 @@
     ],
     "last_updated": "2026-04-16T13:41:50.006Z",
     "status": "active",
-    "notes": "Annual fee waived first year. Automatically earns 2x in top 2 categories — no need to activate.",
+    "notes": "Annual fee waived first year. Automatically earns 2x in top 2 categories \u2014 no need to activate.",
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -19796,7 +19862,7 @@
   },
   {
     "card_id": "us-bank-biz-triple-cash",
-    "name": "U.S. Bank Triple Cash Rewards Visa® Business Card",
+    "name": "U.S. Bank Triple Cash Rewards Visa\u00ae Business Card",
     "issuer": "U.S. Bank",
     "network": "Visa",
     "annual_fee": 0,
@@ -19889,7 +19955,7 @@
   },
   {
     "card_id": "us-bank-cash-plus",
-    "name": "U.S. Bank Cash+™ Visa Signature® Card",
+    "name": "U.S. Bank Cash+\u2122 Visa Signature\u00ae Card",
     "issuer": "U.S. Bank",
     "network": "Visa",
     "annual_fee": 0,
@@ -19969,7 +20035,7 @@
   },
   {
     "card_id": "us-bank-smartly-visa",
-    "name": "U.S. Bank Smartly™ Visa Signature® Card",
+    "name": "U.S. Bank Smartly\u2122 Visa Signature\u00ae Card",
     "issuer": "U.S. Bank",
     "network": "Visa",
     "annual_fee": 0,
@@ -20091,7 +20157,7 @@
   },
   {
     "card_id": "us-bank-visa-platinum",
-    "name": "U.S. Bank Visa® Platinum Card",
+    "name": "U.S. Bank Visa\u00ae Platinum Card",
     "issuer": "U.S. Bank",
     "network": "Visa",
     "annual_fee": 0,
@@ -20378,7 +20444,7 @@
   },
   {
     "card_id": "wells-fargo-attune",
-    "name": "Wells Fargo Attune World Elite Mastercard®",
+    "name": "Wells Fargo Attune World Elite Mastercard\u00ae",
     "issuer": "Wells Fargo",
     "network": "Mastercard",
     "annual_fee": 0,
@@ -20527,7 +20593,7 @@
   },
   {
     "card_id": "wells-fargo-autograph",
-    "name": "Wells Fargo Autograph Visa Signature® Card",
+    "name": "Wells Fargo Autograph Visa Signature\u00ae Card",
     "issuer": "Wells Fargo",
     "network": "Visa",
     "annual_fee": 0,
@@ -20837,7 +20903,7 @@
   },
   {
     "card_id": "wells-fargo-signify-biz-cash",
-    "name": "Wells Fargo Signify Business Cash® Card",
+    "name": "Wells Fargo Signify Business Cash\u00ae Card",
     "issuer": "Wells Fargo",
     "network": "Visa",
     "annual_fee": 0,
@@ -20984,7 +21050,7 @@
   },
   {
     "card_id": "wyndham-rewards-earner-business-barclays",
-    "name": "Wyndham Rewards Earner® Business Card",
+    "name": "Wyndham Rewards Earner\u00ae Business Card",
     "issuer": "Barclays",
     "network": "Mastercard",
     "annual_fee": 95,
