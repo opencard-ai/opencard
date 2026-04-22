@@ -593,11 +593,11 @@ export default function MyCardsPage({
     html += '<button id="save-btn" style="padding:10px 20px;background:#1e40af;color:white;border:none;border-radius:6px;cursor:pointer">Save</button>';
     html += '</div>';
     const win = window.open('', 'OpenDate', 'width=300,height=250');
-    const w = win; // non-null alias
-      w.document.write('<html><body style="margin:0">'+html+'</body></html>');
-      w.document.getElementById('save-btn').onclick = () => {
-        const mEl = w.document.getElementById('sel-month'); const m = mEl ? (mEl as HTMLSelectElement).value : '';
-        const yEl = w.document.getElementById('sel-year'); const y = yEl ? (yEl as HTMLSelectElement).value : '';
+    if (win) {
+      win.document.write('<html><body style="margin:0">'+html+'</body></html>');
+      win.document.getElementById('save-btn').onclick = () => {
+        const m = win.document.getElementById('sel-month').value;
+        const y = win.document.getElementById('sel-year').value;
         const em = localStorage.getItem('opencard_subscribed_email');
         if (!em) { alert('No email'); return; }
         fetch('/api/my-cards/set-open-date', {
@@ -636,12 +636,11 @@ export default function MyCardsPage({
     html += '<button id="save-btn" style="padding:10px 20px;background:#1e40af;color:white;border:none;border-radius:6px;cursor:pointer">Save</button>';
     html += '</div>';
     const win = window.open('', 'OpenDate', 'width=300,height=250');
-    if (!win) return;
-    const w = win; // non-null alias
-      w.document.write('<html><body style="margin:0">'+html+'</body></html>');
-      w.document.getElementById('save-btn').onclick = () => {
-        const mEl = w.document.getElementById('sel-month'); const m = mEl ? (mEl as HTMLSelectElement).value : '';
-        const yEl = w.document.getElementById('sel-year'); const y = yEl ? (yEl as HTMLSelectElement).value : '';
+    if (win) {
+      win.document.write('<html><body style="margin:0">'+html+'</body></html>');
+      win.document.getElementById('save-btn').onclick = () => {
+        const m = win.document.getElementById('sel-month').value;
+        const y = win.document.getElementById('sel-year').value;
         const em = localStorage.getItem('opencard_subscribed_email');
         if (!em) { alert('No email'); return; }
         fetch('/api/my-cards/set-open-date', {
