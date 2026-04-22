@@ -262,20 +262,34 @@ export default function MyCardsPage({
 
   // Handle edit open date
   const handleEditOpenDate = useCallback(async (cardId: string) => {
-    if (!email) return;
-    // Simple prompt for now (can be modal later)
-    const input = prompt('Enter open month/year (e.g., 3 2024):');
-    if (!input) return;
-    const [m, y] = input.split(' ').map(Number);
-    if (!m || !y || m < 1 || m > 12 || y < 2020) return;
+    console.log('handleEditOpenDate called, email:', email);
+    if (!email) { alert('Please enter your email first'); return; }
     
-    const res = await fetch('/api/my-cards/set-open-date', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, card_id: cardId, month: m, year: y }),
-    });
-    if (res.ok) {
-      setOpenDates(prev => ({ ...prev, [cardId]: { month: m, year: y } }));
+    // Use simple window.prompt - works on desktop, show alert for mobile
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      const input = window.prompt('Enter open month and year (e.g., 3 2024):');
+      processInput(input);
+    } else {
+      const input = window.prompt('Enter open month/year (e.g., 3 2024):');
+      processInput(input);
+    }
+    
+    function processInput(input: string | null) {
+      if (!input) return;
+      const [m, y] = input.split(/[\s,\/]+/).map(Number);
+      if (!m || !y || m < 1 || m > 12 || y < 2020 || y > 2030) {
+        alert('Please enter valid month (1-12) and year (e.g., 3 2024)');
+        return;
+      }
+      fetch('/api/my-cards/set-open-date', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, card_id: cardId, month: m, year: y }),
+      }).then(res => {
+        if (res.ok) setOpenDates(prev => ({ ...prev, [cardId]: { month: m, year: y } }));
+        else alert('Failed to save');
+      });
     }
   }, [email]);
 
