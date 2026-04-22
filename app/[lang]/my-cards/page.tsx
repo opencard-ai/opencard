@@ -575,7 +575,20 @@ export default function MyCardsPage({
                           })()}
                         </span>
                         <button 
-                          onClick={() => handleEditOpenDate(card.card_id)}
+                          onClick={(e) => {
+    e.preventDefault();
+    const input = window.prompt('Enter open month/year (e.g., 3 2024):');
+    if (!input) return;
+    const [m, y] = input.split(/[\s,\/]+/).map(Number);
+    if (!m || !y || m < 1 || m > 12 || y < 2020 || y > 2030) { alert('Invalid'); return; }
+    const email = localStorage.getItem('opencard_subscribed_email');
+    if (!email) { alert('No email'); return; }
+    fetch('/api/my-cards/set-open-date', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, card_id: card.card_id, month: m, year: y }),
+    }).then(r => r.json()).then(d => { if (d.success) alert('Saved!'); else alert('Error'); });
+  }}
                           className="text-xs text-blue-500 hover:text-blue-700"
                         >
                           Edit
@@ -583,7 +596,20 @@ export default function MyCardsPage({
                       </div>
                     ) : (
                       <button 
-                        onClick={() => handleEditOpenDate(card.card_id)}
+                        onClick={(e) => {
+    e.preventDefault();
+    const input = window.prompt('Enter open month/year (e.g., 3 2024):');
+    if (!input) return;
+    const [m, y] = input.split(/[\s,\/]+/).map(Number);
+    if (!m || !y || m < 1 || m > 12 || y < 2020 || y > 2030) { alert('Invalid'); return; }
+    const email = localStorage.getItem('opencard_subscribed_email');
+    if (!email) { alert('No email'); return; }
+    fetch('/api/my-cards/set-open-date', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, card_id: card.card_id, month: m, year: y }),
+    }).then(r => r.json()).then(d => { if (d.success) alert('Saved!'); else alert('Error'); });
+  }}
                         className="text-xs text-blue-600 hover:text-blue-800 font-medium"
                       >
                         📅 Set card open date for accurate reminders
