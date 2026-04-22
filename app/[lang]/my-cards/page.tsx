@@ -288,16 +288,33 @@ export default function MyCardsPage({
     if (!email) return;
     setIsSubscribing(true);
     setSubscribeError("");
+    
+    // Fetch existing cloud cards FIRST (in case user has cards on another device)
+    let existingCloudCards: string[] = [];
+    try {
+      const cloudRes = await fetch(`/api/my-cards?email=${encodeURIComponent(email.toLowerCase().trim())}`);
+      if (cloudRes.ok) {
+        const cloudData = await cloudRes.json();
+        existingCloudCards = cloudData.cards || [];
+      }
+    } catch {}
+    
+    // Merge cloud cards + local cards (local takes priority for new cards)
+    const mergedCards = [...new Set([...existingCloudCards, ...selectedCards])];
+    
     try {
       const res = await fetch("/api/my-cards/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, cards: selectedCards, marketing_optin: marketingOptin }),
+        body: JSON.stringify({ email, cards: mergedCards, marketing_optin: marketingOptin }),
       });
       if (res.ok) {
         setIsSubscribed(true);
         // Store email so AddToMyCardsButton and MyCardsWidget know user is subscribed
         localStorage.setItem('opencard_subscribed_email', email.toLowerCase().trim());
+        // Save merged cards to localStorage
+        setSelectedCards(mergedCards);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(mergedCards));
       } else {
         const data = await res.json();
         setSubscribeError(data.error || "Failed to subscribe");
