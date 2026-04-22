@@ -107,12 +107,6 @@
       "category": "travel"
     },
     {
-      "name": "Priority Pass Membership",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other"
-    },
-    {
       "name": "$300 Travel Credit",
       "amount": 300,
       "frequency": "annual",

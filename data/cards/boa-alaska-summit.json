@@ -62,26 +62,8 @@
   },
   "recurring_credits": [
     {
-      "name": "8 Alaska Lounge Passes",
-      "amount": null,
-      "frequency": "annual",
-      "category": "airline"
-    },
-    {
-      "name": "Elite Status Boost",
-      "amount": null,
-      "frequency": "annual",
-      "category": "other"
-    },
-    {
       "name": "10,000 Anniversary Points",
       "amount": 100,
-      "frequency": "annual",
-      "category": "other"
-    },
-    {
-      "name": "Global Companion Award",
-      "amount": null,
       "frequency": "annual",
       "category": "other"
     }

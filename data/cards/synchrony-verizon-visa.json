@@ -85,12 +85,5 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "name": "TravelPass days",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel"
-    }
-  ]
+  "recurring_credits": []
 }

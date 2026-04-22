@@ -71,14 +71,6 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "Priority Pass Plus Plaza Premium",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Unlimited lounge access for cardholder + 2 guests at 1,300+ lounges worldwide.",
-      "reset_type": "calendar_year"
-    },
-    {
       "name": "$300 Annual Travel Credit",
       "amount": 300,
       "frequency": "annual",
@@ -100,22 +92,6 @@
       "frequency": "annual",
       "category": "annual",
       "description": "Up to $100 every 4 years",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Lounge Access",
-      "amount": null,
-      "frequency": "annual",
-      "category": "annual",
-      "description": "Unlimited access to Capital One Lounges, Priority Pass, and Plaza Premium Lounges",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Authorized Users",
-      "amount": null,
-      "frequency": "annual",
-      "category": "annual",
-      "description": "Add up to 4 authorized users for free, each with lounge access",
       "reset_type": "calendar_year"
     }
   ]

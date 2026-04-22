@@ -97,18 +97,5 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "name": "Lounge passes",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other"
-    },
-    {
-      "name": "Streaming credit",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other"
-    }
-  ]
+  "recurring_credits": []
 }

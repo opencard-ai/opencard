@@ -163,22 +163,6 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "Marriott Bonvoy Gold Elite Status",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Gold Elite status with Marriott Bonvoy (25% bonus on base points, late checkout, upgraded room when available).",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Hilton Honors Gold Status",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Gold status with Hilton (80% bonus on base points, 5th night free on award stays, breakfast at select properties).",
-      "reset_type": "calendar_year"
-    },
-    {
       "name": "Hotel Credit",
       "amount": 600,
       "frequency": "annual",

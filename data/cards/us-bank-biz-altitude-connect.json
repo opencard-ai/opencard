@@ -87,12 +87,5 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "name": "Priority Pass Digital membership",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other"
-    }
-  ]
+  "recurring_credits": []
 }

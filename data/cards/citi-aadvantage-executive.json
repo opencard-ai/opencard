@@ -112,14 +112,6 @@
       "frequency": "annual",
       "category": "travel",
       "description": "$25 annual inflight WiFi credit"
-    },
-    {
-      "name": "Loyalty Bonus",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "Per $100 spent",
-      "description": "Earn 10 AAdvantage\u00ae elite qualifying miles (EQMs) for every $100 spent on American Airlines purchases",
-      "reset_type": "calendar_year"
     }
   ]
 }

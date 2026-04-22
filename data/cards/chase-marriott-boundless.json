@@ -81,30 +81,6 @@
   },
   "recurring_credits": [
     {
-      "name": "Free Anniversary Night",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "1 free night certificate each year at Marriott properties.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Marriott Bonvoy Gold Elite Status",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Gold Elite status with Marriott Bonvoy.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Anniversary Free Night",
-      "amount": null,
-      "frequency": "annual",
-      "category": "Anniversary",
-      "description": "Free Night Award (up to 35,000 points) each account anniversary year.",
-      "reset_type": "calendar_year"
-    },
-    {
       "name": "Airline Credit",
       "amount": 100,
       "frequency": "annual",

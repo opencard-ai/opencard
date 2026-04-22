@@ -73,12 +73,5 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "name": "GM tier upgrade",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other"
-    }
-  ]
+  "recurring_credits": []
 }

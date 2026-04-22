@@ -68,12 +68,6 @@
       "category": "other"
     },
     {
-      "name": "Free Checked Bag",
-      "amount": null,
-      "frequency": "annual",
-      "category": "other"
-    },
-    {
       "name": "Lounge Discount",
       "amount": 100,
       "frequency": "annual",

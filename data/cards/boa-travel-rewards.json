@@ -50,12 +50,5 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "name": "Preferred Rewards Bonus",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other"
-    }
-  ]
+  "recurring_credits": []
 }

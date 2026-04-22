@@ -94,12 +94,6 @@
   },
   "recurring_credits": [
     {
-      "name": "Priority Pass Select",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other"
-    },
-    {
       "name": "TSA PreCheck/Global Entry credit",
       "amount": 100,
       "frequency": "annual",

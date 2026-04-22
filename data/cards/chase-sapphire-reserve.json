@@ -135,14 +135,6 @@
       "reset_type": "cardmember_year"
     },
     {
-      "name": "Priority Pass Membership",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Priority Pass Select membership \u2014 unlimited lounge access for cardholder + guests at 1,300+ airport lounges worldwide.",
-      "reset_type": "cardmember_year"
-    },
-    {
       "name": "Travel Credit",
       "amount": 300,
       "frequency": "annual",

@@ -67,14 +67,6 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "Priority Pass + Plaza Premium Lounges",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Priority Pass Select + Plaza Premium lounge access for cardholder + 2 guests at 1,300+ airport lounges worldwide.",
-      "reset_type": "calendar_year"
-    },
-    {
       "name": "$250 Travel Credit",
       "amount": 250,
       "frequency": "annual",
@@ -88,14 +80,6 @@
       "frequency": "annual",
       "category": "annual",
       "description": "Up to $100 every 4 years",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Lounge Access",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "annual",
-      "description": "Two complimentary visits per year to Capital One Lounges or Plaza Premium Lounges (Note: Lounges access was being removed in late 2024 for this card; currently limited)",
       "reset_type": "calendar_year"
     }
   ]

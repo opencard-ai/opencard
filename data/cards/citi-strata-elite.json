@@ -73,18 +73,6 @@
       "category": "hotel"
     },
     {
-      "name": "Priority Pass\u2122 Select Membership",
-      "amount": null,
-      "frequency": "annual",
-      "category": "other"
-    },
-    {
-      "name": "AA Admirals Club Passes",
-      "amount": null,
-      "frequency": "annual",
-      "category": "other"
-    },
-    {
       "name": "Global Entry or TSA PreCheck Credit",
       "amount": 100,
       "frequency": "annual",
