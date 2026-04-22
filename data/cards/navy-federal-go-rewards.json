@@ -1,6 +1,6 @@
 {
   "card_id": "navy-federal-go-rewards",
-  "name": "Navy Federal GO REWARDS® Credit Card",
+  "name": "Navy Federal GO REWARDS\u00ae Credit Card",
   "issuer": "Navy Federal Credit Union",
   "network": "Visa",
   "annual_fee": 0,
@@ -52,7 +52,8 @@
     "trip_delay": false,
     "trip_cancellation": false,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null
   },
   "tags": [
     "cash-back",

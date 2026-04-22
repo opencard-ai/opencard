@@ -1,6 +1,6 @@
 {
   "card_id": "barclays-frontier-airlines-world-mastercard",
-  "name": "Frontier Airlines World Mastercard®",
+  "name": "Frontier Airlines World Mastercard\u00ae",
   "issuer": "Barclays",
   "network": "Mastercard World",
   "annual_fee": 89,
@@ -51,7 +51,9 @@
     "rental_insurance": "None",
     "trip_delay": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null
   },
   "tags": [
     "airline"

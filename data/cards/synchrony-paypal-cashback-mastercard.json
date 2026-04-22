@@ -1,6 +1,6 @@
 {
   "card_id": "synchrony-paypal-cashback-mastercard",
-  "name": "PayPal Cashback Mastercard®",
+  "name": "PayPal Cashback Mastercard\u00ae",
   "issuer": "Synchrony",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -45,7 +45,14 @@
   "insurance": {
     "rental_insurance": "Secondary",
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "trip_delay": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "cash-back",

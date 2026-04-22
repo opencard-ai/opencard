@@ -1,6 +1,6 @@
 {
   "card_id": "penfed-power-cash-rewards",
-  "name": "PenFed Power Cash Rewards® Visa Signature® Card",
+  "name": "PenFed Power Cash Rewards\u00ae Visa Signature\u00ae Card",
   "issuer": "PenFed Credit Union",
   "network": "Visa",
   "annual_fee": 0,
@@ -44,7 +44,8 @@
     "trip_delay": false,
     "trip_cancellation": false,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null
   },
   "tags": [
     "cash-back",

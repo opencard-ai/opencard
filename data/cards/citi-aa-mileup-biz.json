@@ -34,7 +34,18 @@
     "fhr_eligible": false,
     "thc_eligible": false
   },
-  "insurance": {},
+  "insurance": {
+    "trip_cancellation": null,
+    "trip_delay": null,
+    "rental_insurance": null,
+    "purchase_protection": null,
+    "return_protection": null,
+    "extended_warranty": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
+  },
   "tags": [
     "airline",
     "business",

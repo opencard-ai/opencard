@@ -72,7 +72,13 @@
     "purchase_protection": true,
     "extended_warranty": true,
     "trip_cancellation": false,
-    "travel_delay": false
+    "travel_delay": false,
+    "trip_delay": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [],
   "sources": [

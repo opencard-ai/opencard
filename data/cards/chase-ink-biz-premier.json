@@ -1,6 +1,6 @@
 {
   "card_id": "chase-ink-biz-premier",
-  "name": "Ink Business Premier® Credit Card",
+  "name": "Ink Business Premier\u00ae Credit Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 195,
@@ -18,7 +18,7 @@
     {
       "category": "Chase Travel",
       "rate": 5,
-      "notes": "Unlimited 5% cash back on travel purchased through Chase Travel℠"
+      "notes": "Unlimited 5% cash back on travel purchased through Chase Travel\u2120"
     },
     {
       "category": "Lyft",
@@ -54,7 +54,8 @@
     "trip_delay": false,
     "rental_insurance": "Secondary",
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null
   },
   "tags": [
     "business"

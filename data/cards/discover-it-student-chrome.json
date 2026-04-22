@@ -1,6 +1,6 @@
 {
   "card_id": "discover-it-student-chrome",
-  "name": "Discover it® Student Chrome",
+  "name": "Discover it\u00ae Student Chrome",
   "issuer": "Discover",
   "network": "Discover",
   "annual_fee": 0,
@@ -52,7 +52,8 @@
     "trip_delay": false,
     "trip_cancellation": false,
     "purchase_protection": true,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "return_protection": null
   },
   "tags": [
     "cash-back",

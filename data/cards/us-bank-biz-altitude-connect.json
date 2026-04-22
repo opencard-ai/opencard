@@ -63,7 +63,12 @@
     "trip_delay": true,
     "trip_cancellation": true,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "business",

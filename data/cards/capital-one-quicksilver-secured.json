@@ -17,14 +17,14 @@
     {
       "category": "All purchases",
       "rate": 1.5,
-      "notes": "Unlimited 1.5% cash back on every purchase, every day — rare for a secured card"
+      "notes": "Unlimited 1.5% cash back on every purchase, every day \u2014 rare for a secured card"
     }
   ],
   "annual_credits": [],
   "travel_benefits": {
     "hotel_status": [],
     "other_benefits": [
-      "Card does not say 'secured' on it — looks like a regular Capital One card",
+      "Card does not say 'secured' on it \u2014 looks like a regular Capital One card",
       "Reports to all three major credit bureaus",
       "No foreign transaction fees"
     ]
@@ -37,7 +37,13 @@
     "rental_insurance": "None",
     "trip_delay": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "sources": [
     {
@@ -53,7 +59,7 @@
       "notes": "WalletHub: $0 annual fee, available to those with poor credit, 1.5% cash back"
     }
   ],
-  "notes": "Exceptional secured card: 1.5% unlimited cash back on everything with no annual fee — same earning rate as the unsecured Quicksilver. Security deposit required. Card doesn't display 'secured' label. Upgrade path available. One of the best secured cards available if you want rewards while rebuilding credit. Reviews note Capital One's system is automated with no human credit limit increases.",
+  "notes": "Exceptional secured card: 1.5% unlimited cash back on everything with no annual fee \u2014 same earning rate as the unsecured Quicksilver. Security deposit required. Card doesn't display 'secured' label. Upgrade path available. One of the best secured cards available if you want rewards while rebuilding credit. Reviews note Capital One's system is automated with no human credit limit increases.",
   "confidence": "high",
   "last_updated": "2026-04-16T13:41:49.959Z",
   "tags": [

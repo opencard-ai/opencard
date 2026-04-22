@@ -24,7 +24,7 @@
   "travel_benefits": {
     "hotel_status": [],
     "other_benefits": [
-      "Access to CreditWise® credit monitoring tool"
+      "Access to CreditWise\u00ae credit monitoring tool"
     ]
   },
   "fhr_thc": {
@@ -35,7 +35,9 @@
     "rental_insurance": "None",
     "trip_delay": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null
   },
   "sources": [
     {

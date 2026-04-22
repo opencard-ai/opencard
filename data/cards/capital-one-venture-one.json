@@ -10,7 +10,7 @@
     "spending_requirement": 500,
     "time_period_months": 3,
     "bonus_points": 20000,
-    "description": "Earn 20,000 bonus miles once you spend $500 on purchases within the first 3 months — worth $200 in travel",
+    "description": "Earn 20,000 bonus miles once you spend $500 on purchases within the first 3 months \u2014 worth $200 in travel",
     "point_program": "Capital One Miles",
     "estimated_value": 200
   },
@@ -38,7 +38,13 @@
     "rental_insurance": "Secondary",
     "trip_delay": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "sources": [
     {

@@ -75,7 +75,8 @@
     "purchase_protection": true,
     "purchase_protection_details": "Covers new purchases against damage or theft for 120 days, up to $50,000 per claim / $100,000 per year.",
     "extended_warranty": true,
-    "extended_warranty_details": "Extends U.S. manufacturer's warranty by an additional year on eligible warranties of 3 years or less."
+    "extended_warranty_details": "Extends U.S. manufacturer's warranty by an additional year on eligible warranties of 3 years or less.",
+    "return_protection": null
   },
   "tags": [],
   "sources": [

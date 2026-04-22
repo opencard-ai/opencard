@@ -1,6 +1,6 @@
 {
   "card_id": "synchrony-sears-mastercard",
-  "name": "Sears Mastercard®",
+  "name": "Sears Mastercard\u00ae",
   "issuer": "Synchrony",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -43,7 +43,10 @@
   "insurance": {
     "rental_insurance": "Secondary",
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "trip_delay": null,
+    "return_protection": null
   },
   "tags": [
     "no-annual-fee"
@@ -60,7 +63,7 @@
   ],
   "last_updated": "2026-04-16T13:41:49.995Z",
   "status": "transferred",
-  "notes": "IMPORTANT: The Sears Mastercard (Synchrony) has been discontinued/transferred to Citi — the Sears Mastercard became the Citi ThankYou Mastercard. The Shop Your Way Mastercard is now issued by Citi. Mark this record as historical/reference only. No longer available as new Synchrony product. The Sears store card may still be with Synchrony.",
+  "notes": "IMPORTANT: The Sears Mastercard (Synchrony) has been discontinued/transferred to Citi \u2014 the Sears Mastercard became the Citi ThankYou Mastercard. The Shop Your Way Mastercard is now issued by Citi. Mark this record as historical/reference only. No longer available as new Synchrony product. The Sears store card may still be with Synchrony.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

@@ -1,6 +1,6 @@
 {
   "card_id": "chase-united-gateway",
-  "name": "United℠ Gateway Card",
+  "name": "United\u2120 Gateway Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 0,
@@ -12,7 +12,7 @@
     "bonus_points": 20000,
     "estimated_value": 200,
     "point_program": "United MileagePlus",
-    "description": "20,000 bonus United miles after spending $1,000 in first 3 months (worth ~$250 at 1.25¢/mile)"
+    "description": "20,000 bonus United miles after spending $1,000 in first 3 months (worth ~$250 at 1.25\u00a2/mile)"
   },
   "earning_rates": [
     {
@@ -54,7 +54,12 @@
     "trip_delay": true,
     "rental_insurance": "Secondary",
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "airline",

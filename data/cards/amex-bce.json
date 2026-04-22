@@ -54,7 +54,9 @@
     "rental_insurance": "Secondary",
     "trip_delay": false,
     "purchase_protection": true,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null
   },
   "tags": [
     "cash-back",

@@ -92,7 +92,12 @@
     "purchase_protection": true,
     "extended_warranty": true,
     "baggage_insurance": true,
-    "notes": "Trip delay requires delay >12 hours. Includes trip cancellation/interruption coverage."
+    "notes": "Trip delay requires delay >12 hours. Includes trip cancellation/interruption coverage.",
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "airline"

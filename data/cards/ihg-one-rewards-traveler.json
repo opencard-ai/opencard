@@ -12,7 +12,7 @@
     "bonus_points": 80000,
     "estimated_value": 400,
     "point_program": "IHG Rewards",
-    "description": "80,000 bonus IHG points after spending $3,000 in first 3 months (worth ~$400 at 0.5¢/point)"
+    "description": "80,000 bonus IHG points after spending $3,000 in first 3 months (worth ~$400 at 0.5\u00a2/point)"
   },
   "earning_rates": [
     {
@@ -67,7 +67,8 @@
     "trip_delay": true,
     "rental_insurance": "Secondary",
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null
   },
   "tags": [
     "hotel",

@@ -43,7 +43,13 @@
     "rental_insurance": "None",
     "trip_delay": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "premium",

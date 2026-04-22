@@ -1,6 +1,6 @@
 {
   "card_id": "boa-alaska-airlines-visa-signature",
-  "name": "Alaska Airlines Visa Signature® Credit Card",
+  "name": "Alaska Airlines Visa Signature\u00ae Credit Card",
   "issuer": "Bank of America",
   "network": "Visa",
   "annual_fee": 95,
@@ -76,7 +76,13 @@
     "rental_insurance": "Secondary",
     "trip_delay": false,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "airline",

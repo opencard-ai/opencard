@@ -1,6 +1,6 @@
 {
   "card_id": "barclays-aarp-travel-rewards-mastercard",
-  "name": "AARP® Travel Rewards Mastercard® from Barclays",
+  "name": "AARP\u00ae Travel Rewards Mastercard\u00ae from Barclays",
   "issuer": "Barclays",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -58,7 +58,9 @@
     "rental_insurance": "None",
     "trip_delay": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null
   },
   "tags": [
     "no-annual-fee",

@@ -79,7 +79,8 @@
     "trip_delay": true,
     "rental_insurance": "Secondary",
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null
   },
   "tags": [
     "airline",

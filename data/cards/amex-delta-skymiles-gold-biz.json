@@ -1,6 +1,6 @@
 {
   "card_id": "amex-delta-skymiles-gold-biz",
-  "name": "Delta SkyMiles® Gold Business American Express Card",
+  "name": "Delta SkyMiles\u00ae Gold Business American Express Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 150,
@@ -54,7 +54,13 @@
     "rental_insurance": "Secondary",
     "trip_delay": false,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "airline",

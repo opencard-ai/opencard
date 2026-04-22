@@ -68,7 +68,13 @@
     "rental_insurance": "Primary",
     "trip_delay": true,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "transferable"

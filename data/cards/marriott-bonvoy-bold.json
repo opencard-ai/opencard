@@ -1,6 +1,6 @@
 {
   "card_id": "marriott-bonvoy-bold",
-  "name": "Marriott Bonvoy Bold® Credit Card",
+  "name": "Marriott Bonvoy Bold\u00ae Credit Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 0,
@@ -60,7 +60,8 @@
     "trip_delay": true,
     "rental_insurance": "Secondary",
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null
   },
   "tags": [
     "hotel",

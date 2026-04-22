@@ -1,6 +1,6 @@
 {
   "card_id": "us-bank-biz-leverage-visa",
-  "name": "U.S. Bank Business Leverage® Visa Signature® Card",
+  "name": "U.S. Bank Business Leverage\u00ae Visa Signature\u00ae Card",
   "issuer": "U.S. Bank",
   "network": "Visa",
   "annual_fee": 95,
@@ -53,7 +53,10 @@
   "insurance": {
     "rental_insurance": "Secondary",
     "extended_warranty": true,
-    "purchase_protection": true
+    "purchase_protection": true,
+    "trip_cancellation": null,
+    "trip_delay": null,
+    "return_protection": null
   },
   "tags": [
     "business",
@@ -75,7 +78,7 @@
   ],
   "last_updated": "2026-04-16T13:41:50.006Z",
   "status": "active",
-  "notes": "Annual fee waived first year. Automatically earns 2x in top 2 categories — no need to activate.",
+  "notes": "Annual fee waived first year. Automatically earns 2x in top 2 categories \u2014 no need to activate.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

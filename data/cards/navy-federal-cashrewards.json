@@ -1,6 +1,6 @@
 {
   "card_id": "navy-federal-cashrewards",
-  "name": "Navy Federal cashRewards® Credit Card",
+  "name": "Navy Federal cashRewards\u00ae Credit Card",
   "issuer": "Navy Federal Credit Union",
   "network": "Visa",
   "annual_fee": 0,
@@ -44,7 +44,12 @@
     "trip_delay": false,
     "trip_cancellation": false,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "cash-back",

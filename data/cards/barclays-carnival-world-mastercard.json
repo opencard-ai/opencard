@@ -1,6 +1,6 @@
 {
   "card_id": "barclays-carnival-world-mastercard",
-  "name": "Carnival® World Mastercard®",
+  "name": "Carnival\u00ae World Mastercard\u00ae",
   "issuer": "Barclays",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -61,7 +61,13 @@
     "rental_insurance": "None",
     "trip_delay": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "no-annual-fee"

@@ -1,6 +1,6 @@
 {
   "card_id": "barclays-royal-caribbean-visa-signature",
-  "name": "Royal Caribbean Visa Signature® Card",
+  "name": "Royal Caribbean Visa Signature\u00ae Card",
   "issuer": "Barclays",
   "network": "Visa Signature",
   "annual_fee": 0,
@@ -38,7 +38,7 @@
       "Onboard credit and discounts",
       "No annual fee",
       "No foreign transaction fees",
-      "⚠️ NOTE: Royal Caribbean has transitioned to new Royal ONE/Royal ONE Plus cards with Bank of America (March 2026). Barclays-issued version may be discontinued."
+      "\u26a0\ufe0f NOTE: Royal Caribbean has transitioned to new Royal ONE/Royal ONE Plus cards with Bank of America (March 2026). Barclays-issued version may be discontinued."
     ]
   },
   "fhr_thc": {
@@ -49,7 +49,13 @@
     "rental_insurance": "None",
     "trip_delay": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "no-annual-fee",

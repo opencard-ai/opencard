@@ -49,7 +49,13 @@
     "rental_insurance": "Travel Accident Insurance",
     "trip_delay": false,
     "purchase_protection": "Up to $1,000 per loss, $25,000 per year for damage/theft within 90 days",
-    "extended_warranty": "Extends manufacturer warranty on eligible items"
+    "extended_warranty": "Extends manufacturer warranty on eligible items",
+    "trip_cancellation": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "cash-back",

@@ -1,6 +1,6 @@
 {
   "card_id": "citi-aadvantage-mileup",
-  "name": "American Airlines AAdvantage® MileUp® Card",
+  "name": "American Airlines AAdvantage\u00ae MileUp\u00ae Card",
   "issuer": "Citi",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -51,7 +51,14 @@
   "insurance": {
     "rental_insurance": "Secondary",
     "purchase_protection": false,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "trip_delay": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "airline",

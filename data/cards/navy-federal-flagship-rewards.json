@@ -1,6 +1,6 @@
 {
   "card_id": "navy-federal-flagship-rewards",
-  "name": "Navy Federal Flagship Rewards® Credit Card",
+  "name": "Navy Federal Flagship Rewards\u00ae Credit Card",
   "issuer": "Navy Federal Credit Union",
   "network": "Visa",
   "annual_fee": 0,
@@ -48,7 +48,12 @@
     "trip_delay": true,
     "trip_cancellation": true,
     "purchase_protection": true,
-    "extended_warranty": true
+    "extended_warranty": true,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "tags": [
     "cash-back",

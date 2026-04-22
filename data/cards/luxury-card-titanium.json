@@ -1,6 +1,6 @@
 {
   "card_id": "luxury-card-titanium",
-  "name": "Luxury Card Mastercard® Titanium Card™",
+  "name": "Luxury Card Mastercard\u00ae Titanium Card\u2122",
   "issuer": "Barclays",
   "network": "Mastercard",
   "annual_fee": 299,
@@ -50,7 +50,9 @@
     "rental_insurance": "None",
     "trip_delay": false,
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null
   },
   "tags": [],
   "sources": [

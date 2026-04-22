@@ -1,6 +1,6 @@
 {
   "card_id": "costco-anywhere-visa-business-citi",
-  "name": "Costco Anywhere Visa® Business Card by Citi",
+  "name": "Costco Anywhere Visa\u00ae Business Card by Citi",
   "issuer": "Citi",
   "network": "Visa",
   "annual_fee": 0,
@@ -68,7 +68,8 @@
     "purchase_protection": false,
     "extended_warranty": true,
     "travel_accident_insurance": true,
-    "roadside_dispatch": true
+    "roadside_dispatch": true,
+    "return_protection": null
   },
   "notes": "Requires a paid Costco membership. Cash back paid as an annual credit on the February statement of the following year. Card is issued by Citi but branded Costco Anywhere Visa.",
   "tags": [

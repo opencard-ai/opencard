@@ -1,6 +1,6 @@
 {
   "card_id": "citi-rewards-plus",
-  "name": "Citi Rewards+® Card",
+  "name": "Citi Rewards+\u00ae Card",
   "issuer": "Citi",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -51,7 +51,10 @@
   "insurance": {
     "rental_insurance": "Secondary",
     "purchase_protection": false,
-    "extended_warranty": false
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "trip_delay": null,
+    "return_protection": null
   },
   "tags": [
     "cash-back",
