@@ -263,10 +263,20 @@ export default function MyCardsPage({
 
   // Handle edit open date
   const handleEditOpenDate = useCallback(async (cardId: string) => {
-    // Get email from localStorage or state
-    const currentEmail = email || localStorage.getItem(SUBSCRIBED_EMAIL_KEY) || localStorage.getItem('opencard_subscribed_email') || '';
-    console.log('handleEditOpenDate called, email from state:', email, 'from LS:', localStorage.getItem(SUBSCRIBED_EMAIL_KEY), 'from alt LS:', localStorage.getItem('opencard_subscribed_email'));
-    if (!currentEmail) { alert('Please enter your email first'); return; }
+    // Simple approach - get from localStorage directly
+    const storedEmail = localStorage.getItem('opencard_subscribed_email');
+    if (!storedEmail) {
+      // Try to get from API
+      fetch('/api/my-cards/set-open-date?email=' + encodeURIComponent(email))
+        .then(r => r.json())
+        .then(d => {
+          if (d.open_dates) {
+            setOpenDates(d.open_dates);
+            alert('Loaded your card open dates');
+          }
+        });
+      return;
+    }
     
     // Use simple window.prompt - works on desktop, show alert for mobile
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -288,7 +298,7 @@ export default function MyCardsPage({
       fetch('/api/my-cards/set-open-date', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: currentEmail, card_id: cardId, month: m, year: y }),
+        body: JSON.stringify({ email: storedEmail, card_id: cardId, month: m, year: y }),
       }).then(res => {
         if (res.ok) setOpenDates(prev => ({ ...prev, [cardId]: { month: m, year: y } }));
         else alert('Failed to save');
