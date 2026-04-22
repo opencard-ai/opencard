@@ -101,104 +101,40 @@
       "amount": 300,
       "frequency": "annual",
       "category": "travel",
-      "description": "$300 annual credit for travel purchases (airfare, hotels, car rentals) worldwide. Automatically applied.",
+      "description": "$300 annual credit for travel purchases (airfare, hotels, car rentals). Automatically applied as statement credit.",
       "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Semi-Annual Dining Credit",
-      "amount": 150,
-      "frequency": "semi_annual",
-      "category": "dining",
-      "description": "$150 every 6 months ($300/year) for dining at restaurants worldwide. Credit loaded to Chase Dining credit.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Hotel Credit",
-      "amount": 250,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "$250 annual credit for prepaid hotel bookings made through The Edit by Chase Travel.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Flexible Travel Credit",
-      "amount": 500,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "$500 annual credit for prepaid travel via The Edit by Chase Travel (flexible, can be used for flights, hotels, etc.).",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Global Entry / PreCheck Credit",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Up to $100 credit every 4 years for Global Entry or $85 for TSA PreCheck.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Travel Credit",
-      "amount": 300,
-      "frequency": "annual",
-      "category": "Anniversary",
-      "description": "$300 in statement credits for travel purchases each account anniversary year.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "The Edit Credit",
-      "amount": 500,
-      "frequency": "annual",
-      "category": "Calendar Year",
-      "description": "$250 credit from Jan-Jun and $250 from Jul-Dec for prepaid bookings with The Edit (2-night min).",
-      "reset_type": "calendar_year"
     },
     {
       "name": "Dining Credit",
       "amount": 300,
       "frequency": "annual",
-      "category": "Calendar Year",
-      "description": "$150 credit from Jan-Jun and $150 from Jul-Dec for Sapphire Exclusive Tables on OpenTable.",
-      "reset_type": "calendar_year"
+      "category": "dining",
+      "description": "$300/year ($150/6 months) for dining at Sapphire Exclusive Tables via OpenTable. Must book via Chase.",
+      "reset_type": "cardmember_year"
     },
     {
-      "name": "Apple TV/Music",
-      "amount": 288,
+      "name": "The Edit Hotel Credit",
+      "amount": 500,
       "frequency": "annual",
-      "category": "Monthly",
-      "description": "Complimentary Apple TV and Apple Music subscriptions through 6/22/2027.",
-      "reset_type": "calendar_year"
+      "category": "travel",
+      "description": "$500 annual credit ($250 x 2 stays) for prepaid hotel bookings via The Edit by Chase Travel. 2-night minimum.",
+      "reset_type": "cardmember_year"
     },
     {
-      "name": "DoorDash Promo",
-      "amount": 300,
-      "frequency": "annual",
-      "category": "Monthly",
-      "description": "$25 monthly for DoorDash ($5 restaurant, $20 grocery/retail).",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "StubHub Credits",
-      "amount": 300,
-      "frequency": "annual",
-      "category": "Calendar Year",
-      "description": "$150 credit from Jan-Jun and $150 from Jul-Dec for StubHub/viagogo.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Lyft Credits",
+      "name": "Global Entry / PreCheck Credit",
       "amount": 120,
       "frequency": "annual",
-      "category": "Monthly",
-      "description": "$10 monthly credit for Lyft rides.",
-      "reset_type": "calendar_year"
+      "category": "travel",
+      "description": "Up to $120 every 4 years for Global Entry, TSA PreCheck, or NEXUS application fee.",
+      "reset_type": "cardmember_year"
     },
     {
-      "name": "Peloton Credits",
-      "amount": 120,
+      "name": "Priority Pass Membership",
+      "amount": null,
       "frequency": "annual",
-      "category": "Monthly",
-      "description": "$10 monthly credit for Peloton memberships.",
-      "reset_type": "calendar_year"
+      "category": "travel",
+      "description": "Complimentary Priority Pass Select membership with 1,300+ airport lounges worldwide. Includes 2 guests.",
+      "reset_type": "cardmember_year"
     }
   ]
 }
