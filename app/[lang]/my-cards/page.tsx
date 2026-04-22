@@ -304,7 +304,7 @@ export default function MyCardsPage({
         else alert('Failed to save');
       });
     }
-  });
+  }, [email]);
 
 
 // Listen for card save/remove events from other pages
@@ -574,9 +574,10 @@ export default function MyCardsPage({
                             return years > 0 ? `${years}y ${remMonths}m` : `${remMonths} months`;
                           })()}
                         </span>
-                        <a 
-                          href="#"
+                        <button
+                          type="button"
                           onClick={(e) => {
+    console.log('CLICK FIRED', e);
     e.preventDefault();
     e.stopPropagation();
     const input = prompt('Enter: email month year (e.g., test@test.com 3 2024)');
@@ -601,9 +602,10 @@ export default function MyCardsPage({
                         </button>
                       </div>
                     ) : (
-                      <a 
-                        href="#"
+                      <button
+                        type="button"
                         onClick={(e) => {
+    console.log('CLICK FIRED', e);
     e.preventDefault();
     e.stopPropagation();
     const input = prompt('Enter: email month year (e.g., test@test.com 3 2024)');
