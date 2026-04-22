@@ -528,8 +528,9 @@ export default function MyCardsPage({
                       {card.annual_fee > 0 && (
                         <span className="text-xs text-slate-400">${card.annual_fee}/yr</span>
                       )}
+                    </div>
                   </div>
-                  
+
                   {/* Open Date Info - New Row */}
                   <div className="px-4 py-2 bg-blue-50 border-b border-blue-100 flex items-center justify-between">
                     {openDates[card.card_id] ? (
