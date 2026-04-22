@@ -593,7 +593,7 @@ export default function MyCardsPage({
     html += '<button id="save-btn" style="padding:10px 20px;background:#1e40af;color:white;border:none;border-radius:6px;cursor:pointer">Save</button>';
     html += '</div>';
     const win = window.open('', 'OpenDate', 'width=300,height=250');
-    if (win) {
+    if (!win) return;
       win.document.write('<html><body style="margin:0">'+html+'</body></html>');
       win.document.getElementById('save-btn').onclick = () => {
         const mEl = win.document.getElementById('sel-month'); const m = mEl ? (mEl as HTMLSelectElement).value : '';
@@ -636,7 +636,7 @@ export default function MyCardsPage({
     html += '<button id="save-btn" style="padding:10px 20px;background:#1e40af;color:white;border:none;border-radius:6px;cursor:pointer">Save</button>';
     html += '</div>';
     const win = window.open('', 'OpenDate', 'width=300,height=250');
-    if (win) {
+    if (!win) return;
       win.document.write('<html><body style="margin:0">'+html+'</body></html>');
       win.document.getElementById('save-btn').onclick = () => {
         const mEl = win.document.getElementById('sel-month'); const m = mEl ? (mEl as HTMLSelectElement).value : '';
