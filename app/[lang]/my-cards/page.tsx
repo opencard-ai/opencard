@@ -574,69 +574,57 @@ export default function MyCardsPage({
                             return years > 0 ? `${years}y ${remMonths}m` : `${remMonths} months`;
                           })()}
                         </span>
-                        <button 
-                          onClick async (e) => {
+                        <a 
+                          href="#"
+                          onClick={(e) => {
     e.preventDefault();
-    // Ask for email and date together
-    const input = window.prompt('Enter your email and open date (e.g., your@email.com 3 2024):');
+    e.stopPropagation();
+    const input = prompt('Enter: email month year (e.g., test@test.com 3 2024)');
     if (!input) return;
-    const parts = input.trim().split(/[\s,\/]+/);
-    if (parts.length < 2) { alert('Please enter: email month year (e.g., your@email.com 3 2024)'); return; }
-    const email = parts[0];
+    const parts = input.split(' ');
+    const em = parts[0];
     const m = parseInt(parts[1]);
     const y = parseInt(parts[2]);
-    if (!email || !m || !y || m < 1 || m > 12 || y < 2020 || y > 2030) { alert('Invalid format'); return; }
-    // Try to set
-    try {
-      const res = await fetch('/api/my-cards/set-open-date', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, card_id: card.card_id, month: m, year: y }),
-      });
-      const data = await res.json();
-      if (data.success) { 
-        // Update local state
-        setOpenDates(prev => ({ ...prev, [card.card_id]: { month: m, year: y } }));
-        alert('Saved!'); 
-      } else { alert('Error: ' + data.error); }
-    } catch(err) { alert('Error: ' + err.message); }
+    if (!em || !m || !y) { alert('Format: email month year'); return; }
+    fetch('/api/my-cards/set-open-date', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: em, card_id: card.card_id, month: m, year: y }),
+    }).then(r => r.json()).then(d => {
+      if (d.success) alert('Saved!');
+      else alert('Error');
+    });
   }}
-                          className="text-xs text-blue-500 hover:text-blue-700"
+                          className="text-xs text-blue-500 hover:text-blue-700 cursor-pointer"
                         >
                           Edit
                         </button>
                       </div>
                     ) : (
-                      <button 
-                        onClick async (e) => {
+                      <a 
+                        href="#"
+                        onClick={(e) => {
     e.preventDefault();
-    // Ask for email and date together
-    const input = window.prompt('Enter your email and open date (e.g., your@email.com 3 2024):');
+    e.stopPropagation();
+    const input = prompt('Enter: email month year (e.g., test@test.com 3 2024)');
     if (!input) return;
-    const parts = input.trim().split(/[\s,\/]+/);
-    if (parts.length < 2) { alert('Please enter: email month year (e.g., your@email.com 3 2024)'); return; }
-    const email = parts[0];
+    const parts = input.split(' ');
+    const em = parts[0];
     const m = parseInt(parts[1]);
     const y = parseInt(parts[2]);
-    if (!email || !m || !y || m < 1 || m > 12 || y < 2020 || y > 2030) { alert('Invalid format'); return; }
-    // Try to set
-    try {
-      const res = await fetch('/api/my-cards/set-open-date', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, card_id: card.card_id, month: m, year: y }),
-      });
-      const data = await res.json();
-      if (data.success) { 
-        // Update local state
-        setOpenDates(prev => ({ ...prev, [card.card_id]: { month: m, year: y } }));
-        alert('Saved!'); 
-      } else { alert('Error: ' + data.error); }
-    } catch(err) { alert('Error: ' + err.message); }
+    if (!em || !m || !y) { alert('Format: email month year'); return; }
+    fetch('/api/my-cards/set-open-date', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: em, card_id: card.card_id, month: m, year: y }),
+    }).then(r => r.json()).then(d => {
+      if (d.success) alert('Saved!');
+      else alert('Error');
+    });
   }}
-                        className="text-xs text-blue-600 hover:text-blue-800 font-medium"
+                        className="text-xs text-blue-600 hover:text-blue-800 font-medium cursor-pointer"
                       >
-                        📅 Set card open date for accurate reminders
+                        📅 Set card open date
                       </button>
                     )}
                   </div>
