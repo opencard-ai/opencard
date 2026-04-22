@@ -57,14 +57,6 @@
       "rate": 1
     }
   ],
-  "annual_credits": [
-    {
-      "name": "Anniversary Free Night",
-      "amount": 15000,
-      "frequency": "Annual",
-      "description": "One complimentary anniversary night at any Hyatt Category 1-4 hotel (up to 15,000 points)"
-    }
-  ],
   "travel_benefits": {
     "other_benefits": [
       {

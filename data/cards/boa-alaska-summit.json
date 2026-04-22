@@ -31,32 +31,6 @@
       "notes": ""
     }
   ],
-  "annual_credits": [
-    {
-      "name": "8 Alaska Lounge Passes",
-      "amount": null,
-      "frequency": "annual",
-      "description": "Provided annually (2 per quarter)"
-    },
-    {
-      "name": "Elite Status Boost",
-      "amount": null,
-      "frequency": "annual",
-      "description": "1 status point per $2 spent"
-    },
-    {
-      "name": "10,000 Anniversary Points",
-      "amount": 100,
-      "frequency": "annual",
-      "description": "Awarded every year on cardholder anniversary"
-    },
-    {
-      "name": "Global Companion Award",
-      "amount": null,
-      "frequency": "annual",
-      "description": "Earned with $30k spend; valid for international/partner flights"
-    }
-  ],
   "travel_benefits": {},
   "fhr_thc": {
     "fhr_eligible": false,

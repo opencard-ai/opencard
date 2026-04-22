@@ -1,6 +1,6 @@
 {
   "card_id": "amex-bcp",
-  "name": "Blue Cash Preferred® Card",
+  "name": "Blue Cash Preferred\u00ae Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 95,
@@ -40,14 +40,6 @@
       "category": "Other",
       "rate": 1,
       "notes": null
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Disney Streaming Credit",
-      "amount": 120,
-      "frequency": "Monthly",
-      "description": "$10 monthly credit at Disney+, Hulu, or ESPN+."
     }
   ],
   "travel_benefits": {
@@ -91,6 +83,14 @@
       "frequency": "monthly",
       "category": "streaming",
       "description": "$10/month Disney+ streaming credit"
+    },
+    {
+      "name": "Disney Streaming Credit",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "Monthly",
+      "description": "$10 monthly credit at Disney+, Hulu, or ESPN+.",
+      "reset_type": "calendar_year"
     }
   ]
 }

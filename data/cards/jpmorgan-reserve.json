@@ -36,38 +36,6 @@
       "notes": "1x points on all other purchases"
     }
   ],
-  "annual_credits": [
-    {
-      "name": "Travel Credit",
-      "amount": 300,
-      "frequency": "Annual",
-      "description": "$300 annual credit on travel purchases"
-    },
-    {
-      "name": "DoorDash Credit",
-      "amount": 15,
-      "frequency": "Monthly",
-      "description": "$15 monthly DoorDash credit ($180/year)"
-    },
-    {
-      "name": "Instacart Credit",
-      "amount": 15,
-      "frequency": "Monthly",
-      "description": "$15 monthly Instacart credit ($180/year)"
-    },
-    {
-      "name": "Gopuff Credit",
-      "amount": 10,
-      "frequency": "Monthly",
-      "description": "$10 monthly Gopuff credit ($120/year)"
-    },
-    {
-      "name": "Peloton Credit",
-      "amount": 30,
-      "frequency": "Annual",
-      "description": "Up to $30 back on Peloton App"
-    }
-  ],
   "travel_benefits": {
     "other_benefits": [
       {
@@ -135,7 +103,7 @@
       "notes": "TPG review"
     }
   ],
-  "notes": "Ultra-exclusive invitation-only card for JPMorgan Private Client customers (typically requires $2M+ at JPMorgan Chase). Replaced the JPM Palladium card. Similar benefits to Sapphire Reserve but more exclusive and higher AF ($995). Benefits exceed Sapphire Reserve slightly. Not publicly available — must be invited by JPMorgan.",
+  "notes": "Ultra-exclusive invitation-only card for JPMorgan Private Client customers (typically requires $2M+ at JPMorgan Chase). Replaced the JPM Palladium card. Similar benefits to Sapphire Reserve but more exclusive and higher AF ($995). Benefits exceed Sapphire Reserve slightly. Not publicly available \u2014 must be invited by JPMorgan.",
   "last_updated": "2026-04-16T13:41:49.988Z",
   "hotel_program": null,
   "application_rules": {
@@ -166,6 +134,46 @@
       "category": "travel",
       "description": "Up to $100 every 4 years for Global Entry.",
       "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Travel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "$300 annual credit on travel purchases",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "DoorDash Credit",
+      "amount": 15,
+      "frequency": "annual",
+      "category": "Monthly",
+      "description": "$15 monthly DoorDash credit ($180/year)",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Instacart Credit",
+      "amount": 15,
+      "frequency": "annual",
+      "category": "Monthly",
+      "description": "$15 monthly Instacart credit ($180/year)",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Gopuff Credit",
+      "amount": 10,
+      "frequency": "annual",
+      "category": "Monthly",
+      "description": "$10 monthly Gopuff credit ($120/year)",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Peloton Credit",
+      "amount": 30,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "Up to $30 back on Peloton App",
+      "reset_type": "calendar_year"
     }
   ]
 }

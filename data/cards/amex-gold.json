@@ -1,6 +1,6 @@
 {
   "card_id": "amex-gold",
-  "name": "American Express® Gold Card",
+  "name": "American Express\u00ae Gold Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 325,
@@ -39,32 +39,6 @@
       "category": "Other",
       "rate": 1,
       "notes": null
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Uber Cash",
-      "amount": 120,
-      "frequency": "Monthly",
-      "description": "$10 monthly for Uber rides or Uber Eats in the US."
-    },
-    {
-      "name": "Dunkin' Credit",
-      "amount": 84,
-      "frequency": "Monthly",
-      "description": "$7 monthly credit at U.S. Dunkin' locations."
-    },
-    {
-      "name": "Resy Credit",
-      "amount": 100,
-      "frequency": "Semi-Annual",
-      "description": "$50 semi-annually for eligible purchases with Resy."
-    },
-    {
-      "name": "Dining Credit",
-      "amount": 120,
-      "frequency": "Monthly",
-      "description": "$10 monthly at participating partners (Shake Shack, Cheesecake Factory, etc.)."
     }
   ],
   "travel_benefits": {
@@ -133,6 +107,22 @@
       "frequency": "annual",
       "category": "travel",
       "description": "$100 annual credit for airline incidentals. Enrollment required.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Dunkin' Credit",
+      "amount": 84,
+      "frequency": "annual",
+      "category": "Monthly",
+      "description": "$7 monthly credit at U.S. Dunkin' locations.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Dining Credit",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "Monthly",
+      "description": "$10 monthly at participating partners (Shake Shack, Cheesecake Factory, etc.).",
       "reset_type": "calendar_year"
     }
   ]

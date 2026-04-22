@@ -1,6 +1,6 @@
 {
   "card_id": "amex-delta-reserve",
-  "name": "Delta SkyMiles® Reserve American Express Card",
+  "name": "Delta SkyMiles\u00ae Reserve American Express Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 650,
@@ -25,26 +25,6 @@
       "category": "Other",
       "rate": 1,
       "notes": null
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Resy Credit",
-      "amount": 240,
-      "frequency": "Annual",
-      "description": "Up to $20 per month ($240/year) in statement credits at U.S. Resy restaurants."
-    },
-    {
-      "name": "Rideshare Credit",
-      "amount": 120,
-      "frequency": "Annual",
-      "description": "Up to $10 per month ($120/year) on U.S. rideshare purchases."
-    },
-    {
-      "name": "Global Entry/TSA PreCheck",
-      "amount": 120,
-      "frequency": "Every 4 years",
-      "description": "Up to $120 statement credit for Global Entry or up to $85 for TSA PreCheck every 4-4.5 years."
     }
   ],
   "travel_benefits": {

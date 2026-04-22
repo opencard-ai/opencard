@@ -1,6 +1,6 @@
 {
   "card_id": "us-bank-visa-platinum",
-  "name": "U.S. Bank Visa® Platinum Card",
+  "name": "U.S. Bank Visa\u00ae Platinum Card",
   "issuer": "U.S. Bank",
   "network": "Visa",
   "annual_fee": 0,
@@ -18,14 +18,6 @@
       "category": "Prepaid air, hotel, car reservations (Travel Center)",
       "rate": 4,
       "notes": "4% cash back on prepaid travel booked directly via U.S. Bank Travel Center"
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "$20 annual statement credit",
-      "amount": 20,
-      "frequency": "Annual",
-      "description": "$20 credit for 11 consecutive months of purchases (requires enrolled in U.S. Bank ExtendPay)"
     }
   ],
   "travel_benefits": {
@@ -86,6 +78,14 @@
       "amount": 20,
       "frequency": "annual",
       "category": "other"
+    },
+    {
+      "name": "$20 annual statement credit",
+      "amount": 20,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "$20 credit for 11 consecutive months of purchases (requires enrolled in U.S. Bank ExtendPay)",
+      "reset_type": "calendar_year"
     }
   ]
 }

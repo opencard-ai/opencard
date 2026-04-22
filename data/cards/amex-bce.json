@@ -1,6 +1,6 @@
 {
   "card_id": "amex-bce",
-  "name": "Blue Cash Everyday® Card",
+  "name": "Blue Cash Everyday\u00ae Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 0,
@@ -35,14 +35,6 @@
       "category": "Other",
       "rate": 1,
       "notes": null
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Disney Streaming Credit",
-      "amount": 84,
-      "frequency": "Monthly",
-      "description": "$7 monthly credit at Disney+, Hulu, or ESPN+."
     }
   ],
   "travel_benefits": {
@@ -94,6 +86,14 @@
       "frequency": "monthly",
       "category": "dining",
       "description": "$15/month Home Chef credit"
+    },
+    {
+      "name": "Disney Streaming Credit",
+      "amount": 84,
+      "frequency": "annual",
+      "category": "Monthly",
+      "description": "$7 monthly credit at Disney+, Hulu, or ESPN+.",
+      "reset_type": "calendar_year"
     }
   ]
 }

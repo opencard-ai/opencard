@@ -47,20 +47,6 @@
       "notes": "Prepaid hotel accommodations booked through Chase Travel with Renowned Hotels and Resorts"
     }
   ],
-  "annual_credits": [
-    {
-      "name": "United TravelBank Cash",
-      "amount": 200,
-      "frequency": "annual",
-      "description": "$200 annually in TravelBank cash for United- or United Express-operated flights"
-    },
-    {
-      "name": "Renowned Hotels and Resorts Credit",
-      "amount": 150,
-      "frequency": "annual",
-      "description": "Up to $150 in statement credits per anniversary year when booking prepaid stays through Renowned Hotels and Resorts program via Chase Travel"
-    }
-  ],
   "travel_benefits": {
     "hotel_status": [
       "United Premier Silver status (complimentary)"

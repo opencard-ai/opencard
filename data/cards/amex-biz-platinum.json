@@ -1,6 +1,6 @@
 {
   "card_id": "amex-biz-platinum",
-  "name": "The Business Platinum Card® from American Express",
+  "name": "The Business Platinum Card\u00ae from American Express",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 895,
@@ -21,38 +21,6 @@
       "category": "All Other Purchases",
       "rate": 1,
       "notes": "1X on all other purchases."
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Amex Travel Credit",
-      "amount": 200,
-      "frequency": "Annual",
-      "description": "$200 annual credit for incidental fees at one selected airline."
-    },
-    {
-      "name": "Dell Technologies Credit",
-      "amount": 400,
-      "frequency": "Annual",
-      "description": "Up to $400 statement credit per year for U.S. Dell Technologies purchases (up to $200 through July 2025, increased to $400 after)."
-    },
-    {
-      "name": "Hotel Collection Credit",
-      "amount": 600,
-      "frequency": "Annual",
-      "description": "$600 in statement credits when booking The Hotel Collection properties through Amex Travel."
-    },
-    {
-      "name": "American Express Global Lounge Collection",
-      "amount": 0,
-      "frequency": "Included",
-      "description": "Complimentary access to Centurion Lounges, Delta Sky Clubs (when flying Delta), Priority Pass, and other lounges in the Amex Global Lounge Collection."
-    },
-    {
-      "name": "Walmart+ Membership Credit",
-      "amount": 155,
-      "frequency": "Annual",
-      "description": "Up to $155.40 per year in Walmart+ credits (~$12.95/month)."
     }
   ],
   "travel_benefits": {
@@ -127,6 +95,46 @@
       "frequency": "quarterly",
       "category": "shopping",
       "description": "$100 quarterly ($400/year) for Dell purchases. Enrollment required.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Amex Travel Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "$200 annual credit for incidental fees at one selected airline.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Dell Technologies Credit",
+      "amount": 400,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "Up to $400 statement credit per year for U.S. Dell Technologies purchases (up to $200 through July 2025, increased to $400 after).",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Hotel Collection Credit",
+      "amount": 600,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "$600 in statement credits when booking The Hotel Collection properties through Amex Travel.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "American Express Global Lounge Collection",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "Included",
+      "description": "Complimentary access to Centurion Lounges, Delta Sky Clubs (when flying Delta), Priority Pass, and other lounges in the Amex Global Lounge Collection.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Walmart+ Membership Credit",
+      "amount": 155,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "Up to $155.40 per year in Walmart+ credits (~$12.95/month).",
       "reset_type": "calendar_year"
     }
   ],

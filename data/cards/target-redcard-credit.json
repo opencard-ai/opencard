@@ -1,6 +1,6 @@
 {
   "card_id": "target-redcard-credit",
-  "name": "Target RedCard™ Credit Card",
+  "name": "Target RedCard\u2122 Credit Card",
   "issuer": "TD Bank",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -18,20 +18,6 @@
       "category": "Target Purchases",
       "rate": 5,
       "notes": "5% off every Target purchase (applied as statement credit)"
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Free two-day shipping",
-      "amount": 0,
-      "frequency": "Ongoing",
-      "description": "Free two-day shipping on Target.com orders"
-    },
-    {
-      "name": "Extra 30 days",
-      "amount": 0,
-      "frequency": "Ongoing",
-      "description": "An extra 30 days to return items"
     }
   ],
   "travel_benefits": {

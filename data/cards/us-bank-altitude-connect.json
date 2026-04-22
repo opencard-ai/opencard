@@ -1,6 +1,6 @@
 {
   "card_id": "us-bank-altitude-connect",
-  "name": "U.S. Bank Altitude® Connect Visa Signature® Card",
+  "name": "U.S. Bank Altitude\u00ae Connect Visa Signature\u00ae Card",
   "issuer": "U.S. Bank",
   "network": "Visa",
   "annual_fee": 0,
@@ -39,20 +39,6 @@
       "category": "All Other Purchases",
       "rate": 1,
       "notes": "1x point per $1 on all other purchases"
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Priority Pass Select",
-      "amount": 0,
-      "frequency": "Annual",
-      "description": "Complimentary Priority Pass Select membership with 4 free lounge visits per year"
-    },
-    {
-      "name": "TSA PreCheck/Global Entry credit",
-      "amount": 100,
-      "frequency": "Every 4 years",
-      "description": "Up to $100 statement credit for TSA PreCheck or Global Entry application fee"
     }
   ],
   "travel_benefits": {

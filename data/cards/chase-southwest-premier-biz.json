@@ -1,6 +1,6 @@
 {
   "card_id": "chase-southwest-premier-biz",
-  "name": "Southwest Rapid Rewards® Premier Business Credit Card",
+  "name": "Southwest Rapid Rewards\u00ae Premier Business Credit Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 149,
@@ -32,14 +32,6 @@
     {
       "category": "All Other Purchases",
       "rate": 1
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Anniversary Points",
-      "amount": 6000,
-      "frequency": "Annual",
-      "description": "6,000 Rapid Rewards anniversary points each year (worth ~$89 at 1.49¢/point)"
     }
   ],
   "travel_benefits": {

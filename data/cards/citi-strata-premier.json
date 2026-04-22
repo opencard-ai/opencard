@@ -1,6 +1,6 @@
 {
   "card_id": "citi-strata-premier",
-  "name": "Citi Strata Premier℠ Card",
+  "name": "Citi Strata Premier\u2120 Card",
   "issuer": "Citi",
   "network": "Visa",
   "annual_fee": 95,
@@ -10,7 +10,7 @@
     "spending_requirement": 4,
     "time_period_months": 3,
     "bonus_points": 60000,
-    "description": "60,000 ThankYou® Points",
+    "description": "60,000 ThankYou\u00ae Points",
     "point_program": "Citi",
     "estimated_value": 700
   },
@@ -54,14 +54,6 @@
       "category": "Default",
       "rate": 1,
       "notes": "On all other purchases."
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "$100 Annual Hotel Benefit",
-      "amount": 100,
-      "frequency": "annual",
-      "description": "Once per calendar year, enjoy $100 off a single hotel stay of $500 or more (excluding taxes and fees) when booked through CitiTravel"
     }
   ],
   "travel_benefits": {
@@ -115,6 +107,14 @@
       "frequency": "annual",
       "category": "travel",
       "description": "$100 annual credit for prepaid hotels via Citi Travel.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "$100 Annual Hotel Benefit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "annual",
+      "description": "Once per calendar year, enjoy $100 off a single hotel stay of $500 or more (excluding taxes and fees) when booked through CitiTravel",
       "reset_type": "calendar_year"
     }
   ]

@@ -31,38 +31,6 @@
       "notes": ""
     }
   ],
-  "annual_credits": [
-    {
-      "name": "$300 Annual Travel Credit",
-      "amount": 300,
-      "frequency": "annual",
-      "description": "For bookings made through Capital One Travel"
-    },
-    {
-      "name": "10,000 Anniversary Miles",
-      "amount": 100,
-      "frequency": "annual",
-      "description": "Awarded every year on cardholder anniversary"
-    },
-    {
-      "name": "Global Entry or TSA PreCheck Credit",
-      "amount": 100,
-      "frequency": "annual",
-      "description": "Up to $100 every 4 years"
-    },
-    {
-      "name": "Lounge Access",
-      "amount": null,
-      "frequency": "annual",
-      "description": "Unlimited access to Capital One Lounges, Priority Pass, and Plaza Premium Lounges"
-    },
-    {
-      "name": "Authorized Users",
-      "amount": null,
-      "frequency": "annual",
-      "description": "Add up to 4 authorized users for free, each with lounge access"
-    }
-  ],
   "travel_benefits": {},
   "fhr_thc": {
     "fhr_eligible": false,
@@ -108,6 +76,46 @@
       "frequency": "annual",
       "category": "travel",
       "description": "Unlimited lounge access for cardholder + 2 guests at 1,300+ lounges worldwide.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "$300 Annual Travel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "annual",
+      "description": "For bookings made through Capital One Travel",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "10,000 Anniversary Miles",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "annual",
+      "description": "Awarded every year on cardholder anniversary",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Global Entry or TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "annual",
+      "description": "Up to $100 every 4 years",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Lounge Access",
+      "amount": null,
+      "frequency": "annual",
+      "category": "annual",
+      "description": "Unlimited access to Capital One Lounges, Priority Pass, and Plaza Premium Lounges",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Authorized Users",
+      "amount": null,
+      "frequency": "annual",
+      "category": "annual",
+      "description": "Add up to 4 authorized users for free, each with lounge access",
       "reset_type": "calendar_year"
     }
   ]

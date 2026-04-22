@@ -47,20 +47,6 @@
       "notes": "All other eligible purchases"
     }
   ],
-  "annual_credits": [
-    {
-      "name": "Hilton Credits",
-      "amount": 200,
-      "frequency": "quarterly",
-      "description": "Up to $50 statement credit each quarter for eligible purchases made directly with a property in the Hilton portfolio ($200 total annually)"
-    },
-    {
-      "name": "Free Night Reward (spending)",
-      "amount": null,
-      "frequency": "annually",
-      "description": "One free night reward after spending $15,000 on eligible purchases in a calendar year"
-    }
-  ],
   "travel_benefits": {
     "lounge_access": {
       "priority_pass": false,
@@ -115,7 +101,7 @@
     },
     {
       "url": "https://onemileatatime.com/deals/hilton-amex-card-bonus/",
-      "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold→Diamond path at $40K, National status"
+      "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold\u2192Diamond path at $40K, National status"
     }
   ],
   "last_updated": "2026-04-16T13:41:49.948Z",

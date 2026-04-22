@@ -21,26 +21,6 @@
       "notes": "unlimited for business"
     }
   ],
-  "annual_credits": [
-    {
-      "name": "Global Entry or TSA PreCheck Credit",
-      "amount": 100,
-      "frequency": "annual",
-      "description": "Up to $100 every 4 years"
-    },
-    {
-      "name": "Lounge Access",
-      "amount": 0,
-      "frequency": "annual",
-      "description": "Two complimentary visits per year to Capital One Lounges or Plaza Premium Lounges"
-    },
-    {
-      "name": "Free Employee Cards",
-      "amount": null,
-      "frequency": "annual",
-      "description": "Available for business cardholders"
-    }
-  ],
   "travel_benefits": {},
   "fhr_thc": {
     "fhr_eligible": false,

@@ -1,6 +1,6 @@
 {
   "card_id": "chase-marriott-boundless",
-  "name": "Marriott Bonvoy Boundless® Credit Card",
+  "name": "Marriott Bonvoy Boundless\u00ae Credit Card",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 95,
@@ -30,20 +30,6 @@
       "category": "Default",
       "rate": 2,
       "notes": "On all other purchases."
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Anniversary Free Night",
-      "amount": null,
-      "frequency": "Anniversary",
-      "description": "Free Night Award (up to 35,000 points) each account anniversary year."
-    },
-    {
-      "name": "Airline Credit",
-      "amount": 100,
-      "frequency": "Calendar Year",
-      "description": "Up to $100 in statement credits ($50 every 6 months) for airline purchases through 12/31/2026."
     }
   ],
   "travel_benefits": {
@@ -109,6 +95,22 @@
       "category": "travel",
       "description": "Complimentary Gold Elite status with Marriott Bonvoy.",
       "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Anniversary Free Night",
+      "amount": null,
+      "frequency": "annual",
+      "category": "Anniversary",
+      "description": "Free Night Award (up to 35,000 points) each account anniversary year.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Airline Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "Calendar Year",
+      "description": "Up to $100 in statement credits ($50 every 6 months) for airline purchases through 12/31/2026.",
+      "reset_type": "calendar_year"
     }
   ]
 }

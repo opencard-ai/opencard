@@ -41,44 +41,6 @@
       "notes": "All other eligible purchases"
     }
   ],
-  "annual_credits": [
-    {
-      "name": "Hilton Resort Credit",
-      "amount": 400,
-      "frequency": "Semi-Annual ($200 every 6 months)",
-      "description": "$400 annual Hilton Resort Credit ($200 semi-annually) for room rate or charges at participating Hilton resort properties"
-    },
-    {
-      "name": "Airline Credit",
-      "amount": 200,
-      "frequency": "Quarterly ($50 per quarter)",
-      "description": "$200 annual airline credit ($50 quarterly) for airline charges including airfare booked directly or through amextravel.com"
-    },
-    {
-      "name": "CLEAR+ Credit",
-      "amount": 209,
-      "frequency": "Annual",
-      "description": "Up to $209 credit towards a CLEAR+ membership each year"
-    },
-    {
-      "name": "Free Night Certificate",
-      "amount": 0,
-      "frequency": "Annual (cardmember year)",
-      "description": "One Free Night Certificate each cardmember year, valid for a standard room at almost any Hilton Honors property worldwide"
-    },
-    {
-      "name": "Luxury Property Credit",
-      "amount": 100,
-      "frequency": "Annual",
-      "description": "Up to $100 property credit at Waldorf Astoria and Conrad hotels when booking a 2-night minimum stay through hiltonhonorsaspirecard.com"
-    },
-    {
-      "name": "Second Free Night",
-      "amount": 0,
-      "frequency": "Annual (upon $30,000 spend)",
-      "description": "Earn an additional Free Night Certificate after spending $30,000 on eligible purchases in a calendar year"
-    }
-  ],
   "travel_benefits": {
     "lounge_access": {
       "centurion": false,
@@ -175,6 +137,14 @@
       "category": "travel",
       "description": "One free night at almost any Hilton property worldwide.",
       "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Second Free Night",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "Annual (upon $30,000 spend)",
+      "description": "Earn an additional Free Night Certificate after spending $30,000 on eligible purchases in a calendar year",
+      "reset_type": "calendar_year"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "card_id": "citi-aadvantage-executive",
-  "name": "Citi® / AAdvantage® Executive World Elite Mastercard®",
+  "name": "Citi\u00ae / AAdvantage\u00ae Executive World Elite Mastercard\u00ae",
   "issuer": "Citi",
   "network": "Mastercard",
   "annual_fee": 595,
@@ -26,20 +26,12 @@
       "notes": "Earn 1 AAdvantage mile per $1 on all other purchases"
     }
   ],
-  "annual_credits": [
-    {
-      "name": "Loyalty Bonus",
-      "amount": 0,
-      "frequency": "Per $100 spent",
-      "description": "Earn 10 AAdvantage® elite qualifying miles (EQMs) for every $100 spent on American Airlines purchases"
-    }
-  ],
   "travel_benefits": {
     "lounge_access": [
       {
-        "name": "Admirals Club®",
+        "name": "Admirals Club\u00ae",
         "type": "Full membership",
-        "notes": "Primary cardmember and up to 2 guests; access to 100+ Admirals Club® and partner lounges worldwide (valued up to $850)"
+        "notes": "Primary cardmember and up to 2 guests; access to 100+ Admirals Club\u00ae and partner lounges worldwide (valued up to $850)"
       }
     ],
     "other_benefits": [
@@ -120,6 +112,14 @@
       "frequency": "annual",
       "category": "travel",
       "description": "$25 annual inflight WiFi credit"
+    },
+    {
+      "name": "Loyalty Bonus",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "Per $100 spent",
+      "description": "Earn 10 AAdvantage\u00ae elite qualifying miles (EQMs) for every $100 spent on American Airlines purchases",
+      "reset_type": "calendar_year"
     }
   ]
 }

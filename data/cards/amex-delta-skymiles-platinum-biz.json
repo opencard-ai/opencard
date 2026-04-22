@@ -1,6 +1,6 @@
 {
   "card_id": "amex-delta-skymiles-platinum-biz",
-  "name": "Delta SkyMiles® Platinum Business American Express Card",
+  "name": "Delta SkyMiles\u00ae Platinum Business American Express Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 350,
@@ -39,14 +39,6 @@
       "category": "Other",
       "rate": 1,
       "notes": null
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Global Entry/TSA PreCheck Credit",
-      "amount": 120,
-      "frequency": "Every 4 years",
-      "description": "Statement credit every 4 years after you apply for Global Entry ($120) or TSA PreCheck ($85)."
     }
   ],
   "travel_benefits": {

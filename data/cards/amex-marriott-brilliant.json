@@ -1,6 +1,6 @@
 {
   "card_id": "amex-marriott-brilliant",
-  "name": "Marriott Bonvoy Brilliant® American Express® Card",
+  "name": "Marriott Bonvoy Brilliant\u00ae American Express\u00ae Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 650,
@@ -35,20 +35,6 @@
       "category": "Other",
       "rate": 2,
       "notes": null
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Brilliant Dining Credit",
-      "amount": 300,
-      "frequency": "Annual",
-      "description": "Up to $300 per year (up to $25 per month) in statement credits for eligible purchases at restaurants worldwide."
-    },
-    {
-      "name": "Marriott Property Credit",
-      "amount": 100,
-      "frequency": "Per stay",
-      "description": "Up to $100 property credit for qualifying charges at The Ritz-Carlton or St. Regis when booking direct for a two-night minimum stay using the card."
     }
   ],
   "travel_benefits": {
@@ -145,6 +131,22 @@
       "frequency": "annual",
       "category": "travel",
       "description": "Complimentary Platinum Elite status with Marriott Bonvoy.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Brilliant Dining Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "Up to $300 per year (up to $25 per month) in statement credits for eligible purchases at restaurants worldwide.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Marriott Property Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "Per stay",
+      "description": "Up to $100 property credit for qualifying charges at The Ritz-Carlton or St. Regis when booking direct for a two-night minimum stay using the card.",
       "reset_type": "calendar_year"
     }
   ]

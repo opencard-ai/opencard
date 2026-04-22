@@ -46,14 +46,6 @@
       "rate": 3
     }
   ],
-  "annual_credits": [
-    {
-      "name": "Anniversary Free Night",
-      "amount": 1,
-      "frequency": "Annual",
-      "description": "Free night valid at IHG properties with a redemption value of 40,000 points or less. Can top up with additional IHG points for higher-tier hotels."
-    }
-  ],
   "travel_benefits": {
     "hotel_status": [
       {

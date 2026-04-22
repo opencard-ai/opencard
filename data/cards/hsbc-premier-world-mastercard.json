@@ -46,16 +46,6 @@
       "notes": "1x point on all other purchases"
     }
   ],
-  "annual_credits": [
-    {
-      "name": "Lounge passes",
-      "description": "2 complimentary Priority Pass lounge passes annually"
-    },
-    {
-      "name": "Streaming credit",
-      "description": "$30 annual credit for streaming services"
-    }
-  ],
   "travel_benefits": {
     "other_benefits": [
       {

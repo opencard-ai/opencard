@@ -1,6 +1,6 @@
 {
   "card_id": "comenity-bed-bath-beyond-mastercard",
-  "name": "Bed Bath & Beyond Mastercard®",
+  "name": "Bed Bath & Beyond Mastercard\u00ae",
   "issuer": "Bread Financial / Comenity Bank",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -23,14 +23,6 @@
       "category": "All Other Purchases",
       "rate": 1,
       "notes": "1% cash back on all other purchases"
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Birthday discount",
-      "amount": 0,
-      "frequency": "Annual",
-      "description": "20% off coupon for birthday purchase"
     }
   ],
   "travel_benefits": {

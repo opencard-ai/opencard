@@ -1,6 +1,6 @@
 {
   "card_id": "my-gm-rewards-mastercard",
-  "name": "My GM Rewards Card Mastercard®",
+  "name": "My GM Rewards Card Mastercard\u00ae",
   "issuer": "Goldman Sachs",
   "network": "Mastercard",
   "annual_fee": 0,
@@ -34,14 +34,6 @@
       "category": "All Other Purchases",
       "rate": 1,
       "notes": "1x point on all other purchases"
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "GM tier upgrade",
-      "amount": 0,
-      "frequency": "Ongoing",
-      "description": "Cardmembers start at Gold tier in My GM Rewards (normally requires 20K spend)"
     }
   ],
   "travel_benefits": {

@@ -22,13 +22,6 @@ export interface RecurringCredit {
   reset_type?: "calendar_year" | "cardmember_year";
 }
 
-export interface AnnualCredit {
-  name: string;
-  amount: number;
-  description: string;
-  frequency: string;
-}
-
 export interface HotelStatus {
   program: string;
   tier: string;
@@ -82,7 +75,6 @@ export interface CreditCard {
   credit_required: string;
   welcome_offer?: WelcomeOffer;
   earning_rates: EarningRate[];
-  annual_credits: AnnualCredit[];
   travel_benefits: TravelBenefits;
   fhr_thc: {
     fhr_eligible: boolean;

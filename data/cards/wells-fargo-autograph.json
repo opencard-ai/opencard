@@ -1,6 +1,6 @@
 {
   "card_id": "wells-fargo-autograph",
-  "name": "Wells Fargo Autograph Visa Signature® Card",
+  "name": "Wells Fargo Autograph Visa Signature\u00ae Card",
   "issuer": "Wells Fargo",
   "network": "Visa",
   "annual_fee": 0,
@@ -44,14 +44,6 @@
       "category": "All Other Purchases",
       "rate": 1,
       "notes": "1x point on all other purchases"
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "$50 annual airline credit",
-      "amount": 50,
-      "frequency": "Annual",
-      "description": "$50 annual statement credit for airline purchases (requires $50 minimum airline purchase)"
     }
   ],
   "travel_benefits": {
@@ -114,6 +106,14 @@
       "amount": 50,
       "frequency": "annual",
       "category": "airline"
+    },
+    {
+      "name": "$50 annual airline credit",
+      "amount": 50,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "$50 annual statement credit for airline purchases (requires $50 minimum airline purchase)",
+      "reset_type": "calendar_year"
     }
   ]
 }

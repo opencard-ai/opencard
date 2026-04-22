@@ -1,6 +1,6 @@
 {
   "card_id": "amex-marriott-bevy",
-  "name": "Marriott Bonvoy Bevy® American Express® Card",
+  "name": "Marriott Bonvoy Bevy\u00ae American Express\u00ae Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 250,
@@ -34,14 +34,6 @@
       "category": "Other",
       "rate": 2,
       "notes": "All other eligible purchases"
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Free Night Award",
-      "amount": 0,
-      "frequency": "Annual (upon $15,000 spend)",
-      "description": "1 Free Night Award after spending $15,000 on eligible purchases on the card in a calendar year. Award can be used for one night at a property with a redemption level at or under 35,000 Marriott Bonvoy points."
     }
   ],
   "travel_benefits": {

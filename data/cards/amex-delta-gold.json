@@ -1,6 +1,6 @@
 {
   "card_id": "amex-delta-gold",
-  "name": "Delta SkyMiles® Gold American Express Card",
+  "name": "Delta SkyMiles\u00ae Gold American Express Card",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 150,
@@ -35,20 +35,6 @@
       "category": "Other",
       "rate": 1,
       "notes": null
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Delta Stays Credit",
-      "amount": 100,
-      "frequency": "Annual",
-      "description": "Up to $100 back per year as a statement credit after booking prepaid hotels or vacation rentals through Delta Stays on delta.com."
-    },
-    {
-      "name": "Delta Flight Credit",
-      "amount": 200,
-      "frequency": "Annual",
-      "description": "$200 Delta Flight Credit after spending $10,000 in purchases on your Card in a calendar year, towards future Delta travel."
     }
   ],
   "travel_benefits": {

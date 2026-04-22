@@ -1,6 +1,6 @@
 {
   "card_id": "amex-platinum",
-  "name": "The Platinum Card® from American Express",
+  "name": "The Platinum Card\u00ae from American Express",
   "issuer": "American Express",
   "network": "Amex",
   "annual_fee": 895,
@@ -29,74 +29,6 @@
       "category": "Other",
       "rate": 1,
       "notes": null
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Hotel Credit",
-      "amount": 600,
-      "frequency": "Annual",
-      "description": "Up to $300 semi-annually on prepaid Fine Hotels + Resorts or The Hotel Collection bookings via Amex Travel."
-    },
-    {
-      "name": "Uber Cash",
-      "amount": 200,
-      "frequency": "Monthly",
-      "description": "$15 monthly plus $20 in December for Uber rides or Uber Eats in the US."
-    },
-    {
-      "name": "Uber One Credit",
-      "amount": 120,
-      "frequency": "Annual",
-      "description": "Statement credits for auto-renewing Uber One membership."
-    },
-    {
-      "name": "Airline Fee Credit",
-      "amount": 200,
-      "frequency": "Annual",
-      "description": "Statement credits for incidental fees at one selected qualifying airline."
-    },
-    {
-      "name": "CLEAR+ Credit",
-      "amount": 209,
-      "frequency": "Annual",
-      "description": "Covers cost of CLEAR+ membership."
-    },
-    {
-      "name": "Resy Credit",
-      "amount": 400,
-      "frequency": "Quarterly",
-      "description": "$100 quarterly for eligible purchases with Resy."
-    },
-    {
-      "name": "Digital Entertainment Credit",
-      "amount": 300,
-      "frequency": "Monthly",
-      "description": "$25 monthly for eligible subscriptions (Disney+, Hulu, etc.)."
-    },
-    {
-      "name": "lululemon Credit",
-      "amount": 300,
-      "frequency": "Quarterly",
-      "description": "$75 quarterly for eligible purchases at lululemon."
-    },
-    {
-      "name": "Walmart+ Credit",
-      "amount": 155,
-      "frequency": "Monthly",
-      "description": "$12.95 monthly credit for Walmart+ membership."
-    },
-    {
-      "name": "Oura Ring Credit",
-      "amount": 200,
-      "frequency": "Annual",
-      "description": "Credit for Oura Ring purchase at ouraring.com."
-    },
-    {
-      "name": "Equinox Credit",
-      "amount": 300,
-      "frequency": "Annual",
-      "description": "Credit for Equinox+ or club membership."
     }
   ],
   "travel_benefits": {
@@ -244,6 +176,38 @@
       "frequency": "annual",
       "category": "travel",
       "description": "Complimentary Gold status with Hilton (80% bonus on base points, 5th night free on award stays, breakfast at select properties).",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Hotel Credit",
+      "amount": 600,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "Up to $300 semi-annually on prepaid Fine Hotels + Resorts or The Hotel Collection bookings via Amex Travel.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Uber One Credit",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "Statement credits for auto-renewing Uber One membership.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "CLEAR+ Credit",
+      "amount": 209,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "Covers cost of CLEAR+ membership.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Oura Ring Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "Credit for Oura Ring purchase at ouraring.com.",
       "reset_type": "calendar_year"
     }
   ]

@@ -1,6 +1,6 @@
 {
   "card_id": "choice-privileges-select-visa",
-  "name": "Choice Privileges® Visa Signature® Card",
+  "name": "Choice Privileges\u00ae Visa Signature\u00ae Card",
   "issuer": "Wells Fargo",
   "network": "Visa",
   "annual_fee": 0,
@@ -34,14 +34,6 @@
       "category": "All Other Purchases",
       "rate": 1,
       "notes": "1x point on all other purchases"
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Anniversary bonus",
-      "amount": 0,
-      "frequency": "Annual",
-      "description": "8,000 bonus points when you spend $10,000+ annually"
     }
   ],
   "travel_benefits": {

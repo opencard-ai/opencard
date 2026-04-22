@@ -1,6 +1,6 @@
 {
   "card_id": "chase-freedom-unlimited",
-  "name": "Chase Freedom Unlimited®",
+  "name": "Chase Freedom Unlimited\u00ae",
   "issuer": "Chase",
   "network": "Visa",
   "annual_fee": 0,
@@ -29,14 +29,6 @@
       "category": "All other purchases",
       "rate": 1.5,
       "notes": ""
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "DoorDash Promo",
-      "amount": 40,
-      "frequency": "Quarterly",
-      "description": "Up to $10 off quarterly on DoorDash non-restaurant orders."
     }
   ],
   "travel_benefits": {

@@ -31,16 +31,6 @@
       "notes": "2x points on all other purchases"
     }
   ],
-  "annual_credits": [
-    {
-      "name": "Airline incidental credit",
-      "description": "Up to $400 annual credit for airline incidentals (seat upgrades, baggage fees, lounge passes, etc.)"
-    },
-    {
-      "name": "Global Entry/TSA PreCheck",
-      "description": "Up to $100 credit for Global Entry or TSA PreCheck application fee"
-    }
-  ],
   "travel_benefits": {
     "other_benefits": [
       {

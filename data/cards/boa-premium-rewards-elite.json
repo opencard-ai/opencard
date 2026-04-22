@@ -1,6 +1,6 @@
 {
   "card_id": "boa-premium-rewards-elite",
-  "name": "Bank of America® Premium Rewards® Elite Credit Card",
+  "name": "Bank of America\u00ae Premium Rewards\u00ae Elite Credit Card",
   "issuer": "Bank of America",
   "network": "Visa",
   "annual_fee": 550,
@@ -25,32 +25,6 @@
       "category": "Other",
       "rate": 1.5,
       "notes": "Unlimited 1.5x points on all other purchases"
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "Travel Credit",
-      "amount": 300,
-      "frequency": "Annual",
-      "description": "Up to $300 annual travel statement credit"
-    },
-    {
-      "name": "Airline Incidental Credit",
-      "amount": 150,
-      "frequency": "Annual",
-      "description": "Up to $150 annually for airline incidentals (bag fees, lounge passes, etc.)"
-    },
-    {
-      "name": "Lifestyle Credit",
-      "amount": 120,
-      "frequency": "Annual",
-      "description": "Up to $120 annually for lifestyle conveniences (video streaming, food delivery, fitness, rideshare)"
-    },
-    {
-      "name": "TSA PreCheck/Global Entry Credit",
-      "amount": 120,
-      "frequency": "Annual",
-      "description": "Up to $120 reimbursement for TSA PreCheck or Global Entry"
     }
   ],
   "travel_benefits": {
@@ -138,6 +112,38 @@
       "frequency": "annual",
       "category": "travel",
       "description": "Up to $100 every 4 years for Global Entry or TSA PreCheck.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Travel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "Up to $300 annual travel statement credit",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Airline Incidental Credit",
+      "amount": 150,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "Up to $150 annually for airline incidentals (bag fees, lounge passes, etc.)",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Lifestyle Credit",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "Up to $120 annually for lifestyle conveniences (video streaming, food delivery, fitness, rideshare)",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "TSA PreCheck/Global Entry Credit",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "Annual",
+      "description": "Up to $120 reimbursement for TSA PreCheck or Global Entry",
       "reset_type": "calendar_year"
     }
   ]

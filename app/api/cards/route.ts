@@ -41,7 +41,6 @@ export async function GET(request: Request) {
       credit_required: card.credit_required,
       welcome_offer: card.welcome_offer || null,
       earning_rates: card.earning_rates,
-      annual_credits: card.annual_credits,
       recurring_credits: card.recurring_credits || [],
       travel_benefits: card.travel_benefits,
       insurance: card.insurance,

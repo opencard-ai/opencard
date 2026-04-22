@@ -31,26 +31,6 @@
       "notes": ""
     }
   ],
-  "annual_credits": [
-    {
-      "name": "Annual Companion Fare",
-      "amount": 122,
-      "frequency": "annual",
-      "description": "From $122 ($99 plus taxes and fees from $23) every year on your card anniversary"
-    },
-    {
-      "name": "Free Checked Bag",
-      "amount": null,
-      "frequency": "annual",
-      "description": "For you and up to 6 guests on the same Alaska/Hawaiian flight"
-    },
-    {
-      "name": "Lounge Discount",
-      "amount": 100,
-      "frequency": "annual",
-      "description": "$100 off an Alaska Lounge+ membership"
-    }
-  ],
   "travel_benefits": {},
   "fhr_thc": {
     "fhr_eligible": false,

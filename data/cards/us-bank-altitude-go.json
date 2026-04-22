@@ -1,6 +1,6 @@
 {
   "card_id": "us-bank-altitude-go",
-  "name": "U.S. Bank Altitude® Go Visa Signature® Card",
+  "name": "U.S. Bank Altitude\u00ae Go Visa Signature\u00ae Card",
   "issuer": "U.S. Bank",
   "network": "Visa",
   "annual_fee": 0,
@@ -39,14 +39,6 @@
       "category": "All Other Purchases",
       "rate": 1,
       "notes": "1x point per $1 on all other purchases"
-    }
-  ],
-  "annual_credits": [
-    {
-      "name": "$15 streaming credit",
-      "amount": 15,
-      "frequency": "Quarterly",
-      "description": "$15 statement credit for streaming subscriptions (activated quarterly)"
     }
   ],
   "travel_benefits": {
@@ -96,6 +88,14 @@
       "amount": 15,
       "frequency": "quarterly",
       "category": "other"
+    },
+    {
+      "name": "$15 streaming credit",
+      "amount": 15,
+      "frequency": "annual",
+      "category": "Quarterly",
+      "description": "$15 statement credit for streaming subscriptions (activated quarterly)",
+      "reset_type": "calendar_year"
     }
   ]
 }
