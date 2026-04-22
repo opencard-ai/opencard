@@ -64,10 +64,20 @@
   },
   "recurring_credits": [
     {
-      "name": "10,000 Anniversary Points",
-      "amount": 100,
+      "name": "Alaska Lounge Access",
+      "amount": null,
       "frequency": "annual",
-      "category": "other"
+      "category": "travel",
+      "description": "Complimentary Alaska Airlines Lounge access.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Companion Fare",
+      "amount": null,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "1 companion fare ($122 fare + taxes) annually.",
+      "reset_type": "cardmember_year"
     }
   ]
 }

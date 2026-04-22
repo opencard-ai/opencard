@@ -84,5 +84,23 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "recurring_credits": [
+    {
+      "name": "Daily Cash",
+      "amount": null,
+      "frequency": "annual",
+      "category": "other",
+      "description": "3% Daily Cash on Apple services, 2% everywhere Apple Pay, 1% else.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Apple Card Family",
+      "amount": null,
+      "frequency": "annual",
+      "category": "other",
+      "description": "Family sharing with Apple Card Family.",
+      "reset_type": "cardmember_year"
+    }
+  ]
 }

@@ -69,24 +69,20 @@
   },
   "recurring_credits": [
     {
-      "name": "Annual Hotel Benefit",
+      "name": "Hotel Credit",
       "amount": 300,
       "frequency": "annual",
-      "category": "hotel"
+      "category": "travel",
+      "description": "$300 annual hotel credit via Citi Travel.",
+      "reset_type": "cardmember_year"
     },
     {
-      "name": "Global Entry or TSA PreCheck Credit",
+      "name": "Global Entry / PreCheck Credit",
       "amount": 100,
       "frequency": "annual",
-      "category": "other"
-    },
-    {
-      "name": "$300 Annual Hotel Benefit",
-      "amount": 300,
-      "frequency": "annual",
-      "category": "annual",
-      "description": "Annual credit for hotel bookings made through CitiTravel",
-      "reset_type": "calendar_year"
+      "category": "travel",
+      "description": "Up to $100 every 4 years for Global Entry or TSA PreCheck.",
+      "reset_type": "cardmember_year"
     }
   ]
 }
