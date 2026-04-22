@@ -2,7 +2,7 @@
   "card_id": "citi-aa-platinum-select",
   "name": "AAdvantage Platinum Select",
   "issuer": "Citi",
-  "network": "Visa/Mastercard",
+  "network": "Visa",
   "annual_fee": 99,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

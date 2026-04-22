@@ -2,7 +2,7 @@
   "card_id": "amex-graphite-biz",
   "name": "Amex Graphite Business Cash",
   "issuer": "American Express",
-  "network": "Visa/Mastercard",
+  "network": "Visa",
   "annual_fee": 295,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

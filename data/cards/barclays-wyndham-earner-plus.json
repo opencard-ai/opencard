@@ -2,7 +2,7 @@
   "card_id": "barclays-wyndham-earner-plus",
   "name": "Wyndham Earner Plus",
   "issuer": "Barclays",
-  "network": "Visa/Mastercard",
+  "network": "Visa",
   "annual_fee": 75,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

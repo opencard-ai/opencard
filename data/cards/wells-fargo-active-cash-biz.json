@@ -2,7 +2,7 @@
   "card_id": "wells-fargo-active-cash-biz",
   "name": "Active Cash Business",
   "issuer": "Wells Fargo",
-  "network": "Visa/Mastercard",
+  "network": "Visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
