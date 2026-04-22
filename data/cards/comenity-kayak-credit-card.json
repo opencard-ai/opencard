@@ -1,7 +1,7 @@
 {
   "card_id": "comenity-kayak-credit-card",
   "name": "KAYAK Credit Card",
-  "issuer": "Bread Financial / Comenity Bank",
+  "issuer": "Bread Financial",
   "network": "Visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,

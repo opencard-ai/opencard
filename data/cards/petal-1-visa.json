@@ -1,7 +1,7 @@
 {
   "card_id": "petal-1-visa",
   "name": "Petal 1 Visa",
-  "issuer": "Petal (WebBank)",
+  "issuer": "Petal",
   "network": "Visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
@@ -59,7 +59,7 @@
     },
     {
       "url": "https://www.cnbc.com/select/visa-petal-1-vs-petal-2/",
-      "notes": "CNBC — Petal 1 vs Petal 2 comparison"
+      "notes": "CNBC \u2014 Petal 1 vs Petal 2 comparison"
     },
     {
       "url": "https://money.usnews.com/credit-cards/webbank/petal-no-annual-fee-visa-credit-card",
@@ -68,7 +68,7 @@
   ],
   "last_updated": "2026-04-16T13:41:49.993Z",
   "status": "active",
-  "notes": "Petal 1 is a no-fee credit card designed for people with limited or no credit history. $0 annual fee and no foreign transaction fees. Variable APR: 28.99%–33.99% (high). Credit limits: $300–$5,000. Earn 1%–10% cash back through Petal Offers at select merchants; base rate starts at 1% and can increase to up to 1.5% after demonstrating responsible use. Reports to all three credit bureaus. Petal uses cash flow analysis (bank account history) for underwriting rather than traditional credit score alone.",
+  "notes": "Petal 1 is a no-fee credit card designed for people with limited or no credit history. $0 annual fee and no foreign transaction fees. Variable APR: 28.99%\u201333.99% (high). Credit limits: $300\u2013$5,000. Earn 1%\u201310% cash back through Petal Offers at select merchants; base rate starts at 1% and can increase to up to 1.5% after demonstrating responsible use. Reports to all three credit bureaus. Petal uses cash flow analysis (bank account history) for underwriting rather than traditional credit score alone.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
