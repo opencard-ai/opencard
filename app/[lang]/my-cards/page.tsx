@@ -575,19 +575,31 @@ export default function MyCardsPage({
                           })()}
                         </span>
                         <button 
-                          onClick={(e) => {
+                          onClick async (e) => {
     e.preventDefault();
-    const input = window.prompt('Enter open month/year (e.g., 3 2024):');
+    // Ask for email and date together
+    const input = window.prompt('Enter your email and open date (e.g., your@email.com 3 2024):');
     if (!input) return;
-    const [m, y] = input.split(/[\s,\/]+/).map(Number);
-    if (!m || !y || m < 1 || m > 12 || y < 2020 || y > 2030) { alert('Invalid'); return; }
-    const email = localStorage.getItem('opencard_subscribed_email');
-    if (!email) { alert('No email'); return; }
-    fetch('/api/my-cards/set-open-date', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, card_id: card.card_id, month: m, year: y }),
-    }).then(r => r.json()).then(d => { if (d.success) alert('Saved!'); else alert('Error'); });
+    const parts = input.trim().split(/[\s,\/]+/);
+    if (parts.length < 2) { alert('Please enter: email month year (e.g., your@email.com 3 2024)'); return; }
+    const email = parts[0];
+    const m = parseInt(parts[1]);
+    const y = parseInt(parts[2]);
+    if (!email || !m || !y || m < 1 || m > 12 || y < 2020 || y > 2030) { alert('Invalid format'); return; }
+    // Try to set
+    try {
+      const res = await fetch('/api/my-cards/set-open-date', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, card_id: card.card_id, month: m, year: y }),
+      });
+      const data = await res.json();
+      if (data.success) { 
+        // Update local state
+        setOpenDates(prev => ({ ...prev, [card.card_id]: { month: m, year: y } }));
+        alert('Saved!'); 
+      } else { alert('Error: ' + data.error); }
+    } catch(err) { alert('Error: ' + err.message); }
   }}
                           className="text-xs text-blue-500 hover:text-blue-700"
                         >
@@ -596,19 +608,31 @@ export default function MyCardsPage({
                       </div>
                     ) : (
                       <button 
-                        onClick={(e) => {
+                        onClick async (e) => {
     e.preventDefault();
-    const input = window.prompt('Enter open month/year (e.g., 3 2024):');
+    // Ask for email and date together
+    const input = window.prompt('Enter your email and open date (e.g., your@email.com 3 2024):');
     if (!input) return;
-    const [m, y] = input.split(/[\s,\/]+/).map(Number);
-    if (!m || !y || m < 1 || m > 12 || y < 2020 || y > 2030) { alert('Invalid'); return; }
-    const email = localStorage.getItem('opencard_subscribed_email');
-    if (!email) { alert('No email'); return; }
-    fetch('/api/my-cards/set-open-date', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, card_id: card.card_id, month: m, year: y }),
-    }).then(r => r.json()).then(d => { if (d.success) alert('Saved!'); else alert('Error'); });
+    const parts = input.trim().split(/[\s,\/]+/);
+    if (parts.length < 2) { alert('Please enter: email month year (e.g., your@email.com 3 2024)'); return; }
+    const email = parts[0];
+    const m = parseInt(parts[1]);
+    const y = parseInt(parts[2]);
+    if (!email || !m || !y || m < 1 || m > 12 || y < 2020 || y > 2030) { alert('Invalid format'); return; }
+    // Try to set
+    try {
+      const res = await fetch('/api/my-cards/set-open-date', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, card_id: card.card_id, month: m, year: y }),
+      });
+      const data = await res.json();
+      if (data.success) { 
+        // Update local state
+        setOpenDates(prev => ({ ...prev, [card.card_id]: { month: m, year: y } }));
+        alert('Saved!'); 
+      } else { alert('Error: ' + data.error); }
+    } catch(err) { alert('Error: ' + err.message); }
   }}
                         className="text-xs text-blue-600 hover:text-blue-800 font-medium"
                       >
