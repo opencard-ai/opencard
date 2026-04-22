@@ -28,8 +28,8 @@ async function scrapeCard(browser, card) {
   const page = await browser.newPage();
   try {
     await page.setExtraHTTPHeaders({ 'Accept-Language': 'en-US,en;q=0.9' });
-    await page.goto(card.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
-    await page.waitForTimeout(5000);
+    await page.goto(card.url, { waitUntil: 'networkidle', timeout: 45000 });
+    await page.waitForTimeout(8000);
     const bodyText = await page.evaluate(() => document.body.innerText);
     return { card_id: card.card_id, name: card.name, url: card.url, success: true, raw_text: bodyText.slice(0, 3000) };
   } catch (err) {
