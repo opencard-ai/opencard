@@ -529,12 +529,40 @@ export default function MyCardsPage({
                         <span className="text-xs text-slate-400">${card.annual_fee}/yr</span>
                       )}
                     </div>
-                    <button 
-                    onClick={() => handleEditOpenDate(card.card_id)}
-                    className="text-xs text-blue-600 hover:text-blue-800 font-medium shrink-0"
-                  >
-                    📅 {openDates[card.card_id] ? `${openDates[card.card_id].month}/${openDates[card.card_id].year}` : 'Set date'}
-                  </button>
+                    </div>
+                  </div>
+                  
+                  {/* Open Date Info - New Row */}
+                  <div className="px-4 py-2 bg-blue-50 border-b border-blue-100 flex items-center justify-between">
+                    {openDates[card.card_id] ? (
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-blue-600 font-medium">
+                          📅 Opened {openDates[card.card_id].month}/{openDates[card.card_id].year}
+                          {' -> '}
+                          {(() => {
+                            const now = new Date();
+                            const opened = new Date(openDates[card.card_id].year, openDates[card.card_id].month - 1);
+                            const months = (now.getFullYear() - opened.getFullYear()) * 12 + now.getMonth() - opened.getMonth();
+                            const years = Math.floor(months / 12);
+                            const remMonths = months % 12;
+                            return years > 0 ? `${years}y ${remMonths}m` : `${remMonths} months`;
+                          })()}
+                        </span>
+                        <button 
+                          onClick={() => handleEditOpenDate(card.card_id)}
+                          className="text-xs text-blue-500 hover:text-blue-700"
+                        >
+                          Edit
+                        </button>
+                      </div>
+                    ) : (
+                      <button 
+                        onClick={() => handleEditOpenDate(card.card_id)}
+                        className="text-xs text-blue-600 hover:text-blue-800 font-medium"
+                      >
+                        📅 Set card open date for accurate reminders
+                      </button>
+                    )}
                   </div>
 
                   {/* Benefits */}
