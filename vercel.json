@@ -1,4 +1,10 @@
 {
+  "build": {
+    "env": {
+      "UPSTASH_KV_REST_API_URL": "https://wanted-pelican-80843.upstash.io",
+      "UPSTASH_KV_REST_API_TOKEN": "gQAAAAAAATvLAAIncDI0MTZkYjljMzg2ZWM0MDgwYWYwNTQyNzNmNjQ4NzA2MHAyODA4NDM"
+    }
+  },
   "crons": [
     {
       "path": "/api/cron/reminders",
