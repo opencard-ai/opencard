@@ -97,104 +97,96 @@
       "amount": 200,
       "frequency": "annual",
       "category": "travel",
-      "description": "$200 annual credit for airline incidentals (seat upgrades, baggage, etc.). Enrollment required.",
-      "reset_type": "calendar_year"
+      "description": "$200 annual credit for checked bags, priority pass, lounges with one selected airline.",
+      "reset_type": "cardmember_year"
     },
     {
       "name": "Fine Hotels + Resorts Credit",
-      "amount": 300,
+      "amount": 200,
       "frequency": "semi_annual",
       "category": "travel",
-      "description": "$300 semi-annual ($600/year) for prepaid FHR or THC bookings via Amex Travel.",
-      "reset_type": "calendar_year"
+      "description": "$200 credit per stay at Fine Hotels + Resorts properties (up to $400/year).",
+      "reset_type": "cardmember_year"
     },
     {
       "name": "Digital Entertainment Credit",
       "amount": 20,
       "frequency": "monthly",
       "category": "entertainment",
-      "description": "$20 monthly credit for digital entertainment (Paramount+, Audible, Peacock, etc.). Enrollment required.",
+      "description": "$20/month for select streaming services (Paramount+, Audible, Peacock). Enrollment required.",
       "reset_type": "calendar_year"
     },
     {
       "name": "Equinox Credit",
-      "amount": 10,
+      "amount": 15,
       "frequency": "monthly",
-      "category": "other",
-      "description": "$10 monthly credit for Equinox gym membership or Equinox+ app.",
-      "reset_type": "calendar_year"
+      "category": "fitness",
+      "description": "$15/month for Equinox+ membership. Enrollment required.",
+      "reset_type": "cardmember_year"
     },
     {
       "name": "Walmart+ Credit",
-      "amount": 10,
+      "amount": 12.95,
       "frequency": "monthly",
       "category": "shopping",
-      "description": "$10 monthly credit for Walmart+ membership (formerly called Walmart+. Enrollment required.",
-      "reset_type": "calendar_year"
+      "description": "$12.95/month for Walmart+ membership.",
+      "reset_type": "cardmember_year"
     },
     {
       "name": "Resy Credit",
       "amount": 100,
       "frequency": "quarterly",
       "category": "dining",
-      "description": "$100 quarterly ($400/year) for Resy restaurant bookings. Must pay with Amex Gold.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "lululemon Credit",
-      "amount": 75,
-      "frequency": "quarterly",
-      "category": "shopping",
-      "description": "$75 quarterly ($300/year) at lululemon. Must pay with Amex Gold.",
-      "reset_type": "calendar_year"
+      "description": "$100/quarter for Resy restaurant bookings.",
+      "reset_type": "cardmember_year"
     },
     {
       "name": "Uber Cash",
       "amount": 15,
       "frequency": "monthly",
-      "category": "other",
-      "description": "$15 monthly ($180/year) for Uber rides and Uber Eats in the US. Enrollment required.",
-      "reset_type": "calendar_year"
+      "category": "travel",
+      "description": "$15/month ($180/year) Uber Cash for rides or Uber Eats.",
+      "reset_type": "cardmember_year"
     },
     {
       "name": "Global Entry / PreCheck Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "travel",
-      "description": "Up to $100 credit every 4 years for Global Entry or $85 for TSA PreCheck.",
+      "description": "Up to $100 every 4 years for Global Entry or TSA PreCheck.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Hilton Honors Gold Status",
+      "amount": null,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Complimentary Hilton Honors Gold status.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Marriott Bonvoy Gold Status",
+      "amount": null,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Complimentary Marriott Bonvoy Gold status.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Saks Fifth Avenue Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "shopping",
+      "description": "$100 annual credit at Saks Fifth Avenue.",
       "reset_type": "calendar_year"
     },
     {
-      "name": "Hotel Credit",
-      "amount": 600,
+      "name": "CLEAR Plus Credit",
+      "amount": 189,
       "frequency": "annual",
-      "category": "Annual",
-      "description": "Up to $300 semi-annually on prepaid Fine Hotels + Resorts or The Hotel Collection bookings via Amex Travel.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Uber One Credit",
-      "amount": 120,
-      "frequency": "annual",
-      "category": "Annual",
-      "description": "Statement credits for auto-renewing Uber One membership.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "CLEAR+ Credit",
-      "amount": 209,
-      "frequency": "annual",
-      "category": "Annual",
-      "description": "Covers cost of CLEAR+ membership.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Oura Ring Credit",
-      "amount": 200,
-      "frequency": "annual",
-      "category": "Annual",
-      "description": "Credit for Oura Ring purchase at ouraring.com.",
-      "reset_type": "calendar_year"
+      "category": "travel",
+      "description": "$189/year for CLEAR Plus membership.",
+      "reset_type": "cardmember_year"
     }
   ]
 }
