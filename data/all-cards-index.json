@@ -3975,7 +3975,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://cards.barclaycardus.com/banking/credit-card/aviator/aa/red/",
+        "notes": "Official Barclays AAdvantage Aviator Red page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -4032,7 +4037,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://cards.barclaycardus.com/banking/credit-card/aviator/aa/silver/",
+        "notes": "Official Barclays AAdvantage Aviator Silver page"
+      }
+    ],
     "benefits": [],
     "hotel_program": null,
     "application_rules": {
@@ -4740,7 +4750,12 @@
       "rotating",
       "no-annual-fee"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://cards.barclaycardus.com/banking/cards/harley-davidson/",
+        "notes": "Official Barclays Harley-Davidson card page"
+      }
+    ],
     "last_updated": "2026-04-16T13:41:49.952Z",
     "travel_benefits": {
       "hotel_status": [],
@@ -4887,7 +4902,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://cards.barclaycardus.com/banking/cards/jetblue-plus-card/",
+        "notes": "Official Barclays JetBlue Plus Card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -5197,7 +5217,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://cards.barclaycardus.com/?p=uber",
+        "notes": "Official Barclays Uber Visa Card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -5249,7 +5274,12 @@
       "rideshare",
       "no-annual-fee"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://cards.barclaycardus.com/?p=uber",
+        "notes": "Official Barclays Uber Card page"
+      }
+    ],
     "last_updated": "2026-04-16T13:41:49.953Z",
     "travel_benefits": {
       "hotel_status": [],
@@ -5316,7 +5346,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://cards.barclaycardus.com/banking/cards/wyndham-rewards-earner-business-card/",
+        "notes": "Official Barclays Wyndham Earner Business Card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -5368,7 +5403,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.wyndhamrewardscreditcard.com/earner-business-card/",
+        "notes": "Official Barclays Wyndham Earner+ Business Card page"
+      }
+    ],
     "benefits": [],
     "hotel_program": null,
     "application_rules": {
@@ -5427,7 +5467,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.wyndhamrewardscreditcard.com/earner-plus-card/",
+        "notes": "Official Barclays Wyndham Earner Plus Card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -5485,7 +5530,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://cards.barclaycardus.com/credit-card/1b5bc260-6895-438e-acab-81d5b277b0d9",
+        "notes": "Official Barclays Wyndham Earner Card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -8432,7 +8482,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.synchrony.com/partner/cathay",
+        "notes": "Official Cathay World Elite Mastercard page (Synchrony Bank)"
+      }
+    ],
     "benefits": [],
     "annual_fee_note": "$99 annual fee. Replaced the previous Visa version (discontinued 2024).",
     "hotel_program": null,
@@ -8563,7 +8618,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.chase.com/travel-credit-cards/aircanada/aeroplan",
+        "notes": "Official card page - Chase Aeroplan Credit Card"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -8826,7 +8886,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.chase.com/rewards-credit-cards/disney/premier",
+        "notes": "Official card page - Disney Premier Visa from Chase"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -8874,7 +8939,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.chase.com/rewards-credit-cards/disney/rewards",
+        "notes": "Official card page - Disney Visa (no annual fee) from Chase"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -9385,7 +9455,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt",
+        "notes": "Official card page - World of Hyatt Credit Card from Chase"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -9646,7 +9721,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier",
+        "notes": "Official card page - IHG One Rewards Premier Credit Card from Chase"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -10101,7 +10181,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
+        "notes": "Official card page - Ink Business Preferred from Chase (Ink Preferred Plus not currently offered; using Ink Business Preferred as reference)"
+      }
+    ],
     "benefits": [],
     "hotel_program": null,
     "application_rules": {
@@ -10887,7 +10972,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.chase.com/business-credit-cards/southwest/performance-business",
+        "notes": "Official card page - Southwest Rapid Rewards Performance Business Credit Card from Chase"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -10940,7 +11030,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.chase.com/travel-credit-cards/southwest",
+        "notes": "Official card page - Southwest Rapid Rewards cards from Chase (Performance Plus variant)"
+      }
+    ],
     "benefits": [],
     "hotel_program": null,
     "application_rules": {
@@ -11114,7 +11209,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.chase.com/travel-credit-cards/southwest/priority",
+        "notes": "Official card page - Southwest Rapid Rewards Priority Credit Card from Chase"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -11952,7 +12052,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite",
+        "notes": "Official card page - United Club Infinite Card from Chase"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -12005,7 +12110,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.chase.com/personal/credit-cards/united/united-quest-card",
+        "notes": "Official card page - United Quest Card from Chase (business variant)"
+      }
+    ],
     "benefits": [],
     "hotel_program": null,
     "application_rules": {
@@ -12350,7 +12460,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.citi.com/credit-cards/citi-aadvantage-executive-world-elite-mastercard",
+        "notes": "Official card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -12398,7 +12513,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.citi.com/credit-cards/citi-aadvantage-business-credit-card",
+        "notes": "Official Citi AAdvantage Business card page (MileUp Business variant)"
+      }
+    ],
     "benefits": [],
     "hotel_program": null,
     "application_rules": {
@@ -12453,7 +12573,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.citi.com/credit-cards/aadvantage-mile-up-credit-card",
+        "notes": "Official card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -12516,7 +12641,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-world-elite-mastercard",
+        "notes": "Official card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -13058,7 +13188,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.citi.com/credit-cards/citi-costco-anywhere-visa-business-credit-card",
+        "notes": "Official card page"
+      }
+    ],
     "benefits": [],
     "hotel_program": null,
     "application_rules": {
@@ -13166,7 +13301,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.citi.com/credit-cards/savings-and-cash-back-credit-cards",
+        "notes": "Official Citi cash back cards page (Dividend discontinued)"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -13298,7 +13438,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.citi.com/credit-cards/view-all-credit-cards",
+        "notes": "Official Citi cards page (Prestige discontinued July 2021)"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -13524,7 +13669,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.citi.com/credit-cards/citi-strata-elite-credit-card",
+        "notes": "Official card page"
+      }
+    ],
     "benefits": [],
     "hotel_program": null,
     "application_rules": {
@@ -14282,7 +14432,12 @@
       "rotating",
       "no-annual-fee"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.discover.com/credit-cards/cash-back/chrome.html",
+        "notes": "Official Discover card page"
+      }
+    ],
     "last_updated": "2026-04-16T13:41:49.980Z",
     "travel_benefits": {
       "hotel_status": [],
@@ -15262,7 +15417,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.us.hsbc.com/credit-cards/products/premier/",
+        "notes": "Official HSBC Premier credit card page"
+      }
+    ],
     "annual_fee_note": "$0 annual fee for HSBC Premier relationship customers (must maintain qualifying deposits/investments). Standard fee: $95.",
     "hotel_program": null,
     "application_rules": {
@@ -16700,7 +16860,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.nordstrom.com/browse/nordy-club/manage-card",
+        "notes": "Official Nordstrom retail card page (TD Bank)"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -16748,7 +16913,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.nordstrom.com/browse/nordy-club/manage-card",
+        "notes": "Official Nordstrom card services page (TD Bank)"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -17377,7 +17547,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.pnc.com/en/personal-banking/banking/credit-cards/pnc-cash-rewards-visa-credit-card.html",
+        "notes": "Official PNC Bank page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -17537,7 +17712,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://robinhood.com/creditcard/",
+        "notes": "Official Robinhood Gold Card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -17585,7 +17765,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://robinhood.com/us/en/creditcard/platinum",
+        "notes": "Official Robinhood Platinum Card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -18106,7 +18291,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.statefarm.com/finances/banking/credit-cards",
+        "notes": "Official State Farm/U.S. Bank credit card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -18226,7 +18416,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=G89QUJBK88DGDQQ7",
+        "notes": "Official Amazon Store Card page (Synchrony Bank)"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -19210,7 +19405,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.usbank.com/business-banking/business-credit-cards/business-altitude-connect-credit-card.html",
+        "notes": "Official U.S. Bank Business Altitude Connect page"
+      }
+    ],
     "benefits": [],
     "hotel_program": null,
     "application_rules": {
@@ -19369,7 +19569,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.usbank.com/business-banking/business-credit-cards.html",
+        "notes": "Official U.S. Bank business credit cards page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -20147,7 +20352,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.usbank.com/credit-cards/bank-smartly-visa-signature-credit-card.html",
+        "notes": "Official U.S. Bank Smartly Visa page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -20285,7 +20495,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://venmo.com/about/creditcard",
+        "notes": "Official Venmo Credit Card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -20338,7 +20553,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://www.walgreens.com/mywalgreens/cards/credit.jsp",
+        "notes": "Official Walgreens myWalgreens Credit Card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -20385,7 +20605,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.wellsfargo.com/business-credit-cards/",
+        "notes": "Official Wells Fargo business credit cards page (Active Cash Business discontinued)"
+      }
+    ],
     "benefits": [],
     "hotel_program": null,
     "application_rules": {
@@ -20434,7 +20659,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.wellsfargo.com/active-cash-credit-card/",
+        "notes": "Official card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -20583,7 +20813,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.wellsfargo.com/autograph-journey-visa-credit-card/",
+        "notes": "Official card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -20748,7 +20983,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.wellsfargo.com/choice-hotels-privileges-select-mastercard/",
+        "notes": "Official card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -20796,7 +21036,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.wellsfargo.com/one-key-plus-credit-card/",
+        "notes": "Official card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -20844,7 +21089,12 @@
     "tags": [
       "travel"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.wellsfargo.com/one-key-credit-card/",
+        "notes": "Official card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
@@ -20893,7 +21143,12 @@
       "travel"
     ],
     "recurring_credits": [],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://creditcards.wellsfargo.com/reflect-visa-credit-card/",
+        "notes": "Official card page"
+      }
+    ],
     "hotel_program": null,
     "application_rules": {
       "rules": [],
