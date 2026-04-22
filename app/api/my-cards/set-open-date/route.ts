@@ -3,13 +3,15 @@ import { NextRequest, NextResponse } from "next/server";
 // @ts-ignore
 const Redis = (await import("@upstash/redis")).Redis;
 
-const redis = new Redis({
-  url: process.env.UPSTASH_KV_REST_API_URL || "MISSING_URL",
-  token: process.env.UPSTASH_KV_REST_API_TOKEN || "MISSING_TOKEN",
-});
-
-console.log("set-open-date: URL:", process.env.UPSTASH_KV_REST_API_URL);
-console.log("set-open-date: TOKEN:", process.env.UPSTASH_KV_REST_API_TOKEN?.slice(0, 10));
+// Lazy initialization to avoid module load errors
+function getRedis() {
+  const url = process.env.UPSTASH_KV_REST_API_URL;
+  const token = process.env.UPSTASH_KV_REST_API_TOKEN;
+  if (!url || !token) {
+    throw new Error("Missing UPSTASH_KV_REST_API_URL or UPSTASH_KV_REST_API_TOKEN");
+  }
+  return new Redis({ url, token });
+}
 
 const USER_PREFIX = "opencard:user:";
 
@@ -19,6 +21,14 @@ async function hashEmail(email: string): Promise<string> {
 }
 
 export async function POST(req: NextRequest) {
+  let redis;
+  try {
+    redis = getRedis();
+  } catch (err: any) {
+    console.error("Redis init failed:", err.message);
+    return NextResponse.json({ error: "Server misconfigured" }, { status: 500 });
+  }
+  
   try {
     const { email, card_id, month, year } = await req.json();
 
@@ -45,11 +55,19 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true, card_id, month, year });
   } catch (err: any) {
     console.error("set-open-date error:", err);
-    return NextResponse.json({ error: "Failed to set open date" }, { status: 500 });
+    return NextResponse.json({ error: err.message || "Failed to set open date" }, { status: 500 });
   }
 }
 
 export async function GET(req: NextRequest) {
+  let redis;
+  try {
+    redis = getRedis();
+  } catch (err: any) {
+    console.error("Redis init failed:", err.message);
+    return NextResponse.json({ error: "Server misconfigured" }, { status: 500 });
+  }
+  
   try {
     const { searchParams } = new URL(req.url);
     const email = searchParams.get("email");
@@ -64,11 +82,9 @@ export async function GET(req: NextRequest) {
     const existing = await redis.get<string>(openDatesKey);
     const dates = existing ? JSON.parse(existing) : {};
 
-    console.log("get-open-dates: key=", openDatesKey, "result=", existing);
-
     return NextResponse.json({ open_dates: dates });
   } catch (err: any) {
     console.error("get-open-dates error:", err);
-    return NextResponse.json({ error: "Failed to fetch open dates" }, { status: 500 });
+    return NextResponse.json({ error: err.message || "Failed to fetch open dates" }, { status: 500 });
   }
 }
