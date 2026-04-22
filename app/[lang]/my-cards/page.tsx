@@ -289,32 +289,48 @@ export default function MyCardsPage({
     setIsSubscribing(true);
     setSubscribeError("");
     
-    // Fetch existing cloud cards FIRST (in case user has cards on another device)
+    // Fetch existing user status FIRST (check if already subscribed)
     let existingCloudCards: string[] = [];
+    let isAlreadySubscribed = false;
     try {
-      const cloudRes = await fetch(`/api/my-cards?email=${encodeURIComponent(email.toLowerCase().trim())}`);
-      if (cloudRes.ok) {
-        const cloudData = await cloudRes.json();
-        existingCloudCards = cloudData.cards || [];
+      const statusRes = await fetch(`/api/my-cards/subscription-status?email=${encodeURIComponent(email.toLowerCase().trim())}`);
+      if (statusRes.ok) {
+        const statusData = await statusRes.json();
+        isAlreadySubscribed = statusData.subscribed === true;
+        if (isAlreadySubscribed) {
+          // Already subscribed - fetch their existing cards
+          const cloudRes = await fetch(`/api/my-cards?email=${encodeURIComponent(email.toLowerCase().trim())}`);
+          if (cloudRes.ok) {
+            const cloudData = await cloudRes.json();
+            existingCloudCards = cloudData.cards || [];
+          }
+        }
       }
     } catch {}
     
-    // Merge cloud cards + local cards (local takes priority for new cards)
-    const mergedCards = [...new Set([...existingCloudCards, ...selectedCards])];
+    // If already subscribed, use cloud cards. Otherwise use local or cloud (whatever has data).
+    let finalCards: string[];
+    if (isAlreadySubscribed && existingCloudCards.length > 0) {
+      finalCards = existingCloudCards; // Keep cloud cards, don't overwrite
+    } else if (selectedCards.length > 0) {
+      finalCards = selectedCards; // Use local cards
+    } else {
+      finalCards = existingCloudCards; // Fallback to cloud
+    }
     
     try {
       const res = await fetch("/api/my-cards/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, cards: mergedCards, marketing_optin: marketingOptin }),
+        body: JSON.stringify({ email, cards: finalCards, marketing_optin: marketingOptin }),
       });
       if (res.ok) {
         setIsSubscribed(true);
         // Store email so AddToMyCardsButton and MyCardsWidget know user is subscribed
         localStorage.setItem('opencard_subscribed_email', email.toLowerCase().trim());
-        // Save merged cards to localStorage
-        setSelectedCards(mergedCards);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(mergedCards));
+        // Save to localStorage
+        setSelectedCards(finalCards);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(finalCards));
       } else {
         const data = await res.json();
         setSubscribeError(data.error || "Failed to subscribe");
