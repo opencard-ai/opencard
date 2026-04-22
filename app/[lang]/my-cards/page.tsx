@@ -593,7 +593,6 @@ export default function MyCardsPage({
     html += '<button id="save-btn" style="padding:10px 20px;background:#1e40af;color:white;border:none;border-radius:6px;cursor:pointer">Save</button>';
     html += '</div>';
     const win = window.open('', 'OpenDate', 'width=300,height=250');
-    if (!win) return;
     const w = win; // non-null alias
       w.document.write('<html><body style="margin:0">'+html+'</body></html>');
       w.document.getElementById('save-btn').onclick = () => {
