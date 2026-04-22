@@ -231,6 +231,7 @@ export default function MyCardsPage({
               setSelectedCards(cloudCards);
               localStorage.setItem(STORAGE_KEY, JSON.stringify(cloudCards));
               setIsSubscribed(true);
+              setEmail(savedEmail);
               setLoaded(true);
               return;
             }
@@ -262,8 +263,10 @@ export default function MyCardsPage({
 
   // Handle edit open date
   const handleEditOpenDate = useCallback(async (cardId: string) => {
-    console.log('handleEditOpenDate called, email:', email);
-    if (!email) { alert('Please enter your email first'); return; }
+    // Get email from localStorage or state
+    const currentEmail = email || localStorage.getItem(SUBSCRIBED_EMAIL_KEY) || '';
+    console.log('handleEditOpenDate called, email:', currentEmail);
+    if (!currentEmail) { alert('Please enter your email first'); return; }
     
     // Use simple window.prompt - works on desktop, show alert for mobile
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -285,13 +288,13 @@ export default function MyCardsPage({
       fetch('/api/my-cards/set-open-date', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, card_id: cardId, month: m, year: y }),
+        body: JSON.stringify({ email: currentEmail, card_id: cardId, month: m, year: y }),
       }).then(res => {
         if (res.ok) setOpenDates(prev => ({ ...prev, [cardId]: { month: m, year: y } }));
         else alert('Failed to save');
       });
     }
-  }, [email]);
+  });
 
 
 // Listen for card save/remove events from other pages
