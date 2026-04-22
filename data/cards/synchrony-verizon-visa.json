@@ -1,7 +1,7 @@
 {
   "card_id": "synchrony-verizon-visa",
   "name": "Verizon Visa\u00ae Card",
-  "issuer": "Synchrony Bank",
+  "issuer": "Synchrony",
   "network": "Visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
