@@ -1,8 +1,8 @@
 {
   "card_id": "barclays-aarp-essential-rewards-mastercard",
-  "name": "AARP\u00ae Essential Rewards Mastercard\u00ae from Barclays",
+  "name": "AARP® Essential Rewards Mastercard® from Barclays",
   "issuer": "Barclays",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Fair",

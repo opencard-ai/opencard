@@ -2,7 +2,7 @@
   "card_id": "barclays-aadvantage-silver",
   "name": "AAdvantage Aviator Silver",
   "issuer": "Barclays",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 199,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

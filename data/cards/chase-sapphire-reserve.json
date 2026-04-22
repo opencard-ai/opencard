@@ -1,8 +1,8 @@
 {
   "card_id": "chase-sapphire-reserve",
-  "name": "Chase Sapphire Reserve\u00ae",
+  "name": "Chase Sapphire Reserve®",
   "issuer": "Chase",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 795,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",

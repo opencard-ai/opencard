@@ -1,8 +1,8 @@
 {
   "card_id": "target-redcard-credit",
-  "name": "Target RedCard\u2122 Credit Card",
+  "name": "Target RedCard™ Credit Card",
   "issuer": "TD Bank",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Fair to Good",

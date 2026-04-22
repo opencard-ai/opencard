@@ -1,8 +1,8 @@
 {
   "card_id": "discover-it-student-chrome",
-  "name": "Discover it\u00ae Student Chrome",
+  "name": "Discover it® Student Chrome",
   "issuer": "Discover",
-  "network": "Discover",
+  "network": "discover",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Fair to Good (Student)",

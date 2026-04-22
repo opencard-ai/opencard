@@ -1,8 +1,8 @@
 {
   "card_id": "chase-freedom-unlimited",
-  "name": "Chase Freedom Unlimited\u00ae",
+  "name": "Chase Freedom Unlimited®",
   "issuer": "Chase",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 3,
   "credit_required": "Good",

@@ -1,8 +1,8 @@
 {
   "card_id": "citi-strata",
-  "name": "Citi Strata\u2120 Card",
+  "name": "Citi Strata℠ Card",
   "issuer": "Citi",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

@@ -1,8 +1,8 @@
 {
   "card_id": "amex-blue-cash-everyday",
-  "name": "Blue Cash Everyday\u00ae Card from American Express",
+  "name": "Blue Cash Everyday® Card from American Express",
   "issuer": "American Express",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

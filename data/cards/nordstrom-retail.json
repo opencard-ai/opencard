@@ -2,7 +2,7 @@
   "card_id": "nordstrom-retail",
   "name": "Nordstrom Card",
   "issuer": "TD Bank",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

@@ -1,8 +1,8 @@
 {
   "card_id": "us-bank-smartly-visa",
-  "name": "U.S. Bank Smartly\u2122 Visa Signature\u00ae Card",
+  "name": "U.S. Bank Smartly™ Visa Signature® Card",
   "issuer": "U.S. Bank",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 3,
   "credit_required": "Good to Excellent",

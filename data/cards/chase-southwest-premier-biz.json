@@ -1,8 +1,8 @@
 {
   "card_id": "chase-southwest-premier-biz",
-  "name": "Southwest Rapid Rewards\u00ae Premier Business Credit Card",
+  "name": "Southwest Rapid Rewards® Premier Business Credit Card",
   "issuer": "Chase",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 149,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

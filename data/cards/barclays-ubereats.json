@@ -2,7 +2,7 @@
   "card_id": "barclays-ubereats",
   "name": "Uber Visa Card",
   "issuer": "Barclays",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "welcome_offer": {
     "bonus_points": null,

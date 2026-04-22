@@ -2,7 +2,7 @@
   "card_id": "kohls-charge",
   "name": "Kohl's Charge Card",
   "issuer": "Capital One",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Fair",
@@ -10,7 +10,7 @@
     "spending_requirement": null,
     "time_period_months": null,
     "bonus_points": null,
-    "description": "Get 40% off your first purchase at Kohl's within 30 days of credit approval \u2014 in store or online",
+    "description": "Get 40% off your first purchase at Kohl's within 30 days of credit approval — in store or online",
     "point_program": "Kohl's Rewards"
   },
   "earning_rates": [
@@ -60,7 +60,7 @@
       "notes": "NerdWallet: variety of discounts available, good for frequent Kohl's shoppers"
     }
   ],
-  "notes": "Store card for Kohl's shoppers only. Earns 7.5% back at Kohl's for Rewards Members (5% otherwise). No annual fee. New cardholders get 40% off first purchase within 30 days. Card has no value outside Kohl's \u2014 cannot be used elsewhere. Anniversary discounts and monthly exclusive offers add value for frequent Kohl's shoppers. Issued as both a Mastercard (usable anywhere) and a store-only card. Not worth getting just for the discount unless you shop at Kohl's regularly.",
+  "notes": "Store card for Kohl's shoppers only. Earns 7.5% back at Kohl's for Rewards Members (5% otherwise). No annual fee. New cardholders get 40% off first purchase within 30 days. Card has no value outside Kohl's — cannot be used elsewhere. Anniversary discounts and monthly exclusive offers add value for frequent Kohl's shoppers. Issued as both a Mastercard (usable anywhere) and a store-only card. Not worth getting just for the discount unless you shop at Kohl's regularly.",
   "confidence": "high",
   "last_updated": "2026-04-16T13:41:49.988Z",
   "tags": [

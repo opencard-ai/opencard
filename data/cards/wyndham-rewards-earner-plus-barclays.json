@@ -2,7 +2,7 @@
   "card_id": "wyndham-rewards-earner-plus-barclays",
   "name": "Wyndham Rewards Earner Plus Card",
   "issuer": "Barclays",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 75,
   "annual_fee_description": "$75 annual fee",
   "welcome_offer": {

@@ -1,8 +1,8 @@
 {
   "card_id": "chase-united-explorer",
-  "name": "United\u2120 Explorer Card",
+  "name": "United℠ Explorer Card",
   "issuer": "Chase",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 150,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

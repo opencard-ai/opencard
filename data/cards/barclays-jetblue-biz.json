@@ -2,7 +2,7 @@
   "card_id": "barclays-jetblue-biz",
   "name": "JetBlue Business Card",
   "issuer": "Barclays",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 99,
   "annual_fee_description": "$99 annual fee",
   "welcome_offer": {

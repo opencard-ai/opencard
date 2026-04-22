@@ -1,8 +1,8 @@
 {
   "card_id": "boa-biz-advantage-travel",
-  "name": "Bank of America\u00ae Business Advantage Travel Rewards World Mastercard\u00ae",
+  "name": "Bank of America® Business Advantage Travel Rewards World Mastercard®",
   "issuer": "Bank of America",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

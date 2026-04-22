@@ -2,7 +2,7 @@
   "card_id": "amex-amazon-biz",
   "name": "Amazon Business American Express Card",
   "issuer": "American Express",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

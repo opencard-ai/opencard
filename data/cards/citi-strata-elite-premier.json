@@ -2,7 +2,7 @@
   "card_id": "citi-strata-elite-premier",
   "name": "Strata Elite Premier",
   "issuer": "Citi",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 595,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

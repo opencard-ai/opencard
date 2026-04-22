@@ -2,7 +2,7 @@
   "card_id": "bilt-palladium",
   "name": "Bilt Palladium Card",
   "issuer": "First Electronic Bank",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 495,
   "annual_fee_description": "$495 annual fee; $95 per authorized user",
   "welcome_offer": {
@@ -20,7 +20,7 @@
       "category": "choice_category",
       "rate": 5,
       "rate_type": "points_per_dollar",
-      "description": "Up to 5X points on a choice of category (up to $25,000/year) \u2014 dining, travel, or online shopping"
+      "description": "Up to 5X points on a choice of category (up to $25,000/year) — dining, travel, or online shopping"
     }
   ],
   "features": [

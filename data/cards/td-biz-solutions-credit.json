@@ -2,7 +2,7 @@
   "card_id": "td-biz-solutions-credit",
   "name": "TD Business Solutions Credit Card",
   "issuer": "TD Bank",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

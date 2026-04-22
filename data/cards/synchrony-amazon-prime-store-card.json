@@ -2,7 +2,7 @@
   "card_id": "synchrony-amazon-prime-store-card",
   "name": "Amazon Prime Store Card",
   "issuer": "Synchrony",
-  "network": "Store",
+  "network": "other",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Fair to Excellent",

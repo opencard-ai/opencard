@@ -1,8 +1,8 @@
 {
   "card_id": "boa-premium-rewards-elite",
-  "name": "Bank of America\u00ae Premium Rewards\u00ae Elite Credit Card",
+  "name": "Bank of America® Premium Rewards® Elite Credit Card",
   "issuer": "Bank of America",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 550,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",

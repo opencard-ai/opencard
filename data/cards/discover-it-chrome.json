@@ -1,12 +1,12 @@
 {
   "card_id": "discover-it-chrome",
-  "name": "Discover it\u00ae Chrome",
+  "name": "Discover it® Chrome",
   "issuer": "Discover",
-  "network": "Discover",
+  "network": "discover",
   "annual_fee": 0,
   "welcome_offer": {
     "bonus_points": null,
-    "description": "Unlimited Cashback Match\u2122 at end of first year",
+    "description": "Unlimited Cashback Match™ at end of first year",
     "estimated_value": null,
     "spending_requirement": null,
     "time_period_months": null

@@ -1,8 +1,8 @@
 {
   "card_id": "wells-fargo-signify-biz-cash",
-  "name": "Wells Fargo Signify Business Cash\u00ae Card",
+  "name": "Wells Fargo Signify Business Cash® Card",
   "issuer": "Wells Fargo",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

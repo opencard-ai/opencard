@@ -2,7 +2,7 @@
   "card_id": "chase-united-quest",
   "name": "United Quest Card",
   "issuer": "Chase",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 350,
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",

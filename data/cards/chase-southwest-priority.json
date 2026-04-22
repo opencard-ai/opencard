@@ -2,7 +2,7 @@
   "card_id": "chase-southwest-priority",
   "name": "Chase Southwest Priority",
   "issuer": "Chase",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 229,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

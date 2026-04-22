@@ -1,8 +1,8 @@
 {
   "card_id": "citi-american-airlines-mastercard",
-  "name": "American Airlines AAdvantage\u00ae Mastercard\u00ae (Citi)",
+  "name": "American Airlines AAdvantage® Mastercard® (Citi)",
   "issuer": "Citi",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

@@ -1,8 +1,8 @@
 {
   "card_id": "amex-blue-from-american-express",
-  "name": "Blue from American Express\u00ae",
+  "name": "Blue from American Express®",
   "issuer": "American Express",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Fair to Good",

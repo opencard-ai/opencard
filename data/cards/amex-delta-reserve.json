@@ -1,8 +1,8 @@
 {
   "card_id": "amex-delta-reserve",
-  "name": "Delta SkyMiles\u00ae Reserve American Express Card",
+  "name": "Delta SkyMiles® Reserve American Express Card",
   "issuer": "American Express",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 650,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",

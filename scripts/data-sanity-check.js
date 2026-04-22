@@ -12,6 +12,8 @@ const VALID_FREQUENCIES = new Set(['monthly', 'quarterly', 'semi_annual', 'annua
 const CARDS_DIR = path.join(__dirname, '..', 'data', 'cards');
 
 const VALID_CATEGORIES = new Set(['travel', 'dining', 'entertainment', 'shopping', 'gas', 'grocery', 'streaming', 'other']);
+const VALID_NETWORKS = new Set(['visa', 'amex', 'mastercard', 'discover', 'other']);
+const VALID_INSURANCE_KEYS = new Set(['trip_cancellation', 'trip_delay', 'rental_insurance', 'purchase_protection', 'return_protection', 'extended_warranty']);
 
 function checkCard(card, filename) {
   const errors = [];
@@ -21,6 +23,23 @@ function checkCard(card, filename) {
   if (!card.card_id) errors.push('Missing card_id');
   if (!card.name) errors.push('Missing name');
   if (!card.issuer) warnings.push('Missing issuer');
+  
+  // Schema normalization checks (2026-04-21)
+  // foreign_transaction_fee should be number, not string
+  if (card.foreign_transaction_fee !== undefined && typeof card.foreign_transaction_fee !== 'number') {
+    errors.push(`foreign_transaction_fee should be number, got: ${typeof card.foreign_transaction_fee}`);
+  }
+  // network should be standard values
+  if (card.network && !VALID_NETWORKS.has(card.network)) {
+    errors.push(`invalid network: "${card.network}" (expected: ${[...VALID_NETWORKS].join(', ')})`);
+  }
+  // insurance should have all required keys
+  if (card.insurance && typeof card.insurance === 'object') {
+    const missingKeys = [...VALID_INSURANCE_KEYS].filter(k => !(k in card.insurance));
+    if (missingKeys.length > 0) {
+      errors.push(`insurance missing keys: ${missingKeys.join(', ')}`);
+    }
+  }
   
   // frequency format check (in recurring_credits)
   if (card.recurring_credits && Array.isArray(card.recurring_credits)) {
@@ -51,6 +70,11 @@ function checkCard(card, filename) {
     if (card.welcome_offer.bonus_points === 0 && card.welcome_offer.bonus_value === 0) {
       warnings.push('welcome_offer exists but both bonus_points and bonus_value are 0');
     }
+  }
+  
+  // recurring_credits validation (minimum bar for data quality)
+  if (card.annual_fee > 200 && (!card.recurring_credits || card.recurring_credits.length === 0)) {
+    warnings.push(`annual_fee is $${card.annual_fee} but no recurring_credits found`);
   }
   
   return { errors, warnings };

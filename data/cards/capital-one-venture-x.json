@@ -2,7 +2,7 @@
   "card_id": "capital-one-venture-x",
   "name": "Capital One Venture X Rewards Credit Card",
   "issuer": "Capital One",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 395,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

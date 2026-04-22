@@ -2,7 +2,7 @@
   "card_id": "chase-southwest-performance-plus",
   "name": "Southwest Performance Plus",
   "issuer": "Chase",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 199,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

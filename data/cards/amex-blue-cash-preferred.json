@@ -1,8 +1,8 @@
 {
   "card_id": "amex-blue-cash-preferred",
-  "name": "Blue Cash Preferred\u00ae Card from American Express",
+  "name": "Blue Cash Preferred® Card from American Express",
   "issuer": "American Express",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 0,
   "foreign_transaction_fee": 2.7,
   "credit_required": "Good",
@@ -42,7 +42,7 @@
     "hotel_status": [],
     "other_benefits": [
       "Amex Offers access",
-      "Plan It\u00ae (split purchases of $100+ into monthly payments with fixed fee)",
+      "Plan It® (split purchases of $100+ into monthly payments with fixed fee)",
       "Send and Split (Venmo/PayPal integration)"
     ]
   },

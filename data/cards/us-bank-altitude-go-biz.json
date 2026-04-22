@@ -2,7 +2,7 @@
   "card_id": "us-bank-altitude-go-biz",
   "name": "Altitude Go Business",
   "issuer": "U.S. Bank",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

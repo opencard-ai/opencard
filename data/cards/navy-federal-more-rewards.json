@@ -1,8 +1,8 @@
 {
   "card_id": "navy-federal-more-rewards",
-  "name": "Navy Federal More Rewards American Express\u00ae Card",
+  "name": "Navy Federal More Rewards American Express® Card",
   "issuer": "Navy Federal Credit Union",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",

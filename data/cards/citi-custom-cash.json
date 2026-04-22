@@ -1,8 +1,8 @@
 {
   "card_id": "citi-custom-cash",
-  "name": "Citi Custom Cash\u00ae Card",
+  "name": "Citi Custom Cash® Card",
   "issuer": "Citi",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": "3%",
   "credit_required": "Good",

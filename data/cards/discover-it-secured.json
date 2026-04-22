@@ -1,8 +1,8 @@
 {
   "card_id": "discover-it-secured",
-  "name": "Discover it\u00ae Secured Credit Card",
+  "name": "Discover it® Secured Credit Card",
   "issuer": "Discover",
-  "network": "Discover",
+  "network": "discover",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Fair to Poor",

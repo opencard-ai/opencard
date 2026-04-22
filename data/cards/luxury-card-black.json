@@ -1,8 +1,8 @@
 {
   "card_id": "luxury-card-black",
-  "name": "Luxury Card Mastercard\u00ae Black Card\u2122",
+  "name": "Luxury Card Mastercard® Black Card™",
   "issuer": "Barclays",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 699,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",

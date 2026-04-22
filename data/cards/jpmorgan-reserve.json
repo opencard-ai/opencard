@@ -2,7 +2,7 @@
   "card_id": "jpmorgan-reserve",
   "name": "JPMorgan Reserve Card",
   "issuer": "Chase",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 995,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
@@ -104,7 +104,7 @@
       "notes": "TPG review"
     }
   ],
-  "notes": "Ultra-exclusive invitation-only card for JPMorgan Private Client customers (typically requires $2M+ at JPMorgan Chase). Replaced the JPM Palladium card. Similar benefits to Sapphire Reserve but more exclusive and higher AF ($995). Benefits exceed Sapphire Reserve slightly. Not publicly available \u2014 must be invited by JPMorgan.",
+  "notes": "Ultra-exclusive invitation-only card for JPMorgan Private Client customers (typically requires $2M+ at JPMorgan Chase). Replaced the JPM Palladium card. Similar benefits to Sapphire Reserve but more exclusive and higher AF ($995). Benefits exceed Sapphire Reserve slightly. Not publicly available — must be invited by JPMorgan.",
   "last_updated": "2026-04-16T13:41:49.988Z",
   "hotel_program": null,
   "application_rules": {

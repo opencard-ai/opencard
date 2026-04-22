@@ -2,7 +2,7 @@
   "card_id": "apple-card",
   "name": "Apple Card",
   "issuer": "Goldman Sachs",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

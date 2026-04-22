@@ -2,7 +2,7 @@
   "card_id": "chase-ink-preferred-plus",
   "name": "Ink Business Preferred Plus",
   "issuer": "Chase",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 95,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

@@ -1,8 +1,8 @@
 {
   "card_id": "bread-cashback-american-express",
-  "name": "Bread Rewards\u2122 American Express\u00ae Credit Card",
+  "name": "Bread Rewards™ American Express® Credit Card",
   "issuer": "Bread Financial",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Fair to Good",

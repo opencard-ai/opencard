@@ -2,7 +2,7 @@
   "card_id": "capital-one-spark-miles-select",
   "name": "Capital One Spark Miles Select for Business",
   "issuer": "Capital One",
-  "network": "Visa",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
@@ -18,7 +18,7 @@
     {
       "category": "All purchases",
       "rate": 1.5,
-      "notes": "Earn 1.5X miles on every purchase, everywhere \u2014 no categories, no limits"
+      "notes": "Earn 1.5X miles on every purchase, everywhere — no categories, no limits"
     }
   ],
   "annual_credits": [],

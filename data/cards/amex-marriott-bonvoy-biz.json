@@ -1,8 +1,8 @@
 {
   "card_id": "amex-marriott-bonvoy-biz",
-  "name": "Marriott Bonvoy Business\u00ae American Express\u00ae Card",
+  "name": "Marriott Bonvoy Business® American Express® Card",
   "issuer": "American Express",
-  "network": "Amex",
+  "network": "amex",
   "annual_fee": 125,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

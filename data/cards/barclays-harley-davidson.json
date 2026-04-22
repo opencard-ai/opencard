@@ -2,7 +2,7 @@
   "card_id": "barclays-harley-davidson",
   "name": "Harley-Davidson Credit Card",
   "issuer": "Barclays",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "welcome_offer": {
     "bonus_points": null,

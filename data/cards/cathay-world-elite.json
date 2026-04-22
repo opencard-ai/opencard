@@ -2,7 +2,7 @@
   "card_id": "cathay-world-elite",
   "name": "Cathay World Elite Mastercard",
   "issuer": "Synchrony",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 99,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

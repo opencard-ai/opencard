@@ -1,8 +1,8 @@
 {
   "card_id": "comenity-ulta-beauty-mastercard",
-  "name": "Ulta Beauty Mastercard\u00ae",
+  "name": "Ulta Beauty Mastercard®",
   "issuer": "Bread Financial",
-  "network": "Mastercard",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Fair to Good",
