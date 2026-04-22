@@ -4,7 +4,7 @@
   "issuer": "Citi",
   "network": "Visa",
   "annual_fee": 95,
-  "foreign_transaction_fee": "None",
+  "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
     "spending_requirement": 4,
