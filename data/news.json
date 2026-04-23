@@ -1,6 +1,41 @@
 {
   "items": [
     {
+      "title": "Xfinity Rewards: Free $10 GrubHub Giftcard",
+      "url": "https://www.doctorofcredit.com/xfinity-rewards-free-10-ubereats-grubhub-giftcard/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Uncategorized",
+        "grubhub",
+        "UberEATS",
+        "Xfinity Rewards"
+      ],
+      "ts": "2026-04-23T16:36:37.000Z",
+      "title_en": "Xfinity Rewards: Free $10 GrubHub Giftcard",
+      "summary_en": "",
+      "title_zh": "Xfinity 奖励：免費 $10 GrubHub 禮卡",
+      "summary_zh": "Xfinity 推出免費 $10 GrubHub 禮卡獎勵，符合條件的用戶可領取。",
+      "title_es": "Xfinity Rewards: Tarjeta de regalo GrubHub de $10 gratis",
+      "summary_es": "Xfinity ofrece una tarjeta de regalo de GrubHub de $10 gratis para miembros Rewards."
+    },
+    {
+      "title": "Chase Offers: The Parking Spot, Spend $50+ & Get $10 Back",
+      "url": "https://www.doctorofcredit.com/chase-offers-the-parking-spot-spend-50-get-10-back/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Travel",
+        "chase offers",
+        "the parking spot"
+      ],
+      "ts": "2026-04-23T15:00:49.000Z",
+      "title_en": "Chase Offers: The Parking Spot, Spend $50+ & Get $10 Back",
+      "summary_en": "",
+      "title_zh": "Chase 提供：在 The Parking Spot 消費 $50 以上可獲得 $10 回饋",
+      "summary_zh": "Chase 用戶在 The Parking Spot 消費 $50 以上可獲得 $10 現金回饋。",
+      "title_es": "Chase Offers: The Parking Spot, gasta $50+ y obtén $10 de vuelta",
+      "summary_es": "Chase ofrece $10 de devolución en The Parking Spot al gastar $50 o más."
+    },
+    {
       "title": "Recap: United Lounge Restriction, Points Events Tool & More",
       "url": "https://www.doctorofcredit.com/recap-united-lounge-restriction-points-events-tool-more/",
       "source": "Doctor of Credit",
@@ -10,10 +45,10 @@
       "ts": "2026-04-23T13:00:34.000Z",
       "title_en": "Recap: United Lounge Restriction, Points Events Tool & More",
       "summary_en": "",
-      "title_zh": "回顧：聯合貴賓室限制、積分活動工具及其他",
-      "summary_zh": "本文回顧了聯合航空貴賓室的進入限制以及最新推出的積分活動工具等資訊。",
-      "title_es": "Resumen: Restricciones del Lounge United, Herramienta de Eventos de Puntos y Más",
-      "summary_es": "Resumen de las últimas actualizaciones sobre políticas de United, incluyendo restricciones en lounges y nuevas herramientas para eventos de puntos."
+      "title_zh": "摘要：聯合貴賓室限制、積分活動工具及其他",
+      "summary_zh": "本文回顧了聯合貴賓室的進入限制、新推出的積分活動工具以及其他相關資訊。",
+      "title_es": "Resumen: Restricción de salón United, Herramienta de eventos de puntos y más",
+      "summary_es": "Resumen de las nuevas restricciones de salones United y herramientas de eventos de puntos."
     },
     {
       "title": "Southwest Lounge Updates – Up To 5 Currently Being Planned",
@@ -26,10 +61,10 @@
       "ts": "2026-04-23T13:00:33.000Z",
       "title_en": "Southwest Lounge Updates – Up To 5 Currently Being Planned",
       "summary_en": "",
-      "title_zh": "西南航空貴賓室最新消息——最多5間目前正在規劃中",
-      "summary_zh": "西南航空目前正規劃最多5間新貴賓室，最新消息顯示其擴展計畫仍在進行中。",
-      "title_es": "Actualizaciones del Lounge de Southwest – Hasta 5 Actualmente en Planificación",
-      "summary_es": "Southwest está planificando hasta 5 nuevos lounges según las últimas actualizaciones."
+      "title_zh": "西南航空貴賓室更新——目前計劃增至最多 5 間",
+      "summary_zh": "西南航空正計劃增設最多 5 個貴賓室。",
+      "title_es": "Actualizaciones de salón Southwest – Hasta 5 actualmente en planificación",
+      "summary_es": "Southwest tiene planes para abrir hasta 5 nuevos salones en el futuro cercano."
     },
     {
       "title": "Meijer Mperks: 7,500 Points On $100 Visa Giftcard (Valid Until 4/28)",
@@ -43,10 +78,10 @@
       "ts": "2026-04-23T00:45:00.000Z",
       "title_en": "Meijer Mperks: 7,500 Points On $100 Visa Giftcard (Valid Until 4/28)",
       "summary_en": "",
-      "title_zh": "Meijer Mperks：100美元Visa禮卡可獲得7,500點（有效至4/28）",
-      "summary_zh": "Meijer Mperks促銷活動提供在100美元Visa禮卡消費可獲得7,500點，優惠至4月28日截止。",
-      "title_es": "Meijer Mperks: 7,500 Puntos en Tarjeta de Regalo Visa de $100 (Válido Hasta el 28/4)",
-      "summary_es": "Meijer ofrece 7,500 puntos Mperks al comprar una tarjeta de regalo Visa de $100 antes del 28 de abril."
+      "title_zh": "Meijer Mperks：購買 $100 Visa 禮卡可獲 7,500 積分（有效期至 4/28）",
+      "summary_zh": "Meijer 會員在指定時間內購買 $100 Visa 禮卡可獲得 7,500 積分獎勵。",
+      "title_es": "Meijer Mperks: 7,500 puntos en tarjeta de regalo Visa de $100 (Válido hasta 4/28)",
+      "summary_es": "Meijer ofrece 7,500 puntos Mperks por comprar una tarjeta de regalo Visa de $100."
     },
     {
       "title": "[YMMV] Chase Business Checking: $50 Bonus For Making 15 Zelle Transactions Of $5+ Each",
@@ -62,10 +97,10 @@
       "ts": "2026-04-22T23:30:56.000Z",
       "title_en": "[YMMV] Chase Business Checking: $50 Bonus For Making 15 Zelle Transactions Of $5+ Each",
       "summary_en": "",
-      "title_zh": "[YMMV] Chase 商業支票帳戶：每筆5美元以上的15次 Zelle 交易可獲得50美元獎金",
-      "summary_zh": "花旗商業支票帳戶只要完成15筆5美元以上的Zelle交易，即可獲得50美元獎金。",
-      "title_es": "[YMMV] Chase Business Checking: $50 de Bono Por Hacer 15 Transacciones Zelle de $5+ Cada Una",
-      "summary_es": "Chase ofrece un bono de $50 para cuentas business que completen 15 transacciones Zelle de al menos $5 cada una."
+      "title_zh": "[YMMV] Chase 商業支票帳戶：每月完成 15 筆 $5 以上 Zelle 交易即可獲得 $50 獎金",
+      "summary_zh": "Chase 商業支票帳戶用戶若完成 15 筆 $5 以上的 Zelle 交易，可獲 $50 獎金（結果因人而異）。",
+      "title_es": "[YMMV] Chase Business Checking: $50 de bonificación por hacer 15 transacciones Zelle de $5+ cada una",
+      "summary_es": "Chase ofrece $50 de bonificación por realizar 15 transacciones Zelle de $5 o más en Chase Business Checking."
     },
     {
       "title": "UberEats: $25 Off $26+ (HEINZ Verified Spots), During NFL Draft (Pick 57)",
@@ -79,10 +114,10 @@
       "ts": "2026-04-22T23:21:05.000Z",
       "title_en": "UberEats: $25 Off $26+ (HEINZ Verified Spots), During NFL Draft (Pick 57)",
       "summary_en": "",
-      "title_zh": "UberEats：NFL選秀（挑選57號）在 HEINZ 認證餐廳消費26美元以上可享25美元折扣",
-      "summary_zh": "UberEats在NFL選秀第57順位時段提供HEINZ認證餐廳消費26美元以上的25美元折扣。",
-      "title_es": "UberEats: $25 Descuento en $26+ (Lugares Verificados por HEINZ), Durante el Draft de la NFL (Pick 57)",
-      "summary_es": "UberEats ofrece $25 de descuento en pedidos de $26 o más en lugares verificados por HEINZ durante el Draft de la NFL."
+      "title_zh": "UberEats：在 NFL 選秀（第 57 順位）期間，HEINZ 驗證餐廳消費 $26 以上可享 $25 折扣",
+      "summary_zh": "UberEats 與 HEINZ 合作，在 NFL 選秀期間提供 $25 折扣，需消費 $26 以上。",
+      "title_es": "UberEats: $25 de descuento en pedidos de $26+ (ubicaciones verificadas), Durante el NFL Draft (Pick 57)",
+      "summary_es": "UberEats ofrece $25 de descuento en pedidos de $26 o más durante el NFL Draft."
     },
     {
       "title": "[$500 Million ‘Rescue Package’] Spirit Airlines To Liquidate As Early As This Week According To Sources",
@@ -95,10 +130,10 @@
       "ts": "2026-04-22T21:07:59.000Z",
       "title_en": "[$500 Million ‘Rescue Package’] Spirit Airlines To Liquidate As Early As This Week According To Sources",
       "summary_en": "",
-      "title_zh": "[5億美元「救援方案」] 消息稱精神航空最快將於本週破產清算",
-      "summary_zh": "根據消息，精神航空可能在近期接受5億美元救援方案後最快於本週破產清算。",
-      "title_es": "[Paquete de Rescate de $500 Millones] Spirit Airlines Liquidará Tan Pronto Como Esta Semana Según Fuentes",
-      "summary_es": "Fuentes indican que Spirit Airlines podría liquidar esta semana tras no lograr un paquete de rescate de $500 millones."
+      "title_zh": "[5億美元「救援方案」] 據消息，Spirit Airlines 可能最快本週清算",
+      "summary_zh": "據報道，Spirit Airlines 若無法獲得 5 億美元救援方案，可能在本週進行清算。",
+      "title_es": "[Paquete de 'rescate' de $500 millones] Spirit Airlines liquidará tan pronto como esta semana según fuentes",
+      "summary_es": "Spirit Airlines podría liquidated esta semana con un paquete de rescate de $500 millones."
     },
     {
       "title": "[Targeted] Barclays Spend Bonuses – Get 5x Everywhere & Other Offers",
@@ -112,10 +147,10 @@
       "ts": "2026-04-22T18:30:37.000Z",
       "title_en": "[Targeted] Barclays Spend Bonuses – Get 5x Everywhere & Other Offers",
       "summary_en": "",
-      "title_zh": "[定向優惠] 巴克萊消費獎勵——全領域5倍積分及其他優惠",
-      "summary_zh": "巴克萊的定向消費獎勵在所有消費可享5倍積分，並同時提供其他優惠。",
-      "title_es": "[Targeted] Barclays Spend Bonuses – Obtén 5x En Todas Partes y Otras Ofertas",
-      "summary_es": "Barclays ofrece bonificaciones de gasto que incluyen 5x en todas las compras y otras ofertas especiales."
+      "title_zh": "[針對性] 巴克萊消費獎勵——全渠道 5 倍積分及其他優惠",
+      "summary_zh": "巴克萊針對特定用戶推出全渠道 5 倍積分及多項消費獎勵。",
+      "title_es": "[Dirigido] Bonos de gasto Barclays – Obtén 5x en todos lados y otras ofertas",
+      "summary_es": "Barclays ofrece bonos de gasto de 5x puntos en todas partes y otras ofertas seleccionadas."
     },
     {
       "title": "[YMMV] Safeway/Albertson’s Just4u: $40 Off $75 Online Order",
@@ -129,9 +164,9 @@
       "ts": "2026-04-22T18:15:09.000Z",
       "title_en": "[YMMV] Safeway/Albertson’s Just4u: $40 Off $75 Online Order",
       "summary_en": "",
-      "title_zh": "[YMMV] Safeway/Albertson’s Just4u：線上訂單滿75美元可減40美元",
-      "summary_zh": "Safeway或Albertson’s的Just4u計畫提供線上訂單滿75美元減40美元的優惠。",
-      "title_es": "[YMMV] Safeway/Albertson's Just4u: $40 Descuento en $75 Pedido Online",
+      "title_zh": "[YMMV] Safeway/Albertson’s Just4u：線上訂單滿 $75 可減 $40",
+      "summary_zh": "Safeway 與 Albertson’s 的 Just4u 計劃為線上滿 $75 訂單提供 $40 折扣（結果因人而異）。",
+      "title_es": "[YMMV] Safeway/Albertson's Just4u: $40 de descuento en pedido en línea de $75",
       "summary_es": "Safeway y Albertson's ofrecen $40 de descuento en pedidos en línea de $75 o más a través de Just4u."
     },
     {
@@ -145,10 +180,10 @@
       "ts": "2026-04-22T18:00:41.000Z",
       "title_en": "Target: Trade In A Car Seat & Get 20% Off A New Car Seat, Stroller Or Select Baby Gear (4/19-5/2)",
       "summary_en": "",
-      "title_zh": "Target：交回汽車座椅即可獲得新生兒座椅、嬰兒車或精選嬰兒用品20%折扣（4/19-5/2）",
-      "summary_zh": "Target在4月19日至5月2日期間，置換舊汽車座椅可享新生兒座椅、嬰兒車或精選嬰兒用品20%折扣。",
-      "title_es": "Target: Intercambia Un Asiento de Auto y Obtén 20% Descuento En Nuevo Asiento, Carrito o Artículos de Bebé (19/4-2/5)",
-      "summary_es": "Target ofrece 20% de descuento en un nuevo asiento de auto, carrito o artículos de bebé al intercambiar uno viejo del 19 de abril al 2 de mayo."
+      "title_zh": "Target：以舊嬰兒座椅置換，可享新生兒座椅、嬰兒車或精選嬰兒用品 20% 折扣（4/19-5/2）",
+      "summary_zh": "Target 在指定期間以舊座椅換購新品時可獲 20% 折扣。",
+      "title_es": "Target: Intercambia un asiento de carro y obtén 20% de descuento en nuevo asiento, cochecito o equipo de bebé seleccionado (4/19-5/2)",
+      "summary_es": "Target ofrece 20% de descuento al intercambiar un asiento de carro viejo por uno nuevo, cochecito o equipo de bebé."
     },
     {
       "title": "Chase Secure Banking $125 Checking Bonus",
@@ -162,10 +197,10 @@
       "ts": "2026-04-22T18:00:27.000Z",
       "title_en": "Chase Secure Banking $125 Checking Bonus",
       "summary_en": "",
-      "title_zh": "Chase Secure Banking 125美元支票帳戶獎金",
-      "summary_zh": "Chase Secure Banking的新客戶開戶可獲得125美元的支票帳戶獎金。",
-      "title_es": "Chase Secure Banking Bono de $125 por Cuenta Corriente",
-      "summary_es": "Chase ofrece un bono de $125 al abrir una cuenta Chase Secure Banking."
+      "title_zh": "Chase Secure Banking $125 支票帳戶獎金",
+      "summary_zh": "Chase Secure Banking 提供 $125 開戶支票帳戶獎金。",
+      "title_es": "Chase Secure Banking $125 de bonificación por cuenta corriente",
+      "summary_es": "Chase ofrece $125 de bonificación por abrir una cuenta de Chase Secure Banking."
     },
     {
       "title": "Kroger / Harris Teeter: 4x Fuel Points On Third Party & Fixed Visa/MC Gift Cards (4/24)",
@@ -182,10 +217,10 @@
       "ts": "2026-04-22T17:35:50.000Z",
       "title_en": "Kroger / Harris Teeter: 4x Fuel Points On Third Party & Fixed Visa/MC Gift Cards (4/24)",
       "summary_en": "",
-      "title_zh": "Kroger/Harris Teeter：第三方及固定 Visa/Mastercard 禮品卡可獲4倍燃油點數（4/24）",
-      "summary_zh": "Kroger與Harris Teeter在4月24日提供使用第三方及固定Visa/Mastercard禮品卡可獲得4倍燃油點數。",
-      "title_es": "Kroger / Harris Teeter: 4x Puntos de Combustible En Tarjetas de Regalo de Terceros y Visa/MC Fijas (24/4)",
-      "summary_es": "Kroger y Harris Teeter ofrecen 4x puntos de combustible en tarjetas de regalo de terceros y fixed Visa/MC el 24 de abril."
+      "title_zh": "Kroger / Harris Teeter：在第三方及固定 Visa/MC 禮卡上獲得 4 倍燃油積分（4/24）",
+      "summary_zh": "Kroger 與 Harris Teeter 在特定日期購買第三方及固定 Visa/MC 禮卡可獲 4 倍燃油積分。",
+      "title_es": "Kroger / Harris Teeter: 4x puntos de combustible en tarjetas de regalo de terceros y Visa/MC fijas (4/24)",
+      "summary_es": "Kroger y Harris Teeter ofrecen 4x puntos de combustible en tarjetas de regalo de terceros y Visa/MC."
     },
     {
       "title": "inKind: $15 Off $15 & $25 Off $50",
@@ -198,9 +233,9 @@
       "ts": "2026-04-22T17:25:33.000Z",
       "title_en": "inKind: $15 Off $15 & $25 Off $50",
       "summary_en": "",
-      "title_zh": "inKind：消費15美元減15美元與50美元減25美元",
-      "summary_zh": "inKind優惠包括消費15美元減15美元與消費50美元減25美元。",
-      "title_es": "inKind: $15 Descuento en $15 y $25 Descuento en $50",
+      "title_zh": "inKind：消費 $15 減 $15 及消費 $50 減 $25",
+      "summary_zh": "inKind 為用戶提供滿 $15 減 $15、滿 $50 減 $25 的優惠。",
+      "title_es": "inKind: $15 de descuento en $15 y $25 de descuento en $50",
       "summary_es": "inKind ofrece $15 de descuento en pedidos de $15 y $25 de descuento en pedidos de $50."
     },
     {
@@ -215,41 +250,11 @@
       "ts": "2026-04-22T16:00:30.000Z",
       "title_en": "Panacea Financial $100 Checking Bonus [Doctors, Healthcare Workers & Family]",
       "summary_en": "",
-      "title_zh": "Panacea Financial 100美元支票帳戶獎金（僅限醫師、醫療工作者及其家屬）",
-      "summary_zh": "Panacea Financial針對醫師、醫療工作者及其家屬提供100美元支票帳戶開戶獎金。",
-      "title_es": "Panacea Financial Bono de $100 Cuenta Corriente [Doctores, Trabajadores de Salud y Familia]",
-      "summary_es": "Panacea Financial ofrece un bono de $100 para cuentas corrientes de doctores, trabajadores de salud y sus familiares."
-    },
-    {
-      "title": "LendingClub To Rename As Happen Bank",
-      "url": "https://www.doctorofcredit.com/lendingclub-to-rename-as-happen-bank/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts"
-      ],
-      "ts": "2026-04-22T15:30:14.000Z",
-      "title_en": "LendingClub To Rename As Happen Bank",
-      "summary_en": "",
-      "title_zh": "LendingClub 將更名為 Happen Bank",
-      "summary_zh": "LendingClub宣布將更名為Happen Bank。",
-      "title_es": "LendingClub Cambiará Su Nombre a Happen Bank",
-      "summary_es": "LendingClub ha anunciado que se renombrará como Happen Bank."
-    },
-    {
-      "title": "[Targeted] LendingClub $350 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/targeted-lendingclub-350-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts"
-      ],
-      "ts": "2026-04-22T15:00:07.000Z",
-      "title_en": "[Targeted] LendingClub $350 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[定向優惠] LendingClub 350美元支票帳戶獎金",
-      "summary_zh": "LendingClub針對特定用戶提供350美元支票帳戶開戶獎金。",
-      "title_es": "[Targeted] LendingClub Bono de $350 Cuenta Corriente",
-      "summary_es": "LendingClub ofrece un bono de $350 para nuevas cuentas corrientes en esta oferta dirigida."
+      "title_zh": "Panacea Financial $100 支票帳戶獎金（面向醫生、醫護人員及家屬）",
+      "summary_zh": "Panacea Financial 為醫生、醫護人員及其家屬提供 $100 開戶支票帳戶獎金。",
+      "title_es": "Panacea Financial $100 de bonificación por cuenta corriente [Doctores, Trabajadores de salud y Familia]",
+      "summary_es": "Panacea Financial ofrece $100 de bonificación por cuenta corriente para doctores, trabajadores de salud y sus familias."
     }
   ],
-  "fetched": "2026-04-23T14:01:29.074Z"
+  "fetched": "2026-04-23T20:00:53.505Z"
 }
