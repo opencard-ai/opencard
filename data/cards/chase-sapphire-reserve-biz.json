@@ -165,7 +165,7 @@
       "name": "Travel Credit",
       "amount": 300,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "travel",
       "description": "$300 annual credit on travel purchases (auto-applied, no enrollment)",
       "reset_type": "calendar_year"
     },
@@ -173,7 +173,7 @@
       "name": "DoorDash Credit",
       "amount": 15,
       "frequency": "annual",
-      "category": "Monthly",
+      "category": "dining",
       "description": "$15 monthly DoorDash credit (enrollment required, $180/year total)",
       "reset_type": "calendar_year"
     },
@@ -181,7 +181,7 @@
       "name": "Instacart Credit",
       "amount": 15,
       "frequency": "annual",
-      "category": "Monthly",
+      "category": "groceries",
       "description": "$15 monthly Instacart credit (enrollment required, $180/year total)",
       "reset_type": "calendar_year"
     }

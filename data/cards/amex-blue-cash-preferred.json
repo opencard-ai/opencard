@@ -108,7 +108,7 @@
       "name": "Disney+ Streaming Credit",
       "amount": 120,
       "frequency": "annual",
-      "category": "Monthly",
+      "category": "streaming",
       "description": "$10 monthly statement credit at DisneyPlus.com, Hulu.com, or Stream.ESPN.com (U.S. websites). Enrollment required; subject to auto-renewal.",
       "reset_type": "calendar_year"
     }

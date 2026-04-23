@@ -104,7 +104,7 @@
       "name": "CLEAR+ Credit",
       "amount": 209,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "travel",
       "description": "Covers cost of CLEAR+ membership.",
       "reset_type": "calendar_year"
     }

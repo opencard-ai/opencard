@@ -123,7 +123,7 @@
       "name": "Travel Credit",
       "amount": 300,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "travel",
       "description": "Up to $300 annual travel statement credit",
       "reset_type": "calendar_year"
     },
@@ -131,7 +131,7 @@
       "name": "Airline Incidental Credit",
       "amount": 150,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "travel",
       "description": "Up to $150 annually for airline incidentals (bag fees, lounge passes, etc.)",
       "reset_type": "calendar_year"
     },
@@ -139,7 +139,7 @@
       "name": "Lifestyle Credit",
       "amount": 120,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "shopping",
       "description": "Up to $120 annually for lifestyle conveniences (video streaming, food delivery, fitness, rideshare)",
       "reset_type": "calendar_year"
     },
@@ -147,7 +147,7 @@
       "name": "TSA PreCheck/Global Entry Credit",
       "amount": 120,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "travel",
       "description": "Up to $120 reimbursement for TSA PreCheck or Global Entry",
       "reset_type": "calendar_year"
     }

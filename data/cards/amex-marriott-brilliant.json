@@ -130,7 +130,7 @@
       "name": "Brilliant Dining Credit",
       "amount": 300,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "dining",
       "description": "Up to $300 per year (up to $25 per month) in statement credits for eligible purchases at restaurants worldwide.",
       "reset_type": "calendar_year"
     },
@@ -138,7 +138,7 @@
       "name": "Marriott Property Credit",
       "amount": 100,
       "frequency": "annual",
-      "category": "Per stay",
+      "category": "travel",
       "description": "Up to $100 property credit for qualifying charges at The Ritz-Carlton or St. Regis when booking direct for a two-night minimum stay using the card.",
       "reset_type": "calendar_year"
     }

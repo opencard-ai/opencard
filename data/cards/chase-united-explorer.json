@@ -103,13 +103,13 @@
       "name": "United Travel Credit",
       "amount": 100,
       "frequency": "annual",
-      "category": "airline"
+      "category": "travel"
     },
     {
       "name": "United Hotels Credit",
       "amount": 100,
       "frequency": "annual",
-      "category": "airline"
+      "category": "travel"
     },
     {
       "name": "Rideshare Credit",

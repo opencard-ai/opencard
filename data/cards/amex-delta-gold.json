@@ -102,13 +102,13 @@
       "name": "Delta Stays Credit",
       "amount": 100,
       "frequency": "annual",
-      "category": "airline"
+      "category": "travel"
     },
     {
       "name": "Delta Flight Credit",
       "amount": 200,
       "frequency": "annual",
-      "category": "airline"
+      "category": "travel"
     }
   ]
 }

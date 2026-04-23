@@ -80,7 +80,7 @@
       "name": "$300 Annual Travel Credit",
       "amount": 300,
       "frequency": "annual",
-      "category": "annual",
+      "category": "travel",
       "description": "For bookings made through Capital One Travel",
       "reset_type": "calendar_year"
     },
@@ -88,7 +88,7 @@
       "name": "10,000 Anniversary Miles",
       "amount": 100,
       "frequency": "annual",
-      "category": "annual",
+      "category": "travel",
       "description": "Awarded every year on cardholder anniversary",
       "reset_type": "calendar_year"
     },
@@ -96,7 +96,7 @@
       "name": "Global Entry or TSA PreCheck Credit",
       "amount": 100,
       "frequency": "annual",
-      "category": "annual",
+      "category": "travel",
       "description": "Up to $100 every 4 years",
       "reset_type": "calendar_year"
     }

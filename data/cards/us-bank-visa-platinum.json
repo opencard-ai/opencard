@@ -88,7 +88,7 @@
       "name": "$20 annual statement credit",
       "amount": 20,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "other",
       "description": "$20 credit for 11 consecutive months of purchases (requires enrolled in U.S. Bank ExtendPay)",
       "reset_type": "calendar_year"
     }

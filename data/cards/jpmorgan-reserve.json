@@ -132,7 +132,7 @@
       "name": "Travel Credit",
       "amount": 300,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "travel",
       "description": "$300 annual credit on travel purchases",
       "reset_type": "calendar_year"
     },
@@ -140,7 +140,7 @@
       "name": "DoorDash Credit",
       "amount": 15,
       "frequency": "annual",
-      "category": "Monthly",
+      "category": "dining",
       "description": "$15 monthly DoorDash credit ($180/year)",
       "reset_type": "calendar_year"
     },
@@ -148,7 +148,7 @@
       "name": "Instacart Credit",
       "amount": 15,
       "frequency": "annual",
-      "category": "Monthly",
+      "category": "groceries",
       "description": "$15 monthly Instacart credit ($180/year)",
       "reset_type": "calendar_year"
     },
@@ -156,7 +156,7 @@
       "name": "Gopuff Credit",
       "amount": 10,
       "frequency": "annual",
-      "category": "Monthly",
+      "category": "shopping",
       "description": "$10 monthly Gopuff credit ($120/year)",
       "reset_type": "calendar_year"
     },
@@ -164,7 +164,7 @@
       "name": "Peloton Credit",
       "amount": 30,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "fitness",
       "description": "Up to $30 back on Peloton App",
       "reset_type": "calendar_year"
     }

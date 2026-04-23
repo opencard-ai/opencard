@@ -103,7 +103,7 @@
       "name": "Amex Travel Credit",
       "amount": 200,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "travel",
       "description": "$200 annual credit for incidental fees at one selected airline.",
       "reset_type": "calendar_year"
     },
@@ -111,7 +111,7 @@
       "name": "Dell Technologies Credit",
       "amount": 400,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "shopping",
       "description": "Up to $400 statement credit per year for U.S. Dell Technologies purchases (up to $200 through July 2025, increased to $400 after).",
       "reset_type": "calendar_year"
     },
@@ -119,7 +119,7 @@
       "name": "Hotel Collection Credit",
       "amount": 600,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "travel",
       "description": "$600 in statement credits when booking The Hotel Collection properties through Amex Travel.",
       "reset_type": "calendar_year"
     },
@@ -127,7 +127,7 @@
       "name": "Walmart+ Membership Credit",
       "amount": 155,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "shopping",
       "description": "Up to $155.40 per year in Walmart+ credits (~$12.95/month).",
       "reset_type": "calendar_year"
     }

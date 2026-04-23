@@ -106,13 +106,13 @@
       "name": "annual airline credit",
       "amount": 50,
       "frequency": "annual",
-      "category": "airline"
+      "category": "travel"
     },
     {
       "name": "$50 annual airline credit",
       "amount": 50,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "travel",
       "description": "$50 annual statement credit for airline purchases (requires $50 minimum airline purchase)",
       "reset_type": "calendar_year"
     }

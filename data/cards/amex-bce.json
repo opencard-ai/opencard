@@ -93,7 +93,7 @@
       "name": "Disney Streaming Credit",
       "amount": 84,
       "frequency": "annual",
-      "category": "Monthly",
+      "category": "streaming",
       "description": "$7 monthly credit at Disney+, Hulu, or ESPN+.",
       "reset_type": "calendar_year"
     }
