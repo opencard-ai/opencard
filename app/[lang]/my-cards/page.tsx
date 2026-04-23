@@ -579,27 +579,33 @@ export default function MyCardsPage({
                           onClick={(e) => {
     e.preventDefault();
     e.stopPropagation();
-    // Simple month picker
-    const m = prompt('Enter open MONTH (1-12):');
-    if (!m) return;
-    const y = prompt('Enter open YEAR (e.g., 2024):');
-    if (!y) return;
-    const month = parseInt(m);
-    const year = parseInt(y);
-    if (month < 1 || month > 12 || year < 2020 || year > 2026) {
-      alert('Invalid: month 1-12, year 2020-2026');
-      return;
-    }
-    const em = localStorage.getItem('opencard_subscribed_email');
-    if (!em) { alert('Please subscribe first'); return; }
-    fetch('/api/my-cards/set-open-date', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: em, card_id: card.card_id, month, year }),
-    }).then(r => r.json()).then(d => {
-      if (d.success) alert('Saved ' + month + '/' + year + ' for ' + card.name + '!');
-      else alert('Error: ' + (d.error || 'failed'));
-    }).catch(() => alert('Network error'));
+    // Create a temporary date input to show native calendar picker
+    const input = document.createElement('input');
+    input.type = 'date';
+    input.min = '2020-01-01';
+    input.max = '2026-12-31';
+    input.style.cssText = 'position:absolute;opacity:0;pointer-events:none';
+    document.body.appendChild(input);
+    input.showPicker ? input.showPicker() : input.click();
+    input.addEventListener('change', function() {
+      const val = this.value;
+      if (!val) return;
+      const [year, month] = val.split('-').map(Number);
+      const em = localStorage.getItem('opencard_subscribed_email');
+      if (!em) { alert('Please subscribe first'); return; }
+      fetch('/api/my-cards/set-open-date', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: em, card_id: card.card_id, month, year }),
+      }).then(r => r.json()).then(d => {
+        if (d.success) alert('Saved ' + month + '/' + year + ' for ' + card.name + '!');
+        else alert('Error: ' + (d.error || 'failed'));
+      }).catch(() => alert('Network error'));
+      document.body.removeChild(input);
+    });
+    input.addEventListener('blur', function() {
+      if (document.body.contains(input)) document.body.removeChild(input);
+    });
   }}
                           className="text-xs text-blue-500 hover:text-blue-700 cursor-pointer"
                         >
@@ -612,27 +618,33 @@ export default function MyCardsPage({
                         onClick={(e) => {
     e.preventDefault();
     e.stopPropagation();
-    // Simple month picker
-    const m = prompt('Enter open MONTH (1-12):');
-    if (!m) return;
-    const y = prompt('Enter open YEAR (e.g., 2024):');
-    if (!y) return;
-    const month = parseInt(m);
-    const year = parseInt(y);
-    if (month < 1 || month > 12 || year < 2020 || year > 2026) {
-      alert('Invalid: month 1-12, year 2020-2026');
-      return;
-    }
-    const em = localStorage.getItem('opencard_subscribed_email');
-    if (!em) { alert('Please subscribe first'); return; }
-    fetch('/api/my-cards/set-open-date', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: em, card_id: card.card_id, month, year }),
-    }).then(r => r.json()).then(d => {
-      if (d.success) alert('Saved ' + month + '/' + year + ' for ' + card.name + '!');
-      else alert('Error: ' + (d.error || 'failed'));
-    }).catch(() => alert('Network error'));
+    // Create a temporary date input to show native calendar picker
+    const input = document.createElement('input');
+    input.type = 'date';
+    input.min = '2020-01-01';
+    input.max = '2026-12-31';
+    input.style.cssText = 'position:absolute;opacity:0;pointer-events:none';
+    document.body.appendChild(input);
+    input.showPicker ? input.showPicker() : input.click();
+    input.addEventListener('change', function() {
+      const val = this.value;
+      if (!val) return;
+      const [year, month] = val.split('-').map(Number);
+      const em = localStorage.getItem('opencard_subscribed_email');
+      if (!em) { alert('Please subscribe first'); return; }
+      fetch('/api/my-cards/set-open-date', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: em, card_id: card.card_id, month, year }),
+      }).then(r => r.json()).then(d => {
+        if (d.success) alert('Saved ' + month + '/' + year + ' for ' + card.name + '!');
+        else alert('Error: ' + (d.error || 'failed'));
+      }).catch(() => alert('Network error'));
+      document.body.removeChild(input);
+    });
+    input.addEventListener('blur', function() {
+      if (document.body.contains(input)) document.body.removeChild(input);
+    });
   }}
                         className="text-xs text-blue-600 hover:text-blue-800 font-medium cursor-pointer"
                       >
