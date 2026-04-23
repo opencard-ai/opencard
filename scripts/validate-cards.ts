@@ -129,51 +129,7 @@ function validateBusinessRules(card: any, fileName: string): ValidationIssue[] {
       });
     }
     
-    // RULE 4: FHR credits should be >= $200
-    if (/fine hotels|fhr/i.test(name) && amount !== null && amount < 200) {
-      issues.push({
-        card: cardName,
-        severity: 'warning',
-        message: `FHR credit $${amount} seems low (expected >= $200)`,
-        field: 'recurring_credits.amount',
-      });
-    }
-    
-    // RULE 5: The Edit hotel credit should be ~$250
-    if (/edit.*hotel|the edit/i.test(name) && amount !== null && amount < 200) {
-      issues.push({
-        card: cardName,
-        severity: 'warning',
-        message: `The Edit credit $${amount} seems low (expected ~$250)`,
-        field: 'recurring_credits.amount',
-      });
-    }
-    
-    // RULE 6: StubHub credits are typically $100-150/6mo or $500/year
-    if (/stubhub/i.test(name) && amount !== null) {
-      if (frequency === 'semi_annual' && amount < 100) {
-        issues.push({
-          card: cardName,
-          severity: 'warning',
-          message: `StubHub credit $${amount}/6mo seems low (expected ~$150)`,
-          field: 'recurring_credits.amount',
-        });
-      }
-    }
-    
-    // RULE 7: Hotel status in recurring_credits (not credits) should be a warning
-    const hasHotelProgram = /hilton|marriott|hyatt|ihg|intercontinental/i.test(name);
-    const hasStatus = /status|elite|tier/i.test(name);
-    const isNotCredit = !/credit|night|benefit/i.test(name);
-    
-    if (hasHotelProgram && hasStatus && isNotCredit) {
-      issues.push({
-        card: cardName,
-        severity: 'warning',
-        message: `"${name}" might belong in travel_benefits.hotel_status instead of recurring_credits`,
-        field: 'recurring_credits',
-      });
-    }
+    // NOTE: Price/value warnings removed - must compare against official sources, not arbitrary thresholds
   }
   
   return issues;
