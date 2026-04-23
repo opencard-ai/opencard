@@ -157,22 +157,6 @@
       "reset_type": "cardmember_year"
     },
     {
-      "name": "Hilton Honors Gold Status",
-      "amount": null,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Hilton Honors Gold status.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Marriott Bonvoy Gold Status",
-      "amount": null,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Marriott Bonvoy Gold status.",
-      "reset_type": "cardmember_year"
-    },
-    {
       "name": "Saks Fifth Avenue Credit",
       "amount": 100,
       "frequency": "annual",

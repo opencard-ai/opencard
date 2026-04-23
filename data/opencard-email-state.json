@@ -1,12 +1,12 @@
 {
   "last_seen_ids": [
-    "<0101019db77e9597-37c7ddf1-87ae-42a5-9881-6c5c4948b23c-000000@us-west-2.amazonses.com>",
-    "<0101019db77d7ea0-0d1d4427-25f4-432d-9cb2-08df94055b0e-000000@us-west-2.amazonses.com>",
-    "<0101019db77c4d75-5eca21bb-4160-4954-a361-27b3f42c702c-000000@us-west-2.amazonses.com>",
-    "<0101019db77bb260-8ec8f98e-9f72-4ce1-ae5c-20aa2407e391-000000@us-west-2.amazonses.com>",
-    "<0101019db77b1448-4b1d53bc-094d-4f37-a8db-3863d77c2be7-000000@us-west-2.amazonses.com>"
+    "<xBxHgjnlRGqUx1u9dreffg@geopod-ismtpd-94>",
+    "<bcda58a0cf676f2669330c0d34c2f82c026a84d0-20401107-111841305@google.com>",
+    "<0101019db8241456-d143c98f-5aab-4112-b98e-24d2f0dcdc7e-000000@us-west-2.amazonses.com>",
+    "<0101019db8171118-839733d7-477f-4882-8c75-2ba3200a55cd-000000@us-west-2.amazonses.com>",
+    "<0101019db814d582-c0cffafe-68d3-4616-8b44-980f8b3661a3-000000@us-west-2.amazonses.com>"
   ],
-  "last_check": "2026-04-23T01:04:00.000Z",
+  "last_check": "2026-04-23T05:07:00.000Z",
   "inbox": "orangeisland539@agentmail.to",
-  "new_emails_this_check": 5
+  "new_emails_this_check": 2
 }
