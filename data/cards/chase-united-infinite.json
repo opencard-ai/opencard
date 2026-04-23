@@ -38,7 +38,16 @@
   "annual_credits": [],
   "travel_benefits": {
     "hotel_status": [],
-    "other_benefits": []
+    "other_benefits": [
+      {
+        "name": "United Club Access",
+        "description": "Complimentary United Club access."
+      },
+      {
+        "name": "Premier Access",
+        "description": "Premier boarding + same-day upgrade."
+      }
+    ]
   },
   "fhr_thc": {
     "fhr_eligible": false,
@@ -64,22 +73,6 @@
   },
   "last_updated": "2026-04-16T13:41:49.971Z",
   "recurring_credits": [
-    {
-      "name": "United Club Access",
-      "amount": null,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary United Club access.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Premier Access",
-      "amount": null,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Premier boarding + same-day upgrade.",
-      "reset_type": "cardmember_year"
-    },
     {
       "name": "Global Entry Credit",
       "amount": 100,

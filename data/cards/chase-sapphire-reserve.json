@@ -59,6 +59,10 @@
       {
         "name": "Points Transfer",
         "description": "1 to 1 value to leading airline and hotel partners."
+      },
+      {
+        "name": "Priority Pass Membership",
+        "description": "Complimentary Priority Pass Select membership with 1,300+ airport lounges worldwide. Includes 2 guests."
       }
     ]
   },
@@ -126,14 +130,6 @@
       "frequency": "annual",
       "category": "travel",
       "description": "Up to $120 every 4 years for Global Entry, TSA PreCheck, or NEXUS application fee.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Priority Pass Membership",
-      "amount": null,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Priority Pass Select membership with 1,300+ airport lounges worldwide. Includes 2 guests.",
       "reset_type": "cardmember_year"
     },
     {

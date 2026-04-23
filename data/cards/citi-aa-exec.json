@@ -28,7 +28,16 @@
   "annual_credits": [],
   "travel_benefits": {
     "hotel_status": [],
-    "other_benefits": []
+    "other_benefits": [
+      {
+        "name": "Admirys Club Access",
+        "description": "Complimentary Admirys Club access."
+      },
+      {
+        "name": "10% Miles Bonus",
+        "description": "10% bonus on AAdvantage miles earned."
+      }
+    ]
   },
   "fhr_thc": {
     "fhr_eligible": false,
@@ -58,27 +67,11 @@
   "last_updated": "2026-04-16T13:41:49.973Z",
   "recurring_credits": [
     {
-      "name": "Admirys Club Access",
-      "amount": null,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Admirys Club access.",
-      "reset_type": "cardmember_year"
-    },
-    {
       "name": "Global Entry Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "travel",
       "description": "Up to $100 every 4 years for Global Entry.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "10% Miles Bonus",
-      "amount": null,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "10% bonus on AAdvantage miles earned.",
       "reset_type": "cardmember_year"
     }
   ]

@@ -23,7 +23,9 @@
   "annual_credits": [],
   "travel_benefits": {
     "hotel_status": [],
-    "other_benefits": []
+    "other_benefits": [
+      "Morgan Stanley Benefits"
+    ]
   },
   "fhr_thc": {
     "fhr_eligible": false,
@@ -80,14 +82,6 @@
       "frequency": "annual",
       "category": "travel",
       "description": "Up to $100 every 4 years for Global Entry.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Morgan Stanley Benefits",
-      "amount": null,
-      "frequency": "annual",
-      "category": "other",
-      "description": "Morgan Stanley exclusive benefits.",
       "reset_type": "cardmember_year"
     }
   ]

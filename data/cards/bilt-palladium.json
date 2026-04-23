@@ -50,7 +50,10 @@
   "travel_benefits": {
     "hotel_status": [],
     "lounge_access": [],
-    "other_benefits": []
+    "other_benefits": [
+      "Bilt Elite Status",
+      "No Foreign Trans Fee"
+    ]
   },
   "fhr_thc": {
     "fhr_eligible": false,
@@ -72,22 +75,5 @@
   "annual_credits": [],
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
-  "recurring_credits": [
-    {
-      "name": "Bilt Elite Status",
-      "amount": null,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Bilt Elite status (top tier).",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "No Foreign Trans Fee",
-      "amount": null,
-      "frequency": "annual",
-      "category": "other",
-      "description": "No foreign transaction fees.",
-      "reset_type": "cardmember_year"
-    }
-  ]
+  "recurring_credits": []
 }
