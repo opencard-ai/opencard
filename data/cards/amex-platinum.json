@@ -103,7 +103,7 @@
     {
       "name": "Fine Hotels + Resorts Credit",
       "amount": 200,
-      "frequency": "semi_annual",
+      "frequency": "per_stay",
       "category": "travel",
       "description": "$200 credit per stay at Fine Hotels + Resorts properties (up to $400/year).",
       "reset_type": "cardmember_year"
