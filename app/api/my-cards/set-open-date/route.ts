@@ -45,9 +45,9 @@ export async function POST(req: NextRequest) {
     const emailHash = await hashEmail(email.toLowerCase().trim());
     const openDatesKey = `${USER_PREFIX}${emailHash}:open_dates`;
     
-    const existing = await redis.get<string>(openDatesKey);
+    const existing = await redis.get(openDatesKey); // Remove <string> type hint
     console.log("POST: existing raw value=", existing, "type=", typeof existing);
-    const dates = existing ? JSON.parse(existing) : {};
+    const dates = existing ? existing : {}; // Directly use existing object
     
     dates[card_id] = { month: Number(month), year: Number(year), updated_at: Date.now() };
     
@@ -80,9 +80,9 @@ export async function GET(req: NextRequest) {
     const emailHash = await hashEmail(email.toLowerCase().trim());
     const openDatesKey = `${USER_PREFIX}${emailHash}:open_dates`;
     
-    const existing = await redis.get<string>(openDatesKey);
+    const existing = await redis.get(openDatesKey); // Remove <string> type hint
     console.log("GET: existing raw value=", existing, "type=", typeof existing);
-    const dates = existing ? JSON.parse(existing) : {};
+    const dates = existing ? existing : {}; // Directly use existing object
 
     return NextResponse.json({ open_dates: dates });
   } catch (err: any) {
