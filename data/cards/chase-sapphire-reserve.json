@@ -107,9 +107,9 @@
     {
       "name": "Dining Credit",
       "amount": 300,
-      "frequency": "annual",
+      "frequency": "semi_annual",
       "category": "dining",
-      "description": "$300/year ($150/6 months) for dining at Sapphire Exclusive Tables via OpenTable. Must book via Chase.",
+      "description": "$300 every 6 months for dining at Sapphire Exclusive Tables via OpenTable. Must book via Chase.",
       "reset_type": "cardmember_year"
     },
     {
