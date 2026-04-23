@@ -76,7 +76,7 @@
       "name": "$250 Travel Credit",
       "amount": 250,
       "frequency": "annual",
-      "category": "annual",
+      "category": "travel",
       "description": "One-time credit for Capital One Travel (introductory offer)",
       "reset_type": "calendar_year"
     },
@@ -84,7 +84,7 @@
       "name": "Global Entry or TSA PreCheck Credit",
       "amount": 100,
       "frequency": "annual",
-      "category": "annual",
+      "category": "travel",
       "description": "Up to $100 every 4 years",
       "reset_type": "calendar_year"
     }

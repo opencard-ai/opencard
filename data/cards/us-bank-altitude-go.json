@@ -94,7 +94,7 @@
       "name": "$15 streaming credit",
       "amount": 15,
       "frequency": "annual",
-      "category": "Quarterly",
+      "category": "streaming",
       "description": "$15 statement credit for streaming subscriptions (activated quarterly)",
       "reset_type": "calendar_year"
     }

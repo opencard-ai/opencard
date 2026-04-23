@@ -90,7 +90,7 @@
       "name": "Annual Airline Credit",
       "amount": 300,
       "frequency": "annual",
-      "category": "airline"
+      "category": "travel"
     },
     {
       "name": "Annual Dining Credit",

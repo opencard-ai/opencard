@@ -107,13 +107,13 @@
       "name": "United TravelBank Cash",
       "amount": 200,
       "frequency": "annual",
-      "category": "airline"
+      "category": "travel"
     },
     {
       "name": "Renowned Hotels and Resorts Credit",
       "amount": 150,
       "frequency": "annual",
-      "category": "hotel"
+      "category": "travel"
     }
   ]
 }

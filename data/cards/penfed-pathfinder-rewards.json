@@ -92,7 +92,7 @@
       "name": "$100 annual credit for travel",
       "amount": 100,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "travel",
       "description": "$100 statement credit for travel purchases each year (for Honors Advantage members)",
       "reset_type": "calendar_year"
     }

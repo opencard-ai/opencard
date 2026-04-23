@@ -101,7 +101,7 @@
       "name": "Travel credit",
       "amount": 325,
       "frequency": "annual",
-      "category": "Annual",
+      "category": "travel",
       "description": "$325 annual credit for travel purchases (must be booked through US Bank Travel Center or direct with airline)",
       "reset_type": "calendar_year"
     }

@@ -63,7 +63,7 @@
       "name": "Flexible Business Credit",
       "amount": 240,
       "frequency": "annual",
-      "category": "business",
+      "category": "other",
       "description": "Up to $20 in statement credits each month for eligible U.S. purchases at FedEx, Grubhub, and Office Supply Stores. Enrollment required.",
       "reset_type": "calendar_year"
     },
@@ -79,7 +79,7 @@
       "name": "FedEx, Grubhub, Office Supply Stores Credit",
       "amount": 240,
       "frequency": "annual",
-      "category": "annual",
+      "category": "shopping",
       "description": "Up to $20 in statement credits monthly after using the Business Gold Card for eligible U.S. purchases at FedEx, Grubhub, and Office Supply Stores. Enrollment required.",
       "reset_type": "calendar_year"
     }

@@ -119,7 +119,7 @@
       "name": "$100 Annual Hotel Benefit",
       "amount": 100,
       "frequency": "annual",
-      "category": "annual",
+      "category": "travel",
       "description": "Once per calendar year, enjoy $100 off a single hotel stay of $500 or more (excluding taxes and fees) when booked through CitiTravel",
       "reset_type": "calendar_year"
     }
