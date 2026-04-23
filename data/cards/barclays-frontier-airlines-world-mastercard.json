@@ -60,7 +60,8 @@
   ],
   "sources": [
     {
-      "url": "nerdwallet.com"
+      "url": "https://cards.barclaycardus.com/banking/cards/frontier-airlines-world-mastercard/",
+      "notes": "Barclays official card page"
     },
     {
       "url": "barclaycardus.com"
