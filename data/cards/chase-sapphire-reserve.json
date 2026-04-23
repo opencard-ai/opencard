@@ -138,10 +138,10 @@
     },
     {
       "name": "StubHub Credit",
-      "amount": 500,
-      "frequency": "annual",
+      "amount": 150,
+      "frequency": "semi_annual",
       "category": "entertainment",
-      "description": "$500 annual credit ($125/quarter) for StubHub purchases.",
+      "description": "$150 every 6 months for StubHub purchases.",
       "reset_type": "cardmember_year"
     }
   ]
