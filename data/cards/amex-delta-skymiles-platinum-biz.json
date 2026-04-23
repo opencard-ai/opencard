@@ -53,7 +53,8 @@
       "First checked bag free on Delta flights",
       "15% discount on Delta award flights",
       "No Foreign Transaction Fees",
-      "Medallion Qualification Dollar (MQD) credits"
+      "Medallion Qualification Dollar (MQD) credits",
+      "Delta Sky Club Access"
     ]
   },
   "fhr_thc": {
@@ -91,14 +92,6 @@
     "notes": null
   },
   "recurring_credits": [
-    {
-      "name": "Delta Sky Club Access",
-      "amount": null,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Delta Sky Club access.",
-      "reset_type": "cardmember_year"
-    },
     {
       "name": "Global Entry Credit",
       "amount": 100,

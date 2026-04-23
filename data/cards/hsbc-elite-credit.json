@@ -52,6 +52,10 @@
       {
         "name": "Annual fee offset",
         "description": "Points can be redeemed to offset the $495 annual fee at preferential rate"
+      },
+      {
+        "name": "Airport Lounge Access",
+        "description": "Complimentary lounge access."
       }
     ]
   },
@@ -100,14 +104,6 @@
     "notes": null
   },
   "recurring_credits": [
-    {
-      "name": "Airport Lounge Access",
-      "amount": null,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary lounge access.",
-      "reset_type": "cardmember_year"
-    },
     {
       "name": "Global Entry Credit",
       "amount": 100,

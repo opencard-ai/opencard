@@ -41,7 +41,11 @@
       "2% value for airfare redemptions",
       "1.5% value for cash back redemptions",
       "No foreign transaction fees",
-      "Metal card"
+      "Metal card",
+      {
+        "name": "Airport Lounge Access",
+        "description": "Complimentary lounge access."
+      }
     ]
   },
   "fhr_thc": {
@@ -81,14 +85,6 @@
     "notes": null
   },
   "recurring_credits": [
-    {
-      "name": "Airport Lounge Access",
-      "amount": null,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary lounge access.",
-      "reset_type": "cardmember_year"
-    },
     {
       "name": "Travel Credit",
       "amount": 200,

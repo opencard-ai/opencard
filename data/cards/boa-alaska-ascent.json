@@ -31,7 +31,11 @@
       "notes": ""
     }
   ],
-  "travel_benefits": {},
+  "travel_benefits": {
+    "other_benefits": [
+      "Alaska Lounge Access"
+    ]
+  },
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
@@ -66,14 +70,5 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "name": "Alaska Lounge Access",
-      "amount": null,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Alaska Airlines Lounge access.",
-      "reset_type": "cardmember_year"
-    }
-  ]
+  "recurring_credits": []
 }
