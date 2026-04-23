@@ -600,8 +600,7 @@ export default function MyCardsPage({
 win.document.getElementById("save-btn")!.onclick = () => {
   const m = win.document.getElementById("sel-month")!.value;
   const y = win.document.getElementById("sel-year")!.value;
-        const y = win.document.getElementById('sel-year').value;
-        const em = localStorage.getItem('opencard_subscribed_email');
+                const em = localStorage.getItem('opencard_subscribed_email');
         if (!em) { alert('No email'); return; }
         fetch('/api/my-cards/set-open-date', {
           method: 'POST',
