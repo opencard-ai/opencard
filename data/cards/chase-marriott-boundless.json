@@ -47,6 +47,10 @@
       {
         "name": "Pathway to Gold",
         "description": "Earn Gold Elite status by spending $35,000 on purchases each calendar year."
+      },
+      {
+        "name": "Marriott Bonvoy Elite Nights",
+        "description": "15 Elite nights credit toward Marriott status."
       }
     ]
   },
@@ -92,14 +96,6 @@
       "frequency": "annual",
       "category": "travel",
       "description": "1 Free Night Award (up to 35,000 points) annually.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Marriott Bonvoy Elite Nights",
-      "amount": null,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "15 Elite nights credit toward Marriott status.",
       "reset_type": "cardmember_year"
     }
   ]
