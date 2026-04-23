@@ -129,7 +129,24 @@ function validateBusinessRules(card: any, fileName: string): ValidationIssue[] {
       });
     }
     
-    // NOTE: Price/value warnings removed - must compare against official sources, not arbitrary thresholds
+    // RULE 4: Null-amount credits (except Free Night) should be in benefits, not recurring_credits
+    // Free Night is treated as cash equivalent, so it stays in recurring_credits
+    // Exclude: Daily Cash (%), Foreign Trans Fee (fee setting), Apple Card Family (feature)
+    if (amount === null || amount === undefined) {
+      const isFreeNight = /free.?night/i.test(name);
+      const isCashback = /daily.?cash|cash.?back|%.*match/i.test(name);
+      const isFee = /foreign.?trans|fee/i.test(name);
+      const isFeature = /apple.?card.?family|family.?share/i.test(name);
+      
+      if (!isFreeNight && !isCashback && !isFee && !isFeature) {
+        issues.push({
+          card: cardName,
+          severity: 'warning',
+          message: `"${name}" has no dollar amount. Non-cash benefits (status, access, etc.) should be in travel_benefits.other_benefits, not recurring_credits. Free Night is an exception (cash equivalent).`,
+          field: 'recurring_credits',
+        });
+      }
+    }
   }
   
   return issues;
