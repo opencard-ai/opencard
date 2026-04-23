@@ -27,7 +27,12 @@
   ],
   "annual_credits": [],
   "travel_benefits": {
-    "hotel_status": [],
+    "hotel_status": [
+      {
+        "program": "Hilton Honors",
+        "tier": "Diamond"
+      }
+    ],
     "other_benefits": [],
     "lounge_access": {
       "centurion": false,
@@ -65,14 +70,6 @@
       "frequency": "annual",
       "category": "travel",
       "description": "$250 annual credit at Hilton resorts.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Hilton Honors Diamond Status",
-      "amount": null,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Hilton Honors Diamond status.",
       "reset_type": "cardmember_year"
     }
   ]
