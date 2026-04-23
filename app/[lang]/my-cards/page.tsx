@@ -578,40 +578,28 @@ export default function MyCardsPage({
                           type="button"
                           onClick={(e) => {
     e.preventDefault();
-    // Show a simple select UI
-    let html = '<div style="padding:16px;font-family:system-ui">';
-    html += '<h3 style="margin:0 0 12px">Select Open Date</h3>';
-    html += '<div style="margin-bottom:12px">';
-    html += '<label>Month: </label><select id="sel-month" style="padding:8px">';
-    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    for (let i=1; i<=12; i++) html += '<option value="'+i+'">'+i+'. '+months[i-1]+'</option>';
-    html += '</select></div>';
-    html += '<div style="margin-bottom:16px">';
-    html += '<label>Year: </label><select id="sel-year" style="padding:8px">';
-    for (let y=2020; y<=2026; y++) html += '<option value="'+y+'">'+y+'</option>';
-    html += '</select></div>';
-    html += '<button id="save-btn" style="padding:10px 20px;background:#1e40af;color:white;border:none;border-radius:6px;cursor:pointer">Save</button>';
-    html += '</div>';
-    const win = window.open('', 'OpenDate', 'width=300,height=250');
-    if (win) {
-      win.document.write('<html><body style="margin:0">'+html+'</body></html>');
-
-// @ts-ignore
-win.document.getElementById("save-btn")!.onclick = () => {
-  const m = win.document.getElementById("sel-month")!.value;
-  const y = win.document.getElementById("sel-year")!.value;
-                const em = localStorage.getItem('opencard_subscribed_email');
-        if (!em) { alert('No email'); return; }
-        fetch('/api/my-cards/set-open-date', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: em, card_id: card.card_id, month: parseInt(m), year: parseInt(y) }),
-        }).then(r => r.json()).then(d => {
-          if (d.success) { alert('Saved!'); win.close(); location.reload(); }
-          else { alert('Error'); }
-        });
-      };
+    e.stopPropagation();
+    // Simple month picker
+    const m = prompt('Enter open MONTH (1-12):');
+    if (!m) return;
+    const y = prompt('Enter open YEAR (e.g., 2024):');
+    if (!y) return;
+    const month = parseInt(m);
+    const year = parseInt(y);
+    if (month < 1 || month > 12 || year < 2020 || year > 2026) {
+      alert('Invalid: month 1-12, year 2020-2026');
+      return;
     }
+    const em = localStorage.getItem('opencard_subscribed_email');
+    if (!em) { alert('Please subscribe first'); return; }
+    fetch('/api/my-cards/set-open-date', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: em, card_id: card.card_id, month, year }),
+    }).then(r => r.json()).then(d => {
+      if (d.success) alert('Saved ' + month + '/' + year + ' for ' + card.name + '!');
+      else alert('Error: ' + (d.error || 'failed'));
+    }).catch(() => alert('Network error'));
   }}
                           className="text-xs text-blue-500 hover:text-blue-700 cursor-pointer"
                         >
@@ -623,38 +611,28 @@ win.document.getElementById("save-btn")!.onclick = () => {
                         type="button"
                         onClick={(e) => {
     e.preventDefault();
-    // Show a simple select UI
-    let html = '<div style="padding:16px;font-family:system-ui">';
-    html += '<h3 style="margin:0 0 12px">Select Open Date</h3>';
-    html += '<div style="margin-bottom:12px">';
-    html += '<label>Month: </label><select id="sel-month" style="padding:8px">';
-    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    for (let i=1; i<=12; i++) html += '<option value="'+i+'">'+i+'. '+months[i-1]+'</option>';
-    html += '</select></div>';
-    html += '<div style="margin-bottom:16px">';
-    html += '<label>Year: </label><select id="sel-year" style="padding:8px">';
-    for (let y=2020; y<=2026; y++) html += '<option value="'+y+'">'+y+'</option>';
-    html += '</select></div>';
-    html += '<button id="save-btn" style="padding:10px 20px;background:#1e40af;color:white;border:none;border-radius:6px;cursor:pointer">Save</button>';
-    html += '</div>';
-    const win = window.open('', 'OpenDate', 'width=300,height=250');
-    if (win) {
-      win.document.write('<html><body style="margin:0">'+html+'</body></html>');
-      win.document.getElementById('save-btn').onclick = () => {
-        const m = win.document.getElementById('sel-month').value;
-        const y = win.document.getElementById('sel-year').value;
-        const em = localStorage.getItem('opencard_subscribed_email');
-        if (!em) { alert('No email'); return; }
-        fetch('/api/my-cards/set-open-date', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: em, card_id: card.card_id, month: parseInt(m), year: parseInt(y) }),
-        }).then(r => r.json()).then(d => {
-          if (d.success) { alert('Saved!'); win.close(); location.reload(); }
-          else { alert('Error'); }
-        });
-      };
+    e.stopPropagation();
+    // Simple month picker
+    const m = prompt('Enter open MONTH (1-12):');
+    if (!m) return;
+    const y = prompt('Enter open YEAR (e.g., 2024):');
+    if (!y) return;
+    const month = parseInt(m);
+    const year = parseInt(y);
+    if (month < 1 || month > 12 || year < 2020 || year > 2026) {
+      alert('Invalid: month 1-12, year 2020-2026');
+      return;
     }
+    const em = localStorage.getItem('opencard_subscribed_email');
+    if (!em) { alert('Please subscribe first'); return; }
+    fetch('/api/my-cards/set-open-date', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: em, card_id: card.card_id, month, year }),
+    }).then(r => r.json()).then(d => {
+      if (d.success) alert('Saved ' + month + '/' + year + ' for ' + card.name + '!');
+      else alert('Error: ' + (d.error || 'failed'));
+    }).catch(() => alert('Network error'));
   }}
                         className="text-xs text-blue-600 hover:text-blue-800 font-medium cursor-pointer"
                       >
