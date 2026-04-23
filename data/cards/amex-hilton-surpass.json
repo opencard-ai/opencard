@@ -120,14 +120,6 @@
       "category": "travel",
       "description": "$250 annual credit at Hilton resorts.",
       "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Hilton Honors Gold Status",
-      "amount": null,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Complimentary Hilton Honors Gold status.",
-      "reset_type": "cardmember_year"
     }
   ]
 }

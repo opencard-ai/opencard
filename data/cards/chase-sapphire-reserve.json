@@ -114,10 +114,10 @@
     },
     {
       "name": "The Edit Hotel Credit",
-      "amount": 500,
-      "frequency": "annual",
+      "amount": 250,
+      "frequency": "semi_annual",
       "category": "travel",
-      "description": "$500 annual credit ($250 x 2 stays) for prepaid hotel bookings via The Edit by Chase Travel. 2-night minimum.",
+      "description": "$250 every 6 months ($500/year) for prepaid hotel bookings via The Edit by Chase Travel. 2-night minimum.",
       "reset_type": "cardmember_year"
     },
     {
