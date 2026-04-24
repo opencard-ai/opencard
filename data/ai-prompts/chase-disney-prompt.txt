@@ -1,0 +1,177 @@
+You are extracting structured credit card data for "Disney® Visa® Card" (chase-disney).
+
+Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
+
+{
+  "issuer": "American Express",
+  "network": "amex",
+  "annual_fee": 895,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "bonus_points": 175000,
+    "spending_requirement": 12000,
+    "time_period_months": 6,
+    "description": "Earn up to 175,000 Membership Rewards points...",
+    "point_program": "Amex Membership Rewards",
+    "estimated_value": 2100
+  },
+  "earning_rates": [
+    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
+    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
+    {"category": "Other", "rate": 1, "notes": null}
+  ],
+  "recurring_credits": [
+    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
+    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
+    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"}
+  ],
+  "travel_benefits": {
+    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
+    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
+    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
+  },
+  "hotel_program": {
+    "program": "Marriott Bonvoy",
+    "tier": "Gold Elite",
+    "elite_night_credits": 15,
+    "fhr_eligible": true,
+    "thc_eligible": true
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "return_protection": null
+  },
+  "application_rules": {
+    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+  },
+  "tags": ["lounge-access", "premium", "transferable"],
+  "sources": [{"url": "https://..."}]
+}
+
+Rules:
+- issuer: American Express, Chase, Capital One, Citi, Discover, Wells Fargo, Barclays, Bank of America, US Bank, HSBC, etc.
+- network: amex, visa, mastercard, discover
+- annual_fee: number (0 if no annual fee)
+- foreign_transaction_fee: number (0 if no fee)
+- credit_required: Excellent, Good, Fair, Poor
+- welcome_offer.bonus_points: number (0 if none)
+- welcome_offer.point_program: MR, UR, TYP, Honors, Marriott, None, etc.
+- earning_rates: array of {category, rate, notes}
+  - category: Flights, Hotels, Dining, Groceries, Gas, Other, etc.
+- recurring_credits: array of {name, amount, frequency, category, description, reset_type}
+  - frequency: monthly|quarterly|semi_annual|annual|per_stay|cardmember_year
+  - category: airline|hotel|travel|dining|groceries|gas|streaming|fitness|shopping|ride|digital|entertainment|credit_monitoring|other
+  - reset_type: calendar_year (Jan-Dec) or cardmember_year (based on card anniversary)
+  - NOTE: Free night awards go HERE (in recurring_credits), not in hotel_program
+- travel_benefits.lounge_access: array of {name, type}
+  - type: centurion, priority_pass, delta_skyclub, escape_lounge, plaza_premium, airspace, other
+- travel_benefits.hotel_status: array of {program, tier, complimentary}
+  - program: Marriott Bonvoy, Hilton Honors, IHG Rewards, World of Hyatt, etc.
+- hotel_program: {program, tier, elite_night_credits, fhr_eligible, thc_eligible}
+  - fhr_eligible/thc_eligible: only for Amex cards with FHR/THC benefits
+  - NOTE: free_night_award does NOT go here, it goes in recurring_credits
+- application_rules: {rules: [{rule, description}]}
+  - rule examples: 5/24 rule, first approval, lifetime bonus rule, etc.
+- tags: lounge-access, premium, transferable, no-af, cash-back, travel, hotel, airline, etc.
+- sources: [{url}] - the URL this data was extracted from
+
+Content (first 12000 chars):
+<!DOCTYPE html><html lang="en-US"><head><script>var tagManagerConfig = { tagServer: "https://www.chase.com" };</script><script>var analyticsLiteConfig = { svcDomain: "https://analytics.chase.com" };</script><title>Visa Credit Card from Chase and Disney | Chase.com</title><link rel="preconnect" crossorigin="anonymous" href="https://analytics.chase.com"/><link rel="preconnect" crossorigin="anonymous" href="https://reco.chase.com"/><link rel="preconnect" crossorigin="anonymous" href="https://sites.chase.com"/><link rel="preconnect" crossorigin="anonymous" href="https://asset.chase.com"/><link rel="icon" href="/etc/designs/chase-ux/favicon.ico"/><link rel="apple-touch-icon" sizes="152x152" href="/etc/designs/chase-ux/favicon-152.png"/><link rel="apple-touch-icon" sizes="120x120" href="/etc/designs/chase-ux/favicon-120.png"/><link rel="shortcut icon" href="/etc/designs/chase-ux/favicon.ico"/><link rel="apple-touch-icon" sizes="76x76" href="/etc/designs/chase-ux/favicon-76.png"/><link rel="apple-touch-icon" href="/etc/designs/chase-ux/favicon-57.png"/><link rel="alternate" hreflang="en" href="https://www.chase.com/personal/credit-cards/disney"/><meta name="description" headDatakey="description" content="Get more Disney from the Disney Visa Credit Cards from Chase"/><link rel="canonical" href="https://www.chase.com/personal/credit-cards/disney"/><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="msapplication-TileColor" content="#FFFFFF"/><meta name="msapplication-TileImage" content="/etc/designs/chase-ux/favicon-144.png"/><meta name="robots" content="noindex"/><meta content="app-id=298867247, affiliate-data=JPMorganChase" name="apple-itunes-app"/><meta name="next-head-count" content="22"/><link rel="preload" href="https://asset.chase.com/content/dam/cpo-static/fonts/opensans.woff2" as="font" type="font/woff2" crossorigin=""/><link rel="preload" href="https://asset.chase.com/content/dam/cpo-static/fonts/opensans-bold.woff2" as="font" type="font/woff2" crossorigin=""/><link rel="preload" href="https://asset.chase.com/content/dam/cpo-static/fonts/opensans-light.woff2" as="font" type="font/woff2" crossorigin=""/><link rel="preload" href="https://asset.chase.com/content/dam/cpo-static/fonts/opensans-semibold.woff2" as="font" type="font/woff2" crossorigin=""/><link rel="preload" href="https://asset.chase.com/content/dam/cpo-static/fonts/opensans-italic.woff2" as="font" type="font/woff2" crossorigin=""/><link rel="preload" href="https://asset.chase.com/content/dam/cpo-static/fonts/opensans-semibold-italic.woff2" as="font" type="font/woff2" crossorigin=""/><link rel="preload" href="https://asset.chase.com/content/dam/cpo-static/fonts/opensans-bold-italic.woff2" as="font" type="font/woff2" crossorigin=""/><link rel="preload" href="https://asset.chase.com/content/dam/cpo-static/fonts/opensans-extrabold-italic.woff2" as="font" type="font/woff2" crossorigin=""/><link rel="preload" href="https://asset.chase.com/content/dam/cpo-static/fonts/opensans-extrabold.woff2" as="font" type="font/woff2" crossorigin=""/><link rel="preload" href="https://asset.chase.com/content/dam/cpo-static/fonts/opensans-light-italic.woff2" as="font" type="font/woff2" crossorigin=""/><link rel="stylesheet" href="/_next/static/mds/6.1.6/cpo.css" type="text/css"/><style>
+  
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 300;
+      src: url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-light.woff2") format("woff2"),
+      url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-light.woff") format("woff");
+      font-display: swap;
+    }
+
+	  @font-face {
+      font-family: "Open Sans";
+      font-style: italic;
+      font-weight: 300;
+      src: url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-light-italic.woff2") format("woff2"),
+      url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-light-italic.woff") format("woff");
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 400;
+      src: url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans.woff2") format("woff2"),
+      url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans.woff") format("woff");
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Open Sans";
+      font-style: italic;
+      font-weight: 400;
+      src: url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-italic.woff2") format("woff2"),
+      url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-italic.woff") format("woff");
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 600;
+      src: url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-semibold.woff2") format("woff2"),
+      url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-semibold.woff") format("woff");
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Open Sans";
+      font-style: italic;
+      font-weight: 600;
+      src: url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-semibold-italic.woff2") format("woff2"),
+      url(https://asset.chase.com/content/dam/cpo-static/fonts/opensans-semibold-italic.woff) format("woff");
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 700;
+      src: url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-bold.woff2") format("woff2"),
+      url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-bold.woff2") format("woff");
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Open Sans";
+      font-style: italic;
+      font-weight: 700;
+      src: url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-bold-italic.woff2") format("woff2"),
+      url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-bold-italic.woff") format("woff");
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 900;
+      src: url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-extrabold.woff2") format("woff2"),
+      url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-extrabold.woff") format("woff");
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Open Sans";
+      font-style: italic;
+      font-weight: 900;
+      src: url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-extrabold-italic.woff2") format("woff2"),
+      url("https://asset.chase.com/content/dam/cpo-static/fonts/opensans-extrabold-italic.woff") format("woff");
+      font-display: swap;
+    }
+  </style><link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous"/><script data-nscript="beforeInteractive">window.USE_ADFW_ASSET_CDN=true;</script><link rel="preload" href="/_next/static/css/9435e5dc6e65c93f.css" as="style"/><link rel="stylesheet" href="/_next/static/css/9435e5dc6e65c93f.css" data-n-g=""/><link rel="preload" href="/_next/static/css/ef287054fac595b6.css" as="style"/><link rel="stylesheet" href="/_next/static/css/ef287054fac595b6.css" data-n-p=""/><link rel="preload" href="/_next/static/css/267f2325429c5075.css" as="style"/><link rel="stylesheet" href="/_next/static/css/267f2325429c5075.css"/><link rel="preload" href="/_next/static/css/2c8abc70ccaf033b.css" as="style"/><link rel="stylesheet" href="/_next/static/css/2c8abc70ccaf033b.css"/><link rel="preload" href="/_next/static/css/9488ac14af186435.css" as="style"/><link rel="stylesheet" href="/_next/static/css/9488ac14af186435.css"/><link rel="preload" href="/_next/static/css/0c88e0f1ed5c88fa.css" as="style"/><link rel="stylesheet" href="/_next/static/css/0c88e0f1ed5c88fa.css"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="https://asset.chase.com/web/library/digddsautomation/reportingjs/Reporting.js" defer="" data-nscript="beforeInteractive"></script><script defer="" src="/_next/static/chunks/6210.32b1bdec4d995075.js"></script><script defer="" src="/_next/static/chunks/1849.ab8c84ebd1aa0f0f.js"></script><script defer="" src="/_next/static/chunks/1678.7581abaf43d47eb1.js"></script><script defer="" src="/_next/static/chunks/6187.3758ab103604d81d.js"></script><script defer="" src="/_next/static/chunks/1895.496ecc8a62d90cde.js"></script><script defer="" src="/_next/static/chunks/9944.a4d7a7960bb0de03.js"></script><script defer="" src="/_next/static/chunks/8324.26f0e655edc58b62.js"></script><script defer="" src="/_next/static/chunks/2352.1923e4d48c0779d6.js"></script><script defer="" src="/_next/static/chunks/4897.3e276b25edde13ea.js"></script><script defer="" src="/_next/static/chunks/8764.af3c278960044fa2.js"></script><script defer="" src="/_next/static/chunks/7167.549332d83b8b51ba.js"></script><script defer="" src="/_next/static/chunks/599.556889b85fea5e87.js"></script><script defer="" src="/_next/static/chunks/3465.3b3918145f7a2334.js"></script><script defer="" src="/_next/static/chunks/1284.8b8c8c877f724e65.js"></script><script defer="" src="/_next/static/chunks/4998.b37c1eeb2fee19e5.js"></script><script defer="" src="/_next/static/chunks/6549.083713840403508d.js"></script><script defer="" src="/_next/static/chunks/2863.bdedb57a7bc9fe02.js"></script><script defer="" src="/_next/static/chunks/9429.03e5d91709b20205.js"></script><script defer="" src="/_next/static/chunks/2826.8051efa45628c1f6.js"></script><script defer="" src="/_next/static/chunks/4462.742bbe51215edfd3.js"></script><script defer="" src="/_next/static/chunks/9838.de6a143441fd4bcf.js"></script><script defer="" src="/_next/static/chunks/5188.a243723f315abf9b.js"></script><script defer="" src="/_next/static/chunks/2690.55dfa24fabcaadbb.js"></script><script defer="" src="/_next/static/chunks/7961.fe656e7305d25e5a.js"></script><script src="/_next/static/chunks/webpack-c58975a1c109458d.js" defer=""></script><script src="/_next/static/chunks/framework-945b357d4a851f4b.js" defer=""></script><script src="/_next/static/chunks/main-4c4eacff2ad914ab.js" defer=""></script><script src="/_next/static/chunks/pages/_app-a484eecde60b306a.js" defer=""></script><script src="/_next/static/chunks/14e95fa6-bcd5ca4ff1065b02.js" defer=""></script><script src="/_next/static/chunks/98013b0f-eea86d995d9d6658.js" defer=""></script><script src="/_next/static/chunks/5224-0067b55f27eac2ee.js" defer=""></script><script src="/_next/static/chunks/7899-4a07ea4af800e6dd.js" defer=""></script><script src="/_next/static/chunks/pages/%5B%5B...url%5D%5D-085c43e6307c10a9.js" defer=""></script><script src="/_next/static/qw6TVHO5EqS59mn0M5Vzf/_buildManifest.js" defer=""></script><script src="/_next/static/qw6TVHO5EqS59mn0M5Vzf/_ssgManifest.js" defer=""></script><style data-styled="" data-styled-version="6.1.19">:root{--root-font-size:16px;--body-bg:#FFFFFF;--body-color:#101820;--font-family:"Open Sans","Helvetica Neue",helvetica,arial,sans-serif;--primary:#FFFFFF;--primary-color:#BDC0C2;--primary-bg:#FFFFFF;--primary-transparent-bg:#FFFFFFE5;--primary-border:#101820;--primary-background-text-color:#101820;--primary-bg-promo-breaker-animation-border-color:#FFFFFF;--secondary:#676C6F;--secondary-color:#FFFFFF;--secondary-bg:#005EB8;--secondary-transparent-bg:#002F6CE5;--secondary-border:#FFFFFF;--secondary-background-text-color:#FFFFFF;--secondary-link-text-color:#FFFFFF;--secondary-link-text-hover-color:#FFFFFF;--secondary-link-text-outline-color:#FFFFFF;--light:#F5F7F8;--light-bg:#85888A;--light-transparent-bg:#85888AE5;--light-border:#FFFFFF;--light-background-text-color:#FFFFFF;--light-background-link-text-color:#FFFFFF;--light-background-link-text-hover-color:#FFFFFF;--light-background-link-text-outline-color:#FFFFFF;--neutral-bg:#F5F7F8;--neutral-transparent-bg:#
+
+Respond with JSON only. Do NOT include fields that are null or not found in the content.

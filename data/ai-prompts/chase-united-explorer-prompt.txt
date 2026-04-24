@@ -1,0 +1,90 @@
+You are extracting structured credit card data for "United℠ Explorer Card" (chase-united-explorer).
+
+Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
+
+{
+  "issuer": "American Express",
+  "network": "amex",
+  "annual_fee": 895,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "bonus_points": 175000,
+    "spending_requirement": 12000,
+    "time_period_months": 6,
+    "description": "Earn up to 175,000 Membership Rewards points...",
+    "point_program": "Amex Membership Rewards",
+    "estimated_value": 2100
+  },
+  "earning_rates": [
+    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
+    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
+    {"category": "Other", "rate": 1, "notes": null}
+  ],
+  "recurring_credits": [
+    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
+    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
+    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"}
+  ],
+  "travel_benefits": {
+    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
+    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
+    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
+  },
+  "hotel_program": {
+    "program": "Marriott Bonvoy",
+    "tier": "Gold Elite",
+    "elite_night_credits": 15,
+    "fhr_eligible": true,
+    "thc_eligible": true
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "return_protection": null
+  },
+  "application_rules": {
+    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+  },
+  "tags": ["lounge-access", "premium", "transferable"],
+  "sources": [{"url": "https://..."}]
+}
+
+Rules:
+- issuer: American Express, Chase, Capital One, Citi, Discover, Wells Fargo, Barclays, Bank of America, US Bank, HSBC, etc.
+- network: amex, visa, mastercard, discover
+- annual_fee: number (0 if no annual fee)
+- foreign_transaction_fee: number (0 if no fee)
+- credit_required: Excellent, Good, Fair, Poor
+- welcome_offer.bonus_points: number (0 if none)
+- welcome_offer.point_program: MR, UR, TYP, Honors, Marriott, None, etc.
+- earning_rates: array of {category, rate, notes}
+  - category: Flights, Hotels, Dining, Groceries, Gas, Other, etc.
+- recurring_credits: array of {name, amount, frequency, category, description, reset_type}
+  - frequency: monthly|quarterly|semi_annual|annual|per_stay|cardmember_year
+  - category: airline|hotel|travel|dining|groceries|gas|streaming|fitness|shopping|ride|digital|entertainment|credit_monitoring|other
+  - reset_type: calendar_year (Jan-Dec) or cardmember_year (based on card anniversary)
+  - NOTE: Free night awards go HERE (in recurring_credits), not in hotel_program
+- travel_benefits.lounge_access: array of {name, type}
+  - type: centurion, priority_pass, delta_skyclub, escape_lounge, plaza_premium, airspace, other
+- travel_benefits.hotel_status: array of {program, tier, complimentary}
+  - program: Marriott Bonvoy, Hilton Honors, IHG Rewards, World of Hyatt, etc.
+- hotel_program: {program, tier, elite_night_credits, fhr_eligible, thc_eligible}
+  - fhr_eligible/thc_eligible: only for Amex cards with FHR/THC benefits
+  - NOTE: free_night_award does NOT go here, it goes in recurring_credits
+- application_rules: {rules: [{rule, description}]}
+  - rule examples: 5/24 rule, first approval, lifetime bonus rule, etc.
+- tags: lounge-access, premium, transferable, no-af, cash-back, travel, hotel, airline, etc.
+- sources: [{url}] - the URL this data was extracted from
+
+Content (first 12000 chars):
+<!DOCTYPE html> <!--[if IE 7]><html class="ie ie7" lang="en-US"> <![endif]--> <!--[if IE 8]><html class="ie ie8" lang="en-US"> <![endif]--> <!--[if !(IE 7) | !(IE 8)  ]><!--><html lang="en-US"> <!--<![endif]--><head><meta charset="UTF-8" /><meta name="referrer" content="unsafe-url"><meta name="viewport" content="width=device-width" /> <!--[if lt IE 9]> <script src="https://www.uscreditcardguide.com/wp-content/themes/songwriter-premium/js/html5.js"></script> <![endif]--><link rel="pingback" href="https://www.uscreditcardguide.com/xmlrpc.php"><link media="all" href="https://www.uscreditcardguide.com/wp-content/cache/autoptimize/css/autoptimize_f8b39675668eb1cbdaa9f82fddbd8002.css" rel="stylesheet" /><link media="screen" href="https://www.uscreditcardguide.com/wp-content/cache/autoptimize/css/autoptimize_c373ff8496d24b4d524560b2d315e9d1.css" rel="stylesheet" /><title>United℠ Explorer Card Review (2026.1 Update: 80k Offer) - US Credit Card Guide</title><meta name='robots' content='max-image-preview:large' /><meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/><link rel="canonical" href="https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/" /><meta property="og:locale" content="en_US" /><meta property="og:type" content="article" /><meta property="og:title" content="United℠ Explorer Card Review (2026.1 Update: 80k Offer) - US Credit Card Guide" /><meta property="og:description" content="United℠ Explorer Card (Chase UA Explorer) Review 2026.4 Update: There&#8217;s a new benefit added on all UA cobranded cards: 10% off on UA award flights. For the no fee card UA Gateway card, you need to spend $10k in a calendar year to get this benefit, while for all other UA cobranded cards with an annual fee, you get this...Read more" /><meta property="og:url" content="https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/" /><meta property="og:site_name" content="US Credit Card Guide" /><meta property="article:tag" content="Airline Credit Card" /><meta property="article:tag" content="Chase" /><meta property="article:tag" content="No Foreign Transaction Fee" /><meta property="article:tag" content="United Airlines (UA)" /><meta property="article:section" content="Chase" /><meta property="article:published_time" content="2026-01-30T14:05:35+00:00" /><meta property="article:modified_time" content="2026-04-03T13:25:18+00:00" /><meta property="og:updated_time" content="2026-04-03T13:25:18+00:00" /><meta property="og:image" content="https://www.uscreditcardguide.com/wp-content/uploads/logo-vertical-en.png" /><meta property="og:image:secure_url" content="https://www.uscreditcardguide.com/wp-content/uploads/logo-vertical-en.png" /><meta property="og:image:width" content="700" /><meta property="og:image:height" content="442" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:description" content="United℠ Explorer Card (Chase UA Explorer) Review 2026.4 Update: There&#8217;s a new benefit added on all UA cobranded cards: 10% off on UA award flights. For the no fee card UA Gateway card, you need to spend $10k in a calendar year to get this benefit, while for all other UA cobranded cards with an annual fee, you get this...Read more" /><meta name="twitter:title" content="United℠ Explorer Card Review (2026.1 Update: 80k Offer) - US Credit Card Guide" /><meta name="twitter:image" content="https://www.uscreditcardguide.com/wp-content/uploads/62d94c60-29a7-11ef-b4f7-c5c0eef3d8bb.png.webp" /> <script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.uscreditcardguide.com/en/#organization","name":"\u7f8e\u56fd\u4fe1\u7528\u5361\u6307\u5357","url":"https://www.uscreditcardguide.com/en/","sameAs":[],"logo":{"@type":"ImageObject","@id":"https://www.uscreditcardguide.com/en/#logo","inLanguage":"en-US","url":"https://www.uscreditcardguide.com/wp-content/uploads/logo-without-word.png","width":512,"height":512,"caption":"\u7f8e\u56fd\u4fe1\u7528\u5361\u6307\u5357"},"image":{"@id":"https://www.uscreditcardguide.com/en/#logo"}},{"@type":"WebSite","@id":"https://www.uscreditcardguide.com/en/#website","url":"https://www.uscreditcardguide.com/en/","name":"US Credit Card Guide","inLanguage":"en-US","description":"Let the banks pay for our trips!","publisher":{"@id":"https://www.uscreditcardguide.com/en/#organization"},"potentialAction":[{"@type":"SearchAction","target":"https://www.uscreditcardguide.com/en/?s={search_term_string}","query-input":"required name=search_term_string"}]},{"@type":"ImageObject","@id":"https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/#primaryimage","inLanguage":"en-US","url":"https://www.uscreditcardguide.com/wp-content/uploads/62d94c60-29a7-11ef-b4f7-c5c0eef3d8bb.png.webp","width":500,"height":313},{"@type":"WebPage","@id":"https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/#webpage","url":"https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/","name":"United\u2120 Explorer Card Review (2026.1 Update: 80k Offer) - US Credit Card Guide","isPartOf":{"@id":"https://www.uscreditcardguide.com/en/#website"},"inLanguage":"en-US","primaryImageOfPage":{"@id":"https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/#primaryimage"},"datePublished":"2026-01-30T14:05:35+00:00","dateModified":"2026-04-03T13:25:18+00:00","potentialAction":[{"@type":"ReadAction","target":["https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/"]}]},{"@type":"Article","@id":"https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/#article","isPartOf":{"@id":"https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/#webpage"},"author":{"@id":"https://www.uscreditcardguide.com/en/#/schema/person/25229cc51cb876daf75142471043f6e4"},"headline":"United\u2120 Explorer Card Review (2026.1 Update: 80k Offer)","datePublished":"2026-01-30T14:05:35+00:00","dateModified":"2026-04-03T13:25:18+00:00","commentCount":80,"mainEntityOfPage":{"@id":"https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/#webpage"},"publisher":{"@id":"https://www.uscreditcardguide.com/en/#organization"},"image":{"@id":"https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/#primaryimage"},"keywords":"Airline Credit Card,Chase,No Foreign Transaction Fee,United Airlines (UA)","articleSection":"Chase","inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/#respond"]}]},{"@type":["Person"],"@id":"https://www.uscreditcardguide.com/en/#/schema/person/25229cc51cb876daf75142471043f6e4","name":"physixfan","image":{"@type":"ImageObject","@id":"https://www.uscreditcardguide.com/en/#authorlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/b6e74324918d3fbd5371ee245fa082dd5ff48aa4d2e58a762a09e4a2e795edc9?s=96&d=mm&r=g","caption":"physixfan"},"sameAs":[]}]}</script> <link rel="alternate" href="https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/" hreflang="en" /><link rel="alternate" href="https://www.uscreditcardguide.com/chase-united-mileageplus-explorer/" hreflang="zh" /><link rel='dns-prefetch' href='//apis.google.com' /><link rel='dns-prefetch' href='//connect.facebook.net' /><link rel='dns-prefetch' href='//platform.twitter.com' /><link rel='dns-prefetch' href='//www.googletagmanager.com' /><link rel='dns-prefetch' href='//fonts.googleapis.com' /><link rel='dns-prefetch' href='//v0.wordpress.com' /><link rel="alternate" type="application/rss+xml" title="US Credit Card Guide &raquo; Feed" href="https://www.uscreditcardguide.com/en/feed/" /><link rel="alternate" type="application/rss+xml" title="US Credit Card Guide &raquo; Comments Feed" href="https://www.uscreditcardguide.com/en/comments/feed/" /><link rel="alternate" type="application/rss+xml" title="US Credit Card Guide &raquo; United℠ Explorer Card Review (2026.1 Update: 80k Offer) Comments Feed" href="https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/feed/" /> <script type="text/javascript">window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.uscreditcardguide.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.5"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);</script> <link rel='stylesheet' id='dashicons-css' href='https://www.uscreditcardguide.com/wp-includes/css/dashicons.min.css?ver=6.8.5' type='text/css' media='all' /><style id="songwriter-google-font4-css" media="all">/* cyrillic-ext */
+@font-face {
+  fon
+
+Respond with JSON only. Do NOT include fields that are null or not found in the content.

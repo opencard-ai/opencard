@@ -1,0 +1,143 @@
+You are extracting structured credit card data for "Wells Fargo Autograph Visa Signature® Card" (wells-fargo-autograph).
+
+Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
+
+{
+  "issuer": "American Express",
+  "network": "amex",
+  "annual_fee": 895,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "bonus_points": 175000,
+    "spending_requirement": 12000,
+    "time_period_months": 6,
+    "description": "Earn up to 175,000 Membership Rewards points...",
+    "point_program": "Amex Membership Rewards",
+    "estimated_value": 2100
+  },
+  "earning_rates": [
+    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
+    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
+    {"category": "Other", "rate": 1, "notes": null}
+  ],
+  "recurring_credits": [
+    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
+    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
+    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"}
+  ],
+  "travel_benefits": {
+    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
+    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
+    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
+  },
+  "hotel_program": {
+    "program": "Marriott Bonvoy",
+    "tier": "Gold Elite",
+    "elite_night_credits": 15,
+    "fhr_eligible": true,
+    "thc_eligible": true
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "return_protection": null
+  },
+  "application_rules": {
+    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+  },
+  "tags": ["lounge-access", "premium", "transferable"],
+  "sources": [{"url": "https://..."}]
+}
+
+Rules:
+- issuer: American Express, Chase, Capital One, Citi, Discover, Wells Fargo, Barclays, Bank of America, US Bank, HSBC, etc.
+- network: amex, visa, mastercard, discover
+- annual_fee: number (0 if no annual fee)
+- foreign_transaction_fee: number (0 if no fee)
+- credit_required: Excellent, Good, Fair, Poor
+- welcome_offer.bonus_points: number (0 if none)
+- welcome_offer.point_program: MR, UR, TYP, Honors, Marriott, None, etc.
+- earning_rates: array of {category, rate, notes}
+  - category: Flights, Hotels, Dining, Groceries, Gas, Other, etc.
+- recurring_credits: array of {name, amount, frequency, category, description, reset_type}
+  - frequency: monthly|quarterly|semi_annual|annual|per_stay|cardmember_year
+  - category: airline|hotel|travel|dining|groceries|gas|streaming|fitness|shopping|ride|digital|entertainment|credit_monitoring|other
+  - reset_type: calendar_year (Jan-Dec) or cardmember_year (based on card anniversary)
+  - NOTE: Free night awards go HERE (in recurring_credits), not in hotel_program
+- travel_benefits.lounge_access: array of {name, type}
+  - type: centurion, priority_pass, delta_skyclub, escape_lounge, plaza_premium, airspace, other
+- travel_benefits.hotel_status: array of {program, tier, complimentary}
+  - program: Marriott Bonvoy, Hilton Honors, IHG Rewards, World of Hyatt, etc.
+- hotel_program: {program, tier, elite_night_credits, fhr_eligible, thc_eligible}
+  - fhr_eligible/thc_eligible: only for Amex cards with FHR/THC benefits
+  - NOTE: free_night_award does NOT go here, it goes in recurring_credits
+- application_rules: {rules: [{rule, description}]}
+  - rule examples: 5/24 rule, first approval, lifetime bonus rule, etc.
+- tags: lounge-access, premium, transferable, no-af, cash-back, travel, hotel, airline, etc.
+- sources: [{url}] - the URL this data was extracted from
+
+Content (first 12000 chars):
+<!doctype html><html lang="en"><head><script nonce="b41ncw3PqsUhpc7c3xc3Ug==" integrity="sha256-jSRnBDSVsmomiveSA+KfknEU+2GACE4Rdog33vGOhFM=">(function(){var c=document.cookie.indexOf('grav_skip_cdn=1')!==-1;if(c)return;if(localStorage.getItem('cdnBlocked')){document.cookie='grav_skip_cdn=1;path=/;max-age=259200;Secure;SameSite=Lax';location.reload();}})();</script><script nonce="b41ncw3PqsUhpc7c3xc3Ug==" integrity="sha256-D/K+/sLQKYYu9S8bNYOWRULUoMBNhuqCq6IhUbH8ybA=">(function(){
+var PROBE_URL="https://phaetoncdn.com/rv/assets/production/d8b5fa8175e57981e4d122734a9d8aae0612a7ed/probe.C_qoQg1h.js";
+var STORAGE_KEY="cdnBlocked";
+var COOKIE_VALUE="grav_skip_cdn=1;path=/;max-age=259200;Secure;SameSite=Lax";
+function triggerFallback(){localStorage.setItem(STORAGE_KEY,"1");document.cookie=COOKIE_VALUE;location.reload();}
+var s=document.createElement("script");
+s.src=PROBE_URL;
+s.onerror=triggerFallback;
+s.onload=function(){setTimeout(function(){if(!window.__cdnProbeOk)triggerFallback();},100);};
+setTimeout(function(){if(!window.__cdnProbeOk)triggerFallback();},3000);
+document.head.appendChild(s);
+})();</script><script integrity="sha256-uiwlx4Onse5A0hjTgastAiJW+4QoUbtEFWUi3EZX2sM=">
+  function handleResourceError(element) {
+    const tagName = element.tagName.toLowerCase();
+    const resourceUrl = element.src || element.href || 'unknown';
+    const isCrossOrigin = !resourceUrl.startsWith(window.location.origin);
+
+    if (window.newrelic) {
+      window.newrelic.noticeError('ResourceLoadError', {
+        errorType: `${tagName}LoadError`,
+        resourceType: tagName,
+        failedResourceUrl: resourceUrl,
+        pageUrl: window.location.href,
+        crossOriginRequest: isCrossOrigin,
+      });
+    }
+  }
+
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (
+            (node.tagName === 'SCRIPT' && node.src) ||
+            (node.tagName === 'IMG' && node.src) ||
+            (node.tagName === 'LINK' && node.rel === 'stylesheet' && node.href)
+        ) {
+          node.addEventListener('error', function() {
+            handleResourceError(this);
+          });
+        }
+      });
+    });
+  });
+
+  if (document.documentElement) {
+    observer.observe(document.documentElement, {
+      childList: true,
+      subtree: true
+    });
+  }
+</script> <script type="text/javascript" integrity="sha256-WE6u+TNhCr7OIYBfsLie+dwGTquhPS1Ov5JSLtH8MUA=">(function(){const config = {"accountID":"6523324","applicationID":"772358177","licenseKey":"NRJS-2b126dd187ee83e5dd8","trustKey":"78034","agentID":"772358177"};
+
+  ;window.NREUM||(NREUM={});NREUM.init={distributed_tracing:{enabled:true},privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]}};
+
+  ;NREUM.loader_config={accountID:`${config.accountID}`,trustKey:`${config.trustKey}`,agentID:`${config.agentID}`,licenseKey:`${config.licenseKey}`,applicationID:`${config.applicationID}`};
+  ;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:`${config.licenseKey}`,applicationID:`${config.applicationID}`,sa:1};
+  ;/*! For license information please see nr-loader-spa-1.290.0.min.js.LICENSE.txt */
+  (()=>{var e,t,r={8122:(e,t,r)=>{"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(r).length?e:r;for(let a in o)if(void 0!==e[a])try{if(null===e[a]){r[a]=null;continue}Array.isArray(e[a])&&Array.isArray(t[a])?r[a]=Array.from(new Set([...e[a],...t[a]])):"object"==typeof e[a]&&"object"==typeof t[a]?r[a]=i(e[a],t[a]):r[a]=e[a]}catch(e){(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},2555:(e,t,r)=>{"use strict";r.d(t,{D:()=>s,f:()=>a});var n=r(384),i=r(8122);const o={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function a(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}const s=e=>(0,i.a)(e,o)},9324:(e,t,r)=>{"use strict";r.d(t,{F3:()=>i,Xs:()=>o,Yq:()=>a,xv:()=>n});const n="1.290.0",i="PROD",o="CDN",a="^2.0.0-alpha.18"},6154:(e,t,r)=>{"use strict";r.d(t,{A4:()=>s,OF:()=>d,RI:()=>i,WN:()=>h,bv:()=>o,gm:()=>a,lR:()=>f,m:()=>u,mw:()=>c,sb:()=>l});var n=r(1863);const i="undefined"!=typeof window&&!!window.document,o="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),a=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),s="complete"===a?.document?.readyState,c=Boolean("hidden"===a?.document?.visibilityState),u=""+a?.location,d=/iPad|iPhone|iPod/.test(a.navigator?.userAgent),l=d&&"undefined"==typeof SharedWorker,f=(()=>{const e=a.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);return Array.isArray(e)&&e.length>=2?+e[1]:0})(),h=Date.now()-(0,n.t)()},7295:(e,t,r)=>{"use strict";r.d(t,{Xv:()=>a,gX:()=>i,iW:()=>o});var n=[];function i(e){if(!e||o(e))return!1;if(0===n.length)return!0;for(var t=0;t<n.length;t++){var r=n[t];if("*"===r.hostname)return!1;if(s(r.hostname,e.hostname)&&c(r.pathname,e.pathname))return!1}return!0}function o(e){return void 0===e.hostname}function a(e){if(n=[],e&&e.length)for(var t=0;t<e.length;t++){let r=e[t];if(!r)continue;0===r.indexOf("http://")?r=r.substring(7):0===r.indexOf("https://")&&(r=r.substring(8));const i=r.indexOf("/");let o,a;i>0?(o=r.substring(0,i),a=r.substring(i)):(o=r,a="");let[s]=o.split(":");n.push({hostname:s,pathname:a})}}function s(e,t){return!(e.length>t.length)&&t.indexOf(e)===t.length-e.length}function c(e,t){return 0===e.indexOf("/")&&(e=e.substring(1)),0===t.indexOf("/")&&(t=t.substring(1)),""===e||e===t}},3241:(e,t,r)=>{"use strict";r.d(t,{W:()=>o});var n=r(6154);const i="newrelic";function o(e={}){try{n.gm.dispatchEvent(new CustomEvent(i,{detail:e}))}catch(e){}}},1687:(e,t,r)=>{"use strict";r.d(t,{Ak:()=>c,Ze:()=>l,x3:()=>u});var n=r(7836),i=r(3606),o=r(860),a=r(2646);const s={};function c(e,t){const r={staged:!1,priority:o.P3[t]||0};d(e),s[e].get(t)||s[e].set(t,r)}function u(e,t){e&&s[e]&&(s[e].get(t)&&s[e].delete(t),h(e,t,!1),s[e].size&&f(e))}function d(e){if(!e)throw new Error("agentIdentifier required");s[e]||(s[e]=new Map)}function l(e="",t="feature",r=!1){if(d(e),!e||!s[e].get(t)||r)return h(e,t);s[e].get(t).staged=!0,f(e)}function f(e){const t=Array.from(s[e]);t.every((([e,t])=>t.staged))&&(t.sort(((e,t)=>e[1].priority-t[1].priority)),t.forEach((([t])=>{s[e].delete(t),h(e,t)})))}function h(e,t,r=!0){const o=e?n.ee.get(e):n.ee,s=i.i.handlers;if(!o.aborted&&o.backlog&&s){if(r){const e=o.backlog[t],r=s[t];if(r){for(let t=0;e&&t<e.length;++t)p(e[t],r);Object.entries(r).forEach((([e,t])=>{Object.values(t||{}).forEach((t=>{t[0]?.on&&t[0]?.context()instanceof a.y&&t[0].on(e,t[1])}))}))}}o.isolatedBacklog||delete s[t],o.backlog[t]=null,o.emit("drain-"+t,[])}}function p(e,t){var r=e[1];Object.values(t[r]||{}).forEach((t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],o=e[2];n.apply(i,o)}}))}},7836:(e,t,r)=>{"use strict";r.d(t,{P:()=>s,ee:()=>c});var n=r(384),i=r(8990),o=r(2646),a=r(5607);const s="nr@context:".concat(a.W),c=function e(t,r){var n={},a={},d={},l=!1;try{l=16===r.length&&u.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,o){!1!==o&&(o=!0);if(c.aborted&&!i)return;t&&o&&t.emit(e,r,n);for(var s=h(n),u=g(e),d=u.length,l=0;l<d;l++)u[l].apply(s,r);var p=v()[a[e]];p&&p.push([f,e,r,s]);return s},get:m,listeners:g,context:h,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach((([e,n])=>{a[n]=t,t in r||(r[t]=[])}))},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach((e=>{delete f.backlog[e]}))},isBuffering:function(e){return!!v()[a[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function h(e){return e&&e instanceof o.y?e:e?(0,i.I)(e,s,(()=>new o.y(s))):new o.y(s)}function p(e,t){n[e]=g(e).concat(t)}function g(e){return n[e]||[]}function m(t){return d[t]=d[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),u=(0,n.Zm)();u.ee||(u.ee=c)},2646:(e,t,r)=>{"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},9908:(e,t,r)=>{"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(7836).ee.get("handle");function i(e,t,r,i,o){o?(o.buffer([e],i),o.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},3606:(e,t,r)=>{"use strict";r.d(t,{i:()=>o});var n=r(9908);o.on=a;var i=o.handlers={};function o(e,t,r,o){a(o||n.d,i,e,t,r)}function a(e,t,r,i,o){o||(o="feature"),e||(e=n.d);var a=t[o]=t[o]||{};(a[r]=a[r]||[]).push([e,i])}},3878:(e,t,r)=>{"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function o(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>o,jT:()=>n,sp:()=>i})},5607:(e,t,r)=>{"use strict";r.d(t,{W:()=>n});const n=(0,r(9566).bz)()},9566:(e,t,r)=>{"use strict";r.d(t,{LA:()=>s,ZF:()=>c,bz:()=>a,el:()=>u});var n=r(6154);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),i.split("").map((e=>"x"===e?o(t,r++).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,i=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const a=[];for(var s=0;s<e;s++)a.push(o(r,i++).toString(16));return a.join("")}function c(){return s(16)}function u(){return s(32)}},2614:(e,t,r)=>{"use strict";r.d(t,{BB:()=>a,H3:()=>n,g:()=>u,iL:()=>c,tS:()=>s,uh:()=>i,wk:()=>o});const n="NRBA",i="SESSION",o=144e5,a=18e5,s={STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},c={SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},u={OFF:0,FULL:1,ERROR:2}},1863:(e,t,r)=>{"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},7485:(e,t,r)=>{"use strict";r.d(t,{D:()=>i});var n=r(6154);function i(e){if(0===(e||"").indexOf("data:"))return{protocol:"data"};try{const t=new URL(e,location.href),r={port:t.port,hostname:t.hostname,pathname:t.pathname,search:t.search,protocol:t.protocol.slice(0,t.protocol.indexOf(":")),sameOrigin:t.protocol===n.gm?.location?.protocol&&t.host===n.gm?.location?.host};return r.port&&""!==r.port||("http:"===t.protocol&&(r.port="80"),"https:"===t.protocol&&(r.port="443")),r.pathname&&""!==r.pathname?r.pathname.startsWith("/")||(r.pathname="/".concat(r.pathname)):r.pathname="/",r}catch(e){return{}}}},944:(e,t,r)=>{"use strict";function n(e,t){"function"==typeof console.debug&&console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t)}r.d(t,{R:()=>n})},5701:(e,t,r)=>{"use strict";r.d(t,{B:()=>o,t:()=>a});var n=r(3241);const i=new Set,o={};function a(e,t){const r=t.agentIdentifier;o[r]??={},e&&"object"==typeof e&&(i.has(r)||(t.ee.emit("rumresp",[e]),o[r]=e,i.add(r),(0,n.W)({agentIdentifier:r,loaded:!0,drained:!0,type:"lifecycle",name:"load",feature:void 0,data:e})))}},8990:(e,t,r)=>{"use strict";r.d(t
+
+Respond with JSON only. Do NOT include fields that are null or not found in the content.

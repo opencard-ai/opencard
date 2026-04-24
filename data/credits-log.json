@@ -1,0 +1,854 @@
+[
+  {
+    "timestamp": "2026-04-24T06:48:27.968Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "updated",
+    "extracted": [
+      {
+        "name": "ly.</p><h2>Over",
+        "amount": 695,
+        "frequency": "annual",
+        "category": "other",
+        "description": "ly.</p><h2>Over",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "fee will all but pay itself. An average cardholder, however,",
+        "amount": 895,
+        "frequency": "annual",
+        "category": "other",
+        "description": "fee will all but pay itself. An average cardholder, however,",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "when using the card to pay for an eligible Equinox membershi",
+        "amount": 25,
+        "frequency": "monthly",
+        "category": "other",
+        "description": "when using the card to pay for an eligible Equinox membership",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "in new statement credit benefits, becoming even more lavish ",
+        "amount": 920,
+        "frequency": "annual",
+        "category": "credit_monitoring",
+        "description": "in new statement credit benefits, becoming even more lavish and appealing to luxu",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "annually.</p><h2>Over",
+        "amount": 695,
+        "frequency": "annual",
+        "category": "other",
+        "description": "annually.</p><h2>Over",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "Clear credit</h3><p>To offer cardholders a way to move throu",
+        "amount": 209,
+        "frequency": "annual",
+        "category": "credit_monitoring",
+        "description": "Clear credit</h3><p>To offer cardholders a way to move through airport security l",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "hotel credit</h3><p>Previously, the American Express Platinu",
+        "amount": 600,
+        "frequency": "annual",
+        "category": "hotel",
+        "description": "hotel credit</h3><p>Previously, the American Express Platinum offered up to",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "credit on prepaid bookings with American Express Travel at F",
+        "amount": 300,
+        "frequency": "annual",
+        "category": "hotel",
+        "description": "credit on prepaid bookings with American Express Travel at Fine Hotels + Resorts",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "per month) when using the card to pay for an eligible Equino",
+        "amount": 25,
+        "frequency": "monthly",
+        "category": "other",
+        "description": "per month) when using the card to pay for an eligible Equinox membership.</p><p>H",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "every month) when using their card to pay for Peacock, Audib",
+        "amount": 25,
+        "frequency": "monthly",
+        "category": "other",
+        "description": "every month) when using their card to pay for Peacock, Audible, SiriusXM and The",
+        "reset_type": "cardmember_year"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-24T07:30:46.874Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "updated",
+    "extracted": [
+      {
+        "name": "Features Airline Excellent Credit Good Credit",
+        "amount": 895,
+        "frequency": "annual",
+        "category": "airline",
+        "description": "Features Airline Excellent Credit Good Credit",
+        "reset_type": "cardmember_year"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-24T07:32:31.406Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "updated",
+    "extracted": [
+      {
+        "name": "If you do not see a",
+        "amount": 200,
+        "frequency": "annual",
+        "category": "other",
+        "description": "If you do not see a",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "Uber Cash",
+        "amount": 200,
+        "frequency": "annual",
+        "category": "ride",
+        "description": "Uber Cash",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "Uber One Credit",
+        "amount": 120,
+        "frequency": "annual",
+        "category": "ride",
+        "description": "Uber One Credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "in Uber Cash",
+        "amount": 15,
+        "frequency": "annual",
+        "category": "ride",
+        "description": "in Uber Cash",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "in statement credit",
+        "amount": 120,
+        "frequency": "annual",
+        "category": "other",
+        "description": "in statement credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "Digital Entertainment Credit",
+        "amount": 300,
+        "frequency": "annual",
+        "category": "streaming",
+        "description": "Digital Entertainment Credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "in statement credit",
+        "amount": 25,
+        "frequency": "annual",
+        "category": "other",
+        "description": "in statement credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "Hotel Credit",
+        "amount": 600,
+        "frequency": "annual",
+        "category": "hotel",
+        "description": "Hotel Credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "in statement credit",
+        "amount": 300,
+        "frequency": "annual",
+        "category": "other",
+        "description": "in statement credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "Resy Credit",
+        "amount": 400,
+        "frequency": "annual",
+        "category": "dining",
+        "description": "Resy Credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "in statement credit",
+        "amount": 100,
+        "frequency": "annual",
+        "category": "other",
+        "description": "in statement credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "CLEAR+ Credit",
+        "amount": 209,
+        "frequency": "annual",
+        "category": "travel",
+        "description": "CLEAR+ Credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "in statement credit",
+        "amount": 209,
+        "frequency": "annual",
+        "category": "other",
+        "description": "in statement credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "Airline Fee Credit",
+        "amount": 200,
+        "frequency": "annual",
+        "category": "airline",
+        "description": "Airline Fee Credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "in statement credit",
+        "amount": 200,
+        "frequency": "annual",
+        "category": "other",
+        "description": "in statement credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "lululemon Credit",
+        "amount": 300,
+        "frequency": "annual",
+        "category": "fitness",
+        "description": "lululemon Credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "in statement credit",
+        "amount": 75,
+        "frequency": "annual",
+        "category": "other",
+        "description": "in statement credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "Walmart+ Credit",
+        "amount": 155,
+        "frequency": "annual",
+        "category": "shopping",
+        "description": "Walmart+ Credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "more than any other credit",
+        "amount": 850,
+        "frequency": "annual",
+        "category": "other",
+        "description": "more than any other credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "Uber Cash",
+        "amount": 120,
+        "frequency": "annual",
+        "category": "ride",
+        "description": "Uber Cash",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "Uber One Credit",
+        "amount": 15,
+        "frequency": "annual",
+        "category": "ride",
+        "description": "Uber One Credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "in Uber Cash",
+        "amount": 20,
+        "frequency": "monthly",
+        "category": "ride",
+        "description": "in Uber Cash",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "Digital Entertainment Credit",
+        "amount": 25,
+        "frequency": "annual",
+        "category": "streaming",
+        "description": "Digital Entertainment Credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "in statement credit",
+        "amount": 600,
+        "frequency": "monthly",
+        "category": "other",
+        "description": "in statement credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "Hotel Credit",
+        "amount": 300,
+        "frequency": "annual",
+        "category": "hotel",
+        "description": "Hotel Credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "in statement credit",
+        "amount": 400,
+        "frequency": "semi_annual",
+        "category": "other",
+        "description": "in statement credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "Resy Credit",
+        "amount": 100,
+        "frequency": "annual",
+        "category": "dining",
+        "description": "Resy Credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "in statement credit",
+        "amount": 209,
+        "frequency": "quarterly",
+        "category": "other",
+        "description": "in statement credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "lululemon Credit",
+        "amount": 75,
+        "frequency": "annual",
+        "category": "fitness",
+        "description": "lululemon Credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "in statement credit",
+        "amount": 300,
+        "frequency": "quarterly",
+        "category": "other",
+        "description": "in statement credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "in statement credit",
+        "amount": 155,
+        "frequency": "annual",
+        "category": "other",
+        "description": "in statement credit",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "Walmart+ Credit",
+        "amount": 12,
+        "frequency": "monthly",
+        "category": "shopping",
+        "description": "Walmart+ Credit",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "calendar",
+        "amount": 120,
+        "frequency": "annual",
+        "category": "other",
+        "description": "calendar",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "Platinum",
+        "amount": 25,
+        "frequency": "monthly",
+        "category": "other",
+        "description": "Platinum",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "the Platinum",
+        "amount": 100,
+        "frequency": "quarterly",
+        "category": "other",
+        "description": "the Platinum",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "per calendar year after you pay for",
+        "amount": 209,
+        "frequency": "annual",
+        "category": "other",
+        "description": "per calendar year after you pay for",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "per calendar year when incidental",
+        "amount": 200,
+        "frequency": "annual",
+        "category": "other",
+        "description": "per calendar year when incidental",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "the Platinum",
+        "amount": 75,
+        "frequency": "quarterly",
+        "category": "other",
+        "description": "the Platinum",
+        "reset_type": "cardmember_year"
+      },
+      {
+        "name": "calendar",
+        "amount": 300,
+        "frequency": "annual",
+        "category": "other",
+        "description": "calendar",
+        "reset_type": "cardmember_year"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-24T07:33:33.968Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null
+  },
+  {
+    "timestamp": "2026-04-24T07:34:19.364Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "updated",
+    "extracted": [
+      {
+        "name": "Uber Cash",
+        "amount": 200,
+        "frequency": "annual",
+        "category": "ride",
+        "description": "Uber Cash",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "Uber One Credit",
+        "amount": 120,
+        "frequency": "annual",
+        "category": "ride",
+        "description": "Uber One Credit",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "Digital Entertainment Credit",
+        "amount": 300,
+        "frequency": "annual",
+        "category": "streaming",
+        "description": "Digital Entertainment Credit",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "Hotel Credit",
+        "amount": 600,
+        "frequency": "annual",
+        "category": "hotel",
+        "description": "Hotel Credit",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "Resy Credit",
+        "amount": 400,
+        "frequency": "annual",
+        "category": "dining",
+        "description": "Resy Credit",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "CLEAR+ Credit",
+        "amount": 209,
+        "frequency": "annual",
+        "category": "travel",
+        "description": "CLEAR+ Credit",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "Airline Fee Credit",
+        "amount": 200,
+        "frequency": "annual",
+        "category": "airline",
+        "description": "Airline Fee Credit",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "lululemon Credit",
+        "amount": 300,
+        "frequency": "annual",
+        "category": "fitness",
+        "description": "lululemon Credit",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "Walmart+ Credit",
+        "amount": 155,
+        "frequency": "annual",
+        "category": "shopping",
+        "description": "Walmart+ Credit",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "Uber Cash",
+        "amount": 120,
+        "frequency": "annual",
+        "category": "ride",
+        "description": "Uber Cash",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "Hotel Credit",
+        "amount": 300,
+        "frequency": "annual",
+        "category": "hotel",
+        "description": "Hotel Credit",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "Resy Credit",
+        "amount": 100,
+        "frequency": "annual",
+        "category": "dining",
+        "description": "Resy Credit",
+        "reset_type": "calendar_year"
+      },
+      {
+        "name": "lululemon Credit",
+        "amount": 75,
+        "frequency": "annual",
+        "category": "fitness",
+        "description": "lululemon Credit",
+        "reset_type": "calendar_year"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-24T07:36:54.277Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null
+  },
+  {
+    "timestamp": "2026-04-24T07:37:39.680Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null
+  },
+  {
+    "timestamp": "2026-04-24T07:39:30.226Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:21:16.054Z",
+    "card_id": "amex-gold",
+    "card_name": "American Express® Gold Card",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:21:29.202Z",
+    "card_id": "chase-sapphire-reserve",
+    "card_name": "Chase Sapphire Reserve®",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:21:41.282Z",
+    "card_id": "capital-one-venture-x",
+    "card_name": "Capital One Venture X Rewards Credit Card",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:21:52.865Z",
+    "card_id": "chase-ink-preferred",
+    "card_name": "chase-ink-preferred",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": null,
+    "error": "Card not found"
+  },
+  {
+    "timestamp": "2026-04-24T14:21:58.901Z",
+    "card_id": "amex-business-platinum",
+    "card_name": "amex-business-platinum",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": null,
+    "error": "Card not found"
+  },
+  {
+    "timestamp": "2026-04-24T14:22:04.908Z",
+    "card_id": "chase-sapphire-preferred",
+    "card_name": "Chase Sapphire Preferred® Card",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:22:16.454Z",
+    "card_id": "capital-one-savorone",
+    "card_name": "Capital One SavorOne Cash Rewards Credit Card",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:22:29.023Z",
+    "card_id": "citi-strata-premier",
+    "card_name": "Citi Strata Premier℠ Card",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:22:40.526Z",
+    "card_id": "amex-blue-cash-preferred",
+    "card_name": "Blue Cash Preferred® Card from American Express",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:22:52.531Z",
+    "card_id": "discover-it-miles",
+    "card_name": "Discover it® Miles",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:25:19.900Z",
+    "card_id": "capital-one-venture-x",
+    "card_name": "Capital One Venture X Rewards Credit Card",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:25:32.446Z",
+    "card_id": "amex-blue-cash-preferred",
+    "card_name": "Blue Cash Preferred® Card from American Express",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:25:42.674Z",
+    "card_id": "discover-it-miles",
+    "card_name": "Discover it® Miles",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:25:52.608Z",
+    "card_id": "chase-ink-preferred",
+    "card_name": "chase-ink-preferred",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": null,
+    "error": "Card not found"
+  },
+  {
+    "timestamp": "2026-04-24T14:25:56.637Z",
+    "card_id": "amex-delta-skymiles-gold",
+    "card_name": "amex-delta-skymiles-gold",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": null,
+    "error": "Card not found"
+  },
+  {
+    "timestamp": "2026-04-24T14:26:00.612Z",
+    "card_id": "capital-one-venture-x-biz",
+    "card_name": "Capital One Venture X Business",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:26:10.301Z",
+    "card_id": "amex-sapphire-reserve",
+    "card_name": "amex-sapphire-reserve",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": null,
+    "error": "Card not found"
+  },
+  {
+    "timestamp": "2026-04-24T14:26:14.386Z",
+    "card_id": "chase-freedom-unlimited",
+    "card_name": "Chase Freedom Unlimited®",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:26:24.075Z",
+    "card_id": "chase-freedom-flex",
+    "card_name": "Chase Freedom Flex®",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:26:33.881Z",
+    "card_id": "capital-one-savor",
+    "card_name": "Capital One Savor Rewards Credit Card",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:27:32.864Z",
+    "card_id": "citi-prestige",
+    "card_name": "Citi Prestige",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:39:57.760Z",
+    "card_id": "amex-hilton-surpass",
+    "card_name": "Hilton Honors American Express Surpass Card",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:40:08.989Z",
+    "card_id": "amex-marriott-bevy",
+    "card_name": "Marriott Bonvoy Bevy® American Express® Card",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:40:19.249Z",
+    "card_id": "amex-marriott-bonvoy-bold",
+    "card_name": "amex-marriott-bonvoy-bold",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": null,
+    "error": "Card not found"
+  },
+  {
+    "timestamp": "2026-04-24T14:40:23.336Z",
+    "card_id": "discover-it-cashback",
+    "card_name": "discover-it-cashback",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": null,
+    "error": "Card not found"
+  },
+  {
+    "timestamp": "2026-04-24T14:40:27.477Z",
+    "card_id": "amex-delta-platinum",
+    "card_name": "Delta SkyMiles® Platinum American Express Card",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:40:37.708Z",
+    "card_id": "amex-delta-reserve",
+    "card_name": "Delta SkyMiles® Reserve American Express Card",
+    "source": "creditcards.com",
+    "action": "not_found",
+    "extracted": null,
+    "error": "Raw text saved for AI extraction"
+  },
+  {
+    "timestamp": "2026-04-24T14:40:47.461Z",
+    "card_id": "chase-sapphire-preferred-biz",
+    "card_name": "chase-sapphire-preferred-biz",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": null,
+    "error": "Card not found"
+  },
+  {
+    "timestamp": "2026-04-24T14:40:51.625Z",
+    "card_id": "citi-rewards-card",
+    "card_name": "citi-rewards-card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": null,
+    "error": "Card not found"
+  },
+  {
+    "timestamp": "2026-04-24T14:40:55.711Z",
+    "card_id": "capital-one-warrantiesمد",
+    "card_name": "capital-one-warrantiesمد",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": null,
+    "error": "Card not found"
+  },
+  {
+    "timestamp": "2026-04-24T14:40:59.689Z",
+    "card_id": "bird",
+    "card_name": "bird",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": null,
+    "error": "Card not found"
+  }
+]

@@ -1,0 +1,194 @@
+You are extracting structured credit card data for "Capital One SavorOne Cash Rewards Credit Card" (capital-one-savorone).
+
+Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
+
+{
+  "issuer": "American Express",
+  "network": "amex",
+  "annual_fee": 895,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "bonus_points": 175000,
+    "spending_requirement": 12000,
+    "time_period_months": 6,
+    "description": "Earn up to 175,000 Membership Rewards points...",
+    "point_program": "Amex Membership Rewards",
+    "estimated_value": 2100
+  },
+  "earning_rates": [
+    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
+    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
+    {"category": "Other", "rate": 1, "notes": null}
+  ],
+  "recurring_credits": [
+    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
+    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
+    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"}
+  ],
+  "travel_benefits": {
+    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
+    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
+    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
+  },
+  "hotel_program": {
+    "program": "Marriott Bonvoy",
+    "tier": "Gold Elite",
+    "elite_night_credits": 15,
+    "fhr_eligible": true,
+    "thc_eligible": true
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "return_protection": null
+  },
+  "application_rules": {
+    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+  },
+  "tags": ["lounge-access", "premium", "transferable"],
+  "sources": [{"url": "https://..."}]
+}
+
+Rules:
+- issuer: American Express, Chase, Capital One, Citi, Discover, Wells Fargo, Barclays, Bank of America, US Bank, HSBC, etc.
+- network: amex, visa, mastercard, discover
+- annual_fee: number (0 if no annual fee)
+- foreign_transaction_fee: number (0 if no fee)
+- credit_required: Excellent, Good, Fair, Poor
+- welcome_offer.bonus_points: number (0 if none)
+- welcome_offer.point_program: MR, UR, TYP, Honors, Marriott, None, etc.
+- earning_rates: array of {category, rate, notes}
+  - category: Flights, Hotels, Dining, Groceries, Gas, Other, etc.
+- recurring_credits: array of {name, amount, frequency, category, description, reset_type}
+  - frequency: monthly|quarterly|semi_annual|annual|per_stay|cardmember_year
+  - category: airline|hotel|travel|dining|groceries|gas|streaming|fitness|shopping|ride|digital|entertainment|credit_monitoring|other
+  - reset_type: calendar_year (Jan-Dec) or cardmember_year (based on card anniversary)
+  - NOTE: Free night awards go HERE (in recurring_credits), not in hotel_program
+- travel_benefits.lounge_access: array of {name, type}
+  - type: centurion, priority_pass, delta_skyclub, escape_lounge, plaza_premium, airspace, other
+- travel_benefits.hotel_status: array of {program, tier, complimentary}
+  - program: Marriott Bonvoy, Hilton Honors, IHG Rewards, World of Hyatt, etc.
+- hotel_program: {program, tier, elite_night_credits, fhr_eligible, thc_eligible}
+  - fhr_eligible/thc_eligible: only for Amex cards with FHR/THC benefits
+  - NOTE: free_night_award does NOT go here, it goes in recurring_credits
+- application_rules: {rules: [{rule, description}]}
+  - rule examples: 5/24 rule, first approval, lifetime bonus rule, etc.
+- tags: lounge-access, premium, transferable, no-af, cash-back, travel, hotel, airline, etc.
+- sources: [{url}] - the URL this data was extracted from
+
+Content (first 12000 chars):
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title>SavorOne Rewards: Cash Back on Dining &amp; Grocery Stores | Cash Back on Dining &amp; Grocery Stores | Capital One</title>
+    <script>
+      if (typeof performance !== 'undefined') performance.mark('headStart');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/assets/shell/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/shell/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://ecm.capitalone.com">
+    <link rel="dns-prefetch" href="https://ecm.capitalone.com">
+    <link rel="preconnect" href="https://onetms.capitalone.com">
+    <link rel="dns-prefetch" href="https://onetms.capitalone.com">
+    <link rel="preconnect" href="https://mboxedge34.tt.omtrdc.net">
+    <link rel="dns-prefetch" href="https://mboxedge34.tt.omtrdc.net">
+    <link rel="dns-prefetch" href="https://bam.nr-data.net">
+    <link rel="dns-prefetch" href="https://js-agent.newrelic.com" class="new-relic">
+    <link rel="dns-prefetch" href="https://d.agkn.com">
+    <link rel="dns-prefetch" href="https://smetrics.capitalone.com">
+    <link rel="dns-prefetch" href="https://deviceinfo.capitalone.com">
+    <link rel="dns-prefetch" href="https://d6tizftlrpuof.cloudfront.net">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
+    <link rel="preload" as="font" crossorigin="anonymous" href="https://www.capitalone.com/assets/enterprise/fonts/Optimist_W_XLt.woff2">
+    <link rel="preload" as="font" crossorigin="anonymous" href="https://www.capitalone.com/assets/enterprise/fonts/Optimist_W_Lt.woff2">
+    <link rel="preload" as="font" crossorigin="anonymous" href="https://www.capitalone.com/assets/enterprise/fonts/Optimist_W_SBd.woff2">
+    <link rel="preload" as="font" crossorigin="anonymous" href="https://www.capitalone.com/assets/enterprise/fonts/Optimist_W_Rg.woff2">
+    <link rel="preload" as="fetch" href="/assets/shell/manifest.json" crossorigin="">
+    <script>
+      if (typeof performance !== 'undefined')
+        performance.mark('onetagIdentifierStart');
+    </script>
+    <link rel="preload" as="script" href="/assets/shell/card/scripts/card-es2015.6afc41f867d7cee6.js"><link rel="preload" as="script" href="/assets/shell/card/scripts/runtime.f218078866a59727.js"><link rel="preload" as="style" href="/assets/shell/card/styles/card-styles.c34575733d2d6a6b.css"><script class="onetag-identifier" onload="if (typeof performance !== 'undefined') performance.mark('onetagIdentifierEnd');">"use strict";(()=>{var C="_ot_ses",g="_ot_id",l="_ot";var x,v=new Uint8Array(16);function k(){if(!x&&(x=typeof crypto<"u"&&crypto.getRandomValues&&crypto.getRandomValues.bind(crypto),!x))throw new Error("crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported");return x(v)}var n=[];for(let t=0;t<256;++t)n.push((t+256).toString(16).slice(1));function S(t,e=0){return n[t[e+0]]+n[t[e+1]]+n[t[e+2]]+n[t[e+3]]+"-"+n[t[e+4]]+n[t[e+5]]+"-"+n[t[e+6]]+n[t[e+7]]+"-"+n[t[e+8]]+n[t[e+9]]+"-"+n[t[e+10]]+n[t[e+11]]+n[t[e+12]]+n[t[e+13]]+n[t[e+14]]+n[t[e+15]]}var N=typeof crypto<"u"&&crypto.randomUUID&&crypto.randomUUID.bind(crypto),w={randomUUID:N};function V(t,e,i){if(w.randomUUID&&!e&&!t)return w.randomUUID();t=t||{};let o=t.random||(t.rng||k)();if(o[6]=o[6]&15|64,o[8]=o[8]&63|128,e){i=i||0;for(let r=0;r<16;++r)e[i+r]=o[r];return e}return S(o)}var y=V;function I(){return y()}function a(){let t=window.location.hostname;if(t==="localhost"||t.includes(":")||/^\d{1,3}(\.\d{1,3}){3}$/.test(t))return t;let e=t.match(/(?:.*\.)?([^.]+\.[^.]+)$/);return e?e[1]:t}function T(){return Math.floor(new Date().getTime()/1e3)}function E(){let t=!1,e=!1,i=document.cookie.split(";"),o=[];t=_(i,C)[0],[e,o]=_(i,l),e?t?(K(o),D()):(M(o),D()):(A(),D())}function A(){let t=I(),e=I(),i=O(),o=T(),r=a(),s=d(l,`${t}.${o}.1.${o}.${o}.${e}`,r,i),u=d(g,t,r,i);return`${s.split(";")[0]+";"+u.split(";")[0]}`}function D(){let t=new Date;t.setTime(t.getTime()+30*60*1e3);let e=t.toUTCString(),i=a();return d(C,"*",i,e)}function M(t){let[e,i,o,r,s,u]=t,p=I(),m=O(),c=T(),f=a(),$=d(l,`${e}.${i}.${(Number(o)+1).toString()}.${c}.${r}.${p}`,f,m),h=d(g,e,f,m);return`${$.split(";")[0]+";"+h.split(";")[0]}`}function K(t){let[e,i,o,r,s,u]=t,p=O(),m=T(),c=a(),f=d(l,`${e}.${i}.${o}.${m}.${s}.${u}`,c,p),$=d(g,e,c,p);return`${f.split(";")[0]+";"+$.split(";")[0]}`}function O(){let t=new Date;return t.setDate(t.getDate()+400),t.toUTCString()}function _(t,e){let i=!1,o=[];return t.forEach(r=>{let s=r.trim();(s.startsWith(e+"=")||s.startsWith(e+"."))&&(i=!0,o=s.split("=")[1].trim().split("."))}),[i,o]}function d(t,e,i,o){let r=`${t}=${e}; domain=${i}; path=/; expires=${o}; SameSite=None; Secure`;return document.cookie=r,r}function U(){typeof window<"u"&&typeof document<"u"?E():console.warn("window or document is not defined. Skipping cookie initialization.")}U();})();
+</script>
+    <!-- New relic browser -->
+    <!-- prettier-ignore -->
+    <script>
+      if (typeof performance !== 'undefined') performance.mark('newRelicInitStart');
+    </script>
+    <script type="text/javascript" class="new-relic" id="new-relic-init">
+      (function () {
+        var host = window.location.hostname;
+        window._sequoia = {};
+        window._sequoia.scriptEnv = /www[\w\d]*\.capitalone\.com/i.test(host)
+          ? 'prod'
+          : 'dev';
+        var envLoc = window._sequoia.scriptEnv;
+
+        const webShell = 'www-capitalone-com';
+
+        const allowedHosts = [
+          '.capitalone.com',
+          `regression-${webShell}.cloud.capitalone`,
+        ];
+
+        const queryParams = new URLSearchParams(window.location.search);
+        const prNumber = queryParams.get('nr');
+        const nrEnabledForPreview =
+          host.indexOf(`${prNumber}-${webShell}.cloud.capitalone`) >= 0;
+
+        // Exempt local dev and PR preview without nr query param
+        const isAllowedHost = allowedHosts.some(
+          (allowedHost) => host.indexOf(allowedHost) >= 0
+        );
+        if (!isAllowedHost && !nrEnabledForPreview) {
+          return;
+        }
+
+        var nrConf = {
+          runtime_app_id: {
+            prod: '461457245',
+            dev: '458554504',
+          },
+          runtime_account_id: {
+            prod: '1927717',
+            dev: '1927715',
+          },
+          runtime_trust_id: {
+            prod: '1356230',
+            dev: '1356230',
+          },
+          runtime_licence_id: {
+            prod: 'c344d59e90',
+            dev: '0a6015c82e',
+          },
+        };
+
+        window.NREUM || (NREUM = {});
+        NREUM.init = { privacy: { cookies_enabled: true } };
+
+        NREUM.loader_config = {
+          accountID: nrConf['runtime_account_id'][envLoc],
+          trustKey: nrConf['runtime_trust_id'][envLoc],
+          agentID: nrConf['runtime_app_id'][envLoc],
+          licenseKey: nrConf['runtime_licence_id'][envLoc],
+          applicationID: nrConf['runtime_app_id'][envLoc],
+        };
+        NREUM.info = {
+          beacon: 'bam.nr-data.net',
+          errorBeacon: 'bam.nr-data.net',
+          licenseKey: nrConf['runtime_licence_id'][envLoc],
+          applicationID: nrConf['runtime_app_id'][envLoc],
+          sa: 1,
+        };
+
+        ;/*! For license information please see nr-loader-spa-1.278.3.min.js.LICENSE.txt */
+(()=>{var e,t,r={8122:(e,t,r)=>{"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(r).length?e:r;for(let a in o)if(void 0!==e[a])try{if(null===e[a]){r[a]=null;continue}Array.isArray(e[a])&&Array.isArray(t[a])?r[a]=Array.from(new Set([...e[a],...t[a]])):"object"==typeof e[a]&&"object"==typeof t[a]?r[a]=i(e[a],t[a]):r[a]=e[a]}catch(e){(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},2555:(e,t,r)=>{"use strict";r.d(t,{Vp:()=>c,fn:()=>s,x1:()=>u});var n=r(384),i=r(8122);const o={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){try{const t=c(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}function c(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function u(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.a)(t,o);const r=(0,n.nY)(e);r&&(r.info=a[e])}},9417:(e,t,r)=>{"use strict";r.d(t,{D0:()=>p,gD:()=>m,xN:()=>g});var n=r(3333),i=r(993);const o=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var a=r(2614),s=r(944),c=r(384),u=r(8122);const d="[data-nr-mask]",l=()=>{const e={feature_flags:[],experimental:{marks:!1,measures:!1,resources:!1},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0,level:i.p_.INFO},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{get capture_marks(){return e.feature_flags.includes(n.$v.MARKS)||e.experimental.marks},set capture_marks(t){e.experimental.marks=t},get capture_measures(){return e.feature_flags.includes(n.$v.MEASURES)||e.experimental.measures},set capture_measures(t){e.experimental.measures=t},resources:{get enabled(){return e.feature_flags.includes(n.$v.RESOURCES)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:a.wk,inactiveMs:a.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){o(t)?e.mask_selector="".concat(t,",").concat(d):""===t||null===t?e.mask_selector=d:(0,s.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){o(t)?e.block_selector+=",".concat(t):""!==t&&(0,s.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,s.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},spa:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0}}},f={},h="All configuration objects require an agent identifier!";function p(e){if(!e)throw new Error(h);if(!f[e])throw new Error("Configuration for ".concat(e," was never set"));return f[e]}function g(e,t){if(!e)throw new Error(h);f[e]=(0,u.a)(t,l());const r=(0,c.nY)(e);r&&(r.init=f[e])}function m(e,t){if(!e)throw new Error(h);var r=p(e);if(r){for(var n=t.split("."),i=0;i<n.length-1;i++)if("object"!=typeof(r=r[n[i]]))return;r=r[n[n.length-1]]
+
+Respond with JSON only. Do NOT include fields that are null or not found in the content.

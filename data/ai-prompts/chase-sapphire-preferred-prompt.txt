@@ -1,0 +1,199 @@
+You are extracting structured credit card data for "Chase Sapphire Preferred® Card" (chase-sapphire-preferred).
+
+Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
+
+{
+  "issuer": "American Express",
+  "network": "amex",
+  "annual_fee": 895,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "bonus_points": 175000,
+    "spending_requirement": 12000,
+    "time_period_months": 6,
+    "description": "Earn up to 175,000 Membership Rewards points...",
+    "point_program": "Amex Membership Rewards",
+    "estimated_value": 2100
+  },
+  "earning_rates": [
+    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
+    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
+    {"category": "Other", "rate": 1, "notes": null}
+  ],
+  "recurring_credits": [
+    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
+    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
+    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"}
+  ],
+  "travel_benefits": {
+    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
+    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
+    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
+  },
+  "hotel_program": {
+    "program": "Marriott Bonvoy",
+    "tier": "Gold Elite",
+    "elite_night_credits": 15,
+    "fhr_eligible": true,
+    "thc_eligible": true
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "return_protection": null
+  },
+  "application_rules": {
+    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+  },
+  "tags": ["lounge-access", "premium", "transferable"],
+  "sources": [{"url": "https://..."}]
+}
+
+Rules:
+- issuer: American Express, Chase, Capital One, Citi, Discover, Wells Fargo, Barclays, Bank of America, US Bank, HSBC, etc.
+- network: amex, visa, mastercard, discover
+- annual_fee: number (0 if no annual fee)
+- foreign_transaction_fee: number (0 if no fee)
+- credit_required: Excellent, Good, Fair, Poor
+- welcome_offer.bonus_points: number (0 if none)
+- welcome_offer.point_program: MR, UR, TYP, Honors, Marriott, None, etc.
+- earning_rates: array of {category, rate, notes}
+  - category: Flights, Hotels, Dining, Groceries, Gas, Other, etc.
+- recurring_credits: array of {name, amount, frequency, category, description, reset_type}
+  - frequency: monthly|quarterly|semi_annual|annual|per_stay|cardmember_year
+  - category: airline|hotel|travel|dining|groceries|gas|streaming|fitness|shopping|ride|digital|entertainment|credit_monitoring|other
+  - reset_type: calendar_year (Jan-Dec) or cardmember_year (based on card anniversary)
+  - NOTE: Free night awards go HERE (in recurring_credits), not in hotel_program
+- travel_benefits.lounge_access: array of {name, type}
+  - type: centurion, priority_pass, delta_skyclub, escape_lounge, plaza_premium, airspace, other
+- travel_benefits.hotel_status: array of {program, tier, complimentary}
+  - program: Marriott Bonvoy, Hilton Honors, IHG Rewards, World of Hyatt, etc.
+- hotel_program: {program, tier, elite_night_credits, fhr_eligible, thc_eligible}
+  - fhr_eligible/thc_eligible: only for Amex cards with FHR/THC benefits
+  - NOTE: free_night_award does NOT go here, it goes in recurring_credits
+- application_rules: {rules: [{rule, description}]}
+  - rule examples: 5/24 rule, first approval, lifetime bonus rule, etc.
+- tags: lounge-access, premium, transferable, no-af, cash-back, travel, hotel, airline, etc.
+- sources: [{url}] - the URL this data was extracted from
+
+Content (first 12000 chars):
+<!DOCTYPE html><html lang="en" class=""><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/bcs/_next/static/media/creditcards_logo_text.61f01e7a.svg"/><link rel="stylesheet" href="/bcs/_next/static/chunks/0d7c74d76d7e04a1.css" nonce="xz1B350+e42r3/9C4qabaQ==" data-precedence="next"/><link rel="stylesheet" href="/bcs/_next/static/chunks/d0d8056242b7b906.css" nonce="xz1B350+e42r3/9C4qabaQ==" data-precedence="next"/><link rel="stylesheet" href="/bcs/_next/static/chunks/10dc1dbd43b15e26.css" nonce="xz1B350+e42r3/9C4qabaQ==" data-precedence="next"/><link rel="stylesheet" href="/bcs/_next/static/chunks/9520bf60ce979a92.css" nonce="xz1B350+e42r3/9C4qabaQ==" data-precedence="next"/><link rel="stylesheet" href="/bcs/_next/static/chunks/1d5296ae09acbe2f.css" nonce="xz1B350+e42r3/9C4qabaQ==" data-precedence="next"/><link rel="stylesheet" href="/bcs/_next/static/chunks/c71ae7436f1d9fc2.css" nonce="xz1B350+e42r3/9C4qabaQ==" data-precedence="next"/><link rel="stylesheet" href="/bcs/_next/static/chunks/51b25d2105d68faf.css" nonce="xz1B350+e42r3/9C4qabaQ==" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" nonce="xz1B350+e42r3/9C4qabaQ==" href="/bcs/_next/static/chunks/d945fa8472fe1e23.js"/><script src="/bcs/_next/static/chunks/3711325f1a21b673.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/450b7d07403bdf57.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/56cc504df58e7a35.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/turbopack-f91b7de21063eae7.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/46a920ed30bd9e5d.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/9b262039507c1339.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/a877b412bf284dae.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/720c37cdbffba38a.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/f5e99dcc9d1c2c56.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/1f81161d019364e8.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/0e9e914b8bc0542d.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/b30f1e3e3b35535d.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/283dda68e5eb13ad.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/00d844953247b146.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/d5bdf15a812fc9fe.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/acbf4080dad54f01.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/028c765e6522f988.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script src="/bcs/_next/static/chunks/0d8ae4b725d71e38.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><script id="newrelic-script" src="https://js-agent.newrelic.com/nr-loader-spa-current.min.js" async="" nonce="xz1B350+e42r3/9C4qabaQ=="></script><link rel="preload" href="/bcs/_next/static/chunks/bd3cb77b08e8d169.css" as="style" nonce="xz1B350+e42r3/9C4qabaQ=="/><link rel="preload" href="/bcs/_next/static/chunks/45a5e759b117edb8.css" as="style" nonce="xz1B350+e42r3/9C4qabaQ=="/><link rel="preconnect" href="https://asset.chase.com"/><title>Chase Sapphire Preferred Credit Card | Chase.com</title><meta name="description" content="Enjoy a premium travel and dining experience with 5x points on travel purchased through Chase, 3x points on dining and 2x on travel. Learn more about Chase Sapphire Preferred."/><meta name="robots" content="index, follow"/><meta name="template" content="personal-card-product-page"/><link rel="canonical" href="https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred"/><script id="cohesion-snippet" nonce="xz1B350+e42r3/9C4qabaQ==">
+    !function(co,h,e,s,i,o,n){var d='documentElement';var a='className';h[d][a]+=' preampjs fusejs';
+    n.k=e;co._Cohesion=n;co._Preamp={k:s,start:new Date};co._Fuse={k:i};co._Tagular={k:o};
+    [e,s,i,o].map(function(x){co[x]=co[x]||function(){(co[x].q=co[x].q||[]).push([].slice.call(arguments))}});
+    var b=function(){var u=h[d][a];h[d][a]=u.replace(/ ?preampjs| ?fusejs/g,'')};
+    h.addEventListener('DOMContentLoaded',function(){co.setTimeout(b,3e3);
+    co._Preamp.docReady=co._Fuse.docReady=!0});var z=h.createElement('script');
+    z.async=1;z.src='https://cdn.cohesionapps.com/cohesion/cohesion-restricted.min.js';
+    z.onerror=function(){var ce='error',f='function';for(var o of co[e].q||[])o[0]===ce&&typeof o[1]==f&&o[1]();co[e]=function(n,cb){n===ce&&typeof cb==f&&cb()};b()};
+    h.head.appendChild(z);}
+    (window,document,'cohesion','preamp','fuse','tagular',{"tagular":{"writeKey":"wk_2zyGVfXchlbnixWshFF9VQXDO19","sourceKey":"src_2zyGVgHUzRy38WMbe3h9qNPzHF3","useBeacon":true},"monarch":{"sourceId":"6ad6300e-e07d-457d-a32f-10776ec9266e","token":"bfd8a349-7a48-462a-afa4-e8ba06a17ed5","autoRequest":{"enabled":false,"params":{"writeKey":"wk_2zyGVfXchlbnixWshFF9VQXDO19"}}},"consent":{"onetrust":{"enabled":true,"optIn":true},"required":true,"cookieClassification":"C0002","map":{"C0001":"C0001","C0002":"C0002","C0003":"C0003","C0004":"C0004","C0005":"C0011"}},"fuse":{"enabled":false},"disableCrossSiteId":true});
+  </script><script id="newrelic-config" nonce="xz1B350+e42r3/9C4qabaQ==">
+        window.NREUM = {"info":{"agent":"","beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"NRBR-d7bdbea25d0e6006131","applicationID":"761969010","agentToken":null,"applicationTime":160.044332,"transactionName":"MVJTYksDV0pZBkReXggYZlNbJEtYVQBHWEMNYkNfFixcQUwPQxh2I2MeGWI5FxcWFlxCVjtq","queueTime":0,"ttGuid":"985acc5b0b502055"},"init":{"privacy":{"cookies_enabled":true},"ajax":{"deny_list":[]},"session_replay":{"sampling_rate":1,"mask_text_selector":"*","block_selector":"","mask_input_options":{"date":false,"text_area":false,"week":false,"select":false,"color":false,"range":false,"textarea":false,"url":false,"number":false,"search":false,"month":false,"datetime_local":false,"tel":false,"text":false,"time":false,"email":false},"fix_stylesheets":true,"mask_all_inputs":true,"preload":false,"enabled":true,"error_sampling_rate":100,"autoStart":true},"session_trace":{"sampling_rate":0,"mode":"FIXED_RATE","enabled":true,"error_sampling_rate":0},"feature_flags":["soft_nav"],"performance":{"capture_marks":false,"capture_detail":false,"capture_measures":true},"browser_consent_mode":{"enabled":false},"distributed_tracing":{"enabled":true}},"loader_config":{"agentID":"772369090","accountID":"6758275","trustKey":"78034","xpid":"UgECWVRUDRAHUlBbAQgHV1Q=","licenseKey":"NRBR-d7bdbea25d0e6006131","applicationID":"761969010","browserID":"772369090"}};
+      </script><script id="resource-monitor" nonce="xz1B350+e42r3/9C4qabaQ==">
+        (function() {
+          var errorQueue = [];
+          var newRelicReady = false;
+
+          function flushErrorQueue() {
+            if (window.newrelic && errorQueue.length > 0) {
+              newRelicReady = true;
+              const buildTag = document.body.dataset.buildTag || '';
+              const params = new URLSearchParams(window.location?.search || '');
+              // Normalize param keys to lowercase
+              const normalized = {};
+              for (const [key, value] of params.entries()) {
+                normalized[key.toLowerCase()] = value;
+              }
+
+              const cellcode = normalized["cell"] ?? null;
+              const icellcode = normalized["icell"] ?? null;
+              window.newrelic.setCustomAttribute('Cell', cellcode || '');
+              window.newrelic.setCustomAttribute('ICell', icellcode || '');
+              window.newrelic.setCustomAttribute('BuildTag', buildTag);
+              if (buildTag) window.newrelic.addRelease("creditcards", buildTag);
+            }
+            if (window.newrelic && errorQueue.length > 0) {
+              while (errorQueue.length > 0) {
+                var errorData = errorQueue.shift();
+                window.newrelic.noticeError('ResourceLoadError', errorData);
+              }
+            }
+          }
+
+          function handleResourceError(element) {
+            var tagName = element.tagName.toLowerCase();
+            var resourceUrl = element.src || element.href || 'unknown';
+            var isCrossOrigin = !resourceUrl.startsWith(window.location.origin);
+
+            var urlParams = {};
+            try {
+              if (resourceUrl !== 'unknown') {
+                var url = new URL(resourceUrl, window.location.origin);
+                url.searchParams.forEach(function(value, key) {
+                  urlParams[key] = value;
+                });
+              }
+            } catch (e) {
+              // Invalid URL, skip parameter extraction
+            }
+
+            var errorData = {
+              errorType: tagName + 'LoadError',
+              resourceType: tagName,
+              failedResourceUrl: resourceUrl,
+              pageUrl: window.location.href,
+              crossOriginRequest: isCrossOrigin,
+              urlParameters: urlParams
+            };
+
+            if (window.newrelic && newRelicReady) {
+              window.newrelic.noticeError('ResourceLoadError', errorData);
+            } else {
+              errorQueue.push(errorData);
+            }
+          }
+
+          // Check for New Relic periodically and flush queue
+          var checkInterval = setInterval(function() {
+            if (window.newrelic) {
+              flushErrorQueue();
+              clearInterval(checkInterval);
+            }
+          }, 100);
+
+          // Stop checking after 5 seconds
+          setTimeout(function() {
+            clearInterval(checkInterval);
+          }, 5000);
+
+          var observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              mutation.addedNodes.forEach(function(node) {
+                if (
+                  (node.tagName === 'SCRIPT' && node.src) ||
+                  (node.tagName === 'IMG' && node.src) ||
+                  (node.tagName === 'LINK' && node.rel === 'stylesheet' && node.href)
+                ) {
+                  node.addEventListener('error', function() {
+                    handleResourceError(this);
+                  });
+                }
+              });
+            });
+          });
+
+          if (document.documentElement) {
+            observer.observe(document.documentElement, {
+              childList: true,
+              subtree: true
+            });
+          }
+        })();
+      </script><script id="reportingjs" nonce="xz1B350+e42r3/9C4qabaQ==" src="https://asset.chase.com/web/library/digddsautomation/reportingjs/Reporting.js"></script><script id="reportingjs-integration" nonce="xz1B350+e42r3/9C4qabaQ==">!function(){var e=0;function n(e,n){window.newrelic&&"function"==typeof window.newrelic.setCustomAttribute&&window.newrelic.setCustomAttribute(e,n)}function r(){var t,o,i=document.body.dataset.attributionId||"bcs",a=document.body.dataset.variationId||"default",d=document.body.dataset.experimentId||"none";"undefined"!=typeof RPT_AddVariables&&"undefined"!=typeof RPT_RecordPageLoadEvent?(RPT_AddVariables("jp_pet",i),RPT_RecordPageLoadEvent(),n("attributionId",i.toLowerCase()),n("variationId",a),n("experimentId",d)):e<200?(e++,setTimeout(r,50)):(console.warn("[ReportingJs] Failed to set jp_pet param after 200 retries - RPT functions not available"),t="ReportingJsLoadError",o={errorType:"ReportingJsLoadError",message:"RPT functions not available after 200 retries",pageUrl:window
+
+Respond with JSON only. Do NOT include fields that are null or not found in the content.

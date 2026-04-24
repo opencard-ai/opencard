@@ -1,0 +1,277 @@
+You are extracting structured credit card data for "Chase Sapphire Reserve®" (chase-sapphire-reserve).
+
+Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
+
+{
+  "issuer": "American Express",
+  "network": "amex",
+  "annual_fee": 895,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "bonus_points": 175000,
+    "spending_requirement": 12000,
+    "time_period_months": 6,
+    "description": "Earn up to 175,000 Membership Rewards points...",
+    "point_program": "Amex Membership Rewards",
+    "estimated_value": 2100
+  },
+  "earning_rates": [
+    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
+    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
+    {"category": "Other", "rate": 1, "notes": null}
+  ],
+  "recurring_credits": [
+    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
+    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
+    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"}
+  ],
+  "travel_benefits": {
+    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
+    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
+    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
+  },
+  "hotel_program": {
+    "program": "Marriott Bonvoy",
+    "tier": "Gold Elite",
+    "elite_night_credits": 15,
+    "fhr_eligible": true,
+    "thc_eligible": true
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "return_protection": null
+  },
+  "application_rules": {
+    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+  },
+  "tags": ["lounge-access", "premium", "transferable"],
+  "sources": [{"url": "https://..."}]
+}
+
+Rules:
+- issuer: American Express, Chase, Capital One, Citi, Discover, Wells Fargo, Barclays, Bank of America, US Bank, HSBC, etc.
+- network: amex, visa, mastercard, discover
+- annual_fee: number (0 if no annual fee)
+- foreign_transaction_fee: number (0 if no fee)
+- credit_required: Excellent, Good, Fair, Poor
+- welcome_offer.bonus_points: number (0 if none)
+- welcome_offer.point_program: MR, UR, TYP, Honors, Marriott, None, etc.
+- earning_rates: array of {category, rate, notes}
+  - category: Flights, Hotels, Dining, Groceries, Gas, Other, etc.
+- recurring_credits: array of {name, amount, frequency, category, description, reset_type}
+  - frequency: monthly|quarterly|semi_annual|annual|per_stay|cardmember_year
+  - category: airline|hotel|travel|dining|groceries|gas|streaming|fitness|shopping|ride|digital|entertainment|credit_monitoring|other
+  - reset_type: calendar_year (Jan-Dec) or cardmember_year (based on card anniversary)
+  - NOTE: Free night awards go HERE (in recurring_credits), not in hotel_program
+- travel_benefits.lounge_access: array of {name, type}
+  - type: centurion, priority_pass, delta_skyclub, escape_lounge, plaza_premium, airspace, other
+- travel_benefits.hotel_status: array of {program, tier, complimentary}
+  - program: Marriott Bonvoy, Hilton Honors, IHG Rewards, World of Hyatt, etc.
+- hotel_program: {program, tier, elite_night_credits, fhr_eligible, thc_eligible}
+  - fhr_eligible/thc_eligible: only for Amex cards with FHR/THC benefits
+  - NOTE: free_night_award does NOT go here, it goes in recurring_credits
+- application_rules: {rules: [{rule, description}]}
+  - rule examples: 5/24 rule, first approval, lifetime bonus rule, etc.
+- tags: lounge-access, premium, transferable, no-af, cash-back, travel, hotel, airline, etc.
+- sources: [{url}] - the URL this data was extracted from
+
+Content (first 12000 chars):
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+    
+        <script type="text/javascript" src="https://p11.techlab-cdn.com/65a6ace0e7cfdf9773e82684.js"></script>
+    
+    <meta charset="UTF-8"/>
+    <title>Chase Sapphire Reserve Credit Card | Chase.com</title>
+    
+    <meta name="description" content="Travel worldwide with a $300 annual travel credit, earn points on travel and dining, access premium lounges, and more with Chase Sapphire Reserve. Apply today!"/>
+    <meta name="template" content="personal-card-product-details-page"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+
+    
+    
+<script>
+(function(win,doc,style,timeout){var STYLE_ID='at-body-style';function getParent(){return doc.getElementsByTagName('head')[0]}
+function addStyle(parent,id,def){if(!parent){return}
+var style=doc.createElement('style');style.id=id;style.innerHTML=def;parent.appendChild(style)}
+function removeStyle(parent,id){if(!parent){return}
+var style=doc.getElementById(id);if(!style){return}
+parent.removeChild(style)}
+addStyle(getParent(),STYLE_ID,style);setTimeout(function(){removeStyle(getParent(),STYLE_ID)},timeout)}(window,document,"body {opacity: 0 !important}",3000))
+</script>
+
+    
+        <script src="https://assets.adobedtm.com/1e387046acd0/c5c944d661d1/launch-ab81f1d80aa8.min.js" async></script>
+    
+    
+<link rel="canonical" href="https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve"/>
+
+
+    
+
+    
+    <link rel="stylesheet" href="/etc.clientlibs/jpmc-marketplace/clientlibs/clientlib-base.min.ACSHASH534965f2543ab5e5f2a5d066c3ead261.css" type="text/css">
+
+
+
+
+    
+    
+    
+
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="/etc.clientlibs/jpmc-marketplace/clientlibs/clientlib-site.min.ACSHASH401cee574c91ea98bc20dd867339f3ea.css" type="text/css">
+<link rel="stylesheet" href="/etc.clientlibs/jpmc-marketplace/clientlibs/clientlib-icomoonmds.min.ACSHASHfd9484311cca0be706c8bc014d51c57a.css" type="text/css">
+
+
+    
+    
+
+    
+    
+
+<script nonce="cd206daaf42211d486657b8ee3417f1f">(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch","rua.ceh":"false","rua.ueh":"false","rua.ieh.st":"0"}]);</script>
+                                <script nonce="cd206daaf42211d486657b8ee3417f1f">!function(e){var n="https://s.go-mpulse.net/boomerang/";if("True"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="8ARG6-SAT9E-UQH5X-6L7TE-TTSZH",function(){function e(){if(!i){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.parentNode.appendChild(e),i=!0}}function t(e){i=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",o.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"8ARG6-SAT9E-UQH5X-6L7TE-TTSZH";var o=document.currentScript||document.getElementsByTagName("script")[0],i=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!i)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="skhykdax3xoau2plznpq-f-3a5d39e79-clientnsv4-s.akamaihd.net",o="false"=="true"?2:1,i={"ak.v":"41","ak.cp":"1912449","ak.ai":parseInt("1281593",10),"ak.ol":"0","ak.cr":37,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"1f6f837c","ak.r":43955,"ak.a2":n,"ak.m":"","ak.n":"essl","ak.cport":44482,"ak.gh":"23.205.100.29","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1777060703","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==Xwifl/Tf1C2Vhqv9ljtVFJARdiQ2fpGrapd2/zywH5jbs6bQqZxHUb8JJWLo3gwiPoMvsfwe5sTWwtTeA44YcDmKjPfiqv2Cu1ON6XIEOq0edTR/OTw8VvI8D3yBShDlwBSpLVrmZDus6/7LQsZJtUCLgjs5mEVE32C0RyMa2qfmgjAXlzM+/ccTjC/YlpZg8GYphOQD0D0ZaFFwgRns1HIPjsokmAZTjqD+go/NmnpBobsemiLi6CiM8o1rpus1ECit5OfHX8kGw60zs9weHW+rQPS1rgePysGWHwaa/IAYmBdslObkv6UK/dWq1yTrB2l2imhvgMiFIVSHb8SDXjVQ+7HCc/DptVgKlS5YA2FMMYYBuN4aQABpoSzLKKVfu9fKLZ1vE7BCci77khbHD6Dic+4SdXiacxIx9qH9xjc=","ak.pv":"45","ak.dpoabenc":"","ak.tf":o};if(""!==t)i["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+    <body class="page basicpage header--personalcards" id="page-2be437de2d" data-cmp-link-accessibility-enabled data-cmp-link-accessibility-text="opens in a new tab">
+        
+        
+        
+            
+
+
+
+
+            
+<div class="root container responsivegrid">
+
+    
+    <div id="container-1a42948445" class="cmp-container">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <header class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+<div id="experiencefragment-c37de6abec" class="cmp-experiencefragment cmp-experiencefragment--header">
+
+
+    
+    <div id="container-8b0c46f744" class="cmp-container">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="headerbase aem-GridColumn aem-GridColumn--default--12">
+
+
+<div class="cmp-header-base">
+  <div class="cmp-header-base__wrapper">
+    <div class="cmp-header-base__sidebar">
+      <div class="cmp-header-base__hamburger">
+        <a href="#main-content" data-destination="main-content" class="cmp-header-base__skip-button">
+          Skip to main content
+        </a>
+        <a href="#skip-sidemenu" data-destination="skip-sidemenu" class="cmp-header-base__skip-button">
+          Skip Side Menu
+        </a>
+        <button id="menu-link" class="cmp-header-base__hamburger-button chaseanalytics-track-link" data-pt-name="hd_nav_mm_hamburger">
+          <span class="visually-hidden">Side menu ends</span><img src="/content/dam/jpmc-marketplace/site-assets/logos/ham-menu.svg" alt="hamburger menu icon"/>
+        </button>
+      </div>
+      <button id="skip-sidemenu" class="visually-hidden">Side menu ends</button>
+    </div>
+    <div class="cmp-header-base__signup">
+      <div class="col-8 col-md-8 cmp-header-base__logo">
+        <div id="CClampChase" class="cmp-header-base__logo-desktop">
+          <a href="/" class="chase-logo-link chaseanalytics-track-link" data-pt-name="hd_chase_logo" tabindex="0">
+            <span class="logo-chase-text">
+              <span class="logo-offset">
+                <img src="/content/dam/jpmc-marketplace/site-assets/logos/chasebank-logo-text-bluebg_2025.svg" alt="CHASE logo"/>
+              </span>
+            </span>
+            <span class="logo-chase-icon">
+              <img src="/content/dam/jpmc-marketplace/site-assets/logos/chasebank-logo-icon-bluebg_2025.svg" alt=""/>
+            </span>
+            <span class="logo-creditcards-text">
+              <img src="/content/dam/jpmc-marketplace/site-assets/logos/creditcards_logo_text-bluebg_2025.svg" alt="CREDIT CARDS"/>
+            </span>
+            <span class="visually-hidden">Opens Marketplace homepage in the same window  </span>
+          </a>
+        </div>
+        <div id="mobileChaseLogo" class="cmp-header-base__logo-mobile">
+          <a href="/" class="chase-logo chaseanalytics-track-link" data-pt-name="hd_chase_logo" tabindex="0">
+            <span class="logo-chase-text">
+              <img src="/content/dam/jpmc-marketplace/site-assets/logos/chasebank-logo-text-bluebg_2025.svg" alt="CHASE logo"/>
+            </span>
+            <span class="logo-chase-icon">
+              <img src="/content/dam/jpmc-marketplace/site-assets/logos/chasebank-logo-icon-bluebg_2025.svg" alt=""/>
+            </span>
+            <span class="visually-hidden">Opens Marketplace homepage in the same window  </span>
+          </a>
+        </div>
+      </div>
+      <div class="col-3 col-md-2 cmp-header-base__logo-signin">
+        <a data-lh-name="CClampSignIn" href="https://www.chase.com/personal/offers/secureshopping" target="_blank" class="sign-in-btn chaseanalytics-track-link" data-pt-name="hd_nav_sign_in" tabindex="0" ;>Sign in<span class="visually-hidden">Opens Chase account sign in within a new window</span></a>
+      </div>
+    </div>
+    
+
+    
+    
+    
+    <div id="simple-container-09c16ecc69" class="cmp-container">
+        
+        
+        
+    </div>
+
+
+  </div>
+</div></div>
+<div class="hamburgermenu aem-GridColumn aem-GridColumn--default--12">
+
+
+   
+    
+
+
+<div class="cmp-header-hamburgermenu">
+   <div id="menu-area" data-module="menu-area" class="cmp-header-hamburgermenu__menu" role="dialog">
+      <div id="global-close" class="cmp-header-hamburgermenu__mask"></div>
+      <nav class="cmp-header-hamburgermenu__nav">
+         <button id="close-button" class="cmp-header-hamburgermenu__close-button" tabindex="0"><i class="icon-close"></i>
+         <span class="visually-hidden">close navigation</span>
+         </button>
+         <ul class="cmp-header-hamburgermenu__nav-list">
+            <li>
+               <div class="cmp-header-hamburgermenu__nav-list-title">
+                  <span></span>
+               </div>
+               <ul class="cmp-header-hamburgermenu__nav-sublist">
+                  <li>
+                     
+                        <a data-lh-name="HamNav_Home" href="https://www.chase.com" target="_blank" class="free-credit-score chaseanalytics-track-link" data-pt-name="mm_nav_home">Home<span class="visually-hidden">
+                         Opens Chase.com in a new window</span></a>
+                     
+                     
+                  </li>
+                  
+                  <li>
+                     
+           
+
+Respond with JSON only. Do NOT include fields that are null or not found in the content.
