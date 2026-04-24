@@ -55,12 +55,24 @@
     "airline",
     "business"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "name": "Chase",
+      "url": "https://creditcards.chase.com/travel-credit-cards/united/united-quest"
+    }
+  ],
   "benefits": [],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.971Z"
+  "last_updated": "2026-04-16T13:41:49.971Z",
+  "welcome_bonus": {
+    "amount": 90000,
+    "type": "miles",
+    "requirement": "Spend $4,000 in first 3 months",
+    "source": "chase.com",
+    "last_updated": "2026-04-24"
+  }
 }
