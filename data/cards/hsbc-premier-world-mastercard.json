@@ -2,7 +2,7 @@
   "card_id": "hsbc-premier-world-mastercard",
   "name": "HSBC Premier World Mastercard",
   "issuer": "HSBC",
-  "network": "World Mastercard",
+  "network": "mastercard",
   "annual_fee": 95,
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",
@@ -88,11 +88,11 @@
     },
     {
       "url": "https://maxrewards.com/credit-cards/hsbc-premier",
-      "notes": "MaxRewards \u2014 earn rates"
+      "notes": "MaxRewards — earn rates"
     },
     {
       "url": "https://milelion.com/2025/07/19/buffed-hsbc-premier-mastercard-boosts-earn-rates-adds-unlimited-lounge-access-and-other-perks/",
-      "notes": "The MileLion \u2014 August 2025 earn rate enhancements"
+      "notes": "The MileLion — August 2025 earn rate enhancements"
     }
   ],
   "last_updated": "2026-04-16T13:41:49.986Z",

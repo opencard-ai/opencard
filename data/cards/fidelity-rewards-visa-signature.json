@@ -2,7 +2,7 @@
   "card_id": "fidelity-rewards-visa-signature",
   "name": "Fidelity Rewards Visa Signature Card",
   "issuer": "Fidelity Investments / Elan Financial Services",
-  "network": "Visa Signature",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",
@@ -68,7 +68,7 @@
   ],
   "last_updated": "2026-04-16T13:41:49.982Z",
   "status": "active",
-  "notes": "Effective April 22, 2025, some changes to the rewards program were announced \u2014 cardholders should refer to their November statement or new account materials. The card requires a Fidelity account to redeem rewards at best rate (2%). Redemption to non-Fidelity accounts caps at 1.5%. No annual fee and no foreign transaction fees.",
+  "notes": "Effective April 22, 2025, some changes to the rewards program were announced — cardholders should refer to their November statement or new account materials. The card requires a Fidelity account to redeem rewards at best rate (2%). Redemption to non-Fidelity accounts caps at 1.5%. No annual fee and no foreign transaction fees.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
