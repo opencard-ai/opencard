@@ -156,32 +156,19 @@ function buildCreditCardsUrl(card: Card): string | null {
 function extractFromHtml(html: string): any {
   const result: any = {};
 
-  // Extract annual fee - look in the structured product box section
-  // Pattern: <dt>Annual Fee</dt><dd>$XXX</dd>
-  const feeMatch = html.match(/Annual Fee[\s\S]*?pdp-product-box__details-list-description[^>]*>[\s\S]*?\$?(\d+)/i);
+  // Extract annual fee - look for $XXX in the details section right after "Annual Fee"
+  // Only accept fees in a reasonable range ($50 - $2500) to avoid false positives
+  const feeMatch = html.match(/pdp-product-box__details-list-term[^>]*>\s*Annual\s*Fee[\s\S]{0,200}\$\s*(\d{2,4})/i);
   if (feeMatch) {
     const fee = parseInt(feeMatch[1]);
-    if (fee > 0 && fee < 1000) {
+    if (fee >= 50 && fee <= 2500) {
       result.annual_fee = fee;
     }
   }
 
-  // Fallback: look for specific annual fee patterns
-  if (!result.annual_fee) {
-    const altFeeMatch = html.match(/\$(\d+)\s*(?:annual|fee)/i);
-    if (altFeeMatch) {
-      const fee = parseInt(altFeeMatch[1]);
-      if (fee >= 50 && fee <= 1000) {
-        result.annual_fee = fee;
-      }
-    }
-  }
-
-  // Extract welcome bonus - look for large numbers near "Bonus"
-  // CreditCards.com format: "100,000 Bonus Points after you spend..."
+  // Only update welcome_bonus if amount is reasonable (at least 1,000 for points, 100 for cash)
   const bonusPatterns = [
     /(\d[\d,]*)\s*Bonus\s*Points?/i,
-    /(\d[\d,]*)\s*bonus\s*points?/i,
     /as\s*high\s*as\s*(\d[\d,]*)/i,
     /\$(\d+)\s*(?:cash\s*)?bonus/i,
   ];
@@ -189,10 +176,11 @@ function extractFromHtml(html: string): any {
     const match = html.match(pattern);
     if (match) {
       const amount = parseInt(match[1].replace(/,/g, ''));
-      if (amount >= 1000) {
+      const isCash = match[0].includes('$');
+      if ((isCash && amount >= 100) || (!isCash && amount >= 1000)) {
         result.welcome_bonus = {
           amount,
-          type: match[0].includes('$') ? 'cash' : 'points',
+          type: isCash ? 'cash' : 'points',
         };
         break;
       }

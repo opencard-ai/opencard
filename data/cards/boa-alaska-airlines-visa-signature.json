@@ -3,7 +3,7 @@
   "name": "Alaska Airlines Visa Signature® Credit Card",
   "issuer": "Bank of America",
   "network": "visa",
-  "annual_fee": 95,
+  "annual_fee": 64,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
@@ -107,5 +107,12 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "welcome_bonus": {
+    "amount": 80000,
+    "type": "points",
+    "source": "creditcards.com",
+    "last_updated": "2026-04-24"
+  },
+  "last_scraped": "2026-04-24"
 }

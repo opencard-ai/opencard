@@ -194,5 +194,19 @@
         "type": "points"
       }
     }
+  },
+  {
+    "timestamp": "2026-04-24T05:13:32.584Z",
+    "card_id": "amex-biz-gold",
+    "card_name": "American Express Business Gold Card",
+    "source": "creditcards.com",
+    "action": "updated",
+    "extracted": {
+      "annual_fee": 375,
+      "welcome_bonus": {
+        "amount": 200000,
+        "type": "points"
+      }
+    }
   }
 ]
