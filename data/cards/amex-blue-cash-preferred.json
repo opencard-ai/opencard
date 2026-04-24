@@ -3,7 +3,7 @@
   "name": "Blue Cash Preferred® Card from American Express",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 0,
+  "annual_fee": 95,
   "foreign_transaction_fee": 2.7,
   "credit_required": "Good",
   "earning_rates": [
@@ -120,5 +120,6 @@
     "bonus_value": 300,
     "description": "Up to $300 cash back after $3,000 spend within 6 months",
     "estimated_value": 300
-  }
+  },
+  "last_scraped": "2026-04-24"
 }

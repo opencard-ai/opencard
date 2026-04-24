@@ -48,6 +48,54 @@ const SOURCES = {
   }
 };
 
+// CreditCards.com URL mapping (same as creditcards-scraper.ts)
+const ISSUER_URL_MAP: Record<string, string> = {
+  'chase': 'chase',
+  'american express': 'american-express',
+  'amex': 'american-express',
+  'capital one': 'capital-one',
+  'capitalone': 'capital-one',
+  'citi': 'citi',
+  'citibank': 'citi',
+  'discover': 'discover',
+  'barclays': 'barclays',
+  'bank of america': 'bank-of-america',
+  'boa': 'bank-of-america',
+  'wells fargo': 'wells-fargo',
+  'u.s. bank': 'us-bank',
+  'us bank': 'us-bank',
+  'usb': 'us-bank',
+  'hsbc': 'hsbc',
+};
+
+// URL overrides for cards with non-standard URLs
+const URL_OVERRIDES: Record<string, string> = {
+  'the-business-platinum-card-from-american-express': 'american-express/the-business-platinum-card-from-american-express',
+  'the-platinum-card-from-american-express': 'american-express/the-platinum-card',
+  'american-express-business-gold-card': 'american-express/american-express-business-gold-card',
+  'american-express-gold-card': 'american-express/american-express-gold',
+  'blue-cash-everyday-card-from-american-express': 'american-express/blue-cash-everyday-card-from-american-express',
+  'chase-sapphire-preferred': 'chase/chase-sapphire-preferred',
+  'chase-sapphire-reserve': 'chase/chase-sapphire-reserve',
+  'freedom-flex': 'chase/freedom-flex',
+  'freedom-unlimited': 'chase/freedom-unlimited',
+  'chase-ink-business-preferred': 'chase/ink-business-preferred',
+  'ink-business-cash': 'chase/ink-business-cash',
+  'ink-business-unlimited': 'chase/ink-business-unlimited',
+  'discover-it-chrome': 'discover/discover-it-chrome',
+  'discover-it-miles': 'discover/discover-it-miles',
+  'discover-it-cash-back': 'discover/discover-it-cash-back',
+  'discover-it-student-cash-back': 'discover/discover-it-student-cash-back',
+  'capital-one-savor': 'capital-one/savor',
+  'capital-one-savor-one': 'capital-one/savor-one',
+  'capital-one-venture-x': 'capital-one/venture-x',
+  'capital-one-venture': 'capital-one/venture',
+  'citi-custom-cash': 'citi/citi-custom-cash',
+  'citi-aa-exec': 'citi/citi-aa-exec',
+  'citi-prestige': 'citi/citi-prestige',
+  'citi-diamond-preferred': 'citi/citi-diamond-preferred',
+};
+
 function searchNerdWallet(cardName: string): string | null {
   try {
     // Search for the card
@@ -64,54 +112,121 @@ function searchNerdWallet(cardName: string): string | null {
   return null;
 }
 
-function searchCreditCardsCom(cardName: string): string | null {
-  try {
-    // Map common card names to CreditCards.com URLs
-    const cardSlug = cardName.toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/[^a-z0-9-]/g, '')
-      .substring(0, 50);
+function slugify(text: string): string {
+  return text.toLowerCase()
+    .replace(/[®™']/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function searchCreditCardsCom(card: Card): string | null {
+  const nameSlug = slugify(card.name);
+  const base = SOURCES.creditcards.base;
+  
+  // Check for exact match first
+  if (URL_OVERRIDES[nameSlug]) {
+    return base + URL_OVERRIDES[nameSlug] + '/';
+  }
+  
+  // Try contains match for partial matches (longest first)
+  const matches = Object.entries(URL_OVERRIDES)
+    .filter(([key]) => nameSlug.includes(key))
+    .sort((a, b) => b[0].length - a[0].length);
+  
+  if (matches.length > 0) {
+    return base + matches[0][1] + '/';
+  }
+  
+  // Try issuer-based URL
+  const issuer = card.issuer?.toLowerCase() || '';
+  const issuerPath = ISSUER_URL_MAP[issuer];
+  
+  if (issuerPath) {
+    // Try the full slug first
+    let url = base + issuerPath + '/' + nameSlug + '/';
     
-    const url = `${SOURCES.creditcards.base}${cardSlug}/`;
-    console.log(`  Trying CreditCards.com: ${url}`);
+    try {
+      const response = execSync(`curl -s -o /dev/null -w "%{http_code}" -L "${url}"`, { encoding: 'utf8', timeout: 10000 });
+      if (response.trim() === '200') {
+        return url;
+      }
+    } catch {}
     
-    // Test if URL exists
-    const response = execSync(`curl -s -o /dev/null -w "%{http_code}" -L "${url}"`, { encoding: 'utf8', timeout: 10000 });
-    if (response.trim() === '200') {
-      return url;
+    // Try shorter versions
+    const shortSlugs = [
+      nameSlug.replace(/-card$/, ''),
+      nameSlug.replace(/-visa.*$/, ''),
+      nameSlug.replace(/-mastercard.*$/, ''),
+      nameSlug.replace(/-amex.*$/, ''),
+      nameSlug.replace(/-credit-card$/, ''),
+    ];
+    
+    for (const slug of shortSlugs) {
+      if (slug !== nameSlug) {
+        url = base + issuerPath + '/' + slug + '/';
+        try {
+          const response = execSync(`curl -s -o /dev/null -w "%{http_code}" -L "${url}"`, { encoding: 'utf8', timeout: 10000 });
+          if (response.trim() === '200') {
+            return url;
+          }
+        } catch {}
+      }
     }
-  } catch {}
+  }
+  
   return null;
 }
 
 function extractFromNerdWallet(html: string): any {
   const result: any = {};
 
-  // Extract annual fee - look for $XXX annual fee
-  const feeMatch = html.match(/\$\s*(\d+)\s*(?:annual|fee)/i);
-  if (feeMatch) {
-    result.annual_fee = parseInt(feeMatch[1]);
+  // Extract annual fee - look for specific patterns in CreditCards.com HTML
+  // Pattern 1: "Annual Fee</dt><dd>$XXX"
+  const feeMatch1 = html.match(/Annual Fee[\s\S]{0,100}\$\s*(\d{2,4})/i);
+  if (feeMatch1) {
+    const fee = parseInt(feeMatch1[1]);
+    if (fee >= 50 && fee <= 2500) result.annual_fee = fee;
+  }
+  
+  // Pattern 2: "$XXX annual fee" or "annual fee of $XXX"
+  if (!result.annual_fee) {
+    const feeMatch2 = html.match(/\$(\d+)\s*(?:annual|fee)\s*(?:is|of)?/i);
+    if (feeMatch2) {
+      const fee = parseInt(feeMatch2[1]);
+      if (fee >= 50 && fee <= 2500) result.annual_fee = fee;
+    }
   }
 
-  // Extract welcome bonus - look for "X,XXX Bonus Points after you spend"
-  // CreditCards.com format: "80,000 Bonus Points after you spend $10,000..."
-  const welcomePatterns = [
-    /(\d[\d,]*)\s*Bonus\s*Points\s*after\s*you\s*spend/i,
-    /(\d[\d,]*)\s*bonus\s*points/gi,
-    /Earn\s*(?:up\s*to\s*)?(\d[\d,]*)\s*(?:bonus\s*)?(?:points|miles)/gi,
-    /\$\s*(\d+)\s*(?:bonus|cash\s*back)/gi,
-  ];
+  // Extract welcome bonus - CreditCards.com specific patterns
+  // Pattern 1: "175,000 Bonus Points after you spend"
+  const bonusMatch1 = html.match(/(\d[\d,]*)\s*Bonus\s*Points?\s*after/i);
+  if (bonusMatch1) {
+    const amount = parseInt(bonusMatch1[1].replace(/,/g, ''));
+    if (amount >= 1000) {
+      result.welcome_bonus = { amount, type: 'points' };
+    }
+  }
   
-  for (const pattern of welcomePatterns) {
-    const match = html.match(pattern);
-    if (match) {
-      const amount = parseInt(match[1].replace(/,/g, ''));
+  // Pattern 2: "as high as XXX,XXX points"
+  if (!result.welcome_bonus) {
+    const bonusMatch2 = html.match(/as\s*high\s*as\s*(\d[\d,]*)\s*points/i);
+    if (bonusMatch2) {
+      const amount = parseInt(bonusMatch2[1].replace(/,/g, ''));
       if (amount >= 1000) {
-        result.welcome_bonus = {
-          amount,
-          type: match[0].includes('$') ? 'cash' : 'points',
-        };
-        break;
+        result.welcome_bonus = { amount, type: 'points' };
+      }
+    }
+  }
+  
+  // Pattern 3: "XXX,XXX Membership Rewards Points after"
+  if (!result.welcome_bonus) {
+    const bonusMatch3 = html.match(/(\d[\d,]*)\s*Membership\s*Rewards.*?after/i);
+    if (bonusMatch3) {
+      const amount = parseInt(bonusMatch3[1].replace(/,/g, ''));
+      if (amount >= 1000) {
+        result.welcome_bonus = { amount, type: 'points' };
       }
     }
   }
@@ -200,33 +315,23 @@ async function scrapeCard(card: Card): Promise<ScrapeResult> {
     console.log(`  NerdWallet: Error - ${error.message.substring(0, 50)}`);
   }
 
-  // If NerdWallet didn't work, try CreditCards.com
+  // If NerdWallet didn't work, try CreditCards.com using proper URL mapping
   if (result.action === 'error') {
-    try {
-      const slug = card.name.toLowerCase()
-        .replace(/\s+/g, '-')
-        .replace(/[^a-z0-9-]/g, '')
-        .substring(0, 40);
-      
-      // Try various issuers
-      const issuers = ['chase', 'amex', 'capital-one', 'citi', 'discover', 'barclays'];
-      for (const issuer of issuers) {
-        const url = `${SOURCES.creditcards.base}${issuer}/${slug}/`;
-        const response = execSync(`curl -s -o /dev/null -w "%{http_code}" -L "${url}"`, { encoding: 'utf8', timeout: 10000 });
-        if (response.trim() === '200') {
-          console.log(`  CreditCards.com: Found at ${url}`);
-          const html = execSync(`curl -s -L -A "Mozilla/5.0" "${url}" | head -c 50000`, { encoding: 'utf8', timeout: 15000 });
-          const extracted = extractFromNerdWallet(html); // Reuse same extractor
-          if (Object.keys(extracted).length > 0) {
-            result.extracted = extracted;
-            result.source = 'creditcards.com';
-            result.action = 'verified';
-            console.log(`  CreditCards.com: Extracted ${Object.keys(extracted).join(', ')}`);
-          }
-          break;
+    const url = searchCreditCardsCom(card);
+    if (url) {
+      console.log(`  CreditCards.com: Found at ${url}`);
+      try {
+        // Need more HTML to get the bonus data
+        const html = execSync(`curl -s -L -A "Mozilla/5.0" "${url}" | head -c 150000`, { encoding: 'utf8', timeout: 15000 });
+        const extracted = extractFromNerdWallet(html);
+        if (Object.keys(extracted).length > 0) {
+          result.extracted = extracted;
+          result.source = 'creditcards.com';
+          result.action = 'verified';
+          console.log(`  CreditCards.com: Extracted ${JSON.stringify(extracted)}`);
         }
-      }
-    } catch {}
+      } catch (e) {}
+    }
   }
 
   // Compare with existing data

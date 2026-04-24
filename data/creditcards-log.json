@@ -455,5 +455,280 @@
     "action": "error",
     "extracted": {},
     "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:44:10.447Z",
+    "card_id": "wells-fargo-one-key-plus",
+    "card_name": "One Key+ Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:44:15.359Z",
+    "card_id": "boa-biz-advantage-customized-cash",
+    "card_name": "Bank of America® Business Advantage Customized Cash Rewards Mastercard®",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:44:20.385Z",
+    "card_id": "chase-disney",
+    "card_name": "Disney® Visa® Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:44:25.351Z",
+    "card_id": "chase-aer-lingus-visa-signature",
+    "card_name": "Aer Lingus Visa Signature® Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:44:30.357Z",
+    "card_id": "amex-cash-magnet",
+    "card_name": "Amex Cash Magnet",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:44:33.721Z",
+    "card_id": "amex-marriott-bonvoy-biz",
+    "card_name": "Marriott Bonvoy Business® American Express® Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 125
+    }
+  },
+  {
+    "timestamp": "2026-04-24T05:44:38.777Z",
+    "card_id": "barclays-harley-davidson",
+    "card_name": "Harley-Davidson Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:44:44.613Z",
+    "card_id": "barclays-carnival-world-mastercard",
+    "card_name": "Carnival® World Mastercard®",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:44:49.227Z",
+    "card_id": "amex-marriott-brilliant",
+    "card_name": "Marriott Bonvoy Brilliant® American Express® Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 650
+    }
+  },
+  {
+    "timestamp": "2026-04-24T05:44:54.062Z",
+    "card_id": "barclays-royal-caribbean-visa-signature",
+    "card_name": "Royal Caribbean Visa Signature® Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:45:03.501Z",
+    "card_id": "chase-southwest-premier-biz",
+    "card_name": "Southwest Rapid Rewards® Premier Business Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:45:08.304Z",
+    "card_id": "chase-southwest-priority",
+    "card_name": "Chase Southwest Priority",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:45:11.558Z",
+    "card_id": "citi-dividend",
+    "card_name": "Citi Dividend",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:45:14.926Z",
+    "card_id": "ihg-one-rewards-traveler",
+    "card_name": "IHG One Rewards Traveler Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:45:20.864Z",
+    "card_id": "discover-it-miles",
+    "card_name": "Discover it® Miles",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:45:24.141Z",
+    "card_id": "citi-strata-elite-premier",
+    "card_name": "Strata Elite Premier",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:45:27.481Z",
+    "card_id": "jpmorgan-reserve",
+    "card_name": "JPMorgan Reserve Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:45:31.985Z",
+    "card_id": "citi-strata-premier",
+    "card_name": "Citi Strata Premier℠ Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 95
+    }
+  },
+  {
+    "timestamp": "2026-04-24T05:45:37.189Z",
+    "card_id": "fidelity-rewards-visa-signature",
+    "card_name": "Fidelity Rewards Visa Signature Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:45:39.193Z",
+    "card_id": "hawaiian-airlines-world-elite-mastercard",
+    "card_name": "Hawaiian Airlines World Elite Mastercard®",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:49:33.311Z",
+    "card_id": "barclays-wyndham-earner-plus",
+    "card_name": "Wyndham Earner Plus",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:49:36.654Z",
+    "card_id": "citi-american-airlines-mastercard",
+    "card_name": "American Airlines AAdvantage® Mastercard® (Citi)",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:49:42.347Z",
+    "card_id": "amex-delta-blue",
+    "card_name": "Amex Delta Blue",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:49:45.721Z",
+    "card_id": "amex-blue-cash-preferred",
+    "card_name": "Blue Cash Preferred® Card from American Express",
+    "source": "creditcards.com",
+    "action": "updated",
+    "extracted": {
+      "annual_fee": 95
+    }
+  },
+  {
+    "timestamp": "2026-04-24T05:49:50.758Z",
+    "card_id": "barclays-wyndham-earner-plus-biz",
+    "card_name": "Wyndham Earner+ Business",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:49:53.965Z",
+    "card_id": "amex-marriott-bonvoy-biz",
+    "card_name": "Marriott Bonvoy Business® American Express® Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 125
+    }
+  },
+  {
+    "timestamp": "2026-04-24T05:49:59.218Z",
+    "card_id": "amex-delta-skymiles-gold-biz",
+    "card_name": "Delta SkyMiles® Gold Business American Express Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:50:04.321Z",
+    "card_id": "amex-amazon-biz",
+    "card_name": "Amazon Business American Express Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:50:09.028Z",
+    "card_id": "amex-bce",
+    "card_name": "Blue Cash Everyday® Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:50:13.804Z",
+    "card_id": "amex-blue-from-american-express",
+    "card_name": "Blue from American Express®",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
   }
 ]
