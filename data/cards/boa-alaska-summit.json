@@ -33,22 +33,23 @@
   ],
   "travel_benefits": {
     "other_benefits": [
-      "Alaska Lounge Access (unlimited)",
-      "Companion Fare ($99 + taxes)",
+      "Companion Fare ($99 + taxes + 25K point Global Companion Award)",
       "Priority Boarding",
       "First Checked Bag Free (for you and up to 6 guests)",
-      "Two Alaska Lounge+ day passes annually"
+      "20% back on inflight purchases",
+      "No change fees on same-day Alaska flight changes",
+      "$50 voucher for delays/cancellations"
     ],
     "lounge_access": [
       {
-        "name": "Alaska Lounge+",
+        "name": "Alaska Lounge",
         "type": "airport",
-        "unlimited": true
+        "passes_per_quarter": 2
       },
       {
-        "name": "Alaska Lounge Day Passes",
+        "name": "Alaska Lounge+",
         "type": "airport",
-        "quantity": 2
+        "discount": "$100 off annual membership"
       }
     ]
   },
@@ -80,7 +81,7 @@
       "url": "https://thepointsguy.com/credit-cards/atmos-rewards-summit-tpg-awards-2026/"
     }
   ],
-  "last_updated": "2026-04-24T23:28:00Z",
+  "last_updated": "2026-04-24T23:33:00Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -88,19 +89,43 @@
   },
   "recurring_credits": [
     {
-      "name": "Companion Fare",
-      "amount": 99,
+      "name": "Global Companion Award",
+      "amount": 25000,
       "frequency": "annual",
       "category": "travel",
-      "description": "$99 Companion Fare (plus taxes and fees from $23) - higher tier, may have better terms",
+      "description": "25,000-point Global Companion Award annually (plus $99 companion fare)",
       "reset_type": "cardmember_year"
     },
     {
-      "name": "Alaska Lounge+ Membership Credit",
+      "name": "Alaska Lounge Passes",
+      "amount": 8,
+      "frequency": "quarterly",
+      "category": "lounge",
+      "description": "Two Alaska Lounge passes per quarter (8 total per year)",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Alaska Lounge+ Membership Discount",
       "amount": 100,
       "frequency": "annual",
       "category": "lounge",
       "description": "$100 off annual Alaska Lounge+ Membership",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Status Points",
+      "amount": 10000,
+      "frequency": "annual",
+      "category": "other",
+      "description": "10,000 Atmos status points annually (automatically deposited)",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Global Entry/TSA PreCheck Credit",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $120 statement credit for Global Entry or TSA PreCheck",
       "reset_type": "cardmember_year"
     },
     {
@@ -112,11 +137,11 @@
       "reset_type": "cardmember_year"
     },
     {
-      "name": "Global Entry/TSA PreCheck Credit",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Up to $100 statement credit for Global Entry or TSA PreCheck",
+      "name": "Flight Delay/Cancellation Voucher",
+      "amount": 50,
+      "frequency": "per_stay",
+      "category": "airline",
+      "description": "$50 voucher for Alaska Airlines flight cancellations or 2+ hour delays",
       "reset_type": "cardmember_year"
     }
   ],
