@@ -115,5 +115,12 @@
       "description": "$100 annual credit for checked bags with one selected airline.",
       "reset_type": "cardmember_year"
     }
-  ]
+  ],
+  "welcome_bonus": {
+    "amount": 100000,
+    "type": "points",
+    "source": "creditcards.com",
+    "last_updated": "2026-04-24"
+  },
+  "last_scraped": "2026-04-24"
 }

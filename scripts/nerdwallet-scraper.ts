@@ -398,7 +398,8 @@ async function main() {
       });
     }
   } else {
-    cardsToScrape = files.sort(() => Math.random() - 0.5).slice(0, 10);
+    // Process all cards (or limit to 50 for cron job efficiency)
+    cardsToScrape = files.slice(0, 50);
   }
 
   console.log(`Processing ${cardsToScrape.length} cards...\n`);
