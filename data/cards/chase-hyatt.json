@@ -60,7 +60,11 @@
   "tags": [
     "hotel"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.chase.com/personal/credit-cards/hyatt-world-of-hyatt-credit-card"
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],

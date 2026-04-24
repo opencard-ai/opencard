@@ -1,0 +1,35 @@
+[
+  {
+    "timestamp": "2026-04-24T04:33:25.537Z",
+    "card_id": "chase-hyatt-biz",
+    "card_name": "World of Hyatt Business Credit Card",
+    "action": "verified",
+    "changes": {},
+    "confidence": 0.9
+  },
+  {
+    "timestamp": "2026-04-24T04:33:27.541Z",
+    "card_id": "chase-hyatt",
+    "card_name": "Chase Hyatt",
+    "action": "error",
+    "changes": {},
+    "confidence": 0,
+    "error": "No source URL"
+  },
+  {
+    "timestamp": "2026-04-24T04:34:11.380Z",
+    "card_id": "chase-hyatt-biz",
+    "card_name": "World of Hyatt Business Credit Card",
+    "action": "verified",
+    "changes": {},
+    "confidence": 0.9
+  },
+  {
+    "timestamp": "2026-04-24T04:34:16.914Z",
+    "card_id": "chase-hyatt",
+    "card_name": "Chase Hyatt",
+    "action": "verified",
+    "changes": {},
+    "confidence": 0.9
+  }
+]
