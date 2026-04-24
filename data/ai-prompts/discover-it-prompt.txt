@@ -1,0 +1,383 @@
+You are extracting structured credit card data for "Discover it® Cash Back" (discover-it).
+
+Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
+
+{
+  "issuer": "American Express",
+  "network": "amex",
+  "annual_fee": 895,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "bonus_points": 175000,
+    "spending_requirement": 12000,
+    "time_period_months": 6,
+    "description": "Earn up to 175,000 Membership Rewards points...",
+    "point_program": "Amex Membership Rewards",
+    "estimated_value": 2100
+  },
+  "earning_rates": [
+    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
+    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
+    {"category": "Other", "rate": 1, "notes": null}
+  ],
+  "recurring_credits": [
+    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
+    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
+    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"}
+  ],
+  "travel_benefits": {
+    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
+    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
+    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
+  },
+  "hotel_program": {
+    "program": "Marriott Bonvoy",
+    "tier": "Gold Elite",
+    "elite_night_credits": 15,
+    "fhr_eligible": true,
+    "thc_eligible": true
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "return_protection": null
+  },
+  "application_rules": {
+    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+  },
+  "tags": ["lounge-access", "premium", "transferable"],
+  "sources": [{"url": "https://..."}]
+}
+
+Rules:
+- issuer: American Express, Chase, Capital One, Citi, Discover, Wells Fargo, Barclays, Bank of America, US Bank, HSBC, etc.
+- network: amex, visa, mastercard, discover
+- annual_fee: number (0 if no annual fee)
+- foreign_transaction_fee: number (0 if no fee)
+- credit_required: Excellent, Good, Fair, Poor
+- welcome_offer.bonus_points: number (0 if none)
+- welcome_offer.point_program: MR, UR, TYP, Honors, Marriott, None, etc.
+- earning_rates: array of {category, rate, notes}
+  - category: Flights, Hotels, Dining, Groceries, Gas, Other, etc.
+- recurring_credits: array of {name, amount, frequency, category, description, reset_type}
+  - frequency: monthly|quarterly|semi_annual|annual|per_stay|cardmember_year
+  - category: airline|hotel|travel|dining|groceries|gas|streaming|fitness|shopping|ride|digital|entertainment|credit_monitoring|other
+  - reset_type: calendar_year (Jan-Dec) or cardmember_year (based on card anniversary)
+  - NOTE: Free night awards go HERE (in recurring_credits), not in hotel_program
+- travel_benefits.lounge_access: array of {name, type}
+  - type: centurion, priority_pass, delta_skyclub, escape_lounge, plaza_premium, airspace, other
+- travel_benefits.hotel_status: array of {program, tier, complimentary}
+  - program: Marriott Bonvoy, Hilton Honors, IHG Rewards, World of Hyatt, etc.
+- hotel_program: {program, tier, elite_night_credits, fhr_eligible, thc_eligible}
+  - fhr_eligible/thc_eligible: only for Amex cards with FHR/THC benefits
+  - NOTE: free_night_award does NOT go here, it goes in recurring_credits
+- application_rules: {rules: [{rule, description}]}
+  - rule examples: 5/24 rule, first approval, lifetime bonus rule, etc.
+- tags: lounge-access, premium, transferable, no-af, cash-back, travel, hotel, airline, etc.
+- sources: [{url}] - the URL this data was extracted from
+
+Content (first 12000 chars):
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8"/>
+    <title>Cash Back Credit Cards | Discover</title>
+    <meta name="description" content="Learn about Discover it® cash back credit cards and consider benefits like Discover Cashback Match when choosing the best cash back credit card for you."/>
+    
+    <meta name="template" content="content-page-template"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+    <meta property="og:title" content="Cash Back Credit Cards | Discover"/>
+    <meta property="og:description" content="Learn about Discover it® cash back credit cards and consider benefits like Discover Cashback Match when choosing the best cash back credit card for you."/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/images/icon-fav-16-16.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/images/icon-fav-32-32.png"/>
+    <link rel="icon" type="image/png" sizes="48x48" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/images/icon-fav-48-48.png"/>
+    <link rel="icon" type="image/png" sizes="64x64" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/images/icon-fav-64-64.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/images/icon-fav-96-96.png"/>
+    
+        <link rel="canonical" href="https://www.discover.com/credit-cards/cash-back/"/>
+        <script type="text/javascript">
+            var aflag = "true";
+            aflag = "true";
+        </script>
+    
+	<input type="hidden" name="search-region" value="Prod" aria-hidden="true"/>
+    <script type="text/javascript">
+        var enableEdsKey = "false";
+        enableEdsKey = "true";
+        var overrideLogin = "false";
+        overrideLogin = "false";
+        var applyNowText ="";
+        applyNowText = "";
+        var applyNowURL = "";
+        applyNowURL = "";
+        var logoURL = "";
+        logoURL = "";
+        var applynowCtaClass = "false";
+        applynowCtaClass = "false";
+        var analyticsLabel = "";
+        analyticsLabel = "";
+        var autoDateJs = "false";
+        autoDateJs = "true";
+        var subNavigation = "false";
+        subNavigation = "false";
+        var enableCofScript = "false";
+        enableCofScript = "false";
+    </script>
+    
+    
+        <meta property="og:image" content="https://www.discover.com/discover/ico/share-image.jpg"/>
+    
+    
+
+    
+        
+    
+        
+            
+                <meta name="keywords" content="Cash Back Credit Cards | Cashback | Discover"/>
+            
+                <meta name="format-detection" content="telephone=no"/>
+            
+                <meta name="productCategoryAffinity" content="CA-CAT-CASH"/>
+            
+        
+    
+
+    
+        
+    
+        
+    
+
+    
+        
+    
+        
+    
+    <link href="https://assets.adobedtm.com" rel="preconnect"/>
+    <link href="https://s.go-mpulse.net" rel="preconnect"/>
+    <link href="https://discover.sv.rkdms.com" rel="preconnect"/>
+    <link href="https://dpm.demdex.net" rel="preconnect"/>
+    <link href="https://www.googletagmanager.com" rel="preconnect"/>
+    <link href="https://s.btstatic.com" rel="preconnect"/>
+    
+    
+    
+    
+
+    
+
+    <script src="/content/dam/discover/en_us/credit-cards/card-acquisitions/global/js/adobeTargetFlicker.js"></script>
+    <script>
+        //Set analytics values from page properties
+        window.pageType = 'CC Cash Back';
+        window.pageVariation = '';
+        window.pageName = '/credit-cards/cash-back';
+    </script>
+    <!-- DL Script Starts -->
+  <script>
+  var adobeDataLayer = adobeDataLayer || [];    
+  var pageName = window.pageName ? window.pageName : window.location.pathname.replace(/^\/|\/$/g, '');  
+    if(pageName === "/credit-cards/homepage" && getQueryParameterExists('defaultoffer','yes')){
+      pageName = '/credit-cards/highAvailability';
+    }
+    if(pageName === "/credit-cards/homepage" && getQueryParameterExists('icmpgn','acq_dma_oaa_creditcards')){
+      pageName = '/credit-cards/dmareferrers';
+    }
+  var pageUrl = window.location.href;
+  var urlwithoutQuery = window.location.protocol+"//"+window.location.hostname+window.location.pathname;
+  var pathwithoutQuery =  window.location.pathname.replace(/^\/|\/$/g, '');
+  var previouspathwithoutQuery = "";
+  var debugQuery = window.location.search.replace(/\?/, '');
+  var pageInstance = "";
+  var siteDomain = "";
+  var siteName = window.location.pathname.split('/')[1];
+  var siteSection = "";
+    var siteSubsection = "";
+  var searchTerm ="";
+  var searchType ="";
+  var searchTypeClicked ="";
+  var resultType ="";
+  var searchResultTypeClicked ="";
+  var searchResultTypes = "";
+  var serverHost = window.location.hostname;
+    if (serverHost != undefined) {
+      pageInstance = serverHost.substring(0, serverHost.indexOf('-')); 
+      if (pageInstance == undefined || pageInstance == ''){
+      pageInstance = 'prod';
+      }
+    } 
+    if (window.location.hostname.includes('dev') || window.location.hostname.includes('stage')) {
+      siteDomain = window.location.hostname;
+    }
+    else {
+      siteDomain = window.location.hostname.split('.')[1] + "." + window.location.hostname.split('.')[2];
+    } 
+    siteSection =(( window.location.pathname.split('/').length >= 3 && window.location.pathname.includes("html")) || window.location.pathname.split('/').length >= 4) ? window.location.pathname.split('/')[1] + "/" + window.location.pathname.split('/')[2]: ""; 
+    siteSubsection = ((window.location.pathname.split('/').length >= 4 && window.location.pathname.includes("html")) || window.location.pathname.split('/').length >= 5) ? window.location.pathname.split('/')[1] + "/" + window.location.pathname.split('/')[2] + "/" + window.location.pathname.split('/')[3] : "";
+
+    if(debugQuery.includes('q')) {
+      searchType = "public";
+      searchTerm = window.location.search.replace(/\?/,'').split('=')[1].split('&')[0].replace('+', ' ');
+    } 
+  if(debugQuery.includes("srchQ")){
+    searchType = "PublicSite";
+    searchTerm = window.location.search.replace(/\?/,'').split('&')[1].split('=')[1].replace(/%20/g, ' ');
+      if(window.location.search.replace(/\?/, '').split('=')[0] == "gcmpgn") {
+        searchTypeClicked = window.location.search.replace(/\?/,'').split('=')[1].split('&')[0];
+        resultType = window.location.search.replace(/\?/,'').split('=')[1].split('_')[3];
+      
+          if(resultType == "gsap") {
+            searchResultTypeClicked = "KeyMatch";
+          }
+          else if(resultType == "gsan") {
+            searchResultTypeClicked = "RegularResult";
+          }
+          else if(resultType == "sro") {
+            searchResultTypeClicked = "QuickResult";
+          } 
+          else{
+            searchResultTypeClicked = "UnknownResult";
+          }
+      }
+    }
+
+  var digitalData = {
+    page: {
+      pageInfo: {
+        pageName: pageName == '' ? "Home" : pageName,
+        pageUrl:pageUrl,
+        urlwithoutQuery:urlwithoutQuery,
+        pageInstanceId: pageInstance,
+        pathwithoutQuery:pathwithoutQuery == '' ? "Home" : pathwithoutQuery,
+        previouspathwithoutQuery:previouspathwithoutQuery,
+        debugQuery:debugQuery,
+        siteDomain:siteDomain,
+        siteName:siteName,
+        siteSection:siteSection,
+        siteSubsection:siteSubsection,
+        errorMessages:""
+      }
+    },
+    load: function() {
+      this.showResults = document.querySelector("leader-1.no-trailer :nth-child(3)").innerHTML; // get the results of the showing info from search page.
+      this.showResults.select();
+    },      
+    search: {
+      internalSearchTerm:searchTerm,
+      internalSearchTypeClicked:searchTypeClicked,
+      internalSearchResultTypeClicked:searchResultTypeClicked,
+      internalSearchType:searchType,
+      internalSearchResultTypes:searchResultTypes
+    },
+    target: {
+      webTargetAds: {
+        list: "",
+        event: 0
+      }
+    },    
+    user: {
+        customerType:"Prospect"
+      },
+    privacy: {
+      user: {
+          acceptance:"optIn"
+        }   
+      },
+    version: "1.0"
+    }
+
+  let readCookiePpwoq = function(name) {
+    let nameEQ = name + "=";
+    let ca = document.cookie.split(';');
+    for(let i=0;i < ca.length;i++) {
+      let c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+  };
+
+  let dfsedskey = readCookiePpwoq("dfsedskey"),
+    ppwoq = document.referrer.replace(/\?.*$/g,"").replace(/^[^:]+:\/\/[^/]+/, '').replace(/#.*/, '');
+  if(ppwoq == '/' && !dfsedskey) {
+    digitalData.page.pageInfo.previouspathwithoutQuery = "gateway/unk";
+  }
+  else if(ppwoq == '/' && dfsedskey) {
+    digitalData.page.pageInfo.previouspathwithoutQuery = "gateway/knw";
+  }
+  else {
+    digitalData.page.pageInfo.previouspathwithoutQuery = document.referrer.replace(/\?.*$/g, '').replace(/^[^:]+:\/\/[^/]+/, '').replace(/^\/|\/$/g, '');
+  }
+
+  digitalData.event = adobeDataLayer;
+  function dataLayerClickEventPush(eventObject) {
+    dataLayerEventPush('click', eventObject);
+  }
+    function dataLayerEventPush(eventType, eventObject) {
+      if (!eventObject) {
+        console.error("JSON object parameter has to be passed!");
+        return;
+      }
+      if (!eventObject.customLink) {
+        console.error("customLink attribute has to be defined!");
+        return;
+      }
+      adobeDataLayer.push({
+        event: eventType,
+        variables: eventObject
+      });
+    }   
+  window.onload = function() {    
+    var channelpageName = $(".channelpagename").length ? $(".channelpagename").text() : pageName;
+    var digitalData = {
+      page: {
+        pageInfo: {
+          pageName: channelpageName == '' ? "Home" : channelpageName,
+          pageUrl:pageUrl,
+          urlwithoutQuery:urlwithoutQuery,
+          pageInstanceId: "prod",
+          pathwithoutQuery:pathwithoutQuery == '' ? "Home" : pathwithoutQuery,
+          previouspathwithoutQuery: previouspathwithoutQuery,
+          debugQuery:debugQuery,
+          siteDomain:siteDomain,
+          siteName:siteName,
+          siteSection:siteSection,
+          siteSubsection:siteSubsection
+        }
+      }
+    } 
+  }
+    function getQueryParameterExists(paramName,value) {
+      var url = window.location.href.toLowerCase();
+      if(url.indexOf('?' + paramName + '='+value) !== -1 || url.indexOf('&' + paramName + '='+value) !== -1)
+      return true;
+      return false;
+    } 
+  </script>
+  <!-- DL Script Ends -->
+
+<!-- Applying the flicker handling for Header logo with 3 seconds max timeout-->
+<script>
+  !function(e,a,n,t){
+    if (a) return;
+    var i=e.head;if(i){
+    var o=e.createElement("style");
+    o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),
+    setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}}
+    
+    (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, "a.discover-logo, #flag { opacity: 0 !important }", 3000);
+    console.log("Adobe Flicker is Enabled for Header logo with 3 sec max timeout");
+</script>
+
+<script src="https://assets.adobedtm.com/1e5ef0994701/082ef47f9e7a/launch-118a6970f261.min.js" async></script>
+
+
+Respond with JSON only. Do NOT include fields that are null or not found in the content.

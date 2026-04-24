@@ -1306,5 +1306,987 @@
     "action": "error",
     "extracted": {},
     "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T06:49:30.721Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 895,
+      "welcome_bonus": {
+        "amount": 175000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:00:42.260Z",
+    "card_id": "amazon-prime-visa",
+    "card_name": "Prime Visa",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:00:49.098Z",
+    "card_id": "amazon-visa",
+    "card_name": "Amazon Visa",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:00:57.220Z",
+    "card_id": "amex-amazon-biz-prime",
+    "card_name": "Amazon Business Prime Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:01:03.498Z",
+    "card_id": "amex-amazon-biz",
+    "card_name": "Amazon Business American Express Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:01:09.956Z",
+    "card_id": "amex-bce",
+    "card_name": "Blue Cash Everyday® Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:01:16.321Z",
+    "card_id": "amex-bcp",
+    "card_name": "Blue Cash Preferred® Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 95
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:01:22.620Z",
+    "card_id": "amex-biz-gold",
+    "card_name": "American Express Business Gold Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 375,
+      "welcome_bonus": {
+        "amount": 200000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:01:27.628Z",
+    "card_id": "amex-biz-platinum",
+    "card_name": "The Business Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 895,
+      "welcome_bonus": {
+        "amount": 300000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:01:32.562Z",
+    "card_id": "amex-blue-biz-cash",
+    "card_name": "The American Express Blue Business Cash™ Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:01:38.809Z",
+    "card_id": "amex-blue-biz-plus",
+    "card_name": "Amex Blue Business Plus",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:01:44.090Z",
+    "card_id": "amex-blue-cash-everyday",
+    "card_name": "Blue Cash Everyday® Card from American Express",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:01:48.992Z",
+    "card_id": "amex-blue-cash-preferred",
+    "card_name": "Blue Cash Preferred® Card from American Express",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 95
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:01:55.121Z",
+    "card_id": "amex-blue-from-american-express",
+    "card_name": "Blue from American Express®",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:02:00.229Z",
+    "card_id": "amex-cash-magnet",
+    "card_name": "Amex Cash Magnet",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:02:05.335Z",
+    "card_id": "centurion-card-amex",
+    "card_name": "The Centurion® Card from American Express",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:02:10.256Z",
+    "card_id": "amex-delta-blue",
+    "card_name": "Amex Delta Blue",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:02:15.286Z",
+    "card_id": "amex-delta-gold-biz",
+    "card_name": "Delta SkyMiles Gold Business",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:02:19.837Z",
+    "card_id": "amex-delta-gold",
+    "card_name": "Delta SkyMiles® Gold American Express Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 150
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:02:26.507Z",
+    "card_id": "amex-delta-platinum",
+    "card_name": "Delta SkyMiles® Platinum American Express Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 350
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:02:32.897Z",
+    "card_id": "amex-delta-reserve",
+    "card_name": "Delta SkyMiles® Reserve American Express Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 650
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:02:38.897Z",
+    "card_id": "amex-delta-skymiles-gold-biz",
+    "card_name": "Delta SkyMiles® Gold Business American Express Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:02:45.194Z",
+    "card_id": "amex-delta-skymiles-platinum-biz",
+    "card_name": "Delta SkyMiles® Platinum Business American Express Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:02:51.677Z",
+    "card_id": "amex-delta-skymiles-reserve-biz",
+    "card_name": "Delta SkyMiles® Reserve Business American Express Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:02:58.159Z",
+    "card_id": "amex-everyday-preferred",
+    "card_name": "Amex EveryDay Preferred Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:03:06.029Z",
+    "card_id": "amex-everyday",
+    "card_name": "American Express EveryDay® Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:03:12.436Z",
+    "card_id": "amex-gold",
+    "card_name": "American Express® Gold Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 325,
+      "welcome_bonus": {
+        "amount": 100000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:03:16.930Z",
+    "card_id": "amex-graphite-biz",
+    "card_name": "Amex Graphite Business Cash",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:03:22.052Z",
+    "card_id": "amex-green",
+    "card_name": "American Express® Green Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "welcome_bonus": {
+        "amount": 60000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:03:28.385Z",
+    "card_id": "amex-hilton-biz-platinum",
+    "card_name": "Hilton Business Platinum",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:03:33.095Z",
+    "card_id": "amex-hilton-honors-aspire",
+    "card_name": "Hilton Honors American Express Aspire Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:03:40.147Z",
+    "card_id": "amex-hilton-honors-biz",
+    "card_name": "Hilton Honors American Express Business Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 195
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:03:46.797Z",
+    "card_id": "amex-hilton-honors",
+    "card_name": "Hilton Honors American Express Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:03:53.576Z",
+    "card_id": "amex-hilton-surpass",
+    "card_name": "Hilton Honors American Express Surpass Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 150
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:04:00.426Z",
+    "card_id": "amex-marriott-bevy",
+    "card_name": "Marriott Bonvoy Bevy® American Express® Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 250
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:04:07.213Z",
+    "card_id": "amex-marriott-bonvoy-biz",
+    "card_name": "Marriott Bonvoy Business® American Express® Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 125
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:04:13.531Z",
+    "card_id": "amex-marriott-brilliant",
+    "card_name": "Marriott Bonvoy Brilliant® American Express® Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 650
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:04:19.852Z",
+    "card_id": "amex-morgan-stanley-blue",
+    "card_name": "Amex Morgan Stanley Blue",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:24.682Z",
+    "card_id": "amex-morgan-stanley-platinum",
+    "card_name": "Amex Morgan Stanley Platinum",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:29.405Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 895,
+      "welcome_bonus": {
+        "amount": 175000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:04:34.165Z",
+    "card_id": "amex-plum",
+    "card_name": "The Plum Card® from American Express",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:40.377Z",
+    "card_id": "apple-card",
+    "card_name": "Apple Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:43.053Z",
+    "card_id": "barclays-aadvantage-red",
+    "card_name": "AAdvantage Aviator Red",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:47.740Z",
+    "card_id": "barclays-aadvantage-silver",
+    "card_name": "AAdvantage Aviator Silver",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:52.612Z",
+    "card_id": "barclays-aarp-essential-rewards-mastercard",
+    "card_name": "AARP® Essential Rewards Mastercard® from Barclays",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:58.669Z",
+    "card_id": "barclays-aarp-travel-rewards-mastercard",
+    "card_name": "AARP® Travel Rewards Mastercard® from Barclays",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:05:05.059Z",
+    "card_id": "barclays-athleta-rewards-mastercard",
+    "card_name": "Athleta Rewards Mastercard®",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:05:11.123Z",
+    "card_id": "barclays-banana-republic-rewards-mastercard",
+    "card_name": "Banana Republic Rewards Mastercard®",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:05:17.430Z",
+    "card_id": "barclays-carnival-world-mastercard",
+    "card_name": "Carnival® World Mastercard®",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:05:23.162Z",
+    "card_id": "barclays-celebrity-cruises-visa-signature",
+    "card_name": "Celebrity Cruises Visa Signature® Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:05:30.504Z",
+    "card_id": "barclays-frontier-airlines-world-mastercard",
+    "card_name": "Frontier Airlines World Mastercard®",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:02:52.864Z",
+    "card_id": "amazon-prime-visa",
+    "card_name": "Prime Visa",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:02:58.493Z",
+    "card_id": "amazon-visa",
+    "card_name": "Amazon Visa",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:03:05.651Z",
+    "card_id": "amex-amazon-biz-prime",
+    "card_name": "Amazon Business Prime Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:03:11.078Z",
+    "card_id": "amex-amazon-biz",
+    "card_name": "Amazon Business American Express Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:03:16.364Z",
+    "card_id": "amex-bce",
+    "card_name": "Blue Cash Everyday® Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:03:22.215Z",
+    "card_id": "amex-bcp",
+    "card_name": "Blue Cash Preferred® Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 95
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:03:27.912Z",
+    "card_id": "amex-biz-gold",
+    "card_name": "American Express Business Gold Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 375,
+      "welcome_bonus": {
+        "amount": 200000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:03:31.988Z",
+    "card_id": "amex-biz-platinum",
+    "card_name": "The Business Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 895,
+      "welcome_bonus": {
+        "amount": 300000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:03:36.281Z",
+    "card_id": "amex-blue-biz-cash",
+    "card_name": "The American Express Blue Business Cash™ Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:03:41.816Z",
+    "card_id": "amex-blue-biz-plus",
+    "card_name": "Amex Blue Business Plus",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:03:46.015Z",
+    "card_id": "amex-blue-cash-everyday",
+    "card_name": "Blue Cash Everyday® Card from American Express",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:03:50.470Z",
+    "card_id": "amex-blue-cash-preferred",
+    "card_name": "Blue Cash Preferred® Card from American Express",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 95
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:03:56.338Z",
+    "card_id": "amex-blue-from-american-express",
+    "card_name": "Blue from American Express®",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:00.527Z",
+    "card_id": "amex-cash-magnet",
+    "card_name": "Amex Cash Magnet",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:04.870Z",
+    "card_id": "centurion-card-amex",
+    "card_name": "The Centurion® Card from American Express",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:09.268Z",
+    "card_id": "amex-delta-blue",
+    "card_name": "Amex Delta Blue",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:13.537Z",
+    "card_id": "amex-delta-gold-biz",
+    "card_name": "Delta SkyMiles Gold Business",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:17.842Z",
+    "card_id": "amex-delta-gold",
+    "card_name": "Delta SkyMiles® Gold American Express Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 150
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:04:23.524Z",
+    "card_id": "amex-delta-platinum",
+    "card_name": "Delta SkyMiles® Platinum American Express Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 350
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:04:29.509Z",
+    "card_id": "amex-delta-reserve",
+    "card_name": "Delta SkyMiles® Reserve American Express Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 650
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:04:35.661Z",
+    "card_id": "amex-delta-skymiles-gold-biz",
+    "card_name": "Delta SkyMiles® Gold Business American Express Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:41.355Z",
+    "card_id": "amex-delta-skymiles-platinum-biz",
+    "card_name": "Delta SkyMiles® Platinum Business American Express Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:47.034Z",
+    "card_id": "amex-delta-skymiles-reserve-biz",
+    "card_name": "Delta SkyMiles® Reserve Business American Express Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:52.562Z",
+    "card_id": "amex-everyday-preferred",
+    "card_name": "Amex EveryDay Preferred Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:04:59.814Z",
+    "card_id": "amex-everyday",
+    "card_name": "American Express EveryDay® Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:05:05.449Z",
+    "card_id": "amex-gold",
+    "card_name": "American Express® Gold Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 325,
+      "welcome_bonus": {
+        "amount": 100000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:05:09.637Z",
+    "card_id": "amex-graphite-biz",
+    "card_name": "Amex Graphite Business Cash",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:05:13.813Z",
+    "card_id": "amex-green",
+    "card_name": "American Express® Green Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "welcome_bonus": {
+        "amount": 60000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:05:19.301Z",
+    "card_id": "amex-hilton-biz-platinum",
+    "card_name": "Hilton Business Platinum",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:05:23.411Z",
+    "card_id": "amex-hilton-honors-aspire",
+    "card_name": "Hilton Honors American Express Aspire Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:05:29.207Z",
+    "card_id": "amex-hilton-honors-biz",
+    "card_name": "Hilton Honors American Express Business Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 195
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:05:35.103Z",
+    "card_id": "amex-hilton-honors",
+    "card_name": "Hilton Honors American Express Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:05:40.762Z",
+    "card_id": "amex-hilton-surpass",
+    "card_name": "Hilton Honors American Express Surpass Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 150
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:05:46.544Z",
+    "card_id": "amex-marriott-bevy",
+    "card_name": "Marriott Bonvoy Bevy® American Express® Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 250
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:05:52.099Z",
+    "card_id": "amex-marriott-bonvoy-biz",
+    "card_name": "Marriott Bonvoy Business® American Express® Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 125
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:05:57.821Z",
+    "card_id": "amex-marriott-brilliant",
+    "card_name": "Marriott Bonvoy Brilliant® American Express® Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 650
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:06:04.127Z",
+    "card_id": "amex-morgan-stanley-blue",
+    "card_name": "Amex Morgan Stanley Blue",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:06:08.445Z",
+    "card_id": "amex-morgan-stanley-platinum",
+    "card_name": "Amex Morgan Stanley Platinum",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:06:12.724Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 895,
+      "welcome_bonus": {
+        "amount": 175000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T15:06:16.977Z",
+    "card_id": "amex-plum",
+    "card_name": "The Plum Card® from American Express",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:06:22.720Z",
+    "card_id": "apple-card",
+    "card_name": "Apple Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:06:25.322Z",
+    "card_id": "barclays-aadvantage-red",
+    "card_name": "AAdvantage Aviator Red",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:06:29.580Z",
+    "card_id": "barclays-aadvantage-silver",
+    "card_name": "AAdvantage Aviator Silver",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:06:33.706Z",
+    "card_id": "barclays-aarp-essential-rewards-mastercard",
+    "card_name": "AARP® Essential Rewards Mastercard® from Barclays",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:06:39.927Z",
+    "card_id": "barclays-aarp-travel-rewards-mastercard",
+    "card_name": "AARP® Travel Rewards Mastercard® from Barclays",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:06:45.746Z",
+    "card_id": "barclays-athleta-rewards-mastercard",
+    "card_name": "Athleta Rewards Mastercard®",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:06:51.071Z",
+    "card_id": "barclays-banana-republic-rewards-mastercard",
+    "card_name": "Banana Republic Rewards Mastercard®",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:06:56.685Z",
+    "card_id": "barclays-carnival-world-mastercard",
+    "card_name": "Carnival® World Mastercard®",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:07:02.368Z",
+    "card_id": "barclays-celebrity-cruises-visa-signature",
+    "card_name": "Celebrity Cruises Visa Signature® Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T15:07:09.322Z",
+    "card_id": "barclays-frontier-airlines-world-mastercard",
+    "card_name": "Frontier Airlines World Mastercard®",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
   }
 ]
