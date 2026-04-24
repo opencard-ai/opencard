@@ -3,7 +3,7 @@
   "name": "Ink Business Preferred Plus",
   "issuer": "Chase",
   "network": "visa",
-  "annual_fee": 95,
+  "annual_fee": 8,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
@@ -58,5 +58,12 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.967Z"
+  "last_updated": "2026-04-16T13:41:49.967Z",
+  "welcome_bonus": {
+    "amount": 100000,
+    "type": "points",
+    "source": "creditcards.com",
+    "last_updated": "2026-04-24"
+  },
+  "last_scraped": "2026-04-24"
 }

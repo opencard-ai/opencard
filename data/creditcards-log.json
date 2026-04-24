@@ -108,5 +108,91 @@
     "action": "error",
     "extracted": {},
     "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:06:27.957Z",
+    "card_id": "chase-freedom-flex",
+    "card_name": "Chase Freedom Flex®",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:06:31.462Z",
+    "card_id": "chase-freedom-rise",
+    "card_name": "Chase Freedom Rise Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:06:36.558Z",
+    "card_id": "chase-freedom-unlimited",
+    "card_name": "Chase Freedom Unlimited®",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:08:18.296Z",
+    "card_id": "chase-ink-preferred-plus",
+    "card_name": "Ink Business Preferred Plus",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:08:40.285Z",
+    "card_id": "chase-ink-biz-cash",
+    "card_name": "Chase Ink Business Cash® Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:08:45.121Z",
+    "card_id": "chase-ink-biz-preferred",
+    "card_name": "Chase Ink Business Preferred® Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:08:49.842Z",
+    "card_id": "chase-ink-biz-premier",
+    "card_name": "Ink Business Premier® Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:08:54.596Z",
+    "card_id": "chase-ink-biz-unlimited",
+    "card_name": "Chase Ink Business Unlimited® Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:09:34.427Z",
+    "card_id": "chase-ink-preferred-plus",
+    "card_name": "Ink Business Preferred Plus",
+    "source": "creditcards.com",
+    "action": "updated",
+    "extracted": {
+      "annual_fee": 8,
+      "welcome_bonus": {
+        "amount": 100000,
+        "type": "points"
+      }
+    }
   }
 ]

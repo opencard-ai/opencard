@@ -54,15 +54,42 @@ const ISSUER_URL_MAP: Record<string, string> = {
   'u.s. bank': 'us-bank',
   'us bank': 'us-bank',
   'usb': 'us-bank',
+  'hsbc': 'hsbc',
 };
 
 // Manual URL overrides for cards with non-standard URLs
+// Key is partial match on the slugified card name
 const URL_OVERRIDES: Record<string, string> = {
-  'the-platinum-card': 'american-express/the-platinum-card',
+  // Amex
+  'platinum-card': 'american-express/the-platinum-card',
+  'american-express-gold': 'american-express/american-express-gold',
   'amex-gold': 'american-express/american-express-gold',
-  'amex-platinum': 'american-express/the-platinum-card',
-  'chase-sapphire-preferred': 'chase/chase-sapphire-preferred',
-  'chase-sapphire-reserve': 'chase/chase-sapphire-reserve',
+  'business-platinum': 'american-express/the-business-platinum-card',
+  // Chase
+  'sapphire-preferred': 'chase/chase-sapphire-preferred',
+  'sapphire-reserve': 'chase/chase-sapphire-reserve',
+  'freedom-flex': 'chase/freedom-flex',
+  'freedom-unlimited': 'chase/freedom-unlimited',
+  'ink-business-preferred': 'chase/ink-business-preferred',
+  'ink-preferred': 'chase/ink-business-preferred',
+  'ink-business-cash': 'chase/ink-business-cash',
+  'ink-business-unlimited': 'chase/ink-business-unlimited',
+  'ink-premier': 'chase/ink-business-preferred',
+  // Discover
+  'discover-it-chrome': 'discover/discover-it-chrome',
+  'discover-it-miles': 'discover/discover-it-miles',
+  'discover-it-cash-back': 'discover/discover-it-cash-back',
+  'discover-it-student': 'discover/discover-it-student-cash-back',
+  // Capital One
+  'capital-one-savor': 'capital-one/savor',
+  'capital-one-savor-one': 'capital-one/savor-one',
+  'capital-one-venture': 'capital-one/venture',
+  'capital-one-venture-x': 'capital-one/venture-x',
+  // Citi
+  'citi-custom-cash': 'citi/citi-custom-cash',
+  'citi-aa-exec': 'citi/citi-aa-exec',
+  'citi-prestige': 'citi/citi-prestige',
+  'citi-diamond': 'citi/citi-diamond-preferred',
 };
 
 function slugify(text: string): string {
@@ -76,11 +103,13 @@ function slugify(text: string): string {
 
 function buildCreditCardsUrl(card: Card): string | null {
   const base = 'https://www.creditcards.com/';
-  
-  // Check for URL override first
   const nameSlug = slugify(card.name);
-  if (URL_OVERRIDES[nameSlug]) {
-    return base + URL_OVERRIDES[nameSlug] + '/';
+  
+  // Check for URL override (partial match)
+  for (const [key, path] of Object.entries(URL_OVERRIDES)) {
+    if (nameSlug.includes(key)) {
+      return base + path + '/';
+    }
   }
   
   // Try issuer-based URL
@@ -105,6 +134,7 @@ function buildCreditCardsUrl(card: Card): string | null {
       nameSlug.replace(/-visa.*$/, ''),
       nameSlug.replace(/-mastercard.*$/, ''),
       nameSlug.replace(/-amex.*$/, ''),
+      nameSlug.replace(/-credit-card$/, ''),
     ];
     
     for (const slug of shortSlugs) {
@@ -126,42 +156,45 @@ function buildCreditCardsUrl(card: Card): string | null {
 function extractFromHtml(html: string): any {
   const result: any = {};
 
-  // Extract annual fee from structured HTML
-  const feeMatch = html.match(/<dt[^>]*>\s*Annual\s*Fee\s*<\/dt>[\s\S]*?<dd[^>]*>\s*\$?([\d,]+)/i);
+  // Extract annual fee - look in the structured product box section
+  // Pattern: <dt>Annual Fee</dt><dd>$XXX</dd>
+  const feeMatch = html.match(/Annual Fee[\s\S]*?pdp-product-box__details-list-description[^>]*>[\s\S]*?\$?(\d+)/i);
   if (feeMatch) {
-    result.annual_fee = parseInt(feeMatch[1].replace(/,/g, ''));
-  } else {
-    // Fallback: look for "$XXX annual fee" pattern
-    const altFeeMatch = html.match(/\$(\d+)\s*(?:annual|fee)/i);
-    if (altFeeMatch) {
-      result.annual_fee = parseInt(altFeeMatch[1]);
+    const fee = parseInt(feeMatch[1]);
+    if (fee > 0 && fee < 1000) {
+      result.annual_fee = fee;
     }
   }
 
-  // Extract welcome bonus - CreditCards.com uses structured data
-  // Pattern: "XXX,XXX Bonus Points after you spend $X,XXX"
-  const bonusMatch = html.match(/(\d[\d,]*)\s*Bonus\s*Points?\s*after\s*you\s*spend/i);
-  if (bonusMatch) {
-    result.welcome_bonus = {
-      amount: parseInt(bonusMatch[1].replace(/,/g, '')),
-      type: 'points',
-    };
-  } else {
-    // Try "As High As XXX,XXX points" pattern (Amex style)
-    const highMatch = html.match(/as\s*high\s*as\s*(\d[\d,]*)\s*points?/i);
-    if (highMatch) {
-      result.welcome_bonus = {
-        amount: parseInt(highMatch[1].replace(/,/g, '')),
-        type: 'points',
-      };
-    } else {
-      // Try cash bonus pattern
-      const cashMatch = html.match(/\$(\d+)\s*(?:cash\s*)?bonus/i);
-      if (cashMatch) {
+  // Fallback: look for specific annual fee patterns
+  if (!result.annual_fee) {
+    const altFeeMatch = html.match(/\$(\d+)\s*(?:annual|fee)/i);
+    if (altFeeMatch) {
+      const fee = parseInt(altFeeMatch[1]);
+      if (fee >= 50 && fee <= 1000) {
+        result.annual_fee = fee;
+      }
+    }
+  }
+
+  // Extract welcome bonus - look for large numbers near "Bonus"
+  // CreditCards.com format: "100,000 Bonus Points after you spend..."
+  const bonusPatterns = [
+    /(\d[\d,]*)\s*Bonus\s*Points?/i,
+    /(\d[\d,]*)\s*bonus\s*points?/i,
+    /as\s*high\s*as\s*(\d[\d,]*)/i,
+    /\$(\d+)\s*(?:cash\s*)?bonus/i,
+  ];
+  for (const pattern of bonusPatterns) {
+    const match = html.match(pattern);
+    if (match) {
+      const amount = parseInt(match[1].replace(/,/g, ''));
+      if (amount >= 1000) {
         result.welcome_bonus = {
-          amount: parseInt(cashMatch[1]),
-          type: 'cash',
+          amount,
+          type: match[0].includes('$') ? 'cash' : 'points',
         };
+        break;
       }
     }
   }
