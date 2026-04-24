@@ -5,20 +5,20 @@
   "network": "visa",
   "annual_fee": 95,
   "foreign_transaction_fee": 0,
-  "credit_required": "Good",
+  "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 4,
-    "time_period_months": 4,
-    "bonus_points": 80000,
-    "description": "80,000 bonus points + $99 Companion Fare (intro)",
-    "point_program": "Bank of America",
-    "estimated_value": 1000
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "bonus_points": 85000,
+    "description": "Earn 85,000 bonus miles after spending $4,000 in purchases within the first 3 months of account opening.",
+    "point_program": "Alaska Airlines Mileage Plan",
+    "estimated_value": 1275
   },
   "earning_rates": [
     {
       "category": "Alaska Airlines purchases",
       "rate": 3,
-      "notes": ""
+      "notes": "Earn 3 miles per $1 spent on eligible Alaska Airlines purchases."
     },
     {
       "category": "Gas stations",
@@ -28,7 +28,7 @@
     {
       "category": "All other purchases",
       "rate": 1,
-      "notes": ""
+      "notes": "Earn 1 mile per $1 spent on all other purchases."
     }
   ],
   "travel_benefits": {
@@ -43,6 +43,13 @@
         "name": "Alaska Lounge+",
         "type": "airport",
         "discount": "$100 off annual membership"
+      }
+    ],
+    "hotel_status": [
+      {
+        "program": "World of Hyatt",
+        "tier": "Discoverist",
+        "complimentary": true
       }
     ]
   },
@@ -64,7 +71,9 @@
   },
   "tags": [
     "airline",
-    "premium"
+    "premium",
+    "transferable",
+    "travel"
   ],
   "sources": [
     {
@@ -72,12 +81,20 @@
     },
     {
       "url": "https://thepointsguy.com/credit-cards/atmos-ascent-vs-atmos-summit/"
+    },
+    {
+      "url": "https://www.uscreditcardguide.com/boa-alaska-atmos-ascent-credit-card/"
     }
   ],
   "last_updated": "2026-04-24T23:28:00Z",
   "hotel_program": null,
   "application_rules": {
-    "rules": [],
+    "rules": [
+      {
+        "rule": "5/24 rule",
+        "description": "Bank of America may be less likely to approve applicants who have opened 5 or more new credit cards in the past 24 months."
+      }
+    ],
     "notes": null
   },
   "recurring_credits": [
