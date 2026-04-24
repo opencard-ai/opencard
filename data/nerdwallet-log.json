@@ -43,5 +43,597 @@
     "action": "error",
     "extracted": {},
     "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:47:55.161Z",
+    "card_id": "penfed-gold-visa",
+    "card_name": "PenFed Gold Visa® Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:48:01.675Z",
+    "card_id": "marriott-bonvoy-bold",
+    "card_name": "Marriott Bonvoy Bold® Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:48:08.780Z",
+    "card_id": "kohls-charge",
+    "card_name": "Kohl's Charge Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:48:20.062Z",
+    "card_id": "citi-aa-mileup",
+    "card_name": "AA AAdvantage MileUp",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:48:31.177Z",
+    "card_id": "amex-hilton-honors-biz",
+    "card_name": "Hilton Honors American Express Business Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:48:39.152Z",
+    "card_id": "chase-united-explorer",
+    "card_name": "United℠ Explorer Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:48:51.040Z",
+    "card_id": "citi-costco-anywhere",
+    "card_name": "Costco Anywhere Visa® Card by Citi",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:48:58.364Z",
+    "card_id": "barclays-frontier-airlines-world-mastercard",
+    "card_name": "Frontier Airlines World Mastercard®",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:49:09.464Z",
+    "card_id": "citi-aadvantage-mileup",
+    "card_name": "American Airlines AAdvantage® MileUp® Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:49:15.789Z",
+    "card_id": "citi-strata-premier",
+    "card_name": "Citi Strata Premier℠ Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:50:23.321Z",
+    "card_id": "bilt-obsidian",
+    "card_name": "Bilt Obsidian Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:50:31.073Z",
+    "card_id": "amex-biz-platinum",
+    "card_name": "The Business Platinum Card® from American Express",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:50:37.570Z",
+    "card_id": "chase-disney",
+    "card_name": "Disney® Visa® Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:50:43.810Z",
+    "card_id": "luxury-card-black",
+    "card_name": "Luxury Card Mastercard® Black Card™",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:50:55.731Z",
+    "card_id": "amex-blue-biz-plus",
+    "card_name": "Amex Blue Business Plus",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:51:07.824Z",
+    "card_id": "amex-hilton-honors-aspire",
+    "card_name": "Hilton Honors American Express Aspire Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:51:14.068Z",
+    "card_id": "barclays-wyndham-earner",
+    "card_name": "Wyndham Earner Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:51:25.840Z",
+    "card_id": "amex-blue-cash-everyday",
+    "card_name": "Blue Cash Everyday® Card from American Express",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:51:31.821Z",
+    "card_id": "barclays-wyndham-earner-plus-biz",
+    "card_name": "Wyndham Earner+ Business",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:51:43.423Z",
+    "card_id": "boa-alaska-airlines-visa-platinum",
+    "card_name": "Alaska Airlines Visa® Platinum Plus® Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:52:01.691Z",
+    "card_id": "citi-prestige",
+    "card_name": "Citi Prestige",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:52:07.705Z",
+    "card_id": "navy-federal-flagship-rewards",
+    "card_name": "Navy Federal Flagship Rewards® Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:52:20.417Z",
+    "card_id": "chase-united-club",
+    "card_name": "United Club℠ Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:52:31.616Z",
+    "card_id": "marriott-bonvoy-bold",
+    "card_name": "Marriott Bonvoy Bold® Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:52:36.990Z",
+    "card_id": "navy-federal-cashrewards-plus",
+    "card_name": "Navy Federal cashRewards PLUS® Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:52:48.734Z",
+    "card_id": "citi-dividend",
+    "card_name": "Citi Dividend",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:52:59.901Z",
+    "card_id": "fidelity-rewards-visa-signature",
+    "card_name": "Fidelity Rewards Visa Signature Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:53:06.026Z",
+    "card_id": "capital-one-venture-one",
+    "card_name": "Capital One VentureOne Rewards Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:53:12.339Z",
+    "card_id": "chase-ink-biz-unlimited",
+    "card_name": "Chase Ink Business Unlimited® Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:53:23.867Z",
+    "card_id": "chase-british-airways-visa-signature",
+    "card_name": "British Airways Visa Signature® Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:53:42.960Z",
+    "card_id": "amex-biz-platinum",
+    "card_name": "The Business Platinum Card® from American Express",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:53:48.706Z",
+    "card_id": "amex-delta-platinum",
+    "card_name": "Delta SkyMiles® Platinum American Express Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:53:55.096Z",
+    "card_id": "amex-delta-skymiles-platinum-biz",
+    "card_name": "Delta SkyMiles® Platinum Business American Express Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:54:06.078Z",
+    "card_id": "amex-hilton-biz-platinum",
+    "card_name": "Hilton Business Platinum",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:54:16.852Z",
+    "card_id": "amex-morgan-stanley-platinum",
+    "card_name": "Amex Morgan Stanley Platinum",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:54:29.321Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:54:34.935Z",
+    "card_id": "boa-alaska-airlines-visa-platinum",
+    "card_name": "Alaska Airlines Visa® Platinum Plus® Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:54:46.113Z",
+    "card_id": "citi-aa-platinum-select",
+    "card_name": "AAdvantage Platinum Select",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:54:58.064Z",
+    "card_id": "penfed-platinum-rewards",
+    "card_name": "PenFed Platinum Rewards Visa Signature® Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:55:04.574Z",
+    "card_id": "robinhood-platinum",
+    "card_name": "Robinhood Platinum Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:55:16.060Z",
+    "card_id": "us-bank-visa-platinum",
+    "card_name": "U.S. Bank Visa® Platinum Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:56:51.029Z",
+    "card_id": "amex-biz-platinum",
+    "card_name": "The Business Platinum Card® from American Express",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:56:55.586Z",
+    "card_id": "amex-delta-platinum",
+    "card_name": "Delta SkyMiles® Platinum American Express Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:57:01.653Z",
+    "card_id": "amex-delta-skymiles-platinum-biz",
+    "card_name": "Delta SkyMiles® Platinum Business American Express Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:57:07.464Z",
+    "card_id": "amex-hilton-biz-platinum",
+    "card_name": "Hilton Business Platinum",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:57:11.832Z",
+    "card_id": "amex-morgan-stanley-platinum",
+    "card_name": "Amex Morgan Stanley Platinum",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:57:16.183Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:57:21.072Z",
+    "card_id": "boa-alaska-airlines-visa-platinum",
+    "card_name": "Alaska Airlines Visa® Platinum Plus® Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:57:29.474Z",
+    "card_id": "citi-aa-platinum-select",
+    "card_name": "AAdvantage Platinum Select",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:57:33.667Z",
+    "card_id": "penfed-platinum-rewards",
+    "card_name": "PenFed Platinum Rewards Visa Signature® Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:57:36.463Z",
+    "card_id": "robinhood-platinum",
+    "card_name": "Robinhood Platinum Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:57:39.362Z",
+    "card_id": "us-bank-visa-platinum",
+    "card_name": "U.S. Bank Visa® Platinum Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T05:59:23.511Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T06:00:45.953Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T06:01:16.066Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 895,
+      "welcome_bonus": {
+        "amount": 175000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T06:01:26.076Z",
+    "card_id": "amex-hilton-honors-biz",
+    "card_name": "Hilton Honors American Express Business Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 195
+    }
+  },
+  {
+    "timestamp": "2026-04-24T06:01:32.184Z",
+    "card_id": "costco-anywhere-visa-business-citi",
+    "card_name": "Costco Anywhere Visa® Business Card by Citi",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T06:01:39.108Z",
+    "card_id": "chase-united-club-infinite",
+    "card_name": "United Club℠ Visa Infinite Card",
+    "source": "creditcards.com",
+    "action": "updated",
+    "extracted": {
+      "annual_fee": 695
+    }
+  },
+  {
+    "timestamp": "2026-04-24T06:01:48.232Z",
+    "card_id": "discover-it-miles",
+    "card_name": "Discover it® Miles",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T06:01:53.178Z",
+    "card_id": "comenity-ulta-beauty-mastercard",
+    "card_name": "Ulta Beauty Mastercard®",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T06:01:56.507Z",
+    "card_id": "citi-aa-mileup",
+    "card_name": "AA AAdvantage MileUp",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T06:02:00.723Z",
+    "card_id": "marriott-bonvoy-bountiful",
+    "card_name": "Marriott Bonvoy Bountiful® Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T06:02:08.376Z",
+    "card_id": "discover-it-student-cash-back",
+    "card_name": "Discover it® Student Cash Back",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T06:02:13.751Z",
+    "card_id": "chase-ritz-carlton",
+    "card_name": "Chase Ritz-Carlton Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T06:02:21.227Z",
+    "card_id": "navy-federal-cashrewards-plus",
+    "card_name": "Navy Federal cashRewards PLUS® Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
   }
 ]
