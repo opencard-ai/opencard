@@ -33,23 +33,16 @@
   ],
   "travel_benefits": {
     "other_benefits": [
-      "Alaska Lounge Access",
       "Companion Fare ($99 + taxes)",
       "Priority Boarding",
-      "First Checked Bag Free (for you and up to 6 guests)"
+      "First Checked Bag Free (for you and up to 6 guests)",
+      "20% back on inflight purchases"
     ],
     "lounge_access": [
       {
         "name": "Alaska Lounge+",
         "type": "airport",
         "discount": "$100 off annual membership"
-      }
-    ],
-    "hotel_status": [
-      {
-        "program": "World of Hyatt",
-        "tier": "Discoverist",
-        "complimentary": true
       }
     ]
   },
@@ -86,7 +79,7 @@
       "url": "https://www.uscreditcardguide.com/boa-alaska-atmos-ascent-credit-card/"
     }
   ],
-  "last_updated": "2026-04-24T23:28:00Z",
+  "last_updated": "2026-04-24T23:33:00Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [
@@ -107,11 +100,11 @@
       "reset_type": "cardmember_year"
     },
     {
-      "name": "Alaska Lounge+ Discount",
+      "name": "Alaska Lounge+ Membership Discount",
       "amount": 100,
       "frequency": "annual",
       "category": "lounge",
-      "description": "$100 off annual Alaska Lounge+ Membership",
+      "description": "$100 off annual Alaska Lounge+ Membership ($795 value)",
       "reset_type": "cardmember_year"
     },
     {
@@ -120,6 +113,14 @@
       "frequency": "per_stay",
       "category": "airline",
       "description": "20% back on Alaska Airlines inflight purchases",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "TSA PreCheck/Global Entry Credit",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $120 statement credit for TSA PreCheck or Global Entry",
       "reset_type": "cardmember_year"
     }
   ],
