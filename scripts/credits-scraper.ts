@@ -103,7 +103,7 @@ function scrapeNerdWallet(url: string): string | null {
 
 async function scrapeCreditCardsWithBrowser(url: string): Promise<string> {
   const browser = await puppeteer.launch({
-    headless: 'new',
+    headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
   });
   
