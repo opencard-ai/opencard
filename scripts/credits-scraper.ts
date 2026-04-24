@@ -130,7 +130,7 @@ function extractCreditsFromText(text: string): RecurringCredit[] {
   const credits: RecurringCredit[] = [];
   
   // Patterns for recurring credits
-  const patterns = [
+  const patterns: [RegExp, string][] = [
     // $X/month or $X monthly
     [/\$\s*(\d+(?:\.\d{2})?)\s*(?:per\s*)?month(?:ly)?/gi, 'monthly'],
     // $X/year or $X annually
