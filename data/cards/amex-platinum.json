@@ -83,6 +83,14 @@
     {
       "url": "https://upgradedpoints.com/travel/amex-travel-insurance-benefits-guide/",
       "notes": "Insurance Details"
+    },
+    {
+      "url": "https://www.creditcards.com/american-express/amex-platinum/",
+      "name": "creditcards.com"
+    },
+    {
+      "url": "https://www.creditcards.com/american-express/the-platinum-card/",
+      "name": "creditcards.com"
     }
   ],
   "last_updated": "2026-04-16T13:41:49.950Z",
@@ -93,44 +101,60 @@
   },
   "recurring_credits": [
     {
-      "name": "Airline Fee Credit",
-      "amount": 200,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "$200 annual credit for checked bags, priority pass, lounges with one selected airline.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Fine Hotels + Resorts Credit",
-      "amount": 300,
-      "frequency": "semi_annual",
-      "category": "travel",
-      "description": "$300 every 6 months for Fine Hotels + Resorts bookings.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Digital Entertainment Credit",
-      "amount": 20,
+      "name": "Uber Cash",
+      "amount": 15,
       "frequency": "monthly",
-      "category": "entertainment",
-      "description": "$20/month for select streaming services (Paramount+, Audible, Peacock). Enrollment required.",
+      "category": "ride",
+      "description": "$15/month Uber Cash for rides or Uber Eats in the U.S.",
       "reset_type": "calendar_year"
     },
     {
-      "name": "Equinox Credit",
-      "amount": 15,
+      "name": "Digital Entertainment Credit",
+      "amount": 25,
       "frequency": "monthly",
-      "category": "fitness",
-      "description": "$15/month for Equinox+ membership. Enrollment required.",
+      "category": "streaming",
+      "description": "$25/month for Disney+, Disney+ bundle, ESPN+, Hulu, NYT, Paramount+, Peacock, WSJ, YouTube Premium, YouTube TV.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Hotel Credit",
+      "amount": 300,
+      "frequency": "semi_annual",
+      "category": "hotel",
+      "description": "Up to $300 semi-annually for prepaid Fine Hotels + Resorts or The Hotel Collection bookings via Amex Travel.",
       "reset_type": "cardmember_year"
+    },
+    {
+      "name": "CLEAR+ Credit",
+      "amount": 209,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $209/year statement credit for CLEAR+ membership.",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "lululemon Credit",
+      "amount": 75,
+      "frequency": "quarterly",
+      "category": "fitness",
+      "description": "Up to $75/quarter at U.S. lululemon retail stores and lululemon.com.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "Walmart+ Credit",
       "amount": 12.95,
       "frequency": "monthly",
       "category": "shopping",
-      "description": "$12.95/month for Walmart+ membership.",
+      "description": "Statement credit for one monthly Walmart+ membership.",
       "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Airline Fee Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "airline",
+      "description": "Up to $200/year for checked bags, priority pass, lounges with one selected airline.",
+      "reset_type": "calendar_year"
     },
     {
       "name": "Resy Credit",
@@ -138,14 +162,6 @@
       "frequency": "quarterly",
       "category": "dining",
       "description": "$100/quarter for Resy restaurant bookings.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Uber Cash",
-      "amount": 15,
-      "frequency": "monthly",
-      "category": "travel",
-      "description": "$15/month ($180/year) Uber Cash for rides or Uber Eats.",
       "reset_type": "cardmember_year"
     },
     {
@@ -158,19 +174,27 @@
     },
     {
       "name": "Saks Fifth Avenue Credit",
-      "amount": 100,
-      "frequency": "annual",
+      "amount": 50,
+      "frequency": "semi_annual",
       "category": "shopping",
-      "description": "$100 annual credit at Saks Fifth Avenue.",
+      "description": "$50/semi-annual at Saks Fifth Avenue.",
       "reset_type": "calendar_year"
     },
     {
-      "name": "CLEAR Plus Credit",
-      "amount": 189,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "$189/year for CLEAR Plus membership.",
+      "name": "Equinox Credit",
+      "amount": 15,
+      "frequency": "monthly",
+      "category": "fitness",
+      "description": "$15/month for Equinox+ membership.",
       "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Uber One Credit",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "ride",
+      "description": "Up to $120/year statement credit for Uber One auto-renewing membership.",
+      "reset_type": "calendar_year"
     }
   ],
   "welcome_bonus": {
@@ -179,5 +203,5 @@
     "source": "creditcards.com",
     "last_updated": "2026-04-24"
   },
-  "last_scraped": "2026-04-24"
+  "last_scraped": "2026-04-24T07:34:19.364Z"
 }
