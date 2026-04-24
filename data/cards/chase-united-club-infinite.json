@@ -3,7 +3,7 @@
   "name": "United Club℠ Visa Infinite Card",
   "issuer": "Chase",
   "network": "visa",
-  "annual_fee": 695,
+  "annual_fee": 19,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
@@ -128,5 +128,6 @@
       "frequency": "quarterly",
       "category": "other"
     }
-  ]
+  ],
+  "last_scraped": "2026-04-24"
 }

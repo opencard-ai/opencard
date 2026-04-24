@@ -103,5 +103,12 @@
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "welcome_bonus": {
+    "amount": 200000,
+    "type": "points",
+    "source": "creditcards.com",
+    "last_updated": "2026-04-24"
+  },
+  "last_scraped": "2026-04-24"
 }
