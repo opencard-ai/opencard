@@ -3,7 +3,7 @@
   "name": "Hilton Business Platinum",
   "issuer": "American Express",
   "network": "visa",
-  "annual_fee": 695,
+  "annual_fee": 895,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
@@ -72,5 +72,12 @@
       "description": "$250 annual credit at Hilton resorts.",
       "reset_type": "cardmember_year"
     }
-  ]
+  ],
+  "welcome_bonus": {
+    "amount": 300000,
+    "type": "points",
+    "source": "creditcards.com",
+    "last_updated": "2026-04-24"
+  },
+  "last_scraped": "2026-04-24"
 }
