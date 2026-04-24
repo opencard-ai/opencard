@@ -58,38 +58,37 @@ const ISSUER_URL_MAP: Record<string, string> = {
 };
 
 // Manual URL overrides for cards with non-standard URLs
-// Key is partial match on the slugified card name
+// Sorted by specificity - more specific keys should be checked first
 const URL_OVERRIDES: Record<string, string> = {
-  // Amex
-  'platinum-card': 'american-express/the-platinum-card',
-  'american-express-gold': 'american-express/american-express-gold',
-  'amex-gold': 'american-express/american-express-gold',
-  'business-platinum': 'american-express/the-business-platinum-card',
+  // Amex - specific card URLs
+  'the-business-platinum-card-from-american-express': 'american-express/the-business-platinum-card-from-american-express',
+  'the-platinum-card-from-american-express': 'american-express/the-platinum-card',
+  'american-express-business-gold-card': 'american-express/american-express-business-gold-card',
+  'american-express-gold-card': 'american-express/american-express-gold',
+  'blue-cash-everyday-card-from-american-express': 'american-express/blue-cash-everyday-card-from-american-express',
   // Chase
-  'sapphire-preferred': 'chase/chase-sapphire-preferred',
-  'sapphire-reserve': 'chase/chase-sapphire-reserve',
+  'chase-sapphire-preferred': 'chase/chase-sapphire-preferred',
+  'chase-sapphire-reserve': 'chase/chase-sapphire-reserve',
   'freedom-flex': 'chase/freedom-flex',
   'freedom-unlimited': 'chase/freedom-unlimited',
-  'ink-business-preferred': 'chase/ink-business-preferred',
-  'ink-preferred': 'chase/ink-business-preferred',
+  'chase-ink-business-preferred': 'chase/ink-business-preferred',
   'ink-business-cash': 'chase/ink-business-cash',
   'ink-business-unlimited': 'chase/ink-business-unlimited',
-  'ink-premier': 'chase/ink-business-preferred',
   // Discover
   'discover-it-chrome': 'discover/discover-it-chrome',
   'discover-it-miles': 'discover/discover-it-miles',
   'discover-it-cash-back': 'discover/discover-it-cash-back',
-  'discover-it-student': 'discover/discover-it-student-cash-back',
+  'discover-it-student-cash-back': 'discover/discover-it-student-cash-back',
   // Capital One
   'capital-one-savor': 'capital-one/savor',
   'capital-one-savor-one': 'capital-one/savor-one',
-  'capital-one-venture': 'capital-one/venture',
   'capital-one-venture-x': 'capital-one/venture-x',
+  'capital-one-venture': 'capital-one/venture',
   // Citi
   'citi-custom-cash': 'citi/citi-custom-cash',
   'citi-aa-exec': 'citi/citi-aa-exec',
   'citi-prestige': 'citi/citi-prestige',
-  'citi-diamond': 'citi/citi-diamond-preferred',
+  'citi-diamond-preferred': 'citi/citi-diamond-preferred',
 };
 
 function slugify(text: string): string {
@@ -105,11 +104,18 @@ function buildCreditCardsUrl(card: Card): string | null {
   const base = 'https://www.creditcards.com/';
   const nameSlug = slugify(card.name);
   
-  // Check for URL override (partial match)
-  for (const [key, path] of Object.entries(URL_OVERRIDES)) {
-    if (nameSlug.includes(key)) {
-      return base + path + '/';
-    }
+  // Check for exact match first
+  if (URL_OVERRIDES[nameSlug]) {
+    return base + URL_OVERRIDES[nameSlug] + '/';
+  }
+  
+  // Try contains match for partial matches (longest first)
+  const matches = Object.entries(URL_OVERRIDES)
+    .filter(([key]) => nameSlug.includes(key))
+    .sort((a, b) => b[0].length - a[0].length);
+  
+  if (matches.length > 0) {
+    return base + matches[0][1] + '/';
   }
   
   // Try issuer-based URL
