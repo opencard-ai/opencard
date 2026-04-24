@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 };
 
 export const alternates = {
+  canonical: "https://opencardai.com/en",
   languages: {
     en: "https://opencardai.com/en",
     zh: "https://opencardai.com/zh",

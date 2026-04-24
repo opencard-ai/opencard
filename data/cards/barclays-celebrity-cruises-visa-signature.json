@@ -1,8 +1,8 @@
 {
   "card_id": "barclays-celebrity-cruises-visa-signature",
-  "name": "Celebrity Cruises Visa Signature\u00ae Card",
+  "name": "Celebrity Cruises Visa Signature® Card",
   "issuer": "Barclays",
-  "network": "Visa Signature",
+  "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
@@ -38,7 +38,7 @@
       "Onboard credit discounts",
       "No annual fee",
       "No foreign transaction fees",
-      "\u26a0\ufe0f NOTE: Celebrity Cruises card program has transitioned to Bank of America as of March 2026. Barclays-issued version may be discontinued."
+      "⚠️ NOTE: Celebrity Cruises card program has transitioned to Bank of America as of March 2026. Barclays-issued version may be discontinued."
     ]
   },
   "fhr_thc": {

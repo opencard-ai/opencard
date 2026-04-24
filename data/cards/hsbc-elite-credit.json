@@ -2,7 +2,7 @@
   "card_id": "hsbc-elite-credit",
   "name": "HSBC Elite Credit Card",
   "issuer": "HSBC",
-  "network": "World Elite Mastercard",
+  "network": "mastercard",
   "annual_fee": 495,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",

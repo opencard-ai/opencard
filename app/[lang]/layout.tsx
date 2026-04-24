@@ -31,6 +31,11 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
+  const baseUrl = "https://opencardai.com";
+  const canonicalUrl = lang === "en" ? `${baseUrl}/en` : `${baseUrl}/${lang}`;
+  const defaultLang = "en";
+  const defaultUrl = `${baseUrl}/${defaultLang}`;
+
   return {
     title: t("site.title", lang as any),
     description: t("site.subtitle", lang as any),
@@ -38,11 +43,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       icon: "/favicon-v6.ico",
     },
     alternates: {
+      canonical: canonicalUrl,
       languages: {
-        en: "https://opencardai.com/en",
-        zh: "https://opencardai.com/zh",
-        es: "https://opencardai.com/es",
-        "x-default": "https://opencardai.com/en",
+        en: `${baseUrl}/en`,
+        zh: `${baseUrl}/zh`,
+        es: `${baseUrl}/es`,
+        "x-default": defaultUrl,
       },
     },
   };

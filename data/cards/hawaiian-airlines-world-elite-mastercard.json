@@ -1,8 +1,8 @@
 {
   "card_id": "hawaiian-airlines-world-elite-mastercard",
-  "name": "Hawaiian Airlines World Elite Mastercard\u00ae",
+  "name": "Hawaiian Airlines World Elite Mastercard®",
   "issuer": "Barclays",
-  "network": "Mastercard World Elite",
+  "network": "mastercard",
   "annual_fee": 99,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

@@ -1,8 +1,8 @@
 {
   "card_id": "emirates-skywards-mastercard",
-  "name": "Emirates Skywards Premium World Elite Mastercard\u00ae",
+  "name": "Emirates Skywards Premium World Elite Mastercard®",
   "issuer": "Barclays",
-  "network": "Mastercard World Elite",
+  "network": "mastercard",
   "annual_fee": 499,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
