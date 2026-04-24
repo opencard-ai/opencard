@@ -84,8 +84,8 @@ function scrapeNerdWallet(url: string): string | null {
     
     // Extract text content
     const text = html
-      .replace(/<script[^>]*>.*?<\/script>/gs, '')
-      .replace(/<style[^>]*>.*?<\/style>/gs, '')
+      .replace(/<script[^>]*>[\s\S]*?<\/script>/g, '')
+      .replace(/<style[^>]*>[\s\S]*?<\/style>/g, '')
       .replace(/<[^>]+>/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
