@@ -92,27 +92,35 @@
   },
   "recurring_credits": [
     {
-      "name": "Dining Credit",
-      "amount": 120,
-      "frequency": "annual",
-      "category": "dining",
-      "description": "$120/year ($10/month) at select restaurants. Enrollment required.",
-      "reset_type": "cardmember_year"
-    },
-    {
       "name": "Uber Cash",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "$100/year Uber Cash for rides or Uber Eats.",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "ride",
+      "description": "$10 Uber Cash each month to use on orders and rides in the U.S.",
       "reset_type": "cardmember_year"
     },
     {
-      "name": " airline Fee Credit",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "$100 annual credit for checked bags with one selected airline.",
+      "name": "Dunkin' Credit",
+      "amount": 7,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "Up to $7 in monthly statement credits at U.S. Dunkin' locations",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Resy Credit",
+      "amount": 50,
+      "frequency": "semi_annual",
+      "category": "dining",
+      "description": "Up to $50 in statement credits semi-annually at U.S. Resy restaurants",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Dining Credit (Grubhub)",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "Up to $10 in monthly statement credits at Grubhub, The Cheesecake Factory, Goldbelly, Wine.com, and Five Guys",
       "reset_type": "cardmember_year"
     }
   ],

@@ -108,19 +108,11 @@
   },
   "recurring_credits": [
     {
-      "name": "Annual Hotel Credit",
+      "name": "Annual Hotel Benefit",
       "amount": 100,
       "frequency": "annual",
-      "category": "travel",
-      "description": "$100 annual credit for prepaid hotels via Citi Travel.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "$100 Annual Hotel Benefit",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Once per calendar year, enjoy $100 off a single hotel stay of $500 or more (excluding taxes and fees) when booked through CitiTravel",
+      "category": "hotel",
+      "description": "$100 off a single hotel stay of $500 or more (excluding taxes and fees) when booked through CitiTravel.com, once per calendar year",
       "reset_type": "calendar_year"
     }
   ]

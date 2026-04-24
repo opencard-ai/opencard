@@ -77,14 +77,6 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "$300 Annual Travel Credit",
-      "amount": 300,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "For bookings made through Capital One Travel",
-      "reset_type": "calendar_year"
-    },
-    {
       "name": "10,000 Anniversary Miles",
       "amount": 100,
       "frequency": "annual",
