@@ -121,5 +121,13 @@
       "frequency": "annual",
       "category": "other"
     }
-  ]
+  ],
+  "welcome_bonus": {
+    "amount": 80000,
+    "type": "points",
+    "requirement": "Spend $10,000 in first 3 months",
+    "source": "creditcards.com",
+    "last_updated": "2026-04-24"
+  },
+  "last_scraped": "2026-04-24"
 }

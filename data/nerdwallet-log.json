@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp": "2026-04-24T04:51:28.026Z",
+    "card_id": "chase-hyatt-biz",
+    "card_name": "World of Hyatt Business Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T04:51:34.550Z",
+    "card_id": "chase-hyatt",
+    "card_name": "Chase Hyatt",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T04:52:08.416Z",
+    "card_id": "chase-hyatt-biz",
+    "card_name": "World of Hyatt Business Credit Card",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T04:52:13.677Z",
+    "card_id": "chase-hyatt",
+    "card_name": "Chase Hyatt",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
+  }
+]
