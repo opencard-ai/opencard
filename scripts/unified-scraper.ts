@@ -154,8 +154,32 @@ function loadUrlMap(): UrlMap {
 }
 
 function getSourcePriority(urlMap: UrlMap, issuer: string): string[] {
+  // Map issuer name to _source_priority key
+  const bankMap: { [key: string]: string } = {
+    'american_express': 'amex',
+    'amex': 'amex',
+    'chase': 'chase',
+    'capital_one': 'capital_one',
+    'capital one': 'capital_one',
+    'discover': 'discover',
+    'wells_fargo': 'wells_fargo',
+    'wells fargo': 'wells_fargo',
+    'citi': 'citi',
+    'citibank': 'citi',
+    'barclays': 'barclays',
+    'bank_of_america': 'bank_of_america',
+    'bank of america': 'bank_of_america',
+    'us_bank': 'us_bank',
+    'us bank': 'us_bank',
+    'hsbc': 'hsbc',
+    'navy_federal': 'navy_federal',
+    'navy federal': 'navy_federal',
+    'penfed': 'penfed',
+    'pen_fed': 'penfed',
+  };
   const bank = issuer.toLowerCase().replace(/[\s-]+/g, '_');
-  return urlMap._source_priority?.[bank] || urlMap._source_priority?.['default'] || ['uscreditcardguide'];
+  const mappedKey = bankMap[bank] || bank;
+  return urlMap._source_priority?.[mappedKey] || urlMap._source_priority?.['default'] || ['uscreditcardguide'];
 }
 
 async function scrapeFromSource(url: string): Promise<string | null> {
