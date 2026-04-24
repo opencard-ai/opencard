@@ -243,6 +243,8 @@ async function main() {
   const args = process.argv.slice(2);
   const isTest = args.includes('--test');
   const cardIdArg = args.find(a => !a.startsWith('--'));
+  const startIdx = args.includes('--start') ? parseInt(args[args.indexOf('--start') + 1]) : 0;
+  const limit = args.includes('--limit') ? parseInt(args[args.indexOf('--limit') + 1]) : 999999;
   const urlMap = loadUrlMap();
   
   if (isTest && cardIdArg) {
@@ -257,11 +259,12 @@ async function main() {
     return;
   }
   
-  // Full run
-  const cardIds = Object.keys(urlMap).filter(k => !k.startsWith('_'));
+  // Full run with optional batch support
+  const allCardIds = Object.keys(urlMap).filter(k => !k.startsWith('_'));
+  const cardIds = allCardIds.slice(startIdx, startIdx + limit);
   console.log(`\n🤖 OpenCard Unified Scraper v3.0 (Full AI Extraction)`);
   console.log(`📅 ${new Date().toISOString()}`);
-  console.log(`🎯 ${cardIds.length} cards\n`);
+  console.log(`🎯 ${allCardIds.length} cards total, processing ${startIdx+1}-${startIdx+cardIds.length}\n`);
   
   const results: ScrapeResult[] = [];
   let s = 0, f = 0, fail = 0;
@@ -273,7 +276,7 @@ async function main() {
     if (r.status === 'success') { s++; console.log(' ✅'); }
     else if (r.status === 'fallback') { f++; console.log(' ⚠️'); }
     else { fail++; console.log(' ❌'); }
-    await new Promise(r => setTimeout(r, 1000));
+    await new Promise(r => setTimeout(r, 500)); // Reduced delay to 0.5s
   }
   
   fs.writeFileSync(LOG_FILE, JSON.stringify({ timestamp: new Date().toISOString(), total: cardIds.length, success: s, fallback: f, failed: fail, results }, null, 2));
