@@ -87,14 +87,16 @@
     "issuer": "amex",
     "sources": {
       "uscreditcardguide": "https://www.uscreditcardguide.com/amex-platinum-card/",
-      "official": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+      "official": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
+      "tpg": "https://thepointsguy.com/credit-cards/american-express-platinum-card/"
     }
   },
   "amex-gold": {
     "issuer": "amex",
     "sources": {
       "uscreditcardguide": "https://www.uscreditcardguide.com/amex-premier-rewards-gold-card/",
-      "official": "https://www.americanexpress.com/us/credit-cards/card/gold/"
+      "official": "https://www.americanexpress.com/us/credit-cards/card/gold/",
+      "tpg": "https://thepointsguy.com/credit-cards/american-express-gold-card/"
     }
   },
   "amex-hilton-surpass": {
@@ -119,13 +121,15 @@
     "issuer": "chase",
     "sources": {
       "official": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
-      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-sapphire-reserve-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-sapphire-reserve-credit-card/",
+      "tpg": "https://thepointsguy.com/credit-cards/chase-sapphire-reserve/"
     }
   },
   "chase-sapphire-preferred": {
     "issuer": "chase",
     "sources": {
-      "official": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred"
+      "official": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+      "tpg": "https://thepointsguy.com/credit-cards/chase-sapphire-preferred/"
     }
   },
   "chase-ink-business-preferred": {
@@ -179,7 +183,8 @@
     "issuer": "capital_one",
     "sources": {
       "official": "https://www.capitalone.com/credit-cards/venture-x/",
-      "uscreditcardguide": "https://www.uscreditcardguide.com/capital-one-venture-x-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/capital-one-venture-x-credit-card/",
+      "tpg": "https://thepointsguy.com/credit-cards/capital-one-venture-x/"
     }
   },
   "capital-one-savor": {
@@ -1573,7 +1578,7 @@
   "boa-alaska-airlines-visa-biz": {
     "issuer": "boa",
     "sources": {
-      "official": "https://www.bankofamerica.com/credit-cards/alaska-airlines-business"
+      "official": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/alaska-airlines-business-credit-card/"
     }
   },
   "boa-alaska-airlines-visa-platinum": {
@@ -1585,19 +1590,22 @@
   "boa-alaska-airlines-visa-signature": {
     "issuer": "boa",
     "sources": {
-      "official": "https://www.bankofamerica.com/credit-cards/alaska-airlines-signature"
+      "official": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/"
     }
   },
   "boa-alaska-ascent": {
     "issuer": "boa",
     "sources": {
-      "official": "https://www.bankofamerica.com/credit-cards/alaska-ascent"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/boa-alaska-atmos-ascent-credit-card/",
+      "official": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/",
+      "tpg": "https://thepointsguy.com/credit-cards/atmos-ascent-vs-atmos-summit/"
     }
   },
   "boa-alaska-summit": {
     "issuer": "boa",
     "sources": {
-      "official": "https://www.bankofamerica.com/credit-cards/alaska-summit"
+      "official": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-infinite-credit-card/",
+      "tpg": "https://thepointsguy.com/credit-cards/atmos-ascent-vs-atmos-summit/"
     }
   },
   "boa-biz-advantage-customized-cash": {
