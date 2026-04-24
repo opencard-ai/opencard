@@ -34,5 +34,14 @@
     "action": "error",
     "extracted": {},
     "error": "No data found from any source"
+  },
+  {
+    "timestamp": "2026-04-24T04:57:30.217Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found from any source"
   }
 ]
