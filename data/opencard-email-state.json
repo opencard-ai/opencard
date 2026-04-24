@@ -1,12 +1,12 @@
 {
   "last_seen_ids": [
-    "<d24725e5a8c6dcc8bdaa5fb7a296e125476726be-20237597-111238677@google.com>",
-    "<3097d46d2bb76b701f09d655810ec2fc859e5e7b-20237597-111238677@google.com>",
-    "<xBxHgjnlRGqUx1u9dreffg@geopod-ismtpd-94>",
-    "<bcda58a0cf676f2669330c0d34c2f82c026a84d0-20401107-111841305@google.com>",
-    "<0101019db8241456-d143c98f-5aab-4112-b98e-24d2f0dcdc7e-000000@us-west-2.amazonses.com>"
+    "d18ef6c16d6e2d3980b73b6fcbf4ebc097f51045-20360551-111677460@google.com",
+    "in0p0ipTOtUD_HZ7NrS6qQ@notifications.google.com",
+    "f6697257b77aa8dac426ed5e2563c57fbd1fd913-10030260-100158976@google.com",
+    "720834149016d4441862998b6d22004349944a67-10030260-100158976@google.com",
+    "d24725e5a8c6dcc8bdaa5fb7a296e125476726be-20237597-111238677@google.com"
   ],
-  "last_check": "2026-04-23T17:04:00.000Z",
+  "last_check": "2026-04-24T05:05:00.000Z",
   "inbox": "orangeisland539@agentmail.to",
-  "new_emails_this_check": 0
+  "new_emails_this_check": 4
 }
