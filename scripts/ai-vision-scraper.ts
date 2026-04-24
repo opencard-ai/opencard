@@ -95,7 +95,7 @@ async function analyzeWithVision(screenshotPath: string, cardName: string): Prom
       return parsed;
     }
   } catch (error) {
-    console.error('Vision API failed:', error.message);
+    console.error('Vision API failed:', (error as Error).message);
   }
   
   return null;
