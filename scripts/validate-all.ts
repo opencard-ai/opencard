@@ -13,7 +13,7 @@ import path from 'path';
 // ============ CONSTANTS ============
 
 const VALID_FREQUENCIES = ['monthly', 'quarterly', 'semi_annual', 'annual', 'per_stay', 'cardmember_year'];
-const VALID_CATEGORIES = ['travel', 'dining', 'shopping', 'entertainment', 'streaming', 'fitness', 'gas', 'groceries', 'other'];
+const VALID_CATEGORIES = ['travel', 'dining', 'shopping', 'entertainment', 'streaming', 'fitness', 'gas', 'groceries', 'other', 'ride', 'airline', 'hotel', 'digital', 'credit_monitoring'];
 const VALID_NETWORKS = ['visa', 'amex', 'mastercard', 'discover', 'other'];
 const VALID_INSURANCE_KEYS = ['trip_cancellation', 'trip_delay', 'rental_insurance', 'purchase_protection', 'return_protection', 'extended_warranty'];
 
