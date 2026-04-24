@@ -66,10 +66,10 @@
     "source": "scrape",
     "status": "unchanged",
     "current": 0,
-    "extracted": 750,
+    "extracted": 0,
     "pct": 0,
     "db_pts": 0,
-    "api_pts": 750
+    "api_pts": 0
   },
   {
     "card_id": "chase-ink-business-unlimited",
@@ -89,10 +89,10 @@
     "issuer": "Chase",
     "source": "scrape",
     "status": "unchanged",
-    "current": 0,
+    "current": 3,
     "extracted": 0,
-    "pct": 0,
-    "db_pts": 0,
+    "pct": 100,
+    "db_pts": 3,
     "api_pts": 0
   },
   {
