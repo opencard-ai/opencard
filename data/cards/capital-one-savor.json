@@ -76,5 +76,12 @@
       "description": "$120 annual credit for Disney+ bundle (Disney+, Hulu, ESPN+). Enrollment required.",
       "reset_type": "calendar_year"
     }
-  ]
+  ],
+  "welcome_bonus": {
+    "amount": 200,
+    "type": "cash",
+    "requirement": "Spend $500 within 3 months",
+    "source": "capitalone.com",
+    "last_updated": "2026-04-24"
+  }
 }
