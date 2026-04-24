@@ -45,10 +45,10 @@ export interface Insurance {
 
 export interface HotelProgram {
   program: string;
-  points_per_dollar?: number | null;
-  free_night_award?: boolean;
+  tier: string;
   elite_night_credits?: number;
-  elite_status?: string;
+  fhr_eligible?: boolean;
+  thc_eligible?: boolean;
 }
 
 export interface WelcomeOffer {
@@ -76,11 +76,6 @@ export interface CreditCard {
   welcome_offer?: WelcomeOffer;
   earning_rates: EarningRate[];
   travel_benefits: TravelBenefits;
-  fhr_thc: {
-    fhr_eligible: boolean;
-    thc_eligible: boolean;
-    notes?: string;
-  };
   insurance: Insurance;
   hotel_program?: HotelProgram;
   application_rules?: {

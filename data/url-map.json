@@ -1,0 +1,227 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "last_updated": "2026-04-24",
+    "description": "Unified URL mapping for OpenCard scraper with per-bank source priority"
+  },
+  "_source_priority": {
+    "chase": ["official", "uscreditcardguide", "nerdwallet"],
+    "capital_one": ["official", "uscreditcardguide", "nerdwallet"],
+    "discover": ["official", "uscreditcardguide", "nerdwallet"],
+    "wells_fargo": ["official", "uscreditcardguide", "nerdwallet"],
+    "amex": ["uscreditcardguide", "nerdwallet", "official"],
+    "citi": ["uscreditcardguide", "nerdwallet", "official"],
+    "barclays": ["uscreditcardguide", "nerdwallet"],
+    "bank_of_america": ["uscreditcardguide", "official", "nerdwallet"],
+    "us_bank": ["uscreditcardguide", "nerdwallet", "official"],
+    "hsbc": ["uscreditcardguide", "nerdwallet"],
+    "navy_federal": ["uscreditcardguide"],
+    "penfed": ["uscreditcardguide"],
+    "default": ["uscreditcardguide", "nerdwallet"]
+  },
+  "_base_urls": {
+    "official": {
+      "chase": "https://creditcards.chase.com",
+      "capital_one": "https://www.capitalone.com",
+      "discover": "https://www.discover.com",
+      "wells_fargo": "https://creditcards.wellsfargo.com",
+      "amex": "https://www.americanexpress.com/us/credit-cards/",
+      "citi": "https://www.citi.com/credit-cards",
+      "barclays": "https://www.barclaycardus.com",
+      "bank_of_america": "https://www.bankofamerica.com/credit-cards/",
+      "us_bank": "https://www.usbank.com/credit-cards/",
+      "hsbc": "https://www.hsbc.com/credit-cards/"
+    },
+    "uscreditcardguide": "https://www.uscreditcardguide.com",
+    "nerdwallet": {
+      "base": "https://www.nerdwallet.com",
+      "search": "https://www.nerdwallet.com/search/search?q="
+    }
+  },
+  "amex-platinum": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-platinum-card/",
+      "official": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    }
+  },
+  "amex-gold": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-premier-rewards-gold-card/",
+      "official": "https://www.americanexpress.com/us/credit-cards/card/gold/"
+    }
+  },
+  "amex-business-platinum": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-business-platinum-card/",
+      "official": "https://www.americanexpress.com/en-us/business/credit-cards/platinum/"
+    }
+  },
+  "amex-business-gold": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-business-gold-rewards-card/",
+      "official": "https://www.americanexpress.com/en-us/business/credit-cards/gold/"
+    }
+  },
+  "amex-hilton-surpass": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-hilton-surpass-credit-card/"
+    }
+  },
+  "amex-hilton-aspire": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-hilton-aspire-credit-card/"
+    }
+  },
+  "amex-marriott-brilliant": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-spg-luxury-credit-card/"
+    }
+  },
+  "amex-marriott-bevy": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-marriott-bonvoy-bevy-credit-card/"
+    }
+  },
+  "chase-sapphire-reserve": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-sapphire-reserve-credit-card/"
+    }
+  },
+  "chase-sapphire-preferred": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred"
+    }
+  },
+  "chase-ink-business-preferred": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred"
+    }
+  },
+  "chase-ink-business-cash": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://creditcards.chase.com/business-credit-cards/ink/business-cash",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ink-cash-credit-card/"
+    }
+  },
+  "chase-ink-business-unlimited": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://creditcards.chase.com/business-credit-cards/ink/business-unlimited",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ink-unlimited-credit-card/"
+    }
+  },
+  "chase-marriott-boundless": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://creditcards.chase.com/travel-credit-cards/marriott/bonvoy-boundless",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-marriott-premier-plus-credit-card/"
+    }
+  },
+  "chase-ihg-premier": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://creditcards.chase.com/travel-credit-cards/ihg/ihg-premier",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ihg-premier-credit-card/"
+    }
+  },
+  "chase-freedom-flex": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex"
+    }
+  },
+  "chase-freedom-unlimited": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited"
+    }
+  },
+  "capital-one-venture-x": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/credit-cards/venture-x/",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/capital-one-venture-x-credit-card/"
+    }
+  },
+  "capital-one-savor": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/credit-cards/savor/"
+    }
+  },
+  "capital-one-savorone": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/credit-cards/savorone/"
+    }
+  },
+  "capital-one-venture": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/credit-cards/venture/"
+    }
+  },
+  "capital-one-quicksilver": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/credit-cards/quicksilver/"
+    }
+  },
+  "citi-strata-premier": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/credit-cards/citi-strata-premier-card",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/citi-thankyou-premier-credit-card/"
+    }
+  },
+  "citi-custom-cash": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card"
+    }
+  },
+  "citi-double-cash": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/credit-cards/citi-double-cash-credit-card"
+    }
+  },
+  "wells-fargo-attune": {
+    "issuer": "wells_fargo",
+    "sources": {
+      "official": "https://creditcards.wellsfargo.com/attract-visa-credit-card",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/wells-fargo-attune/"
+    }
+  },
+  "wells-fargo-active-cash": {
+    "issuer": "wells_fargo",
+    "sources": {
+      "official": "https://creditcards.wellsfargo.com/active-cash-credit-card"
+    }
+  },
+  "wells-fargo-autograph": {
+    "issuer": "wells_fargo",
+    "sources": {
+      "official": "https://creditcards.wellsfargo.com/autograph-visa-credit-card"
+    }
+  },
+  "discover-it": {
+    "issuer": "discover",
+    "sources": {
+      "official": "https://www.discover.com/credit-cards/cash-back/"
+    }
+  }
+}
