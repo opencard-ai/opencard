@@ -85,5 +85,12 @@
   },
   "annual_credits": [],
   "foreign_transaction_fee": 0,
-  "credit_required": "Good to Excellent"
+  "credit_required": "Good to Excellent",
+  "welcome_bonus": {
+    "amount": 45000,
+    "type": "points",
+    "source": "creditcards.com",
+    "last_updated": "2026-04-24"
+  },
+  "last_scraped": "2026-04-24"
 }

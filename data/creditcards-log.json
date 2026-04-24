@@ -259,5 +259,201 @@
     "action": "error",
     "extracted": {},
     "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:16:11.250Z",
+    "card_id": "wyndham-rewards-earner-plus-barclays",
+    "card_name": "Wyndham Rewards Earner Plus Card",
+    "source": "creditcards.com",
+    "action": "updated",
+    "extracted": {
+      "welcome_bonus": {
+        "amount": 45000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T05:16:15.949Z",
+    "card_id": "capital-one-savorone",
+    "card_name": "Capital One SavorOne Cash Rewards Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:16:19.225Z",
+    "card_id": "capital-one-spark-miles",
+    "card_name": "Capital One Spark Miles for Business",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:16:23.881Z",
+    "card_id": "chase-marriott-boundless",
+    "card_name": "Marriott Bonvoy Boundless® Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:16:28.661Z",
+    "card_id": "boa-alaska-airlines-visa-signature",
+    "card_name": "Alaska Airlines Visa Signature® Credit Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "welcome_bonus": {
+        "amount": 80000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T05:16:33.379Z",
+    "card_id": "boa-alaska-ascent",
+    "card_name": "Alaska Airlines Atmos™ Ascent Visa Signature® Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:16:39.464Z",
+    "card_id": "boa-biz-advantage-travel",
+    "card_name": "Bank of America® Business Advantage Travel Rewards World Mastercard®",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:16:44.333Z",
+    "card_id": "chase-freedom-rise",
+    "card_name": "Chase Freedom Rise Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:16:50.823Z",
+    "card_id": "chase-ritz-carlton",
+    "card_name": "Chase Ritz-Carlton Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:16:57.245Z",
+    "card_id": "barclays-aarp-essential-rewards-mastercard",
+    "card_name": "AARP® Essential Rewards Mastercard® from Barclays",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:43:10.926Z",
+    "card_id": "pnc-points-visa",
+    "card_name": "PNC Points Visa® Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:43:12.930Z",
+    "card_id": "chase-united-explorer",
+    "card_name": "United℠ Explorer Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:43:18.747Z",
+    "card_id": "citi-prestige",
+    "card_name": "Citi Prestige",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:43:21.998Z",
+    "card_id": "choice-privileges-visa",
+    "card_name": "Choice Privileges Mastercard®",
+    "source": "creditcards.com",
+    "action": "updated",
+    "extracted": {
+      "welcome_bonus": {
+        "amount": 40000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T05:43:28.142Z",
+    "card_id": "td-biz-solutions-credit",
+    "card_name": "TD Business Solutions Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:43:30.145Z",
+    "card_id": "synchrony-sears-mastercard",
+    "card_name": "Sears Mastercard®",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:43:32.148Z",
+    "card_id": "emirates-skywards-mastercard",
+    "card_name": "Emirates Skywards Premium World Elite Mastercard®",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:43:36.869Z",
+    "card_id": "boa-alaska-airlines-visa-biz",
+    "card_name": "Alaska Airlines Visa® Business Credit Card",
+    "source": "creditcards.com",
+    "action": "updated",
+    "extracted": {
+      "welcome_bonus": {
+        "amount": 80000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T05:43:41.549Z",
+    "card_id": "capital-one-quicksilver-secured",
+    "card_name": "Capital One Quicksilver Secured Cash Rewards Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:43:48.924Z",
+    "card_id": "chase-aer-lingus-visa-signature",
+    "card_name": "Aer Lingus Visa Signature® Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
   }
 ]
