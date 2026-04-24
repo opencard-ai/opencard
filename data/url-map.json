@@ -461,13 +461,15 @@
   "boa-cash-rewards": {
     "issuer": "boa",
     "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/boa-cash-rewards-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/boa-cash-rewards-credit-card/",
+      "official": "https://www.bankofamerica.com/credit-cards/cash-rewards/"
     }
   },
   "us-bank-altitude-go": {
     "issuer": "us",
     "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/us-bank-altitude-go-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/us-bank-altitude-go-credit-card/",
+      "official": "https://www.usbank.com/credit-cards/altitude-go"
     }
   },
   "us-bank-altitude-connect": {
@@ -479,7 +481,8 @@
   "us-bank-smartly": {
     "issuer": "us",
     "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/us-bank-smartly-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/us-bank-smartly-credit-card/",
+      "official": "https://www.usbank.com/credit-cards/smartly"
     }
   },
   "apple-card": {
@@ -491,19 +494,22 @@
   "boa-travel-rewards": {
     "issuer": "boa",
     "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/boa-travel-rewards-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/boa-travel-rewards-credit-card/",
+      "official": "https://www.bankofamerica.com/credit-cards/travel-rewards/"
     }
   },
   "barclays-aarp-essential": {
     "issuer": "barclays",
     "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/barclays-aarp-essential-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/barclays-aarp-essential-credit-card/",
+      "official": "https://www.barclays.us/credit-cards/aarp-essential"
     }
   },
   "barclays-aarp-travel": {
     "issuer": "barclays",
     "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/barclays-aarp-travel-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/barclays-aarp-travel-credit-card/",
+      "official": "https://www.barclays.us/credit-cards/aarp-travel"
     }
   },
   "amex-delta-gold": {
@@ -587,7 +593,8 @@
   "chase-disney": {
     "issuer": "chase",
     "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-disney-rewards-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-disney-rewards-credit-card/",
+      "official": "https://www.chase.com/personal/credit-cards/disney"
     }
   },
   "barclays-jetblue": {
@@ -611,7 +618,1778 @@
   "boa-premium-reserve": {
     "issuer": "boa",
     "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/boa-premium-rewards-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/boa-premium-rewards-credit-card/",
+      "official": "https://www.bankofamerica.com/credit-cards/premium-rewards/"
+    }
+  },
+  "amazon-prime-visa": {
+    "issuer": "amazon",
+    "sources": {
+      "official": "https://www.amazon.com/dp/B0051QVO7A"
+    }
+  },
+  "chase-ink-preferred-plus": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/business/ink/ink-preferred-plus"
+    }
+  },
+  "chase-marriott-bold": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/personal/credit-cards/marriott-bold"
+    }
+  },
+  "chase-ihg-rewards": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/personal/credit-cards/ihg-rewards"
+    }
+  },
+  "amex-amazon-biz": {
+    "issuer": "amex",
+    "sources": {
+      "official": "https://www.americanexpress.com/us/business/credit-cards/amazon-business"
+    }
+  },
+  "amex-graphite-biz": {
+    "issuer": "amex",
+    "sources": {
+      "official": "https://www.americanexpress.com/us/business/credit-cards/graphite"
+    }
+  },
+  "barclays-uber": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/uber"
+    }
+  },
+  "barclays-aadvantage-red": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/avianza-red"
+    }
+  },
+  "barclays-frontier": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/frontier"
+    }
+  },
+  "barclays-carnival": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/carnival"
+    }
+  },
+  "barclays-royal-caribbean": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/royal-caribbean"
+    }
+  },
+  "barclays-harley-davidson": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/harley-davidson"
+    }
+  },
+  "barclays-jetblue-biz": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/jetblue-business"
+    }
+  },
+  "barclays-wyndham-earner": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/wyndham-earner"
+    }
+  },
+  "barclays-wyndham-earner-plus": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/wyndham-earner-plus"
+    }
+  },
+  "barclays-wyndham-earner-biz": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/wyndham-earner-business"
+    }
+  },
+  "barclays-wyndham-earner-plus-biz": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/wyndham-earner-plus-business"
+    }
+  },
+  "barclays-gap": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/gap"
+    }
+  },
+  "barclays-banana-republic": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/banana-republic"
+    }
+  },
+  "barclays-old-navy": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/old-navy"
+    }
+  },
+  "barclays-athleta": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/athleta"
+    }
+  },
+  "chase-united-mp": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/personal/credit-cards/united-mp"
+    }
+  },
+  "boa-student-customized-cash-rewards": {
+    "issuer": "boa",
+    "sources": {
+      "official": "https://www.bankofamerica.com/credit-cards/student-credit-cards/"
+    }
+  },
+  "hsbc-gold": {
+    "issuer": "hsbc",
+    "sources": {
+      "official": "https://www.hsbc.com/credit-cards/gold"
+    }
+  },
+  "hsbc-platinum": {
+    "issuer": "hsbc",
+    "sources": {
+      "official": "https://www.hsbc.com/credit-cards/platinum"
+    }
+  },
+  "capital-one-journey": {
+    "issuer": "capital",
+    "sources": {
+      "official": "https://www.capitalone.com/credit-cards/journey"
+    }
+  },
+  "capital-one-platinum": {
+    "issuer": "capital",
+    "sources": {
+      "official": "https://www.capitalone.com/credit-cards/platinum"
+    }
+  },
+  "capital-one-gold": {
+    "issuer": "capital",
+    "sources": {
+      "official": "https://www.capitalone.com/credit-cards/gold"
+    }
+  },
+  "amex-morgan-stanley-blue": {
+    "issuer": "amex",
+    "sources": {
+      "official": "https://www.americanexpress.com/us/credit-cards/morgan-stanley-blue"
+    }
+  },
+  "amex-morgan-stanley-platinum": {
+    "issuer": "amex",
+    "sources": {
+      "official": "https://www.americanexpress.com/us/credit-cards/morgan-stanley-platinum"
+    }
+  },
+  "amex-centurion": {
+    "issuer": "amex",
+    "sources": {
+      "official": "https://www.americanexpress.com/us/credit-cards/centurion"
+    }
+  },
+  "amex-plum": {
+    "issuer": "amex",
+    "sources": {
+      "official": "https://www.americanexpress.com/us/credit-cards/plum"
+    }
+  },
+  "barclays-celebrity-cruises": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/celebrity-cruises"
+    }
+  },
+  "barclays-ubereats": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/uber-eats"
+    }
+  },
+  "amazon-visa": {
+    "issuer": "amazon",
+    "sources": {
+      "official": "https://www.amazon.com/dp/B0041N1Y1U"
+    }
+  },
+  "kroger-900": {
+    "issuer": "kroger",
+    "sources": {
+      "official": "https://kroger.com/creditcard"
+    }
+  },
+  "kroger-500": {
+    "issuer": "kroger",
+    "sources": {
+      "official": "https://kroger.com/creditcard"
+    }
+  },
+  "target-redcard": {
+    "issuer": "target",
+    "sources": {
+      "official": "https://www.target.com/redcard"
+    }
+  },
+  "walmart-rewards": {
+    "issuer": "walmart",
+    "sources": {
+      "official": "https://www.walmart.com/account/credit-card"
+    }
+  },
+  "bestbuy-card": {
+    "issuer": "bestbuy",
+    "sources": {
+      "official": "https://www.bestbuy.com/creditcard"
+    }
+  },
+  "lowes-card": {
+    "issuer": "lowes",
+    "sources": {
+      "official": "https://www.lowes.com/creditcard"
+    }
+  },
+  "home-depot-card": {
+    "issuer": "home_depot",
+    "sources": {
+      "official": "https://www.homedepot.com/c/c Credit Cards"
+    }
+  },
+  "wayfair-card": {
+    "issuer": "wayfair",
+    "sources": {
+      "official": "https://www.wayfair.com/creditcard"
+    }
+  },
+  "macys-card": {
+    "issuer": "macys",
+    "sources": {
+      "official": "https://www.macys.com/account/card"
+    }
+  },
+  "alliant-cashback": {
+    "issuer": "alliant",
+    "sources": {
+      "official": "https://www.alliantcreditcard.com"
+    }
+  },
+  "ally-spend": {
+    "issuer": "ally",
+    "sources": {
+      "official": "https://www.ally.com/cards/spend"
+    }
+  },
+  "us-bank-visa-platinum": {
+    "issuer": "us_bank",
+    "sources": {
+      "official": "https://www.usbank.com/credit-cards/visa-platinum"
+    }
+  },
+  "us-bank-signon-cash": {
+    "issuer": "us_bank",
+    "sources": {
+      "official": "https://www.usbank.com/credit-cards/signon-cash"
+    }
+  },
+  "us-bank-cash-plus": {
+    "issuer": "us_bank",
+    "sources": {
+      "official": "https://www.usbank.com/credit-cards/cash-plus"
+    }
+  },
+  "us-bank-flex-perks": {
+    "issuer": "us_bank",
+    "sources": {
+      "official": "https://www.usbank.com/credit-cards/flex-perks"
+    }
+  },
+  "navy-federal-go-rewards": {
+    "issuer": "navy_federal",
+    "sources": {
+      "official": "https://www.navyfederal.org/credit-cards/go-rewards"
+    }
+  },
+  "navy-federal-more": {
+    "issuer": "navy_federal",
+    "sources": {
+      "official": "https://www.navyfederal.org/credit-cards/more-rewards"
+    }
+  },
+  "navy-federal-platinum": {
+    "issuer": "navy_federal",
+    "sources": {
+      "official": "https://www.navyfederal.org/credit-cards/platinum"
+    }
+  },
+  "penfed-gold-visa": {
+    "issuer": "penfed",
+    "sources": {
+      "official": "https://www.penfed.org/credit-cards/gold"
+    }
+  },
+  "penfed-platinum-rewards": {
+    "issuer": "penfed",
+    "sources": {
+      "official": "https://www.penfed.org/credit-cards/platinum-rewards"
+    }
+  },
+  "penfed-commander": {
+    "issuer": "penfed",
+    "sources": {
+      "official": "https://www.penfed.org/credit-cards/commander"
+    }
+  },
+  "penfed-power-cash": {
+    "issuer": "penfed",
+    "sources": {
+      "official": "https://www.penfed.org/credit-cards/power-cash"
+    }
+  },
+  "amex-edward-jones": {
+    "issuer": "amex",
+    "sources": {
+      "official": "https://www.americanexpress.com/us/credit-cards/edward-jones"
+    }
+  },
+  "amex-american-airlines": {
+    "issuer": "amex",
+    "sources": {
+      "official": "https://www.americanexpress.com/us/credit-cards/american-airlines"
+    }
+  },
+  "amex-mercury": {
+    "issuer": "amex",
+    "sources": {
+      "official": "https://www.americanexpress.com/us/credit-cards/mercury"
+    }
+  },
+  "amex-first-kyr": {
+    "issuer": "amex",
+    "sources": {
+      "official": "https://www.americanexpress.com/us/credit-cards/first-kyr"
+    }
+  },
+  "amex-amex-setup": {
+    "issuer": "amex",
+    "sources": {
+      "official": "https://www.americanexpress.com/us/credit-cards/amex-setup"
+    }
+  },
+  "synchrony-paypal-cashback": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/paypal"
+    }
+  },
+  "synchrony-amazon": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/amazon"
+    }
+  },
+  "synchrony-home-apple": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/home-apple"
+    }
+  },
+  "synchrony-paypal-extra": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/paypal-extra"
+    }
+  },
+  "synchrony-walmart": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/walmart"
+    }
+  },
+  "synchrony-gap": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/gap"
+    }
+  },
+  "synchrony-lowes": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/lowes"
+    }
+  },
+  "synchrony-home-depot": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/home-depot"
+    }
+  },
+  "synchrony-amazon-store": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/amazon-store"
+    }
+  },
+  "synchrony-kroger": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/kroger"
+    }
+  },
+  "synchrony-td": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/td"
+    }
+  },
+  "bilt-mastercard": {
+    "issuer": "bilt",
+    "sources": {
+      "official": "https://www.bilt.com/credit-card"
+    }
+  },
+  "ubs-mastercard": {
+    "issuer": "ubs",
+    "sources": {
+      "official": "https://www.ubs.com/credit-cards"
+    }
+  },
+  " MLB-card": {
+    "issuer": "mlb",
+    "sources": {
+      "official": "https://www.mlbshop.com/credit-card"
+    }
+  },
+  "fidelity-rewards": {
+    "issuer": "fidelity",
+    "sources": {
+      "official": "https://www.fidelity.com/credit-cards"
+    }
+  },
+  "schwab-investor": {
+    "issuer": "schwab",
+    "sources": {
+      "official": "https://www.schwab.com/credit-cards"
+    }
+  },
+  "prosperity": {
+    "issuer": "prosperity",
+    "sources": {
+      "official": "https://www.prosperitybankusa.com/credit-card"
+    }
+  },
+  "first-horizon": {
+    "issuer": "first_horizon",
+    "sources": {
+      "official": "https://www.firsthorizon.com/credit-cards"
+    }
+  },
+  "tab-bank": {
+    "issuer": "tab",
+    "sources": {
+      "official": "https://www.tabbank.com/credit-card"
+    }
+  },
+  "crypto-card": {
+    "issuer": "crypto",
+    "sources": {
+      "official": "https://example.com/crypto-card"
+    }
+  },
+  "sofi-card": {
+    "issuer": "sofi",
+    "sources": {
+      "official": "https://www.sofi.com/credit-card/"
+    }
+  },
+  "wework-card": {
+    "issuer": "wework",
+    "sources": {
+      "official": "https://www.wework.com/credit-card"
+    }
+  },
+  "openbucks-card": {
+    "issuer": "openbucks",
+    "sources": {
+      "official": "https://www.openbucks.com/card"
+    }
+  },
+  "balance-card": {
+    "issuer": "balance",
+    "sources": {
+      "official": "https://www.balancecreditcard.com"
+    }
+  },
+  "revel-card": {
+    "issuer": "revel",
+    "sources": {
+      "official": "https://www.revelcard.com"
+    }
+  },
+  "kroger-premium": {
+    "issuer": "kroger",
+    "sources": {
+      "official": "https://www.kroger.com/credit-card/premium"
+    }
+  },
+  "kroger-90": {
+    "issuer": "kroger",
+    "sources": {
+      "official": "https://www.kroger.com/credit-card/90"
+    }
+  },
+  "ulta-credit-card": {
+    "issuer": "ulta",
+    "sources": {
+      "official": "https://www.ulta.com/credit-card"
+    }
+  },
+  "saks-card": {
+    "issuer": "saks",
+    "sources": {
+      "official": "https://www.saks.com/credit-card"
+    }
+  },
+  "neiman-marcus-card": {
+    "issuer": "neiman_marcus",
+    "sources": {
+      "official": "https://www.neimanmarcus.com/credit-card"
+    }
+  },
+  "nordstrom-card": {
+    "issuer": "nordstrom",
+    "sources": {
+      "official": "https://www.nordstrom.com/credit-card"
+    }
+  },
+  "bloomingdales-card": {
+    "issuer": "bloomingdales",
+    "sources": {
+      "official": "https://www.bloomingdales.com/credit-card"
+    }
+  },
+  "macys-american-express": {
+    "issuer": "macys",
+    "sources": {
+      "official": "https://www.macys.com/credit-card/amex"
+    }
+  },
+  "bergdorf-goodman-card": {
+    "issuer": "bergdorf_goodman",
+    "sources": {
+      "official": "https://www.bergdorfgoodman.com/credit-card"
+    }
+  },
+  "lord-taylor-card": {
+    "issuer": "lord_taylor",
+    "sources": {
+      "official": "https://www.lordandtaylor.com/credit-card"
+    }
+  },
+  "saks-fifth-avenue": {
+    "issuer": "saks",
+    "sources": {
+      "official": "https://www.saksfifthavenue.com/credit-card"
+    }
+  },
+  "aeroplan-card": {
+    "issuer": "aeroplan",
+    "sources": {
+      "official": "https://www.aeroplan.com/credit-card"
+    }
+  },
+  "alaska-visa": {
+    "issuer": "alaska",
+    "sources": {
+      "official": "https://www.alaska.com/credit-card"
+    }
+  },
+  "flair-air": {
+    "issuer": "flair",
+    "sources": {
+      "official": "https://www.flyflair.com/credit-card"
+    }
+  },
+  "spirit-card": {
+    "issuer": "spirit",
+    "sources": {
+      "official": "https://www.spirit.com/credit-card"
+    }
+  },
+  "frontier-card": {
+    "issuer": "frontier",
+    "sources": {
+      "official": "https://www.frontierairlines.com/credit-card"
+    }
+  },
+  "allegiant-card": {
+    "issuer": "allegiant",
+    "sources": {
+      "official": "https://www.allegiant.com/credit-card"
+    }
+  },
+  "southwest-priority": {
+    "issuer": "southwest",
+    "sources": {
+      "official": "https://www.southwest.com/credit-card/prior"
+    }
+  },
+  "jetblue-card": {
+    "issuer": "jetblue",
+    "sources": {
+      "official": "https://www.jetblue.com/credit-card"
+    }
+  },
+  "choice-privileges-select": {
+    "issuer": "choice",
+    "sources": {
+      "official": "https://www.choicehotels.com/credit-card"
+    }
+  },
+  "radisson-rewards-premium": {
+    "issuer": "radisson",
+    "sources": {
+      "official": "https://www.radisson.com/credit-card"
+    }
+  },
+  "wyndham-rewards-premium": {
+    "issuer": "wyndham",
+    "sources": {
+      "official": "https://www.wyndham.com/credit-card"
+    }
+  },
+  "first-premium-card": {
+    "issuer": "first",
+    "sources": {
+      "official": "https://www.firstpremium.com"
+    }
+  },
+  "cnb-visa": {
+    "issuer": "cnb",
+    "sources": {
+      "official": "https://www.cnbbank.com/credit-card"
+    }
+  },
+  "saint-louis-card": {
+    "issuer": "saint_louis",
+    "sources": {
+      "official": "https://www.saintlouis.bank/credit-card"
+    }
+  },
+  "adrians-card": {
+    "issuer": "adrian",
+    "sources": {
+      "official": "https://www.adrianbank.com/credit-card"
+    }
+  },
+  "albert-card": {
+    "issuer": "albert",
+    "sources": {
+      "official": "https://www.albert.com/credit-card"
+    }
+  },
+  "arbor-card": {
+    "issuer": "arbor",
+    "sources": {
+      "official": "https://www.arbor.com/credit-card"
+    }
+  },
+  "asa-credit-card": {
+    "issuer": "asa",
+    "sources": {
+      "official": "https://www.asa.com/credit-card"
+    }
+  },
+  "bluebird-card": {
+    "issuer": "bluebird",
+    "sources": {
+      "official": "https://www.bluebird.com/credit-card"
+    }
+  },
+  "bofi-card": {
+    "issuer": "bofi",
+    "sources": {
+      "official": "https://www.bofi.com/credit-card"
+    }
+  },
+  "central-bank-card": {
+    "issuer": "central_bank",
+    "sources": {
+      "official": "https://www.centralbank.net/credit-card"
+    }
+  },
+  "community-bank-card": {
+    "issuer": "community_bank",
+    "sources": {
+      "official": "https://www.communitybank.com/credit-card"
+    }
+  },
+  "deserve-card": {
+    "issuer": "deserve",
+    "sources": {
+      "official": "https://www.deserve.com/credit-card"
+    }
+  },
+  "discover-it-student": {
+    "issuer": "discover",
+    "sources": {
+      "official": "https://www.discover.com/credit-cards/student"
+    }
+  },
+  "discover-it-chrome": {
+    "issuer": "discover",
+    "sources": {
+      "official": "https://www.discover.com/credit-cards/chrome"
+    }
+  },
+  "discover-it-secure": {
+    "issuer": "discover",
+    "sources": {
+      "official": "https://www.discover.com/credit-cards/secure"
+    }
+  },
+  "comenity-ulta-beauty": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/ultabeauty"
+    }
+  },
+  "comenity-kayak": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/kayak"
+    }
+  },
+  "comenity-bed-bath-beyond": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/bedbath"
+    }
+  },
+  "comenity-walmart": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/walmart"
+    }
+  },
+  "comenity-amazon": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/amazon"
+    }
+  },
+  "comenity-lowes": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/lowes"
+    }
+  },
+  "comenity-gap": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/gap"
+    }
+  },
+  "comenity-old-navy": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/oldnavy"
+    }
+  },
+  "comenity-banana-republic": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/bananarepublic"
+    }
+  },
+  "comenity-athletica": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/athleta"
+    }
+  },
+  "comenity-nordstrom": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/nordstrom"
+    }
+  },
+  "comenity-macys": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/macys"
+    }
+  },
+  "comenity-bergdorfs": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/bergdorfs"
+    }
+  },
+  "comenity-neiman": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/neiman"
+    }
+  },
+  "comenity-saks": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/saks"
+    }
+  },
+  "chase-sapphire-legacy": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/sapphire-legacy"
+    }
+  },
+  "chase-slate": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/slate"
+    }
+  },
+  "chase-freedom": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/freedom"
+    }
+  },
+  "chase-freedom-flex-biz": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/freedom-flex-business"
+    }
+  },
+  "amex-delta-skymiles-gold-biz": {
+    "issuer": "amex",
+    "sources": {
+      "official": "https://www.americanexpress.com/us/business/credit-cards/delta-gold-business"
+    }
+  },
+  "amex-delta-skymiles-platinum-biz": {
+    "issuer": "amex",
+    "sources": {
+      "official": "https://www.americanexpress.com/us/business/credit-cards/delta-platinum-business"
+    }
+  },
+  "barclays-aadvantage-silver": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/avianza-silver"
+    }
+  },
+  "barclays-aarp-essential-rewards-mastercard": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/aarp-essential-rewards"
+    }
+  },
+  "barclays-aarp-travel-rewards-mastercard": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/aarp-travel-rewards"
+    }
+  },
+  "barclays-athleta-rewards-mastercard": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/athleta-rewards"
+    }
+  },
+  "barclays-banana-republic-rewards-mastercard": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/banana-republic-rewards"
+    }
+  },
+  "barclays-carnival-world-mastercard": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/carnival-world"
+    }
+  },
+  "barclays-celebrity-cruises-visa-signature": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/celebrity-cruises"
+    }
+  },
+  "barclays-frontier-airlines-world-mastercard": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/frontier-airlines"
+    }
+  },
+  "barclays-gap-good-rewards-mastercard": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/gap-good-rewards"
+    }
+  },
+  "barclays-old-navy-navyist-rewards-mastercard": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/old-navy-navyist"
+    }
+  },
+  "barclays-royal-caribbean-visa-signature": {
+    "issuer": "barclays",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/royal-caribbean"
+    }
+  },
+  "bilt-blue": {
+    "issuer": "bilt",
+    "sources": {
+      "official": "https://www.bilt.com/credit-card/blue"
+    }
+  },
+  "bilt-palladium": {
+    "issuer": "bilt",
+    "sources": {
+      "official": "https://www.bilt.com/credit-card/palladium"
+    }
+  },
+  "boa-alaska-airlines-visa-biz": {
+    "issuer": "boa",
+    "sources": {
+      "official": "https://www.bankofamerica.com/credit-cards/alaska-airlines-business"
+    }
+  },
+  "boa-alaska-airlines-visa-platinum": {
+    "issuer": "boa",
+    "sources": {
+      "official": "https://www.bankofamerica.com/credit-cards/alaska-airlines-platinum"
+    }
+  },
+  "boa-alaska-airlines-visa-signature": {
+    "issuer": "boa",
+    "sources": {
+      "official": "https://www.bankofamerica.com/credit-cards/alaska-airlines-signature"
+    }
+  },
+  "boa-alaska-ascent": {
+    "issuer": "boa",
+    "sources": {
+      "official": "https://www.bankofamerica.com/credit-cards/alaska-ascent"
+    }
+  },
+  "boa-alaska-summit": {
+    "issuer": "boa",
+    "sources": {
+      "official": "https://www.bankofamerica.com/credit-cards/alaska-summit"
+    }
+  },
+  "boa-biz-advantage-customized-cash": {
+    "issuer": "boa",
+    "sources": {
+      "official": "https://www.bankofamerica.com/small-business/credit-cards/customized-cash"
+    }
+  },
+  "boa-biz-advantage-travel": {
+    "issuer": "boa",
+    "sources": {
+      "official": "https://www.bankofamerica.com/small-business/credit-cards/travel"
+    }
+  },
+  "boa-biz-advantage-unlimited-cash": {
+    "issuer": "boa",
+    "sources": {
+      "official": "https://www.bankofamerica.com/small-business/credit-cards/unlimited-cash"
+    }
+  },
+  "boa-customized-cash-rewards": {
+    "issuer": "boa",
+    "sources": {
+      "official": "https://www.bankofamerica.com/credit-cards/customized-cash-rewards"
+    }
+  },
+  "boa-customized-cash-rewards-secured": {
+    "issuer": "boa",
+    "sources": {
+      "official": "https://www.bankofamerica.com/credit-cards/customized-cash-rewards-secured"
+    }
+  },
+  "boa-premium-rewards": {
+    "issuer": "boa",
+    "sources": {
+      "official": "https://www.bankofamerica.com/credit-cards/premium-rewards"
+    }
+  },
+  "boa-premium-rewards-elite": {
+    "issuer": "boa",
+    "sources": {
+      "official": "https://www.bankofamerica.com/credit-cards/premium-rewards-elite"
+    }
+  },
+  "boa-student-travel-rewards": {
+    "issuer": "boa",
+    "sources": {
+      "official": "https://www.bankofamerica.com/credit-cards/student-travel-rewards"
+    }
+  },
+  "capital-one-journey-student": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/credit-cards/journey-student"
+    }
+  },
+  "capital-one-quicksilver-one": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/credit-cards/quicksilver-one"
+    }
+  },
+  "capital-one-quicksilver-secured": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/credit-cards/quicksilver-secured"
+    }
+  },
+  "capital-one-savor-one": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/credit-cards/savorone"
+    }
+  },
+  "capital-one-spark-cash-plus": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/small-business/credit-cards/spark-cash-plus"
+    }
+  },
+  "capital-one-spark-cash-select": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/small-business/credit-cards/spark-cash-select"
+    }
+  },
+  "capital-one-spark-miles": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/small-business/credit-cards/spark-miles"
+    }
+  },
+  "capital-one-spark-miles-select": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/small-business/credit-cards/spark-miles-select"
+    }
+  },
+  "capital-one-venture-one": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/credit-cards/venture-one"
+    }
+  },
+  "capital-one-venture-x-biz": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/small-business/credit-cards/venture-x-business"
+    }
+  },
+  "bread-cashback-american-express": {
+    "issuer": "bread",
+    "sources": {
+      "official": "https://www.breadfinancial.com/credit-card"
+    }
+  },
+  "cathay-world-elite": {
+    "issuer": "cathay",
+    "sources": {
+      "official": "https://www.cathaybank.com/credit-card/world-elite"
+    }
+  },
+  "chase-aer-lingus-visa-signature": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/aer-lingus"
+    }
+  },
+  "chase-british-airways-visa-signature": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/british-airways"
+    }
+  },
+  "chase-disney-inspire": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/disney-inspire"
+    }
+  },
+  "chase-disney-visa": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/disney-visa"
+    }
+  },
+  "chase-freedom-rise": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/freedom-rise"
+    }
+  },
+  "chase-hyatt-biz": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/hyatt-business"
+    }
+  },
+  "chase-iberia-visa-signature": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/iberia"
+    }
+  },
+  "chase-ihg-premier-biz": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/ihg-premier-business"
+    }
+  },
+  "chase-ink-biz-cash": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/ink-business-cash"
+    }
+  },
+  "chase-ink-biz-preferred": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/ink-business-preferred"
+    }
+  },
+  "chase-ink-biz-premier": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/ink-business-premier"
+    }
+  },
+  "chase-ink-biz-unlimited": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/ink-business-unlimited"
+    }
+  },
+  "chase-ritz-carlton": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/ritz-carlton"
+    }
+  },
+  "chase-sapphire-reserve-biz": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/sapphire-reserve-business"
+    }
+  },
+  "chase-southwest-performance-biz": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/southwest-performance-business"
+    }
+  },
+  "chase-southwest-performance-plus": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/southwest-performance-plus"
+    }
+  },
+  "chase-southwest-premier-biz": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/southwest-premier-business"
+    }
+  },
+  "chase-united-biz": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/united-business"
+    }
+  },
+  "chase-united-club-biz": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/united-club-business"
+    }
+  },
+  "chase-united-club-infinite": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/united-club-infinite"
+    }
+  },
+  "chase-united-gateway": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/united-gateway"
+    }
+  },
+  "chase-united-infinite": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/united-infinite"
+    }
+  },
+  "chase-united-quest-biz": {
+    "issuer": "chase",
+    "sources": {
+      "official": "https://www.chase.com/united-quest-business"
+    }
+  },
+  "choice-privileges-select-visa": {
+    "issuer": "choice",
+    "sources": {
+      "official": "https://www.choicehotels.com/credit-card/select"
+    }
+  },
+  "choice-privileges-visa": {
+    "issuer": "choice",
+    "sources": {
+      "official": "https://www.choicehotels.com/credit-card"
+    }
+  },
+  "citi-aa-exec": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/aadvantage-executive"
+    }
+  },
+  "citi-aa-mileup-biz": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/aadvantage-mileup-business"
+    }
+  },
+  "citi-aa-platinum-select": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/aadvantage-platinum-select"
+    }
+  },
+  "citi-aadvantage-executive": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/aadvantage-executive"
+    }
+  },
+  "citi-aadvantage-globe": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/aadvantage-globe"
+    }
+  },
+  "citi-aadvantage-mileup": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/aadvantage-mileup"
+    }
+  },
+  "citi-american-airlines-mastercard": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/american-airlines-mastercard"
+    }
+  },
+  "citi-costco-anywhere": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/costco-anywhere"
+    }
+  },
+  "citi-costco-biz": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/costco-business"
+    }
+  },
+  "citi-dividend": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/dividend"
+    }
+  },
+  "citi-rewards-plus": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/rewards-plus"
+    }
+  },
+  "citi-secured-mastercard": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/secured-mastercard"
+    }
+  },
+  "citi-strata": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/strata"
+    }
+  },
+  "citi-strata-elite-premier": {
+    "issuer": "citi",
+    "sources": {
+      "official": "https://www.citi.com/strata-elite-premier"
+    }
+  },
+  "comenity-bed-bath-beyond-mastercard": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/bedbathbeyond"
+    }
+  },
+  "comenity-kayak-credit-card": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/kayak"
+    }
+  },
+  "comenity-ulta-beauty-mastercard": {
+    "issuer": "comenity",
+    "sources": {
+      "official": "https://www.comenity.com/ultabeauty"
+    }
+  },
+  "costco-anywhere-visa-business-citi": {
+    "issuer": "costco",
+    "sources": {
+      "official": "https://www.costco.com/credit-card"
+    }
+  },
+  "delta-skymiles-blue-amex": {
+    "issuer": "delta",
+    "sources": {
+      "official": "https://www.delta.com/us/en/delta-skymiles/blue"
+    }
+  },
+  "discover-it-secured": {
+    "issuer": "discover",
+    "sources": {
+      "official": "https://www.discover.com/credit-cards/secured"
+    }
+  },
+  "discover-it-student-cash-back": {
+    "issuer": "discover",
+    "sources": {
+      "official": "https://www.discover.com/credit-cards/student-cash-back"
+    }
+  },
+  "discover-it-student-chrome": {
+    "issuer": "discover",
+    "sources": {
+      "official": "https://www.discover.com/credit-cards/student-chrome"
+    }
+  },
+  "doordash-rewards-mastercard": {
+    "issuer": "doordash",
+    "sources": {
+      "official": "https://www.doordash.com/credit-card"
+    }
+  },
+  "emirates-skywards-mastercard": {
+    "issuer": "emirates",
+    "sources": {
+      "official": "https://www.emirates.com/skywards/credit-card"
+    }
+  },
+  "fidelity-rewards-visa-signature": {
+    "issuer": "fidelity",
+    "sources": {
+      "official": "https://www.fidelity.com/credit-cards/rewards"
+    }
+  },
+  "hawaiian-airlines-world-elite-mastercard": {
+    "issuer": "hawaiian",
+    "sources": {
+      "official": "https://www.hawaiianairlines.com/credit-card"
+    }
+  },
+  "hsbc-elite-credit": {
+    "issuer": "hsbc",
+    "sources": {
+      "official": "https://www.hsbc.com/credit-cards/elite"
+    }
+  },
+  "hsbc-premier": {
+    "issuer": "hsbc",
+    "sources": {
+      "official": "https://www.hsbc.com/credit-cards/premier"
+    }
+  },
+  "hsbc-premier-world-mastercard": {
+    "issuer": "hsbc",
+    "sources": {
+      "official": "https://www.hsbc.com/credit-cards/premier-world"
+    }
+  },
+  "ihg-one-rewards-premier": {
+    "issuer": "ihg",
+    "sources": {
+      "official": "https://www.ihg.com/credit-card/premier"
+    }
+  },
+  "ihg-one-rewards-traveler": {
+    "issuer": "ihg",
+    "sources": {
+      "official": "https://www.ihg.com/credit-card/traveler"
+    }
+  },
+  "jpmorgan-reserve": {
+    "issuer": "jpmorgan",
+    "sources": {
+      "official": "https://www.jpmorgan.com/reserve"
+    }
+  },
+  "kohls-charge": {
+    "issuer": "kohls",
+    "sources": {
+      "official": "https://www.kohls.com/credit-card"
+    }
+  },
+  "luxury-card-black": {
+    "issuer": "luxury",
+    "sources": {
+      "official": "https://www.luxurycard.com/black"
+    }
+  },
+  "luxury-card-gold": {
+    "issuer": "luxury",
+    "sources": {
+      "official": "https://www.luxurycard.com/gold"
+    }
+  },
+  "luxury-card-titanium": {
+    "issuer": "luxury",
+    "sources": {
+      "official": "https://www.luxurycard.com/titanium"
+    }
+  },
+  "marriott-bonvoy-bold": {
+    "issuer": "marriott",
+    "sources": {
+      "official": "https://www.marriott.com/credit-card/bold"
+    }
+  },
+  "marriott-bonvoy-bountiful": {
+    "issuer": "marriott",
+    "sources": {
+      "official": "https://www.marriott.com/credit-card/bountiful"
+    }
+  },
+  "my-gm-rewards-mastercard": {
+    "issuer": "gm",
+    "sources": {
+      "official": "https://www.gm.com/credit-card"
+    }
+  },
+  "navy-federal-cashrewards": {
+    "issuer": "navy_federal",
+    "sources": {
+      "official": "https://www.navyfederal.org/credit-cards/cash-rewards"
+    }
+  },
+  "navy-federal-cashrewards-plus": {
+    "issuer": "navy_federal",
+    "sources": {
+      "official": "https://www.navyfederal.org/credit-cards/cash-rewards-plus"
+    }
+  },
+  "navy-federal-flagship-rewards": {
+    "issuer": "navy_federal",
+    "sources": {
+      "official": "https://www.navyfederal.org/credit-cards/flagship-rewards"
+    }
+  },
+  "navy-federal-more-rewards": {
+    "issuer": "navy_federal",
+    "sources": {
+      "official": "https://www.navyfederal.org/credit-cards/more-rewards"
+    }
+  },
+  "penfed-pathfinder-rewards": {
+    "issuer": "penfed",
+    "sources": {
+      "official": "https://www.penfed.org/credit-cards/pathfinder"
+    }
+  },
+  "penfed-power-cash-rewards": {
+    "issuer": "penfed",
+    "sources": {
+      "official": "https://www.penfed.org/credit-cards/power-cash-rewards"
+    }
+  },
+  "petal-1-visa": {
+    "issuer": "petal",
+    "sources": {
+      "official": "https://www.petalcard.com/petal-1"
+    }
+  },
+  "petal-2-visa": {
+    "issuer": "petal",
+    "sources": {
+      "official": "https://www.petalcard.com/petal-2"
+    }
+  },
+  "pnc-cash-rewards-visa": {
+    "issuer": "pnc",
+    "sources": {
+      "official": "https://www.pnc.com/cash-rewards-card"
+    }
+  },
+  "pnc-core-visa": {
+    "issuer": "pnc",
+    "sources": {
+      "official": "https://www.pnc.com/core-card"
+    }
+  },
+  "pnc-points-visa": {
+    "issuer": "pnc",
+    "sources": {
+      "official": "https://www.pnc.com/points-card"
+    }
+  },
+  "robinhood-gold": {
+    "issuer": "robinhood",
+    "sources": {
+      "official": "https://www.robinhood.com/gold-card"
+    }
+  },
+  "robinhood-platinum": {
+    "issuer": "robinhood",
+    "sources": {
+      "official": "https://www.robinhood.com/platinum-card"
+    }
+  },
+  "sofi-credit": {
+    "issuer": "sofi",
+    "sources": {
+      "official": "https://www.sofi.com/credit-card/"
+    }
+  },
+  "southwest-rapid-rewards-plus": {
+    "issuer": "southwest",
+    "sources": {
+      "official": "https://www.southwest.com/rapid-rewards-plus"
+    }
+  },
+  "southwest-rapid-rewards-premier": {
+    "issuer": "southwest",
+    "sources": {
+      "official": "https://www.southwest.com/rapid-rewards-premier"
+    }
+  },
+  "southwest-rapid-rewards-priority": {
+    "issuer": "southwest",
+    "sources": {
+      "official": "https://www.southwest.com/rapid-rewards-priority"
+    }
+  },
+  "spirit-airlines-mastercard": {
+    "issuer": "spirit",
+    "sources": {
+      "official": "https://www.spirit.com/credit-card"
+    }
+  },
+  "state-farm-cash-medallion": {
+    "issuer": "state_farm",
+    "sources": {
+      "official": "https://www.statefarm.com/cash-medallion"
+    }
+  },
+  "synchrony-amazon-prime-store-card": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/amazon-prime-store"
+    }
+  },
+  "synchrony-care-credit-rewards-mastercard": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/care-credit"
+    }
+  },
+  "synchrony-paypal-cashback-mastercard": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/paypal-cashback"
+    }
+  },
+  "synchrony-sams-club-mastercard": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/sams-club"
+    }
+  },
+  "synchrony-sears-mastercard": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/sears"
+    }
+  },
+  "synchrony-verizon-visa": {
+    "issuer": "synchrony",
+    "sources": {
+      "official": "https://www.synchrony.com/verizon"
+    }
+  },
+  "td-biz-solutions-credit": {
+    "issuer": "td",
+    "sources": {
+      "official": "https://www.tdbank.com/biz-solutions-credit"
+    }
+  },
+  "td-cash-credit": {
+    "issuer": "td",
+    "sources": {
+      "official": "https://www.tdbank.com/cash-credit"
+    }
+  },
+  "td-double-up-credit": {
+    "issuer": "td",
+    "sources": {
+      "official": "https://www.tdbank.com/double-up-credit"
+    }
+  },
+  "td-first-class-visa-signature": {
+    "issuer": "td",
+    "sources": {
+      "official": "https://www.tdbank.com/first-class-visa"
+    }
+  },
+  "upgrade-triple-cash-rewards-visa": {
+    "issuer": "upgrade",
+    "sources": {
+      "official": "https://www.upgrade.com/triple-cash"
+    }
+  },
+  "us-bank-altitude-connect-biz": {
+    "issuer": "us_bank",
+    "sources": {
+      "official": "https://www.usbank.com/business/altitude-connect"
+    }
+  },
+  "us-bank-altitude-go-biz": {
+    "issuer": "us_bank",
+    "sources": {
+      "official": "https://www.usbank.com/business/altitude-go"
+    }
+  },
+  "us-bank-altitude-go-secured": {
+    "issuer": "us_bank",
+    "sources": {
+      "official": "https://www.usbank.com/altitude-go-secured"
+    }
+  },
+  "us-bank-biz-altitude-connect": {
+    "issuer": "us_bank",
+    "sources": {
+      "official": "https://www.usbank.com/business/altitude-connect"
+    }
+  },
+  "us-bank-biz-leverage-visa": {
+    "issuer": "us_bank",
+    "sources": {
+      "official": "https://www.usbank.com/business/ leverage"
+    }
+  },
+  "us-bank-biz-triple-cash": {
+    "issuer": "us_bank",
+    "sources": {
+      "official": "https://www.usbank.com/business/triple-cash"
+    }
+  },
+  "us-bank-smartly-visa": {
+    "issuer": "us_bank",
+    "sources": {
+      "official": "https://www.usbank.com/smartly-visa"
+    }
+  },
+  "venmo-card": {
+    "issuer": "venmo",
+    "sources": {
+      "official": "https://www.venmo.com/card"
+    }
+  },
+  "walgreens-mastercard": {
+    "issuer": "walgreens",
+    "sources": {
+      "official": "https://www.walgreens.com/credit-card"
+    }
+  },
+  "wells-fargo-active-cash-biz": {
+    "issuer": "wells_fargo",
+    "sources": {
+      "official": "https://www.wellsfargo.com/active-cash-business"
+    }
+  },
+  "wells-fargo-autograph-journey": {
+    "issuer": "wells_fargo",
+    "sources": {
+      "official": "https://www.wellsfargo.com/autograph-journey"
+    }
+  },
+  "wells-fargo-choice-privileges": {
+    "issuer": "wells_fargo",
+    "sources": {
+      "official": "https://www.wellsfargo.com/choice-privileges"
+    }
+  },
+  "wells-fargo-one-key-plus": {
+    "issuer": "wells_fargo",
+    "sources": {
+      "official": "https://www.wellsfargo.com/one-key-plus"
+    }
+  },
+  "wells-fargo-reflect": {
+    "issuer": "wells_fargo",
+    "sources": {
+      "official": "https://www.wellsfargo.com/reflect"
+    }
+  },
+  "wells-fargo-signify-biz-cash": {
+    "issuer": "wells_fargo",
+    "sources": {
+      "official": "https://www.wellsfargo.com/signify-business-cash"
+    }
+  },
+  "wyndham-rewards-earner-barclays": {
+    "issuer": "wyndham",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/wyndham-earner"
+    }
+  },
+  "wyndham-rewards-earner-business-barclays": {
+    "issuer": "wyndham",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/wyndham-earner-business"
+    }
+  },
+  "wyndham-rewards-earner-plus-barclays": {
+    "issuer": "wyndham",
+    "sources": {
+      "official": "https://www.barclays.us/credit-cards/wyndham-earner-plus"
     }
   }
 }
