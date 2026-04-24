@@ -49,11 +49,23 @@
   "tags": [
     "airline"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "name": "Chase",
+      "url": "https://creditcards.chase.com/travel-credit-cards/southwest/priority"
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.970Z"
+  "last_updated": "2026-04-16T13:41:49.970Z",
+  "welcome_bonus": {
+    "amount": 60000,
+    "type": "points",
+    "requirement": "Spend $2,000 in first 3 months",
+    "source": "chase.com",
+    "last_updated": "2026-04-24"
+  }
 }

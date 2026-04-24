@@ -151,7 +151,8 @@ function validateSchema(card: any, fileName: string): ValidationIssue[] {
   const hasLoungeAccess = card.travel_benefits?.lounge_access?.priority_pass ||
     card.travel_benefits?.lounge_access?.centurion ||
     card.travel_benefits?.lounge_access?.other;
-  if (card.annual_fee > 200 && !hasCredits && !hasHotelStatus && !hasOtherBenefits && !hasLoungeAccess) {
+  const hasWelcomeBonus = card.welcome_bonus && (card.welcome_bonus.amount > 0 || card.welcome_bonus.credits);
+  if (card.annual_fee > 200 && !hasCredits && !hasHotelStatus && !hasOtherBenefits && !hasLoungeAccess && !hasWelcomeBonus) {
     issues.push({
       card: cardName, severity: 'warning', source: 'schema',
       message: `annual_fee is $${card.annual_fee} but no benefits found`,

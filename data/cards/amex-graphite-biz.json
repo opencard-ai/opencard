@@ -15,14 +15,14 @@
   },
   "earning_rates": [
     {
-      "category": "Travel",
+      "category": "all other purchases",
       "rate": 2,
-      "notes": ""
+      "notes": "Unlimited 2% cash back"
     },
     {
-      "category": "All other purchases",
-      "rate": 1,
-      "notes": ""
+      "category": "travel",
+      "rate": 5,
+      "notes": "On flights and prepaid hotels booked through American Express Travel Online"
     }
   ],
   "annual_credits": [],
@@ -49,11 +49,23 @@
   "tags": [
     "business"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "name": "American Express",
+      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/graphite-business-cash-unlimited-card/65147/"
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.947Z"
+  "last_updated": "2026-04-16T13:41:49.947Z",
+  "welcome_bonus": {
+    "amount": 1500,
+    "type": "cash",
+    "requirement": "Spend $50,000 in first 6 months",
+    "source": "americanexpress.com",
+    "last_updated": "2026-04-24"
+  }
 }
