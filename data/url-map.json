@@ -403,5 +403,215 @@
     "sources": {
       "uscreditcardguide": "https://www.uscreditcardguide.com/citi-thankyou-premier-credit-card/"
     }
+  },
+  "bilt-obsidian": {
+    "issuer": "bilt",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/bilt-obsidian-credit-card/"
+    }
+  },
+  "boa-unlimited-cash-rewards": {
+    "issuer": "boa",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/boa-unlimited-cash-rewards-credit-card/"
+    }
+  },
+  "chase-aeroplan": {
+    "issuer": "chase",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-aeroplan-credit-card/"
+    }
+  },
+  "wells-fargo-one-key": {
+    "issuer": "wells",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/wells-fargo-one-key-credit-card/"
+    }
+  },
+  "citi-prestige": {
+    "issuer": "citi",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/citi-prestige-credit-card/"
+    }
+  },
+  "chase-ink-preferred": {
+    "issuer": "chase",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ink-preferred-credit-card/"
+    }
+  },
+  "chase-ink-unlimited": {
+    "issuer": "chase",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ink-unlimited-credit-card/"
+    }
+  },
+  "chase-ink-cash": {
+    "issuer": "chase",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ink-cash-credit-card/"
+    }
+  },
+  "chase-disney-premier": {
+    "issuer": "chase",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-disney-premier-credit-card/"
+    }
+  },
+  "boa-cash-rewards": {
+    "issuer": "boa",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/boa-cash-rewards-credit-card/"
+    }
+  },
+  "us-bank-altitude-go": {
+    "issuer": "us",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/us-bank-altitude-go-credit-card/"
+    }
+  },
+  "us-bank-altitude-connect": {
+    "issuer": "us",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/us-bank-altitude-connect-credit-card/"
+    }
+  },
+  "us-bank-smartly": {
+    "issuer": "us",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/us-bank-smartly-credit-card/"
+    }
+  },
+  "apple-card": {
+    "issuer": "apple",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/apple-card-credit-card/"
+    }
+  },
+  "boa-travel-rewards": {
+    "issuer": "boa",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/boa-travel-rewards-credit-card/"
+    }
+  },
+  "barclays-aarp-essential": {
+    "issuer": "barclays",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/barclays-aarp-essential-credit-card/"
+    }
+  },
+  "barclays-aarp-travel": {
+    "issuer": "barclays",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/barclays-aarp-travel-credit-card/"
+    }
+  },
+  "amex-delta-gold": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-gold-delta-skymiles-credit-card/"
+    }
+  },
+  "amex-delta-platinum": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-platinum-delta-skymiles-credit-card/"
+    }
+  },
+  "amex-hilton-honors": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-hilton-credit-card/"
+    }
+  },
+  "amex-hilton-biz-platinum": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-hilton-business-credit-card/"
+    }
+  },
+  "amex-hilton-honors-biz": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-hilton-business-credit-card/"
+    }
+  },
+  "amex-delta-blue": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-blue-delta-skymiles-credit-card/"
+    }
+  },
+  "amex-delta-gold-biz": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-gold-delta-skymiles-business-credit-card/"
+    }
+  },
+  "amex-delta-platinum-biz": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-platinum-delta-skymiles-business-credit-card/"
+    }
+  },
+  "amex-delta-skymiles-reserve-biz": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-delta-reserve-business-credit-card/"
+    }
+  },
+  "amex-marriott-bonvoy-biz": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-spg-business-credit-card/"
+    }
+  },
+  "chase-united-explorer": {
+    "issuer": "chase",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/"
+    }
+  },
+  "chase-united-quest": {
+    "issuer": "chase",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ua-quest-credit-card/"
+    }
+  },
+  "chase-united-club": {
+    "issuer": "chase",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/united-mileageplus-club-credit-card/"
+    }
+  },
+  "chase-disney": {
+    "issuer": "chase",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-disney-rewards-credit-card/"
+    }
+  },
+  "barclays-jetblue": {
+    "issuer": "barclays",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/barclays-jetblue-credit-card/"
+    }
+  },
+  "barclays-jetblue-plus": {
+    "issuer": "barclays",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/barclays-jetblue-plus-credit-card/"
+    }
+  },
+  "citi-strata-elite": {
+    "issuer": "citi",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/citi-strata-elite-credit-card/"
+    }
+  },
+  "boa-premium-reserve": {
+    "issuer": "boa",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/boa-premium-rewards-credit-card/"
+    }
   }
 }
