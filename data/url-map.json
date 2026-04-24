@@ -97,30 +97,10 @@
       "official": "https://www.americanexpress.com/us/credit-cards/card/gold/"
     }
   },
-  "amex-business-platinum": {
-    "issuer": "amex",
-    "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-business-platinum-card/",
-      "official": "https://www.americanexpress.com/en-us/business/credit-cards/platinum/"
-    }
-  },
-  "amex-business-gold": {
-    "issuer": "amex",
-    "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-business-gold-rewards-card/",
-      "official": "https://www.americanexpress.com/en-us/business/credit-cards/gold/"
-    }
-  },
   "amex-hilton-surpass": {
     "issuer": "amex",
     "sources": {
       "uscreditcardguide": "https://www.uscreditcardguide.com/amex-hilton-surpass-credit-card/"
-    }
-  },
-  "amex-hilton-aspire": {
-    "issuer": "amex",
-    "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-hilton-aspire-credit-card/"
     }
   },
   "amex-marriott-brilliant": {
@@ -151,7 +131,8 @@
   "chase-ink-business-preferred": {
     "issuer": "chase",
     "sources": {
-      "official": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred"
+      "official": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ink-preferred-credit-card/"
     }
   },
   "chase-ink-business-cash": {
@@ -269,6 +250,26 @@
     "issuer": "discover",
     "sources": {
       "official": "https://www.discover.com/credit-cards/cash-back/"
+    }
+  },
+  "amex-hilton-honors-aspire": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-hilton-aspire-credit-card/"
+    }
+  },
+  "amex-biz-platinum": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-business-platinum-card/",
+      "official": "https://www.americanexpress.com/en-us/business/credit-cards/platinum/"
+    }
+  },
+  "amex-biz-gold": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-business-gold-rewards-card/",
+      "official": "https://www.americanexpress.com/en-us/business/credit-cards/gold/"
     }
   }
 }
