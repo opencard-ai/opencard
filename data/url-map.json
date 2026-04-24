@@ -271,5 +271,137 @@
       "uscreditcardguide": "https://www.uscreditcardguide.com/amex-business-gold-rewards-card/",
       "official": "https://www.americanexpress.com/en-us/business/credit-cards/gold/"
     }
+  },
+  "amex-bce": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/blue-cash-everyday-credit-card/"
+    }
+  },
+  "amex-bcp": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/blue-cash-preferred-credit-card/"
+    }
+  },
+  "amex-delta-reserve": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-delta-reserve-credit-card/"
+    }
+  },
+  "amex-blue-cash-preferred": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/blue-cash-preferred-credit-card/"
+    }
+  },
+  "amex-blue-cash-everyday": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/blue-cash-everyday-credit-card/"
+    }
+  },
+  "amex-everyday": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-everyday-credit-card/"
+    }
+  },
+  "amex-everyday-preferred": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-everyday-preferred-credit-card/"
+    }
+  },
+  "amex-cash-magnet": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-cash-magnet-credit-card/"
+    }
+  },
+  "amex-amazon-biz-prime": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-amazon-business-prime-credit-card/"
+    }
+  },
+  "amex-blue-biz-cash": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-blue-business-cash-credit-card/"
+    }
+  },
+  "amex-blue-biz-plus": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-blue-business-plus-credit-card/"
+    }
+  },
+  "amex-green": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-green-card/"
+    }
+  },
+  "amex-blue-from-american-express": {
+    "issuer": "amex",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-blue-credit-card/"
+    }
+  },
+  "chase-southwest-premier": {
+    "issuer": "chase",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-southwest-premier-credit-card/"
+    }
+  },
+  "chase-southwest-plus": {
+    "issuer": "chase",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-southwest-plus-credit-card/"
+    }
+  },
+  "chase-southwest-priority": {
+    "issuer": "chase",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-southwest-priority-credit-card/"
+    }
+  },
+  "chase-hyatt": {
+    "issuer": "chase",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-world-of-hyatt-credit-card/"
+    }
+  },
+  "discover-it-miles": {
+    "issuer": "discover",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/discover-it-miles-credit-card/"
+    }
+  },
+  "citi-simplicity": {
+    "issuer": "citi",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/citi-simplicity-credit-card/"
+    }
+  },
+  "us-bank-altitude-reserve": {
+    "issuer": "us",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/us-bank-altitude-reserve-credit-card/"
+    }
+  },
+  "citi-aa-mileup": {
+    "issuer": "citi",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/citi-aadvantage-mileup-credit-card/"
+    }
+  },
+  "citi-premier": {
+    "issuer": "citi",
+    "sources": {
+      "uscreditcardguide": "https://www.uscreditcardguide.com/citi-thankyou-premier-credit-card/"
+    }
   }
 }
