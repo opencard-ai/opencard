@@ -67,16 +67,7 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "name": "Disney Bundle Credit",
-      "amount": 120,
-      "frequency": "annual",
-      "category": "entertainment",
-      "description": "$120 annual credit for Disney+ bundle (Disney+, Hulu, ESPN+). Enrollment required.",
-      "reset_type": "calendar_year"
-    }
-  ],
+  "recurring_credits": [],
   "welcome_bonus": {
     "amount": 200,
     "type": "cash",
