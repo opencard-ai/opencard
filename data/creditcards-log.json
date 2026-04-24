@@ -1,0 +1,112 @@
+[
+  {
+    "timestamp": "2026-04-24T05:00:02.509Z",
+    "card_id": "amex-biz-platinum",
+    "card_name": "The Business Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "updated",
+    "extracted": {
+      "annual_fee": 895,
+      "welcome_bonus": {
+        "amount": 300000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T05:00:07.543Z",
+    "card_id": "amex-delta-platinum",
+    "card_name": "Delta SkyMiles® Platinum American Express Card",
+    "source": "creditcards.com",
+    "action": "verified",
+    "extracted": {
+      "annual_fee": 350
+    }
+  },
+  {
+    "timestamp": "2026-04-24T05:00:13.828Z",
+    "card_id": "amex-delta-skymiles-platinum-biz",
+    "card_name": "Delta SkyMiles® Platinum Business American Express Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:00:18.654Z",
+    "card_id": "amex-hilton-biz-platinum",
+    "card_name": "Hilton Business Platinum",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:00:22.154Z",
+    "card_id": "amex-morgan-stanley-platinum",
+    "card_name": "Amex Morgan Stanley Platinum",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:00:25.458Z",
+    "card_id": "amex-platinum",
+    "card_name": "The Platinum Card® from American Express",
+    "source": "creditcards.com",
+    "action": "updated",
+    "extracted": {
+      "annual_fee": 895,
+      "welcome_bonus": {
+        "amount": 175000,
+        "type": "points"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-04-24T05:00:30.359Z",
+    "card_id": "boa-alaska-airlines-visa-platinum",
+    "card_name": "Alaska Airlines Visa® Platinum Plus® Credit Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  },
+  {
+    "timestamp": "2026-04-24T05:00:37.655Z",
+    "card_id": "citi-aa-platinum-select",
+    "card_name": "AAdvantage Platinum Select",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:00:41.049Z",
+    "card_id": "penfed-platinum-rewards",
+    "card_name": "PenFed Platinum Rewards Visa Signature® Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:00:43.052Z",
+    "card_id": "robinhood-platinum",
+    "card_name": "Robinhood Platinum Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "Issuer not supported"
+  },
+  {
+    "timestamp": "2026-04-24T05:00:45.055Z",
+    "card_id": "us-bank-visa-platinum",
+    "card_name": "U.S. Bank Visa® Platinum Card",
+    "source": "creditcards.com",
+    "action": "error",
+    "extracted": {},
+    "error": "No data found"
+  }
+]
