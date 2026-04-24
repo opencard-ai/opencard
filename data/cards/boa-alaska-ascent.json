@@ -33,7 +33,17 @@
   ],
   "travel_benefits": {
     "other_benefits": [
-      "Alaska Lounge Access"
+      "Alaska Lounge Access",
+      "Companion Fare ($99 + taxes)",
+      "Priority Boarding",
+      "First Checked Bag Free (for you and up to 6 guests)"
+    ],
+    "lounge_access": [
+      {
+        "name": "Alaska Lounge+",
+        "type": "airport",
+        "discount": "$100 off annual membership"
+      }
     ]
   },
   "fhr_thc": {
@@ -41,14 +51,14 @@
     "thc_eligible": false
   },
   "insurance": {
-    "rental_insurance": "None",
-    "trip_delay": false,
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
     "purchase_protection": true,
     "extended_warranty": true,
     "trip_cancellation": null,
     "return_protection": null,
     "baggage_delay": null,
-    "lost_luggage": null,
+    "lost_luggage": true,
     "cell_phone": null,
     "travel_accident": null
   },
@@ -64,11 +74,37 @@
       "url": "https://thepointsguy.com/credit-cards/atmos-ascent-vs-atmos-summit/"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.955Z",
+  "last_updated": "2026-04-24T23:28:00Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "recurring_credits": []
+  "recurring_credits": [
+    {
+      "name": "Companion Fare",
+      "amount": 99,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$99 Companion Fare (plus taxes and fees from $23) after spending $6,000+ in prior anniversary year",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Alaska Lounge+ Discount",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "lounge",
+      "description": "$100 off annual Alaska Lounge+ Membership",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Inflight Purchase Rebate",
+      "amount": 20,
+      "frequency": "per_stay",
+      "category": "airline",
+      "description": "20% back on Alaska Airlines inflight purchases",
+      "reset_type": "cardmember_year"
+    }
+  ],
+  "last_scraped": "2026-04-24T23:28:00Z"
 }

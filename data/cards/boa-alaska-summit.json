@@ -33,8 +33,23 @@
   ],
   "travel_benefits": {
     "other_benefits": [
-      "Alaska Lounge Access",
-      "Companion Fare"
+      "Alaska Lounge Access (unlimited)",
+      "Companion Fare ($99 + taxes)",
+      "Priority Boarding",
+      "First Checked Bag Free (for you and up to 6 guests)",
+      "Two Alaska Lounge+ day passes annually"
+    ],
+    "lounge_access": [
+      {
+        "name": "Alaska Lounge+",
+        "type": "airport",
+        "unlimited": true
+      },
+      {
+        "name": "Alaska Lounge Day Passes",
+        "type": "airport",
+        "quantity": 2
+      }
     ]
   },
   "fhr_thc": {
@@ -42,12 +57,16 @@
     "thc_eligible": false
   },
   "insurance": {
-    "rental_insurance": "None",
-    "trip_delay": false,
-    "purchase_protection": false,
-    "extended_warranty": false,
-    "trip_cancellation": null,
-    "return_protection": null
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "trip_cancellation": true,
+    "return_protection": true,
+    "baggage_delay": true,
+    "lost_luggage": true,
+    "cell_phone": null,
+    "travel_accident": true
   },
   "tags": [
     "airline",
@@ -61,11 +80,45 @@
       "url": "https://thepointsguy.com/credit-cards/atmos-rewards-summit-tpg-awards-2026/"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.955Z",
+  "last_updated": "2026-04-24T23:28:00Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "recurring_credits": []
+  "recurring_credits": [
+    {
+      "name": "Companion Fare",
+      "amount": 99,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$99 Companion Fare (plus taxes and fees from $23) - higher tier, may have better terms",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Alaska Lounge+ Membership Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "lounge",
+      "description": "$100 off annual Alaska Lounge+ Membership",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Inflight Purchase Rebate",
+      "amount": 20,
+      "frequency": "per_stay",
+      "category": "airline",
+      "description": "20% back on Alaska Airlines inflight purchases",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Global Entry/TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $100 statement credit for Global Entry or TSA PreCheck",
+      "reset_type": "cardmember_year"
+    }
+  ],
+  "last_scraped": "2026-04-24T23:28:00Z"
 }
