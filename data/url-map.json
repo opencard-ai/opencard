@@ -5,19 +5,64 @@
     "description": "Unified URL mapping for OpenCard scraper with per-bank source priority"
   },
   "_source_priority": {
-    "chase": ["official", "uscreditcardguide", "nerdwallet"],
-    "capital_one": ["official", "uscreditcardguide", "nerdwallet"],
-    "discover": ["official", "uscreditcardguide", "nerdwallet"],
-    "wells_fargo": ["official", "uscreditcardguide", "nerdwallet"],
-    "amex": ["uscreditcardguide", "nerdwallet", "official"],
-    "citi": ["uscreditcardguide", "nerdwallet", "official"],
-    "barclays": ["uscreditcardguide", "nerdwallet"],
-    "bank_of_america": ["uscreditcardguide", "official", "nerdwallet"],
-    "us_bank": ["uscreditcardguide", "nerdwallet", "official"],
-    "hsbc": ["uscreditcardguide", "nerdwallet"],
-    "navy_federal": ["uscreditcardguide"],
-    "penfed": ["uscreditcardguide"],
-    "default": ["uscreditcardguide", "nerdwallet"]
+    "chase": [
+      "official",
+      "uscreditcardguide",
+      "nerdwallet"
+    ],
+    "capital_one": [
+      "official",
+      "uscreditcardguide",
+      "nerdwallet"
+    ],
+    "discover": [
+      "official",
+      "uscreditcardguide",
+      "nerdwallet"
+    ],
+    "wells_fargo": [
+      "official",
+      "uscreditcardguide",
+      "nerdwallet"
+    ],
+    "amex": [
+      "uscreditcardguide",
+      "nerdwallet",
+      "official"
+    ],
+    "citi": [
+      "uscreditcardguide",
+      "nerdwallet",
+      "official"
+    ],
+    "barclays": [
+      "uscreditcardguide",
+      "nerdwallet"
+    ],
+    "bank_of_america": [
+      "uscreditcardguide",
+      "official",
+      "nerdwallet"
+    ],
+    "us_bank": [
+      "uscreditcardguide",
+      "nerdwallet",
+      "official"
+    ],
+    "hsbc": [
+      "uscreditcardguide",
+      "nerdwallet"
+    ],
+    "navy_federal": [
+      "uscreditcardguide"
+    ],
+    "penfed": [
+      "uscreditcardguide"
+    ],
+    "default": [
+      "uscreditcardguide",
+      "nerdwallet"
+    ]
   },
   "_base_urls": {
     "official": {
@@ -190,13 +235,15 @@
   "citi-custom-cash": {
     "issuer": "citi",
     "sources": {
-      "official": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card"
+      "official": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/citi-custom-cash-credit-card/"
     }
   },
   "citi-double-cash": {
     "issuer": "citi",
     "sources": {
-      "official": "https://www.citi.com/credit-cards/citi-double-cash-credit-card"
+      "official": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/citi-double-cash-credit-card/"
     }
   },
   "wells-fargo-attune": {
