@@ -67,5 +67,13 @@
     "notes": null
   },
   "last_updated": "2026-04-16T13:41:49.966Z",
-  "recurring_credits": []
+  "recurring_credits": [],
+  "welcome_bonus": {
+    "amount": 30000,
+    "type": "points",
+    "requirement": "Spend $3,000 in first 3 months",
+    "notes": "Up to 60,000 points possible (30K + 30K from 2x on $15,000 spend)",
+    "source": "chase.com",
+    "last_updated": "2026-04-24"
+  }
 }
