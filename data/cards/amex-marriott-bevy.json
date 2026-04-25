@@ -95,5 +95,8 @@
   "last_scraped": "2026-04-24T17:26:46.246653",
   "last_verified": "2026-04-24",
   "next_review": "2026-07-23T17:26:46.246653",
-  "cfpb_source": "Q3_2025"
+  "cfpb_source": "Q3_2025",
+  "cash_advance_fee_flat": 10,
+  "cash_advance_fee_pct": 5.0,
+  "cfpb_verified": true
 }

@@ -1,0 +1,11 @@
+{
+  "card_id": "amex-marriott-brilliant",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:09:33.752308",
+  "content_hash": "7824bef41768e66d2552fa878d9f5b0a31484fafdc4c450a2a2b515a291a57e3",
+  "fields": {
+    "annual_fee": 650,
+    "cash_advance_fee_flat": 10,
+    "cash_advance_fee_pct": 5.0
+  }
+}
