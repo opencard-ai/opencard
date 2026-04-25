@@ -277,6 +277,7 @@ export default function MyCardsPage({
             }
           }
           setCardsData(map);
+          console.log('cardsData map populated with:', Object.keys(map).length, 'cards');
         }
       } catch {}
       
