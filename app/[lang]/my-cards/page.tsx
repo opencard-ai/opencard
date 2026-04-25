@@ -432,9 +432,11 @@ export default function MyCardsPage({
     }
   }, [email, selectedCards, marketingOptin]);
 
-  const selectedCardsList = selectedCards
-    .map((id) => cardsData[id])
-    .filter(Boolean) as Card[];
+  // Fallback: if cardsData is empty but selectedCards has IDs, cards aren't loaded yet
+  // This is just a placeholder until cardsData loads
+  const selectedCardsList = (selectedCards.length > 0 && Object.keys(cardsData).length === 0)
+    ? selectedCards.map((id) => ({ card_id: id, name: id.replace(/-/g, ' '), issuer: '', network: 'visa' as const, annual_fee: 0, recurring_credits: [] } as unknown as Card))
+    : selectedCards.map((id) => cardsData[id]).filter(Boolean) as Card[];
 
   const totalMonthlyCredits = selectedCardsList.reduce((sum, card) => {
     return sum + (card.recurring_credits || []).filter((c) => c.frequency === "monthly").reduce((s, c) => s + (c.amount || 0), 0);
