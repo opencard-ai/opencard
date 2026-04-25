@@ -1,4 +1,4 @@
-You are extracting structured credit card data for "Chase Freedom Flex®" (chase-freedom-flex).
+You are extracting structured credit card data for "Chase Ink Business Preferred® Credit Card" (chase-ink-biz-preferred).
 
 Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
 
@@ -89,11 +89,10 @@ Content (first 12000 chars):
         <script type="text/javascript" src="https://p11.techlab-cdn.com/65a6ace0e7cfdf9773e82684.js"></script>
     
     <meta charset="UTF-8"/>
-    <title>Chase Freedom Flex Credit Card | Chase.com</title>
+    <title>Chase Ink Business Preferred Credit Card | Chase.com</title>
     
-    <meta name="description" content="With the Chase Freedom Flex(R) Credit Card, earn 5% cash back in bonus categories each quarter you activate, 5% cash back on travel purchased through Chase Travel(SM), 3% cash back on dining at restaurants, 3% cash back on drugstore purchases, and 1% cash back on all other purchases.
-"/>
-    <meta name="template" content="personal-card-product-details-page"/>
+    <meta name="description" content="Use your Ink Business Preferred Credit Card to earn 3X points on shipping purchases; advertising purchases made with social media sites and search engines, and internet, cable and phone services, travel including airfare, hotels, rental cars, train tickets and taxis. Earn unlimited 1 point per $1 on all other purchases. Pay no foreign transaction fees. Earn rewards on all your purchases and redeem them for travel in Chase Ultimate Rewards powered by Expedia.	"/>
+    <meta name="template" content="business-card-product-details-page"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     
 
@@ -113,7 +112,7 @@ addStyle(getParent(),STYLE_ID,style);setTimeout(function(){removeStyle(getParent
         <script src="https://assets.adobedtm.com/1e387046acd0/c5c944d661d1/launch-ab81f1d80aa8.min.js" async></script>
     
     
-<link rel="canonical" href="https://creditcards.chase.com/cash-back-credit-cards/freedom/flex"/>
+<link rel="canonical" href="https://creditcards.chase.com/business-credit-cards/ink/business-preferred"/>
 
 
     
@@ -144,9 +143,9 @@ addStyle(getParent(),STYLE_ID,style);setTimeout(function(){removeStyle(getParent
     
     
 
-<script nonce="efc82cbda73c0ff197aab00c4464d50e">(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch","rua.ceh":"false","rua.ueh":"false","rua.ieh.st":"0"}]);</script>
-                                <script nonce="efc82cbda73c0ff197aab00c4464d50e">!function(e){var n="https://s.go-mpulse.net/boomerang/";if("True"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="8ARG6-SAT9E-UQH5X-6L7TE-TTSZH",function(){function e(){if(!i){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.parentNode.appendChild(e),i=!0}}function t(e){i=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",o.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"8ARG6-SAT9E-UQH5X-6L7TE-TTSZH";var o=document.currentScript||document.getElementsByTagName("script")[0],i=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!i)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="skhuksaxzhbq62pmbnka-f-a8a8d9bd5-clientnsv4-s.akamaihd.net",o="false"=="true"?2:1,i={"ak.v":"41","ak.cp":"1912449","ak.ai":parseInt("1281593",10),"ak.ol":"0","ak.cr":18,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"217321db","ak.r":39734,"ak.a2":n,"ak.m":"","ak.n":"essl","ak.cport":30147,"ak.gh":"23.201.194.18","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1777077076","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==zlO1x7IGsdJVWPpirFICl+lAIjPCmO88DP+6HpIIKm/Vs/YYTWRVzS27J53qXUO63WumxQC1ktYA7B2tuI92ooOYm7Z+cAMiJgdkm3GFUn6bCngJ/IHaArrpmbPCzO43mVy8YNEsf+6z++SqaFimHXnDvWt6FERur+7GrrTolhwvZ65LFP+BnRgLmYbnJZwoVcG2QQ5c/1jEENHtvT/ezg7TXu8svAOQpmgOQv1Jeu/x24Vcz29CVAZUlKiRU5jeGEbvb2XCUz8roQZauHb98iSdMqfoU9PB4DSjU4veQTtW3fh/XEOgxv/gt1fhXTrSjnFSx60PoqRsoUw+lxhbAeExmwddoGq1xefUA2sUrQ5bs8Khxj75SommfMHGmTUUXsgKItE6sF387iTSI4SBNn/iTjhNmBJ2FlhAfqv753I=","ak.pv":"45","ak.dpoabenc":"","ak.tf":o};if(""!==t)i["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
-    <body class="page basicpage header--personalcards" id="page-a5652e4b48" data-cmp-link-accessibility-enabled data-cmp-link-accessibility-text="opens in a new tab">
+<script nonce="6003ef25a129147c27351f3e55fa5210">(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch","rua.ceh":"false","rua.ueh":"false","rua.ieh.st":"0"}]);</script>
+                                <script nonce="6003ef25a129147c27351f3e55fa5210">!function(e){var n="https://s.go-mpulse.net/boomerang/";if("True"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="8ARG6-SAT9E-UQH5X-6L7TE-TTSZH",function(){function e(){if(!i){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.parentNode.appendChild(e),i=!0}}function t(e){i=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",o.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"8ARG6-SAT9E-UQH5X-6L7TE-TTSZH";var o=document.currentScript||document.getElementsByTagName("script")[0],i=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!i)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="skhukrqxzhbq62pmbpzq-f-831afc350-clientnsv4-s.akamaihd.net",o="false"=="true"?2:1,i={"ak.v":"41","ak.cp":"1912449","ak.ai":parseInt("1281593",10),"ak.ol":"0","ak.cr":19,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"346d89c","ak.r":39734,"ak.a2":n,"ak.m":"","ak.n":"essl","ak.cport":52866,"ak.gh":"23.201.194.15","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1777077235","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==fGpTOC4YHH/ES3gJZqZARK4M2emfI1aK8NvY/4okIw9908OZFhEoy30QV3LV/87PhX45N6ogcR4+692CIV+QMcphtLa44ydW05XZ4iInJIBsr1U/g12D5guVZeiNgQ1r+L4swK6cUJpburl8/jOxkf6VFaH6ZKkXBlBt8jhz7zrKKJ7VPQzAB7ivJBHYj41Ilfco28VajnJmfmkcGNLKm4qtVhvKjqgb0BnSa98QCuqneyNpRYsNkL0JjN9mgTiQAwOAUR3J5PZEEqGbVM9TlCjWF/Jn3Hl91VsMjX4NS4MMo7x+OXDoEmMOJWwGIzRJg1obO3eiK/H9wS0X8XQqTVJDmGyuieZlbESdmj1HcfCBj/7+tBO8dTqvnX3lwCeg97hS6krgnk9kzcqmbvP13RbFdhCz8FRKLcZgPgUrCZE=","ak.pv":"45","ak.dpoabenc":"","ak.tf":o};if(""!==t)i["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+    <body class="page basicpage" id="page-f4d1064b08" data-cmp-link-accessibility-enabled data-cmp-link-accessibility-text="opens in a new tab">
         
         
         
@@ -159,18 +158,18 @@ addStyle(getParent(),STYLE_ID,style);setTimeout(function(){removeStyle(getParent
 <div class="root container responsivegrid">
 
     
-    <div id="container-1a42948445" class="cmp-container">
+    <div id="container-1cac60a068" class="cmp-container">
         
 
 
 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
     
     <header class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
-<div id="experiencefragment-c37de6abec" class="cmp-experiencefragment cmp-experiencefragment--header">
+<div id="experiencefragment-ece20ba797" class="cmp-experiencefragment cmp-experiencefragment--header">
 
 
     
-    <div id="container-8b0c46f744" class="cmp-container">
+    <div id="container-3fa14f3224" class="cmp-container">
         
 
 
@@ -234,7 +233,7 @@ addStyle(getParent(),STYLE_ID,style);setTimeout(function(){removeStyle(getParent
     
     
     
-    <div id="simple-container-09c16ecc69" class="cmp-container">
+    <div id="simple-container-c9efefbb05" class="cmp-container">
         
         
         
@@ -265,9 +264,6 @@ addStyle(getParent(),STYLE_ID,style);setTimeout(function(){removeStyle(getParent
                <ul class="cmp-header-hamburgermenu__nav-sublist">
                   <li>
                      
-                        <a data-lh-name="HamNav_Home" href="https://www.chase.com" target="_blank" class="free-credit-score chaseanalytics-track-link" data-pt-name="mm_nav_home">Home<span class="visually-hidden">
-                         Opens Chase.com in a new window</span></a>
-                     
-
+                        <a data-lh-name="HamNav_Home" href="https://www.chase.com" target="_blank" class="free-credit-score chasea
 
 Respond with JSON only. Do NOT include fields that are null or not found in the content.
