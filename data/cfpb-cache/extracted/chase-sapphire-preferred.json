@@ -1,0 +1,11 @@
+{
+  "card_id": "chase-sapphire-preferred",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-25T06:22:59.959652",
+  "content_hash": "5b1020a690dda5e9cea2389c5c11402a2a5e2429d41b10649a482c2baf268a97",
+  "fields": {
+    "cash_advance_fee_flat": 5,
+    "cash_advance_fee_pct": 5.0,
+    "penalty_apr": "29.99"
+  }
+}

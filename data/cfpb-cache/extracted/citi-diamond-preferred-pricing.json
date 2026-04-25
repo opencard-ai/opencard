@@ -1,0 +1,10 @@
+{
+  "card_id": "citi-diamond-preferred-pricing",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-25T06:23:31.048944",
+  "content_hash": "99e82b7c96030919a9bb40ba518066fa7086228d50a995129d84b64e4b8c4054",
+  "fields": {
+    "apr_cash_advances": "29.24",
+    "penalty_apr": "29.99"
+  }
+}

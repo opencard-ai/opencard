@@ -1,0 +1,11 @@
+{
+  "card_id": "chase-col-271327",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-25T06:23:00.540381",
+  "content_hash": "6670023f78a52e2764d9bc0ff20aaab9f53c8570cecf3ab3af6754b6d621e106",
+  "fields": {
+    "cash_advance_fee_flat": 5,
+    "cash_advance_fee_pct": 5.0,
+    "penalty_apr": "29.99"
+  }
+}

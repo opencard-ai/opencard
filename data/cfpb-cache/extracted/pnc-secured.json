@@ -1,0 +1,10 @@
+{
+  "card_id": "pnc-secured",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-25T06:23:25.839911",
+  "content_hash": "84e9ecd3499ca90aa11447e3e5f39431ebb3c2e1d1cfc20dfb94434a2d2a7001",
+  "fields": {
+    "annual_fee": 36,
+    "penalty_apr": "25.74"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "card_id": "citi-custom-cash-pricing",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-25T06:23:30.571626",
+  "content_hash": "af5fd56bba5a8650808e107dffd17d061fd5566e66e7e2b924a0d84321e40d60",
+  "fields": {
+    "apr_cash_advances": "29.24",
+    "penalty_apr": "29.99"
+  }
+}
