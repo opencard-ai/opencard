@@ -3,7 +3,7 @@
   "name": "Capital One Venture X Rewards Credit Card",
   "issuer": "Capital One",
   "network": "visa",
-  "annual_fee": 395,
+  "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
@@ -96,5 +96,9 @@
   "last_scraped": "2026-04-24T17:26:36.116494",
   "last_verified": "2026-04-24",
   "next_review": "2026-07-23T17:26:36.116494",
-  "cfpb_source": "Q3_2025"
+  "cfpb_source": "Q3_2025",
+  "cash_advance_fee_flat": 3,
+  "cash_advance_fee_pct": 3.0,
+  "apr_cash_advances": "18.99",
+  "cfpb_verified": true
 }
