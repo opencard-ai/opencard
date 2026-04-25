@@ -94,5 +94,7 @@
       "description": "$10 monthly credit at Disney+, Hulu, or ESPN+.",
       "reset_type": "calendar_year"
     }
-  ]
+  ],
+  "last_verified": "2026-04-16T13:41:49.939Z",
+  "next_review": "2026-07-15T13:41:49.939000+00:00"
 }

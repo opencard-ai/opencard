@@ -92,5 +92,7 @@
       "description": "$20 credit for 11 consecutive months of purchases (requires enrolled in U.S. Bank ExtendPay)",
       "reset_type": "calendar_year"
     }
-  ]
+  ],
+  "last_verified": "2026-04-16T13:41:50.006Z",
+  "next_review": "2026-07-15T13:41:50.006000+00:00"
 }

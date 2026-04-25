@@ -151,5 +151,7 @@
       "description": "Up to $120 reimbursement for TSA PreCheck or Global Entry",
       "reset_type": "calendar_year"
     }
-  ]
+  ],
+  "last_verified": "2026-04-16T13:41:49.957Z",
+  "next_review": "2026-07-15T13:41:49.957000+00:00"
 }

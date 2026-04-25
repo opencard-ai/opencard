@@ -71,5 +71,7 @@
     "description": "75,000 Avios after $5,000 spend within 3 months",
     "point_program": "Avios",
     "estimated_value": 900
-  }
+  },
+  "last_verified": "2026-04-16T13:41:49.933Z",
+  "next_review": "2026-07-15T13:41:49.933000+00:00"
 }

@@ -98,5 +98,7 @@
       "description": "$15 statement credit for streaming subscriptions (activated quarterly)",
       "reset_type": "calendar_year"
     }
-  ]
+  ],
+  "last_verified": "2026-04-16T13:41:50.005Z",
+  "next_review": "2026-07-15T13:41:50.005000+00:00"
 }

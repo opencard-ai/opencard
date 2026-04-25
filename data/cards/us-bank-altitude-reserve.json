@@ -105,5 +105,7 @@
       "description": "$325 annual credit for travel purchases (must be booked through US Bank Travel Center or direct with airline)",
       "reset_type": "calendar_year"
     }
-  ]
+  ],
+  "last_verified": "2026-04-16T13:41:50.006Z",
+  "next_review": "2026-07-15T13:41:50.006000+00:00"
 }

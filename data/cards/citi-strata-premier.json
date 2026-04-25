@@ -115,5 +115,7 @@
       "description": "$100 off a single hotel stay of $500 or more (excluding taxes and fees) when booked through CitiTravel.com, once per calendar year",
       "reset_type": "calendar_year"
     }
-  ]
+  ],
+  "last_verified": "2026-04-16T13:41:49.978Z",
+  "next_review": "2026-07-15T13:41:49.978000+00:00"
 }

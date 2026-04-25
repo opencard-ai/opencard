@@ -82,5 +82,7 @@
       "description": "$200 bonus cash when you redeem for travel.",
       "reset_type": "cardmember_year"
     }
-  ]
+  ],
+  "last_verified": "2026-04-16T13:41:49.957Z",
+  "next_review": "2026-07-15T13:41:49.957000+00:00"
 }
