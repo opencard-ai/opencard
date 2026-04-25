@@ -92,7 +92,7 @@
       "notes": "TPG report on annual fee increase Mar 2025."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.971Z",
+  "last_updated": "2026-04-24T17:26:36.116494",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -135,5 +135,6 @@
       "frequency": "annual",
       "category": "other"
     }
-  ]
+  ],
+  "last_scraped": "2026-04-24T17:26:36.116494"
 }

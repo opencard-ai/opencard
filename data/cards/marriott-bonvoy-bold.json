@@ -81,10 +81,11 @@
       "notes": "2026 refresh analysis"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.989Z",
+  "last_updated": "2026-04-24T17:26:46.246653",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
-  }
+  },
+  "last_scraped": "2026-04-24T17:26:46.246653"
 }

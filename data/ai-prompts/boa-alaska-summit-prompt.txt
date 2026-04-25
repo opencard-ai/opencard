@@ -1,0 +1,109 @@
+You are extracting structured credit card data for "Alaska Airlines Atmos™ Summit Visa Infinite® Card" (boa-alaska-summit).
+
+Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
+
+{
+  "issuer": "American Express",
+  "network": "amex",
+  "annual_fee": 895,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "bonus_points": 175000,
+    "spending_requirement": 12000,
+    "time_period_months": 6,
+    "description": "Earn up to 175,000 Membership Rewards points...",
+    "point_program": "Amex Membership Rewards",
+    "estimated_value": 2100
+  },
+  "earning_rates": [
+    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
+    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
+    {"category": "Other", "rate": 1, "notes": null}
+  ],
+  "recurring_credits": [
+    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
+    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
+    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"}
+  ],
+  "travel_benefits": {
+    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
+    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
+    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
+  },
+  "hotel_program": {
+    "program": "Marriott Bonvoy",
+    "tier": "Gold Elite",
+    "elite_night_credits": 15,
+    "fhr_eligible": true,
+    "thc_eligible": true
+  },
+  "insurance": {
+    "rental_insurance": "Secondary",
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "trip_cancellation": null,
+    "return_protection": null
+  },
+  "application_rules": {
+    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+  },
+  "tags": ["lounge-access", "premium", "transferable"],
+  "sources": [{"url": "https://..."}]
+}
+
+Rules:
+- issuer: American Express, Chase, Capital One, Citi, Discover, Wells Fargo, Barclays, Bank of America, US Bank, HSBC, etc.
+- network: amex, visa, mastercard, discover
+- annual_fee: number (0 if no annual fee)
+- foreign_transaction_fee: number (0 if no fee)
+- credit_required: Excellent, Good, Fair, Poor
+- welcome_offer.bonus_points: number (0 if none)
+- welcome_offer.point_program: MR, UR, TYP, Honors, Marriott, None, etc.
+- earning_rates: array of {category, rate, notes}
+  - category: Flights, Hotels, Dining, Groceries, Gas, Other, etc.
+- recurring_credits: array of {name, amount, frequency, category, description, reset_type}
+  - frequency: monthly|quarterly|semi_annual|annual|per_stay|cardmember_year
+  - category: airline|hotel|travel|dining|groceries|gas|streaming|fitness|shopping|ride|digital|entertainment|credit_monitoring|other
+  - reset_type: calendar_year (Jan-Dec) or cardmember_year (based on card anniversary)
+  - NOTE: Free night awards go HERE (in recurring_credits), not in hotel_program
+- travel_benefits.lounge_access: array of {name, type}
+  - type: centurion, priority_pass, delta_skyclub, escape_lounge, plaza_premium, airspace, other
+- travel_benefits.hotel_status: array of {program, tier, complimentary}
+  - program: Marriott Bonvoy, Hilton Honors, IHG Rewards, World of Hyatt, etc.
+- hotel_program: {program, tier, elite_night_credits, fhr_eligible, thc_eligible}
+  - fhr_eligible/thc_eligible: only for Amex cards with FHR/THC benefits
+  - NOTE: free_night_award does NOT go here, it goes in recurring_credits
+- application_rules: {rules: [{rule, description}]}
+  - rule examples: 5/24 rule, first approval, lifetime bonus rule, etc.
+- tags: lounge-access, premium, transferable, no-af, cash-back, travel, hotel, airline, etc.
+- sources: [{url}] - the URL this data was extracted from
+
+Content (first 12000 chars):
+<!doctype html><html lang="en-US" layoutversion=""><head data-oet-date="5/22/25 10:16 AM" data-oet-version="98.0"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="only light"><meta name="color-scheme" content="only light"><title>Atmos&trade; Rewards Summit Visa Infinite&reg; Credit Card: Apply Now</title><meta name="description" content="Get an Atmos Rewards Summit Credit Card and enjoy perks like Alaska lounge passes, free checked bag, preferred boarding, and no foreign transaction fees."><meta name="keywords" content="visa infinite, alaska airlines premium credit card, atmos credit card, wfid25655499"><link rel="canonical" href="https://www.bankofamerica.com/credit-cards/products/alaska-airlines-infinite-credit-card/"><meta property="og:title" content="Atmos&trade; Rewards Summit Visa Infinite&reg; Credit Card: Apply Now"><meta property="og:description" content="Get an Atmos Rewards Summit Credit Card and enjoy perks like Alaska lounge passes, free checked bag, preferred boarding, and no foreign transaction fees."><meta property="og:type" content="website"><meta property="og:site_name" content="Bank of America"><meta property="og:url" content="https://www.bankofamerica.com/credit-cards/products/alaska-airlines-infinite-credit-card/"><meta property="og:image" content="https://www.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/1bed_rewcm_v_atmos_visafront_infinite_250.png"><meta property="og:image:alt" content="Atmos&trade; Rewards Summit Visa Infinite&reg; Credit Card: Apply Now"><meta name="twitter:title" content="Atmos&trade; Rewards Summit Visa Infinite&reg; Credit Card: Apply Now"><meta name="twitter:description" content="Get an Atmos Rewards Summit Credit Card and enjoy perks like Alaska lounge passes, free checked bag, preferred boarding, and no foreign transaction fees."><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@BankofAmerica"><meta name="twitter:url" content="https://www.bankofamerica.com/credit-cards/products/alaska-airlines-infinite-credit-card/"><meta name="twitter:image" content="https://www.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/1bed_rewcm_v_atmos_visafront_infinite_250.png"><meta name="twitter:image:alt" content="Atmos&trade; Rewards Summit Visa Infinite&reg; Credit Card: Apply Now"><link rel="apple-touch-icon" sizes="180x180" href="/credit-cards/spa-assets/images/assets-images-global-favicon-apple-touch-icon-CSX889b28c.png"><link rel="icon" sizes="32x32" href="/credit-cards/spa-assets/images/assets-images-global-favicon-favicon-32x32-CSX704d6b21.png"><link rel="icon" sizes="16x16" href="/credit-cards/spa-assets/images/assets-images-global-favicon-favicon-16x16-CSXaaa5ca4e.png"><link rel="icon" sizes="192x192" href="/credit-cards/spa-assets/images/assets-images-global-favicon-android-chrome-192x192-CSXafb7d716.png"><link rel="mask-icon" href="/credit-cards/spa-assets/images/assets-images-global-favicon-safari-pinned-tab-CSX1aebeef6.svg" color="#6e6e6e"><link rel="shortcut icon" href="/credit-cards/spa-assets/images/assets-images-global-favicon-favicon-CSX8d65d6e4.ico"><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-TileImage" content="/credit-cards/spa-assets/images/assets-images-global-favicon-mstile-144x144-CSX80890b22.png"><meta name="theme-color" content="#ffffff"><script>try{var setMDA=/wrap=mda/gi.test(window.location.search),isMDA=setMDA||"true"===window.sessionStorage.getItem("mda");if(setMDA)window.sessionStorage.setItem("mda","true");if(isMDA)document.documentElement.classList.add("mda")}catch(t){}</script><style>body{visibility:hidden}</style><link href="https://www1.bac-assets.com//credit-cards/spa-assets/css/styles-496248aaca539c63c9cc.m.css" rel="stylesheet"></head><body data-sparta-version="6.9.1" data-build-id="286076" data-sparta-wrapper="credit-cards" class="sparta-media-query-utility-loading"><div data-sparta-container="credit-cards" class="flex-grid-nest spa-contextroot-credit-cards spa-site-credit-cards"><script>if(self==top){var theBody=document.getElementsByTagName("body")[0];theBody.style.visibility="visible"}else top.location=""</script><noscript><style>body{visibility:visible}</style></noscript><a class="ada-hidden ada-visible-focus" href="#skip-to-h1" id="ada-skip-link">Skip to main content</a><div class="spa-layout-container spa-layout-container--flex-grid-nest"><div data-component="layout" data-layout="@sparta.global.templates/flex-grid-layout" data-version="" class="sparta-layout flex-grid-layout" id="top"><section id="head-row" class="head-row small-centered"><div class="row small-collapse"><div class="column"><div id="semanticMarkupModule" data-component="module" data-sparta-load="primary" data-module-ref="@sparta.global.modules/semantic-markup-module" data-init="GlobalSemanticMarkupModule" data-module-parameters='{"pageSelector":""}' class="semantic-markup-module-class-v-1-0-5 semantic-markup-module spa-module-init" data-module="global-semantic-markup-module" data-version="1.0.5" data-options="{}"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Corporation",
+  "name": "Bank of America",
+  "url": "https://www.bankofamerica.com/",
+  "logo": "https://www.bankofamerica.com/content/images/ContextualSiteGraphics/Logos/en_US/logos/bac-logo-v2.png"
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Bank of America",
+  "url": "https://www.bankofamerica.com/",
+  "logo": "https://www.bankofamerica.com/content/images/ContextualSiteGraphics/Logos/en_US/logos/bac-logo-v2.png"
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Atmos™ Rewards Summit Visa Infinite® Credit Card: Apply Now",
+  "description": "Get an Atmos Rewards Summit Credit Card and enjoy perks like Alaska lounge passes, free checked bag, preferred boarding, and no foreign transaction fees.",
+  "keywords": "visa infinite, alaska airlines premium credit card, atmos credit card, wfid25655499",
+  "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-infinite-credit-card/",
+  "image": "https://www.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/1bed_rewcm_v_atmos_visafront_infinite_250.png"
+}</script></div><div id="campaignPropertiesCcModule" data-component="module" data-sparta-load="primary" data-module-ref="@sparta.credit-cards.modules/campaign-properties-cc-module" data-init="campaignPropertiesCcModuleJS" data-module-parameters='{"title-property-large":"BYAPAGE_HEADLINE_01_TEXT","title-property-medium":"BYAPAGE_HEADLINE_01_TEXT","title-property-small":"BYAPAGE_HEADLINE_01_TEXT"}' class="campaign-properties-cc-module-class-v-6-0-2 campaign-properties-cc-module spa-module-init" data-module="credit-cards-campaign-properties-cc-module" data-version="6.0.2" data-options="{}"><div id="campaign" data-jcr="{&quot;campaignID&quot;:&quot;4080259&quot;,&quot;locale&quot;:&quot;en_US&quot;,&quot;poCode&quot;:&quot;86&quot;}"></div></div><div id="mboxModule" data-component="module" data-sparta-load="primary" data-module-ref="@sparta.sales.modules/mbox-module" data-init="mboxModuleJS" data-module-parameters="{}" class="mbox-module-class-v-1-0-0 mbox-module spa-module-init" data-module="sales-mbox-module" data-version="1.0.0" data-options="{}"><script src="https://tags.tiqcdn.com/utag/bofa/main/prod/utag.sync.js"></script></div><div id="globalNavModule" data-component="module" data-sparta-load="primary" data-module-ref="@sparta.global-gt.modules/global-nav-module" data-init="GlobalNavModuleJS" data-module-parameters='{"skin":"consumer","hasTopNav":true,"hasNavbar":true,"hasSearch":true,"hasMenu":true,"hasSecureLock":false,"hasLocation":true,"hasSignIn":true,"hasNavHome":true,"hasNavContact":true,"hasNavHelp":true,"hasNavCalendar":true,"searchText":"How can we help you?","homeUrl":"/","homeUrlEs":"/es/","homeUrlEn":"/homepage/overview.go?request_locale=en_US","signInUrlSmallOnly":"https://staticweb.bankofamerica.com/cavmwebbactouch/common/index.html#home?app=signon","signInUrlMediumUp":"/sitemap/hub/signin.go","calendarUrl":"https://secure.bankofamerica.com/mycommunications/public/appointments/loc.go","locationUrl":"https://locators.bankofamerica.com","locationUrlEs":"https://es-locators.bankofamerica.com/locator/locator/LocatorAction.do","contactUrl":"https://www.bankofamerica.com/contactus/contactus.go","helpUrl":"/credit-cards/credit-card-account-information-faq/","helpUrlEs":"/credit-cards/credit-card-account-information-faq/","hasLogoLink":true}' class="global-nav-module-class-v-1-1-4 global-nav-module spa-module-init" data-module="global-gt-global-nav-module" data-version="1.1.4"><header class="header header__background header--consumer" data-font="cnx-regular"><div id="gtSecureFdicWidgetContainer"></div><div class="row header__row"><div class="header__default"><div itemscope itemtype="http://schema.org/Corporation" class="header__logo"><span itemprop="brand" class="ada-hidden" aria-hidden="true">Bank of America</span> <a itemprop="url" href="/"><img itemprop="logo" class="header__logo-image" alt="Bank of America Logo" src="https://www1.bac-assets.com/credit-cards/spa-assets/images/assets-images-global-logos-bac-logo-v2-CSX3648cbbb.svg" role="img"/></a></div></div><div class="header__children"><div class="top-nav"><ul class="navigation__top"><li class="hide-for-medium-up"><a class="" id="header-signin-small" href="https://staticweb.bankofamerica.com/cavmwebbactouch/common/index.html#home?app&#x3D;signon">Sign&nbsp;in</a></li><li class="show-for-medium-up"><a class="" id="header-signin" href="/sitemap/hub/signin.go">Log in</a></li><li class="show-for-large-up show-for-smallish-only"><a id="locations-route-to" href="https://locators.bankofamerica.com">Locations</a></li><li class="show-for-large-up show-for-smallish-only"><a id="esp-route-to" href="/credit-cards/es/" hreflang="es">En espa&ntilde;ol</a></li></ul></div><div class="header__child search-stub-child-container"><div id="searchStub" data-component="module" data-sparta-load="primary" data-module-ref="@sparta.global-gt.modules/search-stub-module" data-init="SearchStubModule" data-module-parameters='{"inputExperience":"header","resultsContainerId":null,"resultsExperience":"flyout","rule":"not-small","isSearchWidget":true}' class="search-stub-module-class-v-1-0-10 search-stub-module spa-module-init" data-module="global-gt-search-stub-module" data-version="1.0.10" data-options="{}"><div id="spaGlobalSearchWidgetContainer"></div></div></div><div class="menu-button-wrap"><button class="spa-btn spa-btn--link menu-button js-menu-button" href="javascript:void(0);" aria-expanded="false" aria-live="polite" aria-label="
+              Related Links
+              Menu
+            "><span class="ada-hidden">Show/Hide&nbsp;</span> <span data-font="cnx-medium">Menu</span> <span class="ada-hidden">&nbsp; related links</span> <span><svg class="menu-button-arrow" focusable="false" version="1.1" width="20" height="10" viewBox="0 0 20 12"><path d="M 2,2 10,10 18,2" fill="none" stroke="#dc1431" stroke-width="3" stroke-linejoin="miter" stroke-linecap="butt"/></svg></span></button></div><div class="arrow__container"><svg focusable="false" class="navigation__arrow" version="1.1" width="32" height="17" viewBox="0 0 32 17"><path d="M 2,2 16,16 30,2" fill="#fff" stroke="#d1c9c0" stroke-width="1" stroke-linejoin="miter" stroke-linecap="butt"/></svg></div></div></div><nav id="navigation" class="navigation js-nav-container hide" role="navigation" data-font="cnx-regular" aria-label="Top menu navigation links"><div class="search hide-for-medium-up"><div class="small-search"><div class="hea
+
+Respond with JSON only. Do NOT include fields that are null or not found in the content.

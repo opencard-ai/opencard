@@ -95,11 +95,12 @@
       "url": "https://www.marriott.com/credit-cards/marriott-bonvoy-business-american-express-card.mi"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.990Z",
+  "last_updated": "2026-04-24T17:26:46.246653",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "recurring_credits": []
+  "recurring_credits": [],
+  "last_scraped": "2026-04-24T17:26:46.246653"
 }

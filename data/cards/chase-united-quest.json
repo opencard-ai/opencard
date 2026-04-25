@@ -96,7 +96,7 @@
       "notes": "The Points Guy on 2025 United card overhaul: annual fee increased from $250 to $350"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.972Z",
+  "last_updated": "2026-04-24T17:26:36.116494",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -115,5 +115,6 @@
       "frequency": "annual",
       "category": "travel"
     }
-  ]
+  ],
+  "last_scraped": "2026-04-24T17:26:36.116494"
 }

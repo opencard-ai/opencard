@@ -61,7 +61,7 @@
       "url": "https://thepointsguy.com/credit-cards/capital-one-venture-x/"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.963Z",
+  "last_updated": "2026-04-24T17:26:36.116494",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -92,5 +92,6 @@
       "description": "Up to $100 every 4 years",
       "reset_type": "calendar_year"
     }
-  ]
+  ],
+  "last_scraped": "2026-04-24T17:26:36.116494"
 }

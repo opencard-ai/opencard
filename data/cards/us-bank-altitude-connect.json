@@ -7,55 +7,47 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",
   "welcome_offer": {
-    "spending_requirement": 2000,
-    "time_period_months": 3,
     "bonus_points": 20000,
-    "estimated_value": 300,
-    "point_program": "U.S. Bank Rewards",
-    "description": "20,000 bonus points after spending $2,000 in first 3 months"
+    "spending_requirement": 1000,
+    "time_period_months": 6,
+    "description": "Earn 20,000 bonus points after spending $1,000 in the first 6 months",
+    "point_program": "US Bank Rewards",
+    "estimated_value": 200
   },
   "earning_rates": [
     {
-      "category": "Prepaid Hotels and Car Rentals (Travel Center)",
-      "rate": 5,
-      "notes": "5x points on prepaid hotels and car rentals booked directly in Travel Center"
-    },
-    {
       "category": "Travel",
       "rate": 4,
-      "notes": "4x points on travel (airlines, hotels, car rentals) purchased directly"
+      "notes": "Earn 4X points on travel and gas station purchases"
     },
     {
-      "category": "Gas Stations and EV Charging",
+      "category": "Gas",
       "rate": 4,
-      "notes": "4x points at gas stations and EV charging stations"
+      "notes": "Earn 4X points on travel and gas station purchases"
+    },
+    {
+      "category": "Dining",
+      "rate": 2,
+      "notes": "Earn 2X points on dining and streaming services"
     },
     {
       "category": "Streaming",
       "rate": 2,
-      "notes": "2x points on streaming services"
+      "notes": "Earn 2X points on dining and streaming services"
     },
     {
-      "category": "All Other Purchases",
+      "category": "Other",
       "rate": 1,
-      "notes": "1x point per $1 on all other purchases"
+      "notes": null
     }
   ],
   "travel_benefits": {
-    "lounge_access": [
-      {
-        "name": "Priority Pass Select",
-        "type": "Lounge Access"
-      }
-    ],
+    "lounge_access": [],
+    "hotel_status": [],
     "other_benefits": [
       {
-        "name": "Cell phone protection",
-        "description": "Up to $600 coverage for stolen/damaged cell phones"
-      },
-      {
-        "name": "Travel and Emergency Assistance",
-        "description": "24/7 travel and emergency assistance services"
+        "name": "Visa Signature Benefits",
+        "description": "Includes travel and purchase protections"
       }
     ]
   },
@@ -64,20 +56,18 @@
     "thc_eligible": false
   },
   "insurance": {
-    "rental_insurance": "Primary",
+    "rental_insurance": "Secondary",
     "trip_delay": true,
-    "trip_cancellation": true,
     "purchase_protection": true,
     "extended_warranty": true,
-    "return_protection": null,
-    "baggage_delay": null,
-    "lost_luggage": null,
-    "cell_phone": null,
-    "travel_accident": null
+    "trip_cancellation": null,
+    "return_protection": null
   },
   "tags": [
-    "no-annual-fee",
-    "premium"
+    "travel",
+    "no-af",
+    "streaming",
+    "cash-back"
   ],
   "sources": [
     {
@@ -89,20 +79,22 @@
       "notes": "WalletHub review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:50.004Z",
+  "last_updated": "2026-04-24T17:25:00.046971",
   "status": "active",
   "notes": "No annual fee with Priority Pass lounge access (4 visits). $100 credit for TSA PreCheck/Global Entry. Strong 4x on travel and gas.",
   "hotel_program": null,
   "application_rules": {
-    "rules": [],
-    "notes": null
+    "rules": []
   },
   "recurring_credits": [
     {
-      "name": "TSA PreCheck/Global Entry credit",
-      "amount": 100,
+      "name": "Streaming Credit",
+      "amount": 30,
       "frequency": "annual",
-      "category": "other"
+      "category": "streaming",
+      "description": "$30 annual streaming credit",
+      "reset_type": "calendar_year"
     }
-  ]
+  ],
+  "last_scraped": "2026-04-24T17:25:00.046918"
 }
