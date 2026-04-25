@@ -1,0 +1,11 @@
+{
+  "card_id": "capital-one-secure",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:16:39.372649",
+  "content_hash": "91abbaed9770e10b7c41d3121c7901aea4516d291607a8004a2c08ea855a31a2",
+  "fields": {
+    "cash_advance_fee_flat": 3,
+    "cash_advance_fee_pct": 3.0,
+    "apr_cash_advances": "29.49"
+  }
+}

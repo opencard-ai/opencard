@@ -1,0 +1,11 @@
+{
+  "card_id": "discover-it",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:16:39.013296",
+  "content_hash": "d03636969908db1e9ca760ab3e7620674d6a736dca2662de2e3e4d04a694d483",
+  "fields": {
+    "cash_advance_fee_flat": 10,
+    "cash_advance_fee_pct": 5.0,
+    "apr_cash_advances": "29.24"
+  }
+}

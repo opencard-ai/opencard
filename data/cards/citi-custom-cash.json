@@ -70,5 +70,9 @@
   "recurring_credits": [],
   "last_scraped": "2026-04-24T17:27:59.994652",
   "last_verified": "2026-04-24T17:27:59.994652",
-  "next_review": "2026-07-23T17:27:59.994652"
+  "next_review": "2026-07-23T17:27:59.994652",
+  "apr_cash_advances": "29.24",
+  "penalty_apr": "29.99",
+  "cfpb_source": "Q3_2025",
+  "cfpb_verified": true
 }
