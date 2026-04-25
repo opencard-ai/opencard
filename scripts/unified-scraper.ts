@@ -229,8 +229,8 @@ async function callAI(prompt: string): Promise<any> {
             console.error('No JSON found in AI response');
             resolve(null);
           }
-        } catch (e) {
-          console.error('AI parse error:', e.message);
+        } catch (e: any) {
+          console.error('AI parse error:', e?.message || e);
           resolve(null);
         }
       });
