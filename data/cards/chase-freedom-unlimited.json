@@ -16,29 +16,25 @@
   },
   "earning_rates": [
     {
-      "category": "Travel",
-      "rate": 3,
-      "notes": "through Chase"
+      "category": "All",
+      "rate": 1.5,
+      "notes": "on all purchases"
     },
     {
       "category": "Dining",
       "rate": 3,
-      "notes": ""
+      "notes": "including restaurants and drugstores"
     },
     {
-      "category": "All other purchases",
-      "rate": 1.5,
-      "notes": ""
+      "category": "Travel",
+      "rate": 5,
+      "notes": "purchased through Chase Travel"
     }
   ],
   "travel_benefits": {
+    "lounge_access": [],
     "hotel_status": [],
-    "other_benefits": [
-      {
-        "name": "Unlimited 1.5% Base",
-        "description": "One of the best flat-rate cash back cards."
-      }
-    ]
+    "other_benefits": []
   },
   "fhr_thc": {
     "fhr_eligible": false,
@@ -53,8 +49,7 @@
     "return_protection": null
   },
   "tags": [
-    "cash-back",
-    "no-annual-fee"
+    "cash-back"
   ],
   "sources": [
     {
@@ -66,11 +61,10 @@
       "notes": "NerdWallet review Mar 2026."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.966Z",
+  "last_updated": "2026-04-24T17:27:59.994652",
   "hotel_program": null,
   "application_rules": {
-    "rules": [],
-    "notes": null
+    "rules": []
   },
   "recurring_credits": [
     {
@@ -79,5 +73,6 @@
       "frequency": "quarterly",
       "category": "dining"
     }
-  ]
+  ],
+  "last_scraped": "2026-04-24T17:27:59.994652"
 }
