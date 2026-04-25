@@ -246,11 +246,31 @@ export default function MyCardsPage({
           setSelectedCards(JSON.parse(saved));
         } catch {}
       }
+      // If still no cards but email exists in any form, prompt user
+      // (handles case where user subscribed on another device)
       setLoaded(true);
     };
     
     loadCards();
   }, []);
+
+  // Safety sync: if isSubscribed=true but no cards, try to recover
+  useEffect(() => {
+    if (isSubscribed && selectedCards.length === 0 && loaded) {
+      // Inconsistent state - try to reload from cloud
+      const savedEmail = localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
+      if (savedEmail) {
+        fetch(`/api/my-cards?email=${encodeURIComponent(savedEmail)}`)
+          .then(r => r.json())
+          .then(d => {
+            if (d.cards && d.cards.length > 0) {
+              setSelectedCards(d.cards);
+            }
+          })
+          .catch(() => {});
+      }
+    }
+  }, [isSubscribed, selectedCards.length, loaded]);
 
   
   // Load open dates after email is set
