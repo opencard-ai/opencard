@@ -104,5 +104,12 @@
     }
   ],
   "last_verified": "2026-04-16T13:41:49.950Z",
-  "next_review": "2026-07-15T13:41:49.950000+00:00"
+  "next_review": "2026-07-15T13:41:49.950000+00:00",
+  "late_fee": 0,
+  "cash_advance_fee_flat": 0,
+  "cash_advance_fee_pct": 0,
+  "apr_purchases_min": "18.24",
+  "apr_purchases_max": "28.49",
+  "penalty_apr": "29.99",
+  "cfpb_source": "Q3_2025"
 }
