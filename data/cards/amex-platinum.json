@@ -3,7 +3,7 @@
   "name": "The Platinum Card® from American Express",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 895,
+  "annual_fee": 695,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
@@ -205,5 +205,10 @@
   },
   "last_scraped": "2026-04-24T07:34:19.364Z",
   "cfpb_source": "Q3_2025",
-  "last_verified": "2026-04-24"
+  "last_verified": "2026-04-24",
+  "late_fee": 40,
+  "cash_advance_fee_flat": 10,
+  "cash_advance_fee_pct": 5.0,
+  "penalty_apr": "29.99",
+  "cfpb_verified": true
 }
