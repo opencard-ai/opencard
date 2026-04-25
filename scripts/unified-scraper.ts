@@ -188,9 +188,67 @@ async function scrapeFromSource(url: string): Promise<string | null> {
 }
 
 async function callAI(prompt: string): Promise<any> {
-  // Use sessions_send to call AI
-  const { sessions_send } = require('./tools/sessions-send');
-  return null; // Placeholder - will be called via subagent
+  const API_KEY = process.env.MINIMAX_API_KEY || 'sk-cp-mFUA974Fysefoi8t8aYqXJOpAsPdOr7RxBtneUI1lDdJdEiR2JVoeX7edw3LYOq8rOpVETcOCc-L7EJQpATl-d-SaUxHFs_jNi_vfODGjxryGJYSWyOD_7Y';
+  
+  const postData = JSON.stringify({
+    model: 'MiniMax-M2',
+    messages: [{ role: 'user', content: prompt }],
+    max_tokens: 2000
+  });
+  
+  return new Promise((resolve) => {
+    const req = https.request({
+      hostname: 'api.minimax.io',
+      path: '/v1/chat/completions',
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${API_KEY}`,
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(postData)
+      },
+      timeout: 90000
+    }, (res) => {
+      const chunks: Buffer[] = [];
+      res.on('data', c => chunks.push(c));
+      res.on('end', () => {
+        try {
+          const rawContent = Buffer.concat(chunks).toString('utf-8');
+          const result = JSON.parse(rawContent);
+          let content = result?.choices?.[0]?.message?.content || '';
+          
+          // Remove thinking tags and markdown
+          content = content.replace(/<think>[\s\S]*?<\/think>/g, '');
+          content = content.replace(/```json\s*/g, '').replace(/```\s*/g, '');
+          content = content.trim();
+          
+          // Extract JSON object
+          const jsonMatch = content.match(/\{[\s\S]*\}/);
+          if (jsonMatch) {
+            resolve(JSON.parse(jsonMatch[0]));
+          } else {
+            console.error('No JSON found in AI response');
+            resolve(null);
+          }
+        } catch (e) {
+          console.error('AI parse error:', e.message);
+          resolve(null);
+        }
+      });
+    });
+    
+    req.on('error', e => {
+      console.error('AI request error:', e.message);
+      resolve(null);
+    });
+    
+    req.on('timeout', () => {
+      req.destroy();
+      resolve(null);
+    });
+    
+    req.write(postData);
+    req.end();
+  });
 }
 
 async function scrapeCard(cardId: string): Promise<ScrapeResult> {
@@ -226,13 +284,43 @@ async function scrapeCard(cardId: string): Promise<ScrapeResult> {
     const prompt = buildFullExtractionPrompt(cardName, cardId, rawText);
     fs.writeFileSync(path.join(AI_PROMPTS_DIR, `${cardId}-prompt.txt`), prompt);
     
-    return {
-      card_id: cardId, timestamp: ts,
-      status: source === sourcePriority[0] ? 'success' : 'fallback',
-      source_used: source, annual_fee: null,
-      welcome_offer: null, earning_rates: [], recurring_credits: [],
-      travel_benefits: null, insurance: null,
-    };
+    // Call AI to extract structured data
+    console.log(' (AI extraction...)');
+    const extracted = await callAI(prompt);
+    
+    if (extracted) {
+      // Update card with extracted data
+      const updatedCard = {
+        ...card,
+        ...extracted,
+        last_updated: ts,
+        last_verified: ts,
+        sources: card.sources || [{ url, notes: source }],
+      };
+      fs.writeFileSync(cardFile, JSON.stringify(updatedCard, null, 2));
+      
+      return {
+        card_id: cardId, timestamp: ts,
+        status: source === sourcePriority[0] ? 'success' : 'fallback',
+        source_used: source, 
+        annual_fee: extracted.annual_fee || null,
+        welcome_offer: extracted.welcome_offer || null,
+        earning_rates: extracted.earning_rates || [],
+        recurring_credits: extracted.recurring_credits || [],
+        travel_benefits: extracted.travel_benefits || null,
+        insurance: extracted.insurance || null,
+      };
+    } else {
+      // AI extraction failed, but we have raw text and prompt
+      return {
+        card_id: cardId, timestamp: ts,
+        status: 'fallback',
+        source_used: source, annual_fee: null,
+        welcome_offer: null, earning_rates: [], recurring_credits: [],
+        travel_benefits: null, insurance: null,
+        error: 'AI extraction failed',
+      };
+    }
   }
   
   return { card_id: cardId, timestamp: ts, status: 'failed', source_used: null, annual_fee: null, welcome_offer: null, earning_rates: [], recurring_credits: [], travel_benefits: null, insurance: null, error: 'All sources failed' };
