@@ -1,0 +1,10 @@
+{
+  "card_id": "citi-aadvantage-executive",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:16:39.495077",
+  "content_hash": "361c101050353dd9243051a68c5eb37e09abd1b4e0c746930b2132012eafd1c2",
+  "fields": {
+    "apr_cash_advances": "29.24",
+    "penalty_apr": "29.99"
+  }
+}

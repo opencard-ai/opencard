@@ -1,0 +1,9 @@
+{
+  "card_id": "citi-simplicity",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:16:39.966902",
+  "content_hash": "3cf9783ca5c705df1d1a5a1bf52c115e124bc1f9c53469ebd917b2f4432b9655",
+  "fields": {
+    "apr_cash_advances": "29.24"
+  }
+}
