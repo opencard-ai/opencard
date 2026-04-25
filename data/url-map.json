@@ -8,60 +8,74 @@
     "chase": [
       "official",
       "uscreditcardguide",
+      "tpg",
       "nerdwallet"
     ],
     "capital_one": [
       "official",
       "uscreditcardguide",
+      "tpg",
       "nerdwallet"
     ],
     "discover": [
       "official",
       "uscreditcardguide",
+      "tpg",
       "nerdwallet"
     ],
     "wells_fargo": [
       "official",
       "uscreditcardguide",
+      "tpg",
       "nerdwallet"
     ],
     "amex": [
       "uscreditcardguide",
-      "nerdwallet",
-      "official"
+      "tpg",
+      "official",
+      "nerdwallet"
     ],
     "citi": [
       "uscreditcardguide",
-      "nerdwallet",
-      "official"
+      "tpg",
+      "official",
+      "nerdwallet"
     ],
     "barclays": [
       "uscreditcardguide",
+      "tpg",
+      "official",
       "nerdwallet"
     ],
     "bank_of_america": [
       "uscreditcardguide",
+      "tpg",
       "official",
       "nerdwallet"
     ],
     "us_bank": [
       "uscreditcardguide",
-      "nerdwallet",
-      "official"
+      "official",
+      "nerdwallet"
     ],
     "hsbc": [
       "uscreditcardguide",
+      "official",
       "nerdwallet"
     ],
     "navy_federal": [
-      "uscreditcardguide"
+      "uscreditcardguide",
+      "official"
     ],
     "penfed": [
-      "uscreditcardguide"
+      "uscreditcardguide",
+      "official"
     ],
     "default": [
       "uscreditcardguide",
-      "nerdwallet"
+      "tpg",
+      "nerdwallet",
+      "official"
     ]
   },
   "_base_urls": {
@@ -136,7 +150,8 @@
     "issuer": "chase",
     "sources": {
       "official": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
-      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ink-preferred-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ink-preferred-credit-card/",
+      "tpg": "https://thepointsguy.com/credit-cards/chase-ink-business-preferred/"
     }
   },
   "chase-ink-business-cash": {
@@ -170,13 +185,15 @@
   "chase-freedom-flex": {
     "issuer": "chase",
     "sources": {
-      "official": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex"
+      "official": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
+      "tpg": "https://thepointsguy.com/credit-cards/chase-freedom-flex/"
     }
   },
   "chase-freedom-unlimited": {
     "issuer": "chase",
     "sources": {
-      "official": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited"
+      "official": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
+      "tpg": "https://thepointsguy.com/credit-cards/chase-freedom-unlimited/"
     }
   },
   "capital-one-venture-x": {
@@ -202,7 +219,8 @@
   "capital-one-venture": {
     "issuer": "capital_one",
     "sources": {
-      "official": "https://www.capitalone.com/credit-cards/venture/"
+      "official": "https://www.capitalone.com/credit-cards/venture/",
+      "tpg": "https://thepointsguy.com/credit-cards/capital-one-venture/"
     }
   },
   "capital-one-quicksilver": {
@@ -215,14 +233,16 @@
     "issuer": "citi",
     "sources": {
       "official": "https://www.citi.com/credit-cards/citi-strata-premier-card",
-      "uscreditcardguide": "https://www.uscreditcardguide.com/citi-thankyou-premier-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/citi-thankyou-premier-credit-card/",
+      "tpg": "https://thepointsguy.com/credit-cards/citi-strata-premier/"
     }
   },
   "citi-custom-cash": {
     "issuer": "citi",
     "sources": {
       "official": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
-      "uscreditcardguide": "https://www.uscreditcardguide.com/citi-custom-cash-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/citi-custom-cash-credit-card/",
+      "tpg": "https://thepointsguy.com/credit-cards/citi-custom-cash/"
     }
   },
   "citi-double-cash": {
@@ -298,7 +318,8 @@
   "amex-blue-cash-preferred": {
     "issuer": "amex",
     "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/blue-cash-preferred-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/blue-cash-preferred-credit-card/",
+      "tpg": "https://thepointsguy.com/credit-cards/american-express-blue-cash-preferred/"
     }
   },
   "amex-blue-cash-everyday": {
@@ -442,7 +463,8 @@
   "chase-ink-preferred": {
     "issuer": "chase",
     "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ink-preferred-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ink-preferred-credit-card/",
+      "tpg": "https://thepointsguy.com/credit-cards/chase-ink-preferred/"
     }
   },
   "chase-ink-unlimited": {
@@ -526,7 +548,8 @@
   "amex-delta-platinum": {
     "issuer": "amex",
     "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-platinum-delta-skymiles-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-platinum-delta-skymiles-credit-card/",
+      "tpg": "https://thepointsguy.com/credit-cards/delta-platinum-american-express/"
     }
   },
   "amex-hilton-honors": {
@@ -580,19 +603,22 @@
   "chase-united-explorer": {
     "issuer": "chase",
     "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-united-mileageplus-explorer-credit-card/",
+      "tpg": "https://thepointsguy.com/credit-cards/chase-united-explorer/"
     }
   },
   "chase-united-quest": {
     "issuer": "chase",
     "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ua-quest-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ua-quest-credit-card/",
+      "tpg": "https://thepointsguy.com/credit-cards/chase-united-quest/"
     }
   },
   "chase-united-club": {
     "issuer": "chase",
     "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/united-mileageplus-club-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/united-mileageplus-club-credit-card/",
+      "tpg": "https://thepointsguy.com/credit-cards/chase-united-club/"
     }
   },
   "chase-disney": {
