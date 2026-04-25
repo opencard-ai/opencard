@@ -24,8 +24,26 @@ Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, 
   "recurring_credits": [
     {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
     {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
-    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"}
+    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"},
+    {"name": "Walmart+", "amount": 0, "frequency": "annual", "category": "shopping", "description": "Free membership with fuel discounts", "reset_type": "calendar_year"},
+    {"name": "Clear Security", "amount": 0, "frequency": "annual", "category": "other", "description": "Free Clear membership", "reset_type": "calendar_year"}
   ],
+  
+  IMPORTANT: Extract ALL recurring credits from the content including but not limited to:
+  - Airline credits (e.g., $200-$250/year for incidentals, bags, lounges)
+  - Hotel credits (e.g., $300/year for Fine Hotels + Resorts)
+  - Uber/Lyft credits
+  - Dining credits (e.g., $300/year for Resy)
+  - Shopping credits (Saks, Walmart+, etc.)
+  - Streaming credits (Netflix, Hulu, Disney+, etc.)
+  - Fitness credits (Equinox, SoulCycle, etc.)
+  - Global Entry/TSA PreCheck credits
+  - Centurion Lounge visits
+  - Priority Pass membership
+  - Free night certificates
+  - Elite status benefits
+  
+  Be COMPREHENSIVE - do not miss any credit mentioned in the content.
   "travel_benefits": {
     "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
     "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
@@ -378,6 +396,114 @@ Content (first 12000 chars):
 </script>
 
 <script src="https://assets.adobedtm.com/1e5ef0994701/082ef47f9e7a/launch-118a6970f261.min.js" async></script>
+    
+    
+<link rel="stylesheet" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site.min.ACSHASH8b8e0b52ca4b49fa4f2c764d201fa916.css" type="text/css">
 
+
+
+    
+    
+    
+<script src="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-header.min.ACSHASH6a4327d8f80db34d7a470df27e98d790.js"></script>
+
+
+
+    <link fetchpriority="high" rel="preload" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/fonts/DiscoverSans-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+    <link fetchpriority="high" rel="preload" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/fonts/DiscoverSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+    <link fetchpriority="high" rel="preload" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/fonts/DiscoverSans-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+
+    
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PaymentCard",
+  "name": "Discover It® Cash Back Credit Card",
+  "category": "Credit Card",
+  "description": "Earn 5% cash back on rotating categories each quarter, and 1% on all other purchases.",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "url": "https://www.discover.com/credit-cards/cash-back/",
+    "description": "Get an unlimited dollar-for-dollar match of all the cash back you earn at the end of your first year, automatically. There is no limit to how much we’ll match.",
+    "offeredBy": {
+      "@type": "BankOrCreditUnion",
+      "name": "Discover",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2500 Lake Cook Road",
+        "addressLocality": "Riverwoods",
+        "addressRegion": "IL",
+        "postalCode": "60015",
+        "addressCountry": "US"
+      }
+    }
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PaymentCard",
+  "name": "Discover It® Gas and Restaurants",
+  "category": "Credit Card",
+  "description": "Earn 2% cash back on gas and restaurant purchases, plus 1% on all other purchases.",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "url": "https://www.discover.com/credit-cards/cash-back/",
+    "description": "Get an unlimited dollar-for-dollar match of all the cash back you earn at the end of your first year, automatically. There is no limit to how much we’ll match.",
+    "offeredBy": {
+      "@type": "BankOrCreditUnion",
+      "name": "Discover",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2500 Lake Cook Road",
+        "addressLocality": "Riverwoods",
+        "addressRegion": "IL",
+        "postalCode": "60015",
+        "addressCountry": "US"
+      }
+    }
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PaymentCard",
+  "name": "NHL® Discover it®",
+  "category": "Credit Card",
+  "description": "Earn 5% cash back on rotating categories each quarter, and 1% on all other purchases.",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "url": "https://www.discover.com/credit-cards/cash-back/",
+    "description": "Get an unlimited dollar-for-dollar match of all the cash back you earn at the end of your first year, automatically. There is no limit to how much we’ll match.",
+    "offeredBy": {
+      "@type": "BankOrCreditUnion",
+      "name": "Discover",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2500 Lake Cook Road",
+        "addressLocality": "Riverwoods",
+        "addressRegion": "IL",
+        "postalCode": "60015",
+        "addressCountry": "US"
+      }
+    }
+  }
+}
+</script>
+
+    
+        
+    
+        
+    
+
+                                <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="RL6FP-7VUY8-NDC3K-X55B8-GT8C6",function(){function e(){if(!i){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.parentNode.appendChild(e),i=!0}}function t(e){i=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",o.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"RL6FP-7VUY8-NDC3K-X55B8-GT8C6";var o=document.currentScript||document.getElementsByTagName("script")[0],i=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!i)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="i7wyj6dillzbg2pm4yuq-f-9e5b84b6d-clientnsv4-s.akamaihd.net",o="false"=="true"?2:1,i={"ak.v":"41","ak.cp":"850237","ak.ai":parseInt("193995",10),"ak.ol":"0","ak.cr":24,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"1d530073","ak.r":43962,"ak.a2":n,"ak.m":"x","ak.n":"essl","ak.cport":61159,"ak.gh":"23.53.121.13","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1777133097","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==zsEVLlN74i0lJFBHFXBJXHZa4wZMkqlvHj+SKgOEQ/Nl4zAlVL+0Q8TNPPukrFBfzvtoF0NabI2SBpshGll3mzXMQjWeeQfh6Wyxy/PFVDOnEhuPXLyMeAd1Qe4yLtW2HFeNIEO3sQmiq+PYNA8X+/Et0+vF4dLOkKwrFF2OnzsWTXlzrkAJ7u0WeVdW+qMmCLWsY5Be6o9oE2codHIBW+GY1nwJJoPJIwEVXq+T2xpPC99/IDn4ILxC0NkFYNSjduZfWD+/Ay3NsTa4U8FXQecoLj5Iuw82wfZbXddKcv6CgvCpQ30/H18zj5io0i3bKz8lLSOvZUnWGB9S4czvG7ZIh7As6GEkv2rnRUtB6dq7uJgrCqjU91ZbwdNr4m6/hiiRZGtaN6kPDzZM7VKzHAle/ogB/f+Q960HXg6HvG8=","ak.pv":"626","ak.dpoabenc":"","ak.tf":o};if(""!==t)i["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPr
 
 Respond with JSON only. Do NOT include fields that are null or not found in the content.
