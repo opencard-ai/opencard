@@ -277,7 +277,6 @@ export default function MyCardsPage({
             }
           }
           setCardsData(map);
-          console.log('cardsData map populated with:', Object.keys(map).length, 'cards');
         }
       } catch {}
       
@@ -287,12 +286,7 @@ export default function MyCardsPage({
     loadEverything();
   }, []);
 
-  // Simple safety check
-  useEffect(() => {
-    // Logs for debugging
-    console.log('isSubscribed:', isSubscribed, 'selectedCards:', selectedCards.length, 'loaded:', loaded, 'cardsData keys:', Object.keys(cardsData).length);
-    console.log('first few selectedCards:', selectedCards.slice(0,3));
-  }, [isSubscribed, selectedCards.length, loaded]);
+  
 
   
   // Load open dates after email is set
