@@ -93,7 +93,7 @@
       "notes": "Review Apr 2026."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.969Z",
+  "last_updated": "2026-04-24T17:26:36.116494",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -140,5 +140,6 @@
       "description": "$150 every 6 months for StubHub purchases.",
       "reset_type": "cardmember_year"
     }
-  ]
+  ],
+  "last_scraped": "2026-04-24T17:26:36.116494"
 }

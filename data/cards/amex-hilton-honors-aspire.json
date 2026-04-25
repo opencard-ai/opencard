@@ -89,7 +89,7 @@
       "url": "https://www.hilton.com/en/hilton-honors/credit-cards/"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.983Z",
+  "last_updated": "2026-04-24T17:26:36.116494",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -120,5 +120,6 @@
       "description": "$189/year for CLEAR Plus membership.",
       "reset_type": "cardmember_year"
     }
-  ]
+  ],
+  "last_scraped": "2026-04-24T17:26:36.116494"
 }

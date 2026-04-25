@@ -93,7 +93,7 @@
     }
   ],
   "notes": "$250 AF card positioned between Boundless and the premium Bonvoy Brilliant. The $300 annual Marriott credit essentially offsets the AF. Gold Elite status + Priority Pass Select makes it valuable. Earning rates are strong (4x on dining/gas/grocery). Best for heavy Marriott guests who want elevated status without the $650 AF on Bonvoy Brilliant.",
-  "last_updated": "2026-04-16T13:41:49.989Z",
+  "last_updated": "2026-04-24T17:26:46.246653",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -112,5 +112,6 @@
       "frequency": "annual",
       "category": "other"
     }
-  ]
+  ],
+  "last_scraped": "2026-04-24T17:26:46.246653"
 }

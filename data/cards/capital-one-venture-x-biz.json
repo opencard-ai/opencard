@@ -54,7 +54,7 @@
       "url": "https://www.nerdwallet.com/business/credit-cards/learn/venture-x-business-april-2025-bonus-350000-miles"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.963Z",
+  "last_updated": "2026-04-24T17:26:36.116494",
   "travel_benefits": {
     "hotel_status": [],
     "lounge_access": [],
@@ -93,5 +93,6 @@
     }
   ],
   "foreign_transaction_fee": 0,
-  "credit_required": "Excellent"
+  "credit_required": "Excellent",
+  "last_scraped": "2026-04-24T17:26:36.116494"
 }

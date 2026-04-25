@@ -7,36 +7,46 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 1,
-    "time_period_months": 3,
-    "bonus_points": 25000,
-    "description": "25,000 Online Bonus Points",
-    "point_program": "Bank of America",
-    "estimated_value": 300
+    "bonus_points": 0,
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "description": "$250 cash back",
+    "point_program": "None",
+    "estimated_value": 250
   },
   "earning_rates": [
     {
-      "category": "All Purchases",
+      "category": "Travel",
+      "rate": 3,
+      "notes": "Booked through Bank of America Travel Center - Center"
+    },
+    {
+      "category": "Other",
       "rate": 1.5,
-      "notes": ""
+      "notes": null
     }
   ],
-  "travel_benefits": {},
+  "travel_benefits": {
+    "lounge_access": [],
+    "hotel_status": [],
+    "other_benefits": []
+  },
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
   },
   "insurance": {
-    "rental_insurance": "None",
-    "trip_delay": false,
-    "purchase_protection": false,
-    "extended_warranty": false,
+    "rental_insurance": null,
+    "trip_delay": null,
+    "purchase_protection": null,
+    "extended_warranty": null,
     "trip_cancellation": null,
     "return_protection": null
   },
   "tags": [
-    "no-annual-fee",
-    "travel"
+    "travel",
+    "no-af",
+    "cash-back"
   ],
   "sources": [
     {
@@ -46,11 +56,17 @@
       "url": "https://upgradedpoints.com/credit-cards/reviews/bank-of-america-travel-rewards-credit-card/"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.957Z",
-  "hotel_program": null,
-  "application_rules": {
-    "rules": [],
-    "notes": null
+  "last_updated": "2026-04-24T17:24:15.854269",
+  "hotel_program": {
+    "program": null,
+    "tier": null,
+    "elite_night_credits": 0,
+    "fhr_eligible": false,
+    "thc_eligible": false
   },
-  "recurring_credits": []
+  "application_rules": {
+    "rules": []
+  },
+  "recurring_credits": [],
+  "last_scraped": "2026-04-24T17:24:15.854209"
 }

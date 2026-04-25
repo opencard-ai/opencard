@@ -83,7 +83,7 @@
       "notes": "News report Apr 2026."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.968Z",
+  "last_updated": "2026-04-24T17:26:46.246653",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -98,5 +98,6 @@
       "description": "1 Free Night Award (up to 35,000 points) annually.",
       "reset_type": "cardmember_year"
     }
-  ]
+  ],
+  "last_scraped": "2026-04-24T17:26:46.246653"
 }
