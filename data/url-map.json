@@ -631,7 +631,8 @@
   "barclays-jetblue": {
     "issuer": "barclays",
     "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/barclays-jetblue-credit-card/"
+      "uscreditcardguide": "https://www.uscreditcardguide.com/barclays-jetblue-credit-card/",
+      "official": "https://www.barclays.us/credit-cards/jetblue/"
     }
   },
   "barclays-jetblue-plus": {
@@ -656,7 +657,8 @@
   "amazon-prime-visa": {
     "issuer": "amazon",
     "sources": {
-      "official": "https://www.amazon.com/dp/B0051QVO7A"
+      "official": "https://www.amazon.com/dp/B0051QVO7A",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amazon-prime-visa-credit-card/"
     }
   },
   "chase-ink-preferred-plus": {
@@ -680,13 +682,14 @@
   "amex-amazon-biz": {
     "issuer": "amex",
     "sources": {
-      "official": "https://www.americanexpress.com/us/business/credit-cards/amazon-business"
+      "official": "https://www.americanexpress.com/us/business/credit-cards/amazon-business/",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/amex-amazon-business-credit-card/"
     }
   },
   "amex-graphite-biz": {
     "issuer": "amex",
     "sources": {
-      "official": "https://www.americanexpress.com/us/business/credit-cards/graphite"
+      "official": "https://www.americanexpress.com/us/business/credit-cards/graphite-business/"
     }
   },
   "barclays-uber": {
@@ -698,7 +701,8 @@
   "barclays-aadvantage-red": {
     "issuer": "barclays",
     "sources": {
-      "official": "https://www.barclays.us/credit-cards/avianza-red"
+      "official": "https://www.barclays.us/credit-cards/aadvantage-red/",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/barclays-aadvantage-red-credit-card/"
     }
   },
   "barclays-frontier": {
@@ -794,7 +798,8 @@
   "hsbc-gold": {
     "issuer": "hsbc",
     "sources": {
-      "official": "https://www.hsbc.com/credit-cards/gold"
+      "official": "https://www.hsbc.com/credit-cards/gold/",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/hsbc-gold-credit-card/"
     }
   },
   "hsbc-platinum": {
