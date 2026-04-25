@@ -1,11 +1,9 @@
 {
   "card_id": "amex-delta-platinum",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-24T22:09:31.913536",
-  "content_hash": "ce9fe055834ed4e75ab4a3df44ff7c04af817040871cbbb9659b0b9aa99de8de",
+  "source": "cfpb_ccad_v2",
+  "canonical_name": "Delta SkyMiles Platinum Card",
+  "detected_issuer": "amex",
   "fields": {
-    "annual_fee": 350,
-    "cash_advance_fee_flat": 10,
-    "cash_advance_fee_pct": 5.0
+    "annual_fee": 350
   }
 }

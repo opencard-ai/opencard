@@ -1,7 +1,7 @@
 {
   "card_id": "chase-freedom-unlimited",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-25T06:23:00.153525",
-  "content_hash": "51f7146d975014703d482531d789665f279518c725cde66f2d1d6ae227d06cf0",
+  "source": "cfpb_ccad_v2",
+  "canonical_name": null,
+  "detected_issuer": null,
   "fields": {}
 }

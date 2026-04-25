@@ -1,11 +1,7 @@
 {
   "card_id": "chase-sapphire-reserve",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-24T22:09:34.580316",
-  "content_hash": "1062de34885cd5b9d47510322c9eca2d39cd30825af5384aaf85fa4a3867e37b",
-  "fields": {
-    "cash_advance_fee_flat": 5,
-    "cash_advance_fee_pct": 5.0,
-    "penalty_apr": "29.99"
-  }
+  "source": "cfpb_ccad_v2",
+  "canonical_name": "CARDMEMBER AGREEMENT RATES AND FEES TABLE",
+  "detected_issuer": null,
+  "fields": {}
 }

@@ -1,12 +1,9 @@
 {
   "card_id": "barclays-gap",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-25T06:23:27.955368",
-  "content_hash": "539122824f3771f3c3b8c029f1aacf967f9e00012e120d3f9a7967482a14ec0b",
+  "source": "cfpb_ccad_v2",
+  "canonical_name": "Cardmember Agreement will be the agreement sent to you when your account is first opened.",
+  "detected_issuer": null,
   "fields": {
-    "annual_fee": 0,
-    "cash_advance_fee_flat": 5,
-    "cash_advance_fee_pct": 5.0,
-    "apr_cash_advances": "33.74"
+    "annual_fee": 0
   }
 }

@@ -1,8 +1,8 @@
 {
   "card_id": "amex-optima-card-from-american-express-cardmember-agreement",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-25T06:23:25.325923",
-  "content_hash": "230d66d41327b2ac747486e9ed53a55d0fdd7b3be6c923f6fd22a013921d76cd",
+  "source": "cfpb_ccad_v2",
+  "canonical_name": "Optima Credit Card",
+  "detected_issuer": "amex",
   "fields": {
     "annual_fee": 49
   }

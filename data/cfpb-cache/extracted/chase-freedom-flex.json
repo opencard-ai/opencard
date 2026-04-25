@@ -1,11 +1,7 @@
 {
   "card_id": "chase-freedom-flex",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-24T22:09:34.776781",
-  "content_hash": "72945a2f36418dabee983b5bf769c0922c2a36d06dcfe22d0ee0552ea403cf87",
-  "fields": {
-    "cash_advance_fee_flat": 5,
-    "cash_advance_fee_pct": 5.0,
-    "penalty_apr": "29.99"
-  }
+  "source": "cfpb_ccad_v2",
+  "canonical_name": "CARDMEMBER AGREEMENT RATES AND FEES TABLE",
+  "detected_issuer": null,
+  "fields": {}
 }

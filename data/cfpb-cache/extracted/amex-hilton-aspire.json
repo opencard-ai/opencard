@@ -1,11 +1,9 @@
 {
-  "card_id": "amex-hilton-aspire",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-25T06:23:32.696595",
-  "content_hash": "5b97075debe03b29a31f850ef95a23f9f091f6b3dc5dcb369def599c4376cde9",
+  "card_id": "amex-hilton-honors-aspire",
+  "source": "cfpb_ccad_v2",
+  "canonical_name": "Hilton Honors American Express Aspire Card",
+  "detected_issuer": "amex",
   "fields": {
-    "annual_fee": 550,
-    "cash_advance_fee_flat": 10,
-    "cash_advance_fee_pct": 5.0
+    "annual_fee": 550
   }
 }
