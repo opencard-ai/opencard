@@ -1,0 +1,10 @@
+{
+  "card_id": "us-bank-amex",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:26:27.559016",
+  "content_hash": "827ec686e813aff783bd176ba4d945013e3865ea4d67156706d45fd39540b6d9",
+  "fields": {
+    "cash_advance_fee_flat": 5,
+    "cash_advance_fee_pct": 3.0
+  }
+}

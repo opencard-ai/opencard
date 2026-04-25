@@ -1,0 +1,12 @@
+{
+  "card_id": "american-eagle-visa",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:26:27.680705",
+  "content_hash": "0f7c4853a17d4ef7272ed7bf2e6fa7795bc27f16ef302a8416266407c242809f",
+  "fields": {
+    "cash_advance_fee_flat": 10,
+    "cash_advance_fee_pct": 5.0,
+    "apr_cash_advances": "27.49",
+    "penalty_apr": "36.49"
+  }
+}

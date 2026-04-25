@@ -1,0 +1,12 @@
+{
+  "card_id": "gap-brand-card",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:26:27.219717",
+  "content_hash": "539122824f3771f3c3b8c029f1aacf967f9e00012e120d3f9a7967482a14ec0b",
+  "fields": {
+    "annual_fee": 0,
+    "cash_advance_fee_flat": 5,
+    "cash_advance_fee_pct": 5.0,
+    "apr_cash_advances": "33.74"
+  }
+}
