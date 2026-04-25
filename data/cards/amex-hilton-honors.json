@@ -3,7 +3,7 @@
   "name": "Hilton Honors American Express Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 0,
+  "annual_fee": 150,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {

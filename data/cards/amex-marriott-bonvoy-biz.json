@@ -1,9 +1,9 @@
 {
   "card_id": "amex-marriott-bonvoy-biz",
-  "name": "Marriott Bonvoy Business® American Express® Card",
+  "name": "Marriott Bonvoy Business\u00ae American Express\u00ae Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 125,
+  "annual_fee": 95,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
@@ -104,5 +104,8 @@
   "recurring_credits": [],
   "last_scraped": "2026-04-24T17:26:46.246653",
   "last_verified": "2026-04-24T17:26:46.246653",
-  "next_review": "2026-07-23T17:26:46.246653"
+  "next_review": "2026-07-23T17:26:46.246653",
+  "cash_advance_fee_flat": 10,
+  "cash_advance_fee_pct": 5.0,
+  "cfpb_source": "Q3_2025"
 }
