@@ -2,26 +2,38 @@
   "card_id": "capital-one-savor",
   "name": "Capital One Savor Rewards Credit Card",
   "issuer": "Capital One",
-  "network": "mastercard",
-  "annual_fee": 95,
+  "network": "visa",
+  "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
-  "welcome_offer": null,
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": 200,
+    "description": "$200 Cash Bonus",
+    "point_program": "Capital One",
+    "estimated_value": 200
+  },
   "earning_rates": [
     {
       "category": "Dining",
-      "rate": 4,
-      "notes": "Earn 4% cash back on dining, entertainment and popular streaming services"
-    },
-    {
-      "category": "Groceries",
       "rate": 3,
-      "notes": "Earn 3% cash back at grocery stores"
+      "notes": ""
     },
     {
-      "category": "Other",
+      "category": "Grocery stores",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "Entertainment",
+      "rate": 3,
+      "notes": "movies, streaming"
+    },
+    {
+      "category": "All other purchases",
       "rate": 1,
-      "notes": "Earn 1% cash back on all other purchases"
+      "notes": ""
     }
   ],
   "travel_benefits": {
@@ -33,11 +45,17 @@
     "fhr_eligible": false,
     "thc_eligible": false
   },
-  "insurance": {},
+  "insurance": {
+    "rental_insurance": "Primary",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null
+  },
   "tags": [
     "cash-back",
-    "dining",
-    "groceries"
+    "no-annual-fee"
   ],
   "sources": [
     {
@@ -47,9 +65,12 @@
       "url": "https://www.nerdwallet.com/credit-cards/learn/benefits-capital-one-savor-savor-one"
     }
   ],
-  "last_updated": "2026-04-25T16:03:14.968Z",
+  "last_updated": "2026-04-16T13:41:49.959Z",
   "hotel_program": null,
-  "application_rules": {},
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
   "recurring_credits": [],
   "welcome_bonus": {
     "amount": 200,
@@ -58,6 +79,6 @@
     "source": "capitalone.com",
     "last_updated": "2026-04-24"
   },
-  "last_verified": "2026-04-25T16:03:14.968Z",
+  "last_verified": "2026-04-16T13:41:49.959Z",
   "next_review": "2026-07-15T13:41:49.959000+00:00"
 }
