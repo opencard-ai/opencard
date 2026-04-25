@@ -1,0 +1,12 @@
+{
+  "card_id": "hsbc-elite",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:59:00",
+  "fields": {
+    "annual_fee": 495,
+    "apr_purchases_min": "20.24",
+    "apr_purchases_max": "24.24",
+    "apr_cash_advances": "29.24",
+    "penalty_apr": "29.99"
+  }
+}
