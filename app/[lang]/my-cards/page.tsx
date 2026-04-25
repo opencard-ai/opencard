@@ -325,7 +325,17 @@ export default function MyCardsPage({
 
   // Fetch full card data
   useEffect(() => {
+    // Edge case: if subscribed but no cards loaded, try to recover
     if (selectedCards.length === 0) {
+      if (isSubscribed) {
+        // Inconsistent state - try loading from localStorage as fallback
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          try {
+            setSelectedCards(JSON.parse(saved));
+          } catch {}
+        }
+      }
       setLoaded(true);
       return;
     }
