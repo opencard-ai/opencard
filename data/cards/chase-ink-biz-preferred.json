@@ -1,6 +1,6 @@
 {
   "card_id": "chase-ink-biz-preferred",
-  "name": "Chase Ink Business Preferred® Credit Card",
+  "name": "Chase Ink Business Preferred\u00ae Credit Card",
   "issuer": "Chase",
   "network": "visa",
   "annual_fee": 95,
@@ -115,5 +115,9 @@
   },
   "last_scraped": "2026-04-24",
   "last_verified": "2026-04-16T13:41:49.967Z",
-  "next_review": "2026-07-15T13:41:49.967000+00:00"
+  "next_review": "2026-07-15T13:41:49.967000+00:00",
+  "cash_advance_fee_flat": 5,
+  "cash_advance_fee_pct": 4.0,
+  "penalty_apr": "29.99",
+  "cfpb_source": "Q3_2025"
 }
