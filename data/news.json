@@ -12,10 +12,10 @@
       "ts": "2026-04-24T19:00:30.000Z",
       "title_en": "[Targeted] Existing MooMoo Users: Get $100/$200 Bonus With $5k/$10k Deposit",
       "summary_en": "",
-      "title_zh": "（目標對象）現有 MooMoo 用戶：存入 $5,000/$10,000 可獲得 $100/$200 獎金",
-      "summary_zh": "現有 MooMoo 用戶若存入 $5,000 可獲得 $100 獎金，存入 $10,000 可獲得 $200 獎金。",
-      "title_es": "[Dirigido] Usuarios existentes de MooMoo: Obtén un bono de $100/$200 con un depósito de $5k/$10k",
-      "summary_es": "Los usuarios actuales de MooMoo que depositen $5,000 o $10,000 recibirán un bono de $100 o $200, respectivamente."
+      "title_zh": "【目標對象】現有 MooMoo 用戶：存款 $5,000 可獲 $100 獎金，存款 $10,000 可獲 $200 獎金",
+      "summary_zh": "現有 MooMoo 用戶只要存款滿 $5,000 或 $10,000，即可分別獲得 $100 或 $200 的獎金。",
+      "title_es": "Usuarios existentes de MooMoo (dirigido): Obtén bono de $100/$200 con depósito de $5,000/$10,000",
+      "summary_es": "Los usuarios actuales de MooMoo que depositen entre $5,000 y $10,000 recibirán un bono de $100 a $200."
     },
     {
       "title": "Giant, Stop&Shop, Martin’s: Get 10x Points On Lowe’s & DoorDash Giftcards (4/24-4/30)",
@@ -29,10 +29,10 @@
       "ts": "2026-04-24T18:00:24.000Z",
       "title_en": "Giant, Stop&Shop, Martin’s: Get 10x Points On Lowe’s & DoorDash Giftcards (4/24-4/30)",
       "summary_en": "",
-      "title_zh": "Giant、Stop&Shop、Martin’s：於 4/24-4/30 在 Lowe’s 與 DoorDash 禮卡可獲得 10 倍積分",
-      "summary_zh": "在指定期間使用 Lowe’s 或 DoorDash 禮卡消費，可獲得十倍積分回饋。",
-      "title_es": "Giant, Stop&Shop, Martin's: Obtén 10x puntos en tarjetas de regalo de Lowe's y DoorDash (24/4-30/4)",
-      "summary_es": "Puedes acumular diez veces más puntos al comprar tarjetas de regalo de Lowe's y DoorDash en Giant, Stop&Shop o Martin's hasta el 30 de abril."
+      "title_zh": "Giant、Stop&Shop、Martin’s：於 4/24-4/30 期間在 Lowe’s 與 DoorDash 禮品卡上獲得 10 倍積分",
+      "summary_zh": "在 4/24 至 4/30 期間，於 Lowe’s 與 DoorDash 購買禮品卡可獲得十倍積分回饋。",
+      "title_es": "Giant, Stop&Shop, Martin’s: Obtén 10x puntos en tarjetas de regalo de Lowe’s y DoorDash (24/4‑30/4)",
+      "summary_es": "Las tiendas Giant, Stop & Shop y Martin’s ofrecen diez veces los puntos en tarjetas de regalo de Lowe’s y DoorDash hasta el 30 de abril."
     },
     {
       "title": "Delta Shopping Portal: Get 500 Bonus Miles With $100 Spend (4/23-5/4)",
@@ -47,9 +47,9 @@
       "title_en": "Delta Shopping Portal: Get 500 Bonus Miles With $100 Spend (4/23-5/4)",
       "summary_en": "",
       "title_zh": "Delta 購物入口：於 4/23-5/4 消費滿 $100 可獲得 500 獎勵里程",
-      "summary_zh": "在指定期間消費滿 $100，即可獲得 Delta 500 英里獎勵里程。",
-      "title_es": "Portal de compras de Delta: Obtén 500 millas bonus al gastar $100 (23/4-4/5)",
-      "summary_es": "Gastando $100 en el portal de compras de Delta entre el 23 de abril y el 4 de mayo recibirás 500 millas adicionales."
+      "summary_zh": "在活動期間消費滿 $100，即可額外獲得 500 獎勵里程。",
+      "title_es": "Portal de compras Delta: Obtén 500 millas extra al gastar $100 (23/4‑4/5)",
+      "summary_es": "Delta ofrece 500 millas de bonificación por cada $100 gastado en su portal de compras entre el 23 de abril y el 4 de mayo."
     },
     {
       "title": "(Update) Chase Announces Select Properties With 2.5x PointsBoost Redemption",
@@ -63,10 +63,10 @@
       "ts": "2026-04-24T17:00:03.000Z",
       "title_en": "(Update) Chase Announces Select Properties With 2.5x PointsBoost Redemption",
       "summary_en": "",
-      "title_zh": "（更新）Chase 宣佈特定飯店可享有 2.5 倍 PointsBoost 兌換",
-      "summary_zh": "Chase 指定飯店的 PointsBoost 兌換比例提升至 2.5 倍。",
-      "title_es": "(Actualización) Chase anuncia propiedades seleccionadas con canje de 2.5x PointsBoost",
-      "summary_es": "Chase ha informado que ciertas propiedades ofrecerán un impulso de 2.5 veces los puntos al canjear."
+      "title_zh": "（更新）Chase 宣佈特定飯店可享 2.5 倍 PointsBoost 積分兌換",
+      "summary_zh": "Chase 現在讓特定飯店的積分兌換可享有 2.5 倍的加成。",
+      "title_es": "(Actualización) Chase anuncia propiedades seleccionadas con redención de 2.5x PointsBoost",
+      "summary_es": "Chase ha anunciado que ciertas propiedades ofrecerán un aumento de 2.5 veces en los puntos por redención."
     },
     {
       "title": "Chase Offers/BofA: 10% Back at Hilton",
@@ -79,10 +79,10 @@
       "ts": "2026-04-24T16:40:22.000Z",
       "title_en": "Chase Offers/BofA: 10% Back at Hilton",
       "summary_en": "",
-      "title_zh": "Chase Offers／美國銀行：希爾頓飯店消費可獲得 10% 回饋",
-      "summary_zh": "在希爾頓飯店使用 Chase Offers 或 BofA 刷卡，可獲得 10% 消費回饋。",
-      "title_es": "Ofertas de Chase/BofA: 10% de vuelta en Hilton",
-      "summary_es": "Al reservar en Hilton a través de las ofertas de Chase o BofA recibirás un reembolso del 10%."
+      "title_zh": "Chase 優惠／美國銀行：希爾頓飯店可享 10% 回饋",
+      "summary_zh": "在希爾頓飯店住宿或消費可獲得 10% 的刷卡回饋。",
+      "title_es": "Ofertas de Chase/BofA: 10 % de reembolso en Hilton",
+      "summary_es": "Los clientes de Chase o Bank of America reciben un 10 % de reembolso en estancias en Hilton."
     },
     {
       "title": "Newegg.com: Save 8% On $250 Lowe’s Giftcards",
@@ -96,10 +96,10 @@
       "ts": "2026-04-24T16:16:28.000Z",
       "title_en": "Newegg.com: Save 8% On $250 Lowe’s Giftcards",
       "summary_en": "",
-      "title_zh": "Newegg.com：Lowe’s 禮卡滿 $250 可享 8% 折扣",
-      "summary_zh": "於 Newegg.com 購買 $250 Lowe’s 禮卡可節省 8%。",
-      "title_es": "Newegg.com: Ahorra 8% en tarjetas de regalo de Lowe's de $250",
-      "summary_es": "Newegg ofrece un descuento del 8% en tarjetas de regalo de Lowe's con un valor de $250."
+      "title_zh": "Newegg.com：$250 Lowe’s 禮品卡可享 8% 折扣",
+      "summary_zh": "於 Newegg.com 購買 $250 Lowe’s 禮品卡可節省 8% 費用。",
+      "title_es": "Newegg.com: Ahorra 8 % en tarjetas de regalo de Lowe’s de $250",
+      "summary_es": "Newegg ofrece un 8 % de descuento en tarjetas de regalo de Lowe’s de $250."
     },
     {
       "title": "[Targeted] Citi: Spend $350 On Hotels, Get $30 Credit",
@@ -114,10 +114,10 @@
       "ts": "2026-04-24T16:02:45.000Z",
       "title_en": "[Targeted] Citi: Spend $350 On Hotels, Get $30 Credit",
       "summary_en": "",
-      "title_zh": "（目標對象）Citi：於飯店消費滿 $350 可獲得 $30 折扣",
-      "summary_zh": "使用 Citi 卡在飯店消費滿 $350，可獲 $30 折扣回饋。",
-      "title_es": "[Dirigido] Citi: Gast $350 en hoteles, obtén $30 de crédito",
-      "summary_es": "Los clientes seleccionados de Citi que gasten $350 en hoteles recibirán un crédito de $30."
+      "title_zh": "【目標對象】Citi：消費飯店滿 $350 可獲得 $30 優惠",
+      "summary_zh": "在參與飯店消費滿 $350，即可獲得 $30 的刷卡回饋。",
+      "title_es": "(Dirigido) Citi: Gastá $350 en hoteles y obtené $30 de crédito",
+      "summary_es": "Citi ofrece un crédito de $30 a quienes gasten $350 en hoteles."
     },
     {
       "title": "(Update: Amazon 5%) ShopBack Shopping Portal $15+ In Signup Bonuses & More; Earn Cashback On Amazon & More",
@@ -133,10 +133,10 @@
       "ts": "2026-04-23T23:16:39.000Z",
       "title_en": "(Update: Amazon 5%) ShopBack Shopping Portal $15+ In Signup Bonuses & More; Earn Cashback On Amazon & More",
       "summary_en": "",
-      "title_zh": "（更新：Amazon 5%）ShopBack 購物入口 新人註冊獎金 $15 起；於 Amazon 等平台可獲得返現",
-      "summary_zh": "ShopBack 新人註冊即送 $15 獎金，在 Amazon 消費可享 5% 返現。",
-      "title_es": "(Actualización: Amazon 5%) Portal de compras ShopBack ofrece bonos de inscripción de $15 o más; gana devolución en Amazon y más",
-      "summary_es": "ShopBack ofrece bonos de inscripción de al menos $15 y un 5% de devolución en compras de Amazon y otras tiendas."
+      "title_zh": "（更新：Amazon 5%）ShopBack 購物入口提供 $15 以上註冊獎金，並在 Amazon 等平台可獲得 5% 現金回饋",
+      "summary_zh": "新會員註冊可獲 $15 以上獎金，於 Amazon 消費可享 5% 現金回饋。",
+      "title_es": "(Actualización: Amazon 5 %) Portal de compras ShopBack con bonos de inscripción de $15+ y más; gana cashback en Amazon y más",
+      "summary_es": "ShopBack ofrece bonos de inscripción de más de $15 y un 5 % de cashback en compras de Amazon."
     },
     {
       "title": "[YMMV] DoorDash DashPass Trivia: $5 Off $12 When Answering 5 Questions Correctly",
@@ -151,10 +151,10 @@
       "ts": "2026-04-23T22:51:29.000Z",
       "title_en": "[YMMV] DoorDash DashPass Trivia: $5 Off $12 When Answering 5 Questions Correctly",
       "summary_en": "",
-      "title_zh": "（YMMV）DoorDash DashPass 問答：正確回答 5 題可享 $12 減 $5 折扣",
-      "summary_zh": "在 DashPass 問答中正確回答 5 題，可獲得 $5 折扣（消費滿 $12）。",
-      "title_es": "[YMMV] Trivia de DoorDash DashPass: $5 de descuento en $12 al responder 5 preguntas correctamente",
-      "summary_es": "Si respondes correctamente cinco preguntas en la trivia de DashPass, DoorDash te aplicará un descuento de $5 en un pedido de $12."
+      "title_zh": "【YMMV】DoorDash DashPass 知識問答：正確回答 5 題可享 $5 折扣（原價 $12）",
+      "summary_zh": "正確回答五題問題，即可在 DashPass 餐點訂單中減免 $5（滿 $12）。",
+      "title_es": "[YMMV] DoorDash DashPass trivia: $5 de descuento en $12 al responder 5 preguntas correctamente",
+      "summary_es": "Los usuarios de DashPass que respondan correctamente cinco preguntas recibirán un descuento de $5 en un pedido de $12."
     },
     {
       "title": "Pizza Hut: Book It, Read Books & Earn Pizzas (Ages 5-12)",
@@ -168,10 +168,10 @@
       "ts": "2026-04-23T22:40:41.000Z",
       "title_en": "Pizza Hut: Book It, Read Books & Earn Pizzas (Ages 5-12)",
       "summary_en": "",
-      "title_zh": "Pizza Hut：預訂閱讀書籍，兒童（5-12 歲）可獲得披薩",
-      "summary_zh": "Pizza Hut 推出兒童閱讀活動，5-12 歲孩子閱讀書籍后可兌換免費披薩。",
-      "title_es": "Pizza Hut: Book It, Lee libros y gana pizzas (edades 5-12)",
-      "summary_es": "Los niños de 5 a 12 años pueden ganar pizzas leyendo libros con el programa Book It de Pizza Hut."
+      "title_zh": "必勝客：Book It 閱讀計畫，閱讀書籍賺取披薩（5-12 歲）",
+      "summary_zh": "5 至 12 歲兒童閱讀指定書籍即可兌換必勝客披薩。",
+      "title_es": "Pizza Hut: Résérvalo, lee libros y gana pizzas (edades 5‑12)",
+      "summary_es": "Pizza Hut permite a niños de 5 a 12 años ganar pizzas al reservar y leer libros."
     },
     {
       "title": "Xfinity Rewards: Free $10 GrubHub Giftcard",
@@ -186,10 +186,10 @@
       "ts": "2026-04-23T16:36:37.000Z",
       "title_en": "Xfinity Rewards: Free $10 GrubHub Giftcard",
       "summary_en": "",
-      "title_zh": "Xfinity Rewards：免費獲得 $10 GrubHub 禮卡",
-      "summary_zh": "Xfinity Rewards 會員可兌換價值 $10 的 GrubHub 禮卡。",
-      "title_es": "Xfinity Rewards: Tarjeta de regalo de GrubHub de $10 gratis",
-      "summary_es": "Xfinity Rewards regala una tarjeta de regalo de GrubHub de $10 a sus miembros."
+      "title_zh": "Xfinity 獎勵：免費 $10 GrubHub 禮品卡",
+      "summary_zh": "Xfinity 用戶可免費領取價值 $10 的 GrubHub 禮品卡。",
+      "title_es": "Recompensas Xfinity: Tarjeta de regalo GrubHub de $10 gratis",
+      "summary_es": "Xfinity ofrece una tarjeta de regalo de GrubHub de $10 sin costo."
     },
     {
       "title": "Chase Offers: The Parking Spot, Spend $50+ & Get $10 Back",
@@ -203,10 +203,10 @@
       "ts": "2026-04-23T15:00:49.000Z",
       "title_en": "Chase Offers: The Parking Spot, Spend $50+ & Get $10 Back",
       "summary_en": "",
-      "title_zh": "Chase Offers：The Parking Spot 停車場消費滿 $50 可獲得 $10 回饋",
-      "summary_zh": "在 The Parking Spot 停車場消費滿 $50，可獲 $10 折扣。",
-      "title_es": "Ofertas de Chase: The Parking Spot, gasta $50+ y obtén $10 de vuelta",
-      "summary_es": "Al gastar al menos $50 en The Parking Spot a través de Chase Offers recibirás $10 de reembolso."
+      "title_zh": "Chase 優惠：The Parking Spot，停車消費滿 $50 可獲得 $10 回饋",
+      "summary_zh": "在 The Parking Spot 停車場消費滿 $50，可獲得 $10 刷卡回饋。",
+      "title_es": "Ofertas Chase: The Parking Spot, gastá $50+ y recibí $10 de vuelta",
+      "summary_es": "Chase devuelve $10 a quienes gasten $50 o más en The Parking Spot."
     },
     {
       "title": "Recap: United Lounge Restriction, Points Events Tool & More",
@@ -219,9 +219,9 @@
       "title_en": "Recap: United Lounge Restriction, Points Events Tool & More",
       "summary_en": "",
       "title_zh": "回顧：United 貴賓室限制、積分活動工具及其他資訊",
-      "summary_zh": "United 航空貴賓室使用限制及 Points Events 工具使用說明。",
-      "title_es": "Resumen: Restricciones en lounges de United, herramienta de eventos de puntos y más",
-      "summary_es": "Se informa sobre las restricciones en los salones de United, una nueva herramienta de eventos de puntos y otras noticias."
+      "summary_zh": "United 航空貴賓室現有使用限制，並推出積分活動查詢工具等資訊。",
+      "title_es": "Resumen: Restricciones en United Lounge, herramienta de eventos de puntos y más",
+      "summary_es": "Se informan restricciones en el lounge de United, una nueva herramienta de eventos de puntos y otras actualizaciones."
     },
     {
       "title": "Southwest Lounge Updates – Up To 5 Currently Being Planned",
@@ -234,28 +234,11 @@
       "ts": "2026-04-23T13:00:33.000Z",
       "title_en": "Southwest Lounge Updates – Up To 5 Currently Being Planned",
       "summary_en": "",
-      "title_zh": "Southwest 貴賓室更新 – 最多 5 間正在規劃中",
-      "summary_zh": "Southwest 正在計畫最多 5 家新貴賓室。",
-      "title_es": "Actualizaciones de lounges de Southwest – Hasta 5 están siendo planificados",
-      "summary_es": "Southwest está planificando hasta cinco nuevos lounges para sus viajeros."
-    },
-    {
-      "title": "Meijer Mperks: 7,500 Points On $100 Visa Giftcard (Valid Until 4/28)",
-      "url": "https://www.doctorofcredit.com/meijer-mperks-10-off-150-visa-giftcards-7/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "meijer",
-        "visa gift cards"
-      ],
-      "ts": "2026-04-23T00:45:00.000Z",
-      "title_en": "Meijer Mperks: 7,500 Points On $100 Visa Giftcard (Valid Until 4/28)",
-      "summary_en": "",
-      "title_zh": "Meijer Mperks：$100 Visa 禮卡可獲得 7,500 點（有效期至 4/28）",
-      "summary_zh": "於 Meijer 購買 $100 Visa 禮卡，可獲 7,500 Mperks 積分，有效至 4/28。",
-      "title_es": "Meijer Mperks: 7,500 puntos en tarjeta de regalo Visa de $100 (válido hasta 28/4)",
-      "summary_es": "Con el programa Mperks de Meijer puedes obtener 7,500 puntos al comprar una tarjeta de regalo Visa de $100 antes del 28 de abril."
+      "title_zh": "Southwest 貴賓室更新 — 最多 5 間正在籌劃中",
+      "summary_zh": "西南航空計畫增設最多 5 間新的貴賓室。",
+      "title_es": "Actualizaciones del lounge de Southwest – Hasta 5 están actualmente en planificación",
+      "summary_es": "Southwest está planificando hasta cinco nuevas salas lounge."
     }
   ],
-  "fetched": "2026-04-24T20:01:11.393Z"
+  "fetched": "2026-04-25T02:00:55.662Z"
 }
