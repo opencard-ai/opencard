@@ -1,0 +1,12 @@
+{
+  "card_id": "belk-rewards-mastercard",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:26:27.794704",
+  "content_hash": "11ea25ab99152d7eb6f685b3280043febd3c7560826ca94005f3bb17125fbd06",
+  "fields": {
+    "cash_advance_fee_flat": 10,
+    "cash_advance_fee_pct": 5.0,
+    "apr_cash_advances": "36.49",
+    "penalty_apr": "39.99"
+  }
+}
