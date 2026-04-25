@@ -1,0 +1,79 @@
+{
+  "_note": "CFPB CCAD PDF URLs - Verified working",
+  "_source": "https://www.consumerfinance.gov/credit-cards/agreements/",
+  "_extracted": "2026-04-24",
+  "issuers": {
+    "amex": "AMERICAN_EXPRESS_NATIONAL_BANK",
+    "chase": "JPMORGAN_CHASE_BANK_NATIONAL_ASSOCIATION",
+    "citi": "CITIBANK_NATIONAL_ASSOCIATION",
+    "capital_one": "CAPITAL_ONE_BANK_USA_NATIONAL_ASSOC",
+    "discover": "DISCOVER_BANK",
+    "boa": "BANK_OF_AMERICA_NATIONAL_ASSOCIATION",
+    "wells_fargo": "WELLS_FARGO_BANK_NATIONAL_ASSOCIATION",
+    "usbank": "US_BANK_NATIONAL_ASSOCIATION",
+    "barclays": "BARCLAYS_BANK_DELAWARE",
+    "hsbc": "HSBC_BANK_USA_NATIONAL_ASSOCIATION"
+  },
+  "pdfs": {
+    "amex-gold": {
+      "filename": "American_Express_Gold_Card_Cardmember_Agreement.pdf",
+      "id": "255468",
+      "url": "https://files.consumerfinance.gov/a/assets/credit-card-agreements/pdf/Q32025/AMERICAN_EXPRESS_NATIONAL_BANK/American_Express_Gold_Card_Cardmember_Agreement.pdf-255468.pdf",
+      "verified": true
+    },
+    "amex-platinum": {
+      "filename": "Platinum_Card_from_American_Express_Cardmember_Agreement.pdf",
+      "id": "255467",
+      "url": "https://files.consumerfinance.gov/a/assets/credit-card-agreements/pdf/Q32025/AMERICAN_EXPRESS_NATIONAL_BANK/Platinum_Card_from_American_Express_Cardmember_Agreement.pdf-255467.pdf",
+      "verified": true
+    },
+    "amex-green": {
+      "filename": "American_Express_Green_Card_Cardmember_Agreement.pdf",
+      "id": "255469",
+      "url": "https://files.consumerfinance.gov/a/assets/credit-card-agreements/pdf/Q32025/AMERICAN_EXPRESS_NATIONAL_BANK/American_Express_Green_Card_Cardmember_Agreement.pdf-255469.pdf",
+      "verified": false
+    },
+    "amex-centurion": {
+      "filename": "Centurion_Card_from_American_Express_Card_Cardmember_Agreement.pdf",
+      "id": "255463",
+      "url": "https://files.consumerfinance.gov/a/assets/credit-card-agreements/pdf/Q32025/AMERICAN_EXPRESS_NATIONAL_BANK/Centurion_Card_from_American_Express_Card_Cardmember_Agreement.pdf-255463.pdf",
+      "verified": false
+    },
+    "amex-everyday": {
+      "filename": "Amex_EveryDay_Card_Cardmember_Agreement.pdf",
+      "id": "255461",
+      "url": "https://files.consumerfinance.gov/a/assets/credit-card-agreements/pdf/Q32025/AMERICAN_EXPRESS_NATIONAL_BANK/Amex_EveryDay_Card_Cardmember_Agreement.pdf-255461.pdf",
+      "verified": false
+    },
+    "amex-blue-cash-everyday": {
+      "filename": "Blue_Cash_Everyday_Card_Cardmember_Agreement.pdf",
+      "id": "255458",
+      "url": "https://files.consumerfinance.gov/a/assets/credit-card-agreements/pdf/Q32025/AMERICAN_EXPRESS_NATIONAL_BANK/Blue_Cash_Everyday_Card_Cardmember_Agreement.pdf-255458.pdf",
+      "verified": false
+    },
+    "amex-blue-cash-preferred": {
+      "filename": "Blue_Cash_Preferred_Card_Cardmember_Agreement.pdf",
+      "id": "255457",
+      "url": "https://files.consumerfinance.gov/a/assets/credit-card-agreements/pdf/Q32025/AMERICAN_EXPRESS_NATIONAL_BANK/Blue_Cash_Preferred_Card_Cardmember_Agreement.pdf-255457.pdf",
+      "verified": false
+    },
+    "amex-delta-skymiles-reserve": {
+      "filename": "Delta_SkyMiles_Reserve_American_Express_Card_Cardmember_Agreement.pdf",
+      "id": "255453",
+      "url": "https://files.consumerfinance.gov/a/assets/credit-card-agreements/pdf/Q32025/AMERICAN_EXPRESS_NATIONAL_BANK/Delta_SkyMiles_Reserve_American_Express_Card_Cardmember_Agreement.pdf-255453.pdf",
+      "verified": false
+    },
+    "amex-hilton-aspire": {
+      "filename": "Hilton_Honors_American_Express_Aspire_Card_Cardmember_Agreement.pdf",
+      "id": "255450",
+      "url": "https://files.consumerfinance.gov/a/assets/credit-card-agreements/pdf/Q32025/AMERICAN_EXPRESS_NATIONAL_BANK/Hilton_Honors_American_Express_Aspire_Card_Cardmember_Agreement.pdf-255450.pdf",
+      "verified": false
+    },
+    "amex-marriott-bonvoy-brilliant": {
+      "filename": "Marriott_Bonvoy_Brilliant_American_Express_Card_Cardmember_Agreement.pdf",
+      "id": "255448",
+      "url": "https://files.consumerfinance.gov/a/assets/credit-card-agreements/pdf/Q32025/AMERICAN_EXPRESS_NATIONAL_BANK/Marriott_Bonvoy_Brilliant_American_Express_Card_Cardmember_Agreement.pdf-255448.pdf",
+      "verified": false
+    }
+  }
+}
