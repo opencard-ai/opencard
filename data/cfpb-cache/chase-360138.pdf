@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>404: File Not Found</title>
+    </head>
+    <body>
+        <h1>404: File not found</h1>
+        <p>
+            We can't find the file you're looking for.
+            Contact us at
+            <a href="mailto:CFPB_website@consumerfinance.gov?subject=404%20error%20at%20%22https%3A//files.consumerfinance.gov%22">CFPB_website@consumerfinance.gov</a>
+            and we'll point you in the right direction.
+        </p>
+    </body>
+</html>
