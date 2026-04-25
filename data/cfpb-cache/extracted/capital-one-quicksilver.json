@@ -1,12 +1,7 @@
 {
   "card_id": "capital-one-quicksilver",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-24T22:09:35.333824",
-  "content_hash": "962549dd10276ea7bfd11fb18965a860ea9416407ce0f07fa9ab4d84c38bbe88",
-  "fields": {
-    "annual_fee": 0,
-    "cash_advance_fee_flat": 10,
-    "cash_advance_fee_pct": 3.0,
-    "apr_cash_advances": "25.74"
-  }
+  "source": "cfpb_ccad_v2",
+  "canonical_name": "Credit Card Agreement for Consumer Cards in Capital One, N.A.",
+  "detected_issuer": "capital",
+  "fields": {}
 }

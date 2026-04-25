@@ -3,7 +3,7 @@
   "name": "American Express\u00ae Gold Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 895,
+  "annual_fee": 95,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {

@@ -1,17 +1,9 @@
 {
-  "card_id": "amex-charles-schwab-platinum",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-25T06:23:29.604019",
-  "content_hash": "1bd2dcfdbc087beb03f23f7d6e9beb17aa997e15e1f329cc5cc781524bc7e93f",
+  "card_id": "amex-platinum",
+  "source": "cfpb_ccad_v2",
+  "canonical_name": "Platinum Card from American Express Exclusively for Charles Schwab",
+  "detected_issuer": "amex",
   "fields": {
-    "annual_fee": 895,
-    "foreign_transaction_fee": 0,
-    "late_fee": 40,
-    "cash_advance_fee_flat": 10,
-    "cash_advance_fee_pct": 5.0,
-    "apr_purchases_min": "12.74",
-    "apr_purchases_max": "21.74",
-    "apr_cash_advances": "21.99",
-    "penalty_apr": "26.74"
+    "annual_fee": 895
   }
 }

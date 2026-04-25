@@ -1,13 +1,7 @@
 {
-  "card_id": "boa-platinum",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-25T05:11:00",
-  "fields": {
-    "apr_purchases_min": "13.99",
-    "apr_purchases_max": "27.99",
-    "apr_balance_transfer_min": "13.99",
-    "apr_balance_transfer_max": "27.99",
-    "apr_cash_advances": "27.99",
-    "penalty_apr": "29.99"
-  }
+  "card_id": "boa-unlimited-cash-rewards",
+  "source": "cfpb_ccad_v2",
+  "canonical_name": "Bank of America Platinum Mastercard,",
+  "detected_issuer": "boa",
+  "fields": {}
 }

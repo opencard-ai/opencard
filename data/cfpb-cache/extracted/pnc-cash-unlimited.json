@@ -1,12 +1,10 @@
 {
   "card_id": "pnc-cash-unlimited",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-25T06:23:31.292107",
-  "content_hash": "7af4f4dfdec43e9da31c4d3c94845dcec02876b132a182b5358bf39ca29b5081",
+  "source": "cfpb_ccad_v2",
+  "canonical_name": null,
+  "detected_issuer": null,
   "fields": {
     "annual_fee": 0,
-    "cash_advance_fee_flat": 10,
-    "cash_advance_fee_pct": 5.0,
-    "penalty_apr": "25.74"
+    "penalty_apr": 25.74
   }
 }

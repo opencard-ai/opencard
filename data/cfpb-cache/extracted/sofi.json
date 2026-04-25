@@ -1,7 +1,7 @@
 {
   "card_id": "sofi",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-25T06:23:27.694271",
-  "content_hash": "ad721b632d0e7c9d76e2059a8478f741656f29f8ee6253ca5de7298c52a0f0da",
+  "source": "cfpb_ccad_v2",
+  "canonical_name": "This Truth in Lending Act Disclosure is part of your Cardholder Agreement and contains",
+  "detected_issuer": null,
   "fields": {}
 }

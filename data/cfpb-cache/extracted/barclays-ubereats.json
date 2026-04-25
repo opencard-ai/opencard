@@ -1,12 +1,9 @@
 {
   "card_id": "barclays-ubereats",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-24T22:26:27.095257",
-  "content_hash": "aee4c0d3dff865d378ef2d009d4c5b2ac9d81cc04e15e9e628ad83ae33fd6b72",
+  "source": "cfpb_ccad_v2",
+  "canonical_name": "Cardmember Agreement will be the agreement sent to you when your account is first opened.",
+  "detected_issuer": null,
   "fields": {
-    "annual_fee": 0,
-    "cash_advance_fee_flat": 10,
-    "cash_advance_fee_pct": 5.0,
-    "apr_cash_advances": "29.99"
+    "annual_fee": 0
   }
 }

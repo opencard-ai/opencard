@@ -1,10 +1,10 @@
 {
   "card_id": "penfed",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-25T06:23:28.793291",
-  "content_hash": "97c257492fc3a32817feaf3ed7fa29a3428c85e5ef00d302e76652aadbda39d0",
+  "source": "cfpb_ccad_v2",
+  "canonical_name": null,
+  "detected_issuer": null,
   "fields": {
     "annual_fee": 2,
-    "penalty_apr": "17.99"
+    "penalty_apr": 17.99
   }
 }

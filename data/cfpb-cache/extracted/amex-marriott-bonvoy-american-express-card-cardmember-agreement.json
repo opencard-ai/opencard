@@ -1,11 +1,9 @@
 {
   "card_id": "amex-marriott-bonvoy-american-express-card-cardmember-agreement",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-25T06:23:29.261534",
-  "content_hash": "056e837544a65a3d4f74f784639cb199a72e43416e57e84ad8c8c8d66de9b789",
+  "source": "cfpb_ccad_v2",
+  "canonical_name": "Bonvoy Amex Card",
+  "detected_issuer": "amex",
   "fields": {
-    "annual_fee": 95,
-    "cash_advance_fee_flat": 10,
-    "cash_advance_fee_pct": 5.0
+    "annual_fee": 95
   }
 }

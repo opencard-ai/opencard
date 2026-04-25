@@ -1,10 +1,7 @@
 {
-  "card_id": "amex-hilton-honors-american-express-card-cardmember-agreement",
-  "source": "cfpb_ccad",
-  "fetched_at": "2026-04-25T06:23:29.425269",
-  "content_hash": "af8c38510aa43126accc6d8167f3344fb0a869c2ccdf2fd330012e4e0c8c86f7",
-  "fields": {
-    "cash_advance_fee_flat": 10,
-    "cash_advance_fee_pct": 5.0
-  }
+  "card_id": "amex-hilton-honors",
+  "source": "cfpb_ccad_v2",
+  "canonical_name": "Hilton Honors American Express Card",
+  "detected_issuer": "amex",
+  "fields": {}
 }
