@@ -269,11 +269,19 @@ export default function MyCardsPage({
       try {
         const cardRes = await fetch('/api/cards?summary=1');
         if (cardRes.ok) {
-          const data = await cardRes.json(); // Response is [{issuer: "Amex", cards: [...]}, ...]
+          const data = await cardRes.json(); // Response is flat array [{card_id, ...}, ...]
           const map: Record<string, Card> = {};
-          for (const issuerGroup of data) {
-            for (const c of issuerGroup.cards || []) {
+          // Handle both flat array and grouped formats
+          if (Array.isArray(data)) {
+            for (const c of data) {
               map[c.card_id] = c;
+            }
+          } else {
+            // Grouped format: [{issuer: "Amex", cards: [...]}, ...]
+            for (const issuerGroup of data) {
+              for (const c of issuerGroup.cards || []) {
+                map[c.card_id] = c;
+              }
             }
           }
           setCardsData(map);
