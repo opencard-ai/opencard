@@ -1,0 +1,15 @@
+{
+  "card_id": "apple-card",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-25T05:23:00",
+  "fields": {
+    "annual_fee": 0,
+    "foreign_transaction_fee": 0,
+    "late_fee": 0,
+    "cash_advance_fee_flat": 0,
+    "cash_advance_fee_pct": 0,
+    "apr_purchases_min": "18.24",
+    "apr_purchases_max": "28.49",
+    "penalty_apr": "29.99"
+  }
+}
