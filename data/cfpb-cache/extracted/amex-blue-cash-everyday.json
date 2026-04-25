@@ -1,0 +1,10 @@
+{
+  "card_id": "amex-blue-cash-everyday",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:09:30.970093",
+  "content_hash": "367cbce7846143610de1af37592bd41338d56c06fed8ce46cfaf1684706b5b2d",
+  "fields": {
+    "cash_advance_fee_flat": 5,
+    "cash_advance_fee_pct": 3.0
+  }
+}

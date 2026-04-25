@@ -1,0 +1,11 @@
+{
+  "card_id": "amex-delta-reserve",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:09:32.245206",
+  "content_hash": "cb04ea8072d5dd1352fced219933c12177bca9a15ea5b17cd4d1087751d28d8d",
+  "fields": {
+    "annual_fee": 650,
+    "cash_advance_fee_flat": 10,
+    "cash_advance_fee_pct": 5.0
+  }
+}

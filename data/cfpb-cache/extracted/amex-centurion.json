@@ -1,0 +1,16 @@
+{
+  "card_id": "amex-centurion",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:09:31.407009",
+  "content_hash": "df83c6a90a386ef8fafaabb40df2750fe67e40b784bffb411634541d964f9055",
+  "fields": {
+    "annual_fee": 5,
+    "foreign_transaction_fee": 0,
+    "late_fee": 40,
+    "cash_advance_fee_flat": 10,
+    "cash_advance_fee_pct": 5.0,
+    "apr_purchases": "12.74",
+    "apr_cash_advances": "21.99",
+    "penalty_apr": "26.74"
+  }
+}

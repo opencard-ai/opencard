@@ -1,0 +1,12 @@
+{
+  "card_id": "capital-one-venture-x",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:09:35.157964",
+  "content_hash": "911034d892752549648d1545a2b74d73cf6fd768ca667b3f0858a5696d359ad5",
+  "fields": {
+    "annual_fee": 0,
+    "cash_advance_fee_flat": 3,
+    "cash_advance_fee_pct": 3.0,
+    "apr_cash_advances": "18.99"
+  }
+}

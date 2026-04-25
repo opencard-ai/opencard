@@ -1,0 +1,11 @@
+{
+  "card_id": "amex-blue-cash-preferred",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:09:31.235379",
+  "content_hash": "a5dffdb83d2086d08df0d6cf184dac172e81ac8649a867d40b296c4f6706e0b1",
+  "fields": {
+    "annual_fee": 95,
+    "cash_advance_fee_flat": 5,
+    "cash_advance_fee_pct": 3.0
+  }
+}

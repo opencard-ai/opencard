@@ -1,0 +1,11 @@
+{
+  "card_id": "amex-hilton-surpass",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:09:33.124001",
+  "content_hash": "be0315eb632c131b70ed57c38d7c9a06f2a374c77c14c2d41356256465454323",
+  "fields": {
+    "annual_fee": 150,
+    "cash_advance_fee_flat": 10,
+    "cash_advance_fee_pct": 5.0
+  }
+}

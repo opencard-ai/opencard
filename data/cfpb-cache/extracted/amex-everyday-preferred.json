@@ -1,0 +1,11 @@
+{
+  "card_id": "amex-everyday-preferred",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:09:32.401120",
+  "content_hash": "9c7d477c291e2828c35eb000ab05b334bfb7b0b3dd8551d65b9833914199614e",
+  "fields": {
+    "annual_fee": 95,
+    "cash_advance_fee_flat": 5,
+    "cash_advance_fee_pct": 3.0
+  }
+}

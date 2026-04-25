@@ -1,0 +1,11 @@
+{
+  "card_id": "amex-marriott-bevy",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:09:33.580739",
+  "content_hash": "1a121f06e126383c5fa9708164acaa4a782216b4bbf7140e26f4ea527374c1f8",
+  "fields": {
+    "annual_fee": 250,
+    "cash_advance_fee_flat": 10,
+    "cash_advance_fee_pct": 5.0
+  }
+}

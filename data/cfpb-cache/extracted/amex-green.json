@@ -1,0 +1,17 @@
+{
+  "card_id": "amex-green",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-24T22:09:30.552906",
+  "content_hash": "cba583a2e1c8f4cf215806167afdc1002bd6ab52ec3302b4ae98ccb65de41203",
+  "fields": {
+    "annual_fee": 150,
+    "foreign_transaction_fee": 0,
+    "late_fee": 40,
+    "cash_advance_fee_flat": 10,
+    "cash_advance_fee_pct": 5.0,
+    "apr_purchases_min": "12.74",
+    "apr_purchases_max": "21.74",
+    "apr_cash_advances": "21.99",
+    "penalty_apr": "26.74"
+  }
+}
