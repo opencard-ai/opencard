@@ -269,10 +269,12 @@ export default function MyCardsPage({
       try {
         const cardRes = await fetch('/api/cards?full=1');
         if (cardRes.ok) {
-          const cardData: Card[] = await cardRes.json();
+          const data = await cardRes.json(); // Response is [{issuer: "Amex", cards: [...]}, ...]
           const map: Record<string, Card> = {};
-          for (const c of cardData) {
-            map[c.card_id] = c;
+          for (const issuerGroup of data) {
+            for (const c of issuerGroup.cards || []) {
+              map[c.card_id] = c;
+            }
           }
           setCardsData(map);
         }
