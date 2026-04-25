@@ -76,6 +76,7 @@ List: ${JSON.stringify(dataList)}`;
       temperature: 0.1,
       internal_thought: false
     }),
+    signal: AbortSignal.timeout(30000),
   });
 
   if (!res.ok) {
