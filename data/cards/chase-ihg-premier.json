@@ -7,57 +7,111 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 0,
-    "time_period_months": 0,
-    "bonus_points": 0,
-    "description": "N/A",
-    "point_program": "Points"
+    "bonus_points": 140000,
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "description": "Earn 140,000 Bonus Points after spending $3,000 on purchases in the first 3 months from account opening",
+    "point_program": "IHG Rewards",
+    "estimated_value": 1400
   },
   "earning_rates": [
     {
       "category": "IHG Hotels",
       "rate": 10,
-      "notes": ""
+      "notes": "Earn 10X points on IHG purchases"
     },
     {
-      "category": "Gas stations",
-      "rate": 2,
-      "notes": ""
+      "category": "Travel",
+      "rate": 5,
+      "notes": "Earn 5X points on travel"
     },
     {
-      "category": "All other purchases",
+      "category": "Dining",
+      "rate": 5,
+      "notes": "Earn 5X points on dining"
+    },
+    {
+      "category": "Other",
       "rate": 1,
-      "notes": ""
+      "notes": "Earn 1X points on all other purchases"
     }
   ],
   "annual_credits": [],
   "travel_benefits": {
-    "hotel_status": [],
-    "other_benefits": []
+    "lounge_access": [],
+    "hotel_status": [
+      {
+        "program": "IHG Rewards",
+        "tier": "Platinum Elite",
+        "complimentary": true
+      }
+    ],
+    "other_benefits": [
+      {
+        "name": "Fourth Night Free",
+        "description": "Get a fourth night free on award stays of 3+ nights"
+      },
+      {
+        "name": "IHG Rewards Club",
+        "description": "Complimentary IHG Rewards Club membership"
+      }
+    ]
   },
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
   },
   "insurance": {
-    "rental_insurance": "None",
-    "trip_delay": false,
-    "purchase_protection": false,
-    "extended_warranty": false,
-    "trip_cancellation": null,
-    "return_protection": null
+    "rental_insurance": "Primary",
+    "trip_delay": true,
+    "trip_cancellation": true,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "return_protection": false,
+    "lost_luggage": true
   },
   "tags": [
-    "hotel"
+    "hotel",
+    "premium",
+    "no-ftf",
+    "travel",
+    "chase"
   ],
   "sources": [],
-  "hotel_program": null,
-  "application_rules": {
-    "rules": [],
-    "notes": null
+  "hotel_program": {
+    "program": "IHG Rewards",
+    "tier": "Platinum Elite",
+    "elite_night_credits": 0,
+    "fhr_eligible": false,
+    "thc_eligible": false
   },
-  "last_updated": "2026-04-16T13:41:49.967Z",
-  "recurring_credits": [],
-  "last_verified": "2026-04-16T13:41:49.967Z",
+  "application_rules": {
+    "rules": [
+      {
+        "rule": "5/24 rule",
+        "description": "Cannot be approved if 5 or more new personal credit cards opened in the past 24 months"
+      }
+    ]
+  },
+  "last_updated": "2026-04-25T16:02:24.759Z",
+  "recurring_credits": [
+    {
+      "name": "Free Night Award",
+      "amount": 40000,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "Annual Free Night Award valid at IHG hotels up to 40,000 points",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Global Entry/TSA PreCheck",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $100 statement credit for Global Entry or TSA PreCheck application fee",
+      "reset_type": "calendar_year"
+    }
+  ],
+  "last_verified": "2026-04-25T16:02:24.759Z",
   "next_review": "2026-07-15T13:41:49.967000+00:00"
 }

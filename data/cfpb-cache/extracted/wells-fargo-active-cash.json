@@ -1,0 +1,6 @@
+{
+  "card_id": "wells-fargo-active-cash",
+  "source": "cfpb_ccad_v2",
+  "detected_issuer": "wells",
+  "fields": {}
+}

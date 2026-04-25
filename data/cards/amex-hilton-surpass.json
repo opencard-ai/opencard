@@ -3,78 +3,54 @@
   "name": "Hilton Honors American Express Surpass Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 150,
+  "annual_fee": 12,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 3000,
-    "time_period_months": 6,
     "bonus_points": 130000,
-    "description": "Earn 130,000 Hilton Honors Bonus Points plus a Free Night Reward after spending $3,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
-    "free_nights": 1,
+    "spending_requirement": 2000,
+    "time_period_months": 3,
+    "description": "Earn up to 130,000 Membership Rewards points",
     "point_program": "Hilton Honors",
-    "estimated_value": 500
+    "estimated_value": 650
   },
   "earning_rates": [
     {
-      "category": "hotel_hilton",
+      "category": "Hilton Hotels",
       "rate": 12,
-      "notes": "Hilton Honors Bonus Points per dollar at hotels and resorts within the Hilton portfolio"
+      "notes": "Earn 12X points at Hilton properties"
     },
     {
-      "category": "gas",
+      "category": "Restaurants",
       "rate": 6,
-      "notes": "U.S. gas stations"
+      "notes": "Earn 6X at U.S. restaurants"
     },
     {
-      "category": "grocery",
+      "category": "Supermarkets",
       "rate": 6,
-      "notes": "U.S. supermarkets"
+      "notes": "Earn 6X at U.S. supermarkets"
     },
     {
-      "category": "restaurant",
+      "category": "Gas Stations",
       "rate": 6,
-      "notes": "U.S. restaurants"
+      "notes": "Earn 6X at U.S. gas stations"
     },
     {
-      "category": "online_retail",
-      "rate": 4,
-      "notes": "U.S. online retail purchases"
-    },
-    {
-      "category": "default",
+      "category": "Other",
       "rate": 3,
-      "notes": "All other eligible purchases"
+      "notes": "Earn 3X on all other purchases"
     }
   ],
   "travel_benefits": {
-    "lounge_access": {
-      "priority_pass": false,
-      "centurion": false,
-      "other": null
-    },
+    "lounge_access": [],
     "hotel_status": [
       {
         "program": "Hilton Honors",
-        "tier": "Gold",
-        "method": "Automatic for as long as the card is open"
-      },
-      {
-        "program": "Hilton Honors",
-        "tier": "Diamond",
-        "method": "Earned by spending $40,000 on eligible purchases in a calendar year (valid through end of next calendar year)"
+        "tier": "Gold Elite",
+        "complimentary": true
       }
     ],
-    "other_benefits": [
-      {
-        "name": "National Emerald Club Executive Status",
-        "description": "Car rental status with National Car Rental (enrollment required)"
-      },
-      {
-        "name": "Fifth Night Free",
-        "description": "Fifth night free on reward stays (all Honors members)"
-      }
-    ]
+    "other_benefits": []
   },
   "fhr_thc": {
     "fhr_eligible": false,
@@ -90,7 +66,8 @@
   },
   "tags": [
     "hotel",
-    "premium"
+    "premium",
+    "no-ftf"
   ],
   "sources": [
     {
@@ -103,29 +80,41 @@
     },
     {
       "url": "https://onemileatatime.com/deals/hilton-amex-card-bonus/",
-      "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold→Diamond path at $40K, National status"
+      "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold\u2192Diamond path at $40K, National status"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.948Z",
-  "hotel_program": null,
+  "last_updated": "2026-04-25T16:00:44.012Z",
+  "hotel_program": {
+    "program": "Hilton Honors",
+    "tier": "Gold Elite",
+    "elite_night_credits": 0,
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
   "application_rules": {
-    "rules": [],
-    "notes": null
+    "rules": [
+      {
+        "rule": "5/24 rule",
+        "description": "Cannot approve if 5+ new cards in 24 months"
+      }
+    ]
   },
   "recurring_credits": [
     {
-      "name": "Hilton Resort Credit",
-      "amount": 250,
+      "name": "Hilton Honors Gold Status",
+      "amount": 0,
       "frequency": "annual",
-      "category": "travel",
-      "description": "$250 annual credit at Hilton resorts.",
+      "category": "hotel",
+      "description": "Complimentary Gold elite status",
       "reset_type": "cardmember_year"
     }
   ],
-  "last_verified": "2026-04-24",
+  "last_verified": "2026-04-25T16:00:44.012Z",
   "next_review": "2026-07-15T13:41:49.948000+00:00",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
-  "cash_advance_fee_pct": 5.0,
-  "cfpb_verified": true
+  "cash_advance_fee_pct": 21.99,
+  "cfpb_verified": true,
+  "late_fee": 40,
+  "penalty_apr": 26.74
 }

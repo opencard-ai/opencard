@@ -1,39 +1,123 @@
 {
-  "timestamp": "2026-04-25T00:53:49.264Z",
-  "total": 40,
-  "success": 0,
-  "fallback": 0,
-  "failed": 40,
+  "timestamp": "2026-04-25T16:06:01.173Z",
+  "total": 10,
+  "success": 7,
+  "fallback": 1,
+  "failed": 2,
   "results": [
     {
-      "card_id": "alliant-cashback",
-      "timestamp": "2026-04-25T00:53:25.769Z",
-      "status": "failed",
-      "source_used": null,
+      "card_id": "citi-custom-cash",
+      "timestamp": "2026-04-25T16:04:23.795Z",
+      "status": "success",
+      "source_used": "uscreditcardguide",
       "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
+      "welcome_offer": {
+        "bonus_points": 20000,
+        "spending_requirement": 500,
+        "time_period_months": 3,
+        "description": "Earn 20,000 ThankYou Points after spending $500 in purchases within the first 3 months",
+        "point_program": "Citi ThankYou Rewards",
+        "estimated_value": 200
+      },
+      "earning_rates": [
+        {
+          "category": "Top Spend Category",
+          "rate": 5,
+          "notes": "5% cash back on your top spend category (up to $500 per billing cycle)"
+        },
+        {
+          "category": "Other Purchases",
+          "rate": 1,
+          "notes": "1% cash back on all other purchases"
+        }
+      ],
       "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
+      "travel_benefits": {
+        "lounge_access": [],
+        "hotel_status": [],
+        "other_benefits": []
+      },
+      "insurance": {
+        "rental_insurance": null,
+        "trip_delay": null,
+        "purchase_protection": null,
+        "extended_warranty": null,
+        "trip_cancellation": null,
+        "return_protection": null
+      }
     },
     {
-      "card_id": "ally-spend",
-      "timestamp": "2026-04-25T00:53:26.272Z",
-      "status": "failed",
-      "source_used": null,
+      "card_id": "citi-double-cash",
+      "timestamp": "2026-04-25T16:04:35.772Z",
+      "status": "success",
+      "source_used": "uscreditcardguide",
       "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
+      "welcome_offer": {
+        "bonus_points": 200,
+        "spending_requirement": 1000,
+        "time_period_months": 3,
+        "description": "$200 cash bonus after spending $1,000 in purchases within 3 months of account opening",
+        "point_program": "Citi ThankYou Points",
+        "estimated_value": 200
+      },
+      "earning_rates": [
+        {
+          "category": "All Purchases",
+          "rate": 2,
+          "notes": "2% cash back on every purchase (1% when you buy, 1% when you pay)"
+        }
+      ],
       "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
+      "travel_benefits": {
+        "lounge_access": [],
+        "hotel_status": [],
+        "other_benefits": []
+      },
+      "insurance": {
+        "rental_insurance": null,
+        "trip_delay": null,
+        "purchase_protection": null,
+        "extended_warranty": null,
+        "trip_cancellation": null,
+        "return_protection": null
+      }
     },
     {
-      "card_id": "us-bank-visa-platinum",
-      "timestamp": "2026-04-25T00:53:26.777Z",
+      "card_id": "wells-fargo-attune",
+      "timestamp": "2026-04-25T16:04:46.572Z",
+      "status": "fallback",
+      "source_used": "uscreditcardguide",
+      "annual_fee": null,
+      "welcome_offer": {
+        "bonus_points": 100,
+        "spending_requirement": 500,
+        "time_period_months": 3,
+        "description": "开卡3个月内消费满 $500 可得 $100 cash rewards bonus"
+      },
+      "earning_rates": [
+        {
+          "category": "Self Care",
+          "rate": 4,
+          "notes": null
+        },
+        {
+          "category": "Sports",
+          "rate": 4,
+          "notes": null
+        },
+        {
+          "category": "Recreation",
+          "rate": 4,
+          "notes": null
+        }
+      ],
+      "recurring_credits": [],
+      "travel_benefits": null,
+      "insurance": null
+    },
+    {
+      "card_id": "wells-fargo-active-cash",
+      "timestamp": "2026-04-25T16:04:55.750Z",
       "status": "failed",
       "source_used": null,
       "annual_fee": null,
@@ -45,21 +129,8 @@
       "error": "All sources failed"
     },
     {
-      "card_id": "us-bank-signon-cash",
-      "timestamp": "2026-04-25T00:53:27.919Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "us-bank-cash-plus",
-      "timestamp": "2026-04-25T00:53:28.422Z",
+      "card_id": "wells-fargo-autograph",
+      "timestamp": "2026-04-25T16:04:56.508Z",
       "status": "failed",
       "source_used": null,
       "annual_fee": null,
@@ -71,459 +142,499 @@
       "error": "All sources failed"
     },
     {
-      "card_id": "us-bank-flex-perks",
-      "timestamp": "2026-04-25T00:53:29.742Z",
-      "status": "failed",
-      "source_used": null,
+      "card_id": "discover-it",
+      "timestamp": "2026-04-25T16:04:57.488Z",
+      "status": "success",
+      "source_used": "official",
       "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
+      "welcome_offer": {
+        "bonus_points": 0,
+        "spending_requirement": 0,
+        "time_period_months": 0,
+        "description": "Get an unlimited dollar-for-dollar match of all the cash back you earn at the end of your first year, automatically. There is no limit to how much we'll match.",
+        "point_program": "None",
+        "estimated_value": 0
+      },
+      "earning_rates": [
+        {
+          "category": "Rotating Categories",
+          "rate": 5,
+          "notes": "5% cash back on rotating categories each quarter"
+        },
+        {
+          "category": "Other",
+          "rate": 1,
+          "notes": "1% on all other purchases"
+        }
+      ],
       "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
+      "travel_benefits": {
+        "lounge_access": [],
+        "hotel_status": [],
+        "other_benefits": []
+      },
+      "insurance": {
+        "rental_insurance": null,
+        "trip_delay": null,
+        "purchase_protection": null,
+        "extended_warranty": null,
+        "trip_cancellation": null,
+        "return_protection": null
+      }
     },
     {
-      "card_id": "navy-federal-go-rewards",
-      "timestamp": "2026-04-25T00:53:30.246Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "All sources failed"
+      "card_id": "amex-hilton-honors-aspire",
+      "timestamp": "2026-04-25T16:05:08.872Z",
+      "status": "success",
+      "source_used": "uscreditcardguide",
+      "annual_fee": 895,
+      "welcome_offer": {
+        "bonus_points": 150000,
+        "spending_requirement": 6000,
+        "time_period_months": 6,
+        "description": "Earn up to 150,000 Membership Rewards points...",
+        "point_program": "Amex Membership Rewards",
+        "estimated_value": 1800
+      },
+      "earning_rates": [
+        {
+          "category": "Flights",
+          "rate": 5,
+          "notes": "Booked directly with airlines..."
+        },
+        {
+          "category": "Hotels",
+          "rate": 5,
+          "notes": "On prepaid hotels..."
+        },
+        {
+          "category": "Other",
+          "rate": 1,
+          "notes": null
+        }
+      ],
+      "recurring_credits": [
+        {
+          "name": "Hilton Honors Diamond Status",
+          "amount": 0,
+          "frequency": "annual",
+          "category": "hotel",
+          "description": "Complimentary Diamond status",
+          "reset_type": "cardmember_year"
+        },
+        {
+          "name": "Marriott Bonvoy Gold Elite",
+          "amount": 0,
+          "frequency": "annual",
+          "category": "hotel",
+          "description": "Complimentary Gold Elite status",
+          "reset_type": "cardmember_year"
+        },
+        {
+          "name": "Free Night Award",
+          "amount": 50000,
+          "frequency": "annual",
+          "category": "hotel",
+          "description": "Annual free night at Marriott properties",
+          "reset_type": "cardmember_year"
+        },
+        {
+          "name": "Hilton Honors Bonus Points",
+          "amount": 25000,
+          "frequency": "annual",
+          "category": "hotel",
+          "description": "Additional points on Hilton stays",
+          "reset_type": "cardmember_year"
+        },
+        {
+          "name": "Fine Hotels + Resorts",
+          "amount": 300,
+          "frequency": "annual",
+          "category": "hotel",
+          "description": "FHR credits and benefits",
+          "reset_type": "calendar_year"
+        },
+        {
+          "name": "Airline Fee Credit",
+          "amount": 250,
+          "frequency": "annual",
+          "category": "airline",
+          "description": "Up to $250/year for incidental fees",
+          "reset_type": "calendar_year"
+        },
+        {
+          "name": "Uber Cash",
+          "amount": 200,
+          "frequency": "annual",
+          "category": "ride",
+          "description": "$15/month Uber credit ($20 Dec)",
+          "reset_type": "calendar_year"
+        },
+        {
+          "name": "Saks Fifth Avenue",
+          "amount": 100,
+          "frequency": "annual",
+          "category": "shopping",
+          "description": "$50/semi-annual",
+          "reset_type": "calendar_year"
+        },
+        {
+          "name": "Walmart+",
+          "amount": 0,
+          "frequency": "annual",
+          "category": "shopping",
+          "description": "Free membership with fuel discounts",
+          "reset_type": "calendar_year"
+        },
+        {
+          "name": "Clear Security",
+          "amount": 0,
+          "frequency": "annual",
+          "category": "other",
+          "description": "Free Clear membership",
+          "reset_type": "calendar_year"
+        }
+      ],
+      "travel_benefits": {
+        "lounge_access": [
+          {
+            "name": "Centurion Lounge",
+            "type": "centurion"
+          },
+          {
+            "name": "Priority Pass",
+            "type": "priority_pass"
+          }
+        ],
+        "hotel_status": [
+          {
+            "program": "Marriott Bonvoy",
+            "tier": "Gold Elite",
+            "complimentary": true
+          },
+          {
+            "program": "Hilton Honors",
+            "tier": "Diamond Elite",
+            "complimentary": true
+          }
+        ],
+        "other_benefits": [
+          {
+            "name": "Fine Hotels + Resorts",
+            "description": "Elite benefits at select hotels"
+          },
+          {
+            "name": "The Hotel Collection",
+            "description": "Extra benefits at select hotels"
+          }
+        ]
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": true,
+        "purchase_protection": true,
+        "extended_warranty": true,
+        "trip_cancellation": null,
+        "return_protection": null
+      }
     },
     {
-      "card_id": "navy-federal-more",
-      "timestamp": "2026-04-25T00:53:31.586Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
+      "card_id": "amex-biz-platinum",
+      "timestamp": "2026-04-25T16:05:23.977Z",
+      "status": "success",
+      "source_used": "uscreditcardguide",
+      "annual_fee": 895,
+      "welcome_offer": {
+        "bonus_points": 300000,
+        "spending_requirement": 12000,
+        "time_period_months": 6,
+        "description": "Earn up to 300,000 Membership Rewards points...",
+        "point_program": "Amex Membership Rewards",
+        "estimated_value": 3600
+      },
+      "earning_rates": [
+        {
+          "category": "Flights",
+          "rate": 5,
+          "notes": "Booked directly with airlines..."
+        },
+        {
+          "category": "Hotels",
+          "rate": 5,
+          "notes": "On prepaid hotels..."
+        },
+        {
+          "category": "Other",
+          "rate": 1,
+          "notes": null
+        }
+      ],
+      "recurring_credits": [
+        {
+          "name": "Airline Fee Credit",
+          "amount": 200,
+          "frequency": "annual",
+          "category": "airline",
+          "description": "$200/year for incidental fees",
+          "reset_type": "calendar_year"
+        },
+        {
+          "name": "Fine Hotels + Resorts Credit",
+          "amount": 600,
+          "frequency": "annual",
+          "category": "hotel",
+          "description": "$600 FHR Credit",
+          "reset_type": "calendar_year"
+        },
+        {
+          "name": "Uber Cash",
+          "amount": 200,
+          "frequency": "annual",
+          "category": "ride",
+          "description": "$15/month Uber credit",
+          "reset_type": "calendar_year"
+        },
+        {
+          "name": "Saks Fifth Avenue",
+          "amount": 100,
+          "frequency": "annual",
+          "category": "shopping",
+          "description": "$50/semi-annual",
+          "reset_type": "calendar_year"
+        },
+        {
+          "name": "Free Night Award",
+          "amount": 50000,
+          "frequency": "annual",
+          "category": "hotel",
+          "description": "Annual free night at Marriott properties",
+          "reset_type": "cardmember_year"
+        },
+        {
+          "name": "Walmart+",
+          "amount": 0,
+          "frequency": "annual",
+          "category": "shopping",
+          "description": "Free membership with fuel discounts",
+          "reset_type": "calendar_year"
+        },
+        {
+          "name": "Clear Security",
+          "amount": 0,
+          "frequency": "annual",
+          "category": "other",
+          "description": "Free Clear membership",
+          "reset_type": "calendar_year"
+        }
+      ],
+      "travel_benefits": {
+        "lounge_access": [
+          {
+            "name": "Centurion Lounge",
+            "type": "centurion"
+          },
+          {
+            "name": "Priority Pass",
+            "type": "priority_pass"
+          }
+        ],
+        "hotel_status": [
+          {
+            "program": "Marriott Bonvoy",
+            "tier": "Gold Elite",
+            "complimentary": true
+          }
+        ],
+        "other_benefits": [
+          {
+            "name": "Fine Hotels + Resorts",
+            "description": "FHR program access"
+          },
+          {
+            "name": "The Hotel Collection",
+            "description": "THC program access"
+          },
+          {
+            "name": "35% Rebate on Business/First Class",
+            "description": "Get 35% of points back when redeeming for business/first class flights (must select one airline)"
+          }
+        ]
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": true,
+        "purchase_protection": true,
+        "extended_warranty": true,
+        "trip_cancellation": null,
+        "return_protection": null
+      }
     },
     {
-      "card_id": "navy-federal-platinum",
-      "timestamp": "2026-04-25T00:53:32.090Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
+      "card_id": "amex-biz-gold",
+      "timestamp": "2026-04-25T16:05:37.071Z",
+      "status": "success",
+      "source_used": "uscreditcardguide",
+      "annual_fee": 895,
+      "welcome_offer": {
+        "bonus_points": 175000,
+        "spending_requirement": 12000,
+        "time_period_months": 6,
+        "description": "Earn up to 175,000 Membership Rewards points...",
+        "point_program": "Amex Membership Rewards",
+        "estimated_value": 2100
+      },
+      "earning_rates": [
+        {
+          "category": "Flights",
+          "rate": 5,
+          "notes": "Booked directly with airlines..."
+        },
+        {
+          "category": "Hotels",
+          "rate": 5,
+          "notes": "On prepaid hotels..."
+        },
+        {
+          "category": "Other",
+          "rate": 1,
+          "notes": null
+        }
+      ],
+      "recurring_credits": [
+        {
+          "name": "Uber Cash",
+          "amount": 200,
+          "frequency": "annual",
+          "category": "ride",
+          "description": "$15/month Uber credit",
+          "reset_type": "calendar_year"
+        },
+        {
+          "name": "Saks Fifth Avenue",
+          "amount": 100,
+          "frequency": "annual",
+          "category": "shopping",
+          "description": "$50/semi-annual",
+          "reset_type": "calendar_year"
+        },
+        {
+          "name": "Free Night Award",
+          "amount": 50000,
+          "frequency": "annual",
+          "category": "hotel",
+          "description": "Annual free night at Marriott properties",
+          "reset_type": "cardmember_year"
+        },
+        {
+          "name": "Walmart+",
+          "amount": 0,
+          "frequency": "annual",
+          "category": "shopping",
+          "description": "Free membership with fuel discounts",
+          "reset_type": "calendar_year"
+        },
+        {
+          "name": "Clear Security",
+          "amount": 0,
+          "frequency": "annual",
+          "category": "other",
+          "description": "Free Clear membership",
+          "reset_type": "calendar_year"
+        }
+      ],
+      "travel_benefits": {
+        "lounge_access": [
+          {
+            "name": "Centurion Lounge",
+            "type": "centurion"
+          },
+          {
+            "name": "Priority Pass",
+            "type": "priority_pass"
+          }
+        ],
+        "hotel_status": [
+          {
+            "program": "Marriott Bonvoy",
+            "tier": "Gold Elite",
+            "complimentary": true
+          }
+        ],
+        "other_benefits": [
+          {
+            "name": "Fine Hotels + Resorts",
+            "description": "..."
+          }
+        ]
+      },
+      "insurance": {
+        "rental_insurance": "Secondary",
+        "trip_delay": true,
+        "purchase_protection": true,
+        "extended_warranty": true,
+        "trip_cancellation": null,
+        "return_protection": null
+      }
     },
     {
-      "card_id": "penfed-gold-visa",
-      "timestamp": "2026-04-25T00:53:32.594Z",
-      "status": "failed",
-      "source_used": null,
+      "card_id": "amex-bce",
+      "timestamp": "2026-04-25T16:05:48.843Z",
+      "status": "success",
+      "source_used": "uscreditcardguide",
       "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "All sources failed"
-    },
-    {
-      "card_id": "penfed-platinum-rewards",
-      "timestamp": "2026-04-25T00:53:33.226Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "All sources failed"
-    },
-    {
-      "card_id": "penfed-commander",
-      "timestamp": "2026-04-25T00:53:33.838Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "penfed-power-cash",
-      "timestamp": "2026-04-25T00:53:34.342Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "amex-edward-jones",
-      "timestamp": "2026-04-25T00:53:34.846Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "amex-american-airlines",
-      "timestamp": "2026-04-25T00:53:35.350Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "amex-mercury",
-      "timestamp": "2026-04-25T00:53:35.855Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "amex-first-kyr",
-      "timestamp": "2026-04-25T00:53:36.358Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "amex-amex-setup",
-      "timestamp": "2026-04-25T00:53:36.863Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "synchrony-paypal-cashback",
-      "timestamp": "2026-04-25T00:53:37.367Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "synchrony-amazon",
-      "timestamp": "2026-04-25T00:53:37.870Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "synchrony-home-apple",
-      "timestamp": "2026-04-25T00:53:38.374Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "synchrony-paypal-extra",
-      "timestamp": "2026-04-25T00:53:38.878Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "synchrony-walmart",
-      "timestamp": "2026-04-25T00:53:39.382Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "synchrony-gap",
-      "timestamp": "2026-04-25T00:53:39.887Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "synchrony-lowes",
-      "timestamp": "2026-04-25T00:53:40.389Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "synchrony-home-depot",
-      "timestamp": "2026-04-25T00:53:40.893Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "synchrony-amazon-store",
-      "timestamp": "2026-04-25T00:53:41.397Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "All sources failed"
-    },
-    {
-      "card_id": "synchrony-kroger",
-      "timestamp": "2026-04-25T00:53:42.715Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "synchrony-td",
-      "timestamp": "2026-04-25T00:53:43.219Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "bilt-mastercard",
-      "timestamp": "2026-04-25T00:53:43.724Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "ubs-mastercard",
-      "timestamp": "2026-04-25T00:53:44.228Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": " MLB-card",
-      "timestamp": "2026-04-25T00:53:44.732Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "fidelity-rewards",
-      "timestamp": "2026-04-25T00:53:45.235Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "schwab-investor",
-      "timestamp": "2026-04-25T00:53:45.738Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "prosperity",
-      "timestamp": "2026-04-25T00:53:46.242Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "first-horizon",
-      "timestamp": "2026-04-25T00:53:46.745Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "tab-bank",
-      "timestamp": "2026-04-25T00:53:47.249Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "crypto-card",
-      "timestamp": "2026-04-25T00:53:47.752Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "sofi-card",
-      "timestamp": "2026-04-25T00:53:48.256Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
-    },
-    {
-      "card_id": "wework-card",
-      "timestamp": "2026-04-25T00:53:48.760Z",
-      "status": "failed",
-      "source_used": null,
-      "annual_fee": null,
-      "welcome_offer": null,
-      "earning_rates": [],
-      "recurring_credits": [],
-      "travel_benefits": null,
-      "insurance": null,
-      "error": "Card file not found"
+      "welcome_offer": {
+        "bonus_points": 200,
+        "spending_requirement": 1000,
+        "time_period_months": 6,
+        "description": "$200 cash back bonus",
+        "point_program": "Cash Back",
+        "estimated_value": 200
+      },
+      "earning_rates": [
+        {
+          "category": "Gas",
+          "rate": 3,
+          "notes": "At U.S. gas stations"
+        },
+        {
+          "category": "Groceries",
+          "rate": 3,
+          "notes": "At U.S. supermarkets"
+        },
+        {
+          "category": "American Express Travel",
+          "rate": 2,
+          "notes": null
+        },
+        {
+          "category": "Other",
+          "rate": 1,
+          "notes": null
+        }
+      ],
+      "recurring_credits": [
+        {
+          "name": "Disney Bundle",
+          "amount": 84,
+          "frequency": "annual",
+          "category": "streaming",
+          "description": "$84 annual Disney streaming credit",
+          "reset_type": "calendar_year"
+        }
+      ],
+      "travel_benefits": {
+        "lounge_access": [],
+        "hotel_status": [],
+        "other_benefits": []
+      },
+      "insurance": {
+        "rental_insurance": null,
+        "trip_delay": null,
+        "purchase_protection": null,
+        "extended_warranty": null,
+        "trip_cancellation": null,
+        "return_protection": null
+      }
     }
   ]
 }

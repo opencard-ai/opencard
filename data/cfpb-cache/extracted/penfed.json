@@ -4,7 +4,8 @@
   "canonical_name": null,
   "detected_issuer": null,
   "fields": {
-    "annual_fee": 2,
+    "annual_fee": 14,
+    "late_fee": 20,
     "penalty_apr": 17.99
   }
 }

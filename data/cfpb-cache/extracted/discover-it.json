@@ -1,9 +1,10 @@
 {
   "card_id": "discover-it",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "This Pricing Schedule is part of the Cardmember Agreement",
+  "canonical_name": "This Pricing chedule is part of the Cardmember Agreement",
   "detected_issuer": "capital",
   "fields": {
-    "cash_advance_fee_pct": 5.0
+    "annual_fee": 18,
+    "cash_advance_fee_pct": 29.24
   }
 }

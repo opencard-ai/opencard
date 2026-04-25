@@ -7,57 +7,46 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": null,
-    "description": "Unlimited Cashback Match™ at end of first year",
-    "estimated_value": null,
-    "spending_requirement": null,
-    "time_period_months": null
+    "bonus_points": 0,
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "description": "Get an unlimited dollar-for-dollar match of all the cash back you earn at the end of your first year, automatically. There is no limit to how much we'll match.",
+    "point_program": "None",
+    "estimated_value": 0
   },
   "earning_rates": [
     {
-      "category": "Rotating 5% Categories",
+      "category": "Rotating Categories",
       "rate": 5,
-      "notes": "5% cash back on rotating bonus categories on up to $1,500 in combined quarterly purchases (requires activation each quarter). 2026 Q1: Grocery stores, wholesale clubs, select streaming services. Q2: Restaurants, home improvement stores."
+      "notes": "5% cash back on rotating categories each quarter"
     },
     {
-      "category": "Default",
+      "category": "Other",
       "rate": 1,
-      "notes": "Earn 1% cash back on all other purchases."
+      "notes": "1% on all other purchases"
     }
   ],
   "annual_credits": [],
   "travel_benefits": {
+    "lounge_access": [],
     "hotel_status": [],
-    "other_benefits": [
-      {
-        "name": "Cashback Match",
-        "description": "Discover matches ALL cash back earned at the end of your first year — effectively doubling your earnings."
-      },
-      {
-        "name": "Free FICO Score",
-        "description": "Free FICO credit score on your monthly statement."
-      },
-      {
-        "name": "No Annual Fee Forever",
-        "description": "No annual fee; all rewards are pure upside."
-      }
-    ]
+    "other_benefits": []
   },
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
   },
   "insurance": {
-    "rental_insurance": "No",
-    "trip_delay": false,
-    "purchase_protection": false,
-    "extended_warranty": false,
+    "rental_insurance": null,
+    "trip_delay": null,
+    "purchase_protection": null,
+    "extended_warranty": null,
     "trip_cancellation": null,
     "return_protection": null
   },
   "tags": [
     "cash-back",
-    "no-annual-fee"
+    "rotating-categories"
   ],
   "sources": [
     {
@@ -69,17 +58,22 @@
       "notes": "Bankrate - Guide to the 2026 Discover Cash Back Calendar, Dec 2025."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.981Z",
-  "hotel_program": null,
+  "last_updated": "2026-04-25T16:04:57.488Z",
+  "hotel_program": {
+    "program": null,
+    "tier": null,
+    "elite_night_credits": 0,
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
   "application_rules": {
-    "rules": [],
-    "notes": null
+    "rules": []
   },
   "recurring_credits": [],
-  "last_verified": "2026-04-16T13:41:49.981Z",
+  "last_verified": "2026-04-25T16:04:57.488Z",
   "next_review": "2026-07-15T13:41:49.981000+00:00",
   "cash_advance_fee_flat": 10,
-  "cash_advance_fee_pct": 5.0,
+  "cash_advance_fee_pct": 5,
   "apr_cash_advances": "29.24",
   "cfpb_source": "Q3_2025",
   "cfpb_verified": true

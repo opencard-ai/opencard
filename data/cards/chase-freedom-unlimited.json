@@ -16,19 +16,24 @@
   },
   "earning_rates": [
     {
-      "category": "All",
-      "rate": 1.5,
-      "notes": "on all purchases"
+      "category": "Travel purchased through Chase Travel",
+      "rate": 5,
+      "notes": null
     },
     {
       "category": "Dining",
       "rate": 3,
-      "notes": "including restaurants and drugstores"
+      "notes": null
     },
     {
-      "category": "Travel",
-      "rate": 5,
-      "notes": "purchased through Chase Travel"
+      "category": "Drugstores",
+      "rate": 3,
+      "notes": null
+    },
+    {
+      "category": "Other",
+      "rate": 1.5,
+      "notes": "on all purchases"
     }
   ],
   "travel_benefits": {
@@ -61,7 +66,7 @@
       "notes": "NerdWallet review Mar 2026."
     }
   ],
-  "last_updated": "2026-04-24T17:27:59.994652",
+  "last_updated": "2026-04-25T16:02:48.752Z",
   "hotel_program": null,
   "application_rules": {
     "rules": []
@@ -75,6 +80,6 @@
     }
   ],
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-04-24T17:27:59.994652",
+  "last_verified": "2026-04-25T16:02:48.752Z",
   "next_review": "2026-07-23T17:27:59.994652"
 }

@@ -1,9 +1,11 @@
 {
   "card_id": "amex-platinum",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "Platinum Card from American Express Exclusively for Morgan Stanley",
+  "canonical_name": "Platinum Card\u00ae from American Express Exclusively for organ tanley",
   "detected_issuer": "amex",
   "fields": {
-    "annual_fee": 895
+    "annual_fee": 12,
+    "late_fee": 40,
+    "penalty_apr": 26.74
   }
 }

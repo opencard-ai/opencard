@@ -6,14 +6,7 @@
   "annual_fee": 0,
   "foreign_transaction_fee": 3,
   "credit_required": "Good",
-  "welcome_offer": {
-    "bonus_points": 0,
-    "spending_requirement": null,
-    "time_period_months": null,
-    "description": null,
-    "point_program": null,
-    "estimated_value": null
-  },
+  "welcome_offer": null,
   "earning_rates": [
     {
       "category": "Bonus Categories",
@@ -38,7 +31,7 @@
     {
       "category": "Other",
       "rate": 1,
-      "notes": null
+      "notes": "All other purchases"
     }
   ],
   "travel_benefits": {
@@ -60,16 +53,9 @@
   },
   "tags": [
     "cash-back",
-    "rotating-categories"
+    "no-af"
   ],
-  "recurring_credits": [
-    {
-      "name": "DoorDash Promo",
-      "amount": 40,
-      "frequency": "quarterly",
-      "category": "dining"
-    }
-  ],
+  "recurring_credits": [],
   "sources": [
     {
       "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
@@ -80,23 +66,17 @@
       "notes": "Bankrate review Mar 2026."
     }
   ],
-  "last_updated": "2026-04-24T17:27:59.994652",
-  "hotel_program": {
-    "program": null,
-    "tier": null,
-    "elite_night_credits": 0,
-    "fhr_eligible": false,
-    "thc_eligible": false
-  },
+  "last_updated": "2026-04-25T16:02:37.873Z",
+  "hotel_program": null,
   "application_rules": {
     "rules": []
   },
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-04-24",
+  "last_verified": "2026-04-25T16:02:37.873Z",
   "next_review": "2026-07-23T17:27:59.994652",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 5,
-  "cash_advance_fee_pct": 5.0,
+  "cash_advance_fee_pct": 5,
   "penalty_apr": "29.99",
   "cfpb_verified": true
 }

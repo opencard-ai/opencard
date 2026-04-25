@@ -1,7 +1,12 @@
 {
   "card_id": "delta-skymiles-blue-amex",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "Delta SkyMiles Blue Card",
+  "canonical_name": "Delta kyiles\u00ae Blue Card",
   "detected_issuer": "amex",
-  "fields": {}
+  "fields": {
+    "annual_fee": 12,
+    "cash_advance_fee_pct": 21.99,
+    "late_fee": 40,
+    "penalty_apr": 26.74
+  }
 }

@@ -3,5 +3,11 @@
   "source": "cfpb_ccad_v2",
   "canonical_name": "Rates and Fees Table",
   "detected_issuer": "amex",
-  "fields": {}
+  "fields": {
+    "annual_fee": 12,
+    "foreign_transaction_fee": 2.7,
+    "cash_advance_fee_pct": 21.99,
+    "late_fee": 40,
+    "penalty_apr": 26.74
+  }
 }

@@ -3,5 +3,8 @@
   "source": "cfpb_ccad_v2",
   "canonical_name": "Credit Card Agreement for Consumer Cards in Capital One, N.A.",
   "detected_issuer": "capital",
-  "fields": {}
+  "fields": {
+    "annual_fee": 0,
+    "cash_advance_fee_pct": 25.74
+  }
 }

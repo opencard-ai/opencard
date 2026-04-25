@@ -3,14 +3,14 @@
   "name": "The Platinum Card\u00ae from American Express",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 895,
+  "annual_fee": 12,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
+    "bonus_points": 175000,
     "spending_requirement": 12000,
     "time_period_months": 6,
-    "bonus_points": 175000,
-    "description": "Earn up to 175,000 Membership Rewards points after spending $12,000 in eligible purchases in the first 6 months.",
+    "description": "Earn up to 175,000 Membership Rewards points",
     "point_program": "Amex Membership Rewards",
     "estimated_value": 2100
   },
@@ -18,12 +18,12 @@
     {
       "category": "Flights",
       "rate": 5,
-      "notes": "Booked directly with airlines or through American Express Travel, on up to $500,000 per calendar year."
+      "notes": "Booked directly with airlines"
     },
     {
       "category": "Hotels",
       "rate": 5,
-      "notes": "On prepaid hotels booked through American Express Travel."
+      "notes": "Prepaid hotels"
     },
     {
       "category": "Other",
@@ -32,29 +32,27 @@
     }
   ],
   "travel_benefits": {
-    "lounge_access": {
-      "centurion": true,
-      "priority_pass": true,
-      "other": "Delta Sky Club (10 visits/yr), Escape, Plaza Premium, Airspace, Lufthansa, Universal."
-    },
+    "lounge_access": [
+      {
+        "name": "Centurion Lounge",
+        "type": "centurion"
+      },
+      {
+        "name": "Priority Pass",
+        "type": "priority_pass"
+      }
+    ],
     "hotel_status": [
       {
         "program": "Marriott Bonvoy",
-        "tier": "Gold Elite"
-      },
-      {
-        "program": "Hilton Honors",
-        "tier": "Gold"
+        "tier": "Gold Elite",
+        "complimentary": true
       }
     ],
     "other_benefits": [
       {
         "name": "Fine Hotels + Resorts",
-        "description": "Average $550 value in perks like 4pm late checkout, breakfast, room upgrade."
-      },
-      {
-        "name": "Global Dining Access by Resy",
-        "description": "Special access to sought-after restaurants."
+        "description": "FHR program benefits"
       }
     ]
   },
@@ -93,107 +91,61 @@
       "name": "creditcards.com"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.950Z",
-  "hotel_program": null,
+  "last_updated": "2026-04-25T16:00:22.036Z",
+  "hotel_program": {
+    "program": "Marriott Bonvoy",
+    "tier": "Gold Elite",
+    "elite_night_credits": 15,
+    "fhr_eligible": true,
+    "thc_eligible": true
+  },
   "application_rules": {
-    "rules": [],
-    "notes": null
+    "rules": [
+      {
+        "rule": "5/24 rule",
+        "description": "Cannot approve if 5+ new cards in 24 months"
+      }
+    ]
   },
   "recurring_credits": [
     {
       "name": "Uber Cash",
-      "amount": 15,
-      "frequency": "monthly",
-      "category": "ride",
-      "description": "$15/month Uber Cash for rides or Uber Eats in the U.S.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Digital Entertainment Credit",
-      "amount": 25,
-      "frequency": "monthly",
-      "category": "streaming",
-      "description": "$25/month for Disney+, Disney+ bundle, ESPN+, Hulu, NYT, Paramount+, Peacock, WSJ, YouTube Premium, YouTube TV.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Hotel Credit",
-      "amount": 300,
-      "frequency": "semi_annual",
-      "category": "hotel",
-      "description": "Up to $300 semi-annually for prepaid Fine Hotels + Resorts or The Hotel Collection bookings via Amex Travel.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "CLEAR+ Credit",
-      "amount": 209,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Up to $209/year statement credit for CLEAR+ membership.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "lululemon Credit",
-      "amount": 75,
-      "frequency": "quarterly",
-      "category": "fitness",
-      "description": "Up to $75/quarter at U.S. lululemon retail stores and lululemon.com.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Walmart+ Credit",
-      "amount": 12.95,
-      "frequency": "monthly",
-      "category": "shopping",
-      "description": "Statement credit for one monthly Walmart+ membership.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Airline Fee Credit",
       "amount": 200,
       "frequency": "annual",
-      "category": "airline",
-      "description": "Up to $200/year for checked bags, priority pass, lounges with one selected airline.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Resy Credit",
-      "amount": 100,
-      "frequency": "quarterly",
-      "category": "dining",
-      "description": "$100/quarter for Resy restaurant bookings.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Global Entry / PreCheck Credit",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Up to $100 every 4 years for Global Entry or TSA PreCheck.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Saks Fifth Avenue Credit",
-      "amount": 50,
-      "frequency": "semi_annual",
-      "category": "shopping",
-      "description": "$50/semi-annual at Saks Fifth Avenue.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Equinox Credit",
-      "amount": 15,
-      "frequency": "monthly",
-      "category": "fitness",
-      "description": "$15/month for Equinox+ membership.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Uber One Credit",
-      "amount": 120,
-      "frequency": "annual",
       "category": "ride",
-      "description": "Up to $120/year statement credit for Uber One auto-renewing membership.",
+      "description": "$15/month Uber credit",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Saks Fifth Avenue",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "shopping",
+      "description": "$50/semi-annual",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Free Night Award",
+      "amount": 50000,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "Annual free night at Marriott properties",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Walmart+",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "shopping",
+      "description": "Free membership with fuel discounts",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Clear Security",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "other",
+      "description": "Free Clear membership",
       "reset_type": "calendar_year"
     }
   ],
@@ -205,10 +157,10 @@
   },
   "last_scraped": "2026-04-24T07:34:19.364Z",
   "cfpb_source": "Q3_2025",
-  "last_verified": "2026-04-24",
+  "last_verified": "2026-04-25T16:00:22.036Z",
   "late_fee": 40,
   "cash_advance_fee_flat": 10,
-  "cash_advance_fee_pct": 5.0,
-  "penalty_apr": "29.99",
+  "cash_advance_fee_pct": 5,
+  "penalty_apr": 26.74,
   "cfpb_verified": true
 }

@@ -1,7 +1,9 @@
 {
   "card_id": "petal-2",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "Effective as of March 11, 2025",
+  "canonical_name": "Effective as of arch 11, 2025",
   "detected_issuer": null,
-  "fields": {}
+  "fields": {
+    "late_fee": 2
+  }
 }

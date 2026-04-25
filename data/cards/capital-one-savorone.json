@@ -2,33 +2,26 @@
   "card_id": "capital-one-savorone",
   "name": "Capital One SavorOne Cash Rewards Credit Card",
   "issuer": "Capital One",
-  "network": "visa",
-  "annual_fee": 39,
+  "network": "mastercard",
+  "annual_fee": 29,
   "foreign_transaction_fee": 0,
-  "credit_required": "Good to Excellent",
-  "welcome_offer": {
-    "spending_requirement": 500,
-    "time_period_months": 3,
-    "bonus_points": null,
-    "description": "Earn a one-time $200 cash bonus once you spend $500 on purchases within the first 3 months from account opening",
-    "free_nights": null,
-    "point_program": "Capital One Cash Rewards"
-  },
+  "credit_required": "Good",
+  "welcome_offer": null,
   "earning_rates": [
     {
       "category": "Dining",
       "rate": 3,
-      "notes": "Earn 3% cash back on dining and entertainment"
+      "notes": "Including grocery stores"
     },
     {
-      "category": "Grocery Stores",
+      "category": "Entertainment",
       "rate": 3,
-      "notes": "Earn 3% cash back at grocery stores"
+      "notes": null
     },
     {
       "category": "Other",
       "rate": 1,
-      "notes": "Earn 1% cash back on all other purchases"
+      "notes": null
     }
   ],
   "annual_credits": [],
@@ -51,9 +44,7 @@
   },
   "tags": [
     "cash-back",
-    "no-af",
-    "dining",
-    "groceries"
+    "no-af"
   ],
   "recurring_credits": [],
   "sources": [
@@ -70,12 +61,14 @@
       "notes": "Capital One SavorOne overview confirming earning categories and $200 welcome bonus"
     }
   ],
-  "last_updated": "2026-04-24T17:27:59.994652",
+  "last_updated": "2026-04-25T16:03:25.291Z",
   "hotel_program": null,
   "application_rules": {
     "rules": []
   },
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-04-24T17:27:59.994652",
-  "next_review": "2026-07-23T17:27:59.994652"
+  "last_verified": "2026-04-25T16:03:25.291Z",
+  "next_review": "2026-07-23T17:27:59.994652",
+  "cash_advance_fee_pct": 29.49,
+  "cfpb_source": "Q3_2025"
 }

@@ -3,5 +3,8 @@
   "source": "cfpb_ccad_v2",
   "canonical_name": "It provides cost, fee, and other important information about your account.",
   "detected_issuer": "amex",
-  "fields": {}
+  "fields": {
+    "cash_advance_fee_pct": 2.0,
+    "late_fee": 20
+  }
 }

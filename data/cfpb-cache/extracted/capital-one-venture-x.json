@@ -1,7 +1,10 @@
 {
   "card_id": "capital-one-venture-x",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "Credit Card Agreement for VISA Signature and World Mastercard in Capital One, N.A.",
+  "canonical_name": "Credit Card Agreement for VIA ignature\u00ae and World astercard\u00ae in Capital One, N.A.",
   "detected_issuer": "capital",
-  "fields": {}
+  "fields": {
+    "annual_fee": 0,
+    "cash_advance_fee_pct": 18.99
+  }
 }

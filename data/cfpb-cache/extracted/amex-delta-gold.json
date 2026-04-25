@@ -1,9 +1,12 @@
 {
-  "card_id": "amex-delta-gold-biz",
+  "card_id": "amex-delta-gold",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "Delta SkyMiles Gold Card",
+  "canonical_name": "Delta kyiles\u00ae Gold Card",
   "detected_issuer": "amex",
   "fields": {
-    "annual_fee": 150
+    "annual_fee": 12,
+    "cash_advance_fee_pct": 21.99,
+    "late_fee": 40,
+    "penalty_apr": 26.74
   }
 }

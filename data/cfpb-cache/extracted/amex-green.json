@@ -1,9 +1,11 @@
 {
   "card_id": "amex-green",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "American Express Green Card",
+  "canonical_name": "American Express Green Card\u00ae",
   "detected_issuer": "amex",
   "fields": {
-    "annual_fee": 150
+    "annual_fee": 12,
+    "late_fee": 40,
+    "penalty_apr": 26.74
   }
 }

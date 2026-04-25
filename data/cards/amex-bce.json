@@ -1,35 +1,34 @@
 {
   "card_id": "amex-bce",
-  "name": "Blue Cash Everyday® Card",
+  "name": "Blue Cash Everyday\u00ae Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 0,
+  "annual_fee": 12,
   "foreign_transaction_fee": 2.7,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 2000,
+    "bonus_points": 200,
+    "spending_requirement": 1000,
     "time_period_months": 6,
-    "bonus_points": 150,
-    "description": "Earn $150 Cash Back after you spend $2,000 in purchases on your new Card within the first 6 months of Card Membership.",
-    "free_nights": null,
+    "description": "$200 cash back bonus",
     "point_program": "Cash Back",
-    "estimated_value": 150
+    "estimated_value": 200
   },
   "earning_rates": [
     {
-      "category": "Groceries",
-      "rate": 3,
-      "notes": "At U.S. supermarkets, on up to $6,000 per year in purchases (then 1%)."
-    },
-    {
-      "category": "Online Retail",
-      "rate": 3,
-      "notes": "On U.S. online retail purchases, on up to $6,000 per year in purchases (then 1%)."
-    },
-    {
       "category": "Gas",
       "rate": 3,
-      "notes": "At U.S. gas stations, on up to $6,000 per year in purchases (then 1%)."
+      "notes": "At U.S. gas stations"
+    },
+    {
+      "category": "Groceries",
+      "rate": 3,
+      "notes": "At U.S. supermarkets"
+    },
+    {
+      "category": "American Express Travel",
+      "rate": 2,
+      "notes": null
     },
     {
       "category": "Other",
@@ -38,11 +37,7 @@
     }
   ],
   "travel_benefits": {
-    "lounge_access": {
-      "centurion": false,
-      "priority_pass": false,
-      "other": "None"
-    },
+    "lounge_access": [],
     "hotel_status": [],
     "other_benefits": []
   },
@@ -51,16 +46,18 @@
     "thc_eligible": false
   },
   "insurance": {
-    "rental_insurance": "Secondary",
-    "trip_delay": false,
-    "purchase_protection": true,
-    "extended_warranty": false,
+    "rental_insurance": null,
+    "trip_delay": null,
+    "purchase_protection": null,
+    "extended_warranty": null,
     "trip_cancellation": null,
     "return_protection": null
   },
   "tags": [
+    "no-af",
     "cash-back",
-    "no-annual-fee"
+    "groceries",
+    "gas"
   ],
   "sources": [
     {
@@ -68,36 +65,31 @@
       "notes": "Official Amex Page"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.938Z",
-  "hotel_program": null,
+  "last_updated": "2026-04-25T16:05:48.843Z",
+  "hotel_program": {
+    "program": null,
+    "tier": null,
+    "elite_night_credits": 0,
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
   "application_rules": {
-    "rules": [],
-    "notes": null
+    "rules": []
   },
   "recurring_credits": [
     {
-      "name": "Disney+ Streaming Credit",
-      "amount": 7,
-      "frequency": "monthly",
-      "category": "streaming",
-      "description": "$7/month Disney+ streaming credit"
-    },
-    {
-      "name": "Home Chef Credit",
-      "amount": 15,
-      "frequency": "monthly",
-      "category": "dining",
-      "description": "$15/month Home Chef credit"
-    },
-    {
-      "name": "Disney Streaming Credit",
+      "name": "Disney Bundle",
       "amount": 84,
       "frequency": "annual",
       "category": "streaming",
-      "description": "$7 monthly credit at Disney+, Hulu, or ESPN+.",
+      "description": "$84 annual Disney streaming credit",
       "reset_type": "calendar_year"
     }
   ],
-  "last_verified": "2026-04-16T13:41:49.938Z",
-  "next_review": "2026-07-15T13:41:49.938000+00:00"
+  "last_verified": "2026-04-25T16:05:48.843Z",
+  "next_review": "2026-07-15T13:41:49.938000+00:00",
+  "cash_advance_fee_pct": 21.99,
+  "late_fee": 40,
+  "penalty_apr": 26.74,
+  "cfpb_source": "Q3_2025"
 }

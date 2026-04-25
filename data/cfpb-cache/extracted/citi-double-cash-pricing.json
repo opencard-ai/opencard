@@ -1,7 +1,12 @@
 {
   "card_id": "citi-double-cash-pricing",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "Fact Sheet",
-  "detected_issuer": "citi",
-  "fields": {}
+  "canonical_name": "Fact heet",
+  "detected_issuer": null,
+  "fields": {
+    "annual_fee": 17,
+    "foreign_transaction_fee": 3.0,
+    "cash_advance_fee_pct": 29.24,
+    "penalty_apr": 29.99
+  }
 }

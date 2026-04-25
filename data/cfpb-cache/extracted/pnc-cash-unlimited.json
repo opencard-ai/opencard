@@ -4,7 +4,6 @@
   "canonical_name": null,
   "detected_issuer": null,
   "fields": {
-    "annual_fee": 0,
-    "penalty_apr": 25.74
+    "cash_advance_fee_pct": 21.74
   }
 }

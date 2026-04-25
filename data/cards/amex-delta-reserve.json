@@ -1,9 +1,9 @@
 {
   "card_id": "amex-delta-reserve",
-  "name": "Delta SkyMiles® Reserve American Express Card",
+  "name": "Delta SkyMiles\u00ae Reserve American Express Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 650,
+  "annual_fee": 12,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
@@ -129,6 +129,8 @@
   "next_review": "2026-07-23T17:26:36.116494",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
-  "cash_advance_fee_pct": 5.0,
-  "cfpb_verified": true
+  "cash_advance_fee_pct": 21.99,
+  "cfpb_verified": true,
+  "late_fee": 40,
+  "penalty_apr": 26.74
 }

@@ -5,20 +5,20 @@
   "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
-  "credit_required": "Excellent",
+  "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 0,
-    "spending_requirement": null,
-    "time_period_months": null,
-    "description": null,
-    "point_program": null,
-    "estimated_value": 0
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "description": "$200 cash bonus",
+    "point_program": "None",
+    "estimated_value": 200
   },
   "earning_rates": [
     {
-      "category": "All Purchases",
+      "category": "All purchases",
       "rate": 1.5,
-      "notes": "Unlimited 1.5% cash back on every purchase"
+      "notes": "Unlimited cash back on every purchase"
     }
   ],
   "annual_credits": [],
@@ -41,7 +41,8 @@
   },
   "tags": [
     "cash-back",
-    "no-af"
+    "no-af",
+    "flat-rate"
   ],
   "sources": [
     {
@@ -57,17 +58,18 @@
       "notes": "WalletHub card overview confirming $200 bonus and no annual fee"
     }
   ],
-  "last_updated": "2026-04-24T17:27:59.994652",
+  "last_updated": "2026-04-25T16:03:46.801Z",
   "hotel_program": null,
   "application_rules": {
     "rules": []
   },
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-04-24",
+  "last_verified": "2026-04-25T16:03:46.801Z",
   "next_review": "2026-07-23T17:27:59.994652",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
-  "cash_advance_fee_pct": 3.0,
+  "cash_advance_fee_pct": 3,
   "apr_cash_advances": "25.74",
-  "cfpb_verified": true
+  "cfpb_verified": true,
+  "recurring_credits": []
 }

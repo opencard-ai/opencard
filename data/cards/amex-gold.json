@@ -3,37 +3,32 @@
   "name": "American Express\u00ae Gold Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 95,
+  "annual_fee": 295,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 6000,
-    "time_period_months": 6,
     "bonus_points": 100000,
-    "description": "Earn up to 100,000 Membership Rewards points after spending $6,000 in eligible purchases in the first 6 months.",
+    "spending_requirement": null,
+    "time_period_months": null,
+    "description": "Earn up to 100,000 Membership Rewards points",
     "point_program": "Amex Membership Rewards",
-    "estimated_value": 1200
+    "estimated_value": 2000
   },
   "earning_rates": [
     {
-      "category": "Restaurants",
+      "category": "Dining",
       "rate": 4,
-      "notes": "Worldwide, on up to $50,000 in purchases per calendar year."
+      "notes": "At restaurants worldwide"
     },
     {
       "category": "Groceries",
       "rate": 4,
-      "notes": "At U.S. supermarkets, on up to $25,000 in purchases per calendar year."
+      "notes": "At U.S. supermarkets"
     },
     {
       "category": "Flights",
       "rate": 3,
-      "notes": "Booked directly with airlines or on AmexTravel.com."
-    },
-    {
-      "category": "Hotels",
-      "rate": 2,
-      "notes": "On prepaid hotels booked through AmexTravel.com."
+      "notes": "Booked directly with airlines"
     },
     {
       "category": "Other",
@@ -42,16 +37,32 @@
     }
   ],
   "travel_benefits": {
-    "lounge_access": {
-      "centurion": false,
-      "priority_pass": false,
-      "other": "None"
-    },
-    "hotel_status": [],
+    "lounge_access": [
+      {
+        "name": "Centurion Lounge",
+        "type": "centurion"
+      },
+      {
+        "name": "Priority Pass",
+        "type": "priority_pass"
+      }
+    ],
+    "hotel_status": [
+      {
+        "program": "Marriott Bonvoy",
+        "tier": "Gold Elite",
+        "complimentary": true
+      },
+      {
+        "program": "Hilton Honors",
+        "tier": "Gold",
+        "complimentary": true
+      }
+    ],
     "other_benefits": [
       {
-        "name": "The Hotel Collection",
-        "description": "$100 credit on eligible charges when booking 2+ nights via Amex Travel."
+        "name": "Fine Hotels + Resorts",
+        "description": "FHR program benefits"
       }
     ]
   },
@@ -65,14 +76,14 @@
     "purchase_protection": true,
     "extended_warranty": true,
     "trip_cancellation": null,
-    "return_protection": null,
-    "baggage_delay": null,
-    "lost_luggage": null,
-    "cell_phone": null,
-    "travel_accident": null
+    "return_protection": null
   },
   "tags": [
-    "transferable"
+    "dining",
+    "grocery",
+    "premium",
+    "transferable",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -84,44 +95,33 @@
       "notes": "Insurance Details"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.946Z",
-  "hotel_program": null,
+  "last_updated": "2026-04-25T16:00:32.707Z",
+  "hotel_program": {
+    "program": "Marriott Bonvoy",
+    "tier": "Gold Elite",
+    "elite_night_credits": 0,
+    "fhr_eligible": true,
+    "thc_eligible": false
+  },
   "application_rules": {
-    "rules": [],
-    "notes": null
+    "rules": []
   },
   "recurring_credits": [
     {
       "name": "Uber Cash",
-      "amount": 10,
-      "frequency": "monthly",
+      "amount": 200,
+      "frequency": "annual",
       "category": "ride",
-      "description": "$10 Uber Cash each month to use on orders and rides in the U.S.",
-      "reset_type": "cardmember_year"
+      "description": "$15/month Uber credit",
+      "reset_type": "calendar_year"
     },
     {
-      "name": "Dunkin' Credit",
-      "amount": 7,
-      "frequency": "monthly",
-      "category": "dining",
-      "description": "Up to $7 in monthly statement credits at U.S. Dunkin' locations",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Resy Credit",
-      "amount": 50,
-      "frequency": "semi_annual",
-      "category": "dining",
-      "description": "Up to $50 in statement credits semi-annually at U.S. Resy restaurants",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Dining Credit (Grubhub)",
-      "amount": 10,
-      "frequency": "monthly",
-      "category": "dining",
-      "description": "Up to $10 in monthly statement credits at Grubhub, The Cheesecake Factory, Goldbelly, Wine.com, and Five Guys",
-      "reset_type": "cardmember_year"
+      "name": "Saks Fifth Avenue",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "shopping",
+      "description": "$50 semi-annual credit",
+      "reset_type": "calendar_year"
     }
   ],
   "welcome_bonus": {
@@ -131,15 +131,15 @@
     "last_updated": "2026-04-24"
   },
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-04-24",
+  "last_verified": "2026-04-25T16:00:32.707Z",
   "next_review": "2026-07-15T13:41:49.946000+00:00",
   "cfpb_source": "Q3_2025",
   "late_fee": 40,
   "cash_advance_fee_flat": 10,
-  "cash_advance_fee_pct": 5.0,
+  "cash_advance_fee_pct": 21.99,
   "apr_purchases_min": "12.74",
   "apr_purchases_max": "21.74",
   "apr_cash_advances": "21.99",
-  "penalty_apr": "26.74",
+  "penalty_apr": 26.74,
   "cfpb_verified": true
 }

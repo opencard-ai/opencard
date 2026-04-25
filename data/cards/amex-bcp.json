@@ -1,9 +1,9 @@
 {
   "card_id": "amex-bcp",
-  "name": "Blue Cash Preferred® Card",
+  "name": "Blue Cash Preferred\u00ae Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 95,
+  "annual_fee": 12,
   "foreign_transaction_fee": 2.7,
   "credit_required": "Good",
   "welcome_offer": {
@@ -96,5 +96,9 @@
     }
   ],
   "last_verified": "2026-04-16T13:41:49.939Z",
-  "next_review": "2026-07-15T13:41:49.939000+00:00"
+  "next_review": "2026-07-15T13:41:49.939000+00:00",
+  "cash_advance_fee_pct": 21.99,
+  "late_fee": 40,
+  "penalty_apr": 26.74,
+  "cfpb_source": "Q3_2025"
 }

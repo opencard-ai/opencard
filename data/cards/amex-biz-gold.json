@@ -3,40 +3,57 @@
   "name": "American Express Business Gold Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 375,
+  "annual_fee": 895,
   "foreign_transaction_fee": 0,
-  "credit_required": "Good to Excellent",
+  "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 15000,
-    "time_period_months": 3,
-    "bonus_points": 200000,
-    "description": "As High As 200,000 Membership Rewards points after spending $15,000 in eligible purchases on your new Card in your first 3 months of Membership. Welcome offers vary and you may not be eligible for an offer.",
-    "free_nights": null,
-    "point_program": "American Express Membership Rewards",
-    "estimated_value": 2400
+    "bonus_points": 175000,
+    "spending_requirement": 12000,
+    "time_period_months": 6,
+    "description": "Earn up to 175,000 Membership Rewards points...",
+    "point_program": "Amex Membership Rewards",
+    "estimated_value": 2100
   },
   "earning_rates": [
     {
-      "category": "Top 2 eligible business categories",
-      "rate": 4,
-      "notes": "First $150,000 in combined purchases from top 2 categories each calendar year, then 1X. Categories include: advertising (online, TV, radio at U.S. media providers), U.S. electronic goods/software/cloud providers, U.S. gas stations, U.S. restaurants (including takeout/delivery), transit (rideshare, trains, taxis, ferries, parking, buses, tolls, subways), and U.S. wireless phone service providers"
+      "category": "Flights",
+      "rate": 5,
+      "notes": "Booked directly with airlines..."
     },
     {
-      "category": "Flights and prepaid hotels booked via Amex Travel",
-      "rate": 3,
-      "notes": null
+      "category": "Hotels",
+      "rate": 5,
+      "notes": "On prepaid hotels..."
     },
     {
-      "category": "All other purchases",
+      "category": "Other",
       "rate": 1,
-      "notes": "After $150,000 annual cap on 4X categories"
+      "notes": null
     }
   ],
   "travel_benefits": {
-    "hotel_status": [],
+    "lounge_access": [
+      {
+        "name": "Centurion Lounge",
+        "type": "centurion"
+      },
+      {
+        "name": "Priority Pass",
+        "type": "priority_pass"
+      }
+    ],
+    "hotel_status": [
+      {
+        "program": "Marriott Bonvoy",
+        "tier": "Gold Elite",
+        "complimentary": true
+      }
+    ],
     "other_benefits": [
-      "Secondary rental car coverage (in U.S. and abroad when paying for rental with card and declining CDW)",
-      "Access to Amex Offers"
+      {
+        "name": "Fine Hotels + Resorts",
+        "description": "..."
+      }
     ]
   },
   "fhr_thc": {
@@ -45,42 +62,56 @@
   },
   "insurance": {
     "rental_insurance": "Secondary",
-    "trip_delay": false,
-    "purchase_protection": false,
-    "extended_warranty": false,
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true,
     "trip_cancellation": null,
-    "return_protection": null,
-    "baggage_delay": null,
-    "lost_luggage": null,
-    "cell_phone": null,
-    "travel_accident": null
+    "return_protection": null
   },
   "tags": [
-    "business"
+    "lounge-access",
+    "premium",
+    "transferable"
   ],
   "recurring_credits": [
     {
-      "name": "Flexible Business Credit",
-      "amount": 240,
+      "name": "Uber Cash",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "ride",
+      "description": "$15/month Uber credit",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Saks Fifth Avenue",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "shopping",
+      "description": "$50/semi-annual",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Free Night Award",
+      "amount": 50000,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "Annual free night at Marriott properties",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Walmart+",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "shopping",
+      "description": "Free membership with fuel discounts",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Clear Security",
+      "amount": 0,
       "frequency": "annual",
       "category": "other",
-      "description": "Up to $20 in statement credits each month for eligible U.S. purchases at FedEx, Grubhub, and Office Supply Stores. Enrollment required.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Walmart+ Membership Credit",
-      "amount": 155,
-      "frequency": "annual",
-      "category": "shopping",
-      "description": "Up to $12.95 statement credit each month after paying for a Walmart+ membership. Up to $155.40 annually.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "FedEx, Grubhub, Office Supply Stores Credit",
-      "amount": 240,
-      "frequency": "annual",
-      "category": "shopping",
-      "description": "Up to $20 in statement credits monthly after using the Business Gold Card for eligible U.S. purchases at FedEx, Grubhub, and Office Supply Stores. Enrollment required.",
+      "description": "Free Clear membership",
       "reset_type": "calendar_year"
     }
   ],
@@ -98,11 +129,21 @@
       "notes": "Amex official card page with earning categories and statement credits"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.942Z",
-  "hotel_program": null,
+  "last_updated": "2026-04-25T16:05:37.071Z",
+  "hotel_program": {
+    "program": "Marriott Bonvoy",
+    "tier": "Gold Elite",
+    "elite_night_credits": 15,
+    "fhr_eligible": true,
+    "thc_eligible": true
+  },
   "application_rules": {
-    "rules": [],
-    "notes": null
+    "rules": [
+      {
+        "rule": "5/24 rule",
+        "description": "Cannot approve if 5+ new cards in 24 months"
+      }
+    ]
   },
   "welcome_bonus": {
     "amount": 200000,
@@ -111,6 +152,6 @@
     "last_updated": "2026-04-24"
   },
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-04-16T13:41:49.942Z",
+  "last_verified": "2026-04-25T16:05:37.071Z",
   "next_review": "2026-07-15T13:41:49.942000+00:00"
 }

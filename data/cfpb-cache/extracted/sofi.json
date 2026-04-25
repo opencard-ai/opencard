@@ -3,5 +3,7 @@
   "source": "cfpb_ccad_v2",
   "canonical_name": "This Truth in Lending Act Disclosure is part of your Cardholder Agreement and contains",
   "detected_issuer": null,
-  "fields": {}
+  "fields": {
+    "late_fee": 41
+  }
 }

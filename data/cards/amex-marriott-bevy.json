@@ -1,62 +1,63 @@
 {
   "card_id": "amex-marriott-bevy",
-  "name": "Marriott Bonvoy Bevy® American Express® Card",
+  "name": "Marriott Bonvoy Bevy\u00ae American Express\u00ae Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 250,
+  "annual_fee": 12,
   "foreign_transaction_fee": 0,
-  "credit_required": "Good",
+  "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 5000,
-    "time_period_months": 6,
     "bonus_points": 175000,
-    "description": "Earn 175,000 Marriott Bonvoy bonus points after you use your new Card to make $5,000 in purchases within the first 6 months of Card Membership.",
-    "point_program": "Marriott Bonvoy",
-    "estimated_value": 1100
+    "spending_requirement": 12000,
+    "time_period_months": 6,
+    "description": "Earn up to 175,000 Membership Rewards points",
+    "point_program": "Amex Membership Rewards",
+    "estimated_value": 2100
   },
   "earning_rates": [
     {
-      "category": "Marriott hotels",
-      "rate": 6,
-      "notes": "6x per $1 on eligible purchases at hotels participating in Marriott Bonvoy"
+      "category": "Flights",
+      "rate": 5,
+      "notes": "Earn 5x on flights booked directly with airlines"
     },
     {
-      "category": "Restaurants worldwide",
-      "rate": 4,
-      "notes": "First $15,000 in combined restaurant and U.S. supermarket purchases per calendar year; then 2x"
-    },
-    {
-      "category": "U.S. Supermarkets",
-      "rate": 4,
-      "notes": "First $15,000 in combined restaurant and U.S. supermarket purchases per calendar year; then 2x"
+      "category": "Hotels",
+      "rate": 5,
+      "notes": "Earn 5x on prepaid hotels booked with Marriott"
     },
     {
       "category": "Other",
-      "rate": 2,
-      "notes": "All other eligible purchases"
+      "rate": 1,
+      "notes": "Earn 1x on all other purchases"
     }
   ],
   "travel_benefits": {
-    "lounge_access": {
-      "centurion": false,
-      "priority_pass": false,
-      "other": "None"
-    },
+    "lounge_access": [
+      {
+        "name": "Centurion Lounge",
+        "type": "centurion"
+      },
+      {
+        "name": "Priority Pass",
+        "type": "priority_pass"
+      }
+    ],
     "hotel_status": [
       {
         "program": "Marriott Bonvoy",
         "tier": "Gold Elite",
-        "complimentary": true,
-        "method": "Automatic for as long as card is open"
+        "complimentary": true
       }
     ],
     "other_benefits": [
-      "No Foreign Transaction Fees",
-      "1,000 Bonus Points per Stay",
-      "15 Elite Night Credits",
-      "Free Night Award (Spending-Based)",
-      "15 Elite Night Credits per year (counts toward Bonvoy lifetime status)",
-      "Premium In-Room Internet"
+      {
+        "name": "Fine Hotels + Resorts",
+        "description": "FHR benefits including daily credit, early check-in, room upgrades when available"
+      },
+      {
+        "name": "The Hotel Collection",
+        "description": "THC benefits including $100 credit and room upgrades"
+      }
     ]
   },
   "fhr_thc": {
@@ -65,14 +66,19 @@
   },
   "insurance": {
     "rental_insurance": "Secondary",
-    "trip_delay": false,
+    "trip_delay": true,
     "purchase_protection": true,
     "extended_warranty": true,
-    "trip_cancellation": null,
-    "return_protection": null
+    "trip_cancellation": false,
+    "return_protection": false
   },
   "tags": [
-    "hotel"
+    "lounge-access",
+    "premium",
+    "transferable",
+    "hotel",
+    "travel",
+    "marriott"
   ],
   "sources": [
     {
@@ -85,18 +91,72 @@
       "url": "https://thepointsguy.com/news/how-good-are-best-ever-marriott-amex-offers/"
     }
   ],
-  "last_updated": "2026-04-24T17:26:46.246653",
-  "hotel_program": null,
-  "application_rules": {
-    "rules": [],
-    "notes": null
+  "last_updated": "2026-04-25T16:01:17.266Z",
+  "hotel_program": {
+    "program": "Marriott Bonvoy",
+    "tier": "Gold Elite",
+    "elite_night_credits": 15,
+    "fhr_eligible": true,
+    "thc_eligible": true
   },
-  "recurring_credits": [],
+  "application_rules": {
+    "rules": [
+      {
+        "rule": "5/24 rule",
+        "description": "Cannot be approved if 5 or more new credit cards opened in the past 24 months"
+      }
+    ]
+  },
+  "recurring_credits": [
+    {
+      "name": "Uber Cash",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "ride",
+      "description": "$15/month Uber credit ($180 annual) + $20 December bonus",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Saks Fifth Avenue",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "shopping",
+      "description": "$50 semi-annual credit",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Free Night Award",
+      "amount": 50000,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "Annual free night certificate (up to 50,000 points)",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Walmart+",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "shopping",
+      "description": "Complimentary Walmart+ membership",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Clear Security",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "other",
+      "description": "Complimentary Clear security membership",
+      "reset_type": "calendar_year"
+    }
+  ],
   "last_scraped": "2026-04-24T17:26:46.246653",
-  "last_verified": "2026-04-24",
+  "last_verified": "2026-04-25T16:01:17.266Z",
   "next_review": "2026-07-23T17:26:46.246653",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
-  "cash_advance_fee_pct": 5.0,
-  "cfpb_verified": true
+  "cash_advance_fee_pct": 21.99,
+  "cfpb_verified": true,
+  "card_name": "Marriott Bonvoy Bevy\u00ae American Express\u00ae Card",
+  "late_fee": 40,
+  "penalty_apr": 26.74
 }
