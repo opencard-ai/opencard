@@ -1805,13 +1805,15 @@
   "chase-ink-biz-cash": {
     "issuer": "chase",
     "sources": {
-      "official": "https://www.chase.com/ink-business-cash"
+      "official": "https://creditcards.chase.com/business-credit-cards/ink/business-cash",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ink-cash-credit-card/"
     }
   },
   "chase-ink-biz-preferred": {
     "issuer": "chase",
     "sources": {
-      "official": "https://www.chase.com/ink-business-preferred"
+      "official": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ink-preferred-credit-card/"
     }
   },
   "chase-ink-biz-premier": {
@@ -1823,7 +1825,8 @@
   "chase-ink-biz-unlimited": {
     "issuer": "chase",
     "sources": {
-      "official": "https://www.chase.com/ink-business-unlimited"
+      "official": "https://creditcards.chase.com/business-credit-cards/ink/business-unlimited",
+      "uscreditcardguide": "https://www.uscreditcardguide.com/chase-ink-unlimited-credit-card/"
     }
   },
   "chase-ritz-carlton": {
