@@ -1,0 +1,11 @@
+{
+  "card_id": "chase-ink-preferred",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-25T06:23:27.446596",
+  "content_hash": "ee874f611a92def990f653653d78887ccfcb03b4b51298347116338ca56859c1",
+  "fields": {
+    "cash_advance_fee_flat": 5,
+    "cash_advance_fee_pct": 5.0,
+    "penalty_apr": "29.99"
+  }
+}

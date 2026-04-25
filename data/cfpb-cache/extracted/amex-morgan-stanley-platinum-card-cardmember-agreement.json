@@ -1,0 +1,17 @@
+{
+  "card_id": "amex-morgan-stanley-platinum-card-cardmember-agreement",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-25T06:23:32.296701",
+  "content_hash": "c2ef645c3583749437e05375575f2591efc0651784a182b7527965ce1fe4d709",
+  "fields": {
+    "annual_fee": 895,
+    "foreign_transaction_fee": 0,
+    "late_fee": 40,
+    "cash_advance_fee_flat": 10,
+    "cash_advance_fee_pct": 5.0,
+    "apr_purchases_min": "12.74",
+    "apr_purchases_max": "21.74",
+    "apr_cash_advances": "21.99",
+    "penalty_apr": "26.74"
+  }
+}

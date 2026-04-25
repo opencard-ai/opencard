@@ -1,0 +1,9 @@
+{
+  "card_id": "navy-federal",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-25T06:23:31.577397",
+  "content_hash": "d149c1f46b1ae9433e50245b8379bc112ba98119e032790a1d3e4bd5bb7e11a6",
+  "fields": {
+    "penalty_apr": "18.00"
+  }
+}

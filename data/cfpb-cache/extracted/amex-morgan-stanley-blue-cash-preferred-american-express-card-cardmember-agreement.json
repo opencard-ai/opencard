@@ -1,0 +1,12 @@
+{
+  "card_id": "amex-morgan-stanley-blue-cash-preferred-american-express-card-cardmember-agreement",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-25T06:23:30.926757",
+  "content_hash": "eeef77be7ab6e16a52e8e7203f6b3ea0510b24ac249586cc3969c6bd61c1f2b9",
+  "fields": {
+    "cash_advance_fee_flat": 5,
+    "cash_advance_fee_pct": 3.0,
+    "apr_cash_advances": "21.99",
+    "penalty_apr": "26.74"
+  }
+}

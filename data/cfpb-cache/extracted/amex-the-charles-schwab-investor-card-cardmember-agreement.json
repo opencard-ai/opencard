@@ -1,0 +1,10 @@
+{
+  "card_id": "amex-the-charles-schwab-investor-card-cardmember-agreement",
+  "source": "cfpb_ccad",
+  "fetched_at": "2026-04-25T06:23:28.356493",
+  "content_hash": "9542ed0c729c8da5ba1b0bd73b6db0156aa9190535b6b4041be8195be0e567a6",
+  "fields": {
+    "cash_advance_fee_flat": 10,
+    "cash_advance_fee_pct": 5.0
+  }
+}
