@@ -58,12 +58,14 @@ ISSER: [issuer 名稱]
 - **負責人**: KIRO
 - **輸入**: issuer + 卡片資料陣列
 - **輸出**: 在 `data/cards/` 建立標準化 JSON，自動補 `last_updated`
-- **狀態**: ⬜ 待開發
+- **狀態**: ✅ 已完成（2026-04-25）
+- **使用**: `node scripts/batch-add-cards.js <清單.json>`
 
 ### Diff 追蹤腳本 `scripts/check-new-cards.js`
 - **負責人**: Jennie
-- **功能**: 每週拿 NerdWallet 熱門卡列表對比 `data/cards/`，輸出新增/停發/變動
-- **狀態**: ⬜ 待開發
+- **功能**: 拿 NerdWallet 熱門卡列表對比 `data/cards/`，輸出新增/停發/變動
+- **狀態**: ✅ 已完成（2026-04-25）
+- **使用**: `node scripts/check-new-cards.js`
 
 ### Issuer Group UI（樹狀檢視）
 - **負責人**: KIRO
