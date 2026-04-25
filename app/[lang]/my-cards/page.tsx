@@ -267,7 +267,7 @@ export default function MyCardsPage({
       
       // Fetch full card data for all cards
       try {
-        const cardRes = await fetch('/api/cards?full=1');
+        const cardRes = await fetch('/api/cards?summary=1');
         if (cardRes.ok) {
           const data = await cardRes.json(); // Response is [{issuer: "Amex", cards: [...]}, ...]
           const map: Record<string, Card> = {};
