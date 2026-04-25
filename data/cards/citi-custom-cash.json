@@ -2,28 +2,28 @@
   "card_id": "citi-custom-cash",
   "name": "Citi Custom Cash® Card",
   "issuer": "Citi",
-  "network": "visa",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 3,
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 20000,
-    "spending_requirement": 750,
+    "spending_requirement": 500,
     "time_period_months": 3,
-    "description": "Earn $200 cash back after spending $750 in first 3 months",
-    "point_program": "Citi ThankYou Points",
+    "description": "Earn 20,000 ThankYou Points after spending $500 in purchases within the first 3 months",
+    "point_program": "Citi ThankYou Rewards",
     "estimated_value": 200
   },
   "earning_rates": [
     {
-      "category": "Custom Category",
+      "category": "Top Spend Category",
       "rate": 5,
-      "notes": "5% cash back on up to $500 spent each billing cycle in your highest eligible category"
+      "notes": "5% cash back on your top spend category (up to $500 per billing cycle)"
     },
     {
-      "category": "Other",
+      "category": "Other Purchases",
       "rate": 1,
-      "notes": "1% on all other purchases"
+      "notes": "1% cash back on all other purchases"
     }
   ],
   "annual_credits": [],
@@ -47,7 +47,8 @@
   "tags": [
     "no-af",
     "cash-back",
-    "flexible-category"
+    "thankyou-points",
+    "transferable"
   ],
   "sources": [
     {
@@ -57,19 +58,19 @@
       "url": "https://www.bankrate.com/credit-cards/reviews/citi-custom-cash-card/"
     }
   ],
-  "last_updated": "2026-04-24T17:27:59.994652",
-  "hotel_program": null,
+  "last_updated": "2026-04-25T16:04:23.795Z",
+  "hotel_program": {},
   "application_rules": {
     "rules": [
       {
-        "rule": "First approval",
-        "description": "Citi may approve applicants who have not yet established credit history with Citi"
+        "rule": "Citi 8/65 rule",
+        "description": "Cannot be approved if 2+ cards approved in 65 days or 5+ cards in 8 years"
       }
     ]
   },
   "recurring_credits": [],
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-04-24T17:27:59.994652",
+  "last_verified": "2026-04-25T16:04:23.795Z",
   "next_review": "2026-07-23T17:27:59.994652",
   "apr_cash_advances": "29.24",
   "penalty_apr": "29.99",

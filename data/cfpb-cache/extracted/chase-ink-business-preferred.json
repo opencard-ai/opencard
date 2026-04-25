@@ -1,7 +1,12 @@
 {
   "card_id": "chase-ink-business-preferred",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "CARDMEMBER AGREEMENT RATES AND FEES TABLE",
+  "canonical_name": "CARDEBER AGREEENT RATE AND FEE TABLE",
   "detected_issuer": null,
-  "fields": {}
+  "fields": {
+    "annual_fee": 18,
+    "cash_advance_fee_pct": 28.99,
+    "late_fee": 39,
+    "penalty_apr": 29.99
+  }
 }

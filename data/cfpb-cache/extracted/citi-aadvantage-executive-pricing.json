@@ -1,9 +1,11 @@
 {
   "card_id": "citi-aadvantage-executive-pricing",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "Fact Sheet",
-  "detected_issuer": "citi",
+  "canonical_name": "Fact heet",
+  "detected_issuer": null,
   "fields": {
-    "annual_fee": 595
+    "annual_fee": 19,
+    "cash_advance_fee_pct": 29.24,
+    "penalty_apr": 29.99
   }
 }

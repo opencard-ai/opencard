@@ -1,7 +1,10 @@
 {
-  "card_id": "boa-unlimited-cash-rewards",
+  "card_id": "boa-premium-rewards",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "Bank of America Platinum Mastercard,",
+  "canonical_name": "Bank of America\u00ae Platinum astercard\u00ae,",
   "detected_issuer": "boa",
-  "fields": {}
+  "fields": {
+    "foreign_transaction_fee": 0.0,
+    "penalty_apr": 29.99
+  }
 }

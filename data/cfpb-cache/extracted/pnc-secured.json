@@ -4,8 +4,7 @@
   "canonical_name": "minimum payments by the applicable due date.",
   "detected_issuer": null,
   "fields": {
-    "annual_fee": 36,
-    "cash_advance_fee_pct": 4.0,
-    "penalty_apr": 25.74
+    "foreign_transaction_fee": 3.0,
+    "cash_advance_fee_pct": 21.74
   }
 }

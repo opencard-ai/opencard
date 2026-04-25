@@ -1,7 +1,11 @@
 {
   "card_id": "sync-american-eagle",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "SYNCHRONY BANK",
+  "canonical_name": "YNCHRONY BANK",
   "detected_issuer": null,
-  "fields": {}
+  "fields": {
+    "annual_fee": 26,
+    "foreign_transaction_fee": 3.0,
+    "cash_advance_fee_pct": 27.49
+  }
 }

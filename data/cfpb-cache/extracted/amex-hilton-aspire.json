@@ -4,6 +4,9 @@
   "canonical_name": "Hilton Honors American Express Aspire Card",
   "detected_issuer": "amex",
   "fields": {
-    "annual_fee": 550
+    "annual_fee": 12,
+    "cash_advance_fee_pct": 21.99,
+    "late_fee": 40,
+    "penalty_apr": 26.74
   }
 }

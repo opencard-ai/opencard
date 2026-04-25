@@ -3,5 +3,8 @@
   "source": "cfpb_ccad_v2",
   "canonical_name": "Credit Card Accounts",
   "detected_issuer": "amex",
-  "fields": {}
+  "fields": {
+    "foreign_transaction_fee": 3.0,
+    "late_fee": 41
+  }
 }

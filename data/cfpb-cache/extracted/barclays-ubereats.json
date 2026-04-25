@@ -4,6 +4,9 @@
   "canonical_name": "Cardmember Agreement will be the agreement sent to you when your account is first opened.",
   "detected_issuer": null,
   "fields": {
-    "annual_fee": 0
+    "annual_fee": 17,
+    "foreign_transaction_fee": 0.0,
+    "cash_advance_fee_pct": 29.99,
+    "late_fee": 41
   }
 }

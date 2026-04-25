@@ -3,55 +3,76 @@
   "name": "Capital One Venture X Rewards Credit Card",
   "issuer": "Capital One",
   "network": "visa",
-  "annual_fee": 0,
+  "annual_fee": 395,
   "foreign_transaction_fee": 0,
-  "credit_required": "Good",
+  "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 4,
-    "time_period_months": 3,
     "bonus_points": 75000,
-    "description": "75,000 miles",
-    "point_program": "Capital One",
-    "estimated_value": 900
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "description": "Earn 75,000 bonus miles once you spend $4,000 on purchases within the first 3 months",
+    "point_program": "Capital One Miles",
+    "estimated_value": 1500
   },
   "earning_rates": [
     {
-      "category": "All Purchases",
+      "category": "Travel",
+      "rate": 10,
+      "notes": "Earn 10X miles on hotels and rental cars booked through Capital One Travel"
+    },
+    {
+      "category": "Flights",
+      "rate": 5,
+      "notes": "Earn 5X miles on flights booked through Capital One Travel"
+    },
+    {
+      "category": "Dining",
       "rate": 2,
-      "notes": "unlimited"
+      "notes": "Earn 2X miles on dining"
     },
     {
-      "category": "Capital One Travel",
-      "rate": 5,
-      "notes": "hotels, vacation rentals, rental cars"
-    },
-    {
-      "category": "Capital One Entertainment",
-      "rate": 5,
-      "notes": ""
+      "category": "Other",
+      "rate": 1,
+      "notes": null
     }
   ],
-  "travel_benefits": {},
+  "travel_benefits": {
+    "lounge_access": [
+      {
+        "name": "Priority Pass",
+        "type": "priority_pass"
+      },
+      {
+        "name": "Capital One Lounges",
+        "type": "capital_one_lounge"
+      }
+    ],
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Visa Infinite Benefits",
+        "description": "包括旅行取消保险、旅行延迟保险、行李延误保险等"
+      }
+    ]
+  },
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
   },
   "insurance": {
     "rental_insurance": "Primary",
-    "trip_delay": false,
-    "purchase_protection": false,
-    "extended_warranty": false,
-    "trip_cancellation": null,
-    "return_protection": null,
-    "baggage_delay": null,
-    "lost_luggage": null,
-    "cell_phone": null,
-    "travel_accident": null
+    "trip_delay": true,
+    "purchase_protection": true,
+    "extended_warranty": true,
+    "trip_cancellation": true,
+    "return_protection": true
   },
   "tags": [
-    "lounge-access",
     "premium",
-    "transferable"
+    "travel",
+    "lounge-access",
+    "transferable",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -61,44 +82,43 @@
       "url": "https://thepointsguy.com/credit-cards/capital-one-venture-x/"
     }
   ],
-  "last_updated": "2026-04-24T17:26:36.116494",
+  "last_updated": "2026-04-25T16:03:02.011Z",
   "hotel_program": null,
   "application_rules": {
-    "rules": [],
-    "notes": null
+    "rules": []
   },
   "recurring_credits": [
     {
-      "name": "Annual Travel Credit",
+      "name": "Capital One Travel Credits",
       "amount": 300,
       "frequency": "annual",
       "category": "travel",
-      "description": "$300 annual credit for bookings through Capital One Travel.",
+      "description": "Up to $300 annual credit for bookings through Capital One Travel",
       "reset_type": "calendar_year"
     },
     {
-      "name": "10,000 Anniversary Miles",
+      "name": "Global Entry or TSA PreCheck",
       "amount": 100,
-      "frequency": "annual",
+      "frequency": "every_4_years",
       "category": "travel",
-      "description": "Awarded every year on cardholder anniversary",
+      "description": "Credit for Global Entry or TSA PreCheck application fee",
       "reset_type": "calendar_year"
     },
     {
-      "name": "Global Entry or TSA PreCheck Credit",
-      "amount": 100,
+      "name": "Priority Pass",
+      "amount": 0,
       "frequency": "annual",
       "category": "travel",
-      "description": "Up to $100 every 4 years",
-      "reset_type": "calendar_year"
+      "description": "Priority Pass Select membership for airport lounge access",
+      "reset_type": "cardmember_year"
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-04-24",
+  "last_verified": "2026-04-25T16:03:02.011Z",
   "next_review": "2026-07-23T17:26:36.116494",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 3,
-  "cash_advance_fee_pct": 3.0,
+  "cash_advance_fee_pct": 3,
   "apr_cash_advances": "18.99",
   "cfpb_verified": true
 }

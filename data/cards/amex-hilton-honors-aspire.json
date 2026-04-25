@@ -3,63 +3,66 @@
   "name": "Hilton Honors American Express Aspire Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 550,
+  "annual_fee": 12,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
+    "bonus_points": 150000,
     "spending_requirement": 6000,
     "time_period_months": 6,
-    "bonus_points": 175000,
-    "description": "Earn 175,000 Hilton Honors Bonus Points after spending $6,000 on eligible purchases within the first 6 months of card membership. Offer ends 4/15/26.",
-    "point_program": "Hilton Honors",
-    "estimated_value": 700
+    "description": "Earn up to 150,000 Membership Rewards points...",
+    "point_program": "Amex Membership Rewards",
+    "estimated_value": 1800
   },
   "earning_rates": [
     {
-      "category": "hotel_hilton",
-      "rate": 14,
-      "notes": "Hilton Honors Bonus Points per dollar at hotels and resorts within the Hilton portfolio"
+      "category": "Flights",
+      "rate": 5,
+      "notes": "Booked directly with airlines..."
     },
     {
-      "category": "airline",
-      "rate": 7,
-      "notes": "Flights booked directly with the airline or through Amex Travel"
+      "category": "Hotels",
+      "rate": 5,
+      "notes": "On prepaid hotels..."
     },
     {
-      "category": "restaurant",
-      "rate": 7,
-      "notes": "U.S. restaurants, including takeout and delivery"
-    },
-    {
-      "category": "car_rental",
-      "rate": 7,
-      "notes": "Car rentals booked directly with select car rental companies"
-    },
-    {
-      "category": "default",
-      "rate": 3,
-      "notes": "All other eligible purchases"
+      "category": "Other",
+      "rate": 1,
+      "notes": null
     }
   ],
   "travel_benefits": {
-    "lounge_access": {
-      "centurion": false,
-      "priority_pass": false,
-      "other": ""
-    },
+    "lounge_access": [
+      {
+        "name": "Centurion Lounge",
+        "type": "centurion"
+      },
+      {
+        "name": "Priority Pass",
+        "type": "priority_pass"
+      }
+    ],
     "hotel_status": [
       {
+        "program": "Marriott Bonvoy",
+        "tier": "Gold Elite",
+        "complimentary": true
+      },
+      {
         "program": "Hilton Honors",
-        "tier": "Diamond",
-        "complimentary": true,
-        "method": "Automatic for as long as card is open"
+        "tier": "Diamond Elite",
+        "complimentary": true
       }
     ],
     "other_benefits": [
-      "Fifth Night Free on reward stays (Silver status or higher)",
-      "No Foreign Transaction Fees",
-      "National Car Rental Executive status",
-      "Cell Phone Protection ($50 deductible, up to $800 per claim)"
+      {
+        "name": "Fine Hotels + Resorts",
+        "description": "Elite benefits at select hotels"
+      },
+      {
+        "name": "The Hotel Collection",
+        "description": "Extra benefits at select hotels"
+      }
     ]
   },
   "fhr_thc": {
@@ -72,14 +75,14 @@
     "purchase_protection": true,
     "extended_warranty": true,
     "trip_cancellation": null,
-    "return_protection": null,
-    "baggage_delay": null,
-    "lost_luggage": null,
-    "cell_phone": null,
-    "travel_accident": null
+    "return_protection": null
   },
   "tags": [
-    "hotel"
+    "lounge-access",
+    "premium",
+    "hotel",
+    "airline",
+    "transferable"
   ],
   "sources": [
     {
@@ -89,43 +92,111 @@
       "url": "https://www.hilton.com/en/hilton-honors/credit-cards/"
     }
   ],
-  "last_updated": "2026-04-24T17:26:36.116494",
-  "hotel_program": null,
+  "last_updated": "2026-04-25T16:05:08.872Z",
+  "hotel_program": {
+    "program": "Marriott Bonvoy",
+    "tier": "Gold Elite",
+    "elite_night_credits": 15,
+    "fhr_eligible": true,
+    "thc_eligible": true
+  },
   "application_rules": {
-    "rules": [],
-    "notes": null
+    "rules": [
+      {
+        "rule": "5/24 rule",
+        "description": "Cannot approve if 5+ new cards in 24 months"
+      }
+    ]
   },
   "recurring_credits": [
     {
-      "name": "Hilton Resort Credit",
-      "amount": 200,
-      "frequency": "semi_annual",
-      "category": "travel",
-      "description": "$200 credit per stay at Hilton resorts ($400/year).",
+      "name": "Hilton Honors Diamond Status",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "Complimentary Diamond status",
       "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Marriott Bonvoy Gold Elite",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "Complimentary Gold Elite status",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Free Night Award",
+      "amount": 50000,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "Annual free night at Marriott properties",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Hilton Honors Bonus Points",
+      "amount": 25000,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "Additional points on Hilton stays",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Fine Hotels + Resorts",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "FHR credits and benefits",
+      "reset_type": "calendar_year"
     },
     {
       "name": "Airline Fee Credit",
-      "amount": 200,
+      "amount": 250,
       "frequency": "annual",
-      "category": "travel",
-      "description": "$200 annual ($50/quarter) for airline fees (checked bags, seat selection).",
-      "reset_type": "cardmember_year"
+      "category": "airline",
+      "description": "Up to $250/year for incidental fees",
+      "reset_type": "calendar_year"
     },
     {
-      "name": "CLEAR Plus Credit",
-      "amount": 189,
+      "name": "Uber Cash",
+      "amount": 200,
       "frequency": "annual",
-      "category": "travel",
-      "description": "$189/year for CLEAR Plus membership.",
-      "reset_type": "cardmember_year"
+      "category": "ride",
+      "description": "$15/month Uber credit ($20 Dec)",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Saks Fifth Avenue",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "shopping",
+      "description": "$50/semi-annual",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Walmart+",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "shopping",
+      "description": "Free membership with fuel discounts",
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "Clear Security",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "other",
+      "description": "Free Clear membership",
+      "reset_type": "calendar_year"
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-04-24",
+  "last_verified": "2026-04-25T16:05:08.872Z",
   "next_review": "2026-07-23T17:26:36.116494",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
-  "cash_advance_fee_pct": 5.0,
-  "cfpb_verified": true
+  "cash_advance_fee_pct": 21.99,
+  "cfpb_verified": true,
+  "late_fee": 40,
+  "penalty_apr": 26.74
 }

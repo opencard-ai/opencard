@@ -1,9 +1,12 @@
 {
   "card_id": "amex-optima-card-from-american-express-cardmember-agreement",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "Optima Credit Card",
+  "canonical_name": "Optima\u00ae Credit Card",
   "detected_issuer": "amex",
   "fields": {
-    "annual_fee": 49
+    "annual_fee": 14,
+    "foreign_transaction_fee": 2.7,
+    "late_fee": 40,
+    "penalty_apr": 26.74
   }
 }

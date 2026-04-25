@@ -3,5 +3,7 @@
   "source": "cfpb_ccad_v2",
   "canonical_name": "Your Apple Card Rates",
   "detected_issuer": null,
-  "fields": {}
+  "fields": {
+    "annual_fee": 18
+  }
 }

@@ -3,66 +3,58 @@
   "name": "Chase Sapphire Reserve®",
   "issuer": "Chase",
   "network": "visa",
-  "annual_fee": 250,
+  "annual_fee": 550,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 6000,
+    "bonus_points": 60000,
+    "spending_requirement": 4000,
     "time_period_months": 3,
-    "bonus_points": 125000,
-    "description": "Earn 125,000 bonus points after you spend $6,000 in purchases in the first 3 months from account opening.",
+    "description": "Earn 60,000 bonus points after spending $4,000 on purchases in the first 3 months from account opening. That's $900 toward travel when you redeem through Chase Ultimate Rewards.",
     "point_program": "Chase Ultimate Rewards",
-    "estimated_value": 1500
+    "estimated_value": 900
   },
   "earning_rates": [
     {
-      "category": "Chase Travel",
-      "rate": 5,
-      "notes": ""
+      "category": "Travel",
+      "rate": 3,
+      "notes": "Earn 3X points on travel worldwide (after you spend your $300 travel credit). Excludes travel purchases that are eligible for the $300 annual travel credit."
     },
     {
       "category": "Dining",
       "rate": 3,
-      "notes": ""
+      "notes": "Earn 3X points on dining at restaurants worldwide (including eligible delivery services, takeout and dining out)."
     },
     {
-      "category": "All other travel",
-      "rate": 3,
-      "notes": ""
-    },
-    {
-      "category": "All other purchases",
+      "category": "Other",
       "rate": 1,
-      "notes": ""
+      "notes": "Earn 1X points on all other purchases."
     }
   ],
   "travel_benefits": {
-    "hotel_status": [
+    "lounge_access": [
       {
-        "program": "IHG One Rewards",
-        "tier": "Platinum Elite"
+        "name": "Priority Pass",
+        "type": "priority_pass"
       }
     ],
+    "hotel_status": [],
     "other_benefits": [
       {
-        "name": "Priority Pass Select",
-        "description": "Complimentary Priority Pass Select Membership for lounge access."
+        "name": "Trip Cancellation/Interruption Insurance",
+        "description": "Up to $10,000 per person and $20,000 per trip for covered reasons"
       },
       {
-        "name": "Sapphire Lounge Network",
-        "description": "Access to Chase Sapphire Lounges by The Club."
+        "name": "Emergency Evacuation & Transportation",
+        "description": "Up to $100,000 coverage"
       },
       {
-        "name": "Reserve Travel Designer",
-        "description": "Personalized service valued at up to $300 per trip."
+        "name": "Roadside Assistance",
+        "description": "Available 24/7"
       },
       {
-        "name": "Points Transfer",
-        "description": "1 to 1 value to leading airline and hotel partners."
-      },
-      {
-        "name": "Priority Pass Membership",
-        "description": "Complimentary Priority Pass Select membership with 1,300+ airport lounges worldwide. Includes 2 guests."
+        "name": "Travel and Emergency Assistance Services",
+        "description": "Referrals and assistance available"
       }
     ]
   },
@@ -75,12 +67,14 @@
     "trip_delay": true,
     "purchase_protection": true,
     "extended_warranty": true,
-    "trip_cancellation": null,
+    "trip_cancellation": true,
     "return_protection": null
   },
   "tags": [
     "lounge-access",
     "premium",
+    "travel",
+    "dining",
     "transferable"
   ],
   "sources": [
@@ -93,61 +87,37 @@
       "notes": "Review Apr 2026."
     }
   ],
-  "last_updated": "2026-04-24T17:26:36.116494",
+  "last_updated": "2026-04-25T16:01:31.773Z",
   "hotel_program": null,
   "application_rules": {
-    "rules": [],
-    "notes": null
+    "rules": [
+      {
+        "rule": "5/24 rule",
+        "description": "Cannot be approved if you have opened 5 or more credit cards from any issuer in the past 24 months"
+      },
+      {
+        "rule": "Same-day approval",
+        "description": "If approved, you may be able to use your card immediately with instant card number"
+      }
+    ]
   },
   "recurring_credits": [
     {
-      "name": "Annual Travel Credit",
+      "name": "Travel Credit",
       "amount": 300,
       "frequency": "annual",
       "category": "travel",
-      "description": "$300 annual credit for travel purchases (airfare, hotels, car rentals). Automatically applied as statement credit.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Dining Credit",
-      "amount": 300,
-      "frequency": "semi_annual",
-      "category": "dining",
-      "description": "$300 every 6 months for dining at Sapphire Exclusive Tables via OpenTable. Must book via Chase.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "The Edit Hotel Credit",
-      "amount": 250,
-      "frequency": "semi_annual",
-      "category": "travel",
-      "description": "$250 every 6 months ($500/year) for prepaid hotel bookings via The Edit by Chase Travel. 2-night minimum.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Global Entry / PreCheck Credit",
-      "amount": 120,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Up to $120 every 4 years for Global Entry, TSA PreCheck, or NEXUS application fee.",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "StubHub Credit",
-      "amount": 150,
-      "frequency": "semi_annual",
-      "category": "entertainment",
-      "description": "$150 every 6 months for StubHub purchases.",
-      "reset_type": "cardmember_year"
+      "description": "$300 annual credit for travel purchases",
+      "reset_type": "calendar_year"
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-04-24",
+  "last_verified": "2026-04-25T16:01:31.773Z",
   "next_review": "2026-07-23T17:26:36.116494",
   "cfpb_source": "Q3_2025",
   "late_fee": 40,
   "cash_advance_fee_flat": 5,
-  "cash_advance_fee_pct": 5.0,
+  "cash_advance_fee_pct": 5,
   "penalty_apr": "29.99",
   "cfpb_verified": true
 }

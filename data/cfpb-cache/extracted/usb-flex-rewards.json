@@ -1,10 +1,10 @@
 {
   "card_id": "usb-flex-rewards",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "Mastercard Accounts",
+  "canonical_name": "astercard\u00ae Accounts",
   "detected_issuer": "usbank",
   "fields": {
-    "annual_fee": 0,
-    "cash_advance_fee_pct": 4.0
+    "foreign_transaction_fee": 3.0,
+    "late_fee": 41
   }
 }

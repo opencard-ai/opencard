@@ -7,33 +7,26 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 1000,
+    "bonus_points": 100,
+    "spending_requirement": 500,
     "time_period_months": 3,
-    "bonus_points": 200,
-    "estimated_value": 200,
-    "point_program": "Wells Fargo Rewards",
-    "description": "$200 cash rewards after spending $1,000 in first 3 months"
+    "description": "开卡3个月内消费满 $500 可得 $100 cash rewards bonus"
   },
   "earning_rates": [
     {
-      "category": "Self-care (gyms, fitness studios, salons, spas)",
+      "category": "Self Care",
       "rate": 4,
-      "notes": "4% cash rewards on self-care (gyms, fitness studios, salons, spas)"
+      "notes": null
     },
     {
-      "category": "Sports/Recreation/Entertainment",
+      "category": "Sports",
       "rate": 4,
-      "notes": "4% cash rewards on sports, recreation, and entertainment (theme parks, golf, sporting events)"
+      "notes": null
     },
     {
-      "category": "Pet Care",
+      "category": "Recreation",
       "rate": 4,
-      "notes": "4% cash rewards on pet care (veterinarians, pet stores)"
-    },
-    {
-      "category": "All Other Purchases",
-      "rate": 1,
-      "notes": "1% unlimited cash rewards on all other purchases"
+      "notes": null
     }
   ],
   "annual_credits": [],
@@ -62,8 +55,8 @@
     "return_protection": null
   },
   "tags": [
-    "no-annual-fee",
-    "premium"
+    "no-af",
+    "cash-back"
   ],
   "sources": [
     {
@@ -75,7 +68,7 @@
       "notes": "NerdWallet review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:50.010Z",
+  "last_updated": "2026-04-25T16:04:46.572Z",
   "status": "active",
   "notes": "Unique 4% categories (self-care, sports/recreation, pet care) not commonly found on other cards. Strong for wellness and pet owners.",
   "hotel_program": null,
@@ -83,6 +76,6 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:50.010Z",
+  "last_verified": "2026-04-25T16:04:46.572Z",
   "next_review": "2026-07-15T13:41:50.010000+00:00"
 }

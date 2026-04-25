@@ -7,71 +7,57 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 4000,
-    "time_period_months": 4,
-    "bonus_points": 3,
-    "bonus_value": "$500",
-    "description": "3 Free Night Awards (up to 50K points each) + 1 additional Free Night after $4K spend. Up to $100 airline credit annually.",
-    "free_nights": 4,
-    "point_program": "Marriott Bonvoy"
+    "bonus_points": 50000,
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "description": "Earn up to 50,000 Bonus Points (4 Free Nights)",
+    "point_program": "Marriott Bonvoy",
+    "estimated_value": 2000
   },
   "earning_rates": [
     {
       "category": "Marriott",
       "rate": 6,
-      "notes": "At hotels participating in Marriott Bonvoy."
+      "notes": "Points per dollar at Marriott properties"
     },
     {
-      "category": "Grocery/Gas/Dining",
-      "rate": 3,
-      "notes": "On first $6,000 spent combined annually on grocery stores, gas stations, and dining."
-    },
-    {
-      "category": "Default",
+      "category": "Flights",
       "rate": 2,
-      "notes": "On all other purchases."
+      "notes": "Points per dollar on airfare"
+    },
+    {
+      "category": "Other",
+      "rate": 2,
+      "notes": null
     }
   ],
   "travel_benefits": {
+    "lounge_access": [],
     "hotel_status": [
       {
         "program": "Marriott Bonvoy",
-        "tier": "Silver Elite"
+        "tier": "Silver Elite",
+        "complimentary": true
       }
     ],
-    "other_benefits": [
-      {
-        "name": "15 Elite Night Credits",
-        "description": "Jump-start to next status level every calendar year."
-      },
-      {
-        "name": "Pathway to Gold",
-        "description": "Earn Gold Elite status by spending $35,000 on purchases each calendar year."
-      },
-      {
-        "name": "Marriott Bonvoy Elite Nights",
-        "description": "15 Elite nights credit toward Marriott status."
-      }
-    ]
+    "other_benefits": []
   },
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
   },
   "insurance": {
-    "rental_insurance": "Secondary",
-    "trip_delay": true,
+    "rental_insurance": "Primary",
+    "trip_delay": false,
     "purchase_protection": true,
     "extended_warranty": true,
-    "trip_cancellation": null,
-    "return_protection": null,
-    "baggage_delay": null,
-    "lost_luggage": null,
-    "cell_phone": null,
-    "travel_accident": null
+    "trip_cancellation": false,
+    "return_protection": false
   },
   "tags": [
-    "hotel"
+    "hotel",
+    "no-foreign-transaction-fee",
+    "travel"
   ],
   "sources": [
     {
@@ -83,23 +69,33 @@
       "notes": "News report Apr 2026."
     }
   ],
-  "last_updated": "2026-04-24T17:26:46.246653",
-  "hotel_program": null,
+  "last_updated": "2026-04-25T16:02:14.512Z",
+  "hotel_program": {
+    "program": "Marriott Bonvoy",
+    "tier": "Silver Elite",
+    "elite_night_credits": 0,
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
   "application_rules": {
-    "rules": [],
-    "notes": null
+    "rules": [
+      {
+        "rule": "5/24 rule",
+        "description": "Cannot approve if 5+ new cards in 24 months"
+      }
+    ]
   },
   "recurring_credits": [
     {
-      "name": "Marriott Bonvoy Free Night",
-      "amount": null,
+      "name": "Free Night Award",
+      "amount": 50000,
       "frequency": "annual",
-      "category": "travel",
-      "description": "1 Free Night Award (up to 35,000 points) annually.",
+      "category": "hotel",
+      "description": "Annual Free Night Award (up to 50,000 points)",
       "reset_type": "cardmember_year"
     }
   ],
   "last_scraped": "2026-04-24T17:26:46.246653",
-  "last_verified": "2026-04-24T17:26:46.246653",
+  "last_verified": "2026-04-25T16:02:14.512Z",
   "next_review": "2026-07-23T17:26:46.246653"
 }

@@ -1,7 +1,7 @@
 {
   "card_id": "hsbc-premier",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "Premier World_PRM",
+  "canonical_name": "Premier World_PR",
   "detected_issuer": "hsbc",
   "fields": {}
 }

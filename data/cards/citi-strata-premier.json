@@ -5,63 +5,54 @@
   "network": "visa",
   "annual_fee": 95,
   "foreign_transaction_fee": 0,
-  "credit_required": "Good",
+  "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 4,
-    "time_period_months": 3,
     "bonus_points": 60000,
-    "description": "60,000 ThankYou® Points",
-    "point_program": "Citi",
-    "estimated_value": 700
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "description": "Earn 60,000 ThankYou Points after spending $4,000 in first 3 months",
+    "point_program": "Citi ThankYou Points",
+    "estimated_value": 960
   },
   "earning_rates": [
     {
-      "category": "Hotels, Car Rentals & Attractions (CitiTravel.com)",
-      "rate": 10,
-      "notes": "On bookings through CitiTravel.com."
-    },
-    {
-      "category": "Air Travel",
+      "category": "Travel",
       "rate": 3,
-      "notes": "On air travel purchased directly from airlines or through CitiTravel.com."
-    },
-    {
-      "category": "Hotels",
-      "rate": 3,
-      "notes": "On hotel stays purchased directly or through CitiTravel.com."
+      "notes": "Including gas stations"
     },
     {
       "category": "Restaurants",
       "rate": 3,
-      "notes": "Including eligible delivery and takeout."
+      "notes": null
     },
     {
-      "category": "Supermarkets",
+      "category": "Gas",
       "rate": 3,
-      "notes": ""
+      "notes": null
     },
     {
-      "category": "Gas Stations",
-      "rate": 3,
-      "notes": "Including EV charging stations."
+      "category": "CitiTravel.com",
+      "rate": 10,
+      "notes": "Bookings through CitiTravel.com"
     },
     {
       "category": "EV Charging",
       "rate": 3,
-      "notes": "Stations other than at Costco."
+      "notes": null
     },
     {
-      "category": "Default",
+      "category": "Other",
       "rate": 1,
-      "notes": "On all other purchases."
+      "notes": null
     }
   ],
   "travel_benefits": {
+    "lounge_access": [],
     "hotel_status": [],
     "other_benefits": [
       {
-        "name": "Points Transfer",
-        "description": "Transfer points to Citi's airline and hotel partners including Singapore Airlines, Air France/KLM, Emirates, JetBlue, and more at 1:1."
+        "name": "Citi Travel Center",
+        "description": "Hotel booking portal with bonus earnings"
       }
     ]
   },
@@ -70,18 +61,18 @@
     "thc_eligible": false
   },
   "insurance": {
-    "rental_insurance": "None",
-    "trip_delay": false,
+    "rental_insurance": true,
+    "trip_delay": true,
     "purchase_protection": true,
-    "extended_warranty": false,
-    "trip_cancellation": null,
-    "return_protection": null,
-    "baggage_delay": null,
-    "lost_luggage": null,
-    "cell_phone": null,
-    "travel_accident": null
+    "extended_warranty": true,
+    "trip_cancellation": true,
+    "return_protection": null
   },
-  "tags": [],
+  "tags": [
+    "travel",
+    "no-ftf",
+    "premium"
+  ],
   "sources": [
     {
       "url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
@@ -100,22 +91,17 @@
       "notes": "CNBC review confirms $95 AF, 60K welcome bonus, 3x on dining/supermarkets/gas/travel."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.978Z",
+  "last_updated": "2026-04-25T16:03:58.265Z",
   "hotel_program": null,
   "application_rules": {
-    "rules": [],
-    "notes": null
+    "rules": [
+      {
+        "rule": "Citi 8/65 rule",
+        "description": "Cannot approve if 65+ days late on any Citi account or 8+ new cards in past 24 months"
+      }
+    ]
   },
-  "recurring_credits": [
-    {
-      "name": "Annual Hotel Benefit",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "hotel",
-      "description": "$100 off a single hotel stay of $500 or more (excluding taxes and fees) when booked through CitiTravel.com, once per calendar year",
-      "reset_type": "calendar_year"
-    }
-  ],
-  "last_verified": "2026-04-16T13:41:49.978Z",
+  "recurring_credits": [],
+  "last_verified": "2026-04-25T16:03:58.265Z",
   "next_review": "2026-07-15T13:41:49.978000+00:00"
 }

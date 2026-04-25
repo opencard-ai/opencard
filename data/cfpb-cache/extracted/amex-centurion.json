@@ -1,9 +1,11 @@
 {
   "card_id": "centurion-card-amex",
   "source": "cfpb_ccad_v2",
-  "canonical_name": "Centurion Card from American Express",
+  "canonical_name": "Centurion\u00ae Card from American Express",
   "detected_issuer": "amex",
   "fields": {
-    "annual_fee": 5000
+    "annual_fee": 12,
+    "late_fee": 40,
+    "penalty_apr": 26.74
   }
 }
