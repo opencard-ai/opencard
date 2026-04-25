@@ -1,9 +1,9 @@
 {
   "card_id": "amex-gold",
-  "name": "American Express® Gold Card",
+  "name": "American Express\u00ae Gold Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 325,
+  "annual_fee": 895,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {

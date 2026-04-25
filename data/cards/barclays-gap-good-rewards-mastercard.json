@@ -1,6 +1,6 @@
 {
   "card_id": "barclays-gap-good-rewards-mastercard",
-  "name": "Gap Good Rewards Mastercard®",
+  "name": "Gap Good Rewards Mastercard\u00ae",
   "issuer": "Barclays",
   "network": "mastercard",
   "annual_fee": 0,
@@ -83,5 +83,9 @@
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.983Z",
-  "next_review": "2026-07-15T13:41:49.983000+00:00"
+  "next_review": "2026-07-15T13:41:49.983000+00:00",
+  "cash_advance_fee_flat": 5,
+  "cash_advance_fee_pct": 5.0,
+  "apr_cash_advances": "33.74",
+  "cfpb_source": "Q3_2025"
 }

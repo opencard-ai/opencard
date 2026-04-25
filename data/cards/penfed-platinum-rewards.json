@@ -1,9 +1,9 @@
 {
   "card_id": "penfed-platinum-rewards",
-  "name": "PenFed Platinum Rewards Visa Signature® Card",
+  "name": "PenFed Platinum Rewards Visa Signature\u00ae Card",
   "issuer": "PenFed Credit Union",
   "network": "visa",
-  "annual_fee": 0,
+  "annual_fee": 2,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
@@ -89,5 +89,7 @@
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.993Z",
-  "next_review": "2026-07-15T13:41:49.993000+00:00"
+  "next_review": "2026-07-15T13:41:49.993000+00:00",
+  "penalty_apr": "17.99",
+  "cfpb_source": "Q3_2025"
 }

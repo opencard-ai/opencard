@@ -1,6 +1,6 @@
 {
   "card_id": "chase-sapphire-preferred",
-  "name": "Chase Sapphire Preferred® Card",
+  "name": "Chase Sapphire Preferred\u00ae Card",
   "issuer": "Chase",
   "network": "visa",
   "annual_fee": 95,
@@ -107,5 +107,9 @@
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
   "last_verified": "2026-04-24T17:26:36.116494",
-  "next_review": "2026-07-23T17:26:36.116494"
+  "next_review": "2026-07-23T17:26:36.116494",
+  "cash_advance_fee_flat": 5,
+  "cash_advance_fee_pct": 5.0,
+  "penalty_apr": "29.99",
+  "cfpb_source": "Q3_2025"
 }
