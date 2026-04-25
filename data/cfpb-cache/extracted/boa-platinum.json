@@ -1,7 +1,13 @@
 {
   "card_id": "boa-platinum",
   "source": "cfpb_ccad",
-  "fetched_at": "2026-04-24T22:16:39.117855",
-  "content_hash": "034974d0f4d845241712fe3235459820f67549a53149b04240ba1d89850eafbc",
-  "fields": {}
+  "fetched_at": "2026-04-25T05:11:00",
+  "fields": {
+    "apr_purchases_min": "13.99",
+    "apr_purchases_max": "27.99",
+    "apr_balance_transfer_min": "13.99",
+    "apr_balance_transfer_max": "27.99",
+    "apr_cash_advances": "27.99",
+    "penalty_apr": "29.99"
+  }
 }
