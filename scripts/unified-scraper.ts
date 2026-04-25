@@ -86,8 +86,26 @@ Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, 
   "recurring_credits": [
     {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
     {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
-    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"}
+    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"},
+    {"name": "Walmart+", "amount": 0, "frequency": "annual", "category": "shopping", "description": "Free membership with fuel discounts", "reset_type": "calendar_year"},
+    {"name": "Clear Security", "amount": 0, "frequency": "annual", "category": "other", "description": "Free Clear membership", "reset_type": "calendar_year"}
   ],
+  
+  IMPORTANT: Extract ALL recurring credits from the content including but not limited to:
+  - Airline credits (e.g., $200-$250/year for incidentals, bags, lounges)
+  - Hotel credits (e.g., $300/year for Fine Hotels + Resorts)
+  - Uber/Lyft credits
+  - Dining credits (e.g., $300/year for Resy)
+  - Shopping credits (Saks, Walmart+, etc.)
+  - Streaming credits (Netflix, Hulu, Disney+, etc.)
+  - Fitness credits (Equinox, SoulCycle, etc.)
+  - Global Entry/TSA PreCheck credits
+  - Centurion Lounge visits
+  - Priority Pass membership
+  - Free night certificates
+  - Elite status benefits
+  
+  Be COMPREHENSIVE - do not miss any credit mentioned in the content.
   "travel_benefits": {
     "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
     "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
@@ -143,7 +161,7 @@ Rules:
 - sources: [{url}] - the URL this data was extracted from
 
 Content (first 12000 chars):
-${rawText.slice(0, 12000)}
+${rawText.slice(0, 20000)}
 
 Respond with JSON only. Do NOT include fields that are null or not found in the content.`;
 }
@@ -193,7 +211,7 @@ async function callAI(prompt: string): Promise<any> {
   const postData = JSON.stringify({
     model: 'MiniMax-M2',
     messages: [{ role: 'user', content: prompt }],
-    max_tokens: 2000
+    max_tokens: 4000
   });
   
   return new Promise((resolve) => {
