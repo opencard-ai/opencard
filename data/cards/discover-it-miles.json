@@ -7,39 +7,43 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": null,
-    "description": "Unlimited Miles Match™ at end of first year",
-    "estimated_value": null,
-    "spending_requirement": null,
-    "time_period_months": null
+    "bonus_points": 10000,
+    "spending_requirement": 1,
+    "time_period_months": 3,
+    "description": "Earn $100 statement credit after making one purchase within 3 months",
+    "point_program": "Discover Miles",
+    "estimated_value": 100
   },
   "earning_rates": [
     {
       "category": "All Purchases",
       "rate": 1.5,
-      "notes": "unlimited"
+      "notes": "Earn 1.5 Miles per $1 spent on all purchases. 1 Mile worth 1 cent if you redeem for travel."
     }
   ],
-  "travel_benefits": {},
+  "travel_benefits": {
+    "lounge_access": [],
+    "hotel_status": [],
+    "other_benefits": []
+  },
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
   },
   "insurance": {
-    "rental_insurance": "None",
-    "trip_delay": false,
-    "purchase_protection": false,
-    "extended_warranty": false,
+    "rental_insurance": null,
+    "trip_delay": null,
+    "purchase_protection": null,
+    "extended_warranty": null,
     "trip_cancellation": null,
-    "return_protection": null,
-    "baggage_delay": null,
-    "lost_luggage": null,
-    "cell_phone": null,
-    "travel_accident": null
+    "return_protection": null
   },
   "tags": [
+    "no-af",
+    "no-foreign-transaction-fee",
     "cash-back",
-    "no-annual-fee"
+    "travel",
+    "discover"
   ],
   "sources": [
     {
@@ -49,11 +53,11 @@
       "url": "https://www.nerdwallet.com/reviews/credit-cards/discover-it-miles"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.980Z",
+  "last_updated": "2026-04-24T17:27:59.994652",
   "hotel_program": null,
   "application_rules": {
-    "rules": [],
-    "notes": null
+    "rules": []
   },
-  "recurring_credits": []
+  "recurring_credits": [],
+  "last_scraped": "2026-04-24T17:27:59.994652"
 }
