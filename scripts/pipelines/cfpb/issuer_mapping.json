@@ -1,0 +1,108 @@
+{
+  "_note": "CFPB CCAD issuer slug mapping for OpenCard - Verified 2026-04-24",
+  "_source": "https://www.consumerfinance.gov/credit-cards/agreements/",
+  "_usage": "URL: https://www.consumerfinance.gov/credit-cards/agreements/issuer/<slug>/",
+  "issuers": {
+    "American Express": {
+      "primary_slug": "american-express-national-bank",
+      "secondary_slugs": ["american-express-travel-related-services-company-inc"],
+      "has_pricing_table": false
+    },
+    "Chase": {
+      "primary_slug": "jpmorgan-chase-bank-national-association",
+      "has_pricing_table": false
+    },
+    "Citi": {
+      "primary_slug": "citibank-na",
+      "has_pricing_table": true,
+      "notes": "Has separate Pricing Information Table PDFs - parse those directly for Schumer Box"
+    },
+    "Capital One": {
+      "primary_slug": "capital-one-national-association",
+      "has_pricing_table": false
+    },
+    "Bank of America": {
+      "primary_slug": "bank-of-america-national-association",
+      "has_pricing_table": false
+    },
+    "Barclays": {
+      "primary_slug": "barclays-bank-delaware",
+      "has_pricing_table": false
+    },
+    "U.S. Bank": {
+      "primary_slug": "us-bank-national-association",
+      "has_pricing_table": false,
+      "notes": "Also covers Fidelity / Elan-issued cards"
+    },
+    "Wells Fargo": {
+      "primary_slug": "wells-fargo-bank-national-association",
+      "has_pricing_table": false
+    },
+    "Discover": {
+      "primary_slug": "discover-bank",
+      "has_pricing_table": false
+    },
+    "Synchrony": {
+      "primary_slug": "synchrony-financial",
+      "has_pricing_table": false
+    },
+    "Bread Financial": {
+      "primary_slug": "comenity-bank",
+      "secondary_slugs": ["comenity-capital-bank"],
+      "has_pricing_table": false
+    },
+    "Navy Federal Credit Union": {
+      "primary_slug": "navy-federal-credit-union",
+      "has_pricing_table": false
+    },
+    "PenFed Credit Union": {
+      "primary_slug": "pentagon-federal-credit-union",
+      "has_pricing_table": false
+    },
+    "TD Bank": {
+      "primary_slug": "td-bank-national-association",
+      "secondary_slugs": ["td-bank-usa-national-association"],
+      "has_pricing_table": false
+    },
+    "HSBC": {
+      "primary_slug": "hsbc-bank-usa-national-association",
+      "has_pricing_table": false
+    },
+    "PNC Bank": {
+      "primary_slug": "pnc-bank-national-association",
+      "has_pricing_table": false
+    },
+    "Goldman Sachs": {
+      "primary_slug": "goldman-sachs-bank-usa",
+      "has_pricing_table": false,
+      "notes": "Includes Apple Card"
+    },
+    "Robinhood Credit": {
+      "primary_slug": "coastal-community-bank",
+      "has_pricing_table": false
+    },
+    "First Electronic Bank": {
+      "primary_slug": "first-electronic-bank",
+      "has_pricing_table": false,
+      "notes": "Includes Bilt cards (after 2024 Wells Fargo migration)"
+    },
+    "SoFi / First Bank": {
+      "primary_slug": "sofi-bank-national-association",
+      "has_pricing_table": false
+    },
+    "Upgrade (Cross River Bank)": {
+      "primary_slug": "cross-river-bank",
+      "has_pricing_table": false
+    },
+    "Fidelity Investments / Elan Financial Services": {
+      "primary_slug": "us-bank-national-association",
+      "has_pricing_table": false,
+      "notes": "Elan Financial Services is a U.S. Bank subsidiary"
+    },
+    "Petal": {
+      "primary_slug": "webbank",
+      "has_pricing_table": false,
+      "notes": "Verify quarterly - Continental Finance acquired Petal in 2024"
+    }
+  }
+}
