@@ -2,7 +2,7 @@
 /**
  * check-new-cards.js
  *
- * 讀取 /Users/kaceyc/.openclaw/media/inbound/b9761975-30af-4d91-931f-1fe67d336ba6.json（248張卡參考清單），
+ * 讀取參考清單（248張卡），
  * 對比 data/cards/ 中所有已存在的 card_id，
  * 輸出三個列表：新增、停發、不變（Markdown 表格格式，方便貼到 TASKS.md）。
  *
@@ -10,17 +10,16 @@
  *   node scripts/check-new-cards.js
  */
 
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+const fs = require("fs");
+const path = require("path");
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(__filename);
 const PROJECT_ROOT = path.resolve(__dirname, "..");
 const CARDS_DIR = path.join(PROJECT_ROOT, "data/cards");
 
 // ── Paths ─────────────────────────────────────────────────────────────────────
 
-const REFERENCE_LIST = "/Users/kaceyc/.openclaw/media/inbound/b9761975-30af-4d91-931f-1fe67d336ba6.json";
+const REFERENCE_LIST = path.join(PROJECT_ROOT, "data/reference-list.json");
 
 // ── Load reference list ───────────────────────────────────────────────────────
 
@@ -29,6 +28,7 @@ try {
   reference = JSON.parse(fs.readFileSync(REFERENCE_LIST, "utf-8"));
 } catch (err) {
   console.error(`❌  無法讀取參考清單：${err.message}`);
+  console.error(`    預期路徑：${REFERENCE_LIST}`);
   process.exit(1);
 }
 
