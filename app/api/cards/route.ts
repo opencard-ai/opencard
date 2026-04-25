@@ -5,23 +5,19 @@ export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const full = searchParams.get("full") === "1";
+  // Default to full data (true), use ?summary=1 for grouped issuer summary
+  const summary = searchParams.get("summary") === "1";
   const issuer = searchParams.get("issuer");
   const cardId = searchParams.get("card_id");
   const cards = getAllCards();
 
-  // Filter by card_id if provided
+  // Filter by card_id if provided - always returns full data
   if (cardId) {
     const card = cards.find(c => c.card_id === cardId);
     if (!card) {
       return NextResponse.json({ error: "Card not found" }, { status: 404 });
     }
-    return NextResponse.json(full ? card : {
-      card_id: card.card_id,
-      name: card.name,
-      annual_fee: card.annual_fee,
-      issuer: card.issuer,
-    });
+    return NextResponse.json(card);
   }
 
   // Filter by issuer if provided
@@ -29,7 +25,7 @@ export async function GET(request: Request) {
     ? cards.filter(c => c.issuer.toLowerCase() === issuer.toLowerCase())
     : cards;
 
-  if (full) {
+  if (summary) {
     // Full mode: return complete card data for all filtered cards
     const result = filtered.map(card => ({
       card_id: card.card_id,
