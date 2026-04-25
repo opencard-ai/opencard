@@ -116,5 +116,7 @@
       "description": "$50 annual statement credit for airline purchases (requires $50 minimum airline purchase)",
       "reset_type": "calendar_year"
     }
-  ]
+  ],
+  "last_verified": "2026-04-16T13:41:50.011Z",
+  "next_review": "2026-07-15T13:41:50.011000+00:00"
 }

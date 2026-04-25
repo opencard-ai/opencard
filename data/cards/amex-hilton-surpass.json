@@ -121,5 +121,7 @@
       "description": "$250 annual credit at Hilton resorts.",
       "reset_type": "cardmember_year"
     }
-  ]
+  ],
+  "last_verified": "2026-04-16T13:41:49.948Z",
+  "next_review": "2026-07-15T13:41:49.948000+00:00"
 }

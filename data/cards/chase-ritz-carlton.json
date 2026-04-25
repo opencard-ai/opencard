@@ -115,5 +115,7 @@
       "description": "$300 annual credit automatically applied to travel purchases.",
       "reset_type": "calendar_year"
     }
-  ]
+  ],
+  "last_verified": "2026-04-17T19:04:00.000Z",
+  "next_review": "2026-07-16T19:04:00+00:00"
 }

@@ -85,5 +85,7 @@
       "description": "Up to $100 every 4 years for Global Entry.",
       "reset_type": "cardmember_year"
     }
-  ]
+  ],
+  "last_verified": "2026-04-16T13:41:49.977Z",
+  "next_review": "2026-07-15T13:41:49.977000+00:00"
 }

@@ -1,0 +1,147 @@
+name: Validate Card Data
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Validate JSON files
+        run: |
+          npx ts-node -e "
+            const fs = require('fs');
+            const path = require('path');
+            
+            const requiredFields = ['card_id', 'name', 'issuer', 'network', 'annual_fee', 'earning_rates'];
+            
+            const files = fs.readdirSync('data/cards').filter(f => f.endsWith('.json'));
+            let errors = [];
+            
+            for (const file of files) {
+              const content = fs.readFileSync(path.join('data/cards', file), 'utf-8');
+              try {
+                const card = JSON.parse(content);
+                
+                // Check required fields
+                for (const field of requiredFields) {
+                  if (!(field in card)) {
+                    errors.push(\`\${file}: missing field '\${field}'\`);
+                  }
+                }
+                
+                // Check last_verified exists
+                if (!('last_verified' in card)) {
+                  errors.push(\`\${file}: missing 'last_verified'\`);
+                }
+                
+                // Check next_review exists
+                if (!('next_review' in card)) {
+                  errors.push(\`\${file}: missing 'next_review'\`);
+                }
+                
+              } catch (e) {
+                errors.push(\`\${file}: invalid JSON - \${e.message}\`);
+              }
+            }
+            
+            if (errors.length > 0) {
+              console.error('Validation errors:');
+              errors.forEach(e => console.error('  -', e));
+              process.exit(1);
+            } else {
+              console.log(\`✅ All \${files.length} cards validated successfully\`);
+            }
+          "
+          
+      - name: Check for stale cards
+        run: |
+          npx ts-node -e "
+            const fs = require('fs');
+            const path = require('path');
+            const { parseISO, isAfter, subMonths } = require('date-fns');
+            
+            const files = fs.readdirSync('data/cards').filter(f => f.endsWith('.json'));
+            const staleCards = [];
+            const oneMonthAgo = subMonths(new Date(), 1);
+            
+            for (const file of files) {
+              const content = fs.readFileSync(path.join('data/cards', file), 'utf-8');
+              const card = JSON.parse(content);
+              
+              if (card.last_verified) {
+                try {
+                  const verified = parseISO(card.last_verified);
+                  if (isAfter(oneMonthAgo, verified)) {
+                    staleCards.push({ card: card.card_id, last_verified: card.last_verified });
+                  }
+                } catch (e) {
+                  // ignore parse errors
+                }
+              }
+            }
+            
+            if (staleCards.length > 0) {
+              console.warn(\`⚠️  \${staleCards.length} cards haven't been verified in over a month:\`);
+              staleCards.slice(0, 10).forEach(c => console.warn(\`  - \${c.card} (last verified: \${c.last_verified})\`));
+              if (staleCards.length > 10) {
+                console.warn(\`  ... and \${staleCards.length - 10} more\`);
+              }
+            } else {
+              console.log('✅ All cards have been verified within the last month');
+            }
+          "
+        env:
+          TZ: "America/Los_Angeles"
+
+      - name: Check for overdue reviews
+        run: |
+          npx ts-node -e "
+            const fs = require('fs');
+            const path = require('path');
+            const { parseISO, isBefore } = require('date-fns');
+            
+            const files = fs.readdirSync('data/cards').filter(f => f.endsWith('.json'));
+            const overdueCards = [];
+            
+            for (const file of files) {
+              const content = fs.readFileSync(path.join('data/cards', file), 'utf-8');
+              const card = JSON.parse(content);
+              
+              if (card.next_review) {
+                try {
+                  const reviewDate = parseISO(card.next_review);
+                  if (isBefore(reviewDate, new Date())) {
+                    overdueCards.push({ card: card.card_id, next_review: card.next_review });
+                  }
+                } catch (e) {
+                  // ignore parse errors
+                }
+              }
+            }
+            
+            if (overdueCards.length > 0) {
+              console.warn(\`⚠️  \${overdueCards.length} cards are overdue for review:\`);
+              overdueCards.slice(0, 10).forEach(c => console.warn(\`  - \${c.card} (due: \${c.next_review})\`));
+              if (overdueCards.length > 10) {
+                console.warn(\`  ... and \${overdueCards.length - 10} more\`);
+              }
+              // Exit with warning, not failure
+              process.exit(0);
+            } else {
+              console.log('✅ No cards are overdue for review');
+            }
+          "
+        env:
+          TZ: "America/Los_Angeles"

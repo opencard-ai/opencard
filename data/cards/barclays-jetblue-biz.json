@@ -85,5 +85,7 @@
   },
   "annual_credits": [],
   "foreign_transaction_fee": 0,
-  "credit_required": "Good to Excellent"
+  "credit_required": "Good to Excellent",
+  "last_verified": "2026-04-16T13:41:49.987Z",
+  "next_review": "2026-07-15T13:41:49.987000+00:00"
 }
