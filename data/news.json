@@ -1,6 +1,77 @@
 {
   "items": [
     {
+      "title": "[IA] Maxx: by Cedar Rapids Bank & Trust: $300 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/maxx-by-cedar-rapids-bank-trust-333-checking-bonus-available-nationwide/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "nationwide bank bonuses"
+      ],
+      "ts": "2026-04-25T18:00:50.000Z",
+      "title_en": "[IA] Maxx: by Cedar Rapids Bank & Trust: $300 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "【愛荷華州】Maxx: 由 Cedar Rapids Bank & Trust 提供 $300 檢查帳戶獎金",
+      "summary_zh": "在愛荷華州的 Cedar Rapids Bank & Trust 開立檢查帳戶可獲得 $300 獎金。",
+      "title_es": "[IA] Maxx: de Cedar Rapids Bank & Trust: bono de $300 por cuenta corriente",
+      "summary_es": "Consigue un nuevo bono de $300 al abrir una cuenta corriente con Cedar Rapids Bank & Trust en Iowa."
+    },
+    {
+      "title": "[PA only] TruMark Financial $250 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/pa-trumark-financial-150-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "credit card funding",
+        "direct deposit required",
+        "pa bank bonuses",
+        "soft pull"
+      ],
+      "ts": "2026-04-25T17:30:32.000Z",
+      "title_en": "[PA only] TruMark Financial $250 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "【僅限賓州】TruMark Financial $250 檢查帳戶獎金",
+      "summary_zh": "在賓州的 TruMark Financial 銀行新開檢查帳戶可獲得 $250 獎金。",
+      "title_es": "[PA only] TruMark Financial: bono de $250 por cuenta corriente",
+      "summary_es": "Los residentes de Pennsylvania pueden obtener un bono de $250 al abrir una cuenta corriente con TruMark Financial."
+    },
+    {
+      "title": "[AL, GA] Kinetic Credit Union $250 Referral Bonus ($100 For Person Referring), DD Not Required",
+      "url": "https://www.doctorofcredit.com/al-ga-kinetic-credit-union-250-referral-bonus-100-for-person-referring-dd-not-required/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "al bank bonuses",
+        "direct deposit not required",
+        "ga bank bonuses"
+      ],
+      "ts": "2026-04-25T15:30:12.000Z",
+      "title_en": "[AL, GA] Kinetic Credit Union $250 Referral Bonus ($100 For Person Referring), DD Not Required",
+      "summary_en": "",
+      "title_zh": "【阿拉巴馬州、喬治亞州】Kinetic Credit Union $250 推薦獎金（推薦人可獲 $100），無需設定直接存款",
+      "summary_zh": "在阿拉巴馬州與喬治亞州的 Kinetic Credit Union，推薦新客戶可獲 $250 獎金，推薦人可得 $100，無需設定直接存款。",
+      "title_es": "[AL, GA] Kinetic Credit Union: bono de referido de $250 ($100 para quien refiere), sin depósito directo",
+      "summary_es": "En Alabama y Georgia, referir a alguien a Kinetic Credit Union otorga un bono de $250 para el referido y $100 para el recomendador, sin necesidad de depósito directo."
+    },
+    {
+      "title": "[CO Only] Metrum Community Credit Union $200 Checking Bonus, Direct Deposit Not Required",
+      "url": "https://www.doctorofcredit.com/co-only-metrum-community-credit-union-200-checking-bonus-direct-deposit-not-required/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "co bank bonuses",
+        "direct deposit not required"
+      ],
+      "ts": "2026-04-25T14:00:45.000Z",
+      "title_en": "[CO Only] Metrum Community Credit Union $200 Checking Bonus, Direct Deposit Not Required",
+      "summary_en": "",
+      "title_zh": "【僅限科羅拉多州】Metrum Community Credit Union $200 檢查帳戶獎金，無需設定直接存款",
+      "summary_zh": "在科羅拉多州的 Metrum Community Credit Union，開立檢查帳戶可獲 $200 獎金，且不需設定直接存款。",
+      "title_es": "[CO Only] Metrum Community Credit Union: bono de $200 por cuenta corriente, sin depósito directo",
+      "summary_es": "Los habitantes de Colorado pueden recibir un bono de $200 al abrir una cuenta corriente sin requerir depósito directo."
+    },
+    {
       "title": "[Targeted] Existing MooMoo Users: Get $100/$200 Bonus With $5k/$10k Deposit",
       "url": "https://www.doctorofcredit.com/targeted-existing-moomoo-users-get-100-200-bonus-with-5k-10k-deposit/",
       "source": "Doctor of Credit",
@@ -12,10 +83,10 @@
       "ts": "2026-04-24T19:00:30.000Z",
       "title_en": "[Targeted] Existing MooMoo Users: Get $100/$200 Bonus With $5k/$10k Deposit",
       "summary_en": "",
-      "title_zh": "【目標】現有 MooMoo 用戶：存入 $5k/$10k 可獲得 $100/$200 獎金",
-      "summary_zh": "MooMoo 現有用戶在活動期間存入 5,000 或 10,000 美元，即可分別獲得 100 或 200 美元的獎金。",
-      "title_es": "[Dirigido] Usuarios actuales de MooMoo: Obtén un bono de $100/$200 con un depósito de $5,000/$10,000",
-      "summary_es": "Los usuarios existentes de MooMoo pueden recibir un bono de $100 o $200 al realizar un depósito de $5,000 o $10,000."
+      "title_zh": "【對象限定】現有 MooMoo 用戶：存款 $5,000 獲 $100 獎金，存款 $10,000 獲 $200 獎金",
+      "summary_zh": "現有 MooMoo 用戶，只要存款 $5,000 可得 $100 獎金，存款 $10,000 可得 $200 獎金。",
+      "title_es": "[Targeted] Usuarios existentes de MooMoo: obtienen bono de $100/$200 con depósito de $5,000/$10,000",
+      "summary_es": "Los usuarios actuales de MooMoo pueden ganar un bono de $100 por depósitos de $5,000 o $200 por depósitos de $10,000."
     },
     {
       "title": "Giant, Stop&Shop, Martin’s: Get 10x Points On Lowe’s & DoorDash Giftcards (4/24-4/30)",
@@ -29,10 +100,10 @@
       "ts": "2026-04-24T18:00:24.000Z",
       "title_en": "Giant, Stop&Shop, Martin’s: Get 10x Points On Lowe’s & DoorDash Giftcards (4/24-4/30)",
       "summary_en": "",
-      "title_zh": "Giant、Stop&Shop、Martin’s：在 Lowe’s 與 DoorDash 禮品卡上獲得 10 倍積分（4/24-4/30）",
-      "summary_zh": "在 4 月 24 日至 30 日期間，於 Giant、Stop&Shop 或 Martin’s 購買 Lowe’s 與 DoorDash 禮品卡可獲 10 倍積分回饋。",
-      "title_es": "Giant, Stop&Shop, Martin’s: Obtén 10x puntos en tarjetas de regalo de Lowe’s y DoorDash (4/24-4/30)",
-      "summary_es": "Puedes ganar diez veces más puntos en tarjetas de regalo de Lowe’s y DoorDash en las tiendas Giant, Stop&Shop y Martin’s del 24 al 30 de abril."
+      "title_zh": "Giant、Stop&Shop、Martins：於 4/24-4/30 在 Lowe's 與 DoorDash 禮卡可獲得 10 倍積分",
+      "summary_zh": "在 4 月 24 日至 30 日期間，於 Giant、Stop&Shop、Martins 購買 Lowe's 與 DoorDash 禮卡可獲得十倍積分。",
+      "title_es": "Giant, Stop&Shop, Martin’s: obtiene 10x puntos en tarjetas de regalo de Lowe’s y DoorDash (24/4-30/4)",
+      "summary_es": "En las tiendas Giant, Stop&Shop y Martin’s, las compras de tarjetas de regalo de Lowe’s y DoorDash otorgan 10x puntos durante esa semana."
     },
     {
       "title": "Delta Shopping Portal: Get 500 Bonus Miles With $100 Spend (4/23-5/4)",
@@ -46,10 +117,10 @@
       "ts": "2026-04-24T17:30:51.000Z",
       "title_en": "Delta Shopping Portal: Get 500 Bonus Miles With $100 Spend (4/23-5/4)",
       "summary_en": "",
-      "title_zh": "Delta 購物門戶：消費 $100 可獲得 500 獎勵里程（4/23-5/4）",
-      "summary_zh": "在 4 月 23 日至 5 月 4 日期間，於 Delta 購物門戶消費滿 100 美元即可獲得 500 獎勵里程。",
-      "title_es": "Delta Shopping Portal: Obtén 500 millas extra al gastar $100 (4/23-5/4)",
-      "summary_es": "Delta ofrece 500 millas de bonificación al gastar $100 en su portal de compras entre el 23 de abril y el 4 de mayo."
+      "title_zh": "Delta 購物入口：消費 $100 可獲得 500 獎勵里程（4/23-5/4）",
+      "summary_zh": "在 4 月 23 日至 5 月 4 日期間，通過 Delta 購物入口消費滿 $100 可獲得 500 獎勵里程。",
+      "title_es": "Delta Shopping Portal: Obtén 500 millas bonus al gastar $100 (23/4-4/5)",
+      "summary_es": "Al gastar $100 en el portal de compras de Delta se obtienen 500 millas de bonificación."
     },
     {
       "title": "(Update) Chase Announces Select Properties With 2.5x PointsBoost Redemption",
@@ -63,10 +134,10 @@
       "ts": "2026-04-24T17:00:03.000Z",
       "title_en": "(Update) Chase Announces Select Properties With 2.5x PointsBoost Redemption",
       "summary_en": "",
-      "title_zh": "（更新）Chase 宣佈部分飯店可享 2.5 倍 PointsBoost 兌換",
-      "summary_zh": "Chase 推出新優惠，指定飯店使用 PointsBoost 可獲得 2.5 倍積分回饋。",
-      "title_es": "(Actualización) Chase anuncia propiedades seleccionadas con canje de 2.5x PointsBoost",
-      "summary_es": "Chase ha anunciado que ciertas propiedades permiten canjear puntos con un boost de 2.5 veces."
+      "title_zh": "（更新）Chase 宣布精選房產可享 2.5 倍 PointsBoost 回饋",
+      "summary_zh": "Chase 更新其 PointsBoost 回饋計畫，指定房產可獲得 2.5 倍的積分兌換倍率。",
+      "title_es": "(Update) Chase anuncia propiedades seleccionadas con redención de puntos multiplicada por 2.5",
+      "summary_es": "Chase ha actualizado su programa para permitir redención de puntos con un boost de 2.5x en ciertas propiedades."
     },
     {
       "title": "Chase Offers/BofA: 10% Back at Hilton",
@@ -79,10 +150,10 @@
       "ts": "2026-04-24T16:40:22.000Z",
       "title_en": "Chase Offers/BofA: 10% Back at Hilton",
       "summary_en": "",
-      "title_zh": "Chase 優惠/美國銀行：希爾頓飯店可享 10% 回饋",
-      "summary_zh": "在希爾頓飯店使用 Chase 或美國銀行卡消費，可獲得 10% 的現金回饋。",
-      "title_es": "Ofertas de Chase/BofA: 10% de reembolso en Hilton",
-      "summary_es": "Los clientes de Chase o BofA reciben un 10% de reembolso en reservas en Hilton."
+      "title_zh": "Chase/美國銀行：希爾頓消費可享 10% 現金回饋",
+      "summary_zh": "使用 Chase 優惠或美國銀行信用卡在希爾頓消費可獲得 10% 現金回饋。",
+      "title_es": "Chase Offers/BofA: 10% de regreso en Hilton",
+      "summary_es": "Las ofertas de Chase y Bank of America ofrecen un 10% de reembolso en estancias en Hilton."
     },
     {
       "title": "Newegg.com: Save 8% On $250 Lowe’s Giftcards",
@@ -96,10 +167,10 @@
       "ts": "2026-04-24T16:16:28.000Z",
       "title_en": "Newegg.com: Save 8% On $250 Lowe’s Giftcards",
       "summary_en": "",
-      "title_zh": "Newegg.com：購買 $250 Lowe’s 禮品卡可省 8%",
-      "summary_zh": "在 Newegg.com 購買 250 美元的 Lowe’s 禮品卡，可享 8% 折扣。",
+      "title_zh": "Newegg.com：購買 $250 Lowe's 禮卡可享有 8% 折扣",
+      "summary_zh": "在 Newegg.com 上購買 Lowe's 禮卡滿 $250 可享有 8% 折扣。",
       "title_es": "Newegg.com: Ahorra 8% en tarjetas de regalo de Lowe’s de $250",
-      "summary_es": "Newegg ofrece un 8% de descuento en tarjetas de regalo de Lowe’s de $250."
+      "summary_es": "En Newegg.com puedes ahorrar un 8% al comprar tarjetas de regalo de Lowe’s de $250."
     },
     {
       "title": "[Targeted] Citi: Spend $350 On Hotels, Get $30 Credit",
@@ -114,10 +185,10 @@
       "ts": "2026-04-24T16:02:45.000Z",
       "title_en": "[Targeted] Citi: Spend $350 On Hotels, Get $30 Credit",
       "summary_en": "",
-      "title_zh": "【目標】Citi：在飯店消費 $350 即可獲得 $30 信用額",
-      "summary_zh": "Citi 持卡人在飯店消費滿 350 美元，可獲得 30 美元的信用額回饋。",
-      "title_es": "[Dirigido] Citi: Gasta $350 en hoteles y obtén $30 de crédito",
-      "summary_es": "Citi ofrece un crédito de $30 a quienes gasten $350 en hoteles."
+      "title_zh": "【對象限定】Citi：飯店消費滿 $350 可獲得 $30 信用額度",
+      "summary_zh": "Citi 指定用戶，在飯店消費滿 $350 可獲得 $30 的信用回饋。",
+      "title_es": "[Targeted] Citi: gasta $350 en hoteles y recibe $30 de crédito",
+      "summary_es": "Los clientes seleccionados de Citi obtienen $30 de crédito al gastar $350 en hoteles."
     },
     {
       "title": "(Update: Amazon 5%) ShopBack Shopping Portal $15+ In Signup Bonuses & More; Earn Cashback On Amazon & More",
@@ -133,10 +204,10 @@
       "ts": "2026-04-23T23:16:39.000Z",
       "title_en": "(Update: Amazon 5%) ShopBack Shopping Portal $15+ In Signup Bonuses & More; Earn Cashback On Amazon & More",
       "summary_en": "",
-      "title_zh": "（更新：Amazon 5%）ShopBack 購物門戶 新用戶註冊獎金 $15+ 及更多；在 Amazon 等平台賺取現金回饋",
-      "summary_zh": "ShopBack 推出新優惠，新用戶註冊可獲至少 15 美元獎金，Amazon 消費最高可享 5% 現金回饋。",
-      "title_es": "(Actualización: Amazon 5%) ShopBack Shopping Portal $15+ en bonos de registro y más; gana cashback en Amazon y más",
-      "summary_es": "ShopBack ofrece bonos de más de $15 por registrarte y devuelve efectivo en compras en Amazon y otras tiendas."
+      "title_zh": "（更新：Amazon 5%）ShopBack 購物入口註冊可獲得 $15+ 獎金及更多；亦可在 Amazon 等平台獲得現金回饋",
+      "summary_zh": "通過 ShopBack 購物入口註冊可獲得至少 $15 的獎金，且在 Amazon 等商家消費可獲得 5% 現金回饋。",
+      "title_es": "(Update: Amazon 5%) ShopBack: portal de compras con bonificación de registro de $15+ y cashback en Amazon y más",
+      "summary_es": "El portal ShopBack ofrece bonificaciones de registro de más de $15 y un 5% de cashback en compras de Amazon."
     },
     {
       "title": "[YMMV] DoorDash DashPass Trivia: $5 Off $12 When Answering 5 Questions Correctly",
@@ -151,10 +222,10 @@
       "ts": "2026-04-23T22:51:29.000Z",
       "title_en": "[YMMV] DoorDash DashPass Trivia: $5 Off $12 When Answering 5 Questions Correctly",
       "summary_en": "",
-      "title_zh": "【YMMV】DoorDash DashPass 答題：正確回答 5 題可享 $12 減 $5",
-      "summary_zh": "在 DoorDash DashPass 答題活動中，正確回答 5 題即可獲得 12 美元訂單減免 5 美元的優惠。",
+      "title_zh": "【YMMV】DoorDash DashPass 問答：正確回答 5 題可享 $5 折價（原價 $12）",
+      "summary_zh": "在 DoorDash DashPass 問答活動中，正確回答 5 題可享有 $5 折扣（原價 $12）。",
       "title_es": "[YMMV] DoorDash DashPass Trivia: $5 de descuento en $12 al responder 5 preguntas correctamente",
-      "summary_es": "DoorDash ofrece $5 de descuento en pedidos de $12 si respondes correctamente cinco preguntas de trivia."
+      "summary_es": "Responde correctamente cinco preguntas en la trivia de DashPass para obtener $5 de descuento en tu pedido de $12."
     },
     {
       "title": "Pizza Hut: Book It, Read Books & Earn Pizzas (Ages 5-12)",
@@ -168,46 +239,11 @@
       "ts": "2026-04-23T22:40:41.000Z",
       "title_en": "Pizza Hut: Book It, Read Books & Earn Pizzas (Ages 5-12)",
       "summary_en": "",
-      "title_zh": "Pizza Hut：報名閱讀書籍活動，5-12 歲孩童可賺取披薩",
-      "summary_zh": "Pizza Hut 推出閱讀書籍活動，5 至 12 歲兒童報名參加可獲得免費披薩。",
-      "title_es": "Pizza Hut: Book It, Lee libros y gana pizzas (edades 5-12)",
-      "summary_es": "Pizza Hut invita a niños de 5 a 12 años a leer libros y obtener pizzas gratis."
-    },
-    {
-      "title": "Xfinity Rewards: Free $10 GrubHub Giftcard",
-      "url": "https://www.doctorofcredit.com/xfinity-rewards-free-10-ubereats-grubhub-giftcard/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Uncategorized",
-        "grubhub",
-        "UberEATS",
-        "Xfinity Rewards"
-      ],
-      "ts": "2026-04-23T16:36:37.000Z",
-      "title_en": "Xfinity Rewards: Free $10 GrubHub Giftcard",
-      "summary_en": "",
-      "title_zh": "Xfinity 獎勵：免費 $10 GrubHub 禮品卡",
-      "summary_zh": "Xfinity 會員可在獎勵頁面兌換價值 10 美元的 GrubHub 禮品卡。",
-      "title_es": "Xfinity Rewards: Tarjeta de regalo de GrubHub de $10 gratis",
-      "summary_es": "Xfinity Rewards regala una tarjeta de regalo de GrubHub de $10."
-    },
-    {
-      "title": "Chase Offers: The Parking Spot, Spend $50+ & Get $10 Back",
-      "url": "https://www.doctorofcredit.com/chase-offers-the-parking-spot-spend-50-get-10-back/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Travel",
-        "chase offers",
-        "the parking spot"
-      ],
-      "ts": "2026-04-23T15:00:49.000Z",
-      "title_en": "Chase Offers: The Parking Spot, Spend $50+ & Get $10 Back",
-      "summary_en": "",
-      "title_zh": "Chase 優惠：The Parking Spot 停車場，消費 $50+ 可獲得 $10 回饋",
-      "summary_zh": "在 The Parking Spot 停車場使用 Chase 卡消費滿 50 美元，即可獲得 10 美元回饋。",
-      "title_es": "Ofertas de Chase: The Parking Spot, gasta $50+ y recibe $10 de vuelta",
-      "summary_es": "Chase ofrece $10 de reembolso en The Parking Spot al gastar $50 o más."
+      "title_zh": "Pizza Hut：閱讀書籍賺取披薩（年齡 5-12 歲）",
+      "summary_zh": "Pizza Hut 推出兒童閱讀計畫，5-12 歲小朋友閱讀書籍可賺取免費披薩。",
+      "title_es": "Pizza Hut: Reserva, lee libros y gana pizzas (para niños de 5 a 12 años)",
+      "summary_es": "Los niños de 5 a 12 años pueden ganar pizzas gratis leyendo libros y reservando en Pizza Hut."
     }
   ],
-  "fetched": "2026-04-25T14:02:23.412Z"
+  "fetched": "2026-04-25T20:00:47.670Z"
 }
