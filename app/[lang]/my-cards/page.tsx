@@ -216,60 +216,78 @@ export default function MyCardsPage({
   }, [params]);
 
   // Load selected cards — cloud-first if subscribed, localStorage fallback
+  // Also fetch cardsData in the same useEffect to avoid race conditions
   useEffect(() => {
-    const loadCards = async () => {
+    const loadEverything = async () => {
       const savedEmail = localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
+      let cardsToSet: string[] = [];
+      let isSubscribedToSet = false;
+      let emailToSet = '';
       
+      // Try cloud first
       if (savedEmail) {
         try {
-          // Cloud-first: fetch from Redis
           const res = await fetch(`/api/my-cards?email=${encodeURIComponent(savedEmail)}`);
           if (res.ok) {
             const data = await res.json();
             const cloudCards = data.cards || [];
             if (cloudCards.length > 0) {
-              setSelectedCards(cloudCards);
+              cardsToSet = cloudCards;
+              isSubscribedToSet = true;
+              emailToSet = savedEmail;
               localStorage.setItem(STORAGE_KEY, JSON.stringify(cloudCards));
-              setIsSubscribed(true);
-              setEmail(savedEmail);
-              setLoaded(true);
-              return;
             }
           }
         } catch {}
       }
       
-      // Fallback: load from localStorage
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        try {
-          setSelectedCards(JSON.parse(saved));
-        } catch {}
+      // Fallback to localStorage if no cloud cards
+      if (cardsToSet.length === 0) {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          try {
+            cardsToSet = JSON.parse(saved);
+            const em = localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
+            if (em && cardsToSet.length > 0) {
+              isSubscribedToSet = true;
+              emailToSet = em;
+            }
+          } catch {}
+        }
       }
-      // If still no cards but email exists in any form, prompt user
-      // (handles case where user subscribed on another device)
+      
+      // Set the selected cards
+      if (cardsToSet.length > 0) {
+        setSelectedCards(cardsToSet);
+      }
+      if (isSubscribedToSet) {
+        setIsSubscribed(true);
+        setEmail(emailToSet);
+      }
+      
+      // Fetch full card data for all cards
+      try {
+        const cardRes = await fetch('/api/cards?full=1');
+        if (cardRes.ok) {
+          const cardData: Card[] = await cardRes.json();
+          const map: Record<string, Card> = {};
+          for (const c of cardData) {
+            map[c.card_id] = c;
+          }
+          setCardsData(map);
+        }
+      } catch {}
+      
       setLoaded(true);
     };
     
-    loadCards();
+    loadEverything();
   }, []);
 
-  // Safety sync: if isSubscribed=true but no cards, try to recover
+  // Simple safety check
   useEffect(() => {
-    if (isSubscribed && selectedCards.length === 0 && loaded) {
-      // Inconsistent state - try to reload from cloud
-      const savedEmail = localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
-      if (savedEmail) {
-        fetch(`/api/my-cards?email=${encodeURIComponent(savedEmail)}`)
-          .then(r => r.json())
-          .then(d => {
-            if (d.cards && d.cards.length > 0) {
-              setSelectedCards(d.cards);
-            }
-          })
-          .catch(() => {});
-      }
-    }
+    // Logs for debugging
+    console.log('isSubscribed:', isSubscribed, 'selectedCards:', selectedCards.length, 'loaded:', loaded);
   }, [isSubscribed, selectedCards.length, loaded]);
 
   
@@ -343,34 +361,14 @@ export default function MyCardsPage({
     return () => window.removeEventListener('opencard_cards_updated', handleUpdate);
   }, []);
 
-  // Fetch full card data
+  // Fetch full card data - now handles in loadCards useEffect directly
+  // This useEffect just handles card ID updates from other pages
   useEffect(() => {
-    // Edge case: if subscribed but no cards loaded, try to recover
-    if (selectedCards.length === 0) {
-      if (isSubscribed) {
-        // Inconsistent state - try loading from localStorage as fallback
-        const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved) {
-          try {
-            setSelectedCards(JSON.parse(saved));
-          } catch {}
-        }
-      }
+    if (selectedCards.length > 0) {
+      // Trigger a re-render when cards are added/removed from other pages
       setLoaded(true);
-      return;
     }
-    fetch(`/api/cards?full=1`)
-      .then((r) => r.json())
-      .then((data: Card[]) => {
-        const map: Record<string, Card> = {};
-        for (const card of data) {
-          map[card.card_id] = card;
-        }
-        setCardsData(map);
-        setLoaded(true);
-      })
-      .catch(() => setLoaded(true));
-  }, [selectedCards]);
+  }, [selectedCards.length]);
 
   const m = MESSAGES[lang];
 
