@@ -277,6 +277,8 @@ export default function MyCardsPage({
             }
           }
           setCardsData(map);
+          (window as any).__cardsData = map;
+          console.log('setCardsData called, amex-platinum:', map['amex-platinum']?.name);
         }
       } catch {}
       
