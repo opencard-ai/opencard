@@ -10,11 +10,10 @@
  *   node scripts/batch-add-cards.js data/research/OUTPUT/amex-research.json
  */
 
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+const fs = require("fs");
+const path = require("path");
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(__filename);
 const PROJECT_ROOT = path.resolve(__dirname, "..");
 const CARDS_DIR = path.join(PROJECT_ROOT, "data/cards");
 
