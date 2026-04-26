@@ -1,6 +1,91 @@
 {
   "items": [
     {
+      "title": "Dollar General: Save 15% On Lowe’s Giftcards (4/30-5/2)",
+      "url": "https://www.doctorofcredit.com/dollar-general-save-10-on-lowes-giftcards/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "dollar general",
+        "lowes"
+      ],
+      "ts": "2026-04-26T19:12:10.000Z",
+      "title_en": "Dollar General: Save 15% On Lowe’s Giftcards (4/30-5/2)",
+      "summary_en": "",
+      "title_zh": "Dollar General：Lowe's 禮品卡 15% 折扣（4/30-5/2）",
+      "summary_zh": "在 4/30 至 5/2 期間，於 Dollar General 購買 Lowe’s 禮品卡可節省 15%。",
+      "title_es": "Dollar General: Ahorra 15% en tarjetas de regalo de Lowe's (4/30-5/2)",
+      "summary_es": "Ahorra 15% en tarjetas de regalo de Lowe's en Dollar General durante este fin de semana."
+    },
+    {
+      "title": "Staples: No Activation Fee on $200 Mastercard Gift Cards (4/26-5/2)",
+      "url": "https://www.doctorofcredit.com/staples-no-activation-fee-on-200-mastercard-gift-cards-12-5-12-11-limit-5-per-day/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Manufactured Spending",
+        "mastercard gift cards",
+        "staples"
+      ],
+      "ts": "2026-04-26T19:03:22.000Z",
+      "title_en": "Staples: No Activation Fee on $200 Mastercard Gift Cards (4/26-5/2)",
+      "summary_en": "",
+      "title_zh": "Staples：$200 Mastercard 禮品卡免手續費（4/26-5/2）",
+      "summary_zh": "Staples於 4/26 至 5/2 提供 $200 Mastercard 禮品卡免手續費優惠。",
+      "title_es": "Staples: Sin cargo de activación en tarjetas de regalo Mastercard de $200 (4/26-5/2)",
+      "summary_es": "Staples ofrece tarjetas de regalo Mastercard de $200 sin cargo de activación por tiempo limitado."
+    },
+    {
+      "title": "Chase/AmEx/U.S. Bank Offers: Get 5% Back At Food Lion (Max $5 Back)",
+      "url": "https://www.doctorofcredit.com/citi-offers-get-3-back-at-food-lion/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "citi offers",
+        "food lion"
+      ],
+      "ts": "2026-04-26T19:00:18.000Z",
+      "title_en": "Chase/AmEx/U.S. Bank Offers: Get 5% Back At Food Lion (Max $5 Back)",
+      "summary_en": "",
+      "title_zh": "Chase/AmEx/U.S. Bank 優惠：Food Lion 5% 回饋（最高 $5 回饋）",
+      "summary_zh": "Chase、AmEx 與 U.S. Bank 在 Food Lion 消費可獲得最高 $5 的 5% 回饋。",
+      "title_es": "Ofertas de Chase/AmEx/U.S. Bank: Obtén 5% de vuelta en Food Lion (Máx $5 de vuelta)",
+      "summary_es": "Obtén hasta 5% de reembolso en tus compras en Food Lion con estas ofertas bancarias."
+    },
+    {
+      "title": "Sam’s Club: $500 Disney Giftcard For $450 (4/29 – 5/31)",
+      "url": "https://www.doctorofcredit.com/sams-club-500-disney-giftcard-for-450-11-25-11-28/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "disney",
+        "sam's club"
+      ],
+      "ts": "2026-04-26T16:00:06.000Z",
+      "title_en": "Sam’s Club: $500 Disney Giftcard For $450 (4/29 – 5/31)",
+      "summary_en": "",
+      "title_zh": "Sam’s Club：$500 Disney 禮品卡售價 $450（4/29-5/31）",
+      "summary_zh": "Sam’s Club 於 4/29 至 5/31 以 $450 價格販售價值 $500 的 Disney 禮品卡。",
+      "title_es": "Sam's Club: Tarjeta de regalo Disney de $500 por $450 (4/29 – 5/31)",
+      "summary_es": "Compra una tarjeta de regalo Disney de $500 por solo $450 en Sam's Club."
+    },
+    {
+      "title": "eToro: $150 Via Finder When You Deposit $300+",
+      "url": "https://www.doctorofcredit.com/etoro-150-via-finder-when-you-deposit-300/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Uncategorized",
+        "etoro",
+        "finder"
+      ],
+      "ts": "2026-04-26T15:00:16.000Z",
+      "title_en": "eToro: $150 Via Finder When You Deposit $300+",
+      "summary_en": "",
+      "title_zh": "eToro：存款 $300 以上可獲 $150 獎金（透過 Finder）",
+      "summary_zh": "透過 Finder 在 eToro 存款 $300 以上可獲 $150 獎金。",
+      "title_es": "eToro: $150 a través de Finder cuando deposites $300+",
+      "summary_es": "Recibe $150 de bonificación en eToro al depositing $300 o más mediante Finder."
+    },
+    {
       "title": "Robinhood: Free Crypto Offer (One Full Token Worth $0.069 – $77,000+)",
       "url": "https://www.doctorofcredit.com/robinhood-free-crypto-offer-one-full-token-worth-0-069-77000/",
       "source": "Doctor of Credit",
@@ -11,10 +96,10 @@
       "ts": "2026-04-26T14:00:35.000Z",
       "title_en": "Robinhood: Free Crypto Offer (One Full Token Worth $0.069 – $77,000+)",
       "summary_en": "",
-      "title_zh": "Robinhood：免費加密貨幣贈送（一個完整代幣價值 $0.069 – 超過 $77,000）",
-      "summary_zh": "提供免費加密貨幣代幣，價值從 $0.069 起，總價值超過 $77,000。",
-      "title_es": "Robinhood: Oferta de Criptomonedas Gratis (Un Token Completo Valor de $0.069 – $77,000+)",
-      "summary_es": "Robinhood ofrece un token gratuito valorado en hasta $77,000 o más."
+      "title_zh": "Robinhood：免費加密貨幣（價值 $0.069 之完整代幣 — 價值超過 $77,000）",
+      "summary_zh": "Robinhood 贈送價值約 $77,000 的完整加密代幣（單枚價值 $0.069）。",
+      "title_es": "Robinhood: Oferta de cripto gratis (Un token completo vale $0.069 – $77,000+)",
+      "summary_es": "Robinhood ofrece un token de cripto gratis valorado entre $0.069 y más de $77,000."
     },
     {
       "title": "Rakuten ‘Big Give Week’ Earn 15%/15x Back At Select Merchants (5/4 – 5/11)",
@@ -28,10 +113,10 @@
       "ts": "2026-04-26T13:00:42.000Z",
       "title_en": "Rakuten ‘Big Give Week’ Earn 15%/15x Back At Select Merchants (5/4 – 5/11)",
       "summary_en": "",
-      "title_zh": "Rakuten「大手筆贈送週」在特定商家獲得 15%/15 倍回饋 (5/4 – 5/11)",
-      "summary_zh": "在特定商家消費可獲得 15% 回饋或 15 倍積分。",
-      "title_es": "Rakuten ‘Big Give Week’ Gana 15%/15x de Vuelta en Comercios Seleccionados (5/4 – 5/11)",
-      "summary_es": "Rakuten tiene su semana de ofertas donde puedes ganar hasta 15 veces el dinero de vuelta en comercios seleccionados."
+      "title_zh": "Rakuten「Big Give Week」：精選商家 15%/15倍 回饋（5/4-5/11）",
+      "summary_zh": "Rakuten 的「Big Give Week」於 5/4 至 5/11 在特定商家提供 15% 或 15 倍回饋。",
+      "title_es": "Rakuten 'Big Give Week' Gana 15%/15x de vuelta en comerciantes seleccionados (5/4 – 5/11)",
+      "summary_es": "Durante la semana de ofertas Big Give Week de Rakuntu, gana hasta 15x puntos en comerciantes seleccionados."
     },
     {
       "title": "Free Pretzels For National Pretzel Day (4/26)",
@@ -44,10 +129,10 @@
       "ts": "2026-04-26T05:55:26.000Z",
       "title_en": "Free Pretzels For National Pretzel Day (4/26)",
       "summary_en": "",
-      "title_zh": "國家椒鹽脆餅日免費椒鹽脆餅 (4/26)",
-      "summary_zh": "國家椒鹽脆餅日免費送椒鹽脆餅。",
-      "title_es": "Pretzels Gratis Para el Día Nacional del Pretzel (4/26)",
-      "summary_es": "Diversas tiendas ofrecen pretzels gratis para celebrar el Día Nacional del Pretzel el 26 de abril."
+      "title_zh": "免費椒鹽餅乾慶祝國家椒鹽餅乾日（4/26）",
+      "summary_zh": "4/26 國家椒鹽餅乾日免費送椒鹽餅乾。",
+      "title_es": "Pretzel gratis para el Día Nacional del Pretzel (4/26)",
+      "summary_es": "Recibe un pretzel gratis en cualquier lugar participante para celebrar el Día Nacional del Pretzel."
     },
     {
       "title": "Costco.com: $100 inKind Giftcard For $64.99 (Limit 5)",
@@ -61,10 +146,10 @@
       "ts": "2026-04-26T02:00:01.000Z",
       "title_en": "Costco.com: $100 inKind Giftcard For $64.99 (Limit 5)",
       "summary_en": "",
-      "title_zh": "Costco.com：$64.99 購買價值 $100 的禮卡（限購 5 張）",
-      "summary_zh": "以 $64.99 購買價值 $100 的 Costco 禮卡，限量 5 張。",
-      "title_es": "Costco.com: Tarjeta de Regalo de $100 Por $64.99 (Límite 5)",
-      "summary_es": "Costco ofrece tarjetas de regalo de $100 por solo $64.99 con límite de 5 por cliente."
+      "title_zh": "Costco.com：$100 實物禮品卡售價 $64.99（限購 5 張）",
+      "summary_zh": "Costco.com 以 $64.99 販售 $100 實物禮品卡，每人限購 5 張。",
+      "title_es": "Costco.com: Tarjeta de regalo de $100 en especie por $64.99 (Límite 5)",
+      "summary_es": "Compra tarjetas de regalo de $100 por solo $64.99 en Costco.com, con un límite de 5 por cliente."
     },
     {
       "title": "Chase Disney Inspire Bonus To Change 5/4 (From $300 Giftcard + $300 Statement Credit To $500 Statement Credit)",
@@ -81,10 +166,10 @@
       "ts": "2026-04-26T01:09:26.000Z",
       "title_en": "Chase Disney Inspire Bonus To Change 5/4 (From $300 Giftcard + $300 Statement Credit To $500 Statement Credit)",
       "summary_en": "",
-      "title_zh": "Chase Disney Inspire 獎金変更 5/4（從 $300 禮卡 + $300 帳單扣抵改為 $500 帳單扣抵）",
-      "summary_zh": "更改 Disney Inspire 獎金內容，改為提供 $500 帳單扣抵並取消 $300 禮卡。",
-      "title_es": "Bonificación Chase Disney Inspire Cambia el 5/4 (De $300 Tarjeta de Regalo + $300 Crédito a $500 Crédito)",
-      "summary_es": "Chase cambia su bonificación de Disney Inspire de tarjeta de regalo a crédito de $500 en el estado de cuenta."
+      "title_zh": "Chase Disney Inspire 獎金變更 5/4（原 $300 禮品卡 + $300 帳單回饋改為 $500 帳單回饋）",
+      "summary_zh": "Chase Disney Inspire 獎金自 5/4 起從 $300 禮品卡加 $300 帳單回饋改為單筆 $500 帳單回饋。",
+      "title_es": "Bonificación inspire de Disney de Chase cambia el 5/4 (De $300Giftcard + $300 crédito a $500 crédito)",
+      "summary_es": "Chase modifica su bonificación inspire de Disney, ahora ofreciendo $500 de crédito en lugar de $300 más tarjeta de regalo."
     },
     {
       "title": "[Live 5/20 With List] Hyatt Devaluation – 5 Levels Per Category (20-37.5%+ Base Increase)",
@@ -98,10 +183,10 @@
       "ts": "2026-04-26T00:46:07.000Z",
       "title_en": "[Live 5/20 With List] Hyatt Devaluation – 5 Levels Per Category (20-37.5%+ Base Increase)",
       "summary_en": "",
-      "title_zh": "[現場 5/20 連線名單] Hyatt 貶值 – 每類別 5 級別（基本漲幅 20-37.5%+）",
-      "summary_zh": "Hyatt 宣布各級別基本費用調漲 20% 至 37.5%。",
-      "title_es": "[En Vivo 5/20 Con Lista] Devaluación de Hyatt – 5 Niveles Por Categoría (Aumento Base 20-37.5%+)",
-      "summary_es": "Hyatt increase los precios de premios en 5 niveles por categoría, con aumentos base de más de 20-37.5%."
+      "title_zh": "【直播 5/20 列表】Hyatt 貶值 – 每類別 5 級（基礎漲幅 20‑37.5%+）",
+      "summary_zh": "Hyatt 將於 5/20 直播公佈貶值資訊，每類別增加 5 級，基礎漲幅 20‑37.5% 以上。",
+      "title_es": "[En vivo 5/20 con lista] Hyatt Devaluación – 5 niveles por categoría (20-37.5%+ aumento base)",
+      "summary_es": "Hyatt desvaloriza 5 niveles por categoría con aumentos base de 20% a 37.5%."
     },
     {
       "title": "[YMMV] Current: $100 Bonus For Existing Customers With Promo Code RETURN100",
@@ -113,10 +198,10 @@
       "ts": "2026-04-26T00:39:06.000Z",
       "title_en": "[YMMV] Current: $100 Bonus For Existing Customers With Promo Code RETURN100",
       "summary_en": "",
-      "title_zh": "[YMMV] 現有優惠：使用優惠碼 RETURN100 現有客戶獲得 $100 獎金",
-      "summary_zh": "現有客戶使用優惠碼 RETURN100 可獲得 $100 獎金。",
-      "title_es": "[YMMV] Actual: $100 Bonificación Para Clientes Existentes Con Código Promocional RETURN100",
-      "summary_es": "Los clientes existentes pueden recibir una bonificación de $100 usando el código promocional RETURN100."
+      "title_zh": "【YMMV】現有客戶使用促銷碼 RETURN100 可獲得 $100 獎金",
+      "summary_zh": "現有客戶使用促銷碼 RETURN100 可獲得 $100 獎金（因人而異）。",
+      "title_es": "[YMMV] Actual: $100 Bonus Para Clientes Existentes Con Código Promocional RETURN100",
+      "summary_es": "Los clientes existentes pueden recibir una bonificación de $100 al usar el código promocional RETURN100."
     },
     {
       "title": "[PA, NJ Only] Penn Community Bank $400/$475 Checking Bonus, Direct Deposit Not Required",
@@ -130,10 +215,10 @@
       "ts": "2026-04-25T23:43:41.000Z",
       "title_en": "[PA, NJ Only] Penn Community Bank $400/$475 Checking Bonus, Direct Deposit Not Required",
       "summary_en": "",
-      "title_zh": "[僅限 PA, NJ] Penn Community Bank $400/$475 支票帳戶獎金，無需設定直接存款",
-      "summary_zh": "Penn Community Bank 提供支票帳戶獎金，無需設定直接存款。",
-      "title_es": "[PA, NJ Solo] Penn Community Bank $400/$475 Bonificación de Cuenta Corriente, Depósito Directo No Requerido",
-      "summary_es": "Penn Community Bank ofrece bonificaciones de $400 a $475 por abrir una cuenta corriente sin necesidad de depósito directo."
+      "title_zh": "【僅 PA、NJ】Penn Community Bank 支票帳戶獎金 $400/$475，無需直接存款",
+      "summary_zh": "Penn Community Bank 僅限 PA、NJ 地區，提供 $400 或 $475 支票帳戶獎金，無需直接存款。",
+      "title_es": "[PA, NJ Solo] Penn Community Bank $400/$475 Bonificación de cuenta corriente, Depósito Directo No Requerido",
+      "summary_es": "Penn Community Bank ofrece una bonificación de hasta $475 en cuentas corrientes sin requerimiento de depósito directo."
     },
     {
       "title": "[IA] Maxx: by Cedar Rapids Bank & Trust: $300 Checking Bonus",
@@ -147,10 +232,10 @@
       "ts": "2026-04-25T18:00:50.000Z",
       "title_en": "[IA] Maxx: by Cedar Rapids Bank & Trust: $300 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[IA] Maxx: Cedar Rapids Bank & Trust：$300 支票帳戶獎金",
-      "summary_zh": "Cedar Rapids Bank & Trust 提供新客戶 $300 支票帳戶獎金。",
-      "title_es": "[IA] Maxx: por Cedar Rapids Bank & Trust: $300 Bonificación de Cuenta Corriente",
-      "summary_es": "Cedar Rapids Bank & Trust ofrece $300 de bonificación por abrir una cuenta corriente en Iowa."
+      "title_zh": "【IA】Maxx（Cedar Rapids Bank & Trust）$300 支票帳戶獎金",
+      "summary_zh": "IA 州的 Cedar Rapids Bank & Trust 為 Maxx 客戶提供 $300 支票帳戶獎金。",
+      "title_es": "[IA] Maxx: por Cedar Rapids Bank & Trust: $300 Bonificación de cuenta corriente",
+      "summary_es": "Cedar Rapids Bank & Trust ofrece una bonificación de $300 para nuevas cuentas corrientes en Iowa."
     },
     {
       "title": "[PA only] TruMark Financial $250 Checking Bonus",
@@ -166,99 +251,11 @@
       "ts": "2026-04-25T17:30:32.000Z",
       "title_en": "[PA only] TruMark Financial $250 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[僅限 PA] TruMark Financial $250 支票帳戶獎金",
-      "summary_zh": "TruMark Financial 提供 PA 居民 $250 支票帳戶獎金。",
-      "title_es": "[PA solo] TruMark Financial $250 Bonificación de Cuenta Corriente",
-      "summary_es": "TruMark Financial ofrece $250 de bonificación por abrir una cuenta corriente en Pennsylvania."
-    },
-    {
-      "title": "[AL, GA] Kinetic Credit Union $250 Referral Bonus ($100 For Person Referring), DD Not Required",
-      "url": "https://www.doctorofcredit.com/al-ga-kinetic-credit-union-250-referral-bonus-100-for-person-referring-dd-not-required/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "al bank bonuses",
-        "direct deposit not required",
-        "ga bank bonuses"
-      ],
-      "ts": "2026-04-25T15:30:12.000Z",
-      "title_en": "[AL, GA] Kinetic Credit Union $250 Referral Bonus ($100 For Person Referring), DD Not Required",
-      "summary_en": "",
-      "title_zh": "[AL, GA] Kinetic Credit Union $250 推薦獎金（推薦人可獲得 $100），無需 DD",
-      "summary_zh": " Kinetic Credit Union 提供推薦獎金，無需直接存款要求。",
-      "title_es": "[AL, GA] Kinetic Credit Union $250 Bonificación de Referido ($100 Para la Persona Que Refiere), DD No Requerida",
-      "summary_es": "Kinetic Credit Union ofrece $250 por referido y $100 al refiere, sin necesidad de depósito directo en Alabama y Georgia."
-    },
-    {
-      "title": "[CO Only] Metrum Community Credit Union $200 Checking Bonus, Direct Deposit Not Required",
-      "url": "https://www.doctorofcredit.com/co-only-metrum-community-credit-union-200-checking-bonus-direct-deposit-not-required/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "co bank bonuses",
-        "credit card funding",
-        "direct deposit not required",
-        "soft pull"
-      ],
-      "ts": "2026-04-25T14:00:45.000Z",
-      "title_en": "[CO Only] Metrum Community Credit Union $200 Checking Bonus, Direct Deposit Not Required",
-      "summary_en": "",
-      "title_zh": "[僅限 CO] Metrum Community Credit Union $200 支票帳戶獎金，無需直接存款",
-      "summary_zh": "Metrum Community Credit Union 提供 $200 支票帳戶獎金，無需設定直接存款。",
-      "title_es": "[CO Solo] Metrum Community Credit Union $200 Bonificación de Cuenta Corriente, Depósito Directo No Requerido",
-      "summary_es": "Metrum Community Credit Union ofrece $200 por abrir una cuenta corriente sin requisito de depósito directo en Colorado."
-    },
-    {
-      "title": "[Targeted] Existing MooMoo Users: Get $100/$200 Bonus With $5k/$10k Deposit",
-      "url": "https://www.doctorofcredit.com/targeted-existing-moomoo-users-get-100-200-bonus-with-5k-10k-deposit/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "bank bonus",
-        "moomoo"
-      ],
-      "ts": "2026-04-24T19:00:30.000Z",
-      "title_en": "[Targeted] Existing MooMoo Users: Get $100/$200 Bonus With $5k/$10k Deposit",
-      "summary_en": "",
-      "title_zh": "[目標對象] 現有 MooMoo 用戶：存款 $5k/$10k 可獲得 $100/$200 獎金",
-      "summary_zh": "現有 MooMoo 用戶存款可得獎金，存款 $5,000 獲得 $100，存款 $10,000 獲得 $200。",
-      "title_es": "[Dirigido] Usuarios Existentes de MooMoo: Recibe $100/$200 Bonificación Con Depósito de $5k/$10k",
-      "summary_es": "Usuarios existentes de MooMoo pueden recibir $100 o $200 de bonificación con depósitos de $5,000 o $10,000 respectivamente."
-    },
-    {
-      "title": "Giant, Stop&Shop, Martin’s: Get 10x Points On Lowe’s & DoorDash Giftcards (4/24-4/30)",
-      "url": "https://www.doctorofcredit.com/giant-stopshop-martins-get-6x-fuel-points-on-all-third-party-giftcards/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Gift Card Deals",
-        "fuel points",
-        "Giant Stop and Shop Gas Deals Visa Gift Card Points"
-      ],
-      "ts": "2026-04-24T18:00:24.000Z",
-      "title_en": "Giant, Stop&Shop, Martin’s: Get 10x Points On Lowe’s & DoorDash Giftcards (4/24-4/30)",
-      "summary_en": "",
-      "title_zh": "Giant、Stop&Shop、Martin’s：Lowe’s 和 DoorDash 禮卡獲得 10 倍積分 (4/24-4/30)",
-      "summary_zh": "Giant、Stop&Shop、Martin’s 商店購買禮卡可獲得 10 倍積分。",
-      "title_es": "Giant, Stop&Shop, Martin’s: Obtén 10x Puntos En Tarjetas de Regalo de Lowe’s y DoorDash (4/24-4/30)",
-      "summary_es": "Giant, Stop&Shop y Martin’s ofrecen 10 veces puntos en tarjetas de regalo de Lowe’s y DoorDash del 24 al 30 de abril."
-    },
-    {
-      "title": "Delta Shopping Portal: Get 500 Bonus Miles With $100 Spend (4/23-5/4)",
-      "url": "https://www.doctorofcredit.com/delta-shopping-portal-get-500-bonus-miles-with-100-spend-4-23-5-4/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "delta airlines",
-        "shopping portals"
-      ],
-      "ts": "2026-04-24T17:30:51.000Z",
-      "title_en": "Delta Shopping Portal: Get 500 Bonus Miles With $100 Spend (4/23-5/4)",
-      "summary_en": "",
-      "title_zh": "Delta 購物入口網站：消費 $100 獲得 500 Bonus Miles (4/23-5/4)",
-      "summary_zh": "Delta 購物入口網站消費滿 $100 可獲得 500 英里飛行積分。",
-      "title_es": "Delta Shopping Portal: Obtén 500 Millas de Bonificación Con $100 de Gasto (4/23-5/4)",
-      "summary_es": "Delta ofrece 500 millas de bonificación por cada $100 gastado en su portal de compras del 23 de abril al 4 de mayo."
+      "title_zh": "【僅 PA】TruMark Financial $250 支票帳戶獎金",
+      "summary_zh": "TruMark Financial 僅在 PA 州提供 $250 支票帳戶獎金。",
+      "title_es": "[Solo PA] TruMark Financial $250 Bonificación de cuenta corriente",
+      "summary_es": "TruMark Financial ofrece una bonificación de $250 para nuevas cuentas corrientes en Pensilvania."
     }
   ],
-  "fetched": "2026-04-26T14:04:07.981Z"
+  "fetched": "2026-04-26T20:00:52.765Z"
 }
