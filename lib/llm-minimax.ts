@@ -185,14 +185,27 @@ export async function callMiniMax(opts: MiniMaxOptions): Promise<MiniMaxResponse
   };
 }
 
-/** Strip ```json ... ``` markdown fence if model wrapped output. */
+/**
+ * Strip wrappers that reasoning/instruction-tuned models add despite
+ * response_format=json_object. Handles:
+ *   - <think>...</think> chain-of-thought (MiniMax-M2, DeepSeek-R1, o1-style)
+ *   - ```json ... ``` markdown fence
+ *   - leading/trailing prose around an embedded JSON object
+ */
 export function stripJsonFence(text: string): string {
-  const trimmed = text.trim();
-  // ```json ... ```  or  ``` ... ```
+  let s = text.trim();
+  // Drop any number of <think>...</think> blocks. Non-greedy, multiline.
+  s = s.replace(/<think\b[^>]*>[\s\S]*?<\/think>\s*/gi, "").trim();
+  // Strip ```json ... ``` or ``` ... ``` fence
   const fence = /^```(?:json)?\s*([\s\S]*?)\s*```$/i;
-  const m = fence.exec(trimmed);
-  if (m) return m[1].trim();
-  return trimmed;
+  const fenceMatch = fence.exec(s);
+  if (fenceMatch) s = fenceMatch[1].trim();
+  // If there's still leading/trailing prose around an object, slice to outermost braces.
+  if (s.length && s[0] !== "{" && s[0] !== "[") {
+    const firstBrace = s.search(/[{[]/);
+    if (firstBrace > 0) s = s.slice(firstBrace);
+  }
+  return s;
 }
 
 /**
