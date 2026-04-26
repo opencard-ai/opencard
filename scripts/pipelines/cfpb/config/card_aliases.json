@@ -1,0 +1,121 @@
+{
+  "_note": "Maps PDF basenames (in data/cfpb-cache/) to filing metadata. Used by extract.ts to detect family-filings and refuse per-card extraction. Family PDFs do NOT contain per-card Schumer Box values — they show ranges across the whole card family — so extracting from them produces wrong data (the 2026-04-25 incident on amex-platinum was caused by a different bug, but the same pattern would corrupt boa-* cards if we let it run).",
+  "_extraction_strategies": {
+    "single-card": "Run extract.ts normally. LLM extracts per-card Schumer Box.",
+    "refuse-per-card-use-plan-b": "Family filing — values are ranges across multiple cards, not per-card. extract.ts refuses to write facts. Use Plan B (issuer disclosure page scraper) for per-card values. See docs/plan-b-disclosure-pages.md.",
+    "needs-review": "Classifier flagged or operator suspects family-style. Manually inspect before adding to single-card or family list."
+  },
+  "_audit_source": "scripts/pipelines/cfpb/config/family-filing-audit.json (run audit-family-filings.ts to refresh)",
+  "_last_updated": "2026-04-26",
+  "family_pdfs": {
+    "boa-platinum.pdf": {
+      "issuer": "Bank of America",
+      "extraction_strategy": "refuse-per-card-use-plan-b",
+      "family_range_summary": "AF $0-$550, FX 0-3%, APR Prime+9.74% to Prime+21.74%, late_fee up to $40, BT 0-5%, cash advance 5%",
+      "covers_card_ids": [
+        "boa-platinum",
+        "boa-customized-cash-rewards",
+        "boa-unlimited-cash-rewards",
+        "boa-travel-rewards",
+        "boa-premium-rewards",
+        "boa-premium-rewards-elite",
+        "boa-customized-cash-rewards-secured",
+        "boa-student-customized-cash-rewards",
+        "boa-student-travel-rewards"
+      ],
+      "covers_note": "Inferred from data/cards/ prefix matching. PDF is the standard BoA consumer credit card agreement; actual coverage may vary. Verify each card via Plan B disclosure URL before promoting.",
+      "audit_signal": "family marker 'depending on which card' + pct range"
+    },
+    "boa-platinum-signature.pdf": {
+      "issuer": "Bank of America",
+      "extraction_strategy": "refuse-per-card-use-plan-b",
+      "family_range_summary": "Visa Signature tier — APR 13.99% to 27.99%",
+      "covers_card_ids": ["unknown"],
+      "covers_note": "Manually inspect to determine which BoA Visa Signature cards this covers (likely premium-rewards / travel-rewards Signature variants).",
+      "audit_signal": "family marker 'depending on which card' + pct range"
+    },
+    "boa-secured.pdf": {
+      "issuer": "Bank of America",
+      "extraction_strategy": "refuse-per-card-use-plan-b",
+      "family_range_summary": "Secured tier — APR 24.99% to 27.99%",
+      "covers_card_ids": ["boa-customized-cash-rewards-secured"],
+      "covers_note": "Likely also covers any BoA secured products not currently in OpenCard.",
+      "audit_signal": "family marker 'depending on which card' + pct range"
+    },
+    "capital-one-quicksilver.pdf": {
+      "issuer": "Capital One",
+      "extraction_strategy": "refuse-per-card-use-plan-b",
+      "family_range_summary": "AF $0-$39, APR 25.74% to 29.74%, late_fee up to $40, cash advance $10 or 3%",
+      "covers_card_ids": [
+        "capital-one-quicksilver",
+        "capital-one-quicksilver-one",
+        "capital-one-savor",
+        "capital-one-savor-one",
+        "capital-one-savorone",
+        "capital-one-venture-one",
+        "capital-one-journey-student"
+      ],
+      "covers_note": "Capital One files one consumer agreement covering Quicksilver/SavorOne/VentureOne family. Per-card AF/APR varies — must use issuer disclosure pages for canonical values.",
+      "audit_signal": "family marker 'shows a range of terms' + fee range"
+    },
+    "capital-one-secure.pdf": {
+      "issuer": "Capital One",
+      "extraction_strategy": "refuse-per-card-use-plan-b",
+      "family_range_summary": "Secured tier — APR 29.49% to 29.74%",
+      "covers_card_ids": ["capital-one-quicksilver-secured"],
+      "covers_note": "Verify which Capital One secured products are covered.",
+      "audit_signal": "family marker 'shows a range of terms' + pct range"
+    },
+    "capital-one-venture-x.pdf": {
+      "issuer": "Capital One",
+      "extraction_strategy": "refuse-per-card-use-plan-b",
+      "family_range_summary": "Premium tier — AF $0-$395",
+      "covers_card_ids": [
+        "capital-one-venture",
+        "capital-one-venture-x",
+        "capital-one-venture-x-biz"
+      ],
+      "covers_note": "Likely Venture / Venture X / Venture X Business family.",
+      "audit_signal": "family marker 'shows a range of terms' + fee range"
+    },
+    "navy-federal.pdf": {
+      "issuer": "Navy Federal Credit Union",
+      "extraction_strategy": "refuse-per-card-use-plan-b",
+      "family_range_summary": "7+ Navy Federal cards in one Pricing Terms doc with per-card APRs (Platinum 10.99-18.00%, GO REWARDS 14.24-18.00%, cashRewards 14.90-18.00%, cashRewards Plus 14.90-18.00%, More Rewards Amex 14.90-18.00%, Flagship Rewards 15.49-18.00%, cashRewards Secured 18.00%)",
+      "covers_card_ids": [
+        "navy-federal-cashrewards",
+        "navy-federal-cashrewards-plus",
+        "navy-federal-flagship-rewards",
+        "navy-federal-go-rewards",
+        "navy-federal-more-rewards"
+      ],
+      "covers_note": "Manually identified — auto-classifier missed because no fee-range present (only pct ranges per card). NFCU lists each card explicitly.",
+      "audit_signal": "manual: 5 distinct card APRs in Pricing Terms section"
+    },
+    "penfed.pdf": {
+      "issuer": "PenFed Credit Union",
+      "extraction_strategy": "refuse-per-card-use-plan-b",
+      "family_range_summary": "PenFed Power Cash Visa, PenFed Platinum Rewards Visa Signature, PenFed Pathfinder Rewards Visa Signature in one filing. AF: $0 baseline, $95 for Pathfinder.",
+      "covers_card_ids": [
+        "penfed-power-cash-rewards",
+        "penfed-platinum-rewards",
+        "penfed-pathfinder"
+      ],
+      "covers_note": "Manually identified — auto-classifier missed because regex saw $1000-$2000 (credit limit) not a fee range.",
+      "audit_signal": "manual: 3 PenFed cards listed with own AF tiers"
+    }
+  },
+  "needs_review": {
+    "_note": "PDFs that may be family-style but classifier wasn't confident. Manually inspect when adding new cards or running Stage 3 batch.",
+    "barclays-gap.pdf": "Barclays retail co-brand — likely covers Gap/Banana Republic/Old Navy/Athleta (4 brands, possibly 1 PDF).",
+    "barclays-ubereats.pdf": "Has multiple pct ranges but classifier marked false-positive earlier. Likely single-card with credit-tiered APR. Verify.",
+    "sync-amazon.pdf": "Synchrony retail — Amazon Store Card vs Amazon Prime Visa might be in same filing.",
+    "sync-american-eagle.pdf": "Same Synchrony retail pattern.",
+    "sync-belk.pdf": "Same.",
+    "pnc-cash-unlimited.pdf": "PNC consumer card filing — possibly covers Cash Unlimited / Cash Rewards / Premier Traveler.",
+    "pnc-secured.pdf": "PNC secured tier.",
+    "usb-amex-card.pdf": "U.S. Bank — possibly covers Altitude family.",
+    "usb-flex-rewards.pdf": "U.S. Bank — possibly covers Flex Perks / Cash Plus."
+  },
+  "_chase_parse_errors_note": "50 chase numbered PDFs (chase-271318.pdf etc.) fail pdf-parse with 'Invalid PDF structure'. These are likely XFA forms or PDF v2.0. Tracked separately. Use named chase PDFs (chase-sapphire-preferred.pdf etc.) which parse fine."
+}
