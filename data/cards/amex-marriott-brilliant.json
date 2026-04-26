@@ -94,7 +94,7 @@
       "notes": "200K offer details and offer history confirmation"
     }
   ],
-  "last_updated": "2026-04-25T16:00:58.249Z",
+  "last_updated": "2026-04-25",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -117,43 +117,38 @@
   "recurring_credits": [
     {
       "name": "Uber Cash",
-      "amount": 200,
+      "amount": 300,
       "frequency": "annual",
-      "category": "ride",
-      "description": "$25/month credits for Uber Eats or Uber rides",
-      "reset_type": "calendar_year"
+      "description": "$25/month",
+      "source": "Amex官網"
+    },
+    {
+      "name": "Marriott Free Night",
+      "amount": 50000,
+      "frequency": "annual",
+      "description": "Marriott Bonvoy free night",
+      "source": "Amex官網"
+    },
+    {
+      "name": "Walmart+ Credit",
+      "amount": 155,
+      "frequency": "annual",
+      "description": "$12.95/month",
+      "source": "Amex官網"
+    },
+    {
+      "name": "Clear Security Plus",
+      "amount": 209,
+      "frequency": "annual",
+      "description": "CLEAR Plus membership",
+      "source": "Amex官網"
     },
     {
       "name": "Saks Fifth Avenue",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "shopping",
-      "description": "$50 semi-annually",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Free Night Award",
-      "amount": 50000,
-      "frequency": "annual",
-      "category": "hotel",
-      "description": "Annual Free Night Award at Marriott properties up to 50,000 points",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Walmart+",
       "amount": 0,
       "frequency": "annual",
-      "category": "shopping",
-      "description": "Complimentary Walmart+ membership",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Clear Security",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other",
-      "description": "Complimentary Clear Plus membership",
-      "reset_type": "calendar_year"
+      "description": "DISCONTINUED 2026",
+      "source": "Amex官網"
     }
   ],
   "last_scraped": "2026-04-24T17:26:46.246653",
