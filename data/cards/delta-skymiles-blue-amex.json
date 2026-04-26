@@ -84,10 +84,6 @@
   "next_review": "2026-07-15T13:41:49.978000+00:00",
   "cash_advance_fee_pct": 21.99,
   "late_fee": 40,
-  "penalty_apr": 26.74,
-  "_unverified_fields": [
-    "penalty_apr"
-  ],
   "_revert_history": [
     {
       "field": "annual_fee",

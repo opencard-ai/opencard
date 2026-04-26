@@ -1,6 +1,6 @@
 {
   "card_id": "boa-premium-rewards",
-  "name": "Bank of America\u00ae Premium Rewards\u00ae Credit Card",
+  "name": "Bank of America® Premium Rewards® Credit Card",
   "issuer": "Bank of America",
   "network": "visa",
   "annual_fee": 95,
@@ -86,6 +86,5 @@
   ],
   "last_verified": "2026-04-16T13:41:49.957Z",
   "next_review": "2026-07-15T13:41:49.957000+00:00",
-  "penalty_apr": 29.99,
   "cfpb_source": "Q3_2025"
 }

@@ -1,6 +1,6 @@
 {
   "card_id": "navy-federal-cashrewards-plus",
-  "name": "Navy Federal cashRewards PLUS\u00ae Credit Card",
+  "name": "Navy Federal cashRewards PLUS® Credit Card",
   "issuer": "Navy Federal Credit Union",
   "network": "visa",
   "annual_fee": 0,
@@ -71,6 +71,5 @@
   },
   "last_verified": "2026-04-16T13:41:49.991Z",
   "next_review": "2026-07-15T13:41:49.991000+00:00",
-  "penalty_apr": "18.00",
   "cfpb_source": "Q3_2025"
 }

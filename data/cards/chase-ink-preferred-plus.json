@@ -69,7 +69,6 @@
   "last_verified": "2026-04-16T13:41:49.967Z",
   "next_review": "2026-07-15T13:41:49.967000+00:00",
   "cash_advance_fee_flat": 5,
-  "cash_advance_fee_pct": 5.0,
-  "penalty_apr": "29.99",
+  "cash_advance_fee_pct": 5,
   "cfpb_source": "Q3_2025"
 }
