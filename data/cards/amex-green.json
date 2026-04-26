@@ -77,7 +77,7 @@
       "notes": "Official Amex Page"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.947Z",
+  "last_updated": "2026-04-25",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -88,25 +88,8 @@
       "name": "CLEAR Plus Credit",
       "amount": 209,
       "frequency": "annual",
-      "category": "travel",
-      "description": "$209 annual credit for CLEAR+ membership (airport security fast lane).",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "LoungeBuddy Credit",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "$100 annual credit for LoungeBuddy passes to access airport lounges worldwide.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "CLEAR+ Credit",
-      "amount": 209,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Covers cost of CLEAR+ membership.",
-      "reset_type": "calendar_year"
+      "description": "$209 annual credit for CLEAR Plus membership",
+      "source": "Amex官网"
     }
   ],
   "welcome_bonus": {
