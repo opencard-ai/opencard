@@ -104,10 +104,6 @@
   "cfpb_source": "Q3_2025",
   "late_fee": 40,
   "cash_advance_fee_flat": 10,
-  "cash_advance_fee_pct": 5.0,
-  "apr_purchases_min": "12.74",
-  "apr_purchases_max": "21.74",
-  "apr_cash_advances": "21.99",
-  "penalty_apr": "26.74",
+  "cash_advance_fee_pct": 5,
   "cfpb_verified": true
 }

@@ -53,9 +53,6 @@
   "last_updated": "2026-04-26T04:02:55.594292Z",
   "last_verified": "2026-04-16T13:41:49.986Z",
   "next_review": "2026-07-15T13:41:49.986000+00:00",
-  "apr_purchases_min": "18.24",
-  "apr_purchases_max": "24.24",
-  "apr_cash_advances": "29.24",
   "_revert_history": [
     {
       "field": "annual_fee",

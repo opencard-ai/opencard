@@ -19,15 +19,18 @@
 import { callMiniMaxJson, MiniMaxError } from "../../../../lib/llm-minimax";
 import { checkSanity } from "../../../../lib/fact-store";
 
+/**
+ * NOTE: APR fields (apr_purchases_min/max, apr_cash_advances, penalty_apr)
+ * were removed from the OpenCard schema on 2026-04-27 — they're irrelevant
+ * to the target user (rewards/credits maximizer) and accurate per-card APR
+ * data isn't available from CFPB family-style PDFs. The LLM no longer
+ * extracts these. See scripts/migrate-remove-apr.ts and lib/fact-store.ts.
+ */
 export interface SchumerBoxRaw {
   annual_fee: number | null;
   annual_fee_min: number | null;
   annual_fee_max: number | null;
   foreign_transaction_fee_pct: number | null;
-  apr_purchases_min: number | null;
-  apr_purchases_max: number | null;
-  apr_cash_advances: number | null;
-  penalty_apr: number | null;
   late_fee_max: number | null;
   cash_advance_fee_pct: number | null;
   cash_advance_fee_min: number | null;
@@ -64,11 +67,7 @@ Critical rules to avoid common parsing errors:
 
 2. foreign_transaction_fee_pct is the PERCENTAGE (e.g. 2.7 for "2.7%"). If "None" or "0%", use 0. Cap at 5 — anything higher is a parsing error.
 
-3. APRs are FIXED ANNUAL PERCENTAGE RATES.
-   - "29.99%" → 29.99 (not 0.2999)
-   - If the agreement expresses the APR as a formula like "Prime Rate + 12.74%", "Prime + 21.74%", or any other variable-rate formula tied to Prime Rate / SOFR / LIBOR, set the APR field to null and put the formula in the notes field.
-   - NEVER return the margin (the X in "Prime + X%") as the APR — that is a parsing error. The margin is not the APR.
-   - Only return a numeric APR if the agreement gives a single fixed annual percentage that does not vary with an external index.
+3. APR fields (penalty APR, purchase APR, cash advance APR) are NOT extracted by this pipeline. OpenCard removed APR from the schema on 2026-04-27 — do not include any APR field in the output.
 
 4. If you can't find a field with high confidence, return null for that field and explain in the notes field.
 
@@ -81,10 +80,6 @@ const USER_PROMPT_TEMPLATE = (text: string) => `Extract the Schumer Box from thi
   "annual_fee_min": number | null,
   "annual_fee_max": number | null,
   "foreign_transaction_fee_pct": number | null,
-  "apr_purchases_min": number | null,
-  "apr_purchases_max": number | null,
-  "apr_cash_advances": number | null,
-  "penalty_apr": number | null,
   "late_fee_max": number | null,
   "cash_advance_fee_pct": number | null,
   "cash_advance_fee_min": number | null,
@@ -158,15 +153,6 @@ function validateSchumerBox(s: SchumerBoxRaw): SchumerBoxExtraction["validation"
       ? { ok: true }
       : checkSanity("foreign_transaction_fee", s.foreign_transaction_fee_pct);
 
-  v.apr_purchases_min = numberInRange("apr_purchases_min", s.apr_purchases_min, 0, 50);
-  v.apr_purchases_max = numberInRange("apr_purchases_max", s.apr_purchases_max, 0, 50);
-  v.apr_cash_advances = numberInRange("apr_cash_advances", s.apr_cash_advances, 0, 50);
-
-  v.penalty_apr =
-    s.penalty_apr === null
-      ? { ok: true }
-      : checkSanity("penalty_apr", s.penalty_apr);
-
   v.late_fee_max = numberInRange("late_fee_max", s.late_fee_max, 0, 100);
   v.cash_advance_fee_pct = numberInRange("cash_advance_fee_pct", s.cash_advance_fee_pct, 0, 10);
   v.cash_advance_fee_min = numberInRange("cash_advance_fee_min", s.cash_advance_fee_min, 0, 50);
@@ -200,10 +186,6 @@ export function fieldPathsFromExtraction(s: SchumerBoxRaw): Array<{ field_path: 
   const out: Array<{ field_path: string; value: unknown }> = [];
   if (s.annual_fee !== null) out.push({ field_path: "annual_fee", value: s.annual_fee });
   if (s.foreign_transaction_fee_pct !== null) out.push({ field_path: "foreign_transaction_fee", value: s.foreign_transaction_fee_pct });
-  if (s.apr_purchases_min !== null) out.push({ field_path: "apr_purchases_min", value: s.apr_purchases_min });
-  if (s.apr_purchases_max !== null) out.push({ field_path: "apr_purchases_max", value: s.apr_purchases_max });
-  if (s.apr_cash_advances !== null) out.push({ field_path: "apr_cash_advances", value: s.apr_cash_advances });
-  if (s.penalty_apr !== null) out.push({ field_path: "penalty_apr", value: s.penalty_apr });
   if (s.late_fee_max !== null) out.push({ field_path: "late_fee_max", value: s.late_fee_max });
   if (s.cash_advance_fee_pct !== null) out.push({ field_path: "cash_advance_fee_pct", value: s.cash_advance_fee_pct });
   if (s.cash_advance_fee_min !== null) out.push({ field_path: "cash_advance_fee_min", value: s.cash_advance_fee_min });

@@ -90,10 +90,6 @@
   },
   "last_verified": "2026-04-16T13:41:49.993Z",
   "next_review": "2026-07-15T13:41:49.993000+00:00",
-  "penalty_apr": "17.99",
-  "_unverified_fields": [
-    "penalty_apr"
-  ],
   "_revert_history": [
     {
       "field": "annual_fee",

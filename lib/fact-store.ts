@@ -60,11 +60,12 @@ export type FieldPath =
   | "issuer"
   | "network"
   | "status"
-  // Schumer Box subset (CFPB CCAD will fill these)
-  | "apr_purchases_min"
-  | "apr_purchases_max"
-  | "apr_cash_advances"
-  | "penalty_apr"
+  // Schumer Box subset (CFPB CCAD will fill these).
+  // Note: APR fields (apr_purchases_min/max, apr_cash_advances, penalty_apr)
+  // were removed from the schema on 2026-04-27. They're irrelevant to
+  // OpenCard's target user (rewards/credits maximizer who pays in full),
+  // and accurate per-card APR data isn't available from CFPB family PDFs.
+  // See scripts/migrate-remove-apr.ts for the migration.
   | "late_fee_max"
   | "cash_advance_fee_pct"
   | "cash_advance_fee_min";
@@ -182,13 +183,21 @@ export function checkSanity(
     }
   }
 
-  if (field_path === "penalty_apr") {
-    if (typeof value !== "number") {
-      return { ok: false, reason: `penalty_apr must be number, got ${typeof value}` };
-    }
-    if (value < 0 || value > 50) {
-      return { ok: false, reason: `penalty_apr=${value}% out of plausible range [0, 50]%` };
-    }
+  // APR fields (penalty_apr, apr_purchases_*, apr_cash_advances) were
+  // removed from the schema on 2026-04-27 — see migrate-remove-apr.ts.
+  // If a stale pipeline ever ingests them again, refuse hard so they
+  // don't reach data/cards/.
+  if (
+    field_path === "penalty_apr" ||
+    field_path === "apr_purchases" ||
+    field_path === "apr_purchases_min" ||
+    field_path === "apr_purchases_max" ||
+    field_path === "apr_cash_advances"
+  ) {
+    return {
+      ok: false,
+      reason: `${field_path} is no longer part of the OpenCard schema (removed 2026-04-27). The pipeline should not be emitting this field.`,
+    };
   }
 
   return { ok: true };
