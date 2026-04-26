@@ -1,0 +1,33 @@
+name: Secret Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # Daily full-history scan as a backstop. Catches secrets that slipped past
+    # local pre-commit (e.g. someone bypassed with --no-verify, or a secret was
+    # added via the GitHub web UI).
+    - cron: "0 12 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Full history needed for `gitleaks detect` to scan all past commits.
+          fetch-depth: 0
+
+      - name: Run gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}  # uncomment if your org has a paid license
+          GITLEAKS_CONFIG: .gitleaks.toml
+          GITLEAKS_NOTIFY_USER_LIST: '@kaceycc'  # adjust if you have multiple maintainers

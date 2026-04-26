@@ -1,0 +1,22 @@
+CFPB pipeline disabled by takeover on 2026-04-25.
+
+Reason:
+  The Schumer Box regex in scripts/pipelines/cfpb/schumer_extractor_v2.py:186-188
+  matched non-fee numbers ("12 monthly billing cycles", "Pay Over Time™ APR",
+  etc.) and the apply_*.py scripts wrote those values directly to data/cards/*.json
+  with `cfpb_verified: true`, overwriting correct human-curated annual_fee values
+  for ~24 cards. Production was serving "Amex Platinum annual fee $12" until
+  the revert on 2026-04-25.
+
+Until the rewrite is done (see docs/TAKEOVER_PLAN.md, Week 1 section), the
+pipeline must not run.
+
+The rewrite must include:
+  1. LLM-based extraction (regex has been proven unreliable on real Amex PDFs).
+  2. Sanity gates (premium card with annual_fee < $50 → reject, queue for review).
+  3. Append-only fact store (Upstash list per card_id × field_path).
+  4. Review queue with human approval before promoting facts to data/cards/*.json.
+  5. Tests with fixtures of 50+ Schumer Box variants.
+
+To bypass for one run (logged): ALLOW_DISABLED_PIPELINE=1
+To re-enable permanently: rm scripts/pipelines/cfpb/_DISABLED.flag

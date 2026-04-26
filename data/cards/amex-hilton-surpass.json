@@ -3,7 +3,7 @@
   "name": "Hilton Honors American Express Surpass Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 12,
+  "annual_fee": 150,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
@@ -80,10 +80,10 @@
     },
     {
       "url": "https://onemileatatime.com/deals/hilton-amex-card-bonus/",
-      "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold\u2192Diamond path at $40K, National status"
+      "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold→Diamond path at $40K, National status"
     }
   ],
-  "last_updated": "2026-04-25T16:00:44.012Z",
+  "last_updated": "2026-04-26T04:02:55.594292Z",
   "hotel_program": {
     "program": "Hilton Honors",
     "tier": "Gold Elite",
@@ -99,22 +99,34 @@
       }
     ]
   },
-  "recurring_credits": [
-    {
-      "name": "Hilton Honors Gold Status",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "hotel",
-      "description": "Complimentary Gold elite status",
-      "reset_type": "cardmember_year"
-    }
-  ],
+  "recurring_credits": [],
   "last_verified": "2026-04-25T16:00:44.012Z",
   "next_review": "2026-07-15T13:41:49.948000+00:00",
-  "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
-  "cfpb_verified": true,
   "late_fee": 40,
-  "penalty_apr": 26.74
+  "penalty_apr": 26.74,
+  "_unverified_fields": [
+    "penalty_apr"
+  ],
+  "_revert_history": [
+    {
+      "field": "annual_fee",
+      "old_value": 12,
+      "new_value": 150,
+      "reason": "Hilton Surpass $150",
+      "reverted_at": "2026-04-26T04:02:55.594292Z",
+      "reverted_by": "cfpb_pipeline_corruption_revert_2026-04-25"
+    },
+    {
+      "field": "recurring_credits",
+      "action": "remove_hotel_status_duplicates",
+      "removed": [
+        "Hilton Honors Gold Status"
+      ],
+      "reason": "Hotel status was both in travel_benefits.hotel_status and recurring_credits — kept only the structured copy.",
+      "reverted_at": "2026-04-25T05:30:00.000Z",
+      "reverted_by": "validate-all-cleanup-2026-04-25"
+    }
+  ]
 }

@@ -3,7 +3,7 @@
   "name": "Hilton Honors American Express Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 12,
+  "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
@@ -78,7 +78,7 @@
       "url": "https://www.hilton.com/en/hilton-honors/credit-cards/"
     }
   ],
-  "last_updated": "2026-04-24T17:24:30.855523",
+  "last_updated": "2026-04-26T04:02:55.594292Z",
   "hotel_program": {
     "program": "Hilton Honors",
     "tier": "Gold",
@@ -93,10 +93,21 @@
   "last_scraped": "2026-04-24T17:24:30.855465",
   "last_verified": "2026-04-24",
   "next_review": "2026-07-23T17:24:30.855523",
-  "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
-  "cfpb_verified": true,
   "late_fee": 40,
-  "penalty_apr": 26.74
+  "penalty_apr": 26.74,
+  "_unverified_fields": [
+    "penalty_apr"
+  ],
+  "_revert_history": [
+    {
+      "field": "annual_fee",
+      "old_value": 12,
+      "new_value": 0,
+      "reason": "Hilton Honors entry-level is no-annual-fee",
+      "reverted_at": "2026-04-26T04:02:55.594292Z",
+      "reverted_by": "cfpb_pipeline_corruption_revert_2026-04-25"
+    }
+  ]
 }

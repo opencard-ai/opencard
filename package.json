@@ -7,7 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "lint:tags": "node scripts/lint-tags.js"
+    "lint:tags": "node scripts/lint-tags.js",
+    "validate": "tsx scripts/validate-all.ts",
+    "facts:seed": "tsx scripts/seed-fact-store-from-cards.ts",
+    "facts:promote": "tsx scripts/promote-facts.ts",
+    "facts:promote:dry": "tsx scripts/promote-facts.ts --dry-run",
+    "cfpb:extract": "tsx scripts/pipelines/cfpb/extract.ts"
   },
   "dependencies": {
     "@upstash/redis": "^1.37.0",
@@ -30,8 +35,10 @@
     "eslint-config-next": "16.2.3",
     "node-html-parser": "^7.1.0",
     "playwright": "^1.59.1",
+    "pdf-parse": "^1.1.1",
     "puppeteer": "^24.42.0",
     "tailwindcss": "^4",
+    "tsx": "^4.20.0",
     "typescript": "^5"
   }
 }

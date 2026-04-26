@@ -1,9 +1,9 @@
 {
   "card_id": "amex-everyday",
-  "name": "American Express EveryDay\u00ae Card",
+  "name": "American Express EveryDay® Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 95,
+  "annual_fee": 0,
   "welcome_offer": {
     "bonus_points": 0,
     "description": "No welcome bonus",
@@ -43,7 +43,7 @@
     "no-annual-fee"
   ],
   "sources": [],
-  "last_updated": "2026-04-16T13:41:49.946Z",
+  "last_updated": "2026-04-26T04:02:55.594292Z",
   "travel_benefits": {
     "hotel_status": [],
     "lounge_access": [],
@@ -60,7 +60,16 @@
   },
   "last_verified": "2026-04-24",
   "next_review": "2026-07-15T13:41:49.946000+00:00",
-  "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 5,
-  "cash_advance_fee_pct": 3.0
+  "cash_advance_fee_pct": 3.0,
+  "_revert_history": [
+    {
+      "field": "annual_fee",
+      "old_value": 95,
+      "new_value": 0,
+      "reason": "Amex Everyday is no-annual-fee",
+      "reverted_at": "2026-04-26T04:02:55.594292Z",
+      "reverted_by": "cfpb_pipeline_corruption_revert_2026-04-25"
+    }
+  ]
 }

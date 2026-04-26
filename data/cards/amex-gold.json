@@ -3,7 +3,7 @@
   "name": "American Express® Gold Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 295,
+  "annual_fee": 325,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
@@ -95,7 +95,7 @@
       "notes": "Insurance Details"
     }
   ],
-  "last_updated": "2026-04-25",
+  "last_updated": "2026-04-26T04:02:55.594292Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -131,7 +131,6 @@
   "last_scraped": "2026-04-24",
   "last_verified": "2026-04-25T16:00:32.707Z",
   "next_review": "2026-07-15T13:41:49.946000+00:00",
-  "cfpb_source": "Q3_2025",
   "late_fee": 40,
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
@@ -139,5 +138,17 @@
   "apr_purchases_max": "21.74",
   "apr_cash_advances": "21.99",
   "penalty_apr": 26.74,
-  "cfpb_verified": true
+  "_unverified_fields": [
+    "penalty_apr"
+  ],
+  "_revert_history": [
+    {
+      "field": "annual_fee",
+      "old_value": 295,
+      "new_value": 325,
+      "reason": "Amex Gold $325 after Oct 2024 refresh ($250 -> $325)",
+      "reverted_at": "2026-04-26T04:02:55.594292Z",
+      "reverted_by": "cfpb_pipeline_corruption_revert_2026-04-25"
+    }
+  ]
 }

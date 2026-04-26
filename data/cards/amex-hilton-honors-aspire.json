@@ -3,7 +3,7 @@
   "name": "Hilton Honors American Express Aspire Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 12,
+  "annual_fee": 550,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
@@ -92,7 +92,7 @@
       "url": "https://www.hilton.com/en/hilton-honors/credit-cards/"
     }
   ],
-  "last_updated": "2026-04-25",
+  "last_updated": "2026-04-26T04:02:55.594292Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -109,20 +109,6 @@
     ]
   },
   "recurring_credits": [
-    {
-      "name": "Hilton Honors Diamond Status",
-      "amount": 0,
-      "frequency": "annual",
-      "description": "Complimentary Diamond status",
-      "source": "Amex官網"
-    },
-    {
-      "name": "Marriott Bonvoy Gold Elite",
-      "amount": 0,
-      "frequency": "annual",
-      "description": "Complimentary Gold Elite status",
-      "source": "Amex官網"
-    },
     {
       "name": "Marriott Free Night",
       "amount": 50000,
@@ -183,10 +169,32 @@
   "last_scraped": "2026-04-24T17:26:36.116494",
   "last_verified": "2026-04-25T16:05:08.872Z",
   "next_review": "2026-07-23T17:26:36.116494",
-  "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
-  "cfpb_verified": true,
   "late_fee": 40,
-  "penalty_apr": 26.74
+  "penalty_apr": 26.74,
+  "_unverified_fields": [
+    "penalty_apr"
+  ],
+  "_revert_history": [
+    {
+      "field": "annual_fee",
+      "old_value": 12,
+      "new_value": 550,
+      "reason": "Hilton Aspire $550",
+      "reverted_at": "2026-04-26T04:02:55.594292Z",
+      "reverted_by": "cfpb_pipeline_corruption_revert_2026-04-25"
+    },
+    {
+      "field": "recurring_credits",
+      "action": "remove_hotel_status_duplicates",
+      "removed": [
+        "Hilton Honors Diamond Status",
+        "Marriott Bonvoy Gold Elite"
+      ],
+      "reason": "Hotel status was both in travel_benefits.hotel_status and recurring_credits — kept only the structured copy.",
+      "reverted_at": "2026-04-25T05:30:00.000Z",
+      "reverted_by": "validate-all-cleanup-2026-04-25"
+    }
+  ]
 }

@@ -42,3 +42,12 @@ next-env.d.ts
 .env*.local
 .gsc-token.json
 .gsc-report-history.json
+
+# python (CFPB pipeline scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+
+# CFPB pipeline kill switch (intentionally committed; if removed it re-enables the pipeline)
+!scripts/pipelines/cfpb/_DISABLED.flag

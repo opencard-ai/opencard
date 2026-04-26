@@ -1,0 +1,47 @@
+# Pre-commit hooks for OpenCard
+#
+# Setup once:
+#   brew install pre-commit       # or pipx install pre-commit
+#   pre-commit install             # installs git hooks into .git/hooks/
+#
+# Run all hooks manually:
+#   pre-commit run --all-files
+#
+# Skip hooks for one commit (only when you really mean it):
+#   git commit --no-verify -m "..."
+#
+# Update hook versions:
+#   pre-commit autoupdate
+
+repos:
+  # Secret detection — catches leaked tokens before commit
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.21.4
+    hooks:
+      - id: gitleaks
+        args: ["--config", ".gitleaks.toml"]
+
+  # Generic safety nets
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ["--maxkb=5000"]   # warn on > 5 MB single file (CFPB PDFs were ~1.5 MB each)
+      - id: check-json
+        exclude: '^scripts/pipelines/cfpb/archive/'
+      - id: check-yaml
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        exclude: '\.md$'   # markdown trailing-space is sometimes intentional (line break)
+
+  # Card data validation — re-uses the CI gate locally
+  - repo: local
+    hooks:
+      - id: validate-cards
+        name: Validate card data (schema + business + sanity)
+        entry: npm run validate
+        language: system
+        pass_filenames: false
+        files: '^data/cards/.*\.json$|^scripts/validate-all\.ts$'
