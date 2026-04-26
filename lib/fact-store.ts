@@ -290,11 +290,15 @@ async function persistFact(fact: FactEvent): Promise<void> {
 /** Read all facts for one (card_id, field_path), newest first. */
 export async function getFacts(card_id: string, field_path: string): Promise<FactEvent[]> {
   const r = redis();
-  const items = await r.lrange<string>(factsKey(card_id, field_path), 0, -1);
+  // @upstash/redis auto-parses JSON values, so list items may come back as objects.
+  // Tolerate both raw strings and parsed objects (matches the pattern in
+  // listPendingReviews / getReviewItem below).
+  const items = await r.lrange<FactEvent | string>(factsKey(card_id, field_path), 0, -1);
   return items
     .map((s) => {
+      if (s && typeof s === "object") return s as FactEvent;
       try {
-        return JSON.parse(s) as FactEvent;
+        return JSON.parse(s as string) as FactEvent;
       } catch {
         return null;
       }
