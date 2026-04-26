@@ -3,7 +3,7 @@
   "name": "Marriott Bonvoy Bevy® American Express® Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 12,
+  "annual_fee": 250,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
@@ -91,7 +91,7 @@
       "url": "https://thepointsguy.com/news/how-good-are-best-ever-marriott-amex-offers/"
     }
   ],
-  "last_updated": "2026-04-25",
+  "last_updated": "2026-04-26T04:02:55.594292Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -147,11 +147,22 @@
   "last_scraped": "2026-04-24T17:26:46.246653",
   "last_verified": "2026-04-25T16:01:17.266Z",
   "next_review": "2026-07-23T17:26:46.246653",
-  "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
-  "cfpb_verified": true,
   "card_name": "Marriott Bonvoy Bevy® American Express® Card",
   "late_fee": 40,
-  "penalty_apr": 26.74
+  "penalty_apr": 26.74,
+  "_unverified_fields": [
+    "penalty_apr"
+  ],
+  "_revert_history": [
+    {
+      "field": "annual_fee",
+      "old_value": 12,
+      "new_value": 250,
+      "reason": "Marriott Bonvoy Bevy $250",
+      "reverted_at": "2026-04-26T04:02:55.594292Z",
+      "reverted_by": "cfpb_pipeline_corruption_revert_2026-04-25"
+    }
+  ]
 }

@@ -3,7 +3,7 @@
   "name": "The Platinum Card® from American Express",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 12,
+  "annual_fee": 895,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
@@ -91,7 +91,7 @@
       "name": "creditcards.com"
     }
   ],
-  "last_updated": "2026-04-25",
+  "last_updated": "2026-04-26T04:02:55.594292Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -172,11 +172,22 @@
     "last_updated": "2026-04-24"
   },
   "last_scraped": "2026-04-24T07:34:19.364Z",
-  "cfpb_source": "Q3_2025",
   "last_verified": "2026-04-25T16:00:22.036Z",
   "late_fee": 40,
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 5,
   "penalty_apr": 26.74,
-  "cfpb_verified": true
+  "_unverified_fields": [
+    "penalty_apr"
+  ],
+  "_revert_history": [
+    {
+      "field": "annual_fee",
+      "old_value": 12,
+      "new_value": 895,
+      "reason": "Amex Platinum $895 after Oct 2025 refresh ($695 -> $895)",
+      "reverted_at": "2026-04-26T04:02:55.594292Z",
+      "reverted_by": "cfpb_pipeline_corruption_revert_2026-04-25"
+    }
+  ]
 }

@@ -6,7 +6,11 @@ import { decode } from 'html-entities';
 // Configuration
 const MINIMAX_API_URL = "https://api.minimax.io/v1/chat/completions";
 const MINIMAX_MODEL = "MiniMax-M2.7";
-const MINIMAX_API_KEY = "sk-cp-mFUA974Fysefoi8t8aYqXJOpAsPdOr7RxBtneUI1lDdJdEiR2JVoeX7edw3LYOq8rOpVETcOCc-L7EJQpATl-d-SaUxHFs_jNi_vfODGjxryGJYSWyOD_7Y";
+const MINIMAX_API_KEY = process.env.MINIMAX_API_KEY;
+if (!MINIMAX_API_KEY) {
+  console.error("ERROR: MINIMAX_API_KEY env var not set. See docs/SECURITY_NOTICE.md for why this is no longer hardcoded.");
+  process.exit(1);
+}
 
 const SOURCES = [
   { name: "doctor_of_credit", type: "rss", url: "https://www.doctorofcredit.com/feed/" },

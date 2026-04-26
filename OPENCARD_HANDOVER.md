@@ -99,9 +99,8 @@ npx vercel --prod --yes --token <VERCEL_TOKEN>
 ```
 
 ### Vercel Project ID
-```
-prj_SSAFkOhbChUOTxUjU3mYEb3Qwy9D
-```
+Stored in Vercel dashboard. To find it locally: `cat .vercel/project.json` (gitignored).
+Don't paste here — public repo.
 
 ---
 
@@ -165,7 +164,7 @@ npx tsx scripts/validate-all.ts
 
 ## ⚠️ 已知問題
 
-1. **AgentMail kccx0325@gmail.com 被 block** — Amazon SES bounce，待解決
+1. **AgentMail（contact email 略）被 block** — Amazon SES bounce，待解決（聯絡 Kacey 索取 email）
 2. **check-new-cards.js ESM 問題** — 使用 Python 代替
 3. **MiniMax isolated session 不穩定** — 加 `model: minimax/MiniMax-M2.7`
 

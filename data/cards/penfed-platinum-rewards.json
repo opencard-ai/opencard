@@ -1,9 +1,9 @@
 {
   "card_id": "penfed-platinum-rewards",
-  "name": "PenFed Platinum Rewards Visa Signature\u00ae Card",
+  "name": "PenFed Platinum Rewards Visa Signature® Card",
   "issuer": "PenFed Credit Union",
   "network": "visa",
-  "annual_fee": 2,
+  "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
@@ -80,7 +80,7 @@
       "notes": "CNBC review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.993Z",
+  "last_updated": "2026-04-26T04:02:55.594292Z",
   "status": "active",
   "notes": "No annual fee. Strong 5x gas and 3x groceries/dining. Points redeemable for gift cards, travel, or cash.",
   "hotel_program": null,
@@ -91,5 +91,17 @@
   "last_verified": "2026-04-16T13:41:49.993Z",
   "next_review": "2026-07-15T13:41:49.993000+00:00",
   "penalty_apr": "17.99",
-  "cfpb_source": "Q3_2025"
+  "_unverified_fields": [
+    "penalty_apr"
+  ],
+  "_revert_history": [
+    {
+      "field": "annual_fee",
+      "old_value": 2,
+      "new_value": 0,
+      "reason": "PenFed Platinum Rewards is no-annual-fee",
+      "reverted_at": "2026-04-26T04:02:55.594292Z",
+      "reverted_by": "cfpb_pipeline_corruption_revert_2026-04-25"
+    }
+  ]
 }

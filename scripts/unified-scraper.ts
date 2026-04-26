@@ -206,7 +206,10 @@ async function scrapeFromSource(url: string): Promise<string | null> {
 }
 
 async function callAI(prompt: string): Promise<any> {
-  const API_KEY = process.env.MINIMAX_API_KEY || 'sk-cp-mFUA974Fysefoi8t8aYqXJOpAsPdOr7RxBtneUI1lDdJdEiR2JVoeX7edw3LYOq8rOpVETcOCc-L7EJQpATl-d-SaUxHFs_jNi_vfODGjxryGJYSWyOD_7Y';
+  const API_KEY = process.env.MINIMAX_API_KEY;
+  if (!API_KEY) {
+    throw new Error("MINIMAX_API_KEY env var not set. See docs/SECURITY_NOTICE.md.");
+  }
   
   const postData = JSON.stringify({
     model: 'MiniMax-M2',

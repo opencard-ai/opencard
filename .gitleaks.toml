@@ -1,0 +1,125 @@
+# gitleaks config for OpenCard
+#
+# Extends the default ruleset with custom rules for tokens we've leaked
+# before. Don't remove rules without an offsetting allowlist entry.
+#
+# Run locally:
+#   gitleaks protect --staged --config .gitleaks.toml
+#   gitleaks detect --config .gitleaks.toml --redact
+#
+# Run in CI: see .github/workflows/gitleaks.yml
+
+[extend]
+# Pull in gitleaks' built-in 100+ rules (AWS, GCP, Stripe, GitHub, etc.)
+useDefault = true
+
+# ============================================================================
+# Custom rules — patterns specific to OpenCard's stack
+# ============================================================================
+
+[[rules]]
+id = "upstash-rest-token"
+description = "Upstash KV REST API token (gQ... or gg... base64-ish prefix)"
+regex = '''(?i)(?:UPSTASH_KV_REST_API_TOKEN|UPSTASH_KV_REST_API_READ_ONLY_TOKEN|upstash[._-]?token)['"\s:=]+['"]?(g[Qg]AAAAAA[A-Za-z0-9_-]{50,})'''
+secretGroup = 1
+keywords = ["upstash", "UPSTASH_KV_REST"]
+
+[[rules]]
+id = "upstash-redis-url-with-token"
+description = "Upstash Redis URL containing the token in userinfo (rediss://default:TOKEN@...)"
+regex = '''rediss?://default:([A-Za-z0-9_-]{30,})@[a-z0-9-]+\.upstash\.io'''
+secretGroup = 1
+keywords = ["upstash.io", "rediss://"]
+
+[[rules]]
+id = "minimax-api-key"
+description = "MiniMax API key (sk-cp-, sk-api-, etc.)"
+regex = '''(sk-(?:cp|api)-[A-Za-z0-9_-]{60,})'''
+secretGroup = 1
+keywords = ["minimax", "MINIMAX_API_KEY", "sk-cp-", "sk-api-"]
+
+[[rules]]
+id = "anthropic-api-key"
+description = "Anthropic API key"
+regex = '''(sk-ant-[A-Za-z0-9_-]{60,})'''
+secretGroup = 1
+keywords = ["anthropic", "ANTHROPIC_API_KEY", "sk-ant-"]
+
+[[rules]]
+id = "agentmail-api-key"
+description = "AgentMail API key (am_us_..., am_eu_...)"
+regex = '''(am_(?:us|eu|test|live)_[A-Za-z0-9]{30,})'''
+secretGroup = 1
+keywords = ["agentmail", "AGENTMAIL_API_KEY", "am_us_", "am_eu_"]
+
+[[rules]]
+id = "google-oauth-client-secret"
+description = "Google OAuth client secret"
+regex = '''(GOCSPX-[A-Za-z0-9_-]{20,})'''
+secretGroup = 1
+keywords = ["GOCSPX-", "GSC_CLIENT_SECRET"]
+
+# ============================================================================
+# Allowlist — known false positives
+# ============================================================================
+
+[allowlist]
+description = "Files / paths / strings safe to ignore"
+
+paths = [
+  # Lockfiles full of integrity hashes that look secret-shaped
+  '''package-lock\.json$''',
+  '''yarn\.lock$''',
+  '''pnpm-lock\.yaml$''',
+  # Build outputs
+  '''^\.next/''',
+  '''^node_modules/''',
+  '''^\.git/''',
+  '''^build/''',
+  '''^dist/''',
+  '''^coverage/''',
+  # CFPB cached PDFs (public government documents — gitignored anyway, but belt+suspenders)
+  '''^data/cfpb-cache/.*\.pdf$''',
+  # CFPB pipeline archive — committed for git-blame, but stubbed out
+  '''^scripts/pipelines/cfpb/archive/''',
+  # tsbuildinfo
+  '''\.tsbuildinfo$''',
+]
+
+regexes = [
+  # SHA-256 hashes that look like base64 secrets
+  '''sha(?:256|384|512)-[A-Za-z0-9+/=]+''',
+  '''integrity:\s*"sha[0-9]+-[A-Za-z0-9+/=]+"''',
+  # SRI hashes in HTML
+  '''integrity="sha[0-9]+-[A-Za-z0-9+/=]+"''',
+  # Vercel internal IDs (not secrets, just identifiers)
+  '''prj_[A-Za-z0-9]{20,}''',
+  '''team_[A-Za-z0-9]{20,}''',
+  # Github commit SHAs
+  '''\b[0-9a-f]{40}\b''',
+  # docs/SECURITY_NOTICE references already-redacted tokens by prefix
+  '''gQAAAAAA\.\.\.\[REDACTED''',
+  '''sk-cp-mFUA9\.\.\.\[REDACTED''',
+]
+
+# Specific commits that contain known historical leaks. These tokens have been
+# rotated (see docs/SECURITY_NOTICE.md). Allowlisting prevents the daily
+# scheduled scan from flagging the same already-handled leak forever.
+#
+# To remove an entry, first scrub the secret from history (BFG / git-filter-repo)
+# then this allowlist entry can go. Until then, leave them.
+commits = [
+  # Upstash KV REST API token in vercel.json
+  "9bbfdb3",   # fix: add Upstash env vars to vercel.json   (2026-04-22)
+  "cfe1aeb",   # fix: move Upstash env to runtime env       (2026-04-22)
+
+  # MiniMax API key in scripts/sync-news.mjs and unified-scraper.ts
+  "580beee",   # fix: unified-scraper now calls AI and updates card data
+  "770a49d",   # feat: update timestamps for flagship cards
+  "4f81d20",   # chore: switch news sync to google/gemini-flash-latest
+]
+
+stopwords = [
+  "example", "EXAMPLE", "<your", "REDACTED", "redacted", "placeholder",
+  "REPLACE_ME", "xxx", "XXX", "test_", "TEST_",
+]

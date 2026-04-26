@@ -12,136 +12,58 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          
-      - name: Validate JSON files
-        run: |
-          npx ts-node -e "
-            const fs = require('fs');
-            const path = require('path');
-            
-            const requiredFields = ['card_id', 'name', 'issuer', 'network', 'annual_fee', 'earning_rates'];
-            
-            const files = fs.readdirSync('data/cards').filter(f => f.endsWith('.json'));
-            let errors = [];
-            
-            for (const file of files) {
-              const content = fs.readFileSync(path.join('data/cards', file), 'utf-8');
-              try {
-                const card = JSON.parse(content);
-                
-                // Check required fields
-                for (const field of requiredFields) {
-                  if (!(field in card)) {
-                    errors.push(\`\${file}: missing field '\${field}'\`);
-                  }
-                }
-                
-                // Check last_verified exists
-                if (!('last_verified' in card)) {
-                  errors.push(\`\${file}: missing 'last_verified'\`);
-                }
-                
-                // Check next_review exists
-                if (!('next_review' in card)) {
-                  errors.push(\`\${file}: missing 'next_review'\`);
-                }
-                
-              } catch (e) {
-                errors.push(\`\${file}: invalid JSON - \${e.message}\`);
-              }
-            }
-            
-            if (errors.length > 0) {
-              console.error('Validation errors:');
-              errors.forEach(e => console.error('  -', e));
-              process.exit(1);
-            } else {
-              console.log(\`✅ All \${files.length} cards validated successfully\`);
-            }
-          "
-          
-      - name: Check for stale cards
-        run: |
-          npx ts-node -e "
-            const fs = require('fs');
-            const path = require('path');
-            const { parseISO, isAfter, subMonths } = require('date-fns');
-            
-            const files = fs.readdirSync('data/cards').filter(f => f.endsWith('.json'));
-            const staleCards = [];
-            const oneMonthAgo = subMonths(new Date(), 1);
-            
-            for (const file of files) {
-              const content = fs.readFileSync(path.join('data/cards', file), 'utf-8');
-              const card = JSON.parse(content);
-              
-              if (card.last_verified) {
-                try {
-                  const verified = parseISO(card.last_verified);
-                  if (isAfter(oneMonthAgo, verified)) {
-                    staleCards.push({ card: card.card_id, last_verified: card.last_verified });
-                  }
-                } catch (e) {
-                  // ignore parse errors
-                }
-              }
-            }
-            
-            if (staleCards.length > 0) {
-              console.warn(\`⚠️  \${staleCards.length} cards haven't been verified in over a month:\`);
-              staleCards.slice(0, 10).forEach(c => console.warn(\`  - \${c.card} (last verified: \${c.last_verified})\`));
-              if (staleCards.length > 10) {
-                console.warn(\`  ... and \${staleCards.length - 10} more\`);
-              }
-            } else {
-              console.log('✅ All cards have been verified within the last month');
-            }
-          "
-        env:
-          TZ: "America/Los_Angeles"
+          cache: 'npm'
 
-      - name: Check for overdue reviews
+      - name: Install dependencies
+        run: npm ci
+
+      # Single source of truth: scripts/validate-all.ts.
+      # Runs schema + business + sanity validation. Sanity rules catch the
+      # 2026-04-25 CFPB regex bug (Premium-named card with annual_fee < $50).
+      - name: Validate cards (schema + business + sanity)
+        run: npm run validate
+
+      # Tag enum drift catcher (e.g. unrecognized tags creeping in).
+      - name: Lint tags
+        run: npm run lint:tags
+
+      # Stale-data warning (non-blocking — output only).
+      - name: Check for stale cards (warning only)
+        if: success() || failure()
         run: |
-          npx ts-node -e "
+          node -e "
             const fs = require('fs');
             const path = require('path');
-            const { parseISO, isBefore } = require('date-fns');
-            
             const files = fs.readdirSync('data/cards').filter(f => f.endsWith('.json'));
-            const overdueCards = [];
-            
+            const ninetyDaysAgo = Date.now() - 90 * 24 * 60 * 60 * 1000;
+            const stale = [];
             for (const file of files) {
-              const content = fs.readFileSync(path.join('data/cards', file), 'utf-8');
-              const card = JSON.parse(content);
-              
-              if (card.next_review) {
-                try {
-                  const reviewDate = parseISO(card.next_review);
-                  if (isBefore(reviewDate, new Date())) {
-                    overdueCards.push({ card: card.card_id, next_review: card.next_review });
-                  }
-                } catch (e) {
-                  // ignore parse errors
+              try {
+                const card = JSON.parse(fs.readFileSync(path.join('data/cards', file), 'utf-8'));
+                const verified = card.last_verified || card.last_updated;
+                if (!verified) continue;
+                const ts = Date.parse(verified);
+                if (!isNaN(ts) && ts < ninetyDaysAgo) {
+                  stale.push({ card: card.card_id, last_verified: verified });
                 }
-              }
+              } catch {}
             }
-            
-            if (overdueCards.length > 0) {
-              console.warn(\`⚠️  \${overdueCards.length} cards are overdue for review:\`);
-              overdueCards.slice(0, 10).forEach(c => console.warn(\`  - \${c.card} (due: \${c.next_review})\`));
-              if (overdueCards.length > 10) {
-                console.warn(\`  ... and \${overdueCards.length - 10} more\`);
-              }
-              // Exit with warning, not failure
-              process.exit(0);
-            } else {
-              console.log('✅ No cards are overdue for review');
-            }
+            console.log(\`Stale cards (not verified in 90+ days): \${stale.length} / \${files.length}\`);
+            stale.slice(0, 20).forEach(c => console.log(\`  - \${c.card} (\${c.last_verified})\`));
+            if (stale.length > 20) console.log(\`  ... and \${stale.length - 20} more\`);
           "
-        env:
-          TZ: "America/Los_Angeles"
+
+      # Block PRs that touch the disabled CFPB pipeline. The pipeline is
+      # disabled until the rewrite (see docs/TAKEOVER_PLAN.md). Any PR
+      # touching it should be intentional.
+      - name: Warn if CFPB pipeline files were modified
+        if: github.event_name == 'pull_request'
+        run: |
+          if git diff --name-only origin/main...HEAD | grep -q '^scripts/pipelines/cfpb/'; then
+            echo "::warning ::This PR modifies scripts/pipelines/cfpb/. The CFPB pipeline is currently DISABLED. Confirm this PR is part of the rewrite (see docs/TAKEOVER_PLAN.md)."
+          fi

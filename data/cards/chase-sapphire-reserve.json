@@ -3,7 +3,7 @@
   "name": "Chase Sapphire Reserve®",
   "issuer": "Chase",
   "network": "visa",
-  "annual_fee": 550,
+  "annual_fee": 795,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
@@ -87,7 +87,7 @@
       "notes": "Review Apr 2026."
     }
   ],
-  "last_updated": "2026-04-25",
+  "last_updated": "2026-04-26T04:02:55.594292Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [
@@ -114,10 +114,21 @@
   "last_scraped": "2026-04-24T17:26:36.116494",
   "last_verified": "2026-04-25T16:01:31.773Z",
   "next_review": "2026-07-23T17:26:36.116494",
-  "cfpb_source": "Q3_2025",
   "late_fee": 40,
   "cash_advance_fee_flat": 5,
   "cash_advance_fee_pct": 5,
   "penalty_apr": "29.99",
-  "cfpb_verified": true
+  "_unverified_fields": [
+    "penalty_apr"
+  ],
+  "_revert_history": [
+    {
+      "field": "annual_fee",
+      "old_value": 550,
+      "new_value": 795,
+      "reason": "CSR $795 after June 2025 refresh ($550 -> $795)",
+      "reverted_at": "2026-04-26T04:02:55.594292Z",
+      "reverted_by": "cfpb_pipeline_corruption_revert_2026-04-25"
+    }
+  ]
 }

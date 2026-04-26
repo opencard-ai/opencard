@@ -12,8 +12,8 @@ import path from 'path';
 
 // ============ CONSTANTS ============
 
-const VALID_FREQUENCIES = ['monthly', 'quarterly', 'semi_annual', 'annual', 'per_stay', 'cardmember_year'];
-const VALID_CATEGORIES = ['travel', 'dining', 'shopping', 'entertainment', 'streaming', 'fitness', 'gas', 'groceries', 'other', 'ride', 'airline', 'hotel', 'digital', 'credit_monitoring'];
+const VALID_FREQUENCIES = ['monthly', 'quarterly', 'semi_annual', 'annual', 'per_stay', 'cardmember_year', 'every_4_years'];
+const VALID_CATEGORIES = ['travel', 'dining', 'shopping', 'entertainment', 'streaming', 'fitness', 'gas', 'groceries', 'other', 'ride', 'airline', 'hotel', 'lounge', 'digital', 'credit_monitoring'];
 const VALID_NETWORKS = ['visa', 'amex', 'mastercard', 'discover', 'other'];
 const VALID_INSURANCE_KEYS = ['trip_cancellation', 'trip_delay', 'rental_insurance', 'purchase_protection', 'return_protection', 'extended_warranty'];
 
@@ -22,7 +22,7 @@ const VALID_INSURANCE_KEYS = ['trip_cancellation', 'trip_delay', 'rental_insuran
 interface ValidationIssue {
   card: string;
   severity: 'error' | 'warning';
-  source: 'schema' | 'business';
+  source: 'schema' | 'business' | 'sanity';
   message: string;
   field?: string;
 }
@@ -223,6 +223,109 @@ function validateBusiness(card: any, fileName: string): ValidationIssue[] {
   return issues;
 }
 
+// ============ SANITY VALIDATION ============
+//
+// Catches the kind of bugs that schema/business validation can't see.
+// Specifically motivated by 2026-04-25 CFPB pipeline regex bug that wrote
+// `annual_fee: 12` to Amex Platinum (real value $895). Schema check passed
+// (12 is a number), business check passed (12 > 0). Only sanity check
+// catches "12 is wildly implausible for a card named 'Platinum'".
+
+// Cards explicitly known to have small/no annual fee that DO contain a "premium"
+// keyword. Allowlist exempts them from the premium-fee sanity rule.
+const PREMIUM_KEYWORD_NO_FEE_ALLOWLIST = new Set<string>([
+  // Add card_ids here when a sanity rule false-positives on a real card.
+]);
+
+const PREMIUM_NAME_PATTERN = /\b(platinum|reserve|aspire|brilliant|prestige|infinite|centurion|magnate|sapphire reserve|venture x)\b/i;
+
+function validateSanity(card: any, fileName: string): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
+  const cardName = card.name || card.card_id || fileName;
+
+  // Rule 1: annual_fee in plausible range [0, 10000]
+  if (typeof card.annual_fee === 'number') {
+    if (card.annual_fee < 0 || card.annual_fee > 10000) {
+      issues.push({
+        card: cardName, severity: 'error', source: 'sanity',
+        message: `annual_fee=${card.annual_fee} is outside plausible range [0, 10000]`,
+        field: 'annual_fee'
+      });
+    }
+  }
+
+  // Rule 2: Premium-named card with implausibly low annual_fee.
+  // This is the rule that catches the CFPB regex bug — "Amex Platinum
+  // annual_fee: 12" trips this even though 12 is a valid number.
+  if (
+    typeof card.annual_fee === 'number'
+    && card.annual_fee > 0
+    && card.annual_fee < 50
+    && PREMIUM_NAME_PATTERN.test(cardName)
+    && !PREMIUM_KEYWORD_NO_FEE_ALLOWLIST.has(card.card_id)
+  ) {
+    issues.push({
+      card: cardName, severity: 'error', source: 'sanity',
+      message: `Premium-named card has implausibly low annual_fee=$${card.annual_fee}. Likely regex/parsing bug. If this is correct, add card_id to PREMIUM_KEYWORD_NO_FEE_ALLOWLIST in validate-all.ts.`,
+      field: 'annual_fee'
+    });
+  }
+
+  // Rule 3: foreign_transaction_fee plausible range [0, 5]%
+  if (typeof card.foreign_transaction_fee === 'number') {
+    if (card.foreign_transaction_fee < 0 || card.foreign_transaction_fee > 5) {
+      issues.push({
+        card: cardName, severity: 'error', source: 'sanity',
+        message: `foreign_transaction_fee=${card.foreign_transaction_fee}% is outside plausible range [0%, 5%]`,
+        field: 'foreign_transaction_fee'
+      });
+    }
+  }
+
+  // Rule 4: Surface _quarantine flag as warning so it's visible in CI output.
+  if (card._quarantine) {
+    const reasons = Array.isArray(card._quarantine_reasons) ? card._quarantine_reasons : [];
+    issues.push({
+      card: cardName, severity: 'warning', source: 'sanity',
+      message: `Card is _quarantine=true. ${reasons.length > 0 ? 'Reasons: ' + reasons.join('; ') : '(no reasons given)'}`,
+      field: '_quarantine'
+    });
+  }
+
+  // Rule 5: Surface _unverified_fields list as warning.
+  if (Array.isArray(card._unverified_fields) && card._unverified_fields.length > 0) {
+    issues.push({
+      card: cardName, severity: 'warning', source: 'sanity',
+      message: `Has _unverified_fields needing re-verification: ${card._unverified_fields.join(', ')}`,
+      field: '_unverified_fields'
+    });
+  }
+
+  // Rule 6: filename should match card_id (e.g. amex-centurion.json has card_id "centurion-card-amex" — surface this).
+  // Warning level only; we have legacy mismatches that need migration, not failure.
+  const expectedFilename = card.card_id + '.json';
+  if (card.card_id && fileName !== expectedFilename) {
+    issues.push({
+      card: cardName, severity: 'warning', source: 'sanity',
+      message: `filename "${fileName}" doesn't match card_id "${card.card_id}". Should be "${expectedFilename}".`,
+      field: 'card_id'
+    });
+  }
+
+  // Rule 7: cfpb_verified flag should not coexist with _revert_history (means
+  // pipeline wrote a value, then we had to revert it — pipeline shouldn't be
+  // re-marking it verified).
+  if (card.cfpb_verified && Array.isArray(card._revert_history) && card._revert_history.length > 0) {
+    issues.push({
+      card: cardName, severity: 'error', source: 'sanity',
+      message: `cfpb_verified=true coexists with _revert_history. The CFPB pipeline previously wrote bad data; remove cfpb_verified until pipeline is rewritten.`,
+      field: 'cfpb_verified'
+    });
+  }
+
+  return issues;
+}
+
 // ============ MAIN ============
 
 function main() {
@@ -242,7 +345,8 @@ function main() {
       const card = JSON.parse(fs.readFileSync(path.join(cardsDir, file), 'utf8'));
       const schemaIssues = validateSchema(card, file);
       const businessIssues = validateBusiness(card, file);
-      allIssues.push(...schemaIssues, ...businessIssues);
+      const sanityIssues = validateSanity(card, file);
+      allIssues.push(...schemaIssues, ...businessIssues, ...sanityIssues);
     } catch (e: any) {
       parseErrors++;
       allIssues.push({

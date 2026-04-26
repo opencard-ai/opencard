@@ -1,9 +1,9 @@
 {
   "card_id": "amex-plum",
-  "name": "The Plum Card\u00ae from American Express",
+  "name": "The Plum Card® from American Express",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 12,
+  "annual_fee": 250,
   "foreign_transaction_fee": 2.7,
   "credit_required": "Good to Excellent",
   "earning_rates": [
@@ -55,7 +55,7 @@
       "url": "https://thepointsguy.com/credit-cards/reviews/a-cash-back-business-charge-card-the-plum-card-from-american-express-review/"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.950Z",
+  "last_updated": "2026-04-26T04:02:55.594292Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -73,5 +73,17 @@
   "cash_advance_fee_pct": 21.99,
   "late_fee": 40,
   "penalty_apr": 26.74,
-  "cfpb_source": "Q3_2025"
+  "_unverified_fields": [
+    "penalty_apr"
+  ],
+  "_revert_history": [
+    {
+      "field": "annual_fee",
+      "old_value": 12,
+      "new_value": 250,
+      "reason": "Plum Card $250 (no AF first year)",
+      "reverted_at": "2026-04-26T04:02:55.594292Z",
+      "reverted_by": "cfpb_pipeline_corruption_revert_2026-04-25"
+    }
+  ]
 }
