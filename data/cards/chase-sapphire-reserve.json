@@ -7,12 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 60000,
-    "spending_requirement": 4000,
+    "bonus_points": 125000,
+    "spending_requirement": 6000,
     "time_period_months": 3,
-    "description": "Earn 60,000 bonus points after spending $4,000 on purchases in the first 3 months from account opening. That's $900 toward travel when you redeem through Chase Ultimate Rewards.",
+    "description": "Earn 125,000 bonus points after spending $6,000 in the first 3 months",
     "point_program": "Chase Ultimate Rewards",
-    "estimated_value": 900
+    "estimated_value": 1875
   },
   "earning_rates": [
     {
@@ -87,7 +87,7 @@
       "notes": "Review Apr 2026."
     }
   ],
-  "last_updated": "2026-04-25T16:01:31.773Z",
+  "last_updated": "2026-04-25",
   "hotel_program": null,
   "application_rules": {
     "rules": [
