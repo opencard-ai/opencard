@@ -86,7 +86,7 @@
       "url": "https://www.nerdwallet.com/business/credit-cards/learn/amex-business-platinum-refresh-2025"
     }
   ],
-  "last_updated": "2026-04-25T16:05:23.977Z",
+  "last_updated": "2026-04-25",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -107,57 +107,50 @@
       "name": "Airline Fee Credit",
       "amount": 200,
       "frequency": "annual",
-      "category": "airline",
-      "description": "$200/year for incidental fees",
-      "reset_type": "calendar_year"
+      "description": "$200 for incidental fees",
+      "source": "Amex官網"
     },
     {
       "name": "Fine Hotels + Resorts Credit",
       "amount": 600,
       "frequency": "annual",
-      "category": "hotel",
       "description": "$600 FHR Credit",
-      "reset_type": "calendar_year"
+      "source": "Amex官網"
     },
     {
       "name": "Uber Cash",
       "amount": 200,
       "frequency": "annual",
-      "category": "ride",
-      "description": "$15/month Uber credit",
-      "reset_type": "calendar_year"
+      "description": "$15/month",
+      "source": "Amex官網"
     },
     {
-      "name": "Saks Fifth Avenue",
-      "amount": 100,
+      "name": "Walmart+ Credit",
+      "amount": 155,
       "frequency": "annual",
-      "category": "shopping",
-      "description": "$50/semi-annual",
-      "reset_type": "calendar_year"
+      "description": "$12.95/month",
+      "source": "Amex官網"
+    },
+    {
+      "name": "Clear Security Plus",
+      "amount": 209,
+      "frequency": "annual",
+      "description": "CLEAR Plus membership",
+      "source": "Amex官網"
     },
     {
       "name": "Free Night Award",
-      "amount": 50000,
+      "amount": 35000,
       "frequency": "annual",
-      "category": "hotel",
-      "description": "Annual free night at Marriott properties",
-      "reset_type": "cardmember_year"
+      "description": "Marriott Bonvoy free night",
+      "source": "Amex官網"
     },
     {
-      "name": "Walmart+",
+      "name": "Saks Fifth Avenue",
       "amount": 0,
       "frequency": "annual",
-      "category": "shopping",
-      "description": "Free membership with fuel discounts",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Clear Security",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other",
-      "description": "Free Clear membership",
-      "reset_type": "calendar_year"
+      "description": "DISCONTINUED 2026",
+      "source": "Amex官網"
     }
   ],
   "welcome_offer": {
