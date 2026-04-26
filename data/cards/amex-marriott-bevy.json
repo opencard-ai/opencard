@@ -1,6 +1,6 @@
 {
   "card_id": "amex-marriott-bevy",
-  "name": "Marriott Bonvoy Bevy\u00ae American Express\u00ae Card",
+  "name": "Marriott Bonvoy Bevy® American Express® Card",
   "issuer": "American Express",
   "network": "amex",
   "annual_fee": 12,
@@ -91,7 +91,7 @@
       "url": "https://thepointsguy.com/news/how-good-are-best-ever-marriott-amex-offers/"
     }
   ],
-  "last_updated": "2026-04-25T16:01:17.266Z",
+  "last_updated": "2026-04-25",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -112,41 +112,36 @@
       "name": "Uber Cash",
       "amount": 200,
       "frequency": "annual",
-      "category": "ride",
-      "description": "$15/month Uber credit ($180 annual) + $20 December bonus",
-      "reset_type": "calendar_year"
+      "description": "$15/month",
+      "source": "Amex官網"
+    },
+    {
+      "name": "Marriott Free Night",
+      "amount": 35000,
+      "frequency": "annual",
+      "description": "Marriott Bonvoy free night",
+      "source": "Amex官網"
+    },
+    {
+      "name": "Walmart+ Credit",
+      "amount": 155,
+      "frequency": "annual",
+      "description": "$12.95/month",
+      "source": "Amex官網"
+    },
+    {
+      "name": "Clear Security Plus",
+      "amount": 209,
+      "frequency": "annual",
+      "description": "CLEAR Plus membership",
+      "source": "Amex官網"
     },
     {
       "name": "Saks Fifth Avenue",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "shopping",
-      "description": "$50 semi-annual credit",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Free Night Award",
-      "amount": 50000,
-      "frequency": "annual",
-      "category": "hotel",
-      "description": "Annual free night certificate (up to 50,000 points)",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Walmart+",
       "amount": 0,
       "frequency": "annual",
-      "category": "shopping",
-      "description": "Complimentary Walmart+ membership",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Clear Security",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other",
-      "description": "Complimentary Clear security membership",
-      "reset_type": "calendar_year"
+      "description": "DISCONTINUED 2026",
+      "source": "Amex官網"
     }
   ],
   "last_scraped": "2026-04-24T17:26:46.246653",
@@ -156,7 +151,7 @@
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
   "cfpb_verified": true,
-  "card_name": "Marriott Bonvoy Bevy\u00ae American Express\u00ae Card",
+  "card_name": "Marriott Bonvoy Bevy® American Express® Card",
   "late_fee": 40,
   "penalty_apr": 26.74
 }

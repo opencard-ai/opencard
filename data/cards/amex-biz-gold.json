@@ -78,41 +78,22 @@
       "name": "Uber Cash",
       "amount": 200,
       "frequency": "annual",
-      "category": "ride",
-      "description": "$15/month Uber credit",
-      "reset_type": "calendar_year"
+      "description": "$15/month",
+      "source": "Amex官網"
     },
     {
       "name": "Saks Fifth Avenue",
-      "amount": 100,
+      "amount": 0,
       "frequency": "annual",
-      "category": "shopping",
-      "description": "$50/semi-annual",
-      "reset_type": "calendar_year"
+      "description": "DISCONTINUED 2026",
+      "source": "Amex官網"
     },
     {
       "name": "Free Night Award",
-      "amount": 50000,
+      "amount": 35000,
       "frequency": "annual",
-      "category": "hotel",
-      "description": "Annual free night at Marriott properties",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Walmart+",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "shopping",
-      "description": "Free membership with fuel discounts",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Clear Security",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "other",
-      "description": "Free Clear membership",
-      "reset_type": "calendar_year"
+      "description": "Marriott Bonvoy free night",
+      "source": "Amex官網"
     }
   ],
   "sources": [
@@ -129,7 +110,7 @@
       "notes": "Amex official card page with earning categories and statement credits"
     }
   ],
-  "last_updated": "2026-04-25T16:05:37.071Z",
+  "last_updated": "2026-04-25",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
