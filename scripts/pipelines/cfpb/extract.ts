@@ -41,10 +41,41 @@ interface CliArgs {
   quarter?: string;
   sourceUrl?: string;
   dryRun: boolean;
+  forceFamily: boolean;
+}
+
+interface CardAliasesConfig {
+  family_pdfs?: Record<
+    string,
+    {
+      issuer?: string;
+      extraction_strategy: "refuse-per-card-use-plan-b" | string;
+      family_range_summary?: string;
+      covers_card_ids?: string[];
+      covers_note?: string;
+    }
+  >;
+  needs_review?: Record<string, string>;
+}
+
+function loadCardAliases(): CardAliasesConfig {
+  const p = path.join(
+    process.cwd(),
+    "scripts/pipelines/cfpb/config/card_aliases.json",
+  );
+  if (!fs.existsSync(p)) return {};
+  try {
+    return JSON.parse(fs.readFileSync(p, "utf8")) as CardAliasesConfig;
+  } catch (err) {
+    console.warn(
+      `⚠️  Failed to parse card_aliases.json: ${(err as Error).message}. Continuing without family detection.`,
+    );
+    return {};
+  }
 }
 
 function parseArgs(argv: string[]): CliArgs {
-  const args: Partial<CliArgs> = { dryRun: false };
+  const args: Partial<CliArgs> = { dryRun: false, forceFamily: false };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     const next = argv[i + 1];
@@ -67,6 +98,9 @@ function parseArgs(argv: string[]): CliArgs {
         break;
       case "--dry-run":
         args.dryRun = true;
+        break;
+      case "--force-family":
+        args.forceFamily = true;
         break;
       case "-h":
       case "--help":
@@ -92,6 +126,9 @@ Optional:
   --quarter <q>         e.g. "Q3 2025" — for provenance metadata
   --source-url <url>    Original CFPB URL — for provenance metadata
   --dry-run             Run LLM, validate, but don't write to fact store
+  --force-family        Override family-filing refusal (DANGEROUS — only for
+                        debugging; values from family PDFs are ranges, not
+                        per-card values, and will corrupt the card if written)
 `);
 }
 
@@ -127,6 +164,55 @@ async function main() {
   if (isLikelySpanishFromFilename(args.pdf)) {
     console.error(`⏭  Skipping: filename suggests Spanish CFPB filing.`);
     process.exit(0);
+  }
+
+  // Family-filing detection. Family PDFs (BoA / Cap One / Navy Federal /
+  // PenFed standard agreements) show fee/APR ranges across the whole card
+  // family, not per-card values. Extracting from them produces wrong data
+  // (e.g. boa-platinum FX=3% from a 0-3% range). Refuse and direct to Plan B.
+  const aliases = loadCardAliases();
+  const pdfBasename = path.basename(args.pdf);
+  const familyEntry = aliases.family_pdfs?.[pdfBasename];
+  if (familyEntry && !args.forceFamily) {
+    console.error();
+    console.error(`⛔ FAMILY-FILING REFUSED — ${pdfBasename}`);
+    console.error(`   Strategy: ${familyEntry.extraction_strategy}`);
+    if (familyEntry.issuer) console.error(`   Issuer:   ${familyEntry.issuer}`);
+    if (familyEntry.family_range_summary) {
+      console.error(`   Ranges:   ${familyEntry.family_range_summary}`);
+    }
+    if (familyEntry.covers_card_ids?.length) {
+      console.error(
+        `   Covers:   ${familyEntry.covers_card_ids.slice(0, 5).join(", ")}${
+          familyEntry.covers_card_ids.length > 5
+            ? ` (+${familyEntry.covers_card_ids.length - 5} more)`
+            : ""
+        }`,
+      );
+    }
+    console.error();
+    console.error(
+      `   This PDF documents multiple cards — its Schumer Box shows ranges,`,
+    );
+    console.error(
+      `   not per-card values. Writing them as facts for ${args.cardId} would`,
+    );
+    console.error(`   corrupt the card.`);
+    console.error();
+    console.error(
+      `   Use Plan B (issuer disclosure scraper) for per-card values.`,
+    );
+    console.error(`   See docs/plan-b-disclosure-pages.md.`);
+    console.error();
+    console.error(
+      `   To override (debugging only), pass --force-family.  Don't.`,
+    );
+    process.exit(3);
+  }
+  if (familyEntry && args.forceFamily) {
+    console.warn(
+      `⚠️  --force-family override active for ${pdfBasename}. Values from this PDF will likely be wrong for ${args.cardId}.`,
+    );
   }
 
   // Read + parse PDF
