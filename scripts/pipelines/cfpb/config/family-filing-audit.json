@@ -1,0 +1,1984 @@
+{
+  "generated_at": "2026-04-26T07:46:32.789Z",
+  "pdf_dir": "/Users/kaceyc/.openclaw/workspace/opencard/data/cfpb-cache",
+  "total_pdfs": 114,
+  "by_classification": {
+    "single-card": 57,
+    "family-filing": 6,
+    "empty-scanned": 0,
+    "spanish": 0,
+    "parse-error": 51
+  },
+  "entries": [
+    {
+      "filename": "amex-american-express-cash-magnet-card-cardmember-agreement.pdf",
+      "size_bytes": 670172,
+      "page_count": 10,
+      "text_length": 45409,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 9,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-blue-cash-everyday.pdf",
+      "size_bytes": 648999,
+      "page_count": 12,
+      "text_length": 51223,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 8,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-blue-cash-preferred.pdf",
+      "size_bytes": 384725,
+      "page_count": 12,
+      "text_length": 49988,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 8,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-centurion.pdf",
+      "size_bytes": 803327,
+      "page_count": 11,
+      "text_length": 51018,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 12,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-charles-schwab-platinum.pdf",
+      "size_bytes": 677775,
+      "page_count": 13,
+      "text_length": 56262,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 12,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-delta-gold.pdf",
+      "size_bytes": 446817,
+      "page_count": 12,
+      "text_length": 51771,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 8,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-delta-platinum.pdf",
+      "size_bytes": 603406,
+      "page_count": 12,
+      "text_length": 51529,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 8,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-delta-skymiles-blue-american-express-card-cardmember-agreement.pdf",
+      "size_bytes": 408283,
+      "page_count": 12,
+      "text_length": 47833,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 9,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-delta-skymiles-reserve-american-express-card-cardmember-agreement.pdf",
+      "size_bytes": 411535,
+      "page_count": 12,
+      "text_length": 50148,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 8,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-everyday-preferred.pdf",
+      "size_bytes": 365866,
+      "page_count": 10,
+      "text_length": 43869,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 8,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-goldman-sachs-platinum-card-cardmember-agreement.pdf",
+      "size_bytes": 721271,
+      "page_count": 11,
+      "text_length": 50881,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 12,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-green.pdf",
+      "size_bytes": 630987,
+      "page_count": 11,
+      "text_length": 50871,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [
+          "amex-green"
+        ],
+        "annual_fee_mentions": 12,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-hilton-aspire.pdf",
+      "size_bytes": 411507,
+      "page_count": 12,
+      "text_length": 49216,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [
+          "amex-hilton-honors-aspire"
+        ],
+        "annual_fee_mentions": 8,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-hilton-honors-american-express-card-cardmember-agreement.pdf",
+      "size_bytes": 408255,
+      "page_count": 12,
+      "text_length": 49260,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [
+          "amex-hilton-honors"
+        ],
+        "annual_fee_mentions": 8,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-hilton-honors-american-express-surpass-card-cardmember-agreement.pdf",
+      "size_bytes": 410999,
+      "page_count": 12,
+      "text_length": 50614,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 8,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-marriott-bonvoy-american-express-card-cardmember-agreement.pdf",
+      "size_bytes": 565448,
+      "page_count": 12,
+      "text_length": 49217,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 8,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-marriott-bonvoy-bevy-american-express-card-cardmember-agreement.pdf",
+      "size_bytes": 410427,
+      "page_count": 12,
+      "text_length": 49043,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 8,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-marriott-brilliant.pdf",
+      "size_bytes": 410494,
+      "page_count": 12,
+      "text_length": 48945,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 8,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-morgan-stanley-blue-cash-preferred-american-express-card-cardmember-agreement.pdf",
+      "size_bytes": 1504488,
+      "page_count": 12,
+      "text_length": 67165,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 9,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-morgan-stanley-platinum-card-cardmember-agreement.pdf",
+      "size_bytes": 842795,
+      "page_count": 13,
+      "text_length": 52151,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 12,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-optima-card-from-american-express-cardmember-agreement.pdf",
+      "size_bytes": 360824,
+      "page_count": 10,
+      "text_length": 42801,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 9,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-platinum.pdf",
+      "size_bytes": 753351,
+      "page_count": 11,
+      "text_length": 50865,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 12,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "amex-the-charles-schwab-investor-card-cardmember-agreement.pdf",
+      "size_bytes": 1173521,
+      "page_count": 12,
+      "text_length": 48645,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 9,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "apple-card.pdf",
+      "size_bytes": 1494897,
+      "page_count": 19,
+      "text_length": 90432,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "18.24% to  28.49%",
+          "10.74% to 20.99%"
+        ],
+        "distinct_card_names": [
+          "apple-card"
+        ],
+        "annual_fee_mentions": 1,
+        "apr_lines": 1
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "barclays-gap.pdf",
+      "size_bytes": 95643,
+      "page_count": 2,
+      "text_length": 3439,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 1,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "barclays-ubereats.pdf",
+      "size_bytes": 100588,
+      "page_count": 2,
+      "text_length": 3494,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [
+          "$0 to $1"
+        ],
+        "pct_ranges": [
+          "17.99% to 34.99%",
+          "29.99% to 34.99%",
+          "3% - 5%",
+          "0% - 3%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 1,
+        "apr_lines": 2
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "boa-platinum-signature.pdf",
+      "size_bytes": 181211,
+      "page_count": 11,
+      "text_length": 59921,
+      "classification": "family-filing",
+      "signals": {
+        "family_markers": [
+          "depending on which card"
+        ],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "13.99% to 27.99%",
+          "16.99% to 28.99%",
+          "27.99% to 28.99%",
+          "0% to 5%",
+          "0% to 3%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 2,
+        "apr_lines": 6
+      },
+      "reason": "family marker (depending on which card) + pct range"
+    },
+    {
+      "filename": "boa-platinum.pdf",
+      "size_bytes": 181211,
+      "page_count": 11,
+      "text_length": 59921,
+      "classification": "family-filing",
+      "signals": {
+        "family_markers": [
+          "depending on which card"
+        ],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "13.99% to 27.99%",
+          "16.99% to 28.99%",
+          "27.99% to 28.99%",
+          "0% to 5%",
+          "0% to 3%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 2,
+        "apr_lines": 6
+      },
+      "reason": "family marker (depending on which card) + pct range"
+    },
+    {
+      "filename": "boa-secured.pdf",
+      "size_bytes": 193383,
+      "page_count": 12,
+      "text_length": 66118,
+      "classification": "family-filing",
+      "signals": {
+        "family_markers": [
+          "depending on which card"
+        ],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "24.99% to 27.99%",
+          "27.99% to 28.99%",
+          "0% to 4%",
+          "0% to 3%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 6
+      },
+      "reason": "family marker (depending on which card) + pct range"
+    },
+    {
+      "filename": "capital-one-quicksilver.pdf",
+      "size_bytes": 256655,
+      "page_count": 8,
+      "text_length": 32455,
+      "classification": "family-filing",
+      "signals": {
+        "family_markers": [
+          "shows a range of terms"
+        ],
+        "fee_ranges": [
+          "Between $0 and $39"
+        ],
+        "pct_ranges": [
+          "between 25.74% and 29.74%",
+          "between 18.24% and 22.24%",
+          "between 18.24% \nand 22.24%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 2,
+        "apr_lines": 6
+      },
+      "reason": "family marker (shows a range of terms) + fee range"
+    },
+    {
+      "filename": "capital-one-secure.pdf",
+      "size_bytes": 247553,
+      "page_count": 8,
+      "text_length": 35464,
+      "classification": "family-filing",
+      "signals": {
+        "family_markers": [
+          "shows a range of terms"
+        ],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "29.49% - 29.74%",
+          "21.99% - 22.24%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 2,
+        "apr_lines": 7
+      },
+      "reason": "family marker (shows a range of terms) + pct range"
+    },
+    {
+      "filename": "capital-one-venture-x.pdf",
+      "size_bytes": 270061,
+      "page_count": 8,
+      "text_length": 32807,
+      "classification": "family-filing",
+      "signals": {
+        "family_markers": [
+          "shows a range of terms"
+        ],
+        "fee_ranges": [
+          "Between $0 and $395"
+        ],
+        "pct_ranges": [
+          "between 18.99% and 29.74%",
+          "between 11.49% and 22.24%",
+          "between 11.49% \nand 22.24%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 2,
+        "apr_lines": 7
+      },
+      "reason": "family marker (shows a range of terms) + fee range"
+    },
+    {
+      "filename": "chase-271318.pdf",
+      "size_bytes": 403153,
+      "page_count": 22,
+      "text_length": 61636,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 3
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "chase-271319.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271320.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271321.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271323.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271324.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271325.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271326.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271327.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271328.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271329.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271330.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271331.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271332.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271333.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271336.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271337.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271338.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271339.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271340.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271341.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271343.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271344.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-271345.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-305696.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-360138.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271318.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271319.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271320.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271321.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271323.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271324.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271325.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271326.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271327.pdf",
+      "size_bytes": 252656,
+      "page_count": 22,
+      "text_length": 52653,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "19.74% to 28.24%",
+          "12.49% to 20.99%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 9,
+        "apr_lines": 5
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "chase-col-271328.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271329.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271330.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271331.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271332.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271333.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271336.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271337.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271338.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271339.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271340.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271341.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271343.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271344.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-271345.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-305696.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-col-360138.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "chase-freedom-5-cash-back.pdf",
+      "size_bytes": 245222,
+      "page_count": 22,
+      "text_length": 62527,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 3
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "chase-freedom-flex.pdf",
+      "size_bytes": 246892,
+      "page_count": 22,
+      "text_length": 52824,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "20.24% to 28.74%",
+          "12.99% to 21.49%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 9,
+        "apr_lines": 5
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "chase-freedom-unlimited.pdf",
+      "size_bytes": 403153,
+      "page_count": 22,
+      "text_length": 61636,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 3
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "chase-ink-business-preferred.pdf",
+      "size_bytes": 267982,
+      "page_count": 22,
+      "text_length": 56834,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "18.24% to 27.99%",
+          "10.99% to 20.74%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 9,
+        "apr_lines": 21
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "chase-ink-preferred.pdf",
+      "size_bytes": 262314,
+      "page_count": 22,
+      "text_length": 52580,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "19.74% to 28.24%",
+          "12.49% to 20.99%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 9,
+        "apr_lines": 5
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "chase-sapphire-preferred.pdf",
+      "size_bytes": 269124,
+      "page_count": 22,
+      "text_length": 55819,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "17.99% to 26.99%",
+          "10.74% to 19.74%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 9,
+        "apr_lines": 6
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "chase-sapphire-reserve.pdf",
+      "size_bytes": 253146,
+      "page_count": 22,
+      "text_length": 52661,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "19.74% to 28.24%",
+          "12.49% to 20.99%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 9,
+        "apr_lines": 5
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "citi-aadvantage-executive-pricing.pdf",
+      "size_bytes": 111618,
+      "page_count": 2,
+      "text_length": 5056,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "19.99% to 28.99%",
+          "12.74% to 21.74%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 1,
+        "apr_lines": 7
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "citi-custom-cash-pricing.pdf",
+      "size_bytes": 143177,
+      "page_count": 2,
+      "text_length": 5024,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "17.99% to 27.99%",
+          "10.74% to 20.74%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 1,
+        "apr_lines": 7
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "citi-diamond-preferred-pricing.pdf",
+      "size_bytes": 161939,
+      "page_count": 2,
+      "text_length": 5022,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "16.99% to 27.74%",
+          "9.74% to 20.49%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 1,
+        "apr_lines": 7
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "citi-double-cash-pricing.pdf",
+      "size_bytes": 156409,
+      "page_count": 2,
+      "text_length": 5205,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "17.99% to 27.99%",
+          "10.74% to 20.74%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 1,
+        "apr_lines": 7
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "citi-simplicity-pricing.pdf",
+      "size_bytes": 166342,
+      "page_count": 2,
+      "text_length": 4584,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "17.99% to 28.74%",
+          "10.74% to 21.49%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 1,
+        "apr_lines": 7
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "citi-strata-premier-pricing.pdf",
+      "size_bytes": 0,
+      "page_count": 0,
+      "text_length": 0,
+      "classification": "parse-error",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "parse error: Invalid PDF structure"
+    },
+    {
+      "filename": "discover-it.pdf",
+      "size_bytes": 645843,
+      "page_count": 5,
+      "text_length": 36767,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "18.24% – 29.24%",
+          "8.74% to 19.74%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 1,
+        "apr_lines": 3
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "hsbc-elite.pdf",
+      "size_bytes": 87640,
+      "page_count": 9,
+      "text_length": 32881,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "20.24% to 24.24%",
+          "20.24% to 24.24%",
+          "12.74% to \n16.74%",
+          "12.74% to 16.74%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 9,
+        "apr_lines": 8
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "hsbc-premier.pdf",
+      "size_bytes": 87948,
+      "page_count": 9,
+      "text_length": 32670,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "20.24% to 24.24%",
+          "20.24% to 24.24%",
+          "12.74% to \n16.74%",
+          "12.74% to 16.74%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 8,
+        "apr_lines": 8
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "navy-federal.pdf",
+      "size_bytes": 65167,
+      "page_count": 3,
+      "text_length": 33197,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "10.99% to 18.00%",
+          "14.24% to 18.00%",
+          "14.90% to 18.00%",
+          "15.49% to 18.00%",
+          "3.49% to 18.00%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 4,
+        "apr_lines": 6
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "penfed.pdf",
+      "size_bytes": 43834,
+      "page_count": 1,
+      "text_length": 1972,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 3,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "petal-2.pdf",
+      "size_bytes": 188898,
+      "page_count": 30,
+      "text_length": 62714,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "28.99% to 30.99%",
+          "21.49% - 23.49%"
+        ],
+        "distinct_card_names": [
+          "petal-2-visa"
+        ],
+        "annual_fee_mentions": 1,
+        "apr_lines": 1
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "pnc-cash-unlimited.pdf",
+      "size_bytes": 573115,
+      "page_count": 7,
+      "text_length": 74555,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "11.74% \nto 21.74%",
+          "20.24% \nto 30.24%",
+          "4% to 5%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 1,
+        "apr_lines": 2
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "pnc-secured.pdf",
+      "size_bytes": 316397,
+      "page_count": 7,
+      "text_length": 75804,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 3,
+        "apr_lines": 2
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "sofi.pdf",
+      "size_bytes": 291486,
+      "page_count": 34,
+      "text_length": 70505,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 0
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "sync-amazon.pdf",
+      "size_bytes": 58690,
+      "page_count": 6,
+      "text_length": 27808,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [
+          "synchrony-amazon-store"
+        ],
+        "annual_fee_mentions": 2,
+        "apr_lines": 6
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "sync-american-eagle.pdf",
+      "size_bytes": 64736,
+      "page_count": 6,
+      "text_length": 31619,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 10
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "sync-belk.pdf",
+      "size_bytes": 61050,
+      "page_count": 6,
+      "text_length": 33937,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 0,
+        "apr_lines": 5
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "usb-amex-card.pdf",
+      "size_bytes": 363517,
+      "page_count": 8,
+      "text_length": 64900,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "13.99% to 27.99%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 6,
+        "apr_lines": 3
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "usb-flex-rewards.pdf",
+      "size_bytes": 362465,
+      "page_count": 8,
+      "text_length": 67576,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "5.24% to 23.74%",
+          "12.49% to 30.99%",
+          "20.74% to 23.74%",
+          "27.99% to 30.99%",
+          "3% to 5%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 5,
+        "apr_lines": 3
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "wf-active-cash.pdf",
+      "size_bytes": 828727,
+      "page_count": 25,
+      "text_length": 20517,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "11.74% -\n21.74%",
+          "18.99% -\n28.99%"
+        ],
+        "distinct_card_names": [
+          "wells-fargo-active-cash"
+        ],
+        "annual_fee_mentions": 1,
+        "apr_lines": 2
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "wf-autograph.pdf",
+      "size_bytes": 999465,
+      "page_count": 21,
+      "text_length": 20812,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "11.74% -\n21.74%",
+          "18.99% -\n28.99%"
+        ],
+        "distinct_card_names": [],
+        "annual_fee_mentions": 1,
+        "apr_lines": 2
+      },
+      "reason": "no strong family signals"
+    },
+    {
+      "filename": "wf-reflect.pdf",
+      "size_bytes": 821039,
+      "page_count": 21,
+      "text_length": 20986,
+      "classification": "single-card",
+      "signals": {
+        "family_markers": [],
+        "fee_ranges": [],
+        "pct_ranges": [
+          "9.74% -\n21.49%",
+          "16.99% -\n28.74%"
+        ],
+        "distinct_card_names": [
+          "wells-fargo-reflect"
+        ],
+        "annual_fee_mentions": 1,
+        "apr_lines": 2
+      },
+      "reason": "no strong family signals"
+    }
+  ]
+}
