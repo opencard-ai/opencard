@@ -1,6 +1,6 @@
 {
   "card_id": "amex-gold",
-  "name": "American Express\u00ae Gold Card",
+  "name": "American Express® Gold Card",
   "issuer": "American Express",
   "network": "amex",
   "annual_fee": 295,
@@ -95,7 +95,7 @@
       "notes": "Insurance Details"
     }
   ],
-  "last_updated": "2026-04-25T16:00:32.707Z",
+  "last_updated": "2026-04-25",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -108,20 +108,18 @@
   },
   "recurring_credits": [
     {
-      "name": "Uber Cash",
-      "amount": 200,
+      "name": "Dining Credit",
+      "amount": 120,
       "frequency": "annual",
-      "category": "ride",
-      "description": "$15/month Uber credit",
-      "reset_type": "calendar_year"
+      "description": "$10/month at restaurants worldwide",
+      "source": "Amex官网"
     },
     {
-      "name": "Saks Fifth Avenue",
-      "amount": 100,
+      "name": "Walmart+ Credit",
+      "amount": 155,
       "frequency": "annual",
-      "category": "shopping",
-      "description": "$50 semi-annual credit",
-      "reset_type": "calendar_year"
+      "description": "$12.95/month",
+      "source": "Amex官网"
     }
   ],
   "welcome_bonus": {
