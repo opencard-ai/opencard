@@ -1,6 +1,6 @@
 {
   "card_id": "amex-platinum",
-  "name": "The Platinum Card\u00ae from American Express",
+  "name": "The Platinum Card® from American Express",
   "issuer": "American Express",
   "network": "amex",
   "annual_fee": 12,
@@ -91,7 +91,7 @@
       "name": "creditcards.com"
     }
   ],
-  "last_updated": "2026-04-25T16:00:22.036Z",
+  "last_updated": "2026-04-25",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -112,41 +112,57 @@
       "name": "Uber Cash",
       "amount": 200,
       "frequency": "annual",
-      "category": "ride",
-      "description": "$15/month Uber credit",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Saks Fifth Avenue",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "shopping",
-      "description": "$50/semi-annual",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Free Night Award",
-      "amount": 50000,
-      "frequency": "annual",
-      "category": "hotel",
-      "description": "Annual free night at Marriott properties",
-      "reset_type": "cardmember_year"
+      "description": "$15/month + $20 bonus December (REMOVING May 2026)",
+      "source": "Amex官网"
     },
     {
       "name": "Walmart+",
-      "amount": 0,
+      "amount": 155,
       "frequency": "annual",
-      "category": "shopping",
-      "description": "Free membership with fuel discounts",
-      "reset_type": "calendar_year"
+      "description": "Up to $12.95/month",
+      "source": "Amex官网"
     },
     {
-      "name": "Clear Security",
+      "name": "Clear Security Plus",
+      "amount": 209,
+      "frequency": "annual",
+      "description": "CLEAR Plus membership",
+      "source": "Amex官网"
+    },
+    {
+      "name": "Saks Fifth Avenue",
       "amount": 0,
       "frequency": "annual",
-      "category": "other",
-      "description": "Free Clear membership",
-      "reset_type": "calendar_year"
+      "description": "DISCONTINUED 2026",
+      "source": "Amex官网"
+    },
+    {
+      "name": "Free Night Award",
+      "amount": 35000,
+      "frequency": "annual",
+      "description": "Marriott Bonvoy free night",
+      "source": "Amex官网"
+    },
+    {
+      "name": "Airline Fee Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "description": "Incidental fees",
+      "source": "Amex官网"
+    },
+    {
+      "name": "Equinox Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "description": "$25/month",
+      "source": "Amex官网"
+    },
+    {
+      "name": "Entertainment Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "description": "$20/month",
+      "source": "Amex官网"
     }
   ],
   "welcome_bonus": {
