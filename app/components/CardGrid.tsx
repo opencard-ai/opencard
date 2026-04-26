@@ -106,16 +106,17 @@ function l(key: string, locale: string): string {
 export default function CardGrid({ cards, issuers, tags, locale }: CardGridProps) {
   const searchParams = useSearchParams();
   const [selectedSort, setSelectedSort] = useState(() => searchParams.get("sort") || "name");
+  const [groupByIssuer, setGroupByIssuer] = useState(false);
 
   return (
     <div id="cards-section" style={{ scrollMarginTop: "73px" }}>
-      <FilterBar issuers={issuers} tags={tags} locale={locale} selectedSort={selectedSort} setSelectedSort={setSelectedSort} />
-      <CardList cards={cards} tags={tags} locale={locale} selectedSort={selectedSort} />
+      <FilterBar issuers={issuers} tags={tags} locale={locale} selectedSort={selectedSort} setSelectedSort={setSelectedSort} groupByIssuer={groupByIssuer} setGroupByIssuer={setGroupByIssuer} />
+      <CardList cards={cards} tags={tags} locale={locale} selectedSort={selectedSort} groupByIssuer={groupByIssuer} />
     </div>
   );
 }
 
-function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort }: { issuers: string[]; tags: string[]; locale: string; selectedSort: string; setSelectedSort: (v: string) => void }) {
+function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort, groupByIssuer, setGroupByIssuer }: { issuers: string[]; tags: string[]; locale: string; selectedSort: string; setSelectedSort: (v: string) => void; groupByIssuer: boolean; setGroupByIssuer: (v: boolean) => void }) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -185,6 +186,13 @@ function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort }: { i
           <option value="bonus">{l("sortBonus", locale)}</option>
           <option value="credit">{l("sortCredit", locale)}</option>
         </select>
+        <button
+          onClick={() => setGroupByIssuer(!groupByIssuer)}
+          className={`px-3 py-2.5 text-sm rounded-lg border transition-colors ${groupByIssuer ? "bg-blue-100 border-blue-300 text-blue-700" : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"}`}
+          title={locale === "zh" ? "按發卡機構分組" : locale === "es" ? "Agrupar por emisor" : "Group by issuer"}
+        >
+          {locale === "zh" ? "🏦 分組" : locale === "es" ? "🏦 Agrupar" : "🏦 Group"}
+        </button>
         {(selectedIssuer || selectedTag || selectedAf || search || searchParams.get("sort")) && (
           <button
             onClick={() => router.push(`${pathname}#cards-section`, { scroll: false })}
@@ -222,7 +230,7 @@ function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort }: { i
   );
 }
 
-function CardList({ cards, tags, locale, selectedSort }: { cards: CreditCard[]; tags: string[]; locale: string; selectedSort: string }) {
+function CardList({ cards, tags, locale, selectedSort, groupByIssuer }: { cards: CreditCard[]; tags: string[]; locale: string; selectedSort: string; groupByIssuer: boolean }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const [compareIds, setCompareIds] = useState<string[]>([]);
