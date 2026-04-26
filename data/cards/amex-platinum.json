@@ -91,7 +91,7 @@
       "name": "creditcards.com"
     }
   ],
-  "last_updated": "2026-04-26T04:02:55.594292Z",
+  "last_updated": "2026-04-26T07:08:29.818Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -176,7 +176,6 @@
   "late_fee": 40,
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 5,
-  "penalty_apr": 26.74,
   "_unverified_fields": [
     "penalty_apr"
   ],
@@ -188,6 +187,23 @@
       "reason": "Amex Platinum $895 after Oct 2025 refresh ($695 -> $895)",
       "reverted_at": "2026-04-26T04:02:55.594292Z",
       "reverted_by": "cfpb_pipeline_corruption_revert_2026-04-25"
+    }
+  ],
+  "cash_advance_fee_min": 10,
+  "late_fee_max": 40,
+  "_fact_promote_history": [
+    {
+      "promoted_at": "2026-04-26T07:08:29.817Z",
+      "fields": [
+        {
+          "field": "cash_advance_fee_min",
+          "source": "cfpb_ccad@2026-04-26 (llm:minimax)"
+        },
+        {
+          "field": "late_fee_max",
+          "source": "cfpb_ccad@2026-04-26 (llm:minimax)"
+        }
+      ]
     }
   ]
 }

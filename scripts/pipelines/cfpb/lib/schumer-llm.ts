@@ -64,7 +64,11 @@ Critical rules to avoid common parsing errors:
 
 2. foreign_transaction_fee_pct is the PERCENTAGE (e.g. 2.7 for "2.7%"). If "None" or "0%", use 0. Cap at 5 — anything higher is a parsing error.
 
-3. APRs are PERCENTAGES, never decimals. "29.99%" → 29.99 (not 0.2999).
+3. APRs are FIXED ANNUAL PERCENTAGE RATES.
+   - "29.99%" → 29.99 (not 0.2999)
+   - If the agreement expresses the APR as a formula like "Prime Rate + 12.74%", "Prime + 21.74%", or any other variable-rate formula tied to Prime Rate / SOFR / LIBOR, set the APR field to null and put the formula in the notes field.
+   - NEVER return the margin (the X in "Prime + X%") as the APR — that is a parsing error. The margin is not the APR.
+   - Only return a numeric APR if the agreement gives a single fixed annual percentage that does not vary with an external index.
 
 4. If you can't find a field with high confidence, return null for that field and explain in the notes field.
 
