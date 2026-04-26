@@ -120,7 +120,9 @@ export async function extractSchumerBox(pdfText: string): Promise<SchumerBoxExtr
     prompt: USER_PROMPT_TEMPLATE(pdfText),
     systemPrompt: SYSTEM_PROMPT,
     model: "MiniMax-M2",
-    maxTokens: 1500,
+    // M2 is a reasoning model — chain-of-thought eats completion tokens before
+    // the JSON output. 4000 leaves headroom for ~3000 reasoning + ~500 JSON.
+    maxTokens: 4000,
     temperature: 0,
     validate: isSchumerBoxRaw,
   });
