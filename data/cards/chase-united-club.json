@@ -120,17 +120,26 @@
   },
   "recurring_credits": [
     {
-      "name": "United Club Membership",
-      "amount": 750,
-      "frequency": "annual",
-      "category": "travel"
-    },
-    {
-      "name": "Annual Travel Credit",
+      "name": "United Travel Credit",
       "amount": 200,
       "frequency": "annual",
-      "category": "travel"
+      "category": "travel",
+      "description": "$200/year on United purchases (TravelBank).",
+      "reset_type": "anniversary",
+      "source": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite"
+    },
+    {
+      "name": "Instacart Credit",
+      "amount": 20,
+      "frequency": "monthly",
+      "category": "groceries",
+      "description": "$20/month ($240/year, two $10 credits monthly) on Instacart purchases. Ends 12/31/27.",
+      "reset_type": "monthly",
+      "source": "https://www.instacart.com/p/chase-united"
     }
+  ],
+  "_excluded": [
+    "United Club lounge membership ($750 retail value) — qualitative benefit, not a USD recurring statement credit. Listed in earning_rates / travel_benefits if needed for UI."
   ],
   "last_verified": "2026-04-16T13:41:49.998Z",
   "next_review": "2026-07-15T13:41:49.998000+00:00"
