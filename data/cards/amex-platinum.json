@@ -110,45 +110,93 @@
   "recurring_credits": [
     {
       "name": "Uber Cash",
-      "amount": 200,
-      "frequency": "annual",
-      "description": "$15/month + $20 bonus December (REMOVING May 2026)",
-      "source": "Amex官网"
+      "amount": 15,
+      "frequency": "monthly",
+      "category": "ride",
+      "description": "$15/month ($180/yr) + $20 December bonus = $200/yr total. Card must be added to Uber app.",
+      "reset_type": "monthly",
+      "source": "https://global.americanexpress.com/card-benefits/detail/uber-cash/platinum"
     },
     {
-      "name": "Walmart+",
-      "amount": 155,
+      "name": "Uber One Membership",
+      "amount": 120,
       "frequency": "annual",
-      "description": "Up to $12.95/month",
-      "source": "Amex官网"
+      "category": "ride",
+      "description": "$120/yr on auto-renewing Uber One membership.",
+      "reset_type": "calendar_year",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     },
     {
-      "name": "Clear Security Plus",
+      "name": "Walmart+ Credit",
+      "amount": 12.95,
+      "frequency": "monthly",
+      "category": "groceries",
+      "description": "One monthly Walmart+ membership credit (~$12.95/month plus tax, ~$155/yr).",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    },
+    {
+      "name": "CLEAR Plus Credit",
       "amount": 209,
       "frequency": "annual",
-      "description": "CLEAR Plus membership",
-      "source": "Amex官网"
+      "category": "travel",
+      "description": "$209/yr on CLEAR Plus Membership (auto-renewal required).",
+      "reset_type": "calendar_year",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     },
     {
       "name": "Airline Fee Credit",
       "amount": 200,
       "frequency": "annual",
-      "description": "Incidental fees",
-      "source": "Amex官网"
+      "category": "airline",
+      "description": "$200/yr on incidental fees with one selected airline (baggage, food/drinks, etc.).",
+      "reset_type": "calendar_year",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     },
     {
       "name": "Equinox Credit",
-      "amount": 300,
-      "frequency": "annual",
-      "description": "$25/month",
-      "source": "Amex官网"
+      "amount": 25,
+      "frequency": "monthly",
+      "category": "fitness",
+      "description": "$25/month ($300/yr) on Equinox+ membership and Equinox club purchases.",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     },
     {
-      "name": "Entertainment Credit",
+      "name": "Digital Entertainment Credit",
+      "amount": 20,
+      "frequency": "monthly",
+      "category": "entertainment",
+      "description": "$20/month ($240/yr) on eligible digital entertainment (Disney+, Hulu, ESPN+, NYT, WSJ, Peacock).",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    },
+    {
+      "name": "Resy Dining Credit",
+      "amount": 100,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "$100/quarter ($400/yr) at US Resy restaurants and eligible Resy purchases.",
+      "reset_type": "quarterly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    },
+    {
+      "name": "lululemon Credit",
+      "amount": 75,
+      "frequency": "quarterly",
+      "category": "shopping",
+      "description": "$75/quarter ($300/yr) on lululemon.com or US lululemon stores.",
+      "reset_type": "quarterly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    },
+    {
+      "name": "Oura Ring Credit",
       "amount": 200,
       "frequency": "annual",
-      "description": "$20/month",
-      "source": "Amex官网"
+      "category": "shopping",
+      "description": "$200/yr on Oura Ring direct purchases (oura.com).",
+      "reset_type": "calendar_year",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     }
   ],
   "welcome_bonus": {
