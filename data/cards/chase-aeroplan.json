@@ -58,7 +58,18 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.964Z",
+  "last_updated": "2026-04-27T03:03:48.139Z",
   "last_verified": "2026-04-16T13:41:49.964Z",
-  "next_review": "2026-07-15T13:41:49.964000+00:00"
+  "next_review": "2026-07-15T13:41:49.964000+00:00",
+  "recurring_credits": [
+    {
+      "name": "Global Entry / TSA PreCheck Application Credit",
+      "amount": 120,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $120 statement credit reimbursing Global Entry / TSA PreCheck application fee. Renews every 4 years.",
+      "reset_type": "anniversary",
+      "source": "https://creditcards.chase.com/aeroplan/benefits"
+    }
+  ]
 }

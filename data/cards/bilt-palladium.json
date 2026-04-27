@@ -46,7 +46,7 @@
       "url": "https://www.nerdwallet.com/credit-cards/reviews/bilt-palladium"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.955Z",
+  "last_updated": "2026-04-27T03:03:48.139Z",
   "travel_benefits": {
     "hotel_status": [],
     "lounge_access": [],
@@ -75,7 +75,26 @@
   "annual_credits": [],
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
-  "recurring_credits": [],
+  "recurring_credits": [
+    {
+      "name": "Bilt Travel Hotel Credit",
+      "amount": 200,
+      "frequency": "semi_annual",
+      "category": "hotel",
+      "description": "$200 per half (2 × $200/year = $400 total) usable in Bilt's travel portal. Minimum 2-night stay required.",
+      "reset_type": "calendar_year",
+      "source": "https://newsroom.biltrewards.com/meetbiltcard2.0"
+    },
+    {
+      "name": "Bilt Cash",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "other",
+      "description": "$200 of Bilt Cash, renewed annually.",
+      "reset_type": "calendar_year",
+      "source": "https://newsroom.biltrewards.com/meetbiltcard2.0"
+    }
+  ],
   "last_verified": "2026-04-16T13:41:49.955Z",
   "next_review": "2026-07-15T13:41:49.955000+00:00"
 }

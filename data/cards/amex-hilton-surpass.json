@@ -83,7 +83,7 @@
       "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold→Diamond path at $40K, National status"
     }
   ],
-  "last_updated": "2026-04-26T04:02:55.594292Z",
+  "last_updated": "2026-04-27T03:03:48.139Z",
   "hotel_program": {
     "program": "Hilton Honors",
     "tier": "Gold Elite",
@@ -99,7 +99,17 @@
       }
     ]
   },
-  "recurring_credits": [],
+  "recurring_credits": [
+    {
+      "name": "Hilton Quarterly Statement Credit",
+      "amount": 50,
+      "frequency": "quarterly",
+      "category": "hotel",
+      "description": "Up to $50/quarter on Hilton property purchases ($200/year total).",
+      "reset_type": "quarterly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/"
+    }
+  ],
   "last_verified": "2026-04-25T16:00:44.012Z",
   "next_review": "2026-07-15T13:41:49.948000+00:00",
   "cash_advance_fee_flat": 10,
