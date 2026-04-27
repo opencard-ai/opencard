@@ -55,7 +55,7 @@
       "url": "https://thepointsguy.com/credit-cards/capital-one-venture-current-offer/"
     }
   ],
-  "last_updated": "2026-04-25T16:03:36.097Z",
+  "last_updated": "2026-04-27T04:30:38.466Z",
   "hotel_program": {
     "program": null,
     "tier": null,
@@ -66,7 +66,26 @@
   "application_rules": {
     "rules": []
   },
-  "recurring_credits": [],
+  "recurring_credits": [
+    {
+      "name": "Global Entry / TSA PreCheck Application Credit",
+      "amount": 120,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $120 statement credit for Global Entry ($120) or TSA PreCheck ($85) application fee. Renews every 4 years.",
+      "reset_type": "anniversary",
+      "source": "https://www.capitalone.com/credit-cards/venture/"
+    },
+    {
+      "name": "Capital One Travel Hotel Experience Credit",
+      "amount": 50,
+      "frequency": "per_stay",
+      "category": "hotel",
+      "description": "$50 experience credit at hotels booked through Capital One Travel — usable on rooftop drinks, restaurants, room service and other on-property amenities. Per qualifying stay.",
+      "reset_type": "anniversary",
+      "source": "https://www.capitalone.com/credit-cards/venture/"
+    }
+  ],
   "last_verified": "2026-04-25T16:03:36.097Z",
   "next_review": "2026-07-15T13:41:49.963000+00:00"
 }

@@ -83,7 +83,7 @@
       "notes": "NerdWallet review Apr 2026."
     }
   ],
-  "last_updated": "2026-04-25",
+  "last_updated": "2026-04-27T04:30:38.466Z",
   "hotel_program": {
     "program": null,
     "tier": null,
@@ -103,7 +103,17 @@
       }
     ]
   },
-  "recurring_credits": [],
+  "recurring_credits": [
+    {
+      "name": "Chase Travel Hotel Credit",
+      "amount": 50,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "$50/year on hotels booked through Chase Travel portal.",
+      "reset_type": "anniversary",
+      "source": "https://www.chase.com/personal/credit-cards/sapphire-preferred"
+    }
+  ],
   "last_scraped": "2026-04-24T17:26:36.116494",
   "last_verified": "2026-04-25T16:01:49.502Z",
   "next_review": "2026-07-23T17:26:36.116494",

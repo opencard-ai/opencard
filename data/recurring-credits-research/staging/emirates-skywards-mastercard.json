@@ -15,8 +15,8 @@
     }
   ],
   "_no_credits_found": false,
-  "_needs_review": true,
-  "_review_reason": "Most card value is in qualitative/conditional benefits: Emirates Gold tier (status), Priority Pass Select (lounge — non-quantified), 10,000 bonus miles after $30k annual spend (conditional, not pure recurring). Per OpenCard convention 'amount must be USD dollar value' — these qualitative perks excluded. Net: only Global Entry credit qualifies.",
+  "_needs_review": false,
+  "_review_reason": "Schema rules applied: only Global Entry $120/4yr qualifies. Status, lounge, conditional miles all excluded per Q1 + qualitative-only rules.",
   "_excluded": [
     "Emirates Gold tier (status, non-monetary)",
     "Priority Pass Select (qualitative lounge benefit)",

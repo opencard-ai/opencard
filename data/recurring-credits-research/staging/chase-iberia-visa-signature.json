@@ -15,8 +15,8 @@
     }
   ],
   "_no_credits_found": false,
-  "_needs_review": true,
-  "_review_reason": "Includes 1-year complimentary DashPass (promotional, not recurring per OpenCard convention — excluded). $1,000 voucher after $30k spend is conditional (excluded). 10% off Iberia flights via partner link is ongoing discount (excluded — not a fixed USD credit). Net only the $40/year DoorDash credit is fixed recurring USD.",
+  "_needs_review": false,
+  "_review_reason": "Schema rules applied: DashPass 1-yr excluded (Q4 promotional), $1k voucher after $30k spend excluded (Q1 conditional). Only $10/quarter DoorDash qualifies.",
   "_excluded": [
     "1-year DashPass complimentary (promotional)",
     "$1,000 voucher after $30k annual spend (conditional)",

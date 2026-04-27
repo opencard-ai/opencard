@@ -25,8 +25,8 @@
     }
   ],
   "_no_credits_found": false,
-  "_needs_review": true,
-  "_review_reason": "$50 hotel experience credit is per_stay (not annual cap). OpenCard schema 'frequency' enum includes 'per_stay' — confirm the existing 69 cards use this consistently. The $50 isn't really 'recurring' in same sense as Uber Cash; it's a benefit available on every qualifying booking. May need clarification.",
+  "_needs_review": false,
+  "_review_reason": "Schema rules applied (Q3): per_stay credits INCLUDED with frequency=per_stay; reminder system ignores per_stay so they show in UI but don't trigger emails. Both credits qualify.",
   "sources_consulted": [
     "https://www.capitalone.com/credit-cards/venture/",
     "https://www.nerdwallet.com/credit-cards/learn/benefits-capital-one-venture",
