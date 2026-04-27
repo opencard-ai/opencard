@@ -85,7 +85,17 @@
       }
     ]
   },
-  "recurring_credits": [],
+  "recurring_credits": [
+    {
+      "name": "Airline Credit (2026 only)",
+      "amount": 50,
+      "frequency": "semi_annual",
+      "category": "airline",
+      "description": "$50/half ($100/year) statement credit on $250+ direct airline purchases. 2026-LIMITED — verify before assuming continues into 2027.",
+      "reset_type": "calendar_year",
+      "source": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless"
+    }
+  ],
   "last_scraped": "2026-04-24T17:26:46.246653",
   "last_verified": "2026-04-25T16:02:14.512Z",
   "next_review": "2026-07-23T17:26:46.246653"

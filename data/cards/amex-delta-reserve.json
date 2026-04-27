@@ -107,21 +107,39 @@
   "recurring_credits": [
     {
       "name": "Resy Credit",
-      "amount": 240,
-      "frequency": "annual",
-      "category": "other"
+      "amount": 20,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "$20/month ($240/year) at US Resy restaurants or eligible Resy purchases.",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-reserve-american-express-card/"
     },
     {
       "name": "Rideshare Credit",
-      "amount": 120,
-      "frequency": "annual",
-      "category": "other"
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "ride",
+      "description": "$10/month ($120/year) on US rideshare with select providers (Uber, Lyft, Curb, Revel, Alto).",
+      "reset_type": "monthly",
+      "source": "https://global.americanexpress.com/card-benefits/detail/rideshare-statement-credit/delta-reserve"
     },
     {
-      "name": "Global Entry/TSA PreCheck",
-      "amount": 120,
+      "name": "Delta Stays Credit",
+      "amount": 200,
       "frequency": "annual",
-      "category": "other"
+      "category": "hotel",
+      "description": "Up to $200/year on prepaid hotels via Delta Stays on delta.com.",
+      "reset_type": "calendar_year",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-reserve-american-express-card/"
+    },
+    {
+      "name": "Global Entry / TSA PreCheck",
+      "amount": 120,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $120 statement credit every 4 years for Global Entry or TSA PreCheck application fee.",
+      "reset_type": "anniversary",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-reserve-american-express-card/"
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",

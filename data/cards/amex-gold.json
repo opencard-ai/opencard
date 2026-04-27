@@ -108,11 +108,40 @@
   },
   "recurring_credits": [
     {
-      "name": "Dining Credit",
-      "amount": 120,
-      "frequency": "annual",
-      "description": "$10/month at restaurants worldwide",
-      "source": "Amex官网"
+      "name": "Uber Cash",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "ride",
+      "description": "$10/month ($120/year) on US Uber rides or Uber Eats. Card must be selected as payment method.",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/gold-card/"
+    },
+    {
+      "name": "Dunkin' Credit",
+      "amount": 7,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "Up to $7/month ($84/year) at US Dunkin' locations. Enrollment required.",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/gold-card/"
+    },
+    {
+      "name": "Dining Credit (Goldbelly / Wine.com / Five Guys / Seamless / Cheesecake Factory)",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "$10/month ($120/year) at participating US partners. Enrollment required.",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/gold-card/"
+    },
+    {
+      "name": "Resy Credit",
+      "amount": 50,
+      "frequency": "semi_annual",
+      "category": "dining",
+      "description": "$50/half ($100/year) at US Resy restaurants or eligible Resy purchases.",
+      "reset_type": "calendar_year",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/gold-card/"
     }
   ],
   "welcome_bonus": {
