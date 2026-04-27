@@ -56,7 +56,11 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.937Z",
-  "last_verified": "2026-04-16T13:41:49.937Z",
-  "next_review": "2026-07-15T13:41:49.937000+00:00"
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_no_credits_note": "Amazon Business Prime Amex ($0 AF, requires Amazon Business Prime ~$179/yr) — no fixed-USD recurring credits. Value is earning rates (5% Amazon for Prime members up to $150k/yr) + Venue Collection 10% concession + employee cards. Verified 2026-04-27.",
+  "_card_status_alert": "Card transitioning from American Express to U.S. Bank August 14, 2026. Operator may want to update issuer field at that point.",
+  "last_updated": "2026-04-27T20:00:00.000Z",
+  "last_verified": "2026-04-27T20:00:00.000Z",
+  "next_review": "2026-08-15T00:00:00.000Z"
 }

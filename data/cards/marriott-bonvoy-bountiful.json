@@ -99,14 +99,9 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "name": "Marriott Statement Credit",
-      "amount": 25,
-      "frequency": "monthly",
-      "category": "travel"
-    }
-  ],
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_no_credits_note": "Marriott Bonvoy Bountiful ($250 AF) — value is conditional Free Night after $15k spend (excluded), 15 Elite Night Credits + Gold Elite status (qualitative), DashPass 1-yr promotional (excluded). Previous '$25/monthly Marriott Statement Credit' entry was unverified — Chase Bountiful benefits page does not list a monthly Marriott credit. Removed 2026-04-27.",
   "last_scraped": "2026-04-24T17:26:46.246653",
   "last_verified": "2026-04-24T17:26:46.246653",
   "next_review": "2026-07-23T17:26:46.246653"

@@ -63,7 +63,18 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:50.011Z",
-  "last_verified": "2026-04-16T13:41:50.011Z",
+  "recurring_credits": [
+    {
+      "name": "Airline Credit",
+      "amount": 50,
+      "frequency": "annual",
+      "category": "airline",
+      "description": "$50/year on airline purchases. Single transaction must be ≥$50 and merchant must be in airline category (airfare, baggage fees, seat selection, etc.).",
+      "reset_type": "anniversary",
+      "source": "https://creditcards.wellsfargo.com/autograph-journey-card/"
+    }
+  ],
+  "last_updated": "2026-04-27T20:00:00.000Z",
+  "last_verified": "2026-04-27T20:00:00.000Z",
   "next_review": "2026-07-15T13:41:50.011000+00:00"
 }
