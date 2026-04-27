@@ -68,7 +68,7 @@
       "notes": "WalletHub"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.992Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "status": "active",
   "notes": "Synchrony-issued version of PayPal Cashback Mastercard. Distinct from the Chase-issued PayPal Mastercard. Best for heavy PayPal users who want elevated cash back on PayPal transactions. Cash back as statement credit.",
   "hotel_program": null,
@@ -77,5 +77,8 @@
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.992Z",
-  "next_review": "2026-07-15T13:41:49.992000+00:00"
+  "next_review": "2026-07-15T13:41:49.992000+00:00",
+  "deprecated": true,
+  "deprecated_reason": "Store-card retail co-brand. Users searching OpenCard generally aren't shopping for retailer-specific cards. Excluded from main listings.",
+  "deprecated_bucket": "B_store_card"
 }

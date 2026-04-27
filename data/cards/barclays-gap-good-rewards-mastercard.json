@@ -76,7 +76,7 @@
       "url": "upgradedpoints.com"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.983Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -86,5 +86,8 @@
   "next_review": "2026-07-15T13:41:49.983000+00:00",
   "cash_advance_fee_flat": 5,
   "cash_advance_fee_pct": 5,
-  "cfpb_source": "Q3_2025"
+  "cfpb_source": "Q3_2025",
+  "deprecated": true,
+  "deprecated_reason": "Store-card retail co-brand. Users searching OpenCard generally aren't shopping for retailer-specific cards. Excluded from main listings.",
+  "deprecated_bucket": "B_store_card"
 }

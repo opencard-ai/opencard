@@ -55,7 +55,7 @@
   ],
   "notes": "Basic student credit card with modest 1.25% total cash back (1% + 0.25% bonus for on-time payments). No sign-up bonus. No annual fee. APR is high at 29.99% variable. The 0.25% extra when paying on time incentivizes good habits. Limited to students or those with limited credit. No travel or purchase protections. Consider SavorOne Student for better earning rates.",
   "confidence": "medium",
-  "last_updated": "2026-04-16T13:41:49.958Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "tags": [
     "no-annual-fee",
     "student"
@@ -66,5 +66,8 @@
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.958Z",
-  "next_review": "2026-07-15T13:41:49.958000+00:00"
+  "next_review": "2026-07-15T13:41:49.958000+00:00",
+  "deprecated": true,
+  "deprecated_reason": "Subprime / secured / student card. Different user segment from OpenCard's rewards/credits-maximizer focus. Excluded from main listings.",
+  "deprecated_bucket": "C_subprime"
 }

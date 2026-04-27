@@ -96,12 +96,14 @@
       "url": "pointsnav.com"
     }
   ],
-  "last_updated": "2026-04-16T13:41:50.013Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:50.013Z",
-  "next_review": "2026-07-15T13:41:50.013000+00:00"
+  "next_review": "2026-07-15T13:41:50.013000+00:00",
+  "_duplicate_of": "barclays-wyndham-earner-biz",
+  "_dedup_note": "Same product. Canonical uses issuer-first prefix + biz suffix per project convention."
 }

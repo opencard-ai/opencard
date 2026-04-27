@@ -57,7 +57,7 @@
       "url": "https://www.forbes.com/advisor/credit-cards/reviews/chase-aer-lingus/"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.933Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -73,5 +73,8 @@
     "estimated_value": 900
   },
   "last_verified": "2026-04-16T13:41:49.933Z",
-  "next_review": "2026-07-15T13:41:49.933000+00:00"
+  "next_review": "2026-07-15T13:41:49.933000+00:00",
+  "deprecated": true,
+  "deprecated_reason": "Niche international airline co-brand. US searchers rarely seek these. Excluded from main listings.",
+  "deprecated_bucket": "D_niche_international"
 }

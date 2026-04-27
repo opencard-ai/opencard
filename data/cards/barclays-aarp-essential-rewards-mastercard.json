@@ -73,12 +73,15 @@
       "url": "businessinsider.com"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.932Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.932Z",
-  "next_review": "2026-07-15T13:41:49.932000+00:00"
+  "next_review": "2026-07-15T13:41:49.932000+00:00",
+  "deprecated": true,
+  "deprecated_reason": "Subprime / secured / student card. Different user segment from OpenCard's rewards/credits-maximizer focus. Excluded from main listings.",
+  "deprecated_bucket": "C_subprime"
 }

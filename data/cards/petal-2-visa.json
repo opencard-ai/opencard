@@ -79,7 +79,7 @@
       "notes": "CNBC — Petal 1 vs Petal 2 comparison"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.993Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "status": "active",
   "notes": "Petal 2 is Petal's flagship no-fee credit builder card. Unlike Petal 1, it has NO fees of any kind for new cardholders. Earns 1% cash back initially, increasing to 1.25% after 6 on-time payments and 1.5% after 12 on-time payments — making it one of the best flat-rate cash back rates among secured/no-credit-required cards. Variable APR: 28.24%–33.24%. Petal uses bank account cash flow data (rather than credit score alone) for approvals. Highly regarded among credit-builder cards.",
   "hotel_program": null,
@@ -88,5 +88,8 @@
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.993Z",
-  "next_review": "2026-07-15T13:41:49.993000+00:00"
+  "next_review": "2026-07-15T13:41:49.993000+00:00",
+  "deprecated": true,
+  "deprecated_reason": "Subprime / secured / student card. Different user segment from OpenCard's rewards/credits-maximizer focus. Excluded from main listings.",
+  "deprecated_bucket": "C_subprime"
 }

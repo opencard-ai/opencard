@@ -62,7 +62,7 @@
       "notes": "CNBC"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.935Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "status": "active",
   "notes": "Separate from Amazon Prime Visa (Chase) and Amazon Store Card (Synchrony). This is the store-only card with 5% for Prime members. Cannot be used outside Amazon ecosystem. Prime membership required to earn 5%. Special financing offer may vary.",
   "hotel_program": null,
@@ -71,5 +71,8 @@
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.935Z",
-  "next_review": "2026-07-15T13:41:49.935000+00:00"
+  "next_review": "2026-07-15T13:41:49.935000+00:00",
+  "deprecated": true,
+  "deprecated_reason": "Store-card retail co-brand. Users searching OpenCard generally aren't shopping for retailer-specific cards. Excluded from main listings.",
+  "deprecated_bucket": "B_store_card"
 }
