@@ -107,13 +107,46 @@
       "name": "United TravelBank Cash",
       "amount": 200,
       "frequency": "annual",
-      "category": "travel"
+      "category": "airline",
+      "description": "$200/year United TravelBank credit, posts annually on account anniversary. Usable on flights, vacations, seat upgrades, checked bags.",
+      "reset_type": "anniversary",
+      "source": "https://www.chase.com/personal/credit-cards/united/united-quest-card"
     },
     {
-      "name": "Renowned Hotels and Resorts Credit",
+      "name": "Renowned Hotels & Resorts Credit",
       "amount": 150,
       "frequency": "annual",
-      "category": "travel"
+      "category": "hotel",
+      "description": "$150/year on prepaid hotels through Renowned Hotels and Resorts.",
+      "reset_type": "anniversary",
+      "source": "https://www.chase.com/personal/credit-cards/united/united-quest-card"
+    },
+    {
+      "name": "JSX Credit",
+      "amount": 150,
+      "frequency": "annual",
+      "category": "airline",
+      "description": "$150/year on flights booked directly with JSX.",
+      "reset_type": "anniversary",
+      "source": "https://www.chase.com/personal/credit-cards/united/united-quest-card"
+    },
+    {
+      "name": "Rideshare Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "ride",
+      "description": "Up to $100/year on rideshare purchases (requires yearly opt-in).",
+      "reset_type": "calendar_year",
+      "source": "https://www.chase.com/personal/credit-cards/united/united-quest-card"
+    },
+    {
+      "name": "Instacart Credit",
+      "amount": 15,
+      "frequency": "monthly",
+      "category": "groceries",
+      "description": "$10 + $5 monthly Instacart credits ($15/month, $180/year total).",
+      "reset_type": "monthly",
+      "source": "https://www.chase.com/personal/credit-cards/united/united-quest-card"
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",

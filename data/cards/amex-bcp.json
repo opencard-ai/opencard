@@ -80,19 +80,13 @@
   },
   "recurring_credits": [
     {
-      "name": "Disney+ Streaming Credit",
+      "name": "Disney Streaming Credit",
       "amount": 10,
       "frequency": "monthly",
       "category": "streaming",
-      "description": "$10/month Disney+ streaming credit"
-    },
-    {
-      "name": "Disney Streaming Credit",
-      "amount": 120,
-      "frequency": "annual",
-      "category": "streaming",
-      "description": "$10 monthly credit at Disney+, Hulu, or ESPN+.",
-      "reset_type": "calendar_year"
+      "description": "$10/month ($120/yr) on Disney+, Hulu, or ESPN+ subscriptions. No minimum spend required (raised from $7/$84 in 2026).",
+      "reset_type": "monthly",
+      "source": "https://global.americanexpress.com/card-benefits/detail/disney-streaming-credit/blue-cash-preferred"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.939Z",
