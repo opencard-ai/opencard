@@ -94,7 +94,7 @@
       "notes": "200K offer details and offer history confirmation"
     }
   ],
-  "last_updated": "2026-04-26T04:02:55.594292Z",
+  "last_updated": "2026-04-27T04:44:39.774Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -116,39 +116,13 @@
   },
   "recurring_credits": [
     {
-      "name": "Uber Cash",
-      "amount": 300,
-      "frequency": "annual",
-      "description": "$25/month",
-      "source": "Amex官網"
-    },
-    {
-      "name": "Marriott Free Night",
-      "amount": 50000,
-      "frequency": "annual",
-      "description": "Marriott Bonvoy free night",
-      "source": "Amex官網"
-    },
-    {
-      "name": "Walmart+ Credit",
-      "amount": 155,
-      "frequency": "annual",
-      "description": "$12.95/month",
-      "source": "Amex官網"
-    },
-    {
-      "name": "Clear Security Plus",
-      "amount": 209,
-      "frequency": "annual",
-      "description": "CLEAR Plus membership",
-      "source": "Amex官網"
-    },
-    {
-      "name": "Saks Fifth Avenue",
-      "amount": 0,
-      "frequency": "annual",
-      "description": "DISCONTINUED 2026",
-      "source": "Amex官網"
+      "name": "Dining Credit",
+      "amount": 25,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "$25/month ($300/year) at restaurants worldwide.",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-brilliant/"
     }
   ],
   "last_scraped": "2026-04-24T17:26:46.246653",

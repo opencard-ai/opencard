@@ -42,6 +42,8 @@ interface StagingCard {
   _no_credits_found?: boolean;
   _needs_review?: boolean;
   _review_reason?: string | null;
+  _overwrite_existing?: boolean;
+  _overwrite_reason?: string;
 }
 
 const VALID_FREQUENCIES = new Set([
@@ -131,16 +133,30 @@ function main() {
     }
     const target = JSON.parse(fs.readFileSync(targetPath, "utf8"));
     const existingRC = target.recurring_credits;
+    const allowOverwrite = process.argv.includes("--allow-overwrite");
     if (Array.isArray(existingRC) && existingRC.length > 0) {
-      plans.push({
-        card_id: staging.card_id,
-        staging_file: f,
-        target_file: targetPath,
-        new_credits: [],
-        old_credits: existingRC,
-        skip_reason: `target already has ${existingRC.length} recurring_credits — refusing to overwrite`,
-      });
-      continue;
+      if (!staging._overwrite_existing) {
+        plans.push({
+          card_id: staging.card_id,
+          staging_file: f,
+          target_file: targetPath,
+          new_credits: [],
+          old_credits: existingRC,
+          skip_reason: `target already has ${existingRC.length} recurring_credits — staging not flagged _overwrite_existing`,
+        });
+        continue;
+      }
+      if (!allowOverwrite) {
+        plans.push({
+          card_id: staging.card_id,
+          staging_file: f,
+          target_file: targetPath,
+          new_credits: [],
+          old_credits: existingRC,
+          skip_reason: `staging flagged _overwrite_existing but --allow-overwrite not passed (gate)`,
+        });
+        continue;
+      }
     }
 
     // Validate

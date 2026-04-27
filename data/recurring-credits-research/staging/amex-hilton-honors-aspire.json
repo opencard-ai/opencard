@@ -1,0 +1,61 @@
+{
+  "card_id": "amex-hilton-honors-aspire",
+  "researched_at": "2026-04-27",
+  "card_name_verified": "Hilton Honors American Express Aspire® Card",
+  "_overwrite_existing": true,
+  "_overwrite_reason": "EXISTING DATA HAS WRONG CREDITS — lists 'Marriott Free Night' (Marriott bonus on a HILTON card?), Uber Cash $200, Walmart+, Clear, Saks (these are amex-platinum benefits, NOT Aspire). Also lists 'Fine Hotels + Resorts $300' (FHR is a Platinum benefit, not Aspire).",
+  "recurring_credits": [
+    {
+      "name": "Hilton Resort Credit",
+      "amount": 200,
+      "frequency": "semi_annual",
+      "category": "hotel",
+      "description": "$200/half ($400/year) on eligible Hilton Resort purchases (room + incidentals).",
+      "reset_type": "calendar_year",
+      "source_url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/",
+      "source_excerpt": "Get up to $200 in statement credits semi-annually for eligible purchases made directly with participating Hilton Resorts, totaling up to $400 back annually"
+    },
+    {
+      "name": "Flight Credit",
+      "amount": 50,
+      "frequency": "quarterly",
+      "category": "airline",
+      "description": "$50/quarter ($200/year) on flight purchases via airline direct or Amex Travel.",
+      "reset_type": "quarterly",
+      "source_url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/",
+      "source_excerpt": "Get up to $50 in statement credits each quarter, for a total of up to $200 back each year, on flight purchases"
+    },
+    {
+      "name": "CLEAR Plus Credit",
+      "amount": 209,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $209/year statement credit for CLEAR Plus membership (auto-renewal required).",
+      "reset_type": "calendar_year",
+      "source_url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/",
+      "source_excerpt": "Up to $209 in statement credits per calendar year after you sign up and pay for a CLEAR+ Membership (subject to auto-renewal)"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_review_reason": "Conservative draft — only verified-USD-credits included. Free Night + Luxury per_stay are future additions pending free-night fair-value decision. Fixing the WRONG existing data (Marriott/Walmart+/Uber Cash etc. listed under Aspire) shouldn't wait.",
+  "_future_add": "Free Night Reward annual (Q2 fair-value ~$400-500), $100 luxury property per_stay (Q3)",
+  "_excluded": [
+    "Marriott Free Night (NOT a Hilton Aspire benefit — wrong data)",
+    "Hilton Honors Bonus Points 25k (points not USD)",
+    "Fine Hotels + Resorts $300 (FHR is a Platinum benefit, NOT Aspire)",
+    "Airline Fee Credit $250 (consumer Platinum benefit, NOT Aspire)",
+    "Uber Cash $200 (Platinum benefit)",
+    "Walmart+ Credit / Clear Security Plus (Platinum benefits)",
+    "Saks Fifth Avenue (DISCONTINUED + Platinum benefit)",
+    "$100 luxury property credit (per_stay conditional)",
+    "Annual Free Night Reward (PENDING Kacey decision per Q2)",
+    "Hilton Diamond status (qualitative)"
+  ],
+  "sources_consulted": [
+    "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/",
+    "https://thepointsguy.com/credit-cards/reviews/hilton-amex-aspire-review/",
+    "https://www.uscreditcardguide.com/amex-hilton-aspire-credit-card/",
+    "https://www.nerdwallet.com/travel/learn/is-the-hilton-honors-amex-aspire-card-worth-its-annual-fee"
+  ]
+}

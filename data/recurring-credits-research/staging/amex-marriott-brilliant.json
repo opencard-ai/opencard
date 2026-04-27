@@ -1,0 +1,38 @@
+{
+  "card_id": "amex-marriott-brilliant",
+  "researched_at": "2026-04-27",
+  "card_name_verified": "Marriott Bonvoy Brilliant® American Express® Card ($650 AF)",
+  "_overwrite_existing": true,
+  "_overwrite_reason": "EXISTING DATA HAS WRONG CREDITS — lists Uber Cash $300, Walmart+ $155, Clear $209, Saks (these are amex-platinum benefits, NOT Brilliant). Also has 'Marriott Free Night' with amount=50000 (Marriott points, not USD). Same copy-paste bug pattern as the brief flagged on amex-platinum's Free Night Award.",
+  "recurring_credits": [
+    {
+      "name": "Dining Credit",
+      "amount": 25,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "$25/month ($300/year) at restaurants worldwide.",
+      "reset_type": "monthly",
+      "source_url": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-brilliant/",
+      "source_excerpt": "up to $300 each calendar year in statement credits for dining purchases at restaurants worldwide, divided into monthly increments of up to $25"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_review_reason": "Conservative draft — only verified-USD-credits included for now. Future addition: Free Night Award (85k points cap) per Q2 free-night schema rule, with operator-set fair-value (~$300-400). Adding later doesn't block fixing the wrong existing data.",
+  "_future_add": "Free Night Award annual — Q2 free-night rule, fair-value $300 suggested",
+  "_excluded": [
+    "Uber Cash $300 (NOT a Brilliant benefit — this was wrong data)",
+    "Walmart+ Credit (NOT a Brilliant benefit)",
+    "Clear Security Plus (NOT a Brilliant benefit)",
+    "Saks Fifth Avenue (DISCONTINUED 2026 + not a Brilliant benefit anyway)",
+    "$100 St. Regis/Ritz-Carlton property credit (per_stay conditional, requires 2-night minimum special-rate booking)",
+    "Marriott Platinum Elite status (qualitative)",
+    "Annual Free Night up to 85k points (PENDING Kacey decision per Q2)"
+  ],
+  "sources_consulted": [
+    "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-brilliant/",
+    "https://www.marriott.com/credit-cards/marriott-bonvoy-brilliant-american-express-card.mi",
+    "https://thepointsguy.com/credit-cards/is-marriott-bonvoy-brilliant-amex-worth-annual-fee/",
+    "https://www.pointscrowd.com/blog/marriott-bonvoy-brilliant-amex-card-review/"
+  ]
+}
