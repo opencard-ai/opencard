@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { bucketCredit } from "../../../../lib/reminder-logic";
 
 // @ts-ignore
 const RedisClass = (await import("@upstash/redis")).Redis;
@@ -64,6 +65,7 @@ interface RecurringCredit {
   name: string;
   amount?: number;
   frequency: string;
+  reset_type?: string;
   category: string;
   description?: string;
 }
@@ -73,6 +75,33 @@ interface CardData {
   name: string;
   annual_fee: number;
   recurring_credits?: RecurringCredit[];
+}
+
+interface OpenDateEntry {
+  month?: number;
+  year?: number;
+  day?: number;
+}
+type OpenDatesMap = Record<string, OpenDateEntry>;
+
+async function getUserOpenDates(emailHash: string): Promise<OpenDatesMap> {
+  try {
+    const raw = await redis.get(`opencard:user:${emailHash}:open_dates`);
+    if (!raw) return {};
+    if (typeof raw === "string") {
+      try { return JSON.parse(raw) as OpenDatesMap; } catch { return {}; }
+    }
+    return (raw as OpenDatesMap) ?? {};
+  } catch { return {}; }
+}
+
+function openDateForCard(map: OpenDatesMap, cardId: string): string | undefined {
+  const e = map[cardId];
+  if (!e || typeof e.year !== "number" || typeof e.month !== "number") return undefined;
+  // user storage uses 1-indexed month; convert to ISO
+  const m = String(e.month).padStart(2, "0");
+  const d = String(e.day ?? 1).padStart(2, "0");
+  return `${e.year}-${m}-${d}T00:00:00Z`;
 }
 
 interface UserProfile {
@@ -97,35 +126,31 @@ async function getCardData(cardIds: string[]): Promise<Record<string, CardData>>
   } catch { return {}; }
 }
 
-function getCreditsThisPeriod(cards: CardData[]) {
-  const now = new Date();
-  const day = now.getDate();
-  const month = now.getMonth();
-  const isNearEndOfMonth = day >= 20;
-  const isFirstOfMonth = day <= 3;
-
+/**
+ * Bucket credits using lib/reminder-logic. Pure-function-driven; covers
+ * monthly / quarterly / semi_annual / annual (calendar+anniversary) /
+ * cardmember_year / every_4_years. Anniversary-based credits require
+ * the user's per-card open_date.
+ */
+function getCreditsThisPeriod(cards: CardData[], openDates: OpenDatesMap, now: Date = new Date()) {
   const thisMonth: { card: CardData; credit: RecurringCredit }[] = [];
   const upcoming: { card: CardData; credit: RecurringCredit }[] = [];
   const expiringSoon: { card: CardData; credit: RecurringCredit }[] = [];
 
   for (const card of cards) {
+    const cardOpenDate = openDateForCard(openDates, card.card_id);
     for (const credit of card.recurring_credits || []) {
-      switch (credit.frequency) {
-        case "monthly":
-          if (isFirstOfMonth || isNearEndOfMonth) thisMonth.push({ card, credit });
-          break;
-        case "quarterly":
-          if (month % 3 === 0 && isFirstOfMonth) thisMonth.push({ card, credit });
-          if (isNearEndOfMonth && month % 3 !== 0) expiringSoon.push({ card, credit });
-          break;
-        case "semi_annual":
-          if ((month === 0 || month === 6) && isFirstOfMonth) thisMonth.push({ card, credit });
-          break;
-        case "annual":
-        case "cardmember_year":
-          if (isNearEndOfMonth && month === 11) expiringSoon.push({ card, credit });
-          break;
-      }
+      const bucket = bucketCredit(
+        {
+          frequency: credit.frequency,
+          reset_type: credit.reset_type,
+          cardOpenDate,
+        },
+        now,
+      );
+      if (bucket === "thisMonth") thisMonth.push({ card, credit });
+      else if (bucket === "expiringSoon") expiringSoon.push({ card, credit });
+      // null → mid-period, no reminder
     }
   }
   return { thisMonth, upcoming, expiringSoon };
@@ -230,7 +255,8 @@ export async function GET(req: NextRequest) {
       const userCards = cards.map(id => cardsMap[id]).filter(Boolean) as CardData[];
       if (!userCards.length) continue;
 
-      const { thisMonth, upcoming, expiringSoon } = getCreditsThisPeriod(userCards);
+      const openDates = await getUserOpenDates(emailHash);
+      const { thisMonth, upcoming, expiringSoon } = getCreditsThisPeriod(userCards, openDates);
       if (!thisMonth.length && !expiringSoon.length && !upcoming.length) continue;
 
       const subject = thisMonth.length > 0
