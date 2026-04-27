@@ -108,37 +108,55 @@
       "name": "Renowned Hotels Credit",
       "amount": 200,
       "frequency": "annual",
-      "category": "travel"
+      "category": "hotel",
+      "description": "$200/year on prepaid hotels through Renowned Hotels and Resorts.",
+      "reset_type": "anniversary",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
     },
     {
       "name": "Rideshare Credit",
       "amount": 150,
       "frequency": "annual",
-      "category": "other"
+      "category": "ride",
+      "description": "$150/year on rideshare purchases.",
+      "reset_type": "calendar_year",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
     },
     {
       "name": "Avis/Budget Car Rental Credit",
       "amount": 100,
       "frequency": "annual",
-      "category": "other"
+      "category": "travel",
+      "description": "$100/year United travel credit on Avis or Budget car rentals booked through cars.united.com.",
+      "reset_type": "calendar_year",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
     },
     {
       "name": "Instacart Credit",
-      "amount": 240,
-      "frequency": "annual",
-      "category": "other"
+      "amount": 20,
+      "frequency": "monthly",
+      "category": "groceries",
+      "description": "$20/month ($240/year) on Instacart purchases.",
+      "reset_type": "monthly",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
     },
     {
       "name": "JSX Credit",
       "amount": 200,
       "frequency": "annual",
-      "category": "other"
+      "category": "airline",
+      "description": "$200/year on flights purchased directly through JSX.",
+      "reset_type": "anniversary",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
     },
     {
       "name": "FareLock Credit",
       "amount": 50,
       "frequency": "annual",
-      "category": "other"
+      "category": "airline",
+      "description": "$50/year FareLock credit (United fare hold).",
+      "reset_type": "anniversary",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.998Z",
