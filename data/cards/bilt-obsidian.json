@@ -72,8 +72,29 @@
     "notes": null
   },
   "annual_credits": [],
+  "recurring_credits": [
+    {
+      "name": "Bilt Travel Hotel Credit",
+      "amount": 50,
+      "frequency": "semi_annual",
+      "category": "hotel",
+      "description": "$50/half ($100/year) on qualifying Bilt Travel Portal hotel bookings. Minimum 2-night stay required.",
+      "reset_type": "calendar_year",
+      "source": "https://newsroom.biltrewards.com/meetbiltcard2.0"
+    },
+    {
+      "name": "Bilt Cash",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "other",
+      "description": "$200 Bilt Cash credited to Bilt account on January 1 each calendar year.",
+      "reset_type": "calendar_year",
+      "source": "https://newsroom.biltrewards.com/meetbiltcard2.0"
+    }
+  ],
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",
-  "last_verified": "2026-04-16T13:41:49.955Z",
+  "last_updated": "2026-04-27T20:00:00.000Z",
+  "last_verified": "2026-04-27T20:00:00.000Z",
   "next_review": "2026-07-15T13:41:49.955000+00:00"
 }
