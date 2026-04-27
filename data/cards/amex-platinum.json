@@ -197,6 +197,16 @@
       "description": "$200/yr on Oura Ring direct purchases (oura.com).",
       "reset_type": "calendar_year",
       "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    },
+    {
+      "name": "Saks Fifth Avenue Credit (PHASING OUT)",
+      "amount": 50,
+      "frequency": "semi_annual",
+      "category": "shopping",
+      "description": "⚠ ENDING JUNE 30, 2026: $50/half ($100/yr) on Saks Fifth Avenue / saks.com purchases. Existing cardholders only — Amex is removing this benefit on July 1, 2026 for ALL cardholders. Use it before then. New cardholders since 2026-03 don't have this benefit.",
+      "reset_type": "calendar_year",
+      "_expires_at": "2026-06-30",
+      "source": "https://thepointsguy.com/news/amex-platinum-saks-credit-ending-2026/"
     }
   ],
   "welcome_bonus": {

@@ -123,6 +123,16 @@
       "description": "$25/month ($300/year) at restaurants worldwide.",
       "reset_type": "monthly",
       "source": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-brilliant/"
+    },
+    {
+      "name": "Free Night Award (Marriott 85k)",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "1 Free Night Award (85,000 Marriott Bonvoy points cap) each cardmember anniversary, automatic — no spend requirement.",
+      "reset_type": "anniversary",
+      "is_free_night": true,
+      "source": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-brilliant/"
     }
   ],
   "last_scraped": "2026-04-24T17:26:46.246653",

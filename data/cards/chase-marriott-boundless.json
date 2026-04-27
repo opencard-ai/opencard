@@ -94,6 +94,16 @@
       "description": "$50/half ($100/year) statement credit on $250+ direct airline purchases. 2026-LIMITED — verify before assuming continues into 2027.",
       "reset_type": "calendar_year",
       "source": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless"
+    },
+    {
+      "name": "Free Night Award (Marriott 35k)",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "1 Free Night Award (35,000 Marriott Bonvoy points cap) each account anniversary. No assigned USD value.",
+      "reset_type": "anniversary",
+      "is_free_night": true,
+      "source": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless"
     }
   ],
   "last_scraped": "2026-04-24T17:26:46.246653",
