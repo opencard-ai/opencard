@@ -79,20 +79,13 @@
     }
   ],
   "notes": "Entry-level Southwest card. The 3,000 anniversary points (~$45 value) covers about 45% of the $99 AF. As of 2025, the $75 annual travel credit was removed from the Plus card. Better for occasional Southwest flyers. The $1,000 min spend for welcome bonus is very low.",
-  "last_updated": "2026-04-16T13:41:49.995Z",
+  "last_updated": "2026-04-27T04:49:09.116Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "name": "Anniversary Points",
-      "amount": 3000,
-      "frequency": "annual",
-      "category": "other"
-    }
-  ],
+  "recurring_credits": [],
   "last_verified": "2026-04-16T13:41:49.995Z",
   "next_review": "2026-07-15T13:41:49.995000+00:00"
 }

@@ -112,7 +112,7 @@
     }
   ],
   "notes": "AF increased from $525 to $695 in March 2025. The United Club℠ Card is also referred to as the United Club℠ Infinite Card. Offers over $2,000 in total annual value per Chase (Club membership ~$750 + credits). Competes with Amex Platinum for frequent United travelers. Note: also in 248 list as 'united-club-infinite-card' which appears to be the same product with different naming.",
-  "last_updated": "2026-04-16T13:41:49.998Z",
+  "last_updated": "2026-04-27T04:49:09.116Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -130,12 +130,6 @@
       "amount": 200,
       "frequency": "annual",
       "category": "travel"
-    },
-    {
-      "name": "Better Together Bonus",
-      "amount": 5000,
-      "frequency": "annual",
-      "category": "other"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.998Z",

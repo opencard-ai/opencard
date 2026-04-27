@@ -91,7 +91,7 @@
       "url": "https://thepointsguy.com/news/how-good-are-best-ever-marriott-amex-offers/"
     }
   ],
-  "last_updated": "2026-04-26T04:02:55.594292Z",
+  "last_updated": "2026-04-27T04:49:09.116Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -107,43 +107,7 @@
       }
     ]
   },
-  "recurring_credits": [
-    {
-      "name": "Uber Cash",
-      "amount": 200,
-      "frequency": "annual",
-      "description": "$15/month",
-      "source": "Amex官網"
-    },
-    {
-      "name": "Marriott Free Night",
-      "amount": 35000,
-      "frequency": "annual",
-      "description": "Marriott Bonvoy free night",
-      "source": "Amex官網"
-    },
-    {
-      "name": "Walmart+ Credit",
-      "amount": 155,
-      "frequency": "annual",
-      "description": "$12.95/month",
-      "source": "Amex官網"
-    },
-    {
-      "name": "Clear Security Plus",
-      "amount": 209,
-      "frequency": "annual",
-      "description": "CLEAR Plus membership",
-      "source": "Amex官網"
-    },
-    {
-      "name": "Saks Fifth Avenue",
-      "amount": 0,
-      "frequency": "annual",
-      "description": "DISCONTINUED 2026",
-      "source": "Amex官網"
-    }
-  ],
+  "recurring_credits": [],
   "last_scraped": "2026-04-24T17:26:46.246653",
   "last_verified": "2026-04-25T16:01:17.266Z",
   "next_review": "2026-07-23T17:26:46.246653",

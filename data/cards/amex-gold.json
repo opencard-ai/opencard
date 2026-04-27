@@ -95,7 +95,7 @@
       "notes": "Insurance Details"
     }
   ],
-  "last_updated": "2026-04-26T04:02:55.594292Z",
+  "last_updated": "2026-04-27T04:49:09.116Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -112,13 +112,6 @@
       "amount": 120,
       "frequency": "annual",
       "description": "$10/month at restaurants worldwide",
-      "source": "Amex官网"
-    },
-    {
-      "name": "Walmart+ Credit",
-      "amount": 155,
-      "frequency": "annual",
-      "description": "$12.95/month",
       "source": "Amex官网"
     }
   ],
