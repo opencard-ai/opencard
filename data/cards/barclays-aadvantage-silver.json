@@ -59,7 +59,19 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.952Z",
-  "last_verified": "2026-04-16T13:41:49.952Z",
+  "recurring_credits": [
+    {
+      "name": "Inflight Wi-Fi Credit",
+      "amount": 50,
+      "frequency": "annual",
+      "category": "airline",
+      "description": "$50/year on inflight Wi-Fi purchases on American Airlines flights.",
+      "reset_type": "anniversary",
+      "source": "https://thepointsguy.com/credit-cards/reviews/aadvantage-aviator-silver-mastercard-review/"
+    }
+  ],
+  "_card_status_alert": "Card is in transition from Barclays to Citi (April 2026 portfolio migration). Inflight food/beverage $25/day credit excluded — no annual cap published. Companion Certificate after $20k spend excluded — conditional.",
+  "last_updated": "2026-04-27T20:00:00.000Z",
+  "last_verified": "2026-04-27T20:00:00.000Z",
   "next_review": "2026-07-15T13:41:49.952000+00:00"
 }
