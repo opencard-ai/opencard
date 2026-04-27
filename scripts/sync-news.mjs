@@ -75,12 +75,12 @@ List: ${JSON.stringify(dataList)}`;
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${MINIMAX_API_KEY}` },
     body: JSON.stringify({ 
-      model: "MiniMax-M2.5", 
+      model: "MiniMax-M2.7", 
       messages: [{ role: "user", content: prompt }], 
       temperature: 0.1,
       internal_thought: false
     }),
-    signal: AbortSignal.timeout(30000),
+    signal: AbortSignal.timeout(60000),
   });
 
   if (!res.ok) {
