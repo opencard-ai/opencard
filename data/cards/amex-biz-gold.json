@@ -80,20 +80,6 @@
       "frequency": "annual",
       "description": "$15/month",
       "source": "Amex官網"
-    },
-    {
-      "name": "Saks Fifth Avenue",
-      "amount": 0,
-      "frequency": "annual",
-      "description": "DISCONTINUED 2026",
-      "source": "Amex官網"
-    },
-    {
-      "name": "Free Night Award",
-      "amount": 35000,
-      "frequency": "annual",
-      "description": "Marriott Bonvoy free night",
-      "source": "Amex官網"
     }
   ],
   "sources": [
@@ -110,7 +96,7 @@
       "notes": "Amex official card page with earning categories and statement credits"
     }
   ],
-  "last_updated": "2026-04-25",
+  "last_updated": "2026-04-27T04:49:09.116Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",

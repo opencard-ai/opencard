@@ -91,7 +91,7 @@
       "name": "creditcards.com"
     }
   ],
-  "last_updated": "2026-04-26T07:08:29.818Z",
+  "last_updated": "2026-04-27T04:49:09.116Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -127,20 +127,6 @@
       "amount": 209,
       "frequency": "annual",
       "description": "CLEAR Plus membership",
-      "source": "Amex官网"
-    },
-    {
-      "name": "Saks Fifth Avenue",
-      "amount": 0,
-      "frequency": "annual",
-      "description": "DISCONTINUED 2026",
-      "source": "Amex官网"
-    },
-    {
-      "name": "Free Night Award",
-      "amount": 35000,
-      "frequency": "annual",
-      "description": "Marriott Bonvoy free night",
       "source": "Amex官网"
     },
     {

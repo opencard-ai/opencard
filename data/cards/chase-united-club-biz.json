@@ -97,7 +97,7 @@
     }
   ],
   "notes": "AF increased from $450 to $695 in March 2025. One of the most expensive business cards but offers $925+ in annual partner credits + United Club lounge access (~$750 value) + PQP earning for Premier status. Total annual value exceeds $2,000 per Chase's own estimate.",
-  "last_updated": "2026-04-16T13:41:49.998Z",
+  "last_updated": "2026-04-27T04:49:09.116Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -137,12 +137,6 @@
     {
       "name": "FareLock Credit",
       "amount": 50,
-      "frequency": "annual",
-      "category": "other"
-    },
-    {
-      "name": "Better Together Bonus",
-      "amount": 5000,
       "frequency": "annual",
       "category": "other"
     }

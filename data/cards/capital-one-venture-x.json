@@ -93,24 +93,18 @@
       "amount": 300,
       "frequency": "annual",
       "category": "travel",
-      "description": "Up to $300 annual credit for bookings through Capital One Travel",
-      "reset_type": "calendar_year"
+      "description": "$300/year on bookings through Capital One Travel.",
+      "reset_type": "anniversary",
+      "source": "https://www.capitalone.com/credit-cards/venture-x/"
     },
     {
-      "name": "Global Entry or TSA PreCheck",
-      "amount": 100,
+      "name": "Global Entry / TSA PreCheck",
+      "amount": 120,
       "frequency": "every_4_years",
       "category": "travel",
-      "description": "Credit for Global Entry or TSA PreCheck application fee",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Priority Pass",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Priority Pass Select membership for airport lounge access",
-      "reset_type": "cardmember_year"
+      "description": "Up to $120 statement credit every 4 years for Global Entry or TSA PreCheck application fee.",
+      "reset_type": "anniversary",
+      "source": "https://www.capitalone.com/help-center/credit-cards/tsa-precheck-global-entry-benefits/"
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",

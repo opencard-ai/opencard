@@ -69,7 +69,7 @@
       "notes": "News report Apr 2026."
     }
   ],
-  "last_updated": "2026-04-25T16:02:14.512Z",
+  "last_updated": "2026-04-27T04:49:09.116Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Silver Elite",
@@ -85,16 +85,7 @@
       }
     ]
   },
-  "recurring_credits": [
-    {
-      "name": "Free Night Award",
-      "amount": 50000,
-      "frequency": "annual",
-      "category": "hotel",
-      "description": "Annual Free Night Award (up to 50,000 points)",
-      "reset_type": "cardmember_year"
-    }
-  ],
+  "recurring_credits": [],
   "last_scraped": "2026-04-24T17:26:46.246653",
   "last_verified": "2026-04-25T16:02:14.512Z",
   "next_review": "2026-07-23T17:26:46.246653"

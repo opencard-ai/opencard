@@ -102,20 +102,13 @@
     }
   ],
   "notes": "Mid-tier Southwest business card. $149 AF. 6,000 anniversary points (~$89) covers ~60% of AF. First bag free + EarlyBird Check-In are practical perks. As of 2025, AF increased from $99 to $149. PQP earnings help toward Southwest elite status. The $8K combined cap on gas/restaurant 2x is limited but useful for small businesses. Similar to personal Premier but with employee card benefits.",
-  "last_updated": "2026-04-16T13:41:49.996Z",
+  "last_updated": "2026-04-27T04:49:09.116Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "name": "Anniversary Points",
-      "amount": 6000,
-      "frequency": "annual",
-      "category": "other"
-    }
-  ],
+  "recurring_credits": [],
   "last_verified": "2026-04-16T13:41:49.996Z",
   "next_review": "2026-07-15T13:41:49.996000+00:00"
 }

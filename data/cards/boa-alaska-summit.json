@@ -81,21 +81,13 @@
       "url": "https://thepointsguy.com/credit-cards/atmos-rewards-summit-tpg-awards-2026/"
     }
   ],
-  "last_updated": "2026-04-24T23:33:00Z",
+  "last_updated": "2026-04-27T04:49:09.116Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
   "recurring_credits": [
-    {
-      "name": "Global Companion Award",
-      "amount": 25000,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "25,000-point Global Companion Award annually (plus $99 companion fare)",
-      "reset_type": "cardmember_year"
-    },
     {
       "name": "Alaska Lounge Passes",
       "amount": 8,
@@ -110,14 +102,6 @@
       "frequency": "annual",
       "category": "lounge",
       "description": "$100 off annual Alaska Lounge+ Membership",
-      "reset_type": "cardmember_year"
-    },
-    {
-      "name": "Status Points",
-      "amount": 10000,
-      "frequency": "annual",
-      "category": "other",
-      "description": "10,000 Atmos status points annually (automatically deposited)",
       "reset_type": "cardmember_year"
     },
     {
