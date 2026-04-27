@@ -3,6 +3,8 @@
   "name": "Delta SkyMiles® Gold Business American Express Card",
   "issuer": "American Express",
   "network": "amex",
+  "_duplicate_of": "amex-delta-gold-biz",
+  "_dedup_note": "Same product as amex-delta-gold-biz (both Delta SkyMiles Gold Business Amex, $150 AF). Recommend operator merge: keep canonical 'amex-delta-gold-biz' (shorter, already has recurring_credits), redirect any inbound references from this card_id to it. Not auto-deleted to avoid breaking URLs/external refs.",
   "annual_fee": 150,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
