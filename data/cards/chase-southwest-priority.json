@@ -60,7 +60,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.970Z",
+  "last_updated": "2026-04-27T04:30:38.466Z",
   "welcome_bonus": {
     "amount": 60000,
     "type": "points",
@@ -69,5 +69,16 @@
     "last_updated": "2026-04-24"
   },
   "last_verified": "2026-04-16T13:41:49.970Z",
-  "next_review": "2026-07-15T13:41:49.970000+00:00"
+  "next_review": "2026-07-15T13:41:49.970000+00:00",
+  "recurring_credits": [
+    {
+      "name": "Southwest Travel Credit",
+      "amount": 75,
+      "frequency": "annual",
+      "category": "airline",
+      "description": "$75 Southwest travel credit each year, usable on Southwest Airlines purchases.",
+      "reset_type": "calendar_year",
+      "source": "https://creditcards.chase.com/southwest/priority-credit-card"
+    }
+  ]
 }

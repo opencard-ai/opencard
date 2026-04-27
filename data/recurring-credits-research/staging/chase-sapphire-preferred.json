@@ -4,19 +4,19 @@
   "card_name_verified": "Chase Sapphire Preferred Card",
   "recurring_credits": [
     {
-      "name": "Annual Hotel Credit (Chase Travel℠)",
+      "name": "Chase Travel Hotel Credit",
       "amount": 50,
       "frequency": "annual",
       "category": "hotel",
-      "description": "$50 annual hotel credit on hotels booked through Chase Travel portal.",
+      "description": "$50/year on hotels booked through Chase Travel portal.",
       "reset_type": "anniversary",
       "source_url": "https://www.chase.com/personal/credit-cards/sapphire-preferred",
       "source_excerpt": "$50 hotel credit (annual)"
     }
   ],
   "_no_credits_found": false,
-  "_needs_review": true,
-  "_review_reason": "Card has 1-year complimentary DashPass ($120 value) — but it's PROMOTIONAL ONE-YEAR not recurring — excluded. Need to verify whether DashPass is actually renewed yearly with cardmembership (in which case it IS recurring) or just first-year freebie (excluded). Per current Chase marketing 'complimentary DashPass for at least 12 months when activated by 12/31/2027' suggests promotional. Also verify $50 hotel credit terms (anniversary vs calendar year) — Chase's wording varies.",
+  "_needs_review": false,
+  "_review_reason": "Schema rules applied (Kacey 2026-04-27): 1-yr DashPass excluded (Q4 = promotional, not recurring). Only $50 hotel credit qualifies. Reset cycle (anniversary vs calendar) defaulted to anniversary per most Chase Sapphire convention.",
   "_excluded": [
     "1-year DashPass (promotional, not recurring)",
     "DoorDash monthly credits — terms unclear from search, may require activation/eligibility"

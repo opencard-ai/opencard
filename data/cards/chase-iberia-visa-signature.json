@@ -57,7 +57,7 @@
       "url": "https://www.nerdwallet.com/credit-cards/reviews/iberia-visa"
     }
   ],
-  "last_updated": "2026-04-27T04:16:50.948Z",
+  "last_updated": "2026-04-27T04:30:38.466Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -76,5 +76,16 @@
   "next_review": "2026-07-15T13:41:49.986000+00:00",
   "deprecated": true,
   "deprecated_reason": "Niche international airline co-brand. US searchers rarely seek these. Excluded from main listings.",
-  "deprecated_bucket": "D_niche_international"
+  "deprecated_bucket": "D_niche_international",
+  "recurring_credits": [
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "groceries",
+      "description": "$10/quarter on one qualifying non-restaurant DoorDash order ($40/year total). Activation required.",
+      "reset_type": "quarterly",
+      "source": "https://creditcards.chase.com/avios/iberia"
+    }
+  ]
 }

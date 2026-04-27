@@ -15,8 +15,8 @@
     }
   ],
   "_no_credits_found": false,
-  "_needs_review": true,
-  "_review_reason": "Note: AF was raised to $229 (from $149) in 2026 Southwest revamp. Verify OpenCard data has current AF. Excluded: 7500 anniversary points (points not USD), 4 upgraded boardings (~$30 each, qualitative — usage-dependent), 25% inflight drinks/Wi-Fi savings (discount), Companion Pass qualifying points (status-related).",
+  "_needs_review": false,
+  "_review_reason": "Schema rules applied. AF $149 → $229 update is separate catalog issue (not blocking RC). $75 SW travel credit is unconditional fixed annual — promote.",
   "_excluded": [
     "7,500 anniversary points (points, not USD)",
     "4 upgraded boardings/year (qualitative, $30 each but usage-dependent)",
