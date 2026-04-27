@@ -75,12 +75,35 @@
   ],
   "recurring_credits": [
     {
-      "name": "Uber Cash",
-      "amount": 200,
+      "name": "Flexible Business Credit (FedEx / Grubhub / Office Supply)",
+      "amount": 20,
+      "frequency": "monthly",
+      "category": "shopping",
+      "description": "$20/month ($240/yr) on US purchases at FedEx, Grubhub, or office supply stores. Enrollment required.",
+      "reset_type": "monthly",
+      "source": "https://global.americanexpress.com/card-benefits/detail/240-flexible-business-credit/business-gold"
+    },
+    {
+      "name": "Walmart+ Credit",
+      "amount": 12.95,
+      "frequency": "monthly",
+      "category": "groceries",
+      "description": "Monthly Walmart+ membership credit (~$12.95/month, ~$155/yr).",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/"
+    },
+    {
+      "name": "Squarespace Credit",
+      "amount": 150,
       "frequency": "annual",
-      "description": "$15/month",
-      "source": "Amex官網"
+      "category": "digital",
+      "description": "$150/yr on US Squarespace purchases. Added October 2025.",
+      "reset_type": "calendar_year",
+      "source": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/"
     }
+  ],
+  "_excluded": [
+    "Uber Cash — was wrongly listed previously; Amex Business Gold does NOT have an Uber Cash credit (consumer Gold + consumer Platinum + Biz Platinum do, not Biz Gold). Removed 2026-04-27."
   ],
   "sources": [
     {
