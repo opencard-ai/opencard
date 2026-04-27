@@ -87,7 +87,7 @@
       "notes": "Review Apr 2026."
     }
   ],
-  "last_updated": "2026-04-26T04:02:55.594292Z",
+  "last_updated": "2026-04-27T04:44:39.774Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [
@@ -103,12 +103,67 @@
   },
   "recurring_credits": [
     {
-      "name": "Travel Credit",
+      "name": "Travel Credit (Chase Travel)",
       "amount": 300,
       "frequency": "annual",
       "category": "travel",
-      "description": "$300 annual credit for travel purchases",
-      "reset_type": "calendar_year"
+      "description": "$300 annual travel credit for purchases through Chase Travel.",
+      "reset_type": "anniversary",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
+    },
+    {
+      "name": "The Edit Hotel Credit",
+      "amount": 250,
+      "frequency": "semi_annual",
+      "category": "hotel",
+      "description": "Up to $250 per half (2 × $250 = $500/year) on prepaid hotels via The Edit by Chase Travel.",
+      "reset_type": "calendar_year",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
+    },
+    {
+      "name": "Exclusive Tables Dining Credit",
+      "amount": 25,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "$25/month ($300/year) at Sapphire Reserve Exclusive Tables restaurants.",
+      "reset_type": "monthly",
+      "source": "https://thepointsguy.com/credit-cards/chase-sapphire-reserve-credits/"
+    },
+    {
+      "name": "StubHub / viagogo Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "entertainment",
+      "description": "$300/year on StubHub or viagogo event ticket purchases.",
+      "reset_type": "calendar_year",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
+    },
+    {
+      "name": "DoorDash Credit",
+      "amount": 25,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "$25/month ($300/year) on DoorDash purchases. (Excludes 1-yr DashPass — promotional, not recurring.)",
+      "reset_type": "monthly",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
+    },
+    {
+      "name": "Lyft Credit",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "ride",
+      "description": "$10/month ($120/year) on Lyft rides.",
+      "reset_type": "monthly",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
+    },
+    {
+      "name": "Peloton Credit",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "fitness",
+      "description": "$10/month ($120/year) on Peloton.",
+      "reset_type": "monthly",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",

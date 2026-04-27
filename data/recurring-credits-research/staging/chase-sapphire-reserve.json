@@ -1,0 +1,96 @@
+{
+  "card_id": "chase-sapphire-reserve",
+  "researched_at": "2026-04-27",
+  "card_name_verified": "Chase Sapphire Reserve® (post-2026 refresh, $795 AF)",
+  "_overwrite_existing": true,
+  "_overwrite_reason": "Existing data has only stale $300 travel credit. Card got major 2026 refresh — missing 6+ new credits.",
+  "recurring_credits": [
+    {
+      "name": "Travel Credit (Chase Travel)",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$300 annual travel credit for purchases through Chase Travel.",
+      "reset_type": "anniversary",
+      "source_url": "https://account.chase.com/sapphire/reserve/benefits",
+      "source_excerpt": "$300 annual CSR travel credit (anniversary-year reset)"
+    },
+    {
+      "name": "The Edit Hotel Credit",
+      "amount": 250,
+      "frequency": "semi_annual",
+      "category": "hotel",
+      "description": "Up to $250 per half (2 × $250 = $500/year) on prepaid hotels via The Edit by Chase Travel.",
+      "reset_type": "calendar_year",
+      "source_url": "https://account.chase.com/sapphire/reserve/benefits",
+      "source_excerpt": "up to $500 The Edit by Chase Travel prepaid hotel credits"
+    },
+    {
+      "name": "Exclusive Tables Dining Credit",
+      "amount": 25,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "$25/month ($300/year) at Sapphire Reserve Exclusive Tables restaurants.",
+      "reset_type": "monthly",
+      "source_url": "https://thepointsguy.com/credit-cards/chase-sapphire-reserve-credits/",
+      "source_excerpt": "$300 annual sapphire reserve dining credit 2026 via Exclusive Tables"
+    },
+    {
+      "name": "StubHub / viagogo Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "entertainment",
+      "description": "$300/year on StubHub or viagogo event ticket purchases.",
+      "reset_type": "calendar_year",
+      "source_url": "https://account.chase.com/sapphire/reserve/benefits",
+      "source_excerpt": "$300 annual StubHub/viagogo credit"
+    },
+    {
+      "name": "DoorDash Credit",
+      "amount": 25,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "$25/month ($300/year) on DoorDash purchases. (Excludes 1-yr DashPass — promotional, not recurring.)",
+      "reset_type": "monthly",
+      "source_url": "https://account.chase.com/sapphire/reserve/benefits",
+      "source_excerpt": "DoorDash credits up to $300 annually"
+    },
+    {
+      "name": "Lyft Credit",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "ride",
+      "description": "$10/month ($120/year) on Lyft rides.",
+      "reset_type": "monthly",
+      "source_url": "https://account.chase.com/sapphire/reserve/benefits",
+      "source_excerpt": "Lyft credits up to $120 annually"
+    },
+    {
+      "name": "Peloton Credit",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "fitness",
+      "description": "$10/month ($120/year) on Peloton.",
+      "reset_type": "monthly",
+      "source_url": "https://account.chase.com/sapphire/reserve/benefits",
+      "source_excerpt": "Peloton credits up to $120 annually"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_review_reason": "All credits verified on official Chase Sapphire Reserve benefits page + cross-referenced with The Points Guy / Roaming Cactus 2026 reviews. Apple TV+/Apple Music excluded — qualitative subscription benefit (not USD credit, ~$288 implied value not standard schema field).",
+  "_excluded": [
+    "$250 select Chase Travel hotel credit (2026-only one-time, not recurring)",
+    "1-year complimentary DashPass (promotional, not recurring per Q4)",
+    "Apple TV+ / Apple Music subscriptions (qualitative, not USD)",
+    "Priority Pass / Sapphire Lounge (qualitative)",
+    "Status benefits"
+  ],
+  "sources_consulted": [
+    "https://account.chase.com/sapphire/reserve/benefits",
+    "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+    "https://thepointsguy.com/credit-cards/chase-sapphire-reserve-credits/",
+    "https://roamingcactus.com/credit-cards/chase-sapphire-reserve-credits-2026-explained",
+    "https://www.nerdwallet.com/credit-cards/learn/benefits-chase-sapphire-reserve"
+  ]
+}
