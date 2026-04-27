@@ -80,6 +80,16 @@
       "description": "$10/quarter ($40/year) at checkout on one qualifying non-restaurant DoorDash order. Requires DashPass enrollment.",
       "reset_type": "quarterly",
       "source": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card"
+    },
+    {
+      "name": "Free Night Award (Hyatt Cat 1-4)",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "1 Free Night Award at any Hyatt Cat 1-4 property each cardmember anniversary. No assigned USD value (varies by property/season).",
+      "reset_type": "anniversary",
+      "is_free_night": true,
+      "source": "https://www.chase.com/personal/credit-cards/hyatt/world-hyatt/free-awards"
     }
   ],
   "welcome_bonus": {

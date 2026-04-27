@@ -101,7 +101,18 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [],
+  "recurring_credits": [
+    {
+      "name": "Free Night Award (Marriott 35k)",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "1 Free Night Award (35,000 Marriott Bonvoy points cap) each cardmember anniversary, automatic — no spend requirement.",
+      "reset_type": "anniversary",
+      "is_free_night": true,
+      "source": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/amex-marriott-bonvoy-business-credit-card/"
+    }
+  ],
   "last_scraped": "2026-04-24T17:26:46.246653",
   "last_verified": "2026-04-24T17:26:46.246653",
   "next_review": "2026-07-23T17:26:46.246653",
