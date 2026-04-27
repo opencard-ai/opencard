@@ -3,6 +3,8 @@
   "name": "Amex EveryDay Preferred Credit Card",
   "issuer": "American Express",
   "network": "amex",
+  "discontinued": true,
+  "discontinued_notes": "Closed to new applicants. Existing cardholders may keep the card open. Source: LendingTree 2026.",
   "annual_fee": 95,
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",

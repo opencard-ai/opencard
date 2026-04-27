@@ -3,6 +3,8 @@
   "name": "AAdvantage Aviator Red",
   "issuer": "Barclays",
   "network": "visa",
+  "discontinued": true,
+  "discontinued_notes": "Stopped accepting new applications October 2025. Existing cardholder accounts being automatically converted to Citi cards as of April 26, 2026 (Barclays-Citi AA portfolio transition). Source: Barclays + Frequent Miler 2026-04 reporting.",
   "annual_fee": 99,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",

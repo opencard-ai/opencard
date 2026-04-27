@@ -3,6 +3,8 @@
   "name": "Capital One Spark Miles Select for Business",
   "issuer": "Capital One",
   "network": "visa",
+  "status": "transferred",
+  "discontinued_notes": "Rebranded to VentureOne Business in 2026. Capital One closed the Spark Miles family and migrated to Venture Business / VentureOne Business products. Existing cardholders converted automatically. Sources: TPG, DoC, CNBC 2026.",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
