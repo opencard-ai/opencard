@@ -1,0 +1,20 @@
+{
+  "card_id": "barclays-jetblue-plus",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "JetBlue Plus Card (Barclays, $99 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": true,
+  "_review_reason": "No fixed USD recurring credit. 5,000 anniversary TrueBlue points (~$70 value but POINTS not USD, excluded). Free first checked bag (qualitative). 50% inflight savings (% off, not credit). Companion pass benefit appears to be on Premier card, not Plus.",
+  "_excluded": [
+    "5,000 anniversary TrueBlue points (points, not USD; ~$70 value)",
+    "Free first checked bag (qualitative)",
+    "50% inflight savings (% off, not credit)"
+  ],
+  "sources_consulted": [
+    "https://cards.barclaycardus.com/banking/cards/jetblue-plus-card/",
+    "https://www.nerdwallet.com/credit-cards/reviews/jetblue-plus",
+    "https://upgradedpoints.com/credit-cards/reviews/jetblue-plus-barclaycard/benefits/",
+    "https://money.usnews.com/credit-cards/barclaycard/jetblue-plus-card"
+  ]
+}

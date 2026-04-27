@@ -1,0 +1,20 @@
+{
+  "card_id": "capital-one-spark-cash-plus",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Capital One Spark Cash Plus",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Card's only annual benefit is a $150 fee refund AFTER $150,000 in net purchases (highly conditional — typical small biz won't hit). Per OpenCard convention excluding spend-conditional credits. Otherwise just earnings (2% flat + 5% Cap One Travel hotels/cars).",
+  "_excluded": [
+    "$150 annual fee refund after $150k spend (conditional)",
+    "5% on hotels/rentals via Capital One Business Travel (earning rate)",
+    "2% flat earning"
+  ],
+  "sources_consulted": [
+    "https://www.capitalone.com/small-business/credit-cards/spark-cash-plus/",
+    "https://www.nerdwallet.com/business/credit-cards/reviews/capital-one-spark-cash-plus",
+    "https://money.usnews.com/credit-cards/capital-one/capital-one-spark-cash-plus",
+    "https://www.cnn.com/cnn-underscored/money/capital-one-spark-cash-plus-review"
+  ]
+}

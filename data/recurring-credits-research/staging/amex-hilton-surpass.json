@@ -1,0 +1,32 @@
+{
+  "card_id": "amex-hilton-surpass",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Hilton Honors American Express Surpass® Card",
+  "recurring_credits": [
+    {
+      "name": "Hilton Quarterly Statement Credit",
+      "amount": 50,
+      "frequency": "quarterly",
+      "category": "hotel",
+      "description": "Up to $50/quarter on Hilton property purchases ($200/year total).",
+      "reset_type": "quarterly",
+      "source_url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/",
+      "source_excerpt": "Up to $50 in statement credits each quarter for purchases made directly with a property in the Hilton portfolio... up to $200 in statement credits annually"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_review_reason": null,
+  "_excluded": [
+    "Hilton Honors Gold status (qualitative)",
+    "Free Night Reward after $15k spend (conditional)",
+    "Diamond status after $40k spend (conditional, status not credit)",
+    "National Emerald Club Executive (status)"
+  ],
+  "sources_consulted": [
+    "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/",
+    "https://www.hilton.com/en/hilton-honors/credit-cards/",
+    "https://thepointsguy.com/credit-cards/reviews/hilton-amex-surpass-review/",
+    "https://onemileatatime.com/reviews/credit-cards/american-express/hilton-honors-surpass-card/"
+  ]
+}

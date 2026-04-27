@@ -1,0 +1,21 @@
+{
+  "card_id": "amex-everyday-preferred",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Amex EveryDay® Preferred Credit Card",
+  "card_status_alert": "CLOSED to new applicants per LendingTree. Existing cardholders continue to use.",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": true,
+  "_review_reason": "Card no longer accepts new applications. No recurring annual statement credits — value is purely earning structure (3x supermarkets up to $6k, 2x gas, 50% point bonus on 30+ tx/cycle). Recommend OpenCard catalog mark this card as legacy/closed-to-new.",
+  "_excluded": [
+    "3x supermarkets / 2x gas earning (rates)",
+    "50% bonus on 30+ purchases (rate enhancement)",
+    "Welcome offer (one-time)"
+  ],
+  "sources_consulted": [
+    "https://www.americanexpress.com/us/credit-cards/card/amex-everyday-preferred/",
+    "https://global.americanexpress.com/card-benefits/view-all/amex-everyday-preferred",
+    "https://www.nerdwallet.com/credit-cards/learn/amex-everyday-preferred",
+    "https://www.lendingtree.com/credit-cards/review/amex-everyday-preferred/"
+  ]
+}

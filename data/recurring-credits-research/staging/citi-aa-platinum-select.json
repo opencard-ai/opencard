@@ -1,0 +1,22 @@
+{
+  "card_id": "citi-aa-platinum-select",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Citi® / AAdvantage® Platinum Select® World Elite Mastercard®",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": true,
+  "_review_reason": "Card's value is conditional / qualitative: free first checked bag (qualitative, depends on flying AA), $125 flight discount AFTER $20k spend (conditional, excluded), 25% inflight savings (discount on purchases, not a credit), Turo $30 credit only April-Oct 2026 (limited-time, excluded), preferred boarding (qualitative). No fixed annual recurring USD credits. Note: card transitioning from Barclays Aviator family per April 2026 changes — verify card_id reflects current product correctly.",
+  "_excluded": [
+    "Free first checked bag (qualitative)",
+    "$125 flight discount after $20k spend (conditional)",
+    "25% inflight food savings (discount, not credit)",
+    "Turo $30/trip credit (limited-time April-Oct 2026)",
+    "Preferred boarding (qualitative)"
+  ],
+  "sources_consulted": [
+    "https://creditcards.aa.com/credit-cards/citi-platinum-card-american-airlines-direct/",
+    "https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-world-elite-mastercard",
+    "https://www.citi.com/credit-cards/credit-card-miles/aadvantage-platinum-select-benefits",
+    "https://frequentmiler.com/barlcays-aviator-to-citi-transition-april-2026-what-we-know-and-what-we-dont/"
+  ]
+}

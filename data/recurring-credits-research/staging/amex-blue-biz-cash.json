@@ -1,0 +1,19 @@
+{
+  "card_id": "amex-blue-biz-cash",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "American Express Blue Business Cash™ Card",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "$0 AF no-frills business cash-back card. No recurring annual credits — value comes purely from 2% cash back (capped at $50k/year then 1%). Confirmed: 'card itself doesn't feature annual recurring benefit credits like travel credits or merchant category credits—instead, it relies on its straightforward cash-back earning structure'.",
+  "_excluded": [
+    "2% cash back on first $50k purchases (earning rate)",
+    "Welcome offer (one-time)"
+  ],
+  "sources_consulted": [
+    "https://www.americanexpress.com/en-us/business/credit-cards/blue-business-cash/",
+    "https://www.nerdwallet.com/business/credit-cards/reviews/amex-blue-business-cash",
+    "https://money.usnews.com/credit-cards/american-express/the-american-express-blue-business-cash-card",
+    "https://awardwallet.com/credit-cards/cash-back/amex-blue-business-cash/"
+  ]
+}

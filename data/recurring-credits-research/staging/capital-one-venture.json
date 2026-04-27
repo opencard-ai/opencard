@@ -1,0 +1,35 @@
+{
+  "card_id": "capital-one-venture",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Capital One Venture Rewards Credit Card",
+  "recurring_credits": [
+    {
+      "name": "Global Entry / TSA PreCheck Application Credit",
+      "amount": 120,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $120 statement credit for Global Entry ($120) or TSA PreCheck ($85) application fee. Renews every 4 years.",
+      "reset_type": "anniversary",
+      "source_url": "https://www.capitalone.com/credit-cards/venture/",
+      "source_excerpt": "Up to a $120 statement credit when you use your Venture card to apply for Global Entry or TSA PreCheck"
+    },
+    {
+      "name": "Capital One Travel Hotel Experience Credit",
+      "amount": 50,
+      "frequency": "per_stay",
+      "category": "hotel",
+      "description": "$50 experience credit at hotels booked through Capital One Travel — usable on rooftop drinks, restaurants, room service and other on-property amenities. Per qualifying stay.",
+      "reset_type": "anniversary",
+      "source_url": "https://www.capitalone.com/credit-cards/venture/",
+      "source_excerpt": "$50 experience credit at hotels booked through Capital One Travel to use on experiences and amenities"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": true,
+  "_review_reason": "$50 hotel experience credit is per_stay (not annual cap). OpenCard schema 'frequency' enum includes 'per_stay' — confirm the existing 69 cards use this consistently. The $50 isn't really 'recurring' in same sense as Uber Cash; it's a benefit available on every qualifying booking. May need clarification.",
+  "sources_consulted": [
+    "https://www.capitalone.com/credit-cards/venture/",
+    "https://www.nerdwallet.com/credit-cards/learn/benefits-capital-one-venture",
+    "https://upgradedpoints.com/credit-cards/reviews/capital-one-venture-rewards-credit-card/benefits/"
+  ]
+}

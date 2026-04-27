@@ -1,0 +1,67 @@
+{
+  "card_id": "chase-united-quest-biz",
+  "researched_at": "2026-04-26",
+  "card_name_verified_concern": "Search results conflate United Quest Card (consumer, $350 AF) with United Business Card ($150 AF). 'United Quest Business' as a distinct product is uncertain. OpenCard's existing card_id has $350 AF which matches CONSUMER United Quest, suggesting potential mis-categorization in source data, OR it's a business variant that mirrors the consumer benefits.",
+  "recurring_credits_provisional": [
+    {
+      "name": "United TravelBank Cash",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "airline",
+      "description": "$200 in United TravelBank cash after account opening and annually on account anniversary.",
+      "reset_type": "anniversary",
+      "source_url": "https://www.chase.com/personal/credit-cards/united/united-quest-card",
+      "source_excerpt": "$200 in United® TravelBank cash after account opening and annually on your account anniversary"
+    },
+    {
+      "name": "Renowned Hotels & Resorts",
+      "amount": 150,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "Up to $150 back in statement credits each anniversary year on hotel accommodations when prepaid through Renowned Hotels and Resorts.",
+      "reset_type": "anniversary",
+      "source_url": "https://www.chase.com/personal/credit-cards/united/united-quest-card",
+      "source_excerpt": "Receive up to $150 back in statement credits each anniversary year on hotel accommodations"
+    },
+    {
+      "name": "Rideshare credits",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "ride",
+      "description": "Up to $100 back as statement credits each calendar year on rideshare purchases (requires yearly opt-in).",
+      "reset_type": "calendar_year",
+      "source_url": "https://www.chase.com/personal/credit-cards/united/united-quest-card",
+      "source_excerpt": "Enroll to receive up to $100 back as statement credits each calendar year on rideshare purchases"
+    },
+    {
+      "name": "JSX Flight credit",
+      "amount": 150,
+      "frequency": "annual",
+      "category": "airline",
+      "description": "Up to $150 back as statement credit each anniversary year when booking JSX flights directly.",
+      "reset_type": "anniversary",
+      "source_url": "https://www.chase.com/personal/credit-cards/united/united-quest-card",
+      "source_excerpt": "Get up to $150 back as a statement credit each anniversary year when you book flights directly with JSX"
+    },
+    {
+      "name": "Instacart credits",
+      "amount": 15,
+      "frequency": "monthly",
+      "category": "groceries",
+      "description": "$10 + $5/month Instacart credits ($15/month, $180/year total).",
+      "reset_type": "calendar_year",
+      "source_url": "https://www.chase.com/personal/credit-cards/united/united-quest-card",
+      "source_excerpt": "one $10 Instacart credit and one $5 Instacart credit monthly, up to $180 total each calendar year"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": true,
+  "_review_reason": "Need to verify whether OpenCard's card_id 'chase-united-quest-biz' refers to (a) the consumer United Quest Card mistakenly typed as biz, or (b) an actual United Quest Business variant with same $350 AF and similar benefits. Searching for 'United Quest Business' specifically returns consumer-card pages. If (a), correct the card_id and the credits above apply. If (b), Chase may not actually have this product — consolidate.",
+  "sources_consulted": [
+    "https://www.chase.com/personal/credit-cards/united/united-quest-card",
+    "https://creditcards.chase.com/travel-credit-cards/united/united-quest",
+    "https://cardmembers.united.com/Quest",
+    "https://www.cnbc.com/select/united-credit-card-changes/",
+    "https://upgradedpoints.com/credit-cards/reviews/united-quest-card-review/"
+  ]
+}

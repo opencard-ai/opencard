@@ -1,0 +1,32 @@
+{
+  "card_id": "emirates-skywards-mastercard",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Emirates Skywards Premium World Elite Mastercard (Barclays)",
+  "recurring_credits": [
+    {
+      "name": "Global Entry / TSA PreCheck Application Credit",
+      "amount": 120,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Reimbursement for Global Entry ($120) or TSA PreCheck ($85) application fee. Renews every 4 years aligned with credential validity.",
+      "reset_type": "anniversary",
+      "source_url": "https://cards.barclaycardus.com/banking/cards/emirates-skywards-premium-world-elite-mastercard/",
+      "source_excerpt": "You can pay the application fee for Global Entry or TSA PreCheck and have it reimbursed"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": true,
+  "_review_reason": "Most card value is in qualitative/conditional benefits: Emirates Gold tier (status), Priority Pass Select (lounge — non-quantified), 10,000 bonus miles after $30k annual spend (conditional, not pure recurring). Per OpenCard convention 'amount must be USD dollar value' — these qualitative perks excluded. Net: only Global Entry credit qualifies.",
+  "_excluded": [
+    "Emirates Gold tier (status, non-monetary)",
+    "Priority Pass Select (qualitative lounge benefit)",
+    "10,000 anniversary bonus miles after $30k spend (conditional, miles not USD)",
+    "Welcome bonus 40k miles (one-time)"
+  ],
+  "sources_consulted": [
+    "https://cards.barclaycardus.com/banking/cards/emirates-skywards-premium-world-elite-mastercard/",
+    "https://www.emirates.com/us/english/skywards/partners/barclays/",
+    "https://upgradedpoints.com/credit-cards/reviews/emirates-skywards-premium-world-elite-mastercard/",
+    "https://onemileatatime.com/guides/emirates-credit-card/"
+  ]
+}

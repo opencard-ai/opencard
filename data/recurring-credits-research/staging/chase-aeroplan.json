@@ -1,0 +1,32 @@
+{
+  "card_id": "chase-aeroplan",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Aeroplan® Credit Card (Chase, $95 AF)",
+  "recurring_credits": [
+    {
+      "name": "Global Entry / TSA PreCheck Application Credit",
+      "amount": 120,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $120 statement credit reimbursing Global Entry / TSA PreCheck application fee. Renews every 4 years.",
+      "reset_type": "anniversary",
+      "source_url": "https://creditcards.chase.com/aeroplan/benefits",
+      "source_excerpt": "Statement credit of up to $120 every 4 years as a reimbursement for the application fee charged for trusted traveler programs"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_review_reason": null,
+  "_excluded": [
+    "Aeroplan 25K status (qualitative)",
+    "Free first checked bag for cardholder + 8 companions (qualitative)",
+    "Pay Yourself Back (redemption mechanic, not a credit)",
+    "Annual Worldwide Companion Pass after $15k spend (conditional)"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/travel-credit-cards/aircanada/aeroplan",
+    "https://creditcards.chase.com/aeroplan/benefits",
+    "https://thepointsguy.com/credit-cards/reviews/chase-aeroplan-world-elite-mastercard-review/",
+    "https://money.usnews.com/credit-cards/chase/aeroplan-credit-card"
+  ]
+}

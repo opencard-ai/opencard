@@ -1,0 +1,29 @@
+{
+  "card_id": "amex-hilton-honors-biz",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Hilton Honors American Express Business Card",
+  "recurring_credits": [
+    {
+      "name": "Hilton Quarterly Statement Credit",
+      "amount": 60,
+      "frequency": "quarterly",
+      "category": "hotel",
+      "description": "Up to $60/quarter on eligible Hilton purchases ($240/year total).",
+      "reset_type": "quarterly",
+      "source_url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/hilton-honors/",
+      "source_excerpt": "up to $240 per calendar year in statement credits, split into up to $60 each quarter on eligible Hilton purchases"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_review_reason": null,
+  "_excluded": [
+    "Weekend Night Reward after $15k spend (conditional)",
+    "Hilton Gold status (qualitative)"
+  ],
+  "sources_consulted": [
+    "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/hilton-honors/",
+    "https://www.nerdwallet.com/business/credit-cards/reviews/hilton-honors-american-express-business",
+    "https://www.uscreditcardguide.com/amex-hilton-business-credit-card/"
+  ]
+}

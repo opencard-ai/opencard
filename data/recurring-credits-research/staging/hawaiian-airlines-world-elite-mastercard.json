@@ -1,0 +1,30 @@
+{
+  "card_id": "hawaiian-airlines-world-elite-mastercard",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Hawaiian Airlines® World Elite Mastercard® (Barclays)",
+  "recurring_credits": [
+    {
+      "name": "Companion Discount",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "airline",
+      "description": "$100 discount for a companion on a round-trip ticket between Hawaii and North America on Hawaiian Airlines, each cardmember anniversary.",
+      "reset_type": "anniversary",
+      "source_url": "https://cards.barclaycardus.com/banking/credit-card/hawaiian-airlines/child/hawaiian-hbl-boh-ib-take-one/",
+      "source_excerpt": "$100 discount for a companion for each account anniversary for a round trip travel between Hawaii and North America"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": true,
+  "_review_reason": "$100 companion discount is conditional on flying Hawaiian Airlines round-trip Hawaii↔NA. It's not a true 'I get $100 in my account every year' credit. May not fit OpenCard's recurring_credits convention. Operator decision on whether to include conditional travel-discount credits. Note: card was migrated from Barclays to BoH but Barclays still services per search results — verify current issuer.",
+  "_excluded": [
+    "$10 off onboard purchases for Atmos status holders (conditional on status)",
+    "Earnings rates"
+  ],
+  "sources_consulted": [
+    "https://cards.barclaycardus.com/?p=hawaiian",
+    "https://cards.barclaycardus.com/banking/credit-card/hawaiian-airlines/child/hawaiian-hbl-boh-ib-take-one/",
+    "https://www.nerdwallet.com/credit-cards/learn/hawaiian-airlines-world-elite-mastercard",
+    "https://frequentmiler.com/ha/"
+  ]
+}

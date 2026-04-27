@@ -1,0 +1,20 @@
+{
+  "card_id": "chase-aer-lingus-visa-signature",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Aer Lingus Visa Signature® Card (Chase)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "No fixed USD recurring credit. Card's value: Economy Companion Ticket after $30k spend (conditional, excluded), priority boarding (qualitative), no FX fees (passive perk), Avios earning. The Iberia/British Airways siblings have DashPass quarterly $10 — confirm whether Aer Lingus has same. None mentioned in search results.",
+  "_excluded": [
+    "Economy Companion Ticket after $30k annual spend (conditional)",
+    "Priority Boarding (qualitative)",
+    "No FX fees (passive)"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/avios/aerlingus",
+    "https://creditcards.chase.com/travel-credit-cards/avios/aer-lingus",
+    "https://onemileatatime.com/reviews/credit-cards/chase/aer-lingus-credit-card/",
+    "https://thepointsguy.com/credit-cards/reviews/aer-lingus-visa-signature-card-review/"
+  ]
+}
