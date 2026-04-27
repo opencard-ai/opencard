@@ -59,7 +59,7 @@
   ],
   "notes": "QuicksilverOne sits between the no-fee Quicksilver and secured options. Earns 1.5% on everything with a $39 annual fee — only worthwhile if you can't qualify for the no-fee Quicksilver. No welcome bonus. No protections. High APR. Capital One may upgrade QuicksilverOne holders to regular Quicksilver after demonstrating responsible use. Better options exist (SavorOne has no annual fee and higher dining/grocery rates).",
   "confidence": "medium",
-  "last_updated": "2026-04-16T13:41:49.958Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "tags": [
     "cash-back"
   ],
@@ -69,5 +69,8 @@
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.958Z",
-  "next_review": "2026-07-15T13:41:49.958000+00:00"
+  "next_review": "2026-07-15T13:41:49.958000+00:00",
+  "deprecated": true,
+  "deprecated_reason": "Subprime / secured / student card. Different user segment from OpenCard's rewards/credits-maximizer focus. Excluded from main listings.",
+  "deprecated_bucket": "C_subprime"
 }

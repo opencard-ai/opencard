@@ -73,7 +73,7 @@
       "notes": "U.S. News review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.993Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "status": "active",
   "notes": "Petal 1 is a no-fee credit card designed for people with limited or no credit history. $0 annual fee and no foreign transaction fees. Variable APR: 28.99%–33.99% (high). Credit limits: $300–$5,000. Earn 1%–10% cash back through Petal Offers at select merchants; base rate starts at 1% and can increase to up to 1.5% after demonstrating responsible use. Reports to all three credit bureaus. Petal uses cash flow analysis (bank account history) for underwriting rather than traditional credit score alone.",
   "hotel_program": null,
@@ -82,5 +82,8 @@
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.993Z",
-  "next_review": "2026-07-15T13:41:49.993000+00:00"
+  "next_review": "2026-07-15T13:41:49.993000+00:00",
+  "deprecated": true,
+  "deprecated_reason": "Subprime / secured / student card. Different user segment from OpenCard's rewards/credits-maximizer focus. Excluded from main listings.",
+  "deprecated_bucket": "C_subprime"
 }

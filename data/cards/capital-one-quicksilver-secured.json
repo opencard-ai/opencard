@@ -61,7 +61,7 @@
   ],
   "notes": "Exceptional secured card: 1.5% unlimited cash back on everything with no annual fee — same earning rate as the unsecured Quicksilver. Security deposit required. Card doesn't display 'secured' label. Upgrade path available. One of the best secured cards available if you want rewards while rebuilding credit. Reviews note Capital One's system is automated with no human credit limit increases.",
   "confidence": "high",
-  "last_updated": "2026-04-16T13:41:49.959Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "tags": [
     "cash-back",
     "no-annual-fee",
@@ -76,5 +76,8 @@
   "next_review": "2026-07-15T13:41:49.959000+00:00",
   "cash_advance_fee_flat": 3,
   "cash_advance_fee_pct": 3,
-  "cfpb_source": "Q3_2025"
+  "cfpb_source": "Q3_2025",
+  "deprecated": true,
+  "deprecated_reason": "Subprime / secured / student card. Different user segment from OpenCard's rewards/credits-maximizer focus. Excluded from main listings.",
+  "deprecated_bucket": "C_subprime"
 }

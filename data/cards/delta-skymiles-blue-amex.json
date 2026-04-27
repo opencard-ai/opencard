@@ -74,7 +74,7 @@
       "url": "https://thepointsguy.com/credit-cards/delta-amex-current-offers/"
     }
   ],
-  "last_updated": "2026-04-26T04:02:55.594292Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -93,5 +93,7 @@
       "reverted_at": "2026-04-26T04:02:55.594292Z",
       "reverted_by": "cfpb_pipeline_corruption_revert_2026-04-25"
     }
-  ]
+  ],
+  "_duplicate_of": "amex-delta-blue",
+  "_dedup_note": "Same product. Canonical 'amex-delta-blue' uses issuer-first prefix per project convention."
 }

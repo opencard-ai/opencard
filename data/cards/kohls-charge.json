@@ -62,7 +62,7 @@
   ],
   "notes": "Store card for Kohl's shoppers only. Earns 7.5% back at Kohl's for Rewards Members (5% otherwise). No annual fee. New cardholders get 40% off first purchase within 30 days. Card has no value outside Kohl's — cannot be used elsewhere. Anniversary discounts and monthly exclusive offers add value for frequent Kohl's shoppers. Issued as both a Mastercard (usable anywhere) and a store-only card. Not worth getting just for the discount unless you shop at Kohl's regularly.",
   "confidence": "high",
-  "last_updated": "2026-04-16T13:41:49.988Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "tags": [
     "no-annual-fee"
   ],
@@ -72,5 +72,8 @@
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.988Z",
-  "next_review": "2026-07-15T13:41:49.988000+00:00"
+  "next_review": "2026-07-15T13:41:49.988000+00:00",
+  "deprecated": true,
+  "deprecated_reason": "Store-card retail co-brand. Users searching OpenCard generally aren't shopping for retailer-specific cards. Excluded from main listings.",
+  "deprecated_bucket": "B_store_card"
 }

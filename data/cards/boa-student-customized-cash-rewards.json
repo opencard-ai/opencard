@@ -68,7 +68,7 @@
       "notes": "Forbes review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.957Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
@@ -79,5 +79,8 @@
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.957Z",
-  "next_review": "2026-07-15T13:41:49.957000+00:00"
+  "next_review": "2026-07-15T13:41:49.957000+00:00",
+  "deprecated": true,
+  "deprecated_reason": "Subprime / secured / student card. Different user segment from OpenCard's rewards/credits-maximizer focus. Excluded from main listings.",
+  "deprecated_bucket": "C_subprime"
 }

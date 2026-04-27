@@ -64,7 +64,7 @@
       "notes": "Bread Financial overview"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.988Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "status": "active",
   "notes": "Co-branded KAYAK travel card issued by Bread Financial/Comenity. Useful for KAYAK users. Points worth approximately 1 cent each.",
   "hotel_program": null,
@@ -73,5 +73,8 @@
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.988Z",
-  "next_review": "2026-07-15T13:41:49.988000+00:00"
+  "next_review": "2026-07-15T13:41:49.988000+00:00",
+  "deprecated": true,
+  "deprecated_reason": "Store-card retail co-brand. Users searching OpenCard generally aren't shopping for retailer-specific cards. Excluded from main listings.",
+  "deprecated_bucket": "B_store_card"
 }

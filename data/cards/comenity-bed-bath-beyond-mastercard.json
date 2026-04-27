@@ -53,7 +53,7 @@
       "notes": "Bed Bath & Beyond"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.954Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "status": "active",
   "notes": "Bed Bath & Beyond went through bankruptcy in 2023. Card may still be serviced by Bread Financial/Comenity for existing cardholders. Verify availability.",
   "hotel_program": null,
@@ -63,5 +63,8 @@
   },
   "recurring_credits": [],
   "last_verified": "2026-04-16T13:41:49.954Z",
-  "next_review": "2026-07-15T13:41:49.954000+00:00"
+  "next_review": "2026-07-15T13:41:49.954000+00:00",
+  "deprecated": true,
+  "deprecated_reason": "Store-card retail co-brand. Users searching OpenCard generally aren't shopping for retailer-specific cards. Excluded from main listings.",
+  "deprecated_bucket": "B_store_card"
 }

@@ -74,7 +74,7 @@
       "notes": "U.S. News review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.981Z",
+  "last_updated": "2026-04-27T04:16:50.948Z",
   "status": "active",
   "notes": "Requires refundable security deposit ($200-$2,500). Deposit becomes credit limit. After 7 months, Discover may transition to unsecured. Rotating 5% categories include Amazon, Gas, Restaurants, etc. Cashback Match makes first year effectively 10%/2%.",
   "hotel_program": null,
@@ -83,5 +83,8 @@
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.981Z",
-  "next_review": "2026-07-15T13:41:49.981000+00:00"
+  "next_review": "2026-07-15T13:41:49.981000+00:00",
+  "deprecated": true,
+  "deprecated_reason": "Subprime / secured / student card. Different user segment from OpenCard's rewards/credits-maximizer focus. Excluded from main listings.",
+  "deprecated_bucket": "C_subprime"
 }
