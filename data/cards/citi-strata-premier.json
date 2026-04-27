@@ -91,7 +91,7 @@
       "notes": "CNBC review confirms $95 AF, 60K welcome bonus, 3x on dining/supermarkets/gas/travel."
     }
   ],
-  "last_updated": "2026-04-25T16:03:58.265Z",
+  "last_updated": "2026-04-27T03:03:48.139Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [
@@ -101,7 +101,17 @@
       }
     ]
   },
-  "recurring_credits": [],
+  "recurring_credits": [
+    {
+      "name": "Citi Travel Hotel Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "$100 off a single hotel stay of $500+ (excluding taxes/fees) when booked through cititravel.com. Once per calendar year, applied at booking.",
+      "reset_type": "calendar_year",
+      "source": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card"
+    }
+  ],
   "last_verified": "2026-04-25T16:03:58.265Z",
   "next_review": "2026-07-15T13:41:49.978000+00:00"
 }
