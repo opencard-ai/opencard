@@ -78,12 +78,22 @@
   },
   "recurring_credits": [
     {
-      "name": "Disney Bundle",
-      "amount": 84,
-      "frequency": "annual",
+      "name": "Disney Streaming Credit",
+      "amount": 7,
+      "frequency": "monthly",
       "category": "streaming",
-      "description": "$84 annual Disney streaming credit",
-      "reset_type": "calendar_year"
+      "description": "$7/month ($84/yr) on Disney+, Hulu, or ESPN+ subscriptions. No minimum purchase required.",
+      "reset_type": "monthly",
+      "source": "https://global.americanexpress.com/card-benefits/view-all/blue-cash-everyday"
+    },
+    {
+      "name": "Home Chef Credit",
+      "amount": 15,
+      "frequency": "monthly",
+      "category": "groceries",
+      "description": "$15/month ($180/yr) on Home Chef meal solutions ordered online. Enrollment required.",
+      "reset_type": "monthly",
+      "source": "https://global.americanexpress.com/card-benefits/view-all/blue-cash-everyday"
     }
   ],
   "last_verified": "2026-04-25T16:05:48.843Z",
