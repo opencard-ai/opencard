@@ -1,0 +1,31 @@
+{
+  "card_id": "chase-southwest-priority",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Southwest® Rapid Rewards® Priority Credit Card (Chase)",
+  "recurring_credits": [
+    {
+      "name": "Southwest Travel Credit",
+      "amount": 75,
+      "frequency": "annual",
+      "category": "airline",
+      "description": "$75 Southwest travel credit each year, usable on Southwest Airlines purchases.",
+      "reset_type": "calendar_year",
+      "source_url": "https://creditcards.chase.com/southwest/priority-credit-card",
+      "source_excerpt": "$75 Southwest travel credit each year"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": true,
+  "_review_reason": "Note: AF was raised to $229 (from $149) in 2026 Southwest revamp. Verify OpenCard data has current AF. Excluded: 7500 anniversary points (points not USD), 4 upgraded boardings (~$30 each, qualitative — usage-dependent), 25% inflight drinks/Wi-Fi savings (discount), Companion Pass qualifying points (status-related).",
+  "_excluded": [
+    "7,500 anniversary points (points, not USD)",
+    "4 upgraded boardings/year (qualitative, $30 each but usage-dependent)",
+    "25% inflight drinks/Wi-Fi discount (% off, not credit)",
+    "10,000 Companion Pass qualifying points boost (qualifying status)"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/southwest/priority-credit-card",
+    "https://media.chase.com/news/chase-southwest-introduce-new-card-benefits",
+    "https://www.dailydrop.com/pages/southwest-card-changes"
+  ]
+}

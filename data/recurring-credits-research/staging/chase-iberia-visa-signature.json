@@ -1,0 +1,31 @@
+{
+  "card_id": "chase-iberia-visa-signature",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Iberia Visa Signature® Card (Chase)",
+  "recurring_credits": [
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "groceries",
+      "description": "$10/quarter on one qualifying non-restaurant DoorDash order ($40/year total). Activation required.",
+      "reset_type": "quarterly",
+      "source_url": "https://creditcards.chase.com/avios/iberia",
+      "source_excerpt": "$10 off discount each calendar quarter at checkout on one qualifying non-restaurant order on DoorDash (totaling up to $40 annually)"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": true,
+  "_review_reason": "Includes 1-year complimentary DashPass (promotional, not recurring per OpenCard convention — excluded). $1,000 voucher after $30k spend is conditional (excluded). 10% off Iberia flights via partner link is ongoing discount (excluded — not a fixed USD credit). Net only the $40/year DoorDash credit is fixed recurring USD.",
+  "_excluded": [
+    "1-year DashPass complimentary (promotional)",
+    "$1,000 voucher after $30k annual spend (conditional)",
+    "10% off Iberia flights via Chase link (ongoing discount)"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/avios/iberia",
+    "https://creditcards.chase.com/travel-credit-cards/avios/iberia",
+    "https://onemileatatime.com/reviews/credit-cards/chase/iberia-credit-card/",
+    "https://upgradedpoints.com/credit-cards/reviews/iberia-visa-signature-card/"
+  ]
+}

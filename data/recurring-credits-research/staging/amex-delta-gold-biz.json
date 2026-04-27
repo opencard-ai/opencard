@@ -1,0 +1,29 @@
+{
+  "card_id": "amex-delta-gold-biz",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Delta SkyMiles® Gold Business American Express Card",
+  "recurring_credits": [
+    {
+      "name": "Delta Stays Credit",
+      "amount": 150,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "Up to $150 annual statement credit on prepaid hotels or vacation rentals booked through Delta Stays on delta.com. No spending requirement.",
+      "reset_type": "calendar_year",
+      "source_url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-gold/",
+      "source_excerpt": "Annual statement credit of up to $150 after using the Delta SkyMiles® Gold Business Card to book prepaid hotels or vacation rentals through Delta Stays on delta.com"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_review_reason": null,
+  "_excluded": [
+    "$200 Delta flight credit after $10k spend (conditional)",
+    "20% inflight savings (% off, not credit)"
+  ],
+  "sources_consulted": [
+    "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-gold/",
+    "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
+    "https://thepointsguy.com/credit-cards/reviews/gold-delta-skymiles-business-amex-credit-card-review/"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "card_id": "chase-southwest-performance-biz",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Southwest® Rapid Rewards® Performance Business Credit Card (Chase, $299 AF as of July 2025)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": true,
+  "_review_reason": "AF was raised from $199 to $299 in July 2025. Verify OpenCard has current AF. No fixed USD recurring credit found — 9,000 anniversary points (points, excluded), free first checked bag for 8 passengers (qualitative), preferred seating + Group 5 boarding (qualitative), extra-legroom 48hr (qualitative).",
+  "_excluded": [
+    "9,000 anniversary points (points, not USD)",
+    "Free first checked bag (qualitative)",
+    "Preferred seating + Group 5 boarding (qualitative)",
+    "Extra-legroom seat 48hr ahead (qualitative)"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/southwest/performance-business-credit-card",
+    "https://media.chase.com/news/chase-southwest-introduce-new-card-benefits",
+    "https://www.nerdwallet.com/business/credit-cards/reviews/southwest-rapid-rewards-performance-business",
+    "https://thepointsguy.com/credit-cards/reviews/southwest-performance-business-credit-card-review/"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "card_id": "bilt-palladium",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Bilt Palladium Card",
+  "recurring_credits": [
+    {
+      "name": "Bilt Travel Hotel Credit",
+      "amount": 200,
+      "frequency": "semi_annual",
+      "category": "hotel",
+      "description": "$200 per half (2 × $200/year = $400 total) usable in Bilt's travel portal. Minimum 2-night stay required.",
+      "reset_type": "calendar_year",
+      "source_url": "https://newsroom.biltrewards.com/meetbiltcard2.0",
+      "source_excerpt": "$400 credit that can be used to book hotels through Bilt's travel portal... issued semi-annually, in two $200 increments"
+    },
+    {
+      "name": "Bilt Cash",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "other",
+      "description": "$200 of Bilt Cash, renewed annually.",
+      "reset_type": "calendar_year",
+      "source_url": "https://newsroom.biltrewards.com/meetbiltcard2.0",
+      "source_excerpt": "$200 of Bilt Cash, both of which are renewed annually"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_review_reason": null,
+  "_excluded": ["Priority Pass lounge access (non-quantified benefit per OpenCard schema rules)", "Bilt Gold status from welcome offer (one-time)"],
+  "sources_consulted": [
+    "https://newsroom.biltrewards.com/meetbiltcard2.0",
+    "https://support.biltrewards.com/hc/en-us/articles/42897766682381-Bilt-Card-2-0-Program-Overview",
+    "https://www.biltrewards.com/terms/bilt-card-offer-terms",
+    "https://www.nerdwallet.com/credit-cards/reviews/bilt-palladium",
+    "https://thepointsguy.com/credit-cards/reviews/bilt-palladium-card-review/"
+  ]
+}

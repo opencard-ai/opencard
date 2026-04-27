@@ -1,0 +1,21 @@
+{
+  "card_id": "chase-hyatt",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "World of Hyatt Credit Card (Chase, $95 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": true,
+  "_review_reason": "Card's primary recurring benefit is 1 Free Night Award at Category 4 or lower property each anniversary (no published USD value — Hyatt does not assign dollar amount). Per OpenCard convention requiring USD dollar amounts, Free Night Award cannot be quantified and is excluded. Other benefits: 5 elite night credits/year (qualitative), conditional 2nd free night after $15k spend (conditional, excluded), 1-yr DashPass promotional (excluded). Recommend either (a) accept Free Night with operator-set fair-value amount (~$200-300), OR (b) leave empty and document qualitative benefits in card description elsewhere.",
+  "_excluded": [
+    "Free Night Award Cat 4 or lower (no published USD; convention says exclude)",
+    "5 Elite Night Credits/year (qualitative)",
+    "Conditional 2nd free night after $15k spend (conditional)",
+    "1-year DashPass promotional (not recurring)"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card",
+    "https://world.hyatt.com/content/gp/en/rewards/hyatt-credit-card.html",
+    "https://www.nerdwallet.com/travel/learn/is-the-world-of-hyatt-credit-card-worth-its-annual-fee",
+    "https://money.usnews.com/credit-cards/chase/the-world-of-hyatt-credit-card"
+  ]
+}

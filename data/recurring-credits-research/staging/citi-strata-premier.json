@@ -1,0 +1,30 @@
+{
+  "card_id": "citi-strata-premier",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Citi Strata Premier® Card",
+  "recurring_credits": [
+    {
+      "name": "Citi Travel Hotel Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "$100 off a single hotel stay of $500+ (excluding taxes/fees) when booked through cititravel.com. Once per calendar year, applied at booking.",
+      "reset_type": "calendar_year",
+      "source_url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+      "source_excerpt": "$100 off a single hotel stay of $500 or more (excluding taxes and fees) when booked through cititravel.com... applied instantly at the time of booking"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_review_reason": null,
+  "_excluded": [
+    "The Reserve hotel program benefits (qualitative — varies by property)",
+    "ThankYou points earning rates"
+  ],
+  "sources_consulted": [
+    "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+    "https://www.citi.com/credit-cards/credit-card-rewards/citi-strata-premier-benefits",
+    "https://www.nerdwallet.com/travel/learn/citi-strata-premier-card-benefits",
+    "https://frequentmiler.com/citi-strata-premier-credit-card-review/"
+  ]
+}

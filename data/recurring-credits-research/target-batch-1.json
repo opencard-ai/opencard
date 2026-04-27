@@ -1,0 +1,548 @@
+[
+  {
+    "card_id": "centurion-card-amex",
+    "name": "The Centurion® Card from American Express",
+    "issuer": "American Express",
+    "annual_fee": 5000,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "lounge-access",
+      "premium",
+      "transferable"
+    ],
+    "card_type": "consumer",
+    "tier": "premium",
+    "priority_score": 100,
+    "priority_reason": "premium consumer american express ($5000 AF) — high yield"
+  },
+  {
+    "card_id": "amex-graphite-biz",
+    "name": "Amex Graphite Business Cash",
+    "issuer": "American Express",
+    "annual_fee": 295,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business"
+    ],
+    "card_type": "business",
+    "tier": "premium",
+    "priority_score": 100,
+    "priority_reason": "premium business american express ($295 AF) — high yield"
+  },
+  {
+    "card_id": "amex-plum",
+    "name": "The Plum Card® from American Express",
+    "issuer": "American Express",
+    "annual_fee": 250,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [],
+    "card_type": "consumer",
+    "tier": "premium",
+    "priority_score": 100,
+    "priority_reason": "premium consumer american express ($250 AF) — high yield"
+  },
+  {
+    "card_id": "chase-united-quest-biz",
+    "name": "United Quest Business",
+    "issuer": "Chase",
+    "annual_fee": 350,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "airline",
+      "business"
+    ],
+    "card_type": "business",
+    "tier": "premium",
+    "priority_score": 100,
+    "priority_reason": "premium business chase ($350 AF) — high yield"
+  },
+  {
+    "card_id": "emirates-skywards-mastercard",
+    "name": "Emirates Skywards Premium World Elite Mastercard®",
+    "issuer": "Barclays",
+    "annual_fee": 499,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "airline",
+      "premium"
+    ],
+    "card_type": "consumer",
+    "tier": "premium",
+    "priority_score": 100,
+    "priority_reason": "premium consumer barclays ($499 AF) — high yield"
+  },
+  {
+    "card_id": "luxury-card-titanium",
+    "name": "Luxury Card Mastercard® Titanium Card™",
+    "issuer": "Barclays",
+    "annual_fee": 299,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [],
+    "card_type": "consumer",
+    "tier": "premium",
+    "priority_score": 100,
+    "priority_reason": "premium consumer barclays ($299 AF) — high yield"
+  },
+  {
+    "card_id": "bilt-palladium",
+    "name": "Bilt Palladium Card",
+    "issuer": "First Electronic Bank",
+    "annual_fee": 495,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "transferable"
+    ],
+    "card_type": "consumer",
+    "tier": "premium",
+    "priority_score": 85,
+    "priority_reason": "premium consumer first electronic bank"
+  },
+  {
+    "card_id": "amex-amazon-biz-prime",
+    "name": "Amazon Business Prime Card",
+    "issuer": "American Express",
+    "annual_fee": 0,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business",
+      "no-annual-fee"
+    ],
+    "card_type": "business",
+    "tier": "no-af",
+    "priority_score": 75,
+    "priority_reason": "business american express — biz-specific credits likely"
+  },
+  {
+    "card_id": "amex-amazon-biz",
+    "name": "Amazon Business American Express Card",
+    "issuer": "American Express",
+    "annual_fee": 0,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business",
+      "no-annual-fee"
+    ],
+    "card_type": "business",
+    "tier": "no-af",
+    "priority_score": 75,
+    "priority_reason": "business american express — biz-specific credits likely"
+  },
+  {
+    "card_id": "amex-blue-biz-cash",
+    "name": "The American Express Blue Business Cash™ Card",
+    "issuer": "American Express",
+    "annual_fee": 0,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business",
+      "no-annual-fee"
+    ],
+    "card_type": "business",
+    "tier": "no-af",
+    "priority_score": 75,
+    "priority_reason": "business american express — biz-specific credits likely"
+  },
+  {
+    "card_id": "amex-blue-biz-plus",
+    "name": "Amex Blue Business Plus",
+    "issuer": "American Express",
+    "annual_fee": 0,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business",
+      "no-annual-fee"
+    ],
+    "card_type": "business",
+    "tier": "no-af",
+    "priority_score": 75,
+    "priority_reason": "business american express — biz-specific credits likely"
+  },
+  {
+    "card_id": "amex-delta-gold-biz",
+    "name": "Delta SkyMiles Gold Business",
+    "issuer": "American Express",
+    "annual_fee": 150,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "delta",
+      "airline",
+      "business",
+      "no-foreign-transaction-fee"
+    ],
+    "card_type": "business",
+    "tier": "mid",
+    "priority_score": 75,
+    "priority_reason": "business american express — biz-specific credits likely"
+  },
+  {
+    "card_id": "amex-delta-skymiles-gold-biz",
+    "name": "Delta SkyMiles® Gold Business American Express Card",
+    "issuer": "American Express",
+    "annual_fee": 150,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "airline",
+      "business"
+    ],
+    "card_type": "business",
+    "tier": "mid",
+    "priority_score": 75,
+    "priority_reason": "business american express — biz-specific credits likely"
+  },
+  {
+    "card_id": "amex-hilton-honors-biz",
+    "name": "Hilton Honors American Express Business Card",
+    "issuer": "American Express",
+    "annual_fee": 195,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business",
+      "hotel"
+    ],
+    "card_type": "business",
+    "tier": "mid",
+    "priority_score": 75,
+    "priority_reason": "business american express — biz-specific credits likely"
+  },
+  {
+    "card_id": "amex-marriott-bonvoy-biz",
+    "name": "Marriott Bonvoy Business® American Express® Card",
+    "issuer": "American Express",
+    "annual_fee": 125,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business",
+      "hotel"
+    ],
+    "card_type": "business",
+    "tier": "mid",
+    "priority_score": 75,
+    "priority_reason": "business american express — biz-specific credits likely"
+  },
+  {
+    "card_id": "barclays-jetblue-biz",
+    "name": "JetBlue Business Card",
+    "issuer": "Barclays",
+    "annual_fee": 99,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "airline",
+      "business"
+    ],
+    "card_type": "business",
+    "tier": "mid",
+    "priority_score": 75,
+    "priority_reason": "business barclays — biz-specific credits likely"
+  },
+  {
+    "card_id": "barclays-wyndham-earner-biz",
+    "name": "Wyndham Earner Business",
+    "issuer": "Barclays",
+    "annual_fee": 95,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business",
+      "hotel"
+    ],
+    "card_type": "business",
+    "tier": "mid",
+    "priority_score": 75,
+    "priority_reason": "business barclays — biz-specific credits likely"
+  },
+  {
+    "card_id": "barclays-wyndham-earner-plus-biz",
+    "name": "Wyndham Earner+ Business",
+    "issuer": "Barclays",
+    "annual_fee": 95,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business",
+      "hotel"
+    ],
+    "card_type": "business",
+    "tier": "mid",
+    "priority_score": 75,
+    "priority_reason": "business barclays — biz-specific credits likely"
+  },
+  {
+    "card_id": "capital-one-spark-miles-select",
+    "name": "Capital One Spark Miles Select for Business",
+    "issuer": "Capital One",
+    "annual_fee": 0,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "no-annual-fee"
+    ],
+    "card_type": "business",
+    "tier": "no-af",
+    "priority_score": 75,
+    "priority_reason": "business capital one — biz-specific credits likely"
+  },
+  {
+    "card_id": "chase-ink-biz-cash",
+    "name": "Chase Ink Business Cash® Credit Card",
+    "issuer": "Chase",
+    "annual_fee": 0,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business",
+      "no-annual-fee"
+    ],
+    "card_type": "business",
+    "tier": "no-af",
+    "priority_score": 75,
+    "priority_reason": "business chase — biz-specific credits likely"
+  },
+  {
+    "card_id": "chase-ink-biz-preferred",
+    "name": "Chase Ink Business Preferred® Credit Card",
+    "issuer": "Chase",
+    "annual_fee": 95,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business"
+    ],
+    "card_type": "business",
+    "tier": "mid",
+    "priority_score": 75,
+    "priority_reason": "business chase — biz-specific credits likely"
+  },
+  {
+    "card_id": "chase-ink-biz-premier",
+    "name": "Ink Business Premier® Credit Card",
+    "issuer": "Chase",
+    "annual_fee": 195,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business"
+    ],
+    "card_type": "business",
+    "tier": "mid",
+    "priority_score": 75,
+    "priority_reason": "business chase — biz-specific credits likely"
+  },
+  {
+    "card_id": "chase-ink-biz-unlimited",
+    "name": "Chase Ink Business Unlimited® Credit Card",
+    "issuer": "Chase",
+    "annual_fee": 0,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business",
+      "no-annual-fee"
+    ],
+    "card_type": "business",
+    "tier": "no-af",
+    "priority_score": 75,
+    "priority_reason": "business chase — biz-specific credits likely"
+  },
+  {
+    "card_id": "chase-ink-preferred-plus",
+    "name": "Ink Business Preferred Plus",
+    "issuer": "Chase",
+    "annual_fee": 8,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business",
+      "transferable"
+    ],
+    "card_type": "business",
+    "tier": "no-af",
+    "priority_score": 75,
+    "priority_reason": "business chase — biz-specific credits likely"
+  },
+  {
+    "card_id": "chase-southwest-performance-biz",
+    "name": "Southwest Performance Business",
+    "issuer": "Chase",
+    "annual_fee": 199,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "airline",
+      "business"
+    ],
+    "card_type": "business",
+    "tier": "mid",
+    "priority_score": 75,
+    "priority_reason": "business chase — biz-specific credits likely"
+  },
+  {
+    "card_id": "citi-aa-mileup-biz",
+    "name": "AA MileUp Business",
+    "issuer": "Citi",
+    "annual_fee": 0,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "airline",
+      "business",
+      "no-annual-fee"
+    ],
+    "card_type": "business",
+    "tier": "no-af",
+    "priority_score": 75,
+    "priority_reason": "business citi — biz-specific credits likely"
+  },
+  {
+    "card_id": "citi-costco-biz",
+    "name": "Costco Anywhere Business",
+    "issuer": "Citi",
+    "annual_fee": 0,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business",
+      "no-annual-fee"
+    ],
+    "card_type": "business",
+    "tier": "no-af",
+    "priority_score": 75,
+    "priority_reason": "business citi — biz-specific credits likely"
+  },
+  {
+    "card_id": "costco-anywhere-visa-business-citi",
+    "name": "Costco Anywhere Visa® Business Card by Citi",
+    "issuer": "Citi",
+    "annual_fee": 0,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business",
+      "no-annual-fee"
+    ],
+    "card_type": "business",
+    "tier": "no-af",
+    "priority_score": 75,
+    "priority_reason": "business citi — biz-specific credits likely"
+  },
+  {
+    "card_id": "wyndham-rewards-earner-business-barclays",
+    "name": "Wyndham Rewards Earner® Business Card",
+    "issuer": "Barclays",
+    "annual_fee": 95,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "business",
+      "cash-back",
+      "hotel"
+    ],
+    "card_type": "business",
+    "tier": "mid",
+    "priority_score": 75,
+    "priority_reason": "business barclays — biz-specific credits likely"
+  },
+  {
+    "card_id": "amex-everyday-preferred",
+    "name": "Amex EveryDay Preferred Credit Card",
+    "issuer": "American Express",
+    "annual_fee": 95,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "transferable"
+    ],
+    "card_type": "consumer",
+    "tier": "mid",
+    "priority_score": 60,
+    "priority_reason": "mid-tier american express ($95 AF)"
+  },
+  {
+    "card_id": "amex-hilton-surpass",
+    "name": "Hilton Honors American Express Surpass Card",
+    "issuer": "American Express",
+    "annual_fee": 150,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "hotel",
+      "premium",
+      "no-ftf"
+    ],
+    "card_type": "consumer",
+    "tier": "mid",
+    "priority_score": 60,
+    "priority_reason": "mid-tier american express ($150 AF)"
+  },
+  {
+    "card_id": "barclays-aadvantage-red",
+    "name": "AAdvantage Aviator Red",
+    "issuer": "Barclays",
+    "annual_fee": 99,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [],
+    "card_type": "consumer",
+    "tier": "mid",
+    "priority_score": 60,
+    "priority_reason": "mid-tier barclays ($99 AF)"
+  },
+  {
+    "card_id": "barclays-aadvantage-silver",
+    "name": "AAdvantage Aviator Silver",
+    "issuer": "Barclays",
+    "annual_fee": 199,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [],
+    "card_type": "consumer",
+    "tier": "mid",
+    "priority_score": 60,
+    "priority_reason": "mid-tier barclays ($199 AF)"
+  },
+  {
+    "card_id": "barclays-jetblue-plus",
+    "name": "JetBlue Plus Card",
+    "issuer": "Barclays",
+    "annual_fee": 99,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "airline"
+    ],
+    "card_type": "consumer",
+    "tier": "mid",
+    "priority_score": 60,
+    "priority_reason": "mid-tier barclays ($99 AF)"
+  },
+  {
+    "card_id": "capital-one-spark-cash-plus",
+    "name": "Capital One Spark Cash Plus",
+    "issuer": "Capital One",
+    "annual_fee": 150,
+    "has_recurring_credits": false,
+    "rc_count": 0,
+    "tags": [
+      "transferable"
+    ],
+    "card_type": "consumer",
+    "tier": "mid",
+    "priority_score": 60,
+    "priority_reason": "mid-tier capital one ($150 AF)"
+  }
+]

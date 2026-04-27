@@ -1,0 +1,20 @@
+{
+  "card_id": "chase-british-airways-visa-signature",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "British Airways Visa Signature® Card (Chase)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": true,
+  "_review_reason": "Card has up to $600 annual flight credit ($100×3 Economy/Premium Economy OR $200×3 Business/First) BUT only on BA Reward Flights paying taxes/fees with the card — heavily conditional on Avios reward booking. Per OpenCard convention preferring unconditional recurring USD credits, this could go either way. Operator decision: (a) include as $600 with conditional note, (b) split into a separate 'conditional_credits' field, or (c) exclude. Travel Together Ticket after $30k spend is conditional (excluded).",
+  "_excluded": [
+    "Up to $600 BA Reward Flight credit (conditional — only on BA reward bookings)",
+    "Travel Together Ticket after $30k annual spend (conditional)",
+    "10% off BA flights through Chase link (discount, ongoing)"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/avios/britishairways",
+    "https://creditcards.chase.com/travel-credit-cards/avios/british-airways",
+    "https://thepointsguy.com/credit-cards/reviews/british-airways-visa-signature-credit-card-review/",
+    "https://money.usnews.com/credit-cards/chase/british-airways-visa-signature-card"
+  ]
+}

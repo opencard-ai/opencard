@@ -1,0 +1,22 @@
+{
+  "card_id": "chase-ink-biz-premier",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "Chase Ink Business Premier® Credit Card",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "No documented recurring annual statement credits in $$ form. Card's value is in 5% Chase Travel earning, 5% Lyft (earning, promotional), 2.5% on $5k+ purchases, plus auto/trip insurance and protections — none are recurring credits per OpenCard schema. $195 AF.",
+  "_excluded": [
+    "5% Lyft (earning rate, promotional through 9/30/2027)",
+    "5% Chase Travel (earning rate)",
+    "2.5% on $5k+ purchases (earning rate)",
+    "Auto rental CDW (insurance)",
+    "Trip cancellation/interruption insurance"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/business-credit-cards/ink/premier",
+    "https://www.nerdwallet.com/business/credit-cards/reviews/chase-ink-business-premier",
+    "https://awardwallet.com/credit-cards/cash-back/chase-ink-business-premier/",
+    "https://www.nav.com/blog/chase-ink-business-premier/"
+  ]
+}

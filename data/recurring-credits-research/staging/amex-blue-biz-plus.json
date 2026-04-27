@@ -1,0 +1,29 @@
+{
+  "card_id": "amex-blue-biz-plus",
+  "researched_at": "2026-04-26",
+  "card_name_verified": "The Blue Business® Plus Credit Card from American Express",
+  "recurring_credits": [
+    {
+      "name": "Software Subscription Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "digital",
+      "description": "$100 annual statement credit for recurring software subscription expenses (e.g., FreshBooks, QuickBooks).",
+      "reset_type": "calendar_year",
+      "source_url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-blue-business-plus-credit-card-amex/",
+      "source_excerpt": "annual $100 statement credit for recurring software subscription expenses such as FreshBooks or QuickBooks"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": true,
+  "_review_reason": "VERIFY: Original Blue Business Plus historically had NO recurring credits — was a no-frills 2x MR card. The $100 software credit may be a new 2026 enhancement OR may be confused with another product. Cross-check on americanexpress.com Blue Business Plus benefit page directly before promoting.",
+  "_excluded": [
+    "2X MR points on first $50k (earning rate)",
+    "Welcome offer (one-time)"
+  ],
+  "sources_consulted": [
+    "https://www.nerdwallet.com/business/credit-cards/reviews/amex-blue-business-plus",
+    "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-blue-business-plus-credit-card-amex/",
+    "https://upgradedpoints.com/credit-cards/reviews/amex-blue-business-plus-card/benefits/"
+  ]
+}

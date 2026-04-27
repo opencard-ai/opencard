@@ -1,0 +1,11 @@
+{
+  "_note": "Batch 1 (5 agents) failed because subagents lack WebFetch/WebSearch permissions. Pivoting to main-thread WebSearch. These 5 cards will be re-researched.",
+  "failed_at": "2026-04-26T~",
+  "cards_to_redo": [
+    "centurion-card-amex",
+    "amex-graphite-biz",
+    "amex-plum",
+    "chase-united-quest-biz",
+    "emirates-skywards-mastercard"
+  ]
+}
