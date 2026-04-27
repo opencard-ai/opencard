@@ -53,29 +53,54 @@
   "last_updated": "2026-04-27T04:49:09.116Z",
   "recurring_credits": [
     {
+      "name": "Uber Cash",
+      "amount": 15,
+      "frequency": "monthly",
+      "category": "ride",
+      "description": "$15/month ($180/yr) + $20 December bonus = $200/yr total.",
+      "reset_type": "monthly",
+      "source": "https://global.americanexpress.com/card-benefits/view-all/morgan-stanley-platinum-card"
+    },
+    {
+      "name": "Uber One Membership",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "ride",
+      "description": "$120/yr on auto-renewing Uber One membership.",
+      "reset_type": "calendar_year",
+      "source": "https://global.americanexpress.com/card-benefits/view-all/morgan-stanley-platinum-card"
+    },
+    {
       "name": "Airline Fee Credit",
       "amount": 200,
       "frequency": "annual",
-      "category": "travel",
-      "description": "$200 annual airline fee credit.",
-      "reset_type": "cardmember_year"
+      "category": "airline",
+      "description": "$200/yr on incidental fees with one selected qualifying airline.",
+      "reset_type": "calendar_year",
+      "source": "https://global.americanexpress.com/card-benefits/view-all/morgan-stanley-platinum-card"
     },
     {
-      "name": "Fine Hotels Credit",
-      "amount": 200,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "$200 annual Fine Hotels credit.",
-      "reset_type": "cardmember_year"
+      "name": "Hotel Credit (FHR + Hotel Collection)",
+      "amount": 300,
+      "frequency": "semi_annual",
+      "category": "hotel",
+      "description": "$300/half ($600/yr) on prepaid Fine Hotels + Resorts or Hotel Collection bookings via Amex Travel.",
+      "reset_type": "calendar_year",
+      "source": "https://global.americanexpress.com/card-benefits/view-all/morgan-stanley-platinum-card"
     },
     {
-      "name": "Global Entry Credit",
-      "amount": 100,
-      "frequency": "annual",
+      "name": "Global Entry / TSA PreCheck",
+      "amount": 120,
+      "frequency": "every_4_years",
       "category": "travel",
-      "description": "Up to $100 every 4 years for Global Entry.",
-      "reset_type": "cardmember_year"
+      "description": "Up to $120 every 4 years for Global Entry or TSA PreCheck application fee.",
+      "reset_type": "anniversary",
+      "source": "https://global.americanexpress.com/card-benefits/view-all/morgan-stanley-platinum-card"
     }
+  ],
+  "_excluded": [
+    "$895 Annual Engagement Bonus — deposited to Morgan Stanley Platinum CashPlus account, not a card statement credit; conditional on having that brokerage account. Out of scope for recurring_credits.",
+    "CLEAR Plus / Walmart+ / Equinox / Resy / lululemon / Oura — Morgan Stanley Platinum may include some Platinum-family credits; verify against amex.com Morgan Stanley benefits page before adding."
   ],
   "last_verified": "2026-04-24",
   "next_review": "2026-07-15T13:41:49.949000+00:00",
