@@ -1,0 +1,25 @@
+{
+  "card_id": "southwest-rapid-rewards-plus",
+  "researched_at": "2026-04-27",
+  "card_name_verified": "Southwest® Rapid Rewards® Plus Credit Card (Chase, $99 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Per Convention C: all benefits points-denominated, % off, or qualitative. No USD statement credits. Specifically: 3,000 anniversary points (points), 10,000 Companion Pass qualifying points (points), 10% anniversary promo code (% off), 25% inflight purchases (% off), 2 EarlyBird Check-Ins (qualitative), free first checked bag (qualitative).",
+  "_excluded": [
+    "3,000 anniversary points (points)",
+    "10,000 CP qualifying points (points)",
+    "10% promo code (% off)",
+    "25% inflight purchases (% off)",
+    "2 EarlyBird Check-Ins (qualitative)",
+    "Free first checked bag (qualitative)",
+    "2x gas/grocery on first $5k (earning rate)"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/southwest/plus-credit-card",
+    "https://creditcards.chase.com/travel-credit-cards/southwest/plus",
+    "https://money.usnews.com/credit-cards/chase/southwest-rapid-rewards-plus-credit-card",
+    "https://www.nerdwallet.com/credit-cards/learn/benefits-southwest-airlines-credit-cards",
+    "https://wallethub.com/d/southwest-airlines-credit-card-1981c"
+  ]
+}
