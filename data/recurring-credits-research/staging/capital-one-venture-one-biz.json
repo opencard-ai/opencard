@@ -1,0 +1,19 @@
+{
+  "card_id": "capital-one-venture-one-biz",
+  "researched_at": "2026-04-27",
+  "card_name_verified": "VentureOne Business (formerly Capital One Spark Miles Select)",
+  "card_status_alert": "REBRANDED 2026-04-14 to VentureOne Business. Per Capital One announcement + Frequent Miler: VentureOne Business 'will not see any noteworthy changes from its Spark Miles Select predecessor'. The new $50+$50 credits announced apply ONLY to Venture Business (formerly Spark Miles, $95 AF) — NOT to VentureOne Business ($0 AF).",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Rebrand 2026-04-14 → VentureOne Business; catalog renamed to 'capital-one-venture-one-biz' on 2026-04-27. RC research complete — no credits. ($50+$50 credits announced in rebrand apply ONLY to Venture Business, not VentureOne Business.)",
+  "_excluded": [
+    "$50 Business Travel + $50 ad/software credits (these apply to Venture Business, NOT VentureOne Business — credits are on capital-one-spark-miles instead)"
+  ],
+  "sources_consulted": [
+    "https://www.capitalone.com/about/newsroom/venture-business-rebrand/",
+    "https://frequentmiler.com/capital-one-spark-miles-rebranded-to-venture-business-up-to-150k-welcome-offer-up-to-100-in-new-credits/",
+    "https://onemileatatime.com/news/capital-one-venture-business-replaces-spark-miles/",
+    "https://www.doctorofcredit.com/capital-one-rebrands-spark-miles-spark-miles-select-to-venture-business-and-ventureone-business/"
+  ]
+}

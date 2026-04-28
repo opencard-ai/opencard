@@ -1,0 +1,20 @@
+{
+  "card_id": "citi-costco-biz",
+  "researched_at": "2026-04-27",
+  "card_name_verified": "Costco Anywhere Visa® Business Card by Citi ($0 AF with paid Costco membership)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Pure cashback card — no recurring USD statement credits. Cashback paid as annual reward certificate (Feb statement, redeemable at Costco) which is earnings-based, not a credit. Earning rates: 5% Costco gas (up to $7k), 4% other gas/EV, 3% restaurants/travel, 2% Costco purchases, 1% other. Other features qualitative: no FX fees, fraud monitoring.",
+  "_excluded": [
+    "Cashback rewards (earnings, not credit)",
+    "Earning rates (5%/4%/3%/2%/1%)"
+  ],
+  "sources_consulted": [
+    "https://www.citi.com/credit-cards/understanding-credit-cards/costco-citi-credit-card-benefits",
+    "https://www.cnbc.com/select/costco-anywhere-visa-card-review/",
+    "https://money.usnews.com/credit-cards/citi/costco-anywhere-visa-card-by-citi",
+    "https://www.costco.com/credit-card.html",
+    "https://www.cardrates.com/advice/costco-credit-card-benefits/"
+  ]
+}

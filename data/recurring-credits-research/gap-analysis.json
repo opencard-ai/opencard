@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-28T05:31:44.779Z",
-  "total_cards": 241,
+  "generated_at": "2026-04-28T05:46:24.237Z",
+  "total_cards": 240,
   "with_recurring_credits": 79,
-  "gap_count": 162,
+  "gap_count": 161,
   "coverage_by_tier": {
     "no-af (consumer)": {
       "has": 8,
@@ -22,7 +22,7 @@
     },
     "mid (business)": {
       "has": 7,
-      "missing": 11
+      "missing": 10
     },
     "premium (consumer)": {
       "has": 30,
@@ -170,22 +170,6 @@
       "priority_reason": "business american express — biz-specific credits likely"
     },
     {
-      "card_id": "amex-delta-skymiles-gold-biz",
-      "name": "Delta SkyMiles® Gold Business American Express Card",
-      "issuer": "American Express",
-      "annual_fee": 150,
-      "has_recurring_credits": false,
-      "rc_count": 0,
-      "tags": [
-        "airline",
-        "business"
-      ],
-      "card_type": "business",
-      "tier": "mid",
-      "priority_score": 75,
-      "priority_reason": "business american express — biz-specific credits likely"
-    },
-    {
       "card_id": "barclays-jetblue-biz",
       "name": "JetBlue Business Card",
       "issuer": "Barclays",
@@ -234,8 +218,8 @@
       "priority_reason": "business barclays — biz-specific credits likely"
     },
     {
-      "card_id": "capital-one-spark-miles-select",
-      "name": "Capital One Spark Miles Select for Business",
+      "card_id": "capital-one-venture-one-biz",
+      "name": "Capital One VentureOne Business",
       "issuer": "Capital One",
       "annual_fee": 0,
       "has_recurring_credits": false,
@@ -1283,6 +1267,21 @@
       "tier": "no-af",
       "priority_score": 35,
       "priority_reason": "no-AF citi — occasional small credits"
+    },
+    {
+      "card_id": "citi-strata",
+      "name": "Citi Strata℠ Card",
+      "issuer": "Citi",
+      "annual_fee": 0,
+      "has_recurring_credits": false,
+      "rc_count": 0,
+      "tags": [
+        "no-annual-fee"
+      ],
+      "card_type": "consumer",
+      "tier": "no-af",
+      "priority_score": 35,
+      "priority_reason": "no-AF citi — occasional small credits"
     }
   ],
   "all_gap": [
@@ -1414,22 +1413,6 @@
       "priority_reason": "business american express — biz-specific credits likely"
     },
     {
-      "card_id": "amex-delta-skymiles-gold-biz",
-      "name": "Delta SkyMiles® Gold Business American Express Card",
-      "issuer": "American Express",
-      "annual_fee": 150,
-      "has_recurring_credits": false,
-      "rc_count": 0,
-      "tags": [
-        "airline",
-        "business"
-      ],
-      "card_type": "business",
-      "tier": "mid",
-      "priority_score": 75,
-      "priority_reason": "business american express — biz-specific credits likely"
-    },
-    {
       "card_id": "barclays-jetblue-biz",
       "name": "JetBlue Business Card",
       "issuer": "Barclays",
@@ -1478,8 +1461,8 @@
       "priority_reason": "business barclays — biz-specific credits likely"
     },
     {
-      "card_id": "capital-one-spark-miles-select",
-      "name": "Capital One Spark Miles Select for Business",
+      "card_id": "capital-one-venture-one-biz",
+      "name": "Capital One VentureOne Business",
       "issuer": "Capital One",
       "annual_fee": 0,
       "has_recurring_credits": false,
@@ -4142,22 +4125,6 @@
       "priority_reason": "premium consumer american express ($650 AF) — high yield"
     },
     {
-      "card_id": "amex-delta-skymiles-gold-biz",
-      "name": "Delta SkyMiles® Gold Business American Express Card",
-      "issuer": "American Express",
-      "annual_fee": 150,
-      "has_recurring_credits": false,
-      "rc_count": 0,
-      "tags": [
-        "airline",
-        "business"
-      ],
-      "card_type": "business",
-      "tier": "mid",
-      "priority_score": 75,
-      "priority_reason": "business american express — biz-specific credits likely"
-    },
-    {
       "card_id": "amex-delta-skymiles-platinum-biz",
       "name": "Delta SkyMiles® Platinum Business American Express Card",
       "issuer": "American Express",
@@ -4292,7 +4259,7 @@
       "issuer": "American Express",
       "annual_fee": 550,
       "has_recurring_credits": true,
-      "rc_count": 4,
+      "rc_count": 3,
       "tags": [
         "lounge-access",
         "premium",
@@ -4397,7 +4364,7 @@
       "issuer": "American Express",
       "annual_fee": 895,
       "has_recurring_credits": true,
-      "rc_count": 2,
+      "rc_count": 1,
       "tags": [
         "lounge-access",
         "premium",
@@ -5282,8 +5249,23 @@
       "priority_reason": "no-AF capital one — occasional small credits"
     },
     {
-      "card_id": "capital-one-spark-miles-select",
-      "name": "Capital One Spark Miles Select for Business",
+      "card_id": "capital-one-venture-biz",
+      "name": "Capital One Venture Business",
+      "issuer": "Capital One",
+      "annual_fee": 95,
+      "has_recurring_credits": true,
+      "rc_count": 3,
+      "tags": [
+        "transferable"
+      ],
+      "card_type": "business",
+      "tier": "mid",
+      "priority_score": 75,
+      "priority_reason": "business capital one — biz-specific credits likely"
+    },
+    {
+      "card_id": "capital-one-venture-one-biz",
+      "name": "Capital One VentureOne Business",
       "issuer": "Capital One",
       "annual_fee": 0,
       "has_recurring_credits": false,
@@ -5293,21 +5275,6 @@
       ],
       "card_type": "business",
       "tier": "no-af",
-      "priority_score": 75,
-      "priority_reason": "business capital one — biz-specific credits likely"
-    },
-    {
-      "card_id": "capital-one-spark-miles",
-      "name": "Capital One Spark Miles for Business",
-      "issuer": "Capital One",
-      "annual_fee": 95,
-      "has_recurring_credits": true,
-      "rc_count": 1,
-      "tags": [
-        "transferable"
-      ],
-      "card_type": "business",
-      "tier": "mid",
       "priority_score": 75,
       "priority_reason": "business capital one — biz-specific credits likely"
     },

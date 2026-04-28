@@ -1,23 +1,13 @@
 {
   "card_id": "barclays-jetblue-biz",
-  "researched_at": "2026-04-26",
+  "researched_at": "2026-04-27",
   "card_name_verified": "JetBlue Business Card (Barclays, $99 AF)",
-  "recurring_credits": [
-    {
-      "name": "JetBlue Vacations Statement Credit",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "$100 statement credit after purchasing a JetBlue Vacations package of $100+. One credit per calendar year.",
-      "reset_type": "calendar_year",
-      "source_url": "https://cards.barclaycardus.com/banking/cards/jetblue-business-card/",
-      "source_excerpt": "Receive a $100 statement credit after you purchase a JetBlue Vacations package for $100 or more with your JetBlue Business Card, with a limit of one statement credit per calendar year"
-    }
-  ],
-  "_no_credits_found": false,
-  "_needs_review": true,
-  "_review_reason": "$100 JetBlue Vacations credit requires actually purchasing a Vacations package of $100+ — borderline conditional but it's a fixed USD recurring annual credit. Operator decision on whether such 'use-it-or-lose-it' credits qualify under OpenCard convention.",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Per Convention C: 'Conditional credits (after $X spend) → EXCLUDE'. $100 JetBlue Vacations credit requires purchasing a Vacations package of $100+ — conditional on specific spend category, not unconditional recurring credit. Excluded.",
   "_excluded": [
+    "$100 JetBlue Vacations credit (conditional on package purchase $100+)",
     "5,000 anniversary TrueBlue points (points, not USD)",
     "Free first checked bag for 4 passengers (qualitative)",
     "50% inflight savings (% off, not credit)"

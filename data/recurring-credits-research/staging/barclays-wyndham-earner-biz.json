@@ -1,0 +1,22 @@
+{
+  "card_id": "barclays-wyndham-earner-biz",
+  "researched_at": "2026-04-27",
+  "card_name_verified": "Wyndham Rewards Earner® Business Card (Barclays, $95 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "All recurring benefits points-denominated or qualitative — no USD statement credits. Specifically: 15,000 anniversary bonus points (points), 45k SUB (one-time), automatic Wyndham Diamond status (qualitative), 10% fewer points for go-free awards (% discount, not credit), no FX fees (qualitative). Note: 15k anniversary points is points-based not FNA-cert, so doesn't qualify for the FNA-include rule.",
+  "_excluded": [
+    "15k anniversary bonus points (points-denominated)",
+    "Diamond status (qualitative)",
+    "10% go-free discount (% discount, not USD credit)",
+    "5x Wyndham earning rate"
+  ],
+  "sources_consulted": [
+    "https://cards.barclaycardus.com/banking/cards/wyndham-rewards-earner-business-card/",
+    "https://www.wyndhamrewardscreditcard.com/earner-business-card/",
+    "https://upgradedpoints.com/credit-cards/reviews/wyndham-rewards-earner-business-card/",
+    "https://www.nerdwallet.com/credit-cards/learn/wyndham-rewards-earner-business",
+    "https://pointsnav.com/details/wyndham-rewards-earner-biz"
+  ]
+}
