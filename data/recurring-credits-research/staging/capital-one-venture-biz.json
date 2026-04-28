@@ -1,0 +1,51 @@
+{
+  "card_id": "capital-one-venture-biz",
+  "researched_at": "2026-04-27",
+  "card_name_verified": "Capital One Venture Business (formerly Spark Miles for Business, $95 AF)",
+  "card_status_alert": "REBRANDED 2026-04-14: Spark Miles → Venture Business. Two NEW recurring credits added per Capital One press release + Frequent Miler reporting. Existing $100 Global Entry credit retained (every-4-years cadence). Catalog should rename card_id to 'capital-one-venture-biz' (or similar).",
+  "recurring_credits": [
+    {
+      "name": "Capital One Business Travel Credit",
+      "amount": 50,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$50 annual statement credit on eligible bookings made through Capital One Business Travel portal. Added 2026-04-14 with Venture Business rebrand.",
+      "reset_type": "anniversary",
+      "source_url": "https://www.capitalone.com/about/newsroom/venture-business-rebrand/",
+      "source_excerpt": "$50 annual Capital One Business Travel credit for cardholders, applicable to eligible bookings made through Capital One Business Travel"
+    },
+    {
+      "name": "Advertising or Software Statement Credit",
+      "amount": 50,
+      "frequency": "annual",
+      "category": "digital",
+      "description": "Up to $50 annual statement credit on eligible advertising or software purchases. Added 2026-04-14 with Venture Business rebrand.",
+      "reset_type": "anniversary",
+      "source_url": "https://www.capitalone.com/about/newsroom/venture-business-rebrand/",
+      "source_excerpt": "up to $50 annual advertising or software credit, offering statement credits on eligible purchases across key categories that small businesses rely on"
+    },
+    {
+      "name": "Global Entry or TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $100 statement credit for Global Entry or TSA PreCheck application fee, every 4 years.",
+      "reset_type": "every_4_years",
+      "source_url": "https://www.capitalone.com/about/newsroom/venture-business-rebrand/",
+      "source_excerpt": "Existing Global Entry/TSA PreCheck credit retained from Spark Miles era"
+    }
+  ],
+  "_overwrite_existing": true,
+  "_overwrite_reason": "Existing card data has $100 Global Entry as 'frequency: annual' which is incorrect (Global Entry fee is paid every 4 years per US Govt). Plus 2 new credits added in 2026 rebrand. Re-write all RC.",
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_review_reason": "Rebrand 2026-04-14: catalog renamed Spark Miles → Venture Business on 2026-04-27. SOURCE CAVEAT: URLs point to Capital One press release + Frequent Miler reporting (not yet a card-specific benefits page). Verify exact terms/cadence on capitalone.com/small-business/credit-cards/venture-business once published. Existing $100 Global Entry RC corrected from frequency='annual' to 'every_4_years' (per Convention C and US Govt fee cadence).",
+  "sources_consulted": [
+    "https://www.capitalone.com/about/newsroom/venture-business-rebrand/",
+    "https://frequentmiler.com/capital-one-spark-miles-rebranded-to-venture-business-up-to-150k-welcome-offer-up-to-100-in-new-credits/",
+    "https://www.cnbc.com/select/capital-one-spark-miles-rebrands-as-venture-business/",
+    "https://onemileatatime.com/news/capital-one-venture-business-replaces-spark-miles/",
+    "https://www.nerdwallet.com/business/credit-cards/reviews/venture-business",
+    "https://www.doctorofcredit.com/capital-one-rebrands-spark-miles-spark-miles-select-to-venture-business-and-ventureone-business/"
+  ]
+}

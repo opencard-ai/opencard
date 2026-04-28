@@ -94,7 +94,7 @@
       "notes": "200K offer details and offer history confirmation"
     }
   ],
-  "last_updated": "2026-04-27T04:44:39.774Z",
+  "last_updated": "2026-04-28T05:46:11.440Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -122,16 +122,6 @@
       "category": "dining",
       "description": "$25/month ($300/year) at restaurants worldwide.",
       "reset_type": "monthly",
-      "source": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-brilliant/"
-    },
-    {
-      "name": "Free Night Award (Marriott 85k)",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "hotel",
-      "description": "1 Free Night Award (85,000 Marriott Bonvoy points cap) each cardmember anniversary, automatic — no spend requirement.",
-      "reset_type": "anniversary",
-      "is_free_night": true,
       "source": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-brilliant/"
     }
   ],

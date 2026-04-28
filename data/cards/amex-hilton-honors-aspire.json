@@ -92,7 +92,7 @@
       "url": "https://www.hilton.com/en/hilton-honors/credit-cards/"
     }
   ],
-  "last_updated": "2026-04-27T04:44:39.774Z",
+  "last_updated": "2026-04-28T05:46:11.440Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -134,16 +134,6 @@
       "category": "travel",
       "description": "Up to $209/year statement credit for CLEAR Plus membership (auto-renewal required).",
       "reset_type": "calendar_year",
-      "source": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/"
-    },
-    {
-      "name": "Free Night Reward (Hilton)",
-      "amount": 0,
-      "frequency": "annual",
-      "category": "hotel",
-      "description": "1 Hilton Free Night Reward each cardmember anniversary, automatic — no spend requirement. Usable at most Hilton portfolio properties.",
-      "reset_type": "anniversary",
-      "is_free_night": true,
       "source": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/"
     }
   ],

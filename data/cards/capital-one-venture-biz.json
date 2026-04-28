@@ -1,6 +1,6 @@
 {
-  "card_id": "capital-one-spark-miles",
-  "name": "Capital One Spark Miles for Business",
+  "card_id": "capital-one-venture-biz",
+  "name": "Capital One Venture Business",
   "issuer": "Capital One",
   "network": "visa",
   "annual_fee": 95,
@@ -49,7 +49,7 @@
       "url": "https://onemileatatime.com/reviews/credit-cards/capital-one/capital-one-spark-miles-business-card/"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.962Z",
+  "last_updated": "2026-04-28T05:46:11.440Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -57,10 +57,31 @@
   },
   "recurring_credits": [
     {
+      "name": "Capital One Business Travel Credit",
+      "amount": 50,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$50 annual statement credit on eligible bookings made through Capital One Business Travel portal. Added 2026-04-14 with Venture Business rebrand.",
+      "reset_type": "anniversary",
+      "source": "https://www.capitalone.com/about/newsroom/venture-business-rebrand/"
+    },
+    {
+      "name": "Advertising or Software Statement Credit",
+      "amount": 50,
+      "frequency": "annual",
+      "category": "digital",
+      "description": "Up to $50 annual statement credit on eligible advertising or software purchases. Added 2026-04-14 with Venture Business rebrand.",
+      "reset_type": "anniversary",
+      "source": "https://www.capitalone.com/about/newsroom/venture-business-rebrand/"
+    },
+    {
       "name": "Global Entry or TSA PreCheck Credit",
       "amount": 100,
-      "frequency": "annual",
-      "category": "other"
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $100 statement credit for Global Entry or TSA PreCheck application fee, every 4 years.",
+      "reset_type": "every_4_years",
+      "source": "https://www.capitalone.com/about/newsroom/venture-business-rebrand/"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.962Z",

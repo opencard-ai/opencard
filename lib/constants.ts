@@ -35,7 +35,7 @@ export const CARD_OPTIONS: CardOption[] = [
   { card_id: "capital-one-quicksilver", name: "Capital One Quicksilver Cash Rewards Credit Card", issuer: "Capital One", annual_fee: 0 },
   { card_id: "capital-one-savor", name: "Capital One Savor Rewards Credit Card", issuer: "Capital One", annual_fee: 0 },
   { card_id: "capital-one-savorone", name: "Capital One SavorOne Cash Rewards Credit Card", issuer: "Capital One", annual_fee: 39 },
-  { card_id: "capital-one-spark-miles", name: "Capital One Spark Miles for Business", issuer: "Capital One", annual_fee: 95 },
+  { card_id: "capital-one-venture-biz", name: "Capital One Venture Business", issuer: "Capital One", annual_fee: 95 },
   { card_id: "capital-one-venture", name: "Capital One Venture Rewards Credit Card", issuer: "Capital One", annual_fee: 95 },
   { card_id: "capital-one-venture-x", name: "Capital One Venture X Rewards Credit Card", issuer: "Capital One", annual_fee: 395 },
   { card_id: "chase-disney-inspire", name: "Disney Inspire Visa Card", issuer: "Chase", annual_fee: 149 },
