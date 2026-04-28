@@ -85,24 +85,10 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "name": "Daily Cash",
-      "amount": null,
-      "frequency": "annual",
-      "category": "other",
-      "description": "3% Daily Cash on Apple services, 2% everywhere Apple Pay, 1% else.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Apple Card Family",
-      "amount": null,
-      "frequency": "annual",
-      "category": "other",
-      "description": "Family sharing with Apple Card Family.",
-      "reset_type": "cardmember_year"
-    }
-  ],
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_no_credits_note": "Apple Card ($0 AF) — no fixed-USD recurring credits. Daily Cash is an earning rate (1-3%, not a credit). Booking.com 2% travel credits = earning rate. Uber One 6-mo trial = one-time promo. Hertz benefits = qualitative. Previous entries 'Daily Cash' and 'Apple Card Family' were category-confused (earning rate / family feature, not recurring credits). Removed 2026-04-27.",
+  "_card_status_alert": "Goldman Sachs is transitioning Apple Card to Chase ($2.2B deal, ~24-month transition). Operator may want to update issuer field after transition completes.",
   "last_verified": "2026-04-16T13:41:49.950Z",
   "next_review": "2026-07-15T13:41:49.950000+00:00",
   "late_fee": 0,

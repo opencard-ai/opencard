@@ -58,7 +58,11 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-24",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_no_credits_note": "Amex EveryDay ($0 AF) — entry-level no-AF card with no recurring USD credits. Value is earning rates (2x supermarkets up to $6k, 1x other) + 20% extra points after 20+ tx/cycle (earning enhancement). Verified 2026-04-27.",
+  "last_updated": "2026-04-27T20:00:00.000Z",
+  "last_verified": "2026-04-27T20:00:00.000Z",
   "next_review": "2026-07-15T13:41:49.946000+00:00",
   "cash_advance_fee_flat": 5,
   "cash_advance_fee_pct": 3.0,

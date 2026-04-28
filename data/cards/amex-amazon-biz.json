@@ -63,7 +63,11 @@
       "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/amazon-business/"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.937Z",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_no_credits_note": "Amazon Business Amex non-Prime ($0 AF) — no recurring USD credits. Value is 3% Amazon (up to $150k/yr) + 2% gas/dining/wireless + 1% other. Plus baggage insurance (not credit). Verified 2026-04-27.",
+  "_card_status_alert": "Card transitioning from Amex to U.S. Bank Aug 14 2026. New issuer card may have different benefits (still 3% Amazon for non-Prime).",
+  "last_updated": "2026-04-27T20:00:00.000Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

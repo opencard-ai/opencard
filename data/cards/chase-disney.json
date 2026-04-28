@@ -77,14 +77,9 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "name": "Streaming Credit",
-      "amount": 60,
-      "frequency": "annual",
-      "category": "other"
-    }
-  ],
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_no_credits_note": "Chase Disney Visa ($0 AF, basic) — no recurring USD credits. Earning rates only (1% baseline + 1-2% Disney). 10% off at Disney parks/stores = % discount, not credit. Previous '$60 Streaming Credit' entry was unverified — Chase Disney basic does not have a streaming statement credit (Premier $49 has DashPass which is 1-yr promo). Removed 2026-04-27.",
   "last_verified": "2026-04-16T13:41:49.981Z",
   "next_review": "2026-07-15T13:41:49.981000+00:00"
 }
