@@ -1,0 +1,16 @@
+{
+  "card_id": "amex-amazon-biz",
+  "researched_at": "2026-04-27",
+  "card_name_verified": "Amazon Business American Express Card",
+  "card_status_alert": "Issuer transition: Amex co-brand ending Aug 14, 2026 — replacement card will be issued by U.S. Bank.",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Non-Prime version: 3% Amazon (vs Prime's 5%). No documented unconditional $ statement credits. Same Amex Venue caveat as Prime version — not card-specific. Other features qualitative: Amex Offers, basic insurance.",
+  "sources_consulted": [
+    "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/amazon-business-card/",
+    "https://money.usnews.com/credit-cards/american-express/amazon-business-american-express-card",
+    "https://financebuzz.com/amazon-business-american-express-card",
+    "https://wallethub.com/d/amazon-business-credit-card-3213c"
+  ]
+}

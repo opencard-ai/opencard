@@ -1,0 +1,17 @@
+{
+  "card_id": "amex-amazon-biz-prime",
+  "researched_at": "2026-04-27",
+  "card_name_verified": "Amazon Business Prime American Express Card",
+  "card_status_alert": "Issuer transition: Amex co-brand ending Aug 14, 2026 — replacement card will be issued by U.S. Bank starting spring 2026.",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "No documented unconditional $ statement credits. Card is rewards-focused (5% Amazon/AWS/Whole Foods on first $120k). Amex Venue Collection 10% F&B is referenced as Amex-member-wide perk but NOT listed on card-specific benefits page (unlike Plum which had it explicitly). Other features qualitative: Amex Offers, baggage insurance, car rental insurance, Global Assist Hotline.",
+  "sources_consulted": [
+    "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/amazon-business-prime-card/",
+    "https://www.nerdwallet.com/business/credit-cards/reviews/amazon-business-prime-amex",
+    "https://money.usnews.com/credit-cards/american-express/amazon-business-prime-american-express-card",
+    "https://financebuzz.com/amazon-business-prime-american-express-card-review",
+    "https://www.americanexpress.com/us/customer-service/faq.amazon-program-update.html"
+  ]
+}
