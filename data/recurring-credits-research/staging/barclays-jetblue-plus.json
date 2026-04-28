@@ -4,8 +4,8 @@
   "card_name_verified": "JetBlue Plus Card (Barclays, $99 AF)",
   "recurring_credits": [],
   "_no_credits_found": true,
-  "_needs_review": true,
-  "_review_reason": "No fixed USD recurring credit. 5,000 anniversary TrueBlue points (~$70 value but POINTS not USD, excluded). Free first checked bag (qualitative). 50% inflight savings (% off, not credit). Companion pass benefit appears to be on Premier card, not Plus.",
+  "_needs_review": false,
+  "_review_reason": "Per Convention C: points/qualitative/% off all excluded. No fixed USD recurring credit. 5,000 anniversary TrueBlue points (points), free first checked bag (qualitative), 50% inflight savings (% off).",
   "_excluded": [
     "5,000 anniversary TrueBlue points (points, not USD; ~$70 value)",
     "Free first checked bag (qualitative)",

@@ -4,8 +4,8 @@
   "card_name_verified": "Citi® / AAdvantage® Platinum Select® World Elite Mastercard®",
   "recurring_credits": [],
   "_no_credits_found": true,
-  "_needs_review": true,
-  "_review_reason": "Card's value is conditional / qualitative: free first checked bag (qualitative, depends on flying AA), $125 flight discount AFTER $20k spend (conditional, excluded), 25% inflight savings (discount on purchases, not a credit), Turo $30 credit only April-Oct 2026 (limited-time, excluded), preferred boarding (qualitative). No fixed annual recurring USD credits. Note: card transitioning from Barclays Aviator family per April 2026 changes — verify card_id reflects current product correctly.",
+  "_needs_review": false,
+  "_review_reason": "Per Convention C: all benefits conditional/qualitative/limited-time → excluded. $125 flight discount after $20k spend (conditional), Turo $30 credit Apr-Oct 2026 (limited-time promotional), 25% inflight savings (% discount), free checked bag + preferred boarding (qualitative). No fixed USD credits.",
   "_excluded": [
     "Free first checked bag (qualitative)",
     "$125 flight discount after $20k spend (conditional)",
