@@ -1,0 +1,15 @@
+{
+  "card_id": "marriott-bonvoy-bountiful",
+  "researched_at": "2026-04-27",
+  "card_name_verified": "Marriott Bonvoy Bountiful® Credit Card (Chase)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Conditional FNA (after $15k spend) classified as 'benefit' not 'recurring credit' per 2026-04-27 schema decision — EXCLUDED. Other benefits qualitative: 15 Elite Night Credits, Gold Elite Status, 25% Elite Bonus Points, 2pm late checkout, room upgrade. No unconditional $ statement credits.",
+  "sources_consulted": [
+    "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/bountiful",
+    "https://marriott.chase.com/bountiful/benefits",
+    "https://thepointsguy.com/credit-cards/marriott-bonvoy-bountiful-worth-annual-fee/",
+    "https://financebuzz.com/marriott-bonvoy-bountiful-review"
+  ]
+}

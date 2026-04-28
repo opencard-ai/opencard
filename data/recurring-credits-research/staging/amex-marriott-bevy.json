@@ -1,0 +1,15 @@
+{
+  "card_id": "amex-marriott-bevy",
+  "researched_at": "2026-04-27",
+  "card_name_verified": "Marriott Bonvoy Bevy® American Express® Card",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Conditional FNA (Free Night Award after $15k calendar-year spend) classified as 'benefit' not 'recurring credit' per 2026-04-27 schema decision — EXCLUDED. Other benefits all qualitative: 15 Elite Night Credits (status), Gold Elite Status, 1k bonus pts/stay (earning rate). No unconditional $ statement credits.",
+  "sources_consulted": [
+    "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-bevy/",
+    "https://global.americanexpress.com/card-benefits/detail/one-free-night-award/marriott-bonvoy-bevy",
+    "https://upgradedpoints.com/credit-cards/reviews/marriott-bonvoy-bevy-card/",
+    "https://money.usnews.com/credit-cards/american-express/marriott-bonvoy-bevy-american-express-card"
+  ]
+}
