@@ -44,7 +44,27 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:50.011Z",
+  "last_updated": "2026-04-28T14:05:15.886Z",
   "last_verified": "2026-04-16T13:41:50.011Z",
-  "next_review": "2026-07-15T13:41:50.011000+00:00"
+  "next_review": "2026-07-15T13:41:50.011000+00:00",
+  "recurring_credits": [
+    {
+      "name": "OneKeyCash Anniversary Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$100 in OneKeyCash each cardholder anniversary year. OneKeyCash redeems 1:1 USD on Expedia, Hotels.com, and Vrbo bookings. Unconditional anniversary bestowal.",
+      "reset_type": "anniversary",
+      "source": "https://www.expedia.com/one-key-cards"
+    },
+    {
+      "name": "Trusted Traveler Credit (Global Entry/TSA PreCheck)",
+      "amount": 120,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $120 statement credit for Global Entry or TSA PreCheck application fee, once every four years.",
+      "reset_type": "every_4_years",
+      "source": "https://money.usnews.com/credit-cards/wells-fargo/one-key-plus-card"
+    }
+  ]
 }

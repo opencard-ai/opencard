@@ -1,0 +1,21 @@
+{
+  "card_id": "cathay-world-elite",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Cathay World Elite Mastercard® (Synchrony, $99 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Per Convention C: all benefits points/% off/promotional. 10% off Asia Miles redemptions/transfers (% off), 15% off promo code through Dec 2026 (limited-time, exclude per 1-yr promotional rule), boarding line as Premium Economy (qualitative), no FX fees (qualitative). Earnings 3x Cathay/HK Express, 2x dining. No USD statement credits.",
+  "_excluded": [
+    "10% off Asia Miles redemptions (% off)",
+    "15% promo code Dec 2026 (limited-time)",
+    "Premium Economy boarding line (qualitative)",
+    "Earning rates"
+  ],
+  "sources_consulted": [
+    "https://pay.cathaypacific.com/en_US/offers/uscreditcard.html",
+    "https://news.cathaypacific.com/cathay-synchrony-and-mastercard-launch-cathay-world-elite-mastercard-for-u-s-travelers-hk0ucm",
+    "https://upgradedpoints.com/credit-cards/reviews/cathay-world-elite-mastercard-card-review/",
+    "https://www.nerdwallet.com/credit-cards/learn/cathay-pacific-credit-card"
+  ]
+}

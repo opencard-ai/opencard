@@ -50,7 +50,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-26T04:02:55.594292Z",
+  "last_updated": "2026-04-28T14:05:15.886Z",
   "last_verified": "2026-04-16T13:41:49.986Z",
   "next_review": "2026-07-15T13:41:49.986000+00:00",
   "_revert_history": [
@@ -61,6 +61,17 @@
       "reason": "HSBC Premier $95",
       "reverted_at": "2026-04-26T04:02:55.594292Z",
       "reverted_by": "cfpb_pipeline_corruption_revert_2026-04-25"
+    }
+  ],
+  "recurring_credits": [
+    {
+      "name": "Streaming Subscription Credit",
+      "amount": 5,
+      "frequency": "monthly",
+      "category": "digital",
+      "description": "Up to $5/month statement credit on subscription payments under MCC 4899 (Cable, Satellite, Other Pay TV / Radio Services), capped at $60 per calendar year.",
+      "reset_type": "monthly",
+      "source": "https://www.us.hsbc.com/credit-cards/products/premier/"
     }
   ]
 }

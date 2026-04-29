@@ -1,0 +1,42 @@
+{
+  "card_id": "wells-fargo-one-key-plus",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "One Key+™ Card (Wells Fargo / Expedia Group, $99 AF)",
+  "recurring_credits": [
+    {
+      "name": "OneKeyCash Anniversary Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$100 in OneKeyCash each cardholder anniversary year. OneKeyCash redeems 1:1 USD on Expedia, Hotels.com, and Vrbo bookings. Unconditional anniversary bestowal.",
+      "reset_type": "anniversary",
+      "source_url": "https://www.expedia.com/one-key-cards",
+      "source_excerpt": "$100 in OneKeyCash each year on your cardholder anniversary"
+    },
+    {
+      "name": "Trusted Traveler Credit (Global Entry/TSA PreCheck)",
+      "amount": 120,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $120 statement credit for Global Entry or TSA PreCheck application fee, once every four years.",
+      "reset_type": "every_4_years",
+      "source_url": "https://money.usnews.com/credit-cards/wells-fargo/one-key-plus-card",
+      "source_excerpt": "earn a one statement credit up to $120 for a Trusted Traveler Program, such as Global Entry or TSA PreCheck (once every four years)"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_review_reason": "Kacey confirmed 2026-04-28: OneKeyCash $100 anniversary classified as USD recurring credit (1:1 fixed conversion to Expedia/Hotels.com/Vrbo, unconditional, platform-locked but USD-denominated — analogous to Hilton Aspire Resort Credit and Delta Stays credit treatment).",
+  "_excluded": [
+    "$350 OneKeyCash SUB (one-time)",
+    "20% hotel savings via Gold status (qualitative)",
+    "Price drop protection (qualitative)",
+    "Earning rates"
+  ],
+  "sources_consulted": [
+    "https://www.expedia.com/one-key-cards",
+    "https://money.usnews.com/credit-cards/wells-fargo/one-key-plus-card",
+    "https://cardcritics.com/credit-cards/card-issuer/wells-fargo/wells-fargo-onekey-plus-review/",
+    "https://www.nerdwallet.com/travel/learn/is-the-one-key-card-worth-its-annual-fee"
+  ]
+}
