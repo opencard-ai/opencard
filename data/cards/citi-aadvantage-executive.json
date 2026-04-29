@@ -86,7 +86,7 @@
       "notes": "Nov 2025 review"
     }
   ],
-  "last_updated": "2026-04-29T13:24:32.379Z",
+  "last_updated": "2026-04-29T13:29:52.664Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -113,6 +113,15 @@
       "frequency": "annual",
       "category": "travel",
       "description": "$25 annual inflight WiFi credit"
+    },
+    {
+      "name": "Avis / Budget Car Rental Credit",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $120 in statement credits on eligible prepaid Avis and Budget car rentals booked directly on avis.com or budget.com.",
+      "reset_type": "calendar_year",
+      "source": "https://creditcards.aa.com/credit-cards/citi-executive-card-american-airlines-direct/"
     },
     {
       "name": "Global Entry / TSA PreCheck Credit",
