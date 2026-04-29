@@ -71,15 +71,15 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-29T05:25:54.022Z",
+  "last_updated": "2026-04-29T06:59:27.389Z",
   "recurring_credits": [
     {
       "name": "Global Entry Credit",
       "amount": 100,
-      "frequency": "annual",
+      "frequency": "every_4_years",
       "category": "travel",
       "description": "Up to $100 every 4 years for Global Entry.",
-      "reset_type": "cardmember_year"
+      "reset_type": "every_4_years"
     },
     {
       "name": "DoorDash Non-Restaurant Credit",

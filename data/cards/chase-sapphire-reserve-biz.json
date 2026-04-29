@@ -114,7 +114,7 @@
     }
   ],
   "notes": "Business version of Sapphire Reserve. Same $795 AF and credits. 150,000 point welcome bonus (higher than personal) makes it very attractive. Employee cards are free. Can combine points with personal Sapphire Reserve for larger balances. Key for business travelers who want same premium benefits as personal Reserve.",
-  "last_updated": "2026-04-16T13:41:49.969Z",
+  "last_updated": "2026-04-29T06:59:27.387Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -156,10 +156,10 @@
     {
       "name": "Global Entry Credit",
       "amount": 100,
-      "frequency": "annual",
+      "frequency": "every_4_years",
       "category": "travel",
       "description": "Up to $100 every 4 years for Global Entry or TSA PreCheck.",
-      "reset_type": "cardmember_year"
+      "reset_type": "every_4_years"
     },
     {
       "name": "Travel Credit",

@@ -80,7 +80,7 @@
       "notes": "PointsNav review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.957Z",
+  "last_updated": "2026-04-29T06:59:27.379Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -112,14 +112,6 @@
       "reset_type": "calendar_year"
     },
     {
-      "name": "Global Entry/PreCheck Credit",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Up to $100 every 4 years for Global Entry or TSA PreCheck.",
-      "reset_type": "calendar_year"
-    },
-    {
       "name": "Travel Credit",
       "amount": 300,
       "frequency": "annual",
@@ -146,10 +138,10 @@
     {
       "name": "TSA PreCheck/Global Entry Credit",
       "amount": 120,
-      "frequency": "annual",
+      "frequency": "every_4_years",
       "category": "travel",
       "description": "Up to $120 reimbursement for TSA PreCheck or Global Entry",
-      "reset_type": "calendar_year"
+      "reset_type": "every_4_years"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.957Z",

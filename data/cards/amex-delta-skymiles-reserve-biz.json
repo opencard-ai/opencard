@@ -71,7 +71,7 @@
       "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.980Z",
+  "last_updated": "2026-04-29T06:59:27.370Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -81,8 +81,9 @@
     {
       "name": "Global Entry/TSA PreCheck Credit",
       "amount": 120,
-      "frequency": "annual",
-      "category": "other"
+      "frequency": "every_4_years",
+      "category": "other",
+      "reset_type": "every_4_years"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.980Z",

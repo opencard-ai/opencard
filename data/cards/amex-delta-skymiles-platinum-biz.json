@@ -85,7 +85,7 @@
       "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.979Z",
+  "last_updated": "2026-04-29T06:59:27.369Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -95,10 +95,10 @@
     {
       "name": "Global Entry Credit",
       "amount": 100,
-      "frequency": "annual",
+      "frequency": "every_4_years",
       "category": "travel",
       "description": "Up to $100 every 4 years for Global Entry.",
-      "reset_type": "cardmember_year"
+      "reset_type": "every_4_years"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.979Z",
