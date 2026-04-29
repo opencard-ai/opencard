@@ -86,7 +86,7 @@
       "notes": "Nov 2025 review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.975Z",
+  "last_updated": "2026-04-29T13:24:32.379Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -113,6 +113,14 @@
       "frequency": "annual",
       "category": "travel",
       "description": "$25 annual inflight WiFi credit"
+    },
+    {
+      "name": "Global Entry / TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $100 statement credit for Global Entry or TSA PreCheck application fee, every 4 years.",
+      "reset_type": "every_4_years"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.975Z",
