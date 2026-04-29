@@ -3,7 +3,7 @@
   "name": "American Express Business Gold Card",
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 895,
+  "annual_fee": 375,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
@@ -119,7 +119,7 @@
       "notes": "Amex official card page with earning categories and statement credits"
     }
   ],
-  "last_updated": "2026-04-27T04:49:09.116Z",
+  "last_updated": "2026-04-29T13:20:57.436Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
