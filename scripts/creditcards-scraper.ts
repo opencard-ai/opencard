@@ -80,8 +80,7 @@ const URL_OVERRIDES: Record<string, string> = {
   'discover-it-cash-back': 'discover/discover-it-cash-back',
   'discover-it-student-cash-back': 'discover/discover-it-student-cash-back',
   // Capital One
-  'capital-one-savor': 'capital-one/savor',
-  'capital-one-savor-one': 'capital-one/savor-one',
+  'capital-one-savorone': 'capital-one/savor-one',
   'capital-one-venture-x': 'capital-one/venture-x',
   'capital-one-venture': 'capital-one/venture',
   // Citi
