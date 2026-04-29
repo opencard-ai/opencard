@@ -64,15 +64,15 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.973Z",
+  "last_updated": "2026-04-29T06:59:27.389Z",
   "recurring_credits": [
     {
       "name": "Global Entry Credit",
       "amount": 100,
-      "frequency": "annual",
+      "frequency": "every_4_years",
       "category": "travel",
       "description": "Up to $100 every 4 years for Global Entry.",
-      "reset_type": "cardmember_year"
+      "reset_type": "every_4_years"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.973Z",

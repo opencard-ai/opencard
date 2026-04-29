@@ -81,7 +81,7 @@
       "url": "https://thepointsguy.com/credit-cards/atmos-rewards-summit-tpg-awards-2026/"
     }
   ],
-  "last_updated": "2026-04-27T04:49:09.116Z",
+  "last_updated": "2026-04-29T06:59:27.378Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -107,10 +107,10 @@
     {
       "name": "Global Entry/TSA PreCheck Credit",
       "amount": 120,
-      "frequency": "annual",
+      "frequency": "every_4_years",
       "category": "travel",
       "description": "Up to $120 statement credit for Global Entry or TSA PreCheck",
-      "reset_type": "cardmember_year"
+      "reset_type": "every_4_years"
     },
     {
       "name": "Inflight Purchase Rebate",

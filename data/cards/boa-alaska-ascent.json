@@ -79,7 +79,7 @@
       "url": "https://www.uscreditcardguide.com/boa-alaska-atmos-ascent-credit-card/"
     }
   ],
-  "last_updated": "2026-04-29T06:51:50.980Z",
+  "last_updated": "2026-04-29T06:59:27.378Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [
@@ -110,10 +110,10 @@
     {
       "name": "TSA PreCheck/Global Entry Credit",
       "amount": 120,
-      "frequency": "annual",
+      "frequency": "every_4_years",
       "category": "travel",
       "description": "Up to $120 statement credit for TSA PreCheck or Global Entry",
-      "reset_type": "cardmember_year"
+      "reset_type": "every_4_years"
     }
   ],
   "last_scraped": "2026-04-24T23:28:00Z",
