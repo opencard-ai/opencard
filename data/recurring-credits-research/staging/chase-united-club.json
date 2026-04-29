@@ -1,8 +1,26 @@
 {
-  "card_id": "chase-disney-premier",
+  "card_id": "chase-united-club",
   "researched_at": "2026-04-28",
-  "card_name_verified": "Disney Premier Visa",
+  "card_name_verified": "United Club℠ Card",
   "recurring_credits": [
+    {
+      "name": "United Travel Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$200/year on United purchases (TravelBank).",
+      "reset_type": "anniversary",
+      "source": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite"
+    },
+    {
+      "name": "Instacart Credit",
+      "amount": 20,
+      "frequency": "monthly",
+      "category": "groceries",
+      "description": "$20/month ($240/year, two $10 credits monthly) on Instacart purchases. Ends 12/31/27.",
+      "reset_type": "monthly",
+      "source": "https://www.instacart.com/p/chase-united"
+    },
     {
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,

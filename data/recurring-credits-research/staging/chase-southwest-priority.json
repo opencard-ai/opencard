@@ -1,7 +1,7 @@
 {
   "card_id": "chase-southwest-priority",
-  "researched_at": "2026-04-26",
-  "card_name_verified": "Southwest® Rapid Rewards® Priority Credit Card (Chase)",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Chase Southwest Priority",
   "recurring_credits": [
     {
       "name": "Southwest Travel Credit",
@@ -10,22 +10,28 @@
       "category": "airline",
       "description": "$75 Southwest travel credit each year, usable on Southwest Airlines purchases.",
       "reset_type": "calendar_year",
-      "source_url": "https://creditcards.chase.com/southwest/priority-credit-card",
-      "source_excerpt": "$75 Southwest travel credit each year"
+      "source": "https://creditcards.chase.com/southwest/priority-credit-card"
+    },
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source_url": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",
+      "source_excerpt": "all Chase Co-Brand credit cards are eligible except the Amazon card, Instacart card, and DoorDash card"
     }
   ],
   "_no_credits_found": false,
   "_needs_review": false,
-  "_review_reason": "Schema rules applied. AF $149 → $229 update is separate catalog issue (not blocking RC). $75 SW travel credit is unconditional fixed annual — promote.",
-  "_excluded": [
-    "7,500 anniversary points (points, not USD)",
-    "4 upgraded boardings/year (qualitative, $30 each but usage-dependent)",
-    "25% inflight drinks/Wi-Fi discount (% off, not credit)",
-    "10,000 Companion Pass qualifying points boost (qualifying status)"
-  ],
+  "_overwrite_existing": true,
+  "_overwrite_reason": "Bulk add of $10/quarterly DoorDash non-restaurant credit per Chase official cobrand-doordash terms (verified 2026-04-28). All Chase co-brand and Freedom-family cards qualify (Amazon, Instacart, DoorDash cards excluded by terms).",
+  "_review_reason": "Appending DoorDash $10/quarterly credit per official Chase cobrand terms.",
   "sources_consulted": [
-    "https://creditcards.chase.com/southwest/priority-credit-card",
-    "https://media.chase.com/news/chase-southwest-introduce-new-card-benefits",
-    "https://www.dailydrop.com/pages/southwest-card-changes"
+    "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",
+    "https://www.chase.com/digital/resources/terms-of-use/freedom-doordash",
+    "https://help.doordash.com/consumers/s/article/Chase-Partnership",
+    "https://upgradedpoints.com/credit-cards/chase-cards-doordash-perks/"
   ]
 }

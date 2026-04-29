@@ -1,8 +1,22 @@
 {
-  "card_id": "chase-disney-premier",
+  "card_id": "chase-ritz-carlton",
   "researched_at": "2026-04-28",
-  "card_name_verified": "Disney Premier Visa",
+  "card_name_verified": "Chase Ritz-Carlton Credit Card",
   "recurring_credits": [
+    {
+      "name": "Travel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "travel"
+    },
+    {
+      "name": "$300 Travel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$300 annual credit automatically applied to travel purchases.",
+      "reset_type": "calendar_year"
+    },
     {
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,

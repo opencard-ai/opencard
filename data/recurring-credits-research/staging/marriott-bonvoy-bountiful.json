@@ -1,15 +1,28 @@
 {
   "card_id": "marriott-bonvoy-bountiful",
-  "researched_at": "2026-04-27",
-  "card_name_verified": "Marriott Bonvoy Bountiful® Credit Card (Chase)",
-  "recurring_credits": [],
-  "_no_credits_found": true,
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Marriott Bonvoy Bountiful® Credit Card",
+  "recurring_credits": [
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source_url": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",
+      "source_excerpt": "all Chase Co-Brand credit cards are eligible except the Amazon card, Instacart card, and DoorDash card"
+    }
+  ],
+  "_no_credits_found": false,
   "_needs_review": false,
-  "_review_reason": "Conditional FNA (after $15k spend) classified as 'benefit' not 'recurring credit' per 2026-04-27 schema decision — EXCLUDED. Other benefits qualitative: 15 Elite Night Credits, Gold Elite Status, 25% Elite Bonus Points, 2pm late checkout, room upgrade. No unconditional $ statement credits.",
+  "_overwrite_existing": true,
+  "_overwrite_reason": "Bulk add of $10/quarterly DoorDash non-restaurant credit per Chase official cobrand-doordash terms (verified 2026-04-28). All Chase co-brand and Freedom-family cards qualify (Amazon, Instacart, DoorDash cards excluded by terms).",
+  "_review_reason": "Appending DoorDash $10/quarterly credit per official Chase cobrand terms.",
   "sources_consulted": [
-    "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/bountiful",
-    "https://marriott.chase.com/bountiful/benefits",
-    "https://thepointsguy.com/credit-cards/marriott-bonvoy-bountiful-worth-annual-fee/",
-    "https://financebuzz.com/marriott-bonvoy-bountiful-review"
+    "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",
+    "https://www.chase.com/digital/resources/terms-of-use/freedom-doordash",
+    "https://help.doordash.com/consumers/s/article/Chase-Partnership",
+    "https://upgradedpoints.com/credit-cards/chase-cards-doordash-perks/"
   ]
 }

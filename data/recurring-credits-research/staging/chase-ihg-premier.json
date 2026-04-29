@@ -1,8 +1,24 @@
 {
-  "card_id": "chase-disney-premier",
+  "card_id": "chase-ihg-premier",
   "researched_at": "2026-04-28",
-  "card_name_verified": "Disney Premier Visa",
+  "card_name_verified": "Chase IHG Premier",
   "recurring_credits": [
+    {
+      "name": "Free Night Award",
+      "amount": 40000,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "Annual Free Night Award valid at IHG hotels up to 40,000 points",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Global Entry/TSA PreCheck",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $100 statement credit for Global Entry or TSA PreCheck application fee",
+      "reset_type": "calendar_year"
+    },
     {
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,

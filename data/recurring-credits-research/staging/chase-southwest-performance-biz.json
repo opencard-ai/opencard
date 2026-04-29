@@ -1,21 +1,28 @@
 {
   "card_id": "chase-southwest-performance-biz",
-  "researched_at": "2026-04-26",
-  "card_name_verified": "Southwest® Rapid Rewards® Performance Business Credit Card (Chase, $299 AF as of July 2025)",
-  "recurring_credits": [],
-  "_no_credits_found": true,
-  "_needs_review": true,
-  "_review_reason": "AF was raised from $199 to $299 in July 2025. Verify OpenCard has current AF. No fixed USD recurring credit found — 9,000 anniversary points (points, excluded), free first checked bag for 8 passengers (qualitative), preferred seating + Group 5 boarding (qualitative), extra-legroom 48hr (qualitative).",
-  "_excluded": [
-    "9,000 anniversary points (points, not USD)",
-    "Free first checked bag (qualitative)",
-    "Preferred seating + Group 5 boarding (qualitative)",
-    "Extra-legroom seat 48hr ahead (qualitative)"
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Southwest Performance Business",
+  "recurring_credits": [
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source_url": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",
+      "source_excerpt": "all Chase Co-Brand credit cards are eligible except the Amazon card, Instacart card, and DoorDash card"
+    }
   ],
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_overwrite_existing": true,
+  "_overwrite_reason": "Bulk add of $10/quarterly DoorDash non-restaurant credit per Chase official cobrand-doordash terms (verified 2026-04-28). All Chase co-brand and Freedom-family cards qualify (Amazon, Instacart, DoorDash cards excluded by terms).",
+  "_review_reason": "Appending DoorDash $10/quarterly credit per official Chase cobrand terms.",
   "sources_consulted": [
-    "https://creditcards.chase.com/southwest/performance-business-credit-card",
-    "https://media.chase.com/news/chase-southwest-introduce-new-card-benefits",
-    "https://www.nerdwallet.com/business/credit-cards/reviews/southwest-rapid-rewards-performance-business",
-    "https://thepointsguy.com/credit-cards/reviews/southwest-performance-business-credit-card-review/"
+    "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",
+    "https://www.chase.com/digital/resources/terms-of-use/freedom-doordash",
+    "https://help.doordash.com/consumers/s/article/Chase-Partnership",
+    "https://upgradedpoints.com/credit-cards/chase-cards-doordash-perks/"
   ]
 }

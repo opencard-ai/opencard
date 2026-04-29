@@ -1,7 +1,7 @@
 {
-  "card_id": "chase-disney-premier",
+  "card_id": "chase-freedom-unlimited",
   "researched_at": "2026-04-28",
-  "card_name_verified": "Disney Premier Visa",
+  "card_name_verified": "Chase Freedom Unlimited®",
   "recurring_credits": [
     {
       "name": "DoorDash Non-Restaurant Credit",
@@ -18,7 +18,7 @@
   "_needs_review": false,
   "_overwrite_existing": true,
   "_overwrite_reason": "Bulk add of $10/quarterly DoorDash non-restaurant credit per Chase official cobrand-doordash terms (verified 2026-04-28). All Chase co-brand and Freedom-family cards qualify (Amazon, Instacart, DoorDash cards excluded by terms).",
-  "_review_reason": "Appending DoorDash $10/quarterly credit per official Chase cobrand terms.",
+  "_review_reason": "Replacing stale/incorrect DoorDash entry with current $10/quarterly per official Chase terms.",
   "sources_consulted": [
     "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",
     "https://www.chase.com/digital/resources/terms-of-use/freedom-doordash",

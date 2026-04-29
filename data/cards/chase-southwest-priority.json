@@ -60,7 +60,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-27T04:30:38.466Z",
+  "last_updated": "2026-04-29T05:25:54.022Z",
   "welcome_bonus": {
     "amount": 60000,
     "type": "points",
@@ -77,8 +77,16 @@
       "frequency": "annual",
       "category": "airline",
       "description": "$75 Southwest travel credit each year, usable on Southwest Airlines purchases.",
-      "reset_type": "calendar_year",
-      "source": "https://creditcards.chase.com/southwest/priority-credit-card"
+      "reset_type": "calendar_year"
+    },
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ]
 }

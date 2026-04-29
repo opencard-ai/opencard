@@ -57,7 +57,7 @@
       "url": "https://www.forbes.com/advisor/credit-cards/reviews/chase-aer-lingus/"
     }
   ],
-  "last_updated": "2026-04-27T04:16:50.948Z",
+  "last_updated": "2026-04-29T05:25:54.022Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -76,5 +76,16 @@
   "next_review": "2026-07-15T13:41:49.933000+00:00",
   "deprecated": true,
   "deprecated_reason": "Niche international airline co-brand. US searchers rarely seek these. Excluded from main listings.",
-  "deprecated_bucket": "D_niche_international"
+  "deprecated_bucket": "D_niche_international",
+  "recurring_credits": [
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
+    }
+  ]
 }

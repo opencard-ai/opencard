@@ -66,17 +66,20 @@
       "notes": "NerdWallet review Mar 2026."
     }
   ],
-  "last_updated": "2026-04-25T16:02:48.752Z",
+  "last_updated": "2026-04-29T05:25:54.022Z",
   "hotel_program": null,
   "application_rules": {
     "rules": []
   },
   "recurring_credits": [
     {
-      "name": "DoorDash Promo",
-      "amount": 40,
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
       "frequency": "quarterly",
-      "category": "dining"
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ],
   "last_scraped": "2026-04-24T17:27:59.994652",

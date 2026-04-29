@@ -1,8 +1,16 @@
 {
-  "card_id": "chase-disney-premier",
+  "card_id": "chase-united-infinite",
   "researched_at": "2026-04-28",
-  "card_name_verified": "Disney Premier Visa",
+  "card_name_verified": "Chase United Infinite",
   "recurring_credits": [
+    {
+      "name": "Global Entry Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $100 every 4 years for Global Entry.",
+      "reset_type": "cardmember_year"
+    },
     {
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,

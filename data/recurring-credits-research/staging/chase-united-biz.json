@@ -1,8 +1,20 @@
 {
-  "card_id": "chase-disney-premier",
+  "card_id": "chase-united-biz",
   "researched_at": "2026-04-28",
-  "card_name_verified": "Disney Premier Visa",
+  "card_name_verified": "United℠ Business Card",
   "recurring_credits": [
+    {
+      "name": "United Travel Credit",
+      "amount": 125,
+      "frequency": "annual",
+      "category": "travel"
+    },
+    {
+      "name": "United Club Passes",
+      "amount": 2,
+      "frequency": "annual",
+      "category": "travel"
+    },
     {
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,

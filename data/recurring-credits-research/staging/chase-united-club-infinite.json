@@ -1,8 +1,26 @@
 {
-  "card_id": "chase-disney-premier",
+  "card_id": "chase-united-club-infinite",
   "researched_at": "2026-04-28",
-  "card_name_verified": "Disney Premier Visa",
+  "card_name_verified": "United Club℠ Visa Infinite Card",
   "recurring_credits": [
+    {
+      "name": "Rideshare Credit",
+      "amount": 150,
+      "frequency": "annual",
+      "category": "other"
+    },
+    {
+      "name": "Instacart Credit",
+      "amount": 75,
+      "frequency": "quarterly",
+      "category": "other"
+    },
+    {
+      "name": "Streaming Credit",
+      "amount": 30,
+      "frequency": "quarterly",
+      "category": "other"
+    },
     {
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,

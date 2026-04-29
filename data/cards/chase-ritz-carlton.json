@@ -99,7 +99,7 @@
   },
   "discontinued": true,
   "discontinued_notes": "Discontinued to new applicants. Existing cardholders may keep the card open. Marriott Bonvoy Boundless is a similar alternative with lower annual fee ($95).",
-  "last_updated": "2026-04-17T19:04:00.000Z",
+  "last_updated": "2026-04-29T05:25:54.022Z",
   "recurring_credits": [
     {
       "name": "Travel Credit",
@@ -114,6 +114,15 @@
       "category": "travel",
       "description": "$300 annual credit automatically applied to travel purchases.",
       "reset_type": "calendar_year"
+    },
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ],
   "last_verified": "2026-04-17T19:04:00.000Z",
