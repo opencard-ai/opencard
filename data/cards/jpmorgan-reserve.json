@@ -105,7 +105,7 @@
     }
   ],
   "notes": "Ultra-exclusive invitation-only card for JPMorgan Private Client customers (typically requires $2M+ at JPMorgan Chase). Replaced the JPM Palladium card. Similar benefits to Sapphire Reserve but more exclusive and higher AF ($995). Benefits exceed Sapphire Reserve slightly. Not publicly available — must be invited by JPMorgan.",
-  "last_updated": "2026-04-29T06:59:27.394Z",
+  "last_updated": "2026-04-29T13:32:09.178Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -113,60 +113,75 @@
   },
   "recurring_credits": [
     {
-      "name": "Annual Travel Credit",
+      "name": "Travel Credit (Chase Travel)",
       "amount": 300,
       "frequency": "annual",
       "category": "travel",
-      "description": "$300 annual credit for travel purchases.",
-      "reset_type": "cardmember_year"
+      "description": "$300 annual travel credit for purchases through Chase Travel.",
+      "reset_type": "anniversary",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
     },
     {
-      "name": "Global Entry Credit",
-      "amount": 100,
-      "frequency": "every_4_years",
-      "category": "travel",
-      "description": "Up to $100 every 4 years for Global Entry.",
-      "reset_type": "every_4_years"
+      "name": "The Edit Hotel Credit",
+      "amount": 250,
+      "frequency": "semi_annual",
+      "category": "hotel",
+      "description": "Up to $250 per half (2 × $250 = $500/year) on prepaid hotels via The Edit by Chase Travel.",
+      "reset_type": "calendar_year",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
     },
     {
-      "name": "Travel Credit",
+      "name": "Exclusive Tables Dining Credit",
+      "amount": 25,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "$25/month ($300/year) at Sapphire Reserve Exclusive Tables restaurants.",
+      "reset_type": "monthly",
+      "source": "https://thepointsguy.com/credit-cards/chase-sapphire-reserve-credits/"
+    },
+    {
+      "name": "StubHub / viagogo Credit",
       "amount": 300,
       "frequency": "annual",
-      "category": "travel",
-      "description": "$300 annual credit on travel purchases",
-      "reset_type": "calendar_year"
+      "category": "entertainment",
+      "description": "$300/year on StubHub or viagogo event ticket purchases.",
+      "reset_type": "calendar_year",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
     },
     {
       "name": "DoorDash Credit",
-      "amount": 15,
-      "frequency": "annual",
+      "amount": 25,
+      "frequency": "monthly",
       "category": "dining",
-      "description": "$15 monthly DoorDash credit ($180/year)",
-      "reset_type": "calendar_year"
+      "description": "$25/month ($300/year) on DoorDash purchases. (Excludes 1-yr DashPass — promotional, not recurring.)",
+      "reset_type": "monthly",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
     },
     {
-      "name": "Instacart Credit",
-      "amount": 15,
-      "frequency": "annual",
-      "category": "groceries",
-      "description": "$15 monthly Instacart credit ($180/year)",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Gopuff Credit",
+      "name": "Lyft Credit",
       "amount": 10,
-      "frequency": "annual",
-      "category": "shopping",
-      "description": "$10 monthly Gopuff credit ($120/year)",
-      "reset_type": "calendar_year"
+      "frequency": "monthly",
+      "category": "ride",
+      "description": "$10/month ($120/year) on Lyft rides.",
+      "reset_type": "monthly",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
     },
     {
       "name": "Peloton Credit",
-      "amount": 30,
-      "frequency": "annual",
+      "amount": 10,
+      "frequency": "monthly",
       "category": "fitness",
-      "description": "Up to $30 back on Peloton App",
-      "reset_type": "calendar_year"
+      "description": "$10/month ($120/year) on Peloton.",
+      "reset_type": "monthly",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
+    },
+    {
+      "name": "Global Entry / TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $100 statement credit for Global Entry or TSA PreCheck application fee, every 4 years.",
+      "reset_type": "every_4_years"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.988Z",
