@@ -44,23 +44,60 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.994Z",
+  "last_updated": "2026-04-29T13:31:27.047Z",
   "recurring_credits": [
     {
-      "name": "3% MATCH",
-      "amount": null,
-      "frequency": "annual",
-      "category": "other",
-      "description": "3% match on IRA contributions.",
-      "reset_type": "calendar_year"
+      "name": "Hotel Booking Credit",
+      "amount": 250,
+      "frequency": "semi_annual",
+      "category": "hotel",
+      "description": "Up to $250/half ($500/year cap) on hotel bookings via Robinhood Travel portal. Luxury hotels eligible for full $250; standard hotels capped at $100. 2-night minimum.",
+      "reset_type": "calendar_half",
+      "source": "https://robinhood.com/us/en/creditcard/platinum/"
     },
     {
-      "name": "0% Foreign Transaction Fee",
-      "amount": null,
+      "name": "Autonomous Ride Credit",
+      "amount": 20,
+      "frequency": "monthly",
+      "category": "ride",
+      "description": "Up to $20/month statement credit for autonomous ride purchases ($30 in December). $250/year total.",
+      "reset_type": "monthly",
+      "source": "https://robinhood.com/us/en/creditcard/platinum/"
+    },
+    {
+      "name": "Dining Credit",
+      "amount": 20,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "Up to $20/month statement credit at 15,000+ participating restaurants ($30 in December). $250/year total.",
+      "reset_type": "monthly",
+      "source": "https://robinhood.com/us/en/creditcard/platinum/"
+    },
+    {
+      "name": "DoorDash Credit",
+      "amount": 20,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "Two $10 DoorDash discounts each month (three $10 in January). Discounts apply to delivery orders $50+. $250/year total.",
+      "reset_type": "monthly",
+      "source": "https://robinhood.com/us/en/creditcard/platinum/"
+    },
+    {
+      "name": "Health Wearables Credit",
+      "amount": 200,
       "frequency": "annual",
-      "category": "other",
-      "description": "No foreign transaction fees.",
-      "reset_type": "cardmember_year"
+      "category": "fitness",
+      "description": "Up to $200/year on eligible health wearables purchases.",
+      "reset_type": "calendar_year",
+      "source": "https://robinhood.com/us/en/creditcard/platinum/"
+    },
+    {
+      "name": "Global Entry / TSA PreCheck Credit",
+      "amount": 120,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $120 statement credit for Global Entry or TSA PreCheck application fee, every 4 years.",
+      "reset_type": "every_4_years"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.994Z",
