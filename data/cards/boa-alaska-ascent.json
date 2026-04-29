@@ -79,7 +79,7 @@
       "url": "https://www.uscreditcardguide.com/boa-alaska-atmos-ascent-credit-card/"
     }
   ],
-  "last_updated": "2026-04-24T23:33:00Z",
+  "last_updated": "2026-04-29T06:51:50.980Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [
@@ -91,14 +91,6 @@
     "notes": null
   },
   "recurring_credits": [
-    {
-      "name": "Companion Fare",
-      "amount": 99,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "$99 Companion Fare (plus taxes and fees from $23) after spending $6,000+ in prior anniversary year",
-      "reset_type": "cardmember_year"
-    },
     {
       "name": "Alaska Lounge+ Membership Discount",
       "amount": 100,
