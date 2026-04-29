@@ -92,7 +92,7 @@
       "notes": "CNBC on Disney Inspire launch: $600 welcome offer, $149 annual fee, $420 in annual perks"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.965Z",
+  "last_updated": "2026-04-29T05:25:54.022Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -110,6 +110,15 @@
       "amount": 100,
       "frequency": "annual",
       "category": "other"
+    },
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.965Z",

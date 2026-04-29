@@ -79,13 +79,23 @@
     }
   ],
   "notes": "Entry-level Southwest card. The 3,000 anniversary points (~$45 value) covers about 45% of the $99 AF. As of 2025, the $75 annual travel credit was removed from the Plus card. Better for occasional Southwest flyers. The $1,000 min spend for welcome bonus is very low.",
-  "last_updated": "2026-04-27T04:49:09.116Z",
+  "last_updated": "2026-04-29T05:25:54.022Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [],
+  "recurring_credits": [
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
+    }
+  ],
   "last_verified": "2026-04-16T13:41:49.995Z",
   "next_review": "2026-07-15T13:41:49.995000+00:00"
 }

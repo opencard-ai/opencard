@@ -112,7 +112,7 @@
     }
   ],
   "notes": "AF increased from $525 to $695 in March 2025. The United Club℠ Card is also referred to as the United Club℠ Infinite Card. Offers over $2,000 in total annual value per Chase (Club membership ~$750 + credits). Competes with Amex Platinum for frequent United travelers. Note: also in 248 list as 'united-club-infinite-card' which appears to be the same product with different naming.",
-  "last_updated": "2026-04-27T04:49:09.116Z",
+  "last_updated": "2026-04-29T05:25:54.022Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -125,8 +125,7 @@
       "frequency": "annual",
       "category": "travel",
       "description": "$200/year on United purchases (TravelBank).",
-      "reset_type": "anniversary",
-      "source": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite"
+      "reset_type": "anniversary"
     },
     {
       "name": "Instacart Credit",
@@ -134,8 +133,16 @@
       "frequency": "monthly",
       "category": "groceries",
       "description": "$20/month ($240/year, two $10 credits monthly) on Instacart purchases. Ends 12/31/27.",
-      "reset_type": "monthly",
-      "source": "https://www.instacart.com/p/chase-united"
+      "reset_type": "monthly"
+    },
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ],
   "_excluded": [

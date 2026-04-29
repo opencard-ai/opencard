@@ -1,8 +1,14 @@
 {
-  "card_id": "chase-disney-premier",
+  "card_id": "chase-ihg-premier-biz",
   "researched_at": "2026-04-28",
-  "card_name_verified": "Disney Premier Visa",
+  "card_name_verified": "IHG One Rewards Premier Business Credit Card",
   "recurring_credits": [
+    {
+      "name": "Anniversary Free Night",
+      "amount": 1,
+      "frequency": "annual",
+      "category": "other"
+    },
     {
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,

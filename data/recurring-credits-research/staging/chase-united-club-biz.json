@@ -1,0 +1,82 @@
+{
+  "card_id": "chase-united-club-biz",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "United Club℠ Business Card",
+  "recurring_credits": [
+    {
+      "name": "Renowned Hotels Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "$200/year on prepaid hotels through Renowned Hotels and Resorts.",
+      "reset_type": "anniversary",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
+    },
+    {
+      "name": "Rideshare Credit",
+      "amount": 150,
+      "frequency": "annual",
+      "category": "ride",
+      "description": "$150/year on rideshare purchases.",
+      "reset_type": "calendar_year",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
+    },
+    {
+      "name": "Avis/Budget Car Rental Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$100/year United travel credit on Avis or Budget car rentals booked through cars.united.com.",
+      "reset_type": "calendar_year",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
+    },
+    {
+      "name": "Instacart Credit",
+      "amount": 20,
+      "frequency": "monthly",
+      "category": "groceries",
+      "description": "$20/month ($240/year) on Instacart purchases.",
+      "reset_type": "monthly",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
+    },
+    {
+      "name": "JSX Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "airline",
+      "description": "$200/year on flights purchased directly through JSX.",
+      "reset_type": "anniversary",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
+    },
+    {
+      "name": "FareLock Credit",
+      "amount": 50,
+      "frequency": "annual",
+      "category": "airline",
+      "description": "$50/year FareLock credit (United fare hold).",
+      "reset_type": "anniversary",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
+    },
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source_url": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",
+      "source_excerpt": "all Chase Co-Brand credit cards are eligible except the Amazon card, Instacart card, and DoorDash card"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_overwrite_existing": true,
+  "_overwrite_reason": "Bulk add of $10/quarterly DoorDash non-restaurant credit per Chase official cobrand-doordash terms (verified 2026-04-28). All Chase co-brand and Freedom-family cards qualify (Amazon, Instacart, DoorDash cards excluded by terms).",
+  "_review_reason": "Appending DoorDash $10/quarterly credit per official Chase cobrand terms.",
+  "sources_consulted": [
+    "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",
+    "https://www.chase.com/digital/resources/terms-of-use/freedom-doordash",
+    "https://help.doordash.com/consumers/s/article/Chase-Partnership",
+    "https://upgradedpoints.com/credit-cards/chase-cards-doordash-perks/"
+  ]
+}

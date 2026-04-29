@@ -97,7 +97,7 @@
     }
   ],
   "notes": "AF increased from $450 to $695 in March 2025. One of the most expensive business cards but offers $925+ in annual partner credits + United Club lounge access (~$750 value) + PQP earning for Premier status. Total annual value exceeds $2,000 per Chase's own estimate.",
-  "last_updated": "2026-04-27T04:49:09.116Z",
+  "last_updated": "2026-04-29T05:25:54.022Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -110,8 +110,7 @@
       "frequency": "annual",
       "category": "hotel",
       "description": "$200/year on prepaid hotels through Renowned Hotels and Resorts.",
-      "reset_type": "anniversary",
-      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
+      "reset_type": "anniversary"
     },
     {
       "name": "Rideshare Credit",
@@ -119,8 +118,7 @@
       "frequency": "annual",
       "category": "ride",
       "description": "$150/year on rideshare purchases.",
-      "reset_type": "calendar_year",
-      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
+      "reset_type": "calendar_year"
     },
     {
       "name": "Avis/Budget Car Rental Credit",
@@ -128,8 +126,7 @@
       "frequency": "annual",
       "category": "travel",
       "description": "$100/year United travel credit on Avis or Budget car rentals booked through cars.united.com.",
-      "reset_type": "calendar_year",
-      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
+      "reset_type": "calendar_year"
     },
     {
       "name": "Instacart Credit",
@@ -137,8 +134,7 @@
       "frequency": "monthly",
       "category": "groceries",
       "description": "$20/month ($240/year) on Instacart purchases.",
-      "reset_type": "monthly",
-      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
+      "reset_type": "monthly"
     },
     {
       "name": "JSX Credit",
@@ -146,8 +142,7 @@
       "frequency": "annual",
       "category": "airline",
       "description": "$200/year on flights purchased directly through JSX.",
-      "reset_type": "anniversary",
-      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
+      "reset_type": "anniversary"
     },
     {
       "name": "FareLock Credit",
@@ -155,8 +150,16 @@
       "frequency": "annual",
       "category": "airline",
       "description": "$50/year FareLock credit (United fare hold).",
-      "reset_type": "anniversary",
-      "source": "https://creditcards.chase.com/business-credit-cards/united/united-club-business"
+      "reset_type": "anniversary"
+    },
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.998Z",

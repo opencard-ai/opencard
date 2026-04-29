@@ -1,7 +1,7 @@
 {
   "card_id": "chase-aeroplan",
-  "researched_at": "2026-04-26",
-  "card_name_verified": "Aeroplan® Credit Card (Chase, $95 AF)",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Chase Aeroplan Card",
   "recurring_credits": [
     {
       "name": "Global Entry / TSA PreCheck Application Credit",
@@ -10,23 +10,28 @@
       "category": "travel",
       "description": "Up to $120 statement credit reimbursing Global Entry / TSA PreCheck application fee. Renews every 4 years.",
       "reset_type": "anniversary",
-      "source_url": "https://creditcards.chase.com/aeroplan/benefits",
-      "source_excerpt": "Statement credit of up to $120 every 4 years as a reimbursement for the application fee charged for trusted traveler programs"
+      "source": "https://creditcards.chase.com/aeroplan/benefits"
+    },
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source_url": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",
+      "source_excerpt": "all Chase Co-Brand credit cards are eligible except the Amazon card, Instacart card, and DoorDash card"
     }
   ],
   "_no_credits_found": false,
   "_needs_review": false,
-  "_review_reason": null,
-  "_excluded": [
-    "Aeroplan 25K status (qualitative)",
-    "Free first checked bag for cardholder + 8 companions (qualitative)",
-    "Pay Yourself Back (redemption mechanic, not a credit)",
-    "Annual Worldwide Companion Pass after $15k spend (conditional)"
-  ],
+  "_overwrite_existing": true,
+  "_overwrite_reason": "Bulk add of $10/quarterly DoorDash non-restaurant credit per Chase official cobrand-doordash terms (verified 2026-04-28). All Chase co-brand and Freedom-family cards qualify (Amazon, Instacart, DoorDash cards excluded by terms).",
+  "_review_reason": "Appending DoorDash $10/quarterly credit per official Chase cobrand terms.",
   "sources_consulted": [
-    "https://creditcards.chase.com/travel-credit-cards/aircanada/aeroplan",
-    "https://creditcards.chase.com/aeroplan/benefits",
-    "https://thepointsguy.com/credit-cards/reviews/chase-aeroplan-world-elite-mastercard-review/",
-    "https://money.usnews.com/credit-cards/chase/aeroplan-credit-card"
+    "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",
+    "https://www.chase.com/digital/resources/terms-of-use/freedom-doordash",
+    "https://help.doordash.com/consumers/s/article/Chase-Partnership",
+    "https://upgradedpoints.com/credit-cards/chase-cards-doordash-perks/"
   ]
 }

@@ -59,7 +59,7 @@
       "url": "https://www.nerdwallet.com/credit-cards/reviews/british-airways-card"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.958Z",
+  "last_updated": "2026-04-29T05:25:54.022Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -75,5 +75,16 @@
     "estimated_value": 900
   },
   "last_verified": "2026-04-16T13:41:49.958Z",
-  "next_review": "2026-07-15T13:41:49.958000+00:00"
+  "next_review": "2026-07-15T13:41:49.958000+00:00",
+  "recurring_credits": [
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
+    }
+  ]
 }

@@ -69,7 +69,7 @@
       "notes": "News report Apr 2026."
     }
   ],
-  "last_updated": "2026-04-27T04:49:09.116Z",
+  "last_updated": "2026-04-29T05:25:54.022Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Silver Elite",
@@ -92,8 +92,7 @@
       "frequency": "semi_annual",
       "category": "airline",
       "description": "$50/half ($100/year) statement credit on $250+ direct airline purchases. 2026-LIMITED — verify before assuming continues into 2027.",
-      "reset_type": "calendar_year",
-      "source": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless"
+      "reset_type": "calendar_year"
     },
     {
       "name": "Free Night Award (Marriott 35k)",
@@ -101,9 +100,16 @@
       "frequency": "annual",
       "category": "hotel",
       "description": "1 Free Night Award (35,000 Marriott Bonvoy points cap) each account anniversary. No assigned USD value.",
-      "reset_type": "anniversary",
-      "is_free_night": true,
-      "source": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless"
+      "reset_type": "anniversary"
+    },
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ],
   "last_scraped": "2026-04-24T17:26:46.246653",

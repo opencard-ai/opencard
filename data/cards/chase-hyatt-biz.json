@@ -108,7 +108,7 @@
     }
   ],
   "notes": "Business version of World of Hyatt. Same $199 AF and anniversary night benefit. Wide range of 3x bonus categories (advertising, gas, dining, shipping, etc.) makes it valuable for businesses. Can hold alongside personal Hyatt card for 2 free nights (one from each). 75K welcome bonus is higher than personal version.",
-  "last_updated": "2026-04-16T13:41:50.012Z",
+  "last_updated": "2026-04-29T05:25:54.022Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -120,6 +120,15 @@
       "amount": 15000,
       "frequency": "annual",
       "category": "other"
+    },
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ],
   "welcome_bonus": {

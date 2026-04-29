@@ -1,15 +1,28 @@
 {
   "card_id": "chase-southwest-premier-biz",
-  "researched_at": "2026-04-27",
-  "card_name_verified": "Southwest® Rapid Rewards® Premier Business Credit Card",
-  "recurring_credits": [],
-  "_no_credits_found": true,
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Southwest Rapid Rewards® Premier Business Credit Card",
+  "recurring_credits": [
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source_url": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",
+      "source_excerpt": "all Chase Co-Brand credit cards are eligible except the Amazon card, Instacart card, and DoorDash card"
+    }
+  ],
+  "_no_credits_found": false,
   "_needs_review": false,
-  "_review_reason": "All recurring benefits are points/percentage denominated, not USD statement credits — excluded per Convention C (amount must be USD value). Specifically: 6,000 anniversary bonus points (points), 10,000 Companion Pass qualifying points/year (points), 15% anniversary promo code (% off), 25% back on inflight purchases (% rebate), 2x gas/restaurants up to $8k (earning rate), Group 5 boarding (qualitative). No $ statement credits documented.",
+  "_overwrite_existing": true,
+  "_overwrite_reason": "Bulk add of $10/quarterly DoorDash non-restaurant credit per Chase official cobrand-doordash terms (verified 2026-04-28). All Chase co-brand and Freedom-family cards qualify (Amazon, Instacart, DoorDash cards excluded by terms).",
+  "_review_reason": "Appending DoorDash $10/quarterly credit per official Chase cobrand terms.",
   "sources_consulted": [
-    "https://creditcards.chase.com/business-credit-cards/southwest/premier-business",
-    "https://money.usnews.com/credit-cards/chase/southwest-rapid-rewards-premier-business-credit-card",
-    "https://thepointsguy.com/credit-cards/southwest-premier-business-worth-annual-fee/",
-    "https://financebuzz.com/southwest-rapid-rewards-premier-business-card-review"
+    "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",
+    "https://www.chase.com/digital/resources/terms-of-use/freedom-doordash",
+    "https://help.doordash.com/consumers/s/article/Chase-Partnership",
+    "https://upgradedpoints.com/credit-cards/chase-cards-doordash-perks/"
   ]
 }

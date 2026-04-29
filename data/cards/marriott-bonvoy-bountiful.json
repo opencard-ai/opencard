@@ -93,13 +93,23 @@
     }
   ],
   "notes": "$250 AF card positioned between Boundless and the premium Bonvoy Brilliant. The $300 annual Marriott credit essentially offsets the AF. Gold Elite status + Priority Pass Select makes it valuable. Earning rates are strong (4x on dining/gas/grocery). Best for heavy Marriott guests who want elevated status without the $650 AF on Bonvoy Brilliant.",
-  "last_updated": "2026-04-27T04:49:09.116Z",
+  "last_updated": "2026-04-29T05:25:54.022Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [],
+  "recurring_credits": [
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
+    }
+  ],
   "_no_credits_found": true,
   "_no_credits_note": "Marriott Bonvoy Bountiful ($250 AF) — value is conditional Free Night after $15k spend (excluded), 15 Elite Night Credits + Gold Elite status (qualitative), DashPass 1-yr promotional (excluded). Previous '$25/monthly Marriott Statement Credit' entry was unverified — Chase Bountiful benefits page does not list a monthly Marriott credit. Removed 2026-04-27.",
   "last_scraped": "2026-04-24T17:26:46.246653",

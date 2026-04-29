@@ -85,12 +85,23 @@
     }
   ],
   "notes": "No AF version of IHG card. Lower earning than Premier (17x vs 26x at IHG) and no free night per year, but Gold status (not Platinum) and $0 AF. Good for occasional IHG guests who don't want to pay an annual fee. The 4th night free still applies to award bookings.",
-  "last_updated": "2026-04-16T13:41:49.987Z",
+  "last_updated": "2026-04-29T05:25:54.022Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.987Z",
-  "next_review": "2026-07-15T13:41:49.987000+00:00"
+  "next_review": "2026-07-15T13:41:49.987000+00:00",
+  "recurring_credits": [
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
+    }
+  ]
 }

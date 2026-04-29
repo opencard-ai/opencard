@@ -1,20 +1,28 @@
 {
   "card_id": "ihg-one-rewards-traveler",
   "researched_at": "2026-04-28",
-  "card_name_verified": "IHG One Rewards Traveler Credit Card (Chase, $0 AF)",
-  "recurring_credits": [],
-  "_no_credits_found": true,
-  "_needs_review": false,
-  "_review_reason": "Per Convention C: 4th-night-free benefit is conditional on award booking 3 nights with points (CONDITIONAL → exclude). Silver Elite (qualitative). Earnings 17x IHG/3x other. No USD recurring credits.",
-  "_excluded": [
-    "4th night free on award stays (conditional on 3-night points booking)",
-    "Silver Elite Status (qualitative)",
-    "Earning rates"
+  "card_name_verified": "IHG One Rewards Traveler Credit Card",
+  "recurring_credits": [
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source_url": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",
+      "source_excerpt": "all Chase Co-Brand credit cards are eligible except the Amazon card, Instacart card, and DoorDash card"
+    }
   ],
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_overwrite_existing": true,
+  "_overwrite_reason": "Bulk add of $10/quarterly DoorDash non-restaurant credit per Chase official cobrand-doordash terms (verified 2026-04-28). All Chase co-brand and Freedom-family cards qualify (Amazon, Instacart, DoorDash cards excluded by terms).",
+  "_review_reason": "Appending DoorDash $10/quarterly credit per official Chase cobrand terms.",
   "sources_consulted": [
-    "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/traveler",
-    "https://www.ihg.com/onerewards/content/us/en/creditcard",
-    "https://money.usnews.com/credit-cards/chase/ihg-one-rewards-traveler-credit-card",
-    "https://upgradedpoints.com/news/ihg-traveler-vs-premier-card/"
+    "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",
+    "https://www.chase.com/digital/resources/terms-of-use/freedom-doordash",
+    "https://help.doordash.com/consumers/s/article/Chase-Partnership",
+    "https://upgradedpoints.com/credit-cards/chase-cards-doordash-perks/"
   ]
 }

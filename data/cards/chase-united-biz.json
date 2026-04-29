@@ -107,7 +107,7 @@
     }
   ],
   "notes": "Business version of United card. $150 AF. The $125 travel credit and 2 Club passes help offset the fee. PQP earnings (Premier Qualifying Points) are valuable for United elite status. 7 categories with 2x earning is broad. As of 2025, AF increased from $95 to $150. Best for business travelers who fly United frequently and want to earn toward status.",
-  "last_updated": "2026-04-16T13:41:49.998Z",
+  "last_updated": "2026-04-29T05:25:54.022Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -125,6 +125,15 @@
       "amount": 2,
       "frequency": "annual",
       "category": "travel"
+    },
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.998Z",

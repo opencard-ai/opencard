@@ -79,7 +79,7 @@
       "url": "finance.yahoo.com"
     }
   ],
-  "last_updated": "2026-04-27T04:30:38.466Z",
+  "last_updated": "2026-04-29T05:25:54.022Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -97,8 +97,16 @@
       "frequency": "every_4_years",
       "category": "travel",
       "description": "Reimbursement for Global Entry ($120) or TSA PreCheck ($85) application fee. Renews every 4 years aligned with credential validity.",
-      "reset_type": "anniversary",
-      "source": "https://cards.barclaycardus.com/banking/cards/emirates-skywards-premium-world-elite-mastercard/"
+      "reset_type": "anniversary"
+    },
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ]
 }
