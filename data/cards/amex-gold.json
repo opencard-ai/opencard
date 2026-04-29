@@ -95,7 +95,7 @@
       "notes": "Insurance Details"
     }
   ],
-  "last_updated": "2026-04-27T04:49:09.116Z",
+  "last_updated": "2026-04-29T13:17:39.237Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -126,11 +126,11 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/gold-card/"
     },
     {
-      "name": "Dining Credit (Goldbelly / Wine.com / Five Guys / Seamless / Cheesecake Factory)",
+      "name": "Dining Credit (Grubhub / Cheesecake Factory / Goldbelly / Wine.com / Five Guys)",
       "amount": 10,
       "frequency": "monthly",
       "category": "dining",
-      "description": "$10/month ($120/year) at participating US partners. Enrollment required.",
+      "description": "Up to $10/month statement credit at Grubhub, The Cheesecake Factory, Goldbelly, Wine.com, and Five Guys (US locations). Enrollment required.",
       "reset_type": "monthly",
       "source": "https://www.americanexpress.com/us/credit-cards/card/gold-card/"
     },
