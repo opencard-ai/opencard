@@ -1,0 +1,19 @@
+{
+  "card_id": "citi-double-cash",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Citi Double Cash® Credit Card ($0 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Pure cashback card. 2% all (1% on purchase + 1% on pay). 5% Citi Travel (hotels/cars/attractions) is earning rate. No statement credits. Citi Entertainment access (qualitative).",
+  "_excluded": [
+    "Earning rates (2% all + 5% Citi Travel)",
+    "$200 cash back SUB (one-time)",
+    "Citi Entertainment access (qualitative)"
+  ],
+  "sources_consulted": [
+    "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+    "https://money.usnews.com/credit-cards/citi/citi-double-cash-card",
+    "https://www.cnbc.com/select/citi-double-cash-card-review/"
+  ]
+}

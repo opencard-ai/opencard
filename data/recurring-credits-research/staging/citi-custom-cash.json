@@ -1,0 +1,20 @@
+{
+  "card_id": "citi-custom-cash",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Citi Custom Cash® Card ($0 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Pure earnings card. 5% on top auto-detected category up to $500/billing cycle, 1% after, 1% other. 4% Citi Travel through June 30, 2026 (limited-time → exclude). No statement credits.",
+  "_excluded": [
+    "Earning rates (5% top category + 1% / 4% Citi Travel limited)",
+    "$200 SUB (one-time)",
+    "FICO score access, fraud monitoring (qualitative)"
+  ],
+  "sources_consulted": [
+    "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
+    "https://money.usnews.com/credit-cards/citi/citi-custom-cash-card",
+    "https://www.creditkarma.com/credit-cards/insights/citi-custom-cash-card",
+    "https://financebuzz.com/citi-custom-cash-card-review"
+  ]
+}

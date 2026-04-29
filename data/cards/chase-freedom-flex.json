@@ -55,7 +55,17 @@
     "cash-back",
     "no-af"
   ],
-  "recurring_credits": [],
+  "recurring_credits": [
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "$10 off one qualifying non-restaurant DoorDash order each calendar quarter. Requires active DashPass enrollment (6 months complimentary; auto-renews paid after).",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/freedom-doordash"
+    }
+  ],
   "sources": [
     {
       "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
@@ -66,7 +76,7 @@
       "notes": "Bankrate review Mar 2026."
     }
   ],
-  "last_updated": "2026-04-25T16:02:37.873Z",
+  "last_updated": "2026-04-29T04:55:53.492Z",
   "hotel_program": null,
   "application_rules": {
     "rules": []

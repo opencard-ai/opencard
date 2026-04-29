@@ -1,0 +1,20 @@
+{
+  "card_id": "amazon-prime-visa",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Prime Visa (Chase, $0 AF, requires Amazon Prime membership)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Pure earnings card (5% Amazon/Whole Foods/Chase Travel, 2% gas/restaurants/transit, 1% other). No statement credits documented. $150 Amazon Gift Card SUB (one-time).",
+  "_excluded": [
+    "Earning rates (5%/2%/1%)",
+    "$150 Amazon GC SUB (one-time)",
+    "No FX fees, purchase protections (qualitative)"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/cash-back-credit-cards/amazon-prime-rewards",
+    "https://www.amazon.com/b?node=16070413011",
+    "https://www.cnn.com/cnn-underscored/money/prime-visa-credit-card",
+    "https://www.fool.com/money/credit-cards/chase/prime-visa-review/"
+  ]
+}
