@@ -101,7 +101,7 @@
       "notes": "One Mile at a Time review"
     }
   ],
-  "last_updated": "2026-04-29T05:25:54.022Z",
+  "last_updated": "2026-04-29T06:08:32.038Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -110,9 +110,22 @@
   "recurring_credits": [
     {
       "name": "Anniversary Free Night",
-      "amount": 1,
+      "amount": 0,
       "frequency": "annual",
-      "category": "other"
+      "category": "other",
+      "description": "Annual Free Night Award at eligible IHG Hotels & Resorts worldwide; up to 40,000-point cap (can add own points for higher categories).",
+      "reset_type": "cardmember_year",
+      "is_free_night": true,
+      "source": "https://www.chase.com/personal/credit-cards/ihg/premierbusiness/premier-business-perks"
+    },
+    {
+      "name": "Global Entry/TSA PreCheck Credit",
+      "amount": 120,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $120 statement credit for Global Entry, TSA PreCheck, or NEXUS application fee, every 4 years.",
+      "reset_type": "every_4_years",
+      "source": "https://www.chase.com/personal/credit-cards/ihg/premierbusiness/premier-business-perks"
     },
     {
       "name": "DoorDash Non-Restaurant Credit",

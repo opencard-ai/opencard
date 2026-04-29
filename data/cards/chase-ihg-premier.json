@@ -93,23 +93,24 @@
       }
     ]
   },
-  "last_updated": "2026-04-29T05:25:54.022Z",
+  "last_updated": "2026-04-29T06:08:32.038Z",
   "recurring_credits": [
     {
       "name": "Free Night Award",
-      "amount": 40000,
+      "amount": 0,
       "frequency": "annual",
       "category": "hotel",
-      "description": "Annual Free Night Award valid at IHG hotels up to 40,000 points",
-      "reset_type": "cardmember_year"
+      "description": "Annual Free Night Award at eligible IHG Hotels & Resorts worldwide; up to 40,000-point cap (can add own points to redeem at higher categories).",
+      "reset_type": "cardmember_year",
+      "is_free_night": true
     },
     {
       "name": "Global Entry/TSA PreCheck",
-      "amount": 100,
-      "frequency": "annual",
+      "amount": 120,
+      "frequency": "every_4_years",
       "category": "travel",
-      "description": "Up to $100 statement credit for Global Entry or TSA PreCheck application fee",
-      "reset_type": "calendar_year"
+      "description": "Up to $120 statement credit for Global Entry, TSA PreCheck, or NEXUS application fee, every 4 years.",
+      "reset_type": "every_4_years"
     },
     {
       "name": "DoorDash Non-Restaurant Credit",

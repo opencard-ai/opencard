@@ -99,14 +99,8 @@
   },
   "discontinued": true,
   "discontinued_notes": "Discontinued to new applicants. Existing cardholders may keep the card open. Marriott Bonvoy Boundless is a similar alternative with lower annual fee ($95).",
-  "last_updated": "2026-04-29T05:25:54.022Z",
+  "last_updated": "2026-04-29T06:08:32.039Z",
   "recurring_credits": [
-    {
-      "name": "Travel Credit",
-      "amount": 300,
-      "frequency": "annual",
-      "category": "travel"
-    },
     {
       "name": "$300 Travel Credit",
       "amount": 300,

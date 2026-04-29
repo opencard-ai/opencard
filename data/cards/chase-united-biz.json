@@ -107,7 +107,7 @@
     }
   ],
   "notes": "Business version of United card. $150 AF. The $125 travel credit and 2 Club passes help offset the fee. PQP earnings (Premier Qualifying Points) are valuable for United elite status. 7 categories with 2x earning is broad. As of 2025, AF increased from $95 to $150. Best for business travelers who fly United frequently and want to earn toward status.",
-  "last_updated": "2026-04-29T05:25:54.022Z",
+  "last_updated": "2026-04-29T06:08:32.041Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -117,12 +117,6 @@
     {
       "name": "United Travel Credit",
       "amount": 125,
-      "frequency": "annual",
-      "category": "travel"
-    },
-    {
-      "name": "United Club Passes",
-      "amount": 2,
       "frequency": "annual",
       "category": "travel"
     },
