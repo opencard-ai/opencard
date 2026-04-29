@@ -61,7 +61,7 @@
       "url": "https://onemileatatime.com/guides/citi-strata-elite/"
     }
   ],
-  "last_updated": "2026-04-29T06:59:27.391Z",
+  "last_updated": "2026-04-29T13:29:11.541Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -69,12 +69,30 @@
   },
   "recurring_credits": [
     {
+      "name": "Blacklane Credit",
+      "amount": 100,
+      "frequency": "semi_annual",
+      "category": "ride",
+      "description": "Up to $100/half ($200/year cap) statement credit on Blacklane chauffeured rides. Split: $100 Jan-Jun + $100 Jul-Dec.",
+      "reset_type": "calendar_half",
+      "source": "https://www.citi.com/credit-cards/credit-card-rewards/citi-strata-elite-benefits"
+    },
+    {
       "name": "Hotel Credit",
       "amount": 300,
       "frequency": "annual",
       "category": "travel",
       "description": "$300 annual hotel credit via Citi Travel.",
       "reset_type": "cardmember_year"
+    },
+    {
+      "name": "Splurge Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "shopping",
+      "description": "Up to $200/calendar year statement credit on your choice of up to 2 brands: 1stDibs, American Airlines, Best Buy, Future Personal Training, Live Nation.",
+      "reset_type": "calendar_year",
+      "source": "https://www.citi.com/credit-cards/credit-card-rewards/citi-strata-elite-benefits"
     },
     {
       "name": "Global Entry / PreCheck Credit",
