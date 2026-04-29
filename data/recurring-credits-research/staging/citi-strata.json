@@ -1,0 +1,20 @@
+{
+  "card_id": "citi-strata",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Citi Strata℠ Card ($0 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Pure earnings card. 5x cititravel.com (attractions/cars/hotels), 3x EV/gas/transit/supermarkets + Self-Select category (Fitness/Streaming/Live Entertainment/Salons/Pet). ThankYou Points (not USD credits). No statement credits documented. Note: $100 hotel credit on $500+ booking is on Strata PREMIER ($95 AF), not the no-AF Strata.",
+  "_excluded": [
+    "Earning rates (5x/3x)",
+    "Self-Select category 3x (earning)",
+    "20k SUB (one-time)",
+    "ThankYou Points (not USD)"
+  ],
+  "sources_consulted": [
+    "https://www.citi.com/credit-cards/citi-strata-credit-card",
+    "https://thepointsguy.com/credit-cards/citi-strata-vs-citi-strata-premier/",
+    "https://www.citi.com/credit-cards/citi-strata-all-cards"
+  ]
+}
