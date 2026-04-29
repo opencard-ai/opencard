@@ -1,0 +1,20 @@
+{
+  "card_id": "ihg-one-rewards-traveler",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "IHG One Rewards Traveler Credit Card (Chase, $0 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Per Convention C: 4th-night-free benefit is conditional on award booking 3 nights with points (CONDITIONAL → exclude). Silver Elite (qualitative). Earnings 17x IHG/3x other. No USD recurring credits.",
+  "_excluded": [
+    "4th night free on award stays (conditional on 3-night points booking)",
+    "Silver Elite Status (qualitative)",
+    "Earning rates"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/traveler",
+    "https://www.ihg.com/onerewards/content/us/en/creditcard",
+    "https://money.usnews.com/credit-cards/chase/ihg-one-rewards-traveler-credit-card",
+    "https://upgradedpoints.com/news/ihg-traveler-vs-premier-card/"
+  ]
+}

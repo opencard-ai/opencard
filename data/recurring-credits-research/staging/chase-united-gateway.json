@@ -1,0 +1,20 @@
+{
+  "card_id": "chase-united-gateway",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "United Gateway℠ Card (Chase, $0 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Per Convention C: 25% inflight rebate is % off (not USD credit). 2 checked bags only after $10k calendar-year spend (CONDITIONAL → exclude). Earnings 2x gas/transit. No fixed USD recurring credits.",
+  "_excluded": [
+    "25% inflight food/bev/Wi-Fi (% rebate)",
+    "2 checked bags after $10k spend (conditional)",
+    "Earning rates"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/travel-credit-cards/united/united-gateway",
+    "https://www.chase.com/personal/credit-cards/united/mileageplus-gateway/benefits",
+    "https://money.usnews.com/credit-cards/chase/united-gateway-card",
+    "https://thepointsguy.com/credit-cards/reviews/united-gateway-card-review/"
+  ]
+}
