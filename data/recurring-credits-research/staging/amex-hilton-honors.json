@@ -1,0 +1,20 @@
+{
+  "card_id": "amex-hilton-honors",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Hilton Honors American Express Card ($0 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "TPG/U.S. News explicit: 'doesn't come with premium statement credits or free night awards'. Pure earnings card (7x Hilton, 5x dining/grocery/gas, 3x other) + Silver Status (qualitative).",
+  "_excluded": [
+    "Earning rates (7x/5x/3x)",
+    "Hilton Silver Status (qualitative)",
+    "Welcome FNA + 70k pts (one-time)"
+  ],
+  "sources_consulted": [
+    "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-card/",
+    "https://thepointsguy.com/credit-cards/reviews/hilton-honors-american-express-review/",
+    "https://money.usnews.com/credit-cards/american-express/hilton-honors-american-express-card",
+    "https://financebuzz.com/hilton-honors-american-express-review"
+  ]
+}

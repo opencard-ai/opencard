@@ -1,0 +1,21 @@
+{
+  "card_id": "barclays-frontier-airlines-world-mastercard",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "FRONTIER Airlines World Mastercard® (Barclays, $99 AF after first-year intro $0)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Per Convention C: $100 anniversary flight voucher requires $2,500/yr spend (CONDITIONAL → exclude). Companion certificates require $3k spend tiers + limited-time promo Aug 2025-Jan 2026 (conditional + promotional). Companion travel for elite-tier members only (qualitative). 2 checked bags + priority boarding (qualitative). No unconditional USD credits.",
+  "_excluded": [
+    "$100 anniversary flight voucher after $2,500 spend (conditional)",
+    "Companion certificates after $3k+ spend, limited-time (conditional + promotional)",
+    "Companion travel for Elite Platinum/Diamond status (qualitative + status-locked)",
+    "2 checked bags + priority boarding (qualitative)"
+  ],
+  "sources_consulted": [
+    "https://cards.barclaycardus.com/banking/cards/frontier-airlines-world-mastercard/",
+    "https://money.usnews.com/credit-cards/barclaycard/frontier-airlines-world-mastercard",
+    "https://www.flyfrontier.com/spend-to-companion-travel-certificates/",
+    "https://www.nerdwallet.com/travel/learn/is-the-frontier-airlines-world-mastercard-worth-its-annual-fee"
+  ]
+}

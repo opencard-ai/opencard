@@ -1,0 +1,20 @@
+{
+  "card_id": "marriott-bonvoy-bold",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Marriott Bonvoy Bold® Credit Card (Chase, $0 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Marriott explicit: 'Bold doesn't offer a free night anniversary bonus' (FNA is the differentiator vs Boundless $95). Silver Elite + 5 Elite Night Credits (qualitative). Up to 14x Marriott (earnings). No USD credits.",
+  "_excluded": [
+    "Silver Elite Status + 5 Elite Night Credits (qualitative)",
+    "Earning rates (14x/2x/1x)",
+    "Welcome 30k SUB (one-time)"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/bold",
+    "https://money.usnews.com/credit-cards/chase/marriott-bonvoy-bold-credit-card",
+    "https://thepointsguy.com/credit-cards/reviews/marriott-bonvoy-bold-credit-card-review/",
+    "https://traveler.marriott.com/credit-cards/bold-boundless-credit-card/"
+  ]
+}

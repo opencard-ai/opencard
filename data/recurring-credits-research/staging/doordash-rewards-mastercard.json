@@ -1,0 +1,20 @@
+{
+  "card_id": "doordash-rewards-mastercard",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "DoorDash Rewards Mastercard® (Chase, $0 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Per Convention C: all benefits conditional/promotional. DashPass requires $10k annual spend (CONDITIONAL → exclude). 10% off monthly grocery/convenience order ($15 cap, expires 6/30/2026) is conditional + limited-time promotional → exclude. Cashback rates (4%/3%/2%/1%) = earnings, not RC.",
+  "_excluded": [
+    "DashPass complimentary after $10k spend (conditional)",
+    "10% off monthly Convenience/Grocery/Alcohol order, $15 cap, expires 6/30/2026 (limited-time + conditional)",
+    "Cashback rates (earnings)"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/cash-back-credit-cards/doordash",
+    "https://about.doordash.com/en-us/news/everyday-spending-made-more-rewarding-chase-and-doordash-launch-first-ever-doordash-rewards-mastercard",
+    "https://wallethub.com/d/doordash-credit-card-3435c",
+    "https://upgradedpoints.com/credit-cards/reviews/doordash-rewards-card/"
+  ]
+}
