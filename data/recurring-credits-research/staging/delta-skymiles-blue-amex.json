@@ -1,0 +1,20 @@
+{
+  "card_id": "delta-skymiles-blue-amex",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Delta SkyMiles® Blue American Express Card ($0 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Per Convention C: 20% inflight savings is % rebate (not USD credit). 2x Delta/dining (earnings). No fixed USD recurring credits. The only $0-AF Delta co-brand; lacks premium benefits (no free checked bag, no priority boarding).",
+  "_excluded": [
+    "20% inflight purchases (% rebate)",
+    "2x Delta + dining (earnings)",
+    "10k bonus miles SUB (one-time)"
+  ],
+  "sources_consulted": [
+    "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-blue-american-express-card/",
+    "https://money.usnews.com/credit-cards/american-express/delta-skymiles-blue-american-express-card",
+    "https://www.nerdwallet.com/credit-cards/reviews/blue-delta-skymiles",
+    "https://financebuzz.com/blue-delta-skymiles-credit-card-from-american-express-review"
+  ]
+}
