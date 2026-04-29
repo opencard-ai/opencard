@@ -1,0 +1,20 @@
+{
+  "card_id": "us-bank-biz-altitude-connect",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "U.S. Bank Business Altitude® Connect Visa Signature® Card ($95 AF after first year intro $0)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Per Convention C: $25 statement credit requires 3 consecutive monthly taxi/rideshare transactions — CONDITIONAL → exclude. Priority Pass with 4 visits/yr (qualitative, not USD). No fixed unconditional USD recurring credits. Earnings 4x travel/gas, 2x dining/cell.",
+  "_excluded": [
+    "$25 taxi/rideshare credit (conditional on 3 monthly trips)",
+    "Priority Pass 4 visits/yr (qualitative)",
+    "Earning rates"
+  ],
+  "sources_consulted": [
+    "https://www.usbank.com/business-banking/business-credit-cards/business-altitude-connect-credit-card.html",
+    "https://www.usbank.com/business-banking/business-credit-cards/benefits/altitude-connect-card-benefits.html",
+    "https://money.usnews.com/credit-cards/us-bank/us-bank-business-altitude-connect-visa-signature-card",
+    "https://financebuzz.com/us-bank-business-altitude-connect-review"
+  ]
+}

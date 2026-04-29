@@ -1,0 +1,22 @@
+{
+  "card_id": "boa-alaska-airlines-visa-biz",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Bank of America Alaska Airlines Visa Business Card (rebranding to 'Atmos™ Rewards Visa Signature Business Card' per April 2026 BoA-Alaska partnership renewal)",
+  "card_status_alert": "REBRANDING IN PROGRESS: BoA + Alaska Air Group announced expanded credit partnership April 2026. Consumer cards renamed to Atmos Ascent/Summit. Business card landing page now reads 'Atmos Rewards Visa Signature Business Card' on bankofamerica.com/smallbusiness. Catalog name + card_id may need refresh to 'boa-alaska-atmos-biz' (or similar).",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": true,
+  "_review_reason": "RC research clean: companion fare requires $6k/yr spend (CONDITIONAL → exclude per Conv C). 20% inflight savings (% off, exclude). Free first checked bag (qualitative). No fixed USD recurring credits. CATALOG: AF $95 in catalog — verify post-rebrand; some sources show $70 for the rebranded version.",
+  "_excluded": [
+    "Companion fare after $6k spend (conditional)",
+    "20% inflight savings (% off)",
+    "Free first checked bag (qualitative)",
+    "60k miles SUB (one-time)"
+  ],
+  "sources_consulted": [
+    "https://www.bankofamerica.com/smallbusiness/credit-cards/products/alaska-airlines-business-credit-card/",
+    "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/04/alaska-air-group-and-bank-of-america-expand-long-standing-credit.html",
+    "https://money.usnews.com/credit-cards/bank-of-america/bank-of-america-alaska-airlines-visa-business-card",
+    "https://wallethub.com/d/atmos-rewards-business-card-1315c"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "card_id": "hsbc-premier",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "HSBC Premier Credit Card / HSBC Premier World Mastercard ($95 AF, waived for Private Banking customers)",
+  "recurring_credits": [
+    {
+      "name": "Streaming Subscription Credit",
+      "amount": 5,
+      "frequency": "monthly",
+      "category": "digital",
+      "description": "Up to $5/month statement credit on subscription payments under MCC 4899 (Cable, Satellite, Other Pay TV / Radio Services), capped at $60 per calendar year.",
+      "reset_type": "monthly",
+      "source_url": "https://www.us.hsbc.com/credit-cards/products/premier/",
+      "source_excerpt": "eligible to receive a streaming credit of up to $5 a month in statement credits for subscription payments... up to a maximum of $60 in total statement credits per calendar year"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_review_reason": "Dup of hsbc-premier-world-mastercard resolved 2026-04-28 — kept hsbc-premier per naming convention (issuer-product, no network/tier descriptor, matches pattern like amex-platinum / chase-sapphire-reserve / capital-one-venture). HSBC GE/TSA $85-every-54-months credit reclassified as 'benefit' (not recurring_credit) per Kacey 2026-04-28 — labeled in _excluded.",
+  "_excluded": [
+    "$85 Global Entry/TSA PreCheck/NEXUS application fee credit, every 54 months (4.5 years) → BENEFIT category, NOT recurring_credit. HSBC official wording: 'Only one statement credit will be issued even if multiple applications were purchased' and '54 months (4.5 years)' cadence is unique to HSBC.",
+    "Lyft $5 credit after 3 rides/month (conditional)",
+    "Instacart+ 3-month trial + $10/mo off 2nd order (limited-time/conditional)",
+    "Annual fee waiver via points redemption (operational, not RC)"
+  ],
+  "sources_consulted": [
+    "https://www.us.hsbc.com/credit-cards/products/premier/",
+    "https://www.us.hsbc.com/credit-card-resource-center/premier/",
+    "https://www.us.hsbc.com/content/dam/hsbc/us/docs/pdf/program-rules/Premier_World.pdf",
+    "https://www.us.hsbc.com/content/dam/hsbc/us/docs/pdf/credit-cards-pdfs/premier-mc-rewards-and-benefits-guide.pdf",
+    "https://www.about.us.hsbc.com/newsroom/press-releases/hsbc-announces-new-benefits-for-premier-and-elite-credit-cards"
+  ]
+}

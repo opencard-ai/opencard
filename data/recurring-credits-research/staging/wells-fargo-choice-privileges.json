@@ -1,0 +1,21 @@
+{
+  "card_id": "wells-fargo-choice-privileges",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Choice Privileges® Select Mastercard® (Wells Fargo, $95 AF) — catalog name 'Choice Privileges Select' confirmed match",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Per Convention C: 20 elite night credits/yr (qualitative status), 30,000 anniversary points (= up to 3 reward nights, POINTS-denominated → exclude), Platinum status (qualitative). No fixed USD recurring credits. Note: anniversary points behavior similar to Wyndham Earner — points redeemable for nights but not FNA cert.",
+  "_excluded": [
+    "20 elite night credits (qualitative)",
+    "30,000 anniversary points (points-denominated)",
+    "Platinum status + 25% bonus pts on stays (qualitative/earning)",
+    "Cellphone protection (qualitative)"
+  ],
+  "sources_consulted": [
+    "https://money.usnews.com/credit-cards/wells-fargo/choice-privileges-select-mastercard",
+    "https://cardcritics.com/credit-cards/card-issuer/wells-fargo/choice-privileges-select-mastercard-review/",
+    "https://www.nerdwallet.com/credit-cards/reviews/choice-privileges-select-card",
+    "https://awardwallet.com/news/choice-privileges/program-changes-2026/"
+  ]
+}
