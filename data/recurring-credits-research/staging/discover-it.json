@@ -1,0 +1,21 @@
+{
+  "card_id": "discover-it",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Discover it® Cash Back ($0 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Pure earnings card. 5% rotating quarterly categories (max $1,500 spend after activation), 1% other. Cashback Match (year-1 SUB doubling) is one-time. No statement credits.",
+  "_excluded": [
+    "5% rotating quarterly (earning rate, capped)",
+    "1% all other (earning rate)",
+    "Cashback Match year 1 (one-time SUB equivalent)",
+    "Cash back doesn't expire (operational)"
+  ],
+  "sources_consulted": [
+    "https://www.discover.com/credit-cards/cash-back/it-card.html",
+    "https://www.discover.com/credit-cards/cash-back/cashback-bonus.html",
+    "https://money.usnews.com/credit-cards/discover/discover-it-cash-back",
+    "https://financebuzz.com/discover-it-cash-back-review"
+  ]
+}

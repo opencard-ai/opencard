@@ -1,0 +1,33 @@
+{
+  "card_id": "chase-freedom-flex",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Chase Freedom Flex® ($0 AF)",
+  "recurring_credits": [
+    {
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "$10 off one qualifying non-restaurant DoorDash order each calendar quarter. Requires active DashPass enrollment (6 months complimentary; auto-renews paid after).",
+      "reset_type": "calendar_quarter",
+      "source_url": "https://www.chase.com/digital/resources/terms-of-use/freedom-doordash",
+      "source_excerpt": "you will receive a $10 off discount each calendar quarter at checkout on one qualifying non-restaurant order on DoorDash as long as you remain enrolled in a DashPass membership"
+    }
+  ],
+  "_no_credits_found": false,
+  "_needs_review": false,
+  "_review_reason": "$10/quarterly DoorDash non-restaurant credit included per existing precedent (chase-iberia-visa-signature has the same credit recorded). DashPass 6-mo complimentary excluded as promotional/limited-time. 2% Lyft through Sept 2027 excluded (% rebate + limited-time). 5% rotating quarterly is earning rate. Welcome 5% rotating Q1 included is one-time.",
+  "_excluded": [
+    "DashPass 6 months complimentary (promotional/limited-time)",
+    "2% Lyft through Sept 2027 (% rebate + limited-time)",
+    "5% rotating quarterly categories (earning rate)",
+    "1% other (earning rate)",
+    "Welcome bonus (one-time)"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
+    "https://www.chase.com/digital/resources/terms-of-use/freedom-doordash",
+    "https://upgradedpoints.com/credit-cards/chase-cards-doordash-perks/",
+    "https://www.joinkudos.com/blog/doordash-dashpass-free-with-chase-cards"
+  ]
+}

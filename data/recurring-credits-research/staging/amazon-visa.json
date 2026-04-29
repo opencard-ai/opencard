@@ -1,0 +1,18 @@
+{
+  "card_id": "amazon-visa",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Amazon Visa (Chase, $0 AF, no Prime requirement)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Non-Prime version: 3% Amazon/Whole Foods (vs Prime Visa's 5%), 2% gas/restaurants/transit, 1% other. Pure earnings, no statement credits. Same Aug 2026 transition note as biz versions (Amex partnership ending; consumer cards transitioning is separate from biz transition timeline).",
+  "_excluded": [
+    "Earning rates",
+    "Welcome bonus (one-time)"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/cash-back-credit-cards/amazon-rewards",
+    "https://www.amazon.com/b?node=16070413011",
+    "https://creditcards.chase.com/cash-back-credit-cards/amazon"
+  ]
+}
