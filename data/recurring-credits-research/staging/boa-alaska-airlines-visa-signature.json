@@ -1,0 +1,22 @@
+{
+  "card_id": "boa-alaska-airlines-visa-signature",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Bank of America Alaska Airlines Visa Signature® (rebranding to 'Atmos™ Rewards Ascent Visa Signature®' per April 2026 BoA-Alaska partnership renewal; $95 AF post-rebrand per BoA page)",
+  "card_status_alert": "REBRANDING IN PROGRESS: BoA-Alaska partnership renewed April 2026; consumer card renamed to 'Atmos Rewards Ascent Visa Signature'. Search verifies AF $95 post-rebrand; catalog shows $64 (likely stale pre-rebrand). Catalog name + AF + card_id may need refresh once rebrand finalized (similar to biz-card flag).",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": true,
+  "_review_reason": "RC research clean: $99 companion fare requires $6k annual spend (CONDITIONAL → exclude). Earnings 3x Alaska / 2x gas/EV/streaming/transit. Alaska Lounge passes ONLY on Summit Visa Infinite ($395), not Ascent. 50k SUB (one-time). CATALOG: AF discrepancy ($64 catalog vs $95 verified) + pending rebrand to Atmos Ascent — defer catalog change until rebrand finalized.",
+  "_excluded": [
+    "$99 companion fare after $6k spend (conditional)",
+    "50k SUB (one-time)",
+    "Earning rates",
+    "Alaska Lounge access (Summit-only, not on this card)"
+  ],
+  "sources_consulted": [
+    "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/",
+    "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/04/alaska-air-group-and-bank-of-america-expand-long-standing-credit.html",
+    "https://money.usnews.com/credit-cards/bank-of-america/bank-of-america-alaska-airlines-visa-signature-credit-card",
+    "https://news.alaskaair.com/loyalty/alaska-airlines-and-bank-of-america-present-a-new-premium-credit-card/"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "card_id": "barclays-wyndham-earner-plus",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Wyndham Rewards Earner® Plus Card (Barclays, $75 AF) — consumer version",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Same mechanism as biz version (already audited): all benefits points/qualitative/% discount → exclude per Convention C. 7,500 anniversary bonus points (points), Wyndham Platinum status (qualitative), 10% discount on go-free award redemptions (% discount). No USD statement credits.",
+  "_excluded": [
+    "7,500 anniversary bonus points (points-denominated)",
+    "Wyndham Platinum status (qualitative)",
+    "10% discount on go-free awards (% discount)",
+    "Earning rates (6x Wyndham, 4x gas/dining/groceries)",
+    "No FX fees (qualitative)"
+  ],
+  "sources_consulted": [
+    "https://cards.barclaycardus.com/banking/cards/wyndham-rewards-earner-plus-card/",
+    "https://pointsnav.com/credit-cards/wyndham-rewards-earner-plus",
+    "https://www.uscreditcardguide.com/barclays-wyndham-earner-plus-credit-card/"
+  ]
+}

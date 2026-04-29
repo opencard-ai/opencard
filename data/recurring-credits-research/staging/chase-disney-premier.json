@@ -1,0 +1,22 @@
+{
+  "card_id": "chase-disney-premier",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Disney® Premier Visa® Card (Chase, $49 AF)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Pure earnings + discount card. 5% Disney+/Hulu/ESPN+, 2% gas/grocery/restaurants/Disney US, 1% other (earnings). 'Up to 500 Disney Rewards Dollars/yr' is the cashback cap, not a statement credit. 10% merchandise/dining at Disneyland/Disney World (% discount, conditional on visiting parks). No fixed USD recurring credits.",
+  "_excluded": [
+    "Earning rates",
+    "10% park merchandise discount (% off, conditional)",
+    "10% select dining at parks (% off, conditional)",
+    "$200 Disney Gift Card + $100 statement credit SUB (one-time)"
+  ],
+  "sources_consulted": [
+    "https://creditcards.chase.com/rewards-credit-cards/disney/premier",
+    "https://www.chase.com/personal/credit-cards/disney-premier",
+    "https://money.usnews.com/credit-cards/chase/disney-premier-visa-card",
+    "https://financebuzz.com/disney-premier-visa-card-review",
+    "https://disneyrewards.com/perks-and-benefits/"
+  ]
+}
