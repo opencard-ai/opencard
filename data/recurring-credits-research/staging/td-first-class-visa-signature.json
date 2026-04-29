@@ -1,0 +1,21 @@
+{
+  "card_id": "td-first-class-visa-signature",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "TD First Class℠ Visa Signature® Credit Card ($89 AF, waived first year)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Pure earnings card (3x travel/dining, 1x other). Mile redemption tiering (25k+ for full value, <25k half value) is mechanism, not credit. No FX fees (qualitative). 25k SUB (one-time). No fixed USD recurring credits.",
+  "_excluded": [
+    "Earning rates (3x/1x)",
+    "25k SUB (one-time)",
+    "0% intro APR balance transfer (limited-time, not RC)",
+    "No FX fees (qualitative)"
+  ],
+  "sources_consulted": [
+    "https://www.td.com/us/en/personal-banking/credit-cards/first-class-card",
+    "https://wallethub.com/d/td-first-class-visa-credit-card-446c",
+    "https://money.usnews.com/credit-cards/td-bank/td-first-class-visa-signature-credit-card",
+    "https://financebuzz.com/td-first-class-visa-signature-credit-card-review"
+  ]
+}

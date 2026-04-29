@@ -1,0 +1,19 @@
+{
+  "card_id": "capital-one-quicksilver-one",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Capital One QuicksilverOne Cash Rewards Credit Card ($39 AF — fair credit version)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Pure cashback card. 1.5% all + 5% Capital One Travel hotels/cars (earnings). Some cardholders transitioning to Discover network May 2026 (issuer change, not RC). No statement credits documented.",
+  "_excluded": [
+    "Earning rates (1.5% / 5% Capital One Travel)",
+    "Discover network transition (operational)"
+  ],
+  "sources_consulted": [
+    "https://www.capitalone.com/credit-cards/quicksilverone/",
+    "https://wallethub.com/d/quicksilverone-rewards-75c",
+    "https://financebuzz.com/capital-one-quicksilverone-review",
+    "https://www.nerdwallet.com/credit-cards/learn/quicksilver-vs-quicksilverone-your-credit-is-the-tiebreaker"
+  ]
+}

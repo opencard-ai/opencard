@@ -1,0 +1,21 @@
+{
+  "card_id": "spirit-airlines-mastercard",
+  "researched_at": "2026-04-28",
+  "card_name_verified": "Free Spirit® Travel More World Elite Mastercard® (BoA, $0 intro / $79 after first year)",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Per Convention C: $100 companion flight voucher requires $5,000 annual spend (CONDITIONAL → exclude). 2 free checked bags (qualitative). Earnings 3x Spirit / 2x dining+grocery. SQPs (status qualifying points) not USD. No fixed USD recurring credits.",
+  "_excluded": [
+    "$100 companion voucher after $5k spend (conditional)",
+    "2 free checked bags (qualitative)",
+    "Earning rates",
+    "SQPs (status points, not USD)"
+  ],
+  "sources_consulted": [
+    "https://www.bankofamerica.com/credit-cards/products/spirit-airlines-credit-card/",
+    "https://www.spirit.com/s/creditcards",
+    "https://www.nerdwallet.com/reviews/credit-cards/free-spirit-travel-more",
+    "https://wallethub.com/d/spirit-airlines-credit-card-539c"
+  ]
+}
