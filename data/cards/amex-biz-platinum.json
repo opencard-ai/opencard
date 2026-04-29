@@ -86,7 +86,7 @@
       "url": "https://www.nerdwallet.com/business/credit-cards/learn/amex-business-platinum-refresh-2025"
     }
   ],
-  "last_updated": "2026-04-29T06:51:50.975Z",
+  "last_updated": "2026-04-29T13:09:35.893Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -150,11 +150,11 @@
     },
     {
       "name": "Hilton for Business Credit",
-      "amount": 200,
-      "frequency": "annual",
+      "amount": 50,
+      "frequency": "quarterly",
       "category": "hotel",
-      "description": "$200/year for Hilton for Business members on eligible Hilton purchases.",
-      "reset_type": "calendar_year",
+      "description": "Up to $50/quarter ($200/year cap) statement credit for purchases made directly with Hilton portfolio properties. Requires enrollment + Hilton for Business membership.",
+      "reset_type": "calendar_quarter",
       "source": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/"
     }
   ],
