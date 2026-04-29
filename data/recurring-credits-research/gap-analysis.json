@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-04-29T03:15:37.909Z",
-  "total_cards": 234,
+  "generated_at": "2026-04-29T04:38:30.616Z",
+  "total_cards": 230,
   "with_recurring_credits": 81,
-  "gap_count": 153,
+  "gap_count": 149,
   "coverage_by_tier": {
     "no-af (consumer)": {
       "has": 8,
-      "missing": 98
+      "missing": 94
     },
     "no-af (business)": {
       "has": 1,
@@ -1056,22 +1056,6 @@
       "priority_reason": "no-AF citi — occasional small credits"
     },
     {
-      "card_id": "citi-american-airlines-mastercard",
-      "name": "American Airlines AAdvantage® Mastercard® (Citi)",
-      "issuer": "Citi",
-      "annual_fee": 0,
-      "has_recurring_credits": false,
-      "rc_count": 0,
-      "tags": [
-        "airline",
-        "no-annual-fee"
-      ],
-      "card_type": "consumer",
-      "tier": "no-af",
-      "priority_score": 35,
-      "priority_reason": "no-AF citi — occasional small credits"
-    },
-    {
       "card_id": "citi-costco-anywhere",
       "name": "Costco Anywhere Visa® Card by Citi",
       "issuer": "Citi",
@@ -1232,39 +1216,6 @@
       "priority_reason": "no-AF chase — occasional small credits"
     },
     {
-      "card_id": "wyndham-rewards-earner-barclays",
-      "name": "Wyndham Rewards Earner Card",
-      "issuer": "Barclays",
-      "annual_fee": 0,
-      "has_recurring_credits": false,
-      "rc_count": 0,
-      "tags": [
-        "cash-back",
-        "hotel",
-        "no-annual-fee"
-      ],
-      "card_type": "consumer",
-      "tier": "no-af",
-      "priority_score": 35,
-      "priority_reason": "no-AF barclays — occasional small credits"
-    },
-    {
-      "card_id": "wyndham-rewards-earner-plus-barclays",
-      "name": "Wyndham Rewards Earner Plus Card",
-      "issuer": "Barclays",
-      "annual_fee": 75,
-      "has_recurring_credits": false,
-      "rc_count": 0,
-      "tags": [
-        "cash-back",
-        "hotel"
-      ],
-      "card_type": "consumer",
-      "tier": "no-af",
-      "priority_score": 35,
-      "priority_reason": "no-AF barclays — occasional small credits"
-    },
-    {
       "card_id": "apple-card",
       "name": "Apple Card",
       "issuer": "Goldman Sachs",
@@ -1294,6 +1245,55 @@
       "tier": "no-af",
       "priority_score": 20,
       "priority_reason": "no-AF first electronic bank — low yield"
+    },
+    {
+      "card_id": "boa-alaska-airlines-visa-platinum",
+      "name": "Alaska Airlines Visa® Platinum Plus® Credit Card",
+      "issuer": "Bank of America",
+      "annual_fee": 0,
+      "has_recurring_credits": false,
+      "rc_count": 0,
+      "tags": [
+        "airline",
+        "no-annual-fee"
+      ],
+      "card_type": "consumer",
+      "tier": "no-af",
+      "priority_score": 20,
+      "priority_reason": "no-AF bank of america — low yield"
+    },
+    {
+      "card_id": "boa-alaska-airlines-visa-signature",
+      "name": "Alaska Airlines Visa Signature® Credit Card",
+      "issuer": "Bank of America",
+      "annual_fee": 64,
+      "has_recurring_credits": false,
+      "rc_count": 0,
+      "tags": [
+        "airline",
+        "premium"
+      ],
+      "card_type": "consumer",
+      "tier": "no-af",
+      "priority_score": 20,
+      "priority_reason": "no-AF bank of america — low yield"
+    },
+    {
+      "card_id": "boa-biz-advantage-customized-cash",
+      "name": "Bank of America® Business Advantage Customized Cash Rewards Mastercard®",
+      "issuer": "Bank of America",
+      "annual_fee": 0,
+      "has_recurring_credits": false,
+      "rc_count": 0,
+      "tags": [
+        "business",
+        "cash-back",
+        "no-annual-fee"
+      ],
+      "card_type": "business",
+      "tier": "no-af",
+      "priority_score": 20,
+      "priority_reason": "no-AF bank of america — low yield"
     }
   ],
   "all_gap": [
@@ -2311,22 +2311,6 @@
       "priority_reason": "no-AF citi — occasional small credits"
     },
     {
-      "card_id": "citi-american-airlines-mastercard",
-      "name": "American Airlines AAdvantage® Mastercard® (Citi)",
-      "issuer": "Citi",
-      "annual_fee": 0,
-      "has_recurring_credits": false,
-      "rc_count": 0,
-      "tags": [
-        "airline",
-        "no-annual-fee"
-      ],
-      "card_type": "consumer",
-      "tier": "no-af",
-      "priority_score": 35,
-      "priority_reason": "no-AF citi — occasional small credits"
-    },
-    {
       "card_id": "citi-costco-anywhere",
       "name": "Costco Anywhere Visa® Card by Citi",
       "issuer": "Citi",
@@ -2485,39 +2469,6 @@
       "tier": "no-af",
       "priority_score": 35,
       "priority_reason": "no-AF chase — occasional small credits"
-    },
-    {
-      "card_id": "wyndham-rewards-earner-barclays",
-      "name": "Wyndham Rewards Earner Card",
-      "issuer": "Barclays",
-      "annual_fee": 0,
-      "has_recurring_credits": false,
-      "rc_count": 0,
-      "tags": [
-        "cash-back",
-        "hotel",
-        "no-annual-fee"
-      ],
-      "card_type": "consumer",
-      "tier": "no-af",
-      "priority_score": 35,
-      "priority_reason": "no-AF barclays — occasional small credits"
-    },
-    {
-      "card_id": "wyndham-rewards-earner-plus-barclays",
-      "name": "Wyndham Rewards Earner Plus Card",
-      "issuer": "Barclays",
-      "annual_fee": 75,
-      "has_recurring_credits": false,
-      "rc_count": 0,
-      "tags": [
-        "cash-back",
-        "hotel"
-      ],
-      "card_type": "consumer",
-      "tier": "no-af",
-      "priority_score": 35,
-      "priority_reason": "no-AF barclays — occasional small credits"
     },
     {
       "card_id": "apple-card",
@@ -2715,22 +2666,6 @@
       "tier": "no-af",
       "priority_score": 20,
       "priority_reason": "no-AF bread financial — low yield"
-    },
-    {
-      "card_id": "choice-privileges-select-visa",
-      "name": "Choice Privileges® Visa Signature® Card",
-      "issuer": "Wells Fargo",
-      "annual_fee": 0,
-      "has_recurring_credits": false,
-      "rc_count": 0,
-      "tags": [
-        "no-annual-fee",
-        "premium"
-      ],
-      "card_type": "consumer",
-      "tier": "no-af",
-      "priority_score": 20,
-      "priority_reason": "no-AF wells fargo — low yield"
     },
     {
       "card_id": "choice-privileges-visa",
@@ -5751,22 +5686,6 @@
       "priority_reason": "premium consumer chase ($350 AF) — high yield"
     },
     {
-      "card_id": "choice-privileges-select-visa",
-      "name": "Choice Privileges® Visa Signature® Card",
-      "issuer": "Wells Fargo",
-      "annual_fee": 0,
-      "has_recurring_credits": false,
-      "rc_count": 0,
-      "tags": [
-        "no-annual-fee",
-        "premium"
-      ],
-      "card_type": "consumer",
-      "tier": "no-af",
-      "priority_score": 20,
-      "priority_reason": "no-AF wells fargo — low yield"
-    },
-    {
       "card_id": "choice-privileges-visa",
       "name": "Choice Privileges Mastercard®",
       "issuer": "Wells Fargo",
@@ -5842,22 +5761,6 @@
     {
       "card_id": "citi-aadvantage-mileup",
       "name": "American Airlines AAdvantage® MileUp® Card",
-      "issuer": "Citi",
-      "annual_fee": 0,
-      "has_recurring_credits": false,
-      "rc_count": 0,
-      "tags": [
-        "airline",
-        "no-annual-fee"
-      ],
-      "card_type": "consumer",
-      "tier": "no-af",
-      "priority_score": 35,
-      "priority_reason": "no-AF citi — occasional small credits"
-    },
-    {
-      "card_id": "citi-american-airlines-mastercard",
-      "name": "American Airlines AAdvantage® Mastercard® (Citi)",
       "issuer": "Citi",
       "annual_fee": 0,
       "has_recurring_credits": false,
@@ -7387,39 +7290,6 @@
       "tier": "no-af",
       "priority_score": 20,
       "priority_reason": "no-AF wells fargo — low yield"
-    },
-    {
-      "card_id": "wyndham-rewards-earner-barclays",
-      "name": "Wyndham Rewards Earner Card",
-      "issuer": "Barclays",
-      "annual_fee": 0,
-      "has_recurring_credits": false,
-      "rc_count": 0,
-      "tags": [
-        "cash-back",
-        "hotel",
-        "no-annual-fee"
-      ],
-      "card_type": "consumer",
-      "tier": "no-af",
-      "priority_score": 35,
-      "priority_reason": "no-AF barclays — occasional small credits"
-    },
-    {
-      "card_id": "wyndham-rewards-earner-plus-barclays",
-      "name": "Wyndham Rewards Earner Plus Card",
-      "issuer": "Barclays",
-      "annual_fee": 75,
-      "has_recurring_credits": false,
-      "rc_count": 0,
-      "tags": [
-        "cash-back",
-        "hotel"
-      ],
-      "card_type": "consumer",
-      "tier": "no-af",
-      "priority_score": 35,
-      "priority_reason": "no-AF barclays — occasional small credits"
     }
   ]
 }
