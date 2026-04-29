@@ -62,7 +62,7 @@
       "notes": "Official Amex Page"
     }
   ],
-  "last_updated": "2026-04-27T04:16:50.948Z",
+  "last_updated": "2026-04-29T07:01:03.717Z",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
@@ -78,20 +78,22 @@
   },
   "recurring_credits": [
     {
-      "name": "Disney Bundle",
-      "amount": 84,
-      "frequency": "annual",
+      "name": "Disney Bundle Credit",
+      "amount": 7,
+      "frequency": "monthly",
       "category": "streaming",
-      "description": "$84 annual Disney+ subscription credit",
-      "reset_type": "calendar_year"
+      "description": "Up to $7/month statement credit on Disney+, Hulu, or Plus.espn.com U.S. subscriptions or bundles. Enrollment required.",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/"
     },
     {
-      "name": "Amazon",
-      "amount": 0,
+      "name": "Home Chef Credit",
+      "amount": 15,
       "frequency": "monthly",
-      "category": "shopping",
-      "description": "$15/month Amazon credit (up to $180 annually)",
-      "reset_type": "calendar_year"
+      "category": "groceries",
+      "description": "Up to $15/month statement credit on Home Chef meal solutions purchases. Enrollment required.",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/"
     }
   ],
   "last_scraped": "2026-04-24T17:27:59.994652",
