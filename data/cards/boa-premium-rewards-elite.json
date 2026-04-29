@@ -80,7 +80,7 @@
       "notes": "PointsNav review"
     }
   ],
-  "last_updated": "2026-04-29T06:59:27.379Z",
+  "last_updated": "2026-04-29T13:31:27.049Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -88,59 +88,29 @@
   },
   "recurring_credits": [
     {
-      "name": "Annual Travel Credit",
-      "amount": 200,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "$200 annual credit for travel or dining purchases.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Airline Incidentals Credit",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "$100 annual credit for airline incidentals.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Annual Lifestyle Credit",
-      "amount": 200,
-      "frequency": "annual",
-      "category": "other",
-      "description": "$200 annual credit for streaming, food delivery, fitness, and more.",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Travel Credit",
+      "name": "Airline Incidental Credit",
       "amount": 300,
       "frequency": "annual",
-      "category": "travel",
-      "description": "Up to $300 annual travel statement credit",
-      "reset_type": "calendar_year"
-    },
-    {
-      "name": "Airline Incidental Credit",
-      "amount": 150,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "Up to $150 annually for airline incidentals (bag fees, lounge passes, etc.)",
-      "reset_type": "calendar_year"
+      "category": "airline",
+      "description": "Up to $300/year on airline incidentals (seat upgrades, baggage fees, lounge fees).",
+      "reset_type": "calendar_year",
+      "source": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-elite-credit-card/"
     },
     {
       "name": "Lifestyle Credit",
-      "amount": 120,
+      "amount": 150,
       "frequency": "annual",
-      "category": "shopping",
-      "description": "Up to $120 annually for lifestyle conveniences (video streaming, food delivery, fitness, rideshare)",
-      "reset_type": "calendar_year"
+      "category": "entertainment",
+      "description": "Up to $150/year on select streaming services, food delivery, fitness subscriptions, and rideshare.",
+      "reset_type": "calendar_year",
+      "source": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-elite-credit-card/"
     },
     {
-      "name": "TSA PreCheck/Global Entry Credit",
+      "name": "Global Entry / TSA PreCheck Credit",
       "amount": 120,
       "frequency": "every_4_years",
       "category": "travel",
-      "description": "Up to $120 reimbursement for TSA PreCheck or Global Entry",
+      "description": "Up to $120 statement credit for Global Entry or TSA PreCheck membership, every 4 years.",
       "reset_type": "every_4_years"
     }
   ],
