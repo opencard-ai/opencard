@@ -80,7 +80,7 @@
       "url": "awardwallet.com"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.989Z",
+  "last_updated": "2026-04-29T13:25:36.627Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -91,13 +91,27 @@
       "name": "Annual Airline Credit",
       "amount": 300,
       "frequency": "annual",
-      "category": "travel"
+      "category": "airline",
+      "description": "Up to $300 annual statement credit toward flight-related purchases.",
+      "reset_type": "calendar_year",
+      "source": "https://www.luxurycard.com/goldcard"
     },
     {
       "name": "Annual Dining Credit",
-      "amount": 100,
+      "amount": 200,
       "frequency": "annual",
-      "category": "dining"
+      "category": "dining",
+      "description": "Up to $200 annual statement credit at qualified restaurants worldwide.",
+      "reset_type": "calendar_year",
+      "source": "https://www.luxurycard.com/goldcard"
+    },
+    {
+      "name": "Global Entry / TSA PreCheck Credit",
+      "amount": 120,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $120 statement credit for Global Entry or TSA PreCheck application fee, every 4 years.",
+      "reset_type": "every_4_years"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.989Z",

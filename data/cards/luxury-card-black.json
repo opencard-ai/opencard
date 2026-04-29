@@ -79,7 +79,7 @@
       "url": "upgradedpoints.com"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.988Z",
+  "last_updated": "2026-04-29T13:25:36.625Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -87,12 +87,30 @@
   },
   "recurring_credits": [
     {
-      "name": "Travel Credit",
+      "name": "Annual Airline Credit",
       "amount": 200,
       "frequency": "annual",
+      "category": "airline",
+      "description": "Up to $200 annual statement credit toward flight-related purchases (tickets, baggage, upgrades).",
+      "reset_type": "calendar_year",
+      "source": "https://cards.barclaycardus.com/banking/credit-card/luxury/landing-pages/luxury-black-landing-page/"
+    },
+    {
+      "name": "Annual Dining Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "dining",
+      "description": "Up to $100 annual statement credit at qualified restaurants worldwide. Preferred status with select restaurants.",
+      "reset_type": "calendar_year",
+      "source": "https://cards.barclaycardus.com/banking/credit-card/luxury/landing-pages/luxury-black-landing-page/"
+    },
+    {
+      "name": "Global Entry / TSA PreCheck Credit",
+      "amount": 120,
+      "frequency": "every_4_years",
       "category": "travel",
-      "description": "$200 annual travel credit.",
-      "reset_type": "cardmember_year"
+      "description": "Up to $120 statement credit for Global Entry or TSA PreCheck application fee, every 4 years.",
+      "reset_type": "every_4_years"
     }
   ],
   "last_verified": "2026-04-16T13:41:49.988Z",
