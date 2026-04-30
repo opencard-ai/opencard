@@ -107,7 +107,7 @@
     }
   ],
   "notes": "Business version of United card. $150 AF. The $125 travel credit and 2 Club passes help offset the fee. PQP earnings (Premier Qualifying Points) are valuable for United elite status. 7 categories with 2x earning is broad. As of 2025, AF increased from $95 to $150. Best for business travelers who fly United frequently and want to earn toward status.",
-  "last_updated": "2026-04-29T06:08:32.041Z",
+  "last_updated": "2026-04-30T03:26:36.390Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -115,10 +115,49 @@
   },
   "recurring_credits": [
     {
-      "name": "United Travel Credit",
-      "amount": 125,
+      "name": "Renowned Hotels & Resorts Credit",
+      "amount": 200,
       "frequency": "annual",
-      "category": "travel"
+      "category": "hotel",
+      "description": "Up to $200/year statement credit on Renowned Hotels & Resorts prepaid bookings.",
+      "reset_type": "calendar_year",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-business-card"
+    },
+    {
+      "name": "Avis/Budget TravelBank Credit",
+      "amount": 50,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $50/year in United TravelBank cash for Avis/Budget rentals booked through cars.united.com.",
+      "reset_type": "cardmember_year",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-business-card"
+    },
+    {
+      "name": "JSX Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "airline",
+      "description": "Up to $100/year statement credit on JSX flight bookings.",
+      "reset_type": "cardmember_year",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-business-card"
+    },
+    {
+      "name": "FareLock Credit",
+      "amount": 25,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $25/year statement credit after buying FareLock on a United/United Express-operated flight.",
+      "reset_type": "cardmember_year",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-business-card"
+    },
+    {
+      "name": "Instacart Credit",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "groceries",
+      "description": "Up to $10/month Instacart credit when paying with the card. $120/year cap.",
+      "reset_type": "monthly",
+      "source": "https://creditcards.chase.com/business-credit-cards/united/united-business-card"
     },
     {
       "name": "DoorDash Non-Restaurant Credit",
