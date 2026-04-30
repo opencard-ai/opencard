@@ -1,31 +1,39 @@
 import { NextRequest, NextResponse } from "next/server";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
+import { getCardById, type CreditCard } from "@/lib/cards";
 
 const MINIMAX_API_URL = "https://api.minimax.io/v1/chat/completions";
 
-const CARD_CONTEXT = `You are a helpful US credit card assistant on OpenCard. You have knowledge of 14 US credit cards.
-
-Card list:
-1. Apple Card (Goldman Sachs) - No annual fee, 3% Apple purchases, 2% Apple Pay
-2. Atmos Rewards Ascent Visa (Alaska Airlines, Bank of America) - $95 annual fee, 3% airline
-3. Atmos Rewards Summit Visa (Alaska Airlines, Bank of America) - $395 annual fee, 3% restaurant/foreign
-4. Bank of America Customized Cash Rewards - No annual fee, 3% select category
-5. Bank of America Travel Rewards - No annual fee, 1.5% flat rate
-6. Chase Sapphire Preferred - $95 annual fee, 5% travel, 3% restaurant
-7. Chase Sapphire Reserve - $295 annual fee, 8% travel, 4% dining
-8. Citi Strata Elite - $595 annual fee, 10% hotel/airline
-9. Discover it Cash Back - No annual fee, 5% rotating category
-10. Hilton Honors Aspire (Amex) - $550 annual fee, 14% hotel
-11. Hilton Honors Card (Amex) - No annual fee, 7% hotel
-12. Hilton Honors Surpass (Amex) - $150 annual fee, 12% hotel
-13. Marriott Bonvoy Boundless (Chase) - $95 annual fee, 6% hotel
-14. The Platinum Card (Amex) - $695 annual fee, 5% airline/hotel, many benefits
+const BASE_CONTEXT = `You are a helpful US credit card assistant on OpenCard, a site indexing 200+ US consumer and business credit cards across major issuers (American Express, Chase, Citi, Capital One, Bank of America, Wells Fargo, U.S. Bank, Discover, Barclays, Synchrony).
 
 IMPORTANT RULES:
 - Never promise approval or guarantee rewards.
 - All information is for reference only; check official sources before applying.
 - Never help users falsify application information.
-- Affiliate links are for reference and do not affect recommendation objectivity.`;
+- Affiliate links are for reference and do not affect recommendation objectivity.
+- If you don't have specific data on a card, say so honestly rather than guessing.`;
+
+function buildCardContext(card: CreditCard): string {
+  const parts: string[] = [];
+  parts.push(`Card: ${card.name} (${card.issuer})`);
+  parts.push(`Annual fee: $${card.annual_fee}`);
+  if (card.earning_rates?.length) {
+    const rates = card.earning_rates.slice(0, 6).map(r => `${r.rate}× ${r.category}`).join(", ");
+    parts.push(`Earning: ${rates}`);
+  }
+  if (card.recurring_credits?.length) {
+    const credits = card.recurring_credits.map(c => {
+      const amt = c.is_free_night ? "Free Night Award" : (c.amount > 0 ? `$${c.amount}` : "");
+      return `${c.name}${amt ? ` (${amt}/${c.frequency})` : ""}`;
+    }).join("; ");
+    parts.push(`Recurring credits: ${credits}`);
+  }
+  if (card.welcome_offer) {
+    const wo = card.welcome_offer;
+    if (wo.bonus_points) parts.push(`Welcome bonus: ${wo.bonus_points.toLocaleString()} pts after $${wo.spending_requirement?.toLocaleString() ?? "?"} in ${wo.time_period_months ?? 3} months`);
+  }
+  return parts.join("\n");
+}
 
 export async function POST(req: NextRequest) {
   // Rate limit check
@@ -75,9 +83,18 @@ export async function POST(req: NextRequest) {
   const lang = langMap[locale] || "English";
 
   try {
-    const systemPrompt = `${CARD_CONTEXT}
+    let cardSpecificContext = "";
+    if (cardId) {
+      const card = getCardById(cardId);
+      if (card) {
+        cardSpecificContext = `\n\nThe user is currently viewing this card:\n${buildCardContext(card)}`;
+      }
+    } else if (cardName) {
+      cardSpecificContext = `\n\nThe user is currently viewing: ${cardName}`;
+    }
 
-The user is currently viewing: ${cardName || "No specific card"}${cardId ? ` (card ID: ${cardId})` : ""}
+    const systemPrompt = `${BASE_CONTEXT}${cardSpecificContext}
+
 IMPORTANT: Always respond in ${lang} only. Never switch languages.
 
 User question:`;
