@@ -1,6 +1,6 @@
 {
-  "card_id": "boa-alaska-airlines-visa-biz",
-  "name": "Alaska Airlines Visa® Business Credit Card",
+  "card_id": "boa-alaska-atmos-biz",
+  "name": "Atmos™ Rewards Visa Signature® Business Credit Card",
   "issuer": "Bank of America",
   "network": "visa",
   "annual_fee": 95,
@@ -88,7 +88,7 @@
       "notes": "DoC 85K offer details"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.933Z",
+  "last_updated": "2026-04-30T04:45:32.585Z",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
