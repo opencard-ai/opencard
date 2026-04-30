@@ -114,7 +114,7 @@ function evaluateCard(card: CreditCard, prefs: UserPreferences): { score: number
 
 function getRewardTypeScore(card: CreditCard, rewardTypes: string[]): number {
   // Cash back cards
-  const cashbackCards = ["discover-it", "chase-freedom-flex", "citi-double-cash", "bank-of-america-customized-cash"];
+  const cashbackCards = ["discover-it", "chase-freedom-flex", "citi-double-cash", "boa-customized-cash-rewards"];
   // Travel cards
   const travelCards = ["chase-sapphire-preferred", "chase-sapphire-reserve", "amex-platinum", "amex-gold", "capital-one-venture-x"];
   // Points cards
