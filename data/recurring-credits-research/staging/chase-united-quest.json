@@ -61,8 +61,6 @@
   ],
   "_no_credits_found": false,
   "_needs_review": false,
-  "_overwrite_existing": true,
-  "_overwrite_reason": "Bulk add of $10/quarterly DoorDash non-restaurant credit per Chase official cobrand-doordash terms (verified 2026-04-28). All Chase co-brand and Freedom-family cards qualify (Amazon, Instacart, DoorDash cards excluded by terms).",
   "_review_reason": "Appending DoorDash $10/quarterly credit per official Chase cobrand terms.",
   "sources_consulted": [
     "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash",

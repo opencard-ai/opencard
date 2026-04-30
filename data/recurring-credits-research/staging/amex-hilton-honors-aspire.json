@@ -2,8 +2,6 @@
   "card_id": "amex-hilton-honors-aspire",
   "researched_at": "2026-04-27",
   "card_name_verified": "Hilton Honors American Express Aspire® Card",
-  "_overwrite_existing": true,
-  "_overwrite_reason": "EXISTING DATA HAS WRONG CREDITS — lists 'Marriott Free Night' (Marriott bonus on a HILTON card?), Uber Cash $200, Walmart+, Clear, Saks (these are amex-platinum benefits, NOT Aspire). Also lists 'Fine Hotels + Resorts $300' (FHR is a Platinum benefit, not Aspire).",
   "recurring_credits": [
     {
       "name": "Hilton Resort Credit",

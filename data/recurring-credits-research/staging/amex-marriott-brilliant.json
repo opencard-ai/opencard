@@ -2,8 +2,6 @@
   "card_id": "amex-marriott-brilliant",
   "researched_at": "2026-04-27",
   "card_name_verified": "Marriott Bonvoy Brilliant® American Express® Card ($650 AF)",
-  "_overwrite_existing": true,
-  "_overwrite_reason": "EXISTING DATA HAS WRONG CREDITS — lists Uber Cash $300, Walmart+ $155, Clear $209, Saks (these are amex-platinum benefits, NOT Brilliant). Also has 'Marriott Free Night' with amount=50000 (Marriott points, not USD). Same copy-paste bug pattern as the brief flagged on amex-platinum's Free Night Award.",
   "recurring_credits": [
     {
       "name": "Dining Credit",

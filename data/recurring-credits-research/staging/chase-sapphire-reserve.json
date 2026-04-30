@@ -2,8 +2,6 @@
   "card_id": "chase-sapphire-reserve",
   "researched_at": "2026-04-27",
   "card_name_verified": "Chase Sapphire Reserve® (post-2026 refresh, $795 AF)",
-  "_overwrite_existing": true,
-  "_overwrite_reason": "Existing data has only stale $300 travel credit. Card got major 2026 refresh — missing 6+ new credits.",
   "recurring_credits": [
     {
       "name": "Travel Credit (Chase Travel)",
