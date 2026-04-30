@@ -16,10 +16,13 @@ export interface EarningRate {
 export interface RecurringCredit {
   name: string;
   amount: number;
-  frequency: "monthly" | "quarterly" | "semi_annual" | "annual" | "per_stay" | "cardmember_year" | string;
+  frequency: "monthly" | "quarterly" | "semi_annual" | "annual" | "per_stay" | "cardmember_year" | "every_4_years" | string;
   category: string;
   description: string;
-  reset_type?: "calendar_year" | "cardmember_year";
+  reset_type?: "calendar_year" | "cardmember_year" | "every_4_years" | "anniversary" | "monthly" | "calendar_quarter" | "calendar_half" | string;
+  source?: string;
+  /** True for Free Night Awards (FNA) — amount=0 by convention; downstream UI should show "Free Night Award" instead of "$0". */
+  is_free_night?: boolean;
 }
 
 export interface HotelStatus {

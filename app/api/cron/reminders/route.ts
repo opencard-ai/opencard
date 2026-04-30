@@ -68,6 +68,7 @@ interface RecurringCredit {
   reset_type?: string;
   category: string;
   description?: string;
+  is_free_night?: boolean;
 }
 
 interface CardData {
@@ -182,12 +183,16 @@ function buildEmailHtml(
 ): string {
   const UNSUB_LINK = buildUnsubscribeLink(emailHash);
   const CATEGORY_LABELS: Record<string, Record<string, string>> = {
-    en: { travel: "Travel", dining: "Dining", entertainment: "Entertainment", shopping: "Shopping", gas: "Gas", grocery: "Grocery", streaming: "Streaming", other: "Other" },
-    zh: { travel: "旅遊", dining: "餐飲", entertainment: "娛樂", shopping: "購物", gas: "加油", grocery: "超市", streaming: "串流", other: "其他" },
-    es: { travel: "Viaje", dining: "Restaurante", entertainment: "Entretenimiento", shopping: "Compras", gas: "Gasolina", grocery: "Supermercado", streaming: "Streaming", other: "Otro" },
+    en: { travel: "Travel", dining: "Dining", entertainment: "Entertainment", shopping: "Shopping", gas: "Gas", grocery: "Grocery", groceries: "Grocery", streaming: "Streaming", other: "Other", airline: "Airline", hotel: "Hotel", ride: "Rideshare", digital: "Digital", fitness: "Fitness", lounge: "Lounge" },
+    zh: { travel: "旅遊", dining: "餐飲", entertainment: "娛樂", shopping: "購物", gas: "加油", grocery: "超市", groceries: "超市", streaming: "串流", other: "其他", airline: "航空", hotel: "飯店", ride: "叫車", digital: "數位訂閱", fitness: "健身", lounge: "貴賓室" },
+    es: { travel: "Viaje", dining: "Restaurante", entertainment: "Entretenimiento", shopping: "Compras", gas: "Gasolina", grocery: "Supermercado", groceries: "Supermercado", streaming: "Streaming", other: "Otro", airline: "Aerolínea", hotel: "Hotel", ride: "Viaje compartido", digital: "Suscripción digital", fitness: "Fitness", lounge: "Sala VIP" },
   };
   const labels = CATEGORY_LABELS[lang] || CATEGORY_LABELS.en;
-  const fmt = (n?: number) => n && n > 0 ? `$${n}` : "";
+  const FNA_LABEL: Record<string, string> = { en: "Free Night Award", zh: "免費住宿券", es: "Noche gratis" };
+  const fmtAmount = (credit: RecurringCredit) => {
+    if (credit.is_free_night) return FNA_LABEL[lang] || FNA_LABEL.en;
+    return credit.amount && credit.amount > 0 ? `$${credit.amount}` : "";
+  };
   const catLabel = (c: string) => labels[c] || c;
 
   const t = (en: string, zh: string, es: string) => lang === "zh" ? zh : lang === "es" ? es : en;
@@ -201,18 +206,18 @@ function buildEmailHtml(
     body += `<h3 style="color: #16a34a; margin-top: 24px;">✓ ${t("Available this month", "本月可用", "Disponible este mes")}</h3>
     <table style="width:100%;border-collapse:collapse;margin-bottom:16px;">
       <thead><tr style="background:#f8f9fa;"><th style="text-align:left;padding:8px;font-size:12px;color:#666;">${t("Card","卡片","Tarjeta")}</th><th style="text-align:left;padding:8px;font-size:12px;color:#666;">${t("Benefit","福利","Beneficio")}</th><th style="text-align:right;padding:8px;font-size:12px;color:#666;">${t("Amount","金額","Monto")}</th></tr></thead>
-      <tbody>${thisMonth.map(({card,credit}) => `<tr style="border-bottom:1px solid #eee;"><td style="padding:8px;font-size:13px;color:#333;">${card.name}</td><td style="padding:8px;font-size:13px;color:#555;">${credit.name}</td><td style="padding:8px;font-size:13px;text-align:right;font-weight:600;">${fmt(credit.amount)}</td></tr>`).join("")}</tbody></table>`;
+      <tbody>${thisMonth.map(({card,credit}) => `<tr style="border-bottom:1px solid #eee;"><td style="padding:8px;font-size:13px;color:#333;">${card.name}</td><td style="padding:8px;font-size:13px;color:#555;">${credit.name}</td><td style="padding:8px;font-size:13px;text-align:right;font-weight:600;">${fmtAmount(credit)}</td></tr>`).join("")}</tbody></table>`;
   }
 
   if (expiringSoon.length > 0) {
     body += `<h3 style="color:#dc2626;margin-top:24px;">⚠️ ${t("Expiring soon","即將到期","Vence pronto")}</h3>
     <p style="color:#666;font-size:13px;margin-bottom:8px;">${t("These benefits are expiring — use them before they're gone!","這些福利即將到期，還沒使用的話快把握！","¡Estas ventajas están por vencer, úsalas antes de que sea tarde!")}</p>
-    <table style="width:100%;border-collapse:collapse;margin-bottom:16px;"><tbody>${expiringSoon.map(({card,credit}) => `<tr style="border-bottom:1px solid #fee2e2;background:#fef2f2;"><td style="padding:8px;font-size:13px;">${card.name}</td><td style="padding:8px;font-size:13px;">${credit.name}</td><td style="padding:8px;text-align:right;font-weight:600;color:#dc2626;">${fmt(credit.amount)}</td></tr>`).join("")}</tbody></table>`;
+    <table style="width:100%;border-collapse:collapse;margin-bottom:16px;"><tbody>${expiringSoon.map(({card,credit}) => `<tr style="border-bottom:1px solid #fee2e2;background:#fef2f2;"><td style="padding:8px;font-size:13px;">${card.name}</td><td style="padding:8px;font-size:13px;">${credit.name}</td><td style="padding:8px;text-align:right;font-weight:600;color:#dc2626;">${fmtAmount(credit)}</td></tr>`).join("")}</tbody></table>`;
   }
 
   if (upcoming.length > 0) {
     body += `<h3 style="color:#2563eb;margin-top:24px;">📅 ${t("Upcoming","即將到來","Próximamente")}</h3>
-    <table style="width:100%;border-collapse:collapse;margin-bottom:16px;"><tbody>${upcoming.map(({card,credit}) => `<tr style="border-bottom:1px solid #dbeafe;"><td style="padding:8px;font-size:13px;">${card.name}</td><td style="padding:8px;font-size:13px;">${credit.name}</td><td style="padding:8px;text-align:right;font-weight:600;">${fmt(credit.amount)}</td></tr>`).join("")}</tbody></table>`;
+    <table style="width:100%;border-collapse:collapse;margin-bottom:16px;"><tbody>${upcoming.map(({card,credit}) => `<tr style="border-bottom:1px solid #dbeafe;"><td style="padding:8px;font-size:13px;">${card.name}</td><td style="padding:8px;font-size:13px;">${credit.name}</td><td style="padding:8px;text-align:right;font-weight:600;">${fmtAmount(credit)}</td></tr>`).join("")}</tbody></table>`;
   }
 
   body += `<div style="margin-top:32px;padding:16px;background:#f8f9fa;border-radius:8px;">
