@@ -61,7 +61,7 @@
       "notes": "Capital One SavorOne overview confirming earning categories and $200 welcome bonus"
     }
   ],
-  "last_updated": "2026-04-26T04:02:55.594292Z",
+  "last_updated": "2026-04-30T05:19:34.221Z",
   "hotel_program": null,
   "application_rules": {
     "rules": []
@@ -79,9 +79,5 @@
       "reverted_at": "2026-04-26T04:02:55.594292Z",
       "reverted_by": "cfpb_pipeline_corruption_revert_2026-04-25"
     }
-  ],
-  "_quarantine": true,
-  "_quarantine_reasons": [
-    "annual_fee value uncertain after CFPB pipeline corruption: Capital One SavorOne Cash Rewards is no-annual-fee. Pre-CFPB had $39 (also wrong)."
   ]
 }
