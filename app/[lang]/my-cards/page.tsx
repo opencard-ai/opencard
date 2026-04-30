@@ -111,6 +111,7 @@ interface RecurringCredit {
   frequency: string;
   category: string;
   description?: string;
+  is_free_night?: boolean;
 }
 
 
@@ -140,7 +141,14 @@ const CATEGORY_EMOJI: Record<string, string> = {
   shopping: "🛍️",
   gas: "⛽",
   grocery: "🛒",
+  groceries: "🛒",
   streaming: "📺",
+  airline: "🛫",
+  hotel: "🏨",
+  ride: "🚕",
+  digital: "💻",
+  fitness: "💪",
+  lounge: "🛋️",
   other: "💳",
 };
 
@@ -709,9 +717,11 @@ export default function MyCardsPage({
                                   <span className="text-xs text-slate-700">{credit.name}</span>
                                 </div>
                                 <div className="flex items-center gap-1.5">
-                                  {credit.amount && credit.amount > 0 && (
+                                  {credit.is_free_night ? (
+                                    <span className="text-[10px] font-semibold text-amber-600 uppercase">{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
+                                  ) : credit.amount && credit.amount > 0 ? (
                                     <span className="text-xs font-semibold text-slate-800">${credit.amount}</span>
-                                  )}
+                                  ) : null}
                                   <span className="text-[10px] text-slate-400">{formatFrequency(credit.frequency, lang)}</span>
                                 </div>
                               </div>
@@ -731,9 +741,11 @@ export default function MyCardsPage({
                                   <span className="text-xs text-slate-600">{credit.name}</span>
                                 </div>
                                 <div className="flex items-center gap-1.5">
-                                  {credit.amount && credit.amount > 0 && (
+                                  {credit.is_free_night ? (
+                                    <span className="text-[10px] font-semibold text-amber-600 uppercase">{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
+                                  ) : credit.amount && credit.amount > 0 ? (
                                     <span className="text-xs font-semibold text-amber-600">${credit.amount}</span>
-                                  )}
+                                  ) : null}
                                   <span className="text-[10px] text-amber-500">{formatFrequency(credit.frequency, lang)}</span>
                                 </div>
                               </div>

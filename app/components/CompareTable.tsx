@@ -203,15 +203,15 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
               <td key={card.card_id} className="py-3 px-4 text-xs align-top">
                 <div className="space-y-3">
                   {/* Annual Credits */}
-                  {card.recurring_credits?.filter((c) => c.amount !== undefined && c.amount !== 0).length ? (
+                  {card.recurring_credits?.filter((c) => c.amount !== undefined && (c.amount !== 0 || c.is_free_night)).length ? (
                     <div>
                       <div className="text-xs font-semibold text-slate-500 uppercase mb-1">{l.credits}</div>
                       <ul className="space-y-1">
                         {card.recurring_credits
-                          .filter((c) => c.amount !== undefined && c.amount !== 0)
+                          .filter((c) => c.amount !== undefined && (c.amount !== 0 || c.is_free_night))
                           .map((rc: RecurringCredit, i: number) => (
                             <li key={i} className="text-slate-700">
-                              {rc.name}
+                              {rc.name}{rc.is_free_night ? <span className="ml-1 text-[10px] uppercase font-semibold text-amber-600">FNA</span> : null}
                               {rc.description && <span className="text-slate-400"> - {rc.description.split(".")[0]}</span>}
                             </li>
                           ))}
