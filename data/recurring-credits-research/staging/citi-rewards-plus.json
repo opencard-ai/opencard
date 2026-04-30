@@ -1,0 +1,11 @@
+{
+  "card_id": "citi-rewards-plus",
+  "researched_at": "2026-04-29",
+  "card_name_verified": "Citi Rewards+® Card",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Bulk audit: Basic no-AF Citi cards — pure earnings/cashback, no recurring USD statement credits documented. AF=$0. Category-default no_credits — no individual research; flag for review if specific benefits known.",
+  "_category": "cobrand_basic_no_af",
+  "sources_consulted": []
+}
