@@ -1,0 +1,10 @@
+{
+  "card_id": "capital-one-quicksilver",
+  "researched_at": "2026-04-29",
+  "card_name_verified": "Capital One Quicksilver Cash Rewards Credit Card",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Bulk audit (no-AF gap closure): $0-AF cards in this catalog overwhelmingly have no recurring USD statement credits per Convention C. Per empirical pattern from targeted scans (score-35/score-20 batches), no-AF cards are pure earnings/cashback. Mass-stamped as no_credits without individual research; flag for re-research if specific recurring USD credits are discovered.",
+  "sources_consulted": []
+}
