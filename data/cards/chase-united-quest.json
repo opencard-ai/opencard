@@ -96,7 +96,7 @@
       "notes": "The Points Guy on 2025 United card overhaul: annual fee increased from $250 to $350"
     }
   ],
-  "last_updated": "2026-04-29T05:25:54.022Z",
+  "last_updated": "2026-04-30T03:25:52.870Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -118,6 +118,15 @@
       "category": "hotel",
       "description": "$150/year on prepaid hotels through Renowned Hotels and Resorts.",
       "reset_type": "anniversary"
+    },
+    {
+      "name": "Avis/Budget TravelBank Credit",
+      "amount": 80,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$40 per rental in United TravelBank cash, up to $80/year (2 rentals max), for Avis/Budget rentals booked through cars.united.com.",
+      "reset_type": "cardmember_year",
+      "source": "https://creditcards.chase.com/travel-credit-cards/united/united-quest"
     },
     {
       "name": "JSX Credit",

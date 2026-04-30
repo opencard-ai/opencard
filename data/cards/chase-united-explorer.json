@@ -92,7 +92,7 @@
       "notes": "TPG report on annual fee increase Mar 2025."
     }
   ],
-  "last_updated": "2026-04-29T05:25:54.022Z",
+  "last_updated": "2026-04-30T03:25:52.871Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -106,6 +106,15 @@
       "category": "hotel",
       "description": "$50/half ($100/yr) on hotels booked through United.",
       "reset_type": "calendar_year"
+    },
+    {
+      "name": "Renowned Hotels & Resorts Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "Up to $100/year statement credit on Renowned Hotels and Resorts bookings via United for cardmembers.",
+      "reset_type": "calendar_year",
+      "source": "https://creditcards.chase.com/travel-credit-cards/united/united-explorer"
     },
     {
       "name": "Rideshare Credit",
