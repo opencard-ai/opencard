@@ -1,0 +1,11 @@
+{
+  "card_id": "state-farm-cash-medallion",
+  "researched_at": "2026-04-29",
+  "card_name_verified": "State Farm Cash Medallion",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Bulk audit: Store card / cobrand basic (no-AF, no recurring USD statement credits per category default). AF=$0. Category-default no_credits — no individual research; flag for review if specific benefits known.",
+  "_category": "store",
+  "sources_consulted": []
+}

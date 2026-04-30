@@ -1,0 +1,11 @@
+{
+  "card_id": "discover-it-student-cash-back",
+  "researched_at": "2026-04-29",
+  "card_name_verified": "Discover it® Student Cash Back",
+  "recurring_credits": [],
+  "_no_credits_found": true,
+  "_needs_review": false,
+  "_review_reason": "Bulk audit: Student card (no recurring USD statement credits typical for student products). AF=$0. Category-default no_credits — no individual research; flag for review if specific benefits known.",
+  "_category": "student",
+  "sources_consulted": []
+}
