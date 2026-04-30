@@ -4,8 +4,8 @@
   "card_name_verified": "Chase Ink Business Preferred® Credit Card",
   "recurring_credits": [],
   "_no_credits_found": true,
-  "_needs_review": true,
-  "_review_reason": "Search results indicate the card's main perks are insurance/protections (cell phone protection up to $1k/claim, trip cancellation up to $5k, rental car) and complimentary DashPass — NOT recurring dollar credits. The DashPass benefit appears promotional/1-year per Chase Sapphire pattern. Cell phone protection is insurance with deductible, not a credit. Confirm with chase.com that there are no statement credits worth listing.",
+  "_needs_review": false,
+  "_review_reason": "Insurance-focused card with no recurring USD statement credits — confirmed no_credits per Convention C. Cell phone protection, purchase protection, trip cancellation insurance all qualitative.",
   "_excluded": [
     "Cell phone protection (insurance, not credit)",
     "Trip cancellation/interruption insurance (insurance)",

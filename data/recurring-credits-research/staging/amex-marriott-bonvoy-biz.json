@@ -4,8 +4,8 @@
   "card_name_verified": "Marriott Bonvoy Business® American Express® Card",
   "recurring_credits": [],
   "_no_credits_found": true,
-  "_needs_review": true,
-  "_review_reason": "Card's primary recurring benefit is 1 Free Night Award (35K-points level) each cardmember anniversary. Per OpenCard convention requiring USD dollar amount for recurring_credits, free night awards without published $ value are excluded (consistent with chase-hyatt approach). Operator may choose to assign fair-value (~$200-250 retail for 35K Marriott category) and include — recommend a project-wide policy decision on free nights before doing this case-by-case.",
+  "_needs_review": false,
+  "_review_reason": "FNA (Marriott 35k) already populated in data/cards. RC research complete.",
   "_excluded": [
     "1 Free Night Award (35K points level) annual (no published USD value)",
     "Additional Free Night Award after $60k spend (conditional)"
