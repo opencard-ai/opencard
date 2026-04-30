@@ -13,10 +13,10 @@
       "ts": "2026-04-29T21:45:46.000Z",
       "title_en": "Gold Days Of GrubHub: $50 Off $100+ Instacart Grocery Orders Every Sat & Sun (5/1 – 5/31)",
       "summary_en": "",
-      "title_zh": "GrubHub 黃金日：5/1-5/31 週六週日 Instacart 雜貨訂單滿 $100 以上減 $50",
-      "summary_zh": "GrubHub 推出為期一個月的黃金日優惠，週末在 Instacart 消費滿 100 美元可減 50 美元。",
-      "title_es": "Días Dorados de GrubHub: $50 de descuento en pedidos de Instacart de $100+ todos los sábados y domingos (5/1 – 5/31)",
-      "summary_es": "Durante mayo, GrubHub ofrece $50 de descuento en pedidos de comestibles de Instacart de $100 o más cada fin de semana."
+      "title_zh": "GrubHub 金色日：5/1-5/31 期間 Instacart 雜貨訂單滿 $100 可享 $50 折扣",
+      "summary_zh": "在 5 月 1 日至 5 月 31 日期間，於 Instacart 單筆訂單滿 $100 可獲得 $50 折扣。",
+      "title_es": "Días Dorados de GrubHub: $50 de descuento en pedidos de comestibles Instacart de $100+ todos los sábados y domingos (5/1 – 5/31)",
+      "summary_es": "GrubHub ofrece $50 de descuento en pedidos de Instacart de más de $100 los fines de semana durante todo mayo."
     },
     {
       "title": "Chase World Of Hyatt Business Card: 80,000 Points With $10,000 Spend [Ends 4/30]",
@@ -35,10 +35,10 @@
       "ts": "2026-04-29T21:26:15.000Z",
       "title_en": "Chase World Of Hyatt Business Card: 80,000 Points With $10,000 Spend [Ends 4/30]",
       "summary_en": "",
-      "title_zh": "Chase World of Hyatt 商務卡：消費 $10,000 獲得 80,000 點 [截止 4/30]",
-      "summary_zh": "Chase 推出 Hyatt 商務卡限時優惠，消費滿一萬美元即可獲得八萬點積分。",
-      "title_es": "Tarjeta Chase World of Hyatt Business: 80,000 puntos al gastar $10,000 [Termina el 30/04]",
-      "summary_es": "La tarjeta Chase World of Hyatt Business otorga 80,000 puntos al gastar $10,000, oferta válida hasta el 30 de abril."
+      "title_zh": "Chase World of Hyatt 商務卡：消費 $10,000 可獲得 80,000 積分 [優惠至 4/30]",
+      "summary_zh": "持卡人在 4 月 30 日前消費滿 $10,000，即可獲得 80,000 Hyatt 積分。",
+      "title_es": "Tarjeta Chase World of Hyatt Business: 80,000 puntos con $10,000 de gasto [Termina 4/30]",
+      "summary_es": "La tarjeta Hyatt Business de Chase ofrece 80,000 puntos al gastar $10,000, con oferta válida hasta el 30 de abril."
     },
     {
       "title": "Airwallex: Sign Up & Get $400 Via Finder After First Transaction (Global Business Banking Platform)",
@@ -52,13 +52,13 @@
       "ts": "2026-04-29T21:10:53.000Z",
       "title_en": "Airwallex: Sign Up & Get $400 Via Finder After First Transaction (Global Business Banking Platform)",
       "summary_en": "",
-      "title_zh": "Airwallex：首次交易後透過 Finder 註冊並獲得 $400 (全球企業銀行平台)",
-      "summary_zh": "全球企業銀行平台 Airwallex 透過 Finder 提供新用戶四百美元獎勵。",
-      "title_es": "Airwallex: Regístrate y obtén $400 a través de Finder tras tu primera transacción (plataforma global de banca empresarial)",
-      "summary_es": "Airwallex ofrece $400 a través de Finder después de completar tu primera transacción en su plataforma de banca empresarial."
+      "title_zh": "Airwallex：註冊後首次交易即可透過 Finder 獲得 $400（全球企業銀行平台）",
+      "summary_zh": "新用戶在 Airwallex 完成首次交易後，可透過 Finder 獲得 $400 獎勵。",
+      "title_es": "Airwallex: Regístrate y obtén $400 a través de Finder después de tu primera transacción (Plataforma global de banca empresarial)",
+      "summary_es": "Airwallex ofrece $400 a través de Finder después de completar tu primera transacción en su plataforma de banca empresarial global."
     },
     {
-      "title": "Wyndham Cards: Earn 10x Points On Sunoco Gas",
+      "title": "[YMMV] Wyndham Cards: Earn 10x Points On Sunoco Gas",
       "url": "https://www.doctorofcredit.com/wyndham-cards-earn-10x-points-on-sunoco-gas/",
       "source": "Doctor of Credit",
       "categories": [
@@ -67,12 +67,12 @@
         "spend offers"
       ],
       "ts": "2026-04-29T20:00:10.000Z",
-      "title_en": "Wyndham Cards: Earn 10x Points On Sunoco Gas",
+      "title_en": "[YMMV] Wyndham Cards: Earn 10x Points On Sunoco Gas",
       "summary_en": "",
-      "title_zh": "Wyndham 信用卡：在 Sunoco 加油站消費可獲得 10 倍積分",
-      "summary_zh": "Wyndham 信用卡在 Sunoco 加油站提供十倍積分優惠。",
-      "title_es": "Tarjetas Wyndham: Gana 10 veces más puntos en gasolina Sunoco",
-      "summary_es": "Las tarjetas Wyndham otorgan diez veces más puntos en compras de gasolina realizadas en estaciones Sunoco."
+      "title_zh": "[YMMV] Wyndham 卡：在 Sunoco 加油站加油可獲得 10 倍積分",
+      "summary_zh": "Wyndham 卡持有人在 Sunoco 加油站加油可獲得 10 倍積分（實際情況可能有所不同）。",
+      "title_es": "[YMMV] Tarjetas Wyndham: Gana 10x puntos en gasolina Sunoco",
+      "summary_es": "Las tarjetas Wyndham ofrecen 10x puntos en compras de gasolina en Sunoco, según disponibilidad del usuario."
     },
     {
       "title": "[Targeted] Chase Business Checking Bonus – Up To $1,500",
@@ -85,10 +85,10 @@
       "ts": "2026-04-29T19:00:26.000Z",
       "title_en": "[Targeted] Chase Business Checking Bonus – Up To $1,500",
       "summary_en": "",
-      "title_zh": "[定向優惠] Chase 商業支票帳戶獎勵 – 最高 $1,500",
-      "summary_zh": "Chase 針對特定用戶推出商業支票帳戶獎勵，最高可獲得一千五百美元。",
-      "title_es": "[Dirigido] Bono de cuenta corriente empresarial Chase – Hasta $1,500",
-      "summary_es": "Chase ofrece un bono de hasta $1,500 para cuentas corrientes empresariales dirigidas a ciertos clientes."
+      "title_zh": "[定向優惠] Chase 商務支票帳戶獎勵 – 最高 $1,500",
+      "summary_zh": "符合資格的 Chase 商務支票帳戶用戶最高可獲得 $1,500 的現金獎勵（限指定用戶）。",
+      "title_es": "[Dirigido] Bono de Chase Business Checking – Hasta $1,500",
+      "summary_es": "Chase ofrece un bono de hasta $1,500 en cuentas empresariales Chase Business Checking para clientes seleccionados."
     },
     {
       "title": "TSA PreCheck: $20 Savings For Those Age 30 Or Younger",
@@ -101,10 +101,10 @@
       "ts": "2026-04-29T18:36:19.000Z",
       "title_en": "TSA PreCheck: $20 Savings For Those Age 30 Or Younger",
       "summary_en": "",
-      "title_zh": "TSA 預檢：30 歲（含）以下可省 $20",
-      "summary_zh": "這項優惠讓 30 歲及以下旅客在 TSA PreCheck 申請時可節省 20 美元。",
-      "title_es": "Ahorro de $20 en TSA PreCheck para personas de 30 años o menores",
-      "summary_es": "Ahora puedes obtener un ahorro de $20 en la solicitud de TSA PreCheck si tienes 30 años o menos."
+      "title_zh": "TSA PreCheck：30 歲以下可省 $20",
+      "summary_zh": "30 歲及以下的旅客使用 TSA PreCheck 可省 $20。",
+      "title_es": "TSA PreCheck: Ahorro de $20 para personas de 30 años o menos",
+      "summary_es": "Los viajeros menores de 31 años pueden obtener un descuento de $20 en la solicitud de TSA PreCheck."
     },
     {
       "title": "H-E-B Stores: Buy $100 Select Giftcards, Get $20 H-E-B Giftcard (Airbnb, Ulta, Wayfair & More)",
@@ -117,10 +117,10 @@
       "ts": "2026-04-29T18:32:04.000Z",
       "title_en": "H-E-B Stores: Buy $100 Select Giftcards, Get $20 H-E-B Giftcard (Airbnb, Ulta, Wayfair & More)",
       "summary_en": "",
-      "title_zh": "H-E-B 超市：購買 $100 指定禮品卡，即獲 $20 H-E-B 禮品卡（涵蓋 Airbnb、Ulta、Wayfair 等）",
-      "summary_zh": "在 H-E-B 購買 100 美元指定禮品卡，可獲得 20 美元的 H-E-B 禮品卡作為獎勵，適用品項包括 Airbnb、Ulta、Wayfair 等。",
-      "title_es": "H-E-B Stores: Compra $100 en tarjetas de regalo seleccionadas y recibe una tarjeta de regalo H-E-B de $20 (Airbnb, Ulta, Wayfair y más)",
-      "summary_es": "Compra $100 en tarjetas de regalo seleccionadas en H‑E‑B y recibe una tarjeta de regalo de $20."
+      "title_zh": "H-E-B 超市：購買 $100 精選禮品卡，即可獲得 $20 H-E-B 禮品卡（Airbnb、Ulta、Wayfair 等）",
+      "summary_zh": "在 H-E-B 超市購買 $100 精選禮品卡，即可獲赠 $20 H-E-B 禮品卡，適用於 Airbnb、Ulta、Wayfair 等多個品牌。",
+      "title_es": "H-E-B Stores: Compra $100 en tarjetas de regalo seleccionadas, obtén una tarjeta de regalo H-E-B de $20 (Airbnb, Ulta, Wayfair y más)",
+      "summary_es": "Al comprar $100 en tarjetas de regalo seleccionadas en H-E-B, recibirás una tarjeta de regalo H-E-B de $20 que puede utilizarse en Airbnb, Ulta, Wayfair y más."
     },
     {
       "title": "Bestbuy.com: Save 10% On Uber & Chipotle eGiftcards",
@@ -136,9 +136,9 @@
       "title_en": "Bestbuy.com: Save 10% On Uber & Chipotle eGiftcards",
       "summary_en": "",
       "title_zh": "Bestbuy.com：Uber 與 Chipotle 電子禮品卡享 10% 折扣",
-      "summary_zh": "在 Bestbuy.com 購買 Uber 或 Chipotle 的電子禮品卡可享九折優惠。",
+      "summary_zh": "在 Bestbuy.com 購買 Uber 與 Chipotle 電子禮品卡，可享 10% 折扣。",
       "title_es": "Bestbuy.com: Ahorra 10% en tarjetas de regalo electrónicas de Uber y Chipotle",
-      "summary_es": "Ahorra un 10% en tarjetas de regalo electrónicas de Uber y Chipotle en Bestbuy.com."
+      "summary_es": "Bestbuy.com ofrece un 10% de descuento en tarjetas de regalo electrónicas de Uber y Chipotle."
     },
     {
       "title": "Save 10% On Instacart Giftcards (Max $20 Savings)",
@@ -152,9 +152,9 @@
       "title_en": "Save 10% On Instacart Giftcards (Max $20 Savings)",
       "summary_en": "",
       "title_zh": "Instacart 禮品卡省 10%（最高省 $20）",
-      "summary_zh": "購買 Instacart 禮品卡可節省 10%，最高可省 20 美元。",
-      "title_es": "Ahorra 10% en tarjetas de regalo de Instacart (hasta $20 de ahorro)",
-      "summary_es": "Consigue un ahorro del 10% en tarjetas de regalo de Instacart, con un máximo de $20."
+      "summary_zh": "購買 Instacart 禮品卡可省 10%，最高可省 $20。",
+      "title_es": "Ahorra 10% en tarjetas de regalo de Instacart (máximo $20 de ahorro)",
+      "summary_es": "Instacart permite ahorrar un 10% en sus tarjetas de regalo, con un límite máximo de $20 de ahorro."
     },
     {
       "title": "Capital One Shopping/Offers: 4%-20% Back On Giftcards.com",
@@ -168,10 +168,10 @@
       "ts": "2026-04-29T17:41:52.000Z",
       "title_en": "Capital One Shopping/Offers: 4%-20% Back On Giftcards.com",
       "summary_en": "",
-      "title_zh": "Capital One Shopping/優惠：Giftcards.com 回饋 4%–20%",
-      "summary_zh": "使用 Capital One Shopping 在 Giftcards.com 購物可獲得 4% 到 20% 的返現。",
-      "title_es": "Capital One Shopping/Ofertas: Entre 4% y 20% de regreso en Giftcards.com",
-      "summary_es": "Obtén entre un 4% y un 20% de cashback en tus compras de tarjetas de regalo en Giftcards.com con Capital One."
+      "title_zh": "Capital One 購物/優惠：Giftcards.com 可享 4%-20% 回饋",
+      "summary_zh": "在 Capital One 購物或使用優惠，於 Giftcards.com 消費可獲得 4% 至 20% 的回饋。",
+      "title_es": "Capital One Shopping/Ofertas: 4%-20% de devolución en Giftcards.com",
+      "summary_es": "Capital One Shopping ofrece entre un 4% y un 20% de cashback en compras realizadas en Giftcards.com."
     },
     {
       "title": "[Summer Pass For $199] Frontier All You Can Fly ‘GoWild!’ Pass",
@@ -184,10 +184,10 @@
       "ts": "2026-04-29T15:00:42.000Z",
       "title_en": "[Summer Pass For $199] Frontier All You Can Fly ‘GoWild!’ Pass",
       "summary_en": "",
-      "title_zh": "[夏季通行證 $199] Frontier「隨便飛」GoWild! 通票",
-      "summary_zh": "一款夏季通行證，以 $199 的價格提供 Frontier 航空公司無限次飛行服務。",
-      "title_es": "Pase de verano por $199: Pase 'GoWild!' de Frontier para volar sin límite",
-      "summary_es": "Frontier ofrece un pase de verano por $199 que permite volar sin límite con su programa GoWild!."
+      "title_zh": "[199美元夏季通行證] Frontier「GoWild!」無限飛行通行證",
+      "summary_zh": "Frontier 航空推出199美元的夏季通行證，可在一年內無限次乘坐其航班。",
+      "title_es": "[Pase de verano por $199] Pase ‘GoWild!’ de Frontier que permite volar sin límite",
+      "summary_es": "Este nuevo pase permite volar sin límites con Frontier durante el verano por solo $199."
     },
     {
       "title": "Best Current Credit Card Sign Up Bonuses & Offers For April, 2026",
@@ -200,10 +200,10 @@
       "ts": "2026-04-29T14:00:15.000Z",
       "title_en": "Best Current Credit Card Sign Up Bonuses & Offers For April, 2026",
       "summary_en": "",
-      "title_zh": "2026年4月最新信用卡開卡獎勵與優惠",
-      "summary_zh": "2026年4月當前適用的信用卡開卡獎金和優惠方案。",
-      "title_es": "Mejores bonos de registro y ofertas de tarjetas de crédito en abril de 2026",
-      "summary_es": "Se presentan las mejores ofertas y bonos de registro para tarjetas de crédito disponibles en abril de 2026."
+      "title_zh": "2026年4月最佳信用卡開戶獎勵與優惠",
+      "summary_zh": "本月份盤點多張提供高額開戶獎金的信用卡，包括返現、積分等各式優惠。",
+      "title_es": "Mejores bonificaciones y ofertas actuales de registro de tarjetas de crédito para abril de 2026",
+      "summary_es": "Se presentan las mejores bonificaciones de bienvenida y ofertas disponibles en las tarjetas de crédito para abril de 2026."
     },
     {
       "title": "Sam’s Club: $500 Disney Giftcard For $450 (4/29 – 5/31)",
@@ -217,10 +217,10 @@
       "ts": "2026-04-29T13:00:06.000Z",
       "title_en": "Sam’s Club: $500 Disney Giftcard For $450 (4/29 – 5/31)",
       "summary_en": "",
-      "title_zh": "好事多：$500迪士尼禮品卡優惠價 $450 (4/29 – 5/31)",
-      "summary_zh": "好事多推出優惠，以 $450 即可購買價值 $500 的迪士尼禮品卡。",
+      "title_zh": "Sam’s Club：450美元購買500美元迪士尼禮品卡（4/29 – 5/31）",
+      "summary_zh": "Sam’s Club 推出特價活動，只需450美元即可購買面值500美元的迪士尼禮品卡。",
       "title_es": "Sam's Club: Tarjeta de regalo Disney de $500 por $450 (29/4 – 31/5)",
-      "summary_es": "Sam's Club ofrece una tarjeta de regalo Disney de $500 por solo $450 durante el período del 29 de abril al 31 de mayo."
+      "summary_es": "Sam's Club ofrece una tarjeta de regalo Disney de $500 por solo $450 durante un período limitado."
     },
     {
       "title": "Recap: Free Month Of AwardLocker, Air Canada Raises Prices, Citibank $2,500 In Branch Offer & More",
@@ -232,10 +232,10 @@
       "ts": "2026-04-29T12:00:50.000Z",
       "title_en": "Recap: Free Month Of AwardLocker, Air Canada Raises Prices, Citibank $2,500 In Branch Offer & More",
       "summary_en": "",
-      "title_zh": "本週摘要：AwardLocker免費一個月、加拿大航空調漲價格、花旗銀行分行開戶$2,500優惠等",
-      "summary_zh": "本週新聞摘要，包括 AwardLocker 免費試用一個月、加拿大航空調漲價格、花旗銀行提供 $2,500 分行開戶優惠等資訊。",
-      "title_es": "Resumen: mes gratis de AwardLocker, Air Canada sube precios, oferta de Citibank de $2,500 en sucursal y más",
-      "summary_es": "Se resume las noticias: mes gratuito de AwardLocker, incremento de precios de Air Canada, oferta en sucursal de Citibank por $2,500 y otras novedades."
+      "title_zh": "回顧：AwardLocker 免費月、加拿大航空調漲價格、花旗銀行2500美元分行優惠及更多",
+      "summary_zh": "本週回顧涵蓋 AwardLocker 免費月份、加拿大航空調升票價、花旗銀行2500美元分行優惠等多項資訊。",
+      "title_es": "Resumen: Mes gratis de AwardLocker, Air Canada sube precios, Oferta de Citibank de $2,500 en sucursal y más",
+      "summary_es": "Este resumen incluye un mes gratis de AwardLocker, el aumento de precios de Air Canada, una oferta de Citibank de $2,500 en sucursal y otras novedades."
     },
     {
       "title": "Why Do We Close Referral Threads After A Period Of Time?",
@@ -250,11 +250,11 @@
       "ts": "2026-04-29T01:56:41.000Z",
       "title_en": "Why Do We Close Referral Threads After A Period Of Time?",
       "summary_en": "",
-      "title_zh": "為什麼我們一段時間後會關閉推薦討論串？",
-      "summary_zh": "說明為何某些推薦討論串在一段時間後會被關閉的原因。",
-      "title_es": "¿Por qué cerramos los hilos de referidos después de un tiempo?",
-      "summary_es": "Se explica la razón por la cual se cierran los hilos de referidos tras un período determinado."
+      "title_zh": "為什麼我們一段時間後會關閉推薦主題？",
+      "summary_zh": "論壇說明一段時間後關閉推薦帖的原因，主要是為了維持秩序與公平。",
+      "title_es": "¿Por qué cerramos los hilos de referidos después de un período?",
+      "summary_es": "Se explica la razón por la que se cierran los hilos de referidos después de cierto tiempo para mantener la comunidad activa y evitar spam."
     }
   ],
-  "fetched": "2026-04-30T02:04:17.359Z"
+  "fetched": "2026-04-30T08:07:41.483Z"
 }
