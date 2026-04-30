@@ -35,8 +35,6 @@
       "source_excerpt": "Existing Global Entry/TSA PreCheck credit retained from Spark Miles era"
     }
   ],
-  "_overwrite_existing": true,
-  "_overwrite_reason": "Existing card data has $100 Global Entry as 'frequency: annual' which is incorrect (Global Entry fee is paid every 4 years per US Govt). Plus 2 new credits added in 2026 rebrand. Re-write all RC.",
   "_no_credits_found": false,
   "_needs_review": false,
   "_review_reason": "Rebrand 2026-04-14: catalog renamed Spark Miles → Venture Business on 2026-04-27. SOURCE CAVEAT: URLs point to Capital One press release + Frequent Miler reporting (not yet a card-specific benefits page). Verify exact terms/cadence on capitalone.com/small-business/credit-cards/venture-business once published. Existing $100 Global Entry RC corrected from frequency='annual' to 'every_4_years' (per Convention C and US Govt fee cadence).",
