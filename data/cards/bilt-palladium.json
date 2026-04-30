@@ -46,7 +46,7 @@
       "url": "https://www.nerdwallet.com/credit-cards/reviews/bilt-palladium"
     }
   ],
-  "last_updated": "2026-04-27T03:03:48.139Z",
+  "last_updated": "2026-04-30T04:47:59.372Z",
   "travel_benefits": {
     "hotel_status": [],
     "lounge_access": [],
@@ -89,7 +89,7 @@
       "name": "Bilt Cash",
       "amount": 200,
       "frequency": "annual",
-      "category": "other",
+      "category": "shopping",
       "description": "$200 of Bilt Cash, renewed annually.",
       "reset_type": "calendar_year",
       "source": "https://newsroom.biltrewards.com/meetbiltcard2.0"

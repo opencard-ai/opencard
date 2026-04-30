@@ -92,7 +92,7 @@
       "notes": "CNBC on Disney Inspire launch: $600 welcome offer, $149 annual fee, $420 in annual perks"
     }
   ],
-  "last_updated": "2026-04-29T05:25:54.022Z",
+  "last_updated": "2026-04-30T04:47:59.373Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -103,13 +103,13 @@
       "name": "Disney Streaming Credit",
       "amount": 120,
       "frequency": "annual",
-      "category": "other"
+      "category": "streaming"
     },
     {
       "name": "Disney Theme Park Tickets Credit",
       "amount": 100,
       "frequency": "annual",
-      "category": "other"
+      "category": "entertainment"
     },
     {
       "name": "DoorDash Non-Restaurant Credit",

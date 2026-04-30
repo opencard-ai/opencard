@@ -44,7 +44,7 @@
       "url": "https://thepointsguy.com/credit-cards/bilt-credit-cards-current-offers/"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.955Z",
+  "last_updated": "2026-04-30T04:47:59.371Z",
   "travel_benefits": {
     "hotel_status": [],
     "lounge_access": [],
@@ -86,7 +86,7 @@
       "name": "Bilt Cash",
       "amount": 200,
       "frequency": "annual",
-      "category": "other",
+      "category": "shopping",
       "description": "$200 Bilt Cash credited to Bilt account on January 1 each calendar year.",
       "reset_type": "calendar_year",
       "source": "https://newsroom.biltrewards.com/meetbiltcard2.0"
@@ -94,7 +94,6 @@
   ],
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",
-  "last_updated": "2026-04-27T20:00:00.000Z",
   "last_verified": "2026-04-27T20:00:00.000Z",
   "next_review": "2026-07-15T13:41:49.955000+00:00"
 }
