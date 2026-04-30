@@ -103,7 +103,7 @@
     }
   ],
   "notes": "Ultra-premium United card with full United Club access ($650+ value alone). $695 AF (increased from $525 in 2025). Total annual credits (Instacart $300 + Streaming $120 + Rideshare $150 = $570) significantly offset the AF for those who use them. PQP earnings (up to 10,000/year) can fast-track United 1K elite status. Primary competitor is United Club Business Card. Both are essentially the same card (Club membership) — personal version vs business version.",
-  "last_updated": "2026-04-29T13:24:32.379Z",
+  "last_updated": "2026-04-30T03:23:56.066Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -111,30 +111,40 @@
   },
   "recurring_credits": [
     {
-      "name": "Global Entry / TSA PreCheck Credit",
+      "name": "Renowned Hotels & Resorts Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "Up to $200/year statement credit on prepaid bookings through Renowned Hotels and Resorts via Chase Travel.",
+      "reset_type": "calendar_year",
+      "source": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite"
+    },
+    {
+      "name": "Avis/Budget TravelBank Credit",
       "amount": 100,
-      "frequency": "every_4_years",
+      "frequency": "annual",
       "category": "travel",
-      "description": "Up to $100 statement credit for Global Entry or TSA PreCheck application fee, every 4 years.",
-      "reset_type": "every_4_years"
+      "description": "Up to $100/year ($50 per rental, up to 2 rentals) in United TravelBank cash for eligible Avis and Budget rentals booked through cars.united.com.",
+      "reset_type": "calendar_year",
+      "source": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite"
     },
     {
       "name": "Rideshare Credit",
       "amount": 150,
       "frequency": "annual",
-      "category": "other"
+      "category": "ride",
+      "description": "Up to $150/year in rideshare credits, distributed monthly ($12 Jan-Nov, $18 Dec).",
+      "reset_type": "calendar_year",
+      "source": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite"
     },
     {
       "name": "Instacart Credit",
-      "amount": 75,
-      "frequency": "quarterly",
-      "category": "other"
-    },
-    {
-      "name": "Streaming Credit",
-      "amount": 30,
-      "frequency": "quarterly",
-      "category": "other"
+      "amount": 20,
+      "frequency": "monthly",
+      "category": "groceries",
+      "description": "Up to $20/month (2x $10) in Instacart+ credits when paying with the card. Includes complimentary Instacart+ membership through Dec 31, 2027.",
+      "reset_type": "monthly",
+      "source": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite"
     },
     {
       "name": "DoorDash Non-Restaurant Credit",
@@ -144,6 +154,14 @@
       "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
       "reset_type": "calendar_quarter",
       "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
+    },
+    {
+      "name": "Global Entry / TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $100 statement credit for Global Entry, TSA PreCheck, or NEXUS application fee, every 4 years.",
+      "reset_type": "every_4_years"
     }
   ],
   "last_scraped": "2026-04-24",
