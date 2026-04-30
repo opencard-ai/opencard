@@ -69,7 +69,7 @@
       "notes": "U.S. News review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:50.006Z",
+  "last_updated": "2026-04-30T03:43:08.633Z",
   "status": "active",
   "notes": "Card URL redirects to U.S. Bank Shield Visa. May have been rebranded or is the same product. 0% intro APR for 21 billing cycles on purchases and balance transfers. Ideal for those seeking low APR and cell phone protection rather than rewards.",
   "hotel_program": null,
@@ -77,22 +77,7 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "name": "annual statement credit",
-      "amount": 20,
-      "frequency": "annual",
-      "category": "other"
-    },
-    {
-      "name": "$20 annual statement credit",
-      "amount": 20,
-      "frequency": "annual",
-      "category": "other",
-      "description": "$20 credit for 11 consecutive months of purchases (requires enrolled in U.S. Bank ExtendPay)",
-      "reset_type": "calendar_year"
-    }
-  ],
+  "recurring_credits": [],
   "last_verified": "2026-04-16T13:41:50.006Z",
   "next_review": "2026-07-15T13:41:50.006000+00:00"
 }
