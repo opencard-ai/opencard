@@ -114,7 +114,7 @@
     }
   ],
   "notes": "Business version of Sapphire Reserve. Same $795 AF and credits. 150,000 point welcome bonus (higher than personal) makes it very attractive. Employee cards are free. Can combine points with personal Sapphire Reserve for larger balances. Key for business travelers who want same premium benefits as personal Reserve.",
-  "last_updated": "2026-04-29T06:59:27.387Z",
+  "last_updated": "2026-04-30T04:47:59.373Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -141,7 +141,7 @@
       "name": "Lyft Credits",
       "amount": 120,
       "frequency": "annual",
-      "category": "other",
+      "category": "ride",
       "description": "$120 annual ($10/month) for Lyft rides. Enrollment required.",
       "reset_type": "cardmember_year"
     },
@@ -149,7 +149,7 @@
       "name": "Google Workspace Credit",
       "amount": 200,
       "frequency": "annual",
-      "category": "other",
+      "category": "digital",
       "description": "$200 annual credit for Google Workspace purchases.",
       "reset_type": "cardmember_year"
     },
