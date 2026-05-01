@@ -11,7 +11,7 @@ import * as path from "path";
 const CARDS_DIR = path.join(process.cwd(), "data/cards");
 
 const FEATURED_IDS: string[] = [
-  // 💎 Premium
+  // 💎 Premium ($101+)
   "amex-platinum",
   "amex-gold",
   "amex-biz-platinum",
@@ -22,6 +22,12 @@ const FEATURED_IDS: string[] = [
   "amex-hilton-honors-aspire",
   "citi-strata-elite",
   "amex-marriott-brilliant",
+  // 🌟 Mid-Premium ($90-100)
+  "chase-sapphire-preferred",
+  "capital-one-venture",
+  "chase-hyatt",
+  "chase-marriott-boundless",
+  "bilt-obsidian",
   // ✓ No Annual Fee
   "chase-freedom-unlimited",
   "chase-freedom-flex",
