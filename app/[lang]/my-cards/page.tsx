@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { computePeriodKey } from "@/lib/credit-periods";
 import ReportErrorModal from "@/app/components/ReportErrorModal";
+import OpenDateRow from "@/app/components/OpenDateRow";
 
 const STORAGE_KEY = "opencard_existing_cards";
 const SUBSCRIBED_EMAIL_KEY = "opencard_subscribed_email";
@@ -479,50 +480,6 @@ export default function MyCardsPage({
     }
   }, [email, anniversaryYearFor]);
 
-  // Handle edit open date
-  const handleEditOpenDate = useCallback(async (cardId: string) => {
-    // Simple approach - get from localStorage directly
-    const storedEmail = localStorage.getItem('opencard_subscribed_email');
-    if (!storedEmail) {
-      // Try to get from API
-      fetch('/api/my-cards/set-open-date?email=' + encodeURIComponent(email))
-        .then(r => r.json())
-        .then(d => {
-          if (d.open_dates) {
-            setOpenDates(d.open_dates);
-            alert('Loaded your card open dates');
-          }
-        });
-      return;
-    }
-    
-    // Use simple window.prompt - works on desktop, show alert for mobile
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      const input = window.prompt('Enter open month and year (e.g., 3 2024):');
-      processInput(input);
-    } else {
-      const input = window.prompt('Enter open month/year (e.g., 3 2024):');
-      processInput(input);
-    }
-    
-    function processInput(input: string | null) {
-      if (!input) return;
-      const [m, y] = input.split(/[\s,\/]+/).map(Number);
-      if (!m || !y || m < 1 || m > 12 || y < 2020 || y > 2030) {
-        alert('Please enter valid month (1-12) and year (e.g., 3 2024)');
-        return;
-      }
-      fetch('/api/my-cards/set-open-date', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: storedEmail, card_id: cardId, month: m, year: y }),
-      }).then(res => {
-        if (res.ok) setOpenDates(prev => ({ ...prev, [cardId]: { month: m, year: y } }));
-        else alert('Failed to save');
-      });
-    }
-  }, [email]);
 
 
   // Listen for card add/remove events from other pages (CardGrid, AddToMyCardsButton).
@@ -787,99 +744,15 @@ export default function MyCardsPage({
                     )}
                   </div>
 
-                  {/* Open Date Info - New Row */}
+                  {/* Open Date Info */}
                   <div className="px-4 py-2 bg-blue-50 border-b border-blue-100 flex items-center justify-between">
-                    {openDates[card.card_id] ? (
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs text-blue-600 font-medium">
-                          📅 {m.openedLabel} {openDates[card.card_id].month}/{openDates[card.card_id].year}
-                          {' -> '}
-                          {(() => {
-                            const now = new Date();
-                            const opened = new Date(openDates[card.card_id].year, openDates[card.card_id].month - 1);
-                            const months = (now.getFullYear() - opened.getFullYear()) * 12 + now.getMonth() - opened.getMonth();
-                            const years = Math.floor(months / 12);
-                            const remMonths = months % 12;
-                            return years > 0 ? `${years}y ${remMonths}m` : `${remMonths} months`;
-                          })()}
-                        </span>
-                        <button
-                          type="button"
-                          onClick={(e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    // Create a temporary date input to show native calendar picker
-    const input = document.createElement('input');
-    input.type = 'date';
-    input.min = '2020-01-01';
-    input.max = '2026-12-31';
-    input.style.cssText = 'position:absolute;opacity:0;pointer-events:none';
-    document.body.appendChild(input);
-    input.showPicker ? input.showPicker() : input.click();
-    input.addEventListener('change', function() {
-      const val = this.value;
-      if (!val) return;
-      const [year, month] = val.split('-').map(Number);
-      const em = localStorage.getItem('opencard_subscribed_email');
-      if (!em) { alert('Please subscribe first'); return; }
-      fetch('/api/my-cards/set-open-date', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: em, card_id: card.card_id, month, year }),
-      }).then(r => r.json()).then(d => {
-        if (d.success) alert(`${m.savedToast} ${month}/${year} (${card.name})`);
-        else alert(m.saveErrorPrefix + (d.error || 'failed'));
-      }).catch(() => alert(m.saveNetworkError));
-      document.body.removeChild(input);
-    });
-    input.addEventListener('blur', function() {
-      if (document.body.contains(input)) document.body.removeChild(input);
-    });
-  }}
-                          className="text-xs text-blue-500 hover:text-blue-700 cursor-pointer"
-                        >
-                          {m.editLabel}
-                        </button>
-                      </div>
-                    ) : (
-                      <button
-                        type="button"
-                        onClick={(e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    // Create a temporary date input to show native calendar picker
-    const input = document.createElement('input');
-    input.type = 'date';
-    input.min = '2020-01-01';
-    input.max = '2026-12-31';
-    input.style.cssText = 'position:absolute;opacity:0;pointer-events:none';
-    document.body.appendChild(input);
-    input.showPicker ? input.showPicker() : input.click();
-    input.addEventListener('change', function() {
-      const val = this.value;
-      if (!val) return;
-      const [year, month] = val.split('-').map(Number);
-      const em = localStorage.getItem('opencard_subscribed_email');
-      if (!em) { alert(m.noEmail); return; }
-      fetch('/api/my-cards/set-open-date', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: em, card_id: card.card_id, month, year }),
-      }).then(r => r.json()).then(d => {
-        if (d.success) alert(`${m.savedToast} ${month}/${year} (${card.name})`);
-        else alert(m.saveErrorPrefix + (d.error || 'failed'));
-      }).catch(() => alert(m.saveNetworkError));
-      document.body.removeChild(input);
-    });
-    input.addEventListener('blur', function() {
-      if (document.body.contains(input)) document.body.removeChild(input);
-    });
-  }}
-                        className="text-xs text-blue-600 hover:text-blue-800 font-medium cursor-pointer"
-                      >
-                        {m.setOpenDateLabel}
-                      </button>
-                    )}
+                    <OpenDateRow
+                      cardId={card.card_id}
+                      email={email}
+                      initial={openDates[card.card_id]}
+                      lang={lang}
+                      onSaved={(month, year) => setOpenDates((prev) => ({ ...prev, [card.card_id]: { month, year } }))}
+                    />
                   </div>
 
                   {/* Benefits */}
