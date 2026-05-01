@@ -10,7 +10,8 @@
     "bonus_points": 100,
     "spending_requirement": 500,
     "time_period_months": 3,
-    "description": "开卡3个月内消费满 $500 可得 $100 cash rewards bonus"
+    "description": "开卡3个月内消费满 $500 可得 $100 cash rewards bonus",
+    "estimated_value": 100
   },
   "earning_rates": [
     {

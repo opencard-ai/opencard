@@ -15,7 +15,7 @@
     "description": "Earn 15,000 Membership Rewards points after you use your new Card to make $2,000 in purchases within the first 6 months (as of July 2024)",
     "free_nights": null,
     "point_program": "American Express Membership Rewards",
-    "estimated_value": 200
+    "estimated_value": 255
   },
   "earning_rates": [
     {
@@ -82,6 +82,6 @@
   "next_review": "2026-07-15T13:41:49.945000+00:00",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 5,
-  "cash_advance_fee_pct": 3.0,
+  "cash_advance_fee_pct": 3,
   "cfpb_verified": true
 }
