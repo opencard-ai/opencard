@@ -14,11 +14,22 @@ const COLLAPSE_DELAY_MS = 3000;
 
 export default function FloatingButtons({ lang }: FloatingButtonsProps) {
   const [compareBarVisible, setCompareBarVisible] = useState(false);
-  // Smart-pill behaviour: pills start expanded so users discover them, then
-  // collapse to icon-only after a few seconds idle. Tapping any pill (or the
-  // wrapper) bumps them back to expanded for another window.
+  // Smart-pill behaviour, mobile only: pills start expanded so users discover
+  // them, then collapse to icon-only after a few seconds idle. Tapping any pill
+  // bumps them back to expanded. Desktop keeps full pills always.
   const [expanded, setExpanded] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Track viewport so we can skip the collapse timer on desktop entirely.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mql = window.matchMedia("(max-width: 639px)");
+    setIsMobile(mql.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mql.addEventListener("change", handler);
+    return () => mql.removeEventListener("change", handler);
+  }, []);
 
   const armCollapse = useCallback(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
@@ -27,15 +38,20 @@ export default function FloatingButtons({ lang }: FloatingButtonsProps) {
 
   const bump = useCallback(() => {
     setExpanded(true);
-    armCollapse();
-  }, [armCollapse]);
+    if (isMobile) armCollapse();
+  }, [armCollapse, isMobile]);
 
   useEffect(() => {
+    if (!isMobile) {
+      setExpanded(true);
+      if (timerRef.current) clearTimeout(timerRef.current);
+      return;
+    }
     armCollapse();
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [armCollapse]);
+  }, [isMobile, armCollapse]);
 
   useEffect(() => {
     const show = () => setCompareBarVisible(true);
