@@ -183,22 +183,38 @@ export default function RecommendWidget({ lang = "en", expanded = true }: { lang
   return (
     <div className="flex flex-col items-end gap-3">
       {isOpen && (
-        <div className="w-80 sm:w-[400px] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col mb-2 animate-in fade-in slide-in-from-bottom-4 duration-200">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 flex items-center justify-between">
+        <>
+          {/* Mobile: dim the rest of the page so the chat reads as a modal. */}
+          <div
+            className="fixed inset-0 bg-black/30 z-40 sm:hidden"
+            onClick={() => setIsOpen(false)}
+            aria-hidden
+          />
+          <div
+            className="
+              fixed inset-x-3 top-4 bottom-4 z-50
+              sm:static sm:inset-auto sm:w-[400px] sm:max-h-none
+              bg-white rounded-2xl shadow-2xl border border-slate-200
+              overflow-hidden flex flex-col mb-2
+              animate-in fade-in slide-in-from-bottom-4 duration-200
+            "
+          >
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 flex items-center justify-between shrink-0">
             <div>
               <h3 className="text-white font-bold text-sm">{msg.title}</h3>
               <p className="text-blue-100 text-[10px]">AI-powered credit card assistant</p>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-white/70 hover:text-white transition-colors"
+              aria-label="Close"
+              className="w-8 h-8 flex items-center justify-center rounded-full text-white/80 hover:text-white hover:bg-white/15 transition-colors text-lg"
             >
               ✕
             </button>
           </div>
 
           <div
-            className="h-[450px] overflow-y-auto p-4 space-y-4 bg-slate-50"
+            className="flex-1 sm:h-[450px] sm:flex-none overflow-y-auto p-4 space-y-4 bg-slate-50"
             style={{ overscrollBehavior: "contain" }}
             onWheel={(e) => e.stopPropagation()}
             onTouchMove={(e) => e.stopPropagation()}
@@ -269,7 +285,8 @@ export default function RecommendWidget({ lang = "en", expanded = true }: { lang
               </button>
             </div>
           </div>
-        </div>
+          </div>
+        </>
       )}
 
       <button
