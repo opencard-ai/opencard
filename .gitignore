@@ -24,6 +24,10 @@
 .DS_Store
 *.pem
 
+# claude code local-only configs (machine-specific paths inside)
+.claude/launch.json
+.claude/settings.local.json
+
 # debug
 npm-debug.log*
 yarn-debug.log*
