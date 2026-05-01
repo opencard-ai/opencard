@@ -45,6 +45,12 @@ const MESSAGES = {
     remainingThisPeriod: "remaining this period",
     fnaMarkRedeemed: "Mark redeemed",
     fnaRedeemedLabel: "✓ Redeemed",
+    setOpenDateLabel: "📅 Set card open date",
+    editLabel: "Edit",
+    openedLabel: "Opened",
+    savedToast: "Saved",
+    saveErrorPrefix: "Error: ",
+    saveNetworkError: "Network error",
   },
   zh: {
     title: "💳 我的卡片",
@@ -83,6 +89,12 @@ const MESSAGES = {
     remainingThisPeriod: "本期剩餘",
     fnaMarkRedeemed: "標記已兌換",
     fnaRedeemedLabel: "✓ 已兌換",
+    setOpenDateLabel: "📅 設定開卡日期",
+    editLabel: "修改",
+    openedLabel: "開卡",
+    savedToast: "已儲存",
+    saveErrorPrefix: "錯誤:",
+    saveNetworkError: "網路錯誤",
   },
   es: {
     title: "💳 Mis Tarjetas",
@@ -121,6 +133,12 @@ const MESSAGES = {
     remainingThisPeriod: "restante este período",
     fnaMarkRedeemed: "Marcar canjeado",
     fnaRedeemedLabel: "✓ Canjeado",
+    setOpenDateLabel: "📅 Establecer fecha de apertura",
+    editLabel: "Editar",
+    openedLabel: "Abierta",
+    savedToast: "Guardado",
+    saveErrorPrefix: "Error: ",
+    saveNetworkError: "Error de red",
   },
 };
 
@@ -793,7 +811,7 @@ export default function MyCardsPage({
                     {openDates[card.card_id] ? (
                       <div className="flex items-center gap-2">
                         <span className="text-xs text-blue-600 font-medium">
-                          📅 Opened {openDates[card.card_id].month}/{openDates[card.card_id].year}
+                          📅 {m.openedLabel} {openDates[card.card_id].month}/{openDates[card.card_id].year}
                           {' -> '}
                           {(() => {
                             const now = new Date();
@@ -828,9 +846,9 @@ export default function MyCardsPage({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: em, card_id: card.card_id, month, year }),
       }).then(r => r.json()).then(d => {
-        if (d.success) alert('Saved ' + month + '/' + year + ' for ' + card.name + '!');
-        else alert('Error: ' + (d.error || 'failed'));
-      }).catch(() => alert('Network error'));
+        if (d.success) alert(`${m.savedToast} ${month}/${year} (${card.name})`);
+        else alert(m.saveErrorPrefix + (d.error || 'failed'));
+      }).catch(() => alert(m.saveNetworkError));
       document.body.removeChild(input);
     });
     input.addEventListener('blur', function() {
@@ -839,7 +857,7 @@ export default function MyCardsPage({
   }}
                           className="text-xs text-blue-500 hover:text-blue-700 cursor-pointer"
                         >
-                          Edit
+                          {m.editLabel}
                         </button>
                       </div>
                     ) : (
@@ -861,15 +879,15 @@ export default function MyCardsPage({
       if (!val) return;
       const [year, month] = val.split('-').map(Number);
       const em = localStorage.getItem('opencard_subscribed_email');
-      if (!em) { alert('Please subscribe first'); return; }
+      if (!em) { alert(m.noEmail); return; }
       fetch('/api/my-cards/set-open-date', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: em, card_id: card.card_id, month, year }),
       }).then(r => r.json()).then(d => {
-        if (d.success) alert('Saved ' + month + '/' + year + ' for ' + card.name + '!');
-        else alert('Error: ' + (d.error || 'failed'));
-      }).catch(() => alert('Network error'));
+        if (d.success) alert(`${m.savedToast} ${month}/${year} (${card.name})`);
+        else alert(m.saveErrorPrefix + (d.error || 'failed'));
+      }).catch(() => alert(m.saveNetworkError));
       document.body.removeChild(input);
     });
     input.addEventListener('blur', function() {
@@ -878,7 +896,7 @@ export default function MyCardsPage({
   }}
                         className="text-xs text-blue-600 hover:text-blue-800 font-medium cursor-pointer"
                       >
-                        📅 Set card open date
+                        {m.setOpenDateLabel}
                       </button>
                     )}
                   </div>
