@@ -151,5 +151,6 @@
       "reverted_at": "2026-04-26T04:02:55.594292Z",
       "reverted_by": "cfpb_pipeline_corruption_revert_2026-04-25"
     }
-  ]
+  ],
+  "featured": true
 }
