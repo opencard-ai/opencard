@@ -89,15 +89,6 @@
   },
   "recurring_credits": [
     {
-      "credit_key": "alaska-lounge-passes",
-      "name": "Alaska Lounge Passes",
-      "amount": 8,
-      "frequency": "quarterly",
-      "category": "lounge",
-      "description": "Two Alaska Lounge passes per quarter (8 total per year)",
-      "reset_type": "cardmember_year"
-    },
-    {
       "credit_key": "alaska-lounge-membership-discount",
       "name": "Alaska Lounge+ Membership Discount",
       "amount": 100,

@@ -33,8 +33,19 @@ export interface HotelStatus {
   complimentary: boolean;
 }
 
+export interface LoungeAccess {
+  name: string;
+  type: string;
+  /** Limited entry passes per quarter (e.g. Alaska Lounge: 2/quarter on Summit). */
+  passes_per_quarter?: number;
+  /** Limited entry passes per cardmember year. */
+  passes_per_year?: number;
+  /** Free-text discount/perk note (e.g. "$100 off annual membership"). */
+  discount?: string;
+}
+
 export interface TravelBenefits {
-  lounge_access?: { name: string; type: string }[];
+  lounge_access?: LoungeAccess[];
   hotel_status?: HotelStatus[];
   other_benefits?: { name: string; description: string }[];
 }
