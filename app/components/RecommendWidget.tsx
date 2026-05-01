@@ -75,7 +75,7 @@ function renderContent(text: string) {
   ));
 }
 
-export default function RecommendWidget({ lang = "en" }: { lang?: string }) {
+export default function RecommendWidget({ lang = "en", expanded = true }: { lang?: string; expanded?: boolean }) {
   const msg = MESSAGES[lang as keyof typeof MESSAGES] || MESSAGES.en;
   const hasOpened = useRef(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -274,15 +274,19 @@ export default function RecommendWidget({ lang = "en" }: { lang?: string }) {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 w-[160px] justify-center ${
-          isOpen 
-            ? "bg-blue-700 text-white shadow-2xl" 
+        aria-label={msg.trigger}
+        title={msg.trigger}
+        className={`h-12 rounded-full shadow-lg flex items-center gap-2 transition-[width,padding] duration-200 hover:scale-105 active:scale-95 justify-center overflow-hidden ${
+          isOpen || expanded ? "w-[160px] px-5" : "w-12 px-0"
+        } ${
+          isOpen
+            ? "bg-blue-700 text-white shadow-2xl"
             : "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-xl hover:shadow-2xl"
         }`}
         style={{ boxShadow: isOpen ? "0 8px 32px rgba(59, 130, 246, 0.5)" : "0 4px 12px rgba(0,0,0,0.1)" }}
       >
         <span className="text-xl leading-none">✨</span>
-        <span className="font-bold text-sm">{msg.trigger}</span>
+        {(isOpen || expanded) && <span className="font-bold text-sm whitespace-nowrap">{msg.trigger}</span>}
       </button>
     </div>
   );

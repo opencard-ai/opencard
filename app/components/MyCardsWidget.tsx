@@ -50,7 +50,7 @@ interface IssuerGroup {
   cards: CardInfo[];
 }
 
-export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
+export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?: string; expanded?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCards, setSelectedCards] = useState<string[]>([]);
   const [search, setSearch] = useState("");
@@ -322,16 +322,24 @@ export default function MyCardsWidget({ lang = "en" }: { lang?: string }) {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 w-[160px] justify-center ${
+        aria-label={m.trigger}
+        title={m.trigger}
+        className={`h-12 rounded-full shadow-lg flex items-center gap-2 transition-[width,padding] duration-200 hover:scale-105 active:scale-95 justify-center overflow-hidden relative ${
+          isOpen || expanded ? "w-[160px] px-5" : "w-12 px-0"
+        } ${
           isOpen
             ? "bg-slate-800 text-white shadow-xl"
             : "bg-white text-slate-700 border-2 border-slate-200 shadow-md hover:shadow-lg hover:border-slate-300"
         }`}
       >
         <span className="text-xl leading-none">💳</span>
-        <span className="font-bold text-sm">{m.trigger}</span>
+        {(isOpen || expanded) && <span className="font-bold text-sm whitespace-nowrap">{m.trigger}</span>}
         {selectedCards.length > 0 && (
-          <span className="bg-blue-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+          <span
+            className={`bg-blue-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
+              !isOpen && !expanded ? "absolute top-0 right-0 -translate-y-1 translate-x-1" : ""
+            }`}
+          >
             {selectedCards.length}
           </span>
         )}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import MyCardsWidget from "./MyCardsWidget";
 import RecommendWidget from "./RecommendWidget";
 import ScrollFix from "./ScrollFix";
@@ -10,8 +10,32 @@ interface FloatingButtonsProps {
   lang: string;
 }
 
+const COLLAPSE_DELAY_MS = 3000;
+
 export default function FloatingButtons({ lang }: FloatingButtonsProps) {
   const [compareBarVisible, setCompareBarVisible] = useState(false);
+  // Smart-pill behaviour: pills start expanded so users discover them, then
+  // collapse to icon-only after a few seconds idle. Tapping any pill (or the
+  // wrapper) bumps them back to expanded for another window.
+  const [expanded, setExpanded] = useState(true);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const armCollapse = useCallback(() => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => setExpanded(false), COLLAPSE_DELAY_MS);
+  }, []);
+
+  const bump = useCallback(() => {
+    setExpanded(true);
+    armCollapse();
+  }, [armCollapse]);
+
+  useEffect(() => {
+    armCollapse();
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, [armCollapse]);
 
   useEffect(() => {
     const show = () => setCompareBarVisible(true);
@@ -33,33 +57,33 @@ export default function FloatingButtons({ lang }: FloatingButtonsProps) {
 
   return (
     <div
+      onPointerDownCapture={bump}
       className={`fixed right-3 sm:right-6 z-50 flex flex-col items-end gap-3 pointer-events-none transition-all duration-300 ${
-        compareBarVisible
-          ? "bottom-[71px]"
-          : "bottom-6"
+        compareBarVisible ? "bottom-[71px]" : "bottom-6"
       }`}
     >
-      {/* 1. Recommend Cards (top) */}
       <div className="pointer-events-auto">
         <ScrollFix />
         <Suspense fallback={null}>
-          <RecommendWidget lang={lang} />
+          <RecommendWidget lang={lang} expanded={expanded} />
         </Suspense>
       </div>
 
-      {/* 2. My Cards widget */}
       <div className="pointer-events-auto">
-        <MyCardsWidget lang={lang} />
+        <MyCardsWidget lang={lang} expanded={expanded} />
       </div>
 
-      {/* 3. My Benefits — links to My Cards page */}
       <div className="pointer-events-auto">
         <a
           href={`/${lang}/my-cards`}
-          className="h-12 px-5 rounded-full shadow-lg bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-300 text-slate-700 shadow-md hover:shadow-lg hover:border-blue-400 transition-all hover:scale-105 active:scale-95 flex items-center gap-2 w-[160px] justify-center"
+          aria-label={l.benefits}
+          title={l.benefits}
+          className={`h-12 rounded-full shadow-lg bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-300 text-slate-700 hover:shadow-xl hover:border-blue-400 transition-[width,padding] duration-200 hover:scale-105 active:scale-95 flex items-center gap-2 justify-center overflow-hidden ${
+            expanded ? "w-[160px] px-5" : "w-12 px-0"
+          }`}
         >
           <span className="text-xl leading-none">✨</span>
-          <span className="font-bold text-sm">{l.benefits}</span>
+          {expanded && <span className="font-bold text-sm whitespace-nowrap">{l.benefits}</span>}
         </a>
       </div>
     </div>
