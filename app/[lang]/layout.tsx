@@ -8,7 +8,6 @@ import LanguageSwitcher from "@/app/components/LanguageSwitcher";
 import RecommendWidget from "@/app/components/RecommendWidget";
 import MyCardsWidget from "@/app/components/MyCardsWidget";
 import FloatingButtons from "@/app/components/FloatingButtons";
-import BottomNav from "@/app/components/BottomNav";
 import { locales, t } from "@/lib/i18n";
 
 const geistSans = Geist({
@@ -83,7 +82,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             </div>
           </div>
         </header>
-        <main className="flex-1 pb-20 sm:pb-0">{children}</main>
+        <main className="flex-1 pb-48 sm:pb-0">{children}</main>
         <footer className="bg-white border-t border-slate-200 mt-16">
           <div className="max-w-5xl mx-auto px-4 py-8">
             <FTCDisclosure locale={lang as any} />
@@ -91,12 +90,8 @@ export default async function LocaleLayout({ children, params }: Props) {
         </footer>
         {/* Analytics */}
         <Analytics />
-        {/* Desktop floating widgets (hidden on mobile in favor of BottomNav) */}
-        <div className="hidden sm:block">
-          <FloatingButtons lang={lang} />
-        </div>
-        {/* Mobile bottom navigation */}
-        <BottomNav lang={lang} />
+        {/* Floating widget cluster (recommend / my-cards / track) */}
+        <FloatingButtons lang={lang} />
       </body>
     </html>
   );
