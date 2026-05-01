@@ -3,7 +3,7 @@
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { useState, useCallback, useEffect, useMemo } from "react";
 import CompareBar from "./CompareBar";
-import Link from "next/link";
+import CardRow from "./CardRow";
 import type { CreditCard } from "@/lib/cards";
 
 interface CardGridProps {
@@ -141,11 +141,10 @@ const LABELS: Record<string, Record<string, string>> = {
   showLessInTier: { en: "Show less", zh: "收合", es: "Ver menos" },
   cardsCount: { en: "cards", zh: "張", es: "tarjetas" },
   sortBy: { en: "Sort", zh: "排序", es: "Ordenar" },
-  sortName: { en: "Name", zh: "名稱", es: "Nombre" },
-  sortFeeAsc: { en: "Fee: Low → High", zh: "年費由低到高", es: "Cuota ↓" },
-  sortFeeDesc: { en: "Fee: High → Low", zh: "年費由高到低", es: "Cuota ↑" },
-  sortBonus: { en: "Welcome Bonus: Highest", zh: "開卡禮：最高", es: "Bono de bienvenida ↑" },
-  sortCredit: { en: "Credit Level", zh: "信用等級", es: "Nivel de crédito" },
+  sortName: { en: "Sort: A → Z", zh: "排序:卡名 A→Z", es: "Orden: A → Z" },
+  sortFeeAsc: { en: "Sort: Fee Low → High", zh: "排序:年費 低→高", es: "Orden: Cuota ↓" },
+  sortFeeDesc: { en: "Sort: Fee High → Low", zh: "排序:年費 高→低", es: "Orden: Cuota ↑" },
+  sortBonus: { en: "Sort: Welcome bonus highest", zh: "排序:開卡禮最高", es: "Orden: Bono ↑" },
 };
 
 function l(key: string, locale: string): string {
@@ -155,17 +154,16 @@ function l(key: string, locale: string): string {
 export default function CardGrid({ cards, issuers, tags, locale }: CardGridProps) {
   const searchParams = useSearchParams();
   const [selectedSort, setSelectedSort] = useState(() => searchParams.get("sort") || "name");
-  const [groupByIssuer, setGroupByIssuer] = useState(false);
 
   return (
     <div id="cards-section" style={{ scrollMarginTop: "73px" }}>
-      <FilterBar issuers={issuers} tags={tags} locale={locale} selectedSort={selectedSort} setSelectedSort={setSelectedSort} groupByIssuer={groupByIssuer} setGroupByIssuer={setGroupByIssuer} />
-      <CardList cards={cards} tags={tags} locale={locale} selectedSort={selectedSort} groupByIssuer={groupByIssuer} />
+      <FilterBar issuers={issuers} tags={tags} locale={locale} selectedSort={selectedSort} setSelectedSort={setSelectedSort} />
+      <CardList cards={cards} tags={tags} locale={locale} selectedSort={selectedSort} />
     </div>
   );
 }
 
-function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort, groupByIssuer, setGroupByIssuer }: { issuers: string[]; tags: string[]; locale: string; selectedSort: string; setSelectedSort: (v: string) => void; groupByIssuer: boolean; setGroupByIssuer: (v: boolean) => void }) {
+function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort }: { issuers: string[]; tags: string[]; locale: string; selectedSort: string; setSelectedSort: (v: string) => void }) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -185,18 +183,18 @@ function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort, group
 
   return (
     <div>
-      <div className="flex gap-2 mb-3">
+      <div className="flex flex-wrap gap-2 mb-3">
         <input
           type="text"
           placeholder={l("searchPlaceholder", locale)}
           defaultValue={search}
           onChange={(e) => updateParam("search", e.target.value)}
-          className="flex-1 border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="flex-1 min-w-[220px] border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
         <select
           value={selectedIssuer}
           onChange={(e) => updateParam("issuer", e.target.value)}
-          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden sm:block"
+          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden sm:block max-w-[150px]"
         >
           <option value="">{l("allIssuers", locale)}</option>
           {issuers.map((issuer) => (
@@ -206,7 +204,7 @@ function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort, group
         <select
           value={selectedTag}
           onChange={(e) => updateParam("tag", e.target.value)}
-          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden sm:block min-w-[140px]"
+          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden sm:block max-w-[150px]"
         >
           <option value="">{l("allTags", locale)}</option>
           {displayTags.map(({ value, label }) => (
@@ -216,7 +214,7 @@ function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort, group
         <select
           value={selectedAf}
           onChange={(e) => updateParam("af", e.target.value)}
-          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden sm:block min-w-[110px]"
+          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden sm:block max-w-[140px]"
         >
           <option value="">{l("allAf", locale)}</option>
           <option value="no">{l("noFee", locale)}</option>
@@ -226,22 +224,14 @@ function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort, group
         <select
           value={selectedSort}
           onChange={(e) => setSelectedSort(e.target.value)}
-          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white min-w-[150px]"
+          aria-label={l("sortBy", locale)}
+          className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
         >
-          <option value="">{l("sortBy", locale)}</option>
           <option value="name">{l("sortName", locale)}</option>
           <option value="fee-asc">{l("sortFeeAsc", locale)}</option>
           <option value="fee-desc">{l("sortFeeDesc", locale)}</option>
           <option value="bonus">{l("sortBonus", locale)}</option>
-          <option value="credit">{l("sortCredit", locale)}</option>
         </select>
-        <button
-          onClick={() => setGroupByIssuer(!groupByIssuer)}
-          className={`px-3 py-2.5 text-sm rounded-lg border transition-colors ${groupByIssuer ? "bg-blue-100 border-blue-300 text-blue-700" : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"}`}
-          title={locale === "zh" ? "按發卡機構分組" : locale === "es" ? "Agrupar por emisor" : "Group by issuer"}
-        >
-          {locale === "zh" ? "🏦 分組" : locale === "es" ? "🏦 Agrupar" : "🏦 Group"}
-        </button>
         {(selectedIssuer || selectedTag || selectedAf || search || searchParams.get("sort")) && (
           <button
             onClick={() => router.push(`${pathname}#cards-section`, { scroll: false })}
@@ -279,7 +269,7 @@ function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort, group
   );
 }
 
-function CardList({ cards, tags, locale, selectedSort, groupByIssuer }: { cards: CreditCard[]; tags: string[]; locale: string; selectedSort: string; groupByIssuer: boolean }) {
+function CardList({ cards, tags, locale, selectedSort }: { cards: CreditCard[]; tags: string[]; locale: string; selectedSort: string }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const [compareIds, setCompareIds] = useState<string[]>([]);
@@ -342,12 +332,6 @@ function CardList({ cards, tags, locale, selectedSort, groupByIssuer }: { cards:
         };
         return getBonus(b) - getBonus(a);
       }
-      if (selectedSort === "credit") {
-        const order: Record<string, number> = { "Excellent": 4, "Good": 3, "Fair": 2, "Secured": 1 };
-        const aVal = order[a.credit_required] ?? 0;
-        const bVal = order[b.credit_required] ?? 0;
-        return bVal - aVal;
-      }
       return a.name.localeCompare(b.name);
     });
   }, [cards, selectedIssuer, selectedTag, selectedAf, search, selectedSort, tags]);
@@ -378,116 +362,20 @@ function CardList({ cards, tags, locale, selectedSort, groupByIssuer }: { cards:
       {(() => {
         const hasActiveFilter = !!(search || selectedIssuer || selectedTag || selectedAf);
         const hasCustomSort = !!selectedSort && selectedSort !== "name";
-        const useTierMode = !hasActiveFilter && !hasCustomSort && !groupByIssuer;
-        const renderCell = (card: CreditCard) => {
+        const useTierMode = !hasActiveFilter && !hasCustomSort;
+        const renderRow = (card: CreditCard) => {
           const isCompared = compareIds.includes(card.card_id);
           const isMaxed = compareIds.length >= 3 && !isCompared;
           return (
-            <div key={card.card_id} className={`relative bg-white rounded-xl border transition-all duration-200 hover:shadow-md hover:border-slate-300 ${isCompared ? "ring-2 ring-blue-500 border-blue-500" : "border-slate-200"}`}>
-              <Link
-                href={`/${lang}/cards/${card.card_id}`}
-                className="block p-5"
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <div className="min-w-0 pr-2">
-                    <h2 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
-                      {card.name}
-                    </h2>
-                    <p className="text-xs text-slate-500 mt-1">{card.issuer}</p>
-                  </div>
-                  <span className="text-xs bg-slate-100 text-slate-600 rounded-full px-2 py-0.5 shrink-0">
-                    {card.network}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-1 mb-3">
-                  <span className="text-xs text-slate-500">{l("annualFee", locale)}</span>
-                  <span className={`text-sm font-medium ${card.annual_fee === 0 ? "text-green-600" : "text-slate-800"}`}>
-                    {card.annual_fee === 0 ? l("noFee", locale) : `$${card.annual_fee.toLocaleString()}`}
-                  </span>
-                </div>
-                {card.welcome_offer?.estimated_value != null && card.welcome_offer.estimated_value > 0 && (
-                  <div className="mb-3 bg-amber-50 border border-amber-200 rounded px-2 py-1">
-                    <span className="text-xs text-amber-700">🎁 {locale === "zh" ? "開卡禮" : locale === "es" ? "Bono" : "Welcome Bonus"}</span>
-                    <div className="flex items-center gap-2 mt-0.5">
-                      {(card.welcome_offer.bonus_points ?? 0) > 0 && (
-                        <span className="text-sm font-semibold text-amber-800">
-                          {(card.welcome_offer.bonus_points ?? 0).toLocaleString()} pts
-                        </span>
-                      )}
-                      <span className="text-sm font-semibold text-amber-800">
-                        (~${Number(card.welcome_offer.estimated_value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")})
-                      </span>
-                    </div>
-                  </div>
-                )}
-
-                <div className="mb-3 space-y-0.5">
-                  {card.earning_rates.slice(0, 2).map((rate, i) => (
-                    <div key={i} className="flex items-center gap-1 text-xs text-slate-600">
-                      <span className="text-blue-600 font-medium">{rate.rate}×</span>
-                      <span>{rate.category}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex flex-wrap gap-1">
-                  {card.tags.slice(0, 3).map((tag) => (
-                    <span key={tag} className="text-xs bg-blue-50 text-blue-700 rounded px-1.5 py-0.5">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </Link>
-
-              {/* Action buttons: Compare + Save */}
-              <div className="absolute bottom-3 right-3 flex gap-1.5">
-                {/* Compare button */}
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    toggleCompare(card.card_id);
-                  }}
-                  disabled={isMaxed}
-                  title={isCompared ? "移除比較" : isMaxed ? "已選滿 3 張" : "加入比較"}
-                  className={`w-7 h-7 rounded-full border flex items-center justify-center text-xs font-bold transition-all ${
-                    isCompared
-                      ? "bg-blue-600 border-blue-600 text-white"
-                      : isMaxed
-                      ? "bg-slate-100 border-slate-200 text-slate-300 cursor-not-allowed"
-                      : "bg-white border-slate-300 text-slate-500 hover:border-blue-400 hover:text-blue-600"
-                  }`}
-                >
-                  {isCompared ? "✓" : "⚖"}
-                </button>
-
-                {/* Save to My Cards button */}
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const key = "opencard_existing_cards";
-                    const stored = localStorage.getItem(key);
-                    const existing: string[] = stored ? JSON.parse(stored) : [];
-                    const alreadySaved = existing.includes(card.card_id);
-                    if (alreadySaved) {
-                      // Remove from saved
-                      const updated = existing.filter((id) => id !== card.card_id);
-                      localStorage.setItem(key, JSON.stringify(updated));
-                    } else {
-                      // Add card_id only (My Cards page fetches fresh data from DB)
-                      existing.push(card.card_id);
-                      localStorage.setItem(key, JSON.stringify(existing));
-                    }
-                    // Notify My Cards page to refresh
-                    window.dispatchEvent(new CustomEvent("opencard_cards_updated"));
-                  }}
-                  title="儲存到我的卡片"
-                  className="w-7 h-7 rounded-full border bg-white border-slate-300 text-slate-500 hover:border-green-400 hover:text-green-600 transition-all flex items-center justify-center text-sm"
-                >
-                  💾
-                </button>
-              </div>
-            </div>
+            <CardRow
+              key={card.card_id}
+              card={card}
+              lang={lang}
+              locale={locale}
+              isCompared={isCompared}
+              isMaxed={isMaxed}
+              onToggleCompare={() => toggleCompare(card.card_id)}
+            />
           );
         };
 
@@ -519,8 +407,8 @@ function CardList({ cards, tags, locale, selectedSort, groupByIssuer }: { cards:
                         </button>
                       )}
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {visible.map(renderCell)}
+                    <div className="space-y-2">
+                      {visible.map(renderRow)}
                     </div>
                   </section>
                 );
@@ -530,8 +418,8 @@ function CardList({ cards, tags, locale, selectedSort, groupByIssuer }: { cards:
         }
 
         return (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
-            {filtered.map(renderCell)}
+          <div className="space-y-2 mt-2">
+            {filtered.map(renderRow)}
           </div>
         );
       })()}
