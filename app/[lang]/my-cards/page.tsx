@@ -43,6 +43,8 @@ const MESSAGES = {
     undoUse: "Undo",
     usedLabel: "✓ Used",
     remainingThisPeriod: "remaining this period",
+    fnaMarkRedeemed: "Mark redeemed",
+    fnaRedeemedLabel: "✓ Redeemed",
   },
   zh: {
     title: "💳 我的卡片",
@@ -79,6 +81,8 @@ const MESSAGES = {
     undoUse: "撤銷",
     usedLabel: "✓ 已使用",
     remainingThisPeriod: "本期剩餘",
+    fnaMarkRedeemed: "標記已兌換",
+    fnaRedeemedLabel: "✓ 已兌換",
   },
   es: {
     title: "💳 Mis Tarjetas",
@@ -115,6 +119,8 @@ const MESSAGES = {
     undoUse: "Deshacer",
     usedLabel: "✓ Usado",
     remainingThisPeriod: "restante este período",
+    fnaMarkRedeemed: "Marcar canjeado",
+    fnaRedeemedLabel: "✓ Canjeado",
   },
 };
 
@@ -236,6 +242,9 @@ export default function MyCardsPage({
   // before React commits and re-renders. Without this, multiple clicks within one
   // frame all see the stale closure value and only the last toggle "sticks".
   const creditUsesRef = useRef(creditUses);
+  // Map<"card_id:anniversary_year", { used_at, redeemed_value? }> — FNA redemption log.
+  const [fnaUses, setFnaUses] = useState<Map<string, { used_at: string; redeemed_value?: number }>>(new Map());
+  const fnaUsesRef = useRef(fnaUses);
 
   useEffect(() => {
     params.then((p) => {
@@ -355,6 +364,37 @@ export default function MyCardsPage({
       .catch(() => {});
   }, [email]);
 
+  // Load FNA redemption log once email known.
+  useEffect(() => {
+    if (!email) return;
+    fetch('/api/my-cards/fna-uses?email=' + encodeURIComponent(email))
+      .then(r => r.json())
+      .then(d => {
+        if (!Array.isArray(d.entries)) return;
+        const m = new Map<string, { used_at: string; redeemed_value?: number }>();
+        for (const e of d.entries) {
+          m.set(`${e.card_id}:${e.anniversary_year}`, {
+            used_at: String(e.used_at || ""),
+            ...(typeof e.redeemed_value === "number" ? { redeemed_value: e.redeemed_value } : {}),
+          });
+        }
+        fnaUsesRef.current = m;
+        setFnaUses(m);
+      })
+      .catch(() => {});
+  }, [email]);
+
+  // Compute current anniversary_year for a card. Same anchor logic as
+  // cardmember_year period_key, but returns the start-year integer.
+  const anniversaryYearFor = useCallback((cardId: string): number => {
+    const od = openDates[cardId];
+    const now = new Date();
+    const y = now.getUTCFullYear();
+    if (!od) return y;
+    const m = now.getUTCMonth(); // 0-11
+    return m < (od.month - 1) ? y - 1 : y;
+  }, [openDates]);
+
   // Compute the period_key for a given credit + card, factoring in card open date.
   const periodKeyFor = useCallback((cardId: string, frequency: string): string | null => {
     const od = openDates[cardId];
@@ -403,6 +443,40 @@ export default function MyCardsPage({
       revert();
     }
   }, [email, periodKeyFor]);
+
+  // Toggle an FNA redemption for the card's current anniversary year.
+  const toggleFnaUse = useCallback(async (cardId: string) => {
+    if (!email) return;
+    const annYear = anniversaryYearFor(cardId);
+    const fullKey = `${cardId}:${annYear}`;
+    const wasUsed = fnaUsesRef.current.has(fullKey);
+    const restoreEntry = fnaUsesRef.current.get(fullKey);
+
+    const next = new Map(fnaUsesRef.current);
+    if (wasUsed) next.delete(fullKey);
+    else next.set(fullKey, { used_at: new Date().toISOString() });
+    fnaUsesRef.current = next;
+    setFnaUses(next);
+
+    const revert = () => {
+      const r = new Map(fnaUsesRef.current);
+      if (wasUsed && restoreEntry) r.set(fullKey, restoreEntry);
+      else r.delete(fullKey);
+      fnaUsesRef.current = r;
+      setFnaUses(r);
+    };
+
+    try {
+      const res = await fetch('/api/my-cards/fna-use', {
+        method: wasUsed ? 'DELETE' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, card_id: cardId, anniversary_year: annYear }),
+      });
+      if (!res.ok) revert();
+    } catch {
+      revert();
+    }
+  }, [email, anniversaryYearFor]);
 
   // Handle edit open date
   const handleEditOpenDate = useCallback(async (cardId: string) => {
@@ -827,15 +901,18 @@ export default function MyCardsPage({
                               const fullKey = pk ? `${card.card_id}:${credit.credit_key}:${pk}` : null;
                               const isUsed = fullKey ? creditUses.has(fullKey) : false;
                               const canToggle = !!fullKey;
+                              const fnaKey = credit.is_free_night ? `${card.card_id}:${anniversaryYearFor(card.card_id)}` : null;
+                              const fnaRedeemed = fnaKey ? fnaUses.has(fnaKey) : false;
+                              const dimmed = isUsed || fnaRedeemed;
                               return (
                                 <div key={i} className="flex items-center justify-between">
                                   <div className="flex items-center gap-1.5 min-w-0">
                                     <span className="text-sm">{CATEGORY_EMOJI[credit.category] || "💳"}</span>
-                                    <span className={`text-xs truncate ${isUsed ? "text-slate-400 line-through" : "text-slate-700"}`}>{credit.name}</span>
+                                    <span className={`text-xs truncate ${dimmed ? "text-slate-400 line-through" : "text-slate-700"}`}>{credit.name}</span>
                                   </div>
                                   <div className="flex items-center gap-1.5 shrink-0">
                                     {credit.is_free_night ? (
-                                      <span className="text-[10px] font-semibold text-amber-600 uppercase">{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
+                                      <span className={`text-[10px] font-semibold uppercase ${fnaRedeemed ? "text-slate-400 line-through" : "text-amber-600"}`}>{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
                                     ) : credit.amount && credit.amount > 0 ? (
                                       <span className={`text-xs font-semibold ${isUsed ? "text-slate-400 line-through" : "text-slate-800"}`}>${credit.amount}</span>
                                     ) : null}
@@ -853,6 +930,21 @@ export default function MyCardsPage({
                                         title={isUsed ? m.undoUse : m.markUsed}
                                       >
                                         {isUsed ? m.usedLabel : "✓"}
+                                      </button>
+                                    )}
+                                    {credit.is_free_night && (
+                                      <button
+                                        type="button"
+                                        onClick={() => toggleFnaUse(card.card_id)}
+                                        className={`ml-1 text-[10px] px-1.5 py-0.5 rounded border transition-colors ${
+                                          fnaRedeemed
+                                            ? "border-emerald-300 bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
+                                            : "border-amber-200 bg-white text-amber-600 hover:border-amber-400 hover:text-amber-700"
+                                        }`}
+                                        aria-label={fnaRedeemed ? m.undoUse : m.fnaMarkRedeemed}
+                                        title={fnaRedeemed ? m.undoUse : m.fnaMarkRedeemed}
+                                      >
+                                        {fnaRedeemed ? m.fnaRedeemedLabel : "✓"}
                                       </button>
                                     )}
                                   </div>
@@ -874,15 +966,18 @@ export default function MyCardsPage({
                               const fullKey = pk ? `${card.card_id}:${credit.credit_key}:${pk}` : null;
                               const isUsed = fullKey ? creditUses.has(fullKey) : false;
                               const canToggle = !!fullKey;
+                              const fnaKey = credit.is_free_night ? `${card.card_id}:${anniversaryYearFor(card.card_id)}` : null;
+                              const fnaRedeemed = fnaKey ? fnaUses.has(fnaKey) : false;
+                              const dimmed = isUsed || fnaRedeemed;
                               return (
                                 <div key={i} className="flex items-center justify-between">
                                   <div className="flex items-center gap-1.5 min-w-0">
                                     <span className="text-sm">{CATEGORY_EMOJI[credit.category] || "💳"}</span>
-                                    <span className={`text-xs truncate ${isUsed ? "text-slate-400 line-through" : "text-slate-600"}`}>{credit.name}</span>
+                                    <span className={`text-xs truncate ${dimmed ? "text-slate-400 line-through" : "text-slate-600"}`}>{credit.name}</span>
                                   </div>
                                   <div className="flex items-center gap-1.5 shrink-0">
                                     {credit.is_free_night ? (
-                                      <span className="text-[10px] font-semibold text-amber-600 uppercase">{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
+                                      <span className={`text-[10px] font-semibold uppercase ${fnaRedeemed ? "text-slate-400 line-through" : "text-amber-600"}`}>{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
                                     ) : credit.amount && credit.amount > 0 ? (
                                       <span className={`text-xs font-semibold ${isUsed ? "text-slate-400 line-through" : "text-amber-600"}`}>${credit.amount}</span>
                                     ) : null}
@@ -900,6 +995,21 @@ export default function MyCardsPage({
                                         title={isUsed ? m.undoUse : m.markUsed}
                                       >
                                         {isUsed ? m.usedLabel : "✓"}
+                                      </button>
+                                    )}
+                                    {credit.is_free_night && (
+                                      <button
+                                        type="button"
+                                        onClick={() => toggleFnaUse(card.card_id)}
+                                        className={`ml-1 text-[10px] px-1.5 py-0.5 rounded border transition-colors ${
+                                          fnaRedeemed
+                                            ? "border-emerald-300 bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
+                                            : "border-amber-200 bg-white text-amber-600 hover:border-amber-400 hover:text-amber-700"
+                                        }`}
+                                        aria-label={fnaRedeemed ? m.undoUse : m.fnaMarkRedeemed}
+                                        title={fnaRedeemed ? m.undoUse : m.fnaMarkRedeemed}
+                                      >
+                                        {fnaRedeemed ? m.fnaRedeemedLabel : "✓"}
                                       </button>
                                     )}
                                   </div>
