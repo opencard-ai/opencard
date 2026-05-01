@@ -3,5 +3,12 @@
 html { scroll-behavior: auto; }
 
 body {
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family:
+    var(--font-geist-sans),
+    system-ui,
+    -apple-system,
+    "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", /* zh-TW */
+    "PingFang SC", "Noto Sans SC", "Microsoft YaHei", /* zh-CN fallback */
+    "Hiragino Sans", "Meiryo", /* ja */
+    sans-serif;
 }
