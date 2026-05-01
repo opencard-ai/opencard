@@ -76,6 +76,52 @@ function cardMatchesTag(card: CreditCard, tagValue: string, allTags: string[]): 
   return false;
 }
 
+// Tier classification for the default browse view. Order matters: a card hits
+// the first matching tier (e.g. a $0-AF business card lands in "business",
+// not "no-fee", because business identity is more meaningful for that user).
+type Tier = "secured-student" | "business" | "premium" | "mid" | "no-fee";
+
+function getTier(card: CreditCard): Tier {
+  const tags = card.tags || [];
+  if (tags.includes("secured") || tags.includes("student")) return "secured-student";
+  if (tags.includes("business")) return "business";
+  if (card.annual_fee >= 95) return "premium";
+  if (card.annual_fee > 0) return "mid";
+  return "no-fee";
+}
+
+const TIER_ORDER: Tier[] = ["premium", "mid", "no-fee", "business", "secured-student"];
+
+const TIER_LABELS: Record<Tier, Record<string, string>> = {
+  "premium": {
+    en: "💎 Premium ($95+)",
+    zh: "💎 高階($95+)",
+    es: "💎 Premium ($95+)",
+  },
+  "mid": {
+    en: "🎯 Mid-tier ($1-$94)",
+    zh: "🎯 中階($1-$94)",
+    es: "🎯 Intermedia ($1-$94)",
+  },
+  "no-fee": {
+    en: "✓ No Annual Fee",
+    zh: "✓ 免年費",
+    es: "✓ Sin cuota anual",
+  },
+  "business": {
+    en: "🏢 Business",
+    zh: "🏢 商務",
+    es: "🏢 Negocios",
+  },
+  "secured-student": {
+    en: "🎓 Student & Secured",
+    zh: "🎓 學生 & 擔保卡",
+    es: "🎓 Estudiantes & Aseguradas",
+  },
+};
+
+const DEFAULT_PER_TIER = 6;
+
 const LABELS: Record<string, Record<string, string>> = {
   searchPlaceholder: { en: "Search cards...", zh: "搜尋卡片名稱...", es: "Buscar tarjetas..." },
   allIssuers: { en: "All Issuers", zh: "所有發卡機構", es: "Todos los Emisores" },
@@ -91,6 +137,9 @@ const LABELS: Record<string, Record<string, string>> = {
   showing: { en: "Showing", zh: "顯示", es: "Mostrando" },
   of: { en: "of", zh: "/", es: "de" },
   cards: { en: "cards", zh: "張卡片", es: "tarjetas" },
+  showAllInTier: { en: "Show all", zh: "展開全部", es: "Ver todas" },
+  showLessInTier: { en: "Show less", zh: "收合", es: "Ver menos" },
+  cardsCount: { en: "cards", zh: "張", es: "tarjetas" },
   sortBy: { en: "Sort", zh: "排序", es: "Ordenar" },
   sortName: { en: "Name", zh: "名稱", es: "Nombre" },
   sortFeeAsc: { en: "Fee: Low → High", zh: "年費由低到高", es: "Cuota ↓" },
@@ -234,6 +283,7 @@ function CardList({ cards, tags, locale, selectedSort, groupByIssuer }: { cards:
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const [compareIds, setCompareIds] = useState<string[]>([]);
+  const [expandedTiers, setExpandedTiers] = useState<Set<Tier>>(new Set());
 
   const selectedIssuer = searchParams.get("issuer") || "";
   const selectedTag = searchParams.get("tag") || "";
@@ -241,6 +291,15 @@ function CardList({ cards, tags, locale, selectedSort, groupByIssuer }: { cards:
   const search = searchParams.get("search") || "";
 
   const lang = pathname.split("/")[1] || "en";
+
+  const toggleTier = useCallback((t: Tier) => {
+    setExpandedTiers((prev) => {
+      const next = new Set(prev);
+      if (next.has(t)) next.delete(t);
+      else next.add(t);
+      return next;
+    });
+  }, []);
 
   const toggleCompare = useCallback((cardId: string) => {
     setCompareIds((prev) => {
@@ -316,8 +375,11 @@ function CardList({ cards, tags, locale, selectedSort, groupByIssuer }: { cards:
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
-        {filtered.map((card) => {
+      {(() => {
+        const hasActiveFilter = !!(search || selectedIssuer || selectedTag || selectedAf);
+        const hasCustomSort = !!selectedSort && selectedSort !== "name";
+        const useTierMode = !hasActiveFilter && !hasCustomSort && !groupByIssuer;
+        const renderCell = (card: CreditCard) => {
           const isCompared = compareIds.includes(card.card_id);
           const isMaxed = compareIds.length >= 3 && !isCompared;
           return (
@@ -427,8 +489,52 @@ function CardList({ cards, tags, locale, selectedSort, groupByIssuer }: { cards:
               </div>
             </div>
           );
-        })}
-      </div>
+        };
+
+        if (useTierMode) {
+          return (
+            <div className="space-y-8 mt-2">
+              {TIER_ORDER.map((tier) => {
+                const inTier = filtered.filter((c) => getTier(c) === tier);
+                if (inTier.length === 0) return null;
+                const expanded = expandedTiers.has(tier);
+                const visible = expanded ? inTier : inTier.slice(0, DEFAULT_PER_TIER);
+                return (
+                  <section key={tier}>
+                    <div className="flex items-baseline justify-between mb-3 px-1">
+                      <h2 className="text-lg font-bold text-slate-800">
+                        {TIER_LABELS[tier][locale] ?? TIER_LABELS[tier].en}
+                        <span className="ml-2 text-sm font-normal text-slate-400">
+                          {inTier.length} {l("cardsCount", locale)}
+                        </span>
+                      </h2>
+                      {inTier.length > DEFAULT_PER_TIER && (
+                        <button
+                          onClick={() => toggleTier(tier)}
+                          className="text-sm text-blue-600 hover:text-blue-800 hover:underline shrink-0"
+                        >
+                          {expanded
+                            ? l("showLessInTier", locale)
+                            : `${l("showAllInTier", locale)} (${inTier.length})`}
+                        </button>
+                      )}
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {visible.map(renderCell)}
+                    </div>
+                  </section>
+                );
+              })}
+            </div>
+          );
+        }
+
+        return (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
+            {filtered.map(renderCell)}
+          </div>
+        );
+      })()}
 
       <div className="mt-8 text-center text-sm text-slate-500">
         {l("showing", locale)} {filtered.length} {l("of", locale)} {cards.length} {l("cards", locale)}
