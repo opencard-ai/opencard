@@ -9,6 +9,7 @@ export async function GET(request: Request) {
   const summary = searchParams.get("summary") === "1";
   const issuer = searchParams.get("issuer");
   const cardId = searchParams.get("card_id");
+  const idsParam = searchParams.get("ids");
   const cards = getAllCards();
 
   // Filter by card_id if provided - always returns full data
@@ -18,6 +19,22 @@ export async function GET(request: Request) {
       return NextResponse.json({ error: "Card not found" }, { status: 404 });
     }
     return NextResponse.json(card);
+  }
+
+  // Multi-id batch: returns full data only for the listed comma-separated ids.
+  // Used by my-cards to avoid pulling all 218 cards' RC payload on first paint.
+  if (idsParam) {
+    const wanted = new Set(
+      idsParam
+        .split(",")
+        .map(s => s.trim())
+        .filter(s => /^[a-z0-9][a-z0-9-]{0,80}$/.test(s)),
+    );
+    if (wanted.size === 0) return NextResponse.json([]);
+    if (wanted.size > 100) {
+      return NextResponse.json({ error: "Too many ids (max 100)" }, { status: 400 });
+    }
+    return NextResponse.json(cards.filter(c => wanted.has(c.card_id)));
   }
 
   // Filter by issuer if provided

@@ -270,16 +270,16 @@ export default function MyCardsPage({
     });
   }, [params]);
 
-  // Load selected cards — cloud-first if subscribed, localStorage fallback
-  // Also fetch cardsData in the same useEffect to avoid race conditions
+  // Load selected card IDs — cloud-first if subscribed, localStorage fallback.
+  // Card *details* are fetched in a separate effect keyed on selectedCards so we
+  // only pull data for owned cards (saves ~150KB vs the old "fetch all 218" path).
   useEffect(() => {
-    const loadEverything = async () => {
+    const loadIds = async () => {
       const savedEmail = localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
       let cardsToSet: string[] = [];
       let isSubscribedToSet = false;
       let emailToSet = '';
-      
-      // Try cloud first
+
       if (savedEmail) {
         try {
           const res = await fetch(`/api/my-cards?email=${encodeURIComponent(savedEmail)}`);
@@ -295,8 +295,7 @@ export default function MyCardsPage({
           }
         } catch {}
       }
-      
-      // Fallback to localStorage if no cloud cards
+
       if (cardsToSet.length === 0) {
         const saved = localStorage.getItem(STORAGE_KEY);
         if (saved) {
@@ -310,46 +309,37 @@ export default function MyCardsPage({
           } catch {}
         }
       }
-      
-      // Set the selected cards
-      if (cardsToSet.length > 0) {
-        setSelectedCards(cardsToSet);
-      }
+
+      if (cardsToSet.length > 0) setSelectedCards(cardsToSet);
       if (isSubscribedToSet) {
         setIsSubscribed(true);
         setEmail(emailToSet);
       }
-      
-      // Fetch full card data for all cards
-      try {
-        const cardRes = await fetch('/api/cards?summary=1');
-        if (cardRes.ok) {
-          const data = await cardRes.json(); // Response is flat array [{card_id, ...}, ...]
-          const map: Record<string, Card> = {};
-          // Handle both flat array and grouped formats
-          if (Array.isArray(data)) {
-            for (const c of data) {
-              map[c.card_id] = c;
-            }
-          } else {
-            // Grouped format: [{issuer: "Amex", cards: [...]}, ...]
-            for (const issuerGroup of data) {
-              for (const c of issuerGroup.cards || []) {
-                map[c.card_id] = c;
-              }
-            }
-          }
-          setCardsData(map);
-          (window as any).__cardsData = map;
-          console.log('setCardsData called, amex-platinum:', map['amex-platinum']?.name);
-        }
-      } catch {}
-      
       setLoaded(true);
     };
-    
-    loadEverything();
+
+    loadIds();
   }, []);
+
+  // Fetch full card data for selectedCards only. Re-runs when the set changes
+  // (e.g. user adds a card from /cards page → opencard_cards_updated event).
+  useEffect(() => {
+    if (selectedCards.length === 0) {
+      setCardsData({});
+      return;
+    }
+    let cancelled = false;
+    fetch('/api/cards?ids=' + encodeURIComponent(selectedCards.join(',')))
+      .then(r => r.ok ? r.json() : [])
+      .then((data: unknown) => {
+        if (cancelled || !Array.isArray(data)) return;
+        const map: Record<string, Card> = {};
+        for (const c of data as Card[]) map[c.card_id] = c;
+        setCardsData(map);
+      })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [selectedCards]);
 
   
 
