@@ -4,6 +4,7 @@ import ChatWidget from "../../../components/ChatWidget";
 import TravelProducts from "../../../components/TravelProducts";
 import BackToCards from "../../../components/BackToCards";
 import AddToMyCardsButton from "../../../components/AddToMyCardsButton";
+import ReportErrorModal from "../../../components/ReportErrorModal";
 import type { Metadata } from "next";
 import { locales, t } from "@/lib/i18n";
 import { translateCategory } from "@/lib/category-translations";
@@ -411,14 +412,7 @@ export default async function CardDetailPage({ params }: Props) {
                 <p className="text-xs text-slate-400">
                   {l("detail.lastUpdated")}: {freshness?.absolute || card.last_updated}
                 </p>
-                <a
-                  href={`https://github.com/opencard-ai/opencard/issues/new?title=${encodeURIComponent(`[Data Error] ${card.name}`)}&body=${encodeURIComponent(`**Card:** ${card.name}\n**Page:** https://opencardai.com/${lang}/cards/${card.card_id}\n\n**What's wrong:**\n\n(Please describe the incorrect information)\n`)}&labels=data-error`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-slate-400 hover:text-red-500 transition-colors"
-                >
-                  {l("detail.reportError")}
-                </a>
+                <ReportErrorModal cardId={card.card_id} cardName={card.name} lang={lang} />
               </div>
             </section>
           )}

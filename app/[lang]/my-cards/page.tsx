@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { computePeriodKey } from "@/lib/credit-periods";
+import ReportErrorModal from "@/app/components/ReportErrorModal";
 
 const STORAGE_KEY = "opencard_existing_cards";
 const SUBSCRIBED_EMAIL_KEY = "opencard_subscribed_email";
@@ -1028,14 +1029,7 @@ export default function MyCardsPage({
                     >
                       {m.viewAll}
                     </Link>
-                    <a
-                      href={`https://github.com/opencard-ai/opencard/issues/new?title=${encodeURIComponent(`[Data Error] ${card.name}`)}&body=${encodeURIComponent(`**Card:** ${card.name}\n**Page:** https://opencardai.com/${lang}/cards/${card.card_id}\n\n**What's wrong:**\n\n(Please describe the incorrect information)\n`)}&labels=data-error`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-slate-400 hover:text-red-500 transition-colors"
-                    >
-                      {m.reportError}
-                    </a>
+                    <ReportErrorModal cardId={card.card_id} cardName={card.name} lang={lang} />
                   </div>
                 </div>
               );
