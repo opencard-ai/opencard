@@ -93,6 +93,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "resy-credit",
       "name": "Resy Credit",
       "amount": 10,
       "frequency": "monthly",
@@ -102,6 +103,7 @@
       "source": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-platinum/"
     },
     {
+      "credit_key": "rideshare-credit",
       "name": "Rideshare Credit",
       "amount": 10,
       "frequency": "monthly",
@@ -111,6 +113,7 @@
       "source": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-platinum/"
     },
     {
+      "credit_key": "delta-stays-credit",
       "name": "Delta Stays Credit",
       "amount": 150,
       "frequency": "annual",
@@ -120,6 +123,7 @@
       "source": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-platinum/"
     },
     {
+      "credit_key": "global-entry-credit",
       "name": "Global Entry Credit",
       "amount": 100,
       "frequency": "every_4_years",

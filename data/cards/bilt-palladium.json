@@ -77,6 +77,7 @@
   "credit_required": "Excellent",
   "recurring_credits": [
     {
+      "credit_key": "bilt-travel-hotel-credit",
       "name": "Bilt Travel Hotel Credit",
       "amount": 200,
       "frequency": "semi_annual",
@@ -86,6 +87,7 @@
       "source": "https://newsroom.biltrewards.com/meetbiltcard2.0"
     },
     {
+      "credit_key": "bilt-cash",
       "name": "Bilt Cash",
       "amount": 200,
       "frequency": "annual",

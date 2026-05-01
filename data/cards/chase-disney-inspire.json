@@ -100,18 +100,21 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "disney-streaming-credit",
       "name": "Disney Streaming Credit",
       "amount": 120,
       "frequency": "annual",
       "category": "streaming"
     },
     {
+      "credit_key": "disney-theme-park-tickets-credit",
       "name": "Disney Theme Park Tickets Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "entertainment"
     },
     {
+      "credit_key": "doordash-non-restaurant-credit",
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,
       "frequency": "quarterly",

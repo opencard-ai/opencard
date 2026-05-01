@@ -84,6 +84,7 @@
   "annual_credits": [],
   "recurring_credits": [
     {
+      "credit_key": "annual-travel-credit",
       "name": "Annual Travel Credit",
       "amount": 300,
       "frequency": "annual",

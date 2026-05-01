@@ -105,6 +105,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "renowned-hotels-credit",
       "name": "Renowned Hotels Credit",
       "amount": 200,
       "frequency": "annual",
@@ -113,6 +114,7 @@
       "reset_type": "anniversary"
     },
     {
+      "credit_key": "rideshare-credit",
       "name": "Rideshare Credit",
       "amount": 150,
       "frequency": "annual",
@@ -121,6 +123,7 @@
       "reset_type": "calendar_year"
     },
     {
+      "credit_key": "avis-budget-car-rental-credit",
       "name": "Avis/Budget Car Rental Credit",
       "amount": 100,
       "frequency": "annual",
@@ -129,6 +132,7 @@
       "reset_type": "calendar_year"
     },
     {
+      "credit_key": "instacart-credit",
       "name": "Instacart Credit",
       "amount": 20,
       "frequency": "monthly",
@@ -137,6 +141,7 @@
       "reset_type": "monthly"
     },
     {
+      "credit_key": "jsx-credit",
       "name": "JSX Credit",
       "amount": 200,
       "frequency": "annual",
@@ -145,6 +150,7 @@
       "reset_type": "anniversary"
     },
     {
+      "credit_key": "farelock-credit",
       "name": "FareLock Credit",
       "amount": 50,
       "frequency": "annual",
@@ -153,6 +159,7 @@
       "reset_type": "anniversary"
     },
     {
+      "credit_key": "doordash-non-restaurant-credit",
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,
       "frequency": "quarterly",

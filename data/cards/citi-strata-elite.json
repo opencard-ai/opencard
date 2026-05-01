@@ -69,6 +69,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "blacklane-credit",
       "name": "Blacklane Credit",
       "amount": 100,
       "frequency": "semi_annual",
@@ -78,6 +79,7 @@
       "source": "https://www.citi.com/credit-cards/credit-card-rewards/citi-strata-elite-benefits"
     },
     {
+      "credit_key": "hotel-credit",
       "name": "Hotel Credit",
       "amount": 300,
       "frequency": "annual",
@@ -86,6 +88,7 @@
       "reset_type": "cardmember_year"
     },
     {
+      "credit_key": "splurge-credit",
       "name": "Splurge Credit",
       "amount": 200,
       "frequency": "annual",
@@ -95,6 +98,7 @@
       "source": "https://www.citi.com/credit-cards/credit-card-rewards/citi-strata-elite-benefits"
     },
     {
+      "credit_key": "global-entry-precheck-credit",
       "name": "Global Entry / PreCheck Credit",
       "amount": 100,
       "frequency": "every_4_years",

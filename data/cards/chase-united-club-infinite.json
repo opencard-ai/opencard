@@ -111,6 +111,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "renowned-hotels-resorts-credit",
       "name": "Renowned Hotels & Resorts Credit",
       "amount": 200,
       "frequency": "annual",
@@ -120,6 +121,7 @@
       "source": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite"
     },
     {
+      "credit_key": "avis-budget-travelbank-credit",
       "name": "Avis/Budget TravelBank Credit",
       "amount": 100,
       "frequency": "annual",
@@ -129,6 +131,7 @@
       "source": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite"
     },
     {
+      "credit_key": "rideshare-credit",
       "name": "Rideshare Credit",
       "amount": 150,
       "frequency": "annual",
@@ -138,6 +141,7 @@
       "source": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite"
     },
     {
+      "credit_key": "instacart-credit",
       "name": "Instacart Credit",
       "amount": 20,
       "frequency": "monthly",
@@ -147,6 +151,7 @@
       "source": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite"
     },
     {
+      "credit_key": "doordash-non-restaurant-credit",
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,
       "frequency": "quarterly",
@@ -156,6 +161,7 @@
       "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     },
     {
+      "credit_key": "global-entry-tsa-precheck-credit",
       "name": "Global Entry / TSA PreCheck Credit",
       "amount": 100,
       "frequency": "every_4_years",

@@ -115,6 +115,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "renowned-hotels-resorts-credit",
       "name": "Renowned Hotels & Resorts Credit",
       "amount": 200,
       "frequency": "annual",
@@ -124,6 +125,7 @@
       "source": "https://creditcards.chase.com/business-credit-cards/united/united-business-card"
     },
     {
+      "credit_key": "avis-budget-travelbank-credit",
       "name": "Avis/Budget TravelBank Credit",
       "amount": 50,
       "frequency": "annual",
@@ -133,6 +135,7 @@
       "source": "https://creditcards.chase.com/business-credit-cards/united/united-business-card"
     },
     {
+      "credit_key": "jsx-credit",
       "name": "JSX Credit",
       "amount": 100,
       "frequency": "annual",
@@ -142,6 +145,7 @@
       "source": "https://creditcards.chase.com/business-credit-cards/united/united-business-card"
     },
     {
+      "credit_key": "farelock-credit",
       "name": "FareLock Credit",
       "amount": 25,
       "frequency": "annual",
@@ -151,6 +155,7 @@
       "source": "https://creditcards.chase.com/business-credit-cards/united/united-business-card"
     },
     {
+      "credit_key": "instacart-credit",
       "name": "Instacart Credit",
       "amount": 10,
       "frequency": "monthly",
@@ -160,6 +165,7 @@
       "source": "https://creditcards.chase.com/business-credit-cards/united/united-business-card"
     },
     {
+      "credit_key": "doordash-non-restaurant-credit",
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,
       "frequency": "quarterly",

@@ -92,6 +92,7 @@
   "next_review": "2026-07-23T17:26:46.246653",
   "recurring_credits": [
     {
+      "credit_key": "doordash-non-restaurant-credit",
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,
       "frequency": "quarterly",

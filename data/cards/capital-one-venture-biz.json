@@ -57,6 +57,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "capital-one-business-travel-credit",
       "name": "Capital One Business Travel Credit",
       "amount": 50,
       "frequency": "annual",
@@ -66,6 +67,7 @@
       "source": "https://www.capitalone.com/about/newsroom/venture-business-rebrand/"
     },
     {
+      "credit_key": "advertising-or-software-statement-credit",
       "name": "Advertising or Software Statement Credit",
       "amount": 50,
       "frequency": "annual",
@@ -75,6 +77,7 @@
       "source": "https://www.capitalone.com/about/newsroom/venture-business-rebrand/"
     },
     {
+      "credit_key": "global-entry-or-tsa-precheck-credit",
       "name": "Global Entry or TSA PreCheck Credit",
       "amount": 100,
       "frequency": "every_4_years",

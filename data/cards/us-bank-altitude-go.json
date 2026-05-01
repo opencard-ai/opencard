@@ -85,12 +85,14 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "streaming-credit",
       "name": "streaming credit",
       "amount": 15,
       "frequency": "quarterly",
       "category": "streaming"
     },
     {
+      "credit_key": "15-streaming-credit",
       "name": "$15 streaming credit",
       "amount": 15,
       "frequency": "annual",

@@ -108,6 +108,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "uber-cash",
       "name": "Uber Cash",
       "amount": 10,
       "frequency": "monthly",
@@ -117,6 +118,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/gold-card/"
     },
     {
+      "credit_key": "dunkin-credit",
       "name": "Dunkin' Credit",
       "amount": 7,
       "frequency": "monthly",
@@ -126,6 +128,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/gold-card/"
     },
     {
+      "credit_key": "dining-credit-grubhub-cheesecake-factory-goldbelly-wine-com-five-guys",
       "name": "Dining Credit (Grubhub / Cheesecake Factory / Goldbelly / Wine.com / Five Guys)",
       "amount": 10,
       "frequency": "monthly",
@@ -135,6 +138,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/gold-card/"
     },
     {
+      "credit_key": "resy-credit",
       "name": "Resy Credit",
       "amount": 50,
       "frequency": "semi_annual",

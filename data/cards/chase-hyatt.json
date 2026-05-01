@@ -73,6 +73,7 @@
   "last_updated": "2026-04-27T20:00:00.000Z",
   "recurring_credits": [
     {
+      "credit_key": "doordash-non-restaurant-credit",
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,
       "frequency": "quarterly",
@@ -82,6 +83,7 @@
       "source": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card"
     },
     {
+      "credit_key": "free-night-award-hyatt-cat-1-4",
       "name": "Free Night Award (Hyatt Cat 1-4)",
       "amount": 0,
       "frequency": "annual",

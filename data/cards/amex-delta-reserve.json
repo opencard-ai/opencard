@@ -106,6 +106,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "resy-credit",
       "name": "Resy Credit",
       "amount": 20,
       "frequency": "monthly",
@@ -115,6 +116,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-reserve-american-express-card/"
     },
     {
+      "credit_key": "rideshare-credit",
       "name": "Rideshare Credit",
       "amount": 10,
       "frequency": "monthly",
@@ -124,6 +126,7 @@
       "source": "https://global.americanexpress.com/card-benefits/detail/rideshare-statement-credit/delta-reserve"
     },
     {
+      "credit_key": "delta-stays-credit",
       "name": "Delta Stays Credit",
       "amount": 200,
       "frequency": "annual",
@@ -133,6 +136,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-reserve-american-express-card/"
     },
     {
+      "credit_key": "global-entry-tsa-precheck",
       "name": "Global Entry / TSA PreCheck",
       "amount": 120,
       "frequency": "every_4_years",

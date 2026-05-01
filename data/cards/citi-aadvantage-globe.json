@@ -102,6 +102,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "air-travel-credit",
       "name": "Air Travel Credit",
       "amount": 150,
       "frequency": "annual",

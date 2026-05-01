@@ -75,6 +75,7 @@
   ],
   "recurring_credits": [
     {
+      "credit_key": "flexible-business-credit-fedex-grubhub-office-supply",
       "name": "Flexible Business Credit (FedEx / Grubhub / Office Supply)",
       "amount": 20,
       "frequency": "monthly",
@@ -84,6 +85,7 @@
       "source": "https://global.americanexpress.com/card-benefits/detail/240-flexible-business-credit/business-gold"
     },
     {
+      "credit_key": "walmart-credit",
       "name": "Walmart+ Credit",
       "amount": 12.95,
       "frequency": "monthly",
@@ -93,6 +95,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/"
     },
     {
+      "credit_key": "squarespace-credit",
       "name": "Squarespace Credit",
       "amount": 150,
       "frequency": "annual",

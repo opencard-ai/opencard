@@ -89,6 +89,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "alaska-lounge-passes",
       "name": "Alaska Lounge Passes",
       "amount": 8,
       "frequency": "quarterly",
@@ -97,6 +98,7 @@
       "reset_type": "cardmember_year"
     },
     {
+      "credit_key": "alaska-lounge-membership-discount",
       "name": "Alaska Lounge+ Membership Discount",
       "amount": 100,
       "frequency": "annual",
@@ -105,6 +107,7 @@
       "reset_type": "cardmember_year"
     },
     {
+      "credit_key": "global-entry-tsa-precheck-credit",
       "name": "Global Entry/TSA PreCheck Credit",
       "amount": 120,
       "frequency": "every_4_years",
@@ -113,6 +116,7 @@
       "reset_type": "every_4_years"
     },
     {
+      "credit_key": "inflight-purchase-rebate",
       "name": "Inflight Purchase Rebate",
       "amount": 20,
       "frequency": "per_stay",
@@ -121,6 +125,7 @@
       "reset_type": "cardmember_year"
     },
     {
+      "credit_key": "flight-delay-cancellation-voucher",
       "name": "Flight Delay/Cancellation Voucher",
       "amount": 50,
       "frequency": "per_stay",

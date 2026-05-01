@@ -92,6 +92,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "alaska-lounge-membership-discount",
       "name": "Alaska Lounge+ Membership Discount",
       "amount": 100,
       "frequency": "annual",
@@ -100,6 +101,7 @@
       "reset_type": "cardmember_year"
     },
     {
+      "credit_key": "inflight-purchase-rebate",
       "name": "Inflight Purchase Rebate",
       "amount": 20,
       "frequency": "per_stay",
@@ -108,6 +110,7 @@
       "reset_type": "cardmember_year"
     },
     {
+      "credit_key": "tsa-precheck-global-entry-credit",
       "name": "TSA PreCheck/Global Entry Credit",
       "amount": 120,
       "frequency": "every_4_years",

@@ -89,6 +89,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "capital-one-travel-credits",
       "name": "Capital One Travel Credits",
       "amount": 300,
       "frequency": "annual",
@@ -98,6 +99,7 @@
       "source": "https://www.capitalone.com/credit-cards/venture-x/"
     },
     {
+      "credit_key": "global-entry-tsa-precheck",
       "name": "Global Entry / TSA PreCheck",
       "amount": 120,
       "frequency": "every_4_years",

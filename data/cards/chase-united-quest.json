@@ -104,6 +104,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "united-travelbank-cash",
       "name": "United TravelBank Cash",
       "amount": 200,
       "frequency": "annual",
@@ -112,6 +113,7 @@
       "reset_type": "anniversary"
     },
     {
+      "credit_key": "renowned-hotels-resorts-credit",
       "name": "Renowned Hotels & Resorts Credit",
       "amount": 150,
       "frequency": "annual",
@@ -120,6 +122,7 @@
       "reset_type": "anniversary"
     },
     {
+      "credit_key": "avis-budget-travelbank-credit",
       "name": "Avis/Budget TravelBank Credit",
       "amount": 80,
       "frequency": "annual",
@@ -129,6 +132,7 @@
       "source": "https://creditcards.chase.com/travel-credit-cards/united/united-quest"
     },
     {
+      "credit_key": "jsx-credit",
       "name": "JSX Credit",
       "amount": 150,
       "frequency": "annual",
@@ -137,6 +141,7 @@
       "reset_type": "anniversary"
     },
     {
+      "credit_key": "rideshare-credit",
       "name": "Rideshare Credit",
       "amount": 100,
       "frequency": "annual",
@@ -145,6 +150,7 @@
       "reset_type": "calendar_year"
     },
     {
+      "credit_key": "instacart-credit",
       "name": "Instacart Credit",
       "amount": 15,
       "frequency": "monthly",
@@ -153,6 +159,7 @@
       "reset_type": "monthly"
     },
     {
+      "credit_key": "doordash-non-restaurant-credit",
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,
       "frequency": "quarterly",

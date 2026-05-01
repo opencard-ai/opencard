@@ -110,6 +110,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "hilton-resort-credit",
       "name": "Hilton Resort Credit",
       "amount": 200,
       "frequency": "semi_annual",
@@ -119,6 +120,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/"
     },
     {
+      "credit_key": "flight-credit",
       "name": "Flight Credit",
       "amount": 50,
       "frequency": "quarterly",
@@ -128,6 +130,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/"
     },
     {
+      "credit_key": "clear-plus-credit",
       "name": "CLEAR Plus Credit",
       "amount": 209,
       "frequency": "annual",

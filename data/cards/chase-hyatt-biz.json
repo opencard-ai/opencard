@@ -116,6 +116,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "anniversary-free-night",
       "name": "Anniversary Free Night",
       "amount": 0,
       "frequency": "annual",
@@ -126,6 +127,7 @@
       "source": "https://www.chase.com/personal/credit-cards/hyatt/world-hyatt-business/exclusive-benefits"
     },
     {
+      "credit_key": "doordash-non-restaurant-credit",
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,
       "frequency": "quarterly",

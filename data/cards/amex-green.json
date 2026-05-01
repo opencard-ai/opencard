@@ -85,6 +85,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "clear-plus-credit",
       "name": "CLEAR Plus Credit",
       "amount": 209,
       "frequency": "annual",

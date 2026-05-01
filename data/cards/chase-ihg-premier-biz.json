@@ -109,6 +109,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "anniversary-free-night",
       "name": "Anniversary Free Night",
       "amount": 0,
       "frequency": "annual",
@@ -119,6 +120,7 @@
       "source": "https://www.chase.com/personal/credit-cards/ihg/premierbusiness/premier-business-perks"
     },
     {
+      "credit_key": "global-entry-tsa-precheck-credit",
       "name": "Global Entry/TSA PreCheck Credit",
       "amount": 120,
       "frequency": "every_4_years",
@@ -128,6 +130,7 @@
       "source": "https://www.chase.com/personal/credit-cards/ihg/premierbusiness/premier-business-perks"
     },
     {
+      "credit_key": "doordash-non-restaurant-credit",
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,
       "frequency": "quarterly",

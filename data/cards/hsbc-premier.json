@@ -65,6 +65,7 @@
   ],
   "recurring_credits": [
     {
+      "credit_key": "streaming-subscription-credit",
       "name": "Streaming Subscription Credit",
       "amount": 5,
       "frequency": "monthly",

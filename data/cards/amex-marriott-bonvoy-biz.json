@@ -103,6 +103,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "free-night-award-marriott-35k",
       "name": "Free Night Award (Marriott 35k)",
       "amount": 0,
       "frequency": "annual",
@@ -117,7 +118,7 @@
   "last_verified": "2026-04-24T17:26:46.246653",
   "next_review": "2026-07-23T17:26:46.246653",
   "cash_advance_fee_flat": 10,
-  "cash_advance_fee_pct": 5.0,
+  "cash_advance_fee_pct": 5,
   "_revert_history": [
     {
       "field": "annual_fee",

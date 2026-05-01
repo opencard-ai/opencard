@@ -90,6 +90,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "annual-travel-credit",
       "name": "Annual Travel Credit",
       "amount": 325,
       "frequency": "annual",
@@ -98,6 +99,7 @@
       "reset_type": "calendar_year"
     },
     {
+      "credit_key": "travel-credit",
       "name": "Travel credit",
       "amount": 325,
       "frequency": "annual",

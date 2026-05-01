@@ -105,6 +105,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "chase-travel-hotel-credit",
       "name": "Chase Travel Hotel Credit",
       "amount": 50,
       "frequency": "annual",

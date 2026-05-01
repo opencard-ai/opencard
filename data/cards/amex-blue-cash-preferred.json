@@ -81,6 +81,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "groceries-credit",
       "name": "Groceries Credit",
       "amount": 180,
       "frequency": "annual",
@@ -89,6 +90,7 @@
       "reset_type": "calendar_year"
     },
     {
+      "credit_key": "streaming-credit",
       "name": "Streaming Credit",
       "amount": 84,
       "frequency": "annual",
@@ -97,6 +99,7 @@
       "reset_type": "calendar_year"
     },
     {
+      "credit_key": "disney-bundle-credit",
       "name": "Disney Bundle Credit",
       "amount": 100,
       "frequency": "annual",
@@ -105,6 +108,7 @@
       "reset_type": "calendar_year"
     },
     {
+      "credit_key": "disney-streaming-credit",
       "name": "Disney+ Streaming Credit",
       "amount": 120,
       "frequency": "annual",

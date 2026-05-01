@@ -78,6 +78,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "disney-bundle-credit",
       "name": "Disney Bundle Credit",
       "amount": 7,
       "frequency": "monthly",
@@ -87,6 +88,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/"
     },
     {
+      "credit_key": "home-chef-credit",
       "name": "Home Chef Credit",
       "amount": 15,
       "frequency": "monthly",

@@ -105,6 +105,7 @@
   "next_review": "2026-07-15T13:41:49.983000+00:00",
   "recurring_credits": [
     {
+      "credit_key": "hilton-quarterly-statement-credit",
       "name": "Hilton Quarterly Statement Credit",
       "amount": 60,
       "frequency": "quarterly",

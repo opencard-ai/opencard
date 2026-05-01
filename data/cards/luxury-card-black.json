@@ -87,6 +87,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "annual-airline-credit",
       "name": "Annual Airline Credit",
       "amount": 200,
       "frequency": "annual",
@@ -96,6 +97,7 @@
       "source": "https://cards.barclaycardus.com/banking/credit-card/luxury/landing-pages/luxury-black-landing-page/"
     },
     {
+      "credit_key": "annual-dining-credit",
       "name": "Annual Dining Credit",
       "amount": 100,
       "frequency": "annual",
@@ -105,6 +107,7 @@
       "source": "https://cards.barclaycardus.com/banking/credit-card/luxury/landing-pages/luxury-black-landing-page/"
     },
     {
+      "credit_key": "global-entry-tsa-precheck-credit",
       "name": "Global Entry / TSA PreCheck Credit",
       "amount": 120,
       "frequency": "every_4_years",
