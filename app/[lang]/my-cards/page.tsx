@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { computePeriodKey } from "@/lib/credit-periods";
 
@@ -232,6 +232,10 @@ export default function MyCardsPage({
   const [openDates, setOpenDates] = useState<Record<string, {month: number, year: number}>>({});
   // Map<"card_id:credit_key:period_key", { used_amount, used_at }> — server state for U5 check-off.
   const [creditUses, setCreditUses] = useState<Map<string, { used_amount: number; used_at: string }>>(new Map());
+  // Mirror creditUses in a ref so rapid sequential clicks read the up-to-date map
+  // before React commits and re-renders. Without this, multiple clicks within one
+  // frame all see the stale closure value and only the last toggle "sticks".
+  const creditUsesRef = useRef(creditUses);
 
   useEffect(() => {
     params.then((p) => {
@@ -345,6 +349,7 @@ export default function MyCardsPage({
             used_at: String(e.used_at || ""),
           });
         }
+        creditUsesRef.current = m;
         setCreditUses(m);
       })
       .catch(() => {});
@@ -359,18 +364,30 @@ export default function MyCardsPage({
   }, [openDates]);
 
   // Toggle a credit's used state for the current period. Optimistic.
+  // Uses creditUsesRef instead of state-via-closure so rapid clicks each see
+  // the latest map and don't clobber each other.
   const toggleCreditUse = useCallback(async (cardId: string, credit: RecurringCredit) => {
     if (!email || !credit.credit_key) return;
     const periodKey = periodKeyFor(cardId, credit.frequency);
     if (!periodKey) return;
     const fullKey = `${cardId}:${credit.credit_key}:${periodKey}`;
-    const wasUsed = creditUses.has(fullKey);
+    const wasUsed = creditUsesRef.current.has(fullKey);
+    const restoreEntry = creditUsesRef.current.get(fullKey);
 
-    // Optimistic update.
-    const next = new Map(creditUses);
+    // Optimistic: update ref + state synchronously.
+    const next = new Map(creditUsesRef.current);
     if (wasUsed) next.delete(fullKey);
     else next.set(fullKey, { used_amount: credit.amount || 0, used_at: new Date().toISOString() });
+    creditUsesRef.current = next;
     setCreditUses(next);
+
+    const revert = () => {
+      const r = new Map(creditUsesRef.current);
+      if (wasUsed && restoreEntry) r.set(fullKey, restoreEntry);
+      else r.delete(fullKey);
+      creditUsesRef.current = r;
+      setCreditUses(r);
+    };
 
     const body = wasUsed
       ? { email, card_id: cardId, credit_key: credit.credit_key, period_key: periodKey }
@@ -381,14 +398,11 @@ export default function MyCardsPage({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
-      if (!res.ok) {
-        // Revert on failure.
-        setCreditUses(creditUses);
-      }
+      if (!res.ok) revert();
     } catch {
-      setCreditUses(creditUses);
+      revert();
     }
-  }, [email, creditUses, periodKeyFor]);
+  }, [email, periodKeyFor]);
 
   // Handle edit open date
   const handleEditOpenDate = useCallback(async (cardId: string) => {
