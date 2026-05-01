@@ -288,20 +288,30 @@ export default async function CardDetailPage({ params }: Props) {
                           </div>
                         </div>
                       )}
-                      {Object.entries(card.travel_benefits.lounge_access || {})
-                          .filter(([, v]) => v).length > 0 && (
+                      {(card.travel_benefits.lounge_access || []).length > 0 && (
                         <div>
                           <h3 className="text-xs font-semibold text-slate-500 uppercase mb-2">
                             {l("detail.loungeAccess")}
                           </h3>
                           <div className="space-y-1">
-                            {Object.entries(card.travel_benefits.lounge_access || {})
-                              .filter(([, v]) => v)
-                              .map(([key]) => (
-                                <div key={key} className="text-sm text-slate-700">
-                                  {key.replace(/_/g, ' ').replace(/\b\w/g, x => x.toUpperCase())}
+                            {(card.travel_benefits.lounge_access || []).map((lounge, i) => {
+                              const meta: string[] = [];
+                              if (typeof lounge.passes_per_quarter === "number") {
+                                meta.push(`${lounge.passes_per_quarter} ${l("detail.passesPerQuarter")}`);
+                              }
+                              if (typeof lounge.passes_per_year === "number") {
+                                meta.push(`${lounge.passes_per_year} ${l("detail.passesPerYear")}`);
+                              }
+                              if (lounge.discount) meta.push(lounge.discount);
+                              return (
+                                <div key={i} className="text-sm text-slate-700 flex items-baseline justify-between gap-2">
+                                  <span>{lounge.name}</span>
+                                  {meta.length > 0 && (
+                                    <span className="text-xs text-slate-500 text-right">{meta.join(" · ")}</span>
+                                  )}
                                 </div>
-                              ))}
+                              );
+                            })}
                           </div>
                         </div>
                       )}
