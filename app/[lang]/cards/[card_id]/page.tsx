@@ -34,6 +34,26 @@ function formatValue(val: string | number): string {
   return str.startsWith('$') ? str : `$${str}`;
 }
 
+// Map site lang → BCP-47 for Intl. zh → zh-TW per project default.
+const LOCALE_MAP: Record<string, string> = { zh: "zh-TW", en: "en", es: "es" };
+
+function freshnessFromIso(isoDate: string | undefined, lang: string): { label: string; tone: "fresh" | "ok" | "stale"; absolute: string } | null {
+  if (!isoDate) return null;
+  const t = new Date(isoDate).getTime();
+  if (!Number.isFinite(t)) return null;
+  const days = Math.floor((Date.now() - t) / 86_400_000);
+  const locale = LOCALE_MAP[lang] || "en";
+  const rtf = new Intl.RelativeTimeFormat(locale, { numeric: "auto" });
+  let label: string;
+  if (days < 1) label = rtf.format(0, "day");
+  else if (days < 30) label = rtf.format(-days, "day");
+  else if (days < 365) label = rtf.format(-Math.floor(days / 30), "month");
+  else label = rtf.format(-Math.floor(days / 365), "year");
+  const tone: "fresh" | "ok" | "stale" = days < 90 ? "fresh" : days < 180 ? "ok" : "stale";
+  const absolute = new Intl.DateTimeFormat(locale, { year: "numeric", month: "short", day: "numeric" }).format(t);
+  return { label, tone, absolute };
+}
+
 
 export const dynamic = "force-static";
 export const revalidate = 3600;
@@ -70,6 +90,7 @@ export default async function CardDetailPage({ params }: Props) {
   if (!card) notFound();
 
   const l = (key: string, p?: Record<string, string | number>) => t(key, locale, p);
+  const freshness = freshnessFromIso(card.last_updated, lang);
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -115,6 +136,21 @@ export default async function CardDetailPage({ params }: Props) {
               {tag}
             </span>
           ))}
+          {freshness && (
+            <span
+              className={`text-xs rounded-full px-3 py-1 ${
+                freshness.tone === "fresh"
+                  ? "bg-emerald-50 text-emerald-700"
+                  : freshness.tone === "ok"
+                  ? "bg-slate-100 text-slate-600"
+                  : "bg-amber-50 text-amber-700"
+              }`}
+              title={`${l("detail.lastUpdated")}: ${freshness.absolute}`}
+            >
+              {freshness.tone === "fresh" ? "✓ " : freshness.tone === "stale" ? "⚠ " : ""}
+              {freshness.label}
+            </span>
+          )}
         </div>
 
         {/* Welcome Offer */}
@@ -373,7 +409,7 @@ export default async function CardDetailPage({ params }: Props) {
               </ul>
               <div className="flex items-center justify-between mt-3">
                 <p className="text-xs text-slate-400">
-                  {l("detail.lastUpdated")}: {card.last_updated}
+                  {l("detail.lastUpdated")}: {freshness?.absolute || card.last_updated}
                 </p>
                 <a
                   href={`https://github.com/opencard-ai/opencard/issues/new?title=${encodeURIComponent(`[Data Error] ${card.name}`)}&body=${encodeURIComponent(`**Card:** ${card.name}\n**Page:** https://opencardai.com/${lang}/cards/${card.card_id}\n\n**What's wrong:**\n\n(Please describe the incorrect information)\n`)}&labels=data-error`}
