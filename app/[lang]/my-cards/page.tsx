@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import { computePeriodKey } from "@/lib/credit-periods";
 
 const STORAGE_KEY = "opencard_existing_cards";
 const SUBSCRIBED_EMAIL_KEY = "opencard_subscribed_email";
@@ -38,6 +39,10 @@ const MESSAGES = {
     creditsRemaining: "remaining",
     creditsUsed: "used",
     viewAll: "View details →",
+    markUsed: "Mark used",
+    undoUse: "Undo",
+    usedLabel: "✓ Used",
+    remainingThisPeriod: "remaining this period",
   },
   zh: {
     title: "💳 我的卡片",
@@ -70,6 +75,10 @@ const MESSAGES = {
     creditsRemaining: "剩餘",
     creditsUsed: "已使用",
     viewAll: "查看詳情 →",
+    markUsed: "標記已用",
+    undoUse: "撤銷",
+    usedLabel: "✓ 已使用",
+    remainingThisPeriod: "本期剩餘",
   },
   es: {
     title: "💳 Mis Tarjetas",
@@ -102,10 +111,15 @@ const MESSAGES = {
     creditsRemaining: "restante",
     creditsUsed: "usado",
     viewAll: "Ver detalles →",
+    markUsed: "Marcar usado",
+    undoUse: "Deshacer",
+    usedLabel: "✓ Usado",
+    remainingThisPeriod: "restante este período",
   },
 };
 
 interface RecurringCredit {
+  credit_key?: string;
   name: string;
   amount?: number;
   frequency: string;
@@ -216,6 +230,8 @@ export default function MyCardsPage({
 
   const [loaded, setLoaded] = useState(false);
   const [openDates, setOpenDates] = useState<Record<string, {month: number, year: number}>>({});
+  // Map<"card_id:credit_key:period_key", { used_amount, used_at }> — server state for U5 check-off.
+  const [creditUses, setCreditUses] = useState<Map<string, { used_amount: number; used_at: string }>>(new Map());
 
   useEffect(() => {
     params.then((p) => {
@@ -314,6 +330,65 @@ export default function MyCardsPage({
       .then(r => r.json())
       .then(d => { if (d.open_dates) setOpenDates(d.open_dates); });
   }, [email]);
+
+  // Load credit-use check-off state once email known.
+  useEffect(() => {
+    if (!email) return;
+    fetch('/api/my-cards/credit-uses?email=' + encodeURIComponent(email))
+      .then(r => r.json())
+      .then(d => {
+        if (!Array.isArray(d.entries)) return;
+        const m = new Map<string, { used_amount: number; used_at: string }>();
+        for (const e of d.entries) {
+          m.set(`${e.card_id}:${e.credit_key}:${e.period_key}`, {
+            used_amount: Number(e.used_amount) || 0,
+            used_at: String(e.used_at || ""),
+          });
+        }
+        setCreditUses(m);
+      })
+      .catch(() => {});
+  }, [email]);
+
+  // Compute the period_key for a given credit + card, factoring in card open date.
+  const periodKeyFor = useCallback((cardId: string, frequency: string): string | null => {
+    const od = openDates[cardId];
+    // openDates stores month as 1-indexed; computePeriodKey expects 0-indexed.
+    const anchor = od ? { month: od.month - 1, year: od.year } : undefined;
+    return computePeriodKey(frequency, new Date(), anchor);
+  }, [openDates]);
+
+  // Toggle a credit's used state for the current period. Optimistic.
+  const toggleCreditUse = useCallback(async (cardId: string, credit: RecurringCredit) => {
+    if (!email || !credit.credit_key) return;
+    const periodKey = periodKeyFor(cardId, credit.frequency);
+    if (!periodKey) return;
+    const fullKey = `${cardId}:${credit.credit_key}:${periodKey}`;
+    const wasUsed = creditUses.has(fullKey);
+
+    // Optimistic update.
+    const next = new Map(creditUses);
+    if (wasUsed) next.delete(fullKey);
+    else next.set(fullKey, { used_amount: credit.amount || 0, used_at: new Date().toISOString() });
+    setCreditUses(next);
+
+    const body = wasUsed
+      ? { email, card_id: cardId, credit_key: credit.credit_key, period_key: periodKey }
+      : { email, card_id: cardId, credit_key: credit.credit_key, period_key: periodKey, used_amount: credit.amount || 0 };
+    try {
+      const res = await fetch('/api/my-cards/credit-use', {
+        method: wasUsed ? 'DELETE' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      if (!res.ok) {
+        // Revert on failure.
+        setCreditUses(creditUses);
+      }
+    } catch {
+      setCreditUses(creditUses);
+    }
+  }, [email, creditUses, periodKeyFor]);
 
   // Handle edit open date
   const handleEditOpenDate = useCallback(async (cardId: string) => {
@@ -592,6 +667,20 @@ export default function MyCardsPage({
               const thisMonth = getBenefitsThisMonth(credits);
               const upcoming = getUpcomingBenefits(credits);
 
+              // Per-card aggregation: total $ available across all check-off-able credits
+              // in their respective current periods, minus what user has marked used.
+              let cardTotal = 0;
+              let cardUsed = 0;
+              for (const c of credits) {
+                if (c.is_free_night || !c.credit_key) continue;
+                const pk = periodKeyFor(card.card_id, c.frequency);
+                if (!pk) continue;
+                cardTotal += c.amount || 0;
+                const u = creditUses.get(`${card.card_id}:${c.credit_key}:${pk}`);
+                if (u) cardUsed += u.used_amount;
+              }
+              const cardRemaining = Math.max(0, cardTotal - cardUsed);
+
               return (
                 <div key={card.card_id} className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
                   {/* Card Header */}
@@ -602,6 +691,13 @@ export default function MyCardsPage({
                         <span className="text-xs text-slate-400">${card.annual_fee}/yr</span>
                       )}
                     </div>
+                    {cardTotal > 0 && (
+                      <div className="text-right shrink-0">
+                        <span className="text-sm font-semibold text-emerald-700">${cardRemaining}</span>
+                        <span className="text-[10px] text-slate-400"> / ${cardTotal}</span>
+                        <p className="text-[9px] text-slate-400 leading-none mt-0.5">{m.remainingThisPeriod}</p>
+                      </div>
+                    )}
                   </div>
 
                   {/* Open Date Info - New Row */}
@@ -710,22 +806,45 @@ export default function MyCardsPage({
                         <div className="px-4 py-3">
                           <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wide mb-2">{m.thisMonth}</p>
                           <div className="space-y-1.5">
-                            {thisMonth.map((credit, i) => (
-                              <div key={i} className="flex items-center justify-between">
-                                <div className="flex items-center gap-1.5">
-                                  <span className="text-sm">{CATEGORY_EMOJI[credit.category] || "💳"}</span>
-                                  <span className="text-xs text-slate-700">{credit.name}</span>
+                            {thisMonth.map((credit, i) => {
+                              const pk = credit.credit_key && !credit.is_free_night
+                                ? periodKeyFor(card.card_id, credit.frequency)
+                                : null;
+                              const fullKey = pk ? `${card.card_id}:${credit.credit_key}:${pk}` : null;
+                              const isUsed = fullKey ? creditUses.has(fullKey) : false;
+                              const canToggle = !!fullKey;
+                              return (
+                                <div key={i} className="flex items-center justify-between">
+                                  <div className="flex items-center gap-1.5 min-w-0">
+                                    <span className="text-sm">{CATEGORY_EMOJI[credit.category] || "💳"}</span>
+                                    <span className={`text-xs truncate ${isUsed ? "text-slate-400 line-through" : "text-slate-700"}`}>{credit.name}</span>
+                                  </div>
+                                  <div className="flex items-center gap-1.5 shrink-0">
+                                    {credit.is_free_night ? (
+                                      <span className="text-[10px] font-semibold text-amber-600 uppercase">{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
+                                    ) : credit.amount && credit.amount > 0 ? (
+                                      <span className={`text-xs font-semibold ${isUsed ? "text-slate-400 line-through" : "text-slate-800"}`}>${credit.amount}</span>
+                                    ) : null}
+                                    <span className="text-[10px] text-slate-400">{formatFrequency(credit.frequency, lang)}</span>
+                                    {canToggle && (
+                                      <button
+                                        type="button"
+                                        onClick={() => toggleCreditUse(card.card_id, credit)}
+                                        className={`ml-1 text-[10px] px-1.5 py-0.5 rounded border transition-colors ${
+                                          isUsed
+                                            ? "border-emerald-300 bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
+                                            : "border-slate-200 bg-white text-slate-500 hover:border-slate-400 hover:text-slate-700"
+                                        }`}
+                                        aria-label={isUsed ? m.undoUse : m.markUsed}
+                                        title={isUsed ? m.undoUse : m.markUsed}
+                                      >
+                                        {isUsed ? m.usedLabel : "✓"}
+                                      </button>
+                                    )}
+                                  </div>
                                 </div>
-                                <div className="flex items-center gap-1.5">
-                                  {credit.is_free_night ? (
-                                    <span className="text-[10px] font-semibold text-amber-600 uppercase">{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
-                                  ) : credit.amount && credit.amount > 0 ? (
-                                    <span className="text-xs font-semibold text-slate-800">${credit.amount}</span>
-                                  ) : null}
-                                  <span className="text-[10px] text-slate-400">{formatFrequency(credit.frequency, lang)}</span>
-                                </div>
-                              </div>
-                            ))}
+                              );
+                            })}
                           </div>
                         </div>
                       )}
@@ -734,22 +853,45 @@ export default function MyCardsPage({
                         <div className="px-4 py-3">
                           <p className="text-[10px] font-semibold text-amber-600 uppercase tracking-wide mb-2">{m.upcoming}</p>
                           <div className="space-y-1.5">
-                            {upcoming.map((credit, i) => (
-                              <div key={i} className="flex items-center justify-between">
-                                <div className="flex items-center gap-1.5">
-                                  <span className="text-sm">{CATEGORY_EMOJI[credit.category] || "💳"}</span>
-                                  <span className="text-xs text-slate-600">{credit.name}</span>
+                            {upcoming.map((credit, i) => {
+                              const pk = credit.credit_key && !credit.is_free_night
+                                ? periodKeyFor(card.card_id, credit.frequency)
+                                : null;
+                              const fullKey = pk ? `${card.card_id}:${credit.credit_key}:${pk}` : null;
+                              const isUsed = fullKey ? creditUses.has(fullKey) : false;
+                              const canToggle = !!fullKey;
+                              return (
+                                <div key={i} className="flex items-center justify-between">
+                                  <div className="flex items-center gap-1.5 min-w-0">
+                                    <span className="text-sm">{CATEGORY_EMOJI[credit.category] || "💳"}</span>
+                                    <span className={`text-xs truncate ${isUsed ? "text-slate-400 line-through" : "text-slate-600"}`}>{credit.name}</span>
+                                  </div>
+                                  <div className="flex items-center gap-1.5 shrink-0">
+                                    {credit.is_free_night ? (
+                                      <span className="text-[10px] font-semibold text-amber-600 uppercase">{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
+                                    ) : credit.amount && credit.amount > 0 ? (
+                                      <span className={`text-xs font-semibold ${isUsed ? "text-slate-400 line-through" : "text-amber-600"}`}>${credit.amount}</span>
+                                    ) : null}
+                                    <span className="text-[10px] text-amber-500">{formatFrequency(credit.frequency, lang)}</span>
+                                    {canToggle && (
+                                      <button
+                                        type="button"
+                                        onClick={() => toggleCreditUse(card.card_id, credit)}
+                                        className={`ml-1 text-[10px] px-1.5 py-0.5 rounded border transition-colors ${
+                                          isUsed
+                                            ? "border-emerald-300 bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
+                                            : "border-slate-200 bg-white text-slate-500 hover:border-slate-400 hover:text-slate-700"
+                                        }`}
+                                        aria-label={isUsed ? m.undoUse : m.markUsed}
+                                        title={isUsed ? m.undoUse : m.markUsed}
+                                      >
+                                        {isUsed ? m.usedLabel : "✓"}
+                                      </button>
+                                    )}
+                                  </div>
                                 </div>
-                                <div className="flex items-center gap-1.5">
-                                  {credit.is_free_night ? (
-                                    <span className="text-[10px] font-semibold text-amber-600 uppercase">{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
-                                  ) : credit.amount && credit.amount > 0 ? (
-                                    <span className="text-xs font-semibold text-amber-600">${credit.amount}</span>
-                                  ) : null}
-                                  <span className="text-[10px] text-amber-500">{formatFrequency(credit.frequency, lang)}</span>
-                                </div>
-                              </div>
-                            ))}
+                              );
+                            })}
                           </div>
                         </div>
                       )}
