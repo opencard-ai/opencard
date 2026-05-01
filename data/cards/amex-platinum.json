@@ -109,6 +109,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "uber-cash",
       "name": "Uber Cash",
       "amount": 15,
       "frequency": "monthly",
@@ -118,6 +119,7 @@
       "source": "https://global.americanexpress.com/card-benefits/detail/uber-cash/platinum"
     },
     {
+      "credit_key": "uber-one-membership",
       "name": "Uber One Membership",
       "amount": 120,
       "frequency": "annual",
@@ -127,6 +129,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     },
     {
+      "credit_key": "walmart-credit",
       "name": "Walmart+ Credit",
       "amount": 12.95,
       "frequency": "monthly",
@@ -136,6 +139,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     },
     {
+      "credit_key": "clear-plus-credit",
       "name": "CLEAR Plus Credit",
       "amount": 209,
       "frequency": "annual",
@@ -145,6 +149,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     },
     {
+      "credit_key": "airline-fee-credit",
       "name": "Airline Fee Credit",
       "amount": 200,
       "frequency": "annual",
@@ -154,6 +159,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     },
     {
+      "credit_key": "equinox-credit",
       "name": "Equinox Credit",
       "amount": 300,
       "frequency": "annual",
@@ -163,6 +169,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     },
     {
+      "credit_key": "digital-entertainment-credit",
       "name": "Digital Entertainment Credit",
       "amount": 20,
       "frequency": "monthly",
@@ -172,6 +179,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     },
     {
+      "credit_key": "resy-dining-credit",
       "name": "Resy Dining Credit",
       "amount": 100,
       "frequency": "quarterly",
@@ -181,6 +189,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     },
     {
+      "credit_key": "lululemon-credit",
       "name": "lululemon Credit",
       "amount": 75,
       "frequency": "quarterly",
@@ -190,6 +199,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     },
     {
+      "credit_key": "oura-ring-credit",
       "name": "Oura Ring Credit",
       "amount": 200,
       "frequency": "annual",

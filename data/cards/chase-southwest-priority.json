@@ -72,6 +72,7 @@
   "next_review": "2026-07-15T13:41:49.970000+00:00",
   "recurring_credits": [
     {
+      "credit_key": "southwest-travel-credit",
       "name": "Southwest Travel Credit",
       "amount": 75,
       "frequency": "annual",
@@ -80,6 +81,7 @@
       "reset_type": "calendar_year"
     },
     {
+      "credit_key": "doordash-non-restaurant-credit",
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,
       "frequency": "quarterly",

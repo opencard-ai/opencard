@@ -102,6 +102,7 @@
   "last_updated": "2026-04-29T06:08:32.039Z",
   "recurring_credits": [
     {
+      "credit_key": "300-travel-credit",
       "name": "$300 Travel Credit",
       "amount": 300,
       "frequency": "annual",
@@ -110,6 +111,7 @@
       "reset_type": "calendar_year"
     },
     {
+      "credit_key": "doordash-non-restaurant-credit",
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,
       "frequency": "quarterly",

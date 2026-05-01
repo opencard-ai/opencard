@@ -103,6 +103,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "citi-travel-hotel-credit",
       "name": "Citi Travel Hotel Credit",
       "amount": 100,
       "frequency": "annual",

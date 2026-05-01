@@ -113,6 +113,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "travel-credit-chase-travel",
       "name": "Travel Credit (Chase Travel)",
       "amount": 300,
       "frequency": "annual",
@@ -122,6 +123,7 @@
       "source": "https://account.chase.com/sapphire/reserve/benefits"
     },
     {
+      "credit_key": "the-edit-hotel-credit",
       "name": "The Edit Hotel Credit",
       "amount": 250,
       "frequency": "semi_annual",
@@ -131,6 +133,7 @@
       "source": "https://account.chase.com/sapphire/reserve/benefits"
     },
     {
+      "credit_key": "exclusive-tables-dining-credit",
       "name": "Exclusive Tables Dining Credit",
       "amount": 25,
       "frequency": "monthly",
@@ -140,6 +143,7 @@
       "source": "https://thepointsguy.com/credit-cards/chase-sapphire-reserve-credits/"
     },
     {
+      "credit_key": "stubhub-viagogo-credit",
       "name": "StubHub / viagogo Credit",
       "amount": 300,
       "frequency": "annual",
@@ -149,6 +153,7 @@
       "source": "https://account.chase.com/sapphire/reserve/benefits"
     },
     {
+      "credit_key": "doordash-credit",
       "name": "DoorDash Credit",
       "amount": 25,
       "frequency": "monthly",
@@ -158,6 +163,7 @@
       "source": "https://account.chase.com/sapphire/reserve/benefits"
     },
     {
+      "credit_key": "lyft-credit",
       "name": "Lyft Credit",
       "amount": 10,
       "frequency": "monthly",
@@ -167,6 +173,7 @@
       "source": "https://account.chase.com/sapphire/reserve/benefits"
     },
     {
+      "credit_key": "peloton-credit",
       "name": "Peloton Credit",
       "amount": 10,
       "frequency": "monthly",
@@ -176,6 +183,7 @@
       "source": "https://account.chase.com/sapphire/reserve/benefits"
     },
     {
+      "credit_key": "global-entry-tsa-precheck-credit",
       "name": "Global Entry / TSA PreCheck Credit",
       "amount": 100,
       "frequency": "every_4_years",

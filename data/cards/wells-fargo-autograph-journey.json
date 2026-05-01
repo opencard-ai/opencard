@@ -65,6 +65,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "airline-credit",
       "name": "Airline Credit",
       "amount": 50,
       "frequency": "annual",

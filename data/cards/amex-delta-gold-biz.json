@@ -72,6 +72,7 @@
   "next_review": "2026-07-23T17:27:59.994652",
   "recurring_credits": [
     {
+      "credit_key": "delta-stays-credit",
       "name": "Delta Stays Credit",
       "amount": 150,
       "frequency": "annual",

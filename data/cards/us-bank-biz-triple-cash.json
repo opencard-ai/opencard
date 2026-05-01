@@ -89,12 +89,14 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "annual-software-credit",
       "name": "annual software credit",
       "amount": 100,
       "frequency": "annual",
       "category": "digital"
     },
     {
+      "credit_key": "100-annual-software-credit",
       "name": "$100 annual software credit",
       "amount": 100,
       "frequency": "annual",

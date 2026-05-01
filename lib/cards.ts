@@ -14,6 +14,8 @@ export interface EarningRate {
 }
 
 export interface RecurringCredit {
+  /** Stable id for per-user check-off state. Set once via scripts/add-credit-keys.ts; never overwrite. */
+  credit_key?: string;
   name: string;
   amount: number;
   frequency: "monthly" | "quarterly" | "semi_annual" | "annual" | "per_stay" | "cardmember_year" | "every_4_years" | string;

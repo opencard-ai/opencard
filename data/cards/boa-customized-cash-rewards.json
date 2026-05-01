@@ -75,6 +75,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "2025-quarterly-bonus",
       "name": "2025 Quarterly Bonus",
       "amount": 200,
       "frequency": "quarterly",

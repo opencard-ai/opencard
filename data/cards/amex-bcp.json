@@ -80,6 +80,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "disney-streaming-credit",
       "name": "Disney Streaming Credit",
       "amount": 10,
       "frequency": "monthly",

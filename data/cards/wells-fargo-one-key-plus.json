@@ -49,6 +49,7 @@
   "next_review": "2026-07-15T13:41:50.011000+00:00",
   "recurring_credits": [
     {
+      "credit_key": "onekeycash-anniversary-credit",
       "name": "OneKeyCash Anniversary Credit",
       "amount": 100,
       "frequency": "annual",
@@ -58,6 +59,7 @@
       "source": "https://www.expedia.com/one-key-cards"
     },
     {
+      "credit_key": "trusted-traveler-credit-global-entry-tsa-precheck",
       "name": "Trusted Traveler Credit (Global Entry/TSA PreCheck)",
       "amount": 120,
       "frequency": "every_4_years",

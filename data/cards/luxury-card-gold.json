@@ -88,6 +88,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "annual-airline-credit",
       "name": "Annual Airline Credit",
       "amount": 300,
       "frequency": "annual",
@@ -97,6 +98,7 @@
       "source": "https://www.luxurycard.com/goldcard"
     },
     {
+      "credit_key": "annual-dining-credit",
       "name": "Annual Dining Credit",
       "amount": 200,
       "frequency": "annual",
@@ -106,6 +108,7 @@
       "source": "https://www.luxurycard.com/goldcard"
     },
     {
+      "credit_key": "global-entry-tsa-precheck-credit",
       "name": "Global Entry / TSA PreCheck Credit",
       "amount": 120,
       "frequency": "every_4_years",

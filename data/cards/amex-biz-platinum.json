@@ -104,6 +104,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "hotel-credit-fhr-hotel-collection",
       "name": "Hotel Credit (FHR + Hotel Collection)",
       "amount": 300,
       "frequency": "semi_annual",
@@ -113,6 +114,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/"
     },
     {
+      "credit_key": "dell-credit-base",
       "name": "Dell Credit (base)",
       "amount": 150,
       "frequency": "annual",
@@ -122,6 +124,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/"
     },
     {
+      "credit_key": "indeed-credit",
       "name": "Indeed Credit",
       "amount": 90,
       "frequency": "quarterly",
@@ -131,6 +134,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/"
     },
     {
+      "credit_key": "airline-fee-credit",
       "name": "Airline Fee Credit",
       "amount": 200,
       "frequency": "annual",
@@ -140,6 +144,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/"
     },
     {
+      "credit_key": "clear-plus-credit",
       "name": "CLEAR Plus Credit",
       "amount": 209,
       "frequency": "annual",
@@ -149,6 +154,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/"
     },
     {
+      "credit_key": "hilton-for-business-credit",
       "name": "Hilton for Business Credit",
       "amount": 50,
       "frequency": "quarterly",

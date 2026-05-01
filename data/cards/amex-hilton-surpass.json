@@ -101,6 +101,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "hilton-quarterly-statement-credit",
       "name": "Hilton Quarterly Statement Credit",
       "amount": 50,
       "frequency": "quarterly",

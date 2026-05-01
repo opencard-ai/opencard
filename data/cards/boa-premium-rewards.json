@@ -78,6 +78,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "travel-statement-credit",
       "name": "Travel Statement Credit",
       "amount": 200,
       "frequency": "annual",

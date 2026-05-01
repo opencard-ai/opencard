@@ -87,6 +87,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "free-night-award-marriott-35k",
       "name": "Free Night Award (Marriott 35k)",
       "amount": 0,
       "frequency": "annual",
@@ -96,6 +97,7 @@
       "is_free_night": true
     },
     {
+      "credit_key": "doordash-non-restaurant-credit",
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,
       "frequency": "quarterly",

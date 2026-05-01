@@ -47,6 +47,7 @@
   "last_updated": "2026-04-29T13:31:27.047Z",
   "recurring_credits": [
     {
+      "credit_key": "hotel-booking-credit",
       "name": "Hotel Booking Credit",
       "amount": 250,
       "frequency": "semi_annual",
@@ -56,6 +57,7 @@
       "source": "https://robinhood.com/us/en/creditcard/platinum/"
     },
     {
+      "credit_key": "autonomous-ride-credit",
       "name": "Autonomous Ride Credit",
       "amount": 20,
       "frequency": "monthly",
@@ -65,6 +67,7 @@
       "source": "https://robinhood.com/us/en/creditcard/platinum/"
     },
     {
+      "credit_key": "dining-credit",
       "name": "Dining Credit",
       "amount": 20,
       "frequency": "monthly",
@@ -74,6 +77,7 @@
       "source": "https://robinhood.com/us/en/creditcard/platinum/"
     },
     {
+      "credit_key": "doordash-credit",
       "name": "DoorDash Credit",
       "amount": 20,
       "frequency": "monthly",
@@ -83,6 +87,7 @@
       "source": "https://robinhood.com/us/en/creditcard/platinum/"
     },
     {
+      "credit_key": "health-wearables-credit",
       "name": "Health Wearables Credit",
       "amount": 200,
       "frequency": "annual",
@@ -92,6 +97,7 @@
       "source": "https://robinhood.com/us/en/creditcard/platinum/"
     },
     {
+      "credit_key": "global-entry-tsa-precheck-credit",
       "name": "Global Entry / TSA PreCheck Credit",
       "amount": 120,
       "frequency": "every_4_years",

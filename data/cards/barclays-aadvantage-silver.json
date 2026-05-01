@@ -61,6 +61,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "inflight-wi-fi-credit",
       "name": "Inflight Wi-Fi Credit",
       "amount": 50,
       "frequency": "annual",

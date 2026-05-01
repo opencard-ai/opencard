@@ -96,6 +96,7 @@
   "last_updated": "2026-04-29T06:08:32.038Z",
   "recurring_credits": [
     {
+      "credit_key": "free-night-award",
       "name": "Free Night Award",
       "amount": 0,
       "frequency": "annual",
@@ -105,6 +106,7 @@
       "is_free_night": true
     },
     {
+      "credit_key": "global-entry-tsa-precheck",
       "name": "Global Entry/TSA PreCheck",
       "amount": 120,
       "frequency": "every_4_years",
@@ -113,6 +115,7 @@
       "reset_type": "every_4_years"
     },
     {
+      "credit_key": "doordash-non-restaurant-credit",
       "name": "DoorDash Non-Restaurant Credit",
       "amount": 10,
       "frequency": "quarterly",

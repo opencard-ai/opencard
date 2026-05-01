@@ -68,6 +68,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "global-entry-tsa-precheck-application-credit",
       "name": "Global Entry / TSA PreCheck Application Credit",
       "amount": 120,
       "frequency": "every_4_years",
@@ -77,6 +78,7 @@
       "source": "https://www.capitalone.com/credit-cards/venture/"
     },
     {
+      "credit_key": "capital-one-travel-hotel-experience-credit",
       "name": "Capital One Travel Hotel Experience Credit",
       "amount": 50,
       "frequency": "per_stay",

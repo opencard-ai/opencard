@@ -99,12 +99,14 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "delta-stays-credit",
       "name": "Delta Stays Credit",
       "amount": 100,
       "frequency": "annual",
       "category": "travel"
     },
     {
+      "credit_key": "delta-flight-credit",
       "name": "Delta Flight Credit",
       "amount": 200,
       "frequency": "annual",
@@ -115,6 +117,6 @@
   "next_review": "2026-07-15T13:41:49.944000+00:00",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
-  "cash_advance_fee_pct": 5.0,
+  "cash_advance_fee_pct": 5,
   "cfpb_verified": true
 }

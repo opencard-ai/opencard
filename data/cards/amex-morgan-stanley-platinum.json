@@ -53,6 +53,7 @@
   "last_updated": "2026-04-27T04:49:09.116Z",
   "recurring_credits": [
     {
+      "credit_key": "uber-cash",
       "name": "Uber Cash",
       "amount": 15,
       "frequency": "monthly",
@@ -62,6 +63,7 @@
       "source": "https://global.americanexpress.com/card-benefits/view-all/morgan-stanley-platinum-card"
     },
     {
+      "credit_key": "uber-one-membership",
       "name": "Uber One Membership",
       "amount": 120,
       "frequency": "annual",
@@ -71,6 +73,7 @@
       "source": "https://global.americanexpress.com/card-benefits/view-all/morgan-stanley-platinum-card"
     },
     {
+      "credit_key": "airline-fee-credit",
       "name": "Airline Fee Credit",
       "amount": 200,
       "frequency": "annual",
@@ -80,6 +83,7 @@
       "source": "https://global.americanexpress.com/card-benefits/view-all/morgan-stanley-platinum-card"
     },
     {
+      "credit_key": "hotel-credit-fhr-hotel-collection",
       "name": "Hotel Credit (FHR + Hotel Collection)",
       "amount": 300,
       "frequency": "semi_annual",
@@ -89,6 +93,7 @@
       "source": "https://global.americanexpress.com/card-benefits/view-all/morgan-stanley-platinum-card"
     },
     {
+      "credit_key": "global-entry-tsa-precheck",
       "name": "Global Entry / TSA PreCheck",
       "amount": 120,
       "frequency": "every_4_years",

@@ -116,6 +116,7 @@
   },
   "recurring_credits": [
     {
+      "credit_key": "dining-credit",
       "name": "Dining Credit",
       "amount": 25,
       "frequency": "monthly",
@@ -125,6 +126,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-brilliant/"
     },
     {
+      "credit_key": "free-night-award-marriott-85k",
       "name": "Free Night Award (Marriott 85k)",
       "amount": 0,
       "frequency": "annual",
