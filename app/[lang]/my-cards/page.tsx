@@ -25,8 +25,8 @@ const MESSAGES = {
     reportError: "Report error",
     setOpenDate: "Set date",
     errorSent: "Error reported!",
-    thisMonth: "This month",
-    upcoming: "Upcoming",
+    thisMonth: "Available now",
+    upcoming: "Annual",
     expiresSoon: "Expires soon",
     annualFeeReminder: "Annual fee due",
     noSubscriptions: "No benefit reminders set up yet",
@@ -69,8 +69,8 @@ const MESSAGES = {
     reportError: "回報錯誤",
     setOpenDate: "設定日期",
     errorSent: "已回報！",
-    thisMonth: "本月可用",
-    upcoming: "即將到來",
+    thisMonth: "本期可用",
+    upcoming: "年度型",
     expiresSoon: "即將到期",
     annualFeeReminder: "年費即將到期",
     noSubscriptions: "還沒有設定福利提醒",
@@ -113,8 +113,8 @@ const MESSAGES = {
     reportError: "Reportar error",
     setOpenDate: "Establecer fecha",
     errorSent: "¡Reportado!",
-    thisMonth: "Este mes",
-    upcoming: "Próximamente",
+    thisMonth: "Disponibles ahora",
+    upcoming: "Anuales",
     expiresSoon: "Vence pronto",
     annualFeeReminder: "Cuota anual",
     noSubscriptions: "Sin recordatorios configurados",
@@ -779,7 +779,7 @@ export default function MyCardsPage({
                       )}
                     </div>
                     {cardTotal > 0 && (
-                      <div className="text-right shrink-0">
+                      <div className="text-right shrink-0 tabular-nums whitespace-nowrap">
                         <span className="text-sm font-semibold text-emerald-700">${cardRemaining}</span>
                         <span className="text-[10px] text-slate-400"> / ${cardTotal}</span>
                         <p className="text-[9px] text-slate-400 leading-none mt-0.5">{m.remainingThisPeriod}</p>

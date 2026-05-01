@@ -113,6 +113,14 @@ export default function ReportErrorModal({ cardId, cardName, lang, trigger, clas
       if (res.status === 429) { setError(t.errorRate); return; }
       if (!res.ok) { setError(t.errorGeneric); return; }
       setDone(true);
+      // Auto-close after a brief "thanks" so the user sees the confirmation
+      // but doesn't have to dismiss it themselves.
+      setTimeout(() => {
+        setOpen(false);
+        setMessage("");
+        setEmail("");
+        setDone(false);
+      }, 1800);
     } catch {
       setError(t.errorGeneric);
     } finally {
