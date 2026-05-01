@@ -270,55 +270,47 @@ export default function MyCardsPage({
     });
   }, [params]);
 
-  // Load selected card IDs — cloud-first if subscribed, localStorage fallback.
-  // Card *details* are fetched in a separate effect keyed on selectedCards so we
-  // only pull data for owned cards (saves ~150KB vs the old "fetch all 218" path).
+  // Load selected card IDs. Strategy:
+  //   1. Paint from localStorage immediately (offline-first).
+  //   2. If user has a subscribed email, treat the cloud response as truth:
+  //      - 200: replace cards (even if empty — user may have removed everything
+  //             from another device).
+  //      - 404: stale email in localStorage; clear and drop to guest mode.
+  //      - 5xx / network: keep the cached paint, leave isSubscribed false so we
+  //                       don't lock UI on a stale guess.
+  // Card *details* are fetched in a separate effect keyed on selectedCards.
   useEffect(() => {
-    const loadIds = async () => {
-      const savedEmail = localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
-      let cardsToSet: string[] = [];
-      let isSubscribedToSet = false;
-      let emailToSet = '';
+    const cached = (() => {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]") as string[]; }
+      catch { return [] as string[]; }
+    })();
+    if (cached.length > 0) setSelectedCards(cached);
 
-      if (savedEmail) {
-        try {
-          const res = await fetch(`/api/my-cards?email=${encodeURIComponent(savedEmail)}`);
-          if (res.ok) {
-            const data = await res.json();
-            const cloudCards = data.cards || [];
-            if (cloudCards.length > 0) {
-              cardsToSet = cloudCards;
-              isSubscribedToSet = true;
-              emailToSet = savedEmail;
-              localStorage.setItem(STORAGE_KEY, JSON.stringify(cloudCards));
-            }
-          }
-        } catch {}
-      }
-
-      if (cardsToSet.length === 0) {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved) {
-          try {
-            cardsToSet = JSON.parse(saved);
-            const em = localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
-            if (em && cardsToSet.length > 0) {
-              isSubscribedToSet = true;
-              emailToSet = em;
-            }
-          } catch {}
-        }
-      }
-
-      if (cardsToSet.length > 0) setSelectedCards(cardsToSet);
-      if (isSubscribedToSet) {
-        setIsSubscribed(true);
-        setEmail(emailToSet);
-      }
+    const savedEmail = localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
+    if (!savedEmail) {
       setLoaded(true);
-    };
+      return;
+    }
 
-    loadIds();
+    let cancelled = false;
+    fetch(`/api/my-cards?email=${encodeURIComponent(savedEmail)}`)
+      .then(async (res) => {
+        if (cancelled) return;
+        if (res.status === 404) {
+          localStorage.removeItem(SUBSCRIBED_EMAIL_KEY);
+          return;
+        }
+        if (!res.ok) return;
+        const data = await res.json();
+        const cloudCards = (data.cards || []) as string[];
+        setSelectedCards(cloudCards);
+        setIsSubscribed(true);
+        setEmail(savedEmail);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(cloudCards));
+      })
+      .catch(() => {})
+      .finally(() => { if (!cancelled) setLoaded(true); });
+    return () => { cancelled = true; };
   }, []);
 
   // Fetch full card data for selectedCards only. Re-runs when the set changes
@@ -532,14 +524,21 @@ export default function MyCardsPage({
   }, [email]);
 
 
-// Listen for card save/remove events from other pages
+  // Listen for card add/remove events from other pages (CardGrid, AddToMyCardsButton).
+  // The publishers attach the new card list to event.detail so we don't need to
+  // re-read localStorage; that avoids a stale read when the dispatcher hasn't
+  // committed the localStorage write yet.
   useEffect(() => {
-    const handleUpdate = () => {
+    const handleUpdate = (e: Event) => {
+      const detail = (e as CustomEvent<string[] | undefined>).detail;
+      if (Array.isArray(detail)) {
+        setSelectedCards(detail);
+        return;
+      }
+      // Fallback for publishers that didn't attach detail (e.g. CardGrid).
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
-        try {
-          setSelectedCards(JSON.parse(saved));
-        } catch {}
+        try { setSelectedCards(JSON.parse(saved)); } catch {}
       } else {
         setSelectedCards([]);
       }
@@ -547,15 +546,6 @@ export default function MyCardsPage({
     window.addEventListener('opencard_cards_updated', handleUpdate);
     return () => window.removeEventListener('opencard_cards_updated', handleUpdate);
   }, []);
-
-  // Fetch full card data - now handles in loadCards useEffect directly
-  // This useEffect just handles card ID updates from other pages
-  useEffect(() => {
-    if (selectedCards.length > 0) {
-      // Trigger a re-render when cards are added/removed from other pages
-      setLoaded(true);
-    }
-  }, [selectedCards.length]);
 
   const m = MESSAGES[lang];
 
