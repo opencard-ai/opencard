@@ -103,6 +103,10 @@ export interface CreditCard {
   tags: string[];
   status?: string;
   recurring_credits?: RecurringCredit[];
+  /** Hand-picked "popular" flag — pinned to the top of its tier in the
+   *  cards-section default browse view. Optional; when absent, popularity
+   *  falls back to welcome_offer.estimated_value then alphabetical. */
+  featured?: boolean;
 }
 
 export function getAllCards(): CreditCard[] {

@@ -92,6 +92,23 @@ function getTier(card: CreditCard): Tier {
 
 const TIER_ORDER: Tier[] = ["premium", "mid", "no-fee", "business", "secured-student"];
 
+// Popularity score for the default browse view. featured flag pins to top,
+// otherwise welcome_offer estimated_value drives the order. Cards with no
+// bonus tie at 0 and fall back to alphabetical via the secondary comparator.
+function popularityScore(card: CreditCard): number {
+  if (card.featured === true) return Number.MAX_SAFE_INTEGER;
+  const wo = card.welcome_offer;
+  if (!wo) return 0;
+  const ev = Number(wo.estimated_value);
+  if (Number.isFinite(ev) && ev > 0) return ev;
+  // Fall back to bonus_value if it's parseable as a number ($-prefixed string etc.)
+  if (wo.bonus_value != null) {
+    const parsed = parseFloat(String(wo.bonus_value).replace(/[^0-9.]/g, ""));
+    if (Number.isFinite(parsed) && parsed > 0) return parsed;
+  }
+  return 0;
+}
+
 const TIER_LABELS: Record<Tier, Record<string, string>> = {
   "premium": {
     en: "💎 Premium ($95+)",
@@ -383,7 +400,15 @@ function CardList({ cards, tags, locale, selectedSort }: { cards: CreditCard[]; 
           return (
             <div className="space-y-8 mt-2">
               {TIER_ORDER.map((tier) => {
-                const inTier = filtered.filter((c) => getTier(c) === tier);
+                // In tier mode the user hasn't picked an explicit sort, so
+                // override the alphabetical default with popularity. Featured
+                // cards rise to the top, then welcome-bonus value, then name.
+                const inTier = filtered
+                  .filter((c) => getTier(c) === tier)
+                  .sort((a, b) => {
+                    const diff = popularityScore(b) - popularityScore(a);
+                    return diff !== 0 ? diff : a.name.localeCompare(b.name);
+                  });
                 if (inTier.length === 0) return null;
                 const expanded = expandedTiers.has(tier);
                 const visible = expanded ? inTier : inTier.slice(0, DEFAULT_PER_TIER);

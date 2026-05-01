@@ -75,5 +75,6 @@
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 5,
   "cfpb_source": "Q3_2025",
-  "cfpb_verified": true
+  "cfpb_verified": true,
+  "featured": true
 }

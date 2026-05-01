@@ -166,5 +166,6 @@
       "reverted_at": "2026-04-25T05:30:00.000Z",
       "reverted_by": "validate-all-cleanup-2026-04-25"
     }
-  ]
+  ],
+  "featured": true
 }
