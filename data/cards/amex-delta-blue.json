@@ -12,7 +12,7 @@
     "time_period_months": null,
     "description": "10,000 bonus miles",
     "point_program": "Delta SkyMiles",
-    "estimated_value": 140
+    "estimated_value": 110
   },
   "earning_rates": [
     {
@@ -65,6 +65,6 @@
   "next_review": "2026-07-23T17:25:16.615341",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
-  "cash_advance_fee_pct": 5.0,
+  "cash_advance_fee_pct": 5,
   "cfpb_verified": true
 }

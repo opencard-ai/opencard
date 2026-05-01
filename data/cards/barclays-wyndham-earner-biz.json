@@ -9,7 +9,7 @@
   "welcome_offer": {
     "bonus_points": 100000,
     "description": "100,000 Wyndham bonus points after $3,000 in first 3 months",
-    "estimated_value": 500,
+    "estimated_value": 1000,
     "spending_requirement": 3000,
     "time_period_months": 3
   },
