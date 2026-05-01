@@ -79,18 +79,34 @@ function cardMatchesTag(card: CreditCard, tagValue: string, allTags: string[]): 
 // Tier classification for the default browse view. Order matters: a card hits
 // the first matching tier (e.g. a $0-AF business card lands in "business",
 // not "no-fee", because business identity is more meaningful for that user).
-type Tier = "secured-student" | "business" | "premium" | "mid" | "no-fee";
+// $90-100 carved out from "premium" because that band (CSP, Venture, etc.) is
+// a distinct value-tier audience from $200+ premium ultra-cards.
+type Tier =
+  | "secured-student"
+  | "business"
+  | "premium"
+  | "mid-premium"
+  | "low-fee"
+  | "no-fee";
 
 function getTier(card: CreditCard): Tier {
   const tags = card.tags || [];
   if (tags.includes("secured") || tags.includes("student")) return "secured-student";
   if (tags.includes("business")) return "business";
-  if (card.annual_fee >= 95) return "premium";
-  if (card.annual_fee > 0) return "mid";
+  if (card.annual_fee > 100) return "premium";
+  if (card.annual_fee >= 90) return "mid-premium";
+  if (card.annual_fee > 0) return "low-fee";
   return "no-fee";
 }
 
-const TIER_ORDER: Tier[] = ["premium", "mid", "no-fee", "business", "secured-student"];
+const TIER_ORDER: Tier[] = [
+  "premium",
+  "mid-premium",
+  "low-fee",
+  "no-fee",
+  "business",
+  "secured-student",
+];
 
 // Popularity score for the default browse view. featured flag pins to top,
 // otherwise welcome_offer estimated_value drives the order. Cards with no
@@ -111,14 +127,19 @@ function popularityScore(card: CreditCard): number {
 
 const TIER_LABELS: Record<Tier, Record<string, string>> = {
   "premium": {
-    en: "💎 Premium ($95+)",
-    zh: "💎 高階($95+)",
-    es: "💎 Premium ($95+)",
+    en: "💎 Premium ($101+)",
+    zh: "💎 高階($101+)",
+    es: "💎 Premium ($101+)",
   },
-  "mid": {
-    en: "🎯 Mid-tier ($1-$94)",
-    zh: "🎯 中階($1-$94)",
-    es: "🎯 Intermedia ($1-$94)",
+  "mid-premium": {
+    en: "🌟 Mid-Premium ($90-100)",
+    zh: "🌟 中階($90-100)",
+    es: "🌟 Intermedia ($90-100)",
+  },
+  "low-fee": {
+    en: "🎯 Low-fee ($1-$89)",
+    zh: "🎯 入門($1-$89)",
+    es: "🎯 Cuota baja ($1-$89)",
   },
   "no-fee": {
     en: "✓ No Annual Fee",

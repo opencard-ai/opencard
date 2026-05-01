@@ -26,12 +26,26 @@ interface Card {
   featured?: boolean;
 }
 
-type Tier = "premium" | "mid" | "no-fee" | "business" | "secured-student";
+type Tier =
+  | "premium"
+  | "mid-premium"
+  | "low-fee"
+  | "no-fee"
+  | "business"
+  | "secured-student";
 
-const TIER_ORDER: Tier[] = ["premium", "mid", "no-fee", "business", "secured-student"];
+const TIER_ORDER: Tier[] = [
+  "premium",
+  "mid-premium",
+  "low-fee",
+  "no-fee",
+  "business",
+  "secured-student",
+];
 const TIER_LABEL: Record<Tier, string> = {
-  premium: "💎 Premium ($95+)",
-  mid: "🎯 Mid-tier ($1-$94)",
+  premium: "💎 Premium ($101+)",
+  "mid-premium": "🌟 Mid-Premium ($90-100)",
+  "low-fee": "🎯 Low-fee ($1-$89)",
   "no-fee": "✓ No Annual Fee",
   business: "🏢 Business",
   "secured-student": "🎓 Student & Secured",
@@ -41,8 +55,9 @@ function getTier(card: Card): Tier {
   const tags = card.tags || [];
   if (tags.includes("secured") || tags.includes("student")) return "secured-student";
   if (tags.includes("business")) return "business";
-  if (card.annual_fee >= 95) return "premium";
-  if (card.annual_fee > 0) return "mid";
+  if (card.annual_fee > 100) return "premium";
+  if (card.annual_fee >= 90) return "mid-premium";
+  if (card.annual_fee > 0) return "low-fee";
   return "no-fee";
 }
 
@@ -74,12 +89,14 @@ const RECOMMENDED_FEATURED: Record<Tier, string[]> = {
     "amex-marriott-brilliant",
     "citi-strata-elite",
   ],
-  mid: [
+  "mid-premium": [
     "chase-sapphire-preferred",
     "capital-one-venture",
-    "amex-green",
-    "amex-hilton-surpass",
+    "chase-hyatt",
+    "chase-marriott-boundless",
+    "bilt-obsidian",
   ],
+  "low-fee": [],
   "no-fee": [
     "chase-freedom-unlimited",
     "chase-freedom-flex",
