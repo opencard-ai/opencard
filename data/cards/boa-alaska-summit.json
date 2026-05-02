@@ -7,12 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 5,
-    "time_period_months": 4,
+    "spending_requirement": 5000,
+    "time_period_months": 3,
     "bonus_points": 100000,
-    "description": "TBD (Estimate 100,000 points)",
-    "point_program": "Bank of America",
-    "estimated_value": 1000
+    "description": "100,000 bonus miles after $5,000 spend on purchases in the first 90 days.",
+    "point_program": "Alaska Airlines Mileage Plan",
+    "estimated_value": 1400
   },
   "earning_rates": [
     {
