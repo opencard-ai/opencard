@@ -42,7 +42,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: t("site.title", lang as any),
     description: t("site.subtitle", lang as any),
     icons: {
-      icon: "/favicon-v6.ico",
+      icon: [
+        { url: "/favicon.svg", type: "image/svg+xml" },
+        { url: "/favicon-v7.ico", sizes: "any" },
+      ],
     },
     alternates: {
       canonical: canonicalUrl,
