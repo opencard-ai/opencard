@@ -75,17 +75,12 @@ export default async function LocaleLayout({ children, params }: Props) {
       >
         <header className="bg-white border-b border-slate-200 sticky top-0 z-10 pt-[env(safe-area-inset-top)]">
           <div className="max-w-5xl mx-auto px-4 py-1 flex items-center justify-between">
-            <a href={`/${lang}`} className="inline-flex items-center gap-2 h-12" aria-label="OpenCard AI">
-              <span className="inline-flex items-center justify-center w-9 h-9 rounded-md bg-gradient-to-br from-amber-400 to-amber-600 text-blue-900 dark:text-blue-950 font-black text-base shadow-sm">
+            <a href={`/${lang}`} className="inline-flex items-center gap-2 h-12" aria-label="OpenCard">
+              <span className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 text-blue-900 dark:text-blue-950 font-black text-lg shadow-sm">
                 O
               </span>
-              <span className="flex flex-col leading-tight">
-                <span className="text-base font-bold text-blue-900 dark:text-white">
-                  Open<span className="text-amber-500 dark:text-amber-400">Card</span>
-                </span>
-                <span className="text-[9px] uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400 font-semibold">
-                  Unlocking Lifestyle Benefits
-                </span>
+              <span className="text-2xl font-extrabold tracking-tight text-blue-900 dark:text-white">
+                Open<span className="text-amber-500 dark:text-amber-400">Card</span>
               </span>
             </a>
             <div className="flex items-center gap-3 whitespace-nowrap">
