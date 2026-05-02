@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import LanguageSwitcher from "@/app/components/LanguageSwitcher";
+import ThemeToggle from "@/app/components/ThemeToggle";
 import RecommendWidget from "@/app/components/RecommendWidget";
 import MyCardsWidget from "@/app/components/MyCardsWidget";
 import FloatingButtons from "@/app/components/FloatingButtons";
@@ -59,8 +60,15 @@ export default async function LocaleLayout({ children, params }: Props) {
   const { lang } = await params;
 
   return (
-    <html lang={lang}>
-      
+    <html lang={lang} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("opencard_theme")||"system";var d=t==="dark"||(t==="system"&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark");}catch(e){}})();`,
+          }}
+        />
+      </head>
+
 
 <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-slate-50 text-slate-900 antialiased pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]`}
@@ -80,6 +88,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                 </a>
               </nav>
               <LanguageSwitcher />
+              <ThemeToggle />
             </div>
           </div>
         </header>

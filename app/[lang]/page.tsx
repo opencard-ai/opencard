@@ -68,7 +68,7 @@ export default async function HomePage({ params }: Props) {
       <div className="mb-4">
         <a
           href={`/${lang}/my-cards`}
-          className="flex items-center justify-between bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl px-5 py-3.5 hover:from-blue-100 hover:to-indigo-100 transition-all group"
+          className="flex items-center justify-between bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/40 dark:to-indigo-950/40 border border-blue-200 rounded-xl px-5 py-3.5 hover:from-blue-100 hover:to-indigo-100 transition-all group"
         >
           <div className="flex items-center gap-3">
             <Bookmark className="w-6 h-6 text-blue-600" />
