@@ -5,6 +5,7 @@ import TravelProducts from "../../../components/TravelProducts";
 import BackToCards from "../../../components/BackToCards";
 import AddToMyCardsButton from "../../../components/AddToMyCardsButton";
 import ReportErrorModal from "../../../components/ReportErrorModal";
+import CardArt from "../../../components/CardArt";
 import type { Metadata } from "next";
 import { locales, t } from "@/lib/i18n";
 import { translateCategory } from "@/lib/category-translations";
@@ -100,20 +101,23 @@ export default async function CardDetailPage({ params }: Props) {
 
       {/* Header */}
       <div className="bg-white rounded-xl border border-slate-200 p-6 mb-6">
-        <div className="flex items-start justify-between flex-wrap gap-3 mb-4">
-          <div>
-            <h1 className="text-2xl font-bold text-slate-900">{card.name}</h1>
-            <p className="text-slate-500 mt-1">{card.issuer}</p>
-          </div>
-          <div className="text-right">
-            <div
-              className={`text-2xl font-bold ${
-                card.annual_fee === 0 ? "text-green-600" : "text-slate-900"
-              }`}
-            >
-              {card.annual_fee === 0 ? l("card.annualFeeWaived") : `$${card.annual_fee}`}
+        <div className="flex items-start gap-5 flex-wrap mb-4">
+          <CardArt cardId={card.card_id} issuer={card.issuer} size="lg" className="shrink-0" />
+          <div className="flex-1 min-w-[200px] flex items-start justify-between gap-3 flex-wrap">
+            <div>
+              <h1 className="text-2xl font-bold text-slate-900">{card.name}</h1>
+              <p className="text-slate-500 mt-1">{card.issuer}</p>
             </div>
-            <div className="text-xs text-slate-500">{l("card.annualFee")}</div>
+            <div className="text-right">
+              <div
+                className={`text-2xl font-bold ${
+                  card.annual_fee === 0 ? "text-green-600" : "text-slate-900"
+                }`}
+              >
+                {card.annual_fee === 0 ? l("card.annualFeeWaived") : `$${card.annual_fee}`}
+              </div>
+              <div className="text-xs text-slate-500">{l("card.annualFee")}</div>
+            </div>
           </div>
         </div>
 
