@@ -6,6 +6,7 @@ import { computePeriodKey } from "@/lib/credit-periods";
 import ReportErrorModal from "@/app/components/ReportErrorModal";
 import OpenDateRow from "@/app/components/OpenDateRow";
 import HelpHint from "@/app/components/HelpHint";
+import { toast } from "@/lib/toast";
 
 const STORAGE_KEY = "opencard_existing_cards";
 const SUBSCRIBED_EMAIL_KEY = "opencard_subscribed_email";
@@ -54,6 +55,10 @@ const MESSAGES = {
     savedToast: "Saved",
     saveErrorPrefix: "Error: ",
     saveNetworkError: "Network error",
+    toastMarkedUsed: "✓ Marked used",
+    toastUndone: "↩ Undone",
+    toastSyncFailed: "Couldn't sync — try again",
+    toastSubscribeOk: "✓ Confirmation email sent",
   },
   zh: {
     title: "💳 我的卡片",
@@ -98,6 +103,10 @@ const MESSAGES = {
     savedToast: "已儲存",
     saveErrorPrefix: "錯誤:",
     saveNetworkError: "網路錯誤",
+    toastMarkedUsed: "✓ 已記錄使用",
+    toastUndone: "↩ 已撤銷",
+    toastSyncFailed: "同步失敗,請再試",
+    toastSubscribeOk: "✓ 確認信已寄出",
   },
   es: {
     title: "💳 Mis Tarjetas",
@@ -142,6 +151,10 @@ const MESSAGES = {
     savedToast: "Guardado",
     saveErrorPrefix: "Error: ",
     saveNetworkError: "Error de red",
+    toastMarkedUsed: "✓ Marcado",
+    toastUndone: "↩ Deshecho",
+    toastSyncFailed: "Error al guardar, intenta de nuevo",
+    toastSubscribeOk: "✓ Email de confirmación enviado",
   },
 };
 
@@ -441,11 +454,17 @@ export default function MyCardsPage({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
-      if (!res.ok) revert();
+      if (!res.ok) {
+        revert();
+        toast.error(MESSAGES[lang].toastSyncFailed);
+      } else {
+        toast.success(wasUsed ? MESSAGES[lang].toastUndone : MESSAGES[lang].toastMarkedUsed);
+      }
     } catch {
       revert();
+      toast.error(MESSAGES[lang].toastSyncFailed);
     }
-  }, [email, periodKeyFor]);
+  }, [email, periodKeyFor, lang]);
 
   // Toggle an FNA redemption for the card's current anniversary year.
   const toggleFnaUse = useCallback(async (cardId: string) => {
@@ -475,11 +494,17 @@ export default function MyCardsPage({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, card_id: cardId, anniversary_year: annYear }),
       });
-      if (!res.ok) revert();
+      if (!res.ok) {
+        revert();
+        toast.error(MESSAGES[lang].toastSyncFailed);
+      } else {
+        toast.success(wasUsed ? MESSAGES[lang].toastUndone : MESSAGES[lang].toastMarkedUsed);
+      }
     } catch {
       revert();
+      toast.error(MESSAGES[lang].toastSyncFailed);
     }
-  }, [email, anniversaryYearFor]);
+  }, [email, anniversaryYearFor, lang]);
 
 
 
@@ -555,6 +580,7 @@ export default function MyCardsPage({
         // Save to localStorage
         setSelectedCards(finalCards);
         localStorage.setItem(STORAGE_KEY, JSON.stringify(finalCards));
+        toast.success(m.toastSubscribeOk);
       } else {
         const data = await res.json();
         setSubscribeError(data.error || "Failed to subscribe");
