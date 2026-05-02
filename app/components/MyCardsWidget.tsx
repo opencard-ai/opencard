@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { CreditCard, X, Cloud } from "lucide-react";
 import { trackCreditsViewed } from "@/lib/analytics";
 
 const STORAGE_KEY = "opencard_existing_cards";
@@ -8,7 +9,7 @@ const SUBSCRIBED_EMAIL_KEY = "opencard_subscribed_email";
 
 const MESSAGES = {
   en: {
-    title: "💳 My Cards",
+    title: "My Cards",
     trigger: "My Cards",
     hint: "Select cards you already own. AI will avoid recommending these.",
     searchPlaceholder: "Search cards...",
@@ -18,7 +19,7 @@ const MESSAGES = {
     empty: "No cards match",
   },
   zh: {
-    title: "💳 我的卡片",
+    title: "我的卡片",
     trigger: "我的卡片",
     hint: "勾選你已有的卡片。AI 會避免推薦重複項目。",
     searchPlaceholder: "搜尋卡片...",
@@ -28,7 +29,7 @@ const MESSAGES = {
     empty: "沒有符合的卡片",
   },
   es: {
-    title: "💳 Mis Tarjetas",
+    title: "Mis Tarjetas",
     trigger: "Mis Tarjetas",
     hint: "Selecciona las tarjetas que ya tienes.",
     searchPlaceholder: "Buscar tarjetas...",
@@ -208,15 +209,15 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
         <div className="w-80 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col animate-in fade-in slide-in-from-bottom-4 duration-200">
           {/* Header */}
           <div className="bg-slate-900 px-4 py-3 flex items-center justify-between shrink-0">
-            <h3 className="text-white font-bold text-sm">{m.title}</h3>
-            <button onClick={() => setIsOpen(false)} className="text-white/70 hover:text-white transition-colors">✕</button>
+            <h3 className="text-white font-bold text-sm flex items-center gap-1.5"><CreditCard className="w-4 h-4" /> {m.title}</h3>
+            <button onClick={() => setIsOpen(false)} className="text-white/70 hover:text-white transition-colors" aria-label="Close"><X className="w-4 h-4" /></button>
           </div>
 
           {/* Body */}
           <div className="p-4 flex flex-col overflow-hidden max-h-[70vh]">
             {subscribedEmail && (
-              <div className="text-xs text-green-600 bg-green-50 border border-green-200 rounded px-2 py-1.5 mb-3">
-                ☁️ Synced to cloud
+              <div className="text-xs text-green-600 bg-green-50 border border-green-200 rounded px-2 py-1.5 mb-3 flex items-center gap-1.5">
+                <Cloud className="w-3.5 h-3.5" /> Synced to cloud
               </div>
             )}
             <p className="text-xs text-slate-500 mb-3 leading-relaxed">{m.hint}</p>
@@ -332,7 +333,7 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
             : "bg-white text-slate-700 border-2 border-slate-200 shadow-md hover:shadow-lg hover:border-slate-300"
         }`}
       >
-        <span className="text-xl leading-none">💳</span>
+        <CreditCard className="w-5 h-5 shrink-0" />
         {(isOpen || expanded) && <span className="font-bold text-sm whitespace-nowrap">{m.trigger}</span>}
         {selectedCards.length > 0 && (
           <span

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { CreditCard, Check, X } from 'lucide-react';
 import { trackCardAdded } from '@/lib/analytics';
 
 interface AddToMyCardsButtonProps {
@@ -108,27 +109,27 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
   };
 
   const labels: Record<string, { add: string; added: string; saving: string; remove: string }> = {
-    en: { add: '💳 Add to My Cards', added: '✓ Added', saving: '...', remove: '✕ Remove' },
-    zh: { add: '💳 加入我的卡片', added: '✓ 已加入', saving: '...', remove: '✕ 移除' },
-    es: { add: '💳 Agregar a Mis Tarjetas', added: '✓ Agregado', saving: '...', remove: '✕ Quitar' },
+    en: { add: 'Add to My Cards', added: 'Added', saving: '...', remove: 'Remove' },
+    zh: { add: '加入我的卡片', added: '已加入', saving: '...', remove: '移除' },
+    es: { add: 'Agregar a Mis Tarjetas', added: 'Agregado', saving: '...', remove: 'Quitar' },
   };
 
   const langKey = (['en', 'zh', 'es'] as const).includes(lang as any) ? lang : 'en';
   const label = labels[langKey];
 
-  // When added, show a two-button row: "✓ Added" + "✕ Remove"
   if (added) {
     return (
       <div className="flex flex-row gap-2 w-full">
-        <div className="flex-1 flex items-center justify-center bg-indigo-50 border border-indigo-200 rounded-lg h-11 px-3 text-center">
+        <div className="flex-1 flex items-center justify-center gap-1.5 bg-indigo-50 border border-indigo-200 rounded-lg h-11 px-3 text-center">
+          <Check className="w-4 h-4 text-indigo-600" strokeWidth={2.5} />
           <span className="text-indigo-600 font-semibold text-sm">{label.added}</span>
         </div>
         <button
           onClick={handleRemove}
           disabled={saving}
-          className="flex-1 bg-white border border-red-200 hover:border-red-400 hover:bg-red-50 disabled:opacity-60 text-red-500 font-semibold h-11 px-3 rounded-lg transition-colors text-sm"
+          className="flex-1 inline-flex items-center justify-center gap-1.5 bg-white border border-red-200 hover:border-red-400 hover:bg-red-50 disabled:opacity-60 text-red-500 font-semibold h-11 px-3 rounded-lg transition-colors text-sm"
         >
-          {saving ? '...' : label.remove}
+          {saving ? '...' : (<><X className="w-4 h-4" /> {label.remove}</>)}
         </button>
       </div>
     );
@@ -138,9 +139,9 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
     <button
       onClick={handleAdd}
       disabled={saving}
-      className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white font-semibold py-2.5 px-4 rounded-lg transition-colors text-sm"
+      className="w-full inline-flex items-center justify-center gap-1.5 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white font-semibold py-2.5 px-4 rounded-lg transition-colors text-sm"
     >
-      {saving ? label.saving : label.add}
+      {saving ? label.saving : (<><CreditCard className="w-4 h-4" /> {label.add}</>)}
     </button>
   );
 }

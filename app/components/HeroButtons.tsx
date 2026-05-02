@@ -1,4 +1,5 @@
 "use client";
+import { Sparkles, CreditCard } from "lucide-react";
 import { t } from "@/lib/i18n";
 
 export default function HeroButtons({ lang }: { lang: string }) {
@@ -15,7 +16,7 @@ export default function HeroButtons({ lang }: { lang: string }) {
         href="/?ask=Best%20card%20for%20my%20needs"
         className="h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-xl hover:shadow-2xl"
       >
-        <span className="text-xl leading-none">✨</span>
+        <Sparkles className="w-5 h-5" />
         <span className="font-bold text-sm">{t("home.heroAiCta", lang as any)}</span>
       </a>
 
@@ -24,7 +25,7 @@ export default function HeroButtons({ lang }: { lang: string }) {
         onClick={openMyCards}
         className="h-12 px-5 rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 active:scale-95 bg-white text-slate-700 border-2 border-slate-200 shadow-md hover:shadow-lg hover:border-slate-300"
       >
-        <span className="text-xl leading-none">💳</span>
+        <CreditCard className="w-5 h-5" />
         <span className="font-bold text-sm">{t("home.heroMyCards", lang as any)}</span>
       </button>
 

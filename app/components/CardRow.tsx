@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import { Bookmark, Check, ChevronRight, Gift, Scale } from "lucide-react";
 import type { CreditCard } from "@/lib/cards";
 import IssuerChip from "./IssuerChip";
 import CardArt from "./CardArt";
@@ -121,11 +122,18 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
 
   return (
     <div className={`bg-white rounded-xl border transition-colors ${isCompared ? "ring-2 ring-blue-500 border-blue-500" : "border-slate-200"}`}>
-      <button
-        type="button"
+      <div
+        role="button"
+        tabIndex={0}
         onClick={() => setExpanded((v) => !v)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setExpanded((v) => !v);
+          }
+        }}
         aria-expanded={expanded}
-        className="w-full flex items-center gap-3 px-3 py-3 text-left"
+        className="w-full flex items-center gap-3 px-3 py-3 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-xl"
       >
         <CardArt cardId={card.card_id} issuer={card.issuer} size="sm" />
         <div className="flex-1 min-w-0">
@@ -148,21 +156,19 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
             saved ? "bg-emerald-50 border-emerald-300 text-emerald-700" : "bg-white border-slate-300 text-slate-500 hover:border-emerald-400 hover:text-emerald-600"
           }`}
         >
-          {saved ? "✓" : "💾"}
+          {saved ? <Check className="w-4 h-4" strokeWidth={2.5} /> : <Bookmark className="w-4 h-4" />}
         </button>
-        <span
+        <ChevronRight
           aria-hidden
-          className={`shrink-0 text-slate-400 transition-transform duration-200 ${expanded ? "rotate-90" : ""}`}
-        >
-          ›
-        </span>
-      </button>
+          className={`shrink-0 w-4 h-4 text-slate-400 transition-transform duration-200 ${expanded ? "rotate-90" : ""}`}
+        />
+      </div>
 
       {expanded && (
         <div className="px-4 pb-4 pt-0 border-t border-slate-100 space-y-3">
           {(bonusValue || bonusPoints) && (
             <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mt-3">
-              <p className="text-[10px] font-semibold text-amber-700 uppercase tracking-wide">🎁 {t.welcome}</p>
+              <p className="text-[10px] font-semibold text-amber-700 uppercase tracking-wide flex items-center gap-1"><Gift className="w-3 h-3" /> {t.welcome}</p>
               <p className="text-sm font-semibold text-amber-900 mt-0.5">
                 {bonusPoints != null && bonusPoints > 0 && (
                   <span>{bonusPoints.toLocaleString()} pts</span>
@@ -207,7 +213,7 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
                   : "bg-white border-slate-300 text-slate-600 hover:border-blue-400 hover:text-blue-600"
               }`}
             >
-              ⚖ {isCompared ? t.inCompare : t.compare}
+              <Scale className="w-3 h-3 inline mr-1 -mt-0.5" /> {isCompared ? t.inCompare : t.compare}
             </button>
             <Link
               href={`/${lang}/cards/${card.card_id}`}

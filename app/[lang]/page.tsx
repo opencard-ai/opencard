@@ -1,5 +1,6 @@
 // FORCE_UPDATE_KEY = "7214affe-c79d-4e23-921e-0d93a53a227e"
 import { Suspense } from "react";
+import { Bookmark } from "lucide-react";
 import HeroButtons from "@/app/components/HeroButtons";
 import { getAllCards, getAllIssuers, getAllTags } from "@/lib/cards";
 import CardGrid from "@/app/components/CardGrid";
@@ -70,7 +71,7 @@ export default async function HomePage({ params }: Props) {
           className="flex items-center justify-between bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl px-5 py-3.5 hover:from-blue-100 hover:to-indigo-100 transition-all group"
         >
           <div className="flex items-center gap-3">
-            <span className="text-2xl">💾</span>
+            <Bookmark className="w-6 h-6 text-blue-600" />
             <div>
               <div className="font-semibold text-slate-800 text-sm group-hover:text-blue-700 transition-colors">
                 {lang === "zh" ? "我的卡片" : lang === "es" ? "Mis Tarjetas" : "My Cards"}

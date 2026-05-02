@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import { Sparkles } from "lucide-react";
 import MyCardsWidget from "./MyCardsWidget";
 import RecommendWidget from "./RecommendWidget";
 import ScrollFix from "./ScrollFix";
@@ -102,7 +103,7 @@ export default function FloatingButtons({ lang }: FloatingButtonsProps) {
               expanded ? "w-[160px] px-5" : "w-12 px-0"
             }`}
           >
-            <span className="text-xl leading-none">✨</span>
+            <Sparkles className="w-5 h-5 shrink-0" />
             {expanded && <span className="font-bold text-sm whitespace-nowrap">{l.benefits}</span>}
           </a>
         </div>

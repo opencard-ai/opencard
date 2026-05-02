@@ -1,5 +1,6 @@
 "use client";
 
+import { Check } from "lucide-react";
 import type { CreditCard, RecurringCredit } from "@/lib/cards";
 
 interface CompareTableProps {
@@ -281,8 +282,8 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                     const val = card.insurance?.[key as keyof typeof card.insurance];
                     if (!val || val === "0" || val === "None" || val === "No") return null;
                     return (
-                      <div key={key} className="text-xs text-slate-700">
-                        ✓ {val === true ? label : val}
+                      <div key={key} className="text-xs text-slate-700 flex items-center gap-1">
+                        <Check className="w-3 h-3 text-emerald-600 shrink-0" strokeWidth={2.5} /> {val === true ? label : val}
                       </div>
                     );
                   })}
