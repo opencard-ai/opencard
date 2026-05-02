@@ -5,6 +5,7 @@ import Link from "next/link";
 import { computePeriodKey } from "@/lib/credit-periods";
 import ReportErrorModal from "@/app/components/ReportErrorModal";
 import OpenDateRow from "@/app/components/OpenDateRow";
+import HelpHint from "@/app/components/HelpHint";
 
 const STORAGE_KEY = "opencard_existing_cards";
 const SUBSCRIBED_EMAIL_KEY = "opencard_subscribed_email";
@@ -807,7 +808,18 @@ export default function MyCardsPage({
                                   </div>
                                   <div className="flex items-center gap-1.5 shrink-0">
                                     {credit.is_free_night ? (
-                                      <span className={`text-[10px] font-semibold uppercase ${fnaRedeemed ? "text-slate-400 line-through" : "text-amber-600"}`}>{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
+                                      <span className="inline-flex items-center">
+                                        <span className={`text-[10px] font-semibold uppercase ${fnaRedeemed ? "text-slate-400 line-through" : "text-amber-600"}`}>{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
+                                        <HelpHint
+                                          text={
+                                            lang === "zh"
+                                              ? "FNA = Free Night Award(免費住宿券)。每年週年贈一張,通常有點數上限(例:Marriott 35k 以下房價可換)。"
+                                              : lang === "es"
+                                              ? "FNA = Free Night Award. Certificado anual canjeable por una noche, con un tope en puntos (ej. Marriott hasta 35k)."
+                                              : "FNA = Free Night Award. A free hotel certificate granted on each card anniversary, capped by points (e.g. Marriott rooms up to 35k)."
+                                          }
+                                        />
+                                      </span>
                                     ) : credit.amount && credit.amount > 0 ? (
                                       <span className={`text-xs font-semibold ${isUsed ? "text-slate-400 line-through" : "text-slate-800"}`}>${credit.amount}</span>
                                     ) : null}
@@ -872,7 +884,18 @@ export default function MyCardsPage({
                                   </div>
                                   <div className="flex items-center gap-1.5 shrink-0">
                                     {credit.is_free_night ? (
-                                      <span className={`text-[10px] font-semibold uppercase ${fnaRedeemed ? "text-slate-400 line-through" : "text-amber-600"}`}>{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
+                                      <span className="inline-flex items-center">
+                                        <span className={`text-[10px] font-semibold uppercase ${fnaRedeemed ? "text-slate-400 line-through" : "text-amber-600"}`}>{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
+                                        <HelpHint
+                                          text={
+                                            lang === "zh"
+                                              ? "FNA = Free Night Award(免費住宿券)。每年週年贈一張,通常有點數上限(例:Marriott 35k 以下房價可換)。"
+                                              : lang === "es"
+                                              ? "FNA = Free Night Award. Certificado anual canjeable por una noche, con un tope en puntos (ej. Marriott hasta 35k)."
+                                              : "FNA = Free Night Award. A free hotel certificate granted on each card anniversary, capped by points (e.g. Marriott rooms up to 35k)."
+                                          }
+                                        />
+                                      </span>
                                     ) : credit.amount && credit.amount > 0 ? (
                                       <span className={`text-xs font-semibold ${isUsed ? "text-slate-400 line-through" : "text-amber-600"}`}>${credit.amount}</span>
                                     ) : null}
