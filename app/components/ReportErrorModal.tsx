@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { Check } from "lucide-react";
 
 const STRINGS = {
   en: {
@@ -165,7 +166,7 @@ export default function ReportErrorModal({ cardId, cardName, lang, trigger, clas
 
             {done ? (
               <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 text-center">
-                <p className="text-emerald-700 text-sm font-medium">✓ {t.thanks}</p>
+                <p className="text-emerald-700 text-sm font-medium inline-flex items-center gap-1.5"><Check className="w-4 h-4" strokeWidth={2.5} /> {t.thanks}</p>
                 <button
                   type="button"
                   onClick={close}

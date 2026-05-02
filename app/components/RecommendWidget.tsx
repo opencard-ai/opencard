@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { Sparkles, X } from "lucide-react";
 import { CARD_OPTIONS } from "@/lib/constants";
 
 interface Message {
@@ -13,7 +14,7 @@ const STORAGE_KEY = "opencard_existing_cards";
 
 const MESSAGES = {
   en: {
-    title: "✨ AI Card Finder",
+    title: "AI Card Finder",
     trigger: "Find Your Card",
     placeholder: "Type your answer here...",
     send: "Send",
@@ -23,7 +24,7 @@ const MESSAGES = {
     options: ["💰 Cash Back", "✈️ Travel Rewards", "🏅 Points/Miles", "💎 Multiple Types"],
   },
   zh: {
-    title: "✨ AI 卡片推薦",
+    title: "AI 卡片推薦",
     trigger: "卡片推薦",
     placeholder: "輸入你的答案...",
     send: "送出",
@@ -33,7 +34,7 @@ const MESSAGES = {
     options: ["💰 現金回饋", "✈️ 旅遊獎勵", "🏅 點數/里程", "💎 多種類型"],
   },
   es: {
-    title: "✨ Buscador AI de Tarjetas",
+    title: "Buscador AI de Tarjetas",
     trigger: "Buscador AI",
     placeholder: "Escribe tu respuesta aquí...",
     send: "Enviar",
@@ -201,15 +202,15 @@ export default function RecommendWidget({ lang = "en", expanded = true }: { lang
           >
           <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 flex items-center justify-between shrink-0">
             <div>
-              <h3 className="text-white font-bold text-sm">{msg.title}</h3>
+              <h3 className="text-white font-bold text-sm flex items-center gap-1.5"><Sparkles className="w-4 h-4" /> {msg.title}</h3>
               <p className="text-blue-100 text-[10px]">AI-powered credit card assistant</p>
             </div>
             <button
               onClick={() => setIsOpen(false)}
               aria-label="Close"
-              className="w-8 h-8 flex items-center justify-center rounded-full text-white/80 hover:text-white hover:bg-white/15 transition-colors text-lg"
+              className="w-8 h-8 flex items-center justify-center rounded-full text-white/80 hover:text-white hover:bg-white/15 transition-colors"
             >
-              ✕
+              <X className="w-4 h-4" />
             </button>
           </div>
 
@@ -302,7 +303,7 @@ export default function RecommendWidget({ lang = "en", expanded = true }: { lang
         }`}
         style={{ boxShadow: isOpen ? "0 8px 32px rgba(59, 130, 246, 0.5)" : "0 4px 12px rgba(0,0,0,0.1)" }}
       >
-        <span className="text-xl leading-none">✨</span>
+        <Sparkles className="w-5 h-5 shrink-0" />
         {(isOpen || expanded) && <span className="font-bold text-sm whitespace-nowrap">{msg.trigger}</span>}
       </button>
     </div>

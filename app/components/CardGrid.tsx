@@ -2,6 +2,7 @@
 
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { useState, useCallback, useEffect, useMemo } from "react";
+import { Bookmark, Scale } from "lucide-react";
 import CompareBar from "./CompareBar";
 import CardRow from "./CardRow";
 import type { CreditCard } from "@/lib/cards";
@@ -388,11 +389,11 @@ function CardList({ cards, tags, locale, selectedSort }: { cards: CreditCard[]; 
       {/* Card action legend */}
       <div className="flex flex-wrap items-center gap-4 mb-3 text-xs text-slate-500">
         <div className="flex items-center gap-1.5">
-          <span className="w-5 h-5 rounded-full border border-slate-300 bg-white flex items-center justify-center text-slate-500">⚖</span>
+          <span className="w-5 h-5 rounded-full border border-slate-300 bg-white flex items-center justify-center text-slate-500"><Scale className="w-3 h-3" /></span>
           <span>{locale === "zh" ? "加入比價（最多3張）" : locale === "es" ? "Comparar (máx 3)" : "Compare (up to 3 cards)"}</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="w-5 h-5 rounded-full border border-slate-300 bg-white flex items-center justify-center">💾</span>
+          <span className="w-5 h-5 rounded-full border border-slate-300 bg-white flex items-center justify-center text-slate-500"><Bookmark className="w-3 h-3" /></span>
           <span>{locale === "zh" ? "儲存到我的卡片" : locale === "es" ? "Guardar en Mis Tarjetas" : "Save to My Cards"}</span>
         </div>
       </div>

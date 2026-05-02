@@ -1,11 +1,12 @@
 "use client";
 
 import { useCallback, useRef, useState, useEffect } from "react";
+import { Calendar } from "lucide-react";
 
 const STR = {
-  en: { setLabel: "📅 Set card open date", editLabel: "Edit", openedLabel: "Opened", noEmail: "Please subscribe first." },
-  zh: { setLabel: "📅 設定開卡日期", editLabel: "修改", openedLabel: "開卡", noEmail: "請先訂閱。" },
-  es: { setLabel: "📅 Establecer fecha de apertura", editLabel: "Editar", openedLabel: "Abierta", noEmail: "Suscríbete primero." },
+  en: { setLabel: "Set card open date", editLabel: "Edit", openedLabel: "Opened", noEmail: "Please subscribe first." },
+  zh: { setLabel: "設定開卡日期", editLabel: "修改", openedLabel: "開卡", noEmail: "請先訂閱。" },
+  es: { setLabel: "Establecer fecha de apertura", editLabel: "Editar", openedLabel: "Abierta", noEmail: "Suscríbete primero." },
 };
 
 type Lang = keyof typeof STR;
@@ -114,8 +115,8 @@ export default function OpenDateRow({ cardId, email, initial, lang, onSaved }: P
   if (initial) {
     return (
       <div className="flex items-center gap-2">
-        <span className="text-xs text-blue-600 font-medium tabular-nums">
-          📅 {t.openedLabel} {initial.month}/{initial.year}
+        <span className="text-xs text-blue-600 font-medium tabular-nums inline-flex items-center gap-1">
+          <Calendar className="w-3 h-3" /> {t.openedLabel} {initial.month}/{initial.year}
           {" → "}
           {formatDuration(initial, String(lang))}
         </span>
@@ -134,9 +135,9 @@ export default function OpenDateRow({ cardId, email, initial, lang, onSaved }: P
     <button
       type="button"
       onClick={() => setEditing(true)}
-      className="text-xs text-blue-600 hover:text-blue-800 font-medium cursor-pointer"
+      className="text-xs text-blue-600 hover:text-blue-800 font-medium cursor-pointer inline-flex items-center gap-1"
     >
-      {t.setLabel}
+      <Calendar className="w-3 h-3" /> {t.setLabel}
     </button>
   );
 }

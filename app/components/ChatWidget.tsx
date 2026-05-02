@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { MessageCircle, X } from "lucide-react";
 
 interface Message {
   role: "user" | "assistant";
@@ -100,9 +101,9 @@ export default function ChatWidget({ cardName, cardId, locale = "en" }: ChatWidg
   return (
     <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
       <div className="bg-blue-600 text-white px-4 py-3 flex items-center justify-between">
-        <span className="font-semibold text-sm">💬 {msg.label}</span>
-        <button onClick={() => setIsOpen(false)} className="text-white/80 hover:text-white text-sm">
-          ✕
+        <span className="font-semibold text-sm inline-flex items-center gap-1.5"><MessageCircle className="w-4 h-4" /> {msg.label}</span>
+        <button onClick={() => setIsOpen(false)} className="text-white/80 hover:text-white" aria-label="Close">
+          <X className="w-4 h-4" />
         </button>
       </div>
       <div className="h-64 overflow-y-auto p-4 space-y-3 bg-slate-50">

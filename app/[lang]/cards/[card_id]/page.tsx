@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Check, AlertTriangle, Gift } from "lucide-react";
 import { getCardById, getAllCards } from "@/lib/cards";
 import ChatWidget from "../../../components/ChatWidget";
 import TravelProducts from "../../../components/TravelProducts";
@@ -143,7 +144,7 @@ export default async function CardDetailPage({ params }: Props) {
           ))}
           {freshness && (
             <span
-              className={`text-xs rounded-full px-3 py-1 ${
+              className={`text-xs rounded-full px-3 py-1 inline-flex items-center gap-1 ${
                 freshness.tone === "fresh"
                   ? "bg-emerald-50 text-emerald-700"
                   : freshness.tone === "ok"
@@ -152,7 +153,7 @@ export default async function CardDetailPage({ params }: Props) {
               }`}
               title={`${l("detail.lastUpdated")}: ${freshness.absolute}`}
             >
-              {freshness.tone === "fresh" ? "✓ " : freshness.tone === "stale" ? "⚠ " : ""}
+              {freshness.tone === "fresh" ? <Check className="w-3 h-3" strokeWidth={2.5} /> : freshness.tone === "stale" ? <AlertTriangle className="w-3 h-3" /> : null}
               {freshness.label}
             </span>
           )}
@@ -161,8 +162,8 @@ export default async function CardDetailPage({ params }: Props) {
         {/* Welcome Offer */}
         {card.welcome_offer && (
           <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-4">
-            <h3 className="text-sm font-semibold text-amber-800 mb-1">
-              🎁 {l("detail.welcomeBonus")}
+            <h3 className="text-sm font-semibold text-amber-800 mb-1 flex items-center gap-1.5">
+              <Gift className="w-4 h-4" /> {l("detail.welcomeBonus")}
             </h3>
             <div className="text-sm text-amber-900">
               {card.welcome_offer.bonus_points === 0 ? (
@@ -370,9 +371,7 @@ export default async function CardDetailPage({ params }: Props) {
                           </span>
                         )}
                         {val === true && (
-                          <span className="block text-green-600 mt-0.5 font-medium">
-                            ✓
-                          </span>
+                          <Check className="w-3.5 h-3.5 text-green-600 mt-0.5" strokeWidth={2.5} />
                         )}
                       </div>
                     );

@@ -21,6 +21,7 @@
     "agentmail": "^0.4.19",
     "googleapis": "^171.4.0",
     "html-entities": "^2.6.0",
+    "lucide-react": "^1.14.0",
     "next": "16.2.3",
     "react": "19.2.4",
     "react-dom": "19.2.4"
@@ -34,8 +35,8 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
     "node-html-parser": "^7.1.0",
-    "playwright": "^1.59.1",
     "pdf-parse": "^1.1.1",
+    "playwright": "^1.59.1",
     "puppeteer": "^24.42.0",
     "tailwindcss": "^4",
     "tsx": "^4.20.0",

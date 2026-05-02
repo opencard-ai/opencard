@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
+import { Check, CreditCard } from "lucide-react";
 import { computePeriodKey } from "@/lib/credit-periods";
 import ReportErrorModal from "@/app/components/ReportErrorModal";
 import OpenDateRow from "@/app/components/OpenDateRow";
@@ -14,13 +15,13 @@ const SUBSCRIBED_EMAIL_KEY = "opencard_subscribed_email";
 
 const MESSAGES = {
   en: {
-    title: "💳 My Cards",
+    title: "My Cards",
     subtitle: "Your personal credit card benefits manager",
     emailSection: "Get monthly benefit reminders",
     emailHint: "Leave your email and we'll remind you when credits are about to expire.",
     emailPlaceholder: "your@email.com",
     subscribe: "Subscribe",
-    subscribed: "Subscribed ✓",
+    subscribed: "Subscribed",
     marketingLabel: "I agree to receive personalized benefit reminders (no spam)",
     noCards: "No cards added yet",
     addCards: "Browse all cards",
@@ -46,10 +47,10 @@ const MESSAGES = {
     viewAll: "View details →",
     markUsed: "Mark used",
     undoUse: "Undo",
-    usedLabel: "✓ Used",
+    usedLabel: "Used",
     remainingThisPeriod: "remaining this period",
     fnaMarkRedeemed: "Mark redeemed",
-    fnaRedeemedLabel: "✓ Redeemed",
+    fnaRedeemedLabel: "Redeemed",
     setOpenDateLabel: "📅 Set card open date",
     editLabel: "Edit",
     openedLabel: "Opened",
@@ -62,13 +63,13 @@ const MESSAGES = {
     toastSubscribeOk: "✓ Confirmation email sent",
   },
   zh: {
-    title: "💳 我的卡片",
+    title: "我的卡片",
     subtitle: "個人信用卡福利管理中心",
     emailSection: "每月收取福利到期提醒",
     emailHint: "留下 email，我們會在福利即將到期時提醒你。",
     emailPlaceholder: "your@email.com",
     subscribe: "訂閱提醒",
-    subscribed: "已訂閱 ✓",
+    subscribed: "已訂閱",
     marketingLabel: "我同意接收個人化福利提醒（絕不打擾）",
     noCards: "還沒有新增任何卡片",
     addCards: "瀏覽所有卡片",
@@ -94,10 +95,10 @@ const MESSAGES = {
     viewAll: "查看詳情 →",
     markUsed: "標記已用",
     undoUse: "撤銷",
-    usedLabel: "✓ 已使用",
+    usedLabel: "已使用",
     remainingThisPeriod: "本期剩餘",
     fnaMarkRedeemed: "標記已兌換",
-    fnaRedeemedLabel: "✓ 已兌換",
+    fnaRedeemedLabel: "已兌換",
     setOpenDateLabel: "📅 設定開卡日期",
     editLabel: "修改",
     openedLabel: "開卡",
@@ -110,13 +111,13 @@ const MESSAGES = {
     toastSubscribeOk: "✓ 確認信已寄出",
   },
   es: {
-    title: "💳 Mis Tarjetas",
+    title: "Mis Tarjetas",
     subtitle: "Tu gestor personal de beneficios",
     emailSection: "Recibe recordatorios mensuales",
     emailHint: "Deja tu email y te lembraremos cuando los créditos estén por vencer.",
     emailPlaceholder: "tu@email.com",
     subscribe: "Suscribirse",
-    subscribed: "Suscrito ✓",
+    subscribed: "Suscrito",
     marketingLabel: "Acepto recibir recordatorios personalizados (sin spam)",
     noCards: "No hay tarjetas agregadas",
     addCards: "Ver todas las tarjetas",
@@ -142,10 +143,10 @@ const MESSAGES = {
     viewAll: "Ver detalles →",
     markUsed: "Marcar usado",
     undoUse: "Deshacer",
-    usedLabel: "✓ Usado",
+    usedLabel: "Usado",
     remainingThisPeriod: "restante este período",
     fnaMarkRedeemed: "Marcar canjeado",
-    fnaRedeemedLabel: "✓ Canjeado",
+    fnaRedeemedLabel: "Canjeado",
     setOpenDateLabel: "📅 Establecer fecha de apertura",
     editLabel: "Editar",
     openedLabel: "Abierta",
@@ -650,7 +651,7 @@ export default function MyCardsPage({
           </div>
         ) : (
           <div className="bg-green-50 border border-green-200 rounded-2xl p-5">
-            <p className="text-green-700 font-medium text-sm">✓ {m.subscribed}</p>
+            <p className="text-green-700 font-medium text-sm inline-flex items-center gap-1.5"><Check className="w-4 h-4" strokeWidth={2.5} /> {m.subscribed}</p>
             <p className="text-green-600 text-xs mt-1">{m.noEmail}</p>
           </div>
         )}
@@ -680,7 +681,7 @@ export default function MyCardsPage({
         {!isSubscribed && selectedCardsList.length === 0 && (
           <div className="space-y-3">
             <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 text-white">
-              <h2 className="text-lg font-bold mb-2">💳 Never miss a credit card benefit again</h2>
+              <h2 className="text-lg font-bold mb-2 flex items-center gap-2"><CreditCard className="w-5 h-5" /> Never miss a credit card benefit again</h2>
               <p className="text-slate-300 text-sm mb-4 leading-relaxed">
                 We track your Amex, Chase, Capital One & more — and email you before credits expire. No app needed.
               </p>
@@ -866,7 +867,7 @@ export default function MyCardsPage({
                                         aria-label={isUsed ? m.undoUse : m.markUsed}
                                         title={isUsed ? m.undoUse : m.markUsed}
                                       >
-                                        {isUsed ? m.usedLabel : "✓"}
+                                        {isUsed ? (<span className="inline-flex items-center gap-0.5"><Check className="w-3 h-3" strokeWidth={3} /> {m.usedLabel}</span>) : <Check className="w-3 h-3" strokeWidth={3} />}
                                       </button>
                                     )}
                                     {credit.is_free_night && (
@@ -881,7 +882,7 @@ export default function MyCardsPage({
                                         aria-label={fnaRedeemed ? m.undoUse : m.fnaMarkRedeemed}
                                         title={fnaRedeemed ? m.undoUse : m.fnaMarkRedeemed}
                                       >
-                                        {fnaRedeemed ? m.fnaRedeemedLabel : "✓"}
+                                        {fnaRedeemed ? (<span className="inline-flex items-center gap-0.5"><Check className="w-3 h-3" strokeWidth={3} /> {m.fnaRedeemedLabel}</span>) : <Check className="w-3 h-3" strokeWidth={3} />}
                                       </button>
                                     )}
                                   </div>
@@ -942,7 +943,7 @@ export default function MyCardsPage({
                                         aria-label={isUsed ? m.undoUse : m.markUsed}
                                         title={isUsed ? m.undoUse : m.markUsed}
                                       >
-                                        {isUsed ? m.usedLabel : "✓"}
+                                        {isUsed ? (<span className="inline-flex items-center gap-0.5"><Check className="w-3 h-3" strokeWidth={3} /> {m.usedLabel}</span>) : <Check className="w-3 h-3" strokeWidth={3} />}
                                       </button>
                                     )}
                                     {credit.is_free_night && (
@@ -957,7 +958,7 @@ export default function MyCardsPage({
                                         aria-label={fnaRedeemed ? m.undoUse : m.fnaMarkRedeemed}
                                         title={fnaRedeemed ? m.undoUse : m.fnaMarkRedeemed}
                                       >
-                                        {fnaRedeemed ? m.fnaRedeemedLabel : "✓"}
+                                        {fnaRedeemed ? (<span className="inline-flex items-center gap-0.5"><Check className="w-3 h-3" strokeWidth={3} /> {m.fnaRedeemedLabel}</span>) : <Check className="w-3 h-3" strokeWidth={3} />}
                                       </button>
                                     )}
                                   </div>
