@@ -75,6 +75,12 @@ export interface WelcomeOffer {
   point_program?: string;
   description?: string;
   bonus_value?: string;
+  /** Hand-curated: this offer is above the card's normal/standard bonus right now. */
+  is_elevated?: boolean;
+  /** The card's standard/non-elevated bonus, for comparison badges. */
+  normal_bonus_points?: number;
+  /** ISO date the elevated offer is expected to expire (informational only). */
+  elevated_until?: string;
 }
 
 export interface Source {
