@@ -93,7 +93,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
             <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10">{l.annualFee}</td>
             {cards.map((card) => (
               <td key={card.card_id} className="py-3 px-4">
-                <span className={`font-bold ${card.annual_fee === 0 ? "text-green-600" : "text-slate-800"}`}>
+                <span className={`font-bold ${card.annual_fee === 0 ? "text-emerald-600" : "text-slate-800"}`}>
                   {card.annual_fee === 0 ? l.noAf : formatCurrency(card.annual_fee)}
                 </span>
               </td>
@@ -117,7 +117,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
             <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10">{l.foreignFee}</td>
             {cards.map((card) => (
               <td key={card.card_id} className="py-3 px-4">
-                <span className={card.foreign_transaction_fee === 0 ? "text-green-600 font-medium" : "text-red-500"}>
+                <span className={card.foreign_transaction_fee === 0 ? "text-emerald-600 font-medium" : "text-red-500"}>
                   {card.foreign_transaction_fee === 0 ? l.noAf : formatCurrency(card.foreign_transaction_fee)}
                 </span>
               </td>
