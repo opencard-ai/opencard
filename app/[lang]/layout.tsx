@@ -8,6 +8,7 @@ import LanguageSwitcher from "@/app/components/LanguageSwitcher";
 import RecommendWidget from "@/app/components/RecommendWidget";
 import MyCardsWidget from "@/app/components/MyCardsWidget";
 import FloatingButtons from "@/app/components/FloatingButtons";
+import ToastViewport from "@/app/components/ToastViewport";
 import { locales, t } from "@/lib/i18n";
 
 const geistSans = Geist({
@@ -92,6 +93,8 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Analytics />
         {/* Floating widget cluster (recommend / my-cards / track) */}
         <FloatingButtons lang={lang} />
+        {/* Global toast viewport */}
+        <ToastViewport />
       </body>
     </html>
   );
