@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import type { CreditCard } from "@/lib/cards";
 import IssuerChip from "./IssuerChip";
+import CardArt from "./CardArt";
 
 const STORAGE_KEY = "opencard_existing_cards";
 
@@ -124,8 +125,9 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
         type="button"
         onClick={() => setExpanded((v) => !v)}
         aria-expanded={expanded}
-        className="w-full flex items-center gap-3 px-4 py-3 text-left"
+        className="w-full flex items-center gap-3 px-3 py-3 text-left"
       >
+        <CardArt cardId={card.card_id} issuer={card.issuer} size="sm" />
         <div className="flex-1 min-w-0">
           <h3 className="text-sm font-semibold text-slate-900 truncate">{card.name}</h3>
           <div className="mt-1">
