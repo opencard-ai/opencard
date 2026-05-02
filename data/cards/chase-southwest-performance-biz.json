@@ -7,11 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 0,
-    "time_period_months": 0,
-    "bonus_points": 0,
-    "description": "N/A",
-    "point_program": "Points"
+    "spending_requirement": 5000,
+    "time_period_months": 3,
+    "bonus_points": 80000,
+    "description": "80,000 bonus Rapid Rewards points after spending $5,000 on purchases in the first 3 months from account opening.",
+    "point_program": "Southwest Rapid Rewards",
+    "estimated_value": 1120
   },
   "earning_rates": [
     {
