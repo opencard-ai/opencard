@@ -43,7 +43,7 @@ function CategoryBadge({ cat, lang }: { cat: string; lang: string }) {
     banking: "bg-blue-100 text-blue-700",
     "credit cards": "bg-violet-100 text-violet-700",
     "sign-up bonus": "bg-amber-100 text-amber-700",
-    rewards: "bg-green-100 text-green-700",
+    rewards: "bg-emerald-100 text-emerald-700",
     travel: "bg-sky-100 text-sky-700",
   };
   const c = colors[label] || "bg-slate-100 text-slate-600";

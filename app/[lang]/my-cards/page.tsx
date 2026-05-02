@@ -650,9 +650,9 @@ export default function MyCardsPage({
             )}
           </div>
         ) : (
-          <div className="bg-green-50 border border-green-200 rounded-2xl p-5">
-            <p className="text-green-700 font-medium text-sm inline-flex items-center gap-1.5"><Check className="w-4 h-4" strokeWidth={2.5} /> {m.subscribed}</p>
-            <p className="text-green-600 text-xs mt-1">{m.noEmail}</p>
+          <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5">
+            <p className="text-emerald-700 font-medium text-sm inline-flex items-center gap-1.5"><Check className="w-4 h-4" strokeWidth={2.5} /> {m.subscribed}</p>
+            <p className="text-emerald-600 text-xs mt-1">{m.noEmail}</p>
           </div>
         )}
 
@@ -669,7 +669,7 @@ export default function MyCardsPage({
               </div>
               <div className="text-right">
                 <p className="text-xs text-slate-500">{selectedCardsList.length} {m.benefits}</p>
-                <p className="text-xs text-green-600 mt-0.5">
+                <p className="text-xs text-emerald-600 mt-0.5">
                   {selectedCardsList.reduce((sum, c) => sum + (c.recurring_credits?.length || 0), 0)} credits
                 </p>
               </div>

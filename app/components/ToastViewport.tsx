@@ -41,7 +41,7 @@ export default function ToastViewport() {
             t.kind === "success"
               ? "bg-emerald-600 text-white"
               : t.kind === "error"
-              ? "bg-rose-600 text-white"
+              ? "bg-red-600 text-white"
               : "bg-slate-800 text-white"
           }`}
         >

@@ -112,7 +112,7 @@ export default async function CardDetailPage({ params }: Props) {
             <div className="text-right">
               <div
                 className={`text-2xl font-bold ${
-                  card.annual_fee === 0 ? "text-green-600" : "text-slate-900"
+                  card.annual_fee === 0 ? "text-emerald-600" : "text-slate-900"
                 }`}
               >
                 {card.annual_fee === 0 ? l("card.annualFeeWaived") : `$${card.annual_fee}`}
@@ -130,7 +130,7 @@ export default async function CardDetailPage({ params }: Props) {
             {creditLabel(card.credit_required)}
           </span>
           {card.foreign_transaction_fee === 0 && (
-            <span className="text-xs bg-green-100 text-green-700 rounded-full px-3 py-1">
+            <span className="text-xs bg-emerald-100 text-emerald-700 rounded-full px-3 py-1">
               {l("detail.noForeignFee")}
             </span>
           )}
@@ -247,7 +247,7 @@ export default async function CardDetailPage({ params }: Props) {
                           key={i}
                           className="flex items-start gap-3 py-2 border-b border-slate-100 last:border-0"
                         >
-                          <span className={credit.is_free_night ? "text-amber-600 font-bold text-[10px] shrink-0 w-12 text-right uppercase" : "text-green-600 font-bold text-sm shrink-0 w-12 text-right"}>
+                          <span className={credit.is_free_night ? "text-amber-600 font-bold text-[10px] shrink-0 w-12 text-right uppercase" : "text-emerald-600 font-bold text-sm shrink-0 w-12 text-right"}>
                             {credit.is_free_night ? (lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA") : (credit.amount && credit.amount > 0 ? `$${credit.amount}` : '')}
                           </span>
                     <div>
@@ -371,7 +371,7 @@ export default async function CardDetailPage({ params }: Props) {
                           </span>
                         )}
                         {val === true && (
-                          <Check className="w-3.5 h-3.5 text-green-600 mt-0.5" strokeWidth={2.5} />
+                          <Check className="w-3.5 h-3.5 text-emerald-600 mt-0.5" strokeWidth={2.5} />
                         )}
                       </div>
                     );
