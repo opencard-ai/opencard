@@ -1,6 +1,7 @@
 "use client";
 
-import { Check } from "lucide-react";
+import { Check, ExternalLink } from "lucide-react";
+import Link from "next/link";
 import type { CreditCard, RecurringCredit } from "@/lib/cards";
 
 interface CompareTableProps {
@@ -48,6 +49,10 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
       credits: "Annual Credits",
       hotelStatus: "Hotel Status", loungeAccess: "Lounge Access", otherBenefits: "Other Benefits",
       insurance: "Insurance", noAf: "Waived", yes: "Yes", none: "—",
+      firstYearValue: "First-year value",
+      firstYearHint: "Welcome offer + annual credits − annual fee",
+      viewDetails: "Details",
+      swipeHint: "Swipe →",
     };
     const zh = {
       annualFee: "年費", welcomeBonus: "開卡禮",
@@ -57,12 +62,44 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
       credits: "年費回饋",
       hotelStatus: "飯店會籍", loungeAccess: "貴賓室", otherBenefits: "其他福利",
       insurance: "保險", noAf: "免費", yes: "有", none: "無",
+      firstYearValue: "首年淨值",
+      firstYearHint: "開卡禮 + 年費回饋 − 年費",
+      viewDetails: "詳情",
+      swipeHint: "左右滑動 →",
     };
-    return { en, zh, es: en }[lang] || en;
+    const es = {
+      annualFee: "Cuota anual", welcomeBonus: "Bono de bienvenida",
+      creditRequired: "Crédito requerido", foreignFee: "Comisión extranjera", network: "Red",
+      earningRates: "Tasas de ganancia",
+      benefitsCredits: "Beneficios y créditos",
+      credits: "Créditos anuales",
+      hotelStatus: "Estatus de hotel", loungeAccess: "Acceso a salones", otherBenefits: "Otros beneficios",
+      insurance: "Seguro", noAf: "Sin cuota", yes: "Sí", none: "—",
+      firstYearValue: "Valor primer año",
+      firstYearHint: "Bono + créditos anuales − cuota",
+      viewDetails: "Detalles",
+      swipeHint: "Desliza →",
+    };
+    return ({ en, zh, es } as Record<string, typeof en>)[lang] || en;
   })();
+
+  const firstYearValue = (card: CreditCard): number => {
+    const welcome = Number(card.welcome_offer?.estimated_value) || 0;
+    const credits = (card.recurring_credits || [])
+      .filter((c) => typeof c.amount === "number" && c.amount > 0)
+      .reduce((sum, c) => {
+        const a = Number(c.amount) || 0;
+        if (c.frequency === "monthly") return sum + a * 12;
+        if (c.frequency === "quarterly") return sum + a * 4;
+        if (c.frequency === "semi_annual") return sum + a * 2;
+        return sum + a;
+      }, 0);
+    return welcome + credits - (card.annual_fee || 0);
+  };
 
   return (
     <div className="overflow-x-auto">
+      <div className="md:hidden text-xs text-slate-400 mb-2 px-1">{l.swipeHint}</div>
       <table className="w-full border-collapse text-sm">
         <thead>
           <tr className="border-b-2 border-slate-200">
@@ -81,12 +118,36 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                       </span>
                     ))}
                   </div>
+                  <Link
+                    href={`/${lang}/cards/${card.card_id}`}
+                    className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-blue-600 hover:text-blue-800 hover:underline"
+                  >
+                    {l.viewDetails} <ExternalLink className="w-3 h-3" />
+                  </Link>
                 </div>
               </th>
             ))}
           </tr>
         </thead>
         <tbody className="divide-y divide-slate-100">
+
+          {/* First-year net value (welcome + credits - AF) */}
+          <tr className="bg-blue-50/40">
+            <td className="py-3 pr-4 sticky left-0 bg-blue-50/40 z-10">
+              <div className="font-medium text-slate-700">{l.firstYearValue}</div>
+              <div className="text-[10px] text-slate-400 mt-0.5 leading-tight">{l.firstYearHint}</div>
+            </td>
+            {cards.map((card) => {
+              const fyv = firstYearValue(card);
+              return (
+                <td key={card.card_id} className="py-3 px-4">
+                  <span className={`text-lg font-bold tabular-nums ${fyv > 0 ? "text-emerald-600" : fyv < 0 ? "text-red-500" : "text-slate-500"}`}>
+                    {fyv >= 0 ? `+$${fyv.toLocaleString()}` : `−$${Math.abs(fyv).toLocaleString()}`}
+                  </span>
+                </td>
+              );
+            })}
+          </tr>
 
           {/* Annual Fee */}
           <tr>
