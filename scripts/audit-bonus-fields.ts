@@ -43,7 +43,8 @@ for (const file of files) {
   const bp = w.bonus_points ?? 0;
   const bv = w.bonus_value;
 
-  if (bp === 0 && (bv === 0 || bv == null || bv === "")) {
+  const ev = w.estimated_value ?? 0;
+  if (bp === 0 && (bv === 0 || bv == null || bv === "") && ev === 0) {
     empty.push({ id: card.card_id, name: card.name });
     continue;
   }

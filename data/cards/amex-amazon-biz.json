@@ -7,7 +7,6 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_value": 125,
     "description": "Earn a $125 Amazon.com gift card upon approval.",
     "point_program": "Amazon",
     "estimated_value": 125
