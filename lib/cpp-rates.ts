@@ -25,13 +25,13 @@ const RULES: ProgramRule[] = [
   { match: (p) => p.includes("membership rewards"), cpp: 1.7, label: "Amex MR" },
   { match: (p) => p.includes("ultimate rewards"), cpp: 1.7, label: "Chase UR" },
   { match: (p) => p.includes("bilt"), cpp: 1.7, label: "Bilt" },
-  { match: (p) => p.includes("thankyou"), cpp: 1.6, label: "Citi TY" },
+  { match: (p) => p.includes("thankyou"), cpp: 1.7, label: "Citi TY" },
   { match: (p) => p.includes("capital one") && p.includes("miles"), cpp: 1.5, label: "Cap One Miles" },
   { match: (p) => p.includes("aeroplan"), cpp: 1.5, label: "Aeroplan" },
 
   // ── Hotel programs ────────────────────────────────────────────────────
   { match: (p) => p.includes("hyatt"), cpp: 1.7, label: "Hyatt" },
-  { match: (p) => p.includes("marriott") || p.includes("bonvoy"), cpp: 0.7, label: "Marriott" },
+  { match: (p) => p.includes("marriott") || p.includes("bonvoy"), cpp: 0.65, label: "Marriott" },
   { match: (p) => p.includes("hilton"), cpp: 0.5, label: "Hilton" },
   { match: (p) => p.includes("ihg"), cpp: 0.5, label: "IHG" },
   { match: (p) => p.includes("choice privileges"), cpp: 0.6, label: "Choice" },
@@ -39,9 +39,9 @@ const RULES: ProgramRule[] = [
   { match: (p) => p.includes("wyndham"), cpp: 1.0, label: "Wyndham" },
 
   // ── Airline mileage programs ──────────────────────────────────────────
-  { match: (p) => p.includes("united") || p.includes("mileageplus"), cpp: 1.2, label: "United" },
-  { match: (p) => p.includes("delta") || p.includes("skymiles"), cpp: 1.1, label: "Delta" },
-  { match: (p) => p.includes("aadvantage") || p.includes("american airlines"), cpp: 1.5, label: "AAdvantage" },
+  { match: (p) => p.includes("united") || p.includes("mileageplus"), cpp: 1.35, label: "United" },
+  { match: (p) => p.includes("delta") || p.includes("skymiles"), cpp: 1.0, label: "Delta" },
+  { match: (p) => p.includes("aadvantage") || p.includes("american airlines"), cpp: 1.65, label: "AAdvantage" },
   { match: (p) => p.includes("alaska") || p.includes("atmos"), cpp: 1.4, label: "Alaska" },
   { match: (p) => p.includes("rapid rewards") || p.includes("southwest"), cpp: 1.4, label: "Southwest" },
   { match: (p) => p.includes("trueblue") || p.includes("jetblue"), cpp: 1.3, label: "JetBlue" },
