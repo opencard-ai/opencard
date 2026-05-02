@@ -37,6 +37,16 @@ body {
 .dark .bg-amber-50\/50 { background-color: rgb(120 53 15 / 0.2); }
 .dark .bg-red-50 { background-color: rgb(127 29 29 / 0.3); }
 .dark .bg-indigo-50 { background-color: rgb(49 46 129 / 0.25); }
+/* -100 backgrounds (tag pills, news category badges, etc.). Light mode
+ * uses these as a soft pastel; in dark we need a deeper translucent
+ * fill so the lightened brand text still reads. */
+.dark .bg-emerald-100 { background-color: rgb(6 78 59 / 0.55); }
+.dark .bg-amber-100 { background-color: rgb(120 53 15 / 0.55); }
+.dark .bg-blue-100 { background-color: rgb(30 58 138 / 0.55); }
+.dark .bg-sky-100 { background-color: rgb(7 89 133 / 0.55); }
+.dark .bg-violet-100 { background-color: rgb(76 29 149 / 0.55); }
+.dark .bg-red-100 { background-color: rgb(127 29 29 / 0.55); }
+.dark .bg-indigo-100 { background-color: rgb(49 46 129 / 0.55); }
 
 .dark .border-slate-100 { border-color: rgb(51 65 85); }
 .dark .border-slate-200 { border-color: rgb(51 65 85); }

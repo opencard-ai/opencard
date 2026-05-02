@@ -201,6 +201,12 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
           )}
 
           <div className="flex items-center justify-between pt-1">
+            <Link
+              href={`/${lang}/cards/${card.card_id}`}
+              className="text-xs text-blue-600 hover:text-blue-800 hover:underline"
+            >
+              {t.viewDetails}
+            </Link>
             <button
               type="button"
               onClick={onCompareClick}
@@ -215,12 +221,6 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
             >
               <Scale className="w-3 h-3 inline mr-1 -mt-0.5" /> {isCompared ? t.inCompare : t.compare}
             </button>
-            <Link
-              href={`/${lang}/cards/${card.card_id}`}
-              className="text-xs text-blue-600 hover:text-blue-800 hover:underline"
-            >
-              {t.viewDetails}
-            </Link>
           </div>
         </div>
       )}

@@ -75,12 +75,29 @@ export default async function LocaleLayout({ children, params }: Props) {
       >
         <header className="bg-white border-b border-slate-200 sticky top-0 z-10 pt-[env(safe-area-inset-top)]">
           <div className="max-w-5xl mx-auto px-4 py-1 flex items-center justify-between">
-            <a href={`/${lang}`} className="flex items-center gap-2 ml-0">
+            <a href={`/${lang}`} className="flex items-center gap-2 ml-0" aria-label="OpenCard AI">
+              {/* Light mode: full PNG logo (blue + gold on white). */}
               <img
                 src="/brand/logo-header.png?v=2"
                 alt="OpenCard AI"
-                className="h-12 w-auto object-contain rounded-md dark:bg-white dark:p-1 dark:[mix-blend-mode:normal]"
+                className="h-12 w-auto object-contain dark:hidden"
               />
+              {/* Dark mode: text mark with brand-gold key icon — the PNG's
+               * baked-in white background can't blend into a dark surface
+               * cleanly, so we render a typographic version instead. */}
+              <span className="hidden dark:inline-flex items-center gap-2">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-md bg-gradient-to-br from-amber-400 to-amber-600 text-blue-900 font-black text-sm">
+                  O
+                </span>
+                <span className="flex flex-col leading-tight">
+                  <span className="text-base font-bold text-white">
+                    Open<span className="text-amber-400">Card</span>
+                  </span>
+                  <span className="text-[9px] uppercase tracking-[0.18em] text-slate-400 font-semibold">
+                    Unlocking Lifestyle Benefits
+                  </span>
+                </span>
+              </span>
             </a>
             <div className="flex items-center gap-3 whitespace-nowrap">
               <nav className="flex items-center gap-3 text-sm text-slate-600 whitespace-nowrap">
