@@ -10,10 +10,10 @@
       "ts": "2026-05-01T22:40:53.000Z",
       "title_en": "T-Mobile Money Review – Earn 4% APY On Balances Up To $3,000 [New Negative Changes From June 1]",
       "summary_en": "",
-      "title_zh": "T-Mobile Money 評測 – 最高 $3,000 餘額可獲 4% 年利率 [自 6 月 1 日起的新負面變動]",
-      "summary_zh": "這是一篇關於 T-Mobile Money 的評測，提到最高 3,000 美元的餘額可獲得 4% 年利率，且自 6 月 1 日起有新規定的負面變動。",
-      "title_es": "Revisión de T-Mobile Money – Gana 4% APY en saldos hasta $3,000 [Nuevos cambios negativos a partir del 1 de junio]",
-      "summary_es": "La revisión analiza los nuevos cambios negativos que entrarán en vigor el 1 de junio, incluyendo una reducción en el rendimiento."
+      "title_zh": "T-Mobile Money 評測 – 最高 $3,000 存款可獲得 4% 年利率 [6 月 1 日起的負面新變化]",
+      "summary_zh": "此評測說明 T-Mobile Money 提供最高 $3,000 存款的 4% 年利率，但自 6 月 1 日起將出現不利變動。",
+      "title_es": "Revisión de T-Mobile Money – Gana un 4% APY en saldos hasta $3,000 [Nuevos cambios negativos a partir del 1 de junio]",
+      "summary_es": "T-Mobile Money ha implementado cambios negativos a partir del 1 de junio que reducen la tasa APY para saldos de hasta $3,000."
     },
     {
       "title": "7-Eleven/Speedway: $0.5 Off Per Gallon On 7th & 11th Each Month Through 7/11/26",
@@ -28,10 +28,10 @@
       "ts": "2026-05-01T21:26:49.000Z",
       "title_en": "7-Eleven/Speedway: $0.5 Off Per Gallon On 7th & 11th Each Month Through 7/11/26",
       "summary_en": "",
-      "title_zh": "7-Eleven/Speedway：每月 7 日與 11 日每加侖省 $0.5，至 2026 年 7 月 11 日止",
-      "summary_zh": "7-Eleven 或 Speedway 在每月的 7 日與 11 日提供每加侖 0.5 美元的優惠，有效期至 2026 年 7 月 11 日。",
-      "title_es": "7-Eleven/Speedway: $0.5 de descuento por galón los días 7 y 11 de cada mes hasta el 7/11/26",
-      "summary_es": "Ofrece un ahorro de $0.5 por galón en dos días específicos cada mes hasta julio de 2026."
+      "title_zh": "7-Eleven/Speedway：每月 7 日與 11 日每加侖省 $0.5，至 2026/7/11 止",
+      "summary_zh": "在每月 7 日與 11 日於 7-Eleven 或 Speedway 加油，每加侖可節省 $0.5，優惠至 2026 年 7 月 11 日截止。",
+      "title_es": "7‑Eleven/Speedway: $0.5 de descuento por galón los días 7 y 11 de cada mes hasta el 7/11/26",
+      "summary_es": "7‑Eleven y Speedway ofrecerán un descuento de $0.5 por galón los días 7 y 11 de cada mes hasta el 7 de noviembre de 2026."
     },
     {
       "title": "Fandango: $15 Off The Story of Everything With Promo Code STORYSTUDENT",
@@ -45,10 +45,10 @@
       "ts": "2026-05-01T21:18:20.000Z",
       "title_en": "Fandango: $15 Off The Story of Everything With Promo Code STORYSTUDENT",
       "summary_en": "",
-      "title_zh": "Fandango：使用優惠碼 STORYSTUDENT，可節省 $15 的《Everything》電影票",
-      "summary_zh": "Fandango 優惠活動，使用 STORYSTUDENT 優惠碼可減免 $15，適用於電影《Everything》。",
-      "title_es": "Fandango: $15 de descuento en 'The Story of Everything' con el código promocional STORYSTUDENT",
-      "summary_es": "Los usuarios pueden obtener $15 de descuento en la película 'The Story of Everything' usando el código STORYSTUDENT."
+      "title_zh": "Fandango：使用優惠碼 STORYSTUDENT 可享《The Story of Everything》15 美元折扣",
+      "summary_zh": "輸入優惠碼 STORYSTUDENT 購買《The Story of Everything》電影票可減 15 美元。",
+      "title_es": "Fandango: $15 de descuento en \"The Story of Everything\" con el código promocional STORYSTUDENT",
+      "summary_es": "Usando el código STORYSTUDENT en Fandango se obtiene un descuento de $15 en la compra de \"The Story of Everything\"."
     },
     {
       "title": "UberEats To Remove $5 Monthly Credit For UberOne Annual Users",
@@ -64,10 +64,10 @@
       "ts": "2026-05-01T21:12:00.000Z",
       "title_en": "UberEats To Remove $5 Monthly Credit For UberOne Annual Users",
       "summary_en": "",
-      "title_zh": "Uber Eats 將取消 UberOne 年費用戶的每月 $5 優惠額",
-      "summary_zh": "Uber Eats 宣布將從 UberOne 年費訂閱中刪除每月 $5 的信用額，影響現有用戶。",
+      "title_zh": "Uber Eats 將取消 Uber One 年費會員的每月 $5 餐飲額",
+      "summary_zh": "從即日起，Uber One 年費會員將不再獲得每月 $5 的 Uber Eats 額度。",
       "title_es": "UberEats eliminará el crédito mensual de $5 para usuarios anuales de UberOne",
-      "summary_es": "A partir de ahora, los suscriptores anuales de UberOne perderán el crédito mensual de $5 en UberEats."
+      "summary_es": "UberEats dejará de ofrecer un crédito mensual de $5 a los suscriptores anuales de UberOne."
     },
     {
       "title": "Chase Ultimate Rewards: 65% Transfer Bonus To Marriott (1:1.65)",
@@ -84,10 +84,10 @@
       "ts": "2026-05-01T21:04:57.000Z",
       "title_en": "Chase Ultimate Rewards: 65% Transfer Bonus To Marriott (1:1.65)",
       "summary_en": "",
-      "title_zh": "Chase Ultimate Rewards：轉移至 Marriott 享受 65% 獎勵（1:1.65）",
-      "summary_zh": "Chase Ultimate Rewards 推出新優惠，將點數轉換至 Marriott 可獲得 65% 的額外獎勵，比例為 1:1.65。",
-      "title_es": "Chase Ultimate Rewards: Bono de transferencia del 65% a Marriott (1:1.65)",
-      "summary_es": "Los puntos de Chase Ultimate Rewards ahora se transfieren a Marriott con un bono del 65%, mejorando su valor."
+      "title_zh": "Chase Ultimate Rewards：65% 轉換獎勵至 Marriott（1:1.65）",
+      "summary_zh": "Chase Ultimate Rewards 會員可將點數以 1:1.65 的比例轉換至 Marriott，並享有 65% 額外獎勵。",
+      "title_es": "Chase Ultimate Rewards: bonificación del 65% en transferencias a Marriott (1:1.65)",
+      "summary_es": "Chase ofrece una bonificación del 65% en las transferencias de puntos Ultimate Rewards a Marriott, elevando la relación de intercambio a 1:1.65."
     },
     {
       "title": "Airwallex: Sign Up & Get $400 Via Finder After First Transaction (Global Business Banking Platform)",
@@ -101,10 +101,10 @@
       "ts": "2026-05-01T21:00:53.000Z",
       "title_en": "Airwallex: Sign Up & Get $400 Via Finder After First Transaction (Global Business Banking Platform)",
       "summary_en": "",
-      "title_zh": "Airwallex：註冊後在 Finder 完成首筆交易可獲得 $400（全球企業銀行平台）",
-      "summary_zh": "Airwallex 提供新用戶優惠，首次在 Finder 完成交易後可獲得 $400 獎勵。",
-      "title_es": "Airwallex: Regístrate y obtén $400 a través de Finder tras tu primera transacción (plataforma global de banca empresarial)",
-      "summary_es": "Airwallex ofrece $400 a quienes se registren y realicen su primera transacción a través de Finder."
+      "title_zh": "Airwallex：註冊後首筆交易透過 Finder 可獲得 $400（全球企業銀行平台）",
+      "summary_zh": "新用戶在首次交易後通過 Finder 可獲得 400 美元獎勵，適用於 Airwallex 全球企業銀行平台。",
+      "title_es": "Airwallex: Regístrate y obtén $400 a través de Finder después de tu primera transacción (plataforma global de banca empresarial)",
+      "summary_es": "Airwallex regala $400 a través de Finder a quienes se registren y realicen su primera transacción en esta plataforma global de banca empresarial."
     },
     {
       "title": "[Preparing To Shut Down] Spirit Airlines To Liquidate As Early As This Week According To Sources",
@@ -117,10 +117,10 @@
       "ts": "2026-05-01T20:46:59.000Z",
       "title_en": "[Preparing To Shut Down] Spirit Airlines To Liquidate As Early As This Week According To Sources",
       "summary_en": "",
-      "title_zh": "[即將停業] 據消息指出，Spirit Airlines 可能在 本週 內開始清算",
-      "summary_zh": "知情人士透露，廉價航空公司 Spirit Airlines 預計最快在本週啟動清算程序，面臨破產。",
-      "title_es": "[Preparándose para cerrar] Spirit Airlines se liquidará tan pronto como esta semana, según fuentes",
-      "summary_es": "Fuentes revelan que Spirit Airlines podría iniciar su liquidación a finales de esta semana."
+      "title_zh": "[準備停業] 據消息人士透露，Spirit Airlines 最早可能在本週進行清算",
+      "summary_zh": "知情人士指出，Spirit Airlines 正準備破產清算，最快可能於本週完成。",
+      "title_es": "[En preparación para cerrar] Spirit Airlines liquidará a finales de esta semana según fuentes",
+      "summary_es": "Fuentes indican que Spirit Airlines podría iniciar su liquidación a finales de esta semana, preparándose para cerrar sus operaciones."
     },
     {
       "title": "U.S. Bank Cash+: $250 Sign Up Bonus After $1,000 In Spend",
@@ -136,10 +136,10 @@
       "ts": "2026-05-01T20:16:39.000Z",
       "title_en": "U.S. Bank Cash+: $250 Sign Up Bonus After $1,000 In Spend",
       "summary_en": "",
-      "title_zh": "U.S. Bank Cash+：消費滿 $1,000 後可獲得 $250 開戶獎勵",
-      "summary_zh": "U.S. Bank 推出 Cash+ 信用卡優惠，消費滿 $1,000 即獲 $250 開卡獎金。",
-      "title_es": "U.S. Bank Cash+: Bono de $250 por registrarte tras gastar $1,000",
-      "summary_es": "U.S. Bank ofrece un bono de $250 a quienes gasten $1,000 con su tarjeta Cash+."
+      "title_zh": "U.S. Bank Cash+：消費滿 $1,000 可獲得 $250 註冊獎金",
+      "summary_zh": "申請 U.S. Bank Cash+ 卡後，消費滿 1,000 美元即可獲得 250 美元獎金。",
+      "title_es": "U.S. Bank Cash+: bono de $250 por inscripción tras gastar $1,000",
+      "summary_es": "U.S. Bank Cash+ ofrece un bono de $250 a quienes realicen gastos de al menos $1,000 durante el período promocional."
     },
     {
       "title": "3 Free Cans Of Stiller’s Soda Via Aisle Rebate",
@@ -155,10 +155,10 @@
       "ts": "2026-05-01T19:30:18.000Z",
       "title_en": "3 Free Cans Of Stiller’s Soda Via Aisle Rebate",
       "summary_en": "",
-      "title_zh": "透過 Aisle 返利可獲得 3 罐免費的 Stiller’s 汽水",
-      "summary_zh": "在 Aisle 返利活動中，消費者可獲得 3 罐 Stiller’s 蘇打水作為免費赠品。",
-      "title_es": "3 latas gratuitas de refresco Stiller’s mediante el reembolso de pasillo",
-      "summary_es": "Los consumidores pueden obtener tres latas gratis de Stiller’s soda al reclamar el reembolso en el pasillo."
+      "title_zh": "透過 Aisle Rebate 可獲得 3 罐免費 Stiller's 汽水",
+      "summary_zh": "在 Aisle Rebate 活動中，領取優惠後可獲得三罐免費的 Stiller's 汽水。",
+      "title_es": "3 latas gratuitas de refresco Stiller’s mediante el programa de reembolso de Aisle",
+      "summary_es": "A través del programa de reembolso de Aisle se pueden obtener tres latas gratuitas de refresco Stiller’s."
     },
     {
       "title": "Samsclub.com: $500 Southwest eGift For $450",
@@ -172,10 +172,10 @@
       "ts": "2026-05-01T19:25:34.000Z",
       "title_en": "Samsclub.com: $500 Southwest eGift For $450",
       "summary_en": "",
-      "title_zh": "Samsclub.com：$450 可購買 $500 的 Southwest 電子禮物卡",
-      "summary_zh": "Samsclub.com 推出優惠，用 $450 可購得價值 $500 的 Southwest 航空公司電子禮卡。",
-      "title_es": "Samsclub.com: Tarjeta de regalo electrónica de Southwest por $500 por $450",
-      "summary_es": "Samsclub.com vende una eGift de Southwest de $500 a un precio reducido de $450."
+      "title_zh": "Samsclub.com：$450 可兌換 $500 的 Southwest 電子禮品卡",
+      "summary_zh": "在 Sam's Club 網站上，以 450 美元可購買面值 500 美元的 Southwest 電子禮品卡。",
+      "title_es": "Samsclub.com: tarjeta de regalo electrónica de Southwest por $500 por $450",
+      "summary_es": "Samsclub.com vende una eGift de Southwest de $500 por solo $450."
     },
     {
       "title": "Citi / AAdvantage Platinum Select World Elite MasterCard – 80,000 Miles With $1,000 Spend",
@@ -190,10 +190,10 @@
       "ts": "2026-05-01T18:45:28.000Z",
       "title_en": "Citi / AAdvantage Platinum Select World Elite MasterCard – 80,000 Miles With $1,000 Spend",
       "summary_en": "",
-      "title_zh": "Citi / AAdvantage Platinum Select World Elite Mastercard：消費 $1,000 可獲得 80,000 里程",
-      "summary_zh": "花旗銀行推出的 AAdvantage Platinum Select World Elite 卡，消费满 $1,000 可獲得 80,000 航空里程獎勵。",
+      "title_zh": "Citi / AAdvantage Platinum Select World Elite MasterCard – 消費 $1,000 可獲得 80,000 里程",
+      "summary_zh": "持卡人消費 1,000 美元即可獲得 80,000 AAdvantage 里程獎勵。",
       "title_es": "Citi / AAdvantage Platinum Select World Elite MasterCard – 80,000 millas al gastar $1,000",
-      "summary_es": "La tarjeta Citi AAdvantage Platinum Select ofrece 80,000 millas tras un gasto de $1,000."
+      "summary_es": "La tarjeta Citi AAdvantage Platinum Select World Elite MasterCard otorga 80,000 millas a quienes gasten $1,000 en el primer año."
     },
     {
       "title": "Chase Offers: Get 10% Back On Home Improvement Stores",
@@ -209,10 +209,10 @@
       "ts": "2026-05-01T17:25:12.000Z",
       "title_en": "Chase Offers: Get 10% Back On Home Improvement Stores",
       "summary_en": "",
-      "title_zh": "Chase 優惠：家裝商店消費最高回饋 10%",
-      "summary_zh": "Chase 信用卡在指定的家裝零售商提供 10% 的消費回饋優惠。",
-      "title_es": "Chase Offers: Obtén 10% de regreso en tiendas de mejora del hogar",
-      "summary_es": "Los clientes de Chase reciben un 10% de reembolso al comprar en tiendas de mejora del hogar."
+      "title_zh": "Chase 優惠：家裝店消費可獲得 10% 回饋",
+      "summary_zh": "在參與 Chase 優惠的家裝店消費，顧客可獲得 10% 的現金回饋。",
+      "title_es": "Chase Offers: obtén un 10% de regreso en tiendas de mejoras para el hogar",
+      "summary_es": "Chase Offers proporciona un reembolso del 10% en las compras realizadas en tiendas de mejoras para el hogar."
     },
     {
       "title": "AmEx Offers: Select Best Western Hotels, Spend $250 & Get $50 Back",
@@ -227,10 +227,10 @@
       "ts": "2026-05-01T17:22:56.000Z",
       "title_en": "AmEx Offers: Select Best Western Hotels, Spend $250 & Get $50 Back",
       "summary_en": "",
-      "title_zh": "AmEx 優惠：精選 Best Western 飯店，消費滿 $250 回饋 $50",
-      "summary_zh": "美國運通推出的優惠，在指定的 Best Western 酒店消費 $250 可獲得 $50 回饋。",
-      "title_es": "AmEx Offers: Hoteles Best Western seleccionados, gasta $250 y obtén $50 de regreso",
-      "summary_es": "American Express ofrece un reembolso de $50 al gastar $250 en hoteles Best Western seleccionados."
+      "title_zh": "AmEx 優惠：精選 Best Western 酒店，消費 $250 返 $50",
+      "summary_zh": "在指定的 Best Western 酒店消費 250 美元，American Express 將回饋 50 美元。",
+      "title_es": "AmEx Offers: selecciona hoteles Best Western, gasta $250 y recibe $50 de regreso",
+      "summary_es": "AmEx Offers bonifica con $50 a quienes gasten $250 en hoteles Best Western seleccionados."
     },
     {
       "title": "American Express Gold 60th Anniversary AmEx Offers (CLEAR, HBO, Uber One & More)",
@@ -243,10 +243,10 @@
       "ts": "2026-05-01T17:00:33.000Z",
       "title_en": "American Express Gold 60th Anniversary AmEx Offers (CLEAR, HBO, Uber One & More)",
       "summary_en": "",
-      "title_zh": "美國運通 Gold 60 週年 AmEx 優惠（CLEAR、HBO、Uber One 等）",
-      "summary_zh": "美國運通 Gold 卡慶祝 60 週年，推出包含 CLEAR、HBO、Uber One 等多項福利的優惠。",
-      "title_es": "American Express Gold 60.º aniversario de AmEx Offers (CLEAR, HBO, Uber One y más)",
-      "summary_es": "Con motivo de su 60.º aniversario, AmEx Gold presenta ofertas especiales en CLEAR, HBO, Uber One y otros servicios."
+      "title_zh": "American Express Gold 60 週年 AmEx 優惠（CLEAR、HBO、Uber One 等）",
+      "summary_zh": "American Express Gold 卡持卡人可享受 60 週年特別優惠，包含 CLEAR、HBO、Uber One 等多項福利。",
+      "title_es": "Ofertas de American Express Gold en el 60.º aniversario (CLEAR, HBO, Uber One y más)",
+      "summary_es": "Con motivo de su 60.º aniversario, American Express Gold ofrece diversas promociones como CLEAR, HBO, Uber One y más."
     },
     {
       "title": "Chase Business Total Checking Up To $1,500  (No Direct Deposit Required)",
@@ -264,11 +264,11 @@
       "ts": "2026-05-01T16:00:47.000Z",
       "title_en": "Chase Business Total Checking Up To $1,500  (No Direct Deposit Required)",
       "summary_en": "",
-      "title_zh": "Chase Business Total Checking 最高可獲得 $1,500（無需直接存款）",
-      "summary_zh": "Chase 商業支票帳戶提供最高 $1,500 的獎勵，且不需要進行直接存款即可獲得。",
-      "title_es": "Chase Business Total Checking hasta $1,500 (sin requerir depósito directo)",
-      "summary_es": "La cuenta Chase Business Total Checking ofrece hasta $1,500 sin necesidad de realizar un depósito directo."
+      "title_zh": "Chase Business Total Checking 最高可達 $1,500（無需直接存款）",
+      "summary_zh": "Chase Business Total Checking 帳戶最高可获 $1,500 獎勵，且不要求直接存款。",
+      "title_es": "Chase Business Total Checking hasta $1,500 (sin requisito de depósito directo)",
+      "summary_es": "Chase Business Total Checking permite obtener hasta $1,500 sin necesidad de realizar un depósito directo."
     }
   ],
-  "fetched": "2026-05-02T02:07:37.077Z"
+  "fetched": "2026-05-02T08:05:46.668Z"
 }
