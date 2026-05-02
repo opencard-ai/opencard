@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import type { CreditCard } from "@/lib/cards";
+import IssuerChip from "./IssuerChip";
 
 const STORAGE_KEY = "opencard_existing_cards";
 
@@ -127,7 +128,9 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
       >
         <div className="flex-1 min-w-0">
           <h3 className="text-sm font-semibold text-slate-900 truncate">{card.name}</h3>
-          <p className="text-xs text-slate-500 mt-0.5 truncate">{card.issuer}</p>
+          <div className="mt-1">
+            <IssuerChip issuer={card.issuer} />
+          </div>
         </div>
         <div className="text-right shrink-0 tabular-nums whitespace-nowrap">
           <div className={`text-sm font-medium ${card.annual_fee === 0 ? "text-emerald-600" : "text-slate-800"}`}>
