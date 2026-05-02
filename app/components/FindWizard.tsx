@@ -22,6 +22,8 @@ const STR = {
     fee: { free: "$0 only", low: "Up to $99", mid: "Up to $300", high: "$300+" } as Record<FeeKey, string>,
     cred: { excellent: "Excellent (760+)", good: "Good (700–759)", fair: "Fair (640–699)", building: "Building / new" } as Record<CreditKey, string>,
     back: "Back", restart: "Start over", title: "Top picks for you", noResults: "No cards match — try loosening the filters.",
+    relaxedFee: "No card fit your annual-fee cap. Showing the closest options instead:",
+    relaxedCredit: "No card matched that credit profile. Showing the closest options instead:",
     cta: "Find cards", subtitle: "Three questions, five recommendations.",
   },
   zh: {
@@ -31,6 +33,8 @@ const STR = {
     fee: { free: "只要免年費", low: "$99 以內", mid: "$300 以內", high: "$300+" } as Record<FeeKey, string>,
     cred: { excellent: "優 (760+)", good: "良 (700–759)", fair: "尚可 (640–699)", building: "重建 / 新戶" } as Record<CreditKey, string>,
     back: "上一題", restart: "重來", title: "為你推薦", noResults: "找不到符合的卡片 — 試試放寬條件。",
+    relaxedFee: "沒有符合年費上限的卡。改顯示接近條件的卡:",
+    relaxedCredit: "沒有符合信用條件的卡。改顯示接近條件的卡:",
     cta: "開始挑卡", subtitle: "回答 3 題,推薦 5 卡。",
   },
   es: {
@@ -40,6 +44,8 @@ const STR = {
     fee: { free: "Solo $0", low: "Hasta $99", mid: "Hasta $300", high: "$300+" } as Record<FeeKey, string>,
     cred: { excellent: "Excelente (760+)", good: "Bueno (700–759)", fair: "Regular (640–699)", building: "Construyendo / nuevo" } as Record<CreditKey, string>,
     back: "Atrás", restart: "Reiniciar", title: "Recomendadas para ti", noResults: "Ninguna tarjeta coincide — afloja los filtros.",
+    relaxedFee: "Ninguna tarjeta cumple el límite de cuota. Mostrando opciones cercanas:",
+    relaxedCredit: "Ninguna tarjeta coincide con ese perfil. Mostrando opciones cercanas:",
     cta: "Encontrar tarjetas", subtitle: "Tres preguntas, cinco recomendaciones.",
   },
 };
@@ -91,11 +97,26 @@ export default function FindWizard({ cards, lang }: Props) {
   const [cred, setCred] = useState<CreditKey | null>(null);
 
   const results = useMemo(() => {
-    if (!spend || !fee || !cred) return [];
-    return cards
+    if (!spend || !fee || !cred) return { cards: [] as CreditCard[], relaxed: null as null | "fee" | "credit" };
+    const strict = cards
       .filter((c) => matchesSpend(c, spend) && matchesFee(c, fee) && matchesCredit(c, cred))
       .sort(rank)
       .slice(0, 5);
+    if (strict.length > 0) return { cards: strict, relaxed: null };
+    // Strict filter empty — try loosening fee first (usually the binding
+    // constraint: the spend-type itself is the user's main intent), then
+    // credit. Whichever yields ≥1 result first becomes the suggestion.
+    const noFee = cards
+      .filter((c) => matchesSpend(c, spend) && matchesCredit(c, cred))
+      .sort(rank)
+      .slice(0, 5);
+    if (noFee.length > 0) return { cards: noFee, relaxed: "fee" as const };
+    const noCred = cards
+      .filter((c) => matchesSpend(c, spend) && matchesFee(c, fee))
+      .sort(rank)
+      .slice(0, 5);
+    if (noCred.length > 0) return { cards: noCred, relaxed: "credit" as const };
+    return { cards: [], relaxed: null };
   }, [cards, spend, fee, cred]);
 
   const reset = () => { setStep(0); setSpend(null); setFee(null); setCred(null); };
@@ -196,22 +217,29 @@ export default function FindWizard({ cards, lang }: Props) {
               <RotateCcw className="w-3.5 h-3.5" /> {t.restart}
             </button>
           </div>
-          {results.length === 0 ? (
+          {results.cards.length === 0 ? (
             <p className="text-slate-500 text-center py-8">{t.noResults}</p>
           ) : (
-            <div className="space-y-2">
-              {results.map((card) => (
-                <CardRow
-                  key={card.card_id}
-                  card={card}
-                  lang={lang}
-                  locale={lang}
-                  isCompared={false}
-                  isMaxed={false}
-                  onToggleCompare={() => { /* noop on wizard results */ }}
-                />
-              ))}
-            </div>
+            <>
+              {results.relaxed && (
+                <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mb-3 text-xs text-amber-800">
+                  {results.relaxed === "fee" ? t.relaxedFee : t.relaxedCredit}
+                </div>
+              )}
+              <div className="space-y-2">
+                {results.cards.map((card) => (
+                  <CardRow
+                    key={card.card_id}
+                    card={card}
+                    lang={lang}
+                    locale={lang}
+                    isCompared={false}
+                    isMaxed={false}
+                    onToggleCompare={() => { /* noop on wizard results */ }}
+                  />
+                ))}
+              </div>
+            </>
           )}
         </div>
       )}
