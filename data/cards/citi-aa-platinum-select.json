@@ -7,11 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 0,
-    "time_period_months": 0,
-    "bonus_points": 0,
-    "description": "N/A",
-    "point_program": "Points"
+    "spending_requirement": 2500,
+    "time_period_months": 3,
+    "bonus_points": 50000,
+    "description": "50,000 AAdvantage bonus miles after spending $2,500 in the first 3 months.",
+    "point_program": "American Airlines AAdvantage",
+    "estimated_value": 825
   },
   "earning_rates": [
     {
