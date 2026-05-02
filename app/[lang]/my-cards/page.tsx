@@ -690,8 +690,31 @@ export default function MyCardsPage({
 
         {/* Cards List */}
         {!loaded ? (
-          <div className="bg-white rounded-2xl p-8 text-center">
-            <p className="text-slate-400 text-sm">{m.loading}</p>
+          // Skeleton: 2 placeholder card rows so the page doesn't look empty
+          // during the cloud-state fetch. Pulses gently to signal activity.
+          <div className="space-y-3" aria-busy="true" aria-label={m.loading}>
+            {[0, 1].map((i) => (
+              <div key={i} className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div className="px-4 py-3 bg-slate-50 border-b border-slate-100 flex items-center justify-between">
+                  <div className="space-y-1.5 flex-1">
+                    <div className="h-3.5 bg-slate-200 rounded w-3/5 animate-pulse" />
+                    <div className="h-2.5 bg-slate-100 rounded w-1/3 animate-pulse" />
+                  </div>
+                  <div className="space-y-1 text-right">
+                    <div className="h-3.5 bg-slate-200 rounded w-16 animate-pulse" />
+                    <div className="h-2 bg-slate-100 rounded w-12 animate-pulse" />
+                  </div>
+                </div>
+                <div className="px-4 py-3 space-y-2">
+                  {[0, 1, 2].map((j) => (
+                    <div key={j} className="flex items-center justify-between">
+                      <div className="h-3 bg-slate-100 rounded w-2/5 animate-pulse" />
+                      <div className="h-3 bg-slate-100 rounded w-12 animate-pulse" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         ) : selectedCardsList.length === 0 && isSubscribed ? (
           <div className="bg-white rounded-2xl p-8 text-center">
