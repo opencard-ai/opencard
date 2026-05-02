@@ -37,9 +37,9 @@ body {
 .dark .bg-amber-50\/50 { background-color: rgb(120 53 15 / 0.2); }
 .dark .bg-red-50 { background-color: rgb(127 29 29 / 0.3); }
 .dark .bg-indigo-50 { background-color: rgb(49 46 129 / 0.25); }
-/* -100 backgrounds (tag pills, news category badges, etc.). Light mode
- * uses these as a soft pastel; in dark we need a deeper translucent
- * fill so the lightened brand text still reads. */
+/* -100 backgrounds (tag pills, news category badges, IssuerChip).
+ * Light mode uses these as a soft pastel; in dark we need a deeper
+ * translucent fill so the lightened brand text still reads. */
 .dark .bg-emerald-100 { background-color: rgb(6 78 59 / 0.55); }
 .dark .bg-amber-100 { background-color: rgb(120 53 15 / 0.55); }
 .dark .bg-blue-100 { background-color: rgb(30 58 138 / 0.55); }
@@ -47,6 +47,15 @@ body {
 .dark .bg-violet-100 { background-color: rgb(76 29 149 / 0.55); }
 .dark .bg-red-100 { background-color: rgb(127 29 29 / 0.55); }
 .dark .bg-indigo-100 { background-color: rgb(49 46 129 / 0.55); }
+/* IssuerChip palette additions (covers BoA/WF/HSBC, Barclays, Discover/PNC,
+ * TD, Petal, Robinhood, Goldman/Upgrade/FEB). */
+.dark .bg-rose-100 { background-color: rgb(136 19 55 / 0.55); }
+.dark .bg-cyan-100 { background-color: rgb(22 78 99 / 0.55); }
+.dark .bg-orange-100 { background-color: rgb(124 45 18 / 0.55); }
+.dark .bg-green-100 { background-color: rgb(20 83 45 / 0.55); }
+.dark .bg-purple-100 { background-color: rgb(88 28 135 / 0.55); }
+.dark .bg-lime-100 { background-color: rgb(54 83 20 / 0.55); }
+.dark .bg-slate-200 { background-color: rgb(51 65 85); }
 
 .dark .border-slate-100 { border-color: rgb(51 65 85); }
 .dark .border-slate-200 { border-color: rgb(51 65 85); }
@@ -69,13 +78,16 @@ body {
 
 .dark .ring-slate-200 { --tw-ring-color: rgb(51 65 85); }
 
-/* Brand colors lightened so they still pop on the dark surfaces. */
+/* Brand colors lightened so they still pop on the dark surfaces.
+ * Includes the -800/-900 variants used by IssuerChip. */
+.dark .text-blue-900 { color: rgb(219 234 254); }
 .dark .text-blue-800 { color: rgb(191 219 254); }
 .dark .text-blue-700 { color: rgb(147 197 253); }
 .dark .text-blue-600 { color: rgb(96 165 250); }
 .dark .text-blue-500 { color: rgb(96 165 250); }
 .dark .text-blue-400 { color: rgb(147 197 253); }
 .dark .text-blue-100 { color: rgb(191 219 254); }
+.dark .text-indigo-800 { color: rgb(199 210 254); }
 .dark .text-indigo-700 { color: rgb(165 180 252); }
 .dark .text-indigo-600 { color: rgb(129 140 248); }
 .dark .text-emerald-800 { color: rgb(167 243 208); }
@@ -86,12 +98,24 @@ body {
 .dark .text-amber-800 { color: rgb(252 211 77); }
 .dark .text-amber-700 { color: rgb(252 211 77); }
 .dark .text-amber-600 { color: rgb(251 191 36); }
+.dark .text-red-900 { color: rgb(254 202 202); }
+.dark .text-red-800 { color: rgb(254 202 202); }
 .dark .text-red-700 { color: rgb(252 165 165); }
 .dark .text-red-600 { color: rgb(248 113 113); }
 .dark .text-red-500 { color: rgb(248 113 113); }
+.dark .text-violet-800 { color: rgb(221 214 254); }
 .dark .text-violet-700 { color: rgb(196 181 253); }
 .dark .text-violet-600 { color: rgb(167 139 250); }
+.dark .text-sky-800 { color: rgb(186 230 253); }
 .dark .text-sky-700 { color: rgb(125 211 252); }
+.dark .text-rose-900 { color: rgb(254 205 211); }
+.dark .text-rose-800 { color: rgb(254 205 211); }
+.dark .text-cyan-800 { color: rgb(165 243 252); }
+.dark .text-orange-900 { color: rgb(254 215 170); }
+.dark .text-orange-800 { color: rgb(254 215 170); }
+.dark .text-green-800 { color: rgb(187 247 208); }
+.dark .text-purple-800 { color: rgb(233 213 255); }
+.dark .text-lime-800 { color: rgb(217 249 157); }
 
 /* Hover states need to stay legible — raise hover slate-900 to slate-50
  * since the base color we're hovering toward is now also lifted. */
