@@ -99,7 +99,7 @@ export default function FloatingButtons({ lang }: FloatingButtonsProps) {
             href={`/${lang}/my-cards`}
             aria-label={l.benefits}
             title={l.benefits}
-            className={`h-12 rounded-full shadow-lg bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-300 text-slate-700 hover:shadow-xl hover:border-blue-400 transition-[width,padding] duration-200 hover:scale-105 active:scale-95 flex items-center gap-2 justify-center overflow-hidden ${
+            className={`h-12 rounded-full shadow-lg bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900 dark:to-indigo-900 border-2 border-blue-300 dark:border-blue-500 text-slate-700 dark:text-blue-100 hover:shadow-xl hover:border-blue-400 transition-[width,padding] duration-200 hover:scale-105 active:scale-95 flex items-center gap-2 justify-center overflow-hidden ${
               expanded ? "w-[160px] px-5" : "w-12 px-0"
             }`}
           >
