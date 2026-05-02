@@ -6,6 +6,7 @@ import { computePeriodKey } from "@/lib/credit-periods";
 import ReportErrorModal from "@/app/components/ReportErrorModal";
 import OpenDateRow from "@/app/components/OpenDateRow";
 import HelpHint from "@/app/components/HelpHint";
+import CardArt from "@/app/components/CardArt";
 import { toast } from "@/lib/toast";
 
 const STORAGE_KEY = "opencard_existing_cards";
@@ -778,12 +779,15 @@ export default function MyCardsPage({
               return (
                 <div key={card.card_id} className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
                   {/* Card Header */}
-                  <div className="px-4 py-3 bg-slate-50 border-b border-slate-100 flex items-center justify-between">
-                    <div className="flex items-center gap-2 overflow-hidden">
-                      <span className="text-sm font-semibold text-slate-800 truncate">{card.name}</span>
-                      {card.annual_fee > 0 && (
-                        <span className="text-xs text-slate-400">${card.annual_fee}/yr</span>
-                      )}
+                  <div className="px-4 py-3 bg-slate-50 border-b border-slate-100 flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3 min-w-0 flex-1">
+                      <CardArt cardId={card.card_id} issuer={card.issuer} size="sm" />
+                      <div className="min-w-0">
+                        <span className="block text-sm font-semibold text-slate-800 truncate">{card.name}</span>
+                        {card.annual_fee > 0 && (
+                          <span className="text-xs text-slate-400">${card.annual_fee}/yr</span>
+                        )}
+                      </div>
                     </div>
                     {cardTotal > 0 && (
                       <div className="text-right shrink-0 tabular-nums whitespace-nowrap">
