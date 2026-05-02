@@ -135,11 +135,11 @@
     {
       "credit_key": "stubhub-viagogo-credit",
       "name": "StubHub / viagogo Credit",
-      "amount": 300,
-      "frequency": "annual",
+      "amount": 150,
+      "frequency": "semi_annual",
       "category": "entertainment",
-      "description": "$300/year on StubHub or viagogo event ticket purchases.",
-      "reset_type": "calendar_year",
+      "description": "Up to $150 in statement credits twice per year ($150 H1 / $150 H2) on StubHub or viagogo event ticket purchases.",
+      "reset_type": "calendar_half",
       "source": "https://account.chase.com/sapphire/reserve/benefits"
     },
     {
