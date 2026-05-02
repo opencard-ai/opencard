@@ -6,22 +6,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://opencardai.com";
 
   // Note: baseUrl (opencardai.com/) is excluded - it redirects via middleware, not indexable
+  const langs = ["en", "zh", "es"] as const;
+  const now = new Date();
+
+  const tier = (path: string, priority: number, changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]) =>
+    langs.map((lang) => ({
+      url: `${baseUrl}/${lang}${path}`,
+      lastModified: now,
+      changeFrequency,
+      priority,
+    }));
+
   const staticPages: MetadataRoute.Sitemap = [
-    { url: `${baseUrl}/en`, lastModified: new Date(), changeFrequency: "daily", priority: 1 },
-    { url: `${baseUrl}/zh`, lastModified: new Date(), changeFrequency: "daily", priority: 1 },
-    { url: `${baseUrl}/es`, lastModified: new Date(), changeFrequency: "daily", priority: 1 },
-    { url: `${baseUrl}/en/cards`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
-    { url: `${baseUrl}/zh/cards`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
-    { url: `${baseUrl}/es/cards`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
-    { url: `${baseUrl}/en/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${baseUrl}/zh/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${baseUrl}/es/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${baseUrl}/en/privacy`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.3 },
-    { url: `${baseUrl}/zh/privacy`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.3 },
-    { url: `${baseUrl}/es/privacy`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.3 },
-    { url: `${baseUrl}/en/terms`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.3 },
-    { url: `${baseUrl}/zh/terms`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.3 },
-    { url: `${baseUrl}/es/terms`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.3 },
+    ...tier("", 1, "daily"),
+    ...tier("/cards", 0.8, "weekly"),
+    ...tier("/elevated-offers", 0.8, "weekly"),
+    ...tier("/find", 0.7, "weekly"),
+    ...tier("/about", 0.5, "monthly"),
+    ...tier("/privacy", 0.3, "monthly"),
+    ...tier("/terms", 0.3, "monthly"),
   ];
 
   const cardPages: MetadataRoute.Sitemap = [];

@@ -121,7 +121,15 @@ function FTCDisclosure({ locale }: { locale: any }) {
         {t("ftc.disclosure", locale)}
       </p>
       <p>{t("ftc.text", locale)}</p>
-      <div className="flex gap-4 pt-1">
+      <div className="flex flex-wrap gap-x-4 gap-y-1 pt-1">
+        <a href={`/${locale}/find`} className="hover:text-blue-600 transition-colors">
+          {locale === "zh" ? "挑卡精靈" : locale === "es" ? "Buscar tarjeta" : "Find your card"}
+        </a>
+        <span>·</span>
+        <a href={`/${locale}/elevated-offers`} className="hover:text-blue-600 transition-colors">
+          {locale === "zh" ? "高額開卡禮" : locale === "es" ? "Mejores bonos" : "Top welcome offers"}
+        </a>
+        <span>·</span>
         <a href={`/${locale}/privacy`} className="hover:text-blue-600 transition-colors">
           {locale === "zh" ? "隱私權政策" : locale === "es" ? "Política de Privacidad" : "Privacy Policy"}
         </a>
