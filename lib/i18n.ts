@@ -357,10 +357,13 @@ const translations: Record<Locale, Record<string, string>> = { zh, en, es };
 export function t(key: string, locale: Locale = "en", params?: Record<string, string | number>): string {
   let text = translations[locale]?.[key] || translations.en[key] || key;
   if (params) {
+    // Order matters: replace double-brace first, otherwise the single-brace
+    // pass eats the inner `{value}` of `{{value}}` and leaves stray braces
+    // around the substitution (e.g. "{{value}}" → "{$1000}").
     Object.entries(params).forEach(([k, v]) => {
-      text = text.replace(`{${k}}`, String(v));
+      text = text.split(`{{${k}}}`).join(String(v));
       text = text.split(`[[${k}]]`).join(String(v));
-      text = text.replace(`{{${k}}}`, String(v));
+      text = text.split(`{${k}}`).join(String(v));
     });
   }
   return text;
