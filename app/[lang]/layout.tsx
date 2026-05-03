@@ -71,6 +71,11 @@ export default async function LocaleLayout({ children, params }: Props) {
             __html: `(function(){try{var t=localStorage.getItem("opencard_theme")||"system";var d=t==="dark"||(t==="system"&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark");}catch(e){}})();`,
           }}
         />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9241929717890328"
+          crossOrigin="anonymous"
+        />
       </head>
 
 
