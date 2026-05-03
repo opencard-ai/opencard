@@ -65,6 +65,7 @@ async function main() {
   if (queue.length > 0) {
     const featured = queue.filter((c) => c.featured).length;
     console.log(`   (Featured: ${featured}, Stale/DoC: ${queue.length - featured})`);
+    console.log(`   Queue preview: ${queue.map((c) => c.card_id).join(", ")}`);
   }
 
   if (queue.length === 0) {
@@ -85,6 +86,12 @@ async function main() {
     console.log(`\n[${i + 1}/${queue.length}] Processing: ${card.card_id}`);
     const result = await processCard(card, runDir, DRY_RUN);
     results.push(result);
+
+    if (result.error) {
+      console.log(`   [ERROR] ${card.card_id}: ${result.error}`);
+    } else if (!result.hasChanges) {
+      console.log(`   [OK] No changes detected for ${card.card_id}`);
+    }
   }
 
   // ── Step 7: Summary ───────────────────────────────────────────────────────

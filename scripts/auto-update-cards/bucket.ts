@@ -14,50 +14,48 @@ export function buildQueue(
   docItems: DocItem[],
   budget: number
 ): Card[] {
-  // Bucket 1: Featured cards
-  const featured = allCards.filter((c) => c.featured);
+  const cappedBudget = Math.max(0, budget);
+  if (cappedBudget === 0) return [];
 
-  // Bucket 2: DoC matched
-  const docMatchedIds = new Set<string>();
+  const eligibleCards = allCards.filter(
+    (c) => c.status !== "discontinued" && c.status !== "needs_manual_review"
+  );
+
+  // Bucket 1: Featured cards, capped by budget and configured priority.
+  const featured = eligibleCards
+    .filter((c) => c.featured)
+    .slice(0, Math.min(cappedBudget, CONFIG.FEATURED_PRIORITY));
+
+  // Bucket 2: DoC matched, deduped and excluding already-selected featured cards.
+  const usedIds = new Set(featured.map((c) => c.card_id));
   const docMatched: Card[] = [];
 
   for (const item of docItems) {
-    const matchedId = matchCardId(item.title, allCards);
-    if (matchedId && !docMatchedIds.has(matchedId)) {
-      docMatchedIds.add(matchedId);
-      const card = allCards.find((c) => c.card_id === matchedId);
-      if (card) docMatched.push(card);
+    if (featured.length + docMatched.length >= cappedBudget) break;
+
+    const matchedId = matchCardId(item.title, eligibleCards);
+    if (!matchedId || usedIds.has(matchedId)) continue;
+
+    const card = eligibleCards.find((c) => c.card_id === matchedId);
+    if (card) {
+      docMatched.push(card);
+      usedIds.add(card.card_id);
     }
   }
 
-  // Bucket 3: Stale-first fill
-  const staleCutoff = new Date();
-  staleCutoff.setDate(staleCutoff.getDate() - CONFIG.STALE_THRESHOLD_DAYS);
-  const staleCutoffStr = staleCutoff.toISOString().split("T")[0];
-
-  const usedIds = new Set([...featured.map((c) => c.card_id), ...docMatched.map((c) => c.card_id)]);
-
-  const stale = allCards
-    .filter((c) => !usedIds.has(c.card_id)) // not already queued
-    .filter((c) => c.status !== "discontinued" && c.status !== "needs_manual_review")
+  // Bucket 3: Stale-first fill.
+  const stale = eligibleCards
+    .filter((c) => !usedIds.has(c.card_id))
     .sort((a, b) => {
-      // Oldest last_updated first
       const aDate = a.last_updated || "1970-01-01";
       const bDate = b.last_updated || "1970-01-01";
       return aDate.localeCompare(bDate);
     });
 
-  // Fill up to budget
-  const remaining = budget - featured.length - docMatched.length;
+  const remaining = cappedBudget - featured.length - docMatched.length;
   const staleSlice = stale.slice(0, Math.max(0, remaining));
 
-  const queue = [
-    ...featured,
-    ...docMatched,
-    ...staleSlice,
-  ];
-
-  return queue;
+  return [...featured, ...docMatched, ...staleSlice];
 }
 
 /**
