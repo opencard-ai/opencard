@@ -100,6 +100,10 @@ regexes = [
   # docs/SECURITY_NOTICE references already-redacted tokens by prefix
   '''gQAAAAAA\.\.\.\[REDACTED''',
   '''sk-cp-mFUA9\.\.\.\[REDACTED''',
+  # credit_key values in card JSONs (logical benefit identifiers, not API keys)
+  '''credit_key":\s*"[^"]{3,50}"''',
+  # Boomerang/SpeedCurve API key embedded in JS snippets (false positive)
+  '''BOOMR_API_key''',
 ]
 
 # Specific commits that contain known historical leaks. These tokens have been
