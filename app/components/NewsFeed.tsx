@@ -34,6 +34,7 @@ function SourceIcon({ source }: { source: string }) {
 const NEWS_CAT_TRANSLATIONS: Record<string, Record<string, string>> = {
   en: { banking: "Banking", "credit cards": "Credit Cards", "sign-up bonus": "Sign-up Bonus", rewards: "Rewards", travel: "Travel" },
   zh: { banking: "銀行", "credit cards": "信用卡", "sign-up bonus": "開卡獎勵", rewards: "回饋", travel: "旅遊" },
+  "zh-cn": { banking: "银行", "credit cards": "信用卡", "sign-up bonus": "开卡奖励", rewards: "回馈", travel: "旅行" },
   es: { banking: "Banca", "credit cards": "Tarjetas de Crédito", "sign-up bonus": "Bono de Inscripción", rewards: "Recompensas", travel: "Viajes" },
 };
 

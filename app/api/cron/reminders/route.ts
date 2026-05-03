@@ -195,7 +195,8 @@ function buildEmailHtml(
   };
   const catLabel = (c: string) => labels[c] || c;
 
-  const t = (en: string, zh: string, es: string) => lang === "zh" ? zh : lang === "es" ? es : en;
+  const t = (en: string, zh: string, es: string, zhCn?: string) =>
+    lang === "zh-cn" ? (zhCn ?? zh) : lang === "zh" ? zh : lang === "es" ? es : en;
 
   let body = `<div style="font-family: -apple-system, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
     <h2 style="color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 8px;">

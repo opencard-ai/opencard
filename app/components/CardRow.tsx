@@ -43,6 +43,18 @@ const STR = {
     expand: "展開細節",
     collapse: "收合",
   },
+  "zh-cn": {
+    noFee: "免年费",
+    perYr: "/年",
+    welcome: "开卡奖励",
+    viewDetails: "查看详情 →",
+    compare: "加入比较",
+    inCompare: "已加入比较",
+    save: "加入我的卡片",
+    saved: "已加入",
+    expand: "展开详情",
+    collapse: "收起",
+  },
   es: {
     noFee: "Sin cuota",
     perYr: "/año",

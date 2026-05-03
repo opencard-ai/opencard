@@ -28,6 +28,16 @@ const MESSAGES = {
     noResults: "找不到卡片",
     empty: "沒有符合的卡片",
   },
+  "zh-cn": {
+    title: "我的卡片",
+    trigger: "我的卡片",
+    hint: "勾选你已有的卡片。AI 会避免推荐重复项目。",
+    searchPlaceholder: "搜索卡片...",
+    clearAll: "清除全部",
+    selected: "已选择",
+    noResults: "找不到卡片",
+    empty: "没有符合的卡片",
+  },
   es: {
     title: "Mis Tarjetas",
     trigger: "Mis Tarjetas",

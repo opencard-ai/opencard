@@ -26,6 +26,7 @@ export default function CompareBar({ selected, onRemove, onClear, lang }: Compar
   const labels = {
     en: { title: "Compare Cards", compare: "Compare Now", remove: "Remove", clear: "Clear", max: "Compare up to 3 cards" },
     zh: { title: "比較卡片", compare: "立即比較", remove: "移除", clear: "清除", max: "最多比較 3 張卡" },
+    "zh-cn": { title: "比较卡片", compare: "立即比较", remove: "移除", clear: "清除", max: "最多比较 3 张卡" },
     es: { title: "Comparar Tarjetas", compare: "Comparar Ahora", remove: "Eliminar", clear: "Limpiar", max: "Hasta 3 tarjetas" },
   };
   const l = labels[lang as keyof typeof labels] || labels.en;
