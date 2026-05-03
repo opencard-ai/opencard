@@ -25,9 +25,13 @@ import { sendSummaryEmail } from "./notify";
 const DRY_RUN = process.argv.includes("--dry");
 const APPLY = process.argv.includes("--apply");
 
-// Override weekly budget via --max N
-const maxArg = process.argv.find((a) => a.startsWith("--max="));
-const WEEKLY_BUDGET = maxArg ? parseInt(maxArg.split("=")[1], 10) : CONFIG.WEEKLY_BUDGET;
+// Override weekly budget via --max N or --max=N
+const maxArg = process.argv.find((a) => a.startsWith("--max=")) ||
+  process.argv.find((a) => a === "--max");
+const maxIndex = process.argv.indexOf("--max");
+const WEEKLY_BUDGET = maxArg
+  ? parseInt((maxArg.startsWith("--max=") ? maxArg.split("=")[1] : process.argv[maxIndex + 1]), 10)
+  : CONFIG.WEEKLY_BUDGET;
 
 const OUT_DIR = path.join(process.cwd(), "data/audit-reports");
 const DATE = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
