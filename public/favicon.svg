@@ -5,8 +5,8 @@
       <stop offset="100%" stop-color="#d97706"/>
     </linearGradient>
   </defs>
-  <rect width="32" height="32" rx="6" fill="url(#oc-favicon-grad)"/>
-  <text x="16" y="23" text-anchor="middle"
-        font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+  <rect width="32" height="32" rx="8" ry="8" fill="url(#oc-favicon-grad)"/>
+  <text x="16" y="16" text-anchor="middle" dominant-baseline="central"
+        font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif"
         font-weight="900" font-size="22" fill="#1e3a8a">O</text>
 </svg>
