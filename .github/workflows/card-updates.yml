@@ -24,9 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
-      contents: write     # write to create branches
-      pull-requests: write # open PRs
-      contents: read       # read repo
+      contents: write     # read + write to create branches
+      pull-requests: write
 
     env:
       MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
