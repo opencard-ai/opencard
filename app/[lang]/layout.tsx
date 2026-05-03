@@ -94,10 +94,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             </a>
             <div className="flex items-center gap-3 whitespace-nowrap">
               <nav className="flex items-center gap-3 text-sm text-slate-600 whitespace-nowrap">
-                <a href={`/${lang}`} className="hover:text-slate-900 transition-colors">
-                  {t("nav.allCards", lang as any)}
-                </a>
-<a href={`/${lang}/#about`} className="hover:text-slate-900 transition-colors">
+                <a href={`/${lang}/#about`} className="hover:text-slate-900 transition-colors">
                   {t("nav.about", lang as any)}
                 </a>
               </nav>
