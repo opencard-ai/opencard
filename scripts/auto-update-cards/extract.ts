@@ -72,6 +72,14 @@ export async function extractCardData(
 
     const data = await response.json() as { choices?: { message?: { content?: string } }[] };
     raw = data.choices?.[0]?.message?.content || "{}";
+
+    // MiniMax M2.7 is a reasoning model and may emit <think>...</think>
+    // tokens before the JSON payload. Strip them before parsing.
+    raw = raw.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
+    if (!raw.startsWith("{")) {
+      const firstBrace = raw.indexOf("{");
+      if (firstBrace > 0) raw = raw.slice(firstBrace);
+    }
   } catch (err) {
     throw new Error(`MiniMax API call failed: ${(err as Error).message}`);
   }
