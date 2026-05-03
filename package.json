@@ -12,7 +12,9 @@
     "facts:seed": "tsx scripts/seed-fact-store-from-cards.ts",
     "facts:promote": "tsx scripts/promote-facts.ts",
     "facts:promote:dry": "tsx scripts/promote-facts.ts --dry-run",
-    "cfpb:extract": "tsx scripts/pipelines/cfpb/extract.ts"
+    "cfpb:extract": "tsx scripts/pipelines/cfpb/extract.ts",
+    "card:update": "tsx scripts/auto-update-cards/index.ts",
+    "card:update:dry": "tsx scripts/auto-update-cards/index.ts --dry"
   },
   "dependencies": {
     "@upstash/redis": "^1.37.0",
