@@ -139,7 +139,7 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
     <button
       onClick={handleAdd}
       disabled={saving}
-      className="w-full inline-flex items-center justify-center gap-1.5 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white font-semibold py-2.5 px-4 rounded-lg transition-colors text-sm"
+      className="w-full inline-flex items-center justify-center gap-1.5 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white font-semibold h-11 px-4 rounded-lg transition-colors text-sm"
     >
       {saving ? label.saving : (<><CreditCard className="w-4 h-4" /> {label.add}</>)}
     </button>

@@ -90,10 +90,10 @@ export default function ChatWidget({ cardName, cardId, locale = "en" }: ChatWidg
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg h-11 px-4 flex items-center justify-center gap-2 transition-colors text-sm font-semibold"
+        className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg h-11 px-4 flex items-center justify-center gap-1.5 transition-colors text-sm font-semibold"
       >
-        <span className="text-xl">💬</span>
-        <span className="font-semibold">{msg.label}</span>
+        <MessageCircle className="w-4 h-4" />
+        <span>{msg.label}</span>
       </button>
     );
   }
