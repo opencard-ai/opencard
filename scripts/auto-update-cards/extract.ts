@@ -62,6 +62,7 @@ export async function extractCardData(
         temperature: 0.1,
         response_format: { type: "json_object" },
       }),
+      signal: AbortSignal.timeout(60_000),
     });
 
     if (!response.ok) {
