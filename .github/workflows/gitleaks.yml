@@ -28,6 +28,4 @@ jobs:
         uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}  # uncomment if your org has a paid license
           GITLEAKS_CONFIG: .gitleaks.toml
-          GITLEAKS_NOTIFY_USER_LIST: '@kaceycc'  # adjust if you have multiple maintainers
