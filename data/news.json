@@ -13,10 +13,10 @@
       "ts": "2026-05-02T23:45:01.000Z",
       "title_en": "Ally Invest $200 Bonus With $1,000 Deposit For 90 Days (Nationwide; New Customers Only)",
       "summary_en": "",
-      "title_zh": "Ally Invest 提供$200獎金，需存款$1,000並保持90天（全美適用；僅限新客戶）",
-      "summary_zh": "Ally Invest針對新客戶推出優惠，只要在90天內存款$1,000並維持，即可獲得$200獎金。",
-      "title_es": "Ally Invest: Bono de $200 con depósito de $1,000 por 90 días (Nacional; Solo clientes nuevos)",
-      "summary_es": "Ally Invest ofrece un bono de $200 a los nuevos clientes que depositen $1,000 y lo mantengan durante 90 días."
+      "title_zh": "Ally Invest 存款 $1,000 90天可得 $200 獎金（全美；僅限新客戶）",
+      "summary_zh": "Ally Invest 提供新客戶存款 $1,000 並持有 90 天即可獲得 $200 獎金的優惠。",
+      "title_es": "Bono de $200 de Ally Invest con Depósito de $1,000 por 90 Días (Nacional; Solo Nuevos Clientes)",
+      "summary_es": "Ally Invest ofrece un bono de $200 para nuevos clientes que depositen $1,000 y lo mantengan por 90 días."
     },
     {
       "title": "[Updated] Capital One Shopping Portal Adds Redemption Options",
@@ -29,10 +29,10 @@
       "ts": "2026-05-02T22:53:51.000Z",
       "title_en": "[Updated] Capital One Shopping Portal Adds Redemption Options",
       "summary_en": "",
-      "title_zh": "[更新] Capital One購物門戶新增兌換選項",
-      "summary_zh": "Capital One購物門戶新增了更多兌換方式，讓消費者有更多使用積分或獎勵的彈性。",
-      "title_es": "[Actualizado] El portal de compras de Capital One añade opciones de canje",
-      "summary_es": "Capital One ha actualizado su portal de compras incluyendo nuevas opciones para canjear recompensas."
+      "title_zh": "[更新] Capital One 購物門戶新增兌換選項",
+      "summary_zh": "Capital One 購物門戶更新，新增多個積分兌換選項。",
+      "title_es": "[Actualizado] Portal de Compras de Capital One Agrega Opciones de Canje",
+      "summary_es": "El portal de compras de Capital One ha añadido nuevas opciones para canjear recompensas."
     },
     {
       "title": "[Targeted] Venmo: Spend $40+ With Debit Card, Get $40 Back",
@@ -45,10 +45,10 @@
       "ts": "2026-05-02T22:21:06.000Z",
       "title_en": "[Targeted] Venmo: Spend $40+ With Debit Card, Get $40 Back",
       "summary_en": "",
-      "title_zh": "[限時優惠] Venmo：使用金融卡消費滿$40，獲得$40回饋",
-      "summary_zh": "Venmo針對金融卡用戶推出限時優惠，消費滿$40即可獲得$40現金回饋。",
-      "title_es": "[Dirigido] Venmo: Gastar $40+ con tarjeta de débito, obtener $40 de vuelta",
-      "summary_es": "Venmo ofrece a los usuarios objetivo la devolución de $40 al gastar $40 o más con su tarjeta de débito."
+      "title_zh": "[目標優惠] Venmo：使用金融卡消費 $40+ 可獲得 $40 回饋",
+      "summary_zh": "Venmo 針對特定用戶推出使用金融卡消費滿 $40 即返 $40 的優惠。",
+      "title_es": "[Dirigido] Venmo: Gastar $40+ Con Tarjeta de Débito, Obtener $40 de Vuelta",
+      "summary_es": "Venmo ofrece $40 de regreso a usuarios específicos que gasten $40 o más con su tarjeta de débito."
     },
     {
       "title": "ShopRite: Spend $100+ On Pet Products & Get $50 Instant Discount (5/3 – 5/9)",
@@ -60,10 +60,10 @@
       "ts": "2026-05-02T22:01:42.000Z",
       "title_en": "ShopRite: Spend $100+ On Pet Products & Get $50 Instant Discount (5/3 – 5/9)",
       "summary_en": "",
-      "title_zh": "ShopRite：寵物產品消費滿$100，即可獲得$50即時折扣（5/3 – 5/9）",
-      "summary_zh": "ShopRite在5月3日至9日期間，寵物產品消費滿$100可享$50即時折扣。",
-      "title_es": "ShopRite: Gastar $100+ en productos para mascotas y obtener $50 de descuento instantáneo (5/3 – 5/9)",
-      "summary_es": "ShopRite ofrece un descuento instantáneo de $50 en la compra de productos para mascotas por valor de $100 o más, válido del 3 al 9 de mayo."
+      "title_zh": "ShopRite：寵物用品消費滿 $100 可享 $50 即時折扣（5/3 – 5/9）",
+      "summary_zh": "ShopRite 在 5/3 至 5/9 期間，寵物用品消費滿 $100 可即時節省 $50。",
+      "title_es": "ShopRite: Gastar $100+ En Productos Para Mascotas Y Obtener $50 de Descuento Instantáneo (5/3 – 5/9)",
+      "summary_es": "ShopRite ofrece un descuento instantáneo de $50 en compras de $100 o más en productos para mascotas."
     },
     {
       "title": "Atom Tickets: Two Free Tickets To Neglected With Promo Code NEGLECTEDATOM",
@@ -77,10 +77,10 @@
       "ts": "2026-05-02T21:31:04.000Z",
       "title_en": "Atom Tickets: Two Free Tickets To Neglected With Promo Code NEGLECTEDATOM",
       "summary_en": "",
-      "title_zh": "Atom Tickets：使用促銷碼NEGLECTEDATOM，可獲得兩張免費電影票觀看《Neglected》",
-      "summary_zh": "Atom Tickets提供電影《Neglected》兩張免費票，只需輸入指定促銷碼即可兌換。",
-      "title_es": "Atom Tickets: Dos entradas gratuitas para 'Neglected' con el código promocional NEGLECTEDATOM",
-      "summary_es": "Atom Tickets concede dos boletos gratuitos para la película 'Neglected' a quienes usen el código promocional NEGLECTEDATOM."
+      "title_zh": "Atom Tickets：使用促銷碼 NEGLECTEDATOM 可獲得兩張免費電影票",
+      "summary_zh": "Atom Tickets 提供促銷碼讓用戶獲得電影《Neglected》的兩張免費票。",
+      "title_es": "Atom Tickets: Dos Boletos Gratis a Neglected Con Código Promocional NEGLECTEDATOM",
+      "summary_es": "Atom Tickets ofrece dos boletos gratuitos para la película Neglected usando el código NEGLECTEDATOM."
     },
     {
       "title": "Gold Days Of GrubHub: $50 Off $100+ Instacart Grocery Orders Every Sat & Sun (5/1 – 5/31)",
@@ -95,10 +95,10 @@
       "ts": "2026-05-02T21:23:46.000Z",
       "title_en": "Gold Days Of GrubHub: $50 Off $100+ Instacart Grocery Orders Every Sat & Sun (5/1 – 5/31)",
       "summary_en": "",
-      "title_zh": "GrubHub黃金日：每週六日，Instacart雜貨訂單滿$100可享$50折扣（5/1 – 5/31）",
-      "summary_zh": "GrubHub在5月期間的每週六日，Instacart雜貨訂單滿$100可享$50折扣優惠。",
-      "title_es": "Días Dorados de GrubHub: $50 de descuento en pedidos de groceries Instacart de $100+ cada sábado y domingo (1/5 – 31/5)",
-      "summary_es": "GrubHub ofrece $50 de descuento en pedidos de comestibles de Instacart de $100 o más todos los sábados y domingos durante mayo."
+      "title_zh": "GrubHub 黃金日：Instacart 雜貨訂單滿 $100 享 $50 折扣（每週六日，5/1 – 5/31）",
+      "summary_zh": "GrubHub 在 5 月每週六日提供 Instacart 雜貨訂單滿 $100 減 $50 的優惠。",
+      "title_es": "Días Dorados de GrubHub: $50 de Descuento en Pedidos de $100+ de Instacart Cada Sáb y Dom (5/1 – 5/31)",
+      "summary_es": "GrubHub ofrece $50 de descuento en pedidos de Instacart de $100 o más todos los sábados y domingos durante mayo."
     },
     {
       "title": "Spirit Airlines What To Do Next: Rescue Fares, Chargebacks, Points, Credit Cards & More",
@@ -112,10 +112,10 @@
       "ts": "2026-05-02T21:18:30.000Z",
       "title_en": "Spirit Airlines What To Do Next: Rescue Fares, Chargebacks, Points, Credit Cards & More",
       "summary_en": "",
-      "title_zh": "Spirit Airlines後續處理指南：救援票價、扣款退款、里程積分、信用卡及更多",
-      "summary_zh": "針對Spirit Airlines旅客提供詳細的後續處理建議，包括救援票價、扣款退款、里程積分和信用卡選項。",
-      "title_es": "Spirit Airlines: Qué hacer ahora: tarifas de rescate, contracargos, puntos, tarjetas de crédito y más",
-      "summary_es": "Spirit Airlines proporciona orientación sobre cómo manejar tarifas de rescate, contracargos y más tras la cancelación de vuelos."
+      "title_zh": "精神航空後續處理：救援票價、退款、積分、信用卡等相關指南",
+      "summary_zh": "Spirit Airlines 整理了航班取消後的救援票價、退款、積分和信用卡處理方式指南。",
+      "title_es": "Spirit Airlines Qué Hacer Después: Tarifas de Rescate, Contracargos, Puntos, Tarjetas de Crédito Y Más",
+      "summary_es": "Guía completa sobre qué hacer con tus reservaciones, puntos y tarjetas de crédito de Spirit Airlines después del cierre."
     },
     {
       "title": "[PA, In Branch only] Propell Credit Union $250 Checking Bonus",
@@ -129,10 +129,10 @@
       "ts": "2026-05-02T18:00:09.000Z",
       "title_en": "[PA, In Branch only] Propell Credit Union $250 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[PA，僅限分行臨櫃] Propell Credit Union $250支票帳戶獎金",
-      "summary_zh": "Propell Credit Union在賓夕法尼亞州提供$250支票帳戶獎金，需親臨分行辦理。",
-      "title_es": "[PA, Solo en sucursal] Propell Credit Union: Bono de $250 por cuenta corriente",
-      "summary_es": "Propell Credit Union ofrece un bono de $250 por abrir una cuenta corriente en sus sucursales en Pensilvania."
+      "title_zh": "[PA，僅限分行] Propell Credit Union $250 活期帳戶獎金",
+      "summary_zh": "Propell Credit Union 在賓州分行提供新客戶 $250 活期帳戶開戶獎金。",
+      "title_es": "[PA, Solo en Sucursal] Unión de Crédito Propell Bono de $250 por Cuenta Corriente",
+      "summary_es": "Propell Credit Union ofrece un bono de $250 por abrir una cuenta corriente en sucursal en Pennsylvania."
     },
     {
       "title": "[TX, San Antonio Only] Bank of Texas $400/$850 Checking Bonus",
@@ -147,10 +147,10 @@
       "ts": "2026-05-02T17:00:43.000Z",
       "title_en": "[TX, San Antonio Only] Bank of Texas $400/$850 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[TX，僅限聖安東尼奧] Bank of Texas $400/$850支票帳戶獎金",
-      "summary_zh": "Bank of Texas在德州聖安東尼奧提供$400至$850不等的支票帳戶開戶獎金。",
-      "title_es": "[TX, Solo San Antonio] Bank of Texas: Bono de $400/$850 por cuenta corriente",
-      "summary_es": "Bank of Texas otorga un bono de hasta $850 por abrir una cuenta corriente en su filial de San Antonio, Texas."
+      "title_zh": "[TX，聖安東尼奧限定] Bank of Texas $400/$850 活期帳戶獎金",
+      "summary_zh": "Bank of Texas 在聖安東尼奧提供不同存款要求的活期帳戶獎金，最高可達 $850。",
+      "title_es": "[TX, Solo San Antonio] Bank of Texas Bono de $400/$850 por Cuenta Corriente",
+      "summary_es": "Bank of Texas ofrece bonos de $400 a $850 por abrir cuentas corrientes en su ubicación de San Antonio."
     },
     {
       "title": "[GA, NC, SC, VA, FL, AL, TX, CO, TN] South State Bank $600 Business Checking Bonus",
@@ -174,10 +174,10 @@
       "ts": "2026-05-02T16:00:42.000Z",
       "title_en": "[GA, NC, SC, VA, FL, AL, TX, CO, TN] South State Bank $600 Business Checking Bonus",
       "summary_en": "",
-      "title_zh": "[GA, NC, SC, VA, FL, AL, TX, CO, TN] South State Bank $600商業支票帳戶獎金",
-      "summary_zh": "South State Bank在多個州提供$600商業支票帳戶開戶獎金。",
-      "title_es": "[GA, NC, SC, VA, FL, AL, TX, CO, TN] South State Bank: Bono de $600 por cuenta empresarial",
-      "summary_es": "South State Bank ofrece un bono de $600 a negocios que abran una cuenta empresarial en algunas de sus sucursales en estados selectos."
+      "title_zh": "[GA, NC, SC, VA, FL, AL, TX, CO, TN] South State Bank $600 商業活期帳戶獎金",
+      "summary_zh": "South State Bank 在多個州提供新商業客戶 $600 活期帳戶開戶獎金。",
+      "title_es": "[GA, NC, SC, VA, FL, AL, TX, CO, TN] South State Bank Bono de $600 por Cuenta Corriente Empresarial",
+      "summary_es": "South State Bank ofrece un bono de $600 para cuentas empresariales en múltiples estados del sur y texas."
     },
     {
       "title": "[Ada County or Canyon County, ID] Tech CU $500 Checking Bonus",
@@ -193,10 +193,10 @@
       "ts": "2026-05-02T15:00:42.000Z",
       "title_en": "[Ada County or Canyon County, ID] Tech CU $500 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[愛達荷州Ada County或Canyon County] Tech CU $500支票帳戶獎金",
-      "summary_zh": "Tech CU在愛達荷州的Ada County和Canyon County提供$500支票帳戶獎金。",
-      "title_es": "[Condados Ada o Canyon, ID] Tech CU: Bono de $500 por cuenta corriente",
-      "summary_es": "Tech CU ofrece un bono de $500 por abrir una cuenta corriente en los condados de Ada o Canyon, Idaho."
+      "title_zh": "[愛達荷州 Ada County 或 Canyon County] Tech CU $500 活期帳戶獎金",
+      "summary_zh": "Tech CU 在愛達荷州特定縣提供新客戶 $500 活期帳戶開戶獎金。",
+      "title_es": "[Condado de Ada o Condado de Canyon, ID] Tech CU Bono de $500 por Cuenta Corriente",
+      "summary_es": "Tech CU ofrece un bono de $500 por abrir una cuenta corriente en condados específicos de Idaho."
     },
     {
       "title": "7-Eleven 7NOW App Promo Codes: $10 off $20 With Promo Code SPRING10",
@@ -209,10 +209,10 @@
       "ts": "2026-05-02T11:20:41.000Z",
       "title_en": "7-Eleven 7NOW App Promo Codes: $10 off $20 With Promo Code SPRING10",
       "summary_en": "",
-      "title_zh": "7-Eleven 7NOW App促銷碼：消費滿$20可享$10折扣，促銷碼SPRING10",
-      "summary_zh": "7-Eleven 7NOW App推出優惠，輸入促銷碼SPRING10消費滿$20可減$10。",
-      "title_es": "7-Eleven 7NOW App Códigos promocionales: $10 de descuento en $20 con el código SPRING10",
-      "summary_es": "7-Eleven ofrece un descuento de $10 en compras de al menos $20 al usar el código promocional SPRING10 en la app 7NOW."
+      "title_zh": "7-Eleven 7NOW App 優惠碼：使用 SPRING10 享 $20 減 $10",
+      "summary_zh": "7-Eleven 7NOW App 提供新優惠碼，消費滿 $20 可減 $10。",
+      "title_es": "7-Eleven 7NOW App Códigos Promocionales: $10 de Descuento en $20 Con Código Promocional SPRING10",
+      "summary_es": "7-Eleven ofrece $10 de descuento en compras de $20 o más a través de la app 7NOW con el código SPRING10."
     },
     {
       "title": "Spirit Airlines Shuts Down, All Flights Cancelled",
@@ -225,10 +225,10 @@
       "ts": "2026-05-02T11:11:59.000Z",
       "title_en": "Spirit Airlines Shuts Down, All Flights Cancelled",
       "summary_en": "",
-      "title_zh": "Spirit Airlines倒閉，所有航班取消",
-      "summary_zh": "Spirit Airlines宣布倒閉，所有航班已被取消，旅客需尋求替代方案。",
-      "title_es": "Spirit Airlines cierra, todos los vuelos cancelados",
-      "summary_es": "Spirit Airlines ha anunciado su cierre definitivo, cancelando todos sus vuelos."
+      "title_zh": "精神航空停業，所有航班取消",
+      "summary_zh": "Spirit Airlines 宣布停業，所有航班已被取消。",
+      "title_es": "Spirit Airlines Cierra, Todos los Vuelos Cancelados",
+      "summary_es": "Spirit Airlines ha cerrado operaciones y todos los vuelos han sido cancelados."
     },
     {
       "title": "T-Mobile Money Review – Earn 4% APY On Balances Up To $3,000 [New Negative Changes From June 1]",
@@ -240,10 +240,10 @@
       "ts": "2026-05-01T22:40:53.000Z",
       "title_en": "T-Mobile Money Review – Earn 4% APY On Balances Up To $3,000 [New Negative Changes From June 1]",
       "summary_en": "",
-      "title_zh": "T-Mobile Money評測 – 存款最高$3,000可享4%年利率 [6月1日起有新負面變動]",
-      "summary_zh": "T-Mobile Money帳戶最高可享4%年利率，但自6月1日起有新的負面變動需要留意。",
-      "title_es": "Revisión de T-Mobile Money: Gana un 4% APY en saldos hasta $3,000 [Nuevos cambios negativos desde el 1 de junio]",
-      "summary_es": "T-Mobile Money ofrece ahora un 4% de rendimiento en saldos de hasta $3,000, pero a partir del 1 de junio habrá cambios negativos."
+      "title_zh": "T-Mobile Money 評測 – 餘額最高 $3,000 可獲 4% 年利率 [6月1日起新規定]",
+      "summary_zh": "T-Mobile Money 提供高達 4% 年利率但將於 6 月 1 日起實施新的負面調整。",
+      "title_es": "Revisión de T-Mobile Money – Gana 4% APY En Saldos Hasta $3,000 [Nuevos Cambios Negativos Desde el 1 de Junio]",
+      "summary_es": "T-Mobile Money reduce su tasa APY a 4% en saldos hasta $3,000, con cambios negativos a partir del 1 de junio."
     },
     {
       "title": "7-Eleven/Speedway: $0.5 Off Per Gallon On 7th & 11th Each Month Through 7/11/26",
@@ -258,11 +258,11 @@
       "ts": "2026-05-01T21:26:49.000Z",
       "title_en": "7-Eleven/Speedway: $0.5 Off Per Gallon On 7th & 11th Each Month Through 7/11/26",
       "summary_en": "",
-      "title_zh": "7-Eleven/Speedway：每月7日及11日每加侖汽油減$0.5，有效期至2026年7月11日",
-      "summary_zh": "7-Eleven和Speedway在每月的7日和11日提供每加侖$0.5的汽油折扣，有效期至2026年7月11日。",
-      "title_es": "7-Eleven/Speedway: $0.5 de descuento por galón el 7 y 11 de cada mes hasta el 11/07/26",
-      "summary_es": "7-Eleven y Speedway ofrecen un descuento de $0.50 por galón en combustible los días 7 y 11 de cada mes hasta el 11 de julio de 2026."
+      "title_zh": "7-Eleven/Speedway：每月7日和11日每加侖減 $0.5 至 2026/7/11",
+      "summary_zh": "7-Eleven 和 Speedway 在每月 7 日和 11 日提供每加侖 $0.5 的燃油折扣，有效期至 2026 年。",
+      "title_es": "7-Eleven/Speedway: $0.5 de Descuento Por Galón Los Días 7 Y 11 Cada Mes Hasta el 11/7/26",
+      "summary_es": "7-Eleven y Speedway ofrecen $0.50 de descuento por galón los días 7 y 11 de cada mes hasta julio de 2026."
     }
   ],
-  "fetched": "2026-05-03T08:05:23.165Z"
+  "fetched": "2026-05-03T08:13:08.961Z"
 }
