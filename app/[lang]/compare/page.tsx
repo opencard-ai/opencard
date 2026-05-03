@@ -30,6 +30,11 @@ export default async function ComparePage({ params, searchParams }: Props) {
       back: "← 返回卡片列表",
       noCards: "請選擇至少 2 張卡片進行比較。返回列表頁挑選卡片。",
     },
+    "zh-cn": {
+      title: "卡片比较",
+      back: "← 返回卡片列表",
+      noCards: "请选择至少 2 张卡片进行比较。返回列表页挑选卡片。",
+    },
     es: {
       title: "Comparar Tarjetas",
       back: "← Volver a Tarjetas",

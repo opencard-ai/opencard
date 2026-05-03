@@ -35,6 +35,17 @@ const STR = {
     months: "個月", elevated: "加碼中", normal: "平常", aboveBy: "高於標準",
     none: "沒有符合的卡片。",
   },
+  "zh-cn": {
+    title: "高额开卡奖励",
+    subtitle: "目前市场上最有价值的开卡奖励。",
+    elevatedTitle: "目前加码中",
+    elevatedSubtitle: "这些开卡奖励高于该卡的标准奖励。",
+    sortValue: "估值最高", sortPoints: "积分最多", sortLowAf: "年费最低",
+    issuerAll: "全部发卡行", filterIssuer: "发卡行:",
+    bonus: "开卡奖励", val: "估值", afShort: "年费", spend: "需消费",
+    months: "个月", elevated: "加码中", normal: "平常", aboveBy: "高于标准",
+    none: "没有符合的卡片。",
+  },
   es: {
     title: "Mejores bonos de bienvenida",
     subtitle: "Bonos de inscripción de mayor valor disponibles ahora.",

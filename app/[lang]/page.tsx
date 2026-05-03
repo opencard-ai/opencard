@@ -33,7 +33,7 @@ export default async function HomePage({ params }: Props) {
         <h1 className="text-2xl font-bold text-slate-900 mb-1">{t("home.title", lang as any)}</h1>
         <p className="text-slate-500 text-sm">{t("home.subtitle", lang as any, { count: cards.length })}</p>
         <p className="text-xs text-slate-400 mt-1">
-          {lang === "zh" ? "📌 本站僅涵蓋美國信用卡，優惠資訊以美國居民為主" : lang === "es" ? "📌 Este sitio cubre solo tarjetas de crédito de EE.UU." : "📌 This site covers US credit cards only"}
+          {lang === "zh" ? "📌 本站僅涵蓋美國信用卡，優惠資訊以美國居民為主" : lang === "zh-cn" ? "📌 本站仅涵盖美国信用卡，优惠信息以美国居民为主" : lang === "es" ? "📌 Este sitio cubre solo tarjetas de crédito de EE.UU." : "📌 This site covers US credit cards only"}
         </p>
       </div>
 
@@ -74,16 +74,16 @@ export default async function HomePage({ params }: Props) {
             <Bookmark className="w-6 h-6 text-blue-600" />
             <div>
               <div className="font-semibold text-slate-800 text-sm group-hover:text-blue-700 transition-colors">
-                {lang === "zh" ? "我的卡片" : lang === "es" ? "Mis Tarjetas" : "My Cards"}
+                {lang === "zh" ? "我的卡片" : lang === "zh-cn" ? "我的卡片" : lang === "es" ? "Mis Tarjetas" : "My Cards"}
               </div>
               <div className="text-xs text-slate-500">
-                {lang === "zh" ? "儲存並管理你的信用卡組合" : lang === "es" ? "Guarda y gestiona tu cartera de tarjetas" : "Save and manage your card portfolio"}
+                {lang === "zh" ? "儲存並管理你的信用卡組合" : lang === "zh-cn" ? "保存并管理你的信用卡组合" : lang === "es" ? "Guarda y gestiona tu cartera de tarjetas" : "Save and manage your card portfolio"}
               </div>
             </div>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs text-blue-500 font-medium group-hover:translate-x-0.5 transition-transform">
-              {lang === "zh" ? "開啟" : lang === "es" ? "Abrir" : "Open"}
+              {lang === "zh" ? "開啟" : lang === "zh-cn" ? "打开" : lang === "es" ? "Abrir" : "Open"}
             </span>
             <span className="text-blue-400 group-hover:translate-x-1 transition-transform">→</span>
           </div>

@@ -37,6 +37,17 @@ const STR = {
     relaxedCredit: "沒有符合信用條件的卡。改顯示接近條件的卡:",
     cta: "開始挑卡", subtitle: "回答 3 題,推薦 5 卡。",
   },
+  "zh-cn": {
+    step: "第", of: "/",
+    q1: "你最常花什么?", q2: "年费接受度?", q3: "信用评分?",
+    spend: { cashback: "现金回馈 / 日常", travel: "旅行 & 机票", dining: "餐厅", business: "商务消费", lounge: "机场贵宾厅" } as Record<SpendKey, string>,
+    fee: { free: "只要免年费", low: "$99 以内", mid: "$300 以内", high: "$300+" } as Record<FeeKey, string>,
+    cred: { excellent: "优 (760+)", good: "良 (700–759)", fair: "尚可 (640–699)", building: "重建 / 新户" } as Record<CreditKey, string>,
+    back: "上一题", restart: "重来", title: "为你推荐", noResults: "找不到符合的卡片 — 试试放宽条件。",
+    relaxedFee: "没有符合年费上限的卡。改显示接近条件的卡:",
+    relaxedCredit: "没有符合信用条件的卡。改显示接近条件的卡:",
+    cta: "开始挑卡", subtitle: "回答 3 题，推荐 5 张卡。",
+  },
   es: {
     step: "Paso", of: "de",
     q1: "¿En qué gastas más?", q2: "¿Tolerancia de cuota anual?", q3: "¿Perfil crediticio?",

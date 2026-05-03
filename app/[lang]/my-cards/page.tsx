@@ -110,6 +110,54 @@ const MESSAGES = {
     toastSyncFailed: "同步失敗,請再試",
     toastSubscribeOk: "✓ 確認信已寄出",
   },
+  "zh-cn": {
+    title: "我的卡片",
+    subtitle: "个人信用卡福利管理中心",
+    emailSection: "每月收取福利到期提醒",
+    emailHint: "留下 email，我们会在福利即将到期时提醒你。",
+    emailPlaceholder: "your@email.com",
+    subscribe: "订阅提醒",
+    subscribed: "已订阅",
+    marketingLabel: "我同意接收个性化福利提醒（绝不打扰）",
+    noCards: "还没有添加任何卡片",
+    addCards: "浏览所有卡片",
+    benefits: "福利与回馈",
+    noBenefits: "暂无定期福利记录",
+    reportError: "反馈错误",
+    setOpenDate: "设置日期",
+    errorSent: "已反馈！",
+    thisMonth: "本期可用",
+    upcoming: "年度型",
+    expiresSoon: "即将到期",
+    annualFeeReminder: "年费即将到期",
+    noSubscriptions: "还没有设置福利提醒",
+    footer: "数据准确性是我们的生命线。帮助我们改进。",
+    perMonth: "/月",
+    perQuarter: "/季",
+    perYear: "/年",
+    perHalfYear: "/半年",
+    noEmail: "请在上方输入 email 开始使用",
+    loading: "加载中...",
+    creditsRemaining: "剩余",
+    creditsUsed: "已使用",
+    viewAll: "查看详情 →",
+    markUsed: "标记已用",
+    undoUse: "撤销",
+    usedLabel: "已使用",
+    remainingThisPeriod: "本期剩余",
+    fnaMarkRedeemed: "标记已兑换",
+    fnaRedeemedLabel: "已兑换",
+    setOpenDateLabel: "📅 设置开卡日期",
+    editLabel: "修改",
+    openedLabel: "开卡",
+    savedToast: "已保存",
+    saveErrorPrefix: "错误：",
+    saveNetworkError: "网络错误",
+    toastMarkedUsed: "✓ 已记录使用",
+    toastUndone: "↩ 已撤销",
+    toastSyncFailed: "同步失败，请重试",
+    toastSubscribeOk: "✓ 确认邮件已发送",
+  },
   es: {
     title: "Mis Tarjetas",
     subtitle: "Tu gestor personal de beneficios",
@@ -261,7 +309,7 @@ export default function MyCardsPage({
 }: {
   params: Promise<{ lang: string }>;
 }) {
-  const [lang, setLang] = useState<"en" | "zh" | "es">("en");
+  const [lang, setLang] = useState<"en" | "zh" | "zh-cn" | "es">("en");
   const [selectedCards, setSelectedCards] = useState<string[]>([]);
   const [cardsData, setCardsData] = useState<Record<string, Card>>({});
   const [email, setEmail] = useState("");
@@ -284,7 +332,7 @@ export default function MyCardsPage({
 
   useEffect(() => {
     params.then((p) => {
-      if (["en", "zh", "es"].includes(p.lang)) setLang(p.lang as "en" | "zh" | "es");
+      if (["en", "zh", "zh-cn", "es"].includes(p.lang)) setLang(p.lang as "en" | "zh" | "zh-cn" | "es");
     });
   }, [params]);
 
@@ -840,11 +888,13 @@ export default function MyCardsPage({
                                   <div className="flex items-center gap-1.5 shrink-0">
                                     {credit.is_free_night ? (
                                       <span className="inline-flex items-center">
-                                        <span className={`text-[10px] font-semibold uppercase ${fnaRedeemed ? "text-slate-400 line-through" : "text-amber-600"}`}>{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
+                                        <span className={`text-[10px] font-semibold uppercase ${fnaRedeemed ? "text-slate-400 line-through" : "text-amber-600"}`}>{lang === "zh" ? "免費住宿" : lang === "zh-cn" ? "免费住宿" : lang === "es" ? "Noche" : "FNA"}</span>
                                         <HelpHint
                                           text={
                                             lang === "zh"
                                               ? "FNA = Free Night Award(免費住宿券)。每年週年贈一張,通常有點數上限(例:Marriott 35k 以下房價可換)。"
+                                              : lang === "zh-cn"
+                                              ? "FNA = Free Night Award（免费住宿券）。每年周年赠一张，通常有积分上限（例：Marriott 35k 以下房价可兑）。"
                                               : lang === "es"
                                               ? "FNA = Free Night Award. Certificado anual canjeable por una noche, con un tope en puntos (ej. Marriott hasta 35k)."
                                               : "FNA = Free Night Award. A free hotel certificate granted on each card anniversary, capped by points (e.g. Marriott rooms up to 35k)."
@@ -916,11 +966,13 @@ export default function MyCardsPage({
                                   <div className="flex items-center gap-1.5 shrink-0">
                                     {credit.is_free_night ? (
                                       <span className="inline-flex items-center">
-                                        <span className={`text-[10px] font-semibold uppercase ${fnaRedeemed ? "text-slate-400 line-through" : "text-amber-600"}`}>{lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA"}</span>
+                                        <span className={`text-[10px] font-semibold uppercase ${fnaRedeemed ? "text-slate-400 line-through" : "text-amber-600"}`}>{lang === "zh" ? "免費住宿" : lang === "zh-cn" ? "免费住宿" : lang === "es" ? "Noche" : "FNA"}</span>
                                         <HelpHint
                                           text={
                                             lang === "zh"
                                               ? "FNA = Free Night Award(免費住宿券)。每年週年贈一張,通常有點數上限(例:Marriott 35k 以下房價可換)。"
+                                              : lang === "zh-cn"
+                                              ? "FNA = Free Night Award（免费住宿券）。每年周年赠一张，通常有积分上限（例：Marriott 35k 以下房价可兑）。"
                                               : lang === "es"
                                               ? "FNA = Free Night Award. Certificado anual canjeable por una noche, con un tope en puntos (ej. Marriott hasta 35k)."
                                               : "FNA = Free Night Award. A free hotel certificate granted on each card anniversary, capped by points (e.g. Marriott rooms up to 35k)."

@@ -130,31 +130,37 @@ const TIER_LABELS: Record<Tier, Record<string, string>> = {
   "premium": {
     en: "💎 Premium ($101+)",
     zh: "💎 高階($101+)",
+    "zh-cn": "💎 高端($101+)",
     es: "💎 Premium ($101+)",
   },
   "mid-premium": {
     en: "🌟 Mid-Premium ($90-100)",
     zh: "🌟 中階($90-100)",
+    "zh-cn": "🌟 中端($90-100)",
     es: "🌟 Intermedia ($90-100)",
   },
   "low-fee": {
     en: "🎯 Low-fee ($1-$89)",
     zh: "🎯 入門($1-$89)",
+    "zh-cn": "🎯 入门($1-$89)",
     es: "🎯 Cuota baja ($1-$89)",
   },
   "no-fee": {
     en: "✓ No Annual Fee",
     zh: "✓ 免年費",
+    "zh-cn": "✓ 免年费",
     es: "✓ Sin cuota anual",
   },
   "business": {
     en: "🏢 Business",
     zh: "🏢 商務",
+    "zh-cn": "🏢 商务",
     es: "🏢 Negocios",
   },
   "secured-student": {
     en: "🎓 Student & Secured",
     zh: "🎓 學生 & 擔保卡",
+    "zh-cn": "🎓 学生 & 担保卡",
     es: "🎓 Estudiantes & Aseguradas",
   },
 };
@@ -162,28 +168,28 @@ const TIER_LABELS: Record<Tier, Record<string, string>> = {
 const DEFAULT_PER_TIER = 6;
 
 const LABELS: Record<string, Record<string, string>> = {
-  searchPlaceholder: { en: "Search cards...", zh: "搜尋卡片名稱...", es: "Buscar tarjetas..." },
-  allIssuers: { en: "All Issuers", zh: "所有發卡機構", es: "Todos los Emisores" },
-  allTags: { en: "All Types", zh: "所有類型", es: "Todos los Tipos" },
-  clear: { en: "Clear", zh: "清除", es: "Limpiar" },
-  annualFee: { en: "Annual Fee", zh: "年費", es: "Cuota Anual" },
-  noFee: { en: "No Annual Fee", zh: "免年費", es: "Sin Cuota Anual" },
-  allAf: { en: "All Fees", zh: "所有年費", es: "Todas las Cuotas" },
-  afUnder95: { en: "Under $95", zh: "低於 $95", es: "Menos de $95" },
-  afOver95: { en: "$95+", zh: "$95 以上", es: "$95+" },
-  noResults: { en: "No cards match your criteria", zh: "找不到符合條件的卡片", es: "No hay tarjetas que coincidan" },
-  tryAdjust: { en: "Try adjusting your filters", zh: "試著調整篩選條件", es: "Intenta ajustar tus filtros" },
-  showing: { en: "Showing", zh: "顯示", es: "Mostrando" },
-  of: { en: "of", zh: "/", es: "de" },
-  cards: { en: "cards", zh: "張卡片", es: "tarjetas" },
-  showAllInTier: { en: "Show all", zh: "展開全部", es: "Ver todas" },
-  showLessInTier: { en: "Show less", zh: "收合", es: "Ver menos" },
-  cardsCount: { en: "cards", zh: "張", es: "tarjetas" },
-  sortBy: { en: "Sort", zh: "排序", es: "Ordenar" },
-  sortName: { en: "Sort: A → Z", zh: "排序:卡名 A→Z", es: "Orden: A → Z" },
-  sortFeeAsc: { en: "Sort: Fee Low → High", zh: "排序:年費 低→高", es: "Orden: Cuota ↓" },
-  sortFeeDesc: { en: "Sort: Fee High → Low", zh: "排序:年費 高→低", es: "Orden: Cuota ↑" },
-  sortBonus: { en: "Sort: Welcome bonus highest", zh: "排序:開卡禮最高", es: "Orden: Bono ↑" },
+  searchPlaceholder: { en: "Search cards...", zh: "搜尋卡片名稱...", "zh-cn": "搜索卡片名称...", es: "Buscar tarjetas..." },
+  allIssuers: { en: "All Issuers", zh: "所有發卡機構", "zh-cn": "所有发卡机构", es: "Todos los Emisores" },
+  allTags: { en: "All Types", zh: "所有類型", "zh-cn": "所有类型", es: "Todos los Tipos" },
+  clear: { en: "Clear", zh: "清除", "zh-cn": "清除", es: "Limpiar" },
+  annualFee: { en: "Annual Fee", zh: "年費", "zh-cn": "年费", es: "Cuota Anual" },
+  noFee: { en: "No Annual Fee", zh: "免年費", "zh-cn": "免年费", es: "Sin Cuota Anual" },
+  allAf: { en: "All Fees", zh: "所有年費", "zh-cn": "所有年费", es: "Todas las Cuotas" },
+  afUnder95: { en: "Under $95", zh: "低於 $95", "zh-cn": "低于 $95", es: "Menos de $95" },
+  afOver95: { en: "$95+", zh: "$95 以上", "zh-cn": "$95 以上", es: "$95+" },
+  noResults: { en: "No cards match your criteria", zh: "找不到符合條件的卡片", "zh-cn": "找不到符合条件的卡片", es: "No hay tarjetas que coincidan" },
+  tryAdjust: { en: "Try adjusting your filters", zh: "試著調整篩選條件", "zh-cn": "试着调整筛选条件", es: "Intenta ajustar tus filtros" },
+  showing: { en: "Showing", zh: "顯示", "zh-cn": "显示", es: "Mostrando" },
+  of: { en: "of", zh: "/", "zh-cn": "/", es: "de" },
+  cards: { en: "cards", zh: "張卡片", "zh-cn": "张卡片", es: "tarjetas" },
+  showAllInTier: { en: "Show all", zh: "展開全部", "zh-cn": "展开全部", es: "Ver todas" },
+  showLessInTier: { en: "Show less", zh: "收合", "zh-cn": "收起", es: "Ver menos" },
+  cardsCount: { en: "cards", zh: "張", "zh-cn": "张", es: "tarjetas" },
+  sortBy: { en: "Sort", zh: "排序", "zh-cn": "排序", es: "Ordenar" },
+  sortName: { en: "Sort: A → Z", zh: "排序:卡名 A→Z", "zh-cn": "排序：卡名 A→Z", es: "Orden: A → Z" },
+  sortFeeAsc: { en: "Sort: Fee Low → High", zh: "排序:年費 低→高", "zh-cn": "排序：年费 低→高", es: "Orden: Cuota ↓" },
+  sortFeeDesc: { en: "Sort: Fee High → Low", zh: "排序:年費 高→低", "zh-cn": "排序：年费 高→低", es: "Orden: Cuota ↑" },
+  sortBonus: { en: "Sort: Welcome bonus highest", zh: "排序:開卡禮最高", "zh-cn": "排序：开卡奖励最高", es: "Orden: Bono ↑" },
 };
 
 function l(key: string, locale: string): string {
@@ -390,11 +396,11 @@ function CardList({ cards, tags, locale, selectedSort }: { cards: CreditCard[]; 
       <div className="flex flex-wrap items-center gap-4 mb-3 text-xs text-slate-500">
         <div className="flex items-center gap-1.5">
           <span className="w-5 h-5 rounded-full border border-slate-300 bg-white flex items-center justify-center text-slate-500"><Scale className="w-3 h-3" /></span>
-          <span>{locale === "zh" ? "加入比價（最多3張）" : locale === "es" ? "Comparar (máx 3)" : "Compare (up to 3 cards)"}</span>
+          <span>{locale === "zh" ? "加入比價（最多3張）" : locale === "zh-cn" ? "加入比较（最多3张）" : locale === "es" ? "Comparar (máx 3)" : "Compare (up to 3 cards)"}</span>
         </div>
         <div className="flex items-center gap-1.5">
           <span className="w-5 h-5 rounded-full border border-slate-300 bg-white flex items-center justify-center text-slate-500"><Bookmark className="w-3 h-3" /></span>
-          <span>{locale === "zh" ? "儲存到我的卡片" : locale === "es" ? "Guardar en Mis Tarjetas" : "Save to My Cards"}</span>
+          <span>{locale === "zh" ? "儲存到我的卡片" : locale === "zh-cn" ? "保存到我的卡片" : locale === "es" ? "Guardar en Mis Tarjetas" : "Save to My Cards"}</span>
         </div>
       </div>
 

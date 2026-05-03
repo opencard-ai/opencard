@@ -33,6 +33,16 @@ const MESSAGES = {
     alreadyHave: "⚠️ 你已有這張卡",
     options: ["💰 現金回饋", "✈️ 旅遊獎勵", "🏅 點數/里程", "💎 多種類型"],
   },
+  "zh-cn": {
+    title: "AI 卡片推荐",
+    trigger: "卡片推荐",
+    placeholder: "输入你的答案...",
+    send: "发送",
+    thinking: "思考中...",
+    intro: "嗨！我是你的 AI 卡片推荐师。我会帮你找到最适合的美国信用卡。\n\n你想要什么类型的回馈？",
+    alreadyHave: "⚠️ 你已有这张卡",
+    options: ["💰 现金回馈", "✈️ 旅行奖励", "🏅 积分/里程", "💎 多种类型"],
+  },
   es: {
     title: "Buscador AI de Tarjetas",
     trigger: "Buscador AI",

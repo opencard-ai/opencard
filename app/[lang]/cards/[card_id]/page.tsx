@@ -248,7 +248,7 @@ export default async function CardDetailPage({ params }: Props) {
                           className="flex items-start gap-3 py-2 border-b border-slate-100 last:border-0"
                         >
                           <span className={credit.is_free_night ? "text-amber-600 font-bold text-[10px] shrink-0 w-12 text-right uppercase" : "text-emerald-600 font-bold text-sm shrink-0 w-12 text-right"}>
-                            {credit.is_free_night ? (lang === "zh" ? "免費住宿" : lang === "es" ? "Noche" : "FNA") : (credit.amount && credit.amount > 0 ? `$${credit.amount}` : '')}
+                            {credit.is_free_night ? (lang === "zh" ? "免費住宿" : lang === "zh-cn" ? "免费住宿" : lang === "es" ? "Noche" : "FNA") : (credit.amount && credit.amount > 0 ? `$${credit.amount}` : '')}
                           </span>
                     <div>
                       <span className="text-slate-800 font-medium text-sm">

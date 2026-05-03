@@ -47,6 +47,13 @@ export default function TravelProducts({ lang }: Props) {
       adapters: "旅行轉接頭",
       essentials: "其他配件",
     },
+    "zh-cn": {
+      title: "旅行必备配件",
+      subtitle: "常旅客最爱的旅行用品",
+      pillows: "颈枕",
+      adapters: "旅行转换头",
+      essentials: "其他配件",
+    },
     es: {
       title: "Accesorios de Viaje",
       subtitle: "Equipo favorito de los viajeros frecuentes",
@@ -118,7 +125,7 @@ export default function TravelProducts({ lang }: Props) {
       {adapters.length > 0 && (
         <div className="mb-5">
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">
-            {lang === "zh" ? "轉接頭" : lang === "es" ? "Adaptadores" : "Travel Adapters"}
+            {lang === "zh" ? "轉接頭" : lang === "zh-cn" ? "转换头" : lang === "es" ? "Adaptadores" : "Travel Adapters"}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {adapters.slice(0, 3).map((product) => {
@@ -163,7 +170,7 @@ export default function TravelProducts({ lang }: Props) {
       {accessories.length > 0 && (
         <div>
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">
-            {lang === "zh" ? "配件" : lang === "es" ? "Accesorios" : "Accessories"}
+            {lang === "zh" ? "配件" : lang === "zh-cn" ? "配件" : lang === "es" ? "Accesorios" : "Accessories"}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {accessories.slice(0, 2).map((product) => {
@@ -208,6 +215,8 @@ export default function TravelProducts({ lang }: Props) {
         <p className="text-xs text-slate-400">
           {lang === "zh"
             ? "使用我們的連結購買，我們會獲得一小筆佣金支持網站營運。"
+            : lang === "zh-cn"
+            ? "使用我们的链接购买，我们会获得一小笔佣金支持网站运营。"
             : lang === "es"
             ? "Si compras usando nuestro enlace, recibimos una pequeña comisión."
             : "We earn a small commission when you buy through our links."}

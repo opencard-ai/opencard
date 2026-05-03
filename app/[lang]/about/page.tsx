@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 
 export default async function AboutPage({ params }: Props) {
   const { lang } = await params;
-  const locale = lang as "en" | "zh" | "es";
+  const locale = lang as "en" | "zh" | "zh-cn" | "es";
 
   const content = {
     en: {
@@ -31,6 +31,13 @@ export default async function AboutPage({ params }: Props) {
       mission: "在 OpenCard AI，我們相信每個人都能透過更聰明的財務選擇來提升生活品質。我們不只提供信用卡推薦，更為您整理全球旅遊特權、購物獎勵以及隱藏的生活福利。",
       story: "成立於 2024 年，OpenCard AI 旨在解決美國信用卡與獎勵機制過於複雜的問題。透過 AI 驅動的平台，我們分析數百種優惠，確保您不會錯過任何開卡禮或隱藏福利。",
       focus: ["信用卡權益最大化", "飯店與航空高級會籍", "日常購物返現", "財務自由規劃"],
+    },
+    "zh-cn": {
+      title: "关于 OpenCard AI",
+      subtitle: "智能解锁生活福利的入口",
+      mission: "在 OpenCard AI，我们相信每个人都能通过更聪明的财务选择来提升生活品质。我们不只提供信用卡推荐，更为您整理全球旅行特权、购物奖励以及隐藏的生活福利。",
+      story: "成立于 2024 年，OpenCard AI 旨在解决美国信用卡与奖励机制过于复杂的问题。通过 AI 驱动的平台，我们分析数百种优惠，确保您不会错过任何开卡奖励或隐藏福利。",
+      focus: ["信用卡权益最大化", "酒店与航空高级会籍", "日常购物返现", "财务自由规划"],
     },
     es: {
       title: "Sobre OpenCard AI",

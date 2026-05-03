@@ -51,7 +51,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: canonicalUrl,
       languages: {
         en: `${baseUrl}/en`,
-        zh: `${baseUrl}/zh`,
+        "zh-Hant": `${baseUrl}/zh`,
+        "zh-Hans": `${baseUrl}/zh-cn`,
         es: `${baseUrl}/es`,
         "x-default": defaultUrl,
       },
@@ -126,19 +127,19 @@ function FTCDisclosure({ locale }: { locale: any }) {
       <p>{t("ftc.text", locale)}</p>
       <div className="flex flex-wrap gap-x-4 gap-y-1 pt-1">
         <a href={`/${locale}/find`} className="hover:text-blue-600 transition-colors">
-          {locale === "zh" ? "挑卡精靈" : locale === "es" ? "Buscar tarjeta" : "Find your card"}
+          {locale === "zh" ? "挑卡精靈" : locale === "zh-cn" ? "挑卡精灵" : locale === "es" ? "Buscar tarjeta" : "Find your card"}
         </a>
         <span>·</span>
         <a href={`/${locale}/elevated-offers`} className="hover:text-blue-600 transition-colors">
-          {locale === "zh" ? "高額開卡禮" : locale === "es" ? "Mejores bonos" : "Top welcome offers"}
+          {locale === "zh" ? "高額開卡禮" : locale === "zh-cn" ? "高额开卡奖励" : locale === "es" ? "Mejores bonos" : "Top welcome offers"}
         </a>
         <span>·</span>
         <a href={`/${locale}/privacy`} className="hover:text-blue-600 transition-colors">
-          {locale === "zh" ? "隱私權政策" : locale === "es" ? "Política de Privacidad" : "Privacy Policy"}
+          {locale === "zh" ? "隱私權政策" : locale === "zh-cn" ? "隐私政策" : locale === "es" ? "Política de Privacidad" : "Privacy Policy"}
         </a>
         <span>·</span>
         <a href={`/${locale}/terms`} className="hover:text-blue-600 transition-colors">
-          {locale === "zh" ? "服務條款" : locale === "es" ? "Términos de Servicio" : "Terms of Service"}
+          {locale === "zh" ? "服務條款" : locale === "zh-cn" ? "服务条款" : locale === "es" ? "Términos de Servicio" : "Terms of Service"}
         </a>
       </div>
     </div>

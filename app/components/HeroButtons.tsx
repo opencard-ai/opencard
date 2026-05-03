@@ -5,6 +5,7 @@ import { t } from "@/lib/i18n";
 const WIZARD_CTA: Record<string, string> = {
   en: "Quick match",
   zh: "挑卡精靈",
+  "zh-cn": "挑卡精灵",
   es: "Match rápido",
 };
 

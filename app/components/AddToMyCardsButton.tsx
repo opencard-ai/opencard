@@ -111,10 +111,11 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
   const labels: Record<string, { add: string; added: string; saving: string; remove: string }> = {
     en: { add: 'Add to My Cards', added: 'Added', saving: '...', remove: 'Remove' },
     zh: { add: '加入我的卡片', added: '已加入', saving: '...', remove: '移除' },
+    'zh-cn': { add: '加入我的卡片', added: '已加入', saving: '...', remove: '移除' },
     es: { add: 'Agregar a Mis Tarjetas', added: 'Agregado', saving: '...', remove: 'Quitar' },
   };
 
-  const langKey = (['en', 'zh', 'es'] as const).includes(lang as any) ? lang : 'en';
+  const langKey = (['en', 'zh', 'zh-cn', 'es'] as const).includes(lang as any) ? lang : 'en';
   const label = labels[langKey];
 
   if (added) {

@@ -68,6 +68,7 @@ export default function FloatingButtons({ lang }: FloatingButtonsProps) {
   const labels = {
     en: { benefits: "Track Benefits" },
     zh: { benefits: "追蹤福利" },
+    "zh-cn": { benefits: "追踪福利" },
     es: { benefits: "Seguir Beneficios" },
   };
   const l = labels[lang as keyof typeof labels] || labels.en;

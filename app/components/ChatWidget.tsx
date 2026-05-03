@@ -31,6 +31,14 @@ const MESSAGES: Record<string, { welcome: string; placeholder: string; send: str
     thinking: "思考中...",
     disclaimer: "AI 回覆僅供參考，核卡結果由銀行決定",
   },
+  "zh-cn": {
+    label: "AI 卡片助理",
+    welcome: "嗨！欢迎来到这张卡片的 AI 助理。我可以帮你分析这张卡的优缺点、比较回馈，或回答任何相关问题。",
+    placeholder: "问我关于这张卡的问题...",
+    send: "发送",
+    thinking: "思考中...",
+    disclaimer: "AI 回复仅供参考，核卡结果由银行决定",
+  },
   es: {
     label: "Asistente AI",
     welcome: "¡Hola! Bienvenido al asistente AI de esta tarjeta. Puedo ayudarte a analizar pros y contras, comparar recompensas o responder cualquier pregunta.",

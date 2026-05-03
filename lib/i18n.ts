@@ -1,12 +1,13 @@
-// OpenCard i18n - English, Chinese, Spanish
+// OpenCard i18n - English, Traditional Chinese, Simplified Chinese, Spanish
 
-export const locales = ["en", "zh", "es"] as const;
+export const locales = ["en", "zh", "zh-cn", "es"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "en";
 
 export const localeNames: Record<Locale, string> = {
   en: "English",
-  zh: "中文",
+  zh: "繁體中文",
+  "zh-cn": "简体中文",
   es: "Español",
 };
 
@@ -352,7 +353,110 @@ const es: Record<string, string> = {
   "tag.cashback": "Cash Back",
 };
 
-const translations: Record<Locale, Record<string, string>> = { zh, en, es };
+const zhCn: Record<string, string> = {
+  "site.title": "AI 帮你选对卡",
+  "site.subtitle": "用 AI 挑选最适合的信用卡，并整合个人福利总览。",
+  "card.name": "卡片名称",
+  "card.issuer": "发卡机构",
+  "card.annualFee": "年费",
+  "card.annualFeeWaived": "免年费",
+  "card.welcomeBonus": "开卡奖励",
+  "card.earningRates": "回馈倍率",
+  "card.category": "类别",
+  "search.placeholder": "搜索卡片名称...",
+  "filter.allIssuers": "所有发卡机构",
+  "filter.allTags": "所有类型",
+  "filter.clear": "清除筛选",
+  "list.showing": "显示",
+  "list.of": "/",
+  "list.cards": "张卡片",
+  "nav.allCards": "信用卡",
+  "nav.about": "关于",
+  "home.aiFinder": "AI 智能选卡 →",
+  "home.jumpToCards": "前往卡片总览 ↓",
+  "home.heroAiCta": "✨ 开始 AI 推荐",
+  "home.heroMyCards": "我的卡片",
+  "home.heroBrowseAll": "浏览所有卡片 →",
+  "home.heroChip1": "超市现金回馈卡",
+  "home.heroChip2": "机场贵宾厅信用卡",
+  "home.heroChip3": "免年费旅游卡",
+  "home.heroChip4": "5% 现金回馈卡",
+  "detail.backToList": "返回列表",
+  "detail.quickInfo": "速览",
+  "detail.creditRequired": "信用要求",
+  "detail.network": "卡片网络",
+  "detail.foreignFee": "境外手续费",
+  "detail.none": "无",
+  "detail.noForeignFee": "免境外手续费",
+  "detail.welcomeBonus": "开卡奖励",
+  "detail.noWelcomeOffer": "无开卡奖励",
+  "detail.spendingReq": "需在 {months} 个月内消费 ${amount}",
+  "detail.estimatedValue": "约 {{value}}",
+  "detail.points": "分",
+  "detail.earningRates": "回馈倍率",
+  "detail.annualCredits": "福利与回馈",
+  "detail.travelBenefits": "旅行福利",
+  "detail.hotelStatus": "酒店会籍",
+  "detail.loungeAccess": "贵宾厅",
+  "detail.passesPerQuarter": "次/季",
+  "detail.passesPerYear": "次/年",
+  "detail.otherBenefits": "其他福利",
+  "detail.insurance": "保险保障",
+  "detail.tripCancel": "行程取消险",
+  "detail.tripDelay": "航班延误险",
+  "detail.rentalIns": "租车保险",
+  "detail.purchaseProt": "购物保障",
+  "detail.returnProt": "退货保障",
+  "detail.extendedWarranty": "延长质保",
+  "detail.applicationRules": "申请规定",
+  "detail.sources": "数据来源",
+  "detail.lastUpdated": "最后更新",
+  "detail.reportError": "反馈错误",
+  "detail.credits": "报销",
+  "detail.perMonth": "每月",
+  "detail.annual": "每年",
+  "detail.semiAnnual": "每半年",
+  "about.title": "关于 OpenCard AI",
+  "about.text": "OpenCard 是一个开源的信用卡信息平台，所有数据均来自公开信息并标明出处。我们致力于提供完整、客观的信用卡比较，帮助持卡人做出明智的选择。数据更新可能与官网有所出入，申请前请以官方公告为准。",
+  "about.mission": "我们的使命",
+  "about.story": "我们的故事",
+  "ftc.disclosure": "FTC 披露声明",
+  "ftc.text": "本网站包含赞助链接。当您通过我们的链接申请信用卡并成功核卡时，我们可能获得报酬，但这不会影响您的核卡结果或我们的编辑独立性。本网站信息仅供参考，不构成财务建议。申请任何信用卡前，请自行评估是否符合您的需求。",
+  "ai.chatTitle": "AI 卡片助理",
+  "ai.placeholder": "问我关于这张卡的问题...",
+  "ai.send": "发送",
+  "ai.thinking": "思考中...",
+  "ai.disclaimer": "AI 回复仅供参考，核卡结果由银行决定",
+  "ai.welcome": "嗨！欢迎来到 {cardName} 的 AI 助理。我可以帮你分析这张卡的优缺点、比较回馈，或回答任何相关问题。",
+  "status.loading": "加载中...",
+  "feed.title": "相关资讯",
+  "feed.subtitle": "实时信息与福利",
+  "feed.updated": "更新于",
+  "feed.all": "全部资讯",
+  "feed.cards": "信用卡",
+  "feed.banking": "银行账户",
+  "feed.deals": "优惠",
+  "feed.others": "其他",
+  "feed.noItems": "此分类暂无资讯",
+  "feed.loading": "正在加载最新资讯...",
+  "feed.refresh": "刷新",
+  "feed.showLess": "↑ 收起",
+  "feed.loadMore": "↓ 展开更多 {count} 项",
+  "home.title": "用 AI 找到最适合的卡",
+  "home.subtitle": "浏览 {count} 张来自顶级发卡机构的卡片",
+  "home.cardsAvailable": "{count} 张信用卡可选",
+  "status.noResults": "找不到符合条件的卡片",
+  "status.tryAdjust": "尝试调整筛选条件",
+  "tag.noAnnualFee": "免年费",
+  "tag.premium": " premium",
+  "tag.travel": "旅行",
+  "tag.hotel": "酒店",
+  "tag.airline": "航空",
+  "tag.points": "积分回馈",
+  "tag.cashback": "现金回馈",
+};
+
+const translations: Record<Locale, Record<string, string>> = { zh, "zh-cn": zhCn, en, es };
 
 export function t(key: string, locale: Locale = "en", params?: Record<string, string | number>): string {
   let text = translations[locale]?.[key] || translations.en[key] || key;
@@ -372,6 +476,10 @@ export function t(key: string, locale: Locale = "en", params?: Record<string, st
 export function getLocaleFromHeader(acceptLang: string | null): Locale {
   if (!acceptLang) return defaultLocale;
   const lang = acceptLang.toLowerCase();
+  // Match the most specific Chinese variant first. Browsers typically send
+  // tags like `zh-CN`, `zh-Hans`, `zh-SG` for Simplified, and `zh-TW`,
+  // `zh-Hant`, `zh-HK` for Traditional.
+  if (/zh-(cn|hans|sg)/.test(lang)) return "zh-cn";
   if (lang.includes("zh")) return "zh";
   if (lang.includes("es")) return "es";
   return "en";

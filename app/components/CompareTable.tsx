@@ -67,6 +67,19 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
       viewDetails: "詳情",
       swipeHint: "左右滑動 →",
     };
+    const zhCn = {
+      annualFee: "年费", welcomeBonus: "开卡奖励",
+      creditRequired: "信用分要求", foreignFee: "境外手续费", network: "卡片类型",
+      earningRates: "回馈倍率",
+      benefitsCredits: "福利与回馈",
+      credits: "年费回馈",
+      hotelStatus: "酒店会籍", loungeAccess: "贵宾厅", otherBenefits: "其他福利",
+      insurance: "保险", noAf: "免费", yes: "有", none: "—",
+      firstYearValue: "首年净值",
+      firstYearHint: "开卡奖励 + 年费回馈 − 年费",
+      viewDetails: "详情",
+      swipeHint: "左右滑动 →",
+    };
     const es = {
       annualFee: "Cuota anual", welcomeBonus: "Bono de bienvenida",
       creditRequired: "Crédito requerido", foreignFee: "Comisión extranjera", network: "Red",
@@ -80,7 +93,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
       viewDetails: "Detalles",
       swipeHint: "Desliza →",
     };
-    return ({ en, zh, es } as Record<string, typeof en>)[lang] || en;
+    return ({ en, zh, "zh-cn": zhCn, es } as Record<string, typeof en>)[lang] || en;
   })();
 
   const firstYearValue = (card: CreditCard): number => {

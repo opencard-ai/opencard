@@ -6,6 +6,7 @@ import { Calendar } from "lucide-react";
 const STR = {
   en: { setLabel: "Set card open date", editLabel: "Edit", openedLabel: "Opened", noEmail: "Please subscribe first." },
   zh: { setLabel: "設定開卡日期", editLabel: "修改", openedLabel: "開卡", noEmail: "請先訂閱。" },
+  "zh-cn": { setLabel: "设置开卡日期", editLabel: "修改", openedLabel: "开卡", noEmail: "请先订阅。" },
   es: { setLabel: "Establecer fecha de apertura", editLabel: "Editar", openedLabel: "Abierta", noEmail: "Suscríbete primero." },
 };
 
@@ -35,6 +36,7 @@ function formatDuration(opened: { month: number; year: number }, locale: string)
   const years = Math.floor(months / 12);
   const rem = months % 12;
   if (locale === "zh") return years > 0 ? `${years}年${rem}個月` : `${rem} 個月`;
+  if (locale === "zh-cn") return years > 0 ? `${years}年${rem}个月` : `${rem} 个月`;
   if (locale === "es") return years > 0 ? `${years}a ${rem}m` : `${rem}m`;
   return years > 0 ? `${years}y ${rem}m` : `${rem}m`;
 }

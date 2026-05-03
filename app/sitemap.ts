@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://opencardai.com";
 
   // Note: baseUrl (opencardai.com/) is excluded - it redirects via middleware, not indexable
-  const langs = ["en", "zh", "es"] as const;
+  const langs = ["en", "zh", "zh-cn", "es"] as const;
   const now = new Date();
 
   const tier = (path: string, priority: number, changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]) =>
@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const lastMod = card.last_updated ? new Date(card.last_updated) : new Date();
     const priority = card.status === "active" ? 0.7 : card.status === "discontinued" ? 0.3 : 0.6;
 
-    for (const lang of ["en", "zh", "es"]) {
+    for (const lang of ["en", "zh", "zh-cn", "es"]) {
       cardPages.push({
         url: `${baseUrl}/${lang}/cards/${card.card_id}`,
         lastModified: lastMod,
