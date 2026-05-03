@@ -1,0 +1,146 @@
+/**
+ * One-off / on-demand: fetch every user report from Upstash Redis and
+ * send a single digest email to the owner.
+ *
+ * The catalog of reports lives at `opencard:user_reports:v1` (list of ids).
+ * Each id has a JSON blob at `opencard:user_reports:v1:{id}`. The
+ * /api/report-error endpoint started auto-emailing on POST after commit
+ * 87fe8b6 — anything submitted before that is still in Redis but never
+ * pinged the owner. This script drains the backlog as a digest.
+ *
+ * Read-only:
+ *   - it does NOT delete or mutate Redis state
+ *   - it does NOT mark reports "seen"
+ *   - re-running it just re-sends the same digest
+ *
+ * Usage:
+ *   tsx scripts/notify-open-reports.ts            # send digest (default)
+ *   tsx scripts/notify-open-reports.ts --dry      # print to stdout, don't send
+ *   tsx scripts/notify-open-reports.ts --limit 10 # cap at N most-recent
+ */
+
+interface Report {
+  id: string;
+  card_id: string;
+  message: string;
+  email?: string;
+  lang?: string;
+  user_agent?: string;
+  ip_hint?: string;
+  created_at?: string;
+  status?: string;
+}
+
+const DRY = process.argv.includes("--dry");
+const LIMIT_FLAG_IDX = process.argv.indexOf("--limit");
+const LIMIT = LIMIT_FLAG_IDX >= 0 ? parseInt(process.argv[LIMIT_FLAG_IDX + 1], 10) : Infinity;
+
+const UPSTASH_URL = process.env.UPSTASH_KV_REST_API_URL;
+const UPSTASH_TOKEN = process.env.UPSTASH_KV_REST_API_TOKEN;
+const AGENTMAIL_KEY = process.env.AGENTMAIL_API_KEY;
+const AGENTMAIL_INBOX = process.env.AGENTMAIL_FROM_INBOX;
+const OWNER_EMAIL = process.env.OWNER_EMAIL || "opencard@opencardai.com";
+
+if (!UPSTASH_URL || !UPSTASH_TOKEN) {
+  console.error("Missing UPSTASH_KV_REST_API_URL / UPSTASH_KV_REST_API_TOKEN");
+  process.exit(1);
+}
+if (!DRY && (!AGENTMAIL_KEY || !AGENTMAIL_INBOX)) {
+  console.error("Missing AGENTMAIL_API_KEY / AGENTMAIL_FROM_INBOX (use --dry to skip send)");
+  process.exit(1);
+}
+
+async function redisGet(cmd: string[]): Promise<unknown> {
+  const res = await fetch(`${UPSTASH_URL}/${cmd.map(encodeURIComponent).join("/")}`, {
+    headers: { Authorization: `Bearer ${UPSTASH_TOKEN}` },
+  });
+  if (!res.ok) throw new Error(`Redis ${cmd[0]} ${res.status}: ${await res.text()}`);
+  const body = await res.json() as { result: unknown };
+  return body.result;
+}
+
+function escape(s: string): string {
+  return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!));
+}
+
+function renderRow(r: Report): string {
+  const cardUrl = `https://opencardai.com/${r.lang || "en"}/cards/${r.card_id}`;
+  return `<div style="border:1px solid #e5e7eb;border-radius:8px;padding:14px;margin:0 0 12px;background:#fff">
+    <div style="font-size:11px;color:#9ca3af;margin-bottom:8px">
+      ${escape(r.created_at || "")} · <code style="background:#f3f4f6;padding:1px 4px;border-radius:3px">${escape(r.id)}</code>
+    </div>
+    <div style="font-size:13px;margin-bottom:10px">
+      <strong>Card:</strong> <a href="${cardUrl}" style="color:#2563eb;text-decoration:none">${escape(r.card_id)}</a>
+      &nbsp;·&nbsp;
+      <strong>Lang:</strong> ${escape(r.lang || "en")}
+      ${r.email ? `&nbsp;·&nbsp;<strong>From:</strong> ${escape(r.email)}` : ""}
+    </div>
+    <div style="padding:10px;background:#f9fafb;border-left:3px solid #1a1a1a;border-radius:4px;white-space:pre-wrap;font-size:14px;line-height:1.5">${escape(r.message)}</div>
+  </div>`;
+}
+
+async function main() {
+  const ids = (await redisGet(["lrange", "opencard:user_reports:v1", "0", "-1"])) as string[] | null;
+  if (!ids || ids.length === 0) {
+    console.log("No open reports.");
+    return;
+  }
+
+  const reports: Report[] = [];
+  for (const id of ids.slice(0, LIMIT)) {
+    try {
+      const raw = (await redisGet(["get", `opencard:user_reports:v1:${id}`])) as string | null;
+      if (!raw) continue;
+      reports.push(JSON.parse(raw));
+    } catch (err) {
+      console.error(`Skip ${id}: ${err instanceof Error ? err.message : err}`);
+    }
+  }
+
+  if (reports.length === 0) {
+    console.log("List had ids but no readable reports.");
+    return;
+  }
+
+  reports.sort((a, b) => (b.created_at || "").localeCompare(a.created_at || ""));
+
+  console.log(`Found ${reports.length} report(s):`);
+  for (const r of reports) {
+    console.log(`  [${r.created_at || "?"}] ${r.card_id.padEnd(40)} ${r.message.slice(0, 60)}${r.message.length > 60 ? "…" : ""}`);
+  }
+
+  if (DRY) {
+    console.log("\n--dry: skipping AgentMail send.");
+    return;
+  }
+
+  const html = `<div style="font-family:-apple-system,sans-serif;max-width:640px;margin:0 auto;padding:24px">
+    <div style="background:#1a1a1a;color:#fff;padding:14px 18px;border-radius:8px 8px 0 0">
+      <strong style="font-size:15px;">📩 OpenCard report digest — ${reports.length} open</strong>
+    </div>
+    <div style="border:1px solid #e5e7eb;border-top:none;padding:18px;border-radius:0 0 8px 8px;background:#f9fafb">
+      ${reports.map(renderRow).join("")}
+      <p style="color:#9ca3af;font-size:11px;margin:0">Generated by <code>scripts/notify-open-reports.ts</code> · re-running this script just resends the same digest (no Redis state changes).</p>
+    </div>
+  </div>`;
+
+  const res = await fetch(`https://api.agentmail.to/v0/inboxes/${AGENTMAIL_INBOX}/messages/send`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Authorization": `Bearer ${AGENTMAIL_KEY}` },
+    body: JSON.stringify({
+      to: [OWNER_EMAIL],
+      subject: `[OpenCard] ${reports.length} open report${reports.length === 1 ? "" : "s"} — digest`,
+      html,
+    }),
+  });
+  if (!res.ok) {
+    console.error(`AgentMail send failed: ${res.status} ${await res.text()}`);
+    process.exit(1);
+  }
+  console.log(`\nDigest sent to ${OWNER_EMAIL}`);
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
