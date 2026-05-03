@@ -144,7 +144,7 @@ export async function scrapeCard(card: Card): Promise<ScrapeResult> {
       await page.setExtraHTTPHeaders({ "User-Agent": MOZILLA_UA });
 
       if (primaryUrl) {
-        await page.goto(primaryUrl, { waitUntil: "networkidle", timeout: 30000 });
+        await page.goto(primaryUrl, { waitUntil: "domcontentloaded", timeout: 15000 });
         const html = await page.content();
         if (html.length > 500) {
           await browser.close();

@@ -144,7 +144,7 @@ interface CardResult {
   error?: string;
 }
 
-async function processCard(
+async function processCardCore(
   card: ReturnType<typeof loadCards>[0],
   runDir: string,
   dryRun: boolean
@@ -218,6 +218,34 @@ async function processCard(
     );
     return result;
   }
+}
+
+const PER_CARD_BUDGET_MS = 120_000;
+
+async function processCard(
+  card: ReturnType<typeof loadCards>[0],
+  runDir: string,
+  dryRun: boolean
+): Promise<CardResult> {
+  // Hard per-card budget so one stuck card can't hang the whole run.
+  return Promise.race([
+    processCardCore(card, runDir, dryRun),
+    new Promise<CardResult>((resolve) =>
+      setTimeout(() => {
+        const timedOut: CardResult = {
+          cardId: card.card_id,
+          cardName: card.name,
+          hasChanges: false,
+          error: `Per-card budget exceeded (${PER_CARD_BUDGET_MS / 1000}s)`,
+        };
+        fs.writeFileSync(
+          path.join(runDir, `timeout-${card.card_id}.json`),
+          JSON.stringify(timedOut, null, 2)
+        );
+        resolve(timedOut);
+      }, PER_CARD_BUDGET_MS)
+    ),
+  ]);
 }
 
 function printDryRunSummary(results: CardResult[]) {
