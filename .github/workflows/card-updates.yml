@@ -1,0 +1,61 @@
+name: Card auto-updater
+
+on:
+  # Weekly schedule: every Monday at 12:00 UTC
+  schedule:
+    - cron: '0 12 * * 1'
+  # Allow manual trigger from GitHub UI
+  workflow_dispatch:
+    inputs:
+      max_cards:
+        description: 'Override weekly card budget (default: 50)'
+        required: false
+        default: '50'
+        type: string
+      dry_run:
+        description: 'Dry-run mode (no PRs)'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  update-cards:
+    name: Auto-update credit card catalog
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write     # write to create branches
+      pull-requests: write # open PRs
+      contents: read       # read repo
+
+    env:
+      MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
+      AGENTMAIL_API_KEY: ${{ secrets.AGENTMAIL_API_KEY }}
+      AGENTMAIL_FROM_INBOX: ${{ secrets.AGENTMAIL_FROM_INBOX }}
+      OWNER_EMAIL: ${{ secrets.OWNER_EMAIL }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # needed for git operations
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright + Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: Run auto-updater (dry-run)
+        if: inputs.dry_run == true
+        run: npx tsx scripts/auto-update-cards/index.ts --dry --max ${{ inputs.max_cards || 50 }}
+
+      - name: Run auto-updater (apply)
+        if: inputs.dry_run != true
+        run: npx tsx scripts/auto-update-cards/index.ts --apply --max ${{ inputs.max_cards || 50 }}
