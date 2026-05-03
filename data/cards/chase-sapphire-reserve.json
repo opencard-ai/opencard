@@ -125,11 +125,11 @@
     {
       "credit_key": "exclusive-tables-dining-credit",
       "name": "Exclusive Tables Dining Credit",
-      "amount": 25,
-      "frequency": "monthly",
+      "amount": 150,
+      "frequency": "semi_annual",
       "category": "dining",
-      "description": "$25/month ($300/year) at Sapphire Reserve Exclusive Tables restaurants.",
-      "reset_type": "monthly",
+      "description": "Up to $150 every six months ($150 H1 / $150 H2) at Sapphire Reserve Exclusive Tables restaurants.",
+      "reset_type": "calendar_half",
       "source": "https://thepointsguy.com/credit-cards/chase-sapphire-reserve-credits/"
     },
     {
