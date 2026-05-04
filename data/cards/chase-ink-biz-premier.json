@@ -1,6 +1,6 @@
 {
   "card_id": "chase-ink-biz-premier",
-  "name": "Ink Business Premier® Credit Card",
+  "name": "Chase Ink Business Premier® Credit Card",
   "issuer": "Chase",
   "network": "visa",
   "annual_fee": 195,
@@ -9,10 +9,9 @@
   "welcome_offer": {
     "spending_requirement": 10000,
     "time_period_months": 3,
-    "bonus_points": 1000,
     "estimated_value": 1000,
     "point_program": "Chase Ultimate Rewards (Cash Back)",
-    "description": "$1,000 cash back after spending $10,000 in first 3 months"
+    "description": "$1,000 cash back after spending $10,000 in first 3 months."
   },
   "earning_rates": [
     {

@@ -9,7 +9,7 @@
   "welcome_offer": {
     "spending_requirement": 6000,
     "time_period_months": 3,
-    "bonus_cash": 750,
+    "estimated_value": 750,
     "description": "$750 cash back after you spend $6,000 on purchases in the first 3 months after account opening.",
     "point_program": "Chase Ultimate Rewards (cash back option)"
   },
