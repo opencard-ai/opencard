@@ -9,9 +9,10 @@
   "welcome_offer": {
     "spending_requirement": 6000,
     "time_period_months": 3,
-    "estimated_value": 750,
-    "description": "$750 cash back after you spend $6,000 on purchases in the first 3 months from account opening.",
-    "point_program": "Chase Ultimate Rewards (cash back option)"
+    "bonus_points": 75000,
+    "estimated_value": 1275,
+    "description": "75,000 bonus points after you spend $6,000 on purchases in the first 3 months. Worth $750 cash, or up to ~$1,275 transferred via a Chase premium UR card (Sapphire Preferred / Reserve / Ink Preferred / Premier).",
+    "point_program": "Chase Ultimate Rewards"
   },
   "earning_rates": [
     {
