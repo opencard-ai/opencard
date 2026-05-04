@@ -30,9 +30,28 @@ interface Card {
 const dir = path.join(process.cwd(), "data/cards");
 const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
 
+// Canonical fields per lib/cards.ts WelcomeOffer interface. Anything outside
+// this set on welcome_offer is non-standard and likely needs migration.
+const CANONICAL_FIELDS = new Set([
+  "spending_requirement", "time_period_months", "bonus_points",
+  "estimated_value", "point_program", "description",
+  "bonus_value",                   // legacy but tolerated (own bucket below)
+  "is_elevated", "normal_bonus_points", "elevated_until",
+]);
+
+// Map non-standard field → canonical replacement suggestion.
+const FIELD_MIGRATION: Record<string, string> = {
+  bonus_cash: "estimated_value (cash bonuses use estimated_value, no bonus_points)",
+  bonus_miles: "bonus_points (canonical for both points and miles)",
+  bonus: "bonus_points or estimated_value (specify which)",
+  requirement: "spending_requirement (likely typo)",
+  free_nights: "express as `recurring_credits[].is_free_night=true` or note in description; not a welcome_offer field",
+};
+
 const empty: Array<{ id: string; name: string }> = [];
 const legacy: Array<{ id: string; name: string; bonus_value: any; estimated_value: number | null | undefined }> = [];
 const stringy: Array<{ id: string; name: string; bonus_value: string }> = [];
+const nonStandard: Array<{ id: string; name: string; field: string; value: unknown; suggestion: string }> = [];
 
 for (const file of files) {
   let card: Card;
@@ -42,6 +61,19 @@ for (const file of files) {
   if (!w) continue;
   const bp = w.bonus_points ?? 0;
   const bv = w.bonus_value;
+
+  // Detect any keys not in CANONICAL_FIELDS
+  for (const key of Object.keys(w)) {
+    if (!CANONICAL_FIELDS.has(key)) {
+      nonStandard.push({
+        id: card.card_id,
+        name: card.name,
+        field: key,
+        value: (w as Record<string, unknown>)[key],
+        suggestion: FIELD_MIGRATION[key] || "(not a canonical welcome_offer field — review)",
+      });
+    }
+  }
 
   const ev = w.estimated_value ?? 0;
   if (bp === 0 && (bv === 0 || bv == null || bv === "") && ev === 0) {
@@ -86,6 +118,24 @@ if (stringy.length) {
   console.log();
 }
 
-if (!empty.length && !legacy.length && !stringy.length) {
-  console.log("✓ No legacy bonus_value fields detected.");
+if (nonStandard.length) {
+  // Group by field name for readability
+  const byField: Record<string, typeof nonStandard> = {};
+  for (const n of nonStandard) {
+    (byField[n.field] ||= []).push(n);
+  }
+  console.log(`NON_STANDARD_FIELD (${nonStandard.length}) — welcome_offer keys that aren't in lib/cards.ts WelcomeOffer interface. UI ignores them:`);
+  for (const field of Object.keys(byField).sort()) {
+    const rows = byField[field];
+    console.log(`  ${field}  (${rows.length}) — migrate to: ${rows[0].suggestion}`);
+    for (const r of rows) {
+      const v = typeof r.value === "string" ? `"${r.value}"` : JSON.stringify(r.value);
+      console.log(`    ${r.id.padEnd(40)} ${field}=${v}`);
+    }
+  }
+  console.log();
+}
+
+if (!empty.length && !legacy.length && !stringy.length && !nonStandard.length) {
+  console.log("✓ No legacy bonus_value or non-standard welcome_offer fields detected.");
 }
