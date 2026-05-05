@@ -1,6 +1,23 @@
 {
   "items": [
     {
+      "title": "(5/5 Only) Dollar General: 20% Discount On Taco Bell Giftcards",
+      "url": "https://www.doctorofcredit.com/5-5-only-dollar-general-20-discount-on-taco-bell-giftcards/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "dollar general",
+        "taco bell"
+      ],
+      "ts": "2026-05-05T04:01:54.000Z",
+      "title_en": "(5/5 Only) Dollar General: 20% Discount On Taco Bell Giftcards",
+      "summary_en": "",
+      "title_zh": "（5/5限定）Dollar General：Taco Bell 禮品卡 20% 折扣",
+      "summary_zh": "在 Dollar General 購買 Taco Bell 禮品卡可享 20% 折扣，僅限5月5日。",
+      "title_es": "(5/5 Only) Dollar General: 20% Discount On Taco Bell Giftcards",
+      "summary_es": ""
+    },
+    {
       "title": "Uber App: Save 15% On Uber Giftcards (YMMV)",
       "url": "https://www.doctorofcredit.com/uber-app-save-15-on-uber-giftcards-ymmv/",
       "source": "Doctor of Credit",
@@ -11,10 +28,10 @@
       "ts": "2026-05-05T01:18:20.000Z",
       "title_en": "Uber App: Save 15% On Uber Giftcards (YMMV)",
       "summary_en": "",
-      "title_zh": "Uber App：節省 15% Uber 禮品卡（YMMV）",
-      "summary_zh": "在 Uber App 上購買 Uber 禮品卡可享 15% 折扣，但優惠可能因人而異。",
-      "title_es": "Uber App: Ahorra 15% en tarjetas de regalo de Uber (YMMV)",
-      "summary_es": "Uber ofrece un 15% de descuento en tarjetas de regalo de Uber a través de su aplicación, sujeto a variaciones de términos y condiciones."
+      "title_zh": "Uber App：Uber 禮品卡 85 折（YMMV）",
+      "summary_zh": "Uber App 購買 Uber 禮品卡可省 15%，實際優惠視情況而定。",
+      "title_es": "Uber App: Save 15% On Uber Giftcards (YMMV)",
+      "summary_es": ""
     },
     {
       "title": "Costco.com: $100 inKind Giftcard For $64.99 (Limit 5)",
@@ -28,10 +45,10 @@
       "ts": "2026-05-04T23:55:01.000Z",
       "title_en": "Costco.com: $100 inKind Giftcard For $64.99 (Limit 5)",
       "summary_en": "",
-      "title_zh": "Costco.com：$100 inKind 禮品卡 $64.99（限購 5 張）",
-      "summary_zh": "Costco.com 推出 $100 inKind 禮品卡優惠，售價 $64.99，每人最多可購 5 張。",
-      "title_es": "Costco.com: Tarjeta de regalo inKind de $100 por $64.99 (Límite 5)",
-      "summary_es": "Costco.com vende tarjetas de regalo inKind de $100 por solo $64.99, con un límite de compra de 5 tarjetas por cliente."
+      "title_zh": "Costco.com：$100 inKind 禮品卡 $64.99（限5張）",
+      "summary_zh": "Costco.com 以 $64.99 購買價值 $100 的 inKind 禮品卡，最多限購5張。",
+      "title_es": "Costco.com: $100 inKind Giftcard For $64.99 (Limit 5)",
+      "summary_es": ""
     },
     {
       "title": "Amazon: $100 Instacart Giftcard For $90",
@@ -45,10 +62,10 @@
       "ts": "2026-05-04T23:46:25.000Z",
       "title_en": "Amazon: $100 Instacart Giftcard For $90",
       "summary_en": "",
-      "title_zh": "亞馬遜：$100 Instacart 禮品卡 $90",
-      "summary_zh": "在亞馬遜上可用 $90 購買 $100 Instacart 禮品卡。",
-      "title_es": "Amazon: Tarjeta de regalo Instacart de $100 por $90",
-      "summary_es": "Amazon ofrece tarjetas de regalo Instacart de $100 por $90, lo que representa un ahorro de $10."
+      "title_zh": "Amazon：$100 Instacart 禮品卡 $90",
+      "summary_zh": "Amazon 提供 $100 Instacart 禮品卡，售價 $90。",
+      "title_es": "Amazon: $100 Instacart Giftcard For $90",
+      "summary_es": ""
     },
     {
       "title": "American Express Transfer Bonus: 10% To JetBlue (250:220)",
@@ -64,10 +81,10 @@
       "ts": "2026-05-04T23:40:57.000Z",
       "title_en": "American Express Transfer Bonus: 10% To JetBlue (250:220)",
       "summary_en": "",
-      "title_zh": "美國運通 轉換紅利：10% 獎勵至 JetBlue（250:220）",
-      "summary_zh": "美國運通信用卡可將積分轉換為 JetBlue，享有 10% 額外獎勵，比例為 250:220。",
-      "title_es": "Bonificación de transferencia de American Express: 10% a JetBlue (250:220)",
-      "summary_es": "American Express ofrece un bono del 10% al transferir puntos Membership Rewards a JetBlue, con una ratio de 250:220 puntos."
+      "title_zh": "American Express 轉帳獎勵：10% 增至 JetBlue（250:220）",
+      "summary_zh": "將 American Express 積分轉入 JetBlue 可獲得 10% 獎勵，比例為 250:220。",
+      "title_es": "American Express Transfer Bonus: 10% To JetBlue (250:220)",
+      "summary_es": ""
     },
     {
       "title": "Amazon: Spend $40, Save $10 On Select Grocery Items",
@@ -81,10 +98,10 @@
       "ts": "2026-05-04T23:36:07.000Z",
       "title_en": "Amazon: Spend $40, Save $10 On Select Grocery Items",
       "summary_en": "",
-      "title_zh": "亞馬遜：消費 $40，精選雜貨省 $10",
-      "summary_zh": "在亞馬遜上購買精選雜貨商品，消費滿 $40 可省 $10。",
-      "title_es": "Amazon: Gastar $40, Ahorrar $10 en artículos de comestibles seleccionados",
-      "summary_es": "Amazon otorga un descuento de $10 al realizar compras de $40 en ciertos artículos de comestibles."
+      "title_zh": "Amazon：消費 $40 享 $10 折扣（部分食品）",
+      "summary_zh": "在 Amazon 購買指定食品滿 $40 可省 $10。",
+      "title_es": "Amazon: Spend $40, Save $10 On Select Grocery Items",
+      "summary_es": ""
     },
     {
       "title": "AmEx Offers: Get 10% Back on Expedia Hotel Bookings",
@@ -99,9 +116,9 @@
       "title_en": "AmEx Offers: Get 10% Back on Expedia Hotel Bookings",
       "summary_en": "",
       "title_zh": "AmEx 優惠：Expedia 酒店預訂回饋 10%",
-      "summary_zh": "持有美國運通卡的消費者在 Expedia 預訂酒店可獲得 10% 的消費回饋。",
-      "title_es": "Ofertas AmEx: Obtén 10% de regreso en reservas de hoteles de Expedia",
-      "summary_es": "Las tarjetas American Express ofrecen un reembolso del 10% en reservas de hoteles realizadas a través de Expedia."
+      "summary_zh": "使用 AmEx 卡片在 Expedia 預訂酒店可獲得 10% 回饋。",
+      "title_es": "AmEx Offers: Get 10% Back on Expedia Hotel Bookings",
+      "summary_es": ""
     },
     {
       "title": "[Targeted] American Express: Add An Authorized User & Get 10,000 Points",
@@ -115,10 +132,10 @@
       "ts": "2026-05-04T18:00:00.000Z",
       "title_en": "[Targeted] American Express: Add An Authorized User & Get 10,000 Points",
       "summary_en": "",
-      "title_zh": "【限時】 美國運通：新增附卡用戶即得 10,000 點數",
-      "summary_zh": "美國運通推出目標優惠，新增附卡用戶即可獲得 10,000 點數獎勵。",
-      "title_es": "[Dirigido] American Express: Agrega un usuario autorizado y obtén 10,000 puntos",
-      "summary_es": "American Express ofrece 10,000 puntos de bonificación por agregar un usuario autorizado a tu cuenta."
+      "title_zh": "【針對】American Express：新增附卡用戶即得 10,000 點數",
+      "summary_zh": "American Express 限定活動，新增附卡用戶可獲得 10,000 點數獎勵。",
+      "title_es": "[Targeted] American Express: Add An Authorized User & Get 10,000 Points",
+      "summary_es": ""
     },
     {
       "title": "Save On Disney Giftcards From Newegg & Dollar General",
@@ -132,9 +149,9 @@
       "title_en": "Save On Disney Giftcards From Newegg & Dollar General",
       "summary_en": "",
       "title_zh": "Newegg 與 Dollar General 迪士尼禮品卡優惠",
-      "summary_zh": "在 Newegg 和 Dollar General 購買迪士尼禮品卡可享折扣。",
-      "title_es": "Ahorra en tarjetas de regalo de Disney en Newegg y Dollar General",
-      "summary_es": "Newegg y Dollar General ofrecen descuentos en tarjetas de regalo de Disney."
+      "summary_zh": "在 Newegg 或 Dollar General 購買迪士尼禮品卡可享折扣。",
+      "title_es": "Save On Disney Giftcards From Newegg & Dollar General",
+      "summary_es": ""
     },
     {
       "title": "Bestbuy.com: Save 10% On Instacart & DoorDash eGiftcards",
@@ -149,9 +166,9 @@
       "title_en": "Bestbuy.com: Save 10% On Instacart & DoorDash eGiftcards",
       "summary_en": "",
       "title_zh": "Bestbuy.com：Instacart 與 DoorDash 電子禮品卡 9 折",
-      "summary_zh": "Bestbuy.com 提供 Instacart 與 DoorDash 電子禮品卡 10% 折扣優惠。",
-      "title_es": "Bestbuy.com: Ahorra 10% en tarjetas de regalo digitales de Instacart y DoorDash",
-      "summary_es": "Best Buy ofrece un 10% de descuento en tarjetas de regalo electrónicas de Instacart y DoorDash."
+      "summary_zh": "Bestbuy.com 購買 Instacart 與 DoorDash 電子禮品卡可省 10%。",
+      "title_es": "Bestbuy.com: Save 10% On Instacart & DoorDash eGiftcards",
+      "summary_es": ""
     },
     {
       "title": "Amazon: Save On Giftcards For Instacart, DoorDash, inKind, Hotels.com, PetSmart & Many More",
@@ -164,10 +181,10 @@
       "ts": "2026-05-04T17:24:48.000Z",
       "title_en": "Amazon: Save On Giftcards For Instacart, DoorDash, inKind, Hotels.com, PetSmart & Many More",
       "summary_en": "",
-      "title_zh": "亞馬遜：Instacart、DoorDash、inKind、Hotels.com、PetSmart 等禮品卡優惠",
-      "summary_zh": "亞馬遜上架多款禮品卡優惠，包括 Instacart、DoorDash、inKind、Hotels.com、PetSmart 等，最高可節省費用。",
-      "title_es": "Amazon: Ahorra en tarjetas de regalo para Instacart, DoorDash, inKind, Hotels.com, PetSmart y más",
-      "summary_es": "Amazon ofrece descuentos en tarjetas de regalo para múltiples servicios como Instacart, DoorDash, inKind, Hotels.com y PetSmart."
+      "title_zh": "Amazon：Instacart、DoorDash、inKind、Hotels.com、PetSmart 等禮品卡優惠",
+      "summary_zh": "Amazon 旗下多種禮品卡（Instacart、DoorDash、inKind、Hotels.com、PetSmart 等）享有折扣。",
+      "title_es": "Amazon: Save On Giftcards For Instacart, DoorDash, inKind, Hotels.com, PetSmart & Many More",
+      "summary_es": ""
     },
     {
       "title": "Aisle – Grocery Rebate Platform ($5 Referral Bonus, 100% Back Offers & More)",
@@ -182,10 +199,10 @@
       "ts": "2026-05-04T17:00:34.000Z",
       "title_en": "Aisle – Grocery Rebate Platform ($5 Referral Bonus, 100% Back Offers & More)",
       "summary_en": "",
-      "title_zh": "Aisle – 雜貨回扣平台（推薦獎金 $5、100% 回扣優惠等）",
-      "summary_zh": "Aisle 是一款提供推薦獎金 $5 及 100% 回扣的雜貨回扣平台。",
-      "title_es": "Aisle – Plataforma de reembolso de comestibles ($5 bono de referido, ofertas 100% de regreso y más)",
-      "summary_es": "Aisle es una plataforma de reembolsos en comestibles que ofrece $5 por referido y ofertas con hasta 100% de regreso."
+      "title_zh": "Aisle – 食品回購平台（$5 推薦獎金、100% 回饋優惠等）",
+      "summary_zh": "Aisle 是食品回購平台，介紹新用戶可獲得 $5 獎金，並提供 100% 回饋等優惠。",
+      "title_es": "Aisle – Grocery Rebate Platform ($5 Referral Bonus, 100% Back Offers & More)",
+      "summary_es": ""
     },
     {
       "title": "EarnIn: $150 Referral Bonus Or $50 Finder Bonus",
@@ -200,10 +217,10 @@
       "ts": "2026-05-04T16:00:26.000Z",
       "title_en": "EarnIn: $150 Referral Bonus Or $50 Finder Bonus",
       "summary_en": "",
-      "title_zh": "EarnIn：$150 推薦獎金或 $50 發現者獎金",
-      "summary_zh": "EarnIn 提供推薦獎金 $150 或發現者獎金 $50 的優惠。",
-      "title_es": "EarnIn: Bono de referido de $150 o bono de Finder de $50",
-      "summary_es": "EarnIn ofrece $150 por cada referido exitoso o $50 por ser un finder."
+      "title_zh": "EarnIn：推薦獎金 $150 或找到獎金 $50",
+      "summary_zh": "EarnIn 提供高達 $150 的推薦獎金，若找不到客戶可獲 $50。",
+      "title_es": "EarnIn: $150 Referral Bonus Or $50 Finder Bonus",
+      "summary_es": ""
     },
     {
       "title": "Kroger: $7.5 Bonus When You Purchase $50 One4All Card (+4x Fuel Points & 10% Offer)",
@@ -217,10 +234,10 @@
       "ts": "2026-05-04T15:00:59.000Z",
       "title_en": "Kroger: $7.5 Bonus When You Purchase $50 One4All Card (+4x Fuel Points & 10% Offer)",
       "summary_en": "",
-      "title_zh": "Kroger：購買 $50 One4All 卡即獲 $7.5 獎勵（+4 倍加油點數與 10% 優惠）",
-      "summary_zh": "在 Kroger 購買 $50 的 One4All 卡，可獲得 $7.5 獎勵，同時獲得 4 倍加油點數與 10% 優惠。",
-      "title_es": "Kroger: Bono de $7.50 al comprar una tarjeta One4All de $50 (+4x puntos de combustible y oferta del 10%)",
-      "summary_es": "Kroger ofrece un bono de $7.50 al comprar una tarjeta One4All de $50, más 4x puntos de combustible y un 10% de descuento."
+      "title_zh": "Kroger：購買 $50 One4All 卡即得 $7.5 獎金（+4倍燃料積分與 10% 優惠）",
+      "summary_zh": "在 Kroger 購買 $50 One4All 卡，可獲得 $7.5 獎金、4倍燃料積分與額外 10% 折扣。",
+      "title_es": "Kroger: $7.5 Bonus When You Purchase $50 One4All Card (+4x Fuel Points & 10% Offer)",
+      "summary_es": ""
     },
     {
       "title": "American Express $300 Checking Bonus",
@@ -235,29 +252,11 @@
       "ts": "2026-05-04T14:00:39.000Z",
       "title_en": "American Express $300 Checking Bonus",
       "summary_en": "",
-      "title_zh": "美國運通 $300 支票帳戶紅利",
-      "summary_zh": "美國運通新開支票帳戶可獲得 $300 紅利獎勵。",
-      "title_es": "American Express: Bono de $300 para cuenta de cheques",
-      "summary_es": "American Express ofrece un bono de $300 al abrir una nueva cuenta de cheques."
-    },
-    {
-      "title": "OKX Airdrop: Free Crypto When You Hold $10,000+",
-      "url": "https://www.doctorofcredit.com/okx-airdrop-free-crypto-when-you-hold-1000/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "crypto",
-        "cryptocurrency",
-        "okx"
-      ],
-      "ts": "2026-05-04T13:30:43.000Z",
-      "title_en": "OKX Airdrop: Free Crypto When You Hold $10,000+",
-      "summary_en": "",
-      "title_zh": "OKX 空投：持有 $10,000+ 可獲得免費加密貨幣",
-      "summary_zh": "OKX 推出空投活動，持有 $10,000 以上資產的用戶可獲得免費加密貨幣。",
-      "title_es": "OKX Airdrop: Cripto gratis cuando mantienes $10,000+",
-      "summary_es": "OKX regala criptomonedas gratuitas a quienes mantengan un saldo de $10,000 o más."
+      "title_zh": "American Express $300 支票帳戶獎金",
+      "summary_zh": "American Express 提供 $300 的支票帳戶開戶獎金。",
+      "title_es": "American Express $300 Checking Bonus",
+      "summary_es": ""
     }
   ],
-  "fetched": "2026-05-05T02:03:37.399Z"
+  "fetched": "2026-05-05T14:15:02.272Z"
 }
