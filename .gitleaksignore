@@ -1,0 +1,27 @@
+# Gitleaks fingerprint allowlist — historical leaks already remediated.
+#
+# Format: <commit_sha>:<file>:<rule_id>:<line>
+#
+# These tokens have been replaced with `process.env.*` references on `main`
+# and rotation is tracked in docs/SECURITY_NOTICE.md. The commits remain in
+# git history; until that history is rewritten, gitleaks will keep flagging
+# them on every full-history scan unless we list the fingerprints here.
+#
+# `.gitleaks.toml` already allowlists the same commits, but `gitleaks-action@v2`
+# has historically been inconsistent about honouring the `[allowlist] commits`
+# array on full-history scans — fingerprints are the reliable belt-and-suspenders.
+#
+# DO NOT add live, un-rotated leaks here. Rotate first, then allowlist.
+
+# Upstash KV REST API token in vercel.json (rotated)
+9bbfdb3fec65f75405e415ae63f67c57268071a6:vercel.json:upstash-rest-token:5
+cfe1aeb4265f85a43449ecd81a6a7cdc6beb3f1d:vercel.json:upstash-rest-token:9
+
+# MiniMax API key in scripts/sync-news.mjs (rotated)
+4f81d2001bf74027249524735bc4b69b0dd8b7ee:scripts/sync-news.mjs:minimax-api-key:9
+
+# MiniMax API key in scripts/unified-scraper.ts (rotated)
+580beee5e400d2a268881d284a05aba74e851ca4:scripts/unified-scraper.ts:minimax-api-key:191
+
+# MiniMax API key in scripts/batch-ai-extract.py (rotation pending — see SECURITY_NOTICE.md)
+770a49d894347805669ac5236049b158fb2917df:scripts/batch-ai-extract.py:minimax-api-key:14

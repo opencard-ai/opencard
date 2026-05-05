@@ -84,6 +84,11 @@ paths = [
   '''^scripts/pipelines/cfpb/archive/''',
   # tsbuildinfo
   '''\.tsbuildinfo$''',
+  # Auto-updater scraped issuer pages — high-entropy CSRF tokens, asset hashes,
+  # and embedded LinkedIn share widgets generate hundreds of false positives.
+  # Real secrets must never live in scraped artefacts.
+  '''^data/raw-unified/.*\.txt$''',
+  '''^data/ai-prompts/.*\.txt$''',
 ]
 
 regexes = [

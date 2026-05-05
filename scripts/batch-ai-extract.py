@@ -11,7 +11,10 @@ import sys
 import time
 from pathlib import Path
 
-API_KEY = "REDACTED_MINIMAX_API_KEY"
+API_KEY = os.environ.get("MINIMAX_API_KEY")
+if not API_KEY:
+    print("ERROR: MINIMAX_API_KEY env var not set. See docs/SECURITY_NOTICE.md.", file=sys.stderr)
+    sys.exit(1)
 CARDS_DIR = Path("data/cards")
 PROMPTS_DIR = Path("data/ai-prompts")
 RAW_DIR = Path("data/raw-unified")
