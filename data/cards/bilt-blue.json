@@ -6,8 +6,11 @@
   "annual_fee": 0,
   "annual_fee_description": "$0 annual fee",
   "welcome_offer": {
-    "bonus": "$100 Bilt Cash",
-    "requirement": "Apply and get approved"
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "estimated_value": 100,
+    "description": "$100 Bilt Cash upon approval — no minimum spend required.",
+    "point_program": "Bilt Rewards"
   },
   "earning_rates": [
     {

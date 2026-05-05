@@ -6,8 +6,12 @@
   "annual_fee": 95,
   "annual_fee_description": "$95 annual fee",
   "welcome_offer": {
-    "bonus": "75,000 Bilt bonus points",
-    "requirement": "Spend $5,000 on purchases in the first 3 months from account opening"
+    "spending_requirement": 5000,
+    "time_period_months": 3,
+    "bonus_points": 75000,
+    "estimated_value": 1275,
+    "description": "75,000 Bilt bonus points after spending $5,000 on purchases in the first 3 months from account opening.",
+    "point_program": "Bilt Rewards"
   },
   "earning_rates": [
     {

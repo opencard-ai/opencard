@@ -6,8 +6,12 @@
   "annual_fee": 495,
   "annual_fee_description": "$495 annual fee; $95 per authorized user",
   "welcome_offer": {
-    "bonus": "50,000 Bilt bonus points + Bilt Gold Status",
-    "requirement": "Spend $4,000 on everyday purchases in the first 90 days + $300 Bilt Cash upon approval"
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "bonus_points": 50000,
+    "estimated_value": 850,
+    "description": "50,000 Bilt bonus points + Bilt Gold Status after spending $4,000 on everyday purchases in the first 90 days. Plus $300 Bilt Cash upon approval (additional value beyond the listed estimated_value, which reflects the points only at 1.7 cpp).",
+    "point_program": "Bilt Rewards"
   },
   "earning_rates": [
     {

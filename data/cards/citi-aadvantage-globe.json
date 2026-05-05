@@ -9,10 +9,10 @@
   "welcome_offer": {
     "spending_requirement": 4000,
     "time_period_months": 3,
-    "bonus_miles": 60000,
-    "estimated_value": 700,
+    "estimated_value": 990,
     "description": "Earn 60,000 AAdvantage bonus miles after spending $4,000 in first 3 months",
-    "point_program": "American Airlines AAdvantage"
+    "point_program": "American Airlines AAdvantage",
+    "bonus_points": 60000
   },
   "earning_rates": [
     {
