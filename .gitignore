@@ -55,3 +55,7 @@ __pycache__/
 
 # CFPB pipeline kill switch (intentionally committed; if removed it re-enables the pipeline)
 !scripts/pipelines/cfpb/_DISABLED.flag
+
+# Auto-updater runtime state and local dry-run artefacts
+data/opencard-email-state.json
+data/audit-reports/
