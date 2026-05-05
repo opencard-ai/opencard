@@ -18,7 +18,10 @@ export function buildQueue(
   if (cappedBudget === 0) return [];
 
   const eligibleCards = allCards.filter(
-    (c) => c.status !== "discontinued" && c.status !== "needs_manual_review"
+    (c) =>
+      c.status !== "discontinued" &&
+      c.status !== "needs_manual_review" &&
+      !CONFIG.SKIP_ISSUERS.includes(c.issuer)
   );
 
   // Bucket 1: Featured cards, capped by budget and configured priority.
