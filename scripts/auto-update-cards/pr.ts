@@ -105,12 +105,20 @@ Source: ${diff.source_url || "N/A"}
     require("node:fs").readFileSync(cardPath, "utf8")
   );
 
-  // Apply changes to card
+  // Apply changes to card. When a change targets a nested field whose parent
+  // doesn't exist (e.g. `welcome_offer.spending_requirement` on a card whose
+  // `welcome_offer` is currently null), init missing ancestors as plain
+  // objects so the assignment doesn't crash. 2026-05-05 apply run hit this
+  // on capital-one-savorone.
   for (const change of diff.changes) {
     const parts = change.field.split(".");
     let obj: Record<string, unknown> = cardData;
     for (let i = 0; i < parts.length - 1; i++) {
-      obj = obj[parts[i]] as Record<string, unknown>;
+      const key = parts[i];
+      if (obj[key] == null) {
+        obj[key] = {};
+      }
+      obj = obj[key] as Record<string, unknown>;
     }
     obj[parts[parts.length - 1]] = change.to;
   }
