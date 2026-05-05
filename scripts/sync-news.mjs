@@ -63,48 +63,53 @@ function parseRSS(xml) {
 
 async function translateBatch(items, lang) {
   if (lang === 'en') return items.map(i => ({ ...i, title_en: i.title, summary_en: "" }));
-  
+
   const langNames = { zh: "Chinese (Traditional)", es: "Spanish" };
   const dataList = items.map((u, i) => ({ idx: i, title: u.title }));
-  
+
   const prompt = `Convert this news list into ${langNames[lang]}. 
 Output ONLY a JSON object: {"results":[{"idx":number,"title":"translated title","summary":"1-sentence summary"}]}
 List: ${JSON.stringify(dataList)}`;
 
-  const res = await fetch("https://api.minimax.io/v1/chat/completions", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: `Bearer ${MINIMAX_API_KEY}` },
-    body: JSON.stringify({ 
-      model: "MiniMax-M2.7", 
-      messages: [{ role: "user", content: prompt }], 
-      temperature: 0.1,
-      internal_thought: false
-    }),
-    signal: AbortSignal.timeout(60000),
-  });
-
-  if (!res.ok) {
-    const errText = await res.text();
-    console.error(`API Error for ${lang}:`, errText);
-    return items.map(i => ({ ...i, [`title_${lang}`]: i.title, [`summary_${lang}`]: "" }));
-  }
-
-  const data = await res.json();
-  let raw = data.choices?.[0]?.message?.content || "";
   try {
-    raw = raw.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
-    const jsonMatch = raw.match(/\{.*\}/s);
-    const parsed = JSON.parse(jsonMatch ? jsonMatch[0] : raw);
-    return items.map((item, i) => {
-      const translation = (parsed.results || []).find(r => r.idx === i);
-      return {
-        ...item,
-        [`title_${lang}`]: translation ? translation.title : item.title,
-        [`summary_${lang}`]: translation ? translation.summary : "",
-      };
+    const res = await fetch("https://api.minimax.io/v1/chat/completions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${MINIMAX_API_KEY}` },
+      body: JSON.stringify({
+        model: "MiniMax-M2.7",
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.1,
+        internal_thought: false
+      }),
+      signal: AbortSignal.timeout(90000),
     });
+
+    if (!res.ok) {
+      const errText = await res.text();
+      console.error(`API Error for ${lang}:`, errText);
+      return items.map(i => ({ ...i, [`title_${lang}`]: i.title, [`summary_${lang}`]: "" }));
+    }
+
+    const data = await res.json();
+    let raw = data.choices?.[0]?.message?.content || "";
+    try {
+      raw = raw.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
+      const jsonMatch = raw.match(/\{.*\}/s);
+      const parsed = JSON.parse(jsonMatch ? jsonMatch[0] : raw);
+      return items.map((item, i) => {
+        const translation = (parsed.results || []).find(r => r.idx === i);
+        return {
+          ...item,
+          [`title_${lang}`]: translation ? translation.title : item.title,
+          [`summary_${lang}`]: translation ? translation.summary : "",
+        };
+      });
+    } catch (e) {
+      console.error(`Parse failed for ${lang}:`, e, raw.substring(0, 300));
+      return items.map(i => ({ ...i, [`title_${lang}`]: i.title, [`summary_${lang}`]: "" }));
+    }
   } catch (e) {
-    console.error(`Parse failed for ${lang}:`, e, raw.substring(0, 300));
+    console.error(`Translation failed for ${lang}:`, e);
     return items.map(i => ({ ...i, [`title_${lang}`]: i.title, [`summary_${lang}`]: "" }));
   }
 }
