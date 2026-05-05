@@ -7,6 +7,16 @@ export const CONFIG = {
   /** Maximum cards to process per weekly run */
   WEEKLY_BUDGET: 50,
 
+  /**
+   * Issuers temporarily excluded from the auto-update queue.
+   * Amex pages are React SPAs that emit `{{{HTML_ESCAPER}}}` server-side
+   * templates, never go fully `networkidle`, and resist the standard
+   * Playwright fallback. Until a per-issuer scrape strategy is in place,
+   * skip them to avoid burning a queue slot on guaranteed failure.
+   * Remove an entry once a working extractor exists for that issuer.
+   */
+  SKIP_ISSUERS: ["American Express"] as readonly string[],
+
   /** Priority: featured cards are always scanned first */
   FEATURED_PRIORITY: 25,
 
