@@ -133,11 +133,23 @@ Source: ${diff.source_url || "N/A"}
   // Push
   execSync(`git push -u origin ${branchName} 2>&1`, { cwd: process.cwd() });
 
-  // Create PR
-  const prUrl = execSync(
-    `gh pr create --title "${title}" --body-file "${bodyFile}" --label "${CONFIG.RISK_LABELS[risk]}" --label "bot-generated" --label "needs-review" 2>&1`,
-    { cwd: process.cwd() }
-  ).toString().trim();
+  // Create PR. Capture stderr explicitly: `execSync` only puts the command
+  // string in `error.message` and stashes the merged stdout+stderr in
+  // `error.stdout` — silent failures (label-not-found, permissions) lose
+  // their explanation when callers only print `error.message`. Re-throw
+  // with the captured output so the loop's logger surfaces the real cause.
+  let prUrl: string;
+  try {
+    prUrl = execSync(
+      `gh pr create --title "${title}" --body-file "${bodyFile}" --label "${CONFIG.RISK_LABELS[risk]}" --label "bot-generated" --label "needs-review" 2>&1`,
+      { cwd: process.cwd(), encoding: "utf8" }
+    ).trim();
+  } catch (err) {
+    const e = err as { stdout?: string | Buffer; stderr?: string | Buffer; message: string };
+    const out = (e.stdout || "").toString().trim();
+    const errOut = (e.stderr || "").toString().trim();
+    throw new Error(`gh pr create failed: ${out || errOut || e.message}`);
+  }
 
   // Clean up
   require("node:fs").unlinkSync(bodyFile);
