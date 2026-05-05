@@ -133,9 +133,13 @@ async function main() {
   };
   fs.writeFileSync(path.join(runDir, "run-meta.json"), JSON.stringify(meta, null, 2));
 
-  if (errors > 0) {
-    process.exit(1);
-  }
+  // Explicit exit. Without it the 2026-05-05 dry-run dispatch hung 28 minutes
+  // after the pipeline finished (until the workflow's 30-min timeout cancelled
+  // it). Likely culprit: undici keep-alive sockets from MiniMax fetches plus
+  // tsx/esbuild worker subprocesses keep the event loop alive even though
+  // every awaited task has resolved. Forcing exit here is a clean bandaid;
+  // the alternative is auditing every fetch/import for unref'd handles.
+  process.exit(errors > 0 ? 1 : 0);
 }
 
 // ─── Per-card processing ───────────────────────────────────────────────────
