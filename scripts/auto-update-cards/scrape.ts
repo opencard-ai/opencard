@@ -198,7 +198,11 @@ export async function scrapeCard(card: Card): Promise<ScrapeResult> {
       try {
         const page = await browser.newPage();
         await page.setExtraHTTPHeaders({ "User-Agent": MOZILLA_UA });
-        await page.goto(primaryUrl, { waitUntil: "domcontentloaded", timeout: 15000 });
+        // Use `networkidle` so JS-heavy issuer pages (amex.com etc) finish
+        // resolving their `{{{HTML_ESCAPER}}}` templates before we read
+        // `page.content()`. `domcontentloaded` returns too early and the
+        // sanity check rejects the still-templated HTML.
+        await page.goto(primaryUrl, { waitUntil: "networkidle", timeout: 30000 });
         const html = await page.content();
         if (html.length > 500 && isLikelyValidIssuerHtml(html, card).ok) {
           return { html, fallbackUrl: primaryUrl, source: "playwright" };
