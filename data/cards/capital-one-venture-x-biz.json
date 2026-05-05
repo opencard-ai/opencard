@@ -6,8 +6,12 @@
   "annual_fee": 395,
   "annual_fee_description": "$395 annual fee",
   "welcome_offer": {
-    "bonus": "150,000 bonus miles",
-    "requirement": "Spend $30,000 on purchases in the first 3 months from account opening"
+    "spending_requirement": 30000,
+    "time_period_months": 3,
+    "bonus_points": 150000,
+    "estimated_value": 2250,
+    "description": "150,000 bonus miles after spending $30,000 on purchases in the first 3 months from account opening.",
+    "point_program": "Capital One Venture Miles"
   },
   "earning_rates": [
     {

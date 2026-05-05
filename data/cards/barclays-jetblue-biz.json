@@ -6,8 +6,12 @@
   "annual_fee": 99,
   "annual_fee_description": "$99 annual fee",
   "welcome_offer": {
-    "bonus": "60,000 TrueBlue points",
-    "requirement": "Spend $2,000 on purchases and pay the annual fee in full, both within the first 90 days"
+    "spending_requirement": 2000,
+    "time_period_months": 3,
+    "bonus_points": 60000,
+    "estimated_value": 780,
+    "description": "60,000 TrueBlue bonus points after spending $2,000 on purchases and paying the annual fee in full, both within the first 90 days.",
+    "point_program": "JetBlue TrueBlue"
   },
   "earning_rates": [
     {
