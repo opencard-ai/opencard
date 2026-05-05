@@ -183,25 +183,31 @@ export async function scrapeCard(card: Card): Promise<ScrapeResult> {
     // search failed
   }
 
-  // Step 4: Playwright Cloudflare retry (only if we have playwright installed)
-  if (process.env.PLAYWRIGHT_CHROMIUM_PATH || !process.env.CI) {
+  // Step 4: Playwright Cloudflare / JS-render retry. Always attempt — the
+  // try/catch handles the case where playwright isn't installed (locally)
+  // or chromium fails to launch. The previous gate
+  // (`PLAYWRIGHT_CHROMIUM_PATH || !process.env.CI`) inverted the intent and
+  // skipped Playwright in GitHub Actions even though the workflow runs
+  // `npx playwright install chromium` first, which is exactly where we need
+  // it most (amex.com et al server-side render `{{{HTML_ESCAPER}}}` templates
+  // that only resolve after JS executes).
+  if (primaryUrl) {
     try {
       const playwright = await import("playwright");
       const browser = await playwright.chromium.launch({ headless: true });
-      const page = await browser.newPage();
-      await page.setExtraHTTPHeaders({ "User-Agent": MOZILLA_UA });
-
-      if (primaryUrl) {
+      try {
+        const page = await browser.newPage();
+        await page.setExtraHTTPHeaders({ "User-Agent": MOZILLA_UA });
         await page.goto(primaryUrl, { waitUntil: "domcontentloaded", timeout: 15000 });
         const html = await page.content();
         if (html.length > 500 && isLikelyValidIssuerHtml(html, card).ok) {
-          await browser.close();
           return { html, fallbackUrl: primaryUrl, source: "playwright" };
         }
+      } finally {
+        await browser.close();
       }
-      await browser.close();
     } catch {
-      // Playwright not available or failed
+      // playwright unavailable or chromium launch failed — fall through
     }
   }
 
