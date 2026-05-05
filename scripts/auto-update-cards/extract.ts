@@ -63,7 +63,10 @@ export async function extractCardData(
         response_format: { type: "json_object" },
         max_tokens: 8192,
       }),
-      signal: AbortSignal.timeout(60_000),
+      // 120s, not 60s. Round 1 added 60s to fix indefinite hangs, but Amex
+      // cards (and any card with a long custom prompt under data/ai-prompts/)
+      // routinely take 60-90s for the full reasoning + 8K-token JSON output.
+      signal: AbortSignal.timeout(120_000),
     });
 
     if (!response.ok) {
