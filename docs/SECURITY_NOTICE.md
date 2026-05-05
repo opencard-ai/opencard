@@ -216,9 +216,12 @@ This will catch the next time someone (you or an agent) tries to commit somethin
 |---|---|
 | Remove Upstash token from working `vercel.json` | ✅ Done by Claude |
 | Replace MiniMax key in `sync-news.mjs` with `process.env.MINIMAX_API_KEY` | ✅ Done by Claude |
+| Replace MiniMax key in `scripts/batch-ai-extract.py` with `os.environ.get("MINIMAX_API_KEY")` | ✅ Done 2026-05-04 (was still hardcoded — caught by full-history `gitleaks` re-scan) |
 | Rotate Upstash token | ⏳ Pending — must be done by user |
-| Rotate MiniMax key | ⏳ Pending — must be done by user |
-| Set both new tokens in Vercel env vars + local `.env.local` | ⏳ Pending — must be done by user |
+| Rotate MiniMax key | ✅ Done 2026-05-04 — owner rotated both PAYG (`sk-api-…`) and Coding-plan (`sk-cp-…`) keys |
+| Place MiniMax keys (PAYG → Vercel Production+Preview+Development; Coding → GH Actions secret + local `.env.local`) | ✅ Done 2026-05-04 — verified by `vercel env pull` + 200 from MiniMax `/v1/chat/completions` test |
+| Set new Upstash token in Vercel env vars + local `.env.local` | ⏳ Pending — must be done by user |
 | Verify production cron + sync-news still work | ⏳ Pending — must be done by user |
+| Scope `gitleaks` scan to exclude scraped artefacts (`data/raw-unified/**`, `data/ai-prompts/**`) and add `.gitleaksignore` for cleaned-but-still-in-history fingerprints | ✅ Done 2026-05-04 |
 | Scrub git history (BFG / git-filter-repo) | ⏳ Optional — must be done by user |
 | Add gitleaks pre-commit | ⏳ Optional — recommended |
