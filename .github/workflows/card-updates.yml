@@ -51,6 +51,11 @@ jobs:
       - name: Install Playwright + Chromium
         run: npx playwright install chromium --with-deps
 
+      - name: Configure git identity for bot commits
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
       - name: Run auto-updater (dry-run)
         if: inputs.dry_run == true
         run: npx tsx scripts/auto-update-cards/index.ts --dry --max=${{ inputs.max_cards || 50 }}

@@ -25,7 +25,7 @@ async function sendAgentMail(msg: AgentMailMessage): Promise<void> {
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      to: [{ address: msg.to }],
+      to: [msg.to],
       subject: msg.subject,
       html: msg.html,
     }),

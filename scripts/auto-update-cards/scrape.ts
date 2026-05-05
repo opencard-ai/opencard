@@ -52,6 +52,44 @@ function isCloudflarePage(html: string): boolean {
 }
 
 /**
+ * Reject HTML that obviously isn't a real issuer terms page. The 2026-05-04
+ * schedule run failed because the DDG fallback resolved to DuckDuckGo's own
+ * homepage and one issuer page returned the unrendered template (`{{{...}}}`)
+ * — both got passed to the LLM and burned MiniMax credits returning low-
+ * confidence garbage. Fail fast here instead.
+ */
+function isLikelyValidIssuerHtml(
+  html: string,
+  card: Card
+): { ok: boolean; reason?: string } {
+  const lower = html.toLowerCase();
+
+  if (/duckduckgo\.com|lite\.duckduckgo|<title>[^<]*duckduckgo/i.test(html)) {
+    return { ok: false, reason: "DuckDuckGo content (search page, not issuer terms)" };
+  }
+  if (/\{\{\{[^}]+\}\}\}|\{\{[a-z][^}]*\}\}/i.test(html)) {
+    return { ok: false, reason: "unrendered template tokens (server-side render failed)" };
+  }
+
+  const cardWords = card.name
+    .toLowerCase()
+    .split(/\s+/)
+    .filter((w) => w.length > 3);
+  const issuerWords = card.issuer
+    .toLowerCase()
+    .split(/\s+/)
+    .filter((w) => w.length > 2);
+  const hasKeyword =
+    cardWords.some((w) => lower.includes(w)) ||
+    issuerWords.some((w) => lower.includes(w));
+  if (!hasKeyword) {
+    return { ok: false, reason: "HTML doesn't mention card name or issuer" };
+  }
+
+  return { ok: true };
+}
+
+/**
  * Try DuckDuckGo Lite search for issuer URL
  */
 async function searchIssuerUrl(card: Card): Promise<string | null> {
@@ -60,20 +98,22 @@ async function searchIssuerUrl(card: Card): Promise<string | null> {
 
   try {
     const { html } = await fetchHtml(searchUrl);
-    // Find first result that matches the issuer domain
     const issuerDomain = card.issuer.toLowerCase().replace(/\s+/g, "");
-    const linkMatch = html.match(/href="(https?:\/\/[^"]*?)"/g);
-    if (linkMatch) {
-      for (const raw of linkMatch) {
-        const url = raw.match(/href="(https?:\/\/[^"]*)"/)?.[1];
-        if (url && url.includes(issuerDomain)) {
-          return url;
-        }
-      }
-      // Fallback: return first result if no issuer match
-      const first = linkMatch[0].match(/href="(https?:\/\/[^"]*)"/)?.[1];
-      return first || null;
+    const linkMatch = html.match(/href="(https?:\/\/[^"]*?)"/g) || [];
+
+    // Pull out every external URL, dropping DDG's own redirector / asset links.
+    // Without this filter the fallback can hand back a DDG-internal URL whose
+    // body is just the search homepage, which the LLM then tries to extract
+    // from (see 2026-05-04 schedule run for the burn).
+    const externalUrls = linkMatch
+      .map((raw) => raw.match(/href="(https?:\/\/[^"]*)"/)?.[1])
+      .filter((u): u is string => Boolean(u))
+      .filter((u) => !/(?:^|\/\/)[^/]*duckduckgo\.com/i.test(u));
+
+    for (const url of externalUrls) {
+      if (url.includes(issuerDomain)) return url;
     }
+    return externalUrls[0] || null;
   } catch {
     // Search failed
   }
@@ -89,7 +129,11 @@ export async function scrapeCard(card: Card): Promise<ScrapeResult> {
       if (ok) {
         const { html, status } = await fetchHtml(primaryUrl);
         if (status === 200 && html.length > 500 && !isCloudflarePage(html)) {
-          return { html, fallbackUrl: primaryUrl, source: "primary" };
+          const valid = isLikelyValidIssuerHtml(html, card);
+          if (valid.ok) {
+            return { html, fallbackUrl: primaryUrl, source: "primary" };
+          }
+          console.warn(`   ⚠️  Primary source rejected: ${valid.reason}`);
         }
       }
     } catch (err) {
@@ -110,7 +154,7 @@ export async function scrapeCard(card: Card): Promise<ScrapeResult> {
       if (match?.url) {
         try {
           const { html, status } = await fetchHtml(match.url);
-          if (status === 200 && html.length > 500) {
+          if (status === 200 && html.length > 500 && isLikelyValidIssuerHtml(html, card).ok) {
             return { html, fallbackUrl: match.url, source: "doc" };
           }
         } catch {
@@ -128,7 +172,11 @@ export async function scrapeCard(card: Card): Promise<ScrapeResult> {
     if (searchUrl) {
       const { html, status } = await fetchHtml(searchUrl);
       if (status === 200 && html.length > 500 && !isCloudflarePage(html)) {
-        return { html, fallbackUrl: searchUrl, source: "duckduckgo" };
+        const valid = isLikelyValidIssuerHtml(html, card);
+        if (valid.ok) {
+          return { html, fallbackUrl: searchUrl, source: "duckduckgo" };
+        }
+        console.warn(`   ⚠️  DDG fallback rejected: ${valid.reason}`);
       }
     }
   } catch {
@@ -146,7 +194,7 @@ export async function scrapeCard(card: Card): Promise<ScrapeResult> {
       if (primaryUrl) {
         await page.goto(primaryUrl, { waitUntil: "domcontentloaded", timeout: 15000 });
         const html = await page.content();
-        if (html.length > 500) {
+        if (html.length > 500 && isLikelyValidIssuerHtml(html, card).ok) {
           await browser.close();
           return { html, fallbackUrl: primaryUrl, source: "playwright" };
         }
