@@ -37,6 +37,7 @@ const CANONICAL_FIELDS = new Set([
   "estimated_value", "point_program", "description",
   "bonus_value",                   // legacy but tolerated (own bucket below)
   "is_elevated", "normal_bonus_points", "elevated_until",
+  "free_nights", "free_night_value_cap",  // hotel co-brand FNA welcome offers
 ]);
 
 // Map non-standard field → canonical replacement suggestion.
