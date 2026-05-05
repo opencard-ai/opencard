@@ -81,6 +81,13 @@ export interface WelcomeOffer {
   normal_bonus_points?: number;
   /** ISO date the elevated offer is expected to expire (informational only). */
   elevated_until?: string;
+  /** Hotel co-brand cards (Marriott, Hilton, IHG, Hyatt, etc.) sometimes
+   * issue Free Night Awards (FNAs) as the welcome bonus instead of (or
+   * alongside) transferable points. Counted, not summed into bonus_points. */
+  free_nights?: number;
+  /** Points cap per FNA (e.g. 50,000 for Marriott Bonvoy Biz). Renders as
+   * "up to {cap} pts each" in the UI. */
+  free_night_value_cap?: number;
 }
 
 export interface Source {

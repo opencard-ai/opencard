@@ -166,27 +166,42 @@ export default async function CardDetailPage({ params }: Props) {
               <Gift className="w-4 h-4" /> {l("detail.welcomeBonus")}
             </h3>
             <div className="text-sm text-amber-900">
-              {card.welcome_offer.bonus_points === 0 ? (
-                <span className="text-amber-700">{l("detail.noWelcomeOffer")}</span>
-              ) : (
-                <>
-                  {card.welcome_offer.bonus_points && (
-                    <span className="font-bold">
-                      {card.welcome_offer.bonus_points.toLocaleString()} {l("detail.points")}
-                    </span>
-                  )}
-                  {card.welcome_offer.estimated_value && (
-                    <span className="ml-1">
-                      ({l("detail.estimatedValue", { value: formatValue(card.welcome_offer.estimated_value) })})
-                    </span>
-                  )}
-                  {card.welcome_offer.spending_requirement && (
-                    <span className="text-xs text-amber-700 block mt-1">
-                      {l("detail.spendingReq", { amount: card.welcome_offer.spending_requirement.toLocaleString(), months: card.welcome_offer.time_period_months ?? 3 })}
-                    </span>
-                  )}
-                </>
-              )}
+              {(() => {
+                const w = card.welcome_offer;
+                const hasPoints = !!(w.bonus_points && w.bonus_points > 0);
+                const hasFnas = !!(w.free_nights && w.free_nights > 0);
+                const hasValue = !!(w.estimated_value && w.estimated_value > 0);
+                if (!hasPoints && !hasFnas && !hasValue) {
+                  return <span className="text-amber-700">{l("detail.noWelcomeOffer")}</span>;
+                }
+                return (
+                  <>
+                    {hasPoints && (
+                      <span className="font-bold">
+                        {w.bonus_points!.toLocaleString()} {l("detail.points")}
+                      </span>
+                    )}
+                    {hasFnas && (
+                      <span className="font-bold">
+                        {hasPoints && <span className="mx-1 font-normal text-amber-700">·</span>}
+                        {w.free_night_value_cap
+                          ? l("detail.freeNights", { count: w.free_nights!, cap: w.free_night_value_cap.toLocaleString(), plural: w.free_nights! === 1 ? "" : "s" })
+                          : l("detail.freeNightsNoCap", { count: w.free_nights!, plural: w.free_nights! === 1 ? "" : "s" })}
+                      </span>
+                    )}
+                    {hasValue && (
+                      <span className="ml-1">
+                        ({l("detail.estimatedValue", { value: formatValue(w.estimated_value!) })})
+                      </span>
+                    )}
+                    {w.spending_requirement && (
+                      <span className="text-xs text-amber-700 block mt-1">
+                        {l("detail.spendingReq", { amount: w.spending_requirement.toLocaleString(), months: w.time_period_months ?? 3 })}
+                      </span>
+                    )}
+                  </>
+                );
+              })()}
             </div>
           </div>
         )}
