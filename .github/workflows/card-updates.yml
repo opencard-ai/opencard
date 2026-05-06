@@ -32,6 +32,9 @@ jobs:
       AGENTMAIL_API_KEY: ${{ secrets.AGENTMAIL_API_KEY }}
       AGENTMAIL_FROM_INBOX: ${{ secrets.AGENTMAIL_FROM_INBOX }}
       OWNER_EMAIL: ${{ secrets.OWNER_EMAIL }}
+      # gh CLI in workflows requires GH_TOKEN; the auto-injected GITHUB_TOKEN
+      # isn't picked up automatically. pr.ts shells out to `gh pr create`.
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout repo
