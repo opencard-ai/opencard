@@ -297,18 +297,6 @@
       "official": "https://www.americanexpress.com/en-us/business/credit-cards/gold/"
     }
   },
-  "amex-bce": {
-    "issuer": "amex",
-    "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/blue-cash-everyday-credit-card/"
-    }
-  },
-  "amex-bcp": {
-    "issuer": "amex",
-    "sources": {
-      "uscreditcardguide": "https://www.uscreditcardguide.com/blue-cash-preferred-credit-card/"
-    }
-  },
   "amex-delta-reserve": {
     "issuer": "amex",
     "sources": {
