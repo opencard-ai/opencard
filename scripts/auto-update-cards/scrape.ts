@@ -17,7 +17,16 @@ export interface ScrapeResult {
 }
 
 const MOZILLA_UA = "Mozilla/5.0 (compatible; OpenCard/1.0; +https://opencardai.com) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
-const CLOUDFLARE_KEYWORDS = ["cf-browser-verification", "cloudflare", "Checking your browser"];
+// Only match CF *challenge* pages, not legit pages that happen to use a CF CDN
+// or `cloudflare-static/email-decode.min.js` (which USCCG does — flagging that
+// substring tanked every Amex card in run 25418627671).
+const CLOUDFLARE_CHALLENGE_KEYWORDS = [
+  "cf-browser-verification",
+  "cf-mitigated",
+  "cf-challenge-running",
+  "Checking your browser",
+  "Just a moment...",
+];
 
 function fetchHtml(url: string, timeoutMs = 15000): Promise<{ html: string; status: number }> {
   return new Promise((resolve, reject) => {
@@ -48,7 +57,8 @@ async function headCheck(url: string): Promise<boolean> {
 }
 
 function isCloudflarePage(html: string): boolean {
-  return CLOUDFLARE_KEYWORDS.some((kw) => html.toLowerCase().includes(kw));
+  const lower = html.toLowerCase();
+  return CLOUDFLARE_CHALLENGE_KEYWORDS.some((kw) => lower.includes(kw.toLowerCase()));
 }
 
 /**
