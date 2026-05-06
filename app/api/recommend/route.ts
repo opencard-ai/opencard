@@ -101,13 +101,16 @@ Respond conversationally, like a helpful friend who knows credit cards well.`;
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: "MiniMax-Text-01",
+      model: "MiniMax-M2.7",
       messages: [
         { role: "system", content: systemPrompt },
         ...historyMessages,
         { role: "user", content: message }
       ],
       temperature: 0.7,
+      // Skip M2.7's reasoning pass — recommend replies are short and don't
+      // benefit enough from chain-of-thought to justify the 10-15s latency.
+      internal_thought: false,
     }),
   });
 
@@ -118,7 +121,11 @@ Respond conversationally, like a helpful friend who knows credit cards well.`;
   }
 
   const data = await response.json();
-  const aiMessage = data.choices?.[0]?.message?.content || "I'm having trouble understanding. Could you rephrase that?";
+  // M2.7 is a reasoning model and may emit <think>...</think> tokens before
+  // the user-facing content; strip them so the recommend widget doesn't show
+  // chain-of-thought.
+  const rawMessage = data.choices?.[0]?.message?.content || "I'm having trouble understanding. Could you rephrase that?";
+  const aiMessage = rawMessage.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
 
   let recommendationResult = null;
   try {

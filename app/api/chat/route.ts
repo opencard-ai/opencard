@@ -111,9 +111,13 @@ User question:`;
         "Authorization": `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: "MiniMax-Text-01",
+        model: "MiniMax-M2.7",
         messages: chatMessages,
         temperature: 0.7,
+        // Skip M2.7's reasoning pass — chat needs to feel snappy. Without
+        // this the assistant takes 30-60s per turn vs Text-01's near-instant
+        // reply. Re-enable per request if a particular tool needs reasoning.
+        internal_thought: false,
       })
     });
 
@@ -127,7 +131,10 @@ User question:`;
     }
 
     const data = await response.json();
-    const reply = data.choices?.[0]?.message?.content || "Sorry, AI is temporarily unavailable.";
+    // M2.7 emits <think>...</think> reasoning tokens; strip them before sending
+    // to the chat UI so the assistant bubble doesn't leak chain-of-thought.
+    const rawReply = data.choices?.[0]?.message?.content || "Sorry, AI is temporarily unavailable.";
+    const reply = rawReply.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
 
     return NextResponse.json({ reply });
   } catch (error) {

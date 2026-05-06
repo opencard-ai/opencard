@@ -19,6 +19,34 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    // Catalog dedup (commit b2b0ba5) merged amex-bce / amex-bcp into the
+    // long-form canonical IDs. 301 the retired short IDs so inbound links /
+    // bookmarks / SEO equity carry over. Cover both the language-prefixed
+    // and the bare /cards/* paths.
+    return [
+      {
+        source: "/:lang/cards/amex-bce",
+        destination: "/:lang/cards/amex-blue-cash-everyday",
+        permanent: true,
+      },
+      {
+        source: "/:lang/cards/amex-bcp",
+        destination: "/:lang/cards/amex-blue-cash-preferred",
+        permanent: true,
+      },
+      {
+        source: "/cards/amex-bce",
+        destination: "/cards/amex-blue-cash-everyday",
+        permanent: true,
+      },
+      {
+        source: "/cards/amex-bcp",
+        destination: "/cards/amex-blue-cash-preferred",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
