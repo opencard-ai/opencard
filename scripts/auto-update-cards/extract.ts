@@ -145,9 +145,35 @@ Output a JSON object with this exact schema:
 }`;
 }
 
+/**
+ * Strip strike-through markup so the LLM sees only the current/new values
+ * when an issuer page advertises an upgrade as
+ *   `Earn <strike>125,000</strike> 150,000 points`.
+ * 2026-05-06 dry-run had Chase Sapphire Reserve extracting the struck-through
+ * old offer (125K) instead of the live one (150K). Removing the entire
+ * struck-through element (including its text content) avoids that ambiguity.
+ */
+function stripStrikethrough(html: string): string {
+  // <span class="strikeThrough">…</span> and similar (Chase pattern)
+  html = html.replace(
+    /<(\w+)\b[^>]*class="[^"]*strike[Tt]hrough[^"]*"[^>]*>[\s\S]*?<\/\1>/g,
+    ""
+  );
+  // <del>…</del>, <s>…</s>
+  html = html.replace(/<del\b[^>]*>[\s\S]*?<\/del>/gi, "");
+  html = html.replace(/<s\b[^>]*>[\s\S]*?<\/s>/gi, "");
+  // Inline style: text-decoration: line-through
+  html = html.replace(
+    /<(\w+)\b[^>]*style="[^"]*line-through[^"]*"[^>]*>[\s\S]*?<\/\1>/gi,
+    ""
+  );
+  return html;
+}
+
 function buildExtractPrompt(card: Card, html: string): string {
+  const cleanedHtml = stripStrikethrough(html);
   // Truncate HTML to first 80KB to avoid token limits
-  const truncatedHtml = html.length > 80000 ? html.slice(0, 80000) + "\n[TRUNCATED]" : html;
+  const truncatedHtml = cleanedHtml.length > 80000 ? cleanedHtml.slice(0, 80000) + "\n[TRUNCATED]" : cleanedHtml;
 
   return `Extract structured data for this credit card:
 
