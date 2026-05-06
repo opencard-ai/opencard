@@ -44,7 +44,12 @@
   "tags": [
     "no-annual-fee"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.uscreditcardguide.com/amex-blue-cash-preferred-for-morgan-stanley/",
+      "notes": "USCCG card review (LLM-friendly static HTML)"
+    }
+  ],
   "benefits": [],
   "hotel_program": null,
   "application_rules": {

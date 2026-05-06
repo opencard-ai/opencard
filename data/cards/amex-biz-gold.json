@@ -110,6 +110,10 @@
   ],
   "sources": [
     {
+      "url": "https://www.uscreditcardguide.com/amex-business-gold-rewards/",
+      "notes": "USCCG card review (LLM-friendly static HTML)"
+    },
+    {
       "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
       "notes": "Amex official card page with earning categories and statement credits"
     },

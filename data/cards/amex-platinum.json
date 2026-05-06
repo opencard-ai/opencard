@@ -75,6 +75,10 @@
   ],
   "sources": [
     {
+      "url": "https://www.uscreditcardguide.com/amex-platinum/",
+      "notes": "USCCG card review (LLM-friendly static HTML)"
+    },
+    {
       "url": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
       "notes": "Official Amex Page"
     },

@@ -50,7 +50,12 @@
     "business",
     "no-annual-fee"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.uscreditcardguide.com/amex-amazon-business-prime/",
+      "notes": "USCCG card review (LLM-friendly static HTML)"
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],

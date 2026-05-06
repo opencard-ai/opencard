@@ -54,7 +54,12 @@
     "airline",
     "delta"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.uscreditcardguide.com/amex-blue-delta-skymiles/",
+      "notes": "USCCG card review (LLM-friendly static HTML)"
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": []

@@ -60,7 +60,12 @@
     "business",
     "no-foreign-transaction-fee"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.uscreditcardguide.com/amex-gold-delta-skymiles-business/",
+      "notes": "USCCG card review (LLM-friendly static HTML)"
+    }
+  ],
   "benefits": [],
   "hotel_program": null,
   "application_rules": {

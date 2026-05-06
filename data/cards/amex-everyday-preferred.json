@@ -63,6 +63,10 @@
   "recurring_credits": [],
   "sources": [
     {
+      "url": "https://www.uscreditcardguide.com/amex-everyday-preferred/",
+      "notes": "USCCG card review (LLM-friendly static HTML)"
+    },
+    {
       "url": "https://www.americanexpress.com/us/credit-cards/card/amex-everyday-preferred/",
       "notes": "Amex official card page with earning rates and benefits"
     },

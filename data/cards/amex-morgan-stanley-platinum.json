@@ -44,7 +44,12 @@
     "travel_accident": null
   },
   "tags": [],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.uscreditcardguide.com/amex-platinum-for-morgan-stanley/",
+      "notes": "USCCG card review (LLM-friendly static HTML)"
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],

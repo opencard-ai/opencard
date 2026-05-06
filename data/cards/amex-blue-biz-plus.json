@@ -51,7 +51,12 @@
     "no-annual-fee"
   ],
   "recurring_credits": [],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.uscreditcardguide.com/amex-blue-business-plus/",
+      "notes": "USCCG card review (LLM-friendly static HTML)"
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],

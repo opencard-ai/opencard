@@ -51,6 +51,10 @@
   ],
   "sources": [
     {
+      "url": "https://www.uscreditcardguide.com/amex-graphite/",
+      "notes": "USCCG card review (LLM-friendly static HTML)"
+    },
+    {
       "name": "American Express",
       "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/graphite-business-cash-unlimited-card/65147/"
     }
