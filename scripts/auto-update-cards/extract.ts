@@ -61,7 +61,11 @@ export async function extractCardData(
         ],
         temperature: 0.1,
         response_format: { type: "json_object" },
-        max_tokens: 8192,
+        // 12K, not 8K. Cards with longer custom prompts (data/ai-prompts/*)
+        // plus full schema output were truncating mid-string at 8K — most
+        // recently chase-sapphire-reserve and chase-sapphire-reserve-biz on
+        // the 2026-05-06 dry-run. Headroom for M2.7 reasoning + JSON.
+        max_tokens: 12288,
       }),
       // 120s, not 60s. Round 1 added 60s to fix indefinite hangs, but Amex
       // cards (and any card with a long custom prompt under data/ai-prompts/)
@@ -175,13 +179,16 @@ function buildExtractPrompt(card: Card, html: string): string {
   // Truncate HTML to first 80KB to avoid token limits
   const truncatedHtml = cleanedHtml.length > 80000 ? cleanedHtml.slice(0, 80000) + "\n[TRUNCATED]" : cleanedHtml;
 
-  return `Extract structured data for this credit card:
+  return `Extract structured data for this credit card from the page below.
 
 Card: ${card.name}
 Issuer: ${card.issuer}
-Existing known data:
-- Annual fee: $${card.annual_fee}
-${card.welcome_offer ? `- Welcome offer: ${card.welcome_offer.description || JSON.stringify(card.welcome_offer)}` : ""}
+
+The scraped HTML is the canonical source — extract values from there, not
+from any prior knowledge. If a value appears multiple times (e.g. an upgraded
+offer alongside the older one in disclosures or comparison tables), prefer the
+value that is presented as the live marketing offer near the top of the page
+or in the primary "Earn …" call-to-action.
 
 Scraped HTML (first 80KB):
 ---
