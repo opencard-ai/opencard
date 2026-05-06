@@ -6,7 +6,10 @@
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
-  "welcome_offer": null,
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 3
+  },
   "earning_rates": [
     {
       "category": "Dining",
@@ -61,7 +64,7 @@
       "notes": "Capital One SavorOne overview confirming earning categories and $200 welcome bonus"
     }
   ],
-  "last_updated": "2026-04-30T05:19:34.221Z",
+  "last_updated": "2026-05-06T00:17:22.388Z",
   "hotel_program": null,
   "application_rules": {
     "rules": []
