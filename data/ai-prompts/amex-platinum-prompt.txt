@@ -12,42 +12,153 @@ Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, 
     "bonus_points": 175000,
     "spending_requirement": 12000,
     "time_period_months": 6,
-    "description": "Earn up to 175,000 Membership Rewards points...",
+    "description": "Earn up to 175,000 Membership Rewards points",
     "point_program": "Amex Membership Rewards",
-    "estimated_value": 2100
+    "estimated_value": 2975
   },
   "earning_rates": [
-    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
-    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
-    {"category": "Other", "rate": 1, "notes": null}
+    {
+      "category": "Flights",
+      "rate": 5,
+      "notes": "Booked directly with airlines"
+    },
+    {
+      "category": "Hotels",
+      "rate": 5,
+      "notes": "Prepaid hotels"
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": null
+    }
   ],
   "recurring_credits": [
-    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
-    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
-    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"},
-    {"name": "Walmart+", "amount": 0, "frequency": "annual", "category": "shopping", "description": "Free membership with fuel discounts", "reset_type": "calendar_year"},
-    {"name": "Clear Security", "amount": 0, "frequency": "annual", "category": "other", "description": "Free Clear membership", "reset_type": "calendar_year"}
+    {
+      "credit_key": "uber-cash",
+      "name": "Uber Cash",
+      "amount": 15,
+      "frequency": "monthly",
+      "category": "ride",
+      "description": "$15/month ($180/yr) + $20 December bonus = $200/yr total. Card must be added to Uber app.",
+      "reset_type": "monthly",
+      "source": "https://global.americanexpress.com/card-benefits/detail/uber-cash/platinum"
+    },
+    {
+      "credit_key": "uber-one-membership",
+      "name": "Uber One Membership",
+      "amount": 120,
+      "frequency": "annual",
+      "category": "ride",
+      "description": "$120/yr on auto-renewing Uber One membership.",
+      "reset_type": "calendar_year",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    },
+    {
+      "credit_key": "walmart-credit",
+      "name": "Walmart+ Credit",
+      "amount": 12.95,
+      "frequency": "monthly",
+      "category": "groceries",
+      "description": "One monthly Walmart+ membership credit (~$12.95/month plus tax, ~$155/yr).",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    },
+    {
+      "credit_key": "clear-plus-credit",
+      "name": "CLEAR Plus Credit",
+      "amount": 209,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$209/yr on CLEAR Plus Membership (auto-renewal required).",
+      "reset_type": "calendar_year",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    },
+    {
+      "credit_key": "airline-fee-credit",
+      "name": "Airline Fee Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "airline",
+      "description": "$200/yr on incidental fees with one selected airline (baggage, food/drinks, etc.).",
+      "reset_type": "calendar_year",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    },
+    {
+      "credit_key": "equinox-credit",
+      "name": "Equinox Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "fitness",
+      "description": "Up to $300/calendar year statement credit on Equinox club membership or Equinox+ digital subscription. Issued as single lump sum (changed from $25/monthly per 2026 refresh). Enrollment required.",
+      "reset_type": "calendar_year",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    },
+    {
+      "credit_key": "digital-entertainment-credit",
+      "name": "Digital Entertainment Credit",
+      "amount": 20,
+      "frequency": "monthly",
+      "category": "entertainment",
+      "description": "$20/month ($240/yr) on eligible digital entertainment (Disney+, Hulu, ESPN+, NYT, WSJ, Peacock).",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    },
+    {
+      "credit_key": "resy-dining-credit",
+      "name": "Resy Dining Credit",
+      "amount": 100,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "$100/quarter ($400/yr) at US Resy restaurants and eligible Resy purchases.",
+      "reset_type": "quarterly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    },
+    {
+      "credit_key": "lululemon-credit",
+      "name": "lululemon Credit",
+      "amount": 75,
+      "frequency": "quarterly",
+      "category": "shopping",
+      "description": "$75/quarter ($300/yr) on lululemon.com or US lululemon stores.",
+      "reset_type": "quarterly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    },
+    {
+      "credit_key": "oura-ring-credit",
+      "name": "Oura Ring Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "shopping",
+      "description": "$200/yr on Oura Ring direct purchases (oura.com).",
+      "reset_type": "calendar_year",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    }
   ],
-  
-  IMPORTANT: Extract ALL recurring credits from the content including but not limited to:
-  - Airline credits (e.g., $200-$250/year for incidentals, bags, lounges)
-  - Hotel credits (e.g., $300/year for Fine Hotels + Resorts)
-  - Uber/Lyft credits
-  - Dining credits (e.g., $300/year for Resy)
-  - Shopping credits (Saks, Walmart+, etc.)
-  - Streaming credits (Netflix, Hulu, Disney+, etc.)
-  - Fitness credits (Equinox, SoulCycle, etc.)
-  - Global Entry/TSA PreCheck credits
-  - Centurion Lounge visits
-  - Priority Pass membership
-  - Free night certificates
-  - Elite status benefits
-  
-  Be COMPREHENSIVE - do not miss any credit mentioned in the content.
   "travel_benefits": {
-    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
-    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
-    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
+    "lounge_access": [
+      {
+        "name": "Centurion Lounge",
+        "type": "centurion"
+      },
+      {
+        "name": "Priority Pass",
+        "type": "priority_pass"
+      }
+    ],
+    "hotel_status": [
+      {
+        "program": "Marriott Bonvoy",
+        "tier": "Gold Elite",
+        "complimentary": true
+      }
+    ],
+    "other_benefits": [
+      {
+        "name": "Fine Hotels + Resorts",
+        "description": "FHR program benefits"
+      }
+    ]
   },
   "hotel_program": {
     "program": "Marriott Bonvoy",
@@ -65,10 +176,35 @@ Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, 
     "return_protection": null
   },
   "application_rules": {
-    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+    "rules": [
+      {
+        "rule": "5/24 rule",
+        "description": "Cannot approve if 5+ new cards in 24 months"
+      }
+    ]
   },
-  "tags": ["lounge-access", "premium", "transferable"],
-  "sources": [{"url": "https://..."}]
+  "tags": [
+    "lounge-access",
+    "premium",
+    "transferable"
+  ],
+  "sources": [
+    {
+      "url": "https://www.uscreditcardguide.com/amex-platinum/"
+    },
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    },
+    {
+      "url": "https://upgradedpoints.com/travel/amex-travel-insurance-benefits-guide/"
+    },
+    {
+      "url": "https://www.creditcards.com/american-express/amex-platinum/"
+    },
+    {
+      "url": "https://www.creditcards.com/american-express/the-platinum-card/"
+    }
+  ]
 }
 
 Rules:
@@ -192,6 +328,5 @@ gtag("set", "developer_id.dZTNiMT", true);
 gtag("config", "G-T0MKTJJ4YX");
  window._googlesitekit = window._googlesitekit || {}; window._googlesitekit.throttledEvents = []; window._googlesitekit.gtagEvent = (name, data) => { var key = JSON.stringify( { name, data } ); if ( !! window._googlesitekit.throttledEvents[ key ] ) { return; } window._googlesitekit.throttledEvents[ key ] = true; setTimeout( () => { delete window._googlesitekit.throttledEvents[ key ]; }, 5 ); gtag( "event", name, { ...data, event_source: "site-kit" } ); };</script> <link rel="https://api.w.org/" href="https://www.uscreditcardguide.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.uscreditcardguide.com/wp-json/wp/v2/posts/4089" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.uscreditcardguide.com/xmlrpc.php?rsd" /><link rel='shortlink' href='https://wp.me/perRPJ-13X' /><link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.uscreditcardguide.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.uscreditcardguide.com%2Famex-platinum-card%2F" /><link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.uscreditcardguide.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.uscreditcardguide.com%2Famex-platinum-card%2F&#038;format=xml" /><meta name="generator" content="Site Kit by Google 1.161.0" /><meta name="apple-itunes-app" content="app-id=1221215482"><meta property='og:title' content='AmEx Platinum Card Review (2026.2 Update: AS HIGH AS 175k Offer)' /><meta property='og:site_name' content='US Credit Card Guide' /><meta property='og:url' content='https://www.uscreditcardguide.com/amex-platinum-card/' /><meta property='og:type' content='article' /><meta property='og:image' content='https://www.uscreditcardguide.com/wp-content/uploads/NUS000000237_480x304_straight_withname.png.webp' /> <!--[if IE]><style type="text/css" media="screen">#header, #wrapper-footer, #nav-below, .entry-content, .sidebar-widget, .search .navigation, .entry-headline-wrapper, .page-template-template-page-builder-php .panel, .page-template-template-page-builder-full-width-php .panel, .post-entry {
         behavior: url("https://www.uscreditcardguide.com/wp-content/themes/songwriter-premium/css/pie/PIE.php");
- 
 
 Respond with JSON only. Do NOT include fields that are null or not found in the content.

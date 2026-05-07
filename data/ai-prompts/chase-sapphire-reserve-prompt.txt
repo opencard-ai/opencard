@@ -3,72 +3,170 @@ You are extracting structured credit card data for "Chase Sapphire Reserve®" (c
 Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
 
 {
-  "issuer": "American Express",
-  "network": "amex",
-  "annual_fee": 895,
+  "issuer": "Chase",
+  "network": "visa",
+  "annual_fee": 795,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 175000,
-    "spending_requirement": 12000,
-    "time_period_months": 6,
-    "description": "Earn up to 175,000 Membership Rewards points...",
-    "point_program": "Amex Membership Rewards",
-    "estimated_value": 2100
+    "bonus_points": 125000,
+    "spending_requirement": 6000,
+    "time_period_months": 3,
+    "description": "Earn 125,000 bonus points after spending $6,000 in the first 3 months",
+    "point_program": "Chase Ultimate Rewards",
+    "estimated_value": 2125
   },
   "earning_rates": [
-    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
-    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
-    {"category": "Other", "rate": 1, "notes": null}
+    {
+      "category": "Travel",
+      "rate": 3,
+      "notes": "Earn 3X points on travel worldwide (after you spend your $300 travel credit). Excludes travel purchases that are eligible for the $300 annual travel credit."
+    },
+    {
+      "category": "Dining",
+      "rate": 3,
+      "notes": "Earn 3X points on dining at restaurants worldwide (including eligible delivery services, takeout and dining out)."
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": "Earn 1X points on all other purchases."
+    }
   ],
   "recurring_credits": [
-    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
-    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
-    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"},
-    {"name": "Walmart+", "amount": 0, "frequency": "annual", "category": "shopping", "description": "Free membership with fuel discounts", "reset_type": "calendar_year"},
-    {"name": "Clear Security", "amount": 0, "frequency": "annual", "category": "other", "description": "Free Clear membership", "reset_type": "calendar_year"}
+    {
+      "credit_key": "travel-credit-chase-travel",
+      "name": "Travel Credit (Chase Travel)",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$300 annual travel credit for purchases through Chase Travel.",
+      "reset_type": "anniversary",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
+    },
+    {
+      "credit_key": "the-edit-hotel-credit",
+      "name": "The Edit Hotel Credit",
+      "amount": 250,
+      "frequency": "semi_annual",
+      "category": "hotel",
+      "description": "Up to $250 per half (2 × $250 = $500/year) on prepaid hotels via The Edit by Chase Travel.",
+      "reset_type": "calendar_year",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
+    },
+    {
+      "credit_key": "exclusive-tables-dining-credit",
+      "name": "Exclusive Tables Dining Credit",
+      "amount": 150,
+      "frequency": "semi_annual",
+      "category": "dining",
+      "description": "Up to $150 every six months ($150 H1 / $150 H2) at Sapphire Reserve Exclusive Tables restaurants.",
+      "reset_type": "calendar_half",
+      "source": "https://thepointsguy.com/credit-cards/chase-sapphire-reserve-credits/"
+    },
+    {
+      "credit_key": "stubhub-viagogo-credit",
+      "name": "StubHub / viagogo Credit",
+      "amount": 150,
+      "frequency": "semi_annual",
+      "category": "entertainment",
+      "description": "Up to $150 in statement credits twice per year ($150 H1 / $150 H2) on StubHub or viagogo event ticket purchases.",
+      "reset_type": "calendar_half",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
+    },
+    {
+      "credit_key": "doordash-credit",
+      "name": "DoorDash Credit",
+      "amount": 25,
+      "frequency": "monthly",
+      "category": "dining",
+      "description": "$25/month ($300/year) on DoorDash purchases. (Excludes 1-yr DashPass — promotional, not recurring.)",
+      "reset_type": "monthly",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
+    },
+    {
+      "credit_key": "lyft-credit",
+      "name": "Lyft Credit",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "ride",
+      "description": "$10/month ($120/year) on Lyft rides.",
+      "reset_type": "monthly",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
+    },
+    {
+      "credit_key": "peloton-credit",
+      "name": "Peloton Credit",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "fitness",
+      "description": "$10/month ($120/year) on Peloton.",
+      "reset_type": "monthly",
+      "source": "https://account.chase.com/sapphire/reserve/benefits"
+    }
   ],
-  
-  IMPORTANT: Extract ALL recurring credits from the content including but not limited to:
-  - Airline credits (e.g., $200-$250/year for incidentals, bags, lounges)
-  - Hotel credits (e.g., $300/year for Fine Hotels + Resorts)
-  - Uber/Lyft credits
-  - Dining credits (e.g., $300/year for Resy)
-  - Shopping credits (Saks, Walmart+, etc.)
-  - Streaming credits (Netflix, Hulu, Disney+, etc.)
-  - Fitness credits (Equinox, SoulCycle, etc.)
-  - Global Entry/TSA PreCheck credits
-  - Centurion Lounge visits
-  - Priority Pass membership
-  - Free night certificates
-  - Elite status benefits
-  
-  Be COMPREHENSIVE - do not miss any credit mentioned in the content.
   "travel_benefits": {
-    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
-    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
-    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
-  },
-  "hotel_program": {
-    "program": "Marriott Bonvoy",
-    "tier": "Gold Elite",
-    "elite_night_credits": 15,
-    "fhr_eligible": true,
-    "thc_eligible": true
+    "lounge_access": [
+      {
+        "name": "Priority Pass",
+        "type": "priority_pass"
+      }
+    ],
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Trip Cancellation/Interruption Insurance",
+        "description": "Up to $10,000 per person and $20,000 per trip for covered reasons"
+      },
+      {
+        "name": "Emergency Evacuation & Transportation",
+        "description": "Up to $100,000 coverage"
+      },
+      {
+        "name": "Roadside Assistance",
+        "description": "Available 24/7"
+      },
+      {
+        "name": "Travel and Emergency Assistance Services",
+        "description": "Referrals and assistance available"
+      }
+    ]
   },
   "insurance": {
-    "rental_insurance": "Secondary",
+    "rental_insurance": "Primary",
     "trip_delay": true,
     "purchase_protection": true,
     "extended_warranty": true,
-    "trip_cancellation": null,
+    "trip_cancellation": true,
     "return_protection": null
   },
   "application_rules": {
-    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+    "rules": [
+      {
+        "rule": "5/24 rule",
+        "description": "Cannot be approved if you have opened 5 or more credit cards from any issuer in the past 24 months"
+      },
+      {
+        "rule": "Same-day approval",
+        "description": "If approved, you may be able to use your card immediately with instant card number"
+      }
+    ]
   },
-  "tags": ["lounge-access", "premium", "transferable"],
-  "sources": [{"url": "https://..."}]
+  "tags": [
+    "lounge-access",
+    "premium",
+    "travel",
+    "dining",
+    "transferable"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve"
+    },
+    {
+      "url": "https://roamingcactus.com/credit-cards/2026/4/1/chase-sapphire-reserve-review-2026"
+    }
+  ]
 }
 
 Rules:

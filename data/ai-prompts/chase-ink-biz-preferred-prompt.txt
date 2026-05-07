@@ -3,54 +3,99 @@ You are extracting structured credit card data for "Chase Ink Business Preferred
 Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
 
 {
-  "issuer": "American Express",
-  "network": "amex",
-  "annual_fee": 895,
+  "issuer": "Chase",
+  "network": "visa",
+  "annual_fee": 95,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 175000,
-    "spending_requirement": 12000,
-    "time_period_months": 6,
-    "description": "Earn up to 175,000 Membership Rewards points...",
-    "point_program": "Amex Membership Rewards",
-    "estimated_value": 2100
+    "spending_requirement": 8000,
+    "time_period_months": 3,
+    "bonus_points": 100000,
+    "description": "100,000 bonus points after you spend $8,000 on purchases in the first 3 months from account opening.",
+    "point_program": "Chase Ultimate Rewards",
+    "estimated_value": 1700
   },
   "earning_rates": [
-    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
-    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
-    {"category": "Other", "rate": 1, "notes": null}
-  ],
-  "recurring_credits": [
-    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
-    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
-    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"}
+    {
+      "category": "Travel",
+      "rate": 3,
+      "notes": "On the first $150,000 spent in combined purchases each account anniversary year."
+    },
+    {
+      "category": "Advertising (Social Media & Search Engines)",
+      "rate": 3,
+      "notes": "On the first $150,000 spent in combined purchases each account anniversary year."
+    },
+    {
+      "category": "Shipping",
+      "rate": 3,
+      "notes": "On the first $150,000 spent in combined purchases each account anniversary year."
+    },
+    {
+      "category": "Internet, Cable & Phone Services",
+      "rate": 3,
+      "notes": "On the first $150,000 spent in combined purchases each account anniversary year."
+    },
+    {
+      "category": "Lyft Rides",
+      "rate": 5,
+      "notes": "Through September 30, 2027."
+    },
+    {
+      "category": "Default",
+      "rate": 1,
+      "notes": "On all other purchases."
+    }
   ],
   "travel_benefits": {
-    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
-    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
-    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
-  },
-  "hotel_program": {
-    "program": "Marriott Bonvoy",
-    "tier": "Gold Elite",
-    "elite_night_credits": 15,
-    "fhr_eligible": true,
-    "thc_eligible": true
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Points Transfer",
+        "description": "Transfer points to leading airline and hotel frequent travel programs at 1:1 ratio."
+      },
+      {
+        "name": "Chase Travel",
+        "description": "Book travel through Chase Travel for competitive rates and premium benefits."
+      },
+      {
+        "name": "DashPass",
+        "description": "Complimentary access to DoorDash DashPass (activation required)."
+      }
+    ]
   },
   "insurance": {
-    "rental_insurance": "Secondary",
+    "rental_insurance": "Primary",
     "trip_delay": true,
+    "trip_cancellation": true,
     "purchase_protection": true,
     "extended_warranty": true,
-    "trip_cancellation": null,
+    "baggage_delay": true,
+    "lost_luggage": true,
     "return_protection": null
   },
   "application_rules": {
-    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+    "rules": [],
+    "notes": null
   },
-  "tags": ["lounge-access", "premium", "transferable"],
-  "sources": [{"url": "https://..."}]
+  "tags": [
+    "business"
+  ],
+  "sources": [
+    {
+      "url": "https://www.dailydrop.com/credit-cards/ink-business-preferred-credit-card"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/chase-ink-card-showdown/"
+    },
+    {
+      "url": "https://upgradedpoints.com/credit-cards/reviews/chase-ink-business-preferred-credit-card/benefits/"
+    },
+    {
+      "url": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred"
+    }
+  ]
 }
 
 Rules:

@@ -3,72 +3,123 @@ You are extracting structured credit card data for "Chase IHG Premier" (chase-ih
 Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
 
 {
-  "issuer": "American Express",
-  "network": "amex",
-  "annual_fee": 895,
+  "issuer": "Chase",
+  "network": "visa",
+  "annual_fee": 99,
   "foreign_transaction_fee": 0,
-  "credit_required": "Excellent",
+  "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 175000,
-    "spending_requirement": 12000,
-    "time_period_months": 6,
-    "description": "Earn up to 175,000 Membership Rewards points...",
-    "point_program": "Amex Membership Rewards",
-    "estimated_value": 2100
+    "bonus_points": 140000,
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "description": "Earn 140,000 Bonus Points after spending $3,000 on purchases in the first 3 months from account opening",
+    "point_program": "IHG Rewards",
+    "estimated_value": 700
   },
   "earning_rates": [
-    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
-    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
-    {"category": "Other", "rate": 1, "notes": null}
+    {
+      "category": "IHG Hotels",
+      "rate": 10,
+      "notes": "Earn 10X points on IHG purchases"
+    },
+    {
+      "category": "Travel",
+      "rate": 5,
+      "notes": "Earn 5X points on travel"
+    },
+    {
+      "category": "Dining",
+      "rate": 5,
+      "notes": "Earn 5X points on dining"
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": "Earn 1X points on all other purchases"
+    }
   ],
   "recurring_credits": [
-    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
-    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
-    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"},
-    {"name": "Walmart+", "amount": 0, "frequency": "annual", "category": "shopping", "description": "Free membership with fuel discounts", "reset_type": "calendar_year"},
-    {"name": "Clear Security", "amount": 0, "frequency": "annual", "category": "other", "description": "Free Clear membership", "reset_type": "calendar_year"}
+    {
+      "credit_key": "free-night-award",
+      "name": "Free Night Award",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "hotel",
+      "description": "Annual Free Night Award at eligible IHG Hotels & Resorts worldwide; up to 40,000-point cap (can add own points to redeem at higher categories).",
+      "reset_type": "cardmember_year",
+      "is_free_night": true
+    },
+    {
+      "credit_key": "global-entry-tsa-precheck",
+      "name": "Global Entry/TSA PreCheck",
+      "amount": 120,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $120 statement credit for Global Entry, TSA PreCheck, or NEXUS application fee, every 4 years.",
+      "reset_type": "every_4_years"
+    },
+    {
+      "credit_key": "doordash-non-restaurant-credit",
+      "name": "DoorDash Non-Restaurant Credit",
+      "amount": 10,
+      "frequency": "quarterly",
+      "category": "dining",
+      "description": "Up to $10 off one qualifying non-restaurant DoorDash order each calendar quarter (DashMart, 7-Eleven, CVS, Safeway, etc.). Requires active DashPass enrollment. Per Chase cobrand-doordash terms.",
+      "reset_type": "calendar_quarter",
+      "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
+    }
   ],
-  
-  IMPORTANT: Extract ALL recurring credits from the content including but not limited to:
-  - Airline credits (e.g., $200-$250/year for incidentals, bags, lounges)
-  - Hotel credits (e.g., $300/year for Fine Hotels + Resorts)
-  - Uber/Lyft credits
-  - Dining credits (e.g., $300/year for Resy)
-  - Shopping credits (Saks, Walmart+, etc.)
-  - Streaming credits (Netflix, Hulu, Disney+, etc.)
-  - Fitness credits (Equinox, SoulCycle, etc.)
-  - Global Entry/TSA PreCheck credits
-  - Centurion Lounge visits
-  - Priority Pass membership
-  - Free night certificates
-  - Elite status benefits
-  
-  Be COMPREHENSIVE - do not miss any credit mentioned in the content.
   "travel_benefits": {
-    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
-    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
-    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
+    "lounge_access": [],
+    "hotel_status": [
+      {
+        "program": "IHG Rewards",
+        "tier": "Platinum Elite",
+        "complimentary": true
+      }
+    ],
+    "other_benefits": [
+      {
+        "name": "Fourth Night Free",
+        "description": "Get a fourth night free on award stays of 3+ nights"
+      },
+      {
+        "name": "IHG Rewards Club",
+        "description": "Complimentary IHG Rewards Club membership"
+      }
+    ]
   },
   "hotel_program": {
-    "program": "Marriott Bonvoy",
-    "tier": "Gold Elite",
-    "elite_night_credits": 15,
-    "fhr_eligible": true,
-    "thc_eligible": true
+    "program": "IHG Rewards",
+    "tier": "Platinum Elite",
+    "elite_night_credits": 0,
+    "fhr_eligible": false,
+    "thc_eligible": false
   },
   "insurance": {
-    "rental_insurance": "Secondary",
+    "rental_insurance": "Primary",
     "trip_delay": true,
+    "trip_cancellation": true,
     "purchase_protection": true,
     "extended_warranty": true,
-    "trip_cancellation": null,
-    "return_protection": null
+    "return_protection": false,
+    "lost_luggage": true
   },
   "application_rules": {
-    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+    "rules": [
+      {
+        "rule": "5/24 rule",
+        "description": "Cannot be approved if 5 or more new personal credit cards opened in the past 24 months"
+      }
+    ]
   },
-  "tags": ["lounge-access", "premium", "transferable"],
-  "sources": [{"url": "https://..."}]
+  "tags": [
+    "hotel",
+    "premium",
+    "no-foreign-transaction-fee",
+    "travel",
+    "chase"
+  ]
 }
 
 Rules:

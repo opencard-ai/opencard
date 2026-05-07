@@ -5,52 +5,96 @@ Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, 
 {
   "issuer": "American Express",
   "network": "amex",
-  "annual_fee": 895,
+  "annual_fee": 0,
   "foreign_transaction_fee": 0,
-  "credit_required": "Excellent",
+  "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 175000,
-    "spending_requirement": 12000,
+    "bonus_points": 0,
+    "spending_requirement": 1000,
     "time_period_months": 6,
-    "description": "Earn up to 175,000 Membership Rewards points...",
-    "point_program": "Amex Membership Rewards",
-    "estimated_value": 2100
+    "description": "$200 welcome offer after spending $1,000 in first 6 months",
+    "point_program": "None",
+    "estimated_value": 200
   },
   "earning_rates": [
-    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
-    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
-    {"category": "Other", "rate": 1, "notes": null}
+    {
+      "category": "Groceries",
+      "rate": 3,
+      "notes": "At U.S. supermarkets"
+    },
+    {
+      "category": "Gas",
+      "rate": 3,
+      "notes": "At U.S. gas stations"
+    },
+    {
+      "category": "Dining",
+      "rate": 2,
+      "notes": "At U.S. restaurants, select streaming services"
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": null
+    }
   ],
   "recurring_credits": [
-    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
-    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
-    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"}
+    {
+      "credit_key": "disney-bundle-credit",
+      "name": "Disney Bundle Credit",
+      "amount": 7,
+      "frequency": "monthly",
+      "category": "streaming",
+      "description": "Up to $7/month statement credit on Disney+, Hulu, or Plus.espn.com U.S. subscriptions or bundles. Enrollment required.",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/"
+    },
+    {
+      "credit_key": "home-chef-credit",
+      "name": "Home Chef Credit",
+      "amount": 15,
+      "frequency": "monthly",
+      "category": "groceries",
+      "description": "Up to $15/month statement credit on Home Chef meal solutions purchases. Enrollment required.",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/"
+    }
   ],
   "travel_benefits": {
-    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
-    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
-    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
-  },
-  "hotel_program": {
-    "program": "Marriott Bonvoy",
-    "tier": "Gold Elite",
-    "elite_night_credits": 15,
-    "fhr_eligible": true,
-    "thc_eligible": true
+    "lounge_access": [],
+    "hotel_status": [],
+    "other_benefits": []
   },
   "insurance": {
-    "rental_insurance": "Secondary",
-    "trip_delay": true,
-    "purchase_protection": true,
-    "extended_warranty": true,
+    "rental_insurance": null,
+    "trip_delay": null,
+    "purchase_protection": null,
+    "extended_warranty": null,
     "trip_cancellation": null,
     "return_protection": null
   },
   "application_rules": {
-    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+    "rules": [
+      {
+        "rule": "5/24 rule",
+        "description": "Subject to 5/24 rule - cannot be approved if 5+ new cards in past 24 months"
+      }
+    ]
   },
-  "tags": ["lounge-access", "premium", "transferable"],
-  "sources": [{"url": "https://..."}]
+  "tags": [
+    "cash-back",
+    "no-annual-fee",
+    "groceries",
+    "gas"
+  ],
+  "sources": [
+    {
+      "url": "https://thepointsguy.com/credit-cards/blue-cash-everyday/"
+    },
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/"
+    }
+  ]
 }
 
 Rules:

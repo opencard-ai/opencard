@@ -3,54 +3,90 @@ You are extracting structured credit card data for "Bilt Obsidian Card" (bilt-ob
 Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
 
 {
-  "issuer": "American Express",
-  "network": "amex",
-  "annual_fee": 895,
+  "issuer": "First Electronic Bank",
+  "network": "mastercard",
+  "annual_fee": 95,
   "foreign_transaction_fee": 0,
-  "credit_required": "Excellent",
+  "credit_required": "Good to Excellent",
   "welcome_offer": {
-    "bonus_points": 175000,
-    "spending_requirement": 12000,
-    "time_period_months": 6,
-    "description": "Earn up to 175,000 Membership Rewards points...",
-    "point_program": "Amex Membership Rewards",
-    "estimated_value": 2100
+    "spending_requirement": 5000,
+    "time_period_months": 3,
+    "bonus_points": 75000,
+    "estimated_value": 1275,
+    "description": "Earn 75,000 Bilt bonus points after spending $5,000 on purchases in the first 3 months from account opening",
+    "point_program": "Bilt Rewards"
   },
   "earning_rates": [
-    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
-    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
-    {"category": "Other", "rate": 1, "notes": null}
+    {
+      "category": "all",
+      "rate": 2,
+      "rate_type": "points_per_dollar",
+      "description": "2X Bilt points on all purchases (base rate)"
+    },
+    {
+      "category": "choice_category",
+      "rate": 5,
+      "rate_type": "points_per_dollar",
+      "description": "Up to 5X points on a choice of category (up to $25,000/year) — dining, travel, or online shopping"
+    }
   ],
   "recurring_credits": [
-    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
-    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
-    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"}
+    {
+      "credit_key": "bilt-travel-hotel-credit",
+      "name": "Bilt Travel Hotel Credit",
+      "amount": 50,
+      "frequency": "semi_annual",
+      "category": "hotel",
+      "description": "$50/half ($100/year) on qualifying Bilt Travel Portal hotel bookings. Minimum 2-night stay required.",
+      "reset_type": "calendar_year",
+      "source": "https://newsroom.biltrewards.com/meetbiltcard2.0"
+    },
+    {
+      "credit_key": "bilt-cash",
+      "name": "Bilt Cash",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "shopping",
+      "description": "$200 Bilt Cash credited to Bilt account on January 1 each calendar year.",
+      "reset_type": "calendar_year",
+      "source": "https://newsroom.biltrewards.com/meetbiltcard2.0"
+    }
   ],
   "travel_benefits": {
-    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
-    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
-    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
-  },
-  "hotel_program": {
-    "program": "Marriott Bonvoy",
-    "tier": "Gold Elite",
-    "elite_night_credits": 15,
-    "fhr_eligible": true,
-    "thc_eligible": true
+    "hotel_status": [],
+    "lounge_access": [],
+    "other_benefits": []
   },
   "insurance": {
-    "rental_insurance": "Secondary",
-    "trip_delay": true,
-    "purchase_protection": true,
-    "extended_warranty": true,
     "trip_cancellation": null,
-    "return_protection": null
+    "trip_delay": null,
+    "rental_insurance": null,
+    "purchase_protection": null,
+    "return_protection": null,
+    "extended_warranty": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
   },
   "application_rules": {
-    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+    "rules": [],
+    "notes": null
   },
-  "tags": ["lounge-access", "premium", "transferable"],
-  "sources": [{"url": "https://..."}]
+  "tags": [
+    "transferable"
+  ],
+  "sources": [
+    {
+      "url": "https://newsroom.biltrewards.com/meetbiltcard2.0"
+    },
+    {
+      "url": "https://awardwallet.com/credit-cards/bilt-rewards/bilt-obsidian-card/"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/bilt-credit-cards-current-offers/"
+    }
+  ]
 }
 
 Rules:

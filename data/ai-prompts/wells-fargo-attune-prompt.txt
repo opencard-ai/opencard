@@ -3,72 +3,71 @@ You are extracting structured credit card data for "Wells Fargo Attune World Eli
 Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
 
 {
-  "issuer": "American Express",
-  "network": "amex",
-  "annual_fee": 895,
+  "issuer": "Wells Fargo",
+  "network": "mastercard",
+  "annual_fee": 0,
   "foreign_transaction_fee": 0,
-  "credit_required": "Excellent",
+  "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 175000,
-    "spending_requirement": 12000,
-    "time_period_months": 6,
-    "description": "Earn up to 175,000 Membership Rewards points...",
-    "point_program": "Amex Membership Rewards",
-    "estimated_value": 2100
+    "bonus_points": 100,
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "description": "开卡3个月内消费满 $500 可得 $100 cash rewards bonus",
+    "estimated_value": 100
   },
   "earning_rates": [
-    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
-    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
-    {"category": "Other", "rate": 1, "notes": null}
+    {
+      "category": "Self Care",
+      "rate": 4,
+      "notes": null
+    },
+    {
+      "category": "Sports",
+      "rate": 4,
+      "notes": null
+    },
+    {
+      "category": "Recreation",
+      "rate": 4,
+      "notes": null
+    }
   ],
-  "recurring_credits": [
-    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
-    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
-    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"},
-    {"name": "Walmart+", "amount": 0, "frequency": "annual", "category": "shopping", "description": "Free membership with fuel discounts", "reset_type": "calendar_year"},
-    {"name": "Clear Security", "amount": 0, "frequency": "annual", "category": "other", "description": "Free Clear membership", "reset_type": "calendar_year"}
-  ],
-  
-  IMPORTANT: Extract ALL recurring credits from the content including but not limited to:
-  - Airline credits (e.g., $200-$250/year for incidentals, bags, lounges)
-  - Hotel credits (e.g., $300/year for Fine Hotels + Resorts)
-  - Uber/Lyft credits
-  - Dining credits (e.g., $300/year for Resy)
-  - Shopping credits (Saks, Walmart+, etc.)
-  - Streaming credits (Netflix, Hulu, Disney+, etc.)
-  - Fitness credits (Equinox, SoulCycle, etc.)
-  - Global Entry/TSA PreCheck credits
-  - Centurion Lounge visits
-  - Priority Pass membership
-  - Free night certificates
-  - Elite status benefits
-  
-  Be COMPREHENSIVE - do not miss any credit mentioned in the content.
   "travel_benefits": {
-    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
-    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
-    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
-  },
-  "hotel_program": {
-    "program": "Marriott Bonvoy",
-    "tier": "Gold Elite",
-    "elite_night_credits": 15,
-    "fhr_eligible": true,
-    "thc_eligible": true
+    "other_benefits": [
+      {
+        "name": "Cell phone protection",
+        "description": "Up to $600 reimbursement for stolen/damaged cell phones ($25 deductible)"
+      },
+      {
+        "name": "0% intro APR",
+        "description": "0% intro APR on purchases for 12 months"
+      }
+    ]
   },
   "insurance": {
     "rental_insurance": "Secondary",
-    "trip_delay": true,
+    "trip_delay": false,
+    "trip_cancellation": false,
     "purchase_protection": true,
     "extended_warranty": true,
-    "trip_cancellation": null,
     "return_protection": null
   },
   "application_rules": {
-    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+    "rules": [],
+    "notes": null
   },
-  "tags": ["lounge-access", "premium", "transferable"],
-  "sources": [{"url": "https://..."}]
+  "tags": [
+    "no-annual-fee",
+    "cash-back"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.wellsfargo.com/attune-credit-card/"
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/wells-fargo-attune"
+    }
+  ]
 }
 
 Rules:

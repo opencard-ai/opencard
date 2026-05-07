@@ -3,54 +3,96 @@ You are extracting structured credit card data for "Wells Fargo Autograph Visa S
 Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
 
 {
-  "issuer": "American Express",
-  "network": "amex",
-  "annual_fee": 895,
+  "issuer": "Wells Fargo",
+  "network": "visa",
+  "annual_fee": 0,
   "foreign_transaction_fee": 0,
-  "credit_required": "Excellent",
+  "credit_required": "Good to Excellent",
   "welcome_offer": {
-    "bonus_points": 175000,
-    "spending_requirement": 12000,
-    "time_period_months": 6,
-    "description": "Earn up to 175,000 Membership Rewards points...",
-    "point_program": "Amex Membership Rewards",
-    "estimated_value": 2100
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "bonus_points": 20000,
+    "estimated_value": 200,
+    "point_program": "Wells Fargo Rewards",
+    "description": "20,000 bonus points ($200 cash redemption) after spending $1,000 in first 3 months"
   },
   "earning_rates": [
-    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
-    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
-    {"category": "Other", "rate": 1, "notes": null}
-  ],
-  "recurring_credits": [
-    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
-    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
-    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"}
+    {
+      "category": "Travel (airlines, hotels, car rentals, cruises)",
+      "rate": 3,
+      "notes": "3x points on travel (airlines, hotels, car rentals, cruises)"
+    },
+    {
+      "category": "Restaurants",
+      "rate": 3,
+      "notes": "3x points at restaurants (including takeout and delivery)"
+    },
+    {
+      "category": "Gas Stations",
+      "rate": 3,
+      "notes": "3x points at gas stations"
+    },
+    {
+      "category": "Transit (rideshare, parking, trains, buses)",
+      "rate": 3,
+      "notes": "3x points on transit (rideshare, parking, trains, buses)"
+    },
+    {
+      "category": "Popular Streaming Services",
+      "rate": 3,
+      "notes": "3x points on popular streaming services"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1x point on all other purchases"
+    }
   ],
   "travel_benefits": {
-    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
-    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
-    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
-  },
-  "hotel_program": {
-    "program": "Marriott Bonvoy",
-    "tier": "Gold Elite",
-    "elite_night_credits": 15,
-    "fhr_eligible": true,
-    "thc_eligible": true
+    "other_benefits": [
+      {
+        "name": "Auto rental collision damage waiver",
+        "description": "Primary auto rental CDW"
+      },
+      {
+        "name": "Trip cancellation insurance",
+        "description": "Trip cancellation protection"
+      },
+      {
+        "name": "Lost baggage reimbursement",
+        "description": "Up to $3,000 per passenger for lost baggage"
+      },
+      {
+        "name": "Roadside Dispatch",
+        "description": "Emergency roadside assistance"
+      }
+    ]
   },
   "insurance": {
-    "rental_insurance": "Secondary",
+    "rental_insurance": "Primary",
     "trip_delay": true,
+    "trip_cancellation": true,
     "purchase_protection": true,
     "extended_warranty": true,
-    "trip_cancellation": null,
     "return_protection": null
   },
   "application_rules": {
-    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+    "rules": [],
+    "notes": null
   },
-  "tags": ["lounge-access", "premium", "transferable"],
-  "sources": [{"url": "https://..."}]
+  "tags": [
+    "no-annual-fee",
+    "premium",
+    "transferable"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.wellsfargo.com/autograph-visa-credit-card/"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/wells-fargo-autograph-tpg-awards-2026/"
+    }
+  ]
 }
 
 Rules:

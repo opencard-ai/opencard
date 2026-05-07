@@ -3,54 +3,108 @@ You are extracting structured credit card data for "Citi Strata Elite℠ Card" (
 Extract ALL fields from the content below. Return ONLY valid JSON (no markdown, no explanation).
 
 {
-  "issuer": "American Express",
-  "network": "amex",
-  "annual_fee": 895,
+  "issuer": "Citi",
+  "network": "visa",
+  "annual_fee": 595,
   "foreign_transaction_fee": 0,
-  "credit_required": "Excellent",
+  "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 175000,
-    "spending_requirement": 12000,
-    "time_period_months": 6,
-    "description": "Earn up to 175,000 Membership Rewards points...",
-    "point_program": "Amex Membership Rewards",
-    "estimated_value": 2100
+    "spending_requirement": 5,
+    "time_period_months": 3,
+    "bonus_points": 75000,
+    "description": "75,000 ThankYou® Points",
+    "point_program": "Citi",
+    "estimated_value": 750
   },
   "earning_rates": [
-    {"category": "Flights", "rate": 5, "notes": "Booked directly with airlines..."},
-    {"category": "Hotels", "rate": 5, "notes": "On prepaid hotels..."},
-    {"category": "Other", "rate": 1, "notes": null}
+    {
+      "category": "Air travel",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "Hotels",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "Dining",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": ""
+    }
   ],
   "recurring_credits": [
-    {"name": "Uber Cash", "amount": 200, "frequency": "annual", "category": "ride", "description": "$15/month Uber credit", "reset_type": "calendar_year"},
-    {"name": "Saks Fifth Avenue", "amount": 100, "frequency": "annual", "category": "shopping", "description": "$50/semi-annual", "reset_type": "calendar_year"},
-    {"name": "Free Night Award", "amount": 50000, "frequency": "annual", "category": "hotel", "description": "Annual free night at Marriott properties", "reset_type": "cardmember_year"}
+    {
+      "credit_key": "blacklane-credit",
+      "name": "Blacklane Credit",
+      "amount": 100,
+      "frequency": "semi_annual",
+      "category": "ride",
+      "description": "Up to $100/half ($200/year cap) statement credit on Blacklane chauffeured rides. Split: $100 Jan-Jun + $100 Jul-Dec.",
+      "reset_type": "calendar_half",
+      "source": "https://www.citi.com/credit-cards/credit-card-rewards/citi-strata-elite-benefits"
+    },
+    {
+      "credit_key": "hotel-credit",
+      "name": "Hotel Credit",
+      "amount": 300,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$300 annual hotel credit via Citi Travel.",
+      "reset_type": "cardmember_year"
+    },
+    {
+      "credit_key": "splurge-credit",
+      "name": "Splurge Credit",
+      "amount": 200,
+      "frequency": "annual",
+      "category": "shopping",
+      "description": "Up to $200/calendar year statement credit on your choice of up to 2 brands: 1stDibs, American Airlines, Best Buy, Future Personal Training, Live Nation.",
+      "reset_type": "calendar_year",
+      "source": "https://www.citi.com/credit-cards/credit-card-rewards/citi-strata-elite-benefits"
+    },
+    {
+      "credit_key": "global-entry-precheck-credit",
+      "name": "Global Entry / PreCheck Credit",
+      "amount": 100,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $100 every 4 years for Global Entry or TSA PreCheck.",
+      "reset_type": "every_4_years"
+    }
   ],
-  "travel_benefits": {
-    "lounge_access": [{"name": "Centurion Lounge", "type": "centurion"}, {"name": "Priority Pass", "type": "priority_pass"}],
-    "hotel_status": [{"program": "Marriott Bonvoy", "tier": "Gold Elite", "complimentary": true}],
-    "other_benefits": [{"name": "Fine Hotels + Resorts", "description": "..."}]
-  },
-  "hotel_program": {
-    "program": "Marriott Bonvoy",
-    "tier": "Gold Elite",
-    "elite_night_credits": 15,
-    "fhr_eligible": true,
-    "thc_eligible": true
-  },
   "insurance": {
-    "rental_insurance": "Secondary",
-    "trip_delay": true,
-    "purchase_protection": true,
-    "extended_warranty": true,
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false,
     "trip_cancellation": null,
     "return_protection": null
   },
   "application_rules": {
-    "rules": [{"rule": "5/24 rule", "description": "Cannot approve if 5+ new cards in 24 months"}]
+    "rules": [],
+    "notes": null
   },
-  "tags": ["lounge-access", "premium", "transferable"],
-  "sources": [{"url": "https://..."}]
+  "tags": [
+    "premium",
+    "transferable"
+  ],
+  "sources": [
+    {
+      "url": "https://www.uscreditcardguide.com/citi-strata-elite/"
+    },
+    {
+      "url": "https://www.citi.com/credit-cards/citi-strata-elite-credit-card"
+    },
+    {
+      "url": "https://onemileatatime.com/guides/citi-strata-elite/"
+    }
+  ]
 }
 
 Rules:
