@@ -61,11 +61,14 @@ export async function extractCardData(
         ],
         temperature: 0.1,
         response_format: { type: "json_object" },
-        // 12K, not 8K. Cards with longer custom prompts (data/ai-prompts/*)
-        // plus full schema output were truncating mid-string at 8K — most
-        // recently chase-sapphire-reserve and chase-sapphire-reserve-biz on
-        // the 2026-05-06 dry-run. Headroom for M2.7 reasoning + JSON.
-        max_tokens: 12288,
+        // 16K. Bumped from 8K → 12K → 16K across the 2026-05-06 dry-runs:
+        // amex-platinum / amex-blue-biz-plus / chase-ink-biz-cash /
+        // chase-ink-biz-unlimited / chase-sapphire-reserve-biz still truncated
+        // mid-string at 12K. The combination of M2.7 reasoning + the 482-line
+        // legacy `data/ai-prompts/*` system prompt + a full JSON schema
+        // (welcome_offer + earning_rates + recurring_credits + insurance + ...)
+        // routinely needs ~10-14K output tokens.
+        max_tokens: 16384,
       }),
       // 120s, not 60s. Round 1 added 60s to fix indefinite hangs, but Amex
       // cards (and any card with a long custom prompt under data/ai-prompts/)
