@@ -58,6 +58,10 @@
   ],
   "sources": [
     {
+      "url": "https://thepointsguy.com/credit-cards/blue-cash-everyday/",
+      "notes": "TPG card page (LLM-friendly static HTML; USCCG has no page for this card)"
+    },
+    {
       "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/",
       "notes": "Official Amex Page"
     }
