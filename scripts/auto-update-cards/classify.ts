@@ -1,70 +1,88 @@
 /**
  * Classifies the risk level of a card update diff.
- * All changes go through PR regardless of risk level.
+ *
+ * All changes still go through as PRs; risk is just a triage label so the
+ * reviewer can fast-path LOW (description tweaks) and scrutinise HIGH
+ * (large numerical swings that often turn out to be LLM hallucinations or
+ * the model picking up a stale value off a comparison table).
+ *
+ * 2026-05-06 dry-run pass showed several MED-classified extractions that
+ * were actually wrong: amex-gold annual fee 325 → 160, chase-sapphire-
+ * reserve annual_fee 795 → 550 + bonus 125K → 60K, chase-ink-biz-cash
+ * 75K → 750. Tighten the bands so any large delta lands in HIGH, and walk
+ * every change in the diff (the previous version returned on the first
+ * change so a low-risk description tweak masked a HIGH bonus_points swing
+ * later in the same diff).
  */
 
 import type { DiffResult } from "./diff";
 import type { RiskLevel } from "./config";
 
-export function classifyRisk(diff: DiffResult): RiskLevel {
-  const { changes } = diff;
+const RISK_RANK: Record<RiskLevel, number> = { LOW: 0, MED: 1, HIGH: 2 };
 
-  for (const change of changes) {
-    switch (change.field) {
-      case "annual_fee": {
-        const from = Number(change.from) || 0;
-        const to = Number(change.to) || 0;
-        if (to > from && from > 0) {
-          const pctIncrease = ((to - from) / from) * 100;
-          if (pctIncrease > 50) return "HIGH";
-        }
-        return "MED"; // Any annual fee change
+function maxRisk(a: RiskLevel, b: RiskLevel): RiskLevel {
+  return RISK_RANK[a] >= RISK_RANK[b] ? a : b;
+}
+
+function classifyChange(change: DiffResult["changes"][number]): RiskLevel {
+  switch (change.field) {
+    case "annual_fee": {
+      const from = Number(change.from) || 0;
+      const to = Number(change.to) || 0;
+      if (from === 0 && to > 0) return "HIGH"; // free → paid is suspicious
+      if (from > 0 && to === 0) return "HIGH"; // paid → free is suspicious
+      if (from > 0 && to > 0) {
+        const pctDelta = (Math.abs(to - from) / from) * 100;
+        if (pctDelta > 30) return "HIGH"; // 30%+ swing either direction
       }
+      return "MED";
+    }
 
-      case "welcome_offer.bonus_points": {
-        const from = Number(change.from) || 0;
-        const to = Number(change.to) || 0;
-        if (to < from && from > 0) {
-          const pctDrop = ((from - to) / from) * 100;
-          if (pctDrop > 25) return "HIGH";
-        }
-        if (to > from && from > 0) {
-          const pctIncrease = ((to - from) / from) * 100;
-          if (pctIncrease <= 25) return "LOW";
-        }
-        return "MED";
-      }
-
-      case "welcome_offer.spending_requirement": {
-        const from = Number(change.from) || 0;
-        const to = Number(change.to) || 0;
-        if (from > 0 && to > from) {
-          const pctIncrease = ((to - from) / from) * 100;
-          if (pctIncrease <= 10) return "LOW";
-          return "MED";
-        }
-        return "MED";
-      }
-
-      case "welcome_offer.description": {
+    case "welcome_offer.bonus_points": {
+      const from = Number(change.from) || 0;
+      const to = Number(change.to) || 0;
+      if (from > 0 && to > 0) {
+        const pctDelta = (Math.abs(to - from) / from) * 100;
+        if (pctDelta > 50) return "HIGH"; // 50%+ swing → almost always wrong
+        if (pctDelta > 25) return "MED";
         return "LOW";
       }
-
-      case "point_program":
-      case "welcome_offer.point_program": {
-        return "HIGH";
-      }
-
-      case "earning_rates": {
-        return "MED";
-      }
-
-      default: {
-        // Unknown field — conservative MED
-        return "MED";
-      }
+      // 0 → N or N → 0 is a large logical change by definition
+      if (from > 0 || to > 0) return "HIGH";
+      return "MED";
     }
-  }
 
-  return "LOW"; // Default fallback
+    case "welcome_offer.spending_requirement": {
+      const from = Number(change.from) || 0;
+      const to = Number(change.to) || 0;
+      if (from > 0 && to > 0) {
+        const pctDelta = (Math.abs(to - from) / from) * 100;
+        if (pctDelta > 100) return "HIGH"; // doubling+ is suspicious
+        if (pctDelta > 25) return "MED";
+        return "LOW";
+      }
+      return "MED";
+    }
+
+    case "welcome_offer.description":
+      return "LOW";
+
+    case "point_program":
+    case "welcome_offer.point_program":
+      return "HIGH";
+
+    case "earning_rates":
+      return "MED";
+
+    default:
+      return "MED";
+  }
+}
+
+export function classifyRisk(diff: DiffResult): RiskLevel {
+  let risk: RiskLevel = "LOW";
+  for (const change of diff.changes) {
+    risk = maxRisk(risk, classifyChange(change));
+  }
+  return risk;
 }

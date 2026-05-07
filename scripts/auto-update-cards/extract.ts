@@ -193,6 +193,11 @@ offer alongside the older one in disclosures or comparison tables), prefer the
 value that is presented as the live marketing offer near the top of the page
 or in the primary "Earn …" call-to-action.
 
+Output language: ALL string fields ("description", "notes", "source_quote",
+"point_program", "category" labels, etc.) must be in English. Even if the
+source page is in Chinese (uscreditcardguide.com pages are bilingual), write
+the description in English. Translate / summarise; do not echo Chinese text.
+
 Scraped HTML (first 80KB):
 ---
 ${truncatedHtml}
@@ -203,5 +208,5 @@ Return a JSON object with the schema described in the system prompt. Focus on:
 2. Annual fee
 3. Earning rates by category
 
-IMPORTANT: Include a verbatim "source_quote" ≥ 30 characters from the HTML that confirms the key data.`;
+IMPORTANT: Include a verbatim "source_quote" ≥ 30 characters from the HTML that confirms the key data. The source_quote may be in any language as long as it is verbatim from the page.`;
 }
