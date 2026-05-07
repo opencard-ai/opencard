@@ -40,7 +40,12 @@
   "tags": [
     "no-annual-fee"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.uscreditcardguide.com/wells-fargo-active-cash/",
+      "notes": "USCCG card review (LLM-friendly static HTML)"
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
