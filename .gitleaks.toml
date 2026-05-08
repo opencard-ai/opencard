@@ -111,22 +111,11 @@ regexes = [
   '''BOOMR_API_key''',
 ]
 
-# Specific commits that contain known historical leaks. These tokens have been
-# rotated (see docs/SECURITY_NOTICE.md). Allowlisting prevents the daily
-# scheduled scan from flagging the same already-handled leak forever.
-#
-# To remove an entry, first scrub the secret from history (BFG / git-filter-repo)
-# then this allowlist entry can go. Until then, leave them.
-commits = [
-  # Upstash KV REST API token in vercel.json
-  "9bbfdb3",   # fix: add Upstash env vars to vercel.json   (2026-04-22)
-  "cfe1aeb",   # fix: move Upstash env to runtime env       (2026-04-22)
-
-  # MiniMax API key in scripts/sync-news.mjs and unified-scraper.ts
-  "580beee",   # fix: unified-scraper now calls AI and updates card data
-  "770a49d",   # feat: update timestamps for flagship cards
-  "4f81d20",   # chore: switch news sync to google/gemini-flash-latest
-]
+# Historical leak commits used to be allowlisted here. Cleared 2026-05-07
+# after git-filter-repo scrub eradicated the secrets from history (the
+# original SHAs above no longer exist). If a NEW leak surfaces, prefer
+# history rewrite over re-adding to this list.
+commits = []
 
 stopwords = [
   "example", "EXAMPLE", "<your", "REDACTED", "redacted", "placeholder",
