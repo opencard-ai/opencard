@@ -92,6 +92,23 @@ export function diffCard(card: Card, extracted: ExtractedData): DiffResult | nul
         changes.push({ field: "welcome_offer.elevated_until", from: current ?? null, to: wo.elevated_until });
       }
     }
+
+    // FNA fields. Treat undefined/null on the LLM side as "no signal"
+    // rather than "set to null" so a quiet run doesn't wipe a hand-
+    // curated baseline. free_nights of 0 explicitly means "checked,
+    // no FNAs" and IS treated as a real signal.
+    if (typeof wo.free_nights === "number" && wo.free_nights >= 0) {
+      const current = currentWo?.free_nights;
+      if (current !== wo.free_nights) {
+        changes.push({ field: "welcome_offer.free_nights", from: current ?? null, to: wo.free_nights });
+      }
+    }
+    if (typeof wo.free_night_value_cap === "number" && wo.free_night_value_cap > 0) {
+      const current = currentWo?.free_night_value_cap;
+      if (current !== wo.free_night_value_cap) {
+        changes.push({ field: "welcome_offer.free_night_value_cap", from: current ?? null, to: wo.free_night_value_cap });
+      }
+    }
   }
 
   if (changes.length === 0) {

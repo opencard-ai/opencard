@@ -28,6 +28,16 @@ export interface ExtractedData {
     /** ISO date (YYYY-MM-DD) the elevated offer is expected to expire,
      * if the page states one. */
     elevated_until?: string | null;
+    /** Hotel co-brand welcome-offer Free Night Awards (FNAs). Total count
+     * across all spend tiers (e.g. "3 FNAs after $6K + 2 more after $9K"
+     * → 5). Null on non-hotel cards or hotel cards whose welcome is points-
+     * only. Anniversary / cardmember-year FNAs go in recurring_credits,
+     * NOT here. */
+    free_nights?: number | null;
+    /** Per-FNA points cap (e.g. 50,000 for Marriott Bonvoy Biz, 40,000
+     * for IHG Premier). Null when the FNA is uncapped / any-night
+     * (e.g. Hilton Aspire). */
+    free_night_value_cap?: number | null;
   } | null;
   annual_fee: number | null;
   earning_rates: { category: string; rate: number; notes: string | null }[] | null;
@@ -73,6 +83,75 @@ export function detectElevatedSignals(html: string): ElevatedSignals {
     if (m) { expiry_hint = m[1]; break; }
   }
   return { matched: phrases.length > 0, phrases, expiry_hint };
+}
+
+/** Free-Night-Award patterns: hotel co-brand cards include FNAs in their
+ * welcome offer (e.g. "Earn 5 Free Night Awards after $X spend"). We
+ * separately detect anniversary / cardmember-year FNAs that belong in
+ * recurring_credits, not the welcome offer, so the LLM can scope
+ * correctly. */
+const FNA_COUNT_PATTERNS = [
+  /\b(\d+)\s+free[\s-]night\s+(?:award|certificate|stay)s?\b/i,
+  /\b(\d+)\s+free\s+night(?:s)?\b/i,
+];
+const FNA_CAP_PATTERNS = [
+  // "up to 50,000 points (each|per night)" — direct cap statement
+  /\bup\s+to\s+([\d,]+)\s*[Kk]?\s+(?:points?|pts?)\s+(?:each|per\s+night|nightly|value)\b/i,
+  // "redeemable up to 50K points each" / "good for properties costing up to 40,000 points" /
+  // "valid at properties up to 40K"
+  /\b(?:redeemable|valid|good)\s+(?:at|for|in)?\s*(?:properties\s+)?(?:up\s+to\s+|costing\s+up\s+to\s+)([\d,]+)\s*[Kk]?\s+points?\b/i,
+];
+// Match anniversary keyword adjacent (within 80 chars, either direction) to a
+// "free night" mention. Anniversary FNAs belong in recurring_credits, not the
+// welcome offer; we surface the flag so the LLM (and the prompt's anti-
+// hallucination guidance) knows to keep it out of free_nights.
+const ANNIVERSARY_FNA_PATTERNS = [
+  /\b(?:anniversary|cardmember[-\s]year|each\s+year|every\s+year|annual(?:ly)?)\b[^.]{0,80}\bfree[-\s]night/i,
+  /\bfree[-\s]night[^.]{0,80}\b(?:anniversary|cardmember[-\s]year|each\s+year|every\s+year|annual(?:ly)?)\b/i,
+];
+
+export interface FnaSignals {
+  matched: boolean;
+  count_hint: number | null;
+  cap_hint: number | null;
+  has_anniversary_fna: boolean;
+}
+
+export function detectFreeNightSignals(html: string): FnaSignals {
+  const stripped = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+  let count_hint: number | null = null;
+  for (const re of FNA_COUNT_PATTERNS) {
+    const m = stripped.match(re);
+    if (m) {
+      const n = parseInt(m[1], 10);
+      if (n > 0 && n < 50) { // sanity: no card gives 50+ FNAs
+        count_hint = n;
+        break;
+      }
+    }
+  }
+  let cap_hint: number | null = null;
+  for (const re of FNA_CAP_PATTERNS) {
+    const m = stripped.match(re);
+    if (m) {
+      const raw = m[1].replace(/,/g, "");
+      let n = parseInt(raw, 10);
+      // If the matched span contains a literal K/k right after the number,
+      // treat as thousands.
+      if (/[\d,]+\s*[Kk]\s+(?:points?|pts?)/.test(m[0])) n *= 1000;
+      if (n >= 1000 && n <= 200000) { // FNA caps range roughly 25K–100K
+        cap_hint = n;
+        break;
+      }
+    }
+  }
+  const has_anniversary_fna = ANNIVERSARY_FNA_PATTERNS.some((re) => re.test(stripped));
+  return {
+    matched: count_hint !== null,
+    count_hint,
+    cap_hint,
+    has_anniversary_fna,
+  };
 }
 
 export async function extractCardData(
@@ -200,6 +279,28 @@ export async function extractCardData(
     }
   }
 
+  // Anti-hallucination guard for free_nights. The LLM mistakes anniversary /
+  // cardmember-year free-night certificates (which are recurring credits)
+  // for welcome FNAs. Require the regex pre-scan to have actually matched
+  // an "N Free Night Awards" pattern in the page; otherwise force back to
+  // null. Cap mismatch is non-fatal — the LLM may correctly extract a cap
+  // the regex couldn't parse.
+  if (typeof result.welcome_offer?.free_nights === "number" &&
+      result.welcome_offer.free_nights > 0) {
+    const fna = detectFreeNightSignals(html);
+    if (!fna.matched) {
+      // No "N Free Night(s)" pattern on the page → likely an anniversary
+      // FNA the LLM mis-routed.
+      result.welcome_offer.free_nights = null;
+      result.welcome_offer.free_night_value_cap = null;
+    } else if (fna.count_hint !== null &&
+               Math.abs(fna.count_hint - result.welcome_offer.free_nights) >= 3) {
+      // Pre-scan and LLM disagree by 3+ — penalise confidence but trust
+      // LLM since the regex sees only the FIRST match.
+      result.confidence *= 0.85;
+    }
+  }
+
   return result;
 }
 
@@ -218,7 +319,9 @@ Output a JSON object with this exact schema:
     "point_program": string|null,
     "is_elevated": boolean|null,        // true ONLY if the page calls this an increased / limited-time / all-time-high / best-ever offer
     "normal_bonus_points": number|null, // the standard non-promo bonus, when both are shown (e.g. struck-through old number)
-    "elevated_until": string|null       // ISO date YYYY-MM-DD if the page states an expiry, else null
+    "elevated_until": string|null,      // ISO date YYYY-MM-DD if the page states an expiry, else null
+    "free_nights": number|null,         // welcome-offer Free Night Awards (sum across spend tiers); null on non-hotel cards
+    "free_night_value_cap": number|null // per-FNA points cap (e.g. 50000), null when uncapped/any-night
   },
   "annual_fee": number|null,
   "earning_rates": [{ "category": string, "rate": number, "notes": string|null }]|null,
@@ -268,11 +371,17 @@ function buildExtractPrompt(card: Card, html: string): string {
     ? `\nPre-scan detected elevated-offer phrasing on the page: ${signals.phrases.map((p) => `"${p}"`).join(", ")}.${signals.expiry_hint ? ` Possible expiry: ${signals.expiry_hint}.` : ""} Treat this as a strong prior for is_elevated=true and capture elevated_until / normal_bonus_points if visible.`
     : `\nPre-scan found no elevated-offer phrasing. Default is_elevated=false unless the page itself clearly says otherwise.`;
 
+  const fna = detectFreeNightSignals(html);
+  const fnaHint = fna.matched
+    ? `\nPre-scan detected ${fna.count_hint} Free Night Award(s) in the welcome offer${fna.cap_hint ? ` (per-FNA cap ~${fna.cap_hint.toLocaleString()} pts)` : ""}. Sum across spend tiers if the page lists multiple thresholds. ${fna.has_anniversary_fna ? "The page also mentions an anniversary/cardmember-year free night — that one is a recurring credit, NOT a welcome FNA, so do NOT add it to free_nights." : ""}`.trim()
+    : `\nPre-scan found no welcome-offer Free Night Awards. Default free_nights=null unless the page clearly advertises FNAs as part of the welcome bonus (separately from any anniversary night, which is a recurring credit).`;
+
   return `Extract structured data for this credit card from the page below.
 
 Card: ${card.name}
 Issuer: ${card.issuer}
 ${elevatedHint}
+${fnaHint}
 
 The scraped HTML is the canonical source — extract values from there, not
 from any prior knowledge. If a value appears multiple times (e.g. an upgraded
@@ -302,6 +411,15 @@ Return a JSON object with the schema described in the system prompt. Focus on:
    promo numbers are shown (e.g. struck-through 60K beside live 100K).
 6. welcome_offer.elevated_until — ISO date YYYY-MM-DD if the page states an
    expiry; null otherwise.
+7. welcome_offer.free_nights — for hotel co-brand cards, the TOTAL number of
+   Free Night Awards (FNAs) in the welcome offer, summed across all spend
+   tiers (e.g. "3 FNAs after $6K + 2 more after $9K" → 5). Null on non-hotel
+   cards or hotel cards whose welcome is points-only. Do NOT include
+   anniversary / cardmember-year free nights here — those are recurring
+   credits.
+8. welcome_offer.free_night_value_cap — per-FNA points cap if stated
+   (e.g. 50000 for "redeemable up to 50,000 points each"); null when the
+   FNA is uncapped / any-night (e.g. Hilton Aspire's any-night cert).
 
 IMPORTANT: Include a verbatim "source_quote" ≥ 30 characters from the HTML that confirms the key data. The source_quote may be in any language as long as it is verbatim from the page.`;
 }

@@ -27,6 +27,8 @@ export interface Card {
     is_elevated?: boolean;
     normal_bonus_points?: number;
     elevated_until?: string;
+    free_nights?: number;
+    free_night_value_cap?: number;
   };
   earning_rates: { category: string; rate: number; notes?: string }[];
   recurring_credits?: unknown[];

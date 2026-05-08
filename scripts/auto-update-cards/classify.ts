@@ -78,6 +78,21 @@ function classifyChange(change: DiffResult["changes"][number]): RiskLevel {
       // Pure context fields, no $ impact.
       return "LOW";
 
+    case "welcome_offer.free_nights": {
+      // FNAs have real $ value (hundreds per night). Free → paid or
+      // paid → free is a swing on par with bonus_points 0↔N.
+      const from = Number(change.from) || 0;
+      const to = Number(change.to) || 0;
+      if (from === 0 && to > 0) return "HIGH";
+      if (from > 0 && to === 0) return "HIGH";
+      if (from > 0 && to > 0 && Math.abs(to - from) >= 2) return "HIGH";
+      return "MED";
+    }
+
+    case "welcome_offer.free_night_value_cap":
+      // Per-FNA cap moves the value but not whether you got the FNA.
+      return "LOW";
+
     case "point_program":
     case "welcome_offer.point_program":
       return "HIGH";

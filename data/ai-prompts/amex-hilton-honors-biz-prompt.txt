@@ -124,6 +124,8 @@ Rules:
 - welcome_offer.is_elevated: boolean — true ONLY if the page itself uses language like "increased offer", "limited time", "all-time high", "best ever", or shows a struck-through previous bonus next to a higher new one. Do NOT mark elevated just because the bonus seems generous.
 - welcome_offer.normal_bonus_points: number — populate when the page shows both the standard and promo bonus (e.g. struck-through 60K beside live 100K). Null otherwise.
 - welcome_offer.elevated_until: string (ISO date YYYY-MM-DD) — only when the page states an explicit expiry; null otherwise.
+- welcome_offer.free_nights: number — for hotel co-brand cards, total welcome-offer Free Night Awards summed across spend tiers (e.g. "3 FNAs after $6K + 2 more after $9K" → 5). Null on non-hotel cards or hotel cards whose welcome is points-only. Anniversary / cardmember-year free nights belong in recurring_credits, NOT here.
+- welcome_offer.free_night_value_cap: number — per-FNA points cap (e.g. 50000 for "up to 50,000 points each"). Null when the FNA is uncapped / any-night (e.g. Hilton Aspire).
 - earning_rates: array of {category, rate, notes}
   - category: Flights, Hotels, Dining, Groceries, Gas, Other, etc.
 - recurring_credits: array of {name, amount, frequency, category, description, reset_type}
