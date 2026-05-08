@@ -1,3 +1,4 @@
+import Image from "next/image";
 import products from "@/data/products/recommended.json";
 
 type Props = {
@@ -95,11 +96,14 @@ export default function TravelProducts({ lang }: Props) {
                   className={`relative flex items-center gap-3 p-3 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group`}
                 >
                   {imgUrl ? (
-                    <img
+                    <Image
                       src={imgUrl}
                       alt={product.name}
+                      width={96}
+                      height={96}
                       className="w-24 h-24 object-contain rounded shrink-0"
                       loading="lazy"
+                      unoptimized
                     />
                   ) : (
                     <div className="w-24 h-24 bg-slate-100 rounded flex items-center justify-center text-3xl shrink-0">🧳</div>
@@ -140,11 +144,14 @@ export default function TravelProducts({ lang }: Props) {
                   className={`relative flex items-center gap-3 p-3 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group`}
                 >
                   {imgUrl ? (
-                    <img
+                    <Image
                       src={imgUrl}
                       alt={product.name}
+                      width={96}
+                      height={96}
                       className="w-24 h-24 object-contain rounded shrink-0"
                       loading="lazy"
+                      unoptimized
                     />
                   ) : (
                     <div className="w-24 h-24 bg-slate-100 rounded flex items-center justify-center text-3xl shrink-0">🔌</div>
@@ -185,11 +192,14 @@ export default function TravelProducts({ lang }: Props) {
                   className={`relative flex items-center gap-3 p-3 border rounded-xl ${style.bg} ${style.border} ${style.hover} hover:shadow-sm transition-all group`}
                 >
                   {imgUrl ? (
-                    <img
+                    <Image
                       src={imgUrl}
                       alt={product.name}
+                      width={96}
+                      height={96}
                       className="w-24 h-24 object-contain rounded shrink-0"
                       loading="lazy"
+                      unoptimized
                     />
                   ) : (
                     <div className="w-24 h-24 bg-slate-100 rounded flex items-center justify-center text-3xl shrink-0">🛫</div>

@@ -78,9 +78,12 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
     }
   }, [isOpen, selectedCards.length]);
 
-  // Check subscription status
+  // Check subscription status — localStorage is an external store
+  // unavailable during SSR, so reading + syncing in an effect is the
+  // standard idiom.
   useEffect(() => {
     const email = localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSubscribedEmail(email);
   }, []);
 

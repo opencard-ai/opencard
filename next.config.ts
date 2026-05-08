@@ -1,6 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // External image hosts allowed for next/image. Currently only Amazon's
+  // media CDN, used by TravelProducts.tsx for affiliate product photos.
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "m.media-amazon.com",
+        pathname: "/images/**",
+      },
+    ],
+  },
   // Ensure static files like ads.txt are served correctly
   async headers() {
     return [

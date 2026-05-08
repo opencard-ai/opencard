@@ -23,9 +23,12 @@ export default function FloatingButtons({ lang }: FloatingButtonsProps) {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Track viewport so we can skip the collapse timer on desktop entirely.
+  // matchMedia is an external store; setting initial state in the effect
+  // is the standard idiom (SSR has no window).
   useEffect(() => {
     if (typeof window === "undefined") return;
     const mql = window.matchMedia("(max-width: 639px)");
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMobile(mql.matches);
     const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
     mql.addEventListener("change", handler);
@@ -42,8 +45,12 @@ export default function FloatingButtons({ lang }: FloatingButtonsProps) {
     if (isMobile) armCollapse();
   }, [armCollapse, isMobile]);
 
+  // Reset to expanded whenever the viewport flips to desktop, then arm the
+  // collapse timer on mobile. The setExpanded call is intentional cross-
+  // viewport reset, not derived state — keep it in the effect.
   useEffect(() => {
     if (!isMobile) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setExpanded(true);
       if (timerRef.current) clearTimeout(timerRef.current);
       return;

@@ -640,7 +640,7 @@ export default function MyCardsPage({
     } finally {
       setIsSubscribing(false);
     }
-  }, [email, selectedCards, marketingOptin]);
+  }, [email, selectedCards, marketingOptin, m.toastSubscribeOk]);
 
   // Fallback: if cardsData is empty but selectedCards has IDs, cards aren't loaded yet
   // This is just a placeholder until cardsData loads

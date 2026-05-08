@@ -19,7 +19,11 @@ export default function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>("system");
   const [mounted, setMounted] = useState(false);
 
+  // localStorage + matchMedia are both external stores unavailable during
+  // SSR — sync them on mount via this effect. setMounted/setTheme here is
+  // the established hydration pattern, not derived-state-in-effect.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     const stored = (localStorage.getItem(STORAGE_KEY) as Theme | null) || "system";
     setTheme(stored);

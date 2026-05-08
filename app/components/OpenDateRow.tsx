@@ -89,7 +89,7 @@ export default function OpenDateRow({ cardId, email, initial, lang, onSaved }: P
         setEditing(false);
       }
     },
-    [email, cardId, onSaved, t],
+    [email, cardId, onSaved],
   );
 
   if (editing) {

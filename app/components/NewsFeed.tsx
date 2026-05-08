@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { t } from "@/lib/i18n";
 
 interface NewsItem {
@@ -67,7 +67,7 @@ export default function NewsFeed({ lang }: Props) {
   const [filter, setFilter] = useState<"all" | "cards" | "banking" | "deals" | "others">("all");
   const [expanded, setExpanded] = useState(false);
 
-  const fetchNews = async () => {
+  const fetchNews = useCallback(async () => {
     setLoading(true);
     try {
       const res = await fetch(`/${lang}/api/daily-digest?lang=${lang}&v=1776235290`);
@@ -80,11 +80,11 @@ export default function NewsFeed({ lang }: Props) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [lang]);
 
   useEffect(() => {
     fetchNews();
-  }, [lang]);
+  }, [fetchNews]);
 
   const filtered = items.filter((item) => {
     if (item.isError) return false;

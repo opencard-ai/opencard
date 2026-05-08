@@ -17,11 +17,15 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
   const [added, setAdded] = useState(false);
   const [saving, setSaving] = useState(false);
 
+  // Sync from localStorage + cross-component event bus. Both are external
+  // stores unavailable during SSR, so deferring the read to an effect is
+  // the standard idiom — set-state-in-effect is expected here.
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
       try {
         const ids: string[] = JSON.parse(stored);
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setAdded(ids.includes(cardId));
       } catch {}
     }

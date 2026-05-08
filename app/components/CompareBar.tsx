@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { CreditCard } from "@/lib/cards";
 
@@ -12,16 +12,19 @@ interface CompareBarProps {
 }
 
 export default function CompareBar({ selected, onRemove, onClear, lang }: CompareBarProps) {
-  const [visible, setVisible] = useState(false);
   const [justAdded, setJustAdded] = useState<string | null>(null);
+  // `visible` is purely derived from props; previously stored in state and
+  // synced via useEffect, which made the bar render the wrong way for a
+  // tick whenever `selected` changed and tripped react-hooks/set-state-
+  // in-effect. Compute it inline and use the effect only for the
+  // event-dispatch side effect.
+  const visible = selected.length > 0;
 
   useEffect(() => {
-    const isVisible = selected.length > 0;
-    setVisible(isVisible);
-    window.dispatchEvent(new CustomEvent(isVisible ? "comparebar:show" : "comparebar:hide"));
-  }, [selected]);
+    window.dispatchEvent(new CustomEvent(visible ? "comparebar:show" : "comparebar:hide"));
+  }, [visible]);
 
-  if (!visible || selected.length === 0) return null;
+  if (!visible) return null;
 
   const labels = {
     en: { title: "Compare Cards", compare: "Compare Now", remove: "Remove", clear: "Clear", max: "Compare up to 3 cards" },
