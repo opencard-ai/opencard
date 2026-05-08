@@ -154,6 +154,68 @@ export function detectFreeNightSignals(html: string): FnaSignals {
   };
 }
 
+/**
+ * One MiniMax round-trip + JSON parse. Returned `truncated=true` means the
+ * model ran out of output tokens — the caller can retry with a larger
+ * budget. Other errors throw.
+ */
+async function callMiniMax(
+  apiKey: string,
+  systemPrompt: string,
+  userPrompt: string,
+  maxTokens: number,
+): Promise<{ parsed: Record<string, unknown> } | { truncated: true; raw: string }> {
+  const response = await fetch(MINIMAX_API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: MINIMAX_MODEL,
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userPrompt },
+      ],
+      temperature: 0.1,
+      response_format: { type: "json_object" },
+      max_tokens: maxTokens,
+    }),
+    // 120s, not 60s. Round 1 added 60s to fix indefinite hangs, but Amex
+    // cards (and any card with a long custom prompt under data/ai-prompts/)
+    // routinely take 60-90s for the full reasoning + 8K-token JSON output.
+    signal: AbortSignal.timeout(120_000),
+  });
+
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`MiniMax API error ${response.status}: ${text}`);
+  }
+
+  const data = await response.json() as { choices?: { message?: { content?: string } }[] };
+  let raw = data.choices?.[0]?.message?.content || "{}";
+
+  // MiniMax M2.7 is a reasoning model and may emit <think>...</think>
+  // tokens before the JSON payload. Strip them before parsing.
+  raw = raw.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
+  if (!raw.startsWith("{")) {
+    const firstBrace = raw.indexOf("{");
+    if (firstBrace > 0) raw = raw.slice(firstBrace);
+  }
+
+  try {
+    return { parsed: JSON.parse(raw) };
+  } catch {
+    // Cheap heuristic: a JSON object that doesn't end in `}` (after trim)
+    // almost certainly got cut mid-string by the max_tokens budget. The
+    // 2026-05-07 jitter measurement saw 20-40% of runs land here.
+    const trimmed = raw.trimEnd();
+    const looksTruncated = trimmed.length > 0 && !trimmed.endsWith("}");
+    if (looksTruncated) return { truncated: true, raw };
+    throw new Error(`MiniMax returned invalid JSON: ${raw.slice(0, 200)}`);
+  }
+}
+
 export async function extractCardData(
   card: Card,
   html: string,
@@ -172,62 +234,30 @@ export async function extractCardData(
 
   const userPrompt = buildExtractPrompt(card, html);
 
-  let raw: string;
+  // 16K is the standard budget. Bumped 8K → 12K → 16K across the 2026-05-06
+  // dry-runs as truncation kept biting Amex / Chase Ink Biz cards. The
+  // 2026-05-07 jitter measurement still saw 20-40% truncation rate at 16K
+  // (chase-sapphire-preferred 2/5, amex-gold 1/5), so on truncation we
+  // retry once at 24K rather than fail the card silently.
+  let parsed: Record<string, unknown>;
   try {
-    const response = await fetch(MINIMAX_API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: MINIMAX_MODEL,
-        messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: userPrompt },
-        ],
-        temperature: 0.1,
-        response_format: { type: "json_object" },
-        // 16K. Bumped from 8K → 12K → 16K across the 2026-05-06 dry-runs:
-        // amex-platinum / amex-blue-biz-plus / chase-ink-biz-cash /
-        // chase-ink-biz-unlimited / chase-sapphire-reserve-biz still truncated
-        // mid-string at 12K. The combination of M2.7 reasoning + the 482-line
-        // legacy `data/ai-prompts/*` system prompt + a full JSON schema
-        // (welcome_offer + earning_rates + recurring_credits + insurance + ...)
-        // routinely needs ~10-14K output tokens.
-        max_tokens: 16384,
-      }),
-      // 120s, not 60s. Round 1 added 60s to fix indefinite hangs, but Amex
-      // cards (and any card with a long custom prompt under data/ai-prompts/)
-      // routinely take 60-90s for the full reasoning + 8K-token JSON output.
-      signal: AbortSignal.timeout(120_000),
-    });
-
-    if (!response.ok) {
-      const text = await response.text();
-      throw new Error(`MiniMax API error ${response.status}: ${text}`);
-    }
-
-    const data = await response.json() as { choices?: { message?: { content?: string } }[] };
-    raw = data.choices?.[0]?.message?.content || "{}";
-
-    // MiniMax M2.7 is a reasoning model and may emit <think>...</think>
-    // tokens before the JSON payload. Strip them before parsing.
-    raw = raw.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
-    if (!raw.startsWith("{")) {
-      const firstBrace = raw.indexOf("{");
-      if (firstBrace > 0) raw = raw.slice(firstBrace);
+    const first = await callMiniMax(apiKey, systemPrompt, userPrompt, 16384);
+    if ("parsed" in first) {
+      parsed = first.parsed;
+    } else {
+      // Truncated at 16K. Retry once at 24K. If that ALSO truncates, bubble
+      // the original raw fragment up so the runner records it as an error
+      // (existing index.ts logic) instead of silently writing partial data.
+      console.warn(`   ⚠️  Truncated JSON at 16K tokens for ${card.card_id}; retrying at 24K`);
+      const retry = await callMiniMax(apiKey, systemPrompt, userPrompt, 24576);
+      if ("parsed" in retry) {
+        parsed = retry.parsed;
+      } else {
+        throw new Error(`MiniMax returned invalid JSON (truncated at both 16K and 24K): ${retry.raw.slice(0, 200)}`);
+      }
     }
   } catch (err) {
     throw new Error(`MiniMax API call failed: ${(err as Error).message}`);
-  }
-
-  // Parse JSON
-  let parsed: Record<string, unknown>;
-  try {
-    parsed = JSON.parse(raw);
-  } catch {
-    throw new Error(`MiniMax returned invalid JSON: ${raw.slice(0, 200)}`);
   }
 
   const result = parsed as unknown as ExtractedData;
@@ -245,7 +275,15 @@ export async function extractCardData(
     result.confidence *= 0.5; // Penalty: quote not found in HTML
   }
 
-  // Validate bonus_points appears as a number in HTML (with possible K/M suffixes)
+  // Validate bonus_points appears as a number in HTML (with possible K/M
+  // suffixes). Previously this just shaved confidence by 0.7, but the
+  // 2026-05-07 jitter run on chase-sapphire-preferred showed the LLM
+  // returning 60K and 100K on the same Chase page when neither number
+  // appears verbatim in the HTML (true offer is 75K). A confidence
+  // shave doesn't keep wrong values out of the diff — only a hard
+  // reject does. So: if the LLM bonus number can't be located in the
+  // page, null out the field AND penalise confidence. Downstream diff
+  // skips fields that are null/undefined.
   const bonusPoints = result.welcome_offer?.bonus_points;
   if (bonusPoints && bonusPoints > 0) {
     const htmlNumbers = strippedHtml.match(/\d[\d,]+/g) || [];
@@ -256,7 +294,10 @@ export async function extractCardData(
       n.replace(",", "").includes(bonusStr) || bonusStr.includes(n.replace(",", ""))
     );
     if (!bonusFound) {
-      result.confidence *= 0.7; // Penalty: bonus number not in HTML
+      result.confidence *= 0.5;
+      if (result.welcome_offer) {
+        result.welcome_offer.bonus_points = null;
+      }
     }
   }
 
