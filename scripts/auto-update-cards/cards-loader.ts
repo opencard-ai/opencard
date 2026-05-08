@@ -24,6 +24,9 @@ export interface Card {
     description?: string;
     point_program?: string;
     estimated_value?: number;
+    is_elevated?: boolean;
+    normal_bonus_points?: number;
+    elevated_until?: string;
   };
   earning_rates: { category: string; rate: number; notes?: string }[];
   recurring_credits?: unknown[];

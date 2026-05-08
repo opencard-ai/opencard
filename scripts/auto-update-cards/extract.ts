@@ -18,6 +18,16 @@ export interface ExtractedData {
     time_period_months: number | null;
     description: string | null;
     point_program: string | null;
+    /** Set true when the page advertises this as a limited-time / increased
+     * / all-time-high offer above the card's normal baseline. Backed by
+     * detectElevatedSignals() to avoid LLM hallucination. */
+    is_elevated?: boolean | null;
+    /** The card's standard / non-promo bonus when the page mentions both
+     * the regular and the elevated number (often via strike-through). */
+    normal_bonus_points?: number | null;
+    /** ISO date (YYYY-MM-DD) the elevated offer is expected to expire,
+     * if the page states one. */
+    elevated_until?: string | null;
   } | null;
   annual_fee: number | null;
   earning_rates: { category: string; rate: number; notes: string | null }[] | null;
@@ -25,6 +35,44 @@ export interface ExtractedData {
   source_quote: string;
   source_quote_in_html: boolean;
   raw_thinking?: string;
+}
+
+/** Phrases that strongly indicate the page is advertising an elevated /
+ * limited-time welcome offer. Hand-tuned over DoC / TPG / USCCG language. */
+const ELEVATED_PHRASES = [
+  // "increased (the) (welcome) offer", "raised the welcome bonus", etc.
+  /\b(?:increased|raised|boosted|elevated)\s+(?:the\s+|its\s+|their\s+)?(?:welcome\s+|public\s+|targeted\s+|new[-\s]cardmember\s+)?(?:offer|bonus)\b/i,
+  /\b(?:welcome\s+)?(?:offer|bonus)\s+(?:has\s+)?(?:been\s+)?(?:increased|raised|boosted|elevated)\b/i,
+  /\blimited[-\s]time\b/i,
+  /\b(?:all[-\s]time|highest[-\s]ever|best[-\s]ever)\s+(?:offer|bonus|high)?\b/i,
+  /\bhighest\s+(?:we'?ve\s+)?(?:ever\s+)?seen\b/i,
+];
+
+const EXPIRY_PATTERNS = [
+  // "offer ends 5/31/2026" / "ending 6/30/2026" / "valid through May 31, 2026"
+  // / "expires 5-31-26" / "through DATE" / "until DATE"
+  /\b(?:offer\s+ends|ending|valid\s+(?:through|until)|expires?|through|until)\s+(?:on\s+)?(\d{1,2}[\/\-]\d{1,2}(?:[\/\-]\d{2,4})?|[A-Z][a-z]+\s+\d{1,2},?\s+\d{4})/,
+];
+
+export interface ElevatedSignals {
+  matched: boolean;
+  phrases: string[];
+  expiry_hint: string | null;
+}
+
+export function detectElevatedSignals(html: string): ElevatedSignals {
+  const stripped = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+  const phrases: string[] = [];
+  for (const re of ELEVATED_PHRASES) {
+    const m = stripped.match(re);
+    if (m) phrases.push(m[0]);
+  }
+  let expiry_hint: string | null = null;
+  for (const re of EXPIRY_PATTERNS) {
+    const m = stripped.match(re);
+    if (m) { expiry_hint = m[1]; break; }
+  }
+  return { matched: phrases.length > 0, phrases, expiry_hint };
 }
 
 export async function extractCardData(
@@ -133,6 +181,25 @@ export async function extractCardData(
     }
   }
 
+  // Anti-hallucination guard for is_elevated. The LLM tends to over-call
+  // "is_elevated: true" any time the welcome offer looks generous. Force
+  // it back to false unless we have concrete evidence on the page —
+  // either a tagged elevated phrase or an explicit normal_bonus_points
+  // baseline that the current bonus exceeds.
+  if (result.welcome_offer?.is_elevated) {
+    const signals = detectElevatedSignals(html);
+    const wo = result.welcome_offer;
+    const hasBaselineDelta =
+      typeof wo.normal_bonus_points === "number" &&
+      typeof wo.bonus_points === "number" &&
+      wo.normal_bonus_points > 0 &&
+      wo.bonus_points > wo.normal_bonus_points * 1.1; // ≥ 10% above baseline
+    if (!signals.matched && !hasBaselineDelta) {
+      result.welcome_offer.is_elevated = false;
+      result.welcome_offer.elevated_until = null;
+    }
+  }
+
   return result;
 }
 
@@ -143,7 +210,16 @@ Never invent or estimate values. If uncertain, set confidence below 0.7.
 
 Output a JSON object with this exact schema:
 {
-  "welcome_offer": { "bonus_points": number|null, "spending_requirement": number|null, "time_period_months": number|null, "description": string|null, "point_program": string|null },
+  "welcome_offer": {
+    "bonus_points": number|null,
+    "spending_requirement": number|null,
+    "time_period_months": number|null,
+    "description": string|null,
+    "point_program": string|null,
+    "is_elevated": boolean|null,        // true ONLY if the page calls this an increased / limited-time / all-time-high / best-ever offer
+    "normal_bonus_points": number|null, // the standard non-promo bonus, when both are shown (e.g. struck-through old number)
+    "elevated_until": string|null       // ISO date YYYY-MM-DD if the page states an expiry, else null
+  },
   "annual_fee": number|null,
   "earning_rates": [{ "category": string, "rate": number, "notes": string|null }]|null,
   "confidence": number (0-1, higher = more confident),
@@ -182,10 +258,21 @@ function buildExtractPrompt(card: Card, html: string): string {
   // Truncate HTML to first 80KB to avoid token limits
   const truncatedHtml = cleanedHtml.length > 80000 ? cleanedHtml.slice(0, 80000) + "\n[TRUNCATED]" : cleanedHtml;
 
+  // Run the regex pre-detector against the ORIGINAL html (before strike-
+  // through stripping) so we can pass the LLM a pre-computed hint about
+  // whether this page is advertising the offer as elevated. The post-
+  // process guard above is the authoritative check; this hint just
+  // primes the LLM so it doesn't have to scan for the phrase itself.
+  const signals = detectElevatedSignals(html);
+  const elevatedHint = signals.matched
+    ? `\nPre-scan detected elevated-offer phrasing on the page: ${signals.phrases.map((p) => `"${p}"`).join(", ")}.${signals.expiry_hint ? ` Possible expiry: ${signals.expiry_hint}.` : ""} Treat this as a strong prior for is_elevated=true and capture elevated_until / normal_bonus_points if visible.`
+    : `\nPre-scan found no elevated-offer phrasing. Default is_elevated=false unless the page itself clearly says otherwise.`;
+
   return `Extract structured data for this credit card from the page below.
 
 Card: ${card.name}
 Issuer: ${card.issuer}
+${elevatedHint}
 
 The scraped HTML is the canonical source — extract values from there, not
 from any prior knowledge. If a value appears multiple times (e.g. an upgraded
@@ -207,6 +294,14 @@ Return a JSON object with the schema described in the system prompt. Focus on:
 1. Current welcome offer (bonus points, spending requirement, time period)
 2. Annual fee
 3. Earning rates by category
+4. welcome_offer.is_elevated — true ONLY if the page itself uses language like
+   "increased offer", "limited time", "all-time high", "best ever", or shows a
+   strike-through previous bonus next to a higher new one. Do NOT mark elevated
+   just because the bonus seems generous.
+5. welcome_offer.normal_bonus_points — populate when both the standard and
+   promo numbers are shown (e.g. struck-through 60K beside live 100K).
+6. welcome_offer.elevated_until — ISO date YYYY-MM-DD if the page states an
+   expiry; null otherwise.
 
 IMPORTANT: Include a verbatim "source_quote" ≥ 30 characters from the HTML that confirms the key data. The source_quote may be in any language as long as it is verbatim from the page.`;
 }

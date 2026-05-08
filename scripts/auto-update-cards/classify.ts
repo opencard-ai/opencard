@@ -67,6 +67,17 @@ function classifyChange(change: DiffResult["changes"][number]): RiskLevel {
     case "welcome_offer.description":
       return "LOW";
 
+    case "welcome_offer.is_elevated":
+      // Adds / removes a UI badge but doesn't change any $ value. The
+      // anti-hallucination guard in extract.ts already filters
+      // baseless flips, so reviewer triage stays MED.
+      return "MED";
+
+    case "welcome_offer.normal_bonus_points":
+    case "welcome_offer.elevated_until":
+      // Pure context fields, no $ impact.
+      return "LOW";
+
     case "point_program":
     case "welcome_offer.point_program":
       return "HIGH";

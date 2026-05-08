@@ -70,6 +70,28 @@ export function diffCard(card: Card, extracted: ExtractedData): DiffResult | nul
         changes.push({ field: "welcome_offer.point_program", from: current, to: wo.point_program });
       }
     }
+
+    // Elevated-offer flags. Treat undefined / null on the extracted side
+    // as "no signal" rather than "set to null" so a quiet run doesn't
+    // wipe a hand-curated baseline.
+    if (typeof wo.is_elevated === "boolean") {
+      const current = currentWo?.is_elevated ?? false;
+      if (current !== wo.is_elevated) {
+        changes.push({ field: "welcome_offer.is_elevated", from: current, to: wo.is_elevated });
+      }
+    }
+    if (typeof wo.normal_bonus_points === "number" && wo.normal_bonus_points > 0) {
+      const current = currentWo?.normal_bonus_points;
+      if (current !== wo.normal_bonus_points) {
+        changes.push({ field: "welcome_offer.normal_bonus_points", from: current ?? null, to: wo.normal_bonus_points });
+      }
+    }
+    if (typeof wo.elevated_until === "string" && wo.elevated_until.length > 0) {
+      const current = currentWo?.elevated_until;
+      if (current !== wo.elevated_until) {
+        changes.push({ field: "welcome_offer.elevated_until", from: current ?? null, to: wo.elevated_until });
+      }
+    }
   }
 
   if (changes.length === 0) {

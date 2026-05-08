@@ -118,6 +118,9 @@ Rules:
 - credit_required: Excellent, Good, Fair, Poor
 - welcome_offer.bonus_points: number (0 if none)
 - welcome_offer.point_program: MR, UR, TYP, Honors, Marriott, None, etc.
+- welcome_offer.is_elevated: boolean — true ONLY if the page itself uses language like "increased offer", "limited time", "all-time high", "best ever", or shows a struck-through previous bonus next to a higher new one. Do NOT mark elevated just because the bonus seems generous.
+- welcome_offer.normal_bonus_points: number — populate when the page shows both the standard and promo bonus (e.g. struck-through 60K beside live 100K). Null otherwise.
+- welcome_offer.elevated_until: string (ISO date YYYY-MM-DD) — only when the page states an explicit expiry; null otherwise.
 - earning_rates: array of {category, rate, notes}
   - category: Flights, Hotels, Dining, Groceries, Gas, Other, etc.
 - recurring_credits: array of {name, amount, frequency, category, description, reset_type}
