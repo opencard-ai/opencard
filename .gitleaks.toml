@@ -91,8 +91,12 @@ paths = [
   '''^data/ai-prompts/.*\.txt$''',
 ]
 
+# NOTE: gitleaks v8 matches these regexes against the SECRET value (the
+# captured group from the rule), not the surrounding line. A pattern that
+# describes line context (e.g. `credit_key":\s*"...`) will never fire.
+# Keep allowlist regexes anchored to the secret value itself.
 regexes = [
-  # SHA-256 hashes that look like base64 secrets
+  # SHA-256/384/512 hashes that look like base64 secrets
   '''sha(?:256|384|512)-[A-Za-z0-9+/=]+''',
   '''integrity:\s*"sha[0-9]+-[A-Za-z0-9+/=]+"''',
   # SRI hashes in HTML
@@ -105,10 +109,27 @@ regexes = [
   # docs/SECURITY_NOTICE references already-redacted tokens by prefix
   '''gQAAAAAA\.\.\.\[REDACTED''',
   '''sk-cp-mFUA9\.\.\.\[REDACTED''',
-  # credit_key values in card JSONs (logical benefit identifiers, not API keys)
-  '''credit_key":\s*"[^"]{3,50}"''',
   # Boomerang/SpeedCurve API key embedded in JS snippets (false positive)
   '''BOOMR_API_key''',
+
+  # ── catalog credit_key values (kebab slugs, not API keys) ──
+  # Strict shape: lowercase letters/digits, 2–6 hyphen-separated segments
+  # totalling under 60 chars. Real API keys never look like
+  # "disney-bundle-credit" or "2025-quarterly-bonus" -- they're random
+  # high-entropy strings without word boundaries on hyphens.
+  '''^[a-z0-9]+(?:-[a-z0-9]+){1,5}$''',
+
+  # ── docs/cfpb-pipeline-diagnosis storage_key examples ──
+  # 16-char hex filename in markdown documentation showing what a hashed
+  # PDF storage key would look like (e.g. "7a3b9c4e1f2d5e8a.pdf").
+  '''^[0-9a-f]{16}\.pdf$''',
+  '''^[0-9a-f]{16}$''',
+
+  # ── UUID v4 placeholders / commented-out feature flags ──
+  # `// FORCE_UPDATE_KEY = "7214affe-c79d-4e23-921e-0d93a53a227e"` in
+  # app/[lang]/page.tsx is a dead UUID, kept only to remember the slot.
+  # Real API keys aren't issued in UUID format.
+  '''^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$''',
 ]
 
 # Historical leak commits used to be allowlisted here. Cleared 2026-05-07
