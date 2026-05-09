@@ -19,6 +19,7 @@ export async function POST(req: NextRequest) {
   let locale = "en";
   let preferences: any = null;
   let conversationHistory: any[] = [];
+  let existingCards: string[] = [];
 
   try {
     const body = await req.json();
@@ -27,7 +28,7 @@ export async function POST(req: NextRequest) {
     preferences = body.preferences || null;
     // Accept full conversation history from widget
     conversationHistory = Array.isArray(body.messages) ? body.messages : [];
-    const existingCards: string[] = body.existingCards || [];
+    existingCards = Array.isArray(body.existingCards) ? body.existingCards : [];
     if (preferences && existingCards.length > 0) {
       preferences.currentCards = existingCards;
     }
@@ -57,10 +58,28 @@ export async function POST(req: NextRequest) {
   // Conversational mode
   const cardData = getAllCards();
 
+  // User's existing card portfolio (from MyCards / localStorage). Surface
+  // this to the LLM in conversational mode so questions like "which of my
+  // cards covers bag fees" can be answered against the user's actual cards
+  // rather than the whole DB. Previously existingCards was only consumed
+  // by the preferences-scoring branch.
+  const ownedCards = existingCards
+    .map((cid) => cardData.find((c) => c.card_id === cid))
+    .filter((c): c is NonNullable<typeof c> => Boolean(c));
+  const myCardsBlock = ownedCards.length > 0
+    ? `\nUSER ALREADY OWNS THESE CARDS (their portfolio):
+${ownedCards.map((c) => `- ${c.name} (${c.issuer}, $${c.annual_fee} AF). Tags: ${c.tags.join(", ")}`).join("\n")}
+
+When the user asks "which of MY cards…", "do I have a card for…", "我手上的卡…", "我有的卡…" or similar portfolio-scoped questions, answer ONLY from the cards above. Do NOT recommend cards they don't own unless they explicitly ask for new cards.`
+    : `\nUSER PORTFOLIO: empty (no cards saved in MyCards yet).
+
+If the user asks "which of MY cards…", "do I have a card for…", "我手上的卡…", "我有的卡…" or similar portfolio-scoped questions, DO NOT dump the whole catalog. Tell them concisely (in their language) that you can't see their cards yet, and suggest they add cards in the My Cards page (linked from the homepage) so you can answer portfolio questions next time. Then offer to recommend a NEW card for the underlying need.`;
+
   const systemPrompt = `You are a friendly US credit card recommendation assistant on OpenCard. Your job is to help users find the best credit card for their needs.
 
 CARD DATABASE:
 ${cardData.map(c => `- ${c.name} (${c.issuer}): $${c.annual_fee} annual fee. Categories: ${c.earning_rates.map(r => `${r.rate}× ${r.category}`).join(", ")}. Tags: ${c.tags.join(", ")}. ${c.annual_fee === 0 ? "No annual fee!" : ""}`).join("\n")}
+${myCardsBlock}
 
 IMPORTANT BEHAVIOR - Follow these rules strictly:
 1. ALWAYS ask questions with EXACT emoji options on separate lines. NEVER ask numbered open-ended questions without options.
@@ -94,25 +113,41 @@ Respond conversationally, like a helpful friend who knows credit cards well.`;
     content: m.content as string,
   }));
 
-  const response = await fetch("https://api.minimax.io/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Authorization": `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model: "MiniMax-M2.7",
-      messages: [
-        { role: "system", content: systemPrompt },
-        ...historyMessages,
-        { role: "user", content: message }
-      ],
-      temperature: 0.7,
-      // Skip M2.7's reasoning pass — recommend replies are short and don't
-      // benefit enough from chain-of-thought to justify the 10-15s latency.
-      internal_thought: false,
-    }),
-  });
+  // Wrap the MiniMax call in an explicit timeout + try/catch so a hang
+  // bubbles up as our own JSON 500 instead of Vercel's HTML 504 page.
+  // The widget's fetch().then(res => res.json()) was throwing JSON parse
+  // errors on cold-start hangs, which surfaced as "Something went wrong"
+  // on the user's first message (the second message after warm-up worked).
+  let response: Response;
+  try {
+    response = await fetch("https://api.minimax.io/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "MiniMax-M2.7",
+        messages: [
+          { role: "system", content: systemPrompt },
+          ...historyMessages,
+          { role: "user", content: message }
+        ],
+        temperature: 0.7,
+        // Skip M2.7's reasoning pass — recommend replies are short and don't
+        // benefit enough from chain-of-thought to justify the 10-15s latency.
+        internal_thought: false,
+      }),
+      signal: AbortSignal.timeout(90_000),
+    });
+  } catch (err) {
+    const msg = (err as Error).message || String(err);
+    console.error("MiniMax fetch failed:", msg);
+    return NextResponse.json(
+      { reply: "AI took too long to respond. Please try again." },
+      { status: 504 },
+    );
+  }
 
   if (!response.ok) {
     const err = await response.text();

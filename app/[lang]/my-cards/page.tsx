@@ -8,6 +8,7 @@ import ReportErrorModal from "@/app/components/ReportErrorModal";
 import OpenDateRow from "@/app/components/OpenDateRow";
 import HelpHint from "@/app/components/HelpHint";
 import CardArt from "@/app/components/CardArt";
+import MyCardsAssistant from "@/app/components/MyCardsAssistant";
 import { toast } from "@/lib/toast";
 
 const STORAGE_KEY = "opencard_existing_cards";
@@ -723,6 +724,14 @@ export default function MyCardsPage({
               </div>
             </div>
           </div>
+        )}
+
+        {/* AI assistant — only render when the user has cards, otherwise the
+         * landing banner below is the right CTA. selectedCards is passed
+         * in directly so the assistant has the user's portfolio without
+         * any localStorage round-trip / race condition. */}
+        {selectedCards.length > 0 && (
+          <MyCardsAssistant selectedCards={selectedCards} lang={lang} />
         )}
 
         {/* Landing banner for new visitors */}

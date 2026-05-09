@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Sparkles, X } from "lucide-react";
 import { CARD_OPTIONS } from "@/lib/constants";
+import { fetchRecommend } from "@/lib/recommend-fetch";
 
 interface Message {
   role: "user" | "assistant";
@@ -96,9 +97,34 @@ export default function RecommendWidget({ lang = "en", expanded = true }: { lang
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCards, setSelectedCards] = useState<string[]>([]);
+  // Gates the auto-open `?ask=` send until localStorage has been read.
+  // Without this, opening from the home hero CTA fires the API call with
+  // existingCards=[] (initial state) before the localStorage-loading
+  // effect runs, so the LLM has no idea what cards the user owns.
+  const [storageLoaded, setStorageLoaded] = useState(false);
 
-  // Auto-open and send when ?ask= query param is present
+  // Load saved cards from localStorage (and listen for cross-component
+  // updates from MyCardsWidget / AddToMyCardsButton). Runs first so the
+  // ?ask= auto-send below has the right portfolio.
   useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) setSelectedCards(JSON.parse(saved));
+    } catch {}
+    setStorageLoaded(true);
+
+    const handleSync = (e: Event) => {
+      const detail = (e as CustomEvent<string[]>).detail;
+      if (Array.isArray(detail)) setSelectedCards(detail);
+    };
+    window.addEventListener("opencard_cards_updated", handleSync);
+    return () => window.removeEventListener("opencard_cards_updated", handleSync);
+  }, []);
+
+  // Auto-open and send when ?ask= query param is present. Gated on
+  // storageLoaded so existingCards reflects the user's actual portfolio.
+  useEffect(() => {
+    if (!storageLoaded) return;
     const params = new URLSearchParams(window.location.search);
     const askParam = params.get("ask");
     if (askParam && !hasOpened.current) {
@@ -108,21 +134,16 @@ export default function RecommendWidget({ lang = "en", expanded = true }: { lang
       setMessages([{ role: "user", content: askParam }]);
       setIsLoading(true);
       window.history.replaceState(null, "", window.location.pathname);
-      // Call API to get AI response
-      fetch("/api/recommend", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: askParam,
-          messages: [],
-          locale: lang,
-          existingCards: selectedCards,
-        }),
+      // Call API to get AI response (auto-retries once on cold-start failure)
+      fetchRecommend({
+        message: askParam,
+        messages: [],
+        locale: lang,
+        existingCards: selectedCards,
       })
-        .then(res => res.json())
         .then(data => {
           setIsLoading(false);
-          let reply = data.reply || "Sorry, I couldn't get a response.";
+          const reply = data.reply || "Sorry, I couldn't get a response.";
           const options = parseOptions(reply);
           setMessages([{ role: "user", content: askParam }, { role: "assistant", content: reply, options: options.length > 0 ? options : undefined }]);
         })
@@ -132,20 +153,7 @@ export default function RecommendWidget({ lang = "en", expanded = true }: { lang
         });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      try { setSelectedCards(JSON.parse(saved)); } catch (e) {}
-    }
-
-    const handleSync = (e: any) => {
-      setSelectedCards(e.detail);
-    };
-    window.addEventListener("opencard_cards_updated", handleSync);
-    return () => window.removeEventListener("opencard_cards_updated", handleSync);
-  }, []);
+  }, [storageLoaded]);
 
   const sendMessage = (text: string) => {
     if (!text.trim() || isLoading) return;
@@ -154,17 +162,12 @@ export default function RecommendWidget({ lang = "en", expanded = true }: { lang
     setInput("");
     setIsLoading(true);
 
-    fetch("/api/recommend", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        message: userMsg,
-        messages: messages, // send full history so LLM has context
-        locale: lang,
-        existingCards: selectedCards,
-      }),
+    fetchRecommend({
+      message: userMsg,
+      messages: messages, // send full history so LLM has context
+      locale: lang,
+      existingCards: selectedCards,
     })
-      .then(res => res.json())
       .then(data => {
         setIsLoading(false);
         let reply = data.reply || "Sorry, I couldn't get a response.";
