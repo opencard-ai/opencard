@@ -4,7 +4,7 @@
   "issuer": "Barclays",
   "network": "visa",
   "status": "discontinued",
-  "discontinued_notes": "Same retired Uber Visa product as the barclays-uber catalog entry — converted to Barclays View Mastercard in October 2021. Earning rates and existing description (\"No welcome bonus (card retired by Barclays)\") confirm this is a duplicate of barclays-uber. Kacey to decide whether to delete this file or keep both as historical references.",
+  "discontinued_notes": "Retired Uber-branded Barclays card; product line converted to Barclays View Mastercard in October 2021. Catalog entry retained (not deleted) because card_id 'barclays-ubereats' is referenced from data/url-map.json, data/all-cards-index*.json, data/reference-list.json, scripts/pipelines/cfpb/config/{card_aliases,family-filing-audit,margin-as-apr-audit}.json, data/cfpb-cache/extracted/, data/recurring-credits-research/staging/, and historical check-reports. The CFPB pipeline tracks barclays-ubereats.pdf as an independent filing (per card_aliases.json), so the catalog distinction between 'barclays-uber' and 'barclays-ubereats' may reflect a real-world Uber Eats co-brand variant even though both records now describe the same retired product family. Cron skip via status=discontinued is the operational fix; structural cleanup deferred.",
   "annual_fee": 0,
   "welcome_offer": {
     "bonus_points": null,

@@ -95,14 +95,21 @@ test 5/10.
 - `discontinued_notes`: cites Oct 2021 conversion to Barclays View Mastercard.
 - Evidence: One Mile at a Time, NerdWallet, DoC.
 
-#### `barclays-ubereats` — applied (with duplicate flag)
+#### `barclays-ubereats` — applied; file kept (5/10 PM decision)
 - `status: "discontinued"`
-- `discontinued_notes`: explicit note that this is the same retired Uber Visa
-  product as `barclays-uber`, almost certainly a duplicate catalog entry.
-  Existing description on the file already read "No welcome bonus (card
-  retired by Barclays)" — confirms the duplicate hypothesis.
-- **Kacey's call**: delete this file, keep both as historical references, or
-  rename to make the duplicate explicit. Either way cron is unblocked.
+- `discontinued_notes`: refined to document why the file is kept. Cross-ref
+  search found `card_id: "barclays-ubereats"` referenced in 17+ files outside
+  `data/cards/`: `url-map.json`, two `all-cards-index*.json` search indexes,
+  `reference-list.json`, three CFPB pipeline configs, CFPB extracted cache,
+  recurring-credits staging, and historical check-reports. The CFPB pipeline
+  also tracks `barclays-ubereats.pdf` as an independent filing per
+  `scripts/pipelines/cfpb/config/card_aliases.json:111`, hinting the
+  catalog distinction may reflect a real-world Uber Eats co-brand variant.
+- **Decision**: keep the file. Delete-blast-radius (chasing 17+ refs)
+  outweighs the catalog-tidiness benefit. Status=discontinued already
+  removes it from cron + active-product UI surfaces; the structural
+  duplicate-vs-distinct question can be revisited if those references
+  matter for any future feature.
 
 #### `barclays-harley-davidson` — applied as discontinued (Barclays record only)
 - `status: "discontinued"` on the existing record (which represents the
@@ -110,10 +117,13 @@ test 5/10.
 - `discontinued_notes`: full successor-pointer for the U.S. Bank version,
   including suggested sources (NerdWallet review URL + h-dvisa.com), and
   a note that successor uses Visa not Mastercard.
-- **Kacey's follow-up (separate task)**: when ready, create a new catalog
-  entry e.g. `us-bank-harley-davidson` with the U.S. Bank issuer + verified
-  sources. Doing this in a separate session keeps the immediate cron-fix
-  clean.
+- **5/10 PM**: deferred creating the `us-bank-harley-davidson` successor.
+  NerdWallet returned 403 to scraper-style WebFetch (cron User-Agent
+  likely also blocked); h-dvisa.com landing page content was sparse;
+  USCCG has no Harley-Davidson review. Without a verified scraper-friendly
+  source, creating the new entry now would just produce another
+  "All sources failed" card every cron. Spun off as a separate research
+  task; old Barclays record stays discontinued so cron is quiet.
 
 Decision rationale: didn't go with `status: "transferred"` because the cron
 loader doesn't filter that value (only `discontinued`), so a transferred
