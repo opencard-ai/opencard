@@ -51,7 +51,13 @@ function fetchHtml(url: string, timeoutMs = 15000): Promise<{ html: string; stat
 async function headCheck(url: string): Promise<boolean> {
   return new Promise((resolve) => {
     get(url, { method: "HEAD", headers: { "User-Agent": MOZILLA_UA } }, (res) => {
-      resolve(res.statusCode === 200);
+      // Accept 200 and 3xx redirects. fetchHtml() follows redirects on its
+      // own, so a 301/302 from HEAD is not a reason to bail to fallback —
+      // the canonical page just lives at a different URL. Caught a class of
+      // failures in the source-swap backlog where issuer pages redirect
+      // (e.g. boa.com → boamerica.com or wildcard SPA → /credit-cards/...).
+      const status = res.statusCode || 0;
+      resolve(status === 200 || (status >= 300 && status < 400));
     }).on("error", () => resolve(false));
   });
 }

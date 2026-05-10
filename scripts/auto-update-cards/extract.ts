@@ -117,6 +117,92 @@ export interface FnaSignals {
   has_anniversary_fna: boolean;
 }
 
+/**
+ * Phase 2 spec §4 blocking gates. Each is a pure check on (catalog card,
+ * extracted candidate, scraped HTML) → either passes or returns a reason
+ * string. extractCardData() throws on the first block so the cron's
+ * processCardCore catch-all records an error artifact instead of opening
+ * a regression PR. Every threshold here is grounded in a real failure
+ * mode from the 2026-05-09 dry-run (see docs/CARD_ADAPTOR_PHASE_2_SPEC.md
+ * §4 "Blocking issues").
+ */
+export type GateResult = { blocked: false } | { blocked: true; reason: string };
+
+/** Catalog charges a fee, candidate says $0, page contains no "$0" /
+ * "no annual fee" / "discontinued" evidence. Caught chase-hyatt $95 → $0
+ * pure hallucination in 2026-05-09 dry-run. */
+export function checkPaidToFreeNoEvidence(
+  catalogAnnualFee: number | null | undefined,
+  candidateAnnualFee: number | null | undefined,
+  sourceQuote: string,
+  strippedHtmlLower: string,
+): GateResult {
+  if (typeof catalogAnnualFee !== "number" || catalogAnnualFee <= 0) return { blocked: false };
+  if (candidateAnnualFee !== 0) return { blocked: false };
+  const haystack = `${(sourceQuote || "").toLowerCase()} ${strippedHtmlLower}`;
+  const hasEvidence =
+    haystack.includes("$0") ||
+    haystack.includes("no annual fee") ||
+    haystack.includes("discontinued");
+  if (hasEvidence) return { blocked: false };
+  return {
+    blocked: true,
+    reason: `paid_to_free_no_evidence: annual_fee ${catalogAnnualFee} → 0 with no source evidence ("$0" / "no annual fee" / "discontinued" not on page)`,
+  };
+}
+
+/** Catalog had a real welcome bonus, candidate dropped it ≥80% to under
+ * 5000, and the program is non-cashback. Caught chase-ink-biz-unlimited
+ * 75K → 750 (LLM misread "$750 cash back" marketing copy as the points
+ * number). Cashback cards are exempt because $200-ish welcome amounts are
+ * legitimate there. */
+export function checkPointsCollapse(
+  catalogBonus: number | null | undefined,
+  candidateBonus: number | null | undefined,
+  catalogPointProgram: string | null | undefined,
+): GateResult {
+  if (typeof catalogBonus !== "number" || catalogBonus <= 0) return { blocked: false };
+  if (typeof candidateBonus !== "number" || candidateBonus <= 0) return { blocked: false };
+  if (candidateBonus >= 5000) return { blocked: false };
+  const dropPct = (catalogBonus - candidateBonus) / catalogBonus;
+  if (dropPct < 0.8) return { blocked: false };
+  const program = catalogPointProgram || "";
+  if (/cash\s*back/i.test(program)) return { blocked: false };
+  return {
+    blocked: true,
+    reason: `points_collapse: bonus_points ${catalogBonus} → ${candidateBonus} (${(dropPct * 100).toFixed(0)}% drop to <5000) on non-cashback program "${program}"`,
+  };
+}
+
+/** Source page contains "discontinued" or "旧版" within 200 chars of the
+ * card name. Caught amex-gold reading the legacy /amex-gold/ USCCG page
+ * (labelled "AmEx Gold 旧版 (Discontinued)") and emitting AF $325→$160 +
+ * bonus 100K→25K. Note: callers are expected to pass already-lowercased
+ * stripped HTML, matching the existing post-LLM defense convention. */
+export function checkSourcePageDiscontinued(
+  cardName: string,
+  strippedHtmlLower: string,
+): GateResult {
+  const re = /discontinued|旧版/g;
+  const cardWords = cardName
+    .toLowerCase()
+    .split(/\s+/)
+    .filter((w) => w.length > 3);
+  if (cardWords.length === 0) return { blocked: false };
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(strippedHtmlLower)) !== null) {
+    const idx = m.index;
+    const window = strippedHtmlLower.slice(Math.max(0, idx - 200), idx + 200);
+    if (cardWords.some((w) => window.includes(w))) {
+      return {
+        blocked: true,
+        reason: `source_page_marked_discontinued: "${m[0]}" appears within 200 chars of card name "${cardName}" on the source page`,
+      };
+    }
+  }
+  return { blocked: false };
+}
+
 export function detectFreeNightSignals(html: string): FnaSignals {
   const stripped = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
   let count_hint: number | null = null;
@@ -340,6 +426,28 @@ export async function extractCardData(
       // LLM since the regex sees only the FIRST match.
       result.confidence *= 0.85;
     }
+  }
+
+  // ── Phase 2 spec §4 blocking gates ───────────────────────────────────────
+  // Hard rejects: throw before the candidate reaches diff/PR. Each gate would
+  // have caught one of the 3 HIGH regressions surfaced in the 2026-05-09
+  // dry-run. Stopgap until the artifact-first qa stage lands (Phase 2 CLI v1).
+  const gates: GateResult[] = [
+    checkPaidToFreeNoEvidence(
+      card.annual_fee,
+      result.annual_fee,
+      result.source_quote || "",
+      strippedHtml,
+    ),
+    checkPointsCollapse(
+      card.welcome_offer?.bonus_points,
+      result.welcome_offer?.bonus_points,
+      card.welcome_offer?.point_program,
+    ),
+    checkSourcePageDiscontinued(card.name, strippedHtml),
+  ];
+  for (const g of gates) {
+    if (g.blocked) throw new Error(g.reason);
   }
 
   return result;
