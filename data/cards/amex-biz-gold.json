@@ -7,12 +7,13 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 175000,
-    "spending_requirement": 12000,
-    "time_period_months": 6,
-    "description": "Earn up to 175,000 Membership Rewards points...",
+    "bonus_points": 200000,
+    "spending_requirement": 15000,
+    "time_period_months": 3,
+    "description": "As-high-as offer: earn up to 200,000 Membership Rewards points after $15,000 in purchases within the first 3 months.",
     "point_program": "Amex Membership Rewards",
-    "estimated_value": 2975
+    "estimated_value": 3400,
+    "is_elevated": true
   },
   "earning_rates": [
     {
@@ -124,9 +125,13 @@
     {
       "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
       "notes": "Amex official card page with earning categories and statement credits"
+    },
+    {
+      "url": "https://www.doctorofcredit.com/ymmv-american-express-business-gold-200000-points-offer-via-referral-links/",
+      "notes": "DoC best current sign-up bonus list"
     }
   ],
-  "last_updated": "2026-04-29T13:20:57.436Z",
+  "last_updated": "2026-05-08T05:47:54.573699+00:00",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -145,11 +150,11 @@
   "welcome_bonus": {
     "amount": 200000,
     "type": "points",
-    "source": "creditcards.com",
-    "last_updated": "2026-04-24"
+    "source": "doctorofcredit/uscreditcardguide/americanexpress",
+    "last_updated": "2026-05-07"
   },
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-04-25T16:05:37.071Z",
+  "last_verified": "2026-05-08T05:47:54.573699+00:00",
   "next_review": "2026-07-15T13:41:49.942000+00:00",
   "featured": true
 }

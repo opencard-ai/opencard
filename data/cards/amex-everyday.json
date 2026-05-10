@@ -5,11 +5,12 @@
   "network": "amex",
   "annual_fee": 0,
   "welcome_offer": {
-    "bonus_points": 0,
-    "description": "No welcome bonus",
-    "estimated_value": null,
-    "spending_requirement": null,
-    "time_period_months": null
+    "bonus_points": 10000,
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "description": "Historical standard offer: 10,000 Membership Rewards points after $1,000 in purchases within 3 months. USCCG notes the card has appeared unavailable to new applicants since 2024.",
+    "point_program": "Amex Membership Rewards",
+    "estimated_value": 170
   },
   "earning_rates": [
     {
@@ -48,7 +49,7 @@
       "notes": "USCCG card review (LLM-friendly static HTML)"
     }
   ],
-  "last_updated": "2026-04-27T20:00:00.000Z",
+  "last_updated": "2026-05-08T05:47:54.573699+00:00",
   "travel_benefits": {
     "hotel_status": [],
     "lounge_access": [],
@@ -66,7 +67,7 @@
   "recurring_credits": [],
   "_no_credits_found": true,
   "_no_credits_note": "Amex EveryDay ($0 AF) — entry-level no-AF card with no recurring USD credits. Value is earning rates (2x supermarkets up to $6k, 1x other) + 20% extra points after 20+ tx/cycle (earning enhancement). Verified 2026-04-27.",
-  "last_verified": "2026-04-27T20:00:00.000Z",
+  "last_verified": "2026-05-08T05:47:54.573699+00:00",
   "next_review": "2026-07-15T13:41:49.946000+00:00",
   "cash_advance_fee_flat": 5,
   "cash_advance_fee_pct": 3,

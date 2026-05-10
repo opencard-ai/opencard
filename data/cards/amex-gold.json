@@ -8,9 +8,9 @@
   "credit_required": "Excellent",
   "welcome_offer": {
     "bonus_points": 100000,
-    "spending_requirement": null,
-    "time_period_months": null,
-    "description": "Earn up to 100,000 Membership Rewards points",
+    "spending_requirement": 8000,
+    "time_period_months": 6,
+    "description": "As-high-as offer: earn up to 100,000 Membership Rewards points after eligible purchases within the first 6 months; offer varies by applicant.",
     "point_program": "Amex Membership Rewards",
     "estimated_value": 1700
   },
@@ -97,9 +97,13 @@
     {
       "url": "https://upgradedpoints.com/credit-cards/reviews/american-express-gold-card/travel-insurance-benefits/",
       "notes": "Insurance Details"
+    },
+    {
+      "url": "https://www.uscreditcardguide.com/amex-premier-rewards-gold/",
+      "notes": "USCCG current Gold page; old /amex-gold/ URL is discontinued legacy Gold"
     }
   ],
-  "last_updated": "2026-04-29T13:17:39.237Z",
+  "last_updated": "2026-05-08T05:47:54.573699+00:00",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -155,11 +159,11 @@
   "welcome_bonus": {
     "amount": 100000,
     "type": "points",
-    "source": "creditcards.com",
-    "last_updated": "2026-04-24"
+    "source": "doctorofcredit/uscreditcardguide/americanexpress",
+    "last_updated": "2026-05-07"
   },
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-04-25T16:00:32.707Z",
+  "last_verified": "2026-05-08T05:47:54.573699+00:00",
   "next_review": "2026-07-15T13:41:49.946000+00:00",
   "late_fee": 40,
   "cash_advance_fee_flat": 10,

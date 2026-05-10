@@ -8,11 +8,11 @@
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 10000,
-    "spending_requirement": null,
-    "time_period_months": null,
-    "description": "10,000 bonus miles",
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "description": "Earn 10,000 Delta SkyMiles after $500 in purchases within the first 3 months.",
     "point_program": "Delta SkyMiles",
-    "estimated_value": 100
+    "estimated_value": 130
   },
   "earning_rates": [
     {
@@ -64,9 +64,9 @@
   "application_rules": {
     "rules": []
   },
-  "last_updated": "2026-04-24T17:25:16.615341",
+  "last_updated": "2026-05-08T05:47:54.573699+00:00",
   "last_scraped": "2026-04-24T17:25:16.615271",
-  "last_verified": "2026-04-24",
+  "last_verified": "2026-05-08T05:47:54.573699+00:00",
   "next_review": "2026-07-23T17:25:16.615341",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,

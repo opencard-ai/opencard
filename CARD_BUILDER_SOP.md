@@ -65,11 +65,26 @@
 ```
 
 ### 來源優先順序
+
+#### 一般卡片條款 / 年費 / 官方福利
 1. 銀行官網（最高權威）
 2. Doctor of Credit（美國最大信用卡資訊站）
 3. US Credit Card Guide（中文讀者友好）
 4. The Points Guy / NerdWallet（大型綜合資訊）
 5. Reddit r/churning（第一手經驗分享）
+
+#### Welcome bonus / 開卡禮 / elevated offer
+1. Doctor of Credit（最快捕捉 current/elevated offers、歷史 offer 與 deal notes）
+2. US Credit Card Guide（卡片頁整理效率高，中文語境友好）
+3. 銀行官網（最終條款、消費門檻、期限與限制的 canonical source）
+4. Reddit r/churning / 社群 DP（輔助驗證 targeted/public、過期與實測情況）
+
+### 抓取工具：Scrapling
+- Repo: https://github.com/D4Vinci/Scrapling
+- 定位：card adaptor / OpenCard 的 scraping + crawling layer。
+- 優先用於 Doctor of Credit、US Credit Card Guide、公開銀行頁與 offer 變更監控。
+- CLI 抽取時必須加 `--ai-targeted`，避免 hidden prompt / prompt injection 汙染 AI 摘要。
+- 使用原則：第三方站點負責 discovery 和整理，寫入 production 前仍需用 issuer official page 做 canonical cross-check。
 
 ---
 

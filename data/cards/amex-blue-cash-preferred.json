@@ -75,9 +75,13 @@
     },
     {
       "url": "https://www.nerdwallet.com/credit-cards/reviews/american-express-blue-cash-preferred"
+    },
+    {
+      "url": "https://www.doctorofcredit.com/american-express-excellent-increased-offers-via-referrals-for-both-referrer-new-member-platinum-gold-blue-cash-preferred/",
+      "notes": "DoC best current sign-up bonus list"
     }
   ],
-  "last_updated": "2026-04-27T04:16:50.948Z",
+  "last_updated": "2026-05-08T05:47:54.573699+00:00",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -122,14 +126,15 @@
     }
   ],
   "welcome_offer": {
+    "bonus_points": 0,
     "spending_requirement": 3000,
     "time_period_months": 6,
-    "bonus_points": 0,
-    "description": "Up to $300 cash back after $3,000 spend within 6 months",
+    "description": "Earn up to $300 cash back after $3,000 in purchases within the first 6 months; $250 may be the non-referral public offer.",
+    "point_program": "Statement Credit",
     "estimated_value": 300
   },
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-04-24",
+  "last_verified": "2026-05-08T05:47:54.573699+00:00",
   "next_review": "2026-07-15T13:41:49.941000+00:00",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 5,

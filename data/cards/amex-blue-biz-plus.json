@@ -7,11 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 0,
-    "description": "No welcome bonus",
-    "estimated_value": null,
-    "spending_requirement": null,
-    "time_period_months": null
+    "bonus_points": 15000,
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "description": "Earn 15,000 Membership Rewards points after $3,000 in purchases within the first 3 months. Targeted/YMMV offers can be higher.",
+    "point_program": "Amex Membership Rewards",
+    "estimated_value": 255
   },
   "earning_rates": [
     {
@@ -55,6 +56,10 @@
     {
       "url": "https://www.uscreditcardguide.com/amex-blue-business-plus/",
       "notes": "USCCG card review (LLM-friendly static HTML)"
+    },
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-blue-business-plus-credit-card-amex/",
+      "notes": "Official Amex page / search snippet cross-check"
     }
   ],
   "hotel_program": null,
@@ -62,8 +67,8 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.940Z",
-  "last_verified": "2026-04-16T13:41:49.940Z",
+  "last_updated": "2026-05-08T05:47:54.573699+00:00",
+  "last_verified": "2026-05-08T05:47:54.573699+00:00",
   "next_review": "2026-07-15T13:41:49.940000+00:00",
   "featured": true
 }

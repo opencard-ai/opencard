@@ -8,11 +8,11 @@
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 0,
-    "spending_requirement": 1000,
+    "spending_requirement": 2000,
     "time_period_months": 6,
-    "description": "$200 welcome offer after spending $1,000 in first 6 months",
-    "point_program": "None",
-    "estimated_value": 200
+    "description": "Earn a $250 statement credit after $2,000 in purchases within the first 6 months. Alternate public offer may be $200 + dining cash back.",
+    "point_program": "Statement Credit",
+    "estimated_value": 250
   },
   "earning_rates": [
     {
@@ -64,9 +64,13 @@
     {
       "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/",
       "notes": "Official Amex Page"
+    },
+    {
+      "url": "https://www.doctorofcredit.com/american-express-blue-cash-everyday-250-signup-bonus/",
+      "notes": "DoC best current sign-up bonus list"
     }
   ],
-  "last_updated": "2026-04-29T07:01:03.717Z",
+  "last_updated": "2026-05-08T05:47:54.573699+00:00",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
@@ -103,7 +107,7 @@
     }
   ],
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-04-24",
+  "last_verified": "2026-05-08T05:47:54.573699+00:00",
   "next_review": "2026-07-23T17:27:59.994652",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 5,

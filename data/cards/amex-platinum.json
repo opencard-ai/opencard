@@ -8,9 +8,9 @@
   "credit_required": "Excellent",
   "welcome_offer": {
     "bonus_points": 175000,
-    "spending_requirement": 12000,
+    "spending_requirement": 8000,
     "time_period_months": 6,
-    "description": "Earn up to 175,000 Membership Rewards points",
+    "description": "As-high-as offer: earn up to 175,000 Membership Rewards points after $8,000 in purchases within the first 6 months.",
     "point_program": "Amex Membership Rewards",
     "estimated_value": 2975
   },
@@ -93,9 +93,13 @@
     {
       "url": "https://www.creditcards.com/american-express/the-platinum-card/",
       "name": "creditcards.com"
+    },
+    {
+      "url": "https://www.doctorofcredit.com/american-express-refreshes-platinum-business-platinum-cards-895-fee-175k-200k-bonus-many-new-credits/",
+      "notes": "DoC best current sign-up bonus list"
     }
   ],
-  "last_updated": "2026-04-29T13:12:50.929Z",
+  "last_updated": "2026-05-08T05:47:54.573699+00:00",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -216,11 +220,11 @@
   "welcome_bonus": {
     "amount": 175000,
     "type": "points",
-    "source": "creditcards.com",
-    "last_updated": "2026-04-24"
+    "source": "doctorofcredit/uscreditcardguide/americanexpress",
+    "last_updated": "2026-05-07"
   },
   "last_scraped": "2026-04-24T07:34:19.364Z",
-  "last_verified": "2026-04-25T16:00:22.036Z",
+  "last_verified": "2026-05-08T05:47:54.573699+00:00",
   "late_fee": 40,
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 5,

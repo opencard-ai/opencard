@@ -8,10 +8,11 @@
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 0,
-    "description": "No welcome bonus",
-    "estimated_value": null,
-    "spending_requirement": null,
-    "time_period_months": null
+    "spending_requirement": 50000,
+    "time_period_months": 6,
+    "description": "Earn $1,500 cash back after $50,000 in purchases within the first 6 months. USCCG/DoC note YMMV/incognito offers up to $2,000.",
+    "point_program": "Cash Back",
+    "estimated_value": 1500
   },
   "earning_rates": [
     {
@@ -57,6 +58,10 @@
     {
       "name": "American Express",
       "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/graphite-business-cash-unlimited-card/65147/"
+    },
+    {
+      "url": "https://www.doctorofcredit.com/american-express-graphite-business-cash-unlimited-card-1500-bonus-295-annual-fee/",
+      "notes": "DoC launch/offer tracking"
     }
   ],
   "hotel_program": null,
@@ -64,14 +69,14 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.947Z",
+  "last_updated": "2026-05-08T05:47:54.573699+00:00",
   "welcome_bonus": {
     "amount": 1500,
     "type": "cash",
     "requirement": "Spend $50,000 in first 6 months",
-    "source": "americanexpress.com",
-    "last_updated": "2026-04-24"
+    "source": "doctorofcredit/uscreditcardguide/americanexpress",
+    "last_updated": "2026-05-07"
   },
-  "last_verified": "2026-04-16T13:41:49.947Z",
+  "last_verified": "2026-05-08T05:47:54.573699+00:00",
   "next_review": "2026-07-15T13:41:49.947000+00:00"
 }

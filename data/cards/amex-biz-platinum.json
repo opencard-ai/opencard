@@ -88,9 +88,13 @@
     },
     {
       "url": "https://www.nerdwallet.com/business/credit-cards/learn/amex-business-platinum-refresh-2025"
+    },
+    {
+      "url": "https://www.doctorofcredit.com/american-express-refreshes-platinum-business-platinum-cards-895-fee-175k-200k-bonus-many-new-credits/",
+      "notes": "DoC best current sign-up bonus list"
     }
   ],
-  "last_updated": "2026-04-29T13:09:35.893Z",
+  "last_updated": "2026-05-08T05:47:54.573699+00:00",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -169,21 +173,22 @@
     }
   ],
   "welcome_offer": {
-    "bonus_points": 300000,
-    "spending_requirement": 12000,
-    "time_period_months": 6,
-    "description": "Earn up to 300,000 Membership Rewards points...",
+    "bonus_points": 200000,
+    "spending_requirement": 20000,
+    "time_period_months": 3,
+    "description": "Public/current offer: earn 200,000 Membership Rewards points after $20,000 in purchases within the first 3 months. Targeted/YMMV offers can reach 250,000–300,000 points.",
     "point_program": "Amex Membership Rewards",
-    "estimated_value": 5100
+    "estimated_value": 3400,
+    "is_elevated": true
   },
   "welcome_bonus": {
-    "amount": 300000,
+    "amount": 200000,
     "type": "points",
-    "source": "creditcards.com",
-    "last_updated": "2026-04-24"
+    "source": "doctorofcredit/uscreditcardguide/americanexpress",
+    "last_updated": "2026-05-07"
   },
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-04-25T16:05:23.977Z",
+  "last_verified": "2026-05-08T05:47:54.573699+00:00",
   "next_review": "2026-07-15T13:41:49.942000+00:00",
   "featured": true
 }
