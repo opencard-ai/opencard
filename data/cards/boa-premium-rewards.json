@@ -57,6 +57,14 @@
   ],
   "sources": [
     {
+      "url": "https://www.uscreditcardguide.com/boa-premium-rewards/",
+      "notes": "USCCG card review (LLM-friendly static HTML; BoA direct page is JS-rendered SPA returning unrendered template tokens to scrapers — caused 'All sources failed' on the 2026-05-09 dry-run)"
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/bank-of-america-premium-rewards-credit-card/",
+      "notes": "TPG fallback"
+    },
+    {
       "url": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/",
       "notes": "Official BOA Page"
     },

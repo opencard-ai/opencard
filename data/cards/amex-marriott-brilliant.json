@@ -8,11 +8,12 @@
   "credit_required": "Excellent",
   "welcome_offer": {
     "bonus_points": 200000,
-    "spending_requirement": 5000,
-    "time_period_months": 3,
-    "description": "Earn 200,000 Membership Rewards points after spending $5,000 in first 3 months",
+    "spending_requirement": 6000,
+    "time_period_months": 6,
+    "description": "Earn 200,000 Marriott Bonvoy points after $6,000 in purchases within the first 6 months.",
     "point_program": "Marriott Bonvoy",
-    "estimated_value": 1300
+    "estimated_value": 1300,
+    "is_elevated": true
   },
   "earning_rates": [
     {
@@ -86,8 +87,8 @@
   ],
   "sources": [
     {
-      "url": "https://www.uscreditcardguide.com/amex-marriott-bonvoy-brilliant/",
-      "notes": "USCCG card review (LLM-friendly static HTML)"
+      "url": "https://www.uscreditcardguide.com/amex-marriott-bonvoy-brilliant-credit-card-formerly-amex-spg-luxury-double-dip-opportunity/",
+      "notes": "USCCG card review (LLM-friendly static HTML; old slug 301-redirected, scraper headCheck rejects 301 so we record the final URL)"
     },
     {
       "url": "https://www.dailydrop.com/credit-cards/marriott-bonvoy-brilliant-american-express-card",
@@ -96,9 +97,13 @@
     {
       "url": "https://upgradedpoints.com/credit-cards/reviews/marriott-bonvoy-brilliant-card/welcome-offer-history/",
       "notes": "200K offer details and offer history confirmation"
+    },
+    {
+      "url": "https://www.doctorofcredit.com/increased-signup-bonuses-on-american-express-marriott-brilliant-bevy-and-business-cards/",
+      "notes": "DoC best current sign-up bonus list"
     }
   ],
-  "last_updated": "2026-04-30T03:22:07.693Z",
+  "last_updated": "2026-05-08T05:47:54.573699+00:00",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -142,7 +147,7 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:46.246653",
-  "last_verified": "2026-04-25T16:00:58.249Z",
+  "last_verified": "2026-05-08T05:47:54.573699+00:00",
   "next_review": "2026-07-23T17:26:46.246653",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 5,
