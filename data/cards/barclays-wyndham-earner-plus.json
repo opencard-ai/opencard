@@ -50,7 +50,12 @@
   "tags": [
     "hotel"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.uscreditcardguide.com/barclays-wyndham-earner-plus-credit-card/",
+      "notes": "USCCG primary review"
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],

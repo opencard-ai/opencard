@@ -3,6 +3,8 @@
   "name": "Harley-Davidson Credit Card",
   "issuer": "Barclays",
   "network": "mastercard",
+  "status": "discontinued",
+  "discontinued_notes": "Barclays-issued Harley-Davidson Visa was transferred to U.S. Bank around 2024. The successor product (H-D Visa Signature Credit Card from U.S. Bank) is a different catalog entry that does not yet exist; create as e.g. us-bank-harley-davidson with sources NerdWallet (https://www.nerdwallet.com/credit-cards/learn/harley-davidson-credit-cards) + h-dvisa.com when ready. Network is mastercard in this old Barclays record but the successor is Visa.",
   "annual_fee": 0,
   "welcome_offer": {
     "bonus_points": null,

@@ -54,7 +54,12 @@
   "tags": [
     "airline"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.uscreditcardguide.com/barclaycard-jetblue-plus-credit-card/",
+      "notes": "USCCG primary review"
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],

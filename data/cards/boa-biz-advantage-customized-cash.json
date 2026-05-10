@@ -75,8 +75,12 @@
   ],
   "sources": [
     {
+      "url": "https://www.uscreditcardguide.com/boa-cash-rewards-business-credit-card/",
+      "notes": "USCCG primary review"
+    },
+    {
       "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/cash-rewards-business-credit-card/",
-      "notes": "Official BOA Business Page"
+      "notes": "Official BOA Business Page (SPA — fallback only)"
     },
     {
       "url": "https://upgradedpoints.com/news/bank-of-america-business-cards-elevated-offers/",

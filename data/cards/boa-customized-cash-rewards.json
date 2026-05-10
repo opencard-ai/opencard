@@ -58,8 +58,12 @@
   ],
   "sources": [
     {
+      "url": "https://www.uscreditcardguide.com/boa-cash-rewards-credit-card/",
+      "notes": "USCCG primary review"
+    },
+    {
       "url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
-      "notes": "Official BOA Page"
+      "notes": "Official BOA Page (SPA — fallback only)"
     }
   ],
   "last_updated": "2026-04-16T13:41:49.957Z",

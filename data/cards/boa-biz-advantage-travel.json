@@ -70,8 +70,12 @@
   ],
   "sources": [
     {
+      "url": "https://www.uscreditcardguide.com/boa-travel-rewards-business-credit-card/",
+      "notes": "USCCG primary review (page last refreshed 2021.10 — refresh manually if welcome figure drifts)"
+    },
+    {
       "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/travel-rewards-business-credit-card/",
-      "notes": "Official BOA Business Page"
+      "notes": "Official BOA Business Page (SPA — fallback only)"
     },
     {
       "url": "https://www.forbes.com/advisor/credit-cards/increased-bank-of-america-business-credit-cards-welcome-offers-are-live/",

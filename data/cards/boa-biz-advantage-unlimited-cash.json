@@ -57,8 +57,12 @@
   ],
   "sources": [
     {
+      "url": "https://www.uscreditcardguide.com/boa-unlimited-cash-rewards-business-credit-card/",
+      "notes": "USCCG primary review"
+    },
+    {
       "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/unlimited-cash-rewards-business-credit-card/",
-      "notes": "Official BOA Business Page"
+      "notes": "Official BOA Business Page (SPA — fallback only)"
     },
     {
       "url": "https://www.nerdwallet.com/business/credit-cards/reviews/bank-of-america-business-advantage-unlimited-cash-rewards",

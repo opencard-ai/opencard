@@ -3,53 +3,155 @@
 The 2026-05-09 dry-run (gh run 25612748894) failed scrape on 13/50 cards with
 "All sources failed". This doc tracks the swap status for each.
 
+## Status table (updated 2026-05-10)
+
 | Card | Failure mode | Status | New source[0] |
 |---|---|---|---|
-| `amex-marriott-brilliant` | USCCG URL 301-redirected; scraper `headCheck` rejects 301 | ✅ swapped this commit | `https://www.uscreditcardguide.com/amex-marriott-bonvoy-brilliant-credit-card-formerly-amex-spg-luxury-double-dip-opportunity/` |
-| `boa-premium-rewards` | BoA direct page is JS-rendered SPA returning unrendered template tokens | ✅ swapped this commit | `https://www.uscreditcardguide.com/boa-premium-rewards/` |
-| `boa-customized-cash-rewards` | BoA SPA same as above | 🔍 needs deeper search — USCCG/TPG don't have a static page at the obvious slugs (4 attempts 404) | TODO |
-| `boa-biz-advantage-customized-cash` | BoA SPA | 🔍 needs research | TODO |
-| `boa-biz-advantage-travel` | BoA SPA | 🔍 needs research | TODO |
-| `boa-biz-advantage-unlimited-cash` | BoA SPA | 🔍 needs research | TODO |
-| `barclays-jetblue-plus` | catalog `sources` array empty | 🔍 needs research | TODO — check if JetBlue Plus is still issued (Barclays + JetBlue partnership active) |
-| `barclays-uber` | catalog `sources` empty + Uber Visa was discontinued ~2021 | ⚠️ probably dead card — verify discontinued, then either drop or mark `status: discontinued` | DELETE / DEPRECATE |
-| `barclays-ubereats` | catalog `sources` empty | ⚠️ same as above — Uber Eats card status unclear | VERIFY |
-| `barclays-wyndham-earner` | catalog `sources` empty | 🔍 needs research — Wyndham Earner family active, but Barclays issuer URLs likely broken |  TODO |
-| `barclays-wyndham-earner-plus` | same | 🔍 needs research | TODO |
-| `barclays-wyndham-earner-biz` | same | 🔍 needs research | TODO |
-| `barclays-harley-davidson` | catalog `sources` empty + Harley-Davidson Visa was likely transitioned to U.S. Bank ~2024 | ⚠️ probably issuer-changed — needs catalog correction | VERIFY ISSUER |
+| `amex-marriott-brilliant` | USCCG URL 301-redirected; scraper `headCheck` rejected 301 | ✅ swapped 5/09 | `https://www.uscreditcardguide.com/amex-marriott-bonvoy-brilliant-credit-card-formerly-amex-spg-luxury-double-dip-opportunity/` |
+| `boa-premium-rewards` | BoA direct page is JS-rendered SPA returning unrendered template tokens | ✅ swapped 5/09 | `https://www.uscreditcardguide.com/boa-premium-rewards/` |
+| `boa-customized-cash-rewards` | BoA SPA | 🟢 ready to apply | `https://www.uscreditcardguide.com/boa-cash-rewards-credit-card/` |
+| `boa-biz-advantage-customized-cash` | BoA SPA | 🟢 ready to apply | `https://www.uscreditcardguide.com/boa-cash-rewards-business-credit-card/` |
+| `boa-biz-advantage-travel` | BoA SPA | 🟡 apply with caveat | `https://www.uscreditcardguide.com/boa-travel-rewards-business-credit-card/` (page last updated 2021.10 — welcome figure may be stale; if extraction quality is poor, consider TPG fallback) |
+| `boa-biz-advantage-unlimited-cash` | BoA SPA | 🟢 ready to apply | `https://www.uscreditcardguide.com/boa-unlimited-cash-rewards-business-credit-card/` |
+| `barclays-jetblue-plus` | empty `sources` array | 🟢 ready to apply (Barclays still issues this card in 2026) | `https://www.uscreditcardguide.com/barclaycard-jetblue-plus-credit-card/` |
+| `barclays-wyndham-earner` | empty `sources` array | 🟢 ready to apply | `https://www.uscreditcardguide.com/barclays-wyndham-earner-credit-card/` |
+| `barclays-wyndham-earner-plus` | empty `sources` array | 🟢 ready to apply | `https://www.uscreditcardguide.com/barclays-wyndham-earner-plus-credit-card/` |
+| `barclays-wyndham-earner-biz` | empty `sources` array | 🟢 ready to apply | `https://www.uscreditcardguide.com/barclays-wyndham-earner-business-credit-card/` |
+| `barclays-uber` | empty `sources` + Uber Visa converted to Barclays View Mastercard Oct 2021 | 🟢 marked discontinued (5/10 unstaged) | `status: "discontinued"` set; cron-loader skip confirmed |
+| `barclays-ubereats` | empty `sources`; no separate "Uber Eats" Barclays card found in 2026; existing description already reads "card retired by Barclays" | 🟢 marked discontinued (5/10 unstaged) | `status: "discontinued"` set; flagged as likely duplicate of `barclays-uber` for Kacey to delete or keep |
+| `barclays-harley-davidson` | empty `sources` + Harley-Davidson Visa transferred to U.S. Bank ~2024 | 🟢 marked discontinued (5/10 unstaged) | `status: "discontinued"` set with successor-pointer notes (NerdWallet + h-dvisa.com); Kacey to create new `us-bank-harley-davidson` catalog entry when ready |
 
-## Patterns
+🟢 = high confidence, apply as-is
+🟡 = needs Kacey's manual decision before applying
+
+---
+
+## Apply checklist (mechanical edits — Kacey runs this section)
+
+The 8 high-confidence URL swaps are pure edits to `data/cards/<card_id>.json`.
+Notes for each variant:
+
+### A. BoA cards (4) — REPLACE existing source[0], keep BoA SPA as source[1] for posterity
+
+```jsonc
+// data/cards/boa-customized-cash-rewards.json
+"sources": [
+  { "url": "https://www.uscreditcardguide.com/boa-cash-rewards-credit-card/", "notes": "USCCG primary review" },
+  { "url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/", "notes": "Official BOA Page (SPA — fallback only)" }
+]
+
+// data/cards/boa-biz-advantage-customized-cash.json
+"sources": [
+  { "url": "https://www.uscreditcardguide.com/boa-cash-rewards-business-credit-card/", "notes": "USCCG primary review" },
+  { "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/cash-rewards-business-credit-card/", "notes": "Official BOA Business Page (SPA — fallback only)" }
+]
+
+// data/cards/boa-biz-advantage-travel.json
+"sources": [
+  { "url": "https://www.uscreditcardguide.com/boa-travel-rewards-business-credit-card/", "notes": "USCCG primary review (2021.10 update — refresh manually if welcome offer drift)" },
+  { "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/travel-rewards-business-credit-card/", "notes": "Official BOA Business Page (SPA — fallback only)" }
+]
+
+// data/cards/boa-biz-advantage-unlimited-cash.json
+"sources": [
+  { "url": "https://www.uscreditcardguide.com/boa-unlimited-cash-rewards-business-credit-card/", "notes": "USCCG primary review" },
+  { "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/unlimited-cash-rewards-business-credit-card/", "notes": "Official BOA Business Page (SPA — fallback only)" }
+]
+```
+
+### B. Barclays Wyndham trio + JetBlue Plus (4) — ADD source[0] to empty array
+
+```jsonc
+// data/cards/barclays-jetblue-plus.json
+"sources": [
+  { "url": "https://www.uscreditcardguide.com/barclaycard-jetblue-plus-credit-card/", "notes": "USCCG primary review" }
+]
+
+// data/cards/barclays-wyndham-earner.json
+"sources": [
+  { "url": "https://www.uscreditcardguide.com/barclays-wyndham-earner-credit-card/", "notes": "USCCG primary review" }
+]
+
+// data/cards/barclays-wyndham-earner-plus.json
+"sources": [
+  { "url": "https://www.uscreditcardguide.com/barclays-wyndham-earner-plus-credit-card/", "notes": "USCCG primary review" }
+]
+
+// data/cards/barclays-wyndham-earner-biz.json
+"sources": [
+  { "url": "https://www.uscreditcardguide.com/barclays-wyndham-earner-business-credit-card/", "notes": "USCCG primary review" }
+]
+```
+
+### C. Discontinued / issuer-change (3) — APPLIED 5/10 (unstaged)
+
+All 3 cards now carry `status: "discontinued"` + a `discontinued_notes` field
+explaining the resolution. `cards-loader.ts:66` filters them out, so cron will
+no longer attempt to scrape them next run. Verified via `loadCards()` smoke
+test 5/10.
+
+#### `barclays-uber` — applied
+- `status: "discontinued"`
+- `discontinued_notes`: cites Oct 2021 conversion to Barclays View Mastercard.
+- Evidence: One Mile at a Time, NerdWallet, DoC.
+
+#### `barclays-ubereats` — applied (with duplicate flag)
+- `status: "discontinued"`
+- `discontinued_notes`: explicit note that this is the same retired Uber Visa
+  product as `barclays-uber`, almost certainly a duplicate catalog entry.
+  Existing description on the file already read "No welcome bonus (card
+  retired by Barclays)" — confirms the duplicate hypothesis.
+- **Kacey's call**: delete this file, keep both as historical references, or
+  rename to make the duplicate explicit. Either way cron is unblocked.
+
+#### `barclays-harley-davidson` — applied as discontinued (Barclays record only)
+- `status: "discontinued"` on the existing record (which represents the
+  Barclays-issued version that was transferred away).
+- `discontinued_notes`: full successor-pointer for the U.S. Bank version,
+  including suggested sources (NerdWallet review URL + h-dvisa.com), and
+  a note that successor uses Visa not Mastercard.
+- **Kacey's follow-up (separate task)**: when ready, create a new catalog
+  entry e.g. `us-bank-harley-davidson` with the U.S. Bank issuer + verified
+  sources. Doing this in a separate session keeps the immediate cron-fix
+  clean.
+
+Decision rationale: didn't go with `status: "transferred"` because the cron
+loader doesn't filter that value (only `discontinued`), so a transferred
+record would keep failing every run. The "create a fresh successor record"
+pattern is also cleaner than mutating the issuer field on the existing one
+— it preserves historical truth (this card *was* a Barclays product) while
+letting the new U.S. Bank record start with proper sources from day one.
+
+---
+
+## Patterns observed
 
 1. **BoA direct pages are universally scraper-hostile.** All 5 BoA cards in
    the broken list use `bankofamerica.com` URLs that return unrendered
-   `{{...}}` template tokens. The `boa-premium-rewards` swap above is the
-   pattern: USCCG/TPG static pages exist for **flagship** consumer cards,
-   but **business** + **niche** SKUs may not have third-party reviews.
+   `{{...}}` template tokens. USCCG static pages exist for both consumer and
+   business SKUs — the swap pattern is reliable.
 
-2. **Barclays cards have no `sources` at all.** All 7 Barclays cards in the
-   broken list had `"sources": []` (or missing). They're falling all the way
-   through to DDG search which returns nothing useful.
+2. **Barclays cards historically had no `sources` at all.** All 7 Barclays
+   cards in the broken list had `"sources": []`. They're falling all the way
+   through to DDG search which returns nothing useful. Adding any working
+   USCCG URL fixes this immediately.
 
 3. **Discontinued / issuer-changed cards** show as scrape failures because
    no current page exists. These need catalog status changes, not source
-   swaps:
-   - `barclays-uber` → Uber Visa discontinued 2021
-   - `barclays-harley-davidson` → likely transferred to US Bank 2024
+   swaps.
 
-## Next session work
+---
 
-For the 8 TODO items + 3 VERIFY items:
+## After applying — expected dry-run impact
 
-1. Run `WebSearch` (or manual Google `site:uscreditcardguide.com <slug>` /
-   `site:thepointsguy.com <card name>` searches) to find current review URLs.
-2. For VERIFY items, check issuer's current product list to confirm
-   discontinued / issuer-changed status, then either:
-   - Mark catalog with `status: "discontinued"` and exclude from cron
-   - Update `issuer` field if rebranded (e.g. Harley-Davidson → U.S. Bank)
-3. For Barclays Wyndham trio: try `https://www.uscreditcardguide.com/wyndham-rewards-earner-cards/` (collective review) since individual pages don't exist.
-4. Patch scraper `headCheck()` to accept 301/302 (the Marriott Brilliant
-   issue): one-line fix in `scripts/auto-update-cards/scrape.ts:54` —
-   change `res.statusCode === 200` to `res.statusCode >= 200 && res.statusCode < 400`.
+Of the 13 original "All sources failed" cards:
+- 2 already fixed (5/09 commit `4434a7e5`) ✅
+- 8 mechanical URL swaps (groups A + B) → applied 5/10 (unstaged) → cron should succeed
+- 3 marked discontinued (group C) → applied 5/10 (unstaged) → cron skips entirely
 
-Estimated time: 30-60 min once dedicated. Would clear ~10/13 of the dry-run scrape errors.
+Net: dry-run "All sources failed" count should go from **13 → 0** after
+this round, contingent on the 11 unstaged JSON edits being committed.
+
+If a USCCG primary URL turns out to be unreachable (e.g. moved or 404), the
+cron's existing fallback chain (DoC news / DDG / Playwright) still runs, so
+worst-case behavior is the same as today — no regression.

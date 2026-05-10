@@ -3,6 +3,8 @@
   "name": "Uber Visa Card (Legacy)",
   "issuer": "Barclays",
   "network": "visa",
+  "status": "discontinued",
+  "discontinued_notes": "Uber Visa Card converted to Barclays View Mastercard in October 2021. The Uber-branded Barclays card no longer exists as a standalone product. Sources: One Mile at a Time, NerdWallet, DoC.",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
