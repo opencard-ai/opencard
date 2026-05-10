@@ -1,16 +1,12 @@
-import { Suspense } from "react";
-import ScrollFix from "@/app/components/ScrollFix";
 import Analytics from "@/app/components/Analytics";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import LanguageSwitcher from "@/app/components/LanguageSwitcher";
 import ThemeToggle from "@/app/components/ThemeToggle";
-import RecommendWidget from "@/app/components/RecommendWidget";
-import MyCardsWidget from "@/app/components/MyCardsWidget";
 import FloatingButtons from "@/app/components/FloatingButtons";
 import ToastViewport from "@/app/components/ToastViewport";
-import { locales, t } from "@/lib/i18n";
+import { locales, t, type Locale } from "@/lib/i18n";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,10 +33,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonicalUrl = lang === "en" ? `${baseUrl}/en` : `${baseUrl}/${lang}`;
   const defaultLang = "en";
   const defaultUrl = `${baseUrl}/${defaultLang}`;
+  const locale = locales.includes(lang as Locale) ? (lang as Locale) : "en";
+  const title = t("site.title", locale);
+  const description = t("site.subtitle", locale);
+  const localeMap: Record<string, string> = {
+    en: "en_US",
+    zh: "zh_TW",
+    "zh-cn": "zh_CN",
+    es: "es_ES",
+  };
 
   return {
-    title: t("site.title", lang as any),
-    description: t("site.subtitle", lang as any),
+    metadataBase: new URL(baseUrl),
+    title,
+    description,
     icons: {
       icon: [
         { url: "/favicon.svg", type: "image/svg+xml" },
@@ -57,11 +63,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "x-default": defaultUrl,
       },
     },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: "OpenCard.AI",
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: "OpenCard.AI — AI-powered credit card selection",
+        },
+      ],
+      locale: localeMap[lang] || "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`${baseUrl}/og-image.png`],
+    },
   };
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { lang } = await params;
+  const locale = locales.includes(lang as Locale) ? (lang as Locale) : "en";
 
   return (
     <html lang={lang} suppressHydrationWarning>
@@ -95,7 +124,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <div className="flex items-center gap-3 whitespace-nowrap">
               <nav className="flex items-center gap-3 text-sm text-slate-600 whitespace-nowrap">
                 <a href={`/${lang}/#about`} className="hover:text-slate-900 transition-colors">
-                  {t("nav.about", lang as any)}
+                  {t("nav.about", locale)}
                 </a>
               </nav>
               <LanguageSwitcher />
@@ -106,7 +135,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <main className="flex-1 pb-48 sm:pb-0">{children}</main>
         <footer className="bg-white border-t border-slate-200 mt-16">
           <div className="max-w-5xl mx-auto px-4 py-8">
-            <FTCDisclosure locale={lang as any} />
+            <FTCDisclosure locale={locale} />
           </div>
         </footer>
         {/* Analytics */}
@@ -120,7 +149,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   );
 }
 
-function FTCDisclosure({ locale }: { locale: any }) {
+function FTCDisclosure({ locale }: { locale: Locale }) {
   return (
     <div className="text-xs text-slate-500 leading-relaxed space-y-2">
       <p className="font-semibold text-slate-600 mb-1">
