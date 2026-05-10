@@ -139,7 +139,12 @@ async function main() {
   // tsx/esbuild worker subprocesses keep the event loop alive even though
   // every awaited task has resolved. Forcing exit here is a clean bandaid;
   // the alternative is auditing every fetch/import for unref'd handles.
-  process.exit(errors > 0 ? 1 : 0);
+  //
+  // In DRY_RUN mode, treat per-card errors as informational (exit 0) so the
+  // GitHub Actions UI doesn't flag a green data-collection run as red. In
+  // APPLY mode, errors > 0 still exits non-zero so failed PR creation surfaces
+  // in the dashboard.
+  process.exit(DRY_RUN ? 0 : errors > 0 ? 1 : 0);
 }
 
 // ─── Per-card processing ───────────────────────────────────────────────────
