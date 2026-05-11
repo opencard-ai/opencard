@@ -9,8 +9,8 @@
   "welcome_offer": {
     "spending_requirement": 2000,
     "time_period_months": 6,
-    "bonus_points": 80000,
-    "description": "Earn up to 80,000 Bonus Miles after you spend $2,000 in eligible purchases on your new Card in your first 6 months of Card Membership.",
+    "bonus_points": 50000,
+    "description": "Earn 50,000 Bonus Miles after you spend $2,000 in eligible purchases on your new Card in your first 6 months of Card Membership.",
     "point_program": "Delta SkyMiles",
     "estimated_value": 800
   },
@@ -94,7 +94,7 @@
       "notes": "Annual fee, foreign transaction fee, benefits details"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.944Z",
+  "last_updated": "2026-05-11T18:40:29.262Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
