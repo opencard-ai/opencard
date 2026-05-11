@@ -8,9 +8,9 @@
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 200,
-    "description": "$200 Cash Rewards bonus after $500 in first 3 months",
+    "description": "$200 Cash Rewards bonus after $1,000 spend in first 3 months (online); $250 available in branch",
     "estimated_value": 200,
-    "spending_requirement": 500,
+    "spending_requirement": 1000,
     "time_period_months": 3
   },
   "earning_rates": [
@@ -51,7 +51,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:50.010Z",
+  "last_updated": "2026-05-11T18:37:33.353Z",
   "last_verified": "2026-04-16T13:41:50.010Z",
   "next_review": "2026-07-15T13:41:50.010000+00:00",
   "featured": true
