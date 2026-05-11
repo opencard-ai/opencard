@@ -10,10 +10,10 @@
     "bonus_points": 200000,
     "spending_requirement": 15000,
     "time_period_months": 3,
-    "description": "As-high-as offer: earn up to 200,000 Membership Rewards points after $15,000 in purchases within the first 3 months.",
-    "point_program": "Amex Membership Rewards",
+    "description": "Earn 200,000 Membership Rewards points after spending $15,000 within 3 months of account opening. This is the highest available sign-up bonus for this card.",
+    "point_program": "MR",
     "estimated_value": 3400,
-    "is_elevated": true
+    "is_elevated": false
   },
   "earning_rates": [
     {
@@ -131,7 +131,7 @@
       "notes": "DoC best current sign-up bonus list"
     }
   ],
-  "last_updated": "2026-05-08T05:47:54.573699+00:00",
+  "last_updated": "2026-05-11T18:25:49.731Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
