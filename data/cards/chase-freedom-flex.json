@@ -6,7 +6,10 @@
   "annual_fee": 0,
   "foreign_transaction_fee": 3,
   "credit_required": "Good",
-  "welcome_offer": null,
+  "welcome_offer": {
+    "spending_requirement": 500,
+    "time_period_months": 3
+  },
   "earning_rates": [
     {
       "category": "Bonus Categories",
@@ -77,7 +80,7 @@
       "notes": "Bankrate review Mar 2026."
     }
   ],
-  "last_updated": "2026-04-29T04:55:53.492Z",
+  "last_updated": "2026-05-11T18:31:59.800Z",
   "hotel_program": null,
   "application_rules": {
     "rules": []
