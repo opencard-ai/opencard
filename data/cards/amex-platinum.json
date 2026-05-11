@@ -8,9 +8,9 @@
   "credit_required": "Excellent",
   "welcome_offer": {
     "bonus_points": 175000,
-    "spending_requirement": 8000,
+    "spending_requirement": 12000,
     "time_period_months": 6,
-    "description": "As-high-as offer: earn up to 175,000 Membership Rewards points after $8,000 in purchases within the first 6 months.",
+    "description": "Earn up to 175,000 Membership Rewards points",
     "point_program": "Amex Membership Rewards",
     "estimated_value": 2975
   },
@@ -99,7 +99,7 @@
       "notes": "DoC best current sign-up bonus list"
     }
   ],
-  "last_updated": "2026-05-08T05:47:54.573699+00:00",
+  "last_updated": "2026-05-11T18:30:10.234Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
