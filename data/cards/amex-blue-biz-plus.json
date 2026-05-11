@@ -10,8 +10,8 @@
     "bonus_points": 15000,
     "spending_requirement": 3000,
     "time_period_months": 3,
-    "description": "Earn 15,000 Membership Rewards points after $3,000 in purchases within the first 3 months. Targeted/YMMV offers can be higher.",
-    "point_program": "Amex Membership Rewards",
+    "description": "15,000 Membership Rewards (MR) points after spending $3,000 in first 3 months",
+    "point_program": "MR",
     "estimated_value": 255
   },
   "earning_rates": [
@@ -67,7 +67,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-05-08T05:47:54.573699+00:00",
+  "last_updated": "2026-05-11T18:27:37.877Z",
   "last_verified": "2026-05-08T05:47:54.573699+00:00",
   "next_review": "2026-07-15T13:41:49.940000+00:00",
   "featured": true
