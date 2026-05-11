@@ -11,7 +11,8 @@
     "bonus_points": 75000,
     "estimated_value": 1275,
     "description": "Earn 75,000 Bilt bonus points after spending $5,000 on purchases in the first 3 months from account opening",
-    "point_program": "Bilt Rewards"
+    "point_program": "Bilt Rewards",
+    "is_elevated": true
   },
   "earning_rates": [
     {
@@ -48,7 +49,7 @@
       "url": "https://thepointsguy.com/credit-cards/bilt-credit-cards-current-offers/"
     }
   ],
-  "last_updated": "2026-05-06T00:17:05.293Z",
+  "last_updated": "2026-05-11T18:30:44.346Z",
   "travel_benefits": {
     "hotel_status": [],
     "lounge_access": [],
