@@ -10,9 +10,11 @@
     "spending_requirement": 1000,
     "time_period_months": 3,
     "bonus_points": 200,
-    "description": "Earn a $200 cash rewards bonus after making at least $1,000 in purchases in the first 90 days of account opening.",
+    "description": "Earn $200 cash back after spending $1,000 in the first 3 months. Additionally, Rakuten offers up to $175 in bonus cashback through their portal (increased from $75 to $150 to $175, described as the best ever offer).",
     "point_program": "Cash Back",
-    "estimated_value": 200
+    "estimated_value": 200,
+    "is_elevated": true,
+    "normal_bonus_points": 200
   },
   "earning_rates": [
     {
@@ -66,7 +68,7 @@
       "notes": "Official BOA Page (SPA — fallback only)"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.957Z",
+  "last_updated": "2026-05-11T18:48:01.868Z",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
