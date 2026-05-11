@@ -7,12 +7,14 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 50000,
+    "bonus_points": 0,
     "spending_requirement": 3000,
     "time_period_months": 3,
-    "description": "Earn up to 50,000 Bonus Points (4 Free Nights)",
+    "description": "Earn 3 Free Night Awards after spending $3,000 within 3 months, plus 1 additional FNA after spending $4,000 total within 4 months. Each FNA redeemable up to 50,000 Marriott Bonvoy points.",
     "point_program": "Marriott Bonvoy",
-    "estimated_value": 325
+    "estimated_value": 325,
+    "free_nights": 4,
+    "free_night_value_cap": 50000
   },
   "earning_rates": [
     {
@@ -69,7 +71,7 @@
       "notes": "News report Apr 2026."
     }
   ],
-  "last_updated": "2026-04-29T06:52:17.178Z",
+  "last_updated": "2026-05-11T18:34:34.508Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Silver Elite",
