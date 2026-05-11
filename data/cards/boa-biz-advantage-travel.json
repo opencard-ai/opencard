@@ -10,9 +10,10 @@
     "spending_requirement": 5000,
     "time_period_months": 3,
     "bonus_points": 50000,
-    "description": "50,000 online bonus points after making at least $5,000 in purchases in the first 90 days (redeemable for $500 travel statement credit).",
-    "point_program": "Bank of America Travel Points",
-    "estimated_value": 500
+    "description": "Earn 50,000 points after spending $5,000 in first 3 months. The value of these points is $500. This is the best ever offer on this card.",
+    "point_program": "Bank of America Travel Rewards",
+    "estimated_value": 500,
+    "is_elevated": true
   },
   "earning_rates": [
     {
@@ -82,7 +83,7 @@
       "notes": "Forbes - elevated offers Mar 2026"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.956Z",
+  "last_updated": "2026-05-11T18:47:03.208Z",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
