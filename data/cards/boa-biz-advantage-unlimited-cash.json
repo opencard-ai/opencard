@@ -9,10 +9,11 @@
   "welcome_offer": {
     "spending_requirement": 5000,
     "time_period_months": 3,
-    "bonus_points": 300,
-    "description": "$300 cash rewards bonus after making at least $5,000 in purchases in the first 90 days of account opening.",
-    "point_program": "Cash Back",
-    "estimated_value": 300
+    "bonus_points": 500,
+    "description": "$500 cashback after spending $5,000 in first 3 months",
+    "point_program": "cash rewards",
+    "estimated_value": 300,
+    "is_elevated": true
   },
   "earning_rates": [
     {
@@ -69,7 +70,7 @@
       "notes": "NerdWallet review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.957Z",
+  "last_updated": "2026-05-11T18:47:27.126Z",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
