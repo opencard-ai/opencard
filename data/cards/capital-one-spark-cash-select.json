@@ -7,11 +7,11 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 6000,
+    "spending_requirement": 4500,
     "time_period_months": 3,
     "bonus_points": null,
-    "description": "Earn a $750 cash bonus once you spend $6,000 on purchases within the first 3 months of opening an account",
-    "point_program": "Capital One Spark Cash"
+    "description": "$500 bonus after spending $4,500 on purchases in the first three months of account opening",
+    "point_program": "cash back"
   },
   "earning_rates": [
     {
@@ -56,7 +56,7 @@
   ],
   "notes": "No annual fee business card for excellent credit. 1.5% flat cash back with no spending categories — simple and predictable. $750 welcome bonus for $6,000 spend in 3 months. Good for business owners with strong credit who don't want an annual fee. Compare to Spark Miles Select (1.5X miles) for travel-oriented businesses. No protections. Better than personal Quicksilver for business due to employee cards and business tools.",
   "confidence": "high",
-  "last_updated": "2026-04-16T13:41:49.960Z",
+  "last_updated": "2026-05-11T18:49:47.125Z",
   "tags": [
     "no-annual-fee",
     "transferable"
