@@ -7,12 +7,14 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 5,
+    "spending_requirement": 6000,
     "time_period_months": 3,
-    "bonus_points": 75000,
-    "description": "75,000 ThankYou® Points",
+    "bonus_points": 100000,
+    "description": "100,000 ThankYou Points after spending $6,000 within the first 3 months of account opening",
     "point_program": "Citi",
-    "estimated_value": 750
+    "estimated_value": 750,
+    "is_elevated": true,
+    "normal_bonus_points": 80000
   },
   "earning_rates": [
     {
@@ -65,7 +67,7 @@
       "url": "https://onemileatatime.com/guides/citi-strata-elite/"
     }
   ],
-  "last_updated": "2026-04-29T13:29:11.541Z",
+  "last_updated": "2026-05-11T18:36:52.198Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
