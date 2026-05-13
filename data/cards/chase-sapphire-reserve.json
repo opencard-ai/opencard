@@ -12,7 +12,10 @@
     "time_period_months": 3,
     "description": "Earn 125,000 bonus points after spending $6,000 in the first 3 months",
     "point_program": "Chase Ultimate Rewards",
-    "estimated_value": 2125
+    "estimated_value": 2125,
+    "is_elevated": true,
+    "normal_bonus_points": 60000,
+    "elevated_until": "2027-12-31"
   },
   "earning_rates": [
     {
@@ -87,7 +90,7 @@
       "notes": "Review Apr 2026."
     }
   ],
-  "last_updated": "2026-04-29T05:25:54.022Z",
+  "last_updated": "2026-05-11T18:36:07.819Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [
