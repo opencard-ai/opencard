@@ -1,10 +1,14 @@
 name: Card auto-updater
 
 on:
-  # Weekly schedule: every Monday at 12:00 UTC
-  schedule:
-    - cron: '0 12 * * 1'
-  # Allow manual trigger from GitHub UI
+  # Weekly schedule PAUSED 2026-05-13 pending docs/MAINTENANCE_MODEL_REVIEW.md
+  # outcome. 5/11 cron triage showed 50% hit rate + 4/4 conflicts with Kacey's
+  # manual catalog edits — Model B (cron-as-PR-generator) is structurally
+  # incompatible with parallel manual maintenance. Re-enable only after a
+  # maintenance model decision is recorded.
+  # schedule:
+  #   - cron: '0 12 * * 1'
+  # Manual trigger remains available for one-off runs (e.g. dry-run testing).
   workflow_dispatch:
     inputs:
       max_cards:
