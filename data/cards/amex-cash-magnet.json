@@ -8,10 +8,10 @@
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 200,
-    "description": "Earn $200 Cash Back after spending $2,000 in first 6 months",
+    "description": "Earn $200 Cash Back after spending $1,000 in first 3 months",
     "estimated_value": 200,
-    "spending_requirement": 2000,
-    "time_period_months": 6
+    "spending_requirement": 1000,
+    "time_period_months": 3
   },
   "earning_rates": [
     {
@@ -51,7 +51,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.942Z",
+  "last_updated": "2026-05-11T18:39:35.530Z",
   "last_verified": "2026-04-24",
   "next_review": "2026-07-15T13:41:49.942000+00:00",
   "cfpb_source": "Q3_2025",
