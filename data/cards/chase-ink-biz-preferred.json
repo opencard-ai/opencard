@@ -10,9 +10,11 @@
     "spending_requirement": 8000,
     "time_period_months": 3,
     "bonus_points": 100000,
-    "description": "100,000 bonus points after you spend $8,000 on purchases in the first 3 months from account opening.",
+    "description": "Earn 100,000 bonus points after you spend $8,000 on purchases in the first 3 months from account opening.",
     "point_program": "Chase Ultimate Rewards",
-    "estimated_value": 1700
+    "estimated_value": 1700,
+    "is_elevated": true,
+    "elevated_until": "2027-09-30"
   },
   "earning_rates": [
     {
@@ -100,7 +102,7 @@
       "notes": "Official Chase page confirms no foreign transaction fees and travel/purchase coverage."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.967Z",
+  "last_updated": "2026-05-11T18:33:43.421Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

@@ -7,13 +7,13 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 200000,
-    "spending_requirement": 6000,
-    "time_period_months": 6,
-    "description": "Earn 200,000 Marriott Bonvoy points after $6,000 in purchases within the first 6 months.",
+    "bonus_points": 125000,
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "description": "Potential 125,000 point upgrade offer mentioned in historical article about double-dip benefit strategy",
     "point_program": "Marriott Bonvoy",
     "estimated_value": 1300,
-    "is_elevated": true
+    "is_elevated": false
   },
   "earning_rates": [
     {
@@ -103,7 +103,7 @@
       "notes": "DoC best current sign-up bonus list"
     }
   ],
-  "last_updated": "2026-05-08T05:47:54.573699+00:00",
+  "last_updated": "2026-05-11T18:29:29.665Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",

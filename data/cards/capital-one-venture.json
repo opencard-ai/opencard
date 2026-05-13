@@ -10,9 +10,10 @@
     "bonus_points": 50000,
     "spending_requirement": 3000,
     "time_period_months": 3,
-    "description": "Earn a 50,000 mile bonus",
+    "description": "Earn a 50,000 mile bonus after spending $3,000 in the first 3 months",
     "point_program": "Capital One Miles",
-    "estimated_value": 750
+    "estimated_value": 750,
+    "is_elevated": true
   },
   "earning_rates": [
     {
@@ -55,7 +56,7 @@
       "url": "https://thepointsguy.com/credit-cards/capital-one-venture-current-offer/"
     }
   ],
-  "last_updated": "2026-04-27T04:30:38.466Z",
+  "last_updated": "2026-05-11T18:31:36.088Z",
   "hotel_program": {
     "program": null,
     "tier": null,

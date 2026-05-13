@@ -94,7 +94,7 @@
       "notes": "DoC best current sign-up bonus list"
     }
   ],
-  "last_updated": "2026-05-08T05:47:54.573699+00:00",
+  "last_updated": "2026-05-11T18:26:51.106Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -173,13 +173,13 @@
     }
   ],
   "welcome_offer": {
-    "bonus_points": 200000,
+    "bonus_points": 300000,
     "spending_requirement": 20000,
     "time_period_months": 3,
-    "description": "Public/current offer: earn 200,000 Membership Rewards points after $20,000 in purchases within the first 3 months. Targeted/YMMV offers can reach 250,000–300,000 points.",
-    "point_program": "Amex Membership Rewards",
+    "description": "Earn 300,000 Membership Rewards points when you spend $20,000 within 3 months of account opening",
+    "point_program": "MR",
     "estimated_value": 3400,
-    "is_elevated": true
+    "is_elevated": false
   },
   "welcome_bonus": {
     "amount": 200000,
