@@ -10,9 +10,9 @@
   "credit_required": "Good to Excellent",
   "welcome_offer": {
     "spending_requirement": 2000,
-    "time_period_months": 6,
-    "bonus_points": 15000,
-    "description": "Earn 15,000 Membership Rewards points after you use your new Card to make $2,000 in purchases within the first 6 months (as of July 2024)",
+    "time_period_months": 3,
+    "bonus_points": 30000,
+    "description": "Earn 30,000 Membership Rewards points after spending $2,000 within the first 3 months (as of September 2024)",
     "point_program": "American Express Membership Rewards",
     "estimated_value": 255
   },
@@ -75,7 +75,7 @@
       "notes": "Amex official benefits page with earning rates"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.945Z",
+  "last_updated": "2026-05-11T18:41:38.466Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
