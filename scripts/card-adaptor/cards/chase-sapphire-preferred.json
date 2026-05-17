@@ -1,0 +1,46 @@
+{
+  "cardId": "chase-sapphire-preferred",
+  "cardPath": "data/cards/chase-sapphire-preferred.json",
+  "mode": "offer",
+  "sources": [
+    { "id": "01-issuer", "type": "issuer", "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred", "method": "fetch", "required": true },
+    { "id": "02-doc-tag", "type": "doc", "url": "https://www.doctorofcredit.com/tag/chase-sapphire-preferred/", "method": "get" },
+    { "id": "03-reddit-creditcards", "type": "reddit", "url": "https://old.reddit.com/r/CreditCards/comments/1sn46r2/chase_100k_offer_worth_it_in_2026_csp_freedom/", "method": "get" },
+    { "id": "04-flyertalk", "type": "flyertalk", "url": "https://www.flyertalk.com/forum/chase-ultimate-rewards/2197387-chase-sapphire-preferred-75-000-5k-3-mon-portal-redemption-now-0-01-pt-3.html", "method": "get" }
+  ],
+  "candidate": {
+    "annual_fee": 95,
+    "welcome_offer": {
+      "bonus_points": 75000,
+      "spending_requirement": 5000,
+      "time_period_months": 3,
+      "description": "Earn 75,000 Ultimate Rewards points after spending $5,000 in purchases in the first 3 months from account opening.",
+      "point_program": "Chase Ultimate Rewards",
+      "estimated_value": 1275,
+      "offer_status": "public",
+      "confidence": "medium_high",
+      "notes": ["Existing OpenCard data has 100k, but current public/search evidence suggests 75k after the prior 100k offer ended; issuer source must confirm before apply."],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "annual_fee": ["sources/*issuer*.md:$95 annual fee"],
+    "welcome_offer": ["sources/*issuer*.md:75,000 / $5,000 / first 3 months"]
+  },
+  "open_questions": ["Confirm whether public Chase page still shows 75k or a renewed 100k offer before applying."],
+  "community": {
+    "summary": "CSP is a useful third-card test because current public evidence appears to have moved from the older 100k offer to 75k after $5k/3mo. Older forum/DoC references preserve stale 100k history.",
+    "recommended_production_value": { "offer_amount": 75000, "spend_requirement": 5000, "spend_window_months": 3, "status": "public" },
+    "confidence": "medium_until_issuer_snapshot_confirms_75k; stale 100k references expected",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": ["100k"],
+    "observations": [
+      { "sourceType": "issuer", "source": "Chase issuer", "regex": "75,000", "stance": "supports_75k", "offer_amount": 75000, "spend_requirement": 5000, "spend_window_months": 3, "excerpt": "Issuer page mentions 75,000 bonus points.", "confidence": "high_if_present" },
+      { "sourceType": "doc", "source": "Doctor of Credit tag", "regex": "100,000", "stance": "supports_100k_stale", "offer_amount": 100000, "spend_requirement": 5000, "spend_window_months": 3, "excerpt": "DoC tag/history references prior 100,000 offer ending May 2025.", "confidence": "medium_low" },
+      { "sourceType": "reddit", "source": "Reddit", "regex": "100k|100,000", "stance": "supports_100k_stale", "offer_amount": 100000, "spend_requirement": 5000, "spend_window_months": 3, "excerpt": "Reddit discussion references CSP 100k offer history/strategy.", "confidence": "medium_low" },
+      { "sourceType": "flyertalk", "source": "FlyerTalk", "regex": "75,000", "stance": "supports_75k", "offer_amount": 75000, "spend_requirement": 5000, "spend_window_months": 3, "excerpt": "FlyerTalk thread title/reference mentions Chase Sapphire Preferred 75,000/$5k/3mo.", "confidence": "medium" },
+      { "sourceType": "flyertalk", "source": "FlyerTalk", "regex": "100K|100,000", "stance": "supports_100k_stale", "offer_amount": 100000, "spend_requirement": 5000, "spend_window_months": 3, "excerpt": "FlyerTalk also references earlier CSP 100K offer as missed/previous offer.", "confidence": "medium_low" }
+    ]
+  }
+}

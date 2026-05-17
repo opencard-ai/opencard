@@ -14,7 +14,8 @@
     "facts:promote:dry": "tsx scripts/promote-facts.ts --dry-run",
     "cfpb:extract": "tsx scripts/pipelines/cfpb/extract.ts",
     "card:update": "tsx scripts/auto-update-cards/index.ts",
-    "card:update:dry": "tsx scripts/auto-update-cards/index.ts --dry"
+    "card:update:dry": "tsx scripts/auto-update-cards/index.ts --dry",
+    "card-adaptor": "tsx scripts/card-adaptor/index.ts"
   },
   "dependencies": {
     "@upstash/redis": "^1.37.0",

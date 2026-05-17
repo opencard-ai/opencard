@@ -235,3 +235,37 @@ Phase 3 — OpenClaw skill wrapper:
 - Browser automation assumptions that are not card-data-specific.
 
 For OpenCard, smaller is better: **scrape, normalize, qa, review, land**.
+
+---
+
+## Deferred schema change — welcome offer evidence metadata
+
+*Recorded: 2026-05-12*
+*Status: defer until card-adaptor CLI/schema work is complete*
+
+KC decision: do not change production card JSON yet. After the adapter workflow is complete, update `welcome_offer` / welcome-bonus schema in one coordinated change so offer ambiguity is machine-readable and UI-friendly.
+
+Proposed fields:
+
+```json
+{
+  "welcome_offer": {
+    "offer_status": "public|targeted|as_high_as_ymmv|expired|unknown",
+    "confidence": "high|medium_high|medium|low",
+    "notes": ["human-readable caveats"],
+    "source_conflicts": [
+      {
+        "field": "spending_requirement",
+        "issuer_value": 8000,
+        "conflicting_values": [6000],
+        "conflict_type": "stale_or_targeted_offer",
+        "resolution": "issuer_wins",
+        "review_required": true
+      }
+    ],
+    "last_verified": "YYYY-MM-DD"
+  }
+}
+```
+
+Rationale from `amex-gold` POC: issuer + recent community sources support 100k / $8k / 6 months, while DoC/USCCG/FlyerTalk/older forum snippets still show $6k. The production value should remain issuer-canonical, but the conflict and YMMV nature should be preserved instead of hidden in free-text descriptions.
