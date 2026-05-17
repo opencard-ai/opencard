@@ -231,6 +231,21 @@ interface Card {
   image_url?: string;
 }
 
+interface UserCardInstance {
+  instance_id: string;
+  card_id: string;
+  nickname?: string;
+  last4?: string;
+  created_at?: number;
+  status?: "active" | "closed";
+}
+
+interface CardView extends Card {
+  instance_id: string;
+  product_card_id: string;
+  instance_label: string;
+}
+
 const FREQUENCY_LABELS: Record<string, string> = {
   monthly: "/month",
   quarterly: "/quarter",
@@ -305,6 +320,42 @@ function formatFrequency(freq: string, lang: string): string {
   return labels[lang]?.[freq] || `/${freq}`;
 }
 
+function normalizeCardInstances(input: unknown): UserCardInstance[] {
+  if (!Array.isArray(input)) return [];
+  const now = Date.now();
+  return input
+    .map((entry, index): UserCardInstance | null => {
+      if (typeof entry === "string") {
+        return { instance_id: entry, card_id: entry, created_at: now + index, status: "active" };
+      }
+      if (entry && typeof entry === "object") {
+        const obj = entry as Record<string, unknown>;
+        const cardId = String(obj.card_id || obj.instance_id || "");
+        const instanceId = String(obj.instance_id || cardId);
+        if (!cardId || !instanceId) return null;
+        return {
+          instance_id: instanceId,
+          card_id: cardId,
+          ...(obj.nickname ? { nickname: String(obj.nickname) } : {}),
+          ...(obj.last4 ? { last4: String(obj.last4).slice(-4) } : {}),
+          created_at: Number(obj.created_at || now + index),
+          status: obj.status === "closed" ? "closed" : "active",
+        };
+      }
+      return null;
+    })
+    .filter(Boolean) as UserCardInstance[];
+}
+
+function instanceDisplayLabel(instance: UserCardInstance, all: UserCardInstance[]): string {
+  if (instance.nickname) return instance.nickname;
+  if (instance.last4) return `•••• ${instance.last4}`;
+  const siblings = all.filter((x) => x.card_id === instance.card_id);
+  if (siblings.length <= 1) return "";
+  const ordinal = siblings.findIndex((x) => x.instance_id === instance.instance_id) + 1;
+  return `Card #${ordinal}`;
+}
+
 export default function MyCardsPage({
   params,
 }: {
@@ -312,6 +363,7 @@ export default function MyCardsPage({
 }) {
   const [lang, setLang] = useState<"en" | "zh" | "zh-cn" | "es">("en");
   const [selectedCards, setSelectedCards] = useState<string[]>([]);
+  const [cardInstances, setCardInstances] = useState<UserCardInstance[]>([]);
   const [cardsData, setCardsData] = useState<Record<string, Card>>({});
   const [email, setEmail] = useState("");
   const [marketingOptin, setMarketingOptin] = useState(false);
@@ -348,10 +400,13 @@ export default function MyCardsPage({
   // Card *details* are fetched in a separate effect keyed on selectedCards.
   useEffect(() => {
     const cached = (() => {
-      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]") as string[]; }
-      catch { return [] as string[]; }
+      try { return normalizeCardInstances(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]")); }
+      catch { return [] as UserCardInstance[]; }
     })();
-    if (cached.length > 0) setSelectedCards(cached);
+    if (cached.length > 0) {
+      setCardInstances(cached);
+      setSelectedCards(cached.map((x) => x.card_id));
+    }
 
     const savedEmail = localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
     if (!savedEmail) {
@@ -369,11 +424,12 @@ export default function MyCardsPage({
         }
         if (!res.ok) return;
         const data = await res.json();
-        const cloudCards = (data.cards || []) as string[];
-        setSelectedCards(cloudCards);
+        const cloudInstances = normalizeCardInstances(data.card_instances || data.cards || []);
+        setCardInstances(cloudInstances);
+        setSelectedCards(cloudInstances.map((x) => x.card_id));
         setIsSubscribed(true);
         setEmail(savedEmail);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(cloudCards));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(cloudInstances));
       })
       .catch(() => {})
       .finally(() => { if (!cancelled) setLoaded(true); });
@@ -388,7 +444,7 @@ export default function MyCardsPage({
       return;
     }
     let cancelled = false;
-    fetch('/api/cards?ids=' + encodeURIComponent(selectedCards.join(',')))
+    fetch('/api/cards?ids=' + encodeURIComponent([...new Set(selectedCards)].join(',')))
       .then(r => r.ok ? r.json() : [])
       .then((data: unknown) => {
         if (cancelled || !Array.isArray(data)) return;
@@ -567,14 +623,21 @@ export default function MyCardsPage({
     const handleUpdate = (e: Event) => {
       const detail = (e as CustomEvent<string[] | undefined>).detail;
       if (Array.isArray(detail)) {
-        setSelectedCards(detail);
+        const nextInstances = normalizeCardInstances(detail);
+        setCardInstances(nextInstances);
+        setSelectedCards(nextInstances.map((x) => x.card_id));
         return;
       }
       // Fallback for publishers that didn't attach detail (e.g. CardGrid).
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
-        try { setSelectedCards(JSON.parse(saved)); } catch {}
+        try {
+          const nextInstances = normalizeCardInstances(JSON.parse(saved));
+          setCardInstances(nextInstances);
+          setSelectedCards(nextInstances.map((x) => x.card_id));
+        } catch {}
       } else {
+        setCardInstances([]);
         setSelectedCards([]);
       }
     };
@@ -602,7 +665,7 @@ export default function MyCardsPage({
           const cloudRes = await fetch(`/api/my-cards?email=${encodeURIComponent(email.toLowerCase().trim())}`);
           if (cloudRes.ok) {
             const cloudData = await cloudRes.json();
-            existingCloudCards = cloudData.cards || [];
+            existingCloudCards = normalizeCardInstances(cloudData.card_instances || cloudData.cards || []).map((x) => x.card_id);
           }
         }
       }
@@ -628,9 +691,10 @@ export default function MyCardsPage({
         setIsSubscribed(true);
         // Store email so AddToMyCardsButton and MyCardsWidget know user is subscribed
         localStorage.setItem('opencard_subscribed_email', email.toLowerCase().trim());
-        // Save to localStorage
-        setSelectedCards(finalCards);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(finalCards));
+        const finalInstances = normalizeCardInstances(finalCards);
+        setCardInstances(finalInstances);
+        setSelectedCards(finalInstances.map((x) => x.card_id));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(finalInstances));
         toast.success(m.toastSubscribeOk);
       } else {
         const data = await res.json();
@@ -645,9 +709,31 @@ export default function MyCardsPage({
 
   // Fallback: if cardsData is empty but selectedCards has IDs, cards aren't loaded yet
   // This is just a placeholder until cardsData loads
-  const selectedCardsList = (selectedCards.length > 0 && Object.keys(cardsData).length === 0)
-    ? selectedCards.map((id) => ({ card_id: id, name: id.replace(/-/g, ' '), issuer: '', network: 'visa' as const, annual_fee: 0, recurring_credits: [] } as unknown as Card))
-    : selectedCards.map((id) => cardsData[id]).filter(Boolean) as Card[];
+  const effectiveInstances = cardInstances.length > 0 ? cardInstances : normalizeCardInstances(selectedCards);
+  const instanceOrder = new Map(effectiveInstances.map((instance, index) => [instance.instance_id, index]));
+  const selectedCardsList = effectiveInstances
+    .map((instance) => {
+      const base = cardsData[instance.card_id] || ({ card_id: instance.card_id, name: instance.card_id.replace(/-/g, ' '), issuer: '', network: 'visa' as const, annual_fee: 0, recurring_credits: [] } as unknown as Card);
+      return {
+        ...base,
+        instance_id: instance.instance_id,
+        product_card_id: instance.card_id,
+        instance_label: instanceDisplayLabel(instance, effectiveInstances),
+      } as CardView;
+    })
+    .filter(Boolean)
+    .sort((a, b) => {
+      // Group duplicate/related entries by the actual card instead of by the
+      // order the user added them. Within the same card, keep the user's
+      // original instance order so labels like “Card #1/#2” stay intuitive.
+      const byIssuer = a.issuer.localeCompare(b.issuer, undefined, { sensitivity: "base" });
+      if (byIssuer) return byIssuer;
+      const byName = a.name.localeCompare(b.name, undefined, { sensitivity: "base" });
+      if (byName) return byName;
+      const byCardId = a.product_card_id.localeCompare(b.product_card_id, undefined, { sensitivity: "base" });
+      if (byCardId) return byCardId;
+      return (instanceOrder.get(a.instance_id) ?? 0) - (instanceOrder.get(b.instance_id) ?? 0);
+    });
 
   const totalMonthlyCredits = selectedCardsList.reduce((sum, card) => {
     return sum + (card.recurring_credits || []).filter((c) => c.frequency === "monthly").reduce((s, c) => s + (c.amount || 0), 0);
@@ -815,6 +901,8 @@ export default function MyCardsPage({
         ) : (
           <div className="space-y-3">
             {selectedCardsList.map((card) => {
+              const productCardId = card.product_card_id;
+              const instanceId = card.instance_id;
               const allCredits = card.recurring_credits || [];
               const credits = allCredits;
               const thisMonth = getBenefitsThisMonth(credits);
@@ -826,25 +914,30 @@ export default function MyCardsPage({
               let cardUsed = 0;
               for (const c of credits) {
                 if (c.is_free_night || !c.credit_key) continue;
-                const pk = periodKeyFor(card.card_id, c.frequency);
+                const pk = periodKeyFor(instanceId, c.frequency);
                 if (!pk) continue;
                 cardTotal += c.amount || 0;
-                const u = creditUses.get(`${card.card_id}:${c.credit_key}:${pk}`);
+                const u = creditUses.get(`${instanceId}:${c.credit_key}:${pk}`);
                 if (u) cardUsed += u.used_amount;
               }
               const cardRemaining = Math.max(0, cardTotal - cardUsed);
 
               return (
-                <div key={card.card_id} className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div key={instanceId} className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
                   {/* Card Header */}
                   <div className="px-4 py-3 bg-slate-50 border-b border-slate-100 flex items-center justify-between gap-3">
                     <div className="flex items-center gap-3 min-w-0 flex-1">
-                      <CardArt cardId={card.card_id} issuer={card.issuer} size="sm" />
+                      <CardArt cardId={productCardId} issuer={card.issuer} size="sm" />
                       <div className="min-w-0">
                         <span className="block text-sm font-semibold text-slate-800 truncate">{card.name}</span>
-                        {card.annual_fee > 0 && (
-                          <span className="text-xs text-slate-400">${card.annual_fee}/yr</span>
-                        )}
+                        <div className="flex items-center gap-2">
+                          {card.instance_label && (
+                            <span className="text-[10px] text-indigo-600 bg-indigo-50 border border-indigo-100 rounded-full px-1.5 py-0.5">{card.instance_label}</span>
+                          )}
+                          {card.annual_fee > 0 && (
+                            <span className="text-xs text-slate-400">${card.annual_fee}/yr</span>
+                          )}
+                        </div>
                       </div>
                     </div>
                     {cardTotal > 0 && (
@@ -859,11 +952,11 @@ export default function MyCardsPage({
                   {/* Open Date Info */}
                   <div className="px-4 py-2 bg-blue-50 border-b border-blue-100 flex items-center justify-between">
                     <OpenDateRow
-                      cardId={card.card_id}
+                      cardId={instanceId}
                       email={email}
-                      initial={openDates[card.card_id]}
+                      initial={openDates[instanceId]}
                       lang={lang}
-                      onSaved={(month, year) => setOpenDates((prev) => ({ ...prev, [card.card_id]: { month, year } }))}
+                      onSaved={(month, year) => setOpenDates((prev) => ({ ...prev, [instanceId]: { month, year } }))}
                     />
                   </div>
 
@@ -880,12 +973,12 @@ export default function MyCardsPage({
                           <div className="space-y-1.5">
                             {thisMonth.map((credit, i) => {
                               const pk = credit.credit_key && !credit.is_free_night
-                                ? periodKeyFor(card.card_id, credit.frequency)
+                                ? periodKeyFor(instanceId, credit.frequency)
                                 : null;
-                              const fullKey = pk ? `${card.card_id}:${credit.credit_key}:${pk}` : null;
+                              const fullKey = pk ? `${instanceId}:${credit.credit_key}:${pk}` : null;
                               const isUsed = fullKey ? creditUses.has(fullKey) : false;
                               const canToggle = !!fullKey;
-                              const fnaKey = credit.is_free_night ? `${card.card_id}:${anniversaryYearFor(card.card_id)}` : null;
+                              const fnaKey = credit.is_free_night ? `${instanceId}:${anniversaryYearFor(instanceId)}` : null;
                               const fnaRedeemed = fnaKey ? fnaUses.has(fnaKey) : false;
                               const dimmed = isUsed || fnaRedeemed;
                               return (
@@ -917,7 +1010,7 @@ export default function MyCardsPage({
                                     {canToggle && (
                                       <button
                                         type="button"
-                                        onClick={() => toggleCreditUse(card.card_id, credit)}
+                                        onClick={() => toggleCreditUse(instanceId, credit)}
                                         className={`ml-1 text-[10px] px-1.5 py-0.5 rounded border transition-colors ${
                                           isUsed
                                             ? "border-emerald-300 bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
@@ -932,7 +1025,7 @@ export default function MyCardsPage({
                                     {credit.is_free_night && (
                                       <button
                                         type="button"
-                                        onClick={() => toggleFnaUse(card.card_id)}
+                                        onClick={() => toggleFnaUse(instanceId)}
                                         className={`ml-1 text-[10px] px-1.5 py-0.5 rounded border transition-colors ${
                                           fnaRedeemed
                                             ? "border-emerald-300 bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
@@ -958,12 +1051,12 @@ export default function MyCardsPage({
                           <div className="space-y-1.5">
                             {upcoming.map((credit, i) => {
                               const pk = credit.credit_key && !credit.is_free_night
-                                ? periodKeyFor(card.card_id, credit.frequency)
+                                ? periodKeyFor(instanceId, credit.frequency)
                                 : null;
-                              const fullKey = pk ? `${card.card_id}:${credit.credit_key}:${pk}` : null;
+                              const fullKey = pk ? `${instanceId}:${credit.credit_key}:${pk}` : null;
                               const isUsed = fullKey ? creditUses.has(fullKey) : false;
                               const canToggle = !!fullKey;
-                              const fnaKey = credit.is_free_night ? `${card.card_id}:${anniversaryYearFor(card.card_id)}` : null;
+                              const fnaKey = credit.is_free_night ? `${instanceId}:${anniversaryYearFor(instanceId)}` : null;
                               const fnaRedeemed = fnaKey ? fnaUses.has(fnaKey) : false;
                               const dimmed = isUsed || fnaRedeemed;
                               return (
@@ -995,7 +1088,7 @@ export default function MyCardsPage({
                                     {canToggle && (
                                       <button
                                         type="button"
-                                        onClick={() => toggleCreditUse(card.card_id, credit)}
+                                        onClick={() => toggleCreditUse(instanceId, credit)}
                                         className={`ml-1 text-[10px] px-1.5 py-0.5 rounded border transition-colors ${
                                           isUsed
                                             ? "border-emerald-300 bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
@@ -1010,7 +1103,7 @@ export default function MyCardsPage({
                                     {credit.is_free_night && (
                                       <button
                                         type="button"
-                                        onClick={() => toggleFnaUse(card.card_id)}
+                                        onClick={() => toggleFnaUse(instanceId)}
                                         className={`ml-1 text-[10px] px-1.5 py-0.5 rounded border transition-colors ${
                                           fnaRedeemed
                                             ? "border-emerald-300 bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
@@ -1035,12 +1128,12 @@ export default function MyCardsPage({
                   {/* Footer */}
                   <div className="px-4 py-2 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
                     <Link
-                      href={`/${lang}/cards/${card.card_id}`}
+                      href={`/${lang}/cards/${productCardId}`}
                       className="text-xs text-slate-500 hover:text-slate-800 transition-colors"
                     >
                       {m.viewAll}
                     </Link>
-                    <ReportErrorModal cardId={card.card_id} cardName={card.name} lang={lang} />
+                    <ReportErrorModal cardId={productCardId} cardName={card.name} lang={lang} />
                   </div>
                 </div>
               );

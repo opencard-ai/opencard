@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { CreditCard, Check, X } from 'lucide-react';
+import { CreditCard, Plus, X } from 'lucide-react';
 import { trackCardAdded } from '@/lib/analytics';
 
 interface AddToMyCardsButtonProps {
@@ -13,7 +13,14 @@ interface AddToMyCardsButtonProps {
 const STORAGE_KEY = 'opencard_existing_cards';
 const SUBSCRIBED_EMAIL_KEY = 'opencard_subscribed_email';
 
-export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCardsButtonProps) {
+function extractCardIds(input: unknown): string[] {
+  if (!Array.isArray(input)) return [];
+  return input
+    .map((x) => typeof x === 'string' ? x : (x && typeof x === 'object' ? String((x as { card_id?: unknown }).card_id || '') : ''))
+    .filter(Boolean);
+}
+
+export default function AddToMyCardsButton({ cardId, lang }: AddToMyCardsButtonProps) {
   const [added, setAdded] = useState(false);
   const [saving, setSaving] = useState(false);
 
@@ -24,14 +31,14 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
       try {
-        const ids: string[] = JSON.parse(stored);
+        const ids = extractCardIds(JSON.parse(stored));
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setAdded(ids.includes(cardId));
       } catch {}
     }
 
     const handler = (e: CustomEvent) => {
-      const ids: string[] = e.detail;
+      const ids = extractCardIds(e.detail);
       setAdded(ids.includes(cardId));
     };
     window.addEventListener('opencard_cards_updated', handler as EventListener);
@@ -93,7 +100,9 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
           const data = await res.json();
           setAdded(true);
           trackCardAdded(cardId);
-          window.dispatchEvent(new CustomEvent('opencard_cards_updated', { detail: data.cards }));
+          const next = data.card_instances || data.cards || [];
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+          window.dispatchEvent(new CustomEvent('opencard_cards_updated', { detail: next }));
           setSaving(false);
           return;
         }
@@ -112,23 +121,27 @@ export default function AddToMyCardsButton({ cardId, cardName, lang }: AddToMyCa
     setSaving(false);
   };
 
-  const labels: Record<string, { add: string; added: string; saving: string; remove: string }> = {
-    en: { add: 'Add to My Cards', added: 'Added', saving: '...', remove: 'Remove' },
-    zh: { add: '加入我的卡片', added: '已加入', saving: '...', remove: '移除' },
-    'zh-cn': { add: '加入我的卡片', added: '已加入', saving: '...', remove: '移除' },
-    es: { add: 'Agregar a Mis Tarjetas', added: 'Agregado', saving: '...', remove: 'Quitar' },
+  const labels: Record<string, { add: string; addAnother: string; added: string; saving: string; remove: string }> = {
+    en: { add: 'Add to My Cards', addAnother: 'Add another copy', added: 'Added', saving: '...', remove: 'Remove all' },
+    zh: { add: '加入我的卡片', addAnother: '再加一張', added: '已加入', saving: '...', remove: '全部移除' },
+    'zh-cn': { add: '加入我的卡片', addAnother: '再加一张', added: '已加入', saving: '...', remove: '全部移除' },
+    es: { add: 'Agregar a Mis Tarjetas', addAnother: 'Agregar otra', added: 'Agregado', saving: '...', remove: 'Quitar todo' },
   };
 
-  const langKey = (['en', 'zh', 'zh-cn', 'es'] as const).includes(lang as any) ? lang : 'en';
-  const label = labels[langKey];
+  const langKey = (['en', 'zh', 'zh-cn', 'es'] as const).includes(lang as 'en' | 'zh' | 'zh-cn' | 'es') ? lang : 'en';
+  const label = labels[langKey as keyof typeof labels];
 
   if (added) {
     return (
       <div className="flex flex-row gap-2 w-full">
-        <div className="flex-1 flex items-center justify-center gap-1.5 bg-indigo-50 border border-indigo-200 rounded-lg h-11 px-3 text-center">
-          <Check className="w-4 h-4 text-indigo-600" strokeWidth={2.5} />
-          <span className="text-indigo-600 font-semibold text-sm">{label.added}</span>
-        </div>
+        <button
+          onClick={handleAdd}
+          disabled={saving}
+          className="flex-1 inline-flex items-center justify-center gap-1.5 bg-indigo-50 border border-indigo-200 hover:border-indigo-400 hover:bg-indigo-100 disabled:opacity-60 text-indigo-600 font-semibold h-11 px-3 rounded-lg transition-colors text-sm"
+          title={label.addAnother}
+        >
+          {saving ? '...' : (<><Plus className="w-4 h-4" /> {label.addAnother}</>)}
+        </button>
         <button
           onClick={handleRemove}
           disabled={saving}
