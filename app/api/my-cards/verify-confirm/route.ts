@@ -41,7 +41,7 @@ export async function GET(req: NextRequest) {
     }
 
     const parsed = typeof pendingData === "string" ? JSON.parse(pendingData) : pendingData;
-    const { email_hash, email_for_send, email_hint } = parsed;
+    const { email_hash, email_for_send, email_hint, cards, card_instances, marketing_optin } = parsed;
     const userKey = `${USER_PREFIX}${email_hash}`;
 
     // Check if already confirmed
@@ -61,6 +61,9 @@ export async function GET(req: NextRequest) {
       email_hash,
       email_for_send,
       email_hint: email_hint || "",
+      ...(Array.isArray(cards) ? { cards } : {}),
+      ...(Array.isArray(card_instances) ? { card_instances } : {}),
+      ...(marketing_optin !== undefined ? { marketing_optin: Boolean(marketing_optin) } : {}),
       status: "confirmed",
       confirmed_at: Date.now(),
       updated_at: Date.now(),

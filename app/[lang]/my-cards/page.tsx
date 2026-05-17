@@ -323,16 +323,27 @@ function formatFrequency(freq: string, lang: string): string {
 function normalizeCardInstances(input: unknown): UserCardInstance[] {
   if (!Array.isArray(input)) return [];
   const now = Date.now();
+  const seen = new Map<string, number>();
+
   return input
     .map((entry, index): UserCardInstance | null => {
       if (typeof entry === "string") {
-        return { instance_id: entry, card_id: entry, created_at: now + index, status: "active" };
+        const cardId = entry;
+        const count = (seen.get(cardId) || 0) + 1;
+        seen.set(cardId, count);
+        const instanceId = count === 1 ? cardId : `${cardId}-${now.toString(36)}-${index}`;
+        return { instance_id: instanceId, card_id: cardId, created_at: now + index, status: "active" };
       }
       if (entry && typeof entry === "object") {
         const obj = entry as Record<string, unknown>;
         const cardId = String(obj.card_id || obj.instance_id || "");
-        const instanceId = String(obj.instance_id || cardId);
-        if (!cardId || !instanceId) return null;
+        const baseInstanceId = String(obj.instance_id || cardId);
+        if (!cardId || !baseInstanceId) return null;
+
+        const count = (seen.get(baseInstanceId) || 0) + 1;
+        seen.set(baseInstanceId, count);
+        const instanceId = count === 1 ? baseInstanceId : `${baseInstanceId}-${now.toString(36)}-${index}`;
+
         return {
           instance_id: instanceId,
           card_id: cardId,
@@ -653,7 +664,7 @@ export default function MyCardsPage({
     setSubscribeError("");
     
     // Fetch existing user status FIRST (check if already subscribed)
-    let existingCloudCards: string[] = [];
+    let existingCloudInstances: UserCardInstance[] = [];
     let isAlreadySubscribed = false;
     try {
       const statusRes = await fetch(`/api/my-cards/subscription-status?email=${encodeURIComponent(email.toLowerCase().trim())}`);
@@ -665,33 +676,35 @@ export default function MyCardsPage({
           const cloudRes = await fetch(`/api/my-cards?email=${encodeURIComponent(email.toLowerCase().trim())}`);
           if (cloudRes.ok) {
             const cloudData = await cloudRes.json();
-            existingCloudCards = normalizeCardInstances(cloudData.card_instances || cloudData.cards || []).map((x) => x.card_id);
+            existingCloudInstances = normalizeCardInstances(cloudData.card_instances || cloudData.cards || []);
           }
         }
       }
     } catch {}
     
-    // If already subscribed, use cloud cards. Otherwise use local or cloud (whatever has data).
-    let finalCards: string[];
-    if (isAlreadySubscribed && existingCloudCards.length > 0) {
-      finalCards = existingCloudCards; // Keep cloud cards, don't overwrite
+    // If already subscribed, use cloud instances. Otherwise use local instances or cloud.
+    let finalInstances: UserCardInstance[];
+    if (isAlreadySubscribed && existingCloudInstances.length > 0) {
+      finalInstances = existingCloudInstances; // Keep cloud cards, don't overwrite
+    } else if (cardInstances.length > 0) {
+      finalInstances = cardInstances; // Preserve duplicate card instances (#1/#2)
     } else if (selectedCards.length > 0) {
-      finalCards = selectedCards; // Use local cards
+      finalInstances = normalizeCardInstances(selectedCards); // Legacy local fallback
     } else {
-      finalCards = existingCloudCards; // Fallback to cloud
+      finalInstances = existingCloudInstances; // Fallback to cloud
     }
+    const finalCards = finalInstances.map((x) => x.card_id);
     
     try {
       const res = await fetch("/api/my-cards/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, cards: finalCards, marketing_optin: marketingOptin }),
+        body: JSON.stringify({ email, cards: [...new Set(finalCards)], card_instances: finalInstances, marketing_optin: marketingOptin }),
       });
       if (res.ok) {
         setIsSubscribed(true);
         // Store email so AddToMyCardsButton and MyCardsWidget know user is subscribed
         localStorage.setItem('opencard_subscribed_email', email.toLowerCase().trim());
-        const finalInstances = normalizeCardInstances(finalCards);
         setCardInstances(finalInstances);
         setSelectedCards(finalInstances.map((x) => x.card_id));
         localStorage.setItem(STORAGE_KEY, JSON.stringify(finalInstances));
@@ -705,7 +718,7 @@ export default function MyCardsPage({
     } finally {
       setIsSubscribing(false);
     }
-  }, [email, selectedCards, marketingOptin, m.toastSubscribeOk]);
+  }, [email, selectedCards, cardInstances, marketingOptin, m.toastSubscribeOk]);
 
   // Fallback: if cardsData is empty but selectedCards has IDs, cards aren't loaded yet
   // This is just a placeholder until cardsData loads

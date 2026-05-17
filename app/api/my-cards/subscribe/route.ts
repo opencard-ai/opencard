@@ -47,6 +47,51 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.toLowerCase().trim());
 }
 
+interface UserCardInstance {
+  instance_id: string;
+  card_id: string;
+  nickname?: string;
+  last4?: string;
+  created_at: number;
+  status: "active" | "closed";
+}
+
+const ID_RE = /^[a-z0-9][a-z0-9-]{0,80}$/;
+function isValidId(id: string): boolean { return ID_RE.test(id); }
+
+function normalizeCardInstances(input: unknown, fallbackCards: unknown): UserCardInstance[] {
+  const now = Date.now();
+  const source = Array.isArray(input) && input.length > 0 ? input : (Array.isArray(fallbackCards) ? fallbackCards : []);
+  const seen = new Map<string, number>();
+  return source
+    .map((entry, index): UserCardInstance | null => {
+      if (typeof entry === "string") {
+        if (!isValidId(entry)) return null;
+        const count = (seen.get(entry) || 0) + 1;
+        seen.set(entry, count);
+        const instanceId = count === 1 ? entry : `${entry}-${now.toString(36)}-${index}`.slice(0, 80);
+        return { instance_id: instanceId, card_id: entry, created_at: now + index, status: "active" };
+      }
+      if (!entry || typeof entry !== "object") return null;
+      const obj = entry as Record<string, unknown>;
+      const cardId = String(obj.card_id || obj.instance_id || "");
+      const baseInstanceId = String(obj.instance_id || cardId);
+      if (!isValidId(cardId) || !isValidId(baseInstanceId)) return null;
+      const count = (seen.get(baseInstanceId) || 0) + 1;
+      seen.set(baseInstanceId, count);
+      const instanceId = count === 1 ? baseInstanceId : `${baseInstanceId}-${now.toString(36)}-${index}`.slice(0, 80);
+      return {
+        instance_id: instanceId,
+        card_id: cardId,
+        ...(obj.nickname ? { nickname: String(obj.nickname).slice(0, 80) } : {}),
+        ...(obj.last4 ? { last4: String(obj.last4).slice(-4) } : {}),
+        created_at: Number(obj.created_at || now + index),
+        status: obj.status === "closed" ? "closed" : "active",
+      };
+    })
+    .filter(Boolean) as UserCardInstance[];
+}
+
 async function sendVerificationEmail(email: string, token: string): Promise<boolean> {
   const verifyLink = `${BASE_URL}/api/my-cards/verify-confirm?token=${token}`;
   const html = `<div style="font-family:-apple-system,sans-serif;max-width:480px;margin:0 auto;padding:0;text-align:center">
@@ -84,7 +129,7 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const { email, cards, marketing_optin } = await req.json();
+    const { email, cards, card_instances, marketing_optin } = await req.json();
 
     if (!email || typeof email !== "string" || !isValidEmail(email)) {
       return NextResponse.json({ error: "Valid email is required" }, { status: 400 });
@@ -96,11 +141,16 @@ export async function POST(req: NextRequest) {
     const userKey = `${USER_PREFIX}${emailHash}`;
 
     const existing = await redis.hgetall(userKey) as Record<string, unknown> | null;
+    const normalizedInstances = normalizeCardInstances(card_instances, cards);
+    const normalizedCards = [...new Set(normalizedInstances.map((x) => x.card_id))];
 
     // Already confirmed — just update silently
     if (existing?.status === "confirmed") {
       const updates: Record<string, unknown> = { updated_at: Date.now() };
-      if (cards !== undefined) updates.cards = cards;
+      if (card_instances !== undefined || cards !== undefined) {
+        updates.cards = normalizedCards;
+        updates.card_instances = normalizedInstances;
+      }
       if (marketing_optin !== undefined) updates.marketing_optin = marketing_optin;
       await redis.hset(userKey, updates);
       return NextResponse.json({ success: true, already_confirmed: true });
@@ -114,7 +164,8 @@ export async function POST(req: NextRequest) {
       email_hash: emailHash,
       email_for_send: emailForSend,
       email_hint: normalizedEmail.substring(0, 3) + "***@" + normalizedEmail.split("@")[1],
-      cards: cards && Array.isArray(cards) ? cards : [],
+      cards: normalizedCards,
+      card_instances: normalizedInstances,
       marketing_optin: Boolean(marketing_optin),
       created_at: (existing?.created_at as number) || Date.now(),
     }));
@@ -138,7 +189,7 @@ export async function POST(req: NextRequest) {
 
 export async function PUT(req: NextRequest) {
   try {
-    const { email, cards, marketing_optin } = await req.json();
+    const { email, cards, card_instances, marketing_optin } = await req.json();
 
     if (!email || !isValidEmail(email)) {
       return NextResponse.json({ error: "Valid email is required" }, { status: 400 });
@@ -152,8 +203,14 @@ export async function PUT(req: NextRequest) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
+    const normalizedInstances = normalizeCardInstances(card_instances, cards);
+    const normalizedCards = [...new Set(normalizedInstances.map((x) => x.card_id))];
+
     const updates: Record<string, unknown> = { updated_at: Date.now() };
-    if (cards !== undefined) updates.cards = cards;
+    if (card_instances !== undefined || cards !== undefined) {
+      updates.cards = normalizedCards;
+      updates.card_instances = normalizedInstances;
+    }
     if (marketing_optin !== undefined) updates.marketing_optin = marketing_optin;
 
     await redis.hset(userKey, updates);
