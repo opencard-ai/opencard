@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// @ts-expect-error upstash ESM type interop in Next route handlers
 const Redis = (await import("@upstash/redis")).Redis;
 
 const redis = new Redis({
