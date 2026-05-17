@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { bucketCredit } from "../../../../lib/reminder-logic";
+import { sendEmail } from "@/lib/email";
 
 // @ts-ignore
 const RedisClass = (await import("@upstash/redis")).Redis;
@@ -8,8 +9,6 @@ const redis = new RedisClass({
   token: process.env.UPSTASH_KV_REST_API_TOKEN!,
 }) as unknown as Record<string, (...args: unknown[]) => Promise<unknown>>;
 
-const AGENTMAIL_API_KEY = process.env.AGENTMAIL_API_KEY!;
-const FROM_INBOX = process.env.AGENTMAIL_FROM_INBOX!;
 const CRON_SECRET = process.env.CRON_SECRET!;
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://opencardai.com";
 
@@ -157,16 +156,21 @@ function getCreditsThisPeriod(cards: CardData[], openDates: OpenDatesMap, now: D
   return { thisMonth, upcoming, expiringSoon };
 }
 
-async function sendEmail(to: string, subject: string, html: string): Promise<boolean> {
+async function sendReminderEmail(to: string, subject: string, html: string): Promise<boolean> {
   try {
-    const res = await fetch(`https://api.agentmail.to/v0/inboxes/${FROM_INBOX}/messages/send`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Authorization": `Bearer ${AGENTMAIL_API_KEY}` },
-      body: JSON.stringify({ to: [to], subject, html }),
-    });
-    if (!res.ok) console.error("AgentMail error:", await res.text());
-    return res.ok;
-  } catch (err) { console.error("AgentMail send error:", err); return false; }
+    const result = await sendEmail({ to, subject, html });
+    if (!result.ok) {
+      console.error("Failed to send reminder email", {
+        provider: result.provider,
+        status: result.status,
+        error: result.error,
+      });
+    }
+    return result.ok;
+  } catch (err) {
+    console.error("Reminder email send error:", err);
+    return false;
+  }
 }
 
 function buildUnsubscribeLink(emailHash: string): string {
@@ -270,7 +274,7 @@ export async function GET(req: NextRequest) {
         : `⚠️ OpenCard: ${expiringSoon.length} benefit${expiringSoon.length > 1 ? "s" : ""} expiring soon`;
 
       const html = buildEmailHtml(emailHash, userCards, thisMonth, upcoming, expiringSoon);
-      if (await sendEmail(realEmail, subject, html)) sent++; else failed++;
+      if (await sendReminderEmail(realEmail, subject, html)) sent++; else failed++;
       await new Promise(r => setTimeout(r, 100));
     }
 

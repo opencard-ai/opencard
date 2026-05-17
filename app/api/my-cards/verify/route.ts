@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { sendEmail } from "@/lib/email";
 
 // @ts-ignore
 const Redis = (await import("@upstash/redis")).Redis;
@@ -10,8 +11,6 @@ const redis = new Redis({
 
 const USER_PREFIX = "opencard:user:";
 const PENDING_PREFIX = "opencard:pending:";
-const AGENTMAIL_API_KEY = process.env.AGENTMAIL_API_KEY!;
-const FROM_INBOX = process.env.AGENTMAIL_FROM_INBOX!;
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://opencardai.com";
 
 async function hashEmail(email: string): Promise<string> {
@@ -81,14 +80,14 @@ export async function POST(req: NextRequest) {
       </div>
     </div>`;
 
-    const res = await fetch(`https://api.agentmail.to/v0/inboxes/${FROM_INBOX}/messages/send`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Authorization": `Bearer ${AGENTMAIL_API_KEY}` },
-      body: JSON.stringify({ to: [normalizedEmail], subject: "💳 Verify your OpenCard email", html }),
-    });
+    const result = await sendEmail({ to: normalizedEmail, subject: "💳 Verify your OpenCard email", html });
 
-    if (!res.ok) {
-      console.error("Failed to send verification email:", await res.text());
+    if (!result.ok) {
+      console.error("Failed to send verification email", {
+        provider: result.provider,
+        status: result.status,
+        error: result.error,
+      });
       return NextResponse.json({ error: "Failed to send verification email" }, { status: 500 });
     }
 
