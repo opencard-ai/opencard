@@ -18,7 +18,7 @@ Goal: make Card Adaptor a deterministic, auditable single-entry CLI for credit-c
 ```bash
 npm run card-adaptor -- doctor
 npm run card-adaptor -- list
-npm run card-adaptor -- fetch --card <card-id>
+npm run card-adaptor -- fetch --card <card-id> [--backend auto|scrapling|cloakbrowser]
 npm run card-adaptor -- extract --run <run-dir>
 npm run card-adaptor -- normalize --run <run-dir>
 npm run card-adaptor -- validate --run <run-dir>
@@ -35,6 +35,7 @@ Outputs:
 - configured card count
 - required directory status
 - Scrapling binary availability
+- CloakBrowser package availability
 - Node/runtime status
 - latest run directory status
 
@@ -50,11 +51,23 @@ Current implementation:
 - alias of legacy `scrape`
 - uses Scrapling with `--ai-targeted`
 - falls back to raw `curl` snapshot if Scrapling fails
+- default `--backend auto` routes issuer sources through CloakBrowser and other sources through Scrapling
+- optional `--backend cloakbrowser` forces source-level stealth Chromium for all configured sources and saves body text snapshots
+- CloakBrowser fallback also falls back to raw `curl` if the browser fetch fails
 
 Artifacts:
 - `data/adaptor/runs/<timestamp>-<card-id>/run.json`
 - `sources/*.md`
 - `manifest.json`
+
+Examples:
+
+```bash
+npm run card-adaptor -- fetch --card amex-gold --backend scrapling
+npm run card-adaptor -- fetch --card amex-gold --backend cloakbrowser
+npm run card-adaptor -- fetch --card amex-gold --backend auto
+CARD_ADAPTOR_FETCH_BACKEND=cloakbrowser npm run card-adaptor -- fetch --card amex-gold
+```
 
 ### `extract --run <run-dir>`
 

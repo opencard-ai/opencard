@@ -7,6 +7,7 @@ import * as path from 'path';
 
 type SourceType = 'issuer' | 'doc' | 'usccg' | 'cnn' | 'tpg' | 'reddit' | 'flyertalk' | 'other';
 type Verdict = 'pass' | 'needs_review' | 'blocked';
+type FetchBackend = 'auto' | 'scrapling' | 'cloakbrowser';
 
 type SourceSpec = {
   id: string;
@@ -58,7 +59,7 @@ function usage(): never {
   console.error(`Usage:
   npm run card-adaptor -- doctor
   npm run card-adaptor -- list
-  npm run card-adaptor -- fetch --card <${cards}>
+  npm run card-adaptor -- fetch --card <${cards}> [--backend auto|scrapling|cloakbrowser]
   npm run card-adaptor -- extract --run <run-dir>
   npm run card-adaptor -- normalize --run <run-dir>
   npm run card-adaptor -- validate --run <run-dir>
@@ -189,6 +190,75 @@ function scraplingBin(): string {
   return candidates.find((candidate) => candidate === 'scrapling' || existsSync(candidate)) || 'scrapling';
 }
 
+function fetchBackend(): FetchBackend {
+  const backend = arg('--backend') || process.env.CARD_ADAPTOR_FETCH_BACKEND || 'auto';
+  if (backend === 'auto' || backend === 'scrapling' || backend === 'cloakbrowser') return backend;
+  console.error(`Unknown --backend ${JSON.stringify(backend)}. Expected auto, scrapling, or cloakbrowser.`);
+  process.exit(2);
+}
+
+function backendForSource(requested: FetchBackend, source: SourceSpec): Exclude<FetchBackend, 'auto'> {
+  if (requested === 'scrapling' || requested === 'cloakbrowser') return requested;
+  return source.type === 'issuer' ? 'cloakbrowser' : 'scrapling';
+}
+
+function cloakbrowserAvailable(): boolean {
+  return existsSync(path.join('node_modules', 'cloakbrowser', 'dist', 'index.js'));
+}
+
+function cloakbrowserFetch(source: SourceSpec, out: string): void {
+  if (!cloakbrowserAvailable()) {
+    throw new Error('cloakbrowser package missing; run npm install --save-dev cloakbrowser');
+  }
+  const script = String.raw`
+import { writeFileSync } from 'node:fs';
+import { launchContext } from 'cloakbrowser';
+
+const url = process.env.CARD_ADAPTOR_URL;
+const out = process.env.CARD_ADAPTOR_OUT;
+if (!url || !out) throw new Error('CARD_ADAPTOR_URL and CARD_ADAPTOR_OUT are required');
+
+const context = await launchContext({
+  headless: true,
+  humanize: true,
+  locale: 'en-US',
+  timezone: 'America/Los_Angeles',
+  viewport: { width: 1365, height: 900 },
+});
+
+try {
+  const page = await context.newPage();
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+  await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => undefined);
+  const title = await page.title().catch(() => '');
+  const finalUrl = page.url();
+  const text = await page.locator('body').innerText({ timeout: 15000 }).catch(async () => {
+    return await page.content();
+  });
+  writeFileSync(out, [
+    title ? '# ' + title : '# Untitled',
+    '',
+    'Source: ' + url,
+    'Final URL: ' + finalUrl,
+    'Fetched with: cloakbrowser',
+    'Fetched at: ' + new Date().toISOString(),
+    '',
+    text,
+  ].join('\n'));
+} finally {
+  await context.close().catch(() => undefined);
+}
+`;
+  execFileSync(process.execPath, ['--input-type=module', '-e', script], {
+    stdio: 'inherit',
+    env: {
+      ...process.env,
+      CARD_ADAPTOR_URL: source.url,
+      CARD_ADAPTOR_OUT: out,
+    },
+  });
+}
+
 function doctor(): void {
   const cards = listCardIds();
   const latestRuns = latestRunDirsByCard();
@@ -198,6 +268,7 @@ function doctor(): void {
     { name: 'production_cards', ok: existsSync(path.join('data', 'cards')), detail: 'data/cards' },
     { name: 'adaptor_data_dir', ok: existsSync(path.join('data', 'adaptor')), detail: 'data/adaptor' },
     { name: 'scrapling_bin', ok: scraplingBin() === 'scrapling' || existsSync(scraplingBin()), detail: scraplingBin() },
+    { name: 'cloakbrowser_package', ok: cloakbrowserAvailable(), detail: cloakbrowserAvailable() ? 'node_modules/cloakbrowser' : 'not installed' },
     { name: 'node', ok: !!process.version, detail: process.version },
     { name: 'latest_runs', ok: true, detail: `${latestRuns.length} latest run(s) indexed` },
   ];
@@ -212,7 +283,7 @@ function doctor(): void {
   if (hardFailures.length) process.exit(1);
 }
 
-function scrape(cardId: string): string {
+function scrape(cardId: string, backend = fetchBackend()): string {
   const config = configForCard(cardId);
   const runId = `${isoRunStamp()}-${config.cardId}`;
   const runDir = path.join('data/adaptor/runs', runId);
@@ -222,23 +293,28 @@ function scrape(cardId: string): string {
   const errors: any[] = [];
 
   for (const source of config.sources) {
+    const sourceBackend = backendForSource(backend, source);
     const out = sourcePath(runDir, source);
-    const command = source.method === 'fetch' ? 'fetch' : 'get';
-    const args = ['extract', command, source.url, out, '--ai-targeted'];
-    if (command === 'fetch') args.push('--timeout', '60000', '--wait', '3000', '--network-idle', '--disable-resources');
-    else args.push('--timeout', '60');
     try {
-      execFileSync(bin, args, {
-        stdio: 'inherit',
-        env: { ...process.env, LANG: process.env.LANG || 'en_US.UTF-8', LC_ALL: process.env.LC_ALL || 'en_US.UTF-8', PYTHONIOENCODING: 'utf-8' },
-      });
+      if (sourceBackend === 'cloakbrowser') {
+        cloakbrowserFetch(source, out);
+      } else {
+        const command = source.method === 'fetch' ? 'fetch' : 'get';
+        const args = ['extract', command, source.url, out, '--ai-targeted'];
+        if (command === 'fetch') args.push('--timeout', '60000', '--wait', '3000', '--network-idle', '--disable-resources');
+        else args.push('--timeout', '60');
+        execFileSync(bin, args, {
+          stdio: 'inherit',
+          env: { ...process.env, LANG: process.env.LANG || 'en_US.UTF-8', LC_ALL: process.env.LC_ALL || 'en_US.UTF-8', PYTHONIOENCODING: 'utf-8' },
+        });
+      }
     } catch (error: any) {
-      const scraplingError = String(error?.message || error);
+      const primaryError = String(error?.message || error);
       try {
         execFileSync('curl', ['-L', '--max-time', '30', '-A', 'Mozilla/5.0', source.url, '-o', out], { stdio: 'ignore' });
-        errors.push({ source: source.url, id: source.id, error: scraplingError, fallback: 'curl_raw_html_saved', required: !!source.required });
+        errors.push({ source: source.url, id: source.id, backend: sourceBackend, requested_backend: backend, error: primaryError, fallback: 'curl_raw_html_saved', required: !!source.required });
       } catch (fallbackError: any) {
-        errors.push({ source: source.url, id: source.id, error: scraplingError, fallback_error: String(fallbackError?.message || fallbackError), required: !!source.required });
+        errors.push({ source: source.url, id: source.id, backend: sourceBackend, requested_backend: backend, error: primaryError, fallback_error: String(fallbackError?.message || fallbackError), required: !!source.required });
       }
     }
   }
@@ -248,6 +324,8 @@ function scrape(cardId: string): string {
     run_id: runId,
     created_at: startedAt,
     mode: config.mode,
+    fetch_backend: backend,
+    fetch_backend_policy: backend === 'auto' ? 'issuer=cloakbrowser; other=scrapling' : 'forced',
     status: 'scraped',
     artifacts: ['run.json'],
     scrape_errors: errors,
