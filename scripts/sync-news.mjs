@@ -4,7 +4,7 @@ import { get } from 'node:https';
 import { decode } from 'html-entities';
 
 // Configuration
-const MINIMAX_API_URL = "https://api.minimax.io/v1/chat/completions";
+const MINIMAX_API_URL = "https://api.minimax.io/anthropic/v1/messages";
 const MINIMAX_MODEL = "MiniMax-M2.7";
 const MINIMAX_API_KEY = process.env.MINIMAX_API_KEY;
 if (!MINIMAX_API_KEY) {
@@ -67,21 +67,25 @@ async function translateBatch(items, lang) {
   const langNames = { zh: "Chinese (Traditional)", es: "Spanish" };
   const dataList = items.map((u, i) => ({ idx: i, title: u.title }));
 
-  const prompt = `Convert this news list into ${langNames[lang]}. 
-Output ONLY a JSON object: {"results":[{"idx":number,"title":"translated title","summary":"1-sentence summary"}]}
+  const prompt = `Translate this news list into ${langNames[lang]}.
+Output ONLY a JSON array: [{"idx":number,"title":"translated title","summary":"1-sentence summary"},...]
 List: ${JSON.stringify(dataList)}`;
 
   try {
-    const res = await fetch("https://api.minimax.io/v1/chat/completions", {
+    const res = await fetch(MINIMAX_API_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${MINIMAX_API_KEY}` },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${MINIMAX_API_KEY}`,
+        "anthropic-version": "2023-06-01",
+      },
       body: JSON.stringify({
-        model: "MiniMax-M2.7",
+        model: MINIMAX_MODEL,
+        max_tokens: 4000,
         messages: [{ role: "user", content: prompt }],
         temperature: 0.1,
-        internal_thought: false
       }),
-      signal: AbortSignal.timeout(90000),
+      signal: AbortSignal.timeout(120000),
     });
 
     if (!res.ok) {
@@ -91,13 +95,16 @@ List: ${JSON.stringify(dataList)}`;
     }
 
     const data = await res.json();
-    let raw = data.choices?.[0]?.message?.content || "";
+    let raw = (data.content || [])
+      .map((part) => part.text || "")
+      .filter(Boolean)
+      .join("");
     try {
       raw = raw.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
       const jsonMatch = raw.match(/\{.*\}/s);
       const parsed = JSON.parse(jsonMatch ? jsonMatch[0] : raw);
       return items.map((item, i) => {
-        const translation = (parsed.results || []).find(r => r.idx === i);
+        const translation = (parsed || []).find(r => r.idx === i);
         return {
           ...item,
           [`title_${lang}`]: translation ? translation.title : item.title,
