@@ -1,0 +1,151 @@
+{
+    "cardId": "amex-morgan-stanley-platinum",
+    "cardPath": "data/cards/amex-morgan-stanley-platinum.json",
+    "mode": "credits",
+    "sources": [
+        {
+            "id": "01-issuer",
+            "type": "issuer",
+            "url": "https://global.americanexpress.com/card-benefits/view-all/morgan-stanley-platinum-card",
+            "method": "fetch",
+            "required": true
+        },
+        {
+            "id": "02-usccg",
+            "type": "usccg",
+            "url": "https://www.uscreditcardguide.com/amex-platinum-for-morgan-stanley/",
+            "method": "get",
+            "required": true
+        },
+        {
+            "id": "03-doc",
+            "type": "doc",
+            "url": "https://www.doctorofcredit.com/american-express-platinum-card-benefits/",
+            "method": "get"
+        },
+        {
+            "id": "04-issuer-platinum",
+            "type": "issuer",
+            "url": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
+            "method": "fetch"
+        }
+    ],
+    "candidate": {
+        "recurring_credits": [
+            {
+                "credit_key": "uber-cash",
+                "name": "Uber Cash",
+                "amount": 15,
+                "frequency": "monthly",
+                "category": "ride",
+                "description": "$15/month ($180/yr) + $20 December bonus = $200/yr total. Card must be added to Uber app.",
+                "reset_type": "monthly",
+                "source": "https://global.americanexpress.com/card-benefits/detail/uber-cash/platinum"
+            },
+            {
+                "credit_key": "uber-one-membership",
+                "name": "Uber One Membership",
+                "amount": 120,
+                "frequency": "annual",
+                "category": "ride",
+                "description": "$120/yr on auto-renewing Uber One membership.",
+                "reset_type": "calendar_year",
+                "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+            },
+            {
+                "credit_key": "walmart-credit",
+                "name": "Walmart+ Credit",
+                "amount": 12.95,
+                "frequency": "monthly",
+                "category": "groceries",
+                "description": "One monthly Walmart+ membership credit (~$12.95/month plus tax, ~$155/yr).",
+                "reset_type": "monthly",
+                "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+            },
+            {
+                "credit_key": "clear-plus-credit",
+                "name": "CLEAR Plus Credit",
+                "amount": 209,
+                "frequency": "annual",
+                "category": "travel",
+                "description": "$209/yr on CLEAR Plus Membership (auto-renewal required).",
+                "reset_type": "calendar_year",
+                "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+            },
+            {
+                "credit_key": "airline-fee-credit",
+                "name": "Airline Fee Credit",
+                "amount": 200,
+                "frequency": "annual",
+                "category": "airline",
+                "description": "$200/yr on incidental fees with one selected airline (baggage, food/drinks, etc.).",
+                "reset_type": "calendar_year",
+                "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+            },
+            {
+                "credit_key": "equinox-credit",
+                "name": "Equinox Credit",
+                "amount": 300,
+                "frequency": "annual",
+                "category": "fitness",
+                "description": "Up to $300/calendar year statement credit on Equinox club membership or Equinox+ digital subscription. Issued as single lump sum (changed from $25/monthly per 2026 refresh). Enrollment required.",
+                "reset_type": "calendar_year",
+                "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+            },
+            {
+                "credit_key": "digital-entertainment-credit",
+                "name": "Digital Entertainment Credit",
+                "amount": 20,
+                "frequency": "monthly",
+                "category": "entertainment",
+                "description": "$20/month ($240/yr) on eligible digital entertainment (Disney+, Hulu, ESPN+, NYT, WSJ, Peacock).",
+                "reset_type": "monthly",
+                "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+            },
+            {
+                "credit_key": "resy-dining-credit",
+                "name": "Resy Dining Credit",
+                "amount": 100,
+                "frequency": "quarterly",
+                "category": "dining",
+                "description": "$100/quarter ($400/yr) at US Resy restaurants and eligible Resy purchases.",
+                "reset_type": "calendar_quarter",
+                "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+            },
+            {
+                "credit_key": "lululemon-credit",
+                "name": "lululemon Credit",
+                "amount": 75,
+                "frequency": "quarterly",
+                "category": "shopping",
+                "description": "$75/quarter ($300/yr) on lululemon.com or US lululemon stores.",
+                "reset_type": "calendar_quarter",
+                "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+            },
+            {
+                "credit_key": "oura-ring-credit",
+                "name": "Oura Ring Credit",
+                "amount": 200,
+                "frequency": "annual",
+                "category": "shopping",
+                "description": "$200/yr on Oura Ring direct purchases (oura.com).",
+                "reset_type": "calendar_year",
+                "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+            }
+        ]
+    },
+    "citations": {
+        "recurring_credits": [
+            "sources/*usccg*.md: $200/yr Oura Ring credit, $100/quarter Resy dining, $75/quarter lululemon"
+        ]
+    },
+    "open_questions": [],
+    "community": {
+        "summary": "Morgan Stanley Platinum shares Platinum-family credits. Key MS-specific note: first additional Platinum card is free (included in other_benefits). Credits are consistent across issuer/USCCG/DoC.",
+        "recommended_production_value": {},
+        "confidence": "high_for_platinum_family_credits",
+        "ymmv_or_targeted_possible": false,
+        "conflictStanceIncludes": [],
+        "observations": []
+    }
+}

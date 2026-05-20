@@ -178,7 +178,7 @@
       "frequency": "quarterly",
       "category": "dining",
       "description": "$100/quarter ($400/yr) at US Resy restaurants and eligible Resy purchases.",
-      "reset_type": "quarterly",
+      "reset_type": "calendar_quarter",
       "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     },
     {
@@ -188,7 +188,7 @@
       "frequency": "quarterly",
       "category": "shopping",
       "description": "$75/quarter ($300/yr) on lululemon.com or US lululemon stores.",
-      "reset_type": "quarterly",
+      "reset_type": "calendar_quarter",
       "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     },
     {
@@ -202,7 +202,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     }
   ],
-  "last_verified": "2026-05-19T16:39:00Z",
+  "last_verified": "2026-05-20",
   "next_review": "2026-07-15T13:41:49.949000+00:00",
   "cfpb_source": "Q3_2025",
   "late_fee": 40,

@@ -437,35 +437,42 @@ function writeCommunity(runDir: string, cardId: string, observations: any[], con
 
 function qa(runDir: string): void {
   const run = readJson(path.join(runDir, 'run.json'));
+  const mode = run.mode || configFromRun(runDir).mode || 'offer';
   const manifestData = readJson(path.join(runDir, 'manifest.json'));
   const candidate = readJson(path.join(runDir, 'candidate.json'));
   const community = existsSync(path.join(runDir, 'community-check.json')) ? readJson(path.join(runDir, 'community-check.json')) : null;
   const blocking_issues: string[] = [];
   const warnings: string[] = [];
   const hasIssuer = manifestData.sources.some((s: any) => s.source_type === 'issuer');
+  const requiresWelcomeOffer = mode === 'offer' || mode === 'offer_and_benefits';
+  const requiresRecurringCredits = mode === 'credits';
+  const hasRecurringCreditsCandidate = !!candidate?.candidate?.recurring_credits;
   if (!hasIssuer) blocking_issues.push('issuer source missing');
-  if (!candidate?.candidate?.welcome_offer) blocking_issues.push('welcome_offer candidate missing');
+  if (requiresWelcomeOffer && !candidate?.candidate?.welcome_offer) blocking_issues.push('welcome_offer candidate missing');
+  if (requiresRecurringCredits && !candidate?.candidate?.recurring_credits) blocking_issues.push('recurring_credits candidate missing');
   if (manifestData.errors.some((e: any) => e.required)) blocking_issues.push('required source missing or empty');
-  if (!candidate?.citations?.welcome_offer?.length) blocking_issues.push('welcome_offer citation missing');
-  if (community?.community_consensus?.conflict_observed) warnings.push('Community/source conflict observed; issuer wins but review is required.');
-  if (community?.community_consensus?.ymmv_or_targeted_possible) warnings.push('Offer may be YMMV or targeted; metadata label is required.');
-  if (community?.community_consensus?.conflict_observed && !Array.isArray(candidate?.candidate?.welcome_offer?.source_conflicts)) {
+  if (requiresWelcomeOffer && !candidate?.citations?.welcome_offer?.length) blocking_issues.push('welcome_offer citation missing');
+  if ((requiresRecurringCredits || hasRecurringCreditsCandidate) && !candidate?.citations?.recurring_credits?.length) blocking_issues.push('recurring_credits citation missing');
+  if (requiresWelcomeOffer && community?.community_consensus?.conflict_observed) warnings.push('Community/source conflict observed; issuer wins but review is required.');
+  if (requiresWelcomeOffer && community?.community_consensus?.ymmv_or_targeted_possible) warnings.push('Offer may be YMMV or targeted; metadata label is required.');
+  if (requiresWelcomeOffer && community?.community_consensus?.conflict_observed && !Array.isArray(candidate?.candidate?.welcome_offer?.source_conflicts)) {
     blocking_issues.push('source_conflicts metadata missing for observed source conflict');
   }
-  if (community?.community_consensus?.ymmv_or_targeted_possible && !candidate?.candidate?.welcome_offer?.offer_status) {
+  if (requiresWelcomeOffer && community?.community_consensus?.ymmv_or_targeted_possible && !candidate?.candidate?.welcome_offer?.offer_status) {
     blocking_issues.push('offer_status metadata missing for YMMV/targeted offer');
   }
   const verdict: Verdict = blocking_issues.length ? 'blocked' : warnings.length ? 'needs_review' : 'pass';
   writeJson(path.join(runDir, 'qa-report.json'), {
     card_id: run.card_id,
     run_id: run.run_id,
+    mode,
     verdict,
     confidence: verdict === 'pass' ? 'high' : 'medium',
     source_coverage: { issuer: hasIssuer, community: !!community },
     checks: {
       schema_validation: 'pass_not_applied_existing_card_validates_separately',
-      required_fields: blocking_issues.includes('welcome_offer candidate missing') ? 'blocked' : 'pass',
-      citations: blocking_issues.includes('welcome_offer citation missing') ? 'blocked' : 'pass',
+      required_fields: blocking_issues.some((issue) => issue.endsWith('candidate missing')) ? 'blocked' : 'pass',
+      citations: blocking_issues.some((issue) => issue.endsWith('citation missing')) ? 'blocked' : 'pass',
       source_snapshots_saved: manifestData.errors.length ? 'pass_with_errors' : 'pass',
       issuer_source_for_core_terms: hasIssuer ? 'pass' : 'blocked',
       community_cross_check: community ? (community.community_consensus.conflict_observed ? 'needs_review_conflict_observed' : 'pass') : 'missing',
