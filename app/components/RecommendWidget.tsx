@@ -61,7 +61,7 @@ function parseOptions(text: string): string[] {
   const options: string[] = [];
 
   for (const raw of lines) {
-    let line = raw.replace(/^[-*•]\s+/, '').trim();
+    const line = raw.replace(/^[-*•]\s+/, '').trim();
     if (!line || line.length > 85) continue;
     if (line.includes("?")) continue;
 

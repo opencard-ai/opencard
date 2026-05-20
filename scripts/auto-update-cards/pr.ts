@@ -3,7 +3,7 @@
  */
 
 import { execSync } from "node:child_process";
-import { writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, unlinkSync } from "node:fs";
 import path from "path";
 import type { Card } from "./cards-loader";
 import type { DiffResult } from "./diff";
@@ -101,9 +101,7 @@ Source: ${diff.source_url || "N/A"}
 
   // Write the updated card JSON
   const cardPath = path.join(process.cwd(), "data/cards", `${card.card_id}.json`);
-  const cardData = JSON.parse(
-    require("node:fs").readFileSync(cardPath, "utf8")
-  );
+  const cardData = JSON.parse(readFileSync(cardPath, "utf8"));
 
   // Apply changes to card. When a change targets a nested field whose parent
   // doesn't exist (e.g. `welcome_offer.spending_requirement` on a card whose
@@ -124,7 +122,7 @@ Source: ${diff.source_url || "N/A"}
   }
   cardData.last_updated = new Date().toISOString();
 
-  require("node:fs").writeFileSync(cardPath, JSON.stringify(cardData, null, 2));
+  writeFileSync(cardPath, JSON.stringify(cardData, null, 2));
 
   // Commit
   execSync(`git add data/cards/${card.card_id}.json`, { cwd: process.cwd() });
@@ -152,7 +150,7 @@ Source: ${diff.source_url || "N/A"}
   }
 
   // Clean up
-  require("node:fs").unlinkSync(bodyFile);
+  unlinkSync(bodyFile);
 
   console.log(`   ✅ Opened PR: ${prUrl}`);
   return prUrl;

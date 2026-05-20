@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// @ts-ignore
 const Redis = (await import("@upstash/redis")).Redis;
 
 function getRedis() {

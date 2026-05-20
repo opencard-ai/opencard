@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { bucketCredit } from "../../../../lib/reminder-logic";
 import { sendEmail } from "@/lib/email";
 
-// @ts-ignore
 const RedisClass = (await import("@upstash/redis")).Redis;
 const redis = new RedisClass({
   url: process.env.UPSTASH_KV_REST_API_URL!,

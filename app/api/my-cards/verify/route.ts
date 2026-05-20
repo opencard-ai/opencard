@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendEmail } from "@/lib/email";
 
-// @ts-ignore
 const Redis = (await import("@upstash/redis")).Redis;
 
 const redis = new Redis({

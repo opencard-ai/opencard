@@ -8,6 +8,8 @@
  */
 
 import { chromium, Browser } from 'playwright';
+import { writeFileSync } from 'node:fs';
+import path from 'node:path';
 
 const CARDS_TO_SCRAPE = [
   {
@@ -155,10 +157,8 @@ async function main() {
   await browser.close();
   
   // Save results
-  const fs = require('fs');
-  const path = require('path');
   const outputPath = path.join(__dirname, '../data/scraper-results.json');
-  fs.writeFileSync(outputPath, JSON.stringify(results, null, 2));
+  writeFileSync(outputPath, JSON.stringify(results, null, 2));
   
   console.log(`\n📊 Results saved to ${outputPath}`);
   console.log(`\nSummary: ${results.filter(r => r.success).length}/${results.length} succeeded`);
