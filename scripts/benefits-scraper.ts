@@ -170,7 +170,7 @@ async function main() {
   const allResults: Record<string, ScrapedResult> = {};
   const allDiscrepancies: Record<string, Discrepancy[]> = {};
   
-  let stats = { scraped: 0, skipped: 0, failed: 0, noUrl: 0 };
+  const stats = { scraped: 0, skipped: 0, failed: 0, noUrl: 0 };
 
   for (const file of files) {
     const card = JSON.parse(fs.readFileSync(path.join(CARDS_DIR, file), 'utf8'));

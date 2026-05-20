@@ -16,7 +16,7 @@ async function getPdfParse(): Promise<PdfParseFn> {
   if (_pdfParse) return _pdfParse;
   // pdf-parse has no published type definitions; we treat it as `any` here.
   // After `npm install`, this resolves at runtime.
-  // @ts-ignore -- no @types/pdf-parse on registry; treat as untyped.
+  // @ts-expect-error -- no @types/pdf-parse on registry; treat as untyped.
   const mod = await import("pdf-parse");
   _pdfParse = (mod as { default?: PdfParseFn }).default ?? (mod as unknown as PdfParseFn);
   return _pdfParse;

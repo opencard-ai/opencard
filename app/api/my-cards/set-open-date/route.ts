@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// @ts-ignore
 const Redis = (await import("@upstash/redis")).Redis;
 
 // Lazy initialization to avoid module load errors
