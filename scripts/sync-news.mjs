@@ -101,7 +101,7 @@ List: ${JSON.stringify(dataList)}`;
       .join("");
     try {
       raw = raw.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
-      const jsonMatch = raw.match(/\{.*\}/s);
+      const jsonMatch = raw.match(/\[\s*\{[\s\S]*?\}\s*\]/s) || raw.match(/\{[\s\S]*\}/s);
       const parsed = JSON.parse(jsonMatch ? jsonMatch[0] : raw);
       return items.map((item, i) => {
         const translation = (parsed || []).find(r => r.idx === i);
