@@ -1,6 +1,23 @@
 {
   "items": [
     {
+      "title": "[Restricted, OK only] TTCU Federal Credit Union $250 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/restricted-ok-only-ttcu-federal-credit-union-150-checking-bonus-direct-deposit-optional/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "ok bank bonuses"
+      ],
+      "ts": "2026-05-25T03:45:30.000Z",
+      "title_en": "[Restricted, OK only] TTCU Federal Credit Union $250 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[Restricted, OK only] TTCU Federal Credit Union $250 Checking Bonus",
+      "summary_zh": "",
+      "title_es": "[Restringido, OK solo] TTCU Federal Credit Union: Bono de $250 por cuenta corriente",
+      "summary_es": "Oferta restringida de TTCU Federal Credit Union que ofrece un bono de $250 al abrir una cuenta corriente."
+    },
+    {
       "title": "[YMMV] Verizon: 25% Off Per Month For 12 Months",
       "url": "https://www.doctorofcredit.com/ymmv-verizon-25-off-per-month-for-12-months/",
       "source": "Doctor of Credit",
@@ -13,8 +30,8 @@
       "summary_en": "",
       "title_zh": "[YMMV] Verizon: 25% Off Per Month For 12 Months",
       "summary_zh": "",
-      "title_es": "[YMMV] Verizon: 25% Off Per Month For 12 Months",
-      "summary_es": ""
+      "title_es": "[YMMV] Verizon: 25% de descuento mensual durante 12 meses",
+      "summary_es": "Verizon ofrece un 25% de descuento mensual durante un año, aunque los resultados pueden variar."
     },
     {
       "title": "[YMMV] BJ’s Wholesale Club: $10 Off $100, Works On Giftcards 5/24 Only",
@@ -30,8 +47,8 @@
       "summary_en": "",
       "title_zh": "[YMMV] BJ’s Wholesale Club: $10 Off $100, Works On Giftcards 5/24 Only",
       "summary_zh": "",
-      "title_es": "[YMMV] BJ’s Wholesale Club: $10 Off $100, Works On Giftcards 5/24 Only",
-      "summary_es": ""
+      "title_es": "[YMMV] BJ's Wholesale Club: $10 de descuento en $100, válido en tarjetas de regalo el 24/5",
+      "summary_es": "BJ's Wholesale Club ofrece un descuento de $10 en compras de $100, aplicable a tarjetas de regalo solo el 24 de mayo."
     },
     {
       "title": "[Targeted] Upgrade To American Express Blue Cash Preferred, Get $150 Bonus + Waived Annual Fee",
@@ -48,8 +65,8 @@
       "summary_en": "",
       "title_zh": "[Targeted] Upgrade To American Express Blue Cash Preferred, Get $150 Bonus + Waived Annual Fee",
       "summary_zh": "",
-      "title_es": "[Targeted] Upgrade To American Express Blue Cash Preferred, Get $150 Bonus + Waived Annual Fee",
-      "summary_es": ""
+      "title_es": "[Dirigido] Actualiza a American Express Blue Cash Preferredй obtén un bono de $150 + exención de lacuota anual",
+      "summary_es": "Esta oferta permite a los clientes actualizar a la tarjeta American Express Blue Cash Preferred y recibir unbeno de $150 además de la exención de la cuota anual."
     },
     {
       "title": "Stop&Shop/Giant: Get 10x Points On Zift Giftcards (5/22-5/28)",
@@ -67,8 +84,8 @@
       "summary_en": "",
       "title_zh": "Stop&Shop/Giant: Get 10x Points On Zift Giftcards (5/22-5/28)",
       "summary_zh": "",
-      "title_es": "Stop&Shop/Giant: Get 10x Points On Zift Giftcards (5/22-5/28)",
-      "summary_es": ""
+      "title_es": "Stop&Shop/Giant: Obtén 10x puntos en tarjetas de regalo Zift (del 22/5 al 28/5)",
+      "summary_es": "Entre el 22 y el 28 de mayo, Stop&Shop y Giant otorgan 10 veces los puntos al comprar tarjetas de regalo Zift."
     },
     {
       "title": "Amazon, Costco: Macbook Air 2026 (13″) For $899",
@@ -84,8 +101,8 @@
       "summary_en": "",
       "title_zh": "Amazon, Costco: Macbook Air 2026 (13″) For $899",
       "summary_zh": "",
-      "title_es": "Amazon, Costco: Macbook Air 2026 (13″) For $899",
-      "summary_es": ""
+      "title_es": "Amazon, Costco: MacBook Air 2026 (13″) por $899",
+      "summary_es": "Amazon y Costco ofrecen el MacBook Air 2026 de 13 pulgadas por solo $899."
     },
     {
       "title": "Rakuten+ (Rakuten Plus) Membership Program ($50 Sign Up Bonus, $100 Annual Fee)",
@@ -99,8 +116,8 @@
       "summary_en": "",
       "title_zh": "Rakuten+ (Rakuten Plus) Membership Program ($50 Sign Up Bonus, $100 Annual Fee)",
       "summary_zh": "",
-      "title_es": "Rakuten+ (Rakuten Plus) Membership Program ($50 Sign Up Bonus, $100 Annual Fee)",
-      "summary_es": ""
+      "title_es": "Rakuten+ (Rakuten Plus): Programa de membresía ($50 de bono por registrarte, $100 de cuota anual)",
+      "summary_es": "Únete al programa Rakuten Plus y recibe un bono de $50 al inscribirte, con una cuota anual de $100."
     },
     {
       "title": "[CT] Connex Credit Union $350 Business Checking Bonus",
@@ -117,8 +134,8 @@
       "summary_en": "",
       "title_zh": "[CT] Connex Credit Union $350 Business Checking Bonus",
       "summary_zh": "",
-      "title_es": "[CT] Connex Credit Union $350 Business Checking Bonus",
-      "summary_es": ""
+      "title_es": "[CT] Connex Credit Union: Bono de $350 por cuenta corriente empresarial",
+      "summary_es": "Connex Credit Union ofrece un bono de $350 por abrir una cuenta corriente empresarial en Connecticut."
     },
     {
       "title": "[Targeted] Citi: Earn 5x Points On Online Spend",
@@ -135,8 +152,8 @@
       "summary_en": "",
       "title_zh": "[Targeted] Citi: Earn 5x Points On Online Spend",
       "summary_zh": "",
-      "title_es": "[Targeted] Citi: Earn 5x Points On Online Spend",
-      "summary_es": ""
+      "title_es": "[Dirigido] Citi: Gana 5x puntos en compras en línea",
+      "summary_es": "Los clientes seleccionados de Citi pueden ganar cinco veces los puntos en sus compras realizadas en línea."
     },
     {
       "title": "[MI] First Merchants Bank $400/$600 Checking Bonus",
@@ -153,8 +170,8 @@
       "summary_en": "",
       "title_zh": "[MI] First Merchants Bank $400/$600 Checking Bonus",
       "summary_zh": "",
-      "title_es": "[MI] First Merchants Bank $400/$600 Checking Bonus",
-      "summary_es": ""
+      "title_es": "[MI] First Merchants Bank: Bono de $400/$600 por cuenta corriente",
+      "summary_es": "First Merchants Bank, en Michigan, ofrece un bono de $400 a $600 al abrir una cuenta corriente."
     },
     {
       "title": "[Select Counties, MN] Bell Bank $500 Business Checking",
@@ -170,8 +187,8 @@
       "summary_en": "",
       "title_zh": "[Select Counties, MN] Bell Bank $500 Business Checking",
       "summary_zh": "",
-      "title_es": "[Select Counties, MN] Bell Bank $500 Business Checking",
-      "summary_es": ""
+      "title_es": "[Condados seleccionados, MN] Bell Bank: Bono de $500 por cuenta corriente empresarial",
+      "summary_es": "Bell Bank ofrece un bono de $500 por abrir una cuenta corriente empresarial en ciertos condados de Minnesota."
     },
     {
       "title": "[Targeted] American Express Hilton Spending Offers",
@@ -189,8 +206,8 @@
       "summary_en": "",
       "title_zh": "[Targeted] American Express Hilton Spending Offers",
       "summary_zh": "",
-      "title_es": "[Targeted] American Express Hilton Spending Offers",
-      "summary_es": ""
+      "title_es": "<DIRIGIDO> Ofertas de gasto en Hilton de American Express",
+      "summary_es": "American Express presenta ofertas de gasto exclusivas para tarjetas Hilton dirigidas a ciertos usuarios."
     },
     {
       "title": "Target: Purchase $80 In Baby Items (Diapers, Baby Wipes Etc) & Get $20 Target Giftcard",
@@ -205,8 +222,8 @@
       "summary_en": "",
       "title_zh": "Target: Purchase $80 In Baby Items (Diapers, Baby Wipes Etc) & Get $20 Target Giftcard",
       "summary_zh": "",
-      "title_es": "Target: Purchase $80 In Baby Items (Diapers, Baby Wipes Etc) & Get $20 Target Giftcard",
-      "summary_es": ""
+      "title_es": "Target: Compra $80 en artículos de bebé (pañales, toallitas, etc.) y recebe una tarjeta de regalo de $20 de Target",
+      "summary_es": "Spending $80 on baby products at Target rewards you with a $20 gift card."
     },
     {
       "title": "Postmates: $15 Off $30 With Promo Code LONGWEEKEND (Nationwide), Delivery Only",
@@ -221,8 +238,8 @@
       "summary_en": "",
       "title_zh": "Postmates: $15 Off $30 With Promo Code LONGWEEKEND (Nationwide), Delivery Only",
       "summary_zh": "",
-      "title_es": "Postmates: $15 Off $30 With Promo Code LONGWEEKEND (Nationwide), Delivery Only",
-      "summary_es": ""
+      "title_es": "Postmates: $15 de descuento en $30 con el código promocional LONGWEEKEND (a nivel nacional), solo entrega",
+      "summary_es": "Postmates ofrece $15 de descuento en pedidos de $30 usando el código LONGWEEKEND, válido solo para entregas a nivel nacional."
     },
     {
       "title": "DoorDash Promo Codes: 40% Off Dollar Tree With Promo Code DTONDD",
@@ -238,26 +255,9 @@
       "summary_en": "",
       "title_zh": "DoorDash Promo Codes: 40% Off Dollar Tree With Promo Code DTONDD",
       "summary_zh": "",
-      "title_es": "DoorDash Promo Codes: 40% Off Dollar Tree With Promo Code DTONDD",
-      "summary_es": ""
-    },
-    {
-      "title": "[CA] Exchange Bank $150 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/ca-exchange-bank-150-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "ca bank bonuses",
-        "direct deposit required"
-      ],
-      "ts": "2026-05-23T21:00:26.000Z",
-      "title_en": "[CA] Exchange Bank $150 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[CA] Exchange Bank $150 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[CA] Exchange Bank $150 Checking Bonus",
-      "summary_es": ""
+      "title_es": "DoorDash: Código promocional DTONDD para 40% de descuento en Dollar Tree",
+      "summary_es": "DoorDash permite un 40% de descuento en Dollar Tree al usar el código promocional DTONDD."
     }
   ],
-  "fetched": "2026-05-25T02:12:43.482Z"
+  "fetched": "2026-05-25T08:11:32.205Z"
 }
