@@ -1,6 +1,39 @@
 {
   "items": [
     {
+      "title": "[YMMV] Verizon: 25% Off Per Month For 12 Months",
+      "url": "https://www.doctorofcredit.com/ymmv-verizon-25-off-per-month-for-12-months/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "verizon"
+      ],
+      "ts": "2026-05-24T23:25:27.000Z",
+      "title_en": "[YMMV] Verizon: 25% Off Per Month For 12 Months",
+      "summary_en": "",
+      "title_zh": "[YMMV] Verizon: 25% Off Per Month For 12 Months",
+      "summary_zh": "",
+      "title_es": "[YMMV] Verizon: 25% Off Per Month For 12 Months",
+      "summary_es": ""
+    },
+    {
+      "title": "[YMMV] BJ’s Wholesale Club: $10 Off $100, Works On Giftcards 5/24 Only",
+      "url": "https://www.doctorofcredit.com/ymmv-bjs-wholesale-club-10-off-100-works-on-giftcards-5-24-only/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "bj's",
+        "bj's wholesale club"
+      ],
+      "ts": "2026-05-24T20:58:59.000Z",
+      "title_en": "[YMMV] BJ’s Wholesale Club: $10 Off $100, Works On Giftcards 5/24 Only",
+      "summary_en": "",
+      "title_zh": "[YMMV] BJ’s Wholesale Club: $10 Off $100, Works On Giftcards 5/24 Only",
+      "summary_zh": "",
+      "title_es": "[YMMV] BJ’s Wholesale Club: $10 Off $100, Works On Giftcards 5/24 Only",
+      "summary_es": ""
+    },
+    {
       "title": "[Targeted] Upgrade To American Express Blue Cash Preferred, Get $150 Bonus + Waived Annual Fee",
       "url": "https://www.doctorofcredit.com/ymmv-upgrade-to-american-express-blue-cash-preferred-get-75-bonus-waived-annual-fee/",
       "source": "Doctor of Credit",
@@ -55,18 +88,18 @@
       "summary_es": ""
     },
     {
-      "title": "Rakuten+ (Rakuten Plus) Membership Program ($50 Sign Up Bonus)",
+      "title": "Rakuten+ (Rakuten Plus) Membership Program ($50 Sign Up Bonus, $100 Annual Fee)",
       "url": "https://www.doctorofcredit.com/rakuten-rakuten-plus-membership-program-50-sign-up-bonus/",
       "source": "Doctor of Credit",
       "categories": [
         "Misc"
       ],
       "ts": "2026-05-24T17:00:13.000Z",
-      "title_en": "Rakuten+ (Rakuten Plus) Membership Program ($50 Sign Up Bonus)",
+      "title_en": "Rakuten+ (Rakuten Plus) Membership Program ($50 Sign Up Bonus, $100 Annual Fee)",
       "summary_en": "",
-      "title_zh": "Rakuten+ (Rakuten Plus) Membership Program ($50 Sign Up Bonus)",
+      "title_zh": "Rakuten+ (Rakuten Plus) Membership Program ($50 Sign Up Bonus, $100 Annual Fee)",
       "summary_zh": "",
-      "title_es": "Rakuten+ (Rakuten Plus) Membership Program ($50 Sign Up Bonus)",
+      "title_es": "Rakuten+ (Rakuten Plus) Membership Program ($50 Sign Up Bonus, $100 Annual Fee)",
       "summary_es": ""
     },
     {
@@ -224,41 +257,7 @@
       "summary_zh": "",
       "title_es": "[CA] Exchange Bank $150 Checking Bonus",
       "summary_es": ""
-    },
-    {
-      "title": "Staples: No Activation Fee on $200 Mastercard Gift Cards (5/24/26-5/30/26)",
-      "url": "https://www.doctorofcredit.com/staples-no-activation-fee-on-200-mastercard-gift-cards-12-5-12-11-limit-5-per-day/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Manufactured Spending",
-        "mastercard gift cards",
-        "staples"
-      ],
-      "ts": "2026-05-23T21:00:22.000Z",
-      "title_en": "Staples: No Activation Fee on $200 Mastercard Gift Cards (5/24/26-5/30/26)",
-      "summary_en": "",
-      "title_zh": "Staples: No Activation Fee on $200 Mastercard Gift Cards (5/24/26-5/30/26)",
-      "summary_zh": "",
-      "title_es": "Staples: No Activation Fee on $200 Mastercard Gift Cards (5/24/26-5/30/26)",
-      "summary_es": ""
-    },
-    {
-      "title": "[MN] SMW Financial Credit Union $250 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/mn-smw-financial-credit-union-250-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "direct deposit required",
-        "mn bank bonuses"
-      ],
-      "ts": "2026-05-23T20:00:24.000Z",
-      "title_en": "[MN] SMW Financial Credit Union $250 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[MN] SMW Financial Credit Union $250 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[MN] SMW Financial Credit Union $250 Checking Bonus",
-      "summary_es": ""
     }
   ],
-  "fetched": "2026-05-24T20:13:02.313Z"
+  "fetched": "2026-05-25T02:12:43.482Z"
 }
