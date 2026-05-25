@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
+  // Allow .mdx alongside .tsx as routable extensions so the long-form
+  // editorial content under content/guides/*.mdx can be dynamically
+  // imported by app/[lang]/guides/[slug]/page.tsx. Added 2026-05-24 for
+  // the opencard-adsense-longform-content AgentHub task.
+  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   // External image hosts allowed for next/image. Currently only Amazon's
   // media CDN, used by TravelProducts.tsx for affiliate product photos.
   images: {
@@ -60,4 +66,9 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// Wrap with @next/mdx so MDX files are processed at build time. No remark /
+// rehype plugins yet — GFM-style tables + auto heading slugs can be added
+// here later if pillar articles need them.
+const withMDX = createMDX({});
+
+export default withMDX(nextConfig);
