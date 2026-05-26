@@ -34,6 +34,28 @@ export type GuideSummary = {
 
 export const GUIDES: GuideSummary[] = [
   {
+    slug: "chase-5-24-rule",
+    title:
+      "Chase 5/24 Rule: what it is, what counts, and how to plan around it",
+    summary:
+      "A complete guide to Chase's unofficial 5/24 policy — which cards and accounts trigger it, how to audit your own count, and whether to go Chase-first or Chase-last given your current situation.",
+    published: "2026-05-26",
+    updated: "2026-05-26",
+    word_count: 2050,
+    tags: ["Chase", "5/24", "strategy", "application"],
+  },
+  {
+    slug: "welcome-offer-strategy",
+    title:
+      "Welcome Offer Strategy: how to find, evaluate, and actually capture sign-up bonuses",
+    summary:
+      "A practical framework for valuing any welcome offer, timing your applications around real spend, and avoiding the traps that cause most people to forfeit half the bonus before they ever earn it.",
+    published: "2026-05-25",
+    updated: "2026-05-25",
+    word_count: 2050,
+    tags: ["welcome offer", "strategy", "sign-up bonus"],
+  },
+  {
     slug: "transferable-points-101",
     title: "Transferable Points 101: how Chase UR, Amex MR, Citi TYP, and Capital One Miles actually work",
     summary:

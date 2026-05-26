@@ -6,6 +6,7 @@ import LanguageSwitcher from "@/app/components/LanguageSwitcher";
 import ThemeToggle from "@/app/components/ThemeToggle";
 import FloatingButtons from "@/app/components/FloatingButtons";
 import ToastViewport from "@/app/components/ToastViewport";
+import GuidesDropdown from "@/app/components/GuidesDropdown";
 import { locales, t, type Locale } from "@/lib/i18n";
 
 const geistSans = Geist({
@@ -123,7 +124,8 @@ export default async function LocaleLayout({ children, params }: Props) {
             </a>
             <div className="flex items-center gap-3 whitespace-nowrap">
               <nav className="flex items-center gap-3 text-sm text-slate-600 whitespace-nowrap">
-                <a href={`/${lang}/#about`} className="hover:text-slate-900 transition-colors">
+                <GuidesDropdown lang={lang} />
+                <a href={`/${lang}/#about`} className="hover:text-slate-900 transition-colors dark:text-slate-400 dark:hover:text-slate-100">
                   {t("nav.about", locale)}
                 </a>
               </nav>
