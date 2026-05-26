@@ -1,6 +1,6 @@
 // FORCE_UPDATE_KEY = "7214affe-c79d-4e23-921e-0d93a53a227e"
 import { Suspense } from "react";
-import { Bookmark } from "lucide-react";
+import { Bookmark, Star } from "lucide-react";
 import HeroButtons from "@/app/components/HeroButtons";
 import { getAllCards, getAllIssuers, getAllTags } from "@/lib/cards";
 import CardGrid from "@/app/components/CardGrid";
@@ -86,6 +86,32 @@ export default async function HomePage({ params }: Props) {
               {lang === "zh" ? "開啟" : lang === "zh-cn" ? "打开" : lang === "es" ? "Abrir" : "Open"}
             </span>
             <span className="text-blue-400 group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
+      </div>
+
+      {/* Elevated Offers Banner */}
+      <div className="mb-4">
+        <a
+          href={`/${lang}/elevated-offers`}
+          className="flex items-center justify-between bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-amber-950/40 dark:to-yellow-950/40 border border-amber-200 dark:border-amber-800 rounded-xl px-5 py-3.5 hover:from-amber-100 hover:to-yellow-100 dark:hover:from-amber-900/50 dark:hover:to-yellow-900/50 transition-all group"
+        >
+          <div className="flex items-center gap-3">
+            <Star className="w-6 h-6 text-amber-500" />
+            <div>
+              <div className="font-semibold text-slate-800 dark:text-slate-100 text-sm group-hover:text-amber-700 dark:group-hover:text-amber-300 transition-colors">
+                {lang === "zh" ? "高額開卡禮" : lang === "zh-cn" ? "高额开卡奖励" : lang === "es" ? "Mejores bonos de bienvenida" : "Top welcome offers"}
+              </div>
+              <div className="text-xs text-slate-500 dark:text-slate-400">
+                {lang === "zh" ? "目前市場最高價值的開卡獎勵，按估值排序" : lang === "zh-cn" ? "目前市场最高价值的开卡奖励，按估值排序" : lang === "es" ? "Los bonos de inscripción de mayor valor disponibles ahora" : "Highest-value sign-up bonuses right now, ranked by estimated value"}
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-amber-600 dark:text-amber-400 font-medium group-hover:translate-x-0.5 transition-transform">
+              {lang === "zh" ? "查看" : lang === "zh-cn" ? "查看" : lang === "es" ? "Ver" : "View"}
+            </span>
+            <span className="text-amber-400 group-hover:translate-x-1 transition-transform">→</span>
           </div>
         </a>
       </div>

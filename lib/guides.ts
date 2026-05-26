@@ -34,6 +34,17 @@ export type GuideSummary = {
 
 export const GUIDES: GuideSummary[] = [
   {
+    slug: "welcome-offer-strategy",
+    title:
+      "Welcome Offer Strategy: how to find, evaluate, and actually capture sign-up bonuses",
+    summary:
+      "A practical framework for valuing any welcome offer, timing your applications around real spend, and avoiding the traps that cause most people to forfeit half the bonus before they ever earn it.",
+    published: "2026-05-25",
+    updated: "2026-05-25",
+    word_count: 2050,
+    tags: ["welcome offer", "strategy", "sign-up bonus"],
+  },
+  {
     slug: "transferable-points-101",
     title: "Transferable Points 101: how Chase UR, Amex MR, Citi TYP, and Capital One Miles actually work",
     summary:
