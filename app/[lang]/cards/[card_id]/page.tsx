@@ -37,6 +37,25 @@ function formatValue(val: string | number): string {
   return str.startsWith('$') ? str : `$${str}`;
 }
 
+function localizedBenefitText(text: string | undefined, lang: string): string {
+  if (!text) return "";
+  const normalized = text.trim();
+  const benefitText: Record<string, Partial<Record<string, string>>> = {
+    "Visa Infinite Benefits": {
+      zh: "Visa Infinite 福利",
+      "zh-cn": "Visa Infinite 福利",
+      es: "Beneficios Visa Infinite",
+    },
+    "Includes trip cancellation/interruption insurance, trip delay reimbursement, lost luggage reimbursement, and other Visa Infinite protections.": {
+      zh: "包含旅遊取消／中斷保險、旅遊延誤理賠、行李遺失理賠，以及其他 Visa Infinite 保障。",
+      "zh-cn": "包含旅行取消／中断保险、旅行延误理赔、行李遗失理赔，以及其他 Visa Infinite 保障。",
+      es: "Incluye seguro de cancelación/interrupción de viaje, reembolso por retrasos de viaje, reembolso por equipaje perdido y otras protecciones Visa Infinite.",
+    },
+  };
+
+  return benefitText[normalized]?.[lang] || text;
+}
+
 // Map site lang → BCP-47 for Intl. zh → zh-TW per project default.
 const LOCALE_MAP: Record<string, string> = { zh: "zh-TW", en: "en", es: "es" };
 
@@ -343,8 +362,8 @@ export default async function CardDetailPage({ params }: Props) {
                           <div className="space-y-2">
                             {card.travel_benefits.other_benefits!.map((ob, i) => (
                               <div key={i}>
-                                <span className="text-sm text-slate-800 font-medium">{ob.name}</span>
-                                <p className="text-xs text-slate-500">{ob.description}</p>
+                                <span className="text-sm text-slate-800 font-medium">{localizedBenefitText(ob.name, lang)}</span>
+                                <p className="text-xs text-slate-500">{localizedBenefitText(ob.description, lang)}</p>
                               </div>
                             ))}
                           </div>

@@ -100,9 +100,26 @@ List: ${JSON.stringify(dataList)}`;
       .filter(Boolean)
       .join("");
     try {
-      raw = raw.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
-      const jsonMatch = raw.match(/\[\s*\{[\s\S]*?\}\s*\]/s) || raw.match(/\{[\s\S]*\}/s);
-      const parsed = JSON.parse(jsonMatch ? jsonMatch[0] : raw);
+      // Try to extract array of objects [{idx, title, summary}, ...]
+      // Strategy: find [ then scan for matching ] at top-level, then extract objects
+      let parsed = null;
+      const rawTrim = raw.trim();
+      if (rawTrim.startsWith('[')) {
+        let depth = 0, end = -1;
+        for (let i = 0; i < rawTrim.length; i++) {
+          const c = rawTrim[i];
+          if (c === '[') depth++;
+          else if (c === ']') { depth--; if (depth === 0) { end = i; break; } }
+        }
+        if (end > 0) {
+          try { parsed = JSON.parse(rawTrim.slice(0, end + 1)); } catch(e) {}
+        }
+      }
+      // Fallback: try any JSON array or object
+      if (!parsed) {
+        const jsonMatch = raw.match(/\[[\s\S]*\]/s) || raw.match(/\{[\s\S]*\}/s);
+        try { parsed = JSON.parse(jsonMatch ? jsonMatch[0] : raw); } catch(e) {}
+      }
       return items.map((item, i) => {
         const translation = (parsed || []).find(r => r.idx === i);
         return {
@@ -151,8 +168,8 @@ async function sync() {
     const translated = await translateBatch(limitedItems, lang);
     processed = processed.map((item, i) => ({
       ...item,
-      [`title_${lang}`]: translated[i][`title_${lang}`],
-      [`summary_${lang}`]: translated[i][`summary_${lang}`],
+      [`title_${lang}`]: translated[i][`title_${lang}`] ?? item.title,
+      [`summary_${lang}`]: translated[i][`summary_${lang}`] ?? "",
     }));
   }
 
