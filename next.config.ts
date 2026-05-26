@@ -66,9 +66,17 @@ const nextConfig: NextConfig = {
   },
 };
 
-// Wrap with @next/mdx so MDX files are processed at build time. No remark /
-// rehype plugins yet — GFM-style tables + auto heading slugs can be added
-// here later if pillar articles need them.
-const withMDX = createMDX({});
+// Wrap with @next/mdx so MDX files are processed at build time.
+// remark-gfm enables GitHub-flavored markdown — tables, strikethrough, task
+// lists, autolinks. Needed by pillar guides (the Transferable Points 101
+// "four programs at a glance" table was rendering as literal pipe-and-dash
+// text without this plugin). Specified as a string per the Next.js Turbopack
+// requirement (node_modules/next/dist/docs/01-app/02-guides/mdx.md
+// § Using Plugins with Turbopack).
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: ["remark-gfm"],
+  },
+});
 
 export default withMDX(nextConfig);
