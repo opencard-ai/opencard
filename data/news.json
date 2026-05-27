@@ -1,6 +1,105 @@
 {
   "items": [
     {
+      "title": "BankAmeriDeals: UberEats, Spend $25+ & Get $15 Back",
+      "url": "https://www.doctorofcredit.com/bankamerideals-ubereats-spend-25-get-15-back/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "bank amerideals",
+        "UberEATS"
+      ],
+      "ts": "2026-05-27T01:20:45.000Z",
+      "title_en": "BankAmeriDeals: UberEats, Spend $25+ & Get $15 Back",
+      "summary_en": "",
+      "title_zh": "BankAmeriDeals: UberEats, Spend $25+ & Get $15 Back",
+      "summary_zh": "",
+      "title_es": "BankAmeriDeals: UberEats, gasta $25+ y recibe $15 de vuelta",
+      "summary_es": "Si gastas al menos $25 en UberEats, Bank of America te devuelve $15."
+    },
+    {
+      "title": "[Targeted] AmEx Offer: Caesars Entertainment, Spend $200+ & Receive $40 Statement Credit",
+      "url": "https://www.doctorofcredit.com/targeted-amex-offer-caesars-entertainment-spend-200-receive-40-statement-credit/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "AmEx Offers"
+      ],
+      "ts": "2026-05-26T23:22:20.000Z",
+      "title_en": "[Targeted] AmEx Offer: Caesars Entertainment, Spend $200+ & Receive $40 Statement Credit",
+      "summary_en": "",
+      "title_zh": "[Targeted] AmEx Offer: Caesars Entertainment, Spend $200+ & Receive $40 Statement Credit",
+      "summary_zh": "",
+      "title_es": "[Dirigido] Oferta de AmEx: Caesars Entertainment, gasta $200+ y recibe un crédito de estado de $40",
+      "summary_es": "Los tarjetahabientes de American Express seleccionados reciben un crédito de $40 al gastar $200 o más en Caesars Entertainment."
+    },
+    {
+      "title": "American Airlines Shutting Down Accounts [Recreated Accounts From ‘Toby’ Shutdown]",
+      "url": "https://www.doctorofcredit.com/american-airlines-shutting-down-accounts-recreated-accounts-from-toby-shutdown/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "american airlines"
+      ],
+      "ts": "2026-05-26T21:43:53.000Z",
+      "title_en": "American Airlines Shutting Down Accounts [Recreated Accounts From ‘Toby’ Shutdown]",
+      "summary_en": "",
+      "title_zh": "American Airlines Shutting Down Accounts [Recreated Accounts From ‘Toby’ Shutdown]",
+      "summary_zh": "",
+      "title_es": "American Airlines cierra cuentas [Cuentas recreadas tras el cierre de ‘Toby’]",
+      "summary_es": "American Airlines ha decidido cerrar cuentas, y se han recreado algunas cuentas tras la anterior desactivación de Toby."
+    },
+    {
+      "title": "[YMMV] Amazon: Get $5 Off Grocery Purchases (Free Items)",
+      "url": "https://www.doctorofcredit.com/ymmv-amazon-get-5-off-grocery-purchases-free-items/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "amazon"
+      ],
+      "ts": "2026-05-26T21:34:25.000Z",
+      "title_en": "[YMMV] Amazon: Get $5 Off Grocery Purchases (Free Items)",
+      "summary_en": "",
+      "title_zh": "[YMMV] Amazon: Get $5 Off Grocery Purchases (Free Items)",
+      "summary_zh": "",
+      "title_es": "[YMMV] Amazon: Obtén $5 de descuento en compras de comestibles (artículos gratuitos)",
+      "summary_es": "Amazon ofrece un descuento de $5 en compras de comestibles, aunque la disponibilidad puede variar."
+    },
+    {
+      "title": "Breeze Airways: 45% Off Base Price With Promo Code BIRTHDAY",
+      "url": "https://www.doctorofcredit.com/breeze-airways-45-off-base-price-with-promo-code-birthday/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Travel",
+        "breeze airways"
+      ],
+      "ts": "2026-05-26T21:27:09.000Z",
+      "title_en": "Breeze Airways: 45% Off Base Price With Promo Code BIRTHDAY",
+      "summary_en": "",
+      "title_zh": "Breeze Airways: 45% Off Base Price With Promo Code BIRTHDAY",
+      "summary_zh": "",
+      "title_es": "Breeze Airways: 45% de descuento en el precio base con el código promocional BIRTHDAY",
+      "summary_es": "Usando el código BIRTHDAY, Breeze Airways ofrece un 45% de descuento sobre la tarifa base."
+    },
+    {
+      "title": "[Rumor] Citi To Discontinue Custom Cash Card",
+      "url": "https://www.doctorofcredit.com/rumor-citi-to-discontinue-custom-cash-card/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "big",
+        "Citi",
+        "citi custom cash",
+        "rumor"
+      ],
+      "ts": "2026-05-26T21:17:46.000Z",
+      "title_en": "[Rumor] Citi To Discontinue Custom Cash Card",
+      "summary_en": "",
+      "title_zh": "[Rumor] Citi To Discontinue Custom Cash Card",
+      "summary_zh": "",
+      "title_es": "[Rumores] Citi discontinuará la tarjeta Custom Cash",
+      "summary_es": "Circulan rumores de que Citi dejará de ofrecer su tarjeta Custom Cash."
+    },
+    {
       "title": "(Update) Capital One Rebrands Spark Miles & Spark Miles Select to Venture Business and VentureOne Business (150k Bonus)",
       "url": "https://www.doctorofcredit.com/capital-one-rebrands-spark-miles-spark-miles-select-to-venture-business-and-ventureone-business/",
       "source": "Doctor of Credit",
@@ -16,8 +115,8 @@
       "summary_en": "",
       "title_zh": "(Update) Capital One Rebrands Spark Miles & Spark Miles Select to Venture Business and VentureOne Business (150k Bonus)",
       "summary_zh": "",
-      "title_es": "(Update) Capital One Rebrands Spark Miles & Spark Miles Select to Venture Business and VentureOne Business (150k Bonus)",
-      "summary_es": ""
+      "title_es": "(Actualización) Capital One renombra Spark Miles y Spark Miles Select a Venture Business y VentureOne Business (bonificación de 150k)",
+      "summary_es": "Capital One ha cambiado el nombre de sus productos Spark Miles y Spark Miles Select a Venture Business y VentureOne Business, con un bono de 150,000 millas."
     },
     {
       "title": "[YMMV – Play Points Membership] Google 32GB Google TV Streamer (4K) For $39.99",
@@ -32,8 +131,8 @@
       "summary_en": "",
       "title_zh": "[YMMV – Play Points Membership] Google 32GB Google TV Streamer (4K) For $39.99",
       "summary_zh": "",
-      "title_es": "[YMMV – Play Points Membership] Google 32GB Google TV Streamer (4K) For $39.99",
-      "summary_es": ""
+      "title_es": "[YMMV – Membresía Play Points] Google Google TV Streamer de 32GB (4K) por $39.99",
+      "summary_es": "Los miembros de Play Points pueden adquirir un dispositivo Google TV Streamer de 32GB 4K por $39.99, si la oferta está disponible."
     },
     {
       "title": "T-Life (T-Mobile Tuesday): Free 7-Eleven Roller Grill Item & More",
@@ -49,8 +148,8 @@
       "summary_en": "",
       "title_zh": "T-Life (T-Mobile Tuesday): Free 7-Eleven Roller Grill Item & More",
       "summary_zh": "",
-      "title_es": "T-Life (T-Mobile Tuesday): Free 7-Eleven Roller Grill Item & More",
-      "summary_es": ""
+      "title_es": "T-Life (Martes de T-Mobile): Artículo gratuito de la Parrilla de 7-Eleven y más",
+      "summary_es": "T-Mobile ofrece a sus clientes un artículo gratis de la parrilla de 7-Eleven y otras ventajas dentro de su programa T-Life."
     },
     {
       "title": "Exxon Mobil: Download App & Earn $5 In Points On First Two Fill Ups Of 8+ Gallons",
@@ -67,8 +166,8 @@
       "summary_en": "",
       "title_zh": "Exxon Mobil: Download App & Earn $5 In Points On First Two Fill Ups Of 8+ Gallons",
       "summary_zh": "",
-      "title_es": "Exxon Mobil: Download App & Earn $5 In Points On First Two Fill Ups Of 8+ Gallons",
-      "summary_es": ""
+      "title_es": "Exxon Mobil: Descarga la aplicación y gana $5 en puntos en las primeras dos cargas de 8+ galones",
+      "summary_es": "Al descargar la app de Exxon Mobil y realizar las primeras dos recargas de al menos 8 galones, se obtienen $5 en puntos."
     },
     {
       "title": "(Live 5/27) Bank of America Announces Negative Changes To Preferred Rewards",
@@ -84,8 +183,8 @@
       "summary_en": "",
       "title_zh": "(Live 5/27) Bank of America Announces Negative Changes To Preferred Rewards",
       "summary_zh": "",
-      "title_es": "(Live 5/27) Bank of America Announces Negative Changes To Preferred Rewards",
-      "summary_es": ""
+      "title_es": "(En vivo 5/27) Bank of America anuncia cambios negativos en Preferred Rewards",
+      "summary_es": "Bank of America ha informado de modificaciones adversas al programa Preferred Rewards, que afectan a los beneficios de sus clientes."
     },
     {
       "title": "Chase Offers/U.S. Bank: Aldi 5% Back ($3 Cashback Max)",
@@ -101,8 +200,8 @@
       "summary_en": "",
       "title_zh": "Chase Offers/U.S. Bank: Aldi 5% Back ($3 Cashback Max)",
       "summary_zh": "",
-      "title_es": "Chase Offers/U.S. Bank: Aldi 5% Back ($3 Cashback Max)",
-      "summary_es": ""
+      "title_es": "Chase Offers/U.S. Bank: Aldi devuelve el 5% (máximo $3 de reembolso)",
+      "summary_es": "Los clientes de Chase y U.S. Bank pueden obtener un reembolso del 5% en compras en Aldi, hasta un máximo de $3."
     },
     {
       "title": "Capital One Shopping: Get 45% Back On Viator (Tours, Transfers, Activities)",
@@ -119,8 +218,8 @@
       "summary_en": "",
       "title_zh": "Capital One Shopping: Get 45% Back On Viator (Tours, Transfers, Activities)",
       "summary_zh": "",
-      "title_es": "Capital One Shopping: Get 45% Back On Viator (Tours, Transfers, Activities)",
-      "summary_es": ""
+      "title_es": "Capital One Shopping: Obtén un 45% de reembolso en Viator (tours, traslados, actividades)",
+      "summary_es": "Capital One Shopping ofrece un 45% de cashback en reservaciones de Viator para tours, traslados y actividades."
     },
     {
       "title": "Chase Ultimate Rewards: Get 10% Discount On Select Giftcard Redemptions (One4All, Home Depot, Lowe’s, Uber, DoorDash & More)",
@@ -137,8 +236,8 @@
       "summary_en": "",
       "title_zh": "Chase Ultimate Rewards: Get 10% Discount On Select Giftcard Redemptions (One4All, Home Depot, Lowe’s, Uber, DoorDash & More)",
       "summary_zh": "",
-      "title_es": "Chase Ultimate Rewards: Get 10% Discount On Select Giftcard Redemptions (One4All, Home Depot, Lowe’s, Uber, DoorDash & More)",
-      "summary_es": ""
+      "title_es": "Chase Ultimate Rewards: Obtén un 10% de descuento en el canje de tarjetas de regalo seleccionadas (One4All, Home Depot, Lowe’s, Uber, DoorDash y más)",
+      "summary_es": "Los puntos de Chase Ultimate Rewards se pueden usar con un 10% de descuento en tarjetas de regalo de One4All, Home Depot, Lowe’s, Uber, DoorDash y otras."
     },
     {
       "title": "Recap: TradeUP Hack, Unannounced Hyatt Changes & More",
@@ -152,108 +251,9 @@
       "summary_en": "",
       "title_zh": "Recap: TradeUP Hack, Unannounced Hyatt Changes & More",
       "summary_zh": "",
-      "title_es": "Recap: TradeUP Hack, Unannounced Hyatt Changes & More",
-      "summary_es": ""
-    },
-    {
-      "title": "Best Posts Last Week: $10 Back On Amazon, 50% Off Amazon & Discover it $200 + Double Cashback Deal",
-      "url": "https://www.doctorofcredit.com/best-posts-last-week-10-back-on-amazon-50-off-amazon-discover-it-200-double-cashback-deal/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Sunday Roundup"
-      ],
-      "ts": "2026-05-25T13:00:31.000Z",
-      "title_en": "Best Posts Last Week: $10 Back On Amazon, 50% Off Amazon & Discover it $200 + Double Cashback Deal",
-      "summary_en": "",
-      "title_zh": "Best Posts Last Week: $10 Back On Amazon, 50% Off Amazon & Discover it $200 + Double Cashback Deal",
-      "summary_zh": "",
-      "title_es": "Best Posts Last Week: $10 Back On Amazon, 50% Off Amazon & Discover it $200 + Double Cashback Deal",
-      "summary_es": ""
-    },
-    {
-      "title": "Wells Fargo Choice Privileges 60,000 Points",
-      "url": "https://www.doctorofcredit.com/wells-fargo-choice-privileges-60000-points/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "wells fago",
-        "wells fargo choice",
-        "wells fargo Choice Privileges"
-      ],
-      "ts": "2026-05-25T10:45:32.000Z",
-      "title_en": "Wells Fargo Choice Privileges 60,000 Points",
-      "summary_en": "",
-      "title_zh": "Wells Fargo Choice Privileges 60,000 Points",
-      "summary_zh": "",
-      "title_es": "Wells Fargo Choice Privileges 60,000 Points",
-      "summary_es": ""
-    },
-    {
-      "title": "7-Eleven 7NOW App Promo Codes: $20 off $30 With Promo Code MONDAY20",
-      "url": "https://www.doctorofcredit.com/7-eleven-7now-app-promo-codes/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "7-Eleven 7NOW"
-      ],
-      "ts": "2026-05-25T10:31:41.000Z",
-      "title_en": "7-Eleven 7NOW App Promo Codes: $20 off $30 With Promo Code MONDAY20",
-      "summary_en": "",
-      "title_zh": "7-Eleven 7NOW App Promo Codes: $20 off $30 With Promo Code MONDAY20",
-      "summary_zh": "",
-      "title_es": "7-Eleven 7NOW App Promo Codes: $20 off $30 With Promo Code MONDAY20",
-      "summary_es": ""
-    },
-    {
-      "title": "[Restricted, OK only] TTCU Federal Credit Union $250 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/restricted-ok-only-ttcu-federal-credit-union-150-checking-bonus-direct-deposit-optional/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "direct deposit required",
-        "ok bank bonuses"
-      ],
-      "ts": "2026-05-25T03:45:30.000Z",
-      "title_en": "[Restricted, OK only] TTCU Federal Credit Union $250 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[Restricted, OK only] TTCU Federal Credit Union $250 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[Restricted, OK only] TTCU Federal Credit Union $250 Checking Bonus",
-      "summary_es": ""
-    },
-    {
-      "title": "[YMMV] Verizon: 25% Off Per Month For 12 Months",
-      "url": "https://www.doctorofcredit.com/ymmv-verizon-25-off-per-month-for-12-months/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "verizon"
-      ],
-      "ts": "2026-05-24T23:25:27.000Z",
-      "title_en": "[YMMV] Verizon: 25% Off Per Month For 12 Months",
-      "summary_en": "",
-      "title_zh": "[YMMV] Verizon: 25% Off Per Month For 12 Months",
-      "summary_zh": "",
-      "title_es": "[YMMV] Verizon: 25% Off Per Month For 12 Months",
-      "summary_es": ""
-    },
-    {
-      "title": "[Expired] [YMMV] BJ’s Wholesale Club: $10 Off $100, Works On Giftcards 5/24 Only",
-      "url": "https://www.doctorofcredit.com/ymmv-bjs-wholesale-club-10-off-100-works-on-giftcards-5-24-only/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "bj's",
-        "bj's wholesale club"
-      ],
-      "ts": "2026-05-24T20:58:59.000Z",
-      "title_en": "[Expired] [YMMV] BJ’s Wholesale Club: $10 Off $100, Works On Giftcards 5/24 Only",
-      "summary_en": "",
-      "title_zh": "[Expired] [YMMV] BJ’s Wholesale Club: $10 Off $100, Works On Giftcards 5/24 Only",
-      "summary_zh": "",
-      "title_es": "[Expired] [YMMV] BJ’s Wholesale Club: $10 Off $100, Works On Giftcards 5/24 Only",
-      "summary_es": ""
+      "title_es": "Resumen: Hack de TradeUP, cambios no anunciados de Hyatt y más",
+      "summary_es": "Este resumen cubre el hackeo de TradeUP, cambios no revelados de Hyatt y otras noticias adicionales."
     }
   ],
-  "fetched": "2026-05-26T20:09:24.303Z"
+  "fetched": "2026-05-27T02:10:06.072Z"
 }
