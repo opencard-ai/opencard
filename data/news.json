@@ -12,10 +12,10 @@
       "ts": "2026-05-27T01:20:45.000Z",
       "title_en": "BankAmeriDeals: UberEats, Spend $25+ & Get $15 Back",
       "summary_en": "",
-      "title_zh": "BankAmeriDeals: UberEats, Spend $25+ & Get $15 Back",
-      "summary_zh": "",
-      "title_es": "BankAmeriDeals: UberEats, gasta $25+ y recibe $15 de vuelta",
-      "summary_es": "Si gastas al menos $25 en UberEats, Bank of America te devuelve $15."
+      "title_zh": "BankAmeriDeals：UberEats，消費 $25 以上可獲得 $15 回饋",
+      "summary_zh": "在 UberEats 消費滿 $25 可獲得 $15 的回饋",
+      "title_es": "BankAmeriDeals: UberEats, Spend $25+ & Get $15 Back",
+      "summary_es": ""
     },
     {
       "title": "[Targeted] AmEx Offer: Caesars Entertainment, Spend $200+ & Receive $40 Statement Credit",
@@ -27,10 +27,10 @@
       "ts": "2026-05-26T23:22:20.000Z",
       "title_en": "[Targeted] AmEx Offer: Caesars Entertainment, Spend $200+ & Receive $40 Statement Credit",
       "summary_en": "",
-      "title_zh": "[Targeted] AmEx Offer: Caesars Entertainment, Spend $200+ & Receive $40 Statement Credit",
-      "summary_zh": "",
-      "title_es": "[Dirigido] Oferta de AmEx: Caesars Entertainment, gasta $200+ y recibe un crédito de estado de $40",
-      "summary_es": "Los tarjetahabientes de American Express seleccionados reciben un crédito de $40 al gastar $200 o más en Caesars Entertainment."
+      "title_zh": "[目標優惠] 美國運通優惠：Caesars 娛樂，消費 $200 以上可獲得 $40 刷卡金",
+      "summary_zh": "持美國運通卡在 Caesars 娛樂消費滿 $200 可獲得 $40 刷卡金",
+      "title_es": "[Targeted] AmEx Offer: Caesars Entertainment, Spend $200+ & Receive $40 Statement Credit",
+      "summary_es": ""
     },
     {
       "title": "American Airlines Shutting Down Accounts [Recreated Accounts From ‘Toby’ Shutdown]",
@@ -43,10 +43,10 @@
       "ts": "2026-05-26T21:43:53.000Z",
       "title_en": "American Airlines Shutting Down Accounts [Recreated Accounts From ‘Toby’ Shutdown]",
       "summary_en": "",
-      "title_zh": "American Airlines Shutting Down Accounts [Recreated Accounts From ‘Toby’ Shutdown]",
-      "summary_zh": "",
-      "title_es": "American Airlines cierra cuentas [Cuentas recreadas tras el cierre de ‘Toby’]",
-      "summary_es": "American Airlines ha decidido cerrar cuentas, y se han recreado algunas cuentas tras la anterior desactivación de Toby."
+      "title_zh": "美國航空公司關閉帳戶 [由『Toby』關閉事件重新創建的帳戶]",
+      "summary_zh": "美國航空正在關閉因『Toby』事件重新建立的帳戶",
+      "title_es": "American Airlines Shutting Down Accounts [Recreated Accounts From ‘Toby’ Shutdown]",
+      "summary_es": ""
     },
     {
       "title": "[YMMV] Amazon: Get $5 Off Grocery Purchases (Free Items)",
@@ -59,10 +59,10 @@
       "ts": "2026-05-26T21:34:25.000Z",
       "title_en": "[YMMV] Amazon: Get $5 Off Grocery Purchases (Free Items)",
       "summary_en": "",
-      "title_zh": "[YMMV] Amazon: Get $5 Off Grocery Purchases (Free Items)",
-      "summary_zh": "",
-      "title_es": "[YMMV] Amazon: Obtén $5 de descuento en compras de comestibles (artículos gratuitos)",
-      "summary_es": "Amazon ofrece un descuento de $5 en compras de comestibles, aunque la disponibilidad puede variar."
+      "title_zh": "[YMMV] Amazon：購買生鮮可享 $5 折扣（免費商品）",
+      "summary_zh": "Amazon 購買生鮮可省 $5，視供應情況而定",
+      "title_es": "[YMMV] Amazon: Get $5 Off Grocery Purchases (Free Items)",
+      "summary_es": ""
     },
     {
       "title": "Breeze Airways: 45% Off Base Price With Promo Code BIRTHDAY",
@@ -75,10 +75,10 @@
       "ts": "2026-05-26T21:27:09.000Z",
       "title_en": "Breeze Airways: 45% Off Base Price With Promo Code BIRTHDAY",
       "summary_en": "",
-      "title_zh": "Breeze Airways: 45% Off Base Price With Promo Code BIRTHDAY",
-      "summary_zh": "",
-      "title_es": "Breeze Airways: 45% de descuento en el precio base con el código promocional BIRTHDAY",
-      "summary_es": "Usando el código BIRTHDAY, Breeze Airways ofrece un 45% de descuento sobre la tarifa base."
+      "title_zh": "Breeze Airways：使用優惠碼 BIRTHDAY 可享基價 45% 折扣",
+      "summary_zh": "Breeze Airways 促銷，使用 BIRTHDAY 優惠碼可享基價 45% 折扣",
+      "title_es": "Breeze Airways: 45% Off Base Price With Promo Code BIRTHDAY",
+      "summary_es": ""
     },
     {
       "title": "[Rumor] Citi To Discontinue Custom Cash Card",
@@ -94,10 +94,10 @@
       "ts": "2026-05-26T21:17:46.000Z",
       "title_en": "[Rumor] Citi To Discontinue Custom Cash Card",
       "summary_en": "",
-      "title_zh": "[Rumor] Citi To Discontinue Custom Cash Card",
-      "summary_zh": "",
-      "title_es": "[Rumores] Citi discontinuará la tarjeta Custom Cash",
-      "summary_es": "Circulan rumores de que Citi dejará de ofrecer su tarjeta Custom Cash."
+      "title_zh": "[謠言] 花旗將停產 Custom Cash 卡",
+      "summary_zh": "傳言花旗銀行將停產 Custom Cash 信用卡",
+      "title_es": "[Rumor] Citi To Discontinue Custom Cash Card",
+      "summary_es": ""
     },
     {
       "title": "(Update) Capital One Rebrands Spark Miles & Spark Miles Select to Venture Business and VentureOne Business (150k Bonus)",
@@ -113,10 +113,10 @@
       "ts": "2026-05-26T17:26:35.000Z",
       "title_en": "(Update) Capital One Rebrands Spark Miles & Spark Miles Select to Venture Business and VentureOne Business (150k Bonus)",
       "summary_en": "",
-      "title_zh": "(Update) Capital One Rebrands Spark Miles & Spark Miles Select to Venture Business and VentureOne Business (150k Bonus)",
-      "summary_zh": "",
-      "title_es": "(Actualización) Capital One renombra Spark Miles y Spark Miles Select a Venture Business y VentureOne Business (bonificación de 150k)",
-      "summary_es": "Capital One ha cambiado el nombre de sus productos Spark Miles y Spark Miles Select a Venture Business y VentureOne Business, con un bono de 150,000 millas."
+      "title_zh": "（更新）Capital One 將 Spark Miles 與 Spark Miles Select 改名為 Venture Business 與 VentureOne Business（150k 獎勵）",
+      "summary_zh": "Capital One 將 Spark Miles 系列重新命名為 Venture Business 系列，並提供 150k 獎勵",
+      "title_es": "(Update) Capital One Rebrands Spark Miles & Spark Miles Select to Venture Business and VentureOne Business (150k Bonus)",
+      "summary_es": ""
     },
     {
       "title": "[YMMV – Play Points Membership] Google 32GB Google TV Streamer (4K) For $39.99",
@@ -129,10 +129,10 @@
       "ts": "2026-05-26T10:56:32.000Z",
       "title_en": "[YMMV – Play Points Membership] Google 32GB Google TV Streamer (4K) For $39.99",
       "summary_en": "",
-      "title_zh": "[YMMV – Play Points Membership] Google 32GB Google TV Streamer (4K) For $39.99",
-      "summary_zh": "",
-      "title_es": "[YMMV – Membresía Play Points] Google Google TV Streamer de 32GB (4K) por $39.99",
-      "summary_es": "Los miembros de Play Points pueden adquirir un dispositivo Google TV Streamer de 32GB 4K por $39.99, si la oferta está disponible."
+      "title_zh": "[YMMV – Play Points 會員] Google 32GB Google TV 串流播放器 (4K) 售價 $39.99",
+      "summary_zh": "Play Points 會員可享 Google 32GB Google TV 4K 串流播放器 $39.99 優惠，視庫存而定",
+      "title_es": "[YMMV – Play Points Membership] Google 32GB Google TV Streamer (4K) For $39.99",
+      "summary_es": ""
     },
     {
       "title": "T-Life (T-Mobile Tuesday): Free 7-Eleven Roller Grill Item & More",
@@ -146,10 +146,10 @@
       "ts": "2026-05-26T10:13:41.000Z",
       "title_en": "T-Life (T-Mobile Tuesday): Free 7-Eleven Roller Grill Item & More",
       "summary_en": "",
-      "title_zh": "T-Life (T-Mobile Tuesday): Free 7-Eleven Roller Grill Item & More",
-      "summary_zh": "",
-      "title_es": "T-Life (Martes de T-Mobile): Artículo gratuito de la Parrilla de 7-Eleven y más",
-      "summary_es": "T-Mobile ofrece a sus clientes un artículo gratis de la parrilla de 7-Eleven y otras ventajas dentro de su programa T-Life."
+      "title_zh": "T-Life（T-Mobile Tuesday）：免費 7-Eleven 滾筒烤腸及更多優惠",
+      "summary_zh": "T-Mobile Tuesday 提供免費 7-Eleven 滾筒烤腸等多項優惠",
+      "title_es": "T-Life (T-Mobile Tuesday): Free 7-Eleven Roller Grill Item & More",
+      "summary_es": ""
     },
     {
       "title": "Exxon Mobil: Download App & Earn $5 In Points On First Two Fill Ups Of 8+ Gallons",
@@ -164,10 +164,10 @@
       "ts": "2026-05-26T01:49:40.000Z",
       "title_en": "Exxon Mobil: Download App & Earn $5 In Points On First Two Fill Ups Of 8+ Gallons",
       "summary_en": "",
-      "title_zh": "Exxon Mobil: Download App & Earn $5 In Points On First Two Fill Ups Of 8+ Gallons",
-      "summary_zh": "",
-      "title_es": "Exxon Mobil: Descarga la aplicación y gana $5 en puntos en las primeras dos cargas de 8+ galones",
-      "summary_es": "Al descargar la app de Exxon Mobil y realizar las primeras dos recargas de al menos 8 galones, se obtienen $5 en puntos."
+      "title_zh": "Exxon Mobil：下載 App 並在首次兩次加油 8+ 加侖時可獲得 $5 積分",
+      "summary_zh": "下載 Exxon Mobil App 並在首次兩次加油 8 加侖以上可獲得 $5 積分",
+      "title_es": "Exxon Mobil: Download App & Earn $5 In Points On First Two Fill Ups Of 8+ Gallons",
+      "summary_es": ""
     },
     {
       "title": "(Live 5/27) Bank of America Announces Negative Changes To Preferred Rewards",
@@ -181,10 +181,10 @@
       "ts": "2026-05-26T00:10:08.000Z",
       "title_en": "(Live 5/27) Bank of America Announces Negative Changes To Preferred Rewards",
       "summary_en": "",
-      "title_zh": "(Live 5/27) Bank of America Announces Negative Changes To Preferred Rewards",
-      "summary_zh": "",
-      "title_es": "(En vivo 5/27) Bank of America anuncia cambios negativos en Preferred Rewards",
-      "summary_es": "Bank of America ha informado de modificaciones adversas al programa Preferred Rewards, que afectan a los beneficios de sus clientes."
+      "title_zh": "（直播 5/27）Bank of America 宣佈 Preferred Rewards 的負面變更",
+      "summary_zh": "Bank of America 公佈 Preferred Rewards 方案將調整，可能影響回饋",
+      "title_es": "(Live 5/27) Bank of America Announces Negative Changes To Preferred Rewards",
+      "summary_es": ""
     },
     {
       "title": "Chase Offers/U.S. Bank: Aldi 5% Back ($3 Cashback Max)",
@@ -198,10 +198,10 @@
       "ts": "2026-05-25T18:46:29.000Z",
       "title_en": "Chase Offers/U.S. Bank: Aldi 5% Back ($3 Cashback Max)",
       "summary_en": "",
-      "title_zh": "Chase Offers/U.S. Bank: Aldi 5% Back ($3 Cashback Max)",
-      "summary_zh": "",
-      "title_es": "Chase Offers/U.S. Bank: Aldi devuelve el 5% (máximo $3 de reembolso)",
-      "summary_es": "Los clientes de Chase y U.S. Bank pueden obtener un reembolso del 5% en compras en Aldi, hasta un máximo de $3."
+      "title_zh": "Chase Offers/美國銀行：Aldi 5% 回饋（最高 $3 現金回饋）",
+      "summary_zh": "Chase 或 US Bank 用戶在 Aldi 消費可享 5% 回饋，最高 $3",
+      "title_es": "Chase Offers/U.S. Bank: Aldi 5% Back ($3 Cashback Max)",
+      "summary_es": ""
     },
     {
       "title": "Capital One Shopping: Get 45% Back On Viator (Tours, Transfers, Activities)",
@@ -216,10 +216,10 @@
       "ts": "2026-05-25T18:07:35.000Z",
       "title_en": "Capital One Shopping: Get 45% Back On Viator (Tours, Transfers, Activities)",
       "summary_en": "",
-      "title_zh": "Capital One Shopping: Get 45% Back On Viator (Tours, Transfers, Activities)",
-      "summary_zh": "",
-      "title_es": "Capital One Shopping: Obtén un 45% de reembolso en Viator (tours, traslados, actividades)",
-      "summary_es": "Capital One Shopping ofrece un 45% de cashback en reservaciones de Viator para tours, traslados y actividades."
+      "title_zh": "Capital One Shopping：在 Viator（旅遊、接送、活動）可獲得 45% 回饋",
+      "summary_zh": "使用 Capital One Shopping 在 Viator 預訂旅遊、接送或活動可享 45% 回饋",
+      "title_es": "Capital One Shopping: Get 45% Back On Viator (Tours, Transfers, Activities)",
+      "summary_es": ""
     },
     {
       "title": "Chase Ultimate Rewards: Get 10% Discount On Select Giftcard Redemptions (One4All, Home Depot, Lowe’s, Uber, DoorDash & More)",
@@ -234,10 +234,10 @@
       "ts": "2026-05-25T14:33:10.000Z",
       "title_en": "Chase Ultimate Rewards: Get 10% Discount On Select Giftcard Redemptions (One4All, Home Depot, Lowe’s, Uber, DoorDash & More)",
       "summary_en": "",
-      "title_zh": "Chase Ultimate Rewards: Get 10% Discount On Select Giftcard Redemptions (One4All, Home Depot, Lowe’s, Uber, DoorDash & More)",
-      "summary_zh": "",
-      "title_es": "Chase Ultimate Rewards: Obtén un 10% de descuento en el canje de tarjetas de regalo seleccionadas (One4All, Home Depot, Lowe’s, Uber, DoorDash y más)",
-      "summary_es": "Los puntos de Chase Ultimate Rewards se pueden usar con un 10% de descuento en tarjetas de regalo de One4All, Home Depot, Lowe’s, Uber, DoorDash y otras."
+      "title_zh": "Chase Ultimate Rewards：在部分禮品卡兌換（One4All、Home Depot、Lowe’s、Uber、DoorDash 等）可享 10% 折扣",
+      "summary_zh": "Chase Ultimate Rewards 會員在兌換指定禮品卡時可享 10% 折扣",
+      "title_es": "Chase Ultimate Rewards: Get 10% Discount On Select Giftcard Redemptions (One4All, Home Depot, Lowe’s, Uber, DoorDash & More)",
+      "summary_es": ""
     },
     {
       "title": "Recap: TradeUP Hack, Unannounced Hyatt Changes & More",
@@ -249,11 +249,11 @@
       "ts": "2026-05-25T14:00:17.000Z",
       "title_en": "Recap: TradeUP Hack, Unannounced Hyatt Changes & More",
       "summary_en": "",
-      "title_zh": "Recap: TradeUP Hack, Unannounced Hyatt Changes & More",
-      "summary_zh": "",
-      "title_es": "Resumen: Hack de TradeUP, cambios no anunciados de Hyatt y más",
-      "summary_es": "Este resumen cubre el hackeo de TradeUP, cambios no revelados de Hyatt y otras noticias adicionales."
+      "title_zh": "摘要：TradeUP 漏洞、Hyatt 未公佈的變動及其他",
+      "summary_zh": "本週回顧包括 TradeUP 漏洞、Hyatt 尚未公佈的變動等資訊",
+      "title_es": "Recap: TradeUP Hack, Unannounced Hyatt Changes & More",
+      "summary_es": ""
     }
   ],
-  "fetched": "2026-05-27T02:10:06.072Z"
+  "fetched": "2026-05-27T08:11:07.780Z"
 }
