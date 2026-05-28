@@ -15,7 +15,10 @@
     "cfpb:extract": "tsx scripts/pipelines/cfpb/extract.ts",
     "card:update": "tsx scripts/auto-update-cards/index.ts",
     "card:update:dry": "tsx scripts/auto-update-cards/index.ts --dry",
-    "card-adaptor": "tsx scripts/card-adaptor/index.ts"
+    "card-adaptor": "tsx scripts/card-adaptor/index.ts",
+    "artifact:validate": "tsx scripts/validate-card-artifact.ts",
+    "artifact:index": "npm run card-adaptor -- artifact-index",
+    "guides:check-locales": "tsx scripts/check-guide-locales.ts"
   },
   "dependencies": {
     "@upstash/redis": "^1.37.0",

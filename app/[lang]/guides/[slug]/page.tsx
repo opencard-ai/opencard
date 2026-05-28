@@ -8,7 +8,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { GUIDES, getGuide } from "@/lib/guides";
+import { GUIDES, getGuide, getLocalizedGuide } from "@/lib/guides";
 import { locales, type Locale } from "@/lib/i18n";
 
 type Props = {
@@ -24,13 +24,28 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
+async function loadGuideArticle(slug: string, lang: Locale) {
+  if (lang !== "en") {
+    try {
+      const localized = await import(`@/content/guides/${lang}/${slug}.mdx`);
+      return localized.default;
+    } catch {
+      // Not every legacy guide is translated yet. Fall back to the canonical
+      // English article so localized routes still render instead of 404ing.
+    }
+  }
+  const canonical = await import(`@/content/guides/${slug}.mdx`);
+  return canonical.default;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = await params;
   const guide = getGuide(slug);
   if (!guide) return {};
+  const localizedGuide = getLocalizedGuide(guide, lang);
   return {
-    title: `${guide.title} — OpenCard`,
-    description: guide.summary,
+    title: `${localizedGuide.title} — OpenCard`,
+    description: localizedGuide.summary,
     alternates: {
       canonical: `/${lang}/guides/${slug}`,
       languages: Object.fromEntries(
@@ -38,8 +53,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ),
     },
     openGraph: {
-      title: guide.title,
-      description: guide.summary,
+      title: localizedGuide.title,
+      description: localizedGuide.summary,
       type: "article",
       publishedTime: guide.published,
       modifiedTime: guide.updated,
@@ -52,13 +67,11 @@ export default async function GuidePage({ params }: Props) {
   const guide = getGuide(slug);
   if (!guide) notFound();
 
-  // Dynamic import per Next.js MDX docs. The string template must include
-  // the .mdx extension and a literal-friendly prefix so the bundler can
-  // statically enumerate possible imports.
-  const { default: Article } = await import(`@/content/guides/${slug}.mdx`);
   const safeLang = (locales as readonly string[]).includes(lang)
     ? (lang as Locale)
     : ("en" as Locale);
+  const localizedGuide = getLocalizedGuide(guide, safeLang);
+  const Article = await loadGuideArticle(slug, safeLang);
 
   return (
     <main className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
@@ -73,10 +86,10 @@ export default async function GuidePage({ params }: Props) {
 
       <header className="mb-8">
         <div className="flex flex-wrap items-center gap-2 text-[11px] text-slate-500 dark:text-slate-500 mb-3">
-          <span>Updated {guide.updated}</span>
+          <span>Updated {localizedGuide.updated}</span>
           <span>·</span>
-          <span>{guide.word_count.toLocaleString()} words</span>
-          {guide.tags?.map((tag) => (
+          <span>{localizedGuide.word_count.toLocaleString()} words</span>
+          {localizedGuide.tags?.map((tag) => (
             <span
               key={tag}
               className="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
@@ -95,9 +108,9 @@ export default async function GuidePage({ params }: Props) {
 
       <footer className="text-[13px] text-slate-500 dark:text-slate-500 space-y-2">
         <p>
-          First published {guide.published}
-          {guide.updated !== guide.published && (
-            <> · Last updated {guide.updated}</>
+          First published {localizedGuide.published}
+          {localizedGuide.updated !== localizedGuide.published && (
+            <> · Last updated {localizedGuide.updated}</>
           )}
           .
         </p>

@@ -64,3 +64,6 @@ data/audit-reports/
 data/adaptor/runs/
 data/adaptor/review-index.json
 data/adaptor/review-index.md
+
+# Artifact-first review queue runtime outputs
+artifacts/card-updates/

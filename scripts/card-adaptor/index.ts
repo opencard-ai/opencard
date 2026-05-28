@@ -2,8 +2,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createHash } from 'crypto';
 import { execFileSync } from 'child_process';
-import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from 'fs';
 import * as path from 'path';
+import { validateCardUpdateArtifact, type ArtifactSourceType, type ArtifactType, type CardUpdateArtifact } from '../../lib/card-update-artifact';
 
 type SourceType = 'issuer' | 'doc' | 'usccg' | 'cnn' | 'tpg' | 'reddit' | 'flyertalk' | 'other';
 type Verdict = 'pass' | 'needs_review' | 'blocked';
@@ -63,6 +64,7 @@ function usage(): never {
   npm run card-adaptor -- extract --run <run-dir>
   npm run card-adaptor -- normalize --run <run-dir>
   npm run card-adaptor -- validate --run <run-dir>
+  npm run card-adaptor -- artifact --run <run-dir>
   npm run card-adaptor -- apply --run <run-dir> [--write]
 
 Legacy/advanced:
@@ -73,8 +75,12 @@ Legacy/advanced:
   npm run card-adaptor -- apply-plan --run <run-dir>
   npm run card-adaptor -- review --run <run-dir>
   npm run card-adaptor -- approval-template --run <run-dir>
+  npm run card-adaptor -- artifact-approve --artifact <artifact.json> --reviewer <name> [--notes <text>]
+  npm run card-adaptor -- artifact-reject --artifact <artifact.json> --reviewer <name> [--notes <text>]
+  npm run card-adaptor -- artifact-apply --artifact <artifact.json> [--write]
   npm run card-adaptor -- run-all
-  npm run card-adaptor -- review-index`);
+  npm run card-adaptor -- review-index
+  npm run card-adaptor -- artifact-index`);
   process.exit(2);
 }
 
@@ -386,6 +392,124 @@ function normalize(runDir: string): void {
     open_questions: config.open_questions || [],
   });
   updateRun(runDir, 'candidate.json');
+}
+
+function artifactSourceType(sourceType: SourceType): ArtifactSourceType {
+  if (sourceType === 'issuer') return 'issuer';
+  if (sourceType === 'doc') return 'doctor_of_credit';
+  if (sourceType === 'usccg') return 'us_credit_card_guide';
+  return 'other_third_party';
+}
+
+function artifactTypeForMode(mode: string): ArtifactType {
+  if (mode === 'offer') return 'offer_update';
+  if (mode === 'credits') return 'benefit_update';
+  if (mode === 'offer_and_benefits') return 'card_update';
+  return 'card_update';
+}
+
+function confidenceNumber(value: unknown, fallback: number): number {
+  if (typeof value === 'number' && value >= 0 && value <= 1) return value;
+  if (typeof value !== 'string') return fallback;
+  const normalized = value.toLowerCase();
+  if (normalized.includes('high')) return 0.95;
+  if (normalized.includes('medium_high')) return 0.88;
+  if (normalized.includes('medium')) return 0.75;
+  if (normalized.includes('low')) return 0.55;
+  return fallback;
+}
+
+function riskForField(field: string): 'low' | 'medium' | 'high' {
+  const policy = PRODUCTION_FIELD_POLICY[field];
+  if (policy?.action === 'manual_review_required') return 'high';
+  if (/fee|welcome_offer|bonus|spending_requirement|recurring_credits|apr/i.test(field)) return 'medium';
+  return 'low';
+}
+
+function createArtifact(runDir: string): void {
+  if (!existsSync(path.join(runDir, 'candidate.json'))) normalize(runDir);
+  if (!existsSync(path.join(runDir, 'apply-plan.json'))) applyPlan(runDir);
+
+  const config = configFromRun(runDir);
+  const run = readJson(path.join(runDir, 'run.json'));
+  const manifestData = existsSync(path.join(runDir, 'manifest.json')) ? readJson(path.join(runDir, 'manifest.json')) : { sources: [] };
+  const candidateEnvelope = readJson(path.join(runDir, 'candidate.json'));
+  const candidate = candidateEnvelope.candidate || {};
+  const diffs = existsSync(path.join(runDir, 'json-diff.json')) ? readJson(path.join(runDir, 'json-diff.json')).diffs || [] : [];
+  const changed = diffs.filter((d: any) => d.status === 'changed');
+  const primarySource = manifestData.sources?.find((s: any) => s.source_type === 'issuer') || manifestData.sources?.[0];
+
+  const fields: CardUpdateArtifact['extracted']['fields'] = {};
+  for (const field of PRODUCTION_PATCH_FIELDS) {
+    if (!Object.prototype.hasOwnProperty.call(candidate, field)) continue;
+    const citation = candidateEnvelope.citations?.[field]?.[0]
+      || (field === 'welcome_offer' ? candidateEnvelope.citations?.welcome_offer?.[0] : null)
+      || (field === 'recurring_credits' ? candidateEnvelope.citations?.recurring_credits?.[0] : null)
+      || 'citation missing';
+    fields[field] = {
+      value: candidate[field],
+      confidence: confidenceNumber(candidate[field]?.confidence, primarySource?.source_type === 'issuer' ? 0.9 : 0.75),
+      citation,
+    };
+  }
+
+  const riskFlags = new Set<string>();
+  if (!primarySource) riskFlags.add('source_snapshot_missing');
+  if (primarySource && artifactSourceType(primarySource.source_type) === 'other_third_party') riskFlags.add('third_party_source_only');
+  for (const diff of changed) {
+    if (riskForField(diff.field) !== 'low') riskFlags.add(`${diff.field}_changed`);
+    if (diff.field === 'welcome_offer' && candidate.welcome_offer?.offer_status && candidate.welcome_offer.offer_status !== 'public') {
+      riskFlags.add('ymmv_or_targeted_offer_possible');
+    }
+  }
+
+  const artifact: CardUpdateArtifact = {
+    artifact_version: '1.0',
+    artifact_type: artifactTypeForMode(run.mode || config.mode || 'card_update'),
+    card_id: config.cardId,
+    run_id: run.run_id,
+    created_at: new Date().toISOString(),
+    source: {
+      url: primarySource?.url || config.sources[0]?.url || 'unknown',
+      source_type: primarySource ? artifactSourceType(primarySource.source_type) : 'other_third_party',
+      source_name: primarySource?.title || primarySource?.id || undefined,
+      fetched_at: primarySource?.fetched_at || run.created_at || new Date().toISOString(),
+      snapshot_path: primarySource?.text_path,
+      content_hash: primarySource?.hash,
+    },
+    extracted: { fields },
+    diff: {
+      summary: changed.length
+        ? `Changed fields: ${changed.map((d: any) => d.field).join(', ')}`
+        : 'No production field changes detected.',
+      changes: changed.map((d: any) => ({
+        path: d.field,
+        before: d.before,
+        after: d.after,
+        risk: riskForField(d.field),
+      })),
+    },
+    risk_flags: Array.from(riskFlags),
+    review: {
+      status: 'pending',
+      reviewer: null,
+      reviewed_at: null,
+      notes: null,
+    },
+  };
+
+  const validation = validateCardUpdateArtifact(artifact);
+  const fileName = `${run.run_id}.json`;
+  const runArtifactPath = path.join(runDir, 'card-update-artifact.json');
+  const pendingDir = path.join('artifacts', 'card-updates', 'pending');
+  mkdirSync(pendingDir, { recursive: true });
+  writeJson(runArtifactPath, artifact);
+  writeJson(path.join(pendingDir, fileName), artifact);
+  writeJson(path.join(runDir, 'card-update-artifact-validation.json'), validation);
+  updateRun(runDir, 'card-update-artifact.json');
+  updateRun(runDir, 'card-update-artifact-validation.json');
+  updateRun(runDir, path.join(pendingDir, fileName));
+  console.log(runArtifactPath);
 }
 
 function communityCheck(runDir: string): void {
@@ -761,6 +885,175 @@ function reviewIndex(runDirs = latestRunDirsByCard(), startedAt?: string): void 
   console.log(path.join(outDir, 'review-index.md'));
 }
 
+function artifactIndex(): void {
+  const pendingDir = path.join('artifacts', 'card-updates', 'pending');
+  const outDir = path.join('artifacts', 'card-updates');
+  mkdirSync(outDir, { recursive: true });
+  const files = existsSync(pendingDir)
+    ? readdirSync(pendingDir).filter((file) => file.endsWith('.json')).sort()
+    : [];
+  const rows = files.map((file) => {
+    const artifactPath = path.join(pendingDir, file);
+    const artifact = readJson(artifactPath);
+    const validation = validateCardUpdateArtifact(artifact);
+    return {
+      artifact_path: artifactPath,
+      card_id: artifact.card_id || 'unknown',
+      run_id: artifact.run_id || file.replace(/\.json$/, ''),
+      artifact_type: artifact.artifact_type || 'unknown',
+      source_type: artifact.source?.source_type || 'unknown',
+      review_status: artifact.review?.status || 'unknown',
+      changed_paths: artifact.diff?.changes?.map((change: any) => change.path) || [],
+      risk_flags: artifact.risk_flags || [],
+      validation,
+    };
+  });
+  const summary = rows.reduce((acc: any, row) => {
+    acc.total += 1;
+    if (row.validation.ok) acc.valid += 1;
+    else acc.invalid += 1;
+    if (row.validation.requiresManualReview) acc.requires_manual_review += 1;
+    if (row.validation.autoApprovalCandidate) acc.auto_approval_candidate += 1;
+    acc[`source_${row.source_type}`] = (acc[`source_${row.source_type}`] || 0) + 1;
+    acc[`review_${row.review_status}`] = (acc[`review_${row.review_status}`] || 0) + 1;
+    return acc;
+  }, { total: 0, valid: 0, invalid: 0, requires_manual_review: 0, auto_approval_candidate: 0 });
+
+  writeJson(path.join(outDir, 'pending-index.json'), { generated_at: new Date().toISOString(), summary, rows });
+
+  let md = `# Pending Card Update Artifacts\n\nGenerated: ${new Date().toISOString()}\n\n`;
+  md += `## Summary\n\n`;
+  md += `- total: ${summary.total}\n- valid: ${summary.valid}\n- invalid: ${summary.invalid}\n- requires_manual_review: ${summary.requires_manual_review}\n- auto_approval_candidate: ${summary.auto_approval_candidate}\n\n`;
+  md += `## Review Queue\n\n`;
+  if (!rows.length) md += `No pending artifacts.\n`;
+  for (const row of rows) {
+    md += `### ${row.card_id}\n`;
+    md += `- run: \`${row.run_id}\`\n`;
+    md += `- type: \`${row.artifact_type}\`\n`;
+    md += `- source: \`${row.source_type}\`\n`;
+    md += `- review_status: \`${row.review_status}\`\n`;
+    md += `- valid: \`${row.validation.ok}\`\n`;
+    md += `- requires_manual_review: \`${row.validation.requiresManualReview}\`\n`;
+    md += `- auto_approval_candidate: \`${row.validation.autoApprovalCandidate}\`\n`;
+    if (row.changed_paths.length) md += `- changed_paths: ${row.changed_paths.map((field: string) => `\`${field}\``).join(', ')}\n`;
+    else md += `- changed_paths: none\n`;
+    if (row.risk_flags.length) md += `- risk_flags: ${row.risk_flags.map((flag: string) => `\`${flag}\``).join(', ')}\n`;
+    if (row.validation.errors.length) md += `- errors: ${row.validation.errors.join('; ')}\n`;
+    if (row.validation.warnings.length) md += `- warnings: ${row.validation.warnings.join('; ')}\n`;
+    md += `- artifact: \`${row.artifact_path}\`\n\n`;
+  }
+  writeFileSync(path.join(outDir, 'pending-index.md'), md);
+  console.log(path.join(outDir, 'pending-index.md'));
+}
+
+function artifactPathFromArg(): string {
+  const artifact = arg('--artifact');
+  if (!artifact) usage();
+  return artifact;
+}
+
+function moveArtifact(artifactPath: string, status: 'approved' | 'rejected', reviewer: string, notes: string | null): string {
+  if (!existsSync(artifactPath)) {
+    console.error(`Artifact not found: ${artifactPath}`);
+    process.exit(1);
+  }
+  const artifact = readJson(artifactPath);
+  const validation = validateCardUpdateArtifact(artifact);
+  if (!validation.ok) {
+    console.error(`Refusing to ${status}: artifact is invalid. ${validation.errors.join('; ')}`);
+    process.exit(1);
+  }
+  artifact.review = {
+    ...(artifact.review || {}),
+    status,
+    reviewer,
+    reviewed_at: new Date().toISOString(),
+    notes,
+  };
+  const destDir = path.join('artifacts', 'card-updates', status);
+  mkdirSync(destDir, { recursive: true });
+  const dest = path.join(destDir, path.basename(artifactPath));
+  writeJson(dest, artifact);
+  if (artifactPath !== dest && existsSync(artifactPath)) unlinkSync(artifactPath);
+  console.log(dest);
+  return dest;
+}
+
+function artifactApprove(): void {
+  const reviewer = arg('--reviewer');
+  if (!reviewer) usage();
+  const approvedPath = moveArtifact(artifactPathFromArg(), 'approved', reviewer, arg('--notes') || null);
+  artifactIndex();
+  console.log(`approved_artifact: ${approvedPath}`);
+}
+
+function artifactReject(): void {
+  const reviewer = arg('--reviewer');
+  if (!reviewer) usage();
+  const rejectedPath = moveArtifact(artifactPathFromArg(), 'rejected', reviewer, arg('--notes') || null);
+  artifactIndex();
+  console.log(`rejected_artifact: ${rejectedPath}`);
+}
+
+function setByPath(target: any, dottedPath: string, value: any): void {
+  const parts = dottedPath.split('.').filter(Boolean);
+  if (!parts.length) throw new Error('empty artifact diff path');
+  let cursor = target;
+  for (const part of parts.slice(0, -1)) {
+    if (!cursor[part] || typeof cursor[part] !== 'object' || Array.isArray(cursor[part])) cursor[part] = {};
+    cursor = cursor[part];
+  }
+  cursor[parts[parts.length - 1]] = value;
+}
+
+function artifactApply(): void {
+  const artifactPath = artifactPathFromArg();
+  const artifact = readJson(artifactPath);
+  const validation = validateCardUpdateArtifact(artifact);
+  const write = process.argv.includes('--write');
+  if (!validation.ok) {
+    console.error(`Refusing to apply invalid artifact: ${validation.errors.join('; ')}`);
+    process.exit(1);
+  }
+  if (artifact.review?.status !== 'approved') {
+    console.error(`Refusing to apply: artifact.review.status must be approved, got ${JSON.stringify(artifact.review?.status)}`);
+    process.exit(1);
+  }
+  if (validation.requiresManualReview && !artifact.review?.reviewer) {
+    console.error('Refusing to apply: manual review required but reviewer is missing');
+    process.exit(1);
+  }
+  const cardPath = path.join('data', 'cards', `${artifact.card_id}.json`);
+  if (!existsSync(cardPath)) {
+    console.error(`Refusing to apply: card file not found: ${cardPath}`);
+    process.exit(1);
+  }
+  const card = readJson(cardPath);
+  const patched = deepClone(card);
+  const changes = artifact.diff?.changes || [];
+  if (!changes.length) {
+    console.log(`No diff changes in approved artifact. Nothing to apply for ${artifact.card_id}.`);
+    return;
+  }
+  for (const change of changes) {
+    setByPath(patched, change.path, change.after);
+  }
+  patched.last_verified = new Date().toISOString().slice(0, 10);
+  const outDir = path.join('artifacts', 'card-updates', 'applied');
+  mkdirSync(outDir, { recursive: true });
+  const previewPath = path.join(outDir, `${artifact.run_id}.proposed-card.json`);
+  writeJson(previewPath, patched);
+  if (!write) {
+    console.log(`Dry run only. Proposed card written to ${previewPath}. Add --write to update ${cardPath}.`);
+    return;
+  }
+  writeJson(cardPath, patched);
+  artifact.review.applied_at = new Date().toISOString();
+  artifact.review.applied_to = cardPath;
+  writeJson(path.join(outDir, path.basename(artifactPath)), artifact);
+  console.log(`Applied ${artifactPath} to ${cardPath}`);
+}
+
 function apply(runDir: string): void {
   if (!existsSync(path.join(runDir, 'apply-plan.json'))) applyPlan(runDir);
   const config = configFromRun(runDir);
@@ -812,6 +1105,7 @@ function extract(runDir: string): void {
 function validate(runDir: string): void {
   qa(runDir);
   applyPlan(runDir);
+  createArtifact(runDir);
   review(runDir);
   const plan = readJson(path.join(runDir, 'apply-plan.json'));
   setStatus(runDir, plan.can_apply ? 'qa_complete_ready_to_apply' : `qa_complete_${plan.recommendation}`);
@@ -834,6 +1128,7 @@ function main(): void {
   else if (command === 'extract') extract(runDirFromArg());
   else if (command === 'normalize') normalize(runDirFromArg());
   else if (command === 'validate') validate(runDirFromArg());
+  else if (command === 'artifact') createArtifact(runDirFromArg());
   else if (command === 'community-check') communityCheck(runDirFromArg());
   else if (command === 'qa') qa(runDirFromArg());
   else if (command === 'apply-plan') applyPlan(runDirFromArg());
@@ -842,6 +1137,10 @@ function main(): void {
   else if (command === 'apply') apply(runDirFromArg());
   else if (command === 'run-all') runAll();
   else if (command === 'review-index') reviewIndex();
+  else if (command === 'artifact-index') artifactIndex();
+  else if (command === 'artifact-approve') artifactApprove();
+  else if (command === 'artifact-reject') artifactReject();
+  else if (command === 'artifact-apply') artifactApply();
   else if (command === 'run') runCard(configForCard(arg('--card')).cardId);
   else usage();
 }

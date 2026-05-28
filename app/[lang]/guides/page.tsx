@@ -7,7 +7,7 @@
  */
 import Link from "next/link";
 import type { Metadata } from "next";
-import { GUIDES } from "@/lib/guides";
+import { getLocalizedGuides } from "@/lib/guides";
 import { locales, type Locale } from "@/lib/i18n";
 
 type Props = {
@@ -42,13 +42,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function GuidesIndex({ params }: Props) {
   const { lang } = await params;
-  // i18n note: guide titles + summaries are en-only in v1. Localized
-  // versions will be authored as separate MDX files (e.g.
-  // content/guides/zh/transferable-points-101.mdx) when the en corpus
-  // proves out for AdSense.
   const safeLang = (locales as readonly string[]).includes(lang)
     ? (lang as Locale)
     : ("en" as Locale);
+  const guides = getLocalizedGuides(safeLang);
   return (
     <main className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
       <header className="mb-10">
@@ -66,7 +63,7 @@ export default async function GuidesIndex({ params }: Props) {
       </header>
 
       <ul className="space-y-6">
-        {GUIDES.map((guide) => (
+        {guides.map((guide) => (
           <li
             key={guide.slug}
             className="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 p-5 hover:border-amber-500/60 transition-colors"
