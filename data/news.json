@@ -1,6 +1,40 @@
 {
   "items": [
     {
+      "title": "[7/14] Chick-fil-A: Dress Like A Cow & Get A Free Entree",
+      "url": "https://www.doctorofcredit.com/7-14-chick-fil-a-dress-like-a-cow-get-a-free-entree/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "chick-fil-a",
+        "free food",
+        "freebies"
+      ],
+      "ts": "2026-05-29T21:10:27.000Z",
+      "title_en": "[7/14] Chick-fil-A: Dress Like A Cow & Get A Free Entree",
+      "summary_en": "",
+      "title_zh": "[7/14] Chick-fil-A: Dress Like A Cow & Get A Free Entree",
+      "summary_zh": "",
+      "title_es": "[7/14] Chick-fil-A: Vístete como una vaca y obtén un plato principal gratis",
+      "summary_es": "Chick-fil-A ofrece un plato principal gratis a quienes se vistan como una vaca."
+    },
+    {
+      "title": "Citi Still Allowing Product Changes To Citi Custom Cash Card",
+      "url": "https://www.doctorofcredit.com/citi-still-allowing-product-changes-to-citi-custom-cash-card/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "Citi"
+      ],
+      "ts": "2026-05-29T20:59:01.000Z",
+      "title_en": "Citi Still Allowing Product Changes To Citi Custom Cash Card",
+      "summary_en": "",
+      "title_zh": "Citi Still Allowing Product Changes To Citi Custom Cash Card",
+      "summary_zh": "",
+      "title_es": "Citi sigue permitiendo cambios de producto en la tarjeta Citi Custom Cash",
+      "summary_es": "Citi permite a los titulares modificar los productos de su tarjeta Citi Custom Cash."
+    },
+    {
       "title": "Chase Now Offering Business Customers Free Credit Score Through Dun & Bradstreet",
       "url": "https://www.doctorofcredit.com/chase-now-offering-business-customers-free-credit-score-through-dun-bradstreet/",
       "source": "Doctor of Credit",
@@ -12,10 +46,10 @@
       "ts": "2026-05-29T19:00:37.000Z",
       "title_en": "Chase Now Offering Business Customers Free Credit Score Through Dun & Bradstreet",
       "summary_en": "",
-      "title_zh": "摩根大通現在透過Dun & Bradstreet向企業客戶提供免費信用評分",
-      "summary_zh": "摩根大通與Dun & Bradstreet合作，讓企業客戶可免費查看信用評分。",
-      "title_es": "Chase Ahora Ofrece a Clientes Empresariales Puntuación de Crédito Gratuita a Través de Dun & Bradstreet",
-      "summary_es": "Chase ha comenzado a proporcionar a sus clientes empresariales acceso gratuito a su puntuación de crédito a través de Dun & Bradstreet."
+      "title_zh": "Chase Now Offering Business Customers Free Credit Score Through Dun & Bradstreet",
+      "summary_zh": "",
+      "title_es": "Chase ahora ofrece a sus clientes empresariales puntuación crediticia gratuita a través de Dun & Bradstreet",
+      "summary_es": "Chase proporciona a sus clientes empresariales acceso gratuito a su puntaje crediticio mediante Dun & Bradstreet."
     },
     {
       "title": "Caesars Entertainment To Be Acquired By Fertitta Entertainment In $17.6 Billion Deal",
@@ -28,13 +62,13 @@
       "ts": "2026-05-29T17:30:39.000Z",
       "title_en": "Caesars Entertainment To Be Acquired By Fertitta Entertainment In $17.6 Billion Deal",
       "summary_en": "",
-      "title_zh": "凱撒娛樂將被費蒂塔娛樂以176億美元收購",
-      "summary_zh": "費蒂塔娛樂宣佈以176億美元收購凱撒娛樂，成為史上最大規模的賭場併購案之一。",
-      "title_es": "Caesars Entertainment Será Adquirida Por Fertitta Entertainment En Un Negocio De $17.6 Mil Millones",
-      "summary_es": "Fertitta Entertainment ha acordado comprar Caesars Entertainment por 17.6 mil millones de dólares."
+      "title_zh": "Caesars Entertainment To Be Acquired By Fertitta Entertainment In $17.6 Billion Deal",
+      "summary_zh": "",
+      "title_es": "Caesars Entertainment será adquirida por Fertitta Entertainment en un acuerdo de 17.600 millones de dólares",
+      "summary_es": "Fertitta Entertainment comprará Caesars Entertainment por 17.600 millones de dólares."
     },
     {
-      "title": "American Airlines Blocking Saver Award Flights Within 144 Hours Of Departure",
+      "title": "American Airlines Blocking Partner Saver Award Flights Within 144 Hours Of Departure",
       "url": "https://www.doctorofcredit.com/american-airlines-blocking-saver-award-flights-within-144-hours-of-departure/",
       "source": "Doctor of Credit",
       "categories": [
@@ -42,12 +76,12 @@
         "american express"
       ],
       "ts": "2026-05-29T17:00:12.000Z",
-      "title_en": "American Airlines Blocking Saver Award Flights Within 144 Hours Of Departure",
+      "title_en": "American Airlines Blocking Partner Saver Award Flights Within 144 Hours Of Departure",
       "summary_en": "",
-      "title_zh": "美國航空在航班起飛前144小時內封鎖「Saver」獎勵機位",
-      "summary_zh": "美國航空將在起飛前144小時內不再提供Saver獎勵機位，旅客需提前預訂。",
-      "title_es": "American Airlines Bloquea Vuelos De Premio Saver Dentro De Las 144 Horas Previas A La Salida",
-      "summary_es": "American Airlines impide a los pasajeros canjear vuelos Saver con menos de 144 horas antes de la salida."
+      "title_zh": "American Airlines Blocking Partner Saver Award Flights Within 144 Hours Of Departure",
+      "summary_zh": "",
+      "title_es": "American Airlines bloquea vuelos de premio Saver de socios dentro de las 144 horas previas a la salida",
+      "summary_es": "American Airlines impide canjear vuelos Saver de asociados con menos de 144 horas antes de partir."
     },
     {
       "title": "World Of Hyatt To Give Cardholders & Elites Early Access To Award Nights (13 Months Out)",
@@ -60,10 +94,10 @@
       "ts": "2026-05-29T16:00:18.000Z",
       "title_en": "World Of Hyatt To Give Cardholders & Elites Early Access To Award Nights (13 Months Out)",
       "summary_en": "",
-      "title_zh": "凱悅天地將為持卡人與精英會員提前13個月開放獎勵夜晚預訂",
-      "summary_zh": "凱悅天地將提前13個月向持卡人與精英會員開放獎勵住宿的預訂權。",
-      "title_es": "World of Hyatt Dará a Titulares de Tarjeta y Élites Acceso Anticipado a Noches de Premio (13 Meses Antes)",
-      "summary_es": "Hyatt ofrecerá a sus titulares de tarjeta y miembros elite la posibilidad de reservar noches de premio hasta 13 meses antes."
+      "title_zh": "World Of Hyatt To Give Cardholders & Elites Early Access To Award Nights (13 Months Out)",
+      "summary_zh": "",
+      "title_es": "World of Hyatt dará a titulares de tarjeta y miembros Elite acceso anticipado a noches de premio (13 meses antes)",
+      "summary_es": "World of Hyatt ofrecerá a sus tarjetahabientes y elite la posibilidad de reservar noches de premio con 13 meses de anticipación."
     },
     {
       "title": "Bank of America Launches Credit Card Referral Program – $100 Per Approved Card (Up To $500)",
@@ -77,10 +111,10 @@
       "ts": "2026-05-29T15:30:14.000Z",
       "title_en": "Bank of America Launches Credit Card Referral Program – $100 Per Approved Card (Up To $500)",
       "summary_en": "",
-      "title_zh": "美國銀行推出信用卡推薦計劃，每成功核發一張卡可獲得100美元，最高可達500美元",
-      "summary_zh": "美國銀行推出信用卡推薦獎勵，每張獲批卡片可獲100美元，上限500美元。",
-      "title_es": "Bank of America Lanza Programa de Referidos de Tarjeta de Crédito – $100 Por Tarjeta Aprobada (Hasta $500)",
-      "summary_es": "Bank of America ha introducido un programa de referidos que otorga $100 por cada tarjeta aprobada, con un máximo de $500."
+      "title_zh": "Bank of America Launches Credit Card Referral Program – $100 Per Approved Card (Up To $500)",
+      "summary_zh": "",
+      "title_es": "Bank of America lanza programa de referidos de tarjetas de crédito – $100 por cada tarjeta aprobada (hasta $500)",
+      "summary_es": "Bank of America pagará $100 por cada tarjeta aprobada mediante su programa de referidos, con un máximo de $500."
     },
     {
       "title": "American Express To Discontinue Personal Credit For Corporate Cardholders",
@@ -94,10 +128,10 @@
       "ts": "2026-05-29T15:00:07.000Z",
       "title_en": "American Express To Discontinue Personal Credit For Corporate Cardholders",
       "summary_en": "",
-      "title_zh": "美國運通將停止向企業卡持卡人提供個人信用",
-      "summary_zh": "美國運通將不再向企業卡持卡人提供個人信用產品。",
-      "title_es": "American Express Dejará De Ofrecer Crédito Personal a Titulares de Tarjetas Corporativas",
-      "summary_es": "American Express discontinuará el crédito personal para quienes tengan tarjetas corporativas."
+      "title_zh": "American Express To Discontinue Personal Credit For Corporate Cardholders",
+      "summary_zh": "",
+      "title_es": "American Express discontinuará el crédito personal para titulares de tarjetas corporativas",
+      "summary_es": "American Express dejará de ofrecer crédito personal a los usuarios de tarjetas corporativas."
     },
     {
       "title": "Netspend $100 Checking Bonus",
@@ -113,10 +147,10 @@
       "ts": "2026-05-29T14:00:19.000Z",
       "title_en": "Netspend $100 Checking Bonus",
       "summary_en": "",
-      "title_zh": "Netspend 100美元支票帳戶獎金",
-      "summary_zh": "Netspend新開支票帳戶可獲100美元獎金優惠。",
-      "title_es": "Netspend Ofrece Bono De $100 Por Cuenta Corriente",
-      "summary_es": "Netspend regala un bono de $100 a quienes abran una cuenta corriente."
+      "title_zh": "Netspend $100 Checking Bonus",
+      "summary_zh": "",
+      "title_es": "Bono de $100 por cuenta corriente de Netspend",
+      "summary_es": "Netspend ofrece un bono de $100 al abrir una cuenta corriente."
     },
     {
       "title": "[CT, D.C., DE, FL, MA, MD, MI, NH, NJ, NY, OH, PA, RI, VT, VA] Citizens Bank $400 Checking Bonus",
@@ -143,10 +177,10 @@
       "ts": "2026-05-29T13:30:42.000Z",
       "title_en": "[CT, D.C., DE, FL, MA, MD, MI, NH, NJ, NY, OH, PA, RI, VT, VA] Citizens Bank $400 Checking Bonus",
       "summary_en": "",
-      "title_zh": "公民銀行在多州提供400美元支票帳戶獎金",
-      "summary_zh": "公民銀行在CT、DC、DE、FL、MA、MD、MI、NH、NJ、NY、OH、PA、RI、VT、VA等州推出400美元支票帳戶開戶獎金。",
-      "title_es": "Citizens Bank Ofrece Bono De $400 Por Cuenta Corriente En Varios Estados",
-      "summary_es": "Citizens Bank está ofreciendo un bono de $400 por abrir una cuenta corriente en varios estados."
+      "title_zh": "[CT, D.C., DE, FL, MA, MD, MI, NH, NJ, NY, OH, PA, RI, VT, VA] Citizens Bank $400 Checking Bonus",
+      "summary_zh": "",
+      "title_es": "Citizens Bank ofrece bono de $400 por cuenta corriente en varios estados",
+      "summary_es": "Citizens Bank ofrece un bono de $400 por abrir una cuenta corriente en las regiones especificadas."
     },
     {
       "title": "OnePay: $1 Cashback Per Gallon Of Gas Every Wednesday (50 Gallons, Two Redemptions Per Day)",
@@ -162,10 +196,10 @@
       "ts": "2026-05-29T13:00:18.000Z",
       "title_en": "OnePay: $1 Cashback Per Gallon Of Gas Every Wednesday (50 Gallons, Two Redemptions Per Day)",
       "summary_en": "",
-      "title_zh": "OnePay：每週三每加侖汽油返現1美元（每日可兌換50加侖，兩次）",
-      "summary_zh": "OnePay在每週三為加油顧客提供每加侖1美元返現，每日最高可兌換50加侖。",
-      "title_es": "OnePay: $1 De Devolución Por Galón De Gas Cada Miércoles (50 Galones, Dos Redenciones Por Día)",
-      "summary_es": "OnePay ofrece un reembolso de $1 por galón de gasolina cada miércoles, hasta 50 galones y dos canjes diarios."
+      "title_zh": "OnePay: $1 Cashback Per Gallon Of Gas Every Wednesday (50 Gallons, Two Redemptions Per Day)",
+      "summary_zh": "",
+      "title_es": "OnePay: 1$ de reembolso por galón de gasolina cada miércoles (50 galones, dos canjes por día)",
+      "summary_es": "OnePay devuelve $1 por galón de gasolina cada miércoles, hasta 50 galones y dos rescates diarios."
     },
     {
       "title": "Citi $325/$475/$500/$1,500 Checking Bonus",
@@ -181,10 +215,10 @@
       "ts": "2026-05-29T11:00:02.000Z",
       "title_en": "Citi $325/$475/$500/$1,500 Checking Bonus",
       "summary_en": "",
-      "title_zh": "花旗銀行提供325/475/500/1500美元支票帳戶獎金",
-      "summary_zh": "花旗銀行針對不同州的支票帳戶推出最高1500美元的開戶獎金。",
-      "title_es": "Citi Ofrece Bono De $325/$475/$500/$1,500 Por Cuenta Corriente",
-      "summary_es": "Citi tiene bonos de hasta $1,500 para quienes abran una cuenta corriente bajo ciertas condiciones."
+      "title_zh": "Citi $325/$475/$500/$1,500 Checking Bonus",
+      "summary_zh": "",
+      "title_es": "Bono de $325/$475/$500/$1,500 por cuenta corriente de Citi",
+      "summary_es": "Citi ofrece bonos de entre $325 y $1,500 por abrir una cuenta corriente según el nivel."
     },
     {
       "title": "Summer Of DashPass: Pick Worldcup Winner & Share $5 Million In Credits & More Deals",
@@ -199,10 +233,10 @@
       "ts": "2026-05-28T21:37:31.000Z",
       "title_en": "Summer Of DashPass: Pick Worldcup Winner & Share $5 Million In Credits & More Deals",
       "summary_en": "",
-      "title_zh": "DashPass夏季活動：預測世界盃冠軍並分享500萬美元信用額度及更多優惠",
-      "summary_zh": "DashPass推出夏季活動，用戶預測世界盃冠軍可分享500萬美元的信貸獎勵。",
-      "title_es": "Verano De DashPass: Elige Al Ganador Del Mundial Y Comparte $5 Millones En Créditos Y Más Ofertas",
-      "summary_es": "DashPass lanza una promoción de verano donde puedes predecir al campeón del Mundial y compartir $5 millones en créditos."
+      "title_zh": "Summer Of DashPass: Pick Worldcup Winner & Share $5 Million In Credits & More Deals",
+      "summary_zh": "",
+      "title_es": "Verano de DashPass: elige al ganador del Mundial y comparte $5 millones en créditos y más ofertas",
+      "summary_es": "DashPass invita a los usuarios a predecir al campeón del Mundial y compartir $5 millones en créditos junto con otras ofertas."
     },
     {
       "title": "[OOS][YMMV – Risky] Samsung: Free Galaxy Tab S10 FE 5G 128GB Tablet",
@@ -215,10 +249,10 @@
       "ts": "2026-05-28T21:18:30.000Z",
       "title_en": "[OOS][YMMV – Risky] Samsung: Free Galaxy Tab S10 FE 5G 128GB Tablet",
       "summary_en": "",
-      "title_zh": "三星：免費Galaxy Tab S10 FE 5G 128GB平板電腦",
-      "summary_zh": "三星提供免費Galaxy Tab S10 FE 5G 128GB平板電腦，但庫存可能不足且優惠存在風險。",
-      "title_es": "Samsung: Tableta Galaxy Tab S10 FE 5G 128GB Gratis",
-      "summary_es": "Samsung está regalando la tablet Galaxy Tab S10 FE 5G de 128GB, aunque la disponibilidad puede variar."
+      "title_zh": "[OOS][YMMV – Risky] Samsung: Free Galaxy Tab S10 FE 5G 128GB Tablet",
+      "summary_zh": "",
+      "title_es": "[OOS][YMMV – Riesgoso] Samsung: Tableta Galaxy Tab S10 FE 5G de 128GB gratis",
+      "summary_es": "Samsung ofrece una tableta Galaxy Tab S10 FE 5G de 128GB gratis, aunque la oferta está fuera de stock y puede ser arriesgada."
     },
     {
       "title": "SLH: Free Upgrade To CLUB 03 Tier",
@@ -233,46 +267,11 @@
       "ts": "2026-05-28T21:13:38.000Z",
       "title_en": "SLH: Free Upgrade To CLUB 03 Tier",
       "summary_en": "",
-      "title_zh": "SLH：免費升級至CLUB 03會籍",
-      "summary_zh": "SLH為會員提供免費升級至CLUB 03層級的優惠。",
-      "title_es": "SLH: Actualización Gratuita Al Nivel CLUB 03",
+      "title_zh": "SLH: Free Upgrade To CLUB 03 Tier",
+      "summary_zh": "",
+      "title_es": "SLH: Actualización gratuita al nivel CLUB 03",
       "summary_es": "SLH ofrece una mejora gratuita al nivel CLUB 03 para sus miembros."
-    },
-    {
-      "title": "Citi Discontinues Custom Cash Card",
-      "url": "https://www.doctorofcredit.com/rumor-citi-to-discontinue-custom-cash-card/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "big",
-        "Citi",
-        "citi custom cash",
-        "rumor"
-      ],
-      "ts": "2026-05-28T21:03:46.000Z",
-      "title_en": "Citi Discontinues Custom Cash Card",
-      "summary_en": "",
-      "title_zh": "花旗銀行停止發行Custom Cash卡",
-      "summary_zh": "花旗銀行宣佈停止提供Custom Cash卡，用戶需留意相關替代方案。",
-      "title_es": "Citi Discontinúa La Tarjeta Custom Cash",
-      "summary_es": "Citi ha dejado de ofrecer su tarjeta Custom Cash."
-    },
-    {
-      "title": "Walmart Business+ $100 Rewards With New Membership ($98 Cost)",
-      "url": "https://www.doctorofcredit.com/walmart-business-100-rewards-with-new-membership-98-cost/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "walmart"
-      ],
-      "ts": "2026-05-28T17:53:56.000Z",
-      "title_en": "Walmart Business+ $100 Rewards With New Membership ($98 Cost)",
-      "summary_en": "",
-      "title_zh": "沃爾瑪 Business+ 新會員繳98美元即可獲得100美元獎勵",
-      "summary_zh": "沃爾瑪 Business+ 以98美元入會，可獲得100美元獎勵作為回饋。",
-      "title_es": "Walmart Business+ Ofrece $100 En Recompensas Con Nueva Membresía ($98 Costo)",
-      "summary_es": "Walmart Business+ regala $100 en recompensas a quienes compren una membresía nueva por $98."
     }
   ],
-  "fetched": "2026-05-29T20:08:52.659Z"
+  "fetched": "2026-05-30T02:09:34.082Z"
 }
