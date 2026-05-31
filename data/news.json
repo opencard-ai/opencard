@@ -1,6 +1,75 @@
 {
   "items": [
     {
+      "title": "[NY] Suffolk Federal Credit Union $500 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/ny-suffolk-federal-credit-union-100-checking-bonus-direct-deposit-not-required/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "credit card funding",
+        "direct deposit not required",
+        "ny bank bonuses"
+      ],
+      "ts": "2026-05-31T14:00:41.000Z",
+      "title_en": "[NY] Suffolk Federal Credit Union $500 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[NY] Suffolk Federal Credit Union $500 Checking Bonus",
+      "summary_zh": "",
+      "title_es": "[NY] Suffolk Federal Credit Union Bono de $500 por Cuenta Corriente",
+      "summary_es": "Suffolk Federal Credit Union ofrece un bono de $500 por abrir una cuenta corriente en Nueva York."
+    },
+    {
+      "title": "[AL Only] Alabama Central Credit Union $100 Referral Bonus, Direct Deposit Not Required",
+      "url": "https://www.doctorofcredit.com/al-only-alabama-central-credit-union-100-referral-bonus-direct-deposit-not-required/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "al bank bonuses",
+        "direct deposit required"
+      ],
+      "ts": "2026-05-31T13:30:54.000Z",
+      "title_en": "[AL Only] Alabama Central Credit Union $100 Referral Bonus, Direct Deposit Not Required",
+      "summary_en": "",
+      "title_zh": "[AL Only] Alabama Central Credit Union $100 Referral Bonus, Direct Deposit Not Required",
+      "summary_zh": "",
+      "title_es": "[AL] Alabama Central Credit Union Bono de $100 por Referencia, No Requiere Depósito Directo",
+      "summary_es": "Alabama Central Credit Union ofrece un bono de $100 por cada referido sin necesidad de hacer un depósito directo en Alabama."
+    },
+    {
+      "title": "Staples: No Purchase Fee On $200 Visa Gift Cards (5/31-6/5)",
+      "url": "https://www.doctorofcredit.com/staples-no-purchase-fee-on-200-visa-gift-cards-10-31-11-6-limit-5/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Manufactured Spending",
+        "staples",
+        "visa gift cards"
+      ],
+      "ts": "2026-05-31T13:00:28.000Z",
+      "title_en": "Staples: No Purchase Fee On $200 Visa Gift Cards (5/31-6/5)",
+      "summary_en": "",
+      "title_zh": "Staples: No Purchase Fee On $200 Visa Gift Cards (5/31-6/5)",
+      "summary_zh": "",
+      "title_es": "Staples: Sin Cargo de Compra en Tarjetas de Regalo Visa de $200 (5/31-6/5)",
+      "summary_es": "Staples permite obtener tarjetas de regalo Visa de $200 sin cargo adicional durante el período del 31 de mayo al 5 de junio."
+    },
+    {
+      "title": "[IA Only] FSB Bank $300-$1,000 Business Checking Bonus (Requires Payroll Processing)",
+      "url": "https://www.doctorofcredit.com/ia-only-fsb-bank-500-business-checking-bonus-requires-payroll-processing/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit not required",
+        "ia bank bonuses"
+      ],
+      "ts": "2026-05-31T12:00:30.000Z",
+      "title_en": "[IA Only] FSB Bank $300-$1,000 Business Checking Bonus (Requires Payroll Processing)",
+      "summary_en": "",
+      "title_zh": "[IA Only] FSB Bank $300-$1,000 Business Checking Bonus (Requires Payroll Processing)",
+      "summary_zh": "",
+      "title_es": "[IA] FSB Bank Bono de $300‑$1,000 por Cuenta Corriente Empresarial (Requiere Procesamiento de Nómina)",
+      "summary_es": "FSB Bank ofrece un bono entre $300 y $1,000 para cuentas corrientes empresariales en Iowa, siempre que se procese la nómina a través del banco."
+    },
+    {
       "title": "[MS Only] Grand Bank $200 Checking Bonus",
       "url": "https://www.doctorofcredit.com/ms-only-grand-bank-200-checking-bonus/",
       "source": "Doctor of Credit",
@@ -14,8 +83,8 @@
       "summary_en": "",
       "title_zh": "[MS Only] Grand Bank $200 Checking Bonus",
       "summary_zh": "",
-      "title_es": "[MS Only] Grand Bank $200 Checking Bonus",
-      "summary_es": ""
+      "title_es": "[MS] Grand Bank Bono de $200 por Cuenta Corriente",
+      "summary_es": "Grand Bank en Mississippi ofrece un bono de $200 por abrir una cuenta corriente."
     },
     {
       "title": "[MN, WI, MI, WI, FL, GA] Wings Credit Union $500 Checking Bonus + $100 Referral",
@@ -37,8 +106,8 @@
       "summary_en": "",
       "title_zh": "[MN, WI, MI, WI, FL, GA] Wings Credit Union $500 Checking Bonus + $100 Referral",
       "summary_zh": "",
-      "title_es": "[MN, WI, MI, WI, FL, GA] Wings Credit Union $500 Checking Bonus + $100 Referral",
-      "summary_es": ""
+      "title_es": "[MN, WI, MI, FL, GA] Wings Credit Union Bono de $500 por Cuenta Corriente + $100 por Referencia",
+      "summary_es": "Wings Credit Union ofrece un bono de $500 por cuenta corriente más $100 por cada referido en varios estados."
     },
     {
       "title": "[MA & CT only] PeoplesBank (Bankatpeoples) $350 Checking Bonus",
@@ -57,8 +126,8 @@
       "summary_en": "",
       "title_zh": "[MA & CT only] PeoplesBank (Bankatpeoples) $350 Checking Bonus",
       "summary_zh": "",
-      "title_es": "[MA & CT only] PeoplesBank (Bankatpeoples) $350 Checking Bonus",
-      "summary_es": ""
+      "title_es": "[MA y CT] PeoplesBank (Bankatpeoples) Bono de $350 por Cuenta Corriente",
+      "summary_es": "PeoplesBank ofrece un bono de $350 por abrir una cuenta corriente para clientes en Massachusetts y Connecticut."
     },
     {
       "title": "[CO & ID, In Branch Only] First Interstate Bank $400 Business Checking",
@@ -75,8 +144,8 @@
       "summary_en": "",
       "title_zh": "[CO & ID, In Branch Only] First Interstate Bank $400 Business Checking",
       "summary_zh": "",
-      "title_es": "[CO & ID, In Branch Only] First Interstate Bank $400 Business Checking",
-      "summary_es": ""
+      "title_es": "[CO e ID, Solo en Sucursal] First Interstate Bank Bono de $400 por Cuenta Corriente Empresarial",
+      "summary_es": "First Interstate Bank ofrece un bono de $400 por una cuenta corriente empresarial solo en sus sucursales de Colorado e Idaho."
     },
     {
       "title": "[PA & OH, In Branch] S&T Bank $400-$600 Business Checking Bonus",
@@ -95,8 +164,8 @@
       "summary_en": "",
       "title_zh": "[PA & OH, In Branch] S&T Bank $400-$600 Business Checking Bonus",
       "summary_zh": "",
-      "title_es": "[PA & OH, In Branch] S&T Bank $400-$600 Business Checking Bonus",
-      "summary_es": ""
+      "title_es": "[PA y OH, Solo en Sucursal] S&T Bank Bono de $400‑$600 por Cuenta Corriente Empresarial",
+      "summary_es": "S&T Bank ofrece un bono entre $400 y $600 por abrir una cuenta corriente empresarial en Pensilvania y Ohio, disponible solo en sucursal."
     },
     {
       "title": "[6/5] Tropical Smoothie Cafe: Free 12oz Mango Monsoon Smoothie When You Wear Flip Flops",
@@ -113,8 +182,8 @@
       "summary_en": "",
       "title_zh": "[6/5] Tropical Smoothie Cafe: Free 12oz Mango Monsoon Smoothie When You Wear Flip Flops",
       "summary_zh": "",
-      "title_es": "[6/5] Tropical Smoothie Cafe: Free 12oz Mango Monsoon Smoothie When You Wear Flip Flops",
-      "summary_es": ""
+      "title_es": "[6/5] Tropical Smoothie Cafe: Smoothie Mango Monsoon de 12oz Gratis al Llevar Sandalias",
+      "summary_es": "Tropical Smoothie Cafe regalará un smoothie de mango de 12 onzas a quienes lleven sandalias el 5 de junio."
     },
     {
       "title": "[OH] OUCU Financial $100 Referral Bonus",
@@ -130,8 +199,8 @@
       "summary_en": "",
       "title_zh": "[OH] OUCU Financial $100 Referral Bonus",
       "summary_zh": "",
-      "title_es": "[OH] OUCU Financial $100 Referral Bonus",
-      "summary_es": ""
+      "title_es": "[OH] OUCU Financial Bono de $100 por Referencia",
+      "summary_es": "OUCU Financial en Ohio ofrece un bono de $100 por cada cliente referido."
     },
     {
       "title": "[NJ only] Columbia Bank $300 Checking Account Bonus/$400 Savings Bonus",
@@ -149,8 +218,8 @@
       "summary_en": "",
       "title_zh": "[NJ only] Columbia Bank $300 Checking Account Bonus/$400 Savings Bonus",
       "summary_zh": "",
-      "title_es": "[NJ only] Columbia Bank $300 Checking Account Bonus/$400 Savings Bonus",
-      "summary_es": ""
+      "title_es": "[NJ] Columbia Bank Bono de $300 por Cuenta Corriente / $400 por Cuenta de Ahorros",
+      "summary_es": "Columbia Bank ofrece un bono de $300 por abrir una cuenta corriente y $400 por una cuenta de ahorros en Nueva Jersey."
     },
     {
       "title": "[OR, WA] Red Canoe Credit Union $150 Checking Bonus, Direct Deposit Not Required",
@@ -167,8 +236,8 @@
       "summary_en": "",
       "title_zh": "[OR, WA] Red Canoe Credit Union $150 Checking Bonus, Direct Deposit Not Required",
       "summary_zh": "",
-      "title_es": "[OR, WA] Red Canoe Credit Union $150 Checking Bonus, Direct Deposit Not Required",
-      "summary_es": ""
+      "title_es": "[OR, WA] Red Canoe Credit Union Bono de $150 por Cuenta Corriente, No Requiere Depósito Directo",
+      "summary_es": "Red Canoe Credit Union ofrece un bono de $150 por cuenta corriente en Oregón y Washington sin necesidad de depósito directo."
     },
     {
       "title": "[IL & In Branch Only] State Bank of Bement $100 Checking Bonus",
@@ -184,8 +253,8 @@
       "summary_en": "",
       "title_zh": "[IL & In Branch Only] State Bank of Bement $100 Checking Bonus",
       "summary_zh": "",
-      "title_es": "[IL & In Branch Only] State Bank of Bement $100 Checking Bonus",
-      "summary_es": ""
+      "title_es": "[IL, Solo en Sucursal] State Bank of Bement Bono de $100 por Cuenta Corriente",
+      "summary_es": "State Bank of Bement ofrece un bono de $100 por cuenta corriente solo en sus sucursales de Illinois."
     },
     {
       "title": "[MA] Cambridge Savings Bank $800 Checking Bonus + $400 Savings",
@@ -199,76 +268,9 @@
       "summary_en": "",
       "title_zh": "[MA] Cambridge Savings Bank $800 Checking Bonus + $400 Savings",
       "summary_zh": "",
-      "title_es": "[MA] Cambridge Savings Bank $800 Checking Bonus + $400 Savings",
-      "summary_es": ""
-    },
-    {
-      "title": "[CO only] ENT Credit Union $200 Checking Bonus, Direct Deposit Not Required",
-      "url": "https://www.doctorofcredit.com/co-only-ent-credit-union-200-checking-bonus-direct-deposit-not-required-2/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "co bank bonuses",
-        "credit card funding",
-        "direct deposit not required",
-        "soft pull"
-      ],
-      "ts": "2026-05-30T14:00:15.000Z",
-      "title_en": "[CO only] ENT Credit Union $200 Checking Bonus, Direct Deposit Not Required",
-      "summary_en": "",
-      "title_zh": "[CO only] ENT Credit Union $200 Checking Bonus, Direct Deposit Not Required",
-      "summary_zh": "",
-      "title_es": "[CO only] ENT Credit Union $200 Checking Bonus, Direct Deposit Not Required",
-      "summary_es": ""
-    },
-    {
-      "title": "Deal Calendar (Full List Of Deals, Credit Card & Bank Bonuses + Their Expiry Dates)",
-      "url": "https://www.doctorofcredit.com/deal-calendar-full-list-deals-credit-card-bank-bonuses-expiry-dates/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Uncategorized"
-      ],
-      "ts": "2026-05-30T13:30:33.000Z",
-      "title_en": "Deal Calendar (Full List Of Deals, Credit Card & Bank Bonuses + Their Expiry Dates)",
-      "summary_en": "",
-      "title_zh": "Deal Calendar (Full List Of Deals, Credit Card & Bank Bonuses + Their Expiry Dates)",
-      "summary_zh": "",
-      "title_es": "Deal Calendar (Full List Of Deals, Credit Card & Bank Bonuses + Their Expiry Dates)",
-      "summary_es": ""
-    },
-    {
-      "title": "[NC] M&F Bank $500 Business Checking Bonus",
-      "url": "https://www.doctorofcredit.com/nc-mf-bank-500-business-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "direct deposit not required",
-        "nc bank bonuses"
-      ],
-      "ts": "2026-05-30T13:00:21.000Z",
-      "title_en": "[NC] M&F Bank $500 Business Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[NC] M&F Bank $500 Business Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[NC] M&F Bank $500 Business Checking Bonus",
-      "summary_es": ""
-    },
-    {
-      "title": "[YMMV] Rakuten: Make A $50+ Purchase, Get $10 Extra Cashback",
-      "url": "https://www.doctorofcredit.com/ymmv-rakuten-make-a-50-purchase-get-10-extra-cashback/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "rakuten"
-      ],
-      "ts": "2026-05-30T12:00:47.000Z",
-      "title_en": "[YMMV] Rakuten: Make A $50+ Purchase, Get $10 Extra Cashback",
-      "summary_en": "",
-      "title_zh": "[YMMV] Rakuten: Make A $50+ Purchase, Get $10 Extra Cashback",
-      "summary_zh": "",
-      "title_es": "[YMMV] Rakuten: Make A $50+ Purchase, Get $10 Extra Cashback",
-      "summary_es": ""
+      "title_es": "[MA] Cambridge Savings Bank Bono de $800 por Cuenta Corriente + $400 por Cuenta de Ahorros",
+      "summary_es": "Cambridge Savings Bank ofrece un bono de $800 por abrir una cuenta corriente y $400 por una cuenta de ahorros en Massachusetts."
     }
   ],
-  "fetched": "2026-05-31T08:10:13.992Z"
+  "fetched": "2026-05-31T14:10:35.453Z"
 }
