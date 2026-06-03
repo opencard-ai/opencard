@@ -3,6 +3,21 @@ import path from 'path';
 import { get } from 'node:https';
 import { decode } from 'html-entities';
 
+// Load .env.local if present (for cron/local runs — parses KEY=VALUE lines, skips comments)
+try {
+  const envPath = path.join(process.cwd(), '.env.local');
+  const envContent = fs.readFileSync(envPath, 'utf8');
+  for (const line of envContent.split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    const eqIdx = trimmed.indexOf('=');
+    if (eqIdx < 0) continue;
+    const key = trimmed.slice(0, eqIdx).trim();
+    const val = trimmed.slice(eqIdx + 1).trim().replace(/^["']|["']$/g, '');
+    if (key && !process.env[key]) process.env[key] = val;
+  }
+} catch (_) {}
+
 // Configuration
 const MINIMAX_API_URL = "https://api.minimax.io/anthropic/v1/messages";
 const MINIMAX_MODEL = "MiniMax-M2.7";
@@ -180,6 +195,10 @@ async function sync() {
 
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2));
   console.log("Done! Written to data/news.json");
+  process.exit(0);
 }
 
-sync().catch(console.error);
+sync().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});
