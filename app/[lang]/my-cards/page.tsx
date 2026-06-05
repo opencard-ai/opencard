@@ -941,8 +941,8 @@ export default function MyCardsPage({
                   <div className="px-4 py-3 bg-slate-50 border-b border-slate-100 flex items-center justify-between gap-3">
                     <div className="flex items-center gap-3 min-w-0 flex-1">
                       <CardArt cardId={productCardId} issuer={card.issuer} size="sm" />
-                      <div className="min-w-0">
-                        <span className="block text-sm font-semibold text-slate-800 truncate">{card.name}</span>
+                      <div className="min-w-0 flex-1">
+                        <span className="block text-sm font-semibold text-slate-800 leading-snug whitespace-normal break-words">{card.name}</span>
                         <div className="flex items-center gap-2">
                           {card.instance_label && (
                             <span className="text-[10px] text-indigo-600 bg-indigo-50 border border-indigo-100 rounded-full px-1.5 py-0.5">{card.instance_label}</span>

@@ -118,12 +118,12 @@ export default function ElevatedOffersList({ cards, lang }: Props) {
     return (
       <Link
         href={`/${lang}/cards/${card.card_id}`}
-        className="flex items-center gap-3 bg-white border border-slate-200 hover:border-blue-300 rounded-xl px-3 py-3 transition-colors"
+        className="flex items-start sm:items-center gap-3 bg-white border border-slate-200 hover:border-blue-300 rounded-xl px-3 py-3 transition-colors"
       >
         <CardArt cardId={card.card_id} issuer={card.issuer} size="sm" />
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <h3 className="text-sm font-semibold text-slate-900 truncate">{card.name}</h3>
+            <h3 className="text-sm font-semibold text-slate-900 leading-snug whitespace-normal break-words">{card.name}</h3>
             {w.is_elevated && (
               <span className="text-[10px] font-bold uppercase tracking-wide bg-amber-100 text-amber-700 rounded px-1.5 py-0.5 inline-flex items-center gap-1">
                 <Flame className="w-3 h-3" /> {t.elevated}

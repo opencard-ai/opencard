@@ -296,13 +296,13 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
                             return (
                               <label
                                 key={card.card_id}
-                                className={`flex items-center justify-between px-3 py-2 cursor-pointer transition-colors ${
+                                className={`flex items-start justify-between gap-2 px-3 py-2 cursor-pointer transition-colors ${
                                   isSelected ? "bg-slate-900 text-white" : "hover:bg-slate-50 text-slate-700"
                                 }`}
                               >
-                                <div className="flex items-center gap-2 overflow-hidden">
+                                <div className="flex items-start gap-2 min-w-0 flex-1">
                                   <input type="checkbox" checked={isSelected} onChange={() => toggleCard(card.card_id)} className="hidden" />
-                                  <span className="text-xs truncate">{card.name}</span>
+                                  <span className="text-xs leading-snug whitespace-normal break-words">{card.name}</span>
                                 </div>
                                 {card.annual_fee > 0 && (
                                   <span className={`text-[10px] ml-2 shrink-0 ${isSelected ? "text-white/60" : "text-slate-400"}`}>

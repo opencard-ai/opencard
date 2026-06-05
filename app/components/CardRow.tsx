@@ -145,11 +145,11 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
           }
         }}
         aria-expanded={expanded}
-        className="w-full flex items-center gap-3 px-3 py-3 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-xl"
+        className="w-full flex items-start sm:items-center gap-3 px-3 py-3 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-xl"
       >
         <CardArt cardId={card.card_id} issuer={card.issuer} size="sm" />
         <div className="flex-1 min-w-0">
-          <h3 className="text-sm font-semibold text-slate-900 truncate">{card.name}</h3>
+          <h3 className="text-sm font-semibold text-slate-900 leading-snug whitespace-normal break-words">{card.name}</h3>
           <div className="mt-1">
             <IssuerChip issuer={card.issuer} />
           </div>
