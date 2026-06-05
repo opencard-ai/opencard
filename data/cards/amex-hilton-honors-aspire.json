@@ -19,19 +19,29 @@
   },
   "earning_rates": [
     {
-      "category": "Flights",
-      "rate": 5,
-      "notes": "Booked directly with airlines..."
+      "category": "Hilton purchases",
+      "rate": 14,
+      "notes": "On eligible purchases made directly with hotels and resorts within the Hilton portfolio"
     },
     {
-      "category": "Hotels",
-      "rate": 5,
-      "notes": "On prepaid hotels..."
+      "category": "Flights",
+      "rate": 7,
+      "notes": "On flights booked directly with airlines or through Amex Travel"
+    },
+    {
+      "category": "Car rentals",
+      "rate": 7,
+      "notes": "On car rentals booked directly from select car rental companies"
+    },
+    {
+      "category": "U.S. restaurants",
+      "rate": 7,
+      "notes": "At U.S. restaurants"
     },
     {
       "category": "Other",
-      "rate": 1,
-      "notes": null
+      "rate": 3,
+      "notes": "All other eligible purchases"
     }
   ],
   "travel_benefits": {
@@ -46,11 +56,6 @@
       }
     ],
     "hotel_status": [
-      {
-        "program": "Marriott Bonvoy",
-        "tier": "Gold Elite",
-        "complimentary": true
-      },
       {
         "program": "Hilton Honors",
         "tier": "Diamond Elite",
@@ -107,7 +112,7 @@
       "notes": "American Express benefit page for Hilton Aspire Annual Free Night Reward"
     }
   ],
-  "last_updated": "2026-06-05T06:27:41.166422Z",
+  "last_updated": "2026-06-05T06:31:50.007545Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -167,7 +172,7 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-06-05T06:27:41.166422Z",
+  "last_verified": "2026-06-05T06:31:50.007545Z",
   "next_review": "2026-07-29T00:00:00Z",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
