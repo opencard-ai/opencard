@@ -7,12 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 5000,
+    "spending_requirement": 9000,
     "time_period_months": 6,
-    "bonus_points": 100000,
-    "description": "Earn up to 100,000 Bonus Miles after you spend $5,000 in eligible purchases on your new Card in your first 6 months of Card Membership. Welcome offers vary and you may not be eligible.",
+    "bonus_points": 125000,
+    "description": "Limited-time offer: Earn up to 125,000 Bonus Miles: 100,000 Bonus Miles after spending $6,000 in purchases in the first 6 months, plus an additional 25,000 Bonus Miles after spending an additional $3,000 in purchases in the first 6 months. Offer ends 7/15/2026.",
     "point_program": "Delta SkyMiles",
-    "estimated_value": 1000
+    "estimated_value": 1250
   },
   "earning_rates": [
     {
@@ -66,6 +66,14 @@
       {
         "name": "Clear Discount",
         "description": "Discount on Clear+ membership based on SkyMiles status."
+      },
+      {
+        "name": "Second Checked Bag Free",
+        "description": "Second checked bag free on domestic Delta-operated flights for eligible Basic Delta SkyMiles Gold, Platinum, and Reserve Card Members; terms apply."
+      },
+      {
+        "name": "Companion Certificate for Delta Vacations",
+        "description": "Companion Certificate can now be redeemed toward the eligible flight portion of a Delta Vacations package; terms apply."
       }
     ]
   },
@@ -99,9 +107,17 @@
     {
       "url": "https://upgradedpoints.com/credit-cards/reviews/delta-reserve-credit-card-american-express/welcome-offer-history/",
       "notes": "Offer history and MQD headstart details"
+    },
+    {
+      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
+      "notes": "Delta personal card comparison page with current limited-time welcome offers and benefits"
+    },
+    {
+      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "notes": "Delta News Hub official announcement: limited-time welcome offers and 2026 benefit updates"
     }
   ],
-  "last_updated": "2026-04-26T04:02:55.594292Z",
+  "last_updated": "2026-06-05T04:25:28.802083Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -150,8 +166,8 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-04-24",
-  "next_review": "2026-07-23T17:26:36.116494",
+  "last_verified": "2026-06-05T04:25:28.802083Z",
+  "next_review": "2026-07-15T00:00:00Z",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
   "late_fee": 40,
