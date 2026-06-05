@@ -7,12 +7,15 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 3000,
+    "spending_requirement": 8000,
     "time_period_months": 6,
-    "bonus_points": 175000,
-    "description": "Earn 175,000 Hilton Honors Bonus Points after spending $3,000 on eligible purchases within the first 6 months of card membership.",
+    "bonus_points": 130000,
+    "description": "Limited-time offer: Enjoy a $0 intro annual fee for the first year, then $195, and earn 130,000 Hilton Honors Bonus Points after spending $8,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 7/29/2026.",
     "point_program": "Hilton Honors",
-    "estimated_value": 875
+    "estimated_value": 650,
+    "is_elevated": false,
+    "normal_bonus_points": 130000,
+    "elevated_until": "2026-07-29"
   },
   "earning_rates": [
     {
@@ -99,14 +102,14 @@
       "url": "https://www.hilton.com/en/hilton-honors/credit-cards/"
     }
   ],
-  "last_updated": "2026-04-27T03:03:48.139Z",
+  "last_updated": "2026-06-05T06:27:41.166422Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.983Z",
-  "next_review": "2026-07-15T13:41:49.983000+00:00",
+  "last_verified": "2026-06-05T06:27:41.166422Z",
+  "next_review": "2026-07-29T00:00:00Z",
   "recurring_credits": [
     {
       "credit_key": "hilton-quarterly-statement-credit",

@@ -8,11 +8,14 @@
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 130000,
-    "spending_requirement": 2000,
-    "time_period_months": 3,
-    "description": "Earn up to 130,000 Membership Rewards points",
+    "spending_requirement": 3000,
+    "time_period_months": 6,
+    "description": "Limited-time offer: Enjoy a $0 intro annual fee for the first year, then $150, and earn 130,000 Hilton Honors Bonus Points after spending $3,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 7/29/2026.",
     "point_program": "Hilton Honors",
-    "estimated_value": 650
+    "estimated_value": 650,
+    "is_elevated": true,
+    "normal_bonus_points": 130000,
+    "elevated_until": "2026-07-29"
   },
   "earning_rates": [
     {
@@ -85,9 +88,13 @@
     {
       "url": "https://onemileatatime.com/deals/hilton-amex-card-bonus/",
       "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold→Diamond path at $40K, National status"
+    },
+    {
+      "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+      "notes": "Hilton official credit card page; current limited-time offers ending 7/29/2026"
     }
   ],
-  "last_updated": "2026-04-27T03:03:48.139Z",
+  "last_updated": "2026-06-05T06:27:41.166422Z",
   "hotel_program": {
     "program": "Hilton Honors",
     "tier": "Gold Elite",
@@ -115,8 +122,8 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/"
     }
   ],
-  "last_verified": "2026-04-25T16:00:44.012Z",
-  "next_review": "2026-07-15T13:41:49.948000+00:00",
+  "last_verified": "2026-06-05T06:27:41.166422Z",
+  "next_review": "2026-07-29T00:00:00Z",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
   "late_fee": 40,

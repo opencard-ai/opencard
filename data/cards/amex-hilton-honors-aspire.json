@@ -7,12 +7,15 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 150000,
+    "bonus_points": 175000,
     "spending_requirement": 6000,
     "time_period_months": 6,
-    "description": "Earn 150,000 Hilton Honors Points after spending $6,000 within 6 months of account opening.",
-    "point_program": "Honors",
-    "estimated_value": 750
+    "description": "Limited-time offer: Earn 175,000 Hilton Honors Bonus Points after spending $6,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 7/29/2026.",
+    "point_program": "Hilton Honors",
+    "estimated_value": 875,
+    "is_elevated": true,
+    "normal_bonus_points": 150000,
+    "elevated_until": "2026-07-29"
   },
   "earning_rates": [
     {
@@ -62,6 +65,10 @@
       {
         "name": "The Hotel Collection",
         "description": "Extra benefits at select hotels"
+      },
+      {
+        "name": "Additional Free Night Rewards with Spend",
+        "description": "Earn an additional Free Night Reward after spending $30,000 in purchases in a calendar year, and another after spending $60,000 in purchases in the same calendar year; terms apply."
       }
     ]
   },
@@ -94,9 +101,13 @@
     },
     {
       "url": "https://www.hilton.com/en/hilton-honors/credit-cards/"
+    },
+    {
+      "url": "https://global.americanexpress.com/card-benefits/detail/complimentary-free-weekend-night/hilton-aspire",
+      "notes": "American Express benefit page for Hilton Aspire Annual Free Night Reward"
     }
   ],
-  "last_updated": "2026-05-11T18:29:06.417Z",
+  "last_updated": "2026-06-05T06:27:41.166422Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -142,11 +153,22 @@
       "description": "Up to $209/year statement credit for CLEAR Plus membership (auto-renewal required).",
       "reset_type": "calendar_year",
       "source": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/"
+    },
+    {
+      "credit_key": "hilton-annual-free-night-reward",
+      "name": "Hilton Annual Free Night Reward",
+      "amount": 0,
+      "frequency": "cardmember_year",
+      "category": "hotel",
+      "description": "Annual Free Night Reward from Hilton Honors in the first year of Card Membership and every year upon Card renewal. Redeemable for one standard accommodation, double occupancy, subject to availability; terms apply.",
+      "reset_type": "cardmember_year",
+      "source": "https://global.americanexpress.com/card-benefits/detail/complimentary-free-weekend-night/hilton-aspire",
+      "is_free_night": true
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-04-25T16:05:08.872Z",
-  "next_review": "2026-07-23T17:26:36.116494",
+  "last_verified": "2026-06-05T06:27:41.166422Z",
+  "next_review": "2026-07-29T00:00:00Z",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
   "late_fee": 40,
