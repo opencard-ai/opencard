@@ -7,18 +7,33 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 5000,
+    "spending_requirement": 15000,
     "time_period_months": 6,
-    "bonus_points": 100000,
-    "description": "Earn up to 100,000 Bonus Miles after spending $5,000 on eligible purchases on your new Card in your first 6 months of Card Membership. Welcome offers vary and you may not be eligible.",
+    "bonus_points": 125000,
+    "description": "Limited-time offer: Earn 125,000 Bonus Miles after spending $15,000 in purchases on your new Card in your first 6 months of Card Membership. Offer ends 7/15/2026.",
     "point_program": "Delta SkyMiles",
-    "estimated_value": 1000
+    "estimated_value": 1250
   },
   "earning_rates": [
     {
       "category": "Delta purchases",
       "rate": 3,
       "notes": "Per $1 on eligible Delta purchases"
+    },
+    {
+      "category": "Transit",
+      "rate": 1.5,
+      "notes": "On eligible transit purchases; miles caps apply"
+    },
+    {
+      "category": "U.S. shipping purchases",
+      "rate": 1.5,
+      "notes": "On eligible U.S. shipping purchases; miles caps apply"
+    },
+    {
+      "category": "U.S. office supply stores",
+      "rate": 1.5,
+      "notes": "On eligible U.S. office supply store purchases; miles caps apply"
     },
     {
       "category": "Other",
@@ -28,10 +43,10 @@
   ],
   "travel_benefits": {
     "lounge_access": {
-      "centurion": false,
+      "centurion": true,
       "priority_pass": false,
       "delta_sky_club": true,
-      "other": "Delta Sky Club access for cardholder (complimentary when flying Delta; companion guest access available)"
+      "other": "15 Delta Sky Club visits each Medallion Year; complimentary Centurion Lounge/Escape Lounge access when flying Delta and purchasing the flight with the Card; terms apply"
     },
     "hotel_status": [],
     "other_benefits": [
@@ -39,7 +54,10 @@
       "15% discount on Delta award flights",
       "Companion Certificate each year upon renewal (domestic First Class or ComfortPlus)",
       "No Foreign Transaction Fees",
-      "Medallion Qualification Dollar (MQD) credits"
+      "Medallion Qualification Dollar (MQD) credits",
+      "Second checked bag free on domestic Delta-operated flights",
+      "Companion Certificate can be redeemed toward the eligible flight portion of a Delta Vacations package where applicable",
+      "Companion Certificate can be redeemed toward the eligible flight portion of a Delta Vacations package"
     ]
   },
   "fhr_thc": {
@@ -73,9 +91,13 @@
     },
     {
       "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards"
+    },
+    {
+      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "notes": "Delta News Hub official announcement: limited-time welcome offers and 2026 benefit updates"
     }
   ],
-  "last_updated": "2026-04-29T13:28:29.745Z",
+  "last_updated": "2026-06-05T03:34:57.017462Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -122,6 +144,6 @@
       "reset_type": "every_4_years"
     }
   ],
-  "last_verified": "2026-04-16T13:41:49.980Z",
-  "next_review": "2026-07-15T13:41:49.980000+00:00"
+  "last_verified": "2026-06-05T03:34:57.017462Z",
+  "next_review": "2026-07-15T00:00:00Z"
 }

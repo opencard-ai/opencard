@@ -2,45 +2,52 @@
   "card_id": "amex-delta-gold-biz",
   "name": "Delta SkyMiles Gold Business",
   "issuer": "American Express",
-  "network": "visa",
+  "network": "amex",
   "annual_fee": 150,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 90000,
-    "spending_requirement": 3000,
-    "time_period_months": 3,
-    "description": "Earn 90,000 Bonus Miles",
+    "spending_requirement": 6000,
+    "time_period_months": 6,
+    "description": "Limited-time offer: Earn 90,000 Bonus Miles after spending $6,000 in purchases on your new Card in your first 6 months of Card Membership. Offer ends 7/15/2026.",
     "point_program": "Delta SkyMiles",
     "estimated_value": 900
   },
   "earning_rates": [
     {
-      "category": "Delta Flights",
+      "category": "Delta purchases",
       "rate": 2,
-      "notes": "Earn 2X Miles on Delta purchases"
+      "notes": "Per $1 on eligible Delta purchases"
     },
     {
-      "category": "Dining",
+      "category": "Restaurants",
       "rate": 2,
-      "notes": "Earn 2X Miles at restaurants worldwide"
+      "notes": "At restaurants worldwide, plus takeout and delivery in the U.S."
     },
     {
-      "category": "Groceries",
+      "category": "U.S. shipping purchases",
       "rate": 2,
-      "notes": "Earn 2X Miles at U.S. supermarkets"
+      "notes": "On eligible U.S. shipping purchases; miles caps apply"
+    },
+    {
+      "category": "U.S. advertising purchases",
+      "rate": 2,
+      "notes": "On eligible U.S. advertising purchases in select media; miles caps apply"
     },
     {
       "category": "Other",
       "rate": 1,
-      "notes": null
+      "notes": "All other eligible purchases"
     }
   ],
   "annual_credits": [],
   "travel_benefits": {
     "lounge_access": [],
     "hotel_status": [],
-    "other_benefits": []
+    "other_benefits": [
+      "Second checked bag free on domestic Delta-operated flights"
+    ]
   },
   "fhr_thc": {
     "fhr_eligible": false,
@@ -64,6 +71,10 @@
     {
       "url": "https://www.uscreditcardguide.com/amex-gold-delta-skymiles-business/",
       "notes": "USCCG card review (LLM-friendly static HTML)"
+    },
+    {
+      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "notes": "Delta News Hub official announcement: limited-time welcome offers and 2026 benefit updates"
     }
   ],
   "benefits": [],
@@ -71,10 +82,10 @@
   "application_rules": {
     "rules": []
   },
-  "last_updated": "2026-04-27T03:03:48.139Z",
+  "last_updated": "2026-06-05T03:34:57.017462Z",
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-04-24T17:27:59.994652",
-  "next_review": "2026-07-23T17:27:59.994652",
+  "last_verified": "2026-06-05T03:34:57.017462Z",
+  "next_review": "2026-07-15T00:00:00Z",
   "recurring_credits": [
     {
       "credit_key": "delta-stays-credit",
@@ -85,6 +96,16 @@
       "description": "Up to $150 annual statement credit on prepaid hotels or vacation rentals booked through Delta Stays on delta.com. No spending requirement.",
       "reset_type": "calendar_year",
       "source": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-gold/"
+    },
+    {
+      "credit_key": "rideshare-credit",
+      "name": "Rideshare Credit",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "ride",
+      "description": "Up to $10/month statement credit on eligible U.S. rideshare purchases with select providers after Card renewal. Enrollment required.",
+      "reset_type": "monthly",
+      "source": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees"
     }
   ]
 }
