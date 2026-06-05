@@ -1,0 +1,101 @@
+{
+  "cardId": "amex-delta-platinum",
+  "cardPath": "data/cards/amex-delta-platinum.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-delta-personal",
+      "type": "issuer",
+      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-delta-news",
+      "type": "issuer",
+      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "method": "get",
+      "required": true
+    },
+    {
+      "id": "03-amex-category",
+      "type": "issuer",
+      "url": "https://www.americanexpress.com/us/credit-cards/category/rewards-delta-skymiles/",
+      "method": "fetch"
+    },
+    {
+      "id": "04-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/amex-platinum-delta-skymiles/",
+      "method": "get"
+    },
+    {
+      "id": "05-tpg-current-offers",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/delta-amex-current-offers/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 100000,
+      "spending_requirement": 6000,
+      "time_period_months": 6,
+      "description": "Limited-time offer: Earn up to 100,000 Bonus Miles: 80,000 Bonus Miles after spending $4,000 in purchases in the first 6 months, plus an additional 20,000 Bonus Miles after spending an additional $2,000 in purchases in the first 6 months. Offer ends 7/15/2026.",
+      "point_program": "Delta SkyMiles",
+      "estimated_value": 1000,
+      "offer_status": "public_limited_time",
+      "confidence": "high",
+      "notes": [
+        "Official Delta News Hub and Delta personal card comparison page corroborate the public limited-time offer."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*delta-news*.md:New Delta SkyMiles Platinum American Express Card Members can earn 80,000 bonus miles after spending $4,000... plus an additional 20,000 bonus miles after spending an additional $2,000...",
+      "sources/*delta-personal*.md:Earn Up to 100,000 Miles"
+    ]
+  },
+  "open_questions": [
+    "Confirm the 7/15/2026 expiry remains visible before applying future changes."
+  ],
+  "community": {
+    "summary": "Official Delta sources are canonical for this public limited-time offer. Third-party sources are supporting only.",
+    "recommended_production_value": {
+      "offer_amount": 100000,
+      "spend_requirement": 6000,
+      "spend_window_months": 6,
+      "status": "public_limited_time"
+    },
+    "confidence": "high_when_delta_news_and_delta_personal_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Delta official sources",
+        "regex": "100,000|80,000[\\s\\S]{0,240}20,000",
+        "stance": "supports_100k_public_limited_time",
+        "offer_amount": 100000,
+        "spend_requirement": 6000,
+        "spend_window_months": 6,
+        "excerpt": "Delta News Hub and personal card page describe up to 100,000 miles for Platinum.",
+        "confidence": "high"
+      },
+      {
+        "sourceType": "tpg",
+        "source": "The Points Guy",
+        "regex": "100,000",
+        "stance": "supports_100k_secondary",
+        "offer_amount": 100000,
+        "spend_requirement": 6000,
+        "spend_window_months": 6,
+        "excerpt": "TPG current-offers page tracks the same elevated Delta Amex personal offer.",
+        "confidence": "medium_high"
+      }
+    ]
+  }
+}
