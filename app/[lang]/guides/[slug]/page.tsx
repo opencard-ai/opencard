@@ -8,17 +8,16 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { GUIDES, getGuide, getLocalizedGuide } from "@/lib/guides";
-import { locales, type Locale } from "@/lib/i18n";
+import { getGuidesForLocale, getGuide, getLocalizedGuide, hasLocalizedGuide } from "@/lib/guides";
+import { locales, t, type Locale } from "@/lib/i18n";
 
 type Props = {
   params: Promise<{ lang: string; slug: string }>;
 };
 
 export async function generateStaticParams() {
-  // Cross-product locale × slug. v1 has 4 locales × 1 guide = 4 pages.
   return locales.flatMap((lang) =>
-    GUIDES.map((g) => ({ lang, slug: g.slug }))
+    getGuidesForLocale(lang).map((g) => ({ lang, slug: g.slug }))
   );
 }
 
@@ -26,13 +25,8 @@ export const dynamicParams = false;
 
 async function loadGuideArticle(slug: string, lang: Locale) {
   if (lang !== "en") {
-    try {
-      const localized = await import(`@/content/guides/${lang}/${slug}.mdx`);
-      return localized.default;
-    } catch {
-      // Not every legacy guide is translated yet. Fall back to the canonical
-      // English article so localized routes still render instead of 404ing.
-    }
+    const localized = await import(`@/content/guides/${lang}/${slug}.mdx`);
+    return localized.default;
   }
   const canonical = await import(`@/content/guides/${slug}.mdx`);
   return canonical.default;
@@ -42,7 +36,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = await params;
   const guide = getGuide(slug);
   if (!guide) return {};
-  const localizedGuide = getLocalizedGuide(guide, lang);
+  const safeLang = (locales as readonly string[]).includes(lang)
+    ? (lang as Locale)
+    : ("en" as Locale);
+  if (!hasLocalizedGuide(guide, safeLang)) return {};
+  const localizedGuide = getLocalizedGuide(guide, safeLang);
   return {
     title: `${localizedGuide.title} — OpenCard`,
     description: localizedGuide.summary,
@@ -70,6 +68,7 @@ export default async function GuidePage({ params }: Props) {
   const safeLang = (locales as readonly string[]).includes(lang)
     ? (lang as Locale)
     : ("en" as Locale);
+  if (!hasLocalizedGuide(guide, safeLang)) notFound();
   const localizedGuide = getLocalizedGuide(guide, safeLang);
   const Article = await loadGuideArticle(slug, safeLang);
 
@@ -80,15 +79,15 @@ export default async function GuidePage({ params }: Props) {
           href={`/${safeLang}/guides`}
           className="underline underline-offset-2 hover:text-amber-700 dark:hover:text-amber-300"
         >
-          ← All guides
+          {t("guides.back", safeLang)}
         </Link>
       </nav>
 
       <header className="mb-8">
         <div className="flex flex-wrap items-center gap-2 text-[11px] text-slate-500 dark:text-slate-500 mb-3">
-          <span>Updated {localizedGuide.updated}</span>
+          <span>{t("guides.updated", safeLang)} {localizedGuide.updated}</span>
           <span>·</span>
-          <span>{localizedGuide.word_count.toLocaleString()} words</span>
+          <span>{localizedGuide.word_count.toLocaleString()} {t("guides.words", safeLang)}</span>
           {localizedGuide.tags?.map((tag) => (
             <span
               key={tag}
@@ -108,19 +107,19 @@ export default async function GuidePage({ params }: Props) {
 
       <footer className="text-[13px] text-slate-500 dark:text-slate-500 space-y-2">
         <p>
-          First published {localizedGuide.published}
+          {t("guides.firstPublished", safeLang)} {localizedGuide.published}
           {localizedGuide.updated !== localizedGuide.published && (
-            <> · Last updated {localizedGuide.updated}</>
+            <> · {t("guides.lastUpdated", safeLang)} {localizedGuide.updated}</>
           )}
           .
         </p>
         <p>
-          Found something wrong or out of date?{" "}
+          {t("guides.feedback", safeLang)}{" "}
           <Link
             href={`/${safeLang}/about`}
             className="underline underline-offset-2 hover:text-amber-700 dark:hover:text-amber-300"
           >
-            Let us know
+            {t("guides.letUsKnow", safeLang)}
           </Link>
           .
         </p>

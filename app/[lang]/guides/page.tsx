@@ -8,7 +8,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getLocalizedGuides } from "@/lib/guides";
-import { locales, type Locale } from "@/lib/i18n";
+import { locales, t, type Locale } from "@/lib/i18n";
 
 type Props = {
   params: Promise<{ lang: string }>;
@@ -20,9 +20,11 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  const title = "Guides — OpenCard";
-  const description =
-    "Long-form guides on welcome offers, transferable points, and credit-card strategy. Hand-written, regularly refreshed against the OpenCard catalog.";
+  const safeLang = (locales as readonly string[]).includes(lang)
+    ? (lang as Locale)
+    : ("en" as Locale);
+  const title = `${t("guides.kicker", safeLang)} — OpenCard`;
+  const description = t("guides.description", safeLang);
   return {
     title,
     description,
@@ -50,15 +52,13 @@ export default async function GuidesIndex({ params }: Props) {
     <main className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
       <header className="mb-10">
         <p className="text-xs uppercase tracking-[0.18em] text-amber-700 dark:text-amber-300 mb-2">
-          Guides
+          {t("guides.kicker", safeLang)}
         </p>
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
-          Credit card strategy, explained
+          {t("guides.title", safeLang)}
         </h1>
         <p className="mt-3 text-slate-600 dark:text-slate-400 text-[15px] leading-relaxed">
-          Plain-language guides written and maintained against the OpenCard
-          catalog. No churning hype, no link-bait listicles — just the model
-          you need to make actual decisions.
+          {t("guides.description", safeLang)}
         </p>
       </header>
 
@@ -76,9 +76,9 @@ export default async function GuidesIndex({ params }: Props) {
                 {guide.summary}
               </p>
               <div className="mt-3 flex flex-wrap gap-2 text-[11px] text-slate-500 dark:text-slate-500">
-                <span>Updated {guide.updated}</span>
+                <span>{t("guides.updated", safeLang)} {guide.updated}</span>
                 <span>·</span>
-                <span>{guide.word_count.toLocaleString()} words</span>
+                <span>{guide.word_count.toLocaleString()} {t("guides.words", safeLang)}</span>
                 {guide.tags?.map((tag) => (
                   <span
                     key={tag}
@@ -94,12 +94,12 @@ export default async function GuidesIndex({ params }: Props) {
       </ul>
 
       <p className="mt-12 text-xs text-slate-500 dark:text-slate-500">
-        More guides coming. Suggestions? Drop a note via{" "}
+        {t("guides.more", safeLang)}{" "}
         <Link
           href={`/${safeLang}/about`}
           className="underline underline-offset-2 hover:text-amber-700 dark:hover:text-amber-300"
         >
-          About
+          {t("guides.aboutLink", safeLang)}
         </Link>
         .
       </p>

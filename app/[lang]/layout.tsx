@@ -112,22 +112,19 @@ export default async function LocaleLayout({ children, params }: Props) {
 <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-slate-50 text-slate-900 antialiased pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]`}
       >
-        <header className="bg-white border-b border-slate-200 sticky top-0 z-10 pt-[env(safe-area-inset-top)]">
-          <div className="max-w-5xl mx-auto px-4 py-1 flex items-center justify-between">
-            <a href={`/${lang}`} className="inline-flex items-center gap-2 h-12" aria-label="OpenCard">
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 text-blue-900 dark:text-blue-950 font-black text-2xl leading-none shadow-sm">
+        <header className="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 pt-[env(safe-area-inset-top)]">
+          <div className="max-w-5xl mx-auto px-3 sm:px-4 py-1 flex items-center justify-between gap-3">
+            <a href={`/${lang}`} className="inline-flex items-center gap-1.5 sm:gap-2 h-12 min-w-0" aria-label="OpenCard">
+              <span className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 text-blue-900 dark:text-blue-950 font-black text-xl sm:text-2xl leading-none shadow-sm shrink-0">
                 O
               </span>
-              <span className="text-2xl font-extrabold tracking-tight text-blue-900 dark:text-white">
+              <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-blue-900 dark:text-white">
                 Open<span className="text-amber-500 dark:text-amber-400">Card</span>
               </span>
             </a>
-            <div className="flex items-center gap-3 whitespace-nowrap">
-              <nav className="flex items-center gap-3 text-sm text-slate-600 whitespace-nowrap">
+            <div className="flex items-center gap-1.5 sm:gap-3 whitespace-nowrap">
+              <nav className="flex items-center text-sm text-slate-600 whitespace-nowrap">
                 <GuidesDropdown lang={lang} />
-                <a href={`/${lang}/#about`} className="hover:text-slate-900 transition-colors dark:text-slate-400 dark:hover:text-slate-100">
-                  {t("nav.about", locale)}
-                </a>
               </nav>
               <LanguageSwitcher />
               <ThemeToggle />

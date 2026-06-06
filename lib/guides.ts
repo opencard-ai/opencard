@@ -46,7 +46,16 @@ export function getLocalizedGuide(guide: GuideSummary, lang: string): GuideSumma
 }
 
 export function getLocalizedGuides(lang: string): GuideSummary[] {
-  return GUIDES.map((guide) => getLocalizedGuide(guide, lang));
+  return getGuidesForLocale(lang).map((guide) => getLocalizedGuide(guide, lang));
+}
+
+export function hasLocalizedGuide(guide: GuideSummary, lang: string): boolean {
+  return lang === "en" || Boolean(guide.localized?.[lang]);
+}
+
+export function getGuidesForLocale(lang: string): GuideSummary[] {
+  if (lang === "en") return GUIDES;
+  return GUIDES.filter((guide) => hasLocalizedGuide(guide, lang));
 }
 
 export const GUIDES: GuideSummary[] = [
