@@ -7,14 +7,22 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 0,
+    "bonus_points": 125000,
     "spending_requirement": 3000,
     "time_period_months": 3,
-    "description": "Earn 3 Free Night Awards after spending $3,000 within 3 months, plus 1 additional FNA after spending $4,000 total within 4 months. Each FNA redeemable up to 50,000 Marriott Bonvoy points.",
+    "description": "Limited-time offer: Earn 125,000 Marriott Bonvoy bonus points + 1 Free Night Award valued up to 50,000 points + up to $100 in airline credits after spending $3,000 on eligible purchases in the first 3 months from account opening.",
     "point_program": "Marriott Bonvoy",
-    "estimated_value": 325,
-    "free_nights": 4,
-    "free_night_value_cap": 50000
+    "estimated_value": 975,
+    "free_nights": 1,
+    "free_night_value_cap": 50000,
+    "airline_credit_value": 100,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
+    "notes": [
+      "Chase and Marriott issuer pages corroborate the 125k + 50k FNA + airline credits public offer."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-06-06"
   },
   "earning_rates": [
     {
@@ -110,7 +118,7 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:46.246653",
-  "last_verified": "2026-04-25T16:02:14.512Z",
+  "last_verified": "2026-06-06",
   "next_review": "2026-07-23T17:26:46.246653",
   "featured": true
 }

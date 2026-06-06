@@ -1,0 +1,96 @@
+{
+  "cardId": "capital-one-venture-biz",
+  "cardPath": "data/cards/capital-one-venture-biz.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.capitalone.com/small-business/credit-cards/venture-business/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-capitalone-compare",
+      "type": "issuer",
+      "url": "https://www.capitalone.com/credit-cards/compare/",
+      "method": "get"
+    },
+    {
+      "id": "03-tpg",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/capital-one-venture-business-current-offer/",
+      "method": "get",
+      "required": true
+    },
+    {
+      "id": "04-cnbc",
+      "type": "cnbc",
+      "url": "https://www.cnbc.com/select/ending-soon-150000-mile-capital-one-venture-business-card-offer/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 150000,
+      "spending_requirement": 25000,
+      "time_period_months": 6,
+      "description": "Limited-time offer: Earn up to 150,000 Capital One miles: 75,000 miles after spending $7,500 in the first 3 months, plus an additional 75,000 miles after spending $25,000 total in the first 6 months from account opening.",
+      "point_program": "Capital One Miles",
+      "estimated_value": 1500,
+      "offer_status": "public_limited_time",
+      "confidence": "high",
+      "notes": [
+        "Capital One issuer pages and TPG corroborate the tiered Venture Business up-to-150k limited-time offer."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:Earn up to 150,000 bonus miles",
+      "sources/*issuer*.md:75,000 miles when you spend $7,500 in the first 3 months",
+      "sources/*tpg*.md:Last chance for new Venture Business cardholders to earn up to 150,000 bonus miles"
+    ]
+  },
+  "open_questions": [
+    "Confirm the second-tier additional 75k / $25k total / 6mo language remains visible before applying future changes."
+  ],
+  "community": {
+    "summary": "Current issuer and secondary sources support the Venture Business public limited-time tiered offer up to 150k miles.",
+    "recommended_production_value": {
+      "offer_amount": 150000,
+      "spend_requirement": 25000,
+      "spend_window_months": 6,
+      "status": "public_limited_time"
+    },
+    "confidence": "high_when_capital_one_issuer_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": ["75k"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Capital One Venture Business page",
+        "regex": "150,000|75,000[\\s\\S]{0,260}75,000|7,500[\\s\\S]{0,260}25,000",
+        "stance": "supports_150k_public_limited_time",
+        "offer_amount": 150000,
+        "spend_requirement": 25000,
+        "spend_window_months": 6,
+        "excerpt": "Capital One describes Venture Business as up to 150,000 miles with tiered spend requirements.",
+        "confidence": "high_if_present"
+      },
+      {
+        "sourceType": "tpg",
+        "source": "The Points Guy",
+        "regex": "150,000|75,000[\\s\\S]{0,260}75,000",
+        "stance": "supports_150k_secondary",
+        "offer_amount": 150000,
+        "spend_requirement": 25000,
+        "spend_window_months": 6,
+        "excerpt": "TPG tracks Venture Business as a last-chance up-to-150k tiered offer.",
+        "confidence": "high_for_secondary"
+      }
+    ]
+  }
+}

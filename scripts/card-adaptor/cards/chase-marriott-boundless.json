@@ -1,0 +1,104 @@
+{
+  "cardId": "chase-marriott-boundless",
+  "cardPath": "data/cards/chase-marriott-boundless.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-chase",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-marriott",
+      "type": "issuer",
+      "url": "https://www.marriott.com/credit-cards/chase-credit-cards.mi",
+      "method": "get"
+    },
+    {
+      "id": "03-dailydrop",
+      "type": "dailydrop",
+      "url": "https://www.dailydrop.com/credit-cards/the-marriott-bonvoy-boundless-card",
+      "method": "get"
+    },
+    {
+      "id": "04-frequentmiler",
+      "type": "frequentmiler",
+      "url": "https://frequentmiler.com/marriott-boundless-125000-points-50k-free-night-certificate-offer/",
+      "method": "get"
+    },
+    {
+      "id": "05-tpg-history",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/marriott-cards-best-welcome-offers/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 125000,
+      "spending_requirement": 3000,
+      "time_period_months": 3,
+      "description": "Limited-time offer: Earn 125,000 Marriott Bonvoy bonus points + 1 Free Night Award valued up to 50,000 points + up to $100 in airline credits after spending $3,000 on eligible purchases in the first 3 months from account opening.",
+      "point_program": "Marriott Bonvoy",
+      "estimated_value": 975,
+      "free_nights": 1,
+      "free_night_value_cap": 50000,
+      "airline_credit_value": 100,
+      "offer_status": "public_limited_time",
+      "confidence": "high",
+      "notes": [
+        "Chase and Marriott issuer pages corroborate the 125k + 50k FNA + airline credits public offer."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-chase*.md:Earn 125,000 Bonus Points + 1 Free Night Award",
+      "sources/*issuer-marriott*.md:125,000 Bonus Points + 1 Free Night Award + $100 in Airline Credits",
+      "sources/*dailydrop*.md:Earn up to 125,000 Bonus Points + 1 Free Night Award"
+    ]
+  },
+  "open_questions": [
+    "Confirm airline credit terms and whether the $100 credit is part of the welcome offer or cardmember offer before future apply."
+  ],
+  "community": {
+    "summary": "Current Chase/Marriott issuer and secondary sources support the Marriott Boundless 125k + 50k FNA + $100 airline credits public limited-time offer.",
+    "recommended_production_value": {
+      "offer_amount": 125000,
+      "spend_requirement": 3000,
+      "spend_window_months": 3,
+      "status": "public_limited_time"
+    },
+    "confidence": "high_when_chase_or_marriott_issuer_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": ["5 free nights", "3 free nights"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Chase Marriott Boundless page",
+        "regex": "125,000[\\s\\S]{0,220}Free Night|Free Night[\\s\\S]{0,220}125,000",
+        "stance": "supports_125k_plus_fna_public_limited_time",
+        "offer_amount": 125000,
+        "spend_requirement": 3000,
+        "spend_window_months": 3,
+        "excerpt": "Chase page lists 125,000 points + 1 Free Night Award for Boundless.",
+        "confidence": "high_if_present"
+      },
+      {
+        "sourceType": "issuer",
+        "source": "Marriott credit cards page",
+        "regex": "125,000[\\s\\S]{0,240}Airline Credits|Airline Credits[\\s\\S]{0,240}125,000",
+        "stance": "supports_125k_plus_fna_airline_credit_public",
+        "offer_amount": 125000,
+        "spend_requirement": 3000,
+        "spend_window_months": 3,
+        "excerpt": "Marriott page lists Boundless with 125,000 points + 1 Free Night Award + $100 in airline credits.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

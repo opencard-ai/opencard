@@ -7,12 +7,19 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
+    "bonus_points": 110000,
     "spending_requirement": 5000,
     "time_period_months": 3,
-    "bonus_points": 100000,
-    "estimated_value": 1350,
+    "description": "Limited-time offer: Earn up to 110,000 United MileagePlus bonus miles + 2,000 Premier qualifying points (PQP): 100,000 bonus miles + 2,000 PQP after spending $5,000 in purchases in the first 3 months from account opening, plus an additional 10,000 bonus miles after adding an employee card.",
     "point_program": "United MileagePlus",
-    "description": "100,000 bonus United miles + 2,000 Premier Qualifying Points (PQP) after spending $5,000 in first 3 months. Additional 10,000 miles when adding an authorized user."
+    "estimated_value": 1485,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
+    "notes": [
+      "Chase issuer page describes this as an up-to-110k miles + 2,000 PQP public offer."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-06-06"
   },
   "earning_rates": [
     {
@@ -175,6 +182,6 @@
       "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ],
-  "last_verified": "2026-04-16T13:41:49.998Z",
+  "last_verified": "2026-06-06",
   "next_review": "2026-07-15T13:41:49.998000+00:00"
 }

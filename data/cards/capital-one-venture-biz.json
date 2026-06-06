@@ -7,12 +7,19 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 4,
-    "time_period_months": 3,
-    "bonus_points": 50000,
-    "description": "50,000 miles",
-    "point_program": "Capital One",
-    "estimated_value": 500
+    "bonus_points": 150000,
+    "spending_requirement": 25000,
+    "time_period_months": 6,
+    "description": "Limited-time offer: Earn up to 150,000 Capital One miles: 75,000 miles after spending $7,500 in the first 3 months, plus an additional 75,000 miles after spending $25,000 total in the first 6 months from account opening.",
+    "point_program": "Capital One Miles",
+    "estimated_value": 1500,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
+    "notes": [
+      "Capital One issuer pages and TPG corroborate the tiered Venture Business up-to-150k limited-time offer."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-06-06"
   },
   "earning_rates": [
     {
@@ -87,6 +94,6 @@
       "source": "https://www.capitalone.com/about/newsroom/venture-business-rebrand/"
     }
   ],
-  "last_verified": "2026-04-16T13:41:49.962Z",
+  "last_verified": "2026-06-06",
   "next_review": "2026-07-15T13:41:49.962000+00:00"
 }
