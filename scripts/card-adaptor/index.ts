@@ -205,7 +205,8 @@ function fetchBackend(): FetchBackend {
 
 function backendForSource(requested: FetchBackend, source: SourceSpec): Exclude<FetchBackend, 'auto'> {
   if (requested === 'scrapling' || requested === 'cloakbrowser') return requested;
-  return source.type === 'issuer' ? 'cloakbrowser' : 'scrapling';
+  if (source.type === 'issuer' || source.type === 'flyertalk') return 'cloakbrowser';
+  return 'scrapling';
 }
 
 function cloakbrowserAvailable(): boolean {
@@ -250,7 +251,7 @@ try {
     'Fetched at: ' + new Date().toISOString(),
     '',
     text,
-  ].join('\n'));
+  ].join('\n'), 'utf8');
 } finally {
   await context.close().catch(() => undefined);
 }
@@ -331,7 +332,7 @@ function scrape(cardId: string, backend = fetchBackend()): string {
     created_at: startedAt,
     mode: config.mode,
     fetch_backend: backend,
-    fetch_backend_policy: backend === 'auto' ? 'issuer=cloakbrowser; other=scrapling' : 'forced',
+    fetch_backend_policy: backend === 'auto' ? 'issuer/flyertalk=cloakbrowser; other=scrapling' : 'forced',
     status: 'scraped',
     artifacts: ['run.json'],
     scrape_errors: errors,
