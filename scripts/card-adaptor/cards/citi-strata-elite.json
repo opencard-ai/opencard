@@ -1,0 +1,98 @@
+{
+  "cardId": "citi-strata-elite",
+  "cardPath": "data/cards/citi-strata-elite.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-citi",
+      "type": "issuer",
+      "url": "https://www.citi.com/credit-cards/citi-strata-elite-credit-card",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-all-cards",
+      "type": "issuer",
+      "url": "https://www.citi.com/credit-cards/citi-strata-all-cards",
+      "method": "fetch"
+    },
+    {
+      "id": "03-tpg-eligibility",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/citi-strata-elite-bonus-eligibility/",
+      "method": "get"
+    },
+    {
+      "id": "04-doc-expired-100k",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/citi-strata-elite-100000-points-bonus-after-6000-in-spend/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 75000,
+      "spending_requirement": 6000,
+      "time_period_months": 3,
+      "description": "Earn 75,000 Citi ThankYou bonus points after spending $6,000 in the first 3 months of account opening.",
+      "point_program": "Citi ThankYou Points",
+      "estimated_value": 563,
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Citi issuer pages show the current public Strata Elite offer as 75k after $6k/3mo; Doctor of Credit marks the 100k offer as expired / branch-only or no longer broadly available."
+      ],
+      "source_conflicts": [
+        "Older 100k Strata Elite offers appear expired, branch-only, or no longer broadly public."
+      ],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-citi*.md:Earn 75,000 bonus points",
+      "sources/*issuer*.md:spending $6,000 in the first 3 months",
+      "sources/*tpg*.md:75,000 bonus points after spending $6,000",
+      "sources/*doc*.md:Expired"
+    ]
+  },
+  "open_questions": [
+    "Confirm no public 100k link is still active before applying future changes."
+  ],
+  "community": {
+    "summary": "Current issuer and secondary sources support 75k/$6k/3mo for Citi Strata Elite; 100k is not the current broad public offer.",
+    "recommended_production_value": {
+      "offer_amount": 75000,
+      "spend_requirement": 6000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high_when_citi_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": ["100k", "100,000"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Citi Strata Elite page",
+        "regex": "75,000[\\s\\S]{0,220}6,000[\\s\\S]{0,120}3 months",
+        "stance": "supports_75k_public",
+        "offer_amount": 75000,
+        "spend_requirement": 6000,
+        "spend_window_months": 3,
+        "excerpt": "Citi page describes 75,000 bonus points after $6,000 in the first 3 months.",
+        "confidence": "high_if_present"
+      },
+      {
+        "sourceType": "doc",
+        "source": "Doctor of Credit 100k page",
+        "regex": "Expired|really over|no longer working",
+        "stance": "supports_100k_expired",
+        "offer_amount": 100000,
+        "spend_requirement": 6000,
+        "spend_window_months": 3,
+        "excerpt": "DoC marks the 100k Strata Elite offer as expired/no longer broadly active.",
+        "confidence": "high_for_secondary"
+      }
+    ]
+  }
+}

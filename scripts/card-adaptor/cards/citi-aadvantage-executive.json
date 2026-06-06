@@ -1,0 +1,86 @@
+{
+  "cardId": "citi-aadvantage-executive",
+  "cardPath": "data/cards/citi-aadvantage-executive.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-citi",
+      "type": "issuer",
+      "url": "https://www.citi.com/credit-cards/citi-aadvantage-executive-world-elite-mastercard",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-aa",
+      "type": "issuer",
+      "url": "https://creditcards.aa.com/credit-cards/citi-executive-card-american-airlines-direct/",
+      "method": "fetch"
+    },
+    {
+      "id": "03-tpg-current",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/citi-aadvantage-current-offers/",
+      "method": "get",
+      "required": true
+    },
+    {
+      "id": "04-dailydrop",
+      "type": "other",
+      "url": "https://www.dailydrop.com/credit-cards/citi-aadvantage-executive-world-elite-mastercard",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 70000,
+      "spending_requirement": 7000,
+      "time_period_months": 3,
+      "description": "Earn 70,000 American Airlines AAdvantage bonus miles after spending $7,000 in purchases in the first 3 months of account opening.",
+      "point_program": "American Airlines AAdvantage",
+      "estimated_value": 1155,
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Citi and AA issuer pages show the current public Executive offer as 70k after $7k/3mo; production previously had a stale 75k/$4k/3mo offer."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-citi*.md:Earn 70,000 AAdvantage",
+      "sources/*issuer-aa*.md:Earn 70,000 American Airlines AAdvantage",
+      "sources/*tpg*.md:70,000",
+      "sources/*dailydrop*.md:70,000 American Airlines AAdvantage miles"
+    ]
+  },
+  "open_questions": [
+    "Confirm no broadly public 75k/$4k or better Executive offer is active before applying future changes."
+  ],
+  "community": {
+    "summary": "Current issuer and secondary sources support Citi AAdvantage Executive public 70k after $7k/3mo offer.",
+    "recommended_production_value": {
+      "offer_amount": 70000,
+      "spend_requirement": 7000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high_when_issuer_pages_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": ["75k", "75,000"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Citi / AA Executive issuer pages",
+        "regex": "70,000[\\s\\S]{0,220}7,000[\\s\\S]{0,120}3 months",
+        "stance": "supports_70k_public",
+        "offer_amount": 70000,
+        "spend_requirement": 7000,
+        "spend_window_months": 3,
+        "excerpt": "Issuer pages describe 70k AAdvantage miles after $7k in purchases in the first 3 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

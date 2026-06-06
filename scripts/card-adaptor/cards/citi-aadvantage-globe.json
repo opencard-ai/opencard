@@ -1,0 +1,97 @@
+{
+  "cardId": "citi-aadvantage-globe",
+  "cardPath": "data/cards/citi-aadvantage-globe.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-citi",
+      "type": "issuer",
+      "url": "https://www.citi.com/credit-cards/citi-aadvantage-globe-mastercard",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-aa",
+      "type": "issuer",
+      "url": "https://creditcards.aa.com/credit-cards/citi-globe-card-american-airlines-direct/",
+      "method": "fetch"
+    },
+    {
+      "id": "03-tpg-current",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/citi-aadvantage-current-offers/",
+      "method": "get",
+      "required": true
+    },
+    {
+      "id": "04-upgradedpoints",
+      "type": "other",
+      "url": "https://upgradedpoints.com/news/aadvantage-globe-card-90k-welcome-offer/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 90000,
+      "spending_requirement": 5000,
+      "time_period_months": 4,
+      "description": "Limited-time offer: Earn 90,000 American Airlines AAdvantage bonus miles after spending $5,000 in purchases in the first 4 months of account opening.",
+      "point_program": "American Airlines AAdvantage",
+      "estimated_value": 1485,
+      "offer_status": "public_limited_time",
+      "confidence": "high",
+      "notes": [
+        "Citi and AA issuer pages show the current Globe public limited-time offer as 90k after $5k/4mo; production previously had the older 60k/$4k/3mo offer."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-citi*.md:Earn 90,000 AAdvantage",
+      "sources/*issuer-aa*.md:90,000 American Airlines AAdvantage",
+      "sources/*issuer*.md:$5,000 in purchases in the first 4 months",
+      "sources/*tpg*.md:90,000-mile offer"
+    ]
+  },
+  "open_questions": [
+    "Confirm limited-time Globe 90k offer is still visible on issuer page before future applies."
+  ],
+  "community": {
+    "summary": "Current issuer and secondary sources support Citi AAdvantage Globe public limited-time 90k after $5k/4mo offer.",
+    "recommended_production_value": {
+      "offer_amount": 90000,
+      "spend_requirement": 5000,
+      "spend_window_months": 4,
+      "status": "public_limited_time"
+    },
+    "confidence": "high_when_issuer_pages_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": ["60k", "60,000"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Citi / AA Globe issuer pages",
+        "regex": "90,000[\\s\\S]{0,220}5,000[\\s\\S]{0,120}4 months",
+        "stance": "supports_90k_public_limited_time",
+        "offer_amount": 90000,
+        "spend_requirement": 5000,
+        "spend_window_months": 4,
+        "excerpt": "Issuer pages describe 90k AAdvantage miles after $5k in purchases in the first 4 months.",
+        "confidence": "high_if_present"
+      },
+      {
+        "sourceType": "tpg",
+        "source": "The Points Guy current AA offers",
+        "regex": "90,000-mile offer|90,000[\\s\\S]{0,180}Globe",
+        "stance": "supports_90k_secondary",
+        "offer_amount": 90000,
+        "spend_requirement": 5000,
+        "spend_window_months": 4,
+        "excerpt": "TPG highlights the current 90k-mile Citi / AAdvantage Globe offer.",
+        "confidence": "high_for_secondary"
+      }
+    ]
+  }
+}

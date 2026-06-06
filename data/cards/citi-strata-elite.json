@@ -7,14 +7,21 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
+    "bonus_points": 75000,
     "spending_requirement": 6000,
     "time_period_months": 3,
-    "bonus_points": 100000,
-    "description": "100,000 ThankYou Points after spending $6,000 within the first 3 months of account opening",
-    "point_program": "Citi",
-    "estimated_value": 750,
-    "is_elevated": true,
-    "normal_bonus_points": 80000
+    "description": "Earn 75,000 Citi ThankYou bonus points after spending $6,000 in the first 3 months of account opening.",
+    "point_program": "Citi ThankYou Points",
+    "estimated_value": 563,
+    "offer_status": "public",
+    "confidence": "high",
+    "notes": [
+      "Citi issuer pages show the current public Strata Elite offer as 75k after $6k/3mo; Doctor of Credit marks the 100k offer as expired / branch-only or no longer broadly available."
+    ],
+    "source_conflicts": [
+      "Older 100k Strata Elite offers appear expired, branch-only, or no longer broadly public."
+    ],
+    "last_verified": "2026-06-06"
   },
   "earning_rates": [
     {
@@ -113,7 +120,7 @@
       "reset_type": "every_4_years"
     }
   ],
-  "last_verified": "2026-04-16T13:41:49.977Z",
+  "last_verified": "2026-06-06",
   "next_review": "2026-07-15T13:41:49.977000+00:00",
   "featured": true
 }

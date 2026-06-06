@@ -1,0 +1,86 @@
+{
+  "cardId": "citi-aadvantage-mileup",
+  "cardPath": "data/cards/citi-aadvantage-mileup.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-citi",
+      "type": "issuer",
+      "url": "https://www.citi.com/credit-cards/aadvantage-mile-up-credit-card",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-aa",
+      "type": "issuer",
+      "url": "https://creditcards.aa.com/credit-cards/citi-mileup-card-american-airlines-direct/",
+      "method": "fetch"
+    },
+    {
+      "id": "03-tpg-current",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/citi-aadvantage-current-offers/",
+      "method": "get",
+      "required": true
+    },
+    {
+      "id": "04-dailydrop",
+      "type": "other",
+      "url": "https://www.dailydrop.com/credit-cards/american-airlines-aadvantage-mileup",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 15000,
+      "spending_requirement": 500,
+      "time_period_months": 3,
+      "description": "Earn 15,000 American Airlines AAdvantage bonus miles after spending $500 in purchases in the first 3 months of account opening.",
+      "point_program": "American Airlines AAdvantage",
+      "estimated_value": 248,
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Citi and AA issuer pages show the current MileUp offer as 15k after $500/3mo; production had the same 15k amount but an outdated $1,000 spend requirement."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-citi*.md:Earn 15,000 AAdvantage",
+      "sources/*issuer-aa*.md:Earn 15,000 American Airlines AAdvantage",
+      "sources/*issuer*.md:$500 in purchases within the first 3 months",
+      "sources/*tpg*.md:15,000 bonus miles after spending $500"
+    ]
+  },
+  "open_questions": [
+    "Confirm no broadly public 20k MileUp offer is active before future applies."
+  ],
+  "community": {
+    "summary": "Current issuer and secondary sources support Citi AAdvantage MileUp public 15k after $500/3mo offer.",
+    "recommended_production_value": {
+      "offer_amount": 15000,
+      "spend_requirement": 500,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high_when_issuer_pages_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": ["20k", "20,000", "1,000"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Citi / AA MileUp issuer pages",
+        "regex": "15,000[\\s\\S]{0,220}500[\\s\\S]{0,120}3 months",
+        "stance": "supports_15k_500_public",
+        "offer_amount": 15000,
+        "spend_requirement": 500,
+        "spend_window_months": 3,
+        "excerpt": "Issuer pages describe 15k AAdvantage miles after $500 in purchases in the first 3 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

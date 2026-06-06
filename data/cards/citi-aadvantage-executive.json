@@ -7,12 +7,19 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 4000,
+    "bonus_points": 70000,
+    "spending_requirement": 7000,
     "time_period_months": 3,
-    "estimated_value": 1238,
-    "description": "Earn 75,000 AAdvantage bonus miles after spending $4,000 in first 3 months",
+    "description": "Earn 70,000 American Airlines AAdvantage bonus miles after spending $7,000 in purchases in the first 3 months of account opening.",
     "point_program": "American Airlines AAdvantage",
-    "bonus_points": 75000
+    "estimated_value": 1155,
+    "offer_status": "public",
+    "confidence": "high",
+    "notes": [
+      "Citi and AA issuer pages show the current public Executive offer as 70k after $7k/3mo; production previously had a stale 75k/$4k/3mo offer."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-06-06"
   },
   "earning_rates": [
     {
@@ -137,7 +144,7 @@
       "reset_type": "every_4_years"
     }
   ],
-  "last_verified": "2026-04-16T13:41:49.975Z",
+  "last_verified": "2026-06-06",
   "next_review": "2026-07-15T13:41:49.975000+00:00",
   "cfpb_source": "Q3_2025",
   "cfpb_verified": true

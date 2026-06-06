@@ -7,12 +7,19 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 1000,
+    "bonus_points": 15000,
+    "spending_requirement": 500,
     "time_period_months": 3,
-    "estimated_value": 248,
-    "description": "Earn 15,000 AAdvantage bonus miles after spending $1,000 in first 3 months",
+    "description": "Earn 15,000 American Airlines AAdvantage bonus miles after spending $500 in purchases in the first 3 months of account opening.",
     "point_program": "American Airlines AAdvantage",
-    "bonus_points": 15000
+    "estimated_value": 248,
+    "offer_status": "public",
+    "confidence": "high",
+    "notes": [
+      "Citi and AA issuer pages show the current MileUp offer as 15k after $500/3mo; production had the same 15k amount but an outdated $1,000 spend requirement."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-06-06"
   },
   "earning_rates": [
     {
@@ -83,6 +90,6 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.975Z",
+  "last_verified": "2026-06-06",
   "next_review": "2026-07-15T13:41:49.975000+00:00"
 }
