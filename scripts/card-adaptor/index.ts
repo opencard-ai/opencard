@@ -427,6 +427,36 @@ function riskForField(field: string): 'low' | 'medium' | 'high' {
   return 'low';
 }
 
+const CONDITIONAL_BONUS_PATTERNS = [
+  /\bup\s+to\b/i,
+  /\badditional\b/i,
+  /\bextra\b/i,
+  /\bplus\b/i,
+  /\bemployee\s+card/i,
+  /\bauthorized\s+user/i,
+  /\badditional\s+card/i,
+  /\bafter\s+adding\b/i,
+  /\badd(?:ing)?\s+(?:an?\s+)?(?:employee|authorized|additional)/i,
+  /\btiered\b/i,
+];
+
+function welcomeOfferEvidenceText(candidateEnvelope: any): string {
+  const offer = candidateEnvelope?.candidate?.welcome_offer || {};
+  const pieces = [
+    offer.description,
+    offer.offer_status,
+    ...(Array.isArray(offer.notes) ? offer.notes : []),
+    ...(Array.isArray(offer.source_conflicts) ? offer.source_conflicts : []),
+    ...(Array.isArray(candidateEnvelope?.citations?.welcome_offer) ? candidateEnvelope.citations.welcome_offer : []),
+  ];
+  return pieces.filter(Boolean).join('\n');
+}
+
+function hasConditionalWelcomeBonus(candidateEnvelope: any): boolean {
+  const text = welcomeOfferEvidenceText(candidateEnvelope);
+  return CONDITIONAL_BONUS_PATTERNS.some((pattern) => pattern.test(text));
+}
+
 function createArtifact(runDir: string): void {
   if (!existsSync(path.join(runDir, 'candidate.json'))) normalize(runDir);
   if (!existsSync(path.join(runDir, 'apply-plan.json'))) applyPlan(runDir);
@@ -455,8 +485,10 @@ function createArtifact(runDir: string): void {
   }
 
   const riskFlags = new Set<string>();
+  const conditionalWelcomeBonus = hasConditionalWelcomeBonus(candidateEnvelope);
   if (!primarySource) riskFlags.add('source_snapshot_missing');
   if (primarySource && artifactSourceType(primarySource.source_type) === 'other_third_party') riskFlags.add('third_party_source_only');
+  if (candidate.welcome_offer && conditionalWelcomeBonus) riskFlags.add('conditional_or_tiered_welcome_bonus');
   for (const diff of changed) {
     if (riskForField(diff.field) !== 'low') riskFlags.add(`${diff.field}_changed`);
     if (diff.field === 'welcome_offer' && candidate.welcome_offer?.offer_status && candidate.welcome_offer.offer_status !== 'public') {
@@ -578,8 +610,10 @@ function qa(runDir: string): void {
   if (manifestData.errors.some((e: any) => e.required)) blocking_issues.push('required source missing or empty');
   if (requiresWelcomeOffer && !candidate?.citations?.welcome_offer?.length) blocking_issues.push('welcome_offer citation missing');
   if ((requiresRecurringCredits || hasRecurringCreditsCandidate) && !candidate?.citations?.recurring_credits?.length) blocking_issues.push('recurring_credits citation missing');
+  const conditionalWelcomeBonus = requiresWelcomeOffer && hasConditionalWelcomeBonus(candidate);
   if (requiresWelcomeOffer && community?.community_consensus?.conflict_observed) warnings.push('Community/source conflict observed; issuer wins but review is required.');
   if (requiresWelcomeOffer && community?.community_consensus?.ymmv_or_targeted_possible) warnings.push('Offer may be YMMV or targeted; metadata label is required.');
+  if (conditionalWelcomeBonus) warnings.push('Welcome offer appears conditional or tiered (for example up-to/additional/employee-card/authorized-user language); verify guaranteed vs conditional bonus before applying.');
   if (requiresWelcomeOffer && community?.community_consensus?.conflict_observed && !Array.isArray(candidate?.candidate?.welcome_offer?.source_conflicts)) {
     blocking_issues.push('source_conflicts metadata missing for observed source conflict');
   }
@@ -601,6 +635,7 @@ function qa(runDir: string): void {
       source_snapshots_saved: manifestData.errors.length ? 'pass_with_errors' : 'pass',
       issuer_source_for_core_terms: hasIssuer ? 'pass' : 'blocked',
       community_cross_check: community ? (community.community_consensus.conflict_observed ? 'needs_review_conflict_observed' : 'pass') : 'missing',
+      conditional_welcome_bonus: conditionalWelcomeBonus ? 'needs_review' : 'pass',
       existing_data_diff: 'generated_by_review',
     },
     blocking_issues,
