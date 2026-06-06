@@ -1,0 +1,97 @@
+{
+  "cardId": "chase-hyatt-biz",
+  "cardPath": "data/cards/chase-hyatt-biz.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-chase",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/business-credit-cards/world-of-hyatt/hyatt-business-card",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-hyatt",
+      "type": "issuer",
+      "url": "https://world.hyatt.com/content/gp/en/rewards/hyatt-credit-card.html",
+      "method": "get"
+    },
+    {
+      "id": "03-tpg-history",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/hyatt-chase-best-welcome-offers/",
+      "method": "get",
+      "required": true
+    },
+    {
+      "id": "04-tpg-current",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/world-of-hyatt-credit-cards-current-offers/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 60000,
+      "spending_requirement": 5000,
+      "time_period_months": 3,
+      "description": "Earn 60,000 World of Hyatt bonus points after spending $5,000 on purchases in the first 3 months from account opening.",
+      "point_program": "World of Hyatt",
+      "estimated_value": 1020,
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Chase and Hyatt issuer pages show the current public business-card offer as 60k after $5k/3mo; production previously had a likely stale 75k/$4k/3mo offer."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-chase*.md:Earn 60,000 Bonus Points",
+      "sources/*issuer-chase*.md:after you spend $5,000 on purchases in the first 3 months",
+      "sources/*issuer-hyatt*.md:WORLD OF HYATT BUSINESS CREDIT CARD",
+      "sources/*tpg*.md:April 2026 to now"
+    ]
+  },
+  "open_questions": [
+    "Confirm no active public 75k/80k business-card offer remains before applying the lower 60k production value."
+  ],
+  "community": {
+    "summary": "Current issuer and secondary sources support the World of Hyatt Business public 60k after $5k/3mo offer.",
+    "recommended_production_value": {
+      "offer_amount": 60000,
+      "spend_requirement": 5000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high_when_chase_business_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": ["75k", "80k"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Chase World of Hyatt Business page",
+        "regex": "Earn 60,000 Bonus Points|60,000[\\s\\S]{0,220}5,000[\\s\\S]{0,120}3 months",
+        "stance": "supports_60k_public",
+        "offer_amount": 60000,
+        "spend_requirement": 5000,
+        "spend_window_months": 3,
+        "excerpt": "Chase page describes 60,000 bonus points after $5,000 in purchases in the first 3 months.",
+        "confidence": "high_if_present"
+      },
+      {
+        "sourceType": "tpg",
+        "source": "The Points Guy offer history",
+        "regex": "April 2026 to now[\\s\\S]{0,260}60,000|60,000[\\s\\S]{0,120}5,000",
+        "stance": "supports_60k_secondary",
+        "offer_amount": 60000,
+        "spend_requirement": 5000,
+        "spend_window_months": 3,
+        "excerpt": "TPG tracks the current business-card offer as 60k after $5k/3mo from April 2026 to now.",
+        "confidence": "high_for_secondary"
+      }
+    ]
+  }
+}

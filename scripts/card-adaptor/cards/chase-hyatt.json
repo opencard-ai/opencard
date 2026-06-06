@@ -1,0 +1,97 @@
+{
+  "cardId": "chase-hyatt",
+  "cardPath": "data/cards/chase-hyatt.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-chase",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-hyatt",
+      "type": "issuer",
+      "url": "https://world.hyatt.com/content/gp/en/rewards/hyatt-credit-card.html",
+      "method": "get"
+    },
+    {
+      "id": "03-tpg-history",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/hyatt-chase-best-welcome-offers/",
+      "method": "get",
+      "required": true
+    },
+    {
+      "id": "04-dailydrop",
+      "type": "other",
+      "url": "https://www.dailydrop.com/credit-cards/world-of-hyatt-credit-card",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 60000,
+      "spending_requirement": 15000,
+      "time_period_months": 6,
+      "description": "Earn up to 60,000 World of Hyatt bonus points: 30,000 bonus points after spending $3,000 in the first 3 months from account opening, plus up to 30,000 more bonus points by earning 2 bonus points per $1 on purchases that normally earn 1 point per $1, on up to $15,000 spent in the first 6 months.",
+      "point_program": "World of Hyatt",
+      "estimated_value": 1020,
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Issuer and secondary sources describe this as an up-to-60k tiered offer; only the first 30k is a direct bonus after $3,000/3mo, while the additional 30k comes from temporary extra earning on up to $15,000 spend."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-chase*.md:Earn up to 60,000 Bonus Points",
+      "sources/*issuer-chase*.md:30,000 Bonus Points after you spend $3,000",
+      "sources/*issuer-chase*.md:up to 30,000 more Bonus Points",
+      "sources/*tpg*.md:Earn up to 60,000 points"
+    ]
+  },
+  "open_questions": [
+    "Confirm the additional up-to-30k component is represented as temporary extra earning, not a guaranteed lump-sum bonus."
+  ],
+  "community": {
+    "summary": "Current issuer and secondary sources support the World of Hyatt personal card public up-to-60k tiered offer.",
+    "recommended_production_value": {
+      "offer_amount": 60000,
+      "spend_requirement": 15000,
+      "spend_window_months": 6,
+      "status": "public"
+    },
+    "confidence": "high_when_chase_hyatt_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": ["30k_only", "free_night"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Chase World of Hyatt page",
+        "regex": "Earn up to 60,000|30,000[\\s\\S]{0,260}up to 30,000|15,000",
+        "stance": "supports_60k_public_tiered",
+        "offer_amount": 60000,
+        "spend_requirement": 15000,
+        "spend_window_months": 6,
+        "excerpt": "Chase page describes up to 60k: 30k after $3k/3mo plus up to 30k more via bonus earning on up to $15k spend.",
+        "confidence": "high_if_present"
+      },
+      {
+        "sourceType": "tpg",
+        "source": "The Points Guy offer history",
+        "regex": "Earn up to 60,000|30,000[\\s\\S]{0,260}15,000",
+        "stance": "supports_60k_secondary",
+        "offer_amount": 60000,
+        "spend_requirement": 15000,
+        "spend_window_months": 6,
+        "excerpt": "TPG tracks the personal Hyatt card as an up-to-60k offer with the second 30k tied to additional spending/earning.",
+        "confidence": "high_for_secondary"
+      }
+    ]
+  }
+}

@@ -7,12 +7,19 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 3000,
-    "time_period_months": 3,
-    "bonus_points": 30000,
-    "description": "Earn 30,000 Bonus Points after you spend $3,000 on purchases in your first 3 months from account opening.",
+    "bonus_points": 60000,
+    "spending_requirement": 15000,
+    "time_period_months": 6,
+    "description": "Earn up to 60,000 World of Hyatt bonus points: 30,000 bonus points after spending $3,000 in the first 3 months from account opening, plus up to 30,000 more bonus points by earning 2 bonus points per $1 on purchases that normally earn 1 point per $1, on up to $15,000 spent in the first 6 months.",
     "point_program": "World of Hyatt",
-    "estimated_value": 510
+    "estimated_value": 1020,
+    "offer_status": "public",
+    "confidence": "high",
+    "notes": [
+      "Issuer and secondary sources describe this as an up-to-60k tiered offer; only the first 30k is a direct bonus after $3,000/3mo, while the additional 30k comes from temporary extra earning on up to $15,000 spend."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-06-06"
   },
   "earning_rates": [
     {
@@ -102,7 +109,7 @@
     "source": "chase.com",
     "last_updated": "2026-04-24"
   },
-  "last_verified": "2026-04-16T13:41:49.966Z",
+  "last_verified": "2026-06-06",
   "next_review": "2026-07-15T13:41:49.966000+00:00",
   "featured": true
 }
