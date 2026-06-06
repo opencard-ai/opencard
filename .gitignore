@@ -67,3 +67,4 @@ data/adaptor/review-index.md
 
 # Artifact-first review queue runtime outputs
 artifacts/card-updates/
+artifacts/*.png
