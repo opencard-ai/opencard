@@ -1,0 +1,95 @@
+{
+  "cardId": "southwest-rapid-rewards-premier",
+  "cardPath": "data/cards/southwest-rapid-rewards-premier.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-southwest",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/travel-credit-cards/southwest",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/chase-southwest-personal-cards-80000-90000-points-signup-bonus/",
+      "method": "get",
+      "required": true
+    },
+    {
+      "id": "03-dailydrop",
+      "type": "dailydrop",
+      "url": "https://www.dailydrop.com/best-credit-cards/increased-welcome-offers",
+      "method": "get"
+    },
+    {
+      "id": "04-cnbc",
+      "type": "cnbc",
+      "url": "https://www.cnbc.com/select/limited-time-southwest-card-offers-earn-up-to-90000-bonus-points/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 85000,
+      "spending_requirement": 2000,
+      "time_period_months": 3,
+      "description": "Limited-time offer: Earn 85,000 Southwest Rapid Rewards points after spending $2,000 in purchases in the first 3 months from account opening.",
+      "point_program": "Southwest Rapid Rewards",
+      "estimated_value": 1190,
+      "offer_status": "limited_time_public",
+      "confidence": "high",
+      "notes": [
+        "Chase Southwest card page and Doctor of Credit corroborate the 85k Premier offer."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-southwest*.md:Earn 85,000 bonus points after you spend $2,000 in the first 3 months",
+      "sources/*doc*.md:Southwest Premier: Earn 85,000 points after you spend $2,000"
+    ]
+  },
+  "open_questions": [
+    "Confirm issuer page still shows the limited-time 85k Premier offer before applying."
+  ],
+  "community": {
+    "summary": "Current issuer and secondary sources support the limited-time Southwest Premier 85k / $2k / 3mo offer.",
+    "recommended_production_value": {
+      "offer_amount": 85000,
+      "spend_requirement": 2000,
+      "spend_window_months": 3,
+      "status": "limited_time_public"
+    },
+    "confidence": "high_when_chase_southwest_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Chase Southwest card page",
+        "regex": "85,000[\\s\\S]{0,160}\\$2,000|\\$2,000[\\s\\S]{0,160}85,000",
+        "stance": "supports_85k_public_limited_time",
+        "offer_amount": 85000,
+        "spend_requirement": 2000,
+        "spend_window_months": 3,
+        "excerpt": "Chase Southwest page lists Premier at 85,000 points after $2,000 in 3 months.",
+        "confidence": "high_if_present"
+      },
+      {
+        "sourceType": "doc",
+        "source": "Doctor of Credit",
+        "regex": "Premier[\\s\\S]{0,240}85,000|85,000[\\s\\S]{0,240}Premier",
+        "stance": "supports_85k_secondary",
+        "offer_amount": 85000,
+        "spend_requirement": 2000,
+        "spend_window_months": 3,
+        "excerpt": "DoC tracks Southwest Premier 85k after $2k/3mo.",
+        "confidence": "high_for_secondary"
+      }
+    ]
+  }
+}

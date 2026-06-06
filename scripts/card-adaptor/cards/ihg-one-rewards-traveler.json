@@ -1,0 +1,96 @@
+{
+  "cardId": "ihg-one-rewards-traveler",
+  "cardPath": "data/cards/ihg-one-rewards-traveler.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-traveler",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/traveler",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-ihg",
+      "type": "issuer",
+      "url": "https://www.ihg.com/onerewards/content/us/en/creditcard",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/new-signup-bonus-offers-on-chase-ihg-premier-ihg-traveler-cards/",
+      "method": "get",
+      "required": true
+    },
+    {
+      "id": "04-tpg",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/ihg-rewards-credit-card-offers/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 125000,
+      "spending_requirement": 4000,
+      "time_period_months": 6,
+      "description": "Limited-time offer: Earn up to 125,000 IHG One Rewards bonus points: 90,000 points after spending $2,000 in the first 3 months, plus 35,000 additional points after spending $4,000 total in the first 6 months from account opening.",
+      "point_program": "IHG Rewards",
+      "estimated_value": 625,
+      "offer_status": "public_limited_time",
+      "confidence": "high",
+      "notes": [
+        "Issuer and secondary sources describe this as an up-to 125k tiered public limited-time offer."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-traveler*.md:Earn up to 125,000 Bonus Points",
+      "sources/*issuer-traveler*.md:Earn 90,000 bonus points after spending $2,000 in the first 3 months",
+      "sources/*doc*.md:IHG Traveler card - up to 125k points"
+    ]
+  },
+  "open_questions": [
+    "Confirm the second-tier 35k / $4k / 6mo language is visible before applying."
+  ],
+  "community": {
+    "summary": "Current issuer and secondary sources support the IHG Traveler public limited-time tiered offer up to 125k points.",
+    "recommended_production_value": {
+      "offer_amount": 125000,
+      "spend_requirement": 4000,
+      "spend_window_months": 6,
+      "status": "public_limited_time"
+    },
+    "confidence": "high_when_chase_traveler_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": ["90k"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Chase IHG Traveler page",
+        "regex": "125,000|90,000[\\s\\S]{0,260}35,000",
+        "stance": "supports_125k_public_limited_time",
+        "offer_amount": 125000,
+        "spend_requirement": 4000,
+        "spend_window_months": 6,
+        "excerpt": "Chase page describes earn up to 125,000 points, starting with 90,000 after $2,000/3mo.",
+        "confidence": "high_if_present"
+      },
+      {
+        "sourceType": "doc",
+        "source": "Doctor of Credit",
+        "regex": "Traveler[\\s\\S]{0,240}125k|125,000[\\s\\S]{0,240}Traveler",
+        "stance": "supports_125k_secondary",
+        "offer_amount": 125000,
+        "spend_requirement": 4000,
+        "spend_window_months": 6,
+        "excerpt": "DoC tracks IHG Traveler as up to 125k points.",
+        "confidence": "high_for_secondary"
+      }
+    ]
+  }
+}

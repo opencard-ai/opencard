@@ -7,12 +7,19 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 3000,
+    "bonus_points": 85000,
+    "spending_requirement": 2000,
     "time_period_months": 3,
-    "bonus_points": 60000,
-    "estimated_value": 840,
+    "description": "Limited-time offer: Earn 85,000 Southwest Rapid Rewards points after spending $2,000 in purchases in the first 3 months from account opening.",
     "point_program": "Southwest Rapid Rewards",
-    "description": "60,000 bonus Rapid Rewards points after spending $3,000 in first 3 months (worth ~$894 toward Southwest flights at 1.49¢/point)"
+    "estimated_value": 1190,
+    "offer_status": "limited_time_public",
+    "confidence": "high",
+    "notes": [
+      "Chase Southwest card page and Doctor of Credit corroborate the 85k Premier offer."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-06-06"
   },
   "earning_rates": [
     {
@@ -97,6 +104,6 @@
       "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ],
-  "last_verified": "2026-04-16T13:41:49.996Z",
+  "last_verified": "2026-06-06",
   "next_review": "2026-07-15T13:41:49.996000+00:00"
 }

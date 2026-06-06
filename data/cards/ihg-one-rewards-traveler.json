@@ -7,12 +7,19 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 3000,
-    "time_period_months": 3,
-    "bonus_points": 80000,
-    "estimated_value": 400,
+    "bonus_points": 125000,
+    "spending_requirement": 4000,
+    "time_period_months": 6,
+    "description": "Limited-time offer: Earn up to 125,000 IHG One Rewards bonus points: 90,000 points after spending $2,000 in the first 3 months, plus 35,000 additional points after spending $4,000 total in the first 6 months from account opening.",
     "point_program": "IHG Rewards",
-    "description": "80,000 bonus IHG points after spending $3,000 in first 3 months (worth ~$400 at 0.5¢/point)"
+    "estimated_value": 625,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
+    "notes": [
+      "Issuer and secondary sources describe this as an up-to 125k tiered public limited-time offer."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-06-06"
   },
   "earning_rates": [
     {
@@ -91,7 +98,7 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.987Z",
+  "last_verified": "2026-06-06",
   "next_review": "2026-07-15T13:41:49.987000+00:00",
   "recurring_credits": [
     {
