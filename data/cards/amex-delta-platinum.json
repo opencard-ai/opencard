@@ -7,12 +7,19 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",
   "welcome_offer": {
+    "bonus_points": 100000,
     "spending_requirement": 6000,
     "time_period_months": 6,
-    "bonus_points": 100000,
     "description": "Limited-time offer: Earn up to 100,000 Bonus Miles: 80,000 Bonus Miles after spending $4,000 in purchases in the first 6 months, plus an additional 20,000 Bonus Miles after spending an additional $2,000 in purchases in the first 6 months. Offer ends 7/15/2026.",
     "point_program": "Delta SkyMiles",
-    "estimated_value": 1000
+    "estimated_value": 1000,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
+    "notes": [
+      "Official Delta News Hub and Delta personal card comparison page corroborate the public limited-time offer."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-06-05"
   },
   "earning_rates": [
     {
@@ -176,7 +183,7 @@
     "last_updated": "2026-06-05"
   },
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-06-05T04:25:28.802083Z",
+  "last_verified": "2026-06-05",
   "next_review": "2026-07-15T00:00:00Z",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,

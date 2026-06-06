@@ -10,25 +10,42 @@
     "bonus_points": 100000,
     "spending_requirement": 8000,
     "time_period_months": 6,
-    "description": "As-high-as offer: earn up to 100,000 Membership Rewards points after eligible purchases within the first 6 months; offer varies by applicant.",
+    "description": "As-high-as offer: earn up to 100,000 Membership Rewards points after eligible purchases within the first 6 months. Welcome offers vary and applicant may not be eligible.",
     "point_program": "Amex Membership Rewards",
-    "estimated_value": 1700
+    "estimated_value": 1700,
+    "offer_status": "as_high_as_ymmv",
+    "confidence": "medium_high",
+    "notes": [
+      "Issuer page is canonical; community/secondary sources may show stale or targeted spend requirements."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-06-05"
   },
   "earning_rates": [
     {
       "category": "Dining",
       "rate": 4,
-      "notes": "At restaurants worldwide"
+      "notes": "Restaurants worldwide, up to $50,000 per calendar year, then 1X"
     },
     {
       "category": "Groceries",
       "rate": 4,
-      "notes": "At U.S. supermarkets"
+      "notes": "U.S. supermarkets, up to $25,000 per calendar year, then 1X"
+    },
+    {
+      "category": "Prepaid Hotels",
+      "rate": 5,
+      "notes": "Prepaid hotels booked through AmexTravel.com or Amex Travel App"
     },
     {
       "category": "Flights",
       "rate": 3,
-      "notes": "Booked directly with airlines"
+      "notes": "Flights booked through AmexTravel.com, Amex Travel App, or directly with airlines"
+    },
+    {
+      "category": "Prepaid Car Rentals and Cruises",
+      "rate": 2,
+      "notes": "Prepaid car rentals through AmexTravel.com / Amex Travel App and cruises booked and paid through AmexTravel.com"
     },
     {
       "category": "Other",
@@ -163,7 +180,7 @@
     "last_updated": "2026-05-07"
   },
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-05-08T05:47:54.573699+00:00",
+  "last_verified": "2026-06-05",
   "next_review": "2026-07-15T13:41:49.946000+00:00",
   "late_fee": 40,
   "cash_advance_fee_flat": 10,

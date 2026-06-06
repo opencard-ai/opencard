@@ -10,9 +10,16 @@
     "bonus_points": 75000,
     "spending_requirement": 5000,
     "time_period_months": 3,
-    "description": "Earn 75,000 bonus points after you spend $5,000 on purchases in the first 3 months from account opening.",
+    "description": "Earn 75,000 Ultimate Rewards points after spending $5,000 in purchases in the first 3 months from account opening.",
     "point_program": "Chase Ultimate Rewards",
-    "estimated_value": 1700
+    "estimated_value": 1275,
+    "offer_status": "public",
+    "confidence": "medium_high",
+    "notes": [
+      "Current Chase public/search evidence supports 75k after $5k/3mo; older 100k references are treated as stale history."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-06-05"
   },
   "earning_rates": [
     {
@@ -116,7 +123,7 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-04-25T16:01:49.502Z",
+  "last_verified": "2026-06-05",
   "next_review": "2026-07-23T17:26:36.116494",
   "cash_advance_fee_flat": 5,
   "cash_advance_fee_pct": 5,
