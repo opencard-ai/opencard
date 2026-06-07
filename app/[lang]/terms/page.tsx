@@ -193,7 +193,7 @@ export default async function TermsPage({ params }: Props) {
       
       <div className="space-y-8 text-slate-700 leading-relaxed">
         {c.sections.map((section, i) => (
-          <section key={i}>
+          <section key={i} id={i === 2 ? "not-financial-advice" : i === 4 ? "affiliate-links" : undefined}>
             <h2 className="text-xl font-bold text-slate-900 mb-3">{section.heading}</h2>
             <p>{section.body}</p>
           </section>

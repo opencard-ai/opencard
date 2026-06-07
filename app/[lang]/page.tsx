@@ -7,6 +7,7 @@ import CardGrid from "@/app/components/CardGrid";
 import TravelProducts from "@/app/components/TravelProducts";
 import NewsFeed from "@/app/components/NewsFeed";
 import { t, locales } from "@/lib/i18n";
+import { getLocalizedGuides } from "@/lib/guides";
 
 // Homepage pre-rendered at build time for stability
 // Card data is static; NewsFeed refreshes client-side
@@ -25,6 +26,7 @@ export default async function HomePage({ params }: Props) {
   const issuers = getAllIssuers();
   const tags = getAllTags();
   const locale = lang as any;
+  const guides = getLocalizedGuides(lang).slice(0, 4);
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-6">
@@ -63,6 +65,35 @@ export default async function HomePage({ params }: Props) {
       <Suspense fallback={null}>
         <NewsFeed lang={lang} />
       </Suspense>
+
+
+      {/* Guides / Learning Center */}
+      <section className="mb-6 rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:bg-slate-950 dark:border-slate-800">
+        <div className="flex items-center justify-between gap-3 mb-4">
+          <div>
+            <h2 className="text-lg font-bold text-slate-900 dark:text-white">
+              {lang === "zh" ? "信用卡指南" : lang === "zh-cn" ? "信用卡指南" : lang === "es" ? "Guías de tarjetas" : "Credit card guides"}
+            </h2>
+            <p className="text-xs text-slate-500 mt-1">
+              {lang === "zh" ? "用長篇策略文章理解年費、點數、開卡禮與福利到期。" : lang === "zh-cn" ? "用长篇策略文章理解年费、点数、开卡奖励与权益到期。" : lang === "es" ? "Guías largas sobre cuotas, puntos, bonos y vencimientos de beneficios." : "Long-form strategy guides on annual fees, points, welcome offers, and benefit expiration."}
+            </p>
+          </div>
+          <a href={`/${lang}/guides`} className="text-sm font-semibold text-blue-600 hover:text-blue-700 whitespace-nowrap">
+            {lang === "zh" ? "全部指南" : lang === "zh-cn" ? "全部指南" : lang === "es" ? "Ver todas" : "View all"} →
+          </a>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {guides.map((guide) => (
+            <a key={guide.slug} href={`/${lang}/guides/${guide.slug}`} className="rounded-lg border border-slate-200 p-3 hover:border-amber-300 hover:bg-amber-50 transition-colors dark:border-slate-800 dark:hover:bg-amber-950/20">
+              <h3 className="text-sm font-semibold text-slate-900 dark:text-white line-clamp-2">{guide.title}</h3>
+              <p className="text-xs text-slate-500 mt-1 line-clamp-2">{guide.summary}</p>
+              <div className="text-[11px] text-slate-400 mt-2">
+                {lang === "zh" ? "已更新" : lang === "zh-cn" ? "已更新" : lang === "es" ? "Actualizado" : "Updated"} {guide.updated} · {guide.word_count.toLocaleString()} {lang === "es" ? "palabras" : "words"}
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
 
       {/* My Cards Banner */}
       <div className="mb-4">

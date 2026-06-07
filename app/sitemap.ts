@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { getAllCards } from "@/lib/cards";
+import { getGuidesForLocale } from "@/lib/guides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const cards = getAllCards();
@@ -22,10 +23,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...tier("/cards", 0.8, "weekly"),
     ...tier("/elevated-offers", 0.8, "weekly"),
     ...tier("/find", 0.7, "weekly"),
+    ...tier("/guides", 0.75, "weekly"),
     ...tier("/about", 0.5, "monthly"),
     ...tier("/privacy", 0.3, "monthly"),
     ...tier("/terms", 0.3, "monthly"),
   ];
+
+  const guidePages: MetadataRoute.Sitemap = [];
+
+  for (const lang of langs) {
+    for (const guide of getGuidesForLocale(lang)) {
+      guidePages.push({
+        url: `${baseUrl}/${lang}/guides/${guide.slug}`,
+        lastModified: new Date(guide.updated),
+        changeFrequency: "monthly",
+        priority: 0.7,
+      });
+    }
+  }
 
   const cardPages: MetadataRoute.Sitemap = [];
 
@@ -43,5 +58,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  return [...staticPages, ...cardPages];
+  return [...staticPages, ...guidePages, ...cardPages];
 }

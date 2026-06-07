@@ -85,6 +85,10 @@ export default async function GuidePage({ params }: Props) {
 
       <header className="mb-8">
         <div className="flex flex-wrap items-center gap-2 text-[11px] text-slate-500 dark:text-slate-500 mb-3">
+          <span>{safeLang === "zh" ? "作者" : safeLang === "zh-cn" ? "作者" : safeLang === "es" ? "Autor" : "Written by"} <Link href={`/${safeLang}/about#methodology`} className="underline underline-offset-2 hover:text-amber-700 dark:hover:text-amber-300">Kacey</Link></span>
+          <span>·</span>
+          <span>{safeLang === "zh" ? "已審核" : safeLang === "zh-cn" ? "已审核" : safeLang === "es" ? "Revisado" : "Reviewed"} {localizedGuide.updated}</span>
+          <span>·</span>
           <span>{t("guides.updated", safeLang)} {localizedGuide.updated}</span>
           <span>·</span>
           <span>{localizedGuide.word_count.toLocaleString()} {t("guides.words", safeLang)}</span>
@@ -99,6 +103,17 @@ export default async function GuidePage({ params }: Props) {
         </div>
       </header>
 
+      <aside className="mb-8 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-[13px] leading-relaxed text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/30 dark:text-amber-100">
+        <strong>{safeLang === "zh" ? "編輯聲明：" : safeLang === "zh-cn" ? "编辑声明：" : safeLang === "es" ? "Nota editorial: " : "Editorial note: "}</strong>
+        {safeLang === "zh"
+          ? "本文由 OpenCard 編輯團隊獨立撰寫與維護，未由任何金融機構提供、委託、審核或背書。內容僅供資訊參考，不構成財務建議。"
+          : safeLang === "zh-cn"
+            ? "本文由 OpenCard 编辑团队独立撰写与维护，未由任何金融机构提供、委托、审核或背书。内容仅供信息参考，不构成财务建议。"
+            : safeLang === "es"
+              ? "Este contenido es escrito y mantenido independientemente por OpenCard. No es proporcionado, encargado, revisado ni respaldado por ninguna institución financiera. Es solo información, no asesoría financiera."
+              : "This content is written and maintained independently by OpenCard. It is not provided, commissioned, reviewed, or endorsed by any financial institution. It is informational only and not financial advice."}
+      </aside>
+
       <article>
         <Article />
       </article>
@@ -106,6 +121,10 @@ export default async function GuidePage({ params }: Props) {
       <hr className="my-12 border-slate-200 dark:border-slate-800" />
 
       <footer className="text-[13px] text-slate-500 dark:text-slate-500 space-y-2">
+        <p>
+          {safeLang === "zh" ? "作者：" : safeLang === "zh-cn" ? "作者：" : safeLang === "es" ? "Autor: " : "Author: "}
+          <Link href={`/${safeLang}/about#methodology`} className="underline underline-offset-2 hover:text-amber-700 dark:hover:text-amber-300">Kacey</Link> · {safeLang === "zh" ? "編輯審核：OpenCard Editorial" : safeLang === "zh-cn" ? "编辑审核：OpenCard Editorial" : safeLang === "es" ? "Revisión editorial: OpenCard Editorial" : "Editorial review: OpenCard Editorial"}
+        </p>
         <p>
           {t("guides.firstPublished", safeLang)} {localizedGuide.published}
           {localizedGuide.updated !== localizedGuide.published && (

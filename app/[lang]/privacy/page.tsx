@@ -37,7 +37,7 @@ export default async function PrivacyPage({ params }: Props) {
         },
         {
           heading: "5. Cookies",
-          body: "We use minimal cookies to:\n\n• Store your language preference\n• Maintain basic session state\n\nWe do not use advertising cookies or tracking pixels."
+          body: "We use cookies and similar browser storage to:\n\n• Store your language and theme preferences\n• Maintain basic session state\n• Remember your cookie consent choices\n• Measure aggregate site usage when you consent to analytics\n• Support Google advertising and affiliate measurement when you consent to optional cookies\n\nYou can accept, reject, or manage optional cookies from the cookie banner. Essential cookies are used only to provide core site functionality."
         },
         {
           heading: "6. Data Retention and Deletion",
@@ -45,7 +45,7 @@ export default async function PrivacyPage({ params }: Props) {
         },
         {
           heading: "7. Third-Party Services",
-          body: "We use the following third-party services:\n\n• Vercel: Website hosting and serverless functions\n• Upstash Redis: Encrypted data storage\n• AgentMail: Transactional email delivery\n• Google (optional): Google Sign-In for future authentication features\n\nThese providers have their own privacy policies."
+          body: "We use the following third-party services:\n\n• Vercel: Website hosting and serverless functions\n• Upstash Redis: Encrypted data storage\n• AgentMail: Transactional email delivery\n• Google: Advertising services (AdSense), consent signals, and optional future Google Sign-In features\n\nThese providers have their own privacy policies."
         },
         {
           heading: "8. Children's Privacy",
@@ -84,7 +84,7 @@ export default async function PrivacyPage({ params }: Props) {
         },
         {
           heading: "5. Cookie",
-          body: "我們使用最少量 Cookie：\n\n• 儲存您的語言偏好\n• 維持基本工作階段狀態\n\n我們不使用廣告追蹤 Cookie 或追蹤像素。"
+          body: "我們使用 Cookie 與類似瀏覽器儲存技術：\n\n• 儲存語言與主題偏好\n• 維持基本工作階段狀態\n• 記住您的 Cookie 同意選擇\n• 在您同意後衡量彙總網站使用情況\n• 在您同意選用 Cookie 後支援 Google 廣告與聯盟成效衡量\n\n您可以透過 Cookie 橫幅接受、拒絕或管理選用 Cookie。必要 Cookie 僅用於提供網站核心功能。"
         },
         {
           heading: "6. 資料保留與刪除",
@@ -92,7 +92,7 @@ export default async function PrivacyPage({ params }: Props) {
         },
         {
           heading: "7. 第三方服務",
-          body: "我們使用以下第三方服務：\n\n• Vercel：網站代管與無伺服器函式\n• Upstash Redis：加密資料儲存\n• AgentMail：交易郵件傳送\n• Google（可選）：用於未來驗證功能\n\n各服務供應商均有其專屬隱私權政策。"
+          body: "我們使用以下第三方服務：\n\n• Vercel：網站代管與無伺服器函式\n• Upstash Redis：加密資料儲存\n• AgentMail：交易郵件傳送\n• Google：廣告服務（AdSense）、同意訊號與未來可能的 Google 登入功能\n\n各服務供應商均有其專屬隱私權政策。"
         },
         {
           heading: "8. 兒童隱私",
@@ -131,7 +131,7 @@ export default async function PrivacyPage({ params }: Props) {
         },
         {
           heading: "5. Cookie",
-          body: "我们使用最少量 Cookie：\n\n• 存储您的语言偏好\n• 维持基本会话状态\n\n我们不使用广告追踪 Cookie 或追踪像素。"
+          body: "我们使用 Cookie 与类似浏览器存储技术：\n\n• 存储语言与主题偏好\n• 维持基本会话状态\n• 记住您的 Cookie 同意选择\n• 在您同意后衡量汇总网站使用情况\n• 在您同意可选 Cookie 后支持 Google 广告与联盟效果衡量\n\n您可以通过 Cookie 横幅接受、拒绝或管理可选 Cookie。必要 Cookie 仅用于提供网站核心功能。"
         },
         {
           heading: "6. 数据保留与删除",
@@ -139,7 +139,7 @@ export default async function PrivacyPage({ params }: Props) {
         },
         {
           heading: "7. 第三方服务",
-          body: "我们使用以下第三方服务：\n\n• Vercel：网站托管与无服务器函数\n• Upstash Redis：加密数据存储\n• AgentMail：交易邮件发送\n• Google（可选）：用于未来认证功能\n\n各服务供应商均有其专属隐私政策。"
+          body: "我们使用以下第三方服务：\n\n• Vercel：网站托管与无服务器函数\n• Upstash Redis：加密数据存储\n• AgentMail：交易邮件发送\n• Google：广告服务（AdSense）、同意信号与未来可能的 Google 登录功能\n\n各服务供应商均有其专属隐私政策。"
         },
         {
           heading: "8. 儿童隐私",
@@ -178,7 +178,7 @@ export default async function PrivacyPage({ params }: Props) {
         },
         {
           heading: "5. Cookies",
-          body: "Usamos cookies mínimas para:\n\n• Almacenar su preferencia de idioma\n• Mantener el estado básico de la sesión\n\nNo usamos cookies publicitarias ni píxeles de seguimiento."
+          body: "Usamos cookies y almacenamiento similar para:\n\n• Recordar idioma y tema\n• Mantener estado básico de sesión\n• Recordar sus preferencias de consentimiento\n• Medir uso agregado del sitio cuando usted acepta analítica\n• Apoyar publicidad de Google y medición de afiliados cuando acepta cookies opcionales\n\nPuede aceptar, rechazar o gestionar cookies opcionales desde el banner. Las cookies esenciales se usan solo para funciones básicas del sitio."
         },
         {
           heading: "6. Retención y Eliminación de Datos",
@@ -186,7 +186,7 @@ export default async function PrivacyPage({ params }: Props) {
         },
         {
           heading: "7. Servicios de Terceros",
-          body: "Usamos los siguientes servicios de terceros:\n\n• Vercel: Alojamiento web y funciones sin servidor\n• Upstash Redis: Almacenamiento de datos cifrado\n• AgentMail: Entrega de correos transaccionales\n• Google (opcional): Inicio de sesión con Google para futuras funciones de autenticación\n\nEstos proveedores tienen sus propias políticas de privacidad."
+          body: "Usamos los siguientes servicios de terceros:\n\n• Vercel: Alojamiento web y funciones sin servidor\n• Upstash Redis: Almacenamiento de datos cifrado\n• AgentMail: Entrega de correos transaccionales\n• Google: servicios publicitarios (AdSense), señales de consentimiento y funciones futuras opcionales de inicio de sesión\n\nEstos proveedores tienen sus propias políticas de privacidad."
         },
         {
           heading: "8. Privacidad de Menores",

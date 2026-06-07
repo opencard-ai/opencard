@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useSyncExternalStore } from "react";
-import { inject } from "@vercel/analytics";
+import { useSyncExternalStore } from "react";
+import Script from "next/script";
 
 const CONSENT_KEY = "opencard_cookie_consent";
 
@@ -22,16 +22,18 @@ function getServerSnapshot() {
   return null;
 }
 
-export default function Analytics() {
+export default function AdSenseScript() {
   const consent = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
-  const injected = useRef(false);
 
-  useEffect(() => {
-    if (consent === "accepted" && !injected.current) {
-      inject();
-      injected.current = true;
-    }
-  }, [consent]);
+  if (consent !== "accepted") return null;
 
-  return null;
+  return (
+    <Script
+      id="google-adsense"
+      async
+      strategy="afterInteractive"
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9241929717890328"
+      crossOrigin="anonymous"
+    />
+  );
 }
