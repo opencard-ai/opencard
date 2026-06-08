@@ -1,6 +1,39 @@
 {
   "items": [
     {
+      "title": "[Ends Soon] Amazon Prime: $5 Off $5+ Grocery Items (Free 6-Pack of Coke, Cereal, Cookies, Muffins, Etc)",
+      "url": "https://www.doctorofcredit.com/amazon-prime-5-off-5-grocery-items-free-6-pack-of-coke-more-options/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "amazon",
+        "free food",
+        "freebies"
+      ],
+      "ts": "2026-06-08T13:00:33.000Z",
+      "title_en": "[Ends Soon] Amazon Prime: $5 Off $5+ Grocery Items (Free 6-Pack of Coke, Cereal, Cookies, Muffins, Etc)",
+      "summary_en": "",
+      "title_zh": "[Ends Soon] Amazon Prime: $5 Off $5+ Grocery Items (Free 6-Pack of Coke, Cereal, Cookies, Muffins, Etc)",
+      "summary_zh": "",
+      "title_es": "[Termina pronto] Amazon Prime: $5 de descuento en compras de comestibles de $5+ (6-Pack gratis de Coca-Cola, cereales, galletas, muffins, etc.)",
+      "summary_es": "Amazon Prime ofrece un descuento de $5 en comestibles de $5 o más, incluyendo una caja gratuita de 6 refrescos, cereales, galletas y muffins."
+    },
+    {
+      "title": "Best Posts Last Week: New Delta Offers, E*Trade $400 Savings Bonus & More",
+      "url": "https://www.doctorofcredit.com/best-posts-last-week-new-delta-offers-etrade-400-savings-bonus-more/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Sunday Roundup"
+      ],
+      "ts": "2026-06-08T12:00:54.000Z",
+      "title_en": "Best Posts Last Week: New Delta Offers, E*Trade $400 Savings Bonus & More",
+      "summary_en": "",
+      "title_zh": "Best Posts Last Week: New Delta Offers, E*Trade $400 Savings Bonus & More",
+      "summary_zh": "",
+      "title_es": "Mejores publicaciones de la semana pasada: Nuevas ofertas de Delta, bono de ahorro de $400 de E*Trade y más.",
+      "summary_es": "Un resumen de las mejores ofertas de la semana, incluyendo nuevas ofertas de Delta y un bono de ahorro de $400 en E*Trade."
+    },
+    {
       "title": "Office Depot/Max Stores: Buy $300 In Mastercard Giftcards & Get $15 Instant Discount (6/7-6/13)",
       "url": "https://www.doctorofcredit.com/office-depot-max-stores-buy-300-in-mastercard-giftcards-get-15-instant-discount-2-13-2-19/",
       "source": "Doctor of Credit",
@@ -14,8 +47,8 @@
       "summary_en": "",
       "title_zh": "Office Depot/Max Stores: Buy $300 In Mastercard Giftcards & Get $15 Instant Discount (6/7-6/13)",
       "summary_zh": "",
-      "title_es": "Office Depot/Max Stores: Buy $300 In Mastercard Giftcards & Get $15 Instant Discount (6/7-6/13)",
-      "summary_es": ""
+      "title_es": "Oficinas Depot/Max: Compra $300 en tarjetas de regalo Mastercard y obtén un descuento instantáneo de $15 (6/7-6/13).",
+      "summary_es": "Office Depot/Max ofrece un descuento instantáneo de $15 al comprar $300 en tarjetas de regalo Mastercard entre el 6/7 y el 6/13."
     },
     {
       "title": "[PA] Service 1st Federal Credit Union $300 Checking Bonus",
@@ -32,8 +65,8 @@
       "summary_en": "",
       "title_zh": "[PA] Service 1st Federal Credit Union $300 Checking Bonus",
       "summary_zh": "",
-      "title_es": "[PA] Service 1st Federal Credit Union $300 Checking Bonus",
-      "summary_es": ""
+      "title_es": "[PA] Service 1st Federal Credit Union: Bono de $300 por cuenta corriente.",
+      "summary_es": "Service 1st Federal Credit Union ofrece un bono de $300 por abrir una cuenta corriente en Pensilvania."
     },
     {
       "title": "[CO] Fitzsimmons Credit Union $100 Referral Checking Bonus",
@@ -50,8 +83,8 @@
       "summary_en": "",
       "title_zh": "[CO] Fitzsimmons Credit Union $100 Referral Checking Bonus",
       "summary_zh": "",
-      "title_es": "[CO] Fitzsimmons Credit Union $100 Referral Checking Bonus",
-      "summary_es": ""
+      "title_es": "[CO] Fitzsimmons Credit Union: Bono de $100 por cuenta corriente mediante recomendación.",
+      "summary_es": "Fitzsimmons Credit Union en Colorado ofrece un bono de $100 por cuenta corriente referenciada."
     },
     {
       "title": "[AZ, OK, TX only] MidFirst Bank $300/$350 Checking Promotion",
@@ -69,8 +102,8 @@
       "summary_en": "",
       "title_zh": "[AZ, OK, TX only] MidFirst Bank $300/$350 Checking Promotion",
       "summary_zh": "",
-      "title_es": "[AZ, OK, TX only] MidFirst Bank $300/$350 Checking Promotion",
-      "summary_es": ""
+      "title_es": "[AZ, OK, TX solo] MidFirst Bank: Promoción de $300/$350 por cuenta corriente.",
+      "summary_es": "MidFirst Bank ofrece entre $300 y $350 de bono por abrir una cuenta corriente en Arizona, Oklahoma o Texas."
     },
     {
       "title": "[CA only] LBS Financial Credit Union $100 Checking Bonus",
@@ -87,8 +120,8 @@
       "summary_en": "",
       "title_zh": "[CA only] LBS Financial Credit Union $100 Checking Bonus",
       "summary_zh": "",
-      "title_es": "[CA only] LBS Financial Credit Union $100 Checking Bonus",
-      "summary_es": ""
+      "title_es": "[CA solo] LBS Financial Credit Union: Bono de $100 por cuenta corriente.",
+      "summary_es": "LBS Financial Credit Union en California ofrece un bono de $100 por cuenta corriente."
     },
     {
       "title": "[CA] California Coast Credit Union $150 Checking Bonus, Direct Deposit Required",
@@ -106,8 +139,8 @@
       "summary_en": "",
       "title_zh": "[CA] California Coast Credit Union $150 Checking Bonus, Direct Deposit Required",
       "summary_zh": "",
-      "title_es": "[CA] California Coast Credit Union $150 Checking Bonus, Direct Deposit Required",
-      "summary_es": ""
+      "title_es": "[CA] California Coast Credit Union: Bono de $150 por cuenta corriente, requiere depósito directo.",
+      "summary_es": "California Coast Credit Union ofrece un bono de $150 por cuenta corriente, siempre que se realice un depósito directo."
     },
     {
       "title": "[UT, NV, AZ, ID, OR, NM, CA] America First Credit Union $150 Savings + $200 Checking Bonus",
@@ -130,8 +163,8 @@
       "summary_en": "",
       "title_zh": "[UT, NV, AZ, ID, OR, NM, CA] America First Credit Union $150 Savings + $200 Checking Bonus",
       "summary_zh": "",
-      "title_es": "[UT, NV, AZ, ID, OR, NM, CA] America First Credit Union $150 Savings + $200 Checking Bonus",
-      "summary_es": ""
+      "title_es": "[UT, NV, AZ, ID, OR, NM, CA] America First Credit Union: Bono de $150 en ahorro y $200 por cuenta corriente.",
+      "summary_es": "America First Credit Union ofrece un bono de $150 en cuenta de ahorro y $200 por cuenta corriente en varios estados."
     },
     {
       "title": "[TX only] Broadway Bank $300-$1,000 Business Checking Bonus",
@@ -149,8 +182,8 @@
       "summary_en": "",
       "title_zh": "[TX only] Broadway Bank $300-$1,000 Business Checking Bonus",
       "summary_zh": "",
-      "title_es": "[TX only] Broadway Bank $300-$1,000 Business Checking Bonus",
-      "summary_es": ""
+      "title_es": "[TX solo] Broadway Bank: Bono de $300-$1,000 por cuenta corriente empresarial.",
+      "summary_es": "Broadway Bank ofrece un bono de entre $300 y $1,000 por abrir una cuenta corriente empresarial en Texas."
     },
     {
       "title": "[IL] MSU Federal Credit Union $100 Checking Bonus",
@@ -168,8 +201,8 @@
       "summary_en": "",
       "title_zh": "[IL] MSU Federal Credit Union $100 Checking Bonus",
       "summary_zh": "",
-      "title_es": "[IL] MSU Federal Credit Union $100 Checking Bonus",
-      "summary_es": ""
+      "title_es": "[IL] MSU Federal Credit Union: Bono de $100 por cuenta corriente.",
+      "summary_es": "MSU Federal Credit Union en Illinois ofrece un bono de $100 por cuenta corriente."
     },
     {
       "title": "[WI] Lake Ridge Bank $300 Checking Bonus",
@@ -185,8 +218,8 @@
       "summary_en": "",
       "title_zh": "[WI] Lake Ridge Bank $300 Checking Bonus",
       "summary_zh": "",
-      "title_es": "[WI] Lake Ridge Bank $300 Checking Bonus",
-      "summary_es": ""
+      "title_es": "[WI] Lake Ridge Bank: Bono de $300 por cuenta corriente.",
+      "summary_es": "Lake Ridge Bank en Wisconsin ofrece un bono de $300 por cuenta corriente."
     },
     {
       "title": "[9% Back On Amazon][Expired] [Targeted, CA only] Patelco Credit Union $300 Checking Bonus",
@@ -204,8 +237,8 @@
       "summary_en": "",
       "title_zh": "[9% Back On Amazon][Expired] [Targeted, CA only] Patelco Credit Union $300 Checking Bonus",
       "summary_zh": "",
-      "title_es": "[9% Back On Amazon][Expired] [Targeted, CA only] Patelco Credit Union $300 Checking Bonus",
-      "summary_es": ""
+      "title_es": "[9% de regreso en Amazon][Expirado] [Dirigido, solo CA] Patelco Credit Union: Bono de $300 por cuenta corriente.",
+      "summary_es": "Patelco Credit Union ofreció un bono de $300 por cuenta corriente en California, con un 9% de reembolso en Amazon (ya expirado)."
     },
     {
       "title": "[IN] Springs Valley Bank & Trust $250 Checking Bonus",
@@ -222,8 +255,8 @@
       "summary_en": "",
       "title_zh": "[IN] Springs Valley Bank & Trust $250 Checking Bonus",
       "summary_zh": "",
-      "title_es": "[IN] Springs Valley Bank & Trust $250 Checking Bonus",
-      "summary_es": ""
+      "title_es": "[IN] Springs Valley Bank & Trust: Bono de $250 por cuenta corriente.",
+      "summary_es": "Springs Valley Bank & Trust en Indiana ofrece un bono de $250 por cuenta corriente."
     },
     {
       "title": "[OK] Oklahoma Central Credit Union $300 Checking Bonus",
@@ -239,42 +272,9 @@
       "summary_en": "",
       "title_zh": "[OK] Oklahoma Central Credit Union $300 Checking Bonus",
       "summary_zh": "",
-      "title_es": "[OK] Oklahoma Central Credit Union $300 Checking Bonus",
-      "summary_es": ""
-    },
-    {
-      "title": "[TN] SouthEast Bank $400 Business Checking Bonus",
-      "url": "https://www.doctorofcredit.com/tn-southeast-bank-400-business-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "tn bank bonuses"
-      ],
-      "ts": "2026-06-07T13:30:17.000Z",
-      "title_en": "[TN] SouthEast Bank $400 Business Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[TN] SouthEast Bank $400 Business Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[TN] SouthEast Bank $400 Business Checking Bonus",
-      "summary_es": ""
-    },
-    {
-      "title": "[CA Only] Foothill Credit Union $200 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/ca-only-foothill-credit-union-200-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "ca bank bonuses",
-        "direct deposit required"
-      ],
-      "ts": "2026-06-07T13:00:52.000Z",
-      "title_en": "[CA Only] Foothill Credit Union $200 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[CA Only] Foothill Credit Union $200 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[CA Only] Foothill Credit Union $200 Checking Bonus",
-      "summary_es": ""
+      "title_es": "[OK] Oklahoma Central Credit Union: Bono de $300 por cuenta corriente.",
+      "summary_es": "Oklahoma Central Credit Union ofrece un bono de $300 por cuenta corriente en Oklahoma."
     }
   ],
-  "fetched": "2026-06-08T08:15:06.191Z"
+  "fetched": "2026-06-08T14:11:06.275Z"
 }
