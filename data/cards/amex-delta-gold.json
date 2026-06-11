@@ -20,7 +20,8 @@
       "Blue card is not part of this elevated-offer candidate."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-05"
+    "last_verified": "2026-06-05",
+    "elevated_until": "2026-07-15"
   },
   "earning_rates": [
     {
