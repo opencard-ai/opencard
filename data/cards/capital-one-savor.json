@@ -1,0 +1,101 @@
+{
+  "card_id": "capital-one-savor",
+  "name": "Capital One Savor Cash Rewards Credit Card",
+  "issuer": "Capital One",
+  "network": "mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Excellent",
+  "welcome_offer": {
+    "bonus_points": 0,
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "description": "Limited-time offer: Earn a one-time $250 cash bonus once you spend $500 on purchases within the first 3 months from account opening.",
+    "point_program": "Cash Back",
+    "estimated_value": 250,
+    "offer_status": "limited_time_public",
+    "confidence": "high",
+    "notes": [
+      "Official Capital One Savor product page shows this as a public limited-time offer.",
+      "No explicit offer end date was visible on the official page at verification time.",
+      "This is Capital One Savor, not the separate SavorOne card."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-06-11"
+  },
+  "earning_rates": [
+    {
+      "category": "Capital One Travel",
+      "rate": 5,
+      "notes": "Hotels and rental cars booked through Capital One Travel"
+    },
+    {
+      "category": "Dining",
+      "rate": 3,
+      "notes": "Unlimited cash back on dining"
+    },
+    {
+      "category": "Groceries",
+      "rate": 3,
+      "notes": "Unlimited cash back at grocery stores; excludes superstores like Walmart and Target"
+    },
+    {
+      "category": "Entertainment",
+      "rate": 3,
+      "notes": "Unlimited cash back on entertainment"
+    },
+    {
+      "category": "Streaming",
+      "rate": 3,
+      "notes": "Unlimited cash back on select streaming services"
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": "Unlimited cash back on all other purchases"
+    }
+  ],
+  "annual_credits": [],
+  "travel_benefits": {
+    "lounge_access": [],
+    "hotel_status": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": null,
+    "trip_delay": null,
+    "purchase_protection": null,
+    "extended_warranty": null,
+    "trip_cancellation": null,
+    "return_protection": null
+  },
+  "tags": [
+    "cash-back",
+    "no-annual-fee",
+    "dining",
+    "groceries",
+    "entertainment"
+  ],
+  "recurring_credits": [],
+  "sources": [
+    {
+      "url": "https://www.capitalone.com/credit-cards/savor/",
+      "notes": "Official Capital One Savor page confirming public limited-time $250 cash bonus after $500 spend in 3 months, $0 annual fee, and core cash-back categories. No explicit end date visible on 2026-06-11."
+    },
+    {
+      "url": "https://www.fool.com/money/credit-cards/articles/limited-time-offer-earn-a-250-bonus-with-the-capital-one-savor-rewards-card/",
+      "notes": "Secondary source corroborating the limited-time $250 cash bonus after $500 spend in the first 3 months."
+    }
+  ],
+  "last_updated": "2026-06-11T20:20:00.000Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": []
+  },
+  "last_verified": "2026-06-11T20:20:00.000Z",
+  "next_review": "2026-07-11T20:20:00.000Z"
+}
