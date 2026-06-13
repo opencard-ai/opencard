@@ -1,0 +1,94 @@
+{
+  "card_id": "us-bank-shopper-cash-rewards",
+  "name": "U.S. Bank Shopper Cash Rewards® Visa Signature® Card",
+  "issuer": "U.S. Bank",
+  "network": "visa",
+  "annual_fee": 95,
+  "annual_fee_description": "$0 intro annual fee for the first year, then $95/year.",
+  "foreign_transaction_fee": 3,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 2000,
+    "time_period_months": 4,
+    "bonus_points": 250,
+    "estimated_value": 250,
+    "point_program": "Cash Back",
+    "description": "Earn a $250 bonus after spending $2,000 in eligible purchases within the first 120 days of account opening.",
+    "last_verified": "2026-06-13T17:10:00.000Z"
+  },
+  "earning_rates": [
+    {
+      "category": "Two chosen retailers",
+      "rate": 6,
+      "notes": "6% cash back on the first $1,500 in combined eligible purchases each quarter with two retailers you choose."
+    },
+    {
+      "category": "One chosen everyday category",
+      "rate": 3,
+      "notes": "3% cash back on the first $1,500 in eligible purchases each quarter in one everyday category you choose, such as wholesale clubs, gas and EV charging stations, bills and utilities."
+    },
+    {
+      "category": "Prepaid hotels and car rentals through U.S. Bank Travel Center",
+      "rate": 5.5,
+      "notes": "5.5% cash back on hotel and car reservations booked directly in the Travel Center."
+    },
+    {
+      "category": "All other eligible purchases",
+      "rate": 1.5,
+      "notes": "1.5% cash back on all other eligible purchases."
+    }
+  ],
+  "selectable_rewards": {
+    "activation_required": true,
+    "selection_frequency": "quarterly",
+    "cap": "6% applies to first $1,500 in combined eligible purchases each quarter with two chosen retailers; 3% applies to first $1,500 each quarter in one chosen everyday category.",
+    "selection_type": "merchant_and_category"
+  },
+  "annual_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "U.S. Bank Cash-back deals",
+        "description": "Personalized merchant offers accessible through U.S. Bank online banking or mobile app."
+      },
+      {
+        "name": "U.S. Bank ExtendPay Plan offer",
+        "description": "New cardmember $0 fee offer on ExtendPay Plans opened in the first 60 days after account opening."
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": null,
+    "trip_delay": false,
+    "purchase_protection": null,
+    "extended_warranty": null,
+    "trip_cancellation": null,
+    "return_protection": null
+  },
+  "tags": [
+    "cash-back",
+    "selectable-rewards",
+    "merchant-rewards"
+  ],
+  "sources": [
+    {
+      "url": "https://www.usbank.com/credit-cards/shopper-cash-rewards-visa-signature-credit-card.html",
+      "notes": "Official U.S. Bank Shopper Cash Rewards page; verified 2026-06-13."
+    }
+  ],
+  "last_updated": "2026-06-13T17:10:00.000Z",
+  "status": "active",
+  "notes": "Quarterly selectable retailer/everyday-category card; first-year annual fee is waived, then $95/year.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
+  "last_verified": "2026-06-13T17:10:00.000Z",
+  "next_review": "2026-09-11T17:10:00.000Z"
+}

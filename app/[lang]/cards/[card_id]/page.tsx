@@ -113,6 +113,12 @@ export default async function CardDetailPage({ params }: Props) {
 
   const l = (key: string, p?: Record<string, string | number>) => t(key, locale, p);
   const freshness = freshnessFromIso(card.last_updated, lang);
+  const recurringCredits = (card.recurring_credits || []).filter(c => c.amount !== undefined);
+  const hasTravelBenefits = !!(
+    (card.travel_benefits?.hotel_status?.length ?? 0) > 0 ||
+    (card.travel_benefits?.lounge_access || []).length > 0 ||
+    (card.travel_benefits?.other_benefits?.length ?? 0) > 0
+  );
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -269,14 +275,114 @@ export default async function CardDetailPage({ params }: Props) {
             </div>
           </section>
 
-          {/* Benefits & Credits */}
-          {(card.recurring_credits || []).filter(c => c.amount !== undefined).length > 0 && (
+          {/* Dynamic / User-Activated Reward Structures */}
+          {(card.selectable_rewards || card.relationship_bonus || card.rotating_categories) && (
             <section className="bg-white rounded-xl border border-slate-200 p-6">
-              <h2 className="text-lg font-bold text-slate-900 mb-4">{l("detail.annualCredits")}</h2>
-              <div className="space-y-3">
-                {(card.recurring_credits || [])
-                      .filter((c) => c.amount !== undefined)
-                      .map((credit, i) => (
+              <h2 className="text-lg font-bold text-slate-900 mb-4">
+                {lang === "zh" || lang === "zh-cn" ? "動態回饋條件" : lang === "es" ? "Condiciones dinámicas" : "Dynamic Reward Rules"}
+              </h2>
+              <div className="space-y-4">
+                {card.selectable_rewards && (
+                  <div className="rounded-lg bg-blue-50 border border-blue-100 p-4">
+                    <h3 className="text-sm font-semibold text-blue-900 mb-1">
+                      {lang === "zh" || lang === "zh-cn" ? "需選擇／啟用的回饋" : lang === "es" ? "Recompensas seleccionables" : "Selectable rewards"}
+                    </h3>
+                    <p className="text-xs text-blue-800">
+                      {card.selectable_rewards.activation_required
+                        ? (lang === "zh" || lang === "zh-cn" ? "需要手動選擇或啟用。" : lang === "es" ? "Requiere selección o activación manual." : "Manual selection or activation required.")
+                        : (lang === "zh" || lang === "zh-cn" ? "不需手動啟用。" : lang === "es" ? "No requiere activación manual." : "No manual activation required.")}
+                      {card.selectable_rewards.selection_frequency && (
+                        <span className="ml-1">{card.selectable_rewards.selection_frequency}</span>
+                      )}
+                    </p>
+                    {card.selectable_rewards.cap && (
+                      <p className="text-xs text-blue-700 mt-1">{card.selectable_rewards.cap}</p>
+                    )}
+                    {(card.selectable_rewards.five_percent_categories || card.selectable_rewards.two_percent_categories) && (
+                      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                        {card.selectable_rewards.five_percent_categories && (
+                          <div>
+                            <div className="text-[11px] font-semibold uppercase text-blue-500 mb-1">5%</div>
+                            <p className="text-xs text-slate-700">{card.selectable_rewards.five_percent_categories.join(" · ")}</p>
+                          </div>
+                        )}
+                        {card.selectable_rewards.two_percent_categories && (
+                          <div>
+                            <div className="text-[11px] font-semibold uppercase text-blue-500 mb-1">2%</div>
+                            <p className="text-xs text-slate-700">{card.selectable_rewards.two_percent_categories.join(" · ")}</p>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {card.relationship_bonus && (
+                  <div className="rounded-lg bg-emerald-50 border border-emerald-100 p-4">
+                    <h3 className="text-sm font-semibold text-emerald-900 mb-1">
+                      {lang === "zh" || lang === "zh-cn" ? "銀行關係加成" : lang === "es" ? "Bono por relación bancaria" : "Relationship bonus"}
+                    </h3>
+                    <p className="text-xs text-emerald-800">
+                      {card.relationship_bonus.program}{card.relationship_bonus.requirements ? ` — ${card.relationship_bonus.requirements}` : ""}
+                    </p>
+                    <div className="mt-3 grid gap-2 sm:grid-cols-3">
+                      {card.relationship_bonus.tiers.map((tier, i) => (
+                        <div key={i} className="rounded-md bg-white/70 border border-emerald-100 px-3 py-2">
+                          <div className="text-xs font-semibold text-emerald-800">
+                            ${tier.qualifying_balance_min.toLocaleString()}+
+                            {typeof tier.qualifying_balance_max === "number" ? ` – $${tier.qualifying_balance_max.toLocaleString()}` : ""}
+                          </div>
+                          {typeof tier.total_cash_back_rate === "number" && (
+                            <div className="text-sm font-bold text-slate-900 mt-0.5">{tier.total_cash_back_rate}%</div>
+                          )}
+                          {typeof tier.earning_bonus_pct === "number" && (
+                            <div className="text-[11px] text-slate-500">+{tier.earning_bonus_pct}% bonus</div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {card.rotating_categories && (
+                  <div className="rounded-lg bg-purple-50 border border-purple-100 p-4">
+                    <h3 className="text-sm font-semibold text-purple-900 mb-1">
+                      {lang === "zh" || lang === "zh-cn" ? "季度輪替類別" : lang === "es" ? "Categorías trimestrales" : "Quarterly rotating categories"}
+                    </h3>
+                    <p className="text-xs text-purple-800">
+                      {card.rotating_categories.activation_required
+                        ? (lang === "zh" || lang === "zh-cn" ? "需要手動啟用。" : lang === "es" ? "Requiere activación manual." : "Manual activation required.")
+                        : (lang === "zh" || lang === "zh-cn" ? "不需手動啟用。" : lang === "es" ? "No requiere activación manual." : "No manual activation required.")}
+                      {card.rotating_categories.cap ? ` ${card.rotating_categories.cap}` : ""}
+                    </p>
+                    {card.rotating_categories.quarters_2026 && (
+                      <div className="mt-3 space-y-2">
+                        {card.rotating_categories.quarters_2026.map((q, i) => (
+                          <div key={i} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3 text-xs border-t border-purple-100 pt-2 first:border-t-0 first:pt-0">
+                            <span className="font-semibold text-purple-800 shrink-0">{q.quarter}</span>
+                            <span className="text-slate-700">{q.categories.join(" · ")}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {card.rotating_categories.reminder_recommendation && (
+                      <p className="text-xs text-purple-700 mt-3">{card.rotating_categories.reminder_recommendation}</p>
+                    )}
+                  </div>
+                )}
+              </div>
+            </section>
+          )}
+
+          {/* Benefits & Credits */}
+          {(recurringCredits.length > 0 || hasTravelBenefits) && (
+            <section className="bg-white rounded-xl border border-slate-200 p-6">
+              <h2 className="text-lg font-bold text-slate-900 mb-4">
+                {recurringCredits.length > 0 ? l("detail.annualCredits") : l("detail.otherBenefits")}
+              </h2>
+              {recurringCredits.length > 0 && (
+                <div className="space-y-3">
+                  {recurringCredits.map((credit, i) => (
                         <div
                           key={i}
                           className="flex items-start gap-3 py-2 border-b border-slate-100 last:border-0"
@@ -303,13 +409,11 @@ export default async function CardDetailPage({ params }: Props) {
                     </div>
                   </div>
                 ))}
-              </div>
+                </div>
+              )}
 
               {/* Travel Privileges — merged into Benefits section */}
-              {card.travel_benefits &&
-                ((card.travel_benefits.hotel_status?.length ?? 0) > 0 ||
-                  Object.entries(card.travel_benefits.lounge_access || {}).some(([, v]) => v) ||
-                  (card.travel_benefits.other_benefits?.length ?? 0) > 0) && (
+              {card.travel_benefits && hasTravelBenefits && (
                   <div className="mt-4 pt-4 border-t border-slate-200">
                     <div className="space-y-3">
                       {(card.travel_benefits.hotel_status?.length ?? 0) > 0 && (

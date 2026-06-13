@@ -2,38 +2,71 @@
   "card_id": "barclays-jetblue-plus",
   "name": "JetBlue Plus Card",
   "issuer": "Barclays",
-  "network": "visa",
+  "network": "mastercard",
   "annual_fee": 99,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 50000,
-    "description": "50,000 JetBlue bonus miles after first purchase",
-    "estimated_value": 500,
-    "spending_requirement": 0,
-    "time_period_months": null
+    "bonus_points": 60000,
+    "description": "Earn 60,000 TrueBlue bonus points after spending $1,000 on purchases and paying the annual fee in full, both within the first 90 days.",
+    "estimated_value": 780,
+    "spending_requirement": 1000,
+    "time_period_months": 3,
+    "point_program": "JetBlue TrueBlue",
+    "offer_status": "standard_public_offer",
+    "last_verified": "2026-06-13T17:10:00.000Z"
   },
   "earning_rates": [
     {
       "category": "JetBlue purchases",
-      "rate": 3,
-      "notes": ""
+      "rate": 6,
+      "notes": "6x TrueBlue points on eligible JetBlue purchases"
     },
     {
-      "category": "Dining",
+      "category": "Restaurants",
       "rate": 2,
-      "notes": ""
+      "notes": "2x TrueBlue points at restaurants"
+    },
+    {
+      "category": "Eligible grocery stores",
+      "rate": 2,
+      "notes": "2x TrueBlue points at eligible grocery stores"
     },
     {
       "category": "All other purchases",
       "rate": 1,
-      "notes": ""
+      "notes": "1x TrueBlue point per $1 on all other purchases"
     }
   ],
   "annual_credits": [],
   "travel_benefits": {
     "hotel_status": [],
-    "other_benefits": []
+    "other_benefits": [
+      {
+        "name": "5,000 anniversary bonus points",
+        "description": "Earn 5,000 bonus points each year after the JetBlue Plus Card account anniversary."
+      },
+      {
+        "name": "Free first checked bag",
+        "description": "First checked bag free for the primary cardmember and up to 3 eligible companions on JetBlue-operated flights."
+      },
+      {
+        "name": "10% points back on award flights",
+        "description": "Get 10% of points back after redeeming for and traveling on a JetBlue-operated award flight."
+      },
+      {
+        "name": "JetBlue Vacations statement credit",
+        "description": "Receive a statement credit after purchasing a qualifying JetBlue Vacations package of $100 or more; limit one per year."
+      },
+      {
+        "name": "50% inflight savings",
+        "description": "Savings on eligible inflight purchases on JetBlue-operated flights."
+      },
+      {
+        "name": "No foreign transaction fees",
+        "description": "No foreign transaction fees on international purchases."
+      }
+    ]
   },
   "fhr_thc": {
     "fhr_eligible": false,
@@ -51,13 +84,19 @@
     "cell_phone": null,
     "travel_accident": null
   },
-  "tags": [
-    "airline"
-  ],
+  "tags": [],
   "sources": [
     {
+      "url": "https://cards.barclaycardus.com/banking/cards/jetblue-plus-card/",
+      "notes": "Barclays official JetBlue Plus Card page; verified 2026-06-13."
+    },
+    {
+      "url": "https://www.jetbluepluscard.com/",
+      "notes": "JetBlue Plus card landing page; corroborates anniversary points and benefits."
+    },
+    {
       "url": "https://www.uscreditcardguide.com/barclaycard-jetblue-plus-credit-card/",
-      "notes": "USCCG primary review"
+      "notes": "USCCG secondary review."
     }
   ],
   "hotel_program": null,
@@ -65,7 +104,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.953Z",
-  "last_verified": "2026-04-16T13:41:49.953Z",
-  "next_review": "2026-07-15T13:41:49.953000+00:00"
+  "last_updated": "2026-06-13T17:10:00.000Z",
+  "last_verified": "2026-06-13T17:10:00.000Z",
+  "next_review": "2026-09-11T17:10:00.000Z"
 }

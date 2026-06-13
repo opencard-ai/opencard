@@ -16,6 +16,7 @@ const VALID_FREQUENCIES = ['monthly', 'quarterly', 'semi_annual', 'annual', 'per
 const VALID_CATEGORIES = ['travel', 'dining', 'shopping', 'entertainment', 'streaming', 'fitness', 'gas', 'groceries', 'other', 'ride', 'airline', 'hotel', 'lounge', 'digital', 'credit_monitoring'];
 const VALID_NETWORKS = ['visa', 'amex', 'mastercard', 'discover', 'other'];
 const VALID_INSURANCE_KEYS = ['trip_cancellation', 'trip_delay', 'rental_insurance', 'purchase_protection', 'return_protection', 'extended_warranty'];
+const VALID_SELECTABLE_FREQUENCIES = ['monthly', 'quarterly', 'annual'];
 
 // ============ TYPES ============
 
@@ -141,6 +142,153 @@ function validateSchema(card: any, fileName: string): ValidationIssue[] {
         });
       }
     });
+  }
+
+  // selectable_rewards validation
+  if (card.selectable_rewards !== undefined) {
+    if (!card.selectable_rewards || typeof card.selectable_rewards !== 'object' || Array.isArray(card.selectable_rewards)) {
+      issues.push({
+        card: cardName, severity: 'error', source: 'schema',
+        message: 'selectable_rewards should be an object',
+        field: 'selectable_rewards'
+      });
+    } else {
+      if (typeof card.selectable_rewards.activation_required !== 'boolean') {
+        issues.push({
+          card: cardName, severity: 'error', source: 'schema',
+          message: 'selectable_rewards.activation_required should be boolean',
+          field: 'selectable_rewards.activation_required'
+        });
+      }
+      const freq = card.selectable_rewards.selection_frequency;
+      if (freq !== undefined && typeof freq !== 'string') {
+        issues.push({
+          card: cardName, severity: 'error', source: 'schema',
+          message: 'selectable_rewards.selection_frequency should be string',
+          field: 'selectable_rewards.selection_frequency'
+        });
+      } else if (freq && !VALID_SELECTABLE_FREQUENCIES.includes(freq)) {
+        issues.push({
+          card: cardName, severity: 'warning', source: 'schema',
+          message: `unusual selectable_rewards.selection_frequency: "${freq}"`,
+          field: 'selectable_rewards.selection_frequency'
+        });
+      }
+      for (const key of ['five_percent_categories', 'two_percent_categories']) {
+        const value = card.selectable_rewards[key];
+        if (value !== undefined && (!Array.isArray(value) || value.some((item: any) => typeof item !== 'string'))) {
+          issues.push({
+            card: cardName, severity: 'error', source: 'schema',
+            message: `selectable_rewards.${key} should be an array of strings`,
+            field: `selectable_rewards.${key}`
+          });
+        }
+      }
+    }
+  }
+
+  // relationship_bonus validation
+  if (card.relationship_bonus !== undefined) {
+    if (!card.relationship_bonus || typeof card.relationship_bonus !== 'object' || Array.isArray(card.relationship_bonus)) {
+      issues.push({
+        card: cardName, severity: 'error', source: 'schema',
+        message: 'relationship_bonus should be an object',
+        field: 'relationship_bonus'
+      });
+    } else {
+      if (!card.relationship_bonus.issuer || typeof card.relationship_bonus.issuer !== 'string') {
+        issues.push({
+          card: cardName, severity: 'error', source: 'schema',
+          message: 'relationship_bonus.issuer is required and should be string',
+          field: 'relationship_bonus.issuer'
+        });
+      }
+      if (!card.relationship_bonus.program || typeof card.relationship_bonus.program !== 'string') {
+        issues.push({
+          card: cardName, severity: 'error', source: 'schema',
+          message: 'relationship_bonus.program is required and should be string',
+          field: 'relationship_bonus.program'
+        });
+      }
+      const tiers = card.relationship_bonus.tiers;
+      if (!Array.isArray(tiers) || tiers.length === 0) {
+        issues.push({
+          card: cardName, severity: 'error', source: 'schema',
+          message: 'relationship_bonus.tiers should be a non-empty array',
+          field: 'relationship_bonus.tiers'
+        });
+      } else {
+        tiers.forEach((tier: any, i: number) => {
+          if (typeof tier.qualifying_balance_min !== 'number') {
+            issues.push({
+              card: cardName, severity: 'error', source: 'schema',
+              message: `relationship_bonus.tiers[${i}].qualifying_balance_min should be number`,
+              field: `relationship_bonus.tiers[${i}].qualifying_balance_min`
+            });
+          }
+          if (tier.qualifying_balance_max !== undefined && tier.qualifying_balance_max !== null && typeof tier.qualifying_balance_max !== 'number') {
+            issues.push({
+              card: cardName, severity: 'error', source: 'schema',
+              message: `relationship_bonus.tiers[${i}].qualifying_balance_max should be number or null`,
+              field: `relationship_bonus.tiers[${i}].qualifying_balance_max`
+            });
+          }
+          if (tier.total_cash_back_rate !== undefined && typeof tier.total_cash_back_rate !== 'number') {
+            issues.push({
+              card: cardName, severity: 'error', source: 'schema',
+              message: `relationship_bonus.tiers[${i}].total_cash_back_rate should be number`,
+              field: `relationship_bonus.tiers[${i}].total_cash_back_rate`
+            });
+          }
+        });
+      }
+    }
+  }
+
+  // rotating_categories validation
+  if (card.rotating_categories !== undefined) {
+    if (!card.rotating_categories || typeof card.rotating_categories !== 'object' || Array.isArray(card.rotating_categories)) {
+      issues.push({
+        card: cardName, severity: 'error', source: 'schema',
+        message: 'rotating_categories should be an object',
+        field: 'rotating_categories'
+      });
+    } else {
+      if (typeof card.rotating_categories.activation_required !== 'boolean') {
+        issues.push({
+          card: cardName, severity: 'error', source: 'schema',
+          message: 'rotating_categories.activation_required should be boolean',
+          field: 'rotating_categories.activation_required'
+        });
+      }
+      const quarters = card.rotating_categories.quarters_2026;
+      if (quarters !== undefined) {
+        if (!Array.isArray(quarters)) {
+          issues.push({
+            card: cardName, severity: 'error', source: 'schema',
+            message: 'rotating_categories.quarters_2026 should be an array',
+            field: 'rotating_categories.quarters_2026'
+          });
+        } else {
+          quarters.forEach((quarter: any, i: number) => {
+            if (!quarter.quarter || typeof quarter.quarter !== 'string') {
+              issues.push({
+                card: cardName, severity: 'error', source: 'schema',
+                message: `rotating_categories.quarters_2026[${i}].quarter should be string`,
+                field: `rotating_categories.quarters_2026[${i}].quarter`
+              });
+            }
+            if (!Array.isArray(quarter.categories) || quarter.categories.length === 0 || quarter.categories.some((item: any) => typeof item !== 'string')) {
+              issues.push({
+                card: cardName, severity: 'error', source: 'schema',
+                message: `rotating_categories.quarters_2026[${i}].categories should be a non-empty array of strings`,
+                field: `rotating_categories.quarters_2026[${i}].categories`
+              });
+            }
+          });
+        }
+      }
+    }
   }
 
   // annual_fee high but no recurring_credits (and no other benefits)

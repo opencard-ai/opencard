@@ -11,24 +11,30 @@
     "time_period_months": 3,
     "bonus_points": 200,
     "estimated_value": 200,
-    "point_program": "U.S. Bank Cash+",
-    "description": "$200 cash bonus after spending $1,000 in first 3 months"
+    "point_program": "Cash Back",
+    "description": "Earn a $200 cash bonus after spending $1,000 in eligible purchases within the first 90 days of account opening.",
+    "last_verified": "2026-06-13T17:10:00.000Z"
   },
   "earning_rates": [
     {
-      "category": "Custom Category 1 (choose one)",
+      "category": "Two chosen Cash+ categories",
       "rate": 5,
-      "notes": "5% cash back on purchases in category of your choice (e.g., gas, groceries, utilities)"
+      "notes": "5% cash back on the first $2,000 in combined eligible purchases each quarter in two categories you choose; categories must be selected and activated."
     },
     {
-      "category": "Custom Category 2 (choose one)",
+      "category": "Prepaid travel through U.S. Bank Travel Center",
+      "rate": 5,
+      "notes": "5% cash back on eligible air, hotel and car reservations booked directly in the U.S. Bank Travel Center."
+    },
+    {
+      "category": "One chosen everyday category",
       "rate": 2,
-      "notes": "2% cash back on purchases in second category of your choice"
+      "notes": "2% cash back on one everyday category you choose, such as grocery stores/grocery delivery, restaurants, or gas stations/EV charging."
     },
     {
-      "category": "All Other Purchases",
+      "category": "All other eligible purchases",
       "rate": 1,
-      "notes": "1% unlimited cash back on all other purchases"
+      "notes": "1% cash back on all other eligible purchases."
     }
   ],
   "annual_credits": [],
@@ -62,22 +68,50 @@
   ],
   "sources": [
     {
-      "url": "https://www.usbank.com/credit-cards/cash-visa-signature-credit-card.html",
-      "notes": "Official U.S. Bank page"
+      "url": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html",
+      "notes": "Official U.S. Bank Cash+ page; verified 2026-06-13."
+    },
+    {
+      "url": "https://rewards.usbank.com/benefits/card/CashPlusBenefits/program-rules?cardType=V",
+      "notes": "Official U.S. Bank Cash+ rewards program rules."
     },
     {
       "url": "https://www.nerdwallet.com/credit-cards/reviews/us-bank-cash-plus",
-      "notes": "NerdWallet review"
+      "notes": "NerdWallet secondary review."
     }
   ],
-  "last_updated": "2026-04-16T13:41:50.006Z",
+  "last_updated": "2026-06-13T17:10:00.000Z",
   "status": "active",
-  "notes": "Choose your own 5% and 2% categories. Must activate categories quarterly. $100 minimum redemption.",
+  "notes": "Choose and activate two 5% Cash+ categories quarterly; 5% cash back is capped on combined eligible purchases each quarter. Also choose one 2% everyday category.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:50.006Z",
-  "next_review": "2026-07-15T13:41:50.006000+00:00"
+  "last_verified": "2026-06-13T17:10:00.000Z",
+  "next_review": "2026-09-11T17:10:00.000Z",
+  "selectable_rewards": {
+    "activation_required": true,
+    "selection_frequency": "quarterly",
+    "cap": "5% cash back applies to the first $2,000 in combined eligible purchases each quarter across the two chosen 5% categories.",
+    "five_percent_categories": [
+      "Fast food",
+      "Home utilities",
+      "TV, internet and streaming",
+      "Department stores",
+      "Cell phone",
+      "Electronic stores",
+      "Sporting goods",
+      "Furniture stores",
+      "Movie theaters",
+      "Ground transportation",
+      "Gyms/fitness centers",
+      "Select clothing stores"
+    ],
+    "two_percent_categories": [
+      "Grocery stores and grocery delivery",
+      "Restaurants",
+      "Gas stations and EV charging stations"
+    ]
+  }
 }

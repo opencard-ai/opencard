@@ -16,14 +16,14 @@
   },
   "earning_rates": [
     {
-      "category": "Rotating Categories",
+      "category": "Quarterly rotating categories",
       "rate": 5,
-      "notes": "5% cash back on rotating categories each quarter"
+      "notes": "5% cash back on rotating categories each quarter, up to the quarterly purchase cap, when activated."
     },
     {
-      "category": "Other",
+      "category": "All other purchases",
       "rate": 1,
-      "notes": "1% on all other purchases"
+      "notes": "1% cash back on all other purchases."
     }
   ],
   "annual_credits": [],
@@ -50,15 +50,23 @@
   ],
   "sources": [
     {
-      "url": "https://wallethub.com/edu/cc/discover-it-card-review/25936",
-      "notes": "WalletHub - Discover it Cash Back Editor's Review April 2026."
+      "url": "https://www.discover.com/credit-cards/cash-back/cashback-calendar.html",
+      "notes": "Official Discover 5% Cash Back Calendar."
     },
     {
-      "url": "https://www.bankrate.com/credit-cards/cash-back/guide-to-discover-it-cash-back-bonus-categories/",
-      "notes": "Bankrate - Guide to the 2026 Discover Cash Back Calendar, Dec 2025."
+      "url": "https://www.discover.com/credit-cards/cash-back/cashback-bonus.html",
+      "notes": "Official Discover Cashback Bonus summary; Q2 2026 Restaurants and Home Improvement Stores verified 2026-06-13."
+    },
+    {
+      "url": "https://www.cnbc.com/select/discover-cash-back-calendar/",
+      "notes": "CNBC Discover calendar summary; Q3 2026 categories."
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/learn/current-credit-card-bonus-categories",
+      "notes": "NerdWallet current quarterly bonus category summary."
     }
   ],
-  "last_updated": "2026-04-25T16:04:57.488Z",
+  "last_updated": "2026-06-13T17:10:00.000Z",
   "hotel_program": {
     "program": null,
     "tier": null,
@@ -70,11 +78,51 @@
     "rules": []
   },
   "recurring_credits": [],
-  "last_verified": "2026-04-25T16:04:57.488Z",
-  "next_review": "2026-07-15T13:41:49.981000+00:00",
+  "last_verified": "2026-06-13T17:10:00.000Z",
+  "next_review": "2026-09-11T17:10:00.000Z",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 5,
   "cfpb_source": "Q3_2025",
   "cfpb_verified": true,
-  "featured": true
+  "featured": true,
+  "rotating_categories": {
+    "activation_required": true,
+    "cap": "5% cash back applies on up to $1,500 in combined purchases each quarter after activation; then 1%.",
+    "quarters_2026": [
+      {
+        "quarter": "Q1",
+        "start_date": "2026-01-01",
+        "end_date": "2026-03-31",
+        "categories": [
+          "Grocery Stores",
+          "Wholesale Clubs",
+          "Select Streaming Services"
+        ],
+        "source_note": "Discover 2026 calendar / secondary public summaries."
+      },
+      {
+        "quarter": "Q2",
+        "start_date": "2026-04-01",
+        "end_date": "2026-06-30",
+        "categories": [
+          "Restaurants",
+          "Home Improvement Stores"
+        ],
+        "source_note": "Discover official Cashback Bonus summary verified 2026-06-13."
+      },
+      {
+        "quarter": "Q3",
+        "start_date": "2026-07-01",
+        "end_date": "2026-09-30",
+        "categories": [
+          "Retail Stores",
+          "Building Supply Stores",
+          "Home Furnishing Stores"
+        ],
+        "source_note": "CNBC Discover cash back calendar summary published 2026-06."
+      }
+    ],
+    "reminder_recommendation": "Prompt cardholders to activate before or at the beginning of each quarter; unactivated purchases do not earn the 5% quarterly rate."
+  },
+  "notes": "Quarterly 5% categories require activation; track category calendar and reminder separately from first-year Cashback Match welcome offer."
 }

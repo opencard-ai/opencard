@@ -1,28 +1,40 @@
 {
   "card_id": "us-bank-smartly",
-  "name": "U.S. Bank Smartly",
+  "name": "U.S. Bank Smartly™ Visa Signature® Card",
   "issuer": "U.S. Bank",
   "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
-  "credit_required": "Good",
+  "credit_required": "Good to Excellent",
   "welcome_offer": {
     "spending_requirement": 0,
     "time_period_months": 0,
     "bonus_points": 0,
     "bonus_value": 0,
-    "description": "Basic card - no welcome offer"
+    "description": "No standard public welcome offer verified on the official U.S. Bank page.",
+    "point_program": "Cash Back",
+    "last_verified": "2026-06-13T17:10:00.000Z"
   },
   "earning_rates": [
     {
-      "category": "All Purchases (2% after $8K/year)",
-      "rate": 1.5,
-      "notes": "up to $8K, then 2%"
+      "category": "All eligible purchases",
+      "rate": 2,
+      "notes": "Unlimited 2% cash back when rewards are redeemed into an eligible U.S. Bank deposit account."
     },
     {
-      "category": "All other purchases",
-      "rate": 2,
-      "notes": "after $8K"
+      "category": "Relationship bonus: $10,000-$49,999 qualifying balance",
+      "rate": 2.5,
+      "notes": "Total 2.5% cash back on first $10,000 in eligible net purchases each billing cycle with Smartly Savings plus qualifying balances."
+    },
+    {
+      "category": "Relationship bonus: $50,000-$99,999 qualifying balance",
+      "rate": 3,
+      "notes": "Total 3% cash back on first $10,000 in eligible net purchases each billing cycle with Smartly Savings plus qualifying balances."
+    },
+    {
+      "category": "Relationship bonus: $100,000+ qualifying balance",
+      "rate": 4,
+      "notes": "Total 4% cash back on first $10,000 in eligible net purchases each billing cycle with Smartly Savings plus qualifying balances."
     }
   ],
   "annual_credits": [],
@@ -49,13 +61,44 @@
   "tags": [
     "no-annual-fee"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.usbank.com/credit-cards/bank-smartly-visa-signature-credit-card.html",
+      "notes": "Official U.S. Bank Smartly Visa Signature Card page; verified 2026-06-13."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:50.009Z",
-  "last_verified": "2026-04-16T13:41:50.009Z",
-  "next_review": "2026-07-15T13:41:50.009000+00:00"
+  "last_updated": "2026-06-13T17:10:00.000Z",
+  "last_verified": "2026-06-13T17:10:00.000Z",
+  "next_review": "2026-09-11T17:10:00.000Z",
+  "relationship_bonus": {
+    "issuer": "U.S. Bank",
+    "program": "U.S. Bank Smartly",
+    "requirements": "Requires U.S. Bank Smartly Savings and qualifying balances in eligible U.S. Bank Smartly Checking and/or Safe Debit accounts; enhanced rates apply to first $10,000 in eligible net purchases each billing cycle.",
+    "tiers": [
+      {
+        "qualifying_balance_min": 10000,
+        "qualifying_balance_max": 49999,
+        "earning_bonus_pct": 25,
+        "total_cash_back_rate": 2.5
+      },
+      {
+        "qualifying_balance_min": 50000,
+        "qualifying_balance_max": 99999,
+        "earning_bonus_pct": 50,
+        "total_cash_back_rate": 3
+      },
+      {
+        "qualifying_balance_min": 100000,
+        "qualifying_balance_max": null,
+        "earning_bonus_pct": 100,
+        "total_cash_back_rate": 4
+      }
+    ]
+  },
+  "notes": "Base 2% cash back; relationship bonus can raise total cash back to 2.5%, 3%, or 4% on the first $10,000 in eligible net purchases each billing cycle when requirements are met."
 }

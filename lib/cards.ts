@@ -13,6 +13,44 @@ export interface EarningRate {
   notes?: string;
 }
 
+export interface SelectableRewards {
+  activation_required: boolean;
+  selection_frequency?: "quarterly" | "annual" | "monthly" | string;
+  cap?: string;
+  selection_type?: "category" | "merchant" | "merchant_and_category" | string;
+  five_percent_categories?: string[];
+  two_percent_categories?: string[];
+}
+
+export interface RelationshipBonusTier {
+  qualifying_balance_min: number;
+  qualifying_balance_max?: number | null;
+  earning_bonus_pct?: number;
+  total_cash_back_rate?: number;
+}
+
+export interface RelationshipBonus {
+  issuer: string;
+  program: string;
+  requirements?: string;
+  tiers: RelationshipBonusTier[];
+}
+
+export interface RotatingCategoryQuarter {
+  quarter: string;
+  start_date?: string;
+  end_date?: string;
+  categories: string[];
+  source_note?: string;
+}
+
+export interface RotatingCategories {
+  activation_required: boolean;
+  cap?: string;
+  quarters_2026?: RotatingCategoryQuarter[];
+  reminder_recommendation?: string;
+}
+
 export interface RecurringCredit {
   /** Stable id for per-user check-off state. Set once via scripts/add-credit-keys.ts; never overwrite. */
   credit_key?: string;
@@ -92,6 +130,7 @@ export interface WelcomeOffer {
 
 export interface Source {
   url: string;
+  notes?: string;
 }
 
 export interface CreditCard {
@@ -116,6 +155,12 @@ export interface CreditCard {
   tags: string[];
   status?: string;
   recurring_credits?: RecurringCredit[];
+  /** User-selected reward structures such as U.S. Bank Cash+ / Shopper categories. */
+  selectable_rewards?: SelectableRewards;
+  /** Relationship-based earning boosts such as U.S. Bank Smartly or BofA Rewards. */
+  relationship_bonus?: RelationshipBonus;
+  /** Quarter-by-quarter rotating-category calendar such as Discover it Cash Back. */
+  rotating_categories?: RotatingCategories;
   /** Hand-picked "popular" flag — pinned to the top of its tier in the
    *  cards-section default browse view. Optional; when absent, popularity
    *  falls back to welcome_offer.estimated_value then alphabetical. */
