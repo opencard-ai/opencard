@@ -66,9 +66,21 @@
     {
       "url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
       "notes": "Official BOA Page (SPA — fallback only)"
+    },
+    {
+      "url": "https://info.bankofamerica.com/en/rewards/bofa-rewards",
+      "notes": "Official BofA Rewards overview; credit card rewards bonus 10%-75% and tier mechanics. Verified 2026-06-13."
+    },
+    {
+      "url": "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/02/new-bofa-rewards--program-to-reach-millions-more-clients-with-ex.html",
+      "notes": "Bank of America newsroom announcement for 2026 BofA Rewards expansion."
+    },
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/preferred-rewards-credit-cards/",
+      "notes": "Official eligible credit cards page; legacy Preferred Rewards bonus reference."
     }
   ],
-  "last_updated": "2026-05-11T18:48:01.868Z",
+  "last_updated": "2026-06-14T03:45:00.000Z",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
@@ -78,17 +90,53 @@
     "rules": [],
     "notes": null
   },
-  "recurring_credits": [
-    {
-      "credit_key": "2025-quarterly-bonus",
-      "name": "2025 Quarterly Bonus",
-      "amount": 200,
-      "frequency": "quarterly",
-      "category": "shopping",
-      "description": "$200 bonus cash when you redeem for travel.",
-      "reset_type": "cardmember_year"
-    }
-  ],
-  "last_verified": "2026-04-16T13:41:49.957Z",
-  "next_review": "2026-07-15T13:41:49.957000+00:00"
+  "recurring_credits": [],
+  "last_verified": "2026-06-14T03:45:00.000Z",
+  "next_review": "2026-09-12T03:45:00.000Z",
+  "relationship_bonus": {
+    "issuer": "Bank of America",
+    "program": "BofA Rewards / Preferred Rewards",
+    "requirements": "Eligible Bank of America deposit and Merrill investment balances determine tier. Credit-card rewards bonus is applied to eligible Bank of America credit cards; tier names/thresholds reflect the 2026 BofA Rewards transition and should be re-verified as terms settle.",
+    "tiers": [
+      {
+        "tier_name": "Member",
+        "qualifying_balance_min": 0,
+        "qualifying_balance_max": 29999,
+        "earning_bonus_pct": 10
+      },
+      {
+        "tier_name": "Preferred Plus",
+        "qualifying_balance_min": 30000,
+        "qualifying_balance_max": 99999,
+        "earning_bonus_pct": 25
+      },
+      {
+        "tier_name": "Preferred Honors",
+        "qualifying_balance_min": 100000,
+        "qualifying_balance_max": 999999,
+        "earning_bonus_pct": 50
+      },
+      {
+        "tier_name": "Premier",
+        "qualifying_balance_min": 1000000,
+        "qualifying_balance_max": null,
+        "earning_bonus_pct": 75
+      }
+    ]
+  },
+  "selectable_rewards": {
+    "activation_required": false,
+    "selection_frequency": "monthly",
+    "selection_type": "category",
+    "cap": "Choice-category and grocery/wholesale club rewards share the card's quarterly purchase cap before reverting to 1%.",
+    "five_percent_categories": [
+      "Gas and EV charging stations",
+      "Online shopping",
+      "Dining",
+      "Travel",
+      "Drug stores",
+      "Home improvement and furnishings"
+    ]
+  },
+  "notes": "New-cardmember first-year offer can raise the chosen category to 6% cash back before relationship bonuses. Removed stale recurring-credit entry; the $200 is a one-time welcome offer, not a quarterly credit."
 }

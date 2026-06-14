@@ -1,34 +1,71 @@
 {
   "card_id": "wells-fargo-choice-privileges",
-  "name": "Choice Privileges Select",
+  "name": "Choice Privileges® Select Mastercard®",
   "issuer": "Wells Fargo",
-  "network": "visa",
+  "network": "mastercard",
   "annual_fee": 95,
   "foreign_transaction_fee": 0,
-  "credit_required": "Good",
+  "credit_required": "Good to Excellent",
   "welcome_offer": {
-    "bonus_points": 0,
-    "description": "No welcome bonus",
-    "estimated_value": null,
-    "spending_requirement": null,
-    "time_period_months": null
+    "bonus_points": 60000,
+    "description": "Earn 60,000 Choice Privileges bonus points after spending $3,000 in purchases in the first 3 months.",
+    "estimated_value": 360,
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "point_program": "Choice Privileges",
+    "last_verified": "2026-06-14T03:45:00.000Z"
   },
   "earning_rates": [
     {
       "category": "Choice Hotels",
+      "rate": 10,
+      "notes": "10x points on qualifying stays at participating Choice Hotels properties."
+    },
+    {
+      "category": "Gas stations",
       "rate": 5,
-      "notes": ""
+      "notes": "5x points on eligible gas station purchases."
+    },
+    {
+      "category": "Grocery stores",
+      "rate": 5,
+      "notes": "5x points on eligible grocery store purchases."
+    },
+    {
+      "category": "Home improvement stores",
+      "rate": 5,
+      "notes": "5x points on eligible home improvement store purchases."
+    },
+    {
+      "category": "Phone plans",
+      "rate": 5,
+      "notes": "5x points on eligible phone plan payments."
     },
     {
       "category": "All other purchases",
       "rate": 1,
-      "notes": ""
+      "notes": "1x point per $1 on all other purchases."
     }
   ],
   "annual_credits": [],
   "travel_benefits": {
-    "hotel_status": [],
-    "other_benefits": []
+    "hotel_status": [
+      {
+        "program": "Choice Privileges",
+        "tier": "Platinum",
+        "complimentary": true
+      }
+    ],
+    "other_benefits": [
+      {
+        "name": "30,000 anniversary bonus points",
+        "description": "Earn 30,000 bonus points every account anniversary, enough to redeem up to 3 reward nights at select Choice Hotels properties."
+      },
+      {
+        "name": "No foreign transaction fees",
+        "description": "No foreign transaction fees on international purchases."
+      }
+    ]
   },
   "fhr_thc": {
     "fhr_eligible": false,
@@ -42,14 +79,36 @@
     "trip_cancellation": null,
     "return_protection": null
   },
-  "tags": [],
-  "sources": [],
+  "tags": [
+    "choice-privileges",
+    "hotel"
+  ],
+  "sources": [
+    {
+      "url": "https://creditcards.wellsfargo.com/choice-hotels-privileges-select-mastercard/",
+      "notes": "Official Wells Fargo Choice Privileges Select Mastercard page; verified via search snippets and page title 2026-06-13."
+    },
+    {
+      "url": "https://creditcards.wellsfargo.com/wells-fargo-choice-privileges-credit-cards/",
+      "notes": "Official Wells Fargo Choice Privileges cards overview; anniversary bonus corroboration."
+    },
+    {
+      "url": "https://media.choicehotels.com/2025-07-30-Choice-Privileges-R-Select-Mastercard-R-Named-one-of-MONEY-coms-2025-Best-Credit-Cards",
+      "notes": "Choice Hotels press release corroborating 60k offer and 30k anniversary bonus."
+    },
+    {
+      "url": "https://money.usnews.com/credit-cards/wells-fargo/choice-privileges-select-mastercard",
+      "notes": "U.S. News secondary review for offer/status cross-check."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:50.011Z",
-  "last_verified": "2026-04-16T13:41:50.011Z",
-  "next_review": "2026-07-15T13:41:50.011000+00:00"
+  "last_updated": "2026-06-14T03:45:00.000Z",
+  "last_verified": "2026-06-14T03:45:00.000Z",
+  "next_review": "2026-09-12T03:45:00.000Z",
+  "recurring_credits": [],
+  "notes": "Select version with $95 annual fee, 60k welcome offer, automatic Choice Privileges Platinum status, and 30k anniversary bonus points."
 }

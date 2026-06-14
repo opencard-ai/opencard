@@ -34,12 +34,8 @@
   "travel_benefits": {
     "other_benefits": [
       {
-        "name": "TSA PreCheck/Global Entry Credit",
-        "description": "Up to $100 credit for TSA PreCheck or Global Entry"
-      },
-      {
         "name": "No Foreign Transaction Fees",
-        "description": "No foreign transaction fees"
+        "description": "No foreign transaction fees."
       }
     ]
   },
@@ -71,9 +67,21 @@
     {
       "url": "https://www.nerdwallet.com/credit-cards/reviews/bank-of-america-premium-rewards-credit-card/",
       "notes": "NerdWallet review"
+    },
+    {
+      "url": "https://info.bankofamerica.com/en/rewards/bofa-rewards",
+      "notes": "Official BofA Rewards overview; credit card rewards bonus 10%-75% and tier mechanics. Verified 2026-06-13."
+    },
+    {
+      "url": "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/02/new-bofa-rewards--program-to-reach-millions-more-clients-with-ex.html",
+      "notes": "Bank of America newsroom announcement for 2026 BofA Rewards expansion."
+    },
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/preferred-rewards-credit-cards/",
+      "notes": "Official eligible credit cards page; legacy Preferred Rewards bonus reference."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.957Z",
+  "last_updated": "2026-06-14T03:45:00.000Z",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
@@ -85,14 +93,59 @@
   },
   "recurring_credits": [
     {
-      "credit_key": "travel-statement-credit",
-      "name": "Travel Statement Credit",
-      "amount": 200,
+      "credit_key": "airline-incidental-statement-credit",
+      "name": "Airline Incidental Statement Credit",
+      "amount": 100,
       "frequency": "annual",
-      "category": "travel"
+      "category": "travel",
+      "description": "Up to $100 in annual statement credits for qualifying airline incidental purchases such as seat upgrades, baggage fees, in-flight services, and airline lounge fees.",
+      "reset_type": "calendar_year",
+      "source": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/"
+    },
+    {
+      "credit_key": "global-entry-tsa-precheck-credit",
+      "name": "Global Entry / TSA PreCheck Credit",
+      "amount": 100,
+      "frequency": "every_4_years",
+      "category": "travel",
+      "description": "Up to $100 statement credit every four years for Global Entry or TSA PreCheck application fees charged to the card.",
+      "reset_type": "every_4_years",
+      "source": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/"
     }
   ],
-  "last_verified": "2026-04-16T13:41:49.957Z",
-  "next_review": "2026-07-15T13:41:49.957000+00:00",
-  "cfpb_source": "Q3_2025"
+  "last_verified": "2026-06-14T03:45:00.000Z",
+  "next_review": "2026-09-12T03:45:00.000Z",
+  "cfpb_source": "Q3_2025",
+  "relationship_bonus": {
+    "issuer": "Bank of America",
+    "program": "BofA Rewards / Preferred Rewards",
+    "requirements": "Eligible Bank of America deposit and Merrill investment balances determine tier. Credit-card rewards bonus is applied to eligible Bank of America credit cards; tier names/thresholds reflect the 2026 BofA Rewards transition and should be re-verified as terms settle.",
+    "tiers": [
+      {
+        "tier_name": "Member",
+        "qualifying_balance_min": 0,
+        "qualifying_balance_max": 29999,
+        "earning_bonus_pct": 10
+      },
+      {
+        "tier_name": "Preferred Plus",
+        "qualifying_balance_min": 30000,
+        "qualifying_balance_max": 99999,
+        "earning_bonus_pct": 25
+      },
+      {
+        "tier_name": "Preferred Honors",
+        "qualifying_balance_min": 100000,
+        "qualifying_balance_max": 999999,
+        "earning_bonus_pct": 50
+      },
+      {
+        "tier_name": "Premier",
+        "qualifying_balance_min": 1000000,
+        "qualifying_balance_max": null,
+        "earning_bonus_pct": 75
+      }
+    ]
+  },
+  "notes": "Premium Rewards has a $100 annual airline incidental credit plus Global Entry/TSA PreCheck credit every four years; relationship bonus is modeled separately from base earning rates."
 }

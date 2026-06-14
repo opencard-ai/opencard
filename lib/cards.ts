@@ -23,6 +23,7 @@ export interface SelectableRewards {
 }
 
 export interface RelationshipBonusTier {
+  tier_name?: string;
   qualifying_balance_min: number;
   qualifying_balance_max?: number | null;
   earning_bonus_pct?: number;

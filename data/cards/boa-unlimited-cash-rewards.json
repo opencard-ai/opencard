@@ -7,28 +7,24 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 0,
+    "bonus_points": 200,
     "spending_requirement": 1000,
     "time_period_months": 3,
-    "description": "$200 cash bonus",
-    "point_program": "None",
-    "estimated_value": 200
+    "description": "Earn a $200 online cash rewards bonus after making at least $1,000 in purchases in the first 90 days of account opening.",
+    "point_program": "Cash Back",
+    "estimated_value": 200,
+    "last_verified": "2026-06-14T03:45:00.000Z"
   },
   "earning_rates": [
     {
-      "category": "All Purchases",
+      "category": "All purchases — first year offer",
       "rate": 2,
-      "notes": "First year unlimited 2% cash back (1.5% base + 0.5% bonus)"
+      "notes": "Unlimited 2% cash back on purchases for the first year for new cardholders."
     },
     {
-      "category": "All Purchases",
+      "category": "All purchases — standard base",
       "rate": 1.5,
-      "notes": "After first year, base rate is 1.5% cash back"
-    },
-    {
-      "category": "All Purchases",
-      "rate": 3.125,
-      "notes": "Platinum Honors members earn 1.5% + 75% bonus = 3.125%"
+      "notes": "Unlimited 1.5% cash back after the first-year offer; eligible BofA Rewards tiers may increase effective earnings."
     }
   ],
   "annual_credits": [],
@@ -61,9 +57,21 @@
     {
       "url": "https://money.usnews.com/credit-cards/bank-of-america/bank-of-america-unlimited-cash-rewards-credit-card",
       "notes": "US News review"
+    },
+    {
+      "url": "https://info.bankofamerica.com/en/rewards/bofa-rewards",
+      "notes": "Official BofA Rewards overview; credit card rewards bonus 10%-75% and tier mechanics. Verified 2026-06-13."
+    },
+    {
+      "url": "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/02/new-bofa-rewards--program-to-reach-millions-more-clients-with-ex.html",
+      "notes": "Bank of America newsroom announcement for 2026 BofA Rewards expansion."
+    },
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/preferred-rewards-credit-cards/",
+      "notes": "Official eligible credit cards page; legacy Preferred Rewards bonus reference."
     }
   ],
-  "last_updated": "2026-04-24T17:27:59.994652",
+  "last_updated": "2026-06-14T03:45:00.000Z",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
@@ -73,6 +81,38 @@
     "rules": []
   },
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-04-24T17:27:59.994652",
-  "next_review": "2026-07-23T17:27:59.994652"
+  "last_verified": "2026-06-14T03:45:00.000Z",
+  "next_review": "2026-09-12T03:45:00.000Z",
+  "relationship_bonus": {
+    "issuer": "Bank of America",
+    "program": "BofA Rewards / Preferred Rewards",
+    "requirements": "Eligible Bank of America deposit and Merrill investment balances determine tier. Credit-card rewards bonus is applied to eligible Bank of America credit cards; tier names/thresholds reflect the 2026 BofA Rewards transition and should be re-verified as terms settle.",
+    "tiers": [
+      {
+        "tier_name": "Member",
+        "qualifying_balance_min": 0,
+        "qualifying_balance_max": 29999,
+        "earning_bonus_pct": 10
+      },
+      {
+        "tier_name": "Preferred Plus",
+        "qualifying_balance_min": 30000,
+        "qualifying_balance_max": 99999,
+        "earning_bonus_pct": 25
+      },
+      {
+        "tier_name": "Preferred Honors",
+        "qualifying_balance_min": 100000,
+        "qualifying_balance_max": 999999,
+        "earning_bonus_pct": 50
+      },
+      {
+        "tier_name": "Premier",
+        "qualifying_balance_min": 1000000,
+        "qualifying_balance_max": null,
+        "earning_bonus_pct": 75
+      }
+    ]
+  },
+  "notes": "Relationship bonus is modeled separately instead of hard-coding tier-adjusted earning rates into earning_rates."
 }

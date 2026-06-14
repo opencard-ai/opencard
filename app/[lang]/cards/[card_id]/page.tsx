@@ -329,7 +329,7 @@ export default async function CardDetailPage({ params }: Props) {
                       {card.relationship_bonus.tiers.map((tier, i) => (
                         <div key={i} className="rounded-md bg-white/70 border border-emerald-100 px-3 py-2">
                           <div className="text-xs font-semibold text-emerald-800">
-                            ${tier.qualifying_balance_min.toLocaleString()}+
+                            {tier.tier_name ? `${tier.tier_name}: ` : ""}${tier.qualifying_balance_min.toLocaleString()}+
                             {typeof tier.qualifying_balance_max === "number" ? ` – $${tier.qualifying_balance_max.toLocaleString()}` : ""}
                           </div>
                           {typeof tier.total_cash_back_rate === "number" && (
