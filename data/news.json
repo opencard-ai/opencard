@@ -1,6 +1,39 @@
 {
   "items": [
     {
+      "title": "T-Life (T-Mobile Tuesday): New Delta Benefit, KFC, Cinnabon & More",
+      "url": "https://www.doctorofcredit.com/t-life-t-mobile-tuesday-new-delta-benefit-kfc-cinnabon-more/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Uncategorized",
+        "t-life",
+        "t-mobile"
+      ],
+      "ts": "2026-06-16T13:00:55.000Z",
+      "title_en": "T-Life (T-Mobile Tuesday): New Delta Benefit, KFC, Cinnabon & More",
+      "summary_en": "",
+      "title_zh": "T-Life (T-Mobile Tuesday): New Delta Benefit, KFC, Cinnabon & More",
+      "summary_zh": "",
+      "title_es": "T-Life (T-Mobile Tuesday): Nuevo beneficio de Delta, KFC, Cinnabon y más",
+      "summary_es": "T-Mobile ha añadido un nuevo beneficio de Delta en su programa T-Life, con promociones en KFC, Cinnabon y otras marcas."
+    },
+    {
+      "title": "[New Offers] inKind: $15 Off $15 & $25 Off $50",
+      "url": "https://www.doctorofcredit.com/inkind-20-off-40/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "inkind"
+      ],
+      "ts": "2026-06-16T12:00:33.000Z",
+      "title_en": "[New Offers] inKind: $15 Off $15 & $25 Off $50",
+      "summary_en": "",
+      "title_zh": "[New Offers] inKind: $15 Off $15 & $25 Off $50",
+      "summary_zh": "",
+      "title_es": "[Nuevas ofertas] inKind: $15 de descuento en $15 y $25 de descuento en $50",
+      "summary_es": "InKind ofrece descuentos de $15 en compras de $15 y $25 en compras de $50."
+    },
+    {
       "title": "[New Boosts] Cash App (Square Cash Debit Card): Cash Boost – Get Cash Back On Categories/Specific Merchants",
       "url": "https://www.doctorofcredit.com/square-cash-debit-card-cash-boost-get-cash-back-on-categories-specific-merchants/",
       "source": "Doctor of Credit",
@@ -13,8 +46,8 @@
       "summary_en": "",
       "title_zh": "[New Boosts] Cash App (Square Cash Debit Card): Cash Boost – Get Cash Back On Categories/Specific Merchants",
       "summary_zh": "",
-      "title_es": "[New Boosts] Cash App (Square Cash Debit Card): Cash Boost – Get Cash Back On Categories/Specific Merchants",
-      "summary_es": ""
+      "title_es": "[Nuevos Boosts] Cash App (Tarjeta de débito Square Cash): Cash Boost – Obtén devolución de efectivo en categorías o comerciantes específicos",
+      "summary_es": "Cash App introduce Cash Boost para devolver efectivo en categorías y comerciantes seleccionados."
     },
     {
       "title": "[AmEx Statement: No Nerf] American Express To Nerf Resy Credit (Select Restaurants Only)",
@@ -30,8 +63,8 @@
       "summary_en": "",
       "title_zh": "[AmEx Statement: No Nerf] American Express To Nerf Resy Credit (Select Restaurants Only)",
       "summary_zh": "",
-      "title_es": "[AmEx Statement: No Nerf] American Express To Nerf Resy Credit (Select Restaurants Only)",
-      "summary_es": ""
+      "title_es": "[Declaración de AmEx: Sin recorte] American Express recortará el crédito de Resy (solo en restaurantes seleccionados)",
+      "summary_es": "American Express informa que recortará el crédito de Resy solo en algunos restaurantes."
     },
     {
       "title": "[Migration Complete] Server Migration – Comments Closed & Content Freeze (1-2 Hours)",
@@ -45,8 +78,8 @@
       "summary_en": "",
       "title_zh": "[Migration Complete] Server Migration – Comments Closed & Content Freeze (1-2 Hours)",
       "summary_zh": "",
-      "title_es": "[Migration Complete] Server Migration – Comments Closed & Content Freeze (1-2 Hours)",
-      "summary_es": ""
+      "title_es": "[Migración completada] Migración del servidor – Comentarios cerrados y congelación de contenido (1-2 horas)",
+      "summary_es": "El servidor ha sido migrado, los comentarios están cerrados y el contenido congelado durante 1-2 horas."
     },
     {
       "title": "Amazon Prime Video Channel Subscription Discounts for $.99/month (First Two Months)",
@@ -62,8 +95,8 @@
       "summary_en": "",
       "title_zh": "Amazon Prime Video Channel Subscription Discounts for $.99/month (First Two Months)",
       "summary_zh": "",
-      "title_es": "Amazon Prime Video Channel Subscription Discounts for $.99/month (First Two Months)",
-      "summary_es": ""
+      "title_es": "Descuentos en suscripciones a canales de Amazon Prime Video por $0.99/mes (primeros dos meses)",
+      "summary_es": "Amazon ofrece canales de Prime Video a $0.99 al mes durante los primeros dos meses."
     },
     {
       "title": "Starz: 12 Months For $23.99 (New & Previous Members)",
@@ -78,8 +111,8 @@
       "summary_en": "",
       "title_zh": "Starz: 12 Months For $23.99 (New & Previous Members)",
       "summary_zh": "",
-      "title_es": "Starz: 12 Months For $23.99 (New & Previous Members)",
-      "summary_es": ""
+      "title_es": "Starz: 12 meses por $23.99 (miembros nuevos y anteriores)",
+      "summary_es": "Starz ofrece su suscripción a $23.99 por 12 meses para clientes nuevos y existentes."
     },
     {
       "title": "Chase Discontinues Sapphire Checking Account",
@@ -94,8 +127,8 @@
       "summary_en": "",
       "title_zh": "Chase Discontinues Sapphire Checking Account",
       "summary_zh": "",
-      "title_es": "Chase Discontinues Sapphire Checking Account",
-      "summary_es": ""
+      "title_es": "Chase discontinúa la cuenta corriente Sapphire",
+      "summary_es": "Chase ha decidido discontinuar su cuenta corriente Sapphire."
     },
     {
       "title": "American Express To Acquire TheFork For $700 Million",
@@ -113,8 +146,8 @@
       "summary_en": "",
       "title_zh": "American Express To Acquire TheFork For $700 Million",
       "summary_zh": "",
-      "title_es": "American Express To Acquire TheFork For $700 Million",
-      "summary_es": ""
+      "title_es": "American Express adquirirá TheFork por 700 millones de dólares",
+      "summary_es": "American Express comprará la plataforma de reservas TheFork por $700 millones."
     },
     {
       "title": "[Email Sent Out In Error] Chase Ink Plus Card To Lose 5x On Office Supply Stores Starting 10/1/26",
@@ -130,8 +163,8 @@
       "summary_en": "",
       "title_zh": "[Email Sent Out In Error] Chase Ink Plus Card To Lose 5x On Office Supply Stores Starting 10/1/26",
       "summary_zh": "",
-      "title_es": "[Email Sent Out In Error] Chase Ink Plus Card To Lose 5x On Office Supply Stores Starting 10/1/26",
-      "summary_es": ""
+      "title_es": "[Correo enviado por error] La tarjeta Chase Ink Plus perderá el 5x en tiendas de suministros de oficina a partir del 1/10/26",
+      "summary_es": "Chase emitió por error un correo anunciando que la Ink Plus perderá el 5x en tiendas de oficina a partir del 1 de octubre de 2026."
     },
     {
       "title": "Bestbuy.com: Save on Giftcards For DoorDash, Google Play, Walgreen’s, Adidas, Wayfair & More",
@@ -147,8 +180,8 @@
       "summary_en": "",
       "title_zh": "Bestbuy.com: Save on Giftcards For DoorDash, Google Play, Walgreen’s, Adidas, Wayfair & More",
       "summary_zh": "",
-      "title_es": "Bestbuy.com: Save on Giftcards For DoorDash, Google Play, Walgreen’s, Adidas, Wayfair & More",
-      "summary_es": ""
+      "title_es": "Bestbuy.com: Ahorra en tarjetas de regalo de DoorDash, Google Play, Walgreen’s, Adidas, Wayfair y más",
+      "summary_es": "Best Buy ofrece descuentos en tarjetas de regalo para DoorDash, Google Play, Walgreens, Adidas, Wayfair y otras marcas."
     },
     {
       "title": "Target Circle: Spend 3 x $110 & Get $40 Rewards",
@@ -164,8 +197,8 @@
       "summary_en": "",
       "title_zh": "Target Circle: Spend 3 x $110 & Get $40 Rewards",
       "summary_zh": "",
-      "title_es": "Target Circle: Spend 3 x $110 & Get $40 Rewards",
-      "summary_es": ""
+      "title_es": "Target Circle: Gastar 3 veces $110 y obtener $40 en recompensas",
+      "summary_es": "Target Circle premia a sus clientes con $40 de recompensas al gastar $110 en tres ocasiones."
     },
     {
       "title": "Target.com: Buy $100 Apple Giftcard & Get $10 Target Giftcard Bonus (6/15-6/20)",
@@ -181,8 +214,8 @@
       "summary_en": "",
       "title_zh": "Target.com: Buy $100 Apple Giftcard & Get $10 Target Giftcard Bonus (6/15-6/20)",
       "summary_zh": "",
-      "title_es": "Target.com: Buy $100 Apple Giftcard & Get $10 Target Giftcard Bonus (6/15-6/20)",
-      "summary_es": ""
+      "title_es": "Target.com: Compra una tarjeta de regalo Apple de $100 y recibe un bono de $10 en tarjeta de regalo de Target (6/15-6/20)",
+      "summary_es": "Target ofrece un bono de $10 en tarjeta de regalo al comprar una tarjeta Apple de $100 entre el 15 y el 20 de junio."
     },
     {
       "title": "Rakuten: Get 10x On Dell",
@@ -199,8 +232,8 @@
       "summary_en": "",
       "title_zh": "Rakuten: Get 10x On Dell",
       "summary_zh": "",
-      "title_es": "Rakuten: Get 10x On Dell",
-      "summary_es": ""
+      "title_es": "Rakuten: Obtén 10x en Dell",
+      "summary_es": "Rakuten ofrece 10 veces puntos de vuelta en compras en Dell."
     },
     {
       "title": "Rakuten & Topcashback: Get 10% Back on Stubhub",
@@ -216,45 +249,9 @@
       "summary_en": "",
       "title_zh": "Rakuten & Topcashback: Get 10% Back on Stubhub",
       "summary_zh": "",
-      "title_es": "Rakuten & Topcashback: Get 10% Back on Stubhub",
-      "summary_es": ""
-    },
-    {
-      "title": "Paze: Get Free $100 Back *Per Card* (10 x $10)",
-      "url": "https://www.doctorofcredit.com/paze-get-free-100-back-per-card-10-x-10/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "Free money",
-        "paze"
-      ],
-      "ts": "2026-06-15T16:42:23.000Z",
-      "title_en": "Paze: Get Free $100 Back *Per Card* (10 x $10)",
-      "summary_en": "",
-      "title_zh": "Paze: Get Free $100 Back *Per Card* (10 x $10)",
-      "summary_zh": "",
-      "title_es": "Paze: Get Free $100 Back *Per Card* (10 x $10)",
-      "summary_es": ""
-    },
-    {
-      "title": "Chase Sapphire Preferred 100,000 Points Offer",
-      "url": "https://www.doctorofcredit.com/chase-sapphire-preferred-100000-points-offer/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "big",
-        "chase",
-        "chase sapphire preferred",
-        "credit card bonuses"
-      ],
-      "ts": "2026-06-15T16:11:18.000Z",
-      "title_en": "Chase Sapphire Preferred 100,000 Points Offer",
-      "summary_en": "",
-      "title_zh": "Chase Sapphire Preferred 100,000 Points Offer",
-      "summary_zh": "",
-      "title_es": "Chase Sapphire Preferred 100,000 Points Offer",
-      "summary_es": ""
+      "title_es": "Rakuten y Topcashback: Obtén 10% de reembolso en Stubhub",
+      "summary_es": "Las plataformas de cashback Rakuten y Topcashback ofrecen un 10% de reembolso en compras en Stubhub."
     }
   ],
-  "fetched": "2026-06-16T08:12:24.957Z"
+  "fetched": "2026-06-16T14:10:43.931Z"
 }
