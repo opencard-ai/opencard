@@ -26,6 +26,15 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.toLowerCase().trim());
 }
 
+function isReminderOptedIn(userData: Record<string, unknown>): boolean {
+  const value = userData.marketing_optin;
+  if (value === true || value === "true") return true;
+  if (value === false || value === "false") return false;
+  // Legacy subscribers created before marketing_optin was stored should still
+  // receive the benefit reminders they confirmed, but only when explicitly confirmed.
+  return userData.status === "confirmed";
+}
+
 // Lookup email from hash (email stored in Redis under the same user key)
 async function getEmailFromHash(emailHash: string): Promise<string | null> {
   const userKey = `opencard:user:${emailHash}`;
@@ -114,9 +123,17 @@ interface UserProfile {
 
 async function getCardData(cardIds: string[]): Promise<Record<string, CardData>> {
   try {
-    const res = await fetch(`${BASE_URL}/api/cards?full=1`, { next: { revalidate: 3600 } });
+    const ids = cardIds.map(encodeURIComponent).join(",");
+    const res = await fetch(`${BASE_URL}/api/cards?ids=${ids}`, { next: { revalidate: 3600 } });
     if (!res.ok) return {};
-    const allCards: CardData[] = await res.json();
+    const payload = await res.json();
+    const allCards: CardData[] = Array.isArray(payload)
+      ? payload.flatMap((entry: CardData | { cards?: CardData[] }) =>
+          Array.isArray((entry as { cards?: CardData[] }).cards)
+            ? (entry as { cards: CardData[] }).cards
+            : [entry as CardData]
+        )
+      : [];
     const map: Record<string, CardData> = {};
     for (const card of allCards) {
       if (cardIds.includes(card.card_id)) map[card.card_id] = card;
@@ -248,7 +265,7 @@ export async function GET(req: NextRequest) {
       const userData = await redis.hgetall(userKey) as Record<string, unknown> | null;
 
       if (!userData || !userData.created_at) continue;
-      if (!userData.marketing_optin) continue;
+      if (!isReminderOptedIn(userData)) continue;
       if (userData.status === "unsubscribed") continue;
 
       const cards: string[] = (userData.cards as string[]) || [];
