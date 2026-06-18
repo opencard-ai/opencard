@@ -12,7 +12,8 @@
     "time_period_months": 6,
     "description": "Limited-time offer: Earn 90,000 Bonus Miles after spending $6,000 in purchases on your new Card in your first 6 months of Card Membership. Offer ends 7/15/2026.",
     "point_program": "Delta SkyMiles",
-    "estimated_value": 900
+    "estimated_value": 900,
+    "elevated_until": "2026-07-15"
   },
   "earning_rates": [
     {
