@@ -7,30 +7,56 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 75000,
+    "bonus_points": 100000,
     "spending_requirement": 5000,
     "time_period_months": 3,
-    "description": "Earn 75,000 Ultimate Rewards points after spending $5,000 in purchases in the first 3 months from account opening.",
+    "description": "Earn 100,000 Ultimate Rewards points after spending $5,000 in purchases in the first 3 months from account opening.",
     "point_program": "Chase Ultimate Rewards",
-    "estimated_value": 1275,
-    "offer_status": "public",
-    "confidence": "medium_high",
+    "estimated_value": 1700,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
     "notes": [
-      "Current Chase public/search evidence supports 75k after $5k/3mo; older 100k references are treated as stale history."
+      "Chase Sapphire Preferred landing page shows 75,000 struck through and 100,000 as the active bonus.",
+      "Chase news release confirms the 100,000-point limited-time offer and new benefits starting June 15, 2026."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-05"
+    "last_verified": "2026-06-15"
   },
   "earning_rates": [
     {
       "category": "Travel",
       "rate": 5,
-      "notes": "Earn 5x points on travel purchased through Chase Ultimate Rewards"
+      "notes": "Earn 5x points on Chase Travel purchases"
+    },
+    {
+      "category": "Gas and EV charging",
+      "rate": 3,
+      "notes": "NEW 3x points on gas and EV charging"
+    },
+    {
+      "category": "Vacation homes",
+      "rate": 3,
+      "notes": "NEW 3x points on vacation homes at top brands like Airbnb and Vrbo"
     },
     {
       "category": "Dining",
       "rate": 3,
-      "notes": "Earn 3x points on dining"
+      "notes": "Earn 3x points on dining worldwide, including takeout and eligible delivery services"
+    },
+    {
+      "category": "Top streaming services",
+      "rate": 3,
+      "notes": "NEW 3x points on top streaming services"
+    },
+    {
+      "category": "Online grocery purchases",
+      "rate": 3,
+      "notes": "NEW 3x points on online grocery purchases (excluding Walmart, Target, and wholesale clubs)"
+    },
+    {
+      "category": "All other travel",
+      "rate": 2,
+      "notes": "Earn 2x points on all other travel worldwide"
     },
     {
       "category": "Other",
@@ -58,6 +84,14 @@
       {
         "name": "Travel Emergency Services",
         "description": "24/7 assistance"
+      },
+      {
+        "name": "Emergency Evacuation and Transportation",
+        "description": "Up to $100,000 in coverage"
+      },
+      {
+        "name": "Complimentary Apple TV",
+        "description": "One year when activated by December 31, 2026"
       }
     ]
   },
@@ -82,15 +116,15 @@
   ],
   "sources": [
     {
-      "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
-      "notes": "Official Chase page."
+      "url": "https://www.chase.com/SapphirePreferred",
+      "notes": "Official Chase landing page with current CSP bonus and benefits."
     },
     {
-      "url": "https://www.nerdwallet.com/travel/learn/how-to-get-the-most-from-the-chase-sapphire-preferred-card",
-      "notes": "NerdWallet review Apr 2026."
+      "url": "https://media.chase.com/news/Meet-the-New-Chase-Sapphire-Preferred",
+      "notes": "Official Chase press release announcing the June 15, 2026 CSP refresh."
     }
   ],
-  "last_updated": "2026-05-11T18:35:04.107Z",
+  "last_updated": "2026-06-16T00:13:05.232Z",
   "hotel_program": {
     "program": null,
     "tier": null,
@@ -114,16 +148,16 @@
     {
       "credit_key": "chase-travel-hotel-credit",
       "name": "Chase Travel Hotel Credit",
-      "amount": 50,
+      "amount": 100,
       "frequency": "annual",
       "category": "hotel",
-      "description": "$50/year on hotels booked through Chase Travel portal.",
+      "description": "$100/year on hotels booked through Chase Travel portal.",
       "reset_type": "anniversary",
-      "source": "https://www.chase.com/personal/credit-cards/sapphire-preferred"
+      "source": "https://www.chase.com/SapphirePreferred"
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-06-05",
+  "last_verified": "2026-06-15",
   "next_review": "2026-07-23T17:26:36.116494",
   "cash_advance_fee_flat": 5,
   "cash_advance_fee_pct": 5,

@@ -144,6 +144,22 @@ function jsonEqual(a: any, b: any): boolean {
   return JSON.stringify(a) === JSON.stringify(b);
 }
 
+function stripIgnoredKeys(value: any, ignoredKeys: Set<string>): any {
+  if (Array.isArray(value)) return value.map((item) => stripIgnoredKeys(item, ignoredKeys));
+  if (!value || typeof value !== 'object') return value;
+  const out: Record<string, any> = {};
+  for (const [key, child] of Object.entries(value)) {
+    if (ignoredKeys.has(key)) continue;
+    out[key] = stripIgnoredKeys(child, ignoredKeys);
+  }
+  return out;
+}
+
+function equalIgnoringLastVerified(before: any, after: any): boolean {
+  const ignoredKeys = new Set(['last_verified']);
+  return jsonEqual(stripIgnoredKeys(before, ignoredKeys), stripIgnoredKeys(after, ignoredKeys));
+}
+
 const PRODUCTION_FIELD_POLICY: Record<string, FieldPolicy> = {
   annual_fee: { action: 'auto_apply_candidate_if_qa_passes', reason: 'Stable numeric field; issuer-cited changes may be applied after QA pass.' },
   foreign_transaction_fee: { action: 'auto_apply_candidate_if_qa_passes', reason: 'Stable numeric field; issuer-cited changes may be applied after QA pass.' },
@@ -457,6 +473,22 @@ function hasConditionalWelcomeBonus(candidateEnvelope: any): boolean {
   return CONDITIONAL_BONUS_PATTERNS.some((pattern) => pattern.test(text));
 }
 
+function hasAdditionalCardholderWelcomeBonus(candidateEnvelope: any): boolean {
+  const text = welcomeOfferEvidenceText(candidateEnvelope);
+  return /employee\s+card|authorized\s+user|additional\s+card|after\s+adding|add(?:ing)?\s+(?:an?\s+)?(?:employee|authorized|additional)/i.test(text);
+}
+
+function hasDocumentedConditionalWelcomeBonus(candidateEnvelope: any): boolean {
+  const offer = candidateEnvelope?.candidate?.welcome_offer || {};
+  const citations = Array.isArray(candidateEnvelope?.citations?.welcome_offer) ? candidateEnvelope.citations.welcome_offer : [];
+  return !!(
+    offer.offer_status &&
+    Array.isArray(offer.source_conflicts) &&
+    citations.length &&
+    !hasAdditionalCardholderWelcomeBonus(candidateEnvelope)
+  );
+}
+
 function createArtifact(runDir: string): void {
   if (!existsSync(path.join(runDir, 'candidate.json'))) normalize(runDir);
   if (!existsSync(path.join(runDir, 'apply-plan.json'))) applyPlan(runDir);
@@ -486,9 +518,10 @@ function createArtifact(runDir: string): void {
 
   const riskFlags = new Set<string>();
   const conditionalWelcomeBonus = hasConditionalWelcomeBonus(candidateEnvelope);
+  const documentedConditionalWelcomeBonus = hasDocumentedConditionalWelcomeBonus(candidateEnvelope);
   if (!primarySource) riskFlags.add('source_snapshot_missing');
   if (primarySource && artifactSourceType(primarySource.source_type) === 'other_third_party') riskFlags.add('third_party_source_only');
-  if (candidate.welcome_offer && conditionalWelcomeBonus) riskFlags.add('conditional_or_tiered_welcome_bonus');
+  if (candidate.welcome_offer && conditionalWelcomeBonus && !documentedConditionalWelcomeBonus) riskFlags.add('conditional_or_tiered_welcome_bonus');
   for (const diff of changed) {
     if (riskForField(diff.field) !== 'low') riskFlags.add(`${diff.field}_changed`);
     if (diff.field === 'welcome_offer' && candidate.welcome_offer?.offer_status && candidate.welcome_offer.offer_status !== 'public') {
@@ -611,9 +644,12 @@ function qa(runDir: string): void {
   if (requiresWelcomeOffer && !candidate?.citations?.welcome_offer?.length) blocking_issues.push('welcome_offer citation missing');
   if ((requiresRecurringCredits || hasRecurringCreditsCandidate) && !candidate?.citations?.recurring_credits?.length) blocking_issues.push('recurring_credits citation missing');
   const conditionalWelcomeBonus = requiresWelcomeOffer && hasConditionalWelcomeBonus(candidate);
+  const documentedConditionalWelcomeBonus = requiresWelcomeOffer && hasDocumentedConditionalWelcomeBonus(candidate);
   if (requiresWelcomeOffer && community?.community_consensus?.conflict_observed) warnings.push('Community/source conflict observed; issuer wins but review is required.');
   if (requiresWelcomeOffer && community?.community_consensus?.ymmv_or_targeted_possible) warnings.push('Offer may be YMMV or targeted; metadata label is required.');
-  if (conditionalWelcomeBonus) warnings.push('Welcome offer appears conditional or tiered (for example up-to/additional/employee-card/authorized-user language); verify guaranteed vs conditional bonus before applying.');
+  if (conditionalWelcomeBonus && !documentedConditionalWelcomeBonus) warnings.push('Welcome offer appears conditional or tiered (for example up-to/additional/employee-card/authorized-user language); verify guaranteed vs conditional bonus before applying.');
+  const expiryWarning = requiresWelcomeOffer ? welcomeOfferExpiryWarning(candidate) : null;
+  if (expiryWarning) warnings.push(expiryWarning);
   if (requiresWelcomeOffer && community?.community_consensus?.conflict_observed && !Array.isArray(candidate?.candidate?.welcome_offer?.source_conflicts)) {
     blocking_issues.push('source_conflicts metadata missing for observed source conflict');
   }
@@ -635,7 +671,7 @@ function qa(runDir: string): void {
       source_snapshots_saved: manifestData.errors.length ? 'pass_with_errors' : 'pass',
       issuer_source_for_core_terms: hasIssuer ? 'pass' : 'blocked',
       community_cross_check: community ? (community.community_consensus.conflict_observed ? 'needs_review_conflict_observed' : 'pass') : 'missing',
-      conditional_welcome_bonus: conditionalWelcomeBonus ? 'needs_review' : 'pass',
+      conditional_welcome_bonus: conditionalWelcomeBonus ? (documentedConditionalWelcomeBonus ? 'pass_documented' : 'needs_review') : 'pass',
       existing_data_diff: 'generated_by_review',
     },
     blocking_issues,
@@ -666,11 +702,31 @@ function diffFields(existing: Record<string, any>, candidate: Record<string, any
       const after = candidate[field];
       return {
         field,
-        status: jsonEqual(before, after) ? 'unchanged' : 'changed',
+        status: equalIgnoringLastVerified(before, after) ? 'unchanged' : 'changed',
         before,
         after,
       };
     });
+}
+
+function welcomeOfferExpiryWarning(candidateEnvelope: any): string | null {
+  const description = candidateEnvelope?.candidate?.welcome_offer?.description;
+  if (typeof description !== 'string' || !description) return null;
+  const match = description.match(/Offer ends\s+(\d{1,2})\/(\d{1,2})\/(\d{4})\.?/i);
+  if (!match) return null;
+  const month = Number(match[1]);
+  const day = Number(match[2]);
+  const year = Number(match[3]);
+  if (!month || !day || !year) return null;
+  const today = new Date();
+  const todayUtc = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+  const expiryUtc = Date.UTC(year, month - 1, day);
+  const daysLeft = Math.round((expiryUtc - todayUtc) / 86400000);
+  const formatted = `${month}/${day}/${year}`;
+  if (daysLeft < 0) return `Welcome offer expired on ${formatted}.`;
+  if (daysLeft <= 7) return `Welcome offer expires in ${daysLeft} day(s) (${formatted}) — 7-day warning.`;
+  if (daysLeft <= 14) return `Welcome offer expires in ${daysLeft} day(s) (${formatted}) — 14-day warning.`;
+  return null;
 }
 
 function applyPlan(runDir: string): void {
@@ -713,7 +769,13 @@ function applyPlan(runDir: string): void {
 
   const unresolvedManualFields = manualFields.filter((field) => !approvedManualFields.includes(field));
   const canApply = !!qaReport && qaReport.verdict !== 'blocked' && safetyIssues.length === 0 && unresolvedManualFields.length === 0 && changed.length > 0;
-  const recommendation = safetyIssues.length ? 'blocked' : canApply ? 'approved_to_apply_with_write_flag' : 'review_only';
+  const recommendation = safetyIssues.length
+    ? 'blocked'
+    : changed.length === 0
+      ? 'close_no_production_delta'
+      : canApply
+        ? 'approved_to_apply_with_write_flag'
+        : 'review_only';
 
   writeJson(path.join(runDir, 'proposed-patch.json'), {
     card_id: config.cardId,

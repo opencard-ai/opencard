@@ -7,12 +7,21 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
+    "bonus_points": 125000,
     "spending_requirement": 15000,
     "time_period_months": 6,
-    "bonus_points": 125000,
     "description": "Limited-time offer: Earn 125,000 Bonus Miles after spending $15,000 in purchases on your new Card in your first 6 months of Card Membership. Offer ends 7/15/2026.",
     "point_program": "Delta SkyMiles",
-    "estimated_value": 1250
+    "estimated_value": 1250,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
+    "notes": [
+      "Official Amex business page is canonical for the public limited-time headline offer: up to 125,000 Bonus Miles after $15,000 in purchases in the first 6 months; offer ends 7/15/2026.",
+      "Delta news/source evidence describes the campaign as a tiered/additional-bonus structure (100,000 base miles plus 25,000 additional miles). Keep this tiered context in review metadata so the offer is not mistaken for an unconditional non-tiered lump-sum source pattern.",
+      "No source conflicts observed for the final 125,000-mile public limited-time offer."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-06-16"
   },
   "earning_rates": [
     {
@@ -144,6 +153,6 @@
       "reset_type": "every_4_years"
     }
   ],
-  "last_verified": "2026-06-05T03:34:57.017462Z",
+  "last_verified": "2026-06-16",
   "next_review": "2026-07-15T00:00:00Z"
 }

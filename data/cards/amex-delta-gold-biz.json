@@ -12,7 +12,16 @@
     "time_period_months": 6,
     "description": "Limited-time offer: Earn 90,000 Bonus Miles after spending $6,000 in purchases on your new Card in your first 6 months of Card Membership. Offer ends 7/15/2026.",
     "point_program": "Delta SkyMiles",
-    "estimated_value": 900
+    "estimated_value": 900,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
+    "notes": [
+      "Official Amex business page is canonical for the public limited-time headline offer: 90,000 Bonus Miles after $6,000 in purchases in the first 6 months; offer ends 7/15/2026.",
+      "Delta news/source evidence describes the campaign as a tiered/additional-bonus structure (70,000 base miles plus 20,000 additional miles). Keep this tiered context in review metadata so the offer is not mistaken for an unconditional non-tiered lump-sum source pattern.",
+      "No source conflicts observed for the final 90,000-mile public limited-time offer."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-06-16"
   },
   "earning_rates": [
     {
@@ -84,7 +93,7 @@
   },
   "last_updated": "2026-06-05T03:34:57.017462Z",
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-06-05T03:34:57.017462Z",
+  "last_verified": "2026-06-16",
   "next_review": "2026-07-15T00:00:00Z",
   "recurring_credits": [
     {

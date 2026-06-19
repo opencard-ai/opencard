@@ -120,6 +120,8 @@ Verdict = max severity across checks. Order of evaluation:
 | `is_elevated_flip` | `is_elevated` flips with no `normal_bonus_points` baseline | already MED in classify.ts |
 | `description_length_jump` | new description > 2× old length OR vice versa | TBD — dry-run had several large rewrites |
 
+Freshness-only updates are handled separately: if the only production delta is `last_verified`, treat it as unchanged for substantive diff / apply-plan purposes. Welcome-offer descriptions that include an explicit expiry date should also surface 30/14/7-day warnings in QA/review output.
+
 **Pass-only checks (no risk):**
 
 | ID | Rule |

@@ -24,7 +24,7 @@
 
 - **Schema 大部分整理過了**:`data/cards/*.json` 249 張、`last_updated` 全部都有、發卡行去重完成、`tags` 收斂成 11 個 enum、`sitemap.ts` 已經把 249 張卡 × 3 語言 = 747 個 card pages 列入(SEO 缺口已堵)。
 - **API 結構合理**:`/api/cards`、`/api/cards?card_id=X`、`/api/cards?summary=1`、`/api/recommend`、`/api/chat`、`/api/cron/reminders`、完整的 `/api/my-cards/*` (subscribe/verify/unsubscribe/delete/save/remove/set-open-date)。
-- **Email 訂閱基本功能完整**:Vercel cron 每月 1 號 + 20 號 9am 跑 `/api/cron/reminders`,email 用 SHA-256 hash 儲存,有 verify 流程。
+- **Email 訂閱基本功能完整**:Vercel cron 每月 1 號 + 20 號 PT 06:00（UTC 13:00）跑 `/api/cron/reminders`,email 用 SHA-256 hash 儲存,有 verify 流程。
 - **Validation 框架已有**:`scripts/validate-all.ts` 480+ 行,covers schema + business 雙層檢查。
 
 ### B. 緊急問題(下面細說)

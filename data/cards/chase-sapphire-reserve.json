@@ -19,7 +19,7 @@
       "Older forum datapoints may show prior 125k offer; current issuer page is canonical."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-05"
+    "last_verified": "2026-06-14"
   },
   "earning_rates": [
     {
@@ -191,7 +191,7 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-06-05",
+  "last_verified": "2026-06-14",
   "next_review": "2026-07-23T17:26:36.116494",
   "late_fee": 40,
   "cash_advance_fee_flat": 5,
