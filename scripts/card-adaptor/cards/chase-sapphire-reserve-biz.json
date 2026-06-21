@@ -1,0 +1,95 @@
+{
+  "cardId": "chase-sapphire-reserve-biz",
+  "cardPath": "data/cards/chase-sapphire-reserve-biz.json",
+  "mode": "offer_and_benefits",
+  "sources": [
+    {
+      "id": "01-issuer-offer",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/a1/reservebusiness0626?CELL=68CY",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-main",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/business-credit-cards/sapphire/reserve",
+      "method": "fetch"
+    },
+    {
+      "id": "03-tpg",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/chase-sapphire-reserve-business-current-offer/",
+      "method": "get"
+    },
+    {
+      "id": "04-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/best-current-credit-card-sign-bonuses/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 30000,
+      "time_period_months": 6,
+      "bonus_points": 200000,
+      "estimated_value": 3400,
+      "point_program": "Chase Ultimate Rewards",
+      "description": "Limited-time offer: Earn 200,000 bonus points after spending $30,000 on purchases in the first 6 months from account opening.",
+      "offer_status": "public_limited_time",
+      "confidence": "high",
+      "notes": [
+        "Chase official reservebusiness0626 offer page is canonical for the 200,000-point limited-time offer; secondary June 2026 coverage corroborates."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-offer*.md:Earn 200,000 bonus points",
+      "sources/*issuer-offer*.md:$30,000 on purchases in your first 6 months",
+      "sources/*tpg*.md:200,000-point bonus is back"
+    ]
+  },
+  "open_questions": [
+    "Confirm expiry/deadline if Chase later adds one to the offer page."
+  ],
+  "community": {
+    "summary": "Chase official offer page and June 2026 secondary coverage support the Sapphire Reserve for Business 200k / $30k / 6mo public limited-time offer.",
+    "recommended_production_value": {
+      "offer_amount": 200000,
+      "spend_requirement": 30000,
+      "spend_window_months": 6,
+      "status": "public_limited_time"
+    },
+    "confidence": "high_when_chase_reservebusiness0626_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": ["150k", "150,000"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Chase reservebusiness0626 offer page",
+        "regex": "200,000|\\$30,000|first 6 months",
+        "stance": "supports_200k_public_limited_time",
+        "offer_amount": 200000,
+        "spend_requirement": 30000,
+        "spend_window_months": 6,
+        "excerpt": "Chase official offer page describes 200,000 points after $30,000 in the first 6 months.",
+        "confidence": "high_if_present"
+      },
+      {
+        "sourceType": "tpg",
+        "source": "The Points Guy",
+        "regex": "200,000|200000-point bonus is back|\\$30,000",
+        "stance": "supports_200k_secondary",
+        "offer_amount": 200000,
+        "spend_requirement": 30000,
+        "spend_window_months": 6,
+        "excerpt": "TPG June 2026 coverage says the 200,000-point Sapphire Reserve for Business bonus is back.",
+        "confidence": "high_for_secondary"
+      }
+    ]
+  }
+}

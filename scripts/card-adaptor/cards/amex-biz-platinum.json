@@ -1,0 +1,86 @@
+{
+  "cardId": "amex-biz-platinum",
+  "cardPath": "data/cards/amex-biz-platinum.json",
+  "mode": "offer_and_benefits",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/amex-business-platinum-card/",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/targeted-american-express-business-platinum-300000-points-signup-bonus/",
+      "method": "get"
+    },
+    {
+      "id": "04-upgradedpoints",
+      "type": "other",
+      "url": "https://upgradedpoints.com/news/amex-business-platinum-card-300k-bonus/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 300000,
+      "spending_requirement": 20000,
+      "time_period_months": 3,
+      "description": "As-high-as offer: Earn up to 300,000 Membership Rewards points after spending $20,000 in eligible purchases within the first 3 months of Card Membership.",
+      "point_program": "MR",
+      "estimated_value": 3400,
+      "offer_status": "as_high_as_public_or_targeted",
+      "confidence": "medium_high",
+      "notes": [
+        "Amex issuer page shows 'as high as 300,000' language; exact eligibility may vary by applicant/session. Treat as high-value monitored offer, not guaranteed universal approval copy."
+      ],
+      "source_conflicts": [
+        "Amex may personalize welcome offers; lower public/session offers may appear."
+      ],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:AS HIGH AS 300,000 Membership Rewards Points",
+      "sources/*issuer*.md:$20,000 in eligible purchases",
+      "sources/*usccg*.md:300k Offer"
+    ]
+  },
+  "open_questions": [
+    "Because Amex uses as-high-as / eligibility language, keep manual review before applying future changes."
+  ],
+  "community": {
+    "summary": "Amex issuer and secondary sources support an as-high-as 300k Business Platinum offer, but eligibility/session variance is possible.",
+    "recommended_production_value": {
+      "offer_amount": 300000,
+      "spend_requirement": 20000,
+      "spend_window_months": 3,
+      "status": "as_high_as_public_or_targeted"
+    },
+    "confidence": "medium_high_due_to_amex_as_high_as_language",
+    "ymmv_or_targeted_possible": true,
+    "conflictStanceIncludes": ["250k", "200k", "175k"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "American Express Business Platinum page",
+        "regex": "AS HIGH AS 300,000|300,000|\\$20,000|first 3 months",
+        "stance": "supports_300k_as_high_as",
+        "offer_amount": 300000,
+        "spend_requirement": 20000,
+        "spend_window_months": 3,
+        "excerpt": "Amex issuer page uses as-high-as 300,000 Membership Rewards points after $20,000 spend language.",
+        "confidence": "high_if_present_but_eligibility_varies"
+      }
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "cardId": "chase-ink-biz-preferred",
+  "cardPath": "data/cards/chase-ink-biz-preferred.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-chase-compare",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/business-credit-cards/chaseforbusiness",
+      "method": "get"
+    },
+    {
+      "id": "03-cnbc",
+      "type": "other",
+      "url": "https://www.cnbc.com/select/ink-business-preferred-welcome-bonus/",
+      "method": "get"
+    },
+    {
+      "id": "04-upgradedpoints",
+      "type": "other",
+      "url": "https://upgradedpoints.com/news/chase-ink-business-preferred-sign-up-bonus/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 8000,
+      "time_period_months": 3,
+      "bonus_points": 100000,
+      "description": "Earn 100,000 bonus points after you spend $8,000 on purchases in the first 3 months from account opening.",
+      "point_program": "Chase Ultimate Rewards",
+      "estimated_value": 1700,
+      "is_elevated": true,
+      "elevated_until": "2027-09-30",
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Chase issuer page and business-card comparison page support the 100,000-point offer."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:Earn 100,000 bonus points",
+      "sources/*issuer*.md:$8,000 on purchases in the first 3 months",
+      "sources/*chase-compare*.md:Earn 100,000 bonus points"
+    ]
+  },
+  "open_questions": [
+    "Monitor whether Chase changes the spend window or deadline on the Ink Business Preferred offer."
+  ],
+  "community": {
+    "summary": "Chase issuer sources support Ink Business Preferred at 100k UR after $8k in 3 months.",
+    "recommended_production_value": {
+      "offer_amount": 100000,
+      "spend_requirement": 8000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high_when_chase_issuer_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": ["120k"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Chase Ink Business Preferred page",
+        "regex": "100,000|\\$8,000|first 3 months",
+        "stance": "supports_100k_public",
+        "offer_amount": 100000,
+        "spend_requirement": 8000,
+        "spend_window_months": 3,
+        "excerpt": "Chase issuer page describes 100,000 points after $8,000 in the first 3 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

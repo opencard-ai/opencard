@@ -4,7 +4,7 @@
   "mode": "offer_and_benefits",
   "sources": [
     { "id": "01-issuer", "type": "issuer", "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve", "method": "fetch", "required": true },
-    { "id": "02-doc", "type": "doc", "url": "https://www.doctorofcredit.com/chase-sapphire-reserve-150000-points-signup-bonus/", "method": "get", "required": true },
+    { "id": "02-doc", "type": "doc", "url": "https://www.doctorofcredit.com/chase-sapphire-reserve-150000-points-signup-bonus/", "method": "get" },
     { "id": "03-cnn", "type": "cnn", "url": "https://www.cnn.com/cnn-underscored/money/chase-sapphire-reserve-lto-2026-04-30", "method": "get" },
     { "id": "04-reddit-creditcards", "type": "reddit", "url": "https://old.reddit.com/r/CreditCards/comments/1qk1o2l/chase_sapphire_reserve_approval_and_new_rules_for/", "method": "get" },
     { "id": "05-flyertalk", "type": "flyertalk", "url": "https://www.flyertalk.com/forum/chase-ultimate-rewards/2197179-chase-sapphire-reserve-refreshed-23-june-2025-a-74.html", "method": "get" }
@@ -13,15 +13,15 @@
     "annual_fee": 795,
     "authorized_user_fee": 195,
     "welcome_offer": {
-      "bonus_points": 150000,
+      "bonus_points": 100000,
       "spending_requirement": 6000,
       "time_period_months": 3,
-      "description": "Limited-time offer: earn 150,000 Ultimate Rewards points after spending $6,000 in purchases in the first 3 months from account opening.",
+      "description": "Earn 100,000 Ultimate Rewards points after spending $6,000 in purchases in the first 3 months from account opening.",
       "point_program": "Chase Ultimate Rewards",
-      "estimated_value": 3000,
-      "offer_status": "limited_time_public",
+      "estimated_value": 2000,
+      "offer_status": "public",
       "confidence": "high",
-      "notes": ["Older forum datapoints may show prior 125k offer; current issuer page is canonical."],
+      "notes": ["Issuer source check detected live offer at 100,000 points; prior 150,000-point limited-time offer ended 2026-06-15."],
       "source_conflicts": [],
       "last_verified": "AUTO_DATE"
     },
@@ -35,19 +35,19 @@
   },
   "citations": {
     "annual_fee": ["sources/*issuer*.md:$795 annual fee"],
-    "welcome_offer": ["sources/*issuer*.md:150,000 / $6,000 / first 3 months"],
+    "welcome_offer": ["sources/*issuer*.md:100,000 / $6,000 / first 3 months"],
     "earning_rates": ["sources/*issuer*.md:Reward your lifestyle"]
   },
   "open_questions": ["Limited-time offer should not auto-apply without source_conflicts metadata support."],
   "community": {
-    "summary": "Fresh issuer and recent secondary sources support 150k / $6k / 3 months. Older 125k community datapoints are stale history.",
-    "recommended_production_value": { "offer_amount": 150000, "spend_requirement": 6000, "spend_window_months": 3, "status": "limited_time_public" },
-    "confidence": "high_for_current_150k_core_offer; older 125k datapoints treated as stale history",
+    "summary": "Fresh issuer source supports 100k / $6k / 3 months. Prior 150k limited-time secondary-source datapoints are stale after the 2026-06-15 end date.",
+    "recommended_production_value": { "offer_amount": 100000, "spend_requirement": 6000, "spend_window_months": 3, "status": "public" },
+    "confidence": "high_for_current_100k_core_offer; older 150k/125k datapoints treated as stale history",
     "ymmv_or_targeted_possible": false,
-    "conflictStanceIncludes": ["125k"],
+    "conflictStanceIncludes": ["150k", "150,000", "125k"],
     "observations": [
-      { "sourceType": "doc", "source": "Doctor of Credit", "regex": "150,000", "stance": "supports_150k", "offer_amount": 150000, "spend_requirement": 6000, "spend_window_months": 3, "excerpt": "DoC mentions 150,000 after $6,000 within first 3 months.", "confidence": "high_for_secondary" },
-      { "sourceType": "cnn", "source": "CNN Underscored", "regex": "150,000", "stance": "supports_150k", "offer_amount": 150000, "spend_requirement": 6000, "spend_window_months": 3, "excerpt": "CNN mentions 150,000 after $6,000 in first three months.", "confidence": "high_for_secondary" },
+      { "sourceType": "issuer", "source": "Chase Sapphire Reserve page", "regex": "100,000|\\$6,000|first 3 months", "stance": "supports_100k_public", "offer_amount": 100000, "spend_requirement": 6000, "spend_window_months": 3, "excerpt": "Chase issuer source shows 100,000 points after $6,000 in the first 3 months.", "confidence": "high_if_present" },
+      { "sourceType": "doc", "source": "Doctor of Credit", "regex": "150,000", "stance": "supports_150k_stale_ended_2026_06_15", "offer_amount": 150000, "spend_requirement": 6000, "spend_window_months": 3, "excerpt": "DoC mentions prior 150,000 after $6,000 within first 3 months; treat as ended 2026-06-15 unless issuer again shows 150k.", "confidence": "medium_for_history" },
       { "sourceType": "reddit", "source": "Reddit", "regex": "125K|125,000", "stance": "supports_125k_stale", "offer_amount": 125000, "spend_requirement": 6000, "spend_window_months": 3, "excerpt": "Older Reddit datapoint mentions 125K after $6K/3mo.", "confidence": "medium" },
       { "sourceType": "flyertalk", "source": "FlyerTalk", "regex": "125,000", "stance": "supports_125k_stale", "offer_amount": 125000, "spend_requirement": 6000, "spend_window_months": 3, "excerpt": "Older FlyerTalk thread mentions 125,000 after $6,000 in first 3 months.", "confidence": "medium_low" }
     ]

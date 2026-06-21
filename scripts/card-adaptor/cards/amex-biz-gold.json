@@ -1,0 +1,86 @@
+{
+  "cardId": "amex-biz-gold",
+  "cardPath": "data/cards/amex-biz-gold.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-amex-campaign",
+      "type": "issuer",
+      "url": "https://apply.americanexpress.com/en-us/business/credit-cards/campaign/home/",
+      "method": "get"
+    },
+    {
+      "id": "03-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/amex-business-gold-rewards-card/",
+      "method": "get"
+    },
+    {
+      "id": "04-upgradedpoints",
+      "type": "other",
+      "url": "https://upgradedpoints.com/news/amex-business-gold-200k-offer/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 200000,
+      "spending_requirement": 15000,
+      "time_period_months": 3,
+      "description": "As-high-as offer: Earn up to 200,000 Membership Rewards points after spending $15,000 in purchases within the first 3 months of Card Membership.",
+      "point_program": "MR",
+      "estimated_value": 3400,
+      "offer_status": "as_high_as_public_or_targeted",
+      "confidence": "medium_high",
+      "notes": [
+        "Amex issuer/campaign pages show 200,000 Membership Rewards points; exact eligibility may vary by applicant/session."
+      ],
+      "source_conflicts": [
+        "Amex may personalize welcome offers; lower public/session offers may appear."
+      ],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:WELCOME OFFER AS HIGH AS 200,000 Membership Rewards Points",
+      "sources/*issuer*.md:$15,000 in purchases",
+      "sources/*usccg*.md:200k offer"
+    ]
+  },
+  "open_questions": [
+    "Because Amex uses as-high-as / eligibility language, keep manual review before applying future changes."
+  ],
+  "community": {
+    "summary": "Amex issuer/campaign and secondary sources support an as-high-as 200k Business Gold offer, but eligibility/session variance is possible.",
+    "recommended_production_value": {
+      "offer_amount": 200000,
+      "spend_requirement": 15000,
+      "spend_window_months": 3,
+      "status": "as_high_as_public_or_targeted"
+    },
+    "confidence": "medium_high_due_to_amex_as_high_as_language",
+    "ymmv_or_targeted_possible": true,
+    "conflictStanceIncludes": ["175k", "150k", "100k"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "American Express Business Gold page/campaign",
+        "regex": "200,000|\\$15,000|first 3 months|WELCOME OFFER AS HIGH AS",
+        "stance": "supports_200k_as_high_as",
+        "offer_amount": 200000,
+        "spend_requirement": 15000,
+        "spend_window_months": 3,
+        "excerpt": "Amex issuer/campaign pages show as-high-as 200,000 Membership Rewards points after $15,000 spend language.",
+        "confidence": "high_if_present_but_eligibility_varies"
+      }
+    ]
+  }
+}

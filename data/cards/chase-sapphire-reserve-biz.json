@@ -7,12 +7,19 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 5000,
-    "time_period_months": 3,
-    "bonus_points": 150000,
-    "estimated_value": 2550,
+    "spending_requirement": 30000,
+    "time_period_months": 6,
+    "bonus_points": 200000,
+    "estimated_value": 3400,
     "point_program": "Chase Ultimate Rewards",
-    "description": "150,000 bonus points after spending $5,000 in first 3 months (estimated $2,250 toward travel via Chase Travel or transfer partners)"
+    "description": "Limited-time offer: Earn 200,000 bonus points after spending $30,000 on purchases in the first 6 months from account opening.",
+    "offer_status": "public_limited_time",
+    "confidence": "high",
+    "notes": [
+      "Chase official reservebusiness0626 offer page and June 2026 secondary coverage support the 200,000-point public limited-time offer."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-06-21"
   },
   "earning_rates": [
     {
@@ -113,8 +120,8 @@
       "notes": "CNBC Select review"
     }
   ],
-  "notes": "Business version of Sapphire Reserve. Same $795 AF and credits. 150,000 point welcome bonus (higher than personal) makes it very attractive. Employee cards are free. Can combine points with personal Sapphire Reserve for larger balances. Key for business travelers who want same premium benefits as personal Reserve.",
-  "last_updated": "2026-04-30T04:47:59.373Z",
+  "notes": "Business version of Sapphire Reserve. Same $795 AF and credits. 200,000 point limited-time welcome bonus makes it very attractive. Employee cards are free. Can combine points with personal Sapphire Reserve for larger balances. Key for business travelers who want same premium benefits as personal Reserve.",
+  "last_updated": "2026-06-21T19:05:00.000Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

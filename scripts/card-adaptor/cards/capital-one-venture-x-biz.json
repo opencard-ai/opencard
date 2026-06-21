@@ -1,0 +1,84 @@
+{
+  "cardId": "capital-one-venture-x-biz",
+  "cardPath": "data/cards/capital-one-venture-x-biz.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.capitalone.com/small-business/credit-cards/venture-x-business/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-tpg",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/capital-one-venture-x-business/",
+      "method": "get"
+    },
+    {
+      "id": "03-cnbc",
+      "type": "other",
+      "url": "https://www.cnbc.com/select/ending-soon-150000-mile-capital-one-venture-business-card-offer/",
+      "method": "get"
+    },
+    {
+      "id": "04-awardwallet",
+      "type": "other",
+      "url": "https://awardwallet.com/credit-cards/capital-one-credit-card-offer-history/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 30000,
+      "time_period_months": 3,
+      "bonus_points": 150000,
+      "estimated_value": 2250,
+      "description": "Earn 150,000 bonus miles after spending $30,000 on purchases in the first 3 months from account opening.",
+      "point_program": "Capital One Venture Miles",
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Capital One issuer page is canonical for the current 150,000-mile Venture X Business offer."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:150,000 bonus miles",
+      "sources/*issuer*.md:$30,000 in the first 3 months",
+      "sources/*tpg*.md:Earn 150,000 bonus miles"
+    ]
+  },
+  "open_questions": [
+    "Monitor for any return of higher tiered Venture X Business offers; current issuer-visible offer is 150k / $30k / 3mo."
+  ],
+  "community": {
+    "summary": "Capital One issuer and secondary sources support Venture X Business at 150k miles after $30k in 3 months.",
+    "recommended_production_value": {
+      "offer_amount": 150000,
+      "spend_requirement": 30000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high_when_capital_one_issuer_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": ["350k", "200k"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Capital One Venture X Business page",
+        "regex": "150,000|\\$30,000|first 3 months",
+        "stance": "supports_150k_public",
+        "offer_amount": 150000,
+        "spend_requirement": 30000,
+        "spend_window_months": 3,
+        "excerpt": "Capital One issuer page describes 150,000 miles after $30,000 in the first 3 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

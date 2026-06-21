@@ -16,7 +16,7 @@
     "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Issuer source check on 2026-06-20 detected live offer at 100,000 points; prior 150,000-point candidate was stale."
+      "Issuer source check on 2026-06-20 detected live offer at 100,000 points; prior 150,000-point limited-time offer ended 2026-06-15."
     ],
     "source_conflicts": [],
     "last_verified": "2026-06-21"
