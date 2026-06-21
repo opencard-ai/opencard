@@ -26,3 +26,4 @@
 
 - 2026-06-20: Identified mechanism gap: run-all only compares candidate vs production; it needs issuer/live snapshot verification first.
 - 2026-06-20: Implemented issuer live-source check, surfaced drift in QA/apply-plan/review-report, and verified CSR now reports `source_drift_detected`.
+- 2026-06-21: Applied minimal CSR production patch: welcome offer restored from 150,000 to 100,000 Ultimate Rewards points, spend/time unchanged at $6,000/3 months; `npm run validate` passed.

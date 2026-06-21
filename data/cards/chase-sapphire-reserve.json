@@ -7,19 +7,19 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 150000,
+    "bonus_points": 100000,
     "spending_requirement": 6000,
     "time_period_months": 3,
-    "description": "Limited-time offer: earn 150,000 Ultimate Rewards points after spending $6,000 in purchases in the first 3 months from account opening.",
+    "description": "Earn 100,000 Ultimate Rewards points after spending $6,000 in purchases in the first 3 months from account opening.",
     "point_program": "Chase Ultimate Rewards",
-    "estimated_value": 3000,
-    "offer_status": "limited_time_public",
+    "estimated_value": 2000,
+    "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Older forum datapoints may show prior 125k offer; current issuer page is canonical."
+      "Issuer source check on 2026-06-20 detected live offer at 100,000 points; prior 150,000-point candidate was stale."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-14"
+    "last_verified": "2026-06-21"
   },
   "earning_rates": [
     {
@@ -104,7 +104,7 @@
       "notes": "Review Apr 2026."
     }
   ],
-  "last_updated": "2026-05-11T18:36:07.819Z",
+  "last_updated": "2026-06-21T18:52:00.000Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [
