@@ -1,0 +1,285 @@
+{
+  "generated_at": "2026-06-16T22:42:27Z",
+  "scope": "post-approval adaptor config review summary; three Delta business welcome_offer patches applied",
+  "source_index": "opencard/data/adaptor/review-index.json",
+  "summary": {
+    "total_runs": 24,
+    "approved_and_applied_delta_business_offers": 3,
+    "remaining_review_only_real_changes": 0,
+    "close_no_production_delta": 24,
+    "blocked": 0,
+    "can_apply": 0
+  },
+  "applied": [
+    {
+      "card_id": "amex-delta-gold-biz",
+      "run_id": "2026-06-16T18-39-19Z-amex-delta-gold-biz",
+      "approved_fields": [
+        "welcome_offer"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-39-19Z-amex-delta-gold-biz/review-report.md",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "offer_expiry_watch",
+        "no_production_delta"
+      ]
+    },
+    {
+      "card_id": "amex-delta-skymiles-platinum-biz",
+      "run_id": "2026-06-16T18-41-40Z-amex-delta-skymiles-platinum-biz",
+      "approved_fields": [
+        "welcome_offer"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-41-40Z-amex-delta-skymiles-platinum-biz/review-report.md",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "offer_expiry_watch",
+        "no_production_delta"
+      ]
+    },
+    {
+      "card_id": "amex-delta-skymiles-reserve-biz",
+      "run_id": "2026-06-16T18-42-15Z-amex-delta-skymiles-reserve-biz",
+      "approved_fields": [
+        "welcome_offer"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-42-15Z-amex-delta-skymiles-reserve-biz/review-report.md",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "offer_expiry_watch",
+        "no_production_delta"
+      ]
+    }
+  ],
+  "remaining_manual_review_queue": [],
+  "close_queue": [
+    {
+      "card_id": "amex-delta-gold",
+      "run_id": "2026-06-16T18-38-27Z-amex-delta-gold",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "offer_expiry_watch",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-38-27Z-amex-delta-gold/review-report.md"
+    },
+    {
+      "card_id": "amex-delta-gold-biz",
+      "run_id": "2026-06-16T18-39-19Z-amex-delta-gold-biz",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "offer_expiry_watch",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-39-19Z-amex-delta-gold-biz/review-report.md"
+    },
+    {
+      "card_id": "amex-delta-platinum",
+      "run_id": "2026-06-16T18-39-54Z-amex-delta-platinum",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "offer_expiry_watch",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-39-54Z-amex-delta-platinum/review-report.md"
+    },
+    {
+      "card_id": "amex-delta-reserve",
+      "run_id": "2026-06-16T18-40-47Z-amex-delta-reserve",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "offer_expiry_watch",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-40-47Z-amex-delta-reserve/review-report.md"
+    },
+    {
+      "card_id": "amex-delta-skymiles-platinum-biz",
+      "run_id": "2026-06-16T18-41-40Z-amex-delta-skymiles-platinum-biz",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "offer_expiry_watch",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-41-40Z-amex-delta-skymiles-platinum-biz/review-report.md"
+    },
+    {
+      "card_id": "amex-delta-skymiles-reserve-biz",
+      "run_id": "2026-06-16T18-42-15Z-amex-delta-skymiles-reserve-biz",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "offer_expiry_watch",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-42-15Z-amex-delta-skymiles-reserve-biz/review-report.md"
+    },
+    {
+      "card_id": "amex-gold",
+      "run_id": "2026-06-16T18-42-49Z-amex-gold",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "community_source_conflict",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-42-49Z-amex-gold/review-report.md"
+    },
+    {
+      "card_id": "amex-morgan-stanley-platinum",
+      "run_id": "2026-06-16T18-43-25Z-amex-morgan-stanley-platinum",
+      "tags": [
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-43-25Z-amex-morgan-stanley-platinum/review-report.md"
+    },
+    {
+      "card_id": "capital-one-venture-biz",
+      "run_id": "2026-06-16T18-44-01Z-capital-one-venture-biz",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-44-01Z-capital-one-venture-biz/review-report.md"
+    },
+    {
+      "card_id": "chase-hyatt",
+      "run_id": "2026-06-16T18-44-12Z-chase-hyatt",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-44-12Z-chase-hyatt/review-report.md"
+    },
+    {
+      "card_id": "chase-hyatt-biz",
+      "run_id": "2026-06-16T18-44-35Z-chase-hyatt-biz",
+      "tags": [
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-44-35Z-chase-hyatt-biz/review-report.md"
+    },
+    {
+      "card_id": "chase-ihg-premier",
+      "run_id": "2026-06-16T18-44-59Z-chase-ihg-premier",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-44-59Z-chase-ihg-premier/review-report.md"
+    },
+    {
+      "card_id": "chase-marriott-boundless",
+      "run_id": "2026-06-16T18-45-35Z-chase-marriott-boundless",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-45-35Z-chase-marriott-boundless/review-report.md"
+    },
+    {
+      "card_id": "chase-sapphire-preferred",
+      "run_id": "2026-06-16T18-46-12Z-chase-sapphire-preferred",
+      "tags": [
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-46-12Z-chase-sapphire-preferred/review-report.md"
+    },
+    {
+      "card_id": "chase-sapphire-reserve",
+      "run_id": "2026-06-16T18-46-47Z-chase-sapphire-reserve",
+      "tags": [
+        "community_source_conflict",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-46-47Z-chase-sapphire-reserve/review-report.md"
+    },
+    {
+      "card_id": "chase-southwest-priority",
+      "run_id": "2026-06-16T18-47-26Z-chase-southwest-priority",
+      "tags": [
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-47-26Z-chase-southwest-priority/review-report.md"
+    },
+    {
+      "card_id": "chase-united-biz",
+      "run_id": "2026-06-16T18-47-45Z-chase-united-biz",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "community_source_conflict",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-47-45Z-chase-united-biz/review-report.md"
+    },
+    {
+      "card_id": "citi-aadvantage-executive",
+      "run_id": "2026-06-16T18-48-22Z-citi-aadvantage-executive",
+      "tags": [
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-48-22Z-citi-aadvantage-executive/review-report.md"
+    },
+    {
+      "card_id": "citi-aadvantage-globe",
+      "run_id": "2026-06-16T18-48-44Z-citi-aadvantage-globe",
+      "tags": [
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-48-44Z-citi-aadvantage-globe/review-report.md"
+    },
+    {
+      "card_id": "citi-aadvantage-mileup",
+      "run_id": "2026-06-16T18-49-06Z-citi-aadvantage-mileup",
+      "tags": [
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-49-06Z-citi-aadvantage-mileup/review-report.md"
+    },
+    {
+      "card_id": "citi-strata-elite",
+      "run_id": "2026-06-16T18-49-27Z-citi-strata-elite",
+      "tags": [
+        "community_source_conflict",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-49-27Z-citi-strata-elite/review-report.md"
+    },
+    {
+      "card_id": "ihg-one-rewards-traveler",
+      "run_id": "2026-06-16T18-50-01Z-ihg-one-rewards-traveler",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-50-01Z-ihg-one-rewards-traveler/review-report.md"
+    },
+    {
+      "card_id": "southwest-rapid-rewards-plus",
+      "run_id": "2026-06-16T18-50-36Z-southwest-rapid-rewards-plus",
+      "tags": [
+        "conditional_or_tiered_offer",
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-50-36Z-southwest-rapid-rewards-plus/review-report.md"
+    },
+    {
+      "card_id": "southwest-rapid-rewards-premier",
+      "run_id": "2026-06-16T18-50-55Z-southwest-rapid-rewards-premier",
+      "tags": [
+        "no_production_delta"
+      ],
+      "report": "data/adaptor/runs/2026-06-16T18-50-55Z-southwest-rapid-rewards-premier/review-report.md"
+    }
+  ],
+  "rules": [
+    {
+      "id": "close_no_production_delta",
+      "status": "implemented",
+      "action": "No approval needed when changed_fields is empty after freshness-only last_verified normalization."
+    },
+    {
+      "id": "tiered_delta_business_offer_metadata",
+      "status": "applied_to_three_delta_business_cards",
+      "action": "Production welcome_offer keeps concise headline; notes preserve official Amex/Delta tiered/additional-bonus source context."
+    }
+  ]
+}

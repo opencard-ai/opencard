@@ -18,6 +18,20 @@ type SourceSpec = {
   required?: boolean;
 };
 
+type LiveWelcomeOfferCheck = {
+  source_type: 'issuer';
+  source_url: string;
+  source_name: string;
+  matched: boolean;
+  bonus_points: number | null;
+  spending_requirement: number | null;
+  time_period_months: number | null;
+  evidence: string | null;
+  pattern: string | null;
+  drifted: boolean;
+  drift_fields: string[];
+};
+
 type CommunityObservationRule = {
   sourceType: SourceType;
   source: string;
@@ -399,6 +413,78 @@ function sourceText(runDir: string, type: SourceType): string {
     .join('\n');
 }
 
+function normalizeNumber(value: string): number {
+  return Number(value.replace(/[^\d]/g, ''));
+}
+
+function detectIssuerWelcomeOfferCheck(runDir: string): LiveWelcomeOfferCheck | null {
+  const config = configFromRun(runDir);
+  const issuer = config.sources.find((source) => source.type === 'issuer');
+  if (!issuer) return null;
+  const file = sourcePath(runDir, issuer);
+  if (!existsSync(file)) return null;
+  const text = readFileSync(file, 'utf8').replace(/\u00a0/g, ' ');
+  const flattened = text.replace(/\s+/g, ' ');
+
+  const patterns = [
+    /Earn\s+([\d,]+)\s+(?:bonus\s+)?points?[\s\S]{0,120}?after\s+(?:you\s+)?spend\s+\$([\d,]+)[\s\S]{0,120}?(?:first|in the first)\s+(\d+)\s+months?/i,
+    /Earn\s+([\d,]+)\s+(?:bonus\s+)?points?[\s\S]{0,120}?after\s+you\s+spend\s+\$([\d,]+)[\s\S]{0,120}?from account opening\s*\*?/i,
+    /Earn\s+([\d,]+)\s+(?:bonus\s+)?points?[\s\S]{0,160}?after\s+spending\s+\$([\d,]+)[\s\S]{0,120}?(?:first|in the first)\s+(\d+)\s+months?/i,
+    /Earn\s+([\d,]+)\s+(?:bonus\s+)?points?[\s\S]{0,180}?after\s+you\s+spend\s+\$([\d,]+)[\s\S]{0,120}?in purchases in the first\s+(\d+)\s+months?/i,
+  ];
+
+  let bonusPoints: number | null = null;
+  let spendingRequirement: number | null = null;
+  let timePeriodMonths: number | null = null;
+  let evidence: string | null = null;
+  let pattern: string | null = null;
+
+  for (const re of patterns) {
+    const match = flattened.match(re);
+    if (!match) continue;
+    bonusPoints = normalizeNumber(match[1]);
+    spendingRequirement = match[2] ? normalizeNumber(match[2]) : null;
+    timePeriodMonths = match[3] ? Number(match[3]) : null;
+    evidence = match[0].trim();
+    pattern = re.source;
+    break;
+  }
+
+  if (bonusPoints === null) return {
+    source_type: 'issuer',
+    source_url: issuer.url,
+    source_name: issuer.id,
+    matched: false,
+    bonus_points: null,
+    spending_requirement: null,
+    time_period_months: null,
+    evidence: null,
+    pattern: null,
+    drifted: false,
+    drift_fields: [],
+  };
+
+  const candidate = config.candidate?.welcome_offer || {};
+  const driftFields: string[] = [];
+  if (typeof candidate.bonus_points === 'number' && candidate.bonus_points !== bonusPoints) driftFields.push('welcome_offer.bonus_points');
+  if (spendingRequirement !== null && typeof candidate.spending_requirement === 'number' && candidate.spending_requirement !== spendingRequirement) driftFields.push('welcome_offer.spending_requirement');
+  if (timePeriodMonths !== null && typeof candidate.time_period_months === 'number' && candidate.time_period_months !== timePeriodMonths) driftFields.push('welcome_offer.time_period_months');
+
+  return {
+    source_type: 'issuer',
+    source_url: issuer.url,
+    source_name: issuer.id,
+    matched: true,
+    bonus_points: bonusPoints,
+    spending_requirement: spendingRequirement,
+    time_period_months: timePeriodMonths,
+    evidence,
+    pattern,
+    drifted: driftFields.length > 0,
+    drift_fields: driftFields,
+  };
+}
+
 function normalize(runDir: string): void {
   const config = configFromRun(runDir);
   const candidate = replaceAutoDate(deepClone(config.candidate));
@@ -631,6 +717,7 @@ function qa(runDir: string): void {
   const manifestData = readJson(path.join(runDir, 'manifest.json'));
   const candidate = readJson(path.join(runDir, 'candidate.json'));
   const community = existsSync(path.join(runDir, 'community-check.json')) ? readJson(path.join(runDir, 'community-check.json')) : null;
+  const liveCheck = detectIssuerWelcomeOfferCheck(runDir);
   const blocking_issues: string[] = [];
   const warnings: string[] = [];
   const hasIssuer = manifestData.sources.some((s: any) => s.source_type === 'issuer');
@@ -650,6 +737,11 @@ function qa(runDir: string): void {
   if (conditionalWelcomeBonus && !documentedConditionalWelcomeBonus) warnings.push('Welcome offer appears conditional or tiered (for example up-to/additional/employee-card/authorized-user language); verify guaranteed vs conditional bonus before applying.');
   const expiryWarning = requiresWelcomeOffer ? welcomeOfferExpiryWarning(candidate) : null;
   if (expiryWarning) warnings.push(expiryWarning);
+  if (requiresWelcomeOffer && liveCheck?.drifted) {
+    warnings.push(
+      `Issuer source drift detected; candidate is stale for ${liveCheck.drift_fields.join(', ')}. Refresh candidate from live issuer copy before treating this run as no-production-delta.`,
+    );
+  }
   if (requiresWelcomeOffer && community?.community_consensus?.conflict_observed && !Array.isArray(candidate?.candidate?.welcome_offer?.source_conflicts)) {
     blocking_issues.push('source_conflicts metadata missing for observed source conflict');
   }
@@ -676,11 +768,13 @@ function qa(runDir: string): void {
     },
     blocking_issues,
     warnings,
+    live_source_check: liveCheck,
     community_consensus: community?.community_consensus,
     community_sample_counts: community?.sample_counts,
     artifacts: {
       manifest: 'manifest.json',
       candidate: 'candidate.json',
+      live_source_check: liveCheck ? 'live-source-check.json' : null,
       community_check: community ? 'community-check.json' : null,
       qa_report: 'qa-report.json',
       json_diff: 'json-diff.json',
@@ -691,6 +785,15 @@ function qa(runDir: string): void {
       review_report: 'review-report.md',
     },
   });
+  if (liveCheck) {
+    writeJson(path.join(runDir, 'live-source-check.json'), {
+      card_id: run.card_id,
+      run_id: run.run_id,
+      generated_at: new Date().toISOString(),
+      ...liveCheck,
+    });
+    updateRun(runDir, 'live-source-check.json');
+  }
   updateRun(runDir, 'qa-report.json');
 }
 
@@ -737,6 +840,7 @@ function applyPlan(runDir: string): void {
   const run = readJson(path.join(runDir, 'run.json'));
   const qaReport = existsSync(path.join(runDir, 'qa-report.json')) ? readJson(path.join(runDir, 'qa-report.json')) : null;
   const community = existsSync(path.join(runDir, 'community-check.json')) ? readJson(path.join(runDir, 'community-check.json')) : null;
+  const liveCheck = existsSync(path.join(runDir, 'live-source-check.json')) ? readJson(path.join(runDir, 'live-source-check.json')) : null;
   const diffs = diffFields(existing, candidate);
   const changed = diffs.filter((d) => d.status === 'changed');
   const proposedCard = deepClone(existing);
@@ -752,6 +856,7 @@ function applyPlan(runDir: string): void {
   if (!qaReport) safetyIssues.push('qa-report.json missing; run qa first');
   if (qaReport?.verdict === 'blocked') safetyIssues.push(...(qaReport.blocking_issues || ['qa verdict is blocked']));
   if (qaReport?.verdict === 'needs_review') reviewReasons.push(...(qaReport.warnings || ['qa verdict is needs_review']));
+  if (liveCheck?.drifted) reviewReasons.push(`issuer source drift detected: ${liveCheck.drift_fields.join(', ')}`);
   if (community?.community_consensus?.conflict_observed) reviewReasons.push('community/source conflict observed');
   if (changed.length === 0) reviewReasons.push('no production field changes detected');
   const manualFields = changed.filter((d) => PRODUCTION_FIELD_POLICY[d.field]?.action === 'manual_review_required').map((d) => d.field);
@@ -771,6 +876,8 @@ function applyPlan(runDir: string): void {
   const canApply = !!qaReport && qaReport.verdict !== 'blocked' && safetyIssues.length === 0 && unresolvedManualFields.length === 0 && changed.length > 0;
   const recommendation = safetyIssues.length
     ? 'blocked'
+    : liveCheck?.drifted
+      ? 'source_drift_detected'
     : changed.length === 0
       ? 'close_no_production_delta'
       : canApply
@@ -795,6 +902,7 @@ function applyPlan(runDir: string): void {
     recommendation,
     can_apply: canApply,
     qa_verdict: qaReport?.verdict || 'qa_not_run',
+    live_source_check: liveCheck,
     field_policy: PRODUCTION_FIELD_POLICY,
     changed_fields: changed.map((d) => d.field),
     auto_apply_fields: changed.filter((d) => PRODUCTION_FIELD_POLICY[d.field]?.action === 'auto_apply_candidate_if_qa_passes').map((d) => d.field),
@@ -816,6 +924,7 @@ function applyPlan(runDir: string): void {
       proposed_patch: 'proposed-patch.json',
       proposed_card: 'proposed-card.json',
       review_report: 'review-report.md',
+      live_source_check: liveCheck ? 'live-source-check.json' : null,
     },
   });
   writeJson(path.join(runDir, 'json-diff.json'), { card_id: config.cardId, run_id: run.run_id, generated_at: new Date().toISOString(), diffs });
@@ -858,6 +967,7 @@ function review(runDir: string): void {
   const qaReport = existsSync(path.join(runDir, 'qa-report.json')) ? readJson(path.join(runDir, 'qa-report.json')) : null;
   const apply = readJson(path.join(runDir, 'apply-plan.json'));
   const candidate = readJson(path.join(runDir, 'candidate.json'));
+  const liveCheck = existsSync(path.join(runDir, 'live-source-check.json')) ? readJson(path.join(runDir, 'live-source-check.json')) : null;
   let md = `# ${config.cardId} Production Patch Review\n\nRun: \`${run.run_id}\`\nTarget: \`${config.cardPath}\`\n\n`;
   md += `## Recommendation\n\n- recommendation: \`${apply.recommendation}\`\n- can_apply: \`${apply.can_apply}\`\n- qa_verdict: \`${qaReport?.verdict || 'qa_not_run'}\`\n`;
   if (apply.auto_apply_fields?.length) md += `- auto_apply_fields: ${apply.auto_apply_fields.map((f: string) => `\`${f}\``).join(', ')}\n`;
@@ -867,6 +977,19 @@ function review(runDir: string): void {
   md += `- approval: \`${apply.approval?.present ? (apply.approval.valid ? 'valid' : 'invalid') : 'missing'}\`\n`;
   if (apply.safety_issues?.length) md += `- safety_issues: ${apply.safety_issues.join('; ')}\n`;
   if (apply.review_reasons?.length) md += `- review_reasons: ${apply.review_reasons.join('; ')}\n`;
+  if (liveCheck) {
+    md += `\n## Source Drift\n\n`;
+    md += `- issuer_match: \`${liveCheck.matched ? 'yes' : 'no'}\`\n`;
+    md += `- drifted: \`${liveCheck.drifted ? 'yes' : 'no'}\`\n`;
+    if (typeof liveCheck.bonus_points === 'number') md += `- live_bonus_points: \`${liveCheck.bonus_points}\`\n`;
+    if (typeof candidate?.candidate?.welcome_offer?.bonus_points === 'number') md += `- candidate_bonus_points: \`${candidate.candidate.welcome_offer.bonus_points}\`\n`;
+    if (typeof liveCheck.spending_requirement === 'number') md += `- live_spending_requirement: \`$${liveCheck.spending_requirement.toLocaleString()}\`\n`;
+    if (typeof candidate?.candidate?.welcome_offer?.spending_requirement === 'number') md += `- candidate_spending_requirement: \`$${candidate.candidate.welcome_offer.spending_requirement.toLocaleString()}\`\n`;
+    if (typeof liveCheck.time_period_months === 'number') md += `- live_time_period_months: \`${liveCheck.time_period_months}\`\n`;
+    if (typeof candidate?.candidate?.welcome_offer?.time_period_months === 'number') md += `- candidate_time_period_months: \`${candidate.candidate.welcome_offer.time_period_months}\`\n`;
+    if (liveCheck.evidence) md += `- evidence: \`${liveCheck.evidence.replace(/`/g, '\\`')}\`\n`;
+    if (liveCheck.drift_fields?.length) md += `- drift_fields: ${liveCheck.drift_fields.map((f: string) => `\`${f}\``).join(', ')}\n`;
+  }
   md += `\n## Field Changes\n`;
   for (const diff of diffs) {
     md += `\n### ${diff.field}\n\n`;

@@ -9,6 +9,7 @@ import OpenDateRow from "@/app/components/OpenDateRow";
 import HelpHint from "@/app/components/HelpHint";
 import CardArt from "@/app/components/CardArt";
 import MyCardsAssistant from "@/app/components/MyCardsAssistant";
+import CardStayWidget from "@/app/components/CardStayWidget";
 import { toast } from "@/lib/toast";
 
 const STORAGE_KEY = "opencard_existing_cards";
@@ -763,6 +764,7 @@ export default function MyCardsPage({
       </div>
 
       <div className="max-w-2xl mx-auto px-4 py-6 space-y-4">
+        <CardStayWidget lang={lang} />
         {/* Email Subscription */}
         {!isSubscribed ? (
           <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">

@@ -1,0 +1,56 @@
+[
+  {
+    "program": "amex_fhr",
+    "label": "Amex Fine Hotels + Resorts",
+    "source_url": "https://www.americanexpress.com/en-us/travel/discover-book-stays/fine-hotels-resorts/",
+    "last_verified": "2026-06-15",
+    "confidence": "high",
+    "eligible_card_ids": ["amex-platinum", "amex-biz-platinum", "amex-marriott-brilliant", "amex-morgan-stanley-platinum"],
+    "supporting_credit_terms": ["fhr", "fine hotels", "hotel credit"]
+  },
+  {
+    "program": "amex_thc",
+    "label": "Amex The Hotel Collection",
+    "source_url": "https://www.americanexpress.com/en-us/travel/discover-book-stays/hotel-collection/",
+    "last_verified": "2026-06-15",
+    "confidence": "high",
+    "eligible_card_ids": ["amex-platinum", "amex-biz-platinum", "amex-marriott-brilliant", "amex-morgan-stanley-platinum"],
+    "supporting_credit_terms": ["hotel collection"]
+  },
+  {
+    "program": "chase_the_edit",
+    "label": "Chase The Edit",
+    "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve/the-edit",
+    "last_verified": "2026-06-15",
+    "confidence": "high",
+    "eligible_card_ids": ["chase-sapphire-reserve", "chase-sapphire-reserve-biz", "jpmorgan-reserve"],
+    "supporting_credit_terms": ["the edit"]
+  },
+  {
+    "program": "capital_one_premier_collection",
+    "label": "Capital One Premier Collection",
+    "source_url": "https://www.capitalone.com/learn-grow/money-management/capital-one-premier-collection/",
+    "last_verified": "2026-06-15",
+    "confidence": "high",
+    "eligible_card_ids": ["capital-one-venture"],
+    "supporting_credit_terms": ["capital one travel hotel experience credit", "premier collection"]
+  },
+  {
+    "program": "hilton_resort_credit",
+    "label": "Hilton Resort Credit",
+    "source_url": "https://www.americanexpress.com/en-us/travel/",
+    "last_verified": "2026-06-15",
+    "confidence": "medium",
+    "eligible_card_ids": ["amex-hilton-honors-aspire"],
+    "supporting_credit_terms": ["hilton resort credit"]
+  },
+  {
+    "program": "hilton_free_night",
+    "label": "Hilton Free Night / Weekend Night",
+    "source_url": "https://www.americanexpress.com/en-us/credit-cards/card/hilton-honors-aspire/",
+    "last_verified": "2026-06-15",
+    "confidence": "medium",
+    "eligible_card_ids": ["amex-hilton-honors-aspire"],
+    "supporting_credit_terms": ["free night", "weekend night", "annual free night reward"]
+  }
+]
