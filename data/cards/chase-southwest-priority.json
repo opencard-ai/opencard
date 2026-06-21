@@ -7,19 +7,19 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 90000,
-    "spending_requirement": 3000,
+    "bonus_points": 80000,
+    "spending_requirement": 1000,
     "time_period_months": 3,
-    "description": "Limited-time offer: Earn 90,000 Southwest Rapid Rewards points after spending $3,000 in purchases in the first 3 months from account opening.",
+    "description": "Earn 80,000 Southwest Rapid Rewards points after spending $1,000 in purchases in the first 3 months from account opening.",
     "point_program": "Southwest Rapid Rewards",
-    "estimated_value": 1260,
-    "offer_status": "limited_time_public",
+    "estimated_value": 1120,
+    "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Chase Southwest card page and Doctor of Credit corroborate the 90k Priority offer."
+      "Issuer source check on 2026-06-20 detected live offer at 80,000 points; prior 90,000-point limited-time candidate is stale."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-06"
+    "last_verified": "2026-06-21"
   },
   "earning_rates": [
     {
@@ -68,7 +68,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-29T05:25:54.022Z",
+  "last_updated": "2026-06-21T20:56:00.000Z",
   "welcome_bonus": {
     "amount": 60000,
     "type": "points",

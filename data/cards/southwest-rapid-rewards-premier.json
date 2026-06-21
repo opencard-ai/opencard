@@ -7,19 +7,19 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 85000,
-    "spending_requirement": 2000,
+    "bonus_points": 80000,
+    "spending_requirement": 1000,
     "time_period_months": 3,
-    "description": "Limited-time offer: Earn 85,000 Southwest Rapid Rewards points after spending $2,000 in purchases in the first 3 months from account opening.",
+    "description": "Earn 80,000 Southwest Rapid Rewards points after spending $1,000 in purchases in the first 3 months from account opening.",
     "point_program": "Southwest Rapid Rewards",
-    "estimated_value": 1190,
-    "offer_status": "limited_time_public",
+    "estimated_value": 1120,
+    "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Chase Southwest card page and Doctor of Credit corroborate the 85k Premier offer."
+      "Issuer source check on 2026-06-20 detected live offer at 80,000 points; prior 85,000-point limited-time candidate is stale."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-14"
+    "last_verified": "2026-06-21"
   },
   "earning_rates": [
     {
@@ -86,7 +86,7 @@
     }
   ],
   "notes": "Mid-tier Southwest card. $149 AF, but 6,000 anniversary points (~$90) covers ~60%. First bag free + EarlyBird Check-In are practical perks. As of 2025, AF increased from $99 to $149. Better earning on Southwest (3x vs 2x) than Plus. Good for regular Southwest flyers who want A-List qualifying points.",
-  "last_updated": "2026-04-29T06:23:39.713Z",
+  "last_updated": "2026-06-21T20:56:00.000Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

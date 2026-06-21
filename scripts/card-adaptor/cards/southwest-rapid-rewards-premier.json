@@ -32,16 +32,16 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 85000,
-      "spending_requirement": 2000,
+      "bonus_points": 80000,
+      "spending_requirement": 1000,
       "time_period_months": 3,
-      "description": "Limited-time offer: Earn 85,000 Southwest Rapid Rewards points after spending $2,000 in purchases in the first 3 months from account opening.",
+      "description": "Earn 80,000 Southwest Rapid Rewards points after spending $1,000 in purchases in the first 3 months from account opening.",
       "point_program": "Southwest Rapid Rewards",
-      "estimated_value": 1190,
-      "offer_status": "limited_time_public",
+      "estimated_value": 1120,
+      "offer_status": "public",
       "confidence": "high",
       "notes": [
-        "Chase Southwest card page and Doctor of Credit corroborate the 85k Premier offer."
+        "Issuer source check on 2026-06-20 detected live offer at 80,000 points; prior 85,000-point limited-time candidate is stale."
       ],
       "source_conflicts": [],
       "last_verified": "AUTO_DATE"
@@ -49,46 +49,38 @@
   },
   "citations": {
     "welcome_offer": [
-      "sources/*issuer-southwest*.md:Earn 85,000 bonus points after you spend $2,000 in the first 3 months",
-      "sources/*doc*.md:Southwest Premier: Earn 85,000 points after you spend $2,000"
+      "sources/*issuer-southwest*.md:Earn 80,000 bonus points",
+      "sources/*issuer-southwest*.md:$1,000 in the first 3 months"
     ]
   },
   "open_questions": [
-    "Confirm issuer page still shows the limited-time 85k Premier offer before applying."
+    "Monitor for future elevated limited-time offers; current issuer-visible public offer has replaced the prior elevated candidate."
   ],
   "community": {
-    "summary": "Current issuer and secondary sources support the limited-time Southwest Premier 85k / $2k / 3mo offer.",
+    "summary": "Issuer live source supports 80,000 / $1,000 / 3mo; prior elevated candidate is stale.",
     "recommended_production_value": {
-      "offer_amount": 85000,
-      "spend_requirement": 2000,
+      "offer_amount": 80000,
+      "spend_requirement": 1000,
       "spend_window_months": 3,
-      "status": "limited_time_public"
+      "status": "public"
     },
     "confidence": "high_when_chase_southwest_page_present",
     "ymmv_or_targeted_possible": false,
-    "conflictStanceIncludes": [],
+    "conflictStanceIncludes": [
+      "85k",
+      "85,000"
+    ],
     "observations": [
       {
         "sourceType": "issuer",
         "source": "Chase Southwest card page",
-        "regex": "85,000[\\s\\S]{0,160}\\$2,000|\\$2,000[\\s\\S]{0,160}85,000",
-        "stance": "supports_85k_public_limited_time",
-        "offer_amount": 85000,
-        "spend_requirement": 2000,
+        "regex": "80,000|\\$1,000|first 3 months",
+        "stance": "supports_80k_public",
+        "offer_amount": 80000,
+        "spend_requirement": 1000,
         "spend_window_months": 3,
-        "excerpt": "Chase Southwest page lists Premier at 85,000 points after $2,000 in 3 months.",
+        "excerpt": "Chase Southwest card page shows 80,000 points after $1,000 in the first 3 months.",
         "confidence": "high_if_present"
-      },
-      {
-        "sourceType": "doc",
-        "source": "Doctor of Credit",
-        "regex": "Premier[\\s\\S]{0,240}85,000|85,000[\\s\\S]{0,240}Premier",
-        "stance": "supports_85k_secondary",
-        "offer_amount": 85000,
-        "spend_requirement": 2000,
-        "spend_window_months": 3,
-        "excerpt": "DoC tracks Southwest Premier 85k after $2k/3mo.",
-        "confidence": "high_for_secondary"
       }
     ]
   }

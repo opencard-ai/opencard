@@ -32,16 +32,16 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 90000,
-      "spending_requirement": 3000,
+      "bonus_points": 80000,
+      "spending_requirement": 1000,
       "time_period_months": 3,
-      "description": "Limited-time offer: Earn 90,000 Southwest Rapid Rewards points after spending $3,000 in purchases in the first 3 months from account opening.",
+      "description": "Earn 80,000 Southwest Rapid Rewards points after spending $1,000 in purchases in the first 3 months from account opening.",
       "point_program": "Southwest Rapid Rewards",
-      "estimated_value": 1260,
-      "offer_status": "limited_time_public",
+      "estimated_value": 1120,
+      "offer_status": "public",
       "confidence": "high",
       "notes": [
-        "Chase Southwest card page and Doctor of Credit corroborate the 90k Priority offer."
+        "Issuer source check on 2026-06-20 detected live offer at 80,000 points; prior 90,000-point limited-time candidate is stale."
       ],
       "source_conflicts": [],
       "last_verified": "AUTO_DATE"
@@ -49,46 +49,38 @@
   },
   "citations": {
     "welcome_offer": [
-      "sources/*issuer-southwest*.md:Earn 90,000 bonus points after you spend $3,000 in the first 3 months",
-      "sources/*doc*.md:Southwest Priority: Earn 90,000 points after you spend $3,000"
+      "sources/*issuer-southwest*.md:Earn 80,000 bonus points",
+      "sources/*issuer-southwest*.md:$1,000 in the first 3 months"
     ]
   },
   "open_questions": [
-    "Confirm issuer page still shows the limited-time 90k Priority offer before applying."
+    "Monitor for future elevated limited-time offers; current issuer-visible public offer has replaced the prior elevated candidate."
   ],
   "community": {
-    "summary": "Current issuer and secondary sources support the limited-time Southwest Priority 90k / $3k / 3mo offer.",
+    "summary": "Issuer live source supports 80,000 / $1,000 / 3mo; prior elevated candidate is stale.",
     "recommended_production_value": {
-      "offer_amount": 90000,
-      "spend_requirement": 3000,
+      "offer_amount": 80000,
+      "spend_requirement": 1000,
       "spend_window_months": 3,
-      "status": "limited_time_public"
+      "status": "public"
     },
     "confidence": "high_when_chase_southwest_page_present",
     "ymmv_or_targeted_possible": false,
-    "conflictStanceIncludes": [],
+    "conflictStanceIncludes": [
+      "90k",
+      "90,000"
+    ],
     "observations": [
       {
         "sourceType": "issuer",
         "source": "Chase Southwest card page",
-        "regex": "90,000[\\s\\S]{0,160}\\$3,000|\\$3,000[\\s\\S]{0,160}90,000",
-        "stance": "supports_90k_public_limited_time",
-        "offer_amount": 90000,
-        "spend_requirement": 3000,
+        "regex": "80,000|\\$1,000|first 3 months",
+        "stance": "supports_80k_public",
+        "offer_amount": 80000,
+        "spend_requirement": 1000,
         "spend_window_months": 3,
-        "excerpt": "Chase Southwest page lists Priority at 90,000 points after $3,000 in 3 months.",
+        "excerpt": "Chase Southwest card page shows 80,000 points after $1,000 in the first 3 months.",
         "confidence": "high_if_present"
-      },
-      {
-        "sourceType": "doc",
-        "source": "Doctor of Credit",
-        "regex": "Priority[\\s\\S]{0,240}90,000|90,000[\\s\\S]{0,240}Priority",
-        "stance": "supports_90k_secondary",
-        "offer_amount": 90000,
-        "spend_requirement": 3000,
-        "spend_window_months": 3,
-        "excerpt": "DoC tracks Southwest Priority 90k after $3k/3mo.",
-        "confidence": "high_for_secondary"
       }
     ]
   }

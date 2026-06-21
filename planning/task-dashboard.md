@@ -75,3 +75,51 @@
 - 2026-06-21: Added Hilton Aspire / Hilton Business adaptor configs with 2026-07-29 expiry tracking.
 - 2026-06-21: Added high-priority business adaptor configs for CSR Business, Amex Business Platinum, Venture X Business, Amex Business Gold, and Ink Business Preferred.
 - 2026-06-21: Live search confirmed CSR Business 200k is supported by Chase official `reservebusiness0626` page; updated production card accordingly.
+
+---
+
+# Task Dashboard — Pending Queue Cleanup + Confirmed Drift Refresh
+
+- Owner: Kacey
+- Status: completed
+- Priority: high
+- Scope: Clear stale pending card artifacts and refresh only the 4 watcher-confirmed issuer drift cards.
+
+## Tasks
+
+1. Clear pending card artifacts
+   - Status: completed
+   - Deliverable: reject all pending artifacts instead of applying them directly.
+   - Acceptance: `artifacts/card-updates/pending-index.md` reports `total: 0`.
+
+2. Refresh `chase-ihg-premier`
+   - Status: completed
+   - Deliverable: production + adaptor candidate updated to 150,000 / $3,000 / 3 months.
+   - Acceptance: prior 185k tiered candidate marked stale.
+
+3. Refresh `ihg-one-rewards-traveler`
+   - Status: completed
+   - Deliverable: production + adaptor candidate updated to 90,000 / $2,000 / 3 months.
+   - Acceptance: prior 125k tiered candidate marked stale.
+
+4. Refresh `chase-southwest-priority`
+   - Status: completed
+   - Deliverable: production + adaptor candidate updated to 80,000 / $1,000 / 3 months.
+   - Acceptance: prior 90k candidate marked stale.
+
+5. Refresh `southwest-rapid-rewards-premier`
+   - Status: completed
+   - Deliverable: production + adaptor candidate updated to 80,000 / $1,000 / 3 months.
+   - Acceptance: prior 85k candidate marked stale.
+
+6. Amex as-high-as handling
+   - Status: completed
+   - Deliverable: no production auto-apply for Amex personalized/as-high-as offers.
+   - Acceptance: Amex artifacts rejected/closed; metadata-only stance preserved.
+
+## Progress Log
+
+- 2026-06-21: Rejected all 14 pending artifacts; pending queue now reports `total: 0`.
+- 2026-06-21: Updated the 4 watcher-confirmed drift cards in both production card JSON and adaptor config candidates.
+- 2026-06-21: Re-ran the 4 refreshed adaptors; all returned `qa_verdict: pass` and `recommendation: close_no_production_delta`.
+- 2026-06-21: Rejected the 4 post-refresh verification artifacts; pending queue returned to `total: 0`; `npm run validate` passed.

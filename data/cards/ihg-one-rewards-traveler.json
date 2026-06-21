@@ -7,19 +7,19 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 125000,
-    "spending_requirement": 4000,
-    "time_period_months": 6,
-    "description": "Limited-time offer: Earn up to 125,000 IHG One Rewards bonus points: 90,000 points after spending $2,000 in the first 3 months, plus 35,000 additional points after spending $4,000 total in the first 6 months from account opening.",
+    "bonus_points": 90000,
+    "spending_requirement": 2000,
+    "time_period_months": 3,
+    "description": "Earn 90,000 IHG One Rewards bonus points after spending $2,000 in purchases in the first 3 months from account opening.",
     "point_program": "IHG Rewards",
-    "estimated_value": 625,
-    "offer_status": "public_limited_time",
+    "estimated_value": 450,
+    "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Issuer and secondary sources describe this as an up-to 125k tiered public limited-time offer."
+      "Issuer source check on 2026-06-20 detected live offer at 90,000 points; prior up-to-125,000 tiered limited-time candidate is stale."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-06"
+    "last_verified": "2026-06-21"
   },
   "earning_rates": [
     {
@@ -92,7 +92,7 @@
     }
   ],
   "notes": "No AF version of IHG card. Lower earning than Premier (17x vs 26x at IHG) and no free night per year, but Gold status (not Platinum) and $0 AF. Good for occasional IHG guests who don't want to pay an annual fee. The 4th night free still applies to award bookings.",
-  "last_updated": "2026-04-29T05:25:54.022Z",
+  "last_updated": "2026-06-21T20:56:00.000Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
