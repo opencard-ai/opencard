@@ -1,20 +1,103 @@
 {
   "items": [
     {
-      "title": "DoorDash DashPass Members: 20% off Stubhub, 10% off DoorDashDoorDash, Lyft, Lowe’s & More",
+      "title": "DoorDash DashPass Members: 20% off Stubhub, 10% off eBay, Best Buy, DoorDash, Lowe’s & More",
       "url": "https://www.doctorofcredit.com/doordash-save-15-off-many-egiftcard-brands-starbucks-zift-amazon-lowes-doordash-walgreens-outback-and-many-more/",
       "source": "Doctor of Credit",
       "categories": [
         "Gift Card Deals",
         "doordash"
       ],
-      "ts": "2026-06-28T17:32:54.000Z",
-      "title_en": "DoorDash DashPass Members: 20% off Stubhub, 10% off DoorDashDoorDash, Lyft, Lowe’s & More",
+      "ts": "2026-06-28T22:36:54.000Z",
+      "title_en": "DoorDash DashPass Members: 20% off Stubhub, 10% off eBay, Best Buy, DoorDash, Lowe’s & More",
       "summary_en": "",
-      "title_zh": "DoorDash DashPass 會員：Stubhub 8折、DoorDash、Lyft、Lowe’s 等10%折扣",
-      "summary_zh": "DashPass 會員可在 Stubhub 獲得 20% 折扣，並在 DoorDash、Lyft、Lowe’s 等處享有 10% 折扣。",
-      "title_es": "Miembros de DoorDash DashPass: 20% de descuento en Stubhub, 10% de descuento en DoorDash, Lyft, Lowe’s y más.",
-      "summary_es": "Los miembros de DoorDash DashPass obtienen descuentos exclusivos en Stubhub, DoorDash, Lyft, Lowe’s y más."
+      "title_zh": "DoorDash DashPass Members: 20% off Stubhub, 10% off eBay, Best Buy, DoorDash, Lowe’s & More",
+      "summary_zh": "",
+      "title_es": "Miembros de DoorDash DashPass: 20% de descuento en Stubhub, 10% de descuento en eBay, Best Buy, DoorDash, Lowe’s y más.",
+      "summary_es": "Los miembros de DoorDash DashPass obtienen descuentos exclusivos del 20% en Stubhub y del 10% en eBay, Best Buy, DoorDash, Lowe’s y más."
+    },
+    {
+      "title": "Venmo: Pay $30 on Whatnot & Get $10 Bonus",
+      "url": "https://www.doctorofcredit.com/venmo-pay-30-on-whatnot-get-10-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "venmo"
+      ],
+      "ts": "2026-06-28T21:52:41.000Z",
+      "title_en": "Venmo: Pay $30 on Whatnot & Get $10 Bonus",
+      "summary_en": "",
+      "title_zh": "Venmo: Pay $30 on Whatnot & Get $10 Bonus",
+      "summary_zh": "",
+      "title_es": "Venmo: Paga $30 en Whatnot y obtén un bono de $10.",
+      "summary_es": "Venmo te regala $10 al gastar $30 en la plataforma Whatnot."
+    },
+    {
+      "title": "Staples: No Purchase Fee On $200 Visa Gift Cards (6/28-7/4)",
+      "url": "https://www.doctorofcredit.com/staples-no-purchase-fee-on-200-visa-gift-cards-10-31-11-6-limit-5/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Manufactured Spending",
+        "staples",
+        "visa gift cards"
+      ],
+      "ts": "2026-06-28T20:32:28.000Z",
+      "title_en": "Staples: No Purchase Fee On $200 Visa Gift Cards (6/28-7/4)",
+      "summary_en": "",
+      "title_zh": "Staples: No Purchase Fee On $200 Visa Gift Cards (6/28-7/4)",
+      "summary_zh": "",
+      "title_es": "Staples: Sin tarifa de compra en tarjetas de regalo Visa de $200 (6/28-7/4).",
+      "summary_es": "Staples elimina la tarifa de compra en tarjetas de regalo Visa de $200 durante una semana."
+    },
+    {
+      "title": "Amazon: Save 40% On Select Dog Treats (Must Buy 4)",
+      "url": "https://www.doctorofcredit.com/amazon-save-40-on-select-dog-treats-must-buy-4/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "amazon",
+        "pet stores"
+      ],
+      "ts": "2026-06-28T20:26:55.000Z",
+      "title_en": "Amazon: Save 40% On Select Dog Treats (Must Buy 4)",
+      "summary_en": "",
+      "title_zh": "Amazon: Save 40% On Select Dog Treats (Must Buy 4)",
+      "summary_zh": "",
+      "title_es": "Amazon: Ahorra 40% en golosinas para perros seleccionadas (debes comprar 4).",
+      "summary_es": "Amazon ofrece un 40% de descuento en golosinas para perros seleccionadas al comprar cuatro unidades."
+    },
+    {
+      "title": "(Update) New ‘Verizon Shine’ Rewards Program: 3% Back Verizon Dollars, Weekly Reward Drops (like T-Mobile Tuesday), Avoid Fees",
+      "url": "https://www.doctorofcredit.com/new-verizon-shine-rewards-program-3-back-verizon-dollars-weekly-reward-drops-like-t-mobile-tuesday-avoid-fees/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "verizon"
+      ],
+      "ts": "2026-06-28T20:21:01.000Z",
+      "title_en": "(Update) New ‘Verizon Shine’ Rewards Program: 3% Back Verizon Dollars, Weekly Reward Drops (like T-Mobile Tuesday), Avoid Fees",
+      "summary_en": "",
+      "title_zh": "(Update) New ‘Verizon Shine’ Rewards Program: 3% Back Verizon Dollars, Weekly Reward Drops (like T-Mobile Tuesday), Avoid Fees",
+      "summary_zh": "",
+      "title_es": "(Actualización) Nuevo programa de recompensas ‘Verizon Shine’: 3% de devolución en dólares Verizon, recompensas semanales (como T-Mobile Tuesday), sin tarifas.",
+      "summary_es": "El nuevo programa Verizon Shine devuelve un 3% en dólares Verizon y entrega recompensas semanales sin costos adicionales."
+    },
+    {
+      "title": "Dollar General: Save 15% On Giftcards For DoorDash, Sonic, Roblox and more",
+      "url": "https://www.doctorofcredit.com/dollar-general-save-15-on-giftcards-for-doordash-sonic-roblox-and-more/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Gift Card Deals",
+        "dollar general",
+        "doordash"
+      ],
+      "ts": "2026-06-28T20:12:16.000Z",
+      "title_en": "Dollar General: Save 15% On Giftcards For DoorDash, Sonic, Roblox and more",
+      "summary_en": "",
+      "title_zh": "Dollar General: Save 15% On Giftcards For DoorDash, Sonic, Roblox and more",
+      "summary_zh": "",
+      "title_es": "Dollar General: Ahorra 15% en tarjetas de regalo para DoorDash, Sonic, Roblox y más.",
+      "summary_es": "Dollar General otorga un 15% de descuento en tarjetas de regalo para DoorDash, Sonic, Roblox y otros servicios."
     },
     {
       "title": "Chase/AmEx/U.S. Bank Offers: Get 5% Back At Food Lion (Max $5 Back)",
@@ -28,10 +111,10 @@
       "ts": "2026-06-28T17:00:18.000Z",
       "title_en": "Chase/AmEx/U.S. Bank Offers: Get 5% Back At Food Lion (Max $5 Back)",
       "summary_en": "",
-      "title_zh": "Chase/AmEx/美國銀行優惠：Food Lion 最高 5% 現金回饋（上限 $5）",
-      "summary_zh": "持卡人在 Food Lion 消費可獲得最高 5% 的現金回饋，最高可回饋 5 美元。",
-      "title_es": "Ofertas de Chase/AmEx/U.S. Bank: Obtén 5% de regreso en Food Lion (máximo $5 de regreso).",
-      "summary_es": "Chase, American Express y U.S. Bank ofrecen un 5% de regreso en compras en Food Lion, hasta $5."
+      "title_zh": "Chase/AmEx/U.S. Bank Offers: Get 5% Back At Food Lion (Max $5 Back)",
+      "summary_zh": "",
+      "title_es": "Ofertas de Chase/AmEx/U.S. Bank: Obtén 5% de devolución en Food Lion (máximo $5 de devolución).",
+      "summary_es": "Las tarjetas de Chase, American Express y U.S. Bank dan un 5% de devolución en Food Lion, hasta $5."
     },
     {
       "title": "[YMMV] OKX: Buy $10 in Crypto for Five Days & Get $50 XRP",
@@ -44,10 +127,10 @@
       "ts": "2026-06-28T16:46:40.000Z",
       "title_en": "[YMMV] OKX: Buy $10 in Crypto for Five Days & Get $50 XRP",
       "summary_en": "",
-      "title_zh": "【YMMV】OKX：連續五天購買 10 美元加密貨幣，即獲 50 XRP",
-      "summary_zh": "在 OKX 平台連續五天每日購買 10 美元的加密貨幣，即可獲得 50 XRP 獎勵。",
-      "title_es": "[YMMV] OKX: Compra $10 en criptomonedas durante cinco días y obtén $50 en XRP.",
-      "summary_es": "OKX te regala $50 en XRP si compras $10 en criptomonedas durante cinco días, aunque los resultados pueden variar."
+      "title_zh": "[YMMV] OKX: Buy $10 in Crypto for Five Days & Get $50 XRP",
+      "summary_zh": "",
+      "title_es": "[YMMV] OKX: Compra $10 en cripto durante cinco días y obtén $50 en XRP.",
+      "summary_es": "OKX regalará $50 en XRP a quienes compren $10 en criptomonedas durante cinco días."
     },
     {
       "title": "Amazon: Spend $30, Save $10 On Select Grocery Items",
@@ -61,10 +144,10 @@
       "ts": "2026-06-28T13:05:07.000Z",
       "title_en": "Amazon: Spend $30, Save $10 On Select Grocery Items",
       "summary_en": "",
-      "title_zh": "Amazon：消費 30 美元，精選食品雜貨省 10 美元",
-      "summary_zh": "在 Amazon 上購買精選食品雜貨，單筆滿 30 美元即可減免 10 美元。",
-      "title_es": "Amazon: Gastar $30, Ahorra $10 en artículos de comestibles seleccionados.",
-      "summary_es": "Amazon ofrece un ahorro de $10 al gastar $30 en ciertos productos de comestibles."
+      "title_zh": "Amazon: Spend $30, Save $10 On Select Grocery Items",
+      "summary_zh": "",
+      "title_es": "Amazon: Gasta $30, ahorra $10 en ciertos artículos de supermercado.",
+      "summary_es": "Amazon proporciona un ahorro de $10 al gastar $30 en ciertos productos de supermercado."
     },
     {
       "title": "7-Eleven 7NOW App Promo Codes: $10 off $20 With Promo Code SUMMER10",
@@ -77,45 +160,11 @@
       "ts": "2026-06-27T13:50:41.000Z",
       "title_en": "7-Eleven 7NOW App Promo Codes: $10 off $20 With Promo Code SUMMER10",
       "summary_en": "",
-      "title_zh": "7-Eleven 7NOW App 優惠碼：使用優惠碼 SUMMER10，消費滿 20 美元即減 10 美元",
-      "summary_zh": "透過 7NOW App 使用 SUMMER10 優惠碼，單筆消費滿 20 美元可享 10 美元折扣。",
-      "title_es": "Códigos promocionales de la app 7-Eleven 7NOW: $10 de descuento en $20 con el código promocional SUMMER10.",
-      "summary_es": "La app 7NOW de 7-Eleven tiene un código SUMMER10 que otorga $10 de descuento en una compra de $20."
-    },
-    {
-      "title": "[Expired] Get Automatic 50% Back On All Amazon Haul Purchases – Amazon Giftcard Deal (Today Only, 6/26)",
-      "url": "https://www.doctorofcredit.com/get-automatic-50-back-on-all-amazon-haul-purchases-amazon-giftcard-rebate-today-only-6-26/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "amazon",
-        "amazon haul"
-      ],
-      "ts": "2026-06-26T21:00:32.000Z",
-      "title_en": "[Expired] Get Automatic 50% Back On All Amazon Haul Purchases – Amazon Giftcard Deal (Today Only, 6/26)",
-      "summary_en": "",
-      "title_zh": "【已過期】Amazon Haul 全部訂單自動 50% 回饋 – Amazon 禮品卡優惠（僅限今日 6/26）",
-      "summary_zh": "Amazon Haul 的所有訂單將自動獲得 50% 的回饋，優惠僅限今天（6 月 26 日）。",
-      "title_es": "[Expirado] Obtén automáticamente 50% de regreso en todas las compras de Amazon Haul – Oferta de tarjeta de regalo de Amazon (solo hoy, 26/6).",
-      "summary_es": "Amazon Haul devuelve automáticamente el 50% en todas las compras, pero la oferta ya expiró el 26 de junio."
-    },
-    {
-      "title": "Wintrust Community Banks (Elan) Everyday Rewards+ $250 Signup Bonus",
-      "url": "https://www.doctorofcredit.com/wintrust-community-banks-elan-everyday-rewards-250-signup-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "big",
-        "signup bonus"
-      ],
-      "ts": "2026-06-26T20:48:19.000Z",
-      "title_en": "Wintrust Community Banks (Elan) Everyday Rewards+ $250 Signup Bonus",
-      "summary_en": "",
-      "title_zh": "Wintrust Community Banks (Elan) Everyday Rewards+ 新戶 250 美元獎勵",
-      "summary_zh": "新用戶在 Wintrust Community Banks (Elan) 開戶並滿足條件後，可獲得 250 美元的獎勵金。",
-      "title_es": "Wintrust Community Banks (Elan) Bono de inscripción de $250 en Everyday Rewards+.",
-      "summary_es": "Wintrust Community Banks ofrece un bono de inscripción de $250 al registrarte en Everyday Rewards+."
+      "title_zh": "7-Eleven 7NOW App Promo Codes: $10 off $20 With Promo Code SUMMER10",
+      "summary_zh": "",
+      "title_es": "7-Eleven 7NOW Códigos promocionales: $10 de descuento en $20 con el código promocional SUMMER10.",
+      "summary_es": "7-Eleven ofrece $10 de descuento en una compra de $20 al usar el código promocional SUMMER10 en la app 7NOW."
     }
   ],
-  "fetched": "2026-06-28T20:09:56.208Z"
+  "fetched": "2026-06-29T02:10:52.112Z"
 }
