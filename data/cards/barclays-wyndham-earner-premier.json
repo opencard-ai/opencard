@@ -1,0 +1,125 @@
+{
+  "card_id": "barclays-wyndham-earner-premier",
+  "name": "Wyndham Rewards Earner Premier Card",
+  "issuer": "Barclays",
+  "network": "visa",
+  "annual_fee": 395,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "bonus_points": 120000,
+    "spending_requirement": 6000,
+    "time_period_months": 4,
+    "description": "Earn up to 120,000 Wyndham Rewards points: 90,000 points after spending $6,000 in the first 120 days, plus 30,000 points after spending $750 on Hotels by Wyndham in the first 180 days.",
+    "point_program": "Wyndham Rewards",
+    "estimated_value": 960,
+    "offer_status": "public_new_card",
+    "confidence": "high",
+    "last_verified": "2026-06-30",
+    "notes": [
+      "Estimated value intentionally conservative because Wyndham adds a new 45,000-point top redemption tier on 2026-09-15."
+    ]
+  },
+  "earning_rates": [
+    {
+      "category": "Hotels by Wyndham",
+      "rate": 8,
+      "notes": "8x points on Hotels by Wyndham."
+    },
+    {
+      "category": "Dining",
+      "rate": 4,
+      "notes": "Eligible dining."
+    },
+    {
+      "category": "Groceries",
+      "rate": 4,
+      "notes": "Eligible grocery purchases."
+    },
+    {
+      "category": "Travel",
+      "rate": 4,
+      "notes": "Eligible travel including gas, EV charging, air, car rental, rideshare, tolls and trains."
+    },
+    {
+      "category": "All other purchases",
+      "rate": 1,
+      "notes": "Excluding Vacation Club down payments per issuer press release."
+    }
+  ],
+  "annual_credits": [],
+  "recurring_credits": [],
+  "travel_benefits": {
+    "hotel_status": [],
+    "lounge_access": [],
+    "other_benefits": [
+      {
+        "name": "25% discount on free night redemptions",
+        "description": "Premier card includes a 25% discount on free night redemptions; terms apply."
+      },
+      {
+        "name": "Wyndham Rewards Insider membership",
+        "description": "Complimentary Wyndham Rewards Insider membership; terms apply."
+      },
+      {
+        "name": "Points Payback",
+        "description": "Redeem points for statement credit via Points Payback; terms apply."
+      },
+      {
+        "name": "Points do not expire",
+        "description": "Premier Card adds points that never expire, per Wyndham/Barclays launch announcement."
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "Unknown",
+    "trip_delay": null,
+    "purchase_protection": null,
+    "extended_warranty": null,
+    "trip_cancellation": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
+  },
+  "tags": [
+    "hotel",
+    "premium",
+    "travel",
+    "new-card"
+  ],
+  "sources": [
+    {
+      "url": "https://investor.wyndhamhotels.com/news-events/press-releases/detail/422/wyndham-and-barclays-launch-updated-credit-card-suite",
+      "notes": "Wyndham official press release confirms distinct Premier Card, $395 annual fee, up to 120k offer and earning/benefit highlights."
+    },
+    {
+      "url": "https://cards.barclaycardus.com/banking/cards/wyndham-rewards-earner-premier-card/",
+      "notes": "Barclays official Premier card page."
+    },
+    {
+      "url": "https://www.wyndhamhotels.com/wyndham-rewards/redeem/reward-tier-updates",
+      "notes": "Official Wyndham Rewards redemption tier update effective 2026-09-15; relevant to point-value caveat."
+    }
+  ],
+  "hotel_program": {
+    "program": "Wyndham Rewards",
+    "tier": "Insider membership",
+    "elite_night_credits": null,
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "application_rules": {
+    "rules": [],
+    "notes": "New premium Wyndham/Barclays product; confirm Barclays eligibility language before displaying approval rules."
+  },
+  "notes": "Dedicated new premium product confirmed distinct from Earner Plus and Earner Business. Wyndham award chart changes effective 2026-09-15 add a 45,000-point top tier; keep valuation conservative and show caveat.",
+  "last_updated": "2026-06-30T20:55:00.000-07:00",
+  "last_verified": "2026-06-30",
+  "next_review": "2026-09-15T00:00:00.000-07:00"
+}

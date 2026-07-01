@@ -46,7 +46,8 @@
       ],
       "source_conflicts": [],
       "last_verified": "AUTO_DATE"
-    }
+    },
+    "caveats": []
   },
   "citations": {
     "welcome_offer": [
@@ -56,10 +57,12 @@
     ]
   },
   "open_questions": [
-    "Monitor whether Chase changes the spend window or deadline on the Ink Business Preferred offer."
+    "Monitor whether Chase changes the spend window or deadline on the Ink Business Preferred offer.",
+    "Ink family monitoring: Chase Ink Plus office-supply 5x changes reportedly take effect 2026-10-01; this may affect family-level UX/caveats even if Ink Business Preferred earning rates are unchanged.",
+    "Verify whether current Ink Business Preferred public offer remains 100k / $8k / 3mo before applying."
   ],
   "community": {
-    "summary": "Chase issuer sources support Ink Business Preferred at 100k UR after $8k in 3 months.",
+    "summary": "Chase issuer sources support Ink Business Preferred at 100k UR after $8k in 3 months. Added 2026-06-30 caveat/refresh monitoring notes.",
     "recommended_production_value": {
       "offer_amount": 100000,
       "spend_requirement": 8000,
@@ -68,7 +71,9 @@
     },
     "confidence": "high_when_chase_issuer_page_present",
     "ymmv_or_targeted_possible": false,
-    "conflictStanceIncludes": ["120k"],
+    "conflictStanceIncludes": [
+      "120k"
+    ],
     "observations": [
       {
         "sourceType": "issuer",

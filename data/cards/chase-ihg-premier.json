@@ -7,19 +7,21 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 150000,
+    "bonus_points": 140000,
     "spending_requirement": 3000,
     "time_period_months": 3,
-    "description": "Earn 150,000 IHG One Rewards bonus points after spending $3,000 in purchases in the first 3 months from account opening.",
+    "description": "Earn 140,000 IHG One Rewards bonus points after spending $3,000 in purchases in the first 3 months from account opening.",
     "point_program": "IHG Rewards",
-    "estimated_value": 750,
+    "estimated_value": 700,
     "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Issuer source check on 2026-06-20 detected live offer at 150,000 points; prior up-to-185,000 tiered limited-time candidate is stale."
+      "Current baseline public offer after the limited-time 185k promo expired."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-21"
+    "last_verified": "2026-06-30",
+    "is_elevated": false,
+    "normal_bonus_points": 140000
   },
   "earning_rates": [
     {
@@ -84,7 +86,12 @@
     "travel",
     "chase"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier",
+      "notes": "Official Chase page verified 2026-06-30; current offer is 140,000 points after $3,000 / 3 months. Prior 185k offer expired 2026-06-25."
+    }
+  ],
   "hotel_program": {
     "program": "IHG Rewards",
     "tier": "Platinum Elite",
@@ -100,7 +107,7 @@
       }
     ]
   },
-  "last_updated": "2026-06-21T20:56:00.000Z",
+  "last_updated": "2026-06-30T20:55:00.000-07:00",
   "recurring_credits": [
     {
       "credit_key": "free-night-award",
@@ -132,6 +139,6 @@
       "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ],
-  "last_verified": "2026-06-06",
-  "next_review": "2026-07-15T13:41:49.967000+00:00"
+  "last_verified": "2026-06-30",
+  "next_review": "2026-09-28T00:00:00.000-07:00"
 }

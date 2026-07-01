@@ -7,13 +7,20 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 50000,
-    "spending_requirement": 3000,
+    "bonus_points": 75000,
+    "spending_requirement": 4000,
     "time_period_months": 3,
-    "description": "Earn a 50,000 mile bonus after spending $3,000 in the first 3 months",
+    "description": "Earn 75,000 bonus miles once you spend $4,000 on purchases within the first 3 months from account opening.",
     "point_program": "Capital One Miles",
-    "estimated_value": 750,
-    "is_elevated": true
+    "estimated_value": 1125,
+    "is_elevated": true,
+    "offer_status": "public",
+    "confidence": "high",
+    "normal_bonus_points": 50000,
+    "last_verified": "2026-06-30",
+    "notes": [
+      "Updated from official issuer source check on 2026-06-30."
+    ]
   },
   "earning_rates": [
     {
@@ -56,7 +63,7 @@
       "url": "https://thepointsguy.com/credit-cards/capital-one-venture-current-offer/"
     }
   ],
-  "last_updated": "2026-05-11T18:31:36.088Z",
+  "last_updated": "2026-06-30T20:55:00.000-07:00",
   "hotel_program": {
     "program": null,
     "tier": null,
@@ -89,7 +96,7 @@
       "source": "https://www.capitalone.com/credit-cards/venture/"
     }
   ],
-  "last_verified": "2026-04-25T16:03:36.097Z",
-  "next_review": "2026-07-15T13:41:49.963000+00:00",
+  "last_verified": "2026-06-30",
+  "next_review": "2026-09-28T00:00:00.000-07:00",
   "featured": true
 }

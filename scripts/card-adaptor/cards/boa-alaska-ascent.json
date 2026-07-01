@@ -1,0 +1,83 @@
+{
+  "cardId": "boa-alaska-ascent",
+  "cardPath": "data/cards/boa-alaska-ascent.json",
+  "mode": "offer_and_benefits",
+  "sources": [
+    {
+      "id": "01-issuer-boa",
+      "type": "issuer",
+      "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-atmos-ascent-credit-card/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-alaska",
+      "type": "issuer",
+      "url": "https://www.alaskaair.com/content/visa-signature-card",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/bank-of-america-alaska-airlines-atmos-rewards-ascent-85k-points/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 85000,
+      "spending_requirement": 4000,
+      "time_period_months": 3,
+      "description": "Earn 85,000 bonus miles after spending $4,000 within the first 3 months, plus a 50% flight discount code.",
+      "point_program": "Alaska Airlines Mileage Plan",
+      "estimated_value": 1190,
+      "offer_status": "public_limited_time",
+      "confidence": "medium_high",
+      "notes": [
+        "High-priority new BoA Alaska Atmos Ascent adaptor; local data card already exists.",
+        "Local data currently has expires=2026-06-30; verify current issuer/DoC end date before applying."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE",
+      "is_elevated": true,
+      "expires": "2026-06-30"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-boa*.md:85,000",
+      "sources/*issuer-boa*.md:$4,000",
+      "sources/*doc*.md:Atmos Ascent"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether 2026-06-30 expiry is still correct or whether offer extended/changed.",
+    "Ascent regular Bank of America public page currently shows a lower 50k + companion fare offer; 85k appears to be special/elevated link/secondary-source offer and should not be treated as guaranteed public baseline."
+  ],
+  "community": {
+    "summary": "Ascent regular Bank of America public page currently shows a lower 50k + companion fare offer; 85k appears to be special/elevated link/secondary-source offer and should not be treated as guaranteed public baseline.",
+    "recommended_production_value": {
+      "offer_amount": 85000,
+      "spend_requirement": 4000,
+      "spend_window_months": 3,
+      "status": "public_limited_time",
+      "expires": "2026-06-30"
+    },
+    "confidence": "medium_until_issuer_snapshot_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Bank of America Atmos Ascent page",
+        "regex": "85,000|\\$4,000|3 months|Atmos Ascent",
+        "stance": "supports_85k_public_limited_time",
+        "offer_amount": 85000,
+        "spend_requirement": 4000,
+        "spend_window_months": 3,
+        "excerpt": "BoA page should show 85k miles after $4k/3mo for Atmos Ascent.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

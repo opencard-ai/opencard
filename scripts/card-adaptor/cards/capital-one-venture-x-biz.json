@@ -44,7 +44,8 @@
       ],
       "source_conflicts": [],
       "last_verified": "AUTO_DATE"
-    }
+    },
+    "caveats": []
   },
   "citations": {
     "welcome_offer": [
@@ -54,10 +55,12 @@
     ]
   },
   "open_questions": [
-    "Monitor for any return of higher tiered Venture X Business offers; current issuer-visible offer is 150k / $30k / 3mo."
+    "Monitor for any return of higher tiered Venture X Business offers; current issuer-visible offer is 150k / $30k / 3mo.",
+    "Review whether 150k Venture X Business is still limited-time or baseline public; local candidate currently marks public.",
+    "Monitor for return of higher tiered business offers."
   ],
   "community": {
-    "summary": "Capital One issuer and secondary sources support Venture X Business at 150k miles after $30k in 3 months.",
+    "summary": "Capital One issuer and secondary sources support Venture X Business at 150k miles after $30k in 3 months. Added 2026-06-30 caveat/refresh monitoring notes.",
     "recommended_production_value": {
       "offer_amount": 150000,
       "spend_requirement": 30000,
@@ -66,7 +69,10 @@
     },
     "confidence": "high_when_capital_one_issuer_page_present",
     "ymmv_or_targeted_possible": false,
-    "conflictStanceIncludes": ["350k", "200k"],
+    "conflictStanceIncludes": [
+      "350k",
+      "200k"
+    ],
     "observations": [
       {
         "sourceType": "issuer",

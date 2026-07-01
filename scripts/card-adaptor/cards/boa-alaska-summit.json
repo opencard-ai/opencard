@@ -1,0 +1,85 @@
+{
+  "cardId": "boa-alaska-summit",
+  "cardPath": "data/cards/boa-alaska-summit.json",
+  "mode": "offer_and_benefits",
+  "sources": [
+    {
+      "id": "01-issuer-boa",
+      "type": "issuer",
+      "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-atmos-summit-credit-card/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-alaska",
+      "type": "issuer",
+      "url": "https://www.alaskaair.com/content/visa-signature-card",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/bank-of-america-atmos-rewards-summit-visa-infinite-card-100000-point-bonus/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 100000,
+      "spending_requirement": 5000,
+      "time_period_months": 3,
+      "description": "Earn 100,000 bonus miles after $5,000 spend on purchases in the first 90 days, plus a 50% flight discount code.",
+      "point_program": "Alaska Airlines Mileage Plan",
+      "estimated_value": 1400,
+      "offer_status": "public_limited_time",
+      "confidence": "medium_high",
+      "notes": [
+        "High-priority new BoA Alaska Atmos Summit adaptor; local data card already exists.",
+        "Local data currently has expires=2026-06-30; verify current issuer/DoC end date before applying."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE",
+      "is_elevated": true,
+      "expires": "2026-06-30"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-boa*.md:100,000",
+      "sources/*issuer-boa*.md:$5,000",
+      "sources/*doc*.md:Atmos Summit"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether 2026-06-30 expiry is still correct or whether offer extended/changed.",
+    "Summit 100k remains live as a limited-time online offer according to Bank of America search-visible source and secondary sources; spend requirement differs across secondary snippets and should be issuer-verified before production apply."
+  ],
+  "community": {
+    "summary": "Summit 100k remains live as a limited-time online offer according to Bank of America search-visible source and secondary sources; spend requirement differs across secondary snippets and should be issuer-verified before production apply.",
+    "recommended_production_value": {
+      "offer_amount": 100000,
+      "spend_requirement": 5000,
+      "spend_window_months": 3,
+      "status": "public_limited_time",
+      "expires": "2026-06-30"
+    },
+    "confidence": "medium_until_issuer_snapshot_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "105k phone offer"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Bank of America Atmos Summit page",
+        "regex": "100,000|\\$5,000|90 days|Atmos Summit",
+        "stance": "supports_100k_public_limited_time",
+        "offer_amount": 100000,
+        "spend_requirement": 5000,
+        "spend_window_months": 3,
+        "excerpt": "BoA page should show 100k miles after $5k/90 days for Atmos Summit.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

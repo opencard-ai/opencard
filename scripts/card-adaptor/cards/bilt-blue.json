@@ -1,0 +1,69 @@
+{
+  "cardId": "bilt-blue",
+  "cardPath": "data/cards/bilt-blue.json",
+  "mode": "benefits",
+  "sources": [
+    {
+      "id": "01-bilt-overview",
+      "type": "issuer",
+      "url": "https://support.biltrewards.com/hc/en-us/articles/42897766682381-Bilt-Card-2-0-Program-Overview",
+      "method": "get",
+      "required": true
+    },
+    {
+      "id": "02-bilt-transfer-partners",
+      "type": "issuer",
+      "url": "https://www.biltrewards.com/rewards/travel",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/bilt-rewards-adds-i-prefer-as-transfer-partner-12-ratio/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "caveats": [
+      "Bilt/iPrefer monitoring item: verify the I Prefer transfer-partner 1:2 ratio and eligibility before updating transfer-partner UX or point valuation."
+    ],
+    "transfer_partner_notes": [
+      "I Prefer should be treated as a monitored transfer partner; confirm current ratio on Bilt before applying."
+    ]
+  },
+  "citations": {
+    "transfer_partner_notes": [
+      "sources/*bilt-transfer-partners*.md:I Prefer",
+      "sources/*doc*.md:1:2"
+    ]
+  },
+  "open_questions": [
+    "Confirm Bilt → I Prefer transfer ratio and any tier/card restrictions before applying.",
+    "Resolved: Bilt newsroom confirms I Prefer as 24th travel partner at 1:2 ratio, launched 2026-06-22. Update transfer-partner UX after schema location is identified."
+  ],
+  "community": {
+    "summary": "Resolved: Bilt officially added I Prefer Hotel Rewards as a transfer partner at 1:2 ratio. This is update-ready once transfer-partner UX/schema is located.",
+    "recommended_production_value": {
+      "status": "update_transfer_partner",
+      "partner": "I Prefer Hotel Rewards",
+      "ratio": "1:2",
+      "launched": "2026-06-22"
+    },
+    "confidence": "medium_until_bilt_snapshot_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "1:1",
+      "limited-time"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Bilt travel/transfer partners page",
+        "regex": "I Prefer|Preferred Hotels|1:2",
+        "stance": "detect_iprefer_transfer_ratio",
+        "excerpt": "Bilt page should confirm I Prefer as transfer partner and current ratio.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

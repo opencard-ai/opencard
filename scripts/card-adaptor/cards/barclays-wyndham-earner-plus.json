@@ -1,0 +1,92 @@
+{
+  "cardId": "barclays-wyndham-earner-plus",
+  "cardPath": "data/cards/barclays-wyndham-earner-plus.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-barclays",
+      "type": "issuer",
+      "url": "https://cards.barclaycardus.com/banking/cards/wyndham-rewards-earner-plus-card/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-wyndham",
+      "type": "issuer",
+      "url": "https://www.wyndhamhotels.com/wyndham-rewards/credit-card",
+      "method": "get"
+    },
+    {
+      "id": "03-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/barclays-wyndham-rewards-earner-plus-card/",
+      "method": "get"
+    },
+    {
+      "id": "04-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/best-current-credit-card-sign-bonuses/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 75000,
+      "spending_requirement": 2000,
+      "time_period_months": 3,
+      "description": "Earn 75,000 Wyndham Rewards bonus points after spending $2,000 on purchases in the first 90 days.",
+      "point_program": "Wyndham Rewards",
+      "estimated_value": 750,
+      "offer_status": "public",
+      "confidence": "medium",
+      "notes": [
+        "P1 adaptor added because Wyndham/Caesars status-match value can make this niche card decision-relevant. Verify issuer page before applying future changes."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Caveat: Wyndham Rewards award-chart/devaluation changes around 2026-09-30 may reduce redemption value; re-check estimated_value before ranking this card."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-barclays*.md:75,000",
+      "sources/*issuer-barclays*.md:$2,000",
+      "sources/*issuer-barclays*.md:90 days"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether 75k remains public and whether Barclays annual-fee/card naming has changed.",
+    "Caveat: Wyndham Rewards award-chart/devaluation changes around 2026-09-30 may reduce redemption value; re-check estimated_value before ranking this card.",
+    "Status-match and Caesars/Wyndham ecosystem value should be treated as subjective/strategy-dependent."
+  ],
+  "community": {
+    "summary": "Track as P1 due Wyndham/Caesars ecosystem utility; issuer should remain canonical. Added 2026-06-30 caveat/refresh monitoring notes.",
+    "recommended_production_value": {
+      "offer_amount": 75000,
+      "spend_requirement": 2000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "medium_until_issuer_snapshot_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "100k",
+      "45k"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Barclays Wyndham Earner Plus page",
+        "regex": "75,000|\\$2,000|90 days",
+        "stance": "supports_75k_public",
+        "offer_amount": 75000,
+        "spend_requirement": 2000,
+        "spend_window_months": 3,
+        "excerpt": "Barclays page is expected to show 75,000 points after $2,000 in first 90 days.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

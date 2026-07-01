@@ -1,0 +1,87 @@
+{
+  "cardId": "amex-platinum",
+  "cardPath": "data/cards/amex-platinum.json",
+  "mode": "offer_and_benefits",
+  "sources": [
+    {
+      "id": "01-issuer-amex",
+      "type": "issuer",
+      "url": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/amex-platinum-card/",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/best-current-credit-card-sign-bonuses/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 175000,
+      "spending_requirement": 12000,
+      "time_period_months": 6,
+      "description": "Earn up to 175,000 Membership Rewards points after eligible spend within the first 6 months. Amex may personalize offers; verify session-visible terms before applying.",
+      "point_program": "Amex Membership Rewards",
+      "estimated_value": 2975,
+      "offer_status": "as_high_as_public_or_targeted",
+      "confidence": "medium_high",
+      "notes": [
+        "Priority adaptor: flagship Amex card lacked adaptor coverage despite data card existing.",
+        "2026 refresh benefits include the $200 Oura Ring credit and other refreshed credits in data/cards/amex-platinum.json; benefit changes remain manual-review fields."
+      ],
+      "source_conflicts": [
+        "Amex welcome offers may vary by session/applicant; lower public/session offers may appear."
+      ],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-amex*.md:175,000",
+      "sources/*issuer-amex*.md:Oura",
+      "sources/*issuer-amex*.md:6 months"
+    ]
+  },
+  "open_questions": [
+    "Verify exact public/session offer amount and spend requirement before applying because Amex frequently uses personalized/as-high-as language.",
+    "Confirm refreshed credit bundle including Oura credit remains visible on issuer page.",
+    "Resolved stance: 175k should be labeled as-high-as / eligibility-varying, not guaranteed universal public."
+  ],
+  "community": {
+    "summary": "Adds adaptor coverage for Amex Personal Platinum. Treat 175k as as-high-as/session-sensitive until issuer snapshot confirms exact terms. Resolved stance: 175k should be labeled as-high-as / eligibility-varying, not guaranteed universal public.",
+    "recommended_production_value": {
+      "offer_amount": 175000,
+      "spend_requirement": 12000,
+      "spend_window_months": 6,
+      "status": "as_high_as_public_or_targeted"
+    },
+    "confidence": "medium_high_due_to_amex_personalization",
+    "ymmv_or_targeted_possible": true,
+    "conflictStanceIncludes": [
+      "150k",
+      "125k",
+      "targeted 250k"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "American Express Platinum page",
+        "regex": "175,000|Oura|\\$12,000|6 months",
+        "stance": "supports_175k_as_high_as_and_2026_refresh_if_present",
+        "offer_amount": 175000,
+        "spend_requirement": 12000,
+        "spend_window_months": 6,
+        "excerpt": "Amex page should be checked for as-high-as 175,000 MR terms and refreshed credits such as Oura.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

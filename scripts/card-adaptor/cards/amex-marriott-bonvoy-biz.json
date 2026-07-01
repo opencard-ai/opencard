@@ -1,0 +1,88 @@
+{
+  "cardId": "amex-marriott-bonvoy-biz",
+  "cardPath": "data/cards/amex-marriott-bonvoy-biz.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-amex",
+      "type": "issuer",
+      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/amex-marriott-bonvoy-business-credit-card/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-marriott",
+      "type": "issuer",
+      "url": "https://www.marriott.com/credit-cards.mi",
+      "method": "get"
+    },
+    {
+      "id": "03-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/amex-marriott-bonvoy-business-credit-card/",
+      "method": "get"
+    },
+    {
+      "id": "04-tpg",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/marriott-cards-best-welcome-offers/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 9000,
+      "time_period_months": 6,
+      "free_nights": 5,
+      "free_night_value_cap": 50000,
+      "estimated_value": 1300,
+      "description": "Earn 3 Free Night Awards after spending $6,000 in purchases in the first 6 months, plus 2 additional Free Night Awards after spending an additional $3,000 ($9,000 total) in the first 6 months. Each award is valued up to 50,000 Marriott Bonvoy points.",
+      "point_program": "Marriott Bonvoy",
+      "offer_status": "public_limited_time",
+      "confidence": "medium",
+      "notes": [
+        "P1 adaptor added because Marriott business-card free-night offers are high-value but less broadly relevant than CSP/IHG/Delta. Verify issuer page before applying."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-amex*.md:Free Night Awards",
+      "sources/*issuer-amex*.md:$6,000",
+      "sources/*issuer-amex*.md:$9,000"
+    ]
+  },
+  "open_questions": [
+    "Confirm if 5 Free Night Awards offer is still live and whether each award cap remains 50,000 points."
+  ],
+  "community": {
+    "summary": "Track as P1 due high-value Marriott FNA structures; issuer wins because FNA counts and caps change often.",
+    "recommended_production_value": {
+      "free_nights": 5,
+      "free_night_value_cap": 50000,
+      "spend_requirement": 9000,
+      "spend_window_months": 6,
+      "status": "public_limited_time"
+    },
+    "confidence": "medium_until_issuer_snapshot_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "3 free nights",
+      "points offer"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Amex Marriott Bonvoy Business page",
+        "regex": "Free Night|50,000|\\$9,000|6 months",
+        "stance": "supports_5_fna_public_limited_time_if_present",
+        "spend_requirement": 9000,
+        "spend_window_months": 6,
+        "excerpt": "Amex page should be checked for current 3+2 Free Night Award language and 50,000-point cap.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

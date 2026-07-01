@@ -1,0 +1,83 @@
+{
+  "cardId": "chase-united-explorer",
+  "cardPath": "data/cards/chase-united-explorer.json",
+  "mode": "offer_and_benefits",
+  "sources": [
+    {
+      "id": "01-issuer-chase",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/travel-credit-cards/united/united-explorer",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-united",
+      "type": "issuer",
+      "url": "https://www.united.com/en/us/fly/products/united-personal-credit-cards.html",
+      "method": "get"
+    },
+    {
+      "id": "03-tpg",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/united-chase-best-welcome-offers/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 60000,
+      "spending_requirement": 3000,
+      "time_period_months": 3,
+      "description": "Earn up to 60,000 bonus miles: 50,000 miles after spending $3,000 in the first 3 months, plus 10,000 miles after adding an authorized user in the first 3 months.",
+      "point_program": "United MileagePlus",
+      "estimated_value": 810,
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Official Chase page checked 2026-06-30 supports up-to-60k; prior 80k/85k review notes are stale/expired."
+      ],
+      "source_conflicts": [
+        "Prior 80k/85k variants appear stale or non-current."
+      ],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-chase*.md:70,000",
+      "sources/*issuer-chase*.md:10,000",
+      "sources/*issuer-chase*.md:$3,000"
+    ]
+  },
+  "open_questions": [
+    "Production data card currently appears to hold 80k; update to current official 60k if applying."
+  ],
+  "community": {
+    "summary": "Official Chase United Explorer page supports current up-to-60k structure, not 80k/85k.",
+    "recommended_production_value": {
+      "offer_amount": 60000,
+      "spend_requirement": 3000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high_when_chase_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "80k stale",
+      "85k stale"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Chase United Explorer page",
+        "regex": "50,000[\\s\\S]{0,180}10,000|60,000|\\$3,000",
+        "stance": "supports_60k_public_current",
+        "offer_amount": 60000,
+        "spend_requirement": 3000,
+        "spend_window_months": 3,
+        "excerpt": "Chase page shows earn up to 60,000 bonus miles: 50,000 after $3,000/3mo plus 10,000 after adding AU.",
+        "confidence": "high"
+      }
+    ]
+  }
+}

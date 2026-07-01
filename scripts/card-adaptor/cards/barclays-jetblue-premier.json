@@ -1,0 +1,90 @@
+{
+  "cardId": "barclays-jetblue-premier",
+  "cardPath": "data/cards/barclays-jetblue-premier.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-barclays",
+      "type": "issuer",
+      "url": "https://cards.barclaycardus.com/banking/cards/jetblue-premier-card/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-jetblue",
+      "type": "issuer",
+      "url": "https://www.jetblue.com/trueblue/credit-cards",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/best-current-credit-card-sign-bonuses/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 100000,
+      "spending_requirement": 5000,
+      "time_period_months": 3,
+      "description": "Earn 100,000 TrueBlue points after spending $5,000 in the first 90 days. Verify annual-fee payment and Premier-card terms before applying.",
+      "point_program": "JetBlue TrueBlue",
+      "estimated_value": 1300,
+      "offer_status": "public_limited_time_or_new_card",
+      "confidence": "medium",
+      "notes": [
+        "High-priority new JetBlue Premier adaptor. Local data card for Premier does not exist yet; temporarily points at JetBlue base data card until a dedicated data/cards/barclays-jetblue-premier.json is created."
+      ],
+      "source_conflicts": [
+        "Dedicated production card data file is missing."
+      ],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-barclays*.md:100,000",
+      "sources/*issuer-barclays*.md:$5,000",
+      "sources/*issuer-barclays*.md:90 days"
+    ]
+  },
+  "open_questions": [
+    "Create a dedicated data/cards/barclays-jetblue-premier.json before applying production changes.",
+    "Confirm annual fee and all Premier-specific benefits from issuer page.",
+    "Resolved: Barclays/JetBlue have a dedicated JetBlue Premier Card product with $499 annual fee and 100k after $5k + annual fee paid in first 90 days; create dedicated data card before production apply.",
+    "Dedicated production data card created 2026-06-30; run validation before applying further automated updates."
+  ],
+  "community": {
+    "summary": "Resolved: JetBlue Premier is a distinct Barclays product, not JetBlue Plus/base. It should become a dedicated production card.",
+    "recommended_production_value": {
+      "offer_amount": 100000,
+      "spend_requirement": 5000,
+      "spend_window_months": 3,
+      "status": "public_new_distinct_product",
+      "annual_fee": 499,
+      "authorized_user_fee": 150,
+      "needs_dedicated_data_card": true,
+      "dedicated_data_card": "created_2026-06-30"
+    },
+    "confidence": "medium_blocked_on_missing_data_card",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "75k",
+      "Plus card"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Barclays JetBlue Premier page",
+        "regex": "100,000|\\$5,000|90 days|Premier",
+        "stance": "supports_jetblue_premier_100k_if_present",
+        "offer_amount": 100000,
+        "spend_requirement": 5000,
+        "spend_window_months": 3,
+        "excerpt": "Barclays Premier page should show 100k TrueBlue terms and Premier-specific annual fee/benefits.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

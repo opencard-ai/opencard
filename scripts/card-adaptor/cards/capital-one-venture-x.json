@@ -1,0 +1,82 @@
+{
+  "cardId": "capital-one-venture-x",
+  "cardPath": "data/cards/capital-one-venture-x.json",
+  "mode": "offer_and_benefits",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.capitalone.com/credit-cards/venture-x/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-tpg",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/capital-one-venture-x-review/",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/best-current-credit-card-sign-bonuses/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 75000,
+      "spending_requirement": 4000,
+      "time_period_months": 3,
+      "description": "Earn 75,000 bonus miles after spending $4,000 on purchases within the first 3 months from account opening.",
+      "point_program": "Capital One Miles",
+      "estimated_value": 1125,
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Personal Venture X adaptor added because only Venture X Business was previously covered.",
+        "Keep lounge and Visa Infinite benefit changes as manual-review fields."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:75,000",
+      "sources/*issuer*.md:$4,000",
+      "sources/*issuer*.md:first 3 months"
+    ]
+  },
+  "open_questions": [
+    "Verify if any limited-time elevated Venture X personal offer has replaced the 75k public baseline."
+  ],
+  "community": {
+    "summary": "Capital One issuer/data card support Venture X Personal as 75k / $4k / 3mo baseline; watch for elevated limited-time variants.",
+    "recommended_production_value": {
+      "offer_amount": 75000,
+      "spend_requirement": 4000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "medium_until_issuer_snapshot_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "90k",
+      "100k"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Capital One Venture X page",
+        "regex": "75,000|\\$4,000|first 3 months",
+        "stance": "supports_75k_public",
+        "offer_amount": 75000,
+        "spend_requirement": 4000,
+        "spend_window_months": 3,
+        "excerpt": "Capital One page should show 75,000 miles after $4,000 in 3 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

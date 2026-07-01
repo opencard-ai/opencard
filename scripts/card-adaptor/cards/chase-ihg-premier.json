@@ -32,34 +32,36 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 150000,
+      "bonus_points": 140000,
       "spending_requirement": 3000,
       "time_period_months": 3,
-      "description": "Earn 150,000 IHG One Rewards bonus points after spending $3,000 in purchases in the first 3 months from account opening.",
+      "description": "Earn 140,000 IHG One Rewards bonus points after spending $3,000 in purchases in the first 3 months from account opening. Prior 185,000 tiered limited-time offer ended 2026-06-25.",
       "point_program": "IHG Rewards",
-      "estimated_value": 750,
+      "estimated_value": 700,
       "offer_status": "public",
       "confidence": "high",
       "notes": [
-        "Issuer source check on 2026-06-20 detected live offer at 150,000 points; prior up-to-185,000 tiered limited-time candidate is stale."
+        "Official Chase page checked 2026-06-30 shows 140,000 points after $3,000 / 3 months.",
+        "Prior up-to-185,000 offer ended 2026-06-25 and should be treated as expired/historical."
       ],
       "source_conflicts": [],
-      "last_verified": "AUTO_DATE"
+      "last_verified": "2026-06-22",
+      "normal_bonus_points": 140000
     }
   },
   "citations": {
     "welcome_offer": [
-      "sources/*issuer-premier*.md:Earn 150,000 bonus points",
-      "sources/*issuer-premier*.md:$3,000 in the first 3 months"
+      "sources/*issuer-premier*.md:New Cardmember Bonus – 140,000 Points",
+      "sources/*issuer-premier*.md:$3,000 in purchases during the first 3 months"
     ]
   },
   "open_questions": [
-    "Monitor for future elevated limited-time offers; current issuer-visible public offer has replaced the prior elevated candidate."
+    "Monitor for future elevated limited-time offers; current issuer-visible public offer is 140,000 points."
   ],
   "community": {
-    "summary": "Issuer live source supports 150,000 / $3,000 / 3mo; prior elevated candidate is stale.",
+    "summary": "Official Chase source now supports 140k / $3k / 3mo; prior 185k limited-time offer is expired/historical after 2026-06-25.",
     "recommended_production_value": {
-      "offer_amount": 150000,
+      "offer_amount": 140000,
       "spend_requirement": 3000,
       "spend_window_months": 3,
       "status": "public"
@@ -67,21 +69,20 @@
     "confidence": "high_when_chase_premier_page_present",
     "ymmv_or_targeted_possible": false,
     "conflictStanceIncludes": [
-      "185k",
-      "185,000",
-      "150k tiered"
+      "185k expired",
+      "150k stale"
     ],
     "observations": [
       {
         "sourceType": "issuer",
         "source": "Chase IHG Premier page",
-        "regex": "150,000|\\$3,000|first 3 months",
-        "stance": "supports_150k_public",
-        "offer_amount": 150000,
+        "regex": "140,000|\\$3,000|first 3 months",
+        "stance": "supports_140k_public_current",
+        "offer_amount": 140000,
         "spend_requirement": 3000,
         "spend_window_months": 3,
-        "excerpt": "Chase IHG Premier page shows 150,000 points after $3,000 in the first 3 months.",
-        "confidence": "high_if_present"
+        "excerpt": "Chase page shows New Cardmember Bonus – 140,000 Points after $3,000 in purchases during first 3 months.",
+        "confidence": "high"
       }
     ]
   }

@@ -1,0 +1,88 @@
+{
+  "cardId": "barclays-jetblue-plus",
+  "cardPath": "data/cards/barclays-jetblue-plus.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-barclays",
+      "type": "issuer",
+      "url": "https://cards.barclaycardus.com/banking/cards/jetblue-plus-card/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-jetblue",
+      "type": "issuer",
+      "url": "https://www.jetblue.com/trueblue/credit-cards",
+      "method": "get"
+    },
+    {
+      "id": "03-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/barclays-jetblue-plus-card/",
+      "method": "get"
+    },
+    {
+      "id": "04-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/best-current-credit-card-sign-bonuses/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 60000,
+      "spending_requirement": 1000,
+      "time_period_months": 3,
+      "description": "Earn 60,000 TrueBlue bonus points after spending $1,000 on purchases and paying the annual fee in full, both within the first 90 days.",
+      "point_program": "JetBlue TrueBlue",
+      "estimated_value": 780,
+      "offer_status": "public",
+      "confidence": "medium",
+      "notes": [
+        "P1 adaptor added for airline niche coverage; keep only if public offer remains elevated or KC has JetBlue use case."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-barclays*.md:60,000",
+      "sources/*issuer-barclays*.md:$1,000",
+      "sources/*issuer-barclays*.md:annual fee"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether Barclays still requires annual fee payment within first 90 days as part of the welcome offer terms."
+  ],
+  "community": {
+    "summary": "Track as P1, not core P0; useful when JetBlue TrueBlue offers move materially.",
+    "recommended_production_value": {
+      "offer_amount": 60000,
+      "spend_requirement": 1000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "medium_until_issuer_snapshot_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "70k",
+      "80k",
+      "business card"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Barclays JetBlue Plus page",
+        "regex": "60,000|\\$1,000|annual fee|90 days",
+        "stance": "supports_60k_public",
+        "offer_amount": 60000,
+        "spend_requirement": 1000,
+        "spend_window_months": 3,
+        "excerpt": "Barclays page is expected to show 60,000 TrueBlue points after $1,000 and annual-fee payment within 90 days.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

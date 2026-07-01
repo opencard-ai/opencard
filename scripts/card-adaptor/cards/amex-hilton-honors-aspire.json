@@ -48,7 +48,11 @@
       ],
       "source_conflicts": [],
       "last_verified": "AUTO_DATE"
-    }
+    },
+    "caveats": [
+      "Caveat: Hilton Diamond status does not guarantee executive lounge / club access in all properties, brands, room types, or club-access scenarios. Display as conservative caveat, not benefit removal.",
+      "Keep this caveat scoped to lounge/club-access expectations; do not reduce the Diamond status benefit itself."
+    ]
   },
   "citations": {
     "welcome_offer": [
@@ -57,10 +61,12 @@
     ]
   },
   "open_questions": [
-    "Confirm the 7/29/2026 expiry remains visible before applying future changes."
+    "Confirm the 7/29/2026 expiry remains visible before applying future changes.",
+    "Caveat: Hilton Diamond status does not guarantee executive lounge / club access in all properties, brands, room types, or club-access scenarios. Display as conservative caveat, not benefit removal.",
+    "Keep this caveat scoped to lounge/club-access expectations; do not reduce the Diamond status benefit itself."
   ],
   "community": {
-    "summary": "Official Amex/Hilton sources support the elevated Hilton Aspire 175k public limited-time offer.",
+    "summary": "Official Amex/Hilton sources support the elevated Hilton Aspire 175k public limited-time offer. Added 2026-06-30 caveat/refresh monitoring notes.",
     "recommended_production_value": {
       "offer_amount": 175000,
       "spend_requirement": 6000,
@@ -69,7 +75,9 @@
     },
     "confidence": "high_when_amex_or_hilton_issuer_page_present",
     "ymmv_or_targeted_possible": false,
-    "conflictStanceIncludes": ["150k"],
+    "conflictStanceIncludes": [
+      "150k"
+    ],
     "observations": [
       {
         "sourceType": "issuer",

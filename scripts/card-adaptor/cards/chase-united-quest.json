@@ -1,0 +1,84 @@
+{
+  "cardId": "chase-united-quest",
+  "cardPath": "data/cards/chase-united-quest.json",
+  "mode": "offer_and_benefits",
+  "sources": [
+    {
+      "id": "01-issuer-chase",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/travel-credit-cards/united/united-quest",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-united",
+      "type": "issuer",
+      "url": "https://www.united.com/en/us/fly/products/united-personal-credit-cards.html",
+      "method": "get"
+    },
+    {
+      "id": "03-tpg",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/united-chase-best-welcome-offers/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 70000,
+      "spending_requirement": 4000,
+      "time_period_months": 3,
+      "description": "Earn up to 70,000 bonus miles + 500 PQP: 60,000 miles + 500 PQP after spending $4,000 in the first 3 months, plus 10,000 miles after adding an authorized user in the first 3 months.",
+      "point_program": "United MileagePlus",
+      "estimated_value": 945,
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Official Chase page checked 2026-06-30 supports up-to-70k + 500 PQP; prior 90k/100k review notes are stale/expired."
+      ],
+      "source_conflicts": [
+        "Prior 90k/100k variants appear stale or non-current."
+      ],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-chase*.md:90,000",
+      "sources/*issuer-chase*.md:3,000 PQP",
+      "sources/*issuer-chase*.md:$4,000"
+    ]
+  },
+  "open_questions": [
+    "Production data card currently appears to hold 90k + PQP; update to current official 70k + 500 PQP if applying."
+  ],
+  "community": {
+    "summary": "Official Chase United Quest page supports current up-to-70k + 500 PQP structure, not 90k/100k.",
+    "recommended_production_value": {
+      "offer_amount": 70000,
+      "spend_requirement": 4000,
+      "spend_window_months": 3,
+      "status": "public",
+      "pqp": 500
+    },
+    "confidence": "high_when_chase_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "90k stale",
+      "100k stale"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Chase United Quest page",
+        "regex": "60,000[\\s\\S]{0,180}500 PQP[\\s\\S]{0,220}10,000|70,000|\\$4,000",
+        "stance": "supports_70k_plus_500pqp_public_current",
+        "offer_amount": 70000,
+        "spend_requirement": 4000,
+        "spend_window_months": 3,
+        "excerpt": "Chase page shows up to 70,000 miles + 500 PQP: 60,000 + 500 PQP after $4,000/3mo plus 10,000 after adding AU.",
+        "confidence": "high"
+      }
+    ]
+  }
+}

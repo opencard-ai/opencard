@@ -52,7 +52,8 @@
       ],
       "source_conflicts": [],
       "last_verified": "AUTO_DATE"
-    }
+    },
+    "caveats": []
   },
   "citations": {
     "welcome_offer": [
@@ -61,10 +62,12 @@
     ]
   },
   "open_questions": [
-    "Confirm the 7/15/2026 expiry remains visible before applying future changes."
+    "Confirm the 7/15/2026 expiry remains visible before applying future changes.",
+    "Prior review mentioned 50k + $400 statement-credit variant; current adaptor stores official Delta 90k miles tiered offer. Keep conflict tracking active for cash-credit variants.",
+    "Confirm 2026-07-15 expiry remains visible before applying."
   ],
   "community": {
-    "summary": "Official Delta sources are canonical for this public limited-time offer. Third-party sources are supporting only.",
+    "summary": "Official Delta sources are canonical for this public limited-time offer. Third-party sources are supporting only. Added 2026-06-30 caveat/refresh monitoring notes.",
     "recommended_production_value": {
       "offer_amount": 90000,
       "spend_requirement": 5000,

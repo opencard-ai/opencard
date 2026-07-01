@@ -41,7 +41,11 @@
       ],
       "source_conflicts": [],
       "last_verified": "AUTO_DATE"
-    }
+    },
+    "caveats": [
+      "2026 refresh manual-review item: confirm $100 Chase Travel hotel credit, refreshed 3x earning categories, emergency evacuation coverage, and Hyatt transfer/benefit language before applying benefit fields.",
+      "Hotel credit and earning categories are manual-review fields; do not auto-apply from stale cached sources."
+    ]
   },
   "citations": {
     "annual_fee": [
@@ -53,10 +57,12 @@
   },
   "open_questions": [
     "Confirm the Chase Sapphire Preferred landing page still shows 100,000 and that the 75,000 text is struck through before applying.",
-    "Verify the new benefit bundle remains active on the official Chase news page."
+    "Verify the new benefit bundle remains active on the official Chase news page.",
+    "2026 refresh manual-review item: confirm $100 Chase Travel hotel credit, refreshed 3x earning categories, emergency evacuation coverage, and Hyatt transfer/benefit language before applying benefit fields.",
+    "Hotel credit and earning categories are manual-review fields; do not auto-apply from stale cached sources."
   ],
   "community": {
-    "summary": "Current Chase landing page and Chase news release show the 100,000-point CSP limited-time offer plus new benefits; older 75k-only readings came from an outdated canonical page path / text-only extraction.",
+    "summary": "Current Chase landing page and Chase news release show the 100,000-point CSP limited-time offer plus new benefits; older 75k-only readings came from an outdated canonical page path / text-only extraction. Added 2026-06-30 caveat/refresh monitoring notes.",
     "recommended_production_value": {
       "offer_amount": 100000,
       "spend_requirement": 5000,

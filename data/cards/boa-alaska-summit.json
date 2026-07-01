@@ -10,9 +10,12 @@
     "spending_requirement": 5000,
     "time_period_months": 3,
     "bonus_points": 100000,
-    "description": "100,000 bonus miles after $5,000 spend on purchases in the first 90 days.",
+    "description": "100,000 bonus miles after $5,000 spend on purchases in the first 90 days, plus a 50% flight discount code.",
     "point_program": "Alaska Airlines Mileage Plan",
-    "estimated_value": 1400
+    "estimated_value": 1400,
+    "is_elevated": true,
+    "expires": "2026-06-30",
+    "offer_status": "public_limited_time"
   },
   "earning_rates": [
     {

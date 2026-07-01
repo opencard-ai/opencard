@@ -46,7 +46,11 @@
         "Amex may personalize welcome offers; lower public/session offers may appear."
       ],
       "last_verified": "AUTO_DATE"
-    }
+    },
+    "caveats": [
+      "Amex as-high-as Business Platinum offer must remain manual-review because 200k/250k/300k eligibility can vary by session/applicant.",
+      "Review refreshed credits/benefits separately from welcome_offer; benefit fields are manual-review."
+    ]
   },
   "citations": {
     "welcome_offer": [
@@ -56,10 +60,13 @@
     ]
   },
   "open_questions": [
-    "Because Amex uses as-high-as / eligibility language, keep manual review before applying future changes."
+    "Because Amex uses as-high-as / eligibility language, keep manual review before applying future changes.",
+    "Amex as-high-as Business Platinum offer must remain manual-review because 200k/250k/300k eligibility can vary by session/applicant.",
+    "Review refreshed credits/benefits separately from welcome_offer; benefit fields are manual-review.",
+    "Resolved stance: 300k should be labeled as-high-as / eligibility-varying, not guaranteed universal public."
   ],
   "community": {
-    "summary": "Amex issuer and secondary sources support an as-high-as 300k Business Platinum offer, but eligibility/session variance is possible.",
+    "summary": "Amex issuer and secondary sources support an as-high-as 300k Business Platinum offer, but eligibility/session variance is possible. Added 2026-06-30 caveat/refresh monitoring notes. Resolved stance: 300k should be labeled as-high-as / eligibility-varying, not guaranteed universal public.",
     "recommended_production_value": {
       "offer_amount": 300000,
       "spend_requirement": 20000,
@@ -68,7 +75,11 @@
     },
     "confidence": "medium_high_due_to_amex_as_high_as_language",
     "ymmv_or_targeted_possible": true,
-    "conflictStanceIncludes": ["250k", "200k", "175k"],
+    "conflictStanceIncludes": [
+      "250k",
+      "200k",
+      "175k"
+    ],
     "observations": [
       {
         "sourceType": "issuer",

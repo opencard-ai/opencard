@@ -15,7 +15,9 @@
     "estimated_value": 875,
     "is_elevated": true,
     "normal_bonus_points": 150000,
-    "elevated_until": "2026-07-29"
+    "elevated_until": "2026-07-29",
+    "offer_status": "public_limited_time",
+    "expires": "2026-07-29"
   },
   "earning_rates": [
     {

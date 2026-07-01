@@ -9,10 +9,17 @@
   "welcome_offer": {
     "spending_requirement": 3000,
     "time_period_months": 3,
-    "bonus_points": 80000,
-    "description": "Earn 70,000 bonus miles after $3,000 spend in 3 months, plus 10,000 bonus miles after adding an AU in the first 3 months.",
+    "bonus_points": 60000,
+    "description": "Earn up to 60,000 bonus miles: 50,000 bonus miles after spending $3,000 in the first 3 months, plus 10,000 bonus miles after adding an authorized user in the first 3 months.",
     "point_program": "United MileagePlus",
-    "estimated_value": 1080
+    "estimated_value": 810,
+    "offer_status": "public",
+    "confidence": "high",
+    "normal_bonus_points": 60000,
+    "last_verified": "2026-06-30",
+    "notes": [
+      "Updated from official issuer source check on 2026-06-30."
+    ]
   },
   "earning_rates": [
     {
@@ -91,7 +98,7 @@
       "notes": "TPG report on annual fee increase Mar 2025."
     }
   ],
-  "last_updated": "2026-04-30T03:25:52.871Z",
+  "last_updated": "2026-06-30T20:55:00.000-07:00",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -170,6 +177,6 @@
     "Removed 'United Travel Credit' duplicate (was double-listing the same hotel benefit)"
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-04-24T17:26:36.116494",
-  "next_review": "2026-07-23T17:26:36.116494"
+  "last_verified": "2026-06-30",
+  "next_review": "2026-09-28T00:00:00.000-07:00"
 }

@@ -10,9 +10,12 @@
     "spending_requirement": 4000,
     "time_period_months": 3,
     "bonus_points": 85000,
-    "description": "Earn 85,000 bonus miles after spending $4,000 in purchases within the first 3 months of account opening.",
+    "description": "Earn 85,000 bonus miles after spending $4,000 in purchases within the first 3 months of account opening, plus a 50% flight discount code.",
     "point_program": "Alaska Airlines Mileage Plan",
-    "estimated_value": 1190
+    "estimated_value": 1190,
+    "is_elevated": true,
+    "expires": "2026-06-30",
+    "offer_status": "public_limited_time"
   },
   "earning_rates": [
     {
