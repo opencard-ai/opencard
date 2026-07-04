@@ -1,6 +1,63 @@
 {
   "items": [
     {
+      "title": "[NY only] Reliant Community Credit Union $150 Checking Bonus + $25 Referral Bonus",
+      "url": "https://www.doctorofcredit.com/ny-reliant-community-credit-union-150-checking-bonus-25-referral-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "credit card funding",
+        "direct deposit required",
+        "ny bank bonuses",
+        "soft pull"
+      ],
+      "ts": "2026-07-04T16:30:20.000Z",
+      "title_en": "[NY only] Reliant Community Credit Union $150 Checking Bonus + $25 Referral Bonus",
+      "summary_en": "",
+      "title_zh": "【僅限紐約】Reliant Community Credit Union $150 支票帳戶獎金 + $25 推薦獎金",
+      "summary_zh": "在紐約的 Reliant Community Credit Union，開立支票帳戶可獲 $150 獎金，並成功推薦可再獲得 $25 獎金。",
+      "title_es": "[NY only] Reliant Community Credit Union $150 Checking Bonus + $25 Referral Bonus",
+      "summary_es": ""
+    },
+    {
+      "title": "[NY, PA] First Heritage Federal Credit Union $250 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/ny-pa-first-heritage-federal-credit-union-100-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "ny bank bonuses",
+        "pa bank bonuses"
+      ],
+      "ts": "2026-07-04T16:00:23.000Z",
+      "title_en": "[NY, PA] First Heritage Federal Credit Union $250 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "【紐約、賓州】First Heritage Federal Credit Union $250 支票帳戶獎金",
+      "summary_zh": "First Heritage Federal Credit Union 為紐約與賓州的客戶提供開戶 $250 的支票帳戶獎金。",
+      "title_es": "[NY, PA] First Heritage Federal Credit Union $250 Checking Bonus",
+      "summary_es": ""
+    },
+    {
+      "title": "[WA, ID & OR only] BECU $300 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/wa-id-or-only-becu-400-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "id bank bonuses",
+        "or bank bonuses",
+        "soft pull",
+        "wa bank bonuses"
+      ],
+      "ts": "2026-07-04T14:30:29.000Z",
+      "title_en": "[WA, ID & OR only] BECU $300 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "【僅限華盛頓、愛達荷、俄勒岡】BECU $300 支票帳戶獎金",
+      "summary_zh": "BECU 在華盛頓州、愛達荷州與俄勒岡州提供 $300 的支票帳戶開戶獎金。",
+      "title_es": "[WA, ID & OR only] BECU $300 Checking Bonus",
+      "summary_es": ""
+    },
+    {
       "title": "[Targeted iOS Only] Polymarket: Deposit $20, Get $50 Bonus For Existing Users",
       "url": "https://www.doctorofcredit.com/targeted-ios-only-polymarket-deposit-25-get-50-bonus-for-existing-users/",
       "source": "Doctor of Credit",
@@ -11,8 +68,8 @@
       "ts": "2026-07-04T12:00:26.000Z",
       "title_en": "[Targeted iOS Only] Polymarket: Deposit $20, Get $50 Bonus For Existing Users",
       "summary_en": "",
-      "title_zh": "[Targeted iOS Only] Polymarket: Deposit $20, Get $50 Bonus For Existing Users",
-      "summary_zh": "",
+      "title_zh": "【僅限 iOS】Polymarket：存款 $20，即可為現有用戶取得 $50 獎金",
+      "summary_zh": "Polymarket 針對 iOS 現有用戶，只要存款 $20 即可獲得 $50 獎金。",
       "title_es": "[Targeted iOS Only] Polymarket: Deposit $20, Get $50 Bonus For Existing Users",
       "summary_es": ""
     },
@@ -27,8 +84,8 @@
       "ts": "2026-07-04T10:05:41.000Z",
       "title_en": "7-Eleven 7NOW App Promo Codes: $17.76 off 30$+ With Promo Code CELEBRATE",
       "summary_en": "",
-      "title_zh": "7-Eleven 7NOW App Promo Codes: $17.76 off 30$+ With Promo Code CELEBRATE",
-      "summary_zh": "",
+      "title_zh": "7-Eleven 7NOW App 促銷碼：使用優惠碼 CELEBRATE，消費 $30 以上可省 $17.76",
+      "summary_zh": "在 7NOW App 使用 CELEBRATE 優惠碼，單筆消費滿 $30 可減免 $17.76。",
       "title_es": "7-Eleven 7NOW App Promo Codes: $17.76 off 30$+ With Promo Code CELEBRATE",
       "summary_es": ""
     },
@@ -43,8 +100,8 @@
       "ts": "2026-07-03T21:41:26.000Z",
       "title_en": "Two Months of Paramount+ For $0.99 Per Month (Works For New & Returning Customers) + $10 Portal",
       "summary_en": "",
-      "title_zh": "Two Months of Paramount+ For $0.99 Per Month (Works For New & Returning Customers) + $10 Portal",
-      "summary_zh": "",
+      "title_zh": "Paramount+ 兩個月只要 $0.99 每月（適用新舊用戶）+ $10 門戶優惠",
+      "summary_zh": "Paramount+ 提供前兩個月每月 $0.99 的訂閱優惠，並附帶 $10 的門戶獎勵。",
       "title_es": "Two Months of Paramount+ For $0.99 Per Month (Works For New & Returning Customers) + $10 Portal",
       "summary_es": ""
     },
@@ -59,8 +116,8 @@
       "ts": "2026-07-03T18:51:13.000Z",
       "title_en": "Postmates: $10 Off $25 With Promo Code ERAOFEATS (Nationwide), Delivery Only",
       "summary_en": "",
-      "title_zh": "Postmates: $10 Off $25 With Promo Code ERAOFEATS (Nationwide), Delivery Only",
-      "summary_zh": "",
+      "title_zh": "Postmates：全美適用，使用優惠碼 ERAOFEATS，訂單滿 $25 可省 $10（僅外送）",
+      "summary_zh": "在 Postmates 使用 ERAOFEATS 優惠碼，消費滿 $25 即可減免 $10，且僅限外送。",
       "title_es": "Postmates: $10 Off $25 With Promo Code ERAOFEATS (Nationwide), Delivery Only",
       "summary_es": ""
     },
@@ -76,8 +133,8 @@
       "ts": "2026-07-03T18:47:22.000Z",
       "title_en": "E*Trade Existing User Brokerage Bonus Of Up To $20,000 ($5k-$10M Required; 12 Month Hold)",
       "summary_en": "",
-      "title_zh": "E*Trade Existing User Brokerage Bonus Of Up To $20,000 ($5k-$10M Required; 12 Month Hold)",
-      "summary_zh": "",
+      "title_zh": "E*Trade 現有用戶經紀獎金最高 $20,000（需投資 $5k-$10M，持有 12 個月）",
+      "summary_zh": "E*Trade 為現有用戶提供最高 $20,000 的經紀獎金，需在 12 個月內投資 $5,000 至 $10,000。",
       "title_es": "E*Trade Existing User Brokerage Bonus Of Up To $20,000 ($5k-$10M Required; 12 Month Hold)",
       "summary_es": ""
     },
@@ -93,8 +150,8 @@
       "ts": "2026-07-03T18:30:26.000Z",
       "title_en": "Happen Bank (Formerly Lending Club) Take A Personal Loan Of $10,000+ & Get $250 Bonus",
       "summary_en": "",
-      "title_zh": "Happen Bank (Formerly Lending Club) Take A Personal Loan Of $10,000+ & Get $250 Bonus",
-      "summary_zh": "",
+      "title_zh": "Happen Bank（前身為 Lending Club）申請 $10,000 以上個人貸款可獲 $250 獎金",
+      "summary_zh": "透過 Happen Bank 借貸 $10,000 以上，即可獲得 $250 的獎金優惠。",
       "title_es": "Happen Bank (Formerly Lending Club) Take A Personal Loan Of $10,000+ & Get $250 Bonus",
       "summary_es": ""
     },
@@ -109,8 +166,8 @@
       "ts": "2026-07-03T18:00:26.000Z",
       "title_en": "Meijer: Purchase $50 In Third Party Giftcards, Get 5,000 Points (50k Cap)",
       "summary_en": "",
-      "title_zh": "Meijer: Purchase $50 In Third Party Giftcards, Get 5,000 Points (50k Cap)",
-      "summary_zh": "",
+      "title_zh": "Meijer：購買 $50 第三方禮卡，可獲得 5,000 積分（上限 50k）",
+      "summary_zh": "在 Meijer 購買 $50 的第三方禮品卡可獲 5,000 點數，總上限為 50,000 點。",
       "title_es": "Meijer: Purchase $50 In Third Party Giftcards, Get 5,000 Points (50k Cap)",
       "summary_es": ""
     },
@@ -126,8 +183,8 @@
       "ts": "2026-07-03T17:30:16.000Z",
       "title_en": "YouTube TV & DirecTV Subscribers: Payout For Class Action Lawsuit Against Disney",
       "summary_en": "",
-      "title_zh": "YouTube TV & DirecTV Subscribers: Payout For Class Action Lawsuit Against Disney",
-      "summary_zh": "",
+      "title_zh": "YouTube TV 與 DirecTV 訂閱者：針對迪士尼的集體訴訟賠償",
+      "summary_zh": "YouTube TV 與 DirecTV 的用戶將收到因集體訴訟而獲得的迪士尼賠償款。",
       "title_es": "YouTube TV & DirecTV Subscribers: Payout For Class Action Lawsuit Against Disney",
       "summary_es": ""
     },
@@ -143,8 +200,8 @@
       "ts": "2026-07-03T17:25:21.000Z",
       "title_en": "Safeway: Get 12x Points On Best Buy Giftcards",
       "summary_en": "",
-      "title_zh": "Safeway: Get 12x Points On Best Buy Giftcards",
-      "summary_zh": "",
+      "title_zh": "Safeway：購買 Best Buy 禮卡可獲得 12 倍積分",
+      "summary_zh": "在 Safeway 購買 Best Buy 禮卡可享有 12 倍的會員積分回饋。",
       "title_es": "Safeway: Get 12x Points On Best Buy Giftcards",
       "summary_es": ""
     },
@@ -160,8 +217,8 @@
       "ts": "2026-07-03T17:06:54.000Z",
       "title_en": "Increased Referrer Bonus on American Express Blue Cash Everyday – $175 (Targeted)",
       "summary_en": "",
-      "title_zh": "Increased Referrer Bonus on American Express Blue Cash Everyday – $175 (Targeted)",
-      "summary_zh": "",
+      "title_zh": "American Express Blue Cash Everyday 推薦獎金提高至 $175（限特定用戶）",
+      "summary_zh": "American Express 提高 Blue Cash Everyday 卡的推薦獎金至 $175，僅限受邀請的用戶。",
       "title_es": "Increased Referrer Bonus on American Express Blue Cash Everyday – $175 (Targeted)",
       "summary_es": ""
     },
@@ -176,8 +233,8 @@
       "ts": "2026-07-03T16:54:43.000Z",
       "title_en": "Giant Eagle: Buy $250 in Third-Party Giftcards, Get 2,500 Points ($50-$75)",
       "summary_en": "",
-      "title_zh": "Giant Eagle: Buy $250 in Third-Party Giftcards, Get 2,500 Points ($50-$75)",
-      "summary_zh": "",
+      "title_zh": "Giant Eagle：購買 $250 第三方禮卡，可獲得 2,500 積分（價值 $50-$75）",
+      "summary_zh": "在 Giant Eagle 購買 $250 第三方禮卡可獲得 2,500 點數，估值約 $50 至 $75。",
       "title_es": "Giant Eagle: Buy $250 in Third-Party Giftcards, Get 2,500 Points ($50-$75)",
       "summary_es": ""
     },
@@ -192,68 +249,11 @@
       "ts": "2026-07-03T16:30:26.000Z",
       "title_en": "American Express Can Now See Across Logins & Membership Rewards Accounts",
       "summary_en": "",
-      "title_zh": "American Express Can Now See Across Logins & Membership Rewards Accounts",
-      "summary_zh": "",
+      "title_zh": "American Express 現可跨帳號查看登入與會員獎勵帳戶",
+      "summary_zh": "American Express 現在能夠跨多個登入和 Membership Rewards 帳戶查看資訊。",
       "title_es": "American Express Can Now See Across Logins & Membership Rewards Accounts",
-      "summary_es": ""
-    },
-    {
-      "title": "Rakuten: Get $100 For Chase INK Unlimited or $50-$90 For Freedom Unlimited",
-      "url": "https://www.doctorofcredit.com/rakuten-get-50-5000-when-signing-up-for-chase-sapphire-preferred-freedom-unlimited-ink-unlimited/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "big",
-        "chase",
-        "rakuten",
-        "signup bonus"
-      ],
-      "ts": "2026-07-03T16:30:01.000Z",
-      "title_en": "Rakuten: Get $100 For Chase INK Unlimited or $50-$90 For Freedom Unlimited",
-      "summary_en": "",
-      "title_zh": "Rakuten: Get $100 For Chase INK Unlimited or $50-$90 For Freedom Unlimited",
-      "summary_zh": "",
-      "title_es": "Rakuten: Get $100 For Chase INK Unlimited or $50-$90 For Freedom Unlimited",
-      "summary_es": ""
-    },
-    {
-      "title": "[Targeted] Existing Chase United Cardholders: Earn 10,000 Miles When Adding Authorized User",
-      "url": "https://www.doctorofcredit.com/targeted-existing-chase-united-cardholders/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "authorized user",
-        "chase",
-        "chase united",
-        "united"
-      ],
-      "ts": "2026-07-03T16:00:37.000Z",
-      "title_en": "[Targeted] Existing Chase United Cardholders: Earn 10,000 Miles When Adding Authorized User",
-      "summary_en": "",
-      "title_zh": "[Targeted] Existing Chase United Cardholders: Earn 10,000 Miles When Adding Authorized User",
-      "summary_zh": "",
-      "title_es": "[Targeted] Existing Chase United Cardholders: Earn 10,000 Miles When Adding Authorized User",
-      "summary_es": ""
-    },
-    {
-      "title": "[Targeted] Chase Travel: Spend $600+ & Receive $100 Back",
-      "url": "https://www.doctorofcredit.com/targeted-chase-travel-spend-500-receive-100-back/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "Travel",
-        "chase",
-        "chase offers",
-        "chase travel"
-      ],
-      "ts": "2026-07-03T15:00:10.000Z",
-      "title_en": "[Targeted] Chase Travel: Spend $600+ & Receive $100 Back",
-      "summary_en": "",
-      "title_zh": "[Targeted] Chase Travel: Spend $600+ & Receive $100 Back",
-      "summary_zh": "",
-      "title_es": "[Targeted] Chase Travel: Spend $600+ & Receive $100 Back",
       "summary_es": ""
     }
   ],
-  "fetched": "2026-07-04T14:10:25.878Z"
+  "fetched": "2026-07-04T20:10:15.703Z"
 }
