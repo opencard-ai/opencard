@@ -7,19 +7,20 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 90000,
+    "bonus_points": 80000,
     "spending_requirement": 2000,
     "time_period_months": 3,
-    "description": "Earn 90,000 IHG One Rewards bonus points after spending $2,000 in purchases in the first 3 months from account opening.",
+    "description": "Earn 80,000 IHG One Rewards bonus points after spending $2,000 in purchases in the first 3 months from account opening.",
     "point_program": "IHG Rewards",
-    "estimated_value": 450,
+    "estimated_value": 400,
     "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Issuer source check on 2026-06-20 detected live offer at 90,000 points; prior up-to-125,000 tiered limited-time candidate is stale."
+      "Issuer source check on 2026-07-05 detected live offer at 80,000 points; prior 90,000-point offer is stale."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-21"
+    "last_verified": "2026-07-05",
+    "expires": null
   },
   "earning_rates": [
     {

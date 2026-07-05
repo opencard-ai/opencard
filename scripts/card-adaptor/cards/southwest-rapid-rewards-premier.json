@@ -32,19 +32,20 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 80000,
+      "bonus_points": 50000,
       "spending_requirement": 1000,
       "time_period_months": 3,
-      "description": "Earn 80,000 Southwest Rapid Rewards points after spending $1,000 in purchases in the first 3 months from account opening.",
+      "description": "Earn 50,000 Southwest Rapid Rewards points after spending $1,000 in purchases in the first 3 months from account opening.",
       "point_program": "Southwest Rapid Rewards",
-      "estimated_value": 1120,
+      "estimated_value": 700,
       "offer_status": "public",
       "confidence": "high",
       "notes": [
-        "Issuer source check on 2026-06-20 detected live offer at 80,000 points; prior 85,000-point limited-time candidate is stale."
+        "Issuer source check on 2026-07-05 detected live offer at 50,000 points; prior 80,000-point offer is stale."
       ],
       "source_conflicts": [],
-      "last_verified": "AUTO_DATE"
+      "last_verified": "AUTO_DATE",
+      "expires": null
     }
   },
   "citations": {

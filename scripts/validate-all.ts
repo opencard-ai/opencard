@@ -548,7 +548,6 @@ function main() {
   const files = fs.readdirSync(cardsDir).filter(f => f.endsWith('.json'));
   
   const allIssues: ValidationIssue[] = [];
-  let parseErrors = 0;
 
   for (const file of files) {
     try {
@@ -558,7 +557,6 @@ function main() {
       const sanityIssues = validateSanity(card, file);
       allIssues.push(...schemaIssues, ...businessIssues, ...sanityIssues);
     } catch (e: any) {
-      parseErrors++;
       allIssues.push({
         card: file, severity: 'error', source: 'schema',
         message: `JSON parse error: ${e.message}`
