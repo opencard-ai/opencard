@@ -7,32 +7,44 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 0,
-    "description": "No welcome bonus",
-    "estimated_value": null,
-    "spending_requirement": null,
-    "time_period_months": null
+    "bonus_points": 60000,
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "description": "Earn 60,000 bonus points when you spend $4,000 in purchases in the first 3 months — that’s $600 toward your next trip.",
+    "point_program": "Wells Fargo Rewards",
+    "estimated_value": 600,
+    "offer_status": "public",
+    "confidence": "high",
+    "notes": [
+      "Official Wells Fargo Autograph Journey page confirmed 60,000 points after $4,000/3 months on 2026-07-05."
+    ],
+    "last_verified": "2026-07-05"
   },
   "earning_rates": [
     {
-      "category": "Travel",
-      "rate": 3,
-      "notes": ""
+      "category": "Hotels",
+      "rate": 5,
+      "notes": "Unlimited 5X points on hotels."
+    },
+    {
+      "category": "Airlines",
+      "rate": 4,
+      "notes": "Unlimited 4X points on airlines."
     },
     {
       "category": "Dining",
       "rate": 3,
-      "notes": ""
+      "notes": "Unlimited 3X points on dining."
     },
     {
-      "category": "Gas stations",
+      "category": "Other travel",
       "rate": 3,
-      "notes": ""
+      "notes": "Unlimited 3X points on other travel."
     },
     {
       "category": "All other purchases",
       "rate": 1,
-      "notes": ""
+      "notes": "1X points on other purchases."
     }
   ],
   "annual_credits": [],
@@ -57,7 +69,12 @@
     "travel_accident": null
   },
   "tags": [],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://creditcards.wellsfargo.com/autograph-journey-visa-credit-card/",
+      "notes": "Official Wells Fargo product page."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -75,7 +92,7 @@
       "source": "https://creditcards.wellsfargo.com/autograph-journey-card/"
     }
   ],
-  "last_updated": "2026-04-27T20:00:00.000Z",
-  "last_verified": "2026-04-27T20:00:00.000Z",
-  "next_review": "2026-07-15T13:41:50.011000+00:00"
+  "last_updated": "2026-07-05T15:10:00.000-07:00",
+  "last_verified": "2026-07-05T15:10:00.000-07:00",
+  "next_review": "2026-08-04T15:10:00.000-07:00"
 }

@@ -7,17 +7,34 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 0,
-    "description": "No welcome bonus",
-    "estimated_value": null,
-    "spending_requirement": null,
-    "time_period_months": null
+    "bonus_points": 350,
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "description": "Earn $350 in OneKeyCash after you spend $3,000 on purchases in the first 3 months.",
+    "point_program": "OneKeyCash",
+    "estimated_value": 350,
+    "offer_status": "public",
+    "confidence": "high",
+    "notes": [
+      "Official Wells Fargo One Key+ page confirmed $350 OneKeyCash after $3,000/3 months on 2026-07-05."
+    ],
+    "last_verified": "2026-07-05"
   },
   "earning_rates": [
     {
-      "category": "All Purchases",
+      "category": "Expedia, Hotels.com, and Vrbo",
+      "rate": 3,
+      "notes": "Earn in OneKeyCash on eligible Expedia Group brand purchases."
+    },
+    {
+      "category": "Gas stations, grocery stores, and dining",
+      "rate": 3,
+      "notes": "Earn in OneKeyCash on eligible purchases."
+    },
+    {
+      "category": "All other purchases",
       "rate": 2,
-      "notes": ""
+      "notes": "Earn in OneKeyCash on all other purchases."
     }
   ],
   "annual_credits": [],
@@ -38,15 +55,20 @@
     "return_protection": null
   },
   "tags": [],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://creditcards.wellsfargo.com/one-key-plus-credit-card/",
+      "notes": "Official Wells Fargo product page."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-28T14:05:15.886Z",
-  "last_verified": "2026-04-16T13:41:50.011Z",
-  "next_review": "2026-07-15T13:41:50.011000+00:00",
+  "last_updated": "2026-07-05T15:10:00.000-07:00",
+  "last_verified": "2026-07-05T15:10:00.000-07:00",
+  "next_review": "2026-08-04T15:10:00.000-07:00",
   "recurring_credits": [
     {
       "credit_key": "onekeycash-anniversary-credit",

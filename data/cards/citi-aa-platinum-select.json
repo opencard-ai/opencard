@@ -7,12 +7,18 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 2500,
-    "time_period_months": 3,
-    "bonus_points": 50000,
-    "description": "50,000 AAdvantage bonus miles after spending $2,500 in the first 3 months.",
+    "spending_requirement": 3500,
+    "time_period_months": 4,
+    "bonus_points": 80000,
+    "description": "Limited-time offer: earn 80,000 American Airlines AAdvantage bonus miles after $3,500 in purchases within the first 4 months of account opening.",
     "point_program": "American Airlines AAdvantage",
-    "estimated_value": 825
+    "estimated_value": 1320,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
+    "notes": [
+      "Official AA/Citi page confirmed 80,000 miles after $3,500/4 months on 2026-07-05."
+    ],
+    "last_verified": "2026-07-05"
   },
   "earning_rates": [
     {
@@ -54,13 +60,18 @@
     "return_protection": null
   },
   "tags": [],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://creditcards.aa.com/credit-cards/citi-platinum-card-american-airlines-direct/",
+      "notes": "Official AA/Citi product page."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.975Z",
-  "last_verified": "2026-04-16T13:41:49.975Z",
-  "next_review": "2026-07-15T13:41:49.975000+00:00"
+  "last_updated": "2026-07-05T15:10:00.000-07:00",
+  "last_verified": "2026-07-05T15:10:00.000-07:00",
+  "next_review": "2026-08-04T15:10:00.000-07:00"
 }

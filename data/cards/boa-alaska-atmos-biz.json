@@ -9,13 +9,18 @@
   "welcome_offer": {
     "spending_requirement": 5000,
     "time_period_months": 3,
-    "bonus_points": 85000,
-    "description": "85,000 bonus miles after $5,000 spend on purchases in the first 90 days, plus a companion fare and a 50% flight discount code.",
-    "point_program": "Alaska Airlines Miles",
-    "estimated_value": 1190,
+    "bonus_points": 70000,
+    "description": "Limited-time online offer: 70,000 bonus points plus a $99 Companion Fare (plus taxes and fees from $23) after qualifying spend.",
+    "point_program": "Atmos Rewards",
+    "estimated_value": 980,
     "is_elevated": true,
-    "expires": "2026-06-30",
-    "offer_status": "public_limited_time"
+    "expires": null,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
+    "notes": [
+      "Official Bank of America business page confirmed 70,000 bonus points + $99 Companion Fare on 2026-07-05."
+    ],
+    "last_verified": "2026-07-05"
   },
   "earning_rates": [
     {
@@ -82,6 +87,10 @@
   ],
   "sources": [
     {
+      "url": "https://business.bankofamerica.com/en/credit-cards/atmos-rewards",
+      "notes": "Official Bank of America business Atmos Rewards page."
+    },
+    {
       "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/alaska-airlines-business-credit-card/",
       "notes": "Official BOA Business Page"
     },
@@ -90,7 +99,7 @@
       "notes": "DoC 85K offer details"
     }
   ],
-  "last_updated": "2026-04-30T04:45:32.585Z",
+  "last_updated": "2026-07-05T15:10:00.000-07:00",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
@@ -100,13 +109,7 @@
     "rules": [],
     "notes": null
   },
-  "welcome_bonus": {
-    "amount": 80000,
-    "type": "points",
-    "source": "creditcards.com",
-    "last_updated": "2026-04-24"
-  },
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-04-16T13:41:49.933Z",
-  "next_review": "2026-07-15T13:41:49.933000+00:00"
+  "last_verified": "2026-07-05T15:10:00.000-07:00",
+  "next_review": "2026-08-04T15:10:00.000-07:00"
 }

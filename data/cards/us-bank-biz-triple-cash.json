@@ -11,29 +11,45 @@
     "time_period_months": 6,
     "bonus_points": 750,
     "estimated_value": 750,
-    "point_program": "U.S. Bank Cash+",
-    "description": "$750 cash back after spending $6,000 in first 6 months"
+    "point_program": "U.S. Bank Cash Rewards",
+    "description": "$750 cash back after eligible net purchases totaling $6,000 or more are made to the Account Owner’s card within the first 180 days of account opening.",
+    "offer_status": "public",
+    "confidence": "high",
+    "notes": [
+      "Official U.S. Bank page confirmed $750 after $6,000/180 days on 2026-07-05."
+    ],
+    "last_verified": "2026-07-05"
   },
   "earning_rates": [
     {
-      "category": "Gas and EV Charging Stations",
+      "category": "Gas and EV charging stations",
       "rate": 3,
-      "notes": "3% cash back at gas stations and EV charging stations"
+      "notes": "3% cash back on eligible gas and EV charging station purchases; transactions of $200 or less."
     },
     {
-      "category": "Cellular Service Providers",
+      "category": "Office supply stores",
       "rate": 3,
-      "notes": "3% cash back on cellular service provider purchases"
+      "notes": "3% cash back on eligible office supply store purchases."
     },
     {
-      "category": "Recurring Software Subscriptions",
+      "category": "Cell phone service providers",
       "rate": 3,
-      "notes": "3% cash back on eligible recurring software subscriptions (e.g., QuickBooks, FreshBooks)"
+      "notes": "3% cash back on eligible cell phone service provider purchases."
     },
     {
-      "category": "All Other Purchases",
+      "category": "Restaurants",
+      "rate": 3,
+      "notes": "3% cash back on eligible restaurant purchases."
+    },
+    {
+      "category": "Prepaid hotels and car rentals through Travel Center",
+      "rate": 5,
+      "notes": "5% cash back on prepaid hotels and car rentals booked directly in the U.S. Bank Travel Center."
+    },
+    {
+      "category": "All other eligible purchases",
       "rate": 1,
-      "notes": "1% unlimited cash back on all other purchases"
+      "notes": "1% cash back with no total rewards cap."
     }
   ],
   "travel_benefits": {
@@ -72,14 +88,10 @@
   "sources": [
     {
       "url": "https://www.usbank.com/business-banking/business-credit-cards/business-triple-cash-back-credit-card.html",
-      "notes": "Official U.S. Bank page"
-    },
-    {
-      "url": "https://www.nerdwallet.com/business/credit-cards/reviews/us-bank-business-triple-cash-rewards-world-elite",
-      "notes": "NerdWallet review"
+      "notes": "Official U.S. Bank product page."
     }
   ],
-  "last_updated": "2026-04-30T04:47:59.374Z",
+  "last_updated": "2026-07-05T15:10:00.000-07:00",
   "status": "active",
   "notes": "Strong for gas, cell phone bills, and software subscriptions. $750 welcome offer is notable. 3% foreign transaction fee.",
   "hotel_program": null,
@@ -105,6 +117,6 @@
       "reset_type": "calendar_year"
     }
   ],
-  "last_verified": "2026-04-16T13:41:50.006Z",
-  "next_review": "2026-07-15T13:41:50.006000+00:00"
+  "last_verified": "2026-07-05T15:10:00.000-07:00",
+  "next_review": "2026-08-04T15:10:00.000-07:00"
 }

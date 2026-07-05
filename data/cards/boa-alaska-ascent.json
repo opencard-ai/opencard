@@ -7,15 +7,22 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 4000,
-    "time_period_months": 3,
-    "bonus_points": 85000,
-    "description": "Earn 85,000 bonus miles after spending $4,000 in purchases within the first 3 months of account opening, plus a 50% flight discount code.",
+    "bonus_points": null,
+    "spending_requirement": null,
+    "time_period_months": null,
+    "description": "Issuer page requires manual verification for the current public welcome offer. Previous limited-time offer expired on 2026-06-30 and should not be displayed as current.",
     "point_program": "Alaska Airlines Mileage Plan",
-    "estimated_value": 1190,
-    "is_elevated": true,
-    "expires": "2026-06-30",
-    "offer_status": "public_limited_time"
+    "estimated_value": null,
+    "is_elevated": false,
+    "expires": null,
+    "offer_status": "review_required",
+    "confidence": "low",
+    "notes": [
+      "Manual review on 2026-07-05: Bank of America public product page did not expose a reliable current welcome-offer value in static HTML.",
+      "BofA prequalification endpoint returned generic/no-annual-fee copy inconsistent with this product, so it was not used as authoritative offer data.",
+      "Prior limited-time offer had expires=2026-06-30 and is now stale."
+    ],
+    "last_verified": "2026-07-05"
   },
   "earning_rates": [
     {
@@ -82,7 +89,7 @@
       "url": "https://www.uscreditcardguide.com/boa-alaska-atmos-ascent-credit-card/"
     }
   ],
-  "last_updated": "2026-04-29T06:59:27.378Z",
+  "last_updated": "2026-07-05T15:10:00.000-07:00",
   "hotel_program": null,
   "application_rules": {
     "rules": [
@@ -123,6 +130,6 @@
     }
   ],
   "last_scraped": "2026-04-24T23:28:00Z",
-  "last_verified": "2026-04-24T23:33:00Z",
-  "next_review": "2026-07-23T23:33:00+00:00"
+  "last_verified": "2026-07-05T15:10:00.000-07:00",
+  "next_review": "2026-07-08T15:10:00.000-07:00"
 }

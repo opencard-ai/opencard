@@ -7,12 +7,18 @@
   "foreign_transaction_fee": 3,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 6000,
-    "time_period_months": 3,
-    "bonus_points": 75000,
-    "estimated_value": 1275,
-    "description": "75,000 bonus points after you spend $6,000 on purchases in the first 3 months. Worth $750 cash, or up to ~$1,275 transferred via a Chase premium UR card (Sapphire Preferred / Reserve / Ink Preferred / Premier).",
-    "point_program": "Chase Ultimate Rewards"
+    "spending_requirement": 8000,
+    "time_period_months": 4,
+    "bonus_points": 100000,
+    "estimated_value": 1700,
+    "description": "$1,000 cash back (100,000 Ultimate Rewards points) after you spend $8,000 on purchases in the first 4 months after account opening.",
+    "point_program": "Chase Ultimate Rewards",
+    "offer_status": "public_limited_time",
+    "confidence": "high",
+    "notes": [
+      "Official Chase Ink Business Unlimited page confirmed $750 struck through to $1,000 cash back after $8,000/4 months on 2026-07-05."
+    ],
+    "last_verified": "2026-07-05"
   },
   "earning_rates": [
     {
@@ -68,7 +74,7 @@
   "sources": [
     {
       "url": "https://creditcards.chase.com/business-credit-cards/ink/unlimited",
-      "notes": "Official Chase page confirms $750 bonus after $6K spend in 3 months, 1.5% flat, 0% intro APR for 12 months."
+      "notes": "Official Chase product page confirming current $1,000 cash back offer after $8,000 spend in 4 months."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/chase-ink-card-showdown/",
@@ -83,13 +89,13 @@
       "notes": "Confirms 3% foreign transaction fee."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.967Z",
+  "last_updated": "2026-07-05T15:10:00.000-07:00",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.967Z",
-  "next_review": "2026-07-15T13:41:49.967000+00:00",
+  "last_verified": "2026-07-05T15:10:00.000-07:00",
+  "next_review": "2026-08-04T15:10:00.000-07:00",
   "featured": true
 }
