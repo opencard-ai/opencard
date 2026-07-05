@@ -30,16 +30,17 @@
       "time_period_months": 3,
       "description": "Earn 100,000 bonus miles after $5,000 spend on purchases in the first 90 days, plus a 50% flight discount code.",
       "point_program": "Alaska Airlines Mileage Plan",
-      "estimated_value": 1400,
-      "offer_status": "public_limited_time",
-      "confidence": "medium_high",
+      "estimated_value": null,
+      "offer_status": "expired_review_required",
+      "confidence": "low",
       "notes": [
         "High-priority new BoA Alaska Atmos Summit adaptor; local data card already exists.",
-        "Local data currently has expires=2026-06-30; verify current issuer/DoC end date before applying."
+        "Local data currently has expires=2026-06-30; verify current issuer/DoC end date before applying.",
+        "Expired 2026-06-30 offer retained only as historical/adaptor test input; refresh issuer source before applying any current offer."
       ],
       "source_conflicts": [],
       "last_verified": "AUTO_DATE",
-      "is_elevated": true,
+      "is_elevated": false,
       "expires": "2026-06-30"
     }
   },
@@ -52,7 +53,8 @@
   },
   "open_questions": [
     "Confirm whether 2026-06-30 expiry is still correct or whether offer extended/changed.",
-    "Summit 100k remains live as a limited-time online offer according to Bank of America search-visible source and secondary sources; spend requirement differs across secondary snippets and should be issuer-verified before production apply."
+    "Summit 100k remains live as a limited-time online offer according to Bank of America search-visible source and secondary sources; spend requirement differs across secondary snippets and should be issuer-verified before production apply.",
+    "Refresh official issuer/apply source before promoting this offer; expired 2026-06-30 values must not be applied as current/elevated."
   ],
   "community": {
     "summary": "Summit 100k remains live as a limited-time online offer according to Bank of America search-visible source and secondary sources; spend requirement differs across secondary snippets and should be issuer-verified before production apply.",
@@ -60,7 +62,7 @@
       "offer_amount": 100000,
       "spend_requirement": 5000,
       "spend_window_months": 3,
-      "status": "public_limited_time",
+      "status": "expired_review_required",
       "expires": "2026-06-30"
     },
     "confidence": "medium_until_issuer_snapshot_present",

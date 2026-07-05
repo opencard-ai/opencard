@@ -60,6 +60,31 @@ function parseHotelStatus(item: any): HotelStatus | null {
   return null;
 }
 
+function dateOnlyUtc(value: string): number | null {
+  const match = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return null;
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  if (!year || !month || !day) return null;
+  return Date.UTC(year, month - 1, day);
+}
+
+function todayUtcDay(): number {
+  const now = new Date();
+  return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+}
+
+function expiredDateFields(offer: any, today = todayUtcDay()): string[] {
+  if (!offer || typeof offer !== 'object') return [];
+  return ['expires', 'elevated_until'].filter((field) => {
+    const value = offer[field];
+    if (typeof value !== 'string') return false;
+    const expiry = dateOnlyUtc(value);
+    return expiry !== null && expiry < today;
+  });
+}
+
 // ============ SCHEMA VALIDATION ============
 
 function validateSchema(card: any, fileName: string): ValidationIssue[] {
@@ -474,6 +499,43 @@ function validateSanity(card: any, fileName: string): ValidationIssue[] {
   return issues;
 }
 
+function validateCardAdaptorConfigs(): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
+  const configsDir = path.join(process.cwd(), 'scripts', 'card-adaptor', 'cards');
+  if (!fs.existsSync(configsDir)) return issues;
+
+  const files = fs.readdirSync(configsDir).filter(f => f.endsWith('.json'));
+  for (const file of files) {
+    try {
+      const config = JSON.parse(fs.readFileSync(path.join(configsDir, file), 'utf8'));
+      const offer = config?.candidate?.welcome_offer;
+      const expiredFields = expiredDateFields(offer);
+      if (!expiredFields.length) continue;
+
+      const status = typeof offer.offer_status === 'string' ? offer.offer_status : '';
+      const looksCurrent = /public|current|limited|elevated/i.test(status) || offer.is_elevated === true;
+      if (looksCurrent) {
+        issues.push({
+          card: config.cardId || file,
+          severity: 'error',
+          source: 'sanity',
+          message: `card-adaptor welcome_offer has expired ${expiredFields.join(', ')} but is still marked current/elevated (offer_status=${JSON.stringify(offer.offer_status)}, is_elevated=${JSON.stringify(offer.is_elevated)})`,
+          field: 'scripts/card-adaptor candidate.welcome_offer'
+        });
+      }
+    } catch (e: any) {
+      issues.push({
+        card: file,
+        severity: 'error',
+        source: 'schema',
+        message: `card-adaptor JSON parse error: ${e.message}`,
+        field: 'scripts/card-adaptor'
+      });
+    }
+  }
+  return issues;
+}
+
 // ============ MAIN ============
 
 function main() {
@@ -503,6 +565,8 @@ function main() {
       });
     }
   }
+
+  allIssues.push(...validateCardAdaptorConfigs());
 
   const errors = allIssues.filter(i => i.severity === 'error');
   const warnings = allIssues.filter(i => i.severity === 'warning');

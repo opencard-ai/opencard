@@ -217,6 +217,48 @@ function replaceAutoDate(value: any, today = new Date().toISOString().slice(0, 1
   return value;
 }
 
+function dateOnlyUtc(value: string): number | null {
+  const match = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return null;
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  if (!year || !month || !day) return null;
+  return Date.UTC(year, month - 1, day);
+}
+
+function todayUtcDay(): number {
+  const now = new Date();
+  return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+}
+
+function expiredWelcomeOfferDates(offer: any, today = todayUtcDay()): string[] {
+  if (!offer || typeof offer !== 'object') return [];
+  const fields = ['expires', 'elevated_until'];
+  return fields.filter((field) => {
+    const value = offer[field];
+    if (typeof value !== 'string') return false;
+    const expiry = dateOnlyUtc(value);
+    return expiry !== null && expiry < today;
+  });
+}
+
+function sanitizeExpiredWelcomeOfferCandidate(candidate: any): string[] {
+  const offer = candidate?.welcome_offer;
+  const expiredFields = expiredWelcomeOfferDates(offer);
+  if (!expiredFields.length) return [];
+
+  offer.is_elevated = false;
+  offer.offer_status = 'expired_review_required';
+  offer.confidence = 'low';
+  offer.estimated_value = null;
+  offer.notes = Array.from(new Set([
+    ...(Array.isArray(offer.notes) ? offer.notes : []),
+    `Card adaptor guard: welcome offer has expired date field(s): ${expiredFields.join(', ')}. Do not apply as current or elevated until issuer source is refreshed.`,
+  ]));
+  return expiredFields;
+}
+
 function scraplingBin(): string {
   const candidates = [
     process.env.SCRAPLING_BIN,
@@ -488,11 +530,15 @@ function detectIssuerWelcomeOfferCheck(runDir: string): LiveWelcomeOfferCheck | 
 function normalize(runDir: string): void {
   const config = configFromRun(runDir);
   const candidate = replaceAutoDate(deepClone(config.candidate));
+  const expiredWelcomeOfferFields = sanitizeExpiredWelcomeOfferCandidate(candidate);
   writeJson(path.join(runDir, 'candidate.json'), {
     card_id: config.cardId,
     candidate,
     citations: config.citations || {},
     open_questions: config.open_questions || [],
+    guardrails: {
+      expired_welcome_offer_fields: expiredWelcomeOfferFields,
+    },
   });
   updateRun(runDir, 'candidate.json');
 }
@@ -607,6 +653,8 @@ function createArtifact(runDir: string): void {
   const documentedConditionalWelcomeBonus = hasDocumentedConditionalWelcomeBonus(candidateEnvelope);
   if (!primarySource) riskFlags.add('source_snapshot_missing');
   if (primarySource && artifactSourceType(primarySource.source_type) === 'other_third_party') riskFlags.add('third_party_source_only');
+  if (expiredWelcomeOfferDates(candidate.welcome_offer).length) riskFlags.add('expired_welcome_offer_candidate');
+  if (candidate.welcome_offer?.offer_status === 'expired_review_required') riskFlags.add('expired_offer_downgraded_to_review_required');
   if (candidate.welcome_offer && conditionalWelcomeBonus && !documentedConditionalWelcomeBonus) riskFlags.add('conditional_or_tiered_welcome_bonus');
   for (const diff of changed) {
     if (riskForField(diff.field) !== 'low') riskFlags.add(`${diff.field}_changed`);
@@ -737,6 +785,13 @@ function qa(runDir: string): void {
   if (conditionalWelcomeBonus && !documentedConditionalWelcomeBonus) warnings.push('Welcome offer appears conditional or tiered (for example up-to/additional/employee-card/authorized-user language); verify guaranteed vs conditional bonus before applying.');
   const expiryWarning = requiresWelcomeOffer ? welcomeOfferExpiryWarning(candidate) : null;
   if (expiryWarning) warnings.push(expiryWarning);
+  const expiredOfferFields = requiresWelcomeOffer ? expiredWelcomeOfferDates(candidate?.candidate?.welcome_offer) : [];
+  if (expiredOfferFields.length) {
+    blocking_issues.push(`welcome_offer has expired date field(s): ${expiredOfferFields.join(', ')}; refresh issuer/source before applying`);
+  }
+  if (requiresWelcomeOffer && candidate?.candidate?.welcome_offer?.offer_status === 'expired_review_required') {
+    warnings.push('Expired welcome offer was downgraded by adaptor guard; do not treat as current/elevated.');
+  }
   if (requiresWelcomeOffer && liveCheck?.drifted) {
     warnings.push(
       `Issuer source drift detected; candidate is stale for ${liveCheck.drift_fields.join(', ')}. Refresh candidate from live issuer copy before treating this run as no-production-delta.`,
