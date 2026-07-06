@@ -31,27 +31,29 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "spending_requirement": 9000,
+      "bonus_points": 150000,
+      "spending_requirement": 8000,
       "time_period_months": 6,
-      "free_nights": 5,
-      "free_night_value_cap": 50000,
-      "estimated_value": 1300,
-      "description": "Earn 3 Free Night Awards after spending $6,000 in purchases in the first 6 months, plus 2 additional Free Night Awards after spending an additional $3,000 ($9,000 total) in the first 6 months. Each award is valued up to 50,000 Marriott Bonvoy points.",
+      "description": "Earn 150,000 Marriott Bonvoy bonus points and a $125 statement credit after making $8,000 in purchases within the first 6 months of Card Membership. Offer ends 7/15/2026.",
       "point_program": "Marriott Bonvoy",
+      "estimated_value": 1175,
       "offer_status": "public_limited_time",
-      "confidence": "medium",
+      "confidence": "high",
       "notes": [
-        "P1 adaptor added because Marriott business-card free-night offers are high-value but less broadly relevant than CSP/IHG/Delta. Verify issuer page before applying."
+        "Marriott official card page checked 2026-07-05 shows 150,000 bonus points plus a $125 statement credit after $8,000 / 6 months; prior 5-Free-Night-Award offer is stale.",
+        "Estimated value uses 150,000 Marriott points at ~$0.007 plus $125 statement credit."
       ],
       "source_conflicts": [],
-      "last_verified": "AUTO_DATE"
+      "last_verified": "AUTO_DATE",
+      "expires": "2026-07-15"
     }
   },
   "citations": {
     "welcome_offer": [
-      "sources/*issuer-amex*.md:Free Night Awards",
-      "sources/*issuer-amex*.md:$6,000",
-      "sources/*issuer-amex*.md:$9,000"
+      "sources/*marriott*.md:150,000 Marriott Bonvoy bonus points",
+      "sources/*marriott*.md:$125 statement credit",
+      "sources/*marriott*.md:$8,000",
+      "sources/*marriott*.md:Offer Ends 7/15/26"
     ]
   },
   "open_questions": [

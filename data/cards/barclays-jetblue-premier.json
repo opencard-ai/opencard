@@ -16,7 +16,11 @@
     "estimated_value": 1300,
     "offer_status": "public",
     "confidence": "high",
-    "last_verified": "2026-06-30"
+    "notes": [
+      "Barclays official JetBlue Premier page checked 2026-07-05 confirms 100,000 points after $5,000 purchases and annual fee paid in full within 90 days."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-07-05"
   },
   "earning_rates": [
     {

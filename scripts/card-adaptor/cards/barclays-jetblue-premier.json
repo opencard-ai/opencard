@@ -28,17 +28,15 @@
       "bonus_points": 100000,
       "spending_requirement": 5000,
       "time_period_months": 3,
-      "description": "Earn 100,000 TrueBlue points after spending $5,000 in the first 90 days. Verify annual-fee payment and Premier-card terms before applying.",
+      "description": "Earn 100,000 TrueBlue bonus points after spending $5,000 on purchases and paying the annual fee in full, both within the first 90 days.",
       "point_program": "JetBlue TrueBlue",
       "estimated_value": 1300,
-      "offer_status": "public_limited_time_or_new_card",
-      "confidence": "medium",
+      "offer_status": "public",
+      "confidence": "high",
       "notes": [
-        "High-priority new JetBlue Premier adaptor. Local data card for Premier does not exist yet; temporarily points at JetBlue base data card until a dedicated data/cards/barclays-jetblue-premier.json is created."
+        "Barclays official JetBlue Premier page checked 2026-07-05 confirms 100,000 points after $5,000 purchases and annual fee paid in full within 90 days."
       ],
-      "source_conflicts": [
-        "Dedicated production card data file is missing."
-      ],
+      "source_conflicts": [],
       "last_verified": "AUTO_DATE"
     }
   },
@@ -46,6 +44,7 @@
     "welcome_offer": [
       "sources/*issuer-barclays*.md:100,000",
       "sources/*issuer-barclays*.md:$5,000",
+      "sources/*issuer-barclays*.md:annual fee in full",
       "sources/*issuer-barclays*.md:90 days"
     ]
   },

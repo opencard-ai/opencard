@@ -7,13 +7,21 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 9000,
+    "bonus_points": 150000,
+    "spending_requirement": 8000,
     "time_period_months": 6,
-    "free_nights": 5,
-    "free_night_value_cap": 50000,
-    "estimated_value": 1300,
-    "description": "3 Free Night Awards after $6,000 spend in 6 months, plus 2 additional Free Night Awards after additional $3,000 ($9,000 total) in first 6 months. Each FN up to 50,000 points (~$260 retail value at typical Marriott redemptions).",
-    "point_program": "Marriott Bonvoy"
+    "description": "Earn 150,000 Marriott Bonvoy bonus points and a $125 statement credit after making $8,000 in purchases within the first 6 months of Card Membership. Offer ends 7/15/2026.",
+    "point_program": "Marriott Bonvoy",
+    "estimated_value": 1175,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
+    "notes": [
+      "Marriott official card page checked 2026-07-05 shows 150,000 bonus points plus a $125 statement credit after $8,000 / 6 months; prior 5-Free-Night-Award offer is stale.",
+      "Estimated value uses 150,000 Marriott points at ~$0.007 plus $125 statement credit."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-07-05",
+    "expires": "2026-07-15"
   },
   "earning_rates": [
     {

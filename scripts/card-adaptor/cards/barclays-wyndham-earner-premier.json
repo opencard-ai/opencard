@@ -4,16 +4,16 @@
   "mode": "offer_and_benefits",
   "sources": [
     {
-      "id": "01-issuer-barclays",
-      "type": "issuer",
-      "url": "https://cards.barclaycardus.com/banking/cards/wyndham-rewards-earner-business-card/",
-      "method": "fetch",
-      "required": true
+      "id": "01-wyndham-premier-search",
+      "type": "other",
+      "url": "https://www.wyndhamrewardscreditcard.com/",
+      "method": "get",
+      "required": false
     },
     {
-      "id": "02-wyndham",
-      "type": "issuer",
-      "url": "https://www.wyndhamhotels.com/wyndham-rewards/credit-card",
+      "id": "02-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/barclays-wyndham-earner-premier-credit-card/",
       "method": "get"
     },
     {
@@ -27,35 +27,30 @@
     "welcome_offer": {
       "bonus_points": 120000,
       "spending_requirement": 6000,
-      "time_period_months": 3,
-      "description": "Earn up to 120,000 Wyndham Rewards points; verify exact tiering, annual fee, and whether this maps to Earner Premier or Earner Business before applying.",
+      "time_period_months": 4,
+      "description": "Earn up to 120,000 Wyndham Rewards points: 90,000 points after spending $6,000 in the first 120 days, plus 30,000 points after spending $750 on Hotels by Wyndham in the first 180 days.",
       "point_program": "Wyndham Rewards",
-      "estimated_value": 1200,
-      "offer_status": "public_limited_time",
-      "confidence": "medium",
+      "estimated_value": 960,
+      "offer_status": "public_new_card",
+      "confidence": "high",
       "notes": [
-        "Review text named Wyndham Earner Premier 120k with $395 AF, but local data has Earner Business and Earner Plus, not a dedicated Premier data card.",
-        "Keep blocked/manual until issuer mapping is resolved."
+        "Premier offer corroborated by Wyndham/Barclays search-visible sources and secondary coverage; do not use the Earner Business official page as the Premier source.",
+        "Estimated value intentionally conservative because Wyndham adds a new 45,000-point top redemption tier on 2026-09-15."
       ],
-      "source_conflicts": [
-        "Card naming/path may be Earner Business rather than Premier in Barclays/Wyndham ecosystem."
-      ],
+      "source_conflicts": [],
       "last_verified": "AUTO_DATE"
     }
   },
   "citations": {
     "welcome_offer": [
-      "sources/*issuer-barclays*.md:120,000",
-      "sources/*issuer-barclays*.md:$6,000",
-      "sources/*wyndham*.md:120,000"
+      "sources/*usccg*.md:120k",
+      "sources/*usccg*.md:90,000",
+      "sources/*usccg*.md:$6,000",
+      "sources/*doc*.md:Wyndham"
     ]
   },
   "open_questions": [
-    "Resolve exact Barclays/Wyndham product mapping: Earner Premier vs Earner Business.",
-    "Create/rename dedicated data card if this is a distinct consumer Premier card.",
-    "Confirm Wyndham 9/30/2026 award-chart devaluation impact before assigning estimated value.",
-    "Resolved: Wyndham/Barclays press release confirms distinct Wyndham Rewards Earner Premier Card with $395 annual fee and up to 120k offer; create dedicated data card before production apply.",
-    "Dedicated production data card created 2026-06-30; run validation before applying further automated updates."
+    "Replace search-visible/secondary Premier sources with a dedicated official Barclays Premier URL once Barclays publishes a stable Premier product page."
   ],
   "community": {
     "summary": "Resolved: Wyndham Earner Premier is a distinct new premium card, not Earner Business/Plus. It needs a dedicated production card.",

@@ -15,10 +15,12 @@
     "estimated_value": 960,
     "offer_status": "public_new_card",
     "confidence": "high",
-    "last_verified": "2026-06-30",
+    "last_verified": "2026-07-06",
     "notes": [
+      "Premier offer corroborated by Wyndham/Barclays search-visible sources and secondary coverage; do not use the Earner Business official page as the Premier source.",
       "Estimated value intentionally conservative because Wyndham adds a new 45,000-point top redemption tier on 2026-09-15."
-    ]
+    ],
+    "source_conflicts": []
   },
   "earning_rates": [
     {
