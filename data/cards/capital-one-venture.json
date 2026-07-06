@@ -13,14 +13,13 @@
     "description": "Earn 75,000 bonus miles once you spend $4,000 on purchases within the first 3 months from account opening.",
     "point_program": "Capital One Miles",
     "estimated_value": 1125,
-    "is_elevated": true,
     "offer_status": "public",
     "confidence": "high",
-    "normal_bonus_points": 50000,
-    "last_verified": "2026-06-30",
     "notes": [
-      "Updated from official issuer source check on 2026-06-30."
-    ]
+      "Official Capital One/search-visible page supports 75,000 miles after $4,000 / 3 months; local data card 50k is stale."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-07-05"
   },
   "earning_rates": [
     {

@@ -36,9 +36,7 @@
       "notes": [
         "Official Capital One/search-visible page supports 75,000 miles after $4,000 / 3 months; local data card 50k is stale."
       ],
-      "source_conflicts": [
-        "Production data card currently has 50k and should be updated if applying."
-      ],
+      "source_conflicts": [],
       "last_verified": "AUTO_DATE"
     }
   },

@@ -8,10 +8,18 @@
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 75000,
-    "description": "75,000 Wyndham bonus points after $2,000 in first 90 days",
-    "estimated_value": 750,
     "spending_requirement": 2000,
-    "time_period_months": 3
+    "time_period_months": 3,
+    "description": "Earn 75,000 Wyndham Rewards bonus points after spending $2,000 on purchases in the first 90 days.",
+    "point_program": "Wyndham Rewards",
+    "estimated_value": 750,
+    "offer_status": "public",
+    "confidence": "medium",
+    "notes": [
+      "P1 adaptor added because Wyndham/Caesars status-match value can make this niche card decision-relevant. Verify issuer page before applying future changes."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-07-05"
   },
   "earning_rates": [
     {

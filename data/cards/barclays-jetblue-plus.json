@@ -8,13 +8,18 @@
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 60000,
-    "description": "Earn 60,000 TrueBlue bonus points after spending $1,000 on purchases and paying the annual fee in full, both within the first 90 days.",
-    "estimated_value": 780,
     "spending_requirement": 1000,
     "time_period_months": 3,
+    "description": "Earn 60,000 TrueBlue bonus points after spending $1,000 on purchases and paying the annual fee in full, both within the first 90 days.",
     "point_program": "JetBlue TrueBlue",
-    "offer_status": "standard_public_offer",
-    "last_verified": "2026-06-13T17:10:00.000Z"
+    "estimated_value": 780,
+    "offer_status": "public",
+    "confidence": "medium",
+    "notes": [
+      "P1 adaptor added for airline niche coverage; keep only if public offer remains elevated or KC has JetBlue use case."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-07-05"
   },
   "earning_rates": [
     {

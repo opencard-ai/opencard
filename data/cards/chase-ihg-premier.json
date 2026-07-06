@@ -10,17 +10,17 @@
     "bonus_points": 140000,
     "spending_requirement": 3000,
     "time_period_months": 3,
-    "description": "Earn 140,000 IHG One Rewards bonus points after spending $3,000 in purchases in the first 3 months from account opening.",
+    "description": "Earn 140,000 IHG One Rewards bonus points after spending $3,000 in purchases in the first 3 months from account opening. Prior 185,000 tiered limited-time offer ended 2026-06-25.",
     "point_program": "IHG Rewards",
     "estimated_value": 700,
     "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Current baseline public offer after the limited-time 185k promo expired."
+      "Official Chase page checked 2026-06-30 shows 140,000 points after $3,000 / 3 months.",
+      "Prior up-to-185,000 offer ended 2026-06-25 and should be treated as expired/historical."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-30",
-    "is_elevated": false,
+    "last_verified": "2026-07-05",
     "normal_bonus_points": 140000
   },
   "earning_rates": [

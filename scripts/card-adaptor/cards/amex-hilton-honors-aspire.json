@@ -47,7 +47,8 @@
         "Official Amex/Hilton pages are canonical; elevated public Hilton Aspire offer ends 7/29/2026."
       ],
       "source_conflicts": [],
-      "last_verified": "AUTO_DATE"
+      "last_verified": "AUTO_DATE",
+      "expires": "2026-07-29"
     },
     "caveats": [
       "Caveat: Hilton Diamond status does not guarantee executive lounge / club access in all properties, brands, room types, or club-access scenarios. Display as conservative caveat, not benefit removal.",

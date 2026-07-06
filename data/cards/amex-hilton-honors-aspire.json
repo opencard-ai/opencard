@@ -17,6 +17,12 @@
     "normal_bonus_points": 150000,
     "elevated_until": "2026-07-29",
     "offer_status": "public_limited_time",
+    "confidence": "high",
+    "notes": [
+      "Official Amex/Hilton pages are canonical; elevated public Hilton Aspire offer ends 7/29/2026."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-07-05",
     "expires": "2026-07-29"
   },
   "earning_rates": [

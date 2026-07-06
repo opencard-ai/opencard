@@ -14,7 +14,14 @@
     "point_program": "Chase Ultimate Rewards",
     "estimated_value": 1700,
     "is_elevated": true,
-    "elevated_until": "2027-09-30"
+    "elevated_until": "2027-09-30",
+    "offer_status": "public",
+    "confidence": "high",
+    "notes": [
+      "Chase issuer page and business-card comparison page support the 100,000-point offer."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-07-05"
   },
   "earning_rates": [
     {
