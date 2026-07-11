@@ -1,0 +1,75 @@
+{
+  "cardId": "boa-premium-rewards-elite",
+  "cardPath": "data/cards/boa-premium-rewards-elite.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-elite-credit-card/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-doc",
+      "type": "doc",
+      "url": "https://www.nerdwallet.com/credit-cards/learn/5-things-to-know-about-the-bank-of-america-premium-rewards-elite-credit-card",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 3000,
+      "time_period_months": 3,
+      "bonus_points": 75000,
+      "estimated_value": 750,
+      "description": "Earn 75,000 bonus points (a $750 value) after making at least $3,000 in purchases in the first 90 days.",
+      "point_program": "Bank of America Travel Points",
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Track issuer wording for any future changes to bonus amount or spend window."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:75,000 bonus points",
+      "sources/*issuer*.md:$3,000",
+      "sources/*doc*.md:Premium Rewards Elite Credit Card"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether the public bonus remains 75k and whether the spend window stays at 90 days."
+  ],
+  "community": {
+    "summary": "Track Bank of America Premium Rewards Elite for the current 75k / $3k welcome offer.",
+    "recommended_production_value": {
+      "offer_amount": 75000,
+      "spend_requirement": 3000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Bank of America premium rewards elite page",
+        "regex": "75,000 bonus points|\\$3,000|90 days",
+        "stance": "supports_public_sub",
+        "offer_amount": 75000,
+        "spend_requirement": 3000,
+        "spend_window_months": 3,
+        "excerpt": "Official page confirms the current public welcome bonus.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

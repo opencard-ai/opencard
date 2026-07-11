@@ -1,0 +1,75 @@
+{
+  "cardId": "us-bank-biz-triple-cash",
+  "cardPath": "data/cards/us-bank-biz-triple-cash.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.usbank.com/business-banking/business-credit-cards/business-triple-cash-back-credit-card.html",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-doc",
+      "type": "doc",
+      "url": "https://www.cnbc.com/select/us-bank-business-triple-cash-rewards/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 6000,
+      "time_period_months": 6,
+      "bonus_points": 750,
+      "estimated_value": 750,
+      "description": "$750 cash back after eligible net purchases totaling $6,000 or more are made to the Account Owner’s card within the first 180 days of account opening.",
+      "point_program": "U.S. Bank Cash Rewards",
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Use issuer wording as the canonical source of truth for the $750 / $6,000 / 180-day welcome offer."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:$750 cash back",
+      "sources/*issuer*.md:$6,000",
+      "sources/*doc*.md:$750 in cash back"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether U.S. Bank changes the spend window or offer language before promoting to production."
+  ],
+  "community": {
+    "summary": "Track U.S. Bank Triple Cash Rewards Business for the current $750 / $6,000 welcome offer.",
+    "recommended_production_value": {
+      "offer_amount": 750,
+      "spend_requirement": 6000,
+      "spend_window_months": 6,
+      "status": "public"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "U.S. Bank business triple cash page",
+        "regex": "\\$750 cash back|\\$6,000|first 180 days",
+        "stance": "supports_public_sub",
+        "offer_amount": 750,
+        "spend_requirement": 6000,
+        "spend_window_months": 6,
+        "excerpt": "Official page confirms the current public welcome bonus.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "cardId": "discover-it-miles",
+  "cardPath": "data/cards/discover-it-miles.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.discover.com/credit-cards/travel/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-doc",
+      "type": "doc",
+      "url": "https://www.nerdwallet.com/reviews/credit-cards/discover-it-miles",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 0,
+      "time_period_months": 12,
+      "bonus_points": 0,
+      "estimated_value": 100,
+      "description": "Unlimited Match™: Discover automatically matches all the miles you've earned at the end of your first year.",
+      "point_program": "Discover Miles",
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "This is a first-year cashback match rather than a fixed upfront signup bonus."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:Unlimited Match",
+      "sources/*issuer*.md:end of your first year",
+      "sources/*doc*.md:Discover it Miles"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether Discover changes the cashback match language or any cap/minimum wording."
+  ],
+  "community": {
+    "summary": "Track Discover it Miles as a first-year Unlimited Match card, not a fixed upfront bonus.",
+    "recommended_production_value": {
+      "offer_amount": 0,
+      "spend_requirement": 0,
+      "spend_window_months": 12,
+      "status": "public_cashback_match"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "$100",
+      "$50"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Discover it Miles page",
+        "regex": "Unlimited Match|first year|no minimum|no maximum",
+        "stance": "supports_cashback_match_public",
+        "offer_amount": 0,
+        "spend_requirement": 0,
+        "spend_window_months": 12,
+        "excerpt": "Discover describes the welcome offer as a year-end cashback match.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

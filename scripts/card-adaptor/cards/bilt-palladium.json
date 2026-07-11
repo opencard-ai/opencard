@@ -1,0 +1,81 @@
+{
+  "cardId": "bilt-palladium",
+  "cardPath": "data/cards/bilt-palladium.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://newsroom.biltrewards.com/meetbiltcard2.0",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-doc",
+      "type": "doc",
+      "url": "https://onemileatatime.com/guides/bilt-palladium-card/",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.nerdwallet.com/credit-cards/reviews/bilt-palladium",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 4000,
+      "time_period_months": 3,
+      "bonus_points": 50000,
+      "estimated_value": 850,
+      "description": "50,000 Bilt bonus points + Bilt Gold Status after spending $4,000 on everyday purchases in the first 90 days. Plus $300 Bilt Cash upon approval.",
+      "point_program": "Bilt Rewards",
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Treat the $300 Bilt Cash as incremental approval value, not part of the points estimate."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:50,000 Bilt bonus points",
+      "sources/*issuer*.md:$4,000",
+      "sources/*doc*.md:Bilt Palladium Card Review"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether the approval-time Bilt Cash bonus or Gold status wording changes before promoting to production."
+  ],
+  "community": {
+    "summary": "Track Bilt Palladium's 50k points + Bilt Gold offer and the approval-time Bilt Cash kicker.",
+    "recommended_production_value": {
+      "offer_amount": 50000,
+      "spend_requirement": 4000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Bilt newsroom",
+        "regex": "50,000 Bilt bonus points|Bilt Gold Status|\\$300 Bilt Cash",
+        "stance": "supports_public_sub",
+        "offer_amount": 50000,
+        "spend_requirement": 4000,
+        "spend_window_months": 3,
+        "excerpt": "Official Bilt Card 2.0 page confirms the current public welcome bonus.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "cardId": "fidelity-2-card",
+  "cardPath": "data/cards/fidelity-rewards-visa-signature.json",
+  "mode": "benefits",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.fidelity.com/spend-save/visa-signature-card",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-benefits",
+      "type": "issuer",
+      "url": "https://www.fidelityrewards.com/credit/benefits.do",
+      "method": "fetch"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.forbes.com/advisor/credit-cards/reviews/fidelity-rewards-visa-signature/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "caveats": [
+      "No welcome bonus. Rewards start earning immediately at 2% when deposited into an eligible Fidelity account.",
+      "This adapter should be treated as a benefits-oriented alias for the 2% Fidelity card."
+    ]
+  },
+  "citations": {
+    "caveats": [
+      "sources/*issuer*.md:No welcome bonus",
+      "sources/*issuer*.md:2% cash back",
+      "sources/*doc*.md:Fidelity Rewards Visa Signature"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether this alias should remain benefits-only or be split into a separate offer review flow later."
+  ],
+  "community": {
+    "summary": "Track the Fidelity 2% card as a benefits-only alias; there is no welcome bonus to normalize.",
+    "recommended_production_value": {
+      "status": "no_welcome_bonus"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Fidelity Visa Signature page",
+        "regex": "No welcome bonus|2% cash back",
+        "stance": "supports_no_bonus_benefits",
+        "excerpt": "Official page confirms no welcome bonus and 2% cash back into Fidelity accounts.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

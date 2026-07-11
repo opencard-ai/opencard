@@ -1,0 +1,82 @@
+{
+  "cardId": "synchrony-virgin-red",
+  "cardPath": "data/cards/synchrony-virgin-red.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.virgin.com/en-us/virgin-red/rewards-credit-card",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-doc",
+      "type": "doc",
+      "url": "https://thepointsguy.com/credit-cards/credit-cards-virgin-red-mastercard-offer/",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.nerdwallet.com/credit-cards/learn/virgin-red",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 4000,
+      "time_period_months": 3,
+      "bonus_points": 60000,
+      "estimated_value": 600,
+      "description": "60,000 Virgin Points Boarding Bonus after spending $4,000 in the first 90 days.",
+      "point_program": "Virgin Points",
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Official page identifies Synchrony as issuer and shows the 60,000-point boarding bonus.",
+        "Keep the annual fee and rewards structure sourced from the issuer page only."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:60,000 Virgin Points",
+      "sources/*issuer*.md:$4,000",
+      "sources/*doc*.md:Virgin Red Rewards Mastercard"
+    ]
+  },
+  "open_questions": [
+    "Confirm the current spend requirement and whether the offer is still live before promoting to production."
+  ],
+  "community": {
+    "summary": "Track Virgin Red Rewards for the 60k / $4k / 90-day public welcome offer.",
+    "recommended_production_value": {
+      "offer_amount": 60000,
+      "spend_requirement": 4000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Virgin Red rewards card page",
+        "regex": "60,000 Virgin Points|Spend \\$4,000|Annual fee: \\$99",
+        "stance": "supports_public_sub",
+        "offer_amount": 60000,
+        "spend_requirement": 4000,
+        "spend_window_months": 3,
+        "excerpt": "Official page shows the current public welcome bonus and annual fee.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

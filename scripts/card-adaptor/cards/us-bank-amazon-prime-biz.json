@@ -1,0 +1,75 @@
+{
+  "cardId": "us-bank-amazon-prime-biz",
+  "cardPath": "data/cards/us-bank-amazon-prime-biz.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.usbank.com/business-banking/business-credit-cards/amazon-business-credit-cards.html",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-news",
+      "type": "issuer",
+      "url": "https://www.usbank.com/about-us-bank/news-and-stories/article-library/amazon-us-bank-and-mastercard-partner-on-new-cards-for-small-businesses.html",
+      "method": "fetch"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 0,
+      "time_period_months": 0,
+      "bonus_points": 0,
+      "estimated_value": 100,
+      "description": "$100 or greater Amazon gift card or statement credit upon approval.",
+      "point_program": "Amazon",
+      "offer_status": "public",
+      "confidence": "medium",
+      "notes": [
+        "U.S. Bank's Amazon Business cards page shows the Prime Business Card welcome offer as an approval bonus rather than a spend-triggered bonus.",
+        "Keep this as adaptor-only until a production card JSON is created."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "This adapter targets the Prime Business Card variant (Prime member 5% back)."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:$100 or greater Amazon gift card",
+      "sources/*issuer*.md:statement credit"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether U.S. Bank later adds a spend requirement or changes the approval bonus language."
+  ],
+  "community": {
+    "summary": "Track the new U.S. Bank Prime Business Card launch page and its approval bonus.",
+    "recommended_production_value": {
+      "offer_amount": 100,
+      "spend_requirement": 0,
+      "spend_window_months": 0,
+      "status": "approval_bonus"
+    },
+    "confidence": "medium",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "U.S. Bank Amazon Business cards page",
+        "regex": "Prime Business Card|\\$100 or greater Amazon gift card|statement credit",
+        "stance": "supports_approval_bonus",
+        "offer_amount": 100,
+        "spend_requirement": 0,
+        "spend_window_months": 0,
+        "excerpt": "Official page shows a non-spend approval bonus for the Prime Business Card.",
+        "confidence": "medium_if_present"
+      }
+    ]
+  }
+}
