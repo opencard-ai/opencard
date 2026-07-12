@@ -1,0 +1,85 @@
+{
+  "cardId": "amex-blue-biz-cash",
+  "cardPath": "data/cards/amex-blue-biz-cash.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-amex",
+      "type": "issuer",
+      "url": "https://www.americanexpress.com/en-us/business/credit-cards/blue-business-cash/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/amex-blue-business-cash/",
+      "method": "get"
+    },
+    {
+      "id": "03-upgradedpoints",
+      "type": "other",
+      "url": "https://upgradedpoints.com/credit-cards/reviews/amex-blue-business-cash-card/welcome-offer-history/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 3000,
+      "time_period_months": 3,
+      "bonus_points": 0,
+      "estimated_value": 250,
+      "description": "Earn a $250 statement credit after you make $3,000 in purchases on your Card in your first 3 months.",
+      "point_program": "Statement Credit",
+      "offer_status": "public",
+      "confidence": "medium",
+      "notes": [
+        "Amex/USCCG currently align on the $250 / $3,000 / 3-month public Blue Business Cash offer.",
+        "Keep an eye on the historical $500 / $15k variant before future refreshes."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-amex*.md:$250",
+      "sources/*issuer-amex*.md:$3,000",
+      "sources/*usccg*.md:Blue Business Cash"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether Amex reverts this card to the older $500 / $15k variant before promotion."
+  ],
+  "community": {
+    "summary": "Track Amex Blue Business Cash for the current $250 statement-credit public offer.",
+    "recommended_production_value": {
+      "offer_amount": 250,
+      "spend_requirement": 3000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "medium",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "$500",
+      "$15k"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "American Express Blue Business Cash page",
+        "regex": "\\$250|\\$3,000|first 3 months",
+        "stance": "supports_public_sub",
+        "offer_amount": 250,
+        "spend_requirement": 3000,
+        "spend_window_months": 3,
+        "excerpt": "Amex Blue Business Cash currently tracks as a $250 statement credit after $3,000 in 3 months.",
+        "confidence": "medium_if_present"
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "cardId": "amex-blue-biz-plus",
+  "cardPath": "data/cards/amex-blue-biz-plus.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-amex",
+      "type": "issuer",
+      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-blue-business-plus-credit-card-amex/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/amex-blue-business-plus/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 3000,
+      "time_period_months": 3,
+      "bonus_points": 15000,
+      "estimated_value": 255,
+      "description": "Earn 15,000 Membership Rewards points after spending $3,000 in first 3 months.",
+      "point_program": "Membership Rewards",
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Official Amex and USCCG sources both support the 15k / $3k / 3-month public offer."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-amex*.md:15,000",
+      "sources/*issuer-amex*.md:$3,000",
+      "sources/*usccg*.md:Blue Business Plus"
+    ]
+  },
+  "open_questions": [
+    "Watch for any targeted or elevated public Blue Business Plus variant before future refreshes."
+  ],
+  "community": {
+    "summary": "Track Amex Blue Business Plus for the current 15k MR / $3k public offer.",
+    "recommended_production_value": {
+      "offer_amount": 15000,
+      "spend_requirement": 3000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": true,
+    "conflictStanceIncludes": [
+      "no welcome offer",
+      "targeted"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "American Express Blue Business Plus page",
+        "regex": "15k|15,000|\\$3,000|first 3 months",
+        "stance": "supports_public_sub",
+        "offer_amount": 15000,
+        "spend_requirement": 3000,
+        "spend_window_months": 3,
+        "excerpt": "Amex Blue Business Plus currently tracks as 15,000 MR after $3,000 in 3 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

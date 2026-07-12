@@ -1,0 +1,81 @@
+{
+  "cardId": "barclays-jetblue-biz",
+  "cardPath": "data/cards/barclays-jetblue-biz.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-barclays",
+      "type": "issuer",
+      "url": "https://cards.barclaycardus.com/banking/credit-card/jetblue/mastercard-mastercard-business/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-jetblue",
+      "type": "issuer",
+      "url": "https://www.jetblue.com/trueblue/credit-cards",
+      "method": "get"
+    },
+    {
+      "id": "03-upgradedpoints",
+      "type": "other",
+      "url": "https://upgradedpoints.com/credit-cards/reviews/jetblue-business-barclaycard/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 2000,
+      "time_period_months": 3,
+      "bonus_points": 60000,
+      "estimated_value": 780,
+      "description": "Earn 60,000 TrueBlue bonus points after spending $2,000 on purchases and paying the annual fee in full, both within the first 90 days.",
+      "point_program": "JetBlue TrueBlue",
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Mirror the existing data-card terms; this is the business JetBlue product, not JetBlue Plus/Premier."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-barclays*.md:60,000",
+      "sources/*issuer-barclays*.md:$2,000",
+      "sources/*issuer-barclays*.md:90 days"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether Barclays changes the JetBlue business annual-fee wording or bonus language before future refreshes."
+  ],
+  "community": {
+    "summary": "Track Barclays JetBlue Business for the current 60k TrueBlue / $2k offer.",
+    "recommended_production_value": {
+      "offer_amount": 60000,
+      "spend_requirement": 2000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Barclays JetBlue Business page",
+        "regex": "60,000|\\$2,000|90 days",
+        "stance": "supports_public_sub",
+        "offer_amount": 60000,
+        "spend_requirement": 2000,
+        "spend_window_months": 3,
+        "excerpt": "Barclays JetBlue Business currently tracks as 60,000 TrueBlue points after $2,000 in 90 days.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}
