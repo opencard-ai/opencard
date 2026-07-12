@@ -50,7 +50,7 @@
   },
   "citations": {
     "welcome_offer": [
-      "sources/*issuer-traveler*.md:Earn 90,000 bonus points",
+      "sources/*issuer-traveler*.md:Earn 80,000 bonus points",
       "sources/*issuer-traveler*.md:$2,000 in the first 3 months"
     ]
   },
@@ -58,9 +58,9 @@
     "Monitor for future elevated limited-time offers; current issuer-visible public offer has replaced the prior elevated candidate."
   ],
   "community": {
-    "summary": "Issuer live source supports 90,000 / $2,000 / 3mo; prior elevated candidate is stale.",
+    "summary": "Issuer live source and data card support 80,000 / $2,000 / 3mo; prior 90,000-point offer is stale.",
     "recommended_production_value": {
-      "offer_amount": 90000,
+      "offer_amount": 80000,
       "spend_requirement": 2000,
       "spend_window_months": 3,
       "status": "public"
@@ -70,18 +70,20 @@
     "conflictStanceIncludes": [
       "125k",
       "125,000",
+      "90k",
+      "90,000",
       "90k tiered"
     ],
     "observations": [
       {
         "sourceType": "issuer",
         "source": "Chase IHG Traveler page",
-        "regex": "90,000|\\$2,000|first 3 months",
-        "stance": "supports_90k_public",
-        "offer_amount": 90000,
+        "regex": "80,000|\\$2,000|first 3 months",
+        "stance": "supports_80k_public_current",
+        "offer_amount": 80000,
         "spend_requirement": 2000,
         "spend_window_months": 3,
-        "excerpt": "Chase IHG Traveler page shows 90,000 points after $2,000 in the first 3 months.",
+        "excerpt": "Chase IHG Traveler page/data card shows 80,000 points after $2,000 in the first 3 months.",
         "confidence": "high_if_present"
       }
     ]

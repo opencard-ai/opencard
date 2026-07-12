@@ -1,0 +1,87 @@
+{
+  "cardId": "amex-blue-cash-preferred",
+  "cardPath": "data/cards/amex-blue-cash-preferred.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/american-express-excellent-increased-offers-via-referrals-for-both-referrer-new-member-platinum-gold-blue-cash-preferred/",
+      "method": "get"
+    },
+    {
+      "id": "03-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/amex-blue-cash-preferred/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 3000,
+      "time_period_months": 6,
+      "bonus_points": 0,
+      "estimated_value": 300,
+      "description": "Earn up to $300 cash back after $3,000 in purchases within the first 6 months; $250 may be the non-referral public offer.",
+      "point_program": "Statement Credit",
+      "offer_status": "public_or_referral_variant",
+      "confidence": "medium",
+      "notes": [
+        "Amex frequently exposes public/referral variants; require issuer/referral source confirmation before production apply."
+      ],
+      "source_conflicts": [
+        "Public issuer-visible offer may be $250 while referral/elevated variants may show up to $300."
+      ],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:$250",
+      "sources/*doc*.md:$300",
+      "sources/*usccg*.md:Blue Cash Preferred"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether OpenCard should track public issuer offer only or elevated referral variants for Amex BCP."
+  ],
+  "community": {
+    "summary": "Track Amex Blue Cash Preferred; public/elevated variants may differ between $250 and $300.",
+    "recommended_production_value": {
+      "offer_amount": 300,
+      "spend_requirement": 3000,
+      "spend_window_months": 6,
+      "status": "review_required_variant"
+    },
+    "confidence": "medium",
+    "ymmv_or_targeted_possible": true,
+    "conflictStanceIncludes": [
+      "$250",
+      "$300",
+      "referral"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "American Express Blue Cash Preferred page",
+        "regex": "\\$250|\\$300|\\$3,000|first 6 months",
+        "stance": "supports_bcp_cash_offer_variant",
+        "offer_amount": 300,
+        "spend_requirement": 3000,
+        "spend_window_months": 6,
+        "excerpt": "Amex BCP welcome offer should be validated against issuer/referral source before production apply.",
+        "confidence": "medium_if_present"
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "cardId": "capital-one-savor",
+  "cardPath": "data/cards/capital-one-savor.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.capitalone.com/credit-cards/savor/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-doc",
+      "type": "doc",
+      "url": "https://www.fool.com/money/credit-cards/articles/limited-time-offer-earn-a-250-bonus-with-the-capital-one-savor-rewards-card/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 500,
+      "time_period_months": 3,
+      "bonus_points": 0,
+      "estimated_value": 250,
+      "description": "Limited-time offer: Earn a one-time $250 cash bonus once you spend $500 on purchases within the first 3 months from account opening.",
+      "point_program": "Cash Back",
+      "offer_status": "limited_time_public",
+      "confidence": "high",
+      "notes": [
+        "This is Capital One Savor, not SavorOne."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:$250",
+      "sources/*issuer*.md:$500",
+      "sources/*doc*.md:Limited-time offer"
+    ]
+  },
+  "open_questions": [
+    "Monitor for explicit end date or reversion from limited-time $250 offer."
+  ],
+  "community": {
+    "summary": "Track Capital One Savor for the limited-time $250 / $500 welcome offer.",
+    "recommended_production_value": {
+      "offer_amount": 250,
+      "spend_requirement": 500,
+      "spend_window_months": 3,
+      "status": "limited_time_public"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "SavorOne"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Capital One Savor page",
+        "regex": "\\$250|\\$500|first 3 months",
+        "stance": "supports_limited_time_public_sub",
+        "offer_amount": 250,
+        "spend_requirement": 500,
+        "spend_window_months": 3,
+        "excerpt": "Capital One Savor page supports $250 after $500 in first 3 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

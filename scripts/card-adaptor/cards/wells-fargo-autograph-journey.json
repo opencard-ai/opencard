@@ -1,0 +1,79 @@
+{
+  "cardId": "wells-fargo-autograph-journey",
+  "cardPath": "data/cards/wells-fargo-autograph-journey.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://creditcards.wellsfargo.com/autograph-journey-visa-credit-card/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-doc",
+      "type": "doc",
+      "url": "https://money.usnews.com/credit-cards/wells-fargo/wells-fargo-autograph-journey-card",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 4000,
+      "time_period_months": 3,
+      "bonus_points": 60000,
+      "estimated_value": 600,
+      "description": "Earn 60,000 bonus points when you spend $4,000 in purchases in the first 3 months — that's $600 toward your next trip.",
+      "point_program": "Wells Fargo Rewards",
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Local research output had an older $3,000 spend requirement; data card and issuer notes support $4,000."
+      ],
+      "source_conflicts": [
+        "Older research output lists $3,000 spend requirement."
+      ],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:60,000 bonus points",
+      "sources/*issuer*.md:$4,000",
+      "sources/*doc*.md:Autograph Journey"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether secondary sources still show stale $3,000 requirement before production apply."
+  ],
+  "community": {
+    "summary": "Track Wells Fargo Autograph Journey for the current 60k / $4k issuer offer.",
+    "recommended_production_value": {
+      "offer_amount": 60000,
+      "spend_requirement": 4000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "$3,000 stale"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Wells Fargo Autograph Journey page",
+        "regex": "60,000 bonus points|\\$4,000|first 3 months",
+        "stance": "supports_current_public_sub",
+        "offer_amount": 60000,
+        "spend_requirement": 4000,
+        "spend_window_months": 3,
+        "excerpt": "Wells Fargo issuer page confirms 60,000 points after $4,000 in 3 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

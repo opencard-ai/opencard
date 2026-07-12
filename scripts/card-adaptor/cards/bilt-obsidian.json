@@ -1,0 +1,84 @@
+{
+  "cardId": "bilt-obsidian",
+  "cardPath": "data/cards/bilt-obsidian.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://newsroom.biltrewards.com/meetbiltcard2.0",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-awardwallet",
+      "type": "doc",
+      "url": "https://awardwallet.com/credit-cards/bilt-rewards/bilt-obsidian-card/",
+      "method": "get"
+    },
+    {
+      "id": "03-tpg",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/bilt-credit-cards-current-offers/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 5000,
+      "time_period_months": 3,
+      "bonus_points": 75000,
+      "estimated_value": 1275,
+      "description": "Earn 75,000 Bilt bonus points after spending $5,000 on purchases in the first 3 months from account opening.",
+      "point_program": "Bilt Rewards",
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Treat as the Bilt Obsidian public Card 2.0 welcome offer; keep separate from Bilt Palladium and Blue."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:75,000 Bilt bonus points",
+      "sources/*issuer*.md:$5,000",
+      "sources/*tpg*.md:Bilt Obsidian"
+    ]
+  },
+  "open_questions": [
+    "Monitor Bilt Card 2.0 launch pages for any change to Obsidian public offer wording."
+  ],
+  "community": {
+    "summary": "Track Bilt Obsidian for the current 75k / $5k public Card 2.0 offer.",
+    "recommended_production_value": {
+      "offer_amount": 75000,
+      "spend_requirement": 5000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "Palladium 50k",
+      "Blue no annual fee"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Bilt newsroom",
+        "regex": "75,000 Bilt bonus points|\\$5,000|first 3 months",
+        "stance": "supports_public_sub",
+        "offer_amount": 75000,
+        "spend_requirement": 5000,
+        "spend_window_months": 3,
+        "excerpt": "Bilt Card 2.0 source confirms the Obsidian welcome bonus.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

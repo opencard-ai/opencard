@@ -1,0 +1,81 @@
+{
+  "cardId": "wells-fargo-active-cash",
+  "cardPath": "data/cards/wells-fargo-active-cash.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://creditcards.wellsfargo.com/active-cash-credit-card/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/wells-fargo-active-cash/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 1000,
+      "time_period_months": 3,
+      "bonus_points": 200,
+      "estimated_value": 200,
+      "description": "$200 Cash Rewards bonus after $1,000 spend in first 3 months; in-branch variants may be higher.",
+      "point_program": "Wells Fargo Cash Rewards",
+      "offer_status": "public",
+      "confidence": "medium",
+      "notes": [
+        "Track online public offer separately from in-branch $250 variant."
+      ],
+      "source_conflicts": [
+        "In-branch $250 offer may exist separately from online public $200 offer."
+      ],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:$200",
+      "sources/*issuer*.md:$1,000",
+      "sources/*usccg*.md:Wells Fargo Active Cash"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether OpenCard should track in-branch $250 variant or online public $200 as canonical."
+  ],
+  "community": {
+    "summary": "Track Wells Fargo Active Cash online $200 / $1k offer and flag possible in-branch $250 variant.",
+    "recommended_production_value": {
+      "offer_amount": 200,
+      "spend_requirement": 1000,
+      "spend_window_months": 3,
+      "status": "public_online"
+    },
+    "confidence": "medium",
+    "ymmv_or_targeted_possible": true,
+    "conflictStanceIncludes": [
+      "$250",
+      "in branch",
+      "in-branch"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Wells Fargo Active Cash page",
+        "regex": "\\$200|\\$1,000|first 3 months",
+        "stance": "supports_online_public_sub",
+        "offer_amount": 200,
+        "spend_requirement": 1000,
+        "spend_window_months": 3,
+        "excerpt": "Wells Fargo/USCCG sources support the online $200 cash rewards bonus after $1,000 spend.",
+        "confidence": "medium_if_present"
+      }
+    ]
+  }
+}
