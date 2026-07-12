@@ -1,0 +1,88 @@
+{
+  "cardId": "citi-aa-platinum-select",
+  "cardPath": "data/cards/citi-aa-platinum-select.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-aa",
+      "type": "issuer",
+      "url": "https://creditcards.aa.com/credit-cards/citi-platinum-card-american-airlines-direct/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-citi",
+      "type": "issuer",
+      "url": "https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-world-elite-mastercard",
+      "method": "fetch"
+    },
+    {
+      "id": "03-tpg-current",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/citi-aadvantage-current-offers/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 3500,
+      "time_period_months": 4,
+      "bonus_points": 80000,
+      "estimated_value": 1320,
+      "description": "Limited-time offer: earn 80,000 American Airlines AAdvantage bonus miles after $3,500 in purchases within the first 4 months of account opening.",
+      "point_program": "American Airlines AAdvantage",
+      "offer_status": "public_limited_time",
+      "confidence": "high",
+      "notes": [
+        "Use repo cardId citi-aa-platinum-select; older research file citi-aadvantage-platinum-select has stale 75k/$5k/5mo data."
+      ],
+      "source_conflicts": [
+        "Older research output lists 75,000 miles after $5,000 / 5 months."
+      ],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-aa*.md:80,000",
+      "sources/*issuer-aa*.md:$3,500",
+      "sources/*tpg*.md:Platinum Select"
+    ]
+  },
+  "open_questions": [
+    "Monitor limited-time expiry; do not backfill stale 75k research value."
+  ],
+  "community": {
+    "summary": "Track Citi / AAdvantage Platinum Select limited-time 80k / $3.5k / 4mo offer.",
+    "recommended_production_value": {
+      "offer_amount": 80000,
+      "spend_requirement": 3500,
+      "spend_window_months": 4,
+      "status": "public_limited_time"
+    },
+    "confidence": "high_when_issuer_pages_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "75k",
+      "75,000",
+      "$5,000",
+      "5 months"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "AA/Citi Platinum Select page",
+        "regex": "80,000|\\$3,500|first 4 months",
+        "stance": "supports_limited_time_public_sub",
+        "offer_amount": 80000,
+        "spend_requirement": 3500,
+        "spend_window_months": 4,
+        "excerpt": "AA/Citi issuer page supports limited-time 80,000 miles after $3,500 in first 4 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

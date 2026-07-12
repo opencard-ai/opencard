@@ -1,0 +1,88 @@
+{
+  "cardId": "citi-double-cash",
+  "cardPath": "data/cards/citi-double-cash.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-cnbc",
+      "type": "doc",
+      "url": "https://www.cnbc.com/select/citi-double-cash-card-welcome-bonus-offer/",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/best-current-credit-card-sign-bonuses/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 200,
+      "spending_requirement": 1500,
+      "time_period_months": 6,
+      "estimated_value": 200,
+      "description": "$200 cash bonus after spending $1,500 in purchases within the first 6 months of account opening.",
+      "point_program": "Citi ThankYou Points",
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Production card offer text appears stale at $1,000/3mo; sources in card notes support $1,500/6mo."
+      ],
+      "source_conflicts": [
+        "Existing welcome_offer field lists $1,000 / 3 months; existing source notes list $1,500 / 6 months."
+      ],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:$200",
+      "sources/*issuer*.md:$1,500",
+      "sources/*cnbc*.md:first 6 months"
+    ]
+  },
+  "open_questions": [
+    "Confirm with issuer before production update because data card's offer object conflicts with its own source notes."
+  ],
+  "community": {
+    "summary": "Track Citi Double Cash $200 offer; current source notes indicate $1,500 / 6mo, while card object has stale $1,000 / 3mo.",
+    "recommended_production_value": {
+      "offer_amount": 200,
+      "spend_requirement": 1500,
+      "spend_window_months": 6,
+      "status": "public_review_required"
+    },
+    "confidence": "medium_high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "$1,000",
+      "3 months",
+      "$1,500",
+      "6 months"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Citi Double Cash page",
+        "regex": "\\$200|\\$1,500|first 6 months",
+        "stance": "supports_current_public_sub_review_required",
+        "offer_amount": 200,
+        "spend_requirement": 1500,
+        "spend_window_months": 6,
+        "excerpt": "Citi Double Cash source notes support $200 after $1,500 in first 6 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

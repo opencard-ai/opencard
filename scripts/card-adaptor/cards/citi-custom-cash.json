@@ -1,0 +1,84 @@
+{
+  "cardId": "citi-custom-cash",
+  "cardPath": "data/cards/citi-custom-cash.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-bankrate",
+      "type": "doc",
+      "url": "https://www.bankrate.com/credit-cards/reviews/citi-custom-cash-card/",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/best-current-credit-card-sign-bonuses/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 20000,
+      "spending_requirement": 500,
+      "time_period_months": 3,
+      "estimated_value": 200,
+      "description": "Earn 20,000 ThankYou Points after spending $500 in purchases within the first 3 months; redeemable for $200 cash back.",
+      "point_program": "Citi ThankYou Rewards",
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Data card estimated value uses OpenCard point valuation; issuer cash-back framing is $200."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:20,000 ThankYou Points",
+      "sources/*issuer*.md:$500",
+      "sources/*doc*.md:Citi Custom Cash"
+    ]
+  },
+  "open_questions": [
+    "Confirm if Citi shows cash-back wording instead of ThankYou-point wording on all public surfaces."
+  ],
+  "community": {
+    "summary": "Track Citi Custom Cash current 20k TYP / $500 public offer.",
+    "recommended_production_value": {
+      "offer_amount": 20000,
+      "spend_requirement": 500,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "$200 cash back",
+      "targeted"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Citi Custom Cash page",
+        "regex": "20,000 ThankYou Points|\\$500|first 3 months|\\$200 cash back",
+        "stance": "supports_public_sub",
+        "offer_amount": 20000,
+        "spend_requirement": 500,
+        "spend_window_months": 3,
+        "excerpt": "Citi Custom Cash public page supports 20,000 ThankYou Points / $500 / 3 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

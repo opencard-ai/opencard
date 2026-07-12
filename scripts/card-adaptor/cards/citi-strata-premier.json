@@ -1,0 +1,86 @@
+{
+  "cardId": "citi-strata-premier",
+  "cardPath": "data/cards/citi-strata-premier.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-tpg",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/how-to-choose-citi-strata-credit-card/",
+      "method": "get"
+    },
+    {
+      "id": "03-cnbc",
+      "type": "doc",
+      "url": "https://www.cnbc.com/select/citi-strata-premier-review/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 60000,
+      "spending_requirement": 4000,
+      "time_period_months": 3,
+      "estimated_value": 1020,
+      "description": "Earn 60,000 ThankYou Points after spending $4,000 in purchases in the first 3 months.",
+      "point_program": "Citi ThankYou Points",
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Keep separate from Citi Strata Elite and base Citi Strata."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:60,000",
+      "sources/*issuer*.md:$4,000",
+      "sources/*tpg*.md:Strata Premier"
+    ]
+  },
+  "open_questions": [
+    "Monitor for elevated 75k/80k public variants before production apply."
+  ],
+  "community": {
+    "summary": "Track Citi Strata Premier current 60k / $4k public offer.",
+    "recommended_production_value": {
+      "offer_amount": 60000,
+      "spend_requirement": 4000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "75k",
+      "75,000",
+      "80k",
+      "80,000"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Citi Strata Premier page",
+        "regex": "60,000|\\$4,000|first 3 months",
+        "stance": "supports_public_sub",
+        "offer_amount": 60000,
+        "spend_requirement": 4000,
+        "spend_window_months": 3,
+        "excerpt": "Citi Strata Premier page supports 60,000 points after $4,000 in 3 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}
