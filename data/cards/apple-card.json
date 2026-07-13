@@ -76,9 +76,17 @@
     {
       "url": "https://www.apple.com/apple-card/",
       "notes": "Official Apple Website"
+    },
+    {
+      "url": "https://www.jpmorganchase.com/ir/news/2026/chase-to-become-new-issuer-of-apple-card",
+      "notes": "JPMorgan Chase official release: Chase to become new Apple Card issuer; transition expected in approximately 24 months."
+    },
+    {
+      "url": "https://www.goldmansachs.com/pressroom/press-releases/2026/goldman-sachs-announces-agreement-to-transition-apple-card-program-to-chase",
+      "notes": "Goldman Sachs official release confirming agreement to transition Apple Card program to Chase."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.950Z",
+  "last_updated": "2026-07-13T19:00:00Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -87,11 +95,23 @@
   "recurring_credits": [],
   "_no_credits_found": true,
   "_no_credits_note": "Apple Card ($0 AF) — no fixed-USD recurring credits. Daily Cash is an earning rate (1-3%, not a credit). Booking.com 2% travel credits = earning rate. Uber One 6-mo trial = one-time promo. Hertz benefits = qualitative. Previous entries 'Daily Cash' and 'Apple Card Family' were category-confused (earning rate / family feature, not recurring credits). Removed 2026-04-27.",
-  "_card_status_alert": "Goldman Sachs is transitioning Apple Card to Chase ($2.2B deal, ~24-month transition). Operator may want to update issuer field after transition completes.",
-  "last_verified": "2026-04-16T13:41:49.950Z",
-  "next_review": "2026-07-15T13:41:49.950000+00:00",
+  "_card_status_alert": "Apple and JPMorgan Chase announced Chase will become the new issuer of Apple Card, with an expected transition in approximately 24 months from the Jan 2026 announcement. Keep issuer as Goldman Sachs until the account/card program transition is actually complete.",
+  "last_verified": "2026-07-13",
+  "next_review": "2026-10-13T00:00:00Z",
   "late_fee": 0,
   "cash_advance_fee_flat": 0,
   "cash_advance_fee_pct": 0,
-  "cfpb_source": "Q3_2025"
+  "cfpb_source": "Q3_2025",
+  "issuer_transition": {
+    "current_issuer": "Goldman Sachs",
+    "future_issuer": "JPMorgan Chase Bank, N.A.",
+    "announced": "2026-01-07",
+    "expected_transition": "approximately 24 months from announcement",
+    "status": "announced_not_completed",
+    "last_verified": "2026-07-13",
+    "sources": [
+      "https://www.jpmorganchase.com/ir/news/2026/chase-to-become-new-issuer-of-apple-card",
+      "https://www.goldmansachs.com/pressroom/press-releases/2026/goldman-sachs-announces-agreement-to-transition-apple-card-program-to-chase"
+    ]
+  }
 }

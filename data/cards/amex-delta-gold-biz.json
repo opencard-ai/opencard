@@ -18,10 +18,13 @@
     "notes": [
       "Official Amex business page is canonical for the public limited-time headline offer: 90,000 Bonus Miles after $6,000 in purchases in the first 6 months; offer ends 7/15/2026.",
       "Delta news/source evidence describes the campaign as a tiered/additional-bonus structure (70,000 base miles plus 20,000 additional miles). Keep this tiered context in review metadata so the offer is not mistaken for an unconditional non-tiered lump-sum source pattern.",
-      "No source conflicts observed for the final 90,000-mile public limited-time offer."
+      "No source conflicts observed for the final 90,000-mile public limited-time offer.",
+      "2026-07-13 review: KC approved proactive update path; existing elevated Delta 7/15/2026 public limited-time offer values were already present in OpenCard data, so this pass refreshes verification metadata rather than changing the headline offer."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-16"
+    "last_verified": "2026-07-13",
+    "expires": "2026-07-15",
+    "is_elevated": true
   },
   "earning_rates": [
     {
@@ -91,9 +94,9 @@
   "application_rules": {
     "rules": []
   },
-  "last_updated": "2026-06-05T03:34:57.017462Z",
+  "last_updated": "2026-07-13T19:00:00Z",
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-06-16",
+  "last_verified": "2026-07-13",
   "next_review": "2026-07-15T00:00:00Z",
   "recurring_credits": [
     {

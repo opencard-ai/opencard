@@ -1,0 +1,82 @@
+{
+  "card_id": "amex-old-blue-cash",
+  "name": "American Express Old Blue Cash Card",
+  "issuer": "American Express",
+  "network": "amex",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 2.7,
+  "credit_required": "Good to Excellent",
+  "status": "discontinued",
+  "deprecated": true,
+  "deprecated_reason": "Legacy Old Blue Cash (OBC) product is being discontinued and converted to Blue Cash Everyday on March 4, 2027 per Doctor of Credit report. This is distinct from Blue Cash Everyday and Blue Cash Preferred, which remain separate active products in OpenCard.",
+  "deprecated_bucket": "A_legacy_discontinued",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "bonus_value": 0,
+    "description": "No current welcome offer; legacy product no longer available to new applicants.",
+    "point_program": "Cash Back"
+  },
+  "earning_rates": [
+    {
+      "category": "Everyday purchases after annual spend threshold",
+      "rate": 5,
+      "notes": "Legacy OBC structure historically earned elevated cash back on supermarkets/gas/drugstores after a spend threshold; exact grandfathered terms may vary by cardholder."
+    },
+    {
+      "category": "Other purchases",
+      "rate": 1,
+      "notes": "Legacy cash-back structure; not available to new applicants."
+    }
+  ],
+  "annual_credits": [],
+  "recurring_credits": [],
+  "travel_benefits": {
+    "lounge_access": {
+      "centurion": false,
+      "priority_pass": false,
+      "other": "None"
+    },
+    "hotel_status": [],
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": null,
+    "trip_delay": false,
+    "purchase_protection": null,
+    "extended_warranty": null,
+    "trip_cancellation": null,
+    "return_protection": null
+  },
+  "tags": [
+    "cash-back",
+    "no-annual-fee",
+    "legacy",
+    "discontinued"
+  ],
+  "sources": [
+    {
+      "url": "https://www.uscreditcardguide.com/amex-old-blue-cash-credit-card/",
+      "notes": "US Credit Card Guide legacy Old Blue Cash review; confirms card no longer accepts new applications."
+    },
+    {
+      "url": "https://www.doctorofcredit.com/american-express-old-blue-cash-card-to-be-discontinued-converted-to-blue-cash-everyday/",
+      "notes": "Doctor of Credit report: Old Blue Cash to be discontinued and converted to Blue Cash Everyday on March 4, 2027."
+    }
+  ],
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": "Legacy discontinued product; no new applications."
+  },
+  "notes": "Legacy Old Blue Cash (OBC), distinct from Blue Cash Everyday (BCE) and Blue Cash Preferred (BCP). Do not map this deprecation onto BCE/BCP.",
+  "_card_status_alert": "Old Blue Cash is being discontinued/converted to Blue Cash Everyday on March 4, 2027; BCE and BCP card files are intentionally unchanged.",
+  "last_updated": "2026-07-13T19:00:00Z",
+  "last_verified": "2026-07-13",
+  "next_review": "2027-03-04T00:00:00Z"
+}

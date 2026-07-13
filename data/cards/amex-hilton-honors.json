@@ -17,7 +17,11 @@
     "normal_bonus_points": 80000,
     "elevated_until": "2026-07-29",
     "offer_status": "public_limited_time",
-    "expires": "2026-07-29"
+    "expires": "2026-07-29",
+    "last_verified": "2026-07-13",
+    "notes": [
+      "2026-07-13 review: KC approved proactive update path; existing elevated Hilton 7/29/2026 public limited-time offer values were already present in OpenCard data, so this pass refreshes verification metadata rather than changing the headline offer."
+    ]
   },
   "earning_rates": [
     {
@@ -87,7 +91,7 @@
       "url": "https://www.hilton.com/en/hilton-honors/credit-cards/"
     }
   ],
-  "last_updated": "2026-06-05T06:27:41.166422Z",
+  "last_updated": "2026-07-13T19:00:00Z",
   "hotel_program": {
     "program": "Hilton Honors",
     "tier": "Gold",
@@ -102,7 +106,7 @@
   "_no_credits_found": true,
   "_no_credits_note": "Hilton Honors Amex (no AF) — entry-level card. No recurring statement credits. Value is earning rates (7x Hilton / 5x dining/groceries/gas / 3x other) + Hilton Silver status (qualitative) + no FX fees. Verified 2026-04-27 vs amex.com.",
   "last_scraped": "2026-04-24T17:24:30.855465",
-  "last_verified": "2026-06-05T06:27:41.166422Z",
+  "last_verified": "2026-07-13",
   "next_review": "2026-07-29T00:00:00Z",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,

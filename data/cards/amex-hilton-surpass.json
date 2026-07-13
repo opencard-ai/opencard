@@ -17,7 +17,11 @@
     "normal_bonus_points": 130000,
     "elevated_until": "2026-07-29",
     "offer_status": "public_limited_time",
-    "expires": "2026-07-29"
+    "expires": "2026-07-29",
+    "last_verified": "2026-07-13",
+    "notes": [
+      "2026-07-13 review: KC approved proactive update path; existing elevated Hilton 7/29/2026 public limited-time offer values were already present in OpenCard data, so this pass refreshes verification metadata rather than changing the headline offer."
+    ]
   },
   "earning_rates": [
     {
@@ -80,14 +84,6 @@
       "notes": "USCCG card review (LLM-friendly static HTML)"
     },
     {
-      "url": "https://thepointsguy.com/credit-cards/hilton-honors-amex-current-offers/",
-      "notes": "130K points + Free Night after $3K spend in 6 months, ends 4/15/26; earning rates 12x/6x/4x/3x"
-    },
-    {
-      "url": "https://www.nerdwallet.com/credit-cards/news/hilton-new-welcome-offer-march-2026",
-      "notes": "Confirmed 130K + 1FN offer per US Credit Card Guide 2026.2 update, offer ends 4/15/26"
-    },
-    {
       "url": "https://onemileatatime.com/deals/hilton-amex-card-bonus/",
       "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold→Diamond path at $40K, National status"
     },
@@ -96,7 +92,7 @@
       "notes": "Hilton official credit card page; current limited-time offers ending 7/29/2026"
     }
   ],
-  "last_updated": "2026-06-05T06:27:41.166422Z",
+  "last_updated": "2026-07-13T19:00:00Z",
   "hotel_program": {
     "program": "Hilton Honors",
     "tier": "Gold Elite",
@@ -124,7 +120,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/"
     }
   ],
-  "last_verified": "2026-06-05T06:27:41.166422Z",
+  "last_verified": "2026-07-13",
   "next_review": "2026-07-29T00:00:00Z",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,

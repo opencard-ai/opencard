@@ -17,10 +17,11 @@
     "confidence": "high",
     "notes": [
       "Official Delta News Hub and Delta personal card comparison page corroborate the public limited-time offer.",
-      "Blue card is not part of this elevated-offer candidate."
+      "Blue card is not part of this elevated-offer candidate.",
+      "2026-07-13 review: KC approved proactive update path; existing elevated Delta 7/15/2026 public limited-time offer values were already present in OpenCard data, so this pass refreshes verification metadata rather than changing the headline offer."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-05",
+    "last_verified": "2026-07-13",
     "is_elevated": true,
     "expires": "2026-07-15"
   },
@@ -116,7 +117,7 @@
       "notes": "Delta News Hub official announcement: limited-time welcome offers and 2026 benefit updates"
     }
   ],
-  "last_updated": "2026-06-05T04:25:28.802083Z",
+  "last_updated": "2026-07-13T19:00:00Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -148,7 +149,7 @@
       "source": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees"
     }
   ],
-  "last_verified": "2026-06-05",
+  "last_verified": "2026-07-13",
   "next_review": "2026-07-15T00:00:00Z",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
