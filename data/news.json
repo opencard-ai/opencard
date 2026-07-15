@@ -1,6 +1,25 @@
 {
   "items": [
     {
+      "title": "Chase $400 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/chase-400-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "nationwide bank bonuses",
+        "no credit card funding",
+        "soft pull"
+      ],
+      "ts": "2026-07-15T14:00:52.000Z",
+      "title_en": "Chase $400 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "Chase $400 Checking Bonus",
+      "summary_zh": "",
+      "title_es": "Chase $400 Checking Bonus",
+      "summary_es": ""
+    },
+    {
       "title": "[7/15 Only] DoorDash DashPass: $50 Off $100 At Kroger",
       "url": "https://www.doctorofcredit.com/7-15-only-doordash-dashpass-50-off-100-at-kroger/",
       "source": "Doctor of Credit",
@@ -240,26 +259,7 @@
       "summary_zh": "",
       "title_es": "American Express Business Gold: 200,000 Points Offer",
       "summary_es": ""
-    },
-    {
-      "title": "New Capital One Spark Cash & Spark Cash Plus Signup Bonus: $1,000/$2,000 + $250/$500 Travel Credit",
-      "url": "https://www.doctorofcredit.com/new-capital-one-spark-cash-spark-cash-plus-signup-bonus-1000-2000-250-500-travel-credit/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "big",
-        "capital one",
-        "capital one spark cash plus",
-        "signup bonus"
-      ],
-      "ts": "2026-07-14T17:39:49.000Z",
-      "title_en": "New Capital One Spark Cash & Spark Cash Plus Signup Bonus: $1,000/$2,000 + $250/$500 Travel Credit",
-      "summary_en": "",
-      "title_zh": "New Capital One Spark Cash & Spark Cash Plus Signup Bonus: $1,000/$2,000 + $250/$500 Travel Credit",
-      "summary_zh": "",
-      "title_es": "New Capital One Spark Cash & Spark Cash Plus Signup Bonus: $1,000/$2,000 + $250/$500 Travel Credit",
-      "summary_es": ""
     }
   ],
-  "fetched": "2026-07-15T08:10:03.953Z"
+  "fetched": "2026-07-15T14:10:49.939Z"
 }
