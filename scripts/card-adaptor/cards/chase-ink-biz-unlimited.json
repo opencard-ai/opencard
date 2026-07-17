@@ -1,0 +1,90 @@
+{
+  "cardId": "chase-ink-biz-unlimited",
+  "cardPath": "data/cards/chase-ink-biz-unlimited.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/business-credit-cards/ink/unlimited",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-chase-compare",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/business-credit-cards/chaseforbusiness",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/best-current-credit-card-sign-bonuses/",
+      "method": "get"
+    },
+    {
+      "id": "04-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/chase-ink-unlimited/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 8000,
+      "time_period_months": 4,
+      "bonus_points": 100000,
+      "description": "$1,000 cash back (100,000 Ultimate Rewards points) after you spend $8,000 on purchases in the first 4 months after account opening.",
+      "point_program": "Chase Ultimate Rewards",
+      "estimated_value": 1700,
+      "is_elevated": true,
+      "normal_bonus_points": 75000,
+      "offer_status": "public_limited_time",
+      "confidence": "high",
+      "notes": [
+        "Chase issuer page is canonical; current production data already reflects the $1,000 / 100k after $8,000 / 4 months limited-time package."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": []
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:$1,000",
+      "sources/*issuer*.md:$8,000",
+      "sources/*issuer*.md:first 4 months"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether Chase publishes an official end date for the Ink Unlimited $1,000 limited-time offer before applying future changes."
+  ],
+  "community": {
+    "summary": "Track Chase Ink Business Unlimited issuer-first for the $1,000 / 100k public limited-time offer.",
+    "recommended_production_value": {
+      "offer_amount": 100000,
+      "spend_requirement": 8000,
+      "spend_window_months": 4,
+      "status": "public_limited_time"
+    },
+    "confidence": "high_when_chase_issuer_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "75000",
+      "$750"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Chase Ink Business Unlimited page",
+        "regex": "1,000|100,000|8,000|first 4 months",
+        "stance": "supports_100k_public_limited_time",
+        "offer_amount": 100000,
+        "spend_requirement": 8000,
+        "spend_window_months": 4,
+        "excerpt": "Chase describes the Ink Business Unlimited public limited-time $1,000 cash back / 100,000 Ultimate Rewards-equivalent offer after $8,000 in 4 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

@@ -25,23 +25,22 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 85000,
-      "spending_requirement": 4000,
+      "bonus_points": 70000,
+      "spending_requirement": 2500,
       "time_period_months": 3,
-      "description": "Earn 85,000 bonus miles after spending $4,000 within the first 3 months, plus a 50% flight discount code.",
-      "point_program": "Alaska Airlines Mileage Plan",
-      "estimated_value": null,
-      "offer_status": "expired_review_required",
-      "confidence": "low",
+      "description": "Atmos Rewards Ascent Visa Signature: get 70,000 bonus points and a $99 Companion Fare (plus taxes and fees from $23) after spending $2,500 or more on purchases within the first 90 days of opening your account.",
+      "point_program": "Atmos Rewards",
+      "estimated_value": 980,
+      "offer_status": "public_limited_time",
+      "confidence": "high",
       "notes": [
-        "High-priority new BoA Alaska Atmos Ascent adaptor; local data card already exists.",
-        "Local data currently has expires=2026-06-30; verify current issuer/DoC end date before applying.",
-        "Expired 2026-06-30 offer retained only as historical/adaptor test input; refresh issuer source before applying any current offer."
+        "Official Bank of America product/search result shows current Ascent public offer: 70,000 bonus points + $99 Companion Fare after $2,500/90 days.",
+        "Replaces stale/expired 2026-06-30 Alaska offer values; no current public expiry date was visible in fetched/searchable issuer evidence."
       ],
       "source_conflicts": [],
-      "last_verified": "AUTO_DATE",
-      "is_elevated": false,
-      "expires": "2026-06-30"
+      "last_verified": "2026-07-17",
+      "is_elevated": true,
+      "expires": null
     }
   },
   "citations": {

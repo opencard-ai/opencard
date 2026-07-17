@@ -1,0 +1,85 @@
+{
+  "cardId": "capital-one-spark-cash-select",
+  "cardPath": "data/cards/capital-one-spark-cash-select.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-select/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-capitalone-business-cards",
+      "type": "issuer",
+      "url": "https://www.capitalone.com/small-business/credit-cards/",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/best-current-credit-card-sign-bonuses/",
+      "method": "get"
+    },
+    {
+      "id": "04-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/capital-one-spark-cash-select/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": null,
+      "spending_requirement": 6000,
+      "time_period_months": 3,
+      "description": "Earn a $750 cash bonus once you spend $6,000 on purchases within the first 3 months of opening an account.",
+      "point_program": "Capital One Spark Cash",
+      "estimated_value": 750,
+      "offer_status": "public",
+      "confidence": "medium",
+      "notes": [
+        "Issuer page is canonical; Spark Cash Select is a simple cash-bonus offer with no annual fee."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": []
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:$750",
+      "sources/*issuer*.md:$6,000",
+      "sources/*issuer*.md:first 3 months"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether Capital One distinguishes Spark Cash Select variants by credit tier and whether the $750 / $6,000 / 3 months offer applies to this production card."
+  ],
+  "community": {
+    "summary": "Track Capital One Spark Cash Select issuer-first for the $750 public cash bonus.",
+    "recommended_production_value": {
+      "offer_amount": 750,
+      "spend_requirement": 6000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "medium_until_capital_one_issuer_page_refetched",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Capital One Spark Cash Select page",
+        "regex": "750|6,000|first 3 months",
+        "stance": "supports_750_cash_public",
+        "offer_amount": 750,
+        "spend_requirement": 6000,
+        "spend_window_months": 3,
+        "excerpt": "Capital One describes Spark Cash Select as a $750 cash bonus after $6,000 in the first 3 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

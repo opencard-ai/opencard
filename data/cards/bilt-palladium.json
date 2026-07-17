@@ -11,7 +11,9 @@
     "bonus_points": 50000,
     "estimated_value": 850,
     "description": "50,000 Bilt bonus points + Bilt Gold Status after spending $4,000 on everyday purchases in the first 90 days. Plus $300 Bilt Cash upon approval (additional value beyond the listed estimated_value, which reflects the points only at 1.7 cpp).",
-    "point_program": "Bilt Rewards"
+    "point_program": "Bilt Rewards",
+    "is_elevated": true,
+    "expires": "2026-07-15"
   },
   "earning_rates": [
     {
@@ -50,7 +52,7 @@
       "url": "https://www.nerdwallet.com/credit-cards/reviews/bilt-palladium"
     }
   ],
-  "last_updated": "2026-04-30T04:47:59.372Z",
+  "last_updated": "2026-07-15T20:08:19.000Z",
   "travel_benefits": {
     "hotel_status": [],
     "lounge_access": [],
@@ -101,6 +103,6 @@
       "source": "https://newsroom.biltrewards.com/meetbiltcard2.0"
     }
   ],
-  "last_verified": "2026-04-16T13:41:49.955Z",
+  "last_verified": "2026-07-15T20:08:19.000Z",
   "next_review": "2026-07-15T13:41:49.955000+00:00"
 }

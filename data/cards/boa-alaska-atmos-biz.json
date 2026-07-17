@@ -7,10 +7,10 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 5000,
+    "spending_requirement": 4000,
     "time_period_months": 3,
     "bonus_points": 70000,
-    "description": "Limited-time online offer: 70,000 bonus points plus a $99 Companion Fare (plus taxes and fees from $23) after qualifying spend.",
+    "description": "Atmos Alaska Airlines Business: get 70,000 bonus points and a $99 Companion Fare (plus taxes and fees from $23) after making $4,000 or more in purchases within the first 90 days of opening your account.",
     "point_program": "Atmos Rewards",
     "estimated_value": 980,
     "is_elevated": true,
@@ -18,9 +18,11 @@
     "offer_status": "public_limited_time",
     "confidence": "high",
     "notes": [
-      "Official Bank of America business page confirmed 70,000 bonus points + $99 Companion Fare on 2026-07-05."
+      "Official Bank of America business product/search result shows current business offer: 70,000 bonus points + $99 Companion Fare after $4,000/90 days.",
+      "Replaces stale/expired 2026-06-30 Alaska offer values; no current public expiry date was visible in fetched/searchable issuer evidence."
     ],
-    "last_verified": "2026-07-05"
+    "last_verified": "2026-07-17",
+    "source_conflicts": []
   },
   "earning_rates": [
     {

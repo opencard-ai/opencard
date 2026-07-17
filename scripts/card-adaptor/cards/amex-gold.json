@@ -3,12 +3,45 @@
   "cardPath": "data/cards/amex-gold.json",
   "mode": "offer",
   "sources": [
-    { "id": "01-doc", "type": "doc", "url": "https://www.doctorofcredit.com/american-express-gold-100000-points/", "method": "get", "required": true },
-    { "id": "02-usccg", "type": "usccg", "url": "https://www.uscreditcardguide.com/amex-premier-rewards-gold/", "method": "get", "required": true },
-    { "id": "03-issuer", "type": "issuer", "url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/", "method": "fetch", "required": true },
-    { "id": "04-tpg", "type": "tpg", "url": "https://thepointsguy.com/credit-cards/amex-gold-current-offer/", "method": "get" },
-    { "id": "05-reddit-creditcards", "type": "reddit", "url": "https://old.reddit.com/r/CreditCards/comments/1tb1ad7/card_recommendation_needed_gold_amex/", "method": "get" },
-    { "id": "06-flyertalk-referrals", "type": "flyertalk", "url": "https://www.flyertalk.com/forum/american-express-membership-rewards/1447947-american-express-referral-offers-read-wiki-before-posting.html", "method": "get" }
+    {
+      "id": "01-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/american-express-gold-100000-points/",
+      "method": "get",
+      "required": true
+    },
+    {
+      "id": "02-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/amex-premier-rewards-gold/",
+      "method": "get",
+      "required": true
+    },
+    {
+      "id": "03-issuer",
+      "type": "issuer",
+      "url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "04-tpg",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/amex-gold-current-offer/",
+      "method": "get"
+    },
+    {
+      "id": "05-reddit-creditcards",
+      "type": "reddit",
+      "url": "https://old.reddit.com/r/CreditCards/comments/1tb1ad7/card_recommendation_needed_gold_amex/",
+      "method": "get"
+    },
+    {
+      "id": "06-flyertalk-referrals",
+      "type": "flyertalk",
+      "url": "https://www.flyertalk.com/forum/american-express-membership-rewards/1447947-american-express-referral-offers-read-wiki-before-posting.html",
+      "method": "get"
+    }
   ],
   "candidate": {
     "annual_fee": 325,
@@ -17,43 +50,139 @@
       "bonus_points": 100000,
       "spending_requirement": 8000,
       "time_period_months": 6,
-      "description": "As-high-as offer: earn up to 100,000 Membership Rewards points after eligible purchases within the first 6 months. Welcome offers vary and applicant may not be eligible.",
+      "description": "As-high-as offer: earn up to 100,000 Membership Rewards points after spending $8,000 in purchases within the first 6 months. Welcome offers vary and applicant may not be eligible.",
       "point_program": "Amex Membership Rewards",
       "estimated_value": 1700,
       "offer_status": "as_high_as_ymmv",
       "confidence": "medium_high",
-      "notes": ["Issuer page is canonical; community/secondary sources may show stale or targeted spend requirements."],
+      "notes": [
+        "Issuer page is canonical; community/secondary sources may show stale or targeted spend requirements.",
+        "2026-07-17 verification: issuer/search result still shows as-high-as 100,000 after $8,000/6 months after the 2026-07-15 watcher date; no current public expiry was visible, so stale expires marker was removed."
+      ],
       "source_conflicts": [],
-      "last_verified": "AUTO_DATE"
+      "last_verified": "2026-07-17",
+      "is_elevated": true
     },
     "earning_rates": [
-      { "category": "Dining", "rate": 4, "notes": "Restaurants worldwide, up to $50,000 per calendar year, then 1X" },
-      { "category": "Groceries", "rate": 4, "notes": "U.S. supermarkets, up to $25,000 per calendar year, then 1X" },
-      { "category": "Prepaid Hotels", "rate": 5, "notes": "Prepaid hotels booked through AmexTravel.com or Amex Travel App" },
-      { "category": "Flights", "rate": 3, "notes": "Flights booked through AmexTravel.com, Amex Travel App, or directly with airlines" },
-      { "category": "Prepaid Car Rentals and Cruises", "rate": 2, "notes": "Prepaid car rentals through AmexTravel.com / Amex Travel App and cruises booked and paid through AmexTravel.com" },
-      { "category": "Other", "rate": 1, "notes": null }
+      {
+        "category": "Dining",
+        "rate": 4,
+        "notes": "Restaurants worldwide, up to $50,000 per calendar year, then 1X"
+      },
+      {
+        "category": "Groceries",
+        "rate": 4,
+        "notes": "U.S. supermarkets, up to $25,000 per calendar year, then 1X"
+      },
+      {
+        "category": "Prepaid Hotels",
+        "rate": 5,
+        "notes": "Prepaid hotels booked through AmexTravel.com or Amex Travel App"
+      },
+      {
+        "category": "Flights",
+        "rate": 3,
+        "notes": "Flights booked through AmexTravel.com, Amex Travel App, or directly with airlines"
+      },
+      {
+        "category": "Prepaid Car Rentals and Cruises",
+        "rate": 2,
+        "notes": "Prepaid car rentals through AmexTravel.com / Amex Travel App and cruises booked and paid through AmexTravel.com"
+      },
+      {
+        "category": "Other",
+        "rate": 1,
+        "notes": null
+      }
     ],
-    "fhr_thc": { "fhr_eligible": false, "thc_eligible": true }
+    "fhr_thc": {
+      "fhr_eligible": false,
+      "thc_eligible": true
+    }
   },
   "citations": {
-    "annual_fee": ["sources/*issuer*.md:Annual Fee $325"],
-    "welcome_offer": ["sources/*issuer*.md:AS HIGH AS 100,000 / $8,000 / 6 months"],
-    "earning_rates": ["sources/*issuer*.md:How You Earn"]
+    "annual_fee": [
+      "sources/*issuer*.md:Annual Fee $325"
+    ],
+    "welcome_offer": [
+      "sources/*issuer*.md:AS HIGH AS 100,000 / $8,000 / 6 months"
+    ],
+    "earning_rates": [
+      "sources/*issuer*.md:How You Earn"
+    ]
   },
-  "open_questions": ["Community/secondary conflict must be resolved via community-check before apply."],
+  "open_questions": [
+    "Community/secondary conflict must be resolved via community-check before apply."
+  ],
   "community": {
     "summary": "Issuer should remain canonical for Amex Gold. Community/secondary sources are mixed, so preserve YMMV and conflict metadata.",
-    "recommended_production_value": { "offer_amount": 100000, "spend_requirement": 8000, "spend_window_months": 6, "status": "as_high_as_ymmv" },
+    "recommended_production_value": {
+      "offer_amount": 100000,
+      "spend_requirement": 8000,
+      "spend_window_months": 6,
+      "status": "as_high_as_ymmv"
+    },
     "confidence": "medium_high_for_8k_core_offer_if_issuer_present; forum consensus mixed",
     "ymmv_or_targeted_possible": true,
-    "conflictStanceIncludes": ["6k"],
+    "conflictStanceIncludes": [
+      "6k"
+    ],
     "observations": [
-      { "sourceType": "tpg", "source": "The Points Guy", "regex": "\\$8,000", "stance": "supports_8k", "offer_amount": 100000, "spend_requirement": 8000, "spend_window_months": 6, "excerpt": "TPG article mentions as high as 100,000 after spending $8,000 in first six months.", "confidence": "high_for_secondary" },
-      { "sourceType": "reddit", "source": "Reddit", "regex": "\\$8,000", "stance": "supports_8k", "offer_amount": 100000, "spend_requirement": 8000, "spend_window_months": 6, "excerpt": "Reddit post mentions as high as 100,000 after spending $8,000 in first 6 months.", "confidence": "medium" },
-      { "sourceType": "doc", "source": "Doctor of Credit", "regex": "\\$6k|\\$6,000", "stance": "supports_6k_and_ymmv", "offer_amount": 100000, "spend_requirement": 6000, "spend_window_months": 6, "excerpt": "DoC mentions $6k and as-high-as/YMMV behavior.", "confidence": "medium" },
-      { "sourceType": "usccg", "source": "US Credit Card Guide", "regex": "\\$6,000", "stance": "supports_6k", "offer_amount": 100000, "spend_requirement": 6000, "spend_window_months": 6, "excerpt": "USCCG mentions 100k after $6,000 in 6 months.", "confidence": "medium" },
-      { "sourceType": "flyertalk", "source": "FlyerTalk", "regex": "\\$6,000", "stance": "supports_6k", "offer_amount": 100000, "spend_requirement": 6000, "spend_window_months": 6, "excerpt": "FlyerTalk referral page mentions Gold 100k after $6,000.", "confidence": "medium_low" }
+      {
+        "sourceType": "tpg",
+        "source": "The Points Guy",
+        "regex": "\\$8,000",
+        "stance": "supports_8k",
+        "offer_amount": 100000,
+        "spend_requirement": 8000,
+        "spend_window_months": 6,
+        "excerpt": "TPG article mentions as high as 100,000 after spending $8,000 in first six months.",
+        "confidence": "high_for_secondary"
+      },
+      {
+        "sourceType": "reddit",
+        "source": "Reddit",
+        "regex": "\\$8,000",
+        "stance": "supports_8k",
+        "offer_amount": 100000,
+        "spend_requirement": 8000,
+        "spend_window_months": 6,
+        "excerpt": "Reddit post mentions as high as 100,000 after spending $8,000 in first 6 months.",
+        "confidence": "medium"
+      },
+      {
+        "sourceType": "doc",
+        "source": "Doctor of Credit",
+        "regex": "\\$6k|\\$6,000",
+        "stance": "supports_6k_and_ymmv",
+        "offer_amount": 100000,
+        "spend_requirement": 6000,
+        "spend_window_months": 6,
+        "excerpt": "DoC mentions $6k and as-high-as/YMMV behavior.",
+        "confidence": "medium"
+      },
+      {
+        "sourceType": "usccg",
+        "source": "US Credit Card Guide",
+        "regex": "\\$6,000",
+        "stance": "supports_6k",
+        "offer_amount": 100000,
+        "spend_requirement": 6000,
+        "spend_window_months": 6,
+        "excerpt": "USCCG mentions 100k after $6,000 in 6 months.",
+        "confidence": "medium"
+      },
+      {
+        "sourceType": "flyertalk",
+        "source": "FlyerTalk",
+        "regex": "\\$6,000",
+        "stance": "supports_6k",
+        "offer_amount": 100000,
+        "spend_requirement": 6000,
+        "spend_window_months": 6,
+        "excerpt": "FlyerTalk referral page mentions Gold 100k after $6,000.",
+        "confidence": "medium_low"
+      }
     ]
   }
 }

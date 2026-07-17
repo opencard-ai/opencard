@@ -21,7 +21,9 @@
       "This is Capital One Savor, not the separate SavorOne card."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-11"
+    "last_verified": "2026-06-11",
+    "is_elevated": true,
+    "expires": null
   },
   "earning_rates": [
     {
@@ -91,11 +93,11 @@
       "notes": "Secondary source corroborating the limited-time $250 cash bonus after $500 spend in the first 3 months."
     }
   ],
-  "last_updated": "2026-06-11T20:20:00.000Z",
+  "last_updated": "2026-07-15T20:08:19.000Z",
   "hotel_program": null,
   "application_rules": {
     "rules": []
   },
-  "last_verified": "2026-06-11T20:20:00.000Z",
+  "last_verified": "2026-07-15T20:08:19.000Z",
   "next_review": "2026-07-11T20:20:00.000Z"
 }

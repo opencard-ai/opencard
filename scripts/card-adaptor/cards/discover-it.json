@@ -1,0 +1,90 @@
+{
+  "cardId": "discover-it",
+  "cardPath": "data/cards/discover-it.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.discover.com/credit-cards/cash-back/it-card.html",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-cashback-match",
+      "type": "issuer",
+      "url": "https://www.discover.com/credit-cards/cash-back/cashback-match.html",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/best-current-credit-card-sign-bonuses/",
+      "method": "get"
+    },
+    {
+      "id": "04-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/discover-it/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 0,
+      "spending_requirement": 0,
+      "time_period_months": 12,
+      "description": "Unlimited Cashback Match: Discover automatically matches all the cash back earned at the end of the first year, with no minimum spending requirement and no cap stated on the issuer page.",
+      "point_program": "Discover Cashback Bonus",
+      "estimated_value": 0,
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Discover it welcome offer is a first-year Cashback Match rather than a fixed points/cash bonus; set spend requirement to 0 and monitor issuer language for cap/minimum changes."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "No fixed upfront signup bonus; value depends on first-year cash back earned."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:Unlimited Cashback Match",
+      "sources/*issuer*.md:end of your first year",
+      "sources/*issuer*.md:no minimum spending or maximum rewards"
+    ]
+  },
+  "open_questions": [
+    "Confirm issuer Cashback Match wording before applying future changes, especially any cap/minimum language."
+  ],
+  "community": {
+    "summary": "Track Discover it Cash Back issuer-first for Cashback Match wording rather than fixed bonus amount.",
+    "recommended_production_value": {
+      "offer_amount": 0,
+      "spend_requirement": 0,
+      "spend_window_months": 12,
+      "status": "public_cashback_match"
+    },
+    "confidence": "high_when_discover_issuer_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "$100",
+      "$200"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Discover it Cash Back page",
+        "regex": "Unlimited Cashback Match|first year|no minimum|no maximum|no cap",
+        "stance": "supports_cashback_match_public",
+        "offer_amount": 0,
+        "spend_requirement": 0,
+        "spend_window_months": 12,
+        "excerpt": "Discover describes the welcome offer as an automatic dollar-for-dollar Cashback Match at the end of the first year.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

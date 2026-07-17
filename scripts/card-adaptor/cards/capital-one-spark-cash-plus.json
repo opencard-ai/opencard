@@ -1,0 +1,87 @@
+{
+  "cardId": "capital-one-spark-cash-plus",
+  "cardPath": "data/cards/capital-one-spark-cash-plus.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-plus/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-capitalone-business-cards",
+      "type": "issuer",
+      "url": "https://www.capitalone.com/small-business/credit-cards/",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/best-current-credit-card-sign-bonuses/",
+      "method": "get"
+    },
+    {
+      "id": "04-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/capital-one-spark-cash-plus/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": null,
+      "spending_requirement": 10000,
+      "time_period_months": 3,
+      "description": "Earn up to $2,000 cash bonus — $1,000 once you spend $4,500, plus an additional $1,000 once you spend $10,000 total in the first 3 months.",
+      "point_program": "Capital One Spark Cash",
+      "estimated_value": 2000,
+      "offer_status": "public",
+      "confidence": "medium",
+      "notes": [
+        "Tiered cash offer; normalize to total potential bonus and highest cumulative spend threshold for drift checks."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": []
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:$2,000",
+      "sources/*issuer*.md:$4,500",
+      "sources/*issuer*.md:$10,000"
+    ]
+  },
+  "open_questions": [
+    "Confirm tier language remains $1,000 after $4,500 plus additional $1,000 after $10,000 total / 3 months before applying future changes."
+  ],
+  "community": {
+    "summary": "Track Capital One Spark Cash Plus issuer-first for the tiered up-to-$2,000 public cash bonus.",
+    "recommended_production_value": {
+      "offer_amount": 2000,
+      "spend_requirement": 10000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "medium_until_capital_one_issuer_page_refetched",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "$1,000"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Capital One Spark Cash Plus page",
+        "regex": "2,000|1,000[\\s\\S]{0,220}4,500|10,000",
+        "stance": "supports_up_to_2000_cash_public",
+        "offer_amount": 2000,
+        "spend_requirement": 10000,
+        "spend_window_months": 3,
+        "excerpt": "Capital One describes Spark Cash Plus as an up-to-$2,000 tiered cash bonus with $4,500 and $10,000 spend thresholds.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

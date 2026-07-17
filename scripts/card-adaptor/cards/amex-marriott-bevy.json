@@ -1,0 +1,87 @@
+{
+  "cardId": "amex-marriott-bevy",
+  "cardPath": "data/cards/amex-marriott-bevy.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-amex",
+      "type": "issuer",
+      "url": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-bevy/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-marriott",
+      "type": "issuer",
+      "url": "https://www.marriott.com/credit-cards/marriott-bonvoy-bevy-american-express-card.mi",
+      "method": "get"
+    },
+    {
+      "id": "03-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/amex-marriott-bonvoy-bevy/",
+      "method": "get"
+    },
+    {
+      "id": "04-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/increased-signup-bonuses-on-american-express-marriott-brilliant-bevy-and-business-cards/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 175000,
+      "spending_requirement": 5000,
+      "time_period_months": 6,
+      "description": "Earn 175,000 Marriott Bonvoy bonus points after spending $5,000 in purchases within the first 6 months.",
+      "point_program": "Marriott Bonvoy",
+      "estimated_value": 1138,
+      "offer_status": "public_elevated",
+      "confidence": "medium_high",
+      "is_elevated": true,
+      "notes": [
+        "Adaptor coverage added for Marriott Bonvoy Bevy elevated-offer monitoring.",
+        "Production card already reflects the 175k elevated value; use adaptor to catch future expiry or regression."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-amex*.md:175,000",
+      "sources/*marriott*.md:175,000",
+      "sources/*doc*.md:175,000"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether an explicit end date is visible on Amex or Marriott issuer pages.",
+    "Confirm no lower public/session offer is replacing the elevated 175k value."
+  ],
+  "community": {
+    "summary": "Adds adaptor coverage for Marriott Bonvoy Bevy; production already tracks 175k, so the primary goal is expiry/drift detection.",
+    "recommended_production_value": {
+      "offer_amount": 175000,
+      "spend_requirement": 5000,
+      "spend_window_months": 6,
+      "status": "public_elevated"
+    },
+    "confidence": "medium_high_when_issuer_or_marriott_page_present",
+    "ymmv_or_targeted_possible": true,
+    "conflictStanceIncludes": ["85k", "125k"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "American Express Marriott Bonvoy Bevy page",
+        "regex": "175,000|5,000|6 months|Offer Ends",
+        "stance": "supports_175k_public_elevated_if_present",
+        "offer_amount": 175000,
+        "spend_requirement": 5000,
+        "spend_window_months": 6,
+        "excerpt": "Issuer page should be checked for active 175,000-point Bevy welcome offer terms.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

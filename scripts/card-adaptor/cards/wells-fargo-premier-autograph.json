@@ -1,0 +1,85 @@
+{
+  "cardId": "wells-fargo-premier-autograph",
+  "cardPath": "data/cards/wells-fargo-premier-autograph.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-wells-fargo-cards",
+      "type": "issuer",
+      "url": "https://creditcards.wellsfargo.com/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-frequentmiler",
+      "type": "other",
+      "url": "https://frequentmiler.com/wells-fargo-premier-autograph-card-might-be-available-without-a-premier-account/",
+      "method": "get"
+    },
+    {
+      "id": "03-drcreditcard",
+      "type": "other",
+      "url": "https://drcreditcard.net/wells-fargo-premier-autograph",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 100000,
+      "spending_requirement": 4000,
+      "time_period_months": 3,
+      "description": "Watchlist offer: Wells Fargo Premier Autograph reportedly offers 100,000 bonus points after spending $4,000 in purchases within the first 3 months. Verify eligibility and issuer-visible terms before creating production card data.",
+      "point_program": "Wells Fargo Rewards",
+      "estimated_value": 1000,
+      "offer_status": "watchlist_targeted_or_client_eligible",
+      "confidence": "medium",
+      "is_elevated": true,
+      "notes": [
+        "Adaptor coverage added as a watchlist config because production data/cards/wells-fargo-premier-autograph.json does not exist yet.",
+        "Secondary sources describe Premier Autograph as similar to Autograph Journey but with a higher 100k intro bonus and possible Premier-client eligibility constraints."
+      ],
+      "source_conflicts": [
+        "Wells Fargo public card directory may not expose a dedicated Premier Autograph landing page to all users.",
+        "Autograph Journey public offer remains 60k after $4k/3mo, so do not merge this into Autograph Journey data."
+      ],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*frequentmiler*.md:100,000",
+      "sources/*drcreditcard*.md:100,000",
+      "sources/*drcreditcard*.md:$4,000"
+    ]
+  },
+  "open_questions": [
+    "Create production data/cards/wells-fargo-premier-autograph.json only after confirming the card should be listed separately from Autograph Journey.",
+    "Confirm whether Premier Autograph requires Wells Fargo Premier relationship eligibility or is broadly available.",
+    "Find an issuer-controlled landing page or authenticated offer page before treating the 100k value as public."
+  ],
+  "community": {
+    "summary": "Adds a watchlist adaptor config for Wells Fargo Premier Autograph without changing production card inventory. Treat 100k as secondary-source/client-eligibility-sensitive until issuer confirmation.",
+    "recommended_production_value": {
+      "offer_amount": 100000,
+      "spend_requirement": 4000,
+      "spend_window_months": 3,
+      "status": "watchlist_targeted_or_client_eligible"
+    },
+    "confidence": "medium_until_issuer_page_or_application_flow_confirms",
+    "ymmv_or_targeted_possible": true,
+    "conflictStanceIncludes": ["Autograph Journey 60k", "Premier-client-only availability"],
+    "observations": [
+      {
+        "sourceType": "other",
+        "source": "Frequent Miler Premier Autograph coverage",
+        "regex": "100,000|\\$4,000|Premier Autograph|Autograph Journey",
+        "stance": "supports_100k_watchlist_if_present",
+        "offer_amount": 100000,
+        "spend_requirement": 4000,
+        "spend_window_months": 3,
+        "excerpt": "Secondary coverage describes a Premier Autograph product with a 100k intro bonus and similarity to Autograph Journey.",
+        "confidence": "medium_if_present"
+      }
+    ]
+  }
+}

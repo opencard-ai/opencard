@@ -20,7 +20,9 @@
       "Chase news release confirms the 100,000-point limited-time offer and new benefits starting June 15, 2026."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-15"
+    "last_verified": "2026-06-15",
+    "is_elevated": true,
+    "expires": null
   },
   "earning_rates": [
     {
@@ -124,7 +126,7 @@
       "notes": "Official Chase press release announcing the June 15, 2026 CSP refresh."
     }
   ],
-  "last_updated": "2026-06-16T00:13:05.232Z",
+  "last_updated": "2026-07-15T20:08:19.000Z",
   "hotel_program": {
     "program": null,
     "tier": null,
@@ -157,7 +159,7 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-06-15",
+  "last_verified": "2026-07-15T20:08:19.000Z",
   "next_review": "2026-07-23T17:26:36.116494",
   "cash_advance_fee_flat": 5,
   "cash_advance_fee_pct": 5,

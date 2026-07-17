@@ -1,0 +1,85 @@
+{
+  "cardId": "marriott-bonvoy-bold",
+  "cardPath": "data/cards/marriott-bonvoy-bold.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-chase",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/bold",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-marriott",
+      "type": "issuer",
+      "url": "https://www.marriott.com/credit-cards/chase-credit-cards.mi",
+      "method": "get"
+    },
+    {
+      "id": "03-tpg",
+      "type": "tpg",
+      "url": "https://thepointsguy.com/credit-cards/reviews/marriott-bonvoy-bold-credit-card-review/",
+      "method": "get"
+    },
+    {
+      "id": "04-upgradedpoints",
+      "type": "other",
+      "url": "https://upgradedpoints.com/news/marriott-bold-card-changes/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 30000,
+      "spending_requirement": 1000,
+      "time_period_months": 3,
+      "description": "Earn 30,000 Marriott Bonvoy bonus points after spending $1,000 in purchases in the first 3 months from account opening.",
+      "point_program": "Marriott Bonvoy",
+      "estimated_value": 195,
+      "offer_status": "public",
+      "confidence": "high",
+      "is_elevated": false,
+      "notes": [
+        "Adaptor coverage added for Marriott Bonvoy Bold baseline monitoring.",
+        "Use issuer/Marriott pages as canonical for future limited-time changes."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-chase*.md:30,000",
+      "sources/*issuer-marriott*.md:30,000"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether Chase or Marriott is showing any limited-time Bold offer above 30k."
+  ],
+  "community": {
+    "summary": "Adds adaptor coverage for Marriott Bonvoy Bold so Chase/Marriott baseline offer drift is monitored.",
+    "recommended_production_value": {
+      "offer_amount": 30000,
+      "spend_requirement": 1000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high_when_chase_or_marriott_issuer_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": ["60k", "3 free nights"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Chase Marriott Bonvoy Bold page",
+        "regex": "30,000|\\$1,000|first 3 months",
+        "stance": "supports_30k_public_baseline_if_present",
+        "offer_amount": 30000,
+        "spend_requirement": 1000,
+        "spend_window_months": 3,
+        "excerpt": "Chase page should be checked for active Bold 30,000-point welcome offer terms.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

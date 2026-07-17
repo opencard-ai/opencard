@@ -7,22 +7,22 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": null,
-    "spending_requirement": null,
-    "time_period_months": null,
-    "description": "Issuer page requires manual verification for the current public welcome offer. Previous limited-time offer expired on 2026-06-30 and should not be displayed as current.",
-    "point_program": "Alaska Airlines Mileage Plan",
-    "estimated_value": null,
-    "is_elevated": false,
+    "bonus_points": 80000,
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "description": "Atmos Rewards Summit Visa Infinite: earn 80,000 bonus points and a 25,000-point Global Companion Award after spending $4,000 or more on purchases within the first 90 days of opening your account.",
+    "point_program": "Atmos Rewards",
+    "estimated_value": 1120,
+    "is_elevated": true,
     "expires": null,
-    "offer_status": "review_required",
-    "confidence": "low",
+    "offer_status": "public_limited_time",
+    "confidence": "high",
     "notes": [
-      "Manual review on 2026-07-05: Bank of America public product page did not expose a reliable current welcome-offer value in static HTML.",
-      "BofA prequalification endpoint returned generic/no-annual-fee copy inconsistent with this product, so it was not used as authoritative offer data.",
-      "Prior limited-time offer had expires=2026-06-30 and is now stale."
+      "Official Bank of America product/search result shows current Summit public offer: 80,000 bonus points + 25,000-point Global Companion Award after $4,000/90 days.",
+      "Replaces stale/expired 2026-06-30 Alaska offer values; no current public expiry date was visible in fetched/searchable issuer evidence."
     ],
-    "last_verified": "2026-07-05"
+    "last_verified": "2026-07-17",
+    "source_conflicts": []
   },
   "earning_rates": [
     {

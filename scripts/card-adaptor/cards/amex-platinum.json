@@ -28,19 +28,19 @@
       "bonus_points": 175000,
       "spending_requirement": 12000,
       "time_period_months": 6,
-      "description": "Earn up to 175,000 Membership Rewards points after eligible spend within the first 6 months. Amex may personalize offers; verify session-visible terms before applying.",
+      "description": "As-high-as offer: earn up to 175,000 Membership Rewards points after spending $12,000 in purchases within the first 6 months. Welcome offers vary and applicant may not be eligible.",
       "point_program": "Amex Membership Rewards",
       "estimated_value": 2975,
-      "offer_status": "as_high_as_public_or_targeted",
+      "offer_status": "as_high_as_ymmv",
       "confidence": "medium_high",
       "notes": [
         "Priority adaptor: flagship Amex card lacked adaptor coverage despite data card existing.",
-        "2026 refresh benefits include the $200 Oura Ring credit and other refreshed credits in data/cards/amex-platinum.json; benefit changes remain manual-review fields."
+        "2026 refresh benefits include the $200 Oura Ring credit and other refreshed credits in data/cards/amex-platinum.json; benefit changes remain manual-review fields.",
+        "2026-07-17 verification: issuer/search result still shows as-high-as 175,000 after $12,000/6 months after the 2026-07-15 watcher date; no current public expiry was visible, so stale expires marker was removed."
       ],
-      "source_conflicts": [
-        "Amex welcome offers may vary by session/applicant; lower public/session offers may appear."
-      ],
-      "last_verified": "AUTO_DATE"
+      "source_conflicts": [],
+      "last_verified": "2026-07-17",
+      "is_elevated": true
     }
   },
   "citations": {

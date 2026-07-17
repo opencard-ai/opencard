@@ -1,0 +1,85 @@
+{
+  "cardId": "chase-ink-biz-premier",
+  "cardPath": "data/cards/chase-ink-biz-premier.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/business-credit-cards/ink/business-premier",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-chase-compare",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/business-credit-cards/chaseforbusiness",
+      "method": "get"
+    },
+    {
+      "id": "03-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/chase-ink-premier/",
+      "method": "get"
+    },
+    {
+      "id": "04-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/best-current-credit-card-sign-bonuses/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 10000,
+      "time_period_months": 3,
+      "bonus_points": null,
+      "description": "$1,000 cash back after spending $10,000 in the first 3 months from account opening.",
+      "point_program": "Chase Ultimate Rewards (Cash Back)",
+      "estimated_value": 1000,
+      "offer_status": "public",
+      "confidence": "medium",
+      "notes": [
+        "Track Ink Business Premier separately because it earns cash-back-style rewards and has a different spend threshold than Ink Cash/Unlimited/Preferred."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": []
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:$1,000",
+      "sources/*issuer*.md:$10,000",
+      "sources/*issuer*.md:first 3 months"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether Ink Business Premier remains at $1,000 after $10,000 / 3 months and whether Chase uses an elevated/limited-time label."
+  ],
+  "community": {
+    "summary": "Track Chase Ink Business Premier issuer-first for its $1,000 cash back offer.",
+    "recommended_production_value": {
+      "offer_amount": 1000,
+      "spend_requirement": 10000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "medium_until_chase_issuer_page_refetched",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Chase Ink Business Premier page",
+        "regex": "1,000|10,000|first 3 months",
+        "stance": "supports_1000_cash_public",
+        "offer_amount": 1000,
+        "spend_requirement": 10000,
+        "spend_window_months": 3,
+        "excerpt": "Chase describes the Ink Business Premier $1,000 cash back offer after $10,000 in 3 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

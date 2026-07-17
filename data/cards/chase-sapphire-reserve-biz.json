@@ -19,7 +19,8 @@
       "Chase official reservebusiness0626 offer page is canonical for the 200,000-point limited-time offer; secondary June 2026 coverage corroborates."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-05"
+    "last_verified": "2026-07-05",
+    "is_elevated": true
   },
   "earning_rates": [
     {
@@ -121,7 +122,7 @@
     }
   ],
   "notes": "Business version of Sapphire Reserve. Same $795 AF and credits. 200,000 point limited-time welcome bonus makes it very attractive. Employee cards are free. Can combine points with personal Sapphire Reserve for larger balances. Key for business travelers who want same premium benefits as personal Reserve.",
-  "last_updated": "2026-06-21T19:05:00.000Z",
+  "last_updated": "2026-07-15T20:08:19.000Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -201,7 +202,7 @@
       "reset_type": "calendar_year"
     }
   ],
-  "last_verified": "2026-04-16T13:41:49.969Z",
+  "last_verified": "2026-07-15T20:08:19.000Z",
   "next_review": "2026-07-15T13:41:49.969000+00:00",
   "featured": true
 }

@@ -1,0 +1,80 @@
+{
+  "cardId": "boa-royal-one-plus",
+  "cardPath": "data/cards/boa-royal-one-plus.json",
+  "mode": "offer_and_benefits",
+  "sources": [
+    {
+      "id": "01-issuer-boa",
+      "type": "issuer",
+      "url": "https://www.bankofamerica.com/credit-cards/products/royal-one-plus-credit-card/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-royal",
+      "type": "issuer",
+      "url": "https://www.royalcaribbean.com/royal-one-visa-card",
+      "method": "get",
+      "required": true
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/bank-of-america-up-to-750-bonus-on-new-royal-one-royal-caribbean-cards/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 70000,
+      "spending_requirement": 3000,
+      "time_period_months": 3,
+      "description": "Limited-time offer: Earn 70,000 Royal Caribbean points after spending $3,000 in purchases in the first 90 days from account opening.",
+      "point_program": "Royal Caribbean Points",
+      "estimated_value": 700,
+      "offer_status": "public_limited_time",
+      "confidence": "high",
+      "notes": [
+        "Official Bank of America and Royal Caribbean pages confirm the Royal ONE Plus product line.",
+        "DoC launch post documents the 70k public offer and $750 onboard-credit framing."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-boa*.md:70,000",
+      "sources/*issuer-boa*.md:$3,000",
+      "sources/*doc*.md:Royal One Plus"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether the Royal ONE Plus public 70k offer remains current and whether the spend window stays at 90 days."
+  ],
+  "community": {
+    "summary": "Track BoA Royal ONE Plus for the current 70k / $3k / 90-day public launch offer.",
+    "recommended_production_value": {
+      "offer_amount": 70000,
+      "spend_requirement": 3000,
+      "spend_window_months": 3,
+      "status": "public_limited_time"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Bank of America Royal ONE Plus page",
+        "regex": "70,000|\\$3,000|90 days|Royal ONE Plus",
+        "stance": "supports_public_sub",
+        "offer_amount": 70000,
+        "spend_requirement": 3000,
+        "spend_window_months": 3,
+        "excerpt": "Official page and Royal Caribbean program page confirm the new Royal ONE Plus card line.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

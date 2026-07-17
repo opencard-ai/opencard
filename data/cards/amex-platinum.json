@@ -10,9 +10,17 @@
     "bonus_points": 175000,
     "spending_requirement": 12000,
     "time_period_months": 6,
-    "description": "Earn up to 175,000 Membership Rewards points",
+    "description": "As-high-as offer: earn up to 175,000 Membership Rewards points after spending $12,000 in purchases within the first 6 months. Welcome offers vary and applicant may not be eligible.",
     "point_program": "Amex Membership Rewards",
-    "estimated_value": 2975
+    "estimated_value": 2975,
+    "is_elevated": true,
+    "offer_status": "as_high_as_ymmv",
+    "confidence": "medium_high",
+    "source_conflicts": [],
+    "last_verified": "2026-07-17",
+    "notes": [
+      "2026-07-17 verification: issuer/search result still shows as-high-as 175,000 after $12,000/6 months after the 2026-07-15 watcher date; no current public expiry was visible, so stale expires marker was removed."
+    ]
   },
   "earning_rates": [
     {
@@ -99,7 +107,7 @@
       "notes": "DoC best current sign-up bonus list"
     }
   ],
-  "last_updated": "2026-05-11T18:30:10.234Z",
+  "last_updated": "2026-07-15T20:08:19.000Z",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -224,7 +232,7 @@
     "last_updated": "2026-05-07"
   },
   "last_scraped": "2026-04-24T07:34:19.364Z",
-  "last_verified": "2026-05-08T05:47:54.573699+00:00",
+  "last_verified": "2026-07-15T20:08:19.000Z",
   "late_fee": 40,
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 5,

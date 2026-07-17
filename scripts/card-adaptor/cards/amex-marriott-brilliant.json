@@ -1,0 +1,89 @@
+{
+  "cardId": "amex-marriott-brilliant",
+  "cardPath": "data/cards/amex-marriott-brilliant.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-amex",
+      "type": "issuer",
+      "url": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-brilliant/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-marriott",
+      "type": "issuer",
+      "url": "https://www.marriott.com/credit-cards/marriott-bonvoy-brilliant-american-express-card.mi",
+      "method": "get"
+    },
+    {
+      "id": "03-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/amex-marriott-bonvoy-brilliant-credit-card-formerly-amex-spg-luxury-double-dip-opportunity/",
+      "method": "get"
+    },
+    {
+      "id": "04-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/increased-signup-bonuses-on-american-express-marriott-brilliant-bevy-and-business-cards/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 200000,
+      "spending_requirement": 6000,
+      "time_period_months": 6,
+      "description": "Elevated offer watch: earn up to 200,000 Marriott Bonvoy bonus points after eligible purchases within the first 6 months. Verify issuer-visible terms before applying because Marriott Amex offers rotate.",
+      "point_program": "Marriott Bonvoy",
+      "estimated_value": 1300,
+      "offer_status": "elevated_watch",
+      "confidence": "medium",
+      "is_elevated": true,
+      "notes": [
+        "Adaptor coverage added so future sweeps can detect whether the 200k Brilliant offer is active again or expired.",
+        "Production card currently contains a stale/historical upgrade-offer style value; do not auto-apply unless issuer/Marriott page confirms public terms."
+      ],
+      "source_conflicts": [
+        "Prior 200k Brilliant offer was reported with a May 2026 end date; current issuer page must confirm before production update."
+      ],
+      "last_verified": "AUTO_DATE"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-amex*.md:200,000",
+      "sources/*marriott*.md:200,000",
+      "sources/*doc*.md:200,000"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether the 200k Brilliant offer is currently active or only historical/expired.",
+    "If active, verify exact spend requirement, end date, and whether the offer is public, targeted, or as-high-as."
+  ],
+  "community": {
+    "summary": "Adds adaptor coverage for Marriott Bonvoy Brilliant so elevated 200k offer drift can be monitored instead of relying on stale production data.",
+    "recommended_production_value": {
+      "offer_amount": 200000,
+      "spend_requirement": 6000,
+      "spend_window_months": 6,
+      "status": "elevated_watch"
+    },
+    "confidence": "medium_until_issuer_confirms_current_offer",
+    "ymmv_or_targeted_possible": true,
+    "conflictStanceIncludes": ["125k upgrade offer", "expired 200k offer"],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "American Express Marriott Bonvoy Brilliant page",
+        "regex": "200,000|6,000|6 months|Offer Ends",
+        "stance": "supports_200k_if_current_issuer_terms_present",
+        "offer_amount": 200000,
+        "spend_requirement": 6000,
+        "spend_window_months": 6,
+        "excerpt": "Issuer page should be checked for active 200,000-point Brilliant welcome offer terms.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "cardId": "chase-ihg-premier-biz",
+  "cardPath": "data/cards/chase-ihg-premier-biz.json",
+  "mode": "offer_and_benefits",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://creditcards.chase.com/business-credit-cards/ihg/business-premier",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-doc",
+      "type": "doc",
+      "url": "https://www.uscreditcardguide.com/chase-ihg-premier-credit-card/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "spending_requirement": 4000,
+      "time_period_months": 3,
+      "bonus_points": 140000,
+      "estimated_value": 700,
+      "point_program": "IHG Rewards",
+      "description": "Earn 140,000 IHG One Rewards bonus points after spending $4,000 in purchases in the first 3 months from account opening.",
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Official Chase business page shows a current public 140,000-point offer after $4,000 / 3 months.",
+        "Earlier tiered 200,000-point framing should be treated as historical/outdated."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE",
+      "normal_bonus_points": 140000
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:140,000",
+      "sources/*issuer*.md:$4,000",
+      "sources/*issuer*.md:first 3 months"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether the public bonus remains 140k and whether the spend window stays at 3 months."
+  ],
+  "community": {
+    "summary": "Track Chase IHG Premier Business for the current 140k / $4k / 3mo public offer.",
+    "recommended_production_value": {
+      "offer_amount": 140000,
+      "spend_requirement": 4000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Chase business page",
+        "regex": "140,000|\\$4,000|first 3 months",
+        "stance": "supports_public_sub",
+        "offer_amount": 140000,
+        "spend_requirement": 4000,
+        "spend_window_months": 3,
+        "excerpt": "Official page confirms the current public welcome bonus.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

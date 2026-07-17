@@ -1,0 +1,134 @@
+{
+  "card_id": "boa-royal-one",
+  "name": "Royal ONE™ Visa Signature® Credit Card",
+  "issuer": "Bank of America",
+  "network": "visa",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good",
+  "welcome_offer": {
+    "bonus_points": 45000,
+    "spending_requirement": 2000,
+    "time_period_months": 3,
+    "description": "Limited-time offer: Earn 45,000 Royal Caribbean points after spending $2,000 in purchases in the first 90 days from account opening.",
+    "point_program": "Royal Caribbean Points",
+    "estimated_value": 450,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
+    "notes": [
+      "Official Bank of America product page and Royal Caribbean program page confirm the new Royal ONE card product line.",
+      "Doctor of Credit reported the public launch bonus and linked the current offer as of 2026-07-15."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-07-15",
+    "expires": null
+  },
+  "earning_rates": [
+    {
+      "category": "Royal Caribbean, Celebrity Cruises, and Silversea purchases",
+      "rate": 3,
+      "notes": "3x points per $1 on qualifying purchases with Royal Caribbean Group brands"
+    },
+    {
+      "category": "Grocery",
+      "rate": 2,
+      "notes": "2x points per $1 on grocery purchases"
+    },
+    {
+      "category": "Gas",
+      "rate": 2,
+      "notes": "2x points per $1 on gas purchases"
+    },
+    {
+      "category": "EV charging",
+      "rate": 2,
+      "notes": "2x points per $1 on EV charging station purchases"
+    },
+    {
+      "category": "Other",
+      "rate": 1,
+      "notes": "1x point per $1 on all other purchases"
+    }
+  ],
+  "travel_benefits": {
+    "lounge_access": [],
+    "hotel_status": [],
+    "other_benefits": [
+      {
+        "name": "Priority Boarding",
+        "description": "Priority boarding through the suite entrance for Royal Caribbean and Celebrity Cruises voyages"
+      },
+      {
+        "name": "Anniversary Reward",
+        "description": "$100 cruise discount after spending $10,000 within a cardmember year"
+      },
+      {
+        "name": "No Foreign Transaction Fees",
+        "description": "No foreign transaction fees"
+      },
+      {
+        "name": "Visa Signature Benefits",
+        "description": "Visa Signature travel benefits and protections"
+      }
+    ]
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": "None",
+    "trip_delay": false,
+    "purchase_protection": false,
+    "extended_warranty": false,
+    "trip_cancellation": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
+  },
+  "tags": [
+    "travel",
+    "cruise",
+    "no-annual-fee"
+  ],
+  "sources": [
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/products/royal-one-credit-card/",
+      "notes": "Official Bank of America Royal ONE product page"
+    },
+    {
+      "url": "https://www.royalcaribbean.com/royal-one-visa-card",
+      "notes": "Royal Caribbean official program page"
+    },
+    {
+      "url": "https://www.doctorofcredit.com/bank-of-america-up-to-750-bonus-on-new-royal-one-royal-caribbean-cards/",
+      "notes": "Public launch/bonus roundup"
+    }
+  ],
+  "last_updated": "2026-07-15T00:00:00Z",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [
+      {
+        "rule": "5/24 rule",
+        "description": "Bank of America may be less likely to approve applicants who have opened 5 or more new credit cards in the past 24 months."
+      }
+    ],
+    "notes": null
+  },
+  "recurring_credits": [
+    {
+      "credit_key": "anniversary-cruise-discount",
+      "name": "Anniversary Cruise Discount",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "$100 cruise discount after spending $10,000 within a cardmember year.",
+      "reset_type": "cardmember_year"
+    }
+  ],
+  "last_verified": "2026-07-15",
+  "next_review": "2026-08-14T00:00:00Z"
+}

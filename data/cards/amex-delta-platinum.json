@@ -7,22 +7,21 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",
   "welcome_offer": {
-    "bonus_points": 100000,
-    "spending_requirement": 6000,
+    "bonus_points": 90000,
+    "spending_requirement": 3000,
     "time_period_months": 6,
-    "description": "Limited-time offer: Earn up to 100,000 Bonus Miles: 80,000 Bonus Miles after spending $4,000 in purchases in the first 6 months, plus an additional 20,000 Bonus Miles after spending an additional $2,000 in purchases in the first 6 months. Offer ends 7/15/2026.",
+    "description": "As-high-as offer: find out if you are eligible for up to 90,000 Bonus Miles after eligible purchases in the first 6 months.",
     "point_program": "Delta SkyMiles",
-    "estimated_value": 1000,
-    "offer_status": "public_limited_time",
-    "confidence": "high",
+    "estimated_value": 900,
+    "offer_status": "as_high_as_ymmv",
+    "confidence": "medium_high",
     "notes": [
-      "Official Delta News Hub and Delta personal card comparison page corroborate the public limited-time offer.",
-      "2026-07-13 review: KC approved proactive update path; existing elevated Delta 7/15/2026 public limited-time offer values were already present in OpenCard data, so this pass refreshes verification metadata rather than changing the headline offer."
+      "Delta comparison page shows Platinum as \"As High As 90,000 Miles\" after the 7/15/2026 limited-time offer window; search snippets indicate $3,000 eligible purchases in the first 6 months.",
+      "Previous public limited-time 7/15/2026 offer was removed from current production values to avoid displaying an expired offer."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-13",
-    "is_elevated": true,
-    "expires": "2026-07-15"
+    "last_verified": "2026-07-17",
+    "is_elevated": true
   },
   "earning_rates": [
     {

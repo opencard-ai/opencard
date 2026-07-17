@@ -7,12 +7,22 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 9000,
-    "time_period_months": 6,
-    "bonus_points": 200000,
-    "estimated_value": 1000,
-    "point_program": "IHG One Rewards",
-    "description": "140,000 points after $4,000 in 3 months + 60,000 points after $9,000 in 6 months = up to 200,000 total points"
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "bonus_points": 140000,
+    "estimated_value": 700,
+    "point_program": "IHG Rewards",
+    "description": "Earn 140,000 IHG One Rewards bonus points after spending $4,000 in purchases in the first 3 months from account opening.",
+    "offer_status": "public",
+    "confidence": "high",
+    "notes": [
+      "Official Chase business page checked 2026-07-15 shows a current public 140,000-point offer after $4,000 / 3 months.",
+      "Earlier tiered 200,000-point framing should be treated as historical/outdated."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-07-15",
+    "normal_bonus_points": 140000,
+    "expires": null
   },
   "earning_rates": [
     {
@@ -101,7 +111,7 @@
       "notes": "One Mile at a Time review"
     }
   ],
-  "last_updated": "2026-04-29T06:08:32.038Z",
+  "last_updated": "2026-07-15T00:00:00Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -140,6 +150,6 @@
       "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ],
-  "last_verified": "2026-04-16T13:41:49.986Z",
-  "next_review": "2026-07-15T13:41:49.986000+00:00"
+  "last_verified": "2026-07-15",
+  "next_review": "2026-09-28T00:00:00Z"
 }

@@ -1,0 +1,92 @@
+{
+  "cardId": "amex-hilton-honors",
+  "cardPath": "data/cards/amex-hilton-honors.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-amex",
+      "type": "issuer",
+      "url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-issuer-hilton",
+      "type": "issuer",
+      "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+      "method": "get",
+      "required": true
+    },
+    {
+      "id": "03-usccg",
+      "type": "usccg",
+      "url": "https://www.uscreditcardguide.com/amex-hilton-honors/",
+      "method": "get"
+    },
+    {
+      "id": "04-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/best-current-credit-card-sign-bonuses/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 100000,
+      "spending_requirement": 2000,
+      "time_period_months": 6,
+      "description": "Limited-time offer: Earn a $100 Statement Credit + 100,000 Hilton Honors Bonus Points after spending $2,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 7/29/2026.",
+      "point_program": "Hilton Honors",
+      "estimated_value": 500,
+      "is_elevated": true,
+      "normal_bonus_points": 80000,
+      "elevated_until": "2026-07-29",
+      "offer_status": "public_limited_time",
+      "confidence": "high",
+      "notes": [
+        "Official Amex/Hilton pages are canonical; no-annual-fee Hilton elevated package includes $100 statement credit plus 100k points through 7/29/2026."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE",
+      "expires": "2026-07-29"
+    },
+    "caveats": []
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer-amex*.md:100,000 Hilton Honors Bonus Points",
+      "sources/*issuer-amex*.md:$100 Statement Credit",
+      "sources/*issuer-hilton*.md:Offer ends 7/29/2026"
+    ]
+  },
+  "open_questions": [
+    "Confirm the $100 statement credit and 7/29/2026 expiry remain visible before applying future changes."
+  ],
+  "community": {
+    "summary": "Official Amex/Hilton sources support the Hilton Honors no-fee 100k + $100 statement credit public limited-time offer.",
+    "recommended_production_value": {
+      "offer_amount": 100000,
+      "spend_requirement": 2000,
+      "spend_window_months": 6,
+      "status": "public_limited_time"
+    },
+    "confidence": "high_when_amex_or_hilton_issuer_page_present",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "80000"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Amex/Hilton official pages",
+        "regex": "100,000|100 Statement Credit|7/29/2026|July 29, 2026",
+        "stance": "supports_100k_plus_credit_public_limited_time",
+        "offer_amount": 100000,
+        "spend_requirement": 2000,
+        "spend_window_months": 6,
+        "excerpt": "Official sources describe the Hilton Honors limited-time 100,000-point plus $100 statement credit offer ending 7/29/2026.",
+        "confidence": "high"
+      }
+    ]
+  }
+}

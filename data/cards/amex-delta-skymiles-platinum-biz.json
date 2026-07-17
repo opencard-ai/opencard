@@ -7,24 +7,21 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 100000,
-    "spending_requirement": 8000,
+    "bonus_points": 70000,
+    "spending_requirement": 6000,
     "time_period_months": 6,
-    "description": "Limited-time offer: Earn 100,000 Bonus Miles after spending $8,000 in purchases on your new Card in your first 6 months of Card Membership. Offer ends 7/15/2026.",
+    "description": "Earn 70,000 Bonus Miles after spending $6,000 in purchases on your new Card in your first 6 months of Card Membership.",
     "point_program": "Delta SkyMiles",
-    "estimated_value": 1000,
-    "offer_status": "public_limited_time",
-    "confidence": "high",
+    "estimated_value": 700,
+    "offer_status": "public_standard",
+    "confidence": "medium_high",
     "notes": [
-      "Official Amex business page is canonical for the public limited-time headline offer: up to 100,000 Bonus Miles after $8,000 in purchases in the first 6 months; offer ends 7/15/2026.",
-      "Delta news/source evidence describes the campaign as a tiered/additional-bonus structure (80,000 base miles plus 20,000 additional miles). Keep this tiered context in review metadata so the offer is not mistaken for an unconditional non-tiered lump-sum source pattern.",
-      "No source conflicts observed for the final 100,000-mile public limited-time offer.",
-      "2026-07-13 review: KC approved proactive update path; existing elevated Delta 7/15/2026 public limited-time offer values were already present in OpenCard data, so this pass refreshes verification metadata rather than changing the headline offer."
+      "Official Amex business search result shows current Platinum Business offer: 70,000 Bonus Miles after $6,000/6 months.",
+      "Previous 7/15/2026 public limited-time offer was removed from current production values to avoid displaying an expired offer."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-13",
-    "expires": "2026-07-15",
-    "is_elevated": true
+    "last_verified": "2026-07-17",
+    "is_elevated": false
   },
   "earning_rates": [
     {
