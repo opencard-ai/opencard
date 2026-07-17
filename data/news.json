@@ -1,6 +1,167 @@
 {
   "items": [
     {
+      "title": "[Targeted] AmEx Offer: Viator, Spend $250 & Receive $40 Statement Credit (2x)",
+      "url": "https://www.doctorofcredit.com/targeted-amex-offer-viator-spend-200-receive-20-statement-credit/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "amex offers",
+        "viator"
+      ],
+      "ts": "2026-07-17T19:15:42.000Z",
+      "title_en": "[Targeted] AmEx Offer: Viator, Spend $250 & Receive $40 Statement Credit (2x)",
+      "summary_en": "",
+      "title_zh": "[目標] 美國運通優惠：Viator，消費 $250 即可獲得 $40 帳單扣抵（2倍）",
+      "summary_zh": "在 Viator 消費滿 $250 可獲得 $40 帳單信用，並享有 2 倍獎勵。",
+      "title_es": "[Dirigida] Oferta de AmEx: Viator, gasta $250 y recibe $40 de crédito en el extracto (2x)",
+      "summary_es": "Oferta de American Express que otorga un crédito de $40 al gastar $250 en Viator."
+    },
+    {
+      "title": "U.S. Bank/Chime Offers: T-Mobile $50 Back With Two $50 Payments",
+      "url": "https://www.doctorofcredit.com/chase-offers-t-mobile-50-off-50-2-payments-required/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "chase offers",
+        "t-mobile"
+      ],
+      "ts": "2026-07-17T19:00:08.000Z",
+      "title_en": "U.S. Bank/Chime Offers: T-Mobile $50 Back With Two $50 Payments",
+      "summary_en": "",
+      "title_zh": "U.S. Bank/Chime 優惠：T-Mobile 兩筆 $50 付款即享 $50 回饋",
+      "summary_zh": "透過 U.S. Bank 或 Chime 完成兩筆 $50 的 T-Mobile 付款，即可獲得 $50 現金回饋。",
+      "title_es": "Ofertas de U.S. Bank/Chime: $50 de devolución de T-Mobile con dos pagos de $50",
+      "summary_es": "U.S. Bank y Chime ofrecen $50 de devolución al realizar dos pagos de $50 a T-Mobile."
+    },
+    {
+      "title": "Barclays 70,000 Hawaiian Airlines Bonus ($99 Annual Fee)",
+      "url": "https://www.doctorofcredit.com/barclays-70000-hawaiian-airlines-bonus-annual-fee-not-waived-first-year-2/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "barclays",
+        "barclays hawaiian",
+        "big",
+        "credit card bonuses",
+        "hawaiian airlines"
+      ],
+      "ts": "2026-07-17T18:00:15.000Z",
+      "title_en": "Barclays 70,000 Hawaiian Airlines Bonus ($99 Annual Fee)",
+      "summary_en": "",
+      "title_zh": "Barclays 70,000 夏威夷航空獎勵（年費 $99）",
+      "summary_zh": "Barclays 信用卡提供 70,000 夏威夷航空里程的開卡獎勵，需支付 $99 年費。",
+      "title_es": "Barclays: bono de 70,000 millas de Hawaiian Airlines (cuota anual de $99)",
+      "summary_es": "Barclays ofrece un bono de 70,000 millas de Hawaiian Airlines a cambio de una cuota anual de $99."
+    },
+    {
+      "title": "Newegg: $550 in Lowe’s eGiftcards For $500",
+      "url": "https://www.doctorofcredit.com/newegg-550-in-lowes-egiftcards-for-500/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Gift Card Deals",
+        "lowes",
+        "newegg"
+      ],
+      "ts": "2026-07-17T17:36:28.000Z",
+      "title_en": "Newegg: $550 in Lowe’s eGiftcards For $500",
+      "summary_en": "",
+      "title_zh": "Newegg：$500 換取 $550 Lowe’s 電子禮卡",
+      "summary_zh": "Newegg 以 $500 價格出售價值 $550 的 Lowe’s 電子禮卡，優惠限時。",
+      "title_es": "Newegg: $550 en tarjetas de regalo electrónicas de Lowe’s por $500",
+      "summary_es": "Newegg vende tarjetas de regalo electrónicas de Lowe’s valoradas en $550 por solo $500."
+    },
+    {
+      "title": "Giant: 2x Fuel Points on Mastercard Gift Cards (7/17-7/23)",
+      "url": "https://www.doctorofcredit.com/giant-stopshop-martins-3x-fuel-points-on-mastercard-gift-cards-10-8-10-14/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Manufactured Spending",
+        "fuel points",
+        "giant",
+        "Giant Stop and Shop Gas Deals Visa Gift Card Points",
+        "martin's",
+        "Stop&Shop"
+      ],
+      "ts": "2026-07-17T17:25:02.000Z",
+      "title_en": "Giant: 2x Fuel Points on Mastercard Gift Cards (7/17-7/23)",
+      "summary_en": "",
+      "title_zh": "Giant：Mastercard 禮品卡雙倍燃料積分（7/17-7/23）",
+      "summary_zh": "在 Giant 使用 Mastercard 購買禮品卡，可於 7/17 至 7/23 期間獲得雙倍燃料積分。",
+      "title_es": "Giant: puntos de combustible duplicados en tarjetas de regalo Mastercard (del 17/7 al 23/7)",
+      "summary_es": "Giant ofrece el doble de puntos de combustible al comprar tarjetas de regalo Mastercard entre el 17 y el 23 de julio."
+    },
+    {
+      "title": "Citi Offers: Get 15% Back At Stop & Shop, Giant (2x; $10 Max Cashback)",
+      "url": "https://www.doctorofcredit.com/citi-offers-get-4-back-at-giant-stop-30-max-cashback/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "Deals",
+        "citi offers"
+      ],
+      "ts": "2026-07-17T17:20:48.000Z",
+      "title_en": "Citi Offers: Get 15% Back At Stop & Shop, Giant (2x; $10 Max Cashback)",
+      "summary_en": "",
+      "title_zh": "Citi 優惠：Stop & Shop、Giant 消費可享 15% 回饋（2倍；最高 $10）",
+      "summary_zh": "持 Citi 卡在 Stop & Shop 或 Giant 消費，最高可獲得 $10 的 15% 現金回饋，並可享雙倍回饋。",
+      "title_es": "Ofertas de Citi: obtén un 15% de devolución en Stop & Shop, Giant (2x; máximo $10)",
+      "summary_es": "Citi devuelve el 15% (hasta $10) en compras en Stop & Shop y Giant, con multiplicación doble."
+    },
+    {
+      "title": "Truist $400/$800 Business Checking Bonus [AL, AR, GA, FL, IN, KY, MD, MS, NC, NJ, OH, PA, SC, TN, TX, VA, WV or DC]",
+      "url": "https://www.doctorofcredit.com/truist-200-business-checking-bonus-al-ar-ga-fl-in-ky-md-ms-nc-nj-oh-pa-sc-tn-tx-va-wv-or-dc/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "al bank bonuses",
+        "ar bank bonuses",
+        "dc bank bonuses",
+        "direct deposit not required",
+        "fl bank bonuses",
+        "ga bank bonuses",
+        "in bank bonuses",
+        "ky bank bonuses",
+        "md bank bonuses",
+        "ms bank bonuses",
+        "nc bank bonuses",
+        "nj bank bonuses",
+        "no credit card funding",
+        "oh bank bonuses",
+        "pa bank bonuses",
+        "sc bank bonuses",
+        "soft pull",
+        "tn bank bonuses",
+        "tx bank bonuses",
+        "va bank bonuses",
+        "wv bank bonuses"
+      ],
+      "ts": "2026-07-17T15:00:47.000Z",
+      "title_en": "Truist $400/$800 Business Checking Bonus [AL, AR, GA, FL, IN, KY, MD, MS, NC, NJ, OH, PA, SC, TN, TX, VA, WV or DC]",
+      "summary_en": "",
+      "title_zh": "Truist 商務支票帳戶獎勵 $400/$800（適用于 AL、AR、GA、FL、IN、KY、MD、MS、NC、NJ、OH、PA、SC、TN、TX、VA、WV 或 DC）",
+      "summary_zh": "在指定州別新開 Truist 商務支票帳戶，符合條件可獲得 $400 或 $800 的獎勵。",
+      "title_es": "Bono de cuenta corriente empresarial de Truist: $400/$800 [disponible en AL, AR, GA, FL, IN, KY, MD, MS, NC, NJ, OH, PA, SC, TN, TX, VA, WV o DC]",
+      "summary_es": "Truist ofrece un bono de $400 a $800 para nuevas cuentas corrientes empresariales en varios estados."
+    },
+    {
+      "title": "[Ends 7/19] AmEx Offers: Amazon, Spend $40 & Get 1,000 Membership Rewards Points (3x)",
+      "url": "https://www.doctorofcredit.com/amex-offers-amazon-spend-40-get-1000-membership-rewards-points-3x/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "amazon",
+        "amex offers"
+      ],
+      "ts": "2026-07-17T14:15:10.000Z",
+      "title_en": "[Ends 7/19] AmEx Offers: Amazon, Spend $40 & Get 1,000 Membership Rewards Points (3x)",
+      "summary_en": "",
+      "title_zh": "[至 7/19 截止] 美國運通優惠：Amazon，消費 $40 可獲得 1,000 點 Membership Rewards（3倍）",
+      "summary_zh": "在 Amazon 消費滿 $40，即可獲得 1,000 點美國運通 Membership Rewards，且可享有 3 倍積分。",
+      "title_es": "[Termina el 19/7] Ofertas de AmEx: Amazon, gasta $40 y obtén 1,000 puntos Membership Rewards (3x)",
+      "summary_es": "American Express ofrece 1,000 puntos Membership Rewards al gastar $40 en Amazon antes del 19 de julio."
+    },
+    {
       "title": "Gemini (Crypto Platform): Get Up To $200 By Purchasing Stocks",
       "url": "https://www.doctorofcredit.com/gemini-crypto-platform-get-up-to-200-by-purchasing-stocks/",
       "source": "Doctor of Credit",
@@ -12,10 +173,10 @@
       "ts": "2026-07-17T14:00:13.000Z",
       "title_en": "Gemini (Crypto Platform): Get Up To $200 By Purchasing Stocks",
       "summary_en": "",
-      "title_zh": "Gemini (Crypto Platform): Get Up To $200 By Purchasing Stocks",
-      "summary_zh": "",
-      "title_es": "Gemini (Crypto Platform): Get Up To $200 By Purchasing Stocks",
-      "summary_es": ""
+      "title_zh": "Gemini（加密貨幣平台）：透過購買股票可獲得最高 $200",
+      "summary_zh": "Gemini 用戶在平台上購買股票，最高可獲得 $200 的獎勵。",
+      "title_es": "Gemini (plataforma de criptomonedas): obtén hasta $200 al comprar acciones",
+      "summary_es": "Gemini regala hasta $200 al adquirir acciones en su plataforma."
     },
     {
       "title": "Best Bank Account Bonuses For July, 2026",
@@ -27,10 +188,10 @@
       "ts": "2026-07-17T13:00:55.000Z",
       "title_en": "Best Bank Account Bonuses For July, 2026",
       "summary_en": "",
-      "title_zh": "Best Bank Account Bonuses For July, 2026",
-      "summary_zh": "",
-      "title_es": "Best Bank Account Bonuses For July, 2026",
-      "summary_es": ""
+      "title_zh": "2026 年 7 月最佳銀行帳戶獎勵",
+      "summary_zh": "本篇整理了 2026 年 7 月最具吸引力的銀行帳戶開戶獎勵資訊。",
+      "title_es": "Mejores bonos de cuentas bancarias para julio de 2026",
+      "summary_es": "Resumen de los mayores bonos disponibles en cuentas bancarias durante julio de 2026."
     },
     {
       "title": "Venmo To Make Changes To Venmo Stash Loyalty Program",
@@ -44,10 +205,10 @@
       "ts": "2026-07-17T11:15:20.000Z",
       "title_en": "Venmo To Make Changes To Venmo Stash Loyalty Program",
       "summary_en": "",
-      "title_zh": "Venmo To Make Changes To Venmo Stash Loyalty Program",
-      "summary_zh": "",
-      "title_es": "Venmo To Make Changes To Venmo Stash Loyalty Program",
-      "summary_es": ""
+      "title_zh": "Venmo 將調整 Venmo Stash 忠誠計畫",
+      "summary_zh": "Venmo 宣布將對 Venmo Stash 忠誠計畫進行改版，未來福利與規則將有所變動。",
+      "title_es": "Venmo realizará cambios en el programa de fidelización Venmo Stash",
+      "summary_es": "Venmo modificará su programa de lealtad Venmo Stash."
     },
     {
       "title": "Google Fi: 75% Off For 12 Months",
@@ -60,10 +221,10 @@
       "ts": "2026-07-17T10:20:31.000Z",
       "title_en": "Google Fi: 75% Off For 12 Months",
       "summary_en": "",
-      "title_zh": "Google Fi: 75% Off For 12 Months",
-      "summary_zh": "",
-      "title_es": "Google Fi: 75% Off For 12 Months",
-      "summary_es": ""
+      "title_zh": "Google Fi：12 個月內 75% 折扣",
+      "summary_zh": "Google Fi 提供為期 12 個月的 75% 服務費折扣優惠。",
+      "title_es": "Google Fi: 75% de descuento durante 12 meses",
+      "summary_es": "Google Fi ofrece un 75% de descuento en su servicio durante un año."
     },
     {
       "title": "Kroger / Harris Teeter: 4x Fuel Points On Select Third Party Gift Cards & Fixed Visa/MC (7/17-7/18)",
@@ -80,10 +241,10 @@
       "ts": "2026-07-17T10:00:50.000Z",
       "title_en": "Kroger / Harris Teeter: 4x Fuel Points On Select Third Party Gift Cards & Fixed Visa/MC (7/17-7/18)",
       "summary_en": "",
-      "title_zh": "Kroger / Harris Teeter: 4x Fuel Points On Select Third Party Gift Cards & Fixed Visa/MC (7/17-7/18)",
-      "summary_zh": "",
-      "title_es": "Kroger / Harris Teeter: 4x Fuel Points On Select Third Party Gift Cards & Fixed Visa/MC (7/17-7/18)",
-      "summary_es": ""
+      "title_zh": "Kroger / Harris Teeter：精選第三方禮品卡與固定 Visa/MC 4 倍燃料積分（7/17-7/18）",
+      "summary_zh": "在 Kroger 或 Harris Teeter 購買指定第三方禮品卡及固定 Visa/MC，7/17 至 7/18 可獲得 4 倍燃料積分。",
+      "title_es": "Kroger / Harris Teeter: 4x puntos de combustible en tarjetas de regalo de terceros seleccionadas y Visa/MC fija (del 17/7 al 18/7)",
+      "summary_es": "Kroger y Harris Teeter multiplican por cuatro los puntos de combustible al comprar ciertas tarjetas de regalo de terceros y tarjetas Visa/MC entre el 17 y el 18 de julio."
     },
     {
       "title": "Most Popular Tags & Full List Of Tags",
@@ -95,10 +256,10 @@
       "ts": "2026-07-17T10:00:36.000Z",
       "title_en": "Most Popular Tags & Full List Of Tags",
       "summary_en": "",
-      "title_zh": "Most Popular Tags & Full List Of Tags",
-      "summary_zh": "",
-      "title_es": "Most Popular Tags & Full List Of Tags",
-      "summary_es": ""
+      "title_zh": "熱門標籤與完整標籤列表",
+      "summary_zh": "本文列出網站最常用的熱門標籤以及完整的標籤清單，方便瀏覽與分類。",
+      "title_es": "Etiquetas más populares y lista completa de etiquetas",
+      "summary_es": "Se presentan las etiquetas más utilizadas junto con una lista completa de todas ellas."
     },
     {
       "title": "Delta Unadvertised Award Sale: Australia Roundtrip From 25,000 Miles",
@@ -113,146 +274,11 @@
       "ts": "2026-07-17T01:23:26.000Z",
       "title_en": "Delta Unadvertised Award Sale: Australia Roundtrip From 25,000 Miles",
       "summary_en": "",
-      "title_zh": "Delta Unadvertised Award Sale: Australia Roundtrip From 25,000 Miles",
-      "summary_zh": "",
-      "title_es": "Delta Unadvertised Award Sale: Australia Roundtrip From 25,000 Miles",
-      "summary_es": ""
-    },
-    {
-      "title": "Chipotle: 100,000 Free Burritos During World Cup Final Water Break #2 (7/19/26)",
-      "url": "https://www.doctorofcredit.com/chipotle-100000-free-burritos-during-world-cup-final-water-break-2-7-19-26/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "Chipotle"
-      ],
-      "ts": "2026-07-16T21:04:06.000Z",
-      "title_en": "Chipotle: 100,000 Free Burritos During World Cup Final Water Break #2 (7/19/26)",
-      "summary_en": "",
-      "title_zh": "Chipotle: 100,000 Free Burritos During World Cup Final Water Break #2 (7/19/26)",
-      "summary_zh": "",
-      "title_es": "Chipotle: 100,000 Free Burritos During World Cup Final Water Break #2 (7/19/26)",
-      "summary_es": ""
-    },
-    {
-      "title": "[YMMV] United Airlines Mile Play Promotion: Bonus Miles For Completing Certain Requirements",
-      "url": "https://www.doctorofcredit.com/united-airlines-mile-play-promotion-bonus-miles-for-completing-certain-requirements-varies-by-person-12/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "airline promotions",
-        "united airlines"
-      ],
-      "ts": "2026-07-16T20:46:46.000Z",
-      "title_en": "[YMMV] United Airlines Mile Play Promotion: Bonus Miles For Completing Certain Requirements",
-      "summary_en": "",
-      "title_zh": "[YMMV] United Airlines Mile Play Promotion: Bonus Miles For Completing Certain Requirements",
-      "summary_zh": "",
-      "title_es": "[YMMV] United Airlines Mile Play Promotion: Bonus Miles For Completing Certain Requirements",
-      "summary_es": ""
-    },
-    {
-      "title": "Apple Back-To-School Gift Card Event 2026: Up to $150 on Mac & iPad Purchases",
-      "url": "https://www.doctorofcredit.com/apple-back-to-school-gift-card-event-2026-up-to-150-on-mac-ipad-purchases/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "apple"
-      ],
-      "ts": "2026-07-16T20:33:35.000Z",
-      "title_en": "Apple Back-To-School Gift Card Event 2026: Up to $150 on Mac & iPad Purchases",
-      "summary_en": "",
-      "title_zh": "Apple Back-To-School Gift Card Event 2026: Up to $150 on Mac & iPad Purchases",
-      "summary_zh": "",
-      "title_es": "Apple Back-To-School Gift Card Event 2026: Up to $150 on Mac & iPad Purchases",
-      "summary_es": ""
-    },
-    {
-      "title": "Chase World Of Hyatt Business Card: 70,000 Points With $7,000 Spend",
-      "url": "https://www.doctorofcredit.com/chase-world-of-hyatt-business-card-70000-points-with-7000-spend/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "chase",
-        "chase hyatt",
-        "chase hyatt business",
-        "hyatt"
-      ],
-      "ts": "2026-07-16T20:13:12.000Z",
-      "title_en": "Chase World Of Hyatt Business Card: 70,000 Points With $7,000 Spend",
-      "summary_en": "",
-      "title_zh": "Chase World Of Hyatt Business Card: 70,000 Points With $7,000 Spend",
-      "summary_zh": "",
-      "title_es": "Chase World Of Hyatt Business Card: 70,000 Points With $7,000 Spend",
-      "summary_es": ""
-    },
-    {
-      "title": "[Targeted] Amazon Business Accounts: 25% Discount, Up To $25",
-      "url": "https://www.doctorofcredit.com/targeted-amazon-business-accounts-25-discount-up-to-25/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "amazon",
-        "amazon business"
-      ],
-      "ts": "2026-07-16T20:06:26.000Z",
-      "title_en": "[Targeted] Amazon Business Accounts: 25% Discount, Up To $25",
-      "summary_en": "",
-      "title_zh": "[Targeted] Amazon Business Accounts: 25% Discount, Up To $25",
-      "summary_zh": "",
-      "title_es": "[Targeted] Amazon Business Accounts: 25% Discount, Up To $25",
-      "summary_es": ""
-    },
-    {
-      "title": "[Targeted] Capital One Debit Card: Make 20 Purchases & Get $50 (7/15-8/31)",
-      "url": "https://www.doctorofcredit.com/targeted-capital-one-debit-card-make-20-purchases-get-50-7-15-8-31/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "capital one",
-        "discover"
-      ],
-      "ts": "2026-07-16T18:18:56.000Z",
-      "title_en": "[Targeted] Capital One Debit Card: Make 20 Purchases & Get $50 (7/15-8/31)",
-      "summary_en": "",
-      "title_zh": "[Targeted] Capital One Debit Card: Make 20 Purchases & Get $50 (7/15-8/31)",
-      "summary_zh": "",
-      "title_es": "[Targeted] Capital One Debit Card: Make 20 Purchases & Get $50 (7/15-8/31)",
-      "summary_es": ""
-    },
-    {
-      "title": "[Now On Android] Aisle – Grocery Rebate Platform ($5 Referral Bonus, 100% Back Offers & More)",
-      "url": "https://www.doctorofcredit.com/aisle-grocery-rebate-platform-5-referral-bonus-100-back-offers-more/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Misc",
-        "aisle",
-        "free after rebate",
-        "rebates"
-      ],
-      "ts": "2026-07-16T17:00:34.000Z",
-      "title_en": "[Now On Android] Aisle – Grocery Rebate Platform ($5 Referral Bonus, 100% Back Offers & More)",
-      "summary_en": "",
-      "title_zh": "[Now On Android] Aisle – Grocery Rebate Platform ($5 Referral Bonus, 100% Back Offers & More)",
-      "summary_zh": "",
-      "title_es": "[Now On Android] Aisle – Grocery Rebate Platform ($5 Referral Bonus, 100% Back Offers & More)",
-      "summary_es": ""
-    },
-    {
-      "title": "Best Youth/Teen Checking & Savings Account Bonuses",
-      "url": "https://www.doctorofcredit.com/best-youth-teen-checking-savings-account-bonuses/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts"
-      ],
-      "ts": "2026-07-16T16:30:31.000Z",
-      "title_en": "Best Youth/Teen Checking & Savings Account Bonuses",
-      "summary_en": "",
-      "title_zh": "Best Youth/Teen Checking & Savings Account Bonuses",
-      "summary_zh": "",
-      "title_es": "Best Youth/Teen Checking & Savings Account Bonuses",
-      "summary_es": ""
+      "title_zh": "Delta 未公開的獎勵特賣：澳洲來回機票 25,000 里程起",
+      "summary_zh": "Delta 推出未公開的里程特惠，澳洲來回航班最低只需 25,000 里程。",
+      "title_es": "Venta no anunciada de premios de Delta: viaje redondo a Australia desde 25,000 millas",
+      "summary_es": "Delta ofrece un viaje de ida y vuelta a Australia canjeable con solo 25,000 millas."
     }
   ],
-  "fetched": "2026-07-17T14:10:23.291Z"
+  "fetched": "2026-07-17T20:09:42.251Z"
 }
