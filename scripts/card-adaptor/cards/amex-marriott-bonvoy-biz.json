@@ -37,10 +37,12 @@
       "description": "Earn 150,000 Marriott Bonvoy bonus points and a $125 statement credit after making $8,000 in purchases within the first 6 months of Card Membership. Offer ends 7/15/2026.",
       "point_program": "Marriott Bonvoy",
       "estimated_value": 1175,
-      "offer_status": "public_limited_time",
+      "offer_status": "expired_review_required",
+      "is_elevated": false,
       "confidence": "high",
       "notes": [
         "Marriott official card page checked 2026-07-05 shows 150,000 bonus points plus a $125 statement credit after $8,000 / 6 months; prior 5-Free-Night-Award offer is stale.",
+        "Offer expired 2026-07-15; keep as historical adaptor input only until issuer/apply source is refreshed.",
         "Estimated value uses 150,000 Marriott points at ~$0.007 plus $125 statement credit."
       ],
       "source_conflicts": [],
@@ -66,7 +68,7 @@
       "free_night_value_cap": 50000,
       "spend_requirement": 9000,
       "spend_window_months": 6,
-      "status": "public_limited_time"
+      "status": "expired_review_required"
     },
     "confidence": "medium_until_issuer_snapshot_present",
     "ymmv_or_targeted_possible": false,

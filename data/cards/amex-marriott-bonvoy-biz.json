@@ -7,21 +7,23 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 150000,
-    "spending_requirement": 8000,
-    "time_period_months": 6,
-    "description": "Earn 150,000 Marriott Bonvoy bonus points and a $125 statement credit after making $8,000 in purchases within the first 6 months of Card Membership. Offer ends 7/15/2026.",
+    "bonus_points": null,
+    "spending_requirement": null,
+    "time_period_months": null,
+    "description": "Issuer page requires manual verification for the current public welcome offer. Previous 150,000-point + $125 statement credit limited-time offer expired on 2026-07-15 and should not be displayed as current.",
     "point_program": "Marriott Bonvoy",
-    "estimated_value": 1175,
-    "offer_status": "public_limited_time",
-    "confidence": "high",
+    "estimated_value": null,
+    "is_elevated": false,
+    "expires": null,
+    "offer_status": "review_required",
+    "confidence": "low",
     "notes": [
-      "Marriott official card page checked 2026-07-05 shows 150,000 bonus points plus a $125 statement credit after $8,000 / 6 months; prior 5-Free-Night-Award offer is stale.",
-      "Estimated value uses 150,000 Marriott points at ~$0.007 plus $125 statement credit."
+      "Previous Marriott official card page check on 2026-07-05 showed 150,000 Marriott Bonvoy bonus points plus a $125 statement credit after $8,000 / 6 months, expiring 2026-07-15.",
+      "Offer is now expired; refresh Amex/Marriott issuer sources before promoting any current welcome offer.",
+      "Prior 5-Free-Night-Award offer was already stale as of the 2026-07-05 check."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-05",
-    "expires": "2026-07-15"
+    "last_verified": "2026-07-16"
   },
   "earning_rates": [
     {
@@ -107,7 +109,7 @@
       "url": "https://www.marriott.com/credit-cards/marriott-bonvoy-business-american-express-card.mi"
     }
   ],
-  "last_updated": "2026-04-26T04:02:55.594292Z",
+  "last_updated": "2026-07-16T18:40:00.000-07:00",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
