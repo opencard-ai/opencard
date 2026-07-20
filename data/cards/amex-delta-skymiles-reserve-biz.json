@@ -17,10 +17,11 @@
     "confidence": "medium_high",
     "notes": [
       "Official Amex business search result shows current Reserve Business offer: 80,000 Bonus Miles after $12,000/6 months.",
-      "Previous 7/15/2026 public limited-time offer was removed from current production values to avoid displaying an expired offer."
+      "Previous 7/15/2026 public limited-time offer was removed from current production values to avoid displaying an expired offer.",
+      "Post-7/15/2026 closeout completed: expired limited-time Delta Amex state removed/confirmed; current production state is this welcome_offer block."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-17",
+    "last_verified": "2026-07-20",
     "is_elevated": false
   },
   "earning_rates": [
@@ -153,6 +154,6 @@
       "reset_type": "every_4_years"
     }
   ],
-  "last_verified": "2026-07-13",
-  "next_review": "2026-07-15T00:00:00Z"
+  "last_verified": "2026-07-20",
+  "next_review": "2026-08-17T00:00:00Z"
 }

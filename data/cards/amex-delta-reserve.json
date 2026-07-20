@@ -17,10 +17,11 @@
     "confidence": "medium_high",
     "notes": [
       "Delta comparison page shows Reserve as \"As High As 100,000 Miles\" after the 7/15/2026 limited-time offer window; search snippets indicate $5,000 eligible purchases in the first 6 months.",
-      "Previous public limited-time 7/15/2026 offer was removed from current production values to avoid displaying an expired offer."
+      "Previous public limited-time 7/15/2026 offer was removed from current production values to avoid displaying an expired offer.",
+      "Post-7/15/2026 closeout completed: expired limited-time Delta Amex state removed/confirmed; current production state is this welcome_offer block."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-17",
+    "last_verified": "2026-07-20",
     "is_elevated": true
   },
   "earning_rates": [
@@ -175,8 +176,8 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-07-13",
-  "next_review": "2026-07-15T00:00:00Z",
+  "last_verified": "2026-07-20",
+  "next_review": "2026-08-17T00:00:00Z",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
   "late_fee": 40,

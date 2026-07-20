@@ -21,7 +21,7 @@
       "Official Bank of America product/search result shows current Summit public offer: 80,000 bonus points + 25,000-point Global Companion Award after $4,000/90 days.",
       "Replaces stale/expired 2026-06-30 Alaska offer values; no current public expiry date was visible in fetched/searchable issuer evidence."
     ],
-    "last_verified": "2026-07-17",
+    "last_verified": "2026-07-20",
     "source_conflicts": []
   },
   "earning_rates": [
@@ -86,13 +86,15 @@
   "sources": [
     {
       "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-infinite-credit-card/",
-      "notes": "Official Bank of America product page; offer value requires manual verification."
+      "notes": "Official Bank of America Summit page; 80k + 25k Global Companion Award after $4,000/90 days."
     },
     {
-      "url": "https://www.alaskaair.com/atmosrewards/"
+      "url": "https://www.alaskaair.com/atmosrewards/content/credit-cards/visa-summit",
+      "notes": "Official Alaska Atmos Summit card page."
     },
     {
-      "url": "https://thepointsguy.com/credit-cards/atmos-rewards-summit-tpg-awards-2026/"
+      "url": "https://thepointsguy.com/credit-cards/atmos-rewards-best-welcome-offers/",
+      "notes": "Secondary report on July 2026 Atmos offer refresh."
     }
   ],
   "last_updated": "2026-07-05T15:10:00.000-07:00",
@@ -140,6 +142,6 @@
     }
   ],
   "last_scraped": "2026-04-24T23:28:00Z",
-  "last_verified": "2026-07-05T15:10:00.000-07:00",
-  "next_review": "2026-07-08T15:10:00.000-07:00"
+  "last_verified": "2026-07-20",
+  "next_review": "2026-08-03T00:00:00-07:00"
 }

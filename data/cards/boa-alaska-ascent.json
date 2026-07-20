@@ -21,7 +21,7 @@
       "Official Bank of America product/search result shows current Ascent public offer: 70,000 bonus points + $99 Companion Fare after $2,500/90 days.",
       "Replaces stale/expired 2026-06-30 Alaska offer values; no current public expiry date was visible in fetched/searchable issuer evidence."
     ],
-    "last_verified": "2026-07-17",
+    "last_verified": "2026-07-20",
     "source_conflicts": []
   },
   "earning_rates": [
@@ -80,13 +80,16 @@
   ],
   "sources": [
     {
-      "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/"
+      "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/",
+      "notes": "Official Bank of America Ascent page; 70k + $99 Companion Fare after $2,500/90 days."
     },
     {
-      "url": "https://thepointsguy.com/credit-cards/atmos-ascent-vs-atmos-summit/"
+      "url": "https://www.alaskaair.com/atmosrewards/content/credit-cards/visa-ascent",
+      "notes": "Official Alaska Atmos Ascent card page."
     },
     {
-      "url": "https://www.uscreditcardguide.com/boa-alaska-atmos-ascent-credit-card/"
+      "url": "https://www.nerdwallet.com/credit-cards/news/atmos-credit-card-welcome-offers-july-2026",
+      "notes": "Secondary report on July 2026 Atmos offer refresh."
     }
   ],
   "last_updated": "2026-07-05T15:10:00.000-07:00",
@@ -130,6 +133,6 @@
     }
   ],
   "last_scraped": "2026-04-24T23:28:00Z",
-  "last_verified": "2026-07-05T15:10:00.000-07:00",
-  "next_review": "2026-07-08T15:10:00.000-07:00"
+  "last_verified": "2026-07-20",
+  "next_review": "2026-08-03T00:00:00-07:00"
 }

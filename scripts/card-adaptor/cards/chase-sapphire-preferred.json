@@ -37,10 +37,12 @@
       "confidence": "high",
       "notes": [
         "Chase Sapphire Preferred landing page shows 75,000 struck through and 100,000 as the active bonus.",
-        "Chase news release confirms the 100,000-point limited-time offer and new benefits starting June 15, 2026."
+        "Chase news release confirms the 100,000-point limited-time offer and new benefits starting June 15, 2026.",
+        "Manual 2026-07-20 decision: keep expires=null until Chase publishes an official end date; monitor daily/near-daily from 2026-07-22 through 2026-07-31 because public sources say the 100k offer is ending soon."
       ],
       "source_conflicts": [],
-      "last_verified": "AUTO_DATE"
+      "last_verified": "AUTO_DATE",
+      "expires": null
     },
     "caveats": [
       "2026 refresh manual-review item: confirm $100 Chase Travel hotel credit, refreshed 3x earning categories, emergency evacuation coverage, and Hyatt transfer/benefit language before applying benefit fields.",
@@ -56,6 +58,7 @@
     ]
   },
   "open_questions": [
+    "Confirm whether Chase publishes an official CSP 100k end date; do not invent 7/22–7/31 as expires without issuer evidence.",
     "Confirm the Chase Sapphire Preferred landing page still shows 100,000 and that the 75,000 text is struck through before applying.",
     "Verify the new benefit bundle remains active on the official Chase news page.",
     "2026 refresh manual-review item: confirm $100 Chase Travel hotel credit, refreshed 3x earning categories, emergency evacuation coverage, and Hyatt transfer/benefit language before applying benefit fields.",

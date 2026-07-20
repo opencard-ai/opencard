@@ -17,10 +17,11 @@
     "confidence": "high",
     "notes": [
       "Chase Sapphire Preferred landing page shows 75,000 struck through and 100,000 as the active bonus.",
-      "Chase news release confirms the 100,000-point limited-time offer and new benefits starting June 15, 2026."
+      "Chase news release confirms the 100,000-point limited-time offer and new benefits starting June 15, 2026.",
+      "Manual 2026-07-20 decision: do not set a specific expires date because Chase has only confirmed “ending soon” publicly, with no official date; advance next_review to 2026-07-22 for close monitoring through 7/31."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-15",
+    "last_verified": "2026-07-20",
     "is_elevated": true,
     "expires": null
   },
@@ -159,8 +160,8 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-07-15T20:08:19.000Z",
-  "next_review": "2026-07-23T17:26:36.116494",
+  "last_verified": "2026-07-20",
+  "next_review": "2026-07-22T00:00:00-07:00",
   "cash_advance_fee_flat": 5,
   "cash_advance_fee_pct": 5,
   "cfpb_source": "Q3_2025",
