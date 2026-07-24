@@ -32,16 +32,18 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 150000,
-      "spending_requirement": 25000,
-      "time_period_months": 6,
-      "description": "Limited-time offer: Earn up to 150,000 Capital One miles: 75,000 miles after spending $7,500 in the first 3 months, plus an additional 75,000 miles after spending $25,000 total in the first 6 months from account opening.",
+      "bonus_points": 100000,
+      "spending_requirement": 10000,
+      "time_period_months": 3,
+      "description": "Earn 100,000 Capital One miles once you spend $10,000 on purchases within the first 3 months from account opening.",
       "point_program": "Capital One Miles",
-      "estimated_value": 1500,
-      "offer_status": "public_limited_time",
+      "estimated_value": 1000,
+      "offer_status": "public",
       "confidence": "high",
+      "is_elevated": false,
       "notes": [
-        "Capital One issuer pages and TPG corroborate the tiered Venture Business up-to-150k limited-time offer."
+        "2026-07-24 refresh: Capital One issuer snippet and multiple secondary sources show 100k/$10k/3mo current offer.",
+        "Replaces stale 150k/$25k limited-time tiered offer."
       ],
       "source_conflicts": [],
       "last_verified": "AUTO_DATE"
@@ -58,16 +60,18 @@
     "Confirm the second-tier additional 75k / $25k total / 6mo language remains visible before applying future changes."
   ],
   "community": {
-    "summary": "Current issuer and secondary sources support the Venture Business public limited-time tiered offer up to 150k miles.",
+    "summary": "Refresh replaces stale 150k/$25k limited-time Venture Business offer with current issuer 100k/$10k/3mo public offer.",
     "recommended_production_value": {
-      "offer_amount": 150000,
-      "spend_requirement": 25000,
-      "spend_window_months": 6,
-      "status": "public_limited_time"
+      "offer_amount": 100000,
+      "spend_requirement": 10000,
+      "spend_window_months": 3,
+      "status": "public"
     },
     "confidence": "high_when_capital_one_issuer_page_present",
     "ymmv_or_targeted_possible": false,
-    "conflictStanceIncludes": ["75k"],
+    "conflictStanceIncludes": [
+      "75k"
+    ],
     "observations": [
       {
         "sourceType": "issuer",

@@ -31,21 +31,21 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 200000,
+      "bonus_points": 100000,
       "spending_requirement": 6000,
       "time_period_months": 6,
-      "description": "Elevated offer watch: earn up to 200,000 Marriott Bonvoy bonus points after eligible purchases within the first 6 months. Verify issuer-visible terms before applying because Marriott Amex offers rotate.",
+      "description": "Earn 100,000 Marriott Bonvoy bonus points after $6,000 in eligible purchases within the first 6 months, plus an extra 50,000 bonus points after additional eligible purchases within the first 6 months of Card Membership.",
       "point_program": "Marriott Bonvoy",
-      "estimated_value": 1300,
-      "offer_status": "elevated_watch",
-      "confidence": "medium",
-      "is_elevated": true,
+      "estimated_value": 975,
+      "offer_status": "public_with_extra_bonus_path",
+      "confidence": "high",
+      "is_elevated": false,
       "notes": [
-        "Adaptor coverage added so future sweeps can detect whether the 200k Brilliant offer is active again or expired.",
-        "Production card currently contains a stale/historical upgrade-offer style value; do not auto-apply unless issuer/Marriott page confirms public terms."
+        "2026-07-24 refresh: Marriott/Amex-aligned public sources show 100k/$6k/6mo plus an extra 50k path.",
+        "Replaces stale historical 125k upgrade-style offer with $0 spend / 0 months."
       ],
       "source_conflicts": [
-        "Prior 200k Brilliant offer was reported with a May 2026 end date; current issuer page must confirm before production update."
+        "Prior 200k/175k elevated Marriott family offers have expired or are no longer the public Brilliant baseline."
       ],
       "last_verified": "AUTO_DATE"
     }
@@ -62,16 +62,19 @@
     "If active, verify exact spend requirement, end date, and whether the offer is public, targeted, or as-high-as."
   ],
   "community": {
-    "summary": "Adds adaptor coverage for Marriott Bonvoy Brilliant so elevated 200k offer drift can be monitored instead of relying on stale production data.",
+    "summary": "Refresh replaces stale 125k/$0 upgrade-style production value with 100k/$6k/6mo baseline plus extra 50k path.",
     "recommended_production_value": {
-      "offer_amount": 200000,
+      "offer_amount": 150000,
       "spend_requirement": 6000,
       "spend_window_months": 6,
-      "status": "elevated_watch"
+      "status": "public_with_extra_bonus_path"
     },
     "confidence": "medium_until_issuer_confirms_current_offer",
     "ymmv_or_targeted_possible": true,
-    "conflictStanceIncludes": ["125k upgrade offer", "expired 200k offer"],
+    "conflictStanceIncludes": [
+      "125k upgrade offer",
+      "expired 200k offer"
+    ],
     "observations": [
       {
         "sourceType": "issuer",

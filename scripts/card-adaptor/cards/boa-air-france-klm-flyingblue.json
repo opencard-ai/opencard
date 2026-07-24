@@ -1,0 +1,92 @@
+{
+  "cardId": "boa-air-france-klm-flyingblue",
+  "cardPath": "data/cards/boa-air-france-klm-flyingblue.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer-boa",
+      "type": "issuer",
+      "url": "https://www.bankofamerica.com/credit-cards/products/air-france-credit-card/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-flyingblue",
+      "type": "issuer",
+      "url": "https://www.flyingblue.us/en/earn/partners/financial-services-bank-of-america",
+      "method": "get"
+    },
+    {
+      "id": "03-frequentmiler",
+      "type": "other",
+      "url": "https://frequentmiler.com/bank-of-america-air-france-klm-flying-blue-mastercard-best-ever-100k-welcome-offer/",
+      "method": "get"
+    },
+    {
+      "id": "04-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/bank-of-america-air-france-klm-flyingblue-card-70000-signup-bonus-100-xp-plus-enhanced-benefits/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 100000,
+      "spending_requirement": 3000,
+      "time_period_months": 3,
+      "description": "Watchlist/adaptor offer: earn 100,000 Flying Blue miles + 100 XP after $3,000 in purchases within 90 days. Verify issuer-visible landing page before creating production data.",
+      "point_program": "Flying Blue",
+      "estimated_value": 1200,
+      "offer_status": "public_limited_time_watchlist",
+      "confidence": "medium_high",
+      "is_elevated": true,
+      "notes": [
+        "2026-07-24 secondary coverage reports best-ever 100k + 100 XP offer; BoA public snippet may still show 50k/100 XP, so adaptor should detect drift."
+      ],
+      "source_conflicts": [
+        "Issuer public search snippet may lag at 50k/100 XP or prior 70k/100 XP offer."
+      ],
+      "last_verified": "2026-07-24",
+      "expires": "2026-08-31"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*frequentmiler*.md:100,000",
+      "sources/*issuer-boa*.md:50,000",
+      "sources/*doc*.md:70,000"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether BoA issuer application page shows 100k + 100 XP or only secondary-source coverage.",
+    "Create production card only after issuer-controlled terms are stable."
+  ],
+  "community": {
+    "summary": "P1 adaptor for Air France-KLM / Flying Blue BoA card after July 2026 offer change; monitors 100k/100 XP vs issuer-snippet lag.",
+    "recommended_production_value": {
+      "offer_amount": 100000,
+      "spend_requirement": 3000,
+      "spend_window_months": 3,
+      "status": "public_limited_time_watchlist"
+    },
+    "confidence": "medium_until_issuer_flow_confirms",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "50k public snippet",
+      "70k prior enhanced offer"
+    ],
+    "observations": [
+      {
+        "sourceType": "other",
+        "source": "Frequent Miler",
+        "regex": "100,000|100 XP|\\$3,000|90 days",
+        "stance": "supports_100k_watchlist",
+        "offer_amount": 100000,
+        "spend_requirement": 3000,
+        "spend_window_months": 3,
+        "excerpt": "Secondary source reports best-ever 100k Flying Blue miles + 100 XP after $3k/90 days.",
+        "confidence": "medium_high_if_present"
+      }
+    ]
+  }
+}

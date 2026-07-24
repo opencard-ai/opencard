@@ -31,23 +31,21 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 150000,
-      "spending_requirement": 8000,
+      "bonus_points": 75000,
+      "spending_requirement": 6000,
       "time_period_months": 6,
-      "description": "Earn 150,000 Marriott Bonvoy bonus points and a $125 statement credit after making $8,000 in purchases within the first 6 months of Card Membership. Offer ends 7/15/2026.",
+      "description": "Earn 75,000 Marriott Bonvoy bonus points after $6,000 in eligible purchases within the first 6 months, plus an extra 50,000 bonus points after an additional $3,000 in eligible purchases within the first 6 months of Card Membership.",
       "point_program": "Marriott Bonvoy",
-      "estimated_value": 1175,
-      "offer_status": "expired_review_required",
-      "is_elevated": false,
+      "estimated_value": 875,
+      "offer_status": "public_with_extra_bonus_path",
       "confidence": "high",
+      "is_elevated": false,
       "notes": [
-        "Marriott official card page checked 2026-07-05 shows 150,000 bonus points plus a $125 statement credit after $8,000 / 6 months; prior 5-Free-Night-Award offer is stale.",
-        "Offer expired 2026-07-15; keep as historical adaptor input only until issuer/apply source is refreshed.",
-        "Estimated value uses 150,000 Marriott points at ~$0.007 plus $125 statement credit."
+        "2026-07-24 refresh: Marriott and Amex snippets show post-7/15 baseline 75k/$6k/6mo plus extra 50k after additional $3k within 6 months.",
+        "Replaces expired 150k + $125 statement credit offer that ended 2026-07-15."
       ],
       "source_conflicts": [],
-      "last_verified": "AUTO_DATE",
-      "expires": "2026-07-15"
+      "last_verified": "AUTO_DATE"
     }
   },
   "citations": {
@@ -62,13 +60,12 @@
     "Confirm if 5 Free Night Awards offer is still live and whether each award cap remains 50,000 points."
   ],
   "community": {
-    "summary": "Track as P1 due high-value Marriott FNA structures; issuer wins because FNA counts and caps change often.",
+    "summary": "Post-expiry refresh tracks 75k after $6k/6mo plus extra 50k after additional $3k within first 6 months.",
     "recommended_production_value": {
-      "free_nights": 5,
-      "free_night_value_cap": 50000,
+      "offer_amount": 125000,
       "spend_requirement": 9000,
       "spend_window_months": 6,
-      "status": "expired_review_required"
+      "status": "public_with_extra_bonus_path"
     },
     "confidence": "medium_until_issuer_snapshot_present",
     "ymmv_or_targeted_possible": false,

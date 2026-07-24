@@ -30,19 +30,20 @@
       "bonus_points": 100000,
       "spending_requirement": 5000,
       "time_period_months": 3,
-      "description": "Earn 100,000 Ultimate Rewards points after spending $5,000 in purchases in the first 3 months from account opening.",
+      "description": "Earn 100,000 Ultimate Rewards points after spending $5,000 in purchases in the first 3 months from account opening. Offer scheduled to end July 30, 2026 at 9 a.m. ET per Chase-confirmed secondary coverage.",
       "point_program": "Chase Ultimate Rewards",
       "estimated_value": 1700,
       "offer_status": "public_limited_time",
       "confidence": "high",
+      "is_elevated": true,
       "notes": [
-        "Chase Sapphire Preferred landing page shows 75,000 struck through and 100,000 as the active bonus.",
-        "Chase news release confirms the 100,000-point limited-time offer and new benefits starting June 15, 2026.",
-        "Manual 2026-07-20 decision: keep expires=null until Chase publishes an official end date; monitor daily/near-daily from 2026-07-22 through 2026-07-31 because public sources say the 100k offer is ending soon."
+        "2026-07-24 refresh: CNBC/TPG/Frequent Miler report Chase-confirmed end date of 2026-07-30 09:00 ET for the 100k public offer.",
+        "Prior config intentionally left expires=null until official/confirmed end-date coverage appeared; now set expires for close-offer monitoring.",
+        "Adaptor P0 refresh 2026-07-24: expires set to 2026-07-30 from Chase-confirmed secondary coverage."
       ],
       "source_conflicts": [],
       "last_verified": "AUTO_DATE",
-      "expires": null
+      "expires": "2026-07-30"
     },
     "caveats": [
       "2026 refresh manual-review item: confirm $100 Chase Travel hotel credit, refreshed 3x earning categories, emergency evacuation coverage, and Hyatt transfer/benefit language before applying benefit fields.",
@@ -58,7 +59,6 @@
     ]
   },
   "open_questions": [
-    "Confirm whether Chase publishes an official CSP 100k end date; do not invent 7/22–7/31 as expires without issuer evidence.",
     "Confirm the Chase Sapphire Preferred landing page still shows 100,000 and that the 75,000 text is struck through before applying.",
     "Verify the new benefit bundle remains active on the official Chase news page.",
     "2026 refresh manual-review item: confirm $100 Chase Travel hotel credit, refreshed 3x earning categories, emergency evacuation coverage, and Hyatt transfer/benefit language before applying benefit fields.",

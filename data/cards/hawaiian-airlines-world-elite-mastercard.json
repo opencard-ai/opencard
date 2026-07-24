@@ -7,12 +7,23 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 1000,
-    "time_period_months": 3,
-    "bonus_points": 60000,
-    "description": "60,000 Atmos Rewards points after spending $1,000 in first 90 days",
+    "bonus_points": 70000,
+    "spending_requirement": 2000,
+    "time_period_months": 6,
+    "description": "Earn 70,000 Atmos Rewards points after spending $2,000 on purchases within the first 6 months.",
     "point_program": "Atmos Rewards Points",
-    "estimated_value": 840
+    "estimated_value": 980,
+    "offer_status": "public_elevated",
+    "confidence": "medium_high",
+    "is_elevated": true,
+    "notes": [
+      "2026-07-24 refresh: recent secondary coverage reports 70k elevated offer after $2k spend; issuer snippets also show Atmos branding migration.",
+      "Replaces stale 60k/$1k/90-day offer."
+    ],
+    "source_conflicts": [
+      "Barclays/Bank of Hawaii issuer result may show alternate 80k or in-flight single-purchase variants; verify issuer flow before treating as universal."
+    ],
+    "last_verified": "2026-07-24"
   },
   "earning_rates": [
     {
@@ -88,6 +99,14 @@
     },
     {
       "url": "reddit.com/r/HawaiianAirlines"
+    },
+    {
+      "url": "https://upgradedpoints.com/news/hawaiian-airlines-card-70k-bonus/",
+      "notes": "2026-07-24 elevated 70k/$2k coverage"
+    },
+    {
+      "url": "https://www.doctorofcredit.com/barclays-70000-hawaiian-airlines-bonus-annual-fee-not-waived-first-year-2/",
+      "notes": "2026-07-24 elevated 70k coverage"
     }
   ],
   "last_updated": "2026-04-16T13:41:49.983Z",
@@ -96,6 +115,6 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.983Z",
-  "next_review": "2026-07-15T13:41:49.983000+00:00"
+  "last_verified": "2026-07-24",
+  "next_review": "2026-08-07T00:00:00.000000+00:00"
 }

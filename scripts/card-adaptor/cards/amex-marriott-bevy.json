@@ -31,20 +31,22 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 175000,
+      "bonus_points": 85000,
       "spending_requirement": 5000,
       "time_period_months": 6,
-      "description": "Earn 175,000 Marriott Bonvoy bonus points after spending $5,000 in purchases within the first 6 months.",
+      "description": "Earn 85,000 Marriott Bonvoy bonus points after spending $5,000 in purchases within the first 6 months.",
       "point_program": "Marriott Bonvoy",
-      "estimated_value": 1138,
-      "offer_status": "public_elevated",
-      "confidence": "medium_high",
-      "is_elevated": true,
+      "estimated_value": 553,
+      "offer_status": "public",
+      "confidence": "high",
+      "is_elevated": false,
       "notes": [
-        "Adaptor coverage added for Marriott Bonvoy Bevy elevated-offer monitoring.",
-        "Production card already reflects the 175k elevated value; use adaptor to catch future expiry or regression."
+        "2026-07-24 refresh: Amex issuer result shows 85k/$5k/6mo as current public Bevy offer.",
+        "Replaces stale 175k elevated offer that expired in the March-May 2026 cycle."
       ],
-      "source_conflicts": [],
+      "source_conflicts": [
+        "Some Marriott-family pages/secondary sources mention extra 50k paths; keep Bevy production conservative at the Amex public 85k baseline unless issuer flow confirms extra tier."
+      ],
       "last_verified": "AUTO_DATE"
     }
   },
@@ -60,16 +62,19 @@
     "Confirm no lower public/session offer is replacing the elevated 175k value."
   ],
   "community": {
-    "summary": "Adds adaptor coverage for Marriott Bonvoy Bevy; production already tracks 175k, so the primary goal is expiry/drift detection.",
+    "summary": "Refresh replaces expired 175k elevated Bevy offer with current 85k/$5k/6mo Amex public baseline.",
     "recommended_production_value": {
-      "offer_amount": 175000,
+      "offer_amount": 85000,
       "spend_requirement": 5000,
       "spend_window_months": 6,
-      "status": "public_elevated"
+      "status": "public"
     },
     "confidence": "medium_high_when_issuer_or_marriott_page_present",
     "ymmv_or_targeted_possible": true,
-    "conflictStanceIncludes": ["85k", "125k"],
+    "conflictStanceIncludes": [
+      "85k",
+      "125k"
+    ],
     "observations": [
       {
         "sourceType": "issuer",

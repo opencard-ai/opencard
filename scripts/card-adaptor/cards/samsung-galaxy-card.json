@@ -1,0 +1,90 @@
+{
+  "cardId": "samsung-galaxy-card",
+  "cardPath": "data/cards/samsung-galaxy-card.json",
+  "mode": "offer_and_benefits",
+  "sources": [
+    {
+      "id": "01-samsung-news",
+      "type": "issuer",
+      "url": "https://news.samsung.com/us/samsung-introducing-galaxy-card",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-samsung-card",
+      "type": "issuer",
+      "url": "https://www.samsung.com/us/galaxy-card/",
+      "method": "get"
+    },
+    {
+      "id": "03-macrumors",
+      "type": "other",
+      "url": "https://www.macrumors.com/2026/07/20/samsung-galaxy-card/",
+      "method": "get"
+    },
+    {
+      "id": "04-cnet",
+      "type": "other",
+      "url": "https://www.cnet.com/tech/samsung-credit-card-us-launch/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 200,
+      "spending_requirement": 2000,
+      "time_period_months": 3,
+      "description": "Starting July 22, 2026, earn an additional $200 in bonus cash rewards after spending $2,000 in the first 90 days of account opening.",
+      "point_program": "Cash Rewards",
+      "estimated_value": 200,
+      "offer_status": "public_launch_offer",
+      "confidence": "medium_high",
+      "is_elevated": true,
+      "notes": [
+        "Samsung launched Galaxy Card with 5% cash rewards on eligible Samsung purchases, 3% via Samsung Wallet, 2% on other purchases, plus $200 launch bonus after $2k/90 days."
+      ],
+      "source_conflicts": [],
+      "last_verified": "2026-07-24"
+    },
+    "caveats": [
+      "New product; create production card only after issuer terms/issuing bank/network/fees are confirmed."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*samsung-news*.md:$200",
+      "sources/*samsung-news*.md:$2,000",
+      "sources/*samsung-news*.md:90 days"
+    ]
+  },
+  "open_questions": [
+    "Confirm issuing bank, network, annual fee, APR disclosures, and eligible purchase definitions from official application terms."
+  ],
+  "community": {
+    "summary": "P1 new adaptor for Samsung Galaxy Card launch terms and 5%/3%/2% reward structure.",
+    "recommended_production_value": {
+      "offer_amount": 200,
+      "spend_requirement": 2000,
+      "spend_window_months": 3,
+      "status": "public_launch_offer"
+    },
+    "confidence": "medium_high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "older Samsung financing/card products discontinued before 2026 launch"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Samsung Newsroom",
+        "regex": "\\$200|\\$2,000|90 days|5%|Samsung Wallet",
+        "stance": "supports_launch_offer",
+        "offer_amount": 200,
+        "spend_requirement": 2000,
+        "spend_window_months": 3,
+        "excerpt": "Samsung Newsroom announces Galaxy Card launch bonus and rewards structure.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

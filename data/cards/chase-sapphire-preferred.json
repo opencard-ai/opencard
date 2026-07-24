@@ -10,20 +10,19 @@
     "bonus_points": 100000,
     "spending_requirement": 5000,
     "time_period_months": 3,
-    "description": "Earn 100,000 Ultimate Rewards points after spending $5,000 in purchases in the first 3 months from account opening.",
+    "description": "Earn 100,000 Ultimate Rewards points after spending $5,000 in purchases in the first 3 months from account opening. Offer scheduled to end July 30, 2026 at 9 a.m. ET per Chase-confirmed secondary coverage.",
     "point_program": "Chase Ultimate Rewards",
     "estimated_value": 1700,
     "offer_status": "public_limited_time",
     "confidence": "high",
+    "is_elevated": true,
     "notes": [
-      "Chase Sapphire Preferred landing page shows 75,000 struck through and 100,000 as the active bonus.",
-      "Chase news release confirms the 100,000-point limited-time offer and new benefits starting June 15, 2026.",
-      "Manual 2026-07-20 decision: do not set a specific expires date because Chase has only confirmed “ending soon” publicly, with no official date; advance next_review to 2026-07-22 for close monitoring through 7/31."
+      "2026-07-24 refresh: CNBC/TPG/Frequent Miler report Chase-confirmed end date of 2026-07-30 09:00 ET for the 100k public offer.",
+      "Prior config intentionally left expires=null until official/confirmed end-date coverage appeared; now set expires for close-offer monitoring."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-20",
-    "is_elevated": true,
-    "expires": null
+    "last_verified": "2026-07-24",
+    "expires": "2026-07-30"
   },
   "earning_rates": [
     {
@@ -125,6 +124,14 @@
     {
       "url": "https://media.chase.com/news/Meet-the-New-Chase-Sapphire-Preferred",
       "notes": "Official Chase press release announcing the June 15, 2026 CSP refresh."
+    },
+    {
+      "url": "https://thepointsguy.com/news/chase-sapphire-preferred-100k-point-bonus-offer-last-chance-2026/",
+      "notes": "2026-07-24 end-date confirmation coverage"
+    },
+    {
+      "url": "https://www.cnbc.com/select/chase-sapphire-preferred-100k-bonus-ending-soon-2026/",
+      "notes": "2026-07-24 end-date confirmation coverage"
     }
   ],
   "last_updated": "2026-07-15T20:08:19.000Z",
@@ -160,8 +167,8 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-07-20",
-  "next_review": "2026-07-22T00:00:00-07:00",
+  "last_verified": "2026-07-24",
+  "next_review": "2026-08-07T00:00:00.000000+00:00",
   "cash_advance_fee_flat": 5,
   "cash_advance_fee_pct": 5,
   "cfpb_source": "Q3_2025",

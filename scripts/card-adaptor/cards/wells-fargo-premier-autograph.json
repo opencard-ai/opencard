@@ -36,7 +36,8 @@
       "is_elevated": true,
       "notes": [
         "Adaptor coverage added as a watchlist config because production data/cards/wells-fargo-premier-autograph.json does not exist yet.",
-        "Secondary sources describe Premier Autograph as similar to Autograph Journey but with a higher 100k intro bonus and possible Premier-client eligibility constraints."
+        "Secondary sources describe Premier Autograph as similar to Autograph Journey but with a higher 100k intro bonus and possible Premier-client eligibility constraints.",
+        "2026-07-24 P1 check: MyFICO/search coverage still supports 100k/$4k/3mo targeted/client-eligible watchlist; no broadly indexed issuer landing page found yet."
       ],
       "source_conflicts": [
         "Wells Fargo public card directory may not expose a dedicated Premier Autograph landing page to all users.",
@@ -67,7 +68,10 @@
     },
     "confidence": "medium_until_issuer_page_or_application_flow_confirms",
     "ymmv_or_targeted_possible": true,
-    "conflictStanceIncludes": ["Autograph Journey 60k", "Premier-client-only availability"],
+    "conflictStanceIncludes": [
+      "Autograph Journey 60k",
+      "Premier-client-only availability"
+    ],
     "observations": [
       {
         "sourceType": "other",

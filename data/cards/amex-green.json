@@ -78,6 +78,14 @@
     {
       "url": "https://www.americanexpress.com/us/credit-cards/card/green/",
       "notes": "Official Amex Page"
+    },
+    {
+      "url": "https://frequentmiler.com/amex-to-change-the-name-of-the-green-card-are-changes-coming/",
+      "notes": "2026-07-24 metadata: 2026-08-20 Classic Green rename"
+    },
+    {
+      "url": "https://upgradedpoints.com/news/american-express-green-card-name-change/",
+      "notes": "2026-07-24 metadata: Amex Green name change coverage"
     }
   ],
   "last_updated": "2026-04-25",
@@ -103,11 +111,18 @@
     "last_updated": "2026-04-24"
   },
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-04-24",
-  "next_review": "2026-07-15T13:41:49.947000+00:00",
+  "last_verified": "2026-07-24",
+  "next_review": "2026-08-20T00:00:00.000000+00:00",
   "cfpb_source": "Q3_2025",
   "late_fee": 40,
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 5,
-  "cfpb_verified": true
+  "cfpb_verified": true,
+  "application_status": "paused_new_applications",
+  "future_name": "American Express® Classic Green Card",
+  "name_change_effective": "2026-08-20",
+  "metadata_notes": [
+    "2026-07-24 metadata refresh: Amex Green is reported as paused for new applications / refresh pending.",
+    "American Express has confirmed or notified cardholders that the Green Card name changes to American Express Classic Green Card on 2026-08-20; benefits should be rechecked after the rename."
+  ]
 }

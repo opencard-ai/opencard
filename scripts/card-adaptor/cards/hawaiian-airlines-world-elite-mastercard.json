@@ -1,0 +1,86 @@
+{
+  "cardId": "hawaiian-airlines-world-elite-mastercard",
+  "cardPath": "data/cards/hawaiian-airlines-world-elite-mastercard.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-barclays",
+      "type": "issuer",
+      "url": "https://cards.barclaycardus.com/banking/credit-card/hawaiian-airlines/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-upgradedpoints",
+      "type": "other",
+      "url": "https://upgradedpoints.com/news/hawaiian-airlines-card-70k-bonus/",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/barclays-70000-hawaiian-airlines-bonus-annual-fee-not-waived-first-year-2/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 70000,
+      "spending_requirement": 2000,
+      "time_period_months": 6,
+      "description": "Earn 70,000 Atmos Rewards points after spending $2,000 on purchases within the first 6 months.",
+      "point_program": "Atmos Rewards Points",
+      "estimated_value": 980,
+      "offer_status": "public_elevated",
+      "confidence": "medium_high",
+      "is_elevated": true,
+      "notes": [
+        "2026-07-24 refresh: recent secondary coverage reports 70k elevated offer after $2k spend; issuer snippets also show Atmos branding migration.",
+        "Replaces stale 60k/$1k/90-day offer."
+      ],
+      "source_conflicts": [
+        "Barclays/Bank of Hawaii issuer result may show alternate 80k or in-flight single-purchase variants; verify issuer flow before treating as universal."
+      ],
+      "last_verified": "2026-07-24"
+    }
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*upgradedpoints*.md:70k",
+      "sources/*upgradedpoints*.md:$2,000",
+      "sources/*doc*.md:70,000"
+    ]
+  },
+  "open_questions": [
+    "Confirm whether Barclays official application path shows 70k/$2k/6mo, 80k, or single-purchase in-flight offer."
+  ],
+  "community": {
+    "summary": "P1 adaptor for Hawaiian Airlines / Atmos Rewards offer drift after 60k production value became stale.",
+    "recommended_production_value": {
+      "offer_amount": 70000,
+      "spend_requirement": 2000,
+      "spend_window_months": 6,
+      "status": "public_elevated"
+    },
+    "confidence": "medium_high",
+    "ymmv_or_targeted_possible": true,
+    "conflictStanceIncludes": [
+      "60k stale",
+      "80k issuer snippet",
+      "single purchase in-flight 70k"
+    ],
+    "observations": [
+      {
+        "sourceType": "other",
+        "source": "Upgraded Points",
+        "regex": "70k|70,000|\\$2,000|6 months",
+        "stance": "supports_70k_public_elevated",
+        "offer_amount": 70000,
+        "spend_requirement": 2000,
+        "spend_window_months": 6,
+        "excerpt": "Secondary coverage reports elevated 70k Atmos Rewards offer after $2k spend.",
+        "confidence": "medium_high_if_present"
+      }
+    ]
+  }
+}
