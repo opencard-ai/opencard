@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "title": "[SD & MN, In Branch Only] American Bank & Trust $500 Checking Bonus + $100 Savings Bonus",
+      "url": "https://www.doctorofcredit.com/sd-mn-american-bank-trust-250-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "mn bank bonuses",
+        "sd bank bonuses",
+        "soft pull"
+      ],
+      "ts": "2026-07-26T14:00:38.000Z",
+      "title_en": "[SD & MN, In Branch Only] American Bank & Trust $500 Checking Bonus + $100 Savings Bonus",
+      "summary_en": "",
+      "title_zh": "【僅限南達科他州與明尼蘇達州，僅限分行】American Bank & Trust 500美元支票帳戶獎勵 + 100美元儲蓄獎勵",
+      "summary_zh": "在指定州內的 American Bank & Trust 分行開立支票帳戶可獲得500美元獎勵，開立儲蓄帳戶可獲得100美元獎勵。",
+      "title_es": "[SD & MN, Solo en Sucursal] American Bank & Trust Bono de $500 por Cuenta Corriente + $100 por Ahorro",
+      "summary_es": "American Bank & Trust ofrece un bono de $500 al abrir una cuenta corriente y un bono adicional de $100 al abrir una cuenta de ahorros en sucursales de SD y MN."
+    },
+    {
+      "title": "Staples: No Purchase Fee On $200 Visa Gift Cards (7/26-8/1)",
+      "url": "https://www.doctorofcredit.com/staples-no-purchase-fee-on-200-visa-gift-cards-10-31-11-6-limit-5/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Manufactured Spending",
+        "staples",
+        "visa gift cards"
+      ],
+      "ts": "2026-07-26T13:00:28.000Z",
+      "title_en": "Staples: No Purchase Fee On $200 Visa Gift Cards (7/26-8/1)",
+      "summary_en": "",
+      "title_zh": "Staples：200美元 Visa 禮品卡免手續費（7月26日至8月1日）",
+      "summary_zh": "Staples 在7月26日至8月1日期間，購買200美元的 Visa 禮品卡無需支付手續費。",
+      "title_es": "Staples: Sin Cargo de Compra en Tarjetas de Regalo Visa de $200 (7/26-8/1)",
+      "summary_es": "Staples ofrece tarjetas de regalo Visa de $200 sin cargo adicional durante una semana."
+    },
+    {
       "title": "Chase Offers Offers: Get 5% Back At Giftcards.com (Up To $50 Back)",
       "url": "https://www.doctorofcredit.com/chase-offers-offers-get-5-back-at-giftcards-com-up-to-50-back/",
       "source": "Doctor of Credit",
@@ -12,10 +48,10 @@
       "ts": "2026-07-25T23:22:57.000Z",
       "title_en": "Chase Offers Offers: Get 5% Back At Giftcards.com (Up To $50 Back)",
       "summary_en": "",
-      "title_zh": "Chase Offers Offers: Get 5% Back At Giftcards.com (Up To $50 Back)",
-      "summary_zh": "",
-      "title_es": "Chase Offers: Obtén 5% de reembolso en Giftcards.com (hasta $50 de reembolso)",
-      "summary_es": "Chase ofrece un 5% de reembolso en Giftcards.com, con un máximo de $50 de regreso."
+      "title_zh": "Chase 優惠：於 Giftcards.com 消費可獲得 5% 回饋（最高50美元回饋）",
+      "summary_zh": "在 Giftcards.com 消費時，Chase 持卡人可獲得最高50美元的 5% 回饋。",
+      "title_es": "Ofertas de Chase: Obtén 5% de regreso en Giftcards.com (hasta $50 de regreso)",
+      "summary_es": "Chase ofrece un reembolso del 5% en compras en Giftcards.com, con un máximo de $50."
     },
     {
       "title": "[7-Eleven 7NOW App Promo Codes: $10 off $20+ With Promo Code SUNSHINE",
@@ -28,10 +64,10 @@
       "ts": "2026-07-25T23:18:41.000Z",
       "title_en": "[7-Eleven 7NOW App Promo Codes: $10 off $20+ With Promo Code SUNSHINE",
       "summary_en": "",
-      "title_zh": "[7-Eleven 7NOW App Promo Codes: $10 off $20+ With Promo Code SUNSHINE",
-      "summary_zh": "",
-      "title_es": "[7-Eleven 7NOW Códigos promocionales de la app: $10 de descuento en $20+ con el código SUNSHINE",
-      "summary_es": "Los códigos promocionales de la app 7NOW de 7-Eleven otorgan $10 de descuento en compras de $20 o más al usar el código SUNSHINE."
+      "title_zh": "【7-Eleven 7NOW App 促銷碼 SUNSHINE：滿20美元減10美元】",
+      "summary_zh": "使用 7NOW App 的促銷碼 SUNSHINE，單筆消費滿20美元即可減10美元。",
+      "title_es": "[7‑Eleven 7NOW Códigos Promocionales: $10 de descuento en compras de $20+ con el código SUNSHINE",
+      "summary_es": "Usando el código SUNSHINE en la app 7NOW de 7‑Eleven, obtienes $10 de descuento en pedidos de $20 o más."
     },
     {
       "title": "Capital One Cafes: Free Handcrafted Drink",
@@ -44,10 +80,10 @@
       "ts": "2026-07-25T22:38:01.000Z",
       "title_en": "Capital One Cafes: Free Handcrafted Drink",
       "summary_en": "",
-      "title_zh": "Capital One Cafes: Free Handcrafted Drink",
-      "summary_zh": "",
+      "title_zh": "Capital One 咖啡廳：免費手工飲品",
+      "summary_zh": "在 Capital One 咖啡廳，顧客可免費獲得一杯手工製作的飲品。",
       "title_es": "Capital One Cafés: Bebida artesanal gratuita",
-      "summary_es": "Capital One regala una bebida artesanal gratuita en sus cafeterías."
+      "summary_es": "Capital One Cafés regala una bebida artesanal a sus clientes."
     },
     {
       "title": "[Targered] First Tech Federal: Earn Up To 6x Points On Purchases",
@@ -61,10 +97,10 @@
       "ts": "2026-07-25T22:20:25.000Z",
       "title_en": "[Targered] First Tech Federal: Earn Up To 6x Points On Purchases",
       "summary_en": "",
-      "title_zh": "[Targered] First Tech Federal: Earn Up To 6x Points On Purchases",
-      "summary_zh": "",
-      "title_es": "[Targered] First Tech Federal: Gana hasta 6x puntos en tus compras",
-      "summary_es": "First Tech Federal permite ganar hasta seis veces puntos en tus compras."
+      "title_zh": "【定向優惠】First Tech Federal：消費最高可獲 6 倍積分",
+      "summary_zh": "First Tech Federal 的定向持卡人在消費時可獲得最高 6 倍的積分回饋。",
+      "title_es": "[Dirigido] First Tech Federal: Gana hasta 6x puntos en compras",
+      "summary_es": "First Tech Federal ofrece hasta seis veces puntos en tus compras con su tarjeta."
     },
     {
       "title": "DoorDash DashPass Members: 10% Back on eBay",
@@ -77,10 +113,10 @@
       "ts": "2026-07-25T21:30:54.000Z",
       "title_en": "DoorDash DashPass Members: 10% Back on eBay",
       "summary_en": "",
-      "title_zh": "DoorDash DashPass Members: 10% Back on eBay",
-      "summary_zh": "",
-      "title_es": "Miembros de DoorDash DashPass: 10% de reembolso en eBay",
-      "summary_es": "Los miembros de DashPass reciben un 10% de reembolso en sus compras en eBay."
+      "title_zh": "DoorDash DashPass 會員：於 eBay 消費可享 10% 回饋",
+      "summary_zh": "加入 DashPass 的 DoorDash 會員在 eBay 消費可獲得 10% 的現金回饋。",
+      "title_es": "Miembros de DoorDash DashPass: 10% de regreso en eBay",
+      "summary_es": "Los suscriptores de DashPass reciben un 10% de reembolso en compras realizadas en eBay."
     },
     {
       "title": "[CT, MA, ME, NH, NJ, NY, RI or VT] Webster Bank $300 Checking + $300 Savings ($900 For Both)",
@@ -102,10 +138,10 @@
       "ts": "2026-07-25T14:00:35.000Z",
       "title_en": "[CT, MA, ME, NH, NJ, NY, RI or VT] Webster Bank $300 Checking + $300 Savings ($900 For Both)",
       "summary_en": "",
-      "title_zh": "[CT, MA, ME, NH, NJ, NY, RI or VT] Webster Bank $300 Checking + $300 Savings ($900 For Both)",
-      "summary_zh": "",
-      "title_es": "[CT, MA, ME, NH, NJ, NY, RI o VT] Webster Bank: $300 en cuenta corriente + $300 en cuenta de ahorro ($900 en total)",
-      "summary_es": "Webster Bank ofrece $300 en cuenta corriente y $300 en cuenta de ahorro, sumando $900 en total para clientes de ciertos estados."
+      "title_zh": "【康涅狄格州、麻薩諸塞州、緬因州、新罕布什爾州、紐澤西州、紐約州、羅德島州或佛蒙特州】Webster Bank 300美元支票帳戶 + 300美元儲蓄帳戶（共900美元）",
+      "summary_zh": "在康涅狄格州等八個州的 Webster Bank 開戶，可分別獲得300美元的支票帳戶獎勵與300美元的儲蓄帳戶獎勵，總計900美元。",
+      "title_es": "[CT, MA, ME, NH, NJ, NY, RI o VT] Webster Bank Bono de $300 por Cuenta Corriente + $300 por Ahorro ($900 en total)",
+      "summary_es": "Webster Bank ofrece $300 por abrir una cuenta corriente y $300 por una cuenta de ahorros en estados seleccionados, totalizando $900."
     },
     {
       "title": "[AK, CO, CT, ID, IN, MA, ME, MI, NY, OH, OR, PA, UT, VT, or WA, In Branch] Keybank $1,000 Business Checking Bonus",
@@ -135,10 +171,10 @@
       "ts": "2026-07-25T14:00:18.000Z",
       "title_en": "[AK, CO, CT, ID, IN, MA, ME, MI, NY, OH, OR, PA, UT, VT, or WA, In Branch] Keybank $1,000 Business Checking Bonus",
       "summary_en": "",
-      "title_zh": "[AK, CO, CT, ID, IN, MA, ME, MI, NY, OH, OR, PA, UT, VT, or WA, In Branch] Keybank $1,000 Business Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[AK, CO, CT, ID, IN, MA, ME, MI, NY, OH, OR, PA, UT, VT o WA, En Sucursal] Keybank: Bono de $1,000 para cuenta corriente empresarial",
-      "summary_es": "Keybank proporciona un bono de $1,000 para cuentas corrientes empresariales en sus sucursales de varios estados."
+      "title_zh": "【阿拉斯加州、科羅拉多州、康涅狄格州、愛達荷州、印第安納州、麻薩諸塞州、緬因州、密歇根州、紐約州、俄亥俄州、俄勒岡州、賓夕法尼亞州、猶他州、佛蒙特州或華盛頓州，僅限分行】Keybank 1,000美元商業支票帳戶獎勵",
+      "summary_zh": "在這些州的分行開立 Keybank 商業支票帳戶，即可獲得1,000美元的獎勵。",
+      "title_es": "[AK, CO, CT, ID, IN, MA, ME, MI, NY, OH, OR, PA, UT, VT, o WA, En Sucursal] Keybank Bono de $1,000 por Cuenta Empresarial",
+      "summary_es": "Keybank ofrece un bono de $1,000 a las empresas que abran una cuenta en sucursal en los estados indicados."
     },
     {
       "title": "[YMMV] Bank of America Business Cards $750 Signup Bonus (Unlimited CR, Customized CR, Travel Rewards)",
@@ -153,10 +189,10 @@
       "ts": "2026-07-25T01:15:44.000Z",
       "title_en": "[YMMV] Bank of America Business Cards $750 Signup Bonus (Unlimited CR, Customized CR, Travel Rewards)",
       "summary_en": "",
-      "title_zh": "[YMMV] Bank of America Business Cards $750 Signup Bonus (Unlimited CR, Customized CR, Travel Rewards)",
-      "summary_zh": "",
-      "title_es": "[YMMV] Tarjetas de negocio de Bank of America: Bono de inscripción de $750 (CR ilimitado, CR personalizado, recompensas de viaje)",
-      "summary_es": "Bank of America otorga un bono de $750 al inscribirse en sus tarjetas de negocio con recompensas de viaje y opciones de crédito ilimitado."
+      "title_zh": "【YMMV（效果因人而異）】Bank of America 商業信用卡 750美元註冊獎勵（無限回饋、自訂回饋、旅遊獎勵）",
+      "summary_zh": "Bank of America 的商業信用卡新戶可獲得最高750美元的註冊獎勵，享有無限回饋、自訂回饋或旅遊獎勵選項。",
+      "title_es": "[YMMV] Tarjetas de Negocios de Bank of America: Bono de $750 por registro (CR Ilimitado, CR Personalizado, Recompensas de Viaje)",
+      "summary_es": "Bank of America ofrece un bono de $750 al solicitar sus tarjetas de negocios con opciones de recompensas ilimitadas y de viaje."
     },
     {
       "title": "Walmart: Review Select Items & Earn $5 Promo Credit",
@@ -169,10 +205,10 @@
       "ts": "2026-07-24T23:25:19.000Z",
       "title_en": "Walmart: Review Select Items & Earn $5 Promo Credit",
       "summary_en": "",
-      "title_zh": "Walmart: Review Select Items & Earn $5 Promo Credit",
-      "summary_zh": "",
-      "title_es": "Walmart: Revisa artículos seleccionados y gana $5 de crédito promocional",
-      "summary_es": "Walmart paga $5 de crédito promocional por reseñar artículos seleccionados."
+      "title_zh": "Walmart：評論指定商品可獲得 5美元促銷額度",
+      "summary_zh": "在 Walmart 對特定商品發表評論，即可獲得 5美元的促銷額度。",
+      "title_es": "Walmart: Califica artículos seleccionados y obtén $5 de crédito promocional",
+      "summary_es": "Walmart regala $5 de crédito promocional a quienes califiquen ciertos artículos."
     },
     {
       "title": "Amazon: Get 50% Off When Using Membership Rewards Points (Up To $80 In Discounts)(YMMV)",
@@ -189,10 +225,10 @@
       "ts": "2026-07-24T20:51:32.000Z",
       "title_en": "Amazon: Get 50% Off When Using Membership Rewards Points (Up To $80 In Discounts)(YMMV)",
       "summary_en": "",
-      "title_zh": "Amazon: Get 50% Off When Using Membership Rewards Points (Up To $80 In Discounts)(YMMV)",
-      "summary_zh": "",
+      "title_zh": "Amazon：使用 Membership Rewards 點數可享 50% 折扣（最高 80美元優惠）（YMMV）",
+      "summary_zh": "在 Amazon 購物時使用 Membership Rewards 點數，最高可抵用 50% 且優惠上限為 80美元，實際折扣因人而異。",
       "title_es": "Amazon: Obtén 50% de descuento al usar puntos de recompensas de membresía (hasta $80 de descuento) (YMMV)",
-      "summary_es": "Amazon ofrece un 50% de descuento al canjear puntos de recompensas de membresía, hasta un máximo de $80."
+      "summary_es": "Amazon permite canjear puntos de recompensas de membresía para obtener un 50% de descuento, con un máximo de $80."
     },
     {
       "title": "Giant/Martin’s: 2x Fuel Points on Mastercard Gift Cards (7/24-7/30)",
@@ -209,10 +245,10 @@
       "ts": "2026-07-24T18:00:02.000Z",
       "title_en": "Giant/Martin’s: 2x Fuel Points on Mastercard Gift Cards (7/24-7/30)",
       "summary_en": "",
-      "title_zh": "Giant/Martin’s: 2x Fuel Points on Mastercard Gift Cards (7/24-7/30)",
-      "summary_zh": "",
-      "title_es": "Giant/Martin's: Puntos de combustible duplicados en tarjetas de regalo Mastercard (7/24-7/30)",
-      "summary_es": "Giant y Martin's duplican los puntos de combustible al comprar tarjetas de regalo Mastercard durante la semana del 24 al 30 de julio."
+      "title_zh": "Giant/Martin's：Mastercard 禮品卡消費可獲雙倍燃油積分（7月24日至7月30日）",
+      "summary_zh": "在 Giant/Martin's 購買 Mastercard 禮品卡，可在7月24日至30日間獲得雙倍燃油積分。",
+      "title_es": "Giant/Martin's: Puntos de combustible dobles en tarjetas de regalo Mastercard (7/24-7/30)",
+      "summary_es": "Giant y Martin's duplican los puntos de combustible al comprar tarjetas de regalo Mastercard durante la semana."
     },
     {
       "title": "AmEx Offers: Alaska Airlines, Spend $400 & Get $80 Back",
@@ -227,10 +263,10 @@
       "ts": "2026-07-24T17:00:48.000Z",
       "title_en": "AmEx Offers: Alaska Airlines, Spend $400 & Get $80 Back",
       "summary_en": "",
-      "title_zh": "AmEx Offers: Alaska Airlines, Spend $400 & Get $80 Back",
-      "summary_zh": "",
-      "title_es": "Oferta de AmEx: Alaska Airlines, gasta $400 y obtén $80 de regreso",
-      "summary_es": "American Express devuelve $80 al gastar $400 en Alaska Airlines."
+      "title_zh": "AmEx 優惠：Alaska Airlines，消費滿400美元即可回饋80美元",
+      "summary_zh": "持有 American Express 卡的消費者在 Alaska Airlines 消費滿400美元即可獲得80美元的回饋。",
+      "title_es": "Ofertas de AmEx: Alaska Airlines, gasta $400 y recibe $80 de regreso",
+      "summary_es": "American Express ofrece un reembolso de $80 a quienes gasten al menos $400 con Alaska Airlines."
     },
     {
       "title": "(Launching Soon) PenFed Defender Card with 5x on Gas & 3x on Grocery & Dining",
@@ -244,43 +280,11 @@
       "ts": "2026-07-24T16:25:22.000Z",
       "title_en": "(Launching Soon) PenFed Defender Card with 5x on Gas & 3x on Grocery & Dining",
       "summary_en": "",
-      "title_zh": "(Launching Soon) PenFed Defender Card with 5x on Gas & 3x on Grocery & Dining",
-      "summary_zh": "",
+      "title_zh": "（即將推出）PenFed Defender 卡：加油 5倍、超市與餐飲 3倍回饋",
+      "summary_zh": "PenFed 即將推出的 Defender 卡將為加油提供 5 倍回饋，超市與餐飲提供 3 倍回饋。",
       "title_es": "(Próximamente) Tarjeta PenFed Defender con 5x en gasolina y 3x en supermercado y restaurantes",
-      "summary_es": "La futura tarjeta PenFed Defender dará cinco veces puntos en gasolina y tres veces en supermercado y restaurantes."
-    },
-    {
-      "title": "Postmates: $15 Off $30 With Promo Code 21LSLG (Nationwide; Can Be Done Twice), Delivery Only",
-      "url": "https://www.doctorofcredit.com/postmates-15-off-45-with-promo-code-dodgers/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "postmates"
-      ],
-      "ts": "2026-07-24T16:10:13.000Z",
-      "title_en": "Postmates: $15 Off $30 With Promo Code 21LSLG (Nationwide; Can Be Done Twice), Delivery Only",
-      "summary_en": "",
-      "title_zh": "Postmates: $15 Off $30 With Promo Code 21LSLG (Nationwide; Can Be Done Twice), Delivery Only",
-      "summary_zh": "",
-      "title_es": "Postmates: $15 de descuento en $30 con código promocional 21LSLG (a nivel nacional; puede usarse dos veces), solo entrega",
-      "summary_es": "Postmates ofrece $15 de descuento en pedidos de $30 o más con el código 21LSLG, puede usarse dos veces por cliente en todo el país."
-    },
-    {
-      "title": "T-Mobile $250 Referral Bonus For Each Party",
-      "url": "https://www.doctorofcredit.com/t-mobile-250-referral-bonus-for-each-party/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "t-mobile"
-      ],
-      "ts": "2026-07-24T16:00:44.000Z",
-      "title_en": "T-Mobile $250 Referral Bonus For Each Party",
-      "summary_en": "",
-      "title_zh": "T-Mobile $250 Referral Bonus For Each Party",
-      "summary_zh": "",
-      "title_es": "T-Mobile: Bono de recomendación de $250 por cada parte",
-      "summary_es": "T-Mobile otorga $250 por cada nuevo cliente referido que se registre exitosamente."
+      "summary_es": "PenFed lançará pronto su tarjeta Defender que ofrece cinco veces puntos en gasolina y tres veces en compras de supermercado y restaurantes."
     }
   ],
-  "fetched": "2026-07-26T08:10:15.995Z"
+  "fetched": "2026-07-26T14:10:38.329Z"
 }
