@@ -37,32 +37,55 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    // Catalog dedup (commit b2b0ba5) merged amex-bce / amex-bcp into the
-    // long-form canonical IDs. 301 the retired short IDs so inbound links /
-    // bookmarks / SEO equity carry over. Cover both the language-prefixed
-    // and the bare /cards/* paths.
-    return [
+    // Legacy card slug redirects. These cover URLs that Google may still know
+    // from earlier catalog imports/refactors and preserve SEO equity instead
+    // of letting retired slugs surface as Search Console 404s. Each mapping is
+    // emitted for both locale-prefixed card pages and bare /cards/* paths.
+    const legacyCardRedirects = [
+      ["amex-bce", "amex-blue-cash-everyday"],
+      ["amex-bcp", "amex-blue-cash-preferred"],
+      ["amex-hilton-aspire", "amex-hilton-honors-aspire"],
+      ["amex-hilton-business", "amex-hilton-honors-biz"],
+      ["amex-hilton-honors-business", "amex-hilton-honors-biz"],
+      ["amex-delta-business-gold", "amex-delta-gold-biz"],
+      ["amex-delta-skymiles-gold-biz", "amex-delta-gold-biz"],
+      ["amex-delta-business-platinum", "amex-delta-skymiles-platinum-biz"],
+      ["amex-delta-business-reserve", "amex-delta-skymiles-reserve-biz"],
+      ["chase-ink-cash", "chase-ink-biz-cash"],
+      ["chase-ink-unlimited", "chase-ink-biz-unlimited"],
+      ["chase-ink-preferred", "chase-ink-biz-preferred"],
+      ["chase-united-club", "chase-united-club-infinite"],
+      ["united-explorer-card", "chase-united-explorer"],
+      ["united-quest-card", "chase-united-quest"],
+      ["world-of-hyatt-credit-card", "chase-hyatt"],
+      ["hyatt-credit-card", "chase-hyatt"],
+      ["bofa-atmos-ascent", "boa-alaska-ascent"],
+      ["bofa-atmos-summit", "boa-alaska-summit"],
+      ["bofa-customized-cash", "boa-customized-cash-rewards"],
+      ["bofa-travel-rewards", "boa-travel-rewards"],
+      ["citi-aa-exec", "citi-aadvantage-executive"],
+      ["citi-aa-mileup", "citi-aadvantage-mileup"],
+      ["citi-aadvantage-platinum-select", "citi-aa-platinum-select"],
+      ["citi-strata-elite-premier", "citi-strata-elite"],
+      ["barclays-jetblue-business", "barclays-jetblue-biz"],
+      ["wyndham-rewards-earner-barclays", "barclays-wyndham-earner"],
+      ["wyndham-rewards-earner-plus-barclays", "barclays-wyndham-earner-plus"],
+      ["wyndham-rewards-earner-business-barclays", "barclays-wyndham-earner-biz"],
+      ["bilt-palladian", "bilt-palladium"],
+    ] as const;
+
+    return legacyCardRedirects.flatMap(([from, to]) => [
       {
-        source: "/:lang/cards/amex-bce",
-        destination: "/:lang/cards/amex-blue-cash-everyday",
+        source: `/:lang/cards/${from}`,
+        destination: `/:lang/cards/${to}`,
         permanent: true,
       },
       {
-        source: "/:lang/cards/amex-bcp",
-        destination: "/:lang/cards/amex-blue-cash-preferred",
+        source: `/cards/${from}`,
+        destination: `/cards/${to}`,
         permanent: true,
       },
-      {
-        source: "/cards/amex-bce",
-        destination: "/cards/amex-blue-cash-everyday",
-        permanent: true,
-      },
-      {
-        source: "/cards/amex-bcp",
-        destination: "/cards/amex-blue-cash-preferred",
-        permanent: true,
-      },
-    ];
+    ]);
   },
 };
 

@@ -123,3 +123,56 @@
 - 2026-06-21: Updated the 4 watcher-confirmed drift cards in both production card JSON and adaptor config candidates.
 - 2026-06-21: Re-ran the 4 refreshed adaptors; all returned `qa_verdict: pass` and `recommendation: close_no_production_delta`.
 - 2026-06-21: Rejected the 4 post-refresh verification artifacts; pending queue returned to `total: 0`; `npm run validate` passed.
+
+---
+
+# Task Dashboard — 2026-07-21 Offer Watch Follow-up
+
+- Owner: Kacey
+- Status: completed
+- Priority: high
+- Scope: Execute the July 21 offer-watch follow-up by adding missing adaptor coverage for the current public baseline offers, while keeping live-checked stale suggestions out of production.
+
+## Tasks
+
+1. Add missing adaptor coverage
+   - Status: completed
+   - Deliverable: adaptor configs for Chase Freedom Unlimited, Amex Blue Cash Everyday, and BoA Atmos Rewards Ascent.
+   - Acceptance: each config has issuer sources, candidate offer data, citations, and a clear adaptor-only caveat.
+
+2. Keep current live baselines honest
+   - Status: completed
+   - Deliverable: preserve the live-checked current offers in adaptor metadata without applying stale 100k United Quest guidance.
+   - Acceptance: United Quest remains at the current verified 70k baseline unless a fresh issuer snapshot says otherwise.
+
+3. Validate the new configs
+   - Status: completed
+   - Deliverable: `npm run validate` passes after the new adaptor files land.
+   - Acceptance: no schema or guard errors for the added configs.
+
+## Progress Log
+
+- 2026-07-21: Live-checked current offers before editing: Chase Freedom Unlimited = $200 / $500 / 3mo, BCE = as-high-as $200 / $2,000 / 6mo, BoA Atmos Ascent = 70k + $99 companion fare / $2,500 / 90d.
+- 2026-07-21: Confirmed the earlier 100k United Quest note is stale against the live Chase page, so it was not promoted.
+- 2026-07-21: Added adaptor configs for Chase Freedom Unlimited, Amex Blue Cash Everyday, and BoA Atmos Ascent; `npm run validate` passed.
+
+## 2026-07-27 — GSC 404 SEO redirect cleanup
+
+- Owner: Kacey
+- Status: in_progress
+- Priority: P1 SEO hygiene
+- Deliverable: Add 301 redirects for high-value legacy OpenCard card slugs that currently 404.
+- Acceptance criteria:
+  - `next.config.ts` includes canonical redirect mappings for known old card slugs.
+  - Existing unrelated worktree changes are untouched.
+  - Local static validation passes.
+  - Representative redirect targets resolve to current card pages.
+- Dependencies:
+  - Full Search Console URL list is blocked by current Google account permission; proceed with sitemap/history-derived candidates.
+
+### Progress Log
+- 2026-07-27 18:52 PT — Confirmed sitemap has 951 URLs all returning 200; robots allows crawling; GSC URL list blocked by property permission.
+- 2026-07-27 18:58 PT — Added 30 legacy card slug mappings in `next.config.ts`, generating locale-prefixed and bare card redirects.
+- 2026-07-27 18:59 PT — Verified all redirect targets exist in `data/cards`; `npm run validate`, `npx tsc --noEmit --pretty false`, and `npm run build` passed.
+- 2026-07-27 19:00 PT — Started local production server and curl-tested representative redirects; all returned permanent redirect to expected canonical card pages.
+- 2026-07-27 19:00 PT — Status: completed locally; pending deploy/commit decision if KC wants this shipped immediately.
