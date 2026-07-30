@@ -10,16 +10,17 @@
     "spending_requirement": 8000,
     "time_period_months": 6,
     "bonus_points": 130000,
-    "description": "Limited-time offer: Enjoy a $0 intro annual fee for the first year, then $195, and earn 130,000 Hilton Honors Bonus Points after spending $8,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 7/29/2026.",
+    "description": "Expired limited-time offer (ended 7/29/2026; issuer/source refresh required before treating as current): Limited-time offer: Enjoy a $0 intro annual fee for the first year, then $195, and earn 130,000 Hilton Honors Bonus Points after spending $8,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 7/29/2026.",
     "point_program": "Hilton Honors",
     "estimated_value": 650,
-    "is_elevated": true,
+    "is_elevated": false,
     "normal_bonus_points": 130000,
     "elevated_until": "2026-07-29",
-    "offer_status": "public_limited_time",
+    "offer_status": "expired_review_required",
     "confidence": "high",
     "notes": [
-      "Official Amex/Hilton pages are canonical; limited-time business card package includes $0 intro annual fee first year and 130,000 points through 7/29/2026."
+      "Official Amex/Hilton pages are canonical; limited-time business card package includes $0 intro annual fee first year and 130,000 points through 7/29/2026.",
+      "2026-07-30 review: 7/29/2026 Hilton limited-time elevated offer window has expired; downgraded to review-required so stale issuer offer is not treated as current/elevated until sources are refreshed."
     ],
     "source_conflicts": [],
     "last_verified": "2026-07-05",

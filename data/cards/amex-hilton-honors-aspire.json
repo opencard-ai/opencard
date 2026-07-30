@@ -10,17 +10,18 @@
     "bonus_points": 175000,
     "spending_requirement": 6000,
     "time_period_months": 6,
-    "description": "Limited-time offer: Earn 175,000 Hilton Honors Bonus Points after spending $6,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 7/29/2026.",
+    "description": "Expired limited-time offer (ended 7/29/2026; issuer/source refresh required before treating as current): Limited-time offer: Earn 175,000 Hilton Honors Bonus Points after spending $6,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 7/29/2026.",
     "point_program": "Hilton Honors",
     "estimated_value": 875,
-    "is_elevated": true,
+    "is_elevated": false,
     "normal_bonus_points": 150000,
     "elevated_until": "2026-07-29",
-    "offer_status": "public_limited_time",
+    "offer_status": "expired_review_required",
     "confidence": "high",
     "notes": [
       "Official Amex/Hilton pages are canonical; elevated public Hilton Aspire offer ends 7/29/2026.",
-      "2026-07-13 review: KC approved proactive update path; existing elevated Hilton 7/29/2026 public limited-time offer values were already present in OpenCard data, so this pass refreshes verification metadata rather than changing the headline offer."
+      "2026-07-13 review: KC approved proactive update path; existing elevated Hilton 7/29/2026 public limited-time offer values were already present in OpenCard data, so this pass refreshes verification metadata rather than changing the headline offer.",
+      "2026-07-30 review: 7/29/2026 Hilton limited-time elevated offer window has expired; downgraded to review-required so stale issuer offer is not treated as current/elevated until sources are refreshed."
     ],
     "source_conflicts": [],
     "last_verified": "2026-07-13",
