@@ -7,22 +7,24 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 100000,
+    "bonus_points": 75000,
     "spending_requirement": 5000,
     "time_period_months": 3,
-    "description": "Earn 100,000 Ultimate Rewards points after spending $5,000 in purchases in the first 3 months from account opening. Offer scheduled to end July 30, 2026 at 9 a.m. ET per Chase-confirmed secondary coverage.",
+    "description": "Earn 75,000 Ultimate Rewards points after spending $5,000 in purchases in the first 3 months from account opening. Updated after the 100,000-point limited-time offer ended; Chase official page showed 75,000 points on 2026-07-30.",
     "point_program": "Chase Ultimate Rewards",
-    "estimated_value": 1700,
-    "offer_status": "public_limited_time",
+    "estimated_value": 1275,
+    "offer_status": "public",
     "confidence": "high",
     "is_elevated": true,
     "notes": [
       "2026-07-24 refresh: CNBC/TPG/Frequent Miler report Chase-confirmed end date of 2026-07-30 09:00 ET for the 100k public offer.",
-      "Prior config intentionally left expires=null until official/confirmed end-date coverage appeared; now set expires for close-offer monitoring."
+      "Prior config intentionally left expires=null until official/confirmed end-date coverage appeared; now set expires for close-offer monitoring.",
+      "2026-07-30 post-deadline refresh: official Chase Sapphire Preferred page HTML showed 75,000 points after $5,000/3mo, replacing the expired 100,000-point limited-time offer. If Chase later re-extends 100k, refresh again from issuer source.",
+      "Secondary coverage reported the 100,000-point offer ended at 3 p.m. ET on 2026-07-30; direct Chase HTML after deadline no longer showed 100k as the active new-cardmember headline."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-24",
-    "expires": "2026-07-30"
+    "last_verified": "2026-07-30",
+    "normal_bonus_points": 60000
   },
   "earning_rates": [
     {

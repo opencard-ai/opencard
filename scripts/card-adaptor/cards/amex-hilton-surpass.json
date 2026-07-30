@@ -35,55 +35,55 @@
       "bonus_points": 130000,
       "spending_requirement": 3000,
       "time_period_months": 6,
-      "description": "Expired limited-time offer (ended 7/29/2026; issuer/source refresh required before treating as current): Limited-time offer: Enjoy a $0 intro annual fee for the first year, then $150, and earn 130,000 Hilton Honors Bonus Points after spending $3,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 7/29/2026.",
+      "description": "Earn 130,000 Hilton Honors Bonus Points after spending $3,000 in eligible purchases on your Card in the first 6 months of Card Membership.",
       "point_program": "Hilton Honors",
       "estimated_value": 650,
       "is_elevated": false,
       "normal_bonus_points": 130000,
-      "elevated_until": "2026-07-29",
-      "offer_status": "expired_review_required",
+      "offer_status": "public",
       "confidence": "high",
       "notes": [
         "Official Amex/Hilton pages are canonical; Surpass limited-time package includes $0 intro annual fee first year plus 130k points through 7/29/2026.",
-        "2026-07-30 review: 7/29/2026 Hilton limited-time elevated offer window has expired; downgraded to review-required so stale issuer offer is not treated as current/elevated until sources are refreshed."
+        "2026-07-30 review: 7/29/2026 Hilton limited-time elevated offer window has expired; downgraded to review-required so stale issuer offer is not treated as current/elevated until sources are refreshed.",
+        "2026-07-30 post-deadline refresh: Hilton issuer page showed Surpass at 130,000 points after $3,000/6mo with $150 annual fee; kept 130k rather than dropping to 80k because live issuer source supports 130k as current public offer after the 7/29/2026 package expired."
       ],
       "source_conflicts": [],
-      "last_verified": "AUTO_DATE",
-      "expires": "2026-07-29"
+      "last_verified": "AUTO_DATE"
     },
     "caveats": []
   },
   "citations": {
     "welcome_offer": [
-      "sources/*issuer-amex*.md:130,000 Hilton Honors Bonus Points",
-      "sources/*issuer-amex*.md:$0 intro annual fee",
-      "sources/*issuer-hilton*.md:Offer ends 7/29/2026"
+      "sources/*issuer-hilton*.md:130,000 Hilton Honors Bonus Points after $3,000"
     ]
   },
   "open_questions": [
-    "Confirm the $0 intro annual fee and 7/29/2026 expiry remain visible before applying future changes."
+    "Monitor whether Surpass remains at 130k BAU or returns to 80k; current Hilton issuer page supports 130k public offer."
   ],
   "community": {
-    "summary": "Official Amex/Hilton sources support the Surpass 130k public limited-time offer with $0 intro annual fee first year.",
+    "summary": "Post-deadline Hilton issuer page supports Surpass 130k public offer without the expired $0 intro annual fee package.",
     "recommended_production_value": {
       "offer_amount": 130000,
       "spend_requirement": 3000,
       "spend_window_months": 6,
-      "status": "public_limited_time"
+      "status": "public"
     },
     "confidence": "high_when_amex_or_hilton_issuer_page_present",
     "ymmv_or_targeted_possible": false,
-    "conflictStanceIncludes": [],
+    "conflictStanceIncludes": [
+      "80k expected fallback",
+      "expired $0 intro annual fee package"
+    ],
     "observations": [
       {
         "sourceType": "issuer",
-        "source": "Amex/Hilton official pages",
-        "regex": "130,000|7/29/2026|July 29, 2026|\\$0 intro",
-        "stance": "supports_130k_public_limited_time",
+        "source": "Hilton official credit cards page",
+        "regex": "130,000",
+        "stance": "supports_130k_current_public",
         "offer_amount": 130000,
         "spend_requirement": 3000,
         "spend_window_months": 6,
-        "excerpt": "Official sources describe the Hilton Surpass limited-time 130,000-point offer ending 7/29/2026.",
+        "excerpt": "Hilton issuer page shows Surpass earns 130,000 points after $3,000/6mo.",
         "confidence": "high"
       }
     ]

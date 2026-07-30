@@ -27,23 +27,25 @@
   "candidate": {
     "annual_fee": 95,
     "welcome_offer": {
-      "bonus_points": 100000,
+      "bonus_points": 75000,
       "spending_requirement": 5000,
       "time_period_months": 3,
-      "description": "Earn 100,000 Ultimate Rewards points after spending $5,000 in purchases in the first 3 months from account opening. Offer scheduled to end July 30, 2026 at 9 a.m. ET per Chase-confirmed secondary coverage.",
+      "description": "Earn 75,000 Ultimate Rewards points after spending $5,000 in purchases in the first 3 months from account opening. Updated after the 100,000-point limited-time offer ended; Chase official page showed 75,000 points on 2026-07-30.",
       "point_program": "Chase Ultimate Rewards",
-      "estimated_value": 1700,
-      "offer_status": "public_limited_time",
+      "estimated_value": 1275,
+      "offer_status": "public",
       "confidence": "high",
       "is_elevated": true,
       "notes": [
         "2026-07-24 refresh: CNBC/TPG/Frequent Miler report Chase-confirmed end date of 2026-07-30 09:00 ET for the 100k public offer.",
         "Prior config intentionally left expires=null until official/confirmed end-date coverage appeared; now set expires for close-offer monitoring.",
-        "Adaptor P0 refresh 2026-07-24: expires set to 2026-07-30 from Chase-confirmed secondary coverage."
+        "Adaptor P0 refresh 2026-07-24: expires set to 2026-07-30 from Chase-confirmed secondary coverage.",
+        "2026-07-30 post-deadline refresh: official Chase Sapphire Preferred page HTML showed 75,000 points after $5,000/3mo, replacing the expired 100,000-point limited-time offer. If Chase later re-extends 100k, refresh again from issuer source.",
+        "Secondary coverage reported the 100,000-point offer ended at 3 p.m. ET on 2026-07-30; direct Chase HTML after deadline no longer showed 100k as the active new-cardmember headline."
       ],
       "source_conflicts": [],
       "last_verified": "AUTO_DATE",
-      "expires": "2026-07-30"
+      "normal_bonus_points": 60000
     },
     "caveats": [
       "2026 refresh manual-review item: confirm $100 Chase Travel hotel credit, refreshed 3x earning categories, emergency evacuation coverage, and Hyatt transfer/benefit language before applying benefit fields.",
@@ -55,61 +57,40 @@
       "sources/*issuer*.md:$95 annual fee"
     ],
     "welcome_offer": [
-      "sources/*issuer*.md:100,000 / $5,000 / first 3 months"
+      "sources/*issuer*.md:75,000 / $5,000 / first 3 months"
     ]
   },
   "open_questions": [
-    "Confirm the Chase Sapphire Preferred landing page still shows 100,000 and that the 75,000 text is struck through before applying.",
     "Verify the new benefit bundle remains active on the official Chase news page.",
     "2026 refresh manual-review item: confirm $100 Chase Travel hotel credit, refreshed 3x earning categories, emergency evacuation coverage, and Hyatt transfer/benefit language before applying benefit fields.",
-    "Hotel credit and earning categories are manual-review fields; do not auto-apply from stale cached sources."
+    "Hotel credit and earning categories are manual-review fields; do not auto-apply from stale cached sources.",
+    "Re-check Chase official page if secondary sources report a 100k extension or replacement limited-time offer."
   ],
   "community": {
-    "summary": "Current Chase landing page and Chase news release show the 100,000-point CSP limited-time offer plus new benefits; older 75k-only readings came from an outdated canonical page path / text-only extraction. Added 2026-06-30 caveat/refresh monitoring notes.",
+    "summary": "Post-deadline official Chase page HTML showed 75,000 points after $5,000/3mo; prior 100k limited-time offer was treated as expired.",
     "recommended_production_value": {
-      "offer_amount": 100000,
+      "offer_amount": 75000,
       "spend_requirement": 5000,
       "spend_window_months": 3,
-      "status": "public_limited_time"
+      "status": "public"
     },
     "confidence": "high_when_chase_landing_page_and_news_release_present",
     "ymmv_or_targeted_possible": false,
     "conflictStanceIncludes": [
-      "75k"
+      "100k expired limited-time",
+      "60k standard estimate"
     ],
     "observations": [
       {
         "sourceType": "issuer",
-        "source": "Chase landing page",
-        "regex": "75,000[\\s\\S]{0,60}100,000|100,000[\\s\\S]{0,60}75,000",
-        "stance": "supports_100k_current_with_strikethrough",
-        "offer_amount": 100000,
+        "source": "Chase Sapphire Preferred official page",
+        "regex": "Earn 75,000 points[\\s\\S]{0,120}spend \\$5,000",
+        "stance": "supports_75k_current_public",
+        "offer_amount": 75000,
         "spend_requirement": 5000,
         "spend_window_months": 3,
-        "excerpt": "Landing page shows 75,000 struck through and 100,000 as the active bonus.",
+        "excerpt": "Official Chase HTML on 2026-07-30 showed Earn 75,000 points after $5,000/3mo.",
         "confidence": "high"
-      },
-      {
-        "sourceType": "issuer",
-        "source": "Chase news release",
-        "regex": "100,000",
-        "stance": "supports_100k_current",
-        "offer_amount": 100000,
-        "spend_requirement": 5000,
-        "spend_window_months": 3,
-        "excerpt": "Chase press release confirms the 100,000-point limited-time offer.",
-        "confidence": "high"
-      },
-      {
-        "sourceType": "doc",
-        "source": "Doctor of Credit tag",
-        "regex": "100,000|100K",
-        "stance": "supports_100k_secondary",
-        "offer_amount": 100000,
-        "spend_requirement": 5000,
-        "spend_window_months": 3,
-        "excerpt": "DoC references the CSP 100k offer and related discussion.",
-        "confidence": "medium"
       }
     ]
   }
