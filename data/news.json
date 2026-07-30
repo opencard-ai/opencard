@@ -1,6 +1,23 @@
 {
   "items": [
     {
+      "title": "Macy’s Adds Paze Checkout Option",
+      "url": "https://www.doctorofcredit.com/macys-adds-paze-checkout-option/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "Macy's",
+        "paze"
+      ],
+      "ts": "2026-07-30T12:42:08.000Z",
+      "title_en": "Macy’s Adds Paze Checkout Option",
+      "summary_en": "",
+      "title_zh": "Macy's 新增 Paze 結帳選項",
+      "summary_zh": "Macy's 新增 Paze 結帳選項，讓顧客可在結帳時直接使用此付款方式。",
+      "title_es": "Macy’s Adds Paze Checkout Option",
+      "summary_es": ""
+    },
+    {
       "title": "Amazon: Save 40% On Select Dog Treats (Must Buy 4)",
       "url": "https://www.doctorofcredit.com/amazon-save-40-on-select-dog-treats-must-buy-4/",
       "source": "Doctor of Credit",
@@ -12,10 +29,10 @@
       "ts": "2026-07-29T23:48:55.000Z",
       "title_en": "Amazon: Save 40% On Select Dog Treats (Must Buy 4)",
       "summary_en": "",
-      "title_zh": "亞馬遜：精選狗狗零食省40%（需購買4件）",
-      "summary_zh": "亞馬遜目前在指定狗狗零食上提供40%折扣，但需一次購買四件。",
-      "title_es": "Amazon: Ahorra 40% en golosinas para perros seleccionadas (debes comprar 4)",
-      "summary_es": "Amazon ofrece un ahorro del 40 % en una selección de golosinas para perros, pero debes comprar al menos 4 unidades."
+      "title_zh": "亞馬遜：精選狗狗零食享 40% 折扣（需購買 4 件）",
+      "summary_zh": "亞馬遜對精選狗狗零食提供 40% 折扣優惠，但需一次購買 4 件。",
+      "title_es": "Amazon: Save 40% On Select Dog Treats (Must Buy 4)",
+      "summary_es": ""
     },
     {
       "title": "OKX Cypto Account $100-$500 Signup Bonus",
@@ -30,10 +47,10 @@
       "ts": "2026-07-29T23:05:51.000Z",
       "title_en": "OKX Cypto Account $100-$500 Signup Bonus",
       "summary_en": "",
-      "title_zh": "OKX 加密貨幣帳戶 100-500 美元註冊獎金",
-      "summary_zh": "OKX 為新用戶提供100至500美元的註冊獎金。",
-      "title_es": "OKX: Bono de registro de $100‑$500 por crear cuenta criptográfica",
-      "summary_es": "Abre una cuenta en OKX y recibe un bono de registro de entre $100 y $500."
+      "title_zh": "OKX 加密帳戶提供 $100-$500 註冊獎金",
+      "summary_zh": "OKX 為新註冊的加密帳戶提供 100 至 500 美元的獎金。",
+      "title_es": "OKX Cypto Account $100-$500 Signup Bonus",
+      "summary_es": ""
     },
     {
       "title": "[Meijer: Purchase $50 In Third Party Giftcards, Get 5,000 Points (50k Cap)",
@@ -46,10 +63,10 @@
       "ts": "2026-07-29T22:01:26.000Z",
       "title_en": "[Meijer: Purchase $50 In Third Party Giftcards, Get 5,000 Points (50k Cap)",
       "summary_en": "",
-      "title_zh": "【Meijer】購買50美元第三方禮品卡，即可獲得5,000點（上限50k）",
-      "summary_zh": "在Meijer購買50美元第三方禮品卡可獲得5000點回饋，上限為50k點。",
-      "title_es": "[Meijer: Compra $50 en tarjetas de regalo de terceros y obtén 5,000 puntos (máximo 50,000)]",
-      "summary_es": "En Meijer, al gastar $50 en tarjetas de regalo de terceros recibirás 5,000 puntos, hasta un límite de 50,000."
+      "title_zh": "Meijer：購買 $50 第三方禮品卡，獲得 5,000 點（上限 5 萬點）",
+      "summary_zh": "在 Meijer 購買滿 50 美元的第三方禮品卡，即可獲得 5,000 點，最高上限 5 萬點。",
+      "title_es": "[Meijer: Purchase $50 In Third Party Giftcards, Get 5,000 Points (50k Cap)",
+      "summary_es": ""
     },
     {
       "title": "Amazon: Spend $30, Save $10 On Select Grocery Items",
@@ -63,10 +80,10 @@
       "ts": "2026-07-29T21:15:07.000Z",
       "title_en": "Amazon: Spend $30, Save $10 On Select Grocery Items",
       "summary_en": "",
-      "title_zh": "亞馬遜：消費30美元，精選食品雜貨省10美元",
-      "summary_zh": "亞馬遜對精選食品雜貨消費滿30美元提供10美元折扣。",
-      "title_es": "Amazon: Gast $30 y ahorra $10 en alimentos seleccionados",
-      "summary_es": "Amazon ofrece un ahorro de $10 al gastar $30 en ciertos productos de alimentación."
+      "title_zh": "亞馬遜：消費 $30 即可在精選雜貨商品上節省 $10",
+      "summary_zh": "亞馬遜在指定雜貨商品上消費滿 30 美元，可節省 10 美元。",
+      "title_es": "Amazon: Spend $30, Save $10 On Select Grocery Items",
+      "summary_es": ""
     },
     {
       "title": "[Targeted] Apple Card $300 Signup Bonus",
@@ -79,10 +96,10 @@
       "ts": "2026-07-29T19:23:21.000Z",
       "title_en": "[Targeted] Apple Card $300 Signup Bonus",
       "summary_en": "",
-      "title_zh": "【定向】Apple Card 300美元註冊獎金",
-      "summary_zh": "符合條件的用戶在申請Apple Card後可獲得300美元獎金。",
-      "title_es": "[Dirigido] Apple Card: Bono de registro de $300",
-      "summary_es": "Apple Card ofrece un bono de $300 para los nuevos usuarios que cumplan los requisitos del targeting."
+      "title_zh": "【定向優惠】Apple Card 提供 $300 註冊獎金",
+      "summary_zh": "Apple Card 針對符合條件的用戶提供 300 美元的註冊獎金。",
+      "title_es": "[Targeted] Apple Card $300 Signup Bonus",
+      "summary_es": ""
     },
     {
       "title": "Kroger / Harris Teeter: 4x Fuel Points On Select Third Party Gift Cards (7/29 – 8/11)",
@@ -99,10 +116,10 @@
       "ts": "2026-07-29T19:15:50.000Z",
       "title_en": "Kroger / Harris Teeter: 4x Fuel Points On Select Third Party Gift Cards (7/29 – 8/11)",
       "summary_en": "",
-      "title_zh": "Kroger / Harris Teeter：精選第三方禮品卡4倍燃油積分（7/29–8/11）",
-      "summary_zh": "在Kroger或Harris Teeter購買精選第三方禮品卡，可獲得4倍燃油積分，有效期至8月11日。",
-      "title_es": "Kroger / Harris Teeter: 4× puntos de combustible en tarjetas de regalo de terceros seleccionadas (29/7 – 11/8)",
-      "summary_es": "Kroger y Harris Teeter otorgan cuatro veces puntos de combustible al comprar tarjetas de regalo de terceros seleccionadas entre el 29 de julio y el 11 de agosto."
+      "title_zh": "Kroger / Harris Teeter：精選第三方禮品卡享 4 倍燃料積分（7/29 – 8/11）",
+      "summary_zh": "Kroger 與 Harris Teeter 在特定第三方禮品卡上提供 4 倍燃料積分，活動時間為 7 月 29 日至 8 月 11 日。",
+      "title_es": "Kroger / Harris Teeter: 4x Fuel Points On Select Third Party Gift Cards (7/29 – 8/11)",
+      "summary_es": ""
     },
     {
       "title": "ExpressVPN: Rakuten 100x",
@@ -117,10 +134,10 @@
       "ts": "2026-07-29T16:00:33.000Z",
       "title_en": "ExpressVPN: Rakuten 100x",
       "summary_en": "",
-      "title_zh": "ExpressVPN：Rakuten 100倍回饋",
-      "summary_zh": "ExpressVPN現在在Rakuten提供100倍回饋優惠。",
-      "title_es": "ExpressVPN: Rakuten 100×",
-      "summary_es": "ExpressVPN ofrece 100 veces puntos de Rakuten al contratar su servicio."
+      "title_zh": "ExpressVPN：Rakuten 100 倍積分",
+      "summary_zh": "ExpressVPN 透過 Rakuten 提供 100 倍積分的優惠。",
+      "title_es": "ExpressVPN: Rakuten 100x",
+      "summary_es": ""
     },
     {
       "title": "[WI, MN Only] Westconsin Credit Union $400 Checking Bonus + $100 Charity Donation, Direct Deposit Not Required",
@@ -135,10 +152,10 @@
       "ts": "2026-07-29T15:00:48.000Z",
       "title_en": "[WI, MN Only] Westconsin Credit Union $400 Checking Bonus + $100 Charity Donation, Direct Deposit Not Required",
       "summary_en": "",
-      "title_zh": "【僅限威斯康辛、明尼蘇達】Westconsin Credit Union 400美元支票帳戶獎金 + 100美元慈善捐贈，無需直接存款",
-      "summary_zh": "Westconsin Credit Union為威斯康辛和明尼蘇達州的客戶提供400美元支票帳戶獎金及100美元慈善捐贈，無需直接存款要求。",
-      "title_es": "[Solo WI, MN] Westconsin Credit Union: Bono de $400 por cuenta corriente + $100 en donación benéfica, sin requerimiento de depósito directo",
-      "summary_es": "Westconsin Credit Union regala $400 por abrir una cuenta corriente y dona $100 a una obra benéfica, sin necesidad de depósito directo, exclusiva para residentes de WI y MN."
+      "title_zh": "【僅限 WI、MN】Westconsin Credit Union 提供 $400 支票帳戶獎金 + $100 慈善捐贈，無需直接存款",
+      "summary_zh": "Westconsin Credit Union 為威斯康辛州與明尼蘇達州的客戶提供 400 美元的支票帳戶獎金及 100 美元的慈善捐贈，且不需要直接存款。",
+      "title_es": "[WI, MN Only] Westconsin Credit Union $400 Checking Bonus + $100 Charity Donation, Direct Deposit Not Required",
+      "summary_es": ""
     },
     {
       "title": "Huntington Business Voice Credit Card – 4% On Categories (Grocery, Gas, Office Supply & More), $700/$500",
@@ -151,10 +168,10 @@
       "ts": "2026-07-29T14:30:00.000Z",
       "title_en": "Huntington Business Voice Credit Card – 4% On Categories (Grocery, Gas, Office Supply & More), $700/$500",
       "summary_en": "",
-      "title_zh": "Huntington Business Voice 信用卡 – 雜貨、加油站、辦公用品等類別4%回饋，700美元/500美元",
-      "summary_zh": "Huntington Business Voice信用卡在雜貨、加油站、辦公用品等類別提供4%回饋，最高可獲700美元或500美元獎勵。",
-      "title_es": "Tarjeta de crédito Huntington Business Voice: 4 % en categorías (supermercado, gasolina, suministros de oficina y más), $700/$500",
-      "summary_es": "La tarjeta Huntington Business Voice devuelve un 4 % en categorías como supermercados, gasolina y suministros de oficina, con límites de $700 y $500."
+      "title_zh": "Huntington Business Voice 信用卡在多個類別（雜貨、加油、辦公用品等）提供 4% 回饋，獎金最高 $700/$500",
+      "summary_zh": "Huntington Business Voice 信用卡在雜貨、加油、辦公用品等類別提供 4% 回饋，並有最高 700 美元或 500 美元的獎勵。",
+      "title_es": "Huntington Business Voice Credit Card – 4% On Categories (Grocery, Gas, Office Supply & More), $700/$500",
+      "summary_es": ""
     },
     {
       "title": "Rakuten: Get 25x on PetSmart",
@@ -168,10 +185,10 @@
       "ts": "2026-07-29T13:30:10.000Z",
       "title_en": "Rakuten: Get 25x on PetSmart",
       "summary_en": "",
-      "title_zh": "Rakuten：PetSmart 25倍回饋",
-      "summary_zh": "Rakuten目前在PetSmart提供25倍回饋優惠。",
-      "title_es": "Rakuten: Obtén 25× puntos en PetSmart",
-      "summary_es": "Rakuten ofrece 25 veces puntos al comprar en PetSmart."
+      "title_zh": "Rakuten：在 PetSmart 消費可獲 25 倍積分",
+      "summary_zh": "在 Rakuten 合作商家 PetSmart 消費，可獲得 25 倍積分。",
+      "title_es": "Rakuten: Get 25x on PetSmart",
+      "summary_es": ""
     },
     {
       "title": "Bilt Provides Update Regarding Authorized Users",
@@ -184,10 +201,10 @@
       "ts": "2026-07-29T13:00:27.000Z",
       "title_en": "Bilt Provides Update Regarding Authorized Users",
       "summary_en": "",
-      "title_zh": "Bilt 發布授權用戶更新資訊",
-      "summary_zh": "Bilt 已公佈關於授權用戶的最新政策與功能變動。",
-      "title_es": "Bilt ofrece actualización sobre usuarios autorizados",
-      "summary_es": "Bilt ha publicado una actualización sobre la gestión de usuarios autorizados en su plataforma."
+      "title_zh": "Bilt 發布關於授權使用者的最新資訊",
+      "summary_zh": "Bilt 發布了關於授權使用者的最新政策與說明。",
+      "title_es": "Bilt Provides Update Regarding Authorized Users",
+      "summary_es": ""
     },
     {
       "title": "Best High Yield Savings Accounts  – up to 5.00% APY",
@@ -204,10 +221,10 @@
       "ts": "2026-07-29T12:15:33.000Z",
       "title_en": "Best High Yield Savings Accounts  – up to 5.00% APY",
       "summary_en": "",
-      "title_zh": "最佳高收益儲蓄帳戶 – 最高5.00%年利率",
-      "summary_zh": "目前市場上最高的高收益儲蓄帳戶可提供達5.00%的年利率。",
-      "title_es": "Mejores cuentas de ahorro de alto rendimiento – hasta 5,00 % APY",
-      "summary_es": "Estas cuentas de ahorro ofrecen rendimientos de hasta un 5,00 % de tasa anual porcentual."
+      "title_zh": "最佳高收益儲蓄帳戶，最高年利率可達 5.00%",
+      "summary_zh": "目前市面上最高的高收益儲蓄帳戶可提供高達 5.00% 的年利率。",
+      "title_es": "Best High Yield Savings Accounts  – up to 5.00% APY",
+      "summary_es": ""
     },
     {
       "title": "Capital One Cafes: Free Handcrafted Drink",
@@ -220,10 +237,10 @@
       "ts": "2026-07-29T01:41:01.000Z",
       "title_en": "Capital One Cafes: Free Handcrafted Drink",
       "summary_en": "",
-      "title_zh": "Capital One Cafes：免費手工飲品",
-      "summary_zh": "Capital One Cafes 為顧客提供免費的手工飲品。",
-      "title_es": "Capital One Cafes: Bebida artesanal gratuita",
-      "summary_es": "Capital One Cafes ofrece una bebida artesanal gratuita con tu visita."
+      "title_zh": "Capital One 咖啡廳：免費手作飲料",
+      "summary_zh": "Capital One 咖啡廳現在為顧客提供免費的手作飲料。",
+      "title_es": "Capital One Cafes: Free Handcrafted Drink",
+      "summary_es": ""
     },
     {
       "title": "Kalshi: Up To $500 For $50+ On Prediction Markets, $25 Bonus For Trading $50+ In Perpetuals (~$25.05 Expected Value) + Charity Donation",
@@ -237,27 +254,11 @@
       "ts": "2026-07-29T01:00:08.000Z",
       "title_en": "Kalshi: Up To $500 For $50+ On Prediction Markets, $25 Bonus For Trading $50+ In Perpetuals (~$25.05 Expected Value) + Charity Donation",
       "summary_en": "",
-      "title_zh": "Kalshi：預測市場消費50美元以上可獲最高500美元，期貨交易50美元以上可獲25美元獎金（約25.05美元預期價值）+ 慈善捐贈",
-      "summary_zh": "Kalshi 為在預測市場消費滿50美元的用戶提供最高500美元獎勵，並對期貨交易滿50美元的用戶提供25美元獎金及慈善捐贈。",
-      "title_es": "Kalshi: Hasta $500 por invertir $50+ en mercados de predicción, bono de $25 por operar $50+ en perpetuos (valor esperado ~$25.05) + donación benéfica",
-      "summary_es": "Kalshi regalará hasta $500 al invertir $50 o más en mercados de predicción, más un bono de $25 por operar $50 en perpetuos, con una donación adicional a una organización benéfica."
-    },
-    {
-      "title": "Chipotle: Free Chips & Guac With Entree Purchase & Promo Code AVO2026 (7/31-8/1)",
-      "url": "https://www.doctorofcredit.com/chipotle-free-chips-guac-with-entree-purchase-promo-code-avo2026-7-31-8-1/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "Chipotle"
-      ],
-      "ts": "2026-07-28T22:41:25.000Z",
-      "title_en": "Chipotle: Free Chips & Guac With Entree Purchase & Promo Code AVO2026 (7/31-8/1)",
-      "summary_en": "",
-      "title_zh": "Chipotle：使用促銷碼 AVO2026 購買主餐即可免費獲得玉米片和酪梨醬（7/31-8/1）",
-      "summary_zh": "在7月31日至8月1日期間，於Chipotle使用AVO2026促銷碼購買主餐，即可免費獲得玉米片和酪梨醬。",
-      "title_es": "Chipotle: Papas fritas y guacamole gratis con la compra de un plato y código promocional AVO2026 (31/7 – 1/8)",
-      "summary_es": "Chipotle ofrece chips y guacamole gratuitos al comprar cualquier plato principal usando el código AVO2026 entre el 31 de julio y el 1 de agosto."
+      "title_zh": "Kalshi：在預測市場交易 $50+ 可獲最高 $500，另有 $25 獎金用於永續合約交易（約 $25.05 期望值）+ 慈善捐贈",
+      "summary_zh": "Kalshi 為在預測市場交易 50 美元以上的用戶提供最高 500 美元獎金，並有 25 美元獎金用於永續合約交易，另有慈善捐贈，預期價值約 25.05 美元。",
+      "title_es": "Kalshi: Up To $500 For $50+ On Prediction Markets, $25 Bonus For Trading $50+ In Perpetuals (~$25.05 Expected Value) + Charity Donation",
+      "summary_es": ""
     }
   ],
-  "fetched": "2026-07-30T08:10:26.165Z"
+  "fetched": "2026-07-30T14:10:10.063Z"
 }
