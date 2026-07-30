@@ -1,7 +1,7 @@
 # Task Dashboard — Offer Deadline Refresh 2026-07-30
 
 - Owner: Kacey
-- Status: in_progress
+- Status: completed
 - Priority: high
 - Scope: Execute KC-approved post-deadline offer refresh for CSP / Hilton and schedule near-term offer watch follow-ups.
 
@@ -41,10 +41,11 @@
 
 5. Validation and CI
    - Owner: Kacey
-   - Status: pending
+   - Status: completed
    - Priority: high
    - Deliverable: `npm run validate`, commit, push, GitHub Actions confirmation.
    - Acceptance: Validate Card Data and Secret Scan pass for the pushed commit.
+   - Result: Commit `d679075e` passed Validate Card Data and Secret Scan.
 
 ## Progress Log
 
@@ -52,3 +53,4 @@
 - 2026-07-30 15:07 PT: Checked current data. Existing repo had unrelated dirty changes; this task will stage only files owned by this refresh.
 - 2026-07-30 15:08 PT: External checks found CSP 100k ended, Chase official HTML currently shows 75k; Hilton official page shows Aspire 150k and Surpass 130k.
 - 2026-07-30 15:09 PT: Updated production/adaptor JSON for CSP, Aspire, and Surpass; scheduled 8/20 follow-up cron for Hyatt + August business offer watch.
+- 2026-07-30 15:10 PT: `npm run validate` passed locally; pushed commit `d679075e`; GitHub Validate Card Data and Secret Scan both passed.
