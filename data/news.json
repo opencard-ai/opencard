@@ -1,6 +1,127 @@
 {
   "items": [
     {
+      "title": "[MI, IN] OMNI Community Credit Union $400 Referral Checking Bonus",
+      "url": "https://www.doctorofcredit.com/mi-omni-community-credit-union-200-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "mi bank bonuses"
+      ],
+      "ts": "2026-08-02T19:30:19.000Z",
+      "title_en": "[MI, IN] OMNI Community Credit Union $400 Referral Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[MI, IN] OMNI Community Credit Union $400 Referral Checking Bonus",
+      "summary_zh": "",
+      "title_es": "[MI, IN] OMNI Community Credit Union: Bono de $400 por referir cuenta corriente",
+      "summary_es": "Los clientes pueden ganar un bono de $400 al referir a nuevos titulares a una cuenta corriente de OMNI Community Credit Union en Michigan e Indiana."
+    },
+    {
+      "title": "[Existing Cardholders] Target Credit Card: Get $75 Bonus With $750 Spend Anywhere",
+      "url": "https://www.doctorofcredit.com/target-credit-card-get-25-50-bonus-with-250-500-spend-anywhere/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "target",
+        "target circle card"
+      ],
+      "ts": "2026-08-02T19:30:01.000Z",
+      "title_en": "[Existing Cardholders] Target Credit Card: Get $75 Bonus With $750 Spend Anywhere",
+      "summary_en": "",
+      "title_zh": "[Existing Cardholders] Target Credit Card: Get $75 Bonus With $750 Spend Anywhere",
+      "summary_zh": "",
+      "title_es": "[Titulares existentes] Tarjeta de crédito Target: Obtén $75 de bono al gastar $750 en cualquier lugar",
+      "summary_es": "Los actuales titulares de la tarjeta Target reciben un bono de $75 al realizar compras totales de $750."
+    },
+    {
+      "title": "Plynk Brokerage 25%-50% Bonus On Earned Dividends ($250/$500 Annual Max)",
+      "url": "https://www.doctorofcredit.com/plynk-brokerage-25-bonus-on-earned-dividends-250-annual-max/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "brokerage bonuses",
+        "plynk"
+      ],
+      "ts": "2026-08-02T19:10:32.000Z",
+      "title_en": "Plynk Brokerage 25%-50% Bonus On Earned Dividends ($250/$500 Annual Max)",
+      "summary_en": "",
+      "title_zh": "Plynk Brokerage 25%-50% Bonus On Earned Dividends ($250/$500 Annual Max)",
+      "summary_zh": "",
+      "title_es": "Plynk Brokerage: Bono del 25% al 50% sobre dividendos ganados (máximo $250/$500 al año)",
+      "summary_es": "Plynk ofrece un bono que representa entre el 25% y 50% de los dividendos obtenidos, con un límite anual de $250 o $500."
+    },
+    {
+      "title": "Chase Offers/U.S. Bank: Aldi 7% Back ($4 Cashback Max)",
+      "url": "https://www.doctorofcredit.com/chase-offers-bofa-aldi-10-back-6-cashback-max/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "aldi",
+        "chase offers"
+      ],
+      "ts": "2026-08-02T19:00:29.000Z",
+      "title_en": "Chase Offers/U.S. Bank: Aldi 7% Back ($4 Cashback Max)",
+      "summary_en": "",
+      "title_zh": "Chase Offers/U.S. Bank: Aldi 7% Back ($4 Cashback Max)",
+      "summary_zh": "",
+      "title_es": "Chase Offers / U.S. Bank: 7% de regreso en compras en Aldi (máximo $4 de reembolso)",
+      "summary_es": "Los usuarios de Chase o U.S. Bank obtienen un 7% de reembolso en sus compras en Aldi, hasta $4."
+    },
+    {
+      "title": "Chase Offers (BofA, WF, USB): Get 10% Back On Uber Purchases (Up To $4.50 Cashback)",
+      "url": "https://www.doctorofcredit.com/chase-offers-bofa-wf-usb-get-15-back-on-uber-purchases-up-to-6-75-cashback/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "chase offers",
+        "Uber"
+      ],
+      "ts": "2026-08-02T18:58:49.000Z",
+      "title_en": "Chase Offers (BofA, WF, USB): Get 10% Back On Uber Purchases (Up To $4.50 Cashback)",
+      "summary_en": "",
+      "title_zh": "Chase Offers (BofA, WF, USB): Get 10% Back On Uber Purchases (Up To $4.50 Cashback)",
+      "summary_zh": "",
+      "title_es": "Chase Offers (BofA, WF, USB): 10% de regreso en compras de Uber (hasta $4.50 de reembolso)",
+      "summary_es": "Al usar las ofertas de Chase, los clientes reciben un 10% de regreso en compras en Uber, con un límite de $4.50."
+    },
+    {
+      "title": "Amazon: Pampers $20 Off $80",
+      "url": "https://www.doctorofcredit.com/amazon-pampers-20-off-80/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "amazon",
+        "pampers",
+        "target"
+      ],
+      "ts": "2026-08-02T15:40:22.000Z",
+      "title_en": "Amazon: Pampers $20 Off $80",
+      "summary_en": "",
+      "title_zh": "Amazon: Pampers $20 Off $80",
+      "summary_zh": "",
+      "title_es": "Amazon: $20 de descuento en Pampers al gastar $80",
+      "summary_es": "En Amazon, al comprar Pampers por al menos $80 se aplica un descuento de $20."
+    },
+    {
+      "title": "[GA only] Georgia’s Own Credit Union $275 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/ga-only-georgias-own-credit-union-200-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "ga bank bonuses",
+        "hard pull"
+      ],
+      "ts": "2026-08-02T15:00:37.000Z",
+      "title_en": "[GA only] Georgia’s Own Credit Union $275 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[GA only] Georgia’s Own Credit Union $275 Checking Bonus",
+      "summary_zh": "",
+      "title_es": "[Solo GA] Georgia’s Own Credit Union: Bono de $275 por cuenta corriente",
+      "summary_es": "Los residentes de Georgia pueden obtener un bono de $275 al abrir una cuenta corriente en Georgia’s Own Credit Union."
+    },
+    {
       "title": "[WA, OR] Peak Credit Union $250 Checking Bonus, Direct Deposit Not Required",
       "url": "https://www.doctorofcredit.com/wa-or-peak-credit-union-250-checking-bonus-direct-deposit-not-required/",
       "source": "Doctor of Credit",
@@ -14,10 +135,10 @@
       "ts": "2026-08-02T14:00:28.000Z",
       "title_en": "[WA, OR] Peak Credit Union $250 Checking Bonus, Direct Deposit Not Required",
       "summary_en": "",
-      "title_zh": "【WA, OR】Peak Credit Union 250美元活期帳戶獎金，無需直接存款",
-      "summary_zh": "此優惠適用於華盛頓州與俄勒岡州的Peak Credit Union會員，只要開戶即可獲得250美元獎金，無需滿足直接存款要求。",
-      "title_es": "[WA, OR] Peak Credit Union $250 Checking Bonus, Direct Deposit Not Required",
-      "summary_es": ""
+      "title_zh": "[WA, OR] Peak Credit Union $250 Checking Bonus, Direct Deposit Not Required",
+      "summary_zh": "",
+      "title_es": "[WA, OR] Peak Credit Union: Bono de $250 en cuenta corriente sin requerir depósito directo",
+      "summary_es": "Peak Credit Union ofrece un bono de $250 por abrir una cuenta corriente en Washington u Oregón, sin necesidad de domiciliar un depósito directo."
     },
     {
       "title": "Paze Spend $10, Get $10 Back Offer – What’s Left (Non Giftcard Options, More Added)",
@@ -31,10 +152,10 @@
       "ts": "2026-08-01T21:55:44.000Z",
       "title_en": "Paze Spend $10, Get $10 Back Offer – What’s Left (Non Giftcard Options, More Added)",
       "summary_en": "",
-      "title_zh": "Paze 消費10美元即回饋10美元 – 剩餘項目（非禮品卡選項，更多新增）",
-      "summary_zh": "Paze推出的消費10美元即返10美元優惠，目前仍有非禮品卡選項，並新增了更多優惠。",
-      "title_es": "Paze Spend $10, Get $10 Back Offer – What’s Left (Non Giftcard Options, More Added)",
-      "summary_es": ""
+      "title_zh": "Paze Spend $10, Get $10 Back Offer – What’s Left (Non Giftcard Options, More Added)",
+      "summary_zh": "",
+      "title_es": "Paze: Gasta $10 y obtén $10 de regreso – opciones restantes (sin tarjetas de regalo, se añadieron más)",
+      "summary_es": "La promoción de Paze reembolsa $10 por cada $10 gastado, con nuevas opciones que excluyen tarjetas de regalo."
     },
     {
       "title": "7-Eleven 7NOW App Promo Codes: $10 off $20+ With Promo Code AUG10",
@@ -47,10 +168,10 @@
       "ts": "2026-08-01T21:45:41.000Z",
       "title_en": "7-Eleven 7NOW App Promo Codes: $10 off $20+ With Promo Code AUG10",
       "summary_en": "",
-      "title_zh": "7-Eleven 7NOW App 促銷碼：AUG10 滿20美元即減10美元",
-      "summary_zh": "在7-Eleven的7NOW App使用AUG10促銷碼，消費滿20美元可減10美元。",
-      "title_es": "7-Eleven 7NOW App Promo Codes: $10 off $20+ With Promo Code AUG10",
-      "summary_es": ""
+      "title_zh": "7-Eleven 7NOW App Promo Codes: $10 off $20+ With Promo Code AUG10",
+      "summary_zh": "",
+      "title_es": "Código promocional de la app 7NOW de 7-Eleven: $10 de descuento en compras de $20 o más con AUG10",
+      "summary_es": "Usando el código AUG10 en la app 7NOW, los clientes reciben $10 de descuento en pedidos de $20 o más en 7-Eleven."
     },
     {
       "title": "[AmEx Statement: No Nerf] American Express To Nerf Resy Credit (Select Restaurants Only)",
@@ -64,10 +185,10 @@
       "ts": "2026-08-01T21:45:05.000Z",
       "title_en": "[AmEx Statement: No Nerf] American Express To Nerf Resy Credit (Select Restaurants Only)",
       "summary_en": "",
-      "title_zh": "【AmEx 聲明：未削弱】美國運通將削弱 Resy 信用卡（僅限部分餐廳）",
-      "summary_zh": "美國運通宣布將對 Resy 信用卡在部分餐廳的福利進行削弱。",
-      "title_es": "[AmEx Statement: No Nerf] American Express To Nerf Resy Credit (Select Restaurants Only)",
-      "summary_es": ""
+      "title_zh": "[AmEx Statement: No Nerf] American Express To Nerf Resy Credit (Select Restaurants Only)",
+      "summary_zh": "",
+      "title_es": "[Declaración de AmEx: Sin recorte] American Express reducirá el crédito Resy solo en restaurantes seleccionados",
+      "summary_es": "AmEx ha anunciado que no recortará el crédito de Resy, limitando la reducción a ciertos restaurantes."
     },
     {
       "title": "BILT Erroneously Sends Some Users To Collections",
@@ -80,10 +201,10 @@
       "ts": "2026-08-01T21:02:03.000Z",
       "title_en": "BILT Erroneously Sends Some Users To Collections",
       "summary_en": "",
-      "title_zh": "BILT 錯誤地將部分用戶發送至催收",
-      "summary_zh": "BILT 系統錯誤導致部分用戶被錯誤地列為催收對象。",
-      "title_es": "BILT Erroneously Sends Some Users To Collections",
-      "summary_es": ""
+      "title_zh": "BILT Erroneously Sends Some Users To Collections",
+      "summary_zh": "",
+      "title_es": "BILT envía por error a algunos usuarios a cobros",
+      "summary_es": "BILT ha notificado a un grupo de usuarios que fueron incorrectamente derivados a procesos de cobro."
     },
     {
       "title": "Capital One Transfer Bonus: 15% Avianca",
@@ -99,10 +220,10 @@
       "ts": "2026-08-01T13:00:50.000Z",
       "title_en": "Capital One Transfer Bonus: 15% Avianca",
       "summary_en": "",
-      "title_zh": "Capital One 轉帳獎勵：15% Avianca",
-      "summary_zh": "Capital One 提供將積分轉至Avianca航空可獲得15%的額外獎勵。",
-      "title_es": "Capital One Transfer Bonus: 15% Avianca",
-      "summary_es": ""
+      "title_zh": "Capital One Transfer Bonus: 15% Avianca",
+      "summary_zh": "",
+      "title_es": "Capital One: Bono de transferencia del 15% para Avianca",
+      "summary_es": "Capital One ofrece un bono de transferencia equivalente al 15% al usar sus puntos con Avianca."
     },
     {
       "title": "Barclays $200-$400 Savings Bonus",
@@ -117,10 +238,10 @@
       "ts": "2026-07-31T22:10:33.000Z",
       "title_en": "Barclays $200-$400 Savings Bonus",
       "summary_en": "",
-      "title_zh": "Barclays 200至400美元儲蓄獎金",
-      "summary_zh": "Barclays 為新儲蓄帳戶提供200至400美元的獎金優惠。",
-      "title_es": "Barclays $200-$400 Savings Bonus",
-      "summary_es": ""
+      "title_zh": "Barclays $200-$400 Savings Bonus",
+      "summary_zh": "",
+      "title_es": "Barclays: Bono de ahorro de $200 a $400",
+      "summary_es": "Barclays premia a sus clientes con un bono de ahorro que oscila entre $200 y $400."
     },
     {
       "title": "Chase Sapphire Lounges Removing Priority Pass Access & Increasing Layover Time Allowed",
@@ -135,115 +256,11 @@
       "ts": "2026-07-31T21:07:18.000Z",
       "title_en": "Chase Sapphire Lounges Removing Priority Pass Access & Increasing Layover Time Allowed",
       "summary_en": "",
-      "title_zh": "Chase Sapphire 貴賓室移除 Priority Pass 進入權並提高允許的中停時間",
-      "summary_zh": "Chase Sapphire 貴賓室將不再接受 Priority Pass，並將放寬中停時間限制。",
-      "title_es": "Chase Sapphire Lounges Removing Priority Pass Access & Increasing Layover Time Allowed",
-      "summary_es": ""
-    },
-    {
-      "title": "[Removed 8/1] PayPal To Remove ‘Redeem For Cashback’ PayPal Rewards Redemption Option",
-      "url": "https://www.doctorofcredit.com/paypal-to-remove-redeem-for-cashback-paypal-rewards-redemption-option/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Misc",
-        "paypal",
-        "paypal rewards"
-      ],
-      "ts": "2026-07-31T20:55:30.000Z",
-      "title_en": "[Removed 8/1] PayPal To Remove ‘Redeem For Cashback’ PayPal Rewards Redemption Option",
-      "summary_en": "",
-      "title_zh": "【已於8/1移除】PayPal 將移除「兌換現金回饋」的 PayPal Rewards 兌換選項",
-      "summary_zh": "PayPal 決定在8月1日後停用用戶將獎勵兌換為現金回饋的選項。",
-      "title_es": "[Removed 8/1] PayPal To Remove ‘Redeem For Cashback’ PayPal Rewards Redemption Option",
-      "summary_es": ""
-    },
-    {
-      "title": "[Payments Sent] Beyond Meat Class Action Settlement ($7.5 Million Settlement, $2 Per Claim)",
-      "url": "https://www.doctorofcredit.com/beyond-meat-class-action-settlement-7-5-million-settlement-2-per-claim/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "beyond meat",
-        "class action lawsuits"
-      ],
-      "ts": "2026-07-31T20:40:32.000Z",
-      "title_en": "[Payments Sent] Beyond Meat Class Action Settlement ($7.5 Million Settlement, $2 Per Claim)",
-      "summary_en": "",
-      "title_zh": "【款項已發放】Beyond Meat 集體訴訟和解（750萬美元和解金，每筆索賠2美元）",
-      "summary_zh": "Beyond Meat 的集體訴訟已達成和解，和解金額為750萬美元，每位符合條件的索賠人可獲得2美元賠償。",
-      "title_es": "[Payments Sent] Beyond Meat Class Action Settlement ($7.5 Million Settlement, $2 Per Claim)",
-      "summary_es": ""
-    },
-    {
-      "title": "[Expired] Instacart: $10 Off $20 Anywhere (Code: 5STAR)",
-      "url": "https://www.doctorofcredit.com/instacart-10-off-20-anywhere-code-5star/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "instacart"
-      ],
-      "ts": "2026-07-31T17:03:20.000Z",
-      "title_en": "[Expired] Instacart: $10 Off $20 Anywhere (Code: 5STAR)",
-      "summary_en": "",
-      "title_zh": "【已過期】Instacart：全站消費滿20美元減10美元（代碼：5STAR）",
-      "summary_zh": "Instacart 的優惠碼 5STAR 已過期，原本可享滿20美元減10美元的折扣。",
-      "title_es": "[Expired] Instacart: $10 Off $20 Anywhere (Code: 5STAR)",
-      "summary_es": ""
-    },
-    {
-      "title": "Best Amazon Subscribe & Save Deals",
-      "url": "https://www.doctorofcredit.com/best-amazon-subscribe-save-deals/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "amazon"
-      ],
-      "ts": "2026-07-31T16:58:44.000Z",
-      "title_en": "Best Amazon Subscribe & Save Deals",
-      "summary_en": "",
-      "title_zh": "最佳 Amazon 訂閱與節省優惠",
-      "summary_zh": "本文精選了亞馬遜「訂閱並節省」計畫中最優惠的折扣商品。",
-      "title_es": "Best Amazon Subscribe & Save Deals",
-      "summary_es": ""
-    },
-    {
-      "title": "Capital One Offers: Spend $20+, Get 1,000 Points/$10 At Many Retailers (Home Depot, Lowe’s, eBay & More)",
-      "url": "https://www.doctorofcredit.com/capital-one-offers-spend-20-get-1000-points-10-at-many-retailers-home-depot-more/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "capital one",
-        "capital one offers",
-        "chewy",
-        "dollar general",
-        "home depot",
-        "sam's club"
-      ],
-      "ts": "2026-07-31T16:00:20.000Z",
-      "title_en": "Capital One Offers: Spend $20+, Get 1,000 Points/$10 At Many Retailers (Home Depot, Lowe’s, eBay & More)",
-      "summary_en": "",
-      "title_zh": "Capital One 優惠：消費滿20美元即獲1,000點數/10美元，涵蓋多家零售商（Home Depot、Lowe’s、eBay 等）",
-      "summary_zh": "Capital One 持卡人在多家零售商消費滿20美元可獲得1,000點數或等值10美元的回饋。",
-      "title_es": "Capital One Offers: Spend $20+, Get 1,000 Points/$10 At Many Retailers (Home Depot, Lowe’s, eBay & More)",
-      "summary_es": ""
-    },
-    {
-      "title": "[Reports] Capital One Venture Adding $100 Travel Credit Benefit",
-      "url": "https://www.doctorofcredit.com/reports-capital-one-venture-adding-100-travel-credit-benefit/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "capital one",
-        "capital one venture"
-      ],
-      "ts": "2026-07-31T15:39:44.000Z",
-      "title_en": "[Reports] Capital One Venture Adding $100 Travel Credit Benefit",
-      "summary_en": "",
-      "title_zh": "【傳聞】Capital One Venture 將新增100美元旅遊信用額度福利",
-      "summary_zh": "據報導，Capital One Venture 信用卡計劃加入100美元的旅遊信用額度作為新福利。",
-      "title_es": "[Reports] Capital One Venture Adding $100 Travel Credit Benefit",
-      "summary_es": ""
+      "title_zh": "Chase Sapphire Lounges Removing Priority Pass Access & Increasing Layover Time Allowed",
+      "summary_zh": "",
+      "title_es": "Chase Sapphire Lounges elimina el acceso a Priority Pass y amplía el tiempo de escala permitido",
+      "summary_es": "Los lounges de Chase Sapphire dejarán de aceptar Priority Pass y aumentarán la duración de las escalas permitidas."
     }
   ],
-  "fetched": "2026-08-02T14:11:13.138Z"
+  "fetched": "2026-08-02T20:09:22.827Z"
 }
