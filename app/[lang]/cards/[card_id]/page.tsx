@@ -10,6 +10,7 @@ import type { Metadata } from "next";
 import { locales, t } from "@/lib/i18n";
 import { translateCategory } from "@/lib/category-translations";
 import { isIndexableCard } from "@/lib/indexable-cards";
+import { getCardEditorial } from "@/lib/card-editorial";
 
 const CREDIT_LABELS: Record<string, string> = {
   "Excellent": "Excellent",
@@ -116,6 +117,7 @@ export default async function CardDetailPage({ params }: Props) {
 
   const l = (key: string, p?: Record<string, string | number>) => t(key, locale, p);
   const freshness = freshnessFromIso(card.last_updated, lang);
+  const editorial = lang === "en" ? getCardEditorial(card.card_id) : undefined;
   const recurringCredits = (card.recurring_credits || []).filter(c => c.amount !== undefined);
   const hasTravelBenefits = !!(
     (card.travel_benefits?.hotel_status?.length ?? 0) > 0 ||
@@ -246,6 +248,46 @@ export default async function CardDetailPage({ params }: Props) {
       </div>
 
       <div className="space-y-6">
+          {editorial && (
+            <section className="bg-white rounded-xl border border-blue-200 p-6">
+              <div className="text-xs font-semibold uppercase tracking-wide text-blue-600 mb-2">OpenCard editorial analysis</div>
+              <h2 className="text-lg font-bold text-slate-900 mb-3">Our take</h2>
+              <p className="text-sm text-slate-600 leading-relaxed">{editorial.take}</p>
+
+              <div className="grid gap-4 sm:grid-cols-2 mt-5">
+                <div className="rounded-lg bg-emerald-50 border border-emerald-100 p-4">
+                  <h3 className="text-sm font-semibold text-emerald-900 mb-2">Best for</h3>
+                  <ul className="space-y-1.5 text-xs text-emerald-900">
+                    {editorial.bestFor.map((item) => <li key={item}>✓ {item}</li>)}
+                  </ul>
+                </div>
+                <div className="rounded-lg bg-amber-50 border border-amber-100 p-4">
+                  <h3 className="text-sm font-semibold text-amber-900 mb-2">Not ideal for</h3>
+                  <ul className="space-y-1.5 text-xs text-amber-900">
+                    {editorial.notFor.map((item) => <li key={item}>— {item}</li>)}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-5">
+                <h3 className="text-sm font-semibold text-slate-900 mb-1">Conservative break-even test</h3>
+                <p className="text-xs text-slate-600 leading-relaxed">{editorial.breakEven}</p>
+              </div>
+
+              <div className="mt-5">
+                <h3 className="text-sm font-semibold text-slate-900 mb-2">Compare alternatives</h3>
+                <div className="grid gap-2 sm:grid-cols-2">
+                  {editorial.alternatives.map((alternative) => (
+                    <a key={alternative.cardId} href={`/en/cards/${alternative.cardId}`} className="rounded-lg border border-slate-200 p-3 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                      <div className="text-sm font-semibold text-blue-700">{alternative.label} →</div>
+                      <div className="text-xs text-slate-500 mt-1">{alternative.reason}</div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
           {/* Earning Rates */}
           <section className="bg-white rounded-xl border border-slate-200 p-6">
             <h2 className="text-lg font-bold text-slate-900 mb-4">{l("detail.earningRates")}</h2>
