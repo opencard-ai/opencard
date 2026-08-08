@@ -60,6 +60,42 @@ export function getGuidesForLocale(lang: string): GuideSummary[] {
 
 export const GUIDES: GuideSummary[] = [
   {
+    slug: "cash-back-vs-travel-points",
+    title: "Cash Back vs. Travel Points: a decision framework for choosing the right rewards",
+    summary: "A practical comparison of cash back and travel points using redemption habits, flexibility, annual fees, award availability, and the real cost of complexity.",
+    published: "2026-08-08",
+    updated: "2026-08-08",
+    word_count: 1225,
+    tags: ["beginner", "cash back", "travel points", "strategy"],
+  },
+  {
+    slug: "first-credit-card-guide",
+    title: "How to Choose Your First Credit Card: a safe, practical starting framework",
+    summary: "A step-by-step guide to choosing a first US credit card based on approval odds, fees, credit building, autopay, rewards, and a sustainable upgrade path.",
+    published: "2026-08-08",
+    updated: "2026-08-08",
+    word_count: 1270,
+    tags: ["beginner", "first card", "credit building", "approval"],
+  },
+  {
+    slug: "credit-card-travel-protections-guide",
+    title: "Credit Card Travel Protections: what they cover and when they actually help",
+    summary: "A plain-language guide to trip cancellation, trip delay, baggage, rental-car, evacuation, and purchase protections—including activation rules and claim preparation.",
+    published: "2026-08-08",
+    updated: "2026-08-08",
+    word_count: 1190,
+    tags: ["travel", "insurance", "protections", "claims"],
+  },
+  {
+    slug: "premium-travel-card-comparison-framework",
+    title: "How to Compare Premium Travel Cards Without Overvaluing the Perks",
+    summary: "A conservative framework for comparing premium-card fees, credits, lounge access, earning rates, protections, transfer partners, and exit options.",
+    published: "2026-08-08",
+    updated: "2026-08-08",
+    word_count: 1200,
+    tags: ["premium cards", "comparison", "annual fee", "travel"],
+  },
+  {
     slug: "credit-card-benefit-expiration-guide",
     title:
       "Credit Card Benefit Expiration Guide: how to stop losing perks you already paid for",
