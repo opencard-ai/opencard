@@ -112,6 +112,106 @@ const CARD_EDITORIAL: Record<string, CardEditorial> = {
       { cardId: "chase-sapphire-preferred", label: "Chase Sapphire Preferred", reason: "Adds transferable-point and travel features for a fee." },
     ],
   },
+  "amazon-prime-visa": {
+    take: "A strong store-and-ecosystem card for households that already pay for Prime and spend heavily at Amazon, Amazon Fresh, or Whole Foods. The card itself has no annual fee, but the elevated Amazon earning depends on an eligible Prime membership, so the membership cost should not be ignored if shopping rewards are the main reason for keeping Prime.",
+    bestFor: ["Existing Prime households with substantial Amazon spending", "Whole Foods and Amazon Fresh shoppers", "People wanting no foreign transaction fee on a no-card-fee product"],
+    notFor: ["People who would cancel Prime without the card", "Shoppers seeking a high flat return outside Amazon", "Anyone trying to build transferable travel points"],
+    breakEven: "Treat the Prime membership cost as part of the equation only when you would not otherwise subscribe. Compare the extra Amazon return over your best general card with that membership cost and with any prices or convenience benefits that independently justify Prime.",
+    alternatives: [
+      { cardId: "wells-fargo-active-cash", label: "Wells Fargo Active Cash", reason: "Flat cash rewards without tying value to one retailer." },
+      { cardId: "chase-freedom-unlimited", label: "Chase Freedom Unlimited", reason: "Broader everyday categories and potential Chase pairing value." },
+    ],
+  },
+  "capital-one-savorone": {
+    take: "A useful no-fee cash-rewards card for dining, entertainment, and eligible grocery spending. It is easiest to justify when those categories make up a meaningful share of the budget and the card is paired with a stronger flat-rate option for everything else. Merchant coding still matters, so not every food or entertainment purchase will necessarily qualify as expected.",
+    bestFor: ["Dining and entertainment spenders", "People seeking useful categories without an annual fee", "Travelers who value no foreign transaction fee"],
+    notFor: ["People whose grocery shopping is mainly at excluded superstores or clubs", "Anyone wanting one high flat rate on all purchases", "Travel hackers seeking premium protections and lounge access"],
+    breakEven: "There is no annual fee to recover. Estimate the extra rewards from eligible bonus categories over a flat-rate card, then subtract the inconvenience of managing a second card. Confirm how your regular merchants code before projecting the full category rate.",
+    alternatives: [
+      { cardId: "wells-fargo-active-cash", label: "Wells Fargo Active Cash", reason: "Simpler flat return for uncategorized spending." },
+      { cardId: "amex-gold", label: "American Express Gold", reason: "Higher-fee option for heavier dining and supermarket spend." },
+    ],
+  },
+  "capital-one-quicksilver": {
+    take: "A simple no-fee card with predictable rewards and no category activation. Its main advantage is operational ease rather than market-leading earning. It can work as a starter or backup card, particularly for someone who values no foreign transaction fee, but a stronger flat-rate card may earn more on the same domestic spending.",
+    bestFor: ["People prioritizing simplicity", "Newer cardholders seeking a low-maintenance rewards card", "Travelers wanting a no-fee card without foreign transaction fees"],
+    notFor: ["People optimizing every percentage point of cash back", "Heavy category spenders", "Travelers seeking transfer partners or premium benefits"],
+    breakEven: "With no annual fee, compare its flat return directly with other no-fee cards. Include foreign transaction savings if relevant, but do not let a welcome offer obscure a weaker long-term earning rate for your spending pattern.",
+    alternatives: [
+      { cardId: "wells-fargo-active-cash", label: "Wells Fargo Active Cash", reason: "Higher flat cash return for many domestic purchases." },
+      { cardId: "capital-one-savorone", label: "Capital One SavorOne", reason: "Better fit when dining and entertainment dominate spending." },
+    ],
+  },
+  "capital-one-venture-one": {
+    take: "A no-fee entry into Capital One miles for someone who wants transfer flexibility without committing to an annual fee. The trade-off is a modest base earning rate, so it is generally better as a way to preserve access to the program or learn transfers than as the highest-earning everyday card.",
+    bestFor: ["Beginners testing transferable miles", "People who want to avoid an annual fee", "Existing Capital One customers preserving miles and flexibility"],
+    notFor: ["High spenders who could justify a stronger earning card", "People who prefer transparent cash back", "Frequent travelers seeking premium credits or lounge access"],
+    breakEven: "The fee hurdle is zero, but opportunity cost remains. Compare its miles with the cash earned by a strong flat-rate card. A higher cents-per-mile assumption is justified only when you have a realistic, repeatable transfer redemption.",
+    alternatives: [
+      { cardId: "capital-one-venture", label: "Capital One Venture", reason: "Higher earning for spenders who can recover the annual fee." },
+      { cardId: "capital-one-quicksilver", label: "Capital One Quicksilver", reason: "Simpler cash rewards with no transfer strategy required." },
+    ],
+  },
+  "chase-freedom-flex": {
+    take: "A high-upside no-fee card for someone willing to activate and track rotating quarterly categories. It can be especially useful inside a Chase points setup, but the 5% headline applies only within eligible categories and caps. The low base rate means it should not be used indiscriminately for every purchase.",
+    bestFor: ["People who reliably activate quarterly categories", "Existing Chase points users", "Dining and drugstore spenders who want no annual fee"],
+    notFor: ["Anyone who dislikes rotating calendars and caps", "International spenders because of the foreign transaction fee", "People seeking one simple everyday card"],
+    breakEven: "Estimate how much of each quarter's cap you can fill with purchases you already planned. Compare only the incremental category rewards with a flat-rate card, and assign no value to categories you are unlikely to use.",
+    alternatives: [
+      { cardId: "chase-freedom-unlimited", label: "Chase Freedom Unlimited", reason: "Simpler base earning with no rotating activation." },
+      { cardId: "discover-it", label: "Discover it Cash Back", reason: "Another rotating-category approach with a different ecosystem." },
+    ],
+  },
+  "citi-custom-cash": {
+    take: "A targeted no-fee category card that automatically rewards the highest eligible category each billing cycle, subject to its cap. It works best when assigned one consistent job—such as groceries, gas, or dining—rather than used as a general spending card. Purchases beyond the cap and outside eligible categories earn much less.",
+    bestFor: ["People with one predictable monthly spending category", "Cardholders who want automatic category selection", "Citi users building a complementary card setup"],
+    notFor: ["People whose target-category spending greatly exceeds the cap", "International users because of the foreign transaction fee", "Anyone seeking strong rewards on all purchases"],
+    breakEven: "Project eligible spending only up to the monthly cap and compare the category premium with a flat-rate card. Keep unrelated purchases elsewhere so they do not dilute the card's role or create the illusion of a higher overall return.",
+    alternatives: [
+      { cardId: "citi-double-cash", label: "Citi Double Cash", reason: "Better for uncategorized purchases and simple flat earning." },
+      { cardId: "us-bank-cash-plus", label: "U.S. Bank Cash+", reason: "More category choice for people willing to activate quarterly." },
+    ],
+  },
+  "citi-double-cash": {
+    take: "A straightforward no-fee card for everyday purchases that do not earn a higher category bonus elsewhere. Its earn-when-buying and earn-when-paying structure reinforces the need to pay balances, but it should never be interpreted as a reason to carry debt. The foreign transaction fee limits its usefulness abroad.",
+    bestFor: ["People wanting a strong flat domestic return", "Citi ThankYou users seeking a base-earning card", "Cardholders building a simple two-card setup"],
+    notFor: ["International travelers", "People seeking elevated category rewards", "Anyone who may carry a balance and pay interest"],
+    breakEven: "There is no annual fee, so compare its flat rewards with category cards and account for foreign transaction costs. Any credit-card interest overwhelms the rewards quickly; the model only works when the statement is paid in full.",
+    alternatives: [
+      { cardId: "wells-fargo-active-cash", label: "Wells Fargo Active Cash", reason: "Another no-fee flat cash option with different issuer terms." },
+      { cardId: "citi-custom-cash", label: "Citi Custom Cash", reason: "Higher return on one capped eligible category." },
+    ],
+  },
+  "discover-it": {
+    take: "A no-fee rotating-category card with meaningful upside for cardholders who activate each quarter and can use the published categories naturally. It is less effective as an only card because non-category purchases earn a low base return. Acceptance outside the US and category predictability should also be considered before relying on it for travel.",
+    bestFor: ["People who enjoy quarterly category optimization", "Budgeters able to track activation and caps", "Someone pairing it with a flat-rate card"],
+    notFor: ["People who forget activation", "Anyone wanting stable categories year-round", "Travelers who require the broadest international acceptance"],
+    breakEven: "Calculate expected category spending quarter by quarter, capped at the eligible amount, and compare the incremental return with a flat-rate card. Do not assume every quarter will match your budget equally well.",
+    alternatives: [
+      { cardId: "chase-freedom-flex", label: "Chase Freedom Flex", reason: "Rotating categories plus fixed dining and drugstore bonuses." },
+      { cardId: "wells-fargo-active-cash", label: "Wells Fargo Active Cash", reason: "No activation or category-calendar maintenance." },
+    ],
+  },
+  "wells-fargo-autograph": {
+    take: "A broad no-fee travel-and-everyday category card with useful earning across travel, dining, gas, transit, and streaming. It is attractive for someone who wants several stable categories without paying an annual fee. The base rate on purchases outside those categories remains modest, so a flat-rate companion card can improve the setup.",
+    bestFor: ["Travel and commuting spenders avoiding annual fees", "People who prefer stable categories over rotating ones", "International travelers benefiting from no foreign transaction fee"],
+    notFor: ["People seeking premium lounge benefits", "Heavy uncategorized spenders using only one card", "Anyone whose merchants do not code into the advertised categories"],
+    breakEven: "With no fee, compare category earnings against a flat-rate card using your actual merchant mix. The value comes from repeated category use, not from forcing travel or streaming purchases to fit the card.",
+    alternatives: [
+      { cardId: "capital-one-savorone", label: "Capital One SavorOne", reason: "Stronger focus on dining and entertainment." },
+      { cardId: "chase-sapphire-preferred", label: "Chase Sapphire Preferred", reason: "Adds a broader transferable-points and protections package for a fee." },
+    ],
+  },
+  "us-bank-cash-plus": {
+    take: "A flexible no-fee cash-back card that can be unusually valuable for categories such as utilities or cell-phone bills, but it requires quarterly selection and has a combined spending cap. The best strategy is to assign it two predictable categories and avoid using it as an unplanned catch-all card.",
+    bestFor: ["People with predictable bills in selectable categories", "Cardholders willing to activate categories quarterly", "Households building a multi-card cash-back setup"],
+    notFor: ["People who dislike activation and category lists", "High spenders who exceed the quarterly cap", "Anyone wanting transferable travel points"],
+    breakEven: "Estimate eligible spending in the two chosen categories only up to the quarterly cap. Compare the incremental cash back with a flat-rate card, and assign zero extra value if you are unlikely to remember activation.",
+    alternatives: [
+      { cardId: "citi-custom-cash", label: "Citi Custom Cash", reason: "Automatically targets one eligible top category each cycle." },
+      { cardId: "wells-fargo-active-cash", label: "Wells Fargo Active Cash", reason: "Simpler flat earning with no activation." },
+    ],
+  },
 };
 
 export function getCardEditorial(cardId: string): CardEditorial | undefined {
