@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { Check, AlertTriangle, Gift } from "lucide-react";
 import { getCardById, getAllCards } from "@/lib/cards";
 import ChatWidget from "../../../components/ChatWidget";
-import TravelProducts from "../../../components/TravelProducts";
 import BackToCards from "../../../components/BackToCards";
 import AddToMyCardsButton from "../../../components/AddToMyCardsButton";
 import ReportErrorModal from "../../../components/ReportErrorModal";
@@ -10,6 +9,7 @@ import CardArt from "../../../components/CardArt";
 import type { Metadata } from "next";
 import { locales, t } from "@/lib/i18n";
 import { translateCategory } from "@/lib/category-translations";
+import { isIndexableCard } from "@/lib/indexable-cards";
 
 const CREDIT_LABELS: Record<string, string> = {
   "Excellent": "Excellent",
@@ -102,6 +102,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${card.name} — OpenCard`,
     description: `${card.name}: ${t("card.annualFee", lang as any)} $${card.annual_fee} | ${t("card.welcomeBonus", lang as any)}`,
+    robots: isIndexableCard(card.card_id)
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
   };
 }
 
@@ -569,10 +572,6 @@ export default async function CardDetailPage({ params }: Props) {
           )}
       </div>
 
-      {/* Travel Products - full width at bottom */}
-      <div className="mt-8">
-        <TravelProducts lang={lang} />
-      </div>
     </div>
   );
 }

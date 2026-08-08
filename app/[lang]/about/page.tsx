@@ -1,5 +1,6 @@
 import { t, locales } from "@/lib/i18n";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 export const dynamic = "force-static";
 export const revalidate = 3600;
@@ -10,6 +11,15 @@ type Props = {
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  const title = lang === "zh" ? "關於 OpenCard AI 與編輯團隊" : lang === "zh-cn" ? "关于 OpenCard AI 与编辑团队" : lang === "es" ? "Sobre OpenCard AI y su equipo editorial" : "About OpenCard AI and Our Editorial Team";
+  return {
+    title,
+    description: "Learn who maintains OpenCard, why the site exists, and how its credit card guides and data are reviewed.",
+  };
 }
 
 export default async function AboutPage({ params }: Props) {
@@ -109,6 +119,9 @@ export default async function AboutPage({ params }: Props) {
           <div className="rounded-xl border border-amber-200 bg-amber-50 p-6">
             <h3 className="font-bold text-slate-800 mb-2">{c.methodologyTitle}</h3>
             <p className="text-sm text-slate-600 leading-relaxed">{c.methodology}</p>
+            <Link href={`/${lang}/methodology`} className="mt-3 inline-block text-sm font-semibold text-blue-600 hover:text-blue-700">
+              {lang === "zh" ? "閱讀完整方法論" : lang === "zh-cn" ? "阅读完整方法论" : lang === "es" ? "Leer la metodología completa" : "Read the full methodology"} →
+            </Link>
           </div>
         </section>
 

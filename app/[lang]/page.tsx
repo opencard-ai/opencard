@@ -4,7 +4,6 @@ import { Bookmark, Star } from "lucide-react";
 import HeroButtons from "@/app/components/HeroButtons";
 import { getAllCards, getAllIssuers, getAllTags } from "@/lib/cards";
 import CardGrid from "@/app/components/CardGrid";
-import TravelProducts from "@/app/components/TravelProducts";
 import NewsFeed from "@/app/components/NewsFeed";
 import { t, locales } from "@/lib/i18n";
 import { getLocalizedGuides } from "@/lib/guides";
@@ -175,10 +174,6 @@ export default async function HomePage({ params }: Props) {
         </p>
       </section>
 
-      {/* Travel Products - bottom of page */}
-      <div className="mt-10">
-        <TravelProducts lang={lang} />
-      </div>
     </div>
   );
 }

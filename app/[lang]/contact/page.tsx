@@ -1,4 +1,5 @@
 import { locales } from "@/lib/i18n";
+import type { Metadata } from "next";
 
 export const dynamic = "force-static";
 
@@ -8,6 +9,14 @@ type Props = {
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    title: lang === "zh" ? "聯絡 OpenCard 與回報資料修正" : lang === "zh-cn" ? "联系 OpenCard 与反馈资料修正" : lang === "es" ? "Contactar a OpenCard y enviar correcciones" : "Contact OpenCard and Report Corrections",
+    description: "Contact OpenCard for support, card-data corrections, privacy requests, or partnership questions.",
+  };
 }
 
 export default async function ContactPage({ params }: Props) {

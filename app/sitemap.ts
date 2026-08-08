@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { getAllCards } from "@/lib/cards";
 import { getGuidesForLocale } from "@/lib/guides";
+import { isIndexableCard } from "@/lib/indexable-cards";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const cards = getAllCards();
@@ -20,11 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages: MetadataRoute.Sitemap = [
     ...tier("", 1, "daily"),
-    ...tier("/cards", 0.8, "weekly"),
     ...tier("/elevated-offers", 0.8, "weekly"),
     ...tier("/find", 0.7, "weekly"),
     ...tier("/guides", 0.75, "weekly"),
     ...tier("/about", 0.5, "monthly"),
+    ...tier("/methodology", 0.5, "monthly"),
+    ...tier("/contact", 0.4, "monthly"),
     ...tier("/privacy", 0.3, "monthly"),
     ...tier("/terms", 0.3, "monthly"),
   ];
@@ -44,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const cardPages: MetadataRoute.Sitemap = [];
 
-  for (const card of cards) {
+  for (const card of cards.filter((card) => isIndexableCard(card.card_id))) {
     const lastMod = card.last_updated ? new Date(card.last_updated) : new Date();
     const priority = card.status === "active" ? 0.7 : card.status === "discontinued" ? 0.3 : 0.6;
 
