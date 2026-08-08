@@ -102,7 +102,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${card.name} — OpenCard`,
     description: `${card.name}: ${t("card.annualFee", lang as any)} $${card.annual_fee} | ${t("card.welcomeBonus", lang as any)}`,
-    robots: isIndexableCard(card.card_id)
+    robots: lang === "en" && isIndexableCard(card.card_id)
       ? { index: true, follow: true }
       : { index: false, follow: true },
   };

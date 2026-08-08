@@ -50,14 +50,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const lastMod = card.last_updated ? new Date(card.last_updated) : new Date();
     const priority = card.status === "active" ? 0.7 : card.status === "discontinued" ? 0.3 : 0.6;
 
-    for (const lang of ["en", "zh", "zh-cn", "es"]) {
-      cardPages.push({
-        url: `${baseUrl}/${lang}/cards/${card.card_id}`,
-        lastModified: lastMod,
-        changeFrequency: "weekly",
-        priority,
-      });
-    }
+    cardPages.push({
+      url: `${baseUrl}/en/cards/${card.card_id}`,
+      lastModified: lastMod,
+      changeFrequency: "weekly",
+      priority,
+    });
   }
 
   return [...staticPages, ...guidePages, ...cardPages];
