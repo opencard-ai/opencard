@@ -60,6 +60,42 @@ export function getGuidesForLocale(lang: string): GuideSummary[] {
 
 export const GUIDES: GuideSummary[] = [
   {
+    slug: "credit-utilization-guide",
+    title: "Credit Utilization Explained: statement balances, reporting dates, and practical targets",
+    summary: "A practical guide to how credit utilization is reported, why it changes scores, when early payments help, and why carrying interest-bearing debt never improves credit.",
+    published: "2026-08-08",
+    updated: "2026-08-08",
+    word_count: 995,
+    tags: ["credit score", "utilization", "beginner", "payments"],
+  },
+  {
+    slug: "downgrade-vs-cancel-credit-card",
+    title: "Downgrade vs. Cancel a Credit Card: a renewal decision checklist",
+    summary: "A step-by-step framework for evaluating annual fees, product changes, unused rewards, recurring charges, benefits, credit history, and the safest order of operations.",
+    published: "2026-08-08",
+    updated: "2026-08-08",
+    word_count: 1030,
+    tags: ["annual fee", "downgrade", "cancel", "renewal"],
+  },
+  {
+    slug: "foreign-transaction-fees-and-dcc",
+    title: "Foreign Transaction Fees and Dynamic Currency Conversion: how to avoid expensive checkout mistakes",
+    summary: "A traveler's guide to foreign transaction fees, merchant currency conversion, ATM choices, refunds, exchange-rate myths, and choosing the local currency at checkout.",
+    published: "2026-08-08",
+    updated: "2026-08-08",
+    word_count: 980,
+    tags: ["international travel", "fees", "currency", "DCC"],
+  },
+  {
+    slug: "authorized-user-guide",
+    title: "Authorized Users on Credit Cards: benefits, risks, credit reporting, and removal",
+    summary: "A practical guide to adding authorized users, controlling spending, credit-report effects, premium-card fees, benefit access, liability, and removing an account safely.",
+    published: "2026-08-08",
+    updated: "2026-08-08",
+    word_count: 960,
+    tags: ["authorized user", "credit report", "family", "account management"],
+  },
+  {
     slug: "cash-back-vs-travel-points",
     title: "Cash Back vs. Travel Points: a decision framework for choosing the right rewards",
     summary: "A practical comparison of cash back and travel points using redemption habits, flexibility, annual fees, award availability, and the real cost of complexity.",
