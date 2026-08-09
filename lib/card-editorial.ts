@@ -312,6 +312,106 @@ const CARD_EDITORIAL: Record<string, CardEditorial> = {
       { cardId: "chase-sapphire-reserve", label: "Chase Sapphire Reserve", reason: "Premium airline-neutral travel alternative." },
     ],
   },
+  "amex-blue-biz-cash": {
+    take: "A no-annual-fee business cash-back card for owners who want simple rewards and do not need transfer partners. Its value is strongest when ordinary operating purchases fall within the card's elevated earning range. Businesses with much higher annual spend should compare the post-cap return and consider whether a different card produces more value.",
+    bestFor: ["Small businesses seeking simple cash rewards", "Owners avoiding annual fees", "Businesses with moderate uncategorized expenses"],
+    notFor: ["Companies seeking transferable travel points", "Very high-spend operations that exceed earning caps", "Owners needing premium travel benefits"],
+    breakEven: "There is no annual fee, so compare total projected cash back before and after any cap with another business card. Include administrative simplicity as a benefit, but do not ignore a lower return on spending above the cap.",
+    alternatives: [
+      { cardId: "amex-blue-biz-plus", label: "Blue Business Plus", reason: "No-fee Membership Rewards instead of cash back." },
+      { cardId: "chase-ink-biz-unlimited", label: "Ink Business Unlimited", reason: "Simple Chase-ecosystem earning for uncategorized business spend." },
+    ],
+  },
+  "amex-blue-biz-plus": {
+    take: "A useful no-fee Membership Rewards card for small businesses that want transferable points on routine purchases. The elevated base earning is most valuable within its annual spending limit; above that level, the opportunity cost may rise. It is a strong foundation card, not a premium travel-benefits product.",
+    bestFor: ["Small businesses building Membership Rewards", "Owners with moderate uncategorized spend", "Businesses wanting to preserve Amex points without an annual fee"],
+    notFor: ["Companies far above the enhanced earning cap", "Cash-back-only owners", "Businesses needing lounge access or extensive travel protections"],
+    breakEven: "Compare point value with the cash earned by a no-fee business card, using a conservative redemption rate. Calculate spending above the enhanced-rate cap separately instead of applying the headline rate to the full year.",
+    alternatives: [
+      { cardId: "amex-blue-biz-cash", label: "Blue Business Cash", reason: "Simpler cash rewards with no transfer strategy." },
+      { cardId: "amex-biz-gold", label: "American Express Business Gold", reason: "Higher-fee option for substantial eligible category spend." },
+    ],
+  },
+  "amex-green": {
+    take: "A mid-tier Membership Rewards card for broad travel and transit spending without the large premium-card fee. It can fit travelers who value flexible categories more than luxury benefits, but the annual fee still requires meaningful recurring spend or naturally used credits. It should be compared with strong no-fee travel-category cards before applying.",
+    bestFor: ["Travelers with broad transit and travel purchases", "Membership Rewards users avoiding a premium fee", "People who value flexible travel categories over lounge bundles"],
+    notFor: ["People seeking a no-fee travel card", "Travelers focused mainly on lounge access", "Cash-back users unwilling to learn Membership Rewards"],
+    breakEven: "Estimate incremental rewards over a no-fee travel card and add only credits already present in your budget. If credits cause new subscriptions or purchases, discount them heavily or assign zero value.",
+    alternatives: [
+      { cardId: "wells-fargo-autograph", label: "Wells Fargo Autograph", reason: "Broad no-fee travel categories with simpler rewards." },
+      { cardId: "chase-sapphire-preferred", label: "Chase Sapphire Preferred", reason: "Different transferable ecosystem and travel-protection package." },
+    ],
+  },
+  "amex-hilton-honors": {
+    take: "A no-annual-fee way to earn Hilton points and keep a hotel-specific card without needing to recover a yearly card fee. It suits occasional Hilton guests, but ordinary spending may earn more flexible value elsewhere. The absence of a fee does not make Hilton points a good choice when there is no realistic stay planned.",
+    bestFor: ["Occasional Hilton guests", "People wanting to keep Hilton points active without a card fee", "Travelers testing the Hilton ecosystem"],
+    notFor: ["Frequent Hilton guests who can use stronger benefits", "Hotel free agents wanting flexible rewards", "People without a plausible Hilton redemption"],
+    breakEven: "There is no annual card fee, so compare Hilton-point value with cash back or transferable points on the same spending. Use actual Hilton stays and award prices rather than a generic valuation.",
+    alternatives: [
+      { cardId: "amex-hilton-surpass", label: "Hilton Honors Surpass", reason: "Mid-tier option for more regular Hilton guests." },
+      { cardId: "wells-fargo-active-cash", label: "Wells Fargo Active Cash", reason: "Flexible cash rewards without hotel loyalty." },
+    ],
+  },
+  "amex-marriott-bevy": {
+    take: "A mid-tier Marriott card that requires more scrutiny than its welcome offer suggests. Ongoing value depends on regular Marriott stays, spend-triggered benefits, and whether its credits fit existing dining or hotel behavior. Travelers should compare it with lower-fee Marriott cards and general travel cards before assuming the middle tier is the best compromise.",
+    bestFor: ["Regular Marriott guests who use its recurring benefits", "Cardholders pursuing Marriott-specific spending milestones", "Travelers already committed to Bonvoy redemptions"],
+    notFor: ["Occasional Marriott guests", "People seeking an automatic annual-night keeper benefit", "Hotel free agents"],
+    breakEven: "Value recurring credits and status from planned activity, then calculate how much additional spend is required for any certificate or milestone. Include the rewards given up by placing that spend on Bevy instead of another card.",
+    alternatives: [
+      { cardId: "chase-marriott-boundless", label: "Marriott Bonvoy Boundless", reason: "Lower-fee Marriott card with a different keeper proposition." },
+      { cardId: "amex-marriott-brilliant", label: "Marriott Bonvoy Brilliant", reason: "Premium option when frequent stays support a larger benefit set." },
+    ],
+  },
+  "boa-premium-rewards": {
+    take: "A general travel-and-dining rewards card that becomes more compelling for Bank of America relationship customers who qualify for an earning boost. Without that boost, it should be compared carefully with other mid-tier travel cards. Its simpler cash-like redemption path may appeal to people who do not want airline-transfer complexity.",
+    bestFor: ["Bank of America relationship customers", "Travelers preferring flexible cash-like rewards", "People wanting broad travel and dining categories"],
+    notFor: ["Travel hackers focused on transfer partners", "People without enough spend or relationship bonus to recover the fee", "Travelers seeking lounge access"],
+    breakEven: "Calculate rewards both with and without your verified relationship tier, then add only incidental credits you naturally use. Compare the result with a no-fee flat-rate card and include the annual fee.",
+    alternatives: [
+      { cardId: "boa-travel-rewards", label: "Bank of America Travel Rewards", reason: "No-fee option for simpler travel redemptions." },
+      { cardId: "chase-sapphire-preferred", label: "Chase Sapphire Preferred", reason: "Transferable points and a different travel-benefit structure." },
+    ],
+  },
+  "boa-premium-rewards-elite": {
+    take: "A premium Bank of America card aimed at high-value relationship customers who travel enough to use its credits and premium services. The relationship earning boost can be meaningful, but assets held at the bank should never be moved solely for card rewards without considering investment fees, cash yields, and portfolio fit.",
+    bestFor: ["High-tier Bank of America relationship customers", "Frequent travelers who naturally use the principal credits", "People preferring simple point redemptions over transfer partners"],
+    notFor: ["Customers without a meaningful relationship bonus", "Infrequent travelers", "Anyone moving investments solely to improve card rewards"],
+    breakEven: "Value credits from prior-year use, add the incremental relationship-based rewards, and subtract the fee. Separately compare any investment or banking opportunity cost required to maintain the qualifying relationship tier.",
+    alternatives: [
+      { cardId: "boa-premium-rewards", label: "Bank of America Premium Rewards", reason: "Lower-fee relationship card when premium benefits are unnecessary." },
+      { cardId: "capital-one-venture-x", label: "Capital One Venture X", reason: "Premium alternative with transferable miles and a different credit structure." },
+    ],
+  },
+  "boa-travel-rewards": {
+    take: "A no-fee travel-rewards card with a simple structure and potential relationship boost. It can suit Bank of America customers who want uncomplicated travel statement credits and no foreign transaction fee. It is less attractive for people seeking transfer partners or richer category bonuses.",
+    bestFor: ["Bank of America customers seeking no annual fee", "Travelers wanting straightforward statement-credit redemptions", "People needing no foreign transaction fee"],
+    notFor: ["Transfer-partner enthusiasts", "Heavy category spenders", "People without enough relationship value to make the earning rate competitive"],
+    breakEven: "There is no annual fee, so compare the effective earning rate at your actual relationship tier with competing no-fee cards. Include redemption restrictions and do not assume the highest relationship bonus unless you already qualify.",
+    alternatives: [
+      { cardId: "wells-fargo-autograph", label: "Wells Fargo Autograph", reason: "No-fee card with broader fixed travel categories." },
+      { cardId: "boa-premium-rewards", label: "Bank of America Premium Rewards", reason: "Fee-bearing upgrade for higher spend and useful credits." },
+    ],
+  },
+  "chase-ink-biz-cash": {
+    take: "A no-fee business card that can be highly effective when office, internet, phone, or other eligible categories match normal operating expenses. The category caps and definitions matter, and personal spending should not be mixed into the account merely to chase rewards. Paired with an eligible Chase premium card, rewards may gain additional flexibility.",
+    bestFor: ["Small businesses with strong eligible category spend", "Chase points users", "Owners wanting no annual fee"],
+    notFor: ["Businesses whose expenses fall outside bonus categories", "Very high spenders exceeding category caps", "Owners wanting one card for international travel"],
+    breakEven: "Project each eligible business category up to its cap and compare with a flat-rate business card. If pairing with a fee-bearing Chase card, justify that card's fee independently rather than assigning all combined value to Ink Cash.",
+    alternatives: [
+      { cardId: "chase-ink-biz-unlimited", label: "Ink Business Unlimited", reason: "Simpler base earning for uncategorized business spend." },
+      { cardId: "chase-ink-biz-preferred", label: "Ink Business Preferred", reason: "Transfer and travel features for businesses able to recover a fee." },
+    ],
+  },
+  "chase-ink-biz-preferred": {
+    take: "A mid-tier business travel card for owners with meaningful eligible category spend and a use for transferable Chase points. Its value comes from business categories, protections, and redemption flexibility rather than from being a universal high earner. The annual fee is manageable only when the business can use those features consistently.",
+    bestFor: ["Businesses with travel, shipping, advertising, or eligible service spend", "Owners using Chase transfer partners", "Companies wanting business-focused travel protections"],
+    notFor: ["Low-spend businesses", "Owners seeking simple cash back", "Companies with mostly uncategorized purchases"],
+    breakEven: "Compare category-point value with a no-fee business card, subtract the annual fee, and add protections only when they replace coverage or risk you would otherwise bear. Exclude the welcome offer from renewal math.",
+    alternatives: [
+      { cardId: "chase-ink-biz-cash", label: "Ink Business Cash", reason: "No-fee fit for eligible office and telecom categories." },
+      { cardId: "amex-biz-gold", label: "American Express Business Gold", reason: "Alternative for businesses whose largest categories align with Amex." },
+    ],
+  },
 };
 
 export function getCardEditorial(cardId: string): CardEditorial | undefined {
