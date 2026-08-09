@@ -296,3 +296,50 @@
 - 2026-08-09 10:02 PT — Completed guide batch 5 and reached 20/20: statement balance vs. current balance, purchase protection and extended warranty, retention offers, and airport lounge access. Measured prose length is 1,000–1,099 words; local verification and deployment pending.
 - 2026-08-09 10:05 PT — Shipped the final guide batch in commit `ea534da8`; Git production deployment `dpl_BNfVPBa8h4FWJ7fGQuEcooXmoAe7` reached Ready and owns the `opencardai.com` alias. All four guide URLs return HTTP 200 with correct H1s and appear in sitemap.
 - 2026-08-09 10:08 PT — Final production readiness audit passed: all 129 sitemap URLs return HTTP 200; sitemap contains exactly 50 English card URLs, 0 non-English card URLs, and 0 redirect-only `/cards` URLs. About, Contact, Methodology, and Guides return HTTP 200; curated English card metadata is `index, follow` with original editorial analysis, while localized control is `noindex, follow`; no Travel Essentials component or Amazon outbound affiliate links render on the homepage. Remediation status is complete and ready for AdSense review submission.
+
+---
+
+# Task Dashboard — 2026-08-09 Guide Localization Expansion
+
+- Owner: Kacey
+- Status: in_progress
+- Priority: P0 international content quality
+- Scope: Translate the 20 newly published English guides into Traditional Chinese, Simplified Chinese, and Spanish, with genuine localized prose and complete routing/index metadata.
+
+## Tasks
+
+1. Build repeatable translation workflow
+   - Status: completed
+   - Deliverable: translation generation plus structural/quality checks for headings, links, metadata, repetition, and source-language leakage.
+   - Acceptance: the workflow can process all 20 source guides across `zh`, `zh-cn`, and `es` without overwriting unrelated content.
+
+2. Publish Traditional Chinese translations
+   - Status: completed
+   - Deliverable: 20 complete `content/guides/zh/*.mdx` guides.
+   - Acceptance: every guide preserves meaning, links, disclaimers, and decision logic in natural Traditional Chinese.
+
+3. Publish Simplified Chinese translations
+   - Status: completed
+   - Deliverable: 20 complete `content/guides/zh-cn/*.mdx` guides.
+   - Acceptance: every guide uses natural Simplified Chinese rather than mechanical character conversion alone.
+
+4. Publish Spanish translations
+   - Status: completed
+   - Deliverable: 20 complete `content/guides/es/*.mdx` guides.
+   - Acceptance: every guide uses clear neutral Spanish and preserves financial/insurance distinctions.
+
+5. Register localized metadata and routes
+   - Status: completed
+   - Deliverable: localized titles, summaries, tags, hreflang, static params, and sitemap coverage.
+   - Acceptance: all 60 localized URLs build and appear only when a real translation exists.
+
+6. Production audit
+   - Status: pending
+   - Deliverable: build, deployment, URL/H1/hreflang/sitemap/content-quality checks.
+   - Acceptance: all 60 localized pages return HTTP 200 with correct language content and no structural regressions.
+
+## Progress Log
+
+- 2026-08-09 10:58 PT — KC approved full execution through completion: 20 guides × 3 locales = 60 localized long-form pages. Confirmed current routing already requires a real localized file plus registry metadata; existing older translations will not be used as a quality template because several contain repetitive filler.
+- 2026-08-09 11:42 PT — Completed all 60 localized guides. New content length ranges: Traditional Chinese 1,570–2,248 CJK characters, Simplified Chinese 1,702–2,233 CJK characters, and Spanish 1,157–1,493 words. Structural validation rejected and retried malformed, shortened, or metadata-free generations rather than writing them.
+- 2026-08-09 11:45 PT — Added reusable translation generation, generated localization metadata, and expanded locale QA to cover all 25 fully localized guide slugs. TypeScript, targeted lint, locale QA, repetition checks, wrong-locale-link checks, and production build passed; static output increased from 1,046 to 1,106 pages, exactly matching 60 new localized routes.

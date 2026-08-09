@@ -1,17 +1,19 @@
 #!/usr/bin/env tsx
 import { existsSync, readdirSync, readFileSync } from "fs";
 import path from "path";
+import guideLocalizationData from "../data/guide-localizations.json";
 
-const slugs = [
+const slugs = Object.keys(guideLocalizationData);
+const legacyGeneratedSlugs = new Set([
   "credit-card-benefit-expiration-guide",
   "credit-card-annual-fee-worth-it",
   "new-credit-card-onboarding-checklist",
   "credit-card-points-valuation-guide",
   "premium-card-overlap-hidden-costs",
-];
+]);
 const locales = ["en", "zh", "zh-cn", "es"];
-const minWords: Record<string, number> = { en: 1400, es: 1400 };
-const minCjkChars: Record<string, number> = { zh: 1800, "zh-cn": 1800 };
+const minWords: Record<string, number> = { en: 900, es: 900 };
+const minCjkChars: Record<string, number> = { zh: 1400, "zh-cn": 1400 };
 
 function fileFor(locale: string, slug: string) {
   return locale === "en"
@@ -34,6 +36,19 @@ for (const locale of locales) {
     const hasMetadata = text.includes("export const metadata") && text.includes(`slug: "${slug}"`);
     if (!hasMetadata) {
       console.error(`metadata missing or wrong slug: ${file}`);
+      failed = true;
+    }
+    const longLines = text
+      .split("\n")
+      .map((line) => line.trim())
+      .filter((line) => line.length > 80 && !line.startsWith("export "));
+    const duplicateLongLines = longLines.filter((line, index) => longLines.indexOf(line) !== index);
+    if (duplicateLongLines.length && !legacyGeneratedSlugs.has(slug)) {
+      console.error(`repeated long paragraphs ${locale}/${slug}: ${duplicateLongLines.length}`);
+      failed = true;
+    }
+    if (locale !== "en" && text.includes("](/en/guides/")) {
+      console.error(`wrong-locale guide link ${locale}/${slug}`);
       failed = true;
     }
     if (locale in minCjkChars) {

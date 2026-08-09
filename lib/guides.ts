@@ -34,13 +34,19 @@ export type GuideSummary = {
   localized?: Partial<Record<string, Pick<GuideSummary, "title" | "summary" | "tags">>>;
 };
 
+type LocalizedGuideFields = Pick<GuideSummary, "title" | "summary" | "tags">;
+const GENERATED_LOCALIZATIONS = guideLocalizationData as Record<
+  string,
+  Partial<Record<string, Partial<LocalizedGuideFields>>>
+>;
+
 export function getLocalizedGuide(guide: GuideSummary, lang: string): GuideSummary {
-  const localized = guide.localized?.[lang];
+  const localized = guide.localized?.[lang] || GENERATED_LOCALIZATIONS[guide.slug]?.[lang];
   if (!localized) return guide;
   return {
     ...guide,
-    title: localized.title,
-    summary: localized.summary,
+    title: localized.title || guide.title,
+    summary: localized.summary || guide.summary,
     tags: localized.tags || guide.tags,
   };
 }
@@ -50,7 +56,7 @@ export function getLocalizedGuides(lang: string): GuideSummary[] {
 }
 
 export function hasLocalizedGuide(guide: GuideSummary, lang: string): boolean {
-  return lang === "en" || Boolean(guide.localized?.[lang]);
+  return lang === "en" || Boolean(guide.localized?.[lang] || GENERATED_LOCALIZATIONS[guide.slug]?.[lang]);
 }
 
 export function getGuidesForLocale(lang: string): GuideSummary[] {
@@ -428,3 +434,4 @@ export const GUIDES: GuideSummary[] = [
 export function getGuide(slug: string): GuideSummary | undefined {
   return GUIDES.find((g) => g.slug === slug);
 }
+import guideLocalizationData from "@/data/guide-localizations.json";

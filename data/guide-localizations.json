@@ -1,0 +1,352 @@
+{
+  "airport-lounge-access-guide": {
+    "zh": {
+      "title": "信用卡機場貴賓室權益：網路、同行賓客與真實價值",
+      "summary": "實用解析貴賓室網路、註冊、當日登機證規則、同行賓客、容量限制、抵達使用、餐廳排除，以及如何保守估算每次使用價值。"
+    },
+    "zh-cn": {
+      "title": "信用卡机场贵宾室接入：网络、随行人员及真实价值",
+      "summary": "实用的贵宾室网络、入会、当日登机牌规则、随行人员、容量控制、到达接入、餐厅排除及保守估算访问价值的指南。"
+    },
+    "es": {
+      "title": "Acceso a Salas de Aeropuerto con Tarjetas de Crédito: Redes, Invitados y Valor Real",
+      "summary": "Una guía práctica sobre redes de salas, inscripción, reglas de embarque en el mismo día, invitados, controles de capacidad, acceso por llegada, exclusiones de restaurantes y valoración conservadora de las visitas."
+    }
+  },
+  "authorized-user-guide": {
+    "zh": {
+      "title": "信用卡附加使用者：權益、風險、信用報告及移除指南",
+      "summary": "本實用指南涵蓋新增附加使用者的方式、支出控制、信用報告影響、高端卡年費、權益使用、責任歸屬，以及安全移除帳戶的方法。"
+    },
+    "zh-cn": {
+      "title": "信用卡授权用户：权益、风险、信用报告及移除指南",
+      "summary": "添加授权用户、控制消费、信用报告影响、高端卡费用、权益获取、责任划分及安全移除账户的实用指南。"
+    },
+    "es": {
+      "title": "Usuarios autorizados en tarjetas de crédito: beneficios, riesgos, informe de crédito y eliminación",
+      "summary": "Una guía práctica para agregar usuarios autorizados, controlar el gasto, efectos en el informe de crédito, tarifas de tarjetas premium, acceso a beneficios, responsabilidad y eliminación segura de una cuenta."
+    }
+  },
+  "balance-transfer-credit-card-guide": {
+    "zh": {
+      "title": "餘額轉帳信用卡：損益平衡與還款規劃指南",
+      "summary": "如何比較轉帳手續費、優惠APR期間、信用額度、款項分配、發卡機構限制，以及按時還清所需的每月付款金額。"
+    },
+    "zh-cn": {
+      "title": "余额转移信用卡：盈亏平衡与还款规划指南",
+      "summary": "如何比较转账手续费、优惠APR期限、信用额度、还款分配、发卡机构限制以及按时完成还款所需的月还款额。"
+    },
+    "es": {
+      "title": "Tarjetas de crédito para transferencias de saldo: una guía de planificación del punto de equilibrio y el pago",
+      "summary": "Cómo comparar las tarifas de transferencia, los períodos de APR promocional, los límites de crédito, la asignación de pagos, las restricciones del emisor y el pago mensual necesario para finalizar a tiempo."
+    }
+  },
+  "cash-back-vs-travel-points": {
+    "zh": {
+      "title": "現金回饋與旅遊積分：選擇合適紅利方案的決策框架",
+      "summary": "以兌換習慣、彈性、年費、獎項供應及複雜度實際成本，對現金回饋與旅遊積分進行實務比較。"
+    },
+    "zh-cn": {
+      "title": "返现与旅行积分：选择合适奖励的决策框架",
+      "summary": "通过兑换习惯、灵活性、年费、奖励名额及复杂性的真实成本，对返现和旅行积分进行实际比较。"
+    },
+    "es": {
+      "title": "Efectivo frente a puntos de viaje: un marco de decisión para elegir la recompensa adecuada",
+      "summary": "Una comparación práctica de efectivo y puntos de viaje usando hábitos de canje, flexibilidad, cuotas anuales, disponibilidad de premios y el costo real de la complejidad."
+    }
+  },
+  "credit-card-annual-fee-worth-it": {
+    "zh": {
+      "title": "信用卡年費值得嗎",
+      "summary": "這份指南提供一套 損益平衡 框架 協助判斷 信用卡 年費 是否值得續繳。"
+    },
+    "zh-cn": {
+      "title": "信用卡年费值得吗",
+      "summary": "这份指南提供一套 盈亏平衡 框架 协助判断 信用卡 年费 是否值得续缴。"
+    },
+    "es": {
+      "title": "¿Vale la pena la cuota anual de tu tarjeta de crédito? Un marco práctico para el punto de equilibrio",
+      "summary": "Un marco práctico para decidir si vale la pena pagar la cuota anual de una tarjeta de crédito, utilizando el valor de uso real en lugar de matemáticas de beneficios inflados, con pasos de revisión de renovación y consideraciones sobre degradación/cancelación."
+    }
+  },
+  "credit-card-application-sequencing": {
+    "zh": {
+      "title": "信用卡申請排序：如何規劃下一張卡片而不浪費核准機會",
+      "summary": "以資格規定、信用查詢、最低消費、年費及長期帳務組合配置為核心的信用卡申請排序實務框架。"
+    },
+    "zh-cn": {
+      "title": "信用卡申请排序：如何规划下一张卡片而不浪费批核机会",
+      "summary": "一个实用的框架，用于围绕资格规则、信用查询、最低消费、年费以及长期组合适配来安排信用卡申请的顺序。"
+    },
+    "es": {
+      "title": "Secuenciación de Solicitudes de Tarjetas de Crédito: cómo planificar tus próximas tarjetas sin desperdiciar aprobaciones",
+      "summary": "Un marco práctico para secuenciar las solicitudes de tarjetas de crédito considerando las reglas de elegibilidad, consultas de crédito, gasto mínimo, anualidades y la adecuación a largo plazo del portafolio."
+    }
+  },
+  "credit-card-benefit-expiration-guide": {
+    "zh": {
+      "title": "信用卡福利到期指南",
+      "summary": "這份指南用實務角度說明 如何追蹤 信用卡 福利 到期日 避免 已經付費取得的權益 消失。"
+    },
+    "zh-cn": {
+      "title": "信用卡权益到期指南",
+      "summary": "这份指南用实务角度说明 如何追踪 信用卡 权益 到期日 避免 已经付费取得的福利 消失。"
+    },
+    "es": {
+      "title": "Guía sobre el vencimiento de beneficios de tarjetas de crédito: cómo dejar de perder ventajas por las que ya pagaste",
+      "summary": "Una guía práctica sobre créditos de año calendario, créditos de año de membresía, certificados de noches gratis, pases de sala VIP, vencimiento de puntos y los hábitos de seguimiento que evitan que los beneficios de las tarjetas de crédito desaparezcan silenciosamente."
+    }
+  },
+  "credit-card-benefit-tracking-system": {
+    "zh": {
+      "title": "信用卡權益追蹤系統：日曆、回饋、優惠券及續卡審查",
+      "summary": "一套實用的系統，用於追蹤每月回饋、年度權益、優惠券、登錄要求、年費及續卡決定，無需依賴記憶。"
+    },
+    "zh-cn": {
+      "title": "信用卡权益追踪系统：日历、返现、兑换券及续期审核",
+      "summary": "一套实用的追踪系统，帮助您记录每月返现、年度权益、兑换券、注册要求、年费及续期决策，无需依赖记忆力。"
+    },
+    "es": {
+      "title": "Un sistema de seguimiento de beneficios de tarjetas de crédito: calendarios, créditos, certificados y evaluaciones de renovación",
+      "summary": "Un sistema práctico para hacer seguimiento de créditos mensuales, beneficios anuales, certificados, requisitos de inscripción, tarifas anuales y decisiones de renovación sin depender de la memoria."
+    }
+  },
+  "credit-card-payment-priority-guide": {
+    "zh": {
+      "title": "信用卡付款優先順序：現金不足時該先繳哪張卡",
+      "summary": "一個實用的框架，幫助保護最低應繳金額、停止新生利息、在雪崩法與雪球法之間選擇清償方式，並避免因追求回饋而陷入卡債的錯誤。"
+    },
+    "zh-cn": {
+      "title": "信用卡还款优先级：现金紧张时优先还哪张卡",
+      "summary": "一份实用框架，涵盖保护最低还款额、阻止新利息产生、在雪崩法和雪球法之间选择还款策略，以及避免因追求积分奖励而陷入债务的错误。"
+    },
+    "es": {
+      "title": "Prioridad de Pago de Tarjeta de Crédito: qué pagar primero cuando el efectivo es escaso",
+      "summary": "Un marco práctico para proteger los pagos mínimos, detener nuevos intereses, elegir entre los métodos de pago avalanche y bola de nieve, y evitar errores de deuda motivados por recompensas."
+    }
+  },
+  "credit-card-points-valuation-guide": {
+    "zh": {
+      "title": "信用卡點數估值指南：您的獎勵實際價值多少",
+      "summary": "一份實用的指南，用於評估信用卡點數價值，比較現金兌換、旅遊入口網站、轉點夥伴、獎勵費用、貶值風險及個人兌換價值。"
+    },
+    "zh-cn": {
+      "title": "信用卡点数估值指南",
+      "summary": "这份指南说明 如何用实际兑换价值 评估 信用卡 点数 与奖励。"
+    },
+    "es": {
+      "title": "Guía de valoración de puntos de tarjetas de crédito: lo que realmente valen tus recompensas",
+      "summary": "Una guía práctica para valorar los puntos de las tarjetas de crédito, comparando canjes en efectivo, portales de viaje, socios de transferencia, tarifas de premios, riesgo de devaluación y valor de canje personal."
+    }
+  },
+  "credit-card-portfolio-guide": {
+    "zh": {
+      "title": "如何建立信用卡組合：角色、重疊與簡化錢包結構",
+      "summary": "實用指南，幫助你為每張信用卡分配角色、減少重疊、選擇預設卡、管理年費，並只在真正有缺口時才擴展錢包。"
+    },
+    "zh-cn": {
+      "title": "如何构建信用卡组合：角色分工、重叠问题与简易钱包结构",
+      "summary": "一份实用指南，介绍如何为每张信用卡分配角色、限制功能重叠、选择默认卡片、管理年费，以及仅在出现实际缺口时扩展钱包。"
+    },
+    "es": {
+      "title": "Cómo Construir un Portafolio de Tarjetas de Crédito: roles, superposiciones y una estructura simple de billetera",
+      "summary": "Una guía práctica para asignar a cada tarjeta de crédito un rol, limitar las superposiciones, elegir una tarjeta predeterminada, gestionar las cuotas anuales y ampliar la billetera solo cuando existe una brecha real."
+    }
+  },
+  "credit-card-purchase-protection-guide": {
+    "zh": {
+      "title": "信用卡購物保障與延長保固：理賠優先指南",
+      "summary": "說明購物保障、延長保固、退貨保障與價格保障的差異——以及如何保存收據、記錄損壞、檢視排除條款並提出更有力的理賠。"
+    },
+    "zh-cn": {
+      "title": "信用卡购物保护和延长保修：一份以理赔为中心的指南",
+      "summary": "解析购物保护、延长保修、退货保护和价格保护的差异——以及如何保留收据、记录损坏、查看免责条款并提交更有力的理赔申请。"
+    },
+    "es": {
+      "title": "Protección de Compra y Garantía Extendida de Tarjeta de Crédito: Una guía centrada en reclamaciones",
+      "summary": "Cómo se diferencian la protección de compra, la garantía extendida, la protección de devolución y la protección de precio—y cómo preservar recibos, documentar daños, verificar exclusiones y presentar una reclamación más sólida."
+    }
+  },
+  "credit-card-rental-car-insurance-guide": {
+    "zh": {
+      "title": "信用卡租車保險：主要與次要保障解析",
+      "summary": "一份關於碰撞險、信用卡主要與次要保障、不保項目、付款要求、理賠記錄以及責任可能無法涵蓋的情形的實用指南。"
+    },
+    "zh-cn": {
+      "title": "信用卡租车保险：主要险与附加险详解",
+      "summary": "实用指南，涵盖碰撞险豁免、信用卡主要险与附加险保障范围、不予赔付情况、付款要求、理赔记录以及责任仍无法覆盖的情形。"
+    },
+    "es": {
+      "title": "Seguro de alquiler de vehículos con tarjeta de crédito: explicación de cobertura primaria vs. secundaria",
+      "summary": "Una guía práctica sobre exenciones de daños por colisión, cobertura primaria y secundaria de tarjetas, exclusiones, requisitos de pago, registros de reclamaciones y cuándo la responsabilidad permanece sin cobertura."
+    }
+  },
+  "credit-card-retention-offer-guide": {
+    "zh": {
+      "title": "信用卡續約優惠：如何評估續約獎勵",
+      "summary": "一個實用的框架，用於檢視年費、申請續約優惠、記錄條款、評估消費要求，以及在保留、降級或取消之間做出選擇。"
+    },
+    "zh-cn": {
+      "title": "信用卡挽留优惠：如何评估续卡激励方案",
+      "summary": "一份实用框架，帮助你审查年费、申请挽留优惠、记录条款、评估消费要求，并在继续持有、降级或注销之间做出选择。"
+    },
+    "es": {
+      "title": "Ofertas de retención de tarjetas de crédito: cómo evaluar un incentivo de renovación",
+      "summary": "Un marco práctico para revisar una cuota anual, solicitar una oferta de retención, registrar los términos, valorar los requisitos de gasto y elegir entre mantener, reducir o cancelar."
+    }
+  },
+  "credit-card-travel-protections-guide": {
+    "zh": {
+      "title": "信用卡旅遊保障：保障範圍與實際理賠時機",
+      "summary": "以淺白語言說明旅程取消、旅程延誤、行李、租車、撤離及購物保障的指南——包括啟動規則與理賠準備。"
+    },
+    "zh-cn": {
+      "title": "信用卡旅行保障：承保范围及实际帮助时机",
+      "summary": "一份通俗易懂的指南，涵盖行程取消、行程延误、行李、租车、紧急救援及购物保障——包括激活规则和理赔准备。"
+    },
+    "es": {
+      "title": "Protecciones de Viaje de Tarjetas de Crédito: lo que cubren y cuándo realmente ayudan",
+      "summary": "Una guía en lenguaje sencillo sobre protecciones de cancelación de viaje, retraso de viaje, equipaje, auto de alquiler, evacuación y compras—incluyendo reglas de activación y preparación de reclamaciones."
+    }
+  },
+  "credit-utilization-guide": {
+    "zh": {
+      "title": "信用額度使用率解析：帳單餘額、報送日期與實務目標",
+      "summary": "實用指南：說明信用額度使用率如何被報送、為何會影響信用分數、何時提前繳款有幫助，以及為什麼維持計息負債永遠不會改善信用。"
+    },
+    "zh-cn": {
+      "title": "信用使用率详解：账单余额、报告日期与实用目标",
+      "summary": "实用指南，解析信用使用率如何报告、为何影响评分、早期还款何时有帮助，以及为何从不建议持有产生利息的债务来提升信用。"
+    },
+    "es": {
+      "title": "Utilización de Crédito Explicada: saldos de estado de cuenta, fechas de reporte y metas prácticas",
+      "summary": "Una guía práctica sobre cómo se reporta la utilización de crédito, por qué cambia las puntuaciones, cuándo ayudan los pagos anticipados y por qué nunca conviene cargar deuda con intereses para mejorar el crédito."
+    }
+  },
+  "downgrade-vs-cancel-credit-card": {
+    "zh": {
+      "title": "降級與取消信用卡：續卡決策檢查清單",
+      "summary": "評估年費、產品變更閒置紅利、重複扣款、優惠、信用紀錄與最安全作業順序的逐步架構。"
+    },
+    "zh-cn": {
+      "title": "信用卡降级还是注销：续期决策清单",
+      "summary": "逐步评估年费、产品变更、未使用积分、循环扣费、权益、信用记录以及最安全操作顺序的框架。"
+    },
+    "es": {
+      "title": "Reducción vs. Cancelación de una Tarjeta de Crédito: una lista de verificación para la decisión de renovación",
+      "summary": "Un marco paso a paso para evaluar tarifas anuales, cambios de producto, recompensas no utilizadas, cargos recurrentes, beneficios, historial crediticio y el orden de operaciones más seguro."
+    }
+  },
+  "first-credit-card-guide": {
+    "zh": {
+      "title": "如何選擇第一張信用卡：安全、務實的入門框架",
+      "summary": "本指南提供逐步流程，幫助您根據核卡機率、費用、信用建立、自動扣款、回饋以及可持續的升級路徑，選擇第一張美國信用卡。"
+    },
+    "zh-cn": {
+      "title": "如何选择第一张信用卡：安全实用的入门框架",
+      "summary": "一份基于审批概率、费用、信用建设、自动还款、奖励回馈以及可持续升级路径来选择首张美国信用卡的分步指南。"
+    },
+    "es": {
+      "title": "Cómo elegir tu primera tarjeta de crédito: un marco inicial seguro y práctico",
+      "summary": "Una guía paso a paso para elegir una primera tarjeta de crédito en EE. UU. basada en las probabilidades de aprobación, las comisiones, la construcción de crédito, el pago automático, las recompensas y una ruta de actualización sostenible."
+    }
+  },
+  "foreign-transaction-fees-and-dcc": {
+    "zh": {
+      "title": "海外交易手續費與動態貨幣轉換：如何避免昂貴的結帳錯誤",
+      "summary": "旅人的海外交易手續費、商家匯率轉換、ATM選擇、退款、匯率迷思以及結帳時選擇當地貨幣的完整指南。"
+    },
+    "zh-cn": {
+      "title": "外国交易费和动态货币转换：如何避免昂贵的结账错误",
+      "summary": "一份关于外国交易费、商户货币转换、ATM选择、退款、汇率神话以及在结账时选择当地货币的旅行者指南。"
+    },
+    "es": {
+      "title": "Tarifas por transacciones en el extranjero y conversión dinámica de divisas: cómo evitar costosos errores al pagar",
+      "summary": "Guía del viajero sobre tarifas por transacciones en el extranjero, conversión de moneda del comercio, opciones de cajeros automáticos, reembolsos, mitos sobre el tipo de cambio y cómo elegir la moneda local al pagar."
+    }
+  },
+  "new-credit-card-onboarding-checklist": {
+    "zh": {
+      "title": "新信用卡核卡後檢查清單",
+      "summary": "這份清單整理 核卡後 第一天 第一週 第一個月 與第一次續卡前 應完成的設定。"
+    },
+    "zh-cn": {
+      "title": "新信用卡核卡后检查清单",
+      "summary": "这份清单整理 核卡后 第一天 第一周 第一个月 与第一次续卡前 应完成的设置。"
+    },
+    "es": {
+      "title": "Lista de verificación para nuevas tarjetas de crédito: qué hacer después de la aprobación",
+      "summary": "Una lista de verificación práctica para el primer día, la primera semana, el primer mes y la primera renovación después de abrir una nueva tarjeta de crédito, incluyendo pagos automáticos, inscripción a beneficios, seguimiento de bonos de bienvenida y recordatorios en My Cards."
+    }
+  },
+  "premium-card-overlap-hidden-costs": {
+    "zh": {
+      "title": "高年費卡福利重疊與隱藏成本",
+      "summary": "這份指南協助審核 高年費信用卡 組合 找出 重複福利 未使用權益 與隱藏成本。"
+    },
+    "zh-cn": {
+      "title": "高年费卡权益重叠与隐藏成本",
+      "summary": "这份指南协助审核 高年费信用卡 组合 找出 重复权益 未使用福利 与隐藏成本。"
+    },
+    "es": {
+      "title": "Superposición de tarjetas premium y costos ocultos: cómo auditar una billetera de altas cuotas",
+      "summary": "Una guía práctica para identificar el acceso duplicado a salas VIP, créditos superpuestos, beneficios no utilizados, tarifas de usuario autorizado, costos de comportamiento y riesgos de renovación en las tarjetas de crédito premium."
+    }
+  },
+  "premium-travel-card-comparison-framework": {
+    "zh": {
+      "title": "如何比較頂級旅遊卡不被福利高估",
+      "summary": "保守的頂級卡費用、積分、貴賓室使用、賺回比率、保障、轉帳夥伴及退出選項比較框架。"
+    },
+    "zh-cn": {
+      "title": "如何比较高端旅行信用卡而不过度高估其权益",
+      "summary": "一个用于比较高端信用卡费用、返现、贵宾室使用权、积分获取比例、保障权益、积分转换伙伴及退出选项的保守框架。"
+    },
+    "es": {
+      "title": "Cómo Comparar Tarjetas de Viaje Premium Sin Sobrevalorar los Beneficios",
+      "summary": "Un marco conservador para comparar cuotas anuales de tarjetas premium, créditos, acceso a salas VIP, tasas de rendimiento, protecciones, socios de transferencia y opciones de salida."
+    }
+  },
+  "statement-balance-vs-current-balance": {
+    "zh": {
+      "title": "帳單餘額與目前餘額：何時繳費與繳多少",
+      "summary": "本指南實用說明帳單餘額、目前餘額、最低應繳金額、待處理交易、寬限期、自動扣款、退款，以及提前繳款的實際效益。"
+    },
+    "zh-cn": {
+      "title": "账单余额与当前余额：何时还款及还款金额",
+      "summary": "实用指南，涵盖账单余额、当前余额、最低还款额、待处理交易、免息期、自动还款、退款以及提前还款何时真正有用。"
+    },
+    "es": {
+      "title": "Saldo del Extracto vs. Saldo Actual: qué pagar y cuándo",
+      "summary": "Una guía práctica sobre saldos de extracto, saldos actuales, pagos mínimos, cargos pendientes, períodos de gracia, pago automático, reembolsos y cuándo un pago anticipado realmente es útil."
+    }
+  },
+  "transfer-credit-card-points-guide": {
+    "zh": {
+      "title": "信用卡點數何時該轉帳：獎勵機位、價值與不可逆的決定",
+      "summary": "在將彈性點數轉入忠誠計劃前，檢視獎勵機位、轉帳比率、計劃規則、效期、附加費與備援價值的實務框架。"
+    },
+    "zh-cn": {
+      "title": "何时转出信用卡积分：奖励舱位、价值与不可逆决策",
+      "summary": "在将灵活积分转入忠诚度计划前，检查奖励舱位、转分比例、项目规则、过期政策、附加费及备用价值的实用框架。"
+    },
+    "es": {
+      "title": "Cuándo Transferir Puntos de Tarjeta de Crédito: disponibilidad de premios, valor y decisiones irreversibles",
+      "summary": "Una guía práctica para verificar el espacio de premios, las ratios de transferencia, las reglas del programa, la caducidad, los cargos adicionales y el valor de respaldo antes de mover puntos flexibles a un programa de fidelidad."
+    }
+  },
+  "welcome-bonus-minimum-spend-planning": {
+    "zh": {
+      "title": "迎新獎金最低消費門檻規劃：安全的核對清單，確保達成條件",
+      "summary": "本指南提供實務方法，教您如何規劃實際消費、追蹤已入帳交易、處理退款、避免現金等值交易，並判斷迎新優惠是否超出負荷。"
+    },
+    "zh-cn": {
+      "title": "欢迎奖励最低消费规划：满足要求的 安全清单",
+      "summary": "一份实用指南，涵盖有机消费预算编制、已记账交易追踪、退款处理、规避类现金消费，以及判断欢迎优惠是否超出承受能力的技巧。"
+    },
+    "es": {
+      "title": "Planificación del gasto mínimo para el bono de bienvenida: una lista de verificación segura para cumplir el requisito",
+      "summary": "Una guía práctica para presupuestar gastos orgánicos, rastrear transacciones publicadas, manejar reembolsos, evitar compras similares a efectivo y decidir cuándo una oferta de bienvenida es demasiado exigente."
+    }
+  }
+}
