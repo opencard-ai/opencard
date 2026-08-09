@@ -60,6 +60,42 @@ export function getGuidesForLocale(lang: string): GuideSummary[] {
 
 export const GUIDES: GuideSummary[] = [
   {
+    slug: "credit-card-payment-priority-guide",
+    title: "Credit Card Payment Priority: what to pay first when cash is tight",
+    summary: "A practical framework for protecting minimum payments, stopping new interest, choosing between avalanche and snowball payoff methods, and avoiding reward-driven debt mistakes.",
+    published: "2026-08-09",
+    updated: "2026-08-09",
+    word_count: 1028,
+    tags: ["payments", "interest", "debt payoff", "budget"],
+  },
+  {
+    slug: "balance-transfer-credit-card-guide",
+    title: "Balance Transfer Credit Cards: a break-even and payoff planning guide",
+    summary: "How to compare transfer fees, promotional APR periods, credit limits, payment allocation, issuer restrictions, and the monthly payment needed to finish on time.",
+    published: "2026-08-09",
+    updated: "2026-08-09",
+    word_count: 1024,
+    tags: ["balance transfer", "interest", "debt payoff", "APR"],
+  },
+  {
+    slug: "credit-card-rental-car-insurance-guide",
+    title: "Credit Card Rental Car Insurance: primary vs. secondary coverage explained",
+    summary: "A practical guide to collision-damage waivers, primary and secondary card coverage, exclusions, payment requirements, claims records, and when liability remains uncovered.",
+    published: "2026-08-09",
+    updated: "2026-08-09",
+    word_count: 1057,
+    tags: ["rental car", "travel protection", "insurance", "claims"],
+  },
+  {
+    slug: "transfer-credit-card-points-guide",
+    title: "When to Transfer Credit Card Points: award availability, value, and irreversible decisions",
+    summary: "A practical framework for checking award space, transfer ratios, program rules, expiration, surcharges, and backup value before moving flexible points to a loyalty program.",
+    published: "2026-08-09",
+    updated: "2026-08-09",
+    word_count: 1035,
+    tags: ["points transfer", "award travel", "redemption", "loyalty programs"],
+  },
+  {
     slug: "credit-card-application-sequencing",
     title: "Credit Card Application Sequencing: how to plan your next cards without wasting approvals",
     summary: "A practical framework for sequencing credit-card applications around eligibility rules, credit inquiries, minimum spending, annual fees, and long-term portfolio fit.",
