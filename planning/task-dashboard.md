@@ -211,7 +211,7 @@
 # Task Dashboard — 2026-08-08 AdSense Low-Value Content Remediation
 
 - Owner: Kacey
-- Status: in_progress
+- Status: completed
 - Priority: P0 monetization / content quality
 - Scope: Reduce thin/affiliate-heavy signals, focus indexing on high-value pages, strengthen editorial trust, then prepare the site for an AdSense review request.
 
@@ -243,7 +243,7 @@
    - Acceptance: each indexed card page adds judgment and decision logic beyond structured issuer facts.
 
 6. Final review readiness audit
-   - Status: pending
+   - Status: completed
    - Deliverable: production crawl, metadata/sitemap checks, content inventory, and AdSense resubmission recommendation.
    - Acceptance: no affiliate product blocks, redirect URLs, or noindex card pages appear in sitemap; trust and editorial pages resolve successfully.
 
@@ -294,3 +294,5 @@
 - 2026-08-09 09:38 PT — TypeScript, targeted lint, and production build passed with 1,042 generated pages; shipped guide batch 4 in commit `dacc52b2`.
 - 2026-08-09 09:40 PT — Git production deployment `dpl_28waXSR4FVnrBDe11gi2enZj1G4o` reached Ready and owns the `opencardai.com` alias. Production verification passed: all four guides return HTTP 200 with expected H1s and appear in sitemap. Guide progress is now 16/20.
 - 2026-08-09 10:02 PT — Completed guide batch 5 and reached 20/20: statement balance vs. current balance, purchase protection and extended warranty, retention offers, and airport lounge access. Measured prose length is 1,000–1,099 words; local verification and deployment pending.
+- 2026-08-09 10:05 PT — Shipped the final guide batch in commit `ea534da8`; Git production deployment `dpl_BNfVPBa8h4FWJ7fGQuEcooXmoAe7` reached Ready and owns the `opencardai.com` alias. All four guide URLs return HTTP 200 with correct H1s and appear in sitemap.
+- 2026-08-09 10:08 PT — Final production readiness audit passed: all 129 sitemap URLs return HTTP 200; sitemap contains exactly 50 English card URLs, 0 non-English card URLs, and 0 redirect-only `/cards` URLs. About, Contact, Methodology, and Guides return HTTP 200; curated English card metadata is `index, follow` with original editorial analysis, while localized control is `noindex, follow`; no Travel Essentials component or Amazon outbound affiliate links render on the homepage. Remediation status is complete and ready for AdSense review submission.
