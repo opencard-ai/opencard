@@ -60,6 +60,42 @@ export function getGuidesForLocale(lang: string): GuideSummary[] {
 
 export const GUIDES: GuideSummary[] = [
   {
+    slug: "credit-card-application-sequencing",
+    title: "Credit Card Application Sequencing: how to plan your next cards without wasting approvals",
+    summary: "A practical framework for sequencing credit-card applications around eligibility rules, credit inquiries, minimum spending, annual fees, and long-term portfolio fit.",
+    published: "2026-08-08",
+    updated: "2026-08-08",
+    word_count: 1017,
+    tags: ["applications", "approval", "issuer rules", "strategy"],
+  },
+  {
+    slug: "credit-card-portfolio-guide",
+    title: "How to Build a Credit Card Portfolio: roles, overlap, and a simple wallet structure",
+    summary: "A practical guide to assigning each credit card a role, limiting overlap, choosing a default card, managing annual fees, and expanding a wallet only when a real gap exists.",
+    published: "2026-08-08",
+    updated: "2026-08-08",
+    word_count: 1001,
+    tags: ["portfolio", "wallet", "annual fee", "strategy"],
+  },
+  {
+    slug: "credit-card-benefit-tracking-system",
+    title: "A Credit Card Benefit Tracking System: calendars, credits, certificates, and renewal reviews",
+    summary: "A practical system for tracking monthly credits, annual benefits, certificates, enrollment requirements, annual fees, and renewal decisions without relying on memory.",
+    published: "2026-08-08",
+    updated: "2026-08-08",
+    word_count: 945,
+    tags: ["benefits", "tracking", "renewal", "organization"],
+  },
+  {
+    slug: "welcome-bonus-minimum-spend-planning",
+    title: "Welcome Bonus Minimum Spend Planning: a safe checklist for meeting the requirement",
+    summary: "A practical guide to budgeting organic spending, tracking posted transactions, handling refunds, avoiding cash-like purchases, and deciding when a welcome offer is too demanding.",
+    published: "2026-08-08",
+    updated: "2026-08-08",
+    word_count: 1008,
+    tags: ["welcome bonus", "minimum spend", "budget", "applications"],
+  },
+  {
     slug: "credit-utilization-guide",
     title: "Credit Utilization Explained: statement balances, reporting dates, and practical targets",
     summary: "A practical guide to how credit utilization is reported, why it changes scores, when early payments help, and why carrying interest-bearing debt never improves credit.",
