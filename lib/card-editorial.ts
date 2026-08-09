@@ -212,6 +212,106 @@ const CARD_EDITORIAL: Record<string, CardEditorial> = {
       { cardId: "wells-fargo-active-cash", label: "Wells Fargo Active Cash", reason: "Simpler flat earning with no activation." },
     ],
   },
+  "amex-biz-gold": {
+    take: "A business rewards card for owners whose operating expenses align with its strongest categories and who can use Membership Rewards productively. Its value should come from recurring business spend, not from moving personal purchases through a business account or treating merchant credits as automatic cash. The annual fee demands a clear category advantage over simpler no-fee business cards.",
+    bestFor: ["Businesses with concentrated spend in eligible bonus categories", "Owners already using Membership Rewards transfer partners", "Operators who value flexible category recognition over a fixed category list"],
+    notFor: ["Very small businesses with limited annual card spend", "Owners seeking simple cash back", "Anyone relying on temporary credits to justify the fee"],
+    breakEven: "Compare the incremental value of bonus-category points with a no-fee business card using actual ledger totals. Discount credits that require new vendors or altered purchasing, and exclude the welcome offer from the renewal calculation.",
+    alternatives: [
+      { cardId: "chase-ink-biz-preferred", label: "Ink Business Preferred", reason: "Different transfer ecosystem and business-category mix at a mid-tier fee." },
+      { cardId: "amex-blue-biz-plus", label: "Blue Business Plus", reason: "No-fee Membership Rewards option for smaller spend." },
+    ],
+  },
+  "amex-biz-platinum": {
+    take: "A premium business travel card intended for firms that can repeatedly use its airport, travel, and business-service benefits. It is not an everyday earning solution for every company, and the large annual fee should be evaluated against company spending that already exists. A long credit list can create administrative work and encourage vendor choices that are poor for the business.",
+    bestFor: ["Businesses with frequent employee air travel", "Companies already paying for several included services", "Owners who can use premium airport and hotel benefits repeatedly"],
+    notFor: ["Low-travel businesses", "Owners wanting one simple high-earning card", "Companies that would add subscriptions merely to consume credits"],
+    breakEven: "Use the prior year's accounting records to value benefits actually consumed by the business. Subtract lost discounts or preferred-vendor value, and compare rewards with the best lower-fee business alternative. The card should survive a conservative year-two calculation without its bonus.",
+    alternatives: [
+      { cardId: "amex-biz-gold", label: "American Express Business Gold", reason: "Better fit when category earning matters more than premium travel perks." },
+      { cardId: "chase-sapphire-reserve-biz", label: "Sapphire Reserve for Business", reason: "Alternative premium ecosystem for businesses centered on Chase travel rewards." },
+    ],
+  },
+  "amex-hilton-honors-aspire": {
+    take: "A premium Hilton card for travelers who already choose Hilton often enough to use the status, property credits, and annual-night benefits. It can provide strong real value, but only when certificates fit available properties and credits replace planned stays. Hilton points and elite labels should not be valued as cash without considering award pricing and actual travel patterns.",
+    bestFor: ["Frequent Hilton guests", "Travelers able to use annual-night awards before expiration", "People whose existing stays trigger the major resort and airline benefits"],
+    notFor: ["Hotel free agents who choose the cheapest property", "Infrequent travelers", "Anyone booking extra stays solely to consume credits"],
+    breakEven: "Value each free night at the cash price of a stay you would truly book, capped by what you would pay—not the property's highest retail price. Add conservative credit and status value, then subtract the fee and any premium paid to remain loyal to Hilton.",
+    alternatives: [
+      { cardId: "amex-hilton-surpass", label: "Hilton Honors Surpass", reason: "Lower-fee Hilton option when premium benefits are excessive." },
+      { cardId: "chase-hyatt", label: "World of Hyatt Credit Card", reason: "Different hotel ecosystem with another annual-night proposition." },
+    ],
+  },
+  "amex-hilton-surpass": {
+    take: "A mid-tier Hilton card that can suit regular—but not necessarily constant—Hilton guests. The card is easiest to justify when its status and spending benefits improve stays already planned. It becomes weaker when the holder values Hilton points at aspirational rates or shifts hotel bookings away from better locations and prices simply to remain loyal.",
+    bestFor: ["Regular Hilton guests seeking mid-tier benefits", "Travelers who can use Hilton credits naturally", "Cardholders working toward spend-based Hilton benefits"],
+    notFor: ["People with little Hilton activity", "Hotel free agents", "Anyone preferring straightforward cash rewards"],
+    breakEven: "Compare the fee with credits used on stays you already planned, incremental on-property benefits, and realistic point value. Include any extra room cost created by choosing Hilton over a cheaper equivalent property.",
+    alternatives: [
+      { cardId: "amex-hilton-honors", label: "Hilton Honors Card", reason: "No-fee Hilton entry for occasional guests." },
+      { cardId: "amex-hilton-honors-aspire", label: "Hilton Honors Aspire", reason: "Premium option for travelers who can use more Hilton benefits." },
+    ],
+  },
+  "amex-marriott-brilliant": {
+    take: "A premium Marriott card for travelers already committed to the Bonvoy ecosystem. The annual free-night award, status, and credits can be valuable, but award availability and certificate restrictions matter more than the property's headline price. The card should not be used to rationalize expensive Marriott stays that would not otherwise win your comparison.",
+    bestFor: ["Frequent Marriott guests", "Travelers who can redeem the annual certificate at a genuinely useful property", "Cardholders who benefit from the included status during existing stays"],
+    notFor: ["Travelers who rarely stay with Marriott", "People who need fully flexible hotel choices", "Anyone valuing certificates by peak retail prices"],
+    breakEven: "Use the lower of the room price you would actually pay or the value you personally receive from the certificate. Add status and credits only when they change the cost of planned stays, then subtract the annual fee and any loyalty premium.",
+    alternatives: [
+      { cardId: "chase-marriott-boundless", label: "Marriott Bonvoy Boundless", reason: "Lower-fee Marriott option with a simpler keeper case." },
+      { cardId: "amex-hilton-honors-aspire", label: "Hilton Honors Aspire", reason: "Premium hotel alternative for travelers with stronger Hilton patterns." },
+    ],
+  },
+  "chase-hyatt": {
+    take: "A hotel card with a relatively focused value proposition: Hyatt loyalty benefits and an annual-night path for people who already stay with the chain. Hyatt's footprint is smaller than some competitors, so the card's value depends on whether useful properties exist where you travel—not only on point valuations.",
+    bestFor: ["Travelers with repeat Hyatt stays", "People able to use the annual-night benefit organically", "Cardholders who value Hyatt status progress"],
+    notFor: ["Travelers whose destinations lack convenient Hyatt properties", "People who choose hotels entirely by lowest price", "Anyone collecting hotel points without a redemption plan"],
+    breakEven: "Value the annual-night benefit at a stay you would otherwise purchase and confirm that eligible properties fit your routes. Add incremental elite and earning value, then subtract any premium paid to choose Hyatt over a better alternative.",
+    alternatives: [
+      { cardId: "chase-ihg-premier", label: "IHG One Rewards Premier", reason: "Broader property footprint with a different annual-night structure." },
+      { cardId: "chase-marriott-boundless", label: "Marriott Bonvoy Boundless", reason: "Consider when Marriott locations better match actual travel." },
+    ],
+  },
+  "chase-ihg-premier": {
+    take: "A mid-tier hotel card that can work well for travelers who use IHG properties and can redeem the annual-night benefit without contortions. The broad IHG footprint is useful, but point values can vary widely. Benefits should be judged against specific stays and routes rather than an average online valuation.",
+    bestFor: ["Regular IHG guests", "Road-trip and international travelers who value IHG's footprint", "People able to use the annual-night benefit before expiration"],
+    notFor: ["Travelers with no consistent IHG stays", "People seeking premium luxury-hotel treatment", "Anyone likely to let annual certificates expire"],
+    breakEven: "Identify a realistic annual-night redemption first, then use the cash price you would pay as its value. Add status and point benefits from planned stays only; do not count speculative future trips.",
+    alternatives: [
+      { cardId: "chase-hyatt", label: "World of Hyatt Credit Card", reason: "Potentially stronger program value where Hyatt's footprint works." },
+      { cardId: "chase-marriott-boundless", label: "Marriott Bonvoy Boundless", reason: "Alternative when Marriott properties better fit your destinations." },
+    ],
+  },
+  "chase-marriott-boundless": {
+    take: "A mainstream Marriott card whose keeper value usually rests on whether the annual certificate and Marriott-specific benefits fit existing travel. It can be easier to justify than a premium hotel card, but certificate availability and category limits still matter. The card is not a reason to pay more for Marriott when another hotel is clearly better.",
+    bestFor: ["Occasional or regular Marriott guests", "Travelers with a repeatable annual certificate use", "People wanting a lower-fee Marriott card"],
+    notFor: ["Travelers without useful Marriott properties on their routes", "People who regularly forget certificate deadlines", "Hotel free agents focused on cash price"],
+    breakEven: "Find a likely certificate redemption and value it at the amount you would have paid for that stay. Add realistic on-property and point value, then compare the fee with a no-fee general travel card.",
+    alternatives: [
+      { cardId: "amex-marriott-brilliant", label: "Marriott Bonvoy Brilliant", reason: "Premium Marriott option for frequent guests who use more benefits." },
+      { cardId: "chase-hyatt", label: "World of Hyatt Credit Card", reason: "Different hotel program with another annual-night proposition." },
+    ],
+  },
+  "chase-united-explorer": {
+    take: "A mid-tier United card for travelers who fly the airline often enough to use checked-bag, boarding, or other carrier-specific benefits. The strongest value comes from replacing fees on flights you would already book. United miles and airport perks are secondary if another carrier consistently offers better schedules or prices.",
+    bestFor: ["Occasional United flyers who check bags", "Travelers near a United hub", "Cardholders who can use carrier benefits on planned trips"],
+    notFor: ["Travelers who rarely fly United", "People who always buy the cheapest carrier", "Anyone valuing miles without checking award availability"],
+    breakEven: "Count bag-fee and trip benefits only for United flights you expect to take, then add conservatively valued miles and subtract the annual fee. Include any fare premium paid to choose United over a better itinerary.",
+    alternatives: [
+      { cardId: "chase-united-quest", label: "United Quest", reason: "Higher-tier United option for more frequent flyers." },
+      { cardId: "chase-sapphire-preferred", label: "Chase Sapphire Preferred", reason: "Airline-neutral transferable points and broader travel use." },
+    ],
+  },
+  "chase-united-quest": {
+    take: "A higher-fee United card for travelers with enough annual United activity to use its statement benefits, award features, and travel perks. It occupies an awkward middle ground when flying is inconsistent: more expensive than an entry airline card, but not a substitute for every premium airport benefit.",
+    bestFor: ["Frequent United flyers", "Travelers redeeming United miles regularly", "Cardholders whose planned United purchases trigger the main recurring benefits"],
+    notFor: ["Infrequent flyers", "People without practical United routes", "Travelers seeking airline-neutral rewards"],
+    breakEven: "Use the previous year's United transactions to value credits, bag savings, and award benefits. Subtract any fare premium paid to remain loyal and exclude the welcome offer. If planned United activity is uncertain, a lower-fee or flexible card is safer.",
+    alternatives: [
+      { cardId: "chase-united-explorer", label: "United Explorer", reason: "Lower-fee fit for occasional United travelers." },
+      { cardId: "chase-sapphire-reserve", label: "Chase Sapphire Reserve", reason: "Premium airline-neutral travel alternative." },
+    ],
+  },
 };
 
 export function getCardEditorial(cardId: string): CardEditorial | undefined {
