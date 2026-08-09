@@ -60,6 +60,42 @@ export function getGuidesForLocale(lang: string): GuideSummary[] {
 
 export const GUIDES: GuideSummary[] = [
   {
+    slug: "statement-balance-vs-current-balance",
+    title: "Statement Balance vs. Current Balance: what to pay and when",
+    summary: "A practical guide to statement balances, current balances, minimums, pending charges, grace periods, autopay, refunds, and when an early payment is actually useful.",
+    published: "2026-08-09",
+    updated: "2026-08-09",
+    word_count: 1064,
+    tags: ["payments", "statement balance", "autopay", "beginner"],
+  },
+  {
+    slug: "credit-card-purchase-protection-guide",
+    title: "Credit Card Purchase Protection and Extended Warranty: a claims-first guide",
+    summary: "How purchase protection, extended warranty, return protection, and price protection differ—and how to preserve receipts, document damage, check exclusions, and file a stronger claim.",
+    published: "2026-08-09",
+    updated: "2026-08-09",
+    word_count: 1006,
+    tags: ["purchase protection", "extended warranty", "claims", "benefits"],
+  },
+  {
+    slug: "credit-card-retention-offer-guide",
+    title: "Credit Card Retention Offers: how to evaluate a renewal incentive",
+    summary: "A practical framework for reviewing an annual fee, requesting a retention offer, recording the terms, valuing spend requirements, and choosing among keeping, downgrading, or canceling.",
+    published: "2026-08-09",
+    updated: "2026-08-09",
+    word_count: 1000,
+    tags: ["retention offer", "annual fee", "renewal", "downgrade"],
+  },
+  {
+    slug: "airport-lounge-access-guide",
+    title: "Credit Card Airport Lounge Access: networks, guests, and real value",
+    summary: "A practical guide to lounge networks, enrollment, same-day boarding rules, guests, capacity controls, arrival access, restaurant exclusions, and valuing visits conservatively.",
+    published: "2026-08-09",
+    updated: "2026-08-09",
+    word_count: 1099,
+    tags: ["airport lounge", "travel", "guests", "premium cards"],
+  },
+  {
     slug: "credit-card-payment-priority-guide",
     title: "Credit Card Payment Priority: what to pay first when cash is tight",
     summary: "A practical framework for protecting minimum payments, stopping new interest, choosing between avalanche and snowball payoff methods, and avoiding reward-driven debt mistakes.",
