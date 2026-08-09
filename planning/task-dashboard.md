@@ -33,7 +33,7 @@
 # Task Dashboard — High-Priority Card Adaptor Expansion
 
 - Owner: Kacey
-- Status: in_progress
+- Status: completed
 - Priority: high
 - Scope: Execute KC-approved next steps from offer watcher review: keep CSR personal at 100k, add missing high-priority adaptor coverage, and defer lower-priority issuers.
 
@@ -334,7 +334,7 @@
    - Acceptance: all 60 localized URLs build and appear only when a real translation exists.
 
 6. Production audit
-   - Status: pending
+   - Status: completed
    - Deliverable: build, deployment, URL/H1/hreflang/sitemap/content-quality checks.
    - Acceptance: all 60 localized pages return HTTP 200 with correct language content and no structural regressions.
 
@@ -343,3 +343,5 @@
 - 2026-08-09 10:58 PT — KC approved full execution through completion: 20 guides × 3 locales = 60 localized long-form pages. Confirmed current routing already requires a real localized file plus registry metadata; existing older translations will not be used as a quality template because several contain repetitive filler.
 - 2026-08-09 11:42 PT — Completed all 60 localized guides. New content length ranges: Traditional Chinese 1,570–2,248 CJK characters, Simplified Chinese 1,702–2,233 CJK characters, and Spanish 1,157–1,493 words. Structural validation rejected and retried malformed, shortened, or metadata-free generations rather than writing them.
 - 2026-08-09 11:45 PT — Added reusable translation generation, generated localization metadata, and expanded locale QA to cover all 25 fully localized guide slugs. TypeScript, targeted lint, locale QA, repetition checks, wrong-locale-link checks, and production build passed; static output increased from 1,046 to 1,106 pages, exactly matching 60 new localized routes.
+- 2026-08-09 11:55 PT — Shipped localization expansion in commit `2bdca533`; Git production deployment `dpl_893rhMsUQsnDfr6YP7WaC8SPoApD` reached Ready and owns the `opencardai.com` alias.
+- 2026-08-09 11:58 PT — Production audit passed: all 75 localized guide routes return HTTP 200; all 60 newly localized routes have target-language H1s and localized metadata; all 75 routes expose four-language hreflang alternates. Sitemap now contains 25 guide URLs each for `zh`, `zh-cn`, and `es` and 189 URLs total. Localization expansion status is complete.
