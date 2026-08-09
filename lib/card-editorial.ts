@@ -412,6 +412,106 @@ const CARD_EDITORIAL: Record<string, CardEditorial> = {
       { cardId: "amex-biz-gold", label: "American Express Business Gold", reason: "Alternative for businesses whose largest categories align with Amex." },
     ],
   },
+  "bilt-blue": {
+    take: "A no-annual-fee entry into the Bilt ecosystem for renters and members who want to earn Bilt rewards without committing to a premium card. Its value depends on the current rent-payment rules, required transaction behavior, and whether Bilt's transfer partners match actual travel. Rent rewards should not encourage carrying a balance or paying avoidable transaction fees.",
+    bestFor: ["Renters who can follow Bilt's qualifying rules", "People wanting Bilt transfer partners without an annual fee", "Cardholders willing to monitor program changes"],
+    notFor: ["Homeowners with no use for the Bilt ecosystem", "People seeking simple cash back", "Anyone likely to carry rent-related card debt"],
+    breakEven: "There is no card fee, but check every requirement and any payment cost. Compare the value of points earned on rent and normal purchases with a no-fee cash card, using a realistic redemption rather than an aspirational transfer.",
+    alternatives: [
+      { cardId: "bilt-obsidian", label: "Bilt Obsidian", reason: "Fee-bearing Bilt option when added categories and benefits are useful." },
+      { cardId: "wells-fargo-active-cash", label: "Wells Fargo Active Cash", reason: "Simple cash rewards outside a rent-focused ecosystem." },
+    ],
+  },
+  "chase-freedom-rise": {
+    take: "A starter-oriented no-fee Chase card for people establishing credit and beginning a relationship with the issuer. Approval fit, responsible payment, and account longevity matter more than maximizing rewards. It should be treated as a credit-building foundation rather than a reason to spend more or rush into additional cards.",
+    bestFor: ["People new to credit", "Applicants beginning a Chase relationship", "Cardholders seeking a no-fee account to keep long term"],
+    notFor: ["Established profiles seeking the highest rewards", "International spenders if foreign transaction costs apply", "Anyone expecting premium travel benefits"],
+    breakEven: "There is no annual fee. Compare approval fit, fees, credit tools, and rewards with other starter cards. Paying the statement in full is worth far more than any rewards earned; interest immediately overwhelms the card's value.",
+    alternatives: [
+      { cardId: "discover-it-secured", label: "Discover it Secured", reason: "Secured path for applicants who need a deposit-backed option." },
+      { cardId: "chase-freedom-unlimited", label: "Chase Freedom Unlimited", reason: "Stronger rewards when the credit profile supports approval." },
+    ],
+  },
+  "chase-ink-biz-unlimited": {
+    take: "A no-fee business card for predictable base earning across expenses that do not fit specialized categories. It works well as the catch-all card in a Chase business setup, but its value can depend on pairing with a fee-bearing Chase card for broader redemption options. That companion fee should be justified separately.",
+    bestFor: ["Businesses with substantial uncategorized spend", "Owners seeking simple no-fee earning", "Existing Chase business-rewards users"],
+    notFor: ["Businesses dominated by high-value bonus categories", "Owners seeking premium standalone travel benefits", "International businesses if transaction fees reduce value"],
+    breakEven: "Compare its base return with other no-fee business cards across actual expenses. If combining rewards with a premium Chase card, calculate the incremental redemption gain and subtract the premium card's full annual fee.",
+    alternatives: [
+      { cardId: "chase-ink-biz-cash", label: "Ink Business Cash", reason: "Better when office and telecom categories dominate." },
+      { cardId: "amex-blue-biz-plus", label: "Blue Business Plus", reason: "No-fee transferable points in the Amex ecosystem." },
+    ],
+  },
+  "chase-sapphire-reserve-biz": {
+    take: "A premium business travel card for companies with enough travel volume and eligible operating spend to support a high annual fee. Credits and airport benefits may be valuable, but they should reduce expenses already present in the business—not create new vendors, subscriptions, or trips. Personal and business use should remain clearly separated for accounting and tax records.",
+    bestFor: ["Businesses with frequent travel", "Companies able to use major credits through existing expenses", "Owners invested in transferable Chase rewards"],
+    notFor: ["Low-travel or early-stage businesses", "Owners wanting a simple cash-back card", "Companies relying on the welcome offer to offset the fee"],
+    breakEven: "Use prior-year business records to value travel credits, lounge use, protections, and incremental rewards. Discount restrictive portal or vendor credits, subtract the full fee, and exclude the welcome offer from the ongoing case.",
+    alternatives: [
+      { cardId: "chase-ink-biz-preferred", label: "Ink Business Preferred", reason: "Lower-fee Chase business travel option." },
+      { cardId: "amex-biz-platinum", label: "American Express Business Platinum", reason: "Alternative premium business ecosystem and benefit mix." },
+    ],
+  },
+  "chase-southwest-priority": {
+    take: "A Southwest card for travelers who already fly the airline and can use its anniversary, boarding, and carrier-specific benefits. The card is strongest where Southwest schedules and policies fit planned trips. Companion Pass progress can be valuable, but it should not justify unnecessary flights or spending.",
+    bestFor: ["Regular Southwest flyers", "Travelers pursuing Companion Pass through planned activity", "People near airports with useful Southwest routes"],
+    notFor: ["Travelers who rarely fly Southwest", "People needing airline-neutral rewards", "Anyone valuing benefits without checking route and fare fit"],
+    breakEven: "Use expected Southwest trips to value anniversary points, boarding benefits, and credits. Subtract any fare or schedule premium paid to remain loyal, and do not count Companion Pass value unless the qualification plan is realistic.",
+    alternatives: [
+      { cardId: "chase-sapphire-preferred", label: "Chase Sapphire Preferred", reason: "Airline-neutral transferable points at a mid-tier fee." },
+      { cardId: "chase-united-explorer", label: "United Explorer", reason: "Carrier-specific alternative where United routes are stronger." },
+    ],
+  },
+  "citi-aadvantage-executive": {
+    take: "A premium American Airlines card centered on Admirals Club access and airline-specific benefits. It makes sense mainly for frequent AA travelers who would otherwise pay for lounge membership or obtain equivalent value from repeated visits. Airline loyalty should follow useful routes, not the desire to justify a card fee.",
+    bestFor: ["Frequent American Airlines flyers", "Travelers who repeatedly use Admirals Clubs", "AA loyalists benefiting from card-based travel perks"],
+    notFor: ["Occasional AA flyers", "Travelers whose airports lack useful lounge locations", "People seeking transferable points"],
+    breakEven: "Value lounge access at the membership or airport spending it actually replaces, then add bag and airline benefits from planned AA trips. Subtract the fee and any fare premium paid to choose American over a better itinerary.",
+    alternatives: [
+      { cardId: "amex-platinum", label: "American Express Platinum", reason: "Broader multi-network lounge proposition for some travelers." },
+      { cardId: "chase-sapphire-reserve", label: "Chase Sapphire Reserve", reason: "Premium airline-neutral rewards and travel protections." },
+    ],
+  },
+  "citi-costco-anywhere": {
+    take: "A no-card-fee cash-back product for Costco members with useful gas, dining, travel, and Costco categories. The Costco membership is still a real cost when the household would not otherwise keep it, and rewards are less flexible than cards offering on-demand cash out. It works best for existing Costco shoppers, not as a reason to join.",
+    bestFor: ["Existing Costco members", "Households with meaningful gas and Costco spending", "People comfortable with the card's reward-distribution schedule"],
+    notFor: ["People who would not otherwise maintain Costco membership", "Cardholders wanting immediate flexible redemption", "Travel-points users"],
+    breakEven: "If Costco membership already makes sense independently, compare category cash back with other no-fee cards. If the card drives the membership decision, subtract the membership cost and include the value of Costco pricing you actually use.",
+    alternatives: [
+      { cardId: "wells-fargo-active-cash", label: "Wells Fargo Active Cash", reason: "Flat rewards without a warehouse membership relationship." },
+      { cardId: "wells-fargo-autograph", label: "Wells Fargo Autograph", reason: "Broad travel, dining, gas, and transit categories without membership dependence." },
+    ],
+  },
+  "citi-strata-elite": {
+    take: "A premium Citi travel card whose fee must be supported by recurring travel, credits, and ThankYou Point usage—not merely by a large first-year offer. Its strongest case is for travelers already comfortable with Citi's ecosystem and able to use premium benefits naturally. Portal or merchant restrictions should be tested before credits are valued at face value.",
+    bestFor: ["Frequent travelers using Citi ThankYou partners", "People who naturally use the card's primary credits", "Citi customers seeking premium travel benefits"],
+    notFor: ["Infrequent travelers", "People who dislike portal or credit tracking", "Cash-back users wanting simple rewards"],
+    breakEven: "Value recurring credits at the amount they replace in the normal budget, add realistic travel and point value, and subtract the annual fee plus any portal opportunity cost. Exclude the welcome offer from the renewal decision.",
+    alternatives: [
+      { cardId: "citi-strata", label: "Citi Strata", reason: "No-fee Citi option for everyday categories." },
+      { cardId: "chase-sapphire-reserve", label: "Chase Sapphire Reserve", reason: "Alternative premium transfer ecosystem and travel package." },
+    ],
+  },
+  "discover-it-secured": {
+    take: "A secured credit-building card that adds rewards without requiring the cardholder to pay an annual fee. The refundable security deposit is not a fee, but it ties up cash and establishes the credit line. The primary goal should be on-time payment, low utilization, and eventual graduation—not maximizing category spending.",
+    bestFor: ["People building or rebuilding credit", "Applicants comfortable placing a refundable deposit", "Cardholders seeking bureau reporting and no annual fee"],
+    notFor: ["Established borrowers who qualify for stronger unsecured cards", "People who cannot comfortably tie up deposit funds", "Anyone likely to carry a balance"],
+    breakEven: "Measure the opportunity cost of the deposit and compare graduation, reporting, fees, and rewards with other secured cards. Never carry interest-bearing debt to earn cash back; credit-building behavior is the real return.",
+    alternatives: [
+      { cardId: "chase-freedom-rise", label: "Chase Freedom Rise", reason: "Unsecured starter option when approval fit is sufficient." },
+      { cardId: "discover-it", label: "Discover it Cash Back", reason: "Unsecured rotating-category option for stronger credit profiles." },
+    ],
+  },
+  "us-bank-altitude-connect": {
+    take: "A travel-category card for people who want useful travel and transit earning without moving into a premium annual-fee product. Its exact value depends on current benefit terms, redemption rules, and how often eligible travel categories appear in the budget. It should be compared with broad no-fee competitors rather than evaluated in isolation.",
+    bestFor: ["Travelers with regular eligible travel and transit spend", "People avoiding premium-card fees", "Cardholders who prefer straightforward bank points"],
+    notFor: ["People seeking premium lounge access", "Transfer-partner enthusiasts", "Low-travel households"],
+    breakEven: "Compare its effective earning and benefits with no-fee travel cards using actual category spending. Include redemption restrictions and value travel credits only when they replace purchases you already planned.",
+    alternatives: [
+      { cardId: "wells-fargo-autograph", label: "Wells Fargo Autograph", reason: "Broad no-fee travel categories with a different rewards system." },
+      { cardId: "chase-sapphire-preferred", label: "Chase Sapphire Preferred", reason: "Fee-bearing transferable-points alternative." },
+    ],
+  },
 };
 
 export function getCardEditorial(cardId: string): CardEditorial | undefined {
