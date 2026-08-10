@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "title": "Capital One Cafes: Free Handcrafted Drink",
+      "url": "https://www.doctorofcredit.com/capital-one-cafes-free-drink-until-12-31-24/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "capital one"
+      ],
+      "ts": "2026-08-10T02:24:01.000Z",
+      "title_en": "Capital One Cafes: Free Handcrafted Drink",
+      "summary_en": "",
+      "title_zh": "Capital One 咖啡廳：免費手工飲料",
+      "summary_zh": "在 Capital One 咖啡廳可免費獲得一杯手工製作的飲品。",
+      "title_es": "Capital One Cafes: Free Handcrafted Drink",
+      "summary_es": ""
+    },
+    {
       "title": "[MT & SD Only?] Gate City Bank $100 Bonus Referral Bonus, Direct Deposit Not Required (8/19 – 8/20)",
       "url": "https://www.doctorofcredit.com/nationwide-excluding-nd-md-gate-city-bank-100-amazon-giftcard-referral-bonus-direct-deposit-not-required/",
       "source": "Doctor of Credit",
@@ -12,10 +28,10 @@
       "ts": "2026-08-10T01:05:38.000Z",
       "title_en": "[MT & SD Only?] Gate City Bank $100 Bonus Referral Bonus, Direct Deposit Not Required (8/19 – 8/20)",
       "summary_en": "",
-      "title_zh": "[MT & SD Only?] Gate City Bank $100 Bonus Referral Bonus, Direct Deposit Not Required (8/19 – 8/20)",
-      "summary_zh": "",
-      "title_es": "[¿Solo MT y SD?] Gate City Bank Bono de $100 por Referidos, No Se Requiere Depósito Directo (8/19 – 8/20)",
-      "summary_es": "Gate City Bank ofrece un bono de $100 por cada referral sin necesidad de realizar un depósito directo, válido del 19 al 20 de agosto."
+      "title_zh": "【僅限蒙大拿與南達科他州】Gate City Bank 100美元推薦獎金，無需直接存款（8/19 – 8/20）",
+      "summary_zh": "在蒙大拿州與南達科他州的Gate City Bank，透過推薦可獲得100美元獎金，且無需進行直接存款。",
+      "title_es": "[MT & SD Only?] Gate City Bank $100 Bonus Referral Bonus, Direct Deposit Not Required (8/19 – 8/20)",
+      "summary_es": ""
     },
     {
       "title": "Office Depot/Max Stores: Buy $300 In Visa Giftcards & Get $15 Instant Discount (8/9 – 8/16)",
@@ -29,10 +45,10 @@
       "ts": "2026-08-10T00:37:14.000Z",
       "title_en": "Office Depot/Max Stores: Buy $300 In Visa Giftcards & Get $15 Instant Discount (8/9 – 8/16)",
       "summary_en": "",
-      "title_zh": "Office Depot/Max Stores: Buy $300 In Visa Giftcards & Get $15 Instant Discount (8/9 – 8/16)",
-      "summary_zh": "",
-      "title_es": "Office Depot/Max Tiendas: Compra $300 En Tarjetas de Regalo Visa y Obtén $15 de Descuento Instantáneo (8/9 – 8/16)",
-      "summary_es": "En Office Depot/Max Stores, al comprar $300 en tarjetas de regalo Visa recibirás un descuento instantáneo de $15 válido del 9 al 16 de agosto."
+      "title_zh": "Office Depot/Max 門市：購買300美元Visa禮品卡即享15美元即時折扣（8/9 – 8/16）",
+      "summary_zh": "在Office Depot/Max門市購買300美元的Visa禮品卡，即可當場獲得15美元折扣。",
+      "title_es": "Office Depot/Max Stores: Buy $300 In Visa Giftcards & Get $15 Instant Discount (8/9 – 8/16)",
+      "summary_es": ""
     },
     {
       "title": "Walmart: $10 Off $35+ With Promo Code FAST30/DOUBLE10 (Next 3 Delivery/Pickup Orders)",
@@ -46,10 +62,10 @@
       "ts": "2026-08-09T23:16:45.000Z",
       "title_en": "Walmart: $10 Off $35+ With Promo Code FAST30/DOUBLE10 (Next 3 Delivery/Pickup Orders)",
       "summary_en": "",
-      "title_zh": "Walmart: $10 Off $35+ With Promo Code FAST30/DOUBLE10 (Next 3 Delivery/Pickup Orders)",
-      "summary_zh": "",
-      "title_es": "Walmart: $10 de Descuento en Compras de $35+ Con Código Promocional FAST30/DOUBLE10 (Próximas 3 Órdenes de Entrega/Recogida)",
-      "summary_es": "Walmart ofrece $10 de descuento en compras de $35 o más al usar el código FAST30 o DOUBLE10 para las próximas tres órdenes de entrega o recogida."
+      "title_zh": "Walmart：使用優惠碼 FAST30/DOUBLE10，消費35美元以上可享10美元折扣（接下來3筆配送/取貨訂單）",
+      "summary_zh": "在Walmart使用優惠碼 FAST30/DOUBLE10，單筆消費滿35美元即可獲得10美元折扣，適用于未來三筆配送或取貨訂單。",
+      "title_es": "Walmart: $10 Off $35+ With Promo Code FAST30/DOUBLE10 (Next 3 Delivery/Pickup Orders)",
+      "summary_es": ""
     },
     {
       "title": "[MO, KS, In Branch Only] OMB Bank $250 Checking Bonus",
@@ -66,10 +82,10 @@
       "ts": "2026-08-09T23:10:51.000Z",
       "title_en": "[MO, KS, In Branch Only] OMB Bank $250 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[MO, KS, In Branch Only] OMB Bank $250 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[Solo en Sucursal, MO, KS] OMB Bank Bono de $250 por Cuenta Corriente",
-      "summary_es": "OMB Bank otorga un bono de $250 por abrir una cuenta corriente en sus sucursales de Misuri y Kansas."
+      "title_zh": "【僅限密蘇里州、堪薩斯州臨櫃】OMB Bank 250美元支票帳戶獎金",
+      "summary_zh": "密蘇里州與堪薩斯州的OMB Bank客戶，親臨分行開戶可獲得250美元的支票帳戶獎金。",
+      "title_es": "[MO, KS, In Branch Only] OMB Bank $250 Checking Bonus",
+      "summary_es": ""
     },
     {
       "title": "[MA, NH] Cambridge Savings Bank $800 Checking Bonus + $400 Savings",
@@ -86,10 +102,10 @@
       "ts": "2026-08-09T20:32:20.000Z",
       "title_en": "[MA, NH] Cambridge Savings Bank $800 Checking Bonus + $400 Savings",
       "summary_en": "",
-      "title_zh": "[MA, NH] Cambridge Savings Bank $800 Checking Bonus + $400 Savings",
-      "summary_zh": "",
-      "title_es": "[MA, NH] Cambridge Savings Bank Bono de $800 por Cuenta Corriente + $400 de Ahorro",
-      "summary_es": "Cambridge Savings Bank ofrece un bono de $800 por cuenta corriente y $400 adicionales por cuenta de ahorro para clientes de Massachusetts y Nuevo Hampshire."
+      "title_zh": "【馬薩諸塞州、新罕布什爾州】Cambridge Savings Bank 800美元支票帳戶獎金加400美元存款獎勵",
+      "summary_zh": "在馬薩諸塞州與新罕布什爾州的Cambridge Savings Bank，開立支票帳戶可獲800美元獎金，另有400美元的存款獎勵。",
+      "title_es": "[MA, NH] Cambridge Savings Bank $800 Checking Bonus + $400 Savings",
+      "summary_es": ""
     },
     {
       "title": "[WI, In Branch Only] Johnson Financial Group $300 Checking & Up To $2,500 Savings Bonus",
@@ -103,10 +119,10 @@
       "ts": "2026-08-09T17:00:28.000Z",
       "title_en": "[WI, In Branch Only] Johnson Financial Group $300 Checking & Up To $2,500 Savings Bonus",
       "summary_en": "",
-      "title_zh": "[WI, In Branch Only] Johnson Financial Group $300 Checking & Up To $2,500 Savings Bonus",
-      "summary_zh": "",
-      "title_es": "[WI, Solo en Sucursal] Johnson Financial Group Bono de $300 por Cuenta Corriente y Hasta $2,500 de Ahorro",
-      "summary_es": "Johnson Financial Group premia con $300 por cuenta corriente y hasta $2,500 de bonificación de ahorro en Wisconsin, solo en sucursal."
+      "title_zh": "【僅限威斯康辛州臨櫃】Johnson Financial Group 300美元支票帳戶獎金及最高2,500美元存款獎金",
+      "summary_zh": "威斯康辛州的Johnson Financial Group客戶臨櫃開戶可獲300美元支票帳戶獎金，最高可再獲得2,500美元的存款獎金。",
+      "title_es": "[WI, In Branch Only] Johnson Financial Group $300 Checking & Up To $2,500 Savings Bonus",
+      "summary_es": ""
     },
     {
       "title": "[TX, AZ, AR, and NM] First National Bank Texas $300 Checking Bonus",
@@ -122,10 +138,10 @@
       "ts": "2026-08-09T16:00:27.000Z",
       "title_en": "[TX, AZ, AR, and NM] First National Bank Texas $300 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[TX, AZ, AR, and NM] First National Bank Texas $300 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[TX, AZ, AR y NM] First National Bank Texas Bono de $300 por Cuenta Corriente",
-      "summary_es": "First National Bank Texas ofrece un bono de $300 por abrir una cuenta corriente en Texas, Arizona, Arkansas o Nuevo México."
+      "title_zh": "【德克薩斯州、亞利桑那州、阿肯色州與新墨西哥州】First National Bank Texas 300美元支票帳戶獎金",
+      "summary_zh": "在德克薩斯州、亞利桑那州、阿肯色州與新墨西哥州的First National Bank Texas，開立支票帳戶可獲得300美元獎金。",
+      "title_es": "[TX, AZ, AR, and NM] First National Bank Texas $300 Checking Bonus",
+      "summary_es": ""
     },
     {
       "title": "[CT, NJ] Ion Bank $300 Checking Bonus",
@@ -142,10 +158,10 @@
       "ts": "2026-08-09T15:30:33.000Z",
       "title_en": "[CT, NJ] Ion Bank $300 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[CT, NJ] Ion Bank $300 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[CT, NJ] Ion Bank Bono de $300 por Cuenta Corriente",
-      "summary_es": "Ion Bank ofrece un bono de $300 por abrir una cuenta corriente para residentes de Connecticut y Nueva Jersey."
+      "title_zh": "【康涅狄格州、紐澤西州】Ion Bank 300美元支票帳戶獎金",
+      "summary_zh": "康涅狄格州與紐澤西州的Ion Bank客戶，開立支票帳戶可獲300美元獎金。",
+      "title_es": "[CT, NJ] Ion Bank $300 Checking Bonus",
+      "summary_es": ""
     },
     {
       "title": "[TN, In Branch Only] First South Financial $1,000 Business Checking Bonus",
@@ -160,10 +176,10 @@
       "ts": "2026-08-09T15:00:26.000Z",
       "title_en": "[TN, In Branch Only] First South Financial $1,000 Business Checking Bonus",
       "summary_en": "",
-      "title_zh": "[TN, In Branch Only] First South Financial $1,000 Business Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[TN, Solo en Sucursal] First South Financial Bono de $1,000 por Cuenta Corriente Empresarial",
-      "summary_es": "First South Financial otorga un bono de $1,000 a empresas que abran una cuenta corriente en Tennessee, disponible solo en sucursal."
+      "title_zh": "【僅限田納西州臨櫃】First South Financial 1,000美元商業支票帳戶獎金",
+      "summary_zh": "田納西州的First South Financial客戶親臨分行開戶，可獲得1,000美元的商業支票帳戶獎金。",
+      "title_es": "[TN, In Branch Only] First South Financial $1,000 Business Checking Bonus",
+      "summary_es": ""
     },
     {
       "title": "[AL] Guardian Credit Union $300 Checking Bonus",
@@ -177,10 +193,10 @@
       "ts": "2026-08-09T14:30:32.000Z",
       "title_en": "[AL] Guardian Credit Union $300 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[AL] Guardian Credit Union $300 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[AL] Guardian Credit Union Bono de $300 por Cuenta Corriente",
-      "summary_es": "Guardian Credit Union ofrece un bono de $300 por abrir una cuenta corriente para miembros en Alabama."
+      "title_zh": "【阿拉巴馬州】Guardian Credit Union 300美元支票帳戶獎金",
+      "summary_zh": "阿拉巴馬州的Guardian Credit Union會員，開立支票帳戶可獲得300美元獎金。",
+      "title_es": "[AL] Guardian Credit Union $300 Checking Bonus",
+      "summary_es": ""
     },
     {
       "title": "[Targeted] Gemini, Purchase $100+ In Stocks & Get $20",
@@ -194,10 +210,10 @@
       "ts": "2026-08-09T14:00:25.000Z",
       "title_en": "[Targeted] Gemini, Purchase $100+ In Stocks & Get $20",
       "summary_en": "",
-      "title_zh": "[Targeted] Gemini, Purchase $100+ In Stocks & Get $20",
-      "summary_zh": "",
-      "title_es": "[Dirigido] Gemini, Compra $100+ En Acciones y Obtén $20",
-      "summary_es": "Gemini regala $20 al comprar $100 o más en acciones, oferta dirigida a usuarios seleccionados."
+      "title_zh": "【限特定用戶】Gemini，購買100美元以上的股票可獲得20美元",
+      "summary_zh": "Gemini針對特定用戶推出優惠，單筆購買100美元以上的股票即可獲得20美元獎勵。",
+      "title_es": "[Targeted] Gemini, Purchase $100+ In Stocks & Get $20",
+      "summary_es": ""
     },
     {
       "title": "[IN only] Inova Federal Credit Union $250 Checking Bonus",
@@ -214,10 +230,10 @@
       "ts": "2026-08-09T13:00:29.000Z",
       "title_en": "[IN only] Inova Federal Credit Union $250 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[IN only] Inova Federal Credit Union $250 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[Solo en IN] Inova Federal Credit Union Bono de $250 por Cuenta Corriente",
-      "summary_es": "Inova Federal Credit Union ofrece un bono de $250 por abrir una cuenta corriente en Indiana."
+      "title_zh": "【僅限印第安納州】Inova Federal Credit Union 250美元支票帳戶獎金",
+      "summary_zh": "印第安納州的Inova Federal Credit Union客戶，開立支票帳戶可獲得250美元獎金。",
+      "title_es": "[IN only] Inova Federal Credit Union $250 Checking Bonus",
+      "summary_es": ""
     },
     {
       "title": "[OK, Coweta In Branch Only] FNB Coweta $150 Checking Bonus, Direct Deposit Not Required",
@@ -231,10 +247,10 @@
       "ts": "2026-08-08T23:08:56.000Z",
       "title_en": "[OK, Coweta In Branch Only] FNB Coweta $150 Checking Bonus, Direct Deposit Not Required",
       "summary_en": "",
-      "title_zh": "[OK, Coweta In Branch Only] FNB Coweta $150 Checking Bonus, Direct Deposit Not Required",
-      "summary_zh": "",
-      "title_es": "[OK, Coweta Solo en Sucursal] FNB Coweta Bono de $150 por Cuenta Corriente, No Se Requiere Depósito Directo",
-      "summary_es": "FNB Coweta ofrece un bono de $150 por cuenta corriente en Coweta, Oklahoma, sin requerir depósito directo, solo en sucursal."
+      "title_zh": "【僅限奧克拉荷馬州 Coweta 臨櫃】FNB Coweta 150美元支票帳戶獎金，無需直接存款",
+      "summary_zh": "奧克拉荷馬州Coweta的FNB Coweta客戶，臨櫃開戶可獲得150美元支票帳戶獎金，且無需進行直接存款。",
+      "title_es": "[OK, Coweta In Branch Only] FNB Coweta $150 Checking Bonus, Direct Deposit Not Required",
+      "summary_es": ""
     },
     {
       "title": "[MA, NH, ME, RI] Eastern Bank $750 Checking/Savings Bonus",
@@ -253,32 +269,11 @@
       "ts": "2026-08-08T22:00:23.000Z",
       "title_en": "[MA, NH, ME, RI] Eastern Bank $750 Checking/Savings Bonus",
       "summary_en": "",
-      "title_zh": "[MA, NH, ME, RI] Eastern Bank $750 Checking/Savings Bonus",
-      "summary_zh": "",
-      "title_es": "[MA, NH, ME, RI] Eastern Bank Bono de $750 por Cuenta Corriente/Ahorro",
-      "summary_es": "Eastern Bank ofrece un bono de $750 por cuenta corriente o de ahorro para clientes de Massachusetts, Nuevo Hampshire, Maine y Rhode Island."
-    },
-    {
-      "title": "[Targeted, VA, MD NC] Atlantic Union Bank $400-$800 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/va-md-nc-atlantic-union-bank-250-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "direct deposit required",
-        "md bank bonuses",
-        "nc bank bonuses",
-        "no credit card funding",
-        "soft pull",
-        "va bank bonuses"
-      ],
-      "ts": "2026-08-08T21:50:10.000Z",
-      "title_en": "[Targeted, VA, MD NC] Atlantic Union Bank $400-$800 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[Targeted, VA, MD NC] Atlantic Union Bank $400-$800 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[Dirigido, VA, MD NC] Atlantic Union Bank Bono de $400-$800 por Cuenta Corriente",
-      "summary_es": "Atlantic Union Bank ofrece un bono de $400 a $800 por abrir una cuenta corriente, dirigido a residentes de Virginia, Maryland y Carolina del Norte."
+      "title_zh": "【馬薩諸塞州、新罕布什爾州、緬因州、羅德島】Eastern Bank 750美元支票/存款帳戶獎金",
+      "summary_zh": "在馬薩諸塞州、新罕布什爾州、緬因州與羅德島的Eastern Bank，開立支票或存款帳戶可獲得750美元獎金。",
+      "title_es": "[MA, NH, ME, RI] Eastern Bank $750 Checking/Savings Bonus",
+      "summary_es": ""
     }
   ],
-  "fetched": "2026-08-10T02:09:47.203Z"
+  "fetched": "2026-08-10T08:13:37.215Z"
 }
