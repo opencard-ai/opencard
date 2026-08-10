@@ -159,7 +159,7 @@
 ## 2026-07-27 — GSC 404 SEO redirect cleanup
 
 - Owner: Kacey
-- Status: in_progress
+- Status: completed
 - Priority: P1 SEO hygiene
 - Deliverable: Add 301 redirects for high-value legacy OpenCard card slugs that currently 404.
 - Acceptance criteria:
@@ -180,7 +180,7 @@
 ## 2026-07-27 — Vercel ISR Writes quota check
 
 - Owner: Kacey
-- Status: in_progress
+- Status: completed
 - Priority: P1 quota / service continuity
 - Deliverable: Confirm actual ISR Writes usage/trend and recommend whether to upgrade Vercel Pro or reduce cron/build ISR churn.
 - Acceptance criteria:
@@ -302,7 +302,7 @@
 # Task Dashboard — 2026-08-09 Guide Localization Expansion
 
 - Owner: Kacey
-- Status: in_progress
+- Status: completed
 - Priority: P0 international content quality
 - Scope: Translate the 20 newly published English guides into Traditional Chinese, Simplified Chinese, and Spanish, with genuine localized prose and complete routing/index metadata.
 
