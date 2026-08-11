@@ -1,6 +1,41 @@
 {
   "items": [
     {
+      "title": "[Fixed] PayPal Credit Card Charging Undisclosed Fee For PayPal Redemptions",
+      "url": "https://www.doctorofcredit.com/paypal-credit-card-charging-undisclosed-fee-for-paypal-redemptions/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "paypal",
+        "synchrony"
+      ],
+      "ts": "2026-08-11T04:55:51.000Z",
+      "title_en": "[Fixed] PayPal Credit Card Charging Undisclosed Fee For PayPal Redemptions",
+      "summary_en": "",
+      "title_zh": "[已修復] PayPal 信用卡針對 PayPal 兌換收取未揭露費用",
+      "summary_zh": "PayPal 已修復其信用卡在兌換 PayPal 時收取未揭露費用的問題。",
+      "title_es": "[Corregido] La tarjeta de crédito PayPal cobra una tarifa no revelada por los canjes de PayPal",
+      "summary_es": "PayPal ha corregido el cargo de una tarifa oculta al usar su tarjeta de crédito para canjes."
+    },
+    {
+      "title": "Burger King: Free Whopper When You Text SEND-THIS-TEXT-FOR-FREE-WHOPPER To 250783",
+      "url": "https://www.doctorofcredit.com/burger-king-free-whopper-when-you-text-send-this-text-for-free-whopper-to-250783/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "burger king",
+        "free food",
+        "freebies"
+      ],
+      "ts": "2026-08-11T04:30:24.000Z",
+      "title_en": "Burger King: Free Whopper When You Text SEND-THIS-TEXT-FOR-FREE-WHOPPER To 250783",
+      "summary_en": "",
+      "title_zh": "Burger King：傳送「SEND-THIS-TEXT-FOR-FREE-WHOPPER」至 250783，即可獲得免費大漢堡",
+      "summary_zh": "Burger King 提供免費大漢堡，只需傳送指定簡訊至指定號碼即可兌換。",
+      "title_es": "Burger King: Whopper gratis al enviar el mensaje SEND-THIS-TEXT-FOR-FREE-WHOPPER al 250783",
+      "summary_es": "Burger King ofrece un Whopper gratis a quienes envíen el mensaje específico al número indicado."
+    },
+    {
       "title": "Southwest: Up To 40% Off Base Fares",
       "url": "https://www.doctorofcredit.com/southwest-up-to-40-off-base-fares-2/",
       "source": "Doctor of Credit",
@@ -11,10 +46,10 @@
       "ts": "2026-08-10T20:48:27.000Z",
       "title_en": "Southwest: Up To 40% Off Base Fares",
       "summary_en": "",
-      "title_zh": "Southwest: Up To 40% Off Base Fares",
-      "summary_zh": "",
-      "title_es": "Southwest: Up To 40% Off Base Fares",
-      "summary_es": ""
+      "title_zh": "Southwest：最高可享 40% 基礎票價折扣",
+      "summary_zh": "Southwest 航空的基礎票價最高可減 40%。",
+      "title_es": "Southwest: Hasta un 40 % de descuento en las tarifas base",
+      "summary_es": "Southwest Airlines ofrece descuentos de hasta el 40 % en sus tarifas base."
     },
     {
       "title": "Small Balance Credit Card Waiver (Issuers Who Waive Small Balances)",
@@ -27,10 +62,10 @@
       "ts": "2026-08-10T19:00:34.000Z",
       "title_en": "Small Balance Credit Card Waiver (Issuers Who Waive Small Balances)",
       "summary_en": "",
-      "title_zh": "Small Balance Credit Card Waiver (Issuers Who Waive Small Balances)",
-      "summary_zh": "",
-      "title_es": "Small Balance Credit Card Waiver (Issuers Who Waive Small Balances)",
-      "summary_es": ""
+      "title_zh": "小額餘額信用卡費用減免（提供小額餘額減免的發卡機構）",
+      "summary_zh": "多家信用卡公司針對小額餘額提供費用減免優惠。",
+      "title_es": "Exención de saldo pequeño en tarjetas de crédito (emisores que renuncian a saldos pequeños)",
+      "summary_es": "Algunos emisores de tarjetas de crédito perdonan los saldos pequeños."
     },
     {
       "title": "Citi / AAdvantage Platinum Select World Elite MasterCard – 80,000 Miles With $3,500 Spend",
@@ -45,10 +80,10 @@
       "ts": "2026-08-10T18:00:28.000Z",
       "title_en": "Citi / AAdvantage Platinum Select World Elite MasterCard – 80,000 Miles With $3,500 Spend",
       "summary_en": "",
-      "title_zh": "Citi / AAdvantage Platinum Select World Elite MasterCard – 80,000 Miles With $3,500 Spend",
-      "summary_zh": "",
-      "title_es": "Citi / AAdvantage Platinum Select World Elite MasterCard – 80,000 Miles With $3,500 Spend",
-      "summary_es": ""
+      "title_zh": "Citi / AAdvantage Platinum Select World Elite Mastercard——消費 $3,500 可獲得 80,000 里數",
+      "summary_zh": "持 Citi AAdvantage Platinum Select World Elite Mastercard 消費 $3,500 可獲得 80,000 里數獎勵。",
+      "title_es": "Citi / AAdvantage Platinum Select World Elite MasterCard – 80 000 millas al gastar $3 500",
+      "summary_es": "La tarjeta Citi AAdvantage Platinum Select regala 80 000 millas a quienes gasten $3 500."
     },
     {
       "title": "AmEx Offers: AT&T Wireless $50 off $65",
@@ -62,10 +97,10 @@
       "ts": "2026-08-10T16:00:43.000Z",
       "title_en": "AmEx Offers: AT&T Wireless $50 off $65",
       "summary_en": "",
-      "title_zh": "AmEx Offers: AT&T Wireless $50 off $65",
-      "summary_zh": "",
-      "title_es": "AmEx Offers: AT&T Wireless $50 off $65",
-      "summary_es": ""
+      "title_zh": "AmEx 優惠：AT&T 行動通訊消費 $65 可減 $50",
+      "summary_zh": "美國運通卡提供 AT&T 行動通訊消費滿 $65 即減 $50 的優惠。",
+      "title_es": "Oferta de Amex: AT&T Wireless con $50 de descuento sobre $65",
+      "summary_es": "American Express ofrece un descuento de $50 en los planes de AT&T Wireless de $65."
     },
     {
       "title": "Amex Offers: New AT&T Fiber Internet, Spend $55 & Get $50",
@@ -77,28 +112,10 @@
       "ts": "2026-08-10T15:59:29.000Z",
       "title_en": "Amex Offers: New AT&T Fiber Internet, Spend $55 & Get $50",
       "summary_en": "",
-      "title_zh": "Amex Offers: New AT&T Fiber Internet, Spend $55 & Get $50",
-      "summary_zh": "",
-      "title_es": "Amex Offers: New AT&T Fiber Internet, Spend $55 & Get $50",
-      "summary_es": ""
-    },
-    {
-      "title": "[8/10 & 8/17] Dunkin: Free Refresher With Promo Code ?? At 12PM ET",
-      "url": "https://www.doctorofcredit.com/dunkin-free-refresher-with-promo-code-dunkindi3hards/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "dunkin",
-        "free drinks",
-        "freebies"
-      ],
-      "ts": "2026-08-10T15:45:51.000Z",
-      "title_en": "[8/10 & 8/17] Dunkin: Free Refresher With Promo Code ?? At 12PM ET",
-      "summary_en": "",
-      "title_zh": "[8/10 & 8/17] Dunkin: Free Refresher With Promo Code ?? At 12PM ET",
-      "summary_zh": "",
-      "title_es": "[8/10 & 8/17] Dunkin: Free Refresher With Promo Code ?? At 12PM ET",
-      "summary_es": ""
+      "title_zh": "Amex 優惠：新 AT&T 光纖網路，消費 $55 可獲得 $50 回饋",
+      "summary_zh": "美國運通卡推出新 AT&T 光纖網路優惠，消費 $55 可獲得 $50。",
+      "title_es": "Oferta de Amex: Nuevo Internet de fibra de AT&T, gasta $55 y obtén $50",
+      "summary_es": "Amex ofrece $50 de beneficio al gastar $55 en el nuevo servicio de internet de fibra de AT&T."
     },
     {
       "title": "Recap: Combine Barnes & Noble Giftcards, Paze Reponds To CFPB Sephora Complaints & More",
@@ -110,10 +127,10 @@
       "ts": "2026-08-10T14:00:23.000Z",
       "title_en": "Recap: Combine Barnes & Noble Giftcards, Paze Reponds To CFPB Sephora Complaints & More",
       "summary_en": "",
-      "title_zh": "Recap: Combine Barnes & Noble Giftcards, Paze Reponds To CFPB Sephora Complaints & More",
-      "summary_zh": "",
-      "title_es": "Recap: Combine Barnes & Noble Giftcards, Paze Reponds To CFPB Sephora Complaints & More",
-      "summary_es": ""
+      "title_zh": "回顧：結合 Barnes & Noble 禮品卡、Paze 回應 CFPB 對 Sephora 的投訴及更多資訊",
+      "summary_zh": "本週回顧了 Barnes & Noble 禮品卡合併方式，以及 Paze 對 CFPB 投訴的回應等重要資訊。",
+      "title_es": "Resumen: Combina tarjetas de regalo de Barnes & Noble, Paze responde a las quejas del CFPB sobre Sephora y más",
+      "summary_es": "Este resumen incluye noticias sobre la combinación de tarjetas de regalo de Barnes & Noble, la respuesta de Paze a quejas del CFPB contra Sephora y otros temas."
     },
     {
       "title": "Best Posts Last Week: No Lifetime Language Links, $20 Off Walmart & More",
@@ -125,10 +142,10 @@
       "ts": "2026-08-10T13:00:02.000Z",
       "title_en": "Best Posts Last Week: No Lifetime Language Links, $20 Off Walmart & More",
       "summary_en": "",
-      "title_zh": "Best Posts Last Week: No Lifetime Language Links, $20 Off Walmart & More",
-      "summary_zh": "",
-      "title_es": "Best Posts Last Week: No Lifetime Language Links, $20 Off Walmart & More",
-      "summary_es": ""
+      "title_zh": "上週最佳文章：無終身語言連結、Walmart $20 折扣及其他優惠",
+      "summary_zh": "上週精選文章包括無終身語言連結、Walmart 消費滿額可減 $20 等優惠資訊。",
+      "title_es": "Mejores publicaciones de la semana pasada: Sin enlaces de lenguaje de por vida, $20 de descuento en Walmart y más",
+      "summary_es": "Las publicaciones más destacadas de la semana incluyeron la falta de enlaces permanentes y un descuento de $20 en Walmart."
     },
     {
       "title": "Capital One Cafes: Free Handcrafted Drink",
@@ -141,10 +158,10 @@
       "ts": "2026-08-10T02:24:01.000Z",
       "title_en": "Capital One Cafes: Free Handcrafted Drink",
       "summary_en": "",
-      "title_zh": "Capital One Cafes: Free Handcrafted Drink",
-      "summary_zh": "",
-      "title_es": "Capital One Cafes: Free Handcrafted Drink",
-      "summary_es": ""
+      "title_zh": "Capital One 咖啡廳：免費手作飲品",
+      "summary_zh": "Capital One 咖啡廳提供免費手作飲品優惠。",
+      "title_es": "Capital One Cafes: Bebida artesanal gratuita",
+      "summary_es": "Capital One ofrece una bebida artesanal gratis en sus cafeterías."
     },
     {
       "title": "[MT & SD Only?] Gate City Bank $100 Bonus Referral Bonus, Direct Deposit Not Required (8/19 – 8/20)",
@@ -158,10 +175,10 @@
       "ts": "2026-08-10T01:05:38.000Z",
       "title_en": "[MT & SD Only?] Gate City Bank $100 Bonus Referral Bonus, Direct Deposit Not Required (8/19 – 8/20)",
       "summary_en": "",
-      "title_zh": "[MT & SD Only?] Gate City Bank $100 Bonus Referral Bonus, Direct Deposit Not Required (8/19 – 8/20)",
-      "summary_zh": "",
-      "title_es": "[MT & SD Only?] Gate City Bank $100 Bonus Referral Bonus, Direct Deposit Not Required (8/19 – 8/20)",
-      "summary_es": ""
+      "title_zh": "[僅限 MT 及 SD？] Gate City Bank 轉介紹獎金 $100，無需直接存款（8/19 – 8/20）",
+      "summary_zh": "Gate City Bank 為蒙大拿州及南達科他州客戶提供無需直接存款的 $100 轉介紹獎金。",
+      "title_es": "[¿Solo MT y SD?] Gate City Bank ofrece un bono de referido de $100, sin requerir depósito directo (8/19 – 8/20)",
+      "summary_es": "Gate City Bank otorga un bono de $100 por referido en Montana y Dakota del Sur sin necesidad de realizar un depósito directo."
     },
     {
       "title": "Office Depot/Max Stores: Buy $300 In Visa Giftcards & Get $15 Instant Discount (8/9 – 8/16)",
@@ -175,10 +192,10 @@
       "ts": "2026-08-10T00:37:14.000Z",
       "title_en": "Office Depot/Max Stores: Buy $300 In Visa Giftcards & Get $15 Instant Discount (8/9 – 8/16)",
       "summary_en": "",
-      "title_zh": "Office Depot/Max Stores: Buy $300 In Visa Giftcards & Get $15 Instant Discount (8/9 – 8/16)",
-      "summary_zh": "",
-      "title_es": "Office Depot/Max Stores: Buy $300 In Visa Giftcards & Get $15 Instant Discount (8/9 – 8/16)",
-      "summary_es": ""
+      "title_zh": "Office Depot/Max 門市：購買 $300 Visa 禮品卡即享 $15 立即折扣（8/9 – 8/16）",
+      "summary_zh": "在 Office Depot/Max 門市購買 $300 Visa 禮品卡可即時減 $15。",
+      "title_es": "Office Depot/Max Stores: Compra $300 en tarjetas de regalo Visa y obtén un descuento instantáneo de $15 (8/9 – 8/16)",
+      "summary_es": "Office Depot/Max ofrece un descuento inmediato de $15 al comprar $300 en tarjetas de regalo Visa."
     },
     {
       "title": "Walmart: $10 Off $35+ With Promo Code FAST30/DOUBLE10 (Next 3 Delivery/Pickup Orders)",
@@ -192,10 +209,10 @@
       "ts": "2026-08-09T23:16:45.000Z",
       "title_en": "Walmart: $10 Off $35+ With Promo Code FAST30/DOUBLE10 (Next 3 Delivery/Pickup Orders)",
       "summary_en": "",
-      "title_zh": "Walmart: $10 Off $35+ With Promo Code FAST30/DOUBLE10 (Next 3 Delivery/Pickup Orders)",
-      "summary_zh": "",
-      "title_es": "Walmart: $10 Off $35+ With Promo Code FAST30/DOUBLE10 (Next 3 Delivery/Pickup Orders)",
-      "summary_es": ""
+      "title_zh": "Walmart：使用促銷碼 FAST30/DOUBLE10，消費滿 $35 可減 $10（適用於接下來 3 次配送/取貨訂單）",
+      "summary_zh": "Walmart 促銷活動中，消費滿 $35 可使用優惠碼減 $10，最多適用於三次配送或取貨。",
+      "title_es": "Walmart: $10 de descuento en compras de $35+ con el código promocional FAST30/DOUBLE10 (para los próximos 3 pedidos de entrega o recogida)",
+      "summary_es": "Walmart ofrece $10 de descuento en pedidos de $35 o más usando el código FAST30 o DOUBLE10 para las próximas tres entregas o recogidas."
     },
     {
       "title": "[MO, KS, In Branch Only] OMB Bank $250 Checking Bonus",
@@ -212,10 +229,10 @@
       "ts": "2026-08-09T23:10:51.000Z",
       "title_en": "[MO, KS, In Branch Only] OMB Bank $250 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[MO, KS, In Branch Only] OMB Bank $250 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[MO, KS, In Branch Only] OMB Bank $250 Checking Bonus",
-      "summary_es": ""
+      "title_zh": "[僅限 MO、KS 臨櫃] OMB Bank 活期帳戶 $250 獎金",
+      "summary_zh": "密蘇里州與堪薩斯州的 OMB Bank 客戶臨櫃可獲得 $250 活期帳戶獎金。",
+      "title_es": "[Solo en sucursal en MO, KS] Bono de $250 por cuenta corriente en OMB Bank",
+      "summary_es": "OMB Bank ofrece un bono de $250 por abrir una cuenta corriente en sus sucursales de Misuri y Kansas."
     },
     {
       "title": "[MA, NH] Cambridge Savings Bank $800 Checking Bonus + $400 Savings",
@@ -232,28 +249,11 @@
       "ts": "2026-08-09T20:32:20.000Z",
       "title_en": "[MA, NH] Cambridge Savings Bank $800 Checking Bonus + $400 Savings",
       "summary_en": "",
-      "title_zh": "[MA, NH] Cambridge Savings Bank $800 Checking Bonus + $400 Savings",
-      "summary_zh": "",
-      "title_es": "[MA, NH] Cambridge Savings Bank $800 Checking Bonus + $400 Savings",
-      "summary_es": ""
-    },
-    {
-      "title": "[WI, In Branch Only] Johnson Financial Group $300 Checking & Up To $2,500 Savings Bonus",
-      "url": "https://www.doctorofcredit.com/wi-in-branch-only-johnson-financial-group-300-checking-up-to-2500-savings-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "direct deposit required",
-        "wi bank bonuses"
-      ],
-      "ts": "2026-08-09T17:00:28.000Z",
-      "title_en": "[WI, In Branch Only] Johnson Financial Group $300 Checking & Up To $2,500 Savings Bonus",
-      "summary_en": "",
-      "title_zh": "[WI, In Branch Only] Johnson Financial Group $300 Checking & Up To $2,500 Savings Bonus",
-      "summary_zh": "",
-      "title_es": "[WI, In Branch Only] Johnson Financial Group $300 Checking & Up To $2,500 Savings Bonus",
-      "summary_es": ""
+      "title_zh": "[MA、NH] Cambridge Savings Bank 活期帳戶獎金 $800 + 儲蓄帳戶 $400",
+      "summary_zh": "麻薩諸塞州與新罕布什爾州的 Cambridge Savings Bank 提供活期帳戶 $800 獎金與儲蓄帳戶 $400 獎金。",
+      "title_es": "[MA, NH] Cambridge Savings Bank ofrece un bono de $800 por cuenta corriente y $400 por cuenta de ahorros",
+      "summary_es": "Cambridge Savings Bank premia con $800 por una cuenta corriente y $400 por una cuenta de ahorros en Massachusetts y Nuevo Hampshire."
     }
   ],
-  "fetched": "2026-08-11T02:10:00.150Z"
+  "fetched": "2026-08-11T08:10:46.420Z"
 }
