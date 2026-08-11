@@ -31,16 +31,16 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 300000,
+      "bonus_points": 200000,
       "spending_requirement": 20000,
       "time_period_months": 3,
-      "description": "As-high-as offer: Earn up to 300,000 Membership Rewards points after spending $20,000 in eligible purchases within the first 3 months of Card Membership.",
+      "description": "As-high-as offer: Earn up to 200,000 Membership Rewards points after spending $20,000 in eligible purchases within the first 3 months of Card Membership.",
       "point_program": "MR",
       "estimated_value": 3400,
       "offer_status": "as_high_as_public_or_targeted",
       "confidence": "medium_high",
       "notes": [
-        "Amex issuer page shows 'as high as 300,000' language; exact eligibility may vary by applicant/session. Treat as high-value monitored offer, not guaranteed universal approval copy."
+        "2026-08-11 approved refresh tracks the current as-high-as 200,000-point offer; exact eligibility may vary by applicant/session."
       ],
       "source_conflicts": [
         "Amex may personalize welcome offers; lower public/session offers may appear."

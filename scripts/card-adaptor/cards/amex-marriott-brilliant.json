@@ -31,30 +31,32 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 100000,
+      "bonus_points": 150000,
       "spending_requirement": 6000,
       "time_period_months": 6,
-      "description": "Earn 100,000 Marriott Bonvoy bonus points after $6,000 in eligible purchases within the first 6 months, plus an extra 50,000 bonus points after additional eligible purchases within the first 6 months of Card Membership.",
+      "travel_credit": 250,
+      "description": "Elevated limited-time offer: Earn 150,000 Marriott Bonvoy bonus points plus a $250 travel credit after $6,000 in eligible purchases within the first 6 months of Card Membership.",
       "point_program": "Marriott Bonvoy",
-      "estimated_value": 975,
-      "offer_status": "public_with_extra_bonus_path",
+      "estimated_value": 1200,
+      "offer_status": "public_limited_time",
       "confidence": "high",
-      "is_elevated": false,
+      "is_elevated": true,
+      "expires": "2026-09-30",
       "notes": [
-        "2026-07-24 refresh: Marriott/Amex-aligned public sources show 100k/$6k/6mo plus an extra 50k path.",
-        "Replaces stale historical 125k upgrade-style offer with $0 spend / 0 months."
+        "2026-08-07 refresh: elevated Brilliant candidate set to 150k bonus points + $250 travel credit through 2026-09-30.",
+        "Keep current public 100k/$6k/6mo + extra 50k path in production card data; this config tracks the elevated candidate only."
       ],
       "source_conflicts": [
-        "Prior 200k/175k elevated Marriott family offers have expired or are no longer the public Brilliant baseline."
+        "Prior 200k/175k Marriott family offers have expired or are no longer the current Brilliant baseline."
       ],
       "last_verified": "AUTO_DATE"
     }
   },
   "citations": {
     "welcome_offer": [
-      "sources/*issuer-amex*.md:200,000",
-      "sources/*marriott*.md:200,000",
-      "sources/*doc*.md:200,000"
+      "sources/*issuer-amex*.md:150,000",
+      "sources/*marriott*.md:150,000",
+      "sources/*doc*.md:150,000"
     ]
   },
   "open_questions": [
@@ -62,16 +64,17 @@
     "If active, verify exact spend requirement, end date, and whether the offer is public, targeted, or as-high-as."
   ],
   "community": {
-    "summary": "Refresh replaces stale 125k/$0 upgrade-style production value with 100k/$6k/6mo baseline plus extra 50k path.",
+    "summary": "Track the elevated Brilliant candidate at 150k bonus points + $250 travel credit through 2026-09-30; production baseline stays separate.",
     "recommended_production_value": {
       "offer_amount": 150000,
       "spend_requirement": 6000,
       "spend_window_months": 6,
-      "status": "public_with_extra_bonus_path"
+      "status": "public_limited_time"
     },
-    "confidence": "medium_until_issuer_confirms_current_offer",
+    "confidence": "medium_high",
     "ymmv_or_targeted_possible": true,
     "conflictStanceIncludes": [
+      "100k baseline",
       "125k upgrade offer",
       "expired 200k offer"
     ],
@@ -79,12 +82,12 @@
       {
         "sourceType": "issuer",
         "source": "American Express Marriott Bonvoy Brilliant page",
-        "regex": "200,000|6,000|6 months|Offer Ends",
-        "stance": "supports_200k_if_current_issuer_terms_present",
-        "offer_amount": 200000,
+        "regex": "150,000|6,000|6 months|Offer Ends|250 travel",
+        "stance": "supports_150k_if_current_issuer_terms_present",
+        "offer_amount": 150000,
         "spend_requirement": 6000,
         "spend_window_months": 6,
-        "excerpt": "Issuer page should be checked for active 200,000-point Brilliant welcome offer terms.",
+        "excerpt": "Issuer page should be checked for active 150,000-point Brilliant welcome offer terms plus travel credit.",
         "confidence": "high_if_present"
       }
     ]

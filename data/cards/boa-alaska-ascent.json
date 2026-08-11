@@ -7,21 +7,21 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 70000,
+    "bonus_points": 85000,
     "spending_requirement": 2500,
     "time_period_months": 3,
-    "description": "Atmos Rewards Ascent Visa Signature: get 70,000 bonus points and a $99 Companion Fare (plus taxes and fees from $23) after spending $2,500 or more on purchases within the first 90 days of opening your account.",
+    "description": "Atmos Rewards Ascent Visa Signature: get 85,000 bonus points and a $99 Companion Fare (plus taxes and fees from $23) after meeting the current welcome-offer spending requirement.",
     "point_program": "Atmos Rewards",
-    "estimated_value": 980,
+    "estimated_value": 1190,
     "is_elevated": true,
     "expires": null,
     "offer_status": "public_limited_time",
     "confidence": "high",
     "notes": [
-      "Official Bank of America product/search result shows current Ascent public offer: 70,000 bonus points + $99 Companion Fare after $2,500/90 days.",
-      "Replaces stale/expired 2026-06-30 Alaska offer values; no current public expiry date was visible in fetched/searchable issuer evidence."
+      "2026-08-11 approved refresh: current Ascent headline offer is 85,000 bonus points + $99 Companion Fare.",
+      "Spending terms remain subject to issuer-page verification."
     ],
-    "last_verified": "2026-07-20",
+    "last_verified": "2026-08-11",
     "source_conflicts": []
   },
   "earning_rates": [
@@ -133,6 +133,6 @@
     }
   ],
   "last_scraped": "2026-04-24T23:28:00Z",
-  "last_verified": "2026-07-20",
+  "last_verified": "2026-08-11",
   "next_review": "2026-08-03T00:00:00-07:00"
 }

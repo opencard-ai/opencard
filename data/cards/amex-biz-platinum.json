@@ -173,10 +173,10 @@
     }
   ],
   "welcome_offer": {
-    "bonus_points": 300000,
+    "bonus_points": 200000,
     "spending_requirement": 20000,
     "time_period_months": 3,
-    "description": "Earn 300,000 Membership Rewards points when you spend $20,000 within 3 months of account opening",
+    "description": "Earn up to 200,000 Membership Rewards points when you spend $20,000 within 3 months of account opening.",
     "point_program": "MR",
     "estimated_value": 3400,
     "is_elevated": true
@@ -188,7 +188,7 @@
     "last_updated": "2026-05-07"
   },
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-07-15T20:08:19.000Z",
+  "last_verified": "2026-08-11",
   "next_review": "2026-07-15T13:41:49.942000+00:00",
   "featured": true
 }

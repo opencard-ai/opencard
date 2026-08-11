@@ -7,21 +7,20 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 80000,
-    "spending_requirement": 4000,
+    "bonus_points": 100000,
+    "spending_requirement": 6000,
     "time_period_months": 3,
-    "description": "Atmos Rewards Summit Visa Infinite: earn 80,000 bonus points and a 25,000-point Global Companion Award after spending $4,000 or more on purchases within the first 90 days of opening your account.",
+    "description": "Atmos Rewards Summit Visa Infinite: earn 100,000 bonus points and a 25,000-point Global Companion Award after spending $6,000 or more on purchases within the first 90 days of opening your account.",
     "point_program": "Atmos Rewards",
-    "estimated_value": 1120,
+    "estimated_value": 1400,
     "is_elevated": true,
     "expires": null,
-    "offer_status": "public_limited_time",
+    "offer_status": "public_elevated",
     "confidence": "high",
     "notes": [
-      "Official Bank of America product/search result shows current Summit public offer: 80,000 bonus points + 25,000-point Global Companion Award after $4,000/90 days.",
-      "Replaces stale/expired 2026-06-30 Alaska offer values; no current public expiry date was visible in fetched/searchable issuer evidence."
+      "2026-08-11 approved refresh: current Summit offer is 100,000 points + 25,000-point Global Companion Award after $6,000/90 days."
     ],
-    "last_verified": "2026-07-20",
+    "last_verified": "2026-08-11",
     "source_conflicts": []
   },
   "earning_rates": [
@@ -97,7 +96,7 @@
       "notes": "Secondary report on July 2026 Atmos offer refresh."
     }
   ],
-  "last_updated": "2026-07-05T15:10:00.000-07:00",
+  "last_updated": "2026-08-07T05:25:00.000Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -141,7 +140,7 @@
       "reset_type": "cardmember_year"
     }
   ],
-  "last_scraped": "2026-04-24T23:28:00Z",
-  "last_verified": "2026-07-20",
-  "next_review": "2026-08-03T00:00:00-07:00"
+  "last_scraped": "2026-07-29T17:53:57Z",
+  "last_verified": "2026-08-11",
+  "next_review": "2026-09-05T00:00:00.000-07:00"
 }

@@ -25,35 +25,37 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 70000,
+      "bonus_points": 100000,
       "spending_requirement": 4000,
       "time_period_months": 3,
-      "description": "Earn up to 70,000 bonus miles + 500 PQP: 60,000 miles + 500 PQP after spending $4,000 in the first 3 months, plus 10,000 miles after adding an authorized user in the first 3 months.",
+      "description": "Limited-time offer: Earn up to 100,000 United MileagePlus bonus miles after spending $4,000 in the first 3 months.",
       "point_program": "United MileagePlus",
-      "estimated_value": 945,
-      "offer_status": "public",
+      "estimated_value": 1350,
+      "offer_status": "public_limited_time",
       "confidence": "high",
       "notes": [
-        "Official Chase page checked 2026-06-30 supports up-to-70k + 500 PQP; prior 90k/100k review notes are stale/expired."
+        "2026-08-11 approved refresh tracks the current elevated 100k headline offer."
       ],
       "source_conflicts": [
-        "Prior 90k/100k variants appear stale or non-current."
+        "Prior 70k structure remains the recorded normal baseline."
       ],
-      "last_verified": "AUTO_DATE"
+      "last_verified": "AUTO_DATE",
+      "is_elevated": true,
+      "normal_bonus_points": 70000
     }
   },
   "citations": {
     "welcome_offer": [
-      "sources/*issuer-chase*.md:90,000",
-      "sources/*issuer-chase*.md:3,000 PQP",
+      "sources/*issuer-chase*.md:60,000",
+      "sources/*issuer-chase*.md:500 PQP",
       "sources/*issuer-chase*.md:$4,000"
     ]
   },
   "open_questions": [
-    "Production data card currently appears to hold 90k + PQP; update to current official 70k + 500 PQP if applying."
+    "Production data card should keep the 70k headline but align the base bonus to the current 60k + 10k AU structure."
   ],
   "community": {
-    "summary": "Official Chase United Quest page supports current up-to-70k + 500 PQP structure, not 90k/100k.",
+    "summary": "Official Chase United Quest page supports current up-to-70k + 500 PQP structure, with 60k base + 10k AU bonus.",
     "recommended_production_value": {
       "offer_amount": 70000,
       "spend_requirement": 4000,

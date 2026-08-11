@@ -32,20 +32,21 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 140000,
-      "spending_requirement": 3000,
-      "time_period_months": 3,
-      "description": "Earn 140,000 IHG One Rewards bonus points after spending $3,000 in purchases in the first 3 months from account opening. Prior 185,000 tiered limited-time offer ended 2026-06-25.",
+      "bonus_points": 185000,
+      "spending_requirement": 6000,
+      "time_period_months": 6,
+      "description": "Limited-time tiered offer: Earn up to 185,000 IHG One Rewards bonus points after spending $6,000 in purchases in the first 6 months from account opening.",
       "point_program": "IHG Rewards",
-      "estimated_value": 700,
-      "offer_status": "public",
+      "estimated_value": 925,
+      "offer_status": "public_limited_time",
       "confidence": "high",
       "notes": [
-        "Official Chase page checked 2026-06-30 shows 140,000 points after $3,000 / 3 months.",
-        "Prior up-to-185,000 offer ended 2026-06-25 and should be treated as expired/historical."
+        "2026-08-11 approved refresh tracks the current up-to-185,000-point tiered offer.",
+        "The 140,000-point offer remains the recorded normal baseline."
       ],
       "source_conflicts": [],
       "last_verified": "AUTO_DATE",
+      "is_elevated": true,
       "normal_bonus_points": 140000
     }
   },

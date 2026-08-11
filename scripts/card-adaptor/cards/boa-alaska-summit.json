@@ -25,20 +25,20 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 80000,
-      "spending_requirement": 4000,
+      "bonus_points": 100000,
+      "spending_requirement": 6000,
       "time_period_months": 3,
-      "description": "Atmos Rewards Summit Visa Infinite: earn 80,000 bonus points and a 25,000-point Global Companion Award after spending $4,000 or more on purchases within the first 90 days of opening your account.",
+      "description": "Atmos Rewards Summit Visa Infinite: earn 100,000 bonus points and a 25,000-point Global Companion Award after spending $6,000 or more on purchases within the first 90 days of opening your account.",
       "point_program": "Atmos Rewards",
-      "estimated_value": 1120,
+      "estimated_value": 1400,
       "offer_status": "public_limited_time",
       "confidence": "high",
       "notes": [
-        "Official Bank of America product/search result shows current Summit public offer: 80,000 bonus points + 25,000-point Global Companion Award after $4,000/90 days.",
+        "Official Bank of America / Alaska source check shows current Summit public offer: 100,000 bonus points + 25,000-point Global Companion Award after $6,000/90 days.",
         "Replaces stale/expired 2026-06-30 Alaska offer values; no current public expiry date was visible in fetched/searchable issuer evidence."
       ],
       "source_conflicts": [],
-      "last_verified": "2026-07-17",
+      "last_verified": "2026-07-29",
       "is_elevated": true,
       "expires": null
     }
@@ -46,25 +46,22 @@
   "citations": {
     "welcome_offer": [
       "sources/*issuer-boa*.md:100,000",
-      "sources/*issuer-boa*.md:$5,000",
+      "sources/*issuer-boa*.md:$6,000",
       "sources/*doc*.md:Atmos Summit"
     ]
   },
   "open_questions": [
-    "Confirm whether 2026-06-30 expiry is still correct or whether offer extended/changed.",
-    "Summit 100k remains live as a limited-time online offer according to Bank of America search-visible source and secondary sources; spend requirement differs across secondary snippets and should be issuer-verified before production apply.",
-    "Refresh official issuer/apply source before promoting this offer; expired 2026-06-30 values must not be applied as current/elevated."
+    "Confirm whether Bank of America extends or rotates the Summit 100k / $6k / 90d offer later in the cycle."
   ],
   "community": {
-    "summary": "Summit 100k remains live as a limited-time online offer according to Bank of America search-visible source and secondary sources; spend requirement differs across secondary snippets and should be issuer-verified before production apply.",
+    "summary": "Track Atmos Rewards Summit on the current 100k + 25k Global Companion Award public limited-time offer.",
     "recommended_production_value": {
       "offer_amount": 100000,
-      "spend_requirement": 5000,
+      "spend_requirement": 6000,
       "spend_window_months": 3,
-      "status": "expired_review_required",
-      "expires": "2026-06-30"
+      "status": "public_limited_time"
     },
-    "confidence": "medium_until_issuer_snapshot_present",
+    "confidence": "high",
     "ymmv_or_targeted_possible": false,
     "conflictStanceIncludes": [
       "105k phone offer"
@@ -73,12 +70,12 @@
       {
         "sourceType": "issuer",
         "source": "Bank of America Atmos Summit page",
-        "regex": "100,000|\\$5,000|90 days|Atmos Summit",
+        "regex": "100,000|\\$6,000|90 days|Atmos Summit",
         "stance": "supports_100k_public_limited_time",
         "offer_amount": 100000,
-        "spend_requirement": 5000,
+        "spend_requirement": 6000,
         "spend_window_months": 3,
-        "excerpt": "BoA page should show 100k miles after $5k/90 days for Atmos Summit.",
+        "excerpt": "BoA page shows 100k points + 25k Global Companion Award after $6k/90 days.",
         "confidence": "high_if_present"
       }
     ]

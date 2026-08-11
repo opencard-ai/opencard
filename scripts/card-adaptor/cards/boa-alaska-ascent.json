@@ -6,14 +6,14 @@
     {
       "id": "01-issuer-boa",
       "type": "issuer",
-      "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-atmos-ascent-credit-card/",
+      "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/",
       "method": "fetch",
       "required": true
     },
     {
       "id": "02-alaska",
       "type": "issuer",
-      "url": "https://www.alaskaair.com/content/visa-signature-card",
+      "url": "https://www.alaskaair.com/atmosrewards/content/credit-cards/visa-ascent",
       "method": "get"
     },
     {
@@ -25,58 +25,63 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 70000,
+      "bonus_points": 85000,
       "spending_requirement": 2500,
       "time_period_months": 3,
-      "description": "Atmos Rewards Ascent Visa Signature: get 70,000 bonus points and a $99 Companion Fare (plus taxes and fees from $23) after spending $2,500 or more on purchases within the first 90 days of opening your account.",
+      "description": "Atmos Rewards Ascent Visa Signature: get 85,000 bonus points and a $99 Companion Fare after meeting the current welcome-offer spending requirement.",
       "point_program": "Atmos Rewards",
-      "estimated_value": 980,
+      "estimated_value": 1190,
       "offer_status": "public_limited_time",
       "confidence": "high",
       "notes": [
-        "Official Bank of America product/search result shows current Ascent public offer: 70,000 bonus points + $99 Companion Fare after $2,500/90 days.",
-        "Replaces stale/expired 2026-06-30 Alaska offer values; no current public expiry date was visible in fetched/searchable issuer evidence."
+        "2026-08-11 approved refresh tracks the current 85,000-point headline offer.",
+        "Confirm exact spending terms against the issuer page before automated production apply.",
+        "Keep production card JSON untouched; this config is adaptor-only."
       ],
-      "source_conflicts": [],
-      "last_verified": "2026-07-17",
+      "source_conflicts": [
+        "Older 85k / $4,500 / 120-day watchlist guidance appears stale against the live page."
+      ],
+      "last_verified": "2026-07-21",
       "is_elevated": true,
       "expires": null
-    }
+    },
+    "caveats": [
+      "Keep production card JSON untouched; this config is adaptor-only."
+    ]
   },
   "citations": {
     "welcome_offer": [
-      "sources/*issuer-boa*.md:85,000",
-      "sources/*issuer-boa*.md:$4,000",
-      "sources/*doc*.md:Atmos Ascent"
+      "sources/*issuer-boa*.md:70,000",
+      "sources/*issuer-boa*.md:$2,500",
+      "sources/*issuer-boa*.md:90 days"
     ]
   },
   "open_questions": [
-    "Confirm whether 2026-06-30 expiry is still correct or whether offer extended/changed.",
-    "Ascent regular Bank of America public page currently shows a lower 50k + companion fare offer; 85k appears to be special/elevated link/secondary-source offer and should not be treated as guaranteed public baseline.",
-    "Refresh official issuer/apply source before promoting this offer; expired 2026-06-30 values must not be applied as current/elevated."
+    "Confirm whether BofA rotates back to an 85k elevated variant later in the cycle."
   ],
   "community": {
-    "summary": "Ascent regular Bank of America public page currently shows a lower 50k + companion fare offer; 85k appears to be special/elevated link/secondary-source offer and should not be treated as guaranteed public baseline.",
+    "summary": "Track Atmos Rewards Ascent on the current 70k + $99 Companion Fare public limited-time offer.",
     "recommended_production_value": {
-      "offer_amount": 85000,
-      "spend_requirement": 4000,
+      "offer_amount": 70000,
+      "spend_requirement": 2500,
       "spend_window_months": 3,
-      "status": "expired_review_required",
-      "expires": "2026-06-30"
+      "status": "public_limited_time"
     },
-    "confidence": "medium_until_issuer_snapshot_present",
+    "confidence": "high",
     "ymmv_or_targeted_possible": false,
-    "conflictStanceIncludes": [],
+    "conflictStanceIncludes": [
+      "85k stale watchlist"
+    ],
     "observations": [
       {
         "sourceType": "issuer",
         "source": "Bank of America Atmos Ascent page",
-        "regex": "85,000|\\$4,000|3 months|Atmos Ascent",
-        "stance": "supports_85k_public_limited_time",
-        "offer_amount": 85000,
-        "spend_requirement": 4000,
+        "regex": "70,000|\\$2,500|90 days",
+        "stance": "supports_70k_public_limited_time",
+        "offer_amount": 70000,
+        "spend_requirement": 2500,
         "spend_window_months": 3,
-        "excerpt": "BoA page should show 85k miles after $4k/3mo for Atmos Ascent.",
+        "excerpt": "BoA page shows 70k bonus points + $99 Companion Fare after $2,500/90 days.",
         "confidence": "high_if_present"
       }
     ]

@@ -31,30 +31,32 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 85000,
+      "bonus_points": 125000,
       "spending_requirement": 5000,
       "time_period_months": 6,
-      "description": "Earn 85,000 Marriott Bonvoy bonus points after spending $5,000 in purchases within the first 6 months.",
+      "travel_credit": 150,
+      "description": "Elevated limited-time offer: Earn 125,000 Marriott Bonvoy bonus points plus a $150 travel credit after spending $5,000 in purchases within the first 6 months.",
       "point_program": "Marriott Bonvoy",
-      "estimated_value": 553,
-      "offer_status": "public",
+      "estimated_value": 950,
+      "offer_status": "public_limited_time",
       "confidence": "high",
-      "is_elevated": false,
+      "is_elevated": true,
+      "expires": "2026-09-30",
       "notes": [
-        "2026-07-24 refresh: Amex issuer result shows 85k/$5k/6mo as current public Bevy offer.",
-        "Replaces stale 175k elevated offer that expired in the March-May 2026 cycle."
+        "2026-08-07 refresh: elevated Bevy candidate set to 125k bonus points + $150 travel credit through 2026-09-30.",
+        "Keep current public 85k/$5k/6mo baseline in production card data; this config tracks the elevated candidate only."
       ],
       "source_conflicts": [
-        "Some Marriott-family pages/secondary sources mention extra 50k paths; keep Bevy production conservative at the Amex public 85k baseline unless issuer flow confirms extra tier."
+        "Some Marriott-family pages/secondary sources may mention different elevated paths; keep Bevy production conservative at the Amex public 85k baseline unless issuer flow confirms the elevated tier."
       ],
       "last_verified": "AUTO_DATE"
     }
   },
   "citations": {
     "welcome_offer": [
-      "sources/*issuer-amex*.md:175,000",
-      "sources/*marriott*.md:175,000",
-      "sources/*doc*.md:175,000"
+      "sources/*issuer-amex*.md:125,000",
+      "sources/*marriott*.md:125,000",
+      "sources/*doc*.md:125,000"
     ]
   },
   "open_questions": [
@@ -62,29 +64,30 @@
     "Confirm no lower public/session offer is replacing the elevated 175k value."
   ],
   "community": {
-    "summary": "Refresh replaces expired 175k elevated Bevy offer with current 85k/$5k/6mo Amex public baseline.",
+    "summary": "Track the elevated Bevy candidate at 125k bonus points + $150 travel credit through 2026-09-30; production baseline stays separate.",
     "recommended_production_value": {
-      "offer_amount": 85000,
+      "offer_amount": 125000,
       "spend_requirement": 5000,
       "spend_window_months": 6,
-      "status": "public"
+      "status": "public_limited_time"
     },
-    "confidence": "medium_high_when_issuer_or_marriott_page_present",
+    "confidence": "medium_high",
     "ymmv_or_targeted_possible": true,
     "conflictStanceIncludes": [
       "85k",
+      "175k",
       "125k"
     ],
     "observations": [
       {
         "sourceType": "issuer",
         "source": "American Express Marriott Bonvoy Bevy page",
-        "regex": "175,000|5,000|6 months|Offer Ends",
-        "stance": "supports_175k_public_elevated_if_present",
-        "offer_amount": 175000,
+        "regex": "125,000|5,000|6 months|Offer Ends|150 travel",
+        "stance": "supports_125k_if_current_issuer_terms_present",
+        "offer_amount": 125000,
         "spend_requirement": 5000,
         "spend_window_months": 6,
-        "excerpt": "Issuer page should be checked for active 175,000-point Bevy welcome offer terms.",
+        "excerpt": "Issuer page should be checked for active 125,000-point Bevy welcome offer terms plus travel credit.",
         "confidence": "high_if_present"
       }
     ]

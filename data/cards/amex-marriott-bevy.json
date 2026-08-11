@@ -7,23 +7,25 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 85000,
+    "bonus_points": 125000,
     "spending_requirement": 5000,
     "time_period_months": 6,
-    "description": "Earn 85,000 Marriott Bonvoy bonus points after spending $5,000 in purchases within the first 6 months.",
+    "travel_credit": 150,
+    "description": "Limited-time offer: Earn 125,000 Marriott Bonvoy bonus points plus a $150 travel credit after spending $5,000 in purchases within the first 6 months.",
     "point_program": "Marriott Bonvoy",
-    "estimated_value": 553,
-    "offer_status": "public",
+    "estimated_value": 950,
+    "offer_status": "public_limited_time",
     "confidence": "high",
-    "is_elevated": false,
+    "is_elevated": true,
+    "expires": "2026-09-30",
     "notes": [
-      "2026-07-24 refresh: Amex issuer result shows 85k/$5k/6mo as current public Bevy offer.",
-      "Replaces stale 175k elevated offer that expired in the March-May 2026 cycle."
+      "2026-08-11 approved refresh: 125k points + $150 travel credit through 2026-09-30.",
+      "Replaces the prior 85k public baseline representation."
     ],
     "source_conflicts": [
       "Some Marriott-family pages/secondary sources mention extra 50k paths; keep Bevy production conservative at the Amex public 85k baseline unless issuer flow confirms extra tier."
     ],
-    "last_verified": "2026-07-24"
+    "last_verified": "2026-08-11"
   },
   "earning_rates": [
     {
@@ -130,7 +132,7 @@
   "_no_credits_found": true,
   "_no_credits_note": "Marriott Bevy ($250 AF) — primary value is Free Night after $15k spend (conditional, excluded), 15 Elite Night Credits (qualitative), Marriott Gold Elite status (qualitative), 4x grocery/dining earning (rate not credit). No fixed-USD recurring credits published. Verified 2026-04-27 vs amex.com.",
   "last_scraped": "2026-04-24T17:26:46.246653",
-  "last_verified": "2026-07-24",
+  "last_verified": "2026-08-11",
   "next_review": "2026-08-07T00:00:00.000000+00:00",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
