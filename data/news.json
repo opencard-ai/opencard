@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "title": "Southwest: Up To 40% Off Base Fares",
+      "url": "https://www.doctorofcredit.com/southwest-up-to-40-off-base-fares-2/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Travel",
+        "southwest"
+      ],
+      "ts": "2026-08-10T20:48:27.000Z",
+      "title_en": "Southwest: Up To 40% Off Base Fares",
+      "summary_en": "",
+      "title_zh": "Southwest: Up To 40% Off Base Fares",
+      "summary_zh": "",
+      "title_es": "Southwest: Up To 40% Off Base Fares",
+      "summary_es": ""
+    },
+    {
       "title": "Small Balance Credit Card Waiver (Issuers Who Waive Small Balances)",
       "url": "https://www.doctorofcredit.com/small-balance-waiver-a-k-a-lots-of-free-99-cent-amazon-gcs/",
       "source": "Doctor of Credit",
@@ -237,26 +253,7 @@
       "summary_zh": "",
       "title_es": "[WI, In Branch Only] Johnson Financial Group $300 Checking & Up To $2,500 Savings Bonus",
       "summary_es": ""
-    },
-    {
-      "title": "[TX, AZ, AR, and NM] First National Bank Texas $300 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/tx-only-first-national-bank-texas-300-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "direct deposit required",
-        "no chexsystems",
-        "no credit card funding",
-        "soft pull"
-      ],
-      "ts": "2026-08-09T16:00:27.000Z",
-      "title_en": "[TX, AZ, AR, and NM] First National Bank Texas $300 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[TX, AZ, AR, and NM] First National Bank Texas $300 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[TX, AZ, AR, and NM] First National Bank Texas $300 Checking Bonus",
-      "summary_es": ""
     }
   ],
-  "fetched": "2026-08-10T20:10:04.800Z"
+  "fetched": "2026-08-11T02:10:00.150Z"
 }
