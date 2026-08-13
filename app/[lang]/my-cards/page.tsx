@@ -35,6 +35,7 @@ const MESSAGES = {
     upcoming: "Annual",
     expiresSoon: "Expires soon",
     annualFeeReminder: "Annual fee due",
+    totalAnnualFees: "Annual fees",
     noSubscriptions: "No benefit reminders set up yet",
     footer: "Data accuracy matters. Help us improve.",
     perMonth: "/month",
@@ -83,6 +84,7 @@ const MESSAGES = {
     upcoming: "年度型",
     expiresSoon: "即將到期",
     annualFeeReminder: "年費即將到期",
+    totalAnnualFees: "總年費",
     noSubscriptions: "還沒有設定福利提醒",
     footer: "資料準確性是我們的生命線。幫助我們改進。",
     perMonth: "/月",
@@ -131,6 +133,7 @@ const MESSAGES = {
     upcoming: "年度型",
     expiresSoon: "即将到期",
     annualFeeReminder: "年费即将到期",
+    totalAnnualFees: "总年费",
     noSubscriptions: "还没有设置福利提醒",
     footer: "数据准确性是我们的生命线。帮助我们改进。",
     perMonth: "/月",
@@ -179,6 +182,7 @@ const MESSAGES = {
     upcoming: "Anuales",
     expiresSoon: "Vence pronto",
     annualFeeReminder: "Cuota anual",
+    totalAnnualFees: "Cuotas anuales",
     noSubscriptions: "Sin recordatorios configurados",
     footer: "La precisión de los datos importa.",
     perMonth: "/mes",
@@ -751,6 +755,7 @@ export default function MyCardsPage({
   const totalMonthlyCredits = selectedCardsList.reduce((sum, card) => {
     return sum + (card.recurring_credits || []).filter((c) => c.frequency === "monthly").reduce((s, c) => s + (c.amount || 0), 0);
   }, 0);
+  const totalAnnualFees = selectedCardsList.reduce((sum, card) => sum + (card.annual_fee || 0), 0);
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -819,6 +824,9 @@ export default function MyCardsPage({
                 <p className="text-xs text-slate-500">{selectedCardsList.length} {m.benefits}</p>
                 <p className="text-xs text-emerald-600 mt-0.5">
                   {selectedCardsList.reduce((sum, c) => sum + (c.recurring_credits?.length || 0), 0)} credits
+                </p>
+                <p className="text-xs text-slate-500 mt-1">
+                  {m.totalAnnualFees}: <span className="font-medium text-slate-700">${totalAnnualFees.toLocaleString()}/yr</span>
                 </p>
               </div>
             </div>
