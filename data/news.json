@@ -1,6 +1,43 @@
 {
   "items": [
     {
+      "title": "Free Wine From Last Bottle Wines Via Referral (8/20)",
+      "url": "https://www.doctorofcredit.com/free-wine-from-last-bottle-wines-via-referral-8-20/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "freebies",
+        "last bottle wines"
+      ],
+      "ts": "2026-08-14T14:00:12.000Z",
+      "title_en": "Free Wine From Last Bottle Wines Via Referral (8/20)",
+      "summary_en": "",
+      "title_zh": "Free Wine From Last Bottle Wines Via Referral (8/20)",
+      "summary_zh": "",
+      "title_es": "Vino gratis de Last Bottle Wines por referencia (8/20)",
+      "summary_es": "Los usuarios pueden obtener vino gratis al referir a otros a Last Bottle Wines antes del 20 de agosto."
+    },
+    {
+      "title": "Kroger / Harris Teeter: 4x Fuel Points On Select Third Party Gift Cards (8/14-8/16) & Visa/Mastercard (8/5 – 8/18)",
+      "url": "https://www.doctorofcredit.com/kroger-harris-teeter-stores-4x-fuel-points-on-select-gift-cards-includes-fixed-visa-mc-10-7-10-20/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "fuel points",
+        "gift card deals",
+        "kroger",
+        "mastercard gift cards",
+        "visa gift cards"
+      ],
+      "ts": "2026-08-14T13:00:50.000Z",
+      "title_en": "Kroger / Harris Teeter: 4x Fuel Points On Select Third Party Gift Cards (8/14-8/16) & Visa/Mastercard (8/5 – 8/18)",
+      "summary_en": "",
+      "title_zh": "Kroger / Harris Teeter: 4x Fuel Points On Select Third Party Gift Cards (8/14-8/16) & Visa/Mastercard (8/5 – 8/18)",
+      "summary_zh": "",
+      "title_es": "Kroger / Harris Teeter: 4x puntos de combustible en tarjetas de regalo seleccionadas de terceros (8/14-8/16) y Visa/Mastercard (8/5-8/18)",
+      "summary_es": "Kroger y Harris Teeter ofrecen quadruplicar los puntos de combustible en tarjetas de regalo seleccionadas y en compras con Visa o Mastercard durante las fechas indicadas."
+    },
+    {
       "title": "[OOS] Kroger: $100 Uber/UberEats Giftcard For $85",
       "url": "https://www.doctorofcredit.com/kroger-100-uber-ubereats-giftcard-for-85/",
       "source": "Doctor of Credit",
@@ -15,8 +52,8 @@
       "summary_en": "",
       "title_zh": "[OOS] Kroger: $100 Uber/UberEats Giftcard For $85",
       "summary_zh": "",
-      "title_es": "[Agotado] Kroger: Tarjeta de regalo Uber/UberEats de $100 por $85",
-      "summary_es": "Una oferta para comprar una tarjeta de regalo de Uber o UberEats de $100 por solo $85, aunque puede estar agotada."
+      "title_es": "[Agotado] Kroger: Tarjeta de regalo de $100 Uber/UberEats por $85",
+      "summary_es": "Kroger ofrece una tarjeta de regalo de Uber o UberEats de $100 por solo $85, pero está agotada."
     },
     {
       "title": "[Targeted] AmEx Offer: MTA Tap To Pay, Spend $2+ & Receive $2 Statement Credit (Limit 5)",
@@ -32,8 +69,8 @@
       "summary_en": "",
       "title_zh": "[Targeted] AmEx Offer: MTA Tap To Pay, Spend $2+ & Receive $2 Statement Credit (Limit 5)",
       "summary_zh": "",
-      "title_es": "[Dirigido] Oferta de AmEx: MTA Tap To Pay, gasta $2+ y recibe $2 de crédito en tu estado de cuenta (Límite 5)",
-      "summary_es": "Los titulares de tarjeta AmEx pueden obtener un crédito de $2 por gastar al menos $2 en MTA Tap To Pay, hasta cinco veces."
+      "title_es": "[Dirigido] Oferta AmEx: MTA Tap To Pay, gasta $2+ y recibe $2 de crédito de estado (límite 5)",
+      "summary_es": "American Express ofrece un crédito de $2 al gastar al menos $2 en MTA Tap To Pay, hasta cinco veces."
     },
     {
       "title": "inKind Launches Beta Test Of ‘Recommendation Rewards’",
@@ -48,8 +85,8 @@
       "summary_en": "",
       "title_zh": "inKind Launches Beta Test Of ‘Recommendation Rewards’",
       "summary_zh": "",
-      "title_es": "inKind lanza prueba beta de 'Recomendación Rewards'",
-      "summary_es": "inKind está probando un nuevo programa de recompensas por recomendar productos a otros usuarios."
+      "title_es": "inKind lanza prueba beta de ‘Recommendation Rewards’",
+      "summary_es": "inKind ha iniciado una prueba beta de su programa Recommendation Rewards para recompensar a los usuarios por recomendar lugares."
     },
     {
       "title": "[Targeted] Chase, Citi Offers: Save 10%/$30 At Marriott Hotels",
@@ -65,8 +102,8 @@
       "summary_en": "",
       "title_zh": "[Targeted] Chase, Citi Offers: Save 10%/$30 At Marriott Hotels",
       "summary_zh": "",
-      "title_es": "[Dirigido] Ofertas de Chase y Citi: Ahorra 10%/$30 en hoteles Marriott",
-      "summary_es": "Los clientes de Chase y Citi pueden obtener un ahorro del 10% o hasta $30 en estancias en hoteles Marriott."
+      "title_es": "[Dirigido] Ofertas de Chase, Citi: Ahorra 10%/$30 en hoteles Marriott",
+      "summary_es": "Chase y Citi ofrecen un ahorro del 10% o hasta $30 en estancias en hoteles Marriott para clientes seleccionados."
     },
     {
       "title": "[Targeted] U.S. Bank Travel: $100 Off $500 Hotel Booking",
@@ -83,8 +120,8 @@
       "summary_en": "",
       "title_zh": "[Targeted] U.S. Bank Travel: $100 Off $500 Hotel Booking",
       "summary_zh": "",
-      "title_es": "[Dirigido] Viajes de U.S. Bank: $100 de descuento en reservas de hotel de $500",
-      "summary_es": "U.S. Bank ofrece un descuento de $100 al reservar un hotel de al menos $500."
+      "title_es": "[Dirigido] U.S. Bank Travel: $100 de descuento en reservas de hotel de $500",
+      "summary_es": "U.S. Bank Travel ofrece un descuento de $100 al reservar hoteles por al menos $500."
     },
     {
       "title": "Meijer Mperks: 10,000 Points On $100 Visa Giftcard (Valid Until 8/18)",
@@ -100,8 +137,8 @@
       "summary_en": "",
       "title_zh": "Meijer Mperks: 10,000 Points On $100 Visa Giftcard (Valid Until 8/18)",
       "summary_zh": "",
-      "title_es": "Meijer Mperks: 10,000 puntos al comprar una tarjeta de regalo Visa de $100 (Válido hasta el 18/8)",
-      "summary_es": "Los miembros de Meijer Mperks pueden ganar 10,000 puntos al comprar una tarjeta de regalo Visa de $100 antes del 18 de agosto."
+      "title_es": "Meijer Mperks: 10,000 puntos en tarjeta de regalo Visa de $100 (válido hasta 8/18)",
+      "summary_es": "Meijer ofrece 10,000 puntos Mperks al comprar una tarjeta de regalo Visa de $100, canjeables hasta el 18 de agosto."
     },
     {
       "title": "Capital One Shopping: Spend $100 On Car Rentals & Get $100 Back",
@@ -134,8 +171,8 @@
       "summary_en": "",
       "title_zh": "Capital One Shopping: Up To 40% Back On Fanatics (Stack With Paze)",
       "summary_zh": "",
-      "title_es": "Capital One Shopping: Hasta 40% de reembolso en Fanatics (se puede combinar con Paze)",
-      "summary_es": "Los usuarios de Capital One Shopping pueden obtener hasta un 40% de cashback en compras de Fanatics, además de la promoción de Paze."
+      "title_es": "Capital One Shopping: Hasta 40% de regreso en Fanatics (combina con Paze)",
+      "summary_es": "Capital One Shopping ofrece hasta un 40% de reembolso en compras de Fanatics, compatible con la oferta de Paze."
     },
     {
       "title": "Chase Offers: 7% Cashback at Hyatt Place",
@@ -152,8 +189,8 @@
       "summary_en": "",
       "title_zh": "Chase Offers: 7% Cashback at Hyatt Place",
       "summary_zh": "",
-      "title_es": "Ofertas de Chase: 7% de cashback en Hyatt Place",
-      "summary_es": "Los tarjetahabientes de Chase reciben un 7% de reembolso al alojarse en Hyatt Place."
+      "title_es": "Ofertas Chase: 7% de devolución en Hyatt Place",
+      "summary_es": "Chase ofrece un 7% de cashback en reservas de Hyatt Place."
     },
     {
       "title": "Rakuten: 100x Back on CyberGhostVPN, NordPass, NordVPN, Coveron, ExpressVPN",
@@ -168,8 +205,8 @@
       "summary_en": "",
       "title_zh": "Rakuten: 100x Back on CyberGhostVPN, NordPass, NordVPN, Coveron, ExpressVPN",
       "summary_zh": "",
-      "title_es": "Rakuten: 100 veces de devolución en CyberGhostVPN, NordPass, NordVPN, Coveron y ExpressVPN",
-      "summary_es": "Rakuten ofrece una devolución 100 veces mayor al comprar suscripciones de CyberGhostVPN, NordPass, NordVPN, Coveron o ExpressVPN."
+      "title_es": "Rakuten: 100x puntos en CyberGhostVPN, NordPass, NordVPN, Coveron, ExpressVPN",
+      "summary_es": "Rakuten otorga 100 veces los puntos habituales al comprar suscripciones de CyberGhostVPN, NordPass, NordVPN, Coveron o ExpressVPN."
     },
     {
       "title": "Free Year Of Coinbase One",
@@ -205,8 +242,8 @@
       "summary_en": "",
       "title_zh": "Comenity Surveys Possible AAA Daily Advantage Changes (No More 5% Grocery?)",
       "summary_zh": "",
-      "title_es": "Encuestas de Comenity sugieren posibles cambios en AAA Daily Advantage (¿Fin del 5% en compras de supermercado?)",
-      "summary_es": "Las encuestas de Comenity indican que AAA podría modificar el beneficio de 5% en supermercados."
+      "title_es": "Encuestas de Comenity podrían modificar AAA Daily Advantage (¿Se elimina el 5% en supermercados?)",
+      "summary_es": "Las encuestas de Comenity sugieren posibles cambios en AAA Daily Advantage, incluyendo la posible eliminación del 5% de descuento en supermercados."
     },
     {
       "title": "[YMMV] Chase Increased Sign Up Bonuses (175k Chase Sapphire Reserve, 125k Chase Sapphire Preferred & More)",
@@ -225,45 +262,9 @@
       "summary_en": "",
       "title_zh": "[YMMV] Chase Increased Sign Up Bonuses (175k Chase Sapphire Reserve, 125k Chase Sapphire Preferred & More)",
       "summary_zh": "",
-      "title_es": "[YMMV] Chase incrementa bonos de bienvenida (175k Chase Sapphire Reserve, 125k Chase Sapphire Preferred y más)",
-      "summary_es": "Chase ha subido sus bonos de registro, con ofertas de hasta 175k puntos en Sapphire Reserve y 125k en Preferred."
-    },
-    {
-      "title": "Google Pixel 11 Deals (GoogleFi From $499, Amazon $150 Off + Amazon Giftcads & More)",
-      "url": "https://www.doctorofcredit.com/google-pixel-11-deals-googlefi-from-499-amazon-150-off-amazon-giftcads-more/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "amazon",
-        "google fi",
-        "google store",
-        "pixel",
-        "us mobile"
-      ],
-      "ts": "2026-08-13T03:42:47.000Z",
-      "title_en": "Google Pixel 11 Deals (GoogleFi From $499, Amazon $150 Off + Amazon Giftcads & More)",
-      "summary_en": "",
-      "title_zh": "Google Pixel 11 Deals (GoogleFi From $499, Amazon $150 Off + Amazon Giftcads & More)",
-      "summary_zh": "",
-      "title_es": "Ofertas del Google Pixel 11 (Google Fi desde $499, $150 de descuento en Amazon + tarjetas de regalo de Amazon y más)",
-      "summary_es": "El Google Pixel 11 está disponible desde $499 con Google Fi y hay descuentos de hasta $150 en Amazon, además de tarjetas de regalo."
-    },
-    {
-      "title": "Two Months of Paramount+ with promo Code p2mcs26prem For $0.99 (Works For New, Returning & Existing Customers)",
-      "url": "https://www.doctorofcredit.com/free-month-of-cbs-all-access-with-promo-code-giving-works-for-new-existing-previous-users/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "paramount+"
-      ],
-      "ts": "2026-08-13T02:00:57.000Z",
-      "title_en": "Two Months of Paramount+ with promo Code p2mcs26prem For $0.99 (Works For New, Returning & Existing Customers)",
-      "summary_en": "",
-      "title_zh": "Two Months of Paramount+ with promo Code p2mcs26prem For $0.99 (Works For New, Returning & Existing Customers)",
-      "summary_zh": "",
-      "title_es": "Dos meses de Paramount+ con el código promocional p2mcs26prem por $0.99 (Válido para clientes nuevos, que regresan y existentes)",
-      "summary_es": "Paramount+ ofrece dos meses de suscripción por solo $0.99 usando el código p2mcs26prem."
+      "title_es": "[YMMV] Chase aumenta bonos de bienvenida (175k Chase Sapphire Reserve, 125k Chase Sapphire Preferred y más)",
+      "summary_es": "Chase ha incrementado sus bonos de registro, con ofertas de hasta 175k puntos para Sapphire Reserve y 125k para Sapphire Preferred, entre otros."
     }
   ],
-  "fetched": "2026-08-14T08:11:52.501Z"
+  "fetched": "2026-08-14T14:10:02.500Z"
 }
