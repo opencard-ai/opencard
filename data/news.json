@@ -1,6 +1,63 @@
 {
   "items": [
     {
+      "title": "[WI, MN, IL] Verve, A Credit Union $600/$1,000 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/wi-mn-il-verve-a-credit-union-600-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "credit card funding",
+        "direct deposit required",
+        "IL bank bonuses",
+        "mn bank bonuses",
+        "soft pull",
+        "wi bank bonuses"
+      ],
+      "ts": "2026-08-15T18:00:02.000Z",
+      "title_en": "[WI, MN, IL] Verve, A Credit Union $600/$1,000 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[WI, MN, IL] Verve, A Credit Union $600/$1,000 Checking Bonus",
+      "summary_zh": "",
+      "title_es": "[WI, MN, IL] Verve, A Credit Union $600/$1,000 Checking Bonus",
+      "summary_es": ""
+    },
+    {
+      "title": "[CA only] KeyPoint Credit Union $500 Business Checking Bonus",
+      "url": "https://www.doctorofcredit.com/ca-only-keypoint-credit-union-500-business-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "ca bank bonuses",
+        "credit card funding",
+        "direct deposit not required",
+        "soft pull"
+      ],
+      "ts": "2026-08-15T17:30:54.000Z",
+      "title_en": "[CA only] KeyPoint Credit Union $500 Business Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[CA only] KeyPoint Credit Union $500 Business Checking Bonus",
+      "summary_zh": "",
+      "title_es": "[CA only] KeyPoint Credit Union $500 Business Checking Bonus",
+      "summary_es": ""
+    },
+    {
+      "title": "[NY] Suffolk Credit Union $500 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/ny-suffolk-credit-union-300-checking-bonus-no-direct-deposit-required/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit not required",
+        "ny bank bonuses"
+      ],
+      "ts": "2026-08-15T16:30:46.000Z",
+      "title_en": "[NY] Suffolk Credit Union $500 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[NY] Suffolk Credit Union $500 Checking Bonus",
+      "summary_zh": "",
+      "title_es": "[NY] Suffolk Credit Union $500 Checking Bonus",
+      "summary_es": ""
+    },
+    {
       "title": "(Saturday 8/22) Krispy Kreme: Free Donut With Pokémon Attire",
       "url": "https://www.doctorofcredit.com/saturday-8-22-krispy-kreme-free-donut-with-pokemon-attire/",
       "source": "Doctor of Credit",
@@ -210,57 +267,7 @@
       "summary_zh": "",
       "title_es": "[OOS] Kroger: $100 Uber/UberEats Giftcard For $85",
       "summary_es": ""
-    },
-    {
-      "title": "[Targeted] AmEx Offer: MTA Tap To Pay, Spend $2+ & Receive $2 Statement Credit (Limit 5)",
-      "url": "https://www.doctorofcredit.com/targeted-amex-offer-mta-tap-to-pay-spend-2-receive-2-statement-credit-limit-5/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "amex offers",
-        "mta"
-      ],
-      "ts": "2026-08-13T21:58:04.000Z",
-      "title_en": "[Targeted] AmEx Offer: MTA Tap To Pay, Spend $2+ & Receive $2 Statement Credit (Limit 5)",
-      "summary_en": "",
-      "title_zh": "[Targeted] AmEx Offer: MTA Tap To Pay, Spend $2+ & Receive $2 Statement Credit (Limit 5)",
-      "summary_zh": "",
-      "title_es": "[Targeted] AmEx Offer: MTA Tap To Pay, Spend $2+ & Receive $2 Statement Credit (Limit 5)",
-      "summary_es": ""
-    },
-    {
-      "title": "inKind Launches Beta Test Of ‘Recommendation Rewards’",
-      "url": "https://www.doctorofcredit.com/inkind-launches-beta-test-of-recommendation-rewards/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "inkind"
-      ],
-      "ts": "2026-08-13T21:37:43.000Z",
-      "title_en": "inKind Launches Beta Test Of ‘Recommendation Rewards’",
-      "summary_en": "",
-      "title_zh": "inKind Launches Beta Test Of ‘Recommendation Rewards’",
-      "summary_zh": "",
-      "title_es": "inKind Launches Beta Test Of ‘Recommendation Rewards’",
-      "summary_es": ""
-    },
-    {
-      "title": "[Targeted] Chase, Citi Offers: Save 10%/$30 At Marriott Hotels",
-      "url": "https://www.doctorofcredit.com/targeted-chase-offers-save-15-on-marriott-hotels-max-85-savings/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "chase offers",
-        "marriott"
-      ],
-      "ts": "2026-08-13T18:00:53.000Z",
-      "title_en": "[Targeted] Chase, Citi Offers: Save 10%/$30 At Marriott Hotels",
-      "summary_en": "",
-      "title_zh": "[Targeted] Chase, Citi Offers: Save 10%/$30 At Marriott Hotels",
-      "summary_zh": "",
-      "title_es": "[Targeted] Chase, Citi Offers: Save 10%/$30 At Marriott Hotels",
-      "summary_es": ""
     }
   ],
-  "fetched": "2026-08-15T14:10:04.130Z"
+  "fetched": "2026-08-15T20:09:43.152Z"
 }
