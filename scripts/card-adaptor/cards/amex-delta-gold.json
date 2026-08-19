@@ -34,9 +34,16 @@
       "type": "tpg",
       "url": "https://thepointsguy.com/credit-cards/delta-amex-current-offers/",
       "method": "get"
+    },
+    {
+      "id": "06-cnbc-current-offers",
+      "type": "cnbc",
+      "url": "https://www.cnbc.com/select/amex-delta-card-offers/",
+      "method": "get"
     }
   ],
   "candidate": {
+    "annual_fee_description": "$0 introductory annual fee for the first year, then $150.",
     "welcome_offer": {
       "bonus_points": 80000,
       "spending_requirement": 2000,
@@ -57,6 +64,9 @@
     "caveats": []
   },
   "citations": {
+    "annual_fee_description": [
+      "sources/*cnbc*.md:$0 intro annual fee for the first year"
+    ],
     "welcome_offer": [
       "sources/*delta-news*.md:New Delta SkyMiles Gold American Express Card Members can earn 70,000 bonus miles after spending $3,000... plus an additional 20,000 bonus miles after spending an additional $2,000...",
       "sources/*delta-personal*.md:Earn Up to 90,000 Miles"
