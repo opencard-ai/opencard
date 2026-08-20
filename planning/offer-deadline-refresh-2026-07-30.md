@@ -47,6 +47,19 @@
    - Acceptance: Validate Card Data and Secret Scan pass for the pushed commit.
    - Result: Commit `d679075e` passed Validate Card Data and Secret Scan.
 
+6. 2026-08-20 post-deadline watch (follow-up)
+   - Owner: Kacey
+   - Status: completed
+   - Priority: high
+   - Deliverable: Verify Hyatt 75K expiry, IHG 185K→140K, August business offers (CSR Biz, Ink Unlimited, Ink Cash).
+   - Acceptance: Each card verified against issuer source; production + adaptor refreshed where the source confirms a change.
+   - Result:
+     - **Chase Hyatt (chase-hyatt.json)**: Chase issuer page still shows 75K on the last day of the offer (expires 2026-08-20). Updated last_verified to 2026-08-20, refreshed notes to flag the 60K standard public offer expected to replace 75K on 2026-08-21, pushed next_review to 2026-08-21. No downgrade yet — the issuer source still shows 75K on the last day.
+     - **Chase IHG Premier (chase-ihg-premier.json)**: Chase issuer page now shows 140K / $3K / 3mo standard public offer; the prior 185K tiered elevated offer has expired. Downgraded production + adaptor from 185K to 140K, updated estimated_value to 700, removed is_elevated / normal_bonus_points, updated last_verified to 2026-08-20.
+     - **Chase Sapphire Reserve for Business (chase-sapphire-reserve-biz.json)**: Chase official page still shows 200K / $30K / 6mo. No change — offer continues in August with no extension announcement.
+     - **Chase Ink Business Unlimited (chase-ink-biz-unlimited.json)**: Chase official page still shows $1,000 cash back / $8K / 4mo. No change — offer continues without clear deadline.
+     - **Chase Ink Business Cash (chase-ink-biz-cash.json)**: Chase official page still shows $1,000 cash back / $8K / 4mo. No change — offer continues without clear deadline.
+
 ## Progress Log
 
 - 2026-07-30 15:06 PT: KC approved executing recommended next steps from offer watcher.
@@ -54,3 +67,4 @@
 - 2026-07-30 15:08 PT: External checks found CSP 100k ended, Chase official HTML currently shows 75k; Hilton official page shows Aspire 150k and Surpass 130k.
 - 2026-07-30 15:09 PT: Updated production/adaptor JSON for CSP, Aspire, and Surpass; scheduled 8/20 follow-up cron for Hyatt + August business offer watch.
 - 2026-07-30 15:10 PT: `npm run validate` passed locally; pushed commit `d679075e`; GitHub Validate Card Data and Secret Scan both passed.
+- 2026-08-20 09:02 PT: Follow-up cron triggered. Verified each of the 5 named cards against issuer sources. Chase Hyatt page still shows 75K on the last day (source unchanged → keep 75K, refresh last_verified + notes + next_review). Chase IHG Premier page reverted to 140K baseline (downgraded 185K → 140K in both production and adaptor). CSR Biz 200K, Ink Unlimited $1K, Ink Cash $1K all still current — no changes.

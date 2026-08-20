@@ -41,8 +41,9 @@
       "offer_status": "public_limited_time",
       "confidence": "high",
       "notes": [
-        "Chase issuer page verified 2026-08-19: 45,000 points after $5,000/3mo plus up to 30,000 points through temporary extra earning on up to $15,000 in the first 6 months.",
-        "Issuer page labels the offer ending soon; approved offer-watch report records 2026-08-20 as the expiry date."
+        "Chase issuer page verified 2026-08-20: 45,000 points after $5,000/3mo plus up to 30,000 points through temporary extra earning on up to $15,000 in the first 6 months.",
+        "Issuer page labels the offer ending soon; approved offer-watch report records 2026-08-20 as the expiry date. The page is still showing 75K on the last day of the offer; expected to roll back to 60K standard (30K + 30K from 2x on $15K) on 2026-08-21.",
+        "TPG history and FrequentMiler (Aug 2026) both confirm the 60K standard public offer structure that will replace the elevated 75K once it expires."
       ],
       "source_conflicts": [],
       "last_verified": "AUTO_DATE",
