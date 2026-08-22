@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "title": "Best Buy (In Store): $100 Best Buy Giftcard For $60 (8/22 Only)",
+      "url": "https://www.doctorofcredit.com/best-buy-in-store-100-best-buy-giftcard-for-60-8-22-only/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "best buy"
+      ],
+      "ts": "2026-08-22T04:01:26.000Z",
+      "title_en": "Best Buy (In Store): $100 Best Buy Giftcard For $60 (8/22 Only)",
+      "summary_en": "",
+      "title_zh": "Best Buy（實體店）：$100 Best Buy 禮品卡只需 $60（僅限 8/22）",
+      "summary_zh": "在 Best Buy 實體店，限 8 月 22 日當天，可用 $60 購買價值 $100 的禮品卡。",
+      "title_es": "Best Buy (In Store): $100 Best Buy Giftcard For $60 (8/22 Only)",
+      "summary_es": ""
+    },
+    {
       "title": "Aven Rewards Checking + Rewards Visa: 5% Back On All Purchases (Up To $25,000 Each Year), Requires $25,000 Balance",
       "url": "https://www.doctorofcredit.com/aven-rewards-checking-rewards-visa-5-back-on-all-purchases-up-to-25000-each-year-requires-25000-balance/",
       "source": "Doctor of Credit",
@@ -13,8 +29,8 @@
       "ts": "2026-08-21T23:54:06.000Z",
       "title_en": "Aven Rewards Checking + Rewards Visa: 5% Back On All Purchases (Up To $25,000 Each Year), Requires $25,000 Balance",
       "summary_en": "",
-      "title_zh": "Aven 獎勵支票帳戶 + 獎勵 Visa：所有消費 5% 回饋（每年最高 $25,000），需維持 $25,000 存款餘額",
-      "summary_zh": "此帳戶提供所有消費 5% 回饋，但需保持 $25,000 以上的存款餘額才能享有優惠。",
+      "title_zh": "Aven Rewards 支票帳戶 + Rewards Visa：所有消費回饋 5%（每年最高 $25,000），需維持 $25,000 餘額",
+      "summary_zh": "Aven 提供高達 5% 的消費回饋，但需在帳戶中保持 $25,000 餘額才能享有優惠。",
       "title_es": "Aven Rewards Checking + Rewards Visa: 5% Back On All Purchases (Up To $25,000 Each Year), Requires $25,000 Balance",
       "summary_es": ""
     },
@@ -29,8 +45,8 @@
       "ts": "2026-08-21T21:58:58.000Z",
       "title_en": "Two Canadian Odd Lot Tender Opportunities (Air Canada & Docebo)",
       "summary_en": "",
-      "title_zh": "兩個加拿大小型公開收購要約（加拿大航空與 Docebo）",
-      "summary_zh": "投資者可關注加拿大航空與 Docebo 的小型公開收購要約機會。",
+      "title_zh": "兩項加拿大零碎收購要約（加拿大航空與 Docebo）",
+      "summary_zh": "加拿大航空和 Docebo 的零碎收購要約開放，為投資者提供參與的機會。",
       "title_es": "Two Canadian Odd Lot Tender Opportunities (Air Canada & Docebo)",
       "summary_es": ""
     },
@@ -45,8 +61,8 @@
       "ts": "2026-08-21T21:51:00.000Z",
       "title_en": "Thrifty Traveler Premium: 30% Off With Promo Code CHEAP",
       "summary_en": "",
-      "title_zh": "節儉旅人 Premium：使用優惠碼 CHEAP 可享 30% 折扣",
-      "summary_zh": "透過優惠碼 CHEAP 購買 Thrifty Traveler Premium 可省 30% 費用。",
+      "title_zh": "Thrifty Traveler Premium：使用優惠碼 CHEAP 可享 30% 折扣",
+      "summary_zh": "Thrifty Traveler Premium 會員使用優惠碼 CHEAP 可獲得 30% 的費用減免。",
       "title_es": "Thrifty Traveler Premium: 30% Off With Promo Code CHEAP",
       "summary_es": ""
     },
@@ -67,7 +83,7 @@
       "title_en": "Wells Fargo $500 Checking Bonus",
       "summary_en": "",
       "title_zh": "富國銀行 $500 支票帳戶獎金",
-      "summary_zh": "在富國銀行開立支票帳戶可獲得 $500 的獎金優惠。",
+      "summary_zh": "在富國銀行新開支票帳戶並滿足條件，即可獲得 $500 的獎金。",
       "title_es": "Wells Fargo $500 Checking Bonus",
       "summary_es": ""
     },
@@ -83,8 +99,8 @@
       "ts": "2026-08-21T20:26:22.000Z",
       "title_en": "SoFi Invest 2% Cash Deposit Match (5 Year Hold)",
       "summary_en": "",
-      "title_zh": "SoFi 投資：2% 現金存款匹配（需持有 5 年）",
-      "summary_zh": "SoFi 提供為期 5 年的 2% 現金存款匹配優惠。",
+      "title_zh": "SoFi Invest 2% 現金存款配對（需持有 5 年）",
+      "summary_zh": "SoFi Invest 提供為期五年的 2% 現金存款配對優惠。",
       "title_es": "SoFi Invest 2% Cash Deposit Match (5 Year Hold)",
       "summary_es": ""
     },
@@ -99,8 +115,8 @@
       "ts": "2026-08-21T19:39:00.000Z",
       "title_en": "Walmart & Sam’s Club Stores Now Accept Digital Wallet Payment",
       "summary_en": "",
-      "title_zh": "沃爾瑪與 Sam’s Club 門市現已接受數位錢包支付",
-      "summary_zh": "顧客可在沃爾瑪及 Sam’s Club 使用數位錢包進行付款。",
+      "title_zh": "沃爾瑪及 Sam's Club 門市現已接受數位錢包支付",
+      "summary_zh": "沃爾瑪和 Sam's Club 的實體店現在支援使用數位錢包進行付款。",
       "title_es": "Walmart & Sam’s Club Stores Now Accept Digital Wallet Payment",
       "summary_es": ""
     },
@@ -118,8 +134,8 @@
       "ts": "2026-08-21T19:17:28.000Z",
       "title_en": "Bilt Partners With Blacklane Chauffeur Service – Earn Points & Redeem Bilt Cash",
       "summary_en": "",
-      "title_zh": "Bilt 與 Blacklane 司機服務合作 — 賺取點數並可兌換 Bilt 現金",
-      "summary_zh": "使用 Blacklane 乘車服務可賺取 Bilt 點數，並可兌換 Bilt 現金回饋。",
+      "title_zh": "Bilt 與 Blacklane 司機服務合作 – 賺取積分並兌換 Bilt 現金",
+      "summary_zh": "使用 Blacklane 乘車可賺取 Bilt 積分，並可兌換為 Bilt 現金。",
       "title_es": "Bilt Partners With Blacklane Chauffeur Service – Earn Points & Redeem Bilt Cash",
       "summary_es": ""
     },
@@ -135,8 +151,8 @@
       "ts": "2026-08-21T17:00:01.000Z",
       "title_en": "[Useful Tip] American Express Business Gold Card Adds New $150 Squarespace Credit",
       "summary_en": "",
-      "title_zh": "【實用技巧】美國運通商務金卡新增 $150 Squarespace 信用額度",
-      "summary_zh": "持卡人可在 Squarespace 上獲得 $150 的信用額度，用於業務相關費用。",
+      "title_zh": "【實用技巧】美國運通商務金卡新增 $150 Squarespace 優惠",
+      "summary_zh": "美國運通商務金卡現在提供 $150 的 Squarespace 信用額度，可用於相關服務。",
       "title_es": "[Useful Tip] American Express Business Gold Card Adds New $150 Squarespace Credit",
       "summary_es": ""
     },
@@ -151,8 +167,8 @@
       "ts": "2026-08-21T16:00:51.000Z",
       "title_en": "(Upcoming $200 Bonus) Rakuten American Express Card With Extra Earnings On Rakuten Shopping & Dining",
       "summary_en": "",
-      "title_zh": "（即將推出 $200 獎金）Rakuten 美國運通卡在 Rakuten 購物及餐飲額外回饋",
-      "summary_zh": "Rakuten 美國運通卡將提供在購物和餐飲消費的額外回饋，並有機會獲得 $200 獎金。",
+      "title_zh": "（即將推出 $200 獎金）Rakuten 美國運通卡在 Rakuten 購物與餐飲享有額外回饋",
+      "summary_zh": "Rakuten 美國運通卡將在未來提供 $200 獎金，並在 Rakuten 平台消費和餐飲時獲得更高回饋。",
       "title_es": "(Upcoming $200 Bonus) Rakuten American Express Card With Extra Earnings On Rakuten Shopping & Dining",
       "summary_es": ""
     },
@@ -167,8 +183,8 @@
       "ts": "2026-08-21T15:00:00.000Z",
       "title_en": "[Targeted] Discover: Add An Authorized User & Get $50 When You Make A Purchase",
       "summary_en": "",
-      "title_zh": "【針對性優惠】Discover：新增授權使用者並在消費後可獲得 $50",
-      "summary_zh": "在 Discover 銀行新增授權使用者並完成消費，即可獲得 $50 獎勵。",
+      "title_zh": "【定向優惠】Discover：新增授權使用者並完成消費即可獲得 $50",
+      "summary_zh": "Discover 信用卡針對新授權使用者，只要消費即可獲得 $50 獎勵。",
       "title_es": "[Targeted] Discover: Add An Authorized User & Get $50 When You Make A Purchase",
       "summary_es": ""
     },
@@ -184,8 +200,8 @@
       "ts": "2026-08-21T14:00:45.000Z",
       "title_en": "Walmart: $10 Off $35+ With Promo Code FAST30/DOUBLE10/TRIPLE10 (Next 3 Delivery/Pickup Orders)",
       "summary_en": "",
-      "title_zh": "沃爾瑪：使用優惠碼 FAST30/DOUBLE10/TRIPLE10，消費 $35 以上可省 $10（適用于接下來 3 次配送/取貨訂單）",
-      "summary_zh": "在沃爾瑪消費滿 $35 並使用指定優惠碼，可在三次配送或取貨中省 $10。",
+      "title_zh": "沃爾瑪：使用優惠碼 FAST30/DOUBLE10/TRIPLE10，消費滿 $35 即減 $10（適用於未來 3 次配送/取貨訂單）",
+      "summary_zh": "在沃爾瑪，輸入優惠碼後，消費滿 $35 可省 $10，最多可用於三次配送或取貨。",
       "title_es": "Walmart: $10 Off $35+ With Promo Code FAST30/DOUBLE10/TRIPLE10 (Next 3 Delivery/Pickup Orders)",
       "summary_es": ""
     },
@@ -201,8 +217,8 @@
       "ts": "2026-08-21T12:00:03.000Z",
       "title_en": "Giftory, AMC Theatres: Discount Tickets + Popcorn/Drinks",
       "summary_en": "",
-      "title_zh": "Giftory、AMC 戲院：折扣票卷 + 爆米花/飲料",
-      "summary_zh": "透過 Giftory 購買 AMC 電影票可享折扣，並可獲得爆米花或飲料優惠。",
+      "title_zh": "Giftory、AMC 影院：優惠票價＋爆米花/飲料",
+      "summary_zh": "透過 Giftory 購買 AMC 電影票，可享折扣票價並附帶爆米花或飲料。",
       "title_es": "Giftory, AMC Theatres: Discount Tickets + Popcorn/Drinks",
       "summary_es": ""
     },
@@ -217,8 +233,8 @@
       "ts": "2026-08-21T00:17:13.000Z",
       "title_en": "Amazon: Reorder 5 Items & Get 10% Off",
       "summary_en": "",
-      "title_zh": "亞馬遜：重新訂購 5 件商品可享 10% 折扣",
-      "summary_zh": "在亞馬遜重新訂購 5 件商品即可獲得 10% 的優惠。",
+      "title_zh": "亞馬遜：再次訂購 5 件商品即可享 10% 折扣",
+      "summary_zh": "在 Amazon 重新訂購五件商品，可獲得 10% 的優惠。",
       "title_es": "Amazon: Reorder 5 Items & Get 10% Off",
       "summary_es": ""
     },
@@ -234,29 +250,10 @@
       "title_en": "Best Western: Purchase $100 Giftcard & Get $20 Bonus Card",
       "summary_en": "",
       "title_zh": "Best Western：購買 $100 禮品卡即獲 $20 獎勵卡",
-      "summary_zh": "在 Best Western 購買 $100 禮品卡將獲得 $20 的獎勵卡。",
+      "summary_zh": "在 Best Western 購買 $100 禮品卡，可額外獲得 $20 的獎勵卡。",
       "title_es": "Best Western: Purchase $100 Giftcard & Get $20 Bonus Card",
-      "summary_es": ""
-    },
-    {
-      "title": "Sun Country Credit Card 35,000 Point Bonus",
-      "url": "https://www.doctorofcredit.com/sun-country-credit-card-35000-point-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Travel",
-        "big",
-        "credit card bonuses",
-        "sun country",
-        "Sun Country Visa Signature card"
-      ],
-      "ts": "2026-08-20T21:13:39.000Z",
-      "title_en": "Sun Country Credit Card 35,000 Point Bonus",
-      "summary_en": "",
-      "title_zh": "Sun Country 信用卡 35,000 點紅利",
-      "summary_zh": "申請 Sun Country 信用卡可獲得 35,000 點的红利積分。",
-      "title_es": "Sun Country Credit Card 35,000 Point Bonus",
       "summary_es": ""
     }
   ],
-  "fetched": "2026-08-22T02:10:21.837Z"
+  "fetched": "2026-08-22T08:09:54.604Z"
 }
