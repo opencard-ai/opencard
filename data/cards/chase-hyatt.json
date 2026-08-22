@@ -7,23 +7,22 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 75000,
+    "bonus_points": 60000,
     "spending_requirement": 15000,
     "time_period_months": 6,
-    "description": "Limited-time offer: earn up to 75,000 World of Hyatt bonus points: 45,000 bonus points after spending $5,000 in the first 3 months from account opening, plus up to 30,000 more bonus points by earning 2 bonus points total per $1 on purchases that normally earn 1 point per $1, on up to $15,000 spent in the first 6 months.",
+    "description": "Earn up to 60,000 World of Hyatt bonus points: 30,000 bonus points after spending $3,000 in the first 3 months from account opening, plus up to 30,000 more bonus points by earning 2 bonus points total per $1 on purchases that normally earn 1 point per $1, on up to $15,000 spent in the first 6 months.",
     "point_program": "World of Hyatt",
-    "estimated_value": 1275,
-    "offer_status": "public_limited_time",
+    "estimated_value": 1020,
+    "offer_status": "public",
     "confidence": "high",
     "notes": [
-        "Chase issuer page verified 2026-08-20: 45,000 points after $5,000/3mo plus up to 30,000 points through temporary extra earning on up to $15,000 in the first 6 months.",
-        "Issuer page labels the offer ending soon; approved offer-watch report records 2026-08-20 as the expiry date. The page is still showing 75K on the last day of the offer; expected to roll back to 60K standard (30K + 30K from 2x on $15K) on 2026-08-21.",
-        "TPG history and FrequentMiler (Aug 2026) both confirm the 60K standard public offer structure that will replace the elevated 75K once it expires."
+        "Chase issuer page verified 2026-08-22: 30,000 points after $3,000/3mo plus up to 30,000 points through temporary extra earning on up to $15,000 in the first 6 months.",
+        "The prior elevated 75,000-point offer expired on 2026-08-20; Chase now displays the standard up-to-60,000-point public offer."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-08-20",
-    "is_elevated": true,
-    "expires": "2026-08-20"
+    "last_verified": "2026-08-22",
+    "is_elevated": false,
+    "expires": null
   },
   "earning_rates": [
     {
@@ -113,7 +112,7 @@
     "source": "chase.com",
     "last_updated": "2026-04-24"
   },
-  "last_verified": "2026-08-20",
-  "next_review": "2026-08-21T00:00:00.000-07:00",
+  "last_verified": "2026-08-22",
+  "next_review": "2026-09-22T00:00:00.000-07:00",
   "featured": true
 }

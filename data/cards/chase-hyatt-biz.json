@@ -13,16 +13,16 @@
     "description": "Earn 70,000 World of Hyatt bonus points after spending $7,000 on purchases within the first 3 months of account opening.",
     "point_program": "World of Hyatt",
     "estimated_value": 1190,
-    "offer_status": "public_limited_time",
+    "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Official Chase/Hyatt issuer evidence now shows the World of Hyatt Business offer at 70,000 bonus points after $7,000 in the first 3 months.",
-      "Hyatt issuer page/search result states the 70k business offer ends August 20, 2026; this replaces the prior 60k/$5k standard offer."
+      "Chase issuer page verified 2026-08-22: the World of Hyatt Business offer remains 70,000 bonus points after $7,000 in the first 3 months.",
+      "The Chase card listing still labels this a new public offer after the prior August 20 deadline, and currently displays no replacement expiry date."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-20",
+    "last_verified": "2026-08-22",
     "is_elevated": true,
-    "expires": "2026-08-20"
+    "expires": null
   },
   "earning_rates": [
     {
@@ -121,7 +121,7 @@
       "notes": "TPG offer history / comparison source."
     }
   ],
-  "notes": "Business version of World of Hyatt. $199 annual fee, Hyatt business benefits, and current elevated public welcome offer of 70,000 points after $7,000/3mo (offer ends 2026-08-20 per Hyatt issuer page).",
+  "notes": "Business version of World of Hyatt. $199 annual fee, Hyatt business benefits, and current public welcome offer of 70,000 points after $7,000/3mo.",
   "last_updated": "2026-04-29T06:08:32.036Z",
   "hotel_program": null,
   "application_rules": {
@@ -153,6 +153,6 @@
   ],
   "welcome_bonus": null,
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-07-20",
-  "next_review": "2026-08-13T00:00:00Z"
+  "last_verified": "2026-08-22",
+  "next_review": "2026-09-05T00:00:00Z"
 }

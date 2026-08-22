@@ -32,44 +32,43 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 75000,
+      "bonus_points": 60000,
       "spending_requirement": 15000,
       "time_period_months": 6,
-      "description": "Limited-time offer: earn up to 75,000 World of Hyatt bonus points: 45,000 bonus points after spending $5,000 in the first 3 months from account opening, plus up to 30,000 more bonus points by earning 2 bonus points total per $1 on purchases that normally earn 1 point per $1, on up to $15,000 spent in the first 6 months.",
+      "description": "Earn up to 60,000 World of Hyatt bonus points: 30,000 bonus points after spending $3,000 in the first 3 months from account opening, plus up to 30,000 more bonus points by earning 2 bonus points total per $1 on purchases that normally earn 1 point per $1, on up to $15,000 spent in the first 6 months.",
       "point_program": "World of Hyatt",
-      "estimated_value": 1275,
-      "offer_status": "public_limited_time",
+      "estimated_value": 1020,
+      "offer_status": "public",
       "confidence": "high",
       "notes": [
-        "Chase issuer page verified 2026-08-20: 45,000 points after $5,000/3mo plus up to 30,000 points through temporary extra earning on up to $15,000 in the first 6 months.",
-        "Issuer page labels the offer ending soon; approved offer-watch report records 2026-08-20 as the expiry date. The page is still showing 75K on the last day of the offer; expected to roll back to 60K standard (30K + 30K from 2x on $15K) on 2026-08-21.",
-        "TPG history and FrequentMiler (Aug 2026) both confirm the 60K standard public offer structure that will replace the elevated 75K once it expires."
+        "Chase issuer page verified 2026-08-22: 30,000 points after $3,000/3mo plus up to 30,000 points through temporary extra earning on up to $15,000 in the first 6 months.",
+        "The prior elevated 75,000-point offer expired on 2026-08-20; Chase now displays the standard up-to-60,000-point public offer."
       ],
       "source_conflicts": [],
       "last_verified": "AUTO_DATE",
-      "is_elevated": true,
-      "expires": "2026-08-20"
+      "is_elevated": false,
+      "expires": null
     }
   },
   "citations": {
     "welcome_offer": [
-      "sources/*issuer-chase*.md:Earn up to 75,000 Bonus Points",
-      "sources/*issuer-chase*.md:45,000 Bonus Points after you spend $5,000",
+      "sources/*issuer-chase*.md:Earn up to 60,000 Bonus Points",
+      "sources/*issuer-chase*.md:30,000 Bonus Points after you spend $3,000",
       "sources/*issuer-chase*.md:up to 30,000 more Bonus Points",
       "sources/*tpg*.md:Earn up to 60,000 points"
     ]
   },
   "open_questions": [
     "Confirm the additional up-to-30k component is represented as temporary extra earning, not a guaranteed lump-sum bonus.",
-    "Close or refresh the offer immediately after 2026-08-20."
+    "Monitor the issuer page for the next elevated-offer change."
   ],
   "community": {
-    "summary": "Current Chase issuer evidence supports the World of Hyatt personal card limited-time up-to-75k tiered offer through 2026-08-20.",
+    "summary": "Current Chase issuer evidence supports the World of Hyatt personal card standard public up-to-60k tiered offer.",
     "recommended_production_value": {
-      "offer_amount": 75000,
+      "offer_amount": 60000,
       "spend_requirement": 15000,
       "spend_window_months": 6,
-      "status": "public_limited_time"
+      "status": "public"
     },
     "confidence": "high_when_chase_hyatt_page_present",
     "ymmv_or_targeted_possible": false,
@@ -78,23 +77,23 @@
       {
         "sourceType": "issuer",
         "source": "Chase World of Hyatt page",
-        "regex": "Earn up to 75,000|45,000[\\s\\S]{0,260}up to 30,000|15,000",
-        "stance": "supports_75k_public_tiered",
-        "offer_amount": 75000,
+        "regex": "Earn up to 60,000|30,000[\\s\\S]{0,260}up to 30,000|15,000",
+        "stance": "supports_60k_public_tiered",
+        "offer_amount": 60000,
         "spend_requirement": 15000,
         "spend_window_months": 6,
-        "excerpt": "Chase page describes up to 75k: 45k after $5k/3mo plus up to 30k more via bonus earning on up to $15k spend.",
+        "excerpt": "Chase page describes up to 60k: 30k after $3k/3mo plus up to 30k more via bonus earning on up to $15k spend.",
         "confidence": "high_if_present"
       },
       {
         "sourceType": "tpg",
         "source": "The Points Guy offer history",
-        "regex": "Earn up to 75,000|45,000[\\s\\S]{0,260}15,000",
-        "stance": "supports_75k_secondary",
-        "offer_amount": 75000,
+        "regex": "Earn up to 60,000|30,000[\\s\\S]{0,260}15,000",
+        "stance": "supports_60k_secondary",
+        "offer_amount": 60000,
         "spend_requirement": 15000,
         "spend_window_months": 6,
-        "excerpt": "Secondary coverage should confirm the personal Hyatt card up-to-75k offer with the second 30k tied to additional spending/earning.",
+        "excerpt": "Secondary coverage should confirm the personal Hyatt card up-to-60k offer with the second 30k tied to additional spending/earning.",
         "confidence": "high_for_secondary"
       }
     ]
