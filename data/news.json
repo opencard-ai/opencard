@@ -1,6 +1,91 @@
 {
   "items": [
     {
+      "title": "[New Offer] inKind: $50 off $100",
+      "url": "https://www.doctorofcredit.com/inkind-20-off-40/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "inkind"
+      ],
+      "ts": "2026-08-23T20:00:33.000Z",
+      "title_en": "[New Offer] inKind: $50 off $100",
+      "summary_en": "",
+      "title_zh": "[新優惠] inKind：消費滿100美元減50美元",
+      "summary_zh": "在優惠期間，使用 inKind 消費滿100美元即可獲得50美元的折扣。",
+      "title_es": "[New Offer] inKind: $50 off $100",
+      "summary_es": ""
+    },
+    {
+      "title": "Staples: No Purchase Fee On $200 Visa Gift Cards (8/23-8/29)",
+      "url": "https://www.doctorofcredit.com/staples-no-purchase-fee-on-200-visa-gift-cards-10-31-11-6-limit-5/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Manufactured Spending",
+        "staples",
+        "visa gift cards"
+      ],
+      "ts": "2026-08-23T18:20:28.000Z",
+      "title_en": "Staples: No Purchase Fee On $200 Visa Gift Cards (8/23-8/29)",
+      "summary_en": "",
+      "title_zh": "Staples：8/23-8/29 200美元Visa禮品卡免購買手續費",
+      "summary_zh": "Staples 在指定期間內發行的200美元Visa禮品卡將免除購買手續費。",
+      "title_es": "Staples: No Purchase Fee On $200 Visa Gift Cards (8/23-8/29)",
+      "summary_es": ""
+    },
+    {
+      "title": "Amazon, Walmart: Apple Airtag (2nd gen) 4-Pack For $85",
+      "url": "https://www.doctorofcredit.com/amazon-walmart-apple-airtag-2nd-gen-4-pack-for-85/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals"
+      ],
+      "ts": "2026-08-23T18:09:01.000Z",
+      "title_en": "Amazon, Walmart: Apple Airtag (2nd gen) 4-Pack For $85",
+      "summary_en": "",
+      "title_zh": "Amazon、Walmart：Apple AirTag（第2代）4件組特價85美元",
+      "summary_zh": "Amazon與Walmart目前提供第2代Apple AirTag四件套裝，售價僅85美元。",
+      "title_es": "Amazon, Walmart: Apple Airtag (2nd gen) 4-Pack For $85",
+      "summary_es": ""
+    },
+    {
+      "title": "Citi AAdvantage Executive 125,000 Signup Bonus",
+      "url": "https://www.doctorofcredit.com/citi-aadvantage-executive-125000-signup-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "aadvantage",
+        "american airlines",
+        "big",
+        "Citi",
+        "Citi AAdvantage Executive World Elite",
+        "citi american airlines"
+      ],
+      "ts": "2026-08-23T17:52:38.000Z",
+      "title_en": "Citi AAdvantage Executive 125,000 Signup Bonus",
+      "summary_en": "",
+      "title_zh": "Citi AAdvantage Executive 信用卡：新戶迎新獎勵125,000點",
+      "summary_zh": "花旗銀行的AAdvantage Executive信用卡現提供125,000點的開卡獎勵。",
+      "title_es": "Citi AAdvantage Executive 125,000 Signup Bonus",
+      "summary_es": ""
+    },
+    {
+      "title": "Rakuten American Express Card With Extra Earnings On Rakuten Shopping & Dining + $200 Bonus",
+      "url": "https://www.doctorofcredit.com/new-card-review-rakuten-american-express-card-with-extra-earnings-on-rakuten-shopping-dining/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "rakuten"
+      ],
+      "ts": "2026-08-23T17:30:51.000Z",
+      "title_en": "Rakuten American Express Card With Extra Earnings On Rakuten Shopping & Dining + $200 Bonus",
+      "summary_en": "",
+      "title_zh": "Rakuten American Express 卡：購物與餐飲額外回饋並附200美元獎勵",
+      "summary_zh": "Rakuten的美國運通卡在樂天購物與餐飲消費可獲得額外積分，並提供200美元的新戶獎勵。",
+      "title_es": "Rakuten American Express Card With Extra Earnings On Rakuten Shopping & Dining + $200 Bonus",
+      "summary_es": ""
+    },
+    {
       "title": "Samsclub.com: $100 DoorDash eGiftcard For $80 (Limit 2, Starts 8/26/26)",
       "url": "https://www.doctorofcredit.com/samsclub-com-100-doordash-egiftcard-for-80-limit-2-starts-8-26-26/",
       "source": "Doctor of Credit",
@@ -12,10 +97,10 @@
       "ts": "2026-08-22T21:47:42.000Z",
       "title_en": "Samsclub.com: $100 DoorDash eGiftcard For $80 (Limit 2, Starts 8/26/26)",
       "summary_en": "",
-      "title_zh": "Samsclub.com：$100 DoorDash 電子禮品卡 $80（限購2張，8/26/26 起）",
-      "summary_zh": "Samsclub.com 推出以 $80 購買價值 $100 的 DoorDash 電子禮品卡，每人限購 2 張。",
-      "title_es": "Samsclub.com: Tarjeta de regalo electrónica DoorDash de $100 por $80 (Límite 2, comienza 26/8/26)",
-      "summary_es": "Puedes obtener una tarjeta de regalo electrónica de DoorDash de $100 por solo $80 en Samsclub.com, con un máximo de 2, disponible a partir del 26 de agosto de 2026."
+      "title_zh": "Samsclub.com：100美元DoorDash電子禮品卡僅售80美元（限購2張，8/26/26起）",
+      "summary_zh": "Samsclub.com自8/26/26起推出DoorDash電子禮品卡促銷，100美元面額只需80美元，每人最多購買2張。",
+      "title_es": "Samsclub.com: $100 DoorDash eGiftcard For $80 (Limit 2, Starts 8/26/26)",
+      "summary_es": ""
     },
     {
       "title": "[Targeted] AmEx Offer: Use Apple Pay Three Times & Receive $10 Statement Credit",
@@ -28,10 +113,10 @@
       "ts": "2026-08-22T21:26:47.000Z",
       "title_en": "[Targeted] AmEx Offer: Use Apple Pay Three Times & Receive $10 Statement Credit",
       "summary_en": "",
-      "title_zh": "[定向優惠] AmEx 優惠：使用 Apple Pay 三次即獲 $10 帳單信用",
-      "summary_zh": "持美國運通卡在 Apple Pay 上完成三次交易，即可獲得 $10 的帳單信用額。",
-      "title_es": "Oferta de AmEx (dirigida): Usa Apple Pay tres veces y recibe un crédito de $10 en tu estado de cuenta",
-      "summary_es": "Si eres cliente objetivo de American Express, al usar Apple Pay al menos tres veces obtendrás un crédito de $10 en tu próximo resumen."
+      "title_zh": "[定向優惠] 美國運通優惠：使用Apple Pay三次即獲10美元帳單信用",
+      "summary_zh": "持有美國運通卡且符合資格的持卡人，只要在Apple Pay上完成三次消費，即可獲得10美元的帳單抵扣。",
+      "title_es": "[Targeted] AmEx Offer: Use Apple Pay Three Times & Receive $10 Statement Credit",
+      "summary_es": ""
     },
     {
       "title": "Dunkin Donuts: Free Drink Schedule (8/25 – 9/29)",
@@ -47,10 +132,10 @@
       "ts": "2026-08-22T21:10:25.000Z",
       "title_en": "Dunkin Donuts: Free Drink Schedule (8/25 – 9/29)",
       "summary_en": "",
-      "title_zh": "Dunkin Donuts：免費飲料時間表（8/25 – 9/29）",
-      "summary_zh": "在 8/25 至 9/29 期間，Dunkin Donuts 將每日提供免費飲料。",
-      "title_es": "Dunkin Donuts: Calendario de bebidas gratuitas (25/8 – 29/9)",
-      "summary_es": "Durante las fechas indicadas, Dunkin Donuts ofrece una bebida gratis según el calendario publicado."
+      "title_zh": "Dunkin Donuts：免費飲品時間表（8/25至9/29）",
+      "summary_zh": "Dunkin Donuts在8月25日至9月29日期間推出多日免費飲品優惠。",
+      "title_es": "Dunkin Donuts: Free Drink Schedule (8/25 – 9/29)",
+      "summary_es": ""
     },
     {
       "title": "(Saturday 8/22) Krispy Kreme: Free Donut With Pokémon Attire",
@@ -65,10 +150,10 @@
       "ts": "2026-08-22T20:56:24.000Z",
       "title_en": "(Saturday 8/22) Krispy Kreme: Free Donut With Pokémon Attire",
       "summary_en": "",
-      "title_zh": "（週六 8/22）Krispy Kreme：穿著寶可夢服裝免費甜甜圈",
-      "summary_zh": "在 8 月 22 日（週六），穿著寶可夢服裝的顧客可在 Krispy Kreme 獲得免費甜甜圈。",
-      "title_es": "(Sábado 22/8) Krispy Kreme: Rosquilla gratis con atuendo Pokémon",
-      "summary_es": "El sábado 22 de agosto, Krispy Kreme regalará una rosquilla a quienes asistan vestidos con ropa temática de Pokémon."
+      "title_zh": "（週六 8/22）Krispy Kreme：穿著寶可夢服裝免費送甜甜圈",
+      "summary_zh": "8月22日（週六）穿著寶可夢相關服裝至Krispy Kreme即可免費領取一個甜甜圈。",
+      "title_es": "(Saturday 8/22) Krispy Kreme: Free Donut With Pokémon Attire",
+      "summary_es": ""
     },
     {
       "title": "[AL, CO, FL, GA, NC, SC, TX, VA] South State Bank $300 Checking Bonus – Direct Deposit Not Required",
@@ -91,10 +176,10 @@
       "ts": "2026-08-22T15:30:04.000Z",
       "title_en": "[AL, CO, FL, GA, NC, SC, TX, VA] South State Bank $300 Checking Bonus – Direct Deposit Not Required",
       "summary_en": "",
-      "title_zh": "[AL, CO, FL, GA, NC, SC, TX, VA] South State Bank $300 支票帳戶獎金 – 不需直接存款",
-      "summary_zh": "South State Bank 在指定州提供 $300 的支票帳戶獎金，且無需進行直接存款。",
-      "title_es": "South State Bank: Bono de $300 por cuenta corriente – Sin requerimiento de depósito directo (AL, CO, FL, GA, NC, SC, TX, VA)",
-      "summary_es": "Los residentes de esos estados pueden obtener un bono de $300 al abrir una cuenta corriente en South State Bank, sin necesidad de realizar un depósito directo."
+      "title_zh": "[AL, CO, FL, GA, NC, SC, TX, VA] 南州銀行：300美元活期帳戶獎勵，無需直接存款",
+      "summary_zh": "南州銀行在指定州提供的300美元活期帳戶獎勵，符合條件者無需進行直接存款即可獲得。",
+      "title_es": "[AL, CO, FL, GA, NC, SC, TX, VA] South State Bank $300 Checking Bonus – Direct Deposit Not Required",
+      "summary_es": ""
     },
     {
       "title": "Best Buy (In Store): $100 Best Buy Giftcard For $60 (8/22 Only)",
@@ -107,10 +192,10 @@
       "ts": "2026-08-22T04:01:26.000Z",
       "title_en": "Best Buy (In Store): $100 Best Buy Giftcard For $60 (8/22 Only)",
       "summary_en": "",
-      "title_zh": "Best Buy（店內）：$100 Best Buy 禮品卡 $60（僅限 8/22）",
-      "summary_zh": "Best Buy 在 8 月 22 日當天以 $60 優惠價出售面值 $100 的禮品卡。",
-      "title_es": "Best Buy (en tienda): Tarjeta de regalo Best Buy de $100 por $60 (solo el 22/8)",
-      "summary_es": "Solo el 22 de agosto, Best Buy ofrece una tarjeta de regalo de $100 por $60 en sus tiendas físicas."
+      "title_zh": "Best Buy（門市）：100美元Best Buy禮品卡僅售60美元（僅限8/22）",
+      "summary_zh": "Best Buy在8月22日當天提供100美元禮品卡優惠，僅需60美元即可購買。",
+      "title_es": "Best Buy (In Store): $100 Best Buy Giftcard For $60 (8/22 Only)",
+      "summary_es": ""
     },
     {
       "title": "Aven Rewards Checking + Rewards Visa: 5% Back On All Purchases (Up To $25,000 Each Year), Requires $25,000 Balance",
@@ -125,10 +210,10 @@
       "ts": "2026-08-21T23:54:06.000Z",
       "title_en": "Aven Rewards Checking + Rewards Visa: 5% Back On All Purchases (Up To $25,000 Each Year), Requires $25,000 Balance",
       "summary_en": "",
-      "title_zh": "Aven 獎勵支票帳戶 + Rewards Visa：所有消費 5% 回饋（每年最高 $25,000），需維持 $25,000 餘額",
-      "summary_zh": "Aven 的獎勵支票帳戶與 Visa 卡為每筆消費提供 5% 回饋，上限每年 $25,000，但需保持 $25,000 的帳戶餘額。",
-      "title_es": "Aven Rewards Checking + Rewards Visa: 5% de reembolso en todas las compras (hasta $25,000 al año), requiere un saldo de $25,000",
-      "summary_es": "La cuenta corriente Aven con la tarjeta Visa ofrece un 5% de cashback en compras hasta $25,000 anuales, pero necesita mantener un saldo mínimo de $25,000."
+      "title_zh": "Aven Rewards 支票帳戶 + Rewards Visa：所有消費5%回饋（每年最高25,000美元），需維持25,000美元存款",
+      "summary_zh": "Aven的Rewards Checking與Rewards Visa為持卡人提供所有消費5%的現金回饋，但需在帳戶中保持25,000美元餘額。",
+      "title_es": "Aven Rewards Checking + Rewards Visa: 5% Back On All Purchases (Up To $25,000 Each Year), Requires $25,000 Balance",
+      "summary_es": ""
     },
     {
       "title": "Two Canadian Odd Lot Tender Opportunities (Air Canada & Docebo)",
@@ -141,10 +226,10 @@
       "ts": "2026-08-21T21:58:58.000Z",
       "title_en": "Two Canadian Odd Lot Tender Opportunities (Air Canada & Docebo)",
       "summary_en": "",
-      "title_zh": "兩個加拿大零碎要約收購機會（Air Canada 與 Docebo）",
-      "summary_zh": "目前有兩個針對加拿大公司的小額要約收購機會，涉及 Air Canada 與 Docebo。",
-      "title_es": "Dos oportunidades de compra mínima en Canadá (Air Canada y Docebo)",
-      "summary_es": "Se presentan dos ofertas de adquisición a precios reducidos en el mercado canadiense, específicamente para acciones de Air Canada y Docebo."
+      "title_zh": "兩項加拿大小額要約收購機會（加拿大航空與Docebo）",
+      "summary_zh": "加拿大航空與Docebo目前有小額要約收購的投資機會，投資者可以關注。",
+      "title_es": "Two Canadian Odd Lot Tender Opportunities (Air Canada & Docebo)",
+      "summary_es": ""
     },
     {
       "title": "Thrifty Traveler Premium: 30% Off With Promo Code CHEAP",
@@ -157,10 +242,10 @@
       "ts": "2026-08-21T21:51:00.000Z",
       "title_en": "Thrifty Traveler Premium: 30% Off With Promo Code CHEAP",
       "summary_en": "",
-      "title_zh": "Thrifty Traveler Premium：使用優惠碼 CHEAP 可享 30% 折扣",
-      "summary_zh": "Thrifty Traveler Premium 透過優惠碼 CHEAP 可獲得 30% 的折扣。",
-      "title_es": "Thrifty Traveler Premium: 30% de descuento con el código promocional CHEAP",
-      "summary_es": "Con el código CHEAP, puedes obtener un 30% de descuento en la suscripción premium de Thrifty Traveler."
+      "title_zh": "Thrifty Traveler Premium：使用優惠碼CHEAP享7折",
+      "summary_zh": "Thrifty Traveler Premium 服務現正推出30%折扣，輸入優惠碼CHEAP即可享有優惠。",
+      "title_es": "Thrifty Traveler Premium: 30% Off With Promo Code CHEAP",
+      "summary_es": ""
     },
     {
       "title": "Wells Fargo $500 Checking Bonus",
@@ -178,96 +263,11 @@
       "ts": "2026-08-21T21:01:09.000Z",
       "title_en": "Wells Fargo $500 Checking Bonus",
       "summary_en": "",
-      "title_zh": "Wells Fargo $500 支票帳戶獎金",
-      "summary_zh": "Wells Fargo 提供 $500 的支票帳戶開戶獎金。",
-      "title_es": "Bono de $500 por cuenta corriente de Wells Fargo",
-      "summary_es": "Wells Fargo ofrece un bono de $500 al abrir una nueva cuenta corriente y cumplir los requisitos de actividad."
-    },
-    {
-      "title": "SoFi Invest 2% Cash Deposit Match (5 Year Hold)",
-      "url": "https://www.doctorofcredit.com/sofi-invest-2-deposit-match-5-year-hold/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "brokerage bonuses",
-        "sofi"
-      ],
-      "ts": "2026-08-21T20:26:22.000Z",
-      "title_en": "SoFi Invest 2% Cash Deposit Match (5 Year Hold)",
-      "summary_en": "",
-      "title_zh": "SoFi Invest 2% 現金存款匹配（需持有 5 年）",
-      "summary_zh": "SoFi Invest 為新投資帳戶提供 2% 的現金存款匹配，需保持 5 年。",
-      "title_es": "SoFi Invest: Igualación del 2% en depósitos en efectivo (con retención de 5 años)",
-      "summary_es": "SoFi Invest iguala el 2% de tus depósitos en efectivo si mantienes el dinero durante al menos cinco años."
-    },
-    {
-      "title": "Walmart & Sam’s Club Stores Now Accept Digital Wallet Payment",
-      "url": "https://www.doctorofcredit.com/walmart-sams-club-stores-now-accept-digital-wallet-payment/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "walmart"
-      ],
-      "ts": "2026-08-21T19:39:00.000Z",
-      "title_en": "Walmart & Sam’s Club Stores Now Accept Digital Wallet Payment",
-      "summary_en": "",
-      "title_zh": "Walmart 與 Sam’s Club 門市現在接受數位錢包支付",
-      "summary_zh": "Walmart 與 Sam’s Club 已在門市支援數位錢包付款。",
-      "title_es": "Walmart y Sam’s Club ahora aceptan pagos con billeteras digitales",
-      "summary_es": "Las tiendas de Walmart y Sam’s Club han habilitado la opción de pago mediante billeteras digitales."
-    },
-    {
-      "title": "Bilt Partners With Blacklane Chauffeur Service – Earn Points & Redeem Bilt Cash",
-      "url": "https://www.doctorofcredit.com/bilt-partners-with-blacklane-chauffeur-service-earn-points-redeem-bilt-cash/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "bilt",
-        "bilt cash",
-        "blacklane",
-        "citi strata elite"
-      ],
-      "ts": "2026-08-21T19:17:28.000Z",
-      "title_en": "Bilt Partners With Blacklane Chauffeur Service – Earn Points & Redeem Bilt Cash",
-      "summary_en": "",
-      "title_zh": "Bilt 與 Blacklane 司機服務合作 – 賺取積分與兌換 Bilt 現金",
-      "summary_zh": "Bilt 與 Blacklane 合作，讓用戶在預訂豪華轎車服務時可賺取積分並兌換 Bilt 現金。",
-      "title_es": "Bilt se asocia con Blacklane: gana puntos y canjea efectivo Bilt",
-      "summary_es": "Gracias a la alianza, los usuarios de Bilt pueden acumular puntos al usar el servicio de choferes Blacklane y canjearlos por efectivo Bilt."
-    },
-    {
-      "title": "[Useful Tip] American Express Business Gold Card Adds New $150 Squarespace Credit",
-      "url": "https://www.doctorofcredit.com/american-express-business-gold-card-adds-new-150-squarespace-credit/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "american express",
-        "american express business gold"
-      ],
-      "ts": "2026-08-21T17:00:01.000Z",
-      "title_en": "[Useful Tip] American Express Business Gold Card Adds New $150 Squarespace Credit",
-      "summary_en": "",
-      "title_zh": "[實用技巧] 美國運通商務金卡新增 $150 Squarespace 優惠",
-      "summary_zh": "美國運通商務金卡現在提供高達 $150 的 Squarespace 消費回饋。",
-      "title_es": "Consejo útil: La tarjeta American Express Business Gold incorpora un nuevo crédito de $150 para Squarespace",
-      "summary_es": "Los titulares de la tarjeta Business Gold de Amex ahora pueden beneficiarse de un crédito de $150 al usar Squarespace."
-    },
-    {
-      "title": "(Upcoming $200 Bonus) Rakuten American Express Card With Extra Earnings On Rakuten Shopping & Dining",
-      "url": "https://www.doctorofcredit.com/new-card-review-rakuten-american-express-card-with-extra-earnings-on-rakuten-shopping-dining/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "rakuten"
-      ],
-      "ts": "2026-08-21T16:00:51.000Z",
-      "title_en": "(Upcoming $200 Bonus) Rakuten American Express Card With Extra Earnings On Rakuten Shopping & Dining",
-      "summary_en": "",
-      "title_zh": "（即將推出 $200 獎金）Rakuten 美國運通卡在 Rakuten 購物與餐飲享有額外回饋",
-      "summary_zh": "Rakuten 美國運通卡即將推出 $200 獎金，並在 Rakuten 購物與餐飲提供額外回饋。",
-      "title_es": "(Próximo bono de $200) Tarjeta Rakuten American Express con ganancias extra en compras y restaurantes en Rakuten",
-      "summary_es": "Rakuten lançará un nuevo bono de $200 para su tarjeta Amex, que otorgará mayor cashback en compras y restaurantes dentro de Rakuten."
+      "title_zh": "富國銀行：500美元活期帳戶獎勵",
+      "summary_zh": "富國銀行針對新客戶提供500美元的活期帳戶開戶獎勵。",
+      "title_es": "Wells Fargo $500 Checking Bonus",
+      "summary_es": ""
     }
   ],
-  "fetched": "2026-08-23T14:09:38.690Z"
+  "fetched": "2026-08-23T20:09:29.782Z"
 }
