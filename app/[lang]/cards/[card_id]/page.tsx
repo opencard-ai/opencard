@@ -274,6 +274,17 @@ export default async function CardDetailPage({ params }: Props) {
                 <p className="text-xs text-slate-600 leading-relaxed">{editorial.breakEven}</p>
               </div>
 
+              <div className="mt-5 rounded-lg border border-slate-200 bg-slate-50 p-4">
+                <h3 className="text-sm font-semibold text-slate-900">First year vs. ongoing year worksheet</h3>
+                <div className="mt-3 grid gap-3 sm:grid-cols-3">
+                  <div><div className="text-[11px] uppercase tracking-wide text-slate-500">Annual fee hurdle</div><div className="text-xl font-bold text-slate-900">${card.annual_fee.toLocaleString()}</div></div>
+                  <div><div className="text-[11px] uppercase tracking-wide text-slate-500">Issuer-data bonus estimate</div><div className="text-xl font-bold text-slate-900">${(card.welcome_offer?.estimated_value || 0).toLocaleString()}</div></div>
+                  <div><div className="text-[11px] uppercase tracking-wide text-slate-500">First-year net before credits</div><div className="text-xl font-bold text-slate-900">${Math.max(0, (card.welcome_offer?.estimated_value || 0) - card.annual_fee).toLocaleString()}</div></div>
+                </div>
+                <p className="mt-3 text-xs leading-relaxed text-slate-600">For year two, remove the one-time welcome offer entirely. To recover a ${card.annual_fee.toLocaleString()} fee from rewards alone, this card must produce that much more value than your best no-fee alternative. At a 1% incremental return, that would require about ${(card.annual_fee * 100).toLocaleString()} in eligible annual spend before counting credits you would genuinely buy anyway.</p>
+                <p className="mt-2 text-[11px] text-slate-500">Data reviewed {card.last_updated ? new Date(card.last_updated).toISOString().slice(0, 10) : "on the page update date"}. Estimate is not cash and depends on redemption. Confirm current issuer terms through the cited sources below.</p>
+              </div>
+
               <div className="mt-5">
                 <h3 className="text-sm font-semibold text-slate-900 mb-2">Compare alternatives</h3>
                 <div className="grid gap-2 sm:grid-cols-2">

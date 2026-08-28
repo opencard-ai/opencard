@@ -24,6 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...tier("/elevated-offers", 0.8, "weekly"),
     ...tier("/find", 0.7, "weekly"),
     ...tier("/guides", 0.75, "weekly"),
+    {
+      url: `${baseUrl}/en/benefit-expiration-tracker`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
     ...tier("/about", 0.5, "monthly"),
     ...tier("/methodology", 0.5, "monthly"),
     ...tier("/contact", 0.4, "monthly"),
@@ -33,7 +39,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const guidePages: MetadataRoute.Sitemap = [];
 
-  for (const lang of langs) {
+  // Translated guides remain available to readers, but are temporarily
+  // excluded from search while each locale earns its own quality/traffic gate.
+  for (const lang of ["en"] as const) {
     for (const guide of getGuidesForLocale(lang)) {
       guidePages.push({
         url: `${baseUrl}/${lang}/guides/${guide.slug}`,

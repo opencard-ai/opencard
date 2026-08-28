@@ -44,11 +44,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${localizedGuide.title} — OpenCard`,
     description: localizedGuide.summary,
+    robots: safeLang === "en"
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
     alternates: {
       canonical: `/${lang}/guides/${slug}`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/guides/${slug}`])
-      ),
+      // Do not advertise noindex translations as alternate index targets.
+      languages: { en: `/en/guides/${slug}`, "x-default": `/en/guides/${slug}` },
     },
     openGraph: {
       title: localizedGuide.title,
@@ -117,6 +119,14 @@ export default async function GuidePage({ params }: Props) {
       <article>
         <Article />
       </article>
+
+      {(slug === "credit-card-benefit-expiration-guide" || slug === "credit-card-benefit-tracking-system") && (
+        <aside className="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-5">
+          <h2 className="text-lg font-bold text-blue-950">Put the system into practice</h2>
+          <p className="mt-2 text-sm leading-relaxed text-blue-900">Use OpenCard’s private in-browser tracker to record benefit dates, realistic unused value, and what is due in the next 30 days.</p>
+          <Link href={`/${safeLang}/benefit-expiration-tracker`} className="mt-4 inline-flex rounded-lg bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800">Open the expiration tracker →</Link>
+        </aside>
+      )}
 
       <hr className="my-12 border-slate-200 dark:border-slate-800" />
 
