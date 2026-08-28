@@ -18,6 +18,7 @@
     "confidence": "high",
     "is_elevated": true,
     "expires": "2026-09-30",
+    "expiry_date": "2026-09-30",
     "notes": [
       "2026-08-11 approved refresh: 150k points + $250 travel credit through 2026-09-30.",
       "Replaces the prior 100k baseline/extra-bonus-path representation."
@@ -95,6 +96,7 @@
     "premium",
     "hotel",
     "transferable",
+    "offer_expiry_watch",
     "no-foreign-transaction-fee"
   ],
   "sources": [

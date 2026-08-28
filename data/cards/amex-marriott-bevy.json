@@ -18,6 +18,7 @@
     "confidence": "high",
     "is_elevated": true,
     "expires": "2026-09-30",
+    "expiry_date": "2026-09-30",
     "notes": [
       "2026-08-11 approved refresh: 125k points + $150 travel credit through 2026-09-30.",
       "Replaces the prior 85k public baseline representation."
@@ -91,6 +92,7 @@
     "transferable",
     "hotel",
     "travel",
+    "offer_expiry_watch",
     "marriott"
   ],
   "sources": [
