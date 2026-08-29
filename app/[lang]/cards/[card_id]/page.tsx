@@ -120,6 +120,7 @@ export default async function CardDetailPage({ params }: Props) {
   const freshness = freshnessFromIso(card.last_updated, lang);
   const editorial = lang === "en" ? getCardEditorial(card.card_id) : undefined;
   const referralOffer = getReferralOfferForCard(card);
+  const isAmexReferral = referralOffer?.program === "amex";
   const recurringCredits = (card.recurring_credits || []).filter(c => c.amount !== undefined);
   const hasTravelBenefits = !!(
     (card.travel_benefits?.hotel_status?.length ?? 0) > 0 ||
@@ -254,30 +255,40 @@ export default async function CardDetailPage({ params }: Props) {
               <div>
                 <div className="text-sm font-semibold text-blue-900">
                   {lang === "zh"
-                    ? "查看 American Express Referral Offers"
+                    ? isAmexReferral ? "查看 American Express Referral Offers" : "查看 Chase Freedom Referral Offers"
                     : lang === "zh-cn"
-                    ? "查看 American Express Referral Offers"
+                    ? isAmexReferral ? "查看 American Express Referral Offers" : "查看 Chase Freedom Referral Offers"
                     : lang === "es"
-                    ? "Ver ofertas por recomendación de American Express"
-                    : "View American Express Referral Offers"}
+                    ? isAmexReferral ? "Ver ofertas por recomendación de American Express" : "Ver ofertas por recomendación de Chase Freedom"
+                    : isAmexReferral ? "View American Express Referral Offers" : "View Chase Freedom Referral Offers"}
                 </div>
                 <p className="mt-1 text-xs leading-relaxed text-blue-800">
                   {lang === "zh"
-                    ? "連結會先開啟 Platinum Card，請在 Amex 頁面查看目前可申請的個人卡與商業卡。並非所有 Amex 產品都一定適用，優惠與資格可能因人而異。若您透過此連結獲核准，推薦人可能獲得獎勵；這不影響 OpenCard 的評價。"
+                    ? isAmexReferral
+                      ? "連結會先開啟 Platinum Card，請在 Amex 頁面查看目前可申請的個人卡與商業卡。並非所有 Amex 產品都一定適用，優惠與資格可能因人而異。若您透過此連結獲核准，推薦人可能獲得獎勵；這不影響 OpenCard 的評價。"
+                      : "此 Chase referral 頁目前列出 Freedom Unlimited、Freedom Flex 與 Slate；請以 Chase 頁面顯示的即時優惠與資格為準。若您透過此連結獲核准，推薦人可能獲得獎勵；這不影響 OpenCard 的評價。"
                     : lang === "zh-cn"
-                    ? "链接会先打开 Platinum Card，请在 Amex 页面查看当前可申请的个人卡与商业卡。并非所有 Amex 产品都一定适用，优惠与资格可能因人而异。如果您通过此链接获批，推荐人可能获得奖励；这不影响 OpenCard 的评价。"
+                    ? isAmexReferral
+                      ? "链接会先打开 Platinum Card，请在 Amex 页面查看当前可申请的个人卡与商业卡。并非所有 Amex 产品都一定适用，优惠与资格可能因人而异。如果您通过此链接获批，推荐人可能获得奖励；这不影响 OpenCard 的评价。"
+                      : "此 Chase referral 页面目前列出 Freedom Unlimited、Freedom Flex 与 Slate；请以 Chase 页面显示的实时优惠与资格为准。如果您通过此链接获批，推荐人可能获得奖励；这不影响 OpenCard 的评价。"
                     : lang === "es"
-                    ? "El enlace abre primero la Platinum Card. Consulta en Amex las tarjetas personales y comerciales disponibles. No todos los productos están necesariamente incluidos y las ofertas y la elegibilidad pueden variar. El referente podría recibir una recompensa si se aprueba tu solicitud; esto no influye en la evaluación de OpenCard."
-                    : "The link opens on the Platinum Card first. Use the Amex page to view currently eligible personal and business cards. Not every Amex product is necessarily included, and offers and eligibility may vary. The referrer may receive a reward if you are approved; this does not influence OpenCard's evaluation."}
+                    ? isAmexReferral
+                      ? "El enlace abre primero la Platinum Card. Consulta en Amex las tarjetas personales y comerciales disponibles. No todos los productos están necesariamente incluidos y las ofertas y la elegibilidad pueden variar. El referente podría recibir una recompensa si se aprueba tu solicitud; esto no influye en la evaluación de OpenCard."
+                      : "La página de recomendación de Chase muestra actualmente Freedom Unlimited, Freedom Flex y Slate. Confirma allí las ofertas y la elegibilidad vigentes. El referente podría recibir una recompensa si se aprueba tu solicitud; esto no influye en la evaluación de OpenCard."
+                    : isAmexReferral
+                      ? "The link opens on the Platinum Card first. Use the Amex page to view currently eligible personal and business cards. Not every Amex product is necessarily included, and offers and eligibility may vary. The referrer may receive a reward if you are approved; this does not influence OpenCard's evaluation."
+                      : "The Chase referral page currently lists Freedom Unlimited, Freedom Flex, and Slate. Confirm current offers and eligibility on Chase. The referrer may receive a reward if you are approved; this does not influence OpenCard's evaluation."}
                 </p>
-                <a
-                  href={referralOffer.termsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="mt-1.5 inline-block text-xs font-medium text-blue-700 underline underline-offset-2 hover:text-blue-900"
-                >
-                  {lang === "zh" ? "Referral 完整條款" : lang === "zh-cn" ? "Referral 完整条款" : lang === "es" ? "Términos completos" : "Full referral terms"}
-                </a>
+                {referralOffer.termsUrl && (
+                  <a
+                    href={referralOffer.termsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="mt-1.5 inline-block text-xs font-medium text-blue-700 underline underline-offset-2 hover:text-blue-900"
+                  >
+                    {lang === "zh" ? "Referral 完整條款" : lang === "zh-cn" ? "Referral 完整条款" : lang === "es" ? "Términos completos" : "Full referral terms"}
+                  </a>
+                )}
               </div>
               <a
                 href={referralOffer.referralUrl}
