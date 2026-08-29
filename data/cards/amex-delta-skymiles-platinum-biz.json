@@ -7,22 +7,22 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 70000,
-    "spending_requirement": 6000,
+    "bonus_points": 100000,
+    "spending_requirement": 8000,
     "time_period_months": 6,
-    "description": "Earn 70,000 Bonus Miles after spending $6,000 in purchases on your new Card in your first 6 months of Card Membership.",
+    "description": "Earn 100,000 Bonus Miles after spending $8,000 in purchases on your new Card in your first 6 months of Card Membership. Offer ends November 4, 2026.",
     "point_program": "Delta SkyMiles",
-    "estimated_value": 700,
-    "offer_status": "public_standard",
-    "confidence": "medium_high",
+    "estimated_value": 1000,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
     "notes": [
-      "Official Amex business search result shows current Platinum Business offer: 70,000 Bonus Miles after $6,000/6 months.",
-      "Previous 7/15/2026 public limited-time offer was removed from current production values to avoid displaying an expired offer.",
-      "Post-7/15/2026 closeout completed: expired limited-time Delta Amex state removed/confirmed; current production state is this welcome_offer block."
+      "Delta's official business-card page shows 100,000 Bonus Miles after $8,000/6 months, ending November 4, 2026.",
+      "CNBC Select independently reports the same public limited-time offer and expiry."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-20",
-    "is_elevated": false
+    "last_verified": "2026-08-29",
+    "is_elevated": true,
+    "expires_at": "2026-11-04"
   },
   "earning_rates": [
     {
@@ -105,11 +105,15 @@
       "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards"
     },
     {
+      "url": "https://www.cnbc.com/select/massive-new-200000-mile-delta-credit-card-welcome-offers/",
+      "notes": "Independent corroboration of the 2026-11-04 limited-time offer"
+    },
+    {
       "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
       "notes": "Delta News Hub official announcement: limited-time welcome offers and 2026 benefit updates"
     }
   ],
-  "last_updated": "2026-07-13T19:00:00Z",
+  "last_updated": "2026-08-29T17:00:00Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -156,6 +160,6 @@
       "reset_type": "every_4_years"
     }
   ],
-  "last_verified": "2026-07-20",
-  "next_review": "2026-08-17T00:00:00Z"
+  "last_verified": "2026-08-29",
+  "next_review": "2026-11-05T00:00:00Z"
 }

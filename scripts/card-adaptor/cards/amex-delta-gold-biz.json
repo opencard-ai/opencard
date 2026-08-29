@@ -26,31 +26,31 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 60000,
-      "spending_requirement": 4000,
+      "bonus_points": 90000,
+      "spending_requirement": 6000,
       "time_period_months": 6,
-      "description": "Earn 60,000 Bonus Miles after spending $4,000 in purchases on your new Card in your first 6 months of Card Membership.",
+      "description": "Earn 90,000 Bonus Miles after spending $6,000 in purchases on your new Card in your first 6 months of Card Membership. Offer ends November 4, 2026.",
       "point_program": "Delta SkyMiles",
-      "estimated_value": 600,
-      "offer_status": "public_standard",
-      "confidence": "medium_high",
+      "estimated_value": 900,
+      "offer_status": "public_limited_time",
+      "confidence": "high",
       "notes": [
-        "Official Amex business search result shows current Gold Business offer: 60,000 Bonus Miles after $4,000/6 months.",
-        "Previous 7/15/2026 public limited-time offer was removed from current production values to avoid displaying an expired offer."
+        "Delta's official business-card page shows 90,000 Bonus Miles after $6,000/6 months, ending November 4, 2026.",
+        "CNBC Select independently reports the same public limited-time offer and expiry."
       ],
       "source_conflicts": [],
-      "last_verified": "2026-07-17",
-      "is_elevated": false
+      "last_verified": "2026-08-29",
+      "is_elevated": true,
+      "expires_at": "2026-11-04"
     }
   },
   "citations": {
     "welcome_offer": [
-      "sources/*delta-news*.md:New Delta SkyMiles Gold American Express Card Members can earn 70,000 bonus miles after spending $3,000... plus an additional 20,000 bonus miles after spending an additional $2,000...",
-      "sources/*delta-business*.md:Earn 90,000 Bonus Miles"
+      "sources/*delta-business*.md:Earn 90,000 Bonus Miles after you make $6,000 in eligible purchases... Offer ends November 4, 2026."
     ]
   },
   "open_questions": [
-    "Confirm the 7/15/2026 expiry remains visible before applying future changes."
+    "Recheck the public offer after the 11/4/2026 expiry."
   ],
   "community": {
     "summary": "Official Delta business and news sources are canonical for this public limited-time offer. Third-party sources are supporting only.",

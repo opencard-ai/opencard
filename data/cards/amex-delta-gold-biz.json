@@ -7,22 +7,22 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 60000,
-    "spending_requirement": 4000,
+    "bonus_points": 90000,
+    "spending_requirement": 6000,
     "time_period_months": 6,
-    "description": "Earn 60,000 Bonus Miles after spending $4,000 in purchases on your new Card in your first 6 months of Card Membership.",
+    "description": "Earn 90,000 Bonus Miles after spending $6,000 in purchases on your new Card in your first 6 months of Card Membership. Offer ends November 4, 2026.",
     "point_program": "Delta SkyMiles",
-    "estimated_value": 600,
-    "offer_status": "public_standard",
-    "confidence": "medium_high",
+    "estimated_value": 900,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
     "notes": [
-      "Official Amex business search result shows current Gold Business offer: 60,000 Bonus Miles after $4,000/6 months.",
-      "Previous 7/15/2026 public limited-time offer was removed from current production values to avoid displaying an expired offer.",
-      "Post-7/15/2026 closeout completed: expired limited-time Delta Amex state removed/confirmed; current production state is this welcome_offer block."
+      "Delta's official business-card page shows 90,000 Bonus Miles after $6,000/6 months, ending November 4, 2026.",
+      "CNBC Select independently reports the same public limited-time offer and expiry."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-20",
-    "is_elevated": false
+    "last_verified": "2026-08-29",
+    "is_elevated": true,
+    "expires_at": "2026-11-04"
   },
   "earning_rates": [
     {
@@ -79,6 +79,14 @@
   ],
   "sources": [
     {
+      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
+      "notes": "Delta official business-card offer page; 90,000 miles after $6,000/6 months, ending 2026-11-04"
+    },
+    {
+      "url": "https://www.cnbc.com/select/massive-new-200000-mile-delta-credit-card-welcome-offers/",
+      "notes": "Independent corroboration of the 2026-11-04 limited-time offer"
+    },
+    {
       "url": "https://www.uscreditcardguide.com/amex-gold-delta-skymiles-business/",
       "notes": "USCCG card review (LLM-friendly static HTML)"
     },
@@ -92,10 +100,10 @@
   "application_rules": {
     "rules": []
   },
-  "last_updated": "2026-07-13T19:00:00Z",
+  "last_updated": "2026-08-29T17:00:00Z",
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-07-20",
-  "next_review": "2026-08-17T00:00:00Z",
+  "last_verified": "2026-08-29",
+  "next_review": "2026-11-05T00:00:00Z",
   "recurring_credits": [
     {
       "credit_key": "delta-stays-credit",

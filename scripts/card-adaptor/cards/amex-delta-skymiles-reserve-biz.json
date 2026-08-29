@@ -26,37 +26,37 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 80000,
-      "spending_requirement": 12000,
+      "bonus_points": 200000,
+      "spending_requirement": 20000,
       "time_period_months": 6,
-      "description": "Earn 80,000 Bonus Miles after spending $12,000 in purchases on your new Card in your first 6 months of Card Membership.",
+      "description": "Earn 200,000 Bonus Miles after spending $20,000 in purchases on your new Card in your first 6 months of Card Membership. Offer ends November 4, 2026.",
       "point_program": "Delta SkyMiles",
-      "estimated_value": 800,
-      "offer_status": "public_standard",
-      "confidence": "medium_high",
+      "estimated_value": 2000,
+      "offer_status": "public_limited_time",
+      "confidence": "high",
       "notes": [
-        "Official Amex business search result shows current Reserve Business offer: 80,000 Bonus Miles after $12,000/6 months.",
-        "Previous 7/15/2026 public limited-time offer was removed from current production values to avoid displaying an expired offer."
+        "Amex's official card page and Delta's official business-card page show 200,000 Bonus Miles after $20,000/6 months, ending November 4, 2026.",
+        "CNBC Select independently reports the same public limited-time offer and expiry."
       ],
       "source_conflicts": [],
-      "last_verified": "2026-07-17",
-      "is_elevated": false
+      "last_verified": "2026-08-29",
+      "is_elevated": true,
+      "expires_at": "2026-11-04"
     }
   },
   "citations": {
     "welcome_offer": [
-      "sources/*delta-news*.md:New Delta SkyMiles Reserve American Express Card Members can earn 100,000 bonus miles after spending $6,000... plus an additional 25,000 bonus miles after spending an additional $3,000...",
-      "sources/*delta-business*.md:Earn Up to 125,000 Miles"
+      "sources/*delta-business*.md:Earn 200,000 Bonus Miles after you make $20,000 in eligible purchases... Offer ends November 4, 2026."
     ]
   },
   "open_questions": [
-    "Confirm the 7/15/2026 expiry remains visible before applying future changes."
+    "Recheck the public offer after the 11/4/2026 expiry."
   ],
   "community": {
     "summary": "Official Delta business and news sources are canonical for this public limited-time offer. Third-party sources are supporting only.",
     "recommended_production_value": {
-      "offer_amount": 125000,
-      "spend_requirement": 15000,
+      "offer_amount": 200000,
+      "spend_requirement": 20000,
       "spend_window_months": 6,
       "status": "public_limited_time"
     },
@@ -67,23 +67,23 @@
       {
         "sourceType": "issuer",
         "source": "Delta business sources",
-        "regex": "125,000|100,000[\\s\\S]{0,260}25,000",
-        "stance": "supports_125k_public_limited_time",
-        "offer_amount": 125000,
-        "spend_requirement": 15000,
+        "regex": "200,000",
+        "stance": "supports_200k_public_limited_time",
+        "offer_amount": 200000,
+        "spend_requirement": 20000,
         "spend_window_months": 6,
-        "excerpt": "Delta business sources describe up to 125,000 miles for Reserve.",
+        "excerpt": "Delta business sources describe 200,000 miles for Reserve.",
         "confidence": "high"
       },
       {
         "sourceType": "usccg",
         "source": "US Credit Card Guide",
-        "regex": "125,000",
-        "stance": "supports_125k_secondary",
-        "offer_amount": 125000,
-        "spend_requirement": 15000,
+        "regex": "200,000",
+        "stance": "supports_200k_secondary",
+        "offer_amount": 200000,
+        "spend_requirement": 20000,
         "spend_window_months": 6,
-        "excerpt": "USCCG tracks the same elevated Delta Reserve Business offer.",
+        "excerpt": "Secondary sources track the same elevated Delta Reserve Business offer.",
         "confidence": "medium_high"
       }
     ]
