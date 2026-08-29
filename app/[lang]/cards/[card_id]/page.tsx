@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { Check, AlertTriangle, Gift } from "lucide-react";
+import { Check, AlertTriangle, ExternalLink, Gift } from "lucide-react";
 import { getCardById, getAllCards } from "@/lib/cards";
 import ChatWidget from "../../../components/ChatWidget";
 import BackToCards from "../../../components/BackToCards";
@@ -11,6 +11,7 @@ import { locales, t } from "@/lib/i18n";
 import { translateCategory } from "@/lib/category-translations";
 import { isIndexableCard } from "@/lib/indexable-cards";
 import { getCardEditorial } from "@/lib/card-editorial";
+import { getReferralOfferForCard } from "@/lib/referrals";
 
 const CREDIT_LABELS: Record<string, string> = {
   "Excellent": "Excellent",
@@ -118,6 +119,7 @@ export default async function CardDetailPage({ params }: Props) {
   const l = (key: string, p?: Record<string, string | number>) => t(key, locale, p);
   const freshness = freshnessFromIso(card.last_updated, lang);
   const editorial = lang === "en" ? getCardEditorial(card.card_id) : undefined;
+  const referralOffer = getReferralOfferForCard(card);
   const recurringCredits = (card.recurring_credits || []).filter(c => c.amount !== undefined);
   const hasTravelBenefits = !!(
     (card.travel_benefits?.hotel_status?.length ?? 0) > 0 ||
@@ -245,6 +247,54 @@ export default async function CardDetailPage({ params }: Props) {
             <ChatWidget cardName={card.name} cardId={card.card_id} locale={locale} />
           </div>
         </div>
+
+        {referralOffer && (
+          <div className="mt-4 rounded-lg border border-blue-200 bg-blue-50 p-4">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <div className="text-sm font-semibold text-blue-900">
+                  {lang === "zh"
+                    ? "查看 American Express Referral Offers"
+                    : lang === "zh-cn"
+                    ? "查看 American Express Referral Offers"
+                    : lang === "es"
+                    ? "Ver ofertas por recomendación de American Express"
+                    : "View American Express Referral Offers"}
+                </div>
+                <p className="mt-1 text-xs leading-relaxed text-blue-800">
+                  {lang === "zh"
+                    ? "連結會先開啟 Platinum Card，請在 Amex 頁面查看目前可申請的個人卡與商業卡。並非所有 Amex 產品都一定適用，優惠與資格可能因人而異。若您透過此連結獲核准，推薦人可能獲得獎勵；這不影響 OpenCard 的評價。"
+                    : lang === "zh-cn"
+                    ? "链接会先打开 Platinum Card，请在 Amex 页面查看当前可申请的个人卡与商业卡。并非所有 Amex 产品都一定适用，优惠与资格可能因人而异。如果您通过此链接获批，推荐人可能获得奖励；这不影响 OpenCard 的评价。"
+                    : lang === "es"
+                    ? "El enlace abre primero la Platinum Card. Consulta en Amex las tarjetas personales y comerciales disponibles. No todos los productos están necesariamente incluidos y las ofertas y la elegibilidad pueden variar. El referente podría recibir una recompensa si se aprueba tu solicitud; esto no influye en la evaluación de OpenCard."
+                    : "The link opens on the Platinum Card first. Use the Amex page to view currently eligible personal and business cards. Not every Amex product is necessarily included, and offers and eligibility may vary. The referrer may receive a reward if you are approved; this does not influence OpenCard's evaluation."}
+                </p>
+                <a
+                  href={referralOffer.termsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="mt-1.5 inline-block text-xs font-medium text-blue-700 underline underline-offset-2 hover:text-blue-900"
+                >
+                  {lang === "zh" ? "Referral 完整條款" : lang === "zh-cn" ? "Referral 完整条款" : lang === "es" ? "Términos completos" : "Full referral terms"}
+                </a>
+              </div>
+              <a
+                href={referralOffer.referralUrl}
+                target="_blank"
+                rel="sponsored nofollow noopener noreferrer"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+              >
+                {lang === "zh" || lang === "zh-cn"
+                  ? "查看 Referral Offers"
+                  : lang === "es"
+                  ? "Ver ofertas"
+                  : "View Referral Offers"}
+                <ExternalLink className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="space-y-6">
