@@ -1,7 +1,7 @@
 import type { CreditCard } from "@/lib/cards";
 
 export interface ReferralOffer {
-  program: "amex" | "chase-freedom" | "chase-marriott";
+  program: "amex" | "chase-freedom" | "chase-marriott" | "chase-sapphire";
   issuer: string;
   referralUrl: string;
   termsUrl?: string;
@@ -26,6 +26,12 @@ const CHASE_MARRIOTT_REFERRAL: ReferralOffer = {
   referralUrl: "https://www.referyourchasecard.com/252w/1SMM8AZUBD",
 };
 
+const CHASE_SAPPHIRE_REFERRAL: ReferralOffer = {
+  program: "chase-sapphire",
+  issuer: "Chase",
+  referralUrl: "https://www.referyourchasecard.com/19y/25IOS0TVN4",
+};
+
 const CHASE_FREEDOM_CARD_IDS = new Set([
   "chase-freedom-unlimited",
   "chase-freedom-flex",
@@ -37,10 +43,16 @@ const CHASE_MARRIOTT_CARD_IDS = new Set([
   "marriott-bonvoy-bountiful",
 ]);
 
+const CHASE_SAPPHIRE_CARD_IDS = new Set([
+  "chase-sapphire-preferred",
+  "chase-sapphire-reserve",
+]);
+
 export function getReferralOfferForCard(card: CreditCard): ReferralOffer | null {
   if (card.status === "discontinued") return null;
   if (card.issuer === AMEX_REFERRAL.issuer) return AMEX_REFERRAL;
   if (CHASE_FREEDOM_CARD_IDS.has(card.card_id)) return CHASE_FREEDOM_REFERRAL;
   if (CHASE_MARRIOTT_CARD_IDS.has(card.card_id)) return CHASE_MARRIOTT_REFERRAL;
+  if (CHASE_SAPPHIRE_CARD_IDS.has(card.card_id)) return CHASE_SAPPHIRE_REFERRAL;
   return null;
 }
