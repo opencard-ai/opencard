@@ -1,7 +1,7 @@
 import type { CreditCard } from "@/lib/cards";
 
 export interface ReferralOffer {
-  program: "amex" | "chase-freedom" | "chase-marriott" | "chase-sapphire";
+  program: "amex" | "bilt" | "chase-freedom" | "chase-marriott" | "chase-sapphire";
   issuer: string;
   referralUrl: string;
   termsUrl?: string;
@@ -32,6 +32,13 @@ const CHASE_SAPPHIRE_REFERRAL: ReferralOffer = {
   referralUrl: "https://www.referyourchasecard.com/19y/25IOS0TVN4",
 };
 
+const BILT_REFERRAL: ReferralOffer = {
+  program: "bilt",
+  issuer: "Bilt",
+  referralUrl: "https://www.bilt.com/card?invite=VDUW7X53",
+  termsUrl: "https://www.bilt.com/terms/bilt-card-offer-terms",
+};
+
 const CHASE_FREEDOM_CARD_IDS = new Set([
   "chase-freedom-unlimited",
   "chase-freedom-flex",
@@ -48,9 +55,16 @@ const CHASE_SAPPHIRE_CARD_IDS = new Set([
   "chase-sapphire-reserve",
 ]);
 
+const BILT_CARD_IDS = new Set([
+  "bilt-blue",
+  "bilt-obsidian",
+  "bilt-palladium",
+]);
+
 export function getReferralOfferForCard(card: CreditCard): ReferralOffer | null {
   if (card.status === "discontinued") return null;
   if (card.issuer === AMEX_REFERRAL.issuer) return AMEX_REFERRAL;
+  if (BILT_CARD_IDS.has(card.card_id)) return BILT_REFERRAL;
   if (CHASE_FREEDOM_CARD_IDS.has(card.card_id)) return CHASE_FREEDOM_REFERRAL;
   if (CHASE_MARRIOTT_CARD_IDS.has(card.card_id)) return CHASE_MARRIOTT_REFERRAL;
   if (CHASE_SAPPHIRE_CARD_IDS.has(card.card_id)) return CHASE_SAPPHIRE_REFERRAL;
