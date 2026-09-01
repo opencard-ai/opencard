@@ -34,19 +34,19 @@
       "bonus_points": 100000,
       "spending_requirement": 3000,
       "time_period_months": 3,
-      "description": "Watchlist/adaptor offer: earn 100,000 Flying Blue miles + 100 XP after $3,000 in purchases within 90 days. Verify issuer-visible landing page before creating production data.",
+      "description": "Expired watchlist/adaptor offer: 100,000 Flying Blue miles + 100 XP after $3,000 in purchases within 90 days. A current issuer-visible replacement offer requires review before creating production data.",
       "point_program": "Flying Blue",
       "estimated_value": 1200,
-      "offer_status": "public_limited_time_watchlist",
+      "offer_status": "expired_review_required",
       "confidence": "medium_high",
-      "is_elevated": true,
+      "is_elevated": false,
       "notes": [
-        "2026-07-24 secondary coverage reports best-ever 100k + 100 XP offer; BoA public snippet may still show 50k/100 XP, so adaptor should detect drift."
+        "The secondary-source 100k + 100 XP watchlist offer expired on 2026-08-31. BoA's public page remains live but did not expose a stable replacement amount during the 2026-09-01 review."
       ],
       "source_conflicts": [
         "Issuer public search snippet may lag at 50k/100 XP or prior 70k/100 XP offer."
       ],
-      "last_verified": "2026-07-24",
+      "last_verified": "2026-09-01",
       "expires": "2026-08-31"
     }
   },
@@ -67,7 +67,7 @@
       "offer_amount": 100000,
       "spend_requirement": 3000,
       "spend_window_months": 3,
-      "status": "public_limited_time_watchlist"
+      "status": "expired_review_required"
     },
     "confidence": "medium_until_issuer_flow_confirms",
     "ymmv_or_targeted_possible": false,
