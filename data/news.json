@@ -1,6 +1,39 @@
 {
   "items": [
     {
+      "title": "[YMMV] Verizon Shine: Free NFL Sunday Ticket from YouTube (9/4)",
+      "url": "https://www.doctorofcredit.com/ymmv-verizon-shine-free-nfl-sunday-ticket-from-youtube-9-4/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "nfl",
+        "verizon shine"
+      ],
+      "ts": "2026-09-04T04:01:42.000Z",
+      "title_en": "[YMMV] Verizon Shine: Free NFL Sunday Ticket from YouTube (9/4)",
+      "summary_en": "",
+      "title_zh": "[YMMV] Verizon Shine: Free NFL Sunday Ticket from YouTube (9/4)",
+      "summary_zh": "",
+      "title_es": "[YMMV] Verizon Shine: Free NFL Sunday Ticket from YouTube (9/4)",
+      "summary_es": ""
+    },
+    {
+      "title": "SiriusXM: Music & Entertainment Plan $2.99/Month For 3 Years",
+      "url": "https://www.doctorofcredit.com/siriusxm-music-entertainment-plan-2-99-month-for-3-years/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "siriusxm"
+      ],
+      "ts": "2026-09-03T21:25:52.000Z",
+      "title_en": "SiriusXM: Music & Entertainment Plan $2.99/Month For 3 Years",
+      "summary_en": "",
+      "title_zh": "SiriusXM: Music & Entertainment Plan $2.99/Month For 3 Years",
+      "summary_zh": "",
+      "title_es": "SiriusXM: Music & Entertainment Plan $2.99/Month For 3 Years",
+      "summary_es": ""
+    },
+    {
       "title": "[Ends Soon] Chase INK Cash & INK Unlimited 100,000 Points Signup Bonus",
       "url": "https://www.doctorofcredit.com/chase-ink-cash-ink-unlimited-100000-points-signup-bonus-starts-june-15th/",
       "source": "Doctor of Credit",
@@ -98,7 +131,7 @@
       "summary_es": ""
     },
     {
-      "title": "[Targeted] OnePay: Direct Deposit Bonus ($50-$400) For Existing Users",
+      "title": "[YMMV] OnePay: Direct Deposit Bonus ($50-$400) For Existing Users",
       "url": "https://www.doctorofcredit.com/targeted-onepay-direct-deposit-bonus-50-400-for-existing-users/",
       "source": "Doctor of Credit",
       "categories": [
@@ -106,11 +139,11 @@
         "onepay"
       ],
       "ts": "2026-09-03T17:00:37.000Z",
-      "title_en": "[Targeted] OnePay: Direct Deposit Bonus ($50-$400) For Existing Users",
+      "title_en": "[YMMV] OnePay: Direct Deposit Bonus ($50-$400) For Existing Users",
       "summary_en": "",
-      "title_zh": "[Targeted] OnePay: Direct Deposit Bonus ($50-$400) For Existing Users",
+      "title_zh": "[YMMV] OnePay: Direct Deposit Bonus ($50-$400) For Existing Users",
       "summary_zh": "",
-      "title_es": "[Targeted] OnePay: Direct Deposit Bonus ($50-$400) For Existing Users",
+      "title_es": "[YMMV] OnePay: Direct Deposit Bonus ($50-$400) For Existing Users",
       "summary_es": ""
     },
     {
@@ -235,41 +268,7 @@
       "summary_zh": "",
       "title_es": "Citi/Chase Offers: Get Up To 15% Back At Stop & Shop, Giant (2x; $10 Max Cashback)",
       "summary_es": ""
-    },
-    {
-      "title": "Topcashback: Get $2.50 Bonus With $20 Spend (9/3-9/4)",
-      "url": "https://www.doctorofcredit.com/topcashback-get-3-bonus-when-you-spend-10-today-only/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "shopping portals",
-        "topcashback"
-      ],
-      "ts": "2026-09-03T10:45:56.000Z",
-      "title_en": "Topcashback: Get $2.50 Bonus With $20 Spend (9/3-9/4)",
-      "summary_en": "",
-      "title_zh": "Topcashback: Get $2.50 Bonus With $20 Spend (9/3-9/4)",
-      "summary_zh": "",
-      "title_es": "Topcashback: Get $2.50 Bonus With $20 Spend (9/3-9/4)",
-      "summary_es": ""
-    },
-    {
-      "title": "Walmart: $10 Off $35+ With Promo Code SAVE3X/FAST30/DOUBLE10/TRIPLE10 (Next 3 Delivery/Pickup Orders)",
-      "url": "https://www.doctorofcredit.com/walmart-10-off-35-with-promo-code-fast30-next-3-delivery-pickup-orders/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "walmart",
-        "walmart plus"
-      ],
-      "ts": "2026-09-03T10:20:45.000Z",
-      "title_en": "Walmart: $10 Off $35+ With Promo Code SAVE3X/FAST30/DOUBLE10/TRIPLE10 (Next 3 Delivery/Pickup Orders)",
-      "summary_en": "",
-      "title_zh": "Walmart: $10 Off $35+ With Promo Code SAVE3X/FAST30/DOUBLE10/TRIPLE10 (Next 3 Delivery/Pickup Orders)",
-      "summary_zh": "",
-      "title_es": "Walmart: $10 Off $35+ With Promo Code SAVE3X/FAST30/DOUBLE10/TRIPLE10 (Next 3 Delivery/Pickup Orders)",
-      "summary_es": ""
     }
   ],
-  "fetched": "2026-09-03T20:09:36.336Z"
+  "fetched": "2026-09-04T08:11:22.826Z"
 }
