@@ -7,11 +7,23 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 4500,
+    "spending_requirement": 30000,
     "time_period_months": 3,
     "bonus_points": null,
-    "description": "Earn up to $2,000 cash bonus — $1,000 once you spend $4,500, $2,000 once you spend $10,000 (first 3 months)",
-    "point_program": "Capital One Spark Cash"
+    "cash_bonus": 2000,
+    "travel_credit": 500,
+    "description": "Earn a one-time $2,000 cash bonus and, for a limited time, a $500 Capital One Business Travel credit after spending $30,000 on purchases within the first 3 months. Plus, earn an additional $2,000 cash bonus for every $500,000 spent during the first year.",
+    "point_program": "Capital One Spark Cash",
+    "estimated_value": 2500,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
+    "notes": [
+      "Capital One official/searchable page and TPG July 2026 coverage support the $2,000 cash bonus + limited-time $500 Business Travel credit after $30,000/3 months, plus $2,000 per $500k first-year spend."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-08-06",
+    "is_elevated": true,
+    "expires_at": "2026-09-07"
   },
   "earning_rates": [
     {
@@ -63,11 +75,19 @@
     {
       "url": "https://www.cnn.com/cnn-underscored/money/capital-one-spark-cash-plus-review",
       "notes": "CNN Underscored: competitive 2% rate, employee cards earn 2%"
+    },
+    {
+      "url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-plus/",
+      "notes": "Official Spark Cash Plus page: $2,000 cash bonus after $30,000/3 months plus additional $2,000 per $500k first-year spend."
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/capital-one-spark-current-offers/",
+      "notes": "TPG July 2026 Spark Cash lineup confirms $2,000 + $500 Business Travel credit limited-time Spark Cash Plus offer."
     }
   ],
-  "notes": "Charge card (balance must be paid in full monthly). $150 annual fee. 2% unlimited cash back on everything — best flat-rate business card for spending. Up to $2,000 welcome bonus for high spenders. Employee cards earn 2% and are free. No preset spending limit. For businesses that can pay in full monthly and spend heavily, this is one of the best business cards available. Compare to Spark Cash Select (1.5% no-fee) for lower spenders.",
+  "notes": "Charge card (balance must be paid in full monthly). $150 annual fee. 2% unlimited cash back; 5% on hotels/rental cars through Capital One Business Travel. Updated 2026-08-06 for elevated $2,000 + $500 travel-credit offer.",
   "confidence": "high",
-  "last_updated": "2026-04-16T13:41:49.960Z",
+  "last_updated": "2026-08-07T05:25:00.000Z",
   "tags": [
     "transferable"
   ],
@@ -76,6 +96,6 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.960Z",
-  "next_review": "2026-07-15T13:41:49.960000+00:00"
+  "last_verified": "2026-08-06",
+  "next_review": "2026-09-05T00:00:00.000-07:00"
 }

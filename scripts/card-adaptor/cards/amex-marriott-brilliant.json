@@ -42,9 +42,10 @@
       "confidence": "high",
       "is_elevated": true,
       "expires": "2026-09-30",
+      "expires_at": "2026-09-30",
       "notes": [
         "2026-08-07 refresh: elevated Brilliant candidate set to 150k bonus points + $250 travel credit through 2026-09-30.",
-        "Keep current public 100k/$6k/6mo + extra 50k path in production card data; this config tracks the elevated candidate only."
+        "Production and adaptor candidate are aligned to the elevated 150k + $250 offer through 2026-09-30."
       ],
       "source_conflicts": [
         "Prior 200k/175k Marriott family offers have expired or are no longer the current Brilliant baseline."

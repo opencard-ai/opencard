@@ -1,0 +1,87 @@
+{
+  "cardId": "capital-one-spark-cash",
+  "cardPath": "data/cards/capital-one-spark-cash.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://www.capitalone.com/small-business/credit-cards/cash-back/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-capitalone-business-cards",
+      "type": "issuer",
+      "url": "https://www.capitalone.com/small-business/credit-cards/",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://thepointsguy.com/credit-cards/capital-one-spark-current-offers/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": null,
+      "cash_bonus": 1000,
+      "travel_credit": 250,
+      "spending_requirement": 10000,
+      "time_period_months": 3,
+      "description": "Earn a $1,000 cash bonus and, for a limited time, a $250 Capital One Business Travel credit after spending $10,000 on purchases within the first 3 months from account opening.",
+      "point_program": "Capital One Spark Cash",
+      "estimated_value": 1250,
+      "offer_status": "public_limited_time",
+      "confidence": "medium_high",
+      "is_elevated": true,
+      "expires_at": "2026-09-07",
+      "notes": [
+        "Track the elevated Spark Cash public offer as a combined cash bonus + travel credit candidate.",
+        "Capital One pages can be JS-heavy; keep this config under review if the issuer landing page changes."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": []
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:$1,000",
+      "sources/*issuer*.md:$250",
+      "sources/*issuer*.md:$10,000"
+    ]
+  },
+  "open_questions": [
+    "Refetch immediately after 2026-09-07 and remove the $250 Business Travel credit if Capital One no longer displays it."
+  ],
+  "community": {
+    "summary": "Track the elevated Capital One Spark Cash public offer as $1,000 cash bonus plus $250 business travel credit after $10,000 / 3 months.",
+    "recommended_production_value": {
+      "offer_amount": 1250,
+      "spend_requirement": 10000,
+      "spend_window_months": 3,
+      "status": "public_limited_time"
+    },
+    "confidence": "medium_high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [
+      "$1,000",
+      "$250"
+    ],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Capital One Spark Cash page",
+        "regex": "1,000|250|10,000",
+        "stance": "supports_1000_cash_plus_250_credit",
+        "offer_amount": 1250,
+        "spend_requirement": 10000,
+        "spend_window_months": 3,
+        "excerpt": "Capital One Spark Cash should surface the $1,000 cash bonus and $250 travel credit after $10,000 in 3 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

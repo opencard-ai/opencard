@@ -42,9 +42,10 @@
       "confidence": "high",
       "is_elevated": true,
       "expires": "2026-09-30",
+      "expires_at": "2026-09-30",
       "notes": [
         "2026-08-07 refresh: elevated Bevy candidate set to 125k bonus points + $150 travel credit through 2026-09-30.",
-        "Keep current public 85k/$5k/6mo baseline in production card data; this config tracks the elevated candidate only."
+        "Production and adaptor candidate are aligned to the elevated 125k + $150 offer through 2026-09-30."
       ],
       "source_conflicts": [
         "Some Marriott-family pages/secondary sources may mention different elevated paths; keep Bevy production conservative at the Amex public 85k baseline unless issuer flow confirms the elevated tier."
