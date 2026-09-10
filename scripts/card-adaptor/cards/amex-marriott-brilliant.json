@@ -34,8 +34,8 @@
       "bonus_points": 150000,
       "spending_requirement": 6000,
       "time_period_months": 6,
-      "travel_credit": 250,
-      "description": "Elevated limited-time offer: Earn 150,000 Marriott Bonvoy bonus points plus a $250 travel credit after $6,000 in eligible purchases within the first 6 months of Card Membership.",
+      "statement_credit": 250,
+      "description": "Elevated limited-time offer: Earn 150,000 Marriott Bonvoy bonus points plus a $250 statement credit after $6,000 in eligible purchases within the first 6 months of Card Membership.",
       "point_program": "Marriott Bonvoy",
       "estimated_value": 1200,
       "offer_status": "public_limited_time",
@@ -44,7 +44,7 @@
       "expires": "2026-09-30",
       "expires_at": "2026-09-30",
       "notes": [
-        "2026-08-07 refresh: elevated Brilliant candidate set to 150k bonus points + $250 travel credit through 2026-09-30.",
+        "2026-09-09 issuer recheck: elevated Brilliant candidate is 150k bonus points + $250 statement credit through 2026-09-30.",
         "Production and adaptor candidate are aligned to the elevated 150k + $250 offer through 2026-09-30."
       ],
       "source_conflicts": [

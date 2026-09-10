@@ -1,0 +1,79 @@
+{
+  "cardId": "wells-fargo-choice-privileges",
+  "cardPath": "data/cards/wells-fargo-choice-privileges.json",
+  "mode": "offer",
+  "sources": [
+    {
+      "id": "01-issuer",
+      "type": "issuer",
+      "url": "https://creditcards.wellsfargo.com/choice-hotels-privileges-select-mastercard/",
+      "method": "fetch",
+      "required": true
+    },
+    {
+      "id": "02-choice",
+      "type": "issuer",
+      "url": "https://www.choicehotels.com/choice-privileges/earn-points/mastercard-credit-card",
+      "method": "get"
+    },
+    {
+      "id": "03-doc",
+      "type": "doc",
+      "url": "https://www.doctorofcredit.com/wells-fargo-choice-privileges-60000-points/",
+      "method": "get"
+    }
+  ],
+  "candidate": {
+    "welcome_offer": {
+      "bonus_points": 60000,
+      "spending_requirement": 3000,
+      "time_period_months": 3,
+      "description": "Earn 60,000 Choice Privileges bonus points after spending $3,000 in purchases in the first 3 months.",
+      "point_program": "Choice Privileges",
+      "estimated_value": 360,
+      "offer_status": "public",
+      "confidence": "high",
+      "notes": [
+        "Wells Fargo's public Choice Privileges Select page confirmed the 60,000-point offer after $3,000/3 months on 2026-09-09."
+      ],
+      "source_conflicts": [],
+      "last_verified": "AUTO_DATE"
+    },
+    "caveats": [
+      "The production card already matches the issuer offer; this config closes adaptor coverage only."
+    ]
+  },
+  "citations": {
+    "welcome_offer": [
+      "sources/*issuer*.md:60,000 bonus points",
+      "sources/*issuer*.md:$3,000",
+      "sources/*issuer*.md:first 3 months"
+    ]
+  },
+  "open_questions": [],
+  "community": {
+    "summary": "Track the Wells Fargo Choice Privileges Select public welcome offer.",
+    "recommended_production_value": {
+      "offer_amount": 60000,
+      "spend_requirement": 3000,
+      "spend_window_months": 3,
+      "status": "public"
+    },
+    "confidence": "high",
+    "ymmv_or_targeted_possible": false,
+    "conflictStanceIncludes": [],
+    "observations": [
+      {
+        "sourceType": "issuer",
+        "source": "Wells Fargo Choice Privileges Select page",
+        "regex": "60,000 bonus points|spend \\$3,000|first 3 months",
+        "stance": "supports_current_public_sub",
+        "offer_amount": 60000,
+        "spend_requirement": 3000,
+        "spend_window_months": 3,
+        "excerpt": "Wells Fargo confirms 60,000 bonus points after $3,000 in purchases in the first 3 months.",
+        "confidence": "high_if_present"
+      }
+    ]
+  }
+}

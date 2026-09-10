@@ -10,8 +10,8 @@
     "bonus_points": 125000,
     "spending_requirement": 5000,
     "time_period_months": 6,
-    "travel_credit": 150,
-    "description": "Limited-time offer: Earn 125,000 Marriott Bonvoy bonus points plus a $150 travel credit after spending $5,000 in purchases within the first 6 months.",
+    "statement_credit": 150,
+    "description": "Limited-time offer: Earn 125,000 Marriott Bonvoy bonus points plus a $150 statement credit after spending $5,000 in purchases within the first 6 months.",
     "point_program": "Marriott Bonvoy",
     "estimated_value": 950,
     "offer_status": "public_limited_time",
@@ -21,14 +21,14 @@
     "expiry_date": "2026-09-30",
     "expires_at": "2026-09-30",
     "notes": [
-      "2026-08-11 approved refresh: 125k points + $150 travel credit through 2026-09-30.",
+      "2026-09-09 issuer recheck: 125k points + $150 statement credit through 2026-09-30.",
       "NLL offer: application terms do not include lifetime language for the welcome bonus.",
       "Replaces the prior 85k public baseline representation."
     ],
     "source_conflicts": [
       "Some Marriott-family pages/secondary sources mention extra 50k paths; keep Bevy production conservative at the Amex public 85k baseline unless issuer flow confirms extra tier."
     ],
-    "last_verified": "2026-08-11"
+    "last_verified": "2026-09-09"
   },
   "earning_rates": [
     {
