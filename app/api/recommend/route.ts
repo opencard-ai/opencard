@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { recommendationFacts, CARD_FACT_RULES } from "@/lib/recommend-facts";
 import { getAllCards } from "@/lib/cards";
 import { scoreCards, generateRecommendationExplanation, type UserPreferences } from "@/lib/recommend";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
@@ -68,7 +69,7 @@ export async function POST(req: NextRequest) {
     .filter((c): c is NonNullable<typeof c> => Boolean(c));
   const myCardsBlock = ownedCards.length > 0
     ? `\nUSER ALREADY OWNS THESE CARDS (their portfolio):
-${ownedCards.map((c) => `- ${c.name} (${c.issuer}, $${c.annual_fee} AF). Tags: ${c.tags.join(", ")}`).join("\n")}
+${ownedCards.map((c) => JSON.stringify({ ...recommendationFacts(c), travel_benefits: c.travel_benefits, recurring_credits: c.recurring_credits, insurance: c.insurance })).join("\n")}
 
 When the user asks "which of MY cards…", "do I have a card for…", "我手上的卡…", "我有的卡…" or similar portfolio-scoped questions, answer ONLY from the cards above. Do NOT recommend cards they don't own unless they explicitly ask for new cards.`
     : `\nUSER PORTFOLIO: empty (no cards saved in MyCards yet).
@@ -78,7 +79,8 @@ If the user asks "which of MY cards…", "do I have a card for…", "我手上�
   const systemPrompt = `You are a friendly US credit card recommendation assistant on OpenCard. Your job is to help users find the best credit card for their needs.
 
 CARD DATABASE:
-${cardData.map(c => `- ${c.name} (${c.issuer}): $${c.annual_fee} annual fee. Categories: ${c.earning_rates.map(r => `${r.rate}× ${r.category}`).join(", ")}. Tags: ${c.tags.join(", ")}. ${c.annual_fee === 0 ? "No annual fee!" : ""}`).join("\n")}
+${cardData.map(c => JSON.stringify(recommendationFacts(c))).join("\n")}
+${CARD_FACT_RULES}
 ${myCardsBlock}
 
 IMPORTANT BEHAVIOR - Follow these rules strictly:
@@ -94,11 +96,7 @@ IMPORTANT BEHAVIOR - Follow these rules strictly:
 5. Always respond in ${lang} only.
 6. Give 2-3 card recommendations with a brief reason. For expert users mentioning MQD, 5/24, velocity rules, acknowledge these and incorporate into reasoning.
 7. After recommendations, ask if they have follow-up questions.
-8. IMPORTANT card facts to remember:
-   - Marriott Bonvoy Brilliant Amex: lounge benefit is Priority Pass (NOT a branded Marriott lounge)
-   - Chase Sapphire Reserve: best for travel + dining combined with Priority Pass
-   - United cards: United Explorer (Chase), United Club Infinite, United Quest
-   - Delta cards: Gold ($0 AF), Platinum ($250), Reserve ($650) — Reserve gives MQD boost
+8. Explain trade-offs and uncertainty using the database; never add unrecorded benefits or eligibility rules.
 
 Respond conversationally, like a helpful friend who knows credit cards well.`;
 

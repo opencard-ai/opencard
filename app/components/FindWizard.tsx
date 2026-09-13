@@ -1,7 +1,9 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { ArrowLeft, ArrowRight, RotateCcw } from "lucide-react";
+import { useState, useMemo, useEffect, useRef } from "react";
+import { ArrowLeft, RotateCcw } from "lucide-react";
+import CompareBar from "./CompareBar";
+import { trackEvent } from "@/lib/analytics";
 import CardRow from "./CardRow";
 import type { CreditCard } from "@/lib/cards";
 
@@ -102,6 +104,8 @@ function rank(a: CreditCard, b: CreditCard): number {
 
 export default function FindWizard({ cards, lang }: Props) {
   const t = STR[(lang as Lang) in STR ? (lang as Lang) : "en"];
+  const [compared, setCompared] = useState<string[]>([]);
+  const completionTracked = useRef(false);
   const [step, setStep] = useState(0);
   const [spend, setSpend] = useState<SpendKey | null>(null);
   const [fee, setFee] = useState<FeeKey | null>(null);
@@ -130,7 +134,14 @@ export default function FindWizard({ cards, lang }: Props) {
     return { cards: [], relaxed: null };
   }, [cards, spend, fee, cred]);
 
-  const reset = () => { setStep(0); setSpend(null); setFee(null); setCred(null); };
+  useEffect(() => {
+    if (step === 3 && !completionTracked.current) {
+      completionTracked.current = true;
+      trackEvent("recommendation_completed", { method: "wizard", result_count: results.cards.length, locale: lang });
+    }
+  }, [step, results.cards.length, lang]);
+
+  const reset = () => { completionTracked.current = false; setCompared([]); setStep(0); setSpend(null); setFee(null); setCred(null); };
   const back = () => { if (step > 0) setStep(step - 1); };
 
   const Pill = ({ label, selected, onClick }: { label: string; selected: boolean; onClick: () => void }) => (
@@ -177,7 +188,7 @@ export default function FindWizard({ cards, lang }: Props) {
                 key={k}
                 label={t.spend[k]}
                 selected={spend === k}
-                onClick={() => { setSpend(k); setStep(1); }}
+                onClick={() => { trackEvent("selection_started", { method: "wizard", locale: lang }); setSpend(k); setStep(1); }}
               />
             ))}
           </div>
@@ -244,9 +255,9 @@ export default function FindWizard({ cards, lang }: Props) {
                     card={card}
                     lang={lang}
                     locale={lang}
-                    isCompared={false}
-                    isMaxed={false}
-                    onToggleCompare={() => { /* noop on wizard results */ }}
+                    isCompared={compared.includes(card.card_id)}
+                    isMaxed={compared.length >= 3}
+                    onToggleCompare={() => setCompared(prev => prev.includes(card.card_id) ? prev.filter(id => id !== card.card_id) : prev.length < 3 ? [...prev, card.card_id] : prev)}
                   />
                 ))}
               </div>
@@ -254,6 +265,8 @@ export default function FindWizard({ cards, lang }: Props) {
           )}
         </div>
       )}
+
+      <CompareBar selected={cards.filter(card => compared.includes(card.card_id))} onRemove={id => setCompared(prev => prev.filter(item => item !== id))} onClear={() => setCompared([])} lang={lang} />
 
       {step > 0 && step < 3 && (
         <button

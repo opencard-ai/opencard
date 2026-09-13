@@ -8,9 +8,14 @@
 import { google } from 'googleapis';
 import fs from 'fs';
 import path from 'path';
+import sitemap from '../app/sitemap';
+import { getAllCards } from '../lib/cards';
+import { GUIDES } from '../lib/guides';
+import { Baseline, COHORT_LABELS, Cohort, IndexPolicy, classifyPolicy, compareCohorts, normalizeUrl, cardIdsFromRecords } from './gsc-cohorts';
 
 const TOKEN_PATH = path.join(process.cwd(), '.gsc-token.json');
 const REPORT_PATH = path.join(process.cwd(), '.gsc-report-history.json');
+const BASELINE_PATH = path.join(process.cwd(), '.gsc-cohort-baseline.json');
 const SITE_URL = 'https://opencardai.com';
 
 interface SearchMetric {
@@ -22,6 +27,7 @@ interface SearchMetric {
 
 interface PageMetric extends SearchMetric {
   url: string;
+  policy: IndexPolicy;
 }
 
 interface OpportunityMetric extends SearchMetric {
@@ -42,6 +48,9 @@ interface GSCReport extends SearchMetric {
   period: { startDate: string; endDate: string };
   previousPeriod: { startDate: string; endDate: string } & SearchMetric;
   sitemap: SitemapMetric;
+  cohortBaseline: string;
+  cohorts: ReturnType<typeof compareCohorts>;
+  pageCoverage: { current: number; previous: number; rowLimit: number };
   topPages: PageMetric[];
   opportunities: OpportunityMetric[];
 }
@@ -112,10 +121,11 @@ async function fetchDailyReport(): Promise<{ report: GSCReport; alerts: string[]
     return response.data.rows || [];
   };
 
-  const [currentRows, previousRows, pageRows, queryPageRows, sitemapResponse] = await Promise.all([
+  const [currentRows, previousRows, pageRows, previousPageRows, queryPageRows, sitemapResponse] = await Promise.all([
     queryAnalytics(currentStart, currentEnd),
     queryAnalytics(previousStart, previousEnd),
-    queryAnalytics(currentStart, currentEnd, ['page'], 1000),
+    queryAnalytics(currentStart, currentEnd, ['page'], 25000),
+    queryAnalytics(previousStart, previousEnd, ['page'], 25000),
     queryAnalytics(currentStart, currentEnd, ['query', 'page'], 1000),
     searchConsole.sitemaps.list({ siteUrl: SITE_URL }),
   ]);
@@ -123,9 +133,27 @@ async function fetchDailyReport(): Promise<{ report: GSCReport; alerts: string[]
   const current = metricFromRow(currentRows[0]);
   const previous = metricFromRow(previousRows[0]);
 
+  const context = {
+    indexableUrls: new Set(sitemap().map(item => normalizeUrl(item.url))),
+    cardIds: cardIdsFromRecords(getAllCards()),
+    guideSlugs: new Set(GUIDES.map(guide => guide.slug)),
+  };
+  // Freeze membership once. Missing GSC impressions never means newly published.
+  // This baseline starts today; it cannot reconstruct the August policy change.
+  const baseline: Baseline = fs.existsSync(BASELINE_PATH)
+    ? JSON.parse(fs.readFileSync(BASELINE_PATH, 'utf8'))
+    : { capturedAt: new Date().toISOString(), indexableUrls: [...context.indexableUrls].sort() };
+  if (!baseline.capturedAt || !Array.isArray(baseline.indexableUrls) || !baseline.indexableUrls.every(url => typeof url === 'string')) {
+    throw new Error('Invalid GSC cohort baseline; restore the original baseline before reporting');
+  }
+  if (!fs.existsSync(BASELINE_PATH)) fs.writeFileSync(BASELINE_PATH, JSON.stringify(baseline, null, 2), { flag: 'wx' });
+  const asPages = (rows: typeof pageRows) => rows.map(row => ({ url: String(row.keys?.[0] || ''), ...metricFromRow(row) }));
+  const cohorts = compareCohorts(asPages(pageRows), asPages(previousPageRows), context, baseline);
+
   const topPages = pageRows
     .map((row: any): PageMetric => ({
       url: String(row.keys?.[0] || ''),
+      policy: classifyPolicy(String(row.keys?.[0] || ''), context),
       ...metricFromRow(row),
     }))
     .sort((a, b) => b.impressions - a.impressions)
@@ -137,7 +165,7 @@ async function fetchDailyReport(): Promise<{ report: GSCReport; alerts: string[]
       url: String(row.keys?.[1] || ''),
       ...metricFromRow(row),
     }))
-    .filter((row) => row.clicks === 0 && row.impressions >= 2 && row.position >= 4 && row.position <= 20)
+    .filter((row) => classifyPolicy(row.url, context) === 'indexable' && row.clicks === 0 && row.impressions >= 2 && row.position >= 4 && row.position <= 20)
     .sort((a, b) => b.impressions - a.impressions || a.position - b.position)
     .slice(0, 5);
 
@@ -168,6 +196,9 @@ async function fetchDailyReport(): Promise<{ report: GSCReport; alerts: string[]
     },
     ...current,
     sitemap,
+    cohortBaseline: baseline.capturedAt,
+    cohorts,
+    pageCoverage: { current: pageRows.length, previous: previousPageRows.length, rowLimit: 25000 },
     topPages,
     opportunities,
   };
@@ -177,7 +208,7 @@ async function fetchDailyReport(): Promise<{ report: GSCReport; alerts: string[]
   const clicksChange = percentageChange(current.clicks, previous.clicks);
 
   if (impressionsChange !== null && previous.impressions > 100 && impressionsChange <= -50) {
-    alerts.push(`⚠️ Impressions dropped ${Math.abs(impressionsChange).toFixed(0)}% (${previous.impressions} → ${current.impressions})`);
+    alerts.push(`⚠️ Sitewide impressions dropped ${Math.abs(impressionsChange).toFixed(0)}% (${previous.impressions} → ${current.impressions}); assess policy cohorts before attributing this to SEO regression.`);
   }
   if (clicksChange !== null && previous.clicks > 10 && clicksChange <= -50) {
     alerts.push(`⚠️ Clicks dropped ${Math.abs(clicksChange).toFixed(0)}% (${previous.clicks} → ${current.clicks})`);
@@ -209,6 +240,15 @@ function formatReport(report: GSCReport, alerts: string[]): string {
   message += `• CTR: ${report.ctr.toFixed(2)}% (prior ${report.previousPeriod.ctr.toFixed(2)}%)\n`;
   message += `• Avg position: ${report.position.toFixed(1)} (prior ${report.previousPeriod.position.toFixed(1)})\n\n`;
 
+  message += `🧩 **Policy cohorts — same membership in both periods**\n`;
+  for (const key of Object.keys(COHORT_LABELS) as Cohort[]) {
+    const { current, previous } = report.cohorts[key];
+    const position = (metric: typeof current) => metric.impressions ? metric.position.toFixed(1) : 'n/a';
+    message += `• ${COHORT_LABELS[key]}: ${previous.impressions} → ${current.impressions} imp (${formatDelta(current.impressions, previous.impressions)}); ${previous.clicks} → ${current.clicks} clicks; pos ${position(previous)} → ${position(current)}\n`;
+  }
+  message += `• Baseline captured ${report.cohortBaseline}. New = newly indexable since that snapshot, not newly published or first seen in GSC. No retrospective August attribution.\n`;
+  message += `• Current policy intent, not Google's index status. Page rows: ${report.pageCoverage.current} / ${report.pageCoverage.previous} (current / prior; cap ${report.pageCoverage.rowLimit} each). GSC may omit rows; cohort sums need not equal site totals. Aggregate positions can shift with query mix.\n\n`;
+
   message += `🗺️ **Sitemap Status**\n`;
   message += `• Submitted URLs: ${report.sitemap.submitted}\n`;
   message += `• GSC-reported indexed URLs: ${report.sitemap.indexed}\n`;
@@ -220,13 +260,13 @@ function formatReport(report: GSCReport, alerts: string[]): string {
     message += `🏆 **Top Pages by Impressions**\n`;
     report.topPages.forEach((page, index) => {
       const shortUrl = page.url.replace(`${SITE_URL}/`, '');
-      message += `${index + 1}. ${shortUrl} — ${page.impressions} imp / ${page.clicks} click / pos ${page.position.toFixed(1)}\n`;
+      message += `${index + 1}. ${shortUrl} [${page.policy}] — ${page.impressions} imp / ${page.clicks} click / pos ${page.position.toFixed(1)}\n`;
     });
     message += '\n';
   }
 
   if (report.opportunities.length) {
-    message += `🎯 **Near-Page-One Opportunities (0 clicks, position 4–20)**\n`;
+    message += `🎯 **Near-Page-One Opportunities (indexable policy only; 0 clicks, position 4–20)**\n`;
     report.opportunities.forEach((item, index) => {
       const shortUrl = item.url.replace(`${SITE_URL}/`, '');
       message += `${index + 1}. “${item.query}” → ${shortUrl} — ${item.impressions} imp / pos ${item.position.toFixed(1)}\n`;

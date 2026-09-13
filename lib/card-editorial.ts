@@ -15,8 +15,8 @@ const CARD_EDITORIAL: Record<string, CardEditorial> = {
   "chase-sapphire-preferred": {
     take: "A practical entry point into transferable travel rewards for someone who wants useful dining and travel categories without committing to a premium annual fee. Its strongest case is flexibility: points can support several redemption paths, while the fee is low enough that a modest amount of naturally used value can justify keeping it. The weak spot is ordinary, uncategorized spending, so it works better as part of a small card pair than as the only card in a wallet.",
     bestFor: ["Travelers starting with transferable points", "People who spend regularly on dining and travel", "Cardholders who want primary rental-car coverage without a premium-card fee"],
-    notFor: ["People who want simple statement-credit rewards", "High spenders seeking lounge access as the main benefit", "Anyone unable to meet a welcome-offer threshold through normal spending"],
-    breakEven: "Start with the annual fee, then subtract only the travel credit or other benefits you would use without changing your booking habits. The remaining fee should be covered by the extra value of its points and protections over your best no-fee alternative—not by the welcome offer, which is one-time value.",
+    notFor: ["People who want simple statement-credit rewards", "High spenders seeking lounge access as the main benefit", "Anyone who would overspend or carry an interest-bearing balance to earn rewards"],
+    breakEven: "Use the annual fee and eligible credit terms shown on this page, excluding the welcome offer. Worked example—not a guaranteed return: if $6,000 of annual spending earns 1 percentage point more value than your no-fee alternative, that adds $60, not the total rewards earned. If a planned hotel booking saves another $50 after comparing the same room and cancellation terms directly, the combined recurring value is $110 before subtracting the annual fee. Set the hotel saving to $0 if you would not make that booking. Use your own redemption value; do not count a credit, its underlying purchase, and rewards on that purchase as three separate savings.",
     alternatives: [
       { cardId: "capital-one-venture", label: "Capital One Venture", reason: "Simpler flat-rate earning for people who dislike category tracking." },
       { cardId: "chase-sapphire-reserve", label: "Chase Sapphire Reserve", reason: "Higher-fee option when premium travel benefits are repeatedly useful." },
@@ -25,11 +25,11 @@ const CARD_EDITORIAL: Record<string, CardEditorial> = {
   "chase-sapphire-reserve": {
     take: "A premium travel card whose value depends less on the headline list of credits than on whether its travel ecosystem matches how you already book. Direct travel earning, airport benefits, protections, and transferable points can be strong, but the annual fee creates a high hurdle. It is not automatically an upgrade from the Preferred: it is a different product for frequent travelers who can use the core benefits repeatedly and with little friction.",
     bestFor: ["Frequent travelers who can use the core travel credit naturally", "People who value strong travel protections and transferable points", "Travelers whose airports and routes make the included lounge network useful"],
-    notFor: ["Occasional travelers attracted mainly by the welcome offer", "People who must manufacture spending to use lifestyle credits", "Cardholders already paying for overlapping lounge memberships"],
-    breakEven: "Ignore the one-time bonus and value every recurring credit at what it replaces in your normal budget. Add realistic lounge and protection value, then subtract the rewards you would earn with a lower-fee card. If the expected case does not comfortably exceed the annual fee, the Preferred or another mid-tier card is usually safer.",
+    notFor: ["Occasional travelers attracted mainly by the welcome offer", "People who must manufacture spending to use lifestyle credits", "Cardholders with overlapping lounge access who cannot identify enough additional recurring value"],
+    breakEven: "Compare renewal with the Preferred, not just with having no travel card: subtract the two annual fees shown on their pages to get the upgrade hurdle. Then subtract only the additional usable credits and benefits that Reserve provides in your situation. For a sensitivity check, assume four lounge visits replace $20 meals you would otherwise buy: that is $80 a year, not the advertised price of four day passes. Use $0 if meals are already reimbursed or lounge access overlaps another card. Count extra earning only on the same planned spending, and give unused dining, hotel, or subscription credits $0. If the remaining gap is positive, staying with the lower-fee card wins under those assumptions.",
     alternatives: [
       { cardId: "chase-sapphire-preferred", label: "Chase Sapphire Preferred", reason: "Keeps transferable Chase points with a much lower annual-fee hurdle." },
-      { cardId: "capital-one-venture-x", label: "Capital One Venture X", reason: "A different premium value proposition centered on portal credit and flat earning." },
+      { cardId: "capital-one-venture-x", label: "Capital One Venture X", reason: "Compare the value of an actual portal booking after price differences and restrictions." },
     ],
   },
   "amex-platinum": {
@@ -53,13 +53,13 @@ const CARD_EDITORIAL: Record<string, CardEditorial> = {
     ],
   },
   "capital-one-venture-x": {
-    take: "One of the more straightforward premium-card propositions when the cardholder is willing to use Capital One Travel. The annual travel benefit and anniversary value can offset much of the fee on paper, while flat earning reduces category management. The main trade-off is portal dependence: price, inventory, loyalty recognition, and service during disruptions should be tested before treating the travel credit as cash.",
-    bestFor: ["Travelers comfortable booking at least some trips through Capital One Travel", "People who value simple flat-rate earning", "Cardholders who can use its lounge access without paying for overlapping memberships"],
-    notFor: ["Travelers who insist on booking every hotel directly", "People who rarely travel enough to use the annual portal benefit", "Anyone whose home airport and routes do not fit the lounge network"],
-    breakEven: "Value the portal credit at the amount it saves after comparing the same booking directly. Add anniversary value only if you can redeem it well, then include realistic lounge use and incremental rewards. Account for any lost hotel points, elite credit, or flexibility caused by portal booking.",
+    take: "A premium-card proposition that depends heavily on whether Capital One Travel fits trips you already intend to take. Start with a real booking comparison before assigning value to the portal credit: price, inventory, cancellation terms, hotel loyalty recognition, and service during disruptions can change the result. Evaluate the recurring benefits separately from the welcome offer; a strong first year does not by itself make the card worth renewing.",
+    bestFor: ["Travelers comfortable booking at least some trips through Capital One Travel", "People willing to compare portal and direct prices before booking", "Cardholders who can use its lounge access without paying for overlapping memberships"],
+    notFor: ["Travelers who insist on booking every hotel directly", "People who rarely travel enough to use the annual portal benefit", "Anyone relying on lounge access without checking their actual airports, guest needs, and current access rules"],
+    breakEven: "Use the annual fee and portal-credit limit shown on this page. Hypothetical booking example: the same itinerary costs $350 through the portal and $300 directly; applying a $300 eligible credit leaves $50 to pay, so the credit saves $250 against the direct booking, not $300. This assumes identical cancellation terms and no lost loyalty value; deduct those costs if applicable. Subtract the resulting savings from the annual fee, then assess only additional rewards and benefits you would actually use. Do not count an application-fee credit as an annual benefit when its reset spans multiple years. Use $0 for unverified anniversary or lounge value rather than relying on it to turn the calculation positive.",
     alternatives: [
       { cardId: "capital-one-venture", label: "Capital One Venture", reason: "Lower-fee version for people who want simple miles without premium commitments." },
-      { cardId: "chase-sapphire-reserve", label: "Chase Sapphire Reserve", reason: "Consider when direct travel earning and Chase protections are more important." },
+      { cardId: "chase-sapphire-reserve", label: "Chase Sapphire Reserve", reason: "Compare the additional annual fee with direct-booking rewards and benefits you would actually use." },
     ],
   },
   "capital-one-venture": {

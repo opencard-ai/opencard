@@ -107,6 +107,10 @@ export interface HotelProgram {
 }
 
 export interface WelcomeOffer {
+  offer_status?: string;
+  last_verified?: string;
+  expires_at?: string;
+  statement_credit?: number;
   spending_requirement?: number;
   time_period_months?: number;
   bonus_points?: number;
@@ -140,6 +144,7 @@ export interface CreditCard {
   issuer: string;
   network: string;
   annual_fee: number;
+  annual_fee_description?: string;
   foreign_transaction_fee: number;
   credit_required: string;
   welcome_offer?: WelcomeOffer;

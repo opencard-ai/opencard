@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { Check, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import type { CreditCard, RecurringCredit } from "@/lib/cards";
@@ -35,6 +37,15 @@ const INSURANCE_KEYS = [
 ] as const;
 
 export default function CompareTable({ cards, lang }: CompareTableProps) {
+  const measured = useRef("");
+  const comparisonKey = cards.map(card => card.card_id).sort().join(",");
+  useEffect(() => {
+    if (cards.length >= 2 && measured.current !== comparisonKey) {
+      measured.current = comparisonKey;
+      trackEvent("comparison_viewed", { card_count: cards.length, locale: lang });
+    }
+  }, [comparisonKey, cards.length, lang]);
+
   if (cards.length === 0) return null;
 
   const allCategories = [...new Set(cards.flatMap((c) => c.earning_rates.map((r) => r.category)))].sort();

@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { get } from 'node:https';
-import { decode } from 'html-entities';
+import { fetchRSS, prepareNews } from './news-sync-core.mjs';
 
 // Load .env.local if present (for cron/local runs — parses KEY=VALUE lines, skips comments)
 try {
@@ -22,62 +21,19 @@ try {
 const MINIMAX_API_URL = "https://api.minimax.io/anthropic/v1/messages";
 const MINIMAX_MODEL = "MiniMax-M2.7";
 const MINIMAX_API_KEY = process.env.MINIMAX_API_KEY;
-if (!MINIMAX_API_KEY) {
-  console.error("ERROR: MINIMAX_API_KEY env var not set. See docs/SECURITY_NOTICE.md for why this is no longer hardcoded.");
-  process.exit(1);
-}
+
 
 const SOURCES = [
   { name: "doctor_of_credit", type: "rss", url: "https://www.doctorofcredit.com/feed/" },
   { name: "doctor_of_credit_banking", type: "rss", url: "https://www.doctorofcredit.com/category/banking/page/1/feed/" },
 ];
 
-const LOCALES = ["en", "zh", "es"];
 const OUTPUT_PATH = path.join(process.cwd(), 'data/news.json');
-
-// --- Helpers ---
-function fetchHttps(url) {
-  return new Promise((resolve, reject) => {
-    get(url, { headers: { "User-Agent": "OpenCard/1.0", Accept: "*/*" } }, (res) => {
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        return fetchHttps(res.headers.location).then(resolve).catch(reject);
-      }
-      let data = "";
-      res.on("data", (d) => (data += d));
-      res.on("end", () => resolve(data));
-    }).on("error", reject);
-  });
-}
-
-function parseRSS(xml) {
-  const items = [];
-  const itemRegex = /<item>([\s\S]*?)<\/item>/g;
-  let match;
-  while ((match = itemRegex.exec(xml)) !== null) {
-    const item = match[1];
-    const titleM = item.match(/<title>(?:<!\[CDATA\[(.*?)\]\]>|(.*?))<\/title>/);
-    const links = [...item.matchAll(/<link>(.*?)<\/link>/g)].map((m) => m[1]);
-    const link = links[links.length - 1] || links[0] || "";
-    const dateM = item.match(/<pubDate>(.*?)<\/pubDate>/);
-    const cats = [...item.matchAll(/<category>(?:<!\[CDATA\[(.*?)\]\]>|(.*?))<\/category>/g)].map(
-      (m) => m[1] || m[2]
-    );
-    if (titleM) {
-      const rawTitle = (titleM[1] || titleM[2] || "").trim();
-      items.push({
-        title: decode(rawTitle),
-        url: link.trim(),
-        source: "Doctor of Credit",
-        categories: cats,
-        ts: dateM ? new Date(dateM[1]).toISOString() : new Date().toISOString(),
-      });
-    }
-  }
-  return items;
-}
 
 async function translateBatch(items, lang) {
   if (lang === 'en') return items.map(i => ({ ...i, title_en: i.title, summary_en: "" }));
+
+  if (!MINIMAX_API_KEY) throw new Error('MINIMAX_API_KEY is required for missing translations');
 
   const langNames = { zh: "Chinese (Traditional)", es: "Spanish" };
   const dataList = items.map((u, i) => ({ idx: i, title: u.title }));
@@ -104,8 +60,7 @@ List: ${JSON.stringify(dataList)}`;
     });
 
     if (!res.ok) {
-      const errText = await res.text();
-      console.error(`API Error for ${lang}:`, errText);
+      console.error(`Translation HTTP ${res.status} for ${lang}`);
       return items.map(i => ({ ...i, [`title_${lang}`]: i.title, [`summary_${lang}`]: "" }));
     }
 
@@ -144,61 +99,46 @@ List: ${JSON.stringify(dataList)}`;
         };
       });
     } catch (e) {
-      console.error(`Parse failed for ${lang}:`, e, raw.substring(0, 300));
+      console.error(`Translation JSON parse failed for ${lang}`);
       return items.map(i => ({ ...i, [`title_${lang}`]: i.title, [`summary_${lang}`]: "" }));
     }
   } catch (e) {
-    console.error(`Translation failed for ${lang}:`, e);
+    console.error(`Translation request failed for ${lang}`);
     return items.map(i => ({ ...i, [`title_${lang}`]: i.title, [`summary_${lang}`]: "" }));
   }
 }
 
 // --- Main ---
 async function sync() {
-  console.log("Fetching RSS...");
-  const cutoff = Date.now() - 48 * 60 * 60 * 1000;
-  let allItems = [];
-
-  for (const src of SOURCES) {
-    try {
-      const xml = await fetchHttps(src.url);
-      const items = parseRSS(xml).filter(i => new Date(i.ts).getTime() > cutoff);
-      allItems.push(...items);
-    } catch (e) {
-      console.error(`Failed to fetch ${src.name}:`, e);
-    }
+  let previous = null;
+  try {
+    previous = JSON.parse(fs.readFileSync(OUTPUT_PATH, 'utf8'));
+    if (!Array.isArray(previous.items)) throw new Error('Invalid previous news feed');
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
   }
-
-  // Deduplicate and Sort
-  const uniqueItems = Array.from(new Map(allItems.map(i => [i.url, i])).values());
-  uniqueItems.sort((a, b) => new Date(b.ts) - new Date(a.ts));
-  const limitedItems = uniqueItems.slice(0, 15);
-
-  console.log(`Processing ${limitedItems.length} items for ${LOCALES.join(', ')}...`);
-  
-  // Create multi-language entries
-  let processed = [...limitedItems];
-  for (const lang of LOCALES) {
-    console.log(`Translating to ${lang}...`);
-    const translated = await translateBatch(limitedItems, lang);
-    processed = processed.map((item, i) => ({
-      ...item,
-      [`title_${lang}`]: translated[i][`title_${lang}`] ?? item.title,
-      [`summary_${lang}`]: translated[i][`summary_${lang}`] ?? "",
-    }));
+  const result = await prepareNews({
+    previous,
+    sources: SOURCES,
+    fetchSource: src => fetchRSS(src.url),
+    translate: translateBatch,
+  });
+  if (!result.changed) {
+    console.log('No news content changes; skipped write (no deployment needed).');
+    return;
   }
-
-  const output = {
-    items: processed,
-    fetched: new Date().toISOString()
-  };
-
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2));
-  console.log("Done! Written to data/news.json");
-  process.exit(0);
+  // Atomic replacement prevents readers seeing a partially written feed.
+  const temporary = `${OUTPUT_PATH}.${process.pid}.tmp`;
+  try {
+    fs.writeFileSync(temporary, JSON.stringify(result.output, null, 2));
+    fs.renameSync(temporary, OUTPUT_PATH);
+  } finally {
+    if (fs.existsSync(temporary)) fs.unlinkSync(temporary);
+  }
+  console.log(`Written ${result.output.items.length} news items to data/news.json`);
 }
 
-sync().catch((e) => {
-  console.error(e);
-  process.exit(1);
+sync().catch(() => {
+  console.error('News sync failed; existing feed preserved. Check RSS availability and translation configuration.');
+  process.exitCode = 1;
 });

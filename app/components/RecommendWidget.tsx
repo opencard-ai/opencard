@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Sparkles, X } from "lucide-react";
 import { CARD_OPTIONS } from "@/lib/constants";
+import { trackEvent } from "@/lib/analytics";
 import { fetchRecommend } from "@/lib/recommend-fetch";
 
 interface Message {
@@ -135,6 +136,7 @@ export default function RecommendWidget({ lang = "en", expanded = true }: { lang
       setIsLoading(true);
       window.history.replaceState(null, "", window.location.pathname);
       // Call API to get AI response (auto-retries once on cold-start failure)
+      trackEvent("recommendation_requested", { method: "chat", locale: lang });
       fetchRecommend({
         message: askParam,
         messages: [],
@@ -142,6 +144,7 @@ export default function RecommendWidget({ lang = "en", expanded = true }: { lang
         existingCards: selectedCards,
       })
         .then(data => {
+          if (data.reply) trackEvent("recommendation_response_received", { method: "chat", locale: lang });
           setIsLoading(false);
           const reply = data.reply || "Sorry, I couldn't get a response.";
           const options = parseOptions(reply);
@@ -162,6 +165,7 @@ export default function RecommendWidget({ lang = "en", expanded = true }: { lang
     setInput("");
     setIsLoading(true);
 
+    trackEvent("recommendation_requested", { method: "chat", locale: lang });
     fetchRecommend({
       message: userMsg,
       messages: messages, // send full history so LLM has context
@@ -169,6 +173,7 @@ export default function RecommendWidget({ lang = "en", expanded = true }: { lang
       existingCards: selectedCards,
     })
       .then(data => {
+          if (data.reply) trackEvent("recommendation_response_received", { method: "chat", locale: lang });
         setIsLoading(false);
         let reply = data.reply || "Sorry, I couldn't get a response.";
         if (selectedCards.length > 0) {

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { CreditCard, X, Cloud } from "lucide-react";
-import { trackCreditsViewed } from "@/lib/analytics";
+import { trackCardAdded, trackEvent } from "@/lib/analytics";
 
 const STORAGE_KEY = "opencard_existing_cards";
 const SUBSCRIBED_EMAIL_KEY = "opencard_subscribed_email";
@@ -74,9 +74,9 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
   // Track My Cards opened event
   useEffect(() => {
     if (isOpen) {
-      trackCreditsViewed(selectedCards.length);
+      trackEvent("my_cards_picker_opened");
     }
-  }, [isOpen, selectedCards.length]);
+  }, [isOpen]);
 
   // Check subscription status — localStorage is an external store
   // unavailable during SSR, so reading + syncing in an effect is the
@@ -149,6 +149,11 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
 
   // Sync to cloud when subscribed, always update localStorage
   const syncCards = useCallback(async (next: string[]) => {
+    try {
+      const previous = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+      const previousIds = Array.isArray(previous) ? previous.map(item => typeof item === "string" ? item : item?.card_id) : [];
+      for (const id of next) if (!previousIds.includes(id)) trackCardAdded(id);
+    } catch { /* Corrupt saved data must not block the picker. */ }
     localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
     window.dispatchEvent(new CustomEvent("opencard_cards_updated", { detail: next }));
 

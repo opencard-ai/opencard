@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { trackBenefitUsed } from "@/lib/analytics";
 import Link from "next/link";
 import { Check, CreditCard } from "lucide-react";
 import { computePeriodKey } from "@/lib/credit-periods";
@@ -580,6 +581,7 @@ export default function MyCardsPage({
         revert();
         toast.error(MESSAGES[lang].toastSyncFailed);
       } else {
+        if (!wasUsed) trackBenefitUsed("credit");
         toast.success(wasUsed ? MESSAGES[lang].toastUndone : MESSAGES[lang].toastMarkedUsed);
       }
     } catch {
@@ -620,6 +622,7 @@ export default function MyCardsPage({
         revert();
         toast.error(MESSAGES[lang].toastSyncFailed);
       } else {
+        if (!wasUsed) trackBenefitUsed("free_night");
         toast.success(wasUsed ? MESSAGES[lang].toastUndone : MESSAGES[lang].toastMarkedUsed);
       }
     } catch {

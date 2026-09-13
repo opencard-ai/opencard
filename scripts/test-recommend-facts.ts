@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { recommendationFacts } from '../lib/recommend-facts';
+const gold = JSON.parse(fs.readFileSync('data/cards/amex-delta-gold.json', 'utf8'));
+const platinum = JSON.parse(fs.readFileSync('data/cards/amex-delta-platinum.json', 'utf8'));
+assert.equal(recommendationFacts(gold).ongoing_annual_fee, 150);
+assert.match(recommendationFacts(gold).annual_fee_terms, /first year.*150/);
+assert.equal(recommendationFacts(platinum).ongoing_annual_fee, 350);
+assert.equal(recommendationFacts({...gold, annual_fee: 175}).ongoing_annual_fee, 175);
+assert.equal(recommendationFacts(gold, '2027-01-01').welcome_offer?.status, 'expired_do_not_recommend');
+const route = fs.readFileSync('app/api/recommend/route.ts', 'utf8');
+assert.ok(!route.includes('Gold ($0 AF)'));
+assert.ok(route.includes('JSON.stringify(recommendationFacts(c))'));
+console.log('recommendation facts: passed');

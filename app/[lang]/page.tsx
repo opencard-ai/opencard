@@ -1,6 +1,6 @@
 // FORCE_UPDATE_KEY = "7214affe-c79d-4e23-921e-0d93a53a227e"
 import { Suspense } from "react";
-import { Bookmark, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import HeroButtons from "@/app/components/HeroButtons";
 import { getAllCards, getAllIssuers, getAllTags } from "@/lib/cards";
 import CardGrid from "@/app/components/CardGrid";
@@ -51,73 +51,13 @@ export default async function HomePage({ params }: Props) {
           ].map((chip, i) => (
             <a
               key={i}
-              href={`/?ask=${encodeURIComponent(chip)}`}
+              href={`/${lang}?ask=${encodeURIComponent(chip)}`}
               className="text-xs px-3 py-1.5 rounded-full border border-blue-200 text-blue-600 bg-blue-50 hover:bg-blue-100 hover:border-blue-300 transition-colors"
             >
               {chip}
             </a>
           ))}
         </div>
-      </div>
-
-      {/* Daily Finance News Feed — before card search */}
-      <Suspense fallback={null}>
-        <NewsFeed lang={lang} />
-      </Suspense>
-
-
-      {/* Guides / Learning Center */}
-      <section className="mb-6 rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:bg-slate-950 dark:border-slate-800">
-        <div className="flex items-center justify-between gap-3 mb-4">
-          <div>
-            <h2 className="text-lg font-bold text-slate-900 dark:text-white">
-              {lang === "zh" ? "信用卡指南" : lang === "zh-cn" ? "信用卡指南" : lang === "es" ? "Guías de tarjetas" : "Credit card guides"}
-            </h2>
-            <p className="text-xs text-slate-500 mt-1">
-              {lang === "zh" ? "用長篇策略文章理解年費、點數、開卡禮與福利到期。" : lang === "zh-cn" ? "用长篇策略文章理解年费、点数、开卡奖励与权益到期。" : lang === "es" ? "Guías largas sobre cuotas, puntos, bonos y vencimientos de beneficios." : "Long-form strategy guides on annual fees, points, welcome offers, and benefit expiration."}
-            </p>
-          </div>
-          <a href={`/${lang}/guides`} className="text-sm font-semibold text-blue-600 hover:text-blue-700 whitespace-nowrap">
-            {lang === "zh" ? "全部指南" : lang === "zh-cn" ? "全部指南" : lang === "es" ? "Ver todas" : "View all"} →
-          </a>
-        </div>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {guides.map((guide) => (
-            <a key={guide.slug} href={`/${lang}/guides/${guide.slug}`} className="rounded-lg border border-slate-200 p-3 hover:border-amber-300 hover:bg-amber-50 transition-colors dark:border-slate-800 dark:hover:bg-amber-950/20">
-              <h3 className="text-sm font-semibold text-slate-900 dark:text-white line-clamp-2">{guide.title}</h3>
-              <p className="text-xs text-slate-500 mt-1 line-clamp-2">{guide.summary}</p>
-              <div className="text-[11px] text-slate-400 mt-2">
-                {lang === "zh" ? "已更新" : lang === "zh-cn" ? "已更新" : lang === "es" ? "Actualizado" : "Updated"} {guide.updated} · {guide.word_count.toLocaleString()} {lang === "es" ? "palabras" : "words"}
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* My Cards Banner */}
-      <div className="mb-4">
-        <a
-          href={`/${lang}/my-cards`}
-          className="flex items-center justify-between bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/40 dark:to-indigo-950/40 border border-blue-200 rounded-xl px-5 py-3.5 hover:from-blue-100 hover:to-indigo-100 transition-all group"
-        >
-          <div className="flex items-center gap-3">
-            <Bookmark className="w-6 h-6 text-blue-600" />
-            <div>
-              <div className="font-semibold text-slate-800 text-sm group-hover:text-blue-700 transition-colors">
-                {lang === "zh" ? "我的卡片" : lang === "zh-cn" ? "我的卡片" : lang === "es" ? "Mis Tarjetas" : "My Cards"}
-              </div>
-              <div className="text-xs text-slate-500">
-                {lang === "zh" ? "儲存並管理你的信用卡組合" : lang === "zh-cn" ? "保存并管理你的信用卡组合" : lang === "es" ? "Guarda y gestiona tu cartera de tarjetas" : "Save and manage your card portfolio"}
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-blue-500 font-medium group-hover:translate-x-0.5 transition-transform">
-              {lang === "zh" ? "開啟" : lang === "zh-cn" ? "打开" : lang === "es" ? "Abrir" : "Open"}
-            </span>
-            <span className="text-blue-400 group-hover:translate-x-1 transition-transform">→</span>
-          </div>
-        </a>
       </div>
 
       {/* Elevated Offers Banner */}
@@ -164,6 +104,40 @@ export default async function HomePage({ params }: Props) {
       >
         <CardGrid cards={cards} issuers={issuers} tags={tags} locale={locale} />
       </Suspense>
+
+      {/* News and guides — after core card tasks */}
+      <Suspense fallback={null}>
+        <NewsFeed lang={lang} />
+      </Suspense>
+
+
+      {/* Guides / Learning Center */}
+      <section className="mb-6 rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:bg-slate-950 dark:border-slate-800">
+        <div className="flex items-center justify-between gap-3 mb-4">
+          <div>
+            <h2 className="text-lg font-bold text-slate-900 dark:text-white">
+              {lang === "zh" ? "信用卡指南" : lang === "zh-cn" ? "信用卡指南" : lang === "es" ? "Guías de tarjetas" : "Credit card guides"}
+            </h2>
+            <p className="text-xs text-slate-500 mt-1">
+              {lang === "zh" ? "用長篇策略文章理解年費、點數、開卡禮與福利到期。" : lang === "zh-cn" ? "用长篇策略文章理解年费、点数、开卡奖励与权益到期。" : lang === "es" ? "Guías largas sobre cuotas, puntos, bonos y vencimientos de beneficios." : "Long-form strategy guides on annual fees, points, welcome offers, and benefit expiration."}
+            </p>
+          </div>
+          <a href={`/${lang}/guides`} className="text-sm font-semibold text-blue-600 hover:text-blue-700 whitespace-nowrap">
+            {lang === "zh" ? "全部指南" : lang === "zh-cn" ? "全部指南" : lang === "es" ? "Ver todas" : "View all"} →
+          </a>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {guides.map((guide) => (
+            <a key={guide.slug} href={`/${lang}/guides/${guide.slug}`} className="rounded-lg border border-slate-200 p-3 hover:border-amber-300 hover:bg-amber-50 transition-colors dark:border-slate-800 dark:hover:bg-amber-950/20">
+              <h3 className="text-sm font-semibold text-slate-900 dark:text-white line-clamp-2">{guide.title}</h3>
+              <p className="text-xs text-slate-500 mt-1 line-clamp-2">{guide.summary}</p>
+              <div className="text-[11px] text-slate-400 mt-2">
+                {lang === "zh" ? "已更新" : lang === "zh-cn" ? "已更新" : lang === "es" ? "Actualizado" : "Updated"} {guide.updated} · {guide.word_count.toLocaleString()} {lang === "es" ? "palabras" : "words"}
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
 
       <section id="about" className="mt-12 bg-white rounded-xl border border-slate-200 p-6" style={{ scrollMarginTop: "73px" }}>
         <h2 className="text-lg font-bold text-slate-900 mb-3">

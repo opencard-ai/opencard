@@ -1,3 +1,5 @@
+import Link from "next/link";
+import RenewalCalculator from "@/app/components/RenewalCalculator";
 import { notFound } from "next/navigation";
 import { Check, AlertTriangle, ExternalLink, Gift } from "lucide-react";
 import { getCardById, getAllCards } from "@/lib/cards";
@@ -115,6 +117,12 @@ export default async function CardDetailPage({ params }: Props) {
   const locale = lang as any;
   const card = getCardById(card_id);
   if (!card) notFound();
+  const officialSource = card.sources?.find(source => {
+    try {
+      const url = new URL(source.url);
+      return url.protocol === "https:" && ["americanexpress.com", "chase.com", "citi.com", "capitalone.com", "wellsfargo.com", "bankofamerica.com", "usbank.com", "barclaycardus.com", "discover.com", "synchrony.com"].some(domain => url.hostname === domain || url.hostname === `www.${domain}` || url.hostname === `creditcards.${domain}`);
+    } catch { return false; }
+  });
 
   const l = (key: string, p?: Record<string, string | number>) => t(key, locale, p);
   const freshness = freshnessFromIso(card.last_updated, lang);
@@ -242,6 +250,12 @@ export default async function CardDetailPage({ params }: Props) {
           </div>
         )}
 
+        {officialSource && (
+          <a href={officialSource.url} target="_blank" rel="noopener noreferrer" data-issuer-outbound="official_terms" data-card-id={card.card_id} className="mt-4 inline-flex rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">
+            {lang === "zh" ? "查看發卡銀行官方條款" : lang === "zh-cn" ? "查看发卡银行官方条款" : lang === "es" ? "Consultar condiciones del emisor" : "Check issuer terms"} ↗
+          </a>
+        )}
+
         {/* CTA Row: Add to My Cards + AI Assistant */}
         <div className="flex flex-row gap-2 mt-4">
           <div className="flex-1">
@@ -308,6 +322,8 @@ export default async function CardDetailPage({ params }: Props) {
                 </p>
                 {referralOffer.termsUrl && (
                   <a
+                    data-issuer-outbound="terms"
+                    data-card-id={card.card_id}
                     href={referralOffer.termsUrl}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
@@ -318,6 +334,8 @@ export default async function CardDetailPage({ params }: Props) {
                 )}
               </div>
               <a
+                data-issuer-outbound="referral"
+                data-card-id={card.card_id}
                 href={referralOffer.referralUrl}
                 target="_blank"
                 rel="sponsored nofollow noopener noreferrer"
@@ -366,13 +384,18 @@ export default async function CardDetailPage({ params }: Props) {
                 <h3 className="text-sm font-semibold text-slate-900">First year vs. ongoing year worksheet</h3>
                 <div className="mt-3 grid gap-3 sm:grid-cols-3">
                   <div><div className="text-[11px] uppercase tracking-wide text-slate-500">Annual fee hurdle</div><div className="text-xl font-bold text-slate-900">${card.annual_fee.toLocaleString()}</div></div>
-                  <div><div className="text-[11px] uppercase tracking-wide text-slate-500">Issuer-data bonus estimate</div><div className="text-xl font-bold text-slate-900">${(card.welcome_offer?.estimated_value || 0).toLocaleString()}</div></div>
-                  <div><div className="text-[11px] uppercase tracking-wide text-slate-500">First-year net before credits</div><div className="text-xl font-bold text-slate-900">${Math.max(0, (card.welcome_offer?.estimated_value || 0) - card.annual_fee).toLocaleString()}</div></div>
+                  <div><div className="text-[11px] uppercase tracking-wide text-slate-500">Illustrative bonus estimate</div><div className="text-xl font-bold text-slate-900">${(card.welcome_offer?.estimated_value || 0).toLocaleString()}</div></div>
+                  <div><div className="text-[11px] uppercase tracking-wide text-slate-500">First-year net before credits</div><div className="text-xl font-bold text-slate-900">${((card.welcome_offer?.estimated_value || 0) - card.annual_fee).toLocaleString()}</div></div>
                 </div>
                 <p className="mt-3 text-xs leading-relaxed text-slate-600">For year two, remove the one-time welcome offer entirely. To recover a ${card.annual_fee.toLocaleString()} fee from rewards alone, this card must produce that much more value than your best no-fee alternative. At a 1% incremental return, that would require about ${(card.annual_fee * 100).toLocaleString()} in eligible annual spend before counting credits you would genuinely buy anyway.</p>
                 <p className="mt-2 text-[11px] text-slate-500">Data reviewed {card.last_updated ? new Date(card.last_updated).toISOString().slice(0, 10) : "on the page update date"}. Estimate is not cash and depends on redemption. Confirm current issuer terms through the cited sources below.</p>
               </div>
 
+              {["chase-sapphire-preferred", "chase-sapphire-reserve", "capital-one-venture-x"].includes(card.card_id) && <RenewalCalculator annualFee={card.annual_fee} />}
+              <div className="mt-4 flex flex-wrap gap-3 text-sm font-semibold text-blue-700">
+                <a href={`/en/compare?cards=${[card.card_id, ...editorial.alternatives.map(item => item.cardId)].slice(0, 3).join(",")}`}>Compare this shortlist →</a>
+                <Link href="/en/my-cards">Track benefits in My Cards →</Link>
+              </div>
               <div className="mt-5">
                 <h3 className="text-sm font-semibold text-slate-900 mb-2">Compare alternatives</h3>
                 <div className="grid gap-2 sm:grid-cols-2">

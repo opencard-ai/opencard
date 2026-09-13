@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import { assessCandidate, type Candidate } from './gate';
+const now = Date.parse('2026-09-13T20:00Z');
+const c: Candidate = {card_id:'chase-sapphire-reserve',fields:{'welcome_offer.bonus_points':100000},evidence:{url:'https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve',checked_at:'2026-09-13T19:00Z',official:true,audience:'public'}};
+const card = { welcome_offer:{bonus_points:100000} };
+assert.equal(assessCandidate(c,card,true,now).status,'unchanged');
+assert.equal(assessCandidate(c,card,true,now).coverage_action,'none');
+assert.equal(assessCandidate(c,undefined,true,now).coverage_action,'none');
+assert.equal(assessCandidate({...c,fields:{'welcome_offer.bonus_points':150000}},card,true,now).status,'review_delta');
+assert.equal(assessCandidate({...c,evidence:{...c.evidence,audience:'targeted'}},card,true,now).status,'needs_verification');
+assert.equal(assessCandidate({...c,evidence:{...c.evidence,checked_at:'2026-08-01'}},card,true,now).status,'needs_verification');
+assert.equal(assessCandidate({...c,evidence:{...c.evidence,conflicts:true}},card,true,now).status,'needs_verification');
+assert.equal(assessCandidate({...c,fields:{unexpected:5}},card,true,now).status,'needs_verification');
+assert.equal(assessCandidate(c,card,true,now).fingerprint,assessCandidate({...c,evidence:{...c.evidence,checked_at:'2026-09-13T18:00Z'}},card,true,now).fingerprint);
+console.log('offer review gate: passed');

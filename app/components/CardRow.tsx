@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { Bookmark, Check, ChevronRight, Gift, Scale } from "lucide-react";
+import { trackCardAdded, trackEvent } from "@/lib/analytics";
 import type { CreditCard } from "@/lib/cards";
 import IssuerChip from "./IssuerChip";
 import CardArt from "./CardArt";
@@ -119,13 +120,15 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
     localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
     window.dispatchEvent(new CustomEvent("opencard_cards_updated", { detail: next }));
     setSaved(!has);
+    if (!has) trackCardAdded(card.card_id);
   }, [card.card_id]);
 
   const onCompareClick = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
     e.preventDefault();
+    if (!isCompared && !isMaxed) trackEvent("comparison_card_selected");
     onToggleCompare();
-  }, [onToggleCompare]);
+  }, [onToggleCompare, isCompared, isMaxed]);
 
   const bonusValue = card.welcome_offer
     ? formatBonusValue(card.welcome_offer.estimated_value ?? card.welcome_offer.bonus_value)

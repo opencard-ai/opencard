@@ -68,3 +68,6 @@ data/adaptor/review-index.md
 # Artifact-first review queue runtime outputs
 artifacts/card-updates/
 artifacts/*.png
+
+# Local fixed-cohort GSC observation state
+.gsc-cohort-baseline.json
