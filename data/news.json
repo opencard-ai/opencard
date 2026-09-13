@@ -16,10 +16,10 @@
       "ts": "2026-09-12T19:30:23.000Z",
       "title_en": "[MA, ME, NH] Camden National Bank $300 Checking Bonus + $200 Savings Bonus",
       "summary_en": "",
-      "title_zh": "[MA, ME, NH] Camden National Bank $300 Checking Bonus + $200 Savings Bonus",
-      "summary_zh": "",
-      "title_es": "[MA, ME, NH] Camden National Bank $300 Checking Bonus + $200 Savings Bonus",
-      "summary_es": ""
+      "title_zh": "[MA, ME, NH] Camden National Bank $300 支票帳戶獎金 + $200 儲蓄帳戶獎金",
+      "summary_zh": "在麻州、緬因州與新罕布什爾州的Camden National Bank新客戶可獲得最高$300的支票帳戶獎金以及額外$200的儲蓄帳戶獎金。",
+      "title_es": "[MA, ME, NH] Camden National Bank Bono de $300 por Cuenta Corriente + Bono de $200 por Ahorros",
+      "summary_es": "Camden National Bank ofrece un bono de $300 por abrir una cuenta corriente y un bono adicional de $200 por cuenta de ahorros en los estados de Massachusetts, Maine y Nuevo Hampshire."
     },
     {
       "title": "[WV, PA, OH, IN, KY, MD, In Branch] Wesbanco $300 Checking Bonus",
@@ -40,10 +40,10 @@
       "ts": "2026-09-12T18:00:13.000Z",
       "title_en": "[WV, PA, OH, IN, KY, MD, In Branch] Wesbanco $300 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[WV, PA, OH, IN, KY, MD, In Branch] Wesbanco $300 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[WV, PA, OH, IN, KY, MD, In Branch] Wesbanco $300 Checking Bonus",
-      "summary_es": ""
+      "title_zh": "[WV, PA, OH, IN, KY, MD, 親臨分行] Wesbanco $300 支票帳戶獎金",
+      "summary_zh": "在西維吉尼亞、賓夕法尼亞、俄亥俄、印第安納、肯塔基與馬里蘭州的Wesbanco分行新開支票帳戶可獲$300獎金。",
+      "title_es": "[WV, PA, OH, IN, KY, MD, En Sucursal] Wesbanco Bono de $300 por Cuenta Corriente",
+      "summary_es": "Wesbanco ofrece un bono de $300 por abrir una cuenta corriente en sus sucursales de varios estados como Virginia Occidental, Pensilvania y otros."
     },
     {
       "title": "[DC, DE, PA, VA, WV, MD] SECU $350 Checking Bonus",
@@ -64,10 +64,10 @@
       "ts": "2026-09-12T17:00:09.000Z",
       "title_en": "[DC, DE, PA, VA, WV, MD] SECU $350 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[DC, DE, PA, VA, WV, MD] SECU $350 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[DC, DE, PA, VA, WV, MD] SECU $350 Checking Bonus",
-      "summary_es": ""
+      "title_zh": "[DC, DE, PA, VA, WV, MD] SECU $350 支票帳戶獎金",
+      "summary_zh": "在華盛頓特區、特拉華、賓夕法尼亞、維吉尼亞、西維吉尼亞與馬里蘭州的SECU提供$350支票帳戶獎金。",
+      "title_es": "[DC, DE, PA, VA, WV, MD] SECU Bono de $350 por Cuenta Corriente",
+      "summary_es": "SECU ofrece un bono de $350 por abrir una cuenta corriente en varias regiones del este de Estados Unidos."
     },
     {
       "title": "[CA, Select Counties] Valley Strong Credit Union $250 Checking Bonus, Direct Deposit Not Required",
@@ -83,10 +83,10 @@
       "ts": "2026-09-12T15:00:54.000Z",
       "title_en": "[CA, Select Counties] Valley Strong Credit Union $250 Checking Bonus, Direct Deposit Not Required",
       "summary_en": "",
-      "title_zh": "[CA, Select Counties] Valley Strong Credit Union $250 Checking Bonus, Direct Deposit Not Required",
-      "summary_zh": "",
-      "title_es": "[CA, Select Counties] Valley Strong Credit Union $250 Checking Bonus, Direct Deposit Not Required",
-      "summary_es": ""
+      "title_zh": "[CA, 選定縣] Valley Strong Credit Union $250 支票帳戶獎金，無需直接存款",
+      "summary_zh": "在加州的特定縣，Valley Strong Credit Union提供$250支票帳戶獎金，且無需設定直接存款。",
+      "title_es": "[CA, Condados Seleccionados] Valley Strong Credit Union Bono de $250 por Cuenta Corriente, No Requiere Depósito Directo",
+      "summary_es": "La cooperativa de crédito Valley Strong ofrece un bono de $250 por cuenta corriente sin necesidad de depósito directo en ciertos condados de California."
     },
     {
       "title": "[LA, MS, FL, AL, TX] Hancock Whitney Bank $600/$1,000 Checking & Savings Bonus",
@@ -106,10 +106,10 @@
       "ts": "2026-09-12T14:00:40.000Z",
       "title_en": "[LA, MS, FL, AL, TX] Hancock Whitney Bank $600/$1,000 Checking & Savings Bonus",
       "summary_en": "",
-      "title_zh": "[LA, MS, FL, AL, TX] Hancock Whitney Bank $600/$1,000 Checking & Savings Bonus",
-      "summary_zh": "",
-      "title_es": "[LA, MS, FL, AL, TX] Hancock Whitney Bank $600/$1,000 Checking & Savings Bonus",
-      "summary_es": ""
+      "title_zh": "[LA, MS, FL, AL, TX] Hancock Whitney Bank $600/$1,000 支票與儲蓄帳戶獎金",
+      "summary_zh": "在路易斯安那、密西西比、佛羅里達、阿拉巴馬與德克薩斯州的Hancock Whitney Bank提供最高$1,000的支票與儲蓄帳戶獎金。",
+      "title_es": "[LA, MS, FL, AL, TX] Hancock Whitney Bank Bono de $600/$1,000 por Cuenta Corriente y Ahorros",
+      "summary_es": "Hancock Whitney Bank ofrece bonos de hasta $600 por cuenta corriente y $1,000 por cuenta de ahorros en Luisiana, Misisipi, Florida, Alabama y Texas."
     },
     {
       "title": "[CA] Commonwealth Central Credit Union $200, Direct Deposit Not Required",
@@ -124,13 +124,13 @@
       "ts": "2026-09-12T13:00:24.000Z",
       "title_en": "[CA] Commonwealth Central Credit Union $200, Direct Deposit Not Required",
       "summary_en": "",
-      "title_zh": "[CA] Commonwealth Central Credit Union $200, Direct Deposit Not Required",
-      "summary_zh": "",
-      "title_es": "[CA] Commonwealth Central Credit Union $200, Direct Deposit Not Required",
-      "summary_es": ""
+      "title_zh": "[CA] Commonwealth Central Credit Union $200，無需直接存款",
+      "summary_zh": "加州的Commonwealth Central Credit Union提供$200獎金，無需直接存款即可獲得。",
+      "title_es": "[CA] Commonwealth Central Credit Union $200, No Requiere Depósito Directo",
+      "summary_es": "La cooperativa de crédito Commonwealth Central ofrece un bono de $200 sin requisito de depósito directo en California."
     },
     {
-      "title": "Atom Tickets: Free Ticket To See Runner With Promo Code ATOMRUNNER",
+      "title": "[Expired] Atom Tickets: Free Ticket To See Runner With Promo Code ATOMRUNNER",
       "url": "https://www.doctorofcredit.com/atom-tickets-free-ticket-to-see-runner-with-promo-code-atomrunner/",
       "source": "Doctor of Credit",
       "categories": [
@@ -139,12 +139,12 @@
         "freebies"
       ],
       "ts": "2026-09-12T10:36:56.000Z",
-      "title_en": "Atom Tickets: Free Ticket To See Runner With Promo Code ATOMRUNNER",
+      "title_en": "[Expired] Atom Tickets: Free Ticket To See Runner With Promo Code ATOMRUNNER",
       "summary_en": "",
-      "title_zh": "Atom Tickets: Free Ticket To See Runner With Promo Code ATOMRUNNER",
-      "summary_zh": "",
-      "title_es": "Atom Tickets: Free Ticket To See Runner With Promo Code ATOMRUNNER",
-      "summary_es": ""
+      "title_zh": "[已過期] Atom Tickets：使用優惠碼 ATOMRUNNER 免費觀看《Runner》",
+      "summary_zh": "Atom Tickets使用優惠碼ATOMRUNNER可免費觀看《Runner》電影，但此優惠已過期。",
+      "title_es": "[Expirado] Atom Tickets: Entrada Gratuita para Ver Runner con Código Promocional ATOMRUNNER",
+      "summary_es": "La promoción de Atom Tickets que regalaba una entrada gratuita para ver la película Runner con el código ATOMRUNNER ha expirado."
     },
     {
       "title": "Bank of America Atmos Alaska Airlines Business Card 85,000 Miles",
@@ -162,10 +162,10 @@
       "ts": "2026-09-11T19:20:02.000Z",
       "title_en": "Bank of America Atmos Alaska Airlines Business Card 85,000 Miles",
       "summary_en": "",
-      "title_zh": "Bank of America Atmos Alaska Airlines Business Card 85,000 Miles",
-      "summary_zh": "",
-      "title_es": "Bank of America Atmos Alaska Airlines Business Card 85,000 Miles",
-      "summary_es": ""
+      "title_zh": "Bank of America Atmos Alaska Airlines 商務卡 85,000 英里",
+      "summary_zh": "Bank of America的Atmos Alaska Airlines商務卡提供85,000英里飛行里程獎勵。",
+      "title_es": "Tarjeta de Negocios Bank of America Atmos Alaska Airlines con 85,000 Millas",
+      "summary_es": "Bank of America lanza una tarjeta de negocios en asociación con Alaska Airlines que otorga 85,000 millas de bienvenida."
     },
     {
       "title": "Navy Federal Credit Union (NFCU) Flagship To Flagship Premier Upgrade Offer (10x On Travel Up To 15,000 Points)",
@@ -180,10 +180,10 @@
       "ts": "2026-09-11T16:00:47.000Z",
       "title_en": "Navy Federal Credit Union (NFCU) Flagship To Flagship Premier Upgrade Offer (10x On Travel Up To 15,000 Points)",
       "summary_en": "",
-      "title_zh": "Navy Federal Credit Union (NFCU) Flagship To Flagship Premier Upgrade Offer (10x On Travel Up To 15,000 Points)",
-      "summary_zh": "",
-      "title_es": "Navy Federal Credit Union (NFCU) Flagship To Flagship Premier Upgrade Offer (10x On Travel Up To 15,000 Points)",
-      "summary_es": ""
+      "title_zh": "海軍聯邦信用合作社 (NFCU) 旗艦至旗艦Premier 升級優惠（旅行10倍積分，最高15,000點）",
+      "summary_zh": "海軍聯邦信用合作社（NFCU）為旗艦卡會員提供升級至Premier的優惠，旅行消費可享10倍積分，最高15,000點。",
+      "title_es": "Oferta de Actualización de Navy Federal Credit Union (NFCU) Flagship a Flagship Premier (10x en Viajes Hasta 15,000 Puntos)",
+      "summary_es": "Navy Federal Credit Union ofrece una actualización a su tarjeta Flagship Premier que da 10 veces los puntos en viajes, hasta 15,000 puntos."
     },
     {
       "title": "National Police Federal Credit Union Visa Copper Cash Back Card: 3% Cashback On All Purchases",
@@ -195,10 +195,10 @@
       "ts": "2026-09-11T15:00:22.000Z",
       "title_en": "National Police Federal Credit Union Visa Copper Cash Back Card: 3% Cashback On All Purchases",
       "summary_en": "",
-      "title_zh": "National Police Federal Credit Union Visa Copper Cash Back Card: 3% Cashback On All Purchases",
-      "summary_zh": "",
-      "title_es": "National Police Federal Credit Union Visa Copper Cash Back Card: 3% Cashback On All Purchases",
-      "summary_es": ""
+      "title_zh": "National Police Federal Credit Union Visa Copper 現金回饋卡：所有消費 3% 現金回饋",
+      "summary_zh": "國家警察聯邦信用合作社的Visa Copper卡所有消費皆享3%現金回饋，無上限。",
+      "title_es": "Tarjeta de Reembolso de Efectivo Visa Copper de National Police Federal Credit Union: 3% de Reembolso en Todas las Compras",
+      "summary_es": "La tarjeta Visa Copper de la cooperativa de crédito Federal de Policía Nacional ofrece un 3% de reembolso en efectivo en todas las compras."
     },
     {
       "title": "Varo Money $300 Bonus Via Finder",
@@ -216,10 +216,10 @@
       "ts": "2026-09-11T14:00:33.000Z",
       "title_en": "Varo Money $300 Bonus Via Finder",
       "summary_en": "",
-      "title_zh": "Varo Money $300 Bonus Via Finder",
-      "summary_zh": "",
-      "title_es": "Varo Money $300 Bonus Via Finder",
-      "summary_es": ""
+      "title_zh": "Varo Money 透過 Finder 獲得 $300 獎金",
+      "summary_zh": "透過Finder在Varo Money開戶可獲得$300獎金。",
+      "title_es": "Varo Money Bono de $300 a través de Finder",
+      "summary_es": "Varo Money ofrece un bono de $300 a quienes se registren a través de Finder."
     },
     {
       "title": "Two Months of Paramount+ with promo Code p2mcs26prem For $0.99 (Works For New, Returning & Existing Customers)",
@@ -232,10 +232,10 @@
       "ts": "2026-09-11T12:00:57.000Z",
       "title_en": "Two Months of Paramount+ with promo Code p2mcs26prem For $0.99 (Works For New, Returning & Existing Customers)",
       "summary_en": "",
-      "title_zh": "Two Months of Paramount+ with promo Code p2mcs26prem For $0.99 (Works For New, Returning & Existing Customers)",
-      "summary_zh": "",
-      "title_es": "Two Months of Paramount+ with promo Code p2mcs26prem For $0.99 (Works For New, Returning & Existing Customers)",
-      "summary_es": ""
+      "title_zh": "Promo Code p2mcs26prem 可用 $0.99 享有兩個月 Paramount+（新、返回與現有客戶）",
+      "summary_zh": "使用優惠碼p2mcs26prem，只需$0.99即可享有兩個月Paramount+訂閱，適用於新舊客戶。",
+      "title_es": "Dos Meses de Paramount+ con Código Promocional p2mcs26prem Por $0.99 (Válido para Clientes Nuevos, Regresa y Existentes)",
+      "summary_es": "Paramount+ ofrece dos meses de servicio por solo $0.99 usando el código promocional p2mcs26prem, disponible para todo tipo de clientes."
     },
     {
       "title": "Uber App: Save 15% On Uber/UberEats Giftcards (YMMV)",
@@ -248,45 +248,11 @@
       "ts": "2026-09-11T10:30:20.000Z",
       "title_en": "Uber App: Save 15% On Uber/UberEats Giftcards (YMMV)",
       "summary_en": "",
-      "title_zh": "Uber App: Save 15% On Uber/UberEats Giftcards (YMMV)",
-      "summary_zh": "",
-      "title_es": "Uber App: Save 15% On Uber/UberEats Giftcards (YMMV)",
-      "summary_es": ""
-    },
-    {
-      "title": "7-Eleven/Speedway: $0.5 Off Per Gallon On 7th & 11th Each Month Through 10/11/26",
-      "url": "https://www.doctorofcredit.com/7-eleven-0-5-off-per-gallon-on-7th-11th-each-month-through-7-11-26/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "7-Eleven",
-        "fuel",
-        "gas"
-      ],
-      "ts": "2026-09-11T04:01:49.000Z",
-      "title_en": "7-Eleven/Speedway: $0.5 Off Per Gallon On 7th & 11th Each Month Through 10/11/26",
-      "summary_en": "",
-      "title_zh": "7-Eleven/Speedway: $0.5 Off Per Gallon On 7th & 11th Each Month Through 10/11/26",
-      "summary_zh": "",
-      "title_es": "7-Eleven/Speedway: $0.5 Off Per Gallon On 7th & 11th Each Month Through 10/11/26",
-      "summary_es": ""
-    },
-    {
-      "title": "Giftcards.com: 10% Off Visa eGiftcards With Code LDV10 + 3x On Airline Portals",
-      "url": "https://www.doctorofcredit.com/giftcards-com-10-off-visa-egiftcards-with-code-ldv10-plus-possible-kroger-stack/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Manufactured Spending",
-        "giftcards.com"
-      ],
-      "ts": "2026-09-11T02:30:39.000Z",
-      "title_en": "Giftcards.com: 10% Off Visa eGiftcards With Code LDV10 + 3x On Airline Portals",
-      "summary_en": "",
-      "title_zh": "Giftcards.com: 10% Off Visa eGiftcards With Code LDV10 + 3x On Airline Portals",
-      "summary_zh": "",
-      "title_es": "Giftcards.com: 10% Off Visa eGiftcards With Code LDV10 + 3x On Airline Portals",
-      "summary_es": ""
+      "title_zh": "Uber App：Uber/UberEats 禮品卡 85 折（YMMV）",
+      "summary_zh": "在Uber應用中購買Uber或UberEats禮品卡可享85折優惠，實際折扣視情況而定。",
+      "title_es": "Aplicación Uber: Ahorra 15% en Tarjetas de Regalo de Uber/UberEats (YMMV)",
+      "summary_es": "La aplicación Uber permite a los usuarios ahorrar un 15% en tarjetas de regalo de Uber y UberEats, aunque la oferta puede variar según la ubicación."
     }
   ],
-  "fetched": "2026-09-12T20:10:01.269Z"
+  "fetched": "2026-09-13T08:10:25.373Z"
 }
