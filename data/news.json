@@ -1,6 +1,96 @@
 {
   "items": [
     {
+      "title": "Citi Offers: bp and/or Amoco Fuel, Spend $40+ & Get $5 Back",
+      "url": "https://www.doctorofcredit.com/citi-offers-shell-fuel-spend-35-get-5-back-limit-2/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "citi offers",
+        "shell"
+      ],
+      "ts": "2026-09-14T02:05:23.000Z",
+      "title_en": "Citi Offers: bp and/or Amoco Fuel, Spend $40+ & Get $5 Back",
+      "summary_en": "",
+      "title_zh": "花旗優惠：BP 和/或 Amoco 燃油，消費滿 $40 即可獲得 $5 回饋",
+      "summary_zh": "在指定加油站使用花旗卡消費滿 40 美元，即可獲得 5 美元回扣。",
+      "title_es": "Citi Offers: combustible bp y/o Amoco, gasta $40 o más y obtén $5 de regreso",
+      "summary_es": "Oferta de Citi que ofrece un reembolso de $5 al gastar $40 o más en combustible bp y/o Amoco."
+    },
+    {
+      "title": "Albert (Fintech): Get $200 In Stock For Free",
+      "url": "https://www.doctorofcredit.com/albert-fintech-get-200-in-stock-for-free/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "albert",
+        "fintech",
+        "nationwide bank bonuses",
+        "neobank"
+      ],
+      "ts": "2026-09-13T22:20:36.000Z",
+      "title_en": "Albert (Fintech): Get $200 In Stock For Free",
+      "summary_en": "",
+      "title_zh": "Albert（金融科技）：免費獲得 200 美元股票",
+      "summary_zh": "新用戶在 Albert 平台註冊後可獲得價值 200 美元的免費股票。",
+      "title_es": "Albert (Fintech): Obtén $200 en acciones gratis",
+      "summary_es": "Albert ofrece $200 en acciones gratuitas como incentivo para nuevos usuarios."
+    },
+    {
+      "title": "CVS Class Action Privacy Settlement (Up To $5 Without Proof, $10 With)",
+      "url": "https://www.doctorofcredit.com/cvs-class-action-privacy-settlement-up-to-5-without-proof-10-with/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "class action lawsuits",
+        "cvs"
+      ],
+      "ts": "2026-09-13T22:20:23.000Z",
+      "title_en": "CVS Class Action Privacy Settlement (Up To $5 Without Proof, $10 With)",
+      "summary_en": "",
+      "title_zh": "CVS 集體訴訟隱私和解（無證明最高 $5，有證明最高 $10）",
+      "summary_zh": "CVS 因隱私問題達成和解，符合條件的消費者可獲得最高 5 美元（無需證明）或 10 美元（提供證明）的賠償。",
+      "title_es": "Liquidación de acción colectiva de privacidad de CVS (hasta $5 sin prueba, $10 con prueba)",
+      "summary_es": "Los clientes de CVS pueden reclamar hasta $5 sin necesidad de presentar pruebas o $10 si tienen documentación, en el marco de un acuerdo por privacidad."
+    },
+    {
+      "title": "Chase IHG Premier: Five Free Night Certificates (Up To 40,000 Points Per Night)",
+      "url": "https://www.doctorofcredit.com/chase-ihg-premier-five-free-night-certificates-up-to-40000-points-per-night/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "big",
+        "chase",
+        "chase ihg",
+        "credit card bonuses",
+        "ihg"
+      ],
+      "ts": "2026-09-13T21:00:36.000Z",
+      "title_en": "Chase IHG Premier: Five Free Night Certificates (Up To 40,000 Points Per Night)",
+      "summary_en": "",
+      "title_zh": "Chase IHG Premier：五張免費住宿券（每晚最高 40,000 點）",
+      "summary_zh": "持有 Chase IHG Premier 信用卡的用戶可獲得五張免費住宿券，每晚最多可兌換 40,000 點。",
+      "title_es": "Chase IHG Premier: cinco certificados de noche gratis (hasta 40,000 puntos por noche)",
+      "summary_es": "Los titulares de la tarjeta Chase IHG Premier reciben cinco noches gratuitas con un valor de hasta 40,000 puntos cada una."
+    },
+    {
+      "title": "Staples: No Activation Fee on $200 Mastercard Gift Cards (9/13-9/19)",
+      "url": "https://www.doctorofcredit.com/staples-no-activation-fee-on-200-mastercard-gift-cards-12-5-12-11-limit-5-per-day/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Manufactured Spending",
+        "mastercard gift cards",
+        "staples"
+      ],
+      "ts": "2026-09-13T20:55:22.000Z",
+      "title_en": "Staples: No Activation Fee on $200 Mastercard Gift Cards (9/13-9/19)",
+      "summary_en": "",
+      "title_zh": "Staples：$200 Mastercard 禮品卡免激活費（9/13-9/19）",
+      "summary_zh": "在 Staples 購買 200 美元 Mastercard 禮品卡，於 9 月 13 日至 19 日期間無需支付激活費用。",
+      "title_es": "Staples: Sin tarifa de activación en tarjetas de regalo Mastercard de $200 (13/9-19/9)",
+      "summary_es": "Staples elimina la tarifa de activación en sus tarjetas de regalo Mastercard de $200 durante la semana del 13 al 19 de septiembre."
+    },
+    {
       "title": "[AR, MS, TN only] Orion Financial $150 Checking Bonus",
       "url": "https://www.doctorofcredit.com/ar-ms-tn-only-orion-financial-150-checking-bonus/",
       "source": "Doctor of Credit",
@@ -20,7 +110,7 @@
       "summary_es": "Orion Financial ofrece un bono de $150 por abrir una cuenta corriente, disponible solo para residentes de Arkansas, Mississippi y Tennessee."
     },
     {
-      "title": "Target: $10 Bonus Target Giftcard When You Buy Select $100 One4All Giftcards [8/23 – 8/29]",
+      "title": "Target: $10 Bonus Target Giftcard When You Buy Select $100 One4All Giftcards [9/13-9/19]",
       "url": "https://www.doctorofcredit.com/target-10-bonus-target-giftcard-when-you-buy-select-100-one4all-giftcards/",
       "source": "Doctor of Credit",
       "categories": [
@@ -28,12 +118,12 @@
         "target"
       ],
       "ts": "2026-09-13T16:30:43.000Z",
-      "title_en": "Target: $10 Bonus Target Giftcard When You Buy Select $100 One4All Giftcards [8/23 – 8/29]",
+      "title_en": "Target: $10 Bonus Target Giftcard When You Buy Select $100 One4All Giftcards [9/13-9/19]",
       "summary_en": "",
-      "title_zh": "Target：在8/23至8/29期間，購買指定 $100 One4All 禮品卡即獲得 $10 Target 禮品卡獎金",
-      "summary_zh": "Target 在限定期間內推出購買100美元 One4All 禮品卡即送10美元 Target 禮品卡的優惠。",
-      "title_es": "Target: Bono de $10 en Tarjeta de Regalo de Target al Comprar $100 en Tarjetas de Regalo One4All Seleccionadas [23/8 – 29/8]",
-      "summary_es": "Target regala un bono de $10 en tarjeta de regalo al comprar $100 en tarjetas One4All seleccionadas entre el 23 y el 29 de agosto."
+      "title_zh": "Target：購買指定 $100 One4All 禮品卡即獲 $10 Target 禮品卡 bonus（9/13-9/19）",
+      "summary_zh": "在 Target 優惠期內，購買任意 $100 One4All 禮品卡可獲價值 $10 的 Target 禮品卡作為獎勵。",
+      "title_es": "Target: $10 de tarjeta de regalo adicional de Target al comprar tarjetas de regalo One4All seleccionadas de $100 [13/9-19/9]",
+      "summary_es": "Target ofrece un bono de $10 en tarjeta de regalo al comprar tarjetas de regalo One4All de $100 seleccionadas entre el 13 y el 19 de septiembre."
     },
     {
       "title": "[OR, ID, Northern CA] Rogue Credit Union $500 Checking Bonus, Direct Deposit Not Required",
@@ -42,6 +132,7 @@
       "categories": [
         "Bank Accounts",
         "ca bank bonuses",
+        "credit card funding",
         "direct deposit not required",
         "id bank bonuses",
         "or bank bonuses"
@@ -201,24 +292,7 @@
       "summary_zh": "加州的Commonwealth Central Credit Union提供$200獎金，無需直接存款即可獲得。",
       "title_es": "[CA] Commonwealth Central Credit Union $200, No Requiere Depósito Directo",
       "summary_es": "La cooperativa de crédito Commonwealth Central ofrece un bono de $200 sin requisito de depósito directo en California."
-    },
-    {
-      "title": "[Expired] Atom Tickets: Free Ticket To See Runner With Promo Code ATOMRUNNER",
-      "url": "https://www.doctorofcredit.com/atom-tickets-free-ticket-to-see-runner-with-promo-code-atomrunner/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "atom tickets",
-        "freebies"
-      ],
-      "ts": "2026-09-12T10:36:56.000Z",
-      "title_en": "[Expired] Atom Tickets: Free Ticket To See Runner With Promo Code ATOMRUNNER",
-      "summary_en": "",
-      "title_zh": "[已過期] Atom Tickets：使用優惠碼 ATOMRUNNER 免費觀看《Runner》",
-      "summary_zh": "Atom Tickets使用優惠碼ATOMRUNNER可免費觀看《Runner》電影，但此優惠已過期。",
-      "title_es": "[Expirado] Atom Tickets: Entrada Gratuita para Ver Runner con Código Promocional ATOMRUNNER",
-      "summary_es": "La promoción de Atom Tickets que regalaba una entrada gratuita para ver la película Runner con el código ATOMRUNNER ha expirado."
     }
   ],
-  "fetched": "2026-09-13T20:08:11.801Z"
+  "fetched": "2026-09-14T08:08:12.360Z"
 }
