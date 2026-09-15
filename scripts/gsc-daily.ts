@@ -8,7 +8,7 @@
 import { google } from 'googleapis';
 import fs from 'fs';
 import path from 'path';
-import sitemap from '../app/sitemap';
+import generateSitemap from '../app/sitemap';
 import { getAllCards } from '../lib/cards';
 import { GUIDES } from '../lib/guides';
 import { Baseline, COHORT_LABELS, Cohort, IndexPolicy, classifyPolicy, compareCohorts, normalizeUrl, cardIdsFromRecords } from './gsc-cohorts';
@@ -134,7 +134,7 @@ async function fetchDailyReport(): Promise<{ report: GSCReport; alerts: string[]
   const previous = metricFromRow(previousRows[0]);
 
   const context = {
-    indexableUrls: new Set(sitemap().map(item => normalizeUrl(item.url))),
+    indexableUrls: new Set(generateSitemap().map(item => normalizeUrl(item.url))),
     cardIds: cardIdsFromRecords(getAllCards()),
     guideSlugs: new Set(GUIDES.map(guide => guide.slug)),
   };
