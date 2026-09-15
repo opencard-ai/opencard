@@ -949,7 +949,7 @@ export default function MyCardsPage({
               return (
                 <div key={instanceId} className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
                   {/* Card Header */}
-                  <div className="px-4 py-3 bg-slate-50 border-b border-slate-100 flex items-center justify-between gap-3">
+                  <div className="px-4 py-3 bg-slate-50 border-b border-slate-100 flex flex-col items-stretch sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div className="flex items-center gap-3 min-w-0 flex-1">
                       <CardArt cardId={productCardId} issuer={card.issuer} size="sm" />
                       <div className="min-w-0 flex-1">
@@ -966,8 +966,8 @@ export default function MyCardsPage({
                     </div>
                     {cardTotal > 0 && (
                       <div className="text-right shrink-0 tabular-nums whitespace-nowrap">
-                        <span className="text-sm font-semibold text-emerald-700">${cardRemaining}</span>
-                        <span className="text-[10px] text-slate-400"> / ${cardTotal}</span>
+                        <span className="text-sm font-semibold text-emerald-700">${cardRemaining.toLocaleString('en-US', { maximumFractionDigits: 2 })}</span>
+                        <span className="text-[10px] text-slate-400"> / ${cardTotal.toLocaleString('en-US', { maximumFractionDigits: 2 })}</span>
                         <p className="text-[9px] text-slate-400 leading-none mt-0.5">{m.remainingThisPeriod}</p>
                       </div>
                     )}
