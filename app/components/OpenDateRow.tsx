@@ -1,13 +1,13 @@
 "use client";
 
-import { useCallback, useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Calendar } from "lucide-react";
 
 const STR = {
-  en: { setLabel: "Set card open date", editLabel: "Edit", openedLabel: "Opened", noEmail: "Please subscribe first." },
-  zh: { setLabel: "設定開卡日期", editLabel: "修改", openedLabel: "開卡", noEmail: "請先訂閱。" },
-  "zh-cn": { setLabel: "设置开卡日期", editLabel: "修改", openedLabel: "开卡", noEmail: "请先订阅。" },
-  es: { setLabel: "Establecer fecha de apertura", editLabel: "Editar", openedLabel: "Abierta", noEmail: "Suscríbete primero." },
+  en: { setLabel: "Set card open date", editLabel: "Edit", openedLabel: "Opened", noEmail: "Please subscribe first.", save: "Save", cancel: "Cancel", failed: "Could not save. Please try again." },
+  zh: { setLabel: "設定開卡日期", editLabel: "修改", openedLabel: "開卡", noEmail: "請先訂閱。", save: "儲存", cancel: "取消", failed: "儲存失敗，請重試。" },
+  "zh-cn": { setLabel: "设置开卡日期", editLabel: "修改", openedLabel: "开卡", noEmail: "请先订阅。", save: "保存", cancel: "取消", failed: "保存失败，请重试。" },
+  es: { setLabel: "Establecer fecha de apertura", editLabel: "Editar", openedLabel: "Abierta", noEmail: "Suscríbete primero.", save: "Guardar", cancel: "Cancelar", failed: "No se pudo guardar. Inténtalo de nuevo." },
 };
 
 type Lang = keyof typeof STR;
@@ -45,6 +45,14 @@ export default function OpenDateRow({ cardId, email, initial, lang, onSaved }: P
   const t = STR[(lang as Lang) in STR ? (lang as Lang) : "en"];
   const [editing, setEditing] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [draft, setDraft] = useState("");
+  const [error, setError] = useState("");
+  const submitting = useRef(false);
+  const beginEditing = () => {
+    setDraft(initial ? `${initial.year}-${pad2(initial.month)}` : "");
+    setError("");
+    setEditing(true);
+  };
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Auto-focus + open native picker when entering edit mode.
@@ -60,57 +68,55 @@ export default function OpenDateRow({ cardId, email, initial, lang, onSaved }: P
     } catch {}
   }, [editing]);
 
-  const submit = useCallback(
-    async (val: string) => {
-      const [yStr, mStr] = val.split("-");
-      const y = Number(yStr);
-      const m = Number(mStr);
-      if (!Number.isInteger(y) || !Number.isInteger(m) || m < 1 || m > 12 || y < 2020 || y > 2030) {
-        setEditing(false);
-        return;
-      }
-      if (!email) {
-        // No subscribed email — the picker shouldn't have been reachable, but
-        // if it is (race / restored stale localStorage) just bail silently
-        // rather than blocking the page with an alert.
-        setEditing(false);
-        return;
-      }
-      setSaving(true);
-      try {
-        const res = await fetch("/api/my-cards/set-open-date", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, card_id: cardId, month: m, year: y }),
-        });
-        if (res.ok) onSaved(m, y);
-      } finally {
-        setSaving(false);
-        setEditing(false);
-      }
-    },
-    [email, cardId, onSaved],
-  );
+  const submit = async () => {
+    if (submitting.current || !inputRef.current?.reportValidity() || !draft) return;
+    const [y, m] = draft.split("-").map(Number);
+    if (!Number.isInteger(y) || !Number.isInteger(m) || m < 1 || m > 12 || y < 2020 || y > CURRENT_YEAR) return;
+    if (!email) { setError(t.noEmail); return; }
+    submitting.current = true;
+    setSaving(true);
+    setError("");
+    try {
+      const res = await fetch("/api/my-cards/set-open-date", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, card_id: cardId, month: m, year: y }),
+      });
+      if (!res.ok) throw new Error("Save failed");
+      onSaved(m, y);
+      setEditing(false);
+    } catch {
+      setError(t.failed);
+    } finally {
+      submitting.current = false;
+      setSaving(false);
+    }
+  };
 
   if (editing) {
     return (
-      <input
-        ref={inputRef}
-        type="month"
-        defaultValue={initial ? `${initial.year}-${pad2(initial.month)}` : ""}
-        min={MIN}
-        max={MAX}
-        disabled={saving}
-        onChange={(e) => submit(e.target.value)}
-        onBlur={(e) => {
-          if (!e.target.value) setEditing(false);
-        }}
-        onKeyDown={(e) => {
-          if (e.key === "Escape") setEditing(false);
-        }}
-        className="text-xs bg-white border border-blue-300 rounded px-2 py-1 text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:opacity-60"
-        aria-label={t.setLabel}
-      />
+      <div className="flex flex-wrap items-center gap-2 min-w-0">
+        <input
+          ref={inputRef}
+          type="month"
+          value={draft}
+          required
+          min={MIN}
+          max={MAX}
+          disabled={saving}
+          onChange={(e) => { setDraft(e.target.value); setError(""); }}
+          onKeyDown={(e) => {
+            if (e.key === "Escape" && !submitting.current) setEditing(false);
+          }}
+          className="min-w-0 text-xs bg-white border border-blue-300 rounded px-2 py-1 text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:opacity-60"
+          aria-label={t.setLabel}
+        />
+        <button type="button" onClick={submit} disabled={saving || !draft}
+          className="text-xs rounded bg-blue-600 text-white px-3 py-2 disabled:opacity-60">{saving ? "…" : t.save}</button>
+        <button type="button" onClick={() => setEditing(false)} disabled={saving}
+          className="text-xs text-blue-600 px-2 py-2 disabled:opacity-60">{t.cancel}</button>
+        {error && <p role="alert" className="w-full text-xs text-red-600">{error}</p>}
+      </div>
     );
   }
 
@@ -124,7 +130,7 @@ export default function OpenDateRow({ cardId, email, initial, lang, onSaved }: P
         </span>
         <button
           type="button"
-          onClick={() => setEditing(true)}
+          onClick={beginEditing}
           className="text-xs text-blue-500 hover:text-blue-700 cursor-pointer"
         >
           {t.editLabel}
@@ -136,7 +142,7 @@ export default function OpenDateRow({ cardId, email, initial, lang, onSaved }: P
   return (
     <button
       type="button"
-      onClick={() => setEditing(true)}
+      onClick={beginEditing}
       className="text-xs text-blue-600 hover:text-blue-800 font-medium cursor-pointer inline-flex items-center gap-1"
     >
       <Calendar className="w-3 h-3" /> {t.setLabel}
