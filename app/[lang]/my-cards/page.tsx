@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { creditBalance } from "@/lib/credit-balance";
 import { trackBenefitUsed } from "@/lib/analytics";
 import Link from "next/link";
 import { Check, CreditCard } from "lucide-react";
@@ -18,6 +19,9 @@ const SUBSCRIBED_EMAIL_KEY = "opencard_subscribed_email";
 const MESSAGES = {
   en: {
     title: "My Cards",
+    summaryLabel: "Remaining tracked credits",
+    summaryNote: "Across current benefit periods; not a monthly amount. Excludes free nights.",
+    cardsLabel: "cards",
     subtitle: "Your personal credit card benefits manager",
     emailSection: "Get monthly benefit reminders",
     emailHint: "Leave your email and we'll remind you when credits are about to expire.",
@@ -67,6 +71,9 @@ const MESSAGES = {
   },
   zh: {
     title: "我的卡片",
+    summaryLabel: "各期剩餘福利額度",
+    summaryNote: "合計各福利當期餘額，非每月金額；不含免費房晚。",
+    cardsLabel: "張卡",
     subtitle: "個人信用卡福利管理中心",
     emailSection: "每月收取福利到期提醒",
     emailHint: "留下 email，我們會在福利即將到期時提醒你。",
@@ -116,6 +123,9 @@ const MESSAGES = {
   },
   "zh-cn": {
     title: "我的卡片",
+    summaryLabel: "各期剩余福利额度",
+    summaryNote: "合计各福利当期余额，非每月金额；不含免费房晚。",
+    cardsLabel: "张卡",
     subtitle: "个人信用卡福利管理中心",
     emailSection: "每月收取福利到期提醒",
     emailHint: "留下 email，我们会在福利即将到期时提醒你。",
@@ -165,6 +175,9 @@ const MESSAGES = {
   },
   es: {
     title: "Mis Tarjetas",
+    summaryLabel: "Créditos registrados restantes",
+    summaryNote: "Suma de los períodos vigentes; no es un importe mensual. Excluye noches gratis.",
+    cardsLabel: "tarjetas",
     subtitle: "Tu gestor personal de beneficios",
     emailSection: "Recibe recordatorios mensuales",
     emailHint: "Deja tu email y te lembraremos cuando los créditos estén por vencer.",
@@ -755,9 +768,12 @@ export default function MyCardsPage({
       return (instanceOrder.get(a.instance_id) ?? 0) - (instanceOrder.get(b.instance_id) ?? 0);
     });
 
-  const totalMonthlyCredits = selectedCardsList.reduce((sum, card) => {
-    return sum + (card.recurring_credits || []).filter((c) => c.frequency === "monthly").reduce((s, c) => s + (c.amount || 0), 0);
-  }, 0);
+  const balances = new Map(selectedCardsList.map(card => [
+    card.instance_id,
+    creditBalance(card.instance_id, card.recurring_credits || [], creditUses,
+      frequency => periodKeyFor(card.instance_id, frequency)),
+  ]));
+  const remainingCents = [...balances.values()].reduce((sum, balance) => sum + balance.remainingCents, 0);
   const totalAnnualFees = selectedCardsList.reduce((sum, card) => sum + (card.annual_fee || 0), 0);
 
   return (
@@ -812,19 +828,18 @@ export default function MyCardsPage({
           </div>
         )}
 
-        {/* Monthly Summary */}
-        {totalMonthlyCredits > 0 && (
+        {/* Remaining credit summary, using the same balances as the card headers. */}
+        {selectedCardsList.length > 0 && (
           <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs text-slate-500 mb-0.5">{m.thisMonth}</p>
+                <p className="text-xs text-slate-500 mb-0.5">{m.summaryLabel}</p>
                 <p className="text-2xl font-bold text-slate-800">
-                  ${totalMonthlyCredits.toFixed(0)}
-                  <span className="text-sm font-normal text-slate-400">/mo</span>
+                  ${(remainingCents / 100).toLocaleString("en-US", { maximumFractionDigits: 2 })}
                 </p>
               </div>
               <div className="text-right">
-                <p className="text-xs text-slate-500">{selectedCardsList.length} {m.benefits}</p>
+                <p className="text-xs text-slate-500">{selectedCardsList.length} {m.cardsLabel}</p>
                 <p className="text-xs text-emerald-600 mt-0.5">
                   {selectedCardsList.reduce((sum, c) => sum + (c.recurring_credits?.length || 0), 0)} credits
                 </p>
@@ -833,6 +848,7 @@ export default function MyCardsPage({
                 </p>
               </div>
             </div>
+            <p className="text-xs text-slate-500 mt-3">{m.summaryNote}</p>
           </div>
         )}
 
@@ -932,19 +948,9 @@ export default function MyCardsPage({
               const thisMonth = getBenefitsThisMonth(credits);
               const upcoming = getUpcomingBenefits(credits);
 
-              // Per-card aggregation: total $ available across all check-off-able credits
-              // in their respective current periods, minus what user has marked used.
-              let cardTotal = 0;
-              let cardUsed = 0;
-              for (const c of credits) {
-                if (c.is_free_night || !c.credit_key) continue;
-                const pk = periodKeyFor(instanceId, c.frequency);
-                if (!pk) continue;
-                cardTotal += c.amount || 0;
-                const u = creditUses.get(`${instanceId}:${c.credit_key}:${pk}`);
-                if (u) cardUsed += u.used_amount;
-              }
-              const cardRemaining = Math.max(0, cardTotal - cardUsed);
+              const balance = balances.get(instanceId)!;
+              const cardTotal = balance.totalCents / 100;
+              const cardRemaining = balance.remainingCents / 100;
 
               return (
                 <div key={instanceId} className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
