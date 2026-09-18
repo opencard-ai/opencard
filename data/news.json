@@ -1,6 +1,40 @@
 {
   "items": [
     {
+      "title": "American Express Launches High Yield Business Savings Account",
+      "url": "https://www.doctorofcredit.com/american-express-launches-high-yield-business-savings-account/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "american express",
+        "high yield"
+      ],
+      "ts": "2026-09-18T19:21:02.000Z",
+      "title_en": "American Express Launches High Yield Business Savings Account",
+      "summary_en": "",
+      "title_zh": "美國運通推出高收益商業儲蓄帳戶",
+      "summary_zh": "美國運通宣布推出提供高收益率的商業儲蓄帳戶，專為企業客戶設計。",
+      "title_es": "American Express lanza cuenta de ahorro empresarial de alto rendimiento",
+      "summary_es": "American Express ha lanzado una cuenta de ahorro empresarial con alto rendimiento para empresas."
+    },
+    {
+      "title": "Brex Business Card $1,000 Signup Bonus After $4,000 Spend",
+      "url": "https://www.doctorofcredit.com/brex-business-card-1000-signup-bonus-after-4000-spend/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "big",
+        "signup bonus"
+      ],
+      "ts": "2026-09-18T19:12:20.000Z",
+      "title_en": "Brex Business Card $1,000 Signup Bonus After $4,000 Spend",
+      "summary_en": "",
+      "title_zh": "Brex 商業卡在消費 $4,000 後提供 $1,000 註冊獎金",
+      "summary_zh": "Brex 的商業卡新戶在消費 4,000 美元後可獲得 1,000 美元的註冊獎金。",
+      "title_es": "Tarjeta de negocios Brex: bono de $1,000 tras gastar $4,000",
+      "summary_es": "Brex ofrece un bono de $1,000 para nuevos usuarios que gasten $4,000 con su tarjeta de negocios."
+    },
+    {
       "title": "[Targeted] Gemini: 50% Bonus On Prediction Markets Up To $50",
       "url": "https://www.doctorofcredit.com/targeted-gemini-50-bonus-on-prediction-markets-up-to-50/",
       "source": "Doctor of Credit",
@@ -216,53 +250,7 @@
       "summary_zh": "在 Meijer 購買 $50 的第三方禮品卡，即可獲得 5,000 會員積分，上限 50,000 點。",
       "title_es": "Meijer: Compra $50 en tarjetas de regalo de terceros, obtén 5,000 puntos (límite de 50k)",
       "summary_es": "Meijer regala 5,000 puntos al comprar $50 en tarjetas de regalo de terceros, con un tope de 50,000 puntos."
-    },
-    {
-      "title": "Giftcards.com: No Fees On Virtual Visa Giftcards With Promo Code NOFEE (Limit 3)",
-      "url": "https://www.doctorofcredit.com/giftcards-com-no-fees-on-virtual-visa-giftcards-with-promo-code-nofee-limit-3/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "giftcards.com"
-      ],
-      "ts": "2026-09-17T04:11:26.000Z",
-      "title_en": "Giftcards.com: No Fees On Virtual Visa Giftcards With Promo Code NOFEE (Limit 3)",
-      "summary_en": "",
-      "title_zh": "Giftcards.com：使用優惠碼 NOFEE 購買虛擬 Visa 禮品卡免手續費（限 3 張）",
-      "summary_zh": "在 Giftcards.com 使用 NOFEE 優惠碼購買虛擬 Visa 禮品卡，可免除手續費，每次最多 3 張。",
-      "title_es": "Giftcards.com: Sin comisiones en tarjetas Visa virtuales con código promocional NOFEE (límite 3)",
-      "summary_es": "Giftcards.com elimina las comisiones en tarjetas Visa virtuales con el código NOFEE, limitado a tres tarjetas."
-    },
-    {
-      "title": "[CT, D.C., DE, FL, MA, MD, MI, NH, NJ, NY, OH, PA, RI, VT, VA] Citizens Bank $400/$500 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/ct-de-ma-mi-nh-nj-ny-oh-pa-ri-vt-citizens-bank-400-checking-bonus-2/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "ct bank bonuses",
-        "dc bank bonuses",
-        "de bank bonuses",
-        "direct deposit required",
-        "ma bank bonuses",
-        "mi bank bonuses",
-        "nh bank bonuses",
-        "nj bank bonuses",
-        "no credit card funding",
-        "ny bank bonuses",
-        "oh bank bonuses",
-        "pa bank bonuses",
-        "ri bank bonuses",
-        "soft pull",
-        "vt bank bonuses"
-      ],
-      "ts": "2026-09-17T00:15:42.000Z",
-      "title_en": "[CT, D.C., DE, FL, MA, MD, MI, NH, NJ, NY, OH, PA, RI, VT, VA] Citizens Bank $400/$500 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "【CT、DC、DE、FL、MA、MD、MI、NH、NJ、NY、OH、PA、RI、VT、VA】Citizens Bank 活期帳戶獎金 $400/$500",
-      "summary_zh": "在指定州居住的客戶，於 Citizens Bank 開立活期帳戶可獲得 $400 至 $500 的開戶獎金。",
-      "title_es": "[CT, D.C., DE, FL, MA, MD, MI, NH, NJ, NY, OH, PA, RI, VT, VA] Bonificación de $400/$500 en cuenta corriente de Citizens Bank",
-      "summary_es": "Citizens Bank ofrece una bonificación de $400 o $500 al abrir una cuenta corriente en estados seleccionados."
     }
   ],
-  "fetched": "2026-09-18T08:08:18.663Z"
+  "fetched": "2026-09-18T20:08:14.780Z"
 }
