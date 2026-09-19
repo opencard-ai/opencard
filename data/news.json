@@ -1,6 +1,96 @@
 {
   "items": [
     {
+      "title": "[Targeted] Chase/Wells Fargo Offers: AT&T Wireless, Spend $100 & Get $75 Back",
+      "url": "https://www.doctorofcredit.com/targeted-chase-offers-att-wireless-spend-100-get-75-back/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "at&t",
+        "at&t wireless",
+        "chase offers"
+      ],
+      "ts": "2026-09-19T18:00:36.000Z",
+      "title_en": "[Targeted] Chase/Wells Fargo Offers: AT&T Wireless, Spend $100 & Get $75 Back",
+      "summary_en": "",
+      "title_zh": "[目標] Chase/Wells Fargo 優惠：AT&T Wireless，消费 $100 回赠 $75",
+      "summary_zh": "此優惠僅限受邀請的 Chase 或 Wells Fargo 客戶，在 AT&T Wireless 消費滿 $100 可獲得 $75 回扣。",
+      "title_es": "[Dirigido] Ofertas de Chase/Wells Fargo: AT&T Wireless, gasta $100 y obtén $75 de regreso",
+      "summary_es": "Esta oferta está dirigida a clientes de AT&T Wireless que gasten $100 y reciban $75 de vuelta al usar sus tarjetas de Chase o Wells Fargo."
+    },
+    {
+      "title": "[CO] Credit Union of the Rockies $300 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/co-credit-union-of-the-rockies-300-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "co bank bonuses",
+        "direct deposit required"
+      ],
+      "ts": "2026-09-19T15:00:27.000Z",
+      "title_en": "[CO] Credit Union of the Rockies $300 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[CO] 洛基山信用合作社 $300 支票帳戶獎金",
+      "summary_zh": "科羅拉多州的洛基山信用合作社新客戶在符合條件的支票帳戶中存入一定金額，可獲得 $300 獎金。",
+      "title_es": "[CO] Crédito Union de las Montañas Rocosas – Bono de $300 por Cuenta Corriente",
+      "summary_es": "La Credit Union of the Rockies ofrece un bono de $300 por abrir una cuenta corriente en Colorado."
+    },
+    {
+      "title": "[IN & MI] Horizon Bank $250 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/in-in-branch-only-horizon-bank-300-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "in bank bonuses",
+        "soft pull"
+      ],
+      "ts": "2026-09-19T15:00:21.000Z",
+      "title_en": "[IN & MI] Horizon Bank $250 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[IN & MI] Horizon Bank $250 支票帳戶獎金",
+      "summary_zh": "印第安納州和密歇根州的 Horizon Bank 提供新支票帳戶開戶獎金，符合條件的客戶可獲得 $250。",
+      "title_es": "[IN & MI] Horizon Bank – Bono de $250 por Cuenta Corriente",
+      "summary_es": "Horizon Bank regala $250 a quienes abran una cuenta corriente en Indiana o Michigan."
+    },
+    {
+      "title": "[NY, In Branch] Hudson Valley Federal Credit Union $750 – $1,500 Business Checking Bonus",
+      "url": "https://www.doctorofcredit.com/ny-in-branch-hudson-valley-federal-credit-union-750-1500-business-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "credit card funding",
+        "direct deposit not required",
+        "ny bank bonuses",
+        "soft pull"
+      ],
+      "ts": "2026-09-19T14:00:06.000Z",
+      "title_en": "[NY, In Branch] Hudson Valley Federal Credit Union $750 – $1,500 Business Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[NY, 親自] Hudson Valley Federal Credit Union $750 – $1,500 商業支票帳戶獎金",
+      "summary_zh": "紐約州的 Hudson Valley Federal Credit Union 為商業支票帳戶提供 $750 至 $1,500 的開戶獎金，視存款金額而定。",
+      "title_es": "[NY, En Sucursal] Hudson Valley Federal Credit Union – Bono de $750 a $1,500 por Cuenta Corriente Empresarial",
+      "summary_es": "Hudson Valley Federal Credit Union ofrece entre $750 y $1,500 por abrir una cuenta corriente empresarial en Nueva York."
+    },
+    {
+      "title": "[PA Only] Univest $400 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/pa-only-univest-400-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "hard pull",
+        "pa bank bonuses"
+      ],
+      "ts": "2026-09-19T13:00:49.000Z",
+      "title_en": "[PA Only] Univest $400 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[PA Only] Univest $400 支票帳戶獎金",
+      "summary_zh": "僅限賓夕法尼亞州的 Univest 為新支票帳戶客戶提供 $400 獎金。",
+      "title_es": "[Solo PA] Univest – Bono de $400 por Cuenta Corriente",
+      "summary_es": "Univest proporciona un bono de $400 por abrir una cuenta corriente en Pensilvania."
+    },
+    {
       "title": "Giftcards.com: No Fees On Virtual Visa Giftcards With Promo Code NOFEES (Limit 3), $10 Bonus Giftcard With $100+ Purchase With Code FESTIVAL",
       "url": "https://www.doctorofcredit.com/giftcards-com-no-fees-on-virtual-visa-giftcards-with-promo-code-nofees-limit-3-10-bonus-giftcard-with-100-purchase-with-code-festival/",
       "source": "Doctor of Credit",
@@ -100,159 +190,7 @@
       "summary_zh": "持卡人反映在使用 American Express 轉點至全日空（ANA）時遭遇轉換障礙。",
       "title_es": "Problema de transferencia de American Express a ANA",
       "summary_es": "Se reporta un problema al transferir puntos de American Express a ANA."
-    },
-    {
-      "title": "Merrill Edge Brokerage: Up To $1,000 Signup Bonus When Transferring Investments",
-      "url": "https://www.doctorofcredit.com/merrill-edge-brokerage-up-to-1000-cash-bonus-for-moving-over-your-investments/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "bank of america",
-        "merrill"
-      ],
-      "ts": "2026-09-17T19:15:22.000Z",
-      "title_en": "Merrill Edge Brokerage: Up To $1,000 Signup Bonus When Transferring Investments",
-      "summary_en": "",
-      "title_zh": "Merrill Edge 經紀：轉移投資可獲得最高 $1,000 開戶獎金",
-      "summary_zh": "在 Merrill Edge 轉入投資資產的新客戶，最高可獲得 $1,000 的開戶獎金。",
-      "title_es": "Merrill Edge: Bonificación de hasta $1,000 al transferir inversiones",
-      "summary_es": "Merrill Edge ofrece hasta $1,000 de bonificación al transferir inversiones."
-    },
-    {
-      "title": "UberEats: Promo Codes, Discounts & Other Savings: 40% Off With College Codes (Select Areas)",
-      "url": "https://www.doctorofcredit.com/ubereats-promo-codes-discounts-other-savings/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "Food Delivery",
-        "UberEATS"
-      ],
-      "ts": "2026-09-17T18:45:06.000Z",
-      "title_en": "UberEats: Promo Codes, Discounts & Other Savings: 40% Off With College Codes (Select Areas)",
-      "summary_en": "",
-      "title_zh": "UberEats：優惠碼、折扣及其他優惠——大學生優惠碼最高 40% 折扣（部分地區）",
-      "summary_zh": "UberEats 針對大學生提供優惠碼，可在指定地區享受高達 40% 的折扣。",
-      "title_es": "UberEats: Códigos promocionales, descuentos y otros ahorros: 40% de descuento con códigos universitarios (en áreas seleccionadas)",
-      "summary_es": "UberEats ofrece un 40% de descuento en pedidos al usar códigos universitarios en áreas seleccionadas."
-    },
-    {
-      "title": "Capital One Shopping Referral Bonus – $80 For Each",
-      "url": "https://www.doctorofcredit.com/join-capital-one-shopping-get-10-after-spending-10/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "capital one shopping"
-      ],
-      "ts": "2026-09-17T18:15:14.000Z",
-      "title_en": "Capital One Shopping Referral Bonus – $80 For Each",
-      "summary_en": "",
-      "title_zh": "Capital One Shopping 推薦獎金——每位 $80",
-      "summary_zh": "每成功推薦一位新用戶，Capital One Shopping 提供 $80 的推薦獎金。",
-      "title_es": "Bonificación por referido de Capital One Shopping – $80 por cada uno",
-      "summary_es": "Capital One Shopping paga $80 por cada cliente referido que use su servicio."
-    },
-    {
-      "title": "Costco is Now Available on DoorDash (Plus: YMMV Code for 20% Off)",
-      "url": "https://www.doctorofcredit.com/costco-is-now-available-on-doordash-plus-code-costco20-for-20-off/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "costco",
-        "doordash"
-      ],
-      "ts": "2026-09-17T17:38:04.000Z",
-      "title_en": "Costco is Now Available on DoorDash (Plus: YMMV Code for 20% Off)",
-      "summary_en": "",
-      "title_zh": "Costco 現在可透過 DoorDash 購買（另有 YMMV 優惠碼可享 20% 折扣）",
-      "summary_zh": "DoorDash 已支援 Costco 外送，並提供 YMMV 優惠碼可享 20% 折扣。",
-      "title_es": "Costco ya está disponible en DoorDash (además: código YMMV para 20% de descuento)",
-      "summary_es": "Costco ya está disponible en DoorDash, y hay un código YMMV para 20% de descuento."
-    },
-    {
-      "title": "Capital One Shopping/Offers: Up To 15% Back On Giftcards.com",
-      "url": "https://www.doctorofcredit.com/capital-one-shopping-3-10-back-on-giftcards-com/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Gift Card Deals",
-        "capital one shopping",
-        "giftcards.com"
-      ],
-      "ts": "2026-09-17T17:25:02.000Z",
-      "title_en": "Capital One Shopping/Offers: Up To 15% Back On Giftcards.com",
-      "summary_en": "",
-      "title_zh": "Capital One Shopping/優惠：Giftcards.com 最高 15% 回饋",
-      "summary_zh": "在 Giftcards.com 購物，使用 Capital One Shopping 可獲得最高 15% 的現金回饋。",
-      "title_es": "Capital One Shopping/Ofertas: Hasta 15% de devolución en Giftcards.com",
-      "summary_es": "Capital One Shopping devuelve hasta 15% en compras de tarjetas de regalo en Giftcards.com."
-    },
-    {
-      "title": "OKX Airdrop: Free Crypto Drop – 140k USDC (Based On Trading Volume)",
-      "url": "https://www.doctorofcredit.com/okx-airdrop-free-crypto-when-you-hold-1000/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "crypto",
-        "cryptocurrency",
-        "okx"
-      ],
-      "ts": "2026-09-17T17:05:43.000Z",
-      "title_en": "OKX Airdrop: Free Crypto Drop – 140k USDC (Based On Trading Volume)",
-      "summary_en": "",
-      "title_zh": "OKX 空投：免費加密貨幣發放——根據交易量發放 140,000 USDC",
-      "summary_zh": "OKX 依據交易量向符合條件的用戶發放最高 140,000 USDC 的免費代幣。",
-      "title_es": "Airdrop de OKX: Entrega gratuita de cripto – 140k USDC (según el volumen de operaciones)",
-      "summary_es": "OKX está regalando 140,000 USDC según el volumen de operaciones del usuario."
-    },
-    {
-      "title": "Chase Sapphire Reserve for Business Limits 3x Advertising Category To $1M",
-      "url": "https://www.doctorofcredit.com/chase-sapphire-reserve-for-business-limits-3x-advertising-category-to-1m/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "chase sapphire reserve business"
-      ],
-      "ts": "2026-09-17T16:32:43.000Z",
-      "title_en": "Chase Sapphire Reserve for Business Limits 3x Advertising Category To $1M",
-      "summary_en": "",
-      "title_zh": "Chase Sapphire Reserve 商業版將 3 倍廣告類別上限提高至 $1M",
-      "summary_zh": "Chase Sapphire Reserve 商業信用卡將廣告類別的 3 倍回饋上限提升至 100 萬美元。",
-      "title_es": "Chase Sapphire Reserve para negocios limita la categoría de publicidad 3x a $1M",
-      "summary_es": "Chase Sapphire Reserve para empresas limita la categoría de publicidad 3x a $1 millón."
-    },
-    {
-      "title": "Chase Sapphire Reserve for Business Increases ‘The Edit’ Credit To $1,000 Per Year (4 x $250)",
-      "url": "https://www.doctorofcredit.com/chase-sapphire-reserve-for-business-increases-the-edit-credit-to-1000-per-year-4-x-250/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "chase sapphire reserve business"
-      ],
-      "ts": "2026-09-17T16:24:52.000Z",
-      "title_en": "Chase Sapphire Reserve for Business Increases ‘The Edit’ Credit To $1,000 Per Year (4 x $250)",
-      "summary_en": "",
-      "title_zh": "Chase Sapphire Reserve 商業版將「編輯」額度提升至每年 $1,000（分四次 $250）",
-      "summary_zh": "Chase Sapphire Reserve 商業卡將「The Edit」額度增至每年 $1,000，分四期發放。",
-      "title_es": "Chase Sapphire Reserve para negocios aumenta el crédito 'The Edit' a $1,000 por año (4 x $250)",
-      "summary_es": "Chase Sapphire Reserve para negocios aumenta su crédito 'The Edit' a $1,000 anuales, repartidos en cuatro disposiciones de $250."
-    },
-    {
-      "title": "Chase/BofA/Wells/USB: YouTube TV, Spend $49.99 & Get $20 Back",
-      "url": "https://www.doctorofcredit.com/chase-offers-youtube-tv-spend-54-99-get-20-back/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "chase offers",
-        "youtube",
-        "youtube tv"
-      ],
-      "ts": "2026-09-17T16:00:16.000Z",
-      "title_en": "Chase/BofA/Wells/USB: YouTube TV, Spend $49.99 & Get $20 Back",
-      "summary_en": "",
-      "title_zh": "Chase/BofA/Wells/USB：YouTube TV 消費 $49.99 返 $20",
-      "summary_zh": "使用 Chase、BofA、Wells 或 USB 信用卡在 YouTube TV 消費滿 $49.99，即可獲得 $20 返現。",
-      "title_es": "Chase/BofA/Wells/USB: YouTube TV, gasta $49.99 y obtén $20 de vuelta",
-      "summary_es": "Al gastar $49.99 en YouTube TV con bancos participantes, se recibe un reembolso de $20."
     }
   ],
-  "fetched": "2026-09-19T08:08:14.105Z"
+  "fetched": "2026-09-19T20:08:09.696Z"
 }
