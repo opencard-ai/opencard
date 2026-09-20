@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { bucketCredit } from "../../../../lib/reminder-logic";
+import { hiltonAnniversaryHint, hiltonEmailSection, openingMonthText, reminderInstances, type HiltonEmailHint } from "@/lib/hilton-anniversary";
 import { sendEmail } from "@/lib/email";
 
 const RedisClass = (await import("@upstash/redis")).Redis;
@@ -80,6 +81,7 @@ interface RecurringCredit {
 
 interface CardData {
   card_id: string;
+  instance_id?: string;
   name: string;
   annual_fee: number;
   recurring_credits?: RecurringCredit[];
@@ -154,7 +156,7 @@ function getCreditsThisPeriod(cards: CardData[], openDates: OpenDatesMap, now: D
   const expiringSoon: { card: CardData; credit: RecurringCredit }[] = [];
 
   for (const card of cards) {
-    const cardOpenDate = openDateForCard(openDates, card.card_id);
+    const cardOpenDate = openDateForCard(openDates, card.instance_id || card.card_id);
     for (const credit of card.recurring_credits || []) {
       const bucket = bucketCredit(
         {
@@ -199,7 +201,8 @@ function buildEmailHtml(
   thisMonth: { card: CardData; credit: RecurringCredit }[],
   upcoming: { card: CardData; credit: RecurringCredit }[],
   expiringSoon: { card: CardData; credit: RecurringCredit }[],
-  lang: string = "en"
+  lang: string = "en",
+  hiltonHints: HiltonEmailHint[] = []
 ): string {
   const UNSUB_LINK = buildUnsubscribeLink(emailHash);
   const CATEGORY_LABELS: Record<string, Record<string, string>> = {
@@ -241,6 +244,8 @@ function buildEmailHtml(
     <table style="width:100%;border-collapse:collapse;margin-bottom:16px;"><tbody>${upcoming.map(({card,credit}) => `<tr style="border-bottom:1px solid #dbeafe;"><td style="padding:8px;font-size:13px;">${card.name}</td><td style="padding:8px;font-size:13px;">${credit.name}</td><td style="padding:8px;text-align:right;font-weight:600;">${fmtAmount(credit)}</td></tr>`).join("")}</tbody></table>`;
   }
 
+  body += hiltonEmailSection(hiltonHints, lang, BASE_URL);
+
   body += `<div style="margin-top:32px;padding:16px;background:#f8f9fa;border-radius:8px;">
     <p style="font-size:12px;color:#999;margin:0;">${t("Found an error?","發現錯誤？","¿Encontraste un error?")} → <a href="mailto:opencard@opencardai.com" style="color:#666;">opencard@opencardai.com</a></p>
     <p style="font-size:11px;color:#ccc;margin:8px 0 0;">
@@ -259,6 +264,8 @@ export async function GET(req: NextRequest) {
     if (!subscriberHashes?.length) return NextResponse.json({ message: "No subscribers", sent: 0 });
 
     let sent = 0, failed = 0;
+    const now = new Date();
+    const slot = `${now.getUTCFullYear()}-${now.getUTCMonth() + 1}:${now.getUTCDate() < 20 ? "early" : "late"}`;
 
     for (const emailHash of subscriberHashes) {
       const userKey = `opencard:user:${emailHash}`;
@@ -266,9 +273,10 @@ export async function GET(req: NextRequest) {
 
       if (!userData || !userData.created_at) continue;
       if (!isReminderOptedIn(userData)) continue;
-      if (userData.status === "unsubscribed") continue;
+      if (userData.status !== "confirmed") continue;
 
-      const cards: string[] = (userData.cards as string[]) || [];
+      const instances = reminderInstances(userData);
+      const cards = [...new Set(instances.map(x => x.card_id))];
       if (!cards.length) continue;
 
       // Get real email from stored encoded version
@@ -278,19 +286,47 @@ export async function GET(req: NextRequest) {
       if (!isValidEmail(realEmail)) { console.warn("Invalid email for hash:", emailHash); continue; }
 
       const cardsMap = await getCardData(cards);
-      const userCards = cards.map(id => cardsMap[id]).filter(Boolean) as CardData[];
+      const userCards = instances.flatMap(instance => {
+        const card = cardsMap[instance.card_id];
+        if (!card) return [];
+        const copies = instances.filter(x => x.card_id === instance.card_id);
+        const suffix = copies.length > 1 ? ` (Card #${copies.findIndex(x => x.instance_id === instance.instance_id) + 1})` : '';
+        return [{ ...card, instance_id: instance.instance_id, name: card.name + suffix }];
+      });
       if (!userCards.length) continue;
 
       const openDates = await getUserOpenDates(emailHash);
-      const { thisMonth, upcoming, expiringSoon } = getCreditsThisPeriod(userCards, openDates);
-      if (!thisMonth.length && !expiringSoon.length && !upcoming.length) continue;
+      const { thisMonth, upcoming, expiringSoon } = getCreditsThisPeriod(userCards, openDates, now);
+      const hiltonHints: HiltonEmailHint[] = [];
+      for (const card of userCards) {
+        const opened = openDates[card.instance_id];
+        const hint = hiltonAnniversaryHint(card.card_id, opened, now);
+        if (!hint) continue;
+        const key = `${userKey}:hilton-hint:${card.instance_id}:${hint.key}`;
+        if (!await redis.get(key)) hiltonHints.push({ key, name: card.name, date: openingMonthText(opened), hint });
+      }
+      if (!thisMonth.length && !expiringSoon.length && !upcoming.length && !hiltonHints.length) continue;
 
       const subject = thisMonth.length > 0
         ? `💳 OpenCard: ${thisMonth.length} benefit${thisMonth.length > 1 ? "s" : ""} available this month`
-        : `⚠️ OpenCard: ${expiringSoon.length} benefit${expiringSoon.length > 1 ? "s" : ""} expiring soon`;
+        : expiringSoon.length ? `⚠️ OpenCard: ${expiringSoon.length} benefit${expiringSoon.length > 1 ? "s" : ""} expiring soon`
+        : upcoming.length ? `💳 OpenCard: ${upcoming.length} upcoming benefits`
+        : "💳 OpenCard: Hilton anniversary check";
 
-      const html = buildEmailHtml(emailHash, userCards, thisMonth, upcoming, expiringSoon);
-      if (await sendReminderEmail(realEmail, subject, html)) sent++; else failed++;
+      const locale = typeof userData.locale === 'string' ? userData.locale : typeof userData.lang === 'string' ? userData.lang : 'en';
+      const html = buildEmailHtml(emailHash, userCards, thisMonth, upcoming, expiringSoon, locale, hiltonHints);
+      // Reserve the existing twice-monthly delivery slot BEFORE contacting the provider.
+      // Leave uncertain/failed attempts reserved for review: never blindly resend after a timeout.
+      const deliveryKey = `${userKey}:reminder-delivery:${slot}`;
+      if (!await redis.set(deliveryKey, 'pending', { nx: true, ex: 45 * 86400 })) continue;
+      if (await sendReminderEmail(realEmail, subject, html)) {
+        await redis.set(deliveryKey, 'sent', { ex: 45 * 86400 });
+        for (const hint of hiltonHints) await redis.set(hint.key, 'sent', { ex: 400 * 86400 });
+        sent++;
+      } else {
+        await redis.set(deliveryKey, 'needs_review', { ex: 45 * 86400 });
+        failed++;
+      }
       await new Promise(r => setTimeout(r, 100));
     }
 

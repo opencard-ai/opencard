@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { hiltonAnniversaryHint, hiltonCopy, openingMonthText } from "@/lib/hilton-anniversary";
 import { creditBalance } from "@/lib/credit-balance";
 import { trackBenefitUsed } from "@/lib/analytics";
 import Link from "next/link";
@@ -394,6 +395,7 @@ export default function MyCardsPage({
   const [selectedCards, setSelectedCards] = useState<string[]>([]);
   const [cardInstances, setCardInstances] = useState<UserCardInstance[]>([]);
   const [cardsData, setCardsData] = useState<Record<string, Card>>({});
+  const [draftQuestion, setDraftQuestion] = useState<{ text: string; nonce: number }>();
   const [email, setEmail] = useState("");
   const [marketingOptin, setMarketingOptin] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -857,7 +859,7 @@ export default function MyCardsPage({
          * in directly so the assistant has the user's portfolio without
          * any localStorage round-trip / race condition. */}
         {selectedCards.length > 0 && (
-          <MyCardsAssistant selectedCards={selectedCards} lang={lang} />
+          <MyCardsAssistant selectedCards={selectedCards} lang={lang} draftQuestion={draftQuestion} />
         )}
 
         {/* Landing banner for new visitors */}
@@ -948,6 +950,8 @@ export default function MyCardsPage({
               const thisMonth = getBenefitsThisMonth(credits);
               const upcoming = getUpcomingBenefits(credits);
 
+              const hiltonHint = hiltonAnniversaryHint(productCardId, openDates[instanceId]);
+              const hilton = hiltonCopy(lang);
               const balance = balances.get(instanceId)!;
               const cardTotal = balance.totalCents / 100;
               const cardRemaining = balance.remainingCents / 100;
@@ -989,6 +993,15 @@ export default function MyCardsPage({
                       onSaved={(month, year) => setOpenDates((prev) => ({ ...prev, [instanceId]: { month, year } }))}
                     />
                   </div>
+
+                  {hiltonHint && (
+                    <div className="px-4 py-2 text-xs text-blue-700 bg-blue-50 border-b border-blue-100" data-hilton-hint>
+                      <span>{hilton[hiltonHint.stage]}</span>{' '}
+                      <button type="button" className="font-semibold underline" onClick={() => setDraftQuestion(prev => ({
+                        text: hilton.prompt(card.name, openingMonthText(openDates[instanceId])), nonce: (prev?.nonce || 0) + 1,
+                      }))}>{hilton.ask} →</button>
+                    </div>
+                  )}
 
                   {/* Benefits */}
                   {credits.length === 0 ? (

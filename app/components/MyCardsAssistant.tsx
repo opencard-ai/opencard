@@ -73,14 +73,23 @@ interface Props {
    * we never race with localStorage like RecommendWidget does. */
   selectedCards: string[];
   lang: string;
+  draftQuestion?: { text: string; nonce: number };
 }
 
-export default function MyCardsAssistant({ selectedCards, lang }: Props) {
+export default function MyCardsAssistant({ selectedCards, lang, draftQuestion }: Props) {
   const t = COPY[lang as keyof typeof COPY] || COPY.en;
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    if (!draftQuestion) return;
+    setInput(draftQuestion.text);
+    document.getElementById('my-cards-ai')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    inputRef.current?.focus({ preventScroll: true });
+  }, [draftQuestion]);
 
   // Auto-scroll on new message
   useEffect(() => {
@@ -94,12 +103,10 @@ export default function MyCardsAssistant({ selectedCards, lang }: Props) {
     const next: Message[] = [...messages, { role: "user", content: text }];
     setMessages(next);
     setIsLoading(true);
-    // Skip prior messages — the my-cards assistant is single-turn-ish;
-    // each question is answered against the current portfolio. Auto-retries
-    // once on cold-start failure via fetchRecommend.
+    // Keep recent context so follow-up answers retain the card and opening month.
     fetchRecommend({
       message: text,
-      messages: [],
+      messages: messages.slice(-12),
       locale: lang,
       existingCards: selectedCards,
     })
@@ -114,7 +121,7 @@ export default function MyCardsAssistant({ selectedCards, lang }: Props) {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+    <div id="my-cards-ai" className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
       <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3">
         <h3 className="text-white font-bold text-sm flex items-center gap-1.5">
           <Sparkles className="w-4 h-4" /> {t.title}
@@ -175,6 +182,7 @@ export default function MyCardsAssistant({ selectedCards, lang }: Props) {
       <div className="p-3 border-t border-slate-100 bg-white">
         <div className="flex gap-2">
           <input
+            ref={inputRef}
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}

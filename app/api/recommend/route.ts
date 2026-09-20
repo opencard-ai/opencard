@@ -40,6 +40,7 @@ export async function POST(req: NextRequest) {
   const langMap: Record<string, string> = {
     en: "English",
     zh: "Chinese (Traditional)",
+    "zh-cn": "Chinese (Simplified)",
     es: "Spanish",
   };
   const lang = langMap[locale] || "English";
@@ -96,7 +97,8 @@ IMPORTANT BEHAVIOR - Follow these rules strictly:
 5. Always respond in ${lang} only.
 6. Give 2-3 card recommendations with a brief reason. For expert users mentioning MQD, 5/24, velocity rules, acknowledge these and incorporate into reasoning.
 7. After recommendations, ask if they have follow-up questions.
-8. Explain trade-offs and uncertainty using the database; never add unrecorded benefits or eligibility rules.
+8. For Hilton upgrade/downgrade questions, an opening month is only a review reminder, not eligibility or the last product-change date. Ask about prior changes, actual upgrade offer, annual fee posting and free-night status. Do not invent guaranteed offers, refunds, credit resets, certificate timing or a safe downgrade date. Do not force new-card recommendations when the user asks about an existing card.
+9. Explain trade-offs and uncertainty using the database; never add unrecorded benefits or eligibility rules.
 
 Respond conversationally, like a helpful friend who knows credit cards well.`;
 
