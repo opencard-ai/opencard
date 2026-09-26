@@ -1,6 +1,44 @@
 {
   "items": [
     {
+      "title": "[WI only, In Branch] WaterStone Bank $300-$1,000 Business Checking Bonus",
+      "url": "https://www.doctorofcredit.com/wi-only-waterstone-bank-250-business-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit not required",
+        "soft pull",
+        "wi bank bonuses"
+      ],
+      "ts": "2026-09-26T16:30:04.000Z",
+      "title_en": "[WI only, In Branch] WaterStone Bank $300-$1,000 Business Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[僅限威斯康辛州，臨櫃辦理] WaterStone Bank 300至1,000美元商業支票帳戶獎金",
+      "summary_zh": "WaterStone Bank 為威斯康辛州的企業客戶提供300至1,000美元的商業支票帳戶開戶獎金，須在分行親自辦理。",
+      "title_es": "[Solo WI, En Sucursal] Bono de cuenta corriente empresarial de WaterStone Bank de $300-$1,000",
+      "summary_es": "WaterStone Bank ofrece un bono de entre $300 y $1,000 para abrir una cuenta corriente empresarial en Wisconsin, disponible solo en sucursal."
+    },
+    {
+      "title": "[MA & CT only] PeoplesBank (Bankatpeoples) $350 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/ma-ct-only-peoplesbank-bankatpeoples-250-checking-bonus-direct-deposit-not-required/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "credit card funding",
+        "ct bank bonuses",
+        "direct deposit not required",
+        "ma bank bonuses",
+        "soft pull"
+      ],
+      "ts": "2026-09-26T15:00:09.000Z",
+      "title_en": "[MA & CT only] PeoplesBank (Bankatpeoples) $350 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[僅限麻薩諸塞州與康涅狄格州] PeoplesBank（Bankatpeoples）350美元支票帳戶獎金",
+      "summary_zh": "PeoplesBank 為麻薩諸塞州與康涅狄格州的客戶提供350美元的支票帳戶開戶獎金。",
+      "title_es": "[Solo MA y CT] Bono de cuenta corriente de $350 de PeoplesBank (Bankatpeoples)",
+      "summary_es": "PeoplesBank ofrece un bono de $350 por abrir una cuenta corriente en Massachusetts y Connecticut."
+    },
+    {
       "title": "Wells Fargo Deals: Get 20% Cashback On Dining (Max $10 Cashback); Expires 9/24/26",
       "url": "https://www.doctorofcredit.com/wells-fargo-deals-get-20-cashback-on-dining-max-10-cashback/",
       "source": "Doctor of Credit",
@@ -221,43 +259,7 @@
       "summary_zh": "提醒持卡人如何最大化使用美國運通白金卡的 Lululemon 300 美元優惠。",
       "title_es": "(Repost/Recordatorio) Maximizar el crédito de $300 de Lululemon en la tarjeta American Express Platinum",
       "summary_es": "Recuerda cómo maximizar el crédito de $300 de Lululemon disponible en la tarjeta American Express Platinum."
-    },
-    {
-      "title": "[Approval Delayed] Chase To Open Sapphire Lounge In Seattle-Tacoma International Airport (SEA)",
-      "url": "https://www.doctorofcredit.com/chase-to-open-sapphire-lounge-in-seattle-tacoma-international-airport-sea/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "chase",
-        "chase sapphire lounge",
-        "chase sapphire lounges",
-        "sapphire lounges"
-      ],
-      "ts": "2026-09-25T10:00:33.000Z",
-      "title_en": "[Approval Delayed] Chase To Open Sapphire Lounge In Seattle-Tacoma International Airport (SEA)",
-      "summary_en": "",
-      "title_zh": "【審批延遲】Chase 將在西雅圖-塔科馬國際機場（SEA）开设 Sapphire 貴賓室",
-      "summary_zh": "Chase 计划在 SEA 机场开设的 Sapphire 贵宾室因审批延迟而尚未确定。",
-      "title_es": "[Aprobación retrasada] Chase abrirá el Sapphire Lounge en el Aeropuerto Internacional Seattle-Tacoma (SEA)",
-      "summary_es": "Chase tiene previsto abrir el Sapphire Lounge en el aeropuerto Seattle-Tacoma, aunque la aprobación se ha retrasado."
-    },
-    {
-      "title": "Amazon Prime: Four Months Of Standard Audible for $.99/month + Bonus $20 Audible Credit",
-      "url": "https://www.doctorofcredit.com/amazon-prime-free-four-months-of-standard-audible/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "amazon prime",
-        "audible"
-      ],
-      "ts": "2026-09-25T02:35:52.000Z",
-      "title_en": "Amazon Prime: Four Months Of Standard Audible for $.99/month + Bonus $20 Audible Credit",
-      "summary_en": "",
-      "title_zh": "Amazon Prime：標準 Audible 四個月每月 0.99 美元 + 額外 20 美元 Audible 積分",
-      "summary_zh": "Amazon Prime 会员可以 0.99 美元/月 的价格获得四个月标准 Audible，并额外获赠 20 美元 Audible 积分。",
-      "title_es": "Amazon Prime: Cuatro meses de Audible estándar a $0.99/mes + crédito adicional de $20 en Audible",
-      "summary_es": "Amazon Prime incluye cuatro meses de Audible estándar a $0.99 mensuales más un crédito adicional de $20."
     }
   ],
-  "fetched": "2026-09-26T08:08:20.519Z"
+  "fetched": "2026-09-26T20:08:09.180Z"
 }
