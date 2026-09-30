@@ -16,9 +16,17 @@ const fieldName = (f: string | null | undefined) => (f || '').replace('welcome_o
 const val = (v: unknown) => (v === null || v === undefined ? '無' : typeof v === 'number' ? v.toLocaleString('en-US') : typeof v === 'boolean' ? (v ? '是' : '否') : String(v));
 const reasonText = (rs?: string[]) => [...new Set((rs || []).map(r => REASONS[r.split(':')[0]] || r))].join('、');
 
-/** Traditional Chinese weekly digest, hard-capped at maxChars. */
+/** End of `day` in America/Los_Angeles (history timestamps are UTC). */
+export function laEndOfDay(day: string): number {
+  const probe = new Date(`${day}T12:00:00Z`);
+  const name = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', timeZoneName: 'longOffset' }).formatToParts(probe).find(p => p.type === 'timeZoneName')?.value || 'GMT-08:00';
+  const offset = name === 'GMT' ? 'Z' : name.replace('GMT', '');
+  return Date.parse(`${day}T23:59:59.999${offset}`);
+}
+
+/** Traditional Chinese weekly digest (window = 7 PT days ending `today`), hard-capped at maxChars. */
 export function buildDigest(events: HistoryEvent[], ledger: Ledger, today: string, maxChars = 1800): string {
-  const end = Date.parse(`${today}T23:59:59Z`), start = end - 7 * 86400000;
+  const end = laEndOfDay(today), start = end - 7 * 86400000;
   const recent = events.filter(e => { const t = Date.parse(e.ts); return t > start && t <= end; });
   const published = recent.filter(e => e.type === 'published');
   const failures = recent.filter(e => TYPE[e.type]);
@@ -28,7 +36,7 @@ export function buildDigest(events: HistoryEvent[], ledger: Ledger, today: strin
     heldMap.set(key, { card: entry.card_id, field: entry.field, value: entry.value, reasons: entry.reasons });
   }
   const held = [...heldMap.values()];
-  const startDate = new Date(start + 1000).toISOString().slice(0, 10);
+  const startDate = new Date(start + 1).toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
   const header = [`# OpenCard 優惠監測週報（${startDate} ～ ${today}）`, '', `自動上線 ${published.length} 項｜待官方確認 ${held.length} 項｜失敗/回滾 ${failures.length} 項`, ''];
   const sections: Array<[string, string[]]> = [
     ['## ✅ 已自動上線', published.map(e => `- ${e.card_id}：${(e.changes || []).map(c => `${fieldName(c.field)} ${val(c.old_value)}→${val(c.new_value)}`).join('，')}${e.commit ? `（${e.commit.slice(0, 7)}）` : ''}`)],

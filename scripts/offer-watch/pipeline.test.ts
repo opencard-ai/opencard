@@ -3,7 +3,7 @@ import { assessCandidate, expiryReport, emptyLedger, type Candidate, type Confir
 import { applyPlanToCard, confirmationsFor, planApply, sanityCheck, schemaCheck } from './apply-core';
 import { buildCandidate, extractValues } from './collect';
 import { commitMessage, expectedLiveStrings, pageText, parseVercelState, publish, type PublishConfig, type PublishDeps } from './publish-core';
-import { buildDigest } from './digest-core';
+import { buildDigest, laEndOfDay } from './digest-core';
 import { upsertLedger } from './state';
 
 const runAt = Date.parse('2026-09-30T06:00:00Z');
@@ -174,5 +174,10 @@ const noForce = (calls: string[][]) => assert.ok(!calls.some(c => c.join(' ').in
   const many = Array.from({ length: 200 }, (_, i) => ({ ts: '2026-09-29T10:00:00Z', type: 'published' as const, card_id: `card-${i}-with-a-long-identifier`, changes: [{ field: 'welcome_offer.bonus_points', old_value: 100000, new_value: 120000 }], commit: 'abcdef1' }));
   const long = buildDigest(many, ledger, today);
   assert.ok(long.length <= 1800, `digest too long: ${long.length}`); assert.ok(long.includes('…另有'));
+  // PT day boundary: 22:56 PT on 09-29 is 05:56Z on 09-30 and belongs to the 09-29 digest
+  assert.equal(new Date(laEndOfDay('2026-09-29')).toISOString(), '2026-09-30T06:59:59.999Z');
+  assert.equal(new Date(laEndOfDay('2026-12-01')).toISOString(), '2026-12-02T07:59:59.999Z');
+  const late = buildDigest([{ ts: '2026-09-30T05:56:13Z', type: 'published', card_id: 'late-card', changes: [] }, { ts: '2026-09-23T06:30:00Z', type: 'published', card_id: 'edge-old', changes: [] }], emptyLedger(), today);
+  assert.ok(late.includes('late-card')); assert.ok(!late.includes('edge-old')); assert.ok(late.includes('2026-09-23 ～ 2026-09-29'));
   console.log('offer-watch pipeline: passed');
 })().catch(error => { console.error(error); process.exit(1); });
