@@ -9,22 +9,22 @@
   "welcome_offer": {
     "spending_requirement": 8000,
     "time_period_months": 6,
-    "bonus_points": 130000,
-    "description": "Expired limited-time offer (ended 7/29/2026; issuer/source refresh required before treating as current): Limited-time offer: Enjoy a $0 intro annual fee for the first year, then $195, and earn 130,000 Hilton Honors Bonus Points after spending $8,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 7/29/2026.",
+    "bonus_points": 150000,
+    "description": "Limited-time offer: Earn a Free Night Reward + 150,000 Hilton Honors Bonus Points after you spend $8,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 1/13/2027.",
     "point_program": "Hilton Honors",
-    "estimated_value": 650,
-    "is_elevated": false,
-    "normal_bonus_points": 130000,
-    "elevated_until": "2026-07-29",
-    "offer_status": "expired_review_required",
+    "estimated_value": 750,
+    "is_elevated": true,
+    "elevated_until": "2027-01-13",
+    "offer_status": "public_limited_time",
     "confidence": "high",
     "notes": [
-      "Official Amex/Hilton pages are canonical; limited-time business card package includes $0 intro annual fee first year and 130,000 points through 7/29/2026.",
-      "2026-07-30 review: 7/29/2026 Hilton limited-time elevated offer window has expired; downgraded to review-required so stale issuer offer is not treated as current/elevated until sources are refreshed."
+      "2026-09-29 official Hilton Honors credit card page (Amex offer terms): Free Night Reward + 150,000 points after $8,000/6 months, \"Limited Time Offer\", \"Offer ends 1/13/27\". Annual fee $195.",
+      "Replaces the expired 7/29/2026 package / post-deadline placeholder."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-05",
-    "expires": "2026-07-29"
+    "last_verified": "2026-09-29",
+    "expires": "2027-01-13",
+    "free_nights": 1
   },
   "earning_rates": [
     {
@@ -101,24 +101,25 @@
   ],
   "sources": [
     {
+      "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+      "notes": "Official Hilton credit card page checked 2026-09-29: Free Night Reward + 150,000 points after $8,000/6mo, offer ends 1/13/27."
+    },
+    {
       "url": "https://www.uscreditcardguide.com/amex-hilton-business/",
       "notes": "USCCG card review (LLM-friendly static HTML)"
     },
     {
       "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/hilton-honors/"
-    },
-    {
-      "url": "https://www.hilton.com/en/hilton-honors/credit-cards/"
     }
   ],
-  "last_updated": "2026-06-05T06:27:41.166422Z",
+  "last_updated": "2026-09-29T12:00:00.000-07:00",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-06-05T06:27:41.166422Z",
-  "next_review": "2026-07-29T00:00:00Z",
+  "last_verified": "2026-09-29",
+  "next_review": "2026-10-29T00:00:00.000-07:00",
   "recurring_credits": [
     {
       "credit_key": "hilton-quarterly-statement-credit",

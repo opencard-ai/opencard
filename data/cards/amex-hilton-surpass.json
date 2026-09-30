@@ -10,20 +10,22 @@
     "bonus_points": 130000,
     "spending_requirement": 3000,
     "time_period_months": 6,
-    "description": "Earn 130,000 Hilton Honors Bonus Points after spending $3,000 in eligible purchases on your Card in the first 6 months of Card Membership.",
+    "description": "Limited-time offer: Earn a Free Night Reward + 130,000 Hilton Honors Bonus Points after you spend $3,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 1/13/2027.",
     "point_program": "Hilton Honors",
     "estimated_value": 650,
-    "is_elevated": false,
+    "is_elevated": true,
     "normal_bonus_points": 130000,
-    "offer_status": "public",
-    "last_verified": "2026-07-30",
+    "offer_status": "public_limited_time",
+    "last_verified": "2026-09-29",
     "notes": [
-      "2026-07-13 review: KC approved proactive update path; existing elevated Hilton 7/29/2026 public limited-time offer values were already present in OpenCard data, so this pass refreshes verification metadata rather than changing the headline offer.",
-      "2026-07-30 review: 7/29/2026 Hilton limited-time elevated offer window has expired; downgraded to review-required so stale issuer offer is not treated as current/elevated until sources are refreshed.",
-      "2026-07-30 post-deadline refresh: Hilton issuer page showed Surpass at 130,000 points after $3,000/6mo with $150 annual fee; kept 130k rather than dropping to 80k because live issuer source supports 130k as current public offer after the 7/29/2026 package expired."
+      "2026-09-29 official Hilton Honors credit card page (Amex offer terms): Free Night Reward + 130,000 points after $3,000/6 months, \"Limited Time Offer\", \"Offer ends 1/13/27\". Annual fee $150.",
+      "Replaces the expired 7/29/2026 package / post-deadline placeholder."
     ],
     "confidence": "high",
-    "source_conflicts": []
+    "source_conflicts": [],
+    "free_nights": 1,
+    "elevated_until": "2027-01-13",
+    "expires": "2027-01-13"
   },
   "earning_rates": [
     {
@@ -82,19 +84,19 @@
   ],
   "sources": [
     {
+      "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+      "notes": "Official Hilton credit card page checked 2026-09-29: Free Night Reward + 130,000 points after $3,000/6mo, offer ends 1/13/27."
+    },
+    {
       "url": "https://www.uscreditcardguide.com/amex-hilton-surpass/",
       "notes": "USCCG card review (LLM-friendly static HTML)"
     },
     {
       "url": "https://onemileatatime.com/deals/hilton-amex-card-bonus/",
       "notes": "Hilton Surpass benefits: $200 Hilton credits ($50/quarter), $150 AF, Gold→Diamond path at $40K, National status"
-    },
-    {
-      "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
-      "notes": "Hilton official credit card page; current limited-time offers ending 7/29/2026"
     }
   ],
-  "last_updated": "2026-07-13T19:00:00Z",
+  "last_updated": "2026-09-29T12:00:00.000-07:00",
   "hotel_program": {
     "program": "Hilton Honors",
     "tier": "Gold Elite",
@@ -122,8 +124,8 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/"
     }
   ],
-  "last_verified": "2026-07-13",
-  "next_review": "2026-07-29T00:00:00Z",
+  "last_verified": "2026-09-29",
+  "next_review": "2026-10-29T00:00:00.000-07:00",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
   "late_fee": 40,

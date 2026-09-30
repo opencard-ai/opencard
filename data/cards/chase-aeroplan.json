@@ -3,37 +3,76 @@
   "name": "Chase Aeroplan Card",
   "issuer": "Chase",
   "network": "visa",
-  "annual_fee": 95,
+  "annual_fee": 195,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 0,
-    "time_period_months": 0,
-    "bonus_points": 0,
-    "description": "N/A",
-    "point_program": "Points"
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "bonus_points": 75000,
+    "description": "Earn 75,000 Aeroplan bonus points after spending $4,000 on purchases in the first 3 months, plus 40,000 bonus points after spending $20,000 on purchases in the first 12 months (up to 115,000 total).",
+    "point_program": "Air Canada Aeroplan",
+    "estimated_value": 1125,
+    "offer_status": "public_with_extra_bonus_path",
+    "confidence": "high",
+    "notes": [
+      "Official Chase Aeroplan page checked 2026-09-29 labels this \"Our best offer ever\" (up to 115K, previous 60K struck through); no end date shown.",
+      "Card refreshed: $195 annual fee, 3x travel, 2x gas, $100 annual Air Canada credits, automatic Aeroplan 25K status."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-09-29",
+    "is_elevated": true,
+    "normal_bonus_points": 60000
   },
   "earning_rates": [
     {
       "category": "Air Canada purchases",
       "rate": 3,
-      "notes": ""
+      "notes": "3x points on purchases made directly with Air Canada (plus 2x from Air Canada when traveling as Aeroplan 25K)."
+    },
+    {
+      "category": "Travel",
+      "rate": 3,
+      "notes": "3x points on other travel purchases."
+    },
+    {
+      "category": "Grocery stores",
+      "rate": 3,
+      "notes": "3x through 2026-12-31, then 2x points at grocery stores."
     },
     {
       "category": "Dining",
+      "rate": 3,
+      "notes": "3x through 2026-12-31, then 2x points on dining including takeout and eligible delivery."
+    },
+    {
+      "category": "Gas stations",
       "rate": 2,
-      "notes": ""
+      "notes": "2x points at gas stations."
     },
     {
       "category": "All other purchases",
       "rate": 1,
-      "notes": ""
+      "notes": "1x point on all other purchases."
     }
   ],
   "annual_credits": [],
   "travel_benefits": {
     "hotel_status": [],
-    "other_benefits": []
+    "other_benefits": [
+      {
+        "name": "Aeroplan 25K Status",
+        "description": "Automatic Aeroplan 25K Status for new cardmembers with no spend requirement."
+      },
+      {
+        "name": "Free first checked bags",
+        "description": "Cardmember and up to 8 others on the same reservation get a free first checked bag on Air Canada-operated flights."
+      },
+      {
+        "name": "Air Canada statement credits",
+        "description": "Up to $100 annually: up to $50 in Air Canada statement credits delivered twice a year on eligible transactions."
+      }
+    ]
   },
   "fhr_thc": {
     "fhr_eligible": false,
@@ -52,15 +91,20 @@
     "travel_accident": null
   },
   "tags": [],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/aircanada/aeroplan",
+      "notes": "Official Chase page checked 2026-09-29: 75k after $4k/3mo + 40k after $20k/12mo, $195 fee, earning rates and benefits."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-29T05:25:54.022Z",
-  "last_verified": "2026-04-16T13:41:49.964Z",
-  "next_review": "2026-07-15T13:41:49.964000+00:00",
+  "last_updated": "2026-09-29T12:00:00.000-07:00",
+  "last_verified": "2026-09-29",
+  "next_review": "2026-10-29T00:00:00.000-07:00",
   "recurring_credits": [
     {
       "credit_key": "global-entry-tsa-precheck-application-credit",

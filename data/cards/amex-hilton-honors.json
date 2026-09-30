@@ -7,22 +7,24 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 100000,
+    "bonus_points": 70000,
     "spending_requirement": 2000,
     "time_period_months": 6,
-    "description": "Expired limited-time offer (ended 7/29/2026; issuer/source refresh required before treating as current): Limited-time offer: Earn a $100 Statement Credit + 100,000 Hilton Honors Bonus Points after spending $2,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 7/29/2026.",
+    "description": "Limited-time offer: Earn a Free Night Reward + 70,000 Hilton Honors Bonus Points after you spend $2,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 1/13/2027.",
     "point_program": "Hilton Honors",
-    "estimated_value": 500,
-    "is_elevated": false,
-    "normal_bonus_points": 80000,
-    "elevated_until": "2026-07-29",
-    "offer_status": "expired_review_required",
-    "expires": "2026-07-29",
-    "last_verified": "2026-07-13",
+    "estimated_value": 350,
+    "is_elevated": true,
+    "elevated_until": "2027-01-13",
+    "offer_status": "public_limited_time",
+    "expires": "2027-01-13",
+    "last_verified": "2026-09-29",
     "notes": [
-      "2026-07-13 review: KC approved proactive update path; existing elevated Hilton 7/29/2026 public limited-time offer values were already present in OpenCard data, so this pass refreshes verification metadata rather than changing the headline offer.",
-      "2026-07-30 review: 7/29/2026 Hilton limited-time elevated offer window has expired; downgraded to review-required so stale issuer offer is not treated as current/elevated until sources are refreshed."
-    ]
+      "2026-09-29 official Hilton Honors credit card page (Amex offer terms): Free Night Reward + 70,000 points after $2,000/6 months, \"Limited Time Offer\", \"Offer ends 1/13/27\". Annual fee $0.",
+      "Replaces the expired 7/29/2026 package / post-deadline placeholder."
+    ],
+    "free_nights": 1,
+    "confidence": "high",
+    "source_conflicts": []
   },
   "earning_rates": [
     {
@@ -82,17 +84,18 @@
   ],
   "sources": [
     {
+      "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+      "notes": "Official Hilton credit card page checked 2026-09-29: Free Night Reward + 70,000 points after $2,000/6mo, offer ends 1/13/27."
+    },
+    {
       "url": "https://www.uscreditcardguide.com/amex-hilton/",
       "notes": "USCCG card review (LLM-friendly static HTML)"
     },
     {
       "url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors/"
-    },
-    {
-      "url": "https://www.hilton.com/en/hilton-honors/credit-cards/"
     }
   ],
-  "last_updated": "2026-07-13T19:00:00Z",
+  "last_updated": "2026-09-29T12:00:00.000-07:00",
   "hotel_program": {
     "program": "Hilton Honors",
     "tier": "Gold",
@@ -107,8 +110,8 @@
   "_no_credits_found": true,
   "_no_credits_note": "Hilton Honors Amex (no AF) — entry-level card. No recurring statement credits. Value is earning rates (7x Hilton / 5x dining/groceries/gas / 3x other) + Hilton Silver status (qualitative) + no FX fees. Verified 2026-04-27 vs amex.com.",
   "last_scraped": "2026-04-24T17:24:30.855465",
-  "last_verified": "2026-07-13",
-  "next_review": "2026-07-29T00:00:00Z",
+  "last_verified": "2026-09-29",
+  "next_review": "2026-10-29T00:00:00.000-07:00",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
   "late_fee": 40,

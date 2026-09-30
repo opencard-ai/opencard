@@ -7,24 +7,24 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 150000,
+    "bonus_points": 200000,
     "spending_requirement": 6000,
     "time_period_months": 6,
-    "description": "Earn 150,000 Hilton Honors Bonus Points after spending $6,000 in purchases on the Card in the first 6 months of Card Membership.",
+    "description": "Limited-time offer: Earn 200,000 Hilton Honors Bonus Points after you spend $6,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 1/13/2027.",
     "point_program": "Hilton Honors",
-    "estimated_value": 750,
-    "is_elevated": false,
+    "estimated_value": 1000,
+    "is_elevated": true,
     "normal_bonus_points": 150000,
-    "offer_status": "public",
+    "offer_status": "public_limited_time",
     "confidence": "high",
     "notes": [
-      "Official Amex/Hilton pages are canonical; elevated public Hilton Aspire offer ends 7/29/2026.",
-      "2026-07-13 review: KC approved proactive update path; existing elevated Hilton 7/29/2026 public limited-time offer values were already present in OpenCard data, so this pass refreshes verification metadata rather than changing the headline offer.",
-      "2026-07-30 review: 7/29/2026 Hilton limited-time elevated offer window has expired; downgraded to review-required so stale issuer offer is not treated as current/elevated until sources are refreshed.",
-      "2026-07-30 post-deadline refresh: Hilton/Amex issuer pages showed the Aspire BAU public offer at 150,000 points after $6,000/6mo after the 175,000-point 7/29/2026 limited-time offer expired."
+      "2026-09-29 official Hilton Honors credit card page (Amex offer terms): 200,000 points after $6,000/6 months, \"Limited Time Offer\", \"Offer ends 1/13/27\". Annual fee $550.",
+      "Replaces the expired 7/29/2026 package / post-deadline placeholder."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-30"
+    "last_verified": "2026-09-29",
+    "elevated_until": "2027-01-13",
+    "expires": "2027-01-13"
   },
   "earning_rates": [
     {
@@ -107,6 +107,10 @@
   ],
   "sources": [
     {
+      "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+      "notes": "Official Hilton credit card page checked 2026-09-29: 200,000 points after $6,000/6mo, offer ends 1/13/27."
+    },
+    {
       "url": "https://www.uscreditcardguide.com/amex-hilton-aspire/",
       "notes": "USCCG card review (LLM-friendly static HTML)"
     },
@@ -114,14 +118,11 @@
       "url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/"
     },
     {
-      "url": "https://www.hilton.com/en/hilton-honors/credit-cards/"
-    },
-    {
       "url": "https://global.americanexpress.com/card-benefits/detail/complimentary-free-weekend-night/hilton-aspire",
       "notes": "American Express benefit page for Hilton Aspire Annual Free Night Reward"
     }
   ],
-  "last_updated": "2026-07-13T19:00:00Z",
+  "last_updated": "2026-09-29T12:00:00.000-07:00",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -181,8 +182,8 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-07-13",
-  "next_review": "2026-07-29T00:00:00Z",
+  "last_verified": "2026-09-29",
+  "next_review": "2026-10-29T00:00:00.000-07:00",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
   "late_fee": 40,

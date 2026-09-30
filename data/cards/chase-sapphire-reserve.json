@@ -16,10 +16,11 @@
     "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Issuer source check on 2026-06-20 detected live offer at 100,000 points; prior 150,000-point limited-time offer ended 2026-06-15."
+      "Issuer source check on 2026-06-20 detected live offer at 100,000 points; prior 150,000-point limited-time offer ended 2026-06-15.",
+      "2026-09-29 official Chase page recheck: 100,000 points after $6,000 in 3 months; $795 annual fee; Sapphire Lounges + Priority Pass Select with up to two guests."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-21"
+    "last_verified": "2026-09-29"
   },
   "earning_rates": [
     {
@@ -52,7 +53,13 @@
     "lounge_access": [
       {
         "name": "Priority Pass",
-        "type": "priority_pass"
+        "type": "priority_pass",
+        "description": "Complimentary Priority Pass Select membership for 1,300+ lounges worldwide; Chase Sapphire Lounges by The Club are a separate access benefit."
+      },
+      {
+        "name": "Sapphire Lounge by The Club",
+        "type": "sapphire_lounge",
+        "description": "Complimentary access to Chase Sapphire Lounges with up to two guests."
       }
     ],
     "hotel_status": [],
@@ -104,7 +111,7 @@
       "notes": "Review Apr 2026."
     }
   ],
-  "last_updated": "2026-06-21T18:52:00.000Z",
+  "last_updated": "2026-09-29T12:00:00.000-07:00",
   "hotel_program": null,
   "application_rules": {
     "rules": [
@@ -191,8 +198,8 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-06-14",
-  "next_review": "2026-07-23T17:26:36.116494",
+  "last_verified": "2026-09-29",
+  "next_review": "2026-10-29T00:00:00.000-07:00",
   "late_fee": 40,
   "cash_advance_fee_flat": 5,
   "cash_advance_fee_pct": 5,

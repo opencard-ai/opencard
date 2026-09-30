@@ -45,6 +45,18 @@
     }
   ],
   "travel_benefits": {
+    "lounge_access": [
+      {
+        "name": "Priority Pass Select",
+        "type": "priority_pass",
+        "description": "Unlimited Priority Pass Select lounge access for cardmember and guests; Chase Sapphire Lounges by The Club are a separate access benefit."
+      },
+      {
+        "name": "Sapphire Lounge by The Club",
+        "type": "sapphire_lounge",
+        "description": "Complimentary access to Chase Sapphire Lounges with up to two guests."
+      }
+    ],
     "other_benefits": [
       {
         "name": "Priority Pass Select",
@@ -110,7 +122,7 @@
   "sources": [
     {
       "url": "https://creditcards.chase.com/business-credit-cards/sapphire/reserve",
-      "notes": "Official Chase business page"
+      "notes": "Official Chase page checked 2026-09-29: Sapphire Lounges by The Club + 1,300+ Priority Pass lounges with up to two guests."
     },
     {
       "url": "https://www.nerdwallet.com/business/credit-cards/reviews/sapphire-reserve-business",
@@ -122,7 +134,7 @@
     }
   ],
   "notes": "Business version of Sapphire Reserve. Same $795 AF and credits. 200,000 point limited-time welcome bonus makes it very attractive. Employee cards are free. Can combine points with personal Sapphire Reserve for larger balances. Key for business travelers who want same premium benefits as personal Reserve.",
-  "last_updated": "2026-07-15T20:08:19.000Z",
+  "last_updated": "2026-09-29T12:00:00.000-07:00",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

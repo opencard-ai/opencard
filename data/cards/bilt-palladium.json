@@ -10,10 +10,11 @@
     "time_period_months": 3,
     "bonus_points": 50000,
     "estimated_value": 850,
-    "description": "50,000 Bilt bonus points + Bilt Gold Status after spending $4,000 on everyday purchases in the first 90 days. Plus $300 Bilt Cash upon approval (additional value beyond the listed estimated_value, which reflects the points only at 1.7 cpp).",
+    "description": "50,000 Bilt bonus points + Bilt Gold Status after spending $4,000 on purchases (excluding rent or mortgage) in the first 90 days. Plus $300 of Bilt Cash (additional value beyond the listed estimated_value, which reflects the points only at 1.7 cpp).",
     "point_program": "Bilt Rewards",
-    "is_elevated": true,
-    "expires": "2026-07-15"
+    "is_elevated": false,
+    "offer_status": "public",
+    "last_verified": "2026-09-29"
   },
   "earning_rates": [
     {
@@ -43,6 +44,10 @@
   ],
   "sources": [
     {
+      "url": "https://www.bilt.com/card",
+      "notes": "Official Bilt card page checked 2026-09-29: Palladium 50,000 points + Gold Status after $4,000 (excl. rent/mortgage) in 90 days, $300 Bilt Cash, $495 fee; no limited-time/expiry language."
+    },
+    {
       "url": "https://newsroom.biltrewards.com/meetbiltcard2.0"
     },
     {
@@ -52,7 +57,7 @@
       "url": "https://www.nerdwallet.com/credit-cards/reviews/bilt-palladium"
     }
   ],
-  "last_updated": "2026-07-15T20:08:19.000Z",
+  "last_updated": "2026-09-29T12:00:00.000-07:00",
   "travel_benefits": {
     "hotel_status": [],
     "lounge_access": [],
@@ -103,6 +108,6 @@
       "source": "https://newsroom.biltrewards.com/meetbiltcard2.0"
     }
   ],
-  "last_verified": "2026-07-15T20:08:19.000Z",
-  "next_review": "2026-07-15T13:41:49.955000+00:00"
+  "last_verified": "2026-09-29",
+  "next_review": "2026-10-29T00:00:00.000-07:00"
 }

@@ -1,28 +1,28 @@
 {
   "card_id": "citi-aadvantage-executive",
-  "name": "Citi® / AAdvantage® Executive World Elite Mastercard®",
+  "name": "Citi® / AAdvantage® Executive World Legend Mastercard®",
   "issuer": "Citi",
   "network": "mastercard",
-  "annual_fee": 595,
+  "annual_fee": 695,
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 100000,
-    "spending_requirement": 10000,
-    "time_period_months": 3,
-    "description": "Elevated offer: earn 100,000 American Airlines AAdvantage bonus miles after spending $10,000 in purchases within the first 3 months of account opening.",
+    "bonus_points": 125000,
+    "spending_requirement": 15000,
+    "time_period_months": 5,
+    "description": "Limited-time offer: earn 125,000 American Airlines AAdvantage bonus miles after $15,000 in purchases in the first 5 months of account opening.",
     "point_program": "American Airlines AAdvantage",
-    "estimated_value": 1650,
-    "offer_status": "public_elevated",
-    "confidence": "medium_high",
+    "estimated_value": 2063,
+    "offer_status": "public_limited_time",
+    "confidence": "high",
     "notes": [
-      "Doctor of Credit July 2026 coverage shows a 100,000-mile elevated Executive offer after $10,000 spend in 3 months.",
-      "Citi and AA issuer pages may still show the standard 70,000-mile public offer; treat this as elevated/source-sensitive until issuer landing page matches."
+      "2026-09-29 official Citi product page (rendered) shows \"Limited time offer: Earn 125,000 AAdvantage bonus miles after $15,000 in purchases in the first 5 months\", $695 annual fee, World Legend Mastercard. No end date published.",
+      "Supersedes both the July 100k/$10k elevated listing and the August 70k/$7k listing."
     ],
     "source_conflicts": [
-      "Official Citi/AA pages may show 70,000 miles after $7,000/3 months while DoC reports a 100,000-mile elevated offer."
+      "Older secondary coverage (DoC July 2026: 100k/$10k; TPG Aug 2026: 70k/$7k) no longer matches the official Citi page."
     ],
-    "last_verified": "2026-07-15",
+    "last_verified": "2026-09-29",
     "is_elevated": true,
     "expires": null
   },
@@ -31,6 +31,11 @@
       "category": "American Airlines Purchases",
       "rate": 4,
       "notes": "Earn 4 AAdvantage miles per $1 on American Airlines purchases"
+    },
+    {
+      "category": "AAdvantage Hotels and AAdvantage Cars",
+      "rate": 12,
+      "notes": "Earn 12 AAdvantage miles per $1 on eligible AAdvantage Hotels and AAdvantage Cars bookings."
     },
     {
       "category": "All Other Purchases",
@@ -66,6 +71,26 @@
       {
         "name": "Priority Boarding",
         "description": "Priority boarding on American Airlines flights"
+      },
+      {
+        "name": "American Airlines Vacations Credit",
+        "description": "Up to $500 each calendar year on eligible American Airlines Vacations packages/experiences: up to $250 Jan-Jun and up to $250 Jul-Dec."
+      },
+      {
+        "name": "Inflight and Admirals Club Statement Credit",
+        "description": "Up to $100 back each calendar year on inflight and eligible Admirals Club purchases."
+      },
+      {
+        "name": "Omni Hotels & Resorts Champion Status",
+        "description": "Complimentary Omni Champion Status; enrollment required."
+      },
+      {
+        "name": "Omni Free Night Award",
+        "description": "Once per calendar year, earn an Omni Free Night Award after a stay of 2+ consecutive nights booked directly on omnihotels.com; Champion Status enrollment required."
+      },
+      {
+        "name": "Expanded Loyalty Point Bonuses",
+        "description": "Earn a 10,000 Loyalty Point bonus after reaching 50,000, 90,000, 165,000 and 240,000 Loyalty Points in the same status qualification year (up to 40,000)."
       }
     ]
   },
@@ -87,6 +112,10 @@
   ],
   "sources": [
     {
+      "url": "https://www.citi.com/credit-cards/citi-aadvantage-executive-world-elite-mastercard",
+      "notes": "Official Citi page checked 2026-09-29: 125,000 miles after $15,000/5 months (limited time), $695 fee, World Legend, $500 AA Vacations, $100 inflight/Admirals, $180 Lyft, $120 Avis/Budget, $120 GE/TSA credits."
+    },
+    {
       "url": "https://creditcards.aa.com/credit-cards/citi-executive-card-american-airlines-direct/"
     },
     {
@@ -98,41 +127,21 @@
       "notes": "Nov 2025 review"
     },
     {
-      "url": "https://www.doctorofcredit.com/citi-aadvantage-executive-100000-mile-offer/",
-      "notes": "DoC July 2026 elevated 100k AAdvantage Executive offer."
+      "url": "https://thepointsguy.com/news/citi-aadvantage-executive-mastercard-refresh-2026/",
+      "notes": "Secondary: 2026-08 card refresh coverage ($695 fee, World Legend, new credits)."
+    },
+    {
+      "url": "https://frequentmiler.com/citi-aadvantage-executive-card-changes-are-coming-higher-fee-more-benefits/",
+      "notes": "Secondary confirmation of 2026-08-23 refresh details and transition timing."
     }
   ],
-  "last_updated": "2026-07-15T20:08:19.000Z",
+  "last_updated": "2026-09-29T12:00:00.000-07:00",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
   "recurring_credits": [
-    {
-      "credit_key": "lyft-credit",
-      "name": "Lyft Credit",
-      "amount": 10,
-      "frequency": "monthly",
-      "category": "travel",
-      "description": "$10/month Lyft credit"
-    },
-    {
-      "credit_key": "grubhub-credit",
-      "name": "Grubhub Credit",
-      "amount": 10,
-      "frequency": "monthly",
-      "category": "dining",
-      "description": "$10/month Grubhub credit"
-    },
-    {
-      "credit_key": "inflight-wifi-credit",
-      "name": "Inflight WiFi Credit",
-      "amount": 25,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "$25 annual inflight WiFi credit"
-    },
     {
       "credit_key": "avis-budget-car-rental-credit",
       "name": "Avis / Budget Car Rental Credit",
@@ -146,15 +155,45 @@
     {
       "credit_key": "global-entry-tsa-precheck-credit",
       "name": "Global Entry / TSA PreCheck Credit",
-      "amount": 100,
+      "amount": 120,
       "frequency": "every_4_years",
       "category": "travel",
-      "description": "Up to $100 statement credit for Global Entry or TSA PreCheck application fee, every 4 years.",
+      "description": "Up to $120 statement credit for Global Entry or TSA PreCheck application fee, every 4 years.",
       "reset_type": "every_4_years"
+    },
+    {
+      "credit_key": "lyft-credit",
+      "name": "Lyft Credit",
+      "amount": 15,
+      "frequency": "monthly",
+      "category": "travel",
+      "description": "$15 Lyft credit after 3 eligible rides in a calendar month (up to $180/year).",
+      "reset_type": "monthly"
+    },
+    {
+      "credit_key": "american-airlines-vacations-credit",
+      "name": "American Airlines Vacations Credit",
+      "amount": 500,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $500/calendar year in statement credits on eligible AA Vacations packages/experiences: up to $250 Jan-Jun and up to $250 Jul-Dec.",
+      "reset_type": "semi_annual",
+      "source": "https://www.citi.com/credit-cards/citi-aadvantage-executive-world-elite-mastercard"
+    },
+    {
+      "credit_key": "inflight-admirals-club-credit",
+      "name": "Inflight and Admirals Club Credit",
+      "amount": 100,
+      "frequency": "annual",
+      "category": "travel",
+      "description": "Up to $100/calendar year in statement credits on inflight and eligible Admirals Club purchases.",
+      "reset_type": "calendar_year",
+      "source": "https://www.citi.com/credit-cards/citi-aadvantage-executive-world-elite-mastercard"
     }
   ],
-  "last_verified": "2026-07-15T20:08:19.000Z",
-  "next_review": "2026-07-15T13:41:49.975000+00:00",
+  "last_verified": "2026-09-29",
+  "next_review": "2026-10-29T00:00:00.000-07:00",
   "cfpb_source": "Q3_2025",
-  "cfpb_verified": true
+  "cfpb_verified": true,
+  "notes": "Refreshed World Legend product ($695). Values verified against the official Citi product page on 2026-09-29."
 }

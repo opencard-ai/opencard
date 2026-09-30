@@ -8,19 +8,19 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",
   "welcome_offer": {
-    "bonus_points": 100000,
+    "bonus_points": 90000,
     "spending_requirement": 5000,
     "time_period_months": 3,
-    "description": "Earn 100,000 TrueBlue bonus points after spending $5,000 on purchases and paying the annual fee in full, both within the first 90 days.",
+    "description": "Earn 90,000 TrueBlue bonus points after spending $5,000 on purchases and paying the annual fee in full, both within the first 90 days.",
     "point_program": "JetBlue TrueBlue",
-    "estimated_value": 1300,
+    "estimated_value": 1170,
     "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Barclays official JetBlue Premier page checked 2026-07-05 confirms 100,000 points after $5,000 purchases and annual fee paid in full within 90 days."
+      "Barclays official JetBlue Premier page checked 2026-09-29: 90,000 bonus points after $5,000 purchases and annual fee paid in full, both within the first 90 days; $499 annual fee."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-05"
+    "last_verified": "2026-09-29"
   },
   "earning_rates": [
     {
@@ -91,8 +91,8 @@
         "description": "Receive an annual 25-tile bonus after year-end to fast-track Mosaic status for the next year; terms apply."
       },
       {
-        "name": "10% points back on award flights",
-        "description": "Get 10% of points back after redeeming for and traveling on an Award Flight; terms apply."
+        "name": "15% points back on award flights",
+        "description": "Get 15% of your points back after you redeem for and travel on a JetBlue-operated Award Flight; terms apply."
       },
       {
         "name": "Group 3 boarding",
@@ -133,7 +133,7 @@
   "sources": [
     {
       "url": "https://cards.barclaycardus.com/banking/cards/jetblue-premier-card/",
-      "notes": "Barclays official JetBlue Premier page; verified 2026-06-30."
+      "notes": "Barclays official JetBlue Premier page; verified 2026-09-29 (90k offer, 15% award points back, 25-tile bonus)."
     },
     {
       "url": "https://ir.jetblue.com/news/news-details/2026/JetBlue-and-Barclays-Roll-Out-Enhanced-Benefits-Now-Available-for-Premier-Cardmembers/default.aspx",
@@ -141,7 +141,7 @@
     },
     {
       "url": "https://www.doctorofcredit.com/jetblue-premier-card-100000-points-signup-bonus-new-benefits-live/",
-      "notes": "Secondary tracker for 100k offer and benefits."
+      "notes": "Secondary tracker (older 100k coverage; 2026-08 update noted drop to 90k)."
     }
   ],
   "hotel_program": null,
@@ -150,7 +150,7 @@
     "notes": "Barclays terms note bonus may only be earned once and may be unavailable to current/previous program account holders."
   },
   "notes": "Dedicated product confirmed distinct from JetBlue Card and JetBlue Plus Card. Some benefit details are term-sensitive; prefer issuer terms for display copy.",
-  "last_updated": "2026-06-30T20:55:00.000-07:00",
-  "last_verified": "2026-06-30",
-  "next_review": "2026-09-28T00:00:00.000-07:00"
+  "last_updated": "2026-09-29T12:00:00.000-07:00",
+  "last_verified": "2026-09-29",
+  "next_review": "2026-10-29T00:00:00.000-07:00"
 }

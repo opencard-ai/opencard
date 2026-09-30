@@ -11,19 +11,17 @@
     "time_period_months": 3,
     "bonus_points": null,
     "cash_bonus": 2000,
-    "travel_credit": 500,
-    "description": "Earn a one-time $2,000 cash bonus and, for a limited time, a $500 Capital One Business Travel credit after spending $30,000 on purchases within the first 3 months. Plus, earn an additional $2,000 cash bonus for every $500,000 spent during the first year.",
+    "description": "Earn a $2,000 cash bonus after spending $30,000 on purchases in the first 3 months. Plus, earn an additional $2,000 cash bonus for every $500,000 spent during the first year.",
     "point_program": "Capital One Spark Cash",
-    "estimated_value": 2500,
-    "offer_status": "public_limited_time",
+    "estimated_value": 2000,
+    "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Capital One official/searchable page and TPG July 2026 coverage support the $2,000 cash bonus + limited-time $500 Business Travel credit after $30,000/3 months, plus $2,000 per $500k first-year spend."
+      "2026-09-29 official Capital One Spark Cash Plus page: $2,000 after $30,000/3 months plus $2,000 per $500K first-year spend (page headline: \"Our biggest offer ever: earn $4,000 or more in cash bonuses\"); no limited-time Business Travel credit or end date shown (prior $500 travel-credit promo ended ~2026-09-07)."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-08-06",
-    "is_elevated": true,
-    "expires_at": "2026-09-07"
+    "last_verified": "2026-09-29",
+    "is_elevated": false
   },
   "earning_rates": [
     {
@@ -65,6 +63,10 @@
   },
   "sources": [
     {
+      "url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-plus/",
+      "notes": "Official Spark Cash Plus page checked 2026-09-29: $2,000 after $30,000/3 months + $2,000 per $500K first-year spend; $150 fee."
+    },
+    {
       "url": "https://www.forbes.com/advisor/credit-cards/reviews/capital-one-spark-cash-plus/",
       "notes": "Forbes: high 2% cash-back rate on all purchases, unlimited 5% on Capital One Business Travel"
     },
@@ -77,17 +79,13 @@
       "notes": "CNN Underscored: competitive 2% rate, employee cards earn 2%"
     },
     {
-      "url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-plus/",
-      "notes": "Official Spark Cash Plus page: $2,000 cash bonus after $30,000/3 months plus additional $2,000 per $500k first-year spend."
-    },
-    {
       "url": "https://thepointsguy.com/credit-cards/capital-one-spark-current-offers/",
       "notes": "TPG July 2026 Spark Cash lineup confirms $2,000 + $500 Business Travel credit limited-time Spark Cash Plus offer."
     }
   ],
   "notes": "Charge card (balance must be paid in full monthly). $150 annual fee. 2% unlimited cash back; 5% on hotels/rental cars through Capital One Business Travel. Updated 2026-08-06 for elevated $2,000 + $500 travel-credit offer.",
   "confidence": "high",
-  "last_updated": "2026-08-07T05:25:00.000Z",
+  "last_updated": "2026-09-29T12:00:00.000-07:00",
   "tags": [
     "transferable"
   ],
@@ -96,6 +94,6 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-08-06",
-  "next_review": "2026-09-05T00:00:00.000-07:00"
+  "last_verified": "2026-09-29",
+  "next_review": "2026-10-29T00:00:00.000-07:00"
 }

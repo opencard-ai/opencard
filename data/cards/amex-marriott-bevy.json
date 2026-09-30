@@ -11,7 +11,7 @@
     "spending_requirement": 5000,
     "time_period_months": 6,
     "statement_credit": 150,
-    "description": "Limited-time offer: Earn 125,000 Marriott Bonvoy bonus points plus a $150 statement credit after spending $5,000 in purchases within the first 6 months.",
+    "description": "Limited-time offer: Earn 125,000 Marriott Bonvoy bonus points plus a $150 statement credit after spending $5,000 in purchases within the first 6 months. Offer ends 9/30/2026.",
     "point_program": "Marriott Bonvoy",
     "estimated_value": 950,
     "offer_status": "public_limited_time",
@@ -23,12 +23,14 @@
     "notes": [
       "2026-09-09 issuer recheck: 125k points + $150 statement credit through 2026-09-30.",
       "NLL offer: application terms do not include lifetime language for the welcome bonus.",
-      "Replaces the prior 85k public baseline representation."
+      "Replaces the prior 85k public baseline representation.",
+      "2026-09-29 official Marriott credit card page recheck: 125k points + $150 statement credit after $5,000/6 months, \"Offer ends 9/30/2026\". No successor offer published yet; re-review on/after 2026-10-01 and downgrade once expired."
     ],
     "source_conflicts": [
       "Some Marriott-family pages/secondary sources mention extra 50k paths; keep Bevy production conservative at the Amex public 85k baseline unless issuer flow confirms extra tier."
     ],
-    "last_verified": "2026-09-09"
+    "last_verified": "2026-09-29",
+    "elevated_until": "2026-09-30"
   },
   "earning_rates": [
     {
@@ -99,6 +101,10 @@
   ],
   "sources": [
     {
+      "url": "https://www.marriott.com/credit-cards.mi",
+      "notes": "Official Marriott credit card page checked 2026-09-29: 125k points + $150 statement credit after $5,000/6 months, offer ends 9/30/2026."
+    },
+    {
       "url": "https://www.uscreditcardguide.com/amex-marriott-bonvoy-bevy/",
       "notes": "USCCG card review (LLM-friendly static HTML)"
     },
@@ -116,7 +122,7 @@
       "notes": "DoC best current sign-up bonus list"
     }
   ],
-  "last_updated": "2026-05-08T05:47:54.573699+00:00",
+  "last_updated": "2026-09-29T12:00:00.000-07:00",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -136,8 +142,8 @@
   "_no_credits_found": true,
   "_no_credits_note": "Marriott Bevy ($250 AF) — primary value is Free Night after $15k spend (conditional, excluded), 15 Elite Night Credits (qualitative), Marriott Gold Elite status (qualitative), 4x grocery/dining earning (rate not credit). No fixed-USD recurring credits published. Verified 2026-04-27 vs amex.com.",
   "last_scraped": "2026-04-24T17:26:46.246653",
-  "last_verified": "2026-08-11",
-  "next_review": "2026-08-07T00:00:00.000000+00:00",
+  "last_verified": "2026-09-29",
+  "next_review": "2026-10-01T00:00:00.000-07:00",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
   "card_name": "Marriott Bonvoy Bevy® American Express® Card",
