@@ -53,7 +53,7 @@ export function sanityCheck(field: string, oldValue: unknown, newValue: unknown,
   return reasons;
 }
 
-interface ReportResult { card_id: string; status: string; reasons?: string[]; official_domain?: boolean; changes: Array<{ field: string; old_value: unknown; new_value: unknown; fingerprint: string }>; evidence: { audience?: string; confirmations?: Confirmation[]; explicit_confirmations?: string[] } }
+interface ReportResult { card_id: string; status: string; reasons?: string[]; official_domain?: boolean; changes: Array<{ field: string; old_value: unknown; new_value: unknown; fingerprint: string }>; evidence: { audience?: string; confirmations?: Confirmation[]; explicit_confirmations?: string[]; hold_only?: boolean; hold_reason?: string } }
 interface ReportLike { results?: ReportResult[]; expiry?: { expired?: Array<{ card_id: string; priority: string; expiry: string }> } }
 
 export function planApply(report: ReportLike, cards: Map<string, CardRecord>, opts: ApplyOptions, dirtyCards: Set<string> = new Set()): ApplyPlan {
@@ -66,6 +66,14 @@ export function planApply(report: ReportLike, cards: Map<string, CardRecord>, op
   for (const result of report.results || []) {
     confirmationsByCard.set(result.card_id, [...(confirmationsByCard.get(result.card_id) || []), ...(result.evidence?.confirmations || [])]);
     if (result.status === 'unchanged') continue;
+    if (result.evidence?.hold_only) {
+      // Watch entries that can't be parsed reliably (or were auto-added without an extractor): evidence only, never applied.
+      const failures = (result.evidence.confirmations || []).filter(c => !c.ok).map(c => `official_fetch_failed: ${c.error ?? 'unknown'}`);
+      const reasons = ['hold_only_watch_entry', ...(result.evidence.hold_reason ? [result.evidence.hold_reason] : []), ...new Set(failures)];
+      if (result.changes.length) result.changes.forEach(c => held.push({ card_id: result.card_id, field: c.field, value: c.new_value, reasons, fingerprint: c.fingerprint }));
+      else held.push({ card_id: result.card_id, field: null, reasons });
+      continue;
+    }
     if (result.status !== 'review_delta') {
       const reasons = result.status === 'new_product_review' ? ['new_product_requires_human_review'] : (result.reasons?.length ? result.reasons : [result.status]);
       if (result.changes.length) result.changes.forEach(c => held.push({ card_id: result.card_id, field: c.field, value: c.new_value, reasons, fingerprint: c.fingerprint }));
@@ -102,8 +110,14 @@ export function planApply(report: ReportLike, cards: Map<string, CardRecord>, op
     if (dirtyCards.has(item.card_id)) { expiryReview.push({ card_id: item.card_id, field: EXPIRY_FIELD, reasons: ['card_file_has_uncommitted_changes'] }); continue; }
     if (!confs.length) { expiryReview.push({ card_id: item.card_id, field: EXPIRY_FIELD, reasons: ['expired_not_in_watchlist_no_official_fetch'] }); continue; }
     if (!fetched.length) { expiryReview.push({ card_id: item.card_id, field: EXPIRY_FIELD, reasons: ['official_page_fetch_failed'] }); continue; }
+    if (report.results?.some(r => r.card_id === item.card_id && r.evidence?.hold_only)) { expiryReview.push({ card_id: item.card_id, field: EXPIRY_FIELD, reasons: ['hold_only_watch_entry'] }); continue; }
+    // Only pages whose extractor actually read an offer count; "fetched but nothing parsed" is never treated as "offer gone".
+    const parsed = fetched.filter(c => ['welcome_offer.bonus_points', 'welcome_offer.cash_bonus'].some(f => f in (c.values || {})));
     const oldBonus = normalizeNumber(offer.bonus_points);
-    if (fetched.some(c => normalizeNumber(c.values?.['welcome_offer.bonus_points']) === oldBonus)) {
+    if (!parsed.length) {
+      expiryReview.push({ card_id: item.card_id, field: EXPIRY_FIELD, reasons: [fetched.some(c => c.observed?.current_bonus_visible) ? 'expired_offer_still_shown_on_official_page' : 'official_page_offer_not_parsed'] }); continue;
+    }
+    if (parsed.some(c => normalizeNumber(c.values?.['welcome_offer.bonus_points']) === oldBonus || (normalizeNumber(offer.cash_bonus) !== null && normalizeNumber(c.values?.['welcome_offer.cash_bonus']) === normalizeNumber(offer.cash_bonus)))) {
       expiryReview.push({ card_id: item.card_id, field: EXPIRY_FIELD, reasons: ['expired_offer_still_shown_on_official_page'] }); continue;
     }
     const plan = planFor(item.card_id);
@@ -123,7 +137,7 @@ export function planApply(report: ReportLike, cards: Map<string, CardRecord>, op
       plan.notes.push(`Elevated offer expired ${item.expiry} and is no longer shown officially; no confirmed replacement value, marked expired_review_required.`);
       expiryReview.push({ card_id: item.card_id, field: 'welcome_offer.bonus_points', reasons: ['expired_no_confirmed_replacement_offer'] });
     }
-    fetched.forEach(c => { if (!plan.sources.includes(c.url)) plan.sources.push(c.url); });
+    parsed.forEach(c => { if (!plan.sources.includes(c.url)) plan.sources.push(c.url); });
   }
   return { today: opts.today, applied: [...applied.values()].filter(p => p.changes.length), held, expiry_review: expiryReview };
 }
@@ -133,7 +147,8 @@ const usDate = (iso: string) => { const [y, m, d] = iso.split('-'); return `${Nu
 function describe(offer: Record<string, any>): string {
   const spend = offer.spending_requirement, months = offer.time_period_months;
   const tail = spend ? ` after spending $${fmt(spend)} on purchases in the first ${months} months` : '';
-  let text = offer.cash_bonus && !offer.bonus_points ? `Earn a $${fmt(offer.cash_bonus)} cash bonus${tail}` : `Earn ${fmt(offer.bonus_points)} ${offer.point_program || ''} bonus points`.replace(/\s+/g, ' ') + tail;
+  const unit = /skymiles|aadvantage|miles|aeroplan|mileageplus|trueblue|mileage/i.test(String(offer.point_program || '')) ? 'bonus miles' : 'bonus points';
+  let text = offer.cash_bonus && !offer.bonus_points ? `Earn a $${fmt(offer.cash_bonus)} cash bonus${tail}` : `Earn ${fmt(offer.bonus_points)} ${offer.point_program || ''} ${unit}`.replace(/\s+/g, ' ') + tail;
   if (offer.statement_credit) text += `, plus a $${fmt(offer.statement_credit)} statement credit`;
   if (offer.travel_credit) text += `, plus a $${fmt(offer.travel_credit)} travel credit`;
   if (offer.free_nights) text += `, plus ${offer.free_nights} Free Night Award${offer.free_nights > 1 ? 's' : ''}`;

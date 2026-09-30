@@ -2,8 +2,8 @@ import { createHash } from 'node:crypto';
 
 export type CardRecord = Record<string, any>;
 /** One independent fetch of an official page, recorded by collect.ts. */
-export interface Confirmation { url: string; fetch_id: string; checked_at: string; ok: boolean; status?: number; error?: string; official_domain: boolean; values: Record<string, unknown>; ambiguous_fields?: string[]; content_sha256?: string }
-export interface Evidence { url: string; checked_at: string; official: boolean; audience: string; conflicts?: boolean; confirmations?: Confirmation[]; explicit_confirmations?: string[] }
+export interface Confirmation { url: string; fetch_id: string; checked_at: string; ok: boolean; status?: number; error?: string; official_domain: boolean; values: Record<string, unknown>; ambiguous_fields?: string[]; content_sha256?: string; final_url?: string; observed?: { current_bonus_visible?: boolean } }
+export interface Evidence { url: string; checked_at: string; official: boolean; audience: string; conflicts?: boolean; confirmations?: Confirmation[]; explicit_confirmations?: string[]; hold_only?: boolean; hold_reason?: string; auto_added?: string }
 export interface Candidate { card_id: string; fields: Record<string, unknown>; evidence: Evidence }
 export interface AssessOptions { officialDomains?: string[] }
 
@@ -50,7 +50,8 @@ export function normalizeBoolean(value: unknown): unknown {
   return text;
 }
 
-/** ISO timestamp, YYYY-MM-DD or M/D/YY(YY) -> YYYY-MM-DD (date part only; no timezone shifting). */
+const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+/** ISO timestamp, YYYY-MM-DD, M/D/YY(YY) or 'November 4, 2026' -> YYYY-MM-DD (date part only; no timezone shifting). */
 export function normalizeDate(value: unknown): string | null {
   if (value === undefined || value === null || value === '') return null;
   const text = String(value).trim();
@@ -58,6 +59,8 @@ export function normalizeDate(value: unknown): string | null {
   if (iso) return `${iso[1]}-${iso[2]}-${iso[3]}`;
   const us = text.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2}|\d{4})$/);
   if (us) return `${us[3].length === 2 ? `20${us[3]}` : us[3]}-${us[1].padStart(2, '0')}-${us[2].padStart(2, '0')}`;
+  const named = text.match(/^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+(\d{1,2}),?\s+(\d{4})$/i);
+  if (named) return `${named[3]}-${String(MONTHS.indexOf(named[1].toLowerCase()) + 1).padStart(2, '0')}-${named[2].padStart(2, '0')}`;
   return text;
 }
 

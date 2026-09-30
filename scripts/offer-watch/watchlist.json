@@ -1,23 +1,752 @@
 {
-  "_comment": "Cards whose official pages collect.ts fetches daily. Each source is fetched twice (independent requests). patterns: JS regex source (case-insensitive) + capture-group -> tracked field map. render:true uses headless Chrome (textContent, scripts/styles removed).",
+  "_comment": "Cards whose official pages collect.ts fetches daily. Each source is fetched twice (independent requests). patterns: JS regex source (case-insensitive, all matches must agree) + capture-group -> tracked field map; optional transforms (days_to_months). render:true = headless system Chrome (textContent, scripts/styles removed); wait/settle_ms for Amex business pages that never go network-idle. hold_only:true = fetched as evidence, never auto-applied (page can't be parsed reliably). A fetch that redirects to a different page fails. Cards flagged by the expiry check (expired / <=30 days) that are not listed here are auto-added hold-only from their own official source URLs.",
   "cards": [
     {
+      "card_id": "chase-sapphire-reserve",
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Sapphire Reserve\\W{0,4}Credit Card[\\s\\S]{0,80}?Earn ([\\d,]+) (?:bonus )?points after you spend \\$([\\d,]+) (?:in|on) purchases in the first (\\d+) months",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            },
+            {
+              "regex": "\\$([\\d,]+) annual fee\\W{0,4}Opens pricing and terms in new window ; \\$195 for each authorized user",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "citi-aadvantage-executive",
+      "sources": [
+        {
+          "url": "https://www.citi.com/credit-cards/citi-aadvantage-executive-world-legend-mastercard",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Earn ([\\d,]+) AAdvantage\\W{0,4}bonus miles after \\$([\\d,]+) in purchases in the first (\\d+) months",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            },
+            {
+              "regex": "Annual fee: \\$([\\d,]+)\\.",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        },
+        {
+          "url": "https://creditcards.aa.com/credit-cards/citi-executive-card-american-airlines-direct/",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Earn ([\\d,]+) AAdvantage\\W{0,4}bonus miles\\s*Bonus miles earned after \\$([\\d,]+) in purchases within the first (\\d+) months",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            },
+            {
+              "regex": "The annual fee for this credit card is \\$([\\d,]+)\\.",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-hilton-honors",
+      "sources": [
+        {
+          "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Hilton Honors\\W{0,4}Card\\s*No Annual Fee\\W{0,4}(?:Limited Time Offer\\s*)?Earn (?:a Free Night Reward \\+ )?([\\d,]+) Bonus Points\\.?\\s*Terms apply\\.?\\W{0,4}Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.expiry": 2
+              }
+            }
+          ]
+        },
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Earn ([\\d,]+) Hilton Honors Bonus Points[^$]{0,90}?after you spend \\$([\\d,]+) (?:in|on) (?:eligible )?purchases on [^.]{0,90}?(?:in|within) (?:the|your) first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3,
+                "welcome_offer.expiry": 4
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-hilton-surpass",
+      "sources": [
+        {
+          "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Hilton Honors Surpass\\W{0,4}\\W{0,4}Card\\s*\\$([\\d,]+) Annual Fee\\W{0,4}(?:Limited Time Offer\\s*)?Earn (?:a Free Night Reward \\+ )?([\\d,]+) Bonus Points\\.?\\s*Terms apply\\.?\\W{0,4}Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "groups": {
+                "annual_fee": 1,
+                "welcome_offer.bonus_points": 2,
+                "welcome_offer.expiry": 3
+              }
+            }
+          ]
+        },
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Earn ([\\d,]+) Hilton Honors Bonus Points[^$]{0,90}?after you spend \\$([\\d,]+) (?:in|on) (?:eligible )?purchases on [^.]{0,90}?(?:in|within) (?:the|your) first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3,
+                "welcome_offer.expiry": 4
+              }
+            },
+            {
+              "regex": "Hilton Honors American Express Surpass\\W{0,4}\\W{0,4}Card[^$]{0,30}?Annual Fee: \\$([\\d,]+)(?![\\d,]| intro)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-hilton-honors-aspire",
+      "sources": [
+        {
+          "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Hilton Honors Aspire\\W{0,4}Card\\s*\\$([\\d,]+) Annual Fee\\W{0,4}(?:Limited Time Offer\\s*)?Earn (?:a Free Night Reward \\+ )?([\\d,]+) Bonus Points\\.?\\s*Terms apply\\.?\\W{0,4}Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "groups": {
+                "annual_fee": 1,
+                "welcome_offer.bonus_points": 2,
+                "welcome_offer.expiry": 3
+              }
+            }
+          ]
+        },
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Earn ([\\d,]+) Hilton Honors Bonus Points[^$]{0,90}?after you spend \\$([\\d,]+) (?:in|on) (?:eligible )?purchases on [^.]{0,90}?(?:in|within) (?:the|your) first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3,
+                "welcome_offer.expiry": 4
+              }
+            },
+            {
+              "regex": "Hilton Honors American Express Aspire\\W{0,4}Card[^$]{0,30}?Annual Fee: \\$([\\d,]+)(?![\\d,]| intro)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-hilton-honors-biz",
+      "sources": [
+        {
+          "url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Hilton Honors Business\\W{0,4}Card\\s*\\$([\\d,]+) Annual Fee\\W{0,4}(?:Limited Time Offer\\s*)?Earn (?:a Free Night Reward \\+ )?([\\d,]+) Bonus Points\\.?\\s*Terms apply\\.?\\W{0,4}Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "groups": {
+                "annual_fee": 1,
+                "welcome_offer.bonus_points": 2,
+                "welcome_offer.expiry": 3
+              }
+            }
+          ]
+        },
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/hilton-honors/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Earn ([\\d,]+) Hilton Honors Bonus Points[^$]{0,90}?after you spend \\$([\\d,]+) (?:in|on) (?:eligible )?purchases on [^.]{0,90}?(?:in|within) (?:the|your) first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3,
+                "welcome_offer.expiry": 4
+              }
+            },
+            {
+              "regex": "Hilton Honors Business\\W{0,4}Card[^$]{0,30}?Annual Fee: \\$([\\d,]+)(?![\\d,]| intro)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-marriott-brilliant",
+      "sources": [
+        {
+          "url": "https://www.marriott.com/credit-cards.mi",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Marriott Bonvoy Brilliant\\W{0,4}American Express\\W{0,4}Card\\s*Earn ([\\d,]+) Bonus Points plus a \\$([\\d,]+) statement credit\\s*\\$([\\d,]+) Annual Fee",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.statement_credit": 2,
+                "annual_fee": 3
+              }
+            }
+          ]
+        },
+        {
+          "url": "https://www.marriott.com/credit-cards/marriott-bonvoy-brilliant-american-express-card.mi",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Earn (\\d+k) Bonus Points plus a \\$([\\d,]+) statement credit after you use your new Card to make \\$(\\d+k) in purchases within the first (\\d+) months\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})\\.\\s*\\$([\\d,]+) Annual Fee",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.statement_credit": 2,
+                "welcome_offer.spending_requirement": 3,
+                "welcome_offer.time_period_months": 4,
+                "welcome_offer.expiry": 5,
+                "annual_fee": 6
+              }
+            }
+          ]
+        },
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-brilliant/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Earn ([\\d,]+) Marriott Bonvoy\\W{0,4}Bonus Points Plus A \\$([\\d,]+) Statement Credit\\s*after you use your new Card to make \\$([\\d,]+) in purchases within the first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.statement_credit": 2,
+                "welcome_offer.spending_requirement": 3,
+                "welcome_offer.time_period_months": 4,
+                "welcome_offer.expiry": 5
+              }
+            },
+            {
+              "regex": "Marriott Bonvoy Brilliant\\W{0,4}American Express\\W{0,4}\\W{0,4}Card[^$]{0,30}?Annual Fee: \\$([\\d,]+)(?![\\d,]| intro)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-marriott-bevy",
+      "sources": [
+        {
+          "url": "https://www.marriott.com/credit-cards.mi",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Marriott Bonvoy Bevy\\W{0,4}American Express\\W{0,4}Card\\s*Earn ([\\d,]+) Bonus Points plus a \\$([\\d,]+) statement credit\\s*\\$([\\d,]+) Annual Fee",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.statement_credit": 2,
+                "annual_fee": 3
+              }
+            }
+          ]
+        },
+        {
+          "url": "https://www.marriott.com/credit-cards/marriott-bonvoy-bevy-american-express-card.mi",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Earn (\\d+k) Bonus Points plus a \\$([\\d,]+) statement credit after you use your new Card to make \\$(\\d+k) in purchases within the first (\\d+) months\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})\\.\\s*\\$([\\d,]+) Annual Fee",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.statement_credit": 2,
+                "welcome_offer.spending_requirement": 3,
+                "welcome_offer.time_period_months": 4,
+                "welcome_offer.expiry": 5,
+                "annual_fee": 6
+              }
+            }
+          ]
+        },
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-bevy/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Earn ([\\d,]+) Marriott Bonvoy\\W{0,4}Bonus Points Plus A \\$([\\d,]+) Statement Credit\\s*after you use your new Card to make \\$([\\d,]+) in purchases within the first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.statement_credit": 2,
+                "welcome_offer.spending_requirement": 3,
+                "welcome_offer.time_period_months": 4,
+                "welcome_offer.expiry": 5
+              }
+            },
+            {
+              "regex": "Marriott Bonvoy Bevy\\W{0,4}American Express\\W{0,4}\\W{0,4}Card[^$]{0,30}?Annual Fee: \\$([\\d,]+)(?![\\d,]| intro)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "capital-one-spark-cash",
+      "sources": [
+        {
+          "url": "https://www.capitalone.com/small-business/credit-cards/spark-cash/",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Earn a \\$([\\d,]+) cash bonus when you spend \\$([\\d,]+) in the first (\\d+) months",
+              "groups": {
+                "welcome_offer.cash_bonus": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            },
+            {
+              "regex": "\\$0 annual fee for the first year, and then \\$([\\d,]+) after that",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "capital-one-spark-cash-plus",
+      "sources": [
+        {
+          "url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-plus/",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Earn a \\$([\\d,]+) cash bonus when you spend \\$([\\d,]+) in the first (\\d+) months",
+              "groups": {
+                "welcome_offer.cash_bonus": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            },
+            {
+              "regex": "Spark Cash Plus card has an annual fee of \\$([\\d,]+)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "card_id": "amex-morgan-stanley-platinum",
-      "audience": "public",
       "sources": [
         {
           "url": "https://www.morganstanley.com/what-we-do/wealth-management/cashplus",
           "render": false,
           "patterns": [
-            { "regex": "earn ([\\d,]+) Membership Rewards\\S* points with The Platinum Card\\S* from American Express Exclusively for Morgan Stanley", "groups": { "welcome_offer.bonus_points": 1 } }
+            {
+              "regex": "earn ([\\d,]+) Membership Rewards\\S* points with The Platinum Card\\S* from American Express Exclusively for Morgan Stanley",
+              "groups": {
+                "welcome_offer.bonus_points": 1
+              }
+            }
           ]
         },
         {
           "url": "https://apply.americanexpress.com/amex-morgan-stanley-credit-cards/?page_url=38",
           "render": true,
           "patterns": [
-            { "regex": "Earn ([\\d,]+) Membership Rewards\\S* Points after you spend \\$([\\d,]+) on purchases on your new Card in your first (\\d+) months", "groups": { "welcome_offer.bonus_points": 1, "welcome_offer.spending_requirement": 2, "welcome_offer.time_period_months": 3 } },
-            { "regex": "ANNUAL FEE \\$([\\d,]+)", "groups": { "annual_fee": 1 } }
+            {
+              "regex": "Earn ([\\d,]+) Membership Rewards\\S* Points after you spend \\$([\\d,]+) on purchases on your new Card in your first (\\d+) months",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            },
+            {
+              "regex": "ANNUAL FEE \\$([\\d,]+)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-delta-gold",
+      "sources": [
+        {
+          "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "SkyMiles\\W{0,4}Gold Amex Card\\W{0,4}LIMITED TIME OFFER[\\s\\S]{0,120}?could be as high as ([\\d,]+) Bonus Miles plus earn a Statement Credit of \\$([\\d,]+) after spending \\$([\\d,]+) in eligible purchases on your new Card within the first (\\d+) months of Card Membership\\.[\\s\\S]{0,100}?Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4})",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.statement_credit": 2,
+                "welcome_offer.spending_requirement": 3,
+                "welcome_offer.time_period_months": 4,
+                "welcome_offer.expiry": 5
+              }
+            },
+            {
+              "regex": "SkyMiles\\W{0,4}Gold Amex Card[\\s\\S]{0,700}?\\$0 introductory annual fee for the first year, then \\$([\\d,]+)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        },
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Earn a \\$([\\d,]+) Statement Credit\\s*and the bonus miles[\\s\\S]{0,120}?Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})\\.\\s*Apply and find out your welcome offer\\s*As High As ([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card within the first (\\d+) months",
+              "groups": {
+                "welcome_offer.statement_credit": 1,
+                "welcome_offer.expiry": 2,
+                "welcome_offer.bonus_points": 3,
+                "welcome_offer.spending_requirement": 4,
+                "welcome_offer.time_period_months": 5
+              }
+            },
+            {
+              "regex": "Annual Fee: \\$0 intro(?:ductory)? annual fee for the first year, then \\$([\\d,]+)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-delta-platinum",
+      "sources": [
+        {
+          "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "SkyMiles\\W{0,4}Platinum Amex Card\\W{0,4}LIMITED TIME OFFER[\\s\\S]{0,120}?could be as high as ([\\d,]+) Bonus Miles plus earn a Statement Credit of \\$([\\d,]+) after spending \\$([\\d,]+) in eligible purchases on your new Card within the first (\\d+) months of Card Membership\\.[\\s\\S]{0,100}?Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4})",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.statement_credit": 2,
+                "welcome_offer.spending_requirement": 3,
+                "welcome_offer.time_period_months": 4,
+                "welcome_offer.expiry": 5
+              }
+            },
+            {
+              "regex": "SkyMiles\\W{0,4}Platinum Amex Card[\\s\\S]{0,700}?Offer ends [A-Za-z]+ \\d{1,2}, \\d{4}\\.\\s*\\$([\\d,]+) Annual Fee",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        },
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-platinum-american-express-card/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Earn a \\$([\\d,]+) Statement Credit\\s*and the bonus miles[\\s\\S]{0,120}?Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})\\.\\s*Apply and find out your welcome offer\\s*As High As ([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card within the first (\\d+) months",
+              "groups": {
+                "welcome_offer.statement_credit": 1,
+                "welcome_offer.expiry": 2,
+                "welcome_offer.bonus_points": 3,
+                "welcome_offer.spending_requirement": 4,
+                "welcome_offer.time_period_months": 5
+              }
+            },
+            {
+              "regex": "Delta SkyMiles\\W{0,4}Platinum American Express\\W{0,4}Card[^$]{0,30}?Annual Fee: \\$([\\d,]+)(?![\\d,]| intro)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-delta-reserve",
+      "sources": [
+        {
+          "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "SkyMiles\\W{0,4}Reserve Amex Card[\\s\\S]{0,300}?and ([\\d,]+) Bonus Miles, after you spend \\$([\\d,]+) in purchases in your first (\\d+) months of Card Membership\\.[\\s\\S]{0,100}?Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4})\\.\\s*\\$([\\d,]+) Annual Fee",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3,
+                "welcome_offer.expiry": 4,
+                "annual_fee": 5
+              }
+            }
+          ]
+        },
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-reserve-american-express-card/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "along with ([\\d,]+) Bonus Miles after you spend \\$([\\d,]+) in purchases on your new Card in the first (\\d+) months",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            },
+            {
+              "regex": "Delta SkyMiles\\W{0,4}Reserve American Express\\W{0,4}Card[^$]{0,30}?Annual Fee: \\$([\\d,]+)(?![\\d,]| intro)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-delta-gold-biz",
+      "sources": [
+        {
+          "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "SkyMiles\\W{0,4}Gold Business Amex Card\\W{0,4}LIMITED TIME OFFER: EARN [\\d,]+ BONUS MILES\\s*Earn ([\\d,]+) bonus miles after you make \\$([\\d,]+) in eligible purchases on your Card in the first (\\d+) months\\.\\s*Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4})",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3,
+                "welcome_offer.expiry": 4
+              }
+            },
+            {
+              "regex": "SkyMiles\\W{0,4}Gold Business Amex Card[\\s\\S]{0,400}?\\$0 introductory annual fee for the first year, then \\$([\\d,]+)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        },
+        {
+          "url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-gold/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Earn (?:[\\d,]+ )?([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card in your first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3,
+                "welcome_offer.expiry": 4
+              }
+            },
+            {
+              "regex": "Annual Fee: \\$0 intro(?:ductory)? annual fee for the first year, then \\$([\\d,]+)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-delta-skymiles-platinum-biz",
+      "sources": [
+        {
+          "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "SkyMiles\\W{0,4}Platinum Business Amex Card\\W{0,4}LIMITED TIME OFFER: EARN [\\d,]+ BONUS MILES\\s*Earn ([\\d,]+) bonus miles after you make \\$([\\d,]+) in eligible purchases on your Card in the first (\\d+) months\\.\\s*Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4})",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3,
+                "welcome_offer.expiry": 4
+              }
+            },
+            {
+              "regex": "SkyMiles\\W{0,4}Platinum Business Amex Card[\\s\\S]{0,400}?Offer ends [A-Za-z]+ \\d{1,2}, \\d{4}\\.\\W{0,6}\\$([\\d,]+) Annual Fee",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        },
+        {
+          "url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-platinum/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Earn (?:[\\d,]+ )?([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card in your first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3,
+                "welcome_offer.expiry": 4
+              }
+            },
+            {
+              "regex": "Delta SkyMiles\\W{0,4}Platinum Business\\W{0,4}Card[^$]{0,30}?Annual Fee: \\$([\\d,]+)(?![\\d,]| intro)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-delta-skymiles-reserve-biz",
+      "sources": [
+        {
+          "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "SkyMiles\\W{0,4}Reserve Business Amex Card\\W{0,4}LIMITED TIME OFFER: EARN [\\d,]+ BONUS MILES\\s*Earn ([\\d,]+) bonus miles after you make \\$([\\d,]+) in eligible purchases on your Card in the first (\\d+) months\\.\\s*Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4})",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3,
+                "welcome_offer.expiry": 4
+              }
+            },
+            {
+              "regex": "SkyMiles\\W{0,4}Reserve Business Amex Card[\\s\\S]{0,400}?Offer ends [A-Za-z]+ \\d{1,2}, \\d{4}\\.\\W{0,6}\\$([\\d,]+) Annual Fee",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        },
+        {
+          "url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-reserve/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Earn (?:[\\d,]+ )?([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card in your first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3,
+                "welcome_offer.expiry": 4
+              }
+            },
+            {
+              "regex": "Delta SkyMiles\\W{0,4}Reserve Business\\W{0,4}Card[^$]{0,30}?Annual Fee: \\$([\\d,]+)(?![\\d,]| intro)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "bilt-palladium",
+      "sources": [
+        {
+          "url": "https://www.bilt.com/card",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Bilt Palladium Card\\s*Our most rewarding premium card\\s*\\$([\\d,]+) annual fee\\W{0,4}Sign-up bonus\\s*(?:\\d )?([\\d,]+) points and Gold Status\\s*After you spend \\$([\\d,]+) on purchases \\(excluding rent or mortgage\\) in your first (\\d+) days",
+              "groups": {
+                "annual_fee": 1,
+                "welcome_offer.bonus_points": 2,
+                "welcome_offer.spending_requirement": 3,
+                "welcome_offer.time_period_months": 4
+              },
+              "transforms": {
+                "welcome_offer.time_period_months": "days_to_months"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "us-bank-altitude-reserve",
+      "hold_only": true,
+      "hold_reason": "official_product_page_redirects_to_generic_card_list",
+      "sources": [
+        {
+          "url": "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Earn ([\\d,]+) bonus points after (?:you )?spend(?:ing)? \\$([\\d,]+) (?:on|in) (?:eligible )?(?:net )?purchases (?:in|within) the first (\\d+) months",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
           ]
         }
       ]

@@ -1,7 +1,10 @@
 import type { Ledger } from './gate';
 import type { HistoryEvent } from './state';
 
-const REASONS: Record<string, string> = {
+export const REASONS: Record<string, string> = {
+  hold_only_watch_entry: '僅供參考，不自動套用', official_page_offer_not_parsed: '官方頁面無法解析優惠', official_fetch_failed: '官方頁面抓取失敗',
+  auto_added_expiring_no_card_specific_extractor: '即將到期，自動加入監測（無專屬解析器）', official_product_page_redirects_to_generic_card_list: '官方產品頁轉址至卡片總覽（可能已停止申請）',
+  clearing_expiry_only_via_expiry_path: '截止日只能由到期流程清除', time_period_out_of_range: '期限不合理', bonus_out_of_range: '點數超出合理範圍',
   needs_two_independent_official_fetches: '未取得兩次官方頁面確認', official_fetches_disagree: '官方頁面數值不一致', ambiguous_value_on_official_page: '官方頁面數值不明確',
   primary_source_not_official_domain: '來源非官方網域', official_claim_from_non_allowlisted_domain: '來源非官方網域', bonus_jump_over_3x: '獎勵變動超過 3 倍',
   annual_fee_jump_over_2x: '年費變動超過 2 倍', annual_fee_out_of_range: '年費超出合理範圍', spend_out_of_range: '消費門檻不合理', expiry_in_past: '截止日已過',
@@ -10,11 +13,11 @@ const REASONS: Record<string, string> = {
   schema_validation_failed: '資料格式驗證失敗', new_product_requires_human_review: '新卡片需人工審核', stale_or_invalid_checked_at: '證據過期', not_marked_official: '非官方來源',
   non_public_audience: '非公開優惠', source_conflicts: '來源互相矛盾', unknown_fields: '含未追蹤欄位',
 };
-const TYPE: Record<string, string> = { checks_failed: '驗證/建置失敗', push_failed: '推送失敗', deploy_failed: '部署失敗', live_check_failed: '線上檢查失敗', rolled_back: '已回滾', schema_failed: '格式驗證失敗' };
-const fieldName = (f: string | null | undefined) => (f || '').replace('welcome_offer.', '').replace('expiry', '截止日').replace('bonus_points', '點數').replace('spending_requirement', '消費門檻')
-  .replace('time_period_months', '期限(月)').replace('annual_fee', '年費').replace('is_elevated', '加碼').replace('offer_status', '狀態').replace('cash_bonus', '現金回饋');
-const val = (v: unknown) => (v === null || v === undefined ? '無' : typeof v === 'number' ? v.toLocaleString('en-US') : typeof v === 'boolean' ? (v ? '是' : '否') : String(v));
-const reasonText = (rs?: string[]) => [...new Set((rs || []).map(r => REASONS[r.split(':')[0]] || r))].join('、');
+export const TYPE: Record<string, string> = { checks_failed: '驗證/建置失敗', push_failed: '推送失敗', deploy_failed: '部署失敗', live_check_failed: '線上檢查失敗', rolled_back: '已回滾', schema_failed: '格式驗證失敗' };
+export const fieldName = (f: string | null | undefined) => (f || '').replace('welcome_offer.', '').replace('expiry', '截止日').replace('bonus_points', '點數').replace('spending_requirement', '消費門檻')
+  .replace('time_period_months', '期限(月)').replace('annual_fee', '年費').replace('is_elevated', '加碼').replace('offer_status', '狀態').replace('cash_bonus', '現金回饋').replace('statement_credit', '帳單回饋');
+export const val = (v: unknown) => (v === null || v === undefined ? '無' : typeof v === 'number' ? v.toLocaleString('en-US') : typeof v === 'boolean' ? (v ? '是' : '否') : String(v));
+export const reasonText = (rs?: string[]) => [...new Set((rs || []).map(r => REASONS[r.split(':')[0]] || r))].join('、');
 
 /** End of `day` in America/Los_Angeles (history timestamps are UTC). */
 export function laEndOfDay(day: string): number {

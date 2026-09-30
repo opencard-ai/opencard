@@ -69,6 +69,7 @@ const result = {
 };
 const json = JSON.stringify(result, null, 2);
 console.log(json);
+if (!doApply && arg('--out')) { fs.mkdirSync(path.dirname(arg('--out')!), { recursive: true }); fs.writeFileSync(arg('--out')!, `${json}\n`); console.error(`dry-run plan saved: ${arg('--out')}`); }
 if (doApply) {
   const out = arg('--out') || `artifacts/offer-watch/apply-${nowIso.replace(/[:.]/g, '-')}.json`;
   fs.mkdirSync(path.dirname(out), { recursive: true });

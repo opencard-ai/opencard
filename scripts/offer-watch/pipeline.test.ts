@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict';
-import { assessCandidate, expiryReport, emptyLedger, type Candidate, type Confirmation } from './gate';
+import { assessCandidate, expiryReport, emptyLedger, normalizeDate, DEFAULT_OFFICIAL_DOMAINS, type Candidate, type Confirmation } from './gate';
 import { applyPlanToCard, confirmationsFor, planApply, sanityCheck, schemaCheck } from './apply-core';
-import { buildCandidate, extractValues } from './collect';
+import { autoExpiringEntries, buildCandidate, currentBonusVisible, extractValues, htmlToText, isErrorPage, samePage } from './collect';
 import { commitMessage, expectedLiveStrings, pageText, parseVercelState, publish, type PublishConfig, type PublishDeps } from './publish-core';
 import { buildDigest, laEndOfDay } from './digest-core';
+import { allFetchesFailed, buildDailySummary, holdKey, isMonday, newFetchFailures, newHolds } from './daily-core';
 import { upsertLedger } from './state';
 
 const runAt = Date.parse('2026-09-30T06:00:00Z');
@@ -90,6 +91,72 @@ assert.equal(planBlog.applied.length, 0); assert.ok(planBlog.held[0].reasons.inc
 // official pages disagree -> held
 const mixed = { ...candidate, fields: { 'welcome_offer.bonus_points': 80000 }, evidence: { ...candidate.evidence, confirmations: [...fetches, conf(AMEX, 3, { 'welcome_offer.bonus_points': 90000 })] } };
 assert.ok(planApply({ results: [assessCandidate(mixed, msCard, false, runAt)] }, cards, opts).held.some(h => h.reasons.includes('official_fetches_disagree')));
+
+// ---------- Step 4: extractor helpers, hold-only entries, auto-added expiring cards, parsed-offer expiry guard
+const bilt = { url: 'https://www.bilt.com/card', patterns: [{ regex: 'Sign-up bonus\\s*(?:\\d )?([\\d,]+) points and Gold Status\\s*After you spend \\$([\\d,]+) on purchases \\(excluding rent or mortgage\\) in your first (\\d+) days', groups: { 'welcome_offer.bonus_points': 1, 'welcome_offer.spending_requirement': 2, 'welcome_offer.time_period_months': 3 }, transforms: { 'welcome_offer.time_period_months': 'days_to_months' as const } }] };
+assert.deepEqual(extractValues('Sign-up bonus 1 50,000 points and Gold Status After you spend $4,000 on purchases (excluding rent or mortgage) in your first 90 days.', bilt).values, { 'welcome_offer.bonus_points': 50000, 'welcome_offer.spending_requirement': 4000, 'welcome_offer.time_period_months': 3 });
+assert.deepEqual(extractValues('Sign-up bonus 50,000 points and Gold Status After you spend $4,000 on purchases (excluding rent or mortgage) in your first 90 days.', bilt).values['welcome_offer.bonus_points'], 50000); // no footnote digit
+assert.deepEqual(extractValues('Sign-up bonus 1 50,000 points and Gold Status After you spend $4,000 on purchases (excluding rent or mortgage) in your first 45 days.', bilt).ambiguous, ['welcome_offer.time_period_months']); // 45 days is not whole months
+assert.deepEqual(extractValues('Earn 125k Bonus Points after $5k', { url: 'x', patterns: [{ regex: 'Earn (\\d+k) Bonus Points after \\$(\\d+k)', groups: { 'welcome_offer.bonus_points': 1, 'welcome_offer.spending_requirement': 2 } }] }).values, { 'welcome_offer.bonus_points': 125000, 'welcome_offer.spending_requirement': 5000 });
+assert.equal(normalizeDate('November 4, 2026'), '2026-11-04'); assert.equal(normalizeDate('9/30/2026'), '2026-09-30'); assert.equal(normalizeDate('1/13/27'), '2027-01-13');
+assert.equal(htmlToText('<p>Delta SkyMiles &#174; Reserve&#x27;s Card\u200b</p><b>$650</b>&nbsp;&curren;'), " Delta SkyMiles ® Reserve's Card $650 ¤");
+assert.ok(samePage('https://www.bilt.com/card', 'https://www.bilt.com/card/')); assert.ok(samePage(AMEX, 'https://apply.americanexpress.com/amex-morgan-stanley-credit-cards/?page_url=99'));
+assert.ok(!samePage('https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html', 'https://www.usbank.com/credit-cards.html'));
+assert.equal(currentBonusVisible('Earn 150,000 Membership Rewards points', msCard), true); assert.equal(currentBonusVisible('Earn 150K Bonus Points', msCard), true);
+assert.equal(currentBonusVisible('Earn 1,150,000 points or 150,0001', msCard), false); assert.equal(currentBonusVisible('Earn 80,000 points', msCard), false);
+assert.equal(currentBonusVisible('Earn a $1,000 cash bonus', { welcome_offer: { cash_bonus: 1000 } }), true); assert.equal(currentBonusVisible('x', { welcome_offer: {} }), undefined);
+assert.ok(isErrorPage('Loading Error Sorry, we are unable to load this page at this time. Please try again later.' + ' nav'.repeat(200))); assert.ok(!isErrorPage('Welcome Offer '.repeat(100)));
+
+// auto-add: expiring/expired cards not on the watchlist, with an official URL in sources -> hold-only entries
+const expCards = [
+  { card_id: 'soon', welcome_offer: { bonus_points: 60000, is_elevated: true, expires: '2026-10-10' }, sources: [{ url: 'https://www.doctorofcredit.com/x' }, { url: 'https://www.chase.com/soon' }] },
+  { card_id: 'past', welcome_offer: { bonus_points: 60000, offer_status: 'public_limited_time', expires: '2026-09-01' }, sources: ['https://www.citi.com/past'], application_url: 'https://www.citi.com/apply' },
+  { card_id: 'handled', welcome_offer: { bonus_points: 60000, offer_status: 'expired_review_required', is_elevated: false, expires: '2026-09-01' }, sources: ['https://www.citi.com/h'] },
+  { card_id: 'far', welcome_offer: { bonus_points: 60000, is_elevated: true, expires: '2026-11-04' }, sources: ['https://www.delta.com/far'] },
+  { card_id: 'blog-only', welcome_offer: { bonus_points: 60000, is_elevated: true, expires: '2026-10-05' }, sources: ['https://www.uscreditcardguide.com/x', 'http://www.chase.com/insecure'] },
+  { card_id: 'watched', welcome_offer: { bonus_points: 60000, is_elevated: true, expires: '2026-10-05' }, sources: ['https://www.chase.com/w'] },
+];
+const auto = autoExpiringEntries([{ card_id: 'watched', sources: [] }], expCards, '2026-09-30', DEFAULT_OFFICIAL_DOMAINS);
+assert.deepEqual(auto.map(e => e.card_id).sort(), ['past', 'soon']);
+assert.ok(auto.every(e => e.hold_only && e.auto_added && e.sources.every(src => src.patterns.length === 0)));
+assert.deepEqual(auto.find(e => e.card_id === 'soon')!.sources.map(src => src.url), ['https://www.chase.com/soon']);
+assert.deepEqual(auto.find(e => e.card_id === 'past')!.sources.map(src => src.url), ['https://www.citi.com/past', 'https://www.citi.com/apply']);
+
+// hold-only entry: a two-fetch-confirmed change is still held, never applied
+const holdCand = buildCandidate({ card_id: msCard.card_id, hold_only: true, hold_reason: 'page_not_reliable', sources: [] }, fetches, '2026-09-30T05:50:00Z');
+const planHold = planApply(report(holdCand), cards, opts);
+assert.equal(planHold.applied.length, 0);
+assert.ok(planHold.held.length && planHold.held.every(h => h.reasons[0] === 'hold_only_watch_entry' && h.reasons.includes('page_not_reliable')));
+assert.deepEqual(planHold.expiry_review.map(h => h.reasons[0]), ['hold_only_watch_entry']);
+// hold-only with failed fetches (e.g. product page redirected) -> one held item carrying the fetch error
+const usb = { card_id: 'usb', name: 'USB', annual_fee: 400, welcome_offer: { bonus_points: 60000 } };
+const usbCand = buildCandidate({ card_id: 'usb', hold_only: true, hold_reason: 'redirects', sources: [] }, [{ ...conf('https://www.usbank.com/ar.html', 1, {}), ok: false, error: 'redirected_to_other_page: https://www.usbank.com/credit-cards.html' }], '2026-09-30T05:50:00Z');
+const planUsb = planApply({ results: [assessCandidate(usbCand, usb, false, runAt)] }, new Map([['usb', usb]]), opts);
+assert.equal(planUsb.applied.length, 0); assert.ok(planUsb.held[0].reasons.some(r => r.startsWith('official_fetch_failed: redirected_to_other_page')));
+// expiry guard: page fetched OK but the extractor read nothing -> review, never "offer gone"
+const blank = buildCandidate({ card_id: msCard.card_id, sources: [] }, fetches.map(f => ({ ...f, values: {} })), '2026-09-30T05:50:00Z');
+assert.deepEqual(planApply(report(blank), cards, opts).expiry_review.map(h => h.reasons[0]), ['official_page_offer_not_parsed']);
+assert.equal(planApply(report(blank), cards, opts).applied.length, 0);
+const blankVisible = buildCandidate({ card_id: msCard.card_id, sources: [] }, fetches.map(f => ({ ...f, values: {}, observed: { current_bonus_visible: true } })), '2026-09-30T05:50:00Z');
+assert.deepEqual(planApply(report(blankVisible), cards, opts).expiry_review.map(h => h.reasons[0]), ['expired_offer_still_shown_on_official_page']);
+// Marriott-style offer ending TODAY: not expired yet -> untouched today; reverted the day after once a new offer is confirmed
+const mar = { card_id: 'amex-marriott-bevy', name: 'Bevy', annual_fee: 250, welcome_offer: { bonus_points: 125000, spending_requirement: 5000, time_period_months: 6, statement_credit: 150, point_program: 'Marriott Bonvoy', estimated_value: 950, offer_status: 'public_limited_time', is_elevated: true, expires: '2026-09-30', expires_at: '2026-09-30', elevated_until: '2026-09-30' } };
+const marCards = new Map<string, any>([[mar.card_id, mar]]);
+const MAR = 'https://www.marriott.com/credit-cards.mi';
+const marSame = buildCandidate({ card_id: mar.card_id, sources: [] }, [conf(MAR, 1, { 'welcome_offer.bonus_points': 125000, 'welcome_offer.expiry': '2026-09-30' }), conf(MAR, 2, { 'welcome_offer.bonus_points': 125000, 'welcome_offer.expiry': '2026-09-30' })], '2026-09-30T14:00:00Z');
+const todayOpts = { today: '2026-09-30', runAt: Date.parse('2026-09-30T14:05:00Z') };
+const planToday = planApply({ results: [assessCandidate(marSame, mar, false, todayOpts.runAt)], expiry: expiryReport([mar], '2026-09-30') }, marCards, todayOpts);
+assert.equal(expiryReport([mar], '2026-09-30').expired.length, 0); assert.equal(planToday.applied.length, 0); assert.equal(planToday.expiry_review.length, 0); assert.equal(planToday.held.length, 0);
+const tomorrowOpts = { today: '2026-10-01', runAt: Date.parse('2026-10-01T14:05:00Z') };
+const marNew = buildCandidate({ card_id: mar.card_id, sources: [] }, [conf(MAR, 1, { 'welcome_offer.bonus_points': 85000 }, { checked_at: '2026-10-01T14:00:00Z' }), conf(MAR, 2, { 'welcome_offer.bonus_points': 85000 }, { checked_at: '2026-10-01T14:00:01Z' })], '2026-10-01T14:00:00Z');
+const planTomorrow = planApply({ results: [assessCandidate(marNew, mar, false, tomorrowOpts.runAt)], expiry: expiryReport([mar], '2026-10-01') }, marCards, tomorrowOpts);
+assert.deepEqual(planTomorrow.applied[0].changes.map(c => [c.field, c.new_value]), [['welcome_offer.bonus_points', 85000], ['welcome_offer.is_elevated', false], ['welcome_offer.expiry', null], ['welcome_offer.offer_status', 'public']]);
+const marAfter = applyPlanToCard(mar, planTomorrow.applied[0], '2026-10-01');
+assert.ok(!('expires' in marAfter.welcome_offer) && !('expires_at' in marAfter.welcome_offer) && !('elevated_until' in marAfter.welcome_offer));
+// airline programs are described in miles
+const delta = { card_id: 'd', name: 'D', annual_fee: 150, welcome_offer: { bonus_points: 80000, statement_credit: 250, spending_requirement: 2000, time_period_months: 6, point_program: 'Delta SkyMiles', offer_status: 'public_limited_time', expires_at: '2026-11-04' } };
+assert.equal(applyPlanToCard(delta, { card_id: 'd', kinds: ['offer_update'], changes: [{ field: 'welcome_offer.spending_requirement', old_value: 2000, new_value: 3000, fingerprint: 'f' }], sources: ['https://www.delta.com/x'], notes: [] }, today).welcome_offer.description,
+  'Limited-time offer: Earn 80,000 Delta SkyMiles bonus miles after spending $3,000 on purchases in the first 6 months, plus a $250 statement credit. Offer ends 11/4/2026.');
 
 // ---------- publish / rollback with mocked git + vercel + fetch
 const cfg: PublishConfig = { branch: 'main', remote: 'origin', vercelProject: 'opencard', vercelScope: 'team', siteBase: 'https://opencardai.com', checks: [['npm', 'run', 'validate'], ['npm', 'run', 'build']], deployTimeoutMs: 60000, deployPollMs: 1000, liveTimeoutMs: 3000, livePollMs: 1000 };
@@ -179,5 +246,35 @@ const noForce = (calls: string[][]) => assert.ok(!calls.some(c => c.join(' ').in
   assert.equal(new Date(laEndOfDay('2026-12-01')).toISOString(), '2026-12-02T07:59:59.999Z');
   const late = buildDigest([{ ts: '2026-09-30T05:56:13Z', type: 'published', card_id: 'late-card', changes: [] }, { ts: '2026-09-23T06:30:00Z', type: 'published', card_id: 'edge-old', changes: [] }], emptyLedger(), today);
   assert.ok(late.includes('late-card')); assert.ok(!late.includes('edge-old')); assert.ok(late.includes('2026-09-23 ～ 2026-09-29'));
+  // ---------- daily wrapper helpers
+  const heldA = { card_id: 'a', field: 'welcome_offer.bonus_points', value: 90000, reasons: ['needs_two_independent_official_fetches'], fingerprint: 'fa' };
+  const expB = { card_id: 'b', field: 'welcome_offer.expiry', reasons: ['official_page_offer_not_parsed'] };
+  const prevLedger = upsertLedger(emptyLedger(), [
+    { key: 'fa', card_id: 'a', field: heldA.field, value: 90000, status: 'needs_verification', reasons: heldA.reasons },
+    { key: holdKey(expB, 'expiry_review'), card_id: 'b', field: expB.field, value: null, status: 'needs_verification', reasons: expB.reasons },
+  ], '2026-09-29T00:00:00Z');
+  assert.deepEqual(newHolds({ held: [heldA], expiry_review: [expB] }, prevLedger), []); // same holds as yesterday -> nothing new
+  assert.deepEqual(newHolds({ held: [{ ...heldA, reasons: ['bonus_jump_over_3x'] }], expiry_review: [] }, prevLedger).map(h => h.card_id), ['a']); // reason changed -> new
+  assert.deepEqual(newHolds({ held: [{ ...heldA, fingerprint: 'fz' }], expiry_review: [expB] }, emptyLedger()).map(h => h.kind), ['held', 'expiry_review']);
+  const failCands: any[] = [
+    { card_id: 'down', fields: {}, evidence: { confirmations: [{ ok: false, error: 'issuer_error_or_block_page' }, { ok: false, error: 'http_503' }] } },
+    { card_id: 'half', fields: {}, evidence: { confirmations: [{ ok: false, error: 'x' }, { ok: true }] } },
+    { card_id: 'hold', fields: {}, evidence: { hold_only: true, confirmations: [{ ok: false, error: 'redirected_to_other_page: u' }] } },
+  ];
+  assert.deepEqual(allFetchesFailed(failCands), { down: ['issuer_error_or_block_page', 'http_503'] });
+  assert.deepEqual(newFetchFailures({ down: ['x'], other: ['y'] }, { down: ['x'] }), { other: ['y'] });
+  assert.equal(buildDailySummary({ today, events: [], stepFailures: [], holds: [], fetchFailures: {} }), 'NO_REPLY');
+  const s1 = buildDailySummary({ today, events: [{ ts: 'x', type: 'published', card_id: 'amex-delta-gold', changes: [{ field: 'welcome_offer.spending_requirement', old_value: 2000, new_value: 3000 }], commit: 'abcdef1234' }],
+    stepFailures: [{ step: 'collect', detail: 'collect 失敗' }], holds: [{ card_id: 'us-bank-altitude-reserve', field: null, reasons: ['hold_only_watch_entry', 'official_product_page_redirects_to_generic_card_list'], kind: 'held' }], fetchFailures: { 'amex-x': ['http_503'] } });
+  assert.ok(s1.includes('消費門檻 2,000→3,000（abcdef1）') && s1.includes('僅供參考，不自動套用') && s1.includes('collect：collect 失敗') && s1.includes('amex-x：所有官方頁面抓取失敗'), s1);
+  const manyHolds = Array.from({ length: 150 }, (_, i) => ({ card_id: `card-number-${i}-long-identifier`, field: 'welcome_offer.bonus_points', value: 100000 + i, reasons: ['needs_two_independent_official_fetches'], kind: 'held' as const }));
+  const s2 = buildDailySummary({ today, events: [], stepFailures: [], holds: manyHolds, fetchFailures: {} });
+  assert.ok(s2.length <= 1800 && s2.includes('…另有'), String(s2.length));
+  const dg = '# 週報\n' + '- 項目\n'.repeat(400);
+  const s3 = buildDailySummary({ today, events: [], stepFailures: [], holds: manyHolds, fetchFailures: {}, digest: dg });
+  assert.ok(s3.length <= 1800 && s3.includes('# 週報'), String(s3.length));
+  assert.equal(buildDailySummary({ today, events: [], stepFailures: [], holds: [], fetchFailures: {}, digest: '# 週報\n- 無' }), '# 週報\n- 無'); // Monday, nothing new -> digest only
+  assert.ok(isMonday('2026-10-05') && !isMonday('2026-09-30'));
+  assert.ok(buildDailySummary({ today, events: [], stepFailures: [], holds: [], fetchFailures: {}, planned: [{ card_id: 'amex-delta-gold', changes: [{ field: 'welcome_offer.spending_requirement', old_value: 2000, new_value: 3000 }] }] }).includes('預計套用'));
   console.log('offer-watch pipeline: passed');
 })().catch(error => { console.error(error); process.exit(1); });

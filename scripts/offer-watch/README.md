@@ -11,6 +11,7 @@ passes, and `publish` commits, pushes, deploys and live-checks them, reverting a
 | `npm run offer-watch:apply -- --report <review.json> [--apply] [--out <file>]` | Turns a review report into a card-edit plan (dry run without `--apply`). Guards are listed below. With `--apply` it writes the card JSON, runs `validate-all` (restoring the files if it fails), writes the plan (default `artifacts/offer-watch/apply-<ts>.json`) and records `applied`/`held` in the ledger and `history.jsonl`. |
 | `npm run offer-watch:publish -- --plan <apply.json> [--dry-run]` | Must be on `main`. Runs `npm run validate`, the offer-watch tests, the repo unit tests and `npm run build`; if any fail, it restores the card files and makes no commit. Otherwise it makes **one commit per card** (the message lists old→new values and the official URLs), pushes (on rejection it runs `pull --rebase --autostash` and retries; it never force-pushes), waits for the Vercel production deployment of that SHA to reach Ready (20 min timeout), then fetches `https://opencardai.com/en/cards/<id>` until it shows the new bonus, spend, months and fee strings (10 min). If the deploy errors, times out or the live check fails, it runs `git revert` on its commits and pushes the revert. |
 | `npm run offer-watch:digest [-- --today YYYY-MM-DD]` | Weekly Traditional Chinese summary (under 1800 characters) of the last 7 days: auto-applied changes, items held awaiting official confirmation, and failures/rollbacks. Saved to `artifacts/offer-watch/digest-<date>.md` and printed; it is not sent anywhere. |
+| `npm run -s offer-watch:daily [-- --dry-run] [-- --digest]` | The whole daily loop in one command. See "Daily loop" below. |
 | `npm run offer-watch:test` | Unit tests: gate/ledger/expiry/allowlist (`gate.test.ts`) and collect/apply guards/expiry revert/publish rollback with mocked git+Vercel/digest (`pipeline.test.ts`). |
 | `npm run offer-watch:archive-pending [-- --write]` | Moves pending card-update artifacts with no changes, cosmetic-only changes, or duplicate substantive deltas (newest kept) into `artifacts/card-updates/archived/` (logged in `ARCHIVE_LOG.jsonl`). Dry run without `--write`. Then run `npm run artifact:index`. |
 | `npm run adaptor:prune-runs [-- --days 14] [-- --delete]` | Retention for `data/adaptor/runs`. Dry run lists run dirs older than N days; `--delete` removes them. |
@@ -47,7 +48,47 @@ Expired elevated offers:
 - Otherwise `offer_status` is set to `expired_review_required` and the card is listed for review.
 - If the fetch failed, the old offer is still shown, or the card isn't in `watchlist.json`, nothing is changed and the card is listed for review.
 
-## Daily loop (run from the repo root on `main`)
+## Watchlist (`watchlist.json`)
+
+19 focus cards:
+- CSR
+- Citi AAdvantage Executive
+- the four Hilton cards
+- Marriott Brilliant and Bevy
+- Spark Cash and Spark Cash Plus
+- Morgan Stanley Platinum
+- the six Delta Amex cards
+- Bilt Palladium
+- U.S. Bank Altitude Reserve (hold-only)
+
+Each card lists official issuer or co-brand pages (hilton.com, marriott.com and delta.com are used next to americanexpress.com, since Amex pages are sometimes throttled), each with card-specific regexes.
+- `render: true` pages load in system Chrome and poll until all of that source's regexes match (25 s cap).
+- A fetch fails if it returns an issuer error or bot page, or redirects to a different page.
+- Requests to the same host are spaced 3 s apart.
+- `hold_only: true` entries are fetched as evidence but never applied.
+
+Cards that `review.ts --expiry` flags as expired or expiring within 30 days, and that aren't on the watchlist, are added automatically by `collect.ts` as hold-only entries using the official URLs in their own `sources`. They need a real extractor before anything can be applied.
+
+When an elevated offer expires, the card is reverted only if an official page's extractor actually reads a different offer. A page that loads but can't be parsed goes to review. An offer is expired only once its date has passed (`days_left < 0`), so an offer that ends today is left alone today.
+
+## Daily loop
+
+For cron, one command:
+
+```bash
+cd ~/.openclaw/workspace/opencard && npm run -s offer-watch:daily
+# or: ~/.openclaw/workspace/opencard/scripts/offer-watch/daily.sh
+```
+
+It runs `git pull --ff-only` → `collect` → `review --ledger --write` → `apply --apply` → `publish` (only if something was applied) → `digest` (Mondays PT) using the PT date. Details:
+- **Lock:** `artifacts/offer-watch/daily.lock`. A second run while one is active prints `NO_REPLY` and exits 0. A lock left by a dead process is reclaimed.
+- **Log:** all step output goes to `artifacts/offer-watch/daily-<date>.log`.
+- **Output:** stdout is only a Traditional Chinese summary (under 1800 characters) of **new** items: changes published, holds that are new or whose reasons changed (compared with the ledger), failures and rollbacks, and cards whose official fetches all failed for the first time. On Mondays the weekly digest is added. If nothing is new, it prints `NO_REPLY`.
+- **Exit code:** 1 if any step failed; the summary is still printed.
+- `--dry-run` fetches and plans without writing the ledger or cards and without publishing.
+- Typical run: about 5–8 min with nothing to publish, plus about 5–10 min when it publishes (build + Vercel + live check).
+
+The same steps by hand:
 
 ```bash
 cd ~/.openclaw/workspace/opencard
@@ -59,8 +100,4 @@ npx tsx scripts/offer-watch/apply.ts --report artifacts/offer-watch/review-$D.js
 npx tsx scripts/offer-watch/publish.ts --plan artifacts/offer-watch/apply-$D.json
 ```
 
-- Stop after `apply.ts` if `applied` is empty. `publish.ts` exits 0 on `published` or `nothing_to_publish` and non-zero on any failure; any rollback has already been pushed by then.
-- To preview without writing, drop `--write` and `--apply`, or use `publish.ts --dry-run`.
-- Weekly (for example on Monday): `npm run offer-watch:digest`, then read `artifacts/offer-watch/digest-$D.md`.
-- State files (all gitignored): `ledger.json` (dedup plus applied/held/published status), `history.jsonl` (append-only event log used by the digest), and the per-day `candidates-*`, `review-*`, `apply-*` and `digest-*` files.
-- To add a card, add an entry to `watchlist.json` with at least one official URL and regexes whose capture groups map to tracked fields. Use `render: true` for JavaScript-rendered issuer pages.
+State files (all gitignored): `ledger.json`, `history.jsonl`, `daily-state.json`, `daily.lock`, and the per-day `candidates-*`, `review-*`, `apply-*`, `digest-*` and `daily-*.log` files.

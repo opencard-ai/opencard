@@ -80,3 +80,7 @@ artifacts/offer-watch/candidates-*.json
 artifacts/offer-watch/review-*.json
 artifacts/offer-watch/apply-*.json
 artifacts/offer-watch/digest-*.md
+artifacts/offer-watch/daily-*.log
+artifacts/offer-watch/daily.lock
+artifacts/offer-watch/daily-state.json
+artifacts/offer-watch/apply-*.dry.json
