@@ -71,3 +71,7 @@ artifacts/*.png
 
 # Local fixed-cohort GSC observation state
 .gsc-cohort-baseline.json
+
+# Secrets / local runtime state (never commit)
+data/agentmail.key
+artifacts/offer-watch/ledger.json
