@@ -9,9 +9,9 @@
   "welcome_offer": {
     "bonus_points": 90000,
     "statement_credit": 300,
-    "spending_requirement": 3000,
+    "spending_requirement": 4000,
     "time_period_months": 6,
-    "description": "Limited-time offer: earn 90,000 Bonus Miles plus a $300 statement credit after eligible purchases in the first 6 months. Offer ends November 4, 2026.",
+    "description": "Limited-time offer: Earn 90,000 Delta SkyMiles bonus miles after spending $4,000 on purchases in the first 6 months, plus a $300 statement credit. Offer ends 11/4/2026.",
     "point_program": "Delta SkyMiles",
     "estimated_value": 900,
     "offer_status": "public_limited_time",
@@ -19,10 +19,11 @@
     "notes": [
       "2026-09-07 approved refresh: 90,000 Bonus Miles plus a $300 statement credit, ending November 4, 2026.",
       "Previous public limited-time 7/15/2026 offer was removed from current production values to avoid displaying an expired offer.",
-      "Post-7/15/2026 closeout completed: expired limited-time Delta Amex state removed/confirmed; current production state is this welcome_offer block."
+      "Post-7/15/2026 closeout completed: expired limited-time Delta Amex state removed/confirmed; current production state is this welcome_offer block.",
+      "2026-09-30 offer-watch auto-apply (two independent official fetches): spending_requirement 3000 -> 4000. Sources: https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-09-07",
+    "last_verified": "2026-09-30",
     "is_elevated": true,
     "expires_at": "2026-11-04"
   },
@@ -143,7 +144,7 @@
       "notes": "Delta News Hub official announcement: limited-time welcome offers and 2026 benefit updates"
     }
   ],
-  "last_updated": "2026-07-13T19:00:00Z",
+  "last_updated": "2026-09-30T12:00:00.000Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -183,8 +184,8 @@
   ],
   "welcome_bonus": null,
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-07-20",
-  "next_review": "2026-08-17T00:00:00Z",
+  "last_verified": "2026-09-30",
+  "next_review": "2026-10-30T00:00:00.000Z",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 5,
