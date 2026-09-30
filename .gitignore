@@ -75,3 +75,8 @@ artifacts/*.png
 # Secrets / local runtime state (never commit)
 data/agentmail.key
 artifacts/offer-watch/ledger.json
+artifacts/offer-watch/history.jsonl
+artifacts/offer-watch/candidates-*.json
+artifacts/offer-watch/review-*.json
+artifacts/offer-watch/apply-*.json
+artifacts/offer-watch/digest-*.md

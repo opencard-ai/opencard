@@ -1,0 +1,26 @@
+{
+  "_comment": "Cards whose official pages collect.ts fetches daily. Each source is fetched twice (independent requests). patterns: JS regex source (case-insensitive) + capture-group -> tracked field map. render:true uses headless Chrome (textContent, scripts/styles removed).",
+  "cards": [
+    {
+      "card_id": "amex-morgan-stanley-platinum",
+      "audience": "public",
+      "sources": [
+        {
+          "url": "https://www.morganstanley.com/what-we-do/wealth-management/cashplus",
+          "render": false,
+          "patterns": [
+            { "regex": "earn ([\\d,]+) Membership Rewards\\S* points with The Platinum Card\\S* from American Express Exclusively for Morgan Stanley", "groups": { "welcome_offer.bonus_points": 1 } }
+          ]
+        },
+        {
+          "url": "https://apply.americanexpress.com/amex-morgan-stanley-credit-cards/?page_url=38",
+          "render": true,
+          "patterns": [
+            { "regex": "Earn ([\\d,]+) Membership Rewards\\S* Points after you spend \\$([\\d,]+) on purchases on your new Card in your first (\\d+) months", "groups": { "welcome_offer.bonus_points": 1, "welcome_offer.spending_requirement": 2, "welcome_offer.time_period_months": 3 } },
+            { "regex": "ANNUAL FEE \\$([\\d,]+)", "groups": { "annual_fee": 1 } }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -21,9 +21,13 @@
     "guides:check-locales": "tsx scripts/check-guide-locales.ts",
     "offer-watch:review": "tsx scripts/offer-watch/review.ts",
     "offer-watch:expiry": "tsx scripts/offer-watch/review.ts --expiry",
-    "offer-watch:test": "tsx scripts/offer-watch/gate.test.ts",
+    "offer-watch:test": "tsx scripts/offer-watch/gate.test.ts && tsx scripts/offer-watch/pipeline.test.ts",
     "offer-watch:archive-pending": "tsx scripts/offer-watch/archive-pending.ts",
-    "adaptor:prune-runs": "tsx scripts/offer-watch/prune-adaptor-runs.ts"
+    "adaptor:prune-runs": "tsx scripts/offer-watch/prune-adaptor-runs.ts",
+    "offer-watch:collect": "tsx scripts/offer-watch/collect.ts",
+    "offer-watch:apply": "tsx scripts/offer-watch/apply.ts",
+    "offer-watch:publish": "tsx scripts/offer-watch/publish.ts",
+    "offer-watch:digest": "tsx scripts/offer-watch/digest.ts"
   },
   "dependencies": {
     "@upstash/redis": "^1.37.0",

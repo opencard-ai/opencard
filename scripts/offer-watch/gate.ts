@@ -1,7 +1,9 @@
 import { createHash } from 'node:crypto';
 
 export type CardRecord = Record<string, any>;
-export interface Evidence { url: string; checked_at: string; official: boolean; audience: string; conflicts?: boolean }
+/** One independent fetch of an official page, recorded by collect.ts. */
+export interface Confirmation { url: string; fetch_id: string; checked_at: string; ok: boolean; status?: number; error?: string; official_domain: boolean; values: Record<string, unknown>; ambiguous_fields?: string[]; content_sha256?: string }
+export interface Evidence { url: string; checked_at: string; official: boolean; audience: string; conflicts?: boolean; confirmations?: Confirmation[]; explicit_confirmations?: string[] }
 export interface Candidate { card_id: string; fields: Record<string, unknown>; evidence: Evidence }
 export interface AssessOptions { officialDomains?: string[] }
 
@@ -92,7 +94,7 @@ export const DEFAULT_OFFICIAL_DOMAINS = [
   'americanexpress.com', 'chase.com', 'citi.com', 'aa.com', 'capitalone.com', 'usbank.com', 'bankofamerica.com',
   'barclaycardus.com', 'barclays.com', 'barclaycard.com', 'wellsfargo.com', 'bilt.com', 'biltrewards.com', 'discover.com',
   'marriott.com', 'hilton.com', 'hyatt.com', 'ihg.com', 'delta.com', 'united.com', 'southwest.com', 'alaskaair.com',
-  'jetblue.com', 'aircanada.com',
+  'jetblue.com', 'aircanada.com', 'morganstanley.com',
 ];
 
 /** Exact host or subdomain match; `*` in an entry matches letters/digits/hyphens within one label (e.g. "barclays*.com"). */
@@ -155,7 +157,7 @@ export function assessCandidate(candidate: Candidate, card: CardRecord | undefin
 export type Assessment = ReturnType<typeof assessCandidate>;
 
 // ---------- persistent dedup ledger ----------
-export interface LedgerEntry { card_id: string; field: string | null; value: unknown; audience: string | null; status: string; first_seen: string; last_seen: string; last_notified: string | null }
+export interface LedgerEntry { card_id: string; field: string | null; value: unknown; audience: string | null; status: string; first_seen: string; last_seen: string; last_notified: string | null; reasons?: string[]; commit?: string | null; published_at?: string | null; failure?: string | null }
 export interface Ledger { version: 1; updated_at: string | null; entries: Record<string, LedgerEntry> }
 export const emptyLedger = (): Ledger => ({ version: 1, updated_at: null, entries: {} });
 
