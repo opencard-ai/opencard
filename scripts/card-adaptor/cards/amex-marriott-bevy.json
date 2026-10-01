@@ -31,26 +31,21 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 125000,
+      "bonus_points": 85000,
       "spending_requirement": 5000,
       "time_period_months": 6,
       "statement_credit": 150,
-      "description": "Elevated limited-time offer: Earn 125,000 Marriott Bonvoy bonus points plus a $150 statement credit after spending $5,000 in purchases within the first 6 months.",
+      "description": "Earn 85,000 Marriott Bonvoy bonus points after spending $5,000 on purchases in the first 6 months.",
       "point_program": "Marriott Bonvoy",
-      "estimated_value": 950,
-      "offer_status": "public_limited_time",
+      "estimated_value": 646,
+      "offer_status": "public",
       "confidence": "high",
-      "is_elevated": true,
-      "expires": "2026-09-30",
-      "expires_at": "2026-09-30",
+      "is_elevated": false,
       "notes": [
-        "2026-09-09 issuer recheck: elevated Bevy candidate is 125k bonus points + $150 statement credit through 2026-09-30.",
-        "Production and adaptor candidate are aligned to the elevated 125k + $150 offer through 2026-09-30."
+        "2026-10-01 safety-check: elevated 125k+$150 ended 2026-09-30; official Marriott pages show 85k after $5k/6 months, no statement credit."
       ],
-      "source_conflicts": [
-        "Some Marriott-family pages/secondary sources may mention different elevated paths; keep Bevy production conservative at the Amex public 85k baseline unless issuer flow confirms the elevated tier."
-      ],
-      "last_verified": "AUTO_DATE"
+      "source_conflicts": [],
+      "last_verified": "2026-10-01"
     }
   },
   "citations": {
@@ -65,12 +60,12 @@
     "Confirm no lower public/session offer is replacing the elevated 175k value."
   ],
   "community": {
-    "summary": "Track the elevated Bevy candidate at 125k bonus points + $150 travel credit through 2026-09-30; production baseline stays separate.",
+    "summary": "Production aligned to current official public baseline 85,000 points (post 2026-09-30 elevated expiry).",
     "recommended_production_value": {
-      "offer_amount": 125000,
+      "offer_amount": 85000,
       "spend_requirement": 5000,
       "spend_window_months": 6,
-      "status": "public_limited_time"
+      "status": "public"
     },
     "confidence": "medium_high",
     "ymmv_or_targeted_possible": true,
