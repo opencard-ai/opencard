@@ -79,7 +79,7 @@
           "render": false,
           "patterns": [
             {
-              "regex": "Hilton Honors\\W{0,4}Card\\s*No Annual Fee\\W{0,4}(?:Limited Time Offer\\s*)?Earn (?:a Free Night Reward \\+ )?([\\d,]+) Bonus Points\\.?\\s*Terms apply\\.?\\W{0,4}Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "regex": "Hilton Honors\\W{0,4}Card\\s*No Annual Fee\\W{0,4}(?:Limited Time Offer\\s*)?Earn (?:an? Free Night (?:Reward|Award)s? (?:\\+|and|plus) )?([\\d,]+) Bonus Points(?: (?:\\+|and|plus) an? Free Night (?:Reward|Award)s?)?(?:\\.?\\s*Terms apply\\.?\\W{0,4}(?:Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?)?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.expiry": 2
@@ -92,7 +92,7 @@
           "render": true,
           "patterns": [
             {
-              "regex": "Earn ([\\d,]+) Hilton Honors Bonus Points[^$]{0,90}?after you spend \\$([\\d,]+) (?:in|on) (?:eligible )?purchases on [^.]{0,90}?(?:in|within) (?:the|your) first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "regex": "Earn (?:an? Free Night (?:Reward|Award)s? (?:\\+|and|plus) )?([\\d,]+) Hilton Honors Bonus Points[^$]{0,90}?after you spend \\$([\\d,]+) (?:in|on) (?:eligible )?purchases on [^.]{0,90}?(?:in|within) (?:the|your) first (\\d+) months of Card Membership\\.(?:\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.spending_requirement": 2,
@@ -112,7 +112,7 @@
           "render": false,
           "patterns": [
             {
-              "regex": "Hilton Honors Surpass\\W{0,4}\\W{0,4}Card\\s*\\$([\\d,]+) Annual Fee\\W{0,4}(?:Limited Time Offer\\s*)?Earn (?:a Free Night Reward \\+ )?([\\d,]+) Bonus Points\\.?\\s*Terms apply\\.?\\W{0,4}Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "regex": "Hilton Honors Surpass\\W{0,4}\\W{0,4}Card\\s*\\$([\\d,]+) Annual Fee\\W{0,4}(?:Limited Time Offer\\s*)?Earn (?:an? Free Night (?:Reward|Award)s? (?:\\+|and|plus) )?([\\d,]+) Bonus Points(?: (?:\\+|and|plus) an? Free Night (?:Reward|Award)s?)?(?:\\.?\\s*Terms apply\\.?\\W{0,4}(?:Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?)?",
               "groups": {
                 "annual_fee": 1,
                 "welcome_offer.bonus_points": 2,
@@ -126,7 +126,7 @@
           "render": true,
           "patterns": [
             {
-              "regex": "Earn ([\\d,]+) Hilton Honors Bonus Points[^$]{0,90}?after you spend \\$([\\d,]+) (?:in|on) (?:eligible )?purchases on [^.]{0,90}?(?:in|within) (?:the|your) first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "regex": "Earn (?:an? Free Night (?:Reward|Award)s? (?:\\+|and|plus) )?([\\d,]+) Hilton Honors Bonus Points[^$]{0,90}?after you spend \\$([\\d,]+) (?:in|on) (?:eligible )?purchases on [^.]{0,90}?(?:in|within) (?:the|your) first (\\d+) months of Card Membership\\.(?:\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.spending_requirement": 2,
@@ -152,7 +152,7 @@
           "render": false,
           "patterns": [
             {
-              "regex": "Hilton Honors Aspire\\W{0,4}Card\\s*\\$([\\d,]+) Annual Fee\\W{0,4}(?:Limited Time Offer\\s*)?Earn (?:a Free Night Reward \\+ )?([\\d,]+) Bonus Points\\.?\\s*Terms apply\\.?\\W{0,4}Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "regex": "Hilton Honors Aspire\\W{0,4}Card\\s*\\$([\\d,]+) Annual Fee\\W{0,4}(?:Limited Time Offer\\s*)?Earn (?:an? Free Night (?:Reward|Award)s? (?:\\+|and|plus) )?([\\d,]+) Bonus Points(?: (?:\\+|and|plus) an? Free Night (?:Reward|Award)s?)?(?:\\.?\\s*Terms apply\\.?\\W{0,4}(?:Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?)?",
               "groups": {
                 "annual_fee": 1,
                 "welcome_offer.bonus_points": 2,
@@ -166,7 +166,7 @@
           "render": true,
           "patterns": [
             {
-              "regex": "Earn ([\\d,]+) Hilton Honors Bonus Points[^$]{0,90}?after you spend \\$([\\d,]+) (?:in|on) (?:eligible )?purchases on [^.]{0,90}?(?:in|within) (?:the|your) first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "regex": "Earn (?:an? Free Night (?:Reward|Award)s? (?:\\+|and|plus) )?([\\d,]+) Hilton Honors Bonus Points[^$]{0,90}?after you spend \\$([\\d,]+) (?:in|on) (?:eligible )?purchases on [^.]{0,90}?(?:in|within) (?:the|your) first (\\d+) months of Card Membership\\.(?:\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.spending_requirement": 2,
@@ -192,7 +192,7 @@
           "render": false,
           "patterns": [
             {
-              "regex": "Hilton Honors Business\\W{0,4}Card\\s*\\$([\\d,]+) Annual Fee\\W{0,4}(?:Limited Time Offer\\s*)?Earn (?:a Free Night Reward \\+ )?([\\d,]+) Bonus Points\\.?\\s*Terms apply\\.?\\W{0,4}Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "regex": "Hilton Honors Business\\W{0,4}Card\\s*\\$([\\d,]+) Annual Fee\\W{0,4}(?:Limited Time Offer\\s*)?Earn (?:an? Free Night (?:Reward|Award)s? (?:\\+|and|plus) )?([\\d,]+) Bonus Points(?: (?:\\+|and|plus) an? Free Night (?:Reward|Award)s?)?(?:\\.?\\s*Terms apply\\.?\\W{0,4}(?:Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?)?",
               "groups": {
                 "annual_fee": 1,
                 "welcome_offer.bonus_points": 2,
@@ -206,7 +206,7 @@
           "render": true,
           "patterns": [
             {
-              "regex": "Earn ([\\d,]+) Hilton Honors Bonus Points[^$]{0,90}?after you spend \\$([\\d,]+) (?:in|on) (?:eligible )?purchases on [^.]{0,90}?(?:in|within) (?:the|your) first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "regex": "Earn (?:an? Free Night (?:Reward|Award)s? (?:\\+|and|plus) )?([\\d,]+) Hilton Honors Bonus Points[^$]{0,90}?after you spend \\$([\\d,]+) (?:in|on) (?:eligible )?purchases on [^.]{0,90}?(?:in|within) (?:the|your) first (\\d+) months of Card Membership\\.(?:\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.spending_requirement": 2,
@@ -232,11 +232,14 @@
           "render": false,
           "patterns": [
             {
-              "regex": "Marriott Bonvoy Brilliant\\W{0,4}American Express\\W{0,4}Card\\s*Earn ([\\d,]+) Bonus Points plus a \\$([\\d,]+) statement credit\\s*\\$([\\d,]+) Annual Fee",
+              "regex": "Marriott Bonvoy Brilliant\\W{0,4}American Express\\W{0,4}Card\\s*Earn ([\\d,]+) Bonus Points(?:\\s*(?:plus|\\+|and)\\s+an?\\s+\\$([\\d,]+) statement credit)?\\W{0,6}\\$([\\d,]+) Annual Fee",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.statement_credit": 2,
                 "annual_fee": 3
+              },
+              "absent": {
+                "welcome_offer.statement_credit": null
               }
             }
           ]
@@ -246,7 +249,7 @@
           "render": false,
           "patterns": [
             {
-              "regex": "Earn (\\d+k) Bonus Points plus a \\$([\\d,]+) statement credit after you use your new Card to make \\$(\\d+k) in purchases within the first (\\d+) months\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})\\.\\s*\\$([\\d,]+) Annual Fee",
+              "regex": "Earn (\\d+k|[\\d,]{5,}) Bonus Points(?:\\s*(?:plus|\\+|and)\\s+an?\\s+\\$([\\d,]+) statement credit)? after you use your new Card to make \\$(\\d+k|[\\d,]+) in purchases within the first (\\d+) months(?: of Card Membership)?\\.\\W{0,4}(?:Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})\\.\\W{0,4})?\\$([\\d,]+) Annual Fee",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.statement_credit": 2,
@@ -254,6 +257,9 @@
                 "welcome_offer.time_period_months": 4,
                 "welcome_offer.expiry": 5,
                 "annual_fee": 6
+              },
+              "absent": {
+                "welcome_offer.statement_credit": null
               }
             }
           ]
@@ -263,13 +269,16 @@
           "render": true,
           "patterns": [
             {
-              "regex": "Earn ([\\d,]+) Marriott Bonvoy\\W{0,4}Bonus Points Plus A \\$([\\d,]+) Statement Credit\\s*after you use your new Card to make \\$([\\d,]+) in purchases within the first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "regex": "Earn ([\\d,]+) Marriott Bonvoy\\W{0,4}Bonus Points(?:\\s*(?:plus|\\+|and)\\s+an?\\s+\\$([\\d,]+) statement credit)?\\s*after you use your new Card to make \\$([\\d,]+) in purchases within the first (\\d+) months of Card Membership\\.(?:\\W{0,4}Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.statement_credit": 2,
                 "welcome_offer.spending_requirement": 3,
                 "welcome_offer.time_period_months": 4,
                 "welcome_offer.expiry": 5
+              },
+              "absent": {
+                "welcome_offer.statement_credit": null
               }
             },
             {
@@ -290,11 +299,14 @@
           "render": false,
           "patterns": [
             {
-              "regex": "Marriott Bonvoy Bevy\\W{0,4}American Express\\W{0,4}Card\\s*Earn ([\\d,]+) Bonus Points plus a \\$([\\d,]+) statement credit\\s*\\$([\\d,]+) Annual Fee",
+              "regex": "Marriott Bonvoy Bevy\\W{0,4}American Express\\W{0,4}Card\\s*Earn ([\\d,]+) Bonus Points(?:\\s*(?:plus|\\+|and)\\s+an?\\s+\\$([\\d,]+) statement credit)?\\W{0,6}\\$([\\d,]+) Annual Fee",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.statement_credit": 2,
                 "annual_fee": 3
+              },
+              "absent": {
+                "welcome_offer.statement_credit": null
               }
             }
           ]
@@ -304,7 +316,7 @@
           "render": false,
           "patterns": [
             {
-              "regex": "Earn (\\d+k) Bonus Points plus a \\$([\\d,]+) statement credit after you use your new Card to make \\$(\\d+k) in purchases within the first (\\d+) months\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})\\.\\s*\\$([\\d,]+) Annual Fee",
+              "regex": "Earn (\\d+k|[\\d,]{5,}) Bonus Points(?:\\s*(?:plus|\\+|and)\\s+an?\\s+\\$([\\d,]+) statement credit)? after you use your new Card to make \\$(\\d+k|[\\d,]+) in purchases within the first (\\d+) months(?: of Card Membership)?\\.\\W{0,4}(?:Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})\\.\\W{0,4})?\\$([\\d,]+) Annual Fee",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.statement_credit": 2,
@@ -312,6 +324,9 @@
                 "welcome_offer.time_period_months": 4,
                 "welcome_offer.expiry": 5,
                 "annual_fee": 6
+              },
+              "absent": {
+                "welcome_offer.statement_credit": null
               }
             }
           ]
@@ -321,13 +336,16 @@
           "render": true,
           "patterns": [
             {
-              "regex": "Earn ([\\d,]+) Marriott Bonvoy\\W{0,4}Bonus Points Plus A \\$([\\d,]+) Statement Credit\\s*after you use your new Card to make \\$([\\d,]+) in purchases within the first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "regex": "Earn ([\\d,]+) Marriott Bonvoy\\W{0,4}Bonus Points(?:\\s*(?:plus|\\+|and)\\s+an?\\s+\\$([\\d,]+) statement credit)?\\s*after you use your new Card to make \\$([\\d,]+) in purchases within the first (\\d+) months of Card Membership\\.(?:\\W{0,4}Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.statement_credit": 2,
                 "welcome_offer.spending_requirement": 3,
                 "welcome_offer.time_period_months": 4,
                 "welcome_offer.expiry": 5
+              },
+              "absent": {
+                "welcome_offer.statement_credit": null
               }
             },
             {
@@ -435,13 +453,16 @@
           "render": false,
           "patterns": [
             {
-              "regex": "SkyMiles\\W{0,4}Gold Amex Card\\W{0,4}LIMITED TIME OFFER[\\s\\S]{0,120}?could be as high as ([\\d,]+) Bonus Miles plus earn a Statement Credit of \\$([\\d,]+) after spending \\$([\\d,]+) in eligible purchases on your new Card within the first (\\d+) months of Card Membership\\.[\\s\\S]{0,100}?Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4})",
+              "regex": "SkyMiles\\W{0,4}Gold Amex Card\\W{0,4}[\\s\\S]{0,160}?(?:could be as high as|Earn) ([\\d,]+) Bonus Miles(?: plus earn a Statement Credit of \\$([\\d,]+))? after (?:spending|you spend) \\$([\\d,]+) in eligible purchases on your new Card within the first (\\d+) months of Card Membership\\.(?:[\\s\\S]{0,100}?Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4}))?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.statement_credit": 2,
                 "welcome_offer.spending_requirement": 3,
                 "welcome_offer.time_period_months": 4,
                 "welcome_offer.expiry": 5
+              },
+              "absent": {
+                "welcome_offer.statement_credit": null
               }
             },
             {
@@ -457,13 +478,15 @@
           "render": true,
           "patterns": [
             {
-              "regex": "Earn a \\$([\\d,]+) Statement Credit\\s*and the bonus miles[\\s\\S]{0,120}?Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})\\.\\s*Apply and find out your welcome offer\\s*As High As ([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card within the first (\\d+) months",
+              "regex": "(?:Earn an? \\$([\\d,]+) Statement Credit\\s*and the bonus miles[\\s\\S]{0,160}?)?(?:As High As|Earn) ([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card (?:within|in) (?:the|your) first (\\d+) months",
               "groups": {
                 "welcome_offer.statement_credit": 1,
-                "welcome_offer.expiry": 2,
-                "welcome_offer.bonus_points": 3,
-                "welcome_offer.spending_requirement": 4,
-                "welcome_offer.time_period_months": 5
+                "welcome_offer.bonus_points": 2,
+                "welcome_offer.spending_requirement": 3,
+                "welcome_offer.time_period_months": 4
+              },
+              "absent": {
+                "welcome_offer.statement_credit": null
               }
             },
             {
@@ -484,13 +507,16 @@
           "render": false,
           "patterns": [
             {
-              "regex": "SkyMiles\\W{0,4}Platinum Amex Card\\W{0,4}LIMITED TIME OFFER[\\s\\S]{0,120}?could be as high as ([\\d,]+) Bonus Miles plus earn a Statement Credit of \\$([\\d,]+) after spending \\$([\\d,]+) in eligible purchases on your new Card within the first (\\d+) months of Card Membership\\.[\\s\\S]{0,100}?Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4})",
+              "regex": "SkyMiles\\W{0,4}Platinum Amex Card\\W{0,4}[\\s\\S]{0,160}?(?:could be as high as|Earn) ([\\d,]+) Bonus Miles(?: plus earn a Statement Credit of \\$([\\d,]+))? after (?:spending|you spend) \\$([\\d,]+) in eligible purchases on your new Card within the first (\\d+) months of Card Membership\\.(?:[\\s\\S]{0,100}?Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4}))?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.statement_credit": 2,
                 "welcome_offer.spending_requirement": 3,
                 "welcome_offer.time_period_months": 4,
                 "welcome_offer.expiry": 5
+              },
+              "absent": {
+                "welcome_offer.statement_credit": null
               }
             },
             {
@@ -506,13 +532,15 @@
           "render": true,
           "patterns": [
             {
-              "regex": "Earn a \\$([\\d,]+) Statement Credit\\s*and the bonus miles[\\s\\S]{0,120}?Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})\\.\\s*Apply and find out your welcome offer\\s*As High As ([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card within the first (\\d+) months",
+              "regex": "(?:Earn an? \\$([\\d,]+) Statement Credit\\s*and the bonus miles[\\s\\S]{0,160}?)?(?:As High As|Earn) ([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card (?:within|in) (?:the|your) first (\\d+) months",
               "groups": {
                 "welcome_offer.statement_credit": 1,
-                "welcome_offer.expiry": 2,
-                "welcome_offer.bonus_points": 3,
-                "welcome_offer.spending_requirement": 4,
-                "welcome_offer.time_period_months": 5
+                "welcome_offer.bonus_points": 2,
+                "welcome_offer.spending_requirement": 3,
+                "welcome_offer.time_period_months": 4
+              },
+              "absent": {
+                "welcome_offer.statement_credit": null
               }
             },
             {
@@ -533,13 +561,18 @@
           "render": false,
           "patterns": [
             {
-              "regex": "SkyMiles\\W{0,4}Reserve Amex Card[\\s\\S]{0,300}?and ([\\d,]+) Bonus Miles, after you spend \\$([\\d,]+) in purchases in your first (\\d+) months of Card Membership\\.[\\s\\S]{0,100}?Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4})\\.\\s*\\$([\\d,]+) Annual Fee",
+              "regex": "SkyMiles\\W{0,4}Reserve Amex Card[\\s\\S]{0,300}?(?:and|Earn) ([\\d,]+) Bonus Miles,? after you spend \\$([\\d,]+) in purchases in (?:your|the) first (\\d+) months of Card Membership\\.(?:[\\s\\S]{0,100}?Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4}))?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.spending_requirement": 2,
                 "welcome_offer.time_period_months": 3,
-                "welcome_offer.expiry": 4,
-                "annual_fee": 5
+                "welcome_offer.expiry": 4
+              }
+            },
+            {
+              "regex": "SkyMiles\\W{0,4}Reserve Amex Card[\\s\\S]{0,700}?\\$([\\d,]+) Annual Fee",
+              "groups": {
+                "annual_fee": 1
               }
             }
           ]
@@ -549,7 +582,7 @@
           "render": true,
           "patterns": [
             {
-              "regex": "along with ([\\d,]+) Bonus Miles after you spend \\$([\\d,]+) in purchases on your new Card in the first (\\d+) months",
+              "regex": "(?:along with|Earn) ([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card in the first (\\d+) months",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.spending_requirement": 2,
@@ -574,7 +607,7 @@
           "render": false,
           "patterns": [
             {
-              "regex": "SkyMiles\\W{0,4}Gold Business Amex Card\\W{0,4}LIMITED TIME OFFER: EARN [\\d,]+ BONUS MILES\\s*Earn ([\\d,]+) bonus miles after you make \\$([\\d,]+) in eligible purchases on your Card in the first (\\d+) months\\.\\s*Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4})",
+              "regex": "SkyMiles\\W{0,4}Gold Business Amex Card\\W{0,4}(?:LIMITED TIME OFFER: EARN [\\d,]+ BONUS MILES\\s*)?Earn ([\\d,]+) bonus miles after you make \\$([\\d,]+) in eligible purchases on your Card in the first (\\d+) months\\.(?:\\s*Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4}))?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.spending_requirement": 2,
@@ -595,7 +628,7 @@
           "render": true,
           "patterns": [
             {
-              "regex": "Earn (?:[\\d,]+ )?([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card in your first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "regex": "Earn (?:[\\d,]+ )?([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card in your first (\\d+) months of Card Membership\\.(?:\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.spending_requirement": 2,
@@ -621,7 +654,7 @@
           "render": false,
           "patterns": [
             {
-              "regex": "SkyMiles\\W{0,4}Platinum Business Amex Card\\W{0,4}LIMITED TIME OFFER: EARN [\\d,]+ BONUS MILES\\s*Earn ([\\d,]+) bonus miles after you make \\$([\\d,]+) in eligible purchases on your Card in the first (\\d+) months\\.\\s*Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4})",
+              "regex": "SkyMiles\\W{0,4}Platinum Business Amex Card\\W{0,4}(?:LIMITED TIME OFFER: EARN [\\d,]+ BONUS MILES\\s*)?Earn ([\\d,]+) bonus miles after you make \\$([\\d,]+) in eligible purchases on your Card in the first (\\d+) months\\.(?:\\s*Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4}))?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.spending_requirement": 2,
@@ -642,7 +675,7 @@
           "render": true,
           "patterns": [
             {
-              "regex": "Earn (?:[\\d,]+ )?([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card in your first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "regex": "Earn (?:[\\d,]+ )?([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card in your first (\\d+) months of Card Membership\\.(?:\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.spending_requirement": 2,
@@ -668,7 +701,7 @@
           "render": false,
           "patterns": [
             {
-              "regex": "SkyMiles\\W{0,4}Reserve Business Amex Card\\W{0,4}LIMITED TIME OFFER: EARN [\\d,]+ BONUS MILES\\s*Earn ([\\d,]+) bonus miles after you make \\$([\\d,]+) in eligible purchases on your Card in the first (\\d+) months\\.\\s*Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4})",
+              "regex": "SkyMiles\\W{0,4}Reserve Business Amex Card\\W{0,4}(?:LIMITED TIME OFFER: EARN [\\d,]+ BONUS MILES\\s*)?Earn ([\\d,]+) bonus miles after you make \\$([\\d,]+) in eligible purchases on your Card in the first (\\d+) months\\.(?:\\s*Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4}))?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.spending_requirement": 2,
@@ -689,7 +722,7 @@
           "render": true,
           "patterns": [
             {
-              "regex": "Earn (?:[\\d,]+ )?([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card in your first (\\d+) months of Card Membership\\.\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4})",
+              "regex": "Earn (?:[\\d,]+ )?([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card in your first (\\d+) months of Card Membership\\.(?:\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.spending_requirement": 2,
@@ -715,7 +748,7 @@
           "render": false,
           "patterns": [
             {
-              "regex": "Bilt Palladium Card\\s*Our most rewarding premium card\\s*\\$([\\d,]+) annual fee\\W{0,4}Sign-up bonus\\s*(?:\\d )?([\\d,]+) points and Gold Status\\s*After you spend \\$([\\d,]+) on purchases \\(excluding rent or mortgage\\) in your first (\\d+) days",
+              "regex": "Bilt Palladium Card\\s*Our most rewarding premium card\\s*\\$([\\d,]+) annual fee\\W{0,4}Sign-up bonus\\s*(?:\\d )?([\\d,]+) points(?: and Gold Status)?\\s*After you spend \\$([\\d,]+) on purchases \\(excluding rent or mortgage\\) in your first (\\d+) days",
               "groups": {
                 "annual_fee": 1,
                 "welcome_offer.bonus_points": 2,

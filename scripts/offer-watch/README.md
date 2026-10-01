@@ -66,6 +66,12 @@ Each card lists official issuer or co-brand pages (hilton.com, marriott.com and 
 - A fetch fails if it returns an issuer error or bot page, or redirects to a different page.
 - Requests to the same host are spaced 3 s apart.
 - `hold_only: true` entries are fetched as evidence but never applied.
+- Optional add-ons (statement credit, free night, "Offer ends") are optional regex groups, so the same pattern matches both "X points plus a $Y statement credit" and points-only wording.
+  - `absent: { "welcome_offer.statement_credit": null }` records "no credit" when the pattern matched without the credit group. It's not a failed match.
+  - An officially confirmed `null` for `statement_credit`, `travel_credit`, `free_nights` or `free_night_value_cap` passes the sanity check, and applying it deletes the key from the card.
+  - An optional expiry that isn't shown is simply not extracted. Expiry changes still go through the expiry path.
+  - Free-night wording on Hilton is accepted but not extracted, because the cards keep it only in `description`.
+- Tracking query strings are stripped from redirect errors, so a hold whose redirect URL only differs by `?sid=…` isn't reported as new.
 
 Cards that `review.ts --expiry` flags as expired or expiring within 30 days, and that aren't on the watchlist, are added automatically by `collect.ts` as hold-only entries using the official URLs in their own `sources`. They need a real extractor before anything can be applied.
 

@@ -10,7 +10,9 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { expiryReport, isOfficialUrl, normalizeField, normalizeNumber, DEFAULT_OFFICIAL_DOMAINS, type Candidate, type CardRecord, type Confirmation } from './gate';
 
-export interface WatchPattern { regex: string; groups: Record<string, number>; transforms?: Record<string, 'days_to_months'> }
+/** groups: capture group -> tracked field. absent: value to record when the pattern matched but an optional group did not
+ * participate (e.g. no "plus a $250 statement credit" -> statement_credit null = no credit). transforms: days_to_months. */
+export interface WatchPattern { regex: string; groups: Record<string, number>; transforms?: Record<string, 'days_to_months'>; absent?: Record<string, unknown> }
 export interface WatchSource { url: string; render?: boolean; wait?: 'networkidle2' | 'domcontentloaded'; settle_ms?: number; patterns: WatchPattern[] }
 export interface WatchEntry { card_id: string; audience?: string; hold_only?: boolean; hold_reason?: string; auto_added?: string; sources: WatchSource[] }
 
@@ -26,7 +28,11 @@ export function extractValues(text: string, source: WatchSource): { values: Reco
   for (const pattern of source.patterns) {
     for (const match of text.matchAll(new RegExp(pattern.regex, 'gi'))) {
       for (const [field, group] of Object.entries(pattern.groups)) {
-        if (match[group] === undefined) continue;
+        if (match[group] === undefined) {
+          // Optional add-on not present in this match: record the declared "absent" value (e.g. null = no credit), else nothing.
+          if (pattern.absent && field in pattern.absent) (seen[field] ||= new Set()).add(JSON.stringify(normalizeField(field, pattern.absent[field])));
+          continue;
+        }
         const value = transform(pattern.transforms?.[field], match[group]);
         (seen[field] ||= new Set()).add(value === undefined ? '"__untransformable__"' : JSON.stringify(normalizeField(field, value)));
       }
@@ -94,6 +100,8 @@ export const htmlToText = (html: string) => html.replace(/<!--[\s\S]*?-->/g, ' '
 /** Issuer bot-block / outage pages (served with HTTP 200 by some issuers). Only consulted when nothing was extracted. */
 export const ERROR_PAGE = /Sorry, we are unable to load this page|Access Denied|Request unsuccessful|unusual (?:activity|traffic)|are you a robot|verify you are (?:a )?human|temporarily unavailable/i;
 export const isErrorPage = (text: string) => ERROR_PAGE.test(text) || text.trim().length < 400;
+/** Tracking parameters change between runs; keep errors stable for ledger dedup. */
+export const stripQuery = (url: string) => url.replace(/[?#].*$/, '');
 /** Same page = same host + path (trailing slash and query ignored). A redirect elsewhere means the product page moved/closed. */
 export function samePage(requested: string, final: string): boolean {
   try { const a = new URL(requested), b = new URL(final); return a.host === b.host && a.pathname.replace(/\/+$/, '') === b.pathname.replace(/\/+$/, ''); } catch { return false; }
@@ -150,7 +158,7 @@ async function fetchOnce(source: WatchSource, attempt: number, domains: string[]
     const { status, text, finalUrl } = source.render ? await fetchRendered(source) : await fetchHttp(source.url);
     const base = { url: source.url, fetch_id, checked_at, status, official_domain, final_url: finalUrl };
     if (status < 200 || status >= 400) return { ...base, ok: false, error: `http_${status}`, values: {} };
-    if (!samePage(source.url, finalUrl)) return { ...base, ok: false, error: `redirected_to_other_page: ${finalUrl}`, values: {} };
+    if (!samePage(source.url, finalUrl)) return { ...base, ok: false, error: `redirected_to_other_page: ${stripQuery(finalUrl)}`, values: {} };
     const { values, ambiguous } = extractValues(text, source);
     if (!Object.keys(values).length && !ambiguous.length && isErrorPage(text)) return { ...base, ok: false, error: 'issuer_error_or_block_page', values: {} };
     return { ...base, ok: true, values, ambiguous_fields: ambiguous, content_sha256: createHash('sha256').update(text).digest('hex'), observed: { current_bonus_visible: currentBonusVisible(text, card) } };

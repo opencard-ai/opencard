@@ -8,6 +8,7 @@ export interface HeldItem { card_id: string; field: string | null; value?: unkno
 export interface ApplyPlan { today: string; applied: CardPlan[]; held: HeldItem[]; expiry_review: HeldItem[] }
 
 const POINTS_LIKE = new Set(['welcome_offer.bonus_points', 'welcome_offer.cash_bonus', 'welcome_offer.bonus_value', 'welcome_offer.normal_bonus_points', 'welcome_offer.statement_credit', 'welcome_offer.travel_credit']);
+export const OPTIONAL_ADDONS = new Set(['welcome_offer.statement_credit', 'welcome_offer.travel_credit', 'welcome_offer.free_nights', 'welcome_offer.free_night_value_cap']);
 const OFFER_STATUSES = new Set(['public', 'public_limited_time', 'public_elevated', 'limited_time_public', 'public_new_card', 'public_with_extra_bonus_path', 'as_high_as_ymmv', 'expired_review_required']);
 
 /** Official, fresh, successful fetches that agree / disagree with the proposed value. */
@@ -39,6 +40,8 @@ export function sanityCheck(field: string, oldValue: unknown, newValue: unknown,
   if (field === 'welcome_offer.is_elevated') return typeof newValue === 'boolean' ? [] : ['is_elevated_not_boolean'];
   if (field === 'welcome_offer.offer_status') return OFFER_STATUSES.has(String(newValue)) ? [] : ['unknown_offer_status'];
   if (field === 'annual_fee_description') return typeof newValue === 'string' && newValue.length < 300 ? [] : ['bad_annual_fee_description'];
+  // Optional add-ons (statement/travel credit, free nights) may legitimately disappear from an offer: null = removed.
+  if (newValue === null && OPTIONAL_ADDONS.has(field)) return [];
   const n = normalizeNumber(newValue);
   if (typeof n !== 'number' || !Number.isFinite(n)) return ['not_numeric'];
   if (n < 0) reasons.push('negative');
@@ -68,7 +71,7 @@ export function planApply(report: ReportLike, cards: Map<string, CardRecord>, op
     if (result.status === 'unchanged') continue;
     if (result.evidence?.hold_only) {
       // Watch entries that can't be parsed reliably (or were auto-added without an extractor): evidence only, never applied.
-      const failures = (result.evidence.confirmations || []).filter(c => !c.ok).map(c => `official_fetch_failed: ${c.error ?? 'unknown'}`);
+      const failures = (result.evidence.confirmations || []).filter(c => !c.ok).map(c => `official_fetch_failed: ${String(c.error ?? 'unknown').replace(/\?[^\s,]*/g, '')}`);
       const reasons = ['hold_only_watch_entry', ...(result.evidence.hold_reason ? [result.evidence.hold_reason] : []), ...new Set(failures)];
       if (result.changes.length) result.changes.forEach(c => held.push({ card_id: result.card_id, field: c.field, value: c.new_value, reasons, fingerprint: c.fingerprint }));
       else held.push({ card_id: result.card_id, field: null, reasons });
@@ -170,7 +173,10 @@ export function applyPlanToCard(card: CardRecord, plan: CardPlan, today: string)
       const present = EXPIRY_ALIASES.filter(a => a in offer);
       if (change.new_value === null) EXPIRY_ALIASES.forEach(a => { delete offer[a]; });
       else (present.length ? present : ['expires']).forEach(a => { offer[a] = change.new_value; });
-    } else if (change.field.startsWith('welcome_offer.')) offer[change.field.slice('welcome_offer.'.length)] = change.new_value;
+    } else if (change.field.startsWith('welcome_offer.')) {
+      const key = change.field.slice('welcome_offer.'.length);
+      if (change.new_value === null && OPTIONAL_ADDONS.has(change.field)) delete offer[key]; else offer[key] = change.new_value;
+    }
     else next[change.field] = change.new_value;
   }
   const newBonus = normalizeNumber(offer.bonus_points), newCash = normalizeNumber(offer.cash_bonus);

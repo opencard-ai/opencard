@@ -198,6 +198,7 @@ export function updateLedger(ledger: Ledger, results: Array<Assessment & { notif
     for (const { key, field, value } of ledgerKeys(result)) {
       const previous = next.entries[key];
       next.entries[key] = {
+        ...previous,
         card_id: result.card_id, field, value, audience: result.evidence?.audience ?? null, status: result.status,
         first_seen: previous?.first_seen ?? nowIso, last_seen: nowIso,
         last_notified: result.notify || previous?.last_notified === nowIso ? nowIso : previous?.last_notified ?? null,

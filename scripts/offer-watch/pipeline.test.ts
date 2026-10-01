@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
-import { assessCandidate, expiryReport, emptyLedger, normalizeDate, DEFAULT_OFFICIAL_DOMAINS, type Candidate, type Confirmation } from './gate';
+import { assessCandidate, expiryReport, emptyLedger, normalizeDate, updateLedger, DEFAULT_OFFICIAL_DOMAINS, type Candidate, type Confirmation } from './gate';
 import { applyPlanToCard, confirmationsFor, planApply, sanityCheck, schemaCheck } from './apply-core';
-import { autoExpiringEntries, buildCandidate, currentBonusVisible, extractValues, htmlToText, isErrorPage, samePage } from './collect';
+import { autoExpiringEntries, buildCandidate, currentBonusVisible, extractValues, htmlToText, isErrorPage, samePage, stripQuery, type WatchEntry } from './collect';
+import { readFileSync } from 'node:fs';
 import { commitMessage, expectedLiveStrings, pageText, parseVercelState, publish, type PublishConfig, type PublishDeps } from './publish-core';
 import { buildDigest, laEndOfDay } from './digest-core';
 import { allFetchesFailed, buildDailySummary, holdKey, isMonday, newFetchFailures, newHolds } from './daily-core';
@@ -276,5 +277,64 @@ const noForce = (calls: string[][]) => assert.ok(!calls.some(c => c.join(' ').in
   assert.equal(buildDailySummary({ today, events: [], stepFailures: [], holds: [], fetchFailures: {}, digest: '# 週報\n- 無' }), '# 週報\n- 無'); // Monday, nothing new -> digest only
   assert.ok(isMonday('2026-10-05') && !isMonday('2026-09-30'));
   assert.ok(buildDailySummary({ today, events: [], stepFailures: [], holds: [], fetchFailures: {}, planned: [{ card_id: 'amex-delta-gold', changes: [{ field: 'welcome_offer.spending_requirement', old_value: 2000, new_value: 3000 }] }] }).includes('預計套用'));
+  // ---------- watchlist extractors: optional add-ons (statement credit / free night / "Offer ends") never break a match
+  const watch: WatchEntry[] = JSON.parse(readFileSync(new URL('./watchlist.json', import.meta.url), 'utf8')).cards;
+  const W = (card: string, host: string) => { const s = watch.find(w => w.card_id === card)!.sources.find(x => new URL(x.url).host.includes(host)); assert.ok(s, `${card} ${host}`); return s!; };
+  const ex = (card: string, host: string, text: string) => { const r = extractValues(text, W(card, host)); assert.deepEqual(r.ambiguous, [], `${card} ${host} ambiguous`); return r.values; };
+  const B = 'welcome_offer.bonus_points', SPD = 'welcome_offer.spending_requirement', MON = 'welcome_offer.time_period_months', CR = 'welcome_offer.statement_credit', EXP = 'welcome_offer.expiry';
+  // marriott.com hub
+  assert.deepEqual(ex('amex-marriott-bevy', 'marriott.com', 'Marriott Bonvoy Bevy® American Express® Card Earn 125,000 Bonus Points plus a $150 statement credit $250 Annual Fee'), { [B]: 125000, [CR]: 150, annual_fee: 250 });
+  assert.deepEqual(ex('amex-marriott-bevy', 'marriott.com', 'Marriott Bonvoy Bevy® American Express® Card Earn 85,000 Bonus Points † $250 Annual Fee'), { [B]: 85000, [CR]: null, annual_fee: 250 });
+  assert.deepEqual(ex('amex-marriott-brilliant', 'marriott.com', 'Marriott Bonvoy Brilliant® American Express® Card Earn 100,000 Bonus Points † $650 Annual Fee'), { [B]: 100000, [CR]: null, annual_fee: 650 });
+  // marriott.com card page
+  const mp = watch.find(w => w.card_id === 'amex-marriott-bevy')!.sources.filter(x => x.url.includes('marriott.com'))[1];
+  assert.deepEqual(extractValues('Earn 125k Bonus Points plus a $150 statement credit after you use your new Card to make $5k in purchases within the first 6 months. Offer ends 9/30/2026. $250 Annual Fee*.', mp).values,
+    { [B]: 125000, [CR]: 150, [SPD]: 5000, [MON]: 6, [EXP]: '2026-09-30', annual_fee: 250 });
+  assert.deepEqual(extractValues('Earn 85k Bonus Points after you use your new Card to make $5K in purchases within the first 6 months of Card Membership.† $250 Annual Fee*.', mp).values,
+    { [B]: 85000, [CR]: null, [SPD]: 5000, [MON]: 6, annual_fee: 250 }); // no credit, no "Offer ends": matched, credit null, expiry untouched
+  // americanexpress.com Marriott
+  assert.deepEqual(ex('amex-marriott-bevy', 'americanexpress.com', 'Earn 125,000 Marriott Bonvoy® Bonus Points Plus A $150 Statement Creditafter you use your new Card to make $5,000 in purchases within the first 6 months of Card Membership. Offer ends 09/30/26.'),
+    { [B]: 125000, [CR]: 150, [SPD]: 5000, [MON]: 6, [EXP]: '2026-09-30' });
+  assert.deepEqual(ex('amex-marriott-brilliant', 'americanexpress.com', 'Earn 100,000 Marriott Bonvoy® Bonus Pointsafter you use your new Card to make $6,000 in purchases within the first 6 months of Card Membership.†'),
+    { [B]: 100000, [CR]: null, [SPD]: 6000, [MON]: 6 });
+  // Delta Gold on Amex: statement credit sentence present / absent
+  const dgOld = 'Earn a $250 Statement Creditand the bonus miles, once you meet that same spend requirement for the bonus miles.†Offer ends 11/4/2026.Apply and find out your welcome offerAs High As 80,000 Bonus Milesafter you spend $3,000 in purchases on your new Card within the first 6 months of Card Membership.';
+  assert.deepEqual(ex('amex-delta-gold', 'americanexpress.com', dgOld), { [CR]: 250, [B]: 80000, [SPD]: 3000, [MON]: 6 });
+  assert.deepEqual(ex('amex-delta-gold', 'americanexpress.com', 'Apply and find out your welcome offerAs High As 80,000 Bonus Milesafter you spend $3,000 in purchases on your new Card within the first 6 months of Card Membership.'), { [CR]: null, [B]: 80000, [SPD]: 3000, [MON]: 6 });
+  // delta.com personal: "plus earn a Statement Credit" optional, "Offer ends" optional
+  assert.deepEqual(ex('amex-delta-gold', 'delta.com', 'Delta SkyMiles® Gold Amex Card LIMITED TIME OFFER Your welcome offer could be as high as 80,000 Bonus Miles plus earn a Statement Credit of $250 after spending $3,000 in eligible purchases on your new Card within the first 6 months of Card Membership. Terms apply. Offer ends November 4, 2026.'),
+    { [B]: 80000, [CR]: 250, [SPD]: 3000, [MON]: 6, [EXP]: '2026-11-04' });
+  assert.deepEqual(ex('amex-delta-gold', 'delta.com', 'Delta SkyMiles® Gold Amex Card Earn 50,000 Bonus Miles after you spend $2,000 in eligible purchases on your new Card within the first 6 months of Card Membership.'),
+    { [B]: 50000, [CR]: null, [SPD]: 2000, [MON]: 6 });
+  // Hilton: free night in front / absent, "Offer ends" optional; free nights are tolerated, not extracted
+  assert.deepEqual(ex('amex-hilton-honors', 'americanexpress.com', 'Earn a Free Night Reward + 70,000 Hilton Honors Bonus Points after you spend $2,000 in eligible purchases on the Card within the first 6 months of Card Membership. Offer ends 1/13/2027.'), { [B]: 70000, [SPD]: 2000, [MON]: 6, [EXP]: '2027-01-13' });
+  assert.deepEqual(ex('amex-hilton-honors', 'americanexpress.com', 'Earn 70,000 Hilton Honors Bonus Points after you spend $2,000 in eligible purchases on the Card within the first 6 months of Card Membership.'), { [B]: 70000, [SPD]: 2000, [MON]: 6 });
+  // sanity + apply: an officially confirmed removed add-on is allowed and deletes the key; null bonus is still rejected
+  assert.deepEqual(sanityCheck('welcome_offer.statement_credit', 150, null, today), []);
+  assert.deepEqual(sanityCheck('welcome_offer.bonus_points', 150000, null, today), ['not_numeric']);
+  const bevyOld = { card_id: 'amex-marriott-bevy', name: 'Bevy', annual_fee: 250, welcome_offer: { bonus_points: 125000, statement_credit: 150, spending_requirement: 5000, time_period_months: 6, description: 'old', point_program: 'Marriott Bonvoy', estimated_value: 950 }, sources: [] };
+  const MH = 'https://www.marriott.com/credit-cards.mi', MA = 'https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-bevy/';
+  const bevyFetches = [conf(MH, 1, { [B]: 85000, [CR]: null, annual_fee: 250 }), conf(MH, 2, { [B]: 85000, [CR]: null, annual_fee: 250 }), conf(MA, 1, { [B]: 85000, [CR]: null, [SPD]: 5000, [MON]: 6 }), conf(MA, 2, { [B]: 85000, [CR]: null, [SPD]: 5000, [MON]: 6 })];
+  const bevyCand = buildCandidate({ card_id: bevyOld.card_id, sources: [] }, bevyFetches, '2026-09-30T05:50:00Z');
+  const bevyPlan = planApply(report(bevyCand, bevyOld), new Map<string, any>([[bevyOld.card_id, bevyOld]]), opts);
+  assert.deepEqual(bevyPlan.held, []);
+  assert.deepEqual(bevyPlan.applied[0].changes.filter(c => c.field === CR).map(c => [c.old_value, c.new_value]), [[150, null]]);
+  const bevyNew = applyPlanToCard(bevyOld, bevyPlan.applied[0], today);
+  assert.ok(!('statement_credit' in bevyNew.welcome_offer)); assert.equal(bevyNew.welcome_offer.bonus_points, 85000);
+  // card already without a credit + points-only page -> unchanged (no proposal)
+  assert.equal(assessCandidate(bevyCand, { ...bevyOld, welcome_offer: { ...bevyOld.welcome_offer, bonus_points: 85000, statement_credit: undefined } }, false, runAt).status, 'unchanged');
+  // tracking query strings never make a hold look new
+  assert.equal(stripQuery('https://www.usbank.com/credit-cards.html?sid=cr121711#x'), 'https://www.usbank.com/credit-cards.html');
+  const holdRep = (err: string) => ({ results: [{ card_id: 'us-bank-altitude-reserve', status: 'needs_verification', changes: [], evidence: { hold_only: true, hold_reason: 'r', confirmations: [{ ...conf('https://www.usbank.com/x', 1, {}), ok: false, error: err }] } }], expiry: [] });
+  const h1 = planApply(holdRep('redirected_to_other_page: https://www.usbank.com/credit-cards.html?sid=cr121711') as any, new Map(), opts).held;
+  const h2 = planApply(holdRep('redirected_to_other_page: https://www.usbank.com/credit-cards.html') as any, new Map(), opts).held;
+  assert.deepEqual(h1, h2);
+  const holdLedger = upsertLedger(emptyLedger(), h1.map(h => ({ key: holdKey(h, 'held'), card_id: h.card_id, field: h.field, value: null, status: 'needs_verification', reasons: h.reasons })), '2026-09-30T18:30:00Z');
+  assert.deepEqual(newHolds({ held: h2, expiry_review: [] }, holdLedger), []);
+  // review --write keeps apply/publish fields on existing ledger entries
+  const res0 = { ...assessCandidate(bevyCand, bevyOld, false, runAt), notify: false };
+  const k0 = res0.changes[0].fingerprint;
+  const kept = updateLedger({ version: 1, updated_at: null, entries: { [k0]: { card_id: 'amex-marriott-bevy', field: res0.changes[0].field, value: res0.changes[0].new_value, audience: null, status: 'needs_verification', first_seen: 'a', last_seen: 'a', last_notified: null, reasons: ['x'], commit: 'abc', published_at: 'p' } } }, [res0], 'now');
+  assert.deepEqual([kept.entries[k0].reasons, kept.entries[k0].commit, kept.entries[k0].published_at, kept.entries[k0].first_seen], [['x'], 'abc', 'p', 'a']);
   console.log('offer-watch pipeline: passed');
 })().catch(error => { console.error(error); process.exit(1); });
