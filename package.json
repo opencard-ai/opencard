@@ -28,7 +28,8 @@
     "offer-watch:apply": "tsx scripts/offer-watch/apply.ts",
     "offer-watch:publish": "tsx scripts/offer-watch/publish.ts",
     "offer-watch:digest": "tsx scripts/offer-watch/digest.ts",
-    "offer-watch:daily": "NODE_NO_WARNINGS=1 tsx scripts/offer-watch/daily.ts"
+    "offer-watch:daily": "NODE_NO_WARNINGS=1 tsx scripts/offer-watch/daily.ts",
+    "audit:weekly": "NODE_NO_WARNINGS=1 tsx scripts/audit/weekly.ts"
   },
   "dependencies": {
     "@upstash/redis": "^1.37.0",
