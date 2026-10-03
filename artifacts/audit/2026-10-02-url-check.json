@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-03T03:57:56.875Z",
+  "checked_at": "2026-10-03T04:00:28.315Z",
   "count": 294,
   "results": [
     {
@@ -121,18 +121,18 @@
     },
     {
       "card_id": "amex-delta-gold-biz",
-      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
+      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
       "status": 200,
-      "final_url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
+      "final_url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
       "same_page": true,
       "soft_404": false,
       "blocked": false
     },
     {
       "card_id": "amex-delta-gold-biz",
-      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
       "status": 200,
-      "final_url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "final_url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -175,18 +175,18 @@
     },
     {
       "card_id": "amex-delta-reserve",
-      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
       "status": 200,
-      "final_url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "final_url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
       "same_page": true,
       "soft_404": false,
       "blocked": false
     },
     {
       "card_id": "amex-delta-reserve",
-      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
+      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
       "status": 200,
-      "final_url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
+      "final_url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -715,21 +715,21 @@
     },
     {
       "card_id": "bilt-blue",
-      "url": "https://support.biltrewards.com/hc/en-us/articles/42897766682381-Bilt-Card-2-0-Program-Overview",
-      "status": 403,
-      "final_url": "https://support.biltrewards.com/hc/en-us/articles/42897766682381-Bilt-Card-2-0-Program-Overview",
-      "same_page": true,
-      "soft_404": false,
-      "blocked": true
-    },
-    {
-      "card_id": "bilt-blue",
       "url": "https://newsroom.biltrewards.com/meetbiltcard2.0",
       "status": 200,
       "final_url": "https://newsroom.biltrewards.com/meetbiltcard2.0",
       "same_page": true,
       "soft_404": false,
       "blocked": false
+    },
+    {
+      "card_id": "bilt-blue",
+      "url": "https://support.biltrewards.com/hc/en-us/articles/42897766682381-Bilt-Card-2-0-Program-Overview",
+      "status": 403,
+      "final_url": "https://support.biltrewards.com/hc/en-us/articles/42897766682381-Bilt-Card-2-0-Program-Overview",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": true
     },
     {
       "card_id": "bilt-obsidian",
