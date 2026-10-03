@@ -12,7 +12,7 @@
     "time_period_months": 3,
     "description": "Earn 75,000 Citi ThankYou bonus points after spending $6,000 in the first 3 months of account opening.",
     "point_program": "Citi ThankYou Points",
-    "estimated_value": 563,
+    "estimated_value": 1275,
     "offer_status": "public",
     "confidence": "high",
     "notes": [
@@ -21,7 +21,7 @@
     "source_conflicts": [
       "Older 100k Strata Elite offers appear expired, branch-only, or no longer broadly public."
     ],
-    "last_verified": "2026-06-06"
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -68,13 +68,14 @@
       "notes": "USCCG card review (LLM-friendly static HTML)"
     },
     {
-      "url": "https://www.citi.com/credit-cards/citi-strata-elite-credit-card"
+      "url": "https://www.citi.com/credit-cards/citi-strata-elite-credit-card",
+      "notes": "Official Citi page checked 2026-10-02: 75,000 bonus points after $6,000 in 3 months; $595 fee; up to $120 Global Entry/TSA PreCheck credit."
     },
     {
       "url": "https://onemileatatime.com/guides/citi-strata-elite/"
     }
   ],
-  "last_updated": "2026-05-11T18:36:52.198Z",
+  "last_updated": "2026-10-02",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -113,14 +114,14 @@
     {
       "credit_key": "global-entry-precheck-credit",
       "name": "Global Entry / PreCheck Credit",
-      "amount": 100,
+      "amount": 120,
       "frequency": "every_4_years",
       "category": "travel",
-      "description": "Up to $100 every 4 years for Global Entry or TSA PreCheck.",
+      "description": "Up to $120 every 4 years for Global Entry or TSA PreCheck.",
       "reset_type": "every_4_years"
     }
   ],
-  "last_verified": "2026-06-06",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.977000+00:00",
   "featured": true
 }

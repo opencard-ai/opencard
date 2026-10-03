@@ -1,30 +1,56 @@
 {
   "card_id": "capital-one-savorone",
-  "name": "Capital One SavorOne Cash Rewards Credit Card",
+  "name": "Capital One SavorOne Rewards Credit Card",
   "issuer": "Capital One",
   "network": "mastercard",
-  "annual_fee": 0,
+  "annual_fee": 39,
   "foreign_transaction_fee": 0,
-  "credit_required": "Good",
+  "credit_required": "Fair",
   "welcome_offer": {
-    "spending_requirement": 500,
-    "time_period_months": 3
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "estimated_value": 0,
+    "point_program": "Cash Back",
+    "description": "No welcome bonus is listed on the official SavorOne Rewards page.",
+    "confidence": "high",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
+      "category": "Capital One Entertainment",
+      "rate": 8,
+      "notes": "8% cash back with Capital One Entertainment"
+    },
+    {
+      "category": "Capital One Travel",
+      "rate": 5,
+      "notes": "5% cash back with Capital One Travel"
+    },
+    {
       "category": "Dining",
       "rate": 3,
-      "notes": "Including grocery stores"
+      "notes": "Unlimited 3% on dining"
+    },
+    {
+      "category": "Groceries",
+      "rate": 3,
+      "notes": "Unlimited 3% at grocery stores"
     },
     {
       "category": "Entertainment",
       "rate": 3,
-      "notes": null
+      "notes": "Unlimited 3% on entertainment"
+    },
+    {
+      "category": "Streaming",
+      "rate": 3,
+      "notes": "Unlimited 3% on popular streaming services"
     },
     {
       "category": "Other",
       "rate": 1,
-      "notes": null
+      "notes": "1% on all other purchases"
     }
   ],
   "annual_credits": [],
@@ -53,7 +79,7 @@
   "sources": [
     {
       "url": "https://www.capitalone.com/credit-cards/savorone/",
-      "notes": "Capital One official SavorOne page confirming 3% on dining, groceries, entertainment, streaming and $39 annual fee"
+      "notes": "Official Capital One page checked 2026-10-02: SavorOne Rewards is now a fair-credit card with a $39 annual fee; 3% grocery/dining/entertainment/streaming, 5% Capital One Travel, 8% Capital One Entertainment, 1% other. The $0 excellent-credit card is now Capital One Savor (see capital-one-savor)."
     },
     {
       "url": "https://www.bankrate.com/credit-cards/news/capital-one-savorone-changes/",
@@ -64,13 +90,13 @@
       "notes": "Capital One SavorOne overview confirming earning categories and $200 welcome bonus"
     }
   ],
-  "last_updated": "2026-05-06T00:17:22.388Z",
+  "last_updated": "2026-10-02",
   "hotel_program": null,
   "application_rules": {
     "rules": []
   },
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-04-25T16:03:25.291Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-23T17:27:59.994652",
   "cash_advance_fee_pct": 29.49,
   "_revert_history": [

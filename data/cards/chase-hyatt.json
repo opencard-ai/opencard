@@ -16,11 +16,11 @@
     "offer_status": "public",
     "confidence": "high",
     "notes": [
-        "Chase issuer page verified 2026-08-22: 30,000 points after $3,000/3mo plus up to 30,000 points through temporary extra earning on up to $15,000 in the first 6 months.",
-        "The prior elevated 75,000-point offer expired on 2026-08-20; Chase now displays the standard up-to-60,000-point public offer."
+      "Chase issuer page verified 2026-08-22: 30,000 points after $3,000/3mo plus up to 30,000 points through temporary extra earning on up to $15,000 in the first 6 months.",
+      "The prior elevated 75,000-point offer expired on 2026-08-20; Chase now displays the standard up-to-60,000-point public offer."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-08-22",
+    "last_verified": "2026-10-02",
     "is_elevated": false,
     "expires": null
   },
@@ -72,7 +72,8 @@
   ],
   "sources": [
     {
-      "url": "https://www.chase.com/personal/credit-cards/hyatt-world-of-hyatt-credit-card"
+      "url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card",
+      "notes": "Official Chase page checked 2026-10-02: up to 60,000 bonus points (30k after $3k in 3 months + up to 30k more at 2x on up to $15k in 6 months); $95 annual fee."
     }
   ],
   "hotel_program": null,
@@ -80,7 +81,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-27T20:00:00.000Z",
+  "last_updated": "2026-10-02",
   "recurring_credits": [
     {
       "credit_key": "doordash-non-restaurant-credit",
@@ -112,7 +113,7 @@
     "source": "chase.com",
     "last_updated": "2026-04-24"
   },
-  "last_verified": "2026-08-22",
+  "last_verified": "2026-10-02",
   "next_review": "2026-09-22T00:00:00.000-07:00",
   "featured": true
 }

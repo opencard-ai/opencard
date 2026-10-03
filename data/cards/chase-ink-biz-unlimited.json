@@ -7,18 +7,19 @@
   "foreign_transaction_fee": 3,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 8000,
-    "time_period_months": 4,
-    "bonus_points": 100000,
-    "estimated_value": 1700,
-    "description": "$1,000 cash back (100,000 Ultimate Rewards points) after you spend $8,000 on purchases in the first 4 months after account opening.",
+    "spending_requirement": 6000,
+    "time_period_months": 3,
+    "bonus_points": 75000,
+    "estimated_value": 1275,
+    "description": "Earn $750 cash back (75,000 Ultimate Rewards points) after you spend $6,000 on purchases in the first 3 months after account opening.",
     "point_program": "Chase Ultimate Rewards",
-    "offer_status": "public_limited_time",
+    "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Official Chase Ink Business Unlimited page confirmed $750 struck through to $1,000 cash back after $8,000/4 months on 2026-07-05."
+      "Official Chase Ink Business Unlimited page checked 2026-10-02 shows $750 after $6,000 in 3 months; the $1,000 / $8,000 / 4-month limited-time offer has ended."
     ],
-    "last_verified": "2026-07-05"
+    "last_verified": "2026-10-02",
+    "is_elevated": false
   },
   "earning_rates": [
     {
@@ -74,7 +75,7 @@
   "sources": [
     {
       "url": "https://creditcards.chase.com/business-credit-cards/ink/unlimited",
-      "notes": "Official Chase product page confirming current $1,000 cash back offer after $8,000 spend in 4 months."
+      "notes": "Official Chase product page checked 2026-10-02: $750 cash back after $6,000 in 3 months; $0 annual fee."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/chase-ink-card-showdown/",
@@ -89,13 +90,13 @@
       "notes": "Confirms 3% foreign transaction fee."
     }
   ],
-  "last_updated": "2026-07-05T15:10:00.000-07:00",
+  "last_updated": "2026-10-02",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-07-05T15:10:00.000-07:00",
+  "last_verified": "2026-10-02",
   "next_review": "2026-08-04T15:10:00.000-07:00",
   "featured": true
 }

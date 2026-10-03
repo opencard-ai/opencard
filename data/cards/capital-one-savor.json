@@ -7,29 +7,33 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 0,
+    "bonus_points": 200,
     "spending_requirement": 500,
     "time_period_months": 3,
-    "description": "Limited-time offer: Earn a one-time $250 cash bonus once you spend $500 on purchases within the first 3 months from account opening.",
+    "description": "Earn a one-time $200 cash bonus once you spend $500 on purchases within the first 3 months from account opening.",
     "point_program": "Cash Back",
-    "estimated_value": 250,
-    "offer_status": "limited_time_public",
+    "estimated_value": 200,
+    "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Official Capital One Savor product page shows this as a public limited-time offer.",
-      "No explicit offer end date was visible on the official page at verification time.",
+      "Official Capital One Savor page checked 2026-10-02 shows the standard $200 bonus; the earlier $250 limited-time offer has ended.",
       "This is Capital One Savor, not the separate SavorOne card."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-11",
-    "is_elevated": true,
+    "last_verified": "2026-10-02",
+    "is_elevated": false,
     "expires": null
   },
   "earning_rates": [
     {
+      "category": "Capital One Entertainment",
+      "rate": 8,
+      "notes": "8% cash back on Capital One Entertainment purchases"
+    },
+    {
       "category": "Capital One Travel",
       "rate": 5,
-      "notes": "Hotels and rental cars booked through Capital One Travel"
+      "notes": "Hotels, vacation rentals and rental cars booked through Capital One Travel"
     },
     {
       "category": "Dining",
@@ -86,18 +90,18 @@
   "sources": [
     {
       "url": "https://www.capitalone.com/credit-cards/savor/",
-      "notes": "Official Capital One Savor page confirming public limited-time $250 cash bonus after $500 spend in 3 months, $0 annual fee, and core cash-back categories. No explicit end date visible on 2026-06-11."
+      "notes": "Official Capital One page checked 2026-10-02: $0 fee; $200 after $500 in 3 months; 8% Capital One Entertainment, 5% hotels/vacation rentals/rental cars via Capital One Travel, 3% grocery/dining/entertainment/streaming, 1% other."
     },
     {
       "url": "https://www.fool.com/money/credit-cards/articles/limited-time-offer-earn-a-250-bonus-with-the-capital-one-savor-rewards-card/",
       "notes": "Secondary source corroborating the limited-time $250 cash bonus after $500 spend in the first 3 months."
     }
   ],
-  "last_updated": "2026-07-15T20:08:19.000Z",
+  "last_updated": "2026-10-02",
   "hotel_program": null,
   "application_rules": {
     "rules": []
   },
-  "last_verified": "2026-07-15T20:08:19.000Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-11T20:20:00.000Z"
 }

@@ -81,7 +81,8 @@
       "notes": "USCCG card review (LLM-friendly static HTML)"
     },
     {
-      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/"
+      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/",
+      "notes": "Official Amex page checked 2026-10-02: Annual Fee $895; welcome offer as high as 300,000 MR after $20,000 in 3 months."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/amex-business-platinum-2025-refresh/"
@@ -94,7 +95,7 @@
       "notes": "DoC best current sign-up bonus list"
     }
   ],
-  "last_updated": "2026-07-15T20:08:19.000Z",
+  "last_updated": "2026-10-02",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -173,13 +174,15 @@
     }
   ],
   "welcome_offer": {
-    "bonus_points": 200000,
+    "bonus_points": 300000,
     "spending_requirement": 20000,
     "time_period_months": 3,
-    "description": "Earn up to 200,000 Membership Rewards points when you spend $20,000 within 3 months of account opening.",
-    "point_program": "MR",
-    "estimated_value": 3400,
-    "is_elevated": true
+    "description": "As-high-as offer: apply and find out your welcome offer, as high as 300,000 Membership Rewards points after you spend $20,000 in purchases within the first 3 months. Welcome offers vary and you may not be eligible for an offer.",
+    "point_program": "Amex Membership Rewards",
+    "estimated_value": 5100,
+    "is_elevated": true,
+    "offer_status": "as_high_as_ymmv",
+    "last_verified": "2026-10-02"
   },
   "welcome_bonus": {
     "amount": 200000,
@@ -188,7 +191,7 @@
     "last_updated": "2026-05-07"
   },
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-08-11",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.942000+00:00",
   "featured": true
 }

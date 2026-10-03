@@ -7,22 +7,23 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 125000,
+    "bonus_points": 0,
     "spending_requirement": 3000,
     "time_period_months": 3,
-    "description": "Limited-time offer: Earn 125,000 Marriott Bonvoy bonus points + 1 Free Night Award valued up to 50,000 points + up to $100 in airline credits after spending $3,000 on eligible purchases in the first 3 months from account opening.",
+    "description": "Earn 3 Free Night Awards after spending $3,000 on eligible purchases within 3 months of account opening. Each Free Night Award is redeemable for a one-night stay at properties with a redemption level up to 50,000 points.",
     "point_program": "Marriott Bonvoy",
     "estimated_value": 975,
-    "free_nights": 1,
+    "free_nights": 3,
     "free_night_value_cap": 50000,
-    "airline_credit_value": 100,
-    "offer_status": "public_limited_time",
+    "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Chase and Marriott issuer pages corroborate the 125k + 50k FNA + airline credits public offer."
+      "Official Chase Boundless page checked 2026-10-02 shows 3 Free Night Awards (up to 50k each) after $3,000 in 3 months; the 125k + 1 FNA offer has ended.",
+      "Separately, a special offer through 6/30/2027 gives up to $100 in statement credits ($50 semi-annually) after $500 in eligible airline purchases; this is not part of the welcome bonus."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-06-06"
+    "last_verified": "2026-10-02",
+    "is_elevated": false
   },
   "earning_rates": [
     {
@@ -72,14 +73,14 @@
   "sources": [
     {
       "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless",
-      "notes": "Official Chase page Apr 2026."
+      "notes": "Official Chase page checked 2026-10-02: 3 Free Night Awards (each up to 50k points) after $3,000 in 3 months; $95 fee."
     },
     {
       "url": "https://www.msn.com/en-us/travel/tips/new-marriott-boundless-card-welcome-bonus-offer-up-to-4-free-night-awards",
       "notes": "News report Apr 2026."
     }
   ],
-  "last_updated": "2026-05-11T18:34:34.508Z",
+  "last_updated": "2026-10-02",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Silver Elite",
@@ -118,7 +119,7 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:46.246653",
-  "last_verified": "2026-06-06",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-23T17:26:46.246653",
   "featured": true
 }

@@ -8,7 +8,18 @@
   "credit_required": "Good",
   "welcome_offer": {
     "spending_requirement": 500,
-    "time_period_months": 3
+    "time_period_months": 3,
+    "bonus_points": 250,
+    "point_program": "Cash Back",
+    "estimated_value": 250,
+    "description": "Limited-time offer: earn a $250 bonus (up from $200) after you spend $500 on purchases in the first 3 months from account opening.",
+    "offer_status": "public_limited_time",
+    "is_elevated": true,
+    "confidence": "high",
+    "notes": [
+      "Official Chase Freedom Flex page checked 2026-10-02 shows \"LIMITED-TIME OFFER $200 strike through $250 bonus\"; no end date shown."
+    ],
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -73,20 +84,20 @@
   "sources": [
     {
       "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
-      "notes": "Official Chase page Apr 2026."
+      "notes": "Official Chase page checked 2026-10-02: limited-time $250 bonus after $500 in 3 months; $0 annual fee; 5% quarterly categories."
     },
     {
       "url": "https://www.bankrate.com/credit-cards/cash-back/chase-freedom-flex-q2-2026-categories/",
       "notes": "Bankrate review Mar 2026."
     }
   ],
-  "last_updated": "2026-05-11T18:31:59.800Z",
+  "last_updated": "2026-10-02",
   "hotel_program": null,
   "application_rules": {
     "rules": []
   },
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-04-25T16:02:37.873Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-23T17:27:59.994652",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 5,

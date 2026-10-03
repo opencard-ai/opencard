@@ -26,17 +26,22 @@
     {
       "category": "Chase Travel",
       "rate": 8,
-      "notes": "8x points on travel purchased through Chase Travel"
+      "notes": "8x points on all purchases through Chase Travel, including The Edit"
     },
     {
-      "category": "All Other Travel",
+      "category": "Lyft",
       "rate": 5,
-      "notes": "5x points on all other travel purchases worldwide"
+      "notes": "5x total points on Lyft rides through 9/30/27"
     },
     {
-      "category": "Dining",
+      "category": "Flights & Hotels Booked Direct",
+      "rate": 4,
+      "notes": "4x points on flights & hotels booked direct"
+    },
+    {
+      "category": "Social Media & Search Engine Advertising",
       "rate": 3,
-      "notes": "3x points at restaurants worldwide including takeout and delivery"
+      "notes": "3x points on social media & search engine advertising, on up to $1 million in spend each anniversary year (starting 11/15/26)"
     },
     {
       "category": "All Other Purchases",
@@ -122,7 +127,7 @@
   "sources": [
     {
       "url": "https://creditcards.chase.com/business-credit-cards/sapphire/reserve",
-      "notes": "Official Chase page checked 2026-09-29: Sapphire Lounges by The Club + 1,300+ Priority Pass lounges with up to two guests."
+      "notes": "Official Chase page checked 2026-10-02: 200k after $30k/6 mo; 8x Chase Travel/5x Lyft/4x direct flights & hotels/3x social & search ads/1x; $300 travel, $500 The Edit, $400 ZipRecruiter, $200 Google Workspace, $120 Lyft, $100 gift cards, $120 Global Entry, DoorDash DashPass + $25/mo promos. No Instacart credit."
     },
     {
       "url": "https://www.nerdwallet.com/business/credit-cards/reviews/sapphire-reserve-business",
@@ -134,7 +139,7 @@
     }
   ],
   "notes": "Business version of Sapphire Reserve. Same $795 AF and credits. 200,000 point limited-time welcome bonus makes it very attractive. Employee cards are free. Can combine points with personal Sapphire Reserve for larger balances. Key for business travelers who want same premium benefits as personal Reserve.",
-  "last_updated": "2026-09-29T12:00:00.000-07:00",
+  "last_updated": "2026-10-02",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -147,7 +152,7 @@
       "amount": 300,
       "frequency": "annual",
       "category": "travel",
-      "description": "$300 annual credit for travel purchases. Automatically applied.",
+      "description": "$300 annual credit on travel purchases (auto-applied, no enrollment)",
       "reset_type": "cardmember_year"
     },
     {
@@ -156,7 +161,7 @@
       "amount": 500,
       "frequency": "annual",
       "category": "travel",
-      "description": "$500 annual credit for prepaid hotels via The Edit by Chase Travel.",
+      "description": "Up to $500 annually for prepaid hotel bookings through The Edit by Chase Travel ($250 max per transaction).",
       "reset_type": "cardmember_year"
     },
     {
@@ -165,7 +170,7 @@
       "amount": 120,
       "frequency": "annual",
       "category": "ride",
-      "description": "$120 annual ($10/month) for Lyft rides. Enrollment required.",
+      "description": "$10 monthly in-app Lyft credits ($120/year) through 9/30/27.",
       "reset_type": "cardmember_year"
     },
     {
@@ -180,41 +185,41 @@
     {
       "credit_key": "global-entry-credit",
       "name": "Global Entry Credit",
-      "amount": 100,
+      "amount": 120,
       "frequency": "every_4_years",
       "category": "travel",
-      "description": "Up to $100 every 4 years for Global Entry or TSA PreCheck.",
+      "description": "Up to $120 every 4 years for Global Entry, TSA PreCheck, or NEXUS.",
       "reset_type": "every_4_years"
     },
     {
-      "credit_key": "travel-credit",
-      "name": "Travel Credit",
-      "amount": 300,
-      "frequency": "annual",
-      "category": "travel",
-      "description": "$300 annual credit on travel purchases (auto-applied, no enrollment)",
-      "reset_type": "calendar_year"
-    },
-    {
-      "credit_key": "doordash-credit",
-      "name": "DoorDash Credit",
-      "amount": 15,
-      "frequency": "annual",
+      "credit_key": "doordash-promos",
+      "name": "DoorDash Promos",
+      "amount": 25,
+      "frequency": "monthly",
       "category": "dining",
-      "description": "$15 monthly DoorDash credit (enrollment required, $180/year total)",
+      "description": "With complimentary DashPass (activate by 12/31/27): up to $25 each month on DoorDash: a $5 monthly restaurant promo plus two $10 promos for groceries, retail and more. Available through 12/31/27.",
+      "reset_type": "calendar_month"
+    },
+    {
+      "credit_key": "ziprecruiter-credit",
+      "name": "ZipRecruiter Credit",
+      "amount": 200,
+      "frequency": "semi_annual",
+      "category": "other",
+      "description": "Up to $400 per year in ZipRecruiter statement credits ($200 Jan–Jun and $200 Jul–Dec).",
       "reset_type": "calendar_year"
     },
     {
-      "credit_key": "instacart-credit",
-      "name": "Instacart Credit",
-      "amount": 15,
-      "frequency": "annual",
-      "category": "groceries",
-      "description": "$15 monthly Instacart credit (enrollment required, $180/year total)",
+      "credit_key": "gift-card-credit",
+      "name": "Curated Gift Card Credit",
+      "amount": 50,
+      "frequency": "semi_annual",
+      "category": "shopping",
+      "description": "Up to $100 per year in statement credits for gift cards purchased from a curated collection ($50 per half-year).",
       "reset_type": "calendar_year"
     }
   ],
-  "last_verified": "2026-07-15T20:08:19.000Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.969000+00:00",
   "featured": true
 }
