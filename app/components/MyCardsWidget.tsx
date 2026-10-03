@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { CreditCard, X, Cloud } from "lucide-react";
 import { trackCardAdded, trackEvent } from "@/lib/analytics";
+import { resolveCardIds } from "@/lib/card-aliases";
 
 const STORAGE_KEY = "opencard_existing_cards";
 const SUBSCRIBED_EMAIL_KEY = "opencard_subscribed_email";
@@ -110,7 +111,7 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
           const res = await fetch(`/api/my-cards?email=${encodeURIComponent(email)}`);
           if (res.ok) {
             const data = await res.json();
-            const cloudCards: string[] = data.cards || [];
+            const cloudCards: string[] = resolveCardIds(data.cards || []);
             setSelectedCards(cloudCards);
             localStorage.setItem(STORAGE_KEY, JSON.stringify(cloudCards));
             setSubscribedEmail(email);
@@ -123,7 +124,8 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         try {
-          setSelectedCards(JSON.parse(stored));
+          const parsed = JSON.parse(stored);
+          setSelectedCards(Array.isArray(parsed) && parsed.every(x => typeof x === "string") ? resolveCardIds(parsed) : parsed);
         } catch {}
       }
     };

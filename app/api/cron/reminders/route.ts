@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { bucketCredit } from "../../../../lib/reminder-logic";
 import { hiltonAnniversaryHint, hiltonEmailSection, openingMonthText, reminderInstances, type HiltonEmailHint } from "@/lib/hilton-anniversary";
 import { sendEmail } from "@/lib/email";
+import { resolveCardId } from "@/lib/card-aliases";
 
 const RedisClass = (await import("@upstash/redis")).Redis;
 const redis = new RedisClass({
@@ -275,7 +276,8 @@ export async function GET(req: NextRequest) {
       if (!isReminderOptedIn(userData)) continue;
       if (userData.status !== "confirmed") continue;
 
-      const instances = reminderInstances(userData);
+      // Retired card ids (merged duplicates) resolve to the canonical card.
+      const instances = reminderInstances(userData).map(x => ({ ...x, card_id: resolveCardId(x.card_id) }));
       const cards = [...new Set(instances.map(x => x.card_id))];
       if (!cards.length) continue;
 

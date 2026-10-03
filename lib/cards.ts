@@ -3,6 +3,7 @@
 
 import fs from "fs";
 import path from "path";
+import { resolveCardId } from "./card-aliases";
 
 const CARDS_DIR = path.join(process.cwd(), "data/cards");
 
@@ -217,9 +218,11 @@ export function getOpenCards(): CreditCard[] {
 }
 
 export function getCardById(cardId: string): CreditCard | null {
-  // Look up by card_id field (not filename) to handle mismatches gracefully
+  // Look up by card_id field (not filename) to handle mismatches gracefully.
+  // Retired ids (merged duplicates) resolve to their canonical card.
+  const id = resolveCardId(cardId);
   const cards = getAllCards();
-  return cards.find((c) => c.card_id === cardId) || null;
+  return cards.find((c) => c.card_id === id) || null;
 }
 
 export function getAllIssuers(): string[] {

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { resolveCardId, resolveCardIds } from "@/lib/card-aliases";
 
 const Redis = (await import("@upstash/redis")).Redis;
 
@@ -45,7 +46,7 @@ function normalizeInstances(userData: Record<string, unknown>): UserCardInstance
         const baseInstanceId = String(x.instance_id || cardId);
         return {
           instance_id: makeUniqueInstanceId(baseInstanceId, index, seen),
-          card_id: cardId,
+          card_id: resolveCardId(cardId),
           ...(x.nickname ? { nickname: String(x.nickname) } : {}),
           ...(x.last4 ? { last4: String(x.last4).slice(-4) } : {}),
           created_at: Number(x.created_at || Date.now()),
@@ -57,7 +58,7 @@ function normalizeInstances(userData: Record<string, unknown>): UserCardInstance
   const legacyCards = Array.isArray(userData.cards) ? (userData.cards as string[]) : [];
   return legacyCards.map((card_id, index) => ({
     instance_id: makeUniqueInstanceId(card_id, index, seen),
-    card_id,
+    card_id: resolveCardId(card_id),
     created_at: Number(userData.created_at || Date.now()) + index,
     status: "active",
   }));
@@ -82,7 +83,7 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json({
       // Never return the hash — only card data
-      cards: userData.cards || [],
+      cards: Array.isArray(userData.cards) ? resolveCardIds(userData.cards as string[]) : (userData.cards || []),
       card_instances: normalizeInstances(userData),
       marketing_optin: userData.marketing_optin || false,
       created_at: userData.created_at,

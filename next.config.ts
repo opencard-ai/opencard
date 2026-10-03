@@ -72,6 +72,8 @@ const nextConfig: NextConfig = {
       ["wyndham-rewards-earner-plus-barclays", "barclays-wyndham-earner-plus"],
       ["wyndham-rewards-earner-business-barclays", "barclays-wyndham-earner-biz"],
       ["bilt-palladian", "bilt-palladium"],
+      // Stale duplicate merged 2026-10-02 (see lib/card-aliases.ts).
+      ["us-bank-altitude-connect-biz", "us-bank-biz-altitude-connect"],
     ] as const;
 
     return legacyCardRedirects.flatMap(([from, to]) => [

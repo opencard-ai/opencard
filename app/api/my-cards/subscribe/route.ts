@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendEmail } from "@/lib/email";
+import { resolveCardId } from "@/lib/card-aliases";
 
 const Redis = (await import("@upstash/redis")).Redis;
 
@@ -69,7 +70,7 @@ function normalizeCardInstances(input: unknown, fallbackCards: unknown): UserCar
         const count = (seen.get(entry) || 0) + 1;
         seen.set(entry, count);
         const instanceId = count === 1 ? entry : `${entry}-${now.toString(36)}-${index}`.slice(0, 80);
-        return { instance_id: instanceId, card_id: entry, created_at: now + index, status: "active" };
+        return { instance_id: instanceId, card_id: resolveCardId(entry), created_at: now + index, status: "active" };
       }
       if (!entry || typeof entry !== "object") return null;
       const obj = entry as Record<string, unknown>;
@@ -81,7 +82,7 @@ function normalizeCardInstances(input: unknown, fallbackCards: unknown): UserCar
       const instanceId = count === 1 ? baseInstanceId : `${baseInstanceId}-${now.toString(36)}-${index}`.slice(0, 80);
       return {
         instance_id: instanceId,
-        card_id: cardId,
+        card_id: resolveCardId(cardId),
         ...(obj.nickname ? { nickname: String(obj.nickname).slice(0, 80) } : {}),
         ...(obj.last4 ? { last4: String(obj.last4).slice(-4) } : {}),
         created_at: Number(obj.created_at || now + index),

@@ -13,6 +13,7 @@ import HelpHint from "@/app/components/HelpHint";
 import CardArt from "@/app/components/CardArt";
 import MyCardsAssistant from "@/app/components/MyCardsAssistant";
 import { toast } from "@/lib/toast";
+import { resolveCardId } from "@/lib/card-aliases";
 
 const STORAGE_KEY = "opencard_existing_cards";
 const SUBSCRIBED_EMAIL_KEY = "opencard_subscribed_email";
@@ -347,11 +348,12 @@ function normalizeCardInstances(input: unknown): UserCardInstance[] {
   return input
     .map((entry, index): UserCardInstance | null => {
       if (typeof entry === "string") {
-        const cardId = entry;
+        // Instance ids stay as saved; card_id resolves retired (merged) ids.
+        const cardId = resolveCardId(entry);
         const count = (seen.get(cardId) || 0) + 1;
         seen.set(cardId, count);
         const instanceId = count === 1 ? cardId : `${cardId}-${now.toString(36)}-${index}`;
-        return { instance_id: instanceId, card_id: cardId, created_at: now + index, status: "active" };
+        return { instance_id: count === 1 ? entry : instanceId, card_id: cardId, created_at: now + index, status: "active" };
       }
       if (entry && typeof entry === "object") {
         const obj = entry as Record<string, unknown>;
@@ -365,7 +367,7 @@ function normalizeCardInstances(input: unknown): UserCardInstance[] {
 
         return {
           instance_id: instanceId,
-          card_id: cardId,
+          card_id: resolveCardId(cardId),
           ...(obj.nickname ? { nickname: String(obj.nickname) } : {}),
           ...(obj.last4 ? { last4: String(obj.last4).slice(-4) } : {}),
           created_at: Number(obj.created_at || now + index),

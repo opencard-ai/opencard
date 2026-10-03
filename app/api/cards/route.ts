@@ -1,4 +1,5 @@
 import { getAllCards } from "@/lib/cards";
+import { resolveCardId } from "@/lib/card-aliases";
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
@@ -14,7 +15,8 @@ export async function GET(request: Request) {
 
   // Filter by card_id if provided - always returns full data
   if (cardId) {
-    const card = cards.find(c => c.card_id === cardId);
+    const canonicalId = resolveCardId(cardId);
+    const card = cards.find(c => c.card_id === canonicalId);
     if (!card) {
       return NextResponse.json({ error: "Card not found" }, { status: 404 });
     }
@@ -28,7 +30,9 @@ export async function GET(request: Request) {
       idsParam
         .split(",")
         .map(s => s.trim())
-        .filter(s => /^[a-z0-9][a-z0-9-]{0,80}$/.test(s)),
+        .filter(s => /^[a-z0-9][a-z0-9-]{0,80}$/.test(s))
+        // Retired ids (merged duplicates) resolve to the canonical card.
+        .map(resolveCardId),
     );
     if (wanted.size === 0) return NextResponse.json([]);
     if (wanted.size > 100) {
