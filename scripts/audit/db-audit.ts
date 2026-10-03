@@ -204,7 +204,7 @@ if (fs.existsSync(urlFile)) {
 // ---- output
 const popular = new Set([...INDEXABLE_CARD_IDS, ...cards.filter(c => c.featured).map(c => c.card_id), 'barclays-old-navy-navyist-rewards-mastercard', 'amex-blue-biz-cash']);
 const sevRank: Record<Sev, number> = { high: 0, medium: 1, low: 2 };
-findings.sort((a, b) => sevRank[a.severity] - sevRank[b.severity] || Number(popular.has(b.card_id)) - Number(popular.has(a.card_id)) || a.type.localeCompare(b.type) || a.card_id.localeCompare(b.card_id));
+findings.sort((a, b) => sevRank[a.severity] - sevRank[b.severity] || Number(popular.has(b.card_id)) - Number(popular.has(a.card_id)) || a.type.localeCompare(b.type) || a.card_id.localeCompare(b.card_id) || (a.field || '').localeCompare(b.field || '') || a.detail.localeCompare(b.detail));
 const counts: Record<string, Record<Sev, number>> = {};
 for (const f of findings) { (counts[f.type] ||= { high: 0, medium: 0, low: 0 })[f.severity]++; }
 const out = { generated_at: new Date().toISOString(), today, cards: cards.length, popular: [...popular].sort(), counts, url_check: fs.existsSync(urlFile) ? urlFile : null, findings: findings.map(f => ({ ...f, popular: popular.has(f.card_id) })) };

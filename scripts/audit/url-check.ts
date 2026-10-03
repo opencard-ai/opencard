@@ -32,7 +32,8 @@ async function check(j: { card_id: string; url: string }) {
 }
 async function main() {
 await Promise.all([...byHost.values()].map(async list => { for (const j of list) { results.push(await check(j)); await new Promise(r => setTimeout(r, 1500)); } }));
-results.sort((a, b) => a.card_id.localeCompare(b.card_id));
+// Deterministic order (requests finish in arbitrary order across hosts).
+results.sort((a, b) => a.card_id.localeCompare(b.card_id) || a.url.localeCompare(b.url));
 fs.mkdirSync(path.dirname(out), { recursive: true });
 fs.writeFileSync(out, `${JSON.stringify({ checked_at: new Date().toISOString(), count: results.length, results }, null, 2)}\n`);
 const s = { ok: 0, redirected_elsewhere: 0, http_404_410: 0, soft_404: 0, blocked: 0, other_http: 0, error: 0 };

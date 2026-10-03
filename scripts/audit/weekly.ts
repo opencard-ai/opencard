@@ -65,6 +65,7 @@ function main(): number {
 
     // Write into a scratch dir and only promote to artifacts/ once the run is
     // known-good, so an aborted run never leaves half-updated reports behind.
+    let cur: Finding[] | null = null;
     const before = sha('data/cards');
     const stage = fs.mkdtempSync(path.join(os.tmpdir(), 'opencard-audit-'));
     try {
@@ -73,7 +74,12 @@ function main(): number {
       run(['scripts/audit/db-audit.ts', '--today', today, '--urls', urlOut, '--out-dir', stage]);
       if (sha('data/cards') !== before) throw new DataChangedError('data/cards changed during audit; aborting without updating artifacts (rerun when no edits are in progress)');
       fs.mkdirSync(DIR, { recursive: true });
-      for (const f of [`${today}-url-check.json`, `${today}-db-audit.json`, `${today}-db-audit.md`]) {
+      // Reruns on the same day keep the first saved report so artifacts stay
+      // stable; this run is still compared against the last earlier report.
+      if (fs.existsSync(path.join(DIR, `${today}-db-audit.json`))) {
+        cur = JSON.parse(fs.readFileSync(path.join(stage, `${today}-db-audit.json`), 'utf8')).findings;
+        console.error(`audit:weekly: ${DIR}/${today}-db-audit.json already exists; not overwriting`);
+      } else for (const f of [`${today}-url-check.json`, `${today}-db-audit.json`, `${today}-db-audit.md`]) {
         // Point references at the promoted location instead of the scratch dir.
         fs.writeFileSync(path.join(DIR, f), fs.readFileSync(path.join(stage, f), 'utf8').split(`${stage}/`).join(`${DIR}/`));
       }
@@ -81,8 +87,8 @@ function main(): number {
       fs.rmSync(stage, { recursive: true, force: true });
     }
 
-    const cur: Finding[] = JSON.parse(fs.readFileSync(`${DIR}/${today}-db-audit.json`, 'utf8')).findings;
-    if (!prev) { console.log('NO_REPLY'); console.error(`audit:weekly: no earlier report; saved baseline ${DIR}/${today}-db-audit.json`); return 0; }
+    if (!cur) cur = JSON.parse(fs.readFileSync(`${DIR}/${today}-db-audit.json`, 'utf8')).findings as Finding[];
+    if (!prev) { console.log('NO_REPLY'); console.error(`audit:weekly: no earlier report; baseline is ${DIR}/${today}-db-audit.json`); return 0; }
     const prevKeys = new Set(prev.map(key));
     const fresh = cur.filter(f => (f.severity === 'high' || f.severity === 'medium') && !prevKeys.has(key(f)));
     if (fresh.length === 0) { console.log('NO_REPLY'); return 0; }
