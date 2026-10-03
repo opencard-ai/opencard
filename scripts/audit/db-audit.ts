@@ -1,5 +1,5 @@
 /** Deterministic card-database audit (read-only). Writes artifacts/audit/<date>-db-audit.{json,md}.
- *   npx tsx scripts/audit/db-audit.ts [--today YYYY-MM-DD] [--urls artifacts/audit/<date>-url-check.json]
+ *   npx tsx scripts/audit/db-audit.ts [--today YYYY-MM-DD] [--urls artifacts/audit/<date>-url-check.json] [--out-dir artifacts/audit]
  * URL reachability comes from scripts/audit/url-check.ts (optional input). */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -208,8 +208,9 @@ findings.sort((a, b) => sevRank[a.severity] - sevRank[b.severity] || Number(popu
 const counts: Record<string, Record<Sev, number>> = {};
 for (const f of findings) { (counts[f.type] ||= { high: 0, medium: 0, low: 0 })[f.severity]++; }
 const out = { generated_at: new Date().toISOString(), today, cards: cards.length, popular: [...popular].sort(), counts, url_check: fs.existsSync(urlFile) ? urlFile : null, findings: findings.map(f => ({ ...f, popular: popular.has(f.card_id) })) };
-fs.mkdirSync('artifacts/audit', { recursive: true });
-const base = `artifacts/audit/${today}-db-audit`;
+const outDir = arg('--out-dir') || 'artifacts/audit';
+fs.mkdirSync(outDir, { recursive: true });
+const base = `${outDir}/${today}-db-audit`;
 fs.writeFileSync(`${base}.json`, `${JSON.stringify(out, null, 2)}\n`);
 const md: string[] = [`# Card database audit (${today})`, '', `${cards.length} cards, ${findings.length} findings. "Popular" = curated indexable + featured + cards with GSC impressions.`, '', '| Issue type | High | Medium | Low |', '|---|---|---|---|'];
 for (const [t, c] of Object.entries(counts).sort((a, b) => (b[1].high * 100 + b[1].medium * 10 + b[1].low) - (a[1].high * 100 + a[1].medium * 10 + a[1].low))) md.push(`| ${t} | ${c.high} | ${c.medium} | ${c.low} |`);

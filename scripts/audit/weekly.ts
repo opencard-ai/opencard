@@ -52,6 +52,7 @@ function run(args: string[]): void {
   const r = spawnSync(process.execPath, [requireFromHere.resolve('tsx/cli'), ...args], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, env: { ...process.env, NODE_NO_WARNINGS: '1' } });
   if (r.status !== 0) throw new Error(`${args.join(' ')} failed (exit ${r.status}): ${(r.stderr || r.stdout || '').slice(-800)}`);
 }
+class DataChangedError extends Error {}
 const key = (f: Finding) => `${f.type}|${f.card_id}|${f.field || ''}|${f.detail.replace(/\s+/g, ' ').trim()}`;
 
 function main(): number {
@@ -62,11 +63,20 @@ function main(): number {
     const prevFile = [...reports].reverse().find(f => f.slice(0, 10) < today) || null;
     const prev: Finding[] | null = prevFile ? JSON.parse(fs.readFileSync(path.join(DIR, prevFile), 'utf8')).findings : null;
 
+    // Write into a scratch dir and only promote to artifacts/ once the run is
+    // known-good, so an aborted run never leaves half-updated reports behind.
     const before = sha('data/cards');
-    const urlOut = `${DIR}/${today}-url-check.json`;
-    run(['scripts/audit/url-check.ts', '--official-only', '--out', urlOut]);
-    run(['scripts/audit/db-audit.ts', '--today', today, '--urls', urlOut]);
-    if (sha('data/cards') !== before) throw new Error('data/cards changed during audit; aborting (audit must be read-only)');
+    const stage = fs.mkdtempSync(path.join(os.tmpdir(), 'opencard-audit-'));
+    try {
+      const urlOut = `${stage}/${today}-url-check.json`;
+      run(['scripts/audit/url-check.ts', '--official-only', '--out', urlOut]);
+      run(['scripts/audit/db-audit.ts', '--today', today, '--urls', urlOut, '--out-dir', stage]);
+      if (sha('data/cards') !== before) throw new DataChangedError('data/cards changed during audit; aborting without updating artifacts (rerun when no edits are in progress)');
+      fs.mkdirSync(DIR, { recursive: true });
+      for (const f of [`${today}-url-check.json`, `${today}-db-audit.json`, `${today}-db-audit.md`]) fs.copyFileSync(path.join(stage, f), path.join(DIR, f));
+    } finally {
+      fs.rmSync(stage, { recursive: true, force: true });
+    }
 
     const cur: Finding[] = JSON.parse(fs.readFileSync(`${DIR}/${today}-db-audit.json`, 'utf8')).findings;
     if (!prev) { console.log('NO_REPLY'); console.error(`audit:weekly: no earlier report; saved baseline ${DIR}/${today}-db-audit.json`); return 0; }
@@ -94,7 +104,8 @@ function main(): number {
     return 0;
   } catch (e) {
     console.error(`audit:weekly failed: ${e instanceof Error ? e.message : String(e)}`);
-    return 1;
+    // Distinct non-zero code so cron records the data-changed abort as a failure.
+    return e instanceof DataChangedError ? 2 : 1;
   } finally {
     fs.rmSync(LOCK, { force: true });
   }
