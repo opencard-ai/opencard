@@ -73,7 +73,10 @@ function main(): number {
       run(['scripts/audit/db-audit.ts', '--today', today, '--urls', urlOut, '--out-dir', stage]);
       if (sha('data/cards') !== before) throw new DataChangedError('data/cards changed during audit; aborting without updating artifacts (rerun when no edits are in progress)');
       fs.mkdirSync(DIR, { recursive: true });
-      for (const f of [`${today}-url-check.json`, `${today}-db-audit.json`, `${today}-db-audit.md`]) fs.copyFileSync(path.join(stage, f), path.join(DIR, f));
+      for (const f of [`${today}-url-check.json`, `${today}-db-audit.json`, `${today}-db-audit.md`]) {
+        // Point references at the promoted location instead of the scratch dir.
+        fs.writeFileSync(path.join(DIR, f), fs.readFileSync(path.join(stage, f), 'utf8').split(`${stage}/`).join(`${DIR}/`));
+      }
     } finally {
       fs.rmSync(stage, { recursive: true, force: true });
     }

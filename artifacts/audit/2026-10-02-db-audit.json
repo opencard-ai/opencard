@@ -104,7 +104,7 @@
       "low": 5
     }
   },
-  "url_check": "/var/folders/nz/4zv6d9s112n7n_y0p959nv380000gn/T/opencard-audit-tS1M0b/2026-10-02-url-check.json",
+  "url_check": "artifacts/audit/2026-10-02-url-check.json",
   "findings": [
     {
       "card_id": "chase-marriott-boundless",
