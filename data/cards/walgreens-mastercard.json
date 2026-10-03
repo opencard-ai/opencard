@@ -2,7 +2,7 @@
   "card_id": "walgreens-mastercard",
   "name": "myWalgreens Mastercard",
   "issuer": "Synchrony",
-  "network": "visa",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
@@ -55,7 +55,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:50.010Z",
+  "last_updated": "2026-10-03T03:19:54.149Z",
   "last_verified": "2026-04-16T13:41:50.010Z",
   "next_review": "2026-07-15T13:41:50.010000+00:00"
 }

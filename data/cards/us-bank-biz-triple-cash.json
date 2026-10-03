@@ -91,7 +91,7 @@
       "notes": "Official U.S. Bank product page."
     }
   ],
-  "last_updated": "2026-07-05T15:10:00.000-07:00",
+  "last_updated": "2026-10-03T03:19:54.149Z",
   "status": "active",
   "notes": "Strong for gas, cell phone bills, and software subscriptions. $750 welcome offer is notable. 3% foreign transaction fee.",
   "hotel_program": null,
@@ -100,13 +100,6 @@
     "notes": null
   },
   "recurring_credits": [
-    {
-      "credit_key": "annual-software-credit",
-      "name": "annual software credit",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "digital"
-    },
     {
       "credit_key": "100-annual-software-credit",
       "name": "$100 annual software credit",

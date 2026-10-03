@@ -55,12 +55,7 @@
     }
   ],
   "travel_benefits": {
-    "lounge_access": {
-      "centurion": false,
-      "priority_pass": false,
-      "delta_skyclub": false,
-      "other": "Complimentary upgrade list after Medallion Members and Reserve Card Members when holding an eligible ticket on Delta."
-    },
+    "lounge_access": [],
     "hotel_status": [],
     "other_benefits": [
       {
@@ -98,6 +93,10 @@
       {
         "name": "Companion Certificate for Delta Vacations",
         "description": "Companion Certificate can now be redeemed toward the eligible flight portion of a Delta Vacations package; terms apply."
+      },
+      {
+        "name": "Other travel perk",
+        "description": "Complimentary upgrade list after Medallion Members and Reserve Card Members when holding an eligible ticket on Delta."
       }
     ]
   },
@@ -144,7 +143,7 @@
       "notes": "Delta News Hub official announcement: limited-time welcome offers and 2026 benefit updates"
     }
   ],
-  "last_updated": "2026-09-30T12:00:00.000Z",
+  "last_updated": "2026-10-03T03:19:54.149Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

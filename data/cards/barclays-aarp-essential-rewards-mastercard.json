@@ -33,11 +33,7 @@
   ],
   "annual_credits": [],
   "travel_benefits": {
-    "lounge_access": {
-      "centurion": false,
-      "priority_pass": false,
-      "other": "None"
-    },
+    "lounge_access": [],
     "hotel_status": [],
     "other_benefits": [
       "No annual fee",
@@ -73,7 +69,7 @@
       "url": "businessinsider.com"
     }
   ],
-  "last_updated": "2026-04-27T04:16:50.948Z",
+  "last_updated": "2026-10-03T03:19:54.149Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

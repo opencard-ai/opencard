@@ -52,12 +52,17 @@
     }
   ],
   "travel_benefits": {
-    "lounge_access": {
-      "centurion": true,
-      "priority_pass": false,
-      "delta_sky_club": true,
-      "other": "15 Delta Sky Club visits each Medallion Year; complimentary Centurion Lounge/Escape Lounge access when flying Delta and purchasing the flight with the Card; terms apply"
-    },
+    "lounge_access": [
+      {
+        "name": "The Centurion Lounge",
+        "type": "Lounge Access"
+      },
+      {
+        "name": "Delta Sky Club",
+        "type": "Lounge Access",
+        "discount": "15 Delta Sky Club visits each Medallion Year; complimentary Centurion Lounge/Escape Lounge access when flying Delta and purchasing the flight with the Card; terms apply"
+      }
+    ],
     "hotel_status": [],
     "other_benefits": [
       "First checked bag free on Delta flights",
@@ -111,7 +116,7 @@
       "notes": "Delta News Hub official announcement: limited-time welcome offers and 2026 benefit updates"
     }
   ],
-  "last_updated": "2026-08-29T17:00:00Z",
+  "last_updated": "2026-10-03T03:19:54.149Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

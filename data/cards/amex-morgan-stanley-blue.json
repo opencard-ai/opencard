@@ -2,7 +2,7 @@
   "card_id": "amex-morgan-stanley-blue",
   "name": "Amex Morgan Stanley Blue",
   "issuer": "American Express",
-  "network": "visa",
+  "network": "amex",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
@@ -25,10 +25,7 @@
   "travel_benefits": {
     "hotel_status": [],
     "other_benefits": [],
-    "lounge_access": {
-      "centurion": false,
-      "priority_pass": false
-    }
+    "lounge_access": []
   },
   "fhr_thc": {
     "fhr_eligible": false,
@@ -57,7 +54,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-05-08T05:47:54.573699+00:00",
+  "last_updated": "2026-10-03T03:19:54.149Z",
   "last_verified": "2026-05-08T05:47:54.573699+00:00",
   "next_review": "2026-07-15T13:41:49.948000+00:00",
   "cfpb_source": "Q3_2025",

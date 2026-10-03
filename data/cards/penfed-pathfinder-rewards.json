@@ -73,7 +73,7 @@
       "notes": "U.S. News review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.993Z",
+  "last_updated": "2026-10-03T03:19:54.149Z",
   "status": "active",
   "notes": "Annual fee waived for Honors Advantage members (those with qualifying PenFed products). Strong 4x on travel and 3x on dining. Points worth ~1.25 cents each.",
   "hotel_program": null,
@@ -82,13 +82,6 @@
     "notes": null
   },
   "recurring_credits": [
-    {
-      "credit_key": "annual-credit-for-travel",
-      "name": "annual credit for travel",
-      "amount": 100,
-      "frequency": "annual",
-      "category": "travel"
-    },
     {
       "credit_key": "100-annual-credit-for-travel",
       "name": "$100 annual credit for travel",

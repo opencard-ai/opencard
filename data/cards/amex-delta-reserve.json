@@ -39,12 +39,17 @@
     }
   ],
   "travel_benefits": {
-    "lounge_access": {
-      "centurion": true,
-      "delta_skyclub": true,
-      "priority_pass": false,
-      "other": "15 visits per year to Delta Sky Club when flying Delta; unlimited visits after spending $75,000 in a calendar year. Also receives complimentary access to The Centurion Lounge and Escape Lounges when flying Delta. 4 One-Time Guest Passes per Medallion Year."
-    },
+    "lounge_access": [
+      {
+        "name": "The Centurion Lounge",
+        "type": "Lounge Access"
+      },
+      {
+        "name": "Delta Sky Club",
+        "type": "Lounge Access",
+        "discount": "15 visits per year to Delta Sky Club when flying Delta; unlimited visits after spending $75,000 in a calendar year. Also receives complimentary access to The Centurion Lounge and Escape Lounges when flying Delta. 4 One-Time Guest Passes per Medallion Year."
+      }
+    ],
     "hotel_status": [],
     "other_benefits": [
       {
@@ -129,7 +134,7 @@
       "notes": "Delta News Hub official announcement: limited-time welcome offers and 2026 benefit updates"
     }
   ],
-  "last_updated": "2026-07-13T19:00:00Z",
+  "last_updated": "2026-10-03T03:19:54.149Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

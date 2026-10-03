@@ -56,11 +56,7 @@
     }
   ],
   "travel_benefits": {
-    "lounge_access": {
-      "centurion": false,
-      "priority_pass": false,
-      "other": "None"
-    },
+    "lounge_access": [],
     "hotel_status": [
       {
         "program": "Marriott Bonvoy",
@@ -107,7 +103,7 @@
       "url": "https://www.marriott.com/credit-cards/marriott-bonvoy-business-american-express-card.mi"
     }
   ],
-  "last_updated": "2026-07-16T18:40:00.000-07:00",
+  "last_updated": "2026-10-03T03:19:54.149Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

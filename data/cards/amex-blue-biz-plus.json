@@ -2,7 +2,7 @@
   "card_id": "amex-blue-biz-plus",
   "name": "Amex Blue Business Plus",
   "issuer": "American Express",
-  "network": "visa",
+  "network": "amex",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
@@ -67,7 +67,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-05-11T18:27:37.877Z",
+  "last_updated": "2026-10-03T03:19:54.149Z",
   "last_verified": "2026-05-08T05:47:54.573699+00:00",
   "next_review": "2026-07-15T13:41:49.940000+00:00",
   "featured": true

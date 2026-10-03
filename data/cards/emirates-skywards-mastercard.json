@@ -28,11 +28,13 @@
   ],
   "annual_credits": [],
   "travel_benefits": {
-    "lounge_access": {
-      "centurion": false,
-      "priority_pass": false,
-      "other": "Emirates lounge access (Emirates Business Class lounge access with qualifying spend)"
-    },
+    "lounge_access": [
+      {
+        "name": "Emirates lounge access",
+        "type": "Lounge Access",
+        "discount": "Emirates lounge access (Emirates Business Class lounge access with qualifying spend)"
+      }
+    ],
     "hotel_status": [],
     "other_benefits": [
       "Emirates Gold tier status for first year (with ability to retain through spend)",
@@ -79,7 +81,7 @@
       "url": "finance.yahoo.com"
     }
   ],
-  "last_updated": "2026-04-29T05:25:54.022Z",
+  "last_updated": "2026-10-03T03:19:54.149Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

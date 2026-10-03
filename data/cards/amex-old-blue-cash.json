@@ -33,11 +33,7 @@
   "annual_credits": [],
   "recurring_credits": [],
   "travel_benefits": {
-    "lounge_access": {
-      "centurion": false,
-      "priority_pass": false,
-      "other": "None"
-    },
+    "lounge_access": [],
     "hotel_status": [],
     "other_benefits": []
   },
@@ -76,7 +72,7 @@
   },
   "notes": "Legacy Old Blue Cash (OBC), distinct from Blue Cash Everyday (BCE) and Blue Cash Preferred (BCP). Do not map this deprecation onto BCE/BCP.",
   "_card_status_alert": "Old Blue Cash is being discontinued/converted to Blue Cash Everyday on March 4, 2027; BCE and BCP card files are intentionally unchanged.",
-  "last_updated": "2026-07-13T19:00:00Z",
+  "last_updated": "2026-10-03T03:19:54.149Z",
   "last_verified": "2026-07-13",
   "next_review": "2027-03-04T00:00:00Z"
 }

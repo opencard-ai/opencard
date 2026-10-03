@@ -33,11 +33,7 @@
   ],
   "annual_credits": [],
   "travel_benefits": {
-    "lounge_access": {
-      "centurion": false,
-      "priority_pass": false,
-      "other": "None"
-    },
+    "lounge_access": [],
     "hotel_status": [],
     "other_benefits": [
       "Flexible payment options: choose between paying over time (with interest) or paying in full each month",
@@ -73,7 +69,7 @@
   "_no_credits_found": true,
   "_no_credits_note": "Amazon Business Amex non-Prime ($0 AF) — no recurring USD credits. Value is 3% Amazon (up to $150k/yr) + 2% gas/dining/wireless + 1% other. Plus baggage insurance (not credit). Verified 2026-04-27.",
   "_card_status_alert": "Card transitioning from Amex to U.S. Bank Aug 14 2026. New issuer card may have different benefits (still 3% Amazon for non-Prime).",
-  "last_updated": "2026-05-08T05:47:54.573699+00:00",
+  "last_updated": "2026-10-03T03:19:54.149Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
