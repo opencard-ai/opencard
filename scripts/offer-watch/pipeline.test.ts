@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { assessCandidate, expiryReport, emptyLedger, normalizeDate, updateLedger, DEFAULT_OFFICIAL_DOMAINS, type Candidate, type Confirmation } from './gate';
+import { assessCandidate, expiryReport, emptyLedger, normalizeDate, updateLedger, isClosedToNewApplicants, DEFAULT_OFFICIAL_DOMAINS, type Candidate, type Confirmation } from './gate';
 import { applyPlanToCard, confirmationsFor, planApply, sanityCheck, schemaCheck } from './apply-core';
 import { autoExpiringEntries, buildCandidate, currentBonusVisible, extractValues, htmlToText, isErrorPage, samePage, stripQuery, type WatchEntry } from './collect';
 import { readFileSync } from 'node:fs';
@@ -336,5 +336,12 @@ const noForce = (calls: string[][]) => assert.ok(!calls.some(c => c.join(' ').in
   const k0 = res0.changes[0].fingerprint;
   const kept = updateLedger({ version: 1, updated_at: null, entries: { [k0]: { card_id: 'amex-marriott-bevy', field: res0.changes[0].field, value: res0.changes[0].new_value, audience: null, status: 'needs_verification', first_seen: 'a', last_seen: 'a', last_notified: null, reasons: ['x'], commit: 'abc', published_at: 'p' } } }, [res0], 'now');
   assert.deepEqual([kept.entries[k0].reasons, kept.entries[k0].commit, kept.entries[k0].published_at, kept.entries[k0].first_seen], [['x'], 'abc', 'p', 'a']);
+  // ---------- cards closed to new applicants: not watched, not auto-added, no expiry review
+  assert.ok(isClosedToNewApplicants({ status: 'discontinued' }) && isClosedToNewApplicants({ discontinued: true }) && !isClosedToNewApplicants({ status: 'active' }) && !isClosedToNewApplicants(undefined));
+  const closedCard = { card_id: 'closed-x', status: 'discontinued', welcome_offer: { bonus_points: 50000, expires: '2026-10-05', is_elevated: true }, sources: [{ url: 'https://www.usbank.com/credit-cards/x.html' }] };
+  const openCard = { ...closedCard, card_id: 'open-x', status: 'active' };
+  assert.deepEqual(expiryReport([closedCard, openCard], today).expiring_soon.map(i => i.card_id), ['open-x']);
+  assert.deepEqual(autoExpiringEntries([], [closedCard, openCard], today, DEFAULT_OFFICIAL_DOMAINS).map(e => e.card_id), ['open-x']);
+  assert.ok(!watch.some(w => w.card_id === 'us-bank-altitude-reserve'));
   console.log('offer-watch pipeline: passed');
 })().catch(error => { console.error(error); process.exit(1); });

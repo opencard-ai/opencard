@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { recommendationFacts, CARD_FACT_RULES } from "@/lib/recommend-facts";
-import { getAllCards } from "@/lib/cards";
+import { getAllCards, isClosedToNewApplicants } from "@/lib/cards";
 import { scoreCards, generateRecommendationExplanation, type UserPreferences } from "@/lib/recommend";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
@@ -80,7 +80,7 @@ If the user asks "which of MY cards…", "do I have a card for…", "我手上�
   const systemPrompt = `You are a friendly US credit card recommendation assistant on OpenCard. Your job is to help users find the best credit card for their needs.
 
 CARD DATABASE:
-${cardData.map(c => JSON.stringify(recommendationFacts(c))).join("\n")}
+${cardData.filter(c => !isClosedToNewApplicants(c)).map(c => JSON.stringify(recommendationFacts(c))).join("\n")}
 ${CARD_FACT_RULES}
 ${myCardsBlock}
 

@@ -17,6 +17,8 @@ function buildCardContext(card: CreditCard): string {
   const parts: string[] = [];
   parts.push(`Card: ${card.name} (${card.issuer})`);
   parts.push(`Annual fee: $${card.annual_fee}`);
+  const closed = card.status === "discontinued" || card.discontinued === true;
+  if (closed) parts.push(`Status: CLOSED to new applicants${card.discontinued_date ? ` since ${card.discontinued_date}` : ""}. No welcome offer; existing cardholders can keep using it and may ask the issuer about a product change. Do not suggest applying.`);
   if (card.earning_rates?.length) {
     const rates = card.earning_rates.slice(0, 6).map(r => `${r.rate}× ${r.category}`).join(", ");
     parts.push(`Earning: ${rates}`);
@@ -28,7 +30,7 @@ function buildCardContext(card: CreditCard): string {
     }).join("; ");
     parts.push(`Recurring credits: ${credits}`);
   }
-  if (card.welcome_offer) {
+  if (card.welcome_offer && !closed) {
     const wo = card.welcome_offer;
     if (wo.bonus_points) parts.push(`Welcome bonus: ${wo.bonus_points.toLocaleString()} pts after $${wo.spending_requirement?.toLocaleString() ?? "?"} in ${wo.time_period_months ?? 3} months`);
   }

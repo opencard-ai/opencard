@@ -2,7 +2,7 @@ import Link from "next/link";
 import RenewalCalculator from "@/app/components/RenewalCalculator";
 import { notFound } from "next/navigation";
 import { Check, AlertTriangle, ExternalLink, Gift } from "lucide-react";
-import { getCardById, getAllCards } from "@/lib/cards";
+import { getCardById, getAllCards, isClosedToNewApplicants } from "@/lib/cards";
 import ChatWidget from "../../../components/ChatWidget";
 import BackToCards from "../../../components/BackToCards";
 import AddToMyCardsButton from "../../../components/AddToMyCardsButton";
@@ -99,13 +99,21 @@ export async function generateStaticParams() {
   return params;
 }
 
+/** Copy for cards closed to new applicants (status "discontinued"). */
+function closedCopy(lang: string) {
+  if (lang === "zh") return { title: "已停止受理新申請", body: "此卡已不再接受新申請，也沒有開卡優惠。現有持卡人仍可繼續使用，也可能可以向發卡銀行申請轉卡（product change）。", since: "停止受理日期" };
+  if (lang === "zh-cn") return { title: "已停止受理新申请", body: "此卡已不再接受新申请，也没有开卡优惠。现有持卡人仍可继续使用，也可能可以向发卡银行申请转卡（product change）。", since: "停止受理日期" };
+  if (lang === "es") return { title: "Ya no acepta nuevas solicitudes", body: "Esta tarjeta ya no acepta nuevas solicitudes y no tiene oferta de bienvenida. Los titulares actuales pueden seguir usándola y es posible que puedan solicitar un cambio de producto al emisor.", since: "Cerrada a nuevas solicitudes desde" };
+  return { title: "No longer accepting new applications", body: "This card is closed to new applicants and has no welcome offer. Existing cardholders can keep using it, and a product change with the issuer may be possible.", since: "Closed to new applications since" };
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, card_id } = await params;
   const card = getCardById(card_id);
   if (!card) return { title: t("status.noResults", lang as any) };
   return {
     title: `${card.name} — OpenCard`,
-    description: `${card.name}: ${t("card.annualFee", lang as any)} $${card.annual_fee} | ${t("card.welcomeBonus", lang as any)}`,
+    description: `${card.name}: ${t("card.annualFee", lang as any)} $${card.annual_fee} | ${isClosedToNewApplicants(card) ? closedCopy(lang).title : t("card.welcomeBonus", lang as any)}`,
     robots: lang === "en" && isIndexableCard(card.card_id)
       ? { index: true, follow: true }
       : { index: false, follow: true },
@@ -127,6 +135,8 @@ export default async function CardDetailPage({ params }: Props) {
   const l = (key: string, p?: Record<string, string | number>) => t(key, locale, p);
   const freshness = freshnessFromIso(card.last_updated, lang);
   const editorial = lang === "en" ? getCardEditorial(card.card_id) : undefined;
+  const closed = isClosedToNewApplicants(card);
+  const closedText = closedCopy(lang);
   const referralOffer = getReferralOfferForCard(card);
   const isAmexReferral = referralOffer?.program === "amex";
   const isChaseMarriottReferral = referralOffer?.program === "chase-marriott";
@@ -203,8 +213,21 @@ export default async function CardDetailPage({ params }: Props) {
           )}
         </div>
 
-        {/* Welcome Offer */}
-        {card.welcome_offer && (
+        {/* Closed to new applicants */}
+        {closed && (
+          <div role="status" data-testid="closed-to-new-applicants" className="bg-slate-50 border border-slate-300 rounded-lg p-4 mt-4">
+            <h3 className="text-sm font-semibold text-slate-900 mb-1 flex items-center gap-1.5">
+              <AlertTriangle className="w-4 h-4 text-amber-600" /> {closedText.title}
+            </h3>
+            <p className="text-sm text-slate-700">{closedText.body}</p>
+            {card.discontinued_date && /^\d{4}-\d{2}-\d{2}$/.test(card.discontinued_date) && (
+              <p className="text-xs text-slate-500 mt-1">{closedText.since}: {card.discontinued_date}</p>
+            )}
+          </div>
+        )}
+
+        {/* Welcome Offer (hidden for cards closed to new applicants) */}
+        {card.welcome_offer && !closed && (
           <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-4">
             <h3 className="text-sm font-semibold text-amber-800 mb-1 flex items-center gap-1.5">
               <Gift className="w-4 h-4" /> {l("detail.welcomeBonus")}
@@ -250,7 +273,7 @@ export default async function CardDetailPage({ params }: Props) {
           </div>
         )}
 
-        {officialSource && (
+        {officialSource && !closed && (
           <a href={officialSource.url} target="_blank" rel="noopener noreferrer" data-issuer-outbound="official_terms" data-card-id={card.card_id} className="mt-4 inline-flex rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">
             {lang === "zh" ? "查看發卡銀行官方條款" : lang === "zh-cn" ? "查看发卡银行官方条款" : lang === "es" ? "Consultar condiciones del emisor" : "Check issuer terms"} ↗
           </a>

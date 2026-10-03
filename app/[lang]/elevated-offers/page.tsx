@@ -1,4 +1,4 @@
-import { getAllCards } from "@/lib/cards";
+import { getOpenCards } from "@/lib/cards";
 import ElevatedOffersList from "@/app/components/ElevatedOffersList";
 import { locales } from "@/lib/i18n";
 import type { Metadata } from "next";
@@ -29,6 +29,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ElevatedOffersPage({ params }: Props) {
   const { lang } = await params;
-  const cards = getAllCards();
+  const cards = getOpenCards();
   return <ElevatedOffersList cards={cards} lang={lang} />;
 }

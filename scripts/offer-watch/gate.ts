@@ -1,6 +1,8 @@
 import { createHash } from 'node:crypto';
 
 export type CardRecord = Record<string, any>;
+/** Closed to new applicants (repo convention: status "discontinued"; legacy: discontinued: true). No offer to watch. */
+export const isClosedToNewApplicants = (card: CardRecord | undefined) => card?.status === 'discontinued' || card?.discontinued === true;
 /** One independent fetch of an official page, recorded by collect.ts. */
 export interface Confirmation { url: string; fetch_id: string; checked_at: string; ok: boolean; status?: number; error?: string; official_domain: boolean; values: Record<string, unknown>; ambiguous_fields?: string[]; content_sha256?: string; final_url?: string; observed?: { current_bonus_visible?: boolean } }
 export interface Evidence { url: string; checked_at: string; official: boolean; audience: string; conflicts?: boolean; confirmations?: Confirmation[]; explicit_confirmations?: string[]; hold_only?: boolean; hold_reason?: string; auto_added?: string }
@@ -218,6 +220,7 @@ export function expiryReport(cards: Iterable<CardRecord>, today: string, windows
   const expired: ExpiryItem[] = [], expiringSoon: ExpiryItem[] = [], focus: ExpiryItem[] = [], aliasConflicts: ExpiryItem[] = [];
   const todayNumber = dayNumber(today);
   for (const card of cards) {
+    if (isClosedToNewApplicants(card)) continue; // closed to new applicants: no offer, nothing to expire
     const offer = card?.welcome_offer;
     const expiry = normalizeExpiry(offer);
     if (!expiry.value || !/^\d{4}-\d{2}-\d{2}$/.test(expiry.value)) continue;

@@ -1,5 +1,5 @@
 {
-  "_comment": "Cards whose official pages collect.ts fetches daily. Each source is fetched twice (independent requests). patterns: JS regex source (case-insensitive, all matches must agree) + capture-group -> tracked field map; optional transforms (days_to_months). render:true = headless system Chrome (textContent, scripts/styles removed); wait/settle_ms for Amex business pages that never go network-idle. hold_only:true = fetched as evidence, never auto-applied (page can't be parsed reliably). A fetch that redirects to a different page fails. Cards flagged by the expiry check (expired / <=30 days) that are not listed here are auto-added hold-only from their own official source URLs.",
+  "_comment": "Cards whose official pages collect.ts fetches daily. Each source is fetched twice (independent requests). patterns: JS regex source (case-insensitive, all matches must agree) + capture-group -> tracked field map; optional transforms (days_to_months). render:true = headless system Chrome (textContent, scripts/styles removed); wait/settle_ms for Amex business pages that never go network-idle. hold_only:true = fetched as evidence, never auto-applied (page can't be parsed reliably). A fetch that redirects to a different page fails. Cards flagged by the expiry check (expired / <=30 days) that are not listed here are auto-added hold-only from their own official source URLs. Cards closed to new applicants (status \"discontinued\" or discontinued: true) are never listed or auto-added.",
   "cards": [
     {
       "card_id": "chase-sapphire-reserve",
@@ -757,27 +757,6 @@
               },
               "transforms": {
                 "welcome_offer.time_period_months": "days_to_months"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "card_id": "us-bank-altitude-reserve",
-      "hold_only": true,
-      "hold_reason": "official_product_page_redirects_to_generic_card_list",
-      "sources": [
-        {
-          "url": "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html",
-          "render": false,
-          "patterns": [
-            {
-              "regex": "Earn ([\\d,]+) bonus points after (?:you )?spend(?:ing)? \\$([\\d,]+) (?:on|in) (?:eligible )?(?:net )?purchases (?:in|within) the first (\\d+) months",
-              "groups": {
-                "welcome_offer.bonus_points": 1,
-                "welcome_offer.spending_requirement": 2,
-                "welcome_offer.time_period_months": 3
               }
             }
           ]

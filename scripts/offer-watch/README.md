@@ -50,7 +50,7 @@ Expired elevated offers:
 
 ## Watchlist (`watchlist.json`)
 
-19 focus cards:
+18 focus cards:
 - CSR
 - Citi AAdvantage Executive
 - the four Hilton cards
@@ -59,7 +59,6 @@ Expired elevated offers:
 - Morgan Stanley Platinum
 - the six Delta Amex cards
 - Bilt Palladium
-- U.S. Bank Altitude Reserve (hold-only)
 
 Each card lists official issuer or co-brand pages (hilton.com, marriott.com and delta.com are used next to americanexpress.com, since Amex pages are sometimes throttled), each with card-specific regexes.
 - `render: true` pages load in system Chrome and poll until all of that source's regexes match (25 s cap).
@@ -74,6 +73,8 @@ Each card lists official issuer or co-brand pages (hilton.com, marriott.com and 
 - Tracking query strings are stripped from redirect errors, so a hold whose redirect URL only differs by `?sid=…` isn't reported as new.
 
 Cards that `review.ts --expiry` flags as expired or expiring within 30 days, and that aren't on the watchlist, are added automatically by `collect.ts` as hold-only entries using the official URLs in their own `sources`. They need a real extractor before anything can be applied.
+
+Cards closed to new applicants (`status: "discontinued"`, or the legacy `discontinued: true`) aren't watched. `collect.ts` skips them even when they're listed, they're never auto-added, and the expiry check ignores them. U.S. Bank Altitude Reserve was removed for this reason: it's been closed since 2024-11-11, and its official page redirects to the card list.
 
 When an elevated offer expires, the card is reverted only if an official page's extractor actually reads a different offer. A page that loads but can't be parsed goes to review. An offer is expired only once its date has passed (`days_left < 0`), so an offer that ends today is left alone today.
 

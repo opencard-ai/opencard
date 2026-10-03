@@ -24,6 +24,10 @@ export function recommendationFacts(card: CreditCard, today = new Date().toISOSt
     last_updated: card.last_updated,
     offer_last_verified: offer?.last_verified || 'unknown',
     sources: card.sources.map(source => source.url),
+    // Closed to new applicants (status "discontinued"): existing cardholders only, never recommend applying.
+    ...(card.status === 'discontinued' || card.discontinued === true
+      ? { application_status: 'closed_to_new_applicants_do_not_recommend_applying', closed_notes: card.discontinued_notes ?? null }
+      : {}),
   };
 }
 

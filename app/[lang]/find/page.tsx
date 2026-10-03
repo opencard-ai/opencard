@@ -1,4 +1,4 @@
-import { getAllCards } from "@/lib/cards";
+import { getOpenCards } from "@/lib/cards";
 import FindWizard from "@/app/components/FindWizard";
 import { locales } from "@/lib/i18n";
 import type { Metadata } from "next";
@@ -29,6 +29,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function FindPage({ params }: Props) {
   const { lang } = await params;
-  const cards = getAllCards();
+  const cards = getOpenCards();
   return <FindWizard cards={cards} lang={lang} />;
 }

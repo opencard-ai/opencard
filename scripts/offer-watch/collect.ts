@@ -8,7 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
-import { expiryReport, isOfficialUrl, normalizeField, normalizeNumber, DEFAULT_OFFICIAL_DOMAINS, type Candidate, type CardRecord, type Confirmation } from './gate';
+import { expiryReport, isClosedToNewApplicants, isOfficialUrl, normalizeField, normalizeNumber, DEFAULT_OFFICIAL_DOMAINS, type Candidate, type CardRecord, type Confirmation } from './gate';
 
 /** groups: capture group -> tracked field. absent: value to record when the pattern matched but an optional group did not
  * participate (e.g. no "plus a $250 statement credit" -> statement_credit null = no credit). transforms: days_to_months. */
@@ -71,7 +71,8 @@ export function buildCandidate(entry: WatchEntry, confirmations: Confirmation[],
 }
 
 /** Pure: hold-only entries for cards the expiry check flags (expired, or expiring within focusDays) that are not already
- * watched and have at least one official https URL in `sources` / `application_url`. Low-priority (already handled) skipped. */
+ * watched and have at least one official https URL in `sources` / `application_url`. Low-priority (already handled) and cards
+ * closed to new applicants are skipped. */
 export function autoExpiringEntries(watched: WatchEntry[], cards: CardRecord[], today: string, domains: string[], focusDays = 30): WatchEntry[] {
   const report = expiryReport(cards, today, { warnDays: 14, focusDays });
   const have = new Set(watched.map(e => e.card_id));
@@ -80,6 +81,7 @@ export function autoExpiringEntries(watched: WatchEntry[], cards: CardRecord[], 
   for (const item of [...report.expired, ...report.expiring_soon, ...report.focus]) {
     if (have.has(item.card_id) || item.priority === 'low') continue;
     const card = byId.get(item.card_id);
+    if (isClosedToNewApplicants(card)) continue;
     const urls = [...(card?.sources || []).map((s: any) => (typeof s === 'string' ? s : s?.url)), card?.application_url]
       .filter((u: unknown): u is string => typeof u === 'string' && /^https:\/\//.test(u) && isOfficialUrl(u, domains));
     const unique = [...new Set(urls)].slice(0, 2);
@@ -184,6 +186,9 @@ async function main() {
   let entries: WatchEntry[] = JSON.parse(fs.readFileSync(watchFile, 'utf8')).cards;
   const auto = process.argv.includes('--no-auto-expiring') ? [] : autoExpiringEntries(entries, cards, today, domains);
   entries = [...entries, ...auto].filter(e => !only || e.card_id === only);
+  const closed = entries.filter(e => isClosedToNewApplicants(cardById.get(e.card_id))).map(e => e.card_id);
+  if (closed.length) console.error(`collect: skipping cards closed to new applicants: ${closed.join(', ')}`);
+  entries = entries.filter(e => !closed.includes(e.card_id));
   const runAt = new Date().toISOString();
   const candidates: Candidate[] = [];
   for (const entry of entries) {

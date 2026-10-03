@@ -7,12 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "spending_requirement": 3000,
-    "time_period_months": 3,
-    "bonus_points": 60000,
-    "estimated_value": 600,
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "estimated_value": 0,
     "point_program": "U.S. Bank Rewards",
-    "description": "60,000 bonus points after spending $3,000 in first 3 months"
+    "description": "No welcome offer. Closed to new applications since November 11, 2024."
   },
   "earning_rates": [
     {
@@ -73,20 +73,30 @@
   "sources": [
     {
       "url": "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html",
-      "notes": "Official U.S. Bank page"
+      "notes": "Official U.S. Bank product page; as of 2026-10-02 it redirects to the general U.S. Bank credit card list (card no longer offered to new applicants)"
+    },
+    {
+      "url": "https://frequentmiler.com/us-bank-altitude-reserve-no-longer-accepting-new-applications/",
+      "notes": "Frequent Miler: Altitude Reserve no longer accepting new applications (closed 2024-11-11)"
+    },
+    {
+      "url": "https://upgradedpoints.com/news/us-bank-altitude-reserve-card-discontinued/",
+      "notes": "Upgraded Points: Altitude Reserve discontinued for new applicants"
     },
     {
       "url": "https://www.nerdwallet.com/credit-cards/reviews/us-bank-altitude-reserve",
       "notes": "NerdWallet review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:50.006Z",
-  "status": "active",
+  "last_updated": "2026-10-03T02:22:29.198Z",
+  "status": "discontinued",
+  "discontinued_notes": "Closed to new applications since November 11, 2024 (the official usbank.com product page now redirects to the U.S. Bank card list). Existing cardholders can keep using the card, and product changes may be possible. Sources: official usbank.com redirect, Frequent Miler, Upgraded Points.",
+  "discontinued_date": "2024-11-11",
   "notes": "Points transferable to airline/hotel partners. $325 annual travel credit essentially offsets much of annual fee. Strong 3x mobile wallet earning.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
-    "notes": null
+    "notes": "Closed to new applications since November 11, 2024. Existing cardholders can keep using the card; ask U.S. Bank about product change options."
   },
   "recurring_credits": [
     {
@@ -108,6 +118,6 @@
       "reset_type": "calendar_year"
     }
   ],
-  "last_verified": "2026-04-16T13:41:50.006Z",
-  "next_review": "2026-07-15T13:41:50.006000+00:00"
+  "last_verified": "2026-10-03T02:22:29.198Z",
+  "next_review": "2027-04-02T00:00:00.000Z"
 }

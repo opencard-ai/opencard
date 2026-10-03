@@ -1,4 +1,4 @@
-import { getAllCards, type CreditCard } from "@/lib/cards";
+import { getOpenCards, type CreditCard } from "@/lib/cards";
 
 export interface UserPreferences {
   rewardTypes: string[];       // ["travel", "cashback", "points"]
@@ -19,7 +19,7 @@ export interface CardScore {
 }
 
 export function scoreCards(prefs: UserPreferences): CardScore[] {
-  const cards = getAllCards();
+  const cards = getOpenCards(); // never recommend cards closed to new applicants
   const results: CardScore[] = [];
 
   for (const card of cards) {

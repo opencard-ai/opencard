@@ -159,7 +159,14 @@ export interface CreditCard {
   last_updated: string;
   sources: Source[];
   tags: string[];
+  /** "active" | "discontinued" (closed to new applicants) | "transferred" | "invitation_only". */
   status?: string;
+  /** Legacy closed-to-new-applicants flag; prefer status: "discontinued". */
+  discontinued?: boolean;
+  /** Why/when the card closed to new applicants (shown on the card page). */
+  discontinued_notes?: string;
+  /** YYYY-MM-DD the card stopped accepting new applications, when known. */
+  discontinued_date?: string;
   recurring_credits?: RecurringCredit[];
   /** User-selected reward structures such as U.S. Bank Cash+ / Shopper categories. */
   selectable_rewards?: SelectableRewards;
@@ -192,6 +199,16 @@ export function getAllCards(): CreditCard[] {
     console.error("getAllCards error:", e);
     return [];
   }
+}
+
+/** Closed to new applicants (status "discontinued" or legacy discontinued: true). Existing cardholders may still use it. */
+export function isClosedToNewApplicants(card: Pick<CreditCard, "status" | "discontinued">): boolean {
+  return card.status === "discontinued" || card.discontinued === true;
+}
+
+/** Cards that can still be applied for: use for browse, ranking, offers and recommendations. */
+export function getOpenCards(): CreditCard[] {
+  return getAllCards().filter(card => !isClosedToNewApplicants(card));
 }
 
 export function getCardById(cardId: string): CreditCard | null {

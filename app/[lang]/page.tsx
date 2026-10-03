@@ -2,7 +2,7 @@
 import { Suspense } from "react";
 import { Star } from "lucide-react";
 import HeroButtons from "@/app/components/HeroButtons";
-import { getAllCards, getAllIssuers, getAllTags } from "@/lib/cards";
+import { getOpenCards, getAllIssuers, getAllTags } from "@/lib/cards";
 import CardGrid from "@/app/components/CardGrid";
 import NewsFeed from "@/app/components/NewsFeed";
 import { t, locales } from "@/lib/i18n";
@@ -21,7 +21,7 @@ export async function generateStaticParams() {
 
 export default async function HomePage({ params }: Props) {
   const { lang } = await params;
-  const cards = getAllCards();
+  const cards = getOpenCards(); // closed-to-new-applicant cards stay reachable by URL / My Cards, not in browse
   const issuers = getAllIssuers();
   const tags = getAllTags();
   const locale = lang as any;
