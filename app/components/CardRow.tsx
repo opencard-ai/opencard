@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Bookmark, Check, ChevronRight, Gift, Scale } from "lucide-react";
 import { trackCardAdded, trackEvent } from "@/lib/analytics";
 import type { CreditCard } from "@/lib/cards";
+import { formatWelcomeBonus, welcomeBonusKind } from "@/lib/welcome-offer";
 import IssuerChip from "./IssuerChip";
 import CardArt from "./CardArt";
 
@@ -130,10 +131,12 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
     onToggleCompare();
   }, [onToggleCompare, isCompared, isMaxed]);
 
-  const bonusValue = card.welcome_offer
+  const bonusValueRaw = card.welcome_offer
     ? formatBonusValue(card.welcome_offer.estimated_value ?? card.welcome_offer.bonus_value)
     : null;
-  const bonusPoints = card.welcome_offer?.bonus_points;
+  const bonusKind = welcomeBonusKind(card.welcome_offer);
+  const bonusLabel = formatWelcomeBonus(card.welcome_offer);
+  const bonusValue = bonusKind === "cash" || bonusKind === "percent_discount" ? null : bonusValueRaw;
 
   return (
     <div className={`bg-white rounded-xl border transition-colors ${isCompared ? "ring-2 ring-blue-500 border-blue-500" : "border-slate-200"}`}>
@@ -181,14 +184,12 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
 
       {expanded && (
         <div className="px-4 pb-4 pt-0 border-t border-slate-100 space-y-3">
-          {(bonusValue || bonusPoints) && (
+          {(bonusValue || bonusLabel) && (
             <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mt-3">
               <p className="text-[10px] font-semibold text-amber-700 uppercase tracking-wide flex items-center gap-1"><Gift className="w-3 h-3" /> {t.welcome}</p>
               <p className="text-sm font-semibold text-amber-900 mt-0.5">
-                {bonusPoints != null && bonusPoints > 0 && (
-                  <span>{bonusPoints.toLocaleString()} pts</span>
-                )}
-                {bonusPoints != null && bonusPoints > 0 && bonusValue && <span className="mx-1 text-amber-700">·</span>}
+                {bonusLabel && <span>{bonusLabel}</span>}
+                {bonusLabel && bonusValue && <span className="mx-1 text-amber-700">·</span>}
                 {bonusValue && <span>(~{bonusValue})</span>}
               </p>
             </div>

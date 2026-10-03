@@ -14,6 +14,7 @@ import { translateCategory } from "@/lib/category-translations";
 import { isIndexableCard } from "@/lib/indexable-cards";
 import { getCardEditorial } from "@/lib/card-editorial";
 import { getReferralOfferForCard } from "@/lib/referrals";
+import { formatWelcomeBonus, welcomeBonusKind } from "@/lib/welcome-offer";
 
 const CREDIT_LABELS: Record<string, string> = {
   "Excellent": "Excellent",
@@ -235,9 +236,12 @@ export default async function CardDetailPage({ params }: Props) {
             <div className="text-sm text-amber-900">
               {(() => {
                 const w = card.welcome_offer;
-                const hasPoints = !!(w.bonus_points && w.bonus_points > 0);
+                const bonusKind = welcomeBonusKind(w);
+                const bonusLabel = formatWelcomeBonus(w, lang, l("detail.points"));
+                const hasPoints = bonusKind !== "none";
                 const hasFnas = !!(w.free_nights && w.free_nights > 0);
-                const hasValue = !!(w.estimated_value && w.estimated_value > 0);
+                const hasValue = !!(w.estimated_value && w.estimated_value > 0)
+                  && !(bonusKind === "cash" && Number(w.estimated_value) === Number(w.bonus_points));
                 if (!hasPoints && !hasFnas && !hasValue) {
                   return <span className="text-amber-700">{l("detail.noWelcomeOffer")}</span>;
                 }
@@ -245,7 +249,7 @@ export default async function CardDetailPage({ params }: Props) {
                   <>
                     {hasPoints && (
                       <span className="font-bold">
-                        {w.bonus_points!.toLocaleString()} {l("detail.points")}
+                        {bonusLabel}
                       </span>
                     )}
                     {hasFnas && (

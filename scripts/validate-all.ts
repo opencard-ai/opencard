@@ -129,6 +129,15 @@ function validateSchema(card: any, fileName: string): ValidationIssue[] {
     }
   }
 
+  // welcome_offer.bonus_type / discount_percent validation
+  const wo = card.welcome_offer;
+  if (wo && wo.bonus_type !== undefined && !['points', 'cash', 'percent_discount'].includes(wo.bonus_type)) {
+    issues.push({ card: cardName, severity: 'error', source: 'schema', message: `invalid welcome_offer.bonus_type: "${wo.bonus_type}"`, field: 'welcome_offer.bonus_type' });
+  }
+  if (wo && wo.bonus_type === 'percent_discount' && !(Number(wo.discount_percent) > 0 && Number(wo.discount_percent) <= 100)) {
+    issues.push({ card: cardName, severity: 'error', source: 'schema', message: 'percent_discount offer needs discount_percent in (0, 100]', field: 'welcome_offer.discount_percent' });
+  }
+
   // recurring_credits validation
   if (card.recurring_credits && Array.isArray(card.recurring_credits)) {
     card.recurring_credits.forEach((rc: any, i: number) => {

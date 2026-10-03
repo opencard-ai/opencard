@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { getCardById, type CreditCard } from "@/lib/cards";
+import { formatWelcomeBonus, welcomeBonusKind } from "@/lib/welcome-offer";
 
 const MINIMAX_API_URL = "https://api.minimax.io/v1/chat/completions";
 
@@ -32,7 +33,9 @@ function buildCardContext(card: CreditCard): string {
   }
   if (card.welcome_offer && !closed) {
     const wo = card.welcome_offer;
-    if (wo.bonus_points) parts.push(`Welcome bonus: ${wo.bonus_points.toLocaleString()} pts after $${wo.spending_requirement?.toLocaleString() ?? "?"} in ${wo.time_period_months ?? 3} months`);
+    const bonusLabel = formatWelcomeBonus(wo);
+    if (bonusLabel && welcomeBonusKind(wo) === "percent_discount") parts.push(`Welcome offer: ${bonusLabel}`);
+    else if (bonusLabel) parts.push(`Welcome bonus: ${bonusLabel} after $${wo.spending_requirement?.toLocaleString() ?? "?"} in ${wo.time_period_months ?? 3} months`);
   }
   return parts.join("\n");
 }

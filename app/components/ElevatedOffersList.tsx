@@ -6,6 +6,7 @@ import { Flame, ArrowUpDown } from "lucide-react";
 import CardArt from "./CardArt";
 import IssuerChip from "./IssuerChip";
 import type { CreditCard } from "@/lib/cards";
+import { formatWelcomeBonus, welcomeBonusKind, welcomeBonusPoints } from "@/lib/welcome-offer";
 
 interface Props {
   cards: CreditCard[];
@@ -91,7 +92,7 @@ export default function ElevatedOffersList({ cards, lang }: Props) {
     const filtered = cards.filter((c) => {
       if (!c.welcome_offer) return false;
       const v = Number(c.welcome_offer.estimated_value) || 0;
-      if (v <= 0 && !c.welcome_offer.bonus_points) return false;
+      if (v <= 0 && welcomeBonusKind(c.welcome_offer) === "none") return false;
       if (issuer && c.issuer !== issuer) return false;
       return true;
     });
@@ -100,7 +101,7 @@ export default function ElevatedOffersList({ cards, lang }: Props) {
         return (b.welcome_offer?.estimated_value ?? 0) - (a.welcome_offer?.estimated_value ?? 0);
       }
       if (sort === "points") {
-        return (b.welcome_offer?.bonus_points ?? 0) - (a.welcome_offer?.bonus_points ?? 0);
+        return welcomeBonusPoints(b.welcome_offer) - welcomeBonusPoints(a.welcome_offer);
       }
       // lowaf: lowest annual fee first, then highest value
       const af = (a.annual_fee || 0) - (b.annual_fee || 0);
@@ -143,12 +144,12 @@ export default function ElevatedOffersList({ cards, lang }: Props) {
           </div>
           {elevatedDelta !== null && elevatedDelta > 0 && (
             <div className="mt-1 text-[11px] text-amber-700">
-              +{elevatedDelta}% {t.aboveBy} ({formatPoints(w.normal_bonus_points)} pts)
+              +{elevatedDelta}% {t.aboveBy} ({welcomeBonusKind(w) === "cash" ? `$${formatPoints(w.normal_bonus_points)}` : `${formatPoints(w.normal_bonus_points)} pts`})
             </div>
           )}
         </div>
         <div className="text-right shrink-0 tabular-nums">
-          <div className="text-base font-bold text-slate-900">{formatPoints(w.bonus_points)}</div>
+          <div className="text-base font-bold text-slate-900">{formatWelcomeBonus(w) ?? "—"}</div>
           <div className="text-[11px] text-emerald-600 font-medium">{formatValue(w.estimated_value)}</div>
         </div>
       </Link>

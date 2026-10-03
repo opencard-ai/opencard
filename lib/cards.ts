@@ -114,6 +114,11 @@ export interface WelcomeOffer {
   spending_requirement?: number;
   time_period_months?: number;
   bonus_points?: number;
+  /** How bonus_points should be read. Omitted = inferred (see lib/welcome-offer.ts):
+   *  "cash" means bonus_points is a dollar amount; "percent_discount" uses discount_percent. */
+  bonus_type?: "points" | "cash" | "percent_discount";
+  /** For bonus_type "percent_discount", e.g. 30 for "30% off your first purchase". */
+  discount_percent?: number;
   estimated_value?: number;
   point_program?: string;
   description?: string;

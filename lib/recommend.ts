@@ -1,4 +1,5 @@
 import { getOpenCards, type CreditCard } from "@/lib/cards";
+import { welcomeBonusDollarFallback, welcomeBonusKind } from "@/lib/welcome-offer";
 
 export interface UserPreferences {
   rewardTypes: string[];       // ["travel", "cashback", "points"]
@@ -78,7 +79,7 @@ function evaluateCard(card: CreditCard, prefs: UserPreferences): { score: number
 
   if (welcomeScore > 40) {
     const wo = card.welcome_offer;
-    if (wo?.bonus_points && wo.estimated_value) {
+    if (welcomeBonusKind(wo) !== "none" && wo?.estimated_value) {
       reasons.push(`Welcome bonus: ~$${wo.estimated_value} value${wo.spending_requirement ? ` (spend $${wo.spending_requirement.toLocaleString()})` : ''}`);
     }
   }
@@ -171,7 +172,7 @@ function getAnnualFeeScore(card: CreditCard, tolerance: number): number {
 function getWelcomeBonusScore(card: CreditCard): number {
   if (!card.welcome_offer) return 0;
   const wo = card.welcome_offer;
-  const ev = wo.estimated_value || (wo.bonus_points ? wo.bonus_points / 100 : 0);
+  const ev = wo.estimated_value || welcomeBonusDollarFallback(wo);
 
   if (ev >= 1000) return 100;
   if (ev >= 600) return 85;
