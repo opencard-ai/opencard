@@ -7,11 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 100,
-    "spending_requirement": 500,
-    "time_period_months": 3,
-    "description": "开卡3个月内消费满 $500 可得 $100 cash rewards bonus",
-    "estimated_value": 100
+    "bonus_points": 0,
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "estimated_value": 0,
+    "description": "Not available: closed to new applicants.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -61,6 +62,10 @@
   ],
   "sources": [
     {
+      "url": "https://creditcards.wellsfargo.com/",
+      "notes": "Official Wells Fargo credit cards page checked 2026-10-02: Attune not listed; attune-credit-card URL redirects to the home page."
+    },
+    {
       "url": "https://creditcards.wellsfargo.com/attune-credit-card/",
       "notes": "Official Wells Fargo page"
     },
@@ -69,14 +74,15 @@
       "notes": "NerdWallet review"
     }
   ],
-  "last_updated": "2026-04-25T16:04:46.572Z",
-  "status": "active",
+  "last_updated": "2026-10-02",
+  "status": "discontinued",
   "notes": "Unique 4% categories (self-care, sports/recreation, pet care) not commonly found on other cards. Strong for wellness and pet owners.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-25T16:04:46.572Z",
-  "next_review": "2026-07-15T13:41:50.010000+00:00"
+  "last_verified": "2026-10-02",
+  "next_review": "2026-07-15T13:41:50.010000+00:00",
+  "discontinued_notes": "No longer offered: the official Attune page redirects to the Wells Fargo credit cards home page, which no longer lists it (checked 2026-10-02)."
 }

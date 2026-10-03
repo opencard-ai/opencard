@@ -1,6 +1,6 @@
 {
   "card_id": "barclays-gap-good-rewards-mastercard",
-  "name": "Gap Good Rewards Mastercard®",
+  "name": "Gap Encore Mastercard®",
   "issuer": "Barclays",
   "network": "mastercard",
   "annual_fee": 0,
@@ -10,8 +10,16 @@
     "spending_requirement": 0,
     "time_period_months": 0,
     "bonus_points": 0,
-    "description": "20% off first purchase with new card at Gap",
-    "point_program": "Points"
+    "bonus_type": "percent_discount",
+    "discount_percent": 25,
+    "estimated_value": 0,
+    "point_program": "Points",
+    "description": "Receive 25% off your first purchase with your new card at Gap.",
+    "confidence": "high",
+    "notes": [
+      "Official Barclays page checked 2026-10-02; now marketed as the Gap Encore Mastercard (formerly Gap Rewards/Good Rewards)."
+    ],
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -60,7 +68,7 @@
   "sources": [
     {
       "url": "https://cards.barclaycardus.com/banking/cards/gap-encore-mastercard/",
-      "notes": "Barclays official card page (branded as Gap Encore Mastercard)"
+      "notes": "Official Barclays page checked 2026-10-02: 5X Gap Inc. family of brands, 3X eligible retail apparel brands, 1X everywhere else; no annual fee."
     },
     {
       "url": "maxrewards.com"
@@ -72,13 +80,13 @@
       "url": "upgradedpoints.com"
     }
   ],
-  "last_updated": "2026-10-03T03:19:54.149Z",
+  "last_updated": "2026-10-02",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.983Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.983000+00:00",
   "cash_advance_fee_flat": 5,
   "cash_advance_fee_pct": 5,

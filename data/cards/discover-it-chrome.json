@@ -43,8 +43,13 @@
     "cash-back",
     "no-annual-fee"
   ],
-  "sources": [],
-  "last_updated": "2026-04-16T13:41:49.980Z",
+  "sources": [
+    {
+      "url": "https://www.discover.com/credit-cards/cash-back/chrome/",
+      "notes": "Official Discover page checked 2026-10-02: 2% cash back at gas stations and restaurants on up to $1,000 in combined purchases each quarter, 1% on other purchases; Cashback Match."
+    }
+  ],
+  "last_updated": "2026-10-02",
   "travel_benefits": {
     "hotel_status": [],
     "lounge_access": [],
@@ -59,6 +64,6 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.980Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.980000+00:00"
 }

@@ -1,26 +1,27 @@
 {
   "card_id": "ihg-one-rewards-traveler",
-  "name": "IHG One Rewards Traveler Credit Card",
+  "name": "IHG One Rewards Credit Card",
   "issuer": "Chase",
   "network": "visa",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 80000,
+    "bonus_points": 125000,
     "spending_requirement": 2000,
     "time_period_months": 3,
-    "description": "Earn 80,000 IHG One Rewards bonus points after spending $2,000 in purchases in the first 3 months from account opening.",
+    "description": "Launch offer: earn 125,000 bonus points after you spend $2,000 on purchases in the first 3 months from account opening.",
     "point_program": "IHG Rewards",
-    "estimated_value": 400,
-    "offer_status": "public",
+    "estimated_value": 625,
+    "offer_status": "public_limited_time",
     "confidence": "high",
     "notes": [
-      "Issuer source check on 2026-07-05 detected live offer at 80,000 points; prior 90,000-point offer is stale."
+      "Official Chase page checked 2026-10-02: the former Traveler URL redirects to the IHG One Rewards Credit Card ($0 annual fee; up to 17X at IHG; 3X gas, dining and grocery)."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-05",
-    "expires": null
+    "last_verified": "2026-10-02",
+    "expires": null,
+    "is_elevated": true
   },
   "earning_rates": [
     {
@@ -84,8 +85,8 @@
   ],
   "sources": [
     {
-      "url": "https://creditcards.chase.com/travel-credit-cards/ihg/traveler",
-      "notes": "Official Chase page"
+      "url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/one-rewards",
+      "notes": "Official Chase page checked 2026-10-02: IHG One Rewards Credit Card, $0 annual fee, launch offer 125,000 points after $2,000 in 3 months."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/ihg-one-rewards-traveler/",
@@ -93,13 +94,13 @@
     }
   ],
   "notes": "No AF version of IHG card. Lower earning than Premier (17x vs 26x at IHG) and no free night per year, but Gold status (not Platinum) and $0 AF. Good for occasional IHG guests who don't want to pay an annual fee. The 4th night free still applies to award bookings.",
-  "last_updated": "2026-06-21T20:56:00.000Z",
+  "last_updated": "2026-10-02",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-06-06",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.987000+00:00",
   "recurring_credits": [
     {

@@ -9,10 +9,17 @@
   "welcome_offer": {
     "spending_requirement": 1000,
     "time_period_months": 3,
-    "bonus_points": 20000,
-    "estimated_value": 270,
+    "bonus_points": 50000,
+    "estimated_value": 675,
     "point_program": "United MileagePlus",
-    "description": "20,000 bonus United miles after spending $1,000 in first 3 months (worth ~$250 at 1.25¢/mile)"
+    "description": "Earn up to 50,000 bonus miles: 40,000 bonus miles after you spend $1,000 on purchases in the first 3 months, plus 10,000 bonus miles after you add an authorized user in the first 3 months.",
+    "offer_status": "public_limited_time",
+    "is_elevated": true,
+    "normal_bonus_points": 40000,
+    "notes": [
+      "Official Chase page checked 2026-10-02 shows \"Earn up to 40,000 (struck) 50,000 bonus miles\"."
+    ],
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -67,8 +74,8 @@
   ],
   "sources": [
     {
-      "url": "https://creditcards.chase.com/travel-credit-cards/united/gateway",
-      "notes": "Official Chase page"
+      "url": "https://creditcards.chase.com/travel-credit-cards/united/united-gateway",
+      "notes": "Official Chase page checked 2026-10-02: $0 annual fee; up to 50,000 bonus miles (40k after $1,000 in 3 months + 10k for adding an authorized user)."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/united-gateway-card/",
@@ -76,12 +83,12 @@
     }
   ],
   "notes": "Entry-level United co-brand card with $0 AF. Lower earning rates and fewer perks than Explorer or Club cards. The 2x on gas + transit + United is decent but not exceptional. No checked bag benefit or lounge passes. Best as a supplement for non-frequent United flyers who want to earn miles without paying an AF.",
-  "last_updated": "2026-04-16T13:41:49.999Z",
+  "last_updated": "2026-10-02",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.999Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.999000+00:00"
 }

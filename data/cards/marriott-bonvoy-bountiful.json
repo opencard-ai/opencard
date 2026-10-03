@@ -13,7 +13,8 @@
     "bonus_value": 0,
     "description": "85,000 bonus points after spending $4,000 in first 3 months",
     "point_program": "Marriott Bonvoy",
-    "estimated_value": 553
+    "estimated_value": 553,
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -84,8 +85,8 @@
   ],
   "sources": [
     {
-      "url": "https://creditcards.chase.com/travel-credit-cards/marriott/bonvoy-bountiful",
-      "notes": "Official Chase page"
+      "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/bountiful",
+      "notes": "Official Chase page checked 2026-10-02: 85,000 bonus points after $4,000 in 3 months; $250 annual fee."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/marriott-bonvoy-bountiful-card/",
@@ -93,7 +94,7 @@
     }
   ],
   "notes": "$250 AF card positioned between Boundless and the premium Bonvoy Brilliant. The $300 annual Marriott credit essentially offsets the AF. Gold Elite status + Priority Pass Select makes it valuable. Earning rates are strong (4x on dining/gas/grocery). Best for heavy Marriott guests who want elevated status without the $650 AF on Bonvoy Brilliant.",
-  "last_updated": "2026-04-29T05:25:54.022Z",
+  "last_updated": "2026-10-02",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -114,6 +115,6 @@
   "_no_credits_found": true,
   "_no_credits_note": "Marriott Bonvoy Bountiful ($250 AF) — value is conditional Free Night after $15k spend (excluded), 15 Elite Night Credits + Gold Elite status (qualitative), DashPass 1-yr promotional (excluded). Previous '$25/monthly Marriott Statement Credit' entry was unverified — Chase Bountiful benefits page does not list a monthly Marriott credit. Removed 2026-04-27.",
   "last_scraped": "2026-04-24T17:26:46.246653",
-  "last_verified": "2026-04-24T17:26:46.246653",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-23T17:26:46.246653"
 }

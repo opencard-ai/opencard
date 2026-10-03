@@ -12,24 +12,40 @@
     "bonus_points": 100000,
     "estimated_value": 1350,
     "point_program": "United MileagePlus",
-    "description": "100,000 bonus United miles after spending $5,000 in first 3 months + 10,000 additional miles when adding authorized user"
+    "description": "Earn up to 100,000 bonus miles: 90,000 bonus miles after you spend $5,000 on purchases in the first 3 months, plus 10,000 bonus miles after you add an authorized user in the first 3 months.",
+    "offer_status": "public_limited_time",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
-      "category": "United Airlines Purchases",
-      "rate": 4
+      "category": "United Flights",
+      "rate": 11,
+      "notes": "11x total miles on eligible United flights (includes MileagePlus member miles)"
     },
     {
-      "category": "Hotels",
-      "rate": 2
+      "category": "Other United Purchases",
+      "rate": 5,
+      "notes": "5x miles on all other eligible United purchases"
     },
     {
-      "category": "Restaurants",
-      "rate": 2
+      "category": "Renowned Hotels and Resorts",
+      "rate": 5,
+      "notes": "5x miles on prepaid hotel stays through Renowned Hotels and Resorts for United Cardmembers"
+    },
+    {
+      "category": "Other Travel",
+      "rate": 2,
+      "notes": "2x miles on all other travel"
+    },
+    {
+      "category": "Dining",
+      "rate": 2,
+      "notes": "2x miles on dining including eligible delivery services"
     },
     {
       "category": "All Other Purchases",
-      "rate": 1
+      "rate": 1,
+      "notes": "1x mile on all other purchases"
     }
   ],
   "travel_benefits": {
@@ -91,7 +107,7 @@
   "sources": [
     {
       "url": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite",
-      "notes": "Official Chase page"
+      "notes": "Official Chase page checked 2026-10-02: $695 annual fee; up to 100,000 bonus miles (90k after $5,000 in 3 months + 10k for adding an authorized user); 11x/5x/5x/2x/2x/1x earning."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/reviews/united-infinite-club-card-review/",
@@ -103,7 +119,7 @@
     }
   ],
   "notes": "Ultra-premium United card with full United Club access ($650+ value alone). $695 AF (increased from $525 in 2025). Total annual credits (Instacart $300 + Streaming $120 + Rideshare $150 = $570) significantly offset the AF for those who use them. PQP earnings (up to 10,000/year) can fast-track United 1K elite status. Primary competitor is United Club Business Card. Both are essentially the same card (Club membership) — personal version vs business version.",
-  "last_updated": "2026-04-30T03:23:56.066Z",
+  "last_updated": "2026-10-02",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -171,6 +187,6 @@
     }
   ],
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-04-16T13:41:49.998Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.998000+00:00"
 }

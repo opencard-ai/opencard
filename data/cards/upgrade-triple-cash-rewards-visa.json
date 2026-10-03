@@ -7,9 +7,12 @@
   "foreign_transaction_fee": 3,
   "credit_required": "Fair to Excellent",
   "welcome_offer": {
-    "spending_requirement": null,
-    "description": "$200 bonus when you also open a Rewards Checking Preferred account and make 3 debit card transactions. Requires opening Upgrade Rewards Checking Preferred.",
-    "estimated_value": 200
+    "bonus_points": 0,
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "estimated_value": 0,
+    "description": "Not available: closed to new applicants.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -68,6 +71,10 @@
   ],
   "sources": [
     {
+      "url": "https://www.upgrade.com/credit-card/onecard-essentials/",
+      "notes": "Official Upgrade page checked 2026-10-02: upgrade-card/triple-cash redirects here; Triple Cash not offered."
+    },
+    {
       "url": "https://www.upgrade.com/upgrade-card/triple-cash/",
       "notes": "Upgrade official page"
     },
@@ -80,14 +87,15 @@
       "notes": "CardRatings review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:50.004Z",
-  "status": "active",
+  "last_updated": "2026-10-02",
+  "status": "discontinued",
   "notes": "Upgrade Triple Cash Rewards earns 3% on home, auto, and health categories — unusual category combinations that cover everyday spending areas. $200 welcome bonus requires opening a Rewards Checking Preferred account. APR: 14.99%–29.99% variable. Balance transfer fee: up to 5%. Credit lines range $500–$25,000. Card acts as a hybrid credit card/installment loan — any remaining balance can be converted to fixed monthly payments at a fixed rate. No cash withdrawal at ATMs.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:50.004Z",
-  "next_review": "2026-07-15T13:41:50.004000+00:00"
+  "last_verified": "2026-10-02",
+  "next_review": "2026-07-15T13:41:50.004000+00:00",
+  "discontinued_notes": "No longer offered: the official Upgrade Triple Cash Rewards page redirects to the Upgrade OneCard Essentials page, which does not mention Triple Cash (checked 2026-10-02)."
 }

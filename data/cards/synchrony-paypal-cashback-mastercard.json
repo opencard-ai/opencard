@@ -21,8 +21,8 @@
     },
     {
       "category": "All other purchases",
-      "rate": 2,
-      "notes": "2% cash back on all other purchases"
+      "rate": 1.5,
+      "notes": "1.5% cash back on all other purchases everywhere Mastercard is accepted"
     }
   ],
   "annual_credits": [],
@@ -60,15 +60,15 @@
   ],
   "sources": [
     {
-      "url": "https://www.paypal.com/us/credit-cards",
-      "notes": "Official PayPal Credit Cards page"
+      "url": "https://www.paypal.com/us/digital-wallet/manage-money/paypal-cashback-mastercard",
+      "notes": "Official PayPal page checked 2026-10-02: 3% cash back when you check out with PayPal, 1.5% everywhere else Mastercard is accepted; no annual fee."
     },
     {
       "url": "https://wallethub.com/d/paypal-cashback-mastercard-3350c",
       "notes": "WalletHub"
     }
   ],
-  "last_updated": "2026-04-27T04:16:50.948Z",
+  "last_updated": "2026-10-02",
   "status": "active",
   "notes": "Synchrony-issued version of PayPal Cashback Mastercard. Distinct from the Chase-issued PayPal Mastercard. Best for heavy PayPal users who want elevated cash back on PayPal transactions. Cash back as statement credit.",
   "hotel_program": null,
@@ -76,7 +76,7 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.992Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.992000+00:00",
   "deprecated": true,
   "deprecated_reason": "Store-card retail co-brand. Users searching OpenCard generally aren't shopping for retailer-specific cards. Excluded from main listings.",

@@ -1,6 +1,6 @@
 {
   "card_id": "barclays-carnival-world-mastercard",
-  "name": "Carnival® World Mastercard®",
+  "name": "Carnival Rewards™ Mastercard®",
   "issuer": "Barclays",
   "network": "mastercard",
   "annual_fee": 0,
@@ -10,9 +10,10 @@
     "spending_requirement": 1000,
     "time_period_months": 3,
     "bonus_points": 20000,
-    "description": "20,000 FunPoints (worth ~$200 onboard credit) after spending $1,000 in first 90 days",
+    "description": "Earn 20,000 points after spending $1,000 on purchases in the first 90 days.",
     "point_program": "FunPoints",
-    "estimated_value": 200
+    "estimated_value": 200,
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -70,8 +71,8 @@
   ],
   "sources": [
     {
-      "url": "https://cards.barclaycardus.com/banking/cards/carnival-world-mastercard/",
-      "notes": "Barclays official card page"
+      "url": "https://cards.barclaycardus.com/banking/cards/carnival-rewards-mastercard/",
+      "notes": "Official Barclays page checked 2026-10-02: Carnival Rewards Mastercard, $0 annual fee; 20,000 points after $1,000 in 90 days; up to 6x on Carnival purchases (3x from the card + up to 3x via Carnival Rewards)."
     },
     {
       "url": "barclaycardus.com"
@@ -83,12 +84,12 @@
       "url": "awardwallet.com"
     }
   ],
-  "last_updated": "2026-10-03T03:19:54.149Z",
+  "last_updated": "2026-10-02",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.964Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.964000+00:00"
 }

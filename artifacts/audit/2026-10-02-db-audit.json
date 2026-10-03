@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T03:28:36.513Z",
+  "generated_at": "2026-10-03T03:45:40.966Z",
   "today": "2026-10-02",
   "cards": 225,
   "popular": [
@@ -34,14 +34,14 @@
   ],
   "counts": {
     "broken_source_url": {
-      "high": 15,
+      "high": 3,
       "medium": 0,
       "low": 0
     },
     "source_redirects_elsewhere": {
-      "high": 31,
+      "high": 25,
       "medium": 0,
-      "low": 1
+      "low": 7
     },
     "discontinued_signal_without_status": {
       "high": 1,
@@ -49,7 +49,7 @@
       "low": 0
     },
     "missing_sources": {
-      "high": 23,
+      "high": 15,
       "medium": 0,
       "low": 0
     },
@@ -86,12 +86,12 @@
     "shared_official_url": {
       "high": 0,
       "medium": 0,
-      "low": 15
+      "low": 20
     },
     "stale_last_verified": {
       "high": 0,
       "medium": 0,
-      "low": 138
+      "low": 111
     },
     "duplicate_benefit": {
       "high": 0,
@@ -111,14 +111,6 @@
   },
   "url_check": "artifacts/audit/2026-10-02-url-check.json",
   "findings": [
-    {
-      "card_id": "chase-hyatt",
-      "type": "broken_source_url",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://www.chase.com/personal/credit-cards/hyatt-world-of-hyatt-credit-card -> HTTP 404",
-      "popular": true
-    },
     {
       "card_id": "chase-marriott-boundless",
       "type": "broken_source_url",
@@ -160,99 +152,11 @@
       "popular": true
     },
     {
-      "card_id": "barclays-carnival-world-mastercard",
-      "type": "broken_source_url",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://cards.barclaycardus.com/banking/cards/carnival-world-mastercard/ -> HTTP 404",
-      "popular": false
-    },
-    {
-      "card_id": "barclays-jetblue-biz",
-      "type": "broken_source_url",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://cards.barclaycardus.com/banking/credit-card/jetblue/mastercard-mastercard-business/ -> HTTP 404",
-      "popular": false
-    },
-    {
-      "card_id": "chase-united-gateway",
-      "type": "broken_source_url",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://creditcards.chase.com/travel-credit-cards/united/gateway -> HTTP 404",
-      "popular": false
-    },
-    {
-      "card_id": "ihg-one-rewards-traveler",
-      "type": "broken_source_url",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://creditcards.chase.com/travel-credit-cards/ihg/traveler -> HTTP 404",
-      "popular": false
-    },
-    {
       "card_id": "jpmorgan-reserve",
       "type": "broken_source_url",
       "severity": "high",
       "field": "sources",
       "detail": "https://www.chase.com/jpmorgan-reserve -> HTTP 404",
-      "popular": false
-    },
-    {
-      "card_id": "marriott-bonvoy-bountiful",
-      "type": "broken_source_url",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://creditcards.chase.com/travel-credit-cards/marriott/bonvoy-bountiful -> HTTP 404",
-      "popular": false
-    },
-    {
-      "card_id": "navy-federal-flagship-rewards",
-      "type": "broken_source_url",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://www.navyfederal.org/loans-cards/credit-cards/flagship-rewards.html -> HTTP 404",
-      "popular": false
-    },
-    {
-      "card_id": "synchrony-paypal-cashback-mastercard",
-      "type": "broken_source_url",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://www.paypal.com/us/credit-cards -> HTTP 404",
-      "popular": false
-    },
-    {
-      "card_id": "td-biz-solutions-credit",
-      "type": "broken_source_url",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://www.td.com/us/en/personal-banking/credit-cards/business-solutions-card -> HTTP 404",
-      "popular": false
-    },
-    {
-      "card_id": "td-double-up-credit",
-      "type": "broken_source_url",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://www.td.com/us/en/personal-banking/credit-cards/double-up-card -> HTTP 404",
-      "popular": false
-    },
-    {
-      "card_id": "us-bank-biz-altitude-connect",
-      "type": "broken_source_url",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://www.usbank.com/credit-cards/business-altitude-connect-visa-signature-credit-card.html -> HTTP 404",
-      "popular": false
-    },
-    {
-      "card_id": "wells-fargo-signify-biz-cash",
-      "type": "broken_source_url",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://creditcards.wellsfargo.com/signify-business-cash/ -> HTTP 404",
       "popular": false
     },
     {
@@ -297,62 +201,6 @@
     },
     {
       "card_id": "cathay-world-elite",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
-      "card_id": "chase-disney-premier",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
-      "card_id": "chase-disney-visa",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
-      "card_id": "chase-southwest-performance-biz",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
-      "card_id": "citi-costco-biz",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
-      "card_id": "citi-dividend",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
-      "card_id": "citi-prestige",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
-      "card_id": "discover-it-chrome",
       "type": "missing_sources",
       "severity": "high",
       "field": "sources",
@@ -433,14 +281,6 @@
     },
     {
       "card_id": "wells-fargo-active-cash-biz",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
-      "card_id": "wells-fargo-reflect",
       "type": "missing_sources",
       "severity": "high",
       "field": "sources",
@@ -584,22 +424,6 @@
       "popular": false
     },
     {
-      "card_id": "citi-rewards-plus",
-      "type": "source_redirects_elsewhere",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://cardtier.com/cards/citi-rewards-plus -> https://www.cardtier.com/cards/citi-rewards-plus",
-      "popular": false
-    },
-    {
-      "card_id": "citi-rewards-plus",
-      "type": "source_redirects_elsewhere",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://www.citi.com/credit-cards/citi-rewards-plus-credit-card -> https://www.citi.com/credit-cards/citi-strata-credit-card",
-      "popular": false
-    },
-    {
       "card_id": "citi-secured-mastercard",
       "type": "source_redirects_elsewhere",
       "severity": "high",
@@ -632,43 +456,11 @@
       "popular": false
     },
     {
-      "card_id": "upgrade-triple-cash-rewards-visa",
-      "type": "source_redirects_elsewhere",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://www.upgrade.com/upgrade-card/triple-cash/ -> https://www.upgrade.com/credit-card/onecard-essentials/",
-      "popular": false
-    },
-    {
       "card_id": "us-bank-biz-leverage-visa",
       "type": "source_redirects_elsewhere",
       "severity": "high",
       "field": "sources",
       "detail": "https://www.usbank.com/business-banking/business-credit-cards/business-leverage-rewards-credit-card.html -> https://www.usbank.com/business-banking/business-credit-cards.html",
-      "popular": false
-    },
-    {
-      "card_id": "us-bank-shopper-cash-rewards",
-      "type": "source_redirects_elsewhere",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://www.usbank.com/credit-cards/shopper-cash-rewards-visa-signature-credit-card.html -> https://www.usbank.com/credit-cards.html",
-      "popular": false
-    },
-    {
-      "card_id": "us-bank-visa-platinum",
-      "type": "source_redirects_elsewhere",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://www.usbank.com/credit-cards/visa-platinum-credit-card.html -> https://www.usbank.com/credit-cards/shield-visa-credit-card.html",
-      "popular": false
-    },
-    {
-      "card_id": "wells-fargo-attune",
-      "type": "source_redirects_elsewhere",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://creditcards.wellsfargo.com/attune-credit-card/ -> https://creditcards.wellsfargo.com/?sub_channel=WEB&vendor_code=WF",
       "popular": false
     },
     {
@@ -3064,6 +2856,30 @@
       "popular": false
     },
     {
+      "card_id": "citi-dividend",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.citi.com/credit-cards/view-all-credit-cards also used by citi-prestige, citi-rewards-plus",
+      "popular": false
+    },
+    {
+      "card_id": "citi-prestige",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.citi.com/credit-cards/view-all-credit-cards also used by citi-dividend, citi-rewards-plus",
+      "popular": false
+    },
+    {
+      "card_id": "citi-rewards-plus",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.citi.com/credit-cards/view-all-credit-cards also used by citi-dividend, citi-prestige",
+      "popular": false
+    },
+    {
       "card_id": "navy-federal-cashrewards",
       "type": "shared_official_url",
       "severity": "low",
@@ -3096,11 +2912,75 @@
       "popular": false
     },
     {
+      "card_id": "us-bank-shopper-cash-rewards",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.usbank.com/credit-cards.html also used by us-bank-visa-platinum",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-visa-platinum",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.usbank.com/credit-cards.html also used by us-bank-shopper-cash-rewards",
+      "popular": false
+    },
+    {
+      "card_id": "citi-rewards-plus",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://cardtier.com/cards/citi-rewards-plus -> https://www.cardtier.com/cards/citi-rewards-plus",
+      "popular": false
+    },
+    {
+      "card_id": "citi-rewards-plus",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://www.citi.com/credit-cards/citi-rewards-plus-credit-card -> https://www.citi.com/credit-cards/citi-strata-credit-card",
+      "popular": false
+    },
+    {
+      "card_id": "upgrade-triple-cash-rewards-visa",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://www.upgrade.com/upgrade-card/triple-cash/ -> https://www.upgrade.com/credit-card/onecard-essentials/",
+      "popular": false
+    },
+    {
       "card_id": "us-bank-altitude-reserve",
       "type": "source_redirects_elsewhere",
       "severity": "low",
       "field": "sources",
-      "detail": "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html -> https://www.usbank.com/credit-cards.html?utm_source=supermoney&source=supermoney-blog-post",
+      "detail": "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html -> https://www.usbank.com/credit-cards.html",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-shopper-cash-rewards",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://www.usbank.com/credit-cards/shopper-cash-rewards-visa-signature-credit-card.html -> https://www.usbank.com/credit-cards.html",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-visa-platinum",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://www.usbank.com/credit-cards/visa-platinum-credit-card.html -> https://www.usbank.com/credit-cards/shield-visa-credit-card.html",
+      "popular": false
+    },
+    {
+      "card_id": "wells-fargo-attune",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://creditcards.wellsfargo.com/attune-credit-card/ -> https://creditcards.wellsfargo.com/?sub_channel=WEB&vendor_code=WF",
       "popular": false
     },
     {
@@ -3232,30 +3112,6 @@
       "popular": false
     },
     {
-      "card_id": "barclays-athleta-rewards-mastercard",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "barclays-banana-republic-rewards-mastercard",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "barclays-carnival-world-mastercard",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
       "card_id": "barclays-celebrity-cruises-visa-signature",
       "type": "stale_last_verified",
       "severity": "low",
@@ -3272,14 +3128,6 @@
       "popular": false
     },
     {
-      "card_id": "barclays-gap-good-rewards-mastercard",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
       "card_id": "barclays-harley-davidson",
       "type": "stale_last_verified",
       "severity": "low",
@@ -3289,14 +3137,6 @@
     },
     {
       "card_id": "barclays-jetblue",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "barclays-jetblue-biz",
       "type": "stale_last_verified",
       "severity": "low",
       "field": "last_verified",
@@ -3528,22 +3368,6 @@
       "popular": false
     },
     {
-      "card_id": "chase-disney-premier",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "chase-disney-visa",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
       "card_id": "chase-freedom-rise",
       "type": "stale_last_verified",
       "severity": "low",
@@ -3576,14 +3400,6 @@
       "popular": false
     },
     {
-      "card_id": "chase-southwest-performance-biz",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
       "card_id": "chase-southwest-premier-biz",
       "type": "stale_last_verified",
       "severity": "low",
@@ -3593,22 +3409,6 @@
     },
     {
       "card_id": "chase-united-club-biz",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "chase-united-club-infinite",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "chase-united-gateway",
       "type": "stale_last_verified",
       "severity": "low",
       "field": "last_verified",
@@ -3632,14 +3432,6 @@
       "popular": false
     },
     {
-      "card_id": "citi-costco-biz",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
       "card_id": "citi-custom-cash",
       "type": "stale_last_verified",
       "severity": "low",
@@ -3648,35 +3440,11 @@
       "popular": false
     },
     {
-      "card_id": "citi-dividend",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
       "card_id": "citi-double-cash",
       "type": "stale_last_verified",
       "severity": "low",
       "field": "last_verified",
       "detail": "last_verified 2026-04-25 (160 days)",
-      "popular": false
-    },
-    {
-      "card_id": "citi-prestige",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "citi-rewards-plus",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
       "popular": false
     },
     {
@@ -3713,14 +3481,6 @@
     },
     {
       "card_id": "comenity-ulta-beauty-mastercard",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "discover-it-chrome",
       "type": "stale_last_verified",
       "severity": "low",
       "field": "last_verified",
@@ -3848,14 +3608,6 @@
       "popular": false
     },
     {
-      "card_id": "marriott-bonvoy-bountiful",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-24 (161 days)",
-      "popular": false
-    },
-    {
       "card_id": "my-gm-rewards-mastercard",
       "type": "stale_last_verified",
       "severity": "low",
@@ -3873,14 +3625,6 @@
     },
     {
       "card_id": "navy-federal-cashrewards-plus",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "navy-federal-flagship-rewards",
       "type": "stale_last_verified",
       "severity": "low",
       "field": "last_verified",
@@ -4040,14 +3784,6 @@
       "popular": false
     },
     {
-      "card_id": "synchrony-paypal-cashback-mastercard",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
       "card_id": "synchrony-sams-club-mastercard",
       "type": "stale_last_verified",
       "severity": "low",
@@ -4072,39 +3808,7 @@
       "popular": false
     },
     {
-      "card_id": "td-biz-solutions-credit",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "td-cash-credit",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "td-double-up-credit",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
       "card_id": "td-first-class-visa-signature",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "upgrade-triple-cash-rewards-visa",
       "type": "stale_last_verified",
       "severity": "low",
       "field": "last_verified",
@@ -4152,23 +3856,7 @@
       "popular": false
     },
     {
-      "card_id": "us-bank-biz-altitude-connect",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
       "card_id": "us-bank-biz-leverage-visa",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "us-bank-visa-platinum",
       "type": "stale_last_verified",
       "severity": "low",
       "field": "last_verified",
@@ -4200,31 +3888,7 @@
       "popular": false
     },
     {
-      "card_id": "wells-fargo-attune",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-25 (160 days)",
-      "popular": false
-    },
-    {
       "card_id": "wells-fargo-autograph",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "wells-fargo-reflect",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "wells-fargo-signify-biz-cash",
       "type": "stale_last_verified",
       "severity": "low",
       "field": "last_verified",

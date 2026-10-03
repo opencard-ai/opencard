@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-10-03T03:20:48.153Z",
-  "count": 270,
+  "checked_at": "2026-10-03T03:45:40.371Z",
+  "count": 286,
   "results": [
     {
       "card_id": "amazon-prime-visa",
@@ -94,9 +94,9 @@
     },
     {
       "card_id": "amex-delta-gold",
-      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
+      "url": "https://www.dailydrop.com/credit-cards/delta-skymiles-gold-american-express-card",
       "status": 200,
-      "final_url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
+      "final_url": "https://www.dailydrop.com/credit-cards/delta-skymiles-gold-american-express-card",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -112,9 +112,18 @@
     },
     {
       "card_id": "amex-delta-gold",
-      "url": "https://www.dailydrop.com/credit-cards/delta-skymiles-gold-american-express-card",
+      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
       "status": 200,
-      "final_url": "https://www.dailydrop.com/credit-cards/delta-skymiles-gold-american-express-card",
+      "final_url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "amex-delta-gold-biz",
+      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "status": 200,
+      "final_url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -129,33 +138,6 @@
       "blocked": false
     },
     {
-      "card_id": "amex-delta-gold-biz",
-      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
-      "status": 200,
-      "final_url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
-      "same_page": true,
-      "soft_404": false,
-      "blocked": false
-    },
-    {
-      "card_id": "amex-delta-platinum",
-      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
-      "status": 200,
-      "final_url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
-      "same_page": true,
-      "soft_404": false,
-      "blocked": false
-    },
-    {
-      "card_id": "amex-delta-platinum",
-      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
-      "status": 200,
-      "final_url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
-      "same_page": true,
-      "soft_404": false,
-      "blocked": false
-    },
-    {
       "card_id": "amex-delta-platinum",
       "url": "https://www.dailydrop.com/credit-cards/delta-skymiles-platinum-american-express-card",
       "status": 200,
@@ -165,10 +147,28 @@
       "blocked": false
     },
     {
-      "card_id": "amex-delta-reserve",
+      "card_id": "amex-delta-platinum",
+      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "status": 200,
+      "final_url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "amex-delta-platinum",
       "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
       "status": 200,
       "final_url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "amex-delta-reserve",
+      "url": "https://www.dailydrop.com/credit-cards/delta-skymiles-reserve-american-express-card",
+      "status": 200,
+      "final_url": "https://www.dailydrop.com/credit-cards/delta-skymiles-reserve-american-express-card",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -184,9 +184,9 @@
     },
     {
       "card_id": "amex-delta-reserve",
-      "url": "https://www.dailydrop.com/credit-cards/delta-skymiles-reserve-american-express-card",
+      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
       "status": 200,
-      "final_url": "https://www.dailydrop.com/credit-cards/delta-skymiles-reserve-american-express-card",
+      "final_url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -220,18 +220,18 @@
     },
     {
       "card_id": "amex-delta-skymiles-reserve-biz",
-      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
+      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
       "status": 200,
-      "final_url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
+      "final_url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
       "same_page": true,
       "soft_404": false,
       "blocked": false
     },
     {
       "card_id": "amex-delta-skymiles-reserve-biz",
-      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
       "status": 200,
-      "final_url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "final_url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -409,18 +409,18 @@
     },
     {
       "card_id": "amex-marriott-brilliant",
-      "url": "https://www.marriott.com/credit-cards/marriott-bonvoy-brilliant-american-express-card.mi",
+      "url": "https://www.dailydrop.com/credit-cards/marriott-bonvoy-brilliant-american-express-card",
       "status": 200,
-      "final_url": "https://www.marriott.com/credit-cards/marriott-bonvoy-brilliant-american-express-card.mi",
+      "final_url": "https://www.dailydrop.com/credit-cards/marriott-bonvoy-brilliant-american-express-card",
       "same_page": true,
       "soft_404": false,
       "blocked": false
     },
     {
       "card_id": "amex-marriott-brilliant",
-      "url": "https://www.dailydrop.com/credit-cards/marriott-bonvoy-brilliant-american-express-card",
+      "url": "https://www.marriott.com/credit-cards/marriott-bonvoy-brilliant-american-express-card.mi",
       "status": 200,
-      "final_url": "https://www.dailydrop.com/credit-cards/marriott-bonvoy-brilliant-american-express-card",
+      "final_url": "https://www.marriott.com/credit-cards/marriott-bonvoy-brilliant-american-express-card.mi",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -499,15 +499,6 @@
     },
     {
       "card_id": "apple-card",
-      "url": "https://www.apple.com/apple-card/",
-      "status": 200,
-      "final_url": "https://www.apple.com/apple-card/",
-      "same_page": true,
-      "soft_404": false,
-      "blocked": false
-    },
-    {
-      "card_id": "apple-card",
       "url": "https://www.goldmansachs.com/pressroom/press-releases/2026/goldman-sachs-announces-agreement-to-transition-apple-card-program-to-chase",
       "status": 200,
       "final_url": "https://www.goldmansachs.com/pressroom/press-releases/2026/goldman-sachs-announces-agreement-to-transition-apple-card-program-to-chase",
@@ -520,6 +511,15 @@
       "url": "https://www.jpmorganchase.com/ir/news/2026/chase-to-become-new-issuer-of-apple-card",
       "status": 200,
       "final_url": "https://www.jpmorganchase.com/ir/news/2026/chase-to-become-new-issuer-of-apple-card",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "apple-card",
+      "url": "https://www.apple.com/apple-card/",
+      "status": 200,
+      "final_url": "https://www.apple.com/apple-card/",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -562,9 +562,9 @@
     },
     {
       "card_id": "barclays-carnival-world-mastercard",
-      "url": "https://cards.barclaycardus.com/banking/cards/carnival-world-mastercard/",
-      "status": 404,
-      "final_url": "https://cards.barclaycardus.com/banking/cards/carnival-world-mastercard/",
+      "url": "https://cards.barclaycardus.com/banking/cards/carnival-rewards-mastercard/",
+      "status": 200,
+      "final_url": "https://cards.barclaycardus.com/banking/cards/carnival-rewards-mastercard/",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -607,9 +607,9 @@
     },
     {
       "card_id": "barclays-jetblue-biz",
-      "url": "https://cards.barclaycardus.com/banking/credit-card/jetblue/mastercard-mastercard-business/",
-      "status": 404,
-      "final_url": "https://cards.barclaycardus.com/banking/credit-card/jetblue/mastercard-mastercard-business/",
+      "url": "https://cards.barclaycardus.com/banking/cards/jetblue-business-card/",
+      "status": 200,
+      "final_url": "https://cards.barclaycardus.com/banking/cards/jetblue-business-card/",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -709,6 +709,15 @@
       "url": "https://newsroom.biltrewards.com/meetbiltcard2.0",
       "status": 200,
       "final_url": "https://newsroom.biltrewards.com/meetbiltcard2.0",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "bilt-obsidian",
+      "url": "https://www.bilt.com/card",
+      "status": 200,
+      "final_url": "https://www.bilt.com/card",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -1254,6 +1263,24 @@
       "blocked": false
     },
     {
+      "card_id": "chase-disney-premier",
+      "url": "https://creditcards.chase.com/rewards-credit-cards/disney/premier",
+      "status": 200,
+      "final_url": "https://creditcards.chase.com/rewards-credit-cards/disney/premier",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "chase-disney-visa",
+      "url": "https://creditcards.chase.com/rewards-credit-cards/disney/rewards",
+      "status": 200,
+      "final_url": "https://creditcards.chase.com/rewards-credit-cards/disney/rewards",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
       "card_id": "chase-freedom-flex",
       "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
       "status": 200,
@@ -1282,9 +1309,9 @@
     },
     {
       "card_id": "chase-hyatt",
-      "url": "https://www.chase.com/personal/credit-cards/hyatt-world-of-hyatt-credit-card",
-      "status": 404,
-      "final_url": "https://www.chase.com/personal/credit-cards/hyatt-world-of-hyatt-credit-card",
+      "url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card",
+      "status": 200,
+      "final_url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -1470,6 +1497,15 @@
       "blocked": false
     },
     {
+      "card_id": "chase-southwest-performance-biz",
+      "url": "https://creditcards.chase.com/business-credit-cards/southwest/performance-business",
+      "status": 200,
+      "final_url": "https://creditcards.chase.com/business-credit-cards/southwest/performance-business",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
       "card_id": "chase-southwest-premier-biz",
       "url": "https://www.swamedia.com/news-and-stories/news-release/chase-and-southwest-airlines-introduce-new-benefits-on-southwest-rapid-rewards-c-MC7BWJWDE2MZA5DLJDR7CI2FM7JE",
       "status": 200,
@@ -1561,9 +1597,9 @@
     },
     {
       "card_id": "chase-united-gateway",
-      "url": "https://creditcards.chase.com/travel-credit-cards/united/gateway",
-      "status": 404,
-      "final_url": "https://creditcards.chase.com/travel-credit-cards/united/gateway",
+      "url": "https://creditcards.chase.com/travel-credit-cards/united/united-gateway",
+      "status": 200,
+      "final_url": "https://creditcards.chase.com/travel-credit-cards/united/united-gateway",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -1668,10 +1704,28 @@
       "blocked": false
     },
     {
+      "card_id": "citi-costco-biz",
+      "url": "https://www.citi.com/credit-cards/costco-anywhere-visa-business-card",
+      "status": 200,
+      "final_url": "https://www.citi.com/credit-cards/costco-anywhere-visa-business-card",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
       "card_id": "citi-custom-cash",
       "url": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
       "status": 200,
       "final_url": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "citi-dividend",
+      "url": "https://www.citi.com/credit-cards/view-all-credit-cards",
+      "status": 200,
+      "final_url": "https://www.citi.com/credit-cards/view-all-credit-cards",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -1686,11 +1740,29 @@
       "blocked": false
     },
     {
+      "card_id": "citi-prestige",
+      "url": "https://www.citi.com/credit-cards/view-all-credit-cards",
+      "status": 200,
+      "final_url": "https://www.citi.com/credit-cards/view-all-credit-cards",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
       "card_id": "citi-rewards-plus",
       "url": "https://cardtier.com/cards/citi-rewards-plus",
       "status": 200,
       "final_url": "https://www.cardtier.com/cards/citi-rewards-plus",
       "same_page": false,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "citi-rewards-plus",
+      "url": "https://www.citi.com/credit-cards/view-all-credit-cards",
+      "status": 200,
+      "final_url": "https://www.citi.com/credit-cards/view-all-credit-cards",
+      "same_page": true,
       "soft_404": false,
       "blocked": false
     },
@@ -1732,18 +1804,18 @@
     },
     {
       "card_id": "citi-strata-premier",
-      "url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+      "url": "https://www.dailydrop.com/credit-cards/citi-strata-premier-card",
       "status": 200,
-      "final_url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+      "final_url": "https://www.dailydrop.com/credit-cards/citi-strata-premier-card",
       "same_page": true,
       "soft_404": false,
       "blocked": false
     },
     {
       "card_id": "citi-strata-premier",
-      "url": "https://www.dailydrop.com/credit-cards/citi-strata-premier-card",
+      "url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
       "status": 200,
-      "final_url": "https://www.dailydrop.com/credit-cards/citi-strata-premier-card",
+      "final_url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -1789,6 +1861,15 @@
       "url": "https://www.discover.com/credit-cards/cash-back/cashback-bonus.html",
       "status": 200,
       "final_url": "https://www.discover.com/credit-cards/cash-back/cashback-bonus.html",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "discover-it-chrome",
+      "url": "https://www.discover.com/credit-cards/cash-back/chrome/",
+      "status": 200,
+      "final_url": "https://www.discover.com/credit-cards/cash-back/chrome/",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -1885,9 +1966,9 @@
     },
     {
       "card_id": "ihg-one-rewards-traveler",
-      "url": "https://creditcards.chase.com/travel-credit-cards/ihg/traveler",
-      "status": 404,
-      "final_url": "https://creditcards.chase.com/travel-credit-cards/ihg/traveler",
+      "url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/one-rewards",
+      "status": 200,
+      "final_url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/one-rewards",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -1939,9 +2020,9 @@
     },
     {
       "card_id": "marriott-bonvoy-bountiful",
-      "url": "https://creditcards.chase.com/travel-credit-cards/marriott/bonvoy-bountiful",
-      "status": 404,
-      "final_url": "https://creditcards.chase.com/travel-credit-cards/marriott/bonvoy-bountiful",
+      "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/bountiful",
+      "status": 200,
+      "final_url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/bountiful",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -1972,9 +2053,9 @@
     },
     {
       "card_id": "navy-federal-flagship-rewards",
-      "url": "https://www.navyfederal.org/loans-cards/credit-cards/flagship-rewards.html",
-      "status": 404,
-      "final_url": "https://www.navyfederal.org/loans-cards/credit-cards/flagship-rewards.html",
+      "url": "https://www.navyfederal.org/loans-cards/credit-cards/flagship-premier-visa-signature.html",
+      "status": 200,
+      "final_url": "https://www.navyfederal.org/loans-cards/credit-cards/flagship-premier-visa-signature.html",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -2143,9 +2224,9 @@
     },
     {
       "card_id": "synchrony-paypal-cashback-mastercard",
-      "url": "https://www.paypal.com/us/credit-cards",
-      "status": 404,
-      "final_url": "https://www.paypal.com/us/credit-cards",
+      "url": "https://www.paypal.com/us/digital-wallet/manage-money/paypal-cashback-mastercard",
+      "status": 200,
+      "final_url": "https://www.paypal.com/us/digital-wallet/manage-money/paypal-cashback-mastercard",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -2170,9 +2251,18 @@
     },
     {
       "card_id": "td-biz-solutions-credit",
-      "url": "https://www.td.com/us/en/personal-banking/credit-cards/business-solutions-card",
-      "status": 404,
-      "final_url": "https://www.td.com/us/en/personal-banking/credit-cards/business-solutions-card",
+      "url": "https://www.td.com/us/en/personal-banking/credit-cards/business-solutions-credit-card",
+      "status": 200,
+      "final_url": "https://www.td.com/us/en/personal-banking/credit-cards/business-solutions-credit-card",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "td-cash-credit",
+      "url": "https://www.td.com/us/en/personal-banking/credit-cards",
+      "status": 200,
+      "final_url": "https://www.td.com/us/en/personal-banking/credit-cards",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -2188,9 +2278,9 @@
     },
     {
       "card_id": "td-double-up-credit",
-      "url": "https://www.td.com/us/en/personal-banking/credit-cards/double-up-card",
-      "status": 404,
-      "final_url": "https://www.td.com/us/en/personal-banking/credit-cards/double-up-card",
+      "url": "https://www.td.com/us/en/personal-banking/credit-cards/double-up",
+      "status": 200,
+      "final_url": "https://www.td.com/us/en/personal-banking/credit-cards/double-up",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -2200,6 +2290,15 @@
       "url": "https://www.td.com/us/en/personal-banking/credit-cards/first-class-card",
       "status": 200,
       "final_url": "https://www.td.com/us/en/personal-banking/credit-cards/first-class-card",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "upgrade-triple-cash-rewards-visa",
+      "url": "https://www.upgrade.com/credit-card/onecard-essentials/",
+      "status": 200,
+      "final_url": "https://www.upgrade.com/credit-card/onecard-essentials/",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -2262,16 +2361,16 @@
       "card_id": "us-bank-altitude-reserve",
       "url": "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html",
       "status": 200,
-      "final_url": "https://www.usbank.com/credit-cards.html?utm_source=supermoney&source=supermoney-blog-post",
+      "final_url": "https://www.usbank.com/credit-cards.html",
       "same_page": false,
       "soft_404": false,
       "blocked": false
     },
     {
       "card_id": "us-bank-biz-altitude-connect",
-      "url": "https://www.usbank.com/credit-cards/business-altitude-connect-visa-signature-credit-card.html",
-      "status": 404,
-      "final_url": "https://www.usbank.com/credit-cards/business-altitude-connect-visa-signature-credit-card.html",
+      "url": "https://www.usbank.com/business-banking/business-credit-cards/business-altitude-connect-credit-card.html",
+      "status": 200,
+      "final_url": "https://www.usbank.com/business-banking/business-credit-cards/business-altitude-connect-credit-card.html",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -2323,6 +2422,15 @@
     },
     {
       "card_id": "us-bank-shopper-cash-rewards",
+      "url": "https://www.usbank.com/credit-cards.html",
+      "status": 200,
+      "final_url": "https://www.usbank.com/credit-cards.html",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "us-bank-shopper-cash-rewards",
       "url": "https://www.usbank.com/credit-cards/shopper-cash-rewards-visa-signature-credit-card.html",
       "status": 200,
       "final_url": "https://www.usbank.com/credit-cards.html",
@@ -2341,10 +2449,37 @@
     },
     {
       "card_id": "us-bank-visa-platinum",
+      "url": "https://www.usbank.com/credit-cards.html",
+      "status": 200,
+      "final_url": "https://www.usbank.com/credit-cards.html",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "us-bank-visa-platinum",
       "url": "https://www.usbank.com/credit-cards/visa-platinum-credit-card.html",
       "status": 200,
       "final_url": "https://www.usbank.com/credit-cards/shield-visa-credit-card.html",
       "same_page": false,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "wells-fargo-active-cash",
+      "url": "https://creditcards.wellsfargo.com/active-cash-credit-card/",
+      "status": 200,
+      "final_url": "https://creditcards.wellsfargo.com/active-cash-credit-card/?sub_channel=WEB&vendor_code=WF",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "wells-fargo-attune",
+      "url": "https://creditcards.wellsfargo.com/",
+      "status": 200,
+      "final_url": "https://creditcards.wellsfargo.com/?sub_channel=WEB&vendor_code=WF",
+      "same_page": true,
       "soft_404": false,
       "blocked": false
     },
@@ -2421,10 +2556,19 @@
       "blocked": false
     },
     {
+      "card_id": "wells-fargo-reflect",
+      "url": "https://creditcards.wellsfargo.com/reflect-visa-credit-card/",
+      "status": 200,
+      "final_url": "https://creditcards.wellsfargo.com/reflect-visa-credit-card/?sub_channel=WEB&vendor_code=WF",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
       "card_id": "wells-fargo-signify-biz-cash",
-      "url": "https://creditcards.wellsfargo.com/signify-business-cash/",
-      "status": 404,
-      "final_url": "https://creditcards.wellsfargo.com/signify-business-cash/",
+      "url": "https://creditcards.wellsfargo.com/business-credit-cards/signify-business-cash-credit-card/",
+      "status": 200,
+      "final_url": "https://creditcards.wellsfargo.com/business-credit-cards/signify-business-cash-credit-card/?sub_channel=WEB&vendor_code=WF",
       "same_page": true,
       "soft_404": false,
       "blocked": false

@@ -7,11 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
+    "bonus_points": 0,
     "spending_requirement": 0,
     "time_period_months": 0,
-    "bonus_points": 0,
-    "description": "N/A",
-    "point_program": "Points"
+    "estimated_value": 0,
+    "description": "Not available: closed to new applicants.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -44,13 +45,20 @@
   "tags": [
     "no-annual-fee"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.citi.com/credit-cards/view-all-credit-cards",
+      "notes": "Official Citi View All Cards list checked 2026-10-02: Dividend not listed; product URL shows \"page no longer exists\"."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.976Z",
-  "last_verified": "2026-04-16T13:41:49.976Z",
-  "next_review": "2026-07-15T13:41:49.976000+00:00"
+  "last_updated": "2026-10-02",
+  "last_verified": "2026-10-02",
+  "next_review": "2026-07-15T13:41:49.976000+00:00",
+  "status": "discontinued",
+  "discontinued_notes": "Closed to new applicants: the official Citi Dividend page says the page \"no longer exists\" and the card is absent from Citi's View All Cards list (checked 2026-10-02)."
 }

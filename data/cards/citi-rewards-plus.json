@@ -7,12 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 1500,
-    "time_period_months": 3,
-    "bonus_points": 25000,
-    "estimated_value": 425,
-    "point_program": "Citi ThankYou Points",
-    "description": "Earn 25,000 ThankYou Points after spending $1,500 in first 3 months"
+    "bonus_points": 0,
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "estimated_value": 0,
+    "description": "Not available: closed to new applicants.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -62,6 +62,10 @@
   ],
   "sources": [
     {
+      "url": "https://www.citi.com/credit-cards/view-all-credit-cards",
+      "notes": "Official Citi View All Cards list checked 2026-10-02: Rewards+ not listed; citi-rewards-plus-credit-card URL redirects to citi-strata-credit-card."
+    },
+    {
       "url": "https://www.citi.com/credit-cards/citi-rewards-plus-credit-card"
     },
     {
@@ -73,12 +77,14 @@
       "notes": "Current offer review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.977Z",
+  "last_updated": "2026-10-02",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.977Z",
-  "next_review": "2026-07-15T13:41:49.977000+00:00"
+  "last_verified": "2026-10-02",
+  "next_review": "2026-07-15T13:41:49.977000+00:00",
+  "status": "discontinued",
+  "discontinued_notes": "Citi no longer offers the Rewards+ Card to new applicants: its official page redirects to the Citi Strata Card and it is absent from Citi's View All Cards list (checked 2026-10-02)."
 }

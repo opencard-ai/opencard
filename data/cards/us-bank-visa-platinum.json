@@ -7,11 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",
   "welcome_offer": {
+    "bonus_points": 0,
     "spending_requirement": 0,
     "time_period_months": 0,
-    "bonus_points": 0,
-    "bonus_value": 0,
-    "description": "Basic card - no welcome offer"
+    "estimated_value": 0,
+    "description": "Not available: closed to new applicants.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -57,6 +58,10 @@
   ],
   "sources": [
     {
+      "url": "https://www.usbank.com/credit-cards.html",
+      "notes": "Official U.S. Bank credit card list checked 2026-10-02: Visa Platinum not listed; visa-platinum-credit-card.html redirects to shield-visa-credit-card.html."
+    },
+    {
       "url": "https://www.usbank.com/credit-cards/visa-platinum-credit-card.html",
       "notes": "Official U.S. Bank page (redirects to shield-visa)"
     },
@@ -69,8 +74,8 @@
       "notes": "U.S. News review"
     }
   ],
-  "last_updated": "2026-04-30T03:43:08.633Z",
-  "status": "active",
+  "last_updated": "2026-10-02",
+  "status": "discontinued",
   "notes": "Card URL redirects to U.S. Bank Shield Visa. May have been rebranded or is the same product. 0% intro APR for 21 billing cycles on purchases and balance transfers. Ideal for those seeking low APR and cell phone protection rather than rewards.",
   "hotel_program": null,
   "application_rules": {
@@ -78,6 +83,7 @@
     "notes": null
   },
   "recurring_credits": [],
-  "last_verified": "2026-04-16T13:41:50.006Z",
-  "next_review": "2026-07-15T13:41:50.006000+00:00"
+  "last_verified": "2026-10-02",
+  "next_review": "2026-07-15T13:41:50.006000+00:00",
+  "discontinued_notes": "No longer offered: the official U.S. Bank Visa Platinum page now redirects to the U.S. Bank Shield Visa card, and it is absent from U.S. Bank's credit card list (checked 2026-10-02)."
 }

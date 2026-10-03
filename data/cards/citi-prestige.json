@@ -7,11 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
+    "bonus_points": 0,
     "spending_requirement": 0,
     "time_period_months": 0,
-    "bonus_points": 0,
-    "description": "N/A",
-    "point_program": "Points"
+    "estimated_value": 0,
+    "description": "Not available: closed to new applicants.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -55,13 +56,18 @@
     "premium",
     "transferable"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.citi.com/credit-cards/view-all-credit-cards",
+      "notes": "Official Citi View All Cards list checked 2026-10-02: Prestige not listed; product URL returns page-not-found."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.977Z",
+  "last_updated": "2026-10-02",
   "recurring_credits": [
     {
       "credit_key": "hotel-credit",
@@ -82,6 +88,8 @@
       "reset_type": "calendar_year"
     }
   ],
-  "last_verified": "2026-04-16T13:41:49.977Z",
-  "next_review": "2026-07-15T13:41:49.977000+00:00"
+  "last_verified": "2026-10-02",
+  "next_review": "2026-07-15T13:41:49.977000+00:00",
+  "status": "discontinued",
+  "discontinued_notes": "Closed to new applicants: the official Citi Prestige page now redirects to Citi's page-not-found and the card is absent from Citi's View All Cards list (checked 2026-10-02)."
 }

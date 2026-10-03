@@ -11,24 +11,29 @@
   },
   "earning_rates": [
     {
-      "category": "Gas stations",
-      "rate": 4,
-      "notes": ""
+      "category": "Gas at Costco",
+      "rate": 5,
+      "notes": "5% on gas at Costco (5% and 4% earn on a combined $7,000 per year, then 1%)"
     },
     {
-      "category": "Restaurants",
+      "category": "Other Gas & EV Charging",
       "rate": 4,
-      "notes": ""
+      "notes": "4% on other eligible gas and EV charging (combined $7,000 cap with gas at Costco)"
     },
     {
-      "category": "Eligible travel",
+      "category": "Restaurants & Travel",
       "rate": 3,
-      "notes": ""
+      "notes": "3% on restaurants and eligible travel, including Costco Travel"
     },
     {
-      "category": "All other purchases",
+      "category": "Costco Purchases",
       "rate": 2,
-      "notes": ""
+      "notes": "2% on all other Costco and Costco.com purchases"
+    },
+    {
+      "category": "All Other Purchases",
+      "rate": 1,
+      "notes": "1% on all other purchases"
     }
   ],
   "annual_credits": [],
@@ -53,14 +58,19 @@
     "business",
     "no-annual-fee"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.citi.com/credit-cards/costco-anywhere-visa-business-card",
+      "notes": "Official Citi page checked 2026-10-02: $0 annual fee with active Costco membership; 5%/4%/3%/2%/1% earning."
+    }
+  ],
   "benefits": [],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-03T03:19:54.149Z",
-  "last_verified": "2026-04-16T13:41:49.976Z",
+  "last_updated": "2026-10-02",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.976000+00:00"
 }

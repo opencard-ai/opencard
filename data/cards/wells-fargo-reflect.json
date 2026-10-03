@@ -41,14 +41,19 @@
     "no-annual-fee"
   ],
   "recurring_credits": [],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://creditcards.wellsfargo.com/reflect-visa-credit-card/",
+      "notes": "Official Wells Fargo page checked 2026-10-02: $0 annual fee; 0% intro APR for 21 months on purchases and qualifying balance transfers; no welcome bonus shown."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:50.011Z",
-  "last_verified": "2026-04-16T13:41:50.011Z",
+  "last_updated": "2026-10-02",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:50.011000+00:00",
   "balance_transfer_fee_pct": 5,
   "balance_transfer_fee_min": 5,

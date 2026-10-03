@@ -7,11 +7,14 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 0,
-    "time_period_months": 0,
-    "bonus_points": 0,
-    "description": "N/A",
-    "point_program": "Points"
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": 300,
+    "description": "Get a $200 Disney Gift Card eGift upon approval + earn a $100 statement credit after you spend $500 on purchases in the first 3 months from account opening.",
+    "point_program": "Disney Rewards Dollars",
+    "bonus_type": "cash",
+    "estimated_value": 300,
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -67,14 +70,19 @@
     "travel_accident": null
   },
   "tags": [],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/rewards-credit-cards/disney/premier",
+      "notes": "Official Chase page checked 2026-10-02: $49 annual fee; $300 offer ($200 Disney eGift on approval + $100 after $500 in 3 months)."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-29T05:25:54.022Z",
-  "last_verified": "2026-04-16T13:41:49.965Z",
+  "last_updated": "2026-10-02",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.965000+00:00",
   "recurring_credits": [
     {

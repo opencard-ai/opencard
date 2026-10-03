@@ -8,13 +8,12 @@
   "foreign_transaction_fee": 3,
   "credit_required": "Good to Excellent",
   "welcome_offer": {
-    "spending_requirement": 2000,
-    "time_period_months": 4,
-    "bonus_points": 250,
-    "estimated_value": 250,
-    "point_program": "Cash Back",
-    "description": "Earn a $250 bonus after spending $2,000 in eligible purchases within the first 120 days of account opening.",
-    "last_verified": "2026-06-13T17:10:00.000Z"
+    "bonus_points": 0,
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "estimated_value": 0,
+    "description": "Not available: closed to new applicants.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -77,18 +76,23 @@
   ],
   "sources": [
     {
+      "url": "https://www.usbank.com/credit-cards.html",
+      "notes": "Official U.S. Bank credit card list checked 2026-10-02: Shopper Cash Rewards not listed; product URL redirects to the list."
+    },
+    {
       "url": "https://www.usbank.com/credit-cards/shopper-cash-rewards-visa-signature-credit-card.html",
       "notes": "Official U.S. Bank Shopper Cash Rewards page; verified 2026-06-13."
     }
   ],
-  "last_updated": "2026-06-13T17:10:00.000Z",
-  "status": "active",
+  "last_updated": "2026-10-02",
+  "status": "discontinued",
   "notes": "Quarterly selectable retailer/everyday-category card; first-year annual fee is waived, then $95/year.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-06-13T17:10:00.000Z",
-  "next_review": "2026-09-11T17:10:00.000Z"
+  "last_verified": "2026-10-02",
+  "next_review": "2026-09-11T17:10:00.000Z",
+  "discontinued_notes": "No longer offered: the official Shopper Cash Rewards page redirects to the U.S. Bank credit card list, which no longer includes it (checked 2026-10-02)."
 }

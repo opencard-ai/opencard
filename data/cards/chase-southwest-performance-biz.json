@@ -3,16 +3,17 @@
   "name": "Southwest Performance Business",
   "issuer": "Chase",
   "network": "visa",
-  "annual_fee": 199,
+  "annual_fee": 299,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
     "spending_requirement": 5000,
     "time_period_months": 3,
     "bonus_points": 80000,
-    "description": "80,000 bonus Rapid Rewards points after spending $5,000 on purchases in the first 3 months from account opening.",
+    "description": "Earn 80,000 points after you spend $5,000 on purchases in the first 3 months from account opening.",
     "point_program": "Southwest Rapid Rewards",
-    "estimated_value": 1120
+    "estimated_value": 1120,
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -52,14 +53,19 @@
     "airline",
     "business"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://creditcards.chase.com/business-credit-cards/southwest/performance-business",
+      "notes": "Official Chase page checked 2026-10-02: 80,000 points after $5,000 in 3 months; annual fee $299."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-29T05:25:54.022Z",
-  "last_verified": "2026-04-16T13:41:49.970Z",
+  "last_updated": "2026-10-02",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.970000+00:00",
   "recurring_credits": [
     {

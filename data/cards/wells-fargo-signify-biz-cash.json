@@ -7,12 +7,13 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 1000,
+    "spending_requirement": 5000,
     "time_period_months": 3,
-    "bonus_points": 200,
-    "estimated_value": 200,
-    "point_program": "Wells Fargo Business",
-    "description": "$200 cash rewards after spending $1,000 in first 3 months"
+    "bonus_points": 500,
+    "estimated_value": 500,
+    "point_program": "Cash Back",
+    "description": "Earn a $500 cash rewards bonus when you spend $5,000 in purchases for your business in the first 3 months.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -56,11 +57,11 @@
   ],
   "sources": [
     {
-      "url": "https://creditcards.wellsfargo.com/signify-business-cash/",
-      "notes": "Official Wells Fargo page"
+      "url": "https://creditcards.wellsfargo.com/business-credit-cards/signify-business-cash-credit-card/",
+      "notes": "Official Wells Fargo page checked 2026-10-02: $0 annual fee; unlimited 2% cash rewards; $500 bonus after $5,000 in 3 months."
     }
   ],
-  "last_updated": "2026-04-16T13:41:50.011Z",
+  "last_updated": "2026-10-02",
   "status": "active",
   "notes": "Simple 2% flat-rate business card. No annual fee. Good for businesses wanting straightforward earning.",
   "hotel_program": null,
@@ -68,6 +69,6 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:50.011Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:50.011000+00:00"
 }

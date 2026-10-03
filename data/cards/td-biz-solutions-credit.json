@@ -7,12 +7,13 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 1000,
+    "spending_requirement": 1500,
     "time_period_months": 3,
-    "bonus_points": 200,
-    "estimated_value": 200,
-    "point_program": "TD Points",
-    "description": "$200 statement credit after spending $1,000 in first 3 months"
+    "bonus_points": 250,
+    "estimated_value": 250,
+    "point_program": "Cash Back",
+    "description": "Earn $250 Cash Back in the form of a statement credit when you spend $1,500 within the first 90 days after account opening.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -52,11 +53,11 @@
   ],
   "sources": [
     {
-      "url": "https://www.td.com/us/en/personal-banking/credit-cards/business-solutions-card",
-      "notes": "Official TD Bank page"
+      "url": "https://www.td.com/us/en/personal-banking/credit-cards/business-solutions-credit-card",
+      "notes": "Official TD page checked 2026-10-02: 2% unlimited Cash Back; $250 after $1,500 in 90 days; no annual fee."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.996Z",
+  "last_updated": "2026-10-02",
   "status": "active",
   "notes": "Simple 2x flat-rate business card. No annual fee. Good for small businesses wanting straightforward earning.",
   "hotel_program": null,
@@ -64,6 +65,6 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.996Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.996000+00:00"
 }

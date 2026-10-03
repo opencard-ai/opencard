@@ -9,31 +9,32 @@
   "welcome_offer": {
     "spending_requirement": 6000,
     "time_period_months": 6,
-    "bonus_points": 60000,
-    "estimated_value": 600,
+    "bonus_points": 75000,
+    "estimated_value": 750,
     "point_program": "U.S. Bank Rewards",
-    "description": "60,000 bonus points after spending $6,000 in first 180 days"
+    "description": "Earn 75,000 bonus points after eligible net purchases totaling $6,000 or more within 180 days of account opening. $0 intro annual fee for the first year, $95 per year thereafter.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
-      "category": "Travel (hotels, airfare, car rentals)",
+      "category": "Travel Center Hotels & Car Rentals",
+      "rate": 5,
+      "notes": "5X on hotels and car rentals booked directly in the U.S. Bank Travel Center"
+    },
+    {
+      "category": "Travel, Gas & EV Charging",
       "rate": 4,
-      "notes": "4x points on prepaid hotels and car rentals booked in Travel Center"
+      "notes": "4X on travel including airfare, hotels, gas and EV charging stations on the first $150,000 in combined annual spend (excludes discount stores/supercenters and wholesale clubs)"
     },
     {
-      "category": "Gas Stations",
+      "category": "Dining & Cell Phone",
       "rate": 2,
-      "notes": "2x points at gas stations"
-    },
-    {
-      "category": "Cellular Service Providers",
-      "rate": 2,
-      "notes": "2x points on cellular service providers"
+      "notes": "2X on dining, takeout, restaurant delivery and cell phone services"
     },
     {
       "category": "All Other Purchases",
       "rate": 1,
-      "notes": "1x point per $1 on all other purchases"
+      "notes": "1X on all other purchases"
     }
   ],
   "travel_benefits": {
@@ -76,15 +77,15 @@
   ],
   "sources": [
     {
-      "url": "https://www.usbank.com/credit-cards/business-altitude-connect-visa-signature-credit-card.html",
-      "notes": "Official U.S. Bank page"
+      "url": "https://www.usbank.com/business-banking/business-credit-cards/business-altitude-connect-credit-card.html",
+      "notes": "Official U.S. Bank page checked 2026-10-02: 75,000 bonus points after $6,000 in 180 days; $0 intro annual fee first year, then $95; 5X/4X/2X/1X earning."
     },
     {
       "url": "https://money.usnews.com/credit-cards/us-bank/us-bank-business-altitude-connect-visa-signature-card",
       "notes": "U.S. News review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:50.006Z",
+  "last_updated": "2026-10-02",
   "status": "active",
   "notes": "Annual fee waived first year. $25 ride-share credit after 3 consecutive monthly rides. Strong for gas and cellular spend.",
   "hotel_program": null,
@@ -93,6 +94,6 @@
     "notes": null
   },
   "recurring_credits": [],
-  "last_verified": "2026-04-16T13:41:50.006Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:50.006000+00:00"
 }

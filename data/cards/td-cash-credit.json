@@ -7,12 +7,13 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 500,
+    "spending_requirement": 1000,
     "time_period_months": 3,
-    "bonus_points": 150,
-    "estimated_value": 150,
+    "bonus_points": 200,
+    "estimated_value": 200,
     "point_program": "TD Cash",
-    "description": "$150 cash back after spending $500 in first 3 months"
+    "description": "Earn a $200 Cash Back bonus when you spend $1,000 within the first 90 days after opening your account.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -66,11 +67,15 @@
   ],
   "sources": [
     {
+      "url": "https://www.td.com/us/en/personal-banking/credit-cards",
+      "notes": "Official TD credit cards page checked 2026-10-02: TD Cash Credit Card, 3-2-1% customizable Cash Back; $200 after $1,000 in 90 days."
+    },
+    {
       "url": "https://www.td.com/us/en/personal-banking/credit-cards/cash-card",
       "notes": "Official TD Bank page"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.997Z",
+  "last_updated": "2026-10-02",
   "status": "active",
   "notes": "Strong 3% at gas, 2% on groceries/dining. No annual fee. TD Bank relationship recommended.",
   "hotel_program": null,
@@ -78,6 +83,6 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.997Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.997000+00:00"
 }
