@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-03T03:45:40.966Z",
+  "generated_at": "2026-10-03T03:58:17.728Z",
   "today": "2026-10-02",
-  "cards": 225,
+  "cards": 224,
   "popular": [
     "amazon-prime-visa",
     "amex-biz-gold",
@@ -39,9 +39,9 @@
       "low": 0
     },
     "source_redirects_elsewhere": {
-      "high": 25,
+      "high": 23,
       "medium": 0,
-      "low": 7
+      "low": 8
     },
     "discontinued_signal_without_status": {
       "high": 1,
@@ -49,24 +49,19 @@
       "low": 0
     },
     "missing_sources": {
-      "high": 15,
+      "high": 7,
       "medium": 0,
-      "low": 0
-    },
-    "description_mismatch": {
-      "high": 0,
-      "medium": 4,
       "low": 0
     },
     "impossible_value": {
       "high": 0,
-      "medium": 2,
+      "medium": 1,
       "low": 0
     },
     "no_official_source": {
       "high": 0,
-      "medium": 16,
-      "low": 2
+      "medium": 15,
+      "low": 3
     },
     "possible_issuer_change": {
       "high": 0,
@@ -81,17 +76,17 @@
     "past_next_review": {
       "high": 0,
       "medium": 0,
-      "low": 202
+      "low": 201
     },
     "shared_official_url": {
       "high": 0,
       "medium": 0,
-      "low": 20
+      "low": 18
     },
     "stale_last_verified": {
       "high": 0,
       "medium": 0,
-      "low": 111
+      "low": 98
     },
     "duplicate_benefit": {
       "high": 0,
@@ -106,7 +101,7 @@
     "stale_benefit": {
       "high": 0,
       "medium": 0,
-      "low": 9
+      "low": 5
     }
   },
   "url_check": "artifacts/audit/2026-10-02-url-check.json",
@@ -168,14 +163,6 @@
       "popular": false
     },
     {
-      "card_id": "barclays-aadvantage-silver",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
       "card_id": "barclays-harley-davidson",
       "type": "missing_sources",
       "severity": "high",
@@ -200,46 +187,6 @@
       "popular": false
     },
     {
-      "card_id": "cathay-world-elite",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
-      "card_id": "hsbc-premier",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
-      "card_id": "robinhood-gold",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
-      "card_id": "robinhood-platinum",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
-      "card_id": "state-farm-cash-medallion",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
       "card_id": "synchrony-amazon-store",
       "type": "missing_sources",
       "severity": "high",
@@ -248,23 +195,7 @@
       "popular": false
     },
     {
-      "card_id": "us-bank-altitude-connect-biz",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
       "card_id": "us-bank-altitude-go-biz",
-      "type": "missing_sources",
-      "severity": "high",
-      "field": "sources",
-      "detail": "no sources",
-      "popular": false
-    },
-    {
-      "card_id": "venmo-card",
       "type": "missing_sources",
       "severity": "high",
       "field": "sources",
@@ -384,14 +315,6 @@
       "popular": false
     },
     {
-      "card_id": "capital-one-venture-biz",
-      "type": "source_redirects_elsewhere",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://www.capitalone.com/small-business/credit-cards/spark-miles/ -> https://www.capitalone.com/small-business/credit-cards/travel-and-miles/",
-      "popular": false
-    },
-    {
       "card_id": "capital-one-venture-one-biz",
       "type": "source_redirects_elsewhere",
       "severity": "high",
@@ -456,59 +379,11 @@
       "popular": false
     },
     {
-      "card_id": "us-bank-biz-leverage-visa",
-      "type": "source_redirects_elsewhere",
-      "severity": "high",
-      "field": "sources",
-      "detail": "https://www.usbank.com/business-banking/business-credit-cards/business-leverage-rewards-credit-card.html -> https://www.usbank.com/business-banking/business-credit-cards.html",
-      "popular": false
-    },
-    {
-      "card_id": "chase-hyatt",
-      "type": "description_mismatch",
-      "severity": "medium",
-      "field": "welcome_offer",
-      "detail": "description spend $3,000 but spending_requirement=15000: \"Earn up to 60,000 World of Hyatt bonus points: 30,000 bonus points after spending $3,000 in the first 3 months from account opening, plus up\"",
-      "popular": true
-    },
-    {
-      "card_id": "barclays-wyndham-earner-biz",
-      "type": "description_mismatch",
-      "severity": "medium",
-      "field": "welcome_offer",
-      "detail": "description says 50,000 but bonus_points=75000: \"Earn 50,000 Wyndham points after spending $4,000 in the first 90 days; earn an additional 25,000 Wyndham points after spending $12,000 in to\"",
-      "popular": false
-    },
-    {
-      "card_id": "barclays-wyndham-earner-biz",
-      "type": "description_mismatch",
-      "severity": "medium",
-      "field": "welcome_offer",
-      "detail": "description spend $4,000 but spending_requirement=12000: \"Earn 50,000 Wyndham points after spending $4,000 in the first 90 days; earn an additional 25,000 Wyndham points after spending $12,000 in to\"",
-      "popular": false
-    },
-    {
-      "card_id": "chase-united-club-biz",
-      "type": "description_mismatch",
-      "severity": "medium",
-      "field": "welcome_offer",
-      "detail": "description says 100,000 but bonus_points=110000: \"100,000 bonus miles + 2,000 PQP after $5,000 in 3 months + 10,000 miles after adding employee card in first 3 months\"",
-      "popular": false
-    },
-    {
       "card_id": "amex-graphite-biz",
       "type": "impossible_value",
       "severity": "medium",
       "field": "welcome_offer.spending_requirement",
       "detail": "spending_requirement=50000",
-      "popular": false
-    },
-    {
-      "card_id": "hsbc-elite-credit",
-      "type": "impossible_value",
-      "severity": "medium",
-      "field": "welcome_offer.time_period_months",
-      "detail": "bonus 60000 but time_period_months=undefined",
       "popular": false
     },
     {
@@ -561,14 +436,6 @@
     },
     {
       "card_id": "barclays-wyndham-earner",
-      "type": "no_official_source",
-      "severity": "medium",
-      "field": "sources",
-      "detail": "sources: www.uscreditcardguide.com",
-      "popular": false
-    },
-    {
-      "card_id": "barclays-wyndham-earner-biz",
       "type": "no_official_source",
       "severity": "medium",
       "field": "sources",
@@ -965,6 +832,14 @@
       "severity": "low",
       "field": "sources",
       "detail": "sources: , ",
+      "popular": false
+    },
+    {
+      "card_id": "state-farm-cash-medallion",
+      "type": "no_official_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "sources: www.statefarm.com",
       "popular": false
     },
     {
@@ -2600,14 +2475,6 @@
       "popular": false
     },
     {
-      "card_id": "us-bank-altitude-connect-biz",
-      "type": "past_next_review",
-      "severity": "low",
-      "field": "next_review",
-      "detail": "next_review 2026-07-15 (79 days ago)",
-      "popular": false
-    },
-    {
       "card_id": "us-bank-altitude-go",
       "type": "past_next_review",
       "severity": "low",
@@ -2840,22 +2707,6 @@
       "popular": false
     },
     {
-      "card_id": "capital-one-venture-biz",
-      "type": "shared_official_url",
-      "severity": "low",
-      "field": "sources",
-      "detail": "first official URL https://www.capitalone.com/small-business/credit-cards/spark-miles also used by capital-one-venture-one-biz",
-      "popular": false
-    },
-    {
-      "card_id": "capital-one-venture-one-biz",
-      "type": "shared_official_url",
-      "severity": "low",
-      "field": "sources",
-      "detail": "first official URL https://www.capitalone.com/small-business/credit-cards/spark-miles also used by capital-one-venture-biz",
-      "popular": false
-    },
-    {
       "card_id": "citi-dividend",
       "type": "shared_official_url",
       "severity": "low",
@@ -2960,6 +2811,14 @@
       "popular": false
     },
     {
+      "card_id": "us-bank-biz-leverage-visa",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://www.usbank.com/business-banking/business-credit-cards/business-leverage-rewards-credit-card.html -> https://www.usbank.com/business-banking/business-credit-cards.html",
+      "popular": false
+    },
+    {
       "card_id": "us-bank-shopper-cash-rewards",
       "type": "source_redirects_elsewhere",
       "severity": "low",
@@ -2984,27 +2843,11 @@
       "popular": false
     },
     {
-      "card_id": "amex-delta-skymiles-platinum-biz",
-      "type": "stale_benefit",
-      "severity": "low",
-      "field": "recurring_credits[3].description",
-      "detail": "Global Entry fee is $120 since Oct 2024; many issuers raised the credit to $120 (verify per card): \"Up to $100 statement credit for Global Entry application fee, every 4 years.\"",
-      "popular": false
-    },
-    {
       "card_id": "boa-premium-rewards",
       "type": "stale_benefit",
       "severity": "low",
       "field": "recurring_credits[1].description",
       "detail": "Global Entry fee is $120 since Oct 2024; many issuers raised the credit to $120 (verify per card): \"Up to $100 statement credit every four years for Global Entry or TSA PreCheck application fees charged to the card.\"",
-      "popular": false
-    },
-    {
-      "card_id": "capital-one-venture-biz",
-      "type": "stale_benefit",
-      "severity": "low",
-      "field": "recurring_credits[2].description",
-      "detail": "Global Entry fee is $120 since Oct 2024; many issuers raised the credit to $120 (verify per card): \"Up to $100 statement credit for Global Entry or TSA PreCheck application fee, every 4 years.\"",
       "popular": false
     },
     {
@@ -3016,27 +2859,11 @@
       "popular": false
     },
     {
-      "card_id": "chase-united-club-infinite",
-      "type": "stale_benefit",
-      "severity": "low",
-      "field": "recurring_credits[5].description",
-      "detail": "Global Entry fee is $120 since Oct 2024; many issuers raised the credit to $120 (verify per card): \"Up to $100 statement credit for Global Entry, TSA PreCheck, or NEXUS application fee, every 4 years.\"",
-      "popular": false
-    },
-    {
       "card_id": "fidelity-rewards-visa-signature",
       "type": "stale_benefit",
       "severity": "low",
       "field": "travel_benefits.other_benefits[0]",
       "detail": "Global Entry fee is $120 since Oct 2024; many issuers raised the credit to $120 (verify per card): \"TSA PreCheck/Global Entry credit: $100 statement credit for TSA PreCheck or Global Entry fee\"",
-      "popular": false
-    },
-    {
-      "card_id": "hsbc-elite-credit",
-      "type": "stale_benefit",
-      "severity": "low",
-      "field": "recurring_credits[0].description",
-      "detail": "Global Entry fee is $120 since Oct 2024; many issuers raised the credit to $120 (verify per card): \"Up to $100 every 4 years for Global Entry.\"",
       "popular": false
     },
     {
@@ -3085,14 +2912,6 @@
       "severity": "low",
       "field": "last_verified",
       "detail": "last_verified 2026-04-24 (161 days)",
-      "popular": false
-    },
-    {
-      "card_id": "barclays-aadvantage-silver",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-27 (158 days)",
       "popular": false
     },
     {
@@ -3169,14 +2988,6 @@
     },
     {
       "card_id": "barclays-wyndham-earner",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "barclays-wyndham-earner-biz",
       "type": "stale_last_verified",
       "severity": "low",
       "field": "last_verified",
@@ -3336,14 +3147,6 @@
       "popular": false
     },
     {
-      "card_id": "cathay-world-elite",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
       "card_id": "chase-aer-lingus-visa-signature",
       "type": "stale_last_verified",
       "severity": "low",
@@ -3408,14 +3211,6 @@
       "popular": false
     },
     {
-      "card_id": "chase-united-club-biz",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
       "card_id": "choice-privileges-visa",
       "type": "stale_last_verified",
       "severity": "low",
@@ -3429,14 +3224,6 @@
       "severity": "low",
       "field": "last_verified",
       "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "citi-custom-cash",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-25 (160 days)",
       "popular": false
     },
     {
@@ -3537,22 +3324,6 @@
     },
     {
       "card_id": "fidelity-rewards-visa-signature",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "hsbc-elite-credit",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "hsbc-premier",
       "type": "stale_last_verified",
       "severity": "low",
       "field": "last_verified",
@@ -3720,22 +3491,6 @@
       "popular": false
     },
     {
-      "card_id": "robinhood-gold",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "robinhood-platinum",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
       "card_id": "sofi-credit",
       "type": "stale_last_verified",
       "severity": "low",
@@ -3745,14 +3500,6 @@
     },
     {
       "card_id": "spirit-airlines-mastercard",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "state-farm-cash-medallion",
       "type": "stale_last_verified",
       "severity": "low",
       "field": "last_verified",
@@ -3824,14 +3571,6 @@
       "popular": false
     },
     {
-      "card_id": "us-bank-altitude-connect-biz",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
       "card_id": "us-bank-altitude-go",
       "type": "stale_last_verified",
       "severity": "low",
@@ -3849,22 +3588,6 @@
     },
     {
       "card_id": "us-bank-altitude-go-secured",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "us-bank-biz-leverage-visa",
-      "type": "stale_last_verified",
-      "severity": "low",
-      "field": "last_verified",
-      "detail": "last_verified 2026-04-16 (169 days)",
-      "popular": false
-    },
-    {
-      "card_id": "venmo-card",
       "type": "stale_last_verified",
       "severity": "low",
       "field": "last_verified",

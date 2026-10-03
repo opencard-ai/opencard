@@ -7,12 +7,12 @@
   "foreign_transaction_fee": 3,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 20000,
-    "spending_requirement": 500,
-    "time_period_months": 3,
-    "description": "Earn 20,000 ThankYou Points after spending $500 in purchases within the first 3 months",
-    "point_program": "Citi ThankYou Rewards",
-    "estimated_value": 340
+    "bonus_points": 0,
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "estimated_value": 0,
+    "description": "Not available: closed to new applicants.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -52,13 +52,14 @@
   ],
   "sources": [
     {
-      "url": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card"
+      "url": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
+      "notes": "Official Citi page checked 2026-10-02: \"Citi is no longer accepting applications for the Citi Custom Cash® Card product as of May 28, 2026\"; suggests Citi Double Cash instead."
     },
     {
       "url": "https://www.bankrate.com/credit-cards/reviews/citi-custom-cash-card/"
     }
   ],
-  "last_updated": "2026-04-25T16:04:23.795Z",
+  "last_updated": "2026-10-02",
   "hotel_program": {},
   "application_rules": {
     "rules": [
@@ -70,8 +71,10 @@
   },
   "recurring_credits": [],
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-04-25T16:04:23.795Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-23T17:27:59.994652",
   "cfpb_source": "Q3_2025",
-  "cfpb_verified": true
+  "cfpb_verified": true,
+  "status": "discontinued",
+  "discontinued_notes": "Citi stopped accepting applications for the Citi Custom Cash Card on May 28, 2026 (official Citi page). Existing cardholders keep their accounts."
 }

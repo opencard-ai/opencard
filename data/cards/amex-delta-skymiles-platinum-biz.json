@@ -90,11 +90,12 @@
   ],
   "sources": [
     {
-      "url": "https://www.uscreditcardguide.com/amex-platinum-delta-skymiles-business/",
-      "notes": "USCCG card review (LLM-friendly static HTML)"
+      "url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-platinum/",
+      "notes": "Official Amex page checked 2026-10-02: $120 statement credit for Global Entry or up to $85 for TSA PreCheck every 4 years."
     },
     {
-      "url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-platinum/"
+      "url": "https://www.uscreditcardguide.com/amex-platinum-delta-skymiles-business/",
+      "notes": "USCCG card review (LLM-friendly static HTML)"
     },
     {
       "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards"
@@ -108,7 +109,7 @@
       "notes": "Delta News Hub official announcement: limited-time welcome offers and 2026 benefit updates"
     }
   ],
-  "last_updated": "2026-10-03T03:19:54.149Z",
+  "last_updated": "2026-10-02",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -148,13 +149,14 @@
     {
       "credit_key": "global-entry-credit",
       "name": "Global Entry Credit",
-      "amount": 100,
+      "amount": 120,
       "frequency": "every_4_years",
       "category": "travel",
-      "description": "Up to $100 statement credit for Global Entry application fee, every 4 years.",
-      "reset_type": "every_4_years"
+      "description": "$120 statement credit for Global Entry (or up to $85 for TSA PreCheck), every 4 years.",
+      "reset_type": "every_4_years",
+      "source": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-platinum/"
     }
   ],
-  "last_verified": "2026-08-29",
+  "last_verified": "2026-10-02",
   "next_review": "2026-11-05T00:00:00Z"
 }

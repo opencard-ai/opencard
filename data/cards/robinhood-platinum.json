@@ -15,7 +15,22 @@
   },
   "earning_rates": [
     {
-      "category": "All Purchases",
+      "category": "Hotels (booked in Robinhood app)",
+      "rate": 10,
+      "notes": "10% cash back on hotels booked in the app"
+    },
+    {
+      "category": "Dining",
+      "rate": 5,
+      "notes": "5% cash back on dining"
+    },
+    {
+      "category": "Flights (booked in Robinhood app)",
+      "rate": 5,
+      "notes": "5% cash back on flights booked in the app"
+    },
+    {
+      "category": "All other purchases",
       "rate": 1,
       "notes": ""
     }
@@ -38,13 +53,18 @@
     "return_protection": null
   },
   "tags": [],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://robinhood.com/us/en/creditcard/platinum/",
+      "notes": "Official Robinhood Platinum page checked 2026-10-02: $695 annual fee; 10% hotels and 5% flights booked in app, 5% dining, 1% other; $250 dining credit, $120 DoorDash promo (no minimum), $300 flight credit ($150 every six months), $700 hotel credits, $250 Waymo credit, $120 Global Entry/TSA PreCheck."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-29T13:31:27.047Z",
+  "last_updated": "2026-10-02",
   "recurring_credits": [
     {
       "credit_key": "hotel-booking-credit",
@@ -79,10 +99,10 @@
     {
       "credit_key": "doordash-credit",
       "name": "DoorDash Credit",
-      "amount": 20,
+      "amount": 10,
       "frequency": "monthly",
       "category": "dining",
-      "description": "Two $10 DoorDash discounts each month (three $10 in January). Discounts apply to delivery orders $50+. $250/year total.",
+      "description": "DoorDash promo allotted monthly: $120/year, no order minimum.",
       "reset_type": "monthly",
       "source": "https://robinhood.com/us/en/creditcard/platinum/"
     },
@@ -106,6 +126,6 @@
       "reset_type": "every_4_years"
     }
   ],
-  "last_verified": "2026-04-16T13:41:49.994Z",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.994000+00:00"
 }

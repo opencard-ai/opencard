@@ -7,10 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",
   "welcome_offer": {
-    "spending_requirement": 7500,
-    "time_period_months": 4,
-    "description": "$750 cash back after spending $7,500 within first 120 days",
-    "estimated_value": 750
+    "bonus_points": 0,
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "estimated_value": 0,
+    "description": "Not available: closed to new applicants.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -63,6 +65,10 @@
   ],
   "sources": [
     {
+      "url": "https://www.usbank.com/business-banking/business-credit-cards/benefits.html",
+      "notes": "Official U.S. Bank business card benefits page checked 2026-10-02: Business Leverage Visa Signature listed under \"Other U.S. Bank business credit cards (no longer accepting applications)\"."
+    },
+    {
       "url": "https://www.usbank.com/business-banking/business-credit-cards/business-leverage-rewards-credit-card.html",
       "notes": "Official U.S. Bank page"
     },
@@ -75,14 +81,15 @@
       "notes": "DoC welcome offer tracking"
     }
   ],
-  "last_updated": "2026-04-16T13:41:50.006Z",
-  "status": "active",
+  "last_updated": "2026-10-02",
+  "status": "discontinued",
   "notes": "Annual fee waived first year. Automatically earns 2x in top 2 categories — no need to activate.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:50.006Z",
-  "next_review": "2026-07-15T13:41:50.006000+00:00"
+  "last_verified": "2026-10-02",
+  "next_review": "2026-07-15T13:41:50.006000+00:00",
+  "discontinued_notes": "Listed by U.S. Bank under \"Other U.S. Bank business credit cards (no longer accepting applications)\" (checked 2026-10-02)."
 }

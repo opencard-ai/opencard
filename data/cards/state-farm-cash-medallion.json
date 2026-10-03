@@ -8,10 +8,11 @@
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 0,
-    "description": "No welcome bonus",
-    "estimated_value": null,
-    "spending_requirement": null,
-    "time_period_months": null
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "estimated_value": 0,
+    "description": "Not available: closed to new applicants.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -44,13 +45,20 @@
   "tags": [
     "no-annual-fee"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.statefarm.com/finances/banking/credit-cards",
+      "notes": "Official State Farm credit cards page checked 2026-10-02: lists only Premier Cash Rewards Visa Signature, Good Neighbor Visa and Business Cash Rewards Visa Signature (via U.S. Bank); this card is not offered."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.996Z",
-  "last_verified": "2026-04-16T13:41:49.996Z",
-  "next_review": "2026-07-15T13:41:49.996000+00:00"
+  "last_updated": "2026-10-02",
+  "last_verified": "2026-10-02",
+  "next_review": "2026-07-15T13:41:49.996000+00:00",
+  "status": "discontinued",
+  "discontinued_notes": "Not offered: State Farm's official credit card page lists only the Premier Cash Rewards Visa Signature, Good Neighbor Visa and Business Cash Rewards Visa Signature (issued by U.S. Bank), checked 2026-10-02."
 }

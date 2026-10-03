@@ -16,8 +16,8 @@
   "earning_rates": [
     {
       "category": "All Purchases",
-      "rate": 1,
-      "notes": ""
+      "rate": 3,
+      "notes": "3% cash back on all categories (requires Robinhood Gold membership)"
     }
   ],
   "annual_credits": [],
@@ -44,13 +44,18 @@
   "tags": [
     "no-annual-fee"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://robinhood.com/creditcard/",
+      "notes": "Official Robinhood page checked 2026-10-02: 3% cash back on all categories; no annual fee; requires a Robinhood Gold membership."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.994Z",
-  "last_verified": "2026-04-16T13:41:49.994Z",
+  "last_updated": "2026-10-02",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.994000+00:00"
 }

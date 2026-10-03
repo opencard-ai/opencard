@@ -3,25 +3,28 @@
   "name": "Wyndham Earner Business",
   "issuer": "Barclays",
   "network": "visa",
-  "annual_fee": 95,
+  "annual_fee": 149,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 75000,
-    "description": "Earn 50,000 Wyndham points after spending $4,000 in the first 90 days; earn an additional 25,000 Wyndham points after spending $12,000 in total in the first 365 days. That's 75k points in total.",
+    "bonus_points": 100000,
+    "spending_requirement": 3500,
+    "time_period_months": 6,
+    "point_program": "Wyndham Rewards",
     "estimated_value": 1000,
-    "spending_requirement": 12000,
-    "time_period_months": 12
+    "offer_status": "public_limited_time",
+    "description": "Limited-time offer: earn up to 100,000 bonus points with purchases of $3,500 ($3,000 qualifying + $500 at Hotels by Wyndham): 45,000 points after spending $3,000 on qualifying purchases in the first 90 days, plus 55,000 points after spending $500 at Hotels by Wyndham in the first 180 days.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
-      "category": "Wyndham Hotels",
-      "rate": 6,
+      "category": "Hotels by Wyndham",
+      "rate": 8,
       "notes": ""
     },
     {
-      "category": "Gas stations",
-      "rate": 4,
+      "category": "Gas & office supply",
+      "rate": 5,
       "notes": ""
     },
     {
@@ -57,6 +60,10 @@
   ],
   "sources": [
     {
+      "url": "https://cards.barclaycardus.com/banking/cards/wyndham-rewards-earner-business-card/",
+      "notes": "Official Barclays page checked 2026-10-02: $149 annual fee; up to 100,000 bonus points (45,000 after $3,000 in 90 days + 55,000 after $500 at Hotels by Wyndham in 180 days); 8x Hotels by Wyndham, 5x gas & office supply."
+    },
+    {
       "url": "https://www.uscreditcardguide.com/barclays-wyndham-earner-business-credit-card/",
       "notes": "USCCG primary review"
     }
@@ -66,7 +73,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-05-11T18:43:33.787Z",
-  "last_verified": "2026-04-16T13:41:49.953Z",
+  "last_updated": "2026-10-02",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.953000+00:00"
 }

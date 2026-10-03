@@ -7,11 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 50000,
-    "description": "50,000 AAdvantage bonus miles after first purchase and paying $199 annual fee",
-    "estimated_value": 500,
+    "bonus_points": 0,
     "spending_requirement": 0,
-    "time_period_months": null
+    "time_period_months": 0,
+    "estimated_value": 0,
+    "description": "Not available: closed to new applicants.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -49,7 +50,16 @@
     "extended_warranty": null
   },
   "tags": [],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://cards.barclaycardus.com/banking/cards/",
+      "notes": "Official Barclays US card list checked 2026-10-02: AAdvantage Silver is not listed (product page returns 404)."
+    },
+    {
+      "url": "https://www.cnbc.com/select/citi-becomes-exclusive-issuer-aadvantage-credit-cards/",
+      "notes": "News (CNBC Select), used to confirm the closure: Citi became the exclusive AAdvantage issuer; Barclays AAdvantage cards closed to new applicants and Silver accounts converted to Citi."
+    }
+  ],
   "benefits": [],
   "hotel_program": null,
   "application_rules": {
@@ -69,7 +79,9 @@
     }
   ],
   "_card_status_alert": "Card is in transition from Barclays to Citi (April 2026 portfolio migration). Inflight food/beverage $25/day credit excluded — no annual cap published. Companion Certificate after $20k spend excluded — conditional.",
-  "last_updated": "2026-10-03T03:19:54.149Z",
-  "last_verified": "2026-04-27T20:00:00.000Z",
-  "next_review": "2026-07-15T13:41:49.952000+00:00"
+  "last_updated": "2026-10-02",
+  "last_verified": "2026-10-02",
+  "next_review": "2026-07-15T13:41:49.952000+00:00",
+  "status": "discontinued",
+  "discontinued_notes": "Barclays AAdvantage cards closed to new applicants in Oct 2025; Silver accounts converted to Citi / AAdvantage Globe on April 24, 2026. Not on Barclays' card list (checked 2026-10-02)."
 }

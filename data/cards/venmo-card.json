@@ -15,8 +15,13 @@
   },
   "earning_rates": [
     {
-      "category": "Venmo app",
-      "rate": 2,
+      "category": "Dining & Entertainment",
+      "rate": 3,
+      "notes": "3% cash back; +1% (up to 4%) when you split the purchase in Venmo"
+    },
+    {
+      "category": "Paying with Venmo (checkout, businesses, goods & services)",
+      "rate": 3,
       "notes": ""
     },
     {
@@ -49,13 +54,18 @@
   "tags": [
     "no-annual-fee"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://venmo.com/about/creditcard",
+      "notes": "Official Venmo page checked 2026-10-02: no annual fee; 3% on dining & entertainment (+1% when splitting, up to 4%); 3% when paying with Venmo; 1% on other purchases."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:50.009Z",
-  "last_verified": "2026-04-16T13:41:50.009Z",
+  "last_updated": "2026-10-02",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:50.009000+00:00"
 }

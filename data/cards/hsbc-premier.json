@@ -7,21 +7,33 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 0,
-    "description": "No welcome bonus",
-    "estimated_value": null,
-    "spending_requirement": null,
-    "time_period_months": null
+    "bonus_points": 60000,
+    "spending_requirement": 4000,
+    "time_period_months": 3,
+    "point_program": "HSBC Rewards",
+    "estimated_value": 600,
+    "description": "Earn 60,000 bonus points after spending $4,000 in the first 3 months. Requires an HSBC Premier checking account.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
-      "category": "Travel",
+      "category": "Gas",
       "rate": 3,
       "notes": ""
     },
     {
+      "category": "Groceries",
+      "rate": 3,
+      "notes": ""
+    },
+    {
+      "category": "Travel",
+      "rate": 2,
+      "notes": ""
+    },
+    {
       "category": "All other purchases",
-      "rate": 1.5,
+      "rate": 1,
       "notes": ""
     }
   ],
@@ -43,15 +55,20 @@
     "return_protection": null
   },
   "tags": [],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.us.hsbc.com/credit-cards/products/premier/",
+      "notes": "Official HSBC page checked 2026-10-02: $95 annual fee; 60,000 bonus points after $4,000 in 3 months; 3x gas & groceries, 2x travel, 1x other; Global Entry/TSA PreCheck credit up to $85 every 4.5 years; requires HSBC Premier checking."
+    }
+  ],
   "annual_fee_note": "$0 annual fee for HSBC Premier relationship customers (must maintain qualifying deposits/investments). Standard fee: $95.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-28T14:05:15.886Z",
-  "last_verified": "2026-04-16T13:41:49.986Z",
+  "last_updated": "2026-10-02",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.986000+00:00",
   "_revert_history": [
     {

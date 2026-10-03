@@ -7,11 +7,13 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 0,
-    "description": "No welcome bonus",
-    "estimated_value": null,
-    "spending_requirement": null,
-    "time_period_months": null
+    "bonus_points": 38000,
+    "spending_requirement": 3000,
+    "time_period_months": 3,
+    "point_program": "Asia Miles",
+    "estimated_value": 380,
+    "description": "Earn 38,000 bonus Asia Miles after spending $3,000 on purchases in the first 90 days.",
+    "last_verified": "2026-10-02"
   },
   "earning_rates": [
     {
@@ -51,7 +53,12 @@
     "airline",
     "premium"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://pay.cathaypacific.com/en_US/offers/uscreditcard.html",
+      "notes": "Official Cathay Pacific US card page checked 2026-10-02: 38,000 bonus Asia Miles after $3,000 in 90 days; $99 annual fee."
+    }
+  ],
   "benefits": [],
   "annual_fee_note": "$99 annual fee. Replaced the previous Visa version (discontinued 2024).",
   "hotel_program": null,
@@ -59,8 +66,8 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-03T03:19:54.149Z",
-  "last_verified": "2026-04-16T13:41:49.964Z",
+  "last_updated": "2026-10-02",
+  "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.964000+00:00",
   "deprecated": true,
   "deprecated_reason": "Niche international airline co-brand. US searchers rarely seek these. Excluded from main listings.",

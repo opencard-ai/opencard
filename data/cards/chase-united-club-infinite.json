@@ -179,11 +179,12 @@
     {
       "credit_key": "global-entry-tsa-precheck-credit",
       "name": "Global Entry / TSA PreCheck Credit",
-      "amount": 100,
+      "amount": 120,
       "frequency": "every_4_years",
       "category": "travel",
-      "description": "Up to $100 statement credit for Global Entry, TSA PreCheck, or NEXUS application fee, every 4 years.",
-      "reset_type": "every_4_years"
+      "description": "Up to $120 statement credit for Global Entry, TSA PreCheck or NEXUS, every 4 years.",
+      "reset_type": "every_4_years",
+      "source": "https://creditcards.chase.com/travel-credit-cards/united/club-infinite"
     }
   ],
   "last_scraped": "2026-04-24",

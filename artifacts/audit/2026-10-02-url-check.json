@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-10-03T03:45:40.371Z",
-  "count": 286,
+  "checked_at": "2026-10-03T03:57:56.875Z",
+  "count": 294,
   "results": [
     {
       "card_id": "amazon-prime-visa",
@@ -121,18 +121,18 @@
     },
     {
       "card_id": "amex-delta-gold-biz",
-      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
       "status": 200,
-      "final_url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "final_url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
       "same_page": true,
       "soft_404": false,
       "blocked": false
     },
     {
       "card_id": "amex-delta-gold-biz",
-      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
+      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
       "status": 200,
-      "final_url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
+      "final_url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -193,18 +193,18 @@
     },
     {
       "card_id": "amex-delta-skymiles-platinum-biz",
-      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
+      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
       "status": 200,
-      "final_url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
+      "final_url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
       "same_page": true,
       "soft_404": false,
       "blocked": false
     },
     {
       "card_id": "amex-delta-skymiles-platinum-biz",
-      "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
       "status": 200,
-      "final_url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "final_url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -499,9 +499,9 @@
     },
     {
       "card_id": "apple-card",
-      "url": "https://www.goldmansachs.com/pressroom/press-releases/2026/goldman-sachs-announces-agreement-to-transition-apple-card-program-to-chase",
+      "url": "https://www.apple.com/apple-card/",
       "status": 200,
-      "final_url": "https://www.goldmansachs.com/pressroom/press-releases/2026/goldman-sachs-announces-agreement-to-transition-apple-card-program-to-chase",
+      "final_url": "https://www.apple.com/apple-card/",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -517,9 +517,18 @@
     },
     {
       "card_id": "apple-card",
-      "url": "https://www.apple.com/apple-card/",
+      "url": "https://www.goldmansachs.com/pressroom/press-releases/2026/goldman-sachs-announces-agreement-to-transition-apple-card-program-to-chase",
       "status": 200,
-      "final_url": "https://www.apple.com/apple-card/",
+      "final_url": "https://www.goldmansachs.com/pressroom/press-releases/2026/goldman-sachs-announces-agreement-to-transition-apple-card-program-to-chase",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "barclays-aadvantage-silver",
+      "url": "https://cards.barclaycardus.com/banking/cards/",
+      "status": 200,
+      "final_url": "https://cards.barclaycardus.com/banking/cards/",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -669,6 +678,15 @@
       "blocked": false
     },
     {
+      "card_id": "barclays-wyndham-earner-biz",
+      "url": "https://cards.barclaycardus.com/banking/cards/wyndham-rewards-earner-business-card/",
+      "status": 200,
+      "final_url": "https://cards.barclaycardus.com/banking/cards/wyndham-rewards-earner-business-card/",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
       "card_id": "barclays-wyndham-earner-premier",
       "url": "https://investor.wyndhamhotels.com/news-events/press-releases/detail/422/wyndham-and-barclays-launch-updated-credit-card-suite",
       "status": 200,
@@ -787,18 +805,18 @@
     },
     {
       "card_id": "boa-alaska-summit",
-      "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-infinite-credit-card/",
+      "url": "https://www.alaskaair.com/atmosrewards/content/credit-cards/visa-summit",
       "status": 200,
-      "final_url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-infinite-credit-card/",
+      "final_url": "https://www.alaskaair.com/atmosrewards/content/credit-cards/visa-summit",
       "same_page": true,
       "soft_404": false,
       "blocked": false
     },
     {
       "card_id": "boa-alaska-summit",
-      "url": "https://www.alaskaair.com/atmosrewards/content/credit-cards/visa-summit",
+      "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-infinite-credit-card/",
       "status": 200,
-      "final_url": "https://www.alaskaair.com/atmosrewards/content/credit-cards/visa-summit",
+      "final_url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-infinite-credit-card/",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -1165,15 +1183,6 @@
     },
     {
       "card_id": "capital-one-venture-biz",
-      "url": "https://www.capitalone.com/small-business/credit-cards/spark-miles/",
-      "status": 200,
-      "final_url": "https://www.capitalone.com/small-business/credit-cards/travel-and-miles/",
-      "same_page": false,
-      "soft_404": false,
-      "blocked": false
-    },
-    {
-      "card_id": "capital-one-venture-biz",
       "url": "https://www.capitalone.com/small-business/credit-cards/venture-business/",
       "status": 200,
       "final_url": "https://www.capitalone.com/small-business/credit-cards/venture-business/",
@@ -1222,6 +1231,15 @@
       "url": "https://www.capitalone.com/small-business/credit-cards/venture-x-business/",
       "status": 200,
       "final_url": "https://www.capitalone.com/small-business/credit-cards/venture-x-business/",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "cathay-world-elite",
+      "url": "https://pay.cathaypacific.com/en_US/offers/uscreditcard.html",
+      "status": 200,
+      "final_url": "https://pay.cathaypacific.com/en_US/offers/uscreditcard.html",
       "same_page": true,
       "soft_404": false,
       "blocked": false
@@ -1965,6 +1983,15 @@
       "blocked": false
     },
     {
+      "card_id": "hsbc-premier",
+      "url": "https://www.us.hsbc.com/credit-cards/products/premier/",
+      "status": 200,
+      "final_url": "https://www.us.hsbc.com/credit-cards/products/premier/",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
       "card_id": "ihg-one-rewards-traveler",
       "url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/one-rewards",
       "status": 200,
@@ -2160,6 +2187,24 @@
       "blocked": false
     },
     {
+      "card_id": "robinhood-gold",
+      "url": "https://robinhood.com/creditcard/",
+      "status": 200,
+      "final_url": "https://robinhood.com/creditcard/",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "robinhood-platinum",
+      "url": "https://robinhood.com/us/en/creditcard/platinum/",
+      "status": 200,
+      "final_url": "https://robinhood.com/us/en/creditcard/platinum/",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
       "card_id": "sofi-credit",
       "url": "https://www.sofi.com/credit-card/unlimited/",
       "status": 200,
@@ -2201,6 +2246,15 @@
       "status": 200,
       "final_url": "https://www.bankofamerica.com/credit-cards/",
       "same_page": false,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "state-farm-cash-medallion",
+      "url": "https://www.statefarm.com/finances/banking/credit-cards",
+      "status": 200,
+      "final_url": "https://www.statefarm.com/finances/banking/credit-cards",
+      "same_page": true,
       "soft_404": false,
       "blocked": false
     },
@@ -2377,6 +2431,15 @@
     },
     {
       "card_id": "us-bank-biz-leverage-visa",
+      "url": "https://www.usbank.com/business-banking/business-credit-cards/benefits.html",
+      "status": 200,
+      "final_url": "https://www.usbank.com/business-banking/business-credit-cards/benefits.html",
+      "same_page": true,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "us-bank-biz-leverage-visa",
       "url": "https://www.usbank.com/business-banking/business-credit-cards/business-leverage-rewards-credit-card.html",
       "status": 200,
       "final_url": "https://www.usbank.com/business-banking/business-credit-cards.html",
@@ -2462,6 +2525,15 @@
       "status": 200,
       "final_url": "https://www.usbank.com/credit-cards/shield-visa-credit-card.html",
       "same_page": false,
+      "soft_404": false,
+      "blocked": false
+    },
+    {
+      "card_id": "venmo-card",
+      "url": "https://venmo.com/about/creditcard",
+      "status": 200,
+      "final_url": "https://venmo.com/about/creditcard",
+      "same_page": true,
       "soft_404": false,
       "blocked": false
     },
