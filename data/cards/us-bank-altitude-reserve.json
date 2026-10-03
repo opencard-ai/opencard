@@ -16,32 +16,43 @@
   },
   "earning_rates": [
     {
-      "category": "Travel (hotels, airfare, car rentals)",
-      "rate": 3,
-      "notes": "3x points on travel purchased directly from airlines, hotels, car rentals"
+      "category": "Prepaid hotels & car rentals booked in the U.S. Bank Travel Center",
+      "rate": 10,
+      "notes": "10x points when you use the card to book prepaid hotels and car rentals in the Travel Center (since Dec 15, 2025)"
     },
     {
-      "category": "Mobile Wallet (Apple Pay, Google Pay, Samsung Pay)",
+      "category": "Prepaid flights booked in the U.S. Bank Travel Center",
+      "rate": 5,
+      "notes": "5x points when you use the card to book prepaid flights in the Travel Center (since Dec 15, 2025)"
+    },
+    {
+      "category": "Travel (airlines, hotels, car rentals, taxis, limousines, passenger trains, cruise lines)",
       "rate": 3,
-      "notes": "3x points on mobile wallet purchases"
+      "notes": "3x points on eligible travel purchases made directly with airlines, hotels, car rental companies, taxis, limousines, passenger trains and cruise line companies"
+    },
+    {
+      "category": "Mobile Wallet (Apple Pay, Google Wallet, Samsung Pay)",
+      "rate": 3,
+      "notes": "3x points on mobile wallet spending on the first $5,000 each billing cycle, then 1x (cap added Dec 15, 2025)"
     },
     {
       "category": "All Other Purchases",
       "rate": 1,
-      "notes": "1x point per $1 on all other purchases"
+      "notes": "1x point per $1 on all other eligible purchases"
     }
   ],
   "travel_benefits": {
     "lounge_access": [
       {
         "name": "Priority Pass Select",
-        "type": "Lounge Access"
+        "type": "Lounge Access",
+        "passes_per_year": 8
       }
     ],
     "other_benefits": [
       {
-        "name": "12 Wi-Fi passes",
-        "description": "12 Boingo Wi-Fi passes annually for Gogo inflight Wi-Fi"
+        "name": "Points transfer",
+        "description": "Transfer points to airline and hotel loyalty programs (added Dec 15, 2025)"
       },
       {
         "name": "Cell phone protection",
@@ -59,11 +70,11 @@
     "trip_cancellation": true,
     "purchase_protection": true,
     "extended_warranty": true,
-    "return_protection": null,
+    "return_protection": true,
     "baggage_delay": null,
-    "lost_luggage": null,
+    "lost_luggage": true,
     "cell_phone": null,
-    "travel_accident": null
+    "travel_accident": true
   },
   "tags": [
     "lounge-access",
@@ -76,6 +87,10 @@
       "notes": "Official U.S. Bank product page; as of 2026-10-02 it redirects to the general U.S. Bank credit card list (card no longer offered to new applicants)"
     },
     {
+      "url": "https://rewards.usbank.com/benefits/card/AltitudeReserveBenefits",
+      "notes": "Official U.S. Bank Altitude Reserve cardholder benefits page (usbank.com/AltitudeReserveBenefits), checked 2026-10-02: 10x/5x Travel Center, 3x travel, 3x mobile wallet on first $5,000 per billing cycle, $325 Travel Center credit, Priority Pass Select with 8 visits, $120 TSA PreCheck/Global Entry credit, points transfer, protections"
+    },
+    {
       "url": "https://frequentmiler.com/us-bank-altitude-reserve-no-longer-accepting-new-applications/",
       "notes": "Frequent Miler: Altitude Reserve no longer accepting new applications (closed 2024-11-11)"
     },
@@ -86,13 +101,21 @@
     {
       "url": "https://www.nerdwallet.com/credit-cards/reviews/us-bank-altitude-reserve",
       "notes": "NerdWallet review"
+    },
+    {
+      "url": "https://upgradedpoints.com/news/us-bank-altitude-reserve-card-changes/",
+      "notes": "Upgraded Points: Dec 15, 2025 changes now live (1¢ travel redemptions, Travel Center-only $325 credit, $5,000 mobile wallet cap)"
+    },
+    {
+      "url": "https://www.doctorofcredit.com/u-s-bank-altitude-reserve-to-lose-gogo-benefit-on-april-1-2022/",
+      "notes": "Doctor of Credit: Gogo inflight Wi-Fi passes discontinued April 1, 2022"
     }
   ],
-  "last_updated": "2026-10-03T02:22:29.198Z",
+  "last_updated": "2026-10-03T02:33:22.873Z",
   "status": "discontinued",
   "discontinued_notes": "Closed to new applications since November 11, 2024 (the official usbank.com product page now redirects to the U.S. Bank card list). Existing cardholders can keep using the card, and product changes may be possible. Sources: official usbank.com redirect, Frequent Miler, Upgraded Points.",
   "discontinued_date": "2024-11-11",
-  "notes": "Points transferable to airline/hotel partners. $325 annual travel credit essentially offsets much of annual fee. Strong 3x mobile wallet earning.",
+  "notes": "Closed to new applicants since Nov 11, 2024. Changes for existing cardholders effective Dec 15, 2025: points worth 1¢ each toward travel (was 1.5¢), the $325 credit only covers Travel Center bookings, 3x mobile wallet earning capped at $5,000 per billing cycle, 10x/5x on prepaid Travel Center hotels, car rentals and flights, and points can now be transferred to airline and hotel partners.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -100,24 +123,24 @@
   },
   "recurring_credits": [
     {
-      "credit_key": "annual-travel-credit",
-      "name": "Annual Travel Credit",
+      "credit_key": "travel-credit",
+      "name": "Travel Center credit",
       "amount": 325,
       "frequency": "annual",
       "category": "travel",
-      "description": "$325 annual credit for travel and dining purchases via Chase Travel.",
+      "description": "Up to $325 in automatic statement credits each year for travel booked through the U.S. Bank Travel Center with this card. Since Dec 15, 2025, dining and travel booked elsewhere no longer qualify.",
       "reset_type": "calendar_year"
     },
     {
-      "credit_key": "travel-credit",
-      "name": "Travel credit",
-      "amount": 325,
-      "frequency": "annual",
+      "credit_key": "global-entry-tsa-precheck-credit",
+      "name": "Global Entry / TSA PreCheck Credit",
+      "amount": 120,
+      "frequency": "every_4_years",
       "category": "travel",
-      "description": "$325 annual credit for travel purchases (must be booked through US Bank Travel Center or direct with airline)",
-      "reset_type": "calendar_year"
+      "description": "Up to $120 statement credit for the Global Entry or TSA PreCheck application fee paid with the card, once every 4 years.",
+      "reset_type": "every_4_years"
     }
   ],
-  "last_verified": "2026-10-03T02:22:29.198Z",
+  "last_verified": "2026-10-03T02:33:22.873Z",
   "next_review": "2027-04-02T00:00:00.000Z"
 }
