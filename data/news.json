@@ -1,6 +1,89 @@
 {
   "items": [
     {
+      "title": "[TN only] Old Hickory Credit Union $250 Checking Bonus, Direct Deposit Not Required",
+      "url": "https://www.doctorofcredit.com/tn-only-old-hickory-credit-union-150-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit not required",
+        "hard pull",
+        "tn bank bonuses"
+      ],
+      "ts": "2026-10-03T21:52:09.000Z",
+      "title_en": "[TN only] Old Hickory Credit Union $250 Checking Bonus, Direct Deposit Not Required",
+      "summary_en": "",
+      "title_zh": "[僅限TN] Old Hickory信用合作社 250美元支票帳戶獎金，無需直接存款",
+      "summary_zh": "此優惠提供在Old Hickory信用合作社開立支票帳戶，即可獲得250美元獎金，且無需滿足直接存款要求。",
+      "title_es": "[Solo TN] Old Hickory Credit Union $250 de bonificación por cuenta corriente, no se requiere depósito directo",
+      "summary_es": "Old Hickory Credit Union ofrece una bonificación de $250 por abrir una cuenta corriente sin necesidad de realizar un depósito directo, exclusivo para residentes de Tennessee."
+    },
+    {
+      "title": "[MI] Michigan First Credit Union $100 Referral Bonus (Direct Deposit Not Required) + $100 CD + 10% Savings Account",
+      "url": "https://www.doctorofcredit.com/mi-michigan-first-credit-union-100-referral-bonus-direct-deposit-not-required-100-cd/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit not required",
+        "mi bank bonuses"
+      ],
+      "ts": "2026-10-03T21:50:03.000Z",
+      "title_en": "[MI] Michigan First Credit Union $100 Referral Bonus (Direct Deposit Not Required) + $100 CD + 10% Savings Account",
+      "summary_en": "",
+      "title_zh": "[僅限MI] Michigan First信用合作社 100美元推薦獎金（無需直接存款）+ 100美元定期存款 + 10% 儲蓄帳戶",
+      "summary_zh": "此優惠提供Michigan First信用合作社的推薦獎金100美元，無需直接存款，並附帶100美元定期存款及10%儲蓄帳戶利率。",
+      "title_es": "[MI] Michigan First Credit Union $100 de bonificación por referido (no se requiere depósito directo) + $100 en CD + Cuenta de Ahorros al 10%",
+      "summary_es": "Michigan First Credit Union ofrece $100 por recomendar nuevos clientes, sin requisito de depósito directo, además de un CD de $100 y una cuenta de ahorros con 10% de rendimiento."
+    },
+    {
+      "title": "[YMMV] Rakuten: Amazon, Spend $25 & Earn $5 (Limit 3, $15 Back)",
+      "url": "https://www.doctorofcredit.com/ymmv-rakuten-amazon-spend-25-earn-5-limit-3-15-back/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "amazon"
+      ],
+      "ts": "2026-10-03T21:26:55.000Z",
+      "title_en": "[YMMV] Rakuten: Amazon, Spend $25 & Earn $5 (Limit 3, $15 Back)",
+      "summary_en": "",
+      "title_zh": "[YMMV] Rakuten：亞馬遜消費25美元，賺取5美元（最多3次，最高15美元回饋）",
+      "summary_zh": "在此優惠中，於Rakuten在亞馬遜消費每25美元可獲得5美元回饋，最多可進行三次，總回饋上限為15美元，具體回饋視個人使用情況而定。",
+      "title_es": "[YMMV] Rakuten: Amazon, gasta $25 y gana $5 (Límite 3, $15 de regreso)",
+      "summary_es": "En Rakuten, al gastar $25 en Amazon puedes ganar $5 de regreso, hasta tres veces, para un máximo de $15 de devolución."
+    },
+    {
+      "title": "Chase To Make Changes To Chase IHG Select Legacy Card ($49 Annual Fee To $99, FNC Up To 50k Points)",
+      "url": "https://www.doctorofcredit.com/rumor-chase-to-make-changes-to-chase-ihg-select-legacy-card-49-annual-fee-to-99/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "ihg"
+      ],
+      "ts": "2026-10-03T20:37:36.000Z",
+      "title_en": "Chase To Make Changes To Chase IHG Select Legacy Card ($49 Annual Fee To $99, FNC Up To 50k Points)",
+      "summary_en": "",
+      "title_zh": "Chase將對Chase IHG Select Legacy卡進行變更（年費從49美元調至99美元，飛行獎勵可達5萬點）",
+      "summary_zh": "Chase將把IHG Select Legacy卡的年費從49美元調升至99美元，並將免費住宿券的上限提升至5萬點。",
+      "title_es": "Chase realizará cambios en la tarjeta Chase IHG Select Legacy (cuota anual de $49 a $99, noche gratuita hasta 50,000 puntos)",
+      "summary_es": "Chase modificará su tarjeta IHG Select Legacy, aumentando la cuota anual de $49 a $99 e incluyendo una noche gratuita por valor de hasta 50,000 puntos."
+    },
+    {
+      "title": "[Targeted] PayPal Credit Card: Spend $2,500, Earn $125 Bonus",
+      "url": "https://www.doctorofcredit.com/targeted-paypal-credit-card-spend-2500-earn-125-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "paypal"
+      ],
+      "ts": "2026-10-03T20:12:44.000Z",
+      "title_en": "[Targeted] PayPal Credit Card: Spend $2,500, Earn $125 Bonus",
+      "summary_en": "",
+      "title_zh": "[定向] PayPal信用卡：消費2,500美元，獲得125美元獎金",
+      "summary_zh": "符合資格的持卡人只要在PayPal信用卡上消費滿2,500美元，即可獲得125美元的獎金。",
+      "title_es": "[Dirigido] Tarjeta de crédito PayPal: gasta $2,500 y obtén una bonificación de $125",
+      "summary_es": "La tarjeta de crédito PayPal ofrece una bonificación de $125 al gastar $2,500, disponible solo para clientes seleccionados."
+    },
+    {
       "title": "Dave’s Hot Chicken: Free Slider (10/13 Only) For App Users",
       "url": "https://www.doctorofcredit.com/daves-hot-chicken-free-slider-10-13-only-for-app-users/",
       "source": "Doctor of Credit",
@@ -17,6 +100,23 @@
       "summary_zh": "Dave’s Hot Chicken 在10月13日當天為應用程式用戶提供免費迷你漢堡優惠。",
       "title_es": "Dave’s Hot Chicken: Slider gratis (solo el 13 de octubre) para usuarios de la app",
       "summary_es": "Dave’s Hot Chicken ofrece un slider gratis solo el 13 de octubre a quienes utilicen su aplicación."
+    },
+    {
+      "title": "[TX Only] Energy Capital Credit Union $300 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/tx-only-energy-capital-credit-union-300-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "tx bank bonuses"
+      ],
+      "ts": "2026-10-03T20:00:13.000Z",
+      "title_en": "[TX Only] Energy Capital Credit Union $300 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[僅限TX] Energy Capital信用合作社 300美元支票帳戶獎金",
+      "summary_zh": "在Energy Capital信用合作社開立支票帳戶即可獲得300美元獎金，無需其他條件。",
+      "title_es": "[Solo TX] Energy Capital Credit Union $300 de bonificación por cuenta corriente",
+      "summary_es": "Energy Capital Credit Union ofrece $300 de bonificación por abrir una cuenta corriente, exclusivo para residentes de Texas."
     },
     {
       "title": "[IA] Community Choice Credit Union $411 Checking Bonus",
@@ -162,109 +262,7 @@
       "summary_zh": "Bank of America 的 Air France/KLM FlyingBlue 信用卡提供 70,000 點的註冊獎勵與 100 XP，並包含增強福利。",
       "title_es": "Bank of America lanza la tarjeta FlyingBlue de Air France/KLM con un bono de registro de 70,000 puntos más 100 XP (además de beneficios mejorados)",
       "summary_es": "La nueva tarjeta FlyingBlue de Bank of America para Air France y KLM ofrece 70,000 puntos de bienvenida y 100 XP, junto con beneficios mejorados."
-    },
-    {
-      "title": "American Airlines Adds Miles + Cash Option",
-      "url": "https://www.doctorofcredit.com/american-airlines-adds-miles-cash-option/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Travel",
-        "american airlines"
-      ],
-      "ts": "2026-10-03T12:00:22.000Z",
-      "title_en": "American Airlines Adds Miles + Cash Option",
-      "summary_en": "",
-      "title_zh": "美國航空新增里程+現金支付選項",
-      "summary_zh": "美國航空現在允許旅客使用里程加現金的方式購買機票。",
-      "title_es": "American Airlines incorpora la opción de Millas + Efectivo",
-      "summary_es": "American Airlines ahora permite a los clientes usar una combinación de millas y efectivo para comprar vuelos."
-    },
-    {
-      "title": "UberEats: Promo Codes, Discounts & Other Savings: $10 Off $20+ With Code RIOT102",
-      "url": "https://www.doctorofcredit.com/ubereats-promo-codes-discounts-other-savings/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "Food Delivery",
-        "UberEATS"
-      ],
-      "ts": "2026-10-03T00:50:06.000Z",
-      "title_en": "UberEats: Promo Codes, Discounts & Other Savings: $10 Off $20+ With Code RIOT102",
-      "summary_en": "",
-      "title_zh": "UberEats：促銷碼、折扣及其他優惠：使用代碼 RIOT102 可享 20 美元以上減 10 美元",
-      "summary_zh": "UberEats 推出新促銷碼，消費滿 20 美元即可減 10 美元。",
-      "title_es": "UberEats: Códigos Promocionales, Descuentos y Otros Ahorros: $10 de Descuento en Compras de $20+ Con el Código RIOT102",
-      "summary_es": "UberEats ofrece un código promocional que otorga $10 de descuento en pedidos de $20 o más."
-    },
-    {
-      "title": "(Update: 32 Added, 3 Removed) Maximizing The $300 Dining Credit With Chase Sapphire Reserve Exclusive Tables",
-      "url": "https://www.doctorofcredit.com/maximizing-the-300-dining-credit-with-chase-sapphire-reserve-exclusive-tables/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "chase sapphire reserve",
-        "dining"
-      ],
-      "ts": "2026-10-03T00:45:34.000Z",
-      "title_en": "(Update: 32 Added, 3 Removed) Maximizing The $300 Dining Credit With Chase Sapphire Reserve Exclusive Tables",
-      "summary_en": "",
-      "title_zh": "（更新：新增 32 間、移除 3 間）最大化 Chase Sapphire Reserve 專屬餐廳的 300 美元餐飲積分",
-      "summary_zh": "本篇文章更新了可使用 Chase Sapphire Reserve 300 美元餐飲積分的專屬餐廳名單，新增 32 間，移除 3 間。",
-      "title_es": "(Actualización: 32 Añadidos, 3 Eliminados) Maximizar el Crédito de Gastronomía de $300 con Mesas Exclusivas de Chase Sapphire Reserve",
-      "summary_es": "Chase Sapphire Reserve ha añadido 32 mesas exclusivas y eliminado 3 para aprovechar mejor el crédito de gastronomía de $300."
-    },
-    {
-      "title": "New Chase IHG Food & Beverage Credit Requires An Active Stay",
-      "url": "https://www.doctorofcredit.com/new-chase-ihg-food-beverage-credit-requires-an-active-stay/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "chase",
-        "chase ihg",
-        "ihg"
-      ],
-      "ts": "2026-10-03T00:41:21.000Z",
-      "title_en": "New Chase IHG Food & Beverage Credit Requires An Active Stay",
-      "summary_en": "",
-      "title_zh": "新版 Chase IHG 餐飲積分需在入住期間使用",
-      "summary_zh": "Chase IHG 卡新增餐飲積分福利，但僅限持卡人在入住期間使用。",
-      "title_es": "Nuevo Crédito de Alimentación y Bebida de Chase IHG Requiere una Estancia Activa",
-      "summary_es": "Chase IHG introduce un crédito para alimentación y bebida que solo puede utilizarse durante una estancia activa."
-    },
-    {
-      "title": "Chase To Make Changes To Chase IHG Select Legacy Card ($49 Annual Fee To $99)",
-      "url": "https://www.doctorofcredit.com/rumor-chase-to-make-changes-to-chase-ihg-select-legacy-card-49-annual-fee-to-99/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "ihg"
-      ],
-      "ts": "2026-10-03T00:29:36.000Z",
-      "title_en": "Chase To Make Changes To Chase IHG Select Legacy Card ($49 Annual Fee To $99)",
-      "summary_en": "",
-      "title_zh": "Chase 將調整 Chase IHG Select 舊版卡年費：由 49 美元漲至 99 美元",
-      "summary_zh": "Chase 宣布 IHG Select 舊版信用卡年費將從 49 美元調升至 99 美元。",
-      "title_es": "Chase Modificará la Tarjeta Legacy Chase IHG Select (Cuota Anual de $49 a $99)",
-      "summary_es": "Chase aumentará la cuota anual de la tarjeta legacy IHG Select de $49 a $99."
-    },
-    {
-      "title": "Chase IHG Referrals To Return 10/8",
-      "url": "https://www.doctorofcredit.com/chase-ihg-referrals-to-return-10-8/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "chase",
-        "chase ihg",
-        "ihg"
-      ],
-      "ts": "2026-10-03T00:17:36.000Z",
-      "title_en": "Chase IHG Referrals To Return 10/8",
-      "summary_en": "",
-      "title_zh": "Chase IHG 推薦獎勵將於 10/8 恢復",
-      "summary_zh": "Chase IHG 卡片的推薦獎勵將在 10 月 8 日重新開放。",
-      "title_es": "Las Referencias de Chase IHG Regresarán el 10/8",
-      "summary_es": "Chase volverá a ofrecer referidos para IHG a partir del 8 de octubre."
     }
   ],
-  "fetched": "2026-10-03T20:08:20.587Z"
+  "fetched": "2026-10-04T08:08:24.476Z"
 }
