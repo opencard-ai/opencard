@@ -1,6 +1,234 @@
 {
   "items": [
     {
+      "title": "(Ends 10/5) Amazon Prime Members Get $20 Off $30 Grubhub Order (Pickup or Delivery; DEALS20)",
+      "url": "https://www.doctorofcredit.com/amazon-prime-members-get-20-off-30-grubhub-order-pickup-or-delivery-deals20/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "amazon prime",
+        "grubhub"
+      ],
+      "ts": "2026-10-05T03:00:25.000Z",
+      "title_en": "(Ends 10/5) Amazon Prime Members Get $20 Off $30 Grubhub Order (Pickup or Delivery; DEALS20)",
+      "summary_en": "",
+      "title_zh": "（至10/5止）Amazon Prime 會員在 Grubhub 訂單滿 $30 可享 $20 折扣（自取或外送；DEALS20）",
+      "summary_zh": "Amazon Prime 會員在 Grubhub 消費滿 $30 可獲得 $20 折扣，適用於自取或外送。",
+      "title_es": "(Termina el 5/10) Miembros Prime de Amazon Obtienen $20 de Descuento en Pedidos de $30 en Grubhub (Recogida o Entrega; DEALS20)",
+      "summary_es": "Los miembros Prime de Amazon pueden obtener un descuento de $20 en pedidos de al menos $30 en Grubhub, válido para recogida o entrega."
+    },
+    {
+      "title": "Amazon Prime Young Adult (18-24) & Student: Get Free 6 Month Prime Trial; Grubhub+, Video Discounts & More",
+      "url": "https://www.doctorofcredit.com/amazon-prime-student-review-free-6-month-trial-grubhub-linkedin-premium-video-music-discounts-and-more/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "amazon",
+        "amazon prime",
+        "amazon prime student"
+      ],
+      "ts": "2026-10-05T02:45:40.000Z",
+      "title_en": "Amazon Prime Young Adult (18-24) & Student: Get Free 6 Month Prime Trial; Grubhub+, Video Discounts & More",
+      "summary_en": "",
+      "title_zh": "Amazon Prime 年輕族群（18-24）與學生：免費獲得 6 個月 Prime 試用；Grubhub+、影片折扣等多重福利",
+      "summary_zh": "年輕族群與學生可免費獲得 Amazon Prime 6 個月試用，並享有 Grubhub+、影片折扣等福利。",
+      "title_es": "Amazon Prime para jóvenes (18-24) y estudiantes: Obtén una prueba gratuita de 6 meses de Prime; Grubhub+, descuentos en video y más",
+      "summary_es": "Los jóvenes de 18 a 24 años y estudiantes pueden beneficiarse de una prueba gratuita de seis meses de Prime con ventajas como Grubhub+ y descuentos en video."
+    },
+    {
+      "title": "[FL, GA only] VyStar Credit Union $175 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/fl-only-vystar-credit-union-175-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "fl bank bonuses"
+      ],
+      "ts": "2026-10-05T00:15:45.000Z",
+      "title_en": "[FL, GA only] VyStar Credit Union $175 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[FL, GA 限定] VyStar Credit Union $175 支票帳戶獎金",
+      "summary_zh": "VyStar Credit Union 的支票帳戶新客戶在 FL、GA 可獲得 $175 獎金。",
+      "title_es": "[Solo FL, GA] Bono de $175 por abrir cuenta corriente en VyStar Credit Union",
+      "summary_es": "VyStar Credit Union ofrece un bono de $175 a los residentes de Florida y Georgia que abran una cuenta corriente."
+    },
+    {
+      "title": "Staples: 100% Back In Points On Command Purchases Up To $40",
+      "url": "https://www.doctorofcredit.com/staples-100-back-in-points-on-expo-command-purchases-up-to-40/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "staples",
+        "staples 100% back"
+      ],
+      "ts": "2026-10-04T23:53:24.000Z",
+      "title_en": "Staples: 100% Back In Points On Command Purchases Up To $40",
+      "summary_en": "",
+      "title_zh": "Staples：Command 系列商品購物最高 $40 可獲 100% 積分回饋",
+      "summary_zh": "在 Staples 購買 Command 商品滿 $40 可獲得 100% 積分回饋，上限 $40。",
+      "title_es": "Staples: 100% de reembolso en puntos en compras de Command hasta $40",
+      "summary_es": "Staples devuelve el 100% en puntos en compras de productos Command hasta un máximo de $40."
+    },
+    {
+      "title": "[PA only] U$X Federal Credit Union $200",
+      "url": "https://www.doctorofcredit.com/pa-only-ux-federal-credit-union-100/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "pa bank bonuses"
+      ],
+      "ts": "2026-10-04T23:30:36.000Z",
+      "title_en": "[PA only] U$X Federal Credit Union $200",
+      "summary_en": "",
+      "title_zh": "[PA 限定] U$X Federal Credit Union $200",
+      "summary_zh": "PA 的 U$X Federal Credit Union 提供 $200 支票帳戶獎金。",
+      "title_es": "[Solo PA] Bono de $200 en U$X Federal Credit Union",
+      "summary_es": "U$X Federal Credit Union ofrece un bono de $200 para los residentes de Pensilvania que cumplan los requisitos."
+    },
+    {
+      "title": "[GA only] Delta Community Credit Union $250 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/ga-only-delta-community-credit-union-200-checking-bonus-direct-deposit-not-required/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit not required",
+        "ga bank bonuses",
+        "no credit card funding",
+        "soft pull"
+      ],
+      "ts": "2026-10-04T23:00:17.000Z",
+      "title_en": "[GA only] Delta Community Credit Union $250 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[GA 限定] Delta Community Credit Union $250 支票帳戶獎金",
+      "summary_zh": "GA 的 Delta Community Credit Union 新客戶可獲得 $250 支票帳戶獎金。",
+      "title_es": "[Solo GA] Bono de $250 por cuenta corriente en Delta Community Credit Union",
+      "summary_es": "Delta Community Credit Union ofrece un bono de $250 a los residentes de Georgia que abran una cuenta corriente."
+    },
+    {
+      "title": "[Meijer Mperks: 10,000 Points On $100 Visa Giftcard (10/4-10/6)",
+      "url": "https://www.doctorofcredit.com/meijer-mperks-10-off-150-visa-giftcards-7/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "meijer",
+        "visa gift cards"
+      ],
+      "ts": "2026-10-04T22:52:00.000Z",
+      "title_en": "[Meijer Mperks: 10,000 Points On $100 Visa Giftcard (10/4-10/6)",
+      "summary_en": "",
+      "title_zh": "[Meijer Mperks：10/4-10/6 期間，購買 $100 Visa 禮品卡可獲 10,000 點數]",
+      "summary_zh": "Meijer Mperks 促銷活動中，購買 $100 Visa 禮品卡即可獲得 10,000 點數。",
+      "title_es": "[Meijer Mperks: 10,000 puntos al comprar una tarjeta de regalo Visa de $100 (del 4/10 al 6/10)",
+      "summary_es": "Los clientes de Meijer pueden obtener 10,000 puntos al comprar una tarjeta de regalo Visa de $100 durante las fechas indicadas."
+    },
+    {
+      "title": "Chase Offers: Get 25% Back On Wonder (Food Delivery) Stack With 50% Off Promo Code",
+      "url": "https://www.doctorofcredit.com/chase-offers-get-25-back-on-wonder-food-delivery-stack-with-50-off-promo-code/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Uncategorized",
+        "chase",
+        "chase offers",
+        "wonder"
+      ],
+      "ts": "2026-10-04T22:50:39.000Z",
+      "title_en": "Chase Offers: Get 25% Back On Wonder (Food Delivery) Stack With 50% Off Promo Code",
+      "summary_en": "",
+      "title_zh": "Chase 優惠： Wonder（餐飲外送）疊加 50% 折扣碼可享 25% 返現",
+      "summary_zh": "使用 Chase 優惠，在 Wonder 外送訂單加上 50% 折扣碼可獲得 25% 返現。",
+      "title_es": "Ofertas de Chase: Obtén un 25% de reembolso en Wonder (entrega de comida) acumulable con un código promocional de 50% de descuento",
+      "summary_es": "Chase ofrece un 25% de reembolso en pedidos de Wonder, que se puede combinar con un código promocional de 50% de descuento."
+    },
+    {
+      "title": "Staples: No Purchase Fee On $200 Visa Gift Cards (10/4 – 10/10)",
+      "url": "https://www.doctorofcredit.com/staples-no-purchase-fee-on-200-visa-gift-cards-10-31-11-6-limit-5/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Manufactured Spending",
+        "staples",
+        "visa gift cards"
+      ],
+      "ts": "2026-10-04T22:50:28.000Z",
+      "title_en": "Staples: No Purchase Fee On $200 Visa Gift Cards (10/4 – 10/10)",
+      "summary_en": "",
+      "title_zh": "Staples：10/4-10/10 期間 $200 Visa 禮品卡免手續費",
+      "summary_zh": "Staples 在促銷期內購買 $200 Visa 禮品卡不收手續費。",
+      "title_es": "Staples: Sin comisión de compra en tarjetas de regalo Visa de $200 (del 4/10 al 10/10)",
+      "summary_es": "Staples no cobra comisión al comprar tarjetas de regalo Visa de $200 durante el período indicado."
+    },
+    {
+      "title": "Office Depot/Max Stores: Buy $300 In Visa Giftcards & Get $15 Instant Discount (10/4 – 10/10)",
+      "url": "https://www.doctorofcredit.com/office-depot-max-stores-buy-300-in-visa-giftcards-get-15-instant-discount-12-19-12-25/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Manufactured Spending",
+        "office depot/max",
+        "visa gift cards"
+      ],
+      "ts": "2026-10-04T22:30:14.000Z",
+      "title_en": "Office Depot/Max Stores: Buy $300 In Visa Giftcards & Get $15 Instant Discount (10/4 – 10/10)",
+      "summary_en": "",
+      "title_zh": "Office Depot/Max 門市：10/4-10/10 購買 $300 Visa 禮品卡即享 $15 即時折扣",
+      "summary_zh": "在 Office Depot/Max 購買 $300 Visa 禮品卡可即時減免 $15。",
+      "title_es": "Tiendas Office Depot/Max: Compra $300 en tarjetas de regalo Visa y obtén un descuento instantáneo de $15 (del 4/10 al 10/10)",
+      "summary_es": "Office Depot y Max ofrecen un descuento inmediato de $15 al comprar $300 en tarjetas de regalo Visa."
+    },
+    {
+      "title": "Staples: Apple Airpods Pro 3 for $169",
+      "url": "https://www.doctorofcredit.com/amazon-walmart-apple-airpods-pro-3-for-179/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "amazon",
+        "apple",
+        "Apple AirPods Pro 3"
+      ],
+      "ts": "2026-10-04T22:21:59.000Z",
+      "title_en": "Staples: Apple Airpods Pro 3 for $169",
+      "summary_en": "",
+      "title_zh": "Staples：Apple AirPods Pro 第 3 代售價 $169",
+      "summary_zh": "Staples 以 $169 促銷價出售 Apple AirPods Pro 第三代。",
+      "title_es": "Staples: Airpods Pro 3 de Apple por $169",
+      "summary_es": "Staples vende los Airpods Pro 3 de Apple a un precio de $169."
+    },
+    {
+      "title": "[AZ] VantageWest Credit Union $200 Checking Bonus, Direct Deposit Not Required",
+      "url": "https://www.doctorofcredit.com/az-only-vantagewest-credit-union-300-checking-bonus-direct-deposit-not-required/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "az bank bonuses",
+        "credit card funding",
+        "direct deposit not required",
+        "soft pull"
+      ],
+      "ts": "2026-10-04T21:00:47.000Z",
+      "title_en": "[AZ] VantageWest Credit Union $200 Checking Bonus, Direct Deposit Not Required",
+      "summary_en": "",
+      "title_zh": "[AZ] VantageWest Credit Union $200 支票帳戶獎金，無需直接存款",
+      "summary_zh": "VantageWest Credit Union 在 AZ 提供 $200 支票帳戶獎金，且不要求直接存款。",
+      "title_es": "[AZ] Bono de $200 por cuenta corriente en VantageWest Credit Union, sin requerir depósito directo",
+      "summary_es": "VantageWest Credit Union ofrece un bono de $200 para abrir una cuenta corriente en Arizona sin necesidad de realizar un depósito directo."
+    },
+    {
+      "title": "[MN] Neighborhood National Bank $100 Referral Bonus",
+      "url": "https://www.doctorofcredit.com/mn-neighborhood-national-bank-100-referral-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "mn bank bonuses"
+      ],
+      "ts": "2026-10-04T21:00:40.000Z",
+      "title_en": "[MN] Neighborhood National Bank $100 Referral Bonus",
+      "summary_en": "",
+      "title_zh": "[MN] Neighborhood National Bank $100 推薦獎金",
+      "summary_zh": "Neighborhood National Bank 在 MN 為推薦新客戶的現有用戶提供 $100 獎金。",
+      "title_es": "[MN] Bono de $100 por referido en Neighborhood National Bank",
+      "summary_es": "Neighborhood National Bank ofrece un bono de $100 a quienes refieran a nuevos clientes en Minnesota."
+    },
+    {
       "title": "[CT, West Hartford Only] Westfield Bank $500 Checking Bonus",
       "url": "https://www.doctorofcredit.com/ct-west-hartford-only-westfield-bank-500-checking-bonus/",
       "source": "Doctor of Credit",
@@ -12,8 +240,8 @@
       "ts": "2026-10-04T20:00:39.000Z",
       "title_en": "[CT, West Hartford Only] Westfield Bank $500 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[CT, West Hartford Only] Westfield Bank $500 Checking Bonus",
-      "summary_zh": "",
+      "title_zh": "[CT, West Hartford 限定] Westfield Bank $500 支票帳戶獎金",
+      "summary_zh": "Westfield Bank 在 CT 的 West Hartford 提供 $500 支票帳戶獎金。",
       "title_es": "[CT, Solo West Hartford] Westfield Bank: Bono de $500 por Cuenta Corriente",
       "summary_es": "Westfield Bank ofrece un bono de $500 por abrir una cuenta corriente en West Hartford, Connecticut."
     },
@@ -29,259 +257,11 @@
       "ts": "2026-10-04T19:43:03.000Z",
       "title_en": "[Targeted] AmEx Offers: Wyndham, Spend $100+ & Receive $20 Statement Credit",
       "summary_en": "",
-      "title_zh": "[Targeted] AmEx Offers: Wyndham, Spend $100+ & Receive $20 Statement Credit",
-      "summary_zh": "",
+      "title_zh": "[目標優惠] AmEx 優惠：Wyndham，消費 $100 以上可獲 $20 信用卡帳單信用額",
+      "summary_zh": "美國運通持卡人在 Wyndham 消費滿 $100 可獲得 $20 帳單信用額。",
       "title_es": "[Dirigido] Ofertas de Amex: Wyndham, gasta $100+ y recibe $20 de crédito en estado de cuenta",
       "summary_es": "American Express ofrece un crédito de $20 a quienes gasten $100 o más en hoteles Wyndham."
-    },
-    {
-      "title": "[NY, In Branch Only] Empire State Bank $250 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/ny-in-branch-only-empire-state-bank-250-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "direct deposit required",
-        "ny bank bonuses"
-      ],
-      "ts": "2026-10-04T19:00:07.000Z",
-      "title_en": "[NY, In Branch Only] Empire State Bank $250 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[NY, In Branch Only] Empire State Bank $250 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[NY, Solo en Sucursal] Empire State Bank: Bono de $250 por Cuenta Corriente",
-      "summary_es": "Empire State Bank ofrece un bono de $250 por abrir una cuenta corriente en sus sucursales de Nueva York."
-    },
-    {
-      "title": "[TX] Education Credit Union $123 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/tx-education-credit-union-190-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "credit card funding",
-        "direct deposit not required",
-        "tx bank bonuses"
-      ],
-      "ts": "2026-10-04T18:20:07.000Z",
-      "title_en": "[TX] Education Credit Union $123 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[TX] Education Credit Union $123 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[TX] Educación Credit Union: Bono de $123 por Cuenta Corriente",
-      "summary_es": "Educación Credit Union ofrece un bono de $123 por abrir una cuenta corriente en Texas."
-    },
-    {
-      "title": "[Targeted] AmEx Offers: Radisson Hotels & Resorts (Europe & Africa), Spend $250+ & Receive $50 Statement Credit",
-      "url": "https://www.doctorofcredit.com/targeted-amex-offers-radisson-hotels-resorts-europe-africa-spend-250-receive-50-statement-credit/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Travel",
-        "amex offers",
-        "hotel promotions",
-        "radisson rewards"
-      ],
-      "ts": "2026-10-04T18:00:44.000Z",
-      "title_en": "[Targeted] AmEx Offers: Radisson Hotels & Resorts (Europe & Africa), Spend $250+ & Receive $50 Statement Credit",
-      "summary_en": "",
-      "title_zh": "[Targeted] AmEx Offers: Radisson Hotels & Resorts (Europe & Africa), Spend $250+ & Receive $50 Statement Credit",
-      "summary_zh": "",
-      "title_es": "[Dirigido] Ofertas de Amex: Radisson Hotels & Resorts (Europa y África), gasta $250+ y recibe $50 de crédito en estado de cuenta",
-      "summary_es": "American Express ofrece un crédito de $50 a quienes gasten $250 o más en Radisson Hotels & Resorts en Europa y África."
-    },
-    {
-      "title": "[TX] Extraco Banks Up To $1,500 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/tx-extraco-banks-up-to-1500-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "direct deposit not required",
-        "tx bank bonuses"
-      ],
-      "ts": "2026-10-04T17:30:41.000Z",
-      "title_en": "[TX] Extraco Banks Up To $1,500 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[TX] Extraco Banks Up To $1,500 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[TX] Extraco Banks: Bono de hasta $1,500 por Cuenta Corriente",
-      "summary_es": "Extraco Banks ofrece un bono de hasta $1,500 por abrir una cuenta corriente en Texas."
-    },
-    {
-      "title": "[CA, In Branch Only] Frontwave Credit Union $350 Business Checking Bonus",
-      "url": "https://www.doctorofcredit.com/ca-in-branch-only-frontwave-credit-union-350-business-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "business bank bonuses",
-        "no credit card funding",
-        "soft pull"
-      ],
-      "ts": "2026-10-04T16:45:45.000Z",
-      "title_en": "[CA, In Branch Only] Frontwave Credit Union $350 Business Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[CA, In Branch Only] Frontwave Credit Union $350 Business Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[CA, Solo en Sucursal] Frontwave Credit Union: Bono de $350 por Cuenta Corriente Empresarial",
-      "summary_es": "Frontwave Credit Union ofrece un bono de $350 por abrir una cuenta corriente empresarial en sus sucursales de California."
-    },
-    {
-      "title": "[NH, FL, MA, RI, CT, DE, NY, NJ, or PA, In Branch] Santander $550 Business Checking Bonus",
-      "url": "https://www.doctorofcredit.com/nh-fl-ma-ri-ct-de-ny-nj-or-pa-in-branch-santander-500-business-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "credit card funding",
-        "ct bank bonuses",
-        "de bank bonuses",
-        "fl bank bonuses",
-        "ma bank bonuses",
-        "nh bank bonuses",
-        "nj bank bonuses",
-        "ny bank bonuses",
-        "pa bank bonsues",
-        "ri bank bonuses",
-        "soft pull"
-      ],
-      "ts": "2026-10-04T16:45:11.000Z",
-      "title_en": "[NH, FL, MA, RI, CT, DE, NY, NJ, or PA, In Branch] Santander $550 Business Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[NH, FL, MA, RI, CT, DE, NY, NJ, or PA, In Branch] Santander $550 Business Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[NH, FL, MA, RI, CT, DE, NY, NJ o PA, en Sucursal] Santander: Bono de $550 por Cuenta Corriente Empresarial",
-      "summary_es": "Santander ofrece un bono de $550 por abrir una cuenta corriente empresarial en sus sucursales en varios estados."
-    },
-    {
-      "title": "[FL, MA, NJ, NY, VT, In Branch] Trustco Bank $300",
-      "url": "https://www.doctorofcredit.com/fl-ma-nj-ny-vt-trustco-bank-250-stanley-cup-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "direct deposit required",
-        "fl bank bonuses",
-        "ma bank bonuses",
-        "nj bank bonuses",
-        "ny bank bonuses",
-        "soft pull",
-        "vt bank bonuses"
-      ],
-      "ts": "2026-10-04T16:30:43.000Z",
-      "title_en": "[FL, MA, NJ, NY, VT, In Branch] Trustco Bank $300",
-      "summary_en": "",
-      "title_zh": "[FL, MA, NJ, NY, VT, In Branch] Trustco Bank $300",
-      "summary_zh": "",
-      "title_es": "[FL, MA, NJ, NY, VT, en Sucursal] Trustco Bank ofrece $300",
-      "summary_es": "Trustco Bank ofrece $300 por abrir una cuenta en sus sucursales en Florida, Massachusetts, Nueva Jersey, Nueva York y Vermont."
-    },
-    {
-      "title": "[CT] Ascend Bank $300 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/ny-ct-vt-ri-ma-me-nh-ascend-bank-400-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "ct bank bonuses",
-        "direct deposit required",
-        "ma bank bonuses",
-        "me bank bonuses",
-        "nh bank bonuses",
-        "no credit card funding",
-        "ny bank bonuses",
-        "ri bank bonuses",
-        "vt bank bonuses"
-      ],
-      "ts": "2026-10-04T15:30:32.000Z",
-      "title_en": "[CT] Ascend Bank $300 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[CT] Ascend Bank $300 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[CT] Ascend Bank: Bono de $300 por Cuenta Corriente",
-      "summary_es": "Ascend Bank ofrece un bono de $300 por abrir una cuenta corriente en Connecticut."
-    },
-    {
-      "title": "[MD only] APGFCU $400 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/md-only-apgfcu-250-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "md bank bonuses"
-      ],
-      "ts": "2026-10-04T15:15:20.000Z",
-      "title_en": "[MD only] APGFCU $400 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[MD only] APGFCU $400 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[MD solo] APGFCU: Bono de $400 por Cuenta Corriente",
-      "summary_es": "APGFCU ofrece un bono de $400 por abrir una cuenta corriente en Maryland."
-    },
-    {
-      "title": "[CA] Frontwave Credit Union $600 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/ca-frontwave-credit-union-200-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "ca bank bonuses",
-        "direct deposit required",
-        "no credit card funding",
-        "soft pull"
-      ],
-      "ts": "2026-10-04T15:00:43.000Z",
-      "title_en": "[CA] Frontwave Credit Union $600 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[CA] Frontwave Credit Union $600 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[CA] Frontwave Credit Union: Bono de $600 por Cuenta Corriente",
-      "summary_es": "Frontwave Credit Union ofrece un bono de $600 por abrir una cuenta corriente en California."
-    },
-    {
-      "title": "Shoprite: Spend $100+ On Pet Items & Save $50 Instantly (10/4 – 10/10)",
-      "url": "https://www.doctorofcredit.com/shoprite-spend-100-on-pet-items-save-50-instantly-10-4-10-10/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "pet",
-        "shoprite"
-      ],
-      "ts": "2026-10-04T14:00:33.000Z",
-      "title_en": "Shoprite: Spend $100+ On Pet Items & Save $50 Instantly (10/4 – 10/10)",
-      "summary_en": "",
-      "title_zh": "Shoprite: Spend $100+ On Pet Items & Save $50 Instantly (10/4 – 10/10)",
-      "summary_zh": "",
-      "title_es": "Shoprite: Gasta $100+ en artículos para mascotas y ahorra $50 de inmediato (10/4 – 10/10)",
-      "summary_es": "Shoprite ofrece un ahorro inmediato de $50 al gastar $100 o más en productos para mascotas entre el 4 y el 10 de octubre."
-    },
-    {
-      "title": "[IN, IL] First Farmers Bank & Trust $100 Checking Bonus, Direct Deposit Not Required",
-      "url": "https://www.doctorofcredit.com/in-il-first-farmers-bank-trust-100-checking-bonus-direct-deposit-not-required/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "direct deposit not required",
-        "IL bank bonuses",
-        "in bank bonuses"
-      ],
-      "ts": "2026-10-04T13:00:28.000Z",
-      "title_en": "[IN, IL] First Farmers Bank & Trust $100 Checking Bonus, Direct Deposit Not Required",
-      "summary_en": "",
-      "title_zh": "[IN, IL] First Farmers Bank & Trust $100 Checking Bonus, Direct Deposit Not Required",
-      "summary_zh": "",
-      "title_es": "[IN, IL] First Farmers Bank & Trust: Bono de $100 por Cuenta Corriente, No se requiere depósito directo",
-      "summary_es": "First Farmers Bank & Trust ofrece un bono de $100 por abrir una cuenta corriente en Indiana o Illinois sin necesidad de depósito directo."
-    },
-    {
-      "title": "[TN only] Old Hickory Credit Union $250 Checking Bonus, Direct Deposit Not Required",
-      "url": "https://www.doctorofcredit.com/tn-only-old-hickory-credit-union-150-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "direct deposit not required",
-        "hard pull",
-        "tn bank bonuses"
-      ],
-      "ts": "2026-10-03T21:52:09.000Z",
-      "title_en": "[TN only] Old Hickory Credit Union $250 Checking Bonus, Direct Deposit Not Required",
-      "summary_en": "",
-      "title_zh": "[僅限TN] Old Hickory信用合作社 250美元支票帳戶獎金，無需直接存款",
-      "summary_zh": "此優惠提供在Old Hickory信用合作社開立支票帳戶，即可獲得250美元獎金，且無需滿足直接存款要求。",
-      "title_es": "[Solo TN] Old Hickory Credit Union $250 de bonificación por cuenta corriente, no se requiere depósito directo",
-      "summary_es": "Old Hickory Credit Union ofrece una bonificación de $250 por abrir una cuenta corriente sin necesidad de realizar un depósito directo, exclusivo para residentes de Tennessee."
     }
   ],
-  "fetched": "2026-10-04T20:08:13.108Z"
+  "fetched": "2026-10-05T08:08:22.684Z"
 }
