@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "title": "[YMMV] Citi Travel: IHG, Spend $300 & Get $50 Off",
+      "url": "https://www.doctorofcredit.com/ymmv-citi-travel-ihg-spend-300-get-50-off/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Travel",
+        "hotel promotions",
+        "ihg"
+      ],
+      "ts": "2026-10-09T19:36:15.000Z",
+      "title_en": "[YMMV] Citi Travel: IHG, Spend $300 & Get $50 Off",
+      "summary_en": "",
+      "title_zh": "（效果因人而异）花旗旅游：IHG，消费300美元即可获得50美元优惠",
+      "summary_zh": "此优惠要求在花旗旅游平台消费300美元，即可获得50美元的折扣，实际优惠可能因人而异。",
+      "title_es": "[YMMV] Citi Travel: IHG, Gasta $300 y obtén $50 de descuento",
+      "summary_es": "La promoción de Citi Travel ofrece un descuento de $50 al gastar $300 en hoteles IHG, aunque los resultados pueden variar."
+    },
+    {
+      "title": "[Targeted] Happen Bank (Formerly LendingClub) Level Up $200 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/targeted-lendingclub-level-up-200-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts"
+      ],
+      "ts": "2026-10-09T18:00:32.000Z",
+      "title_en": "[Targeted] Happen Bank (Formerly LendingClub) Level Up $200 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "（定向）Happen Bank（前身为LendingClub）Level Up $200 支票账户奖金",
+      "summary_zh": "符合条件的客户在Happen Bank开设支票账户并满足要求后，可获得200美元的奖金。",
+      "title_es": "[Targeted] Happen Bank (anteriormente LendingClub) Level Up $200 Bono por Cuenta Corriente",
+      "summary_es": "Happen Bank, anteriormente conocida como LendingClub, ofrece un bono de $200 por abrir una cuenta corriente bajo la promoción Level Up, disponible solo para clientes seleccionados."
+    },
+    {
+      "title": "American Express Fined $350 Million For Anti-Money Laundering & Bank Secrecy Act Deficiencies",
+      "url": "https://www.doctorofcredit.com/american-express-fined-350-million-for-anti-money-laundering-bank-secrecy-act-deficiencies/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "american express"
+      ],
+      "ts": "2026-10-09T13:00:21.000Z",
+      "title_en": "American Express Fined $350 Million For Anti-Money Laundering & Bank Secrecy Act Deficiencies",
+      "summary_en": "",
+      "title_zh": "美国运通因反洗钱与银行保密法违规被罚款3.5亿美元",
+      "summary_zh": "美国运通因在反洗钱和银行保密法方面存在违规，被监管机构处以3.5亿美元罚款。",
+      "title_es": "American Express multada con $350 millones por deficiencias en prevención de lavado de dinero y la Ley de Secreto Bancario",
+      "summary_es": "American Express recibió una multa de $350 millones debido a fallos en sus sistemas de control contra el lavado de dinero y el cumplimiento de la Ley de Secreto Bancario."
+    },
+    {
       "title": "Robinhood, SoFi, and Public Brokerages Offering 3% Transfer Bonus For Those Fleeing Webull",
       "url": "https://www.doctorofcredit.com/robinhood-public-3-transfer-bonus-for-those-fleeing-webull/",
       "source": "Doctor of Credit",
@@ -210,56 +258,7 @@
       "summary_zh": "若在Wells Fargo存放或持有25萬美元的現金或資產，即可獲得2,500美元的獎金。",
       "title_es": "Wells Fargo Premier: Bono de $2,500 Bancario o de Inversión (Requiere $250k en Efectivo/Activos)",
       "summary_es": "Wells Fargo Premier presenta un bono de $2,500 para quienes depositen o inviertan $250,000 en efectivo o activos."
-    },
-    {
-      "title": "[Targeted] Gemini: 50% Bonus On Prediction Markets Up To $50",
-      "url": "https://www.doctorofcredit.com/targeted-gemini-50-bonus-on-prediction-markets-up-to-50/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "gemini",
-        "prediction markets"
-      ],
-      "ts": "2026-10-08T03:03:10.000Z",
-      "title_en": "[Targeted] Gemini: 50% Bonus On Prediction Markets Up To $50",
-      "summary_en": "",
-      "title_zh": "[定向] Gemini：預測市場 50% 獎金，最高可達 $50",
-      "summary_zh": "符合條件的 Gemini 用戶在預測市場可獲得 50% 獎金，最高可達 50 美元。",
-      "title_es": "[Dirigido] Gemini: 50% de bono en mercados de predicciones hasta $50",
-      "summary_es": "Gemini ofrece un bono del 50 % en mercados de predicciones hasta un máximo de $50 para usuarios específicos."
-    },
-    {
-      "title": "Free Urban Air Ticket ($30+ Value)",
-      "url": "https://www.doctorofcredit.com/free-urban-air-ticket-30-value/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "urban air"
-      ],
-      "ts": "2026-10-08T01:10:31.000Z",
-      "title_en": "Free Urban Air Ticket ($30+ Value)",
-      "summary_en": "",
-      "title_zh": "免費市區機票（價值 $30 以上）",
-      "summary_zh": "用戶可獲得一張價值 30 美元以上的市區免費機票。",
-      "title_es": "Boleto gratuito de Urban Air (valor de $30+)",
-      "summary_es": "Urban Air regala un boleto gratuito con un valor de al menos $30."
-    },
-    {
-      "title": "Rakuten: 100x Back on Coveron/Nordprotect",
-      "url": "https://www.doctorofcredit.com/rakuten-100-cashback-on-nordpass-password-manager/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "rakuten"
-      ],
-      "ts": "2026-10-07T22:05:28.000Z",
-      "title_en": "Rakuten: 100x Back on Coveron/Nordprotect",
-      "summary_en": "",
-      "title_zh": "Rakuten：Coveron/Nordprotect 100 倍回饋",
-      "summary_zh": "在 Rakuten 上購買 Coveron 或 Nordprotect 可獲得 100 倍回饋。",
-      "title_es": "Rakuten: 100x de devolución en Coveron/Nordprotect",
-      "summary_es": "Rakuten ofrece 100 veces el reembolso en compras de Coveron o Nordprotect."
     }
   ],
-  "fetched": "2026-10-09T08:08:20.053Z"
+  "fetched": "2026-10-09T20:08:21.935Z"
 }
