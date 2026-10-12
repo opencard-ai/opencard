@@ -1,6 +1,122 @@
 {
   "items": [
     {
+      "title": "(Update: CITGO Added) Walmart+ Members Get Gas Discount $.10/gallon At Exxon & Walmart Gas Stations",
+      "url": "https://www.doctorofcredit.com/walmart-members-get-gas-discount-10-gallon-at-exxon-walmart-gas-stations/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "walmart"
+      ],
+      "ts": "2026-10-12T03:31:16.000Z",
+      "title_en": "(Update: CITGO Added) Walmart+ Members Get Gas Discount $.10/gallon At Exxon & Walmart Gas Stations",
+      "summary_en": "",
+      "title_zh": "（更新：已加入 CITGO）Walmart+ 会员在 Exxon 与 Walmart 加油站可获得每加仑 $0.10 的汽油折扣",
+      "summary_zh": "Walmart+ 会员在 Exxon 与 Walmart 加油站可获得每加仑 0.10 美元的汽油折扣",
+      "title_es": "(Actualización: CITGO añadido) Los miembros de Walmart+ obtienen descuento de gasolina de $0.10/galón en gasolineras Exxon y Walmart",
+      "summary_es": "Los miembros de Walmart+ ahora pueden beneficiarse de un descuento de $0.10 por galón en las gasolineras Exxon y Walmart."
+    },
+    {
+      "title": "[YMMV] Chase Business Checking: $30 Bonus For Making 5 Invoices",
+      "url": "https://www.doctorofcredit.com/ymmv-chase-business-checking-30-bonus-for-making-5-invoices/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "chase"
+      ],
+      "ts": "2026-10-11T23:35:15.000Z",
+      "title_en": "[YMMV] Chase Business Checking: $30 Bonus For Making 5 Invoices",
+      "summary_en": "",
+      "title_zh": "[YMMV] Chase 商业支票账户：制作 5 张发票即可获得 $30 奖金",
+      "summary_zh": "Chase 商业支票账户只要完成 5 张发票即可获 $30 奖金",
+      "title_es": "[YMMV] Chase Business Checking: $30 de bono por realizar 5 facturas",
+      "summary_es": "Chase ofrece un bono de $30 a los negocios que realicen al menos 5 facturas con su cuenta empresarial."
+    },
+    {
+      "title": "[AZ, CO, FL, IL, IN, KS, MO, OK, TX] Busey Bank $200-$500 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/fl-il-in-mo-busey-bank-300-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "az bank bonuses",
+        "co bank bonuses",
+        "credit card funding",
+        "direct deposit required",
+        "fl bank bonuses",
+        "IL bank bonuses",
+        "in bank bonuses",
+        "ks bank bonuses",
+        "mo bank bonuses",
+        "ok bank bonuses",
+        "soft pull",
+        "tx bank bonuses"
+      ],
+      "ts": "2026-10-11T23:30:35.000Z",
+      "title_en": "[AZ, CO, FL, IL, IN, KS, MO, OK, TX] Busey Bank $200-$500 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[AZ、CO、FL、IL、IN、KS、MO、OK、TX] Busey Bank 提供 $200-$500 的支票账户奖金",
+      "summary_zh": "Busey Bank 在多个州提供 $200 至 $500 的支票账户奖金",
+      "title_es": "[AZ, CO, FL, IL, IN, KS, MO, OK, TX] Busey Bank Bono de $200‑$500 por cuenta de cheques",
+      "summary_es": "Busey Bank ofrece un bono de entre $200 y $500 a quienes abran una cuenta de cheques en los estados indicados."
+    },
+    {
+      "title": "[CO only] Westerra Credit Union $100 Checking Bonus – Direct Deposit Not Required",
+      "url": "https://www.doctorofcredit.com/co-westerra-credit-union-100-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "co bank bonuses",
+        "credit card funding",
+        "direct deposit not required",
+        "soft pull"
+      ],
+      "ts": "2026-10-11T23:15:12.000Z",
+      "title_en": "[CO only] Westerra Credit Union $100 Checking Bonus – Direct Deposit Not Required",
+      "summary_en": "",
+      "title_zh": "[仅 CO] Westerra Credit Union $100 支票账户奖金 – 无需直接存款",
+      "summary_zh": "Westerra Credit Union 在科罗拉多州提供 $100 支票账户奖金，且不要求直接存款",
+      "title_es": "[Solo CO] Westerra Credit Union Bono de $100 por cuenta de cheques – No requiere depósito directo",
+      "summary_es": "Westerra Credit Union otorga un bono de $100 por abrir una cuenta de cheques sin necesidad de hacer un depósito directo."
+    },
+    {
+      "title": "[TX] Wellby Financial $100 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/tx-wellby-financial-100-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "credit card funding",
+        "direct deposit required",
+        "soft pull",
+        "tx bank bonuses"
+      ],
+      "ts": "2026-10-11T23:05:52.000Z",
+      "title_en": "[TX] Wellby Financial $100 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[TX] Wellby Financial 提供 $100 支票账户奖金",
+      "summary_zh": "Wellby Financial 在德克萨斯州提供 $100 支票账户奖金",
+      "title_es": "[TX] Wellby Financial Bono de $100 por cuenta de cheques",
+      "summary_es": "Wellby Financial ofrece un bono de $100 a los nuevos clientes que abran una cuenta de cheques en Texas."
+    },
+    {
+      "title": "Chase $900 Checking Bonus ($10,000 Direct Deposit Required)",
+      "url": "https://www.doctorofcredit.com/chase-900-checking-bonus-10000-direct-deposit-required/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "bank bonus",
+        "big",
+        "chase",
+        "direct deposit required"
+      ],
+      "ts": "2026-10-11T22:04:05.000Z",
+      "title_en": "Chase $900 Checking Bonus ($10,000 Direct Deposit Required)",
+      "summary_en": "",
+      "title_zh": "Chase $900 支票账户奖金（需 $10,000 直接存款）",
+      "summary_zh": "Chase 推出需存入 $10,000 的 $900 支票账户奖金",
+      "title_es": "Chase Bono de $900 por cuenta de cheques (se requiere depósito directo de $10,000)",
+      "summary_es": "Chase ofrece un bono de $900 a quienes realicen un depósito directo de al menos $10,000 en su cuenta de cheques."
+    },
+    {
       "title": "[IA] Community State Bank $400 Checking Bonus",
       "url": "https://www.doctorofcredit.com/ia-community-state-bank-300-checking-bonus/",
       "source": "Doctor of Credit",
@@ -12,8 +128,8 @@
       "ts": "2026-10-11T20:00:29.000Z",
       "title_en": "[IA] Community State Bank $400 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[IA] Community State Bank $400 Checking Bonus",
-      "summary_zh": "",
+      "title_zh": "[IA] Community State Bank 提供 $400 支票账户奖金",
+      "summary_zh": "Community State Bank 在爱荷华州提供 $400 支票账户奖金",
       "title_es": "[IA] Community State Bank: Bono de $400 por cuenta corriente",
       "summary_es": "El banco comunitario del estado de Iowa ofrece un bono de $400 al abrir una cuenta corriente."
     },
@@ -29,8 +145,8 @@
       "ts": "2026-10-11T19:55:19.000Z",
       "title_en": "[OH, Select Counties only] Stark Federal Credit Union $400 Checking Bonus, Direct Deposit Optional + $100 Savings",
       "summary_en": "",
-      "title_zh": "[OH, Select Counties only] Stark Federal Credit Union $400 Checking Bonus, Direct Deposit Optional + $100 Savings",
-      "summary_zh": "",
+      "title_zh": "[OH 部分县] Stark Federal Credit Union $400 支票账户奖金，直接存款可选 + $100 储蓄",
+      "summary_zh": "Stark Federal Credit Union 在俄亥俄州部分县提供 $400 支票账户奖金，且可直接存款可选并额外提供 $100 储蓄",
       "title_es": "[OH, Solo condados seleccionados] Stark Federal Credit Union: Bono de $400 por cuenta corriente, depósito directo opcional + $100 de ahorro",
       "summary_es": "Stark Federal Credit Union en Ohio ofrece un bono de $400 por cuenta corriente con opción de depósito directo y un adicional de $100 en ahorros."
     },
@@ -44,8 +160,8 @@
       "ts": "2026-10-11T19:54:38.000Z",
       "title_en": "[OR & WA only] Unitus Community Credit Union $300",
       "summary_en": "",
-      "title_zh": "[OR & WA only] Unitus Community Credit Union $300",
-      "summary_zh": "",
+      "title_zh": "[仅 OR 与 WA] Unitus Community Credit Union $300",
+      "summary_zh": "Unitus Community Credit Union 在俄勒冈州和华盛顿州提供 $300 奖金",
       "title_es": "[OR & WA solo] Unitus Community Credit Union: $300",
       "summary_es": "Unitus Community Credit Union ofrece $300 a los miembros en Oregón y Washington."
     },
@@ -62,8 +178,8 @@
       "ts": "2026-10-11T19:50:35.000Z",
       "title_en": "[IA, NE] Cobalt Credit Union $400 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[IA, NE] Cobalt Credit Union $400 Checking Bonus",
-      "summary_zh": "",
+      "title_zh": "[IA、NE] Cobalt Credit Union $400 支票账户奖金",
+      "summary_zh": "Cobalt Credit Union 在爱荷华州和内布拉斯加州提供 $400 支票账户奖金",
       "title_es": "[IA, NE] Cobalt Credit Union: Bono de $400 por cuenta corriente",
       "summary_es": "Cobalt Credit Union otorga un bono de $400 por abrir una cuenta corriente en Iowa y Nebraska."
     },
@@ -79,8 +195,8 @@
       "ts": "2026-10-11T19:45:49.000Z",
       "title_en": "[HI] First Hawaiian Bank $350 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[HI] First Hawaiian Bank $350 Checking Bonus",
-      "summary_zh": "",
+      "title_zh": "[HI] First Hawaiian Bank $350 支票账户奖金",
+      "summary_zh": "First Hawaiian Bank 在夏威夷提供 $350 支票账户奖金",
       "title_es": "[HI] First Hawaiian Bank: Bono de $350 por cuenta corriente",
       "summary_es": "First Hawaiian Bank en Hawái ofrece un bono de $350 al contratar una cuenta corriente."
     },
@@ -96,8 +212,8 @@
       "ts": "2026-10-11T19:45:17.000Z",
       "title_en": "Staples: 100% Back In Points On Crayola Purchases, Up To $50",
       "summary_en": "",
-      "title_zh": "Staples: 100% Back In Points On Crayola Purchases, Up To $50",
-      "summary_zh": "",
+      "title_zh": "Staples：Crayola 商品购买返 100% 积分，最高 $50",
+      "summary_zh": "Staples 对 Crayola 商品提供最高 $50 的 100% 返积分优惠",
       "title_es": "Staples: 100% de vuelta en puntos en compras de Crayola, hasta $50",
       "summary_es": "Staples devuelve el 100% de los puntos en compras de productos Crayola, con un máximo de $50."
     },
@@ -114,8 +230,8 @@
       "ts": "2026-10-11T19:32:39.000Z",
       "title_en": "[FL] Community Credit Union Florida $500 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[FL] Community Credit Union Florida $500 Checking Bonus",
-      "summary_zh": "",
+      "title_zh": "[FL] Community Credit Union Florida $500 支票账户奖金",
+      "summary_zh": "Community Credit Union Florida 在佛罗里达州提供 $500 支票账户奖金",
       "title_es": "[FL] Community Credit Union Florida: Bono de $500 por cuenta corriente",
       "summary_es": "Community Credit Union Florida ofrece un bono de $500 por abrir una cuenta corriente en Florida."
     },
@@ -129,8 +245,8 @@
       "ts": "2026-10-11T19:31:09.000Z",
       "title_en": "Walgreens: Two Free 5×7 Prints With Promo Code 2FREE4U",
       "summary_en": "",
-      "title_zh": "Walgreens: Two Free 5×7 Prints With Promo Code 2FREE4U",
-      "summary_zh": "",
+      "title_zh": "Walgreens：使用促销码 2FREE4U 可免费冲洗两张 5×7 照片",
+      "summary_zh": "Walgreens 提供使用促销码 2FREE4U 免费冲洗两张 5×7 照片的优惠",
       "title_es": "Walgreens: Dos copias gratuitas de 5×7 con código promocional 2FREE4U",
       "summary_es": "Walgreens regala dos impresiones de 5×7 al usar el código promocional 2FREE4U."
     },
@@ -148,114 +264,11 @@
       "ts": "2026-10-11T19:30:44.000Z",
       "title_en": "[CA only] SAFE Credit Union $300 Checking Bonus (Can Now Churn)",
       "summary_en": "",
-      "title_zh": "[CA only] SAFE Credit Union $300 Checking Bonus (Can Now Churn)",
-      "summary_zh": "",
+      "title_zh": "[仅 CA] SAFE Credit Union $300 支票账户奖金（可循环）",
+      "summary_zh": "SAFE Credit Union 在加州提供 $300 支票账户奖金，且可循环申请",
       "title_es": "[CA solo] SAFE Credit Union: Bono de $300 por cuenta corriente (se puede repetir)",
       "summary_es": "SAFE Credit Union en California ofrece un bono de $300 por cuenta corriente y permite repetir la oferta."
-    },
-    {
-      "title": "Amazon Returns Class Action Lawsuit",
-      "url": "https://www.doctorofcredit.com/amazon-returns-class-action-lawsuit/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "amazon",
-        "class action lawsuits"
-      ],
-      "ts": "2026-10-11T19:05:53.000Z",
-      "title_en": "Amazon Returns Class Action Lawsuit",
-      "summary_en": "",
-      "title_zh": "Amazon Returns Class Action Lawsuit",
-      "summary_zh": "",
-      "title_es": "Demanda colectiva sobre devoluciones de Amazon",
-      "summary_es": "Se ha presentado una demanda colectiva contra Amazon relacionada con su política de devoluciones."
-    },
-    {
-      "title": "[AZ, NV, UT] America First Credit Union $150 Savings + $200 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/ut-nv-az-id-or-nm-ca-america-first-credit-union-150-savings-200-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "az bank bonuses",
-        "direct deposit required",
-        "hard pull",
-        "nv bank bonuses"
-      ],
-      "ts": "2026-10-11T17:45:25.000Z",
-      "title_en": "[AZ, NV, UT] America First Credit Union $150 Savings + $200 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[AZ, NV, UT] America First Credit Union $150 Savings + $200 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[AZ, NV, UT] America First Credit Union: $150 de ahorro + $200 de bono por cuenta corriente",
-      "summary_es": "America First Credit Union ofrece $150 en cuenta de ahorro y $200 de bono por cuenta corriente en Arizona, Nevada y Utah."
-    },
-    {
-      "title": "AmEx Offers: Hertz, Spend $350 & Get $75 Statement Credit",
-      "url": "https://www.doctorofcredit.com/amex-offers-hertz-spend-500-get-100-statement-credit/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "amex offers",
-        "hertz"
-      ],
-      "ts": "2026-10-11T17:00:45.000Z",
-      "title_en": "AmEx Offers: Hertz, Spend $350 & Get $75 Statement Credit",
-      "summary_en": "",
-      "title_zh": "AmEx Offers: Hertz, Spend $350 & Get $75 Statement Credit",
-      "summary_zh": "",
-      "title_es": "Oferta AmEx: Hertz, gasta $350 y obtén $75 de crédito en estado de cuenta",
-      "summary_es": "American Express ofrece un crédito de $75 al gastar $350 en Hertz con tarjeta AmEx."
-    },
-    {
-      "title": "Staples: No Activation Fee on $200 Mastercard Gift Cards (10/11-10/17)",
-      "url": "https://www.doctorofcredit.com/staples-no-activation-fee-on-200-mastercard-gift-cards-12-5-12-11-limit-5-per-day/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Manufactured Spending",
-        "mastercard gift cards",
-        "staples"
-      ],
-      "ts": "2026-10-11T16:35:22.000Z",
-      "title_en": "Staples: No Activation Fee on $200 Mastercard Gift Cards (10/11-10/17)",
-      "summary_en": "",
-      "title_zh": "Staples: No Activation Fee on $200 Mastercard Gift Cards (10/11-10/17)",
-      "summary_zh": "",
-      "title_es": "Staples: Sin cuota de activación en tarjetas de regalo Mastercard de $200 (10/11-10/17)",
-      "summary_es": "Staples elimina la cuota de activación en tarjetas de regalo Mastercard de $200 durante el período del 11 al 17 de octubre."
-    },
-    {
-      "title": "Amazon Prime: Four Months Of Standard Audible for $.99/month + Bonus $20 Audible Credit (Ends October 19th)",
-      "url": "https://www.doctorofcredit.com/amazon-prime-free-four-months-of-standard-audible/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "amazon prime",
-        "audible"
-      ],
-      "ts": "2026-10-11T16:15:52.000Z",
-      "title_en": "Amazon Prime: Four Months Of Standard Audible for $.99/month + Bonus $20 Audible Credit (Ends October 19th)",
-      "summary_en": "",
-      "title_zh": "Amazon Prime: Four Months Of Standard Audible for $.99/month + Bonus $20 Audible Credit (Ends October 19th)",
-      "summary_zh": "",
-      "title_es": "Amazon Prime: Cuatro meses de Audible estándar por $0.99/mes + $20 de crédito Audible de bonus (termina el 19 de octubre)",
-      "summary_es": "Amazon Prime permite obtener cuatro meses de Audible por $0.99 mensuales más $20 de crédito Audible hasta el 19 de octubre."
-    },
-    {
-      "title": "[OK] USE Federal Credit Union $100 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/ok-use-federal-credit-union-100-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "ok bank bonuses"
-      ],
-      "ts": "2026-10-11T16:00:11.000Z",
-      "title_en": "[OK] USE Federal Credit Union $100 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[OK] USE Federal Credit Union $100 Checking Bonus",
-      "summary_zh": "",
-      "title_es": "[OK] USE Federal Credit Union: Bono de $100 por cuenta corriente",
-      "summary_es": "USE Federal Credit Union en Oklahoma ofrece un bono de $100 al abrir una cuenta corriente."
     }
   ],
-  "fetched": "2026-10-11T20:08:24.984Z"
+  "fetched": "2026-10-12T08:08:25.776Z"
 }
