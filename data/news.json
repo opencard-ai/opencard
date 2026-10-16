@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "title": "Capital One Shopping: Up To 51%-100% Back On eBay Live",
+      "url": "https://www.doctorofcredit.com/capital-one-shopping-up-to-51-back-on-ebay-live/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "ebay"
+      ],
+      "ts": "2026-10-15T21:14:48.000Z",
+      "title_en": "Capital One Shopping: Up To 51%-100% Back On eBay Live",
+      "summary_en": "",
+      "title_zh": "Capital One Shopping：eBay Live 最高可享 51%-100% 現金回饋",
+      "summary_zh": "Capital One Shopping 在 eBay Live 上提供高達 51% 至 100% 的現金回饋。",
+      "title_es": "Capital One Shopping: hasta un 51%-100% de reembolso en eBay Live",
+      "summary_es": "Capital One Shopping ofrece a los usuarios hasta un 51% a 100% de devolución en las compras realizadas en eBay Live."
+    },
+    {
       "title": "AmEx Offers: 10% Back at Hotels.com (Up To $125 Back)",
       "url": "https://www.doctorofcredit.com/amex-offers-10-back-at-hotels-com-up-to-100-back/",
       "source": "Doctor of Credit",
@@ -242,24 +258,7 @@
       "summary_zh": "Cash App 推出新 Cash Boost 功能，允許用戶在特定類別或特定商家獲得現金回饋。",
       "title_es": "[Nuevos Boosts] Cash App (Tarjeta de Débito Square Cash): Cash Boost – Obtén devolución de efectivo en categorías/comercios específicos",
       "summary_es": "Cash App ofrece un nuevo programa de devolución de efectivo llamado Cash Boost en categorías y comercios específicos."
-    },
-    {
-      "title": "Citi Offers: 10% Off Lyft",
-      "url": "https://www.doctorofcredit.com/citi-offers-lyft-spend-25-get-5-back/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "citi offers",
-        "lyft"
-      ],
-      "ts": "2026-10-14T19:31:33.000Z",
-      "title_en": "Citi Offers: 10% Off Lyft",
-      "summary_en": "",
-      "title_zh": "花旗優惠：Lyft 10% 折扣",
-      "summary_zh": "花旗銀行提供 Lyft 乘車服務 10% 折扣優惠。",
-      "title_es": "Ofertas de Citi: 10% de descuento en Lyft",
-      "summary_es": "Los titulares de tarjetas Citi pueden obtener un 10% de descuento en viajes con Lyft."
     }
   ],
-  "fetched": "2026-10-15T20:08:11.394Z"
+  "fetched": "2026-10-16T08:08:22.437Z"
 }
