@@ -1,6 +1,119 @@
 {
   "items": [
     {
+      "title": "[WI only] Summit Credit Union $200 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/wi-only-summit-credit-union-100-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts"
+      ],
+      "ts": "2026-10-17T19:55:44.000Z",
+      "title_en": "[WI only] Summit Credit Union $200 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[僅限威斯康辛州] Summit Credit Union $200 支票帳戶獎金",
+      "summary_zh": "此優惠僅適用於威斯康辛州的 Summit Credit Union 新客戶，開戶並滿足條件即可獲得 $200 獎金。",
+      "title_es": "Summit Credit Union – Bono de $200 por cuenta corriente (solo WI)",
+      "summary_es": "Summit Credit Union ofrece un bono de $200 por abrir una cuenta corriente en Wisconsin."
+    },
+    {
+      "title": "[TN] US Community Credit Union $200 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/tn-us-community-credit-union-250-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "tn bank bonuses"
+      ],
+      "ts": "2026-10-17T19:45:36.000Z",
+      "title_en": "[TN] US Community Credit Union $200 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[田納西州] US Community Credit Union $200 支票帳戶獎金",
+      "summary_zh": "此優惠專為田納西州的 US Community Credit Union 客戶設計，滿足條件可獲得 $200 獎金。",
+      "title_es": "US Community Credit Union – Bono de $200 por cuenta corriente (TN)",
+      "summary_es": "US Community Credit Union ofrece un bono de $200 al abrir una cuenta corriente en Tennessee."
+    },
+    {
+      "title": "[IA, IL, IN, KS, MI, MN, MO, OH, NE and WI only] Associated Bank $600 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/il-in-mn-wi-only-associated-bank-500-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "credit card funding",
+        "direct deposit required",
+        "IL bank bonuses",
+        "in bank bonuses",
+        "ks bank bonuses",
+        "mi bank bonuses",
+        "mn bank bonuses",
+        "mo bank bonuses",
+        "oh bank bonuses",
+        "soft pull",
+        "wi bank bonuses"
+      ],
+      "ts": "2026-10-17T19:31:40.000Z",
+      "title_en": "[IA, IL, IN, KS, MI, MN, MO, OH, NE and WI only] Associated Bank $600 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[愛荷華州、伊利諾伊州、印第安納州、堪薩斯州、密西根州、明尼蘇達州、密蘇里州、俄亥俄州、內布拉斯加州及僅限威斯康辛州] Associated Bank $600 支票帳戶獎金",
+      "summary_zh": "Associated Bank 在指定州別提供的 $600 支票帳戶獎金，需在優惠期內完成開戶及滿足相關條件。",
+      "title_es": "Associated Bank – Bono de $600 por cuenta corriente (solo IA, IL, IN, KS, MI, MN, MO, OH, NE y WI)",
+      "summary_es": "Associated Bank ofrece un bono de $600 por abrir una cuenta corriente en varios estados del Medio Oeste."
+    },
+    {
+      "title": "[Burbank, CA] UMe Federal Credit Union $100 Referral Bonus",
+      "url": "https://www.doctorofcredit.com/burbank-ca-ume-federal-credit-union-100-referral-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "chexsystems",
+        "direct deposit required"
+      ],
+      "ts": "2026-10-17T19:00:42.000Z",
+      "title_en": "[Burbank, CA] UMe Federal Credit Union $100 Referral Bonus",
+      "summary_en": "",
+      "title_zh": "[加州伯班克] UMe Federal Credit Union $100 推薦獎金",
+      "summary_zh": "此優惠針對加州伯班克的 UMe Federal Credit Union 客戶，成功推薦新客戶可獲得 $100 獎金。",
+      "title_es": "UMe Federal Credit Union – Bono de $100 por referido (Burbank, CA)",
+      "summary_es": "UMe Federal Credit Union ofrece un bono de $100 por cada referido en Burbank, California."
+    },
+    {
+      "title": "[MA, NH] NESC Credit Union $100 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/ma-nh-nesc-credit-union-100-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "ma bank bonuses",
+        "nh bank bonuses"
+      ],
+      "ts": "2026-10-17T16:45:18.000Z",
+      "title_en": "[MA, NH] NESC Credit Union $100 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[麻薩諸塞州、新罕布什爾州] NESC Credit Union $100 支票帳戶獎金",
+      "summary_zh": "NESC Credit Union 在麻薩諸塞州與新罕布什爾州的客戶，開戶並達到要求可獲得 $100 獎金。",
+      "title_es": "NESC Credit Union – Bono de $100 por cuenta corriente (MA, NH)",
+      "summary_es": "NESC Credit Union ofrece un bono de $100 al abrir una cuenta corriente en Massachusetts o Nuevo Hampshire."
+    },
+    {
+      "title": "[MN, WI] Royal Credit Union $400 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/mn-wi-royal-credit-union-200-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "credit card funding",
+        "direct deposit required",
+        "mn bank bonuses",
+        "soft pull",
+        "wi bank bonuses"
+      ],
+      "ts": "2026-10-17T16:15:18.000Z",
+      "title_en": "[MN, WI] Royal Credit Union $400 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[明尼蘇達州、威斯康辛州] Royal Credit Union $400 支票帳戶獎金",
+      "summary_zh": "Royal Credit Union 為明尼蘇達州與威斯康辛州的客戶提供 $400 支票帳戶獎金，需在期限內完成相關條件。",
+      "title_es": "Royal Credit Union – Bono de $400 por cuenta corriente (MN, WI)",
+      "summary_es": "Royal Credit Union ofrece un bono de $400 por abrir una cuenta corriente en Minnesota o Wisconsin."
+    },
+    {
       "title": "Shopback: Get 130% Back On PureVPN (Moneymaker)",
       "url": "https://www.doctorofcredit.com/shopback-get-130-back-on-purevpn-48-moneymaker/",
       "source": "Doctor of Credit",
@@ -156,113 +269,7 @@
       "summary_zh": "FNBO更新其Complete Rewards卡，提供150美元獎勵及旅遊消費5倍回饋，且免年費。",
       "title_es": "(Actualización) Tarjeta FNBO ‘Complete Rewards® Visa Signature®’ – Bono de $150 y 5x en viajes sin cuota anual",
       "summary_es": "FNBO actualiza su tarjeta Complete Rewards con un bono de $150 y 5 veces puntos en viajes, sin cargo anual."
-    },
-    {
-      "title": "[Targeted] Wells Fargo: Tap To Pay 5 Times & Earn $10 (Limit $50)",
-      "url": "https://www.doctorofcredit.com/targeted-wells-fargo-tap-to-pay-5-times-earn-10-limit-50/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "wells fargo"
-      ],
-      "ts": "2026-10-16T16:00:21.000Z",
-      "title_en": "[Targeted] Wells Fargo: Tap To Pay 5 Times & Earn $10 (Limit $50)",
-      "summary_en": "",
-      "title_zh": "【目標】富國銀行：感應支付5次可賺10美元（上限50美元）",
-      "summary_zh": "富國銀行持卡人使用感應支付五次即可獲得10美元獎勵，總上限50美元。",
-      "title_es": "[Dirigido] Wells Fargo: Toca para pagar 5 veces y gana $10 (límite $50)",
-      "summary_es": "Wells Fargo ofrece $10 por cada cinco pagos táctiles hasta un máximo de $50 para usuarios seleccionados."
-    },
-    {
-      "title": "[MN, WI, MI, WI, FL, GA] Wings Credit Union $500 Checking Bonus + $50 Referral",
-      "url": "https://www.doctorofcredit.com/mn-wi-mi-fl-ga-wings-credit-union-300-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "credit card funding",
-        "direct deposit required",
-        "fl bank bonuses",
-        "ga bank bonuses",
-        "mi bank bonuses",
-        "mn bank bonuses",
-        "soft pull",
-        "wi bank bonuses"
-      ],
-      "ts": "2026-10-16T15:00:50.000Z",
-      "title_en": "[MN, WI, MI, WI, FL, GA] Wings Credit Union $500 Checking Bonus + $50 Referral",
-      "summary_en": "",
-      "title_zh": "【MN、WI、MI、FL、GA】Wings Credit Union 500美元支票帳戶獎勵 + 50美元推薦獎金",
-      "summary_zh": "Wings Credit Union針對特定州別提供500美元支票帳戶開戶獎勵，並附帶50美元推薦獎金。",
-      "title_es": "[MN, WI, MI, WI, FL, GA] Wings Credit Union: bono de $500 por cuenta corriente + $50 por referido",
-      "summary_es": "Los residentes de varios estados pueden obtener un bono de $500 al abrir una cuenta corriente con Wings Credit Union más $50 por cada referido."
-    },
-    {
-      "title": "(Update) Robinhood Credit Card Full Details (3x On All Purchases, No Cap)",
-      "url": "https://www.doctorofcredit.com/robinhood-credit-card-full-details-3x-on-all-purchases-no-cap/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "robinhood"
-      ],
-      "ts": "2026-10-16T12:00:01.000Z",
-      "title_en": "(Update) Robinhood Credit Card Full Details (3x On All Purchases, No Cap)",
-      "summary_en": "",
-      "title_zh": "（更新）Robinhood信用卡完整資訊（所有消費3倍回饋，無上限）",
-      "summary_zh": "Robinhood信用卡將所有消費回饋提升至3倍，且不设上限。",
-      "title_es": "(Actualización) Todos los detalles de la tarjeta de crédito Robinhood (3x en todas las compras, sin límite)",
-      "summary_es": "Robinhood presenta su tarjeta de crédito con 3% de devolución en todas las compras sin límite de gasto."
-    },
-    {
-      "title": "Capital One Shopping: Up To 51%-100% Back On eBay Live",
-      "url": "https://www.doctorofcredit.com/capital-one-shopping-up-to-51-back-on-ebay-live/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "ebay"
-      ],
-      "ts": "2026-10-15T21:14:48.000Z",
-      "title_en": "Capital One Shopping: Up To 51%-100% Back On eBay Live",
-      "summary_en": "",
-      "title_zh": "Capital One Shopping：eBay Live 最高可享 51%-100% 現金回饋",
-      "summary_zh": "Capital One Shopping 在 eBay Live 上提供高達 51% 至 100% 的現金回饋。",
-      "title_es": "Capital One Shopping: hasta un 51%-100% de reembolso en eBay Live",
-      "summary_es": "Capital One Shopping ofrece a los usuarios hasta un 51% a 100% de devolución en las compras realizadas en eBay Live."
-    },
-    {
-      "title": "AmEx Offers: 10% Back at Hotels.com (Up To $125 Back)",
-      "url": "https://www.doctorofcredit.com/amex-offers-10-back-at-hotels-com-up-to-100-back/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "Travel",
-        "amex offers",
-        "hotels.com"
-      ],
-      "ts": "2026-10-15T19:27:58.000Z",
-      "title_en": "AmEx Offers: 10% Back at Hotels.com (Up To $125 Back)",
-      "summary_en": "",
-      "title_zh": "美國運通優惠： Hotels.com 10% 回饋（最高 $125 回饋）",
-      "summary_zh": "在 Hotels.com 消費可獲得最高 $125 的 10% 回饋。",
-      "title_es": "Ofertas de AmEx: 10% de reembolso en Hotels.com (hasta $125)",
-      "summary_es": "Los tarjetahabientes de American Express pueden recibir un 10% de reembolso en reservas en Hotels.com, con un límite de $125."
-    },
-    {
-      "title": "AmEx Offers: Walmart.com, Spend $50 & Get $10 Statement Credit (Expires 11/15/26)",
-      "url": "https://www.doctorofcredit.com/amex-offers-walmart-com-spend-50-get-10-statement-credit-expires-11-15-26/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "amex offers",
-        "walmart.com"
-      ],
-      "ts": "2026-10-15T18:41:48.000Z",
-      "title_en": "AmEx Offers: Walmart.com, Spend $50 & Get $10 Statement Credit (Expires 11/15/26)",
-      "summary_en": "",
-      "title_zh": "美國運通優惠：沃爾瑪官網，消費 $50 即可獲得 $10 結帳信用（至 2026 年 11 月 15 日止）",
-      "summary_zh": "在 Walmart.com 消費滿 $50 可獲得 $10 結帳信用，優惠至 2026 年 11 月 15 日。",
-      "title_es": "Ofertas de AmEx: Walmart.com, gasta $50 y obtén $10 de crédito en el estado de cuenta (vence el 15/11/26)",
-      "summary_es": "Los clientes de AmEx que gasten al menos $50 en Walmart.com recibirán un crédito de $10 en su estado de cuenta, válido hasta el 15 de noviembre de 2026."
     }
   ],
-  "fetched": "2026-10-17T08:08:15.429Z"
+  "fetched": "2026-10-17T20:08:15.853Z"
 }
