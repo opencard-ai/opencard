@@ -11,15 +11,16 @@
     "time_period_months": 0,
     "bonus_points": 0,
     "bonus_type": "percent_discount",
-    "discount_percent": 25,
+    "discount_percent": 20,
     "estimated_value": 0,
     "point_program": "Points",
-    "description": "Receive 25% off your first purchase with your new card at Banana Republic.",
+    "description": "Receive 20% off your first purchase with your new card at Banana Republic.",
     "confidence": "high",
     "notes": [
-      "Official Barclays page checked 2026-10-02; now marketed as the Banana Republic Encore Mastercard (formerly Banana Republic Rewards/Good Rewards)."
+      "Official Barclays page checked 2026-10-02; now marketed as the Banana Republic Encore Mastercard (formerly Banana Republic Rewards/Good Rewards).",
+      "Official Barclays Encore page and Banana Republic Encore program page show 20% off first purchase (checked 2026-10-19)."
     ],
-    "last_verified": "2026-10-02"
+    "last_verified": "2026-10-19"
   },
   "earning_rates": [
     {
@@ -68,7 +69,7 @@
   "sources": [
     {
       "url": "https://cards.barclaycardus.com/banking/cards/banana-republic-encore-mastercard/",
-      "notes": "Official Barclays page checked 2026-10-02: 5X Gap Inc. family of brands, 3X eligible retail apparel brands, 1X everywhere else; no annual fee."
+      "notes": "Official Barclays page checked 2026-10-02: 5X Gap Inc. family of brands, 3X eligible retail apparel brands, 1X everywhere else; no annual fee. | Checked 2026-10-19: Receive 20% off your first purchase with your new card at Banana Republic."
     },
     {
       "url": "maxrewards.com"
@@ -78,15 +79,19 @@
     },
     {
       "url": "wallethub.com"
+    },
+    {
+      "url": "https://bananarepublic.gap.com/customerService/info.do?cid=1098875",
+      "notes": "Official Banana Republic Encore program page (2026-10-19): Extra 20% off your first purchase with your new card."
     }
   ],
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-10-02",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.951000+00:00",
   "deprecated": true,
   "deprecated_reason": "Store-card retail co-brand. Users searching OpenCard generally aren't shopping for retailer-specific cards. Excluded from main listings.",
