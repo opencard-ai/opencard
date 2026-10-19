@@ -73,8 +73,8 @@
   ],
   "sources": [
     {
-      "url": "https://www.costco.com/credit-card.html",
-      "notes": "Official Costco page confirms 5% at Costco gas, 4% on other gas, 3% on dining/travel, 2% at Costco, 1% default. No annual fee with paid Costco membership. No FTf."
+      "url": "https://www.costco.com/f/-/credit-card",
+      "notes": "Official Costco page confirms 5% at Costco gas, 4% on other gas, 3% on dining/travel, 2% at Costco, 1% default. No annual fee with paid Costco membership. No FTf. | Official Costco card page, checked 2026-10-19 (replaces redirecting URL)."
     },
     {
       "url": "https://www.dailydrop.com/credit-cards/costco-anywhere-visa-card-by-citi",
@@ -89,7 +89,7 @@
       "notes": "Costco Travel page confirms no FTf, $0 AF with paid Costco membership, 3% on travel."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.976Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
