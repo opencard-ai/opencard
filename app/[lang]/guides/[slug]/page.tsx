@@ -10,6 +10,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getGuidesForLocale, getGuide, getLocalizedGuide, hasLocalizedGuide } from "@/lib/guides";
 import { locales, t, type Locale } from "@/lib/i18n";
+import { localizedAlternates } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ lang: string; slug: string }>;
@@ -44,14 +45,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${localizedGuide.title} — OpenCard`,
     description: localizedGuide.summary,
-    robots: safeLang === "en"
-      ? { index: true, follow: true }
-      : { index: false, follow: true },
-    alternates: {
-      canonical: `/${lang}/guides/${slug}`,
-      // Do not advertise noindex translations as alternate index targets.
-      languages: { en: `/en/guides/${slug}`, "x-default": `/en/guides/${slug}` },
-    },
+    // Every locale that renders a translated article body is indexable.
+    robots: { index: true, follow: true },
+    alternates: localizedAlternates(
+      lang,
+      `/guides/${slug}`,
+      locales.filter((l) => hasLocalizedGuide(guide, l)),
+    ),
     openGraph: {
       title: localizedGuide.title,
       description: localizedGuide.summary,

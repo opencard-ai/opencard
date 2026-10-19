@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { locales } from "@/lib/i18n";
@@ -16,6 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: lang === "zh" ? "OpenCard 編輯方法與資料標準" : lang === "zh-cn" ? "OpenCard 编辑方法与资料标准" : lang === "es" ? "Metodología editorial y estándares de datos" : "OpenCard Editorial Methodology and Data Standards",
     description: "How OpenCard sources, reviews, updates, values, and corrects US credit card information and editorial recommendations.",
+    alternates: localizedAlternates(lang, "/methodology"),
   };
 }
 

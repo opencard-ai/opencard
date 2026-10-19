@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { localizedAlternates } from "@/lib/seo";
 import { locales } from "@/lib/i18n";
 
 export const dynamic = "force-static";
@@ -8,6 +10,11 @@ type Props = {
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  return { alternates: localizedAlternates(lang, "/privacy") };
 }
 
 export default async function PrivacyPage({ params }: Props) {

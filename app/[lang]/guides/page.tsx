@@ -5,6 +5,7 @@
  * validate the MDX setup and AdSense compatibility. Additional guides are
  * registered in lib/guides.ts.
  */
+import { localizedAlternates } from "@/lib/seo";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getLocalizedGuides } from "@/lib/guides";
@@ -28,12 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
-    alternates: {
-      canonical: `/${lang}/guides`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/guides`])
-      ),
-    },
+    alternates: localizedAlternates(lang, "/guides"),
     openGraph: {
       title,
       description,

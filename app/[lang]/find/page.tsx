@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import { getOpenCards } from "@/lib/cards";
 import FindWizard from "@/app/components/FindWizard";
 import { locales } from "@/lib/i18n";
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     zh: "回答 3 題,推薦 5 張卡。",
     es: "Tres preguntas, cinco recomendaciones.",
   };
-  return { title: titles[lang] || titles.en, description: descs[lang] || descs.en };
+  return { title: titles[lang] || titles.en, description: descs[lang] || descs.en, alternates: localizedAlternates(lang, "/find") };
 }
 
 export default async function FindPage({ params }: Props) {

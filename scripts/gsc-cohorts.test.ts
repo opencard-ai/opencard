@@ -9,17 +9,19 @@ const fresh = `${origin}/en/guides/new-guide`;
 const excluded = `${origin}/es/cards/amex-blue-cash-everyday`;
 const context = {
   indexableUrls: new Set([...sitemap().map(item => normalizeUrl(item.url)), fresh]),
-  cardIds: new Set(['chase-sapphire-reserve', 'amex-blue-cash-everyday']),
+  cardIds: new Set(['chase-sapphire-reserve', 'amex-blue-cash-everyday', 'amex-blue-from-american-express']),
   guideSlugs: new Set(GUIDES.map(guide => guide.slug)),
 };
 const baseline = { capturedAt: '2026-09-13T00:00:00Z', indexableUrls: [...context.indexableUrls].filter(url => url !== fresh) };
 const row = (url: string, impressions: number, clicks: number, position: number) => ({ url, impressions, clicks, position, ctr: 0 });
-test('current sitemap policy retains English core but excludes intentional translations and non-core cards', () => {
+test('sitemap policy indexes open English cards and translated guides, excludes English-only card translations and closed cards', () => {
   assert.equal(classifyPolicy(retained, context), 'indexable');
   assert.equal(classifyPolicy(`${retained}/?campaign=test#details`, context), 'indexable');
   assert.equal(classifyPolicy(excluded, context), 'noindex');
-  assert.equal(classifyPolicy(`${origin}/en/cards/amex-blue-cash-everyday`, context), 'noindex');
-  assert.equal(classifyPolicy(`${origin}/zh/guides/${GUIDES[0].slug}`, context), 'noindex');
+  assert.equal(classifyPolicy(`${origin}/en/cards/amex-blue-cash-everyday`, context), 'indexable');
+  assert.equal(classifyPolicy(`${origin}/en/cards/amex-blue-from-american-express`, context), 'noindex');
+  assert.equal(classifyPolicy(`${origin}/zh/guides/${GUIDES[0].slug}`, context), 'indexable');
+  assert.equal(classifyPolicy(`${origin}/zh/guides/chase-5-24-rule`, context), 'noindex');
   assert.equal(classifyPolicy(`${origin}/en/guides/${GUIDES[0].slug}`, context), 'indexable');
   assert.equal(classifyPolicy(`${origin}/es/benefit-expiration-tracker`, context), 'noindex');
   assert.equal(classifyPolicy(`${origin}/en/cards/missing-product`, context), 'unknown');

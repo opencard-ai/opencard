@@ -12,6 +12,7 @@ import type { Metadata } from "next";
 import { locales, t } from "@/lib/i18n";
 import { translateCategory } from "@/lib/category-translations";
 import { isIndexableCard } from "@/lib/indexable-cards";
+import { localizedAlternates } from "@/lib/seo";
 import { getCardEditorial } from "@/lib/card-editorial";
 import { getReferralOfferForCard } from "@/lib/referrals";
 import { formatWelcomeBonus, welcomeBonusKind } from "@/lib/welcome-offer";
@@ -115,9 +116,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${card.name} — OpenCard`,
     description: `${card.name}: ${t("card.annualFee", lang as any)} $${card.annual_fee} | ${isClosedToNewApplicants(card) ? closedCopy(lang).title : t("card.welcomeBonus", lang as any)}`,
-    robots: lang === "en" && isIndexableCard(card.card_id)
+    robots: lang === "en" && isIndexableCard(card)
       ? { index: true, follow: true }
       : { index: false, follow: true },
+    // Card data is English-only: translated card pages stay noindex and are
+    // not advertised as hreflang alternates.
+    alternates: localizedAlternates(lang, `/cards/${card.card_id}`, isIndexableCard(card) ? ["en"] : []),
   };
 }
 

@@ -11,12 +11,20 @@ import { getLocalizedGuides } from "@/lib/guides";
 // Homepage pre-rendered at build time for stability
 // Card data is static; NewsFeed refreshes client-side
 
+import type { Metadata } from "next";
+import { localizedAlternates } from "@/lib/seo";
+
 type Props = {
   params: Promise<{ lang: string }>;
 };
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  return { alternates: localizedAlternates(lang, "") };
 }
 
 export default async function HomePage({ params }: Props) {

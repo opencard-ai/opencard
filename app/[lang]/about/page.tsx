@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import { t, locales } from "@/lib/i18n";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description: "Learn who maintains OpenCard, why the site exists, and how its credit card guides and data are reviewed.",
+    alternates: localizedAlternates(lang, "/about"),
   };
 }
 

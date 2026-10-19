@@ -56,16 +56,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         { url: "/favicon-v7.ico", sizes: "any" },
       ],
     },
-    alternates: {
-      canonical: canonicalUrl,
-      languages: {
-        en: `${baseUrl}/en`,
-        "zh-Hant": `${baseUrl}/zh`,
-        "zh-Hans": `${baseUrl}/zh-cn`,
-        es: `${baseUrl}/es`,
-        "x-default": defaultUrl,
-      },
-    },
     openGraph: {
       title,
       description,

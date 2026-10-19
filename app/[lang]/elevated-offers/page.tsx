@@ -1,3 +1,4 @@
+import { localizedAlternates } from "@/lib/seo";
 import { getOpenCards } from "@/lib/cards";
 import ElevatedOffersList from "@/app/components/ElevatedOffersList";
 import { locales } from "@/lib/i18n";
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     zh: "目前市場上最有價值的開卡獎勵,按估值排序。",
     es: "Los bonos de inscripción de mayor valor disponibles ahora.",
   };
-  return { title: titles[lang] || titles.en, description: descs[lang] || descs.en };
+  return { title: titles[lang] || titles.en, description: descs[lang] || descs.en, alternates: localizedAlternates(lang, "/elevated-offers") };
 }
 
 export default async function ElevatedOffersPage({ params }: Props) {

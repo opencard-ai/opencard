@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { expiryReport } from '../offer-watch/gate';
 import { recomputeEstimatedValue } from '../../lib/cpp-rates';
-import { INDEXABLE_CARD_IDS } from '../../lib/indexable-cards';
+import { CURATED_CARD_IDS } from '../../lib/indexable-cards';
 
 type Card = Record<string, any>;
 type Sev = 'high' | 'medium' | 'low';
@@ -202,7 +202,7 @@ if (fs.existsSync(urlFile)) {
 }
 
 // ---- output
-const popular = new Set([...INDEXABLE_CARD_IDS, ...cards.filter(c => c.featured).map(c => c.card_id), 'barclays-old-navy-navyist-rewards-mastercard', 'amex-blue-biz-cash']);
+const popular = new Set([...CURATED_CARD_IDS, ...cards.filter(c => c.featured).map(c => c.card_id), 'barclays-old-navy-navyist-rewards-mastercard', 'amex-blue-biz-cash']);
 const sevRank: Record<Sev, number> = { high: 0, medium: 1, low: 2 };
 findings.sort((a, b) => sevRank[a.severity] - sevRank[b.severity] || Number(popular.has(b.card_id)) - Number(popular.has(a.card_id)) || a.type.localeCompare(b.type) || a.card_id.localeCompare(b.card_id) || (a.field || '').localeCompare(b.field || '') || a.detail.localeCompare(b.detail));
 const counts: Record<string, Record<Sev, number>> = {};
