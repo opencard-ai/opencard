@@ -51,7 +51,8 @@
   ],
   "tags": [
     "airline",
-    "business"
+    "business",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -63,9 +64,13 @@
     },
     {
       "url": "https://upgradedpoints.com/credit-cards/reviews/jetblue-business-barclaycard/"
+    },
+    {
+      "url": "https://www.barclaycardus.com/applycontent/TnCs.jsp?tc48031",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "travel_benefits": {
     "hotel_status": [],
     "lounge_access": [],

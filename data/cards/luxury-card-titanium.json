@@ -56,7 +56,9 @@
     "trip_cancellation": null,
     "return_protection": null
   },
-  "tags": [],
+  "tags": [
+    "no-foreign-transaction-fee"
+  ],
   "sources": [
     {
       "url": "https://www.luxurycard.com/titaniumcard",
@@ -73,9 +75,13 @@
     },
     {
       "url": "upgradedpoints.com"
+    },
+    {
+      "url": "https://www.barclaycardus.com/applycontent/TnCs.jsp?tc48836",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-10-03T03:19:54.149Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

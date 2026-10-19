@@ -67,12 +67,13 @@
     "travel_accident": null
   },
   "tags": [
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://cards.barclaycardus.com/banking/cards/carnival-rewards-mastercard/",
-      "notes": "Official Barclays page checked 2026-10-02: Carnival Rewards Mastercard, $0 annual fee; 20,000 points after $1,000 in 90 days; up to 6x on Carnival purchases (3x from the card + up to 3x via Carnival Rewards)."
+      "notes": "Official Barclays page checked 2026-10-02: Carnival Rewards Mastercard, $0 annual fee; 20,000 points after $1,000 in 90 days; up to 6x on Carnival purchases (3x from the card + up to 3x via Carnival Rewards). | Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     },
     {
       "url": "barclaycardus.com"
@@ -84,7 +85,7 @@
       "url": "awardwallet.com"
     }
   ],
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

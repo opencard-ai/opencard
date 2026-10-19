@@ -56,12 +56,13 @@
   },
   "tags": [
     "business",
-    "hotel"
+    "hotel",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://cards.barclaycardus.com/banking/cards/wyndham-rewards-earner-business-card/",
-      "notes": "Official Barclays page checked 2026-10-02: $149 annual fee; up to 100,000 bonus points (45,000 after $3,000 in 90 days + 55,000 after $500 at Hotels by Wyndham in 180 days); 8x Hotels by Wyndham, 5x gas & office supply."
+      "notes": "Official Barclays page checked 2026-10-02: $149 annual fee; up to 100,000 bonus points (45,000 after $3,000 in 90 days + 55,000 after $500 at Hotels by Wyndham in 180 days); 8x Hotels by Wyndham, 5x gas & office supply. | Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     },
     {
       "url": "https://www.uscreditcardguide.com/barclays-wyndham-earner-business-credit-card/",
@@ -73,7 +74,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.953000+00:00"
 }

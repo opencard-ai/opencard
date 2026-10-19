@@ -93,7 +93,8 @@
     "hotel",
     "premium",
     "travel",
-    "new-card"
+    "new-card",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -102,7 +103,7 @@
     },
     {
       "url": "https://cards.barclaycardus.com/banking/cards/wyndham-rewards-earner-premier-card/",
-      "notes": "Barclays official Premier card page."
+      "notes": "Barclays official Premier card page. | Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     },
     {
       "url": "https://www.wyndhamhotels.com/wyndham-rewards/redeem/reward-tier-updates",
@@ -121,7 +122,7 @@
     "notes": "New premium Wyndham/Barclays product; confirm Barclays eligibility language before displaying approval rules."
   },
   "notes": "Dedicated new premium product confirmed distinct from Earner Plus and Earner Business. Wyndham award chart changes effective 2026-09-15 add a 45,000-point top tier; keep valuation conservative and show caveat.",
-  "last_updated": "2026-06-30T20:55:00.000-07:00",
+  "last_updated": "2026-10-19",
   "last_verified": "2026-06-30",
   "next_review": "2026-09-15T00:00:00.000-07:00"
 }

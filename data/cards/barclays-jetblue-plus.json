@@ -89,11 +89,13 @@
     "cell_phone": null,
     "travel_accident": null
   },
-  "tags": [],
+  "tags": [
+    "no-foreign-transaction-fee"
+  ],
   "sources": [
     {
       "url": "https://cards.barclaycardus.com/banking/cards/jetblue-plus-card/",
-      "notes": "Barclays official JetBlue Plus Card page; verified 2026-06-13."
+      "notes": "Barclays official JetBlue Plus Card page; verified 2026-06-13. | Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     },
     {
       "url": "https://www.uscreditcardguide.com/barclaycard-jetblue-plus-credit-card/",
