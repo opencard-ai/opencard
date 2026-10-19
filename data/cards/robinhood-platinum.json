@@ -52,11 +52,13 @@
     "trip_cancellation": null,
     "return_protection": null
   },
-  "tags": [],
+  "tags": [
+    "no-foreign-transaction-fee"
+  ],
   "sources": [
     {
       "url": "https://robinhood.com/us/en/creditcard/platinum/",
-      "notes": "Official Robinhood Platinum page checked 2026-10-02: $695 annual fee; 10% hotels and 5% flights booked in app, 5% dining, 1% other; $250 dining credit, $120 DoorDash promo (no minimum), $300 flight credit ($150 every six months), $700 hotel credits, $250 Waymo credit, $120 Global Entry/TSA PreCheck."
+      "notes": "Official Robinhood Platinum page checked 2026-10-02: $695 annual fee; 10% hotels and 5% flights booked in app, 5% dining, 1% other; $250 dining credit, $120 DoorDash promo (no minimum), $300 flight credit ($150 every six months), $700 hotel credits, $250 Waymo credit, $120 Global Entry/TSA PreCheck. | Official card page: No foreign transaction fees (checked 2026-10-19)."
     }
   ],
   "hotel_program": null,
@@ -64,7 +66,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "recurring_credits": [
     {
       "credit_key": "hotel-booking-credit",
