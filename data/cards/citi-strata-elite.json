@@ -25,27 +25,45 @@
   },
   "earning_rates": [
     {
-      "category": "Air travel",
-      "rate": 3,
-      "notes": ""
+      "category": "Hotels, car rentals and attractions booked through cititravel.com",
+      "rate": 12,
+      "notes": "12X points on hotels, car rentals, and attractions booked through cititravel.com"
     },
     {
-      "category": "Hotels",
-      "rate": 3,
-      "notes": ""
+      "category": "Air travel booked through cititravel.com",
+      "rate": 6,
+      "notes": "6X points on air travel booked through cititravel.com"
     },
     {
-      "category": "Dining",
+      "category": "Restaurants on Citi Nights",
+      "rate": 6,
+      "notes": "6X points at restaurants on Citi Nights purchases (Friday and Saturday from 6 p.m. to 6 a.m. ET)"
+    },
+    {
+      "category": "Restaurants",
       "rate": 3,
-      "notes": ""
+      "notes": "3X points at restaurants at any other time"
     },
     {
       "category": "All other purchases",
-      "rate": 1,
-      "notes": ""
+      "rate": 1.5,
+      "notes": "1.5X points on all other purchases"
     }
   ],
-  "travel_benefits": {},
+  "travel_benefits": {
+    "lounge_access": [
+      {
+        "name": "Priority Pass Select",
+        "type": "priority_pass",
+        "description": "Complimentary Priority Pass Select membership (official Citi page)"
+      },
+      {
+        "name": "Admirals Club passes",
+        "type": "airline_lounge",
+        "description": "4 Admirals Club Citi Strata Elite passes every calendar year (official Citi page)"
+      }
+    ]
+  },
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false

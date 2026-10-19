@@ -11,6 +11,7 @@ import type { Metadata } from "next";
 import { getGuidesForLocale, getGuide, getLocalizedGuide, hasLocalizedGuide } from "@/lib/guides";
 import { locales, t, type Locale } from "@/lib/i18n";
 import { localizedAlternates } from "@/lib/seo";
+import { getGuideCardLinks } from "@/lib/guide-cards";
 
 type Props = {
   params: Promise<{ lang: string; slug: string }>;
@@ -73,6 +74,9 @@ export default async function GuidePage({ params }: Props) {
   if (!hasLocalizedGuide(guide, safeLang)) notFound();
   const localizedGuide = getLocalizedGuide(guide, safeLang);
   const Article = await loadGuideArticle(slug, safeLang);
+  const cardLinks = getGuideCardLinks(slug);
+  const cardLinksHeading =
+    safeLang === "zh" ? "本文相關卡片" : safeLang === "zh-cn" ? "本文相关卡片" : safeLang === "es" ? "Tarjetas relacionadas con esta guía" : "Cards related to this guide";
 
   return (
     <main className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
@@ -119,6 +123,22 @@ export default async function GuidePage({ params }: Props) {
       <article>
         <Article />
       </article>
+
+      {cardLinks.length > 0 && (
+        <aside className="mt-10 rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+          <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">{cardLinksHeading}</h2>
+          <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+            {cardLinks.map((c) => (
+              <li key={c.cardId}>
+                <Link href={`/${safeLang}/cards/${c.cardId}`} className="block rounded-lg border border-slate-200 p-3 hover:border-blue-300 hover:bg-blue-50 dark:border-slate-700 dark:hover:bg-slate-800">
+                  <span className="text-sm font-semibold text-blue-700 dark:text-blue-300">{c.name} →</span>
+                  {safeLang === "en" && <span className="mt-1 block text-xs text-slate-500">{c.reason}</span>}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
 
       {(slug === "credit-card-benefit-expiration-guide" || slug === "credit-card-benefit-tracking-system") && (
         <aside className="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-5">

@@ -56,32 +56,12 @@
     }
   ],
   "travel_benefits": {
-    "lounge_access": [
-      {
-        "name": "Centurion Lounge",
-        "type": "centurion"
-      },
-      {
-        "name": "Priority Pass",
-        "type": "priority_pass"
-      }
-    ],
-    "hotel_status": [
-      {
-        "program": "Marriott Bonvoy",
-        "tier": "Gold Elite",
-        "complimentary": true
-      },
-      {
-        "program": "Hilton Honors",
-        "tier": "Gold",
-        "complimentary": true
-      }
-    ],
+    "lounge_access": [],
+    "hotel_status": [],
     "other_benefits": [
       {
-        "name": "Fine Hotels + Resorts",
-        "description": "FHR program benefits"
+        "name": "The Hotel Collection",
+        "description": "Hotel Collection benefits on eligible bookings through American Express Travel; see issuer terms."
       }
     ]
   },

@@ -14,6 +14,9 @@ import { translateCategory } from "@/lib/category-translations";
 import { isIndexableCard } from "@/lib/indexable-cards";
 import { localizedAlternates } from "@/lib/seo";
 import { getCardEditorial } from "@/lib/card-editorial";
+import { buildCardAnalysis, applicableRules, knownNoForeignFee } from "@/lib/card-analysis";
+import { getEditorNote } from "@/lib/card-notes";
+import CardAnalysisSection from "@/app/components/CardAnalysisSection";
 import { getReferralOfferForCard } from "@/lib/referrals";
 import { formatWelcomeBonus, welcomeBonusKind } from "@/lib/welcome-offer";
 
@@ -140,6 +143,11 @@ export default async function CardDetailPage({ params }: Props) {
   const l = (key: string, p?: Record<string, string | number>) => t(key, locale, p);
   const freshness = freshnessFromIso(card.last_updated, lang);
   const editorial = lang === "en" ? getCardEditorial(card.card_id) : undefined;
+  const analysis = lang === "en" && isIndexableCard(card)
+    ? buildCardAnalysis(card, getAllCards(), editorial?.alternatives.map((a) => a.cardId) || [])
+    : undefined;
+  const editorNote = analysis ? getEditorNote(card.card_id) : undefined;
+  const shownRules = applicableRules(card);
   const closed = isClosedToNewApplicants(card);
   const closedText = closedCopy(lang);
   const referralOffer = getReferralOfferForCard(card);
@@ -188,7 +196,7 @@ export default async function CardDetailPage({ params }: Props) {
           <span className="text-xs bg-slate-100 text-slate-700 rounded-full px-3 py-1" title={l("detail.creditRequired")}>
             {creditLabel(card.credit_required)}
           </span>
-          {card.foreign_transaction_fee === 0 && (
+          {knownNoForeignFee(card) && (
             <span className="text-xs bg-emerald-100 text-emerald-700 rounded-full px-3 py-1">
               {l("detail.noForeignFee")}
             </span>
@@ -411,16 +419,6 @@ export default async function CardDetailPage({ params }: Props) {
                 <p className="text-xs text-slate-600 leading-relaxed">{editorial.breakEven}</p>
               </div>
 
-              <div className="mt-5 rounded-lg border border-slate-200 bg-slate-50 p-4">
-                <h3 className="text-sm font-semibold text-slate-900">First year vs. ongoing year worksheet</h3>
-                <div className="mt-3 grid gap-3 sm:grid-cols-3">
-                  <div><div className="text-[11px] uppercase tracking-wide text-slate-500">Annual fee hurdle</div><div className="text-xl font-bold text-slate-900">${card.annual_fee.toLocaleString()}</div></div>
-                  <div><div className="text-[11px] uppercase tracking-wide text-slate-500">Illustrative bonus estimate</div><div className="text-xl font-bold text-slate-900">${(card.welcome_offer?.estimated_value || 0).toLocaleString()}</div></div>
-                  <div><div className="text-[11px] uppercase tracking-wide text-slate-500">First-year net before credits</div><div className="text-xl font-bold text-slate-900">${((card.welcome_offer?.estimated_value || 0) - card.annual_fee).toLocaleString()}</div></div>
-                </div>
-                <p className="mt-3 text-xs leading-relaxed text-slate-600">For year two, remove the one-time welcome offer entirely. To recover a ${card.annual_fee.toLocaleString()} fee from rewards alone, this card must produce that much more value than your best no-fee alternative. At a 1% incremental return, that would require about ${(card.annual_fee * 100).toLocaleString()} in eligible annual spend before counting credits you would genuinely buy anyway.</p>
-                <p className="mt-2 text-[11px] text-slate-500">Data reviewed {card.last_updated ? new Date(card.last_updated).toISOString().slice(0, 10) : "on the page update date"}. Estimate is not cash and depends on redemption. Confirm current issuer terms through the cited sources below.</p>
-              </div>
 
               {["chase-sapphire-preferred", "chase-sapphire-reserve", "capital-one-venture-x"].includes(card.card_id) && <RenewalCalculator annualFee={card.annual_fee} />}
               <div className="mt-4 flex flex-wrap gap-3 text-sm font-semibold text-blue-700">
@@ -439,6 +437,16 @@ export default async function CardDetailPage({ params }: Props) {
                 </div>
               </div>
             </section>
+          )}
+
+          {analysis && (
+            <CardAnalysisSection
+              cardId={card.card_id}
+              cardName={card.name.replace(/[®™℠]/g, "")}
+              analysis={analysis}
+              editorNote={editorNote}
+              reviewedDate={card.last_updated ? new Date(card.last_updated).toISOString().slice(0, 10) : undefined}
+            />
           )}
 
           {/* Earning Rates */}
@@ -717,11 +725,11 @@ export default async function CardDetailPage({ params }: Props) {
             )}
 
           {/* Application Rules */}
-          {card.application_rules && (
+          {shownRules.length > 0 && (
             <section className="bg-white rounded-xl border border-slate-200 p-6">
               <h2 className="text-lg font-bold text-slate-900 mb-3">{l("detail.applicationRules")}</h2>
               <div className="flex flex-wrap gap-2">
-                {card.application_rules.rules.map((r, i) => (
+                {shownRules.map((r, i) => (
                   <span
                     key={i}
                     title={r.description}
@@ -731,7 +739,7 @@ export default async function CardDetailPage({ params }: Props) {
                   </span>
                 ))}
               </div>
-              {card.application_rules.notes && (
+              {card.application_rules?.notes && (
                 <p className="text-xs text-slate-500 mt-2">
                   {card.application_rules.notes}
                 </p>

@@ -8,14 +8,19 @@
   "credit_required": "Excellent",
   "earning_rates": [
     {
-      "category": "Flights",
+      "category": "Flights booked on AmexTravel.com",
       "rate": 5,
-      "notes": "Booked directly with airlines..."
+      "notes": "5X Membership Rewards points on flights booked on AmexTravel.com"
     },
     {
-      "category": "Hotels",
+      "category": "Prepaid hotels booked on AmexTravel.com",
       "rate": 5,
-      "notes": "On prepaid hotels..."
+      "notes": "5X Membership Rewards points on prepaid hotels booked on AmexTravel.com"
+    },
+    {
+      "category": "Key business categories and purchases of $5,000 or more",
+      "rate": 2,
+      "notes": "2X points on eligible purchases in key business categories, or on purchases of $5K or more"
     },
     {
       "category": "Other",

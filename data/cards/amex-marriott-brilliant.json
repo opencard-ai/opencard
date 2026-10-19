@@ -54,10 +54,6 @@
   "travel_benefits": {
     "lounge_access": [
       {
-        "name": "Centurion Lounge",
-        "type": "centurion"
-      },
-      {
         "name": "Priority Pass",
         "type": "priority_pass"
       }

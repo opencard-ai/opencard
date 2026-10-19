@@ -69,12 +69,7 @@
     }
   ],
   "travel_benefits": {
-    "lounge_access": [
-      {
-        "name": "Priority Pass",
-        "type": "priority_pass"
-      }
-    ],
+    "lounge_access": [],
     "hotel_status": [],
     "other_benefits": [
       {

@@ -47,16 +47,7 @@
     }
   ],
   "travel_benefits": {
-    "lounge_access": [
-      {
-        "name": "Centurion Lounge",
-        "type": "centurion"
-      },
-      {
-        "name": "Priority Pass",
-        "type": "priority_pass"
-      }
-    ],
+    "lounge_access": [],
     "hotel_status": [
       {
         "program": "Marriott Bonvoy",
@@ -88,7 +79,6 @@
     "return_protection": false
   },
   "tags": [
-    "lounge-access",
     "premium",
     "transferable",
     "hotel",

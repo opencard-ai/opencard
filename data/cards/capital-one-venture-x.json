@@ -31,17 +31,12 @@
     {
       "category": "Flights",
       "rate": 5,
-      "notes": "Earn 5X miles on flights booked through Capital One Travel"
-    },
-    {
-      "category": "Dining",
-      "rate": 2,
-      "notes": "Earn 2X miles on dining"
+      "notes": "Earn 5X miles on flights and vacation rentals booked through Capital One Travel"
     },
     {
       "category": "Other",
-      "rate": 1,
-      "notes": null
+      "rate": 2,
+      "notes": "Earn 2X miles on every purchase (official Capital One page: \"double miles on every purchase\")"
     }
   ],
   "travel_benefits": {
