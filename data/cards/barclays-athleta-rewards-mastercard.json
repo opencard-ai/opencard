@@ -11,15 +11,16 @@
     "time_period_months": 0,
     "bonus_points": 0,
     "bonus_type": "percent_discount",
-    "discount_percent": 20,
+    "discount_percent": 30,
     "estimated_value": 0,
     "point_program": "Points",
-    "description": "Receive 20% off your first purchase with your new card at Athleta.",
+    "description": "Receive 30% off your first purchase with your new card at Athleta.",
     "confidence": "high",
     "notes": [
-      "Official Barclays page checked 2026-10-02; now marketed as the Athleta Encore Mastercard (formerly Athleta Rewards/Good Rewards)."
+      "Official Barclays page checked 2026-10-02; now marketed as the Athleta Encore Mastercard (formerly Athleta Rewards/Good Rewards).",
+      "Official Barclays page 2026-10-19: \"Receive 30% Off your first purchase with your new card at Athleta\"."
     ],
-    "last_verified": "2026-10-02"
+    "last_verified": "2026-10-19"
   },
   "earning_rates": [
     {
@@ -73,7 +74,7 @@
   "sources": [
     {
       "url": "https://cards.barclaycardus.com/banking/cards/athleta-encore-mastercard/",
-      "notes": "Official Barclays page checked 2026-10-02: 5X Gap Inc. family of brands, 3X eligible retail apparel brands, 1X everywhere else; no annual fee."
+      "notes": "Official Barclays page checked 2026-10-02: 5X Gap Inc. family of brands, 3X eligible retail apparel brands, 1X everywhere else; no annual fee. | Official Barclays page 2026-10-19: 30% off first Athleta purchase."
     },
     {
       "url": "maxrewards.com"
@@ -82,13 +83,13 @@
       "url": "barclaycardus.com"
     }
   ],
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-10-02",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.951000+00:00",
   "deprecated": true,
   "deprecated_reason": "Store-card retail co-brand. Users searching OpenCard generally aren't shopping for retailer-specific cards. Excluded from main listings.",
