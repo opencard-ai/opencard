@@ -94,7 +94,6 @@
   },
   "tags": [
     "business",
-    "cash-back",
     "hotel",
     "no-foreign-transaction-fee"
   ],
@@ -155,6 +154,6 @@
       "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ],
-  "last_verified": "2026-07-15",
+  "last_verified": "2026-10-19",
   "next_review": "2026-09-28T00:00:00Z"
 }
