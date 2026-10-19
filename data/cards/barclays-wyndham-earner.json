@@ -57,6 +57,10 @@
   ],
   "sources": [
     {
+      "url": "https://cards.barclaycardus.com/banking/cards/wyndham-rewards-earner-card/",
+      "notes": "Official Barclays card page, checked 2026-10-19."
+    },
+    {
       "url": "https://www.uscreditcardguide.com/barclays-wyndham-earner-credit-card/",
       "notes": "USCCG primary review"
     }
@@ -66,7 +70,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-04-16T13:41:49.953Z",
+  "last_updated": "2026-10-19",
   "last_verified": "2026-04-16T13:41:49.953Z",
   "next_review": "2026-07-15T13:41:49.953000+00:00"
 }
