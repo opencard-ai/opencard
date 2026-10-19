@@ -99,8 +99,8 @@
   ],
   "sources": [
     {
-      "url": "https://creditcards.chase.com/business-credit-cards/ihg/business-premier",
-      "notes": "Official Chase page"
+      "url": "https://creditcards.chase.com/business-credit-cards/IHG/business",
+      "notes": "Official Chase page | Official Chase card page, checked 2026-10-19 (replaces redirecting URL)."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/reviews/ihg-premier-business-credit-card-review/",
@@ -111,7 +111,7 @@
       "notes": "One Mile at a Time review"
     }
   ],
-  "last_updated": "2026-07-15T00:00:00Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
