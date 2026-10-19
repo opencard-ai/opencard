@@ -1,7 +1,7 @@
 {
   "card_id": "bilt-obsidian",
   "name": "Bilt Obsidian Card",
-  "issuer": "First Electronic Bank",
+  "issuer": "Column N.A.",
   "network": "mastercard",
   "annual_fee": 95,
   "annual_fee_description": "$95 annual fee",
@@ -91,7 +91,7 @@
     },
     {
       "url": "https://legal.cardless.com/schumer/bilt/rates_and_fees.pdf",
-      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19). | Official Bilt rates & fees PDF (2026-10-19): card \"is issued by Column N.A., Member FDIC\"."
     }
   ],
   "last_updated": "2026-10-19",
