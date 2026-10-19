@@ -7,12 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "spending_requirement": 1000,
-    "time_period_months": 3,
-    "bonus_points": 30000,
-    "description": "Earn 30,000 bonus points after spending $1,000 on purchases in the first 90 days.",
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "description": "N/A: not open to new applicants.",
     "point_program": "Spirit Airlines Free Spirit Points",
-    "estimated_value": 300
+    "estimated_value": 0
   },
   "earning_rates": [
     {
@@ -71,7 +71,7 @@
   "sources": [
     {
       "url": "https://www.bankofamerica.com/credit-cards/products/spirit-airlines-credit-card/",
-      "notes": "Official BOA Page"
+      "notes": "Official BOA Page | 2026-10-19: redirects to bankofamerica.com/credit-cards/ (product no longer listed)."
     },
     {
       "url": "https://www.nerdwallet.com/credit-cards/reviews/free-spirit-travel-more/",
@@ -80,9 +80,25 @@
     {
       "url": "https://thepointsguy.com/credit-cards/reviews/free-spirit-travel-more-mastercard-review/",
       "notes": "TPG review"
+    },
+    {
+      "url": "https://www.usatoday.com/story/money/2026/05/04/spirit-airlines-free-spirit-credit-card/89931545007/",
+      "notes": "PRESS (USA Today, 2026-05-04): BofA spokesperson says it is not accepting new Spirit card applications."
+    },
+    {
+      "url": "https://thepointsguy.com/credit-cards/spirit-airlines-shutdown-credit-card-rewards-end/",
+      "notes": "PRESS (TPG): BofA stopped accepting applications for both Free Spirit cards on May 2, 2026."
+    },
+    {
+      "url": "https://www.nerdwallet.com/credit-cards/news/spirit-airlines-cards-converted-to-bofa-customized-cash",
+      "notes": "PRESS (NerdWallet, updated 2026-10-01): accounts being converted to BofA Customized Cash Rewards."
+    },
+    {
+      "url": "https://www.forbes.com/advisor/credit-cards/spirit-airlines-credit-card-change-bank-of-america-rewards-card-lmandp5/",
+      "notes": "PRESS (Forbes Advisor): BofA spokesperson confirms transition to Customized Cash Rewards."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.996Z",
+  "last_updated": "2026-10-19",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
@@ -93,5 +109,8 @@
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.996Z",
-  "next_review": "2026-07-15T13:41:49.996000+00:00"
+  "next_review": "2026-07-15T13:41:49.996000+00:00",
+  "status": "discontinued",
+  "discontinued_date": "2026-05-02",
+  "discontinued_notes": "Closed to new applicants. Official: the Bank of America product page (bankofamerica.com/credit-cards/products/spirit-airlines-credit-card/) now redirects to the generic BofA credit card list (checked 2026-10-19). Press (not issuer pages): USA Today (2026-05-04, BofA spokesperson) and The Points Guy report BofA stopped accepting applications on 2026-05-02 after Spirit Airlines ceased operations; NerdWallet and Forbes Advisor report existing accounts are being converted to the BofA Customized Cash Rewards card (Unlimited Cash Rewards for existing Customized Cash holders)."
 }
