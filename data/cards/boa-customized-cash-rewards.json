@@ -20,12 +20,12 @@
     {
       "category": "Choice Category (6%)",
       "rate": 6,
-      "notes": "Choose 1: gas, online shopping, dining, travel, drug stores, or home improvement/furnishings. 6% on up to $2,500/quarter, then 1%"
+      "notes": "Choose 1: gas, online shopping, dining, travel, drug stores, or home improvement/furnishings. 6% on up to $2,500/quarter, then 1% (6% = 3% base + 3% first-year bonus; 3% after the first year.)"
     },
     {
-      "category": "Grocery & Wholesale (3%)",
-      "rate": 3,
-      "notes": "On up to $2,500 combined with choice category per quarter"
+      "category": "Grocery & Wholesale (2%)",
+      "rate": 2,
+      "notes": "Automatic 2% at grocery stores and wholesale clubs, on up to $2,500 combined with the choice category per quarter, then 1%."
     },
     {
       "category": "Other",
@@ -65,7 +65,7 @@
     },
     {
       "url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
-      "notes": "Official BOA Page (SPA — fallback only) | Official BofA page, rates & terms, checked 2026-10-19: foreign transaction fee 3%."
+      "notes": "Official BOA Page (SPA — fallback only) | Official BofA page, rates & terms, checked 2026-10-19: foreign transaction fee 3%. | Official page checked 2026-10-19: automatic 2% at grocery stores and wholesale clubs; 3% + 3% first-year bonus in the choice category."
     },
     {
       "url": "https://info.bankofamerica.com/en/rewards/bofa-rewards",
