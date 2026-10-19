@@ -96,10 +96,6 @@
       "notes": "Barclays official JetBlue Plus Card page; verified 2026-06-13."
     },
     {
-      "url": "https://www.jetbluepluscard.com/",
-      "notes": "JetBlue Plus card landing page; corroborates anniversary points and benefits."
-    },
-    {
       "url": "https://www.uscreditcardguide.com/barclaycard-jetblue-plus-credit-card/",
       "notes": "USCCG secondary review."
     }
@@ -109,7 +105,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-06-13T17:10:00.000Z",
+  "last_updated": "2026-10-19",
   "last_verified": "2026-06-13T17:10:00.000Z",
   "next_review": "2026-09-11T17:10:00.000Z"
 }
