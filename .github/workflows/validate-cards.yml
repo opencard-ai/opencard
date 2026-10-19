@@ -28,6 +28,10 @@ jobs:
       - name: Validate cards (schema + business + sanity)
         run: npm run validate
 
+      # Unit tests (tests/*.test.ts via node:test + tsx; ~1s locally).
+      - name: Unit tests
+        run: npm test
+
       # Tag enum drift catcher (e.g. unrecognized tags creeping in).
       - name: Lint tags
         run: npm run lint:tags
