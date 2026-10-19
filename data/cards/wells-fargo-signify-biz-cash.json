@@ -4,7 +4,7 @@
   "issuer": "Wells Fargo",
   "network": "visa",
   "annual_fee": 0,
-  "foreign_transaction_fee": 0,
+  "foreign_transaction_fee": 3,
   "credit_required": "Good",
   "welcome_offer": {
     "spending_requirement": 5000,
@@ -57,11 +57,15 @@
   ],
   "sources": [
     {
+      "url": "https://www.wellsfargo.com/biz/business-credit/credit-cards/signify-business-cash-credit-card-terms-conditions/",
+      "notes": "Official Wells Fargo terms, checked 2026-10-19: foreign transaction fee 3%."
+    },
+    {
       "url": "https://creditcards.wellsfargo.com/business-credit-cards/signify-business-cash-credit-card/",
       "notes": "Official Wells Fargo page checked 2026-10-02: $0 annual fee; unlimited 2% cash rewards; $500 bonus after $5,000 in 3 months."
     }
   ],
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "Simple 2% flat-rate business card. No annual fee. Good for businesses wanting straightforward earning.",
   "hotel_program": null,
@@ -69,6 +73,6 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-10-02",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:50.011000+00:00"
 }
