@@ -42,7 +42,8 @@
   "tags": [
     "cash-back",
     "no-annual-fee",
-    "flat-rate"
+    "flat-rate",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -51,14 +52,14 @@
     },
     {
       "url": "https://www.capitalone.com/credit-cards/quicksilver/",
-      "notes": "Capital One official card page with $200 welcome bonus and 1.5% cash back offer"
+      "notes": "Capital One official card page with $200 welcome bonus and 1.5% cash back offer | Official card page: plus no foreign transaction fees on purchases made outside of the United States (checked 2026-10-19)."
     },
     {
       "url": "https://wallethub.com/d/capital-one-quicksilver-76c",
       "notes": "WalletHub card overview confirming $200 bonus and no annual fee"
     }
   ],
-  "last_updated": "2026-04-25T16:03:46.801Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": []

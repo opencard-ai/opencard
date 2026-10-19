@@ -84,13 +84,14 @@
     "no-annual-fee",
     "dining",
     "groceries",
-    "entertainment"
+    "entertainment",
+    "no-foreign-transaction-fee"
   ],
   "recurring_credits": [],
   "sources": [
     {
       "url": "https://www.capitalone.com/credit-cards/savor/",
-      "notes": "Official Capital One page checked 2026-10-02: $0 fee; $200 after $500 in 3 months; 8% Capital One Entertainment, 5% hotels/vacation rentals/rental cars via Capital One Travel, 3% grocery/dining/entertainment/streaming, 1% other."
+      "notes": "Official Capital One page checked 2026-10-02: $0 fee; $200 after $500 in 3 months; 8% Capital One Entertainment, 5% hotels/vacation rentals/rental cars via Capital One Travel, 3% grocery/dining/entertainment/streaming, 1% other. | Official card page: Plus, there are no foreign transaction fees on purchases made outside of the United States (checked 2026-10-19)."
     }
   ],
   "last_updated": "2026-10-19",

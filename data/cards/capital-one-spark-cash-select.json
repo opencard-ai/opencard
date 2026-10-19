@@ -51,15 +51,16 @@
     },
     {
       "url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-select/",
-      "notes": "Capital One official page"
+      "notes": "Capital One official page | Official card page: \"Pay zero foreign transaction fees on purchases made outside of the United States\" (checked 2026-10-19)."
     }
   ],
   "notes": "No annual fee business card for excellent credit. 1.5% flat cash back with no spending categories — simple and predictable. $750 welcome bonus for $6,000 spend in 3 months. Good for business owners with strong credit who don't want an annual fee. Compare to Spark Miles Select (1.5X miles) for travel-oriented businesses. No protections. Better than personal Quicksilver for business due to employee cards and business tools.",
   "confidence": "high",
-  "last_updated": "2026-04-16T13:41:49.960Z",
+  "last_updated": "2026-10-19",
   "tags": [
     "no-annual-fee",
-    "transferable"
+    "transferable",
+    "no-foreign-transaction-fee"
   ],
   "hotel_program": null,
   "application_rules": {

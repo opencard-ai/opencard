@@ -48,15 +48,16 @@
     "travel_accident": null
   },
   "tags": [
-    "transferable"
+    "transferable",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://www.capitalone.com/small-business/credit-cards/venture-business/",
-      "notes": "Official Capital One page checked 2026-10-02: $95 annual fee; 100,000 miles after $10,000 in 3 months; up to $120 Global Entry or TSA PreCheck credit every 4 years."
+      "notes": "Official Capital One page checked 2026-10-02: $95 annual fee; 100,000 miles after $10,000 in 3 months; up to $120 Global Entry or TSA PreCheck credit every 4 years. | Official card page: \"Pay zero foreign transaction fees on purchases made outside of the United States\" (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

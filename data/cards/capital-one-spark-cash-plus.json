@@ -64,7 +64,7 @@
   "sources": [
     {
       "url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-plus/",
-      "notes": "Official Spark Cash Plus page checked 2026-09-29: $2,000 after $30,000/3 months + $2,000 per $500K first-year spend; $150 fee."
+      "notes": "Official Spark Cash Plus page checked 2026-09-29: $2,000 after $30,000/3 months + $2,000 per $500K first-year spend; $150 fee. | Official card page: \"Pay zero foreign transaction fees on purchases made outside of the United States\" (checked 2026-10-19)."
     },
     {
       "url": "https://www.forbes.com/advisor/credit-cards/reviews/capital-one-spark-cash-plus/",
@@ -85,9 +85,10 @@
   ],
   "notes": "Charge card (balance must be paid in full monthly). $150 annual fee. 2% unlimited cash back; 5% on hotels/rental cars through Capital One Business Travel. Updated 2026-08-06 for elevated $2,000 + $500 travel-credit offer.",
   "confidence": "high",
-  "last_updated": "2026-09-29T12:00:00.000-07:00",
+  "last_updated": "2026-10-19",
   "tags": [
-    "transferable"
+    "transferable",
+    "no-foreign-transaction-fee"
   ],
   "hotel_program": null,
   "application_rules": {

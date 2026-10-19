@@ -52,11 +52,13 @@
     "business",
     "lounge-access",
     "premium",
-    "transferable"
+    "transferable",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
-      "url": "https://www.capitalone.com/small-business/credit-cards/venture-x-business/"
+      "url": "https://www.capitalone.com/small-business/credit-cards/venture-x-business/",
+      "notes": "Official card page: \"Pay zero foreign transaction fees on purchases made outside of the United States\" (checked 2026-10-19)."
     },
     {
       "url": "https://www.dailydrop.com/credit-cards/capital-one-venture-x-business"
@@ -65,7 +67,7 @@
       "url": "https://www.nerdwallet.com/business/credit-cards/learn/venture-x-business-april-2025-bonus-350000-miles"
     }
   ],
-  "last_updated": "2026-04-24T17:26:36.116494",
+  "last_updated": "2026-10-19",
   "travel_benefits": {
     "hotel_status": [],
     "lounge_access": [],

@@ -73,7 +73,8 @@
   },
   "tags": [
     "cash-back",
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "recurring_credits": [],
   "sources": [
@@ -87,10 +88,10 @@
     },
     {
       "url": "https://www.capitalone.com/learn-grow/money-management/everything-about-savorone/",
-      "notes": "Capital One SavorOne overview confirming earning categories and $200 welcome bonus"
+      "notes": "Capital One SavorOne overview confirming earning categories and $200 welcome bonus | Official card page: No foreign transaction fees: There are no foreign transaction fees on purchases made outsi (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": []

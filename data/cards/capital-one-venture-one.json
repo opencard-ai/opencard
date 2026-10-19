@@ -49,7 +49,7 @@
   "sources": [
     {
       "url": "https://www.capitalone.com/credit-cards/ventureone/",
-      "notes": "Official Capital One card page (no foreign transaction fees), checked 2026-10-19."
+      "notes": "Official Capital One card page (no foreign transaction fees), checked 2026-10-19. | Official card page: No Foreign Transaction Fees (checked 2026-10-19)."
     },
     {
       "url": "https://www.businessinsider.com/personal-finance/credit-cards/capital-one-ventureone-rewards-card-review",
@@ -68,7 +68,8 @@
   "confidence": "high",
   "last_updated": "2026-10-19",
   "tags": [
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "hotel_program": null,
   "application_rules": {

@@ -67,12 +67,13 @@
   },
   "tags": [
     "business",
-    "cash-back"
+    "cash-back",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://www.capitalone.com/small-business/credit-cards/spark-cash/",
-      "notes": "Official Spark Cash page checked 2026-09-29: $1,000 after $10,000/3 months; $0 intro AF then $95."
+      "notes": "Official Spark Cash page checked 2026-09-29: $1,000 after $10,000/3 months; $0 intro AF then $95. | Official card page: \"Pay zero foreign transaction fees on purchases made outside of the United States\" (checked 2026-10-19)."
     },
     {
       "url": "https://www.capitalone.com/small-business/credit-cards/cash-back/",
@@ -90,7 +91,7 @@
   },
   "notes": "Added 2026-08-06 as missing Capital One Spark Cash booster candidate. Confirm direct issuer offer page during next deeper card-adaptor run.",
   "confidence": "medium_high",
-  "last_updated": "2026-09-29T12:00:00.000-07:00",
+  "last_updated": "2026-10-19",
   "last_verified": "2026-09-29",
   "next_review": "2026-10-29T00:00:00.000-07:00"
 }
