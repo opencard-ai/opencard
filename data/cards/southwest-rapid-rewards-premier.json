@@ -70,7 +70,6 @@
   },
   "tags": [
     "airline",
-    "cash-back",
     "no-foreign-transaction-fee"
   ],
   "sources": [
@@ -110,6 +109,6 @@
       "source": "https://www.chase.com/digital/resources/terms-of-use/cobrand-doordash"
     }
   ],
-  "last_verified": "2026-06-14",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.996000+00:00"
 }
