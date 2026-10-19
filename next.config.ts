@@ -7,17 +7,6 @@ const nextConfig: NextConfig = {
   // imported by app/[lang]/guides/[slug]/page.tsx. Added 2026-05-24 for
   // the opencard-adsense-longform-content AgentHub task.
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
-  // External image hosts allowed for next/image. Currently only Amazon's
-  // media CDN, used by TravelProducts.tsx for affiliate product photos.
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "m.media-amazon.com",
-        pathname: "/images/**",
-      },
-    ],
-  },
   // Ensure static files like ads.txt are served correctly
   async headers() {
     return [

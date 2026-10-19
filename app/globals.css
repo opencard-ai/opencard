@@ -37,7 +37,7 @@ body {
 .dark .bg-amber-50\/50 { background-color: rgb(120 53 15 / 0.2); }
 .dark .bg-red-50 { background-color: rgb(127 29 29 / 0.3); }
 .dark .bg-indigo-50 { background-color: rgb(49 46 129 / 0.25); }
-/* TravelProducts decorative palette (each product gets a distinct hue). */
+/* Dark-mode tints for pastel -50 backgrounds. */
 .dark .bg-violet-50 { background-color: rgb(76 29 149 / 0.25); }
 .dark .bg-yellow-50 { background-color: rgb(113 63 18 / 0.25); }
 .dark .bg-orange-50 { background-color: rgb(124 45 18 / 0.25); }
