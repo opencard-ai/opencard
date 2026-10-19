@@ -63,7 +63,8 @@
   "tags": [
     "cash-back",
     "lounge-access",
-    "premium"
+    "premium",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -77,9 +78,13 @@
     {
       "url": "https://pointsnav.com/credit-cards/bank-america-premium-rewards-elite",
       "notes": "PointsNav review"
+    },
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4079322&productoffercode=R9&locale=en_US",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-04-29T13:31:27.049Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

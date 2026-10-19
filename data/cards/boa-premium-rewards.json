@@ -49,7 +49,8 @@
   },
   "tags": [
     "cash-back",
-    "premium"
+    "premium",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -75,6 +76,10 @@
     {
       "url": "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/02/new-bofa-rewards--program-to-reach-millions-more-clients-with-ex.html",
       "notes": "Bank of America newsroom announcement for 2026 BofA Rewards expansion."
+    },
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4079485&productoffercode=UN&locale=en_US",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
   "last_updated": "2026-10-19",

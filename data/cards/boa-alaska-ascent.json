@@ -76,7 +76,8 @@
     "airline",
     "premium",
     "transferable",
-    "travel"
+    "travel",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -90,9 +91,13 @@
     {
       "url": "https://www.nerdwallet.com/credit-cards/news/atmos-credit-card-welcome-offers-july-2026",
       "notes": "Secondary report on July 2026 Atmos offer refresh."
+    },
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4082302&productoffercode=YB&locale=en_US",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-07-05T15:10:00.000-07:00",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [

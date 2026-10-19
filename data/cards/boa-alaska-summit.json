@@ -80,7 +80,8 @@
   },
   "tags": [
     "airline",
-    "premium"
+    "premium",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -94,9 +95,13 @@
     {
       "url": "https://thepointsguy.com/credit-cards/atmos-rewards-best-welcome-offers/",
       "notes": "Secondary report on July 2026 Atmos offer refresh."
+    },
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4080616&productoffercode=EK&locale=en_US",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-08-07T05:25:00.000Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

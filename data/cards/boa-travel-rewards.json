@@ -46,7 +46,8 @@
   "tags": [
     "travel",
     "no-annual-fee",
-    "cash-back"
+    "cash-back",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -54,9 +55,13 @@
     },
     {
       "url": "https://upgradedpoints.com/credit-cards/reviews/bank-of-america-travel-rewards-credit-card/"
+    },
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4079333&productoffercode=75&locale=en_US",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-04-24T17:24:15.854269",
+  "last_updated": "2026-10-19",
   "hotel_program": {
     "program": null,
     "tier": null,

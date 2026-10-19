@@ -91,7 +91,8 @@
   "tags": [
     "travel",
     "cruise",
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -105,9 +106,13 @@
     {
       "url": "https://www.doctorofcredit.com/bank-of-america-up-to-750-bonus-on-new-royal-one-royal-caribbean-cards/",
       "notes": "Public launch/bonus roundup"
+    },
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4081180&productoffercode=E3&locale=en_US",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-07-15T00:00:00Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [
