@@ -7,21 +7,25 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 75000,
-    "spending_requirement": 6000,
+    "bonus_points": 100000,
+    "spending_requirement": 8000,
     "time_period_months": 6,
-    "description": "Earn 75,000 Marriott Bonvoy bonus points after $6,000 in eligible purchases within the first 6 months, plus an extra 50,000 bonus points after an additional $3,000 in eligible purchases within the first 6 months of Card Membership.",
+    "description": "Limited time: earn 100,000 Marriott Bonvoy bonus points and 1 Free Night Award (redemption level up to 50,000 points) after you spend $8,000 in purchases within the first 6 months of Card Membership. Offer ends 11/4/2026.",
     "point_program": "Marriott Bonvoy",
-    "estimated_value": 875,
-    "offer_status": "public_with_extra_bonus_path",
+    "estimated_value": 1050,
+    "offer_status": "public",
     "confidence": "high",
-    "is_elevated": false,
+    "is_elevated": true,
     "notes": [
       "2026-07-24 refresh: Marriott and Amex snippets show post-7/15 baseline 75k/$6k/6mo plus extra 50k after additional $3k within 6 months.",
-      "Replaces expired 150k + $125 statement credit offer that ended 2026-07-15."
+      "Replaces expired 150k + $125 statement credit offer that ended 2026-07-15.",
+      "2026-10-19: official Amex page shows limited-time 100k + 1 Free Night Award (up to 50k) after $8k in 6 months, ends 11/4/2026; replaces 75k/$6k + extra 50k path."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-07-24"
+    "last_verified": "2026-10-19",
+    "free_nights": 1,
+    "free_night_value_cap": 50000,
+    "expires": "2026-11-04"
   },
   "earning_rates": [
     {
@@ -98,7 +102,8 @@
       "notes": "TPG card page (LLM-friendly static HTML; USCCG has no page for this card)"
     },
     {
-      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/amex-marriott-bonvoy-business-credit-card/"
+      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/amex-marriott-bonvoy-business-credit-card/",
+      "notes": "Official Amex page 2026-10-19: Limited Time Offer 100,000 points + 1 Free Night Award (up to 50,000 pts) after $8,000 in 6 months; offer ends 11/4/2026; $125 annual fee."
     },
     {
       "url": "https://www.marriott.com/credit-cards/marriott-bonvoy-business-american-express-card.mi"
@@ -128,7 +133,7 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:46.246653",
-  "last_verified": "2026-07-24",
+  "last_verified": "2026-10-19",
   "next_review": "2026-08-07T00:00:00.000000+00:00",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 5,
