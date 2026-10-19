@@ -84,7 +84,8 @@
     "hotel",
     "travel",
     "offer_expiry_watch",
-    "marriott"
+    "marriott",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -111,6 +112,10 @@
     {
       "url": "https://www.americanexpress.com/us/credit-cards/card-application/apply/prospect/terms/marriott-bonvoy-bevy-card/25330-10-0",
       "notes": "Official Amex offer terms, checked 2026-10-19: welcome-offer eligibility wording (Amex does not use Chase 5/24)."
+    },
+    {
+      "url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/cps-lending/bonvoy-bevy-amex-card-06-30-2026.pdf",
+      "notes": "Amex Card Member Agreement (06/30/2026): Foreign Transaction fee None (checked 2026-10-19)."
     }
   ],
   "last_updated": "2026-10-19",

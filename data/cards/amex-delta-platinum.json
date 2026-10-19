@@ -119,7 +119,8 @@
     "travel_accident": null
   },
   "tags": [
-    "airline"
+    "airline",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -141,9 +142,13 @@
     {
       "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
       "notes": "Delta News Hub official announcement: limited-time welcome offers and 2026 benefit updates"
+    },
+    {
+      "url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/cps-lending/delta-skymiles-platinum-06-30-2026.pdf",
+      "notes": "Amex Card Member Agreement (06/30/2026): Foreign Transaction fee None (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-10-03T03:19:54.149Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
