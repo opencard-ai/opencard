@@ -62,15 +62,15 @@
   ],
   "sources": [
     {
-      "url": "https://www.discover.com/credit-cards/student-credit-card/chrome-card.html",
-      "notes": "Official Discover page"
+      "url": "https://www.discover.com/credit-cards/student-credit-card/chrome-card/",
+      "notes": "Official Discover page | Official Discover card page, checked 2026-10-19 (replaces redirecting URL)."
     },
     {
       "url": "https://wallethub.com/d/discover-it-chrome-for-students-credit-card-548c",
       "notes": "WalletHub review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.981Z",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "Student card with fixed 2% on gas and dining (not rotating). Cashback Match doubles first year earnings. No category activation required unlike Cash Back version.",
   "hotel_program": null,
