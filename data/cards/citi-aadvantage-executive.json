@@ -112,8 +112,8 @@
   ],
   "sources": [
     {
-      "url": "https://www.citi.com/credit-cards/citi-aadvantage-executive-world-elite-mastercard",
-      "notes": "Official Citi page checked 2026-09-29: 125,000 miles after $15,000/5 months (limited time), $695 fee, World Legend, $500 AA Vacations, $100 inflight/Admirals, $180 Lyft, $120 Avis/Budget, $120 GE/TSA credits."
+      "url": "https://www.citi.com/credit-cards/citi-aadvantage-executive-world-legend-mastercard",
+      "notes": "Official Citi page checked 2026-09-29: 125,000 miles after $15,000/5 months (limited time), $695 fee, World Legend, $500 AA Vacations, $100 inflight/Admirals, $180 Lyft, $120 Avis/Budget, $120 GE/TSA credits. | Official Citi card page, checked 2026-10-19 (replaces redirecting URL)."
     },
     {
       "url": "https://creditcards.aa.com/credit-cards/citi-executive-card-american-airlines-direct/"
@@ -135,7 +135,7 @@
       "notes": "Secondary confirmation of 2026-08-23 refresh details and transition timing."
     }
   ],
-  "last_updated": "2026-09-29T12:00:00.000-07:00",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
