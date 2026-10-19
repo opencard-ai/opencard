@@ -115,8 +115,8 @@
   ],
   "sources": [
     {
-      "url": "https://www.chase.com/SapphirePreferred",
-      "notes": "Official Chase landing page with current CSP bonus and benefits."
+      "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+      "notes": "Official Chase landing page with current CSP bonus and benefits. | Official Chase card page, checked 2026-10-19 (replaces redirecting URL)."
     },
     {
       "url": "https://media.chase.com/news/Meet-the-New-Chase-Sapphire-Preferred",
@@ -131,7 +131,7 @@
       "notes": "2026-07-24 end-date confirmation coverage"
     }
   ],
-  "last_updated": "2026-07-15T20:08:19.000Z",
+  "last_updated": "2026-10-19",
   "hotel_program": {
     "program": null,
     "tier": null,
