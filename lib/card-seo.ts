@@ -7,7 +7,7 @@
  * than none. "No foreign transaction fee" is only claimed via
  * knownNoForeignFee() (a 0 in the record alone is not evidence).
  */
-import type { CreditCard } from "@/lib/cards";
+import type { CreditCard, EarningRate } from "@/lib/cards";
 import { cardRateProfile, knownNoForeignFee, shortCardName } from "@/lib/card-analysis";
 
 type Lang = "en" | "zh" | "zh-cn" | "es";
@@ -98,6 +98,52 @@ function brandCase(s: string): string {
   return s.replace(BRANDS, (w) => (w === "ihg" ? "IHG" : w === "jetblue" ? "JetBlue" : w.replace(/\b\w/g, (c) => c.toUpperCase())));
 }
 
+// Card records have no promo flag; time-limited earn rates are marked in the
+// category/notes text ("Through September 30, 2027", "3x through 2026-12-31,
+// then 2x", "first year offer", "3% + 3% first-year bonus"). Snippets should
+// quote the ongoing rate, so promo rates fall back to the post-promo rate
+// stated in the text, or are dropped when none is stated.
+const MONTHS = "jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?";
+const PROMO_RE = new RegExp(
+  `\\b(?:through|until|thru|ends?)\\s+(?:(?:${MONTHS})\\.?\\s+\\d{1,2},?\\s+\\d{4}|\\d{1,2}/\\d{1,2}/\\d{2,4}|\\d{4}-\\d{2}-\\d{2})|limited[- ]time|promotional|first[- ]year (?:offer|bonus|boost)|for the first year`,
+  "i",
+);
+function promoText(e: EarningRate): string {
+  const d = (e as EarningRate & { description?: string }).description || "";
+  return `${e.category} ${e.notes || ""} ${d}`;
+}
+export function isPromoRate(e: EarningRate): boolean {
+  const t = promoText(e);
+  // "1.5% cash back after the first-year offer" is the ongoing rate.
+  return PROMO_RE.test(t) && !/\bafter the first[- ]year offer\b/i.test(t);
+}
+function ongoingRate(e: EarningRate): number | undefined {
+  const t = promoText(e);
+  // "6% = 3% base + 3% first-year bonus" / "(3% + 3% first-year bonus)"
+  const split = t.match(/(\d+(?:\.\d+)?)%\s*(?:base\s*)?\+\s*\d+(?:\.\d+)?%\s*first[- ]year/i);
+  if (split) return Number(split[1]);
+  // "3x through 2026-12-31, then 2x" (not a spend-cap "then 1%")
+  const then = t.match(/(?:through|until)\s+[^,.;]*?,?\s*then\s+(\d+(?:\.\d+)?)\s*(?:x|%)/i);
+  if (then) return Number(then[1]);
+  return undefined;
+}
+function withoutPromoRates(card: CreditCard): CreditCard {
+  const rates = card.earning_rates || [];
+  if (!rates.some(isPromoRate)) return card;
+  const kept: EarningRate[] = [];
+  for (const e of rates) {
+    if (!isPromoRate(e)) {
+      // "All purchases — standard base" is the base rate once a first-year
+      // all-purchases offer is set aside.
+      kept.push(/standard base|after the first[- ]year/i.test(promoText(e)) && /^all purchases/i.test(e.category) ? { ...e, category: "All purchases" } : e);
+      continue;
+    }
+    const r = ongoingRate(e);
+    if (r !== undefined && r > 0) kept.push({ ...e, rate: r, category: e.category.replace(/\s*\(\d+(?:\.\d+)?%\)\s*$/, "") });
+  }
+  return { ...card, earning_rates: kept };
+}
+
 const OVERRIDES: Record<string, { title: string; description: string }> = {
   // Spirit stopped flying in May 2026 and BofA's page is gone, but the record is
   // still active; don't advertise its old fee and earning rates.
@@ -127,7 +173,7 @@ export function cardSeoMeta(card: CreditCard, lang: string, closed: boolean): { 
   const fee = card.annual_fee;
   const introFree = fee > 0 && /\$0/.test(card.annual_fee_description || "") && /intro|first year/i.test(card.annual_fee_description || "");
   const feeText = fee === 0 ? c.noFee : introFree ? c.introFee(fee) : c.fee(fee);
-  const raw = cardRateProfile(card);
+  const raw = cardRateProfile(withoutPromoRates(card));
   // A few airline/hotel co-brands are also tagged cash-back in the record, which
   // would print "3%" for points; co-brand rates are always per-dollar multiples.
   const coBrand = (card.tags || []).some((tag) => tag === "airline" || tag === "hotel");
@@ -149,7 +195,7 @@ export function cardSeoMeta(card: CreditCard, lang: string, closed: boolean): { 
   const earning = storeCard
     ? ""
     : top && p.topLabel
-      ? c.earns(p.unit(top.rate), brandCase(p.topLabel.replace(/^(Two|All|Choice|Bonus|Top|Your|Select|Eligible|Everyday)\b/, (w) => w.toLowerCase())), p.unit(p.baseRate))
+      ? c.earns(p.unit(top.rate), brandCase(p.topLabel.replace(/^(Two|All|Choice|Bonus|Top|Your|Select|Eligible|Everyday)\b(?= [a-z])/, (w) => w.toLowerCase())), p.unit(p.baseRate))
       : c.flat(p.unit(p.baseRate));
   const sep = lang === "zh" || lang === "zh-cn" ? "：" : ": ";
   const end = lang === "zh" || lang === "zh-cn" ? "。" : ". ";
