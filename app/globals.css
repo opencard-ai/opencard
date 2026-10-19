@@ -160,3 +160,9 @@ body {
 /* Dim-on-dark gradients used in landing page banners and hero. */
 .dark .from-slate-900 { --tw-gradient-from: rgb(2 6 23); }
 .dark .to-slate-800 { --tw-gradient-to: rgb(15 23 42); }
+
+/* Hide the SSR'd cookie banner before hydration when a choice is already stored
+   (class set by the inline head script in app/[lang]/layout.tsx). */
+html.oc-consent-set [data-cookie-banner] {
+  display: none;
+}

@@ -19,8 +19,13 @@ function getSnapshot() {
   return window.localStorage.getItem(CONSENT_KEY);
 }
 
+// The banner is server-rendered (null = "no choice yet") so it paints with the
+// first HTML instead of after hydration — it is the mobile LCP element for new
+// visitors. Returning visitors never see a flash: the inline <head> script in
+// app/[lang]/layout.tsx adds html.oc-consent-set and globals.css hides it until
+// hydration removes it.
 function getServerSnapshot() {
-  return "pending";
+  return null;
 }
 
 function saveConsent(value: ConsentValue) {
@@ -85,7 +90,7 @@ export default function CookieConsentBanner({ lang }: { lang: string }) {
   const t = copy[safeLang];
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[70] px-4 pb-4 pointer-events-none">
+    <div data-cookie-banner="" className="fixed inset-x-0 bottom-0 z-[70] px-4 pb-4 pointer-events-none">
       <section className="pointer-events-auto max-w-5xl mx-auto rounded-2xl border border-slate-200 bg-white shadow-2xl p-4 sm:p-5 dark:bg-slate-950 dark:border-slate-800">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="space-y-2 text-sm text-slate-600 dark:text-slate-300">

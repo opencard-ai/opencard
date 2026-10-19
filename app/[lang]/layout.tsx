@@ -90,7 +90,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("opencard_theme")||"system";var d=t==="dark"||(t==="system"&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark");}catch(e){}})();`,
+            __html: `(function(){try{var t=localStorage.getItem("opencard_theme")||"system";var d=t==="dark"||(t==="system"&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark");}catch(e){}try{if(localStorage.getItem("opencard_cookie_consent"))document.documentElement.classList.add("oc-consent-set");}catch(e){}})();`,
           }}
         />
       </head>
