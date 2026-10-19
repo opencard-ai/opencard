@@ -17,7 +17,8 @@ const DIR = 'data/cards';
 const cards: Card[] = fs.readdirSync(DIR).filter(f => f.endsWith('.json')).map(f => JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8')));
 const findings: Finding[] = [];
 const add = (card: Card, type: string, severity: Sev, detail: string, field?: string, value?: unknown) => findings.push({ card_id: card.card_id, type, severity, field, detail, value });
-const closed = (c: Card) => c.status === 'discontinued' || c.discontinued === true;
+// Not open to new applicants: closed ("discontinued") or replaced by another issuer's product ("transferred").
+const closed = (c: Card) => c.status === 'discontinued' || c.status === 'transferred' || c.discontinued === true;
 const dayDiff = (iso: string) => (Date.parse(today) - Date.parse(String(iso).slice(0, 10))) / 86400000;
 const norm = (s: unknown) => String(s ?? '').toLowerCase().replace(/[^a-z0-9$]+/g, ' ').trim();
 
