@@ -57,15 +57,20 @@
   },
   "tags": [
     "premium",
-    "travel"
+    "travel",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://www.td.com/us/en/personal-banking/credit-cards/first-class-card",
       "notes": "Official TD Bank page"
+    },
+    {
+      "url": "https://www.td.com/content/dam/tdb/document/pdf/personal-banking/firstclass-personal-terms-en.pdf",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.997Z",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "Annual fee $89 (waived first year). 3x on all travel. Priority Pass Select lounge access. Strong for frequent travelers with TD Bank relationship.",
   "hotel_program": null,
