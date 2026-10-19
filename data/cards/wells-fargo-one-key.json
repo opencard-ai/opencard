@@ -2,23 +2,23 @@
   "card_id": "wells-fargo-one-key",
   "name": "One Key Card",
   "issuer": "Wells Fargo",
-  "network": "visa",
+  "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 250,
-    "spending_requirement": 1000,
+    "spending_requirement": 2000,
     "time_period_months": 3,
-    "description": "Earn $250 in OneKeyCash after you spend $1,000 on purchases in the first 3 months.",
+    "description": "Earn $250 in OneKeyCash after you spend $2,000 on purchases in the first 3 months.",
     "point_program": "OneKeyCash",
     "estimated_value": 250,
     "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Official Wells Fargo One Key page confirmed $250 OneKeyCash after $1,000/3 months on 2026-07-05."
+      "Official Wells Fargo One Key page confirmed $250 OneKeyCash after $2,000/3 months on 2026-10-19."
     ],
-    "last_verified": "2026-07-05"
+    "last_verified": "2026-10-19"
   },
   "earning_rates": [
     {
@@ -47,16 +47,16 @@
     "thc_eligible": false
   },
   "insurance": {
-    "rental_insurance": "None",
+    "rental_insurance": "Primary",
     "trip_delay": false,
     "purchase_protection": false,
     "extended_warranty": false,
-    "trip_cancellation": null,
+    "trip_cancellation": true,
     "return_protection": null,
     "baggage_delay": null,
     "lost_luggage": null,
-    "cell_phone": null,
-    "travel_accident": null
+    "cell_phone": true,
+    "travel_accident": true
   },
   "tags": [
     "no-annual-fee",
@@ -65,7 +65,7 @@
   "sources": [
     {
       "url": "https://creditcards.wellsfargo.com/one-key-credit-card/",
-      "notes": "Official Wells Fargo product page. | Official card page: No foreign transaction fee (checked 2026-10-19)."
+      "notes": "Official Wells Fargo product page. | Official card page: No foreign transaction fee (checked 2026-10-19). | Checked 2026-10-19: One Key® Mastercard®; $250 OneKeyCash after $2,000 in 3 months; Cellular Telephone Protection up to $1,000 ($25 deductible); Trip Cancellation and Interruption (secondary); Auto Rental CDW (primary except NY); Travel Accident Insurance."
     }
   ],
   "hotel_program": null,
@@ -74,6 +74,6 @@
     "notes": null
   },
   "last_updated": "2026-10-19",
-  "last_verified": "2026-07-05T15:10:00.000-07:00",
+  "last_verified": "2026-10-19",
   "next_review": "2026-08-04T15:10:00.000-07:00"
 }
