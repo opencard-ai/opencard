@@ -54,11 +54,13 @@
     "trip_cancellation": null,
     "return_protection": null
   },
-  "tags": [],
+  "tags": [
+    "no-foreign-transaction-fee"
+  ],
   "sources": [
     {
       "url": "https://www.us.hsbc.com/credit-cards/products/premier/",
-      "notes": "Official HSBC page checked 2026-10-02: $95 annual fee; 60,000 bonus points after $4,000 in 3 months; 3x gas & groceries, 2x travel, 1x other; Global Entry/TSA PreCheck credit up to $85 every 4.5 years; requires HSBC Premier checking."
+      "notes": "Official HSBC page checked 2026-10-02: $95 annual fee; 60,000 bonus points after $4,000 in 3 months; 3x gas & groceries, 2x travel, 1x other; Global Entry/TSA PreCheck credit up to $85 every 4.5 years; requires HSBC Premier checking. | Official card page: No foreign transaction fees (checked 2026-10-19)."
     }
   ],
   "annual_fee_note": "$0 annual fee for HSBC Premier relationship customers (must maintain qualifying deposits/investments). Standard fee: $95.",
@@ -67,7 +69,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.986000+00:00",
   "_revert_history": [

@@ -85,12 +85,13 @@
   },
   "tags": [
     "premium",
-    "transferable"
+    "transferable",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://www.us.hsbc.com/credit-cards/products/elite/",
-      "notes": "Official HSBC page checked 2026-10-02: $495 annual fee; 75,000 bonus points after $4,000 in 3 months; 5x eligible travel, 2x dining and other travel, 1x other; Global Entry/TSA PreCheck/CLEAR/NEXUS credit up to $120 every 4.5 years."
+      "notes": "Official HSBC page checked 2026-10-02: $495 annual fee; 75,000 bonus points after $4,000 in 3 months; 5x eligible travel, 2x dining and other travel, 1x other; Global Entry/TSA PreCheck/CLEAR/NEXUS credit up to $120 every 4.5 years. | Official card page: No foreign transaction fees (checked 2026-10-19)."
     },
     {
       "url": "https://www.forbes.com/advisor/credit-cards/reviews/hsbc-elite-credit-card/",
@@ -101,7 +102,7 @@
       "notes": "Doctor of Credit — card details"
     }
   ],
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "HSBC Elite has a $495 annual fee with benefits worth over $2,900 in the first year and $2,000 annually thereafter (per HSBC). Requires HSBC Premier banking relationship to apply. No foreign transaction fees. LoungeKey access with PPS (Priority Pass Select). Strong travel insurance package.",
   "hotel_program": null,
