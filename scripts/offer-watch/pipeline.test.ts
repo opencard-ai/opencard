@@ -85,6 +85,14 @@ assert.ok(planApply(report(candidate), cards, opts, new Set([msCard.card_id])).h
 // 3x jump held even with two fetches
 const jump = buildCandidate({ card_id: msCard.card_id, sources: [] }, fetches.map(f => ({ ...f, values: { ...f.values, 'welcome_offer.bonus_points': 500000 } })), '2026-09-30T05:50:00Z');
 assert.ok(planApply(report(jump), cards, opts).held.some(h => h.reasons.includes('bonus_jump_over_3x')));
+// held bonus -> its spend/window change is held too, never applied alone (Blue Business Plus case)
+const jumpSpend = buildCandidate({ card_id: msCard.card_id, sources: [] }, fetches.map(f => ({ ...f, values: { ...f.values, 'welcome_offer.bonus_points': 500000, 'welcome_offer.spending_requirement': 25000 } })), '2026-09-30T05:50:00Z');
+const planJS = planApply(report(jumpSpend), cards, opts);
+assert.ok(!planJS.applied.some(p => p.changes.some(c => c.field === 'welcome_offer.spending_requirement' || c.field === 'welcome_offer.bonus_points')));
+assert.ok(planJS.held.some(h => h.field === 'welcome_offer.spending_requirement' && h.reasons.includes('bonus_change_held_terms_not_applied_alone')));
+// bonus applies -> spend applies with it
+const okSpend = buildCandidate({ card_id: msCard.card_id, sources: [] }, fetches.map(f => ({ ...f, values: { ...f.values, 'welcome_offer.spending_requirement': 15000 } })), '2026-09-30T05:50:00Z');
+assert.ok(planApply(report(okSpend), cards, opts).applied.some(p => p.changes.some(c => c.field === 'welcome_offer.spending_requirement')));
 // non-official primary evidence (needs_verification) is held, never applied
 const blog: Candidate = { ...candidate, evidence: { ...candidate.evidence, url: 'https://www.doctorofcredit.com/x' } };
 const planBlog = planApply({ results: [assessCandidate(blog, msCard, false, runAt)] }, cards, opts);

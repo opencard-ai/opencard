@@ -59,6 +59,9 @@ export function sanityCheck(field: string, oldValue: unknown, newValue: unknown,
 interface ReportResult { card_id: string; status: string; reasons?: string[]; official_domain?: boolean; changes: Array<{ field: string; old_value: unknown; new_value: unknown; fingerprint: string }>; evidence: { audience?: string; confirmations?: Confirmation[]; explicit_confirmations?: string[]; hold_only?: boolean; hold_reason?: string } }
 interface ReportLike { results?: ReportResult[]; expiry?: { expired?: Array<{ card_id: string; priority: string; expiry: string }> } }
 
+const BONUS_FIELDS = new Set(['welcome_offer.bonus_points', 'welcome_offer.cash_bonus']);
+const OFFER_TERMS = new Set(['welcome_offer.spending_requirement', 'welcome_offer.time_period_months']);
+
 export function planApply(report: ReportLike, cards: Map<string, CardRecord>, opts: ApplyOptions, dirtyCards: Set<string> = new Set()): ApplyPlan {
   const applied = new Map<string, CardPlan>();
   const held: HeldItem[] = [];
@@ -98,6 +101,13 @@ export function planApply(report: ReportLike, cards: Map<string, CardRecord>, op
       if (!plan.kinds.includes('offer_update')) plan.kinds.push('offer_update');
       plan.changes.push({ field: change.field, old_value: change.old_value, new_value: change.new_value, fingerprint: change.fingerprint });
       conf.urls.forEach(u => { if (!plan.sources.includes(u)) plan.sources.push(u); });
+    }
+    // Offer terms (spend / window) only make sense next to their bonus: if the bonus change is held, hold the terms too.
+    const plan = applied.get(result.card_id);
+    if (plan && held.some(h => h.card_id === result.card_id && h.field && BONUS_FIELDS.has(h.field))) {
+      for (const c of plan.changes.filter(c => OFFER_TERMS.has(c.field))) held.push({ card_id: result.card_id, field: c.field, value: c.new_value, reasons: ['bonus_change_held_terms_not_applied_alone'], fingerprint: c.fingerprint });
+      plan.changes = plan.changes.filter(c => !OFFER_TERMS.has(c.field));
+      if (!plan.changes.length) applied.delete(result.card_id);
     }
   }
 
