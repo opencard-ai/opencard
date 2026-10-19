@@ -6,6 +6,7 @@ import ts from 'typescript';
 import * as crypto from 'node:crypto';
 import * as hilton from '../lib/hilton-anniversary';
 import * as periods from '../lib/reminder-logic';
+import * as cardAliases from '../lib/card-aliases';
 
 test('cron integrates Hilton-only email, copy dates, subscription gates, retries and failed-send reservation', async () => {
   const product='amex-hilton-honors';
@@ -23,7 +24,7 @@ test('cron integrates Hilton-only email, copy dates, subscription gates, retries
   class FixedDate extends Date {constructor(value?:string|number){super(value??'2026-09-20T16:00:00Z')}}
   const modules:Record<string,unknown>={
     'next/server':{NextResponse:{json:(body:unknown)=>body}},'@upstash/redis':{Redis},
-    '../../../../lib/reminder-logic':periods,'@/lib/hilton-anniversary':hilton,
+    '../../../../lib/reminder-logic':periods,'@/lib/hilton-anniversary':hilton,'@/lib/card-aliases':cardAliases,
     '@/lib/email':{sendEmail:async(x:{html:string;subject:string})=>{emails.push(x);return {ok:!fail}}},'node:crypto':crypto,
   };
   const source=fs.readFileSync('app/api/cron/reminders/route.ts','utf8');
