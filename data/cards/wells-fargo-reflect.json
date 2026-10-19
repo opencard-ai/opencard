@@ -4,7 +4,7 @@
   "issuer": "Wells Fargo",
   "network": "visa",
   "annual_fee": 0,
-  "foreign_transaction_fee": 0,
+  "foreign_transaction_fee": 3,
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 0,
@@ -44,7 +44,7 @@
   "sources": [
     {
       "url": "https://creditcards.wellsfargo.com/reflect-visa-credit-card/",
-      "notes": "Official Wells Fargo page checked 2026-10-02: $0 annual fee; 0% intro APR for 21 months on purchases and qualifying balance transfers; no welcome bonus shown."
+      "notes": "Official Wells Fargo page checked 2026-10-02: $0 annual fee; 0% intro APR for 21 months on purchases and qualifying balance transfers; no welcome bonus shown. | Official Wells Fargo page FAQ (3% foreign currency conversion fee), checked 2026-10-19: foreign transaction fee 3%."
     }
   ],
   "hotel_program": null,
@@ -52,8 +52,8 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-02",
-  "last_verified": "2026-10-02",
+  "last_updated": "2026-10-19",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:50.011000+00:00",
   "balance_transfer_fee_pct": 5,
   "balance_transfer_fee_min": 5,
