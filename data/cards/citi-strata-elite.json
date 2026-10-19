@@ -78,7 +78,8 @@
   },
   "tags": [
     "premium",
-    "transferable"
+    "transferable",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -87,13 +88,13 @@
     },
     {
       "url": "https://www.citi.com/credit-cards/citi-strata-elite-credit-card",
-      "notes": "Official Citi page checked 2026-10-02: 75,000 bonus points after $6,000 in 3 months; $595 fee; up to $120 Global Entry/TSA PreCheck credit."
+      "notes": "Official Citi page checked 2026-10-02: 75,000 bonus points after $6,000 in 3 months; $595 fee; up to $120 Global Entry/TSA PreCheck credit. | Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     },
     {
       "url": "https://onemileatatime.com/guides/citi-strata-elite/"
     }
   ],
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

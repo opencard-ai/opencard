@@ -69,7 +69,8 @@
     "extended_warranty": null
   },
   "tags": [
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -86,7 +87,7 @@
     },
     {
       "url": "https://www.costcotravel.com/Info/Credit-Card",
-      "notes": "Costco Travel page confirms no FTf, $0 AF with paid Costco membership, 3% on travel."
+      "notes": "Costco Travel page confirms no FTf, $0 AF with paid Costco membership, 3% on travel. | Official card page: From trips to the gas station to trips around the world, you can earn on all your travels  (checked 2026-10-19)."
     }
   ],
   "last_updated": "2026-10-19",

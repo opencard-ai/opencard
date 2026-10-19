@@ -108,7 +108,8 @@
   },
   "tags": [
     "airline",
-    "premium"
+    "premium",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -116,7 +117,8 @@
       "notes": "Official Citi page checked 2026-09-29: 125,000 miles after $15,000/5 months (limited time), $695 fee, World Legend, $500 AA Vacations, $100 inflight/Admirals, $180 Lyft, $120 Avis/Budget, $120 GE/TSA credits. | Official Citi card page, checked 2026-10-19 (replaces redirecting URL)."
     },
     {
-      "url": "https://creditcards.aa.com/credit-cards/citi-executive-card-american-airlines-direct/"
+      "url": "https://creditcards.aa.com/credit-cards/citi-executive-card-american-airlines-direct/",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     },
     {
       "url": "https://onemileatatime.com/guides/american-airlines-executive-card/",

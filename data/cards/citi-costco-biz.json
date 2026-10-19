@@ -56,12 +56,17 @@
   },
   "tags": [
     "business",
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://www.citi.com/credit-cards/costco-anywhere-visa-business-card",
       "notes": "Official Citi page checked 2026-10-02: $0 annual fee with active Costco membership; 5%/4%/3%/2%/1% earning."
+    },
+    {
+      "url": "https://online.citi.com/US/nga/cards/displayterms?app=UNSOL&HKOP=b341c59873b22a94d20e83608931e24bdeb7fd16781330334755146c701538f2",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
   "benefits": [],
@@ -70,7 +75,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.976000+00:00"
 }

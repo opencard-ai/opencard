@@ -87,10 +87,13 @@
     "cell_phone": null,
     "travel_accident": null
   },
-  "tags": [],
+  "tags": [
+    "no-foreign-transaction-fee"
+  ],
   "sources": [
     {
-      "url": "https://creditcards.aa.com/credit-cards/citi-globe-card-american-airlines-direct/"
+      "url": "https://creditcards.aa.com/credit-cards/citi-globe-card-american-airlines-direct/",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/american-airlines-citi-aadvantage-globe-mastercard-benefits/",
@@ -101,7 +104,7 @@
       "notes": "Mar 2026"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.975Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
