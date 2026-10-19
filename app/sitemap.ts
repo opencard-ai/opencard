@@ -74,6 +74,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: card.last_updated ? new Date(card.last_updated) : now,
       changeFrequency: "weekly" as const,
       priority: 0.7,
+      // Mirror the page's own hreflang (en + x-default) so sitemap and HTML agree.
+      alternates: languageAlternates(`/cards/${card.card_id}`, ["en"]),
     }));
 
   return [...staticPages, ...guidePages, ...cardPages];
