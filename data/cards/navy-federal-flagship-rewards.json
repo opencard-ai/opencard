@@ -67,15 +67,16 @@
   },
   "tags": [
     "cash-back",
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://www.navyfederal.org/loans-cards/credit-cards/flagship-premier-visa-signature.html",
-      "notes": "Official Navy Federal page checked 2026-10-02: $95 annual fee; 4X travel, 3X dining, 1X other; $100 annual airline credit; up to $120 Global Entry/TSA PreCheck credit; limited-time 50,000 points after $4,000 in 90 days."
+      "notes": "Official Navy Federal page checked 2026-10-02: $95 annual fee; 4X travel, 3X dining, 1X other; $100 annual airline credit; up to $120 Global Entry/TSA PreCheck credit; limited-time 50,000 points after $4,000 in 90 days. | Official card page: No foreign transaction fees (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "Best Navy Federal travel card. 3x on travel, 1.5x elsewhere. No annual fee for members. Points worth ~1 cent each.",
   "hotel_program": null,

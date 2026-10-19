@@ -52,15 +52,16 @@
   },
   "tags": [
     "cash-back",
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://www.navyfederal.org/loans-cards/credit-cards/cash-rewards.html",
-      "notes": "Official Navy Federal page"
+      "notes": "Official Navy Federal page | Official card page: No foreign transaction fees (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.991Z",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "Higher gas earning (3%) than standard cashRewards. Navy Federal members only. $0 annual fee.",
   "hotel_program": null,

@@ -65,15 +65,16 @@
   },
   "tags": [
     "cash-back",
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://www.navyfederal.org/loans-cards/credit-cards/more-rewards.html",
-      "notes": "Official Navy Federal page"
+      "notes": "Official Navy Federal page | Official card page: No foreign transaction fees (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.991Z",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "Highest earning rate for dining (4x) among Navy Federal cards. Amex network. Exclusive to Navy Federal members.",
   "hotel_program": null,
