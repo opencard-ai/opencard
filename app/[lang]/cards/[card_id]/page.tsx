@@ -19,6 +19,8 @@ import { getEditorNote } from "@/lib/card-notes";
 import CardAnalysisSection from "@/app/components/CardAnalysisSection";
 import { getReferralOfferForCard } from "@/lib/referrals";
 import { formatWelcomeBonus, welcomeBonusKind } from "@/lib/welcome-offer";
+import { getAffiliateUrl } from "@/lib/affiliate";
+import AffiliateLink from "@/app/components/AffiliateLink";
 
 const CREDIT_LABELS: Record<string, string> = {
   "Excellent": "Excellent",
@@ -149,6 +151,7 @@ export default async function CardDetailPage({ params }: Props) {
   const editorNote = analysis ? getEditorNote(card.card_id) : undefined;
   const shownRules = applicableRules(card);
   const closed = isClosedToNewApplicants(card);
+  const affiliateUrl = getAffiliateUrl(card);
   const closedText = closedCopy(lang);
   const referralOffer = getReferralOfferForCard(card);
   const isAmexReferral = referralOffer?.program === "amex";
@@ -293,6 +296,21 @@ export default async function CardDetailPage({ params }: Props) {
           <a href={officialSource.url} target="_blank" rel="noopener noreferrer" data-issuer-outbound="official_terms" data-card-id={card.card_id} className="mt-4 inline-flex rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">
             {lang === "zh" ? "查看發卡銀行官方條款" : lang === "zh-cn" ? "查看发卡银行官方条款" : lang === "es" ? "Consultar condiciones del emisor" : "Check issuer terms"} ↗
           </a>
+        )}
+
+        {/* Affiliate CTA — dormant: renders nothing unless the flag is on AND the card has affiliate_url. */}
+        {affiliateUrl && !closed && (
+          <div className="mt-3">
+            <AffiliateLink
+              href={affiliateUrl}
+              cardId={card.card_id}
+              placement="card_detail"
+              lang={locale}
+              className="inline-flex rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700"
+            >
+              {t("affiliate.apply", locale)} ↗
+            </AffiliateLink>
+          </div>
         )}
 
         {/* CTA Row: Add to My Cards + AI Assistant */}

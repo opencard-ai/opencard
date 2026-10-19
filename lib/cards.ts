@@ -184,6 +184,10 @@ export interface CreditCard {
    *  cards-section default browse view. Optional; when absent, popularity
    *  falls back to welcome_offer.estimated_value then alphabetical. */
   featured?: boolean;
+  /** Optional affiliate application URL (https only; validated in
+   *  scripts/validate-all.ts). DORMANT: only rendered when
+   *  NEXT_PUBLIC_AFFILIATE_LINKS_ENABLED=true — see lib/affiliate.ts. */
+  affiliate_url?: string;
 }
 
 export function getAllCards(): CreditCard[] {

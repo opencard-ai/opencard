@@ -9,6 +9,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import { isValidAffiliateUrl } from '../lib/affiliate';
 
 // ============ CONSTANTS ============
 
@@ -105,6 +106,15 @@ function validateSchema(card: any, fileName: string): ValidationIssue[] {
       card: cardName, severity: 'error', source: 'schema',
       message: `foreign_transaction_fee should be number, got: ${typeof card.foreign_transaction_fee}`,
       field: 'foreign_transaction_fee'
+    });
+  }
+
+  // affiliate_url is optional; when present it must be an absolute https URL.
+  if (card.affiliate_url !== undefined && !isValidAffiliateUrl(card.affiliate_url)) {
+    issues.push({
+      card: cardName, severity: 'error', source: 'schema',
+      message: `affiliate_url must be an absolute https URL, got: ${JSON.stringify(card.affiliate_url)}`,
+      field: 'affiliate_url'
     });
   }
 

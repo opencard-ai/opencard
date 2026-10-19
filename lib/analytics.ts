@@ -55,3 +55,8 @@ export function trackMyCardsFirstVisit() {
     if (elapsedDays >= 30 && elapsedDays < 31) once("my_cards_day30_return");
   } catch { /* Storage unavailable: view still measured with consent. */ }
 }
+
+/** Affiliate outbound click (dormant until affiliate links are enabled). Consent-gated like all events. */
+export function trackAffiliateClick(cardId: string, placement: string) {
+  trackEvent("affiliate_click", { card_id: cardId, placement });
+}
