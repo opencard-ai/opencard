@@ -95,6 +95,10 @@
     {
       "url": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
       "notes": "Standard Platinum benefits reference"
+    },
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/card-application/apply/partner/print/personal-card/msb/morgan-stanley-platinum-card/ep-msb-mcs-74",
+      "notes": "Official Amex offer terms, checked 2026-10-19: welcome-offer eligibility wording (Amex does not use Chase 5/24)."
     }
   ],
   "hotel_program": {
@@ -107,12 +111,16 @@
   "application_rules": {
     "rules": [
       {
-        "rule": "5/24 rule",
-        "description": "Cannot approve if 5+ new cards in 24 months"
+        "rule": "Welcome offer eligibility (card family)",
+        "description": "You may not be eligible to receive a welcome offer if you have or have had this Card, the Platinum Card®, the Platinum Card® from American Express Exclusively for Charles Schwab or previous versions of these Cards."
+      },
+      {
+        "rule": "Welcome offer eligibility (other factors)",
+        "description": "You also may not be eligible to receive a welcome offer based on various factors, such as your history with credit card balance transfers, your history as an American Express Card Member, the number of credit cards that you have opened and closed and other factors."
       }
     ]
   },
-  "last_updated": "2026-09-29T12:00:00.000Z",
+  "last_updated": "2026-10-19",
   "recurring_credits": [
     {
       "credit_key": "uber-cash",
@@ -215,7 +223,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     }
   ],
-  "last_verified": "2026-09-29",
+  "last_verified": "2026-10-19",
   "next_review": "2026-10-29T00:00:00.000Z",
   "cfpb_source": "Q3_2025",
   "late_fee": 40,
