@@ -68,12 +68,17 @@
     "travel_accident": null
   },
   "tags": [
-    "hotel"
+    "hotel",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card",
       "notes": "Official Chase page checked 2026-10-02: up to 60,000 bonus points (30k after $3k in 3 months + up to 30k more at 2x on up to $15k in 6 months); $95 annual fee."
+    },
+    {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC61032.html",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
   "hotel_program": null,
@@ -81,7 +86,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "recurring_credits": [
     {
       "credit_key": "doordash-non-restaurant-credit",

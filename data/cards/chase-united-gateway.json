@@ -70,7 +70,8 @@
   },
   "tags": [
     "airline",
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -80,10 +81,14 @@
     {
       "url": "https://thepointsguy.com/credit-cards/united-gateway-card/",
       "notes": "TPG review"
+    },
+    {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC65777.html",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
   "notes": "Entry-level United co-brand card with $0 AF. Lower earning rates and fewer perks than Explorer or Club cards. The 2x on gas + transit + United is decent but not exceptional. No checked bag benefit or lounge passes. Best as a supplement for non-frequent United flyers who want to earn miles without paying an AF.",
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

@@ -105,7 +105,8 @@
   },
   "tags": [
     "business",
-    "hotel"
+    "hotel",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -119,10 +120,14 @@
     {
       "url": "https://thepointsguy.com/credit-cards/hyatt-chase-best-welcome-offers/",
       "notes": "TPG offer history / comparison source."
+    },
+    {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC61032.html",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
   "notes": "Business version of World of Hyatt. $199 annual fee, Hyatt business benefits, and current public welcome offer of 70,000 points after $7,000/3mo.",
-  "last_updated": "2026-04-29T06:08:32.036Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

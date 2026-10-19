@@ -51,12 +51,17 @@
   },
   "tags": [
     "airline",
-    "business"
+    "business",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://creditcards.chase.com/business-credit-cards/southwest/performance-business",
       "notes": "Official Chase page checked 2026-10-02: 80,000 points after $5,000 in 3 months; annual fee $299."
+    },
+    {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC61809.html",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
   "hotel_program": null,
@@ -64,7 +69,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:49.970000+00:00",
   "recurring_credits": [

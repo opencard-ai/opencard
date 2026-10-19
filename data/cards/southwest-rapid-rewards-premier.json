@@ -70,7 +70,8 @@
   },
   "tags": [
     "airline",
-    "cash-back"
+    "cash-back",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -84,10 +85,14 @@
     {
       "url": "https://upgradedpoints.com/credit-cards/reviews/southwest-rapid-rewards-premier-credit-card/benefits/",
       "notes": "Upgraded Points review"
+    },
+    {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC63993.html",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
   "notes": "Mid-tier Southwest card. $149 AF, but 6,000 anniversary points (~$90) covers ~60%. First bag free + EarlyBird Check-In are practical perks. As of 2025, AF increased from $99 to $149. Better earning on Southwest (3x vs 2x) than Plus. Good for regular Southwest flyers who want A-List qualifying points.",
-  "last_updated": "2026-06-21T20:56:00.000Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

@@ -46,7 +46,8 @@
   },
   "tags": [
     "airline",
-    "premium"
+    "premium",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -57,9 +58,13 @@
     },
     {
       "url": "https://www.nerdwallet.com/credit-cards/reviews/british-airways-card"
+    },
+    {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC61716.html",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-04-29T05:25:54.022Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

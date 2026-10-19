@@ -95,7 +95,8 @@
   "tags": [
     "business",
     "cash-back",
-    "hotel"
+    "hotel",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -109,6 +110,10 @@
     {
       "url": "https://onemileatatime.com/guides/ihg-premier-business-card/",
       "notes": "One Mile at a Time review"
+    },
+    {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC65355.html",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
   "last_updated": "2026-10-19",

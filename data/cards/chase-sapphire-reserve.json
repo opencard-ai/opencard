@@ -99,7 +99,8 @@
     "premium",
     "travel",
     "dining",
-    "transferable"
+    "transferable",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -109,6 +110,10 @@
     {
       "url": "https://roamingcactus.com/credit-cards/chase-sapphire-reserve-credits-2026-explained",
       "notes": "Review Apr 2026."
+    },
+    {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC64842.html",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
   "last_updated": "2026-10-19",

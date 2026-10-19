@@ -72,7 +72,8 @@
     "return_protection": null
   },
   "tags": [
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -86,10 +87,14 @@
     {
       "url": "https://www.cnn.com/cnn-underscored/money/prime-visa-credit-card",
       "notes": "CNN Underscored review"
+    },
+    {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC59329.html",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
   "notes": "No annual credit card fee (but requires $139/year Amazon Prime membership). The 5% rate requires Prime membership. Without Prime, earn 3% at Amazon/Whole Foods. Points are Amazon Reward Dollars redeemable at checkout or as cash back via Chase.",
-  "last_updated": "2026-05-11T18:37:54.223Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

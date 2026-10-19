@@ -102,7 +102,8 @@
   },
   "tags": [
     "airline",
-    "premium"
+    "premium",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -116,10 +117,14 @@
     {
       "url": "https://media.chase.com/news/united-refresh-2025",
       "notes": "Chase/United 2025 refresh press release"
+    },
+    {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC62957.html",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
   "notes": "Ultra-premium United card with full United Club access ($650+ value alone). $695 AF (increased from $525 in 2025). Total annual credits (Instacart $300 + Streaming $120 + Rideshare $150 = $570) significantly offset the AF for those who use them. PQP earnings (up to 10,000/year) can fast-track United 1K elite status. Primary competitor is United Club Business Card. Both are essentially the same card (Club membership) — personal version vs business version.",
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

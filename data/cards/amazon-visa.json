@@ -72,7 +72,8 @@
     "return_protection": null
   },
   "tags": [
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -82,10 +83,14 @@
     {
       "url": "https://www.cnbc.com/select/amazon-visa-review/",
       "notes": "CNBC Select review"
+    },
+    {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC59318.html",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
   "notes": "No Prime membership required (unlike Prime Visa). Lower earning rates than Prime Visa but no Prime subscription needed. Good option for non-Prime Amazon shoppers who want Amazon rewards without paying $139/year for Prime.",
-  "last_updated": "2026-04-16T13:41:49.936Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],

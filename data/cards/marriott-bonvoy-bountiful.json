@@ -81,7 +81,8 @@
     "travel_accident": null
   },
   "tags": [
-    "hotel"
+    "hotel",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -91,10 +92,14 @@
     {
       "url": "https://thepointsguy.com/credit-cards/marriott-bonvoy-bountiful-card/",
       "notes": "TPG review"
+    },
+    {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC61472.html",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
   "notes": "$250 AF card positioned between Boundless and the premium Bonvoy Brilliant. The $300 annual Marriott credit essentially offsets the AF. Gold Elite status + Priority Pass Select makes it valuable. Earning rates are strong (4x on dining/gas/grocery). Best for heavy Marriott guests who want elevated status without the $650 AF on Bonvoy Brilliant.",
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
