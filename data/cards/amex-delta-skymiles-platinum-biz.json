@@ -92,7 +92,7 @@
   "sources": [
     {
       "url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-platinum/",
-      "notes": "Official Amex page checked 2026-10-02: $120 statement credit for Global Entry or up to $85 for TSA PreCheck every 4 years."
+      "notes": "Official Amex page checked 2026-10-02: $120 statement credit for Global Entry or up to $85 for TSA PreCheck every 4 years. | Official Amex page 2026-10-19: $200 Delta Stays Statement Credit (annual); $120 Rideshare Credit."
     },
     {
       "url": "https://www.uscreditcardguide.com/amex-platinum-delta-skymiles-business/",
@@ -144,10 +144,10 @@
     {
       "credit_key": "delta-stays-credit",
       "name": "Delta Stays Credit",
-      "amount": 150,
+      "amount": 200,
       "frequency": "annual",
       "category": "hotel",
-      "description": "Up to $150 annual statement credit on prepaid Delta Stays bookings on delta.com.",
+      "description": "Up to $200 annual statement credit on prepaid Delta Stays bookings (hotels or vacation rentals) on delta.com.",
       "reset_type": "calendar_year",
       "source": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-platinum/"
     },
@@ -162,6 +162,6 @@
       "source": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-platinum/"
     }
   ],
-  "last_verified": "2026-10-02",
+  "last_verified": "2026-10-19",
   "next_review": "2026-11-05T00:00:00Z"
 }
