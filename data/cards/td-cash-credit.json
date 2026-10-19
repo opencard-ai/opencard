@@ -4,7 +4,7 @@
   "issuer": "TD Bank",
   "network": "visa",
   "annual_fee": 0,
-  "foreign_transaction_fee": 0,
+  "foreign_transaction_fee": 3,
   "credit_required": "Good",
   "welcome_offer": {
     "spending_requirement": 1000,
@@ -67,6 +67,10 @@
   ],
   "sources": [
     {
+      "url": "https://www.td.com/content/dam/tdb/document/pdf/personal-banking/tdcash-personal-terms-en.pdf",
+      "notes": "Official TD terms PDF, checked 2026-10-19: foreign transaction fee 3%."
+    },
+    {
       "url": "https://www.td.com/us/en/personal-banking/credit-cards",
       "notes": "Official TD credit cards page checked 2026-10-02: TD Cash Credit Card, 3-2-1% customizable Cash Back; $200 after $1,000 in 90 days."
     },
@@ -75,7 +79,7 @@
       "notes": "Official TD Bank page"
     }
   ],
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "Strong 3% at gas, 2% on groceries/dining. No annual fee. TD Bank relationship recommended.",
   "hotel_program": null,
@@ -83,6 +87,6 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-10-02",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.997000+00:00"
 }
