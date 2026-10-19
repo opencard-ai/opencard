@@ -92,6 +92,8 @@ assert.equal(exp.summary.expired_high_priority,1);
 assert.equal(isOfficialUrl('https://www.americanexpress.com/us/credit-cards/card/hilton-honors/'),true);
 assert.equal(isOfficialUrl('https://creditcards.aa.com/credit-cards/'),true);
 assert.equal(isOfficialUrl('https://cards.barclaycardus.com/banking/cards/jetblue-premier-card/'),true);
+assert.equal(isOfficialUrl('https://www.pnc.com/en/personal-banking/banking/credit-cards/pnc-cash-rewards-visa-credit-card.html'),true);
+assert.equal(isOfficialUrl('https://pnc.com.example.net/x'),false);
 assert.equal(isOfficialUrl('https://fakeaa.com/offer'),false);
 assert.equal(isOfficialUrl('https://americanexpress.com.evil.example/offer'),false);
 assert.equal(isOfficialUrl('https://www.doctorofcredit.com/x/'),false);

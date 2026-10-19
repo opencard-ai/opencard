@@ -99,7 +99,7 @@ export const DEFAULT_OFFICIAL_DOMAINS = [
   'americanexpress.com', 'chase.com', 'citi.com', 'aa.com', 'capitalone.com', 'usbank.com', 'bankofamerica.com',
   'barclaycardus.com', 'barclays.com', 'barclaycard.com', 'wellsfargo.com', 'bilt.com', 'biltrewards.com', 'discover.com',
   'marriott.com', 'hilton.com', 'hyatt.com', 'ihg.com', 'delta.com', 'united.com', 'southwest.com', 'alaskaair.com',
-  'jetblue.com', 'aircanada.com', 'morganstanley.com',
+  'jetblue.com', 'aircanada.com', 'morganstanley.com', 'pnc.com',
 ];
 
 /** Exact host or subdomain match; `*` in an entry matches letters/digits/hyphens within one label (e.g. "barclays*.com"). */
