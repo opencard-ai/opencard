@@ -73,19 +73,20 @@
   },
   "tags": [
     "business",
-    "premium"
+    "premium",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://www.usbank.com/business-banking/business-credit-cards/business-altitude-connect-credit-card.html",
-      "notes": "Official U.S. Bank page checked 2026-10-02: 75,000 bonus points after $6,000 in 180 days; $0 intro annual fee first year, then $95; 5X/4X/2X/1X earning."
+      "notes": "Official U.S. Bank page checked 2026-10-02: 75,000 bonus points after $6,000 in 180 days; $0 intro annual fee first year, then $95; 5X/4X/2X/1X earning. | Official card page: Save on foreign transaction fees (checked 2026-10-19)."
     },
     {
       "url": "https://money.usnews.com/credit-cards/us-bank/us-bank-business-altitude-connect-visa-signature-card",
       "notes": "U.S. News review"
     }
   ],
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "Annual fee waived first year. $25 ride-share credit after 3 consecutive monthly rides. Strong for gas and cellular spend.",
   "hotel_program": null,

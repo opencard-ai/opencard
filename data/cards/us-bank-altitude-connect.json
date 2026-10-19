@@ -67,7 +67,8 @@
     "travel",
     "no-annual-fee",
     "streaming",
-    "cash-back"
+    "cash-back",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -77,9 +78,13 @@
     {
       "url": "https://wallethub.com/d/us-bank-altitude-connect-visa-signature-card-3339c",
       "notes": "WalletHub review"
+    },
+    {
+      "url": "https://onboarding.usbank.com/prca-web/credit-cards/standalone/offer-terms-and-conditions?experience=terms-and-conditions&locationCode=18569&offerId=8BB5BD89H1&sourceCode=88416",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-04-24T17:25:00.046971",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "No annual fee with Priority Pass lounge access (4 visits). $100 credit for TSA PreCheck/Global Entry. Strong 4x on travel and gas.",
   "hotel_program": null,
