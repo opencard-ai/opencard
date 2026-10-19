@@ -4,7 +4,7 @@
   "issuer": "Bank of America",
   "network": "mastercard",
   "annual_fee": 0,
-  "foreign_transaction_fee": 0,
+  "foreign_transaction_fee": 3,
   "credit_required": "Good",
   "welcome_offer": {
     "spending_requirement": 5000,
@@ -58,19 +58,23 @@
   ],
   "sources": [
     {
+      "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/terms-and-conditions/?campaignid=4078727&productoffercode=7B&locale=en_US",
+      "notes": "Official BofA business terms (International Transaction fee), checked 2026-10-19: foreign transaction fee 3%."
+    },
+    {
       "url": "https://www.uscreditcardguide.com/boa-unlimited-cash-rewards-business-credit-card/",
       "notes": "USCCG primary review"
     },
     {
-      "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/unlimited-cash-rewards-business-credit-card/",
-      "notes": "Official BOA Business Page (SPA — fallback only)"
+      "url": "https://business.bankofamerica.com/en/credit-cards/business-advantage-unlimited-cash-rewards",
+      "notes": "Official BOA Business Page (SPA — fallback only) | Official BofA business card page, checked 2026-10-19 (replaces redirecting URL)."
     },
     {
       "url": "https://www.nerdwallet.com/business/credit-cards/reviews/bank-of-america-business-advantage-unlimited-cash-rewards",
       "notes": "NerdWallet review"
     }
   ],
-  "last_updated": "2026-05-11T18:47:27.126Z",
+  "last_updated": "2026-10-19",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
@@ -80,6 +84,6 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.957Z",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.957000+00:00"
 }
