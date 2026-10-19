@@ -52,12 +52,13 @@
     "travel_accident": null
   },
   "tags": [
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://venmo.com/about/creditcard",
-      "notes": "Official Venmo page checked 2026-10-02: no annual fee; 3% on dining & entertainment (+1% when splitting, up to 4%); 3% when paying with Venmo; 1% on other purchases."
+      "notes": "Official Venmo page checked 2026-10-02: no annual fee; 3% on dining & entertainment (+1% when splitting, up to 4%); 3% when paying with Venmo; 1% on other purchases. | Official card page: No foreign transaction fee2 (checked 2026-10-19)."
     }
   ],
   "hotel_program": null,
@@ -65,7 +66,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "last_verified": "2026-10-02",
   "next_review": "2026-07-15T13:41:50.009000+00:00"
 }
