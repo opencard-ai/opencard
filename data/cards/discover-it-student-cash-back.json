@@ -66,15 +66,15 @@
   ],
   "sources": [
     {
-      "url": "https://www.discover.com/credit-cards/student-credit-card/it-card.html",
-      "notes": "Official Discover page"
+      "url": "https://www.discover.com/credit-cards/student-credit-card/it-card/",
+      "notes": "Official Discover page | Official Discover card page, checked 2026-10-19 (replaces redirecting URL)."
     },
     {
       "url": "https://money.usnews.com/credit-cards/discover/discover-it-student-cash-back",
       "notes": "U.S. News review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.981Z",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "Student version of Discover it Cash Back. Rotating 5% categories (Amazon, Gas, Restaurants, etc.). Cashback Match doubles first year earnings. Good for students building credit.",
   "hotel_program": null,
