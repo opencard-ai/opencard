@@ -1,46 +1,46 @@
 {
   "card_id": "my-gm-rewards-mastercard",
-  "name": "My GM Rewards Card Mastercard®",
-  "issuer": "Goldman Sachs",
+  "name": "GM Rewards™ Mastercard®",
+  "issuer": "Barclays",
   "network": "mastercard",
   "annual_fee": 0,
-  "foreign_transaction_fee": 0,
+  "foreign_transaction_fee": 3,
   "credit_required": "Good",
   "welcome_offer": {
     "spending_requirement": 1000,
     "time_period_months": 3,
-    "bonus_points": 20000,
-    "estimated_value": 200,
-    "point_program": "My GM Rewards",
-    "description": "20,000 bonus points ($200 toward GM) after spending $1,000 in first 3 months"
+    "bonus_points": 30000,
+    "estimated_value": 300,
+    "point_program": "GM Rewards",
+    "description": "Earn 30,000 bonus points after spending $1,000 in the first 90 days of account opening.",
+    "offer_status": "public",
+    "confidence": "high",
+    "notes": [
+      "Official Barclays page 2026-10-19 (90 days stored as 3 months). estimated_value keeps the record's prior 1 cent/point assumption; Barclays does not state a point value."
+    ],
+    "last_verified": "2026-10-19"
   },
   "earning_rates": [
     {
-      "category": "GM (new vehicle purchases, service, parts, Super Cruise)",
-      "rate": 10,
-      "notes": "10x points on GM purchases (new vehicle down payment, service, parts, GM Financial)"
+      "category": "Eligible GM purchases",
+      "rate": 7,
+      "notes": "7x points per $1 on eligible GM purchases with the card; GM Rewards members can earn up to 3x more through GM Rewards (up to 10x total)."
     },
     {
-      "category": "Gas Stations",
+      "category": "All other purchases",
       "rate": 3,
-      "notes": "3x points at gas stations"
-    },
-    {
-      "category": "Dining",
-      "rate": 3,
-      "notes": "3x points on dining (restaurants, takeout, delivery)"
-    },
-    {
-      "category": "All Other Purchases",
-      "rate": 1,
-      "notes": "1x point on all other purchases"
+      "notes": "3x points per $1 on all other purchases, including groceries, gas, restaurants and travel."
     }
   ],
   "travel_benefits": {
     "other_benefits": [
       {
-        "name": "Super Cruise access",
-        "description": "Access to GM Super Cruise hands-free driving with points"
+        "name": "Intro APR on GM purchases",
+        "description": "0% intro APR for 9 billing cycles on qualifying GM purchases over $499 made within 30 days of account opening; 0% promotional APR for 6 billing cycles on qualifying GM purchases over $499 after that; then 22.49%–32.49% variable APR."
+      },
+      {
+        "name": "Complimentary FICO® Credit Score",
+        "description": "Online access to your FICO® Credit Score."
       }
     ]
   },
@@ -49,11 +49,11 @@
     "thc_eligible": false
   },
   "insurance": {
-    "rental_insurance": "Primary",
-    "trip_delay": false,
-    "trip_cancellation": false,
-    "purchase_protection": true,
-    "extended_warranty": true,
+    "rental_insurance": null,
+    "trip_delay": null,
+    "trip_cancellation": null,
+    "purchase_protection": null,
+    "extended_warranty": null,
     "return_protection": null,
     "baggage_delay": null,
     "lost_luggage": null,
@@ -66,19 +66,23 @@
   ],
   "sources": [
     {
-      "url": "https://www.mygmrewardscard.com/",
-      "notes": "Official GM Rewards Card page"
+      "url": "https://cards.barclaycardus.com/banking/cards/general-motors/",
+      "notes": "Official Barclays GM Rewards Mastercard page (2026-10-19): issued by Barclays Bank Delaware; 30,000 points after $1,000 in 90 days; 7x eligible GM purchases (up to 10x with GM Rewards member bonus); 3x all other purchases; $0 annual fee; intro APR on GM purchases."
+    },
+    {
+      "url": "https://www.barclaycardus.com/applycontent/TnCs.jsp?tc47943",
+      "notes": "Official Barclays terms (2026-10-19): Annual Fee $0; Foreign Transaction 3% of each transaction in U.S. dollars."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.990Z",
+  "last_updated": "2026-10-19",
   "status": "active",
-  "notes": "Co-branded GM card from Goldman Sachs. 10x on GM purchases is excellent for GM vehicle owners. Points redeemable for GM vehicle purchases, service, parts.",
+  "notes": "Co-branded GM card issued by Barclays (formerly Goldman Sachs/Marcus). 7x on eligible GM purchases (up to 10x with the GM Rewards member bonus) and 3x on everything else; points redeem toward GM vehicles, accessories, service and GM Financial payments. 3% foreign transaction fee.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
   "recurring_credits": [],
-  "last_verified": "2026-04-16T13:41:49.990Z",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.990000+00:00"
 }

@@ -2129,9 +2129,9 @@
     }
   },
   "my-gm-rewards-mastercard": {
-    "issuer": "gm",
+    "issuer": "barclays",
     "sources": {
-      "official": "https://www.gm.com/credit-card"
+      "official": "https://cards.barclaycardus.com/banking/cards/general-motors/"
     }
   },
   "navy-federal-cashrewards": {
