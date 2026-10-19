@@ -10,9 +10,13 @@
     "bonus_points": 0,
     "spending_requirement": 50000,
     "time_period_months": 6,
-    "description": "Earn $1,500 cash back after $50,000 in purchases within the first 6 months. USCCG/DoC note YMMV/incognito offers up to $2,000.",
+    "description": "Earn $1,500 cash back after you spend $50,000 in purchases on your new Card within the first 6 months of Card Membership.",
     "point_program": "Cash Back",
-    "estimated_value": 1500
+    "estimated_value": 1500,
+    "notes": [
+      "Official Amex page confirmed $1,500 after $50,000 in 6 months on 2026-10-19 (spending_requirement 50000 is correct; the weekly audit flags it only because its sanity cap is $30,000). USCCG/DoC report YMMV/incognito offers up to $2,000."
+    ],
+    "last_verified": "2026-10-19"
   },
   "earning_rates": [
     {
@@ -48,7 +52,8 @@
     "travel_accident": null
   },
   "tags": [
-    "business"
+    "business",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -57,11 +62,16 @@
     },
     {
       "name": "American Express",
-      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/graphite-business-cash-unlimited-card/65147/"
+      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/graphite-business-cash-unlimited-card/65147/",
+      "notes": "Official Amex page (2026-10-19): $1,500 cash back after $50,000 in purchases within 6 months; $295 annual fee; unlimited 2% cash back."
     },
     {
       "url": "https://www.doctorofcredit.com/american-express-graphite-business-cash-unlimited-card-1500-bonus-295-annual-fee/",
       "notes": "DoC launch/offer tracking"
+    },
+    {
+      "url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/sbs-small-business/graphite-business-cash-unlimited-06-30-2026.pdf",
+      "notes": "Official Amex Card Member Agreement (06/30/2026): Foreign Transaction fee None."
     }
   ],
   "hotel_program": null,
@@ -69,7 +79,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-03T03:19:54.149Z",
+  "last_updated": "2026-10-19",
   "welcome_bonus": {
     "amount": 1500,
     "type": "cash",
@@ -77,6 +87,6 @@
     "source": "doctorofcredit/uscreditcardguide/americanexpress",
     "last_updated": "2026-05-07"
   },
-  "last_verified": "2026-05-08T05:47:54.573699+00:00",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.947000+00:00"
 }
