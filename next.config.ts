@@ -63,6 +63,8 @@ const nextConfig: NextConfig = {
       ["bilt-palladian", "bilt-palladium"],
       // Stale duplicate merged 2026-10-02 (see lib/card-aliases.ts).
       ["us-bank-altitude-connect-biz", "us-bank-biz-altitude-connect"],
+      // Retired product removed 2026-10-19; closest current U.S. Bank flat-rate business card (see lib/card-aliases.ts).
+      ["us-bank-altitude-go-biz", "us-bank-biz-essentials"],
     ] as const;
 
     return legacyCardRedirects.flatMap(([from, to]) => [

@@ -2314,12 +2314,6 @@
       "official": "https://www.upgrade.com/triple-cash"
     }
   },
-  "us-bank-altitude-go-biz": {
-    "issuer": "us_bank",
-    "sources": {
-      "official": "https://www.usbank.com/business/altitude-go"
-    }
-  },
   "us-bank-altitude-go-secured": {
     "issuer": "us_bank",
     "sources": {
