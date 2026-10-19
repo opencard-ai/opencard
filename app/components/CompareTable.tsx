@@ -6,6 +6,7 @@ import { Check, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import type { CreditCard, RecurringCredit } from "@/lib/cards";
 import { formatWelcomeBonus } from "@/lib/welcome-offer";
+import { knownNoForeignFee } from "@/lib/foreign-fee";
 
 interface CompareTableProps {
   cards: CreditCard[];
@@ -60,7 +61,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
       benefitsCredits: "Benefits & Credits",
       credits: "Annual Credits",
       hotelStatus: "Hotel Status", loungeAccess: "Lounge Access", otherBenefits: "Other Benefits",
-      insurance: "Insurance", noAf: "Waived", yes: "Yes", none: "—",
+      insurance: "Insurance", noAf: "Waived", yes: "Yes", none: "—", noFx: "None", fxNotListed: "Not listed",
       firstYearValue: "First-year value",
       firstYearHint: "Welcome offer + annual credits − annual fee",
       viewDetails: "Details",
@@ -73,7 +74,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
       benefitsCredits: "福利與回饋",
       credits: "年費回饋",
       hotelStatus: "飯店會籍", loungeAccess: "貴賓室", otherBenefits: "其他福利",
-      insurance: "保險", noAf: "免費", yes: "有", none: "無",
+      insurance: "保險", noAf: "免費", yes: "有", none: "無", noFx: "無", fxNotListed: "未列出",
       firstYearValue: "首年淨值",
       firstYearHint: "開卡禮 + 年費回饋 − 年費",
       viewDetails: "詳情",
@@ -86,7 +87,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
       benefitsCredits: "福利与回馈",
       credits: "年费回馈",
       hotelStatus: "酒店会籍", loungeAccess: "贵宾厅", otherBenefits: "其他福利",
-      insurance: "保险", noAf: "免费", yes: "有", none: "—",
+      insurance: "保险", noAf: "免费", yes: "有", none: "—", noFx: "无", fxNotListed: "未列出",
       firstYearValue: "首年净值",
       firstYearHint: "开卡奖励 + 年费回馈 − 年费",
       viewDetails: "详情",
@@ -99,7 +100,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
       benefitsCredits: "Beneficios y créditos",
       credits: "Créditos anuales",
       hotelStatus: "Estatus de hotel", loungeAccess: "Acceso a salones", otherBenefits: "Otros beneficios",
-      insurance: "Seguro", noAf: "Sin cuota", yes: "Sí", none: "—",
+      insurance: "Seguro", noAf: "Sin cuota", yes: "Sí", none: "—", noFx: "Ninguna", fxNotListed: "No indicado",
       firstYearValue: "Valor primer año",
       firstYearHint: "Bono + créditos anuales − cuota",
       viewDetails: "Detalles",
@@ -203,9 +204,13 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
             <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10">{l.foreignFee}</td>
             {cards.map((card) => (
               <td key={card.card_id} className="py-3 px-4">
-                <span className={card.foreign_transaction_fee === 0 ? "text-emerald-600 font-medium" : "text-red-500"}>
-                  {card.foreign_transaction_fee === 0 ? l.noAf : formatCurrency(card.foreign_transaction_fee)}
-                </span>
+                {knownNoForeignFee(card) ? (
+                  <span className="text-emerald-600 font-medium">{l.noFx}</span>
+                ) : card.foreign_transaction_fee > 0 ? (
+                  <span className="text-red-500">{card.foreign_transaction_fee}%</span>
+                ) : (
+                  <span className="text-slate-400">{l.fxNotListed}</span>
+                )}
               </td>
             ))}
           </tr>

@@ -1,5 +1,6 @@
 import { getOpenCards, type CreditCard } from "@/lib/cards";
 import { welcomeBonusDollarFallback, welcomeBonusKind } from "@/lib/welcome-offer";
+import { knownNoForeignFee } from "@/lib/foreign-fee";
 
 export interface UserPreferences {
   rewardTypes: string[];       // ["travel", "cashback", "points"]
@@ -95,7 +96,7 @@ function evaluateCard(card: CreditCard, prefs: UserPreferences): { score: number
   }
 
   // === 6. FOREIGN TRANSACTION FEE ===
-  if (prefs.internationalUse && card.foreign_transaction_fee === 0) {
+  if (prefs.internationalUse && knownNoForeignFee(card)) {
     score += 8;
     reasons.push("No foreign transaction fee");
   }

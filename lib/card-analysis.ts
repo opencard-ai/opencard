@@ -10,6 +10,7 @@ import type { CreditCard, EarningRate, RecurringCredit } from "@/lib/cards";
 import { getCpp } from "@/lib/cpp-rates";
 import { welcomeBonusKind } from "@/lib/welcome-offer";
 import { isIndexableCard } from "@/lib/indexable-cards";
+import { knownNoForeignFee } from "@/lib/foreign-fee";
 
 export type FaqItem = { question: string; answer: string };
 export type Comparison = { cardId: string; name: string; reason: string };
@@ -251,13 +252,8 @@ function comparisonReason(a: Profile, b: Profile): string {
   return `${b.card.issuer}, ${fee}; earns ${earn}${extra}.`;
 }
 
-/**
- * foreign_transaction_fee defaults to 0 in many records, so 0 alone is not
- * evidence. Only claim "no FX fee" when the record is tagged for it.
- */
-export function knownNoForeignFee(card: CreditCard): boolean {
-  return card.foreign_transaction_fee === 0 && (card.tags || []).includes("no-foreign-transaction-fee");
-}
+/** Re-exported so existing imports keep working; logic lives in lib/foreign-fee. */
+export { knownNoForeignFee };
 
 export function buildCardAnalysis(card: CreditCard, allCards: CreditCard[], preferredAlternatives: string[] = []): CardAnalysis {
   const p = profile(card);
