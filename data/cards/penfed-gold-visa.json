@@ -54,19 +54,20 @@
     "return_protection": null
   },
   "tags": [
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://www.penfed.org/credit-cards/gold-visa",
-      "notes": "Official PenFed page"
+      "notes": "Official PenFed page | Official card page: No Foreign Transaction Fees (checked 2026-10-19)."
     },
     {
       "url": "https://www.nerdwallet.com/credit-cards/learn/penfed-gold",
       "notes": "NerdWallet review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.993Z",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "Primarily a low APR card (0% for 15 months) rather than a rewards card. $0 annual fee, no foreign transaction fees. Cell phone protection up to $500/claim.",
   "hotel_program": null,

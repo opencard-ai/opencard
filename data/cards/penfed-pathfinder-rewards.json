@@ -61,19 +61,20 @@
   },
   "tags": [
     "cash-back",
-    "premium"
+    "premium",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://www.penfed.org/credit-cards/pathfinder-rewards-visa",
-      "notes": "Official PenFed page"
+      "notes": "Official PenFed page | Official card page: No Foreign Transaction Fees (checked 2026-10-19)."
     },
     {
       "url": "https://money.usnews.com/credit-cards/penfed/penfed-pathfinder-rewards-visa-signature-card",
       "notes": "U.S. News review"
     }
   ],
-  "last_updated": "2026-10-03T03:19:54.149Z",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "Annual fee waived for Honors Advantage members (those with qualifying PenFed products). Strong 4x on travel and 3x on dining. Points worth ~1.25 cents each.",
   "hotel_program": null,

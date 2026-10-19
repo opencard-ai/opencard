@@ -68,19 +68,20 @@
   "tags": [
     "cash-back",
     "no-annual-fee",
-    "premium"
+    "premium",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://www.penfed.org/credit-cards/platinum-rewards-visa",
-      "notes": "Official PenFed page"
+      "notes": "Official PenFed page | Official card page: No Foreign Transaction Fees (checked 2026-10-19)."
     },
     {
       "url": "https://www.cnbc.com/select/penfed-platinum-rewards-card-review/",
       "notes": "CNBC review"
     }
   ],
-  "last_updated": "2026-04-26T04:02:55.594292Z",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "No annual fee. Strong 5x gas and 3x groceries/dining. Points redeemable for gift cards, travel, or cash.",
   "hotel_program": null,
