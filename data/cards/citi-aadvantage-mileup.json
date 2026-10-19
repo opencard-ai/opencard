@@ -4,7 +4,7 @@
   "issuer": "Citi",
   "network": "mastercard",
   "annual_fee": 0,
-  "foreign_transaction_fee": 0,
+  "foreign_transaction_fee": 3,
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 15000,
@@ -73,7 +73,8 @@
   ],
   "sources": [
     {
-      "url": "https://creditcards.aa.com/credit-cards/citi-mileup-card-american-airlines-direct/"
+      "url": "https://creditcards.aa.com/credit-cards/citi-mileup-card-american-airlines-direct/",
+      "notes": "Official Citi/AA card page pricing, checked 2026-10-19: foreign transaction fee 3%."
     },
     {
       "url": "https://www.forbes.com/advisor/credit-cards/reviews/american-airlines-aadvantage-mileup-card/",
@@ -84,12 +85,12 @@
       "notes": "70k offer reported"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.975Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-06-06",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.975000+00:00"
 }
