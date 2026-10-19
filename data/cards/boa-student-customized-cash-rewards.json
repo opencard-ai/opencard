@@ -37,6 +37,10 @@
       {
         "name": "Fraud Protection",
         "description": "Zero Liability protection for unauthorized transactions"
+      },
+      {
+        "name": "Intro APR",
+        "description": "0% intro APR for the first 15 billing cycles on purchases and on balance transfers made within the first 60 days; then 17.74%–27.74% variable APR. 3% intro balance transfer fee for 60 days, then 5%."
       }
     ]
   },
@@ -60,14 +64,14 @@
   "sources": [
     {
       "url": "https://www.bankofamerica.com/credit-cards/products/student-cash-back-credit-card/",
-      "notes": "Official BOA Page"
+      "notes": "Official BOA Page | Checked 2026-10-19: $200 after $1,000 in 90 days; 3% + 3% first-year choice category, 2% grocery/wholesale, 1% other; 0% intro APR 15 billing cycles, then 17.74%–27.74%; no annual fee."
     },
     {
       "url": "https://www.forbes.com/advisor/credit-cards/reviews/bank-of-america-cash-rewards-credit-card-for-students/",
       "notes": "Forbes review"
     }
   ],
-  "last_updated": "2026-04-27T04:16:50.948Z",
+  "last_updated": "2026-10-19",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
