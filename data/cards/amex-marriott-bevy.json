@@ -107,9 +107,13 @@
     {
       "url": "https://www.doctorofcredit.com/increased-signup-bonuses-on-american-express-marriott-brilliant-bevy-and-business-cards/",
       "notes": "DoC best current sign-up bonus list"
+    },
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/card-application/apply/prospect/terms/marriott-bonvoy-bevy-card/25330-10-0",
+      "notes": "Official Amex offer terms, checked 2026-10-19: welcome-offer eligibility wording (Amex does not use Chase 5/24)."
     }
   ],
-  "last_updated": "2026-10-01T12:00:00.000Z",
+  "last_updated": "2026-10-19",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -120,8 +124,16 @@
   "application_rules": {
     "rules": [
       {
-        "rule": "5/24 rule",
-        "description": "Cannot be approved if 5 or more new credit cards opened in the past 24 months"
+        "rule": "Welcome offer eligibility (card family)",
+        "description": "You may not be eligible to receive a welcome offer if you have or have had this Card, the Marriott Bonvoy Brilliant® American Express® Card or previous versions of these Cards."
+      },
+      {
+        "rule": "Welcome offer eligibility (other factors)",
+        "description": "You also may not be eligible to receive a welcome offer based on various factors, such as your history with credit card balance transfers, your history as an American Express Card Member, the number of credit cards that you have opened and closed and other factors."
+      },
+      {
+        "rule": "Welcome offer eligibility (Chase/J.P. Morgan Marriott cards)",
+        "description": "Welcome offer not available to applicants who have or have had certain Chase/J.P. Morgan Marriott or Ritz-Carlton cards in the last 30 days, acquired certain Chase Marriott Bonvoy cards in the last 90 days, or received a new Card Member bonus or upgrade offer on certain Chase Marriott Bonvoy cards in the last 24 months (see Amex offer terms for the full card list)."
       }
     ]
   },
@@ -129,7 +141,7 @@
   "_no_credits_found": true,
   "_no_credits_note": "Marriott Bevy ($250 AF) — primary value is Free Night after $15k spend (conditional, excluded), 15 Elite Night Credits (qualitative), Marriott Gold Elite status (qualitative), 4x grocery/dining earning (rate not credit). No fixed-USD recurring credits published. Verified 2026-04-27 vs amex.com.",
   "last_scraped": "2026-04-24T17:26:46.246653",
-  "last_verified": "2026-10-01",
+  "last_verified": "2026-10-19",
   "next_review": "2026-10-31T00:00:00.000Z",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
