@@ -4,7 +4,7 @@
   "issuer": "Wells Fargo",
   "network": "visa",
   "annual_fee": 0,
-  "foreign_transaction_fee": 0,
+  "foreign_transaction_fee": 3,
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 100,
@@ -49,6 +49,10 @@
   ],
   "sources": [
     {
+      "url": "https://www.wellsfargo.com/credit-cards/documents/active-cash-terms/",
+      "notes": "Official Wells Fargo terms, checked 2026-10-19: foreign transaction fee 3%."
+    },
+    {
       "url": "https://creditcards.wellsfargo.com/active-cash-credit-card/",
       "notes": "Official Wells Fargo page checked 2026-10-02: $100 cash rewards bonus after $500 in 3 months; unlimited 2% cash rewards; $0 annual fee."
     },
@@ -62,8 +66,8 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-02",
-  "last_verified": "2026-10-02",
+  "last_updated": "2026-10-19",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:50.010000+00:00",
   "featured": true
 }
