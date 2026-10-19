@@ -4,7 +4,7 @@
   "issuer": "American Express",
   "network": "amex",
   "annual_fee": 0,
-  "foreign_transaction_fee": 0,
+  "foreign_transaction_fee": 2.7,
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 15000,
@@ -54,6 +54,10 @@
   "recurring_credits": [],
   "sources": [
     {
+      "url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/sbs-small-business/blue-business-plus-cc-06-30-2026.pdf",
+      "notes": "Amex Card Member Agreement (as of 06/30/2026), checked 2026-10-19: foreign transaction fee 2.7%."
+    },
+    {
       "url": "https://www.uscreditcardguide.com/amex-blue-business-plus/",
       "notes": "USCCG card review (LLM-friendly static HTML)"
     },
@@ -67,8 +71,8 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-03T03:19:54.149Z",
-  "last_verified": "2026-05-08T05:47:54.573699+00:00",
+  "last_updated": "2026-10-19",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.940000+00:00",
   "featured": true
 }
