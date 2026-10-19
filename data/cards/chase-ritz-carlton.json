@@ -80,6 +80,10 @@
   },
   "tags": [],
   "sources": [
+    {
+      "url": "https://creditcards.chase.com/all-credit-cards",
+      "notes": "Official Chase all-credit-cards list (2026-10-19): no Ritz-Carlton card listed."
+    },
     "Doctor of Credit",
     "Chase Official (archived)"
   ],
@@ -98,8 +102,8 @@
     "notes": "This card has been discontinued by Chase. Existing cardholders can continue using the card. Contact Chase to discuss product change options."
   },
   "discontinued": true,
-  "discontinued_notes": "Discontinued to new applicants. Existing cardholders may keep the card open. Marriott Bonvoy Boundless is a similar alternative with lower annual fee ($95).",
-  "last_updated": "2026-04-29T06:08:32.039Z",
+  "discontinued_notes": "Closed to new applicants: the Ritz-Carlton card is not on Chase's official all-credit-cards list (checked 2026-10-19). Existing cardholders keep it; it is generally available only by product change from another Chase Marriott card (press reports).",
+  "last_updated": "2026-10-19",
   "recurring_credits": [
     {
       "credit_key": "300-travel-credit",
@@ -122,5 +126,6 @@
     }
   ],
   "last_verified": "2026-04-17T19:04:00.000Z",
-  "next_review": "2026-07-16T19:04:00+00:00"
+  "next_review": "2026-07-16T19:04:00+00:00",
+  "status": "discontinued"
 }
