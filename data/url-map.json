@@ -2332,6 +2332,12 @@
       "official": "https://www.usbank.com/business/altitude-connect"
     }
   },
+  "us-bank-biz-essentials": {
+    "issuer": "us_bank",
+    "sources": {
+      "official": "https://www.usbank.com/business-banking/business-credit-cards/business-essentials-credit-card.html"
+    }
+  },
   "us-bank-biz-leverage-visa": {
     "issuer": "us_bank",
     "sources": {
