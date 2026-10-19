@@ -4,7 +4,7 @@
   "issuer": "TD Bank",
   "network": "visa",
   "annual_fee": 0,
-  "foreign_transaction_fee": 0,
+  "foreign_transaction_fee": 3,
   "credit_required": "Good",
   "welcome_offer": {
     "spending_requirement": 1500,
@@ -47,18 +47,22 @@
   ],
   "sources": [
     {
+      "url": "https://www.td.com/content/dam/tdb/document/pdf/personal-banking/tddoubleup-personal-terms-en.pdf",
+      "notes": "Official TD terms PDF, checked 2026-10-19: foreign transaction fee 3%."
+    },
+    {
       "url": "https://www.td.com/us/en/personal-banking/credit-cards/double-up",
       "notes": "Official TD page checked 2026-10-02: unlimited 2% Cash Back; $200 after $1,500 in 90 days; no annual fee."
     }
   ],
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "status": "active",
-  "notes": "Simple 2% flat-rate cash back. No annual fee. No foreign transaction fees. Strong competitor to other 2% cards.",
+  "notes": "Simple 2% flat-rate cash back. No annual fee. Strong competitor to other 2% cards.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-10-02",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.997000+00:00"
 }
