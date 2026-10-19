@@ -117,7 +117,7 @@ function profile(card: CreditCard): Profile {
   const rates = card.earning_rates || [];
   const base = rates.find(isBase);
   const baseRate = base ? base.rate : rates.length ? Math.min(...rates.map((r) => r.rate)) : 1;
-  const bonus = rates.filter((r) => !isBase(r) && !isPortal(r) && r.rate > baseRate);
+  const bonus = rates.filter((r) => !isBase(r) && !isPortal(r) && !r.limited_time && r.rate > baseRate);
   const top = [...bonus].sort((a, b) => b.rate - a.rate || a.category.localeCompare(b.category))[0];
   const tags = card.tags || [];
   const name = card.name.toLowerCase();

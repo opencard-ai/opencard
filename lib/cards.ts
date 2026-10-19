@@ -12,6 +12,9 @@ export interface EarningRate {
   rate: number;
   program?: string;
   notes?: string;
+  /** Temporary promo rate (e.g. Ink Unlimited's Lyft 5% through 2027-09-30): shown, never used as the card's headline "up to" rate. */
+  limited_time?: boolean;
+  ends?: string;
 }
 
 export interface SelectableRewards {
