@@ -39,6 +39,10 @@
       {
         "name": "Fraud Protection",
         "description": "零責任防盜刷保障"
+      },
+      {
+        "name": "Intro APR",
+        "description": "0% intro APR for the first 15 billing cycles on purchases and on balance transfers made within the first 60 days; then 17.74%–27.74% variable APR. 3% intro balance transfer fee for 60 days, then 5%."
       }
     ]
   },
@@ -65,7 +69,7 @@
     },
     {
       "url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
-      "notes": "Official BOA Page (SPA — fallback only) | Official BofA page, rates & terms, checked 2026-10-19: foreign transaction fee 3%. | Official page checked 2026-10-19: automatic 2% at grocery stores and wholesale clubs; 3% + 3% first-year bonus in the choice category."
+      "notes": "Official BOA Page (SPA — fallback only) | Official BofA page, rates & terms, checked 2026-10-19: foreign transaction fee 3%. | Official page checked 2026-10-19: automatic 2% at grocery stores and wholesale clubs; 3% + 3% first-year bonus in the choice category. | Checked 2026-10-19: 0% intro APR 15 billing cycles (purchases + BTs within 60 days), then 17.74%–27.74%; $200 after $1,000 in 90 days."
     },
     {
       "url": "https://info.bankofamerica.com/en/rewards/bofa-rewards",
