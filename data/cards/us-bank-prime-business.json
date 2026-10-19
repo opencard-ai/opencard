@@ -1,0 +1,90 @@
+{
+  "card_id": "us-bank-prime-business",
+  "name": "Prime Business World Elite Mastercard®",
+  "issuer": "U.S. Bank",
+  "network": "mastercard",
+  "annual_fee": 0,
+  "foreign_transaction_fee": 0,
+  "credit_required": "Good to Excellent",
+  "welcome_offer": {
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "estimated_value": 100,
+    "point_program": "Amazon Gift Card",
+    "description": "$100 or greater Amazon gift card or statement credit (amount and any spend requirement per the offer shown at application).",
+    "offer_status": "public",
+    "confidence": "medium",
+    "notes": [
+      "Official U.S. Bank page (2026-10-19) states only \"$100 or greater\"; exact amount varies by offer."
+    ],
+    "last_verified": "2026-10-19"
+  },
+  "earning_rates": [
+    {
+      "category": "Amazon.com, Amazon Business, AWS and Whole Foods Market",
+      "rate": 5,
+      "notes": "5% back on the first $150,000 in net purchases at Amazon-covered sites per calendar year (all cardmembers), then 1%."
+    },
+    {
+      "category": "Prepaid travel through U.S. Bank Travel Center",
+      "rate": 5,
+      "notes": "5% back on prepaid travel booked in the U.S. Bank Travel Center."
+    },
+    {
+      "category": "Top 3 spending categories outside Amazon (automatic)",
+      "rate": 2,
+      "notes": "2% back on your top 3 eligible categories each billing cycle outside Amazon-owned brands, on the first $150,000 per calendar year, then 1%."
+    },
+    {
+      "category": "All other eligible purchases",
+      "rate": 1,
+      "notes": "1% back on all other eligible purchases."
+    }
+  ],
+  "travel_benefits": {
+    "other_benefits": []
+  },
+  "fhr_thc": {
+    "fhr_eligible": false,
+    "thc_eligible": false
+  },
+  "insurance": {
+    "rental_insurance": null,
+    "trip_delay": null,
+    "trip_cancellation": null,
+    "purchase_protection": null,
+    "extended_warranty": null,
+    "return_protection": null,
+    "baggage_delay": null,
+    "lost_luggage": null,
+    "cell_phone": null,
+    "travel_accident": null
+  },
+  "tags": [
+    "business",
+    "cash-back",
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
+  ],
+  "sources": [
+    {
+      "url": "https://www.usbank.com/business-banking/business-credit-cards/amazon-business-credit-cards.html",
+      "notes": "Official U.S. Bank Amazon Business cards page (2026-10-19): $0 annual fee, no foreign transaction fees, 5%/3% Amazon + Travel Center, 2% top 3 categories, 1% other, $150,000 annual caps, \"$100 or greater\" welcome offer; issuer U.S. Bank National Association."
+    },
+    {
+      "url": "https://www.americanexpress.com/us/customer-service/faq.amazon-program-update.html",
+      "notes": "Official Amex notice: replaces the American Express Amazon Business Prime Card on August 14, 2026."
+    }
+  ],
+  "last_updated": "2026-10-19",
+  "status": "active",
+  "notes": "U.S. Bank successor (2026-08-14) to the Amazon Business Prime Card. Requires an eligible Prime membership for the 5% tier.",
+  "hotel_program": null,
+  "application_rules": {
+    "rules": [],
+    "notes": null
+  },
+  "recurring_credits": [],
+  "last_verified": "2026-10-19"
+}

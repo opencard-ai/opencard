@@ -2344,6 +2344,12 @@
       "official": "https://www.usbank.com/business/triple-cash"
     }
   },
+  "us-bank-prime-business": {
+    "issuer": "us_bank",
+    "sources": {
+      "official": "https://www.usbank.com/business-banking/business-credit-cards/amazon-business-credit-cards.html"
+    }
+  },
   "us-bank-smartly-visa": {
     "issuer": "us_bank",
     "sources": {
