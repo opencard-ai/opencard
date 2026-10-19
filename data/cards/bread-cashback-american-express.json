@@ -63,15 +63,16 @@
   },
   "tags": [
     "cash-back",
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://www.breadfinancial.com/en/bread-rewards-credit-card.html",
-      "notes": "Official Bread Financial page"
+      "notes": "Official Bread Financial page | Official card page: No foreign transaction fees³ (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.958Z",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "Bread Financial's rewards Amex. No annual fee. 3x on gas, groceries, dining, and utilities. Bread Financial also issues store cards via Comenity.",
   "hotel_program": null,
