@@ -66,15 +66,16 @@
   },
   "tags": [
     "hotel",
-    "no-annual-fee"
+    "no-annual-fee",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://creditcards.wellsfargo.com/wells-fargo-choice-privileges-credit-cards/",
-      "notes": "Official Wells Fargo page"
+      "notes": "Official Wells Fargo page | Official card page: NO FOREIGN TRANSACTION FEE (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.973Z",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "No annual fee hotel card. Strong 60K welcome offer (~$420 value). 10x at Choice Hotels. Issued by Wells Fargo.",
   "hotel_program": null,

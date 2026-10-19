@@ -54,11 +54,13 @@
     "trip_cancellation": null,
     "return_protection": null
   },
-  "tags": [],
+  "tags": [
+    "no-foreign-transaction-fee"
+  ],
   "sources": [
     {
       "url": "https://creditcards.wellsfargo.com/one-key-plus-credit-card/",
-      "notes": "Official Wells Fargo product page."
+      "notes": "Official Wells Fargo product page. | Official card page: No foreign transaction fee (checked 2026-10-19)."
     }
   ],
   "hotel_program": null,
@@ -66,7 +68,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-07-05T15:10:00.000-07:00",
+  "last_updated": "2026-10-19",
   "last_verified": "2026-07-05T15:10:00.000-07:00",
   "next_review": "2026-08-04T15:10:00.000-07:00",
   "recurring_credits": [

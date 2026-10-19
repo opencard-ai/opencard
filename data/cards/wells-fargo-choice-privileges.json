@@ -81,12 +81,13 @@
   },
   "tags": [
     "choice-privileges",
-    "hotel"
+    "hotel",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://creditcards.wellsfargo.com/choice-hotels-privileges-select-mastercard/",
-      "notes": "Official Wells Fargo Choice Privileges Select Mastercard page; verified via search snippets and page title 2026-06-13."
+      "notes": "Official Wells Fargo Choice Privileges Select Mastercard page; verified via search snippets and page title 2026-06-13. | Official card page: No foreign transaction fee (checked 2026-10-19)."
     },
     {
       "url": "https://creditcards.wellsfargo.com/wells-fargo-choice-privileges-credit-cards/",
@@ -106,7 +107,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-06-14T03:45:00.000Z",
+  "last_updated": "2026-10-19",
   "last_verified": "2026-06-14T03:45:00.000Z",
   "next_review": "2026-09-12T03:45:00.000Z",
   "recurring_credits": [],

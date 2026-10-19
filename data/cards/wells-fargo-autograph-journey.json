@@ -68,11 +68,17 @@
     "cell_phone": null,
     "travel_accident": null
   },
-  "tags": [],
+  "tags": [
+    "no-foreign-transaction-fee"
+  ],
   "sources": [
     {
       "url": "https://creditcards.wellsfargo.com/autograph-journey-visa-credit-card/",
       "notes": "Official Wells Fargo product page."
+    },
+    {
+      "url": "https://www.wellsfargo.com/credit-cards/documents/autograph-journey-visa-terms/?FPID=0127E1I0P10000&product_code=CC&subproduct_code=MT&cx_nm=CXNAME_CSMPD_CG&sub_channel=WEB&vendor_code=WF&lp_cx_nm=CXNAME_CSMDUAL&utm_medium=www-redirect&utm_source=credit-cards--autograph-journey-visa--terms",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
   "hotel_program": null,
@@ -92,7 +98,7 @@
       "source": "https://creditcards.wellsfargo.com/autograph-journey-card/"
     }
   ],
-  "last_updated": "2026-07-05T15:10:00.000-07:00",
+  "last_updated": "2026-10-19",
   "last_verified": "2026-07-05T15:10:00.000-07:00",
   "next_review": "2026-08-04T15:10:00.000-07:00"
 }

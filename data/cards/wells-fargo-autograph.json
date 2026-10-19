@@ -81,7 +81,8 @@
   "tags": [
     "no-annual-fee",
     "premium",
-    "transferable"
+    "transferable",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -91,9 +92,13 @@
     {
       "url": "https://thepointsguy.com/credit-cards/wells-fargo-autograph-tpg-awards-2026/",
       "notes": "TPG 2026 No Annual Fee Card of the Year"
+    },
+    {
+      "url": "https://www.wellsfargo.com/credit-cards/documents/autograph-visa-terms/?FPID=012988I6P10000&product_code=CC&subproduct_code=AU&cx_nm=CXNAME_CSMPD_CG&sub_channel=WEB&vendor_code=WF&lp_cx_nm=CXNAME_CSMDUAL&utm_medium=www-redirect&utm_source=credit-cards--autograph-visa--terms",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-04-30T03:30:01.039Z",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "Named TPG's 2026 No Annual Fee Card of the Year. 3x on travel, dining, gas, transit, streaming. $50 annual airline credit. Strong travel protections. Points worth ~1 cent each.",
   "hotel_program": null,
