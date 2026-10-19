@@ -4,7 +4,7 @@
   "issuer": "Chase",
   "network": "visa",
   "annual_fee": 49,
-  "foreign_transaction_fee": 0,
+  "foreign_transaction_fee": 3,
   "credit_required": "Good",
   "welcome_offer": {
     "spending_requirement": 500,
@@ -72,6 +72,10 @@
   "tags": [],
   "sources": [
     {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC63172.html",
+      "notes": "Official Chase Pricing & Terms, checked 2026-10-19: foreign transaction fee 3%."
+    },
+    {
       "url": "https://creditcards.chase.com/rewards-credit-cards/disney/premier",
       "notes": "Official Chase page checked 2026-10-02: $49 annual fee; $300 offer ($200 Disney eGift on approval + $100 after $500 in 3 months)."
     }
@@ -81,8 +85,8 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-02",
-  "last_verified": "2026-10-02",
+  "last_updated": "2026-10-19",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.965000+00:00",
   "recurring_credits": [
     {
