@@ -4,7 +4,7 @@
   "issuer": "Bank of America",
   "network": "mastercard",
   "annual_fee": 0,
-  "foreign_transaction_fee": 0,
+  "foreign_transaction_fee": 3,
   "credit_required": "Good",
   "welcome_offer": {
     "spending_requirement": 5000,
@@ -75,19 +75,23 @@
   ],
   "sources": [
     {
+      "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/terms-and-conditions/?campaignid=4078728&productoffercode=BS&locale=en_US",
+      "notes": "Official BofA business terms (International Transaction fee), checked 2026-10-19: foreign transaction fee 3%."
+    },
+    {
       "url": "https://www.uscreditcardguide.com/boa-cash-rewards-business-credit-card/",
       "notes": "USCCG primary review"
     },
     {
-      "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/cash-rewards-business-credit-card/",
-      "notes": "Official BOA Business Page (SPA — fallback only)"
+      "url": "https://business.bankofamerica.com/en/credit-cards/business-advantage-customized-cash-rewards",
+      "notes": "Official BOA Business Page (SPA — fallback only) | Official BofA business card page, checked 2026-10-19 (replaces redirecting URL)."
     },
     {
       "url": "https://upgradedpoints.com/news/bank-of-america-business-cards-elevated-offers/",
       "notes": "Elevated $500 offer Mar 2026"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.956Z",
+  "last_updated": "2026-10-19",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
@@ -97,6 +101,6 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.956Z",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.956000+00:00"
 }
