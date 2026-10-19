@@ -2320,6 +2320,12 @@
       "official": "https://www.usbank.com/altitude-go-secured"
     }
   },
+  "us-bank-amazon-business": {
+    "issuer": "us_bank",
+    "sources": {
+      "official": "https://www.usbank.com/business-banking/business-credit-cards/amazon-business-credit-cards.html"
+    }
+  },
   "us-bank-biz-altitude-connect": {
     "issuer": "us_bank",
     "sources": {
