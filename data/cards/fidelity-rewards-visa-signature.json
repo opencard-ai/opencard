@@ -50,12 +50,13 @@
   "tags": [
     "cash-back",
     "no-annual-fee",
-    "premium"
+    "premium",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
       "url": "https://www.fidelity.com/spend-save/visa-signature-card",
-      "notes": "Fidelity official page"
+      "notes": "Fidelity official page | Official card page: No annual fee, foreign transaction fee, caps, limits, or expirations plus Zero Fraud Liabi (checked 2026-10-19)."
     },
     {
       "url": "https://www.fidelityrewards.com/credit/benefits.do",
@@ -66,7 +67,7 @@
       "notes": "Forbes Advisor review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.982Z",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "Effective April 22, 2025, some changes to the rewards program were announced — cardholders should refer to their November statement or new account materials. The card requires a Fidelity account to redeem rewards at best rate (2%). Redemption to non-Fidelity accounts caps at 1.5%. No annual fee and no foreign transaction fees.",
   "hotel_program": null,
