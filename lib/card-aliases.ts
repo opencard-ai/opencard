@@ -7,6 +7,8 @@
 export const CARD_ID_ALIASES: Readonly<Record<string, string>> = {
   // Stale duplicate merged 2026-10-02.
   "us-bank-altitude-connect-biz": "us-bank-biz-altitude-connect",
+  // Retired product removed 2026-10-19; Wells Fargo business cards page now lands on Signify Business Cash
+  "wells-fargo-active-cash-biz": "wells-fargo-signify-biz-cash",
   // Retired product removed 2026-10-19; closest current U.S. Bank flat-rate business card
   "us-bank-altitude-go-biz": "us-bank-biz-essentials",
 };

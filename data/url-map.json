@@ -2362,12 +2362,6 @@
       "official": "https://www.walgreens.com/credit-card"
     }
   },
-  "wells-fargo-active-cash-biz": {
-    "issuer": "wells_fargo",
-    "sources": {
-      "official": "https://www.wellsfargo.com/active-cash-business"
-    }
-  },
   "wells-fargo-autograph-journey": {
     "issuer": "wells_fargo",
     "sources": {
