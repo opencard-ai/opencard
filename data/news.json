@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "title": "Giftcards.com: 10% Off Virtual Visa Giftcards With Code VISATREAT",
+      "url": "https://www.doctorofcredit.com/giftcards-com-10-off-visa-egiftcards-with-code-oktoberfun/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "giftcards.com"
+      ],
+      "ts": "2026-10-19T02:19:45.000Z",
+      "title_en": "Giftcards.com: 10% Off Virtual Visa Giftcards With Code VISATREAT",
+      "summary_en": "",
+      "title_zh": "Giftcards.com：使用代碼 VISATREAT 虛擬 Visa 禮品卡 10% 折扣",
+      "summary_zh": "Giftcards.com 透過使用代碼 VISATREAT 提供虛擬 Visa 禮品卡 10% 的折扣優惠。",
+      "title_es": "Giftcards.com: 10% de descuento en tarjetas de regalo virtuales Visa con código VISATREAT",
+      "summary_es": "Giftcards.com ofrece un 10% de descuento en tarjetas de regalo virtuales Visa al usar el código VISATREAT."
+    },
+    {
       "title": "Staples: No Purchase Fee On $200 Visa Gift Cards (10/18 – 10/24)",
       "url": "https://www.doctorofcredit.com/staples-no-purchase-fee-on-200-visa-gift-cards-10-31-11-6-limit-5/",
       "source": "Doctor of Credit",
@@ -209,19 +225,19 @@
       "summary_es": "Los habitantes de Iowa pueden obtener un bono de $300 al abrir una cuenta corriente en Community Bank & Trust."
     },
     {
-      "title": "[WI only] Summit Credit Union $200 Checking Bonus",
+      "title": "[WI only] Summit Credit Union $200/$300 Checking Bonus",
       "url": "https://www.doctorofcredit.com/wi-only-summit-credit-union-100-checking-bonus/",
       "source": "Doctor of Credit",
       "categories": [
         "Bank Accounts"
       ],
       "ts": "2026-10-17T19:55:44.000Z",
-      "title_en": "[WI only] Summit Credit Union $200 Checking Bonus",
+      "title_en": "[WI only] Summit Credit Union $200/$300 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[僅限威斯康辛州] Summit Credit Union $200 支票帳戶獎金",
-      "summary_zh": "此優惠僅適用於威斯康辛州的 Summit Credit Union 新客戶，開戶並滿足條件即可獲得 $200 獎金。",
-      "title_es": "Summit Credit Union – Bono de $200 por cuenta corriente (solo WI)",
-      "summary_es": "Summit Credit Union ofrece un bono de $200 por abrir una cuenta corriente en Wisconsin."
+      "title_zh": "[僅限 WI] Summit Credit Union $200/$300 支票帳戶獎金",
+      "summary_zh": "Summit Credit Union 為威斯康辛州居民提供最高 $300 的支票帳戶開戶獎金，視存款金額而定。",
+      "title_es": "[Solo WI] Summit Credit Union $200/$300 Bono por abrir cuenta corriente",
+      "summary_es": "Summit Credit Union ofrece un bono de $200 o $300 por abrir una cuenta corriente, válido solo en Wisconsin."
     },
     {
       "title": "[TN] US Community Credit Union $200 Checking Bonus",
@@ -239,33 +255,7 @@
       "summary_zh": "此優惠專為田納西州的 US Community Credit Union 客戶設計，滿足條件可獲得 $200 獎金。",
       "title_es": "US Community Credit Union – Bono de $200 por cuenta corriente (TN)",
       "summary_es": "US Community Credit Union ofrece un bono de $200 al abrir una cuenta corriente en Tennessee."
-    },
-    {
-      "title": "[IA, IL, IN, KS, MI, MN, MO, OH, NE and WI only] Associated Bank $600 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/il-in-mn-wi-only-associated-bank-500-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "credit card funding",
-        "direct deposit required",
-        "IL bank bonuses",
-        "in bank bonuses",
-        "ks bank bonuses",
-        "mi bank bonuses",
-        "mn bank bonuses",
-        "mo bank bonuses",
-        "oh bank bonuses",
-        "soft pull",
-        "wi bank bonuses"
-      ],
-      "ts": "2026-10-17T19:31:40.000Z",
-      "title_en": "[IA, IL, IN, KS, MI, MN, MO, OH, NE and WI only] Associated Bank $600 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[愛荷華州、伊利諾伊州、印第安納州、堪薩斯州、密西根州、明尼蘇達州、密蘇里州、俄亥俄州、內布拉斯加州及僅限威斯康辛州] Associated Bank $600 支票帳戶獎金",
-      "summary_zh": "Associated Bank 在指定州別提供的 $600 支票帳戶獎金，需在優惠期內完成開戶及滿足相關條件。",
-      "title_es": "Associated Bank – Bono de $600 por cuenta corriente (solo IA, IL, IN, KS, MI, MN, MO, OH, NE y WI)",
-      "summary_es": "Associated Bank ofrece un bono de $600 por abrir una cuenta corriente en varios estados del Medio Oeste."
     }
   ],
-  "fetched": "2026-10-18T20:08:13.203Z"
+  "fetched": "2026-10-19T08:08:20.356Z"
 }
