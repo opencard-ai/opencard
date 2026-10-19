@@ -36,7 +36,8 @@
   ],
   "tags": [
     "no-annual-fee",
-    "transferable"
+    "transferable",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -47,9 +48,13 @@
     },
     {
       "url": "https://onemileatatime.com/guides/bilt-blue-card/"
+    },
+    {
+      "url": "https://legal.cardless.com/rates_and_fees/bilt/rates_and_fees.pdf",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.954Z",
+  "last_updated": "2026-10-19",
   "travel_benefits": {
     "hotel_status": [],
     "lounge_access": [],

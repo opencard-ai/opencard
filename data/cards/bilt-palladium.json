@@ -40,7 +40,8 @@
     "Complimentary membership to Global Entry/TSA PreCheck (up to $120 statement credit)"
   ],
   "tags": [
-    "transferable"
+    "transferable",
+    "no-foreign-transaction-fee"
   ],
   "sources": [
     {
@@ -55,9 +56,13 @@
     },
     {
       "url": "https://www.nerdwallet.com/credit-cards/reviews/bilt-palladium"
+    },
+    {
+      "url": "https://legal.cardless.com/schumer/bilt/rates_and_fees.pdf",
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-09-29T12:00:00.000-07:00",
+  "last_updated": "2026-10-19",
   "travel_benefits": {
     "hotel_status": [],
     "lounge_access": [],
