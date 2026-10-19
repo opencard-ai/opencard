@@ -4,7 +4,7 @@
   "issuer": "U.S. Bank",
   "network": "visa",
   "annual_fee": 0,
-  "foreign_transaction_fee": 0,
+  "foreign_transaction_fee": 3,
   "credit_required": "Good to Excellent",
   "welcome_offer": {
     "spending_requirement": 1000,
@@ -69,7 +69,7 @@
   "sources": [
     {
       "url": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html",
-      "notes": "Official U.S. Bank Cash+ page; verified 2026-06-13."
+      "notes": "Official U.S. Bank Cash+ page; verified 2026-06-13. | Official U.S. Bank page; linked offer terms, checked 2026-10-19: foreign transaction fee 3%."
     },
     {
       "url": "https://rewards.usbank.com/benefits/card/CashPlusBenefits/program-rules?cardType=V",
@@ -80,7 +80,7 @@
       "notes": "NerdWallet secondary review."
     }
   ],
-  "last_updated": "2026-06-13T17:10:00.000Z",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "Choose and activate two 5% Cash+ categories quarterly; 5% cash back is capped on combined eligible purchases each quarter. Also choose one 2% everyday category.",
   "hotel_program": null,
@@ -88,7 +88,7 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-06-13T17:10:00.000Z",
+  "last_verified": "2026-10-19",
   "next_review": "2026-09-11T17:10:00.000Z",
   "selectable_rewards": {
     "activation_required": true,
