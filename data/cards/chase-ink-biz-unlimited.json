@@ -30,7 +30,9 @@
     {
       "category": "Lyft Rides",
       "rate": 5,
-      "notes": "Through September 30, 2027."
+      "notes": "Limited-time: 5% total cash back on Lyft rides through September 30, 2027 (1.5% base + 3.5% extra).",
+      "limited_time": true,
+      "ends": "2027-09-30"
     }
   ],
   "annual_credits": [],
@@ -75,7 +77,7 @@
   "sources": [
     {
       "url": "https://creditcards.chase.com/business-credit-cards/ink/unlimited",
-      "notes": "Official Chase product page checked 2026-10-02: $750 cash back after $6,000 in 3 months; $0 annual fee. | Checked 2026-10-19: APR 16.99%–24.99% after 0% intro for 12 months; Travel & purchase coverage lists only Auto Rental (primary for business), Travel and Emergency Assistance, Roadside Assistance, Purchase Protection and Extended Warranty (no trip cancellation/delay or baggage coverage)."
+      "notes": "Official Chase product page checked 2026-10-02: $750 cash back after $6,000 in 3 months; $0 annual fee. | Checked 2026-10-19: APR 16.99%–24.99% after 0% intro for 12 months; Travel & purchase coverage lists only Auto Rental (primary for business), Travel and Emergency Assistance, Roadside Assistance, Purchase Protection and Extended Warranty (no trip cancellation/delay or baggage coverage). | Official Chase page 2026-10-19: 5% total cash back on Lyft rides through 09/30/2027 (limited-time promotion)."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/chase-ink-card-showdown/",
