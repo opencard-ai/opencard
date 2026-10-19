@@ -93,15 +93,11 @@
       "notes": "Official Bank of America business Atmos Rewards page."
     },
     {
-      "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/alaska-airlines-business-credit-card/",
-      "notes": "Official BOA Business Page"
-    },
-    {
       "url": "https://www.doctorofcredit.com/bank-of-america-atmos-alaska-airlines-business-card-85000-miles/",
       "notes": "DoC 85K offer details"
     }
   ],
-  "last_updated": "2026-07-05T15:10:00.000-07:00",
+  "last_updated": "2026-10-19",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
