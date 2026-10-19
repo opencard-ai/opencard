@@ -75,13 +75,9 @@
     {
       "url": "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/02/new-bofa-rewards--program-to-reach-millions-more-clients-with-ex.html",
       "notes": "Bank of America newsroom announcement for 2026 BofA Rewards expansion."
-    },
-    {
-      "url": "https://www.bankofamerica.com/credit-cards/preferred-rewards-credit-cards/",
-      "notes": "Official eligible credit cards page; legacy Preferred Rewards bonus reference."
     }
   ],
-  "last_updated": "2026-06-14T03:45:00.000Z",
+  "last_updated": "2026-10-19",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
