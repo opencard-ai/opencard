@@ -3,8 +3,7 @@
   "name": "Capital One VentureOne Business",
   "issuer": "Capital One",
   "network": "visa",
-  "status": "transferred",
-  "discontinued_notes": "Rebranded to VentureOne Business in 2026. Capital One closed the Spark Miles family and migrated to Venture Business / VentureOne Business products. Existing cardholders converted automatically. Sources: TPG, DoC, CNBC 2026.",
+  "status": "active",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
@@ -12,7 +11,7 @@
     "spending_requirement": 4500,
     "time_period_months": 3,
     "bonus_points": 50000,
-    "description": "Earn 50,000 bonus miles once you spend $4,500 on purchases within the first 3 months of opening an account",
+    "description": "Earn a one-time bonus of 50,000 miles once you spend $4,500 on purchases within the first 3 months from account opening.",
     "point_program": "Capital One Miles",
     "estimated_value": 750
   },
@@ -46,12 +45,8 @@
   },
   "sources": [
     {
-      "url": "https://www.cardratings.com/credit-card/capital-one-spark-miles-select-for-business-review",
-      "notes": "CardRatings review: no brand loyalty required, flexible miles redemption"
-    },
-    {
-      "url": "https://www.capitalone.com/small-business/credit-cards/spark-miles/",
-      "notes": "Capital One official page: 50,000 mile bonus for $4,500 in 3 months"
+      "url": "https://www.capitalone.com/small-business/credit-cards/ventureone-business/",
+      "notes": "Official Capital One page 2026-10-19: VentureOne Business open to applicants; 50,000 bonus miles after $4,500 in the first 3 months; $0 annual fee."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/credit-cards-capital-one-spark-business-cards/",
@@ -60,7 +55,7 @@
   ],
   "notes": "No annual fee business travel card. 1.5X miles on all purchases (same earning as Spark Cash Select but in miles). 50,000 mile welcome bonus ($500 value). Miles are transferable to 15+ airline/hotel partners including British Airways, Avianca, and Flying Blue. Ideal for businesses that want travel rewards without paying an annual fee. Compare to Spark Cash Select if you prefer cash back.",
   "confidence": "high",
-  "last_updated": "2026-04-16T13:41:49.962Z",
+  "last_updated": "2026-10-19",
   "tags": [
     "no-annual-fee"
   ],
@@ -69,6 +64,6 @@
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.962Z",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.962000+00:00"
 }
