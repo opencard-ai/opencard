@@ -64,7 +64,7 @@
     },
     {
       "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/",
-      "notes": "Checked 2026-10-19: $0 intro annual fee first year, then $95; $250 after $3,000 in 6 months; only statement-credit benefit listed is the $120 Disney Streaming Credit (up to $10/month)."
+      "notes": "Checked 2026-10-19: $0 intro annual fee first year, then $95; $250 after $3,000 in 6 months; only statement-credit benefit listed is the $120 Disney Streaming Credit (up to $10/month). | Official Amex page 2026-10-19: Earn $250 Cash Back after you spend $3,000 in purchases in the first 6 months; $0 intro annual fee first year, then $95."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/reviews/blue-cash-preferred-american-express-credit-card-review/"
@@ -95,7 +95,7 @@
     }
   ],
   "welcome_offer": {
-    "bonus_points": 0,
+    "bonus_points": 250,
     "spending_requirement": 3000,
     "time_period_months": 6,
     "description": "Earn $250 cash back (Reward Dollars) after you spend $3,000 in purchases on your new Card in the first 6 months of Card Membership.",
