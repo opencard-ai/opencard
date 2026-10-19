@@ -39,7 +39,7 @@
     "other_benefits": [
       {
         "name": "Intro APR",
-        "description": "0% intro APR for 12 months from account opening on purchases. After that, 16.74%–24.74% variable APR."
+        "description": "0% intro APR for 12 months from account opening on purchases. After that, 16.99%–24.99% variable APR."
       },
       {
         "name": "Employee Cards",
@@ -57,12 +57,12 @@
   },
   "insurance": {
     "rental_insurance": "Primary",
-    "trip_delay": true,
-    "trip_cancellation": true,
+    "trip_delay": false,
+    "trip_cancellation": false,
     "purchase_protection": true,
     "extended_warranty": true,
-    "baggage_delay": true,
-    "lost_luggage": true,
+    "baggage_delay": false,
+    "lost_luggage": false,
     "return_protection": null,
     "cell_phone": null,
     "travel_accident": null
@@ -75,7 +75,7 @@
   "sources": [
     {
       "url": "https://creditcards.chase.com/business-credit-cards/ink/unlimited",
-      "notes": "Official Chase product page checked 2026-10-02: $750 cash back after $6,000 in 3 months; $0 annual fee."
+      "notes": "Official Chase product page checked 2026-10-02: $750 cash back after $6,000 in 3 months; $0 annual fee. | Checked 2026-10-19: APR 16.99%–24.99% after 0% intro for 12 months; Travel & purchase coverage lists only Auto Rental (primary for business), Travel and Emergency Assistance, Roadside Assistance, Purchase Protection and Extended Warranty (no trip cancellation/delay or baggage coverage)."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/chase-ink-card-showdown/",
@@ -90,13 +90,13 @@
       "notes": "Confirms 3% foreign transaction fee."
     }
   ],
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-10-02",
+  "last_verified": "2026-10-19",
   "next_review": "2026-08-04T15:10:00.000-07:00",
   "featured": true
 }
