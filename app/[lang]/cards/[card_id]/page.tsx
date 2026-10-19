@@ -15,6 +15,7 @@ import { isIndexableCard } from "@/lib/indexable-cards";
 import { localizedAlternates } from "@/lib/seo";
 import { getCardEditorial } from "@/lib/card-editorial";
 import { buildCardAnalysis, applicableRules, knownNoForeignFee } from "@/lib/card-analysis";
+import { cardSeoMeta } from "@/lib/card-seo";
 import { getEditorNote } from "@/lib/card-notes";
 import CardAnalysisSection from "@/app/components/CardAnalysisSection";
 import { getReferralOfferForCard } from "@/lib/referrals";
@@ -118,9 +119,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, card_id } = await params;
   const card = getCardById(card_id);
   if (!card) return { title: t("status.noResults", lang as any) };
+  const seo = cardSeoMeta(card, lang, isClosedToNewApplicants(card));
   return {
-    title: `${card.name} — OpenCard`,
-    description: `${card.name}: ${t("card.annualFee", lang as any)} $${card.annual_fee} | ${isClosedToNewApplicants(card) ? closedCopy(lang).title : t("card.welcomeBonus", lang as any)}`,
+    title: seo.title,
+    description: seo.description,
     robots: lang === "en" && isIndexableCard(card)
       ? { index: true, follow: true }
       : { index: false, follow: true },

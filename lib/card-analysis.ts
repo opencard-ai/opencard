@@ -155,6 +155,12 @@ function profile(card: CreditCard): Profile {
   };
 }
 
+/** Minimal earning profile for search snippets (lib/card-seo.ts). */
+export function cardRateProfile(card: CreditCard) {
+  const p = profile(card);
+  return { isCash: p.isCash, top: p.top, topLabel: p.top ? catLabel(p.top) : undefined, baseRate: p.baseRate, unit: p.unit };
+}
+
 function annualizeCredit(c: RecurringCredit, firstYear: boolean): number | null {
   const a = Number(c.amount) || 0;
   if (a <= 0) return null;

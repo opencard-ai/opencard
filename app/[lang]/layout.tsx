@@ -37,8 +37,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const defaultLang = "en";
   const defaultUrl = `${baseUrl}/${defaultLang}`;
   const locale = locales.includes(lang as Locale) ? (lang as Locale) : "en";
-  const title = t("site.title", locale);
-  const description = t("site.subtitle", locale);
+  // Search/social snippet copy is kept separate from the on-page H1/subtitle
+  // so it can be tuned for CTR without changing the visible homepage text.
+  const title = t("site.metaTitle", locale);
+  const description = t("site.metaDescription", locale);
   const localeMap: Record<string, string> = {
     en: "en_US",
     zh: "zh_TW",

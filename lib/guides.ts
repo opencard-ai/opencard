@@ -66,6 +66,38 @@ export function getGuidesForLocale(lang: string): GuideSummary[] {
 
 export const GUIDES: GuideSummary[] = [
   {
+    slug: "amex-blue-business-cash-vs-chase-ink-business-unlimited",
+    title: "Amex Blue Business Cash vs. Ink Business Unlimited: 2% or 1.5%?",
+    summary: "Blue Business Cash pays 2% on the first $50,000 a year; Ink Business Unlimited pays 1.5% with no cap. See the $100,000 break-even, welcome offers, fees, and who should pick which.",
+    published: "2026-10-19",
+    updated: "2026-10-19",
+    word_count: 1575,
+    tags: ["business cards", "cash back", "comparison", "no annual fee"],
+    localized: {
+      zh: {
+        title: "Amex Blue Business Cash 和 Chase Ink Unlimited 怎麼選？免年費商業卡實際算給你看",
+        summary: "一張前 5 萬美元回饋 2%，一張 1.5% 不設上限。年刷 10 萬美元是分水嶺，開卡禮、點數和海外手續費也可能讓答案翻盤。",
+        tags: ["商業卡", "現金回饋", "比較", "免年費"],
+      },
+    },
+  },
+  {
+    slug: "us-bank-cash-plus-vs-bank-of-america-customized-cash",
+    title: "U.S. Bank Cash+ vs. BofA Customized Cash: which category card fits you?",
+    summary: "Cash+ pays 5% on two categories you pick each quarter, including utilities and cell phone bills. Customized Cash pays 3% (6% in year one) on a category you can change monthly. The math, caps, and traps.",
+    published: "2026-10-19",
+    updated: "2026-10-19",
+    word_count: 1412,
+    tags: ["cash back", "comparison", "rotating categories", "no annual fee"],
+    localized: {
+      zh: {
+        title: "U.S. Bank Cash+ 和 BofA Customized Cash 怎麼選？自選類別回饋卡實測",
+        summary: "Cash+ 每季自選兩個 5% 類別，水電、手機費也有高回饋；Customized Cash 3%（第一年 6%），每月可換類別。上限和陷阱一次算清楚。",
+        tags: ["現金回饋", "比較", "自選類別", "免年費"],
+      },
+    },
+  },
+  {
     slug: "statement-balance-vs-current-balance",
     title: "Statement Balance vs. Current Balance: what to pay and when",
     summary: "A practical guide to statement balances, current balances, minimums, pending charges, grace periods, autopay, refunds, and when an early payment is actually useful.",
@@ -73,6 +105,38 @@ export const GUIDES: GuideSummary[] = [
     updated: "2026-08-09",
     word_count: 1064,
     tags: ["payments", "statement balance", "autopay", "beginner"],
+  },
+  {
+    slug: "old-navy-vs-banana-republic-credit-card",
+    title: "Old Navy vs. Banana Republic Credit Card: Is Either Worth It?",
+    summary: "Barclays' Old Navy, Banana Republic, Gap and Athleta Encore Mastercards earn the same rewards at every Gap Inc. brand: about 5% back, paid as store credit. What that's worth and when one makes sense.",
+    published: "2026-10-19",
+    updated: "2026-10-19",
+    word_count: 1291,
+    tags: ["store cards", "comparison", "no annual fee"],
+    localized: {
+      zh: {
+        title: "Old Navy 和 Banana Republic 信用卡差在哪？其實是同一張卡",
+        summary: "Barclays 的 Old Navy、Banana Republic、Gap、Athleta 聯名 Mastercard 回饋一模一樣，在 Gap 集團約 5%，但只能當購物金。實際值多少、什麼時候辦才划算。",
+        tags: ["商店卡", "比較", "免年費"],
+      },
+    },
+  },
+  {
+    slug: "delta-amex-cards-compared",
+    title: "Delta Amex Cards Compared: Blue vs. Gold vs. Platinum vs. Reserve",
+    summary: "The four personal Delta SkyMiles cards from American Express run from $0 to $650 a year. What each fee buys (bags, Companion Certificates, MQDs, Sky Club access) and how the business versions differ.",
+    published: "2026-10-19",
+    updated: "2026-10-19",
+    word_count: 1485,
+    tags: ["airline cards", "Delta", "comparison"],
+    localized: {
+      zh: {
+        title: "達美 Amex 聯名卡比較：Blue、Gold、Platinum、Reserve 怎麼選？",
+        summary: "四張 Delta SkyMiles 個人卡年費從 0 到 650 美元，差在托運行李、同伴票、MQD 和 Sky Club。每一級多付的年費值不值得，商業卡差在哪，一次整理。",
+        tags: ["航空聯名卡", "達美", "比較"],
+      },
+    },
   },
   {
     slug: "credit-card-purchase-protection-guide",
@@ -121,8 +185,8 @@ export const GUIDES: GuideSummary[] = [
   },
   {
     slug: "credit-card-rental-car-insurance-guide",
-    title: "Credit Card Rental Car Insurance: primary vs. secondary coverage explained",
-    summary: "A practical guide to collision-damage waivers, primary and secondary card coverage, exclusions, payment requirements, claims records, and when liability remains uncovered.",
+    title: "Does Your Credit Card Cover Rental Cars? Primary vs. Secondary CDW",
+    summary: "How credit card rental car insurance works: primary vs. secondary collision coverage, common exclusions such as liability, how to pay so you're covered, and what to keep for a claim.",
     published: "2026-08-09",
     updated: "2026-08-09",
     word_count: 1057,
@@ -238,8 +302,8 @@ export const GUIDES: GuideSummary[] = [
   },
   {
     slug: "premium-travel-card-comparison-framework",
-    title: "How to Compare Premium Travel Cards Without Overvaluing the Perks",
-    summary: "A conservative framework for comparing premium-card fees, credits, lounge access, earning rates, protections, transfer partners, and exit options.",
+    title: "Are Premium Travel Cards Worth It? Compare Fees, Perks & Lounges",
+    summary: "How premium travel cards can improve travel, dining and shopping, and when they don't. A simple way to compare annual fees, credits, lounge access, earning rates and protections before you pay.",
     published: "2026-08-08",
     updated: "2026-08-08",
     word_count: 1200,

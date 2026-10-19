@@ -46,6 +46,8 @@ export interface CardLabels {
 
 const zh: Record<string, string> = {
   "site.title": "AI 幫你選對卡",
+  "site.metaTitle": "OpenCard 美國信用卡比較：回饋、年費、開卡禮一次看",
+  "site.metaDescription": "200 多張美國信用卡一次比較：年費、開卡禮、回饋比例和福利整理，資料對照發卡銀行官網。用 AI 幫你找出最適合你的那張卡。",
   "site.subtitle": "利用 AI 幫你挑選最適合的信用卡，收錄個人福利總覽。",
   "card.name": "卡片名稱",
   "card.issuer": "發卡機構",
@@ -167,6 +169,8 @@ const zh: Record<string, string> = {
 
 const en: Record<string, string> = {
   "site.title": "AI-Powered Credit Card Selection",
+  "site.metaTitle": "Credit Cards: Compare 200+ US Cards by Rewards & Fees | OpenCard",
+  "site.metaDescription": "Compare 200+ US credit cards side by side: annual fees, rewards rates, welcome offers and benefits, with sources from issuer sites. Get an AI pick for the way you spend.",
   "site.subtitle": "Use AI to find the perfect card for you. Browse rewards, benefits, and manage your card portfolio.",
   "card.name": "Card Name",
   "card.issuer": "Issuer",
@@ -288,6 +292,8 @@ const en: Record<string, string> = {
 
 const es: Record<string, string> = {
   "site.title": "Selección de Tarjetas con IA",
+  "site.metaTitle": "Tarjetas de crédito de EE. UU.: compara recompensas y cuotas | OpenCard",
+  "site.metaDescription": "Compara más de 200 tarjetas de crédito de EE. UU.: cuotas anuales, bonos de bienvenida, recompensas y beneficios, con datos de los emisores. Deja que la IA elija por ti.",
   "site.subtitle": "Usa IA para encontrar tu tarjeta perfecta. Explora recompensas, beneficios y gestiona tu portafolio.",
   "card.name": "Nombre de Tarjeta",
   "card.issuer": "Emisor",
@@ -409,6 +415,8 @@ const es: Record<string, string> = {
 
 const zhCn: Record<string, string> = {
   "site.title": "AI 帮你选对卡",
+  "site.metaTitle": "美国信用卡对比：返现、年费、开卡礼一次看 | OpenCard",
+  "site.metaDescription": "200 多张美国信用卡一次对比：年费、开卡礼、返现比例和权益整理，数据对照发卡银行官网。用 AI 帮你找到最适合你的那张卡。",
   "site.subtitle": "用 AI 挑选最适合的信用卡，并整合个人福利总览。",
   "card.name": "卡片名称",
   "card.issuer": "发卡机构",
