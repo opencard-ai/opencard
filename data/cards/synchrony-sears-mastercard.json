@@ -1,15 +1,17 @@
 {
   "card_id": "synchrony-sears-mastercard",
   "name": "Sears Mastercard®",
-  "issuer": "Synchrony",
+  "issuer": "Citi",
   "network": "mastercard",
   "annual_fee": 0,
   "foreign_transaction_fee": 0,
   "credit_required": "Fair to Good",
   "welcome_offer": {
-    "spending_requirement": null,
-    "bonus_value": null,
-    "description": "$15 off first purchase with the Sears Mastercard"
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "description": "N/A: card renamed the Citi ThankYou Mastercard on 2025-04-12.",
+    "estimated_value": 0
   },
   "earning_rates": [
     {
@@ -53,6 +55,10 @@
   ],
   "sources": [
     {
+      "url": "https://citicards.citi.com/crs/CitiThankYou/info/default.htm",
+      "notes": "Official Citi notice: \"Starting April 12, 2025, The Sears Mastercard will be renamed the Citi ThankYou® Mastercard®\" (indexed 2026-10-19; the live URL now shows Citi's offer-expired page)."
+    },
+    {
       "url": "https://upgradedpoints.com/credit-cards/sears-credit-cards/",
       "notes": "UpgradedPoints review"
     },
@@ -61,14 +67,16 @@
       "notes": "WalletHub rewards explainer"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.995Z",
+  "last_updated": "2026-10-19",
   "status": "transferred",
-  "notes": "IMPORTANT: The Sears Mastercard (Synchrony) has been discontinued/transferred to Citi — the Sears Mastercard became the Citi ThankYou Mastercard. The Shop Your Way Mastercard is now issued by Citi. Mark this record as historical/reference only. No longer available as new Synchrony product. The Sears store card may still be with Synchrony.",
+  "notes": "Historical record. The Sears Mastercard was issued by Citi (not Synchrony). Per the official Citi notice, starting April 12, 2025 the Sears Mastercard was renamed the Citi ThankYou® Mastercard®, so there is no Sears-branded Mastercard to apply for. The card_id keeps its legacy synchrony- prefix so saved links still resolve.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
   "last_verified": "2026-04-16T13:41:49.995Z",
-  "next_review": "2026-07-15T13:41:49.995000+00:00"
+  "next_review": "2026-07-15T13:41:49.995000+00:00",
+  "discontinued_notes": "Renamed the Citi ThankYou® Mastercard® starting April 12, 2025 (official Citi notice).",
+  "discontinued_date": "2025-04-12"
 }
