@@ -41,12 +41,24 @@
         "description": "First checked bag free for cardmember and up to 8 companions on the same reservation"
       },
       {
-        "name": "Priority Boarding",
-        "description": "Priority boarding on United flights (Group 2)"
+        "name": "Boarding benefit",
+        "description": "Cardmember and up to 8 passengers on the same reservation board no later than group 5."
       },
       {
-        "name": "EarlyBird Check-In",
-        "description": "Complimentary EarlyBird Check-In automatically applied to all reservations"
+        "name": "Preferred seat selection",
+        "description": "Select a Standard or Preferred seat within 48 hours prior to departure, when available."
+      },
+      {
+        "name": "15% flight discount",
+        "description": "15% promo code each cardmember anniversary (excludes basic fare)."
+      },
+      {
+        "name": "25% back on inflight purchases",
+        "description": "25% back on inflight purchases."
+      },
+      {
+        "name": "A-List progress",
+        "description": "Earn 2,000 tier qualifying points (TQPs) toward A-List for every $5,000 in purchases annually."
       },
       {
         "name": "Employee Cards at No Cost",
@@ -55,18 +67,6 @@
       {
         "name": "No Foreign Transaction Fees",
         "description": "Use card internationally without FTF"
-      },
-      {
-        "name": "Global Entry/TSA PreCheck",
-        "description": "Up to $120 credit for Global Entry or TSA PreCheck every 4 years"
-      },
-      {
-        "name": "Earn Companion Pass Qualifying Points",
-        "description": "Earn 1,000 toward Companion Pass qualification for each $10,000 spent annually"
-      },
-      {
-        "name": "Earn PQP",
-        "description": "Earn 1,000 Premier Qualifying Points (PQP) per $12,000 spent, up to 2,000 PQP per year"
       }
     ]
   },
@@ -91,7 +91,7 @@
   "sources": [
     {
       "url": "https://creditcards.chase.com/business-credit-cards/southwest/premier-business",
-      "notes": "Official Chase page"
+      "notes": "Official Chase page | Checked 2026-10-19: free first checked bag, Standard/Preferred seat within 48h, boarding no later than group 5, 15% anniversary flight discount, 25% back inflight, 2,000 TQPs per $5,000; no EarlyBird Check-In, Global Entry/TSA credit or Companion Pass points listed."
     },
     {
       "url": "https://www.swamedia.com/news-and-stories/news-release/chase-and-southwest-airlines-introduce-new-benefits-on-southwest-rapid-rewards-c-MC7BWJWDE2MZA5DLJDR7CI2FM7JE",
@@ -106,7 +106,7 @@
       "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "notes": "Mid-tier Southwest business card. $149 AF. 6,000 anniversary points (~$89) covers ~60% of AF. First bag free + EarlyBird Check-In are practical perks. As of 2025, AF increased from $99 to $149. PQP earnings help toward Southwest elite status. The $8K combined cap on gas/restaurant 2x is limited but useful for small businesses. Similar to personal Premier but with employee card benefits.",
+  "notes": "Mid-tier Southwest business card. $149 AF. 6,000 anniversary points each year. Free first checked bag, Standard/Preferred seat selection within 48 hours, and boarding no later than group 5. Earns 2,000 TQPs toward A-List per $5,000 spent. The $8K combined cap on gas/restaurant 2x is limited but useful for small businesses.",
   "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
@@ -126,7 +126,7 @@
     }
   ],
   "_no_credits_found": true,
-  "_no_credits_note": "Southwest Premier Business ($149 AF) — value is anniversary points (6000 points, excluded), 15% promo code (% off, excluded), 10k Companion Pass qualifying points (excluded — points). No fixed-USD recurring credits. Verified 2026-04-27 vs Chase official page.",
-  "last_verified": "2026-04-16T13:41:49.996Z",
+  "_no_credits_note": "Southwest Premier Business ($149 AF): value is anniversary points (6,000 points, excluded) and a 15% anniversary promo code (% off, excluded). No fixed-USD recurring credits. Re-verified 2026-10-19 vs Chase official page.",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.996000+00:00"
 }
