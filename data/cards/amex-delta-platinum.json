@@ -124,6 +124,10 @@
   ],
   "sources": [
     {
+      "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-platinum-american-express-card/",
+      "notes": "Official Amex page 2026-10-19: $120 Rideshare Credit (up to $10/month); $150 Delta Stays Credit."
+    },
+    {
       "url": "https://www.uscreditcardguide.com/amex-platinum-delta-skymiles/",
       "notes": "USCCG card review (LLM-friendly static HTML)"
     },
@@ -176,6 +180,16 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-platinum-american-express-card/"
     },
     {
+      "credit_key": "rideshare-credit",
+      "name": "Rideshare Credit",
+      "amount": 10,
+      "frequency": "monthly",
+      "category": "ride",
+      "description": "Up to $10/month ($120/year) in statement credits on U.S. rideshare purchases with select providers. Enrollment required.",
+      "reset_type": "monthly",
+      "source": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-platinum-american-express-card/"
+    },
+    {
       "credit_key": "global-entry-tsa-precheck",
       "name": "Global Entry / TSA PreCheck",
       "amount": 120,
@@ -188,7 +202,7 @@
   ],
   "welcome_bonus": null,
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-09-30",
+  "last_verified": "2026-10-19",
   "next_review": "2026-10-30T00:00:00.000Z",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
