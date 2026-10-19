@@ -336,6 +336,35 @@ const noForce = (calls: string[][]) => assert.ok(!calls.some(c => c.join(' ').in
   const k0 = res0.changes[0].fingerprint;
   const kept = updateLedger({ version: 1, updated_at: null, entries: { [k0]: { card_id: 'amex-marriott-bevy', field: res0.changes[0].field, value: res0.changes[0].new_value, audience: null, status: 'needs_verification', first_seen: 'a', last_seen: 'a', last_notified: null, reasons: ['x'], commit: 'abc', published_at: 'p' } } }, [res0], 'now');
   assert.deepEqual([kept.entries[k0].reasons, kept.entries[k0].commit, kept.entries[k0].published_at, kept.entries[k0].first_seen], [['x'], 'abc', 'p', 'a']);
+  // ---------- top-traffic expansion: Amex "AS HIGH AS" hero, strike-through prices, days -> months; ambiguity never auto-applies
+  const AMX = 'Apply and find out your welcome offerAS HIGH AS 100,000Membership Rewards® pointsafter you spend $8,000 in purchases on your new Card within the first 6 months of Card Membership. Welcome offers vary';
+  assert.deepEqual(ex('amex-gold', 'americanexpress.com', AMX), { [B]: 100000, [SPD]: 8000, [MON]: 6 });
+  assert.deepEqual(ex('amex-biz-gold', 'americanexpress.com', 'Apply and find out your welcome offerWELCOME OFFERAS HIGH AS 200,000 Membership Rewards® Pointsafter you spend $15,000 in purchases on your new Card within the first 3 months of Card Membership.'), { [B]: 200000, [SPD]: 15000, [MON]: 3 });
+  assert.deepEqual(ex('amex-blue-biz-cash', 'americanexpress.com', 'Apply and find out your welcome offerAS HIGH AS $500 Statement Creditafter you spend $5,000 in purchases on your new Card within the first 3 months of Card Membership.'), { [B]: 500, [SPD]: 5000, [MON]: 3 });
+  assert.deepEqual(ex('amex-gold', 'americanexpress.com', 'Apply and find out your welcome offerEarn 60,000 Membership Rewards® Pointsafter you spend $6,000 in purchases on your new Card within the first 6 months of Card Membership.'), { [B]: 60000, [SPD]: 6000, [MON]: 6 });
+  // two different hero values on one page -> ambiguous, nothing extracted for that field
+  const amb = extractValues(AMX + ' ' + AMX.replace('100,000', '80,000'), W('amex-gold', 'americanexpress.com'));
+  assert.deepEqual([amb.ambiguous, amb.values[B]], [[B], undefined]);
+  // generic "As high as" text without the hero anchor is not a match
+  assert.deepEqual(extractValues('Earn as high as 100,000 points after you spend $8,000 within the first 6 months', W('amex-gold', 'americanexpress.com')).values, {});
+  // Chase strike-through: the current value comes from the full sentence, never from the price pair alone
+  assert.deepEqual(ex('chase-freedom-flex', 'chase.com', 'NEW CARDMEMBER OFFER Earn a $200 Strike through $250 bonus Earn a $250 bonus after you spend $500 on purchases in the first 3 months from account opening.'), { [B]: 250, [SPD]: 500, [MON]: 3 });
+  assert.deepEqual(extractValues('LIMITED-TIME OFFER $200 Strike through $250 bonus * 5% quarterly bonus categories', W('chase-freedom-flex', 'chase.com')).values, {});
+  assert.deepEqual(ex('chase-sapphire-reserve-biz', 'chase.com', 'Earn 150,000strike through 200,000 points after you spend $30,000 on purchases in your first 6 months from account opening.'), { [B]: 200000, [SPD]: 30000, [MON]: 6 });
+  assert.deepEqual(ex('chase-sapphire-reserve-biz', 'chase.com', 'Earn 200,000 points after you spend $30,000 on purchases in your first 6 months from account opening.'), { [B]: 200000, [SPD]: 30000, [MON]: 6 });
+  assert.deepEqual(ex('chase-sapphire-preferred', 'chase.com', 'Earn more than ever, same low annual fee. † opens pricing and terms in new window Earn 75,000 points after you spend $5,000 in purchases in the first 3 months from account opening.* Chase Sapphire Reserve Credit Card Earn 100,000 bonus points after you spend $6,000 on purchases in the first 3 months'), { [B]: 75000, [SPD]: 5000, [MON]: 3 });
+  // days -> months
+  assert.deepEqual(ex('barclays-jetblue-premier', 'barclaycardus.com', '$499 annual fee ($150 for each authorized user)1 Rewards Earn 90,000 bonus points after spending $5,000 on purchases and paying the annual fee in full, both within the first 90 days2'), { [B]: 90000, [SPD]: 5000, [MON]: 3, annual_fee: 499 });
+  assert.deepEqual(ex('us-bank-cash-plus', 'usbank.com', 'For a limited time, earn a $200 rewards bonus after you spend $1,000 in eligible purchases within the first 90 days of account opening.'), { [B]: 200, [SPD]: 1000, [MON]: 3 });
+  const odd = extractValues('earn a $200 rewards bonus after you spend $1,000 in eligible purchases within the first 100 days of account opening.', W('us-bank-cash-plus', 'usbank.com'));
+  assert.ok(odd.ambiguous.includes(MON) && !(MON in odd.values));
+  assert.deepEqual(ex('chase-southwest-premier-biz', 'chase.com', 'NEW CARDMEMBER OFFER Earn 60,000Strike through 80,000 points after you spend $3,000 on purchases in the first 3 months from account opening.*'), { [B]: 80000, [SPD]: 3000, [MON]: 3 });
+  assert.deepEqual(ex('amex-marriott-bonvoy-biz', 'americanexpress.com', 'Marriott Bonvoy Business® CardAnnual Fee: $125¤Annual Fee: $125¤Welcome OfferLimited Time OfferEarn 100,000 Marriott Bonvoy® Bonus Points and 1 Free Night Awardafter you spend $8,000 in purchases on the Card within the first 6 months'), { [B]: 100000, [SPD]: 8000, [MON]: 6, annual_fee: 125 });
+  assert.deepEqual(ex('amex-blue-cash-preferred', 'americanexpress.com', 'Earn $250 Cash Back1after you spend $3,000 in purchases on your new Card in the first 6 months of Card Membership.† Annual Fee: $0 intro annual fee for the first year, then $95'), { [B]: 250, [SPD]: 3000, [MON]: 6, annual_fee: 95 });
+  // offers whose shape the DB can't hold (cash stated for UR-points cards, tiered, free nights, Bilt cash+status) are evidence only
+  for (const id of ['chase-ink-biz-cash', 'chase-ink-biz-unlimited', 'chase-hyatt', 'chase-marriott-boundless', 'bilt-obsidian', 'chase-united-explorer', 'us-bank-harley-davidson']) {
+    const e = watch.find(w => w.card_id === id)!; assert.ok(e.hold_only && e.hold_reason && e.sources.every(s => s.patterns.length === 0), id);
+  }
   // ---------- cards closed to new applicants: not watched, not auto-added, no expiry review
   assert.ok(isClosedToNewApplicants({ status: 'discontinued' }) && isClosedToNewApplicants({ discontinued: true }) && !isClosedToNewApplicants({ status: 'active' }) && !isClosedToNewApplicants(undefined));
   const closedCard = { card_id: 'closed-x', status: 'discontinued', welcome_offer: { bonus_points: 50000, expires: '2026-10-05', is_elevated: true }, sources: [{ url: 'https://www.usbank.com/credit-cards/x.html' }] };

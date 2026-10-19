@@ -762,6 +762,619 @@
           ]
         }
       ]
+    },
+    {
+      "card_id": "amex-gold",
+      "sources": [
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Apply and find out your welcome offer\\s*(?:WELCOME OFFER\\s*)?(?:AS HIGH AS|Earn) \\$?([\\d,]+)\\s*Membership Rewards®? Points\\s*after you spend \\$([\\d,]+) in purchases on your new Card within the first (\\d+) months of Card Membership",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-platinum",
+      "sources": [
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Apply and find out your welcome offer\\s*(?:WELCOME OFFER\\s*)?(?:AS HIGH AS|Earn) \\$?([\\d,]+)\\s*Membership Rewards®? Points\\s*after you spend \\$([\\d,]+) in purchases on your new Card within the first (\\d+) months of Card Membership",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-biz-gold",
+      "sources": [
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Apply and find out your welcome offer\\s*(?:WELCOME OFFER\\s*)?(?:AS HIGH AS|Earn) \\$?([\\d,]+)\\s*Membership Rewards®? Points\\s*after you spend \\$([\\d,]+) in purchases on your new Card within the first (\\d+) months of Card Membership",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-biz-platinum",
+      "sources": [
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-platinum-credit-card-amex/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Apply and find out your welcome offer\\s*(?:WELCOME OFFER\\s*)?(?:AS HIGH AS|Earn) \\$?([\\d,]+)\\s*Membership Rewards®? Points\\s*after you spend \\$([\\d,]+) in purchases on your new Card within the first (\\d+) months of Card Membership",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-blue-biz-plus",
+      "sources": [
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-blue-business-plus-credit-card-amex/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Apply and find out your welcome offer\\s*(?:WELCOME OFFER\\s*)?(?:AS HIGH AS|Earn) \\$?([\\d,]+)\\s*Membership Rewards®? Points\\s*after you spend \\$([\\d,]+) in purchases on your new Card within the first (\\d+) months of Card Membership",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-blue-biz-cash",
+      "sources": [
+        {
+          "url": "https://www.americanexpress.com/en-us/business/credit-cards/blue-business-cash/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Apply and find out your welcome offer\\s*(?:WELCOME OFFER\\s*)?(?:AS HIGH AS|Earn) \\$?([\\d,]+)\\s*Statement Credit\\s*after you spend \\$([\\d,]+) in purchases on your new Card within the first (\\d+) months of Card Membership",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "chase-sapphire-preferred",
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "same low annual fee[\\s\\S]{0,80}?opens pricing and terms in new window\\W{0,8}Earn ([\\d,]+) (?:bonus )?points after you spend \\$([\\d,]+) (?:in|on) purchases in the first (\\d+) months",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "chase-ink-biz-preferred",
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "NEW CARDMEMBER OFFER Earn ([\\d,]+) bonus points after you spend \\$([\\d,]+) on purchases in the first (\\d+) months after account opening",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            },
+            {
+              "regex": "ANNUAL FEE \\$([\\d,]+)\\W",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "chase-sapphire-reserve-biz",
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/business-credit-cards/sapphire/reserve",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Earn (?:[\\d,]+(?:\\s+|\\s*strike ?through\\s*))?([\\d,]+) points after you spend \\$([\\d,]+) on purchases in your first (\\d+) months from account opening",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            },
+            {
+              "regex": "\\$([\\d,]+) annual fee\\W{0,4}Opens pricing and terms in new window; Employee Cards",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "chase-freedom-flex",
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "bonus Earn a \\$([\\d,]+) bonus after you spend \\$([\\d,]+) on purchases in the first (\\d+) months from account opening",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "chase-freedom-unlimited",
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "bonus Earn a \\$([\\d,]+) bonus after you spend \\$([\\d,]+) on purchases in the first (\\d+) months from account opening",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "capital-one-venture",
+      "sources": [
+        {
+          "url": "https://www.capitalone.com/credit-cards/venture/",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "eligible Venture primary account holders earn ([\\d,]+) bonus miles after spending \\$([\\d,]+) on purchases within the first (\\d+) months from account opening",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "capital-one-venture-x",
+      "sources": [
+        {
+          "url": "https://www.capitalone.com/credit-cards/venture-x/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Early Spend Bonus Earn ([\\d,]+) bonus miles once you spend \\$([\\d,]+) on purchases within the first (\\d+) months from account opening",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            },
+            {
+              "regex": "Annual Fee\\s*\\$([\\d,]+)\\s*Purchase Rate",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "citi-strata-elite",
+      "sources": [
+        {
+          "url": "https://www.citi.com/credit-cards/citi-strata-elite-credit-card",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Citi Strata Elite®? Card\\s*(?:Bonus Offer\\s*)?Earn ([\\d,]+) bonus points after spending \\$([\\d,]+) in the first (\\d+) months",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            },
+            {
+              "regex": "Apply now \\$([\\d,]+)\\s*Annual fee",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "barclays-jetblue-premier",
+      "sources": [
+        {
+          "url": "https://cards.barclaycardus.com/banking/cards/jetblue-premier-card/",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Earn ([\\d,]+) bonus points after spending \\$([\\d,]+) on purchases and paying the annual fee in full, both within the first (\\d+) days",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              },
+              "transforms": {
+                "welcome_offer.time_period_months": "days_to_months"
+              }
+            },
+            {
+              "regex": "\\$([\\d,]+) annual fee \\(\\$150 for each authorized user\\)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "us-bank-cash-plus",
+      "sources": [
+        {
+          "url": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "earn a \\$([\\d,]+) rewards bonus after you spend \\$([\\d,]+) in eligible purchases within the first (\\d+) days of account opening",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              },
+              "transforms": {
+                "welcome_offer.time_period_months": "days_to_months"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "wells-fargo-active-cash",
+      "sources": [
+        {
+          "url": "https://creditcards.wellsfargo.com/active-cash-credit-card/",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Earn a \\$([\\d,]+) cash rewards bonus\\s*when you spend \\$([\\d,]+) in purchases in the first (\\d+) months",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "boa-student-customized-cash-rewards",
+      "sources": [
+        {
+          "url": "https://www.bankofamerica.com/credit-cards/products/student-cash-back-credit-card/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Online \\$([\\d,]+) cash rewards bonus after making at least \\$([\\d,]+) in purchases in the first (\\d+) days of your account opening",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              },
+              "transforms": {
+                "welcome_offer.time_period_months": "days_to_months"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "chase-ink-biz-cash",
+      "hold_only": true,
+      "hold_reason": "offer_stated_as_cash_back_db_stores_ur_points",
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/business-credit-cards/ink/cash",
+          "render": false,
+          "patterns": []
+        }
+      ]
+    },
+    {
+      "card_id": "chase-ink-biz-unlimited",
+      "hold_only": true,
+      "hold_reason": "offer_stated_as_cash_back_db_stores_ur_points",
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/business-credit-cards/ink/unlimited",
+          "render": false,
+          "patterns": []
+        }
+      ]
+    },
+    {
+      "card_id": "chase-hyatt",
+      "hold_only": true,
+      "hold_reason": "tiered_up_to_offer_two_spend_thresholds",
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card",
+          "render": false,
+          "patterns": []
+        }
+      ]
+    },
+    {
+      "card_id": "chase-marriott-boundless",
+      "hold_only": true,
+      "hold_reason": "free_night_award_offer_not_a_points_value",
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless",
+          "render": false,
+          "patterns": []
+        }
+      ]
+    },
+    {
+      "card_id": "bilt-obsidian",
+      "hold_only": true,
+      "hold_reason": "points_plus_status_plus_bilt_cash_offer_db_shape_unclear",
+      "sources": [
+        {
+          "url": "https://www.bilt.com/card",
+          "render": false,
+          "patterns": []
+        }
+      ]
+    },
+    {
+      "card_id": "boa-customized-cash-rewards",
+      "sources": [
+        {
+          "url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Online \\$([\\d,]+) cash rewards bonus after making at least \\$([\\d,]+) in purchases in the first (\\d+) days of your account opening",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              },
+              "transforms": {
+                "welcome_offer.time_period_months": "days_to_months"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "chase-southwest-premier-biz",
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/business-credit-cards/southwest/premier-business",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "NEW CARDMEMBER OFFER Earn (?:[\\d,]+\\s*Strike through\\s*)?([\\d,]+) points after you spend \\$([\\d,]+) on purchases in the first (\\d+) months from account opening",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-marriott-bonvoy-biz",
+      "sources": [
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/amex-marriott-bonvoy-business-credit-card/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "Welcome Offer\\s*(?:Limited Time Offer\\s*)?(?:AS HIGH AS|Earn) ([\\d,]+) Marriott Bonvoy®? Bonus Points(?: and \\d+ Free Night Awards?)?\\s*after you spend \\$([\\d,]+) in purchases on the Card within the first (\\d+) months",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            },
+            {
+              "regex": "Marriott Bonvoy Business®? Card\\s*Annual Fee: \\$([\\d,]+)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "amex-blue-cash-preferred",
+      "sources": [
+        {
+          "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "(?:AS HIGH AS|Earn) \\$([\\d,]+) Cash Back\\d?\\s*after you spend \\$([\\d,]+) in purchases on your new Card in the first (\\d+) months of Card Membership",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            },
+            {
+              "regex": "Annual Fee: \\$0 intro annual fee for the first year, then \\$([\\d,]+)",
+              "groups": {
+                "annual_fee": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "wells-fargo-one-key",
+      "sources": [
+        {
+          "url": "https://creditcards.wellsfargo.com/one-key-credit-card/",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Earn \\$([\\d,]+) in OneKeyCash\\s*(?:registered)?\\s*®?\\s*after you spend \\$([\\d,]+) on purchases in the first (\\d+) months",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "pnc-cash-rewards-visa",
+      "sources": [
+        {
+          "url": "https://www.pnc.com/en/personal-banking/banking/credit-cards/pnc-cash-rewards-visa-credit-card.html",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "earn a \\$([\\d,]+) bonus\\. Just make \\$([\\d,]+) or more in purchases\\s*(?:\\[\\d+\\])?\\s*during the first (\\d+) months following account opening of a PNC Cash Rewards",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "capital-one-venture-x-biz",
+      "sources": [
+        {
+          "url": "https://www.capitalone.com/small-business/credit-cards/venture-x-business/",
+          "render": true,
+          "patterns": [
+            {
+              "regex": "bonus miles\\s*Earn ([\\d,]+) bonus miles when you spend \\$([\\d,]+) in the first (\\d+) months",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "chase-united-explorer",
+      "hold_only": true,
+      "hold_reason": "tiered_offer_spend_bonus_plus_authorized_user_bonus",
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/travel-credit-cards/united/united-explorer",
+          "render": false,
+          "patterns": []
+        }
+      ]
+    },
+    {
+      "card_id": "us-bank-harley-davidson",
+      "hold_only": true,
+      "hold_reason": "no_welcome_offer_text_on_official_page",
+      "sources": [
+        {
+          "url": "https://www.h-dvisa.com/credit/harley-davidson-visa-signature-credit.do",
+          "render": false,
+          "patterns": []
+        }
+      ]
     }
   ]
 }
