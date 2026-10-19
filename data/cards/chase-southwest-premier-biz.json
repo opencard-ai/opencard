@@ -9,10 +9,10 @@
   "welcome_offer": {
     "spending_requirement": 3000,
     "time_period_months": 3,
-    "bonus_points": 60000,
-    "estimated_value": 840,
+    "bonus_points": 80000,
+    "estimated_value": 1120,
     "point_program": "Southwest Rapid Rewards",
-    "description": "60,000 bonus Rapid Rewards points after spending $3,000 in first 3 months. Additional 10,000 bonus miles when adding an authorized user."
+    "description": "80,000 bonus Rapid Rewards points after spending $3,000 on purchases in the first 3 months from account opening."
   },
   "earning_rates": [
     {
@@ -91,7 +91,7 @@
   "sources": [
     {
       "url": "https://creditcards.chase.com/business-credit-cards/southwest/premier-business",
-      "notes": "Official Chase page | Checked 2026-10-19: free first checked bag, Standard/Preferred seat within 48h, boarding no later than group 5, 15% anniversary flight discount, 25% back inflight, 2,000 TQPs per $5,000; no EarlyBird Check-In, Global Entry/TSA credit or Companion Pass points listed."
+      "notes": "Official Chase page | Checked 2026-10-19: free first checked bag, Standard/Preferred seat within 48h, boarding no later than group 5, 15% anniversary flight discount, 25% back inflight, 2,000 TQPs per $5,000; no EarlyBird Check-In, Global Entry/TSA credit or Companion Pass points listed. | Official Chase page 2026-10-19: NEW CARDMEMBER OFFER Earn 80,000 points (60,000 struck through) after you spend $3,000 on purchases in the first 3 months; no authorized-user bonus shown."
     },
     {
       "url": "https://www.swamedia.com/news-and-stories/news-release/chase-and-southwest-airlines-introduce-new-benefits-on-southwest-rapid-rewards-c-MC7BWJWDE2MZA5DLJDR7CI2FM7JE",
