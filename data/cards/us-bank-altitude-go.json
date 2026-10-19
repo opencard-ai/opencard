@@ -4,7 +4,7 @@
   "issuer": "U.S. Bank",
   "network": "visa",
   "annual_fee": 0,
-  "foreign_transaction_fee": 0,
+  "foreign_transaction_fee": 3,
   "credit_required": "Good to Excellent",
   "welcome_offer": {
     "spending_requirement": 1000,
@@ -68,14 +68,14 @@
   "sources": [
     {
       "url": "https://www.usbank.com/credit-cards/altitude-go-visa-signature-credit-card.html",
-      "notes": "Official U.S. Bank page"
+      "notes": "Official U.S. Bank page | Official U.S. Bank page; linked offer terms, checked 2026-10-19: foreign transaction fee 3%."
     },
     {
       "url": "https://www.nerdwallet.com/credit-cards/reviews/us-bank-altitude-go",
       "notes": "NerdWallet review"
     }
   ],
-  "last_updated": "2026-04-30T04:47:59.374Z",
+  "last_updated": "2026-10-19",
   "status": "active",
   "notes": "No annual fee with strong 4x dining. $15 quarterly streaming credit effectively gives $60/year in streaming credits. Successor to Radisson Rewards card.",
   "hotel_program": null,
@@ -101,6 +101,6 @@
       "reset_type": "calendar_year"
     }
   ],
-  "last_verified": "2026-04-16T13:41:50.005Z",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:50.005000+00:00"
 }
