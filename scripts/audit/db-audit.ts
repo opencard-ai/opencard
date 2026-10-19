@@ -17,6 +17,10 @@ const DIR = 'data/cards';
 const cards: Card[] = fs.readdirSync(DIR).filter(f => f.endsWith('.json')).map(f => JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8')));
 const findings: Finding[] = [];
 const add = (card: Card, type: string, severity: Sev, detail: string, field?: string, value?: unknown) => findings.push({ card_id: card.card_id, type, severity, field, detail, value });
+// Sanity cap for welcome-offer spend. Real offers reach $50,000 (Amex Graphite Business) and premium
+// business cards sit at $20k-$30k, so $30k flagged legit data. $100,000 matches the offer-watch apply
+// guard (spend $1-$100,000) and still catches typos such as an extra zero on a $15k-$50k offer.
+const MAX_SPEND = 100_000;
 // Not open to new applicants: closed ("discontinued") or replaced by another issuer's product ("transferred").
 const closed = (c: Card) => c.status === 'discontinued' || c.status === 'transferred' || c.discontinued === true;
 const dayDiff = (iso: string) => (Date.parse(today) - Date.parse(String(iso).slice(0, 10))) / 86400000;
@@ -118,7 +122,7 @@ for (const c of cards) {
   if (typeof c.foreign_transaction_fee === 'number' && (c.foreign_transaction_fee < 0 || c.foreign_transaction_fee > 5)) add(c, 'impossible_value', 'medium', `foreign_transaction_fee=${c.foreign_transaction_fee}`, 'foreign_transaction_fee');
   const bp = wo.bonus_points, sp = wo.spending_requirement, mo = wo.time_period_months;
   if (bp !== undefined && bp !== null && (typeof bp !== 'number' || bp < 0 || bp > 500000)) add(c, 'impossible_value', 'high', `bonus_points=${JSON.stringify(bp)}`, 'welcome_offer.bonus_points');
-  if (sp !== undefined && sp !== null && (typeof sp !== 'number' || sp < 0 || sp > 30000)) add(c, 'impossible_value', 'medium', `spending_requirement=${JSON.stringify(sp)}`, 'welcome_offer.spending_requirement');
+  if (sp !== undefined && sp !== null && (typeof sp !== 'number' || sp < 0 || sp > MAX_SPEND)) add(c, 'impossible_value', 'medium', `spending_requirement=${JSON.stringify(sp)}`, 'welcome_offer.spending_requirement');
   if (!closed(c) && typeof bp === 'number' && bp >= 1000 && (typeof sp !== 'number' || sp > 0)) {
     if (typeof mo !== 'number' || mo < 1 || mo > 15) add(c, 'impossible_value', 'medium', `bonus ${bp} but time_period_months=${JSON.stringify(mo)}`, 'welcome_offer.time_period_months');
     if (sp === 0 && !/first purchase|no minimum|any purchase|approval|account opening|first year|anniversary|match/i.test(String(wo.description))) add(c, 'suspicious_value', 'low', `bonus ${bp} with spending_requirement 0`, 'welcome_offer.spending_requirement');
