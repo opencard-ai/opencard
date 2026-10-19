@@ -120,9 +120,13 @@
     {
       "url": "https://www.doctorofcredit.com/increased-signup-bonuses-on-american-express-marriott-brilliant-bevy-and-business-cards/",
       "notes": "DoC best current sign-up bonus list"
+    },
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/card-application/apply/prospect/terms/marriott-bonvoy-brilliant-card/25330-10-0",
+      "notes": "Official Amex offer terms, checked 2026-10-19: welcome-offer eligibility wording (Amex does not use Chase 5/24)."
     }
   ],
-  "last_updated": "2026-10-01T12:00:00.000Z",
+  "last_updated": "2026-10-19",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -133,12 +137,16 @@
   "application_rules": {
     "rules": [
       {
-        "rule": "5/24 rule",
-        "description": "Subject to 5/24 rule - will not be approved if 5+ new cards in past 24 months"
+        "rule": "Welcome offer eligibility (card family)",
+        "description": "You may not be eligible to receive a welcome offer if you have or have had this Card or the Starwood Preferred Guest® American Express Luxury Card or previous versions of these Cards."
       },
       {
-        "rule": "Lifetime bonus rule",
-        "description": "May not be eligible for welcome bonus if have had this card before"
+        "rule": "Welcome offer eligibility (other factors)",
+        "description": "You also may not be eligible to receive a welcome offer based on various factors, such as your history with credit card balance transfers, your history as an American Express Card Member, the number of credit cards that you have opened and closed and other factors."
+      },
+      {
+        "rule": "Welcome offer eligibility (Chase/J.P. Morgan Marriott cards)",
+        "description": "Welcome offer not available to applicants who (i) have or have had The Ritz-Carlton® Credit Card from JPMorgan or the J.P. Morgan Ritz-Carlton Rewards® Credit Card in the last 30 days, (ii) have acquired the Marriott Bonvoy Bountiful™, Boundless® or Bold® Credit Card from Chase in the last 90 days, or (iii) received a new Card Member bonus or upgrade offer for the Marriott Bonvoy Bountiful™, Boundless® or Bold® Credit Card from Chase in the last 24 months."
       }
     ]
   },
@@ -166,7 +174,7 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:46.246653",
-  "last_verified": "2026-10-01",
+  "last_verified": "2026-10-19",
   "next_review": "2026-10-31T00:00:00.000Z",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 5,
