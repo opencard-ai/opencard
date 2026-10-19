@@ -4,7 +4,7 @@
   "issuer": "American Express",
   "network": "amex",
   "annual_fee": 0,
-  "foreign_transaction_fee": 0,
+  "foreign_transaction_fee": 2.7,
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 200,
@@ -42,6 +42,14 @@
   ],
   "sources": [
     {
+      "url": "https://www.americanexpress.com/us/credit-cards/card/cash-magnet/",
+      "notes": "Official Amex card page, checked 2026-10-19."
+    },
+    {
+      "url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/cps-lending/amex-cash-magnet-06-30-2026.pdf",
+      "notes": "Amex Card Member Agreement (as of 06/30/2026), checked 2026-10-19: foreign transaction fee 2.7%."
+    },
+    {
       "url": "https://www.uscreditcardguide.com/amex-cash-magnet/",
       "notes": "USCCG card review (LLM-friendly static HTML)"
     }
@@ -51,8 +59,8 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-03T03:19:54.149Z",
-  "last_verified": "2026-04-24",
+  "last_updated": "2026-10-19",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.942000+00:00",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 5,
