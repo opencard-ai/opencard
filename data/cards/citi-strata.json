@@ -4,7 +4,7 @@
   "issuer": "Citi",
   "network": "mastercard",
   "annual_fee": 0,
-  "foreign_transaction_fee": 0,
+  "foreign_transaction_fee": 3,
   "credit_required": "Good",
   "welcome_offer": {
     "spending_requirement": 1000,
@@ -66,7 +66,8 @@
   ],
   "sources": [
     {
-      "url": "https://www.citi.com/credit-cards/citi-strata-credit-card"
+      "url": "https://www.citi.com/credit-cards/citi-strata-credit-card",
+      "notes": "Official Citi page, pricing details / terms, checked 2026-10-19: foreign transaction fee 3%."
     },
     {
       "url": "https://upgradedpoints.com/credit-cards/reviews/citi-strata-card/benefits/",
@@ -77,12 +78,12 @@
       "notes": "Sep 2025 review"
     }
   ],
-  "last_updated": "2026-04-16T13:41:49.978Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.978Z",
+  "last_verified": "2026-10-19",
   "next_review": "2026-07-15T13:41:49.978000+00:00"
 }
