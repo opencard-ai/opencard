@@ -77,7 +77,7 @@
       "notes": "DoC best current sign-up bonus list"
     }
   ],
-  "last_updated": "2026-10-23T12:00:00.000Z",
+  "last_updated": "2026-10-19",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -95,21 +95,20 @@
     }
   ],
   "welcome_offer": {
-    "bonus_points": 300,
+    "bonus_points": 250,
     "spending_requirement": 3000,
     "time_period_months": 6,
-    "description": "Earn 300 Statement Credit bonus points after spending $3,000 on purchases in the first 6 months.",
+    "description": "Earn $250 cash back (Reward Dollars) after you spend $3,000 in purchases on your new Card in the first 6 months of Card Membership.",
     "point_program": "Statement Credit",
-    "estimated_value": 300,
+    "estimated_value": 250,
     "notes": [
-      "Official Amex page 2026-10-19 shows $250; referral/targeted offers up to $300 reported by third parties.",
-      "2026-10-23 offer-watch auto-apply (two independent official fetches): bonus_points 250 -> 300. Sources: https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/."
+      "Official Amex page 2026-10-19 shows $250; referral/targeted offers up to $300 reported by third parties."
     ],
-    "last_verified": "2026-10-23"
+    "last_verified": "2026-10-19"
   },
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-10-23",
-  "next_review": "2026-11-22T00:00:00.000Z",
+  "last_verified": "2026-10-19",
+  "next_review": "2026-07-15T13:41:49.941000+00:00",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 5,
   "cash_advance_fee_pct": 3,
