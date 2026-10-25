@@ -1,100 +1,131 @@
 {
   "items": [
     {
-      "title": "[MI, FL] Lake Michigan Credit Union $193 Referral Checking Bonus",
-      "url": "https://www.doctorofcredit.com/lake-michigan-credit-union-100-referral-checking-bonus/",
+      "title": "[CT, RI only] Centreville Bank $200 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/ct-ri-only-centreville-bank-200-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "ct bank bonuses",
+        "direct deposit required",
+        "ri bank bonuses"
+      ],
+      "ts": "2026-10-25T20:00:38.000Z",
+      "title_en": "[CT, RI only] Centreville Bank $200 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[僅限康乃狄克州與羅德島州] Centreville Bank 200 美元支票帳戶獎金",
+      "summary_zh": "Centreville Bank 支票帳戶可獲 200 美元獎金，但活動僅限康乃狄克州與羅德島州居民參加。",
+      "title_es": "[Solo CT y RI] Bono de $200 en cuenta corriente de Centreville Bank",
+      "summary_es": "Centreville Bank ofrece un bono de $200 por abrir o utilizar una cuenta corriente en Connecticut o Rhode Island."
+    },
+    {
+      "title": "American Express Transfer Bonus: 35% To Marriott (1:1.35)",
+      "url": "https://www.doctorofcredit.com/american-express-transfer-bonus-35-to-marriott-11-35-2/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "american express",
+        "american express transfer bonuses",
+        "amex transfer bonuses",
+        "marriott",
+        "transfer bonuses"
+      ],
+      "ts": "2026-10-25T19:50:28.000Z",
+      "title_en": "American Express Transfer Bonus: 35% To Marriott (1:1.35)",
+      "summary_en": "",
+      "title_zh": "American Express 轉點獎勵：轉至 Marriott 可獲 35% 加成（1:1.35）",
+      "summary_zh": "將 American Express 積分轉至 Marriott 獎勵可獲 35% 加成，每 1 點可轉換為 1.35 點 Marriott 積分。",
+      "title_es": "Bono por transferencia de American Express: 35 % a Marriott (1:1,35)",
+      "summary_es": "Las transferencias de American Express a los programas de lealtad de Marriott otorgan un 35 % de puntos adicionales."
+    },
+    {
+      "title": "Citi ThankYou Points 10% Transfer Bonus To Cathay Pacific Asia Miles (1:1.10)",
+      "url": "https://www.doctorofcredit.com/citi-thankyou-points-10-transfer-bonus-to-cathay-pacific-asia-miles-11-10/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "cathay pacific",
+        "Citi",
+        "citi transfer bonuses",
+        "transfer bonuses"
+      ],
+      "ts": "2026-10-25T19:47:04.000Z",
+      "title_en": "Citi ThankYou Points 10% Transfer Bonus To Cathay Pacific Asia Miles (1:1.10)",
+      "summary_en": "",
+      "title_zh": "Citi ThankYou Points 轉至國泰亞洲萬里哩可獲 10% 獎勵（1:1.10）",
+      "summary_zh": "將 Citi ThankYou Points 轉至國泰亞洲萬里哩可獲 10% 加成，每 1 點可轉換為 1.10 里。",
+      "title_es": "Bono del 10 % al transferir puntos Citi ThankYou a Cathay Pacific Asia Miles (1:1,10)",
+      "summary_es": "Citi ofrece un 10 % de puntos adicionales al transferring ThankYou Points a Cathay Pacific Asia Miles."
+    },
+    {
+      "title": "Citi Adds Copa ConnectMiles As 1:1 Transfer Partner",
+      "url": "https://www.doctorofcredit.com/citi-adds-copa-connectmiles-as-11-transfer-partner/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "Citi",
+        "Copa Airlines ConnectMiles"
+      ],
+      "ts": "2026-10-25T19:42:45.000Z",
+      "title_en": "Citi Adds Copa ConnectMiles As 1:1 Transfer Partner",
+      "summary_en": "",
+      "title_zh": "Citi 新增 Copa ConnectMiles 為 1:1 轉點合作夥伴",
+      "summary_zh": "Citi 積分現可按 1:1 比率轉換至 Copa ConnectMiles 飛行獎勵。",
+      "title_es": "Citi añade Copa ConnectMiles como socio de transferencia 1:1",
+      "summary_es": "Los clientes de Citi pueden transferir sus ThankYou Points a Copa ConnectMiles en una proporción de 1:1."
+    },
+    {
+      "title": "[UT Only] UCCU $300 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/ut-only-uccu-300-checking-bonus/",
       "source": "Doctor of Credit",
       "categories": [
         "Bank Accounts",
         "direct deposit required",
-        "hard pull",
-        "nationwide bank bonuses"
+        "ut bank bonuses"
       ],
-      "ts": "2026-10-24T15:30:59.000Z",
-      "title_en": "[MI, FL] Lake Michigan Credit Union $193 Referral Checking Bonus",
+      "ts": "2026-10-25T19:40:40.000Z",
+      "title_en": "[UT Only] UCCU $300 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[MI、FL] 密歇根湖信用聯盟推薦開立支票帳戶可獲193美元獎金",
-      "summary_zh": "美國密歇根州與佛羅里達州居民透過密歇根湖信用聯盟推薦他人開立支票帳戶，即可獲得193美元的推薦獎金。",
-      "title_es": "[MI, FL] Bono de $193 por referencias para cuentas corrientes de Lake Michigan Credit Union",
-      "summary_es": "Lake Michigan Credit Union ofrece un bono de 193 dólares por referencias al abrir una cuenta corriente."
+      "title_zh": "[僅限猶他州] UCCU 300 美元支票帳戶獎金",
+      "summary_zh": "UCCU 支票帳戶可獲 300 美元獎金，但活動僅限猶他州居民參加。",
+      "title_es": "[Solo UT] Bono de $300 en cuenta corriente de UCCU",
+      "summary_es": "UCCU ofrece un bono de $300 por abrir o utilizar una cuenta corriente en Utah."
     },
     {
-      "title": "AmEx Offers: Virgin Atlantic, Spend $2,500 & Get $200 Statement Credit",
-      "url": "https://www.doctorofcredit.com/amex-offers-virgin-atlantic-spend-2000-get-300-statement-credit/",
+      "title": "[TX Only] DATCU $200 CD Bonus [1 Year, $2,500 Minimum & 4.15% APY)",
+      "url": "https://www.doctorofcredit.com/tx-only-datcu-200-cd-bonus-1-year-2500-minimum-4-15-apy/",
       "source": "Doctor of Credit",
       "categories": [
-        "Deals",
-        "Travel",
-        "amex offers",
-        "virgin atlantic"
+        "Bank Accounts",
+        "tx bank bonuses"
       ],
-      "ts": "2026-10-23T19:40:14.000Z",
-      "title_en": "AmEx Offers: Virgin Atlantic, Spend $2,500 & Get $200 Statement Credit",
+      "ts": "2026-10-25T19:00:37.000Z",
+      "title_en": "[TX Only] DATCU $200 CD Bonus [1 Year, $2,500 Minimum & 4.15% APY)",
       "summary_en": "",
-      "title_zh": "AmEx 優惠：Virgin Atlantic 消費滿 2,500 美元，獲 200 美元帳單抵用金",
-      "summary_zh": "透過 American Express 預訂 Virgin Atlantic 機票，消費滿 2,500 美元即可獲得 200 美元帳單抵用金。",
-      "title_es": "Ofertas de AmEx: gasta $2,500 en Virgin Atlantic y obtén un crédito de $200 en el estado de cuenta",
-      "summary_es": "Gasta $2,500 con Virgin Atlantic y recibe un crédito de $200 en tu estado de cuenta de American Express."
+      "title_zh": "[僅限德州] DATCU 200 美元定期存款獎金（1 年期、需存入 2,500 美元、年利率 4.15%）",
+      "summary_zh": "DATCU 開立一年期定期存款並存入至少 2,500 美元，可獲 200 美元獎金，年利率為 4.15%。",
+      "title_es": "[Solo TX] Bono de $200 en CDs de DATCU [1 año, depósito mínimo de $2.500 y APY del 4,15 %]",
+      "summary_es": "DATCU ofrece un bono de $200 por abrir un certificado de depósito en Texas con un plazo de un año, un mínimo de $2.500 y una APY del 4,15 %."
     },
     {
-      "title": "[Ending Soon] Chase British Airways: 90,000 Point Bonus After $5,000 In Spend (Aer Lingus & Iberia)",
-      "url": "https://www.doctorofcredit.com/chase-british-airways-100000-point-bonus-after-7500-in-spend-aer-lingus-iberia/",
+      "title": "[PA In Branch] Mid Penn Bank $250 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/pa-in-branch-mid-penn-bank-150-checking-bonus-no-bonus-requirements/",
       "source": "Doctor of Credit",
       "categories": [
-        "Credit Cards",
-        "big",
-        "chase",
-        "chase aer lingus",
-        "chase british airways",
-        "credit card bonuses",
-        "iberia"
+        "Bank Accounts",
+        "direct deposit required",
+        "pa bank bonuses"
       ],
-      "ts": "2026-10-23T19:00:40.000Z",
-      "title_en": "[Ending Soon] Chase British Airways: 90,000 Point Bonus After $5,000 In Spend (Aer Lingus & Iberia)",
+      "ts": "2026-10-25T18:00:24.000Z",
+      "title_en": "[PA In Branch] Mid Penn Bank $250 Checking Bonus",
       "summary_en": "",
-      "title_zh": "【即將結束】Chase British Airways：消費滿 5,000 美元，額外獲贈 90,000 點（Aer Lingus 與 Iberia）",
-      "summary_zh": "Chase British Airways 卡片活動將於近期結束，於合資格消費滿 5,000 美元後可獲贈 90,000 點，Aer Lingus 與 Iberia 航班亦適用。",
-      "title_es": "[Termina pronto] Chase British Airways: 90,000 puntos de bonificación tras gastar $5,000 (Aer Lingus e Iberia)",
-      "summary_es": "La promoción de Chase British Airways ofrece 90,000 puntos de bonificación después de gastar $5,000, con Oversight mediante Aer Lingus e Iberia, y está por finalizar."
+      "title_zh": "[賓州分行辦理] Mid Penn Bank 250 美元支票帳戶獎金",
+      "summary_zh": "於賓州分行開立 Mid Penn Bank 支票帳戶可獲 250 美元獎金。",
+      "title_es": "[En sucursales de PA] Bono de $250 en cuenta corriente de Mid Penn Bank",
+      "summary_es": "Mid Penn Bank ofrece un bono de $250 por abrir o utilizar una cuenta corriente mediante una sucursal en Pensilvania."
     },
     {
-      "title": "[Targeted] U.S. Bank Travel: $100 Off $500 Hotel Booking",
-      "url": "https://www.doctorofcredit.com/targeted-u-s-bank-travel-save-75-with-500-booking/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "Deals",
-        "Travel",
-        "u.s. bank"
-      ],
-      "ts": "2026-10-23T18:00:47.000Z",
-      "title_en": "[Targeted] U.S. Bank Travel: $100 Off $500 Hotel Booking",
-      "summary_en": "",
-      "title_zh": "【指定用戶】U.S. Bank Travel：預訂酒店滿 500 美元可減 100 美元",
-      "summary_zh": "U.S. Bank Travel 向指定用戶提供酒店預訂優惠，消費滿 500 美元即可減 100 美元。",
-      "title_es": "[Dirigida] U.S. Bank Travel: $100 de descuento en reservas de hoteles de $500",
-      "summary_es": "Los clientes seleccionados de U.S. Bank Travel pueden recibir $100 de descuento al reservar un hotel por $500 o más."
-    },
-    {
-      "title": "[Targeted] AmEx Offers: Marriott, Spend $300/$450 & Get $150/$200 Back",
-      "url": "https://www.doctorofcredit.com/amex-offers-marriott-spend-300-450-get-150-200-back/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "Travel",
-        "amex offers",
-        "marriott"
-      ],
-      "ts": "2026-10-23T17:45:17.000Z",
-      "title_en": "[Targeted] AmEx Offers: Marriott, Spend $300/$450 & Get $150/$200 Back",
-      "summary_en": "",
-      "title_zh": "【指定用戶】AmEx 優惠：Marriott 消費滿 300／450 美元，獲 150／200 美元回贈",
-      "summary_zh": "指定用戶透過 American Express 預訂 Marriott 酒店，消費滿 300 或 450 美元，分別可獲 150 或 200 美元回贈。",
-      "title_es": "[Dirigida] Ofertas de AmEx: Marriott, gasta $300/$450 y obtén $150/$200 de devolución",
-      "summary_es": "Certain recipients of American Express Marriott offers can receive $150 back after spending $300 or $200 back after spending $450."
-    },
-    {
-      "title": "Rakuten: Earn 100x On ExpressVPN, CyberGhost VPN, Private Internet Access, Incongi",
+      "title": "Rakuten: Earn 100x On NordVPN, ExpressVPN, CyberGhost VPN, Private Internet Access, Incongi",
       "url": "https://www.doctorofcredit.com/rakuten-earn-100x-on-expressvpn-cyberghost-vpn-private-internet-access-incongi/",
       "source": "Doctor of Credit",
       "categories": [
@@ -102,67 +133,136 @@
         "expressvpn",
         "rakuten"
       ],
-      "ts": "2026-10-23T17:32:13.000Z",
-      "title_en": "Rakuten: Earn 100x On ExpressVPN, CyberGhost VPN, Private Internet Access, Incongi",
+      "ts": "2026-10-25T18:00:13.000Z",
+      "title_en": "Rakuten: Earn 100x On NordVPN, ExpressVPN, CyberGhost VPN, Private Internet Access, Incongi",
       "summary_en": "",
-      "title_zh": "Rakuten：ExpressVPN、CyberGhost VPN、Private Internet Access 與 Incongi 可賺取 100 倍積分",
-      "summary_zh": "透過 Rakuten 訂閱 ExpressVPN、CyberGhost VPN、Private Internet Access 或 Incongi，可賺取 100 倍 Rakuten 積分。",
-      "title_es": "Rakuten: gana 100x con ExpressVPN, CyberGhost VPN, Private Internet Access e Incongi",
-      "summary_es": "La tarjeta Rakuten ofrece 100 veces los puntos en compras de ExpressVPN, CyberGhost VPN, Private Internet Access e Incongi."
+      "title_zh": "Rakuten：在 NordVPN、ExpressVPN、CyberGhost VPN、Private Internet Access 與 Incongi 消費可賺 100 倍積分",
+      "summary_zh": "透過 Rakuten 購買指定 VPN 服務或 Incongi 產品，可賺取一般額度 100 倍的 Rakuten 積分。",
+      "title_es": "Rakuten: gana 100x con NordVPN, ExpressVPN, CyberGhost VPN, Private Internet Access e Incogni",
+      "summary_es": "Las compras de servicios de VPN o privacidad elegibles Rakuten pueden generar hasta 100 veces los puntos habituales."
     },
     {
-      "title": "American Express Platinum Cards: Earn 5x Membership Rewards Points on Airbnb Bookings via AmEx Travel",
-      "url": "https://www.doctorofcredit.com/american-express-platinum-cards-earn-5x-membership-rewards-points-on-airbnb-bookings-via-amex-travel/",
+      "title": "Safeway: Get 10x Points On Select Zift Giftcards (10/25-10/31)",
+      "url": "https://www.doctorofcredit.com/safeway-get-12x-points-on-zift-zillions/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "fuel points",
+        "Safeway"
+      ],
+      "ts": "2026-10-25T17:00:21.000Z",
+      "title_en": "Safeway: Get 10x Points On Select Zift Giftcards (10/25-10/31)",
+      "summary_en": "",
+      "title_zh": "Safeway：指定 Zift 禮品卡可賺 10 倍積分（10/25–10/31）",
+      "summary_zh": "於 10 月 25 日至 31 日在 Safeway 購買指定 Zift 禮品卡，可賺取 10 倍積分。",
+      "title_es": "Safeway: obtén 10x puntos en tarjetas de regalo Zift selectas (10/25-10/31)",
+      "summary_es": "Safeway ofrece 10 veces los puntos habituales por comprar tarjetas de regalo Zift seleccionadas entre el 25 y el 31 de octubre."
+    },
+    {
+      "title": "[AZ and NM] MariSol Federal Credit Union $400 Savings Match",
+      "url": "https://www.doctorofcredit.com/az-and-nm-marisol-federal-credit-union-400-savings-match/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "az bank bonuses",
+        "direct deposit not required",
+        "nm bank bonuses"
+      ],
+      "ts": "2026-10-25T17:00:20.000Z",
+      "title_en": "[AZ and NM] MariSol Federal Credit Union $400 Savings Match",
+      "summary_en": "",
+      "title_zh": "[亞利桑那州與新墨西哥州] MariSol Federal Credit Union 400 美元儲蓄匹配獎金",
+      "summary_zh": "MariSol Federal Credit Union 儲蓄帳戶可獲 400 美元存款匹配獎金，但活動僅限亞利桑那州與新墨西哥州居民參加。",
+      "title_es": "[AZ y NM] Coin(cid) del 100 % de $400 en ahorro de MariSol Federal Credit Union",
+      "summary_es": "MariSol Federal Credit Union iguala hasta $400 de depósitos de ahorro para clientes elegibles de Arizona y Nuevo México."
+    },
+    {
+      "title": "Costco.com: $120 in Amtrak eGiftcards For $99.99 (Limit 5)",
+      "url": "https://www.doctorofcredit.com/costco-com-120-in-amtrak-egiftcards-for-99-99-limit-5/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Gift Card Deals",
+        "amtrak",
+        "costco"
+      ],
+      "ts": "2026-10-25T16:12:18.000Z",
+      "title_en": "Costco.com: $120 in Amtrak eGiftcards For $99.99 (Limit 5)",
+      "summary_en": "",
+      "title_zh": "Costco.com：以 99.99 美元購買價值 120 美元的 Amtrak 電子禮品卡（限購 5 張）",
+      "summary_zh": "在 Costco.com 以 99.99 美元購買價值 120 美元的 Amtrak 電子禮品卡，每位顧客最多可購買 5 張。",
+      "title_es": "Costco.com: $120 en tarjetas de regalo electrónicas Amtrak por $99,99 (límite de 5)",
+      "summary_es": "Costco.com ofrece $120 en tarjetas de regalo electrónicas Amtrak por $99,99, con un límite de cinco unidades."
+    },
+    {
+      "title": "[GA only] Georgia’s Own Credit Union $300 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/ga-only-georgias-own-credit-union-200-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "ga bank bonuses",
+        "hard pull"
+      ],
+      "ts": "2026-10-25T16:00:37.000Z",
+      "title_en": "[GA only] Georgia’s Own Credit Union $300 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[僅限喬治亞州] Georgia’s Own Credit Union 300 美元支票帳戶獎金",
+      "summary_zh": "Georgia’s Own Credit Union 支票帳戶可獲 300 美元獎金，但活動僅限喬治亞州居民參加。",
+      "title_es": "[Solo GA] Bono de $300 en cuenta corriente de Georgia’s Own Credit Union",
+      "summary_es": "Georgia’s Own Credit Union ofrece un bono de $300 por abrir o utilizar una cuenta corriente en Georgia."
+    },
+    {
+      "title": "(Update) Chase Sapphire & Freedom Cards Get 10x With Paze Checkout through 2026 (United, Shoprite, Dunkin, Etc.)",
+      "url": "https://www.doctorofcredit.com/chase-sapphire-freedom-cards-get-10x-with-paze-checkout-through-2026-united-newegg-shoprite-dunkin-etc/",
       "source": "Doctor of Credit",
       "categories": [
         "Credit Cards",
-        "american express",
-        "american express business platinum",
-        "american express platinum",
-        "amex travel"
+        "chase",
+        "chase ultimate rewards",
+        "paze"
       ],
-      "ts": "2026-10-23T16:16:59.000Z",
-      "title_en": "American Express Platinum Cards: Earn 5x Membership Rewards Points on Airbnb Bookings via AmEx Travel",
+      "ts": "2026-10-25T15:50:59.000Z",
+      "title_en": "(Update) Chase Sapphire & Freedom Cards Get 10x With Paze Checkout through 2026 (United, Shoprite, Dunkin, Etc.)",
       "summary_en": "",
-      "title_zh": "American Express Platinum 卡：透過 AmEx Travel 預訂 Airbnb 可賺取 5 倍 Membership Rewards 積分",
-      "summary_zh": "使用 American Express Platinum 卡經由 AmEx Travel 預訂 Airbnb，可賺取 5 倍 Membership Rewards 積分。",
-      "title_es": "Tarjetas American Express Platinum: gana 5x puntos Membership Rewards en reservas de Airbnb a través de AmEx Travel",
-      "summary_es": "Las reservas de Accommodation booked through AmEx Travel pueden obtener 5x puntos Membership Rewards."
+      "title_zh": "（更新）Chase Sapphire 與 Freedom 信用卡透過 Paze 結帳可賺 10 倍積分，活動延至 2026 年（United、Shoprite、Dunkin 等）",
+      "summary_zh": "使用 Chase Sapphire 或 Freedom 信用卡在 Paze 合作商店結帳可賺取 10 倍積分，活動持續至 2026 年。",
+      "title_es": "(Actualización) Las tarjetas Chase Sapphire y Freedom obtienen 10x con pagos mediante Paze hasta 2026 (United, Shoprite, Dunkin, etc.)",
+      "summary_es": "Las compras elegibles realizadas con Paze en comercios como United, Shoprite y Dunkin otorgan 10 veces los puntos habituales en las tarjetas Chase Sapphire y Freedom hasta 2026."
     },
     {
-      "title": "American Express Business Platinum 2x Shipping Benefit Limited To Select Providers",
-      "url": "https://www.doctorofcredit.com/american-express-business-platinum-2x-shipping-benefit-limited-to-select-providers/",
+      "title": "Chase/U.S. Bank Offers: Get 5-7% Back At Food Lion (Up To $7 Back)",
+      "url": "https://www.doctorofcredit.com/citi-offers-get-3-back-at-food-lion/",
       "source": "Doctor of Credit",
       "categories": [
-        "Credit Cards",
-        "american express",
-        "american express business platinum"
+        "Deals",
+        "citi offers",
+        "food lion"
       ],
-      "ts": "2026-10-23T16:05:11.000Z",
-      "title_en": "American Express Business Platinum 2x Shipping Benefit Limited To Select Providers",
+      "ts": "2026-10-25T15:40:18.000Z",
+      "title_en": "Chase/U.S. Bank Offers: Get 5-7% Back At Food Lion (Up To $7 Back)",
       "summary_en": "",
-      "title_zh": "American Express Business Platinum 兩倍運費優惠僅限指定供應商",
-      "summary_zh": "American Express Business Platinum 卡可享兩倍運費積分回贈，但優惠僅適用於指定供應商。",
-      "title_es": "El beneficio de envío 2x de American Express Business Platinum está limitado a proveedores seleccionados",
-      "summary_es": "El beneficio de envío con puntos multiplicados por dos de la tarjeta American Express Business Platinum solo se aplica a proveedores seleccionados."
+      "title_zh": "Chase／U.S. Bank 優惠：於 Food Lion 消費可享 5% 至 7% 現金回饋（最高 7 美元）",
+      "summary_zh": "使用 Chase 或 U.S. Bank 信用卡於 Food Lion 消費，可依合資格消費享 5% 至 7% 現金回饋，最高回饋 7 美元。",
+      "title_es": "Ofertas de Chase y U.S. Bank: recupera del 5 al 7 % en Food Lion (hasta $7 de reembolso)",
+      "summary_es": "Las compras elegibles en Food Lion con tarjetas de Chase o U.S. Bank permiten recibir entre el 5 % y el 7 % de reembolso, hasta un máximo de $7."
     },
     {
-      "title": "American Express Business Platinum $10 Monthly Wireless Credit Limited To Select Wireless Carriers",
-      "url": "https://www.doctorofcredit.com/american-express-business-platinum-10-monthly-wireless-credit-limited-to-select-wireless-carriers/",
+      "title": "Office Depot/Max Stores: Buy $300 In Mastercard Giftcards & Get $15 Instant Discount (10/25-10/31)",
+      "url": "https://www.doctorofcredit.com/office-depot-max-stores-buy-300-in-mastercard-giftcards-get-15-instant-discount-2-13-2-19/",
       "source": "Doctor of Credit",
       "categories": [
-        "Credit Cards",
-        "american express",
-        "american express business platinum"
+        "Manufactured Spending",
+        "mastercard gift cards",
+        "office depot/max"
       ],
-      "ts": "2026-10-23T15:54:07.000Z",
-      "title_en": "American Express Business Platinum $10 Monthly Wireless Credit Limited To Select Wireless Carriers",
+      "ts": "2026-10-25T15:18:43.000Z",
+      "title_en": "Office Depot/Max Stores: Buy $300 In Mastercard Giftcards & Get $15 Instant Discount (10/25-10/31)",
       "summary_en": "",
-      "title_zh": "American Express Business Platinum 每月 10 美元無線通訊抵用金僅限指定電信商",
-      "summary_zh": "American Express Business Platinum 卡可每月獲得 10 美元無線通訊帳單抵用金，但僅限指定無線電信商。",
-      "title_es": "El crédito mensual de $10 para servicios inalámbricos de American Express Business Platinum está limitado a operadores seleccionados",
-      "summary_es": "Los titulares de American Express Business Platinum pueden recibir un crédito mensual de $10 por servicios inalámbricos con operadores seleccionados."
+      "title_zh": "Office Depot／Max Stores：購買 300 美元 Mastercard 禮品卡可立即減價 15 美元（10/25–10/31）",
+      "summary_zh": "於 10 月 25 日至 31 日在 Office Depot 或 Max Stores 購買 300 美元的 Mastercard 禮品卡，可立即享受 15 美元折扣。",
+      "title_es": "Office Depot/Max Stores: compra $300 en tarjetas de regalo Mastercard y recibe un descuento instantáneo de $15 (10/25-10/31)",
+      "summary_es": "Office Depot y Max Stores ofrecen un descuento instantáneo de $15 al comprar $300 en tarjetas de regalo Mastercard entre el 25 y el 31 de octubre."
     }
   ],
-  "fetched": "2026-10-24T20:08:14.625Z"
+  "fetched": "2026-10-25T20:08:27.479Z"
 }
