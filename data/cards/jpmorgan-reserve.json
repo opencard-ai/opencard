@@ -96,8 +96,8 @@
   ],
   "sources": [
     {
-      "url": "https://www.chase.com/jpmorgan-reserve",
-      "notes": "Chase JPMorgan Reserve page"
+      "url": "https://www.chase.com/jpmreserve/rewardsagreement",
+      "notes": "Official Chase J.P. Morgan Reserve Ultimate Rewards Program Agreement (live 2026-10-26). Replaces dead https://www.chase.com/jpmorgan-reserve (HTTP 404). Card remains invitation-only; no public apply page."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/jpmorgan-reserve-card/",
@@ -105,7 +105,7 @@
     }
   ],
   "notes": "Ultra-exclusive invitation-only card for JPMorgan Private Client customers (typically requires $2M+ at JPMorgan Chase). Replaced the JPM Palladium card. Similar benefits to Sapphire Reserve but more exclusive and higher AF ($995). Benefits exceed Sapphire Reserve slightly. Not publicly available — must be invited by JPMorgan.",
-  "last_updated": "2026-04-29T13:32:09.178Z",
+  "last_updated": "2026-10-26",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -192,6 +192,6 @@
       "reset_type": "every_4_years"
     }
   ],
-  "last_verified": "2026-04-16T13:41:49.988Z",
+  "last_verified": "2026-10-26",
   "next_review": "2026-07-15T13:41:49.988000+00:00"
 }
