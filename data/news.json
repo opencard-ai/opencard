@@ -1,6 +1,111 @@
 {
   "items": [
     {
+      "title": "[YMMV] UberEats: 100% Off Catering Orders, Up To $300",
+      "url": "https://www.doctorofcredit.com/ymmv-ubereats-100-off-catering-orders-up-to-300/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "Food Delivery",
+        "UberEATS"
+      ],
+      "ts": "2026-10-26T00:37:26.000Z",
+      "title_en": "[YMMV] UberEats: 100% Off Catering Orders, Up To $300",
+      "summary_en": "",
+      "title_zh": "[YMMV] Uber Eats：餐飲訂單享 100% 折扣，最高減免 300 美元",
+      "summary_zh": "符合 YMMV 資格的用戶可享 Uber Eats 餐飲訂單 100% 折扣，最高價值 300 美元。",
+      "title_es": "[YMMV] UberEats: 100 % de descuento en pedidos de catering, hasta 300 USD",
+      "summary_es": "UberEats ofrece un 100 % de descuento en pedidos de catering de Walmart Marketplace, hasta un máximo de 300 USD."
+    },
+    {
+      "title": "Staples: No Purchase Fee On $200 Visa Gift Cards (10/18 – 10/31)",
+      "url": "https://www.doctorofcredit.com/staples-no-purchase-fee-on-200-visa-gift-cards-10-31-11-6-limit-5/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Manufactured Spending",
+        "staples",
+        "visa gift cards"
+      ],
+      "ts": "2026-10-26T00:02:28.000Z",
+      "title_en": "Staples: No Purchase Fee On $200 Visa Gift Cards (10/18 – 10/31)",
+      "summary_en": "",
+      "title_zh": "Staples：購買 200 美元 Visa 禮品卡免手續費（10/18–10/31）",
+      "summary_zh": "於 10 月 18 日至 31 日期間，透過 Staples 購買 200 美元 Visa 禮品卡可免交易手續費。",
+      "title_es": "Staples: sin comisión de compra en tarjetas de regalo Visa de 200 USD (del 18/10 al 31/10)",
+      "summary_es": "Staples ofrece tarjetas de regalo Visa de 200 USD sin comisión de compra durante el periodo del 18 de octubre al 31 de octubre."
+    },
+    {
+      "title": "[Targeted] Gemini: Get $30-$760 On Prediction Markets (Requires $250-$20,000 In Trades)",
+      "url": "https://www.doctorofcredit.com/targeted-gemini-50-bonus-on-prediction-markets-up-to-50/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "gemini",
+        "prediction markets"
+      ],
+      "ts": "2026-10-25T23:35:10.000Z",
+      "title_en": "[Targeted] Gemini: Get $30-$760 On Prediction Markets (Requires $250-$20,000 In Trades)",
+      "summary_en": "",
+      "title_zh": "[特定用戶] Gemini：於預測市場獲得 30 至 760 美元（須完成 250 至 20,000 美元交易）",
+      "summary_zh": "符合資格的 Gemini 用戶在預測市場完成指定金額的交易後，可獲得 30 至 760 美元獎勵。",
+      "title_es": "[Dirigido] Gemini: obtén entre 30 y 760 USD en mercados de predicción (requiere realizar operaciones por entre 250 y 20.000 USD)",
+      "summary_es": "Gemini ofrece recompensas de entre 30 y 760 USD en mercados de predicción para quienes completen operaciones por un valor mínimo de 250 USD."
+    },
+    {
+      "title": "Citi Adds $200 inKind Dining Credit To American Airlines Executive Card",
+      "url": "https://www.doctorofcredit.com/citi-adds-200-inkind-dining-credit-to-american-airlines-executive-card/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "Citi",
+        "Citi AAdvantage Executive World Elite",
+        "citi american airlines"
+      ],
+      "ts": "2026-10-25T23:12:50.000Z",
+      "title_en": "Citi Adds $200 inKind Dining Credit To American Airlines Executive Card",
+      "summary_en": "",
+      "title_zh": "Citi 為 American Airlines Executive Card 新增 200 美元 inKind 餐飲抵用額",
+      "summary_zh": "American Airlines Executive Card 持卡人可新享 200 美元的 inKind 餐飲抵用額。",
+      "title_es": "Citi añade 200 USD de crédito de restaurante inKind a la tarjeta ejecutiva American Airlines",
+      "summary_es": "Citi incorpora 200 USD en crédito de restaurantes inKind a la tarjeta ejecutiva American Airlines."
+    },
+    {
+      "title": "[TX only] A+ Federal Credit Union $250 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/tx-only-a-federal-credit-union-250-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "chexsystems",
+        "direct deposit required",
+        "no credit card funding",
+        "tx bank bonuses"
+      ],
+      "ts": "2026-10-25T22:00:41.000Z",
+      "title_en": "[TX only] A+ Federal Credit Union $250 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[僅限德州] A+ Federal Credit Union 支票帳戶可獲 250 美元獎金",
+      "summary_zh": "德州居民在 A+ Federal Credit Union 開立符合條件的支票帳戶，可獲得 250 美元獎金。",
+      "title_es": "[Solo para TX] Bono de 250 USD por abrir una cuenta corriente en A+ Federal Credit Union",
+      "summary_es": "A+ Federal Credit Union ofrece un bono de 250 USD por la apertura y el uso de una cuenta corriente, disponible únicamente en Texas."
+    },
+    {
+      "title": "[MA Only] Liberty Bay Credit Union (lbcu.org) $100 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/ma-only-liberty-bank-lbcu-org-100-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "ma bank bonuses"
+      ],
+      "ts": "2026-10-25T21:00:39.000Z",
+      "title_en": "[MA Only] Liberty Bay Credit Union (lbcu.org) $100 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[僅限麻州] Liberty Bay Credit Union（lbcu.org）支票帳戶可獲 100 美元獎金",
+      "summary_zh": "麻州居民在 Liberty Bay Credit Union 開立符合條件的支票帳戶，可獲得 100 美元獎金。",
+      "title_es": "[Solo para MA] Bono de 100 USD por cuenta corriente en Liberty Bay Credit Union (lbcu.org)",
+      "summary_es": "Liberty Bay Credit Union ofrece un bono de 100 USD por abrir una cuenta corriente, disponible únicamente en Massachusetts."
+    },
+    {
       "title": "[CT, RI only] Centreville Bank $200 Checking Bonus",
       "url": "https://www.doctorofcredit.com/ct-ri-only-centreville-bank-200-checking-bonus/",
       "source": "Doctor of Credit",
@@ -157,112 +262,7 @@
       "summary_zh": "於 10 月 25 日至 31 日在 Safeway 購買指定 Zift 禮品卡，可賺取 10 倍積分。",
       "title_es": "Safeway: obtén 10x puntos en tarjetas de regalo Zift selectas (10/25-10/31)",
       "summary_es": "Safeway ofrece 10 veces los puntos habituales por comprar tarjetas de regalo Zift seleccionadas entre el 25 y el 31 de octubre."
-    },
-    {
-      "title": "[AZ and NM] MariSol Federal Credit Union $400 Savings Match",
-      "url": "https://www.doctorofcredit.com/az-and-nm-marisol-federal-credit-union-400-savings-match/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "az bank bonuses",
-        "direct deposit not required",
-        "nm bank bonuses"
-      ],
-      "ts": "2026-10-25T17:00:20.000Z",
-      "title_en": "[AZ and NM] MariSol Federal Credit Union $400 Savings Match",
-      "summary_en": "",
-      "title_zh": "[亞利桑那州與新墨西哥州] MariSol Federal Credit Union 400 美元儲蓄匹配獎金",
-      "summary_zh": "MariSol Federal Credit Union 儲蓄帳戶可獲 400 美元存款匹配獎金，但活動僅限亞利桑那州與新墨西哥州居民參加。",
-      "title_es": "[AZ y NM] Coin(cid) del 100 % de $400 en ahorro de MariSol Federal Credit Union",
-      "summary_es": "MariSol Federal Credit Union iguala hasta $400 de depósitos de ahorro para clientes elegibles de Arizona y Nuevo México."
-    },
-    {
-      "title": "Costco.com: $120 in Amtrak eGiftcards For $99.99 (Limit 5)",
-      "url": "https://www.doctorofcredit.com/costco-com-120-in-amtrak-egiftcards-for-99-99-limit-5/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Gift Card Deals",
-        "amtrak",
-        "costco"
-      ],
-      "ts": "2026-10-25T16:12:18.000Z",
-      "title_en": "Costco.com: $120 in Amtrak eGiftcards For $99.99 (Limit 5)",
-      "summary_en": "",
-      "title_zh": "Costco.com：以 99.99 美元購買價值 120 美元的 Amtrak 電子禮品卡（限購 5 張）",
-      "summary_zh": "在 Costco.com 以 99.99 美元購買價值 120 美元的 Amtrak 電子禮品卡，每位顧客最多可購買 5 張。",
-      "title_es": "Costco.com: $120 en tarjetas de regalo electrónicas Amtrak por $99,99 (límite de 5)",
-      "summary_es": "Costco.com ofrece $120 en tarjetas de regalo electrónicas Amtrak por $99,99, con un límite de cinco unidades."
-    },
-    {
-      "title": "[GA only] Georgia’s Own Credit Union $300 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/ga-only-georgias-own-credit-union-200-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "direct deposit required",
-        "ga bank bonuses",
-        "hard pull"
-      ],
-      "ts": "2026-10-25T16:00:37.000Z",
-      "title_en": "[GA only] Georgia’s Own Credit Union $300 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "[僅限喬治亞州] Georgia’s Own Credit Union 300 美元支票帳戶獎金",
-      "summary_zh": "Georgia’s Own Credit Union 支票帳戶可獲 300 美元獎金，但活動僅限喬治亞州居民參加。",
-      "title_es": "[Solo GA] Bono de $300 en cuenta corriente de Georgia’s Own Credit Union",
-      "summary_es": "Georgia’s Own Credit Union ofrece un bono de $300 por abrir o utilizar una cuenta corriente en Georgia."
-    },
-    {
-      "title": "(Update) Chase Sapphire & Freedom Cards Get 10x With Paze Checkout through 2026 (United, Shoprite, Dunkin, Etc.)",
-      "url": "https://www.doctorofcredit.com/chase-sapphire-freedom-cards-get-10x-with-paze-checkout-through-2026-united-newegg-shoprite-dunkin-etc/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "chase",
-        "chase ultimate rewards",
-        "paze"
-      ],
-      "ts": "2026-10-25T15:50:59.000Z",
-      "title_en": "(Update) Chase Sapphire & Freedom Cards Get 10x With Paze Checkout through 2026 (United, Shoprite, Dunkin, Etc.)",
-      "summary_en": "",
-      "title_zh": "（更新）Chase Sapphire 與 Freedom 信用卡透過 Paze 結帳可賺 10 倍積分，活動延至 2026 年（United、Shoprite、Dunkin 等）",
-      "summary_zh": "使用 Chase Sapphire 或 Freedom 信用卡在 Paze 合作商店結帳可賺取 10 倍積分，活動持續至 2026 年。",
-      "title_es": "(Actualización) Las tarjetas Chase Sapphire y Freedom obtienen 10x con pagos mediante Paze hasta 2026 (United, Shoprite, Dunkin, etc.)",
-      "summary_es": "Las compras elegibles realizadas con Paze en comercios como United, Shoprite y Dunkin otorgan 10 veces los puntos habituales en las tarjetas Chase Sapphire y Freedom hasta 2026."
-    },
-    {
-      "title": "Chase/U.S. Bank Offers: Get 5-7% Back At Food Lion (Up To $7 Back)",
-      "url": "https://www.doctorofcredit.com/citi-offers-get-3-back-at-food-lion/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "citi offers",
-        "food lion"
-      ],
-      "ts": "2026-10-25T15:40:18.000Z",
-      "title_en": "Chase/U.S. Bank Offers: Get 5-7% Back At Food Lion (Up To $7 Back)",
-      "summary_en": "",
-      "title_zh": "Chase／U.S. Bank 優惠：於 Food Lion 消費可享 5% 至 7% 現金回饋（最高 7 美元）",
-      "summary_zh": "使用 Chase 或 U.S. Bank 信用卡於 Food Lion 消費，可依合資格消費享 5% 至 7% 現金回饋，最高回饋 7 美元。",
-      "title_es": "Ofertas de Chase y U.S. Bank: recupera del 5 al 7 % en Food Lion (hasta $7 de reembolso)",
-      "summary_es": "Las compras elegibles en Food Lion con tarjetas de Chase o U.S. Bank permiten recibir entre el 5 % y el 7 % de reembolso, hasta un máximo de $7."
-    },
-    {
-      "title": "Office Depot/Max Stores: Buy $300 In Mastercard Giftcards & Get $15 Instant Discount (10/25-10/31)",
-      "url": "https://www.doctorofcredit.com/office-depot-max-stores-buy-300-in-mastercard-giftcards-get-15-instant-discount-2-13-2-19/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Manufactured Spending",
-        "mastercard gift cards",
-        "office depot/max"
-      ],
-      "ts": "2026-10-25T15:18:43.000Z",
-      "title_en": "Office Depot/Max Stores: Buy $300 In Mastercard Giftcards & Get $15 Instant Discount (10/25-10/31)",
-      "summary_en": "",
-      "title_zh": "Office Depot／Max Stores：購買 300 美元 Mastercard 禮品卡可立即減價 15 美元（10/25–10/31）",
-      "summary_zh": "於 10 月 25 日至 31 日在 Office Depot 或 Max Stores 購買 300 美元的 Mastercard 禮品卡，可立即享受 15 美元折扣。",
-      "title_es": "Office Depot/Max Stores: compra $300 en tarjetas de regalo Mastercard y recibe un descuento instantáneo de $15 (10/25-10/31)",
-      "summary_es": "Office Depot y Max Stores ofrecen un descuento instantáneo de $15 al comprar $300 en tarjetas de regalo Mastercard entre el 25 y el 31 de octubre."
     }
   ],
-  "fetched": "2026-10-25T20:08:27.479Z"
+  "fetched": "2026-10-26T08:08:13.054Z"
 }
