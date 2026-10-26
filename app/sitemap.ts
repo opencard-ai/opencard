@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.75,
+      alternates: languageAlternates("/benefit-expiration-tracker", ["en"]),
     },
     ...tier("/about", 0.5, "monthly"),
     ...tier("/methodology", 0.5, "monthly"),

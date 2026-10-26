@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BenefitExpirationTracker from "@/app/components/BenefitExpirationTracker";
+import { localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -8,7 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title: "Credit Card Benefit Expiration Tracker — OpenCard",
     description: "Track credit-card credits, certificates, passes, and their expiration dates privately in your browser.",
     robots: lang === "en" ? { index: true, follow: true } : { index: false, follow: true },
-    alternates: { canonical: "/en/benefit-expiration-tracker" },
+    // English-only page: self canonical + en/x-default hreflang (matches card-page pattern).
+    alternates: localizedAlternates("en", "/benefit-expiration-tracker", ["en"]),
   };
 }
 
