@@ -96,8 +96,8 @@
   ],
   "sources": [
     {
-      "url": "https://www.chase.com/jpmreserve/rewardsagreement",
-      "notes": "Official Chase J.P. Morgan Reserve Ultimate Rewards Program Agreement (live 2026-10-26). Replaces dead https://www.chase.com/jpmorgan-reserve (HTTP 404). Card remains invitation-only; no public apply page."
+      "url": "https://asset.chase.com/content/dam/card/rulesregulations/en/RPA0552_Web.pdf",
+      "notes": "Official Chase J.P. Morgan Reserve with Ultimate Rewards Program Agreement PDF (current version, checked 2026-10-26). chase.com/jpmorganreserve/rewardsagreement (linked from Chase's own card pages) resolves here; the older chase.com/jpmreserve/rewardsagreement now redirects to the superseded RPA0512_0519 PDF. Card remains invitation-only; no public apply page."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/jpmorgan-reserve-card/",
