@@ -7,12 +7,16 @@
   "foreign_transaction_fee": 2.7,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 15000,
-    "spending_requirement": 3000,
+    "bonus_points": 50000,
+    "spending_requirement": 5000,
     "time_period_months": 3,
-    "description": "15,000 Membership Rewards (MR) points after spending $3,000 in first 3 months",
+    "description": "As high as 50,000 Membership Rewards points after you spend $5,000 in purchases on your new Card within the first 3 months of Card Membership. Welcome offers vary and you may not be eligible for an offer.",
     "point_program": "MR",
-    "estimated_value": 255
+    "estimated_value": 500,
+    "last_verified": "2026-10-26",
+    "notes": [
+      "2026-10-26: official Amex page confirms AS HIGH AS 50,000 MR / $5,000 / 3 months (held since 10/20 for >3x jump from 15k)."
+    ]
   },
   "earning_rates": [
     {
@@ -63,7 +67,7 @@
     },
     {
       "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-blue-business-plus-credit-card-amex/",
-      "notes": "Official Amex page / search snippet cross-check"
+      "notes": "Official Amex page / search snippet cross-check | Official Amex page 2026-10-26: AS HIGH AS 50,000 Membership Rewards points after $5,000 in purchases within first 3 months of Card Membership."
     }
   ],
   "hotel_program": null,
@@ -71,8 +75,8 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-19",
-  "last_verified": "2026-10-19",
+  "last_updated": "2026-10-26",
+  "last_verified": "2026-10-26",
   "next_review": "2026-07-15T13:41:49.940000+00:00",
   "featured": true
 }
