@@ -221,6 +221,18 @@ const noForce = (calls: string[][]) => assert.ok(!calls.some(c => c.join(' ').in
   m = mockDeps({ livePage: '<div>150,000 pts</div> Spend $12,000 within 6 months $895 Annual Fee' });
   res = await publish([appliedCard], cfg, m.deps);
   assert.equal(res.status, 'live_check_failed'); assert.ok(m.calls.some(c => c[1] === 'revert')); assert.equal(res.events[0].type, 'rolled_back');
+  // Content mismatch on HTTP 200 fail-fasts (does not burn liveTimeoutMs).
+  {
+    let sleeps = 0;
+    const fast = mockDeps({ livePage: '<div>150,000 pts</div> Spend $12,000 within 6 months $895 Annual Fee' });
+    const origSleep = fast.deps.sleep;
+    fast.deps.sleep = async (ms: number) => { sleeps++; return origSleep(ms); };
+    const t0 = Date.now();
+    res = await publish([appliedCard], { ...cfg, liveTimeoutMs: 10 * 60000, livePollMs: 1 }, fast.deps);
+    assert.equal(res.status, 'live_check_failed');
+    assert.ok(sleeps < 5, `fail-fast should sleep <5 times, slept ${sleeps}`);
+    assert.ok(Date.now() - t0 < 5000, 'fail-fast must finish in seconds, not minutes');
+  }
   // push rejected once -> rebase (autostash) + retry, still no force
   m = mockDeps({ pushFails: 1 });
   res = await publish([appliedCard], cfg, m.deps);
@@ -234,6 +246,11 @@ const noForce = (calls: string[][]) => assert.ok(!calls.some(c => c.join(' ').in
 
   // helpers
   assert.deepEqual(expectedLiveStrings(after), ['80,000 pts', 'Spend $12,000 within 6 months', '$895 Annual Fee']);
+  // Cash / statement-credit offers must expect "$N", never "N pts" (BCP 2026-10-22 rollback).
+  assert.deepEqual(expectedLiveStrings({ annual_fee: 95, welcome_offer: { bonus_points: 300, spending_requirement: 3000, time_period_months: 6, point_program: 'Statement Credit' } }),
+    ['$300', 'Spend $3,000 within 6 months', '$95 Annual Fee']);
+  assert.deepEqual(expectedLiveStrings({ annual_fee: 0, welcome_offer: { bonus_points: 200, spending_requirement: 500, time_period_months: 3, bonus_type: 'cash' } }),
+    ['$200', 'Spend $500 within 3 months', '$0 Annual Fee']);
   assert.ok(pageText('Spend $<!-- -->12,000 within <!-- -->6<!-- --> months').includes('Spend $12,000 within 6 months'));
   assert.equal(parseVercelState('x ● Ready y'), 'ready'); assert.equal(parseVercelState('● Error'), 'error'); assert.equal(parseVercelState('● Building'), 'pending'); assert.equal(parseVercelState('No deployments found'), 'unknown');
   const msg = commitMessage(appliedCard);

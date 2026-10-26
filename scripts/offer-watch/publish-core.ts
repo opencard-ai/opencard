@@ -1,5 +1,6 @@
 /** Publish logic with injectable side effects (git / vercel / fetch) so rollback paths are testable. Never force-pushes. */
 import type { HistoryEvent, LedgerUpdate } from './state';
+import { formatWelcomeBonus } from '../../lib/welcome-offer';
 
 export interface RunResult { code: number; stdout: string; stderr: string }
 export interface PublishDeps {
@@ -27,15 +28,23 @@ export function commitMessage(card: AppliedCard): { subject: string; body: strin
   return { subject, body };
 }
 
-/** Strings that must appear on the live card page for the new values. */
+/** Strings that must appear on the live card page for the new values.
+ * Uses the same display unit as the card page (formatWelcomeBonus): "$250" for
+ * cash / statement-credit offers, "80,000 pts" for points. Hardcoding "pts"
+ * caused 2026-10-22/23 auto-rollbacks of amex-blue-cash-preferred ($300 cash). */
 export function expectedLiveStrings(card: any): string[] {
   const out: string[] = [];
   const offer = card?.welcome_offer || {};
-  if (typeof offer.bonus_points === 'number' && offer.bonus_points > 0) out.push(`${offer.bonus_points.toLocaleString('en-US')} pts`);
+  const bonus = formatWelcomeBonus(offer, 'en', 'pts');
+  if (bonus) out.push(bonus);
   if (typeof offer.spending_requirement === 'number' && offer.spending_requirement > 0) out.push(`Spend $${offer.spending_requirement.toLocaleString('en-US')} within ${offer.time_period_months || 3} months`);
   if (typeof card?.annual_fee === 'number') out.push(`$${card.annual_fee.toLocaleString('en-US')} Annual Fee`);
   return out;
 }
+
+/** Abort live polling early when the page is 200 but the same strings stay missing —
+ * a content mismatch will not heal by waiting out the full liveTimeoutMs. */
+export const LIVE_MISMATCH_FAIL_FAST = 3;
 export const pageText = (html: string) => html.replace(/<(script|style)[^>]*>[\s\S]*?<\/\1>/gi, ' ').replace(/<[^>]+>/g, ' ')
   .replace(/&amp;/g, '&').replace(/&#x27;|&#39;/g, "'").replace(/&nbsp;/g, ' ').replace(/<!-- -->/g, '').replace(/\s+/g, ' ').replace(/\$ (\d)/g, '$$$1');
 
@@ -126,16 +135,29 @@ export async function publish(applied: AppliedCard[], cfg: PublishConfig, deps: 
   const live: Record<string, string[]> = {};
   const liveDeadline = deps.now().getTime() + cfg.liveTimeoutMs;
   let allOk = false;
+  let mismatchStreak = 0;
+  let lastMissingKey = '';
   while (!allOk && deps.now().getTime() < liveDeadline) {
     allOk = true;
+    let anyNon200 = false;
     for (const card of applied) {
       const expected = expectedLiveStrings(deps.readCard(card.file));
       const page = await deps.fetchText(`${cfg.siteBase}/en/cards/${card.card_id}?ow=${Date.now()}`).catch(() => ({ status: 0, text: '' }));
       const text = pageText(page.text);
       live[card.card_id] = expected.filter(s => page.status !== 200 || !text.includes(s));
+      if (page.status !== 200) anyNon200 = true;
       if (live[card.card_id].length) allOk = false;
     }
-    if (!allOk) await deps.sleep(cfg.livePollMs);
+    if (!allOk) {
+      const key = JSON.stringify(live);
+      if (!anyNon200 && key === lastMissingKey) mismatchStreak++;
+      else { mismatchStreak = 1; lastMissingKey = key; }
+      if (!anyNon200 && mismatchStreak >= LIVE_MISMATCH_FAIL_FAST) {
+        deps.log(`live check fail-fast after ${mismatchStreak} identical 200 responses missing ${key}`);
+        break;
+      }
+      await deps.sleep(cfg.livePollMs);
+    }
   }
   if (!allOk) return rollback('live_check_failed', `live page missing: ${JSON.stringify(live)}`);
 
