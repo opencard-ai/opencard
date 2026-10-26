@@ -55,10 +55,6 @@
   ],
   "sources": [
     {
-      "url": "https://citicards.citi.com/crs/CitiThankYou/info/default.htm",
-      "notes": "Official Citi notice: \"Starting April 12, 2025, The Sears Mastercard will be renamed the Citi ThankYou® Mastercard®\" (indexed 2026-10-19; the live URL now shows Citi's offer-expired page)."
-    },
-    {
       "url": "https://upgradedpoints.com/credit-cards/sears-credit-cards/",
       "notes": "UpgradedPoints review"
     },
@@ -67,15 +63,15 @@
       "notes": "WalletHub rewards explainer"
     }
   ],
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-10-26",
   "status": "transferred",
-  "notes": "Historical record. The Sears Mastercard was issued by Citi (not Synchrony). Per the official Citi notice, starting April 12, 2025 the Sears Mastercard was renamed the Citi ThankYou® Mastercard®, so there is no Sears-branded Mastercard to apply for. The card_id keeps its legacy synchrony- prefix so saved links still resolve.",
+  "notes": "Historical record. The Sears Mastercard was issued by Citi (not Synchrony). Per the official Citi notice, starting April 12, 2025 the Sears Mastercard was renamed the Citi ThankYou® Mastercard®, so there is no Sears-branded Mastercard to apply for. The card_id keeps its legacy synchrony- prefix so saved links still resolve. | 2026-10-26: removed citicards.citi.com/crs/CitiThankYou/info/default.htm — live URL now redirects to citicards.citi.com/crs/offer_expired/default.htm (audit source_redirects_elsewhere). Rename to Citi ThankYou Mastercard on 2025-04-12 still documented in discontinued_notes; no alternate live Citi notice page found.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-04-16T13:41:49.995Z",
+  "last_verified": "2026-10-26",
   "next_review": "2026-07-15T13:41:49.995000+00:00",
   "discontinued_notes": "Renamed the Citi ThankYou® Mastercard® starting April 12, 2025 (official Citi notice).",
   "discontinued_date": "2025-04-12"
