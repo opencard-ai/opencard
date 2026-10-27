@@ -889,6 +889,43 @@ function welcomeOfferExpiryWarning(candidateEnvelope: any): string | null {
 
 function applyPlan(runDir: string): void {
   const config = configFromRun(runDir);
+  if (!existsSync(config.cardPath)) {
+    // No production JSON yet — review-only run cannot produce a patch.
+    // Skip silently; write minimal artifacts so review() can still run.
+    const run = readJson(path.join(runDir, 'run.json'));
+    if (!existsSync(path.join(runDir, 'json-diff.json'))) {
+      writeJson(path.join(runDir, 'json-diff.json'), {
+        card_id: config.cardId,
+        run_id: run.run_id,
+        generated_at: new Date().toISOString(),
+        diffs: [],
+      });
+    }
+    if (!existsSync(path.join(runDir, 'apply-plan.json'))) {
+      writeJson(path.join(runDir, 'apply-plan.json'), {
+        card_id: config.cardId,
+        run_id: run.run_id,
+        generated_at: new Date().toISOString(),
+        recommendation: 'no_production_card',
+        can_apply: false,
+        changed_fields: [],
+        auto_apply_fields: [],
+        manual_review_fields: [],
+        approved_manual_fields: [],
+        unresolved_manual_fields: [],
+        review_reasons: ['production card JSON missing; create data/cards/<card_id>.json before applying'],
+        safety_issues: [],
+        approval: { present: false, valid: false, issues: ['no production card'] },
+        artifacts: {
+          proposed_patch: null,
+          proposed_card: null,
+          review_report: null,
+          live_source_check: existsSync(path.join(runDir, 'live-source-check.json')) ? 'live-source-check.json' : null,
+        },
+      });
+    }
+    return;
+  }
   const existing = readJson(config.cardPath);
   const candidateEnvelope = readJson(path.join(runDir, 'candidate.json'));
   const candidate = candidateEnvelope.candidate;
