@@ -17,9 +17,10 @@
     "offer_status": "public",
     "notes": [
       "2026-09-29 offer-watch auto-apply (two independent official fetches): bonus_points 150000 -> 80000; is_elevated true -> false; expiry \"2026-07-08\" -> null; offer_status null -> \"public\". Sources: https://www.morganstanley.com/what-we-do/wealth-management/cashplus, https://apply.americanexpress.com/amex-morgan-stanley-credit-cards/?page_url=38.",
-      "Elevated offer expired 2026-07-08; official page shows a different current offer, applied as public/standard."
+      "Elevated offer expired 2026-07-08; official page shows a different current offer, applied as public/standard.",
+      "2026-10-28: reconfirmed on Amex landing + offer/terms (ep-msb-mcs-58) + CMA PDF: 80,000 MR / $12,000 / 6 months; $895 AF; foreign fee None."
     ],
-    "last_verified": "2026-09-29"
+    "last_verified": "2026-10-28"
   },
   "earning_rates": [
     {
@@ -78,12 +79,20 @@
   ],
   "sources": [
     {
+      "url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q1-pdf-cmas/cps-charge/morgan-stanley-platinum-03-31-2026.pdf",
+      "notes": "Amex Card Member Agreement (03/31/2026), checked 2026-10-28: Annual Fee $895; Foreign Transaction Fee None. Replaces prior 06/30/2026 CMA source entry."
+    },
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/card-application/apply/partner/print/personal-card/msb/morgan-stanley-platinum-card/ep-msb-mcs-58?print=false",
+      "notes": "Official Amex offer/terms (ep-msb-mcs-58), checked 2026-10-28: 80,000 MR after $12,000 in 6 months; welcome-offer eligibility wording (verbatim). Replaces dead ep-msb-mcs-74 (HTTP 400)."
+    },
+    {
       "url": "https://www.morganstanley.com/what-we-do/wealth-management/cashplus",
       "notes": "Official page confirmed by offer-watch on 2026-09-29."
     },
     {
       "url": "https://apply.americanexpress.com/amex-morgan-stanley-credit-cards/?page_url=38",
-      "notes": "Official page confirmed by offer-watch on 2026-09-29."
+      "notes": "Official page confirmed by offer-watch on 2026-09-29. | Official Amex/Morgan Stanley landing, checked 2026-10-28: product still offered to MS clients."
     },
     {
       "url": "https://global.americanexpress.com/card-benefits/view-all/morgan-stanley-platinum-card",
@@ -96,14 +105,6 @@
     {
       "url": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
       "notes": "Standard Platinum benefits reference"
-    },
-    {
-      "url": "https://www.americanexpress.com/us/credit-cards/card-application/apply/partner/print/personal-card/msb/morgan-stanley-platinum-card/ep-msb-mcs-74",
-      "notes": "Official Amex offer terms, checked 2026-10-19: welcome-offer eligibility wording (Amex does not use Chase 5/24)."
-    },
-    {
-      "url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/cps-charge/morgan-stanley-platinum-06-30-2026.pdf",
-      "notes": "Amex Card Member Agreement (06/30/2026): Foreign Transaction fee None (checked 2026-10-19)."
     }
   ],
   "hotel_program": {
@@ -116,16 +117,20 @@
   "application_rules": {
     "rules": [
       {
+        "rule": "Morgan Stanley client eligibility",
+        "description": "Available to Morgan Stanley clients with an eligible brokerage or bank account (including E*TRADE from Morgan Stanley)."
+      },
+      {
         "rule": "Welcome offer eligibility (card family)",
         "description": "You may not be eligible to receive a welcome offer if you have or have had this Card, the Platinum Card®, the Platinum Card® from American Express Exclusively for Charles Schwab or previous versions of these Cards."
       },
       {
         "rule": "Welcome offer eligibility (other factors)",
-        "description": "You also may not be eligible to receive a welcome offer based on various factors, such as your history with credit card balance transfers, your history as an American Express Card Member, the number of credit cards that you have opened and closed and other factors."
+        "description": "You also may not be eligible to receive a welcome offer based on various factors, such as your history with credit card balance transfers, your history as an American Express Card Member, the number of credit cards that you have opened and closed and other factors. If you are not eligible for a welcome offer, we will notify you prior to processing your application so you have the option to withdraw your application."
       }
     ]
   },
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-10-28",
   "recurring_credits": [
     {
       "credit_key": "uber-cash",
@@ -228,7 +233,7 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     }
   ],
-  "last_verified": "2026-10-19",
+  "last_verified": "2026-10-28",
   "next_review": "2026-10-29T00:00:00.000Z",
   "cfpb_source": "Q3_2025",
   "late_fee": 40,
