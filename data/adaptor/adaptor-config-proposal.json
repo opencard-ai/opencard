@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-16T22:42:27Z",
-  "scope": "post-approval adaptor config review summary; three Delta business welcome_offer patches applied",
+  "generated_at": "2026-08-02T22:06:10-07:00",
+  "scope": "post-approval adaptor config review summary plus 2026-08-02 KC-approved follow-up watchlist/backlog annotations",
   "source_index": "opencard/data/adaptor/review-index.json",
   "summary": {
     "total_runs": 24,
@@ -281,5 +281,128 @@
       "status": "applied_to_three_delta_business_cards",
       "action": "Production welcome_offer keeps concise headline; notes preserve official Amex/Delta tiered/additional-bonus source context."
     }
-  ]
+  ],
+  "kc_approved_followups_2026_08_02": {
+    "approved_at": "2026-08-02T22:06:10-07:00",
+    "source_context": "KC approved recommendations from 2026-08-02 offer/adaptor watchlist review.",
+    "immediate_candidate_queue": [
+      {
+        "card_id": "boa-air-france-klm-flyingblue",
+        "priority": "P1",
+        "status": "candidate_added_for_review",
+        "run_id": "2026-08-02T18-48-20Z-boa-air-france-klm-flyingblue",
+        "config_path": "scripts/card-adaptor/cards/boa-air-france-klm-flyingblue.json",
+        "report": "data/adaptor/runs/2026-08-02T18-48-20Z-boa-air-france-klm-flyingblue/review-report.md",
+        "production_status": "no_production_card",
+        "candidate_offer": {
+          "bonus_points": 100000,
+          "xp_bonus": 100,
+          "spending_requirement": 3000,
+          "time_period_months": 3,
+          "point_program": "Flying Blue",
+          "offer_status": "public_limited_time_watchlist"
+        },
+        "notes": [
+          "Adaptor config already exists and latest run passes QA, but production card JSON is still missing.",
+          "Source snippets conflict: Bank of America public result can show 50k/100 XP while secondary/Flying Blue coverage shows elevated 100k/100 XP; keep as review candidate until issuer-controlled application terms are confirmed."
+        ],
+        "sources": [
+          "https://www.bankofamerica.com/credit-cards/products/air-france-credit-card/",
+          "https://www.flyingblue.us/en/earn/partners/financial-services-bank-of-america",
+          "https://frequentmiler.com/bank-of-america-air-france-klm-flying-blue-mastercard-best-ever-100k-welcome-offer/",
+          "https://www.doctorofcredit.com/bank-of-america-air-france-klm-flyingblue-card-100000-signup-bonus-100-xp/"
+        ]
+      }
+    ],
+    "dated_watchlist": [
+      {
+        "card_id": "chase-marriott-boundless",
+        "priority": "P0",
+        "watch_date": "2026-08-05",
+        "status": "cron_scheduled",
+        "current_watch_item": "125,000 Marriott Bonvoy points + 1 Free Night Award after $3,000 / 3 months; Marriott/Chase pages state offer ends 2026-08-05.",
+        "expected_post_expiry_action": "On/after 2026-08-06, refetch issuer/Marriott pages. If public offer rolls back (likely 100k baseline), update production card and adaptor review artifacts after validation."
+      }
+    ],
+    "backlog_next_week": [
+      {
+        "card_id": "synchrony-virgin-red",
+        "priority": "P2",
+        "status": "adaptor_exists_no_production_card",
+        "run_id": "2026-08-02T19-06-31Z-synchrony-virgin-red",
+        "config_path": "scripts/card-adaptor/cards/synchrony-virgin-red.json",
+        "report": "data/adaptor/runs/2026-08-02T19-06-31Z-synchrony-virgin-red/review-report.md",
+        "candidate_offer": "60,000 Virgin Points after $4,000 / 90 days",
+        "source": "https://www.virgin.com/en-us/virgin-red/rewards-credit-card"
+      },
+      {
+        "card_id": "citi-att-points-plus",
+        "priority": "P2",
+        "status": "backlog_new_adaptor_needed",
+        "candidate_offer": "$200 statement credit after $1,000 / 3 months per AT&T page; other 2026 sources mention enhanced $250 after $500, requires issuer reconciliation.",
+        "sources": [
+          "https://www.att.com/deals/att-points-plus-citi/",
+          "https://www.citi.com/credit-cards/citi-att-pointsplus-credit-card"
+        ]
+      },
+      {
+        "card_id": "capital-one-spark-cash-select",
+        "priority": "P2",
+        "status": "adaptor_exists_review_only",
+        "run_id": "2026-08-02T18-49-58Z-capital-one-spark-cash-select",
+        "config_path": "scripts/card-adaptor/cards/capital-one-spark-cash-select.json",
+        "report": "data/adaptor/runs/2026-08-02T18-49-58Z-capital-one-spark-cash-select/review-report.md",
+        "candidate_offer": "$750 after $6,000 / 3 months; user note called out Spark Cash base family, keep Select and Plus separated."
+      },
+      {
+        "card_id": "capital-one-spark-cash-plus",
+        "priority": "P2",
+        "status": "adaptor_exists_review_only",
+        "run_id": "2026-08-02T18-49-47Z-capital-one-spark-cash-plus",
+        "config_path": "scripts/card-adaptor/cards/capital-one-spark-cash-plus.json",
+        "report": "data/adaptor/runs/2026-08-02T18-49-47Z-capital-one-spark-cash-plus/review-report.md",
+        "candidate_offer": "Up to $2,000 tiered cash bonus after $10,000 / 3 months; do not conflate with Spark Cash Select."
+      }
+    ],
+    "observation_only": [
+      {
+        "topic": "Amazon Business Card issuer transition to U.S. Bank",
+        "status": "watch_only_no_file_change",
+        "affected_cards": [
+          "amex-amazon-biz",
+          "amex-amazon-biz-prime"
+        ],
+        "notes": [
+          "Do not change production records until issuer transition timing and terms are official/current."
+        ]
+      },
+      {
+        "topic": "PayPal Rewards cashback redemption removal effective 2026-08-01",
+        "status": "watch_only_no_production_delta",
+        "affected_cards": [
+          "synchrony-paypal-cashback-mastercard"
+        ],
+        "source": "https://www.doctorofcredit.com/paypal-to-remove-redeem-for-cashback-paypal-rewards-redemption-option/",
+        "notes": [
+          "DoC/PayPal policy update removes PayPal Rewards Points cash-back redemption into PayPal/bank/Savings; current OpenCard PayPal Cashback Mastercard record is deprecated and states cash back as statement credit, so no production offer change was made."
+        ]
+      }
+    ],
+    "pending_policy_docs": [
+      {
+        "topic": "Amex Resy credit nerf",
+        "status": "pending_official_policy_and_KC_decision",
+        "affected_cards": [
+          "amex-platinum",
+          "amex-gold"
+        ],
+        "fields": [
+          "recurring_credits"
+        ],
+        "notes": [
+          "Do not update recurring credit amounts/frequencies until official Amex policy text is available and KC approves the production interpretation."
+        ]
+      }
+    ]
+  }
 }

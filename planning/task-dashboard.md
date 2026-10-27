@@ -1,3 +1,160 @@
+# Task Dashboard — 2026-09-07 Offer Review Follow-up
+
+- Owner: Kacey
+- Status: completed
+- Priority: P0 offer accuracy
+- Scope: Execute KC-approved recommendations from the 2026-09-07 OpenCard offer/adaptor review without duplicating existing adaptor coverage or changing observation-only cards.
+
+## Tasks
+
+1. Audit recommended adaptor additions
+   - Status: completed
+   - Deliverable: verify whether Venture X Business, Citi / AAdvantage Globe, Marriott Bonvoy Bevy, and Wells Fargo Autograph Journey adaptors already exist and are registered.
+   - Acceptance: no duplicate configs; any real registration/config gaps are fixed.
+
+2. Refresh imminent limited-time offers
+   - Status: completed
+   - Deliverable: reconcile Delta Gold/Platinum/Reserve, Marriott Brilliant, and Capital One Spark Cash/Cash Plus against current source-backed data.
+   - Acceptance: production data includes accurate offer terms, verification dates, and expiry metadata; expired offers are not presented as current.
+
+3. Validate implementation
+   - Status: completed
+   - Deliverable: JSON/schema validation plus targeted adaptor registration checks.
+   - Acceptance: `npm run validate` passes and all approved adaptor IDs resolve exactly once.
+
+4. Ship scoped changes
+   - Status: completed
+   - Deliverable: commit/push only files owned by this follow-up, then verify the Git-triggered Vercel deployment.
+   - Acceptance: unrelated dirty files remain untouched; exactly one production deployment is created for the commit and the site remains healthy.
+
+## Progress Log
+
+- 2026-09-07 12:22 PT — KC approved execution of the prior review recommendations.
+- 2026-09-07 12:31 PT — Repository audit found all four proposed adaptor additions already present: `capital-one-venture-x-biz`, `citi-aadvantage-globe`, `amex-marriott-bevy`, and `wells-fargo-autograph-journey`. Switched task from duplicate creation to registration/data consistency review.
+- 2026-09-07 12:42 PT — Capital One issuer pages confirmed Spark Cash $1,000 + $250 travel credit after $10k/3mo and Spark Cash Plus $2,000 + $500 travel credit after $30k/3mo; both travel-credit offers end 2026-09-07. Added explicit expiry metadata and corrected the stale Spark Cash Plus adaptor.
+- 2026-09-07 12:46 PT — Aligned Delta Gold/Platinum/Reserve production and adaptor offers to the approved 2026-11-04 limited-time states; added the missing Platinum $300 statement credit and expiry metadata. Aligned Marriott Brilliant/Bevy adaptor notes and expiry fields with production.
+- 2026-09-07 12:48 PT — `npm run validate`, JSON parsing, adaptor uniqueness checks, and `npx tsc --noEmit --pretty false` passed.
+- 2026-09-07 12:56 PT — Shipped scoped commit `9767662f` (`fix: refresh expiring card offers`) without staging unrelated dirty files. Vercel created exactly one Git-source deployment (`dpl_8mksaaTENBSLuNqxHv4Ui9LektcP`) for the commit; it reached READY and owns `opencardai.com`. Production homepage and Delta Platinum page both return HTTP 200, and the page renders the refreshed 90,000-point offer.
+
+---
+
+# Task Dashboard — 2026-08-28 AdSense Review Surface Reduction
+
+- Owner: Kacey
+- Status: completed
+- Priority: P0 monetization / site quality
+- Scope: Reduce the AdSense and search-index review surface, concentrate authority on genuinely useful editorial pages, and add distinct interactive value before the next review request.
+
+## Tasks
+
+1. Restrict advertising to high-value routes
+   - Status: completed
+   - Deliverable: AdSense loads only on localized homepages, English guide pages, About, and Methodology.
+   - Acceptance: no AdSense request can originate from noindex pages, tools, localized translations, or card templates.
+
+2. Reduce indexable card inventory
+   - Status: completed
+   - Deliverable: shrink the 50-card allowlist to 10–15 core cards selected for demand, coverage, and editorial depth.
+   - Acceptance: sitemap and robots metadata agree exactly with the reduced allowlist.
+
+3. Reduce translated-guide indexing
+   - Status: completed
+   - Deliverable: English guides remain indexable; translated guide articles are temporarily `noindex, follow` and excluded from sitemap pending traffic/quality validation.
+   - Acceptance: translated pages remain usable by visitors but cannot dilute the indexed editorial set.
+
+4. Strengthen core card pages
+   - Status: completed
+   - Deliverable: add first-year vs ongoing-year value, a quantified break-even model, audience fit, alternatives, editor/review date, and source/update context to every retained card.
+   - Acceptance: retained card pages contain material decision support beyond issuer facts and templated prose.
+
+5. Add a distinctive interactive tool
+   - Status: completed
+   - Deliverable: launch a benefit-expiration tracker or calculator integrated with the editorial content.
+   - Acceptance: tool provides user-specific output and is linked from relevant core pages/guides.
+
+6. Verify, deploy, and begin observation window
+   - Status: completed
+   - Deliverable: tests/build, sitemap/robots/route audit, scoped commit/push, production verification, and 2–4 week GSC monitoring baseline.
+   - Acceptance: production behavior matches the reduced review surface and the next AdSense submission is deferred until observation completes.
+
+## Progress Log
+
+- 2026-08-28 06:45 PT — KC approved the second-round remediation recommendation after AdSense again reported low-value content.
+- 2026-08-28 06:53 PT — Recovered the full recommendation from Discord history and audited the current implementation: 28 English guides, 25 translations per non-English locale, 50 indexable card templates, and global consent-gated AdSense loading.
+- 2026-08-28 07:08 PT — Restricted AdSense to localized homepages, English guides, About, and Methodology; reduced indexable cards from 50 to 14; set translated guide articles to `noindex, follow` and removed them from sitemap/hreflang targets.
+- 2026-08-28 07:16 PT — Added a private browser-based benefit-expiration tracker with 30-day urgency, realistic unused-value totals, completion state, and local-only persistence; linked it from the two relevant benefit guides.
+- 2026-08-28 07:20 PT — Added a data-derived first-year/year-two worksheet, quantified annual-fee hurdle, review date, and source reminder to all editorial card pages. TypeScript, card validation, production build (1,110 static pages), and diff checks passed.
+- 2026-08-28 07:53 PT — Shipped commit `0957ce4c`; Vercel deployment `dpl_9NfPkMijJDPwrUZjC71YowEQZw1g` reached Ready. Production audit passed: tracker HTTP 200, translated guide `noindex, follow`, retained card `index, follow`, excluded card `noindex, follow`, and sitemap contains 79 URLs / 14 cards / 28 English guides / 0 translated guide articles / 1 tracker.
+
+---
+
+# Task Dashboard — 2026-08-27 GSC Daily Report Accuracy Fix
+
+- Owner: Kacey
+- Status: completed
+- Priority: P0 SEO observability
+- Scope: Replace misleading top-20-derived GSC totals with authoritative aggregate metrics and actionable SEO diagnostics.
+
+## Tasks
+
+1. Correct Search Analytics totals and comparison
+   - Status: completed
+   - Deliverable: dimensionless totals and non-overlapping current/previous 7-day windows.
+   - Acceptance: clicks, impressions, CTR, and position match direct GSC aggregate queries.
+
+2. Replace fake indexed-page count
+   - Status: completed
+   - Deliverable: Sitemap API submitted/indexed counts with status metadata.
+   - Acceptance: report no longer labels `rowLimit` as indexed pages.
+
+3. Add actionable opportunities
+   - Status: completed
+   - Deliverable: top pages plus zero-click query/page rows ranking 4–20.
+   - Acceptance: daily output identifies near-page-one SEO targets.
+
+4. Verify and ship
+   - Status: completed
+   - Deliverable: live GSC run, scoped commit, and push.
+   - Acceptance: report completes successfully with current credentials and unrelated worktree changes remain untouched.
+
+## Progress Log
+
+- 2026-08-27 20:13 PT: KC approved the recommended GSC report corrections.
+- 2026-08-27 20:22 PT: Replaced top-20-derived totals with dimensionless finalized totals, added non-overlapping prior-week comparison, Sitemap API status, and near-page-one query/page opportunities. Live GSC run succeeded; TypeScript and `npm run validate` passed.
+
+---
+
+# Task Dashboard — 2026-08-27 Marriott Offer Expiry Watch
+
+- Owner: Kacey
+- Status: completed
+- Priority: high
+- Scope: Apply KC-approved watcher recommendation for the 2026-09-30 Marriott Brilliant and Bevy limited-time offers; keep proposed new-card adaptors deferred.
+
+## Tasks
+
+1. Add production expiry metadata
+   - Status: completed
+   - Deliverable: `offer_expiry_watch` tag and `welcome_offer.expiry_date` on Brilliant and Bevy.
+   - Acceptance: both cards explicitly expose the 2026-09-30 expiry while preserving existing offer data.
+
+2. Preserve deferred adaptor decisions
+   - Status: completed
+   - Deliverable: no NFL Extra Points Amex or Imprint Shell adaptor added.
+   - Acceptance: new-card coverage remains observation-only pending mature reviews.
+
+3. Validate card data
+   - Status: completed
+   - Deliverable: `npm run validate` result.
+   - Acceptance: repository card validation passes.
+
+## Progress Log
+
+- 2026-08-27 19:48 PT: KC approved the watcher recommendations; implementation started.
+- 2026-08-27 19:51 PT: Added `offer_expiry_watch` and `welcome_offer.expiry_date: 2026-09-30` to both production cards; `npm run validate` passed. NFL Extra Points Amex and Imprint Shell remain deferred.
+
+---
+
 # Task Dashboard — Card Adaptor Source Drift Fix
 
 - Owner: Kacey
@@ -346,3 +503,36 @@
 - 2026-08-09 11:45 PT — Added reusable translation generation, generated localization metadata, and expanded locale QA to cover all 25 fully localized guide slugs. TypeScript, targeted lint, locale QA, repetition checks, wrong-locale-link checks, and production build passed; static output increased from 1,046 to 1,106 pages, exactly matching 60 new localized routes.
 - 2026-08-09 11:55 PT — Shipped localization expansion in commit `2bdca533`; Git production deployment `dpl_893rhMsUQsnDfr6YP7WaC8SPoApD` reached Ready and owns the `opencardai.com` alias.
 - 2026-08-09 11:58 PT — Production audit passed: all 75 localized guide routes return HTTP 200; all 60 newly localized routes have target-language H1s and localized metadata; all 75 routes expose four-language hreflang alternates. Sitemap now contains 25 guide URLs each for `zh`, `zh-cn`, and `es` and 189 URLs total. Localization expansion status is complete.
+
+---
+
+# Task Dashboard — 2026-08-17 Search Console noindex Alert Audit
+
+- Owner: Kacey
+- Status: blocked on authenticated Search Console URL list
+- Priority: P1 SEO monitoring
+- Deliverable: identify the affected URLs, distinguish intentional from accidental `noindex`, and document the source commit/configuration.
+- Acceptance criteria: Search Console examples are captured; every example is classified; unintended exclusions, if any, have a scoped remediation recommendation.
+
+## Tasks
+
+1. Audit repository and production directives
+   - Status: completed
+   - Deliverable: source/history grep plus live robots, sitemap, and representative metadata checks.
+   - Result: card-detail metadata intentionally emits `noindex, follow` unless the page is one of 50 curated English cards; sitemap contains 189 URLs, including exactly 50 English card URLs and zero localized card URLs. Site-wide `robots.txt` allows crawling and no `X-Robots-Tag: noindex` was observed on primary routes.
+
+2. Retrieve Search Console affected URL examples
+   - Status: blocked
+   - Dependency: authenticated Chrome Browser Relay attachment.
+   - Blocker: the existing-session browser cannot attach because Chrome remote debugging / DevToolsActivePort is unavailable.
+
+3. Classify alert and recommend action
+   - Status: in progress
+   - Current assessment: the new alert is very likely Google discovering the intentional noindex policy shipped on 2026-08-08 (`f0e62898`, refined by `b2c4eb88`), not a new accidental site-wide regression. Exact classification awaits Search Console examples.
+
+## Progress Log
+
+- 2026-08-17 18:31 PT — KC selected action A from the email monitor alert.
+- 2026-08-17 18:34 PT — Repository audit located the intentional noindex rule in `app/[lang]/cards/[card_id]/page.tsx` and curated allowlist in `lib/indexable-cards.ts`; Git blame traces introduction to 2026-08-08 SEO/AdSense remediation.
+- 2026-08-17 18:35 PT — Production `robots.txt`, sitemap, and primary routes returned HTTP 200; sitemap totals match the documented post-remediation state (189 total URLs, 50 English card URLs, 0 localized card URLs).
+- 2026-08-17 18:36 PT — Browser Automation skill stopped at the required login/session boundary: Chrome must be open with remote debugging enabled and the attach prompt approved before Search Console examples can be read.
