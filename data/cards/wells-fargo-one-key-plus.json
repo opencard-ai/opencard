@@ -7,18 +7,12 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 350,
-    "spending_requirement": 3000,
-    "time_period_months": 3,
-    "description": "Earn $350 in OneKeyCash after you spend $3,000 on purchases in the first 3 months.",
+    "spending_requirement": 0,
+    "time_period_months": 0,
+    "bonus_points": 0,
+    "description": "N/A: not open to new applicants.",
     "point_program": "OneKeyCash",
-    "estimated_value": 350,
-    "offer_status": "public",
-    "confidence": "high",
-    "notes": [
-      "Official Wells Fargo One Key+ page confirmed $350 OneKeyCash after $3,000/3 months on 2026-07-05."
-    ],
-    "last_verified": "2026-07-05"
+    "estimated_value": 0
   },
   "earning_rates": [
     {
@@ -59,8 +53,12 @@
   ],
   "sources": [
     {
+      "url": "https://creditcards.wellsfargo.com/",
+      "notes": "Official Wells Fargo credit cards home (2026-10-28): lists One Key Card only; no One Key+ product tile or apply link."
+    },
+    {
       "url": "https://creditcards.wellsfargo.com/one-key-plus-credit-card/",
-      "notes": "Official Wells Fargo product page. | Official card page: No foreign transaction fee (checked 2026-10-19)."
+      "notes": "Official Wells Fargo product page. | 2026-10-28: HTTP 301 redirects to https://creditcards.wellsfargo.com/ (product no longer listed). Prior note (2026-10-19): Official card page stated no foreign transaction fee."
     }
   ],
   "hotel_program": null,
@@ -68,7 +66,7 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-10-28",
   "last_verified": "2026-07-05T15:10:00.000-07:00",
   "next_review": "2026-08-04T15:10:00.000-07:00",
   "recurring_credits": [
@@ -92,5 +90,7 @@
       "reset_type": "every_4_years",
       "source": "https://money.usnews.com/credit-cards/wells-fargo/one-key-plus-card"
     }
-  ]
+  ],
+  "status": "discontinued",
+  "discontinued_notes": "Not offered to new applicants: the Wells Fargo One Key+ product URL (creditcards.wellsfargo.com/one-key-plus-credit-card/) HTTP 301-redirects to the generic Wells Fargo credit cards home, and that home page lists only the One Key Card (no One Key+ tile or apply link) (checked 2026-10-28). Wells Fargo has not published an explicit discontinuation notice; marked discontinued under the same Spirit/Hawaiian bar (dead product URL + absence from issuer lineup), with KC approval 2026-10-28."
 }
