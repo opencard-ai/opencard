@@ -1,0 +1,8 @@
+{
+  "_note": "FAKE fixture for tests only. Real whitelist will be provided by OpenCard Data.",
+  "entries": [
+    { "pattern": "https://issuer-alpha.example.com/cards/", "issuer": "FAKE Issuer Alpha", "kind": "official", "tos_notes": "FAKE: example.com placeholder" },
+    { "pattern": "https://issuer-beta.example.com/", "issuer": "FAKE Issuer Beta", "kind": "official", "tos_notes": "FAKE" },
+    { "pattern": "https://reviews.example.org/", "issuer": "FAKE Review Site", "kind": "third_party", "tos_notes": "FAKE: auxiliary signal only" }
+  ]
+}

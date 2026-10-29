@@ -1,0 +1,20 @@
+{
+  "_note": "FAKE fixture tasks. The 20 real gold questions will be provided by OpenCard Data. task_ids MUST be opaque: never encode gold-ness in an id.",
+  "tasks": [
+    { "task_id": "t_fake_fee_a", "card_id": "fake-card-alpha", "field": "annual_fee", "type": "fee_check",
+      "instructions_code": "READ_ANNUAL_FEE_FROM_PUBLIC_OFFICIAL_PAGE",
+      "allowed_sources": ["https://issuer-alpha.example.com/cards/fake-card-alpha"], "current_value": null, "blind": true, "origin": "manual" },
+    { "task_id": "t_fake_link_b", "card_id": "fake-card-beta", "field": "sources[0].url", "type": "link_check",
+      "instructions_code": "CHECK_SOURCE_URL_STATUS_AND_REDIRECT",
+      "allowed_sources": ["https://issuer-beta.example.com/old/fake-card-beta"], "current_value": "https://issuer-beta.example.com/old/fake-card-beta", "blind": false, "origin": "url-check" },
+    { "task_id": "t_fake_offer_c", "card_id": "fake-card-gamma", "field": "welcome_offer", "type": "welcome_offer_check",
+      "instructions_code": "READ_PUBLIC_WELCOME_OFFER_LOGGED_OUT",
+      "allowed_sources": ["https://issuer-alpha.example.com/cards/fake-card-gamma"], "current_value": { "bonus_amount": 12345, "bonus_unit": "points" }, "blind": false, "origin": "weekly" }
+  ],
+  "gold": [
+    { "task_id": "t_fake_fee_d", "card_id": "fake-card-delta", "field": "annual_fee", "type": "fee_check",
+      "instructions_code": "READ_ANNUAL_FEE_FROM_PUBLIC_OFFICIAL_PAGE",
+      "allowed_sources": ["https://issuer-alpha.example.com/cards/fake-card-delta"], "current_value": null, "blind": true, "origin": "manual",
+      "gold_answer": { "annual_fee": 777123, "first_year_waived": false, "marker": "GOLD_SENTINEL_9f2c71" } }
+  ]
+}
