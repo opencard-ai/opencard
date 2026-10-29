@@ -7,22 +7,23 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 125000,
-    "spending_requirement": 15000,
-    "time_period_months": 5,
-    "description": "Limited-time offer: earn 125,000 American Airlines AAdvantage bonus miles after $15,000 in purchases in the first 5 months of account opening.",
+    "bonus_points": 80000,
+    "spending_requirement": 8000,
+    "time_period_months": 3,
+    "description": "Earn 80,000 American Airlines AAdvantage bonus miles after spending $8,000 on purchases in the first 3 months.",
     "point_program": "American Airlines AAdvantage",
-    "estimated_value": 2063,
+    "estimated_value": 1320,
     "offer_status": "public_limited_time",
     "confidence": "high",
     "notes": [
       "2026-09-29 official Citi product page (rendered) shows \"Limited time offer: Earn 125,000 AAdvantage bonus miles after $15,000 in purchases in the first 5 months\", $695 annual fee, World Legend Mastercard. No end date published.",
-      "Supersedes both the July 100k/$10k elevated listing and the August 70k/$7k listing."
+      "Supersedes both the July 100k/$10k elevated listing and the August 70k/$7k listing.",
+      "2026-10-29 offer-watch auto-apply (two independent official fetches): bonus_points 125000 -> 80000; spending_requirement 15000 -> 8000; time_period_months 5 -> 3. Sources: https://www.citi.com/credit-cards/citi-aadvantage-executive-world-legend-mastercard, https://creditcards.aa.com/credit-cards/citi-executive-card-american-airlines-direct/."
     ],
     "source_conflicts": [
       "Older secondary coverage (DoC July 2026: 100k/$10k; TPG Aug 2026: 70k/$7k) no longer matches the official Citi page."
     ],
-    "last_verified": "2026-09-29",
+    "last_verified": "2026-10-29",
     "is_elevated": true,
     "expires": null
   },
@@ -137,7 +138,7 @@
       "notes": "Secondary confirmation of 2026-08-23 refresh details and transition timing."
     }
   ],
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-10-29T12:00:00.000Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -193,8 +194,8 @@
       "source": "https://www.citi.com/credit-cards/citi-aadvantage-executive-world-elite-mastercard"
     }
   ],
-  "last_verified": "2026-09-29",
-  "next_review": "2026-10-29T00:00:00.000-07:00",
+  "last_verified": "2026-10-29",
+  "next_review": "2026-11-28T00:00:00.000Z",
   "cfpb_source": "Q3_2025",
   "cfpb_verified": true,
   "notes": "Refreshed World Legend product ($695). Values verified against the official Citi product page on 2026-09-29."
