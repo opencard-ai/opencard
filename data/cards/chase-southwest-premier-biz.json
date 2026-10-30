@@ -9,10 +9,14 @@
   "welcome_offer": {
     "spending_requirement": 3000,
     "time_period_months": 3,
-    "bonus_points": 80000,
-    "estimated_value": 1120,
+    "bonus_points": 60000,
+    "estimated_value": 840,
     "point_program": "Southwest Rapid Rewards",
-    "description": "80,000 bonus Rapid Rewards points after spending $3,000 on purchases in the first 3 months from account opening."
+    "description": "Earn 60,000 Southwest Rapid Rewards bonus points after spending $3,000 on purchases in the first 3 months.",
+    "notes": [
+      "2026-10-30 offer-watch auto-apply (two independent official fetches): bonus_points 80000 -> 60000. Sources: https://creditcards.chase.com/business-credit-cards/southwest/premier-business."
+    ],
+    "last_verified": "2026-10-30"
   },
   "earning_rates": [
     {
@@ -106,7 +110,7 @@
     }
   ],
   "notes": "Mid-tier Southwest business card. $149 AF. 6,000 anniversary points each year. Free first checked bag, Standard/Preferred seat selection within 48 hours, and boarding no later than group 5. Earns 2,000 TQPs toward A-List per $5,000 spent. The $8K combined cap on gas/restaurant 2x is limited but useful for small businesses.",
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-10-30T12:00:00.000Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -126,6 +130,6 @@
   ],
   "_no_credits_found": true,
   "_no_credits_note": "Southwest Premier Business ($149 AF): value is anniversary points (6,000 points, excluded) and a 15% anniversary promo code (% off, excluded). No fixed-USD recurring credits. Re-verified 2026-10-19 vs Chase official page.",
-  "last_verified": "2026-10-19",
-  "next_review": "2026-07-15T13:41:49.996000+00:00"
+  "last_verified": "2026-10-30",
+  "next_review": "2026-11-29T00:00:00.000Z"
 }
