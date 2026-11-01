@@ -1,273 +1,264 @@
 {
   "items": [
     {
-      "title": "Chase Offers/BofA: 100% Back On YouTube Channel Memberships Up To $6",
-      "url": "https://www.doctorofcredit.com/chase-offers-bofa-100-back-on-youtube-channel-memberships-up-to-6/",
+      "title": "[WA] Northwest Plus Credit Union $200 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/wa-northwest-plus-credit-union-200-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "wa bank bonuses"
+      ],
+      "ts": "2026-11-01T21:00:45.000Z",
+      "title_en": "[WA] Northwest Plus Credit Union $200 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[華盛頓州] Northwest Plus 信用聯社支票帳戶優惠：贈送 200 美元",
+      "summary_zh": "在 Northwest Plus 信用聯社開立支票帳戶可獲贈 200 美元優惠。",
+      "title_es": "[WA] Bonificación de $200 en cuenta corriente de Northwest Plus Credit Union",
+      "summary_es": "Northwest Plus Credit Union ofrece un bono de $200 por abrir y utilizar una cuenta corriente."
+    },
+    {
+      "title": "[NC] Acclaim Federal Credit Union $100 Checking Bonus, Direct Deposit Not Required",
+      "url": "https://www.doctorofcredit.com/nc-acclaim-federal-credit-union-100-checking-bonus-direct-deposit-not-required/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit not required",
+        "nc bank bonuses"
+      ],
+      "ts": "2026-11-01T20:45:42.000Z",
+      "title_en": "[NC] Acclaim Federal Credit Union $100 Checking Bonus, Direct Deposit Not Required",
+      "summary_en": "",
+      "title_zh": "[北卡羅萊納州] Acclaim Federal 信用聯社支票帳戶優惠：贈送 100 美元，無須直接存款",
+      "summary_zh": "在 Acclaim Federal 信用聯社開立支票帳戶可獲贈 100 美元，且不要求直接存入薪資。",
+      "title_es": "[NC] Bonificación de $100 en cuenta corriente de Acclaim Federal Credit Union, sin requisito de depósito directo",
+      "summary_es": "Acclaim Federal Credit Union ofrece una bonificación de $100 en una cuenta corriente sin exigir un depósito directo."
+    },
+    {
+      "title": "[IL, In Branch?] United Trust Bank $350 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/il-in-branch-united-trust-bank-350-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "direct deposit required",
+        "IL bank bonuses"
+      ],
+      "ts": "2026-11-01T20:30:40.000Z",
+      "title_en": "[IL, In Branch?] United Trust Bank $350 Checking Bonus",
+      "summary_en": "",
+      "title_zh": "[伊利諾伊州，需親臨分行？] United Trust Bank 支票帳戶優惠：贈送 350 美元",
+      "summary_zh": "在 United Trust Bank 開立支票帳戶可獲贈 350 美元，但可能須親臨分行辦理。",
+      "title_es": "[IL, ¿en sucursal?] Bonificación de $350 en cuenta corriente de United Trust Bank",
+      "summary_es": "United Trust Bank ofrece un bono de $350 en una cuenta corriente, posiblemente disponible únicamente al abrirla en una sucursal."
+    },
+    {
+      "title": "[Targeted] Chase Travel: Spend $600+ & Receive $100 Back",
+      "url": "https://www.doctorofcredit.com/targeted-chase-travel-spend-500-receive-100-back/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "Travel",
+        "chase",
+        "chase offers",
+        "chase travel"
+      ],
+      "ts": "2026-11-01T20:15:10.000Z",
+      "title_en": "[Targeted] Chase Travel: Spend $600+ & Receive $100 Back",
+      "summary_en": "",
+      "title_zh": "[指定客戶] Chase Travel：消費滿 600 美元，獲退回 100 美元",
+      "summary_zh": "指定 Chase Travel 客戶消費滿 600 美元即可獲退回 100 美元。",
+      "title_es": "[Oferta dirigida] Chase Travel: gasta $600 o más y recibe $100 de reembolso",
+      "summary_es": "Los clientes seleccionados pueden recibir $100 de reembolso al gastar $600 o más con Chase Travel."
+    },
+    {
+      "title": "Quorum Federal Credit Union Up To $1,000 Savings Bonus",
+      "url": "https://www.doctorofcredit.com/quorum-federal-credit-union-up-to-1000-savings-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "nationwide bank bonuses",
+        "soft pull"
+      ],
+      "ts": "2026-11-01T20:00:39.000Z",
+      "title_en": "Quorum Federal Credit Union Up To $1,000 Savings Bonus",
+      "summary_en": "",
+      "title_zh": "Quorum Federal 信用聯社儲蓄帳戶優惠：最高贈送 1,000 美元",
+      "summary_zh": "在 Quorum Federal 信用聯社開立儲蓄帳戶，最高可獲贈 1,000 美元。",
+      "title_es": "Quorum Federal Credit Union: bonificación de hasta $1,000 en una cuenta de ahorro",
+      "summary_es": "Quorum Federal Credit Union ofrece una bonificación de hasta $1,000 por abrir o utilizar una cuenta de ahorro."
+    },
+    {
+      "title": "Rakuten: Special Daily Deals From November 1-10",
+      "url": "https://www.doctorofcredit.com/rakuten-special-daily-deals-from-november-1-10/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "rakuten"
+      ],
+      "ts": "2026-11-01T19:00:30.000Z",
+      "title_en": "Rakuten: Special Daily Deals From November 1-10",
+      "summary_en": "",
+      "title_zh": "Rakuten：11 月 1 日至 10 日每日特別優惠",
+      "summary_zh": "Rakuten於 11 月 1 日至 10 日推出每日限時特別折扣。",
+      "title_es": "Rakuten: ofertas especiales diarias del 1 al 10 de noviembre",
+      "summary_es": "Rakuten ofrece descuentos y ofertas especiales diarios durante la Del导购 Black Friday del 1 al 10 de noviembre."
+    },
+    {
+      "title": "Airline Shopping Portals: Earn Up To 17,500 Bonus Miles (Alaska, Delta, United, American, Southwest)",
+      "url": "https://www.doctorofcredit.com/airline-shopping-portals-earn-up-to-17500-bonus-miles-alaska-delta-united-american-southwest/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "shopping portals"
+      ],
+      "ts": "2026-11-01T17:57:32.000Z",
+      "title_en": "Airline Shopping Portals: Earn Up To 17,500 Bonus Miles (Alaska, Delta, United, American, Southwest)",
+      "summary_en": "",
+      "title_zh": "航空購物入口：最高可賺取 17,500 獎勵里程（Alaska、Delta、United、American、Southwest）",
+      "summary_zh": "透過 Alaska、Delta、United、American 或 Southwest 的航空購物入口購票，最高可賺取 17,500 獎勵里程。",
+      "title_es": "Portales de compras de electricidad aérea: gana hasta 17,500 millas de bonificación (Alaska, Delta, United, American y Southwest)",
+      "summary_es": "Al comprar有小 Número不为 sure tickets de“上 airlines through participating portals, you can earn up to 17,500 bonus miles."
+    },
+    {
+      "title": "Kroger: Purchase $150 Visa/Mastercard Variable Load Giftcard & Get Purchase Fee Waived",
+      "url": "https://www.doctorofcredit.com/kroger-purchase-150-visa-mastercard-variable-loadgiftcard-get-purchase-fee-waived/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Manufactured Spending",
+        "kroger"
+      ],
+      "ts": "2026-11-01T17:45:46.000Z",
+      "title_en": "Kroger: Purchase $150 Visa/Mastercard Variable Load Giftcard & Get Purchase Fee Waived",
+      "summary_en": "",
+      "title_zh": "Kroger：購買 150 美元 Visa／Mastercard 可變動儲值禮品卡即可免除手續費",
+      "summary_zh": "在 Kroger 購買面額 150 美元的 Visa 或 Mastercard 可變動儲值禮品卡，可免除購買手續費。",
+      "title_es": "Kroger: compra una tarjeta de regalo Visa/Mastercard variable de $150 y全省協會 la comisión de compra",
+      "summary_es": "Kroger ofrece una tarjeta de regalo Visa o Mastercard de $150 sin cobrar la comisión de compra correspondiente."
+    },
+    {
+      "title": "Chase Offers: Get 5% Back At Giftcards.com (Up To $40 Back)",
+      "url": "https://www.doctorofcredit.com/chase-offers-offers-get-5-back-at-giftcards-com-up-to-50-back/",
       "source": "Doctor of Credit",
       "categories": [
         "Deals",
         "chase offers",
-        "youtube"
+        "giftcards.com"
       ],
-      "ts": "2026-10-31T21:04:39.000Z",
-      "title_en": "Chase Offers/BofA: 100% Back On YouTube Channel Memberships Up To $6",
+      "ts": "2026-11-01T17:00:57.000Z",
+      "title_en": "Chase Offers: Get 5% Back At Giftcards.com (Up To $40 Back)",
       "summary_en": "",
-      "title_zh": "Chase 優惠／美國銀行：YouTube 頻道會籍消費最高 6 美元可享 100% 現金回饋",
-      "summary_zh": "Chase 與美國銀行優惠可能讓 YouTube 頻道會籍消費最高 6 美元獲得全額現金回饋。",
-      "title_es": "Chase Offers/BofA: 100% de reembolso en membresías de canales de YouTube de hasta $6",
-      "summary_es": "Chase y Bank of America ofrecen un reembolso del 100% en compras de membresías de canales de YouTube por hasta $6."
+      "title_zh": "Chase 優惠：於 Giftcards.com 消費可獲 5% 退款（最高 40 美元）",
+      "summary_zh": "使用 Chase 卡片在 Giftcards.com 消費，可獲 5% 退款，最高達 40 美元。",
+      "title_es": "Ofertas de Chase: obtén un reembolso del 5% en Giftcards.com (hasta $40)",
+      "summary_es": "Chase ofrece un reembolso del 5% en compras realizadas en Giftcards.com, hasta un máximo de $40."
     },
     {
-      "title": "Bank Of America Surveys New/Updated Travel Card, No Annual Fee + Transfer Partners?",
-      "url": "https://www.doctorofcredit.com/bank-of-america-surveys-new-updated-travel-card-no-annual-fee-transfer-partners/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Credit Cards",
-        "bank of america",
-        "survey"
-      ],
-      "ts": "2026-10-31T20:21:22.000Z",
-      "title_en": "Bank Of America Surveys New/Updated Travel Card, No Annual Fee + Transfer Partners?",
-      "summary_en": "",
-      "title_zh": "美國銀行探索新版旅遊信用卡：免年費＋可轉移點數夥伴？",
-      "summary_zh": "文章探討美國銀行可能推出的新版旅遊信用卡，包括免年費及可轉移點數的合作伙伴權益。",
-      "title_es": "Encuesta de Bank of America: tarjeta de viajes nueva/actualizada, sin cuota anual y con socios de transferencia",
-      "summary_es": "Bank of America pregunta por una tarjeta de viajes nueva o actualizada, sin cuota anual y con opciones para transferir puntos."
-    },
-    {
-      "title": "TheGiftCardShop.com: 100% Off $50+ Visa & Mastercard Purchase Fees (CUSTOM26)",
-      "url": "https://www.doctorofcredit.com/thegiftcardshop-com-100-off-200-visa-mastercard-purchase-fees/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "thegiftcardshop"
-      ],
-      "ts": "2026-10-31T20:15:48.000Z",
-      "title_en": "TheGiftCardShop.com: 100% Off $50+ Visa & Mastercard Purchase Fees (CUSTOM26)",
-      "summary_en": "",
-      "title_zh": "TheGiftCardShop.com：Visa 與 Mastercard 滿 50 美元免手續費享 100% 折扣（優惠碼 CUSTOM26）",
-      "summary_zh": "使用優惠碼 CUSTOM26 在 TheGiftCardShop.com 消費滿 50 美元的 Visa 或 Mastercard 付款，可享 100% 折扣並免除手續費。",
-      "title_es": "TheGiftCardShop.com: 100% de descuento en las comisiones de compras con Visa y Mastercard de $50 o más (CUSTOM26)",
-      "summary_es": "TheGiftCardShop.com ofrece un 100% de descuento en las comisiones de compras de $50 o más con tarjetas Visa y Mastercard mediante el código CUSTOM26."
-    },
-    {
-      "title": "[6% $150k Cap Added] X Money Review – 6% APY/$300 Bonus & 3% Back On Debit Card Purchases",
-      "url": "https://www.doctorofcredit.com/x-money-review-6-apy-300-bonus-3-back-on-debit-card-purchases/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "high yield checking",
-        "x money"
-      ],
-      "ts": "2026-10-31T20:06:52.000Z",
-      "title_en": "[6% $150k Cap Added] X Money Review – 6% APY/$300 Bonus & 3% Back On Debit Card Purchases",
-      "summary_en": "",
-      "title_zh": "【新增6%年利率，上限15萬美元】X Money 評測－6%年利率、300美元獎金及簽帳卡消費3%回饋",
-      "summary_zh": "X Money 提供最高6%年利率與300美元獎金，簽帳卡消費另可享3%回饋，且6%利率的累計上限為15萬美元。",
-      "title_es": "[Límite de $150.000 con 6% añadido] Reseña de X Money: 6% APY, bonificación de $300 y 3% de reembolso en compras con tarjeta de débito",
-      "summary_es": "X Money ofrece un 6% de interés anual sobre los primeros $150.000, una bonificación de $300 y un 3% de reembolso en compras realizadas con la tarjeta de débito."
-    },
-    {
-      "title": "7-Eleven 7NOW App Promo Codes: $10 off $20+, TREAT",
-      "url": "https://www.doctorofcredit.com/7-eleven-7now-app-promo-codes/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "7-Eleven 7NOW"
-      ],
-      "ts": "2026-10-31T20:05:41.000Z",
-      "title_en": "7-Eleven 7NOW App Promo Codes: $10 off $20+, TREAT",
-      "summary_en": "",
-      "title_zh": "7-Eleven 7NOW App 優惠碼：消費滿20美元立減10美元，優惠碼：TREAT",
-      "summary_zh": "使用優惠碼 TREAT 於 7-Eleven 的 7NOW App 消費滿20美元，可減免10美元。",
-      "title_es": "Códigos promocionales de la app 7NOW de 7-Eleven: $10 de descuento en compras de $20 o más con TREAT",
-      "summary_es": "La app 7NOW de 7-Eleven ofrece códigos para ahorrar $10 en compras de $20 o más mediante el programa TREAT."
-    },
-    {
-      "title": "[MI, NV, TX, VA] InTouch Credit Union $100 Referral Bonus",
-      "url": "https://www.doctorofcredit.com/mi-nv-tx-va-intouch-credit-union-100-referral-bonus-direct-deposit-optional/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "credit card funding",
-        "direct deposit not required",
-        "mi bank bonuses",
-        "nv bank bonuses",
-        "soft pull",
-        "tx bank bonuses",
-        "va bank bonuses"
-      ],
-      "ts": "2026-10-31T17:00:25.000Z",
-      "title_en": "[MI, NV, TX, VA] InTouch Credit Union $100 Referral Bonus",
-      "summary_en": "",
-      "title_zh": "【密西根州、內華達州、德州及維吉尼亞州】InTouch Credit Union 推薦獎金100美元",
-      "summary_zh": "InTouch Credit Union 這些州的客戶成功推薦新會員後，可獲得100美元獎金。",
-      "title_es": "[MI, NV, TX y VA] Bonificación de $100 por referidos de InTouch Credit Union",
-      "summary_es": "InTouch Credit Union ofrece una bonificación de $100 a quienes refieran a alguien que abra una cuenta calificada en Michigan, Nevada, Texas o Virginia."
-    },
-    {
-      "title": "[ID only] Cap Ed Credit Union $200 Checking Bonus – No Direct Deposit Required",
-      "url": "https://www.doctorofcredit.com/in-only-cap-ed-credit-union-100-checking-bonus-no-direct-deposit-required/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "direct deposit not required",
-        "id bank bonuses",
-        "no credit card funding",
-        "soft pull"
-      ],
-      "ts": "2026-10-31T16:00:19.000Z",
-      "title_en": "[ID only] Cap Ed Credit Union $200 Checking Bonus – No Direct Deposit Required",
-      "summary_en": "",
-      "title_zh": "【僅限愛達荷州】Cap Ed Credit Union 支票帳戶獎金200美元－無須直接存款",
-      "summary_zh": "愛達荷州居民開設 Cap Ed Credit Union 支票帳戶並符合相關條件，即可獲得200美元獎金，且無須安排直接存款。",
-      "title_es": "[Solo ID] Bonificación de $200 en la cuenta corriente de Cap Ed Credit Union, sin depósito directo obligatorio",
-      "summary_es": "Cap Ed Credit Union ofrece $200 por abrir una cuenta corriente en Idaho, sin exigir un depósito directo."
-    },
-    {
-      "title": "[IN, OH, MI] First Merchants Bank $300/$600 Checking Promotion",
-      "url": "https://www.doctorofcredit.com/in-oh-mi-first-merchants-bank-300-500-checking-promotion/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "credit card funding",
-        "direct deposit required",
-        "in bank bonuses",
-        "mi bank bonuses",
-        "oh bank bonuses",
-        "soft pull"
-      ],
-      "ts": "2026-10-31T16:00:13.000Z",
-      "title_en": "[IN, OH, MI] First Merchants Bank $300/$600 Checking Promotion",
-      "summary_en": "",
-      "title_zh": "【印第安納州、俄亥俄州及密西根州】First Merchants Bank 支票帳戶推廣活動：300／600美元",
-      "summary_zh": "First Merchants Bank 在印第安納州、俄亥俄州及密西根州提供最高600美元的支票帳戶推廣獎金。",
-      "title_es": "[IN, OH y MI] Promoción de cuentas corrientes de $300 y $600 de First Merchants Bank",
-      "summary_es": "First Merchants Bank ofrece bonificaciones de $300 o $600 por abrir cuentas corrientes elegibles en Indiana, Ohio o Michigan."
-    },
-    {
-      "title": "[PA & MD only] ACNB $1,000-$3,000 Business Checking bonus",
-      "url": "https://www.doctorofcredit.com/pa-md-only-acnb-1000-2000-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "direct deposit not required",
-        "md bank bonuses",
-        "no credit card funding",
-        "pa bank bonuses",
-        "soft pull"
-      ],
-      "ts": "2026-10-31T15:00:46.000Z",
-      "title_en": "[PA & MD only] ACNB $1,000-$3,000 Business Checking bonus",
-      "summary_en": "",
-      "title_zh": "【僅限賓州及馬里蘭州】ACNB 商業支票帳戶獎金1,000至3,000美元",
-      "summary_zh": "賓州及馬里蘭州符合資格的客戶開設 ACNB 商業支票帳戶，可獲得1,000至3,000美元獎金。",
-      "title_es": "[Solo PA y MD] Bonificación de $1.000 a $3.000 en cuentas corrientes empresariales de ACNB",
-      "summary_es": "ACNB ofrece una bonificación de entre $1.000 y $3.000 por abrir una cuenta corriente empresarial en Pensilvania o Maryland."
-    },
-    {
-      "title": "[GA, Select Counties] Robins Financial Credit Union $300 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/ga-select-counties-robins-financial-credit-union-200-checking-bonus/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Bank Accounts",
-        "direct deposit required",
-        "ga bank bonuses",
-        "soft pull"
-      ],
-      "ts": "2026-10-31T14:30:55.000Z",
-      "title_en": "[GA, Select Counties] Robins Financial Credit Union $300 Checking Bonus",
-      "summary_en": "",
-      "title_zh": "【喬治亞州及指定郡】Robins Financial Credit Union 支票帳戶獎金300美元",
-      "summary_zh": "喬治亞州指定郡的符合資格客戶開設 Robins Financial Credit Union 支票帳戶，可獲得300美元獎金。",
-      "title_es": "[GA y condados seleccionados] Bonificación de $300 en la cuenta corriente de Robins Financial Credit Union",
-      "summary_es": "Robins Financial Credit Union ofrece $300 por abrir una cuenta corriente en Georgia y ciertos condados participantes."
-    },
-    {
-      "title": "VanillaGift.com: 100% Off Purchase Fees Visa Gift Cards (VGSHOP26)",
-      "url": "https://www.doctorofcredit.com/vanillagift-com-100-off-purchase-fees-vanilla-egift-cards-with-promo-code-lastminute23/",
+      "title": "Office Depot/Max Stores: Buy $300 In Visa Giftcards & Get $15 Instant Discount (11/1-11/7)",
+      "url": "https://www.doctorofcredit.com/office-depot-max-stores-buy-300-in-visa-giftcards-get-15-instant-discount-12-19-12-25/",
       "source": "Doctor of Credit",
       "categories": [
         "Manufactured Spending",
-        "Vanilla Visa"
+        "office depot/max",
+        "visa gift cards"
       ],
-      "ts": "2026-10-30T21:56:12.000Z",
-      "title_en": "VanillaGift.com: 100% Off Purchase Fees Visa Gift Cards (VGSHOP26)",
+      "ts": "2026-11-01T16:41:14.000Z",
+      "title_en": "Office Depot/Max Stores: Buy $300 In Visa Giftcards & Get $15 Instant Discount (11/1-11/7)",
       "summary_en": "",
-      "title_zh": "VanillaGift.com：Visa 禮品卡免收購買手續費 100% 優惠（VGSHOP26）",
-      "summary_zh": "使用優惠碼 VGSHOP26 購買 VanillaGift.com 的 Visa 禮品卡，可享 100% 免手續費優惠。",
-      "title_es": "VanillaGift.com: 100% de descuento en las comisiones de compra de tarjetas de regalo Visa (VGSHOP26)",
-      "summary_es": "Obtén un 100% de descuento en las comisiones de compra de tarjetas de regalo Visa de VanillaGift.com con el código VGSHOP26."
+      "title_zh": "Office Depot／Max：購買 300 美元 Visa 禮品卡，立即減價 15 美元（11 月 1 日至 7 日）",
+      "summary_zh": "於 11 月 1 日至 7 日在 Office Depot 或 Max 購買 300 美元的 Visa 禮品卡，可立即享受 15 美元折扣。",
+      "title_es": "Office Depot/Max Stores: compra $300 en tarjetas de regalo Visa y obtén un descuento instantáneo de $15 (del 1/11 al 7/11)",
+      "summary_es": "Office Depot y Max Stores ofrecen un descuento instantáneo de $15 por comprar $300 en tarjetas de regalo Visa entre el 1 y el 7 de noviembre."
     },
     {
-      "title": "[Avianca Added As Transfer Partner] Silo Markets: Ongoing Brokerage Bonus (0.5x – 1x Points Per $1, Transfer Partners Coming)",
-      "url": "https://www.doctorofcredit.com/silo-markets-ongoing-brokerage-bonus-0-5x-1x-points-per-1-transfer-partners-coming/",
+      "title": "Giftcards.com: $10 Bonus Giftcard With $100+ Virtual Visa eGiftcard Purchase With Code GIVEMORE",
+      "url": "https://www.doctorofcredit.com/giftcards-com-10-bonus-giftcard-with-100-virtual-visa-egiftcard-purchase-with-code-givemore/",
       "source": "Doctor of Credit",
       "categories": [
-        "Bank Accounts",
-        "brokerage bonuses",
-        "silo markets"
+        "Manufactured Spending",
+        "giftcards.com"
       ],
-      "ts": "2026-10-30T21:45:12.000Z",
-      "title_en": "[Avianca Added As Transfer Partner] Silo Markets: Ongoing Brokerage Bonus (0.5x – 1x Points Per $1, Transfer Partners Coming)",
+      "ts": "2026-11-01T14:00:28.000Z",
+      "title_en": "Giftcards.com: $10 Bonus Giftcard With $100+ Virtual Visa eGiftcard Purchase With Code GIVEMORE",
       "summary_en": "",
-      "title_zh": "［新增 Avianca 為轉點夥伴］Silo Markets：持續提供券商獎勵（每消費 1 美元可賺 0.5 至 1 倍積分，更多轉點夥伴陸續加入）",
-      "summary_zh": "Silo Markets 推出持續性券商獎勵方案，每消費 1 美元可獲得 0.5 至 1 倍積分，並新增 Avianca 為轉點夥伴。",
-      "title_es": "[Avianca añadido como socio de transferencia] Silo Markets: bonificación de corretaje en curso (0,5x–1x puntos por cada 1 $, con nuevos socios de transferencia en camino)",
-      "summary_es": "Silo Markets ofrece una bonificación de corretaje de 0,5 a 1 punto por cada dólar, con Avianca como nuevo socio de transferencia."
+      "title_zh": "Giftcards.com：使用代碼 GIVEMORE 購買 100 美元以上虛擬 Visa 電子禮品卡，贈送 10 美元禮品卡",
+      "summary_zh": "在 Giftcards.com 使用代碼 GIVEMORE 購買至少 100 美元的虛擬 Visa 電子禮品卡，可獲贈 10 美元禮品卡。",
+      "title_es": "Giftcards.com: tarjeta de regalo de bonificación de $10 con una compra de eGiftcard Visa virtual de $100 o más usando el código GIVEMORE",
+      "summary_es": "Giftcards.com ofrece una tarjeta de regalo de $10 por comprar una eGiftcard Visa virtual de $100 o más con el código GIVEMORE."
     },
     {
-      "title": "Deal Calendar (Full List Of Deals, Credit Card & Bank Bonuses + Their Expiry Dates)",
-      "url": "https://www.doctorofcredit.com/deal-calendar-full-list-deals-credit-card-bank-bonuses-expiry-dates/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Uncategorized"
-      ],
-      "ts": "2026-10-30T20:52:33.000Z",
-      "title_en": "Deal Calendar (Full List Of Deals, Credit Card & Bank Bonuses + Their Expiry Dates)",
-      "summary_en": "",
-      "title_zh": "優惠日曆（信用卡與銀行獎勵完整列表及到期日）",
-      "summary_zh": "此頁彙整信用卡、银行優惠與獎勵的完整清單，並標示各項優惠的到期日。",
-      "title_es": "Calendario de ofertas (lista completa de ofertas, tarjetas de crédito y bonificaciones bancarias, con sus fechas de vencimiento)",
-      "summary_es": "Consulta la lista completa de ofertas, bonificaciones de tarjetas de crédito y bancos y las fechas en que caducan."
-    },
-    {
-      "title": "[Expired] Atom Tickets: Free Ticket To See Paper Tiger With Promo Code ATOMTIGER",
-      "url": "https://www.doctorofcredit.com/atom-tickets-free-ticket-to-see-paper-tiger-with-promo-code-atomtiger/",
+      "title": "Chase Ultimate Rewards: 80% Transfer Bonus To IHG (1:1.8)",
+      "url": "https://www.doctorofcredit.com/chase-ultimate-rewards-80-transfer-bonus-to-ihg-11-8-5/",
       "source": "Doctor of Credit",
       "categories": [
         "Deals",
-        "atom tickets",
-        "freebies"
+        "chase transfer bonuses",
+        "ihg",
+        "transfer bonuses"
       ],
-      "ts": "2026-10-30T20:50:16.000Z",
-      "title_en": "[Expired] Atom Tickets: Free Ticket To See Paper Tiger With Promo Code ATOMTIGER",
+      "ts": "2026-11-01T12:00:42.000Z",
+      "title_en": "Chase Ultimate Rewards: 80% Transfer Bonus To IHG (1:1.8)",
       "summary_en": "",
-      "title_zh": "［已過期］Atom Tickets：使用優惠碼 ATOMTIGER 可免費觀看《Paper Tiger》",
-      "summary_zh": "Atom Tickets 曾提供兌換碼 ATOMTIGER，觀眾可免費觀看《Paper Tiger》，但此優惠已過期。",
-      "title_es": "[Expirado] Atom Tickets: entrada gratis para ver Paper Tiger con el código promocional ATOMTIGER",
-      "summary_es": "La promoción de Atom Tickets para obtener una entrada gratis para ver Paper Tiger con el código ATOMTIGER ya ha expirado."
+      "title_zh": "Chase Ultimate Rewards：轉移至 IHG 可獲 80% 額外獎勵（1:1.8）",
+      "summary_zh": "將 Chase Ultimate Rewards 積分轉移至 IHG，可按 1:1.8 的比率額外獲得 80% 獎勵。",
+      "title_es": "Chase Ultimate Rewards: bonificación del 80% al transferir a IHG (1:1,8)",
+      "summary_es": "Chase Ultimate Rewards ofrece un 80% de bonificación al transferir puntos a IHG, con una proporción de 1 a 1,8."
     },
     {
-      "title": "Capital One Offers: Dunkin/Wendy’s/Burger King, Spend $5 & Get $5 Back",
-      "url": "https://www.doctorofcredit.com/capital-one-offers-dunkin-wendys-burger-king-spend-5-get-5-back/",
+      "title": "Chase Ultimate Rewards: 30% Transfer Bonus To Avios (1:1.3)",
+      "url": "https://www.doctorofcredit.com/chase-ultimate-rewards-30-transfer-bonus-to-avios-11-3/",
       "source": "Doctor of Credit",
       "categories": [
-        "Deals",
-        "burger king",
-        "capital one offers",
-        "dunkin",
-        "dunkin donuts",
-        "wendy's"
+        "Credit Cards",
+        "avios",
+        "british airways",
+        "chase transfer bonuses",
+        "transfer bonuses"
       ],
-      "ts": "2026-10-30T20:28:07.000Z",
-      "title_en": "Capital One Offers: Dunkin/Wendy’s/Burger King, Spend $5 & Get $5 Back",
+      "ts": "2026-11-01T12:00:26.000Z",
+      "title_en": "Chase Ultimate Rewards: 30% Transfer Bonus To Avios (1:1.3)",
       "summary_en": "",
-      "title_zh": "Capital One 優惠：Dunkin’、Wendy’s 或 Burger King，消費 5 美元即返 5 美元",
-      "summary_zh": "在 Capital One 活動期間於 Dunkin’、Wendy’s 或 Burger King 消費滿 5 美元，即可獲得 5 美元回饋。",
-      "title_es": "Ofertas de Capital One: Dunkin’, Wendy’s o Burger King, gasta 5 $ y recibe 5 $ de devolución",
-      "summary_es": "Capital One ofrece 5 $ de devolución por cada 5 $ gastados en Dunkin’, Wendy’s o Burger King."
+      "title_zh": "Chase Ultimate Rewards：轉移至 Avios 可獲 30% 額外獎勵（1:1.3）",
+      "summary_zh": "將 Chase Ultimate Rewards 積分轉移至 Avios，可按 1:1.3 的比率額外獲得 30% 獎勵。",
+      "title_es": "Chase Ultimate Rewards: bonificación del 30% al transferir a Avios (1:1,3)",
+      "summary_es": "Chase Ultimate Rewards ofrece un 30% de bonificación al transferir puntos a Avios, con una proporción de 1 a 1,3."
+    },
+    {
+      "title": "Capital One: 20% Transfer Bonus To AirFrance/KLM Flying Blue (1:1.2)",
+      "url": "https://www.doctorofcredit.com/capital-one-20-transfer-bonus-to-airfrance-klm-flying-blue-11-2-4/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "AirFrance/KLM",
+        "capital one",
+        "capital one transfer bonuses",
+        "transfer bonuses"
+      ],
+      "ts": "2026-11-01T12:00:14.000Z",
+      "title_en": "Capital One: 20% Transfer Bonus To AirFrance/KLM Flying Blue (1:1.2)",
+      "summary_en": "",
+      "title_zh": "Capital One：轉移至 Air France／KLM Flying Blue 可獲 20% 額外獎勵（1:1.2）",
+      "summary_zh": "將 Capital One 積分轉移至 Air France／KLM Flying Blue，可按 1:1.2 的比率額外獲得 20% 獎勵。",
+      "title_es": "Capital One: bonificación del 20% al transferir a Air France/KLM Flying Blue (1:1,2)",
+      "summary_es": "Capital One ofrece un 20% de bonificación al transferir puntos al programa Flying Blue de Air France/KLM, con una proporción de 1 a 1,2."
+    },
+    {
+      "title": "Chase Ultimate Rewards: 30% Transfer Bonus To Wyndham (1:1.3)",
+      "url": "https://www.doctorofcredit.com/chase-ultimate-rewards-30-transfer-bonus-to-wyndham-11-3-2/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "chase transfer bonuses",
+        "transfer bonuses",
+        "Wyndham"
+      ],
+      "ts": "2026-11-01T12:00:07.000Z",
+      "title_en": "Chase Ultimate Rewards: 30% Transfer Bonus To Wyndham (1:1.3)",
+      "summary_en": "",
+      "title_zh": "Chase Ultimate Rewards：轉移至 Wyndham 可獲 30% 額外獎勵（1:1.3）",
+      "summary_zh": "將 Chase Ultimate Rewards 積分轉移至 Wyndham，可按 1:1.3 的比率額外獲得 30% 獎勵。",
+      "title_es": "Chase Ultimate Rewards: bonificación del 30% al transferir a Wyndham (1:1,3)",
+      "summary_es": "Chase Ultimate Rewards ofrece un 30% de bonificación al transferir puntos a Wyndham, con una proporción de 1 a 1,3."
     }
   ],
-  "fetched": "2026-11-01T08:09:03.885Z"
+  "fetched": "2026-11-01T21:08:12.289Z"
 }
