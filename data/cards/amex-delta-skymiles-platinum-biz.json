@@ -92,6 +92,7 @@
   "sources": [
     {
       "url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-platinum/",
+      "title": "Delta SkyMiles Platinum Business American Express Card",
       "notes": "Official Amex page checked 2026-10-02: $120 statement credit for Global Entry or up to $85 for TSA PreCheck every 4 years. | Official Amex page 2026-10-19: $200 Delta Stays Statement Credit (annual); $120 Rideshare Credit."
     },
     {
@@ -99,7 +100,8 @@
       "notes": "USCCG card review (LLM-friendly static HTML)"
     },
     {
-      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards"
+      "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
+      "title": "Amex Business Credit Cards | Delta Air Lines"
     },
     {
       "url": "https://www.cnbc.com/select/massive-new-200000-mile-delta-credit-card-welcome-offers/",
@@ -107,6 +109,7 @@
     },
     {
       "url": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees",
+      "title": "Delta and American Express add more travel value to Delta SkyMiles Cards | Delta News Hub",
       "notes": "Delta News Hub official announcement: limited-time welcome offers and 2026 benefit updates"
     },
     {
