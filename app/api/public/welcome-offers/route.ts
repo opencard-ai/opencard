@@ -1,4 +1,4 @@
-import { boundedJson, currentWelcomeOffers, InputError, PUBLIC_HEADERS } from "@/lib/developer-api";
+import { boundedJson, currentWelcomeOffers, InputError, PUBLIC_HEADERS, preflight } from "@/lib/developer-api";
 
 export const dynamic = "force-dynamic";
 
@@ -16,4 +16,8 @@ export async function GET(request: Request) {
     if (e instanceof InputError) return new Response(JSON.stringify({ error: e.message }), { status: 400, headers: PUBLIC_HEADERS });
     throw e;
   }
+}
+
+export function OPTIONS() {
+  return preflight("GET, OPTIONS");
 }

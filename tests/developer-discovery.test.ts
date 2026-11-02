@@ -1,14 +1,16 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import { searchCards, getCard, currentWelcomeOffers, InputError, MAX_LIMIT, boundedJson, MAX_RESPONSE_BYTES } from "../lib/developer-api";
+import { LICENSE, searchCards, getCard, currentWelcomeOffers, InputError, MAX_LIMIT, boundedJson, MAX_RESPONSE_BYTES } from "../lib/developer-api";
 import { handleRpc, TOOLS } from "../lib/mcp-server";
 import { openApiSpec } from "../lib/openapi-spec";
 import { LLMS_TXT } from "../lib/llms-txt";
 import { POST as mcpPost, GET as mcpGet } from "../app/api/mcp/route";
 import { GET as cardsGet } from "../app/api/public/cards/route";
 import { GET as cardGet } from "../app/api/public/cards/[id]/route";
-import { GET as offersGet } from "../app/api/public/welcome-offers/route";
+import { GET as offersGet, OPTIONS as offersOptions } from "../app/api/public/welcome-offers/route";
+import { OPTIONS as mcpOptions } from "../app/api/mcp/route";
+import sitemap from "../app/sitemap";
 
 const rpc = (body: unknown) => mcpPost(new Request("http://x/api/mcp", { method: "POST", headers: { "content-type": "application/json" }, body: typeof body === "string" ? body : JSON.stringify(body) }));
 
@@ -95,4 +97,44 @@ test("OpenAPI, llms.txt and developer page", () => {
     const src = fs.readFileSync(f, "utf8");
     assert.doesNotMatch(src, /process\.env|V1_|@vercel\/kv|@upstash|neon/i, f);
   }
+});
+
+test("relevance ranking: name, then issuer, then other; alphabetical within group", () => {
+  const r = searchCards({ query: "sapphire", limit: 50 });
+  assert.ok(r.cards.length > 0 && r.cards.every((c) => /sapphire/i.test(c.name + c.card_id)));
+  const names = r.cards.map((c) => c.name);
+  assert.deepEqual(names, [...names].sort((a, b) => a.localeCompare(b)));
+  const chase = searchCards({ query: "chase", limit: 50 }).cards;
+  const firstIssuerOnly = chase.findIndex((c) => !/chase/i.test(c.name + c.card_id));
+  if (firstIssuerOnly >= 0) assert.ok(chase.slice(firstIssuerOnly).every((c) => !/chase/i.test(c.name + c.card_id)));
+  const travel = searchCards({ query: "travel", limit: 50 }).cards;
+  const firstOther = travel.findIndex((c) => !/travel/i.test(c.name + c.card_id + c.issuer));
+  if (firstOther >= 0) assert.ok(travel.slice(firstOther).every((c) => !/travel/i.test(c.name + c.card_id)));
+});
+
+test("CORS, preflight, cache headers, license", async () => {
+  const res = await cardsGet(new Request("http://x/api/public/cards?q=sapphire"));
+  assert.equal(res.headers.get("access-control-allow-origin"), "*");
+  assert.match(res.headers.get("cache-control")!, /s-maxage=3600, stale-while-revalidate=86400/);
+  const body = await res.json();
+  assert.deepEqual(body.license, LICENSE);
+  assert.match(body.attribution, /CC BY 4\.0.*https:\/\/opencardai\.com/);
+  const pre = offersOptions();
+  assert.equal(pre.status, 204);
+  assert.match(pre.headers.get("access-control-allow-methods")!, /GET/);
+  assert.match(pre.headers.get("access-control-allow-headers")!, /Content-Type/);
+  const mpre = mcpOptions();
+  assert.match(mpre.headers.get("access-control-allow-methods")!, /POST/);
+  const m = await rpc({ jsonrpc: "2.0", id: 1, method: "tools/call", params: { name: "current_welcome_offers", arguments: { limit: 1 } } });
+  assert.equal(m.headers.get("access-control-allow-origin"), "*");
+  assert.match(JSON.parse((await m.json()).result.content[0].text).attribution, /CC BY 4\.0/);
+  assert.equal((await mcpGet()).status, 405);
+  assert.deepEqual(openApiSpec.info.license, { name: "CC-BY-4.0", url: "https://creativecommons.org/licenses/by/4.0/" });
+  assert.match(LLMS_TXT, /CC BY 4\.0/);
+});
+
+test("sitemap and footer include /developers", () => {
+  assert.ok(sitemap().some((e) => e.url === "https://opencardai.com/en/developers"));
+  assert.match(fs.readFileSync("app/[lang]/layout.tsx", "utf8"), /\/developers`/);
+  assert.match(fs.readFileSync("app/[lang]/developers/page.tsx", "utf8"), /CC BY 4\.0/);
 });

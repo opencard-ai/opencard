@@ -1,4 +1,4 @@
-import { API_VERSION, DISCLOSURE, MAX_LIMIT, SITE_URL } from "./developer-api";
+import { API_VERSION, ATTRIBUTION, DISCLOSURE, LICENSE, MAX_LIMIT, SITE_URL } from "./developer-api";
 
 const limit = { name: "limit", in: "query", schema: { type: "integer", minimum: 1, maximum: MAX_LIMIT, default: 20 } };
 const str = (name: string, description: string, maxLength = 100) => ({ name, in: "query", description, schema: { type: "string", maxLength } });
@@ -10,7 +10,8 @@ export const openApiSpec = {
     title: "OpenCard Card Data API",
     version: API_VERSION,
     summary: "Read-only US credit card data from opencardai.com.",
-    description: `Public, read-only access to the card data shown on ${SITE_URL}. No key required. ${DISCLOSURE}`,
+    description: `Public, read-only access to the card data shown on ${SITE_URL}. No key required. ${ATTRIBUTION} ${DISCLOSURE}`,
+    license: { name: LICENSE.name, url: LICENSE.url },
     contact: { name: "OpenCard", email: "data@opencardai.com", url: `${SITE_URL}/en/developers` },
   },
   servers: [{ url: SITE_URL }],

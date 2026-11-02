@@ -17,7 +17,8 @@ export const MAX_RESPONSE_BYTES = 200_000;
 export const DISCLOSURE =
   "OpenCard may receive compensation from some card links; compensation does not determine ratings or order. " +
   "Offers change often: verify terms with the issuer before applying. Not financial advice.";
-export const ATTRIBUTION = `Data: OpenCard (${SITE_URL}). Please link back to the card page when displaying this data.`;
+export const LICENSE = { name: "CC-BY-4.0", url: "https://creativecommons.org/licenses/by/4.0/" } as const;
+export const ATTRIBUTION = `Data: OpenCard (${SITE_URL}), licensed CC BY 4.0 (${LICENSE.url}). Commercial use allowed; attribution and a link back to ${SITE_URL} are required.`;
 
 export class InputError extends Error {}
 
@@ -159,7 +160,17 @@ export function searchCards(p: SearchParams) {
     }
     return true;
   });
-  return { total: matches.length, count: Math.min(limit, matches.length), cards: matches.slice(0, limit).map(toSummary), disclosure: DISCLOSURE, attribution: ATTRIBUTION };
+  if (terms.length) {
+    // Relevance: name matches, then issuer matches, then other fields; alphabetical within each group.
+    const rank = (c: CreditCard) => {
+      const name = `${c.name} ${c.card_id}`.toLowerCase();
+      if (terms.some((t) => name.includes(t))) return 0;
+      if (terms.some((t) => c.issuer.toLowerCase().includes(t))) return 1;
+      return 2;
+    };
+    matches.sort((a, b) => rank(a) - rank(b) || a.name.localeCompare(b.name));
+  }
+  return { total: matches.length, count: Math.min(limit, matches.length), cards: matches.slice(0, limit).map(toSummary), disclosure: DISCLOSURE, attribution: ATTRIBUTION, license: LICENSE };
 }
 
 export function getCard(p: { card_id?: unknown }) {
@@ -168,7 +179,7 @@ export function getCard(p: { card_id?: unknown }) {
   if (!ID_RE.test(id)) throw new InputError("card_id must be lowercase letters, digits and hyphens");
   const card = getCardById(id);
   if (!card) return null;
-  return { card: toPublicCard(card), disclosure: DISCLOSURE, attribution: ATTRIBUTION };
+  return { card: toPublicCard(card), disclosure: DISCLOSURE, attribution: ATTRIBUTION, license: LICENSE };
 }
 
 export function currentWelcomeOffers(p: { issuer?: unknown; min_estimated_value?: unknown; elevated_only?: unknown; limit?: unknown }) {
@@ -204,7 +215,7 @@ export function currentWelcomeOffers(p: { issuer?: unknown; min_estimated_value?
         url: cardUrl(c.card_id),
       };
     });
-  return { as_of: today, total: offers.length, count: Math.min(limit, offers.length), offers: offers.slice(0, limit), disclosure: DISCLOSURE, attribution: ATTRIBUTION };
+  return { as_of: today, total: offers.length, count: Math.min(limit, offers.length), offers: offers.slice(0, limit), disclosure: DISCLOSURE, attribution: ATTRIBUTION, license: LICENSE };
 }
 
 /** Serialize with a hard size cap so no single response can balloon. */
@@ -216,7 +227,19 @@ export function boundedJson(value: unknown): string {
   return s;
 }
 
+export const CORS_HEADERS: Record<string, string> = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "Content-Type, Accept, Mcp-Protocol-Version",
+  "Access-Control-Max-Age": "86400",
+};
+
+export function preflight(methods: string): Response {
+  return new Response(null, { status: 204, headers: { ...CORS_HEADERS, "Access-Control-Allow-Methods": methods, Allow: methods } });
+}
+
 export const PUBLIC_HEADERS: Record<string, string> = {
+  ...CORS_HEADERS,
+  "Access-Control-Allow-Methods": "GET, OPTIONS",
   "Content-Type": "application/json; charset=utf-8",
   "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
   "X-Content-Type-Options": "nosniff",

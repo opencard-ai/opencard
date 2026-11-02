@@ -1,10 +1,12 @@
-import { DISCLOSURE, SITE_URL } from "./developer-api";
+import { ATTRIBUTION, DISCLOSURE, SITE_URL } from "./developer-api";
 
 export const LLMS_TXT = `# OpenCard
 
 > OpenCard (${SITE_URL}) compares US credit cards: annual fees, welcome offers, earning rates, credits and benefits, sourced from issuer pages. Content is available in English, Traditional Chinese, Simplified Chinese and Spanish.
 
 ${DISCLOSURE}
+
+License: ${ATTRIBUTION}
 
 ## Developer access (read-only, no key)
 

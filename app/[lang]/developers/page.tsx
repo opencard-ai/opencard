@@ -2,7 +2,7 @@ import { localizedAlternates } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { locales, type Locale } from "@/lib/i18n";
-import { currentWelcomeOffers, DISCLOSURE, MAX_LIMIT } from "@/lib/developer-api";
+import { currentWelcomeOffers, DISCLOSURE, LICENSE, MAX_LIMIT } from "@/lib/developer-api";
 import AffiliateDisclosure from "@/app/components/AffiliateDisclosure";
 
 export const dynamic = "force-static";
@@ -114,9 +114,16 @@ export default async function DevelopersPage({ params }: Props) {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-800 mb-2">Terms of use</h2>
+            <h2 className="text-xl font-bold text-slate-800 mb-2">License and terms of use</h2>
+            <p className="text-slate-600 leading-relaxed mb-3">
+              The card data is licensed under{" "}
+              <a href={LICENSE.url} className="font-semibold text-blue-600 hover:text-blue-700" rel="license noopener" target="_blank">Creative Commons Attribution 4.0 (CC BY 4.0)</a>.
+              Commercial use is allowed. You must credit OpenCard and link back to{" "}
+              <a href="https://opencardai.com" className="font-semibold text-blue-600 hover:text-blue-700">https://opencardai.com</a>, for example:
+              {" "}<code className="rounded bg-slate-100 px-1">Data: OpenCard (opencardai.com), CC BY 4.0</code>.
+            </p>
             <p className="text-slate-600 leading-relaxed">
-              Show the attribution and link to the OpenCard card page when you display this data. Offers change often, so tell users to confirm terms with the issuer.
+              Where possible, link to the OpenCard card page (the <code>url</code> field) when you display a card. Offers change often, so tell users to confirm terms with the issuer.
               Please cache responses and keep request rates modest. To report an error, email data@opencardai.com with an official source.
               See our <Link href={`/${lang}/methodology`} className="font-semibold text-blue-600 hover:text-blue-700">methodology</Link> and <Link href={`/${lang}/terms`} className="font-semibold text-blue-600 hover:text-blue-700">terms</Link>.
             </p>

@@ -2,7 +2,7 @@
  * Minimal, stateless, read-only MCP server (JSON-RPC 2.0 over Streamable HTTP,
  * JSON responses only, no sessions, no SSE). Tools wrap lib/developer-api.ts.
  */
-import { boundedJson, currentWelcomeOffers, getCard, InputError, searchCards, MAX_LIMIT, API_VERSION, DISCLOSURE } from "./developer-api";
+import { ATTRIBUTION, boundedJson, currentWelcomeOffers, getCard, InputError, searchCards, MAX_LIMIT, API_VERSION, DISCLOSURE } from "./developer-api";
 
 export const MCP_PROTOCOL_VERSIONS = ["2025-06-18", "2025-03-26", "2024-11-05"];
 export const MAX_BODY_BYTES = 16_000;
@@ -102,7 +102,7 @@ export function handleRpc(msg: unknown): Json | null {
         protocolVersion: MCP_PROTOCOL_VERSIONS.includes(requested) ? requested : MCP_PROTOCOL_VERSIONS[0],
         capabilities: { tools: { listChanged: false } },
         serverInfo: { name: "opencard", title: "OpenCard card data", version: API_VERSION },
-        instructions: "Read-only US credit card data from opencardai.com. Link to the returned url when showing a card. Offers change; tell users to verify with the issuer. " + DISCLOSURE,
+        instructions: "Read-only US credit card data from opencardai.com. Link to the returned url when showing a card. Offers change; tell users to verify with the issuer. " + ATTRIBUTION + " " + DISCLOSURE,
       });
     }
     case "ping":
