@@ -13,6 +13,8 @@ export const PUBLIC_CARD_FIELDS = [
   "travel_benefits", "insurance", "hotel_program", "application_rules", "last_updated",
   "sources", "tags", "status", "discontinued", "discontinued_notes", "discontinued_date",
   "recurring_credits", "selectable_rewards", "relationship_bonus", "rotating_categories",
+  "annual_credits", "last_verified", "cash_advance_fee_flat", "cash_advance_fee_pct", "cash_advance_fee_min",
+  "late_fee", "late_fee_max", "balance_transfer_fee_pct", "balance_transfer_fee_min", "authorized_user_fee",
 ] as const satisfies readonly (keyof CreditCard)[];
 
 /** Documented WelcomeOffer fields (lib/cards.ts). */
@@ -41,8 +43,25 @@ export function toPublicWelcomeOffer(w: WelcomeOffer | null | undefined): Welcom
   return pick(w, PUBLIC_WELCOME_OFFER_FIELDS) as WelcomeOffer;
 }
 
+export interface PublicSource { url: string; title?: string }
+
+/** Sources keep only url + title (title falls back to the legacy `name`). Editorial notes and url-less entries are dropped. */
+export function toPublicSources(sources: unknown): PublicSource[] {
+  if (!Array.isArray(sources)) return [];
+  const out: PublicSource[] = [];
+  for (const s of sources) {
+    if (!s || typeof s !== "object") continue;
+    const r = s as Record<string, unknown>;
+    if (typeof r.url !== "string" || !/^https?:\/\//.test(r.url)) continue;
+    const title = typeof r.title === "string" ? r.title : typeof r.name === "string" ? r.name : undefined;
+    out.push(title ? { url: r.url, title } : { url: r.url });
+  }
+  return out;
+}
+
 export function toPublicCardRecord(card: CreditCard): CreditCard {
   const out = pick(card, PUBLIC_CARD_FIELDS) as CreditCard;
+  if ("sources" in out) out.sources = toPublicSources(card.sources);
   const w = toPublicWelcomeOffer(card.welcome_offer);
   if (w) out.welcome_offer = w;
   else delete out.welcome_offer;

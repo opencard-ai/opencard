@@ -6,11 +6,21 @@ const str = (name: string, description: string, maxLength = 100) => ({ name, in:
 const NUM = { type: "number" }, STR = { type: "string" }, BOOL = { type: "boolean" }, OBJ = { type: "object" }, ARR = { type: "array", items: { type: "object" } };
 const CARD_TYPES: Record<string, object> = {
   card_id: STR, name: STR, issuer: STR, network: STR, annual_fee: NUM, annual_fee_description: STR,
-  foreign_transaction_fee: NUM, credit_required: STR, welcome_offer: { $ref: "#/components/schemas/WelcomeOffer" },
+  foreign_transaction_fee: { type: "number", description: "Foreign transaction fee, percent of the purchase (0 = none)." }, credit_required: STR, welcome_offer: { $ref: "#/components/schemas/WelcomeOffer" },
   earning_rates: ARR, travel_benefits: OBJ, insurance: OBJ, hotel_program: OBJ, application_rules: OBJ,
-  last_updated: STR, sources: ARR, tags: { type: "array", items: STR }, status: STR, discontinued: BOOL,
+  last_updated: STR, sources: { type: "array", description: "Official and editorial sources (url and optional title only).", items: { type: "object", additionalProperties: false, required: ["url"], properties: { url: { type: "string", format: "uri" }, title: STR } } }, tags: { type: "array", items: STR }, status: STR, discontinued: BOOL,
   discontinued_notes: STR, discontinued_date: STR, recurring_credits: ARR, selectable_rewards: OBJ,
   relationship_bonus: OBJ, rotating_categories: OBJ,
+  annual_credits: { type: "array", items: { type: "object" }, description: "Legacy list of annual statement credits; most cards use recurring_credits." },
+  last_verified: { type: "string", description: "When the record was last checked against official sources (ISO date or datetime)." },
+  cash_advance_fee_flat: { type: "number", description: "Cash advance fee, flat USD amount." },
+  cash_advance_fee_pct: { type: "number", description: "Cash advance fee, percent of the advance." },
+  cash_advance_fee_min: { type: "number", description: "Cash advance fee minimum, USD." },
+  late_fee: { type: "number", description: "Late payment fee (up to), USD." },
+  late_fee_max: { type: "number", description: "Maximum late payment fee where tiered, USD." },
+  balance_transfer_fee_pct: { type: "number", description: "Balance transfer fee, percent of the transfer." },
+  balance_transfer_fee_min: { type: "number", description: "Balance transfer fee minimum, USD." },
+  authorized_user_fee: { type: "number", description: "Annual fee per additional authorized user, USD." },
 };
 const OFFER_TYPES: Record<string, object> = {
   offer_status: STR, last_verified: STR, expires_at: STR, statement_credit: NUM, spending_requirement: NUM,

@@ -144,7 +144,19 @@ export interface WelcomeOffer {
 
 export interface Source {
   url: string;
+  /** Display title (a few legacy records use `name`). */
+  title?: string;
+  name?: string;
+  /** Internal editorial note: never served publicly. */
   notes?: string;
+}
+
+/** One-time or annual statement credit listed separately from recurring_credits (legacy shape). */
+export interface AnnualCredit {
+  name?: string;
+  amount?: number;
+  description?: string;
+  [key: string]: unknown;
 }
 
 export interface CreditCard {
@@ -191,6 +203,22 @@ export interface CreditCard {
    *  scripts/validate-all.ts). DORMANT: only rendered when
    *  NEXT_PUBLIC_AFFILIATE_LINKS_ENABLED=true — see lib/affiliate.ts. */
   affiliate_url?: string;
+  /** Legacy list of annual statement credits (most cards use recurring_credits). */
+  annual_credits?: AnnualCredit[];
+  /** When the card record was last checked against official sources (ISO date or datetime). */
+  last_verified?: string;
+  /** Cash advance fee: flat $ amount, percent of the advance, and $ minimum. */
+  cash_advance_fee_flat?: number;
+  cash_advance_fee_pct?: number;
+  cash_advance_fee_min?: number;
+  /** Late payment fee in $ ("up to" amount), and maximum where tiered. */
+  late_fee?: number;
+  late_fee_max?: number;
+  /** Balance transfer fee: percent of the transfer and $ minimum. */
+  balance_transfer_fee_pct?: number;
+  balance_transfer_fee_min?: number;
+  /** Annual fee per additional authorized user, in $. */
+  authorized_user_fee?: number;
 }
 
 export function getAllCards(): CreditCard[] {

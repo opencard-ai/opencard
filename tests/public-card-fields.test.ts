@@ -18,6 +18,10 @@ function assertClean(card: Record<string, unknown>, where: string) {
     assert.ok(ALLOWED_TOP.has(k), `${where}: unexpected field ${k}`);
     assert.ok(!FORBIDDEN_FIELD_RE.test(k) && !k.startsWith("_") && !k.startsWith("cfpb_") && !k.startsWith("deprecated") && !LISTED.includes(k), `${where}: ${k}`);
   }
+  for (const src of (card.sources as Record<string, unknown>[] | undefined) ?? []) {
+    assert.ok(Object.keys(src).every((k) => k === "url" || k === "title"), `${where}: source keys ${Object.keys(src)}`);
+    assert.equal(typeof src.url, "string");
+  }
   const w = card.welcome_offer as Record<string, unknown> | undefined;
   if (w) for (const k of Object.keys(w)) {
     assert.ok(ALLOWED_OFFER.has(k), `${where}: unexpected welcome_offer.${k}`);
@@ -73,4 +77,18 @@ test("OpenAPI Card schema matches the whitelist", () => {
   assert.ok(Object.values(cardSchemaProperties).every(Boolean));
   assert.ok(Object.values(welcomeOfferSchemaProperties).every(Boolean));
   assert.equal(openApiSpec.components.schemas.Card.additionalProperties, false);
+});
+
+test("restored fee/credit fields and source titles", () => {
+  const raw = JSON.parse(fs.readFileSync("data/cards/amex-gold.json", "utf8"));
+  const pub = toPublicCardRecord(raw) as unknown as Record<string, unknown>;
+  for (const k of ["late_fee", "cash_advance_fee_flat", "cash_advance_fee_pct", "last_verified", "foreign_transaction_fee"]) {
+    if (k in raw) assert.deepEqual(pub[k], raw[k], k);
+  }
+  assert.ok(!("fhr_thc" in pub));
+  assert.equal((pub.sources as unknown[]).length, raw.sources.filter((s: { url?: string }) => s && s.url).length);
+  const named = toPublicCardRecord(JSON.parse(fs.readFileSync("data/cards/chase-southwest-priority.json", "utf8"))).sources as unknown as { url: string; title?: string }[];
+  assert.ok(named.some((s) => s.title === "Chase"));
+  const strOnly = toPublicCardRecord(JSON.parse(fs.readFileSync("data/cards/chase-ritz-carlton.json", "utf8"))).sources as unknown as unknown[];
+  assert.ok(strOnly.every((s) => typeof s === "object"));
 });
