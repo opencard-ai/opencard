@@ -18,17 +18,17 @@
     {
       "category": "Groceries",
       "rate": 3,
-      "notes": "At U.S. supermarkets"
+      "notes": "At U.S. supermarkets, on up to $6,000 per year (then 1%)"
+    },
+    {
+      "category": "U.S. Online Retail",
+      "rate": 3,
+      "notes": "U.S. online retail purchases, on up to $6,000 per year (then 1%)"
     },
     {
       "category": "Gas",
       "rate": 3,
-      "notes": "At U.S. gas stations"
-    },
-    {
-      "category": "Dining",
-      "rate": 2,
-      "notes": "At U.S. restaurants, select streaming services"
+      "notes": "At U.S. gas stations, on up to $6,000 per year (then 1%)"
     },
     {
       "category": "Other",
@@ -119,7 +119,7 @@
     }
   ],
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-10-19",
+  "last_verified": "2026-11-02",
   "next_review": "2026-07-23T17:27:59.994652",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 5,
