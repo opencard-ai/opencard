@@ -5,6 +5,7 @@
  */
 import { getAllCards, getCardById, isClosedToNewApplicants, type CreditCard } from "./cards";
 import { formatWelcomeBonus, welcomeBonusKind } from "./welcome-offer";
+import { toPublicCardRecord } from "./public-card";
 
 export const SITE_URL = "https://opencardai.com";
 export const API_VERSION = "2026-11-02";
@@ -84,11 +85,9 @@ export function toSummary(card: CreditCard): CardSummary {
   };
 }
 
-/** Full public record. Dormant/internal fields (affiliate_url) are dropped. */
+/** Full public record: documented fields only (see lib/public-card.ts). */
 export function toPublicCard(card: CreditCard) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { affiliate_url, featured, ...rest } = card;
-  return { ...rest, status: statusOf(card), url: cardUrl(card.card_id) };
+  return { ...toPublicCardRecord(card), status: statusOf(card), url: cardUrl(card.card_id) };
 }
 
 function str(v: unknown, name: string, max = MAX_QUERY_LENGTH): string | undefined {
