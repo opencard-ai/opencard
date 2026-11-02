@@ -1,6 +1,7 @@
 import { getAllCards } from "@/lib/cards";
 import { resolveCardId } from "@/lib/card-aliases";
 import { NextResponse } from "next/server";
+import { toPublicCardRecord, toPublicWelcomeOffer } from "@/lib/public-card";
 
 export const dynamic = "force-dynamic";
 
@@ -20,7 +21,7 @@ export async function GET(request: Request) {
     if (!card) {
       return NextResponse.json({ error: "Card not found" }, { status: 404 });
     }
-    return NextResponse.json(card);
+    return NextResponse.json(toPublicCardRecord(card));
   }
 
   // Multi-id batch: returns full data only for the listed comma-separated ids.
@@ -38,7 +39,7 @@ export async function GET(request: Request) {
     if (wanted.size > 100) {
       return NextResponse.json({ error: "Too many ids (max 100)" }, { status: 400 });
     }
-    return NextResponse.json(cards.filter(c => wanted.has(c.card_id)));
+    return NextResponse.json(cards.filter(c => wanted.has(c.card_id)).map(toPublicCardRecord));
   }
 
   // Filter by issuer if provided
@@ -56,7 +57,7 @@ export async function GET(request: Request) {
       annual_fee: card.annual_fee,
       foreign_transaction_fee: card.foreign_transaction_fee,
       credit_required: card.credit_required,
-      welcome_offer: card.welcome_offer || null,
+      welcome_offer: toPublicWelcomeOffer(card.welcome_offer) || null,
       earning_rates: card.earning_rates,
       recurring_credits: card.recurring_credits || [],
       travel_benefits: card.travel_benefits,
