@@ -1278,7 +1278,7 @@
           "render": true,
           "patterns": [
             {
-              "regex": "(?:AS HIGH AS|Earn) \\$([\\d,]+) Cash Back\\d?\\s*after you spend \\$([\\d,]+) in purchases on your new Card in the first (\\d+) months of Card Membership",
+              "regex": "(?:AS HIGH AS|Earn) \\$([\\d,]+) Cash Back\\d?\\s*after you spend \\$([\\d,]+) in purchases on your new Card (?:in|within) the first (\\d+) months of Card Membership",
               "groups": {
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.spending_requirement": 2,

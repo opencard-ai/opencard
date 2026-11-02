@@ -95,17 +95,18 @@
     }
   ],
   "welcome_offer": {
-    "bonus_points": 300,
+    "bonus_points": 250,
     "spending_requirement": 3000,
     "time_period_months": 6,
-    "description": "Earn 300 Statement Credit bonus points after spending $3,000 on purchases in the first 6 months.",
+    "description": "Earn $250 Cash Back (as Reward Dollars) after spending $3,000 in purchases in the first 6 months.",
     "point_program": "Statement Credit",
-    "estimated_value": 300,
+    "estimated_value": 250,
     "notes": [
       "Official Amex page 2026-10-19 shows $250; referral/targeted offers up to $300 reported by third parties.",
-      "2026-10-27 offer-watch auto-apply (two independent official fetches): bonus_points 250 -> 300. Sources: https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/."
+      "2026-10-27 offer-watch auto-apply (two independent official fetches): bonus_points 250 -> 300. Sources: https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/.",
+      "2026-11-02 rendered official Amex page: \"Earn $250 Cash Back after you spend $3,000 in purchases on your new Card within the first 6 months\"; reverting 10/27 auto-apply of 300 (likely variant/targeted)."
     ],
-    "last_verified": "2026-10-27"
+    "last_verified": "2026-11-02"
   },
   "last_scraped": "2026-04-24",
   "last_verified": "2026-10-27",
