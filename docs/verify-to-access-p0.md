@@ -39,3 +39,19 @@ GRANT SELECT, INSERT, UPDATE ON credit_ledger TO opencard_api;
 REVOKE ALL ON task_gold_answers FROM opencard_api;
 ```
 Task IDs must be opaque (never encode gold-ness).
+
+## Gold set, whitelist and settlement (migration 0002)
+
+- `npx tsx scripts/v1-load-gold.ts <gold.json> <whitelist.json>` loads data files kept **outside the repo**.
+  Each gold item becomes a task with a random UUIDv4 `task_id`; `gold_id`, answer and provenance live only in
+  `task_gold_answers`. Idempotent by `gold_id`. Items not backed by a `dispatchable=true` source are skipped.
+- `sources_whitelist` gains `fields`, `requires_browser`, `dispatchable`, `robots`, `tos_url`. Patterns support
+  `**` (any) and `*` (one path segment). `/api/v1/verify` accepts evidence only from dispatchable sources.
+- Tasks in API responses expose only `task_id`, `card_id`, `field`, `type`.
+- Evidence keeps `url`, `retrieved_at`, `excerpt`, `content_hash`; Amex excerpts are capped at 200 chars;
+  `votes.snapshot_ref` is constrained to NULL.
+- `v1_scoring_config`: `gold_rules` (visible text only, no inferred values, dispatchable only, link_check
+  host+path / no query+fragment / trailing-slash insensitive) and `tiers` thresholds.
+- `npx tsx scripts/v1-settle.ts` (offline, privileged; lives in `lib/v1-settle`, never imported by API routes):
+  grades gold votes, confirms or claws back provisional rewards, updates score / gold_accuracy / tier, and runs
+  the weighted-majority consensus that writes only `consensus_suggestions`.

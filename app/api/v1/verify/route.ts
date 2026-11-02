@@ -43,7 +43,7 @@ export async function POST(req: Request) {
       if (task.state !== "open") return new Reject(409, "task_closed");
 
       if (s.evidence) {
-        const wl = await tx.query<{ pattern: string }>(`SELECT pattern FROM sources_whitelist`);
+        const wl = await tx.query<{ pattern: string }>(`SELECT pattern FROM sources_whitelist WHERE dispatchable = true`);
         if (!urlMatchesWhitelist(s.evidence.url, wl.rows.map((r) => r.pattern))) return new Reject(422, "evidence_source_not_allowed", ["evidence.url"]);
       }
       if (s.status === "verified") {
@@ -55,6 +55,7 @@ export async function POST(req: Request) {
       if (dup.rows.length) return new Reject(409, "already_submitted");
 
       const voteId = newId("v");
+      // Evidence keeps only url, retrieved_at, excerpt, content_hash (parseSubmission drops anything else).
       const stored = s.status === "verified"
         ? { status: s.status, result: s.result, evidence: s.evidence }
         : { status: s.status, reason: s.reason, evidence: s.evidence };

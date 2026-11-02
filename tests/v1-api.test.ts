@@ -132,9 +132,7 @@ describe("/api/v1 verify-to-access (Phase 0-1)", () => {
       assert.equal(r.headers.get("X-Credits-Balance"), String(2 - i));
       for (const h of ["X-Credits-Pending", "X-Credits-Cost", "X-Reputation-Tier", "X-RateLimit-Remaining", "X-RateLimit-Reset"]) assert.ok(r.headers.get(h), h);
       for (const t of tasks) {
-        assert.ok(!("is_gold" in t));
-        if (t.blind) assert.equal(t.current_value, null);
-        assert.ok(t.instructions_code);
+        assert.deepEqual(Object.keys(t).sort(), ["card_id", "field", "task_id", "type"], "tasks expose only task_id, card_id, field, type");
       }
     }
     const r = await record(await card(key, realCardId));
@@ -216,7 +214,7 @@ describe("/api/v1 verify-to-access (Phase 0-1)", () => {
     const tasks = r.body.verification_tasks as Record<string, unknown>[];
     assert.equal(tasks.length, 1);
     assert.equal(tasks[0].task_id, "t_fake_fee_d");
-    assert.equal(tasks[0].current_value, null);
+    assert.deepEqual(Object.keys(tasks[0]).sort(), ["card_id", "field", "task_id", "type"]);
     await pg.query(`UPDATE tasks SET state = 'open' WHERE is_gold = false AND task_id <> 't_fake_link_b'`);
   });
 

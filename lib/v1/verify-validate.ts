@@ -37,6 +37,7 @@ export function parseSubmission(body: unknown, now = Date.now()): { ok: true; va
       if (!Number.isFinite(ts) || ts > now + 5 * 60_000 || ts < now - 7 * 24 * 3600_000) errors.push("evidence.retrieved_at");
       if (typeof e.excerpt !== "string" || e.excerpt.trim().length === 0 || e.excerpt.length > v1Config.maxExcerptChars()) errors.push("evidence.excerpt");
       if (typeof e.content_hash !== "string" || !/^sha256:[0-9a-f]{64}$/.test(e.content_hash)) errors.push("evidence.content_hash");
+      if (typeof e.url === "string" && isAmexUrl(e.url) && typeof e.excerpt === "string" && e.excerpt.length > AMEX_MAX_EXCERPT && !errors.includes("evidence.excerpt")) errors.push("evidence.excerpt");
       evidence = { url: e.url as string, retrieved_at: e.retrieved_at as string, excerpt: e.excerpt as string, content_hash: e.content_hash as string };
     }
   }
@@ -86,6 +87,20 @@ export function validateResult(type: TaskType, r: Obj): string[] {
   return errs;
 }
 
+/** Whitelist patterns: "**" = any chars, "*" = one path segment; a pattern without globs is a URL prefix. */
+export function patternToRegex(p: string): RegExp {
+  if (!p.includes("*")) return new RegExp("^" + p.replace(/[.+?^${}()|[\]\\]/g, "\\$&"));
+  let re = "";
+  for (let i = 0; i < p.length; i++) {
+    const c = p[i];
+    if (c === "*" && p[i + 1] === "*") { re += ".*"; i++; }
+    else if (c === "*") re += "[^/]*";
+    else re += c.replace(/[.+?^${}()|[\]\\]/g, "\\$&");
+  }
+  return new RegExp("^" + re + "$");
+}
+
+/** Callers must pass dispatchable patterns only. Query and fragment are ignored. */
 export function urlMatchesWhitelist(url: string, patterns: string[]): boolean {
   let normalized: string;
   try {
@@ -95,5 +110,11 @@ export function urlMatchesWhitelist(url: string, patterns: string[]): boolean {
   } catch {
     return false;
   }
-  return patterns.some((p) => normalized.startsWith(p));
+  return patterns.some((p) => patternToRegex(p).test(normalized));
+}
+
+/** Amex evidence policy: excerpt capped at 200 chars (no snapshots). */
+export const AMEX_MAX_EXCERPT = 200;
+export function isAmexUrl(url: string): boolean {
+  try { const h = new URL(url).hostname.toLowerCase(); return h === "americanexpress.com" || h.endsWith(".americanexpress.com"); } catch { return false; }
 }

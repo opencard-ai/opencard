@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { PGlite } from "@electric-sql/pglite";
 import type { V1Db, Queryable } from "@/lib/v1/db";
@@ -8,7 +8,8 @@ const root = path.join(__dirname, "..");
 
 export async function makeTestDb(): Promise<{ db: V1Db; pg: PGlite }> {
   const pg = new PGlite();
-  await pg.exec(readFileSync(path.join(root, "db/migrations/0001_verify_to_access.sql"), "utf8"));
+  const migDir = path.join(root, "db/migrations");
+  for (const f of readdirSync(migDir).filter((x) => x.endsWith(".sql")).sort()) await pg.exec(readFileSync(path.join(migDir, f), "utf8"));
   const wrap = (q: { query: PGlite["query"] }): Queryable => ({
     async query<T>(sql: string, params: unknown[] = []) {
       const r = await q.query(sql, params as never[]);
@@ -26,7 +27,7 @@ export async function makeTestDb(): Promise<{ db: V1Db; pg: PGlite }> {
 export async function seedFixtures(pg: PGlite): Promise<void> {
   const wl = JSON.parse(readFileSync(path.join(root, "tests/fixtures/v1/sources-whitelist.fake.json"), "utf8"));
   for (const e of wl.entries) {
-    await pg.query(`INSERT INTO sources_whitelist (pattern, issuer, kind, tos_notes) VALUES ($1,$2,$3,$4)`, [e.pattern, e.issuer, e.kind, e.tos_notes]);
+    await pg.query(`INSERT INTO sources_whitelist (pattern, issuer, kind, tos_notes, dispatchable) VALUES ($1,$2,$3,$4,$5)`, [e.pattern, e.issuer, e.kind, e.tos_notes, e.dispatchable !== false]);
   }
   const fx = JSON.parse(readFileSync(path.join(root, "tests/fixtures/v1/tasks.fake.json"), "utf8"));
   const insert = async (t: Record<string, unknown>, isGold: boolean) => {

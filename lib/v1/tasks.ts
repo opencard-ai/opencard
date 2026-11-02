@@ -9,40 +9,19 @@ export const RESPONSE_SCHEMAS: Record<TaskType, Record<string, string>> = {
   status_check: { status: "string" },
 };
 
+/** The ONLY task fields the API exposes. Instructions, sources, gold flags and answers stay server-side. */
 export interface PublicTask {
   task_id: string;
-  type: TaskType;
   card_id: string;
   field: string;
-  instructions_code: string;
-  allowed_sources: string[];
-  current_value: unknown;
-  blind: boolean;
-  response_schema: Record<string, string>;
-  evidence_required: string[];
-  expires_at: string;
+  type: TaskType;
 }
 
 // Explicit public column list. Never add is_gold or anything from the isolated answers table.
-const PUBLIC_COLUMNS =
-  "t.task_id, t.type, t.card_id, t.field, t.instructions_code, t.allowed_sources, t.current_value, t.blind, t.expires_at";
+const PUBLIC_COLUMNS = "t.task_id, t.card_id, t.field, t.type";
 
 function toPublic(r: Record<string, unknown>): PublicTask {
-  const type = r.type as TaskType;
-  const blind = Boolean(r.blind);
-  return {
-    task_id: String(r.task_id),
-    type,
-    card_id: String(r.card_id),
-    field: String(r.field),
-    instructions_code: String(r.instructions_code),
-    allowed_sources: Array.isArray(r.allowed_sources) ? (r.allowed_sources as string[]) : [],
-    current_value: blind ? null : r.current_value ?? null,
-    blind,
-    response_schema: RESPONSE_SCHEMAS[type],
-    evidence_required: ["url", "retrieved_at", "excerpt", "content_hash"],
-    expires_at: new Date(r.expires_at as string | Date).toISOString(),
-  };
+  return { task_id: String(r.task_id), card_id: String(r.card_id), field: String(r.field), type: r.type as TaskType };
 }
 
 /** Open, unexpired tasks this agent has not voted on yet. Gold tasks are mixed in indistinguishably. */
