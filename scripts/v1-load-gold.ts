@@ -3,7 +3,7 @@
  * Usage: V1_DATABASE_URL=... npx tsx scripts/v1-load-gold.ts <gold.json> <whitelist.json>
  * - Whitelist: upsert all entries (dispatchable flag preserved).
  * - Gold: one task per item with a random UUIDv4 task_id; gold_id/answer/provenance only in task_gold_answers.
- *   Idempotent by gold_id. Items whose source_url is not on a dispatchable source are skipped.
+ *   Idempotent by gold_id; existing gold_ids are updated in place (task_id unchanged). Items whose source_url is not on a dispatchable source are skipped.
  * Prints counts only; never prints answers, ids or notes.
  */
 import { readFileSync } from "node:fs";
@@ -45,10 +45,21 @@ async function main() {
       })],
     );
     await tx.query(`INSERT INTO v1_scoring_config (key, value) VALUES ('tiers', $1::jsonb) ON CONFLICT (key) DO NOTHING`, [JSON.stringify(DEFAULT_TIER_CONFIG)]);
-    let created = 0, existing = 0, skipped = 0;
+    let created = 0, existing = 0, updated = 0, skipped = 0;
     for (const g of gold.items) {
       const has = await tx.query(`SELECT 1 FROM task_gold_answers WHERE gold_id = $1`, [g.gold_id]);
-      if (has.rows.length) { existing++; continue; }
+      if (has.rows.length) {
+        // Update in place: task_id stays stable; only the isolated answer/provenance row changes.
+        const u = await tx.query(
+          `UPDATE task_gold_answers SET gold_answer = $2::jsonb, source_url = $3, match_rule = $4::jsonb, confirmed_date = $5, confirmed_by = $6, notes = $7
+            WHERE gold_id = $1 AND (gold_answer, source_url, match_rule, confirmed_date, confirmed_by, notes)
+              IS DISTINCT FROM ($2::jsonb, $3, $4::jsonb, $5::date, $6, $7) RETURNING 1`,
+          [g.gold_id, JSON.stringify(g.gold_answer), g.source_url, g.match_rule == null ? null : JSON.stringify(g.match_rule),
+            g.confirmed_date ?? null, g.confirmed_by ?? null, g.notes ?? null],
+        );
+        u.rows.length ? updated++ : existing++;
+        continue;
+      }
       const allowed = disp.filter((e) => urlMatchesWhitelist(g.source_url, [e.pattern]));
       if (!allowed.length) { skipped++; continue; }
       const taskId = randomUUID();
@@ -65,7 +76,7 @@ async function main() {
       );
       created++;
     }
-    return { whitelist: wl.entries.length, dispatchable: disp.length, gold_created: created, gold_existing: existing, gold_skipped_non_dispatchable: skipped };
+    return { whitelist: wl.entries.length, dispatchable: disp.length, gold_created: created, gold_updated: updated, gold_unchanged: existing, gold_skipped_non_dispatchable: skipped };
   });
   console.log(JSON.stringify(out));
   process.exit(0);

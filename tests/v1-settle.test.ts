@@ -53,6 +53,14 @@ describe("v1 whitelist globs, evidence policy and offline settlement", () => {
       { http_status: 200, final_url: "https://a.example.com/p", is_official_redirect: false }));
   });
 
+  it("gold grading compares only keys present in gold", () => {
+    assert.ok(matchesGold("fee_check", { annual_fee: 95, first_year_waived: true }, { annual_fee: 95 }));
+    assert.ok(!matchesGold("fee_check", { annual_fee: 96, first_year_waived: false }, { annual_fee: 95 }));
+    assert.ok(!matchesGold("fee_check", { annual_fee: 95, first_year_waived: true }, { annual_fee: 95, first_year_waived: false }));
+    assert.ok(matchesGold("fee_check", { annual_fee: 95, first_year_waived: false }, { annual_fee: 95, foreign_transaction_fee: "x" }));
+    assert.ok(!matchesGold("fee_check", { annual_fee: 95, first_year_waived: false }, {}));
+  });
+
   it("rejects evidence from non-dispatchable sources and Amex excerpts over 200 chars", async () => {
     const a = await newAgent();
     const r = await verify(a.key, fee("t_fake_fee_a", 95, "https://blocked.example.com/cards/x"));

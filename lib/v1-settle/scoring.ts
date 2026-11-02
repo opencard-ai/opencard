@@ -55,8 +55,26 @@ export function canonical(type: TaskType, r: Record<string, unknown>): string {
   }
 }
 
+const SCHEMA_KEYS: Record<TaskType, string[]> = {
+  link_check: ["http_status", "final_url", "is_official_redirect"],
+  fee_check: ["annual_fee", "first_year_waived"],
+  welcome_offer_check: ["bonus_amount", "bonus_unit", "spending_requirement", "time_period_months"],
+  status_check: ["status"],
+};
+
+/**
+ * Gold grading compares ONLY the schema keys present in the gold answer (e.g. a fee_check gold with just
+ * annual_fee ignores first_year_waived). Extra keys in gold outside the response schema are ignored.
+ * A gold answer with no gradable keys never passes.
+ */
 export function matchesGold(type: TaskType, result: Record<string, unknown>, gold: Record<string, unknown>): boolean {
-  return canonical(type, result) === canonical(type, gold);
+  const keys = SCHEMA_KEYS[type].filter((k) => k in gold);
+  if (!keys.length) return false;
+  return keys.every((k) =>
+    type === "link_check" && k === "final_url"
+      ? normalizeLinkUrl(result[k]) !== null && normalizeLinkUrl(result[k]) === normalizeLinkUrl(gold[k])
+      : result[k] === gold[k],
+  );
 }
 
 async function loadTierConfig(q: Queryable): Promise<TierConfig> {
