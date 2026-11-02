@@ -124,8 +124,8 @@ export const GUIDES: GuideSummary[] = [
   },
   {
     slug: "delta-amex-cards-compared",
-    title: "Delta Amex Cards Compared: Blue vs. Gold vs. Platinum vs. Reserve",
-    summary: "The four personal Delta SkyMiles cards from American Express run from $0 to $650 a year. What each fee buys (bags, Companion Certificates, MQDs, Sky Club access) and how the business versions differ.",
+    title: "Delta Amex Cards Compared: Blue, Gold, Platinum or Reserve?",
+    summary: "Delta SkyMiles Amex cards from $0 to $650 a year. Free bags start at Gold; the Companion Certificate at Platinum; Sky Club at Reserve. Side-by-side fees, credits and when each tier is worth it.",
     published: "2026-10-19",
     updated: "2026-10-19",
     word_count: 1485,
@@ -138,6 +138,56 @@ export const GUIDES: GuideSummary[] = [
       },
     },
   },
+  {
+    slug: "boa-business-advantage-travel-vs-unlimited-cash",
+    title: "BofA Business Advantage Travel vs Unlimited Cash (WorldPoints Explained)",
+    summary: "Bank of America's Business Advantage Travel Rewards card is the one people still search as WorldPoints. It earns 1.5 points per $1 with no annual fee. How it compares to Unlimited Cash — and when either makes sense.",
+    published: "2026-10-26",
+    updated: "2026-10-26",
+    word_count: 1110,
+    tags: ["business cards", "comparison", "Bank of America", "no annual fee"],
+    localized: {
+      zh: {
+        title: "BofA 商業 Travel Rewards 和 Unlimited Cash 怎麼選？WorldPoints 是什麼",
+        summary: "搜 WorldPoints Travel Rewards for Business 其實就是 Business Advantage Travel Rewards。免年費 1.5 點，跟 Unlimited Cash 的 1.5% 現金差在哪。",
+        tags: ["商業卡", "比較", "Bank of America", "免年費"],
+      },
+    },
+  },
+  {
+    slug: "amex-blue-business-plus-vs-blue-business-cash",
+    title: "Amex Blue Business Plus vs Blue Business Cash: Points or 2% Cash?",
+    summary: "Both Amex Blue business cards have no annual fee. Plus earns 2x Membership Rewards on the first $50,000 a year; Cash pays 2% cash back on the same cap. Who should pick which.",
+    published: "2026-10-26",
+    updated: "2026-10-26",
+    word_count: 1135,
+    tags: ["business cards", "comparison", "American Express", "no annual fee"],
+    localized: {
+      zh: {
+        title: "Amex Blue Business Plus 和 Cash 怎麼選？點數還是 2% 現金",
+        summary: "兩張 Amex Blue 商業卡都免年費。Plus 前 5 萬拿 2 倍 Membership Rewards，Cash 前 5 萬拿 2% 現金。點數派和現金派怎麼選。",
+        tags: ["商業卡", "比較", "American Express", "免年費"],
+      },
+    },
+  },
+
+  {
+    slug: "capital-one-quicksilver-vs-wells-fargo-active-cash",
+    title: "Capital One Quicksilver vs Wells Fargo Active Cash: 1.5% or 2%?",
+    summary: "Both are $0-annual-fee flat-rate cash back cards. Active Cash pays 2% but charges a 3% foreign transaction fee; Quicksilver pays 1.5% with no foreign fees. The math on which one wins.",
+    published: "2026-11-02",
+    updated: "2026-11-02",
+    word_count: 715,
+    tags: ["cash back", "comparison", "Capital One", "Wells Fargo", "no annual fee"],
+    localized: {
+      zh: {
+        title: "Capital One Quicksilver 和 Wells Fargo Active Cash 怎麼選？1.5% 還是 2%",
+        summary: "兩張都是免年費、全部消費同一回饋的現金卡。Active Cash 給 2% 但有 3% 海外手續費；Quicksilver 給 1.5% 但完全沒有海外手續費。算給你看哪張比較划算。",
+        tags: ["現金回饋", "比較", "Capital One", "Wells Fargo", "免年費"],
+      },
+    },
+  },
+
   {
     slug: "credit-card-purchase-protection-guide",
     title: "Credit Card Purchase Protection and Extended Warranty: a claims-first guide",

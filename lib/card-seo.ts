@@ -145,11 +145,72 @@ function withoutPromoRates(card: CreditCard): CreditCard {
 }
 
 const OVERRIDES: Record<string, { title: string; description: string }> = {
+  // CTR batch 3 (2026-11-02): GSC pages at position 8-30 with 0 clicks. DB + issuer facts only.
+  "chase-ink-biz-unlimited": {
+    title: "Chase Ink Business Unlimited: No Annual Fee, 1.5% Cash Back | OpenCard",
+    description: "Chase Ink Business Unlimited has a $0 annual fee and pays unlimited 1.5% cash back on every business purchase, with no categories to track. Note the 3% foreign transaction fee.",
+  },
+  "capital-one-quicksilver": {
+    title: "Capital One Quicksilver: 1.5% Cash Back, No Annual or Foreign Fees | OpenCard",
+    description: "Capital One Quicksilver Cash Rewards: $0 annual fee, unlimited 1.5% cash back on every purchase and no foreign transaction fees. See how it stacks up against 2% flat-rate cards.",
+  },
+  "southwest-rapid-rewards-premier": {
+    title: "Southwest Rapid Rewards Premier Card: $149 Fee, No Foreign Fees | OpenCard",
+    description: "Chase's Southwest Rapid Rewards Premier card: $149 annual fee, no foreign transaction fees, 3x points on Southwest purchases, 2x at grocery stores and restaurants, 1x on everything else.",
+  },
+  "comenity-ulta-beauty-mastercard": {
+    title: "Ulta Beauty Credit Mastercard: No Annual Fee, 4x at Ulta | OpenCard",
+    description: "The Ulta Beauty Credit Mastercard from Comenity has no annual fee and earns 4x points per $1 at Ulta Beauty, 2x on gas and dining, and 1x on other purchases. Compare it with other store cards.",
+  },
+  "amex-blue-cash-everyday": {
+    title: "Amex Blue Cash Everyday: No Annual Fee, 3% at U.S. Supermarkets | OpenCard",
+    description: "American Express Blue Cash Everyday: $0 annual fee and 3% cash back at U.S. supermarkets on up to $6,000 a year (then 1%). 2.7% foreign transaction fee. Compare it with other no-fee grocery cards.",
+  },
+  "discover-it-student-cash-back": {
+    title: "Discover it Student Cash Back: No Annual Fee, 5% Rotating Categories | OpenCard",
+    description: "Discover it Student Cash Back: $0 annual fee, 5% on quarterly categories you activate (up to $1,500 a quarter, then 1%), 1% on everything else, and no foreign transaction fees.",
+  },
+  "chase-ink-biz-premier": {
+    title: "Chase Ink Business Premier: $195 Fee, 2% Cash Back on Everything | OpenCard",
+    description: "Chase Ink Business Premier: $195 annual fee, 2% cash back on business purchases, 2.5% on purchases of $5,000 or more, 5% on travel booked through Chase Travel, and no foreign transaction fees.",
+  },
+  "chase-southwest-performance-biz": {
+    title: "Southwest Performance Business Card: $299 Fee, 3x on Southwest | OpenCard",
+    description: "Chase's Southwest Rapid Rewards Performance Business card: $299 annual fee, 3x points on Southwest purchases, 2x at gas stations, 1x elsewhere, and no foreign transaction fees.",
+  },
+  "us-bank-biz-essentials": {
+    title: "U.S. Bank Business Essentials: No Annual Fee, 2% Cash Back | OpenCard",
+    description: "U.S. Bank Business Essentials Card: $0 annual fee, unlimited 2% cash back on eligible purchases and 6% on prepaid hotels and car rentals booked in the U.S. Bank Travel Center. 3% foreign transaction fee.",
+  },
+  "us-bank-prime-business": {
+    title: "U.S. Bank Prime Business World Elite Mastercard: 5% at Amazon | OpenCard",
+    description: "Prime Business World Elite Mastercard from U.S. Bank: $0 annual fee, 5% back at Amazon, Amazon Business, AWS and Whole Foods Market on the first $150,000 a year (then 1%), and no foreign transaction fees.",
+  },
   // Spirit stopped flying in May 2026 and BofA's page is gone, but the record is
   // still active; don't advertise its old fee and earning rates.
   "spirit-airlines-mastercard": {
     title: "Spirit Airlines Mastercard: What Happens to the Card Now | OpenCard",
     description: "Spirit Airlines stopped flying in May 2026 and Bank of America no longer lists this card. What current cardholders should check, and why not to apply.",
+  },
+  "amex-blue-biz-plus": {
+    title: "Amex Blue Business Plus: No Annual Fee, 2x Membership Rewards | OpenCard",
+    description: "American Express Blue Business Plus: $0 annual fee and 2x Membership Rewards points on the first $50,000 of purchases each year (1x after). Transferable points for a business that wants rewards it can use, not just cash back.",
+  },
+  "boa-biz-advantage-travel": {
+    title: "BofA Business Advantage Travel Rewards (WorldPoints): No Annual Fee | OpenCard",
+    description: "Bank of America's Business Advantage Travel Rewards World Mastercard: $0 annual fee, 1.5 points per $1 everywhere and 3x through the BofA Travel Center. Also searched as WorldPoints Travel Rewards for Business.",
+  },
+  "chase-united-club-infinite": {
+    title: "United Club Infinite Card: $695 Fee, Lounge Access & 11x Miles | OpenCard",
+    description: "Chase United Club Visa Infinite: $695 annual fee buys United Club membership, two free checked bags, Premier Access, and up to 11x miles on United flights. See which credits offset the fee.",
+  },
+  "barclays-gap-good-rewards-mastercard": {
+    title: "Gap Encore Mastercard: No Annual Fee & 20% Off First Purchase | OpenCard",
+    description: "Barclays' Gap Encore Mastercard works anywhere Mastercard is accepted. No annual fee, points at Gap and other Gap Inc. brands, and 20% off your first Gap purchase. Same rewards family as Old Navy, Banana Republic and Athleta.",
+  },
+  "barclays-banana-republic-rewards-mastercard": {
+    title: "Banana Republic Encore Mastercard: No Annual Fee & 20% Off First Purchase | OpenCard",
+    description: "Barclays' Banana Republic Encore Mastercard: no annual fee, points across Gap Inc. brands, and 20% off your first Banana Republic purchase. Same rewards as the Old Navy, Gap and Athleta Encore cards.",
   },
   "boa-student-customized-cash-rewards": {
     title: "BofA Customized Cash Rewards for Students: Benefits & Rates | OpenCard",
@@ -158,6 +219,10 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
   "barclays-old-navy-navyist-rewards-mastercard": {
     title: "Old Navy Encore Mastercard: No Annual Fee & 30% Off First Purchase | OpenCard",
     description: "Barclays' Old Navy Encore Mastercard can be used anywhere Mastercard is accepted. No annual fee, points at Old Navy and other Gap Inc. brands, and 30% off your first Old Navy purchase. See what the points are really worth.",
+  },
+  "barclays-athleta-rewards-mastercard": {
+    title: "Athleta Encore Mastercard: No Annual Fee, Gap Inc. Rewards | OpenCard",
+    description: "Barclays' Athleta Encore Mastercard: no annual fee and the same Gap Inc. family points as Old Navy, Gap and Banana Republic. Check Barclays' page for the current first-purchase discount before you apply.",
   },
   "amex-biz-platinum": {
     title: "American Express Business Platinum Card: $895 Fee & Benefits | OpenCard",
@@ -185,9 +250,10 @@ export function cardSeoMeta(card: CreditCard, lang: string, closed: boolean): { 
   const top = storeCard ? undefined : p.top;
 
   if (closed) {
+    // Discontinued cards must not advertise the old annual fee or earn rates.
     return {
       title: `${name}: ${c.closed} | OpenCard`,
-      description: `${name} — ${c.closed}. ${feeText}.${c.tail}`,
+      description: `${name} — ${c.closed}.${c.tail}`,
     };
   }
 
