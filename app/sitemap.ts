@@ -44,6 +44,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...tier("/about", 0.5, "monthly"),
     ...tier("/methodology", 0.5, "monthly"),
+    {
+      url: `${baseUrl}/en/developers`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: languageAlternates("/developers", ["en"]),
+    },
     ...tier("/contact", 0.4, "monthly"),
     ...tier("/privacy", 0.3, "monthly"),
     ...tier("/terms", 0.3, "monthly"),

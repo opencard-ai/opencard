@@ -186,6 +186,10 @@ function FTCDisclosure({ locale }: { locale: Locale }) {
         <a href={`/${locale}/methodology`} className="hover:text-blue-600 transition-colors">
           {locale === "zh" ? "方法論" : locale === "zh-cn" ? "方法论" : locale === "es" ? "Metodología" : "Methodology"}
         </a>
+        <span>·</span>
+        <a href={`/${locale}/developers`} className="hover:text-blue-600 transition-colors">
+          {locale === "zh" ? "開發者" : locale === "zh-cn" ? "开发者" : locale === "es" ? "Desarrolladores" : "Developers"}
+        </a>
       </div>
     </div>
   );
