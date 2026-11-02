@@ -65,8 +65,10 @@ Task IDs must be opaque (never encode gold-ness).
   `v1_schema_migrations` or `consensus_suggestions`. Re-run the grants file after every migration.
 - Create the role once as the owner (password generated, never committed):
   `CREATE ROLE opencard_api LOGIN PASSWORD '<generated>'` then apply the grants file.
-- Env: `V1_DATABASE_URL` = opencard_api (pooled). `V1_ADMIN_DATABASE_URL` = owner (unpooled), used only by
-  `v1-migrate`, `v1-load-gold` and `v1-settle`; never set it in the runtime of a public deployment you don't control.
+- Env: `V1_DATABASE_URL` = opencard_api (pooled). `V1_ADMIN_DATABASE_URL` = owner (unpooled) lives ONLY in
+  `~/.opencard-v1-private/admin.env` (chmod 600, outside the repo) on the machine that runs `v1-migrate`,
+  `v1-load-gold` and `v1-settle`. The scripts read it from that file only and refuse a group/world-readable file.
+  It is never stored in Vercel; no runtime code path reads it.
 - `tests/v1-review.test.ts` proves the API role gets `permission denied` on the gold table.
 
 ### Assignments, invites, weights, expiry

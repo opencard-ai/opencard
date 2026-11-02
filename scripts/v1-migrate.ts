@@ -1,17 +1,20 @@
 /**
  * Apply db/migrations/*.sql to V1_DATABASE_URL (any Postgres). Idempotent; tracks applied files.
- * Usage: V1_DATABASE_URL=postgres://... npx tsx scripts/v1-migrate.ts
+ * Usage: npx tsx scripts/v1-migrate.ts   (reads V1_ADMIN_DATABASE_URL from ~/.opencard-v1-private/admin.env)
  * Never prints the connection string.
  */
 import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { Client } from "pg";
+import { logFailure, readAdminDatabaseUrl } from "../lib/v1-settle/admin";
 
 async function main() {
-  // Migrations run as the owner/admin role, never as the least-privilege API role.
-  const url = process.env.V1_ADMIN_DATABASE_URL || process.env.V1_DATABASE_URL;
-  if (!url) {
-    console.error("V1_ADMIN_DATABASE_URL / V1_DATABASE_URL is not set");
+  // Migrations run as the owner/admin role, read only from the local admin env file.
+  let url: string;
+  try {
+    url = readAdminDatabaseUrl();
+  } catch (e) {
+    logFailure("migration", e);
     process.exit(1);
   }
   const dir = path.join(process.cwd(), "db", "migrations");

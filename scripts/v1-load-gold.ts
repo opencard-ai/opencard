@@ -1,6 +1,6 @@
 /**
  * Load the gold set and sources whitelist into the v1 DB. Data files live OUTSIDE the repo.
- * Usage: V1_DATABASE_URL=... npx tsx scripts/v1-load-gold.ts <gold.json> <whitelist.json>
+ * Usage: npx tsx scripts/v1-load-gold.ts <gold.json> <whitelist.json>
  * - Whitelist: upsert all entries (dispatchable flag preserved).
  * - Gold: one task per item with a random UUIDv4 task_id; gold_id/answer/provenance only in task_gold_answers.
  *   Idempotent by gold_id; existing gold_ids are updated in place (task_id unchanged). Items whose source_url is not on a dispatchable source are skipped.

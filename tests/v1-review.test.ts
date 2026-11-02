@@ -9,7 +9,9 @@ import { parseSubmission } from "@/lib/v1/verify-validate";
 import { POST as registerAgent } from "@/app/api/v1/agents/route";
 import { POST as postVerify } from "@/app/api/v1/verify/route";
 import { settle } from "@/lib/v1-settle/scoring";
-import { logFailure } from "@/lib/v1-settle/admin";
+import { logFailure, readAdminDatabaseUrl } from "@/lib/v1-settle/admin";
+import { mkdtempSync, writeFileSync, chmodSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { makeTestDb, seedFixtures, evidence, assignAll } from "./v1-harness";
 import type { PGlite } from "@electric-sql/pglite";
 
@@ -116,5 +118,18 @@ describe("v1 review fixes: DB role, probation weight, expiry, excerpt limits, sa
     for (const f of ["scripts/v1-settle.ts", "scripts/v1-load-gold.ts", "scripts/v1-migrate.ts", "lib/v1-settle/scoring.ts"]) {
       assert.ok(!/\.message\b/.test(readFileSync(path.join(ROOT, f), "utf8")), f);
     }
+  });
+
+  it("admin URL is read only from a chmod 600 local file", () => {
+    const dir = mkdtempSync(path.join(tmpdir(), "v1admin-"));
+    const f = path.join(dir, "admin.env");
+    writeFileSync(f, "# local only\nV1_ADMIN_DATABASE_URL=postgresql://u:p@h/db\n");
+    chmodSync(f, 0o644);
+    assert.throws(() => readAdminDatabaseUrl(f), { name: "AdminEnvInsecure" });
+    chmodSync(f, 0o600);
+    assert.equal(readAdminDatabaseUrl(f), "postgresql://u:p@h/db");
+    assert.throws(() => readAdminDatabaseUrl(path.join(dir, "missing.env")), { name: "AdminEnvMissing" });
+    process.env.V1_ADMIN_DATABASE_URL = "postgresql://ignored";
+    try { assert.equal(readAdminDatabaseUrl(f), "postgresql://u:p@h/db"); } finally { delete process.env.V1_ADMIN_DATABASE_URL; }
   });
 });
