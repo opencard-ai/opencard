@@ -45,12 +45,8 @@
   ],
   "sources": [
     {
-      "url": "https://www.americanexpress.com/us/credit-cards/card/amex-everyday/",
-      "notes": "Official Amex card page, checked 2026-10-19."
-    },
-    {
       "url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/cps-lending/amex-everyday-06-30-2026.pdf",
-      "notes": "Amex Card Member Agreement (as of 06/30/2026), checked 2026-10-19: foreign transaction fee 2.7%."
+      "notes": "Amex Card Member Agreement (as of 06/30/2026), checked 2026-10-19: foreign transaction fee 2.7%. | 2026-11-02: product page /card/amex-everyday/ now redirects to /us/credit-cards/ (Browse All Cards, 13 cards, this card not listed); CMA PDF still 200."
     },
     {
       "url": "https://www.uscreditcardguide.com/amex-everyday/",
