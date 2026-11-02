@@ -55,3 +55,35 @@ Task IDs must be opaque (never encode gold-ness).
 - `npx tsx scripts/v1-settle.ts` (offline, privileged; lives in `lib/v1-settle`, never imported by API routes):
   grades gold votes, confirms or claws back provisional rewards, updates score / gold_accuracy / tier, and runs
   the weighted-majority consensus that writes only `consensus_suggestions`.
+
+## Review fixes (migration 0003)
+
+### DB roles
+- The web app connects as **`opencard_api`**: a LOGIN role that owns nothing. `db/roles/opencard_api_grants.sql`
+  grants only what the routes need (SELECT/INSERT, plus column-level UPDATE used for `tasks.state` and row locks).
+  It has **no** TRUNCATE/DELETE anywhere and **no** access to `task_gold_answers`, `v1_scoring_config`,
+  `v1_schema_migrations` or `consensus_suggestions`. Re-run the grants file after every migration.
+- Create the role once as the owner (password generated, never committed):
+  `CREATE ROLE opencard_api LOGIN PASSWORD '<generated>'` then apply the grants file.
+- Env: `V1_DATABASE_URL` = opencard_api (pooled). `V1_ADMIN_DATABASE_URL` = owner (unpooled), used only by
+  `v1-migrate`, `v1-load-gold` and `v1-settle`; never set it in the runtime of a public deployment you don't control.
+- `tests/v1-review.test.ts` proves the API role gets `permission denied` on the gold table.
+
+### Assignments, invites, weights, expiry
+- `task_assignments`: `GET /cards` records each task it hands out (TTL `V1_ASSIGNMENT_TTL_MIN`, default 60, capped
+  at the task's expiry). `/verify` returns `403 task_not_assigned` without a matching unexpired assignment.
+- Invite codes are one-time: the SHA-256 of a code is stored in `invite_codes` with `used_by` = the agent.
+  Reuse returns `403 invite_used`. `V1_INVITE_CODES` still lists the valid codes.
+- Probation votes are weighted at `V1_PROBATION_WEIGHT_PCT` (default 50) % of the agent's score.
+- Settle runs per task in its own transaction: grade gold, expire overdue `open` tasks (pending votes ->
+  `expired`, provisional rewards confirmed then clawed back, net 0), then consensus.
+- Loader/settle/migrate log only `e.name` and the driver `code`, never `e.message`.
+- Excerpt limit default is 300 chars (`V1_MAX_EXCERPT_CHARS`); Amex evidence stays capped at 200.
+
+### Notes
+- **Balances can go negative**: a clawback is appended after the reward was already confirmed and possibly spent;
+  the ledger never blocks it. Spending checks (`balance >= cost`) simply fail until the agent earns credits again.
+- **Migration order**: `sources_whitelist.dispatchable` is added in 0002, after 0001 created the table with
+  `DEFAULT false`, so any row inserted before 0002 becomes non-dispatchable until the loader re-runs.
+- **x-forwarded-for**: registration rate limiting trusts the first `x-forwarded-for` hop. That is correct behind
+  Vercel (which sets it); behind any other proxy the header is client-controlled and the limit is advisory only.

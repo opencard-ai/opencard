@@ -9,6 +9,8 @@ import { v1RateLimit } from "@/lib/v1/rate-limit";
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
+class InviteUsed extends Error {}
+
 const sha = (s: string) => createHash("sha256").update(s).digest("hex");
 
 function inviteOk(code: string | null): boolean {
@@ -22,7 +24,9 @@ export async function POST(req: Request) {
   if (off) return off;
   const rl = v1RateLimit(`register:${clientIp(req)}`, v1Config.registerRateLimitPerHour(), 3600_000);
   if (!rl.allowed) return v1Error(429, "rate_limited", { rateLimit: rl });
-  if (!inviteOk(req.headers.get("x-invite-code"))) return v1Error(403, "invite_required", { rateLimit: rl });
+  const invite = req.headers.get("x-invite-code");
+  if (!inviteOk(invite)) return v1Error(403, "invite_required", { rateLimit: rl });
+  const inviteHash = sha(invite as string);
 
   const parsed = await readJsonBody(req);
   if (!parsed.ok) return v1Error(parsed.status, parsed.error, { rateLimit: rl });
@@ -39,13 +43,23 @@ export async function POST(req: Request) {
     const key = generateApiKey();
     const agentId = newId("ag");
     const grant = v1Config.probationGrant();
-    await db.transaction(async (tx) => {
+    const used = await db.query(`SELECT 1 FROM invite_codes WHERE code_hash = $1`, [inviteHash]);
+    if (used.rows.length) return v1Error(403, "invite_used", { rateLimit: rl });
+    const claimed = await db.transaction(async (tx) => {
       await tx.query(
         `INSERT INTO agents (agent_id, api_key_prefix, api_key_hash, agent_name, contact_email) VALUES ($1, $2, $3, $4, $5)`,
         [agentId, key.lookup, key.hash, name, (email as string | undefined) ?? null],
       );
+      // One-time invite: the code (hashed) is bound to exactly this agent. A concurrent reuse loses here.
+      const inv = await tx.query(
+        `INSERT INTO invite_codes (code_hash, used_by, used_at) VALUES ($1, $2, now()) ON CONFLICT (code_hash) DO NOTHING RETURNING code_hash`,
+        [inviteHash, agentId],
+      );
+      if (!inv.rows.length) throw new InviteUsed();
       if (grant > 0) await appendLedger(tx, { agentId, delta: grant, reason: "probation_grant", refId: agentId, state: "confirmed" });
-    });
+      return true;
+    }).catch((e) => { if (e instanceof InviteUsed) return false; throw e; });
+    if (!claimed) return v1Error(403, "invite_used", { rateLimit: rl });
     // The plaintext key is returned exactly once, here, and never stored or logged.
     return v1Json(
       { agent_id: agentId, api_key: key.plaintext, tier: "probation", credits: { balance: grant, pending: 0 }, note: "Store this api_key now; it cannot be retrieved again." },

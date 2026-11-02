@@ -19,7 +19,11 @@ export const v1Config = {
   maxTasksAttached: () => intEnv("V1_MAX_TASKS_ATTACHED", 2, 0, 2),
   rateLimitPerMinute: () => intEnv("V1_RATE_LIMIT_PER_MIN", 60, 1, 10000),
   registerRateLimitPerHour: () => intEnv("V1_REGISTER_LIMIT_PER_HOUR", 5, 1, 1000),
-  maxExcerptChars: () => intEnv("V1_MAX_EXCERPT_CHARS", 1000, 50, 20000),
+  maxExcerptChars: () => intEnv("V1_MAX_EXCERPT_CHARS", 300, 50, 20000),
+  /** Probation votes count at this percentage of the agent score (spec 8: low weight while on probation). */
+  probationWeightPct: () => intEnv("V1_PROBATION_WEIGHT_PCT", 50, 0, 100),
+  /** How long a task handed out by GET /cards stays answerable by that agent. */
+  assignmentTtlMinutes: () => intEnv("V1_ASSIGNMENT_TTL_MIN", 60, 1, 7 * 24 * 60),
   maxBodyBytes: 16 * 1024,
   /** Spec 12.4 leaves 402 vs 403 open; default to 402 as written in spec 7.2. */
   insufficientCreditsStatus: () => (process.env.V1_INSUFFICIENT_CREDITS_STATUS === "403" ? 403 : 402),

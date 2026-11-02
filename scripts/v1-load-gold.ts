@@ -9,6 +9,7 @@
 import { readFileSync } from "node:fs";
 import { randomUUID } from "node:crypto";
 import { getV1Db } from "../lib/v1/db";
+import { logFailure, useAdminDatabaseUrl } from "../lib/v1-settle/admin";
 import { urlMatchesWhitelist } from "../lib/v1/verify-validate";
 import { DEFAULT_TIER_CONFIG } from "../lib/v1-settle/scoring";
 
@@ -16,6 +17,7 @@ type WL = { pattern: string; issuer: string; kind: string; fields?: string[]; re
 type Gold = { gold_id: string; card_id: string; field: string; type: string; gold_answer: unknown; source_url: string; confirmed_date?: string; confirmed_by?: string; match_rule?: unknown; notes?: string };
 
 async function main() {
+  useAdminDatabaseUrl();
   const [goldPath, wlPath] = process.argv.slice(2);
   if (!goldPath || !wlPath) throw new Error("usage: v1-load-gold.ts <gold.json> <whitelist.json>");
   const gold = JSON.parse(readFileSync(goldPath, "utf8")) as { rules: string[]; items: Gold[] };
@@ -81,4 +83,4 @@ async function main() {
   console.log(JSON.stringify(out));
   process.exit(0);
 }
-main().catch((e) => { console.error(`load failed: ${e instanceof Error ? e.message : "unknown"}`); process.exit(1); });
+main().catch((e) => { logFailure("load", e); process.exit(1); });

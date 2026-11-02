@@ -113,71 +113,114 @@ async function updateAgent(tx: Queryable, agentId: string, scoreDelta: number, c
   await tx.query(`UPDATE agents SET gold_accuracy = $2, tier = $3 WHERE agent_id = $1`, [agentId, acc, tier]);
 }
 
-export interface SettleSummary { gold_pass: number; gold_fail: number; agreed: number; disagreed: number; suggestions: number; settled_tasks: number }
+export interface SettleSummary {
+  gold_pass: number; gold_fail: number; agreed: number; disagreed: number; expired_votes: number;
+  suggestions: number; settled_tasks: number; expired_tasks: number; disputed_tasks: number;
+}
 
-export async function settle(db: V1Db): Promise<SettleSummary> {
-  const sum: SettleSummary = { gold_pass: 0, gold_fail: 0, agreed: 0, disagreed: 0, suggestions: 0, settled_tasks: 0 };
-  return db.transaction(async (tx) => {
-    const cfg = await loadTierConfig(tx);
-    // 1) Gold grading: every pending verified vote on a gold task, immediately.
-    const gold = await tx.query<{ vote_id: string; agent_id: string; type: TaskType; result: { result: Record<string, unknown> }; gold_answer: Record<string, unknown> }>(
-      `SELECT v.vote_id, v.agent_id, t.type, v.result, g.gold_answer
-         FROM votes v JOIN tasks t ON t.task_id = v.task_id JOIN task_gold_answers g ON g.task_id = t.task_id
-        WHERE v.outcome = 'pending' AND t.is_gold ORDER BY v.submitted_at FOR UPDATE OF v`,
+type VoteRow = { vote_id: string; agent_id: string; weight: string | number; result: { result?: Record<string, unknown> } };
+
+/** Gold grading for one task (own transaction). */
+async function gradeGoldTask(db: V1Db, taskId: string, cfg: TierConfig, sum: SettleSummary) {
+  await db.transaction(async (tx) => {
+    const t = await tx.query<{ type: TaskType; gold_answer: Record<string, unknown> }>(
+      `SELECT t.type, g.gold_answer FROM tasks t JOIN task_gold_answers g ON g.task_id = t.task_id WHERE t.task_id = $1 FOR UPDATE OF t`,
+      [taskId],
     );
-    for (const v of gold.rows) {
-      const ok = matchesGold(v.type, v.result.result ?? {}, v.gold_answer);
+    if (!t.rows[0]) return;
+    const votes = await tx.query<VoteRow>(
+      `SELECT vote_id, agent_id, weight, result FROM votes WHERE task_id = $1 AND outcome = 'pending' ORDER BY submitted_at FOR UPDATE`,
+      [taskId],
+    );
+    for (const v of votes.rows) {
+      const ok = matchesGold(t.rows[0].type, v.result.result ?? {}, t.rows[0].gold_answer);
       await tx.query(`UPDATE votes SET outcome = $2 WHERE vote_id = $1`, [v.vote_id, ok ? "gold_pass" : "gold_fail"]);
       await settleReward(tx, v.vote_id, v.agent_id, ok);
       await updateAgent(tx, v.agent_id, ok ? cfg.score_gold_pass : cfg.score_gold_fail, cfg);
       ok ? sum.gold_pass++ : sum.gold_fail++;
     }
-    // Gold tasks that reached quorum are closed without a suggestion (their answer is already known).
-    const g2 = await tx.query(`UPDATE tasks SET state = 'settled' WHERE is_gold AND state = 'quorum' RETURNING task_id`);
-    sum.settled_tasks += g2.rows.length;
-
-    // 2) Consensus: reputation-weighted majority on non-gold tasks at quorum.
-    const tasks = await tx.query<{ task_id: string; card_id: string; field: string; type: TaskType; current_value: unknown }>(
-      `SELECT task_id, card_id, field, type, current_value FROM tasks WHERE NOT is_gold AND state = 'quorum' FOR UPDATE`,
-    );
-    for (const t of tasks.rows) {
-      const votes = await tx.query<{ vote_id: string; agent_id: string; weight: string | number; result: { result: Record<string, unknown> } }>(
-        `SELECT vote_id, agent_id, weight, result FROM votes WHERE task_id = $1 AND outcome = 'pending'`,
-        [t.task_id],
-      );
-      const buckets = new Map<string, { w: number; n: number; sample: Record<string, unknown> }>();
-      for (const v of votes.rows) {
-        const k = canonical(t.type, v.result.result ?? {});
-        const b = buckets.get(k) ?? { w: 0, n: 0, sample: v.result.result };
-        b.w += Number(v.weight); b.n++; buckets.set(k, b);
-      }
-      const total = [...buckets.values()].reduce((a, b) => a + b.w, 0);
-      const ranked = [...buckets.entries()].sort((a, b) => b[1].w - a[1].w);
-      const top = ranked[0];
-      if (!top || total <= 0 || top[1].w <= total / 2 || (ranked[1] && ranked[1][1].w === top[1].w)) {
-        await tx.query(`UPDATE tasks SET state = 'disputed' WHERE task_id = $1`, [t.task_id]);
-        continue;
-      }
-      for (const v of votes.rows) {
-        const ok = canonical(t.type, v.result.result ?? {}) === top[0];
-        await tx.query(`UPDATE votes SET outcome = $2 WHERE vote_id = $1`, [v.vote_id, ok ? "agreed" : "disagreed"]);
-        await settleReward(tx, v.vote_id, v.agent_id, ok);
-        await updateAgent(tx, v.agent_id, ok ? cfg.score_agree : cfg.score_disagree, cfg);
-        ok ? sum.agreed++ : sum.disagreed++;
-      }
-      const current = t.current_value && typeof t.current_value === "object" ? canonical(t.type, t.current_value as Record<string, unknown>) : null;
-      if (current !== top[0]) {
-        await tx.query(
-          `INSERT INTO consensus_suggestions (suggestion_id, task_id, card_id, field, current_value, suggested_value, support)
-           VALUES ($1,$2,$3,$4,$5::jsonb,$6::jsonb,$7::jsonb)`,
-          [newId("cs"), t.task_id, t.card_id, t.field, t.current_value == null ? null : JSON.stringify(t.current_value),
-            JSON.stringify(top[1].sample), JSON.stringify({ votes: top[1].n, weight: top[1].w, total_weight: total })],
-        );
-        sum.suggestions++;
-      }
-      await tx.query(`UPDATE tasks SET state = 'settled' WHERE task_id = $1`, [t.task_id]);
-      sum.settled_tasks++;
-    }
-    return sum;
+    // Gold tasks at quorum close without a suggestion (their answer is already known).
+    const closed = await tx.query(`UPDATE tasks SET state = 'settled' WHERE task_id = $1 AND state = 'quorum' RETURNING 1`, [taskId]);
+    sum.settled_tasks += closed.rows.length;
   });
+}
+
+/** Overdue open task (own transaction): pending votes resolve as 'expired', provisional rewards are reversed. */
+async function expireTask(db: V1Db, taskId: string, sum: SettleSummary) {
+  await db.transaction(async (tx) => {
+    const t = await tx.query(`SELECT 1 FROM tasks WHERE task_id = $1 AND state = 'open' AND expires_at <= now() FOR UPDATE`, [taskId]);
+    if (!t.rows.length) return;
+    const votes = await tx.query<VoteRow>(`SELECT vote_id, agent_id FROM votes WHERE task_id = $1 AND outcome = 'pending' FOR UPDATE`, [taskId]);
+    for (const v of votes.rows) {
+      await tx.query(`UPDATE votes SET outcome = 'expired' WHERE vote_id = $1`, [v.vote_id]);
+      await settleReward(tx, v.vote_id, v.agent_id, false); // no consensus reached -> no reward
+      sum.expired_votes++;
+    }
+    await tx.query(`UPDATE tasks SET state = 'expired' WHERE task_id = $1`, [taskId]);
+    sum.expired_tasks++;
+  });
+}
+
+/** Reputation-weighted majority for one non-gold task at quorum (own transaction). */
+async function settleConsensusTask(db: V1Db, taskId: string, cfg: TierConfig, sum: SettleSummary) {
+  await db.transaction(async (tx) => {
+    const tr = await tx.query<{ task_id: string; card_id: string; field: string; type: TaskType; current_value: unknown }>(
+      `SELECT task_id, card_id, field, type, current_value FROM tasks WHERE task_id = $1 AND NOT is_gold AND state = 'quorum' FOR UPDATE`,
+      [taskId],
+    );
+    const t = tr.rows[0];
+    if (!t) return;
+    const votes = await tx.query<VoteRow>(
+      `SELECT vote_id, agent_id, weight, result FROM votes WHERE task_id = $1 AND outcome = 'pending' FOR UPDATE`,
+      [taskId],
+    );
+    const buckets = new Map<string, { w: number; n: number; sample: Record<string, unknown> }>();
+    for (const v of votes.rows) {
+      const k = canonical(t.type, v.result.result ?? {});
+      const b = buckets.get(k) ?? { w: 0, n: 0, sample: v.result.result ?? {} };
+      b.w += Number(v.weight); b.n++; buckets.set(k, b);
+    }
+    const total = [...buckets.values()].reduce((a, b) => a + b.w, 0);
+    const ranked = [...buckets.entries()].sort((a, b) => b[1].w - a[1].w);
+    const top = ranked[0];
+    if (!top || total <= 0 || top[1].w <= total / 2 || (ranked[1] && ranked[1][1].w === top[1].w)) {
+      await tx.query(`UPDATE tasks SET state = 'disputed' WHERE task_id = $1`, [taskId]);
+      sum.disputed_tasks++;
+      return;
+    }
+    for (const v of votes.rows) {
+      const ok = canonical(t.type, v.result.result ?? {}) === top[0];
+      await tx.query(`UPDATE votes SET outcome = $2 WHERE vote_id = $1`, [v.vote_id, ok ? "agreed" : "disagreed"]);
+      await settleReward(tx, v.vote_id, v.agent_id, ok);
+      await updateAgent(tx, v.agent_id, ok ? cfg.score_agree : cfg.score_disagree, cfg);
+      ok ? sum.agreed++ : sum.disagreed++;
+    }
+    const current = t.current_value && typeof t.current_value === "object" ? canonical(t.type, t.current_value as Record<string, unknown>) : null;
+    if (current !== top[0]) {
+      await tx.query(
+        `INSERT INTO consensus_suggestions (suggestion_id, task_id, card_id, field, current_value, suggested_value, support)
+         VALUES ($1,$2,$3,$4,$5::jsonb,$6::jsonb,$7::jsonb)`,
+        [newId("cs"), t.task_id, t.card_id, t.field, t.current_value == null ? null : JSON.stringify(t.current_value),
+          JSON.stringify(top[1].sample), JSON.stringify({ votes: top[1].n, weight: top[1].w, total_weight: total })],
+      );
+      sum.suggestions++;
+    }
+    await tx.query(`UPDATE tasks SET state = 'settled' WHERE task_id = $1`, [taskId]);
+    sum.settled_tasks++;
+  });
+}
+
+/** Settles task by task, each in its own transaction, so one bad task never blocks or rolls back the rest. */
+export async function settle(db: V1Db): Promise<SettleSummary> {
+  const sum: SettleSummary = { gold_pass: 0, gold_fail: 0, agreed: 0, disagreed: 0, expired_votes: 0, suggestions: 0, settled_tasks: 0, expired_tasks: 0, disputed_tasks: 0 };
+  const cfg = await loadTierConfig(db);
+  const ids = async (sql: string) => (await db.query<{ task_id: string }>(sql)).rows.map((r) => r.task_id);
+  // 1) Gold: grade every pending vote (including on overdue gold tasks), and close gold tasks at quorum.
+  for (const id of await ids(`SELECT DISTINCT t.task_id FROM tasks t JOIN votes v ON v.task_id = t.task_id
+                               WHERE t.is_gold AND (v.outcome = 'pending' OR t.state = 'quorum')`)) await gradeGoldTask(db, id, cfg, sum);
+  // 2) Expire overdue open tasks.
+  for (const id of await ids(`SELECT task_id FROM tasks WHERE state = 'open' AND expires_at <= now()`)) await expireTask(db, id, sum);
+  // 3) Consensus on non-gold tasks at quorum.
+  for (const id of await ids(`SELECT task_id FROM tasks WHERE NOT is_gold AND state = 'quorum'`)) await settleConsensusTask(db, id, cfg, sum);
+  return sum;
 }

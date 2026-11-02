@@ -10,11 +10,15 @@ import { POST as registerAgent } from "@/app/api/v1/agents/route";
 import { GET as getMe } from "@/app/api/v1/agents/me/route";
 import { GET as getCard } from "@/app/api/v1/cards/[card_id]/route";
 import { POST as postVerify } from "@/app/api/v1/verify/route";
-import { makeTestDb, seedFixtures, evidence, GOLD_SENTINEL } from "./v1-harness";
+import { makeTestDb, seedFixtures, evidence, assignAll, GOLD_SENTINEL } from "./v1-harness";
 import type { PGlite } from "@electric-sql/pglite";
 
 const ROOT = path.join(__dirname, "..");
 const INVITE = "fake-invite-code-for-tests";
+const INVITES = Array.from({ length: 200 }, (_, i) => `fake-invite-${i}`);
+let inviteIdx = 0;
+const nextInvite = () => INVITES[inviteIdx++];
+let pgRef: PGlite | null = null;
 const BASE = "http://localhost/api/v1";
 
 // Capture everything the API writes to the console so we can prove no secret/gold leaks into logs.
@@ -38,7 +42,7 @@ function hashDir(dir: string): string {
   return h.digest("hex");
 }
 
-const register = (name: string, invite: string | null = INVITE, ip = "10.0.0.1") =>
+const register = (name: string, invite: string | null = nextInvite(), ip = "10.0.0.1") =>
   registerAgent(new Request(`${BASE}/agents`, {
     method: "POST",
     headers: { "content-type": "application/json", "x-forwarded-for": ip, ...(invite ? { "x-invite-code": invite } : {}) },
@@ -46,8 +50,10 @@ const register = (name: string, invite: string | null = INVITE, ip = "10.0.0.1")
   }));
 const auth = (key: string) => ({ authorization: `Bearer ${key}` });
 const card = (key: string, id: string) => getCard(new Request(`${BASE}/cards/${id}`, { headers: auth(key) }), { params: Promise.resolve({ card_id: id }) });
-const verify = (key: string, body: unknown) =>
-  postVerify(new Request(`${BASE}/verify`, { method: "POST", headers: { ...auth(key), "content-type": "application/json" }, body: JSON.stringify(body) }));
+const verify = async (key: string, body: unknown, assign = true) => {
+  if (assign && pgRef) await assignAll(pgRef);
+  return postVerify(new Request(`${BASE}/verify`, { method: "POST", headers: { ...auth(key), "content-type": "application/json" }, body: JSON.stringify(body) }));
+};
 
 describe("/api/v1 verify-to-access (Phase 0-1)", () => {
   let pg: PGlite;
@@ -59,12 +65,13 @@ describe("/api/v1 verify-to-access (Phase 0-1)", () => {
       console[k] = (...args: unknown[]) => { logged.push(args.map(String).join(" ")); };
     }
     process.env.V1_API_ENABLED = "true";
-    process.env.V1_INVITE_CODES = `other-code,${INVITE}`;
+    process.env.V1_INVITE_CODES = ["other-code", INVITE, ...INVITES].join(",");
     process.env.V1_PROBATION_GRANT = "3";
     process.env.V1_TASK_REWARD = "1";
     cardsHashBefore = hashDir(path.join(ROOT, "data/cards"));
     const t = await makeTestDb();
     pg = t.pg;
+    pgRef = pg;
     setV1DbForTesting(t.db);
     await seedFixtures(pg);
   });
@@ -88,6 +95,16 @@ describe("/api/v1 verify-to-access (Phase 0-1)", () => {
   it("requires a valid invite code to register", async () => {
     assert.equal((await record(await register("nobody", null))).status, 403);
     assert.equal((await record(await register("nobody", "wrong"))).status, 403);
+  });
+
+  it("invite codes are one-time and bound to the agent that used them", async () => {
+    const first = await record(await register("agent-invite-1", INVITE, "10.0.0.9"));
+    assert.equal(first.status, 201);
+    const again = await record(await register("agent-invite-2", INVITE, "10.0.0.9"));
+    assert.equal(again.status, 403);
+    assert.equal(again.body.error, "invite_used");
+    const row = (await pg.query<{ used_by: string }>(`SELECT used_by FROM invite_codes WHERE used_by = $1`, [first.body.agent_id])).rows;
+    assert.equal(row.length, 1);
   });
 
   it("returns the plaintext key exactly once and stores only a sha256 hash", async () => {
@@ -152,6 +169,24 @@ describe("/api/v1 verify-to-access (Phase 0-1)", () => {
     const r = await record(await card(key, "no-such-card-xyz"));
     assert.equal(r.status, 404);
     assert.equal(r.headers.get("X-Credits-Balance"), "3");
+  });
+
+  it("rejects votes without a matching unexpired assignment; GET /cards creates assignments", async () => {
+    const reg = (await record(await register("agent-assign"))).body;
+    const key = reg.api_key as string;
+    const body = { task_id: "t_fake_offer_c", status: "unable_to_verify", reason: "page_blocked" };
+    const r = await record(await verify(key, body, false));
+    assert.equal(r.status, 403);
+    assert.equal(r.body.error, "task_not_assigned");
+    const c = await record(await card(key, realCardId));
+    const handed = (c.body.verification_tasks as { task_id: string }[]).map((t) => t.task_id);
+    const n = (await pg.query<{ n: number }>(`SELECT COUNT(*)::int AS n FROM task_assignments WHERE agent_id = $1`, [reg.agent_id])).rows[0].n;
+    assert.equal(n, handed.length);
+    if (handed.length) {
+      await pg.query(`UPDATE task_assignments SET expires_at = now() - interval '1 second' WHERE agent_id = $1 AND task_id = $2`, [reg.agent_id, handed[0]]);
+      const exp = await record(await verify(key, { ...body, task_id: handed[0] }, false));
+      assert.equal(exp.status, 403);
+    }
   });
 
   it("validates verify submissions (schema, whitelist, duplicates, unknown tasks)", async () => {

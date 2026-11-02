@@ -9,6 +9,11 @@ import { agentRateLimit, authenticate, internalError, notEnabled, readJsonBody, 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
+/** Probation agents vote at a reduced weight. */
+function voteWeight(agent: { score: number; tier: string }): number {
+  return agent.tier === "probation" ? (agent.score * v1Config.probationWeightPct()) / 100 : agent.score;
+}
+
 class Reject {
   constructor(public status: number, public error: string, public fields?: string[]) {}
 }
@@ -41,6 +46,11 @@ export async function POST(req: Request) {
       if (!task) return new Reject(404, "task_not_found");
       if (new Date(task.expires_at).getTime() <= Date.now()) return new Reject(410, "task_expired");
       if (task.state !== "open") return new Reject(409, "task_closed");
+      const asg = await tx.query(
+        `SELECT 1 FROM task_assignments WHERE task_id = $1 AND agent_id = $2 AND expires_at > now()`,
+        [s.task_id, agent.agent_id],
+      );
+      if (!asg.rows.length) return new Reject(403, "task_not_assigned");
 
       if (s.evidence) {
         const wl = await tx.query<{ pattern: string }>(`SELECT pattern FROM sources_whitelist WHERE dispatchable = true`);
@@ -61,7 +71,7 @@ export async function POST(req: Request) {
         : { status: s.status, reason: s.reason, evidence: s.evidence };
       await tx.query(
         `INSERT INTO votes (vote_id, task_id, agent_id, result, weight, outcome) VALUES ($1, $2, $3, $4::jsonb, $5, $6)`,
-        [voteId, s.task_id, agent.agent_id, JSON.stringify(stored), agent.score, s.status === "verified" ? "pending" : "unable"],
+        [voteId, s.task_id, agent.agent_id, JSON.stringify(stored), voteWeight(agent), s.status === "verified" ? "pending" : "unable"],
       );
 
       let provisional = 0;

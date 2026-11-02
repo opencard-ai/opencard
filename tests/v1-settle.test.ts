@@ -6,22 +6,25 @@ import { POST as registerAgent } from "@/app/api/v1/agents/route";
 import { POST as postVerify } from "@/app/api/v1/verify/route";
 import { urlMatchesWhitelist } from "@/lib/v1/verify-validate";
 import { settle, normalizeLinkUrl, matchesGold } from "@/lib/v1-settle/scoring";
-import { makeTestDb, seedFixtures, evidence } from "./v1-harness";
+import { makeTestDb, seedFixtures, evidence, assignAll } from "./v1-harness";
 import type { PGlite } from "@electric-sql/pglite";
 
-const INVITE = "fake-invite-settle";
+const INVITES = Array.from({ length: 100 }, (_, i) => `fake-invite-settle-${i}`);
+let pgRef: PGlite | null = null;
 const BASE = "http://localhost/api/v1";
 let n = 0;
 async function newAgent(): Promise<{ key: string; id: string }> {
   const r = await registerAgent(new Request(`${BASE}/agents`, {
-    method: "POST", headers: { "content-type": "application/json", "x-invite-code": INVITE, "x-forwarded-for": `10.9.0.${++n}` },
+    method: "POST", headers: { "content-type": "application/json", "x-invite-code": INVITES[n], "x-forwarded-for": `10.9.0.${++n}` },
     body: JSON.stringify({ agent_name: `settle-${n}` }),
   }));
   const b = await r.json();
   return { key: b.api_key, id: b.agent_id };
 }
-const verify = (key: string, body: unknown) =>
-  postVerify(new Request(`${BASE}/verify`, { method: "POST", headers: { authorization: `Bearer ${key}`, "content-type": "application/json" }, body: JSON.stringify(body) }));
+const verify = async (key: string, body: unknown) => {
+  if (pgRef) await assignAll(pgRef);
+  return postVerify(new Request(`${BASE}/verify`, { method: "POST", headers: { authorization: `Bearer ${key}`, "content-type": "application/json" }, body: JSON.stringify(body) }));
+};
 const fee = (task: string, annual_fee: number, url = "https://issuer-alpha.example.com/cards/fake-card-delta") =>
   ({ task_id: task, status: "verified", result: { annual_fee, first_year_waived: false }, evidence: evidence(url) });
 
@@ -32,7 +35,8 @@ describe("v1 whitelist globs, evidence policy and offline settlement", () => {
     await seedFixtures(pg);
     setV1DbForTesting(db);
     process.env.V1_API_ENABLED = "true";
-    process.env.V1_INVITE_CODES = INVITE;
+    process.env.V1_INVITE_CODES = INVITES.join(",");
+    pgRef = pg;
     process.env.V1_REGISTER_LIMIT_PER_HOUR = "1000";
     resetV1RateLimitForTesting();
   });

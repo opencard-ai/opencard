@@ -8,9 +8,10 @@ import path from "node:path";
 import { Client } from "pg";
 
 async function main() {
-  const url = process.env.V1_DATABASE_URL;
+  // Migrations run as the owner/admin role, never as the least-privilege API role.
+  const url = process.env.V1_ADMIN_DATABASE_URL || process.env.V1_DATABASE_URL;
   if (!url) {
-    console.error("V1_DATABASE_URL is not set");
+    console.error("V1_ADMIN_DATABASE_URL / V1_DATABASE_URL is not set");
     process.exit(1);
   }
   const dir = path.join(process.cwd(), "db", "migrations");

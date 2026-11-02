@@ -1,4 +1,6 @@
 import type { Queryable } from "./db";
+import { v1Config } from "./config";
+import { newId } from "./keys";
 
 export type TaskType = "link_check" | "fee_check" | "welcome_offer_check" | "status_check";
 
@@ -34,5 +36,14 @@ export async function pickTasks(q: Queryable, agentId: string, limit: number): P
       ORDER BY random() LIMIT $2`,
     [agentId, limit],
   );
+  // Record each hand-out; /verify only accepts votes on an unexpired assignment for the same agent.
+  for (const r of rows) {
+    await q.query(
+      `INSERT INTO task_assignments (assignment_id, task_id, agent_id, expires_at)
+       SELECT $1, t.task_id, $3, LEAST(t.expires_at, now() + make_interval(mins => $4)) FROM tasks t WHERE t.task_id = $2
+       ON CONFLICT (task_id, agent_id) DO UPDATE SET expires_at = EXCLUDED.expires_at`,
+      [newId("as"), r.task_id, agentId, v1Config.assignmentTtlMinutes()],
+    );
+  }
   return rows.map(toPublic);
 }

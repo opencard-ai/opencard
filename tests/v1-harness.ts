@@ -45,6 +45,15 @@ export async function seedFixtures(pg: PGlite): Promise<void> {
   }
 }
 
+/** Test shortcut: assign every task to every agent (normally done by GET /cards via pickTasks). */
+export async function assignAll(pg: PGlite): Promise<void> {
+  await pg.query(
+    `INSERT INTO task_assignments (assignment_id, task_id, agent_id, expires_at)
+     SELECT 'as_' || md5(t.task_id || a.agent_id), t.task_id, a.agent_id, now() + interval '1 hour' FROM tasks t CROSS JOIN agents a
+     ON CONFLICT (task_id, agent_id) DO NOTHING`,
+  );
+}
+
 export function evidence(url = "https://issuer-alpha.example.com/cards/fake-card-alpha") {
   return {
     url,
