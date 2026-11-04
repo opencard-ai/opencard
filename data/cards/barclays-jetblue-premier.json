@@ -8,19 +8,20 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good to Excellent",
   "welcome_offer": {
-    "bonus_points": 90000,
+    "bonus_points": 80000,
     "spending_requirement": 5000,
     "time_period_months": 3,
-    "description": "Earn 90,000 TrueBlue bonus points after spending $5,000 on purchases and paying the annual fee in full, both within the first 90 days.",
+    "description": "Earn 80,000 JetBlue TrueBlue bonus miles after spending $5,000 on purchases in the first 3 months.",
     "point_program": "JetBlue TrueBlue",
-    "estimated_value": 1170,
+    "estimated_value": 1040,
     "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Barclays official JetBlue Premier page checked 2026-09-29: 90,000 bonus points after $5,000 purchases and annual fee paid in full, both within the first 90 days; $499 annual fee."
+      "Barclays official JetBlue Premier page checked 2026-09-29: 90,000 bonus points after $5,000 purchases and annual fee paid in full, both within the first 90 days; $499 annual fee.",
+      "2026-11-03 offer-watch auto-apply (two independent official fetches): bonus_points 90000 -> 80000. Sources: https://cards.barclaycardus.com/banking/cards/jetblue-premier-card/."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-09-29"
+    "last_verified": "2026-11-03"
   },
   "earning_rates": [
     {
@@ -150,7 +151,7 @@
     "notes": "Barclays terms note bonus may only be earned once and may be unavailable to current/previous program account holders."
   },
   "notes": "Dedicated product confirmed distinct from JetBlue Card and JetBlue Plus Card. Some benefit details are term-sensitive; prefer issuer terms for display copy.",
-  "last_updated": "2026-09-29T12:00:00.000-07:00",
-  "last_verified": "2026-09-29",
-  "next_review": "2026-10-29T00:00:00.000-07:00"
+  "last_updated": "2026-11-03T12:00:00.000Z",
+  "last_verified": "2026-11-03",
+  "next_review": "2026-12-03T00:00:00.000Z"
 }
