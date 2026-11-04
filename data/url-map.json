@@ -2200,12 +2200,6 @@
       "official": "https://www.pnc.com/points-card"
     }
   },
-  "robinhood-gold": {
-    "issuer": "robinhood",
-    "sources": {
-      "official": "https://www.robinhood.com/gold-card"
-    }
-  },
   "robinhood-platinum": {
     "issuer": "robinhood",
     "sources": {
