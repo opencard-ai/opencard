@@ -91,6 +91,7 @@
     },
     {
       "url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+      "title": "The American Express® Gold Card",
       "notes": "Official Amex Page"
     },
     {
@@ -100,6 +101,10 @@
     {
       "url": "https://www.uscreditcardguide.com/amex-premier-rewards-gold/",
       "notes": "USCCG current Gold page; old /amex-gold/ URL is discontinued legacy Gold"
+    },
+    {
+      "url": "https://www.americanexpress.com/en-us/credit-cards/apply/terms/personal/gold-card/25330-10-0/",
+      "notes": "Official Amex Gold Rates & Fees (JS-rendered; checked 2026-11-03 via headless Chrome): Cash Advance fee either $10 or 5% of each cash advance, whichever is greater; APR for Cash Advances 28.99% variable. Late fee up to $40; foreign transaction none."
     }
   ],
   "last_updated": "2026-07-15T20:08:19.000Z",
@@ -166,7 +171,7 @@
   "next_review": "2026-07-15T13:41:49.946000+00:00",
   "late_fee": 40,
   "cash_advance_fee_flat": 10,
-  "cash_advance_fee_pct": 21.99,
+  "cash_advance_fee_pct": 5,
   "_revert_history": [
     {
       "field": "annual_fee",
