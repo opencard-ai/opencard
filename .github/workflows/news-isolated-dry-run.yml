@@ -1,0 +1,40 @@
+name: News isolated fixture dry-run
+on:
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: Comparison slot (not a production schedule)
+        required: true
+        type: choice
+        options: [morning, evening]
+        default: morning
+permissions:
+  contents: read
+jobs:
+  fixture-dry-run:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install locked dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Test safety contracts
+        run: node --test scripts/automation/*.test.mjs
+      - name: Run fixture-only comparison
+        id: comparison
+        env:
+          COMPARISON_SLOT: ${{ inputs.slot }}
+        run: |
+          out=$(node scripts/automation/news-dry-run.mjs --now 2026-11-06T20:00:00Z --slot "$COMPARISON_SLOT" --run-id "$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT")
+          printf 'path=%s\n' "$out" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: news-fixture-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ steps.comparison.outputs.path }}
+          retention-days: 7
+          if-no-files-found: error
