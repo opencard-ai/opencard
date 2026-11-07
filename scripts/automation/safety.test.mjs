@@ -99,5 +99,6 @@ test('manual cloud workflow is read-only, contains no schedule, secrets, or publ
   assert.match(workflow, /workflow_dispatch:/);
   assert.match(workflow, /contents: read/);
   assert.match(workflow, /persist-credentials: false/);
-  assert.doesNotMatch(workflow, /schedule:|pull_request_target|secrets\.|contents: write|pull-requests: write|sync-news\.mjs|gh pr|git push|vercel/);
+  for (const action of ['checkout', 'setup-node', 'upload-artifact']) assert.match(workflow, new RegExp(`actions/${action}@[0-9a-f]{40}`));
+  assert.doesNotMatch(workflow, /schedule:|pull_request_target|secrets\.|contents: write|pull-requests: write|sync-news\.mjs|news-publish|--publish|production-enable|gh pr|git push|vercel/);
 });

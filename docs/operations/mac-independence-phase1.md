@@ -1,5 +1,9 @@
 # OpenCard Mac independence — phase 1 preparation, NOT a migration
 
+Follow-up: [portable real-news shadow implementation](news-portable-shadow.md)
+connects the actual news core and adds a gated portable writer. The phase-1
+status below is historical; Mac production and offer cutover remain unperformed.
+
 Status: **review only / no production cutover**. This PR adds an isolated news
 fixture runner and testable publishing safety contracts. It does not change the
 existing `sync-news.mjs`, offer publisher, Mac wrappers, production state, owner,

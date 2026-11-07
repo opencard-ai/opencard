@@ -1,4 +1,4 @@
-name: News isolated fixture dry-run
+name: News portable isolated shadow
 on:
   workflow_dispatch:
     inputs:
@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '24'
       - name: Install locked dependencies without lifecycle scripts
@@ -30,9 +30,9 @@ jobs:
         env:
           COMPARISON_SLOT: ${{ inputs.slot }}
         run: |
-          out=$(node scripts/automation/news-dry-run.mjs --now 2026-11-06T20:00:00Z --slot "$COMPARISON_SLOT" --run-id "$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT")
+          out=$(node scripts/automation/news-shadow.mjs --repo "$GITHUB_WORKSPACE" --sha "$GITHUB_SHA" --now 2026-11-06T20:00:00Z --slot "$COMPARISON_SLOT" --run-id "$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" --source fixture --provider fixture)
           printf 'path=%s\n' "$out" >> "$GITHUB_OUTPUT"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: news-fixture-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ steps.comparison.outputs.path }}

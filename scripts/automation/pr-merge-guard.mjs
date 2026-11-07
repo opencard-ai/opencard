@@ -9,7 +9,7 @@ export function assertMergeable({ pr, checks, expectedHead, allowedFile, require
 }
 
 /** `run` is injected; callers must explicitly authorize writes. API errors fail closed. */
-export async function mergeVerifiedNewsPr({ run, prNumber, expectedHead, write = false }) {
+export async function mergeVerifiedNewsPr({ run, prNumber, expectedHead, write = false, authorizeWrite, requiredChecks = ['validate'] }) {
   if (!write) throw new Error('write authorization required');
   if (!Number.isSafeInteger(prNumber) || prNumber <= 0) throw new Error('invalid PR number');
   const repo = 'opencard-ai/opencard';
@@ -20,10 +20,12 @@ export async function mergeVerifiedNewsPr({ run, prNumber, expectedHead, write =
   };
   const viewArgs = ['pr', 'view', String(prNumber), '--repo', repo, '--json', 'headRefOid,files,state,baseRefName,isDraft'];
   const pr = await read(viewArgs);
-  const checks = await read(['pr', 'checks', String(prNumber), '--repo', repo, '--json', 'name,state,bucket']);
-  const gate = current => assertMergeable({ pr: current, checks, expectedHead, allowedFile: f => f === 'data/news.json' });
-  gate(pr);
-  gate(await read(viewArgs)); // Fresh head/file validation after checks; merge itself uses SHA CAS.
+  const checkArgs = ['pr', 'checks', String(prNumber), '--repo', repo, '--json', 'name,state,bucket'];
+  const gate = (current, checks) => assertMergeable({ pr: current, checks, expectedHead, requiredChecks, allowedFile: f => f === 'data/news.json' });
+  gate(pr, await read(checkArgs));
+  const freshPr = await read(viewArgs);
+  gate(freshPr, await read(checkArgs)); // Fresh checks too: a rerun can invalidate earlier success.
+  if (authorizeWrite) await authorizeWrite();
   const merged = await run('gh', ['pr', 'merge', String(prNumber), '--repo', repo, '--squash', '--delete-branch', '--match-head-commit', expectedHead]);
   if (merged.code !== 0) throw new Error('merge failed');
   // A command acknowledgement is not evidence of a completed merge.
