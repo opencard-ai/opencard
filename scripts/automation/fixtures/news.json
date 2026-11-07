@@ -1,0 +1,24 @@
+{
+  "previous": {
+    "items": [],
+    "fetched": "2026-11-05T00:00:00.000Z"
+  },
+  "sources": [
+    {
+      "name": "synthetic-public-feed",
+      "rss": "<rss><channel><item><title>Fixture credit card update</title><link>https://example.com/fixture-offer</link><pubDate>Fri, 06 Nov 2026 12:00:00 GMT</pubDate><category>Cards</category></item></channel></rss>"
+    }
+  ],
+  "translations": {
+    "Fixture credit card update": {
+      "zh": {
+        "title": "測試信用卡更新",
+        "summary": "僅用於離線測試。"
+      },
+      "es": {
+        "title": "Actualización de prueba",
+        "summary": "Solo para pruebas sin conexión."
+      }
+    }
+  }
+}
