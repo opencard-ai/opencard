@@ -1,8 +1,10 @@
 /** Explicit live provider. Never reads process.env and never reports upstream bodies/keys. */
-export function createMiniMaxTranslator({ apiKey, fetchImpl = globalThis.fetch, timeoutMs = 120000 }) {
+export function createMiniMaxTranslator({ apiKey, fetchImpl = globalThis.fetch, timeoutMs = 120000, failureMode = 'strict' }) {
   return async (items, lang) => {
     if (!['zh', 'es'].includes(lang)) throw new Error('unsupported translation locale');
     if (typeof apiKey !== 'string' || !apiKey.trim()) throw new Error('translation credential required');
+    if (!['strict', 'legacy-fallback'].includes(failureMode)) throw new Error('invalid translation failure policy');
+    const fallback = () => items.map(item => ({ ...item, [`title_${lang}`]: item.title, [`summary_${lang}`]: '' }));
     const controller = new AbortController();
     let timer;
     const work = async () => {
@@ -15,7 +17,12 @@ export function createMiniMaxTranslator({ apiKey, fetchImpl = globalThis.fetch, 
       if (!response.ok) throw new Error('upstream rejected');
       const data = await response.json();
       const raw = (data.content ?? []).filter(p => p.type === 'text' || p.type === undefined).map(p => p.text ?? '').join('').trim().replace(/^```(?:json)?\s*|\s*```$/g, '');
-      const translated = JSON.parse(raw);
+      const json = failureMode === 'legacy-fallback' ? (raw.match(/\[[\s\S]*\]/s) || raw.match(/\{[\s\S]*\}/s))?.[0] ?? raw : raw;
+      const translated = JSON.parse(json);
+      if (failureMode === 'legacy-fallback') return items.map((item, idx) => {
+        const t = translated.find(row => row.idx === idx);
+        return { ...item, [`title_${lang}`]: t ? t.title : item.title, [`summary_${lang}`]: t ? t.summary : '' };
+      });
       if (!Array.isArray(translated) || translated.length !== items.length) throw new Error('invalid translation count');
       return items.map((item, idx) => {
         const matches = translated.filter(t => t.idx === idx);
@@ -27,7 +34,10 @@ export function createMiniMaxTranslator({ apiKey, fetchImpl = globalThis.fetch, 
       return await Promise.race([work(), new Promise((_, reject) => {
         timer = setTimeout(() => { controller.abort(); reject(new Error('deadline')); }, timeoutMs);
       })]);
-    } catch { throw new Error('News translation unavailable (credential, upstream response, or timeout); feed not published'); }
+    } catch {
+      if (failureMode === 'legacy-fallback') return fallback();
+      throw new Error('News translation unavailable (credential, upstream response, or timeout); feed not published');
+    }
     finally { clearTimeout(timer); }
   };
 }

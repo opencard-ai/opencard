@@ -31,12 +31,12 @@ test('real exported sync path uses normal RSS sources and explicit provider, ded
   assert.equal(second.changed, false); assert.equal(translations, 2);
   assert.deepEqual(second.output, first.output);
 });
-test('portable job identity includes source SHA, PT date and slot, not once per day', async () => {
+test('portable job slot is stable across main changes; source SHA is metadata', async () => {
   const first = await prepare();
-  assert.equal(first.plan.slotKey, `news:${sha}:2026-11-06:morning`);
+  assert.equal(first.plan.slotKey, 'news:2026-11-06:morning');
   assert.equal(first.plan.proposedSha256, jsonHash(first.proposed));
   assert.notEqual(first.plan.slotKey, (await prepare({ slot: 'evening' })).plan.slotKey);
-  assert.notEqual(first.plan.slotKey, (await prepare({ sourceSha: head })).plan.slotKey);
+  assert.equal(first.plan.slotKey, (await prepare({ sourceSha: head })).plan.slotKey);
 });
 test('provider rejects HTTP/malformed/partial/network/timeout with secret-free errors', async () => {
   const candidates = parseRSS(fixture.sources[0].rss);
@@ -85,7 +85,11 @@ function liveMock(result, options = {}) {
     if (cmd === 'git') {
       if (args.includes('remote')) return ok('https://github.com/opencard-ai/opencard.git');
       if (args.includes('ls-remote')) return ok('');
-      if (args.includes('worktree')) { const dir = args.at(-2); scratch.push(path.dirname(dir)); fs.mkdirSync(path.join(dir, 'data'), { recursive: true }); return ok(''); }
+      if (args.includes('worktree')) {
+        if (args.includes('add')) { const dir = args.at(-2); scratch.push(path.dirname(dir)); fs.mkdirSync(path.join(dir, 'data'), { recursive: true }); }
+        else fs.rmSync(args.at(-1), { recursive: true, force: true });
+        return ok('');
+      }
       if (args.includes('diff')) return ok('data/news.json\n');
       if (args.includes('log')) return ok('opencard@opencardai.com');
       if (args.includes('rev-parse')) return ok(head);
@@ -102,12 +106,13 @@ function liveMock(result, options = {}) {
     return ok('');
   };
   const fetchLive = async () => ({ status: 200, data: { items: result.proposed.items.map(i => ({ ...i, title: i.title_en || i.title, summary: i.summary_en || '' })), fetched: result.proposed.fetched } });
-  return { calls, scratch, run, fetchLive };
+  const fetchDeployment = async () => [{ name: 'opencard', target: 'production', meta: { githubCommitSha: mergeSha }, readyState: 'READY' }];
+  return { calls, scratch, run, fetchLive, fetchDeployment };
 }
 
 test('live writer is disabled before any command, remote authority/epoch/base fail closed', async () => {
   const result = await prepare();
-  const base = { ...result, repoPath: '/fixture/repo', ownerEpoch: 'fixture-epoch' };
+  const base = { ...result, repoPath: '/fixture/repo', ownerEpoch: 'fixture-epoch', fetchDeployment: async () => [] };
   const noCommands = async () => { throw new Error('unexpected command'); };
   await assert.rejects(publishPortableNews({ ...base, run: noCommands }), /disabled/);
   for (const options of [{ denied: true }, { stale: true }]) {
@@ -122,10 +127,11 @@ test('portable PR→fresh checks→SHA-bound merge→deployment readback works w
   try {
     const receipt = await publishPortableNews({ ...result, ...m, repoPath: '/fixture/repo', publish: true, productionEnable: true, ownerEpoch: 'fixture-epoch' });
     assert.equal(receipt.state, 'MERGED'); assert.equal(receipt.deployment, 'VERIFIED');
+    assert.ok(m.scratch.every(p => !fs.existsSync(p)), 'temporary worktree/scratch removed');
     assert.equal(m.calls.filter(c => c[0] === 'git' && c.includes('push')).length, 1);
     assert.ok(m.calls.find(c => c[0] === 'git' && c.includes('push')).at(-1).includes('refs/heads/bot/news-sync/'));
     assert.ok(m.calls.find(c => c[2] === 'merge').includes('--match-head-commit'));
-    assert.ok(!m.calls.flat().some(c => c === '--auto' || c === '--force'));
+    assert.ok(!m.calls.filter(c => c.includes('push') || c[2] === 'merge').flat().some(c => c === '--auto' || c === '--force'));
   } finally { m.scratch.forEach(p => fs.rmSync(p, { recursive: true, force: true })); }
 });
 test('pending checks or authority revoked before merge never merges; resume avoids duplicate PR', async () => {
@@ -135,6 +141,7 @@ test('pending checks or authority revoked before merge never merges; resume avoi
     try {
       await assert.rejects(publishPortableNews({ ...result, ...m, repoPath: '/fixture/repo', publish: true, productionEnable: true, ownerEpoch: 'fixture-epoch' }));
       assert.equal(m.calls.some(c => c[2] === 'merge'), false);
+      assert.ok(m.scratch.every(p => !fs.existsSync(p)), 'failed publication scratch removed');
     } finally { m.scratch.forEach(p => fs.rmSync(p, { recursive: true, force: true })); }
   }
   const m = liveMock(result, { existing: true });
@@ -148,7 +155,7 @@ test('deployment mismatch/timeout/API errors never count as verified or trigger 
     assert.equal(await observeNewsDeployment({ mergeSha, proposed: result.proposed, run, fetchLive: async () => { throw new Error('unexpected'); } }), 'UNCONFIRMED');
   }
   const m = liveMock(result);
-  assert.equal(await observeNewsDeployment({ mergeSha, proposed: result.proposed, run: m.run, fetchLive: async () => { throw new Error('timeout'); } }), 'UNCONFIRMED');
+  assert.equal(await observeNewsDeployment({ mergeSha, proposed: result.proposed, run: m.run, fetchDeployment: m.fetchDeployment, fetchLive: async () => { throw new Error('timeout'); } }), 'UNCONFIRMED');
 });
 test('clean shadow CLI imports actual sync without env reads or remote/model writes', () => {
   const repo = fileURLToPath(new URL('../..', import.meta.url));

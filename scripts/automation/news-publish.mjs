@@ -10,10 +10,10 @@ import { mergeVerifiedNewsPr } from './pr-merge-guard.mjs';
 
 const REPO = 'opencard-ai/opencard';
 export const NEWS_REQUIRED_CHECKS = Object.freeze(['validate', 'gitleaks']);
-export async function publishPortableNews({ plan, proposed, repoPath, publish = false, productionEnable = false, ownerEpoch, run, fetchLive, reconcileExisting = false }) {
+export async function publishPortableNews({ plan, proposed, repoPath, publish = false, productionEnable = false, ownerEpoch, run, fetchLive, fetchDeployment, reconcileExisting = false }) {
   // These flags alone are insufficient: fresh remote authority and unchanged base required below.
-  if (publish !== true || productionEnable !== true || typeof ownerEpoch !== 'string' || !ownerEpoch) throw new Error('production publishing disabled');
-  if (typeof plan?.changed !== 'boolean' || plan?.mode !== 'shadow' || !/^[0-9a-f]{40}$/.test(plan.sourceSha ?? '') || !/^news:[0-9a-f]{40}:\d{4}-\d{2}-\d{2}:(morning|evening)$/.test(plan.slotKey ?? '') || plan.proposedSha256 !== jsonHash(proposed) || !Array.isArray(proposed?.items)) throw new Error('invalid shadow artifacts');
+  if (publish !== true || productionEnable !== true || typeof ownerEpoch !== 'string' || !ownerEpoch || typeof fetchDeployment !== 'function') throw new Error('production publishing disabled');
+  if (typeof plan?.changed !== 'boolean' || plan?.mode !== 'shadow' || !/^[0-9a-f]{40}$/.test(plan.sourceSha ?? '') || !/^news:\d{4}-\d{2}-\d{2}:(morning|evening)$/.test(plan.slotKey ?? '') || plan.proposedSha256 !== jsonHash(proposed) || !Array.isArray(proposed?.items)) throw new Error('invalid shadow artifacts');
   const command = async (cmd, args) => {
     const r = await run(cmd, args);
     if (r.code !== 0) throw new Error('portable news command failed; reconcile before retry');
@@ -33,11 +33,11 @@ export async function publishPortableNews({ plan, proposed, repoPath, publish = 
   if (!plan.changed) return { state: 'NO_CHANGE' };
   const origin = (await command('git', ['-C', repoPath, 'remote', 'get-url', 'origin'])).trim();
   if (!['https://github.com/opencard-ai/opencard.git', 'https://github.com/opencard-ai/opencard', 'git@github.com:opencard-ai/opencard.git'].includes(origin)) throw new Error('repository origin mismatch');
-  if (!plan.slotKey.startsWith(`news:${plan.sourceSha}:`) || !isDeepStrictEqual(plan.allowedFiles, ['data/news.json'])) throw new Error('slot/file identity mismatch');
+  if (!isDeepStrictEqual(plan.allowedFiles, ['data/news.json'])) throw new Error('slot/file identity mismatch');
   const branch = `bot/news-sync/${jsonHash(plan.slotKey).slice(0, 24)}`;
   const mergeAndObserve = async (number, head) => {
     const receipt = await mergeVerifiedNewsPr({ run, prNumber: number, expectedHead: head, write: true, authorizeWrite: authorize, requiredChecks: NEWS_REQUIRED_CHECKS });
-    return { ...receipt, branch, deployment: await observeNewsDeployment({ mergeSha: receipt.mergeSha, proposed, run, fetchLive }) };
+    return { ...receipt, branch, deployment: await observeNewsDeployment({ mergeSha: receipt.mergeSha, proposed, run, fetchLive, fetchDeployment }) };
   };
   const existing = await query(['pr', 'list', '--repo', REPO, '--head', branch, '--state', 'all', '--json', 'number,state,headRefOid,mergeCommit']);
   if (!Array.isArray(existing)) throw new Error('invalid existing PR query');
@@ -58,6 +58,7 @@ export async function publishPortableNews({ plan, proposed, repoPath, publish = 
   if ((await command('git', ['-C', repoPath, 'ls-remote', '--heads', 'origin', branch])).trim()) throw new Error('orphan branch requires reconciliation');
   const scratch = fs.mkdtempSync(path.join(os.tmpdir(), 'opencard-news-publish-'));
   const worktree = path.join(scratch, 'worktree');
+  try {
   await command('git', ['-C', repoPath, 'worktree', 'add', '--detach', worktree, plan.sourceSha]);
   fs.writeFileSync(path.join(worktree, 'data/news.json'), JSON.stringify(proposed, null, 2) + '\n');
   const git = args => command('git', ['-C', worktree, ...args]);
@@ -76,18 +77,36 @@ export async function publishPortableNews({ plan, proposed, repoPath, publish = 
   if (created.length !== 1) throw new Error('PR creation unconfirmed; reconcile before retry');
   // Pending checks fail closed, leaving PR for a future explicit reconcile action.
   // Not an automatic retry loop; no --auto and no fallback to direct-main push.
-  return mergeAndObserve(created[0].number, head);
+  return await mergeAndObserve(created[0].number, head);
+  } finally {
+    const removed = await run('git', ['-C', repoPath, 'worktree', 'remove', '--force', worktree]);
+    if (removed.code !== 0) throw new Error('temporary worktree cleanup failed; reconcile publication before retry');
+    fs.rmSync(scratch, { recursive: true, force: true });
+  }
 }
 
-/** Read-only evidence after merge; never triggers Vercel deploy or rollback. */
-export async function observeNewsDeployment({ mergeSha, proposed, run, fetchLive }) {
-  try {
-    const r = await run('gh', ['api', `repos/${REPO}/commits/${mergeSha}/status`]);
-    if (r.code !== 0) return 'UNCONFIRMED';
-    const status = JSON.parse(r.stdout);
-    if (status.sha !== mergeSha || !status.statuses?.some(s => s.context === 'Vercel' && s.state === 'success')) return 'UNCONFIRMED';
-    const response = await fetchLive('https://opencardai.com/en/api/daily-digest?lang=en');
-    const expected = { items: proposed.items.map(item => ({ ...item, title: item.title_en || item.title, summary: item.summary_en || '' })), fetched: proposed.fetched };
-    return response.status === 200 && isDeepStrictEqual(response.data, expected) ? 'VERIFIED' : 'UNCONFIRMED';
-  } catch { return 'UNCONFIRMED'; }
+/** Bounded read-only production evidence; UNCONFIRMED is not deployment success. */
+export async function observeNewsDeployment({ mergeSha, proposed, run, fetchLive, fetchDeployment,
+  now = () => Date.now(), sleep = ms => new Promise(resolve => setTimeout(resolve, ms)), timeoutMs = 120000, pollMs = 5000 }) {
+  if (!/^[0-9a-f]{40}$/.test(mergeSha ?? '') || typeof fetchDeployment !== 'function') return 'UNCONFIRMED';
+  const deadline = now() + timeoutMs;
+  // Attempt bound prevents injected/faulty clocks from leaving a watcher running.
+  for (let attempt = 0; attempt < Math.max(1, Math.ceil(timeoutMs / Math.max(1, pollMs))); attempt++) {
+    try {
+      const r = await run('gh', ['api', `repos/${REPO}/commits/${mergeSha}/status`]);
+      if (r.code !== 0) return 'UNCONFIRMED';
+      const status = JSON.parse(r.stdout);
+      if (status.sha !== mergeSha) return 'UNCONFIRMED';
+      const deployments = await fetchDeployment(mergeSha);
+      const ready = Array.isArray(deployments) && deployments.some(d => d.target === 'production' && d.name === 'opencard' && d.meta?.githubCommitSha === mergeSha && (d.readyState ?? d.state) === 'READY');
+      if (ready && status.statuses?.some(s => s.context === 'Vercel' && s.state === 'success')) {
+        const response = await fetchLive('https://opencardai.com/en/api/daily-digest?lang=en');
+        const expected = { items: proposed.items.map(item => ({ ...item, title: item.title_en || item.title, summary: item.summary_en || '' })), fetched: proposed.fetched };
+        if (response.status === 200 && isDeepStrictEqual(response.data, expected)) return 'VERIFIED';
+      }
+    } catch { return 'UNCONFIRMED'; }
+    if (now() >= deadline) break;
+    await sleep(Math.min(pollMs, Math.max(0, deadline - now())));
+  }
+  return 'UNCONFIRMED';
 }

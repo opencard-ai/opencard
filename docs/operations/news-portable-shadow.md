@@ -13,10 +13,14 @@ No live RSS/model/publishing run has been performed in this work.
   legacy CLI and new runner. Importing it has no env/file/network side effects.
 - Existing `node scripts/sync-news.mjs` remains a legacy direct entrypoint with
   its `.env.local` loading and atomic `data/news.json` replacement. This env loader
-  is **not** used by shadow. Its translation behavior is intentionally hardened:
-  malformed, incomplete, rejected, or timed-out model responses now abort and
-  preserve the prior feed instead of silently publishing untranslated fallback.
-  This behavior change must be reviewed before either stacked PR is merged.
+  is **not** used by shadow. Legacy translation compatibility is retained:
+  rejected/timed-out/invalid responses and missing translation rows fall back to
+  English titles/empty summaries, retryable on a later run. Partial successful
+  rows are retained; strict count/summary validation is opt-in for the new provider
+  path. As in the original code, an absent model key itself still aborts. Non-ENOENT
+  env-file read errors now fail explicitly. Merging this refactor later **will**
+  affect the Mac wrapper that fetches latest main and runs this entrypoint; it is
+  not an unwired change. Symlink entrypoints are covered by mocked-network tests.
 - `news-provider.mjs` supplies the actual MiniMax-M2.7 HTTP adapter with explicit
   credential/fetch/deadline injection. It consumes the whole JSON response within
   its deadline, validates each translation index/title/summary, and reports only
@@ -64,7 +68,8 @@ publishing step and no schedule. It uses Node 24 and full commit-SHA pins resolv
 from the official actions checkout/setup-node/upload-artifact v4 refs. No workflow
 was dispatched by this implementation. Synthetic output artifacts expire in 7 days.
 
-`slotKey = news:<source SHA>:<America/Los_Angeles date>:<morning|evening>`;
+`slotKey = news:<America/Los_Angeles date>:<morning|evening>`;
+`sourceSha` is separate metadata, so a main change cannot create a second slot.
 `runKey` adds the attempt ID. The morning and evening jobs do not dedup against
 one another. Timestamp, source SHA and fixture/provider inputs must match for a
 meaningful comparison. This is now actual shared-path validation, but it still
@@ -83,7 +88,8 @@ The writer requires all of:
 3. Current remote main SHA must still equal the plan source SHA. A stale plan
    fails closed and requires regeneration, not a silent rebase of old news.
 
-Once authorized, the real code checks deterministic slot branch/PR dedup and no
+A Vercel read-only credential is also required by the manual CLI before any writes;
+no value is provided, read, created or provisioned in this work. Once authorized, the real code checks deterministic slot branch/PR dedup (stable across source SHA changes) and no
 other open news PR, refuses an orphan remote branch, makes a clean temporary
 worktree, writes **only** `data/news.json`, checks one commit and author, pushes a
 new `bot/news-sync/<slot hash>` branch and creates a PR. No home paths,
@@ -108,12 +114,19 @@ reconciliation; they are never blindly replayed. This is not yet an unattended
 scheduler/queue. CI-trigger behavior of the eventual publishing identity still
 needs authorization and acceptance before replacing the Mac wrapper.
 
-After a confirmed merge, read-only observation checks the **actual merge SHA**'s
-Vercel status and the public `/en/api/daily-digest?lang=en` JSON against the
-proposal. It reports VERIFIED only on exact matching evidence. Pending statuses,
-HTTP/API failure, timeout, newer live content or mismatch return UNCONFIRMED.
-This code does not issue a Vercel deployment or an automatic rollback; an existing
-GitHub→Vercel integration may deploy a real merge. No real merge was performed.
+After a confirmed merge, bounded read-only polling checks the **actual merge SHA**'s
+GitHub Vercel status plus official GET `/v7/deployments` (project, production target,
+exact meta.githubCommitSha, READY), then the public
+`/en/api/daily-digest?lang=en` JSON against the proposal. Preview/other SHA/building
+records cannot count as success. Default polling is bounded to two minutes with
+request deadlines and an attempt cap. Pending status, API failure, timeout, newer
+live content or mismatch return UNCONFIRMED, and the CLI returns **nonzero** with
+an explicit reconciliation/no-rollback message. No deployment or automatic
+rollback is issued; existing GitHub→Vercel integration may deploy a real merge.
+Temporary generated worktrees are removed in finally (including failed runs);
+cleanup failure is itself nonzero and requires reconciliation before retry.
+Official API: https://vercel.com/docs/rest-api/deployments/list-deployments .
+No real merge or authenticated Vercel request was performed.
 
 Remote owner rechecks are not a distributed lock. An in-flight old Mac job can
 still write after a flag changes; use the drain/fencing/cutover protocol from
@@ -131,7 +144,7 @@ Mock publication writes only test temporary files; no GitHub/Vercel write or liv
 model call is made by tests.
 
 Still pending: real workflow dispatch acceptance (not approved here), eventual
-live provider credential provisioning (existing variable name MINIMAX_API_KEY;
+live provider/Vercel read credential provisioning (variable names MINIMAX_API_KEY and VERCEL_TOKEN;
 no values read/added), publishing identity and CI/protection behavior, owner/fencing
 protocol on both sides, autonomous bounded reconcile scheduling, shadow-vs-Mac
 live parity and approved cutover. News has no new private operational schema.

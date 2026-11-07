@@ -26,7 +26,7 @@ export async function preparePortableNews({ previous, sourceSha, now, slot, runI
   if (instant.toISOString() !== now.replace(/Z$/, '.000Z')) throw new Error('invalid calendar date');
   const day = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(instant);
   const result = await runNewsSync({ ...pipeline, previous, now: instant });
-  const slotKey = `news:${sourceSha}:${day}:${slot}`;
+  const slotKey = `news:${day}:${slot}`;
   return { plan: { version: 1, mode: 'shadow', sourceSha, now, slot, slotKey, runKey: `${slotKey}:${runId}`,
     changed: result.changed, previousSha256: jsonHash(previous), proposedSha256: jsonHash(result.output), itemCount: result.output.items.length,
     allowedFiles: ['data/news.json'], publishes: false }, proposed: result.output };

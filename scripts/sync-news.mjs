@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { fileURLToPath } from 'node:url';
 import { fetchRSS, prepareNews } from './news-sync-core.mjs';
 import { createMiniMaxTranslator } from './news-provider.mjs';
 
@@ -19,9 +19,9 @@ export async function runNewsSync({ previous, sources = NEWS_SOURCES, fetchSourc
 /** Legacy entrypoint only: retained for existing Mac invocation until cutover.
  * The portable shadow runner never calls this env-loading/file-writing function.
  */
-export async function legacySync({ cwd = process.cwd() } = {}) {
+export async function legacySync({ cwd = process.cwd(), fetchImpl = globalThis.fetch, apiKey, now = new Date(), fsImpl = fs } = {}) {
   try {
-    for (const line of fs.readFileSync(path.join(cwd, '.env.local'), 'utf8').split('\n')) {
+    for (const line of fsImpl.readFileSync(path.join(cwd, '.env.local'), 'utf8').split('\n')) {
       const trimmed = line.trim();
       if (!trimmed || trimmed.startsWith('#')) continue;
       const eq = trimmed.indexOf('=');
@@ -34,20 +34,20 @@ export async function legacySync({ cwd = process.cwd() } = {}) {
   const outputPath = path.join(cwd, 'data/news.json');
   let previous = null;
   try {
-    previous = JSON.parse(fs.readFileSync(outputPath, 'utf8'));
+    previous = JSON.parse(fsImpl.readFileSync(outputPath, 'utf8'));
     if (!Array.isArray(previous.items)) throw new Error('invalid previous feed');
   } catch (error) { if (error.code !== 'ENOENT') throw error; }
-  const result = await runNewsSync({ previous, translate: createMiniMaxTranslator({ apiKey: process.env.MINIMAX_API_KEY }) });
+  const result = await runNewsSync({ previous, translate: createMiniMaxTranslator({ apiKey: apiKey ?? process.env.MINIMAX_API_KEY, fetchImpl, failureMode: 'legacy-fallback' }), fetchImpl, now });
   if (!result.changed) { console.log('No news content changes; skipped write (no deployment needed).'); return; }
   const temporary = `${outputPath}.${process.pid}.tmp`;
   try {
-    fs.writeFileSync(temporary, JSON.stringify(result.output, null, 2));
-    fs.renameSync(temporary, outputPath);
-  } finally { if (fs.existsSync(temporary)) fs.unlinkSync(temporary); }
+    fsImpl.writeFileSync(temporary, JSON.stringify(result.output, null, 2));
+    fsImpl.renameSync(temporary, outputPath);
+  } finally { if (fsImpl.existsSync(temporary)) fsImpl.unlinkSync(temporary); }
   console.log(`Written ${result.output.items.length} news items to data/news.json`);
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+if (process.argv[1] && fs.realpathSync(fileURLToPath(import.meta.url)) === fs.realpathSync(process.argv[1])) {
   legacySync().catch(() => {
     console.error('News sync failed; existing feed preserved. Check RSS and translation configuration.');
     process.exitCode = 1;
