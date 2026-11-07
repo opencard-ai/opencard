@@ -34,3 +34,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Pending offer publisher migration (not enabled)
+
+The stacked offer PR changes the real publisher to default-off PR-only transport.
+Before any merge/promotion, review [the operator/migration blockers](docs/operations/offer-pr-transport.md):
+old Mac patches require coordinated replacement, and cloud persistent state/lease,
+source parity and production cutover acceptance are **not** complete. No schedule
+or Mac task has been switched by this code.
