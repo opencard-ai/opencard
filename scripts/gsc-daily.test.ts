@@ -6,13 +6,14 @@ import vm from 'node:vm';
 import ts from 'typescript';
 import * as cohorts from './gsc-cohorts';
 
-test('daily entry point builds cohorts, sitemap metrics and report without live credentials', async () => {
+async function runDaily(env: Record<string, string>) {
   const retained = 'https://opencardai.com/en/cards/chase-sapphire-reserve';
   const excluded = 'https://opencardai.com/es/cards/amex-blue-cash-everyday';
   const files = new Map<string, string>();
   const output: string[] = [];
   const errors: string[] = [];
-  const fakeProcess = { cwd: () => '/fixture', env: {}, exitCode: 0 };
+  const fakeProcess = { cwd: () => '/fixture', env, exitCode: 0 };
+  const reads: string[] = [];
   const row = (keys: string[]) => ({ keys, clicks: 0, impressions: 100, ctr: 0, position: 8 });
   const modules: Record<string, unknown> = {
     googleapis: { google: {
@@ -30,7 +31,7 @@ test('daily entry point builds cohorts, sitemap metrics and report without live 
       }),
     } },
     fs: {
-      readFileSync: (name: string) => name.endsWith('.gsc-token.json') ? '{}' : files.get(name),
+      readFileSync: (name: string) => (reads.push(name), name.endsWith('.gsc-token.json') ? '{}' : files.get(name)),
       existsSync: (name: string) => files.has(name),
       writeFileSync: (name: string, value: string) => files.set(name, value),
     },
@@ -54,6 +55,12 @@ test('daily entry point builds cohorts, sitemap metrics and report without live 
     },
     console: { log: (line: string) => output.push(line), error: (...args: unknown[]) => errors.push(args.join(' ')) },
   });
+  return { files, output, errors, fakeProcess, reads, retained };
+}
+
+test('daily entry point builds cohorts, sitemap metrics and report without live credentials', async () => {
+  const { files, output, errors, fakeProcess, reads, retained } = await runDaily({});
+  assert.ok(reads.includes('/fixture/.gsc-token.json'));
   assert.deepEqual(errors, []);
   assert.equal(fakeProcess.exitCode, 0);
   const [report] = JSON.parse(files.get('/fixture/.gsc-report-history.json')!);
@@ -63,4 +70,14 @@ test('daily entry point builds cohorts, sitemap metrics and report without live 
   assert.deepEqual(report.opportunities.map((item: any) => item.url), [retained]);
   assert.ok(files.has('/fixture/.gsc-cohort-baseline.json'));
   assert.match(output.join(''), /GSC Daily Report/);
+});
+
+test('portable state dir and token path overrides relocate state without touching cwd', async () => {
+  const { files, errors, fakeProcess, reads } = await runDaily({ OPENCARD_GSC_STATE_DIR: '/state', OPENCARD_GSC_TOKEN_PATH: '/secrets/.gsc-token.json' });
+  assert.deepEqual(errors, []);
+  assert.equal(fakeProcess.exitCode, 0);
+  assert.ok(reads.includes('/secrets/.gsc-token.json'));
+  assert.ok(files.has('/state/.gsc-report-history.json'));
+  assert.ok(files.has('/state/.gsc-cohort-baseline.json'));
+  assert.ok(![...files.keys()].some(k => k.startsWith('/fixture/')));
 });

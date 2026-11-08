@@ -14,8 +14,10 @@ import { createRequire } from 'node:module';
 const requireFromHere = createRequire(path.join(process.cwd(), 'package.json'));
 
 type Finding = { card_id: string; type: string; severity: 'high' | 'medium' | 'low'; field?: string; detail: string; popular?: boolean };
-const DIR = 'artifacts/audit';
-const LOCK = path.join(os.tmpdir(), 'opencard-audit-weekly.lock');
+// OPENCARD_AUDIT_DIR relocates report history/baseline (default unchanged: artifacts/audit).
+const DIR = process.env.OPENCARD_AUDIT_DIR ? process.env.OPENCARD_AUDIT_DIR.replace(/\/+$/, '') : 'artifacts/audit';
+// Fixture runs use a separate lock so they can never make a live run skip.
+const LOCK = path.join(os.tmpdir(), process.env.OPENCARD_AUDIT_URLCHECK_FIXTURE ? 'opencard-audit-weekly-fixture.lock' : 'opencard-audit-weekly.lock');
 const LOCK_STALE_MS = 3 * 60 * 60 * 1000;
 const MAX_CHARS = 1800;
 const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date());
@@ -53,6 +55,25 @@ function run(args: string[]): void {
   if (r.status !== 0) throw new Error(`${args.join(' ')} failed (exit ${r.status}): ${(r.stderr || r.stdout || '').slice(-800)}`);
 }
 class DataChangedError extends Error {}
+/** Test-only: OPENCARD_AUDIT_URLCHECK_FIXTURE replaces the live url-check with a committed fixture.
+ *  Accepted only for scripts/audit/fixtures/*.url-check.json and only with OPENCARD_AUDIT_DIR set,
+ *  so fixture results can never land in the default artifacts/audit history. Unset = live url-check. */
+function urlCheckFixture(): string | null {
+  const raw = process.env.OPENCARD_AUDIT_URLCHECK_FIXTURE;
+  if (!raw) return null;
+  if (!process.env.OPENCARD_AUDIT_DIR) throw new Error('url-check fixture requires OPENCARD_AUDIT_DIR (never the default artifacts dir)');
+  const allowed = fs.realpathSync(path.join(process.cwd(), 'scripts/audit/fixtures'));
+  const real = fs.realpathSync(raw);
+  if (path.dirname(real) !== allowed || !real.endsWith('.url-check.json')) throw new Error('url-check fixture must be scripts/audit/fixtures/*.url-check.json');
+  const doc = JSON.parse(fs.readFileSync(real, 'utf8'));
+  if (doc.fixture !== true || !Array.isArray(doc.results)) throw new Error('url-check fixture must declare fixture:true and results[]');
+  // Fixture output must go to an EXISTING directory whose real path is outside the repo checkout.
+  let outDir: string;
+  try { outDir = fs.realpathSync(process.env.OPENCARD_AUDIT_DIR); } catch { throw new Error('fixture run requires an existing OPENCARD_AUDIT_DIR'); }
+  const repo = fs.realpathSync(process.cwd());
+  if (outDir === repo || outDir.startsWith(repo + path.sep)) throw new Error('fixture run may not target a directory inside the repo (incl. artifacts/audit)');
+  return real;
+}
 const key = (f: Finding) => `${f.type}|${f.card_id}|${f.field || ''}|${f.detail.replace(/\s+/g, ' ').trim()}`;
 
 function main(): number {
@@ -66,11 +87,14 @@ function main(): number {
     // Write into a scratch dir and only promote to artifacts/ once the run is
     // known-good, so an aborted run never leaves half-updated reports behind.
     let cur: Finding[] | null = null;
+    let fixture: string | null = null;
     const before = sha('data/cards');
     const stage = fs.mkdtempSync(path.join(os.tmpdir(), 'opencard-audit-'));
     try {
       const urlOut = `${stage}/${today}-url-check.json`;
-      run(['scripts/audit/url-check.ts', '--official-only', '--out', urlOut]);
+      fixture = urlCheckFixture();
+      if (fixture) { fs.copyFileSync(fixture, urlOut); console.error(`audit:weekly: FIXTURE url-check ${path.basename(fixture)} (no network)`); }
+      else run(['scripts/audit/url-check.ts', '--official-only', '--out', urlOut]);
       run(['scripts/audit/db-audit.ts', '--today', today, '--urls', urlOut, '--out-dir', stage]);
       if (sha('data/cards') !== before) throw new DataChangedError('data/cards changed during audit; aborting without updating artifacts (rerun when no edits are in progress)');
       fs.mkdirSync(DIR, { recursive: true });
@@ -81,7 +105,8 @@ function main(): number {
         console.error(`audit:weekly: ${DIR}/${today}-db-audit.json already exists; not overwriting`);
       } else for (const f of [`${today}-url-check.json`, `${today}-db-audit.json`, `${today}-db-audit.md`]) {
         // Point references at the promoted location instead of the scratch dir.
-        fs.writeFileSync(path.join(DIR, f), fs.readFileSync(path.join(stage, f), 'utf8').split(`${stage}/`).join(`${DIR}/`));
+        // Fixture runs publish with O_EXCL ('wx'): never follow or replace an existing file/symlink.
+        fs.writeFileSync(path.join(DIR, f), fs.readFileSync(path.join(stage, f), 'utf8').split(`${stage}/`).join(`${DIR}/`), fixture ? { flag: 'wx' } : undefined);
       }
     } finally {
       fs.rmSync(stage, { recursive: true, force: true });

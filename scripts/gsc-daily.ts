@@ -13,9 +13,12 @@ import { getAllCards } from '../lib/cards';
 import { GUIDES } from '../lib/guides';
 import { Baseline, COHORT_LABELS, Cohort, IndexPolicy, classifyPolicy, compareCohorts, normalizeUrl, cardIdsFromRecords } from './gsc-cohorts';
 
-const TOKEN_PATH = path.join(process.cwd(), '.gsc-token.json');
-const REPORT_PATH = path.join(process.cwd(), '.gsc-report-history.json');
-const BASELINE_PATH = path.join(process.cwd(), '.gsc-cohort-baseline.json');
+// Portable state: defaults keep the original Mac behaviour (files in cwd).
+// OPENCARD_GSC_STATE_DIR relocates history/baseline; OPENCARD_GSC_TOKEN_PATH relocates the OAuth token file.
+const STATE_DIR = process.env.OPENCARD_GSC_STATE_DIR ? path.resolve(process.env.OPENCARD_GSC_STATE_DIR) : process.cwd();
+const TOKEN_PATH = process.env.OPENCARD_GSC_TOKEN_PATH ? path.resolve(process.env.OPENCARD_GSC_TOKEN_PATH) : path.join(process.cwd(), '.gsc-token.json');
+const REPORT_PATH = path.join(STATE_DIR, '.gsc-report-history.json');
+const BASELINE_PATH = path.join(STATE_DIR, '.gsc-cohort-baseline.json');
 const SITE_URL = 'https://opencardai.com';
 
 interface SearchMetric {
