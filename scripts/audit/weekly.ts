@@ -124,6 +124,8 @@ async function main(): Promise<number> {
       if (!process.env.OPENCARD_AUDIT_URLCHECK_FIXTURE) throw new Error('durable fixture store requires OPENCARD_AUDIT_URLCHECK_FIXTURE');
       urlCheckFixture();
       durableDir = durable.slice('fixture-file:'.length);
+      const fault = process.env.OPENCARD_AUDIT_FIXTURE_FAULT;
+      if (fault !== undefined && fault !== 'cas-after-commit') throw new Error('unsupported fixture fault');
       // Validate before running the audit or writing artifacts.
       createFileAuditStore(durableDir, `weekly_${process.pid}`);
     }
@@ -137,7 +139,7 @@ async function main(): Promise<number> {
     const cur = durableDir ? [] : audit();
     let durableFresh: Finding[] | undefined, previousDate = prevFile?.slice(0, 10);
     if (durableDir) {
-      const result = await runWithDurableBaseline(createFileAuditStore(durableDir, `weekly_${process.pid}`), today, async () => audit(), { docName: AUDIT_DOC });
+      const result = await runWithDurableBaseline(createFileAuditStore(durableDir, `weekly_${process.pid}`, 60000, { faultAfterCasCommit: process.env.OPENCARD_AUDIT_FIXTURE_FAULT === 'cas-after-commit' }), today, async () => audit(), { docName: AUDIT_DOC });
       const label = { BASELINE_CREATED: 'BASELINE_RECORDED', REPORT: 'CALLER_MUST_SEND', ALREADY_REPORTED: 'ALREADY_REPORTED', NO_REPLY: 'NO_REPLY' }[result.kind];
       console.log(`DURABLE:${label}`);
       if (result.kind !== 'REPORT') return 0;

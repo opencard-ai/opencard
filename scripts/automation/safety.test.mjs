@@ -99,5 +99,12 @@ test('manual cloud workflow is read-only, contains no schedule, secrets, or publ
   assert.match(workflow, /workflow_dispatch:/);
   assert.match(workflow, /contents: read/);
   assert.match(workflow, /persist-credentials: false/);
-  assert.doesNotMatch(workflow, /schedule:|pull_request_target|secrets\.|contents: write|pull-requests: write|sync-news\.mjs|gh pr|git push|vercel/);
+  // The news fixture part stays secret-free. The only secrets allowed are the four GSC read-only
+  // acceptance names, and only inside the separately gated ops-gsc-readonly job.
+  const cut = workflow.indexOf('\n  ops-gsc-readonly:');
+  const news = cut >= 0 ? workflow.slice(0, cut) : workflow;
+  const ops = cut >= 0 ? workflow.slice(cut) : '';
+  assert.doesNotMatch(news, /schedule:|pull_request_target|secrets\.|contents: write|pull-requests: write|sync-news\.mjs|gh pr|git push|vercel/);
+  assert.doesNotMatch(ops, /schedule:|pull_request_target|contents: write|pull-requests: write|sync-news\.mjs|gh pr|git push|vercel|upload-artifact/);
+  assert.deepEqual([...new Set(ops.match(/secrets\.[A-Z_]+/g) || [])].sort(), ops ? ['secrets.GSC_CLIENT_ID', 'secrets.GSC_CLIENT_SECRET', 'secrets.GSC_REDIRECT_URI', 'secrets.GSC_TOKEN_JSON'] : []);
 });

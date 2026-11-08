@@ -127,3 +127,20 @@ test('fixture/durable run refuses TMPDIR inside the repo before writing anything
     }
   } finally { fs.rmSync(inRepo, { recursive: true, force: true }); }
 });
+
+test('durable entrypoint: CAS committed but uncertain => exit 3, nothing delivered; next run ALREADY_REPORTED', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'audit-e2e-'));
+  const st = fs.mkdtempSync(path.join(os.tmpdir(), 'audit-state-'));
+  const env = { OPENCARD_AUDIT_DIR: dir, OPENCARD_AUDIT_URLCHECK_FIXTURE: fx('one-404.url-check.json'), OPENCARD_AUDIT_DURABLE: `fixture-file:${st}` };
+  const r = run({ ...env, OPENCARD_AUDIT_FIXTURE_FAULT: 'cas-after-commit' });
+  assert.equal(r.status, 3, r.stdout + r.stderr);
+  assert.match(r.stderr, /needs reconciliation/);
+  assert.doesNotMatch(r.stdout, /CALLER_MUST_SEND|官方來源網址失效/);
+  fs.rmSync(path.join(dir, `${today}-db-audit.json`)); fs.rmSync(path.join(dir, `${today}-db-audit.md`)); fs.rmSync(path.join(dir, `${today}-url-check.json`));
+  const st2 = JSON.parse(fs.readFileSync(path.join(st, 'audit-state.json'), 'utf8'));
+  st2.lease = null; fs.writeFileSync(path.join(st, 'audit-state.json'), JSON.stringify(st2)); // simulate lease expiry
+  const r2 = run(env);
+  assert.equal(r2.status, 0, r2.stderr);
+  assert.match(r2.stdout, /DURABLE:ALREADY_REPORTED/);
+  assert.equal(run({ ...env, OPENCARD_AUDIT_FIXTURE_FAULT: 'other' }).status, 1);
+});

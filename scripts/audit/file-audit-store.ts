@@ -4,7 +4,8 @@ import path from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { AUDIT_DOC, FakeBackend, createFakeAuditStore, type AuditStore } from './durable-baseline';
 
-export function createFileAuditStore(dir: string, runnerId: string, ttlMs = 60000): AuditStore {
+/** `faultAfterCasCommit` is a fixture-only fault: the CAS is persisted, then reported as uncertain. */
+export function createFileAuditStore(dir: string, runnerId: string, ttlMs = 60000, opts: { faultAfterCasCommit?: boolean } = {}): AuditStore {
   const real = fs.realpathSync(dir), repo = fs.realpathSync(process.cwd());
   if (!fs.statSync(real).isDirectory() || real === repo || real.startsWith(repo + path.sep)) throw new Error('fixture store requires an existing directory outside the repo');
   const file = path.join(real, 'audit-state.json'), lock = path.join(real, 'audit-state.lock');
@@ -56,6 +57,11 @@ export function createFileAuditStore(dir: string, runnerId: string, ttlMs = 6000
       fencing: () => store.lease.fencing(),
     },
     read<T>(name: string) { nameCheck(name); return operation(() => store.read<T>(name)); },
-    cas<T>(name: string, version: number, value: T) { nameCheck(name); return operation(() => store.cas(name, version, value)); },
+    async cas<T>(name: string, version: number, value: T) {
+      nameCheck(name);
+      const r = await operation(() => store.cas(name, version, value));
+      if (opts.faultAfterCasCommit) { lost = true; throw new Error('state transport uncertain; injected fixture fault after commit'); }
+      return r;
+    },
   };
 }
