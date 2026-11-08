@@ -94,11 +94,19 @@ test('CLI writes only private scratch, preserves production sentinels, uses no n
     assert.throws(() => execFileSync(process.execPath, [cli, '--out', cwd], { cwd, stdio: 'pipe' }));
   } finally { fs.rmSync(cwd, { recursive: true, force: true }); if (out) fs.rmSync(out, { recursive: true, force: true }); }
 });
-test('manual cloud workflow is read-only, contains no schedule, secrets, or publishing entrypoint', () => {
+test('manual fixture chain has no secrets; explicit sandbox SDK is separated and read-only', () => {
   const workflow = fs.readFileSync(new URL('../../.github/workflows/news-isolated-dry-run.yml', import.meta.url), 'utf8');
   assert.match(workflow, /workflow_dispatch:/);
   assert.match(workflow, /contents: read/);
   assert.match(workflow, /persist-credentials: false/);
   for (const action of ['checkout', 'setup-node', 'upload-artifact']) assert.match(workflow, new RegExp(`actions/${action}@[0-9a-f]{40}`));
-  assert.doesNotMatch(workflow, /schedule:|pull_request_target|secrets\.|contents: write|pull-requests: write|sync-news\.mjs|news-publish|--publish|production-enable|gh pr|git push|vercel/);
+  const parts = workflow.split('\n  sdk-sandbox:\n');assert.equal(parts.length,2);
+  const [fixture, sdk] = parts;
+  assert.doesNotMatch(fixture, /secrets\.|environment:/);
+  assert.doesNotMatch(workflow, /schedule:|pull_request_target|contents: write|pull-requests: write|id-token:|sync-news\.mjs|news-publish|--publish|production-enable|gh pr|git push|vercel/);
+  assert.match(fixture,/sdk_sandbox:[\s\S]*?type: boolean\n        default: false/);
+  assert.match(sdk,/inputs\.sdk_sandbox == true/);assert.match(sdk,/needs: fixture-dry-run/);
+  assert.match(sdk,/environment: opencard-migration-sandbox/);
+  assert.deepEqual([...sdk.matchAll(/secrets\.([A-Z_]+)/g)].map(m=>m[1]).sort(),['OPENCARD_SANDBOX_TOKEN','OPENCARD_SANDBOX_URL']);
+  assert.match(sdk,/--sdk --confirm-sandbox/);assert.match(sdk,/74ef02fa-e0fd-4f53-867d-36d4bb4f498f/);
 });

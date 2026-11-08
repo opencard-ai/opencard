@@ -8,6 +8,11 @@ on:
         type: choice
         options: [morning, evening]
         default: morning
+      sdk_sandbox:
+        description: Opt in to synthetic test-DB SDK job (requires protected sandbox environment)
+        required: false
+        type: boolean
+        default: false
       expected_sha:
         description: Exact reviewed branch commit (40 lowercase hex)
         required: true
@@ -52,6 +57,7 @@ jobs:
           env -i PATH="$PATH" HOME="$RUNNER_TEMP/offer-fixture-home" CI=true node --test scripts/automation/*.test.mjs | tee "$RUNNER_TEMP/offer-automation.log"
       - name: Offer local Git fixtures and news core tests (no service credentials)
         run: |
+          env -i PATH="$PATH" HOME="$RUNNER_TEMP/offer-fixture-home" CI=true node_modules/.bin/tsx --test scripts/offer-watch/sandbox-cloud.test.ts | tee "$RUNNER_TEMP/offer-cloud-policy.log"
           env -i PATH="$PATH" HOME="$RUNNER_TEMP/offer-fixture-home" CI=true npm run offer-watch:test | tee "$RUNNER_TEMP/offer-tests.log"
           env -i PATH="$PATH" HOME="$RUNNER_TEMP/offer-fixture-home" CI=true node --test scripts/news-sync-core.test.mjs | tee "$RUNNER_TEMP/offer-news.log"
           env -i PATH="$PATH" HOME="$RUNNER_TEMP/offer-fixture-home" CI=true python3 scripts/offer-watch/sandbox-launch.py --fixtures --out "$RUNNER_TEMP/offer-fixture-summary"
@@ -64,7 +70,7 @@ jobs:
           assert.equal(result.mode,'fixtures-mock-redis');assert.equal(result.databaseId,null);
           assert.equal(result.fixtureOnly,true);assert.equal(result.sourceFetches,2);assert.equal(result.mockPublicationSequences,1);
           assert.equal(result.freshLinkedWorktrees,2);assert.match(result.remotePublication,/ALWAYS MOCKED/);
-          const counts={};for(const [name,file,expected] of [['offer','offer-tests.log',95],['automation','offer-automation.log',26],['news','offer-news.log',9]]) {
+          const counts={};for(const [name,file,expected] of [['offer','offer-tests.log',95],['automation','offer-automation.log',26],['news','offer-news.log',9],['cloudPolicy','offer-cloud-policy.log',5]]) {
             const log=require('node:util').stripVTControlCharacters(fs.readFileSync(path.join(temp,file),'utf8'));const count=Number([...log.matchAll(/^[#ℹ] tests (\d+)$/gm)].at(-1)?.[1]);
             const pass=Number([...log.matchAll(/^[#ℹ] pass (\d+)$/gm)].at(-1)?.[1]);const fail=Number([...log.matchAll(/^[#ℹ] fail (\d+)$/gm)].at(-1)?.[1]);assert.equal(count,expected);assert.equal(pass,expected);assert.equal(fail,0);counts[name]={tests:count,pass,fail};
           }
@@ -98,5 +104,62 @@ jobs:
             ${{ runner.temp }}/offer-fixture-evidence/runner-metadata.json
             ${{ runner.temp }}/offer-fixture-evidence/test-counts.json
             ${{ runner.temp }}/offer-fixture-evidence/offer-result.json
+          retention-days: 7
+          if-no-files-found: error
+  sdk-sandbox:
+    needs: fixture-dry-run
+    if: github.repository == 'opencard-ai/opencard' && github.ref == 'refs/heads/bot/opencard-durable-runner-prep' && github.event_name == 'workflow_dispatch' && inputs.sdk_sandbox == true && needs.fixture-dry-run.result == 'success'
+    environment: opencard-migration-sandbox
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: bash
+    concurrency:
+      group: opencard-migration-sandbox-sdk
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.sha }}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+      - name: Verify exact sandbox checkout (before test secrets are injected)
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          node - <<'JS'
+          const cp=require('node:child_process'),assert=require('node:assert/strict');
+          assert.match(process.env.EXPECTED_SHA,/^[0-9a-f]{40}$/);assert.equal(process.env.GITHUB_SHA,process.env.EXPECTED_SHA);
+          assert.equal(process.env.GITHUB_REPOSITORY,'opencard-ai/opencard');assert.equal(process.env.GITHUB_REF,'refs/heads/bot/opencard-durable-runner-prep');
+          assert.equal(cp.execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),process.env.EXPECTED_SHA);
+          JS
+      - name: Install locked dependencies without scripts or service credentials
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Synthetic test-DB daily through fixed versioned SDK launcher
+        env:
+          OPENCARD_SANDBOX_DATABASE_ID: 74ef02fa-e0fd-4f53-867d-36d4bb4f498f
+          OPENCARD_SANDBOX_URL: ${{ secrets.OPENCARD_SANDBOX_URL }}
+          OPENCARD_SANDBOX_TOKEN: ${{ secrets.OPENCARD_SANDBOX_TOKEN }}
+        run: |
+          python3 scripts/offer-watch/sandbox-launch.py --sdk --confirm-sandbox --namespace "gh-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" --out "$RUNNER_TEMP/sdk-synthetic-summary"
+      - name: Validate safe SDK summary (no credentials in this step)
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+          const out=path.join(process.env.RUNNER_TEMP,'sdk-synthetic-summary');const value=JSON.parse(fs.readFileSync(path.join(out,'result.json'),'utf8'));
+          assert.deepEqual(Object.keys(value).sort(),['mode','fixtureOnly','databaseId','syntheticSlot','stages','sourceFetches','mockPublicationSequences','freshLinkedWorktrees','actualFixtureNpmChecks','remotePublication','actionsValidated'].sort());
+          assert.equal(value.mode,'official-sdk-http-sandbox');assert.equal(value.databaseId,'74ef02fa-e0fd-4f53-867d-36d4bb4f498f');assert.equal(value.fixtureOnly,true);
+          assert.equal(value.sourceFetches,2);assert.equal(value.mockPublicationSequences,1);assert.equal(value.freshLinkedWorktrees,2);assert.equal(value.remotePublication,'ALWAYS MOCKED; no real push/PR/merge/deploy');
+          fs.writeFileSync(path.join(out,'hosted-metadata.json'),JSON.stringify({checkoutSHA:process.env.GITHUB_SHA,runId:process.env.GITHUB_RUN_ID,node:process.version,runnerOS:process.env.RUNNER_OS,syntheticOnly:true,productionPublication:'MOCKED'},null,2),{mode:0o600,flag:'wx'});
+          JS
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: sdk-synthetic-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/sdk-synthetic-summary/result.json
+            ${{ runner.temp }}/sdk-synthetic-summary/hosted-metadata.json
           retention-days: 7
           if-no-files-found: error
