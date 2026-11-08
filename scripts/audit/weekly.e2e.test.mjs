@@ -144,3 +144,26 @@ test('durable entrypoint: CAS committed but uncertain => exit 3, nothing deliver
   assert.match(r2.stdout, /DURABLE:ALREADY_REPORTED/);
   assert.equal(run({ ...env, OPENCARD_AUDIT_FIXTURE_FAULT: 'other' }).status, 1);
 });
+
+test('sandbox-redis entrypoint: real SDK + real Lua over loopback; production/loopback guards', async t => {
+  const { spawn } = await import('node:child_process');
+  const runAsync = (env) => new Promise(res => { const c = spawn(process.execPath, [tsx, 'scripts/audit/weekly.ts'], { cwd: repo, env: { ...process.env, NODE_NO_WARNINGS: '1', ...env } }); let out = '', err = ''; c.stdout.on('data', d => out += d); c.stderr.on('data', d => err += d); c.on('close', status => res({ status, stdout: out, stderr: err })); });
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'audit-e2e-')); t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  const base = { OPENCARD_AUDIT_DIR: dir, OPENCARD_AUDIT_URLCHECK_FIXTURE: fx('all-ok.url-check.json') };
+  for (const env of [
+    { ...base, OPENCARD_AUDIT_DURABLE: 'sandbox-redis:production', OPENCARD_AUDIT_REDIS_URL: 'https://a.upstash.io', OPENCARD_AUDIT_REDIS_TOKEN: 'tok-12345678' },
+    { ...base, OPENCARD_AUDIT_DURABLE: 'sandbox-redis:e2e-12345678', OPENCARD_AUDIT_REDIS_URL: 'http://127.0.0.1:9', OPENCARD_AUDIT_REDIS_TOKEN: 'tok-12345678' },
+    { OPENCARD_AUDIT_DIR: dir, OPENCARD_AUDIT_DURABLE: 'sandbox-redis:e2e-12345678', OPENCARD_AUDIT_REDIS_ALLOW_LOOPBACK: '1', OPENCARD_AUDIT_REDIS_URL: 'http://127.0.0.1:9', OPENCARD_AUDIT_REDIS_TOKEN: 'tok-12345678' },
+  ]) { const r = await runAsync(env); assert.equal(r.status, 1, r.stderr); assert.doesNotMatch(r.stdout + r.stderr, /tok-12345678/); }
+  if (!process.env.FAKEREDIS_PYTHON) { t.skip('FAKEREDIS_PYTHON unset'); return; }
+  const { createFakeredisBridge } = await import('./fakeredis-bridge.mjs');
+  const { startFakeUpstash } = await import('./fake-upstash-server.mjs');
+  const b = createFakeredisBridge(); t.after(() => b.close());
+  const srv = await startFakeUpstash(b); t.after(() => srv.close());
+  const env = { ...base, OPENCARD_AUDIT_DURABLE: 'sandbox-redis:e2e-12345678', OPENCARD_AUDIT_REDIS_ALLOW_LOOPBACK: '1', OPENCARD_AUDIT_REDIS_URL: srv.url, OPENCARD_AUDIT_REDIS_TOKEN: srv.token };
+  const r1 = await runAsync(env); assert.equal(r1.status, 0, r1.stderr); assert.match(r1.stdout, /DURABLE:BASELINE_RECORDED/);
+  const r2 = await runAsync(env); assert.equal(r2.status, 0, r2.stderr); assert.match(r2.stdout, /DURABLE:ALREADY_REPORTED/);
+  assert.doesNotMatch(r1.stdout + r1.stderr + r2.stdout + r2.stderr, new RegExp(srv.token));
+  const keys = await b.request({ op: 'keys' });
+  assert.ok(keys.length > 0 && keys.every(k => k.startsWith('opencard:audit-state:{sandbox-e2e-12345678}:')));
+});

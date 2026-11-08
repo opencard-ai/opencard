@@ -61,7 +61,7 @@ test('metric-like or odd keys are never echoed', () => {
 test('workflow contract: manual-only, ops job has no artifacts, secrets only in final step', () => {
   const y = fs.readFileSync(new URL('../../.github/workflows/news-isolated-dry-run.yml', import.meta.url), 'utf8');
   assert.ok(!/^\s*schedule:/m.test(y) && !/pull_request|push:/.test(y));
-  const job = y.slice(y.indexOf('  ops-gsc-readonly:'));
+  const job = y.slice(y.indexOf('  ops-gsc-readonly:'), y.indexOf('  ops-agentmail-readonly:'));
   assert.ok(!job.includes('upload-artifact'));
   assert.match(job, /environment: ops-readonly-acceptance/);
   assert.match(job, /contents: read/);

@@ -11,6 +11,8 @@ import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { createRequire } from 'node:module';
 import { createFileAuditStore } from './file-audit-store';
+import { sandboxAuditStoreFromEnv } from './upstash-audit-transport';
+import type { AuditStore } from './durable-baseline';
 import { AUDIT_DOC, NeedsReconciliationError, runWithDurableBaseline } from './durable-baseline';
 
 const requireFromHere = createRequire(path.join(process.cwd(), 'package.json'));
@@ -119,7 +121,17 @@ async function main(): Promise<number> {
     if (process.env.OPENCARD_AUDIT_URLCHECK_FIXTURE) urlCheckFixture();
     const durable = process.env.OPENCARD_AUDIT_DURABLE;
     let durableDir: string | undefined;
-    if (durable !== undefined) {
+    let makeStore: (() => AuditStore) | undefined;
+    if (durable !== undefined && durable.startsWith('sandbox-redis:')) {
+      // Opt-in audit-only SANDBOX Redis (independent audit-state namespace). Production is never enabled here.
+      const loop = process.env.OPENCARD_AUDIT_REDIS_ALLOW_LOOPBACK;
+      if (loop !== undefined && (loop !== '1' || !process.env.OPENCARD_AUDIT_URLCHECK_FIXTURE)) throw new Error('loopback redis only allowed in fixture mode');
+      if (process.env.OPENCARD_AUDIT_FIXTURE_FAULT !== undefined) throw new Error('fixture fault not supported for sandbox-redis');
+      const opts = { allowLoopback: loop === '1' };
+      sandboxAuditStoreFromEnv(process.env, `weekly_${process.pid}`, opts); // validate config before lock/audit
+      makeStore = () => sandboxAuditStoreFromEnv(process.env, `weekly_${process.pid}`, opts);
+      durableDir = 'sandbox-redis';
+    } else if (durable !== undefined) {
       if (!durable.startsWith('fixture-file:')) throw new Error('unsupported durable store');
       if (!process.env.OPENCARD_AUDIT_URLCHECK_FIXTURE) throw new Error('durable fixture store requires OPENCARD_AUDIT_URLCHECK_FIXTURE');
       urlCheckFixture();
@@ -128,6 +140,8 @@ async function main(): Promise<number> {
       if (fault !== undefined && fault !== 'cas-after-commit') throw new Error('unsupported fixture fault');
       // Validate before running the audit or writing artifacts.
       createFileAuditStore(durableDir, `weekly_${process.pid}`);
+      const dir = durableDir;
+      makeStore = () => createFileAuditStore(dir, `weekly_${process.pid}`, 60000, { faultAfterCasCommit: process.env.OPENCARD_AUDIT_FIXTURE_FAULT === 'cas-after-commit' });
     }
     if (!acquireLock()) { console.error(`audit:weekly: another run holds ${LOCK}`); console.log(durableDir ? 'DURABLE:NO_REPLY' : 'NO_REPLY'); return 0; }
     locked = true;
@@ -139,7 +153,7 @@ async function main(): Promise<number> {
     const cur = durableDir ? [] : audit();
     let durableFresh: Finding[] | undefined, previousDate = prevFile?.slice(0, 10);
     if (durableDir) {
-      const result = await runWithDurableBaseline(createFileAuditStore(durableDir, `weekly_${process.pid}`, 60000, { faultAfterCasCommit: process.env.OPENCARD_AUDIT_FIXTURE_FAULT === 'cas-after-commit' }), today, async () => audit(), { docName: AUDIT_DOC });
+      const result = await runWithDurableBaseline(makeStore!(), today, async () => audit(), { docName: AUDIT_DOC });
       const label = { BASELINE_CREATED: 'BASELINE_RECORDED', REPORT: 'CALLER_MUST_SEND', ALREADY_REPORTED: 'ALREADY_REPORTED', NO_REPLY: 'NO_REPLY' }[result.kind];
       console.log(`DURABLE:${label}`);
       if (result.kind !== 'REPORT') return 0;
