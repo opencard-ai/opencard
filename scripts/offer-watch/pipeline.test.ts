@@ -250,7 +250,10 @@ const noForce = (calls: string[][]) => assert.ok(!calls.some(c => c.join(' ').in
   assert.deepEqual(expectedLiveStrings({ annual_fee: 95, welcome_offer: { bonus_points: 300, spending_requirement: 3000, time_period_months: 6, point_program: 'Statement Credit' } }),
     ['$300', 'Spend $3,000 within 6 months', '$95 Annual Fee']);
   assert.deepEqual(expectedLiveStrings({ annual_fee: 0, welcome_offer: { bonus_points: 200, spending_requirement: 500, time_period_months: 3, bonus_type: 'cash' } }),
-    ['$200', 'Spend $500 within 3 months', '$0 Annual Fee']);
+    ['$200', 'Spend $500 within 3 months', 'No Annual Fee']);
+  // $0 annual fee: card page shows "No Annual Fee" (chase-freedom-flex #55/#62 rollbacks).
+  assert.ok(!expectedLiveStrings({ annual_fee: 0, welcome_offer: {} }).includes('$0 Annual Fee'));
+  assert.deepEqual(expectedLiveStrings({ annual_fee: 0, welcome_offer: {} }), ['No Annual Fee']);
   assert.ok(pageText('Spend $<!-- -->12,000 within <!-- -->6<!-- --> months').includes('Spend $12,000 within 6 months'));
   assert.equal(parseVercelState('x ● Ready y'), 'ready'); assert.equal(parseVercelState('● Error'), 'error'); assert.equal(parseVercelState('● Building'), 'pending'); assert.equal(parseVercelState('No deployments found'), 'unknown');
   const msg = commitMessage(appliedCard);
