@@ -1,0 +1,87 @@
+{
+  "task": "OpenCard public-source parity browser check; read-only public pages only",
+  "checked_at": "Saturday, Nov 7, 2026, 6:59 PM Pacific (UTC-8)",
+  "method": "Browser-visible page text/accessibility; no sign-in, application, form submission, purchase, or account access. Values below are browser-verified observations only, not publisher-parser acceptance.",
+  "products": [
+    {
+      "card": "Chase Sapphire Reserve",
+      "requested_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+      "final_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+      "redirect": "No redirect observed",
+      "page_status": "browser-verified",
+      "visible_offer_quote": "Earn 100,000 points after you spend $6,000 in purchases in the first 3 months from account opening.",
+      "bonuspoints": "100,000 points",
+      "minspend": "$6,000 purchases",
+      "months": "3 months from account opening",
+      "annualfee": "$795",
+      "offerexpiry": "unknown (no welcome-offer end date seen)",
+      "targeted_or_as_high_as": "No targeted or 'as high as' label seen; page says offers may vary by application channel and may change over time.",
+      "evidence_notes": "Offer Details overlay further states new-cardmember bonus 100,000 points; same $6,000/first 3 months. Page notes bonus may be unavailable to prior cardholders/bonus recipients and says to apply through the method in the advertisement for this particular offer."
+    },
+    {
+      "card": "Citi / AAdvantage Executive World Legend Mastercard",
+      "requested_url": "https://www.citi.com/credit-cards/citi-aadvantage-executive-world-legend-mastercard",
+      "final_url": "https://www.citi.com/credit-cards/citi-aadvantage-executive-world-legend-mastercard",
+      "redirect": "No redirect observed",
+      "page_status": "partially rendered; bonus/spend/month/fee values were blank placeholders",
+      "visible_offer_quote": "Earn AAdvantage® bonus miles after $ in purchases in the first months2; Annual Fee1",
+      "bonuspoints": "unknown (blank on page)",
+      "minspend": "unknown (blank on page)",
+      "months": "unknown (blank on page)",
+      "annualfee": "unknown (blank on page)",
+      "offerexpiry": "unknown (not seen)",
+      "targeted_or_as_high_as": "Page says offer may not be available if leaving; no targeted or 'as high as' label seen.",
+      "evidence_notes": "Same card's official AA partner page below rendered the offer details. Citi direct page had blank numeric placeholders in hero and pricing details. A possible incomplete-render/block was reported."
+    },
+    {
+      "card": "Citi / AAdvantage Executive World Legend Mastercard (official AA partner comparison source)",
+      "requested_url": "https://creditcards.aa.com/credit-cards/citi-executive-card-american-airlines-direct/",
+      "final_url": "https://creditcards.aa.com/credit-cards/citi-executive-card-american-airlines-direct/",
+      "redirect": "No redirect observed",
+      "page_status": "browser-verified; fallback/comparison source for same card",
+      "visible_offer_quote": "Earn 80,000 AAdvantage® bonus miles. Bonus miles earned after $8,000 in purchases within the first 3 months of account opening. Annual fee $695.",
+      "bonuspoints": "80,000 AAdvantage miles",
+      "minspend": "$8,000 purchases",
+      "months": "3 months from account opening",
+      "annualfee": "$695",
+      "offerexpiry": "unknown (no fixed end date shown on this page)",
+      "targeted_or_as_high_as": "No targeted or 'as high as' label seen; page says offer may not be available if leaving and offers may vary by location/channel.",
+      "evidence_notes": "Official partner page identifies the exact same Citi Executive World Legend Mastercard and shows a new-cardmember offer. Its Offer availability text includes the 48-month bonus/conversion restriction."
+    },
+    {
+      "card": "Hilton Honors American Express Card (no-annual-fee variant only)",
+      "requested_url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors/",
+      "final_url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors/",
+      "redirect": "No redirect observed",
+      "page_status": "partially rendered; 'Welcome Offer & Key Details' section blank",
+      "visible_offer_quote": "No Annual Fee; Welcome Offer & Key Details heading present but its content was blank.",
+      "bonuspoints": "unknown (blank on Amex page)",
+      "minspend": "unknown (blank on Amex page)",
+      "months": "unknown (blank on Amex page)",
+      "annualfee": "No Annual Fee",
+      "offerexpiry": "unknown (blank on Amex page)",
+      "targeted_or_as_high_as": "No targeted or 'as high as' language visible in the blank offer section.",
+      "evidence_notes": "Page title/card heading identify the Hilton Honors American Express Card; no Surpass/Aspire data used here. A possible incomplete-render/block was reported."
+    },
+    {
+      "card": "Hilton Honors American Express Card (official Hilton partner comparison source; same no-annual-fee card)",
+      "requested_url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+      "final_url": "https://www.hilton.com/en/hilton-honors/credit-cards/",
+      "redirect": "No redirect observed",
+      "page_status": "browser-verified; same-card offer comparison source",
+      "visible_offer_quote": "Earn a Free Night Reward + 70,000 Hilton Honors Bonus Points after you spend $2,000 in eligible purchases on your Card in the first 6 months of Card Membership. Offer ends 1/13/27.",
+      "bonuspoints": "70,000 Hilton Honors Bonus Points + one Free Night Reward",
+      "minspend": "$2,000 eligible purchases",
+      "months": "first 6 months of Card Membership",
+      "annualfee": "No Annual Fee",
+      "offerexpiry": "1/13/27",
+      "targeted_or_as_high_as": "No targeted or 'as high as' label seen; labeled Limited Time Offer.",
+      "evidence_notes": "The matching Hilton Honors Card listing/card breakdown explicitly says No Annual Fee. Surpass and Aspire offers were not included in this product's values."
+    }
+  ],
+  "limitations": [
+    "Citi direct page's offer/pricing values were blank in the browser-rendered content; comparison uses the supplied official AA partner page for the same card.",
+    "Amex Hilton Honors standalone page had a blank welcome offer section; comparison uses the supplied Hilton partner page and specifically the Hilton Honors Card, not Surpass or Aspire.",
+    "These are contemporaneous visible-page observations, not a claim that any parser or publisher extraction has been accepted."
+  ]
+}

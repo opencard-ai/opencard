@@ -1,3 +1,4 @@
+import { assertPublicationBinding, publicationPlanDigest, type PublicationBinding } from './publication-binding';
 /** Publish logic with injectable side effects (git / vercel / fetch) so rollback paths are testable. Never force-pushes. */
 import type { HistoryEvent, LedgerUpdate } from './state';
 import type { OfferPrTransport } from './pr-transport';
@@ -6,6 +7,7 @@ import { formatWelcomeBonus } from '../../lib/welcome-offer';
 export interface RunResult { code: number; stdout: string; stderr: string }
 export interface PublishDeps {
   transport?: OfferPrTransport;
+  validation?: PublicationBinding;
   run(cmd: string, args: string[]): RunResult;
   fetchText(url: string): Promise<{ status: number; text: string }>;
   readCard(file: string): any;
@@ -57,6 +59,23 @@ export function parseVercelState(output: string): 'ready' | 'error' | 'pending' 
   return 'unknown';
 }
 
+/** Reconstruct rollback expectations without silently creating absent nested objects. */
+export function previousCardValue(card: unknown, changes: AppliedCard['changes']): unknown {
+  const previous = structuredClone(card);
+  for (const change of changes) {
+    const keys = change.field.split('.');
+    if (!keys.length || keys.some(k => !k || ['__proto__', 'constructor', 'prototype'].includes(k))) throw new Error('rollback expectation field invalid');
+    let obj = previous as Record<string, unknown>;
+    for (const key of keys.slice(0, -1)) {
+      if (!obj || typeof obj !== 'object' || !Object.hasOwn(obj, key) || !obj[key] || typeof obj[key] !== 'object' || Array.isArray(obj[key])) throw new Error('rollback expectation missing nested object');
+      obj = obj[key] as Record<string, unknown>;
+    }
+    if (!obj || typeof obj !== 'object') throw new Error('rollback expectation missing nested object');
+    obj[keys[keys.length - 1]] = change.old_value;
+  }
+  return previous;
+}
+
 export async function publish(applied: AppliedCard[], cfg: PublishConfig, deps: PublishDeps): Promise<PublishResult> {
   const events: HistoryEvent[] = [], ledger: LedgerUpdate[] = [];
   const commits: Array<{ card_id: string; sha: string }> = [];
@@ -67,24 +86,37 @@ export async function publish(applied: AppliedCard[], cfg: PublishConfig, deps: 
   try { await transport.authorize(); } catch { return result('precondition_failed', { detail: 'publication disabled or owner/enable/epoch unavailable' }); }
   const files = applied.map(a => a.file);
   if (new Set(files).size !== files.length || !files.every(f => /^data\/cards\/[A-Za-z0-9._-]+\.json$/.test(f))) return result('precondition_failed', { detail: 'cards-only file allowlist' });
+  if (!cfg.checks.length && !deps.validation) return result('precondition_failed', { detail: 'zero synchronous checks require bound external validation receipt' });
+  if (deps.validation) {
+    const expected = Object.keys(deps.validation.files).sort();
+    if (JSON.stringify(expected) !== JSON.stringify([...files].sort()) || expected.some(file => !/^[0-9a-f]{40}$/.test(deps.validation!.files[file])) || publicationPlanDigest(applied, deps.validation.files) !== deps.validation.planDigest) return result('precondition_failed', { detail: 'validated file set/plan changed' });
+    try { assertPublicationBinding(deps.run, deps.validation, { base: true }); } catch { return result('precondition_failed', { detail: 'validated worktree/base/bytes mismatch before reconcile' }); }
+  }
+  const git = (...args: string[]) => deps.run('git', args);
+  const branch = git('rev-parse', '--abbrev-ref', 'HEAD');
+  if (branch.code !== 0 || branch.stdout.trim() !== cfg.branch || cfg.branch !== 'main' || cfg.remote !== 'origin') return result('precondition_failed', { detail: 'expected main/origin isolated worktree' });
+  const status = git('status', '--porcelain');
+  const changed = status.stdout.split('\n').filter(Boolean).map(l => l.slice(3).trim()).sort();
+  // Reconciliation can MERGE an existing PR: reject unrelated inputs before entering it.
+  if (status.code !== 0 || changed.some(file => !files.includes(file))) return result('precondition_failed', { detail: 'unvalidated staged/untracked worktree input before reconcile' });
   let receipt = await transport.reconcile(files, applied.flatMap(a => a.changes.map(c => c.fingerprint)));
   if (receipt?.state === 'uncertain') return result('uncertain', { detail: receipt.detail });
-  const git = (...args: string[]) => deps.run('git', args);
   if (!receipt) {
-    const branch = git('rev-parse', '--abbrev-ref', 'HEAD');
-    if (branch.code !== 0 || branch.stdout.trim() !== cfg.branch || cfg.branch !== 'main' || cfg.remote !== 'origin') return result('precondition_failed', { detail: 'expected main/origin isolated worktree' });
-    const status = git('status', '--porcelain');
-    const changed = status.stdout.split('\n').filter(Boolean).map(l => l.slice(3).trim()).sort();
-    if (status.code !== 0 || JSON.stringify(changed) !== JSON.stringify([...files].sort())) return result('precondition_failed', { detail: 'worktree must contain exactly planned card changes; no staged/untracked state' });
+    if (JSON.stringify(changed) !== JSON.stringify([...files].sort())) return result('precondition_failed', { detail: 'worktree must contain exactly planned card changes; no staged/untracked state' });
     const start = git('rev-parse', 'HEAD');
     if (start.code !== 0 || !/^[0-9a-f]{40}$/.test(start.stdout.trim())) return result('precondition_failed', { detail: 'base SHA unavailable' });
+    if (deps.validation) { try { assertPublicationBinding(deps.run, deps.validation, { base: true }); } catch { return result('precondition_failed', { detail: 'validated worktree/base/bytes mismatch' }); } }
     for (const check of cfg.checks) {
       const res = deps.run(check[0], check.slice(1));
       if (res.code !== 0) return result('checks_failed', { detail: 'validation failed before external publication' });
     }
+    if (deps.validation) { try { assertPublicationBinding(deps.run, deps.validation, { base: true }); } catch { return result('precondition_failed', { detail: 'validation bytes changed before staging' }); } }
     for (const card of applied) {
       const { subject, body } = commitMessage(card);
-      if (git('add', '--', card.file).code !== 0 || git('-c', 'user.name=opencard-ai', '-c', 'user.email=opencard@opencardai.com', 'commit', '-m', subject, '-m', body, '--', card.file).code !== 0) return result('push_failed', { detail: 'local commit failed; no push fallback' });
+      if (git('add', '--', card.file).code !== 0) return result('push_failed', { detail: 'local stage failed' });
+      if (deps.validation) { try { assertPublicationBinding(deps.run, deps.validation, { index: [card.file] }); } catch { return result('precondition_failed', { detail: 'staged publication bytes mismatch' }); } }
+      if (git('-c', 'user.name=opencard-ai', '-c', 'user.email=opencard@opencardai.com', 'commit', '-m', subject, '-m', body, '--', card.file).code !== 0) return result('push_failed', { detail: 'local commit failed; no push fallback' });
+      if (deps.validation) { try { assertPublicationBinding(deps.run, deps.validation, { commit: 'HEAD', commitFiles: [card.file] }); } catch { return result('precondition_failed', { detail: 'committed publication bytes mismatch' }); } }
     }
     receipt = await transport.merge(start.stdout.trim(), files);
     if (receipt.state !== 'merged') return result('uncertain', { detail: receipt.detail });
@@ -109,13 +141,9 @@ export async function publish(applied: AppliedCard[], cfg: PublishConfig, deps: 
     for (let i = 0; i < attempts; i++) {
       let non200 = false;
       for (const card of applied) {
-        const value = structuredClone(deps.readCard(card.file));
-        if (previous) for (const change of card.changes) {
-          const keys = change.field.split('.');
-          let obj = value;
-          for (const key of keys.slice(0, -1)) obj = obj[key];
-          obj[keys[keys.length - 1]] = change.old_value;
-        }
+        let value;
+        try { value = previous ? previousCardValue(deps.readCard(card.file), card.changes) : deps.readCard(card.file); }
+        catch { return { ok: false, live, uncertain: true, detail: 'rollback expectation missing/invalid nested object; public restoration cannot be proven' }; }
         const expected = expectedLiveStrings(value);
         // Empty expectations cannot establish public-page agreement.
         if (!expected.length) return { ok: false, live, uncertain: true };
@@ -136,7 +164,7 @@ export async function publish(applied: AppliedCard[], cfg: PublishConfig, deps: 
     const restoredDeployment = await observe(reverted.mergeSha);
     if (restoredDeployment.state !== 'ready') return result('uncertain', { reverted: [reverted.mergeSha], detail: 'revert PR merged but production restoration UNCONFIRMED' });
     const restored = await verifyLive(true);
-    if (!restored.ok || !transport.record('rollback_verified', { rollbackSha: reverted.mergeSha })) return result('uncertain', { reverted: [reverted.mergeSha], detail: 'rollback page/state UNCONFIRMED' });
+    if (!restored.ok || !await transport.record('rollback_verified', { rollbackSha: reverted.mergeSha })) return result('uncertain', { reverted: [reverted.mergeSha], detail: restored.detail ?? 'rollback page/state UNCONFIRMED' });
     for (const card of applied) {
       events.push({ ts: deps.now().toISOString(), type: 'rolled_back', card_id: card.card_id, commit: mergeSha, revert_commits: [reverted.mergeSha], reasons: [reason] });
       card.changes.forEach(c => ledger.push({ key: c.fingerprint, card_id: card.card_id, field: c.field, value: c.new_value, status: 'rolled_back', commit: mergeSha }));
@@ -144,12 +172,12 @@ export async function publish(applied: AppliedCard[], cfg: PublishConfig, deps: 
     return result(reason, { reverted: [reverted.mergeSha], detail: 'revert PR merged and production restoration verified' });
   };
   const deployed = await observe(mergeSha);
-  if (!transport.record('deployment_observed', { deployment: deployed.state })) return result('uncertain', { detail: 'merge/deployment completed but journal failed; reconcile only' });
+  if (!await transport.record('deployment_observed', { deployment: deployed.state })) return result('uncertain', { detail: 'merge/deployment completed but journal failed; reconcile only' });
   if (deployed.state === 'error') return rollback('deploy_failed');
   if (deployed.state !== 'ready') return result('uncertain', { detail: 'production deployment UNCONFIRMED; no automatic rollback assumption' });
   const live = await verifyLive();
   if (!live.ok) return live.uncertain ? result('uncertain', { live: live.live, detail: 'public page unavailable/unconfirmed; no rollback assumption' }) : rollback('live_check_failed');
-  if (!transport.record('published')) return result('uncertain', { detail: 'publication verified but private state failed; reconcile, never republish blindly' });
+  if (!await transport.record('published')) return result('uncertain', { detail: 'publication verified but private state failed; reconcile, never republish blindly' });
   for (const card of applied) {
     events.push({ ts: deps.now().toISOString(), type: 'published', card_id: card.card_id, changes: card.changes.map(({ field, old_value, new_value }) => ({ field, old_value, new_value })), sources: card.sources, commit: mergeSha });
     card.changes.forEach(c => ledger.push({ key: c.fingerprint, card_id: card.card_id, field: c.field, value: c.new_value, status: 'published', commit: mergeSha, published_at: deps.now().toISOString() }));

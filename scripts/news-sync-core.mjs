@@ -2,14 +2,16 @@ import { decode } from 'html-entities';
 import { isDeepStrictEqual } from 'node:util';
 
 // A timeout covers headers AND body; fetch rejects truncated HTTP bodies.
-export async function fetchRSS(url, { fetchImpl = fetch, timeoutMs = 20000 } = {}) {
+export async function fetchRSS(url, { fetchImpl = fetch, timeoutMs = 20000, requireItems = false } = {}) {
   const response = await fetchImpl(url, {
     headers: { 'User-Agent': 'OpenCard/1.0', Accept: 'application/rss+xml, application/xml, text/xml' },
     signal: AbortSignal.timeout(timeoutMs),
     redirect: 'follow',
   });
   if (!response.ok) throw new Error(`RSS HTTP ${response.status}`);
-  return parseRSS(await response.text());
+  const items = parseRSS(await response.text());
+  if (requireItems && !items.length) throw new Error('RSS source contains no items; coverage not established');
+  return items;
 }
 
 export function parseRSS(xml) {

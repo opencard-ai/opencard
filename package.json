@@ -22,7 +22,7 @@
     "guides:check-locales": "tsx scripts/check-guide-locales.ts",
     "offer-watch:review": "tsx scripts/offer-watch/review.ts",
     "offer-watch:expiry": "tsx scripts/offer-watch/review.ts --expiry",
-    "offer-watch:test": "tsx scripts/offer-watch/gate.test.ts && tsx scripts/offer-watch/pipeline.test.ts && tsx --test scripts/offer-watch/pr-transport.test.ts",
+    "offer-watch:test": "tsx scripts/offer-watch/gate.test.ts && tsx scripts/offer-watch/pipeline.test.ts && tsx --test scripts/offer-watch/pr-transport.test.ts scripts/offer-watch/redis-state.test.ts scripts/offer-watch/state-snapshot.test.ts scripts/offer-watch/operational-state.test.ts scripts/offer-watch/daily-state.test.ts scripts/offer-watch/publication-worktree.test.ts scripts/offer-watch/sandbox-runner.test.ts scripts/offer-watch/browser-parity.test.ts",
     "offer-watch:archive-pending": "tsx scripts/offer-watch/archive-pending.ts",
     "adaptor:prune-runs": "tsx scripts/offer-watch/prune-adaptor-runs.ts",
     "offer-watch:collect": "tsx scripts/offer-watch/collect.ts",

@@ -1,5 +1,7 @@
 # Offer publisher: PR-only transport (not production cutover)
 
+PR59 is draft. Local-only uncommitted state candidate details: [durable state readiness](offer-durable-state-local.md). No promotion/cutover is authorized.
+
 **Promotion/merge blocker:** this changes the real `publish.ts` / `publish-core.ts`
 used by `daily.ts`, not a second contract or a fixture-only publisher. Current Mac
 jobs have NOT been edited. A later merge into main WILL affect wrappers fetching
@@ -88,8 +90,10 @@ from blindly publishing the same change. Intents are saved before external write
 receipts after them. A remote merged PR with failed local state persistence is
 reconciled by same run + trusted journal head + remote file list/receipt; it is
 not pushed again. An orphan branch/PR without sufficient trusted state fails
-closed for manual repair. Claims are deliberately not silently cleared after
-failure; repair/reuse the original run rather than inventing a fresh identity.
+closed for manual repair. The local state candidate delays claims until checks pass and releases only
+definitely pre-push claims under a valid lease. After any attempted/ambiguous
+external push, claims are not silently cleared; reconcile the original slot
+rather than inventing a fresh retry identity.
 
 The supplied private-file adapter uses exclusive fingerprint creation and atomic
 journal-file replacement on **one filesystem**. It is neither a cloud durable
