@@ -57,6 +57,7 @@ jobs:
           env -i PATH="$PATH" HOME="$RUNNER_TEMP/offer-fixture-home" CI=true node --test scripts/automation/*.test.mjs | tee "$RUNNER_TEMP/offer-automation.log"
       - name: Offer local Git fixtures and news core tests (no service credentials)
         run: |
+          env -i PATH="$PATH" HOME="$RUNNER_TEMP/offer-fixture-home" CI=true node_modules/.bin/tsx --test scripts/offer-watch/sandbox-fault.test.ts | tee "$RUNNER_TEMP/offer-fault.log"
           env -i PATH="$PATH" HOME="$RUNNER_TEMP/offer-fixture-home" CI=true node_modules/.bin/tsx --test scripts/offer-watch/sandbox-cloud.test.ts | tee "$RUNNER_TEMP/offer-cloud-policy.log"
           env -i PATH="$PATH" HOME="$RUNNER_TEMP/offer-fixture-home" CI=true npm run offer-watch:test | tee "$RUNNER_TEMP/offer-tests.log"
           env -i PATH="$PATH" HOME="$RUNNER_TEMP/offer-fixture-home" CI=true node --test scripts/news-sync-core.test.mjs | tee "$RUNNER_TEMP/offer-news.log"
@@ -70,7 +71,7 @@ jobs:
           assert.equal(result.mode,'fixtures-mock-redis');assert.equal(result.databaseId,null);
           assert.equal(result.fixtureOnly,true);assert.equal(result.sourceFetches,2);assert.equal(result.mockPublicationSequences,1);
           assert.equal(result.freshLinkedWorktrees,2);assert.match(result.remotePublication,/ALWAYS MOCKED/);
-          const counts={};for(const [name,file,expected] of [['offer','offer-tests.log',95],['automation','offer-automation.log',26],['news','offer-news.log',9],['cloudPolicy','offer-cloud-policy.log',5]]) {
+          const counts={};for(const [name,file,expected] of [['offer','offer-tests.log',95],['automation','offer-automation.log',26],['news','offer-news.log',9],['cloudPolicy','offer-cloud-policy.log',5],['fault','offer-fault.log',7]]) {
             const log=require('node:util').stripVTControlCharacters(fs.readFileSync(path.join(temp,file),'utf8'));const count=Number([...log.matchAll(/^[#ℹ] tests (\d+)$/gm)].at(-1)?.[1]);
             const pass=Number([...log.matchAll(/^[#ℹ] pass (\d+)$/gm)].at(-1)?.[1]);const fail=Number([...log.matchAll(/^[#ℹ] fail (\d+)$/gm)].at(-1)?.[1]);assert.equal(count,expected);assert.equal(pass,expected);assert.equal(fail,0);counts[name]={tests:count,pass,fail};
           }
@@ -145,6 +146,7 @@ jobs:
           OPENCARD_SANDBOX_TOKEN: ${{ secrets.OPENCARD_SANDBOX_TOKEN }}
         run: |
           python3 scripts/offer-watch/sandbox-launch.py --sdk --confirm-sandbox --namespace "gh-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" --out "$RUNNER_TEMP/sdk-synthetic-summary"
+          python3 scripts/offer-watch/sandbox-launch.py --fault-scenarios --sdk --confirm-sandbox --namespace "gh-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-fault" --out "$RUNNER_TEMP/sdk-fault-summary"
       - name: Validate safe SDK summary (no credentials in this step)
         run: |
           node - <<'JS'
@@ -153,6 +155,13 @@ jobs:
           assert.deepEqual(Object.keys(value).sort(),['mode','fixtureOnly','databaseId','syntheticSlot','stages','sourceFetches','mockPublicationSequences','freshLinkedWorktrees','actualFixtureNpmChecks','remotePublication','actionsValidated'].sort());
           assert.equal(value.mode,'official-sdk-http-sandbox');assert.equal(value.databaseId,'74ef02fa-e0fd-4f53-867d-36d4bb4f498f');assert.equal(value.fixtureOnly,true);
           assert.equal(value.sourceFetches,2);assert.equal(value.mockPublicationSequences,1);assert.equal(value.freshLinkedWorktrees,2);assert.equal(value.remotePublication,'ALWAYS MOCKED; no real push/PR/merge/deploy');
+          const fault=JSON.parse(fs.readFileSync(path.join(process.env.RUNNER_TEMP,'sdk-fault-summary/result.json'),'utf8'));
+          assert.deepEqual(Object.keys(fault).sort(),['schema','mode','syntheticOnly','remotePublication','cas','lease','restore','claim'].sort());
+          assert.equal(fault.schema,1);assert.equal(fault.mode,'official-sdk-http-sandbox');assert.equal(fault.syntheticOnly,true);assert.equal(fault.remotePublication,'ALWAYS MOCKED');
+          assert.deepEqual(fault.cas,{raceWinners:1,raceRejected:1,staleRejected:true,version:1});
+          assert.deepEqual(fault.lease,{childStarted:true,expiryInjected:true,renewRejected:true,leaseCanceledBeforeTimeout:true,childKilled:true,publicationWrites:0,successorFenceIncreased:true,oldOwnerWriteRejected:true});
+          assert.deepEqual(fault.restore,{tamperRejectedBeforeTransport:true,interruptedAfterAck:true,pendingHidden:true,newFence:true,resumed:true,repeatIdempotent:true,journalExact:true,claimsPreserved:true,independentCopyExact:true});
+          assert.equal(fault.claim,'Injected post-ack stop/new session, NOT OS crash/failover or production DR');
           fs.writeFileSync(path.join(out,'hosted-metadata.json'),JSON.stringify({checkoutSHA:process.env.GITHUB_SHA,runId:process.env.GITHUB_RUN_ID,node:process.version,runnerOS:process.env.RUNNER_OS,syntheticOnly:true,productionPublication:'MOCKED'},null,2),{mode:0o600,flag:'wx'});
           JS
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
@@ -161,5 +170,6 @@ jobs:
           path: |
             ${{ runner.temp }}/sdk-synthetic-summary/result.json
             ${{ runner.temp }}/sdk-synthetic-summary/hosted-metadata.json
+            ${{ runner.temp }}/sdk-fault-summary/result.json
           retention-days: 7
           if-no-files-found: error

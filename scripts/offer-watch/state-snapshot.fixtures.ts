@@ -1,0 +1,3 @@
+import { emptyLedger } from './gate';
+import type { SandboxBundle } from './state-snapshot';
+export const syntheticSnapshotBundle = (): SandboxBundle => ({ schema: 1, fixtureOnly: true, fixtureId: 'synthetic-fixture', ledger: emptyLedger(), history: [{ ts: '2026-11-06T00:00:00Z', type: 'published', card_id: 'fixture-card', commit: 'c'.repeat(40) }], daily: { updated: '2026-11-06T00:00:00Z', fetch_failures: { fixture: ['synthetic_failure'] } }, journals: [{ version: 1, runId: 'offer-2026-11-06-morning', phase: 'merged', files: ['data/cards/fixture-card.json'], fingerprints: ['fixture-fp'], headSha: 'b'.repeat(40), mergeSha: 'c'.repeat(40), rollbackAttempted: false }], claims: { 'fixture-fp': 'offer-2026-11-06-morning' } });

@@ -4,11 +4,10 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { randomBytes } from 'node:crypto';
-import { emptyLedger } from './gate';
-import { exportSnapshot, importSnapshot, validateBundle, readSandboxFixtures, restoreSnapshotToSandbox, snapshotDocuments, writePrivateSnapshot, type SandboxBundle } from './state-snapshot';
+import { exportSnapshot, importSnapshot, validateBundle, readSandboxFixtures, restoreSnapshotToSandbox, snapshotDocuments, writePrivateSnapshot } from './state-snapshot';
 import { createRedisOfferState } from './redis-state';
 import { mockRedis } from './redis-state.fixtures';
-const bundle = (): SandboxBundle => ({ schema: 1, fixtureOnly: true, fixtureId: 'synthetic-fixture', ledger: emptyLedger(), history: [{ ts: '2026-11-06T00:00:00Z', type: 'published', card_id: 'fixture-card', commit: 'c'.repeat(40) }], daily: { updated: '2026-11-06T00:00:00Z', fetch_failures: { fixture: ['synthetic_failure'] } }, journals: [{ version: 1, runId: 'offer-2026-11-06-morning', phase: 'merged', files: ['data/cards/fixture-card.json'], fingerprints: ['fixture-fp'], headSha: 'b'.repeat(40), mergeSha: 'c'.repeat(40), rollbackAttempted: false }], claims: { 'fixture-fp': 'offer-2026-11-06-morning' } });
+import { syntheticSnapshotBundle as bundle } from './state-snapshot.fixtures';
 const PREFIX = 'opencard:offer-state:{sandbox-restored01}:';
 const session = (db: ReturnType<typeof mockRedis>, runnerId = 'restore-runner') => createRedisOfferState({ enabled: true, prefix: PREFIX, transport: db.transport, ttlMs: 1000, runnerId });
 test('encrypted offline snapshot roundtrip, authenticated digest, no plaintext or key leakage', () => {

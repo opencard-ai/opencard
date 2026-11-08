@@ -10,7 +10,7 @@ import { createRedisOfferState } from './redis-state';
 import { mockRedis } from './redis-state.fixtures';
 import { emptyLedger, type CardRecord } from './gate';
 const FILE = 'data/cards/fixture-card.json', NOW = Date.parse('2026-11-06T20:00:00Z');
-export function createAcceptanceFixture(fixtureOptions: { prettyMulti?: boolean; checker?: boolean; stateFactory?: (runnerId: string) => ReturnType<typeof createRedisOfferState> } = {}) {
+export function createAcceptanceFixture(fixtureOptions: { prettyMulti?: boolean; checker?: boolean; faultWait?: boolean; stateFactory?: (runnerId: string) => ReturnType<typeof createRedisOfferState> } = {}) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'offer-real-git-')), db = mockRedis();
   const home = path.join(root, 'home'); fs.mkdirSync(home, { mode: 0o700 });
   const env = { PATH: process.env.PATH, HOME: home, GIT_CONFIG_NOSYSTEM: '1', GIT_CONFIG_GLOBAL: '/dev/null', GIT_AUTHOR_DATE: '2026-11-06T00:00:00Z', GIT_COMMITTER_DATE: '2026-11-06T00:00:00Z' };
@@ -35,7 +35,7 @@ export function createAcceptanceFixture(fixtureOptions: { prettyMulti?: boolean;
     fs.writeFileSync(path.join(repo, '.gitignore'), 'ignored-artifact/\n.next/\n');
     if (fixtureOptions.checker) {
       fs.writeFileSync(path.join(repo, 'package.json'), JSON.stringify({ private: true, scripts: { validate: 'node check-fixture.cjs', build: 'node check-fixture.cjs' } }));
-      fs.writeFileSync(path.join(repo, 'check-fixture.cjs'), `const fs = require('node:fs'), path = require('node:path'); fs.mkdirSync(path.join(process.env.HOME, '.npm', '_logs'), { recursive: true }); fs.writeFileSync(path.join(process.env.HOME, '.npm', '_logs', 'synthetic.log'), 'fixture'); fs.writeFileSync(path.join(process.cwd(), '..', 'checker-receipt.json'), JSON.stringify({ home: process.env.HOME, cache: process.env.npm_config_cache, temp: process.env.TMPDIR }));`);
+      fs.writeFileSync(path.join(repo, 'check-fixture.cjs'), `const fs = require('node:fs'), path = require('node:path'); fs.mkdirSync(path.join(process.env.HOME, '.npm', '_logs'), { recursive: true }); fs.writeFileSync(path.join(process.env.HOME, '.npm', '_logs', 'synthetic.log'), 'fixture'); fs.writeFileSync(path.join(process.cwd(), '..', 'checker-receipt.json'), JSON.stringify({ home: process.env.HOME, cache: process.env.npm_config_cache, temp: process.env.TMPDIR }));${fixtureOptions.faultWait ? `process.on('SIGTERM',()=>{});fs.writeFileSync(path.join(process.cwd(),'..','fault-child.pid'),String(process.pid));setInterval(()=>{},100);` : ''}`);
     }
     must(['add', '.']); must(['commit', '-m', 'Synthetic baseline']); const thisBase = must(['rev-parse', 'HEAD']); if (base) assert.equal(thisBase, base); else { base = thisBase; remoteMain = base; }
     must(['branch', '-m', 'fixture-base']);
