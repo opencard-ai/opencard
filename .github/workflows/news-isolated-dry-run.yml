@@ -8,33 +8,95 @@ on:
         type: choice
         options: [morning, evening]
         default: morning
+      expected_sha:
+        description: Exact reviewed branch commit (40 lowercase hex)
+        required: true
+        type: string
 permissions:
   contents: read
 jobs:
   fixture-dry-run:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    defaults:
+      run:
+        shell: bash
+    timeout-minutes: 15
+    if: github.repository == 'opencard-ai/opencard' && github.ref == 'refs/heads/bot/opencard-durable-runner-prep' && github.event_name == 'workflow_dispatch'
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           persist-credentials: false
+          ref: ${{ github.sha }}
+      - name: Verify exact reviewed checkout and fixture boundary
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),cp=require('node:child_process'),assert=require('node:assert/strict');
+          assert.equal(process.env.GITHUB_REPOSITORY,'opencard-ai/opencard');
+          assert.equal(process.env.GITHUB_REF,'refs/heads/bot/opencard-durable-runner-prep');
+          assert.equal(process.env.GITHUB_EVENT_NAME,'workflow_dispatch');
+          assert.match(process.env.EXPECTED_SHA,/^[0-9a-f]{40}$/);
+          assert.equal(process.env.GITHUB_SHA,process.env.EXPECTED_SHA);
+          assert.equal(cp.execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),process.env.EXPECTED_SHA);
+          fs.mkdirSync(process.env.RUNNER_TEMP+'/offer-fixture-evidence',{mode:0o700});
+          fs.mkdirSync(process.env.RUNNER_TEMP+'/offer-fixture-home',{mode:0o700});
+          JS
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '24'
       - name: Install locked dependencies without lifecycle scripts
-        run: npm ci --ignore-scripts --no-audit --no-fund
+        run: npm ci --ignore-scripts --no-audit --no-fund | tee "$RUNNER_TEMP/offer-npm-ci.log"
       - name: Test safety contracts
-        run: node --test scripts/automation/*.test.mjs
+        run: |
+          env -i PATH="$PATH" HOME="$RUNNER_TEMP/offer-fixture-home" CI=true node --test scripts/automation/*.test.mjs | tee "$RUNNER_TEMP/offer-automation.log"
+      - name: Offer local Git fixtures and news core tests (no service credentials)
+        run: |
+          env -i PATH="$PATH" HOME="$RUNNER_TEMP/offer-fixture-home" CI=true npm run offer-watch:test | tee "$RUNNER_TEMP/offer-tests.log"
+          env -i PATH="$PATH" HOME="$RUNNER_TEMP/offer-fixture-home" CI=true node --test scripts/news-sync-core.test.mjs | tee "$RUNNER_TEMP/offer-news.log"
+          env -i PATH="$PATH" HOME="$RUNNER_TEMP/offer-fixture-home" CI=true python3 scripts/offer-watch/sandbox-launch.py --fixtures --out "$RUNNER_TEMP/offer-fixture-summary"
+      - name: Validate and collect allowlisted synthetic evidence
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),cp=require('node:child_process'),assert=require('node:assert/strict'),path=require('node:path');
+          const temp=process.env.RUNNER_TEMP,out=path.join(temp,'offer-fixture-evidence');
+          const result=JSON.parse(fs.readFileSync(path.join(temp,'offer-fixture-summary/result.json'),'utf8'));
+          assert.equal(result.mode,'fixtures-mock-redis');assert.equal(result.databaseId,null);
+          assert.equal(result.fixtureOnly,true);assert.equal(result.sourceFetches,2);assert.equal(result.mockPublicationSequences,1);
+          assert.equal(result.freshLinkedWorktrees,2);assert.match(result.remotePublication,/ALWAYS MOCKED/);
+          const counts={};for(const [name,file,expected] of [['offer','offer-tests.log',95],['automation','offer-automation.log',26],['news','offer-news.log',9]]) {
+            const log=fs.readFileSync(path.join(temp,file),'utf8');const count=Number([...log.matchAll(/^# tests (\d+)$/gm)].at(-1)?.[1]);
+            const pass=Number([...log.matchAll(/^# pass (\d+)$/gm)].at(-1)?.[1]);assert.equal(count,expected);assert.equal(pass,expected);counts[name]={tests:count,pass};
+          }
+          assert.match(process.version,/^v24\./);
+          assert.equal(cp.execFileSync('git',['status','--porcelain','--untracked-files=all'],{encoding:'utf8'}).trim(),'');
+          const lock=JSON.parse(fs.readFileSync('package-lock.json','utf8'));
+          const npmLog=fs.readFileSync(path.join(temp,'offer-npm-ci.log'),'utf8');
+          const metadata={repository:process.env.GITHUB_REPOSITORY,ref:process.env.GITHUB_REF,checkoutSHA:process.env.GITHUB_SHA,runId:process.env.GITHUB_RUN_ID,runAttempt:process.env.GITHUB_RUN_ATTEMPT,runnerOS:process.env.RUNNER_OS,imageOS:process.env.ImageOS,imageVersion:process.env.ImageVersion,node:process.version,npm:cp.execFileSync('npm',['--version'],{encoding:'utf8'}).trim(),lockedPackageEntries:Object.keys(lock.packages).length,installedPackageCount:Number(npmLog.match(/added (\d+) packages/)?.[1]),workflowFixtureAcceptance:true,liveSDK:false,remotePublication:'MOCKED',productionWrites:0};
+          assert.ok(metadata.installedPackageCount>0);
+          for(const [file,value] of [['runner-metadata.json',metadata],['test-counts.json',counts],['offer-result.json',result]]) fs.writeFileSync(path.join(out,file),JSON.stringify(value,null,2)+'\n',{mode:0o600,flag:'wx'});
+          JS
       - name: Run fixture-only comparison
         id: comparison
         env:
           COMPARISON_SLOT: ${{ inputs.slot }}
         run: |
-          out=$(node scripts/automation/news-shadow.mjs --repo "$GITHUB_WORKSPACE" --sha "$GITHUB_SHA" --now 2026-11-06T20:00:00Z --slot "$COMPARISON_SLOT" --run-id "$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" --source fixture --provider fixture)
+          out=$(env -i PATH="$PATH" HOME="$RUNNER_TEMP/offer-fixture-home" CI=true node scripts/automation/news-shadow.mjs --repo "$GITHUB_WORKSPACE" --sha "$GITHUB_SHA" --now 2026-11-06T20:00:00Z --slot "$COMPARISON_SLOT" --run-id "$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" --source fixture --provider fixture)
           printf 'path=%s\n' "$out" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: news-fixture-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ steps.comparison.outputs.path }}
+          path: |
+            ${{ steps.comparison.outputs.path }}/plan.json
+            ${{ steps.comparison.outputs.path }}/proposed.json
+          retention-days: 7
+          if-no-files-found: error
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: offer-fixture-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/offer-fixture-evidence/runner-metadata.json
+            ${{ runner.temp }}/offer-fixture-evidence/test-counts.json
+            ${{ runner.temp }}/offer-fixture-evidence/offer-result.json
           retention-days: 7
           if-no-files-found: error
