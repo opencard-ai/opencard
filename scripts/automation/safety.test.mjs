@@ -100,8 +100,10 @@ test('manual fixture chain has no secrets; explicit sandbox SDK is separated and
   assert.match(workflow, /contents: read/);
   assert.match(workflow, /persist-credentials: false/);
   for (const action of ['checkout', 'setup-node', 'upload-artifact']) assert.match(workflow, new RegExp(`actions/${action}@[0-9a-f]{40}`));
-  const parts = workflow.split('\n  sdk-sandbox:\n');assert.equal(parts.length,2);
-  const [fixture, sdk] = parts;
+  const text = workflow;
+  const fixture = text.match(/^[\s\S]*?\n  fixture-dry-run:\n[\s\S]*?(?=^  [a-z][a-z0-9-]*:\n|(?![\s\S]))/m)?.[0];
+  const sdk = text.match(/^  sdk-sandbox:\n[\s\S]*?(?=^  [a-z][a-z0-9-]*:\n|(?![\s\S]))/m)?.[0];
+  assert.ok(fixture);assert.ok(sdk);
   assert.doesNotMatch(fixture, /secrets\.|environment:/);
   assert.doesNotMatch(workflow, /schedule:|pull_request_target|contents: write|pull-requests: write|id-token:|sync-news\.mjs|news-publish|--publish|production-enable|gh pr|git push|vercel/);
   assert.match(fixture,/sdk_sandbox:[\s\S]*?type: boolean\n        default: false/);

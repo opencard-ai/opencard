@@ -7,7 +7,10 @@ import { spawnSync } from 'node:child_process';
 import { sandboxConfiguration, TEST_DATABASE_ID } from './sandbox-runner';
 const workflow=()=>fs.readFileSync('.github/workflows/news-isolated-dry-run.yml','utf8');
 test('workflow defaults SDK off and isolates test secrets from fixture chain',()=>{
- const [fixture,sdk]=workflow().split('\n  sdk-sandbox:\n');assert.ok(sdk);
+ const text = workflow();
+ const fixture = text.match(/^[\s\S]*?\n  fixture-dry-run:\n[\s\S]*?(?=^  [a-z][a-z0-9-]*:\n|(?![\s\S]))/m)?.[0];
+ const sdk = text.match(/^  sdk-sandbox:\n[\s\S]*?(?=^  [a-z][a-z0-9-]*:\n|(?![\s\S]))/m)?.[0];
+ assert.ok(fixture);assert.ok(sdk);
  assert.match(fixture,/sdk_sandbox:[\s\S]*?type: boolean\n        default: false/);
  assert.doesNotMatch(fixture,/secrets\.|environment:/);
  assert.match(sdk,/inputs\.sdk_sandbox == true/);assert.match(sdk,/needs: fixture-dry-run/);

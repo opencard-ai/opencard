@@ -13,6 +13,11 @@ on:
         required: false
         type: boolean
         default: false
+      minimax_probe:
+        description: Opt in to one public-title MiniMax generation (requires protected sandbox environment)
+        required: false
+        type: boolean
+        default: false
       expected_sha:
         description: Exact reviewed branch commit (40 lowercase hex)
         required: true
@@ -105,6 +110,49 @@ jobs:
             ${{ runner.temp }}/offer-fixture-evidence/runner-metadata.json
             ${{ runner.temp }}/offer-fixture-evidence/test-counts.json
             ${{ runner.temp }}/offer-fixture-evidence/offer-result.json
+          retention-days: 7
+          if-no-files-found: error
+  minimax-probe:
+    needs: fixture-dry-run
+    if: github.repository == 'opencard-ai/opencard' && github.ref == 'refs/heads/bot/opencard-durable-runner-prep' && github.event_name == 'workflow_dispatch' && inputs.minimax_probe == true && inputs.sdk_sandbox != true && needs.fixture-dry-run.result == 'success'
+    environment: opencard-migration-sandbox
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.sha }}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+      - name: Verify reviewed public probe boundary before secret injection
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          node - <<'JS'
+          const cp=require('node:child_process'),assert=require('node:assert/strict');
+          assert.equal(process.env.GITHUB_REPOSITORY,'opencard-ai/opencard');
+          assert.equal(process.env.GITHUB_REF,'refs/heads/bot/opencard-durable-runner-prep');
+          assert.equal(process.env.GITHUB_EVENT_NAME,'workflow_dispatch');
+          assert.equal(process.env.GITHUB_RUN_ATTEMPT,'1');
+          assert.match(process.env.EXPECTED_SHA,/^[0-9a-f]{40}$/);
+          assert.equal(process.env.GITHUB_SHA,process.env.EXPECTED_SHA);
+          assert.equal(cp.execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),process.env.EXPECTED_SHA);
+          JS
+      - name: Offline public probe tests without credentials or dependency installation
+        run: env -i PATH="$PATH" node --test scripts/automation/minimax-probe.check.mjs
+      - name: One public-title generation using runtime-only repository secret
+        env:
+          MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
+        run: node scripts/automation/minimax-probe.mjs --execute-once
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: minimax-public-probe-${{ github.run_id }}
+          path: ${{ runner.temp }}/minimax-probe-once/result.json
           retention-days: 7
           if-no-files-found: error
   sdk-sandbox:
