@@ -77,3 +77,53 @@ test('fixture run refuses to write through a pre-planted report symlink into the
   assert.equal(r.status, 1);
   assert.deepEqual(fs.readFileSync(victim), before);
 });
+
+test('durable fixture records baseline, suppresses same-day rerun, reports against seeded older baseline', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'audit-durable-'));
+  const state = fs.mkdtempSync(path.join(os.tmpdir(), 'audit-state-'));
+  const env = { OPENCARD_AUDIT_DIR: dir, OPENCARD_AUDIT_URLCHECK_FIXTURE: fx('one-404.url-check.json'), OPENCARD_AUDIT_DURABLE: `fixture-file:${state}` };
+  const first = run(env);
+  assert.equal(first.status, 0, first.stderr);
+  assert.equal(first.stdout.trim(), 'DURABLE:BASELINE_RECORDED');
+  const second = run(env);
+  assert.equal(second.status, 0, second.stderr);
+  assert.equal(second.stdout.trim(), 'DURABLE:ALREADY_REPORTED');
+  const file = path.join(state, 'audit-state.json');
+  const saved = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const doc = JSON.parse(saved.docs['audit-baseline']);
+  doc.value.date = '2000-01-01'; delete doc.value.reportedFor;
+  doc.value.findings = []; doc.value.digest = crypto.createHash('sha256').update('[]').digest('hex');
+  saved.docs['audit-baseline'] = JSON.stringify(doc);
+  fs.writeFileSync(file, JSON.stringify(saved));
+  const fresh = run(env);
+  assert.equal(fresh.status, 0, fresh.stderr);
+  assert.match(fresh.stdout, /^DURABLE:CALLER_MUST_SEND\n📋 OpenCard/);
+  assert.match(fresh.stdout, /amazon-prime-visa/);
+});
+
+test('durable mode rejects unsupported stores, missing fixture and unsafe directories', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'audit-durable-'));
+  for (const [durable, fixture, message] of [
+    ['redis:live', fx('all-ok.url-check.json'), /unsupported durable store/],
+    [`fixture-file:${dir}`, '', /requires OPENCARD_AUDIT_URLCHECK_FIXTURE/],
+    [`fixture-file:${repo}`, fx('all-ok.url-check.json'), /outside the repo/],
+    [`fixture-file:${dir}/missing`, fx('all-ok.url-check.json'), /ENOENT/],
+  ]) {
+    const r = run({ OPENCARD_AUDIT_DIR: dir, OPENCARD_AUDIT_URLCHECK_FIXTURE: fixture, OPENCARD_AUDIT_DURABLE: durable });
+    assert.equal(r.status, 1); assert.match(r.stderr, message);
+  }
+});
+
+test('fixture/durable run refuses TMPDIR inside the repo before writing anything', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'audit-e2e-'));
+  const inRepo = fs.mkdtempSync(path.join(repo, '.tmp-e2e-'));
+  try {
+    for (const extra of [{}, { OPENCARD_AUDIT_DURABLE: `fixture-file:${dir}` }]) {
+      const r = run({ TMPDIR: inRepo, OPENCARD_AUDIT_DIR: dir, OPENCARD_AUDIT_URLCHECK_FIXTURE: fx('all-ok.url-check.json'), ...extra });
+      assert.equal(r.status, 1, r.stderr);
+      assert.match(r.stderr, /TMPDIR outside the repo/);
+      // tsx may create its own cache in TMPDIR; our lock/scratch must not exist.
+      assert.deepEqual(fs.readdirSync(inRepo).filter(n => n.startsWith('opencard-audit')), []);
+    }
+  } finally { fs.rmSync(inRepo, { recursive: true, force: true }); }
+});

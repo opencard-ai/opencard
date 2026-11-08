@@ -1,0 +1,30 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { createFileAuditStore } from './file-audit-store';
+import { AUDIT_DOC } from './durable-baseline';
+
+test('file store reloads across sessions, excludes contenders and fences expired owners', async t => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'audit-store-test-'));
+  t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  const a = createFileAuditStore(dir, 'a'), b = createFileAuditStore(dir, 'b');
+  assert.equal(await a.lease.acquire(), 1);
+  await assert.rejects(b.lease.acquire(), /BUSY/);
+  assert.equal(await a.read(AUDIT_DOC), null);
+  await a.cas(AUDIT_DOC, 0, { baseline: true });
+  await assert.rejects(a.cas(AUDIT_DOC, 0, {}), /CONFLICT/);
+  await a.lease.renew();
+  const file = path.join(dir, 'audit-state.json');
+  const state = JSON.parse(fs.readFileSync(file, 'utf8'));
+  state.lease.expires = Date.now() - 1;
+  fs.writeFileSync(file, JSON.stringify(state));
+  assert.equal(await b.lease.acquire(), 2);
+  await assert.rejects(a.lease.assert(), /LEASE_LOST/);
+  assert.equal(await a.lease.release(), false);
+  assert.deepEqual((await b.read(AUDIT_DOC))?.value, { baseline: true });
+  assert.equal((await b.cas(AUDIT_DOC, 1, {})).fence, 2);
+  assert.equal(await b.lease.release(), true);
+  assert.deepEqual(fs.readdirSync(dir), ['audit-state.json']);
+});
