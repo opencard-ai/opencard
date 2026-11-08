@@ -65,8 +65,8 @@ jobs:
           assert.equal(result.fixtureOnly,true);assert.equal(result.sourceFetches,2);assert.equal(result.mockPublicationSequences,1);
           assert.equal(result.freshLinkedWorktrees,2);assert.match(result.remotePublication,/ALWAYS MOCKED/);
           const counts={};for(const [name,file,expected] of [['offer','offer-tests.log',95],['automation','offer-automation.log',26],['news','offer-news.log',9]]) {
-            const log=fs.readFileSync(path.join(temp,file),'utf8');const count=Number([...log.matchAll(/^# tests (\d+)$/gm)].at(-1)?.[1]);
-            const pass=Number([...log.matchAll(/^# pass (\d+)$/gm)].at(-1)?.[1]);assert.equal(count,expected);assert.equal(pass,expected);counts[name]={tests:count,pass};
+            const log=require('node:util').stripVTControlCharacters(fs.readFileSync(path.join(temp,file),'utf8'));const count=Number([...log.matchAll(/^[#ℹ] tests (\d+)$/gm)].at(-1)?.[1]);
+            const pass=Number([...log.matchAll(/^[#ℹ] pass (\d+)$/gm)].at(-1)?.[1]);const fail=Number([...log.matchAll(/^[#ℹ] fail (\d+)$/gm)].at(-1)?.[1]);assert.equal(count,expected);assert.equal(pass,expected);assert.equal(fail,0);counts[name]={tests:count,pass,fail};
           }
           assert.match(process.version,/^v24\./);
           assert.equal(cp.execFileSync('git',['status','--porcelain','--untracked-files=all'],{encoding:'utf8'}).trim(),'');
