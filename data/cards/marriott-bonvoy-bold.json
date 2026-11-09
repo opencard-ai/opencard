@@ -23,7 +23,7 @@
     {
       "category": "Select Categories",
       "rate": 2,
-      "notes": "2X points on dining and gas stations (per 2025 refresh)"
+      "notes": "2X at grocery stores; internet, cable, and phone services; select streaming services; rideshare (taxicabs and limousines); and select food delivery (DoorDash, Caviar, Uber Eats, Postmates, Grubhub, Seamless)"
     },
     {
       "category": "All Other Purchases",
@@ -71,7 +71,7 @@
   "sources": [
     {
       "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/bold",
-      "notes": "Official Chase page"
+      "notes": "Official Chase page GET 2026-11-09 ~09:29 PT: card earn 3X at hotels participating in Marriott Bonvoy (up to 14X total with Bonvoy base + Silver Elite); 2X at grocery stores; internet, cable, and phone; select streaming; rideshare (taxicabs/limousines); select food delivery (DoorDash/Caviar/Uber Eats/Postmates/Grubhub/Seamless). Page also shows 45,000 bonus points after $1,000/3 months (JSON welcome offer left unchanged for offer-watch follow-up)."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/reviews/marriott-bonvoy-bold-credit-card-review/",
@@ -86,14 +86,14 @@
       "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-11-09",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
   "last_scraped": "2026-04-24T17:26:46.246653",
-  "last_verified": "2026-04-24T17:26:46.246653",
+  "last_verified": "2026-11-09",
   "next_review": "2026-07-23T17:26:46.246653",
   "recurring_credits": [
     {
