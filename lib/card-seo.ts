@@ -198,7 +198,7 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
   },
   "marriott-bonvoy-bold": {
     title: "Marriott Bonvoy Bold: No Annual Fee & Silver Elite Status | OpenCard",
-    description: "Chase Marriott Bonvoy Bold: $0 annual fee, automatic Silver Elite status, 3x Bonvoy points at Marriott hotels from the card (plus hotel base points), 2x on dining and gas, and no foreign transaction fees.",
+    description: "Chase Marriott Bonvoy Bold: $0 annual fee, automatic Silver Elite status, 3x Bonvoy points at Marriott hotels from the card (plus hotel base points), 2X on groceries, rideshare, select food delivery, select streaming, and internet/cable/phone, and no foreign transaction fees.",
   },
   "chase-british-airways-visa-signature": {
     title: "British Airways Visa Signature: $95 Fee & Travel Together Ticket | OpenCard",
@@ -206,7 +206,7 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
   },
   "citi-aadvantage-executive": {
     title: "Citi AAdvantage Executive: $695 Fee & Admirals Club Access | OpenCard",
-    description: "Citi / AAdvantage Executive World Legend Mastercard: $695 annual fee includes Admirals Club membership for you and up to two guests, plus AAdvantage miles earning and an annual companion certificate after qualifying spend.",
+    description: "Citi / AAdvantage Executive World Legend Mastercard: $695 annual fee includes Admirals Club membership for you and up to two guests, plus AAdvantage miles on everyday spend.",
   },
   "chase-ink-biz-cash": {
     title: "Chase Ink Business Cash: No Annual Fee, 5% on Office & Internet | OpenCard",
@@ -214,7 +214,7 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
   },
   "fidelity-rewards-visa-signature": {
     title: "Fidelity Rewards Visa Signature: 2% Cash Back, No Annual Fee | OpenCard",
-    description: "Fidelity Rewards Visa Signature from Elan: $0 annual fee and unlimited 2% cash back when rewards go into an eligible Fidelity account (1.5% as statement credit). No foreign transaction fees.",
+    description: "Fidelity Rewards Visa Signature from Elan: $0 annual fee and unlimited 2% cash back when rewards go into an eligible Fidelity account. No foreign transaction fees.",
   },
   "discover-it-miles": {
     title: "Discover it Miles: 1.5 Miles Everywhere + First-Year Match | OpenCard",
@@ -222,7 +222,7 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
   },
   "amex-marriott-bevy": {
     title: "Marriott Bonvoy Bevy Amex: $250 Fee & Gold Elite Status | OpenCard",
-    description: "Marriott Bonvoy Bevy American Express: $250 annual fee, complimentary Gold Elite status, 5x on flights booked direct and prepaid Marriott hotels booked with Amex, and no foreign transaction fees.",
+    description: "Marriott Bonvoy Bevy American Express: $250 annual fee, complimentary Gold Elite status, 6X at Marriott hotels, 4X at restaurants and U.S. supermarkets (up to $15,000 combined per calendar year, then 2X), 2X on other purchases, and no foreign transaction fees.",
   },
   // Spirit stopped flying in May 2026 and BofA's page is gone, but the record is
   // still active; don't advertise its old fee and earning rates.
