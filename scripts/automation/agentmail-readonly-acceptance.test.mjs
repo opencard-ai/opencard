@@ -44,7 +44,7 @@ test('static: no write verbs, no other endpoints, no retry loop in the entrypoin
 
 test('workflow contract: agentmail job manual, gated env, secret only in last step, no artifacts', () => {
   const y = fs.readFileSync(new URL('../../.github/workflows/news-isolated-dry-run.yml', import.meta.url), 'utf8');
-  const job = y.slice(y.indexOf('  ops-agentmail-readonly:'));
+  const job = y.slice(y.indexOf('  ops-agentmail-readonly:'), y.indexOf('  ops-audit-readonly:'));
   assert.ok(y.includes('  ops-agentmail-readonly:'));
   assert.match(job, /environment: ops-agentmail-readonly/); assert.match(job, /contents: read/); assert.match(job, /persist-credentials: false/);
   assert.ok(!job.includes('upload-artifact'));
