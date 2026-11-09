@@ -6,9 +6,10 @@
  * Live coverage: lease + CAS write/read path (BASELINE_CREATED + REPORT).
  * AES backup/restore + tamper/wrong-ns/stale/pending: LOCAL only (offline tests), not live HTTP. */
 import { createHash, randomBytes, createCipheriv, createDecipheriv } from 'node:crypto';
-import { sandboxAuditStoreFromEnv, validateAuditRedisUrl } from './upstash-audit-transport.ts';
-import { AUDIT_DOC, AUDIT_KIND, runWithDurableBaseline, digestOf } from './durable-baseline.ts';
-import { BACKUP_KIND, openBackup } from './state-backup.ts';
+import { pathToFileURL } from 'node:url';
+import { sandboxAuditStoreFromEnv, validateAuditRedisUrl } from './upstash-audit-transport';
+import { AUDIT_DOC, AUDIT_KIND, runWithDurableBaseline, digestOf } from './durable-baseline';
+import { BACKUP_KIND, openBackup } from './state-backup';
 
 export const TEST_DATABASE_ID = '74ef02fa-e0fd-4f53-867d-36d4bb4f498f';
 export const TEST_ENDPOINT_SHA256 = '04f761ca28daef5b3ad27673aec87736b3651032a553f91f13ec0471b1727c54';
@@ -111,6 +112,6 @@ export async function runLiveAcceptance({ env = process.env, fetchImpl = globalT
   }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   runLiveAcceptance().then((c) => { process.exitCode = c; }, () => { console.log(JSON.stringify({ ok: false, exit: 1, error: 'internal' })); process.exitCode = 1; });
 }

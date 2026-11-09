@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createServer } from 'node:http';
-import { runLiveAcceptance, pinAndBudget, installBudgetFetch, localAesRoundtrip, TEST_DATABASE_ID, TEST_ENDPOINT_SHA256, TOTAL_BUDGET } from './live-sandbox-acceptance.mjs';
+import { runLiveAcceptance, pinAndBudget, installBudgetFetch, localAesRoundtrip, TEST_DATABASE_ID, TEST_ENDPOINT_SHA256, TOTAL_BUDGET } from './live-sandbox-acceptance.ts';
 import { createHash } from 'node:crypto';
 
 const URL_OK = 'https://primary-lark-104985.upstash.io';
@@ -90,7 +90,7 @@ test('workflow contract: audit job gated, secrets after offline, budget/pin pres
   assert.deepEqual([...new Set(job.match(/secrets\.[A-Z_]+/g))].sort(), ['secrets.OPENCARD_AUDIT_REDIS_TOKEN', 'secrets.OPENCARD_AUDIT_REDIS_URL']);
   assert.match(job, /OPENCARD_AUDIT_LIVE: '1'/);
   assert.match(job, /74ef02fa-e0fd-4f53-867d-36d4bb4f498f/);
-  const src = fs.readFileSync(new URL('./live-sandbox-acceptance.mjs', import.meta.url), 'utf8');
+  const src = fs.readFileSync(new URL('./live-sandbox-acceptance.ts', import.meta.url), 'utf8');
   assert.match(src, /TOTAL_BUDGET = 10/);
   assert.match(src, /TEST_ENDPOINT_SHA256/);
   assert.doesNotMatch(src, /allowProduction:\s*true/);

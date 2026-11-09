@@ -177,4 +177,4 @@ jobs:
           OPENCARD_AUDIT_SANDBOX_ID: audit-gh-${{ github.run_id }}
           OPENCARD_AUDIT_REDIS_URL: ${{ secrets.OPENCARD_AUDIT_REDIS_URL }}
           OPENCARD_AUDIT_REDIS_TOKEN: ${{ secrets.OPENCARD_AUDIT_REDIS_TOKEN }}
-        run: node --import tsx scripts/audit/live-sandbox-acceptance.mjs
+        run: node --import tsx scripts/audit/live-sandbox-acceptance.ts
