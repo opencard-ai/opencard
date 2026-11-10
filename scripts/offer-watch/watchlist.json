@@ -561,43 +561,41 @@
           "render": false,
           "patterns": [
             {
-              "regex": "SkyMiles\\W{0,4}Reserve Amex Card[\\s\\S]{0,300}?(?:and|Earn) ([\\d,]+) Bonus Miles,? after you spend \\$([\\d,]+) in purchases in (?:your|the) first (\\d+) months of Card Membership\\.(?:[\\s\\S]{0,100}?Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4}))?",
-              "groups": {
-                "welcome_offer.bonus_points": 1,
-                "welcome_offer.spending_requirement": 2,
-                "welcome_offer.time_period_months": 3,
-                "welcome_offer.expiry": 4
-              }
-            },
-            {
               "regex": "SkyMiles\\W{0,4}Reserve Amex Card[\\s\\S]{0,700}?\\$([\\d,]+) Annual Fee",
               "groups": {
                 "annual_fee": 1
               }
             }
-          ]
+          ],
+          "review_signals": [
+            {
+              "regex": "as high as\\s*[\\d,]+\\s*Bonus Miles",
+              "reason": "variable_as_high_as_offer"
+            }
+          ],
+          "review_if_no_bonus": "detect_only_no_bonus_parsed"
         },
         {
           "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-reserve-american-express-card/",
           "render": true,
           "patterns": [
             {
-              "regex": "(?:along with|Earn) ([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card in the first (\\d+) months",
-              "groups": {
-                "welcome_offer.bonus_points": 1,
-                "welcome_offer.spending_requirement": 2,
-                "welcome_offer.time_period_months": 3
-              }
-            },
-            {
               "regex": "Delta SkyMiles\\W{0,4}Reserve American Express\\W{0,4}Card[^$]{0,30}?Annual Fee: \\$([\\d,]+)(?![\\d,]| intro)",
               "groups": {
                 "annual_fee": 1
               }
             }
-          ]
+          ],
+          "review_signals": [
+            {
+              "regex": "as high as\\s*[\\d,]+\\s*Bonus Miles",
+              "reason": "variable_as_high_as_offer"
+            }
+          ],
+          "review_if_no_bonus": "detect_only_no_bonus_parsed"
         }
-      ]
+      ],
+      "_note": "2026-11-10: Reserve welcome offer is detect-only (Amex hero shows variable 'AS HIGH AS 125,000'; card data tracks 100k/$5k/6mo from the Amex cross-sell copy). Bonus/spend/months are never extracted here; 'as high as' or no parsed bonus -> expiry_review manual-review item. annual_fee still extracted."
     },
     {
       "card_id": "amex-delta-gold-biz",
