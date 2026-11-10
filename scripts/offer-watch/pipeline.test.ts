@@ -351,6 +351,8 @@ const noForce = (calls: string[][]) => assert.ok(!calls.some(c => c.join(' ').in
     assert.deepEqual(afPlan.applied[0]?.changes.map(c => [c.field, c.new_value]), [['annual_fee', 695]]);
     assert.ok(afPlan.expiry_review.some(h => h.reasons.includes('welcome_offer_detect_only_manual_review')));
   }
+  // Marriott Bonvoy Bold on chase.com (2026-11-10 page text)
+  assert.deepEqual(ex('marriott-bonvoy-bold', 'chase.com', 'NEW CARDMEMBER OFFER Earn 45,000 Bonus Points Earn 45,000 Bonus Points after spending $1,000 on eligible purchases within 3 months of account opening with the Marriott Bonvoy Bold ® Credit Card. * AT A GLANCE ANNUAL FEE $0 † Opens pricing and terms in new window'), { [B]: 45000, [SPD]: 1000, [MON]: 3, annual_fee: 0 });
   // Delta Gold on Amex: statement credit sentence present / absent
   const dgOld = 'Earn a $250 Statement Creditand the bonus miles, once you meet that same spend requirement for the bonus miles.†Offer ends 11/4/2026.Apply and find out your welcome offerAs High As 80,000 Bonus Milesafter you spend $3,000 in purchases on your new Card within the first 6 months of Card Membership.';
   assert.deepEqual(ex('amex-delta-gold', 'americanexpress.com', dgOld), { [CR]: 250, [B]: 80000, [SPD]: 3000, [MON]: 6 });
