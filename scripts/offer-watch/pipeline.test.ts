@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { assessCandidate, expiryReport, emptyLedger, normalizeDate, updateLedger, isClosedToNewApplicants, DEFAULT_OFFICIAL_DOMAINS, type Candidate, type Confirmation } from './gate';
 import { applyPlanToCard, confirmationsFor, planApply, sanityCheck, schemaCheck } from './apply-core';
-import { autoExpiringEntries, buildCandidate, currentBonusVisible, extractValues, htmlToText, isErrorPage, samePage, stripQuery, type WatchEntry } from './collect';
+import { autoExpiringEntries, buildCandidate, currentBonusVisible, extractValues, htmlToText, isErrorPage, reviewSignals, samePage, stripQuery, type WatchEntry } from './collect';
 import { readFileSync } from 'node:fs';
 import { commitMessage, expectedLiveStrings, pageText, parseVercelState, publish, type PublishConfig, type PublishDeps } from './publish-core';
 import { buildDigest, laEndOfDay } from './digest-core';
@@ -325,6 +325,32 @@ const noForce = (calls: string[][]) => assert.ok(!calls.some(c => c.join(' ').in
     { [B]: 125000, [CR]: 150, [SPD]: 5000, [MON]: 6, [EXP]: '2026-09-30' });
   assert.deepEqual(ex('amex-marriott-brilliant', 'americanexpress.com', 'Earn 100,000 Marriott Bonvoy® Bonus Pointsafter you use your new Card to make $6,000 in purchases within the first 6 months of Card Membership.†'),
     { [B]: 100000, [CR]: null, [SPD]: 6000, [MON]: 6 });
+  // Delta Reserve: welcome offer is detect-only (2026-11-10 lead decision). Rendered Amex hero (2026-11-10):
+  const resHero = 'Apply and find out your welcome offerAS HIGH AS 125,000 Bonus Milesafter you spend $5,000 in purchases on your new Card within the first 6 months of Card Membership.Welcome offers vary and you may not be eligible for an offer.¤ Delta SkyMiles® Reserve American Express CardAnnual Fee: $650¤';
+  const resAmex = W('amex-delta-reserve', 'americanexpress.com'), resDelta = W('amex-delta-reserve', 'delta.com');
+  assert.deepEqual(ex('amex-delta-reserve', 'americanexpress.com', resHero), { annual_fee: 650 }); // no bonus/spend/months extracted, AF still is
+  assert.deepEqual(reviewSignals(resHero, resAmex, { annual_fee: 650 }), ['variable_as_high_as_offer']);
+  assert.deepEqual(extractValues('Earn 70,000 100,000 Bonus Miles after you use your new Card to make $5,000 in purchases within the first 6 months.', resAmex).values, {}); // fixed copy is not extracted either
+  assert.deepEqual(reviewSignals('Delta SkyMiles® Reserve American Express CardAnnual Fee: $650¤', resAmex, { annual_fee: 650 }), ['detect_only_no_bonus_parsed']);
+  assert.deepEqual(extractValues('SkyMiles® Reserve Amex Card APPLY AND FIND OUT YOUR WELCOME OFFER AS HIGH AS 125,000 BONUS MILES After you make $5,000 in eligible purchases on your new Card within the first 6 months of Card Memberships. $650 Annual Fee', resDelta).values, { annual_fee: 650 });
+  assert.deepEqual(reviewSignals('AS HIGH AS 125,000 BONUS MILES', resDelta, {}), ['variable_as_high_as_offer']);
+  assert.deepEqual(reviewSignals('Earn 50,000 Bonus Miles', { url: 'x', patterns: [] }, {}), []); // ordinary sources: no signals
+  {
+    const resCard = { card_id: 'amex-delta-reserve', name: 'Reserve', annual_fee: 650, welcome_offer: { bonus_points: 100000, spending_requirement: 5000, time_period_months: 6, point_program: 'Delta SkyMiles', is_elevated: true, offer_status: 'public_limited_time' } };
+    const RU = resAmex.url;
+    const obs = { observed: { current_bonus_visible: false, review_signals: ['variable_as_high_as_offer'] } };
+    const resCand = buildCandidate({ card_id: resCard.card_id, sources: [] }, [conf(RU, 1, { annual_fee: 650 }, obs), conf(RU, 2, { annual_fee: 650 }, obs)], '2026-09-30T05:50:00Z');
+    const resResult = assessCandidate(resCand, resCard, false, runAt);
+    assert.equal(resResult.status, 'unchanged'); assert.deepEqual(resResult.changes, []); // no numeric change proposal
+    const resPlan = planApply({ results: [resResult], expiry: expiryReport([resCard], today) }, new Map([[resCard.card_id, resCard]]), opts);
+    assert.equal(resPlan.applied.length, 0); assert.equal(resPlan.held.length, 0);
+    assert.deepEqual(resPlan.expiry_review, [{ card_id: 'amex-delta-reserve', field: 'welcome_offer.bonus_points', reasons: ['welcome_offer_detect_only_manual_review', 'variable_as_high_as_offer'] }]);
+    // AF change on the same page still flows through the normal two-fetch path
+    const afCand = buildCandidate({ card_id: resCard.card_id, sources: [] }, [conf(RU, 1, { annual_fee: 695 }, obs), conf(RU, 2, { annual_fee: 695 }, obs)], '2026-09-30T05:50:00Z');
+    const afPlan = planApply({ results: [assessCandidate(afCand, resCard, false, runAt)] }, new Map([[resCard.card_id, resCard]]), opts);
+    assert.deepEqual(afPlan.applied[0]?.changes.map(c => [c.field, c.new_value]), [['annual_fee', 695]]);
+    assert.ok(afPlan.expiry_review.some(h => h.reasons.includes('welcome_offer_detect_only_manual_review')));
+  }
   // Marriott Bonvoy Bold on chase.com (2026-11-10 page text)
   assert.deepEqual(ex('marriott-bonvoy-bold', 'chase.com', 'NEW CARDMEMBER OFFER Earn 45,000 Bonus Points Earn 45,000 Bonus Points after spending $1,000 on eligible purchases within 3 months of account opening with the Marriott Bonvoy Bold ® Credit Card. * AT A GLANCE ANNUAL FEE $0 † Opens pricing and terms in new window'), { [B]: 45000, [SPD]: 1000, [MON]: 3, annual_fee: 0 });
   // Delta Gold on Amex: statement credit sentence present / absent
