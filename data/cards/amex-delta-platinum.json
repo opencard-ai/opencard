@@ -10,7 +10,7 @@
     "bonus_points": 90000,
     "spending_requirement": 3000,
     "time_period_months": 6,
-    "description": "Limited-time offer: Earn 90,000 Delta SkyMiles bonus miles after spending $3,000 on purchases in the first 6 months. Offer ends 11/4/2026.",
+    "description": "Earn 90,000 Delta SkyMiles bonus miles after spending $3,000 on purchases in the first 6 months. This offer may not be available if you leave this web page and return later.",
     "point_program": "Delta SkyMiles",
     "estimated_value": 900,
     "offer_status": "public_limited_time",
@@ -20,12 +20,12 @@
       "Previous public limited-time 7/15/2026 offer was removed from current production values to avoid displaying an expired offer.",
       "Post-7/15/2026 closeout completed: expired limited-time Delta Amex state removed/confirmed; current production state is this welcome_offer block.",
       "2026-09-30 offer-watch auto-apply (two independent official fetches): spending_requirement 3000 -> 4000. Sources: https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards.",
-      "2026-11-05 offer-watch auto-apply (two independent official fetches): spending_requirement 4000 -> 3000; statement_credit 300 -> null. Sources: https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-platinum-american-express-card/."
+      "2026-11-05 offer-watch auto-apply (two independent official fetches): spending_requirement 4000 -> 3000; statement_credit 300 -> null. Sources: https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-platinum-american-express-card/.",
+      "2026-11-09 official Amex product page GET 200 (full HTML incl. embedded JSON): \"Earn 60,000 90,000 Bonus Miles after you use your new Card to make $3,000 in purchases within the first 6 months. This offer may not be available if you leave this web page and return later.\" No 11/4 / Offer ends date on page; expired 'Offer ends 11/4/2026' language and expires_at removed. 90k/$3k/6mo elevated offer unchanged. Page also carries a 'Carefree Status' experiment variant (80k after $3k/3 months + 20k anniversary, $250 AF); not applied."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-11-05",
-    "is_elevated": true,
-    "expires_at": "2026-11-04"
+    "last_verified": "2026-11-09",
+    "is_elevated": true
   },
   "earning_rates": [
     {
@@ -126,7 +126,7 @@
     {
       "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-platinum-american-express-card/",
       "title": "Delta SkyMiles® Platinum American Express Card",
-      "notes": "Official Amex page 2026-10-19: $120 Rideshare Credit (up to $10/month); $150 Delta Stays Credit."
+      "notes": "Official Amex page 2026-10-19: $120 Rideshare Credit (up to $10/month); $150 Delta Stays Credit. 2026-11-09 GET 200: \"Earn 60,000 90,000 Bonus Miles after you use your new Card to make $3,000 in purchases within the first 6 months.\""
     },
     {
       "url": "https://www.uscreditcardguide.com/amex-platinum-delta-skymiles/",
@@ -153,7 +153,7 @@
       "notes": "Amex Card Member Agreement (06/30/2026): Foreign Transaction fee None (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-11-05T12:00:00.000Z",
+  "last_updated": "2026-11-09T12:00:00.000Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -203,8 +203,8 @@
   ],
   "welcome_bonus": null,
   "last_scraped": "2026-04-24",
-  "last_verified": "2026-11-05",
-  "next_review": "2026-12-05T00:00:00.000Z",
+  "last_verified": "2026-11-09",
+  "next_review": "2026-12-09T00:00:00.000Z",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 5,
