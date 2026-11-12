@@ -1,11 +1,16 @@
 import { localizedAlternates } from "@/lib/seo";
 import { getOpenCards } from "@/lib/cards";
+import { toOfferListCard } from "@/lib/client-card-fields";
 import ElevatedOffersList from "@/app/components/ElevatedOffersList";
 import { locales } from "@/lib/i18n";
 import type { Metadata } from "next";
 
 export const dynamic = "force-static";
-export const revalidate = 3600;
+// ISR: daily, not hourly. Page data comes from data/cards/*.json, which only
+// changes on deploy (and every deploy starts a fresh ISR cache), so hourly
+// regeneration only burned ISR Write units (Hobby: 200k/month). 86400 keeps
+// date-relative text (e.g. "reviewed N days ago") at most a day stale.
+export const revalidate = 86400;
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -30,6 +35,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ElevatedOffersPage({ params }: Props) {
   const { lang } = await params;
-  const cards = getOpenCards();
+  const cards = getOpenCards().map(toOfferListCard);
   return <ElevatedOffersList cards={cards} lang={lang} />;
 }
