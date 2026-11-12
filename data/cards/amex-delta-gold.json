@@ -11,7 +11,7 @@
     "bonus_points": 80000,
     "spending_requirement": 2000,
     "time_period_months": 6,
-    "description": "Limited-time offer: Earn 80,000 Delta SkyMiles bonus miles after spending $2,000 on purchases in the first 6 months. Offer ends 11/4/2026.",
+    "description": "Earn 80,000 Delta SkyMiles bonus miles after spending $2,000 on purchases in the first 6 months. This offer may not be available if you leave this web page and return later.",
     "point_program": "Delta SkyMiles",
     "estimated_value": 800,
     "offer_status": "public_limited_time",
@@ -22,12 +22,12 @@
       "Post-7/15/2026 closeout completed: expired limited-time Delta Amex state removed/confirmed; current production state is this welcome_offer block.",
       "CNBC Select verified the $0 introductory annual fee for the first year; $150 applies after the first year.",
       "2026-09-30 offer-watch auto-apply (two independent official fetches): spending_requirement 2000 -> 3000. Sources: https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards.",
-      "2026-11-05 offer-watch auto-apply (two independent official fetches): spending_requirement 3000 -> 2000; statement_credit 250 -> null. Sources: https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/."
+      "2026-11-05 offer-watch auto-apply (two independent official fetches): spending_requirement 3000 -> 2000; statement_credit 250 -> null. Sources: https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/.",
+      "2026-11-09 official Amex product page GET 200 (full HTML incl. embedded JSON): \"Earn 50,000 80,000 Bonus Miles after you use your new Card to make $2,000 in purchases within the first 6 months. This offer may not be available if you leave this web page and return later.\" No 11/4 / Offer ends date on page; expired 'Offer ends 11/4/2026' language and expires_at removed. 80k/$2k/6mo elevated offer unchanged."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-11-05",
-    "is_elevated": true,
-    "expires_at": "2026-11-04"
+    "last_verified": "2026-11-09",
+    "is_elevated": true
   },
   "earning_rates": [
     {
@@ -98,7 +98,7 @@
   "sources": [
     {
       "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/",
-      "notes": "Official page confirmed by offer-watch on 2026-11-05."
+      "notes": "Official page confirmed by offer-watch on 2026-11-05. 2026-11-09 GET 200: \"Earn 50,000 80,000 Bonus Miles after you use your new Card to make $2,000 in purchases within the first 6 months.\""
     },
     {
       "url": "https://www.uscreditcardguide.com/amex-gold-delta-skymiles/",
@@ -129,7 +129,7 @@
       "notes": "Amex Card Member Agreement (06/30/2026): Foreign Transaction fee None (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-11-05T12:00:00.000Z",
+  "last_updated": "2026-11-09T12:00:00.000Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -161,8 +161,8 @@
       "source": "https://news.delta.com/more-travel-value-added-delta-skymiles-cards-no-increase-annual-fees"
     }
   ],
-  "last_verified": "2026-11-05",
-  "next_review": "2026-12-05T00:00:00.000Z",
+  "last_verified": "2026-11-09",
+  "next_review": "2026-12-09T00:00:00.000Z",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 5,

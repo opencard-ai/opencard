@@ -4,7 +4,7 @@ export type CardRecord = Record<string, any>;
 /** Closed to new applicants (repo convention: status "discontinued"; legacy: discontinued: true). No offer to watch. */
 export const isClosedToNewApplicants = (card: CardRecord | undefined) => card?.status === 'discontinued' || card?.discontinued === true;
 /** One independent fetch of an official page, recorded by collect.ts. */
-export interface Confirmation { url: string; fetch_id: string; checked_at: string; ok: boolean; status?: number; error?: string; official_domain: boolean; values: Record<string, unknown>; ambiguous_fields?: string[]; content_sha256?: string; final_url?: string; observed?: { current_bonus_visible?: boolean } }
+export interface Confirmation { url: string; fetch_id: string; checked_at: string; ok: boolean; status?: number; error?: string; official_domain: boolean; values: Record<string, unknown>; ambiguous_fields?: string[]; content_sha256?: string; final_url?: string; observed?: { current_bonus_visible?: boolean; review_signals?: string[] } }
 export interface Evidence { url: string; checked_at: string; official: boolean; audience: string; conflicts?: boolean; confirmations?: Confirmation[]; explicit_confirmations?: string[]; hold_only?: boolean; hold_reason?: string; auto_added?: string }
 export interface Candidate { card_id: string; fields: Record<string, unknown>; evidence: Evidence }
 export interface AssessOptions { officialDomains?: string[] }

@@ -18,9 +18,10 @@
     "notes": [
       "2026-09-29 offer-watch auto-apply (two independent official fetches): bonus_points 150000 -> 80000; is_elevated true -> false; expiry \"2026-07-08\" -> null; offer_status null -> \"public\". Sources: https://www.morganstanley.com/what-we-do/wealth-management/cashplus, https://apply.americanexpress.com/amex-morgan-stanley-credit-cards/?page_url=38.",
       "Elevated offer expired 2026-07-08; official page shows a different current offer, applied as public/standard.",
-      "2026-10-28: reconfirmed on Amex landing + offer/terms (ep-msb-mcs-58) + CMA PDF: 80,000 MR / $12,000 / 6 months; $895 AF; foreign fee None."
+      "2026-10-28: reconfirmed on Amex landing + offer/terms (ep-msb-mcs-58) + CMA PDF: 80,000 MR / $12,000 / 6 months; $895 AF; foreign fee None.",
+      "2026-11-09: dead Amex print/terms ep-msb-mcs-58 (HTTP 404) removed; offer reconfirmed on official apply landing (80,000 MR / $12,000 / 6 months). CMA source rolled forward to public 09/30/2026 Q3 PDF ($895 AF; foreign fee None)."
     ],
-    "last_verified": "2026-10-28"
+    "last_verified": "2026-11-09"
   },
   "earning_rates": [
     {
@@ -79,20 +80,16 @@
   ],
   "sources": [
     {
-      "url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q1-pdf-cmas/cps-charge/morgan-stanley-platinum-03-31-2026.pdf",
-      "notes": "Amex Card Member Agreement (03/31/2026), checked 2026-10-28: Annual Fee $895; Foreign Transaction Fee None. Replaces prior 06/30/2026 CMA source entry."
-    },
-    {
-      "url": "https://www.americanexpress.com/us/credit-cards/card-application/apply/partner/print/personal-card/msb/morgan-stanley-platinum-card/ep-msb-mcs-58?print=false",
-      "notes": "Official Amex offer/terms (ep-msb-mcs-58), checked 2026-10-28: 80,000 MR after $12,000 in 6 months; welcome-offer eligibility wording (verbatim). Replaces dead ep-msb-mcs-74 (HTTP 400)."
-    },
-    {
-      "url": "https://www.morganstanley.com/what-we-do/wealth-management/cashplus",
-      "notes": "Official page confirmed by offer-watch on 2026-09-29."
+      "url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q3-pdf-cmas/cps-charge/morgan-stanley-platinum-09-30-2026.pdf",
+      "notes": "Amex Card Member Agreement (09/30/2026 Q3), checked 2026-11-09: Annual Fee $895; Foreign Transaction Fee None. Replaces prior 03/31/2026 (Q1) CMA source that remained valid but is superseded by the newer public CMA PDF."
     },
     {
       "url": "https://apply.americanexpress.com/amex-morgan-stanley-credit-cards/?page_url=38",
-      "notes": "Official page confirmed by offer-watch on 2026-09-29. | Official Amex/Morgan Stanley landing, checked 2026-10-28: product still offered to MS clients."
+      "notes": "Official Amex/Morgan Stanley landing (apply.americanexpress.com, page_url=38), checked 2026-11-09: WELCOME OFFER Earn 80,000 Membership Rewards Points after spending $12,000 in first 6 months; product still offered to MS clients. Replaces dead print/terms URL ep-msb-mcs-58 (HTTP 404 since weekly audits 2026-10-26 and 2026-11-02)."
+    },
+    {
+      "url": "https://www.morganstanley.com/what-we-do/wealth-management/cashplus",
+      "notes": "Official Morgan Stanley CashPlus page, checked 2026-11-09: links to Amex MS cards landing; shows 80,000 Membership Rewards points offer for The Platinum Card from American Express Exclusively for Morgan Stanley."
     },
     {
       "url": "https://global.americanexpress.com/card-benefits/view-all/morgan-stanley-platinum-card",
@@ -130,7 +127,7 @@
       }
     ]
   },
-  "last_updated": "2026-10-28",
+  "last_updated": "2026-11-09",
   "recurring_credits": [
     {
       "credit_key": "uber-cash",
@@ -233,8 +230,8 @@
       "source": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
     }
   ],
-  "last_verified": "2026-10-28",
-  "next_review": "2026-10-29T00:00:00.000Z",
+  "last_verified": "2026-11-09",
+  "next_review": "2026-12-09T00:00:00.000Z",
   "cfpb_source": "Q3_2025",
   "late_fee": 40,
   "cash_advance_fee_flat": 10,

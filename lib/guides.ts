@@ -352,10 +352,10 @@ export const GUIDES: GuideSummary[] = [
   },
   {
     slug: "premium-travel-card-comparison-framework",
-    title: "Are Premium Travel Cards Worth It? Compare Fees, Perks & Lounges",
-    summary: "How premium travel cards can improve travel, dining and shopping, and when they don't. A simple way to compare annual fees, credits, lounge access, earning rates and protections before you pay.",
+    title: "Are Premium Travel Cards Worth It? Fees, Lounges & Credits Compared",
+    summary: "Do premium cards actually improve travel, dining and shopping — or just the marketing? Compare annual fees, credits you will use, lounge access, earn rates and protections before you pay.",
     published: "2026-08-08",
-    updated: "2026-08-08",
+    updated: "2026-11-09",
     word_count: 1200,
     tags: ["premium cards", "comparison", "annual fee", "travel"],
   },

@@ -2,6 +2,7 @@
 import type { HistoryEvent, LedgerUpdate } from './state';
 import type { OfferPrTransport } from './pr-transport';
 import { formatWelcomeBonus } from '../../lib/welcome-offer';
+import { t } from '../../lib/i18n';
 
 export interface RunResult { code: number; stdout: string; stderr: string }
 export interface PublishDeps {
@@ -40,7 +41,9 @@ export function expectedLiveStrings(card: any): string[] {
   const bonus = formatWelcomeBonus(offer, 'en', 'pts');
   if (bonus) out.push(bonus);
   if (typeof offer.spending_requirement === 'number' && offer.spending_requirement > 0) out.push(`Spend $${offer.spending_requirement.toLocaleString('en-US')} within ${offer.time_period_months || 3} months`);
-  if (typeof card?.annual_fee === 'number') out.push(`$${card.annual_fee.toLocaleString('en-US')} Annual Fee`);
+  // $0 fee renders as t('card.annualFeeWaived') ("No Annual Fee"), never "$0 Annual Fee" (chase-freedom-flex rollbacks #55/#62).
+  if (card?.annual_fee === 0) out.push(t('card.annualFeeWaived', 'en'));
+  else if (typeof card?.annual_fee === 'number') out.push(`$${card.annual_fee.toLocaleString('en-US')} Annual Fee`);
   return out;
 }
 
