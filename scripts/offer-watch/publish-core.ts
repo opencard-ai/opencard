@@ -1,10 +1,12 @@
 /** Publish logic with injectable side effects (git / vercel / fetch) so rollback paths are testable. Never force-pushes. */
 import type { HistoryEvent, LedgerUpdate } from './state';
+import type { OfferPrTransport } from './pr-transport';
 import { formatWelcomeBonus } from '../../lib/welcome-offer';
 import { t } from '../../lib/i18n';
 
 export interface RunResult { code: number; stdout: string; stderr: string }
 export interface PublishDeps {
+  transport?: OfferPrTransport;
   run(cmd: string, args: string[]): RunResult;
   fetchText(url: string): Promise<{ status: number; text: string }>;
   readCard(file: string): any;
@@ -17,7 +19,7 @@ export interface PublishConfig {
   checks: string[][]; deployTimeoutMs: number; deployPollMs: number; liveTimeoutMs: number; livePollMs: number;
 }
 export interface AppliedCard { card_id: string; file: string; changes: Array<{ field: string; old_value: unknown; new_value: unknown; fingerprint: string }>; sources: string[] }
-export interface PublishResult { status: 'published' | 'nothing_to_publish' | 'precondition_failed' | 'checks_failed' | 'push_failed' | 'deploy_failed' | 'live_check_failed'; detail?: string; commits: Array<{ card_id: string; sha: string }>; reverted: string[]; deployment?: string | null; live?: Record<string, string[]>; events: HistoryEvent[]; ledger: LedgerUpdate[] }
+export interface PublishResult { status: 'published' | 'nothing_to_publish' | 'precondition_failed' | 'checks_failed' | 'push_failed' | 'deploy_failed' | 'live_check_failed' | 'uncertain'; detail?: string; commits: Array<{ card_id: string; sha: string }>; reverted: string[]; deployment?: string | null; live?: Record<string, string[]>; events: HistoryEvent[]; ledger: LedgerUpdate[] }
 
 const short = (v: unknown) => (v === null || v === undefined ? 'null' : typeof v === 'number' ? v.toLocaleString('en-US') : String(v));
 export function commitMessage(card: AppliedCard): { subject: string; body: string } {
@@ -59,115 +61,101 @@ export function parseVercelState(output: string): 'ready' | 'error' | 'pending' 
 }
 
 export async function publish(applied: AppliedCard[], cfg: PublishConfig, deps: PublishDeps): Promise<PublishResult> {
-  const events: HistoryEvent[] = []; const ledger: LedgerUpdate[] = [];
-  const ts = () => deps.now().toISOString();
-  const result = (status: PublishResult['status'], extra: Partial<PublishResult> = {}): PublishResult => ({ status, commits: [], reverted: [], events, ledger, ...extra });
-  const failAll = (type: HistoryEvent['type'], detail: string, commits: Array<{ card_id: string; sha: string }> = [], reverted: string[] = []) => {
-    for (const card of applied) {
-      events.push({ ts: ts(), type, card_id: card.card_id, changes: card.changes.map(({ field, old_value, new_value }) => ({ field, old_value, new_value })), reasons: [detail], commit: commits.find(c => c.card_id === card.card_id)?.sha ?? null, revert_commits: reverted });
-      card.changes.forEach(c => ledger.push({ key: c.fingerprint, card_id: card.card_id, field: c.field, value: c.new_value, status: type === 'rolled_back' ? 'rolled_back' : 'publish_failed', failure: `${type}: ${detail}`, commit: commits.find(x => x.card_id === card.card_id)?.sha ?? null }));
-    }
-  };
-  if (!applied.length) return result('nothing_to_publish');
-  const git = (...args: string[]) => deps.run('git', args);
-  const files = applied.map(a => a.file);
-
-  const branch = git('rev-parse', '--abbrev-ref', 'HEAD').stdout.trim();
-  if (branch !== cfg.branch) return result('precondition_failed', { detail: `not on ${cfg.branch} (on ${branch})` });
-  const changed = git('status', '--porcelain', '--', ...files).stdout.split('\n').filter(Boolean).map(l => l.slice(3).trim());
-  const missing = files.filter(f => !changed.includes(f));
-  if (missing.length) return result('precondition_failed', { detail: `planned files not modified: ${missing.join(', ')}` });
-  const startSha = git('rev-parse', 'HEAD').stdout.trim();
-
-  for (const check of cfg.checks) {
-    deps.log(`check: ${check.join(' ')}`);
-    const res = deps.run(check[0], check.slice(1));
-    if (res.code !== 0) {
-      git('checkout', '--', ...files); // no commit was made; restore the card files
-      failAll('checks_failed', `${check.join(' ')} exited ${res.code}`);
-      return result('checks_failed', { detail: `${check.join(' ')} failed: ${(res.stderr || res.stdout).slice(-500)}` });
-    }
-  }
-
+  const events: HistoryEvent[] = [], ledger: LedgerUpdate[] = [];
   const commits: Array<{ card_id: string; sha: string }> = [];
-  for (const card of applied) {
-    const { subject, body } = commitMessage(card);
-    git('add', '--', card.file);
-    const res = git('commit', '-m', subject, '-m', body, '--', card.file);
-    if (res.code !== 0) { failAll('push_failed', `commit failed for ${card.card_id}: ${res.stderr.slice(-300)}`, commits); return result('push_failed', { commits, detail: 'commit failed' }); }
-    commits.push({ card_id: card.card_id, sha: git('rev-parse', 'HEAD').stdout.trim() });
-  }
-
-  const push = () => git('push', cfg.remote, cfg.branch);
-  let pushed = push();
-  if (pushed.code !== 0) {
-    const rebase = git('pull', '--rebase', '--autostash', cfg.remote, cfg.branch);
-    if (rebase.code === 0) {
-      // SHAs change after rebase: re-read them in order.
-      const shas = git('rev-list', '--reverse', `${cfg.remote}/${cfg.branch}..HEAD`).stdout.split('\n').filter(Boolean).slice(-commits.length);
-      shas.forEach((sha, i) => { commits[i].sha = sha; });
-      pushed = push();
+  const result = (status: PublishResult['status'], extra: Partial<PublishResult> = {}): PublishResult => ({ status, commits, reverted: [], events, ledger, ...extra });
+  if (!applied.length) return result('nothing_to_publish');
+  const transport = deps.transport;
+  if (!transport) return result('precondition_failed', { detail: 'fixed repo PR helper and private journal required; no direct push fallback' });
+  try { await transport.authorize(); } catch { return result('precondition_failed', { detail: 'publication disabled or owner/enable/epoch unavailable' }); }
+  const files = applied.map(a => a.file);
+  if (new Set(files).size !== files.length || !files.every(f => /^data\/cards\/[A-Za-z0-9._-]+\.json$/.test(f))) return result('precondition_failed', { detail: 'cards-only file allowlist' });
+  let receipt = await transport.reconcile(files, applied.flatMap(a => a.changes.map(c => c.fingerprint)));
+  if (receipt?.state === 'uncertain') return result('uncertain', { detail: receipt.detail });
+  const git = (...args: string[]) => deps.run('git', args);
+  if (!receipt) {
+    const branch = git('rev-parse', '--abbrev-ref', 'HEAD');
+    if (branch.code !== 0 || branch.stdout.trim() !== cfg.branch || cfg.branch !== 'main' || cfg.remote !== 'origin') return result('precondition_failed', { detail: 'expected main/origin isolated worktree' });
+    const status = git('status', '--porcelain');
+    const changed = status.stdout.split('\n').filter(Boolean).map(l => l.slice(3).trim()).sort();
+    if (status.code !== 0 || JSON.stringify(changed) !== JSON.stringify([...files].sort())) return result('precondition_failed', { detail: 'worktree must contain exactly planned card changes; no staged/untracked state' });
+    const start = git('rev-parse', 'HEAD');
+    if (start.code !== 0 || !/^[0-9a-f]{40}$/.test(start.stdout.trim())) return result('precondition_failed', { detail: 'base SHA unavailable' });
+    for (const check of cfg.checks) {
+      const res = deps.run(check[0], check.slice(1));
+      if (res.code !== 0) return result('checks_failed', { detail: 'validation failed before external publication' });
     }
-  }
-  if (pushed.code !== 0) {
-    failAll('push_failed', `push rejected: ${pushed.stderr.slice(-300)}`, commits);
-    return result('push_failed', { commits, detail: `push failed; local commits since ${startSha} left unpushed for review` });
-  }
-
-  const rollback = async (type: 'deploy_failed' | 'live_check_failed', detail: string) => {
-    const shas = commits.map(c => c.sha).reverse();
-    const rev = git('revert', '--no-edit', ...shas);
-    const revPush = rev.code === 0 ? push() : rev;
-    const reverted = rev.code === 0 ? git('rev-list', '--reverse', `${startSha}..HEAD`).stdout.split('\n').filter(Boolean).slice(-shas.length) : [];
-    failAll('rolled_back', `${type}: ${detail}${revPush.code === 0 ? '' : ' (revert push FAILED — manual attention needed)'}`, commits, reverted);
-    return result(type, { commits, reverted, detail });
-  };
-
-  const headSha = commits[commits.length - 1].sha;
-  let state: ReturnType<typeof parseVercelState> = 'unknown'; let deployment: string | null = null;
-  const deployDeadline = deps.now().getTime() + cfg.deployTimeoutMs;
-  while (deps.now().getTime() < deployDeadline) {
-    const out = deps.run('vercel', ['ls', cfg.vercelProject, '--scope', cfg.vercelScope, '--prod', '-m', `githubCommitSha=${headSha}`]);
-    state = parseVercelState(`${out.stdout}\n${out.stderr}`);
-    deployment = (out.stdout.match(/https:\/\/\S+\.vercel\.app/) || [null])[0];
-    if (state === 'ready' || state === 'error') break;
-    await deps.sleep(cfg.deployPollMs);
-  }
-  if (state !== 'ready') return rollback('deploy_failed', state === 'error' ? `Vercel deployment for ${headSha} failed` : `Vercel deployment for ${headSha} not Ready within ${cfg.deployTimeoutMs / 60000} min`);
-
-  const live: Record<string, string[]> = {};
-  const liveDeadline = deps.now().getTime() + cfg.liveTimeoutMs;
-  let allOk = false;
-  let mismatchStreak = 0;
-  let lastMissingKey = '';
-  while (!allOk && deps.now().getTime() < liveDeadline) {
-    allOk = true;
-    let anyNon200 = false;
     for (const card of applied) {
-      const expected = expectedLiveStrings(deps.readCard(card.file));
-      const page = await deps.fetchText(`${cfg.siteBase}/en/cards/${card.card_id}?ow=${Date.now()}`).catch(() => ({ status: 0, text: '' }));
-      const text = pageText(page.text);
-      live[card.card_id] = expected.filter(s => page.status !== 200 || !text.includes(s));
-      if (page.status !== 200) anyNon200 = true;
-      if (live[card.card_id].length) allOk = false;
+      const { subject, body } = commitMessage(card);
+      if (git('add', '--', card.file).code !== 0 || git('-c', 'user.name=opencard-ai', '-c', 'user.email=opencard@opencardai.com', 'commit', '-m', subject, '-m', body, '--', card.file).code !== 0) return result('push_failed', { detail: 'local commit failed; no push fallback' });
     }
-    if (!allOk) {
-      const key = JSON.stringify(live);
-      if (!anyNon200 && key === lastMissingKey) mismatchStreak++;
-      else { mismatchStreak = 1; lastMissingKey = key; }
-      if (!anyNon200 && mismatchStreak >= LIVE_MISMATCH_FAIL_FAST) {
-        deps.log(`live check fail-fast after ${mismatchStreak} identical 200 responses missing ${key}`);
-        break;
+    receipt = await transport.merge(start.stdout.trim(), files);
+    if (receipt.state !== 'merged') return result('uncertain', { detail: receipt.detail });
+  }
+  const mergeSha = receipt.mergeSha;
+  if (!mergeSha || !/^[0-9a-f]{40}$/.test(mergeSha)) return result('uncertain', { detail: 'missing confirmed squash merge SHA' });
+  applied.forEach(card => commits.push({ card_id: card.card_id, sha: mergeSha }));
+  const observe = async (sha: string) => {
+    const attempts = Math.max(1, Math.ceil(cfg.deployTimeoutMs / Math.max(1, cfg.deployPollMs)));
+    let evidence: Awaited<ReturnType<OfferPrTransport['deployment']>> = { state: 'unknown' };
+    for (let i = 0; i < attempts; i++) {
+      evidence = await transport.deployment(sha);
+      if (evidence.state === 'ready' || evidence.state === 'error') break;
+      if (i + 1 < attempts) await deps.sleep(cfg.deployPollMs);
+    }
+    return evidence;
+  };
+  const verifyLive = async (previous = false) => {
+    const live: Record<string, string[]> = {};
+    const attempts = Math.max(1, Math.ceil(cfg.liveTimeoutMs / Math.max(1, cfg.livePollMs)));
+    let streak = 0, last = '';
+    for (let i = 0; i < attempts; i++) {
+      let non200 = false;
+      for (const card of applied) {
+        const value = structuredClone(deps.readCard(card.file));
+        if (previous) for (const change of card.changes) {
+          const keys = change.field.split('.');
+          let obj = value;
+          for (const key of keys.slice(0, -1)) obj = obj[key];
+          obj[keys[keys.length - 1]] = change.old_value;
+        }
+        const expected = expectedLiveStrings(value);
+        // Empty expectations cannot establish public-page agreement.
+        if (!expected.length) return { ok: false, live, uncertain: true };
+        const page = await deps.fetchText(`${cfg.siteBase}/en/cards/${card.card_id}?ow=${deps.now().getTime()}`).catch(() => ({ status: 0, text: '' }));
+        non200 ||= page.status !== 200;
+        live[card.card_id] = expected.filter(s => page.status !== 200 || !pageText(page.text).includes(s));
       }
-      await deps.sleep(cfg.livePollMs);
+      if (Object.values(live).every(v => !v.length)) return { ok: true, live, uncertain: false };
+      const key = JSON.stringify(live); streak = !non200 && last === key ? streak + 1 : 1; last = key;
+      if (!non200 && streak >= LIVE_MISMATCH_FAIL_FAST) return { ok: false, live, uncertain: false };
+      if (i + 1 < attempts) await deps.sleep(cfg.livePollMs);
     }
-  }
-  if (!allOk) return rollback('live_check_failed', `live page missing: ${JSON.stringify(live)}`);
-
+    return { ok: false, live, uncertain: true };
+  };
+  const rollback = async (reason: 'deploy_failed' | 'live_check_failed') => {
+    const reverted = await transport.rollback(mergeSha, files);
+    if (reverted.state !== 'merged' || !reverted.mergeSha) return result('uncertain', { detail: 'rollback FAILED/UNCERTAIN; no direct revert push' });
+    const restoredDeployment = await observe(reverted.mergeSha);
+    if (restoredDeployment.state !== 'ready') return result('uncertain', { reverted: [reverted.mergeSha], detail: 'revert PR merged but production restoration UNCONFIRMED' });
+    const restored = await verifyLive(true);
+    if (!restored.ok || !transport.record('rollback_verified', { rollbackSha: reverted.mergeSha })) return result('uncertain', { reverted: [reverted.mergeSha], detail: 'rollback page/state UNCONFIRMED' });
+    for (const card of applied) {
+      events.push({ ts: deps.now().toISOString(), type: 'rolled_back', card_id: card.card_id, commit: mergeSha, revert_commits: [reverted.mergeSha], reasons: [reason] });
+      card.changes.forEach(c => ledger.push({ key: c.fingerprint, card_id: card.card_id, field: c.field, value: c.new_value, status: 'rolled_back', commit: mergeSha }));
+    }
+    return result(reason, { reverted: [reverted.mergeSha], detail: 'revert PR merged and production restoration verified' });
+  };
+  const deployed = await observe(mergeSha);
+  if (!transport.record('deployment_observed', { deployment: deployed.state })) return result('uncertain', { detail: 'merge/deployment completed but journal failed; reconcile only' });
+  if (deployed.state === 'error') return rollback('deploy_failed');
+  if (deployed.state !== 'ready') return result('uncertain', { detail: 'production deployment UNCONFIRMED; no automatic rollback assumption' });
+  const live = await verifyLive();
+  if (!live.ok) return live.uncertain ? result('uncertain', { live: live.live, detail: 'public page unavailable/unconfirmed; no rollback assumption' }) : rollback('live_check_failed');
+  if (!transport.record('published')) return result('uncertain', { detail: 'publication verified but private state failed; reconcile, never republish blindly' });
   for (const card of applied) {
-    const sha = commits.find(c => c.card_id === card.card_id)!.sha;
-    events.push({ ts: ts(), type: 'published', card_id: card.card_id, changes: card.changes.map(({ field, old_value, new_value }) => ({ field, old_value, new_value })), sources: card.sources, commit: sha });
-    card.changes.forEach(c => ledger.push({ key: c.fingerprint, card_id: card.card_id, field: c.field, value: c.new_value, status: 'published', commit: sha, published_at: ts() }));
+    events.push({ ts: deps.now().toISOString(), type: 'published', card_id: card.card_id, changes: card.changes.map(({ field, old_value, new_value }) => ({ field, old_value, new_value })), sources: card.sources, commit: mergeSha });
+    card.changes.forEach(c => ledger.push({ key: c.fingerprint, card_id: card.card_id, field: c.field, value: c.new_value, status: 'published', commit: mergeSha, published_at: deps.now().toISOString() }));
   }
-  return result('published', { commits, deployment, live });
+  return result('published', { deployment: deployed.id, live: live.live });
 }

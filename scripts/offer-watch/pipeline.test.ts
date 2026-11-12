@@ -170,78 +170,46 @@ assert.equal(applyPlanToCard(delta, { card_id: 'd', kinds: ['offer_update'], cha
 // ---------- publish / rollback with mocked git + vercel + fetch
 const cfg: PublishConfig = { branch: 'main', remote: 'origin', vercelProject: 'opencard', vercelScope: 'team', siteBase: 'https://opencardai.com', checks: [['npm', 'run', 'validate'], ['npm', 'run', 'build']], deployTimeoutMs: 60000, deployPollMs: 1000, liveTimeoutMs: 3000, livePollMs: 1000 };
 const appliedCard = { card_id: msCard.card_id, file: 'data/cards/amex-morgan-stanley-platinum.json', changes: plan.applied[0].changes, sources: plan.applied[0].sources };
-function mockDeps(o: { failCheck?: string; vercel?: string[]; livePage?: string; pushFails?: number } = {}) {
-  const calls: string[][] = []; let clock = 0; let sha = 0; let pushFails = o.pushFails ?? 0; const vercel = [...(o.vercel ?? ['● Ready'])];
+const MERGED = 'c'.repeat(40), REVERTED = 'e'.repeat(40);
+function mockDeps(o: { failCheck?: string; deployment?: 'ready' | 'error' | 'unknown'; livePage?: string; rollbackFails?: boolean } = {}) {
+  const calls: string[][] = []; let clock = 0, rolledBack = false;
   const deps: PublishDeps = {
+    transport: {
+      authorize: async () => {}, reconcile: async () => null,
+      merge: async () => ({ state: 'merged', mergeSha: MERGED }),
+      rollback: async () => { rolledBack = true; return o.rollbackFails ? { state: 'uncertain' } : { state: 'merged', mergeSha: REVERTED }; },
+      deployment: async () => ({ state: rolledBack ? 'ready' : o.deployment ?? 'ready' }), record: () => true,
+    },
     run(cmd, args) {
-      calls.push([cmd, ...args]);
-      const ok = (stdout = '') => ({ code: 0, stdout, stderr: '' });
+      calls.push([cmd, ...args]); const ok = (stdout = '') => ({ code: 0, stdout, stderr: '' });
       if (cmd === 'git' && args[0] === 'rev-parse' && args[1] === '--abbrev-ref') return ok('main\n');
       if (cmd === 'git' && args[0] === 'status') return ok(` M ${appliedCard.file}\n`);
-      if (cmd === 'git' && args[0] === 'rev-parse') return ok(`sha${sha}\n`);
-      if (cmd === 'git' && (args[0] === 'commit' || args[0] === 'revert')) { sha++; return ok(); }
-      if (cmd === 'git' && args[0] === 'push') return pushFails-- > 0 ? { code: 1, stdout: '', stderr: 'rejected' } : ok();
-      if (cmd === 'git' && args[0] === 'rev-list') return ok(Array.from({ length: sha }, (_, i) => `sha${i + 1}`).join('\n'));
-      if (cmd === 'vercel') return ok(`https://opencard-x.vercel.app ${vercel.length > 1 ? vercel.shift() : vercel[0]}`);
+      if (cmd === 'git' && args[0] === 'rev-parse') return ok('a'.repeat(40));
       if (o.failCheck && [cmd, ...args].join(' ') === o.failCheck) return { code: 1, stdout: '', stderr: 'boom' };
       return ok();
     },
-    fetchText: async () => ({ status: 200, text: o.livePage ?? '<div>Welcome Offer</div><div>80,000<!-- --> pts</div> Spend $<!-- -->12,000 within <!-- -->6<!-- --> months <p>$895 Annual Fee</p>' }),
-    readCard: () => after,
-    sleep: async ms => { clock += ms; },
-    now: () => new Date(runAt + clock),
-    log: () => {},
+    fetchText: async () => ({ status: 200, text: rolledBack ? '<div>150,000 pts</div> Spend $12,000 within 6 months $895 Annual Fee' : o.livePage ?? '<div>80,000<!-- --> pts</div> Spend $<!-- -->12,000 within <!-- -->6<!-- --> months <p>$895 Annual Fee</p>' }),
+    readCard: () => after, sleep: async ms => { clock += ms; }, now: () => new Date(runAt + clock), log: () => {},
   };
   return { deps, calls };
 }
-const noForce = (calls: string[][]) => assert.ok(!calls.some(c => c.join(' ').includes('--force') || c.join(' ').includes(' -f ') || c.some(a => a.startsWith('+'))));
 (async () => {
-  // success: one commit per card, pushed, deploy Ready, live verified, ledger published
-  let m = mockDeps({ vercel: ['● Building', '● Ready'] });
-  let res = await publish([appliedCard], cfg, m.deps);
-  assert.equal(res.status, 'published'); assert.deepEqual(res.commits, [{ card_id: msCard.card_id, sha: 'sha1' }]);
-  assert.ok(m.calls.some(c => c[0] === 'git' && c[1] === 'commit' && c.at(-1) === appliedCard.file));
-  assert.equal(m.calls.filter(c => c[1] === 'revert').length, 0);
-  assert.ok(res.ledger.every(l => l.status === 'published' && l.commit === 'sha1')); noForce(m.calls);
-  // checks fail -> no commit, files restored
-  m = mockDeps({ failCheck: 'npm run build' });
-  res = await publish([appliedCard], cfg, m.deps);
-  assert.equal(res.status, 'checks_failed'); assert.equal(m.calls.filter(c => c[1] === 'commit').length, 0);
-  assert.ok(m.calls.some(c => c[1] === 'checkout' && c.includes(appliedCard.file))); assert.ok(res.ledger.every(l => l.status === 'publish_failed'));
-  // deploy error -> revert + push
-  m = mockDeps({ vercel: ['● Error'] });
-  res = await publish([appliedCard], cfg, m.deps);
-  assert.equal(res.status, 'deploy_failed'); assert.ok(m.calls.some(c => c[1] === 'revert' && c.includes('sha1')));
-  assert.equal(m.calls.filter(c => c[1] === 'push').length, 2); assert.ok(res.ledger.every(l => l.status === 'rolled_back')); noForce(m.calls);
-  // deploy never ready -> timeout -> revert
-  m = mockDeps({ vercel: ['● Building'] });
-  res = await publish([appliedCard], cfg, m.deps);
-  assert.equal(res.status, 'deploy_failed'); assert.ok(m.calls.some(c => c[1] === 'revert'));
-  // live page still shows old values -> revert
-  m = mockDeps({ livePage: '<div>150,000 pts</div> Spend $12,000 within 6 months $895 Annual Fee' });
-  res = await publish([appliedCard], cfg, m.deps);
-  assert.equal(res.status, 'live_check_failed'); assert.ok(m.calls.some(c => c[1] === 'revert')); assert.equal(res.events[0].type, 'rolled_back');
-  // Content mismatch on HTTP 200 fail-fasts (does not burn liveTimeoutMs).
-  {
-    let sleeps = 0;
-    const fast = mockDeps({ livePage: '<div>150,000 pts</div> Spend $12,000 within 6 months $895 Annual Fee' });
-    const origSleep = fast.deps.sleep;
-    fast.deps.sleep = async (ms: number) => { sleeps++; return origSleep(ms); };
-    const t0 = Date.now();
-    res = await publish([appliedCard], { ...cfg, liveTimeoutMs: 10 * 60000, livePollMs: 1 }, fast.deps);
-    assert.equal(res.status, 'live_check_failed');
-    assert.ok(sleeps < 5, `fail-fast should sleep <5 times, slept ${sleeps}`);
-    assert.ok(Date.now() - t0 < 5000, 'fail-fast must finish in seconds, not minutes');
-  }
-  // push rejected once -> rebase (autostash) + retry, still no force
-  m = mockDeps({ pushFails: 1 });
-  res = await publish([appliedCard], cfg, m.deps);
-  assert.equal(res.status, 'published'); assert.ok(m.calls.some(c => c[1] === 'pull' && c.includes('--rebase'))); noForce(m.calls);
-  // push always rejected -> push_failed, no revert of unpushed work
-  m = mockDeps({ pushFails: 5 });
-  res = await publish([appliedCard], cfg, m.deps);
-  assert.equal(res.status, 'push_failed'); assert.equal(m.calls.filter(c => c[1] === 'revert').length, 0);
-  // nothing to publish
+  let m = mockDeps(); let res = await publish([appliedCard], cfg, m.deps);
+  assert.equal(res.status, 'published'); assert.deepEqual(res.commits, [{ card_id: msCard.card_id, sha: MERGED }]);
+  assert.ok(res.ledger.every(l => l.commit === MERGED));
+  assert.ok(!m.calls.some(c => c.includes('push') || c.includes('revert') || c.includes('--rebase')));
+  m = mockDeps({ failCheck: 'npm run build' }); res = await publish([appliedCard], cfg, m.deps);
+  assert.equal(res.status, 'checks_failed'); assert.ok(!m.calls.some(c => c.includes('commit')));
+  m = mockDeps({ deployment: 'error' }); res = await publish([appliedCard], cfg, m.deps);
+  assert.equal(res.status, 'deploy_failed'); assert.deepEqual(res.reverted, [REVERTED]); assert.equal(res.events[0].type, 'rolled_back');
+  m = mockDeps({ deployment: 'unknown' }); res = await publish([appliedCard], cfg, m.deps);
+  assert.equal(res.status, 'uncertain'); assert.deepEqual(res.reverted, []);
+  m = mockDeps({ livePage: '<div>150,000 pts</div> Spend $12,000 within 6 months $895 Annual Fee' }); res = await publish([appliedCard], cfg, m.deps);
+  assert.equal(res.status, 'live_check_failed'); assert.equal(res.events[0].type, 'rolled_back');
+  m = mockDeps({ deployment: 'error', rollbackFails: true }); res = await publish([appliedCard], cfg, m.deps);
+  assert.equal(res.status, 'uncertain'); assert.deepEqual(res.events, []);
+  m = mockDeps(); delete m.deps.transport;
+  assert.equal((await publish([appliedCard], cfg, m.deps)).status, 'precondition_failed'); assert.equal(m.calls.length, 0);
   assert.equal((await publish([], cfg, mockDeps().deps)).status, 'nothing_to_publish');
 
   // helpers

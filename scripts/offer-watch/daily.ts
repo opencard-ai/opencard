@@ -19,6 +19,13 @@ const has = (flag: string) => argv.includes(flag);
 const arg = (name: string) => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : undefined; };
 const dryRun = has('--dry-run');
 const today = arg('--today') || laToday();
+// Fail before collect/review/apply or artifact/state writes on a future merge unless explicitly provisioned.
+const publicationArgs = ['--publish', '--production-enable'].filter(has);
+for (const flag of ['--owner-epoch', '--run-id', '--journal-dir']) { const value = arg(flag); if (value) publicationArgs.push(flag, value); }
+if (!dryRun) {
+  const preflight = spawnSync('npx', ['tsx', 'scripts/offer-watch/publish.ts', '--preflight', ...publicationArgs], { encoding: 'utf8', timeout: 60000 });
+  if (preflight.status !== 0) { console.error('offer daily disabled before collect/review/apply: provision guarded publisher first; no rollback assumed'); process.exit(1); }
+}
 const dir = 'artifacts/offer-watch';
 fs.mkdirSync(dir, { recursive: true });
 const logFile = path.join(dir, `daily-${today}.log`);
@@ -83,7 +90,7 @@ function main(): number {
   ok = ok && run('review', 'npx', [...tsx, 'scripts/offer-watch/review.ts', cand, '--worktree', '--ledger', ...(dryRun ? [] : ['--write']), '--today', today, '--out', review], 5 * 60000, 'review 失敗');
   ok = ok && run('apply', 'npx', [...tsx, 'scripts/offer-watch/apply.ts', '--report', review, '--today', today, ...(dryRun ? ['--out', path.join(dir, `apply-${today}.dry.json`)] : ['--apply', '--out', applyOut])], 10 * 60000, 'apply 失敗（卡片檔案已還原）');
   const plan = ok ? readJson<any>(dryRun ? path.join(dir, `apply-${today}.dry.json`) : applyOut) : null;
-  if (ok && !dryRun && plan?.applied?.length) run('publish', 'npx', [...tsx, 'scripts/offer-watch/publish.ts', '--plan', applyOut], 75 * 60000, 'publish 失敗（詳見 log；失敗時已自動回滾）');
+  if (ok && !dryRun && plan?.applied?.length) run('publish', 'npx', [...tsx, 'scripts/offer-watch/publish.ts', '--plan', applyOut, ...publicationArgs], 75 * 60000, 'publish 失敗或未確認（詳見 log；不可假定已回滾，須相同 run-id reconcile）');
   else if (ok) log(dryRun ? 'dry-run: publish skipped' : 'nothing applied; publish skipped');
 
   let digest: string | null = null;
