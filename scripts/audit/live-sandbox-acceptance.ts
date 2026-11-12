@@ -6,7 +6,6 @@
  * Live coverage: lease + CAS write/read path (BASELINE_CREATED + REPORT).
  * AES backup/restore + tamper/wrong-ns/stale/pending: LOCAL only (offline tests), not live HTTP. */
 import { createHash, randomBytes, createCipheriv, createDecipheriv } from 'node:crypto';
-import { pathToFileURL } from 'node:url';
 import { sandboxAuditStoreFromEnv, validateAuditRedisUrl } from './upstash-audit-transport';
 import { AUDIT_DOC, AUDIT_KIND, runWithDurableBaseline, digestOf } from './durable-baseline';
 import { BACKUP_KIND, openBackup } from './state-backup';
@@ -115,7 +114,5 @@ export async function runLiveAcceptance({ env = process.env, fetchImpl = globalT
     if (prevFetch) globalThis.fetch = prevFetch;
   }
 }
-
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  runLiveAcceptance().then((c) => { process.exitCode = c; }, () => { console.log(JSON.stringify({ ok: false, exit: 1, error: 'internal' })); process.exitCode = 1; });
-}
+// Entrypoint lives in live-sandbox-acceptance-cli.ts: no import.meta here, so tsx's CJS
+// transform keeps named exports visible to ESM importers under Node 24.

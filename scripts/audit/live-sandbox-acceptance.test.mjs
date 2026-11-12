@@ -2,7 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createServer } from 'node:http';
-import { runLiveAcceptance as runLive, pinAndBudget as pinReal, installBudgetFetch, localAesRoundtrip, TEST_DATABASE_ID_SHA256, TEST_ENDPOINT_SHA256, TOTAL_BUDGET } from './live-sandbox-acceptance.ts';
+// Dynamic import: a static ESM named import of a tsx-transformed .ts (CJS) module does not
+// expose named exports under Node 24, which broke the hosted offline preflight (run 42543348205).
+const { runLiveAcceptance: runLive, pinAndBudget: pinReal, installBudgetFetch, localAesRoundtrip, TEST_DATABASE_ID_SHA256, TEST_ENDPOINT_SHA256, TOTAL_BUDGET } = await import('./live-sandbox-acceptance.ts');
 import { createHash } from 'node:crypto';
 
 // Synthetic fixture pins only; the real sandbox id/endpoint never appear in the repo.
@@ -100,6 +102,7 @@ test('workflow contract: audit job gated, secrets after offline, budget/pin pres
   assert.ok(job.indexOf('secrets.') > job.indexOf('npm ci') && job.indexOf('secrets.') > job.indexOf('Offline preflight'));
   assert.deepEqual([...new Set(job.match(/secrets\.[A-Z_]+/g))].sort(), ['secrets.OPENCARD_AUDIT_REDIS_TOKEN', 'secrets.OPENCARD_AUDIT_REDIS_URL', 'secrets.OPENCARD_SANDBOX_DATABASE_ID']);
   assert.match(job, /OPENCARD_AUDIT_LIVE: '1'/);
+  assert.match(job, /node --import tsx scripts\/audit\/live-sandbox-acceptance-cli\.ts/);
   assert.doesNotMatch(y, /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/);
   assert.doesNotMatch(y, /[a-z]+-[a-z]+-\d{5,}\.upstash\.io/);
   const src = fs.readFileSync(new URL('./live-sandbox-acceptance.ts', import.meta.url), 'utf8');

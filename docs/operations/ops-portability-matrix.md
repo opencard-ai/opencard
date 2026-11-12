@@ -104,3 +104,17 @@ multi-host Redis substitute. Unset durable mode retains legacy behavior; other
 store values are refused.
 
 - File fixture store (`file-audit-store.ts`) is single-host and test-only: it uses atomic rename but no fsync (state can be lost on power failure), and stale-lock cleanup is manual. Fixture and durable runs require `TMPDIR` outside the repo. Lua/bridge tests skip in CI unless `FAKEREDIS_PYTHON` is set.
+
+## Live audit sandbox acceptance: pins and required secrets (2026-11-11 alignment)
+- The repo no longer contains the sandbox database id or endpoint hostname. `scripts/audit/live-sandbox-acceptance.ts`
+  keeps only SHA-256 pins (`TEST_DATABASE_ID_SHA256`, `TEST_ENDPOINT_SHA256`); tests use synthetic fixture pins.
+- The `ops-audit-readonly` job reads `secrets.OPENCARD_SANDBOX_DATABASE_ID` together with
+  `OPENCARD_AUDIT_REDIS_URL` / `OPENCARD_AUDIT_REDIS_TOKEN`. **That secret is not provisioned yet**; the live step
+  exits 2 (`database-id`, zero HTTP calls) until it is added to the protected environment by an approved operator.
+- Earlier pushed commits on `bot/opencard-ops-portable` (≤ d23440e) still contain the literal id and the test
+  hostname; history was not rewritten (no force push). It is an identifier, not a credential, but rotating or
+  recreating the free sandbox database would fully retire it.
+- Entrypoint is `scripts/audit/live-sandbox-acceptance-cli.ts`; the test imports the module dynamically because a
+  static ESM named import of the tsx-transformed `.ts` module exposes no named exports under Node 24 (cause of the
+  run 42543348205 offline preflight failure, which the earlier `.ts` conversion alone did not fix). No live run was
+  performed in this alignment.
