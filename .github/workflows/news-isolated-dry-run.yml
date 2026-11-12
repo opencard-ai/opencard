@@ -173,7 +173,7 @@ jobs:
       - name: Live audit sandbox acceptance (secrets only here; budget 10; allowlisted summary)
         env:
           OPENCARD_AUDIT_LIVE: '1'
-          OPENCARD_SANDBOX_DATABASE_ID: 74ef02fa-e0fd-4f53-867d-36d4bb4f498f
+          OPENCARD_SANDBOX_DATABASE_ID: ${{ secrets.OPENCARD_SANDBOX_DATABASE_ID }}
           OPENCARD_AUDIT_SANDBOX_ID: audit-gh-${{ github.run_id }}
           OPENCARD_AUDIT_REDIS_URL: ${{ secrets.OPENCARD_AUDIT_REDIS_URL }}
           OPENCARD_AUDIT_REDIS_TOKEN: ${{ secrets.OPENCARD_AUDIT_REDIS_TOKEN }}

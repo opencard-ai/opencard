@@ -2,11 +2,22 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createServer } from 'node:http';
-import { runLiveAcceptance, pinAndBudget, installBudgetFetch, localAesRoundtrip, TEST_DATABASE_ID, TEST_ENDPOINT_SHA256, TOTAL_BUDGET } from './live-sandbox-acceptance.ts';
+import { runLiveAcceptance as runLive, pinAndBudget as pinReal, installBudgetFetch, localAesRoundtrip, TEST_DATABASE_ID_SHA256, TEST_ENDPOINT_SHA256, TOTAL_BUDGET } from './live-sandbox-acceptance.ts';
 import { createHash } from 'node:crypto';
 
-const URL_OK = 'https://primary-lark-104985.upstash.io';
-assert.equal(createHash('sha256').update(URL_OK).digest('hex'), TEST_ENDPOINT_SHA256);
+// Synthetic fixture pins only; the real sandbox id/endpoint never appear in the repo.
+const sha = (v) => createHash('sha256').update(v).digest('hex');
+const URL_OK = 'https://fixture-sandbox-00000.upstash.io';
+const TEST_DATABASE_ID = 'fixture-db-00000000-0000-0000-0000-000000000000';
+const PINS = { databaseIdSha256: sha(TEST_DATABASE_ID), endpointSha256: sha(URL_OK) };
+const pinAndBudget = (o) => pinReal({ ...o, pins: PINS });
+const runLiveAcceptance = (o) => runLive({ ...o, pins: PINS });
+assert.match(TEST_DATABASE_ID_SHA256, /^[0-9a-f]{64}$/);
+assert.match(TEST_ENDPOINT_SHA256, /^[0-9a-f]{64}$/);
+
+test('default pins refuse fixture values (real pins are hashes only)', () => {
+  assert.throws(() => pinReal({ url: URL_OK, token: 'tok-12345678', databaseId: TEST_DATABASE_ID }), /database id/);
+});
 
 test('pin/budget guards', () => {
   assert.throws(() => pinAndBudget({ url: URL_OK, token: 'tok-12345678', databaseId: 'other' }));
@@ -31,7 +42,7 @@ test('config refused without live flag / bad id; construction makes zero fetches
     { OPENCARD_AUDIT_LIVE: '1', OPENCARD_SANDBOX_DATABASE_ID: TEST_DATABASE_ID, OPENCARD_AUDIT_SANDBOX_ID: 'audit-short', OPENCARD_AUDIT_REDIS_URL: URL_OK, OPENCARD_AUDIT_REDIS_TOKEN: 'tok-12345678' },
   ]) {
     const out = []; const code = await runLiveAcceptance({ env, fetchImpl, print: (s) => out.push(s) });
-    assert.equal(code, 2); assert.equal(fetches, 0); assert.doesNotMatch(out.join('\n'), /tok-12345678|primary-lark/);
+    assert.equal(code, 2); assert.equal(fetches, 0); assert.doesNotMatch(out.join('\n'), /tok-12345678|fixture-sandbox|fixture-db-/);
   }
 });
 
@@ -87,11 +98,15 @@ test('workflow contract: audit job gated, secrets after offline, budget/pin pres
   assert.match(job, /persist-credentials: false/);
   assert.ok(!job.includes('upload-artifact'));
   assert.ok(job.indexOf('secrets.') > job.indexOf('npm ci') && job.indexOf('secrets.') > job.indexOf('Offline preflight'));
-  assert.deepEqual([...new Set(job.match(/secrets\.[A-Z_]+/g))].sort(), ['secrets.OPENCARD_AUDIT_REDIS_TOKEN', 'secrets.OPENCARD_AUDIT_REDIS_URL']);
+  assert.deepEqual([...new Set(job.match(/secrets\.[A-Z_]+/g))].sort(), ['secrets.OPENCARD_AUDIT_REDIS_TOKEN', 'secrets.OPENCARD_AUDIT_REDIS_URL', 'secrets.OPENCARD_SANDBOX_DATABASE_ID']);
   assert.match(job, /OPENCARD_AUDIT_LIVE: '1'/);
-  assert.match(job, /74ef02fa-e0fd-4f53-867d-36d4bb4f498f/);
+  assert.doesNotMatch(y, /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/);
+  assert.doesNotMatch(y, /[a-z]+-[a-z]+-\d{5,}\.upstash\.io/);
   const src = fs.readFileSync(new URL('./live-sandbox-acceptance.ts', import.meta.url), 'utf8');
   assert.match(src, /TOTAL_BUDGET = 10/);
   assert.match(src, /TEST_ENDPOINT_SHA256/);
+  assert.match(src, /TEST_DATABASE_ID_SHA256/);
+  assert.doesNotMatch(src, /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/);
+  assert.doesNotMatch(src, /\.upstash\.io'/);
   assert.doesNotMatch(src, /allowProduction:\s*true/);
 });

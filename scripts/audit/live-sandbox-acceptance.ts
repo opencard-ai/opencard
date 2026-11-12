@@ -11,16 +11,20 @@ import { sandboxAuditStoreFromEnv, validateAuditRedisUrl } from './upstash-audit
 import { AUDIT_DOC, AUDIT_KIND, runWithDurableBaseline, digestOf } from './durable-baseline';
 import { BACKUP_KIND, openBackup } from './state-backup';
 
-export const TEST_DATABASE_ID = '74ef02fa-e0fd-4f53-867d-36d4bb4f498f';
+// Only SHA-256 pins are public. The real sandbox database id and endpoint come from
+// protected environment secrets at run time and are never written to the repo or summary.
+export const TEST_DATABASE_ID_SHA256 = '535666579e49cd027c2ee6513c76c8cfa7b19d4991cf4e5bce67636b31cebb1a';
 export const TEST_ENDPOINT_SHA256 = '04f761ca28daef5b3ad27673aec87736b3651032a553f91f13ec0471b1727c54';
 export const TOTAL_BUDGET = 10;
 const opts = { docName: AUDIT_DOC };
+const sha256 = (v) => createHash('sha256').update(String(v)).digest('hex');
+export const DEFAULT_PINS = Object.freeze({ databaseIdSha256: TEST_DATABASE_ID_SHA256, endpointSha256: TEST_ENDPOINT_SHA256 });
 const finding = (id) => ({ card_id: id, type: 'broken_source_url', severity: 'high', detail: `synthetic-${id}` });
 
-export function pinAndBudget({ url, token, databaseId, budget = TOTAL_BUDGET }) {
-  if (databaseId !== TEST_DATABASE_ID) throw new Error('wrong database id');
+export function pinAndBudget({ url, token, databaseId, budget = TOTAL_BUDGET, pins = DEFAULT_PINS }) {
+  if (typeof databaseId !== 'string' || !databaseId || sha256(databaseId) !== pins.databaseIdSha256) throw new Error('wrong database id');
   validateAuditRedisUrl(url);
-  if (createHash('sha256').update(String(url)).digest('hex') !== TEST_ENDPOINT_SHA256) throw new Error('endpoint pin mismatch');
+  if (sha256(url) !== pins.endpointSha256) throw new Error('endpoint pin mismatch');
   if (typeof token !== 'string' || token.length < 8 || /\s/.test(token)) throw new Error('invalid token');
   if (!Number.isInteger(budget) || budget < 1 || budget > TOTAL_BUDGET) throw new Error('budget');
   let used = 0;
@@ -51,8 +55,8 @@ export function localAesRoundtrip(prefix, findings, date = '2026-11-08') {
   return true;
 }
 
-export async function runLiveAcceptance({ env = process.env, fetchImpl = globalThis.fetch, print = (s) => console.log(s) } = {}) {
-  const out = { ok: false, exit: 1, databaseId: TEST_DATABASE_ID, httpCalls: 0, coverage: [], namespace: null };
+export async function runLiveAcceptance({ env = process.env, fetchImpl = globalThis.fetch, print = (s) => console.log(s), pins = DEFAULT_PINS } = {}) {
+  const out = { ok: false, exit: 1, databaseId: 'sha256-pinned', httpCalls: 0, coverage: [], namespace: null };
   const REASONS = new Set(['live-flag','database-id','sandbox-id','construction-network','namespace','baseline','report','budget','aes','pin','token','config','transport','busy','unknown']);
   const emit = (code, reason) => {
     out.exit = code;
@@ -63,10 +67,10 @@ export async function runLiveAcceptance({ env = process.env, fetchImpl = globalT
   let budget, prevFetch;
   try {
     if (env.OPENCARD_AUDIT_LIVE !== '1') return emit(2, 'live-flag');
-    if (env.OPENCARD_SANDBOX_DATABASE_ID !== TEST_DATABASE_ID) return emit(2, 'database-id');
+    if (typeof env.OPENCARD_SANDBOX_DATABASE_ID !== 'string' || sha256(env.OPENCARD_SANDBOX_DATABASE_ID) !== pins.databaseIdSha256) return emit(2, 'database-id');
     const fresh = env.OPENCARD_AUDIT_SANDBOX_ID;
     if (!fresh || !/^audit-[a-z0-9-]{8,32}$/.test(fresh) || /offer|production/i.test(fresh)) return emit(2, 'sandbox-id');
-    budget = pinAndBudget({ url: env.OPENCARD_AUDIT_REDIS_URL, token: env.OPENCARD_AUDIT_REDIS_TOKEN, databaseId: env.OPENCARD_SANDBOX_DATABASE_ID });
+    budget = pinAndBudget({ url: env.OPENCARD_AUDIT_REDIS_URL, token: env.OPENCARD_AUDIT_REDIS_TOKEN, databaseId: env.OPENCARD_SANDBOX_DATABASE_ID, pins });
     prevFetch = globalThis.fetch;
     globalThis.fetch = installBudgetFetch(budget, fetchImpl);
 
