@@ -139,7 +139,9 @@ test('pending checks or authority revoked before merge never merges; resume avoi
   for (const options of [{ pending: true }, { revoke: true }]) {
     const m = liveMock(result, options);
     try {
-      await assert.rejects(publishPortableNews({ ...result, ...m, repoPath: '/fixture/repo', publish: true, productionEnable: true, ownerEpoch: 'fixture-epoch' }));
+      await assert.rejects(publishPortableNews({ ...result, ...m, repoPath: '/fixture/repo', publish: true, productionEnable: true, ownerEpoch: 'fixture-epoch' }),
+        // Pending stays a rejection but is identifiable/resumable; revoked authority is never "pending".
+        error => options.pending ? error.code === 'CHECKS_PENDING' && error.pr === 7 && error.head === head && /^bot\/news-sync\/[0-9a-f]{24}$/.test(error.branch) : error.code !== 'CHECKS_PENDING');
       assert.equal(m.calls.some(c => c[2] === 'merge'), false);
       assert.ok(m.scratch.every(p => !fs.existsSync(p)), 'failed publication scratch removed');
     } finally { m.scratch.forEach(p => fs.rmSync(p, { recursive: true, force: true })); }

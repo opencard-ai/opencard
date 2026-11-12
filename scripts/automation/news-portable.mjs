@@ -6,6 +6,21 @@ import { createHash } from 'node:crypto';
 import { runNewsSync } from '../sync-news.mjs';
 
 export const jsonHash = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
+/** Hard cost cap: one translation request per locale (zh, es) per run; only uncached titles are sent. */
+export const MAX_TRANSLATION_CALLS = 2;
+/** Thin wrapper counting provider invocations (each invocation is exactly one model HTTP request). */
+export function countTranslationCalls(translate, { max = MAX_TRANSLATION_CALLS } = {}) {
+  if (typeof translate !== 'function') throw new Error('explicit translation provider required');
+  if (!Number.isSafeInteger(max) || max < 0) throw new Error('invalid translation call cap');
+  const counter = { calls: 0, max };
+  const counted = async (items, lang) => {
+    // Refuse before calling the provider, so a regression can never exceed the accepted cost.
+    if (counter.calls >= max) throw new Error('translation call cap exceeded; feed not published');
+    counter.calls++;
+    return translate(items, lang);
+  };
+  return { translate: counted, counter };
+}
 export function readNewsSnapshot(repoPath, sourceSha) {
   if (!/^[0-9a-f]{40}$/.test(sourceSha)) throw new Error('explicit commit SHA required');
   const git = args => execFileSync('git', ['-C', path.resolve(repoPath), ...args], { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe'] });

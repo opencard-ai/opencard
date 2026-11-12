@@ -1,0 +1,172 @@
+name: News cloud publish
+# Production news writer (replaces the Mac news job after the approved cutover protocol).
+# - First production write is the SCHEDULED slot; do not workflow_dispatch inside the cutover
+#   window without separate explicit approval.
+# - Environment `news-production` must NOT have required reviewers and must NOT have a wait timer
+#   (either would park the scheduled run waiting for a human and the slot would be missed).
+#   Do not change protection of existing acceptance environments (opencard-migration-sandbox etc.).
+# - NEWS_EPOCH below must equal ops/runner-owner.json news.epoch exactly (it is passed as --owner-epoch).
+# - Cost: uses the existing repo-level MINIMAX_API_KEY; at most 2 MiniMax-M2.7 requests per run
+#   (zh + es, uncached titles only), hard-capped in scripts/automation/news-portable.mjs.
+on:
+  schedule:
+    - cron: '8 1,13 * * *'
+      timezone: 'America/Los_Angeles'
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: 'auto (from PT hour), morning or evening'
+        required: false
+        default: 'auto'
+        type: choice
+        options: [auto, morning, evening]
+      reconcile_existing:
+        description: 'Resume an open PR for this slot. Regenerated payload must hash-match exactly (new fetched time makes this almost always fail closed); prefer protocol section 9'
+        required: false
+        default: false
+        type: boolean
+permissions:
+  contents: read
+concurrency:
+  group: news-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    environment: news-production
+    env:
+      NEWS_EPOCH: news-20261113-1
+      CHECKS_WAIT_SECONDS: '900'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          fetch-depth: 0
+          # Publisher pushes bot/news-sync/<hash> from a worktree of this checkout.
+          token: ${{ secrets.NEWS_PUBLISH_TOKEN }}
+          persist-credentials: true
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+      - name: Install locked dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Verify checkout is current remote main and resolve slot
+        id: ctx
+        env:
+          GH_TOKEN: ${{ secrets.NEWS_PUBLISH_TOKEN }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
+          INPUT_SLOT: ${{ inputs.slot }}
+        run: |
+          set -euo pipefail
+          # Presence only; values are never printed.
+          for name in GH_TOKEN VERCEL_TOKEN MINIMAX_API_KEY; do
+            if [ -z "${!name:-}" ]; then echo "::error::required secret for $name is not configured"; exit 1; fi
+          done
+          sha=$(git rev-parse HEAD)
+          remote=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)
+          if [ "$sha" != "$remote" ]; then echo "::error::checkout $sha is not remote main $remote"; exit 1; fi
+          owner_epoch=$(gh api "repos/$GITHUB_REPOSITORY/contents/ops/runner-owner.json?ref=main" --jq .content | base64 -d | jq -r '.news.epoch // empty')
+          if [ "$owner_epoch" != "$NEWS_EPOCH" ]; then echo "::error::ops/runner-owner.json news.epoch does not match workflow NEWS_EPOCH"; exit 1; fi
+          hour=$(TZ=America/Los_Angeles date +%H)
+          slot="${INPUT_SLOT:-auto}"
+          if [ "$slot" = auto ]; then if [ "$((10#$hour))" -lt 12 ]; then slot=morning; else slot=evening; fi; fi
+          case "$slot" in morning|evening) ;; *) echo "::error::invalid slot"; exit 1;; esac
+          {
+            echo "sha=$sha"
+            echo "slot=$slot"
+            echo "now=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          } >> "$GITHUB_OUTPUT"
+      - name: Build news plan (public RSS + MiniMax-M2.7, max 2 requests)
+        id: shadow
+        env:
+          MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
+          SHA: ${{ steps.ctx.outputs.sha }}
+          SLOT: ${{ steps.ctx.outputs.slot }}
+          NOW: ${{ steps.ctx.outputs.now }}
+        run: |
+          set -euo pipefail
+          out=$(node scripts/automation/news-shadow.mjs --repo "$GITHUB_WORKSPACE" --sha "$SHA" --now "$NOW" --slot "$SLOT" \
+            --run-id "$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" --source public --provider minimax --scratch-root "$RUNNER_TEMP")
+          jq -r '"slotKey=\(.slotKey) changed=\(.changed) itemCount=\(.itemCount) proposedSha256=\(.proposedSha256)"' "$out/plan.json"
+          jq -r '"translationCalls=\(.translationCalls) max=\(.maxTranslationCalls)"' "$out/metrics.json"
+          {
+            echo "### News plan"
+            jq -r '"- slotKey: `\(.slotKey)`\n- sourceSha: `\(.sourceSha)`\n- changed: \(.changed)\n- itemCount: \(.itemCount)\n- proposedSha256: `\(.proposedSha256)`"' "$out/plan.json"
+            jq -r '"- translationCalls: \(.translationCalls) / \(.maxTranslationCalls)"' "$out/metrics.json"
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "dir=$out" >> "$GITHUB_OUTPUT"
+      - name: Publish phase 1 (create PR or resume; pending checks is not a hard failure)
+        id: phase1
+        env:
+          GH_TOKEN: ${{ secrets.NEWS_PUBLISH_TOKEN }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          PLAN_DIR: ${{ steps.shadow.outputs.dir }}
+          RECONCILE: ${{ inputs.reconcile_existing == true && 'true' || 'false' }}
+        run: |
+          # Actions runs bash with -e; expected non-zero exits (75 pending, gh while checks pending) are handled explicitly.
+          set +e
+          set -uo pipefail
+          node scripts/automation/news-publish-cli.mjs --repo "$GITHUB_WORKSPACE" --plan-dir "$PLAN_DIR" \
+            --publish true --production-enable true --owner-epoch "$NEWS_EPOCH" --reconcile-existing "$RECONCILE" > "$RUNNER_TEMP/phase1.json"
+          code=$?
+          cat "$RUNNER_TEMP/phase1.json"
+          state=$(jq -r '.state // empty' "$RUNNER_TEMP/phase1.json" 2>/dev/null || true)
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          echo "state=$state" >> "$GITHUB_OUTPUT"
+          echo "- phase 1: exit $code, state \`${state:-none}\`" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$code" -eq 75 ] && [ "$state" = CHECKS_PENDING ]; then
+            echo "pr=$(jq -r .pr "$RUNNER_TEMP/phase1.json")" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ "$code" -ne 0 ]; then
+            echo "**Reconciliation required**: phase 1 failed (exit $code). No retry was attempted; check open bot/news-sync PRs." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          exit "$code"
+      - name: Wait for PR checks (bounded)
+        if: steps.phase1.outputs.state == 'CHECKS_PENDING'
+        env:
+          GH_TOKEN: ${{ secrets.NEWS_PUBLISH_TOKEN }}
+          PR: ${{ steps.phase1.outputs.pr }}
+        run: |
+          # Actions runs bash with -e; expected non-zero exits (75 pending, gh while checks pending) are handled explicitly.
+          set +e
+          set -uo pipefail
+          deadline=$(( $(date +%s) + CHECKS_WAIT_SECONDS ))
+          while [ "$(date +%s)" -lt "$deadline" ]; do
+            # gh exits non-zero while checks are pending; keep its stdout and validate it as JSON instead.
+            checks=$(gh pr checks "$PR" --repo "$GITHUB_REPOSITORY" --json name,bucket 2>/dev/null)
+            echo "$checks" | jq -e 'type == "array"' >/dev/null 2>&1 || checks='[]'
+            pending=$(echo "$checks" | jq '[.[] | select(.bucket == "pending")] | length')
+            failed=$(echo "$checks" | jq '[.[] | select(.bucket == "fail" or .bucket == "cancel")] | length')
+            required=$(echo "$checks" | jq '[.[] | select(.name == "validate" or .name == "gitleaks")] | length')
+            echo "checks: pending=$pending failed=$failed required_present=$required"
+            if [ "$failed" -gt 0 ]; then break; fi
+            if [ "$pending" -eq 0 ] && [ "$required" -ge 2 ]; then break; fi
+            sleep 30
+          done
+          # Phase 2 re-reads everything and decides; this step never merges.
+      - name: Publish phase 2 (resume same PR with --reconcile-existing true)
+        if: steps.phase1.outputs.state == 'CHECKS_PENDING'
+        env:
+          GH_TOKEN: ${{ secrets.NEWS_PUBLISH_TOKEN }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          PLAN_DIR: ${{ steps.shadow.outputs.dir }}
+          PR: ${{ steps.phase1.outputs.pr }}
+        run: |
+          # Actions runs bash with -e; expected non-zero exits (75 pending, gh while checks pending) are handled explicitly.
+          set +e
+          set -uo pipefail
+          node scripts/automation/news-publish-cli.mjs --repo "$GITHUB_WORKSPACE" --plan-dir "$PLAN_DIR" \
+            --publish true --production-enable true --owner-epoch "$NEWS_EPOCH" --reconcile-existing true > "$RUNNER_TEMP/phase2.json"
+          code=$?
+          cat "$RUNNER_TEMP/phase2.json"
+          state=$(jq -r '.state // empty' "$RUNNER_TEMP/phase2.json" 2>/dev/null || true)
+          deployment=$(jq -r '.deployment // empty' "$RUNNER_TEMP/phase2.json" 2>/dev/null || true)
+          echo "- phase 2: exit $code, state \`${state:-none}\`, deployment \`${deployment:-none}\`, PR #$PR" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$code" -ne 0 ]; then
+            echo "**Reconciliation required**: PR #$PR still open or deployment UNCONFIRMED (exit $code). Follow the cutover protocol section 9; do not blindly re-run." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
