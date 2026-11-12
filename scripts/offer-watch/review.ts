@@ -1,3 +1,4 @@
+import { isOfferCli } from './cli-entry';
 /** Offer-watch review (read-only by default).
  * Production baseline = committed HEAD data/cards (or --worktree); coverage = scripts/card-adaptor/cards configs.
  *
@@ -19,6 +20,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { assessCandidate, dedupeBatch, emptyLedger, expiryReport, shouldNotify, updateLedger, DEFAULT_OFFICIAL_DOMAINS, type Candidate, type Ledger } from './gate';
 
+function legacyReviewCli() {
 const root = process.cwd();
 const DEFAULT_LEDGER = 'artifacts/offer-watch/ledger.json';
 const DEFAULT_DOMAINS = 'scripts/offer-watch/official-domains.json';
@@ -110,4 +112,19 @@ if (nextLedger && opts['--write']) {
   fs.mkdirSync(path.dirname(ledgerPath), { recursive: true });
   fs.writeFileSync(ledgerPath, `${JSON.stringify(nextLedger, null, 2)}\n`);
   console.error(`ledger updated: ${str('--ledger')}`);
+}
+
+}
+if (isOfferCli(import.meta.url)) legacyReviewCli();
+
+/** Actual gate logic with authoritative state read/CAS, no implicit ledger path. */
+export async function reviewState(io: import('./sandbox-state').OfferStateIO, candidates: Candidate[], options: { today: string; now: number; registry: Set<string>; officialDomains: string[] }) {
+  const state = await io.read(), cards = io.cards();
+  const results = dedupeBatch(candidates.map(candidate => {
+    const result = assessCandidate(candidate, cards.get(candidate.card_id), options.registry.has(candidate.card_id), options.now, { officialDomains: options.officialDomains });
+    return { ...result, notify: shouldNotify(result, state.value.ledger) };
+  }));
+  const report = { results, expiry: expiryReport(cards.values(), options.today) };
+  await io.cas(state.version, { ...state.value, ledger: updateLedger(state.value.ledger, results, new Date(options.now).toISOString()) });
+  await io.artifact('review.json', report); return report;
 }

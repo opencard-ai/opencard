@@ -26,7 +26,7 @@ function fixture(options: { checkChanges?: boolean; headChanges?: boolean; empty
     calls.push([command, ...args]); const ok = (stdout = '') => ({ code: 0, stdout, stderr: '' }); const json = (v: unknown) => ok(JSON.stringify(v));
     if (command === 'npm') return ok();
     if (command === 'git') {
-      if (args[0] === 'rev-parse') return ok(args.includes('--abbrev-ref') ? 'main' : localHead);
+      if (args[0] === 'rev-parse') return ok(args.includes('--abbrev-ref') ? 'main' : args[1] === 'origin/main' ? BASE : localHead);
       if (args[0] === 'status') return ok(` M ${FILE}`);
       if (args.includes('commit')) { localHead = HEAD; return ok(); }
       if (args.includes('revert')) { if (options.rollbackFails) return { code: 1, stdout: '', stderr: 'fixture revert conflict' }; rollback = true; localHead = REVERT_HEAD; return ok(); }
@@ -64,7 +64,7 @@ function fixture(options: { checkChanges?: boolean; headChanges?: boolean; empty
   const deps: PublishDeps = { run, transport, fetchText: async () => ({ status: 200, text: `${rollback || options.liveMismatch ? '10,000' : '20,000'} pts No Annual Fee` }), readCard: () => ({ annual_fee: 0, welcome_offer: { bonus_points: 20000 } }), now: () => new Date(0), sleep: async () => {}, log: () => {} };
   return { deps, transport, calls, records, deployments, prs, store };
 }
-const forbidden = (calls: string[][]) => assert.ok(!calls.some(c => c.includes('--force') || c.includes('--auto') || c.includes('--rebase') || (c[1] === 'push' && !c.some(a => /^HEAD:refs\/heads\/bot\/offer-watch(?:-rollback)?\//.test(a)))));
+const forbidden = (calls: string[][]) => assert.ok(!calls.some(c => c.includes('--force') || c.includes('--auto') || c.includes('--rebase') || (c[1] === 'push' && !c.some(a => /^(?:HEAD|[0-9a-f]{40}):refs\/heads\/bot\/offer-watch(?:-rollback)?\//.test(a)))));
 test('real core → fixed helper → explicit checks → squash SHA → production evidence → live values', async () => {
   const f = fixture(), result = await publish([card], cfg, f.deps);
   assert.equal(result.status, 'published'); assert.equal(result.commits[0].sha, MERGE); assert.ok(f.deployments.every(s => s === MERGE));

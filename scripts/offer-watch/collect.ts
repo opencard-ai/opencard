@@ -1,3 +1,4 @@
+import { isOfferCli } from './cli-entry';
 /** Fetch official pages from watchlist.json and emit Candidate[] for review.ts.
  * Every source is fetched twice with independent requests; each fetch is recorded as a Confirmation
  * (url, fetch_id, checked_at, ok, extracted values) so apply.ts can enforce the two-fetch guard.
@@ -201,12 +202,7 @@ async function main() {
   if (closed.length) console.error(`collect: skipping cards closed to new applicants: ${closed.join(', ')}`);
   entries = entries.filter(e => !closed.includes(e.card_id));
   const runAt = new Date().toISOString();
-  const candidates: Candidate[] = [];
-  for (const entry of entries) {
-    const confirmations: Confirmation[] = [];
-    for (const source of entry.sources) for (const attempt of [1, 2]) confirmations.push(await fetchOnce(source, attempt, domains, cardById.get(entry.card_id)));
-    candidates.push(buildCandidate(entry, confirmations, runAt));
-  }
+  const candidates = await collectCandidates(entries, cardById, runAt, (source, attempt, card) => fetchOnce(source, attempt, domains, card));
   if (browserPromise) await (await browserPromise).close();
   const out = arg('--out') || `artifacts/offer-watch/candidates-${today}.json`;
   fs.mkdirSync(path.dirname(out), { recursive: true });
@@ -215,4 +211,22 @@ async function main() {
     per_card: candidates.map(c => ({ card_id: c.card_id, hold_only: c.evidence.hold_only ?? false, fields: c.fields, conflicts: c.evidence.conflicts,
       fetches: (c.evidence.confirmations || []).map(f => `${f.ok ? 'ok' : `FAIL(${f.error})`} ${f.url} ${JSON.stringify(f.values)}${f.ambiguous_fields?.length ? ` ambiguous=${f.ambiguous_fields}` : ''}`) })) }, null, 2));
 }
-if (process.argv[1] && /collect\.ts$/.test(process.argv[1])) main().catch(error => { console.error(error); process.exit(1); });
+if (isOfferCli(import.meta.url)) main().catch(error => { console.error(error); process.exit(1); });
+
+/** Shared by the real CLI and sandbox I/O; default network behavior is never injected implicitly. */
+export async function collectCandidates(entries: WatchEntry[], cards: Map<string, CardRecord>, runAt: string, fetch: (source: WatchSource, attempt: number, card?: CardRecord) => Promise<Confirmation>) {
+  const candidates: Candidate[] = [];
+  for (const entry of entries) {
+    if (isClosedToNewApplicants(cards.get(entry.card_id))) continue;
+    const confirmations: Confirmation[] = [];
+    for (const source of entry.sources) for (const attempt of [1, 2]) confirmations.push(await fetch(source, attempt, cards.get(entry.card_id)));
+    candidates.push(buildCandidate(entry, confirmations, runAt));
+  }
+  return candidates;
+}
+export async function collectState(io: import('./sandbox-state').OfferStateIO, options: { entries: WatchEntry[]; runAt: string; today: string; officialDomains: string[]; fetch(source: WatchSource, attempt: number, card?: CardRecord): Promise<Confirmation> }) {
+  const cards = io.cards();
+  const entries = [...options.entries, ...autoExpiringEntries(options.entries, [...cards.values()], options.today, options.officialDomains)];
+  const candidates = await collectCandidates(entries, cards, options.runAt, async (source, attempt, card) => { await io.lease.assert(); return options.fetch(source, attempt, card); });
+  await io.artifact('candidates.json', candidates); return candidates;
+}

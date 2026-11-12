@@ -1,0 +1,27 @@
+# DRAFT ONLY: outside .github/workflows; not installed or dispatched.
+name: Offer synthetic sandbox acceptance
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fixtures-only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Locked dependencies, no lifecycle scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Fixed fixture-only launcher; no secrets or production flags
+        run: python3 scripts/offer-watch/sandbox-launch.py --fixtures --out "$RUNNER_TEMP/offer-sandbox-summary"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: offer-synthetic-summary
+          path: ${{ runner.temp }}/offer-sandbox-summary/result.json
+          if-no-files-found: error
+          retention-days: 7

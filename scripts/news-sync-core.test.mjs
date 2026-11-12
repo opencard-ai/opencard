@@ -55,3 +55,10 @@ test('HTTP errors and timeout rejection propagate without any network', async ()
   await assert.rejects(fetchRSS('https://example.com', { fetchImpl: async (_url, { signal }) => { assert.ok(signal instanceof AbortSignal); throw new DOMException('Timed out', 'TimeoutError'); } }), /Timed out/);
   await assert.rejects(fetchRSS('https://example.com', { fetchImpl: async () => ({ ok: true, text: async () => { throw Error('truncated body'); } }) }), /truncated/);
 });
+
+test('strict RSS health rejects HTTP200 empty channel while legacy default remains compatible', async () => {
+  const xml='<rss><channel><title>Empty</title></channel></rss>';
+  const fetchImpl=async()=>({ok:true,status:200,text:async()=>xml});
+  assert.deepEqual(await fetchRSS('https://example.invalid/empty',{fetchImpl}),[]);
+  await assert.rejects(fetchRSS('https://example.invalid/empty',{fetchImpl,requireItems:true}),/no items/);
+});

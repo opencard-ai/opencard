@@ -1,3 +1,4 @@
+import { isOfferCli } from './cli-entry';
 /** Apply guarded changes from a review report (review.ts output) to data/cards. Dry run unless --apply.
  *   npx tsx scripts/offer-watch/apply.ts --report <review.json> [--apply] [--out <plan.json>] [--ledger file] [--today YYYY-MM-DD]
  * Guards: official allowlisted domain; >=2 independent official fetches agreeing in this run; sanity (3x bonus jump,
@@ -12,6 +13,7 @@ import { DEFAULT_OFFICIAL_DOMAINS, changeFingerprint } from './gate';
 import { applyPlanToCard, planApply, schemaCheck } from './apply-core';
 import { DEFAULT_HISTORY, DEFAULT_LEDGER, appendHistory, laToday, loadLedger, saveLedger, upsertLedger, type HistoryEvent, type LedgerUpdate } from './state';
 
+function legacyApplyCli() {
 const arg = (name: string) => { const i = process.argv.indexOf(name); return i >= 0 ? process.argv[i + 1] : undefined; };
 const reportFile = arg('--report');
 if (!reportFile) throw new Error('--report <review.json> is required');
@@ -90,3 +92,40 @@ if (doApply) {
   appendHistory(events, historyFile);
 }
 if (validation === 'failed') process.exit(1);
+
+}
+if (isOfferCli(import.meta.url)) legacyApplyCli();
+
+/** Same plan/apply/schema guards, private scratch cards and one authoritative ledger/history/run CAS. */
+export async function applyState(io: import('./sandbox-state').OfferStateIO, report: Parameters<typeof planApply>[0], options: { today: string; now: number; runId: string; officialDomains: string[]; validate(signal: AbortSignal): Promise<boolean>; signal: AbortSignal }) {
+  const state = await io.read(), before = io.cards();
+  const plan = planApply(report, before, { today: options.today, runAt: options.now, officialDomains: options.officialDomains });
+  const after = structuredClone(before);
+  const applied: import('./publish-core').AppliedCard[] = [];
+  for (const card of plan.applied) {
+    const original = before.get(card.card_id); if (!original) throw new Error('scratch card missing');
+    const next = applyPlanToCard(original, card, options.today); if (schemaCheck(next).length) throw new Error('scratch card schema failed');
+    after.set(card.card_id, next); applied.push({ card_id: card.card_id, file: `data/cards/${card.card_id}.json`, changes: card.changes, sources: card.sources });
+  }
+  await io.putCards(after);
+  try {
+    if (options.signal.aborted || !await options.validate(options.signal) || options.signal.aborted) throw new Error('async validation failed/lease lost');
+    await io.lease.assert();
+    const updates: LedgerUpdate[] = [
+      ...applied.flatMap(a => a.changes.map(c => ({ key: c.fingerprint, card_id: a.card_id, field: c.field, value: c.new_value, status: 'applied_pending_publish' }))),
+      ...plan.held.map(h => ({ key: h.fingerprint ?? changeFingerprint(h.card_id, h.field ?? 'card', h.value ?? null, 'public'), card_id: h.card_id, field: h.field, value: h.value ?? null, status: 'needs_verification', reasons: h.reasons })),
+      ...plan.expiry_review.map(h => ({ key: changeFingerprint(h.card_id, `expiry_review:${h.field}`, h.reasons.join(','), 'public'), card_id: h.card_id, field: h.field, value: null, status: 'needs_verification', reasons: h.reasons })),
+    ];
+    const events: HistoryEvent[] = [
+      ...applied.map(a => ({ ts: new Date(options.now).toISOString(), type: 'applied' as const, card_id: a.card_id, changes: a.changes.map(({ field, old_value, new_value }) => ({ field, old_value, new_value })), sources: a.sources })),
+      ...plan.held.map(h => ({ ts: new Date(options.now).toISOString(), type: 'held' as const, card_id: h.card_id, reasons: h.reasons })),
+      ...plan.expiry_review.map(h => ({ ts: new Date(options.now).toISOString(), type: 'expiry_review' as const, card_id: h.card_id, reasons: h.reasons })),
+    ];
+    await io.cas(state.version, { ...state.value, ledger: upsertLedger(state.value.ledger, updates, new Date(options.now).toISOString()), history: [...state.value.history, ...events], daily: { ...state.value.daily, runs: { ...state.value.daily.runs, [options.runId]: { runId: options.runId, phase: 'applied', applied, cardsBefore: Object.fromEntries(applied.map(a => [a.card_id, before.get(a.card_id)!])), cardsAfter: Object.fromEntries(applied.map(a => [a.card_id, after.get(a.card_id)!])) } } } });
+    await io.artifact('apply.json', { applied, held: plan.held, expiry_review: plan.expiry_review }); return { applied, held: plan.held, expiry_review: plan.expiry_review };
+  } catch (error) {
+    // Never restore private scratch after lease loss; a new session reconstructs from durable checkpoint.
+    if (!options.signal.aborted) { try { await io.putCards(before); } catch { /* poisoned lease: no more writes */ } }
+    throw error;
+  }
+}

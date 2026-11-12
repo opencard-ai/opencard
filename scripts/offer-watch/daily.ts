@@ -1,3 +1,5 @@
+import { capturePublicationBinding, assertPublicationBinding } from './publication-binding';
+import { isOfferCli } from './cli-entry';
 /** One full offer-watch day, safe to run from cron.
  *   npm run -s offer-watch:daily [-- --dry-run] [--digest] [--skip-pull] [--today YYYY-MM-DD]
  *   (or: scripts/offer-watch/daily.sh)
@@ -14,6 +16,7 @@ import type { Candidate } from './gate';
 import { allFetchesFailed, buildDailySummary, isMonday, newFetchFailures, newHolds, type StepFailure } from './daily-core';
 import { DEFAULT_HISTORY, DEFAULT_LEDGER, laToday, loadLedger, readHistory } from './state';
 
+function legacyDailyCli() {
 const argv = process.argv.slice(2);
 const has = (flag: string) => argv.includes(flag);
 const arg = (name: string) => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : undefined; };
@@ -73,7 +76,7 @@ const readJson = <T>(file: string): T | null => { try { return JSON.parse(fs.rea
 
 function main(): number {
   const lock = acquireLock();
-  if (!lock.ok) { log(`another daily run holds the lock: ${JSON.stringify(lock.holder)}; exiting`); console.log('NO_REPLY'); return 0; }
+  if (lock.ok === false) { log(`another daily run holds the lock: ${JSON.stringify(lock.holder)}; exiting`); console.log('NO_REPLY'); return 0; }
   process.on('exit', releaseLock);
   for (const signal of ['SIGINT', 'SIGTERM'] as const) process.on(signal, () => { releaseLock(); process.exit(130); });
 
@@ -118,3 +121,87 @@ function main(): number {
 }
 
 process.exitCode = main();
+
+}
+if (isOfferCli(import.meta.url)) legacyDailyCli();
+
+/** Real sandbox daily entry: shared stages/state; no default adapter, credentials, or operational command. */
+export async function runSandboxDaily(options: {
+  enabled?: boolean;
+  io: import('./sandbox-state').OfferStateIO;
+  today: string; slot: 'morning' | 'evening' | 'daily'; attemptId: string; now: number;
+  heartbeatMs: number; entries: import('./collect').WatchEntry[]; registry: Set<string>; officialDomains: string[];
+  fetch: Parameters<typeof import('./collect').collectState>[1]['fetch'];
+  validate(signal: AbortSignal): Promise<boolean>;
+  asyncRun(cmd: string, args: string[], signal: AbortSignal, context: { cwd: string }): Promise<{ code: number; cwd: string }>;
+  publish?: boolean; productionEnable?: boolean; ownerEpoch?: string;
+  publisher: Omit<import('./publish-core').PublishDeps, 'transport' | 'readCard'>;
+  config: import('./publish-core').PublishConfig;
+  fetchDeployments: Parameters<typeof import('./pr-transport').createOfferPrTransport>[0]['fetchDeployments'];
+}) {
+  if (options.enabled !== true || !options.io || options.publish !== true || options.productionEnable !== true || !options.ownerEpoch) throw new Error('sandbox daily disabled/incomplete; NO legacy file fallback');
+  const [{ collectState }, { reviewState }, { applyState }, { digestState }, { offerRunIdentity }, { leaseHeartbeat }, { createOfferPrTransport }, { publish }, { createHash }] = await Promise.all([
+    import('./collect'), import('./review'), import('./apply'), import('./digest'), import('./run-identity'), import('./lease-heartbeat'), import('./pr-transport'), import('./publish-core'), import('node:crypto'),
+  ]);
+  if (options.io.leaseTtlMs && options.heartbeatMs > Math.floor(options.io.leaseTtlMs / 3)) throw new Error('heartbeat must renew within one third of lease TTL');
+  const { io } = options, identity = offerRunIdentity(options.today, options.slot, options.attemptId);
+  await io.lease.acquire();
+  const heartbeat = leaseHeartbeat(io.lease, options.heartbeatMs);
+  const cardDigest = () => createHash('sha256').update(JSON.stringify([...io.cards()].sort(([a], [b]) => a.localeCompare(b)))).digest('hex');
+  try {
+    const transport = createOfferPrTransport({ ...options, run: options.publisher.run, publish: true, productionEnable: true, runId: identity.runId, store: io.journal, lease: heartbeat });
+    await transport.authorize();
+    const initial = await io.read();
+    const checkpoint = initial.value.daily.runs?.[identity.runId];
+    let applied = checkpoint?.applied;
+    if (!applied) {
+      const candidates = await collectState(io, { entries: options.entries, runAt: new Date(options.now).toISOString(), fetch: options.fetch, today: options.today, officialDomains: options.officialDomains });
+      await heartbeat.assert();
+      const report = await reviewState(io, candidates, options);
+      await heartbeat.assert();
+      const plan = await applyState(io, report, { ...options, runId: identity.runId, signal: heartbeat.signal });
+      applied = plan.applied;
+      const state = await io.read();
+      await io.cas(state.version, { ...state.value, daily: { ...state.value.daily, updated: new Date(options.now).toISOString(), fetch_failures: allFetchesFailed(candidates) } });
+    } else {
+      // Scratch/artifacts are disposable. Resume from authoritative plan, not yesterday's local output.
+      const cards = io.cards();
+      const { isDeepStrictEqual } = await import('node:util');
+      for (const card of applied) {
+        const current = cards.get(card.card_id), before = checkpoint?.cardsBefore?.[card.card_id], after = checkpoint?.cardsAfter?.[card.card_id];
+        if (!before || !after || (!isDeepStrictEqual(current, before) && !isDeepStrictEqual(current, after))) throw new Error('resume complete baseline changed/missing; reconcile manually');
+        cards.set(card.card_id, structuredClone(after));
+      }
+      await io.putCards(cards);
+    }
+    await heartbeat.assert();
+    // Long validation/build is ASYNC and heartbeat keeps running. Bind receipt to exact scratch cards.
+    // Never run synchronous build checks inside publish() while pretending a timer can renew.
+    if (options.config.checks.length === 0) throw new Error('explicit nonempty validation/build check list required');
+    const validatedDigest = cardDigest();
+    const base = options.publisher.run('git', ['rev-parse', 'HEAD']);
+    if (base.code !== 0 || !/^[0-9a-f]{40}$/.test(base.stdout.trim())) throw new Error('validation base SHA unavailable');
+    const binding = capturePublicationBinding(io.publicationRoot, base.stdout.trim(), applied, io.cardBytes);
+    assertPublicationBinding(options.publisher.run, binding, { base: true });
+    for (const check of options.config.checks) {
+      await heartbeat.assert();
+      const result = await options.asyncRun(check[0], check.slice(1), heartbeat.signal, { cwd: io.publicationRoot });
+      await heartbeat.assert();
+      if (result.cwd !== io.publicationRoot || result.code !== 0 || cardDigest() !== validatedDigest || options.publisher.run('git', ['rev-parse', 'HEAD']).stdout.trim() !== base.stdout.trim()) throw new Error('async check failed or validation input changed');
+    }
+    assertPublicationBinding(options.publisher.run, binding, { base: true });
+    await transport.authorize();
+    const boundTransport = createOfferPrTransport({ ...options, run: options.publisher.run, publish: true, productionEnable: true, runId: identity.runId, store: io.journal, lease: heartbeat, validation: binding });
+    const result = await publish(applied, { ...options.config, checks: [] }, { ...options.publisher, transport: boundTransport, validation: binding, readCard: file => io.cards().get(path.basename(file, '.json')) });
+    await heartbeat.assert();
+    const state = await io.read();
+    const history = [...state.value.history];
+    for (const event of result.events) if (!history.some(e => e.type === event.type && e.card_id === event.card_id && e.commit === event.commit)) history.push(event);
+    await io.cas(state.version, { ...state.value, ledger: (await import('./state')).upsertLedger(state.value.ledger, result.ledger, new Date(options.now).toISOString()), history, daily: { ...state.value.daily, runs: { ...state.value.daily.runs, [identity.runId]: { ...state.value.daily.runs?.[identity.runId], runId: identity.runId, phase: result.status, applied } } } });
+    const digest = await digestState(io, options.today);
+    return { result, digest, runId: identity.runId, attemptId: identity.attemptId };
+  } finally {
+    await heartbeat.stop();
+    try { await io.lease.release(); } catch { /* do not steal/reacquire a poisoned session */ }
+  }
+}
