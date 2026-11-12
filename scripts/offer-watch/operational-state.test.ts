@@ -51,7 +51,7 @@ test('opt-in durable bridge runs real publisher/helper, renews at boundaries, CA
   };
   const cfg: PublishConfig = { branch: 'main', remote: 'origin', vercelProject: 'opencard', vercelScope: 'fixture', siteBase: 'https://example.invalid', checks: [['fixture-check']], deployTimeoutMs: 10, deployPollMs: 10, liveTimeoutMs: 10, livePollMs: 10 };
   const applied = [{ card_id: 'fixture', file: FILE, sources: [], changes: [{ field: 'welcome_offer.bonus_points', old_value: 10000, new_value: 20000, fingerprint: 'fixture-fp' }] }];
-  const deps = { run, readCard: () => ({ annual_fee: 0, welcome_offer: { bonus_points: 20000 } }), fetchText: async () => ({ status: 200, text: '20,000 pts $0 Annual Fee' }), sleep: async () => {}, now: () => new Date('2026-11-06T00:00:00Z'), log: () => {} };
+  const deps = { run, readCard: () => ({ annual_fee: 0, welcome_offer: { bonus_points: 20000 } }), fetchText: async () => ({ status: 200, text: '20,000 pts No Annual Fee' }), sleep: async () => {}, now: () => new Date('2026-11-06T00:00:00Z'), log: () => {} };
   const options = (runner: string) => ({ state: build(db, runner), publish: true, productionEnable: true, ownerEpoch: 'fixture-epoch', runId: 'offer-2026-11-06-morning', fetchDeployments: async () => [{ name: 'opencard', target: 'production', created: 1, readyState: 'READY', meta: { githubCommitSha: MERGED } }] });
   assert.equal((await publishWithDurableState(applied, cfg, deps, options('first'))).status, 'published'); assert.deepEqual(externalWrites, ['push', 'create', 'merge']);
   assert.equal((await publishWithDurableState(applied, cfg, deps, options('second'))).status, 'published'); assert.deepEqual(externalWrites, ['push', 'create', 'merge']);

@@ -68,7 +68,7 @@ function harness() {
       if (cmd === 'git' && args.includes('commit')) committedBlobs[FILE] = gitBlobId(io.cardBytes(FILE));
       if (cmd === 'gh' && args[0] === 'api' && args[1].includes('/git/trees/')) return { code: 0, stdout: JSON.stringify({ truncated: false, tree: Object.entries(committedBlobs).map(([path, sha]) => ({ path, sha, mode: '100644', type: 'blob' })) }), stderr: '' };
       return run(cmd, args);
-    }, fetchText: async () => ({ status: 200, text: '20,000 pts Spend $1,000 within 3 months $0 Annual Fee' }), sleep: async () => {}, now: () => new Date(NOW), log: () => {} },
+    }, fetchText: async () => ({ status: 200, text: '20,000 pts Spend $1,000 within 3 months No Annual Fee' }), sleep: async () => {}, now: () => new Date(NOW), log: () => {} },
     fetchDeployments: async () => [{ created: 1, name: 'opencard', target: 'production', readyState: 'READY', meta: { githubCommitSha: MERGE } }],
   });
   return { db, root, cards, seed, writes, pushRefs, makeIo, options, fetches: () => fetches, revokeOwner: () => { owner = false; }, close: () => fs.rmSync(root, { recursive: true }) };

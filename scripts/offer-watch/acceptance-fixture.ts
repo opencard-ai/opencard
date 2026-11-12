@@ -73,7 +73,7 @@ export function createAcceptanceFixture(fixtureOptions: { prettyMulti?: boolean;
       asyncRun: async (_cmd, _args, signal, context) => ({ code: signal.aborted ? 1 : 0, cwd: context.cwd }),
       publish: true, productionEnable: true, ownerEpoch: 'fixture-epoch',
       config: { branch: 'main', remote: 'origin', vercelProject: 'opencard', vercelScope: 'fixture', siteBase: 'https://example.invalid', checks: [['fixture-check', 'validate'], ['fixture-check', 'build']], deployTimeoutMs: 10, deployPollMs: 10, liveTimeoutMs: 10, livePollMs: 10 },
-      publisher: { run, fetchText: async () => ({ status: 200, text: `${rollingBack ? '10,000' : '20,000'} pts Spend $1,000 within 3 months $0 Annual Fee` }), sleep: async () => {}, now: () => new Date(NOW), log: () => {} },
+      publisher: { run, fetchText: async () => ({ status: 200, text: `${rollingBack ? '10,000' : '20,000'} pts Spend $1,000 within 3 months No Annual Fee` }), sleep: async () => {}, now: () => new Date(NOW), log: () => {} },
       fetchDeployments: async sha => [{ created: 1, name: 'opencard', target: 'production', readyState: 'READY', meta: { githubCommitSha: sha } }],
     };
     return { repo, io, options, must, run, tree };
