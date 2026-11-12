@@ -61,7 +61,7 @@ function fixture(options: { checkChanges?: boolean; headChanges?: boolean; empty
       return [{ uid: 'fixture-deploy', name: 'opencard', target: options.deploy === 'preview' ? 'preview' : 'production', meta: { githubCommitSha: options.deploy === 'wrong-sha' ? HEAD : mergeSha }, readyState: mergeSha === REVERT ? options.rollbackDeployFails ? 'ERROR' : 'READY' : options.deploy === 'error' ? 'ERROR' : 'READY' }];
     },
   });
-  const deps: PublishDeps = { run, transport, fetchText: async () => ({ status: 200, text: `${rollback || options.liveMismatch ? '10,000' : '20,000'} pts $0 Annual Fee` }), readCard: () => ({ annual_fee: 0, welcome_offer: { bonus_points: 20000 } }), now: () => new Date(0), sleep: async () => {}, log: () => {} };
+  const deps: PublishDeps = { run, transport, fetchText: async () => ({ status: 200, text: `${rollback || options.liveMismatch ? '10,000' : '20,000'} pts No Annual Fee` }), readCard: () => ({ annual_fee: 0, welcome_offer: { bonus_points: 20000 } }), now: () => new Date(0), sleep: async () => {}, log: () => {} };
   return { deps, transport, calls, records, deployments, prs, store };
 }
 const forbidden = (calls: string[][]) => assert.ok(!calls.some(c => c.includes('--force') || c.includes('--auto') || c.includes('--rebase') || (c[1] === 'push' && !c.some(a => /^HEAD:refs\/heads\/bot\/offer-watch(?:-rollback)?\//.test(a)))));
