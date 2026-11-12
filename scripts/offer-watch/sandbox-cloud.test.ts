@@ -4,7 +4,12 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { sandboxConfiguration, TEST_DATABASE_ID } from './sandbox-runner';
+import { createHash } from 'node:crypto';
+import { sandboxConfiguration as configureReal } from './sandbox-runner';
+// Synthetic fixture pins: the id matches, the endpoint does not, so refusal is for the endpoint pin only.
+const TEST_DATABASE_ID = 'fixture-db-00000000-0000-0000-0000-000000000000';
+const FIXTURE_PINS = { databaseIdSha256: createHash('sha256').update(TEST_DATABASE_ID).digest('hex'), endpointSha256: createHash('sha256').update('https://fixture-sandbox-00000.upstash.io').digest('hex') };
+const sandboxConfiguration = (args: string[], env: NodeJS.ProcessEnv) => configureReal(args, env, FIXTURE_PINS);
 const workflow=()=>fs.readFileSync('.github/workflows/news-isolated-dry-run.yml','utf8');
 test('workflow defaults SDK off and isolates test secrets from fixture chain',()=>{
  const text = workflow();
@@ -15,7 +20,7 @@ test('workflow defaults SDK off and isolates test secrets from fixture chain',()
  assert.doesNotMatch(fixture,/secrets\.|environment:/);
  assert.match(sdk,/inputs\.sdk_sandbox == true/);assert.match(sdk,/needs: fixture-dry-run/);
  assert.match(sdk,/environment: opencard-migration-sandbox/);assert.doesNotMatch(sdk,/OPENCARD_SANDBOX_TOKEN=|OPENCARD_SANDBOX_URL=/);
- assert.deepEqual([...sdk.matchAll(/secrets\.([A-Z_]+)/g)].map(m=>m[1]).sort(),['OPENCARD_SANDBOX_TOKEN','OPENCARD_SANDBOX_URL']);
+ assert.deepEqual([...sdk.matchAll(/secrets\.([A-Z_]+)/g)].map(m=>m[1]).sort(),['OPENCARD_SANDBOX_DATABASE_ID','OPENCARD_SANDBOX_TOKEN','OPENCARD_SANDBOX_URL']);
 });
 test('default CLI refuses; explicit fixtures never inspect SDK credentials',()=>{
  const env=new Proxy({},{get(){throw Error('SDK credentials must not be inspected');}});

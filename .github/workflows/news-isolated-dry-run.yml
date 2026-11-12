@@ -189,7 +189,7 @@ jobs:
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Synthetic test-DB daily through fixed versioned SDK launcher
         env:
-          OPENCARD_SANDBOX_DATABASE_ID: 74ef02fa-e0fd-4f53-867d-36d4bb4f498f
+          OPENCARD_SANDBOX_DATABASE_ID: ${{ secrets.OPENCARD_SANDBOX_DATABASE_ID }}
           OPENCARD_SANDBOX_URL: ${{ secrets.OPENCARD_SANDBOX_URL }}
           OPENCARD_SANDBOX_TOKEN: ${{ secrets.OPENCARD_SANDBOX_TOKEN }}
         run: |
@@ -201,7 +201,7 @@ jobs:
           const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
           const out=path.join(process.env.RUNNER_TEMP,'sdk-synthetic-summary');const value=JSON.parse(fs.readFileSync(path.join(out,'result.json'),'utf8'));
           assert.deepEqual(Object.keys(value).sort(),['mode','fixtureOnly','databaseId','syntheticSlot','stages','sourceFetches','mockPublicationSequences','freshLinkedWorktrees','actualFixtureNpmChecks','remotePublication','actionsValidated'].sort());
-          assert.equal(value.mode,'official-sdk-http-sandbox');assert.equal(value.databaseId,'74ef02fa-e0fd-4f53-867d-36d4bb4f498f');assert.equal(value.fixtureOnly,true);
+          assert.equal(value.mode,'official-sdk-http-sandbox');assert.equal(value.databaseId,'sha256-pinned');assert.equal(value.fixtureOnly,true);
           assert.equal(value.sourceFetches,2);assert.equal(value.mockPublicationSequences,1);assert.equal(value.freshLinkedWorktrees,2);assert.equal(value.remotePublication,'ALWAYS MOCKED; no real push/PR/merge/deploy');
           const fault=JSON.parse(fs.readFileSync(path.join(process.env.RUNNER_TEMP,'sdk-fault-summary/result.json'),'utf8'));
           assert.deepEqual(Object.keys(fault).sort(),['schema','mode','syntheticOnly','remotePublication','cas','lease','restore','claim'].sort());

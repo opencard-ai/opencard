@@ -109,6 +109,6 @@ test('manual fixture chain has no secrets; explicit sandbox SDK is separated and
   assert.match(fixture,/sdk_sandbox:[\s\S]*?type: boolean\n        default: false/);
   assert.match(sdk,/inputs\.sdk_sandbox == true/);assert.match(sdk,/needs: fixture-dry-run/);
   assert.match(sdk,/environment: opencard-migration-sandbox/);
-  assert.deepEqual([...sdk.matchAll(/secrets\.([A-Z_]+)/g)].map(m=>m[1]).sort(),['OPENCARD_SANDBOX_TOKEN','OPENCARD_SANDBOX_URL']);
-  assert.match(sdk,/--sdk --confirm-sandbox/);assert.match(sdk,/74ef02fa-e0fd-4f53-867d-36d4bb4f498f/);
+  assert.deepEqual([...sdk.matchAll(/secrets\.([A-Z_]+)/g)].map(m=>m[1]).sort(),['OPENCARD_SANDBOX_DATABASE_ID','OPENCARD_SANDBOX_TOKEN','OPENCARD_SANDBOX_URL']);
+  assert.match(sdk,/--sdk --confirm-sandbox/);assert.doesNotMatch(workflow,/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/);assert.match(sdk,/databaseId,'sha256-pinned'/);
 });

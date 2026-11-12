@@ -8,9 +8,13 @@ import { createUpstashOfferState } from './redis-state';
 import { runSandboxDaily } from './daily';
 import { asyncOfferCheck } from './async-check';
 import { isOfferCli } from './cli-entry';
-export const TEST_DATABASE_ID = '74ef02fa-e0fd-4f53-867d-36d4bb4f498f';
-const TEST_ENDPOINT_SHA256 = '04f761ca28daef5b3ad27673aec87736b3651032a553f91f13ec0471b1727c54';
-export function sandboxConfiguration(args: string[], env: NodeJS.ProcessEnv) {
+// Only SHA-256 pins are public; the test database id and endpoint are injected from protected environment secrets.
+export const TEST_DATABASE_ID_SHA256 = '535666579e49cd027c2ee6513c76c8cfa7b19d4991cf4e5bce67636b31cebb1a';
+export const TEST_ENDPOINT_SHA256 = '04f761ca28daef5b3ad27673aec87736b3651032a553f91f13ec0471b1727c54';
+export type SandboxPins = { databaseIdSha256: string; endpointSha256: string };
+export const DEFAULT_SANDBOX_PINS: SandboxPins = Object.freeze({ databaseIdSha256: TEST_DATABASE_ID_SHA256, endpointSha256: TEST_ENDPOINT_SHA256 });
+const sha256 = (value: string | undefined) => createHash('sha256').update(value ?? '').digest('hex');
+export function sandboxConfiguration(args: string[], env: NodeJS.ProcessEnv, pins: SandboxPins = DEFAULT_SANDBOX_PINS) {
   const values = new Map<string, string>(); const flags = new Set<string>();
   for (let i = 0; i < args.length; i++) {
     const name = args[i];
@@ -25,7 +29,7 @@ export function sandboxConfiguration(args: string[], env: NodeJS.ProcessEnv) {
   const parent = fs.realpathSync(path.dirname(out)), repo = fs.realpathSync(process.cwd());
   if (parent === repo || parent.startsWith(`${repo}${path.sep}`)) throw Error('output parent resolves inside checkout');
   const sdk = flags.has('--sdk'), namespace = values.get('--namespace');
-  if (sdk && (!flags.has('--confirm-sandbox') || !namespace || !/^[a-z0-9-]{8,40}$/.test(namespace) || env.OPENCARD_SANDBOX_DATABASE_ID !== TEST_DATABASE_ID || createHash('sha256').update(env.OPENCARD_SANDBOX_URL ?? '').digest('hex') !== TEST_ENDPOINT_SHA256 || !env.OPENCARD_SANDBOX_TOKEN)) throw Error('SDK requires explicit new test database, namespace and injected configuration');
+  if (sdk && (!flags.has('--confirm-sandbox') || !namespace || !/^[a-z0-9-]{8,40}$/.test(namespace) || !env.OPENCARD_SANDBOX_DATABASE_ID || sha256(env.OPENCARD_SANDBOX_DATABASE_ID) !== pins.databaseIdSha256 || sha256(env.OPENCARD_SANDBOX_URL) !== pins.endpointSha256 || !env.OPENCARD_SANDBOX_TOKEN)) throw Error('SDK requires explicit new test database, namespace and injected configuration');
   if (!sdk && (flags.has('--confirm-sandbox') || namespace)) throw Error('SDK-only options refused in fixture mode');
   return { sdk, out, prefix: sdk ? `opencard:offer-state:{sandbox-manual-${namespace}}:` : undefined };
 }
@@ -45,7 +49,7 @@ export async function runSandboxAcceptance(args: string[], env: NodeJS.ProcessEn
     const a = await runSandboxDaily(first.options), b = await runSandboxDaily(second.options);
     assert.equal(a.result.status, 'published'); assert.equal(b.result.status, 'published'); assert.equal(a.runId, b.runId);
     assert.equal(h.fetches(), 2); assert.deepEqual(h.writes, ['push', 'create', 'merge']);
-    const summary = { mode: config.sdk ? 'official-sdk-http-sandbox' : 'fixtures-mock-redis', fixtureOnly: true, databaseId: config.sdk ? TEST_DATABASE_ID : null, syntheticSlot: a.runId, stages: ['collect', 'review', 'apply', 'mock-publisher', 'digest'], sourceFetches: h.fetches(), mockPublicationSequences: 1, freshLinkedWorktrees: 2, actualFixtureNpmChecks: true, remotePublication: 'ALWAYS MOCKED; no real push/PR/merge/deploy', actionsValidated: false };
+    const summary = { mode: config.sdk ? 'official-sdk-http-sandbox' : 'fixtures-mock-redis', fixtureOnly: true, databaseId: config.sdk ? 'sha256-pinned' : null, syntheticSlot: a.runId, stages: ['collect', 'review', 'apply', 'mock-publisher', 'digest'], sourceFetches: h.fetches(), mockPublicationSequences: 1, freshLinkedWorktrees: 2, actualFixtureNpmChecks: true, remotePublication: 'ALWAYS MOCKED; no real push/PR/merge/deploy', actionsValidated: false };
     fs.writeFileSync(path.join(actual, 'result.json'), JSON.stringify(summary, null, 2), { mode: 0o600, flag: 'wx' });
     return summary;
   } finally { h.close(); }
