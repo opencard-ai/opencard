@@ -186,6 +186,44 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
     title: "U.S. Bank Prime Business World Elite Mastercard: 5% at Amazon | OpenCard",
     description: "Prime Business World Elite Mastercard from U.S. Bank: $0 annual fee, 5% back at Amazon, Amazon Business, AWS and Whole Foods Market on the first $150,000 a year (then 1%), and no foreign transaction fees.",
   },
+  // CTR batch 4 (2026-11-09): high-impression 0-click pages + lead query matches.
+  // Avoid template "Up to Nx" when the top rate is portal-only, capped, or stacked.
+  "chase-sapphire-reserve": {
+    title: "Chase Sapphire Reserve: $795 Fee, $300 Travel Credit | OpenCard",
+    description: "Chase Sapphire Reserve: $795 annual fee, $300 annual Chase Travel credit, Priority Pass Select, 8x on Chase Travel / The Edit, 4x on flights and hotels booked direct, and 3x on dining. No foreign transaction fees.",
+  },
+  "capital-one-savor": {
+    title: "Capital One Savor: No Annual Fee, 3% Dining & Groceries | OpenCard",
+    description: "Capital One Savor Cash Rewards: $0 annual fee, unlimited 3% cash back on dining, groceries, entertainment and select streaming, plus 8% on Capital One Entertainment and no foreign transaction fees.",
+  },
+  "marriott-bonvoy-bold": {
+    title: "Marriott Bonvoy Bold: No Annual Fee & Silver Elite Status | OpenCard",
+    description: "Chase Marriott Bonvoy Bold: $0 annual fee, automatic Silver Elite status, 3x Bonvoy points at Marriott hotels from the card (plus hotel base points), 2X on groceries, rideshare, select food delivery, select streaming, and internet/cable/phone, and no foreign transaction fees.",
+  },
+  "chase-british-airways-visa-signature": {
+    title: "British Airways Visa Signature: $95 Fee & Travel Together Ticket | OpenCard",
+    description: "Chase British Airways Visa Signature: $95 annual fee, Avios on everyday spend, 3x on British Airways / Aer Lingus / Iberia / LEVEL flights, and a Travel Together Ticket after $30,000 annual spend. No foreign transaction fees.",
+  },
+  "citi-aadvantage-executive": {
+    title: "Citi AAdvantage Executive: $695 Fee & Admirals Club Access | OpenCard",
+    description: "Citi / AAdvantage Executive World Legend Mastercard: $695 annual fee includes Admirals Club membership for you and up to two guests, plus AAdvantage miles on everyday spend.",
+  },
+  "chase-ink-biz-cash": {
+    title: "Chase Ink Business Cash: No Annual Fee, 5% on Office & Internet | OpenCard",
+    description: "Chase Ink Business Cash: $0 annual fee, 5% cash back on office supplies and internet/cable/phone (combined cap $25,000 per anniversary year), 2% on gas and restaurants (same combined cap), then 1%. 3% foreign transaction fee.",
+  },
+  "fidelity-rewards-visa-signature": {
+    title: "Fidelity Rewards Visa Signature: 2% Cash Back, No Annual Fee | OpenCard",
+    description: "Fidelity Rewards Visa Signature from Elan: $0 annual fee and unlimited 2% cash back when rewards go into an eligible Fidelity account. No foreign transaction fees.",
+  },
+  "discover-it-miles": {
+    title: "Discover it Miles: 1.5 Miles Everywhere + First-Year Match | OpenCard",
+    description: "Discover it Miles: $0 annual fee, unlimited 1.5 Miles per $1 on every purchase, Discover Match doubles the Miles you earn in the first year, and no foreign transaction fees.",
+  },
+  "amex-marriott-bevy": {
+    title: "Marriott Bonvoy Bevy Amex: $250 Fee & Gold Elite Status | OpenCard",
+    description: "Marriott Bonvoy Bevy American Express: $250 annual fee, complimentary Gold Elite status, 6X at Marriott hotels, 4X at restaurants and U.S. supermarkets (up to $15,000 combined per calendar year, then 2X), 2X on other purchases, and no foreign transaction fees.",
+  },
   // Spirit stopped flying in May 2026 and BofA's page is gone, but the record is
   // still active; don't advertise its old fee and earning rates.
   "spirit-airlines-mastercard": {

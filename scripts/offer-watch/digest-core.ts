@@ -11,6 +11,7 @@ export const REASONS: Record<string, string> = {
   invalid_date: '日期格式錯誤', official_page_fetch_failed: '官方頁面抓取失敗', expired_not_in_watchlist_no_official_fetch: '優惠已過期，尚未列入官方頁面監測',
   expired_offer_still_shown_on_official_page: '已過期但官方頁面仍顯示', expired_no_confirmed_replacement_offer: '已過期，尚無確認的新優惠', card_file_has_uncommitted_changes: '卡片檔案有未提交變更',
   schema_validation_failed: '資料格式驗證失敗', new_product_requires_human_review: '新卡片需人工審核', stale_or_invalid_checked_at: '證據過期', not_marked_official: '非官方來源',
+  welcome_offer_detect_only_manual_review: '開卡禮僅偵測，需人工確認', variable_as_high_as_offer: '官方頁面為「最高可達」浮動優惠', detect_only_no_bonus_parsed: '官方頁面未解析出固定開卡禮',
   non_public_audience: '非公開優惠', source_conflicts: '來源互相矛盾', unknown_fields: '含未追蹤欄位',
 };
 export const TYPE: Record<string, string> = { checks_failed: '驗證/建置失敗', push_failed: '推送失敗', deploy_failed: '部署失敗', live_check_failed: '線上檢查失敗', rolled_back: '已回滾', schema_failed: '格式驗證失敗' };

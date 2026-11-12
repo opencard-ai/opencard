@@ -111,6 +111,15 @@ export function planApply(report: ReportLike, cards: Map<string, CardRecord>, op
     }
   }
 
+  // Detect-only welcome offers (watchlist review_signals / review_if_no_bonus): fresh official fetches that flagged the offer
+  // become a manual-review item. Never a numeric change; annual fee and other extracted fields follow the normal path above.
+  for (const [cardId, confs] of confirmationsByCard) {
+    const domains = opts.officialDomains ?? DEFAULT_OFFICIAL_DOMAINS;
+    const flagged = confs.filter(c => c.ok && isOfficialUrl(c.url, domains) && opts.runAt - Date.parse(c.checked_at) <= (opts.maxConfirmationAgeHours ?? 24) * 3600000 && c.observed?.review_signals?.length);
+    if (!flagged.length) continue;
+    expiryReview.push({ card_id: cardId, field: 'welcome_offer.bonus_points', reasons: ['welcome_offer_detect_only_manual_review', ...new Set(flagged.flatMap(c => c.observed!.review_signals!))] });
+  }
+
   // Expired elevated / limited-time offers: revert only when an official page was fetched and no longer shows the old bonus.
   for (const item of report.expiry?.expired || []) {
     if (item.priority !== 'high') continue;
