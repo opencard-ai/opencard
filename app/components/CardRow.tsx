@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { Bookmark, Check, ChevronRight, Gift, Scale } from "lucide-react";
 import { trackCardAdded, trackEvent } from "@/lib/analytics";
-import type { CreditCard } from "@/lib/cards";
+import type { FindCard } from "@/lib/client-card-fields";
 import { formatWelcomeBonus, welcomeBonusKind } from "@/lib/welcome-offer";
 import IssuerChip from "./IssuerChip";
 import CardArt from "./CardArt";
@@ -12,7 +12,8 @@ import CardArt from "./CardArt";
 const STORAGE_KEY = "opencard_existing_cards";
 
 interface Props {
-  card: CreditCard;
+  // Any CreditCard satisfies FindCard (it is a subset of its fields).
+  card: FindCard;
   lang: string;
   locale: string;
   isCompared: boolean;

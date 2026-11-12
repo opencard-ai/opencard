@@ -9,17 +9,17 @@
   "welcome_offer": {
     "spending_requirement": 500,
     "time_period_months": 3,
-    "bonus_points": 250,
+    "bonus_points": 200,
     "point_program": "Cash Back",
-    "estimated_value": 250,
-    "description": "Limited-time offer: earn a $250 bonus (up from $200) after you spend $500 on purchases in the first 3 months from account opening.",
-    "offer_status": "public_limited_time",
-    "is_elevated": true,
+    "estimated_value": 200,
+    "description": "Earn a $200 cash back bonus after you spend $500 on purchases in the first 3 months from account opening.",
+    "offer_status": "public",
+    "is_elevated": false,
     "confidence": "high",
     "notes": [
-      "Official Chase Freedom Flex page checked 2026-10-02 shows \"LIMITED-TIME OFFER $200 strike through $250 bonus\"; no end date shown."
+      "Official Chase Freedom Flex page checked 2026-11-08 shows \"NEW CARDMEMBER OFFER Earn a $200 bonus after you spend $500 on purchases in the first 3 months\"; no limited-time language. $200 bonus = 20,000 points."
     ],
-    "last_verified": "2026-10-02"
+    "last_verified": "2026-11-08"
   },
   "earning_rates": [
     {

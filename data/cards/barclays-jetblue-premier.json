@@ -11,17 +11,18 @@
     "bonus_points": 80000,
     "spending_requirement": 5000,
     "time_period_months": 3,
-    "description": "Earn 80,000 JetBlue TrueBlue bonus miles after spending $5,000 on purchases in the first 3 months.",
+    "description": "Earn 80,000 JetBlue TrueBlue bonus points after spending $5,000 on purchases and paying the annual fee in full, both within the first 90 days.",
     "point_program": "JetBlue TrueBlue",
     "estimated_value": 1040,
     "offer_status": "public",
     "confidence": "high",
     "notes": [
       "Barclays official JetBlue Premier page checked 2026-09-29: 90,000 bonus points after $5,000 purchases and annual fee paid in full, both within the first 90 days; $499 annual fee.",
-      "2026-11-03 offer-watch auto-apply (two independent official fetches): bonus_points 90000 -> 80000. Sources: https://cards.barclaycardus.com/banking/cards/jetblue-premier-card/."
+      "2026-11-03 offer-watch auto-apply (two independent official fetches): bonus_points 90000 -> 80000. Sources: https://cards.barclaycardus.com/banking/cards/jetblue-premier-card/.",
+      "2026-11-10 official Barclays page GET 200 (full HTML): unit is TrueBlue points (0 uses of 'miles'): \"Earn 80,000 bonus points after qualifying account activity\" / \"after spending $5,000 on purchases and paying the annual fee in full, both within the first 90 days\". Description changed from 'bonus miles' to 'bonus points' and annual-fee condition added; 80000/5000/3 unchanged."
     ],
     "source_conflicts": [],
-    "last_verified": "2026-11-03"
+    "last_verified": "2026-11-10"
   },
   "earning_rates": [
     {
@@ -106,6 +107,10 @@
       {
         "name": "No foreign transaction fees",
         "description": "No foreign transaction fees on international purchases."
+      },
+      {
+        "name": "5,000 anniversary bonus points",
+        "description": "Earn 5,000 bonus TrueBlue points each year after your JetBlue Premier Card account anniversary; terms apply."
       }
     ]
   },
@@ -134,7 +139,7 @@
   "sources": [
     {
       "url": "https://cards.barclaycardus.com/banking/cards/jetblue-premier-card/",
-      "notes": "Barclays official JetBlue Premier page; verified 2026-09-29 (90k offer, 15% award points back, 25-tile bonus)."
+      "notes": "Barclays official JetBlue Premier page; verified 2026-09-29 (90k offer, 15% award points back, 25-tile bonus). | GET 2026-11-10 200: 'Earn 80,000 bonus points after qualifying account activity'; '5,000 bonus points each year after your JetBlue Premier Card account anniversary'; unit = points."
     },
     {
       "url": "https://ir.jetblue.com/news/news-details/2026/JetBlue-and-Barclays-Roll-Out-Enhanced-Benefits-Now-Available-for-Premier-Cardmembers/default.aspx",
@@ -151,7 +156,7 @@
     "notes": "Barclays terms note bonus may only be earned once and may be unavailable to current/previous program account holders."
   },
   "notes": "Dedicated product confirmed distinct from JetBlue Card and JetBlue Plus Card. Some benefit details are term-sensitive; prefer issuer terms for display copy.",
-  "last_updated": "2026-11-03T12:00:00.000Z",
-  "last_verified": "2026-11-03",
-  "next_review": "2026-12-03T00:00:00.000Z"
+  "last_updated": "2026-11-10T12:00:00.000Z",
+  "last_verified": "2026-11-10",
+  "next_review": "2026-12-10T00:00:00.000Z"
 }

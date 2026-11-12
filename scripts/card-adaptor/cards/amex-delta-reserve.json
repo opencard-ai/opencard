@@ -38,23 +38,23 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 50000,
-      "companion_certificates": 2,
-      "spending_requirement": 10000,
+      "bonus_points": 100000,
+      "spending_requirement": 5000,
       "time_period_months": 6,
-      "description": "Limited-time offer: earn 50,000 Bonus Miles plus 2 round-trip Delta Comfort Flight Certificates after spending $10,000 in purchases in the first 6 months. Offer ends November 4, 2026.",
+      "description": "Earn 100,000 Delta SkyMiles bonus miles after spending $5,000 on purchases in the first 6 months. This offer may not be available if you leave this web page and return later.",
       "point_program": "Delta SkyMiles",
-      "estimated_value": 500,
+      "estimated_value": 1000,
       "offer_status": "public_limited_time",
       "confidence": "high",
       "notes": [
         "2026-09-09 issuer recheck: 50,000 Bonus Miles plus 2 round-trip Delta Comfort Flight Certificates after $10,000/6 months, ending November 4, 2026.",
-        "Previous public limited-time 7/15/2026 offer was removed from current production values to avoid displaying an expired offer."
+        "Previous public limited-time 7/15/2026 offer was removed from current production values to avoid displaying an expired offer.",
+        "Post-7/15/2026 closeout completed: expired limited-time Delta Amex state removed/confirmed; current production state is this welcome_offer block.",
+        "2026-11-09 official Amex product page GET 200 (full HTML incl. embedded JSON): \"Earn 70,000 100,000 Bonus Miles after you use your new Card to make $5,000 in purchases within the first 6 months. This offer may not be available if you leave this web page and return later.\" Welcome offer synced 50,000 + 2 Comfort Flight Certificates / $10,000 / 6 months -> 100,000 / $5,000 / 6 months; 'Comfort Flight' no longer appears anywhere in the official welcome-offer copy, so companion_certificates removed from welcome_offer. Post-renewal Annual Companion Certificate (other_benefits) still official and kept. Expired Nov 4 language and expires_at removed. estimated_value 500 -> 1000 (1 cent/mile, same as Gold/Platinum)."
       ],
       "source_conflicts": [],
-      "last_verified": "2026-09-07",
-      "is_elevated": true,
-      "expires_at": "2026-11-04"
+      "last_verified": "2026-11-09",
+      "is_elevated": true
     }
   },
   "citations": {

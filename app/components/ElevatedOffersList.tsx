@@ -5,11 +5,11 @@ import Link from "next/link";
 import { Flame, ArrowUpDown } from "lucide-react";
 import CardArt from "./CardArt";
 import IssuerChip from "./IssuerChip";
-import type { CreditCard } from "@/lib/cards";
+import type { OfferListCard } from "@/lib/client-card-fields";
 import { formatWelcomeBonus, welcomeBonusKind, welcomeBonusPoints } from "@/lib/welcome-offer";
 
 interface Props {
-  cards: CreditCard[];
+  cards: OfferListCard[];
   lang: string;
 }
 
@@ -111,7 +111,7 @@ export default function ElevatedOffersList({ cards, lang }: Props) {
     return sorted.slice(0, 30);
   }, [cards, sort, issuer]);
 
-  const Row = ({ card }: { card: CreditCard }) => {
+  const Row = ({ card }: { card: OfferListCard }) => {
     const w = card.welcome_offer!;
     const elevatedDelta = w.is_elevated && w.normal_bonus_points && w.bonus_points
       ? Math.round(((w.bonus_points - w.normal_bonus_points) / w.normal_bonus_points) * 100)

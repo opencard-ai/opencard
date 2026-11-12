@@ -14,7 +14,10 @@ import { expiryReport, isClosedToNewApplicants, isOfficialUrl, normalizeField, n
 /** groups: capture group -> tracked field. absent: value to record when the pattern matched but an optional group did not
  * participate (e.g. no "plus a $250 statement credit" -> statement_credit null = no credit). transforms: days_to_months. */
 export interface WatchPattern { regex: string; groups: Record<string, number>; transforms?: Record<string, 'days_to_months'>; absent?: Record<string, unknown> }
-export interface WatchSource { url: string; render?: boolean; wait?: 'networkidle2' | 'domcontentloaded'; settle_ms?: number; patterns: WatchPattern[] }
+/** Detect-only welcome offers: review_signals regexes (e.g. variable "as high as" copy) and review_if_no_bonus record a manual-review
+ * reason on the fetch (observed.review_signals) instead of extracting a number. apply-core turns them into expiry_review items. */
+export interface WatchReviewSignal { regex: string; reason: string }
+export interface WatchSource { url: string; render?: boolean; wait?: 'networkidle2' | 'domcontentloaded'; settle_ms?: number; patterns: WatchPattern[]; review_signals?: WatchReviewSignal[]; review_if_no_bonus?: string }
 export interface WatchEntry { card_id: string; audience?: string; hold_only?: boolean; hold_reason?: string; auto_added?: string; sources: WatchSource[] }
 
 function transform(kind: string | undefined, raw: string): string | undefined {
@@ -42,6 +45,14 @@ export function extractValues(text: string, source: WatchSource): { values: Reco
   const values: Record<string, unknown> = {}; const ambiguous: string[] = [];
   for (const [field, set] of Object.entries(seen)) set.size === 1 && !set.has('"__untransformable__"') ? (values[field] = JSON.parse([...set][0])) : ambiguous.push(field);
   return { values, ambiguous };
+}
+
+/** Pure: manual-review reasons for a detect-only source (never a numeric value). */
+export function reviewSignals(text: string, source: WatchSource, values: Record<string, unknown>): string[] {
+  const out = (source.review_signals || []).filter(s => new RegExp(s.regex, 'i').test(text)).map(s => s.reason);
+  const hasBonus = ['welcome_offer.bonus_points', 'welcome_offer.cash_bonus'].some(f => f in values);
+  if (!out.length && source.review_if_no_bonus && !hasBonus) out.push(source.review_if_no_bonus);
+  return [...new Set(out)];
 }
 
 /** Does the page text mention the card's current bonus (e.g. 150,000 / 150000 / 150K / $1,000)? Informational only. */
@@ -133,7 +144,7 @@ async function fetchRendered(source: WatchSource) {
     // Client-rendered offers load late: poll until one of this source's own extractors matches (max settle_ms, default 25 s).
     // Without patterns (auto-added entries) wait a fixed settle_ms (default 8 s).
     const max = source.settle_ms ?? (source.patterns.length ? 25000 : 8000);
-    const regexes = source.patterns.map(p => new RegExp(p.regex, 'i'));
+    const regexes = [...source.patterns.map(p => p.regex), ...(source.review_signals || []).map(s => s.regex)].map(r => new RegExp(r, 'i'));
     const started = Date.now();
     let text = await readText();
     while (Date.now() - started < max && !(regexes.length && regexes.every(re => re.test(text))) && !(Date.now() - started > 5000 && isErrorPage(text))) {
@@ -164,7 +175,7 @@ async function fetchOnce(source: WatchSource, attempt: number, domains: string[]
     if (!samePage(source.url, finalUrl)) return { ...base, ok: false, error: `redirected_to_other_page: ${stripQuery(finalUrl)}`, values: {} };
     const { values, ambiguous } = extractValues(text, source);
     if (!Object.keys(values).length && !ambiguous.length && isErrorPage(text)) return { ...base, ok: false, error: 'issuer_error_or_block_page', values: {} };
-    return { ...base, ok: true, values, ambiguous_fields: ambiguous, content_sha256: createHash('sha256').update(text).digest('hex'), observed: { current_bonus_visible: currentBonusVisible(text, card) } };
+    return { ...base, ok: true, values, ambiguous_fields: ambiguous, content_sha256: createHash('sha256').update(text).digest('hex'), observed: { current_bonus_visible: currentBonusVisible(text, card), ...(source.review_signals || source.review_if_no_bonus ? { review_signals: reviewSignals(text, source, values) } : {}) } };
   } catch (error) {
     return { url: source.url, fetch_id, checked_at, ok: false, error: String((error as Error)?.message || error).slice(0, 200), official_domain, values: {} };
   }
