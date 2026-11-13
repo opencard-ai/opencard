@@ -32,7 +32,8 @@
     "offer-watch:daily": "NODE_NO_WARNINGS=1 tsx scripts/offer-watch/daily.ts",
     "audit:weekly": "NODE_NO_WARNINGS=1 tsx scripts/audit/weekly.ts",
     "news:dry-run": "node scripts/automation/news-dry-run.mjs",
-    "test:automation": "node --test scripts/automation/*.test.mjs"
+    "test:automation": "node --test scripts/automation/*.test.mjs",
+    "news:shadow": "node scripts/automation/news-shadow.mjs"
   },
   "dependencies": {
     "@upstash/redis": "^1.37.0",
