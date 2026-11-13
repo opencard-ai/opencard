@@ -1,0 +1,32 @@
+name: Ops isolated fixture check (GSC / audit / state tool)
+# Manual only. Fixtures only: no schedule, no secrets, no network calls to GSC/AgentMail,
+# no publish, no notifications. Never writes artifacts/audit (uses OPENCARD_AUDIT_DIR in runner temp).
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  ops-fixture-check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+      - name: Install locked dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: GSC entrypoint with mocked API (default + portable paths)
+        run: node --import tsx --test scripts/gsc-daily.test.ts scripts/gsc-cohorts.test.ts
+      - name: Weekly audit end-to-end with fixture url-check
+        run: node --test scripts/audit/weekly.e2e.test.mjs
+      - name: Durable audit state contract (fakeredis tests skip without Python fixture)
+        run: node --import tsx --test scripts/audit/durable-baseline.test.ts scripts/audit/audit-state.test.ts scripts/audit/file-audit-store.test.ts
+      - name: State bundle tool tests
+        run: node --test scripts/automation/ops-state.test.mjs
+      - name: Email monitor synthetic tests (mocked HTTP, no inbox)
+        run: python3 -m unittest scripts/automation/test_email_monitor.py
+      - name: Assert committed audit artifacts unchanged
+        run: git diff --exit-code -- artifacts/audit

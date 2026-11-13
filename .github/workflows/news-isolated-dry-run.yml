@@ -8,10 +8,31 @@ on:
         type: choice
         options: [morning, evening]
         default: morning
+      ops_gsc_readonly:
+        description: 'OPS: run hosted GSC read-only acceptance instead of the news fixture (needs approval of environment ops-readonly-acceptance)'
+        required: false
+        type: boolean
+        default: false
+      ops_audit_readonly:
+        description: 'OPS: run hosted audit-state live sandbox acceptance (existing free test DB only; needs ops-audit-readonly approval)'
+        required: false
+        type: boolean
+        default: false
+      ops_agentmail_readonly:
+        description: 'OPS: run hosted AgentMail read-only acceptance (one GET list limit=1; needs approval of environment ops-agentmail-readonly)'
+        required: false
+        type: boolean
+        default: false
+      expected_sha:
+        description: 'OPS: exact commit SHA that must be checked out (required when ops_gsc_readonly)'
+        required: false
+        type: string
+        default: ''
 permissions:
   contents: read
 jobs:
   fixture-dry-run:
+    if: ${{ !inputs.ops_gsc_readonly && !inputs.ops_agentmail_readonly && !inputs.ops_audit_readonly }}
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
@@ -38,3 +59,122 @@ jobs:
           path: ${{ steps.comparison.outputs.path }}
           retention-days: 7
           if-no-files-found: error
+
+  # Manual-only hosted GSC read-only acceptance. No schedule, no artifacts, no writes to Google or the repo.
+  ops-gsc-readonly:
+    if: ${{ inputs.ops_gsc_readonly && !inputs.ops_agentmail_readonly && !inputs.ops_audit_readonly }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment: ops-readonly-acceptance
+    permissions:
+      contents: read
+    steps:
+      - name: Verify exact SHA and branch before anything else
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "expected_sha required"; exit 1; }
+          [ "$GITHUB_SHA" = "$EXPECTED_SHA" ] || { echo "SHA mismatch"; exit 1; }
+          [ "$GITHUB_REF" = "refs/heads/bot/opencard-ops-portable" ] || { echo "wrong ref"; exit 1; }
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Re-verify checked-out HEAD
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: '[ "$(git rev-parse HEAD)" = "$EXPECTED_SHA" ]'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+      - name: Install locked dependencies (no secrets in env)
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Offline preflight (fake API, safety asserts)
+        run: |
+          node --test scripts/automation/gsc-readonly-acceptance.test.mjs
+          node --import tsx --test scripts/gsc-daily.test.ts scripts/gsc-cohorts.test.ts
+      - name: GSC read-only acceptance (secrets injected only here; allowlisted summary only)
+        env:
+          GSC_CLIENT_ID: ${{ secrets.GSC_CLIENT_ID }}
+          GSC_CLIENT_SECRET: ${{ secrets.GSC_CLIENT_SECRET }}
+          GSC_REDIRECT_URI: ${{ secrets.GSC_REDIRECT_URI }}
+          GSC_TOKEN_JSON: ${{ secrets.GSC_TOKEN_JSON }}
+        run: node scripts/automation/gsc-readonly-acceptance.mjs
+
+  # Manual-only hosted AgentMail read-only acceptance. Proves read access only; not a cloud cutover.
+  ops-agentmail-readonly:
+    if: ${{ inputs.ops_agentmail_readonly && !inputs.ops_gsc_readonly && !inputs.ops_audit_readonly }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment: ops-agentmail-readonly
+    permissions:
+      contents: read
+    steps:
+      - name: Verify exact SHA and branch before anything else
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "expected_sha required"; exit 1; }
+          [ "$GITHUB_SHA" = "$EXPECTED_SHA" ] || { echo "SHA mismatch"; exit 1; }
+          [ "$GITHUB_REF" = "refs/heads/bot/opencard-ops-portable" ] || { echo "wrong ref"; exit 1; }
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Re-verify checked-out HEAD
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: '[ "$(git rev-parse HEAD)" = "$EXPECTED_SHA" ]'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+      - name: Install locked dependencies (no secrets in env)
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Offline preflight (fake API, safety asserts)
+        run: |
+          node --test scripts/automation/agentmail-readonly-acceptance.test.mjs
+      - name: AgentMail read-only acceptance (secret injected only here; one GET; allowlisted summary only)
+        env:
+          AGENTMAIL_API_KEY: ${{ secrets.AGENTMAIL_API_KEY }}
+        run: node scripts/automation/agentmail-readonly-acceptance.mjs
+
+  # Manual-only audit-state live sandbox acceptance. Existing free test DB only. Hard HTTP budget 10. Synthetic values.
+  ops-audit-readonly:
+    if: ${{ inputs.ops_audit_readonly && !inputs.ops_gsc_readonly && !inputs.ops_agentmail_readonly }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment: ops-audit-readonly
+    permissions:
+      contents: read
+    steps:
+      - name: Verify exact SHA and branch before anything else
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "expected_sha required"; exit 1; }
+          [ "$GITHUB_SHA" = "$EXPECTED_SHA" ] || { echo "SHA mismatch"; exit 1; }
+          [ "$GITHUB_REF" = "refs/heads/bot/opencard-ops-portable" ] || { echo "wrong ref"; exit 1; }
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Re-verify checked-out HEAD
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: '[ "$(git rev-parse HEAD)" = "$EXPECTED_SHA" ]'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+      - name: Install locked dependencies (no secrets in env)
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Offline preflight (pin/budget/AES/fake REST; no live secrets)
+        run: |
+          python3 -m pip install -q 'fakeredis[lua]'
+          export FAKEREDIS_PYTHON="$(python3 -c 'import sys; print(sys.executable)')"
+          node --import tsx --test scripts/audit/live-sandbox-acceptance.test.mjs
+          node --import tsx --test scripts/audit/state-backup.test.ts
+      - name: Live audit sandbox acceptance (secrets only here; budget 10; allowlisted summary)
+        env:
+          OPENCARD_AUDIT_LIVE: '1'
+          OPENCARD_SANDBOX_DATABASE_ID: ${{ secrets.OPENCARD_SANDBOX_DATABASE_ID }}
+          OPENCARD_AUDIT_SANDBOX_ID: audit-gh-${{ github.run_id }}
+          OPENCARD_AUDIT_REDIS_URL: ${{ secrets.OPENCARD_AUDIT_REDIS_URL }}
+          OPENCARD_AUDIT_REDIS_TOKEN: ${{ secrets.OPENCARD_AUDIT_REDIS_TOKEN }}
+        run: node --import tsx scripts/audit/live-sandbox-acceptance-cli.ts

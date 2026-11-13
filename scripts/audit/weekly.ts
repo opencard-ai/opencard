@@ -10,12 +10,18 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { createRequire } from 'node:module';
+import { createFileAuditStore } from './file-audit-store';
+import { sandboxAuditStoreFromEnv } from './upstash-audit-transport';
+import type { AuditStore } from './durable-baseline';
+import { AUDIT_DOC, NeedsReconciliationError, runWithDurableBaseline } from './durable-baseline';
 
 const requireFromHere = createRequire(path.join(process.cwd(), 'package.json'));
 
 type Finding = { card_id: string; type: string; severity: 'high' | 'medium' | 'low'; field?: string; detail: string; popular?: boolean };
-const DIR = 'artifacts/audit';
-const LOCK = path.join(os.tmpdir(), 'opencard-audit-weekly.lock');
+// OPENCARD_AUDIT_DIR relocates report history/baseline (default unchanged: artifacts/audit).
+const DIR = process.env.OPENCARD_AUDIT_DIR ? process.env.OPENCARD_AUDIT_DIR.replace(/\/+$/, '') : 'artifacts/audit';
+// Fixture runs use a separate lock so they can never make a live run skip.
+const LOCK = path.join(os.tmpdir(), process.env.OPENCARD_AUDIT_URLCHECK_FIXTURE ? 'opencard-audit-weekly-fixture.lock' : 'opencard-audit-weekly.lock');
 const LOCK_STALE_MS = 3 * 60 * 60 * 1000;
 const MAX_CHARS = 1800;
 const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date());
@@ -53,48 +59,113 @@ function run(args: string[]): void {
   if (r.status !== 0) throw new Error(`${args.join(' ')} failed (exit ${r.status}): ${(r.stderr || r.stdout || '').slice(-800)}`);
 }
 class DataChangedError extends Error {}
+/** Test-only: OPENCARD_AUDIT_URLCHECK_FIXTURE replaces the live url-check with a committed fixture.
+ *  Accepted only for scripts/audit/fixtures/*.url-check.json and only with OPENCARD_AUDIT_DIR set,
+ *  so fixture results can never land in the default artifacts/audit history. Unset = live url-check. */
+function urlCheckFixture(): string | null {
+  const raw = process.env.OPENCARD_AUDIT_URLCHECK_FIXTURE;
+  if (!raw) return null;
+  if (!process.env.OPENCARD_AUDIT_DIR) throw new Error('url-check fixture requires OPENCARD_AUDIT_DIR (never the default artifacts dir)');
+  const allowed = fs.realpathSync(path.join(process.cwd(), 'scripts/audit/fixtures'));
+  const real = fs.realpathSync(raw);
+  if (path.dirname(real) !== allowed || !real.endsWith('.url-check.json')) throw new Error('url-check fixture must be scripts/audit/fixtures/*.url-check.json');
+  const doc = JSON.parse(fs.readFileSync(real, 'utf8'));
+  if (doc.fixture !== true || !Array.isArray(doc.results)) throw new Error('url-check fixture must declare fixture:true and results[]');
+  // Fixture output must go to an EXISTING directory whose real path is outside the repo checkout.
+  let outDir: string;
+  try { outDir = fs.realpathSync(process.env.OPENCARD_AUDIT_DIR); } catch { throw new Error('fixture run requires an existing OPENCARD_AUDIT_DIR'); }
+  const repo = fs.realpathSync(process.cwd());
+  if (outDir === repo || outDir.startsWith(repo + path.sep)) throw new Error('fixture run may not target a directory inside the repo (incl. artifacts/audit)');
+  const tmp = fs.realpathSync(os.tmpdir());
+  if (tmp === repo || tmp.startsWith(repo + path.sep)) throw new Error('fixture run requires TMPDIR outside the repo (lock and scratch live there)');
+  return real;
+}
 const key = (f: Finding) => `${f.type}|${f.card_id}|${f.field || ''}|${f.detail.replace(/\s+/g, ' ').trim()}`;
 
-function main(): number {
-  if (!acquireLock()) { console.error(`audit:weekly: another run holds ${LOCK}`); console.log('NO_REPLY'); return 0; }
+function audit(): Finding[] {
+  // Write into a scratch dir and only promote to artifacts/ once the run is
+  // known-good, so an aborted run never leaves half-updated reports behind.
+  let cur: Finding[] | null = null;
+  let fixture: string | null = null;
+  const before = sha('data/cards');
+  const stage = fs.mkdtempSync(path.join(os.tmpdir(), 'opencard-audit-'));
   try {
+    const urlOut = `${stage}/${today}-url-check.json`;
+    fixture = urlCheckFixture();
+    if (fixture) { fs.copyFileSync(fixture, urlOut); console.error(`audit:weekly: FIXTURE url-check ${path.basename(fixture)} (no network)`); }
+    else run(['scripts/audit/url-check.ts', '--official-only', '--out', urlOut]);
+    run(['scripts/audit/db-audit.ts', '--today', today, '--urls', urlOut, '--out-dir', stage]);
+    if (sha('data/cards') !== before) throw new DataChangedError('data/cards changed during audit; aborting without updating artifacts (rerun when no edits are in progress)');
+    fs.mkdirSync(DIR, { recursive: true });
+    // Reruns on the same day keep the first saved report so artifacts stay
+    // stable; this run is still compared against the last earlier report.
+    if (fs.existsSync(path.join(DIR, `${today}-db-audit.json`))) {
+      cur = JSON.parse(fs.readFileSync(path.join(stage, `${today}-db-audit.json`), 'utf8')).findings;
+      console.error(`audit:weekly: ${DIR}/${today}-db-audit.json already exists; not overwriting`);
+    } else for (const f of [`${today}-url-check.json`, `${today}-db-audit.json`, `${today}-db-audit.md`]) {
+      // Point references at the promoted location instead of the scratch dir.
+      // Fixture runs publish with O_EXCL ('wx'): never follow or replace an existing file/symlink.
+      fs.writeFileSync(path.join(DIR, f), fs.readFileSync(path.join(stage, f), 'utf8').split(`${stage}/`).join(`${DIR}/`), fixture ? { flag: 'wx' } : undefined);
+    }
+  } finally {
+    fs.rmSync(stage, { recursive: true, force: true });
+  }
+
+  return cur ?? JSON.parse(fs.readFileSync(`${DIR}/${today}-db-audit.json`, 'utf8')).findings as Finding[];
+}
+
+async function main(): Promise<number> {
+  let locked = false;
+  try {
+    // Validate fixture guards (incl. TMPDIR containment) before the lock or any scratch write.
+    if (process.env.OPENCARD_AUDIT_URLCHECK_FIXTURE) urlCheckFixture();
+    const durable = process.env.OPENCARD_AUDIT_DURABLE;
+    let durableDir: string | undefined;
+    let makeStore: (() => AuditStore) | undefined;
+    if (durable !== undefined && durable.startsWith('sandbox-redis:')) {
+      // Opt-in audit-only SANDBOX Redis (independent audit-state namespace). Production is never enabled here.
+      const loop = process.env.OPENCARD_AUDIT_REDIS_ALLOW_LOOPBACK;
+      if (loop !== undefined && (loop !== '1' || !process.env.OPENCARD_AUDIT_URLCHECK_FIXTURE)) throw new Error('loopback redis only allowed in fixture mode');
+      if (process.env.OPENCARD_AUDIT_FIXTURE_FAULT !== undefined) throw new Error('fixture fault not supported for sandbox-redis');
+      const opts = { allowLoopback: loop === '1' };
+      sandboxAuditStoreFromEnv(process.env, `weekly_${process.pid}`, opts); // validate config before lock/audit
+      makeStore = () => sandboxAuditStoreFromEnv(process.env, `weekly_${process.pid}`, opts);
+      durableDir = 'sandbox-redis';
+    } else if (durable !== undefined) {
+      if (!durable.startsWith('fixture-file:')) throw new Error('unsupported durable store');
+      if (!process.env.OPENCARD_AUDIT_URLCHECK_FIXTURE) throw new Error('durable fixture store requires OPENCARD_AUDIT_URLCHECK_FIXTURE');
+      urlCheckFixture();
+      durableDir = durable.slice('fixture-file:'.length);
+      const fault = process.env.OPENCARD_AUDIT_FIXTURE_FAULT;
+      if (fault !== undefined && fault !== 'cas-after-commit') throw new Error('unsupported fixture fault');
+      // Validate before running the audit or writing artifacts.
+      createFileAuditStore(durableDir, `weekly_${process.pid}`);
+      const dir = durableDir;
+      makeStore = () => createFileAuditStore(dir, `weekly_${process.pid}`, 60000, { faultAfterCasCommit: process.env.OPENCARD_AUDIT_FIXTURE_FAULT === 'cas-after-commit' });
+    }
+    if (!acquireLock()) { console.error(`audit:weekly: another run holds ${LOCK}`); console.log(durableDir ? 'DURABLE:NO_REPLY' : 'NO_REPLY'); return 0; }
+    locked = true;
     // Baseline = most recent db-audit report from an earlier date (read before today's run overwrites anything).
     const reports = fs.existsSync(DIR) ? fs.readdirSync(DIR).filter(f => /^\d{4}-\d{2}-\d{2}-db-audit\.json$/.test(f)).sort() : [];
     const prevFile = [...reports].reverse().find(f => f.slice(0, 10) < today) || null;
-    const prev: Finding[] | null = prevFile ? JSON.parse(fs.readFileSync(path.join(DIR, prevFile), 'utf8')).findings : null;
+    const prev: Finding[] | null = !durableDir && prevFile ? JSON.parse(fs.readFileSync(path.join(DIR, prevFile), 'utf8')).findings : null;
 
-    // Write into a scratch dir and only promote to artifacts/ once the run is
-    // known-good, so an aborted run never leaves half-updated reports behind.
-    let cur: Finding[] | null = null;
-    const before = sha('data/cards');
-    const stage = fs.mkdtempSync(path.join(os.tmpdir(), 'opencard-audit-'));
-    try {
-      const urlOut = `${stage}/${today}-url-check.json`;
-      run(['scripts/audit/url-check.ts', '--official-only', '--out', urlOut]);
-      run(['scripts/audit/db-audit.ts', '--today', today, '--urls', urlOut, '--out-dir', stage]);
-      if (sha('data/cards') !== before) throw new DataChangedError('data/cards changed during audit; aborting without updating artifacts (rerun when no edits are in progress)');
-      fs.mkdirSync(DIR, { recursive: true });
-      // Reruns on the same day keep the first saved report so artifacts stay
-      // stable; this run is still compared against the last earlier report.
-      if (fs.existsSync(path.join(DIR, `${today}-db-audit.json`))) {
-        cur = JSON.parse(fs.readFileSync(path.join(stage, `${today}-db-audit.json`), 'utf8')).findings;
-        console.error(`audit:weekly: ${DIR}/${today}-db-audit.json already exists; not overwriting`);
-      } else for (const f of [`${today}-url-check.json`, `${today}-db-audit.json`, `${today}-db-audit.md`]) {
-        // Point references at the promoted location instead of the scratch dir.
-        fs.writeFileSync(path.join(DIR, f), fs.readFileSync(path.join(stage, f), 'utf8').split(`${stage}/`).join(`${DIR}/`));
-      }
-    } finally {
-      fs.rmSync(stage, { recursive: true, force: true });
+    const cur = durableDir ? [] : audit();
+    let durableFresh: Finding[] | undefined, previousDate = prevFile?.slice(0, 10);
+    if (durableDir) {
+      const result = await runWithDurableBaseline(makeStore!(), today, async () => audit(), { docName: AUDIT_DOC });
+      const label = { BASELINE_CREATED: 'BASELINE_RECORDED', REPORT: 'CALLER_MUST_SEND', ALREADY_REPORTED: 'ALREADY_REPORTED', NO_REPLY: 'NO_REPLY' }[result.kind];
+      console.log(`DURABLE:${label}`);
+      if (result.kind !== 'REPORT') return 0;
+      durableFresh = result.fresh; previousDate = result.previousDate;
     }
-
-    if (!cur) cur = JSON.parse(fs.readFileSync(`${DIR}/${today}-db-audit.json`, 'utf8')).findings as Finding[];
-    if (!prev) { console.log('NO_REPLY'); console.error(`audit:weekly: no earlier report; baseline is ${DIR}/${today}-db-audit.json`); return 0; }
-    const prevKeys = new Set(prev.map(key));
-    const fresh = cur.filter(f => (f.severity === 'high' || f.severity === 'medium') && !prevKeys.has(key(f)));
+    if (!durableFresh && !prev) { console.log('NO_REPLY'); console.error(`audit:weekly: no earlier report; baseline is ${DIR}/${today}-db-audit.json`); return 0; }
+    const prevKeys = new Set((prev || []).map(key));
+    const fresh = durableFresh ?? cur.filter(f => (f.severity === 'high' || f.severity === 'medium') && !prevKeys.has(key(f)));
     if (fresh.length === 0) { console.log('NO_REPLY'); return 0; }
 
     const high = fresh.filter(f => f.severity === 'high').length;
-    const lines: string[] = [`📋 OpenCard 每週資料庫稽核 (${today})：新增 ${fresh.length} 項問題 (高 ${high}、中 ${fresh.length - high})，對比 ${prevFile!.slice(0, 10)}。`];
+    const lines: string[] = [`📋 OpenCard 每週資料庫稽核 (${today})：新增 ${fresh.length} 項問題 (高 ${high}、中 ${fresh.length - high})，對比 ${previousDate}。`];
     const byType = new Map<string, Finding[]>();
     for (const f of fresh) (byType.get(f.type) || byType.set(f.type, []).get(f.type)!).push(f);
     const sorted = [...byType.entries()].sort((a, b) => Number(b[1][0].severity === 'high') - Number(a[1][0].severity === 'high') || b[1].length - a[1].length);
@@ -114,9 +185,9 @@ function main(): number {
   } catch (e) {
     console.error(`audit:weekly failed: ${e instanceof Error ? e.message : String(e)}`);
     // Distinct non-zero code so cron records the data-changed abort as a failure.
-    return e instanceof DataChangedError ? 2 : 1;
+    return e instanceof NeedsReconciliationError ? 3 : e instanceof DataChangedError ? 2 : 1;
   } finally {
-    fs.rmSync(LOCK, { force: true });
+    if (locked) fs.rmSync(LOCK, { force: true });
   }
 }
-process.exitCode = main();
+void main().then(code => { process.exitCode = code; });
