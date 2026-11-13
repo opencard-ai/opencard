@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-/** Disabled-by-default manual entrypoint. Not referenced by any workflow. */
+/** Disabled-by-default publish entrypoint, invoked by .github/workflows/news-cloud-publish.yml. */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { publishPortableNews } from './news-publish.mjs';
+import { CHECKS_PENDING } from './pr-merge-guard.mjs';
 import { createVercelDeploymentReader } from './vercel-observer.mjs';
 
 export function parsePublishOptions(args) {
@@ -18,6 +19,14 @@ export function parsePublishOptions(args) {
   return { repoPath: path.resolve(options['--repo']), artifactDir: path.resolve(options['--plan-dir']),
     ownerEpoch: options['--owner-epoch'], reconcileExisting: options['--reconcile-existing'] === 'true' };
 }
+/** Distinct, stable exit code: PR created/resumed but its checks are not finished. Not success. */
+export const EXIT_CHECKS_PENDING = 75;
+/** Only a pending-checks rejection carrying a valid PR identity is resumable; everything else stays a hard failure. */
+export function pendingChecksResult(error) {
+  if (error?.code !== CHECKS_PENDING || !Number.isSafeInteger(error.pr) || error.pr <= 0
+    || !/^bot\/news-sync\/[0-9a-f]{24}$/.test(error.branch ?? '') || !/^[0-9a-f]{40}$/.test(error.head ?? '')) return null;
+  return { state: CHECKS_PENDING, pr: error.pr, branch: error.branch, head: error.head };
+}
 export function publicationExitCode(result) {
   return result.deployment === 'UNCONFIRMED' || result.state === 'EXISTING_PR_RECONCILE' ? 1 : 0;
 }
@@ -29,7 +38,8 @@ async function main() {
   const run = async (cmd, argv) => {
     if (!['git', 'gh'].includes(cmd)) throw new Error('non-repository helper forbidden');
     const r = spawnSync(cmd, argv, { cwd: repoPath, encoding: 'utf8', maxBuffer: 8 * 1024 * 1024, timeout: 120000, stdio: ['ignore', 'pipe', 'pipe'] });
-    return { code: r.status ?? 1, stdout: r.stdout ?? '' };
+    // stderr is returned only for exact-phrase classification (e.g. gh "no checks reported"); never logged.
+    return { code: r.status ?? 1, stdout: r.stdout ?? '', stderr: r.stderr ?? '' };
   };
   const result = await publishPortableNews({ plan, proposed, repoPath, publish: true, productionEnable: true, ownerEpoch, reconcileExisting, run, fetchDeployment,
     fetchLive: async url => { const r = await fetch(url, { signal: AbortSignal.timeout(20000), headers: { 'cache-control': 'no-cache' } }); return { status: r.status, data: await r.json() }; },
@@ -41,5 +51,14 @@ async function main() {
   }
 }
 if (process.argv[1] && fs.realpathSync(fileURLToPath(import.meta.url)) === fs.realpathSync(process.argv[1])) {
-  main().catch(() => { console.error('Portable news publish stopped; disabled, denied, stale, pending, or unconfirmed. Reconcile GitHub before any retry.'); process.exitCode = 1; });
+  main().catch(error => {
+    const pending = pendingChecksResult(error);
+    if (pending) {
+      console.log(JSON.stringify(pending));
+      console.error('News PR checks are still pending; PR left open, nothing merged. Resume only with --reconcile-existing true.');
+      process.exitCode = EXIT_CHECKS_PENDING;
+      return;
+    }
+    console.error('Portable news publish stopped; disabled, denied, stale, pending, or unconfirmed. Reconcile GitHub before any retry.'); process.exitCode = 1;
+  });
 }

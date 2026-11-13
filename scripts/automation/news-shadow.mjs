@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parseRSS } from '../news-sync-core.mjs';
 import { createMiniMaxTranslator } from '../news-provider.mjs';
-import { preparePortableNews, readNewsSnapshot, writeShadowArtifacts } from './news-portable.mjs';
+import { countTranslationCalls, preparePortableNews, readNewsSnapshot, writeShadowArtifacts } from './news-portable.mjs';
 
 const args = process.argv.slice(2), options = {};
 for (let i = 0; i < args.length; i += 2) {
@@ -16,14 +16,22 @@ async function main() {
   const repoPath = path.resolve(options['--repo'] ?? process.cwd());
   const previous = readNewsSnapshot(repoPath, options['--sha']);
   const fixture = JSON.parse(fs.readFileSync(new URL('./fixtures/news.json', import.meta.url), 'utf8'));
-  const result = await preparePortableNews({ previous, sourceSha: options['--sha'], now: options['--now'], slot: options['--slot'], runId: options['--run-id'],
-    ...(source === 'fixture' ? { sources: fixture.sources, fetchSource: async src => parseRSS(src.rss) } : {}),
-    translate: provider === 'minimax' ? createMiniMaxTranslator({ apiKey: process.env.MINIMAX_API_KEY }) : async (items, lang) => items.map(item => {
-      const t = fixture.translations?.[item.title]?.[lang];
-      if (!t?.title || !t?.summary) throw new Error('fixture translation missing; no live fallback');
-      return { ...item, [`title_${lang}`]: t.title, [`summary_${lang}`]: t.summary };
-    }),
-  });
-  console.log(writeShadowArtifacts(result, { scratchRoot: options['--scratch-root'], repoPath }));
+  const counted = countTranslationCalls(provider === 'minimax' ? createMiniMaxTranslator({ apiKey: process.env.MINIMAX_API_KEY }) : async (items, lang) => items.map(item => {
+    const t = fixture.translations?.[item.title]?.[lang];
+    if (!t?.title || !t?.summary) throw new Error('fixture translation missing; no live fallback');
+    return { ...item, [`title_${lang}`]: t.title, [`summary_${lang}`]: t.summary };
+  }));
+  let result;
+  try {
+    result = await preparePortableNews({ previous, sourceSha: options['--sha'], now: options['--now'], slot: options['--slot'], runId: options['--run-id'],
+      ...(source === 'fixture' ? { sources: fixture.sources, fetchSource: async src => parseRSS(src.rss) } : {}),
+      translate: counted.translate,
+    });
+  } finally {
+    // stderr only (stdout stays the artifact path); a count, never keys or upstream bodies.
+    console.error(`news-shadow translationCalls=${counted.counter.calls} max=${counted.counter.max} provider=${provider}`);
+  }
+  const metrics = { version: 1, provider, translationCalls: counted.counter.calls, maxTranslationCalls: counted.counter.max };
+  console.log(writeShadowArtifacts({ ...result, metrics }, { scratchRoot: options['--scratch-root'], repoPath }));
 }
 main().catch(() => { console.error('News shadow failed (snapshot/source/provider/input unavailable); no production writes'); process.exitCode = 1; });

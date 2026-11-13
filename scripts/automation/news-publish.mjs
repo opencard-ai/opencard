@@ -6,7 +6,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import { jsonHash } from './news-portable.mjs';
-import { mergeVerifiedNewsPr } from './pr-merge-guard.mjs';
+import { CHECKS_PENDING, mergeVerifiedNewsPr } from './pr-merge-guard.mjs';
 
 const REPO = 'opencard-ai/opencard';
 export const NEWS_REQUIRED_CHECKS = Object.freeze(['validate', 'gitleaks']);
@@ -36,7 +36,15 @@ export async function publishPortableNews({ plan, proposed, repoPath, publish = 
   if (!isDeepStrictEqual(plan.allowedFiles, ['data/news.json'])) throw new Error('slot/file identity mismatch');
   const branch = `bot/news-sync/${jsonHash(plan.slotKey).slice(0, 24)}`;
   const mergeAndObserve = async (number, head) => {
-    const receipt = await mergeVerifiedNewsPr({ run, prNumber: number, expectedHead: head, write: true, authorizeWrite: authorize, requiredChecks: NEWS_REQUIRED_CHECKS });
+    let receipt;
+    try {
+      receipt = await mergeVerifiedNewsPr({ run, prNumber: number, expectedHead: head, write: true, authorizeWrite: authorize, requiredChecks: NEWS_REQUIRED_CHECKS });
+    } catch (error) {
+      // Still a rejection (fail closed, PR left open, nothing merged); identity attached so a caller
+      // can distinguish "checks still running" from a real failure and resume with reconcileExisting.
+      if (error?.code === CHECKS_PENDING) Object.assign(error, { branch, pr: number, head });
+      throw error;
+    }
     return { ...receipt, branch, deployment: await observeNewsDeployment({ mergeSha: receipt.mergeSha, proposed, run, fetchLive, fetchDeployment }) };
   };
   const existing = await query(['pr', 'list', '--repo', REPO, '--head', branch, '--state', 'all', '--json', 'number,state,headRefOid,mergeCommit']);
