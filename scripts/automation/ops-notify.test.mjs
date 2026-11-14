@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
 import { alreadySent, buildMessage, dedupeKey, gateSend, isSilent, sanitize, sendViaAgentMail, MAX_CHARS } from './ops-notify-core.mjs';
 import { main } from './ops-notify.mjs';
 
@@ -164,4 +166,19 @@ test('workflow: preview job references no secrets; send job excludes pull_reques
 test('sanitizer: paths after full-width punctuation are replaced; URL paths are not', () => {
   assert.equal(sanitize('完整報告：/home/runner/work/_temp/audit/x.md'), '完整報告：[path]');
   assert.equal(sanitize('https://example.com/home/page'), 'https://example.com/home/page');
+});
+
+test('workflow: summary_file must be a plain file name in both preview and send jobs', () => {
+  const wf = fs.readFileSync(new URL('../../.github/workflows/ops-notify.yml', import.meta.url), 'utf8');
+  const guard = '[[ "$SUMMARY_FILE" =~ ^[A-Za-z0-9._-]+$ && "$SUMMARY_FILE" != *..* ]] || { echo "summary_file must be a plain file name (no / or ..)" >&2; exit 2; }';
+  const [, preview, send] = wf.split(/\n  (?=preview:|send:)/);
+  for (const job of [preview, send]) {
+    const g = job.indexOf(guard), use = job.indexOf('summary-in/$SUMMARY_FILE');
+    assert.ok(g > 0 && g < use, 'guard precedes use');
+  }
+  // Behaviour of the guard itself in bash.
+  const { execFileSync } = require('node:child_process');
+  const run = name => { try { execFileSync('bash', ['-c', `SUMMARY_FILE="$1"; ${guard}; echo ok`, '_', name], { stdio: 'pipe' }); return true; } catch { return false; } };
+  for (const okName of ['shadow-summary.txt', 'shadow-summary-2026-11-13.txt']) assert.equal(run(okName), true, okName);
+  for (const bad of ['../x', 'a/b.txt', '/etc/passwd', '..', 'a..b', '', 'x y', 'x;rm']) assert.equal(run(bad), false, bad);
 });
