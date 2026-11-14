@@ -5,6 +5,7 @@
  * --record-holds, so changes that would be auto-applied are recorded as holds (no_publish_mode). Exit 1 if data/cards
  * changed during the run. --state-dir DIR keeps ledger.json/history.jsonl/daily-state.json in DIR (e.g. an ops-state
  * checkout); only allowed with --dry-run or --no-publish because publish.ts still uses the default paths.
+ * --no-publish REQUIRES a non-default --state-dir (exit 2 otherwise), so it can never write the default/production ledger.
  *   (or: scripts/offer-watch/daily.sh)
  * Steps (PT date D): git pull --ff-only -> collect -> review --ledger --write -> apply --apply -> publish (only if something
  * was applied) -> digest (Mondays PT, or --digest). --dry-run: no ledger writes, no card edits, no publish.
@@ -29,7 +30,21 @@ const stateDirArg = arg('--state-dir');
 if (dryRun && noPublish) { console.error('offer-watch daily: --dry-run and --no-publish are mutually exclusive'); process.exit(2); }
 if (has('--state-dir') && (!stateDirArg || stateDirArg.startsWith('--'))) { console.error('offer-watch daily: --state-dir needs a directory'); process.exit(2); }
 if (stateDirArg && !dryRun && !noPublish) { console.error('offer-watch daily: --state-dir is only allowed with --dry-run or --no-publish'); process.exit(2); }
+// --no-publish must never touch the production/default ledger (Mac checkout or repo artifacts): require an explicit,
+// non-default --state-dir everywhere (this also covers GitHub Actions, GITHUB_ACTIONS=true).
+if (noPublish && !stateDirArg) { console.error(`offer-watch daily: --no-publish requires --state-dir DIR (never the default ledger)${process.env.GITHUB_ACTIONS === 'true' ? ' [GitHub Actions]' : ''}`); process.exit(2); }
+if (stateDirArg && path.resolve(stateDirArg) === path.resolve('artifacts/offer-watch')) { console.error('offer-watch daily: --state-dir must not be the default artifacts/offer-watch'); process.exit(2); }
 if (stateDirArg && !fs.existsSync(stateDirArg)) { console.error('offer-watch daily: --state-dir must be an existing directory'); process.exit(2); }
+if (stateDirArg) {
+  // Canonical check: a symlinked --state-dir (or state file) must not alias the default ledger directory.
+  const real = fs.realpathSync(stateDirArg);
+  const def = fs.existsSync('artifacts/offer-watch') ? fs.realpathSync('artifacts/offer-watch') : path.resolve('artifacts/offer-watch');
+  if (!fs.statSync(real).isDirectory() || real === def) { console.error('offer-watch daily: --state-dir must be a directory other than artifacts/offer-watch'); process.exit(2); }
+  for (const f of ['ledger.json', 'history.jsonl', 'daily-state.json']) {
+    let link = false; try { link = fs.lstatSync(path.join(stateDirArg, f)).isSymbolicLink(); } catch { /* absent is fine */ }
+    if (link) { console.error(`offer-watch daily: --state-dir/${f} must not be a symlink`); process.exit(2); }
+  }
+}
 const today = arg('--today') || laToday();
 const dir = 'artifacts/offer-watch';
 fs.mkdirSync(dir, { recursive: true });

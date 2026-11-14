@@ -75,7 +75,9 @@ test('apply rejects --apply with --record-holds, and --record-holds without --ou
 
 test('daily refuses unsafe flag combinations before doing anything', () => {
   const f = fixtureRepo();
-  for (const args of [['--dry-run', '--no-publish'], ['--state-dir', f.state], ['--no-publish', '--state-dir', path.join(f.dir, 'missing')], ['--no-publish', '--state-dir']]) {
+  const cases = [['--dry-run', '--no-publish', '--state-dir', f.state], ['--state-dir', f.state], ['--no-publish', '--state-dir', path.join(f.dir, 'missing')], ['--no-publish', '--state-dir'],
+    ['--no-publish'], ['--no-publish', '--state-dir', 'artifacts/offer-watch'], ['--no-publish', '--state-dir', path.join(f.dir, 'artifacts/offer-watch/')]];
+  for (const args of cases) {
     const r = runTs(f.dir, 'scripts/offer-watch/daily.ts', [...args, '--skip-pull']);
     assert.equal(r.status, 2, `${args.join(' ')}: ${r.stderr}`);
   }
@@ -90,4 +92,46 @@ test('daily never reaches publish in --no-publish mode (static guard)', () => {
   // Content-hash guard taken right before apply and checked right after.
   const i = src.indexOf('const cardsBefore'), j = src.indexOf("run('apply'"), k = src.indexOf('cardsHash() !== cardsBefore');
   assert.ok(i > 0 && i < j && j < k, 'hash snapshot before apply, comparison after');
+});
+
+test('daily --no-publish without --state-dir is refused, also under GitHub Actions', () => {
+  const f = fixtureRepo();
+  const r = spawnSync(process.execPath, [tsxCli, path.join(repo, 'scripts/offer-watch/daily.ts'), '--no-publish', '--skip-pull'], { cwd: f.dir, encoding: 'utf8', env: { ...process.env, GITHUB_ACTIONS: 'true', NODE_NO_WARNINGS: '1' } });
+  assert.equal(r.status, 2);
+  assert.match(r.stderr, /requires --state-dir.*\[GitHub Actions\]/);
+});
+
+test('a no_publish_mode hold is applied once publish mode (--apply) runs with the same ledger', () => {
+  const f = fixtureRepo();
+  // apply --apply runs scripts/validate-all.ts via npx tsx in the cwd: give the fixture a passing stub + local tsx.
+  fs.writeFileSync(path.join(f.dir, 'scripts/validate-all.ts'), 'process.exit(0);\n');
+  fs.symlinkSync(path.join(repo, 'node_modules'), path.join(f.dir, 'node_modules'));
+  execFileSync('git', ['-c', 'user.name=t', '-c', 'user.email=t@example.com', 'commit', '-q', '-am', 'noop', '--allow-empty'], { cwd: f.dir });
+  const common = ['--report', 'review.json', '--today', f.today, '--ledger', f.ledger, '--history', f.history];
+  assert.equal(runTs(f.dir, 'scripts/offer-watch/apply.ts', [...common, '--record-holds', '--out', 'hold.json']).status, 0);
+  const key = JSON.parse(fs.readFileSync(path.join(f.dir, 'hold.json'), 'utf8')).held.find((h: any) => h.reasons[0] === 'no_publish_mode').fingerprint;
+  assert.equal(loadLedger(f.ledger).entries[key].status, 'needs_verification');
+  // Switch to publish mode: the ledger does not gate apply, so the held change is applied now.
+  const r = runTs(f.dir, 'scripts/offer-watch/apply.ts', [...common, '--apply', '--out', 'apply.json']);
+  assert.equal(r.status, 0, r.stderr);
+  const plan = JSON.parse(fs.readFileSync(path.join(f.dir, 'apply.json'), 'utf8'));
+  assert.equal(plan.mode, 'apply'); assert.equal(plan.validation, 'passed');
+  assert.ok(plan.applied[0].changes.some((c: any) => c.fingerprint === key));
+  assert.equal(JSON.parse(fs.readFileSync(path.join(f.dir, `data/cards/${card.card_id}.json`), 'utf8')).welcome_offer.bonus_points, 80000);
+  assert.equal(loadLedger(f.ledger).entries[key].status, 'applied_pending_publish');
+  assert.ok(fs.readFileSync(f.history, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)).some(e => e.type === 'applied'));
+});
+
+test('daily refuses symlink aliases of the default ledger dir and symlinked state files', () => {
+  const f = fixtureRepo();
+  fs.mkdirSync(path.join(f.dir, 'artifacts/offer-watch'), { recursive: true });
+  fs.symlinkSync(path.join(f.dir, 'artifacts/offer-watch'), path.join(f.dir, 'alias'));
+  const a = runTs(f.dir, 'scripts/offer-watch/daily.ts', ['--no-publish', '--state-dir', 'alias', '--skip-pull']);
+  assert.equal(a.status, 2, a.stderr);
+  fs.writeFileSync(path.join(f.dir, 'artifacts/offer-watch/ledger.json'), '{}');
+  fs.symlinkSync(path.join(f.dir, 'artifacts/offer-watch/ledger.json'), path.join(f.state, 'ledger.json'));
+  const b = runTs(f.dir, 'scripts/offer-watch/daily.ts', ['--no-publish', '--state-dir', f.state, '--skip-pull']);
+  assert.equal(b.status, 2, b.stderr);
+  assert.match(b.stderr, /must not be a symlink/);
+  assert.equal(fs.readFileSync(path.join(f.dir, 'artifacts/offer-watch/ledger.json'), 'utf8'), '{}');
 });
