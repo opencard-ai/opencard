@@ -47,6 +47,9 @@ jobs:
         shell: bash
         env:
           OPENCARD_AUDIT_DIR: ${{ runner.temp }}/audit
+          # Amex cardmember-agreement PDFs send >16 KB of response headers; Node's default limit made
+          # url-check record UND_ERR_HEADERS_OVERFLOW (source_unreachable) on Linux runners.
+          NODE_OPTIONS: --max-http-header-size=65536
         run: npm run -s audit:weekly | tee "$RUNNER_TEMP/audit/shadow-summary.txt"
       - name: Assert repo card data and committed audit artifacts unchanged
         run: |
