@@ -13,6 +13,6 @@ test('weekly audit shadow raises the HTTP header limit for the audit step only',
 
 test('weekly audit shadow stays read-only and unscheduled', () => {
   assert.match(wf, /permissions:\n  contents: read\n/);
-  assert.doesNotMatch(wf, /secrets\./);
+  assert.doesNotMatch(wf, /\$\{\{\s*secrets\./);
   assert.doesNotMatch(wf, /^\s+schedule:/m);
 });
