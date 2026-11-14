@@ -8,11 +8,22 @@
   "credit_required": "Good",
   "welcome_offer": {
     "bonus_points": 0,
+    "bonus_value": "Varies",
+    "bonus_points_max": 200,
     "spending_requirement": 2000,
     "time_period_months": 6,
-    "description": "Earn a $250 statement credit after $2,000 in purchases within the first 6 months. Alternate public offer may be $200 + dining cash back.",
+    "description": "Variable welcome offer: up to $200 cash back (\"As High As $200 Cash Back Welcome Offer\") after you spend $2,000 in purchases on your new Card in the first 6 months of Card Membership. Cash back is received as Reward Dollars; American Express shows the exact amount after you apply.",
     "point_program": "Statement Credit",
-    "estimated_value": 250
+    "offer_status": "as_high_as_ymmv",
+    "confidence": "high",
+    "notes": [
+      "2026-11-13 treated as an as-high-as offer (lead decision). Offer terms page (GET 200, 9:22:08 PM and 9:40:06 PM PST): \"As High As $200 Cash Back Welcome Offer ... we will tell you if you are eligible for a welcome offer and the exact amount cash back which you are eligible to earn, which will be an amount as high as $200.\"",
+      "Official product page renders (all GET 200) vary: \"Earn $200 Cash Back after you spend $2,000 in purchases on your new Card in the first 6 months of Card Membership\" at 8:14 PM and 9:23-9:24 PM PST (4 fresh browsers); \"Earn $150 Cash Back after you spend $2,000 ...\" at 9:21:43 PM and 9:39:42 PM PST (fresh browser).",
+      "Welcome offer was $250 statement credit / $2,000 / 6 months (estimated_value 250); now bonus_points 0, bonus_value 'Varies', bonus_points_max 200, estimated_value removed, offer_status as_high_as_ymmv, is_elevated false."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-11-13",
+    "is_elevated": false
   },
   "earning_rates": [
     {
@@ -68,7 +79,7 @@
     {
       "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/",
       "title": "Blue Cash Everyday® Card | American Express",
-      "notes": "Official Amex Page"
+      "notes": "Official Amex Page | Rendered GET 200 on 2026-11-13: 'Earn $200 Cash Back' or 'Earn $150 Cash Back' after $2,000/6 months depending on session (variable)."
     },
     {
       "url": "https://www.doctorofcredit.com/american-express-blue-cash-everyday-250-signup-bonus/",
@@ -76,10 +87,10 @@
     },
     {
       "url": "https://www.americanexpress.com/en-us/credit-cards/apply/terms/personal/blue-cash-everyday-credit-card/25330-10-0",
-      "notes": "Official Amex offer terms, checked 2026-10-19: welcome-offer eligibility wording (Amex does not use Chase 5/24). | URL updated 2026-11-13: old prospect/terms URL now 302-redirects here (Chrome GET from Mac Mini: 302 -> 200; same Blue Cash Everyday offer & rates terms page)."
+      "notes": "Official Amex offer terms, checked 2026-10-19: welcome-offer eligibility wording (Amex does not use Chase 5/24). | URL updated 2026-11-13: old prospect/terms URL now 302-redirects here (Chrome GET from Mac Mini: 302 -> 200; same Blue Cash Everyday offer & rates terms page). | GET 200 on 2026-11-13: 'As High As $200 Cash Back Welcome Offer'."
     }
   ],
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-11-13",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
@@ -120,8 +131,8 @@
     }
   ],
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-11-02",
-  "next_review": "2026-07-23T17:27:59.994652",
+  "last_verified": "2026-11-13",
+  "next_review": "2026-12-13T00:00:00Z",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 5,
   "cash_advance_fee_pct": 3,

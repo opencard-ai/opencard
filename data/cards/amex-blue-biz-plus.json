@@ -7,16 +7,22 @@
   "foreign_transaction_fee": 2.7,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 50000,
+    "bonus_points": 0,
+    "bonus_value": "Varies",
+    "bonus_points_max": 50000,
     "spending_requirement": 5000,
     "time_period_months": 3,
-    "description": "As high as 50,000 Membership Rewards points after you spend $5,000 in purchases on your new Card within the first 3 months of Card Membership. Welcome offers vary and you may not be eligible for an offer.",
+    "description": "Variable welcome offer: up to 50,000 Membership Rewards® points (\"apply and find out your welcome offer, as high as 50,000\") after you spend $5,000 in purchases on your new Card within the first 3 months of Card Membership. Welcome offers vary and you may not be eligible for an offer; American Express shows the exact amount after you apply. No fixed public offer amount is published.",
     "point_program": "MR",
-    "estimated_value": 500,
-    "last_verified": "2026-10-26",
+    "offer_status": "as_high_as_ymmv",
+    "confidence": "high",
     "notes": [
-      "2026-10-26: official Amex page confirms AS HIGH AS 50,000 MR / $5,000 / 3 months (held since 10/20 for >3x jump from 15k)."
-    ]
+      "2026-10-26: official Amex page confirms AS HIGH AS 50,000 MR / $5,000 / 3 months (held since 10/20 for >3x jump from 15k).",
+      "2026-11-13 as-high-as policy (lead decision): official Amex page (rendered GET 200, 9:35:20 PM PST): \"APPLY AND FIND OUT YOUR WELCOME OFFER AS HIGH AS 50,000 Membership Rewards® Points after you spend $5,000 in purchases on your new Card within the first 3 months of Card Membership. Welcome offers vary and you may not be eligible for an offer.\" (Annual Fee: $0, unchanged). Variable amount, so not stored as a fixed bonus: bonus_points 50000 -> 0 with bonus_value 'Varies', bonus_points_max 50000, estimated_value 500 removed, offer_status -> as_high_as_ymmv, is_elevated -> false (no limited-time/increased-offer wording for this card; the 'Limited Time Offer' tag on the page belongs to the Marriott Bonvoy Business nav item). Spend/months unchanged."
+    ],
+    "source_conflicts": [],
+    "last_verified": "2026-11-13",
+    "is_elevated": false
   },
   "earning_rates": [
     {
@@ -68,7 +74,7 @@
     {
       "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-blue-business-plus-credit-card-amex/",
       "title": "Blue Business Plus Credit Card from American Express",
-      "notes": "Official Amex page / search snippet cross-check | Official Amex page 2026-10-26: AS HIGH AS 50,000 Membership Rewards points after $5,000 in purchases within first 3 months of Card Membership."
+      "notes": "Official Amex page / search snippet cross-check | Official Amex page 2026-10-26: AS HIGH AS 50,000 Membership Rewards points after $5,000 in purchases within first 3 months of Card Membership. | Rendered GET 200 on 2026-11-13: 'AS HIGH AS 50,000' after $5,000/3 months; welcome offers vary."
     }
   ],
   "hotel_program": null,
@@ -76,8 +82,8 @@
     "rules": [],
     "notes": null
   },
-  "last_updated": "2026-10-26",
-  "last_verified": "2026-10-26",
-  "next_review": "2026-07-15T13:41:49.940000+00:00",
+  "last_updated": "2026-11-13",
+  "last_verified": "2026-11-13",
+  "next_review": "2026-12-13T00:00:00Z",
   "featured": true
 }
