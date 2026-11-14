@@ -139,6 +139,11 @@ to be PT year-round. Verify intended slot times against current jobs, DST skippe
 and repeated hours, scheduler delays and rerun identity before enabling anything.
 Official reference: https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onschedule
 
+Update 2026-11-13: in practice the `timezone` key was ignored for
+news-cloud-publish (run 43540487976 fired at 01:25Z for `8 1,13 * * *`), so that
+workflow now uses explicit UTC cron with the PST/PDT mapping and the DST change
+date documented next to it.
+
 Still NOT migrated or verified here:
 
 - Live news ingestion/translation, its Mac wrapper and guarded merge wiring.

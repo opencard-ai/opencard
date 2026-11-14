@@ -6,12 +6,18 @@ name: News cloud publish
 #   (either would park the scheduled run waiting for a human and the slot would be missed).
 #   Do not change protection of existing acceptance environments (opencard-migration-sandbox etc.).
 # - NEWS_EPOCH below must equal ops/runner-owner.json news.epoch exactly (it is passed as --owner-epoch).
-# - Cost: uses the existing repo-level MINIMAX_API_KEY; at most 2 MiniMax-M2.7 requests per run
-#   (zh + es, uncached titles only), hard-capped in scripts/automation/news-portable.mjs.
+# - Cost: uses the existing repo-level MINIMAX_API_KEY; normally 2 MiniMax-M2.7 requests per run
+#   (zh + es, uncached titles only), at most 4 (one retry per locale after a retryable failure),
+#   hard-capped in scripts/automation/news-portable.mjs.
 on:
   schedule:
-    - cron: '8 1,13 * * *'
-      timezone: 'America/Los_Angeles'
+    # Explicit UTC. The documented `timezone: 'America/Los_Angeles'` key was ignored for this repo:
+    # '8 1,13 * * *' first fired 2026-11-14T01:25Z (17:25 PST), i.e. as UTC (run 43540487976).
+    # 09:08 / 21:08 UTC = 01:08 / 13:08 PST (UTC-8, valid until 2027-03-14).
+    # DST: from 2027-03-14 this fires at 02:08 / 14:08 PDT unless changed to '8 8,20 * * *'
+    # (and back to '8 9,21 * * *' on 2027-11-07). Slot auto-detection (PT hour < 12 = morning)
+    # is correct for both: 01/02 -> morning, 13/14 -> evening.
+    - cron: '8 9,21 * * *'
   workflow_dispatch:
     inputs:
       slot:
@@ -79,7 +85,7 @@ jobs:
             echo "slot=$slot"
             echo "now=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           } >> "$GITHUB_OUTPUT"
-      - name: Build news plan (public RSS + MiniMax-M2.7, max 2 requests)
+      - name: Build news plan (public RSS + MiniMax-M2.7, max 4 requests)
         id: shadow
         env:
           MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}

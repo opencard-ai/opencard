@@ -6,7 +6,8 @@ import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { assertMergeable, CHECKS_PENDING, mergeVerifiedNewsPr } from './pr-merge-guard.mjs';
-import { countTranslationCalls, MAX_TRANSLATION_CALLS } from './news-portable.mjs';
+import { countTranslationCalls, describeFailure, MAX_TRANSLATION_CALLS, retryTranslation, StageError } from './news-portable.mjs';
+import { createMiniMaxTranslator, TranslationError } from '../news-provider.mjs';
 import { EXIT_CHECKS_PENDING, pendingChecksResult, publicationExitCode } from './news-publish-cli.mjs';
 import { runNewsSync } from '../sync-news.mjs';
 
@@ -46,21 +47,107 @@ test('CLI maps only a fully identified pending rejection to exit 75; everything 
   assert.equal(publicationExitCode({ state: 'MERGED', deployment: 'UNCONFIRMED' }), 1);
 });
 
-test('translation counter caps at 2 provider calls and runNewsSync uses at most zh+es', async () => {
-  assert.equal(MAX_TRANSLATION_CALLS, 2);
+test('translation counter caps at 4 provider calls; a clean runNewsSync uses exactly zh+es', async () => {
+  assert.equal(MAX_TRANSLATION_CALLS, 4);
   let provider = 0;
   const { translate, counter } = countTranslationCalls(async (items, lang) => { provider++; return items.map(i => ({ ...i, [`title_${lang}`]: `${lang}:${i.title}`, [`summary_${lang}`]: 's' })); });
   const rss = `<rss><channel><item><title>New card</title><link>https://example.test/a</link><pubDate>Fri, 06 Nov 2026 19:00:00 GMT</pubDate></item></channel></rss>`;
   const sources = [{ name: 'fixture', url: 'https://example.test/feed' }];
   const first = await runNewsSync({ previous: { items: [] }, sources, fetchSource: async () => (await import('../news-sync-core.mjs')).parseRSS(rss), translate, now: new Date('2026-11-06T20:00:00Z') });
   assert.equal(counter.calls, 2); assert.equal(provider, 2);
-  await assert.rejects(translate([{ title: 'x' }], 'zh'), /cap exceeded/);
-  assert.equal(provider, 2, 'third request refused before reaching the provider');
+  await translate([{ title: 'x' }], 'zh'); await translate([{ title: 'x' }], 'es');
+  await assert.rejects(translate([{ title: 'x' }], 'zh'), error => /cap exceeded/.test(error.message) && error.code === 'cap');
+  assert.equal(provider, 4, 'fifth request refused before reaching the provider');
   // Cached titles: zero requests.
   const again = countTranslationCalls(async () => { throw new Error('must not be called'); });
   await runNewsSync({ previous: first.output, sources, fetchSource: async () => (await import('../news-sync-core.mjs')).parseRSS(rss), translate: again.translate, now: new Date('2026-11-06T20:00:00Z') });
   assert.equal(again.counter.calls, 0);
   assert.throws(() => countTranslationCalls(null), /provider required/);
+});
+
+test('one retry per locale only for retryable failures; worst case stays within the cap', async () => {
+  const sleeps = [];
+  const sleep = async ms => { sleeps.push(ms); };
+  const flaky = codes => { let n = 0; return async (items, lang) => { const code = codes[n++]; if (code) throw code; return items.map(i => ({ ...i, [`title_${lang}`]: 't', [`summary_${lang}`]: 's' })); }; };
+  // Transient failure then success: recovered with exactly one extra request.
+  for (const error of [new TranslationError('http', { status: 429 }), new TranslationError('http', { status: 503 }), new TranslationError('count'), new TranslationError('incomplete'), new TranslationError('parse'), new TranslationError('truncated'), new TranslationError('timeout'), new TranslationError('network')]) {
+    const { translate, counter } = countTranslationCalls(flaky([error]));
+    assert.equal((await retryTranslation(translate, { sleep })([{ title: 'a' }], 'es'))[0].title_es, 't');
+    assert.equal(counter.calls, 2, error.code);
+  }
+  // Non-retryable: credential, auth/request rejections, cap, unknown errors.
+  for (const error of [new TranslationError('credential'), new TranslationError('http', { status: 401 }), new TranslationError('http', { status: 400 }), Object.assign(new Error('cap'), { code: 'cap' }), new Error('other')]) {
+    const { translate, counter } = countTranslationCalls(flaky([error]));
+    await assert.rejects(retryTranslation(translate, { sleep })([{ title: 'a' }], 'zh'), e => e === error && e.lang === 'zh' && e.attempts === 1);
+    assert.equal(counter.calls, 1);
+  }
+  // Persistent failure on both locales would be 4 requests max; runNewsSync stops at the first locale.
+  const always = countTranslationCalls(async () => { throw new TranslationError('http', { status: 500 }); });
+  const rss = `<rss><channel><item><title>New card</title><link>https://example.test/a</link><pubDate>Fri, 06 Nov 2026 19:00:00 GMT</pubDate></item></channel></rss>`;
+  await assert.rejects(runNewsSync({ previous: { items: [] }, sources: [{ name: 'f', url: 'https://example.test/feed' }], fetchSource: async () => (await import('../news-sync-core.mjs')).parseRSS(rss),
+    translate: retryTranslation(always.translate, { sleep }), now: new Date('2026-11-06T20:00:00Z') }), e => e.code === 'http' && e.lang === 'zh' && e.attempts === 2);
+  assert.equal(always.counter.calls, 2);
+  assert.ok(sleeps.every(ms => ms > 0 && ms <= 5000));
+  assert.throws(() => retryTranslation(async () => [], { attempts: 3 }), /attempt count/);
+});
+
+test('strict provider classifies failures with sanitized codes and tolerates only benign wrapping', async () => {
+  const items = [{ title: 'A' }, { title: 'B' }];
+  const rows = [{ idx: 0, title: 'a', summary: 'sa' }, { idx: 1, title: 'b', summary: 'sb' }];
+  const respond = (body, { status = 200 } = {}) => async (url, init) => {
+    assert.equal(JSON.parse(init.body).max_tokens, 8000);
+    return { ok: status < 300, status, json: async () => body };
+  };
+  const text = (t, extra = {}) => ({ content: [{ type: 'thinking', thinking: 'x' }, { type: 'text', text: t }], ...extra });
+  const run = fetchImpl => createMiniMaxTranslator({ apiKey: 'synthetic-private-value', fetchImpl, timeoutMs: 50 })(items, 'es');
+  for (const ok of [JSON.stringify(rows), '```json\n' + JSON.stringify(rows) + '\n```', 'Aquí está:\n' + JSON.stringify(rows), '<think>plan</think>' + JSON.stringify(rows)]) {
+    assert.deepEqual((await run(respond(text(ok)))).map(i => i.title_es), ['a', 'b']);
+  }
+  const cases = [
+    [respond({ error: { message: 'synthetic-private-value' } }, { status: 429 }), 'http', 429],
+    [respond({}, { status: 401 }), 'http', 401],
+    [respond(text(JSON.stringify(rows).slice(0, 20), { stop_reason: 'max_tokens' })), 'truncated'],
+    [respond(text(JSON.stringify(rows.slice(0, 1)))), 'count'],
+    [respond(text(JSON.stringify([rows[0], { ...rows[1], summary: '' }]))), 'incomplete'],
+    [respond(text(JSON.stringify(rows.map(r => ({ ...r, idx: r.idx + 1 }))))), 'incomplete'],
+    [respond(text('no json here synthetic-private-value')), 'parse'],
+    [async () => { throw new Error('synthetic-private-value'); }, 'network'],
+    [async () => new Promise(() => {}), 'timeout'],
+  ];
+  for (const [fetchImpl, code, status] of cases) {
+    await assert.rejects(run(fetchImpl), error => error instanceof TranslationError && error.code === code && error.status === status
+      && /unavailable/.test(error.message) && !error.message.includes('synthetic-private-value'));
+  }
+  await assert.rejects(createMiniMaxTranslator({ apiKey: '' })(items, 'zh'), e => e.code === 'credential');
+  let legacyCeiling;
+  await createMiniMaxTranslator({ apiKey: 'synthetic', failureMode: 'legacy-fallback', fetchImpl: async (url, init) => { legacyCeiling = JSON.parse(init.body).max_tokens; return { ok: true, json: async () => text(JSON.stringify(rows)) }; } })(items, 'es');
+  assert.equal(legacyCeiling, 4000, 'legacy Mac request unchanged');
+});
+
+test('failure description is allowlisted (stage/reason/lang/status/attempts only)', () => {
+  assert.equal(describeFailure(Object.assign(new TranslationError('http', { status: 429 }), { lang: 'es', attempts: 2 }), 'plan'), 'stage=translate reason=http lang=es status=429 attempts=2');
+  assert.equal(describeFailure(new StageError('source', { reason: 'http', status: '503' }), 'plan'), 'stage=source reason=http status=503');
+  assert.equal(describeFailure(new Error('Bearer synthetic-private-value'), 'snapshot'), 'stage=snapshot');
+  assert.equal(describeFailure(new StageError('source', { reason: 'Bearer synthetic value' }), 'plan'), 'stage=source reason=unknown');
+});
+
+test('shadow CLI prints a sanitized failure reason and step summary on provider failure (synthetic key, mocked network)', () => {
+  const repo = fileURLToPath(new URL('../..', import.meta.url));
+  const sha = execFileSync('git', ['-C', repo, 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+  const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'shadow-fail-'));
+  const guard = path.join(cwd, 'guard.mjs'), summary = path.join(cwd, 'summary.md');
+  fs.writeFileSync(guard, `let n=0;globalThis.fetch=async u=>{if(!String(u).startsWith('https://api.minimax.io/'))throw new Error('network forbidden');n++;return{ok:true,status:200,json:async()=>({content:[{type:'text',text:'[]'}]})}};process.on('exit',()=>process.stderr.write('mockRequests='+n+'\\n'));`);
+  try {
+    const r = spawnSync(process.execPath, ['--import', guard, fileURLToPath(new URL('./news-shadow.mjs', import.meta.url)), '--repo', repo, '--sha', sha, '--now', '2026-11-06T20:00:00Z', '--slot', 'evening', '--run-id', 'fail-1', '--source', 'fixture', '--provider', 'minimax', '--scratch-root', cwd],
+      { cwd, encoding: 'utf8', env: { PATH: process.env.PATH, MINIMAX_API_KEY: 'synthetic-private-value', GITHUB_STEP_SUMMARY: summary } });
+    assert.equal(r.status, 1);
+    assert.equal(r.stdout, '');
+    assert.match(r.stderr, /news-shadow translationCalls=2 max=4 provider=minimax/);
+    assert.match(r.stderr, /News shadow failed: stage=translate reason=count lang=zh attempts=2; no production writes/);
+    assert.match(r.stderr, /mockRequests=2/);
+    assert.match(fs.readFileSync(summary, 'utf8'), /stage=translate reason=count lang=zh attempts=2/);
+    assert.ok(!r.stderr.includes('synthetic-private-value'));
+  } finally { fs.rmSync(cwd, { recursive: true, force: true }); }
 });
 
 test('shadow CLI writes metrics.json and logs the call count to stderr only (fixture provider, no network)', () => {
@@ -75,7 +162,7 @@ test('shadow CLI writes metrics.json and logs the call count to stderr only (fix
     assert.equal(r.status, 0, r.stderr);
     out = r.stdout.trim();
     assert.equal(out.split('\n').length, 1, 'stdout is only the artifact path');
-    assert.match(r.stderr, /news-shadow translationCalls=[0-2] max=2 provider=fixture/);
+    assert.match(r.stderr, /news-shadow translationCalls=[0-2] max=4 provider=fixture/);
     const metrics = JSON.parse(fs.readFileSync(path.join(out, 'metrics.json'), 'utf8'));
     assert.deepEqual(Object.keys(metrics).sort(), ['maxTranslationCalls', 'provider', 'translationCalls', 'version']);
     assert.ok(metrics.translationCalls >= 0 && metrics.translationCalls <= 2);
@@ -83,12 +170,22 @@ test('shadow CLI writes metrics.json and logs the call count to stderr only (fix
   } finally { fs.rmSync(cwd, { recursive: true, force: true }); }
 });
 
-test('cloud workflow: schedule+tz, read-only token permissions, pinned actions, env, epoch parity, no auto/force', () => {
+test('cloud workflow: explicit UTC schedule, read-only token permissions, pinned actions, env, epoch parity, no auto/force', () => {
   const workflow = fs.readFileSync(new URL('../../.github/workflows/news-cloud-publish.yml', import.meta.url), 'utf8');
   const owner = JSON.parse(fs.readFileSync(new URL('../../ops/runner-owner.json', import.meta.url), 'utf8'));
   assert.deepEqual(owner, { version: 1, news: { owner: 'github-actions', productionEnabled: true, epoch: owner.news.epoch } });
   assert.equal(Object.keys(owner).sort().join(), 'news,version', 'no offer section');
-  assert.match(workflow, /cron: '8 1,13 \* \* \*'\n\s+timezone: 'America\/Los_Angeles'/);
+  // GitHub ignored `timezone:` (run 43540487976 fired 01:25Z); cron is explicit UTC = 01:08/13:08 PST.
+  assert.equal([...workflow.matchAll(/- cron: '([^']+)'/g)].map(m => m[1]).join(), '8 9,21 * * *');
+  assert.doesNotMatch(workflow, /^\s+timezone:/m);
+  assert.match(workflow, /2027-03-14/);
+  assert.match(workflow, /hour=\$\(TZ=America\/Los_Angeles date \+%H\)/);
+  const ptHour = iso => Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', hour: '2-digit', hourCycle: 'h23' }).format(new Date(iso)));
+  const slotOf = iso => ptHour(iso) < 12 ? 'morning' : 'evening';
+  // PST now and PDT after 2027-03-14 (unchanged cron): slots stay correct, including +3h scheduler delay.
+  for (const [iso, hour, slot] of [['2026-11-14T09:08:00Z', 1, 'morning'], ['2026-11-14T21:08:00Z', 13, 'evening'], ['2027-07-01T09:08:00Z', 2, 'morning'], ['2027-07-01T21:08:00Z', 14, 'evening'], ['2026-11-14T12:08:00Z', 4, 'morning'], ['2026-11-15T00:08:00Z', 16, 'evening']]) {
+    assert.equal(ptHour(iso), hour, iso); assert.equal(slotOf(iso), slot, iso);
+  }
   assert.match(workflow, /workflow_dispatch:/);
   assert.match(workflow, /permissions:\n\s+contents: read\n/);
   assert.match(workflow, /group: news-publish\n\s+cancel-in-progress: false/);
