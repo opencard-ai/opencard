@@ -7,16 +7,22 @@
   "foreign_transaction_fee": 2.7,
   "credit_required": "Good to Excellent",
   "welcome_offer": {
+    "bonus_points": 0,
+    "bonus_value": "Varies",
+    "bonus_points_max": 500,
     "spending_requirement": 5000,
     "time_period_months": 3,
-    "bonus_points": 500,
-    "description": "As high as $500 statement credit after you spend $5,000 in purchases on your new Card within the first 3 months of Card Membership. Welcome offers vary.",
+    "description": "Variable welcome offer: up to $500 statement credit (\"apply and find out your welcome offer, as high as $500\") after you spend $5,000 in purchases on your new Card within the first 3 months of Card Membership. Welcome offers vary and you may not be eligible for an offer; American Express shows the exact amount after you apply. No fixed public offer amount is published.",
     "point_program": "Statement Credit",
-    "estimated_value": 500,
+    "offer_status": "as_high_as_ymmv",
+    "confidence": "high",
     "notes": [
-      "Official Amex page 2026-10-19: \"AS HIGH AS $500\"; the amount shown can vary by applicant."
+      "Official Amex page 2026-10-19: \"AS HIGH AS $500\"; the amount shown can vary by applicant.",
+      "2026-11-13 as-high-as policy (lead decision): official Amex page (rendered GET 200, 9:35:44 PM PST): \"APPLY AND FIND OUT YOUR WELCOME OFFER AS HIGH AS $500 Statement Credit after you spend $5,000 in purchases on your new Card within the first 3 months of Card Membership. Welcome offers vary and you may not be eligible for an offer.\" (Annual Fee: $0, unchanged). Variable amount, so not stored as a fixed bonus: bonus_points 500 -> 0 with bonus_value 'Varies', bonus_points_max 500, estimated_value 500 removed, offer_status -> as_high_as_ymmv, is_elevated -> false (no limited-time/increased-offer wording for this card; the 'Limited Time Offer' tag on the page belongs to the Marriott Bonvoy Business nav item). Spend/months unchanged."
     ],
-    "last_verified": "2026-10-19"
+    "source_conflicts": [],
+    "last_verified": "2026-11-13",
+    "is_elevated": false
   },
   "earning_rates": [
     {
@@ -72,20 +78,20 @@
     {
       "url": "https://www.americanexpress.com/en-us/business/credit-cards/blue-business-cash/",
       "title": "Blue Business Cash Card from American Express",
-      "notes": "Official Amex business page. | Checked 2026-10-19: as high as $500 statement credit after $5,000 in 3 months; $0 annual fee. | Checked 2026-10-19: 0% intro APR on purchases for 12 months, then 16.99%–28.74%."
+      "notes": "Official Amex business page. | Checked 2026-10-19: as high as $500 statement credit after $5,000 in 3 months; $0 annual fee. | Checked 2026-10-19: 0% intro APR on purchases for 12 months, then 16.99%–28.74%. | Rendered GET 200 on 2026-11-13: 'AS HIGH AS $500' after $5,000/3 months; welcome offers vary."
     },
     {
       "url": "https://upgradedpoints.com/credit-cards/reviews/amex-blue-business-cash-card/welcome-offer-history/",
       "notes": "Upgraded Points offer history review, Mar 2026."
     }
   ],
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-11-13",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-10-19",
-  "next_review": "2026-07-15T13:41:49.940000+00:00",
+  "last_verified": "2026-11-13",
+  "next_review": "2026-12-13T00:00:00Z",
   "featured": true
 }
