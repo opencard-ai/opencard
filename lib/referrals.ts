@@ -61,8 +61,24 @@ const BILT_CARD_IDS = new Set([
   "bilt-palladium",
 ]);
 
+/** Card ids that must never show a referral offer (e.g. co-branded cards not open via the standard program). */
+export const REFERRAL_EXCLUDED_CARD_IDS = new Set([
+  "amex-morgan-stanley-blue",
+  "amex-morgan-stanley-platinum",
+]);
+
+/**
+ * Cards still open to new applicants: status "active", or legacy records with
+ * no status. Discontinued, transferred, invitation-only, and the legacy
+ * discontinued flag are treated as closed.
+ */
+export function isCardOpenForReferral(card: Pick<CreditCard, "status" | "discontinued">): boolean {
+  return (card.status === undefined || card.status === "active") && card.discontinued !== true;
+}
+
 export function getReferralOfferForCard(card: CreditCard): ReferralOffer | null {
-  if (card.status === "discontinued") return null;
+  if (!isCardOpenForReferral(card)) return null;
+  if (REFERRAL_EXCLUDED_CARD_IDS.has(card.card_id)) return null;
   if (card.issuer === AMEX_REFERRAL.issuer) return AMEX_REFERRAL;
   if (BILT_CARD_IDS.has(card.card_id)) return BILT_REFERRAL;
   if (CHASE_FREEDOM_CARD_IDS.has(card.card_id)) return CHASE_FREEDOM_REFERRAL;
