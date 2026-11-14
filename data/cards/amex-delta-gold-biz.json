@@ -7,22 +7,24 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 90000,
+    "bonus_points": 0,
+    "bonus_value": "Varies",
     "spending_requirement": 6000,
     "time_period_months": 6,
-    "description": "Earn 90,000 Bonus Miles after spending $6,000 in purchases on your new Card in your first 6 months of Card Membership. Offer ends November 4, 2026.",
+    "description": "Variable welcome offer: apply and find out your welcome offer, as high as 85,000 Bonus Miles after you spend $6,000 in purchases on your new Card within the first 6 months of Card Membership. Welcome offers vary and you may not be eligible for an offer; American Express shows the exact amount after you apply. No fixed public offer amount is published.",
     "point_program": "Delta SkyMiles",
-    "estimated_value": 900,
-    "offer_status": "public_limited_time",
+    "offer_status": "as_high_as_ymmv",
     "confidence": "high",
     "notes": [
       "Delta's official business-card page shows 90,000 Bonus Miles after $6,000/6 months, ending November 4, 2026.",
-      "CNBC Select independently reports the same public limited-time offer and expiry."
+      "CNBC Select independently reports the same public limited-time offer and expiry.",
+      "2026-11-13 weekly-audit fix (PR #91 finding expired_offer_still_current): the 90,000-mile / $6,000 limited-time offer ending November 4, 2026 is no longer shown. Official Amex page (rendered GET 200, 2026-11-13 PT): \"Apply and find out your welcome offer AS HIGH AS 85,000 Bonus Miles after you spend $6,000 in purchases on your new Card within the first 6 months of Card Membership. Welcome offers vary and you may not be eligible for an offer.\" delta.com business-cards page (rendered GET 200) hero: \"Delta SkyMiles® Gold Business Amex Card APPLY AND FIND OUT YOUR WELCOME OFFER AS HIGH AS 85,000 BONUS MILES After you make $6,000 in eligible purchases on your new Card within the first 6 months of Card Membership. Welcome offers may vary and you may not be eligible for an offer.\" Neither page shows an 'Offer ends' date or limited-time/increased-offer language. The 'as high as' amount is targeted/variable, so it is not published as a fixed bonus: bonus_points set to 0 with bonus_value 'Varies', estimated_value removed, expires_at removed, offer_status -> as_high_as_ymmv, is_elevated -> false (decided from current page copy, not from the expiry date). Spend/months are the fixed terms stated on both official pages."
     ],
-    "source_conflicts": [],
-    "last_verified": "2026-08-29",
-    "is_elevated": true,
-    "expires_at": "2026-11-04"
+    "source_conflicts": [
+      "delta.com business-cards page 'Quick Business Card Comparison' table still says 'Earn 90,000 Bonus Miles' (no spend/date), conflicting with the same page's hero and the Amex page ('as high as 85,000'); treated as a stale leftover of the expired 11/4/2026 offer and not applied."
+    ],
+    "last_verified": "2026-11-13",
+    "is_elevated": false
   },
   "earning_rates": [
     {
@@ -79,8 +81,13 @@
   ],
   "sources": [
     {
+      "url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-gold/",
+      "title": "Delta SkyMiles® Gold Business Card | American Express",
+      "notes": "Official Amex page rendered GET 200 on 2026-11-13: 'AS HIGH AS 85,000 Bonus Miles' after $6,000/6 months; welcome offers vary."
+    },
+    {
       "url": "https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-business-cards",
-      "notes": "Delta official business-card offer page; 90,000 miles after $6,000/6 months, ending 2026-11-04"
+      "notes": "Delta official business-card page; rendered GET 200 on 2026-11-13: variable 'as high as 85,000' Bonus Miles after $6,000/6 months; no expiry shown (previous 11/4/2026 limited-time offer gone)."
     },
     {
       "url": "https://www.cnbc.com/select/massive-new-200000-mile-delta-credit-card-welcome-offers/",
@@ -100,10 +107,10 @@
   "application_rules": {
     "rules": []
   },
-  "last_updated": "2026-08-29T17:00:00Z",
+  "last_updated": "2026-11-14T04:15:00Z",
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-08-29",
-  "next_review": "2026-11-05T00:00:00Z",
+  "last_verified": "2026-11-13",
+  "next_review": "2026-12-13T00:00:00Z",
   "recurring_credits": [
     {
       "credit_key": "delta-stays-credit",
