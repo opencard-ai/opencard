@@ -1,0 +1,96 @@
+name: Weekly data audit cloud shadow (read-only)
+# Shadow replacement for the Mac mini OpenClaw job "OpenCard weekly data audit" (Mac job c524f0d3,
+# Mondays 10:47 America/Los_Angeles). READ-ONLY: runs `audit:weekly` (official-source url-check + db-audit)
+# with OPENCARD_AUDIT_DIR in runner temp, seeded from the committed artifacts/audit baseline. It never
+# writes the repo, commits, pushes, deploys, publishes or sends anything, and references no secrets.
+# Output = artifact + step summary to compare with the Mac report of the same PT date
+# (see docs/operations/weekly-audit-cloud-shadow.md).
+#
+# No schedule on purpose (schedules only fire from main and this is not approved to merge). If a
+# schedule is added later it must be explicit UTC with a PT comment, e.g.
+#   - cron: '2 19 * * 1'   # Mon 11:02 PST (UTC-8); GitHub did not honour timezone: in this repo
+on:
+  workflow_dispatch: {}
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/weekly-audit-shadow.yml
+      - scripts/audit/shadow-compare*.ts
+permissions:
+  contents: read
+concurrency:
+  group: weekly-audit-shadow-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  shadow:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+      - name: Install locked dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Seed audit dir in runner temp from the committed baseline
+        id: meta
+        run: |
+          mkdir -p "$RUNNER_TEMP/audit"
+          cp artifacts/audit/*-db-audit.json artifacts/audit/*-db-audit.md artifacts/audit/*-url-check.json "$RUNNER_TEMP/audit/"
+          echo "today=$(TZ=America/Los_Angeles date +%F)" >> "$GITHUB_OUTPUT"
+          echo "baseline=$(ls artifacts/audit/*-db-audit.json | sort | tail -1 | xargs basename)" >> "$GITHUB_OUTPUT"
+      - name: Weekly audit (live url-check, read-only)
+        id: audit
+        continue-on-error: true
+        shell: bash
+        env:
+          OPENCARD_AUDIT_DIR: ${{ runner.temp }}/audit
+          # Amex cardmember-agreement PDFs send >16 KB of response headers; Node's default limit made
+          # url-check record UND_ERR_HEADERS_OVERFLOW (source_unreachable) on Linux runners.
+          NODE_OPTIONS: --max-http-header-size=65536
+        run: npm run -s audit:weekly | tee "$RUNNER_TEMP/audit/shadow-summary.txt"
+      - name: Assert repo card data and committed audit artifacts unchanged
+        run: |
+          git diff --exit-code -- data/cards artifacts/audit
+          test -z "$(git status --porcelain -- data/cards artifacts/audit)"
+      - name: Step summary
+        if: always()
+        env:
+          TODAY: ${{ steps.meta.outputs.today }}
+          BASELINE: ${{ steps.meta.outputs.baseline }}
+          A: ${{ runner.temp }}/audit
+        run: |
+          {
+            echo "## Weekly data audit cloud shadow — PT $TODAY"
+            echo "commit: \`$GITHUB_SHA\` · audit step outcome: ${{ steps.audit.outcome }} · baseline: \`$BASELINE\` (committed; the Mac compares against its own latest report)"
+            echo
+            echo '### Summary (what the Mac job would print against this baseline)'
+            echo '```'
+            cat "$A/shadow-summary.txt" 2>/dev/null || echo '(none)'
+            echo '```'
+            if [ -f "$A/$TODAY-db-audit.json" ]; then
+              node -e '
+                const f = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).findings || [];
+                const n = s => f.filter(x => x.severity === s).length;
+                console.log(`findings ${f.length} · high ${n("high")} · medium ${n("medium")} · low ${n("low")}`);
+              ' "$A/$TODAY-db-audit.json"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: weekly-audit-shadow-${{ steps.meta.outputs.today }}-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/audit/${{ steps.meta.outputs.today }}-url-check.json
+            ${{ runner.temp }}/audit/${{ steps.meta.outputs.today }}-db-audit.json
+            ${{ runner.temp }}/audit/${{ steps.meta.outputs.today }}-db-audit.md
+            ${{ runner.temp }}/audit/shadow-summary.txt
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Fail if the audit step failed
+        if: steps.audit.outcome != 'success'
+        run: |
+          echo "::warning ::audit:weekly failed; see the step log"
+          exit 1

@@ -14,7 +14,8 @@ import { createRequire } from 'node:module';
 const requireFromHere = createRequire(path.join(process.cwd(), 'package.json'));
 
 type Finding = { card_id: string; type: string; severity: 'high' | 'medium' | 'low'; field?: string; detail: string; popular?: boolean };
-const DIR = 'artifacts/audit';
+// OPENCARD_AUDIT_DIR relocates report history/baseline (default unchanged: artifacts/audit). From draft PR #64.
+const DIR = process.env.OPENCARD_AUDIT_DIR ? process.env.OPENCARD_AUDIT_DIR.replace(/\/+$/, '') : 'artifacts/audit';
 const LOCK = path.join(os.tmpdir(), 'opencard-audit-weekly.lock');
 const LOCK_STALE_MS = 3 * 60 * 60 * 1000;
 const MAX_CHARS = 1800;
