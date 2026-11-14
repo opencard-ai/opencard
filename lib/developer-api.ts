@@ -4,7 +4,7 @@
  * Shared by the public JSON endpoints and the MCP server.
  */
 import { getAllCards, getCardById, isClosedToNewApplicants, type CreditCard } from "./cards";
-import { formatWelcomeBonus, welcomeBonusKind } from "./welcome-offer";
+import { formatVariableOffer, formatWelcomeBonus, welcomeBonusKind } from "./welcome-offer";
 import { toPublicCardRecord } from "./public-card";
 
 export const SITE_URL = "https://opencardai.com";
@@ -55,7 +55,7 @@ function offerText(card: CreditCard): string | null {
   const w = card.welcome_offer;
   if (!w) return null;
   const bonus = formatWelcomeBonus(w);
-  if (!bonus) return w.description ? String(w.description).slice(0, 300) : null;
+  if (!bonus) return w.description ? String(w.description).slice(0, 300) : formatVariableOffer(w);
   const program = welcomeBonusKind(w) === "points" && w.point_program ? ` ${w.point_program}` : "";
   const spend = w.spending_requirement && w.spending_requirement > 0
     ? ` after $${w.spending_requirement.toLocaleString("en-US")} spend${w.time_period_months ? ` in ${w.time_period_months} months` : ""}`

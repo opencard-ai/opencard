@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Bookmark, Check, ChevronRight, Gift, Scale } from "lucide-react";
 import { trackCardAdded, trackEvent } from "@/lib/analytics";
 import type { FindCard } from "@/lib/client-card-fields";
-import { formatWelcomeBonus, welcomeBonusKind } from "@/lib/welcome-offer";
+import { formatVariableOffer, formatWelcomeBonus, welcomeBonusKind } from "@/lib/welcome-offer";
 import IssuerChip from "./IssuerChip";
 import CardArt from "./CardArt";
 
@@ -136,7 +136,8 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
     ? formatBonusValue(card.welcome_offer.estimated_value ?? card.welcome_offer.bonus_value)
     : null;
   const bonusKind = welcomeBonusKind(card.welcome_offer);
-  const bonusLabel = formatWelcomeBonus(card.welcome_offer);
+  // Variable ("as high as") offers have no fixed amount; label them instead of hiding the offer.
+  const bonusLabel = formatWelcomeBonus(card.welcome_offer) ?? formatVariableOffer(card.welcome_offer, locale);
   const bonusValue = bonusKind === "cash" || bonusKind === "percent_discount" ? null : bonusValueRaw;
 
   return (

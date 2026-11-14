@@ -8,7 +8,7 @@
  */
 import type { CreditCard, EarningRate, RecurringCredit } from "@/lib/cards";
 import { getCpp } from "@/lib/cpp-rates";
-import { welcomeBonusKind } from "@/lib/welcome-offer";
+import { formatVariableOfferMax, isVariableOffer, welcomeBonusKind } from "@/lib/welcome-offer";
 import { isIndexableCard } from "@/lib/indexable-cards";
 import { knownNoForeignFee } from "@/lib/foreign-fee";
 
@@ -23,6 +23,8 @@ export type CardAnalysis = {
   estimate: {
     assumptions: string[];
     welcomeValue: number;
+    /** True for "as high as" offers with no fixed amount (welcomeValue is 0). */
+    welcomeVaries?: boolean;
     welcomeNote: string;
     earningValue: number;
     firstYearFee: number;
@@ -207,9 +209,13 @@ function catLabel(e: EarningRate): string {
   return label;
 }
 
-function welcomeLine(card: CreditCard, p: Profile): { value: number; note: string } {
+function welcomeLine(card: CreditCard, p: Profile): { value: number; note: string; varies?: boolean } {
   const w = card.welcome_offer;
   const kind = welcomeBonusKind(w);
+  if (w && kind === "none" && isVariableOffer(w)) {
+    const max = formatVariableOfferMax(w);
+    return { value: 0, varies: true, note: `The welcome offer varies by applicant${max ? ` (as high as ${max})` : ""} and the issuer shows the exact amount when you apply, so it is not counted here.` };
+  }
   if (!w || kind === "none") return { value: 0, note: "No welcome bonus is listed in our record, so none is counted." };
   if (kind === "percent_discount") {
     return { value: 0, note: `The welcome offer is ${w.discount_percent}% off a first purchase; it is not given a dollar value here because it depends on what you buy.` };
@@ -447,7 +453,7 @@ export function buildCardAnalysis(card: CreditCard, allCards: CreditCard[], pref
   });
   faq.push({
     question: `Is the ${p.short} worth it in the first year?`,
-    answer: `Using our illustration (${usd(ILLUSTRATIVE_TOP_SPEND + ILLUSTRATIVE_OTHER_SPEND)} of yearly spending${p.top ? `, ${usd(ILLUSTRATIVE_TOP_SPEND)} of it in ${catLabel(p.top)}` : ""}), the first year comes out around ${usd(firstYearBeforeCredits)} before credits, including a welcome bonus valued at ${usd(welcome.value)}. ${ongoingBeforeCredits < 0 ? `In year two, rewards alone fall about ${usd(-ongoingBeforeCredits)} short of the fee, so credits and benefits have to close the gap.` : `Year two drops to about ${usd(ongoingBeforeCredits)} before credits.`}`,
+    answer: `Using our illustration (${usd(ILLUSTRATIVE_TOP_SPEND + ILLUSTRATIVE_OTHER_SPEND)} of yearly spending${p.top ? `, ${usd(ILLUSTRATIVE_TOP_SPEND)} of it in ${catLabel(p.top)}` : ""}), the first year comes out around ${usd(firstYearBeforeCredits)} before credits, ${welcome.varies ? "not counting the welcome offer, which varies by applicant" : `including a welcome bonus valued at ${usd(welcome.value)}`}. ${ongoingBeforeCredits < 0 ? `In year two, rewards alone fall about ${usd(-ongoingBeforeCredits)} short of the fee, so credits and benefits have to close the gap.` : `Year two drops to about ${usd(ongoingBeforeCredits)} before credits.`}`,
   });
   if (card.foreign_transaction_fee > 0 || noFx) {
     faq.push({
@@ -483,6 +489,7 @@ export function buildCardAnalysis(card: CreditCard, allCards: CreditCard[], pref
     estimate: {
       assumptions,
       welcomeValue: welcome.value,
+      ...(welcome.varies ? { welcomeVaries: true } : {}),
       welcomeNote: welcome.note,
       earningValue,
       firstYearFee,

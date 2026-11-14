@@ -5,7 +5,7 @@ import { trackEvent } from "@/lib/analytics";
 import { Check, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import type { CreditCard, RecurringCredit } from "@/lib/cards";
-import { formatWelcomeBonus } from "@/lib/welcome-offer";
+import { formatVariableOffer, formatWelcomeBonus } from "@/lib/welcome-offer";
 import { knownNoForeignFee } from "@/lib/foreign-fee";
 
 interface CompareTableProps {
@@ -228,6 +228,8 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                       </div>
                     ) : card.welcome_offer.estimated_value != null && card.welcome_offer.estimated_value !== 0 ? (
                       <div className="font-bold text-amber-700">{formatCurrency(card.welcome_offer.estimated_value)}</div>
+                    ) : formatVariableOffer(card.welcome_offer, lang) ? (
+                      <div className="font-bold text-amber-700">{formatVariableOffer(card.welcome_offer, lang)}</div>
                     ) : (
                       <span className="text-slate-400 text-xs">{l.none}</span>
                     )}
