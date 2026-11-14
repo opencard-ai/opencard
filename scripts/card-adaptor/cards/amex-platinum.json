@@ -25,22 +25,23 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 175000,
+      "bonus_points": 0,
+      "bonus_value": "Varies",
+      "bonus_points_max": 175000,
       "spending_requirement": 12000,
       "time_period_months": 6,
-      "description": "As-high-as offer: earn up to 175,000 Membership Rewards points after spending $12,000 in purchases within the first 6 months. Welcome offers vary and applicant may not be eligible.",
+      "description": "Variable welcome offer: up to 175,000 Membership Rewards® points (\"apply and find out your welcome offer, as high as 175,000\") after you spend $12,000 in purchases on your new Card within the first 6 months of Card Membership. Welcome offers vary and you may not be eligible for an offer; American Express shows the exact amount after you apply. No fixed public offer amount is published.",
       "point_program": "Amex Membership Rewards",
-      "estimated_value": 2975,
       "offer_status": "as_high_as_ymmv",
-      "confidence": "medium_high",
+      "confidence": "high",
       "notes": [
-        "Priority adaptor: flagship Amex card lacked adaptor coverage despite data card existing.",
-        "2026 refresh benefits include the $200 Oura Ring credit and other refreshed credits in data/cards/amex-platinum.json; benefit changes remain manual-review fields.",
-        "2026-07-17 verification: issuer/search result still shows as-high-as 175,000 after $12,000/6 months after the 2026-07-15 watcher date; no current public expiry was visible, so stale expires marker was removed."
+        "2026-07-17 verification: issuer/search result still shows as-high-as 175,000 after $12,000/6 months after the 2026-07-15 watcher date; no current public expiry was visible, so stale expires marker was removed.",
+        "2026-11-13 as-high-as policy (lead decision after #95): official Amex product page (rendered GET 200, 9:19:33 PM PST): \"APPLY AND FIND OUT YOUR WELCOME OFFER AS HIGH AS 175,000 Membership Rewards® points after you spend $12,000 in purchases on your new Card within the first 6 months of Card Membership. Welcome offers vary and you may not be eligible for an offer.\" Offer terms page (GET 200, 9:19:59 PM PST): \"As High As 175,000 Membership Rewards® points Welcome Offer\" No 'Offer ends' date or limited-time/increased-offer language on the page. The 'as high as' amount is targeted/variable, so it is not stored as a fixed bonus: bonus_points 175000 -> 0 with bonus_value 'Varies', estimated_value 2975 removed, is_elevated true -> false (current page copy has no elevated-offer language). Spend/months unchanged (stated as fixed terms on the page).",
+        "2026-11-13 bonus_points_max 175,000 added (lead decision; display shows 'up to X / varies'). Re-confirmed on the official Amex page (rendered GET 200, 9:38:55 PM PST): \"AS HIGH AS 175,000 Membership Rewards® points after you spend $12,000 in purchases on your new Card within the first 6 months of Card Membership\". bonus_points stays 0 / Varies; sorting unaffected."
       ],
       "source_conflicts": [],
-      "last_verified": "2026-07-17",
-      "is_elevated": true
+      "last_verified": "2026-11-13",
+      "is_elevated": false
     }
   },
   "citations": {

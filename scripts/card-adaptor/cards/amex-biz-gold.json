@@ -31,21 +31,22 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 200000,
+      "bonus_points": 0,
+      "bonus_value": "Varies",
+      "bonus_points_max": 200000,
       "spending_requirement": 15000,
       "time_period_months": 3,
-      "description": "As-high-as offer: Earn up to 200,000 Membership Rewards points after spending $15,000 in purchases within the first 3 months of Card Membership.",
+      "description": "Variable welcome offer: up to 200,000 Membership Rewards® points (\"apply and find out your welcome offer, as high as 200,000\") after you spend $15,000 in purchases on your new Card within the first 3 months of Card Membership. Welcome offers vary and you may not be eligible for an offer; American Express shows the exact amount after you apply. No fixed public offer amount is published.",
       "point_program": "MR",
-      "estimated_value": 3400,
-      "offer_status": "as_high_as_public_or_targeted",
-      "confidence": "medium_high",
+      "offer_status": "as_high_as_ymmv",
+      "confidence": "high",
       "notes": [
-        "Amex issuer/campaign pages show 200,000 Membership Rewards points; exact eligibility may vary by applicant/session."
+        "2026-11-13 as-high-as policy (lead decision): official Amex page (rendered GET 200, 9:36:08 PM PST): \"APPLY AND FIND OUT YOUR WELCOME OFFER AS HIGH AS 200,000 Membership Rewards® Points after you spend $15,000 in purchases on your new Card within the first 3 months of Card Membership. Welcome offers vary and you may not be eligible for an offer.\" (Annual Fee: $375, unchanged). Offer terms page (GET 200, 9:36:34 PM PST): \"As High As 200,000 Membership Rewards® points Welcome Offer ... which will be an amount as high as 200,000 points ... after you spend $15,000 (the \"Threshold Amount\")\". Variable amount, so not stored as a fixed bonus: bonus_points 200000 -> 0 with bonus_value 'Varies', bonus_points_max 200000, estimated_value 3400 removed, offer_status -> as_high_as_ymmv, is_elevated -> false (no limited-time/increased-offer wording for this card; the 'Limited Time Offer' tag on the page belongs to the Marriott Bonvoy Business nav item). Spend/months unchanged.",
+        "Previous description claimed a fixed 200,000 ('highest available sign-up bonus'); the official page shows only 'as high as 200,000'."
       ],
-      "source_conflicts": [
-        "Amex may personalize welcome offers; lower public/session offers may appear."
-      ],
-      "last_verified": "AUTO_DATE"
+      "source_conflicts": [],
+      "last_verified": "2026-11-13",
+      "is_elevated": false
     }
   },
   "citations": {
