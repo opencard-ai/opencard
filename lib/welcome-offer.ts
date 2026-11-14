@@ -1,5 +1,6 @@
 // Client-safe helpers for rendering a card's welcome bonus. No fs imports.
 import type { WelcomeOffer } from "./cards";
+import { t, type Locale } from "./i18n";
 
 export type WelcomeBonusKind = "points" | "cash" | "percent_discount" | "none";
 
@@ -57,4 +58,51 @@ export function welcomeBonusDollarFallback(w?: WelcomeOffer | null): number {
   if (kind === "cash") return Number(w!.bonus_points);
   if (kind === "points") return Number(w!.bonus_points) / 100;
   return 0;
+}
+
+/**
+ * True for "as high as" / varies-by-applicant offers: the issuer shows the
+ * exact amount only after applying. These are stored as bonus_points 0 with
+ * bonus_value "Varies", so welcomeBonusKind() says "none" and sorting/scoring
+ * treat them as 0, but they must never be rendered as "no welcome offer".
+ */
+export function isVariableOffer(w?: Pick<WelcomeOffer, "offer_status" | "bonus_value"> | null): boolean {
+  if (!w) return false;
+  if (w.offer_status === "as_high_as_ymmv") return true;
+  return typeof w.bonus_value === "string" && w.bonus_value.trim().toLowerCase() === "varies";
+}
+
+/**
+ * The advertised maximum of a variable offer, formatted with the same
+ * points/cash rules as formatWelcomeBonus() ("85,000 pts", "$200"), or null
+ * when bonus_points_max is missing or not positive.
+ */
+export function formatVariableOfferMax(
+  w: WelcomeOffer | null | undefined,
+  lang: string = "en",
+  pointsLabel: string = "pts",
+): string | null {
+  const max = Number(w?.bonus_points_max) || 0;
+  if (!w || max <= 0) return null;
+  return formatWelcomeBonus({ ...w, bonus_points: max, bonus_type: w.bonus_type === "percent_discount" ? undefined : w.bonus_type }, lang, pointsLabel);
+}
+
+function toLocale(lang: string): Locale {
+  return (["en", "zh", "zh-cn", "es"] as const).includes(lang as Locale) ? (lang as Locale) : "en";
+}
+
+/**
+ * Localized label for a variable offer: "As high as 85,000 pts · varies by
+ * applicant", or "Varies by applicant, see issuer offer" without a maximum.
+ * Returns null when the offer is not variable.
+ */
+export function formatVariableOffer(
+  w: WelcomeOffer | null | undefined,
+  lang: string = "en",
+  pointsLabel?: string,
+): string | null {
+  if (!w || !isVariableOffer(w)) return null;
+  const locale = toLocale(lang);
+  const amount = formatVariableOfferMax(w, locale, pointsLabel ?? t("detail.points", locale));
+  return amount ? t("detail.offerAsHighAs", locale, { amount }) : t("detail.offerVaries", locale);
 }

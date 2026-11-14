@@ -13,6 +13,8 @@ const WELCOME_OFFER_KEYS = [
   "discount_percent",
   "estimated_value",
   "bonus_value",
+  "bonus_points_max",
+  "offer_status",
   "point_program",
   "spending_requirement",
   "time_period_months",

@@ -118,6 +118,10 @@ export interface WelcomeOffer {
   spending_requirement?: number;
   time_period_months?: number;
   bonus_points?: number;
+  /** For "as high as" / varies-by-applicant offers (offer_status
+   *  "as_high_as_ymmv"): the advertised maximum. Display only; bonus_points
+   *  stays 0 so sorting and scoring treat the offer as unknown. */
+  bonus_points_max?: number;
   /** How bonus_points should be read. Omitted = inferred (see lib/welcome-offer.ts):
    *  "cash" means bonus_points is a dollar amount; "percent_discount" uses discount_percent. */
   bonus_type?: "points" | "cash" | "percent_discount";
