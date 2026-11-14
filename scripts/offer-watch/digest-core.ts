@@ -9,7 +9,7 @@ export const REASONS: Record<string, string> = {
   primary_source_not_official_domain: '來源非官方網域', official_claim_from_non_allowlisted_domain: '來源非官方網域', bonus_jump_over_3x: '獎勵變動超過 3 倍',
   annual_fee_jump_over_2x: '年費變動超過 2 倍', annual_fee_out_of_range: '年費超出合理範圍', spend_out_of_range: '消費門檻不合理', expiry_in_past: '截止日已過',
   invalid_date: '日期格式錯誤', official_page_fetch_failed: '官方頁面抓取失敗', expired_not_in_watchlist_no_official_fetch: '優惠已過期，尚未列入官方頁面監測',
-  expired_offer_still_shown_on_official_page: '已過期但官方頁面仍顯示', expired_no_confirmed_replacement_offer: '已過期，尚無確認的新優惠', card_file_has_uncommitted_changes: '卡片檔案有未提交變更',
+  expired_offer_still_shown_on_official_page: '已過期但官方頁面仍顯示', expired_no_confirmed_replacement_offer: '已過期，尚無確認的新優惠', card_file_has_uncommitted_changes: '卡片檔案有未提交變更', no_publish_mode: '可自動套用，但目前為不發布模式（--no-publish）',
   schema_validation_failed: '資料格式驗證失敗', new_product_requires_human_review: '新卡片需人工審核', stale_or_invalid_checked_at: '證據過期', not_marked_official: '非官方來源',
   welcome_offer_detect_only_manual_review: '開卡禮僅偵測，需人工確認', variable_as_high_as_offer: '官方頁面為「最高可達」浮動優惠', detect_only_no_bonus_parsed: '官方頁面未解析出固定開卡禮',
   non_public_audience: '非公開優惠', source_conflicts: '來源互相矛盾', unknown_fields: '含未追蹤欄位',

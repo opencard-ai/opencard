@@ -1,5 +1,7 @@
 /** Apply guarded changes from a review report (review.ts output) to data/cards. Dry run unless --apply.
- *   npx tsx scripts/offer-watch/apply.ts --report <review.json> [--apply] [--out <plan.json>] [--ledger file] [--today YYYY-MM-DD]
+ *   npx tsx scripts/offer-watch/apply.ts --report <review.json> [--apply | --record-holds] [--out <plan.json>] [--ledger file] [--history file] [--today YYYY-MM-DD]
+ * --record-holds (used by daily --no-publish): never edits card files; every change that WOULD be applied is recorded as
+ * held (reason no_publish_mode) together with the normal holds/expiry reviews in the ledger and history. --out is required.
  * Guards: official allowlisted domain; >=2 independent official fetches agreeing in this run; sanity (3x bonus jump,
  * fee range, spend > 0, valid future dates); schema check + full validator. Expired elevated offers are reverted only
  * when an official page was fetched and no longer shows the old bonus; otherwise they are marked for review.
@@ -16,6 +18,9 @@ const arg = (name: string) => { const i = process.argv.indexOf(name); return i >
 const reportFile = arg('--report');
 if (!reportFile) throw new Error('--report <review.json> is required');
 const doApply = process.argv.includes('--apply');
+const recordHolds = process.argv.includes('--record-holds');
+if (doApply && recordHolds) throw new Error('--apply and --record-holds are mutually exclusive');
+if (recordHolds && !arg('--out')) throw new Error('--record-holds requires --out <plan.json>');
 const today = arg('--today') || laToday();
 const ledgerFile = arg('--ledger') || DEFAULT_LEDGER;
 const historyFile = arg('--history') || DEFAULT_HISTORY;
@@ -46,6 +51,10 @@ const failed = outputs.filter(o => o.error);
 const ok = outputs.filter(o => !o.error);
 failed.forEach(o => plan.held.push(...o.plan.changes.map(c => ({ card_id: o.plan.card_id, field: c.field, value: c.new_value, reasons: [o.error!], fingerprint: c.fingerprint }))));
 
+// --record-holds: nothing is written to data/cards; would-be applied changes become holds (no_publish_mode).
+const wouldApply = recordHolds ? ok.splice(0, ok.length) : [];
+wouldApply.forEach(o => plan.held.push(...o.plan.changes.map(c => ({ card_id: o.plan.card_id, field: c.field, value: c.new_value, reasons: ['no_publish_mode'], fingerprint: c.fingerprint }))));
+
 let validation = 'not_run';
 if (doApply && ok.length) {
   const original = new Map(ok.map(o => [o.file, fs.readFileSync(o.file, 'utf8')]));
@@ -62,14 +71,30 @@ if (doApply && ok.length) {
 
 const nowIso = new Date(runAt).toISOString();
 const result = {
-  kind: 'offer-watch-apply', mode: doApply ? 'apply' : 'dry-run', generated_at: nowIso, today, report: reportFile, validation,
+  kind: 'offer-watch-apply', mode: doApply ? 'apply' : recordHolds ? 'record-holds' : 'dry-run', generated_at: nowIso, today, report: reportFile, validation,
   applied: ok.map(o => ({ card_id: o.plan.card_id, file: o.file, kinds: o.plan.kinds, changes: o.plan.changes, sources: o.plan.sources, notes: o.plan.notes })),
   held: plan.held, expiry_review: plan.expiry_review,
-  preview: doApply ? undefined : ok.map(o => ({ card_id: o.plan.card_id, welcome_offer_after: o.after?.welcome_offer, annual_fee_after: o.after?.annual_fee })),
+  preview: doApply ? undefined : [...ok, ...wouldApply].map(o => ({ card_id: o.plan.card_id, welcome_offer_after: o.after?.welcome_offer, annual_fee_after: o.after?.annual_fee })),
+  would_apply: recordHolds ? wouldApply.map(o => ({ card_id: o.plan.card_id, changes: o.plan.changes, sources: o.plan.sources })) : undefined,
 };
 const json = JSON.stringify(result, null, 2);
 console.log(json);
 if (!doApply && arg('--out')) { fs.mkdirSync(path.dirname(arg('--out')!), { recursive: true }); fs.writeFileSync(arg('--out')!, `${json}\n`); console.error(`dry-run plan saved: ${arg('--out')}`); }
+if (recordHolds) {
+  const out = arg('--out')!;
+  fs.mkdirSync(path.dirname(out), { recursive: true });
+  fs.writeFileSync(out, `${json}\n`);
+  console.error(`record-holds plan saved: ${out}`);
+  const updates: LedgerUpdate[] = [
+    ...plan.held.map(h => ({ key: h.fingerprint ?? changeFingerprint(h.card_id, h.field ?? 'card', h.value ?? null, 'public'), card_id: h.card_id, field: h.field, value: h.value ?? null, status: 'needs_verification', reasons: h.reasons })),
+    ...plan.expiry_review.map(h => ({ key: changeFingerprint(h.card_id, `expiry_review:${h.field}`, h.reasons.join(','), 'public'), card_id: h.card_id, field: h.field, value: null, status: 'needs_verification', reasons: h.reasons })),
+  ];
+  saveLedger(upsertLedger(loadLedger(ledgerFile), updates, nowIso), ledgerFile);
+  appendHistory([
+    ...plan.held.map(h => ({ ts: nowIso, type: 'held' as const, card_id: h.card_id, changes: h.field ? [{ field: h.field, old_value: null, new_value: h.value ?? null }] : undefined, reasons: h.reasons })),
+    ...plan.expiry_review.map(h => ({ ts: nowIso, type: 'expiry_review' as const, card_id: h.card_id, reasons: h.reasons })),
+  ], historyFile);
+}
 if (doApply) {
   const out = arg('--out') || `artifacts/offer-watch/apply-${nowIso.replace(/[:.]/g, '-')}.json`;
   fs.mkdirSync(path.dirname(out), { recursive: true });

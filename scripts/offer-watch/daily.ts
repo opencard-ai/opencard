@@ -1,5 +1,10 @@
 /** One full offer-watch day, safe to run from cron.
- *   npm run -s offer-watch:daily [-- --dry-run] [--digest] [--skip-pull] [--today YYYY-MM-DD]
+ *   npm run -s offer-watch:daily [-- --dry-run | --no-publish] [--state-dir DIR] [--digest] [--skip-pull] [--today YYYY-MM-DD]
+ * --no-publish (PR #94 design, phase 1 "hold-only"): like a normal run it persists the ledger/history/daily-state and
+ * prints the summary of new holds/failures, but it NEVER edits card files and NEVER runs publish: apply runs with
+ * --record-holds, so changes that would be auto-applied are recorded as holds (no_publish_mode). Exit 1 if data/cards
+ * changed during the run. --state-dir DIR keeps ledger.json/history.jsonl/daily-state.json in DIR (e.g. an ops-state
+ * checkout); only allowed with --dry-run or --no-publish because publish.ts still uses the default paths.
  *   (or: scripts/offer-watch/daily.sh)
  * Steps (PT date D): git pull --ff-only -> collect -> review --ledger --write -> apply --apply -> publish (only if something
  * was applied) -> digest (Mondays PT, or --digest). --dry-run: no ledger writes, no card edits, no publish.
@@ -10,6 +15,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import type { Candidate } from './gate';
 import { allFetchesFailed, buildDailySummary, isMonday, newFetchFailures, newHolds, type StepFailure } from './daily-core';
 import { DEFAULT_HISTORY, DEFAULT_LEDGER, laToday, loadLedger, readHistory } from './state';
@@ -18,12 +24,23 @@ const argv = process.argv.slice(2);
 const has = (flag: string) => argv.includes(flag);
 const arg = (name: string) => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : undefined; };
 const dryRun = has('--dry-run');
+const noPublish = has('--no-publish');
+const stateDirArg = arg('--state-dir');
+if (dryRun && noPublish) { console.error('offer-watch daily: --dry-run and --no-publish are mutually exclusive'); process.exit(2); }
+if (has('--state-dir') && (!stateDirArg || stateDirArg.startsWith('--'))) { console.error('offer-watch daily: --state-dir needs a directory'); process.exit(2); }
+if (stateDirArg && !dryRun && !noPublish) { console.error('offer-watch daily: --state-dir is only allowed with --dry-run or --no-publish'); process.exit(2); }
+if (stateDirArg && !fs.existsSync(stateDirArg)) { console.error('offer-watch daily: --state-dir must be an existing directory'); process.exit(2); }
 const today = arg('--today') || laToday();
 const dir = 'artifacts/offer-watch';
 fs.mkdirSync(dir, { recursive: true });
+const stateDir = stateDirArg ? path.resolve(stateDirArg) : dir;
+const ledgerFile = stateDirArg ? path.join(stateDir, 'ledger.json') : DEFAULT_LEDGER;
+const historyFile = stateDirArg ? path.join(stateDir, 'history.jsonl') : DEFAULT_HISTORY;
 const logFile = path.join(dir, `daily-${today}.log`);
 const lockFile = path.join(dir, 'daily.lock');
-const stateFile = path.join(dir, 'daily-state.json');
+const stateFile = path.join(stateDir, 'daily-state.json');
+/** Content hash of data/cards/*.json (names + bytes; apply only writes these). --no-publish compares it around apply (after any git pull). */
+const cardsHash = () => { const h = createHash('sha256'); for (const f of fs.readdirSync('data/cards').filter(f => f.endsWith('.json')).sort()) h.update(f).update('\0').update(fs.readFileSync(path.join('data/cards', f))); return h.digest('hex'); };
 const ptNow = () => new Date().toLocaleString('sv-SE', { timeZone: 'America/Los_Angeles' });
 const log = (message: string) => fs.appendFileSync(logFile, `[${ptNow()} PT] ${message}\n`);
 
@@ -71,8 +88,8 @@ function main(): number {
   for (const signal of ['SIGINT', 'SIGTERM'] as const) process.on(signal, () => { releaseLock(); process.exit(130); });
 
   const runStart = new Date().toISOString();
-  log(`===== offer-watch daily ${today}${dryRun ? ' (dry-run)' : ''} pid ${process.pid} =====`);
-  const ledgerBefore = loadLedger(DEFAULT_LEDGER);
+  log(`===== offer-watch daily ${today}${dryRun ? ' (dry-run)' : noPublish ? ' (no-publish)' : ''} pid ${process.pid} =====`);
+  const ledgerBefore = loadLedger(ledgerFile);
   const failures: StepFailure[] = [];
   const tsx = ['tsx'];
   const cand = path.join(dir, `candidates-${today}.json`), review = path.join(dir, `review-${today}.json`), applyOut = path.join(dir, `apply-${today}.json`);
@@ -80,15 +97,19 @@ function main(): number {
 
   let ok = has('--skip-pull') || run('git pull', 'git', ['pull', '--ff-only'], 120000, 'git pull --ff-only 失敗，本次未更新資料');
   ok = ok && run('collect', 'npx', [...tsx, 'scripts/offer-watch/collect.ts', '--today', today, '--out', cand], 30 * 60000, 'collect 失敗');
-  ok = ok && run('review', 'npx', [...tsx, 'scripts/offer-watch/review.ts', cand, '--worktree', '--ledger', ...(dryRun ? [] : ['--write']), '--today', today, '--out', review], 5 * 60000, 'review 失敗');
-  ok = ok && run('apply', 'npx', [...tsx, 'scripts/offer-watch/apply.ts', '--report', review, '--today', today, ...(dryRun ? ['--out', path.join(dir, `apply-${today}.dry.json`)] : ['--apply', '--out', applyOut])], 10 * 60000, 'apply 失敗（卡片檔案已還原）');
-  const plan = ok ? readJson<any>(dryRun ? path.join(dir, `apply-${today}.dry.json`) : applyOut) : null;
-  if (ok && !dryRun && plan?.applied?.length) run('publish', 'npx', [...tsx, 'scripts/offer-watch/publish.ts', '--plan', applyOut], 75 * 60000, 'publish 失敗（詳見 log；失敗時已自動回滾）');
-  else if (ok) log(dryRun ? 'dry-run: publish skipped' : 'nothing applied; publish skipped');
+  ok = ok && run('review', 'npx', [...tsx, 'scripts/offer-watch/review.ts', cand, '--worktree', '--ledger', ledgerFile, ...(dryRun ? [] : ['--write']), '--today', today, '--out', review], 5 * 60000, 'review 失敗');
+  const planFile = dryRun ? path.join(dir, `apply-${today}.dry.json`) : noPublish ? path.join(dir, `apply-${today}.nopublish.json`) : applyOut;
+  const applyMode = dryRun ? [] : noPublish ? ['--record-holds'] : ['--apply'];
+  const cardsBefore = noPublish && ok ? cardsHash() : '';
+  ok = ok && run('apply', 'npx', [...tsx, 'scripts/offer-watch/apply.ts', '--report', review, '--today', today, '--ledger', ledgerFile, '--history', historyFile, ...applyMode, '--out', planFile], 10 * 60000, 'apply 失敗（卡片檔案已還原）');
+  const plan = ok ? readJson<any>(planFile) : null;
+  if (noPublish && cardsBefore && cardsHash() !== cardsBefore) { ok = false; failures.push({ step: 'no-publish guard', detail: 'data/cards 在 --no-publish 執行中被修改；未發布，請人工檢查' }); log('no-publish guard: data/cards changed during run'); }
+  if (ok && !dryRun && !noPublish && plan?.applied?.length) run('publish', 'npx', [...tsx, 'scripts/offer-watch/publish.ts', '--plan', applyOut], 75 * 60000, 'publish 失敗（詳見 log；失敗時已自動回滾）');
+  else if (ok) log(dryRun ? 'dry-run: publish skipped' : noPublish ? 'no-publish: publish skipped (holds recorded)' : 'nothing applied; publish skipped');
 
   let digest: string | null = null;
   if (has('--digest') || isMonday(today)) {
-    if (step('digest', 'npx', [...tsx, 'scripts/offer-watch/digest.ts', '--today', today], 2 * 60000)) {
+    if (step('digest', 'npx', [...tsx, 'scripts/offer-watch/digest.ts', '--today', today, '--ledger', ledgerFile, '--history', historyFile], 2 * 60000)) {
       try { digest = fs.readFileSync(path.join(dir, `digest-${today}.md`), 'utf8'); } catch {}
     } else failures.push({ step: 'digest', detail: 'digest 產生失敗' });
   }
@@ -97,7 +118,7 @@ function main(): number {
   const state = readJson<{ fetch_failures?: Record<string, string[]> }>(stateFile) || {};
   const failingNow = allFetchesFailed(candidates);
   if (!dryRun && candidates.length) fs.writeFileSync(stateFile, `${JSON.stringify({ updated: new Date().toISOString(), fetch_failures: failingNow }, null, 2)}\n`);
-  const events = readHistory(DEFAULT_HISTORY).filter(e => e.ts >= runStart);
+  const events = readHistory(historyFile).filter(e => e.ts >= runStart);
   const summary = buildDailySummary({
     today, events, stepFailures: failures,
     holds: newHolds(plan, ledgerBefore),
