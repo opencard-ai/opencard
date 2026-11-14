@@ -19,7 +19,7 @@ import { cardSeoMeta } from "@/lib/card-seo";
 import { getEditorNote } from "@/lib/card-notes";
 import CardAnalysisSection from "@/app/components/CardAnalysisSection";
 import { getReferralOfferForCard } from "@/lib/referrals";
-import { formatWelcomeBonus, welcomeBonusKind } from "@/lib/welcome-offer";
+import { formatVariableOffer, formatWelcomeBonus, welcomeBonusKind } from "@/lib/welcome-offer";
 import { getAffiliateUrl } from "@/lib/affiliate";
 import AffiliateLink from "@/app/components/AffiliateLink";
 
@@ -264,7 +264,22 @@ export default async function CardDetailPage({ params }: Props) {
                 const hasValue = !!(w.estimated_value && w.estimated_value > 0)
                   && !(bonusKind === "cash" && Number(w.estimated_value) === Number(w.bonus_points));
                 if (!hasPoints && !hasFnas && !hasValue) {
-                  return <span className="text-amber-700">{l("detail.noWelcomeOffer")}</span>;
+                  // "As high as" offers are stored as 0 / "Varies": show that
+                  // the offer varies instead of claiming there is none.
+                  const variableLabel = formatVariableOffer(w, lang, l("detail.points"));
+                  if (!variableLabel) {
+                    return <span className="text-amber-700">{l("detail.noWelcomeOffer")}</span>;
+                  }
+                  return (
+                    <>
+                      <span className="font-bold" data-testid="variable-welcome-offer">{variableLabel}</span>
+                      {w.spending_requirement && (
+                        <span className="text-xs text-amber-700 block mt-1">
+                          {l("detail.spendingReq", { amount: w.spending_requirement.toLocaleString(), months: w.time_period_months ?? 3 })}
+                        </span>
+                      )}
+                    </>
+                  );
                 }
                 return (
                   <>
