@@ -1,0 +1,121 @@
+name: Offer watcher cloud shadow (dry-run)
+# Shadow replacement for the Mac mini OpenClaw job "OpenCard daily offer watcher" (Mac job 8272895b,
+# 11:30 America/Los_Angeles). DRY-RUN ONLY: runs `offer-watch:daily --dry-run --skip-pull`, which collects
+# official pages, reviews and plans, but never writes the ledger, edits cards, commits, pushes, deploys,
+# publishes or sends anything. No secrets are referenced. Output = artifact + step summary to compare
+# with the Mac output of the same PT date (see docs/operations/offer-watch-cloud-shadow.md).
+#
+# No schedule on purpose (schedules only fire from main and this is not approved to merge). If a
+# schedule is added later it must be explicit UTC with a PT comment, e.g.
+#   - cron: '45 19 * * *'   # 11:45 PST (UTC-8); GitHub ignores/does not honour timezone: here
+on:
+  workflow_dispatch:
+    inputs:
+      today:
+        description: 'PT date to label the run (YYYY-MM-DD); empty = today in America/Los_Angeles'
+        required: false
+        default: ''
+      digest:
+        description: 'Also build the Monday digest preview (local history only)'
+        type: boolean
+        default: false
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/offer-watch-shadow.yml
+      - scripts/offer-watch/shadow-compare*.ts
+permissions:
+  contents: read
+concurrency:
+  group: offer-watch-shadow-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  shadow:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      OFFER_WATCH_CHROME: /usr/bin/google-chrome
+      PUPPETEER_SKIP_DOWNLOAD: 'true'
+      TODAY_INPUT: ${{ github.event.inputs.today || '' }}
+      DIGEST_INPUT: ${{ github.event.inputs.digest || 'false' }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+      - name: Install locked dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Resolve PT date and Chrome
+        id: meta
+        run: |
+          today="${TODAY_INPUT:-$(TZ=America/Los_Angeles date +%F)}"
+          if ! [[ "$today" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then echo "bad today input" >&2; exit 2; fi
+          echo "today=$today" >> "$GITHUB_OUTPUT"
+          test -x "$OFFER_WATCH_CHROME"
+          "$OFFER_WATCH_CHROME" --version
+      - name: Offer-watch daily (dry-run, no pull, no publish)
+        id: daily
+        continue-on-error: true
+        shell: bash
+        env:
+          TODAY: ${{ steps.meta.outputs.today }}
+        run: |
+          args=(--dry-run --skip-pull --today "$TODAY")
+          if [ "$DIGEST_INPUT" = "true" ]; then args+=(--digest); fi
+          npx tsx scripts/offer-watch/daily.ts "${args[@]}" | tee "artifacts/offer-watch/shadow-summary-$TODAY.txt"
+      - name: Assert no card data, ledger or history was written
+        run: |
+          git diff --exit-code -- data/cards
+          test -z "$(git status --porcelain -- data/cards)"
+          test ! -e artifacts/offer-watch/ledger.json
+          test ! -e artifacts/offer-watch/history.jsonl
+          test ! -e artifacts/offer-watch/daily-state.json
+          test ! -e "artifacts/offer-watch/apply-${{ steps.meta.outputs.today }}.json"
+      - name: Step summary
+        if: always()
+        env:
+          TODAY: ${{ steps.meta.outputs.today }}
+        run: |
+          d=artifacts/offer-watch
+          {
+            echo "## Offer watcher cloud shadow (dry-run) — PT $TODAY"
+            echo "commit: \`$GITHUB_SHA\` · daily step outcome: ${{ steps.daily.outcome }}"
+            echo
+            echo '### Summary (what the Mac job would print; ledger is empty in the cloud, so every hold looks new)'
+            echo '```'
+            cat "$d/shadow-summary-$TODAY.txt" 2>/dev/null || echo '(none)'
+            echo '```'
+            if [ -f "$d/candidates-$TODAY.json" ]; then
+              node -e '
+                const c = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"));
+                const f = c.flatMap(x => x.evidence?.confirmations || []);
+                console.log(`cards ${c.length} · fetches ${f.length} · ok ${f.filter(x => x.ok).length} · failed ${f.filter(x => !x.ok).length}`);
+              ' "$d/candidates-$TODAY.json"
+            fi
+            if [ -f "$d/apply-$TODAY.dry.json" ]; then
+              node -e '
+                const p = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"));
+                console.log(`plan (dry-run): would apply ${p.applied.length} card(s), hold ${p.held.length}, expiry_review ${p.expiry_review?.length ?? 0}`);
+              ' "$d/apply-$TODAY.dry.json"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: offer-watch-shadow-${{ steps.meta.outputs.today }}-${{ github.run_id }}
+          path: |
+            artifacts/offer-watch/candidates-${{ steps.meta.outputs.today }}.json
+            artifacts/offer-watch/review-${{ steps.meta.outputs.today }}.json
+            artifacts/offer-watch/apply-${{ steps.meta.outputs.today }}.dry.json
+            artifacts/offer-watch/daily-${{ steps.meta.outputs.today }}.log
+            artifacts/offer-watch/digest-${{ steps.meta.outputs.today }}.md
+            artifacts/offer-watch/shadow-summary-${{ steps.meta.outputs.today }}.txt
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Fail if the daily step failed
+        if: steps.daily.outcome != 'success'
+        run: |
+          echo "::warning ::offer-watch daily (dry-run) reported a failed step; see the log in the artifact"
+          exit 1
