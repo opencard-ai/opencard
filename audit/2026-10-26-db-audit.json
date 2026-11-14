@@ -1,0 +1,3318 @@
+{
+  "generated_at": "2026-10-26T17:48:56.237Z",
+  "today": "2026-10-26",
+  "cards": 225,
+  "popular": [
+    "amazon-prime-visa",
+    "amex-biz-gold",
+    "amex-biz-platinum",
+    "amex-blue-biz-cash",
+    "amex-blue-biz-plus",
+    "amex-blue-cash-preferred",
+    "amex-delta-gold-biz",
+    "amex-delta-reserve",
+    "amex-delta-skymiles-reserve-biz",
+    "amex-gold",
+    "amex-hilton-honors-aspire",
+    "amex-marriott-bonvoy-biz",
+    "amex-marriott-brilliant",
+    "amex-platinum",
+    "barclays-banana-republic-rewards-mastercard",
+    "barclays-old-navy-navyist-rewards-mastercard",
+    "bilt-obsidian",
+    "boa-customized-cash-rewards",
+    "capital-one-savorone",
+    "capital-one-venture",
+    "capital-one-venture-x",
+    "chase-freedom-flex",
+    "chase-freedom-unlimited",
+    "chase-hyatt",
+    "chase-ink-biz-cash",
+    "chase-ink-biz-preferred",
+    "chase-ink-biz-unlimited",
+    "chase-marriott-boundless",
+    "chase-sapphire-preferred",
+    "chase-sapphire-reserve",
+    "chase-sapphire-reserve-biz",
+    "chase-southwest-premier-biz",
+    "chase-united-explorer",
+    "citi-strata",
+    "citi-strata-elite",
+    "discover-it",
+    "pnc-cash-rewards-visa",
+    "us-bank-cash-plus",
+    "us-bank-harley-davidson",
+    "wells-fargo-active-cash",
+    "wells-fargo-one-key"
+  ],
+  "counts": {
+    "broken_source_url": {
+      "high": 1,
+      "medium": 0,
+      "low": 0
+    },
+    "missing_sources": {
+      "high": 5,
+      "medium": 0,
+      "low": 0
+    },
+    "source_redirects_elsewhere": {
+      "high": 4,
+      "medium": 0,
+      "low": 10
+    },
+    "no_official_source": {
+      "high": 0,
+      "medium": 4,
+      "low": 3
+    },
+    "possible_issuer_change": {
+      "high": 0,
+      "medium": 2,
+      "low": 0
+    },
+    "non_https_source": {
+      "high": 0,
+      "medium": 0,
+      "low": 52
+    },
+    "past_next_review": {
+      "high": 0,
+      "medium": 0,
+      "low": 200
+    },
+    "shared_official_url": {
+      "high": 0,
+      "medium": 0,
+      "low": 25
+    },
+    "stale_last_verified": {
+      "high": 0,
+      "medium": 0,
+      "low": 86
+    },
+    "duplicate_benefit": {
+      "high": 0,
+      "medium": 0,
+      "low": 1
+    },
+    "network_unusual": {
+      "high": 0,
+      "medium": 0,
+      "low": 1
+    },
+    "source_unreachable": {
+      "high": 0,
+      "medium": 0,
+      "low": 1
+    },
+    "stale_benefit": {
+      "high": 0,
+      "medium": 0,
+      "low": 5
+    }
+  },
+  "url_check": "artifacts/audit/2026-10-26-url-check.json",
+  "findings": [
+    {
+      "card_id": "amex-morgan-stanley-platinum",
+      "type": "broken_source_url",
+      "severity": "high",
+      "field": "sources",
+      "detail": "https://www.americanexpress.com/us/credit-cards/card-application/apply/partner/print/personal-card/msb/morgan-stanley-platinum-card/ep-msb-mcs-74 -> HTTP 404",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-harley-davidson",
+      "type": "missing_sources",
+      "severity": "high",
+      "field": "sources",
+      "detail": "no sources",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-uber",
+      "type": "missing_sources",
+      "severity": "high",
+      "field": "sources",
+      "detail": "no sources",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-ubereats",
+      "type": "missing_sources",
+      "severity": "high",
+      "field": "sources",
+      "detail": "no sources",
+      "popular": false
+    },
+    {
+      "card_id": "synchrony-amazon-store",
+      "type": "missing_sources",
+      "severity": "high",
+      "field": "sources",
+      "detail": "no sources",
+      "popular": false
+    },
+    {
+      "card_id": "walgreens-mastercard",
+      "type": "missing_sources",
+      "severity": "high",
+      "field": "sources",
+      "detail": "no sources",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-royal-caribbean-visa-signature",
+      "type": "source_redirects_elsewhere",
+      "severity": "high",
+      "field": "sources",
+      "detail": "https://www.royalcaribbean.com/programs/royal-one-visa-card -> https://www.royalcaribbean.com/royal-one-visa-card",
+      "popular": false
+    },
+    {
+      "card_id": "citi-secured-mastercard",
+      "type": "source_redirects_elsewhere",
+      "severity": "high",
+      "field": "sources",
+      "detail": "https://www.citi.com/credit-cards/understanding-credit-cards/build-credit-with-a-secured-credit-card -> https://www.citi.com/credit-cards/knowledge-center",
+      "popular": false
+    },
+    {
+      "card_id": "jpmorgan-reserve",
+      "type": "source_redirects_elsewhere",
+      "severity": "high",
+      "field": "sources",
+      "detail": "https://www.chase.com/jpmreserve/rewardsagreement -> https://asset.chase.com/content/dam/card/rulesregulations/en/RPA0512_0519_Web.pdf",
+      "popular": false
+    },
+    {
+      "card_id": "wells-fargo-one-key-plus",
+      "type": "source_redirects_elsewhere",
+      "severity": "high",
+      "field": "sources",
+      "detail": "https://creditcards.wellsfargo.com/one-key-plus-credit-card/ -> https://creditcards.wellsfargo.com/",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-harley-davidson",
+      "type": "no_official_source",
+      "severity": "medium",
+      "field": "sources",
+      "detail": "sources: www.h-dvisa.com, wallethub.com",
+      "popular": true
+    },
+    {
+      "card_id": "us-bank-harley-davidson",
+      "type": "possible_issuer_change",
+      "severity": "medium",
+      "field": "status",
+      "detail": "\"Successor to the Barclays-issued Harley-Davidson card (transferred to U.S. Bank ~2024). 0% intro APR for 9 billing cycles on purc\"",
+      "popular": true
+    },
+    {
+      "card_id": "comenity-bed-bath-beyond-mastercard",
+      "type": "no_official_source",
+      "severity": "medium",
+      "field": "sources",
+      "detail": "sources: www.bedbathandbeyond.com",
+      "popular": false
+    },
+    {
+      "card_id": "fidelity-rewards-visa-signature",
+      "type": "no_official_source",
+      "severity": "medium",
+      "field": "sources",
+      "detail": "sources: www.fidelity.com, www.fidelityrewards.com, www.forbes.com",
+      "popular": false
+    },
+    {
+      "card_id": "kohls-charge",
+      "type": "no_official_source",
+      "severity": "medium",
+      "field": "sources",
+      "detail": "sources: www.forbes.com, money.usnews.com, www.nerdwallet.com",
+      "popular": false
+    },
+    {
+      "card_id": "sofi-credit",
+      "type": "possible_issuer_change",
+      "severity": "medium",
+      "field": "status",
+      "detail": "\"irectly — must be SoFi ecosystem. Some existing cardholders transitioned to a monthly fee model as of Jan 2026; new applicants are not \"",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-banana-republic-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "barclaycardus.com",
+      "popular": true
+    },
+    {
+      "card_id": "barclays-banana-republic-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "maxrewards.com",
+      "popular": true
+    },
+    {
+      "card_id": "barclays-banana-republic-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "wallethub.com",
+      "popular": true
+    },
+    {
+      "card_id": "barclays-old-navy-navyist-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "barclaycardus.com",
+      "popular": true
+    },
+    {
+      "card_id": "barclays-old-navy-navyist-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "forbes.com",
+      "popular": true
+    },
+    {
+      "card_id": "barclays-old-navy-navyist-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "maxrewards.com",
+      "popular": true
+    },
+    {
+      "card_id": "amazon-prime-visa",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "amex-biz-gold",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "amex-biz-platinum",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "amex-blue-biz-cash",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "amex-blue-biz-plus",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "amex-blue-cash-preferred",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "amex-delta-reserve",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-17 (70 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "amex-gold",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "amex-marriott-bonvoy-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-07 (80 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "barclays-banana-republic-rewards-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "barclays-old-navy-navyist-rewards-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "bilt-obsidian",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "boa-customized-cash-rewards",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-12 (44 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "capital-one-savorone",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-23 (95 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "capital-one-venture",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-28 (28 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "capital-one-venture-x",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-23 (95 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "chase-freedom-flex",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-23 (95 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "chase-freedom-unlimited",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-23 (95 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "chase-hyatt",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-22 (34 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "chase-ink-biz-cash",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-04 (83 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "chase-ink-biz-preferred",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "chase-ink-biz-unlimited",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-04 (83 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "chase-marriott-boundless",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-23 (95 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "chase-sapphire-preferred",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-07 (80 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "chase-sapphire-reserve-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "chase-southwest-premier-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "chase-united-explorer",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-28 (28 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "citi-strata",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "citi-strata-elite",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "discover-it",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-11 (45 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "pnc-cash-rewards-visa",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "us-bank-cash-plus",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-11 (45 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "us-bank-harley-davidson",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-11 (76 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "wells-fargo-active-cash",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "wells-fargo-one-key",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-04 (83 days ago)",
+      "popular": true
+    },
+    {
+      "card_id": "amex-delta-reserve",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards also used by amex-delta-gold",
+      "popular": true
+    },
+    {
+      "card_id": "amex-hilton-honors-aspire",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.hilton.com/en/hilton-honors/credit-cards also used by amex-hilton-honors-biz, amex-hilton-honors, amex-hilton-surpass",
+      "popular": true
+    },
+    {
+      "card_id": "bilt-obsidian",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.bilt.com/card also used by bilt-palladium",
+      "popular": true
+    },
+    {
+      "card_id": "amazon-prime-visa",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": true
+    },
+    {
+      "card_id": "capital-one-venture-x",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-25 (184 days)",
+      "popular": true
+    },
+    {
+      "card_id": "chase-freedom-unlimited",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-25 (184 days)",
+      "popular": true
+    },
+    {
+      "card_id": "chase-ink-biz-preferred",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": true
+    },
+    {
+      "card_id": "us-bank-harley-davidson",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-05-13 (166 days)",
+      "popular": true
+    },
+    {
+      "card_id": "boa-alaska-summit",
+      "type": "duplicate_benefit",
+      "severity": "low",
+      "field": "travel_benefits.lounge_access",
+      "detail": "lounge \"alaska lounge\" listed 2x",
+      "popular": false
+    },
+    {
+      "card_id": "synchrony-amazon-prime-store-card",
+      "type": "network_unusual",
+      "severity": "low",
+      "field": "network",
+      "detail": "network=\"other\"",
+      "popular": false
+    },
+    {
+      "card_id": "amex-old-blue-cash",
+      "type": "no_official_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "sources: www.uscreditcardguide.com, www.doctorofcredit.com",
+      "popular": false
+    },
+    {
+      "card_id": "state-farm-cash-medallion",
+      "type": "no_official_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "sources: www.statefarm.com",
+      "popular": false
+    },
+    {
+      "card_id": "synchrony-sears-mastercard",
+      "type": "no_official_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "sources: upgradedpoints.com, wallethub.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-aarp-essential-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "aarp.org",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-aarp-essential-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "businessinsider.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-aarp-travel-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "aarp.org",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-aarp-travel-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "barclaycardus.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-aarp-travel-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "finance.yahoo.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-athleta-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "barclaycardus.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-athleta-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "maxrewards.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-carnival-world-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "awardwallet.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-carnival-world-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "barclaycardus.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-carnival-world-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "carnival.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-celebrity-cruises-visa-signature",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "frequentmiler.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-celebrity-cruises-visa-signature",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "maxrewards.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-celebrity-cruises-visa-signature",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "thepointsguy.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-frontier-airlines-world-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "barclaycardus.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-frontier-airlines-world-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "businessinsider.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-frontier-airlines-world-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "flyfrontier.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-gap-good-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "barclaycardus.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-gap-good-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "maxrewards.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-gap-good-rewards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "upgradedpoints.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-jetblue",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "barclaycardus.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-jetblue",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "maxrewards.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-jetblue",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "wallethub.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-royal-caribbean-visa-signature",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "cruisecritic.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-royal-caribbean-visa-signature",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "maxrewards.com",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-royal-caribbean-visa-signature",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "royalcaribbean.com",
+      "popular": false
+    },
+    {
+      "card_id": "chase-ritz-carlton",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "Chase Official (archived)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-ritz-carlton",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "Doctor of Credit",
+      "popular": false
+    },
+    {
+      "card_id": "emirates-skywards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "barclaycardus.com",
+      "popular": false
+    },
+    {
+      "card_id": "emirates-skywards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "finance.yahoo.com",
+      "popular": false
+    },
+    {
+      "card_id": "emirates-skywards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "maxrewards.com",
+      "popular": false
+    },
+    {
+      "card_id": "emirates-skywards-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "onemileatatime.com",
+      "popular": false
+    },
+    {
+      "card_id": "hawaiian-airlines-world-elite-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "barclaycardus.com",
+      "popular": false
+    },
+    {
+      "card_id": "hawaiian-airlines-world-elite-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "maxrewards.com",
+      "popular": false
+    },
+    {
+      "card_id": "hawaiian-airlines-world-elite-mastercard",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "reddit.com/r/HawaiianAirlines",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-black",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "barclaycardus.com",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-black",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "luxurycard.com",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-black",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "thepointsguy.com",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-black",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "upgradedpoints.com",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-gold",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "awardwallet.com",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-gold",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "barclaycardus.com",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-gold",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "luxurycard.com",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-gold",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "upgradedpoints.com",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-titanium",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "awardwallet.com",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-titanium",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "barclaycardus.com",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-titanium",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "luxurycard.com",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-titanium",
+      "type": "non_https_source",
+      "severity": "low",
+      "field": "sources",
+      "detail": "upgradedpoints.com",
+      "popular": false
+    },
+    {
+      "card_id": "amazon-visa",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "amex-amazon-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "amex-amazon-biz-prime",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-15 (72 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "amex-blue-cash-everyday",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-23 (95 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "amex-blue-from-american-express",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "amex-cash-magnet",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "amex-delta-blue",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-23 (95 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "amex-everyday",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "amex-everyday-preferred",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "amex-graphite-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "amex-green",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-20 (67 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "amex-morgan-stanley-blue",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "apple-card",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-10-13 (13 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-aadvantage-silver",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-aarp-essential-rewards-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-aarp-travel-rewards-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-athleta-rewards-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-carnival-world-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-celebrity-cruises-visa-signature",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-frontier-airlines-world-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-gap-good-rewards-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-harley-davidson",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-jetblue",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-jetblue-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-jetblue-plus",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-11 (45 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-royal-caribbean-visa-signature",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-uber",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-ubereats",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-wyndham-earner",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-wyndham-earner-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-wyndham-earner-plus",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-wyndham-earner-premier",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-15 (41 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "bilt-blue",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-alaska-ascent",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-03 (84 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-alaska-atmos-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-04 (83 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-alaska-summit",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-05 (51 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-biz-advantage-customized-cash",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-biz-advantage-travel",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-biz-advantage-unlimited-cash",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-customized-cash-rewards-secured",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-premium-rewards",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-12 (44 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-premium-rewards-elite",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-royal-one",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-14 (73 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-royal-one-plus",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-14 (73 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-student-customized-cash-rewards",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-student-travel-rewards",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-travel-rewards",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-23 (95 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-unlimited-cash-rewards",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-12 (44 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "bread-cashback-american-express",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-journey-student",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-quicksilver",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-23 (95 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-quicksilver-one",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-quicksilver-secured",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-savor",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-11 (107 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-spark-cash-select",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-venture-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-07 (80 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-venture-one",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-venture-one-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-venture-x-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-23 (95 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "cathay-world-elite",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-aer-lingus-visa-signature",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-british-airways-visa-signature",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-disney-inspire",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-disney-premier",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-disney-visa",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-freedom-rise",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-hyatt-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-05 (51 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-iberia-visa-signature",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-ihg-premier",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-28 (28 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-ihg-premier-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-28 (28 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-ink-biz-premier",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-ritz-carlton",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-16 (102 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-southwest-performance-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-southwest-priority",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-united-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-united-club-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-united-club-infinite",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-united-gateway",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-united-quest",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-28 (28 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "choice-privileges-visa",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-aa-platinum-select",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-04 (83 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-aadvantage-globe",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-aadvantage-mileup",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-costco-anywhere",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-costco-biz",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-custom-cash",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-23 (95 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-dividend",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-double-cash",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-prestige",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-rewards-plus",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-secured-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-strata-premier",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "comenity-bed-bath-beyond-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "comenity-kayak-credit-card",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "comenity-ulta-beauty-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "discover-it-chrome",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "discover-it-miles",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-23 (95 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "discover-it-secured",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "discover-it-student-cash-back",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "discover-it-student-chrome",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "doordash-rewards-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "emirates-skywards-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "fidelity-rewards-visa-signature",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "hawaiian-airlines-world-elite-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-07 (80 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "hsbc-elite-credit",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "hsbc-premier",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "ihg-one-rewards-traveler",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "jpmorgan-reserve",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "kohls-charge",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-black",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-gold",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-titanium",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "marriott-bonvoy-bold",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-23 (95 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "marriott-bonvoy-bountiful",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-23 (95 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "my-gm-rewards-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "navy-federal-cashrewards",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "navy-federal-cashrewards-plus",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "navy-federal-flagship-rewards",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "navy-federal-go-rewards",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "navy-federal-more-rewards",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "penfed-gold-visa",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "penfed-pathfinder-rewards",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "penfed-platinum-rewards",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "penfed-power-cash-rewards",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "petal-1-visa",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "petal-2-visa",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "pnc-core-visa",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "pnc-points-visa",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "robinhood-gold",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "robinhood-platinum",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "sofi-credit",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "southwest-rapid-rewards-plus",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "southwest-rapid-rewards-premier",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "spirit-airlines-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "state-farm-cash-medallion",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "synchrony-amazon-prime-store-card",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "synchrony-amazon-store",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "synchrony-care-credit-rewards-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "synchrony-paypal-cashback-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "synchrony-sams-club-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "synchrony-sears-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "synchrony-verizon-visa",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "td-biz-solutions-credit",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "td-cash-credit",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "td-double-up-credit",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "td-first-class-visa-signature",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "upgrade-triple-cash-rewards-visa",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-altitude-connect",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-23 (95 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-altitude-go",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-altitude-go-secured",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-biz-altitude-connect",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-biz-leverage-visa",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-biz-triple-cash",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-04 (83 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-shopper-cash-rewards",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-11 (45 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-smartly",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-11 (45 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-visa-platinum",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "venmo-card",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "walgreens-mastercard",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "wells-fargo-attune",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "wells-fargo-autograph",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "wells-fargo-autograph-journey",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-04 (83 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "wells-fargo-choice-privileges",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-09-12 (44 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "wells-fargo-one-key-plus",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-08-04 (83 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "wells-fargo-reflect",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "wells-fargo-signify-biz-cash",
+      "type": "past_next_review",
+      "severity": "low",
+      "field": "next_review",
+      "detail": "next_review 2026-07-15 (103 days ago)",
+      "popular": false
+    },
+    {
+      "card_id": "amex-amazon-biz",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.americanexpress.com/us/customer-service/faq.amazon-program-update.html also used by amex-amazon-biz-prime",
+      "popular": false
+    },
+    {
+      "card_id": "amex-amazon-biz-prime",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.americanexpress.com/us/customer-service/faq.amazon-program-update.html also used by amex-amazon-biz",
+      "popular": false
+    },
+    {
+      "card_id": "amex-delta-gold",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.delta.com/us/en/skymiles/airline-credit-cards/american-express-personal-cards also used by amex-delta-reserve",
+      "popular": false
+    },
+    {
+      "card_id": "amex-hilton-honors",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.hilton.com/en/hilton-honors/credit-cards also used by amex-hilton-honors-aspire, amex-hilton-honors-biz, amex-hilton-surpass",
+      "popular": false
+    },
+    {
+      "card_id": "amex-hilton-honors-biz",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.hilton.com/en/hilton-honors/credit-cards also used by amex-hilton-honors-aspire, amex-hilton-honors, amex-hilton-surpass",
+      "popular": false
+    },
+    {
+      "card_id": "amex-hilton-surpass",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.hilton.com/en/hilton-honors/credit-cards also used by amex-hilton-honors-aspire, amex-hilton-honors-biz, amex-hilton-honors",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-aadvantage-silver",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://cards.barclaycardus.com/banking/cards also used by hawaiian-airlines-world-elite-mastercard",
+      "popular": false
+    },
+    {
+      "card_id": "bilt-palladium",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.bilt.com/card also used by bilt-obsidian",
+      "popular": false
+    },
+    {
+      "card_id": "boa-biz-advantage-customized-cash",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.bankofamerica.com/smallbusiness/credit-cards/terms-and-conditions also used by boa-biz-advantage-unlimited-cash",
+      "popular": false
+    },
+    {
+      "card_id": "boa-biz-advantage-unlimited-cash",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.bankofamerica.com/smallbusiness/credit-cards/terms-and-conditions also used by boa-biz-advantage-customized-cash",
+      "popular": false
+    },
+    {
+      "card_id": "citi-dividend",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.citi.com/credit-cards/view-all-credit-cards also used by citi-prestige, citi-rewards-plus",
+      "popular": false
+    },
+    {
+      "card_id": "citi-prestige",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.citi.com/credit-cards/view-all-credit-cards also used by citi-dividend, citi-rewards-plus",
+      "popular": false
+    },
+    {
+      "card_id": "citi-rewards-plus",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.citi.com/credit-cards/view-all-credit-cards also used by citi-dividend, citi-prestige",
+      "popular": false
+    },
+    {
+      "card_id": "hawaiian-airlines-world-elite-mastercard",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://cards.barclaycardus.com/banking/cards also used by barclays-aadvantage-silver",
+      "popular": false
+    },
+    {
+      "card_id": "navy-federal-cashrewards",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.navyfederal.org/loans-cards/credit-cards/cash-rewards.html also used by navy-federal-cashrewards-plus",
+      "popular": false
+    },
+    {
+      "card_id": "navy-federal-cashrewards-plus",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.navyfederal.org/loans-cards/credit-cards/cash-rewards.html also used by navy-federal-cashrewards",
+      "popular": false
+    },
+    {
+      "card_id": "pnc-core-visa",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.pnc.com/en/personal-banking/banking/credit-cards.html also used by pnc-points-visa",
+      "popular": false
+    },
+    {
+      "card_id": "pnc-points-visa",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.pnc.com/en/personal-banking/banking/credit-cards.html also used by pnc-core-visa",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-amazon-business",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.usbank.com/business-banking/business-credit-cards/amazon-business-credit-cards.html also used by us-bank-prime-business",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-prime-business",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.usbank.com/business-banking/business-credit-cards/amazon-business-credit-cards.html also used by us-bank-amazon-business",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-shopper-cash-rewards",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.usbank.com/credit-cards.html also used by us-bank-visa-platinum",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-visa-platinum",
+      "type": "shared_official_url",
+      "severity": "low",
+      "field": "sources",
+      "detail": "first official URL https://www.usbank.com/credit-cards.html also used by us-bank-shopper-cash-rewards",
+      "popular": false
+    },
+    {
+      "card_id": "amex-amazon-biz",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/amazon-business/ -> https://www.americanexpress.com/en-us/business/shop/error/404/",
+      "popular": false
+    },
+    {
+      "card_id": "citi-rewards-plus",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://cardtier.com/cards/citi-rewards-plus -> https://www.cardtier.com/cards/citi-rewards-plus",
+      "popular": false
+    },
+    {
+      "card_id": "citi-rewards-plus",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://www.citi.com/credit-cards/citi-rewards-plus-credit-card -> https://www.citi.com/credit-cards/citi-strata-credit-card",
+      "popular": false
+    },
+    {
+      "card_id": "spirit-airlines-mastercard",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://www.bankofamerica.com/credit-cards/products/spirit-airlines-credit-card/ -> https://www.bankofamerica.com/credit-cards/",
+      "popular": false
+    },
+    {
+      "card_id": "upgrade-triple-cash-rewards-visa",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://www.upgrade.com/upgrade-card/triple-cash/ -> https://www.upgrade.com/credit-card/onecard-essentials/",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-altitude-reserve",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html -> https://www.usbank.com/credit-cards.html",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-biz-leverage-visa",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://www.usbank.com/business-banking/business-credit-cards/business-leverage-rewards-credit-card.html -> https://www.usbank.com/business-banking/business-credit-cards.html",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-shopper-cash-rewards",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://www.usbank.com/credit-cards/shopper-cash-rewards-visa-signature-credit-card.html -> https://www.usbank.com/credit-cards.html",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-visa-platinum",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://www.usbank.com/credit-cards/visa-platinum-credit-card.html -> https://www.usbank.com/credit-cards/shield-visa-credit-card.html",
+      "popular": false
+    },
+    {
+      "card_id": "wells-fargo-attune",
+      "type": "source_redirects_elsewhere",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://creditcards.wellsfargo.com/attune-credit-card/ -> https://creditcards.wellsfargo.com/",
+      "popular": false
+    },
+    {
+      "card_id": "chase-aer-lingus-visa-signature",
+      "type": "source_unreachable",
+      "severity": "low",
+      "field": "sources",
+      "detail": "https://creditcards.chase.com/travel-credit-cards/avios/aer-lingus: ECONNRESET",
+      "popular": false
+    },
+    {
+      "card_id": "boa-premium-rewards",
+      "type": "stale_benefit",
+      "severity": "low",
+      "field": "recurring_credits[1].description",
+      "detail": "Global Entry fee is $120 since Oct 2024; many issuers raised the credit to $120 (verify per card): \"Up to $100 statement credit every four years for Global Entry or TSA PreCheck application fees charged to the card.\"",
+      "popular": false
+    },
+    {
+      "card_id": "chase-ritz-carlton",
+      "type": "stale_benefit",
+      "severity": "low",
+      "field": "travel_benefits.other_benefits[1]",
+      "detail": "Global Entry fee is $120 since Oct 2024; many issuers raised the credit to $120 (verify per card): \": Up to $100 statement credit for Global Entry or TSA PreCheck application fee every 4 years.\"",
+      "popular": false
+    },
+    {
+      "card_id": "fidelity-rewards-visa-signature",
+      "type": "stale_benefit",
+      "severity": "low",
+      "field": "travel_benefits.other_benefits[0]",
+      "detail": "Global Entry fee is $120 since Oct 2024; many issuers raised the credit to $120 (verify per card): \"TSA PreCheck/Global Entry credit: $100 statement credit for TSA PreCheck or Global Entry fee\"",
+      "popular": false
+    },
+    {
+      "card_id": "jpmorgan-reserve",
+      "type": "stale_benefit",
+      "severity": "low",
+      "field": "recurring_credits[7].description",
+      "detail": "Global Entry fee is $120 since Oct 2024; many issuers raised the credit to $120 (verify per card): \"Up to $100 statement credit for Global Entry or TSA PreCheck application fee, every 4 years.\"",
+      "popular": false
+    },
+    {
+      "card_id": "td-first-class-visa-signature",
+      "type": "stale_benefit",
+      "severity": "low",
+      "field": "travel_benefits.other_benefits[2]",
+      "detail": "Global Entry fee is $120 since Oct 2024; many issuers raised the credit to $120 (verify per card): \"TSA PreCheck/Global Entry credit: Up to $100 credit for TSA PreCheck or Global Entry\"",
+      "popular": false
+    },
+    {
+      "card_id": "amazon-visa",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "amex-blue-from-american-express",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "amex-delta-blue",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-05-08 (171 days)",
+      "popular": false
+    },
+    {
+      "card_id": "amex-everyday-preferred",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-24 (185 days)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-aarp-essential-rewards-mastercard",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-aarp-travel-rewards-mastercard",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-celebrity-cruises-visa-signature",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-frontier-airlines-world-mastercard",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-harley-davidson",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-jetblue",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-royal-caribbean-visa-signature",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-uber",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-ubereats",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-wyndham-earner",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "barclays-wyndham-earner-plus",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "bilt-blue",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-biz-advantage-travel",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-customized-cash-rewards-secured",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-premium-rewards-elite",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-student-customized-cash-rewards",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-student-travel-rewards",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "boa-travel-rewards",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-24 (185 days)",
+      "popular": false
+    },
+    {
+      "card_id": "bread-cashback-american-express",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-journey-student",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-quicksilver",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-25 (184 days)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-quicksilver-one",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-quicksilver-secured",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-spark-cash-select",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-venture-one",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "capital-one-venture-x-biz",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-24 (185 days)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-aer-lingus-visa-signature",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-british-airways-visa-signature",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-disney-inspire",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-freedom-rise",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-iberia-visa-signature",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-ink-biz-premier",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "chase-ritz-carlton",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-17 (192 days)",
+      "popular": false
+    },
+    {
+      "card_id": "choice-privileges-visa",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-costco-anywhere",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-double-cash",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-25 (184 days)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-secured-mastercard",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "citi-strata-premier",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-25 (184 days)",
+      "popular": false
+    },
+    {
+      "card_id": "comenity-bed-bath-beyond-mastercard",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "comenity-kayak-credit-card",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "comenity-ulta-beauty-mastercard",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "discover-it-miles",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-24 (185 days)",
+      "popular": false
+    },
+    {
+      "card_id": "discover-it-secured",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "discover-it-student-cash-back",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "discover-it-student-chrome",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "doordash-rewards-mastercard",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "emirates-skywards-mastercard",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "fidelity-rewards-visa-signature",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "kohls-charge",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-black",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-gold",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "luxury-card-titanium",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "marriott-bonvoy-bold",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-24 (185 days)",
+      "popular": false
+    },
+    {
+      "card_id": "navy-federal-cashrewards",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "navy-federal-cashrewards-plus",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "navy-federal-go-rewards",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "navy-federal-more-rewards",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "penfed-gold-visa",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "penfed-pathfinder-rewards",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "penfed-platinum-rewards",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "penfed-power-cash-rewards",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "petal-1-visa",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "petal-2-visa",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "pnc-core-visa",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "pnc-points-visa",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "sofi-credit",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "spirit-airlines-mastercard",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "synchrony-amazon-prime-store-card",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "synchrony-amazon-store",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "synchrony-care-credit-rewards-mastercard",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "synchrony-sams-club-mastercard",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "synchrony-verizon-visa",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "td-first-class-visa-signature",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-altitude-connect",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-24 (185 days)",
+      "popular": false
+    },
+    {
+      "card_id": "us-bank-altitude-go-secured",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "walgreens-mastercard",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    },
+    {
+      "card_id": "wells-fargo-autograph",
+      "type": "stale_last_verified",
+      "severity": "low",
+      "field": "last_verified",
+      "detail": "last_verified 2026-04-16 (193 days)",
+      "popular": false
+    }
+  ]
+}

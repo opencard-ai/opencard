@@ -1,0 +1,14 @@
+{
+  "updated": "2026-11-13T19:39:44.659Z",
+  "fetch_failures": {
+    "amex-gold": [
+      "issuer_error_or_block_page"
+    ],
+    "amex-platinum": [
+      "issuer_error_or_block_page"
+    ],
+    "amex-blue-cash-preferred": [
+      "issuer_error_or_block_page"
+    ]
+  }
+}

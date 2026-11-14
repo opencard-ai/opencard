@@ -1,0 +1,306 @@
+{
+  "schema_version": 1,
+  "kind": "seed",
+  "source_root": "home",
+  "seeded_from": "Mac read-only export 2026-11-13 (copy-only; Mac files unmodified; sha256 of every source verified identical to the export before scrubbing)",
+  "last_run_id": null,
+  "notified_run_id": null,
+  "writer_epoch": null,
+  "scrubbing": {
+    "rule": "Query strings and fragments removed from every http(s) URL in every string field (scheme+host+path kept). No other content changed; JSON validity and formatting preserved (verified: parsed original with the same rule applied deep-equals parsed seeded file).",
+    "applied_to": "audit/*-url-check.json, audit/*-db-audit.json, audit/*-db-audit.md, offer-watch/history.jsonl (only files containing such URLs were changed)",
+    "urls_stripped_total": 290,
+    "modified_files": [
+      "offer-watch/history.jsonl",
+      "audit/2026-10-02-db-audit.json",
+      "audit/2026-10-02-url-check.json",
+      "audit/2026-10-05-db-audit.json",
+      "audit/2026-10-05-url-check.json",
+      "audit/2026-10-12-db-audit.json",
+      "audit/2026-10-12-url-check.json",
+      "audit/2026-10-19-db-audit.json",
+      "audit/2026-10-19-url-check.json",
+      "audit/2026-10-26-db-audit.json",
+      "audit/2026-10-26-db-audit.md",
+      "audit/2026-10-26-url-check.json",
+      "audit/2026-11-02-db-audit.json",
+      "audit/2026-11-02-db-audit.md",
+      "audit/2026-11-02-url-check.json",
+      "audit/2026-11-09-db-audit.json",
+      "audit/2026-11-09-db-audit.md",
+      "audit/2026-11-09-url-check.json"
+    ],
+    "unmodified_files": [
+      "offer-watch/daily-state.json",
+      "offer-watch/ledger.json",
+      "audit/2026-10-02-db-audit.md",
+      "audit/2026-10-05-db-audit.md",
+      "audit/2026-10-12-db-audit.md",
+      "audit/2026-10-19-db-audit.md"
+    ]
+  },
+  "scans": {
+    "gitleaks": "0 findings (dir --redact)",
+    "ops_notify_sanitizer": "0 hits after excluding the 3 known false-positive URLs below by exact match; all raw hits are those URLs in audit/*-url-check.json url/final_url"
+  },
+  "known_false_positives": [
+    {
+      "host": "media.choicehotels.com",
+      "url_sha256": "8e81bc6c86f1f9fe65216df6e68ae717413c0c4a99b180ad82dd26f83896dabb",
+      "fields": [
+        "url",
+        "final_url"
+      ],
+      "files": "audit/*-url-check.json",
+      "category": "token (high-entropy URL path segment)",
+      "already_public_in_main_data_files": 1,
+      "note": "Public card/benefit document URL; not a credential. Identified by sha256 of the exact URL."
+    },
+    {
+      "host": "support.biltrewards.com",
+      "url_sha256": "dce469d5df52f5177ba434cb3fa8380d7773512387214314c6f96adb69ce4a26",
+      "fields": [
+        "url",
+        "final_url"
+      ],
+      "files": "audit/*-url-check.json",
+      "category": "token (high-entropy URL path segment)",
+      "already_public_in_main_data_files": 7,
+      "note": "Public card/benefit document URL; not a credential. Identified by sha256 of the exact URL."
+    },
+    {
+      "host": "www.swamedia.com",
+      "url_sha256": "c123a61a1f4c6d0db6d54c7684500c613295ce8cb59058e6499dd1a49bb26bbe",
+      "fields": [
+        "url",
+        "final_url"
+      ],
+      "files": "audit/*-url-check.json",
+      "category": "token (high-entropy URL path segment)",
+      "already_public_in_main_data_files": 8,
+      "note": "Public card/benefit document URL; not a credential. Identified by sha256 of the exact URL."
+    }
+  ],
+  "excluded_from_seed": [
+    ".openclaw/workspace/opencard/artifacts/offer-watch/* (stale pre-wrapper copies)",
+    ".openclaw/state/opencard-offer-watch/.lockhash (npm lock hash, not state)"
+  ],
+  "files": [
+    {
+      "path": "offer-watch/daily-state.json",
+      "source": ".openclaw/state/opencard-offer-watch/daily-state.json",
+      "mac_sha256": "e72b5994c701ee0af0d8ccef4ecac53a4c9b0797333e1a85071947fb4e8a516f",
+      "sha256": "e72b5994c701ee0af0d8ccef4ecac53a4c9b0797333e1a85071947fb4e8a516f",
+      "size": 272,
+      "modified": false,
+      "urls_stripped": 0
+    },
+    {
+      "path": "offer-watch/history.jsonl",
+      "source": ".openclaw/state/opencard-offer-watch/history.jsonl",
+      "mac_sha256": "1c7ca2ee264982104f12efc8ac4b95c5a4f57ec5c7c9b051412b91d2813291f8",
+      "sha256": "bad82a6dbdf7c960247afa8436f3dbb1c8ba3c3bc1692d29ea72d7519722ac27",
+      "size": 30220,
+      "modified": true,
+      "urls_stripped": 3
+    },
+    {
+      "path": "offer-watch/ledger.json",
+      "source": ".openclaw/state/opencard-offer-watch/ledger.json",
+      "mac_sha256": "8e4652dc18142a34a8dde753f84b19998cf34e3e789071524c44f958c52b710b",
+      "sha256": "8e4652dc18142a34a8dde753f84b19998cf34e3e789071524c44f958c52b710b",
+      "size": 30553,
+      "modified": false,
+      "urls_stripped": 0
+    },
+    {
+      "path": "audit/2026-10-02-db-audit.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-02-db-audit.json",
+      "mac_sha256": "f63385dc6b97f8f241f79050dbdba15a215f75be3bcd97ed2f97a0e8e8be90da",
+      "sha256": "69dcf15fb57e2ac1bbeffe5146fd4aa95efed7008a59d886a1a7e3152493f630",
+      "size": 106676,
+      "modified": true,
+      "urls_stripped": 1
+    },
+    {
+      "path": "audit/2026-10-02-db-audit.md",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-02-db-audit.md",
+      "mac_sha256": "ec2a9faabdf25cbf5e09b452f1094530b1c5ab408395f9bd6be965e5959a05d9",
+      "sha256": "ec2a9faabdf25cbf5e09b452f1094530b1c5ab408395f9bd6be965e5959a05d9",
+      "size": 8809,
+      "modified": false,
+      "urls_stripped": 0
+    },
+    {
+      "path": "audit/2026-10-02-url-check.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-02-url-check.json",
+      "mac_sha256": "99beccd01f04a8108af024c82b2ce1164e8be402c871850e9f1e632b76cbcf26",
+      "sha256": "8915d0d5d179f7d125cd433255d9239cf54fb2ef7b6f07a41f4539df337d4412",
+      "size": 97398,
+      "modified": true,
+      "urls_stripped": 18
+    },
+    {
+      "path": "audit/2026-10-05-db-audit.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-05-db-audit.json",
+      "mac_sha256": "26ccf72721792b1f392d095eeecf07ae989d7a76d48581180da0298e9c6d3018",
+      "sha256": "01b42a16f91c433187b9ede14f39cea6dbaddd0795b2e9ae979ae91eb6901793",
+      "size": 106676,
+      "modified": true,
+      "urls_stripped": 2
+    },
+    {
+      "path": "audit/2026-10-05-db-audit.md",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-05-db-audit.md",
+      "mac_sha256": "e451353a5d4ab1eb4979a7275a03915bb88ebc48b1632da500cd15723de6bfbf",
+      "sha256": "e451353a5d4ab1eb4979a7275a03915bb88ebc48b1632da500cd15723de6bfbf",
+      "size": 8809,
+      "modified": false,
+      "urls_stripped": 0
+    },
+    {
+      "path": "audit/2026-10-05-url-check.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-05-url-check.json",
+      "mac_sha256": "79574fc992045c3fd2340fb17349f5afb357ac921ff6ac63b55f3db35e0450a9",
+      "sha256": "21e49730f44d1c6657682d067a58415ccbb1d45194be00e40c91d36dcef00190",
+      "size": 97398,
+      "modified": true,
+      "urls_stripped": 19
+    },
+    {
+      "path": "audit/2026-10-12-db-audit.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-12-db-audit.json",
+      "mac_sha256": "4a0558c83309a2e8403c3a0d592a69c558bb2808ab43600e3cf00f6cccd3b83d",
+      "sha256": "c1beef4980b3543aa228091567b7e28e8a8c8581f657ec016a347998ed9cf63f",
+      "size": 108934,
+      "modified": true,
+      "urls_stripped": 2
+    },
+    {
+      "path": "audit/2026-10-12-db-audit.md",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-12-db-audit.md",
+      "mac_sha256": "cc37b59045bc2587c1d7a2330d7d51ed8fce651ed4aac2bd2b3652c27e1cc5aa",
+      "sha256": "cc37b59045bc2587c1d7a2330d7d51ed8fce651ed4aac2bd2b3652c27e1cc5aa",
+      "size": 8810,
+      "modified": false,
+      "urls_stripped": 0
+    },
+    {
+      "path": "audit/2026-10-12-url-check.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-12-url-check.json",
+      "mac_sha256": "0d7dc1b558768a491266eb8a673e27621eeb930194a4852cc0e03686bcbcb38c",
+      "sha256": "c36d1753133df3e50a754a555e70ecb7fe9241486c788ed3547c6b1dd163e2b8",
+      "size": 97398,
+      "modified": true,
+      "urls_stripped": 19
+    },
+    {
+      "path": "audit/2026-10-19-db-audit.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-19-db-audit.json",
+      "mac_sha256": "e4be42d45ea53512a5ab48c8d2569a939cbf4b454995fefc2a15170063a2f5bf",
+      "sha256": "8198f300dcffe4895c07bd21a2523db018ed7da2c89987ca90e9085a763bad8c",
+      "size": 103534,
+      "modified": true,
+      "urls_stripped": 2
+    },
+    {
+      "path": "audit/2026-10-19-db-audit.md",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-19-db-audit.md",
+      "mac_sha256": "2882d83aea3707950ebdda6f942ad4d14031e094fe3ffd92ec53ab65511010c1",
+      "sha256": "2882d83aea3707950ebdda6f942ad4d14031e094fe3ffd92ec53ab65511010c1",
+      "size": 6649,
+      "modified": false,
+      "urls_stripped": 0
+    },
+    {
+      "path": "audit/2026-10-19-url-check.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-19-url-check.json",
+      "mac_sha256": "68f696bbfc03def61b76dab6f8d5ba085e290d33cf1e64714a74c62658747142",
+      "sha256": "38869916fad1be3158c500fbe85db389883178e56820b6b6101d32bf11f8a601",
+      "size": 97401,
+      "modified": true,
+      "urls_stripped": 19
+    },
+    {
+      "path": "audit/2026-10-26-db-audit.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-26-db-audit.json",
+      "mac_sha256": "4fc5850a5736591a8513e37ee0a4fc59e6678003d4982c9f9362591394ecc703",
+      "sha256": "94158350f8773486151d7b36f18711135b109530325a6283e9d4e8fb259aaf0f",
+      "size": 96869,
+      "modified": true,
+      "urls_stripped": 5
+    },
+    {
+      "path": "audit/2026-10-26-db-audit.md",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-26-db-audit.md",
+      "mac_sha256": "9d65d4b3dd80cf71329104f691176b98ec85fa978971ce94c9c3677e10ce053f",
+      "sha256": "66fbc5e239d96a0a179a2782ae1e9d641b11612ccddda13094cc2f4fbbf0635b",
+      "size": 2912,
+      "modified": true,
+      "urls_stripped": 1
+    },
+    {
+      "path": "audit/2026-10-26-url-check.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-26-url-check.json",
+      "mac_sha256": "f55b0555810e0a5a126e6ea177006fa08668c85a07f7cf56fe791e0f55f0a696",
+      "sha256": "63634f58aaacd43f235403a56f49114e8d1a17379aa285ff99baf1ad56a5f943",
+      "size": 135840,
+      "modified": true,
+      "urls_stripped": 61
+    },
+    {
+      "path": "audit/2026-11-02-db-audit.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-11-02-db-audit.json",
+      "mac_sha256": "35314439ad07e0082797b3f3d477d5426b24c9e07f8e8c7d5d6080ad6fe446c8",
+      "sha256": "c7bee0eacc2232a4ec454e79bf68393ba83f2661ad548765e90270810710724b",
+      "size": 102002,
+      "modified": true,
+      "urls_stripped": 4
+    },
+    {
+      "path": "audit/2026-11-02-db-audit.md",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-11-02-db-audit.md",
+      "mac_sha256": "9b17e666dc5b5b2d4c53e5e18404687ea0fa01f72a1c9b4b40c5782793d84574",
+      "sha256": "9e1951ebcd8924a137dd7e9396a9eb7535bd6bd493dee718331c91545a4f91de",
+      "size": 3948,
+      "modified": true,
+      "urls_stripped": 1
+    },
+    {
+      "path": "audit/2026-11-02-url-check.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-11-02-url-check.json",
+      "mac_sha256": "7ff94ec6a63c81ff47a90466bb00017cc661ff67d61d6e9983c78954c413d573",
+      "sha256": "a847521ea3f2e5392bb88fd650a6686339cb36fff7d0a45d4e2487d688e23a21",
+      "size": 136044,
+      "modified": true,
+      "urls_stripped": 62
+    },
+    {
+      "path": "audit/2026-11-09-db-audit.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-11-09-db-audit.json",
+      "mac_sha256": "c1843b10052b2f9d3ceece294c21a8e9c0f25528de7660934b23a98a0f40c5af",
+      "sha256": "70de70dcf15ed197f060a60d91acac24d94904124be207401c4e3a7ea95b8e05",
+      "size": 103211,
+      "modified": true,
+      "urls_stripped": 6
+    },
+    {
+      "path": "audit/2026-11-09-db-audit.md",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-11-09-db-audit.md",
+      "mac_sha256": "a03f0a9766773d9b72601d16dcaba9c16bd247e45885af01df2486e10e46abba",
+      "sha256": "53c675ec58b03cd3dd10709f3b75600665bbee4f23147730e1aaa38c0aeebc4a",
+      "size": 4118,
+      "modified": true,
+      "urls_stripped": 1
+    },
+    {
+      "path": "audit/2026-11-09-url-check.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-11-09-url-check.json",
+      "mac_sha256": "35e658251e4755d4dbcad3c3a81d9ab86085f0a51ec95da83cf295f491aadccd",
+      "sha256": "6bd775e93e03469e647c982598dd2f96e578cf296ef736ed1bdc11b871f7133c",
+      "size": 135767,
+      "modified": true,
+      "urls_stripped": 64
+    }
+  ]
+}

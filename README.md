@@ -4,7 +4,7 @@ This branch stores the durable state of OpenCard's cloud ops jobs, per the desig
 `docs/operations/offer-audit-state-and-notify-design.md` (PR #94, option A1). It shares no
 history with `main` and must **never** be merged into `main` or used as a PR base.
 
-Status: **initialised empty.** No real state has been seeded yet; no workflow reads or writes it yet.
+Status: seeded 2026-11-13 from Mac read-only export; see MANIFEST.json
 
 ## Layout
 ```

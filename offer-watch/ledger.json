@@ -1,0 +1,842 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-13T19:39:44.619Z",
+  "entries": {
+    "327642fe7d1ae8e053c08ef0623beece1084c4037c82b142ea1920d3961a80a8": {
+      "card_id": "amex-morgan-stanley-platinum",
+      "field": "welcome_offer.bonus_points",
+      "value": 80000,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-09-30T05:53:44.022Z",
+      "last_seen": "2026-09-30T05:56:13.544Z",
+      "last_notified": "2026-09-30T05:53:44.022Z",
+      "commit": "a929c991bc891cb493ae37f321ae7380a36b8119",
+      "published_at": "2026-09-30T05:56:13.543Z",
+      "failure": null
+    },
+    "8a5bcc4745cb8e477a70467367f48af57893006f08feb58e040d6848a215060c": {
+      "card_id": "amex-morgan-stanley-platinum",
+      "field": "welcome_offer.is_elevated",
+      "value": false,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-09-30T05:53:44.254Z",
+      "last_seen": "2026-09-30T05:56:13.544Z",
+      "last_notified": null,
+      "commit": "a929c991bc891cb493ae37f321ae7380a36b8119",
+      "published_at": "2026-09-30T05:56:13.543Z",
+      "failure": null
+    },
+    "5b5cc5eaca4c5d20989e5cd65ece33068311fc53d85fbdef69e6049f200fd2bb": {
+      "card_id": "amex-morgan-stanley-platinum",
+      "field": "welcome_offer.expiry",
+      "value": null,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-09-30T05:53:44.254Z",
+      "last_seen": "2026-09-30T05:56:13.544Z",
+      "last_notified": null,
+      "commit": "a929c991bc891cb493ae37f321ae7380a36b8119",
+      "published_at": "2026-09-30T05:56:13.543Z",
+      "failure": null
+    },
+    "55f574cae5dfa4fbc2e8b830e7a14fca5afe1c66fd23a5298e42a8e6719c8023": {
+      "card_id": "amex-morgan-stanley-platinum",
+      "field": "welcome_offer.offer_status",
+      "value": "public",
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-09-30T05:53:44.254Z",
+      "last_seen": "2026-09-30T05:56:13.544Z",
+      "last_notified": null,
+      "commit": "a929c991bc891cb493ae37f321ae7380a36b8119",
+      "published_at": "2026-09-30T05:56:13.543Z",
+      "failure": null
+    },
+    "f46eb409e41ff4c1d7bff9bebe15a353ec4d4a268c38e8ba65b28363e5dafc3c": {
+      "card_id": "amex-delta-gold",
+      "field": "welcome_offer.spending_requirement",
+      "value": 3000,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-09-30T14:43:54.668Z",
+      "last_seen": "2026-09-30T14:46:41.835Z",
+      "last_notified": "2026-09-30T14:43:54.668Z",
+      "commit": "8191ac96058eddd90b88943d296e42d177ec8492",
+      "published_at": "2026-09-30T14:46:41.834Z",
+      "failure": null
+    },
+    "f707aea4aa4c02fb18e9af92c7ded2f0ba4f6bc15d9197d49da8bfbd130840ab": {
+      "card_id": "amex-delta-platinum",
+      "field": "welcome_offer.spending_requirement",
+      "value": 4000,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-09-30T14:43:54.668Z",
+      "last_seen": "2026-09-30T14:46:41.835Z",
+      "last_notified": "2026-09-30T14:43:54.668Z",
+      "commit": "e20a6715fdbc4200cb18ef68399625c083fba99f",
+      "published_at": "2026-09-30T14:46:41.834Z",
+      "failure": null
+    },
+    "d8ceb2674aed6074a7ee653a39ea6cea64184f7ed60c2f1f64003579f46cdde9": {
+      "card_id": "amex-marriott-bevy",
+      "field": "welcome_offer.expiry",
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-10-01T18:34:05.938Z",
+      "last_seen": "2026-10-01T18:34:05.938Z",
+      "last_notified": null,
+      "reasons": [
+        "official_page_offer_not_parsed"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "ecb298a5c6866ac8f8117ef62babbb195669646bd9f7d1d824c5a89b865e4f63": {
+      "card_id": "amex-marriott-brilliant",
+      "field": "welcome_offer.expiry",
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-10-01T18:34:05.938Z",
+      "last_seen": "2026-10-01T18:34:05.938Z",
+      "last_notified": null,
+      "reasons": [
+        "expired_offer_still_shown_on_official_page"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "8a7f2038641a745cea162d30f78057820e8c7075d22f8789a0fe06d3410bf53d": {
+      "card_id": "amex-marriott-brilliant",
+      "field": "welcome_offer.bonus_points",
+      "value": 100000,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-10-01T19:44:16.079Z",
+      "last_seen": "2026-10-01T19:44:16.079Z",
+      "last_notified": null,
+      "commit": "cadf860336c0d1372520e7143e351a6d3205d40b",
+      "published_at": "2026-10-01T19:44:16.078Z",
+      "failure": null
+    },
+    "7fe2ec90cdef6945ab671475a13c5504f97ad04e16b7f1f3139d82c20648520b": {
+      "card_id": "amex-marriott-brilliant",
+      "field": "welcome_offer.statement_credit",
+      "value": null,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-10-01T19:44:16.079Z",
+      "last_seen": "2026-10-01T19:44:16.079Z",
+      "last_notified": null,
+      "commit": "cadf860336c0d1372520e7143e351a6d3205d40b",
+      "published_at": "2026-10-01T19:44:16.078Z",
+      "failure": null
+    },
+    "bee847d4faa2f160cec0456d11cccb3953cbf94f81df650406da898df0b959c4": {
+      "card_id": "amex-marriott-brilliant",
+      "field": "welcome_offer.is_elevated",
+      "value": false,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-10-01T19:44:16.079Z",
+      "last_seen": "2026-10-01T19:44:16.079Z",
+      "last_notified": null,
+      "commit": "cadf860336c0d1372520e7143e351a6d3205d40b",
+      "published_at": "2026-10-01T19:44:16.078Z",
+      "failure": null
+    },
+    "dcd9715f833ae5c8116ec64db1bdd15d05427e50d6ff4ed3a23d2a30fc07622b": {
+      "card_id": "amex-marriott-brilliant",
+      "field": "welcome_offer.expiry",
+      "value": null,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-10-01T19:44:16.079Z",
+      "last_seen": "2026-10-01T19:44:16.079Z",
+      "last_notified": null,
+      "commit": "cadf860336c0d1372520e7143e351a6d3205d40b",
+      "published_at": "2026-10-01T19:44:16.078Z",
+      "failure": null
+    },
+    "d2e0e1b61d3b691ebee8f48825f0ec29a65bb8d940a059aea52577d29aa1711c": {
+      "card_id": "amex-marriott-brilliant",
+      "field": "welcome_offer.offer_status",
+      "value": "public",
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-10-01T19:44:16.079Z",
+      "last_seen": "2026-10-01T19:44:16.079Z",
+      "last_notified": null,
+      "commit": "cadf860336c0d1372520e7143e351a6d3205d40b",
+      "published_at": "2026-10-01T19:44:16.078Z",
+      "failure": null
+    },
+    "bc10c1bcbeec221204c0296cb7b115bae940c6610cf552529cb0b4d42164c6fe": {
+      "card_id": "amex-marriott-bevy",
+      "field": "welcome_offer.bonus_points",
+      "value": 85000,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-10-01T19:44:16.079Z",
+      "last_seen": "2026-10-01T19:44:16.079Z",
+      "last_notified": null,
+      "commit": "474e453ecba00de156404bbd65ee260dbb0ad5a8",
+      "published_at": "2026-10-01T19:44:16.078Z",
+      "failure": null
+    },
+    "a6f9b72997939dc2a1de3c9da33def74ca7e318d95f40682ddd07be0da991bee": {
+      "card_id": "amex-marriott-bevy",
+      "field": "welcome_offer.statement_credit",
+      "value": null,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-10-01T19:44:16.079Z",
+      "last_seen": "2026-10-01T19:44:16.079Z",
+      "last_notified": null,
+      "commit": "474e453ecba00de156404bbd65ee260dbb0ad5a8",
+      "published_at": "2026-10-01T19:44:16.078Z",
+      "failure": null
+    },
+    "244dab076964690ce6b5d815c9a68e0b85df333cc98b746da452214853ebf3a6": {
+      "card_id": "amex-marriott-bevy",
+      "field": "welcome_offer.is_elevated",
+      "value": false,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-10-01T19:44:16.079Z",
+      "last_seen": "2026-10-01T19:44:16.079Z",
+      "last_notified": null,
+      "commit": "474e453ecba00de156404bbd65ee260dbb0ad5a8",
+      "published_at": "2026-10-01T19:44:16.078Z",
+      "failure": null
+    },
+    "17bdf71ccbf70e6a2289287e4ae963a1b87cb7130d6ccd4f405f3e387adf4828": {
+      "card_id": "amex-marriott-bevy",
+      "field": "welcome_offer.expiry",
+      "value": null,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-10-01T19:44:16.079Z",
+      "last_seen": "2026-10-01T19:44:16.079Z",
+      "last_notified": null,
+      "commit": "474e453ecba00de156404bbd65ee260dbb0ad5a8",
+      "published_at": "2026-10-01T19:44:16.078Z",
+      "failure": null
+    },
+    "e1c0db6ada044a1adcc547e88fb4efd5884eb231ee8471e05273c770c2e9fe7c": {
+      "card_id": "amex-marriott-bevy",
+      "field": "welcome_offer.offer_status",
+      "value": "public",
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-10-01T19:44:16.079Z",
+      "last_seen": "2026-10-01T19:44:16.079Z",
+      "last_notified": null,
+      "commit": "474e453ecba00de156404bbd65ee260dbb0ad5a8",
+      "published_at": "2026-10-01T19:44:16.078Z",
+      "failure": null
+    },
+    "a270255a090732357de9656ed7fd96d39d16fcec46625bbb12d35f364c3679dd": {
+      "card_id": "chase-freedom-flex",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "unchanged",
+      "first_seen": "2026-10-20T18:36:50.467Z",
+      "last_seen": "2026-11-13T19:39:44.397Z",
+      "last_notified": "2026-10-20T18:36:50.467Z"
+    },
+    "405c794fd7c330e4241d5b542586f1bbb45aee0b2aba60b2df018312bd627824": {
+      "card_id": "us-bank-cash-plus",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "unchanged",
+      "first_seen": "2026-10-20T18:36:50.467Z",
+      "last_seen": "2026-11-13T19:39:44.397Z",
+      "last_notified": "2026-10-20T18:36:50.467Z"
+    },
+    "9d84f0c3427681972d4626e51783732cd14db8341b40bc8e2d9f876698d4bdb7": {
+      "card_id": "boa-student-customized-cash-rewards",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "unchanged",
+      "first_seen": "2026-10-20T18:36:50.467Z",
+      "last_seen": "2026-11-13T19:39:44.397Z",
+      "last_notified": "2026-10-20T18:36:50.467Z"
+    },
+    "d37def1bc70c291551dfeba6033aa6f8a087f0e61eee87d1455a10491ee7a5d9": {
+      "card_id": "boa-customized-cash-rewards",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "unchanged",
+      "first_seen": "2026-10-20T18:36:50.467Z",
+      "last_seen": "2026-11-13T19:39:44.397Z",
+      "last_notified": "2026-10-20T18:36:50.467Z"
+    },
+    "7d6535f7a64ee0977db9c1b4478f3a94b7b1124f31ac7a70e1739476b7460847": {
+      "card_id": "chase-southwest-premier-biz",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "unchanged",
+      "first_seen": "2026-10-20T18:36:50.467Z",
+      "last_seen": "2026-11-13T19:39:44.397Z",
+      "last_notified": "2026-10-20T18:36:50.467Z"
+    },
+    "54b5293902b5e3db0994366285055d51e0fe94e85ba35149d3110db538580e4d": {
+      "card_id": "wells-fargo-one-key",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "unchanged",
+      "first_seen": "2026-10-20T18:36:50.467Z",
+      "last_seen": "2026-11-13T19:39:44.397Z",
+      "last_notified": "2026-10-20T18:36:50.467Z"
+    },
+    "db4599fe9e3e0652670c5329e82e88e4bd58b59c5fec4692c69fef5cca87a6b6": {
+      "card_id": "pnc-cash-rewards-visa",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-10-20T18:36:50.467Z",
+      "last_seen": "2026-11-01T19:37:34.758Z",
+      "last_notified": "2026-10-20T18:36:50.467Z"
+    },
+    "8c95035fc6c3d8d2662ab40101f6db28f462b7adc52704593283e5b528e3da62": {
+      "card_id": "us-bank-harley-davidson",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-10-20T18:36:50.467Z",
+      "last_seen": "2026-11-01T19:37:34.758Z",
+      "last_notified": "2026-10-20T18:36:50.467Z"
+    },
+    "9762303c872c2ed0b976874134fa1a9d6ec900ed98f9a9f641b7ed98d042939a": {
+      "card_id": "amex-blue-biz-plus",
+      "field": "welcome_offer.bonus_points",
+      "value": 50000,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-10-20T18:36:50.467Z",
+      "last_seen": "2026-10-25T18:36:46.251Z",
+      "last_notified": "2026-10-25T18:36:46.024Z",
+      "reasons": [
+        "bonus_jump_over_3x"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "869403254a32b24e0aa292a61c6ef63bfa1500559822adce7e7e6d02425b2138": {
+      "card_id": "amex-blue-biz-plus",
+      "field": "welcome_offer.spending_requirement",
+      "value": 5000,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-10-20T18:36:50.467Z",
+      "last_seen": "2026-10-25T18:36:46.251Z",
+      "last_notified": "2026-10-25T18:36:46.024Z",
+      "reasons": [
+        "bonus_change_held_terms_not_applied_alone"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "612c15719232c4c7201512e9dbb24d71a12eec7533d092ea376cd1204f825cf0": {
+      "card_id": "pnc-cash-rewards-visa",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-10-20T18:36:50.768Z",
+      "last_seen": "2026-11-01T19:37:34.994Z",
+      "last_notified": null,
+      "reasons": [
+        "not_marked_official"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "2b28bfce67ef492950e5f478b3738d092db0750ad2a9372185428d9d417c4a59": {
+      "card_id": "us-bank-harley-davidson",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-10-20T18:36:50.768Z",
+      "last_seen": "2026-11-01T19:37:34.994Z",
+      "last_notified": null,
+      "reasons": [
+        "hold_only_watch_entry",
+        "no_welcome_offer_text_on_official_page"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "9a54aee5ed56791b0ce20f3f68995cd89abbf20008cc1490b6662da59538efb8": {
+      "card_id": "amex-blue-cash-preferred",
+      "field": "welcome_offer.bonus_points",
+      "value": 300,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-10-22T18:35:57.077Z",
+      "last_seen": "2026-11-04T19:41:13.229Z",
+      "last_notified": "2026-11-04T19:36:53.865Z",
+      "commit": "32be52aa682cf043992f518bfea72fe26da90bec",
+      "published_at": "2026-11-04T19:41:13.228Z",
+      "failure": null
+    },
+    "1ad30fc1febd6d945ec66bc9a1fa86b737616014f3ee1ae220c84d52c7bad326": {
+      "card_id": "amex-blue-cash-preferred",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-10-24T18:36:13.886Z",
+      "last_seen": "2026-11-13T19:39:44.397Z",
+      "last_notified": "2026-10-24T18:36:13.886Z"
+    },
+    "f6b5e924bea7f84e6f8381a026d118fb5cecbee261a62f11e3e3640170abe95e": {
+      "card_id": "amex-blue-cash-preferred",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-10-24T18:36:14.107Z",
+      "last_seen": "2026-11-13T19:39:44.619Z",
+      "last_notified": null,
+      "reasons": [
+        "not_marked_official"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "31bb33845eb3b6b61afa0140e3446c58e610c6c4ebbfe4d90ab26e119fbed0c1": {
+      "card_id": "citi-aadvantage-executive",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-10-27T18:36:50.646Z",
+      "last_seen": "2026-10-28T18:37:39.522Z",
+      "last_notified": "2026-10-27T18:36:50.646Z"
+    },
+    "2bc1d64e5ee94d897af52b01c13d0d942ff1e06309da8c488d0e32316209c213": {
+      "card_id": "citi-aadvantage-executive",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-10-27T18:36:50.919Z",
+      "last_seen": "2026-10-28T18:37:39.750Z",
+      "last_notified": null,
+      "reasons": [
+        "source_conflicts"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "5e244f7ae394d3a4e98aea28adbc7441623497f2d399a49b7bb273c734ea2407": {
+      "card_id": "citi-aadvantage-executive",
+      "field": "welcome_offer.bonus_points",
+      "value": 80000,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-10-29T18:37:35.086Z",
+      "last_seen": "2026-10-29T18:39:41.379Z",
+      "last_notified": "2026-10-29T18:37:35.086Z",
+      "commit": "9494f0f2682c181869705b66990a7865506564d1",
+      "published_at": "2026-10-29T18:39:41.378Z",
+      "failure": null
+    },
+    "dce61ff587483a7941d1476f009b3768e2d4d44bc894f618e5eb6cf5f347536d": {
+      "card_id": "citi-aadvantage-executive",
+      "field": "welcome_offer.spending_requirement",
+      "value": 8000,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-10-29T18:37:35.086Z",
+      "last_seen": "2026-10-29T18:39:41.379Z",
+      "last_notified": "2026-10-29T18:37:35.086Z",
+      "commit": "9494f0f2682c181869705b66990a7865506564d1",
+      "published_at": "2026-10-29T18:39:41.378Z",
+      "failure": null
+    },
+    "aea317f2892615c382270315db2a0abab98b106816e710d48aad6d0aa4b79249": {
+      "card_id": "citi-aadvantage-executive",
+      "field": "welcome_offer.time_period_months",
+      "value": 3,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-10-29T18:37:35.086Z",
+      "last_seen": "2026-10-29T18:39:41.379Z",
+      "last_notified": "2026-10-29T18:37:35.086Z",
+      "commit": "9494f0f2682c181869705b66990a7865506564d1",
+      "published_at": "2026-10-29T18:39:41.378Z",
+      "failure": null
+    },
+    "9dd037f29dfb21a2815d0c1a5f154d64b5b9569aad3a93598730a21234213e31": {
+      "card_id": "chase-southwest-premier-biz",
+      "field": "welcome_offer.bonus_points",
+      "value": 60000,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-10-30T18:37:41.101Z",
+      "last_seen": "2026-10-30T18:39:26.435Z",
+      "last_notified": "2026-10-30T18:37:41.101Z",
+      "commit": "8c3215f9819bd4f3e231eed2bc0a60bc625b4489",
+      "published_at": "2026-10-30T18:39:26.434Z",
+      "failure": null
+    },
+    "13dfb5dc63c3634e8b322e33c0c46b32ce83d1fb3a307a63d98046af4bd3816f": {
+      "card_id": "pnc-cash-rewards-visa",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "unchanged",
+      "first_seen": "2026-11-02T19:36:52.200Z",
+      "last_seen": "2026-11-13T19:39:44.397Z",
+      "last_notified": "2026-11-02T19:36:52.200Z"
+    },
+    "6858d7058ae6da1cc0bc92bb42501e0e2edb7907f780decb6b6a91664ffb7b07": {
+      "card_id": "us-bank-harley-davidson",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "unchanged",
+      "first_seen": "2026-11-02T19:36:52.200Z",
+      "last_seen": "2026-11-13T19:39:44.397Z",
+      "last_notified": "2026-11-02T19:36:52.200Z"
+    },
+    "462eee32636883b9f88be0cbbeca14f0e8d520f0b54323481c40746392c5daaf": {
+      "card_id": "amex-gold",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-11-04T00:52:44.520Z",
+      "last_seen": "2026-11-13T19:39:44.397Z",
+      "last_notified": "2026-11-04T00:52:44.520Z"
+    },
+    "db4b8f6592db95cbb17e978c449965d1857ab9a30735f0e8b41dee9601ad8215": {
+      "card_id": "amex-platinum",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-11-04T00:52:44.520Z",
+      "last_seen": "2026-11-13T19:39:44.397Z",
+      "last_notified": "2026-11-04T00:52:44.520Z"
+    },
+    "8a0c698dc628e32900d6ac77da7cf70e98a49438b5d6d2593b8d0305bdb15186": {
+      "card_id": "chase-freedom-unlimited",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "unchanged",
+      "first_seen": "2026-11-04T00:52:44.520Z",
+      "last_seen": "2026-11-13T19:39:44.397Z",
+      "last_notified": "2026-11-04T00:52:44.520Z"
+    },
+    "a7f3088113eedd2aba110f74e744fc09f1688619a571b09a4c7e555921f05702": {
+      "card_id": "barclays-jetblue-premier",
+      "field": "welcome_offer.bonus_points",
+      "value": 80000,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-11-04T00:52:44.520Z",
+      "last_seen": "2026-11-04T01:13:37.812Z",
+      "last_notified": "2026-11-04T01:10:07.878Z",
+      "commit": "aa8760203f18c0e1c9dfa41a1781f85f0f311cd0",
+      "published_at": "2026-11-04T01:13:37.811Z",
+      "failure": null
+    },
+    "8ea8258ff4ee5ffe5d9e0556e6cbe8b19b3115f93431649b4a26454766c85eb2": {
+      "card_id": "amex-gold",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-11-04T00:52:44.759Z",
+      "last_seen": "2026-11-13T19:39:44.619Z",
+      "last_notified": null,
+      "reasons": [
+        "not_marked_official"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "ec5157e938049050dd4d31a4ff9e029ca62cf2c196bee7d5a7c946431ce5156c": {
+      "card_id": "amex-platinum",
+      "field": null,
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-11-04T00:52:44.759Z",
+      "last_seen": "2026-11-13T19:39:44.619Z",
+      "last_notified": null,
+      "reasons": [
+        "not_marked_official"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "b56fba31d722405fff5f63b0efabf7ef899c44828c8f11a6fb25d6958465cf19": {
+      "card_id": "amex-delta-gold",
+      "field": "welcome_offer.spending_requirement",
+      "value": 2000,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-11-05T19:40:07.589Z",
+      "last_seen": "2026-11-05T19:43:34.643Z",
+      "last_notified": "2026-11-05T19:40:07.589Z",
+      "commit": "378dc9444eeabfca62139403d2826d160643062b",
+      "published_at": "2026-11-05T19:43:34.641Z",
+      "failure": null
+    },
+    "9ab8c853a9b587af836a583d119f1f9fbe4dcf620440456cde20f17869f6fc9c": {
+      "card_id": "amex-delta-gold",
+      "field": "welcome_offer.statement_credit",
+      "value": null,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-11-05T19:40:07.589Z",
+      "last_seen": "2026-11-05T19:43:34.643Z",
+      "last_notified": "2026-11-05T19:40:07.589Z",
+      "commit": "378dc9444eeabfca62139403d2826d160643062b",
+      "published_at": "2026-11-05T19:43:34.641Z",
+      "failure": null
+    },
+    "54ba20aba811d5e02fd05a1f773e838c3a326342da40ac960e60c42495b4215d": {
+      "card_id": "amex-delta-platinum",
+      "field": "welcome_offer.spending_requirement",
+      "value": 3000,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-11-05T19:40:07.589Z",
+      "last_seen": "2026-11-05T19:43:34.643Z",
+      "last_notified": "2026-11-05T19:40:07.589Z",
+      "commit": "69870599bc99350c0472d42b86d4f42d70cc6126",
+      "published_at": "2026-11-05T19:43:34.641Z",
+      "failure": null
+    },
+    "788524993e89d5f81af0dc8f6a7a19ddbb08c437087cd7c9fa5c0ff347dd4ec6": {
+      "card_id": "amex-delta-platinum",
+      "field": "welcome_offer.statement_credit",
+      "value": null,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-11-05T19:40:07.589Z",
+      "last_seen": "2026-11-05T19:43:34.643Z",
+      "last_notified": "2026-11-05T19:40:07.589Z",
+      "commit": "69870599bc99350c0472d42b86d4f42d70cc6126",
+      "published_at": "2026-11-05T19:43:34.641Z",
+      "failure": null
+    },
+    "6e495a0ef07081ca5e95e075de5c537465793d00f7262664f330b45fd9830dc9": {
+      "card_id": "amex-delta-gold",
+      "field": "welcome_offer.expiry",
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-11-05T19:40:07.811Z",
+      "last_seen": "2026-11-10T19:40:08.348Z",
+      "last_notified": null,
+      "reasons": [
+        "expired_offer_still_shown_on_official_page"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "b3d78707110bbe993d42dcbedefb7825c98933b25fb47e165b1646cd637e325a": {
+      "card_id": "amex-delta-gold-biz",
+      "field": "welcome_offer.expiry",
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-11-05T19:40:07.811Z",
+      "last_seen": "2026-11-05T19:40:07.811Z",
+      "last_notified": null,
+      "reasons": [
+        "official_page_offer_not_parsed"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "3ab6edfd52f863d350e83bf9f165b35b097d7c7d5565032bda66d22c3b60a0ba": {
+      "card_id": "amex-delta-platinum",
+      "field": "welcome_offer.expiry",
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-11-05T19:40:07.811Z",
+      "last_seen": "2026-11-10T19:40:08.348Z",
+      "last_notified": null,
+      "reasons": [
+        "expired_offer_still_shown_on_official_page"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "b69ed01a1f881a33af9a293d8f5d377906783481728350a0308140cccd9ee322": {
+      "card_id": "amex-delta-reserve",
+      "field": "welcome_offer.expiry",
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-11-05T19:40:07.811Z",
+      "last_seen": "2026-11-10T19:40:08.348Z",
+      "last_notified": null,
+      "reasons": [
+        "expired_offer_still_shown_on_official_page"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "6768fdb826559cade9a1a109c59d0bc8ebc980a5c6089ba6d8823a7f8987129a": {
+      "card_id": "amex-delta-skymiles-platinum-biz",
+      "field": "welcome_offer.expiry",
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-11-05T19:40:07.811Z",
+      "last_seen": "2026-11-13T19:39:44.619Z",
+      "last_notified": null,
+      "reasons": [
+        "expired_offer_still_shown_on_official_page"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "883be7581ef3ccc958905eb2495d08eededdbb6355d46eefd21f4ec88dc2543e": {
+      "card_id": "amex-delta-skymiles-reserve-biz",
+      "field": "welcome_offer.expiry",
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-11-05T19:40:07.811Z",
+      "last_seen": "2026-11-05T19:40:07.811Z",
+      "last_notified": null,
+      "reasons": [
+        "official_page_offer_not_parsed"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "5a73017e3997b36795310fc5ac3decc3dcf2fc3f4d6362b9729922eddfffa50a": {
+      "card_id": "chase-freedom-flex",
+      "field": "welcome_offer.bonus_points",
+      "value": 200,
+      "audience": "public",
+      "status": "rolled_back",
+      "first_seen": "2026-11-06T19:39:53.653Z",
+      "last_seen": "2026-11-07T19:45:58.080Z",
+      "last_notified": "2026-11-07T19:39:51.300Z",
+      "commit": "3591a4b34c8c709869331b1bc348111314524538",
+      "published_at": null,
+      "failure": "rolled_back: live_check_failed: live page missing: {\"chase-freedom-flex\":[\"$0 Annual Fee\"]}"
+    },
+    "1d937dc6e7fddbfcc2c489e10f94a7ea153a91bc5f4ce1983c205e297ba81971": {
+      "card_id": "amex-delta-gold-biz",
+      "field": "welcome_offer.expiry",
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-11-06T19:39:53.877Z",
+      "last_seen": "2026-11-13T19:39:44.619Z",
+      "last_notified": null,
+      "reasons": [
+        "expired_offer_still_shown_on_official_page"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "564717dd8ab1875e287d2aa229eee7df24ece2b9472426ee78336921fbeeb465": {
+      "card_id": "amex-delta-skymiles-reserve-biz",
+      "field": "welcome_offer.expiry",
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-11-06T19:39:53.877Z",
+      "last_seen": "2026-11-13T19:39:44.619Z",
+      "last_notified": null,
+      "reasons": [
+        "expired_offer_still_shown_on_official_page"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "19f06d5aa68a74dbe10f7f5baae027c434e5bdcbf60a32a176fb9eb1f74ea553": {
+      "card_id": "amex-blue-cash-preferred",
+      "field": "welcome_offer.bonus_points",
+      "value": 250,
+      "audience": "public",
+      "status": "published",
+      "first_seen": "2026-11-10T19:40:08.027Z",
+      "last_seen": "2026-11-10T19:44:21.837Z",
+      "last_notified": "2026-11-10T19:40:08.027Z",
+      "commit": "b74df4a65085f42adb5a713c26c63ada2d4ae157",
+      "published_at": "2026-11-10T19:44:21.836Z",
+      "failure": null
+    },
+    "2bea7e0db7bfe4556da38c9adec689fae8e018e8f8b5c242ea2193f72bedb0f9": {
+      "card_id": "amex-delta-reserve",
+      "field": "welcome_offer.bonus_points",
+      "value": null,
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-11-11T19:39:29.688Z",
+      "last_seen": "2026-11-13T19:39:44.619Z",
+      "last_notified": null,
+      "reasons": [
+        "welcome_offer_detect_only_manual_review",
+        "variable_as_high_as_offer"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    },
+    "ebb63823aafe8af2f27a0df6fed07061bf673de339074cfe4c3aa7166bba5127": {
+      "card_id": "amex-marriott-bevy",
+      "field": "welcome_offer.expiry",
+      "value": "2027-01-13",
+      "audience": "public",
+      "status": "needs_verification",
+      "first_seen": "2026-11-12T19:39:30.903Z",
+      "last_seen": "2026-11-13T19:39:44.619Z",
+      "last_notified": "2026-11-12T19:39:30.903Z",
+      "reasons": [
+        "source_conflicts"
+      ],
+      "commit": null,
+      "published_at": null,
+      "failure": null
+    }
+  }
+}
