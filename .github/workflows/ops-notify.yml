@@ -69,7 +69,10 @@ jobs:
           path: ${{ runner.temp }}/summary-in
       - name: Render sanitized preview (no secrets, no network)
         run: |
-          if [ -n "$SUMMARY_ARTIFACT" ]; then src="$RUNNER_TEMP/summary-in/$SUMMARY_FILE"; else src=scripts/automation/fixtures/ops-notify-summary.txt; fi
+          if [ -n "$SUMMARY_ARTIFACT" ]; then
+            [[ "$SUMMARY_FILE" =~ ^[A-Za-z0-9._-]+$ && "$SUMMARY_FILE" != *..* ]] || { echo "summary_file must be a plain file name (no / or ..)" >&2; exit 2; }
+            src="$RUNNER_TEMP/summary-in/$SUMMARY_FILE"
+          else src=scripts/automation/fixtures/ops-notify-summary.txt; fi
           node scripts/automation/ops-notify.mjs --job "$NOTIFY_JOB" --pt-date "$NOTIFY_PT_DATE" --run-id "$GITHUB_RUN_ID" \
             --run-url "https://github.com/opencard-ai/opencard/actions/runs/$GITHUB_RUN_ID" \
             --summary-file "$src" --out-dir "$RUNNER_TEMP/notify"
@@ -107,6 +110,7 @@ jobs:
           NOTIFY_PT_DATE: ${{ inputs.pt_date }}
           SUMMARY_FILE: ${{ inputs.summary_file }}
         run: |
+          [[ "$SUMMARY_FILE" =~ ^[A-Za-z0-9._-]+$ && "$SUMMARY_FILE" != *..* ]] || { echo "summary_file must be a plain file name (no / or ..)" >&2; exit 2; }
           node scripts/automation/ops-notify.mjs --job "$NOTIFY_JOB" --pt-date "$NOTIFY_PT_DATE" --run-id "$GITHUB_RUN_ID" \
             --run-url "https://github.com/opencard-ai/opencard/actions/runs/$GITHUB_RUN_ID" \
             --summary-file "$RUNNER_TEMP/summary-in/$SUMMARY_FILE" --out-dir "$RUNNER_TEMP/notify" --send
