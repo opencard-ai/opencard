@@ -351,6 +351,38 @@ const noForce = (calls: string[][]) => assert.ok(!calls.some(c => c.join(' ').in
     assert.deepEqual(afPlan.applied[0]?.changes.map(c => [c.field, c.new_value]), [['annual_fee', 695]]);
     assert.ok(afPlan.expiry_review.some(h => h.reasons.includes('welcome_offer_detect_only_manual_review')));
   }
+  // Delta business cards: welcome offer detect-only (2026-11-13, after #95). Rendered page text 2026-11-13:
+  const dbizDelta = 'Delta SkyMiles® Gold Business Amex Card APPLY AND FIND OUT YOUR WELCOME OFFER AS HIGH AS 85,000 BONUS MILES After you make $6,000 in eligible purchases on your new Card within the first 6 months of Card Membership. Welcome offers may vary and you may not be eligible for an offer.† $0 introductory annual fee for the first year, then $150†¤ Rates & Fees KEY MEMBER BENEFITS Apply Now Looking for other cards? See personal cards Delta SkyMiles® Platinum Business Amex Card APPLY AND FIND OUT YOUR WELCOME OFFER AS HIGH AS 100,000 BONUS MILES After you make $10,000 in eligible purchases on your new Card within the first 6 months of Card Membership. Welcome offers may vary and you may not be eligible for an offer.† $350 Annual Fee Rates & Fees KEY MEMBER BENEFITS Card Members save 15% Explore All Benefits $350 Annual Fee¤ Apply Now Looking for other cards? See personal cards Delta SkyMiles® Reserve Business Amex Card APPLY AND FIND OUT YOUR WELCOME OFFER AS HIGH AS 125,000 BONUS MILES After you make $15,000 in eligible purchases on your new Card within the first 6 months of Card Membership. Welcome offers may vary and you may not be eligible for an offer.† $650 Annual Fee Rates & Fees Quick Business Card Comparison Welcome Offer for New Card Members Earn 90,000 Bonus Miles Earn 100,000 Bonus Miles Earn 200,000 Bonus Miles Terms Apply';
+  const dbiz: Array<[string, number, string]> = [
+    ['amex-delta-gold-biz', 150, 'Delta SkyMiles® Gold Business CardAnnual Fee: $0 intro annual fee for the first year, then $150†¤Welcome Offer & Key DetailsApply and find out your welcome offerAS HIGH AS 85,000 Bonus Milesafter you spend $6,000 in purchases on your new Card within the first 6 months of Card Membership. Welcome offers vary and you may not be eligible for an offer.†'],
+    ['amex-delta-skymiles-platinum-biz', 350, 'Delta SkyMiles® Platinum Business CardAnnual Fee: $350¤Welcome Offer & Key DetailsApply and find out your welcome offerAS HIGH AS 100,000 Bonus Milesafter you spend $10,000 in purchases on your new Card within the first 6 months of Card Membership. Welcome offers vary and you may not be eligible for an offer.†'],
+    ['amex-delta-skymiles-reserve-biz', 650, 'Delta SkyMiles® Reserve Business CardYour Travel CompanionAnnual Fee: $650¤Delta SkyMiles® Reserve Business CardYour Travel CompanionWELCOME OFFERApply and find out your welcome offerAS HIGH AS 125,000 Bonus Milesafter you spend $15,000 in purchases on your new Card within the first 6 months of Card Membership. Welcome offers vary and you may not be eligible for an offer.†'],
+  ];
+  for (const [id, af, amexHero] of dbiz) {
+    const sAmex = W(id, 'americanexpress.com'), sDelta = W(id, 'delta.com');
+    assert.deepEqual(ex(id, 'americanexpress.com', amexHero), { annual_fee: af }, `${id} amex: AF only`); // no bonus/spend/months
+    assert.deepEqual(reviewSignals(amexHero, sAmex, { annual_fee: af }), ['variable_as_high_as_offer']);
+    assert.deepEqual(ex(id, 'delta.com', dbizDelta), { annual_fee: af }, `${id} delta: AF only, own section`); // stale comparison table not extracted
+    assert.deepEqual(reviewSignals(dbizDelta, sDelta, { annual_fee: af }), ['variable_as_high_as_offer']);
+    // old fixed / expired copy is no longer extracted either
+    assert.deepEqual(extractValues('Earn 90,000 Bonus Miles after you spend $6,000 in purchases on your new Card in your first 6 months of Card Membership. Offer ends 11/4/2026.', sAmex).values, {});
+    // nothing parsed and no "as high as" -> detect_only_no_bonus_parsed
+    assert.deepEqual(reviewSignals('Annual Fee: $650¤', sAmex, {}), ['detect_only_no_bonus_parsed']);
+    assert.deepEqual(reviewSignals('Looking for other cards? See personal cards', sDelta, {}), ['detect_only_no_bonus_parsed']);
+  }
+  // delta.com signal is anchored to the card's own section: another card's "as high as" does not flag Reserve Business
+  assert.deepEqual(reviewSignals('Delta SkyMiles® Gold Business Amex Card AS HIGH AS 85,000 BONUS MILES', W('amex-delta-skymiles-reserve-biz', 'delta.com'), {}), ['detect_only_no_bonus_parsed']);
+  {
+    const gbCard = { card_id: 'amex-delta-gold-biz', name: 'Gold Business', annual_fee: 150, welcome_offer: { bonus_points: 0, bonus_value: 'Varies', spending_requirement: 6000, time_period_months: 6, point_program: 'Delta SkyMiles', is_elevated: false, offer_status: 'as_high_as_ymmv' } };
+    const GU = W('amex-delta-gold-biz', 'americanexpress.com').url;
+    const obs = { observed: { current_bonus_visible: undefined, review_signals: ['variable_as_high_as_offer'] } };
+    const gbCand = buildCandidate({ card_id: gbCard.card_id, sources: [] }, [conf(GU, 1, { annual_fee: 150 }, obs), conf(GU, 2, { annual_fee: 150 }, obs)], '2026-09-30T05:50:00Z');
+    const gbResult = assessCandidate(gbCand, gbCard, false, runAt);
+    assert.equal(gbResult.status, 'unchanged'); assert.deepEqual(gbResult.changes, []);
+    const gbPlan = planApply({ results: [gbResult], expiry: expiryReport([gbCard], today) }, new Map([[gbCard.card_id, gbCard]]), opts);
+    assert.equal(gbPlan.applied.length, 0); assert.equal(gbPlan.held.length, 0);
+    assert.deepEqual(gbPlan.expiry_review, [{ card_id: 'amex-delta-gold-biz', field: 'welcome_offer.bonus_points', reasons: ['welcome_offer_detect_only_manual_review', 'variable_as_high_as_offer'] }]);
+  }
   // Marriott Bonvoy Bold on chase.com (2026-11-10 page text)
   assert.deepEqual(ex('marriott-bonvoy-bold', 'chase.com', 'NEW CARDMEMBER OFFER Earn 45,000 Bonus Points Earn 45,000 Bonus Points after spending $1,000 on eligible purchases within 3 months of account opening with the Marriott Bonvoy Bold ® Credit Card. * AT A GLANCE ANNUAL FEE $0 † Opens pricing and terms in new window'), { [B]: 45000, [SPD]: 1000, [MON]: 3, annual_fee: 0 });
   // Delta Gold on Amex: statement credit sentence present / absent
