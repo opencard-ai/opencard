@@ -1,0 +1,250 @@
+name: weekly-audit cloud (phase 1)
+on:
+  schedule:
+    # Explicit UTC: GitHub ignores timezone: in this repo (see news-cloud-publish.yml).
+    # Schedules only fire from the default branch; this takes effect only when merged.
+    # Mon 10:47 PST (UTC-8, valid until 2027-03-14); from 2027-03-14 fires Mon 11:47 PDT
+    # unless changed to '47 17 * * 1' (back to '47 18 * * 1' on 2027-11-07).
+    # Mac job c524f0d3 runs Mon 10:47 PT.
+    - cron: '47 18 * * 1'
+  workflow_dispatch:
+    inputs:
+      force_shadow:
+        description: 'Force read-only shadow mode'
+        type: boolean
+        default: false
+  pull_request:
+    paths:
+      - .github/workflows/weekly-audit-cloud.yml
+      - scripts/ops-state/**
+      - scripts/audit/**
+      - ops/runner-owner.json
+      - scripts/automation/ops-state*.mjs
+permissions:
+  contents: read
+concurrency:
+  group: weekly-audit-cloud-${{ github.ref }}
+  cancel-in-progress: false
+env:
+  AUDIT_EPOCH: audit-20261115-1
+jobs:
+  run:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    permissions:
+      contents: read
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    outputs:
+      attempt: ${{ github.run_attempt }}
+      mode: ${{ steps.mode.outputs.mode }}
+      today: ${{ steps.mode.outputs.today }}
+      ops_state_sha: ${{ steps.mode.outputs.ops_state_sha }}
+      daily_ok: ${{ steps.daily.outcome == 'success' }}
+      state_ready: ${{ steps.stage.outcome == 'success' }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Decide mode
+        id: mode
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FORCE_SHADOW: ${{ inputs.force_shadow == true }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/out"
+          TODAY=$(TZ=America/Los_Angeles date +%F)
+          echo "today=$TODAY" >> "$GITHUB_OUTPUT"
+          if [[ "$GITHUB_EVENT_NAME" == pull_request* || "$FORCE_SHADOW" == true ]]; then
+            echo 'mode=shadow' >> "$GITHUB_OUTPUT"
+            echo 'reason=PR or forced shadow; checkout owner doc is not authoritative' >> "$GITHUB_OUTPUT"
+          else
+            # Failure or invalid JSON fails closed to shadow in owner.mjs.
+            gh api "repos/$GITHUB_REPOSITORY/contents/ops/runner-owner.json?ref=main" --jq '.content' \
+              | base64 --decode > "$RUNNER_TEMP/owner.json" || printf '{}' > "$RUNNER_TEMP/owner.json"
+            node scripts/ops-state/owner.mjs --file "$RUNNER_TEMP/owner.json" --job audit \
+              --epoch "$AUDIT_EPOCH" --event "$GITHUB_EVENT_NAME" --ref "$GITHUB_REF"
+          fi
+          if git config --get-regexp '^http\..*\.extraheader' >/dev/null; then
+            echo 'persisted credentials; refusing' >&2; exit 1
+          fi
+          git remote set-url --push origin no-push://ops-state-reader
+          sha=$(git ls-remote origin refs/heads/ops-state | cut -f1)
+          [[ "$sha" =~ ^[0-9a-f]{40}$ ]] || { echo 'missing ops-state head' >&2; exit 2; }
+          echo "ops_state_sha=$sha" >> "$GITHUB_OUTPUT"
+          echo "$sha" > "$RUNNER_TEMP/ops-state-head-before"
+      - name: Load verified state anonymously
+        id: load
+        env:
+          STATE_SHA: ${{ steps.mode.outputs.ops_state_sha }}
+          TODAY: ${{ steps.mode.outputs.today }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin "$STATE_SHA"
+          mkdir -p "$RUNNER_TEMP/ops-state"
+          git archive "$STATE_SHA" | tar -x -C "$RUNNER_TEMP/ops-state"
+          node scripts/ops-state/pull.mjs --src "$RUNNER_TEMP/ops-state" --job audit --out "$RUNNER_TEMP/audit" --today "$TODAY"
+          cp -R "$RUNNER_TEMP/audit" "$RUNNER_TEMP/audit-before"
+      - name: Compute daily summary
+        id: daily
+        continue-on-error: true
+        shell: bash
+        env:
+          TODAY: ${{ steps.mode.outputs.today }}
+          OPENCARD_AUDIT_DIR: ${{ runner.temp }}/audit
+          OPENCARD_AUDIT_TODAY: ${{ steps.mode.outputs.today }}
+          NODE_OPTIONS: --max-http-header-size=65536
+        run: |
+          set -euo pipefail
+          test ! -e "$RUNNER_TEMP/audit/$TODAY-db-audit.json" || { echo 'today report already exists' >&2; exit 1; }
+          npm run -s audit:weekly 2> "$RUNNER_TEMP/out/daily-stderr.log" | tee "$RUNNER_TEMP/out/summary.txt"
+      - name: Compare new vs known
+        if: always() && steps.load.outcome == 'success'
+        continue-on-error: true
+        env:
+          TODAY: ${{ steps.mode.outputs.today }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx tsx scripts/ops-shadow/state-compare.ts audit --dir "$RUNNER_TEMP/audit" --today "$TODAY" \
+            --out "$RUNNER_TEMP/out/compare.json" | tee "$RUNNER_TEMP/out/compare.md"
+          cat "$RUNNER_TEMP/out/compare.md" >> "$GITHUB_STEP_SUMMARY"
+      - name: Assert read-only checkout
+        if: always()
+        run: bash scripts/ops-shadow/assert-readonly.sh
+      - name: Stage validated state
+        id: stage
+        # Failed computation never stages state; verdict triggers the GitHub failed-run email.
+        if: always() && steps.load.outcome == 'success' && steps.daily.outcome == 'success'
+        continue-on-error: true
+        env:
+          TODAY: ${{ steps.mode.outputs.today }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/candidate"
+          cp -P "$RUNNER_TEMP/audit/$TODAY"-* "$RUNNER_TEMP/candidate/"
+          node scripts/ops-state/stage.mjs --from "$RUNNER_TEMP/candidate" --job audit --today "$TODAY" --out "$RUNNER_TEMP/state-out"
+      - name: Preserve summary and logs
+        if: always()
+        env:
+          DAILY_OK: ${{ steps.daily.outcome == 'success' }}
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/out"
+          if [ ! -s "$RUNNER_TEMP/out/summary.txt" ]; then
+            printf 'weekly-audit computation produced no summary; daily_ok=%s; inspect run logs.\n' "$DAILY_OK" > "$RUNNER_TEMP/out/summary.txt"
+          fi
+          cat "$RUNNER_TEMP/out/summary.txt" >> "$GITHUB_STEP_SUMMARY"
+          cp "$RUNNER_TEMP/audit-before/"* "$RUNNER_TEMP/out/" 2>/dev/null || true
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: weekly-audit-summary-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/out/summary.txt
+          retention-days: 30
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: weekly-audit-state-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/state-out/
+            ${{ runner.temp }}/out/
+          retention-days: 30
+  commit-state:
+    needs: run
+    if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) && needs.run.outputs.mode == 'write' && needs.run.outputs.daily_ok == 'true' && needs.run.outputs.state_ready == 'true' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    permissions:
+      contents: write
+    concurrency:
+      group: weekly-audit-state
+      cancel-in-progress: false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      committed: ${{ steps.commit.outputs.committed }}
+      commit_sha: ${{ steps.commit.outputs.commit_sha }}
+    steps:
+      # This job runs scripts from main only, never PR code.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          path: src
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ops-state
+          path: ops-state
+          fetch-depth: 0
+          # Required only here for the fast-forward state push using the job token.
+          persist-credentials: true
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: weekly-audit-state-${{ github.run_id }}-${{ needs.run.outputs.attempt }}
+          path: incoming
+      - name: Commit and fast-forward push state
+        id: commit
+        env:
+          TODAY: ${{ needs.run.outputs.today }}
+          BASE_SHA: ${{ needs.run.outputs.ops_state_sha }}
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Recheck main ownership immediately before writing; rollback can revoke write mode.
+          gh api "repos/$GITHUB_REPOSITORY/contents/ops/runner-owner.json?ref=main" --jq '.content' \
+            | base64 --decode > "$RUNNER_TEMP/commit-owner.json" || printf '{}' > "$RUNNER_TEMP/commit-owner.json"
+          mode=$(node src/scripts/ops-state/owner.mjs --file "$RUNNER_TEMP/commit-owner.json" --job audit \
+            --epoch "$AUDIT_EPOCH" --event "$GITHUB_EVENT_NAME" --ref "$GITHUB_REF")
+          [[ "$mode" == write ]] || { echo 'ownership no longer permits write; refusing state commit' >&2; exit 1; }
+          node src/scripts/ops-state/commit.mjs --repo ops-state --job audit --from incoming/state-out \
+            --run-id "$GITHUB_RUN_ID" --attempt "$GITHUB_RUN_ATTEMPT" --pt-date "$TODAY" --epoch "$AUDIT_EPOCH" --base-sha "$BASE_SHA"
+  notify:
+    needs: [run, commit-state]
+    if: always() && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) && needs.run.result == 'success' && (needs.commit-state.result == 'success' || needs.commit-state.result == 'skipped')
+    permissions:
+      contents: read
+    uses: ./.github/workflows/ops-notify.yml
+    with:
+      job: weekly-audit
+      pt_date: ${{ needs.run.outputs.today }}
+      summary_artifact: weekly-audit-summary-${{ github.run_id }}-${{ needs.run.outputs.attempt }}
+      summary_file: summary.txt
+      # Failed computation: no state commit or AgentMail; verdict fails for GitHub failed-run email.
+      # Mac relays failure text; cloud relies on that email instead in phase 1.
+      # ops-notify also suppresses NO_REPLY. Only a successful new commit permits mail.
+      send: ${{ needs.run.outputs.mode == 'write' && needs.commit-state.outputs.committed == 'true' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request' }}
+    secrets:
+      AGENTMAIL_API_KEY: ${{ github.event_name != 'pull_request' && secrets.AGENTMAIL_API_KEY || '' }}
+      AGENTMAIL_FROM_INBOX: ${{ github.event_name != 'pull_request' && secrets.AGENTMAIL_FROM_INBOX || '' }}
+      OWNER_EMAIL: ${{ github.event_name != 'pull_request' && secrets.OWNER_EMAIL || '' }}
+  verdict:
+    needs: [run, commit-state, notify]
+    if: always() && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+    permissions:
+      contents: read
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      DAILY_OK: ${{ needs.run.outputs.daily_ok }}
+      STATE_READY: ${{ needs.run.outputs.state_ready }}
+      RUN_RESULT: ${{ needs.run.result }}
+      COMMIT_RESULT: ${{ needs.commit-state.result }}
+      NOTIFY_RESULT: ${{ needs.notify.result }}
+    steps:
+      - name: Report final verdict after state and notification
+        run: |
+          test "$DAILY_OK" = true
+          test "$STATE_READY" = true
+          test "$RUN_RESULT" = success
+          [[ "$COMMIT_RESULT" == success || "$COMMIT_RESULT" == skipped ]]
+          test "$NOTIFY_RESULT" = success

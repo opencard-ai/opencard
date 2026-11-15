@@ -14,11 +14,17 @@ import { createRequire } from 'node:module';
 const requireFromHere = createRequire(path.join(process.cwd(), 'package.json'));
 
 type Finding = { card_id: string; type: string; severity: 'high' | 'medium' | 'low'; field?: string; detail: string; popular?: boolean };
-const DIR = 'artifacts/audit';
+// OPENCARD_AUDIT_DIR relocates report history/baseline (default unchanged: artifacts/audit). From draft PR #64.
+const DIR = path.resolve(process.env.OPENCARD_AUDIT_DIR || 'artifacts/audit');
+if (DIR === path.parse(DIR).root) { console.error('audit:weekly: OPENCARD_AUDIT_DIR must not be the filesystem root'); process.exit(2); }
 const LOCK = path.join(os.tmpdir(), 'opencard-audit-weekly.lock');
 const LOCK_STALE_MS = 3 * 60 * 60 * 1000;
 const MAX_CHARS = 1800;
-const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date());
+const overrideToday = process.env.OPENCARD_AUDIT_TODAY;
+if (overrideToday !== undefined && (!/^\d{4}-\d{2}-\d{2}$/.test(overrideToday) || !Number.isFinite(Date.parse(overrideToday)) || new Date(overrideToday).toISOString().slice(0, 10) !== overrideToday)) {
+  console.error('audit:weekly: OPENCARD_AUDIT_TODAY must be a valid YYYY-MM-DD date'); process.exit(2);
+}
+const today = overrideToday ?? new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date());
 
 const TYPE_ZH: Record<string, string> = {
   broken_source_url: '官方來源網址失效 (404)', source_redirects_elsewhere: '來源網址被轉址到其他頁面', missing_sources: '缺少來源',

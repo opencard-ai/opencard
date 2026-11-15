@@ -1,0 +1,201 @@
+name: Ops shadow with state (offer + audit, read-only)
+# Design #94 §5 step 3 "shadow with state". Reads a PINNED ops-state commit read-only (anonymous fetch of a public
+# commit + git archive into runner temp; MANIFEST.json sha256 verified), copies it into runner temp, then:
+#   offer: offer-watch daily --no-publish --state-dir <runner temp copy> --skip-pull (never edits cards, never publishes)
+#   audit: audit:weekly with OPENCARD_AUDIT_DIR=<runner temp copy> (baseline = latest prior ops-state db-audit)
+# and reports NEW vs already-KNOWN against that state. Results go ONLY to artifacts + step summary.
+# It NEVER writes ops-state (or any ref): contents: read, no persisted credentials, push URL disabled, and the
+# ops-state head is checked for concurrent movement at the end. No secrets are referenced. No email. No schedule on purpose; if one
+# is ever added it must be explicit UTC with a PT comment (GitHub did not honour timezone: in this repo).
+on:
+  workflow_dispatch:
+    inputs:
+      ops_state_sha:
+        description: 'ops-state commit (40-hex sha) to read; empty = pinned seed below'
+        required: false
+        default: ''
+      run:
+        description: 'which part to run'
+        type: choice
+        options: [both, offer, audit]
+        default: both
+  pull_request:
+    paths:
+      - .github/workflows/ops-shadow-with-state.yml
+      - scripts/ops-shadow/**
+      - scripts/audit/weekly.ts
+      - tests/ops-shadow-state.test.ts
+permissions:
+  contents: read
+concurrency:
+  group: ops-shadow-with-state-${{ github.ref }}
+  cancel-in-progress: false
+env:
+  # Seed commit reviewed by OpenCard (Mac read-only export 2026-11-13). Change only via a reviewed commit.
+  OPS_STATE_PINNED_SHA: 9956c5c12a9a107346e237cc868032491c6c1f56
+  OPS_STATE_SHA_INPUT: ${{ github.event.inputs.ops_state_sha || '' }}
+jobs:
+  checks:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+      - name: Install locked dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      # validate-cards.yml / gitleaks.yml only run for PRs into main; this stacked PR gets the same tests here.
+      - name: validate + tests
+        run: |
+          set -e
+          npm run validate
+          npm test
+          npm run test:automation
+          npm run offer-watch:test
+
+  offer:
+    needs: checks
+    if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) && (github.event_name != 'workflow_dispatch' || github.event.inputs.run != 'audit')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      OFFER_WATCH_CHROME: /usr/bin/google-chrome
+      PUPPETEER_SKIP_DOWNLOAD: 'true'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+      - name: Install locked dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Load pinned ops-state read-only
+        id: state
+        run: bash scripts/ops-shadow/fetch-state.sh offer
+      - name: Offer-watch daily (--no-publish, state in runner temp)
+        id: daily
+        continue-on-error: true
+        shell: bash
+        env:
+          TODAY: ${{ steps.state.outputs.today }}
+        run: |
+          set -o pipefail
+          npx tsx scripts/offer-watch/daily.ts --no-publish --state-dir "$RUNNER_TEMP/offer-state" --skip-pull --today "$TODAY" \
+            | tee "$RUNNER_TEMP/out/offer-summary-$TODAY.txt"
+      - name: New vs known against ops-state
+        shell: bash
+        if: always() && steps.state.outcome == 'success'
+        env:
+          TODAY: ${{ steps.state.outputs.today }}
+        run: |
+          d=artifacts/offer-watch
+          npx tsx scripts/ops-shadow/state-compare.ts offer --before "$RUNNER_TEMP/offer-state-before" --after "$RUNNER_TEMP/offer-state" \
+            --plan "$d/apply-$TODAY.nopublish.json" --candidates "$d/candidates-$TODAY.json" --out "$RUNNER_TEMP/out/offer-compare-$TODAY.json" \
+            | tee "$RUNNER_TEMP/out/offer-compare-$TODAY.md"
+          cp "$RUNNER_TEMP"/offer-state/* "$RUNNER_TEMP/out/state-after/"
+          for f in candidates review apply daily; do cp "$d/$f-$TODAY".* "$RUNNER_TEMP/out/" 2>/dev/null || true; done
+      - name: Assert nothing was written outside runner temp
+        if: always()
+        run: bash scripts/ops-shadow/assert-readonly.sh
+      - name: Step summary
+        if: always()
+        env:
+          TODAY: ${{ steps.state.outputs.today }}
+        run: |
+          {
+            echo "## Offer shadow with state — PT $TODAY"
+            echo "commit \`$GITHUB_SHA\` · ops-state \`${{ steps.state.outputs.sha }}\` · daily outcome: ${{ steps.daily.outcome }}"
+            echo; echo '### What the job would print (given the seeded state)'; echo '```'
+            cat "$RUNNER_TEMP/out/offer-summary-$TODAY.txt" 2>/dev/null || echo '(none)'
+            echo '```'; echo; echo '### New vs known'
+            cat "$RUNNER_TEMP/out/offer-compare-$TODAY.md" 2>/dev/null || echo '(none)'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: ops-shadow-state-offer-${{ steps.state.outputs.today }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/out/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Fail if the daily step failed
+        if: steps.daily.outcome != 'success'
+        run: |
+          echo "::warning ::offer-watch daily --no-publish reported a failed step; see daily-<date>.log in the artifact"
+          exit 1
+
+  audit:
+    needs: checks
+    if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) && (github.event_name != 'workflow_dispatch' || github.event.inputs.run != 'offer')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+      - name: Install locked dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Load pinned ops-state read-only
+        id: state
+        run: bash scripts/ops-shadow/fetch-state.sh audit
+      - name: Weekly audit (live url-check, baseline from ops-state)
+        id: audit
+        continue-on-error: true
+        shell: bash
+        env:
+          OPENCARD_AUDIT_DIR: ${{ runner.temp }}/audit
+          OPENCARD_AUDIT_TODAY: ${{ steps.state.outputs.today }}
+          # Amex PDFs send >16 KB of response headers (see #91).
+          NODE_OPTIONS: --max-http-header-size=65536
+          TODAY: ${{ steps.state.outputs.today }}
+        run: |
+          set -o pipefail
+          if [ -e "$RUNNER_TEMP/audit/$TODAY-db-audit.json" ]; then
+            echo "::error ::today's audit report already exists before weekly audit"
+            exit 1
+          fi
+          npm run -s audit:weekly | tee "$RUNNER_TEMP/out/audit-summary-$TODAY.txt"
+      - name: New vs known against ops-state
+        shell: bash
+        if: always() && steps.state.outcome == 'success'
+        env:
+          TODAY: ${{ steps.state.outputs.today }}
+        run: |
+          npx tsx scripts/ops-shadow/state-compare.ts audit --dir "$RUNNER_TEMP/audit" --today "$TODAY" --out "$RUNNER_TEMP/out/audit-compare-$TODAY.json" \
+            | tee "$RUNNER_TEMP/out/audit-compare-$TODAY.md"
+          cp "$RUNNER_TEMP/audit/$TODAY"-* "$RUNNER_TEMP/out/" 2>/dev/null || true
+      - name: Assert nothing was written outside runner temp
+        if: always()
+        run: bash scripts/ops-shadow/assert-readonly.sh
+      - name: Step summary
+        if: always()
+        env:
+          TODAY: ${{ steps.state.outputs.today }}
+        run: |
+          {
+            echo "## Weekly audit shadow with state — PT $TODAY"
+            echo "commit \`$GITHUB_SHA\` · ops-state \`${{ steps.state.outputs.sha }}\` · audit outcome: ${{ steps.audit.outcome }}"
+            echo; echo '### What the job would print (baseline = latest prior ops-state report)'; echo '```'
+            cat "$RUNNER_TEMP/out/audit-summary-$TODAY.txt" 2>/dev/null || echo '(none)'
+            echo '```'; echo; echo '### New vs known'
+            cat "$RUNNER_TEMP/out/audit-compare-$TODAY.md" 2>/dev/null || echo '(none)'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: ops-shadow-state-audit-${{ steps.state.outputs.today }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/out/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Fail if the audit step failed
+        if: steps.audit.outcome != 'success'
+        run: |
+          echo "::warning ::audit:weekly failed; see the step log"
+          exit 1
