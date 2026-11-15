@@ -12,7 +12,7 @@ There is no publishing path in these workflows. Audit uses `OPENCARD_AUDIT_DIR` 
 For non-PR events, the owner document is fetched from **main**, independently of the checkout.
 PR checkout ownership is never authoritative. Failure to fetch or parse the document means shadow.
 
-| Condition | Mode | State write | Mail |
+| Condition | Mode | State write | Normal summary mail |
 |---|---|---|---|
 | PR (same-repo only; fork jobs skipped) | shadow | no | no |
 | Non-main ref | shadow | no | no |
@@ -56,8 +56,9 @@ than write aborts the job (exit 1) without a commit.
 For a new run ID it refuses a HEAD differing from the run's base SHA (exit 3), and pushes **fast-forward only**
 with no retry or rebase. A rejected push exits 4 with “ops-state moved concurrently; state not written;
 investigate” plus the git error with HTTP(S) URL credentials stripped. Workflow concurrency is keyed
-by `github.ref` for every event. Offer and audit have separate state concurrency groups; if they overlap on the same branch,
-one may fail safely and needs investigation rather than an automatic merge.
+by `github.ref` for every event. Both `commit-state` jobs share the `ops-state-write` concurrency group
+with `cancel-in-progress: false`, serializing writes across offer and audit. Computation can still read an
+older base before another job commits; that stale-base failure needs investigation rather than an automatic merge.
 
 Each new run records exactly one commit, even if only the run record changes:
 `state(offer-watch): <PT date> run <id> attempt <n>` or
@@ -71,21 +72,42 @@ never rewrite branch history or force-push.
 
 ## Failure and notification
 
-State is staged only after the computation step succeeds, and `commit-state` also requires
-`daily_ok == 'true'`. On computation failure there is no state commit and no AgentMail
-(send requires `committed=true`); the final `verdict` job fails, triggering GitHub's failed-run email.
-The Mac relays failure text; cloud relies on the failed-run email instead in phase 1. Failure summaries
-and logs remain available in artifacts and the run summary. Integrity, checkout assertion, upload or
-state-push failures block writes/mail as appropriate. Invalid or missing staged state never permits mail.
-Comparison is diagnostic and may fail on incomplete computation output; its logs remain in the run.
+GitHub's failed-run emails only reach the `opencard-ai` account. Both workflows therefore send a
+separate owner failure notification through AgentMail in **shadow and write mode**, using the same
+three existing secrets. The mode table above describes normal summary mail; failure mail is independent
+of ownership and state commits. PR and non-main runs never send either kind of mail.
+
+`failure-summary` waits for `run`, `commit-state`, and `notify`, and uses `always()` on non-PR main,
+**attempt 1 only**. It runs when `run` is not successful, `daily_ok` or `state_ready` is not `true`, commit-state fails or is cancelled, or notify is not successful. A successful computation with `NO_REPLY` and no other failure stays silent.
+The artifact contains fixed text only: workflow name, validated mode and PT date, failed/cancelled job
+names, `run (compute step)` when a successful run job masks a failed computation, and `run (stage step)` when staging fails after successful computation. No logs, raw
+errors or step output enter the failure text. Mode, date and results use strict allowlists; invalid values
+become `unknown`. An empty date uses the current PT date; an invalid date displays `unknown` while
+the notification's required date input uses the current PT date.
+
+`failure-notify` calls `ops-notify.yml` only after the failure artifact succeeds, again gated to non-PR
+main and attempt 1. The attempt guard also applies here because a failed-job rerun can reuse a
+successful first-attempt failure summary. Normal and failure preview artifacts have distinct names. The existing sanitizer is unchanged;
+the mail adds the validated run link. Only attempt 1 can send failure mail: failed-job and full reruns
+stay silent even if they fail again. This deliberately trades retry delivery for **at most one failure mail
+per run ID**. Failure mail uses a `[FAILED]` subject prefix and a separate `ops-notify:<job>:failure:<date>:<runId>` key; summary keys keep their existing format. Dedupe keys exclude attempt; no durable mail journal is added.
+A whole-run manual cancel likely sends no failure mail because the reusable jobs have no `always()`.
+A failed first delivery therefore requires manual investigation, rather than retrying failure mail.
+
+State is staged only after computation succeeds, and `commit-state` also requires `daily_ok == 'true'`.
+The final `verdict` retains its existing dependencies and failure checks; it never depends on failure mail.
+Failure notification cannot hide an existing failure, and a failure in `failure-notify` remains visible.
+Integrity, checkout assertion, upload or state-push failures block writes/normal mail as appropriate.
+Invalid or missing staged state never permits normal summary mail. Comparison is diagnostic and may
+fail on incomplete computation output; its logs remain in the run artifacts.
 
 `notify` calls the existing reusable workflow with `contents: read` and explicitly passes only the existing
 `AGENTMAIL_API_KEY`, `AGENTMAIL_FROM_INBOX`, `OWNER_EMAIL` names, with empty values on PR events. It sends only when the state commit
-output is `committed=true`, on non-PR main in write mode. Shadows get sanitized previews only.
+output is `committed=true`, on non-PR main in write mode. Shadow normal summaries get sanitized previews only; failure mail uses the separate path above.
 The existing notify CLI treats `NO_REPLY`, `DURABLE:NO_REPLY`, and empty summaries as silence.
 A missing stdout file is replaced with a visible computation-failure/status summary before upload.
 
-If mail fails **after a successful commit**, use **Re-run failed jobs** to retry notify using the successful
+If normal summary mail fails **after a successful commit**, use **Re-run failed jobs** to retry notify using the successful
 commit job's original outputs. Downstream artifact names use `needs.run.outputs.attempt`, the
 producer's attempt, so failed-job retries can still download the original state and summary artifacts.
 A **full workflow re-run** reads the committed run ID and skips the state
@@ -101,11 +123,14 @@ default branch. GitHub may delay scheduled runs.
 
 | Job | UTC cron now | PT until 2027-03-14 | DST change |
 |---|---|---|---|
-| Offer | `39 19 * * *` | daily 11:39 PST | change to `39 18 * * *` on 2027-03-14 to keep 11:39 PDT; back on 2027-11-07 |
+| Offer | `9 21 * * *` | daily 13:09 PST | change to `9 20 * * *` on 2027-03-14 to keep 13:09 PDT; back to `9 21 * * *` on 2027-11-07 |
 | Audit | `47 18 * * 1` | Monday 10:47 PST | change to `47 17 * * 1` on 2027-03-14 to keep 10:47 PDT; back on 2027-11-07 |
 
-Without the DST edits, they fire at 12:39 PDT and Monday 11:47 PDT. The Mac offer job `8272895b`
-runs around 11:30–11:39 PT and audit `c524f0d3` runs Monday 10:47 PT. Ownership prevents two
+Without the DST edits, they fire at 14:09 PDT and Monday 11:47 PDT. The Mac offer job `8272895b`
+runs around 11:30–11:39 PT. During shadow/comparison, cloud offer runs roughly 1.5 hours later so
+both do not hit issuer sites at once. At owner switch, once the Mac is disabled, decide in the owner-flip
+PR whether to move cloud offer back toward 11:39 PT or retain this schedule. Audit `c524f0d3` still
+runs Monday 10:47 PT; its cloud cron is unchanged. Ownership prevents two
 production writers while the Mac remains enabled. Rollback is to revert the owner PR (cloud returns to
 shadow on its next mode check) and `openclaw cron enable` the Mac jobs after checking any in-flight cloud run.
 
