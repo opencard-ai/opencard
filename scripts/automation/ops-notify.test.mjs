@@ -216,7 +216,7 @@ test('CLI validates kind and produces failure previews independently of summary 
 test('workflow validates kind from env before preview and send', () => {
   const wf = fs.readFileSync(new URL('../../.github/workflows/ops-notify.yml', import.meta.url), 'utf8');
   assert.match(wf, /kind:\n        description: [^\n]*\n        type: string\n        default: 'summary'/);
-  const guard = '[[ "$NOTIFY_KIND" =~ ^(summary|failure)$ ]] || { echo "kind must be summary or failure" >&2; exit 2; }';
+  const guard = '[[ "$NOTIFY_KIND" =~ ^(summary|failure|missed)$ ]] || { echo "kind must be summary, failure or missed" >&2; exit 2; }';
   const { execFileSync } = require('node:child_process');
   for (const job of wf.split(/\n  (?=preview:|send:)/).slice(1)) {
     assert.match(job, /NOTIFY_KIND: \$\{\{ inputs.kind(?: \|\| 'summary')? \}\}/);
@@ -224,10 +224,10 @@ test('workflow validates kind from env before preview and send', () => {
     assert.ok(job.includes('--kind "$NOTIFY_KIND"'));
     for (const script of job.matchAll(/run: \|\n((?:          .*\n|\n)*)/g)) assert.doesNotMatch(script[1], /\$\{\{/);
   }
-  for (const kind of ['summary', 'failure', '', 'other', 'failure\ninjected', 'failure; echo injected']) {
+  for (const kind of ['summary', 'failure', 'missed', '', 'other', 'failure\ninjected', 'failure; echo injected']) {
     let valid = true;
     try { execFileSync('bash', ['-c', guard], { env: { ...process.env, NOTIFY_KIND: kind }, stdio: 'pipe' }); } catch { valid = false; }
-    assert.equal(valid, ['summary', 'failure'].includes(kind));
+    assert.equal(valid, ['summary', 'failure', 'missed'].includes(kind));
   }
 });
 
@@ -241,4 +241,13 @@ test('CLI send failure explains manual resend without claiming a next-run retry'
     assert.deepEqual(errors, ['ops-notify: send failed; not retried automatically (this job fails; on attempt 1 the caller workflow attempts a separate failure notice; use Re-run failed jobs to resend)']);
     assert.doesNotMatch(errors.join('\n'), /retry on the next run|next run retries/i);
   } finally { fs.rmSync(d, { recursive: true, force: true }); }
+});
+
+test('watchdog missed subjects and date-only keys dedupe repeated dispatches', () => {
+  const input = { job: 'ops-watchdog', ptDate: '2026-11-17', runId: '123', kind: 'missed', summary: '[MISSED] synthetic' };
+  const first = buildMessage(input), second = buildMessage({ ...input, runId: '456' });
+  assert.equal(first.subject, '[MISSED] [OpenCard ops watchdog] 2026-11-17');
+  assert.equal(first.key, 'ops-notify:ops-watchdog:missed:2026-11-17');
+  assert.equal(first.key, second.key); assert.equal(alreadySent([first.key], second.key), true);
+  assert.equal(buildMessage({ ...input, summary: 'NO_REPLY' }).skip, true);
 });

@@ -53,12 +53,17 @@ Immediately before calling `commit.mjs`, it fetches the owner document from main
 `GH_TOKEN: github.token` and runs `owner.mjs` with the same epoch, event and ref. Any result other
 than write aborts the job (exit 1) without a commit.
 `commit.mjs` first skips a run ID already recorded in HEAD's manifest, even with an old base SHA.
-For a new run ID it refuses a HEAD differing from the run's base SHA (exit 3), and pushes **fast-forward only**
-with no retry or rebase. A rejected push exits 4 with “ops-state moved concurrently; state not written;
-investigate” plus the git error with HTTP(S) URL credentials stripped. Workflow concurrency is keyed
-by `github.ref` for every event. Both `commit-state` jobs share the `ops-state-write` concurrency group
-with `cancel-in-progress: false`, serializing writes across offer and audit. Computation can still read an
-older base before another job commits; that stale-base failure needs investigation rather than an automatic merge.
+For a new run ID, it permits **one safe retry total**, either for an already-moved checkout or a
+rejected push. It fetches `ops-state` and requires the original base to be an ancestor of the tip,
+only the other job's directory and manifest to have changed, and every intervening subject to be the
+other job's normal `state(weekly-audit): ` or `state(offer-watch): ` subject. After ignoring the other
+job's file entries and run record, the manifests must be deep-equal. The clean checkout is reset to
+that tip and this job's files are applied again, preserving the original `base_sha` and recording
+`rebased_onto`. Outputs include `rebased=true|false`. Pushes remain **fast-forward only**; no force push.
+Unsafe changes fail for investigation (exit 3 for a moved checkout, exit 4 for a rejected push).
+A second push rejection fails immediately with exit 4. Git error URL credentials are stripped.
+Both commit jobs retain concurrency group `ops-state-write` with `cancel-in-progress: false`.
+Computation can still capture an older base; the retry handles only verified other-job-only movement.
 
 Each new run records exactly one commit, even if only the run record changes:
 `state(offer-watch): <PT date> run <id> attempt <n>` or
@@ -142,3 +147,18 @@ its publishing secrets belong in a protected environment. No phase 2 secrets are
 
 Superseded drafts: #90 and #91 (dry-run shadows, functionality replaced); #94 (design), #96 (ops-notify),
 #97 (no-publish/state-dir), #103 (shadow-with-state) are included in this branch's implementation lineage.
+
+## Missed-run watchdog
+
+`ops-watchdog.yml` checks daily at **15:23 UTC (07:23 PST / 08:23 PDT)**. This is roughly ten hours
+after the offer slot because scheduled starts were 4–10 hours late on November 13–15. It counts only
+successful, completed schedule/dispatch runs on main, using their creation time. Offer alarms require
+no success in the last 36 hours. Audit stays pending until Monday 18:47 UTC plus 20 hours; after that
+it requires a success created since Monday 00:00 UTC. This grace accommodates late Monday starts.
+
+Healthy checks emit exactly `NO_REPLY`. Missed checks send fixed text through ops-notify on non-PR
+main only; PR coverage uses synthetic fixture tests with no secrets or notification call. Off-main
+manual dispatch checks and uploads results only. Malformed input fails the check without mailing.
+The `[MISSED]` subject uses the PT date and key `ops-notify:ops-watchdog:missed:<PT date>`, without a
+run ID. Supplied sent-keys dedupe within a PT day, but sent-keys persistence is still a later step:
+manual re-dispatch can therefore deliver duplicates within that day. No automatic catch-up is started.
