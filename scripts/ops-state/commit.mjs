@@ -15,17 +15,23 @@ export function concurrentChangeIsSafe(repo, job, base, tip, git = gitRunner) {
   const otherDir = job === 'offer' ? 'audit' : 'offer-watch';
   try {
     git(repo, ['merge-base', '--is-ancestor', base, tip]);
-    const paths = git(repo, ['diff', '--name-only', base, tip]).split('\n').filter(Boolean);
+    if (git(repo, ['rev-list', '--merges', `${base}..${tip}`])) return false;
+    const paths = git(repo, ['diff', '--no-renames', '--name-only', base, tip]).split('\n').filter(Boolean);
     if (paths.some(p => p !== 'MANIFEST.json' && !p.startsWith(`${otherDir}/`))) return false;
     const stripped = sha => {
       const m = JSON.parse(git(repo, ['show', `${sha}:MANIFEST.json`]));
+      if (!Array.isArray(m.files)) throw new Error('manifest lacks files array');
       m.files = m.files.filter(f => !f.path.startsWith(`${otherDir}/`));
       if (m.runs) delete m.runs[otherJob];
       return m;
     };
     if (!isDeepStrictEqual(stripped(base), stripped(tip))) return false;
     const prefix = `state(${job === 'offer' ? 'weekly-audit' : 'offer-watch'}): `;
-    return git(repo, ['log', '--format=%s', `${base}..${tip}`]).split('\n').every(s => s.startsWith(prefix));
+    const botEmail = '41898282+github-actions[bot]@users.noreply.github.com';
+    return git(repo, ['log', '--format=%ae%x09%ce%x09%s', `${base}..${tip}`]).split('\n').every(line => {
+      const [author, committer, subject] = line.split('\t');
+      return author === botEmail && committer === botEmail && subject?.startsWith(prefix);
+    });
   } catch { return false; }
 }
 
@@ -71,6 +77,7 @@ export function commitState(a, git = gitRunner) {
   // This checkout is exclusively for state writing; never reset a dirty checkout.
   if (git(repo, ['status', '--porcelain'])) throw new Error('state checkout is not clean');
   const fetchSafeTip = (requireLocalAncestor = false) => {
+    // The commit-state checkout needs full history (fetch-depth: 0) so base is available.
     try {
       git(repo, ['fetch', 'origin', 'refs/heads/ops-state']);
       const tip = git(repo, ['rev-parse', 'FETCH_HEAD']);
@@ -82,6 +89,7 @@ export function commitState(a, git = gitRunner) {
   const reset = tip => {
     git(repo, ['reset', '--hard', tip]); head = tip; rebasedOnto = tip;
   };
+  // Post-reset alreadyCommitted() checks are defensive; safe changes belong to the other job.
   if (head !== base) {
     const tip = fetchSafeTip(true);
     if (!tip) throw Object.assign(new Error('ops-state moved concurrently; base SHA differs; state not written; investigate (not a safe other-job-only change)'), { exitCode: 3 });

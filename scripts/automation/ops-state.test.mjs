@@ -9,6 +9,7 @@ import { pull } from '../ops-state/pull.mjs';
 import { commitState, gitRunner, concurrentChangeIsSafe } from '../ops-state/commit.mjs';
 import { sha256, offerFiles, incoming, manifestAt } from '../ops-state/core.mjs';
 const identity = { GIT_AUTHOR_NAME: 'Synthetic fixture', GIT_AUTHOR_EMAIL: 'fixture@example.com', GIT_COMMITTER_NAME: 'Synthetic fixture', GIT_COMMITTER_EMAIL: 'fixture@example.com' };
+const botIdentity = { GIT_AUTHOR_NAME: 'github-actions[bot]', GIT_AUTHOR_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com', GIT_COMMITTER_NAME: 'github-actions[bot]', GIT_COMMITTER_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com' };
 function temp(t) { const d = fs.mkdtempSync(path.join(os.tmpdir(), 'ops-state-test-')); t.after(() => fs.rmSync(d, { recursive: true, force: true })); return d; }
 function write(d, p, b) { fs.mkdirSync(path.dirname(path.join(d, p)), { recursive: true }); fs.writeFileSync(path.join(d, p), b); }
 function snapshot(d) {
@@ -213,7 +214,7 @@ function auditCommit(f, repo = f.repo, id = '456', base = f.base) {
 }
 function concurrentCommit(f, change, subject = 'state(weekly-audit): synthetic') {
   const other = clone(f, 'other'); change(other);
-  gitRunner(other, ['add', '.']); gitRunner(other, ['commit', '-m', subject], identity);
+  gitRunner(other, ['add', '.']); gitRunner(other, ['commit', '-m', subject], botIdentity);
   gitRunner(other, ['push', 'origin', 'HEAD:refs/heads/ops-state']);
   gitRunner(f.repo, ['fetch', 'origin', 'refs/heads/ops-state']);
   return gitRunner(other, ['rev-parse', 'HEAD']);
@@ -232,7 +233,7 @@ for (const mode of ['other', 'own', 'readme', 'other-path', 'own-entry', 'own-ru
     } else write(repo, 'audit/synthetic.md', 'synthetic');
   }, mode === 'subject' ? 'unrelated commit' : undefined);
   if (mode === 'diverged') {
-    write(f.repo, 'audit/local.md', 'synthetic'); gitRunner(f.repo, ['add', '.']); gitRunner(f.repo, ['commit', '-m', 'state(weekly-audit): local'], identity);
+    write(f.repo, 'audit/local.md', 'synthetic'); gitRunner(f.repo, ['add', '.']); gitRunner(f.repo, ['commit', '-m', 'state(weekly-audit): local'], botIdentity);
   }
   assert.equal(concurrentChangeIsSafe(f.repo, 'offer', mode === 'diverged' ? gitRunner(f.repo, ['rev-parse', 'HEAD']) : f.base, mode === 'same' ? f.base : tip, f.runner), mode === 'other');
 });
@@ -291,14 +292,68 @@ test('audit safely retries after an offer state commit', t => {
 });
 test('intervening unrelated subject is refused even if final subject is normal', t => {
   const f = repoFixture(t);
-  write(f.repo, 'audit/first.md', 'synthetic'); gitRunner(f.repo, ['add', '.']); gitRunner(f.repo, ['commit', '-m', 'manual audit edit'], identity);
-  write(f.repo, 'audit/second.md', 'synthetic'); gitRunner(f.repo, ['add', '.']); gitRunner(f.repo, ['commit', '-m', 'state(weekly-audit): normal'], identity);
+  write(f.repo, 'audit/first.md', 'synthetic'); gitRunner(f.repo, ['add', '.']); gitRunner(f.repo, ['commit', '-m', 'manual audit edit'], botIdentity);
+  write(f.repo, 'audit/second.md', 'synthetic'); gitRunner(f.repo, ['add', '.']); gitRunner(f.repo, ['commit', '-m', 'state(weekly-audit): normal'], botIdentity);
   assert.equal(concurrentChangeIsSafe(f.repo, 'offer', f.base, gitRunner(f.repo, ['rev-parse', 'HEAD']), f.runner), false);
 });
 test('local commits outside fetched history cannot be discarded on stale HEAD retry', t => {
   const f = repoFixture(t), repo = clone(f, 'local'); auditCommit(f);
-  write(repo, 'audit/local.md', 'synthetic'); gitRunner(repo, ['add', '.']); gitRunner(repo, ['commit', '-m', 'state(weekly-audit): local'], identity);
+  write(repo, 'audit/local.md', 'synthetic'); gitRunner(repo, ['add', '.']); gitRunner(repo, ['commit', '-m', 'state(weekly-audit): local'], botIdentity);
   const head = gitRunner(repo, ['rev-parse', 'HEAD']);
   assert.throws(() => commitState({ ...f.a, repo }, f.runner), e => e.exitCode === 3);
   assert.equal(gitRunner(repo, ['rev-parse', 'HEAD']), head);
+});
+
+function stateCommit(repo, env = botIdentity) {
+  gitRunner(repo, ['add', '.']);
+  gitRunner(repo, ['commit', '-m', 'state(weekly-audit): synthetic'], env);
+  return gitRunner(repo, ['rev-parse', 'HEAD']);
+}
+test('cross-directory rename from offer-watch/x to audit/y is unsafe', t => {
+  const f = repoFixture(t);
+  write(f.repo, 'offer-watch/x', 'synthetic rename content');
+  const base = stateCommit(f.repo);
+  gitRunner(f.repo, ['mv', 'offer-watch/x', 'audit/y']);
+  const tip = stateCommit(f.repo);
+  assert.equal(concurrentChangeIsSafe(f.repo, 'offer', base, tip), false);
+});
+for (const role of ['AUTHOR', 'COMMITTER']) test(`intervening non-bot ${role.toLowerCase()} is unsafe even with a normal final commit`, t => {
+  const f = repoFixture(t);
+  write(f.repo, 'audit/first.md', 'synthetic');
+  stateCommit(f.repo, { ...botIdentity, [`GIT_${role}_EMAIL`]: 'fixture@example.com' });
+  write(f.repo, 'audit/second.md', 'synthetic');
+  const tip = stateCommit(f.repo);
+  assert.equal(concurrentChangeIsSafe(f.repo, 'offer', f.base, tip), false);
+});
+test('merge commit in the range is unsafe even with bot identities and state subjects', t => {
+  const f = repoFixture(t);
+  gitRunner(f.repo, ['checkout', '-b', 'side']);
+  write(f.repo, 'audit/side.md', 'synthetic'); stateCommit(f.repo);
+  gitRunner(f.repo, ['checkout', 'ops-state']);
+  write(f.repo, 'audit/main.md', 'synthetic'); stateCommit(f.repo);
+  gitRunner(f.repo, ['merge', '--no-ff', 'side', '-m', 'state(weekly-audit): merge'], botIdentity);
+  const tip = gitRunner(f.repo, ['rev-parse', 'HEAD']);
+  assert.equal(concurrentChangeIsSafe(f.repo, 'offer', f.base, tip), false);
+});
+for (const endpoint of ['base', 'tip']) for (const files of [undefined, null, {}]) test(`manifest files ${JSON.stringify(files)} at ${endpoint} is unsafe`, t => {
+  const f = repoFixture(t), manifest = manifestAt(f.repo);
+  const invalid = { ...manifest, files };
+  let base = f.base;
+  if (endpoint === 'base') {
+    write(f.repo, 'MANIFEST.json', JSON.stringify(invalid)); base = stateCommit(f.repo);
+  }
+  write(f.repo, 'MANIFEST.json', JSON.stringify(endpoint === 'tip' ? invalid : manifest));
+  write(f.repo, 'audit/other.md', 'synthetic');
+  const tip = stateCommit(f.repo);
+  assert.equal(concurrentChangeIsSafe(f.repo, 'offer', base, tip), false);
+});
+test('both commit-state ops-state checkouts fetch full history', () => {
+  for (const name of ['offer-watch-cloud', 'weekly-audit-cloud']) {
+    const workflow = fs.readFileSync(new URL(`../../.github/workflows/${name}.yml`, import.meta.url), 'utf8');
+    const job = workflow.split('\n  commit-state:')[1].split(/\n  [\w-]+:/)[0];
+    const checkouts = job.split(/\n      - /).filter(step => /uses: actions\/checkout@/.test(step) && /\n          ref: ops-state\n/.test(step));
+    assert.equal(checkouts.length, 1, name);
+    assert.match(checkouts[0], /\n          path: ops-state\n/);
+    assert.match(checkouts[0], /\n          fetch-depth: 0\n/);
+  }
 });

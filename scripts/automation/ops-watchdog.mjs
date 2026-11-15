@@ -14,9 +14,9 @@ function successes(input, now) {
   if (!input || !Array.isArray(input.workflow_runs)) throw new Error('expected workflow_runs array');
   return input.workflow_runs.filter(run => {
     if (!run || !['head_branch', 'event', 'status'].every(k => typeof run[k] === 'string') || !(run.conclusion === null || typeof run.conclusion === 'string')) throw new Error('invalid workflow run');
-    const time = timestamp(run.created_at);
-    return run.head_branch === 'main' && ['schedule', 'workflow_dispatch'].includes(run.event) && run.status === 'completed' && run.conclusion === 'success' && time <= now;
-  }).map(run => timestamp(run.created_at)).sort((a, b) => b - a);
+    // Any successful dispatch on main counts.
+    return run.head_branch === 'main' && ['schedule', 'workflow_dispatch'].includes(run.event) && run.status === 'completed' && run.conclusion === 'success';
+  }).map(run => timestamp(run.created_at)).filter(time => time <= now).sort((a, b) => b - a);
 }
 export function evaluate({ offerRuns, auditRuns, now }) {
   const time = timestamp(now), offers = successes(offerRuns, time), audits = successes(auditRuns, time);
@@ -28,6 +28,7 @@ export function evaluate({ offerRuns, auditRuns, now }) {
   const offer = offers.some(t => t > time - 36 * HOUR) ? 'ok' : 'missed';
   // Monday's scheduled run can start many hours late. Wait through Tuesday 14:47Z
   // before alarming, and require a success created in this UTC week, not last week's run.
+  // A missed audit re-alerts daily until a success.
   const audit = time < slotTime + 20 * HOUR ? 'pending' : audits.some(t => t >= +week) ? 'ok' : 'missed';
   const latestOfferSuccess = offers.length ? new Date(offers[0]).toISOString() : null;
   const lines = [];

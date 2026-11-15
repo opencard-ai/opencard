@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import { evaluate, main } from './ops-watchdog.mjs';
 
 const now = '2026-11-17T15:23:00Z';
@@ -19,12 +20,20 @@ for (const patch of [{ conclusion: 'failure' }, { conclusion: 'cancelled' }, { e
   const r = evaluate({ ...good, offerRuns: bad, auditRuns: bad });
   assert.equal(r.offer, 'missed'); assert.equal(r.audit, 'missed');
 });
-test('offer window is open at 36h and closed at now; dispatch success counts for both jobs', () => {
+test('offer is missed at exactly 36h and counts success at now; dispatch success counts for both jobs', () => {
   for (const hours of [36, 37]) assert.equal(evaluate({ ...good, offerRuns: runs(run(new Date(Date.parse(now) - hours * 3600000).toISOString())) }).offer, 'missed');
   assert.equal(evaluate({ ...good, offerRuns: runs(run(now)) }).offer, 'ok');
   assert.equal(evaluate({ ...good, offerRuns: runs(run('2026-11-18T00:00:00Z')) }).offer, 'missed');
   const r = evaluate({ ...good, offerRuns: runs(run(now, { event: 'workflow_dispatch' })), auditRuns: runs(run(now, { event: 'workflow_dispatch' })) });
   assert.equal(r.offer, 'ok'); assert.equal(r.audit, 'ok');
+});
+test('malformed created_at on a nonqualifying run is ignored', () => {
+  const nonqualifying = run('bad', { event: 'pull_request' });
+  const r = evaluate({ ...good, offerRuns: runs(nonqualifying, ...good.offerRuns.workflow_runs), auditRuns: runs(nonqualifying, ...good.auditRuns.workflow_runs) });
+  assert.equal(r.offer, 'ok'); assert.equal(r.audit, 'ok');
+});
+test('Monday 23:30Z audit success counts at Tuesday 15:23Z', () => {
+  assert.equal(evaluate({ ...good, auditRuns: runs(run('2026-11-16T23:30:00Z')) }).audit, 'ok');
 });
 test('audit is pending Monday and early Tuesday, then requires this UTC week', () => {
   for (const time of ['2026-11-16T00:00:00Z', '2026-11-16T19:00:00Z', '2026-11-17T14:46:59Z']) assert.equal(evaluate({ ...good, now: time, auditRuns: runs() }).audit, 'pending');
@@ -51,13 +60,16 @@ test('CLI writes exact NO_REPLY and statuses, malformed input exits 2 without su
   const argv = ['--offer-runs', offer, '--audit-runs', audit, '--now', now, '--out-dir', out];
   assert.equal(main(argv), 0); assert.equal(fs.readFileSync(path.join(out, 'watchdog.txt'), 'utf8'), 'NO_REPLY');
   assert.equal(JSON.parse(fs.readFileSync(path.join(out, 'watchdog.json'))).audit, 'ok');
-  fs.rmSync(out, { recursive: true }); fs.writeFileSync(offer, '{');
-  assert.equal(main(argv), 2); assert.equal(fs.existsSync(out), false);
-  const r = spawnSync(process.execPath, ['scripts/automation/ops-watchdog.mjs', ...argv], { encoding: 'utf8' });
+  fs.rmSync(out, { recursive: true });
+  for (const malformed of ['{', JSON.stringify({ workflow_runs: {} }), JSON.stringify(runs(run('bad')))]) {
+    fs.writeFileSync(offer, malformed);
+    assert.equal(main(argv), 2); assert.equal(fs.existsSync(out), false);
+  }
+  const r = spawnSync(process.execPath, [fileURLToPath(new URL('./ops-watchdog.mjs', import.meta.url)), ...argv], { encoding: 'utf8', cwd: d });
   assert.ifError(r.error); assert.equal(r.status, 2); assert.equal(fs.existsSync(out), false);
 });
 test('workflow has UTC schedule, read permissions, pinned actions and guarded notify/secrets', () => {
-  const wf = fs.readFileSync('.github/workflows/ops-watchdog.yml', 'utf8');
+  const wf = fs.readFileSync(new URL('../../.github/workflows/ops-watchdog.yml', import.meta.url), 'utf8');
   assert.match(wf, /cron: '23 15 \* \* \*'/); assert.match(wf, /workflow_dispatch:/);
   assert.match(wf, /permissions:\n  contents: read/); assert.match(wf, /actions: read/);
   assert.doesNotMatch(wf, /\bwrite\b|gh workflow run|secrets: inherit/);
