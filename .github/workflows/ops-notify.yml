@@ -6,7 +6,7 @@ name: Ops notify (AgentMail; preview by default)
 # - Real sending requires ALL of: a workflow_call caller passing `send: true`, running on refs/heads/main, the
 #   `--send` flag, OPS_NOTIFY_SEND=true, and the existing secret names AGENTMAIL_API_KEY / AGENTMAIL_FROM_INBOX /
 #   OWNER_EMAIL (same names as card-updates.yml). Enabling it is a separate, explicitly approved step.
-# - Dedupe key ops-notify:<job>:<PT date>:<run id>; recording it in the ops-state branch is a later step.
+# - Dedupe key ops-notify:<job>:<PT date>:<run id> (failure adds failure: after job); recording it in the ops-state branch is a later step.
 on:
   workflow_call:
     inputs:
@@ -14,6 +14,10 @@ on:
         description: 'offer-watch or weekly-audit'
         type: string
         required: true
+      kind:
+        description: 'summary or failure'
+        type: string
+        default: 'summary'
       pt_date:
         description: 'PT date YYYY-MM-DD of the job run'
         type: string
@@ -51,6 +55,7 @@ jobs:
     timeout-minutes: 10
     env:
       NOTIFY_JOB: ${{ inputs.job || 'offer-watch' }}
+      NOTIFY_KIND: ${{ inputs.kind || 'summary' }}
       NOTIFY_PT_DATE: ${{ inputs.pt_date || '2026-11-13' }}
       SUMMARY_ARTIFACT: ${{ inputs.summary_artifact || '' }}
       SUMMARY_FILE: ${{ inputs.summary_file || '' }}
@@ -69,17 +74,18 @@ jobs:
           path: ${{ runner.temp }}/summary-in
       - name: Render sanitized preview (no secrets, no network)
         run: |
+          [[ "$NOTIFY_KIND" =~ ^(summary|failure)$ ]] || { echo "kind must be summary or failure" >&2; exit 2; }
           if [ -n "$SUMMARY_ARTIFACT" ]; then
             [[ "$SUMMARY_FILE" =~ ^[A-Za-z0-9._-]+$ && "$SUMMARY_FILE" != *..* ]] || { echo "summary_file must be a plain file name (no / or ..)" >&2; exit 2; }
             src="$RUNNER_TEMP/summary-in/$SUMMARY_FILE"
           else src=scripts/automation/fixtures/ops-notify-summary.txt; fi
-          node scripts/automation/ops-notify.mjs --job "$NOTIFY_JOB" --pt-date "$NOTIFY_PT_DATE" --run-id "$GITHUB_RUN_ID" \
+          node scripts/automation/ops-notify.mjs --job "$NOTIFY_JOB" --kind "$NOTIFY_KIND" --pt-date "$NOTIFY_PT_DATE" --run-id "$GITHUB_RUN_ID" \
             --run-url "https://github.com/opencard-ai/opencard/actions/runs/$GITHUB_RUN_ID" \
             --summary-file "$src" --out-dir "$RUNNER_TEMP/notify"
           { echo "## Ops notify preview ($NOTIFY_JOB, PT $NOTIFY_PT_DATE) — NOT sent"; echo; cat "$RUNNER_TEMP/notify/notify-preview.md"; } >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: ops-notify-preview-${{ github.run_id }}-${{ github.run_attempt }}
+          name: ops-notify-preview-${{ github.run_id }}-${{ github.run_attempt }}-${{ inputs.summary_file || 'summary.txt' }}
           path: ${{ runner.temp }}/notify/
           retention-days: 14
   send:
@@ -107,10 +113,12 @@ jobs:
           AGENTMAIL_FROM_INBOX: ${{ secrets.AGENTMAIL_FROM_INBOX }}
           OWNER_EMAIL: ${{ secrets.OWNER_EMAIL }}
           NOTIFY_JOB: ${{ inputs.job }}
+          NOTIFY_KIND: ${{ inputs.kind }}
           NOTIFY_PT_DATE: ${{ inputs.pt_date }}
           SUMMARY_FILE: ${{ inputs.summary_file }}
         run: |
+          [[ "$NOTIFY_KIND" =~ ^(summary|failure)$ ]] || { echo "kind must be summary or failure" >&2; exit 2; }
           [[ "$SUMMARY_FILE" =~ ^[A-Za-z0-9._-]+$ && "$SUMMARY_FILE" != *..* ]] || { echo "summary_file must be a plain file name (no / or ..)" >&2; exit 2; }
-          node scripts/automation/ops-notify.mjs --job "$NOTIFY_JOB" --pt-date "$NOTIFY_PT_DATE" --run-id "$GITHUB_RUN_ID" \
+          node scripts/automation/ops-notify.mjs --job "$NOTIFY_JOB" --kind "$NOTIFY_KIND" --pt-date "$NOTIFY_PT_DATE" --run-id "$GITHUB_RUN_ID" \
             --run-url "https://github.com/opencard-ai/opencard/actions/runs/$GITHUB_RUN_ID" \
             --summary-file "$RUNNER_TEMP/summary-in/$SUMMARY_FILE" --out-dir "$RUNNER_TEMP/notify" --send

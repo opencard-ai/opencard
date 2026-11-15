@@ -79,9 +79,15 @@ never force-push. Record the new head and verify the public snapshot. This runbo
 
 ## 5. Owner flip PR
 
-The separate tiny PR edits **only** `ops/runner-owner.json` offer/audit blocks:
+The separate owner-flip PR edits `ops/runner-owner.json` offer/audit blocks:
 `owner: "github-actions"`, `productionEnabled: true`, with epochs unchanged
 (`offer-20261115-1`, `audit-20261115-1`). Keep news exactly as it is.
+
+Record the offer cron decision in this PR: with the Mac disabled, keep the shadow/comparison schedule
+(`9 21 * * *`, 13:09 PST / 14:09 PDT), or move back toward 11:39 PT. Include any approved schedule
+edit in the owner-flip PR. To retain 13:09 PT across DST, use `9 20 * * *` from 2027-03-14 and return
+to `9 21 * * *` on 2027-11-07. The later shadow schedule keeps issuer requests roughly 1.5 hours
+after the Mac's ~11:30–11:39 PT run. Audit cron remains unchanged.
 
 Merge order: formal PR first (already complete at this point), then the verified re-seed commit on
 `ops-state`, then the owner PR. Before merging the owner PR, recheck both Mac jobs remain disabled and

@@ -182,3 +182,51 @@ test('workflow: summary_file must be a plain file name in both preview and send 
   for (const okName of ['shadow-summary.txt', 'shadow-summary-2026-11-13.txt']) assert.equal(run(okName), true, okName);
   for (const bad of ['../x', 'a/b.txt', '/etc/passwd', '..', 'a..b', '', 'x y', 'x;rm']) assert.equal(run(bad), false, bad);
 });
+
+test('failure kind separates subjects and dedupe keys while summary keys remain compatible', () => {
+  const input = { job: 'offer-watch', ptDate: '2026-11-13', runId: '99', summary: fixture };
+  const summary = buildMessage(input);
+  assert.deepEqual(buildMessage({ ...input, kind: 'summary' }), summary);
+  const failure = buildMessage({ ...input, kind: 'failure' });
+  assert.equal(failure.subject, `[FAILED] ${summary.subject}`);
+  assert.equal(failure.key, 'ops-notify:offer-watch:failure:2026-11-13:99');
+  assert.equal(alreadySent([summary.key], failure.key), false);
+  assert.equal(dedupeKey({ ...input, kind: 'failure' }), failure.key);
+  for (const kind of ['', 'other', 'FAILURE', 'failure\n', 'failure; echo injected']) {
+    assert.throws(() => dedupeKey({ ...input, kind }), /kind/);
+    assert.throws(() => buildMessage({ ...input, kind }), /kind/);
+  }
+});
+
+test('CLI validates kind and produces failure previews independently of summary dedupe', async () => {
+  const d = tmp();
+  try {
+    const sent = path.join(d, 'sent.json');
+    fs.writeFileSync(sent, JSON.stringify(['ops-notify:offer-watch:2026-11-13:99']));
+    assert.equal(await main(base(d, ['--kind', 'failure', '--sent-keys', sent]), {}, noFetch), 0);
+    const record = JSON.parse(fs.readFileSync(path.join(d, 'notify-record.json'), 'utf8'));
+    assert.equal(record.status, 'preview');
+    assert.equal(record.key, 'ops-notify:offer-watch:failure:2026-11-13:99');
+    assert.match(fs.readFileSync(path.join(d, 'notify-preview.md'), 'utf8'), /\*\*Subject:\*\* \[FAILED\] /);
+    assert.equal(await main(base(d, ['--kind', 'summary']), {}, noFetch), 0);
+    for (const args of [['--kind'], ['--kind', ''], ['--kind', 'other'], ['--kind', '--send']]) assert.equal(await main(base(d, args), {}, noFetch), 2);
+  } finally { fs.rmSync(d, { recursive: true, force: true }); }
+});
+
+test('workflow validates kind from env before preview and send', () => {
+  const wf = fs.readFileSync(new URL('../../.github/workflows/ops-notify.yml', import.meta.url), 'utf8');
+  assert.match(wf, /kind:\n        description: [^\n]*\n        type: string\n        default: 'summary'/);
+  const guard = '[[ "$NOTIFY_KIND" =~ ^(summary|failure)$ ]] || { echo "kind must be summary or failure" >&2; exit 2; }';
+  const { execFileSync } = require('node:child_process');
+  for (const job of wf.split(/\n  (?=preview:|send:)/).slice(1)) {
+    assert.match(job, /NOTIFY_KIND: \$\{\{ inputs.kind(?: \|\| 'summary')? \}\}/);
+    assert.ok(job.indexOf(guard) > 0 && job.indexOf(guard) < job.indexOf('node scripts/automation/ops-notify.mjs'));
+    assert.ok(job.includes('--kind "$NOTIFY_KIND"'));
+    for (const script of job.matchAll(/run: \|\n((?:          .*\n|\n)*)/g)) assert.doesNotMatch(script[1], /\$\{\{/);
+  }
+  for (const kind of ['summary', 'failure', '', 'other', 'failure\ninjected', 'failure; echo injected']) {
+    let valid = true;
+    try { execFileSync('bash', ['-c', guard], { env: { ...process.env, NOTIFY_KIND: kind }, stdio: 'pipe' }); } catch { valid = false; }
+    assert.equal(valid, ['summary', 'failure'].includes(kind));
+  }
+});

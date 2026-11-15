@@ -59,25 +59,26 @@ export function sanitize(summary, { allowedEmails = DEFAULT_ALLOWED_EMAILS, maxC
 }
 
 const SAFE_ID = /^[A-Za-z0-9._-]{1,64}$/;
-/** Deterministic dedupe key per #94: one announcement per job + PT date + run id (attempt excluded on purpose). */
-export function dedupeKey({ job, ptDate, runId }) {
+/** Deterministic dedupe key per #94: one announcement per job + kind + PT date + run id (legacy summary format) (attempt excluded on purpose). */
+export function dedupeKey({ job, ptDate, runId, kind = 'summary' }) {
+  if (!['summary', 'failure'].includes(kind)) throw new Error('kind must be summary or failure');
   if (!JOBS[job]) throw new Error(`unknown job: ${job}`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(ptDate || '')) throw new Error('ptDate must be YYYY-MM-DD');
   if (!SAFE_ID.test(String(runId || ''))) throw new Error('runId must match [A-Za-z0-9._-]{1,64}');
-  return `ops-notify:${job}:${ptDate}:${runId}`;
+  return `ops-notify:${job}:${kind === 'failure' ? 'failure:' : ''}${ptDate}:${runId}`;
 }
 
 const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 /** Build the message or a skip decision. Never includes env, logs or anything but the sanitized summary. */
-export function buildMessage({ job, ptDate, runId, summary, runUrl, allowedEmails }) {
-  const key = dedupeKey({ job, ptDate, runId });
+export function buildMessage({ job, ptDate, runId, summary, runUrl, allowedEmails, kind = 'summary' }) {
+  const key = dedupeKey({ job, ptDate, runId, kind });
   if (isSilent(summary)) return { skip: true, reason: 'no_reply', key };
   const body = sanitize(summary, { allowedEmails });
   if (!body) return { skip: true, reason: 'empty_after_sanitize', key };
   const link = runUrl && /^https:\/\/github\.com\/opencard-ai\/opencard\/actions\/runs\/\d+(\/attempts\/\d+)?$/.test(runUrl) ? runUrl : null;
   const text = `${body}${link ? `\n\nGitHub Actions run: ${link}` : ''}\n\n(dedupe: ${key})`;
-  return { skip: false, key, subject: `[${JOBS[job]}] ${ptDate} run ${runId}`, text, html: `<pre style="font-family:inherit;white-space:pre-wrap">${escapeHtml(text)}</pre>` };
+  return { skip: false, key, subject: `${kind === 'failure' ? '[FAILED] ' : ''}[${JOBS[job]}] ${ptDate} run ${runId}`, text, html: `<pre style="font-family:inherit;white-space:pre-wrap">${escapeHtml(text)}</pre>` };
 }
 
 /**

@@ -36,8 +36,7 @@ is public.
   already use (or set `OPENCARD_AUDIT_DIR`, already supported for audit).
 - Write: one commit per run with message `state(<job>): <PT date> run <run_id> attempt <n>`, pushed
   **fast-forward only**. A rejected push = someone else wrote → job fails without retrying blindly
-  (git ref update is the compare-and-swap). Concurrency group per job (`offer-watch-state`, `weekly-audit-state`)
-  serializes runs.
+  (git ref update is the compare-and-swap). Both state jobs share concurrency group `ops-state-write`, serializing writes across offer and audit.
 - Cost: free. Secrets: none new — job-scoped `GITHUB_TOKEN` with `contents: write` (rulesets on `main` keep it
   from writing main; add a ruleset on `ops-state` allowing only fast-forward, no deletion — admin step,
   needs approval).
