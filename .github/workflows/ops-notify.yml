@@ -1,6 +1,6 @@
 name: Ops notify (AgentMail; preview by default)
 # Reusable notification step for the cloud offer watcher / weekly audit (PR #94 design, option B1).
-# NOT wired into any job yet. No schedule.
+# Called by the formal offer/audit workflows; no schedule in this reusable workflow.
 # - Default and pull_request runs are PREVIEW ONLY: the sanitized email is rendered to the step summary and an
 #   artifact; no secret is referenced by the preview job and nothing is sent.
 # - Real sending requires ALL of: a workflow_call caller passing `send: true`, running on refs/heads/main, the

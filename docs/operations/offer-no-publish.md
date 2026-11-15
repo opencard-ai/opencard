@@ -1,7 +1,7 @@
 # Offer watcher `--no-publish` (hold-only) mode
 
-Implements the code change in PR #94 design §6 phase 1 / §7 item 4. **Not wired into any workflow, no schedule.**
-The Mac job stays the production owner; nothing here publishes, deploys, sends mail or writes `ops-state`.
+Implements the code change in PR #94 design §6 phase 1 / §7 item 4. The [formal cloud workflows](offer-audit-cloud.md) now use this mode.
+The Mac job stays the production owner until a separate owner flip; this command never publishes or deploys.
 
 ## Behaviour
 `npm run -s offer-watch:daily -- --no-publish --state-dir DIR [--skip-pull] [--today D]`

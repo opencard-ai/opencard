@@ -276,3 +276,12 @@ for (const candidatesPresent of [false, true]) {
     else assert.match(r.stdout, /\(no candidates — run failed before collect\)/);
   });
 }
+
+test('load-state CLI refuses a symlinked MANIFEST.json', t => {
+  const f = snapshot(t);
+  fs.renameSync(path.join(f.src, 'MANIFEST.json'), path.join(f.dir, 'real-manifest.json'));
+  fs.symlinkSync(path.join(f.dir, 'real-manifest.json'), path.join(f.src, 'MANIFEST.json'));
+  const r = cli('load-state', ['--src', f.src, '--offer-out', path.join(f.dir, 'out')]);
+  assert.equal(r.status, 2, r.stderr);
+  assert.match(r.stderr, /MANIFEST.json must be a regular file/);
+});

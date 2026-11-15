@@ -173,8 +173,10 @@ test('shadow CLI writes metrics.json and logs the call count to stderr only (fix
 test('cloud workflow: explicit UTC schedule, read-only token permissions, pinned actions, env, epoch parity, no auto/force', () => {
   const workflow = fs.readFileSync(new URL('../../.github/workflows/news-cloud-publish.yml', import.meta.url), 'utf8');
   const owner = JSON.parse(fs.readFileSync(new URL('../../ops/runner-owner.json', import.meta.url), 'utf8'));
-  assert.deepEqual(owner, { version: 1, news: { owner: 'github-actions', productionEnabled: true, epoch: owner.news.epoch } });
-  assert.equal(Object.keys(owner).sort().join(), 'news,version', 'no offer section');
+  assert.equal(owner.version, 1);
+  assert.deepEqual(owner.news, { owner: 'github-actions', productionEnabled: true, epoch: 'news-20261113-1' });
+  for (const job of ['offer', 'audit']) assert.deepEqual(owner[job], { owner: 'mac', productionEnabled: false, epoch: `${job}-20261115-1` });
+  assert.deepEqual(Object.keys(owner).sort(), ['audit', 'news', 'offer', 'version']);
   // GitHub ignored `timezone:` (run 43540487976 fired 01:25Z); cron is explicit UTC = 01:08/13:08 PST.
   assert.equal([...workflow.matchAll(/- cron: '([^']+)'/g)].map(m => m[1]).join(), '8 9,21 * * *');
   assert.doesNotMatch(workflow, /^\s+timezone:/m);

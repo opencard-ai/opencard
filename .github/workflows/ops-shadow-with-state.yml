@@ -23,6 +23,8 @@ on:
     paths:
       - .github/workflows/ops-shadow-with-state.yml
       - scripts/ops-shadow/**
+      - scripts/audit/weekly.ts
+      - tests/ops-shadow-state.test.ts
 permissions:
   contents: read
 concurrency:
@@ -32,9 +34,9 @@ env:
   # Seed commit reviewed by OpenCard (Mac read-only export 2026-11-13). Change only via a reviewed commit.
   OPS_STATE_PINNED_SHA: 9956c5c12a9a107346e237cc868032491c6c1f56
   OPS_STATE_SHA_INPUT: ${{ github.event.inputs.ops_state_sha || '' }}
-  RUN_INPUT: ${{ github.event.inputs.run || 'both' }}
 jobs:
   checks:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
@@ -57,7 +59,7 @@ jobs:
 
   offer:
     needs: checks
-    if: github.event_name != 'workflow_dispatch' || github.event.inputs.run != 'audit'
+    if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) && (github.event_name != 'workflow_dispatch' || github.event.inputs.run != 'audit')
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     env:
@@ -128,7 +130,7 @@ jobs:
 
   audit:
     needs: checks
-    if: github.event_name != 'workflow_dispatch' || github.event.inputs.run != 'offer'
+    if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) && (github.event_name != 'workflow_dispatch' || github.event.inputs.run != 'offer')
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:

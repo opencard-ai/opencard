@@ -9,7 +9,9 @@ const arg = (n: string) => { const i = process.argv.indexOf(n); return i >= 0 ? 
 const src = arg('--src');
 if (!src) { console.error('usage: load-state.ts --src DIR [--offer-out DIR] [--audit-out DIR --today YYYY-MM-DD]'); process.exit(2); }
 const fail = (m: string) => { console.error(`load-state: ${m}`); process.exit(2); };
-const manifest = JSON.parse(fs.readFileSync(path.join(src, 'MANIFEST.json'), 'utf8')) as { files?: ManifestFile[] };
+const manifestPath = path.join(src, 'MANIFEST.json');
+if (!fs.lstatSync(manifestPath).isFile()) fail('MANIFEST.json must be a regular file, not a symlink');
+const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8')) as { files?: ManifestFile[] };
 const read = (rel: string) => {
   const p = path.join(src, rel);
   try {

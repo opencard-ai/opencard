@@ -1,6 +1,6 @@
 # Ops notify (AgentMail) — preview by default
 
-Implements step 2 of the PR #94 design (§3, option B1). **Not wired into any job, no schedule, sending off.**
+Implements step 2 of the PR #94 design (§3, option B1). The [formal cloud workflows](offer-audit-cloud.md) now call it; sending remains off while the Mac owns the jobs.
 
 ## Pieces
 - `scripts/automation/ops-notify-core.mjs`: pure helpers — `isSilent`, `sanitize`, `dedupeKey`, `buildMessage`,
@@ -32,3 +32,7 @@ Dedupe key `ops-notify:<job>:<PT date>:<run id>` (attempt excluded) in the subje
 Record statuses: `preview`, `skipped:no_reply`, `skipped:already_sent`, `refused`, `pending`, `sent`, `send_failed`
 (exit 1 → next run retries; a crash after send can duplicate once = at-least-once). `--record-ops-state` is a
 stub that refuses until the ops-state writer step.
+
+The formal callers gate sending on a new successful state commit. For those workflows, use **Re-run failed jobs**
+to retry mail after a successful commit; a full re-run skips both the existing run ID and sending. See
+[cloud notification semantics](offer-audit-cloud.md#failure-and-notification) for the retry limits.
