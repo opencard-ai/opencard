@@ -21,17 +21,21 @@ for (const [job, slug, cron] of [['offer', 'offer-watch', '9 21 * * *'], ['audit
   assert.match(w, /^permissions:\n  contents: read$/m);
   const jobs = Object.fromEntries([...w.slice(w.indexOf('\njobs:\n')).matchAll(/^  ([a-z-]+):\n([\s\S]*?)(?=^  [a-z-]+:\n|$(?![\s\S]))/gm)].map(m => [m[1], m[2]]));
   assert.deepEqual(Object.keys(jobs), ['run', 'commit-state', 'notify', 'failure-summary', 'failure-notify', 'verdict']);
+  const forkGuard = "github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository";
+  assert.equal(w.split(forkGuard).length - 1, 4);
+  assert.ok(!w.replaceAll(forkGuard, '').includes("github.event_name != 'pull_request'"));
+
   for (const [name, block] of Object.entries(jobs)) {
     const condition = block.match(/^    if: (.*)$/m)?.[1];
     if (name.startsWith('failure-')) {
       assert.ok(condition?.includes("github.ref == 'refs/heads/main'"), name);
-      assert.ok(condition?.includes("github.event_name != 'pull_request'"), name);
+      assert.ok(condition?.includes("!startsWith(github.event_name, 'pull_request')"), name);
     } else assert.ok(condition?.includes("github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository"), name);
     assert.equal(/contents: write/.test(block), name === 'commit-state');
   }
   assert.equal([...w.matchAll(/contents: write/g)].length, 1);
   const ci = jobs['commit-state'].match(/^    if: (.*)$/m)[1];
-  for (const gate of ["needs.run.outputs.mode == 'write'", "needs.run.outputs.daily_ok == 'true'", "needs.run.outputs.state_ready == 'true'", "github.ref == 'refs/heads/main'", "github.event_name != 'pull_request'"]) assert.ok(ci.includes(gate));
+  for (const gate of ["needs.run.outputs.mode == 'write'", "needs.run.outputs.daily_ok == 'true'", "needs.run.outputs.state_ready == 'true'", "github.ref == 'refs/heads/main'", "!startsWith(github.event_name, 'pull_request')"]) assert.ok(ci.includes(gate));
   assert.match(jobs['commit-state'], /ref: main/); assert.match(jobs['commit-state'], /ref: ops-state/);
   assert.match(jobs['commit-state'], /concurrency:\n      group: ops-state-write\n      cancel-in-progress: false/);
   assert.ok(w.includes(`group: ${slug}-cloud-` + '$' + '{{ github.ref }}'));
@@ -56,9 +60,9 @@ for (const [job, slug, cron] of [['offer', 'offer-watch', '9 21 * * *'], ['audit
   if (job === 'offer') { assert.match(w, /--no-publish/); assert.doesNotMatch(w, /--publish\b/); }
   const secrets = [...new Set([...w.matchAll(/secrets\.([A-Z_]+)/g)].map(m => m[1]))].sort();
   assert.deepEqual(secrets, ['AGENTMAIL_API_KEY', 'AGENTMAIL_FROM_INBOX', 'OWNER_EMAIL']); assert.doesNotMatch(w, /secrets: inherit/);
-  for (const block of [jobs.notify, jobs['failure-notify']]) for (const secret of secrets) assert.ok(block.includes(`${secret}: ` + '$' + `{{ github.event_name != 'pull_request' && secrets.${secret} || '' }}`));
+  for (const block of [jobs.notify, jobs['failure-notify']]) for (const secret of secrets) assert.ok(block.includes(`${secret}: ` + '$' + `{{ !startsWith(github.event_name, 'pull_request') && secrets.${secret} || '' }}`));
   const send = jobs.notify.match(/^      send: (.*)$/m)[1];
-  for (const gate of ["mode == 'write'", "needs.commit-state.outputs.committed == 'true'", "github.ref == 'refs/heads/main'", "github.event_name != 'pull_request'"]) assert.ok(send.includes(gate));
+  for (const gate of ["mode == 'write'", "needs.commit-state.outputs.committed == 'true'", "github.ref == 'refs/heads/main'", "!startsWith(github.event_name, 'pull_request')"]) assert.ok(send.includes(gate));
   assert.match(jobs.notify, /permissions:\n      contents: read/);
   assert.match(w, new RegExp(`${job.toUpperCase()}_EPOCH: ${owners[job].epoch}`));
   assert.deepEqual(owners[job], { owner: 'mac', productionEnabled: false, epoch: `${job}-20261115-1` });
@@ -81,7 +85,7 @@ for (const slug of ['offer-watch', 'weekly-audit']) test(`${slug} fixed failure 
   const notify = w.split('  failure-notify:\n')[1].split('  verdict:\n')[0];
   assert.match(summary, /needs: \[run, commit-state, notify\]/);
   const condition = summary.match(/^    if: (.*)$/m)[1];
-  for (const gate of ["always()", "github.ref == 'refs/heads/main'", "github.event_name != 'pull_request'", "github.run_attempt == '1'"]) assert.ok(condition.includes(gate));
+  for (const gate of ["always()", "github.ref == 'refs/heads/main'", "!startsWith(github.event_name, 'pull_request')", "github.run_attempt == '1'"]) assert.ok(condition.includes(gate));
   for (const failure of ["needs.run.result != 'success'", "needs.run.outputs.daily_ok != 'true'", "needs.run.outputs.state_ready != 'true'", "needs.commit-state.result != 'success'", "needs.commit-state.result != 'skipped'", "needs.notify.result != 'success'"]) assert.ok(condition.includes(failure));
   for (const block of [summary, notify]) assert.match(block, /permissions:\n      contents: read/);
   assert.match(summary, /if: needs.run.result == 'success' && needs.run.outputs.daily_ok != 'true'/);
@@ -107,7 +111,7 @@ for (const slug of ['offer-watch', 'weekly-audit']) test(`${slug} fixed failure 
   assert.match(notify, /summary_file: failure.txt/);
   assert.match(notify, /kind: failure/);
   const send = notify.match(/^      send: (.*)$/m)[1];
-  for (const gate of ["github.ref == 'refs/heads/main'", "github.event_name != 'pull_request'"]) assert.ok(send.includes(gate));
+  for (const gate of ["github.ref == 'refs/heads/main'", "!startsWith(github.event_name, 'pull_request')"]) assert.ok(send.includes(gate));
   assert.doesNotMatch(notify, /continue-on-error/);
 });
 
@@ -116,15 +120,16 @@ for (const slug of ['offer-watch', 'weekly-audit']) test(`${slug} fixed failure 
   const summary = read(`.github/workflows/${slug}-cloud.yml`).split('  failure-summary:\n')[1].split('  failure-notify:\n')[0];
   const scripts = runScripts(summary);
   const cases = [
-    { results: ['failure', 'skipped', 'skipped'], mode: 'shadow', today: '2026-11-15', stages: 'run, notify' },
+    { results: ['skipped', 'skipped', 'skipped'], mode: 'shadow', today: '2026-11-15', stages: 'run' },
+    { results: ['failure', 'skipped', 'skipped'], mode: 'shadow', today: '2026-11-15', stages: 'run' },
     { results: ['success', 'cancelled', 'failure'], mode: 'write', today: '2026-11-15', stages: 'commit-state, notify' },
     { results: ['cancelled', 'skipped', 'cancelled'], mode: 'shadow', today: '', stages: 'run, notify' },
     { results: ['success', 'skipped', 'success'], mode: 'write', today: '2026-11-15', compute: true, stages: 'run (compute step)' },
-    { results: ['success', 'skipped', 'skipped'], mode: 'shadow', today: '2026-11-15', stages: 'notify' },
+    { results: ['success', 'skipped', 'skipped'], mode: 'shadow', today: '2026-11-15', stages: 'unknown' },
     { results: ['success', 'skipped', 'success'], mode: 'shadow', today: '2026-11-15', ready: 'false', stages: 'run (stage step)' },
     { results: ['success', 'skipped', 'success'], mode: 'shadow', today: '2026-11-15', ready: 'true\ninjected', stages: 'run (stage step)' },
     { results: ['success', 'skipped', 'success'], mode: 'shadow', today: '2026-11-15', daily: 'false', ready: 'false', compute: true, stages: 'run (compute step)' },
-    { results: ['failure\ninjected', 'skipped', 'skipped'], mode: 'write; injected', today: '2026-11-15\ninjected', stages: 'notify' },
+    { results: ['failure\ninjected', 'skipped', 'skipped'], mode: 'write; injected', today: '2026-11-15\ninjected', stages: 'unknown' },
   ];
   for (const c of cases) {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'cloud-failure-'));
@@ -150,7 +155,9 @@ test('notification previews distinguish normal summaries from failure summaries'
 for (const slug of ['offer-watch', 'weekly-audit']) test(`${slug} every verdict failure triggers the failure condition`, () => {
   const w = read(`.github/workflows/${slug}-cloud.yml`);
   const summary = w.split('  failure-summary:\n')[1].split('  failure-notify:\n')[0];
-  const condition = summary.match(/^    if: (.*)$/m)[1].split("github.run_attempt == '1' && ")[1];
+  const [prefix, condition] = summary.match(/^    if: (.*)$/m)[1].split("github.run_attempt == '1' && ");
+  assert.ok(prefix.includes("!startsWith(github.event_name, 'pull_request')"));
+  assert.ok(condition, 'failure expression follows the attempt guard');
   const verdict = runScripts(w.split('  verdict:\n')[1])[0];
   // Enumerate all job results and boolean outputs, including absent outputs.
   for (const run of ['success', 'failure', 'cancelled', 'skipped'])
@@ -164,4 +171,14 @@ for (const slug of ['offer-watch', 'weekly-audit']) test(`${slug} every verdict 
             assert.equal(Function(`return ${expression}`)(), failed, JSON.stringify(values));
           }
   for (const check of ['test "$DAILY_OK" = true', 'test "$STATE_READY" = true', 'test "$RUN_RESULT" = success', '[[ "$COMMIT_RESULT" == success || "$COMMIT_RESULT" == skipped ]]', 'test "$NOTIFY_RESULT" = success']) assert.ok(verdict.includes(check));
+});
+
+test('runner ownership preserves news and compact JSON format', () => {
+  assert.equal(owners.version, 1);
+  assert.deepEqual(owners.news, { owner: 'github-actions', productionEnabled: true, epoch: 'news-20261113-1' });
+  assert.equal(read('ops/runner-owner.json'), JSON.stringify(owners) + '\n');
+});
+
+test('card validation runs automation tests immediately after unit tests', () => {
+  assert.match(read('.github/workflows/validate-cards.yml'), /- name: Unit tests\n        run: npm test\n\n      - name: Automation tests\n        run: npm run test:automation\n/);
 });
