@@ -230,3 +230,15 @@ test('workflow validates kind from env before preview and send', () => {
     assert.equal(valid, ['summary', 'failure'].includes(kind));
   }
 });
+
+test('CLI send failure explains manual resend without claiming a next-run retry', async t => {
+  const d = tmp();
+  const errors = [];
+  t.mock.method(console, 'error', message => errors.push(message));
+  try {
+    const env = { OPS_NOTIFY_SEND: 'true', AGENTMAIL_API_KEY: 'k', AGENTMAIL_FROM_INBOX: 'i', OWNER_EMAIL: 'o@example.com' };
+    assert.equal(await main(base(d, ['--send']), env, async () => ({ ok: false, status: 500 })), 1);
+    assert.deepEqual(errors, ['ops-notify: send failed; not retried automatically (this job fails; on attempt 1 the caller workflow attempts a separate failure notice; use Re-run failed jobs to resend)']);
+    assert.doesNotMatch(errors.join('\n'), /retry on the next run|next run retries/i);
+  } finally { fs.rmSync(d, { recursive: true, force: true }); }
+});
