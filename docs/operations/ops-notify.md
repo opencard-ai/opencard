@@ -30,8 +30,7 @@ validated `github.com/opencard-ai/opencard/actions/runs/<id>` link and the dedup
 Dedupe key `ops-notify:<job>:<PT date>:<run id>` (attempt excluded) in the subject/body and record.
 `--sent-keys <json>` skips keys already sent; later the list comes from the `ops-state` MANIFEST.
 Record statuses: `preview`, `skipped:no_reply`, `skipped:already_sent`, `refused`, `pending`, `sent`, `send_failed`
-(exit 1; no automatic retry). On attempt 1, the caller workflow attempts a separate failure notice.
-Use **Re-run failed jobs** to resend a normal summary; a crash after send can cause a duplicate on manual retry. `--record-ops-state` is a
+(exit 1 → next run retries; a crash after send can duplicate once = at-least-once). `--record-ops-state` is a
 stub that refuses until the ops-state writer step.
 
 The formal callers gate sending on a new successful state commit. For those workflows, use **Re-run failed jobs**

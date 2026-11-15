@@ -36,7 +36,7 @@ export async function main(argv = process.argv.slice(2), env = process.env, fetc
   record.status = 'pending'; write();
   try {
     await sendViaAgentMail({ fetchImpl, apiKey: env.AGENTMAIL_API_KEY, inboxId: env.AGENTMAIL_FROM_INBOX, to: env.OWNER_EMAIL, message: msg });
-  } catch (e) { record.status = 'send_failed'; record.error = /^http_\d{3}$/.test(e?.category || '') ? e.category : 'client_or_network_error'; write(); console.error('ops-notify: send failed; not retried automatically (this job fails; on attempt 1 the caller workflow attempts a separate failure notice; use Re-run failed jobs to resend)'); return 1; }
+  } catch (e) { record.status = 'send_failed'; record.error = /^http_\d{3}$/.test(e?.category || '') ? e.category : 'client_or_network_error'; write(); console.error('ops-notify: send failed; will retry on the next run'); return 1; }
   record.status = 'sent'; write(); console.log('ops-notify: sent'); return 0;
 }
 

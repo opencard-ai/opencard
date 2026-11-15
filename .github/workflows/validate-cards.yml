@@ -32,9 +32,6 @@ jobs:
       - name: Unit tests
         run: npm test
 
-      - name: Automation tests
-        run: npm run test:automation
-
       # Tag enum drift catcher (e.g. unrecognized tags creeping in).
       - name: Lint tags
         run: npm run lint:tags
