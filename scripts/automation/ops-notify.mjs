@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Ops notification CLI (PR #94 design, option B1). PREVIEW BY DEFAULT.
 //   node scripts/automation/ops-notify.mjs --job offer-watch|weekly-audit --summary-file <file> --pt-date YYYY-MM-DD
-//        --run-id <id> --out-dir <dir> [--kind summary|failure] [--run-url <url>] [--sent-keys <json file>] [--send] [--record-ops-state]
+//        --run-id <id> --out-dir <dir> [--kind summary|failure|missed] [--run-url <url>] [--sent-keys <json file>] [--send] [--record-ops-state]
 // Writes <out-dir>/notify-preview.md and <out-dir>/notify-record.json. Sends ONLY with --send AND
 // OPS_NOTIFY_SEND=true AND AGENTMAIL_API_KEY / AGENTMAIL_FROM_INBOX / OWNER_EMAIL present (existing secret names).
 // --record-ops-state is a stub: the ops-state write is a later step and is refused here.
@@ -16,7 +16,7 @@ export async function main(argv = process.argv.slice(2), env = process.env, fetc
   const job = arg('--job'), ptDate = arg('--pt-date'), runId = arg('--run-id'), outDir = arg('--out-dir'), summaryFile = arg('--summary-file');
   if (!job || !ptDate || !runId || !outDir || !summaryFile) { console.error('ops-notify: --job, --pt-date, --run-id, --summary-file and --out-dir are required'); return 2; }
   const kind = has('--kind') ? arg('--kind') : 'summary';
-  if (!kind || !['summary', 'failure'].includes(kind)) { console.error('ops-notify: --kind must be summary or failure'); return 2; }
+  if (!kind || !['summary', 'failure', 'missed'].includes(kind)) { console.error('ops-notify: --kind must be summary, failure or missed'); return 2; }
   fs.mkdirSync(outDir, { recursive: true });
   let summary;
   try { summary = fs.readFileSync(summaryFile, 'utf8'); } catch { console.error('ops-notify: summary file missing or unreadable (refusing to treat as NO_REPLY)'); return 2; }
@@ -36,7 +36,7 @@ export async function main(argv = process.argv.slice(2), env = process.env, fetc
   record.status = 'pending'; write();
   try {
     await sendViaAgentMail({ fetchImpl, apiKey: env.AGENTMAIL_API_KEY, inboxId: env.AGENTMAIL_FROM_INBOX, to: env.OWNER_EMAIL, message: msg });
-  } catch (e) { record.status = 'send_failed'; record.error = /^http_\d{3}$/.test(e?.category || '') ? e.category : 'client_or_network_error'; write(); console.error('ops-notify: send failed; will retry on the next run'); return 1; }
+  } catch (e) { record.status = 'send_failed'; record.error = /^http_\d{3}$/.test(e?.category || '') ? e.category : 'client_or_network_error'; write(); console.error('ops-notify: send failed; not retried automatically (this job fails; on attempt 1 the caller workflow attempts a separate failure notice; use Re-run failed jobs to resend)'); return 1; }
   record.status = 'sent'; write(); console.log('ops-notify: sent'); return 0;
 }
 

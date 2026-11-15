@@ -6,15 +6,17 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { decideMode } from '../ops-state/owner.mjs';
 import { pull } from '../ops-state/pull.mjs';
-import { commitState, gitRunner } from '../ops-state/commit.mjs';
-import { sha256, offerFiles, incoming } from '../ops-state/core.mjs';
-const identity = { GIT_AUTHOR_NAME: 'Synthetic fixture', GIT_AUTHOR_EMAIL: 'fixture@example.invalid', GIT_COMMITTER_NAME: 'Synthetic fixture', GIT_COMMITTER_EMAIL: 'fixture@example.invalid' };
+import { commitState, gitRunner, concurrentChangeIsSafe } from '../ops-state/commit.mjs';
+import { sha256, offerFiles, incoming, manifestAt } from '../ops-state/core.mjs';
+const identity = { GIT_AUTHOR_NAME: 'Synthetic fixture', GIT_AUTHOR_EMAIL: 'fixture@example.com', GIT_COMMITTER_NAME: 'Synthetic fixture', GIT_COMMITTER_EMAIL: 'fixture@example.com' };
+const botIdentity = { GIT_AUTHOR_NAME: 'github-actions[bot]', GIT_AUTHOR_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com', GIT_COMMITTER_NAME: 'github-actions[bot]', GIT_COMMITTER_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com' };
 function temp(t) { const d = fs.mkdtempSync(path.join(os.tmpdir(), 'ops-state-test-')); t.after(() => fs.rmSync(d, { recursive: true, force: true })); return d; }
 function write(d, p, b) { fs.mkdirSync(path.dirname(path.join(d, p)), { recursive: true }); fs.writeFileSync(path.join(d, p), b); }
 function snapshot(d) {
   const files = [...offerFiles.map(n => [`offer-watch/${n}`, n.endsWith('.jsonl') ? '' : '{}']), ['audit/2026-11-09-db-audit.json', '{"findings":[]}']];
   for (const [p, b] of files) write(d, p, b);
   const manifest = { version: 1, custom: 'keep', runs: { audit: { last_run_id: '90' } }, files: files.map(([p, b]) => ({ path: p, sha256: sha256(b), size: Buffer.byteLength(b), mac_sha256: 'synthetic', source: 'synthetic', modified: false, urls_stripped: 0 })) };
+  manifest.files.sort((a, b) => a.path.localeCompare(b.path));
   write(d, 'MANIFEST.json', JSON.stringify(manifest)); return manifest;
 }
 for (const job of ['offer', 'audit']) test(`owner matrix: ${job}`, () => {
@@ -50,7 +52,7 @@ for (const mode of ['manifest-link', 'parent-link', 'file-link', 'traversal', 's
     if (mode === 'missing') fs.unlinkSync(path.join(src, m.files[0].path));
     if (mode === 'empty') m.files = [];
     if (mode === 'duplicate') m.files.push(m.files[0]);
-    if (mode === 'missing-offer') m.files.shift();
+    if (mode === 'missing-offer') m.files = m.files.filter(f => f.path !== 'offer-watch/ledger.json');
     write(src, 'MANIFEST.json', mode === 'bad-json' ? '{' : JSON.stringify(m));
   }
   assert.throws(() => pull({ src, job: 'offer', out: path.join(d, 'out') })); assert.equal(fs.existsSync(path.join(d, 'out')), false);
@@ -63,7 +65,7 @@ function repoFixture(t) {
   for (const n of offerFiles) write(from, n, n.endsWith('.jsonl') ? '{"type":"held"}\n' : n === 'ledger.json' ? '{"entries":{}}' : '{}');
   const base = gitRunner(repo, ['rev-parse', 'HEAD']);
   const calls = [], runner = (r, argv, env) => { calls.push(argv); return gitRunner(r, argv, env); };
-  t.after(() => { for (const call of calls) for (const arg of call) { assert.notEqual(arg, '--force'); assert.ok(!arg.startsWith('+')); } });
+  t.after(() => { for (const call of calls) for (const arg of call) { assert.notEqual(arg, '--force'); assert.notEqual(arg, '-f'); assert.ok(!arg.startsWith('+')); } });
   return { d, origin, repo, from, base, calls, runner, a: { repo, from, job: 'offer', 'run-id': '123', attempt: '1', 'pt-date': '2026-11-15', epoch: 'offer-test', 'base-sha': base } };
 }
 test('commit fast-forward, manifest metadata, bot identity, exact message, idempotent rerun', t => {
@@ -81,7 +83,7 @@ test('commit fast-forward, manifest metadata, bot identity, exact message, idemp
   assert.equal(again.skipped, true); assert.equal(gitRunner(f.repo, ['rev-list', '--count', 'HEAD']), before);
   const callsBefore = f.calls.length;
   const staleBase = commitState({ ...f.a, attempt: '2' }, f.runner);
-  assert.deepEqual(staleBase, { committed: false, skipped: true, commit_sha: r.commit_sha });
+  assert.deepEqual(staleBase, { committed: false, skipped: true, commit_sha: r.commit_sha, rebased: false });
   assert.equal(f.calls.length, callsBefore + 1); // only HEAD, despite the old base SHA
   assert.equal(gitRunner(f.repo, ['rev-list', '--count', 'HEAD']), before);
   assert.equal(gitRunner(f.origin, ['rev-parse', 'refs/heads/ops-state']), r.commit_sha);
@@ -142,6 +144,7 @@ test('injected git runner verifies state transformation, outputs, idempotency an
     assert.equal(r, repo); calls.push(argv);
     if (argv[0] === 'rev-parse') return head;
     if (argv[0] === 'status') return '';
+    if (argv[0] === 'fetch') throw new Error('synthetic unavailable fetch');
     if (argv[0] === 'add') { assert.deepEqual(argv, ['add', '-A', 'offer-watch', 'audit', 'MANIFEST.json']); return ''; }
     if (argv[0] === 'commit') { assert.equal(env.GIT_COMMITTER_NAME, 'github-actions[bot]'); head = committed; return ''; }
     if (argv[0] === 'push') { assert.deepEqual(argv, ['push', 'origin', 'HEAD:refs/heads/ops-state']); if (failPush) throw new Error('synthetic non-ff https://user:token@example.invalid/repo http://other:secret@example.invalid/other'); return ''; }
@@ -171,7 +174,7 @@ test('injected git runner verifies state transformation, outputs, idempotency an
     return true;
   });
   assert.equal(calls.filter(argv => argv[0] === 'push').length, pushesBefore + 1);
-  for (const argv of calls) for (const arg of argv) { assert.notEqual(arg, '--force'); assert.ok(!arg.startsWith('+')); }
+  for (const argv of calls) for (const arg of argv) { assert.notEqual(arg, '--force'); assert.notEqual(arg, '-f'); assert.ok(!arg.startsWith('+')); }
 });
 
 
@@ -197,4 +200,160 @@ test('incoming validation rejects bad names, invalid JSON/JSONL, symlinks and wr
   assert.throws(() => incoming(dir, 'audit', '2026-11-16'));
   assert.throws(() => incoming(dir, 'audit', '2026-02-30'));
   write(dir, '2026-11-15-url-check.json', '{'); assert.throws(() => incoming(dir, 'audit', '2026-11-15'));
+});
+
+function clone(f, name, sha = f.base) {
+  const repo = path.join(f.d, name);
+  gitRunner(f.d, ['clone', '--branch', 'ops-state', f.origin, repo]);
+  gitRunner(repo, ['reset', '--hard', sha]); return repo;
+}
+function auditCommit(f, repo = f.repo, id = '456', base = f.base) {
+  const from = path.join(f.d, `audit-${id}`);
+  write(from, '2026-11-15-db-audit.json', JSON.stringify({ synthetic: id }));
+  return commitState({ ...f.a, repo, from, job: 'audit', 'run-id': id, 'base-sha': base }, f.runner);
+}
+function concurrentCommit(f, change, subject = 'state(weekly-audit): synthetic') {
+  const other = clone(f, 'other'); change(other);
+  gitRunner(other, ['add', '.']); gitRunner(other, ['commit', '-m', subject], botIdentity);
+  gitRunner(other, ['push', 'origin', 'HEAD:refs/heads/ops-state']);
+  gitRunner(f.repo, ['fetch', 'origin', 'refs/heads/ops-state']);
+  return gitRunner(other, ['rev-parse', 'HEAD']);
+}
+for (const mode of ['other', 'own', 'readme', 'other-path', 'own-entry', 'own-run', 'top-level', 'subject', 'diverged', 'same']) test(`concurrent predicate: ${mode}`, t => {
+  const f = repoFixture(t);
+  const tip = concurrentCommit(f, repo => {
+    if (mode === 'own') write(repo, 'offer-watch/ledger.json', '{"changed":true}');
+    else if (mode === 'readme' || mode === 'other-path') write(repo, mode === 'readme' ? 'README.md' : 'misc/file', 'synthetic');
+    else if (['own-entry', 'own-run', 'top-level'].includes(mode)) {
+      const m = manifestAt(repo);
+      if (mode === 'own-entry') m.files.find(f => f.path === 'offer-watch/ledger.json').source = 'changed';
+      if (mode === 'own-run') m.runs.offer = { last_run_id: '999' };
+      if (mode === 'top-level') m.custom = 'changed';
+      write(repo, 'MANIFEST.json', JSON.stringify(m));
+    } else write(repo, 'audit/synthetic.md', 'synthetic');
+  }, mode === 'subject' ? 'unrelated commit' : undefined);
+  if (mode === 'diverged') {
+    write(f.repo, 'audit/local.md', 'synthetic'); gitRunner(f.repo, ['add', '.']); gitRunner(f.repo, ['commit', '-m', 'state(weekly-audit): local'], botIdentity);
+  }
+  assert.equal(concurrentChangeIsSafe(f.repo, 'offer', mode === 'diverged' ? gitRunner(f.repo, ['rev-parse', 'HEAD']) : f.base, mode === 'same' ? f.base : tip, f.runner), mode === 'other');
+});
+for (const checkout of ['old-base', 'new-tip']) test(`overlapping audit then offer retries once from ${checkout}`, t => {
+  const f = repoFixture(t), audit = auditCommit(f);
+  const repo = clone(f, 'offer-clone', checkout === 'old-base' ? f.base : audit.commit_sha);
+  const result = commitState({ ...f.a, repo }, f.runner);
+  assert.equal(result.committed, true); assert.equal(result.rebased, true);
+  assert.equal(gitRunner(f.origin, ['rev-parse', 'refs/heads/ops-state']), result.commit_sha);
+  assert.equal(gitRunner(repo, ['rev-parse', 'HEAD^']), audit.commit_sha);
+  const m = manifestAt(repo);
+  assert.equal(m.runs.audit.last_run_id, '456'); assert.equal(m.runs.offer.last_run_id, '123');
+  assert.equal(m.runs.offer.base_sha, f.base); assert.equal(m.runs.offer.rebased_onto, audit.commit_sha);
+  assert.ok(m.files.some(f => f.path === 'audit/2026-11-15-db-audit.json'));
+  for (const n of offerFiles) assert.ok(m.files.some(f => f.path === `offer-watch/${n}`));
+  assert.equal(f.calls.filter(c => c[0] === 'fetch').length, 1);
+});
+for (const mode of ['own-dir', 'own-run', 'non-state']) for (const checkout of ['old', 'tip']) test(`conflict ${mode} at ${checkout} fails without pushing`, t => {
+  const f = repoFixture(t);
+  const tip = concurrentCommit(f, repo => {
+    if (mode === 'own-dir') write(repo, 'offer-watch/ledger.json', '{"changed":true}');
+    if (mode === 'non-state') write(repo, 'README.md', 'synthetic');
+    const m = JSON.parse(fs.readFileSync(path.join(repo, 'MANIFEST.json')));
+    if (mode === 'own-dir') { const e = m.files.find(f => f.path === 'offer-watch/ledger.json'), bytes = fs.readFileSync(path.join(repo, e.path)); e.sha256 = sha256(bytes); e.size = bytes.length; }
+    if (mode === 'own-run') m.runs.offer = { last_run_id: '999' };
+    write(repo, 'MANIFEST.json', JSON.stringify(m));
+  });
+  const repo = clone(f, 'offer', checkout === 'old' ? f.base : tip);
+  assert.throws(() => commitState({ ...f.a, repo }, f.runner), e => e.exitCode === (checkout === 'old' ? 4 : 3) && e.message.includes('(not a safe other-job-only change)'));
+  assert.equal(gitRunner(f.origin, ['rev-parse', 'refs/heads/ops-state']), tip);
+});
+for (const checkout of ['old', 'tip']) test(`second movement after ${checkout} retry fails without overwriting origin`, t => {
+  const f = repoFixture(t), first = auditCommit(f), repo = clone(f, 'offer', checkout === 'old' ? f.base : first.commit_sha);
+  let second, pushes = 0;
+  const runner = (r, argv, env) => {
+    if (argv[0] === 'push' && ++pushes === (checkout === 'old' ? 2 : 1)) second = auditCommit(f, f.repo, '457', first.commit_sha);
+    return f.runner(r, argv, env);
+  };
+  assert.throws(() => commitState({ ...f.a, repo }, runner), e => e.exitCode === 4);
+  assert.equal(gitRunner(f.origin, ['rev-parse', 'refs/heads/ops-state']), second.commit_sha);
+  assert.equal(f.calls.filter(c => c[0] === 'fetch').length, 1);
+});
+test('dirty checkout is refused before any reset', t => {
+  const f = repoFixture(t); auditCommit(f); write(f.repo, 'untracked.txt', 'synthetic');
+  assert.throws(() => commitState(f.a, f.runner), /not clean/);
+  assert.equal(f.calls.some(c => c[0] === 'reset'), false);
+});
+
+test('audit safely retries after an offer state commit', t => {
+  const f = repoFixture(t), offer = commitState(f.a, f.runner);
+  const result = auditCommit(f, clone(f, 'audit-clone'));
+  assert.equal(result.rebased, true);
+  const repo = path.join(f.d, 'audit-clone'), m = manifestAt(repo);
+  assert.equal(gitRunner(repo, ['rev-parse', 'HEAD^']), offer.commit_sha);
+  assert.equal(m.runs.offer.last_run_id, '123'); assert.equal(m.runs.audit.last_run_id, '456');
+});
+test('intervening unrelated subject is refused even if final subject is normal', t => {
+  const f = repoFixture(t);
+  write(f.repo, 'audit/first.md', 'synthetic'); gitRunner(f.repo, ['add', '.']); gitRunner(f.repo, ['commit', '-m', 'manual audit edit'], botIdentity);
+  write(f.repo, 'audit/second.md', 'synthetic'); gitRunner(f.repo, ['add', '.']); gitRunner(f.repo, ['commit', '-m', 'state(weekly-audit): normal'], botIdentity);
+  assert.equal(concurrentChangeIsSafe(f.repo, 'offer', f.base, gitRunner(f.repo, ['rev-parse', 'HEAD']), f.runner), false);
+});
+test('local commits outside fetched history cannot be discarded on stale HEAD retry', t => {
+  const f = repoFixture(t), repo = clone(f, 'local'); auditCommit(f);
+  write(repo, 'audit/local.md', 'synthetic'); gitRunner(repo, ['add', '.']); gitRunner(repo, ['commit', '-m', 'state(weekly-audit): local'], botIdentity);
+  const head = gitRunner(repo, ['rev-parse', 'HEAD']);
+  assert.throws(() => commitState({ ...f.a, repo }, f.runner), e => e.exitCode === 3);
+  assert.equal(gitRunner(repo, ['rev-parse', 'HEAD']), head);
+});
+
+function stateCommit(repo, env = botIdentity) {
+  gitRunner(repo, ['add', '.']);
+  gitRunner(repo, ['commit', '-m', 'state(weekly-audit): synthetic'], env);
+  return gitRunner(repo, ['rev-parse', 'HEAD']);
+}
+test('cross-directory rename from offer-watch/x to audit/y is unsafe', t => {
+  const f = repoFixture(t);
+  write(f.repo, 'offer-watch/x', 'synthetic rename content');
+  const base = stateCommit(f.repo);
+  gitRunner(f.repo, ['mv', 'offer-watch/x', 'audit/y']);
+  const tip = stateCommit(f.repo);
+  assert.equal(concurrentChangeIsSafe(f.repo, 'offer', base, tip), false);
+});
+for (const role of ['AUTHOR', 'COMMITTER']) test(`intervening non-bot ${role.toLowerCase()} is unsafe even with a normal final commit`, t => {
+  const f = repoFixture(t);
+  write(f.repo, 'audit/first.md', 'synthetic');
+  stateCommit(f.repo, { ...botIdentity, [`GIT_${role}_EMAIL`]: 'fixture@example.com' });
+  write(f.repo, 'audit/second.md', 'synthetic');
+  const tip = stateCommit(f.repo);
+  assert.equal(concurrentChangeIsSafe(f.repo, 'offer', f.base, tip), false);
+});
+test('merge commit in the range is unsafe even with bot identities and state subjects', t => {
+  const f = repoFixture(t);
+  gitRunner(f.repo, ['checkout', '-b', 'side']);
+  write(f.repo, 'audit/side.md', 'synthetic'); stateCommit(f.repo);
+  gitRunner(f.repo, ['checkout', 'ops-state']);
+  write(f.repo, 'audit/main.md', 'synthetic'); stateCommit(f.repo);
+  gitRunner(f.repo, ['merge', '--no-ff', 'side', '-m', 'state(weekly-audit): merge'], botIdentity);
+  const tip = gitRunner(f.repo, ['rev-parse', 'HEAD']);
+  assert.equal(concurrentChangeIsSafe(f.repo, 'offer', f.base, tip), false);
+});
+for (const endpoint of ['base', 'tip']) for (const files of [undefined, null, {}]) test(`manifest files ${JSON.stringify(files)} at ${endpoint} is unsafe`, t => {
+  const f = repoFixture(t), manifest = manifestAt(f.repo);
+  const invalid = { ...manifest, files };
+  let base = f.base;
+  if (endpoint === 'base') {
+    write(f.repo, 'MANIFEST.json', JSON.stringify(invalid)); base = stateCommit(f.repo);
+  }
+  write(f.repo, 'MANIFEST.json', JSON.stringify(endpoint === 'tip' ? invalid : manifest));
+  write(f.repo, 'audit/other.md', 'synthetic');
+  const tip = stateCommit(f.repo);
+  assert.equal(concurrentChangeIsSafe(f.repo, 'offer', base, tip), false);
+});
+test('both commit-state ops-state checkouts fetch full history', () => {
+  for (const name of ['offer-watch-cloud', 'weekly-audit-cloud']) {
+    const workflow = fs.readFileSync(new URL(`../../.github/workflows/${name}.yml`, import.meta.url), 'utf8');
+    const job = workflow.split('\n  commit-state:')[1].split(/\n  [\w-]+:/)[0];
+    const checkouts = job.split(/\n      - /).filter(step => /uses: actions\/checkout@/.test(step) && /\n          ref: ops-state\n/.test(step));
+    assert.equal(checkouts.length, 1, name);
+    assert.match(checkouts[0], /\n          path: ops-state\n/);
+    assert.match(checkouts[0], /\n          fetch-depth: 0\n/);
+  }
 });
