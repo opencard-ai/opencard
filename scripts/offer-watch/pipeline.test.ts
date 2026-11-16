@@ -536,7 +536,59 @@ const noForce = (calls: string[][]) => assert.ok(!calls.some(c => c.join(' ').in
   assert.ok(odd.ambiguous.includes(MON) && !(MON in odd.values));
   assert.deepEqual(ex('chase-southwest-premier-biz', 'chase.com', 'NEW CARDMEMBER OFFER Earn 60,000Strike through 80,000 points after you spend $3,000 on purchases in the first 3 months from account opening.*'), { [B]: 80000, [SPD]: 3000, [MON]: 3 });
   assert.deepEqual(ex('amex-marriott-bonvoy-biz', 'americanexpress.com', 'Marriott Bonvoy Business® CardAnnual Fee: $125¤Annual Fee: $125¤Welcome OfferLimited Time OfferEarn 100,000 Marriott Bonvoy® Bonus Points and 1 Free Night Awardafter you spend $8,000 in purchases on the Card within the first 6 months'), { [B]: 100000, [SPD]: 8000, [MON]: 6, annual_fee: 125 });
-  assert.deepEqual(ex('amex-blue-cash-preferred', 'americanexpress.com', 'Earn $250 Cash Back1after you spend $3,000 in purchases on your new Card in the first 6 months of Card Membership.† Annual Fee: $0 intro annual fee for the first year, then $95'), { [B]: 250, [SPD]: 3000, [MON]: 6, annual_fee: 95 });
+  // BCP's official hero is personalized across sessions ($250 here, $300 in Actions).
+  // Even a fixed-looking hero is evidence only; Return Protection is unrelated.
+  {
+    const bcp = W('amex-blue-cash-preferred', 'americanexpress.com');
+    assert.equal(bcp.render, true);
+    const hero250 = 'Earn $250 Cash Back after you spend $3,000 in purchases on your new Card within the first 6 months of Card Membership.';
+    const hero300 = hero250.replace('$250', '$300');
+    const footnote = 'Earn $250 Cash Back1after you spend $3,000 in purchases on your new Card in the first 6 months of Card Membership.†';
+    const protection = 'American Express may refund the full purchase price excluding shipping and handling, up to $300 per item, up to a maximum of $1,000 per calendar year per Card account, if you purchased it entirely with your eligible American Express ® Card.';
+    const fee = 'Annual Fee: $0 intro annual fee for the first year, then $95';
+    for (const hero of [hero250, footnote, hero300]) {
+      const text = `${hero} ${protection} ${fee}`;
+      const values = ex('amex-blue-cash-preferred', 'americanexpress.com', text);
+      assert.deepEqual(values, { annual_fee: 95 }); // no bonus, spend, or months
+      assert.deepEqual(reviewSignals(text, bcp, values), ['variable_as_high_as_offer']);
+    }
+    assert.deepEqual(extractValues(protection, bcp).values, {});
+    assert.deepEqual(reviewSignals(protection, bcp, {}), ['detect_only_no_bonus_parsed']);
+    for (const copy of ['Welcome offers vary and you may not be eligible for an offer.', 'Apply, and if approved: Find out your offer amount; Accept the Card with your offer.', 'AS HIGH AS $300 Cash Back']) {
+      assert.deepEqual(extractValues(copy, bcp).values, {});
+      assert.deepEqual(reviewSignals(copy, bcp, {}), ['variable_as_high_as_offer']);
+    }
+    const card = { card_id: 'amex-blue-cash-preferred', name: 'Blue Cash Preferred', annual_fee: 95,
+      welcome_offer: { bonus_points: 250, spending_requirement: 3000, time_period_months: 6 } };
+    // Build actual observations from the page, including the absent stored $250.
+    const candidateFor = (page: string) => {
+      const { values, ambiguous } = extractValues(page, bcp);
+      const observation = { ambiguous_fields: ambiguous, observed: {
+        current_bonus_visible: currentBonusVisible(page, card), review_signals: reviewSignals(page, bcp, values),
+      } };
+      return buildCandidate({ card_id: card.card_id, sources: [bcp] },
+        [conf(bcp.url, 1, values, observation), conf(bcp.url, 2, values, observation)], '2026-09-30T05:50:00Z');
+    };
+    const page300 = `${hero300} ${protection} ${fee}`;
+    assert.equal(currentBonusVisible(page300, card), false);
+    const candidate = candidateFor(page300);
+    assert.deepEqual(candidate.fields, { annual_fee: 95 });
+    const result = assessCandidate(candidate, card, false, runAt);
+    assert.equal(result.status, 'unchanged');
+    assert.deepEqual(result.changes, []);
+    const cards = new Map([[card.card_id, card]]);
+    const review = [{ card_id: card.card_id, field: B,
+      reasons: ['welcome_offer_detect_only_manual_review', 'variable_as_high_as_offer'] }];
+    const plan = planApply({ results: [result] }, cards, opts);
+    assert.deepEqual([plan.applied, plan.held], [[], []]);
+    assert.deepEqual(plan.expiry_review, review);
+    // Annual-fee changes retain the ordinary two-official-fetch apply path.
+    const feeResult = assessCandidate(candidateFor(page300.replace('then $95', 'then $105')), card, false, runAt);
+    const feePlan = planApply({ results: [feeResult] }, cards, opts);
+    assert.deepEqual(feePlan.applied[0]?.changes.map(c => [c.field, c.new_value]), [['annual_fee', 105]]);
+    assert.deepEqual(feePlan.held, []);
+    assert.deepEqual(feePlan.expiry_review, review);
+  }
   // offers whose shape the DB can't hold (cash stated for UR-points cards, tiered, free nights, Bilt cash+status) are evidence only
   for (const id of ['chase-ink-biz-cash', 'chase-ink-biz-unlimited', 'chase-hyatt', 'chase-marriott-boundless', 'bilt-obsidian', 'chase-united-explorer', 'us-bank-harley-davidson']) {
     const e = watch.find(w => w.card_id === id)!; assert.ok(e.hold_only && e.hold_reason && e.sources.every(s => s.patterns.length === 0), id);
