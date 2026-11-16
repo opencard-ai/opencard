@@ -48,7 +48,7 @@
   "sources": [
     {
       "url": "https://www.bankofamerica.com/credit-cards/products/unlimited-cash-back-credit-card/",
-      "notes": "Official BOA Page | Official BofA page, rates & terms, checked 2026-10-19: foreign transaction fee 3%."
+      "notes": "Official BOA Page | Official BofA page, rates & terms, checked 2026-10-19: foreign transaction fee 3%. | Official product page and linked pricing disclosure rechecked 2026-11-16: foreign transaction fee remains 3% of the U.S. dollar amount of each transaction made in a foreign currency."
     },
     {
       "url": "https://www.forbes.com/advisor/credit-cards/reviews/bank-of-america-unlimited-cash-rewards-credit-card/",
@@ -65,9 +65,13 @@
     {
       "url": "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/02/new-bofa-rewards--program-to-reach-millions-more-clients-with-ex",
       "notes": "Bank of America newsroom announcement for 2026 BofA Rewards expansion. | URL updated 2026-11-02 to canonical (old .html redirected)."
+    },
+    {
+      "url": "https://www.bankofamerica.com/salesservices/getDisclosure?campaignID=4082058&poCode=6E&locale=en_US&isMobile=true&format=ccr",
+      "notes": "Official pricing disclosure JSON used by the product-linked terms-and-conditions page (campaign 4082058, product offer 6E), fetched by full GET 2026-11-16. Foreign Transaction: \"3% of the U.S. dollar amount of each transaction made in a foreign currency.\" Existing foreign_transaction_fee of 3 confirmed; no numeric change."
     }
   ],
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-11-16",
   "fhr_thc": {
     "fhr_eligible": false,
     "thc_eligible": false
@@ -77,7 +81,7 @@
     "rules": []
   },
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-10-19",
+  "last_verified": "2026-11-16",
   "next_review": "2026-09-12T03:45:00.000Z",
   "relationship_bonus": {
     "issuer": "Bank of America",
