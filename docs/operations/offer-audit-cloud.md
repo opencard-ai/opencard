@@ -128,16 +128,14 @@ default branch. GitHub may delay scheduled runs.
 
 | Job | UTC cron now | PT until 2027-03-14 | DST change |
 |---|---|---|---|
-| Offer | `9 21 * * *` | daily 13:09 PST | change to `9 20 * * *` on 2027-03-14 to keep 13:09 PDT; back to `9 21 * * *` on 2027-11-07 |
+| Offer | `39 19 * * *` | daily 11:39 PST | change to `39 18 * * *` on 2027-03-14 to keep 11:39 PDT; back to `39 19 * * *` on 2027-11-07 |
 | Audit | `47 18 * * 1` | Monday 10:47 PST | change to `47 17 * * 1` on 2027-03-14 to keep 10:47 PDT; back on 2027-11-07 |
 
-Without the DST edits, they fire at 14:09 PDT and Monday 11:47 PDT. The Mac offer job `8272895b`
-runs around 11:30–11:39 PT. During shadow/comparison, cloud offer runs roughly 1.5 hours later so
-both do not hit issuer sites at once. At owner switch, once the Mac is disabled, decide in the owner-flip
-PR whether to move cloud offer back toward 11:39 PT or retain this schedule. Audit `c524f0d3` still
+`39 19 * * *` is 11:39 AM PST / 12:39 PM PDT. Without the DST edits, they fire at 12:39 PDT and Monday 11:47 PDT. The Mac offer job `8272895b`
+runs around 11:30–11:39 PT. This owner-flip schedule moves the cloud offer back to that ~11:39 PT slot once the Mac job is disabled, giving more margin before the PT-midnight date rollover under GitHub schedule lag. Audit `c524f0d3` still
 runs Monday 10:47 PT; its cloud cron is unchanged. Ownership prevents two
 production writers while the Mac remains enabled. Rollback is to revert the owner PR (cloud returns to
-shadow on its next mode check) and `openclaw cron enable` the Mac jobs after checking any in-flight cloud run.
+shadow on its next mode check, and the offer cron returns to `9 21 * * *`) and `openclaw cron enable` the Mac jobs after checking any in-flight cloud run.
 
 ## Phase 2 and superseded drafts
 
