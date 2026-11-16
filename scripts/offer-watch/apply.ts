@@ -12,7 +12,7 @@ import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { DEFAULT_OFFICIAL_DOMAINS, changeFingerprint } from './gate';
 import { applyPlanToCard, planApply, schemaCheck } from './apply-core';
-import { DEFAULT_HISTORY, DEFAULT_LEDGER, appendHistory, laToday, loadLedger, saveLedger, upsertLedger, type HistoryEvent, type LedgerUpdate } from './state';
+import { DEFAULT_HISTORY, DEFAULT_LEDGER, appendHistory, heldHistoryEvent, laToday, loadLedger, saveLedger, upsertLedger, type HistoryEvent, type LedgerUpdate } from './state';
 
 const arg = (name: string) => { const i = process.argv.indexOf(name); return i >= 0 ? process.argv[i + 1] : undefined; };
 const reportFile = arg('--report');
@@ -49,11 +49,11 @@ const outputs = plan.applied.map(p => {
 });
 const failed = outputs.filter(o => o.error);
 const ok = outputs.filter(o => !o.error);
-failed.forEach(o => plan.held.push(...o.plan.changes.map(c => ({ card_id: o.plan.card_id, field: c.field, value: c.new_value, reasons: [o.error!], fingerprint: c.fingerprint }))));
+failed.forEach(o => plan.held.push(...o.plan.changes.map(c => ({ card_id: o.plan.card_id, field: c.field, old_value: c.old_value, value: c.new_value, reasons: [o.error!], fingerprint: c.fingerprint }))));
 
 // --record-holds: nothing is written to data/cards; would-be applied changes become holds (no_publish_mode).
 const wouldApply = recordHolds ? ok.splice(0, ok.length) : [];
-wouldApply.forEach(o => plan.held.push(...o.plan.changes.map(c => ({ card_id: o.plan.card_id, field: c.field, value: c.new_value, reasons: ['no_publish_mode'], fingerprint: c.fingerprint }))));
+wouldApply.forEach(o => plan.held.push(...o.plan.changes.map(c => ({ card_id: o.plan.card_id, field: c.field, old_value: c.old_value, value: c.new_value, reasons: ['no_publish_mode'], fingerprint: c.fingerprint }))));
 
 let validation = 'not_run';
 if (doApply && ok.length) {
@@ -63,7 +63,7 @@ if (doApply && ok.length) {
   validation = res.status === 0 ? 'passed' : 'failed';
   if (res.status !== 0) {
     for (const [file, text] of original) fs.writeFileSync(file, text);
-    ok.forEach(o => plan.held.push(...o.plan.changes.map(c => ({ card_id: o.plan.card_id, field: c.field, value: c.new_value, reasons: ['schema_validation_failed'], fingerprint: c.fingerprint }))));
+    ok.forEach(o => plan.held.push(...o.plan.changes.map(c => ({ card_id: o.plan.card_id, field: c.field, old_value: c.old_value, value: c.new_value, reasons: ['schema_validation_failed'], fingerprint: c.fingerprint }))));
     ok.length = 0;
     console.error(res.stdout.slice(-2000));
   }
@@ -91,7 +91,7 @@ if (recordHolds) {
   ];
   saveLedger(upsertLedger(loadLedger(ledgerFile), updates, nowIso), ledgerFile);
   appendHistory([
-    ...plan.held.map(h => ({ ts: nowIso, type: 'held' as const, card_id: h.card_id, changes: h.field ? [{ field: h.field, old_value: null, new_value: h.value ?? null }] : undefined, reasons: h.reasons })),
+    ...plan.held.map(h => heldHistoryEvent(h, nowIso)),
     ...plan.expiry_review.map(h => ({ ts: nowIso, type: 'expiry_review' as const, card_id: h.card_id, reasons: h.reasons })),
   ], historyFile);
 }
@@ -108,7 +108,7 @@ if (doApply) {
   saveLedger(upsertLedger(loadLedger(ledgerFile), updates, nowIso), ledgerFile);
   const events: HistoryEvent[] = [
     ...result.applied.map(a => ({ ts: nowIso, type: 'applied' as const, card_id: a.card_id, changes: a.changes.map(({ field, old_value, new_value }) => ({ field, old_value, new_value })), sources: a.sources })),
-    ...plan.held.map(h => ({ ts: nowIso, type: 'held' as const, card_id: h.card_id, changes: h.field ? [{ field: h.field, old_value: null, new_value: h.value ?? null }] : undefined, reasons: h.reasons })),
+    ...plan.held.map(h => heldHistoryEvent(h, nowIso)),
     ...plan.expiry_review.map(h => ({ ts: nowIso, type: 'expiry_review' as const, card_id: h.card_id, reasons: h.reasons })),
     ...(validation === 'failed' ? [{ ts: nowIso, type: 'schema_failed' as const, card_id: null, note: 'validate-all failed; card files restored' }] : []),
   ];
