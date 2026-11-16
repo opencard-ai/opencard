@@ -28,7 +28,7 @@ export const CARD_OPTIONS: CardOption[] = [
   { card_id: "amex-platinum", name: "The Platinum Card® from American Express", issuer: "American Express", annual_fee: 895 },
   { card_id: "apple-card", name: "Apple Card", issuer: "Goldman Sachs", annual_fee: 0 },
   { card_id: "boa-alaska-ascent", name: "Alaska Airlines Atmos™ Ascent Visa Signature® Card", issuer: "Bank of America", annual_fee: 95 },
-  { card_id: "boa-alaska-summit", name: "Alaska Airlines Atmos™ Summit Visa Infinite® Card", issuer: "Bank of America", annual_fee: 395 },
+  { card_id: "boa-alaska-summit", name: "Atmos™ Rewards Summit Visa Infinite® Credit Card", issuer: "Bank of America", annual_fee: 395 },
   { card_id: "boa-customized-cash-rewards", name: "Bank of America® Customized Cash Rewards Credit Card", issuer: "Bank of America", annual_fee: 0 },
   { card_id: "boa-travel-rewards", name: "Bank of America® Travel Rewards Credit Card", issuer: "Bank of America", annual_fee: 0 },
   { card_id: "capital-one-quicksilver", name: "Capital One Quicksilver Cash Rewards Credit Card", issuer: "Capital One", annual_fee: 0 },
