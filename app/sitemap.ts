@@ -4,6 +4,7 @@ import { getGuidesForLocale, hasLocalizedGuide } from "@/lib/guides";
 import { locales } from "@/lib/i18n";
 import { isIndexableCard } from "@/lib/indexable-cards";
 import { HREFLANG } from "@/lib/seo";
+import { BEST_CATEGORIES } from "@/lib/best-categories";
 
 const baseUrl = "https://opencardai.com";
 
@@ -86,5 +87,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: languageAlternates(`/cards/${card.card_id}`, ["en"]),
     }));
 
-  return [...staticPages, ...guidePages, ...cardPages];
+  const BEST_VERIFIED = BEST_CATEGORIES.map((c) => c.verified).sort().at(-1) ?? "2026-11-16";
+  const bestPages: MetadataRoute.Sitemap = ["/best", ...BEST_CATEGORIES.map(({ slug }) => `/best/${slug}`)]
+    .flatMap((path) => ["en", "zh"].map((lang) => ({
+      url: `${baseUrl}/${lang}${path}`,
+      lastModified: new Date(BEST_VERIFIED),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      alternates: languageAlternates(path, ["en", "zh"]),
+    })));
+
+  return [...staticPages, ...guidePages, ...cardPages, ...bestPages];
 }

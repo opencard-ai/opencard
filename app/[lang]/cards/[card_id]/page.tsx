@@ -23,6 +23,7 @@ import { formatVariableOffer, formatWelcomeBonus, welcomeBonusKind } from "@/lib
 import { getAffiliateUrl } from "@/lib/affiliate";
 import AffiliateLink from "@/app/components/AffiliateLink";
 import { normalizeOtherBenefits } from "@/lib/other-benefits";
+import CardCategoryLinks from "@/app/components/CardCategoryLinks";
 
 const CREDIT_LABELS: Record<string, string> = {
   "Excellent": "Excellent",
@@ -814,6 +815,8 @@ export default async function CardDetailPage({ params }: Props) {
               </div>
             </section>
           )}
+
+          <CardCategoryLinks cardId={card.card_id} lang={lang} />
       </div>
 
     </div>
