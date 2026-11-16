@@ -2,16 +2,15 @@
   "schema_version": 1,
   "kind": "seed",
   "source_root": "home",
-  "seeded_from": "Mac read-only export 2026-11-13 (copy-only; Mac files unmodified; sha256 of every source verified identical to the export before scrubbing)",
+  "seeded_from": "Mac read-only export 2026-11-13; re-seeded 2026-11-16 (offer-watch state after Mac run 2026-11-16 11:30 PT, final Mac run before disable; audit 2026-11-16) (copy-only; Mac files unmodified; sha256 of every source verified before scrubbing)",
   "last_run_id": null,
   "notified_run_id": null,
   "writer_epoch": null,
   "scrubbing": {
     "rule": "Query strings and fragments removed from every http(s) URL in every string field (scheme+host+path kept). No other content changed; JSON validity and formatting preserved (verified: parsed original with the same rule applied deep-equals parsed seeded file).",
     "applied_to": "audit/*-url-check.json, audit/*-db-audit.json, audit/*-db-audit.md, offer-watch/history.jsonl (only files containing such URLs were changed)",
-    "urls_stripped_total": 290,
+    "urls_stripped_total": 359,
     "modified_files": [
-      "offer-watch/history.jsonl",
       "audit/2026-10-02-db-audit.json",
       "audit/2026-10-02-url-check.json",
       "audit/2026-10-05-db-audit.json",
@@ -28,15 +27,19 @@
       "audit/2026-11-02-url-check.json",
       "audit/2026-11-09-db-audit.json",
       "audit/2026-11-09-db-audit.md",
-      "audit/2026-11-09-url-check.json"
+      "audit/2026-11-09-url-check.json",
+      "offer-watch/history.jsonl",
+      "audit/2026-11-16-db-audit.json",
+      "audit/2026-11-16-db-audit.md",
+      "audit/2026-11-16-url-check.json"
     ],
     "unmodified_files": [
-      "offer-watch/daily-state.json",
-      "offer-watch/ledger.json",
       "audit/2026-10-02-db-audit.md",
       "audit/2026-10-05-db-audit.md",
       "audit/2026-10-12-db-audit.md",
-      "audit/2026-10-19-db-audit.md"
+      "audit/2026-10-19-db-audit.md",
+      "offer-watch/daily-state.json",
+      "offer-watch/ledger.json"
     ]
   },
   "scans": {
@@ -86,33 +89,6 @@
     ".openclaw/state/opencard-offer-watch/.lockhash (npm lock hash, not state)"
   ],
   "files": [
-    {
-      "path": "offer-watch/daily-state.json",
-      "source": ".openclaw/state/opencard-offer-watch/daily-state.json",
-      "mac_sha256": "e72b5994c701ee0af0d8ccef4ecac53a4c9b0797333e1a85071947fb4e8a516f",
-      "sha256": "e72b5994c701ee0af0d8ccef4ecac53a4c9b0797333e1a85071947fb4e8a516f",
-      "size": 272,
-      "modified": false,
-      "urls_stripped": 0
-    },
-    {
-      "path": "offer-watch/history.jsonl",
-      "source": ".openclaw/state/opencard-offer-watch/history.jsonl",
-      "mac_sha256": "1c7ca2ee264982104f12efc8ac4b95c5a4f57ec5c7c9b051412b91d2813291f8",
-      "sha256": "bad82a6dbdf7c960247afa8436f3dbb1c8ba3c3bc1692d29ea72d7519722ac27",
-      "size": 30220,
-      "modified": true,
-      "urls_stripped": 3
-    },
-    {
-      "path": "offer-watch/ledger.json",
-      "source": ".openclaw/state/opencard-offer-watch/ledger.json",
-      "mac_sha256": "8e4652dc18142a34a8dde753f84b19998cf34e3e789071524c44f958c52b710b",
-      "sha256": "8e4652dc18142a34a8dde753f84b19998cf34e3e789071524c44f958c52b710b",
-      "size": 30553,
-      "modified": false,
-      "urls_stripped": 0
-    },
     {
       "path": "audit/2026-10-02-db-audit.json",
       "source": ".openclaw/workspace/opencard/artifacts/audit/2026-10-02-db-audit.json",
@@ -301,6 +277,61 @@
       "size": 135767,
       "modified": true,
       "urls_stripped": 64
+    },
+    {
+      "path": "audit/2026-11-16-db-audit.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-11-16-db-audit.json",
+      "mac_sha256": "b4c06f2662e4940731f5cf7979c8e79d9cc8a77ab9c8fe9cf3f45ae3f21f8c8b",
+      "sha256": "65ba9829125ced26bf76b586c0343cc6b9195de97beb685f27795fa243468d59",
+      "size": 105286,
+      "modified": true,
+      "urls_stripped": 5
+    },
+    {
+      "path": "audit/2026-11-16-db-audit.md",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-11-16-db-audit.md",
+      "mac_sha256": "e284db1ad29b70231c61b8adc69b60c111656576d0ef4ebd8e910c2adafb2043",
+      "sha256": "ae8d877af869a33d4f8e5cb047f86b7a681f83823b7ecd54faff779f9c940bf8",
+      "size": 4159,
+      "modified": true,
+      "urls_stripped": 1
+    },
+    {
+      "path": "audit/2026-11-16-url-check.json",
+      "source": ".openclaw/workspace/opencard/artifacts/audit/2026-11-16-url-check.json",
+      "mac_sha256": "d30e848399a2ebb7a7804c1f999a709027baafd1f5b593f362afbe7a649d11cf",
+      "sha256": "0a9fa953f7c268ff8a8293a279bf95d36fcfd86aac18464a27d5ebc9743d949a",
+      "size": 135365,
+      "modified": true,
+      "urls_stripped": 63
+    },
+    {
+      "path": "offer-watch/daily-state.json",
+      "source": ".openclaw/state/opencard-offer-watch/daily-state.json",
+      "mac_sha256": "bc18d744a877354bf383843df3bb9496cdde84b46390b9151df0220d7d9f3863",
+      "sha256": "bc18d744a877354bf383843df3bb9496cdde84b46390b9151df0220d7d9f3863",
+      "size": 146,
+      "modified": false,
+      "urls_stripped": 0
+    },
+    {
+      "path": "offer-watch/history.jsonl",
+      "source": ".openclaw/state/opencard-offer-watch/history.jsonl",
+      "mac_sha256": "50966b9000c63fbd3f613e0b0a06e3f70da1aa102914dcf4e195ca4785b44900",
+      "sha256": "202edbaf68f1a43d54a310bb5f7381e3cbab46c247cd03120536b4cad03a9215",
+      "size": 31244,
+      "modified": true,
+      "urls_stripped": 3
+    },
+    {
+      "path": "offer-watch/ledger.json",
+      "source": ".openclaw/state/opencard-offer-watch/ledger.json",
+      "mac_sha256": "795c115bf403060f2fcb7440f80a4ec86714c7502e931b15f66a9f1e8e6102b1",
+      "sha256": "795c115bf403060f2fcb7440f80a4ec86714c7502e931b15f66a9f1e8e6102b1",
+      "size": 32270,
+      "modified": false,
+      "urls_stripped": 0
     }
-  ]
+  ],
+  "runs": {}
 }
