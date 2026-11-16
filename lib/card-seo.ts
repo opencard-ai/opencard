@@ -158,10 +158,6 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
     title: "Southwest Rapid Rewards Premier Card: $149 Fee, No Foreign Fees | OpenCard",
     description: "Chase's Southwest Rapid Rewards Premier card: $149 annual fee, no foreign transaction fees, 3x points on Southwest purchases, 2x at grocery stores and restaurants, 1x on everything else.",
   },
-  "comenity-ulta-beauty-mastercard": {
-    title: "Ulta Beauty Credit Mastercard: No Annual Fee, 4x at Ulta | OpenCard",
-    description: "The Ulta Beauty Credit Mastercard from Comenity has no annual fee and earns 4x points per $1 at Ulta Beauty, 2x on gas and dining, and 1x on other purchases. Compare it with other store cards.",
-  },
   "amex-blue-cash-everyday": {
     title: "Amex Blue Cash Everyday: No Annual Fee, 3% at U.S. Supermarkets | OpenCard",
     description: "American Express Blue Cash Everyday: $0 annual fee and 3% cash back at U.S. supermarkets on up to $6,000 a year (then 1%). 2.7% foreign transaction fee. Compare it with other no-fee grocery cards.",
@@ -238,10 +234,6 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
     title: "BofA Business Advantage Travel Rewards (WorldPoints): No Annual Fee | OpenCard",
     description: "Bank of America's Business Advantage Travel Rewards World Mastercard: $0 annual fee, 1.5 points per $1 everywhere and 3x through the BofA Travel Center. Also searched as WorldPoints Travel Rewards for Business.",
   },
-  "chase-united-club-infinite": {
-    title: "United Club Infinite Card: $695 Fee, Lounge Access & 11x Miles | OpenCard",
-    description: "Chase United Club Visa Infinite: $695 annual fee buys United Club membership, two free checked bags, Premier Access, and up to 11x miles on United flights. See which credits offset the fee.",
-  },
   "barclays-gap-good-rewards-mastercard": {
     title: "Gap Encore Mastercard: No Annual Fee & 20% Off First Purchase | OpenCard",
     description: "Barclays' Gap Encore Mastercard works anywhere Mastercard is accepted. No annual fee, points at Gap and other Gap Inc. brands, and 20% off your first Gap purchase. Same rewards family as Old Navy, Banana Republic and Athleta.",
@@ -265,6 +257,27 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
   "amex-biz-platinum": {
     title: "American Express Business Platinum Card: $895 Fee & Benefits | OpenCard",
     description: "The Business Platinum Card from American Express: $895 annual fee, 5x points on flights and prepaid hotels booked on AmexTravel.com, 2x on key business purchases, and no foreign transaction fees. See which credits are worth it.",
+  },
+  // CTR batch 5 (2026-11-16): Ulta + top-query pages. Facts re-checked on issuer pages 2026-11-16.
+  "comenity-ulta-beauty-mastercard": {
+    title: "Ulta Credit Card: $0 Fee, 2 Points per $1, Login & Pay Links | OpenCard",
+    description: "Ulta Beauty Rewards Mastercard from Comenity Capital Bank: $0 annual fee, 2 points per $1 at Ulta Beauty and 1 point per $3 everywhere else. Plus links to Ulta's official apply page and the Comenity login to pay your bill.",
+  },
+  "capital-one-spark-cash-plus": {
+    title: "Spark Cash Plus: 2% Cash Back, 2.99% Late Fee, Refundable $150 Fee | OpenCard",
+    description: "Capital One Spark Cash Plus is a charge card: unlimited 2% cash back, a $150 annual fee refunded each year you spend at least $150,000, a 2.99% late fee and no foreign transaction fees.",
+  },
+  "capital-one-spark-cash": {
+    title: "Capital One Spark Cash: 2% Cash Back, $0 Intro Annual Fee, Then $95 | OpenCard",
+    description: "Capital One Spark Cash for Business: unlimited 2% cash back on every purchase, 5% on hotels and rental cars booked through Capital One Business Travel, and a $0 annual fee for the first year, then $95.",
+  },
+  "citi-secured-mastercard": {
+    title: "Citi Secured Mastercard: No Annual Fee, $200 Minimum Deposit | OpenCard",
+    description: "Citi Secured Mastercard: no annual fee and no rewards. Your $200 to $2,500 security deposit sets your credit limit, you get FICO Score access, and responsible use may let you upgrade to the Citi Diamond Preferred card.",
+  },
+  "chase-united-club-infinite": {
+    title: "United Club Card: $695 Fee, United Club Membership, 2 Free Bags | OpenCard",
+    description: "Chase's United Club Card: $695 annual fee, United Club membership, free first and second checked bags for you and one companion, Premier Access, 5 miles total per $1 on United tickets and 2 miles per $1 on dining and travel.",
   },
 };
 

@@ -25,3 +25,9 @@ assert.ok(/Up to 5/.test(cardSeoMeta(permanent, "en", false).title), "en templat
 for (const lang of ["en", "zh"]) {
   assert.ok(!FIVE.test(cardSeoMeta({ ...card, earning_rates: rates }, lang, false).title), `real card ${lang}`);
 }
+
+// The Ulta override uses the corrected earning rate and the main search query.
+const ulta = JSON.parse(readFileSync(new URL("../data/cards/comenity-ulta-beauty-mastercard.json", import.meta.url), "utf8"));
+const ultaTitle = cardSeoMeta(ulta, "en", false).title;
+assert.match(ultaTitle, /Ulta Credit Card/);
+assert.doesNotMatch(ultaTitle, /4x/);
