@@ -7,23 +7,27 @@
   "foreign_transaction_fee": 0,
   "credit_required": "Excellent",
   "welcome_offer": {
-    "bonus_points": 100000,
+    "bonus_points": 0,
+    "bonus_value": "Varies",
+    "bonus_points_max": 125000,
     "spending_requirement": 5000,
     "time_period_months": 6,
-    "description": "Earn 100,000 Delta SkyMiles bonus miles after spending $5,000 on purchases in the first 6 months. This offer may not be available if you leave this web page and return later.",
+    "description": "Variable welcome offer: apply and find out your welcome offer, as high as 125,000 Bonus Miles after you spend $5,000 in purchases on your new Card within the first 6 months of Card Membership. Welcome offers vary and you may not be eligible for an offer; American Express shows the exact amount after you apply. No fixed public offer amount is published.",
     "point_program": "Delta SkyMiles",
-    "estimated_value": 1000,
-    "offer_status": "public_limited_time",
+    "offer_status": "as_high_as_ymmv",
     "confidence": "high",
     "notes": [
       "2026-09-09 issuer recheck: 50,000 Bonus Miles plus 2 round-trip Delta Comfort Flight Certificates after $10,000/6 months, ending November 4, 2026.",
       "Previous public limited-time 7/15/2026 offer was removed from current production values to avoid displaying an expired offer.",
       "Post-7/15/2026 closeout completed: expired limited-time Delta Amex state removed/confirmed; current production state is this welcome_offer block.",
-      "2026-11-09 official Amex product page GET 200 (full HTML incl. embedded JSON): \"Earn 70,000 100,000 Bonus Miles after you use your new Card to make $5,000 in purchases within the first 6 months. This offer may not be available if you leave this web page and return later.\" Welcome offer synced 50,000 + 2 Comfort Flight Certificates / $10,000 / 6 months -> 100,000 / $5,000 / 6 months; 'Comfort Flight' no longer appears anywhere in the official welcome-offer copy, so companion_certificates removed from welcome_offer. Post-renewal Annual Companion Certificate (other_benefits) still official and kept. Expired Nov 4 language and expires_at removed. estimated_value 500 -> 1000 (1 cent/mile, same as Gold/Platinum)."
+      "2026-11-09 official Amex product page GET 200 (full HTML incl. embedded JSON): \"Earn 70,000 100,000 Bonus Miles after you use your new Card to make $5,000 in purchases within the first 6 months. This offer may not be available if you leave this web page and return later.\" Welcome offer synced 50,000 + 2 Comfort Flight Certificates / $10,000 / 6 months -> 100,000 / $5,000 / 6 months; 'Comfort Flight' no longer appears anywhere in the official welcome-offer copy, so companion_certificates removed from welcome_offer. Post-renewal Annual Companion Certificate (other_benefits) still official and kept. Expired Nov 4 language and expires_at removed. estimated_value 500 -> 1000 (1 cent/mile, same as Gold/Platinum).",
+      "2026-11-16 as-high-as policy (lead decision after #95/#100): official Amex product-page content API (GET 200, 9:32:32 AM PST; this is the cardshop payload the product page loads — the visible product page returned a 'Loading Error' shell from the same fetcher) solicitationOffer: \"AS HIGH AS 125,000 Bonus Miles after you spend $5,000 in purchases on your new Card within the first 6 months of Card Membership. Welcome offers vary and you may not be eligible for an offer.\" The same payload also has a baseline welcomeOffer \"Earn 70,000 Bonus Miles after you spend $5,000 in purchases on your new Card in your first 6 months of Card Membership.\" Annual fee $650. No 'Offer ends' date; offer.specialInd is N; no limited-time/increased-offer flag. delta.com personal-cards page (rendered GET 200, 9:29:51–9:30:20 AM PST): hero \"APPLY AND FIND OUT YOUR WELCOME OFFER AS HIGH AS 125,00 BONUS MILES After you make $5,000 in eligible purchases on your new Card within the first 6 months of Card Memberships. Welcome offers vary and you may not be eligible for an offer.\" (the page text literally says 125,00 and 'Memberships'; Amex says 125,000). The same delta.com comparison table still lists \"Two Delta Comfort Tickets + 50,000 Miles\" for Reserve; treated as a stale leftover and not applied. The 'as high as' 125,000 amount is targeted/variable, so it is not stored as a fixed bonus: bonus_points 100000 -> 0 with bonus_value 'Varies', bonus_points_max 125000, estimated_value 1000 removed, offer_status public_limited_time -> as_high_as_ymmv, is_elevated true -> false (decided from current official copy, which has no elevated/limited-time language). Spend/months unchanged ($5,000 / 6 months, stated as fixed terms on both official sources)."
     ],
-    "source_conflicts": [],
-    "last_verified": "2026-11-09",
-    "is_elevated": true
+    "source_conflicts": [
+      "delta.com personal-cards hero typo 'AS HIGH AS 125,00 BONUS MILES' and comparison-table leftover 'Two Delta Comfort Tickets + 50,000 Miles' conflict with the official Amex product content API ('AS HIGH AS 125,000 Bonus Miles' / $5,000 / 6 months, no companion certificates in the welcome offer); Amex + the delta.com hero 'as high as' language are used, and the table leftover is not applied."
+    ],
+    "last_verified": "2026-11-16",
+    "is_elevated": false
   },
   "earning_rates": [
     {
@@ -143,7 +147,7 @@
       "notes": "Amex Card Member Agreement (06/30/2026): Foreign Transaction fee None (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-11-09",
+  "last_updated": "2026-11-16",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -192,7 +196,7 @@
     }
   ],
   "last_scraped": "2026-04-24T17:26:36.116494",
-  "last_verified": "2026-11-09",
+  "last_verified": "2026-11-16",
   "next_review": "2026-12-09T00:00:00Z",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,
