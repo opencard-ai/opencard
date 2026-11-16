@@ -11,8 +11,13 @@ operator. No gateway restart, configuration rewrite or new secret is part of thi
 ## 1. Pre-checks
 
 - Formal workflow PR merged first; main owner blocks still say `mac` / `productionEnabled: false`.
-- At least **3 clean offer shadow days** and **1–2 clean Monday audits** on main, compared to the Mac;
-  record run IDs, expected summaries and any accepted fetch differences.
+- Today's (2026-11-16) Mac vs cloud audit comparison of new high/medium findings is clean
+  (Data owns it, due by 12:30 PT), **and** at least one clean cloud offer shadow run on main
+  (runs 43778604334 and 43783258485 both qualify); record run IDs, expected summaries and any
+  accepted fetch differences.
+  Note: the Mac offer job has not actually completed a computation since 2026-11-13, so the
+  Mac-vs-cloud offer shadow comparison is no longer meaningful; criteria relaxed by the
+  OpenCard lead on 2026-11-16.
 - Record current `ops-state` head SHA and confirm the manifest verifies. Confirm `protect-ops-state` is active.
 - Confirm existing secret names `AGENTMAIL_API_KEY`, `AGENTMAIL_FROM_INBOX`, `OWNER_EMAIL` are present;
   never print or copy their values.
