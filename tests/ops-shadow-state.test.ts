@@ -6,7 +6,7 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import {
-  OFFER_STATE_FILES, checkManifest, offerStateReport, auditStateReport, baselineFile,
+  OFFER_STATE_FILES, checkManifest, offerStateReport, auditStateReport, renderAudit, baselineFile,
   findingKey, scrubbedFindingKey, stripUrlQuery, type Finding, type ManifestFile,
 } from '../scripts/ops-shadow/state-core';
 import { holdKey, type HeldLike } from '../scripts/offer-watch/daily-core';
@@ -216,6 +216,7 @@ test('auditStateReport distinguishes weekly and scrubbed keys, known and resolve
   const r = auditStateReport(previous, current, '2026-11-12-db-audit.json');
   assert.deepEqual(r, { baseline: '2026-11-12-db-audit.json', current: 3, previous: 3,
     new_high_medium: 2, new_high_medium_scrubbed: 1, known_high_medium: 1, resolved_high_medium: 1,
+    escalated_high_medium: 0, escalated_high_medium_scrubbed: 0, escalated_items: [],
     by_severity: { high: { new: 0, known: 1, resolved: 0 }, medium: { new: 1, known: 0, resolved: 1 }, low: { new: 0, known: 1, resolved: 0 } },
     new_items: [{ severity: 'medium', type: 'broken_source_url', card_id: 'new', field: 'sources' }],
   });
@@ -226,6 +227,9 @@ test('auditStateReport with null baseline suppresses weekly notifications', () =
   assert.equal(r.new_high_medium, 0); assert.equal(r.new_high_medium_scrubbed, 0);
   assert.equal(r.known_high_medium, 0); assert.equal(r.resolved_high_medium, 0);
   assert.deepEqual(r.new_items, []);
+  assert.equal(r.escalated_high_medium, 0);
+  assert.equal(r.escalated_high_medium_scrubbed, 0);
+  assert.deepEqual(r.escalated_items, []);
   assert.deepEqual(r.by_severity, { high: { new: 1, known: 0, resolved: 0 }, medium: { new: 1, known: 0, resolved: 0 }, low: { new: 1, known: 0, resolved: 0 } });
 });
 test('auditStateReport recognizes historical day counts in both weekly and scrubbed comparisons', () => {
@@ -241,6 +245,9 @@ test('auditStateReport recognizes historical day counts in both weekly and scrub
   assert.equal(r.resolved_high_medium, 0);
   assert.deepEqual(r.by_severity, { high: { new: 0, known: 1, resolved: 0 }, medium: { new: 0, known: 1, resolved: 0 } });
   assert.deepEqual(r.new_items, []);
+  assert.equal(r.escalated_high_medium, 0);
+  assert.equal(r.escalated_high_medium_scrubbed, 0);
+  assert.deepEqual(r.escalated_items, []);
 });
 test('stripUrlQuery removes queries and fragments while preserving trailing punctuation', () => {
   for (const suffix of ['.', ',', ';', ':', '!', '.,;:!']) {
@@ -298,4 +305,38 @@ test('load-state CLI refuses a symlinked MANIFEST.json', t => {
   const r = cli('load-state', ['--src', f.src, '--offer-out', path.join(f.dir, 'out')]);
   assert.equal(r.status, 2, r.stderr);
   assert.match(r.stderr, /MANIFEST.json must be a regular file/);
+});
+
+
+test('auditStateReport keeps escalations known and lists old and new severity separately', () => {
+  const prev = [finding('fake-upgrade', 'low'), finding('fake-deescalation', 'high')];
+  const cur = [{ ...prev[0], severity: 'medium' as const }, { ...prev[1], severity: 'low' as const }];
+  const r = auditStateReport(prev, cur, '2026-11-09-db-audit.json');
+  assert.deepEqual(r, {
+    baseline: '2026-11-09-db-audit.json', current: 2, previous: 2,
+    new_high_medium: 0, new_high_medium_scrubbed: 0, known_high_medium: 1, resolved_high_medium: 0,
+    escalated_high_medium: 1, escalated_high_medium_scrubbed: 1,
+    escalated_items: [{ from: 'low', to: 'medium', type: 'broken_source_url', card_id: 'fake-upgrade', field: 'sources' }],
+    by_severity: { medium: { new: 0, known: 1, resolved: 0 }, low: { new: 0, known: 1, resolved: 0 } },
+    new_items: [],
+  });
+  assert.match(renderAudit(r), /high\/medium escalated: 1 .* \/ 1 /);
+  assert.match(renderAudit(r), /- escalated \[low → medium\] broken_source_url fake-upgrade sources/);
+  assert.doesNotMatch(renderAudit(r), /- new/);
+  const next = auditStateReport(cur, cur, '2026-11-16-db-audit.json');
+  assert.equal(next.escalated_high_medium, 0);
+  assert.equal(next.escalated_high_medium_scrubbed, 0);
+  assert.deepEqual(next.escalated_items, []);
+});
+
+test('auditStateReport applies escalation comparison consistently to URL-scrubbed keys', () => {
+  const prev = [finding('fake-url-upgrade', 'low', 'Failed https://example.invalid/card.')];
+  const cur = [finding('fake-url-upgrade', 'high', 'Failed https://example.invalid/card?ref=synthetic.')];
+  const r = auditStateReport(prev, cur, '2026-11-09-db-audit.json');
+  assert.equal(r.new_high_medium, 1);
+  assert.equal(r.escalated_high_medium, 0, 'different weekly key is new, never escalated');
+  assert.equal(r.new_high_medium_scrubbed, 0);
+  assert.equal(r.escalated_high_medium_scrubbed, 1);
+  assert.equal(r.known_high_medium, 1);
+  assert.deepEqual(r.escalated_items, [{ from: 'low', to: 'high', type: 'broken_source_url', card_id: 'fake-url-upgrade', field: 'sources' }]);
 });

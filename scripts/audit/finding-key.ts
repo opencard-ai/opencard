@@ -13,5 +13,30 @@ export function normalizeFindingKey(key: string): string {
 
 /** Rebuild both current and historical report keys here; no baseline migration is needed.
  * Severity is intentionally omitted: threshold escalations (e.g. stale_last_verified low → medium
- * after 365 days) are not re-notified; the human-readable report still shows current severity. */
+ * after 365 days) notify once as escalated when severity rises, then stay quiet the following week. */
 export const findingKey = (f: Finding): string => normalizeFindingKey(`${f.type}|${f.card_id}|${f.field || ''}|${f.detail}`);
+
+export type FindingEscalation = {
+  current: Finding; previous: Finding; from: Finding['severity']; to: Finding['severity'];
+};
+export type FindingChanges = { new: Finding[]; escalated: FindingEscalation[] };
+const severityRank: Record<Finding['severity'], number> = { low: 0, medium: 1, high: 2 };
+
+/** Compare each current finding against the highest previous severity for its key.
+ * The optional key function lets shadow reports apply their existing URL scrubbing rule. */
+export function classifyFindings(previous: Finding[], current: Finding[], key = findingKey): FindingChanges {
+  const highest = new Map<string, Finding>();
+  for (const f of previous) {
+    const k = key(f), prior = highest.get(k);
+    if (!prior || severityRank[f.severity] > severityRank[prior.severity]) highest.set(k, f);
+  }
+  const changes: FindingChanges = { new: [], escalated: [] };
+  for (const f of current) {
+    const prior = highest.get(key(f));
+    if (!prior) changes.new.push(f);
+    else if (severityRank[f.severity] > severityRank[prior.severity]) {
+      changes.escalated.push({ current: f, previous: prior, from: prior.severity, to: f.severity });
+    }
+  }
+  return changes;
+}
