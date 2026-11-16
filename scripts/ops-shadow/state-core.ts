@@ -2,6 +2,8 @@
  * read-only and summarise what a cloud run would report as NEW vs already KNOWN given that state.
  * Nothing here touches the network, git, card data or ops-state. */
 import { createHash } from 'node:crypto';
+import { findingKey, type Finding } from '../audit/finding-key';
+export { findingKey, type Finding } from '../audit/finding-key';
 import { allFetchesFailed, newFetchFailures, newHolds, type ApplyLike } from '../offer-watch/daily-core';
 import type { Candidate, Ledger } from '../offer-watch/gate';
 import type { HistoryEvent } from '../offer-watch/state';
@@ -61,9 +63,6 @@ export function offerStateReport(i: OfferStateInput): OfferStateReport {
   };
 }
 
-export type Finding = { card_id: string; type: string; severity: 'high' | 'medium' | 'low'; field?: string; detail: string; popular?: boolean };
-/** Same key as scripts/audit/weekly.ts (what the job itself calls "new"). */
-export const findingKey = (f: Finding) => `${f.type}|${f.card_id}|${f.field || ''}|${f.detail.replace(/\s+/g, ' ').trim()}`;
 /** ops-state seeds have URL query strings/fragments stripped (MANIFEST.json scrubbing rule), so a finding whose detail
  * embeds a URL with a query would look "new" against a scrubbed baseline. This key applies the same scrub. */
 export const stripUrlQuery = (s: string) => s.replace(/https?:\/\/[^\s"'<>()[\]\\]+/g, m => {
