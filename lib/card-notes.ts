@@ -1,12 +1,20 @@
 /**
  * Short hand-written editor's notes for high-visibility card pages.
  * Each note was checked against the card record and the issuer's official
- * page on 2026-10-18 (first ten) or 2026-10-19 (the rest). Keep notes factual; avoid temporary offer amounts
+ * page on 2026-10-18 (first ten), 2026-10-19, or 2026-11-16 (Ulta). Keep notes factual; avoid temporary offer amounts
  * unless the record carries them.
  */
-export type EditorNote = { note: string; reviewed: string };
+export type EditorNote = { note: string; reviewed: string; links?: { label: string; href: string }[] };
 
 const NOTES: Record<string, EditorNote> = {
+  "comenity-ulta-beauty-mastercard": {
+    reviewed: "2026-11-16",
+    note: "This is the Ulta Beauty Rewards Mastercard, issued by Comenity Capital Bank (Bread Financial). Correction: our record previously listed 4x at Ulta and 2x on gas and dining; Ulta's official page shows 2 points per $1 at Ulta Beauty and 1 point per $3 everywhere else, so we fixed it. There's no annual fee. Points are redeemed for savings at Ulta Beauty, so it makes sense if you already shop there often — as an everyday card, 1 point per $3 is weak. To apply, use Ulta's official page; to log in, see your balance or pay your bill, use Comenity's account site, or call 1-866-257-9195.",
+    links: [
+      { label: "Apply on Ulta's official credit card page", href: "https://www.ulta.com/rewards/credit-card" },
+      { label: "Log in or pay your bill (Comenity)", href: "https://d.comenity.net/ac/ultabeautyrewardscreditcard/public/home" },
+    ],
+  },
   "amex-biz-platinum": {
     reviewed: "2026-10-18",
     note: "The as-high-as welcome offer is the headline, but it requires $20,000 in purchases in three months — a pace only real business spending supports. The 5x rates apply to flights and prepaid hotels booked on AmexTravel.com, and everyday business spending earns 2x only in key business categories or on purchases of $5,000 or more. After year one, the $895 fee rests on credits such as the semiannual hotel credit and the quarterly Indeed credit, which only count if your business already spends there.",

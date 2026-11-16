@@ -1,6 +1,6 @@
 {
   "card_id": "comenity-ulta-beauty-mastercard",
-  "name": "Ulta Beauty Mastercard®",
+  "name": "Ulta Beauty Rewards® Mastercard®",
   "issuer": "Bread Financial",
   "network": "mastercard",
   "annual_fee": 0,
@@ -16,23 +16,13 @@
   "earning_rates": [
     {
       "category": "Ulta Beauty Purchases",
-      "rate": 4,
-      "notes": "4x points per $1 on Ulta Beauty purchases"
-    },
-    {
-      "category": "Gas Stations",
       "rate": 2,
-      "notes": "2x points on gas station purchases"
-    },
-    {
-      "category": "Dining",
-      "rate": 2,
-      "notes": "2x points on dining purchases"
+      "notes": "2 points per $1 at Ulta Beauty and ulta.com (base member level; 1 Ulta Beauty Rewards point plus 1 card bonus point)"
     },
     {
       "category": "All Other Purchases",
-      "rate": 1,
-      "notes": "1x point on all other purchases"
+      "rate": 0.33,
+      "notes": "1 point for every $3 spent outside Ulta Beauty, anywhere Mastercard is accepted"
     }
   ],
   "annual_credits": [],
@@ -68,6 +58,10 @@
     "no-annual-fee"
   ],
   "sources": [
+    {
+      "url": "https://www.ulta.com/rewards/credit-card",
+      "notes": "Ulta Beauty official credit card page"
+    },
     {
       "url": "https://www.ulta.com/credit-card/",
       "notes": "Ulta Beauty credit card page"
