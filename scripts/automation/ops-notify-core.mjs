@@ -1,7 +1,7 @@
 // Pure helpers for ops job notifications (offer watcher / weekly audit) per the PR #94 design (option B1).
 // No network, env or filesystem access here: the CLI injects everything. Sending is decided by gateSend().
 
-export const JOBS = Object.freeze({ 'offer-watch': 'OpenCard 優惠監測', 'weekly-audit': 'OpenCard 每週資料庫稽核' });
+export const JOBS = Object.freeze({ 'offer-watch': 'OpenCard 優惠監測', 'weekly-audit': 'OpenCard 每週資料庫稽核', 'ops-watchdog': 'OpenCard ops watchdog' });
 export const MAX_CHARS = 3000;
 export const MAX_LINES = 80;
 const DEFAULT_ALLOWED_EMAILS = ['opencard@opencardai.com'];
@@ -59,11 +59,13 @@ export function sanitize(summary, { allowedEmails = DEFAULT_ALLOWED_EMAILS, maxC
 }
 
 const SAFE_ID = /^[A-Za-z0-9._-]{1,64}$/;
-/** Deterministic dedupe key per #94: one announcement per job + kind + PT date + run id (legacy summary format) (attempt excluded on purpose). */
+/** Missed keys use only job/kind/PT date; sent-keys persistence is a later step, so manual re-dispatch can duplicate within a day.
+ * Deterministic dedupe key per #94: one announcement per job + kind + PT date + run id (legacy summary format) (attempt excluded on purpose). */
 export function dedupeKey({ job, ptDate, runId, kind = 'summary' }) {
-  if (!['summary', 'failure'].includes(kind)) throw new Error('kind must be summary or failure');
+  if (!['summary', 'failure', 'missed'].includes(kind)) throw new Error('kind must be summary, failure or missed');
   if (!JOBS[job]) throw new Error(`unknown job: ${job}`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(ptDate || '')) throw new Error('ptDate must be YYYY-MM-DD');
+  if (kind === 'missed') return `ops-notify:${job}:missed:${ptDate}`;
   if (!SAFE_ID.test(String(runId || ''))) throw new Error('runId must match [A-Za-z0-9._-]{1,64}');
   return `ops-notify:${job}:${kind === 'failure' ? 'failure:' : ''}${ptDate}:${runId}`;
 }
@@ -78,7 +80,7 @@ export function buildMessage({ job, ptDate, runId, summary, runUrl, allowedEmail
   if (!body) return { skip: true, reason: 'empty_after_sanitize', key };
   const link = runUrl && /^https:\/\/github\.com\/opencard-ai\/opencard\/actions\/runs\/\d+(\/attempts\/\d+)?$/.test(runUrl) ? runUrl : null;
   const text = `${body}${link ? `\n\nGitHub Actions run: ${link}` : ''}\n\n(dedupe: ${key})`;
-  return { skip: false, key, subject: `${kind === 'failure' ? '[FAILED] ' : ''}[${JOBS[job]}] ${ptDate} run ${runId}`, text, html: `<pre style="font-family:inherit;white-space:pre-wrap">${escapeHtml(text)}</pre>` };
+  return { skip: false, key, subject: kind === 'missed' ? `[MISSED] [${JOBS[job]}] ${ptDate}` : `${kind === 'failure' ? '[FAILED] ' : ''}[${JOBS[job]}] ${ptDate} run ${runId}`, text, html: `<pre style="font-family:inherit;white-space:pre-wrap">${escapeHtml(text)}</pre>` };
 }
 
 /**

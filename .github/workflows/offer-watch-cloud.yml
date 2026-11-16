@@ -162,7 +162,7 @@ jobs:
           retention-days: 30
   commit-state:
     needs: run
-    if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) && needs.run.outputs.mode == 'write' && needs.run.outputs.daily_ok == 'true' && needs.run.outputs.state_ready == 'true' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) && needs.run.outputs.mode == 'write' && needs.run.outputs.daily_ok == 'true' && needs.run.outputs.state_ready == 'true' && github.ref == 'refs/heads/main' && !startsWith(github.event_name, 'pull_request')
     permissions:
       contents: write
     concurrency:
@@ -224,14 +224,14 @@ jobs:
       summary_file: summary.txt
       # Failure mail is handled separately in shadow and write mode.
       # ops-notify also suppresses NO_REPLY. Only a successful new commit permits mail.
-      send: ${{ needs.run.outputs.mode == 'write' && needs.commit-state.outputs.committed == 'true' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request' }}
+      send: ${{ needs.run.outputs.mode == 'write' && needs.commit-state.outputs.committed == 'true' && github.ref == 'refs/heads/main' && !startsWith(github.event_name, 'pull_request') }}
     secrets:
-      AGENTMAIL_API_KEY: ${{ github.event_name != 'pull_request' && secrets.AGENTMAIL_API_KEY || '' }}
-      AGENTMAIL_FROM_INBOX: ${{ github.event_name != 'pull_request' && secrets.AGENTMAIL_FROM_INBOX || '' }}
-      OWNER_EMAIL: ${{ github.event_name != 'pull_request' && secrets.OWNER_EMAIL || '' }}
+      AGENTMAIL_API_KEY: ${{ !startsWith(github.event_name, 'pull_request') && secrets.AGENTMAIL_API_KEY || '' }}
+      AGENTMAIL_FROM_INBOX: ${{ !startsWith(github.event_name, 'pull_request') && secrets.AGENTMAIL_FROM_INBOX || '' }}
+      OWNER_EMAIL: ${{ !startsWith(github.event_name, 'pull_request') && secrets.OWNER_EMAIL || '' }}
   failure-summary:
     needs: [run, commit-state, notify]
-    if: always() && github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && github.run_attempt == '1' && (needs.run.result != 'success' || needs.run.outputs.daily_ok != 'true' || needs.run.outputs.state_ready != 'true' || (needs.commit-state.result != 'success' && needs.commit-state.result != 'skipped') || needs.notify.result != 'success')
+    if: always() && github.ref == 'refs/heads/main' && !startsWith(github.event_name, 'pull_request') && github.run_attempt == '1' && (needs.run.result != 'success' || needs.run.outputs.daily_ok != 'true' || needs.run.outputs.state_ready != 'true' || (needs.commit-state.result != 'success' && needs.commit-state.result != 'skipped') || needs.notify.result != 'success')
     permissions:
       contents: read
     runs-on: ubuntu-24.04
@@ -272,7 +272,7 @@ jobs:
           for i in 0 1 2; do
             result=${results[$i]}
             [[ "$result" =~ ^(success|failure|cancelled|skipped)$ ]] || result=unknown
-            if [[ "$result" == failure || "$result" == cancelled || ( "$i" != 1 && "$result" == skipped ) ]]; then
+            if [[ "$result" == failure || "$result" == cancelled || ( "$i" == 0 && "$result" == skipped ) ]]; then
               stages+=("${names[$i]}")
             fi
           done
@@ -296,7 +296,7 @@ jobs:
   failure-notify:
     # Guard here too: a failed-job rerun can reuse a successful failure-summary from attempt 1.
     needs: failure-summary
-    if: always() && needs.failure-summary.result == 'success' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && github.run_attempt == '1'
+    if: always() && needs.failure-summary.result == 'success' && github.ref == 'refs/heads/main' && !startsWith(github.event_name, 'pull_request') && github.run_attempt == '1'
     permissions:
       contents: read
     uses: ./.github/workflows/ops-notify.yml
@@ -306,11 +306,11 @@ jobs:
       summary_artifact: offer-watch-failure-${{ github.run_id }}-${{ needs.failure-summary.outputs.attempt }}
       summary_file: failure.txt
       kind: failure
-      send: ${{ github.ref == 'refs/heads/main' && github.event_name != 'pull_request' }}
+      send: ${{ github.ref == 'refs/heads/main' && !startsWith(github.event_name, 'pull_request') }}
     secrets:
-      AGENTMAIL_API_KEY: ${{ github.event_name != 'pull_request' && secrets.AGENTMAIL_API_KEY || '' }}
-      AGENTMAIL_FROM_INBOX: ${{ github.event_name != 'pull_request' && secrets.AGENTMAIL_FROM_INBOX || '' }}
-      OWNER_EMAIL: ${{ github.event_name != 'pull_request' && secrets.OWNER_EMAIL || '' }}
+      AGENTMAIL_API_KEY: ${{ !startsWith(github.event_name, 'pull_request') && secrets.AGENTMAIL_API_KEY || '' }}
+      AGENTMAIL_FROM_INBOX: ${{ !startsWith(github.event_name, 'pull_request') && secrets.AGENTMAIL_FROM_INBOX || '' }}
+      OWNER_EMAIL: ${{ !startsWith(github.event_name, 'pull_request') && secrets.OWNER_EMAIL || '' }}
   verdict:
     needs: [run, commit-state, notify]
     if: always() && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)

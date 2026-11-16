@@ -103,7 +103,7 @@ the window unless explicitly approved: the first production write is the **next 
 - Confirm valid manifest, artifact backup, expected new-vs-known comparison and summary.
 - Confirm mail sent once after the commit, or `NO_REPLY` silence. Confirm final verdict and compare to
   the expected Mac-equivalent outcome. Keep both Mac jobs disabled.
-- A non-fast-forward failure needs investigation; never rebase/retry automatically. A notify-only failure
+- A stale base or rejected push gets one safe retry only when the entire movement is verified as the other job’s normal state commits, directory changes and manifest entries. Unsafe movement or a second rejection fails for investigation; pushes never force history. A notify-only failure
   after a successful commit can use **Re-run failed jobs**. A full re-run is idempotent and does not resend.
 
 ## 7. Rollback

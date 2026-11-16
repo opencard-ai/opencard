@@ -1,10 +1,10 @@
 /** Pure guard + planning logic for apply.ts (no I/O). */
-import { changeFingerprint, isOfficialUrl, normalizeExpiry, normalizeField, normalizeNumber, DEFAULT_OFFICIAL_DOMAINS, EXPIRY_ALIASES, EXPIRY_FIELD, type CardRecord, type Confirmation } from './gate';
+import { changeFingerprint, variableBonusGuard, isOfficialUrl, normalizeExpiry, normalizeField, normalizeNumber, DEFAULT_OFFICIAL_DOMAINS, EXPIRY_ALIASES, EXPIRY_FIELD, type CardRecord, type Confirmation } from './gate';
 
 export interface ApplyOptions { today: string; runAt: number; officialDomains?: string[]; maxConfirmationAgeHours?: number }
 export interface FieldChange { field: string; old_value: unknown; new_value: unknown; fingerprint: string }
 export interface CardPlan { card_id: string; kinds: string[]; changes: FieldChange[]; sources: string[]; notes: string[] }
-export interface HeldItem { card_id: string; field: string | null; value?: unknown; reasons: string[]; fingerprint?: string }
+export interface HeldItem { card_id: string; field: string | null; value?: unknown; old_value?: unknown; reasons: string[]; fingerprint?: string }
 export interface ApplyPlan { today: string; applied: CardPlan[]; held: HeldItem[]; expiry_review: HeldItem[] }
 
 const POINTS_LIKE = new Set(['welcome_offer.bonus_points', 'welcome_offer.cash_bonus', 'welcome_offer.bonus_value', 'welcome_offer.normal_bonus_points', 'welcome_offer.statement_credit', 'welcome_offer.travel_credit']);
@@ -71,22 +71,38 @@ export function planApply(report: ReportLike, cards: Map<string, CardRecord>, op
 
   for (const result of report.results || []) {
     confirmationsByCard.set(result.card_id, [...(confirmationsByCard.get(result.card_id) || []), ...(result.evidence?.confirmations || [])]);
+    // Recheck current card data even when applying an older review report.
+    const card = cards.get(result.card_id);
+    const changes = result.changes.filter(change => {
+      if (change.field !== 'welcome_offer.bonus_points') return true;
+      const guard = variableBonusGuard(card, change.new_value);
+      if (guard === 'review') {
+        const max = normalizeNumber(card?.welcome_offer?.bonus_points_max);
+        expiryReview.push({
+          card_id: result.card_id, field: 'welcome_offer.bonus_points_max',
+          value: normalizeNumber(change.new_value),
+          old_value: typeof max === 'number' && Number.isFinite(max) && max > 0 ? max : null,
+          reasons: ['welcome_offer_detect_only_manual_review', 'variable_as_high_as_offer'],
+        });
+      }
+      return guard === null;
+    });
     if (result.status === 'unchanged') continue;
     if (result.evidence?.hold_only) {
       // Watch entries that can't be parsed reliably (or were auto-added without an extractor): evidence only, never applied.
       const failures = (result.evidence.confirmations || []).filter(c => !c.ok).map(c => `official_fetch_failed: ${String(c.error ?? 'unknown').replace(/\?[^\s,]*/g, '')}`);
       const reasons = ['hold_only_watch_entry', ...(result.evidence.hold_reason ? [result.evidence.hold_reason] : []), ...new Set(failures)];
-      if (result.changes.length) result.changes.forEach(c => held.push({ card_id: result.card_id, field: c.field, value: c.new_value, reasons, fingerprint: c.fingerprint }));
+      if (changes.length) changes.forEach(c => held.push({ card_id: result.card_id, field: c.field, old_value: c.old_value, value: c.new_value, reasons, fingerprint: c.fingerprint }));
       else held.push({ card_id: result.card_id, field: null, reasons });
       continue;
     }
     if (result.status !== 'review_delta') {
       const reasons = result.status === 'new_product_review' ? ['new_product_requires_human_review'] : (result.reasons?.length ? result.reasons : [result.status]);
-      if (result.changes.length) result.changes.forEach(c => held.push({ card_id: result.card_id, field: c.field, value: c.new_value, reasons, fingerprint: c.fingerprint }));
+      if (changes.length) changes.forEach(c => held.push({ card_id: result.card_id, field: c.field, old_value: c.old_value, value: c.new_value, reasons, fingerprint: c.fingerprint }));
       else held.push({ card_id: result.card_id, field: null, reasons });
       continue;
     }
-    for (const change of result.changes) {
+    for (const change of changes) {
       const reasons: string[] = [];
       if (dirtyCards.has(result.card_id)) reasons.push('card_file_has_uncommitted_changes');
       if (result.official_domain !== true) reasons.push('primary_source_not_official_domain');
@@ -96,7 +112,7 @@ export function planApply(report: ReportLike, cards: Map<string, CardRecord>, op
       if (conf.independent < 2) reasons.push('needs_two_independent_official_fetches');
       const explicit = (result.evidence?.explicit_confirmations || []).includes(change.field);
       reasons.push(...sanityCheck(change.field, change.old_value, change.new_value, opts.today, explicit));
-      if (reasons.length) { held.push({ card_id: result.card_id, field: change.field, value: change.new_value, reasons, fingerprint: change.fingerprint }); continue; }
+      if (reasons.length) { held.push({ card_id: result.card_id, field: change.field, old_value: change.old_value, value: change.new_value, reasons, fingerprint: change.fingerprint }); continue; }
       const plan = planFor(result.card_id);
       if (!plan.kinds.includes('offer_update')) plan.kinds.push('offer_update');
       plan.changes.push({ field: change.field, old_value: change.old_value, new_value: change.new_value, fingerprint: change.fingerprint });
@@ -104,8 +120,9 @@ export function planApply(report: ReportLike, cards: Map<string, CardRecord>, op
     }
     // Offer terms (spend / window) only make sense next to their bonus: if the bonus change is held, hold the terms too.
     const plan = applied.get(result.card_id);
-    if (plan && held.some(h => h.card_id === result.card_id && h.field && BONUS_FIELDS.has(h.field))) {
-      for (const c of plan.changes.filter(c => OFFER_TERMS.has(c.field))) held.push({ card_id: result.card_id, field: c.field, value: c.new_value, reasons: ['bonus_change_held_terms_not_applied_alone'], fingerprint: c.fingerprint });
+    if (plan && (held.some(h => h.card_id === result.card_id && h.field && BONUS_FIELDS.has(h.field)) ||
+      expiryReview.some(h => h.card_id === result.card_id && h.field === 'welcome_offer.bonus_points_max'))) {
+      for (const c of plan.changes.filter(c => OFFER_TERMS.has(c.field))) held.push({ card_id: result.card_id, field: c.field, old_value: c.old_value, value: c.new_value, reasons: ['bonus_change_held_terms_not_applied_alone'], fingerprint: c.fingerprint });
       plan.changes = plan.changes.filter(c => !OFFER_TERMS.has(c.field));
       if (!plan.changes.length) applied.delete(result.card_id);
     }
