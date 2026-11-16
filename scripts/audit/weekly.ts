@@ -10,10 +10,10 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { createRequire } from 'node:module';
+import { findingKey, type Finding } from './finding-key';
 
 const requireFromHere = createRequire(path.join(process.cwd(), 'package.json'));
 
-type Finding = { card_id: string; type: string; severity: 'high' | 'medium' | 'low'; field?: string; detail: string; popular?: boolean };
 // OPENCARD_AUDIT_DIR relocates report history/baseline (default unchanged: artifacts/audit). From draft PR #64.
 const DIR = path.resolve(process.env.OPENCARD_AUDIT_DIR || 'artifacts/audit');
 if (DIR === path.parse(DIR).root) { console.error('audit:weekly: OPENCARD_AUDIT_DIR must not be the filesystem root'); process.exit(2); }
@@ -59,7 +59,6 @@ function run(args: string[]): void {
   if (r.status !== 0) throw new Error(`${args.join(' ')} failed (exit ${r.status}): ${(r.stderr || r.stdout || '').slice(-800)}`);
 }
 class DataChangedError extends Error {}
-const key = (f: Finding) => `${f.type}|${f.card_id}|${f.field || ''}|${f.detail.replace(/\s+/g, ' ').trim()}`;
 
 function main(): number {
   if (!acquireLock()) { console.error(`audit:weekly: another run holds ${LOCK}`); console.log('NO_REPLY'); return 0; }
@@ -95,8 +94,8 @@ function main(): number {
 
     if (!cur) cur = JSON.parse(fs.readFileSync(`${DIR}/${today}-db-audit.json`, 'utf8')).findings as Finding[];
     if (!prev) { console.log('NO_REPLY'); console.error(`audit:weekly: no earlier report; baseline is ${DIR}/${today}-db-audit.json`); return 0; }
-    const prevKeys = new Set(prev.map(key));
-    const fresh = cur.filter(f => (f.severity === 'high' || f.severity === 'medium') && !prevKeys.has(key(f)));
+    const prevKeys = new Set(prev.map(findingKey));
+    const fresh = cur.filter(f => (f.severity === 'high' || f.severity === 'medium') && !prevKeys.has(findingKey(f)));
     if (fresh.length === 0) { console.log('NO_REPLY'); return 0; }
 
     const high = fresh.filter(f => f.severity === 'high').length;

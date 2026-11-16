@@ -228,6 +228,20 @@ test('auditStateReport with null baseline suppresses weekly notifications', () =
   assert.deepEqual(r.new_items, []);
   assert.deepEqual(r.by_severity, { high: { new: 1, known: 0, resolved: 0 }, medium: { new: 1, known: 0, resolved: 0 }, low: { new: 1, known: 0, resolved: 0 } });
 });
+test('auditStateReport recognizes historical day counts in both weekly and scrubbed comparisons', () => {
+  const prev: Finding[] = [
+    { card_id: 'fake-expired', type: 'expired_offer_still_current', severity: 'high', field: 'welcome_offer.expiry', detail: 'expiry 2026-10-01 (12 days ago); still current' },
+    { card_id: 'fake-stale', type: 'stale_last_verified', severity: 'medium', field: 'last_verified', detail: 'last_verified 2026-01-01 (200 days)' },
+  ];
+  const cur = prev.map(f => ({ ...f, detail: f.detail.replace('12 days ago', '19 days ago').replace('200 days', '207 days') }));
+  const r = auditStateReport(prev, cur, '2026-11-12-db-audit.json');
+  assert.equal(r.new_high_medium, 0);
+  assert.equal(r.new_high_medium_scrubbed, 0);
+  assert.equal(r.known_high_medium, 2);
+  assert.equal(r.resolved_high_medium, 0);
+  assert.deepEqual(r.by_severity, { high: { new: 0, known: 1, resolved: 0 }, medium: { new: 0, known: 1, resolved: 0 } });
+  assert.deepEqual(r.new_items, []);
+});
 test('stripUrlQuery removes queries and fragments while preserving trailing punctuation', () => {
   for (const suffix of ['.', ',', ';', ':', '!', '.,;:!']) {
     assert.equal(stripUrlQuery(`See https://example.invalid/a?token=x#part${suffix}`), `See https://example.invalid/a${suffix}`);
