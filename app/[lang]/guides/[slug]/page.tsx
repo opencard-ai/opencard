@@ -3,7 +3,9 @@
  *
  * Loads `content/guides/<slug>.mdx` via dynamic import per the Next.js 16
  * App Router pattern (node_modules/next/dist/docs/01-app/02-guides/mdx.md
- * § Dynamic imports). `dynamicParams = false` so unknown slugs 404.
+ * § Dynamic imports). Do not set dynamicParams = false: unknown slugs must
+ * reach notFound() below so the locale's not-found boundary renders with
+ * the normal site layout.
  */
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -22,8 +24,6 @@ export async function generateStaticParams() {
     getGuidesForLocale(lang).map((g) => ({ lang, slug: g.slug }))
   );
 }
-
-export const dynamicParams = false;
 
 async function loadGuideArticle(slug: string, lang: Locale) {
   if (lang !== "en") {
