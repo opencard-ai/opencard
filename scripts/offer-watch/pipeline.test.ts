@@ -2,11 +2,13 @@ import assert from 'node:assert/strict';
 import { assessCandidate, expiryReport, emptyLedger, normalizeDate, updateLedger, isClosedToNewApplicants, DEFAULT_OFFICIAL_DOMAINS, type Candidate, type Confirmation } from './gate';
 import { applyPlanToCard, confirmationsFor, planApply, sanityCheck, schemaCheck } from './apply-core';
 import { autoExpiringEntries, buildCandidate, currentBonusVisible, extractValues, htmlToText, isErrorPage, reviewSignals, samePage, stripQuery, type WatchEntry } from './collect';
-import { readFileSync } from 'node:fs';
+import { readFileSync, mkdtempSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
 import { commitMessage, expectedLiveStrings, pageText, parseVercelState, publish, type PublishConfig, type PublishDeps } from './publish-core';
 import { buildDigest, laEndOfDay } from './digest-core';
 import { allFetchesFailed, buildDailySummary, holdKey, isMonday, newFetchFailures, newHolds } from './daily-core';
-import { upsertLedger } from './state';
+import { upsertLedger, heldHistoryEvent, appendHistory, readHistory } from './state';
 
 const runAt = Date.parse('2026-09-30T06:00:00Z');
 const today = '2026-09-29';
@@ -42,6 +44,92 @@ assert.deepEqual(sanityCheck('welcome_offer.expiry', '2026-09-30', '2026-09-01',
 assert.deepEqual(sanityCheck('welcome_offer.expiry', null, '2027-01-13', today), []);
 assert.deepEqual(sanityCheck('welcome_offer.expiry', '2026-09-30', null, today), ['clearing_expiry_only_via_expiry_path']);
 assert.deepEqual(sanityCheck('welcome_offer.time_period_months', 3, 30, today), ['time_period_out_of_range']);
+
+// ---------- stored variable welcome offers: numeric extraction describes a maximum, never a fixed bonus
+{
+  const bonus = 'welcome_offer.bonus_points';
+  const spend = 'welcome_offer.spending_requirement';
+  const months = 'welcome_offer.time_period_months';
+  const url = 'https://www.americanexpress.com/us/credit-cards/';
+  const variableCards = [
+    ['amex-gold', 100000], ['amex-platinum', 175000], ['amex-biz-gold', 200000],
+  ] as const;
+  const makeCard = (id: string, max: unknown): any => ({ card_id: id, name: id, annual_fee: 325,
+    welcome_offer: { bonus_points: 0, bonus_value: 'Varies', bonus_points_max: max,
+      offer_status: 'as_high_as_ymmv', spending_requirement: 8000, time_period_months: 6 } });
+  const makeCandidate = (id: string, values: Record<string, unknown>) => buildCandidate({ card_id: id, sources: [] },
+    [conf(url, 1, values), conf(url, 2, values)], '2026-09-30T05:50:00Z');
+  for (const [id, max] of variableCards) {
+    const card = makeCard(id, max);
+    const candidate = makeCandidate(id, { [bonus]: max.toLocaleString('en-US'), [spend]: 8000, [months]: 6 });
+    const result = assessCandidate(candidate, card, false, runAt);
+    assert.equal(result.status, 'unchanged', id);
+    assert.deepEqual(result.changes, [], id);
+    const plan = planApply({ results: [result] }, new Map([[id, card]]), opts);
+    assert.deepEqual([plan.applied, plan.held, plan.expiry_review], [[], [], []], id);
+    // A fee delta still takes the ordinary apply path while the maximum is known.
+    const feeResult = assessCandidate(makeCandidate(id, { [bonus]: max, annual_fee: 350 }), card, false, runAt);
+    const feePlan = planApply({ results: [feeResult] }, new Map([[id, card]]), opts);
+    assert.deepEqual(feePlan.applied[0].changes.map(c => c.field), ['annual_fee']);
+    assert.deepEqual([feePlan.held, feePlan.expiry_review], [[], []]);
+  }
+  // Protect any stored variable card, including legacy Varies+max without the status.
+  for (const max of [100000, '100,000', undefined, null, 0, -1, 'unknown', Infinity]) {
+    for (const status of ['as_high_as_ymmv', 'public']) {
+      if (status === 'public' && max == null) continue;
+      const card = makeCard('variable-card', max);
+      card.welcome_offer.offer_status = status;
+      card.welcome_offer.bonus_value = '  vArIeS  ';
+      const candidate = makeCandidate(card.card_id, { [bonus]: 120000, [spend]: 10000, [months]: 3, annual_fee: 350 });
+      const result = assessCandidate(candidate, card, false, runAt);
+      const plan = planApply({ results: [result] }, new Map([[card.card_id, card]]), opts);
+      assert.deepEqual(plan.applied[0].changes.map(c => c.field), ['annual_fee']);
+      assert.deepEqual(plan.expiry_review, [{ card_id: card.card_id, field: 'welcome_offer.bonus_points_max', value: 120000,
+        old_value: max === 100000 || max === '100,000' ? 100000 : null,
+        reasons: ['welcome_offer_detect_only_manual_review', 'variable_as_high_as_offer'] }]);
+      assert.deepEqual(plan.held.map(h => h.field).sort(), [spend, months].sort());
+      assert.ok(plan.held.every(h => h.reasons.includes('bonus_change_held_terms_not_applied_alone')));
+    }
+  }
+  // Status alone is sufficient; legacy Varies+max also recognizes a known maximum.
+  for (const offer of [
+    { bonus_points: 0, offer_status: 'as_high_as_ymmv', bonus_points_max: 100000 },
+    { bonus_points: 0, bonus_value: ' Varies ', bonus_points_max: '100k' },
+  ]) {
+    const card = { card_id: 'another-variable-card', welcome_offer: offer };
+    const candidate = makeCandidate(card.card_id, { [bonus]: 100000 });
+    const result = assessCandidate(candidate, card, false, runAt);
+    assert.equal(result.status, 'unchanged');
+    const plan = planApply({ results: [result] }, new Map([[card.card_id, card]]), opts);
+    assert.deepEqual([plan.applied, plan.held, plan.expiry_review], [[], [], []]);
+  }
+  const card = makeCard('amex-gold', 100000);
+  const changed = assessCandidate(makeCandidate(card.card_id, { [bonus]: 120000 }), card, false, runAt);
+  assert.equal(changed.status, 'review_delta');
+  const changedPlan = planApply({ results: [changed] }, new Map([[card.card_id, card]]), opts);
+  assert.deepEqual(changedPlan.applied, []);
+  assert.equal(changedPlan.expiry_review[0].value, 120000);
+  assert.equal(changedPlan.expiry_review[0].old_value, 100000);
+  const formattedResult = { ...changed, changes: changed.changes.map(c => ({ ...c, new_value: '120,000' })) };
+  assert.deepEqual(planApply({ results: [formattedResult] }, new Map([[card.card_id, card]]), opts).expiry_review, changedPlan.expiry_review);
+  // Applying a report assessed before the card became variable must also be safe.
+  const fixedCard = { ...card, welcome_offer: { bonus_points: 0 } };
+  const fixedResult = assessCandidate(makeCandidate(card.card_id, { [bonus]: 100000 }), fixedCard, false, runAt);
+  assert.equal(fixedResult.changes[0].old_value, 0);
+  assert.deepEqual(planApply({ results: [fixedResult] }, new Map([[card.card_id, card]]), opts).applied, []);
+  const heldPlan = planApply({ results: [fixedResult] }, new Map([[card.card_id, fixedCard]]), opts, new Set([card.card_id]));
+  assert.equal(heldPlan.held[0].old_value, 0);
+  const wouldApply = planApply({ results: [fixedResult] }, new Map([[card.card_id, fixedCard]]), opts);
+  assert.equal(wouldApply.applied[0].changes[0].old_value, 0);
+  const change = wouldApply.applied[0].changes[0];
+  const noPublishHold = { card_id: card.card_id, field: change.field, old_value: change.old_value, value: change.new_value, reasons: ['no_publish_mode'] };
+  const dir = mkdtempSync(path.join(tmpdir(), 'offer-watch-held-'));
+  try {
+    const history = path.join(dir, 'history.jsonl');
+    appendHistory([heldHistoryEvent(heldPlan.held[0], today), heldHistoryEvent(noPublishHold, today)], history);
+    assert.deepEqual(readHistory(history).map(e => e.changes?.[0].old_value), [0, 0]);
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+}
 
 // ---------- planApply end to end on a Morgan-Stanley-like card
 const msCard = { card_id: 'amex-morgan-stanley-platinum', name: 'Amex Morgan Stanley Platinum', annual_fee: 895, welcome_offer: { bonus_points: 150000, spending_requirement: 12000, time_period_months: 6, description: 'old', point_program: 'Amex Membership Rewards', estimated_value: 2550, is_elevated: true, elevated_until: '2026-07-08' }, sources: [] };
