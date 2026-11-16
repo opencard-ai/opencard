@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 import Script from "next/script";
 import { usePathname } from "next/navigation";
+import { isAdEligiblePath } from "@/lib/ad-eligibility";
 
 const CONSENT_KEY = "opencard_cookie_consent";
 
@@ -23,16 +24,14 @@ function getServerSnapshot() {
   return null;
 }
 
-export default function AdSenseScript() {
+export default function AdSenseScript({ englishGuideSlugs }: { englishGuideSlugs: readonly string[] }) {
   const consent = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const pathname = usePathname();
 
   // Keep the AdSense review surface intentionally narrow. Product tools,
   // card templates, noindex pages, and translated articles must not request
   // advertising code even when the visitor has accepted optional cookies.
-  const isHighValueRoute = /^\/(en|zh|zh-cn|es)\/?$/.test(pathname)
-    || /^\/en\/guides(?:\/[^/]+)?\/?$/.test(pathname)
-    || /^\/(en|zh|zh-cn|es)\/(about|methodology)\/?$/.test(pathname);
+  const isHighValueRoute = isAdEligiblePath(pathname, englishGuideSlugs);
 
   if (consent !== "accepted" || !isHighValueRoute) return null;
 

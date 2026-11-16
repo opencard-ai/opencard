@@ -10,6 +10,7 @@ import FloatingButtons from "@/app/components/FloatingButtons";
 import ToastViewport from "@/app/components/ToastViewport";
 import GuidesDropdown from "@/app/components/GuidesDropdown";
 import { locales, t, type Locale } from "@/lib/i18n";
+import { getGuidesForLocale } from "@/lib/guides";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -128,7 +129,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         </footer>
         {/* Analytics and advertising scripts honor cookie consent. */}
         <Analytics />
-        <AdSenseScript />
+        <AdSenseScript englishGuideSlugs={getGuidesForLocale("en").map((guide) => guide.slug)} />
         <CookieConsentBanner lang={lang} />
         {/* Floating widget cluster (recommend / my-cards / track) */}
         <FloatingButtons lang={lang} />
