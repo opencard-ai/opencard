@@ -87,10 +87,12 @@ export interface LoungeAccess {
   discount?: string;
 }
 
+export type OtherBenefit = string | { name?: string; benefit?: string; description?: string } | null;
+
 export interface TravelBenefits {
   lounge_access?: LoungeAccess[];
   hotel_status?: HotelStatus[];
-  other_benefits?: { name: string; description: string }[];
+  other_benefits?: OtherBenefit[];
 }
 
 export interface Insurance {
