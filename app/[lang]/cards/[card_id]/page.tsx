@@ -17,8 +17,7 @@ import { getCardEditorial } from "@/lib/card-editorial";
 import { buildCardAnalysis, applicableRules, knownNoForeignFee } from "@/lib/card-analysis";
 import { cardSeoMeta } from "@/lib/card-seo";
 import { getEditorNote } from "@/lib/card-notes";
-import CardFeesAndLinks from "@/app/components/CardFeesAndLinks";
-import { getCardLinks } from "@/lib/card-links";
+import CardAccessLinks from "@/app/components/CardAccessLinks";
 import CardAnalysisSection from "@/app/components/CardAnalysisSection";
 import { getReferralOfferForCard } from "@/lib/referrals";
 import { formatVariableOffer, formatWelcomeBonus, welcomeBonusKind } from "@/lib/welcome-offer";
@@ -522,8 +521,6 @@ export default async function CardDetailPage({ params }: Props) {
             </div>
           </section>
 
-          <CardFeesAndLinks card={card} links={getCardLinks(card.card_id)} lang={lang} l={l} />
-
           {/* Dynamic / User-Activated Reward Structures */}
           {(card.selectable_rewards || card.relationship_bonus || card.rotating_categories) && (
             <section className="bg-white rounded-xl border border-slate-200 p-6">
@@ -789,6 +786,8 @@ export default async function CardDetailPage({ params }: Props) {
               )}
             </section>
           )}
+
+          <CardAccessLinks card={card} lang={lang} l={l} />
 
           {/* Sources */}
           {card.sources?.length > 0 && (

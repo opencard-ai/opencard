@@ -1,13 +1,19 @@
 import { isClosedToNewApplicants, type CreditCard } from "@/lib/cards";
-import type { CardLinks } from "@/lib/card-links";
+import { getCardLinks } from "@/lib/card-links";
 import { knownNoForeignFee } from "@/lib/foreign-fee";
 
-export default function CardFeesAndLinks({ card, links, lang, l }: {
+/**
+ * Self-contained "Fees & how to apply, log in or pay" section for card pages.
+ * Data: lib/card-links.ts (hand-verified official URLs). Renders nothing for
+ * cards without a verified entry. Insert once in the card page; no other
+ * page changes needed.
+ */
+export default function CardAccessLinks({ card, lang, l }: {
   card: CreditCard;
-  links: CardLinks | undefined;
   lang: string;
   l: (key: string, params?: Record<string, string | number>) => string;
 }) {
+  const links = getCardLinks(card.card_id);
   if (!links) return null;
 
   const lateFee = card.late_fee ?? card.late_fee_max;
