@@ -235,8 +235,8 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
     description: "Bank of America's Business Advantage Travel Rewards World Mastercard: $0 annual fee, 1.5 points per $1 everywhere and 3x through the BofA Travel Center. Also searched as WorldPoints Travel Rewards for Business.",
   },
   "barclays-gap-good-rewards-mastercard": {
-    title: "Gap Encore Mastercard: No Annual Fee & 20% Off First Purchase | OpenCard",
-    description: "Barclays' Gap Encore Mastercard works anywhere Mastercard is accepted. No annual fee, points at Gap and other Gap Inc. brands, and 20% off your first Gap purchase. Same rewards family as Old Navy, Banana Republic and Athleta.",
+    title: "Gap Encore Mastercard: No Annual Fee & 25% Off First Purchase | OpenCard",
+    description: "Barclays' Gap Encore Mastercard works anywhere Mastercard is accepted. No annual fee, points at Gap and other Gap Inc. brands, and 25% off your first Gap purchase. Same rewards family as Old Navy, Banana Republic and Athleta.",
   },
   "barclays-banana-republic-rewards-mastercard": {
     title: "Banana Republic Encore Mastercard: No Annual Fee & 20% Off First Purchase | OpenCard",
