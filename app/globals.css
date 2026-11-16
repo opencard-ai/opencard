@@ -166,3 +166,29 @@ body {
 html.oc-consent-set [data-cookie-banner] {
   display: none;
 }
+
+/* Reserve space only while choices are visible, including without JavaScript.
+   ResizeObserver supplies the exact height after hydration and when expanded. */
+html:not(.oc-consent-set) body:has([data-cookie-banner]) {
+  padding-bottom: var(--oc-consent-height, 120px);
+}
+html:not(.oc-consent-set) body:has([data-cookie-banner]) [data-floating-buttons] {
+  bottom: calc(var(--oc-consent-height, 120px) + 1.5rem);
+  transition: none;
+}
+
+html:not(.oc-consent-set) body:has([data-cookie-banner]) [data-toast-viewport] {
+  bottom: calc(var(--oc-consent-height, 120px) + 1rem);
+}
+
+/* Separate selectors keep the hydrated fallback working without :has support. */
+html.oc-consent-open body {
+  padding-bottom: var(--oc-consent-height, 120px);
+}
+html.oc-consent-open [data-floating-buttons] {
+  bottom: calc(var(--oc-consent-height, 120px) + 1.5rem);
+  transition: none;
+}
+html.oc-consent-open [data-toast-viewport] {
+  bottom: calc(var(--oc-consent-height, 120px) + 1rem);
+}
