@@ -11,16 +11,17 @@
     "time_period_months": 0,
     "bonus_points": 0,
     "bonus_type": "percent_discount",
-    "discount_percent": 20,
+    "discount_percent": 25,
     "estimated_value": 0,
     "point_program": "Points",
-    "description": "Receive 20% off your first purchase with your new card at Gap.",
+    "description": "Receive 25% off your first purchase with your new card at Gap.",
     "confidence": "high",
     "notes": [
       "Official Barclays page checked 2026-10-02; now marketed as the Gap Encore Mastercard (formerly Gap Rewards/Good Rewards).",
-      "Official Barclays page 2026-10-19: \"Receive 20% Off your first purchase with your new card at Gap\"."
+      "Official Barclays page 2026-10-19: \"Receive 20% Off your first purchase with your new card at Gap\".",
+      "Official Barclays page 2026-11-16: \"Receive 25% off your first purchase with your new card at Gap\". Apply by 11:59 p.m. PT on 2026-11-19 for the 25% offer; applicants approved after the offer ends receive 20%. Discount code expires fourteen days after account opening."
     ],
-    "last_verified": "2026-10-19"
+    "last_verified": "2026-11-16"
   },
   "earning_rates": [
     {
@@ -69,7 +70,7 @@
   "sources": [
     {
       "url": "https://cards.barclaycardus.com/banking/cards/gap-encore-mastercard/",
-      "notes": "Official Barclays page checked 2026-10-02: 5X Gap Inc. family of brands, 3X eligible retail apparel brands, 1X everywhere else; no annual fee. | Official Barclays page 2026-10-19: 20% off first Gap purchase."
+      "notes": "Official Barclays page checked 2026-10-02: 5X Gap Inc. family of brands, 3X eligible retail apparel brands, 1X everywhere else; no annual fee. | Official Barclays page 2026-10-19: 20% off first Gap purchase. | Official Barclays page 2026-11-16: \"Receive 25% off your first purchase with your new card at Gap\". Apply by 11:59 p.m. PT on 2026-11-19 for the 25% offer; applicants approved after the offer ends receive 20%. Discount code expires fourteen days after account opening."
     },
     {
       "url": "maxrewards.com"
@@ -81,13 +82,13 @@
       "url": "upgradedpoints.com"
     }
   ],
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-11-16",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
-  "last_verified": "2026-10-19",
+  "last_verified": "2026-11-16",
   "next_review": "2026-07-15T13:41:49.983000+00:00",
   "cash_advance_fee_flat": 5,
   "cash_advance_fee_pct": 5,
