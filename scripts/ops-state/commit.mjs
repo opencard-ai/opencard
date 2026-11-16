@@ -22,6 +22,7 @@ export function concurrentChangeIsSafe(repo, job, base, tip, git = gitRunner) {
       const m = JSON.parse(git(repo, ['show', `${sha}:MANIFEST.json`]));
       if (!Array.isArray(m.files)) throw new Error('manifest lacks files array');
       m.files = m.files.filter(f => !f.path.startsWith(`${otherDir}/`));
+      m.runs ??= {};
       if (m.runs) delete m.runs[otherJob];
       return m;
     };
