@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { locales, defaultLocale } from "@/lib/i18n";
+import { getRemovedCard } from "@/lib/removed-cards";
 
 const PUBLIC_FILE = /^\/.*\..*$/;
 
@@ -17,6 +18,24 @@ export function middleware(req: NextRequest) {
   );
 
   if (pathnameLocale) {
+    // Only the route handler's self-fetch needs this render destination.
+    // Spoofing the header only shows a noindex page, which is harmless.
+    if (pathname.startsWith(`/${pathnameLocale}/removed-card/`) &&
+        req.headers.get("x-opencard-removed-render") !== "1") {
+      return NextResponse.rewrite(new URL(`/${pathnameLocale}/removed-card-unavailable`, req.url), {
+        headers: { "X-Robots-Tag": "noindex", "Cache-Control": "private, no-store" },
+      });
+    }
+    const cardPath = pathname.match(/^\/[^/]+\/cards\/([^/]+)\/?$/);
+    if (cardPath && getRemovedCard(cardPath[1])) {
+      const destination = new URL("/api/removed-card", req.url);
+      destination.search = req.nextUrl.search;
+      destination.searchParams.set("lang", pathnameLocale);
+      destination.searchParams.set("id", cardPath[1]);
+      const response = NextResponse.rewrite(destination);
+      response.cookies.set("NEXT_LOCALE", pathnameLocale, { path: "/" });
+      return response;
+    }
     // Locale already in URL - set cookie and continue
     const response = NextResponse.next();
     response.cookies.set("NEXT_LOCALE", pathnameLocale, { path: "/" });
