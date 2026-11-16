@@ -1,6 +1,7 @@
 import { getOpenCards, type CreditCard } from "@/lib/cards";
 import { welcomeBonusDollarFallback, welcomeBonusKind } from "@/lib/welcome-offer";
 import { knownNoForeignFee } from "@/lib/foreign-fee";
+import { normalizeOtherBenefits } from "@/lib/other-benefits";
 
 export interface UserPreferences {
   rewardTypes: string[];       // ["travel", "cashback", "points"]
@@ -188,7 +189,7 @@ function getTravelScore(card: CreditCard): number {
 
   if (tb?.lounge_access?.length) score += Math.min(tb.lounge_access.length * 15, 45);
   if (tb?.hotel_status?.length) score += Math.min(tb.hotel_status.length * 15, 30);
-  if (tb?.other_benefits?.length) score += Math.min(tb.other_benefits.length * 5, 15);
+  score += Math.min(normalizeOtherBenefits(tb?.other_benefits).length * 5, 15);
   if (card.insurance?.trip_delay) score += 10;
   if (card.insurance?.trip_cancellation) score += 10;
 

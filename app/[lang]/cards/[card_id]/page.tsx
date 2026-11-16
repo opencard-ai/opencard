@@ -22,6 +22,7 @@ import { getReferralOfferForCard } from "@/lib/referrals";
 import { formatVariableOffer, formatWelcomeBonus, welcomeBonusKind } from "@/lib/welcome-offer";
 import { getAffiliateUrl } from "@/lib/affiliate";
 import AffiliateLink from "@/app/components/AffiliateLink";
+import { normalizeOtherBenefits } from "@/lib/other-benefits";
 
 const CREDIT_LABELS: Record<string, string> = {
   "Excellent": "Excellent",
@@ -165,10 +166,11 @@ export default async function CardDetailPage({ params }: Props) {
   const isChaseSapphireReferral = referralOffer?.program === "chase-sapphire";
   const isBiltReferral = referralOffer?.program === "bilt";
   const recurringCredits = (card.recurring_credits || []).filter(c => c.amount !== undefined);
+  const otherBenefits = normalizeOtherBenefits(card.travel_benefits?.other_benefits);
   const hasTravelBenefits = !!(
     (card.travel_benefits?.hotel_status?.length ?? 0) > 0 ||
     (card.travel_benefits?.lounge_access || []).length > 0 ||
-    (card.travel_benefits?.other_benefits?.length ?? 0) > 0
+    otherBenefits.length > 0
   );
 
   return (
@@ -703,13 +705,13 @@ export default async function CardDetailPage({ params }: Props) {
                           </div>
                         </div>
                       )}
-                      {(card.travel_benefits.other_benefits?.length ?? 0) > 0 && (
+                      {otherBenefits.length > 0 && (
                         <div>
                           <h3 className="text-xs font-semibold text-slate-500 uppercase mb-2">
                             {l("detail.otherBenefits")}
                           </h3>
                           <div className="space-y-2">
-                            {card.travel_benefits.other_benefits!.map((ob, i) => (
+                            {otherBenefits.map((ob, i) => (
                               <div key={i}>
                                 <span className="text-sm text-slate-800 font-medium">{localizedBenefitText(ob.name, lang)}</span>
                                 <p className="text-xs text-slate-500">{localizedBenefitText(ob.description, lang)}</p>
