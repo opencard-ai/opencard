@@ -57,9 +57,13 @@ for (const mode of ['manifest-link', 'parent-link', 'file-link', 'traversal', 's
   }
   assert.throws(() => pull({ src, job: 'offer', out: path.join(d, 'out') })); assert.equal(fs.existsSync(path.join(d, 'out')), false);
 });
-function repoFixture(t) {
+function repoFixture(t, configureManifest) {
   const d = temp(t), origin = path.join(d, 'origin.git'), repo = path.join(d, 'repo'), from = path.join(d, 'incoming');
   fs.mkdirSync(repo); gitRunner(d, ['init', '--bare', origin]); gitRunner(repo, ['init', '-b', 'ops-state']); snapshot(repo);
+  if (configureManifest) {
+    const m = manifestAt(repo); configureManifest(m);
+    write(repo, 'MANIFEST.json', JSON.stringify(m));
+  }
   gitRunner(repo, ['add', '.']); gitRunner(repo, ['commit', '-m', 'synthetic seed'], identity);
   gitRunner(repo, ['remote', 'add', 'origin', origin]); gitRunner(repo, ['push', 'origin', 'HEAD:refs/heads/ops-state']);
   for (const n of offerFiles) write(from, n, n.endsWith('.jsonl') ? '{"type":"held"}\n' : n === 'ledger.json' ? '{"entries":{}}' : '{}');
@@ -250,6 +254,53 @@ for (const checkout of ['old-base', 'new-tip']) test(`overlapping audit then off
   assert.ok(m.files.some(f => f.path === 'audit/2026-11-15-db-audit.json'));
   for (const n of offerFiles) assert.ok(m.files.some(f => f.path === `offer-watch/${n}`));
   assert.equal(f.calls.filter(c => c[0] === 'fetch').length, 1);
+});
+for (const runs of ['missing', 'null']) for (const checkout of ['old-base', 'new-tip']) test(`overlapping audit then offer with ${runs} runs retries from ${checkout}`, t => {
+  const f = repoFixture(t, m => { if (runs === 'missing') delete m.runs; else m.runs = null; });
+  const baseManifest = JSON.parse(gitRunner(f.repo, ['show', `${f.base}:MANIFEST.json`]));
+  assert.equal(Object.hasOwn(baseManifest, 'runs'), runs !== 'missing');
+  assert.equal(baseManifest.runs, runs === 'missing' ? undefined : null);
+  const audit = auditCommit(f), auditManifest = manifestAt(f.repo);
+  const repo = clone(f, 'offer-clone', checkout === 'old-base' ? f.base : audit.commit_sha);
+  assert.equal(concurrentChangeIsSafe(repo, 'offer', f.base, audit.commit_sha, f.runner), true);
+  const result = commitState({ ...f.a, repo }, f.runner);
+  assert.equal(result.committed, true); assert.equal(result.rebased, true);
+  assert.equal(gitRunner(f.origin, ['rev-parse', 'refs/heads/ops-state']), result.commit_sha);
+  assert.equal(gitRunner(repo, ['rev-parse', 'HEAD^']), audit.commit_sha);
+  const m = manifestAt(repo);
+  assert.deepEqual(m.runs.audit, auditManifest.runs.audit);
+  assert.deepEqual(m.runs.offer, { last_run_id: '123', last_run_attempt: '1', pt_date: f.a['pt-date'], writer_epoch: f.a.epoch, base_sha: f.base, rebased_onto: audit.commit_sha });
+  for (const entry of auditManifest.files.filter(f => f.path.startsWith('audit/'))) {
+    assert.deepEqual(m.files.find(f => f.path === entry.path), entry);
+    assert.deepEqual(fs.readFileSync(path.join(repo, entry.path)), fs.readFileSync(path.join(f.repo, entry.path)));
+  }
+  for (const n of offerFiles) {
+    const bytes = fs.readFileSync(path.join(f.from, n));
+    assert.deepEqual(fs.readFileSync(path.join(repo, 'offer-watch', n)), bytes);
+    const entry = m.files.find(f => f.path === `offer-watch/${n}`);
+    assert.equal(entry.sha256, sha256(bytes)); assert.equal(entry.size, bytes.length);
+  }
+  assert.equal(f.calls.filter(c => c[0] === 'fetch').length, 1);
+  assert.equal(f.calls.filter(c => c[0] === 'push').length, checkout === 'old-base' ? 3 : 2); // includes audit push
+});
+for (const mode of ['own-dir', 'own-run', 'top-level']) for (const checkout of ['old', 'tip']) test(`conflict ${mode} with missing runs at ${checkout} stays unsafe`, t => {
+  const f = repoFixture(t, m => { delete m.runs; });
+  const tip = concurrentCommit(f, repo => {
+    const m = manifestAt(repo);
+    if (mode === 'own-dir') {
+      const bytes = '{"changed":true}'; write(repo, 'offer-watch/ledger.json', bytes);
+      const entry = m.files.find(f => f.path === 'offer-watch/ledger.json');
+      entry.sha256 = sha256(bytes); entry.size = Buffer.byteLength(bytes);
+    }
+    if (mode === 'own-run') m.runs = { offer: { last_run_id: '999' } };
+    if (mode === 'top-level') m.custom = 'changed';
+    write(repo, 'MANIFEST.json', JSON.stringify(m));
+  });
+  const repo = clone(f, 'offer', checkout === 'old' ? f.base : tip);
+  assert.equal(concurrentChangeIsSafe(repo, 'offer', f.base, tip, f.runner), false);
+  assert.throws(() => commitState({ ...f.a, repo }, f.runner), e => e.exitCode === (checkout === 'old' ? 4 : 3) && e.message.includes('(not a safe other-job-only change)'));
+  assert.equal(gitRunner(f.origin, ['rev-parse', 'refs/heads/ops-state']), tip);
+  assert.equal(f.calls.filter(c => c[0] === 'push').length, checkout === 'old' ? 1 : 0);
 });
 for (const mode of ['own-dir', 'own-run', 'non-state']) for (const checkout of ['old', 'tip']) test(`conflict ${mode} at ${checkout} fails without pushing`, t => {
   const f = repoFixture(t);
