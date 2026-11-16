@@ -2,7 +2,7 @@
  * read-only and summarise what a cloud run would report as NEW vs already KNOWN given that state.
  * Nothing here touches the network, git, card data or ops-state. */
 import { createHash } from 'node:crypto';
-import { findingKey, type Finding } from '../audit/finding-key';
+import { classifyFindings, findingKey, type Finding } from '../audit/finding-key';
 export { findingKey, type Finding } from '../audit/finding-key';
 import { allFetchesFailed, newFetchFailures, newHolds, type ApplyLike } from '../offer-watch/daily-core';
 import type { Candidate, Ledger } from '../offer-watch/gate';
@@ -74,24 +74,32 @@ export const scrubbedFindingKey = (f: Finding) => findingKey({ ...f, detail: str
 export interface AuditStateReport {
   baseline: string | null; current: number; previous: number;
   new_high_medium: number; new_high_medium_scrubbed: number; known_high_medium: number; resolved_high_medium: number;
+  escalated_high_medium: number; escalated_high_medium_scrubbed: number;
+  // Item lists use URL-scrubbed keys, matching new_items below.
+  escalated_items: Array<{ from: Finding['severity']; to: Finding['severity']; type: string; card_id: string; field?: string }>;
   by_severity: Record<string, { new: number; known: number; resolved: number }>;
   new_items: Array<{ severity: string; type: string; card_id: string; field?: string }>;
 }
 const hm = (f: Finding) => f.severity === 'high' || f.severity === 'medium';
 export function auditStateReport(prev: Finding[] | null, cur: Finding[], baseline: string | null): AuditStateReport {
-  const pk = new Set((prev || []).map(findingKey)), pks = new Set((prev || []).map(scrubbedFindingKey));
+  const weeklyChanges = classifyFindings(prev || [], cur);
+  const scrubbedChanges = classifyFindings(prev || [], cur, scrubbedFindingKey);
+  const pks = new Set((prev || []).map(scrubbedFindingKey));
   const ck = new Set(cur.map(scrubbedFindingKey));
   const by_severity: AuditStateReport['by_severity'] = {};
   const bump = (s: string, k: 'new' | 'known' | 'resolved') => { (by_severity[s] ||= { new: 0, known: 0, resolved: 0 })[k]++; };
-  const freshScrubbed: Finding[] = [];
-  for (const f of cur) { const known = pks.has(scrubbedFindingKey(f)); bump(f.severity, known ? 'known' : 'new'); if (!known && hm(f)) freshScrubbed.push(f); }
+  const freshScrubbed = scrubbedChanges.new.filter(hm);
+  for (const f of cur) { const known = pks.has(scrubbedFindingKey(f)); bump(f.severity, known ? 'known' : 'new'); }
   for (const f of prev || []) if (!ck.has(scrubbedFindingKey(f))) bump(f.severity, 'resolved');
   return {
     baseline, current: cur.length, previous: prev?.length ?? 0,
-    new_high_medium: prev ? cur.filter(f => hm(f) && !pk.has(findingKey(f))).length : 0,
+    new_high_medium: prev ? weeklyChanges.new.filter(hm).length : 0,
     new_high_medium_scrubbed: prev ? freshScrubbed.length : 0,
     known_high_medium: cur.filter(f => hm(f) && pks.has(scrubbedFindingKey(f))).length,
     resolved_high_medium: (prev || []).filter(f => hm(f) && !ck.has(scrubbedFindingKey(f))).length,
+    escalated_high_medium: prev ? weeklyChanges.escalated.filter(e => hm(e.current)).length : 0,
+    escalated_high_medium_scrubbed: prev ? scrubbedChanges.escalated.filter(e => hm(e.current)).length : 0,
+    escalated_items: prev ? scrubbedChanges.escalated.filter(e => hm(e.current)).map(({ current: f, from, to }) => ({ from, to, type: f.type, card_id: f.card_id, field: f.field })) : [],
     by_severity,
     new_items: prev ? freshScrubbed.map(f => ({ severity: f.severity, type: f.type, card_id: f.card_id, field: f.field })) : [],
   };
@@ -114,8 +122,10 @@ export function renderOffer(r: OfferStateReport, limit = 20): string {
 export function renderAudit(r: AuditStateReport, limit = 20): string {
   const l = [`baseline: ${r.baseline ?? '(none)'} · findings ${r.previous} → ${r.current}`,
     `high/medium: new ${r.new_high_medium} (weekly.ts key) / ${r.new_high_medium_scrubbed} (URL-scrubbed key) · known ${r.known_high_medium} · resolved ${r.resolved_high_medium}`,
+    `high/medium escalated: ${r.escalated_high_medium} (weekly.ts key) / ${r.escalated_high_medium_scrubbed} (URL-scrubbed key)`,
     '', '| severity | new | known | resolved |', '|---|---|---|---|'];
   for (const s of ['high', 'medium', 'low']) { const x = r.by_severity[s]; if (x) l.push(`| ${s} | ${x.new} | ${x.known} | ${x.resolved} |`); }
   for (const f of r.new_items.slice(0, limit)) l.push(`- new [${f.severity}] ${f.type} ${f.card_id}${f.field ? ` ${f.field}` : ''}`);
+  for (const f of r.escalated_items.slice(0, limit)) l.push(`- escalated [${f.from} → ${f.to}] ${f.type} ${f.card_id}${f.field ? ` ${f.field}` : ''}`);
   return l.join('\n');
 }
