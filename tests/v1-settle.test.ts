@@ -5,7 +5,7 @@ import { resetV1RateLimitForTesting } from "@/lib/v1/rate-limit";
 import { POST as registerAgent } from "@/app/api/v1/agents/route";
 import { POST as postVerify } from "@/app/api/v1/verify/route";
 import { urlMatchesWhitelist } from "@/lib/v1/verify-validate";
-import { settle, normalizeLinkUrl, matchesGold } from "@/lib/v1-settle/scoring";
+import { settle, normalizeLinkUrl, matchesGold, DEFAULT_TIER_CONFIG } from "@/lib/v1-settle/scoring";
 import { makeTestDb, seedFixtures, evidence, assignAll } from "./v1-harness";
 import type { PGlite } from "@electric-sql/pglite";
 
@@ -75,6 +75,7 @@ describe("v1 whitelist globs, evidence policy and offline settlement", () => {
     const r2 = await verify(a.key, long);
     assert.equal(r2.status, 422);
     assert.deepEqual((await r2.json()).fields, ["evidence.excerpt"]);
+    await pg.query(`UPDATE tasks SET allowed_sources = allowed_sources || '["https://www.americanexpress.com/us/credit-cards/card/x/"]'::jsonb WHERE task_id = 't_fake_fee_a'`);
     long.evidence.excerpt = "x".repeat(200);
     assert.equal((await verify(a.key, long)).status, 202);
     const { rows } = await pg.query<{ snapshot_ref: string | null }>(`SELECT snapshot_ref FROM votes WHERE agent_id = $1`, [a.id]);
@@ -91,14 +92,16 @@ describe("v1 whitelist globs, evidence policy and offline settlement", () => {
     assert.ok(s.gold_pass >= 1 && s.gold_fail >= 1);
     const led = async (id: string) => (await pg.query<{ reason: string; delta: number; state: string }>(
       `SELECT reason, delta, state FROM credit_ledger WHERE agent_id = $1 AND reason IN ('task_reward','clawback') ORDER BY created_at`, [id])).rows;
-    assert.deepEqual((await led(good.id)).map((r) => [r.reason, r.delta, r.state]), [["task_reward", 1, "confirmed"]]);
-    assert.deepEqual((await led(bad.id)).map((r) => [r.reason, r.delta, r.state]), [["task_reward", 1, "confirmed"], ["clawback", -1, "confirmed"]]);
+    assert.deepEqual((await led(good.id)).map((r) => [r.reason, r.delta, r.state]), [["task_reward", 1, "provisional"], ["clawback", -1, "provisional"], ["task_reward", 1, "confirmed"]]);
+    assert.deepEqual((await led(bad.id)).map((r) => [r.reason, r.delta, r.state]), [["task_reward", 1, "provisional"], ["clawback", -1, "provisional"]]);
     const ag = async (id: string) => (await pg.query<{ tier: string; gold_accuracy: string }>(`SELECT tier, gold_accuracy FROM agents WHERE agent_id = $1`, [id])).rows[0];
     assert.equal(Number((await ag(good.id)).gold_accuracy), 1);
     assert.equal(Number((await ag(bad.id)).gold_accuracy), 0);
     assert.equal((await ag(bad.id)).tier, "probation", "one miss is below restrict_min_gold");
     // Simulate more graded history and re-evaluate tiers through settle.
-    await pg.query(`INSERT INTO v1_scoring_config (key, value) VALUES ('tiers', '{"standard_min_gold":1,"restrict_min_gold":1}'::jsonb)`);
+    const oldPolicy = { ...DEFAULT_TIER_CONFIG };
+    DEFAULT_TIER_CONFIG.standard_min_gold = 1;
+    DEFAULT_TIER_CONFIG.restrict_min_gold = 1;
     await pg.query(`UPDATE task_gold_answers SET gold_answer = jsonb_set(gold_answer, '{annual_fee}', '1') WHERE task_id = 't_fake_fee_d'`);
     await pg.query(`UPDATE tasks SET state = 'open' WHERE task_id = 't_fake_fee_d'`);
     const c = await newAgent();
@@ -110,6 +113,7 @@ describe("v1 whitelist globs, evidence policy and offline settlement", () => {
     assert.equal((await verify(d.key, fee("t_fake_fee_d", 2))).status, 202);
     await settle(db);
     assert.equal((await ag(d.id)).tier, "restricted");
+    Object.assign(DEFAULT_TIER_CONFIG, oldPolicy);
   });
 
   it("consensus: weighted majority settles credits and writes only consensus_suggestions", async () => {

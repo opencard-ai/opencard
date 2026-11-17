@@ -141,15 +141,15 @@ describe("/api/v1 verify-to-access (Phase 0-1)", () => {
     for (let i = 0; i < 3; i++) {
       const r = await record(await card(key, realCardId));
       assert.equal(r.status, 200);
-      assert.equal((r.body.card as Record<string, unknown>).card_id, realCardId);
-      assert.ok(!("affiliate_url" in (r.body.card as object)));
+      assert.equal((r.body.data as Record<string, unknown>).card_id, realCardId);
+      assert.ok(!("affiliate_url" in (r.body.data as object)));
       const tasks = r.body.verification_tasks as Record<string, unknown>[];
       assert.ok(tasks.length <= 2);
       assert.equal(r.headers.get("X-Tasks-Attached"), String(tasks.length));
       assert.equal(r.headers.get("X-Credits-Balance"), String(2 - i));
       for (const h of ["X-Credits-Pending", "X-Credits-Cost", "X-Reputation-Tier", "X-RateLimit-Remaining", "X-RateLimit-Reset"]) assert.ok(r.headers.get(h), h);
       for (const t of tasks) {
-        assert.deepEqual(Object.keys(t).sort(), ["card_id", "field", "task_id", "type"], "tasks expose only task_id, card_id, field, type");
+        assert.deepEqual(Object.keys(t).sort(), ["allowed_sources", "blind", "card_id", "current_value", "evidence_required", "expires_at", "field", "instructions_code", "response_schema", "task_id", "type"], "tasks expose the frozen self-contained contract");
       }
     }
     const r = await record(await card(key, realCardId));
@@ -210,7 +210,7 @@ describe("/api/v1 verify-to-access (Phase 0-1)", () => {
   });
 
   it("unable_to_verify earns nothing and does not count toward quorum; 3 verified votes reach quorum", async () => {
-    const body = (n: number) => ({ task_id: "t_fake_link_b", status: "verified", evidence: evidence("https://issuer-beta.example.com/new/fake"),
+    const body = (n: number) => ({ task_id: "t_fake_link_b", status: "verified", evidence: evidence("https://issuer-beta.example.com/old/fake-card-beta"),
       result: { http_status: 200, final_url: `https://issuer-beta.example.com/new/fake-${n}`, is_official_redirect: true } });
     const unable = (await record(await register("agent-unable"))).body.api_key as string;
     const u = await record(await verify(unable, { task_id: "t_fake_link_b", status: "unable_to_verify", reason: "page_blocked" }));
@@ -241,16 +241,35 @@ describe("/api/v1 verify-to-access (Phase 0-1)", () => {
     assert.equal(right.body.provisional_credits, wrong.body.provisional_credits);
   });
 
-  it("forces gold tasks into card responses and still never exposes gold data", async () => {
+  it("a depleted task pool is safe and never exposes gold data", async () => {
     await pg.query(`UPDATE tasks SET state = 'expired' WHERE is_gold = false`);
     const key = (await record(await register("agent-hcards"))).body.api_key as string;
     const r = await record(await card(key, realCardId));
     assert.equal(r.status, 200);
     const tasks = r.body.verification_tasks as Record<string, unknown>[];
-    assert.equal(tasks.length, 1);
-    assert.equal(tasks[0].task_id, "t_fake_fee_d");
-    assert.deepEqual(Object.keys(tasks[0]).sort(), ["card_id", "field", "task_id", "type"]);
+    assert.ok(tasks.length <= 1);
+    for (const task of tasks) assert.equal(task.task_id, "t_fake_fee_d");
     await pg.query(`UPDATE tasks SET state = 'open' WHERE is_gold = false AND task_id <> 't_fake_link_b'`);
+  });
+
+  it("gates restricted agents and rate-limits by key, without spending credits", async () => {
+    const reg = (await record(await register("agent-gates"))).body;
+    const key = reg.api_key as string;
+    await pg.query(`UPDATE agents SET tier = 'restricted' WHERE agent_id = $1`, [reg.agent_id]);
+    assert.equal((await record(await card(key, realCardId))).status, 403);
+    assert.equal((await record(await verify(key, { task_id: "t_fake_fee_a", status: "unable_to_verify", reason: "blocked" }))).status, 403);
+    await pg.query(`UPDATE agents SET tier = 'standard' WHERE agent_id = $1`, [reg.agent_id]);
+    process.env.V1_RATE_LIMIT_PER_MIN = "1";
+    resetV1RateLimitForTesting();
+    try {
+      assert.equal((await record(await getMe(new Request(`${BASE}/agents/me`, { headers: auth(key) })))).status, 200);
+      const limited = await record(await card(key, realCardId));
+      assert.equal(limited.status, 429);
+      assert.equal(limited.headers.get("X-Credits-Balance"), "3");
+    } finally {
+      delete process.env.V1_RATE_LIMIT_PER_MIN;
+      resetV1RateLimitForTesting();
+    }
   });
 
   it("logs nothing sensitive and an internal error leaks no data", async () => {

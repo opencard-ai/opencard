@@ -63,7 +63,7 @@ describe("v1 review fixes: DB role, probation weight, expiry, excerpt limits, sa
     }
   });
 
-  it("probation agents vote at reduced weight", async () => {
+  it("votes snapshot the submitting score exactly", async () => {
     const a = await newAgent();
     await assignAll(pg);
     const r = await postVerify(new Request("http://localhost/api/v1/verify", {
@@ -72,8 +72,7 @@ describe("v1 review fixes: DB role, probation weight, expiry, excerpt limits, sa
     }));
     assert.equal(r.status, 202);
     const w = (await pg.query<{ weight: string }>(`SELECT weight FROM votes WHERE agent_id = $1`, [a.agent_id])).rows[0].weight;
-    assert.equal(Number(w), (0.5 * v1Config.probationWeightPct()) / 100);
-    assert.ok(Number(w) < 0.5);
+    assert.equal(Number(w), v1Config.initialScore);
   });
 
   it("settle expires overdue tasks and reverses their provisional rewards, per task", async () => {
@@ -92,8 +91,8 @@ describe("v1 review fixes: DB role, probation weight, expiry, excerpt limits, sa
     assert.equal((await pg.query<{ outcome: string }>(`SELECT outcome FROM votes WHERE agent_id = $1`, [a.agent_id])).rows[0].outcome, "expired");
     const led = (await pg.query<{ reason: string; delta: number; state: string }>(
       `SELECT reason, delta, state FROM credit_ledger WHERE agent_id = $1 AND reason <> 'probation_grant' ORDER BY created_at`, [a.agent_id])).rows;
-    assert.deepEqual(led.map((x) => [x.reason, x.delta, x.state]), [["task_reward", 1, "confirmed"], ["clawback", -1, "confirmed"]]);
-    assert.equal((await pg.query(`SELECT 1 FROM credit_ledger WHERE state = 'provisional' AND ref_id IN (SELECT vote_id FROM votes WHERE task_id = 't_fake_offer_c')`)).rows.length, 0);
+    assert.deepEqual(led.map((x) => [x.reason, x.delta, x.state]), [["task_reward", 1, "provisional"], ["clawback", -1, "provisional"]]);
+    assert.equal((await pg.query<{ pending: number }>(`SELECT SUM(delta)::int AS pending FROM credit_ledger WHERE state = 'provisional' AND ref_id IN (SELECT vote_id FROM votes WHERE task_id = 't_fake_offer_c')`)).rows[0].pending, 0);
   });
 
   it("excerpt limit defaults to 300; Amex stays capped at 200", () => {

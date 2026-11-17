@@ -27,7 +27,7 @@ export async function makeTestDb(): Promise<{ db: V1Db; pg: PGlite }> {
 export async function seedFixtures(pg: PGlite): Promise<void> {
   const wl = JSON.parse(readFileSync(path.join(root, "tests/fixtures/v1/sources-whitelist.fake.json"), "utf8"));
   for (const e of wl.entries) {
-    await pg.query(`INSERT INTO sources_whitelist (pattern, issuer, kind, tos_notes, dispatchable) VALUES ($1,$2,$3,$4,$5)`, [e.pattern, e.issuer, e.kind, e.tos_notes, e.dispatchable !== false]);
+    await pg.query(`INSERT INTO sources_whitelist (pattern, issuer, kind, tos_notes, dispatchable, fields) VALUES ($1,$2,$3,$4,$5, '["annual_fee","welcome_offer","sources[].url","status"]'::jsonb)`, [e.pattern, e.issuer, e.kind, e.tos_notes, e.dispatchable !== false]);
   }
   const fx = JSON.parse(readFileSync(path.join(root, "tests/fixtures/v1/tasks.fake.json"), "utf8"));
   const insert = async (t: Record<string, unknown>, isGold: boolean) => {
