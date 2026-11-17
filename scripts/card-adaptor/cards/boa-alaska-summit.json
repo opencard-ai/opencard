@@ -6,7 +6,7 @@
     {
       "id": "01-issuer-boa",
       "type": "issuer",
-      "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-atmos-summit-credit-card/",
+      "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-infinite-credit-card/",
       "method": "fetch",
       "required": true
     },
@@ -25,39 +25,40 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "bonus_points": 100000,
-      "spending_requirement": 6000,
+      "bonus_points": 80000,
+      "spending_requirement": 4000,
       "time_period_months": 3,
-      "description": "Atmos Rewards Summit Visa Infinite: earn 100,000 bonus points and a 25,000-point Global Companion Award after spending $6,000 or more on purchases within the first 90 days of opening your account.",
+      "description": "Atmos Rewards Summit Visa Infinite: limited-time online offer, earn 80,000 bonus points and a 25,000-point Global Companion Award after spending $4,000 or more on purchases within the first 90 days of opening your account.",
       "point_program": "Atmos Rewards",
-      "estimated_value": 1400,
+      "estimated_value": 1120,
       "offer_status": "public_limited_time",
       "confidence": "high",
       "notes": [
         "Official Bank of America / Alaska source check shows current Summit public offer: 100,000 bonus points + 25,000-point Global Companion Award after $6,000/90 days.",
-        "Replaces stale/expired 2026-06-30 Alaska offer values; no current public expiry date was visible in fetched/searchable issuer evidence."
+        "Replaces stale/expired 2026-06-30 Alaska offer values; no current public expiry date was visible in fetched/searchable issuer evidence.",
+        "2026-11-16 official Bank of America product page (headless Chrome GET 200, 12:23 PM PST; re-confirmed 12:04 PM PST): \"Limited-time online offer Earn 80,000 bonus points and a 25,000-point Global Companion Award after spending $4,000 or more on purchases within the first 90 days of opening your account.\" Synced 100,000 / $6,000 / 90 days -> 80,000 / $4,000 / 90 days; estimated_value 1400 -> 1120 (1.4 cents/point, Alaska cpp in lib/cpp-rates.ts; the 25,000-point Global Companion Award is not valued). offer_status public_elevated -> public_limited_time (page says 'Limited-time online offer'); is_elevated true -> false (page does not describe the offer as increased/elevated). Annual fee $395 and no foreign transaction fees unchanged. Issuer source URL updated: products/alaska-airlines-atmos-summit-credit-card/ returns 404 (GET 12:25 PM PST)."
       ],
       "source_conflicts": [],
-      "last_verified": "2026-07-29",
-      "is_elevated": true,
+      "last_verified": "2026-11-16",
+      "is_elevated": false,
       "expires": null
     }
   },
   "citations": {
     "welcome_offer": [
-      "sources/*issuer-boa*.md:100,000",
-      "sources/*issuer-boa*.md:$6,000",
+      "sources/*issuer-boa*.md:80,000",
+      "sources/*issuer-boa*.md:$4,000",
       "sources/*doc*.md:Atmos Summit"
     ]
   },
   "open_questions": [
-    "Confirm whether Bank of America extends or rotates the Summit 100k / $6k / 90d offer later in the cycle."
+    "Confirm whether Bank of America ends or rotates the Summit 80k / $4k / 90d limited-time online offer."
   ],
   "community": {
-    "summary": "Track Atmos Rewards Summit on the current 100k + 25k Global Companion Award public limited-time offer.",
+    "summary": "Track Atmos Rewards Summit on the current 80k + 25k Global Companion Award limited-time online offer.",
     "recommended_production_value": {
-      "offer_amount": 100000,
-      "spend_requirement": 6000,
+      "offer_amount": 80000,
+      "spend_requirement": 4000,
       "spend_window_months": 3,
       "status": "public_limited_time"
     },
@@ -70,12 +71,12 @@
       {
         "sourceType": "issuer",
         "source": "Bank of America Atmos Summit page",
-        "regex": "100,000|\\$6,000|90 days|Atmos Summit",
-        "stance": "supports_100k_public_limited_time",
-        "offer_amount": 100000,
-        "spend_requirement": 6000,
+        "regex": "80,000|\\$4,000|90 days|Atmos",
+        "stance": "supports_80k_public_limited_time",
+        "offer_amount": 80000,
+        "spend_requirement": 4000,
         "spend_window_months": 3,
-        "excerpt": "BoA page shows 100k points + 25k Global Companion Award after $6k/90 days.",
+        "excerpt": "BoA page shows limited-time online offer: 80k points + 25k Global Companion Award after $4k/90 days.",
         "confidence": "high_if_present"
       }
     ]

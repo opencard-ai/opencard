@@ -1,0 +1,5 @@
+OpenCard 優惠監測 2026-11-13
+
+⏳ 新增待確認（未上線）
+- amex-marriott-bevy：截止日 → 2027-01-13（來源互相矛盾）
+- amex-delta-gold-biz：截止日（已過期但官方頁面仍顯示）

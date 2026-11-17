@@ -7,14 +7,7 @@
   "annual_fee": 0,
   "foreign_transaction_fee": 5,
   "credit_required": "Good to Excellent",
-  "welcome_offer": {
-    "spending_requirement": 500,
-    "time_period_months": 3,
-    "bonus_points": 10000,
-    "estimated_value": 100,
-    "point_program": "H-D Rewards",
-    "description": "10,000 points (redeemable for a $100 H-D Gift Card) after spending $500 in eligible purchases within the first 90 days"
-  },
+  "welcome_offer": null,
   "earning_rates": [
     {
       "category": "Harley-Davidson dealerships, h-d.com, H-D Museum, Factory Tours, H-D Insurance",
@@ -68,7 +61,7 @@
   "sources": [
     {
       "url": "https://www.h-dvisa.com/credit/harley-davidson-visa-signature-credit.do",
-      "notes": "Issuer product page (U.S. Bank co-brand site) — static HTML, scraper-friendly"
+      "notes": "Issuer product page (U.S. Bank co-brand site) — static HTML, scraper-friendly | Checked 2026-11-02: no welcome offer shown; $0 AF, 0% intro APR 9 billing cycles, 5% FTF. Card still marketed."
     },
     {
       "url": "https://wallethub.com/d/harley-davidson-credit-card-1720c",

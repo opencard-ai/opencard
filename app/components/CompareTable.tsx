@@ -5,8 +5,9 @@ import { trackEvent } from "@/lib/analytics";
 import { Check, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import type { CreditCard, RecurringCredit } from "@/lib/cards";
-import { formatWelcomeBonus } from "@/lib/welcome-offer";
+import { formatVariableOffer, formatWelcomeBonus } from "@/lib/welcome-offer";
 import { knownNoForeignFee } from "@/lib/foreign-fee";
+import { normalizeOtherBenefits } from "@/lib/other-benefits";
 
 interface CompareTableProps {
   cards: CreditCard[];
@@ -228,6 +229,8 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                       </div>
                     ) : card.welcome_offer.estimated_value != null && card.welcome_offer.estimated_value !== 0 ? (
                       <div className="font-bold text-amber-700">{formatCurrency(card.welcome_offer.estimated_value)}</div>
+                    ) : formatVariableOffer(card.welcome_offer, lang) ? (
+                      <div className="font-bold text-amber-700">{formatVariableOffer(card.welcome_offer, lang)}</div>
                     ) : (
                       <span className="text-slate-400 text-xs">{l.none}</span>
                     )}
@@ -291,7 +294,9 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
           {/* Benefits & Credits (MERGED: Annual Credits + Travel Benefits) */}
           <tr>
             <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10 align-top">{l.benefitsCredits}</td>
-            {cards.map((card) => (
+            {cards.map((card) => {
+              const otherBenefits = normalizeOtherBenefits(card.travel_benefits?.other_benefits);
+              return (
               <td key={card.card_id} className="py-3 px-4 text-xs align-top">
                 <div className="space-y-3">
                   {/* Annual Credits */}
@@ -340,10 +345,10 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                   ) : null}
 
                   {/* Other Benefits */}
-                  {card.travel_benefits?.other_benefits?.length ? (
+                  {otherBenefits.length ? (
                     <div>
                       <div className="text-xs font-semibold text-slate-500 uppercase mb-1">{l.otherBenefits}</div>
-                      {card.travel_benefits.other_benefits.map((ob, i) => (
+                      {otherBenefits.map((ob, i) => (
                         <div key={i} className="text-slate-700">
                           {ob.name && <span className="font-medium">{ob.name}: </span>}
                           {ob.description.split(".")[0]}
@@ -355,12 +360,13 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                   {!card.recurring_credits?.length &&
                    !card.travel_benefits?.hotel_status?.length &&
                    !card.travel_benefits?.lounge_access &&
-                   !card.travel_benefits?.other_benefits?.length ? (
+                   !otherBenefits.length ? (
                     <span className="text-slate-400">—</span>
                   ) : null}
                 </div>
               </td>
-            ))}
+              );
+            })}
           </tr>
 
           {/* Insurance */}

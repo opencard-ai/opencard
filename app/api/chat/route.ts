@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { getCardById, type CreditCard } from "@/lib/cards";
-import { formatWelcomeBonus, welcomeBonusKind } from "@/lib/welcome-offer";
+import { formatVariableOfferMax, formatWelcomeBonus, isVariableOffer, welcomeBonusKind } from "@/lib/welcome-offer";
 
 const MINIMAX_API_URL = "https://api.minimax.io/v1/chat/completions";
 
@@ -36,6 +36,10 @@ function buildCardContext(card: CreditCard): string {
     const bonusLabel = formatWelcomeBonus(wo);
     if (bonusLabel && welcomeBonusKind(wo) === "percent_discount") parts.push(`Welcome offer: ${bonusLabel}`);
     else if (bonusLabel) parts.push(`Welcome bonus: ${bonusLabel} after $${wo.spending_requirement?.toLocaleString() ?? "?"} in ${wo.time_period_months ?? 3} months`);
+    else if (isVariableOffer(wo)) {
+      const max = formatVariableOfferMax(wo);
+      parts.push(`Welcome offer: varies by applicant${max ? ` (as high as ${max})` : ""}; the issuer shows the exact amount when you apply${wo.spending_requirement ? `. Spend $${wo.spending_requirement.toLocaleString()} in ${wo.time_period_months ?? 3} months` : ""}`);
+    }
   }
   return parts.join("\n");
 }

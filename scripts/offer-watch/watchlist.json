@@ -561,43 +561,41 @@
           "render": false,
           "patterns": [
             {
-              "regex": "SkyMiles\\W{0,4}Reserve Amex Card[\\s\\S]{0,300}?(?:and|Earn) ([\\d,]+) Bonus Miles,? after you spend \\$([\\d,]+) in purchases in (?:your|the) first (\\d+) months of Card Membership\\.(?:[\\s\\S]{0,100}?Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4}))?",
-              "groups": {
-                "welcome_offer.bonus_points": 1,
-                "welcome_offer.spending_requirement": 2,
-                "welcome_offer.time_period_months": 3,
-                "welcome_offer.expiry": 4
-              }
-            },
-            {
               "regex": "SkyMiles\\W{0,4}Reserve Amex Card[\\s\\S]{0,700}?\\$([\\d,]+) Annual Fee",
               "groups": {
                 "annual_fee": 1
               }
             }
-          ]
+          ],
+          "review_signals": [
+            {
+              "regex": "as high as\\s*[\\d,]+\\s*Bonus Miles",
+              "reason": "variable_as_high_as_offer"
+            }
+          ],
+          "review_if_no_bonus": "detect_only_no_bonus_parsed"
         },
         {
           "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-reserve-american-express-card/",
           "render": true,
           "patterns": [
             {
-              "regex": "(?:along with|Earn) ([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card in the first (\\d+) months",
-              "groups": {
-                "welcome_offer.bonus_points": 1,
-                "welcome_offer.spending_requirement": 2,
-                "welcome_offer.time_period_months": 3
-              }
-            },
-            {
               "regex": "Delta SkyMiles\\W{0,4}Reserve American Express\\W{0,4}Card[^$]{0,30}?Annual Fee: \\$([\\d,]+)(?![\\d,]| intro)",
               "groups": {
                 "annual_fee": 1
               }
             }
-          ]
+          ],
+          "review_signals": [
+            {
+              "regex": "as high as\\s*[\\d,]+\\s*Bonus Miles",
+              "reason": "variable_as_high_as_offer"
+            }
+          ],
+          "review_if_no_bonus": "detect_only_no_bonus_parsed"
         }
-      ]
+      ],
+      "_note": "2026-11-10: Reserve welcome offer is detect-only (Amex hero shows variable 'AS HIGH AS 125,000'; card data tracks 100k/$5k/6mo from the Amex cross-sell copy). Bonus/spend/months are never extracted here; 'as high as' or no parsed bonus -> expiry_review manual-review item. annual_fee still extracted."
     },
     {
       "card_id": "amex-delta-gold-biz",
@@ -607,44 +605,41 @@
           "render": false,
           "patterns": [
             {
-              "regex": "SkyMiles\\W{0,4}Gold Business Amex Card\\W{0,4}(?:LIMITED TIME OFFER: EARN [\\d,]+ BONUS MILES\\s*)?Earn ([\\d,]+) bonus miles after you make \\$([\\d,]+) in eligible purchases on your Card in the first (\\d+) months\\.(?:\\s*Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4}))?",
-              "groups": {
-                "welcome_offer.bonus_points": 1,
-                "welcome_offer.spending_requirement": 2,
-                "welcome_offer.time_period_months": 3,
-                "welcome_offer.expiry": 4
-              }
-            },
-            {
               "regex": "SkyMiles\\W{0,4}Gold Business Amex Card[\\s\\S]{0,400}?\\$0 introductory annual fee for the first year, then \\$([\\d,]+)",
               "groups": {
                 "annual_fee": 1
               }
             }
-          ]
+          ],
+          "review_signals": [
+            {
+              "regex": "SkyMiles\\W{0,4}Gold Business Amex Card[\\s\\S]{0,200}?as high as\\s*[\\d,]+\\s*Bonus Miles",
+              "reason": "variable_as_high_as_offer"
+            }
+          ],
+          "review_if_no_bonus": "detect_only_no_bonus_parsed"
         },
         {
           "url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-gold/",
           "render": true,
           "patterns": [
             {
-              "regex": "Earn (?:[\\d,]+ )?([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card in your first (\\d+) months of Card Membership\\.(?:\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?",
-              "groups": {
-                "welcome_offer.bonus_points": 1,
-                "welcome_offer.spending_requirement": 2,
-                "welcome_offer.time_period_months": 3,
-                "welcome_offer.expiry": 4
-              }
-            },
-            {
               "regex": "Annual Fee: \\$0 intro(?:ductory)? annual fee for the first year, then \\$([\\d,]+)",
               "groups": {
                 "annual_fee": 1
               }
             }
-          ]
+          ],
+          "review_signals": [
+            {
+              "regex": "as high as\\s*[\\d,]+\\s*Bonus Miles",
+              "reason": "variable_as_high_as_offer"
+            }
+          ],
+          "review_if_no_bonus": "detect_only_no_bonus_parsed"
         }
-      ]
+      ],
+      "_note": "2026-11-13: Gold Business welcome offer is detect-only (Amex and delta.com heroes show a variable 'AS HIGH AS' offer; card data stores bonus_points 0 / bonus_value Varies per #95). Bonus/spend/months/expiry are never extracted here; 'as high as' or no parsed bonus -> expiry_review manual-review item. annual_fee still extracted."
     },
     {
       "card_id": "amex-delta-skymiles-platinum-biz",
@@ -654,44 +649,41 @@
           "render": false,
           "patterns": [
             {
-              "regex": "SkyMiles\\W{0,4}Platinum Business Amex Card\\W{0,4}(?:LIMITED TIME OFFER: EARN [\\d,]+ BONUS MILES\\s*)?Earn ([\\d,]+) bonus miles after you make \\$([\\d,]+) in eligible purchases on your Card in the first (\\d+) months\\.(?:\\s*Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4}))?",
-              "groups": {
-                "welcome_offer.bonus_points": 1,
-                "welcome_offer.spending_requirement": 2,
-                "welcome_offer.time_period_months": 3,
-                "welcome_offer.expiry": 4
-              }
-            },
-            {
-              "regex": "SkyMiles\\W{0,4}Platinum Business Amex Card[\\s\\S]{0,400}?Offer ends [A-Za-z]+ \\d{1,2}, \\d{4}\\.\\W{0,6}\\$([\\d,]+) Annual Fee",
+              "regex": "SkyMiles\\W{0,4}Platinum Business Amex Card[\\s\\S]{0,700}?\\$([\\d,]+) Annual Fee",
               "groups": {
                 "annual_fee": 1
               }
             }
-          ]
+          ],
+          "review_signals": [
+            {
+              "regex": "SkyMiles\\W{0,4}Platinum Business Amex Card[\\s\\S]{0,200}?as high as\\s*[\\d,]+\\s*Bonus Miles",
+              "reason": "variable_as_high_as_offer"
+            }
+          ],
+          "review_if_no_bonus": "detect_only_no_bonus_parsed"
         },
         {
           "url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-platinum/",
           "render": true,
           "patterns": [
             {
-              "regex": "Earn (?:[\\d,]+ )?([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card in your first (\\d+) months of Card Membership\\.(?:\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?",
-              "groups": {
-                "welcome_offer.bonus_points": 1,
-                "welcome_offer.spending_requirement": 2,
-                "welcome_offer.time_period_months": 3,
-                "welcome_offer.expiry": 4
-              }
-            },
-            {
               "regex": "Delta SkyMiles\\W{0,4}Platinum Business\\W{0,4}Card[^$]{0,30}?Annual Fee: \\$([\\d,]+)(?![\\d,]| intro)",
               "groups": {
                 "annual_fee": 1
               }
             }
-          ]
+          ],
+          "review_signals": [
+            {
+              "regex": "as high as\\s*[\\d,]+\\s*Bonus Miles",
+              "reason": "variable_as_high_as_offer"
+            }
+          ],
+          "review_if_no_bonus": "detect_only_no_bonus_parsed"
         }
-      ]
+      ],
+      "_note": "2026-11-13: Platinum Business welcome offer is detect-only (Amex and delta.com heroes show a variable 'AS HIGH AS' offer; card data stores bonus_points 0 / bonus_value Varies per #95). Bonus/spend/months/expiry are never extracted here; 'as high as' or no parsed bonus -> expiry_review manual-review item. annual_fee still extracted."
     },
     {
       "card_id": "amex-delta-skymiles-reserve-biz",
@@ -701,44 +693,41 @@
           "render": false,
           "patterns": [
             {
-              "regex": "SkyMiles\\W{0,4}Reserve Business Amex Card\\W{0,4}(?:LIMITED TIME OFFER: EARN [\\d,]+ BONUS MILES\\s*)?Earn ([\\d,]+) bonus miles after you make \\$([\\d,]+) in eligible purchases on your Card in the first (\\d+) months\\.(?:\\s*Offer ends ([A-Za-z]+\\.? \\d{1,2}, \\d{4}))?",
-              "groups": {
-                "welcome_offer.bonus_points": 1,
-                "welcome_offer.spending_requirement": 2,
-                "welcome_offer.time_period_months": 3,
-                "welcome_offer.expiry": 4
-              }
-            },
-            {
-              "regex": "SkyMiles\\W{0,4}Reserve Business Amex Card[\\s\\S]{0,400}?Offer ends [A-Za-z]+ \\d{1,2}, \\d{4}\\.\\W{0,6}\\$([\\d,]+) Annual Fee",
+              "regex": "SkyMiles\\W{0,4}Reserve Business Amex Card[\\s\\S]{0,700}?\\$([\\d,]+) Annual Fee",
               "groups": {
                 "annual_fee": 1
               }
             }
-          ]
+          ],
+          "review_signals": [
+            {
+              "regex": "SkyMiles\\W{0,4}Reserve Business Amex Card[\\s\\S]{0,200}?as high as\\s*[\\d,]+\\s*Bonus Miles",
+              "reason": "variable_as_high_as_offer"
+            }
+          ],
+          "review_if_no_bonus": "detect_only_no_bonus_parsed"
         },
         {
           "url": "https://www.americanexpress.com/en-us/business/credit-cards/delta-skymiles-reserve/",
           "render": true,
           "patterns": [
             {
-              "regex": "Earn (?:[\\d,]+ )?([\\d,]+) Bonus Miles\\s*after you spend \\$([\\d,]+) in purchases on your new Card in your first (\\d+) months of Card Membership\\.(?:\\s*Offer ends (\\d{1,2}/\\d{1,2}/\\d{2,4}))?",
-              "groups": {
-                "welcome_offer.bonus_points": 1,
-                "welcome_offer.spending_requirement": 2,
-                "welcome_offer.time_period_months": 3,
-                "welcome_offer.expiry": 4
-              }
-            },
-            {
               "regex": "Delta SkyMiles\\W{0,4}Reserve Business\\W{0,4}Card[^$]{0,30}?Annual Fee: \\$([\\d,]+)(?![\\d,]| intro)",
               "groups": {
                 "annual_fee": 1
               }
             }
-          ]
+          ],
+          "review_signals": [
+            {
+              "regex": "as high as\\s*[\\d,]+\\s*Bonus Miles",
+              "reason": "variable_as_high_as_offer"
+            }
+          ],
+          "review_if_no_bonus": "detect_only_no_bonus_parsed"
         }
-      ]
+      ],
+      "_note": "2026-11-13: Reserve Business welcome offer is detect-only (Amex and delta.com heroes show a variable 'AS HIGH AS' offer; card data stores bonus_points 0 / bonus_value Varies per #95). Bonus/spend/months/expiry are never extracted here; 'as high as' or no parsed bonus -> expiry_review manual-review item. annual_fee still extracted."
     },
     {
       "card_id": "bilt-palladium",
@@ -978,6 +967,31 @@
                 "welcome_offer.bonus_points": 1,
                 "welcome_offer.spending_requirement": 2,
                 "welcome_offer.time_period_months": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "marriott-bonvoy-bold",
+      "sources": [
+        {
+          "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/bold",
+          "render": false,
+          "patterns": [
+            {
+              "regex": "Earn ([\\d,]+) Bonus Points after (?:spending|you spend) \\$([\\d,]+) (?:on|in) (?:eligible )?purchases (?:within|in) (?:the first )?(\\d+) months (?:of|from) account opening with the Marriott Bonvoy Bold",
+              "groups": {
+                "welcome_offer.bonus_points": 1,
+                "welcome_offer.spending_requirement": 2,
+                "welcome_offer.time_period_months": 3
+              }
+            },
+            {
+              "regex": "ANNUAL FEE \\$([\\d,]+)\\W",
+              "groups": {
+                "annual_fee": 1
               }
             }
           ]
@@ -1278,22 +1292,22 @@
           "render": true,
           "patterns": [
             {
-              "regex": "(?:AS HIGH AS|Earn) \\$([\\d,]+) Cash Back\\d?\\s*after you spend \\$([\\d,]+) in purchases on your new Card in the first (\\d+) months of Card Membership",
-              "groups": {
-                "welcome_offer.bonus_points": 1,
-                "welcome_offer.spending_requirement": 2,
-                "welcome_offer.time_period_months": 3
-              }
-            },
-            {
               "regex": "Annual Fee: \\$0 intro annual fee for the first year, then \\$([\\d,]+)",
               "groups": {
                 "annual_fee": 1
               }
             }
-          ]
+          ],
+          "review_signals": [
+            {
+              "regex": "Welcome offers vary|Find out your offer amount|AS HIGH AS\\s*\\$[\\d,]+\\s*Cash Back|Earn\\s*\\$[\\d,]+\\s*Cash Back\\d?\\s*after you spend\\s*\\$[\\d,]+",
+              "reason": "variable_as_high_as_offer"
+            }
+          ],
+          "review_if_no_bonus": "detect_only_no_bonus_parsed"
         }
-      ]
+      ],
+      "_note": "2026-11-15: Welcome offer is detect-only: personalized official heroes flip between $250 and $300 across sessions. Do not auto-apply bonus/spend/months; route to manual review. annual_fee still extracted."
     },
     {
       "card_id": "wells-fargo-one-key",

@@ -145,11 +145,102 @@ function withoutPromoRates(card: CreditCard): CreditCard {
 }
 
 const OVERRIDES: Record<string, { title: string; description: string }> = {
+  // CTR batch 3 (2026-11-02): GSC pages at position 8-30 with 0 clicks. DB + issuer facts only.
+  "chase-ink-biz-unlimited": {
+    title: "Chase Ink Business Unlimited: No Annual Fee, 1.5% Cash Back | OpenCard",
+    description: "Chase Ink Business Unlimited has a $0 annual fee and pays unlimited 1.5% cash back on every business purchase, with no categories to track. Note the 3% foreign transaction fee.",
+  },
+  "capital-one-quicksilver": {
+    title: "Capital One Quicksilver: 1.5% Cash Back, No Annual or Foreign Fees | OpenCard",
+    description: "Capital One Quicksilver Cash Rewards: $0 annual fee, unlimited 1.5% cash back on every purchase and no foreign transaction fees. See how it stacks up against 2% flat-rate cards.",
+  },
+  "southwest-rapid-rewards-premier": {
+    title: "Southwest Rapid Rewards Premier Card: $149 Fee, No Foreign Fees | OpenCard",
+    description: "Chase's Southwest Rapid Rewards Premier card: $149 annual fee, no foreign transaction fees, 3x points on Southwest purchases, 2x at grocery stores and restaurants, 1x on everything else.",
+  },
+  "amex-blue-cash-everyday": {
+    title: "Amex Blue Cash Everyday: No Annual Fee, 3% at U.S. Supermarkets | OpenCard",
+    description: "American Express Blue Cash Everyday: $0 annual fee and 3% cash back at U.S. supermarkets on up to $6,000 a year (then 1%). 2.7% foreign transaction fee. Compare it with other no-fee grocery cards.",
+  },
+  "discover-it-student-cash-back": {
+    title: "Discover it Student Cash Back: No Annual Fee, 5% Rotating Categories | OpenCard",
+    description: "Discover it Student Cash Back: $0 annual fee, 5% on quarterly categories you activate (up to $1,500 a quarter, then 1%), 1% on everything else, and no foreign transaction fees.",
+  },
+  "chase-ink-biz-premier": {
+    title: "Chase Ink Business Premier: $195 Fee, 2% Cash Back on Everything | OpenCard",
+    description: "Chase Ink Business Premier: $195 annual fee, 2% cash back on business purchases, 2.5% on purchases of $5,000 or more, 5% on travel booked through Chase Travel, and no foreign transaction fees.",
+  },
+  "chase-southwest-performance-biz": {
+    title: "Southwest Performance Business Card: $299 Fee, 3x on Southwest | OpenCard",
+    description: "Chase's Southwest Rapid Rewards Performance Business card: $299 annual fee, 3x points on Southwest purchases, 2x at gas stations, 1x elsewhere, and no foreign transaction fees.",
+  },
+  "us-bank-biz-essentials": {
+    title: "U.S. Bank Business Essentials: No Annual Fee, 2% Cash Back | OpenCard",
+    description: "U.S. Bank Business Essentials Card: $0 annual fee, unlimited 2% cash back on eligible purchases and 6% on prepaid hotels and car rentals booked in the U.S. Bank Travel Center. 3% foreign transaction fee.",
+  },
+  "us-bank-prime-business": {
+    title: "U.S. Bank Prime Business World Elite Mastercard: 5% at Amazon | OpenCard",
+    description: "Prime Business World Elite Mastercard from U.S. Bank: $0 annual fee, 5% back at Amazon, Amazon Business, AWS and Whole Foods Market on the first $150,000 a year (then 1%), and no foreign transaction fees.",
+  },
+  // CTR batch 4 (2026-11-09): high-impression 0-click pages + lead query matches.
+  // Avoid template "Up to Nx" when the top rate is portal-only, capped, or stacked.
+  "chase-sapphire-reserve": {
+    title: "Chase Sapphire Reserve: $795 Fee, $300 Travel Credit | OpenCard",
+    description: "Chase Sapphire Reserve: $795 annual fee, $300 annual Chase Travel credit, Priority Pass Select, 8x on Chase Travel / The Edit, 4x on flights and hotels booked direct, and 3x on dining. No foreign transaction fees.",
+  },
+  "capital-one-savor": {
+    title: "Capital One Savor: No Annual Fee, 3% Dining & Groceries | OpenCard",
+    description: "Capital One Savor Cash Rewards: $0 annual fee, unlimited 3% cash back on dining, groceries, entertainment and select streaming, plus 8% on Capital One Entertainment and no foreign transaction fees.",
+  },
+  "marriott-bonvoy-bold": {
+    title: "Marriott Bonvoy Bold: No Annual Fee & Silver Elite Status | OpenCard",
+    description: "Chase Marriott Bonvoy Bold: $0 annual fee, automatic Silver Elite status, 3x Bonvoy points at Marriott hotels from the card (plus hotel base points), 2X on groceries, rideshare, select food delivery, select streaming, and internet/cable/phone, and no foreign transaction fees.",
+  },
+  "chase-british-airways-visa-signature": {
+    title: "British Airways Visa Signature: $95 Fee & Travel Together Ticket | OpenCard",
+    description: "Chase British Airways Visa Signature: $95 annual fee, Avios on everyday spend, 3x on British Airways / Aer Lingus / Iberia / LEVEL flights, and a Travel Together Ticket after $30,000 annual spend. No foreign transaction fees.",
+  },
+  "citi-aadvantage-executive": {
+    title: "Citi AAdvantage Executive: $695 Fee & Admirals Club Access | OpenCard",
+    description: "Citi / AAdvantage Executive World Legend Mastercard: $695 annual fee includes Admirals Club membership for you and up to two guests, plus AAdvantage miles on everyday spend.",
+  },
+  "chase-ink-biz-cash": {
+    title: "Chase Ink Business Cash: No Annual Fee, 5% on Office & Internet | OpenCard",
+    description: "Chase Ink Business Cash: $0 annual fee, 5% cash back on office supplies and internet/cable/phone (combined cap $25,000 per anniversary year), 2% on gas and restaurants (same combined cap), then 1%. 3% foreign transaction fee.",
+  },
+  "fidelity-rewards-visa-signature": {
+    title: "Fidelity Rewards Visa Signature: 2% Cash Back, No Annual Fee | OpenCard",
+    description: "Fidelity Rewards Visa Signature from Elan: $0 annual fee and unlimited 2% cash back when rewards go into an eligible Fidelity account. No foreign transaction fees.",
+  },
+  "discover-it-miles": {
+    title: "Discover it Miles: 1.5 Miles Everywhere + First-Year Match | OpenCard",
+    description: "Discover it Miles: $0 annual fee, unlimited 1.5 Miles per $1 on every purchase, Discover Match doubles the Miles you earn in the first year, and no foreign transaction fees.",
+  },
+  "amex-marriott-bevy": {
+    title: "Marriott Bonvoy Bevy Amex: $250 Fee & Gold Elite Status | OpenCard",
+    description: "Marriott Bonvoy Bevy American Express: $250 annual fee, complimentary Gold Elite status, 6X at Marriott hotels, 4X at restaurants and U.S. supermarkets (up to $15,000 combined per calendar year, then 2X), 2X on other purchases, and no foreign transaction fees.",
+  },
   // Spirit stopped flying in May 2026 and BofA's page is gone, but the record is
   // still active; don't advertise its old fee and earning rates.
   "spirit-airlines-mastercard": {
     title: "Spirit Airlines Mastercard: What Happens to the Card Now | OpenCard",
     description: "Spirit Airlines stopped flying in May 2026 and Bank of America no longer lists this card. What current cardholders should check, and why not to apply.",
+  },
+  "amex-blue-biz-plus": {
+    title: "Amex Blue Business Plus: No Annual Fee, 2x Membership Rewards | OpenCard",
+    description: "American Express Blue Business Plus: $0 annual fee and 2x Membership Rewards points on the first $50,000 of purchases each year (1x after). Transferable points for a business that wants rewards it can use, not just cash back.",
+  },
+  "boa-biz-advantage-travel": {
+    title: "BofA Business Advantage Travel Rewards (WorldPoints): No Annual Fee | OpenCard",
+    description: "Bank of America's Business Advantage Travel Rewards World Mastercard: $0 annual fee, 1.5 points per $1 everywhere and 3x through the BofA Travel Center. Also searched as WorldPoints Travel Rewards for Business.",
+  },
+  "barclays-gap-good-rewards-mastercard": {
+    title: "Gap Encore Mastercard: No Annual Fee & 20% Off First Purchase | OpenCard",
+    description: "Barclays' Gap Encore Mastercard works anywhere Mastercard is accepted. No annual fee, points at Gap and other Gap Inc. brands, and 20% off your first Gap purchase. Same rewards family as Old Navy, Banana Republic and Athleta.",
+  },
+  "barclays-banana-republic-rewards-mastercard": {
+    title: "Banana Republic Encore Mastercard: No Annual Fee & 20% Off First Purchase | OpenCard",
+    description: "Barclays' Banana Republic Encore Mastercard: no annual fee, points across Gap Inc. brands, and 20% off your first Banana Republic purchase. Same rewards as the Old Navy, Gap and Athleta Encore cards.",
   },
   "boa-student-customized-cash-rewards": {
     title: "BofA Customized Cash Rewards for Students: Benefits & Rates | OpenCard",
@@ -159,9 +250,34 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
     title: "Old Navy Encore Mastercard: No Annual Fee & 30% Off First Purchase | OpenCard",
     description: "Barclays' Old Navy Encore Mastercard can be used anywhere Mastercard is accepted. No annual fee, points at Old Navy and other Gap Inc. brands, and 30% off your first Old Navy purchase. See what the points are really worth.",
   },
+  "barclays-athleta-rewards-mastercard": {
+    title: "Athleta Encore Mastercard: No Annual Fee, Gap Inc. Rewards | OpenCard",
+    description: "Barclays' Athleta Encore Mastercard: no annual fee and the same Gap Inc. family points as Old Navy, Gap and Banana Republic. Check Barclays' page for the current first-purchase discount before you apply.",
+  },
   "amex-biz-platinum": {
     title: "American Express Business Platinum Card: $895 Fee & Benefits | OpenCard",
     description: "The Business Platinum Card from American Express: $895 annual fee, 5x points on flights and prepaid hotels booked on AmexTravel.com, 2x on key business purchases, and no foreign transaction fees. See which credits are worth it.",
+  },
+  // CTR batch 5 (2026-11-16): Ulta + top-query pages. Facts re-checked on issuer pages 2026-11-16.
+  "comenity-ulta-beauty-mastercard": {
+    title: "Ulta Credit Card: $0 Fee, 2 Points per $1, Login & Pay Links | OpenCard",
+    description: "Ulta Beauty Rewards Mastercard from Comenity Capital Bank: $0 annual fee, 2 points per $1 at Ulta Beauty and 1 point per $3 everywhere else. Plus links to Ulta's official apply page and the Comenity login to pay your bill.",
+  },
+  "capital-one-spark-cash-plus": {
+    title: "Spark Cash Plus: 2% Cash Back, 2.99% Late Fee, Refundable $150 Fee | OpenCard",
+    description: "Capital One Spark Cash Plus is a charge card: unlimited 2% cash back, a $150 annual fee refunded each year you spend at least $150,000, a 2.99% late fee and no foreign transaction fees.",
+  },
+  "capital-one-spark-cash": {
+    title: "Capital One Spark Cash: 2% Cash Back, $0 Intro Annual Fee, Then $95 | OpenCard",
+    description: "Capital One Spark Cash for Business: unlimited 2% cash back on every purchase, 5% on hotels and rental cars booked through Capital One Business Travel, and a $0 annual fee for the first year, then $95.",
+  },
+  "citi-secured-mastercard": {
+    title: "Citi Secured Mastercard: No Annual Fee, $200 Minimum Deposit | OpenCard",
+    description: "Citi Secured Mastercard: no annual fee and no rewards. Your $200 to $2,500 security deposit sets your credit limit, you get FICO Score access, and responsible use may let you upgrade to the Citi Diamond Preferred card.",
+  },
+  "chase-united-club-infinite": {
+    title: "United Club Card: $695 Fee, United Club Membership, 2 Free Bags | OpenCard",
+    description: "Chase's United Club Card: $695 annual fee, United Club membership, free first and second checked bags for you and one companion, Premier Access, 5 miles total per $1 on United tickets and 2 miles per $1 on dining and travel.",
   },
 };
 
@@ -185,9 +301,10 @@ export function cardSeoMeta(card: CreditCard, lang: string, closed: boolean): { 
   const top = storeCard ? undefined : p.top;
 
   if (closed) {
+    // Discontinued cards must not advertise the old annual fee or earn rates.
     return {
       title: `${name}: ${c.closed} | OpenCard`,
-      description: `${name} — ${c.closed}. ${feeText}.${c.tail}`,
+      description: `${name} — ${c.closed}.${c.tail}`,
     };
   }
 

@@ -31,19 +31,24 @@
   },
   "earning_rates": [
     {
-      "category": "Flights",
-      "rate": 5,
-      "notes": "Earn 5x on flights booked directly with airlines"
+      "category": "Marriott hotels",
+      "rate": 6,
+      "notes": "6X points at hotels participating in Marriott Bonvoy"
     },
     {
-      "category": "Hotels",
-      "rate": 5,
-      "notes": "Earn 5x on prepaid hotels booked with Marriott"
+      "category": "Restaurants",
+      "rate": 4,
+      "notes": "Restaurants worldwide (including takeout and delivery in the U.S.); combined with U.S. Supermarkets up to $15,000 per calendar year, then 2X"
+    },
+    {
+      "category": "U.S. Supermarkets",
+      "rate": 4,
+      "notes": "Combined with restaurants up to $15,000 per calendar year, then 2X"
     },
     {
       "category": "Other",
-      "rate": 1,
-      "notes": "Earn 1x on all other purchases"
+      "rate": 2,
+      "notes": "2X on all other eligible purchases"
     }
   ],
   "travel_benefits": {
@@ -97,7 +102,8 @@
       "notes": "USCCG card review (LLM-friendly static HTML)"
     },
     {
-      "url": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-bevy/"
+      "url": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-bevy/",
+      "notes": "Official Amex card page GET 2026-11-09 ~09:29 PT: 6X at hotels participating in Marriott Bonvoy; 4X restaurants worldwide and U.S. Supermarkets (combined up to $15,000/calendar year, then 2X); 2X other eligible purchases. Replaces prior 5X flights / 5X prepaid Marriott / 1X other representation."
     },
     {
       "url": "https://www.marriott.com/credit-cards/marriott-bonvoy-bevy-american-express-card.mi"
@@ -118,7 +124,7 @@
       "notes": "Amex Card Member Agreement (06/30/2026): Foreign Transaction fee None (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-11-09",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
@@ -144,9 +150,9 @@
   },
   "recurring_credits": [],
   "_no_credits_found": true,
-  "_no_credits_note": "Marriott Bevy ($250 AF) — primary value is Free Night after $15k spend (conditional, excluded), 15 Elite Night Credits (qualitative), Marriott Gold Elite status (qualitative), 4x grocery/dining earning (rate not credit). No fixed-USD recurring credits published. Verified 2026-04-27 vs amex.com.",
+  "_no_credits_note": "Marriott Bevy ($250 AF) — primary value is Free Night after $15k spend (conditional, excluded), 15 Elite Night Credits (qualitative), Marriott Gold Elite status (qualitative), 6X Marriott / 4X restaurant+U.S. supermarket (combined $15k then 2X) / 2X other earning. No fixed-USD recurring credits published. Earn rates re-verified 2026-11-09 vs amex.com.",
   "last_scraped": "2026-04-24T17:26:46.246653",
-  "last_verified": "2026-10-19",
+  "last_verified": "2026-11-09",
   "next_review": "2026-10-31T00:00:00.000Z",
   "cash_advance_fee_flat": 10,
   "cash_advance_fee_pct": 21.99,

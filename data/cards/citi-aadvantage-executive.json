@@ -58,14 +58,6 @@
         "description": "Up to $120 every 5 years toward Global Entry or TSA PreCheck application fee"
       },
       {
-        "name": "Companion Certificate",
-        "description": "Annual companion certificate (requires $4,000 spend in anniversary year)"
-      },
-      {
-        "name": "10% AAdvantage Miles Redemption Bonus",
-        "description": "10% back on AAdvantage miles redeemed for award flights"
-      },
-      {
         "name": "First Bag Free",
         "description": "First checked bag free for cardholder and up to 8 companions on domestic AA flights booked with the card"
       },
@@ -115,11 +107,11 @@
   "sources": [
     {
       "url": "https://www.citi.com/credit-cards/citi-aadvantage-executive-world-legend-mastercard",
-      "notes": "Official Citi page checked 2026-09-29: 125,000 miles after $15,000/5 months (limited time), $695 fee, World Legend, $500 AA Vacations, $100 inflight/Admirals, $180 Lyft, $120 Avis/Budget, $120 GE/TSA credits. | Official Citi card page, checked 2026-10-19 (replaces redirecting URL)."
+      "notes": "Official Citi page checked 2026-09-29: 125,000 miles after $15,000/5 months (limited time), $695 fee, World Legend, $500 AA Vacations, $100 inflight/Admirals, $180 Lyft, $120 Avis/Budget, $120 GE/TSA credits. | Official Citi card page, checked 2026-10-19 (replaces redirecting URL). | GET 2026-11-09 ~09:29 PT: marketing benefits list Admirals Club + credits; no companion certificate. | GET 2026-11-10 ~11:41 PT (full HTML incl. embedded JSON): no AAdvantage miles redemption bonus / '10% back on award' benefit; only 10% on the page is the AA Vacations non-flight discount. Removed other_benefits '10% AAdvantage Miles Redemption Bonus'."
     },
     {
       "url": "https://creditcards.aa.com/credit-cards/citi-executive-card-american-airlines-direct/",
-      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
+      "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19). | GET 2026-11-09 ~09:29 PT: Admirals Club (primary + up to 2 guests) listed; no Annual Companion Certificate / $4,000 anniversary spend. Official terms https://creditcards.aa.com/credit-cards/execterms/ (GET same day) also list no companion certificate among World Legend benefits. | GET 2026-11-10 ~11:41 PT (full HTML incl. embedded JSON): no AAdvantage miles redemption bonus / '10% back on award' benefit; only 10% on the page is the AA Vacations non-flight discount. Removed other_benefits '10% AAdvantage Miles Redemption Bonus'."
     },
     {
       "url": "https://onemileatatime.com/guides/american-airlines-executive-card/",
@@ -136,9 +128,13 @@
     {
       "url": "https://frequentmiler.com/citi-aadvantage-executive-card-changes-are-coming-higher-fee-more-benefits/",
       "notes": "Secondary confirmation of 2026-08-23 refresh details and transition timing."
+    },
+    {
+      "url": "https://creditcards.aa.com/credit-cards/execterms/",
+      "notes": "Official AA/Citi Executive World Legend terms GET 2026-11-09 ~09:30 PT: benefit headings include Admirals Club, bag fee waiver, Loyalty Points, credits, Omni, inKind dining — no companion certificate. | GET 2026-11-10 ~11:41 PT (full HTML incl. embedded JSON): no AAdvantage miles redemption bonus / '10% back on award' benefit; only 10% on the page is the AA Vacations non-flight discount. Removed other_benefits '10% AAdvantage Miles Redemption Bonus'."
     }
   ],
-  "last_updated": "2026-10-29T12:00:00.000Z",
+  "last_updated": "2026-11-10T12:00:00.000Z",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -194,9 +190,9 @@
       "source": "https://www.citi.com/credit-cards/citi-aadvantage-executive-world-elite-mastercard"
     }
   ],
-  "last_verified": "2026-10-29",
+  "last_verified": "2026-11-10",
   "next_review": "2026-11-28T00:00:00.000Z",
   "cfpb_source": "Q3_2025",
   "cfpb_verified": true,
-  "notes": "Refreshed World Legend product ($695). Values verified against the official Citi product page on 2026-09-29."
+  "notes": "Refreshed World Legend product ($695). Values verified against the official Citi product page on 2026-09-29. 2026-11-09: Removed Annual Companion Certificate ($4,000 anniversary spend) — absent from official AA marketing page and from https://creditcards.aa.com/credit-cards/execterms/ World Legend benefit list (GET)."
 }

@@ -5,14 +5,14 @@ import { ArrowLeft, RotateCcw } from "lucide-react";
 import CompareBar from "./CompareBar";
 import { trackEvent } from "@/lib/analytics";
 import CardRow from "./CardRow";
-import type { CreditCard } from "@/lib/cards";
+import type { FindCard } from "@/lib/client-card-fields";
 
 type SpendKey = "cashback" | "travel" | "dining" | "business" | "lounge";
 type FeeKey = "free" | "low" | "mid" | "high";
 type CreditKey = "excellent" | "good" | "fair" | "building";
 
 interface Props {
-  cards: CreditCard[];
+  cards: FindCard[];
   lang: string;
 }
 
@@ -65,7 +65,7 @@ const STR = {
 
 type Lang = keyof typeof STR;
 
-function matchesSpend(card: CreditCard, spend: SpendKey): boolean {
+function matchesSpend(card: FindCard, spend: SpendKey): boolean {
   const tags = (card.tags || []).map((t) => t.toLowerCase());
   const cats = (card.earning_rates || []).map((r) => r.category.toLowerCase());
   if (spend === "cashback") return tags.includes("cash-back") || cats.some((c) => /all purchases|flat|rotating/.test(c));
@@ -76,7 +76,7 @@ function matchesSpend(card: CreditCard, spend: SpendKey): boolean {
   return false;
 }
 
-function matchesFee(card: CreditCard, fee: FeeKey): boolean {
+function matchesFee(card: FindCard, fee: FeeKey): boolean {
   const af = card.annual_fee || 0;
   if (fee === "free") return af === 0;
   if (fee === "low") return af <= 99;
@@ -84,7 +84,7 @@ function matchesFee(card: CreditCard, fee: FeeKey): boolean {
   return true;
 }
 
-function matchesCredit(card: CreditCard, cred: CreditKey): boolean {
+function matchesCredit(card: FindCard, cred: CreditKey): boolean {
   const cr = (card.credit_required || "").toLowerCase();
   const tags = (card.tags || []);
   if (cred === "excellent") return true;
@@ -94,7 +94,7 @@ function matchesCredit(card: CreditCard, cred: CreditKey): boolean {
   return true;
 }
 
-function rank(a: CreditCard, b: CreditCard): number {
+function rank(a: FindCard, b: FindCard): number {
   if (!!a.featured !== !!b.featured) return a.featured ? -1 : 1;
   const av = a.welcome_offer?.estimated_value ?? 0;
   const bv = b.welcome_offer?.estimated_value ?? 0;
@@ -112,7 +112,7 @@ export default function FindWizard({ cards, lang }: Props) {
   const [cred, setCred] = useState<CreditKey | null>(null);
 
   const results = useMemo(() => {
-    if (!spend || !fee || !cred) return { cards: [] as CreditCard[], relaxed: null as null | "fee" | "credit" };
+    if (!spend || !fee || !cred) return { cards: [] as FindCard[], relaxed: null as null | "fee" | "credit" };
     const strict = cards
       .filter((c) => matchesSpend(c, spend) && matchesFee(c, fee) && matchesCredit(c, cred))
       .sort(rank)

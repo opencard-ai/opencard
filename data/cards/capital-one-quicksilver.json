@@ -16,6 +16,16 @@
   },
   "earning_rates": [
     {
+      "category": "Capital One Travel",
+      "rate": 5,
+      "notes": "5% cash back with Capital One Travel (official card page, 2026-11-02)"
+    },
+    {
+      "category": "Capital One Entertainment",
+      "rate": 5,
+      "notes": "5% cash back on Capital One Entertainment ticket purchases"
+    },
+    {
       "category": "All purchases",
       "rate": 1.5,
       "notes": "Unlimited cash back on every purchase"
@@ -65,7 +75,7 @@
     "rules": []
   },
   "last_scraped": "2026-04-24T17:27:59.994652",
-  "last_verified": "2026-04-25T16:03:46.801Z",
+  "last_verified": "2026-11-02",
   "next_review": "2026-07-23T17:27:59.994652",
   "cfpb_source": "Q3_2025",
   "cash_advance_fee_flat": 10,

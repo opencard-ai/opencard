@@ -31,6 +31,15 @@ export default function CardAnalysisSection({
         <div className="mt-4 rounded-lg border border-blue-100 bg-blue-50 p-4">
           <h3 className="text-sm font-semibold text-blue-900 mb-1">Editor&apos;s note</h3>
           <p className="text-xs leading-relaxed text-blue-900">{editorNote.note}</p>
+          {editorNote.links && editorNote.links.length > 0 && (
+            <ul className="mt-2 space-y-1">
+              {editorNote.links.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} target="_blank" rel="noopener noreferrer" className="underline text-xs text-blue-800">{link.label}<span className="sr-only"> (opens in a new tab)</span></a>
+                </li>
+              ))}
+            </ul>
+          )}
           <p className="mt-2 text-[11px] text-blue-700">Checked against the issuer&apos;s page on {editorNote.reviewed}.</p>
         </div>
       )}
@@ -59,7 +68,7 @@ export default function CardAnalysisSection({
       <div className="mt-5 rounded-lg border border-slate-200 bg-slate-50 p-4">
         <h3 className="text-sm font-semibold text-slate-900">First-year value estimate</h3>
         <div className="mt-3 grid gap-3 grid-cols-2 sm:grid-cols-4">
-          <div><div className="text-[11px] uppercase tracking-wide text-slate-500">Welcome bonus</div><div className="text-lg font-bold text-slate-900">{usd(estimate.welcomeValue)}</div></div>
+          <div><div className="text-[11px] uppercase tracking-wide text-slate-500">Welcome bonus</div><div className="text-lg font-bold text-slate-900">{estimate.welcomeVaries ? "Varies" : usd(estimate.welcomeValue)}</div></div>
           <div><div className="text-[11px] uppercase tracking-wide text-slate-500">Rewards on spending</div><div className="text-lg font-bold text-slate-900">{usd(estimate.earningValue)}</div></div>
           <div><div className="text-[11px] uppercase tracking-wide text-slate-500">Annual fee (year 1)</div><div className="text-lg font-bold text-slate-900">−{usd(estimate.firstYearFee)}</div></div>
           <div><div className="text-[11px] uppercase tracking-wide text-slate-500">Year 1, before credits</div><div className="text-lg font-bold text-slate-900">{usd(estimate.firstYearBeforeCredits)}</div></div>

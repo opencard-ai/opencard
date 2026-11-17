@@ -1,5 +1,6 @@
 /** Persistent offer-watch state: dedup ledger (ledger.json) and append-only event history (history.jsonl). Both gitignored. */
 import fs from 'node:fs';
+import type { HeldItem } from './apply-core';
 import path from 'node:path';
 import { emptyLedger, type Ledger, type LedgerEntry } from './gate';
 
@@ -8,6 +9,13 @@ export const DEFAULT_HISTORY = 'artifacts/offer-watch/history.jsonl';
 
 export type EventType = 'applied' | 'held' | 'expiry_review' | 'published' | 'rolled_back' | 'checks_failed' | 'push_failed' | 'deploy_failed' | 'live_check_failed' | 'schema_failed';
 export interface HistoryEvent { ts: string; type: EventType; card_id: string | null; changes?: Array<{ field: string; old_value: unknown; new_value: unknown }>; reasons?: string[]; sources?: string[]; commit?: string | null; revert_commits?: string[]; note?: string }
+
+/** Preserve zero (and other falsy values) when serializing any field hold. */
+export function heldHistoryEvent(held: HeldItem, ts: string): HistoryEvent {
+  return { ts, type: 'held', card_id: held.card_id,
+    changes: held.field ? [{ field: held.field, old_value: held.old_value ?? null, new_value: held.value ?? null }] : undefined,
+    reasons: held.reasons };
+}
 
 export function loadLedger(file = DEFAULT_LEDGER): Ledger {
   return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : emptyLedger();

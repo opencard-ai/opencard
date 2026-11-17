@@ -9,10 +9,14 @@
   "welcome_offer": {
     "spending_requirement": 1000,
     "time_period_months": 3,
-    "bonus_points": 30000,
-    "estimated_value": 195,
+    "bonus_points": 45000,
+    "estimated_value": 293,
     "point_program": "Marriott Bonvoy",
-    "description": "30,000 bonus points after spending $1,000 in first 3 months"
+    "description": "Earn 45,000 Bonus Points after spending $1,000 on eligible purchases within 3 months of account opening.",
+    "notes": [
+      "2026-11-10 official Chase page GET 200 (full HTML): \"Earn 45,000 Bonus Points after spending $1,000 on eligible purchases within 3 months of account opening with the Marriott Bonvoy Bold® Credit Card.\" Terms heading: \"45,000 Bonus Points After You Spend $1,000 On Purchases in the First 3 Months From Account Opening\". No limited-time / offer-ends language, so offer_status / is_elevated not set. bonus_points 30000 -> 45000; estimated_value 195 -> 293 (file's existing 0.65 cents/point)."
+    ],
+    "last_verified": "2026-11-10"
   },
   "earning_rates": [
     {
@@ -23,7 +27,7 @@
     {
       "category": "Select Categories",
       "rate": 2,
-      "notes": "2X points on dining and gas stations (per 2025 refresh)"
+      "notes": "2X at grocery stores; internet, cable, and phone services; select streaming services; rideshare (taxicabs and limousines); and select food delivery (DoorDash, Caviar, Uber Eats, Postmates, Grubhub, Seamless)"
     },
     {
       "category": "All Other Purchases",
@@ -71,7 +75,7 @@
   "sources": [
     {
       "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/bold",
-      "notes": "Official Chase page"
+      "notes": "Official Chase page GET 2026-11-09 ~09:29 PT: card earn 3X at hotels participating in Marriott Bonvoy (up to 14X total with Bonvoy base + Silver Elite); 2X at grocery stores; internet, cable, and phone; select streaming; rideshare (taxicabs/limousines); select food delivery (DoorDash/Caviar/Uber Eats/Postmates/Grubhub/Seamless). Page also shows 45,000 bonus points after $1,000/3 months (JSON welcome offer left unchanged for offer-watch follow-up). | GET 2026-11-10 ~11:50 PT: welcome offer 'Earn 45,000 Bonus Points after spending $1,000 on eligible purchases within 3 months of account opening'."
     },
     {
       "url": "https://thepointsguy.com/credit-cards/reviews/marriott-bonvoy-bold-credit-card-review/",
@@ -86,15 +90,15 @@
       "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-11-10",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
     "notes": null
   },
   "last_scraped": "2026-04-24T17:26:46.246653",
-  "last_verified": "2026-04-24T17:26:46.246653",
-  "next_review": "2026-07-23T17:26:46.246653",
+  "last_verified": "2026-11-10",
+  "next_review": "2026-12-10T00:00:00.000Z",
   "recurring_credits": [
     {
       "credit_key": "doordash-non-restaurant-credit",

@@ -87,10 +87,12 @@ export interface LoungeAccess {
   discount?: string;
 }
 
+export type OtherBenefit = string | { name?: string; benefit?: string; description?: string } | null;
+
 export interface TravelBenefits {
   lounge_access?: LoungeAccess[];
   hotel_status?: HotelStatus[];
-  other_benefits?: { name: string; description: string }[];
+  other_benefits?: OtherBenefit[];
 }
 
 export interface Insurance {
@@ -118,6 +120,10 @@ export interface WelcomeOffer {
   spending_requirement?: number;
   time_period_months?: number;
   bonus_points?: number;
+  /** For "as high as" / varies-by-applicant offers (offer_status
+   *  "as_high_as_ymmv"): the advertised maximum. Display only; bonus_points
+   *  stays 0 so sorting and scoring treat the offer as unknown. */
+  bonus_points_max?: number;
   /** How bonus_points should be read. Omitted = inferred (see lib/welcome-offer.ts):
    *  "cash" means bonus_points is a dollar amount; "percent_discount" uses discount_percent. */
   bonus_type?: "points" | "cash" | "percent_discount";
@@ -144,7 +150,19 @@ export interface WelcomeOffer {
 
 export interface Source {
   url: string;
+  /** Display title (a few legacy records use `name`). */
+  title?: string;
+  name?: string;
+  /** Internal editorial note: never served publicly. */
   notes?: string;
+}
+
+/** One-time or annual statement credit listed separately from recurring_credits (legacy shape). */
+export interface AnnualCredit {
+  name?: string;
+  amount?: number;
+  description?: string;
+  [key: string]: unknown;
 }
 
 export interface CreditCard {
@@ -191,6 +209,22 @@ export interface CreditCard {
    *  scripts/validate-all.ts). DORMANT: only rendered when
    *  NEXT_PUBLIC_AFFILIATE_LINKS_ENABLED=true — see lib/affiliate.ts. */
   affiliate_url?: string;
+  /** Legacy list of annual statement credits (most cards use recurring_credits). */
+  annual_credits?: AnnualCredit[];
+  /** When the card record was last checked against official sources (ISO date or datetime). */
+  last_verified?: string;
+  /** Cash advance fee: flat $ amount, percent of the advance, and $ minimum. */
+  cash_advance_fee_flat?: number;
+  cash_advance_fee_pct?: number;
+  cash_advance_fee_min?: number;
+  /** Late payment fee in $ ("up to" amount), and maximum where tiered. */
+  late_fee?: number;
+  late_fee_max?: number;
+  /** Balance transfer fee: percent of the transfer and $ minimum. */
+  balance_transfer_fee_pct?: number;
+  balance_transfer_fee_min?: number;
+  /** Annual fee per additional authorized user, in $. */
+  authorized_user_fee?: number;
 }
 
 export function getAllCards(): CreditCard[] {

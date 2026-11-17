@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { CreditCard } from "@/lib/cards";
 
+type CompareBarCard = Pick<CreditCard, "card_id" | "name">;
+
 interface CompareBarProps {
-  selected: CreditCard[];
+  selected: CompareBarCard[];
   onRemove: (cardId: string) => void;
   onClear: () => void;
   lang: string;

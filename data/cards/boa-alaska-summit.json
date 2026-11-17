@@ -1,43 +1,49 @@
 {
   "card_id": "boa-alaska-summit",
-  "name": "Alaska Airlines Atmos™ Summit Visa Infinite® Card",
+  "name": "Atmos™ Rewards Summit Visa Infinite® Credit Card",
   "issuer": "Bank of America",
   "network": "visa",
   "annual_fee": 395,
   "foreign_transaction_fee": 0,
   "credit_required": "Good",
   "welcome_offer": {
-    "bonus_points": 100000,
-    "spending_requirement": 6000,
+    "bonus_points": 80000,
+    "spending_requirement": 4000,
     "time_period_months": 3,
-    "description": "Atmos Rewards Summit Visa Infinite: earn 100,000 bonus points and a 25,000-point Global Companion Award after spending $6,000 or more on purchases within the first 90 days of opening your account.",
+    "description": "Atmos Rewards Summit Visa Infinite: limited-time online offer, earn 80,000 bonus points and a 25,000-point Global Companion Award after spending $4,000 or more on purchases within the first 90 days of opening your account.",
     "point_program": "Atmos Rewards",
-    "estimated_value": 1400,
-    "is_elevated": true,
+    "estimated_value": 1120,
+    "is_elevated": false,
     "expires": null,
-    "offer_status": "public_elevated",
+    "offer_status": "public_limited_time",
     "confidence": "high",
     "notes": [
-      "2026-08-11 approved refresh: current Summit offer is 100,000 points + 25,000-point Global Companion Award after $6,000/90 days."
+      "2026-08-11 approved refresh: current Summit offer is 100,000 points + 25,000-point Global Companion Award after $6,000/90 days.",
+      "2026-11-16 official Bank of America product page (headless Chrome GET 200, 12:23 PM PST; re-confirmed 12:04 PM PST): \"Limited-time online offer Earn 80,000 bonus points and a 25,000-point Global Companion Award after spending $4,000 or more on purchases within the first 90 days of opening your account.\" Synced 100,000 / $6,000 / 90 days -> 80,000 / $4,000 / 90 days; estimated_value 1400 -> 1120 (1.4 cents/point, Alaska cpp in lib/cpp-rates.ts; the 25,000-point Global Companion Award is not valued). offer_status public_elevated -> public_limited_time (page says 'Limited-time online offer'); is_elevated true -> false (page does not describe the offer as increased/elevated). Annual fee $395 and no foreign transaction fees unchanged."
     ],
-    "last_verified": "2026-08-11",
+    "last_verified": "2026-11-16",
     "source_conflicts": []
   },
   "earning_rates": [
     {
-      "category": "Alaska Airlines purchases",
+      "category": "Dining",
       "rate": 3,
-      "notes": ""
+      "notes": "3 points per $1 on eligible dining purchases"
     },
     {
-      "category": "Gas stations",
-      "rate": 2,
-      "notes": ""
+      "category": "Foreign transactions",
+      "rate": 3,
+      "notes": "3 points per $1 on eligible foreign transaction purchases"
+    },
+    {
+      "category": "Alaska Airlines and Hawaiian Airlines purchases",
+      "rate": 3,
+      "notes": "3 points per $1 on eligible Alaska Airlines and Hawaiian Airlines purchases"
     },
     {
       "category": "All other purchases",
       "rate": 1,
-      "notes": ""
+      "notes": "1 point per $1 on all other purchases; 10% rewards bonus on card-earned points with an eligible Bank of America account"
     }
   ],
   "travel_benefits": {
@@ -86,7 +92,7 @@
   "sources": [
     {
       "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-infinite-credit-card/",
-      "notes": "Official Bank of America Summit page; 80k + 25k Global Companion Award after $4,000/90 days."
+      "notes": "Official Bank of America Summit page checked 2026-11-16: Atmos™ Rewards Summit Visa Infinite® Credit Card; limited-time online offer 80,000 bonus points + 25,000-point Global Companion Award after $4,000/90 days; 3 points per $1 on dining, foreign transaction, Alaska Airlines and Hawaiian Airlines purchases, 1 point elsewhere; $395 annual fee; no foreign transaction fees."
     },
     {
       "url": "https://www.alaskaair.com/atmosrewards/content/credit-cards/visa-summit",
@@ -101,7 +107,7 @@
       "notes": "Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-11-16",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -146,6 +152,6 @@
     }
   ],
   "last_scraped": "2026-07-29T17:53:57Z",
-  "last_verified": "2026-08-11",
+  "last_verified": "2026-11-16",
   "next_review": "2026-09-05T00:00:00.000-07:00"
 }

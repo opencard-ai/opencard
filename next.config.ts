@@ -69,7 +69,18 @@ const nextConfig: NextConfig = {
       ["us-bank-altitude-go-biz", "us-bank-biz-essentials"],
     ] as const;
 
-    return legacyCardRedirects.flatMap(([from, to]) => [
+    // Card pages removed without a direct successor land on the cards list.
+    const removedCardRedirects = [
+      // robinhood-gold removed 2026-11-05 (owner request).
+      "robinhood-gold",
+    ] as const;
+
+    return [
+      ...removedCardRedirects.flatMap((from) => [
+        { source: `/:lang/cards/${from}`, destination: `/:lang/cards`, permanent: true },
+        { source: `/cards/${from}`, destination: `/cards`, permanent: true },
+      ]),
+      ...legacyCardRedirects.flatMap(([from, to]) => [
       {
         source: `/:lang/cards/${from}`,
         destination: `/:lang/cards/${to}`,
@@ -80,7 +91,8 @@ const nextConfig: NextConfig = {
         destination: `/cards/${to}`,
         permanent: true,
       },
-    ]);
+    ]),
+    ];
   },
 };
 

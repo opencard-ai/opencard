@@ -12,8 +12,8 @@
   "earning_rates": [
     {
       "category": "All Purchases",
-      "rate": 1,
-      "notes": "1 point per $1 spent; points can be redeemed for cash credit"
+      "rate": 0,
+      "notes": "No rewards: Citi's official card page says the Citi Secured Mastercard does not earn rewards (checked 2026-11-16)"
     }
   ],
   "annual_credits": [],
@@ -55,6 +55,10 @@
     "secured"
   ],
   "sources": [
+    {
+      "url": "https://www.citi.com/credit-cards/citi-secured-credit-card",
+      "notes": "Citi official card page"
+    },
     {
       "url": "https://www.citi.com/credit-cards/understanding-credit-cards/build-credit-with-a-secured-credit-card"
     },

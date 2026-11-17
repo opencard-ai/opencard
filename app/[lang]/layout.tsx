@@ -10,6 +10,7 @@ import FloatingButtons from "@/app/components/FloatingButtons";
 import ToastViewport from "@/app/components/ToastViewport";
 import GuidesDropdown from "@/app/components/GuidesDropdown";
 import { locales, t, type Locale } from "@/lib/i18n";
+import { getGuidesForLocale } from "@/lib/guides";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -128,7 +129,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         </footer>
         {/* Analytics and advertising scripts honor cookie consent. */}
         <Analytics />
-        <AdSenseScript />
+        <AdSenseScript englishGuideSlugs={getGuidesForLocale("en").map((guide) => guide.slug)} />
         <CookieConsentBanner lang={lang} />
         {/* Floating widget cluster (recommend / my-cards / track) */}
         <FloatingButtons lang={lang} />
@@ -185,6 +186,10 @@ function FTCDisclosure({ locale }: { locale: Locale }) {
         <span>·</span>
         <a href={`/${locale}/methodology`} className="hover:text-blue-600 transition-colors">
           {locale === "zh" ? "方法論" : locale === "zh-cn" ? "方法论" : locale === "es" ? "Metodología" : "Methodology"}
+        </a>
+        <span>·</span>
+        <a href={`/${locale}/developers`} className="hover:text-blue-600 transition-colors">
+          {locale === "zh" ? "開發者" : locale === "zh-cn" ? "开发者" : locale === "es" ? "Desarrolladores" : "Developers"}
         </a>
       </div>
     </div>

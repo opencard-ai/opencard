@@ -19,19 +19,22 @@
   ],
   "candidate": {
     "welcome_offer": {
-      "spending_requirement": 3000,
+      "bonus_points": 0,
+      "bonus_value": "Varies",
+      "bonus_points_max": 50000,
+      "spending_requirement": 5000,
       "time_period_months": 3,
-      "bonus_points": 15000,
-      "estimated_value": 255,
-      "description": "Earn 15,000 Membership Rewards points after spending $3,000 in first 3 months.",
-      "point_program": "Membership Rewards",
-      "offer_status": "public",
+      "description": "Variable welcome offer: up to 50,000 Membership Rewards® points (\"apply and find out your welcome offer, as high as 50,000\") after you spend $5,000 in purchases on your new Card within the first 3 months of Card Membership. Welcome offers vary and you may not be eligible for an offer; American Express shows the exact amount after you apply. No fixed public offer amount is published.",
+      "point_program": "MR",
+      "offer_status": "as_high_as_ymmv",
       "confidence": "high",
       "notes": [
-        "Official Amex and USCCG sources both support the 15k / $3k / 3-month public offer."
+        "2026-10-26: official Amex page confirms AS HIGH AS 50,000 MR / $5,000 / 3 months (held since 10/20 for >3x jump from 15k).",
+        "2026-11-13 as-high-as policy (lead decision): official Amex page (rendered GET 200, 9:35:20 PM PST): \"APPLY AND FIND OUT YOUR WELCOME OFFER AS HIGH AS 50,000 Membership Rewards® Points after you spend $5,000 in purchases on your new Card within the first 3 months of Card Membership. Welcome offers vary and you may not be eligible for an offer.\" (Annual Fee: $0, unchanged). Variable amount, so not stored as a fixed bonus: bonus_points 50000 -> 0 with bonus_value 'Varies', bonus_points_max 50000, estimated_value 500 removed, offer_status -> as_high_as_ymmv, is_elevated -> false (no limited-time/increased-offer wording for this card; the 'Limited Time Offer' tag on the page belongs to the Marriott Bonvoy Business nav item). Spend/months unchanged."
       ],
       "source_conflicts": [],
-      "last_verified": "AUTO_DATE"
+      "last_verified": "2026-11-13",
+      "is_elevated": false
     },
     "caveats": [
       "Keep production card JSON untouched; this config is adaptor-only."

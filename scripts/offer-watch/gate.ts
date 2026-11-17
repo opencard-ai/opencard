@@ -1,10 +1,11 @@
 import { createHash } from 'node:crypto';
+import { isVariableOffer } from '../../lib/welcome-offer';
 
 export type CardRecord = Record<string, any>;
 /** Closed to new applicants (repo convention: status "discontinued"; legacy: discontinued: true). No offer to watch. */
 export const isClosedToNewApplicants = (card: CardRecord | undefined) => card?.status === 'discontinued' || card?.discontinued === true;
 /** One independent fetch of an official page, recorded by collect.ts. */
-export interface Confirmation { url: string; fetch_id: string; checked_at: string; ok: boolean; status?: number; error?: string; official_domain: boolean; values: Record<string, unknown>; ambiguous_fields?: string[]; content_sha256?: string; final_url?: string; observed?: { current_bonus_visible?: boolean } }
+export interface Confirmation { url: string; fetch_id: string; checked_at: string; ok: boolean; status?: number; error?: string; official_domain: boolean; values: Record<string, unknown>; ambiguous_fields?: string[]; content_sha256?: string; final_url?: string; observed?: { current_bonus_visible?: boolean; review_signals?: string[] } }
 export interface Evidence { url: string; checked_at: string; official: boolean; audience: string; conflicts?: boolean; confirmations?: Confirmation[]; explicit_confirmations?: string[]; hold_only?: boolean; hold_reason?: string; auto_added?: string }
 export interface Candidate { card_id: string; fields: Record<string, unknown>; evidence: Evidence }
 export interface AssessOptions { officialDomains?: string[] }
@@ -41,6 +42,14 @@ export function normalizeNumber(value: unknown): unknown {
   const compact = value.trim().toLowerCase().replace(/[$,\s]/g, '').replace(/usd$/, '');
   const match = compact.match(/^(-?\d+(?:\.\d+)?)(k)?$/);
   return match ? Number(match[1]) * (match[2] ? 1000 : 1) : value.trim();
+}
+
+/** Stored variable offers must retain their zero fixed bonus, regardless of watchlist configuration. */
+export function variableBonusGuard(card: CardRecord | undefined, detected: unknown): 'known' | 'review' | null {
+  const offer = card?.welcome_offer;
+  if (!isVariableOffer(offer) || (offer.offer_status !== 'as_high_as_ymmv' && offer.bonus_points_max == null)) return null;
+  const max = normalizeNumber(offer.bonus_points_max);
+  return typeof max === 'number' && Number.isFinite(max) && max > 0 && normalizeNumber(detected) === max ? 'known' : 'review';
 }
 
 export function normalizeBoolean(value: unknown): unknown {
@@ -99,7 +108,7 @@ export const DEFAULT_OFFICIAL_DOMAINS = [
   'americanexpress.com', 'chase.com', 'citi.com', 'aa.com', 'capitalone.com', 'usbank.com', 'bankofamerica.com',
   'barclaycardus.com', 'barclays.com', 'barclaycard.com', 'wellsfargo.com', 'bilt.com', 'biltrewards.com', 'discover.com',
   'marriott.com', 'hilton.com', 'hyatt.com', 'ihg.com', 'delta.com', 'united.com', 'southwest.com', 'alaskaair.com',
-  'jetblue.com', 'aircanada.com', 'morganstanley.com', 'pnc.com',
+  'jetblue.com', 'aircanada.com', 'morganstanley.com', 'pnc.com', 'h-dvisa.com',
 ];
 
 /** Exact host or subdomain match; `*` in an entry matches letters/digits/hyphens within one label (e.g. "barclays*.com"). */
@@ -134,7 +143,9 @@ export function assessCandidate(candidate: Candidate, card: CardRecord | undefin
     if (proposed.has(key) && JSON.stringify(proposed.get(key)) !== JSON.stringify(value)) reasons.push(`conflicting_alias_values:${key}`);
     if (!proposed.has(key) || (key === EXPIRY_FIELD && String(value) < String(proposed.get(key)))) proposed.set(key, value);
   }
-  const changes = [...proposed].filter(([field, value]) => JSON.stringify(cardValue(card, field)) !== JSON.stringify(value))
+  const changes = [...proposed].filter(([field, value]) =>
+    !(field === wo('bonus_points') && variableBonusGuard(card, value) === 'known') &&
+    JSON.stringify(cardValue(card, field)) !== JSON.stringify(value))
     .map(([field, new_value]) => ({ field, old_value: cardValue(card, field) ?? null, new_value, fingerprint: changeFingerprint(candidate.card_id, field, new_value, evidence?.audience) }))
     .sort((a, b) => a.field.localeCompare(b.field));
 
