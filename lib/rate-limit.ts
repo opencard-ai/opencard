@@ -44,3 +44,6 @@ export function getClientIp(req: NextRequest): string {
     "unknown"
   );
 }
+
+// API-key buckets for V2A; isolated state leaves the public IP limiter's behavior unchanged.
+export { v1RateLimit as rateLimitApiKey } from "./v1/rate-limit";

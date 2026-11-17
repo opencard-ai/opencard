@@ -28,9 +28,9 @@ export function v1Headers(s: HeaderState): Headers {
   h.set("X-Credits-Pending", String(s.pending ?? 0));
   h.set("X-Reputation-Tier", s.tier ?? "none");
   h.set("X-Tasks-Attached", String(s.tasksAttached ?? 0));
-  if (s.rateLimit) {
-    h.set("X-RateLimit-Remaining", String(s.rateLimit.remaining));
-    h.set("X-RateLimit-Reset", new Date(s.rateLimit.resetAt).toISOString());
+  {
+    h.set("X-RateLimit-Remaining", String(s.rateLimit?.remaining ?? 0));
+    h.set("X-RateLimit-Reset", new Date(s.rateLimit?.resetAt ?? Date.now()).toISOString());
   }
   return h;
 }

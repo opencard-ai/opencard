@@ -14,7 +14,7 @@ GRANT SELECT                  ON tasks             TO opencard_api;
 GRANT UPDATE (state)          ON tasks             TO opencard_api; -- open -> quorum, and FOR UPDATE locks
 GRANT SELECT, INSERT          ON votes             TO opencard_api;
 GRANT SELECT, INSERT          ON task_assignments  TO opencard_api;
-GRANT UPDATE (expires_at)     ON task_assignments  TO opencard_api; -- re-assignment refreshes the window
+GRANT UPDATE (expires_at, network_group)     ON task_assignments  TO opencard_api; -- re-assignment refreshes the window
 GRANT SELECT, INSERT          ON invite_codes      TO opencard_api;
 
 -- Explicitly none: task_gold_answers, v1_scoring_config, v1_schema_migrations, consensus_suggestions.

@@ -4,8 +4,9 @@ import { getV1Db } from "@/lib/v1/db";
 import { appendLedger, getBalances } from "@/lib/v1/credits";
 import { newId } from "@/lib/v1/keys";
 import { v1CardView } from "@/lib/v1/card-view";
+import { networkGroup } from "@/lib/v1/network";
 import { pickTasks } from "@/lib/v1/tasks";
-import { agentRateLimit, authenticate, internalError, notEnabled, v1Error, v1Json } from "@/lib/v1/http";
+import { agentRateLimit, authenticate, clientIp, internalError, notEnabled, v1Error, v1Json } from "@/lib/v1/http";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -38,7 +39,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ card_id:
       // Serialize spending per agent so concurrent requests cannot overdraw.
       await tx.query(`SELECT agent_id FROM agents WHERE agent_id = $1 FOR UPDATE`, [agent.agent_id]);
       const before = await getBalances(tx, agent.agent_id);
-      const tasks = await pickTasks(tx, agent.agent_id, v1Config.maxTasksAttached());
+      const tasks = await pickTasks(tx, agent.agent_id, v1Config.maxTasksAttached(), Math.random, networkGroup(clientIp(req)));
       if (before.balance < cost) return { paid: false as const, before, tasks };
       await appendLedger(tx, { agentId: agent.agent_id, delta: -cost, reason: "query_cost", refId: newId("req"), state: "confirmed" });
       return { paid: true as const, after: { balance: before.balance - cost, pending: before.pending }, tasks };
@@ -58,7 +59,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ card_id:
       );
     }
     return v1Json(
-      { card: v1CardView(card), verification_tasks: out.tasks },
+      { data: v1CardView(card), verification_tasks: out.tasks, credits: { ...out.after, cost_of_this_request: cost } },
       200,
       { ...out.after, tier: agent.tier, tasksAttached: out.tasks.length, rateLimit: rl },
     );

@@ -40,4 +40,4 @@ async function main() {
     await client.end();
   }
 }
-main();
+main().catch((e) => { logFailure("migration", e); process.exitCode = 1; });

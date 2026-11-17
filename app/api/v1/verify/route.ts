@@ -2,17 +2,12 @@ import { v1Config } from "@/lib/v1/config";
 import { getV1Db } from "@/lib/v1/db";
 import { appendLedger, getBalances } from "@/lib/v1/credits";
 import { newId } from "@/lib/v1/keys";
-import type { TaskType } from "@/lib/v1/tasks";
-import { parseSubmission, urlMatchesWhitelist, validateResult } from "@/lib/v1/verify-validate";
+import { permittedSources, type SourceRule, type TaskType } from "@/lib/v1/tasks";
+import { evidenceConcerns, parseSubmission, urlMatchesWhitelist, validateResult } from "@/lib/v1/verify-validate";
 import { agentRateLimit, authenticate, internalError, notEnabled, readJsonBody, v1Error, v1Json } from "@/lib/v1/http";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
-
-/** Probation agents vote at a reduced weight. */
-function voteWeight(agent: { score: number; tier: string }): number {
-  return agent.tier === "probation" ? (agent.score * v1Config.probationWeightPct()) / 100 : agent.score;
-}
 
 class Reject {
   constructor(public status: number, public error: string, public fields?: string[]) {}
@@ -38,8 +33,8 @@ export async function POST(req: Request) {
 
     const result = await db.transaction(async (tx) => {
       // Same code path for every task: nothing here may branch on whether a task is gold.
-      const { rows } = await tx.query<{ type: TaskType; state: string; expires_at: Date | string; redundancy_target: number }>(
-        `SELECT type, state, expires_at, redundancy_target FROM tasks WHERE task_id = $1 FOR UPDATE`,
+      const { rows } = await tx.query<{ type: TaskType; state: string; expires_at: Date | string; redundancy_target: number; field: string; allowed_sources: string[] }>(
+        `SELECT type, state, expires_at, redundancy_target, field, allowed_sources FROM tasks WHERE task_id = $1 FOR UPDATE`,
         [s.task_id],
       );
       const task = rows[0];
@@ -53,8 +48,16 @@ export async function POST(req: Request) {
       if (!asg.rows.length) return new Reject(403, "task_not_assigned");
 
       if (s.evidence) {
-        const wl = await tx.query<{ pattern: string }>(`SELECT pattern FROM sources_whitelist WHERE dispatchable = true`);
-        if (!urlMatchesWhitelist(s.evidence.url, wl.rows.map((r) => r.pattern))) return new Reject(422, "evidence_source_not_allowed", ["evidence.url"]);
+        const wl = await tx.query<SourceRule>(`SELECT pattern, fields, kind, dispatchable, issuer FROM sources_whitelist`);
+        const allowed = permittedSources(task.allowed_sources, task.field, wl.rows);
+        if (!urlMatchesWhitelist(s.evidence.url, allowed)) return new Reject(422, "evidence_source_not_allowed", ["evidence.url"]);
+        if (task.type === "link_check" && s.status === "verified" && s.result.is_official_redirect === true) {
+          const issuers = new Set(wl.rows.filter((r) => urlMatchesWhitelist(s.evidence!.url, [r.pattern])).map((r) => r.issuer));
+          const official = wl.rows.filter((r) => r.kind === "official" && r.dispatchable && issuers.has(r.issuer));
+          if (typeof s.result.final_url !== "string" || !urlMatchesWhitelist(s.result.final_url, official.map((r) => r.pattern))) {
+            return new Reject(422, "redirect_source_not_allowed", ["result.final_url"]);
+          }
+        }
       }
       if (s.status === "verified") {
         const errs = validateResult(task.type, s.result);
@@ -64,14 +67,16 @@ export async function POST(req: Request) {
       const dup = await tx.query(`SELECT 1 FROM votes WHERE task_id = $1 AND agent_id = $2`, [s.task_id, agent.agent_id]);
       if (dup.rows.length) return new Reject(409, "already_submitted");
 
+      const snapshot = await tx.query<{ score: string | number; tier: string }>(`SELECT score, tier FROM agents WHERE agent_id = $1 FOR UPDATE`, [agent.agent_id]);
+      if (snapshot.rows[0].tier === "restricted") return new Reject(403, "agent_restricted");
       const voteId = newId("v");
       // Evidence keeps only url, retrieved_at, excerpt, content_hash (parseSubmission drops anything else).
       const stored = s.status === "verified"
-        ? { status: s.status, result: s.result, evidence: s.evidence }
+        ? { status: s.status, result: s.result, evidence: s.evidence, evidence_concerns: evidenceConcerns(task.type, s.result, s.evidence.excerpt) }
         : { status: s.status, reason: s.reason, evidence: s.evidence };
       await tx.query(
         `INSERT INTO votes (vote_id, task_id, agent_id, result, weight, outcome) VALUES ($1, $2, $3, $4::jsonb, $5, $6)`,
-        [voteId, s.task_id, agent.agent_id, JSON.stringify(stored), voteWeight(agent), s.status === "verified" ? "pending" : "unable"],
+        [voteId, s.task_id, agent.agent_id, JSON.stringify(stored), Number(snapshot.rows[0].score), s.status === "verified" ? "pending" : "unable"],
       );
 
       let provisional = 0;
@@ -85,7 +90,7 @@ export async function POST(req: Request) {
       );
       const received = Number(cnt.rows[0]?.n ?? 0);
       const target = Number(task.redundancy_target);
-      // Quorum only flips state; settlement/consensus is out of Phase 0-1 scope.
+      // Privileged offline settlement processes quorum tasks; the API cannot read gold answers.
       if (received >= target) await tx.query(`UPDATE tasks SET state = 'quorum' WHERE task_id = $1 AND state = 'open'`, [s.task_id]);
       return { provisional, received, target };
     });

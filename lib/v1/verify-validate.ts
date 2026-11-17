@@ -34,7 +34,7 @@ export function parseSubmission(body: unknown, now = Date.now()): { ok: true; va
     else {
       if (!isHttpsUrl(e.url)) errors.push("evidence.url");
       const ts = typeof e.retrieved_at === "string" ? Date.parse(e.retrieved_at) : NaN;
-      if (!Number.isFinite(ts) || ts > now + 5 * 60_000 || ts < now - 7 * 24 * 3600_000) errors.push("evidence.retrieved_at");
+      if (!Number.isFinite(ts) || ts > now + v1Config.evidenceClockSkewMs || ts < now - v1Config.evidenceMaxAgeMs) errors.push("evidence.retrieved_at");
       if (typeof e.excerpt !== "string" || e.excerpt.trim().length === 0 || e.excerpt.length > v1Config.maxExcerptChars()) errors.push("evidence.excerpt");
       if (typeof e.content_hash !== "string" || !/^sha256:[0-9a-f]{64}$/.test(e.content_hash)) errors.push("evidence.content_hash");
       if (typeof e.url === "string" && isAmexUrl(e.url) && typeof e.excerpt === "string" && e.excerpt.length > AMEX_MAX_EXCERPT && !errors.includes("evidence.excerpt")) errors.push("evidence.excerpt");
@@ -89,7 +89,7 @@ export function validateResult(type: TaskType, r: Obj): string[] {
 
 /** Whitelist patterns: "**" = any chars, "*" = one path segment; a pattern without globs is a URL prefix. */
 export function patternToRegex(p: string): RegExp {
-  if (!p.includes("*")) return new RegExp("^" + p.replace(/[.+?^${}()|[\]\\]/g, "\\$&"));
+  if (!p.includes("*")) return new RegExp("^" + p.replace(/[.+?^${}()|[\]\\]/g, "\\$&") + (p.endsWith("/") ? "" : "(?:/|$)"));
   let re = "";
   for (let i = 0; i < p.length; i++) {
     const c = p[i];
@@ -117,4 +117,14 @@ export function urlMatchesWhitelist(url: string, patterns: string[]): boolean {
 export const AMEX_MAX_EXCERPT = 200;
 export function isAmexUrl(url: string): boolean {
   try { const h = new URL(url).hostname.toLowerCase(); return h === "americanexpress.com" || h.endsWith(".americanexpress.com"); } catch { return false; }
+}
+
+/** Audit heuristic only: evidence text should contain reported numeric values.
+ * Missing tokens are retained for review, never treated as proof of dishonesty or gold failure.
+ */
+export function evidenceConcerns(type: TaskType, result: Obj, excerpt: string): string[] {
+  const keys = type === "fee_check" ? ["annual_fee"] : type === "welcome_offer_check"
+    ? ["bonus_amount", "spending_requirement", "time_period_months"] : [];
+  const numbers = new Set((excerpt.match(/\d+(?:,\d{3})*(?:\.\d+)?/g) ?? []).map((s) => Number(s.replaceAll(",", ""))));
+  return keys.filter((key) => typeof result[key] === "number" && !numbers.has(result[key] as number)).map((key) => `excerpt_missing_${key}`);
 }

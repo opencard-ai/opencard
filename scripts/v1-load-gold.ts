@@ -3,21 +3,22 @@
  * Usage: npx tsx scripts/v1-load-gold.ts <gold.json> <whitelist.json>
  * - Whitelist: upsert all entries (dispatchable flag preserved).
  * - Gold: one task per item with a random UUIDv4 task_id; gold_id/answer/provenance only in task_gold_answers.
- *   Idempotent by gold_id; existing gold_ids are updated in place (task_id unchanged). Items whose source_url is not on a dispatchable source are skipped.
+ *   Idempotent by gold_id; changed/closed/expired tasks are retired with historical answers preserved. Items whose source_url is not on a dispatchable source are skipped.
  * Prints counts only; never prints answers, ids or notes.
  */
 import { readFileSync } from "node:fs";
 import { randomUUID } from "node:crypto";
 import { getV1Db } from "../lib/v1/db";
-import { logFailure, useAdminDatabaseUrl } from "../lib/v1-settle/admin";
+import { logFailure, configureAdminDatabaseUrl } from "../lib/v1-settle/admin";
 import { urlMatchesWhitelist } from "../lib/v1/verify-validate";
-import { DEFAULT_TIER_CONFIG } from "../lib/v1-settle/scoring";
+import { v1Config } from "../lib/v1/config";
+import { INSTRUCTIONS, type TaskType } from "../lib/v1/tasks";
 
 type WL = { pattern: string; issuer: string; kind: string; fields?: string[]; requires_browser?: boolean; dispatchable?: boolean; robots?: unknown; tos_url?: string | null; tos_notes?: string | null };
 type Gold = { gold_id: string; card_id: string; field: string; type: string; gold_answer: unknown; source_url: string; confirmed_date?: string; confirmed_by?: string; match_rule?: unknown; notes?: string };
 
 async function main() {
-  useAdminDatabaseUrl();
+  configureAdminDatabaseUrl();
   const [goldPath, wlPath] = process.argv.slice(2);
   if (!goldPath || !wlPath) throw new Error("usage: v1-load-gold.ts <gold.json> <whitelist.json>");
   const gold = JSON.parse(readFileSync(goldPath, "utf8")) as { rules: string[]; items: Gold[] };
@@ -34,7 +35,7 @@ async function main() {
           e.robots == null ? null : typeof e.robots === "string" ? e.robots : JSON.stringify(e.robots), e.tos_url ?? null],
       );
     }
-    const disp = wl.entries.filter((e) => e.dispatchable === true);
+    const disp = wl.entries.filter((e) => e.dispatchable === true && e.kind === "official");
     await tx.query(
       `INSERT INTO v1_scoring_config (key, value) VALUES ('gold_rules', $1::jsonb)
        ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value, updated_at = now()`,
@@ -46,29 +47,30 @@ async function main() {
         source_rules: gold.rules,
       })],
     );
-    await tx.query(`INSERT INTO v1_scoring_config (key, value) VALUES ('tiers', $1::jsonb) ON CONFLICT (key) DO NOTHING`, [JSON.stringify(DEFAULT_TIER_CONFIG)]);
+
     let created = 0, existing = 0, updated = 0, skipped = 0;
     for (const g of gold.items) {
-      const has = await tx.query(`SELECT 1 FROM task_gold_answers WHERE gold_id = $1`, [g.gold_id]);
+      const allowed = disp.filter((e) => e.fields?.includes(g.field.replace(/\[\d+\]/g, "[]")) && urlMatchesWhitelist(g.source_url, [e.pattern]));
+      const has = await tx.query<{ task_id: string; unchanged: boolean }>(
+        `SELECT g.task_id, (g.gold_answer = $2::jsonb AND g.source_url = $3 AND t.expires_at > now()
+           AND t.state = 'open' AND t.allowed_sources = jsonb_build_array($3::text) AND t.card_id = $4 AND t.field = $5 AND t.type = $6) AS unchanged
+         FROM task_gold_answers g JOIN tasks t ON t.task_id = g.task_id WHERE g.gold_id = $1 FOR UPDATE OF t`,
+        [g.gold_id, JSON.stringify(g.gold_answer), g.source_url, g.card_id, g.field, g.type],
+      );
+      if (has.rows[0]?.unchanged && allowed.length) { existing++; continue; }
       if (has.rows.length) {
-        // Update in place: task_id stays stable; only the isolated answer/provenance row changes.
-        const u = await tx.query(
-          `UPDATE task_gold_answers SET gold_answer = $2::jsonb, source_url = $3, match_rule = $4::jsonb, confirmed_date = $5, confirmed_by = $6, notes = $7
-            WHERE gold_id = $1 AND (gold_answer, source_url, match_rule, confirmed_date, confirmed_by, notes)
-              IS DISTINCT FROM ($2::jsonb, $3, $4::jsonb, $5::date, $6, $7) RETURNING 1`,
-          [g.gold_id, JSON.stringify(g.gold_answer), g.source_url, g.match_rule == null ? null : JSON.stringify(g.match_rule),
-            g.confirmed_date ?? null, g.confirmed_by ?? null, g.notes ?? null],
-        );
-        u.rows.length ? updated++ : existing++;
-        continue;
+        // Preserve historical answers and evidence. Retire old tasks and create fresh opaque IDs
+        // when an answer changes, a task closes/expires, or its source loses approval.
+        await tx.query(`UPDATE tasks SET state = 'expired' WHERE task_id = $1 AND state = 'open'`, [has.rows[0].task_id]);
+        await tx.query(`UPDATE task_gold_answers SET gold_id = NULL WHERE task_id = $1`, [has.rows[0].task_id]);
+        updated++;
       }
-      const allowed = disp.filter((e) => urlMatchesWhitelist(g.source_url, [e.pattern]));
       if (!allowed.length) { skipped++; continue; }
       const taskId = randomUUID();
       await tx.query(
         `INSERT INTO tasks (task_id, card_id, field, type, instructions_code, allowed_sources, current_value, blind, is_gold, origin, expires_at)
-         VALUES ($1,$2,$3,$4,$5,$6::jsonb,NULL,true,true,'manual', now() + interval '180 days')`,
-        [taskId, g.card_id, g.field, g.type, `${g.type}.v1`, JSON.stringify(disp.filter((e) => e.issuer === allowed[0].issuer).map((e) => e.pattern))],
+         VALUES ($1,$2,$3,$4,$5,$6::jsonb,NULL,true,true,'manual', now() + make_interval(mins => $7))`,
+        [taskId, g.card_id, g.field, g.type, INSTRUCTIONS[g.type as TaskType], JSON.stringify([g.source_url]), v1Config.goldTtlMinutes()],
       );
       await tx.query(
         `INSERT INTO task_gold_answers (task_id, gold_answer, gold_id, source_url, match_rule, confirmed_date, confirmed_by, notes)

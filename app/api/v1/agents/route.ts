@@ -47,8 +47,8 @@ export async function POST(req: Request) {
     if (used.rows.length) return v1Error(403, "invite_used", { rateLimit: rl });
     const claimed = await db.transaction(async (tx) => {
       await tx.query(
-        `INSERT INTO agents (agent_id, api_key_prefix, api_key_hash, agent_name, contact_email) VALUES ($1, $2, $3, $4, $5)`,
-        [agentId, key.lookup, key.hash, name, (email as string | undefined) ?? null],
+        `INSERT INTO agents (agent_id, api_key_prefix, api_key_hash, agent_name, contact_email, score) VALUES ($1, $2, $3, $4, $5, $6)`,
+        [agentId, key.lookup, key.hash, name, (email as string | undefined) ?? null, v1Config.initialScore],
       );
       // One-time invite: the code (hashed) is bound to exactly this agent. A concurrent reuse loses here.
       const inv = await tx.query(

@@ -23,7 +23,7 @@ export function readAdminDatabaseUrl(file = ADMIN_ENV_FILE): string {
 }
 
 /** Point this offline process's DB helper at the admin URL from the local file. */
-export function useAdminDatabaseUrl(): void {
+export function configureAdminDatabaseUrl(): void {
   process.env.V1_DATABASE_URL = readAdminDatabaseUrl();
 }
 

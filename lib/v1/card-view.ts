@@ -5,7 +5,7 @@ const FIELDS = [
   "card_id", "name", "issuer", "network", "annual_fee", "annual_fee_description",
   "foreign_transaction_fee", "credit_required", "welcome_offer", "earning_rates",
   "recurring_credits", "travel_benefits", "insurance", "hotel_program",
-  "application_rules", "last_updated", "sources", "status", "discontinued",
+  "application_rules", "last_verified", "last_updated", "sources", "status", "discontinued",
 ] as const;
 
 export function v1CardView(card: CreditCard): Record<string, unknown> {

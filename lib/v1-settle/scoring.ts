@@ -8,26 +8,8 @@ import { appendLedger } from "../v1/credits";
 import { newId } from "../v1/keys";
 import type { TaskType } from "../v1/tasks";
 
-export interface TierConfig {
-  standard_min_gold: number;
-  standard_min_accuracy: number;
-  restrict_min_gold: number;
-  restrict_below_accuracy: number;
-  score_gold_pass: number;
-  score_gold_fail: number;
-  score_agree: number;
-  score_disagree: number;
-}
-export const DEFAULT_TIER_CONFIG: TierConfig = {
-  standard_min_gold: 3,
-  standard_min_accuracy: 0.8,
-  restrict_min_gold: 2,
-  restrict_below_accuracy: 0.5,
-  score_gold_pass: 0.05,
-  score_gold_fail: -0.1,
-  score_agree: 0.02,
-  score_disagree: -0.05,
-};
+import { v1Config, DEFAULT_TIER_CONFIG, type TierConfig } from "../v1/config";
+export { DEFAULT_TIER_CONFIG } from "../v1/config";
 
 /** link_check: scheme-insensitive host+path; query/fragment stripped; trailing slash ignored. */
 export function normalizeLinkUrl(raw: unknown): string | null {
@@ -77,19 +59,25 @@ export function matchesGold(type: TaskType, result: Record<string, unknown>, gol
   );
 }
 
-async function loadTierConfig(q: Queryable): Promise<TierConfig> {
-  const { rows } = await q.query<{ value: Partial<TierConfig> }>(`SELECT value FROM v1_scoring_config WHERE key = 'tiers'`);
-  return { ...DEFAULT_TIER_CONFIG, ...(rows[0]?.value ?? {}) };
+/** Compare numeric fields within a placeholder absolute tolerance; other fields remain exact. */
+export function answersMatch(type: TaskType, a: Record<string, unknown>, b: Record<string, unknown>): boolean {
+  return SCHEMA_KEYS[type].every((k) => {
+    if (type !== "link_check" && typeof a[k] === "number" && typeof b[k] === "number") return Math.abs((a[k] as number) - (b[k] as number)) <= v1Config.numericTolerance();
+    if (type === "link_check" && k === "final_url") return normalizeLinkUrl(a[k]) === normalizeLinkUrl(b[k]);
+    return a[k] === b[k];
+  });
 }
 
 async function settleReward(tx: Queryable, voteId: string, agentId: string, ok: boolean) {
   const { rows } = await tx.query<{ entry_id: string; delta: number }>(
-    `SELECT entry_id, delta FROM credit_ledger WHERE ref_id = $1 AND reason = 'task_reward' AND state = 'provisional'`,
+    `SELECT entry_id, delta FROM credit_ledger WHERE ref_id = $1 AND reason = 'task_reward' AND state = 'provisional' AND delta > 0
+       AND NOT EXISTS (SELECT 1 FROM credit_ledger c WHERE c.ref_id = $1 AND c.reason = 'clawback')`,
     [voteId],
   );
   for (const r of rows) {
-    await tx.query(`UPDATE credit_ledger SET state = 'confirmed' WHERE entry_id = $1`, [r.entry_id]);
-    if (!ok) await appendLedger(tx, { agentId, delta: -Number(r.delta), reason: "clawback", refId: voteId, state: "confirmed" });
+    // Cancel pending with an inverse entry; originals are never updated.
+    await appendLedger(tx, { agentId, delta: -Number(r.delta), reason: "clawback", refId: voteId, state: "provisional" });
+    if (ok) await appendLedger(tx, { agentId, delta: Number(r.delta), reason: "task_reward", refId: voteId, state: "confirmed" });
   }
 }
 
@@ -118,7 +106,7 @@ export interface SettleSummary {
   suggestions: number; settled_tasks: number; expired_tasks: number; disputed_tasks: number;
 }
 
-type VoteRow = { vote_id: string; agent_id: string; weight: string | number; result: { result?: Record<string, unknown> } };
+type VoteRow = { vote_id: string; agent_id: string; weight: string | number; result: { result?: Record<string, unknown>; evidence?: unknown } };
 
 /** Gold grading for one task (own transaction). */
 async function gradeGoldTask(db: V1Db, taskId: string, cfg: TierConfig, sum: SettleSummary) {
@@ -137,7 +125,7 @@ async function gradeGoldTask(db: V1Db, taskId: string, cfg: TierConfig, sum: Set
       await tx.query(`UPDATE votes SET outcome = $2 WHERE vote_id = $1`, [v.vote_id, ok ? "gold_pass" : "gold_fail"]);
       await settleReward(tx, v.vote_id, v.agent_id, ok);
       await updateAgent(tx, v.agent_id, ok ? cfg.score_gold_pass : cfg.score_gold_fail, cfg);
-      ok ? sum.gold_pass++ : sum.gold_fail++;
+      if (ok) sum.gold_pass++; else sum.gold_fail++;
     }
     // Gold tasks at quorum close without a suggestion (their answer is already known).
     const closed = await tx.query(`UPDATE tasks SET state = 'settled' WHERE task_id = $1 AND state = 'quorum' RETURNING 1`, [taskId]);
@@ -150,7 +138,7 @@ async function expireTask(db: V1Db, taskId: string, sum: SettleSummary) {
   await db.transaction(async (tx) => {
     const t = await tx.query(`SELECT 1 FROM tasks WHERE task_id = $1 AND state = 'open' AND expires_at <= now() FOR UPDATE`, [taskId]);
     if (!t.rows.length) return;
-    const votes = await tx.query<VoteRow>(`SELECT vote_id, agent_id FROM votes WHERE task_id = $1 AND outcome = 'pending' FOR UPDATE`, [taskId]);
+    const votes = await tx.query<VoteRow>(`SELECT vote_id, agent_id FROM votes WHERE task_id = $1 AND outcome = 'pending' ORDER BY submitted_at, vote_id FOR UPDATE`, [taskId]);
     for (const v of votes.rows) {
       await tx.query(`UPDATE votes SET outcome = 'expired' WHERE vote_id = $1`, [v.vote_id]);
       await settleReward(tx, v.vote_id, v.agent_id, false); // no consensus reached -> no reward
@@ -171,37 +159,42 @@ async function settleConsensusTask(db: V1Db, taskId: string, cfg: TierConfig, su
     const t = tr.rows[0];
     if (!t) return;
     const votes = await tx.query<VoteRow>(
-      `SELECT vote_id, agent_id, weight, result FROM votes WHERE task_id = $1 AND outcome = 'pending' FOR UPDATE`,
+      `SELECT vote_id, agent_id, weight, result FROM votes WHERE task_id = $1 AND outcome = 'pending' ORDER BY submitted_at, vote_id FOR UPDATE`,
       [taskId],
     );
     const buckets = new Map<string, { w: number; n: number; sample: Record<string, unknown> }>();
     for (const v of votes.rows) {
-      const k = canonical(t.type, v.result.result ?? {});
+      const sample = v.result.result ?? {};
+      const existing = [...buckets.entries()].find(([, b]) => answersMatch(t.type, sample, b.sample));
+      const k = existing?.[0] ?? canonical(t.type, sample);
       const b = buckets.get(k) ?? { w: 0, n: 0, sample: v.result.result ?? {} };
       b.w += Number(v.weight); b.n++; buckets.set(k, b);
     }
+    if (votes.rows.length !== 3) return;
     const total = [...buckets.values()].reduce((a, b) => a + b.w, 0);
     const ranked = [...buckets.entries()].sort((a, b) => b[1].w - a[1].w);
     const top = ranked[0];
-    if (!top || total <= 0 || top[1].w <= total / 2 || (ranked[1] && ranked[1][1].w === top[1].w)) {
+    if (!top || total <= 0 || top[1].w / total <= v1Config.confidencePercent() / 100 || (ranked[1] && ranked[1][1].w === top[1].w)) {
       await tx.query(`UPDATE tasks SET state = 'disputed' WHERE task_id = $1`, [taskId]);
+      for (const v of votes.rows) await settleReward(tx, v.vote_id, v.agent_id, false);
       sum.disputed_tasks++;
       return;
     }
     for (const v of votes.rows) {
-      const ok = canonical(t.type, v.result.result ?? {}) === top[0];
+      const ok = answersMatch(t.type, v.result.result ?? {}, top[1].sample);
       await tx.query(`UPDATE votes SET outcome = $2 WHERE vote_id = $1`, [v.vote_id, ok ? "agreed" : "disagreed"]);
       await settleReward(tx, v.vote_id, v.agent_id, ok);
       await updateAgent(tx, v.agent_id, ok ? cfg.score_agree : cfg.score_disagree, cfg);
-      ok ? sum.agreed++ : sum.disagreed++;
+      if (ok) sum.agreed++; else sum.disagreed++;
     }
-    const current = t.current_value && typeof t.current_value === "object" ? canonical(t.type, t.current_value as Record<string, unknown>) : null;
-    if (current !== top[0]) {
+    const currentMatches = t.current_value && typeof t.current_value === "object" && answersMatch(t.type, t.current_value as Record<string, unknown>, top[1].sample);
+    if (!currentMatches) {
       await tx.query(
         `INSERT INTO consensus_suggestions (suggestion_id, task_id, card_id, field, current_value, suggested_value, support)
          VALUES ($1,$2,$3,$4,$5::jsonb,$6::jsonb,$7::jsonb)`,
         [newId("cs"), t.task_id, t.card_id, t.field, t.current_value == null ? null : JSON.stringify(t.current_value),
-          JSON.stringify(top[1].sample), JSON.stringify({ votes: top[1].n, weight: top[1].w, total_weight: total })],
+          JSON.stringify(top[1].sample), JSON.stringify({ votes: top[1].n, weight: top[1].w, total_weight: total, confidence: top[1].w / total,
+            evidence: votes.rows.filter((v) => answersMatch(t.type, v.result.result ?? {}, top[1].sample)).map((v) => v.result.evidence) })],
       );
       sum.suggestions++;
     }
@@ -213,7 +206,7 @@ async function settleConsensusTask(db: V1Db, taskId: string, cfg: TierConfig, su
 /** Settles task by task, each in its own transaction, so one bad task never blocks or rolls back the rest. */
 export async function settle(db: V1Db): Promise<SettleSummary> {
   const sum: SettleSummary = { gold_pass: 0, gold_fail: 0, agreed: 0, disagreed: 0, expired_votes: 0, suggestions: 0, settled_tasks: 0, expired_tasks: 0, disputed_tasks: 0 };
-  const cfg = await loadTierConfig(db);
+  const cfg = DEFAULT_TIER_CONFIG;
   const ids = async (sql: string) => (await db.query<{ task_id: string }>(sql)).rows.map((r) => r.task_id);
   // 1) Gold: grade every pending vote (including on overdue gold tasks), and close gold tasks at quorum.
   for (const id of await ids(`SELECT DISTINCT t.task_id FROM tasks t JOIN votes v ON v.task_id = t.task_id
