@@ -25,6 +25,8 @@ async function main() {
   const wl = JSON.parse(readFileSync(wlPath, "utf8")) as { entries: WL[] };
   const db = await getV1Db();
   const out = await db.transaction(async (tx) => {
+    // The input whitelist is authoritative: removed patterns must lose dispatch approval too.
+    await tx.query(`UPDATE sources_whitelist SET dispatchable = false`);
     for (const e of wl.entries) {
       await tx.query(
         `INSERT INTO sources_whitelist (pattern, issuer, kind, tos_notes, fields, requires_browser, dispatchable, robots, tos_url)
