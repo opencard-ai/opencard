@@ -14,7 +14,7 @@ const pins = {
   'upload-artifact': 'ea165f8d65b6e75b540449e92b4886f43607fa02',
   'download-artifact': 'd3f86a106a0bac45b974a628896c90dbdf5c8093',
 };
-for (const [job, slug, cron] of [['offer', 'offer-watch', '9 21 * * *'], ['audit', 'weekly-audit', '47 18 * * 1']]) test(`${job} cloud ownership, workflow permissions and transport invariants`, () => {
+for (const [job, slug, cron] of [['offer', 'offer-watch', '39 19 * * *'], ['audit', 'weekly-audit', '47 18 * * 1']]) test(`${job} cloud ownership, workflow permissions and transport invariants`, () => {
   const w = read(`.github/workflows/${slug}-cloud.yml`);
   assert.deepEqual([...w.matchAll(/- cron: '([^']+)'/g)].map(m => m[1]), [cron]);
   assert.doesNotMatch(w, /^\s*timezone:/m); assert.match(w, /2027-03-14/); assert.match(w, /2027-11-07/);
@@ -65,7 +65,7 @@ for (const [job, slug, cron] of [['offer', 'offer-watch', '9 21 * * *'], ['audit
   for (const gate of ["mode == 'write'", "needs.commit-state.outputs.committed == 'true'", "github.ref == 'refs/heads/main'", "!startsWith(github.event_name, 'pull_request')"]) assert.ok(send.includes(gate));
   assert.match(jobs.notify, /permissions:\n      contents: read/);
   assert.match(w, new RegExp(`${job.toUpperCase()}_EPOCH: ${owners[job].epoch}`));
-  assert.deepEqual(owners[job], { owner: 'mac', productionEnabled: false, epoch: `${job}-20261115-1` });
+  assert.deepEqual(owners[job], { owner: 'github-actions', productionEnabled: true, epoch: `${job}-20261115-1` });
   for (const m of w.matchAll(/uses: actions\/([^@\s]+)@([^\s]+)/g)) assert.equal(m[2], pins[m[1]], m[1]);
   for (const action of Object.keys(pins)) assert.ok(w.includes(`actions/${action}@${pins[action]}`));
   assert.match(jobs.run, /persist-credentials: false/);

@@ -3,12 +3,12 @@ on:
   schedule:
     # Explicit UTC: GitHub ignores timezone: in this repo (see news-cloud-publish.yml).
     # Schedules only fire from the default branch; this takes effect only when merged.
-    # 13:09 PST (UTC-8, valid until 2027-03-14); from 2027-03-14 fires 14:09 PDT
-    # unless changed to '9 20 * * *' (back to '9 21 * * *' on 2027-11-07).
-    # Kept ~1.5h after Mac job 8272895b (~11:30-11:39 PT) during shadow/comparison
-    # so both do not hit issuer sites at once. At owner switch (Mac disabled), decide
-    # in the owner-flip PR whether to move back toward 11:39 PT or keep this time.
-    - cron: '9 21 * * *'
+    # 11:39 PST (UTC-8, valid until 2027-03-14); from 2027-03-14 fires 12:39 PDT
+    # unless changed to '39 18 * * *' (back to '39 19 * * *' on 2027-11-07).
+    # Owner flip: Mac job 8272895b is disabled, so the cloud takes back the Mac's
+    # ~11:30-11:39 PT slot (more margin before the PT-midnight date rollover under
+    # GitHub schedule lag). Reverting this PR restores '9 21 * * *'.
+    - cron: '39 19 * * *'
   workflow_dispatch:
     inputs:
       force_shadow:
