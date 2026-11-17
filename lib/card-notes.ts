@@ -60,8 +60,8 @@ const NOTES: Record<string, EditorNote> = {
     note: "Don't apply for this card. Spirit Airlines stopped flying in May 2026, and Bank of America's page for this card was no longer available when we checked. The miles, companion and fee figures in our record describe the old product and no longer apply. If you already hold it, watch for mail from Bank of America about what your account becomes, and check any autopays or saved card numbers before the account changes.",
   },
   "barclays-banana-republic-rewards-mastercard": {
-    reviewed: "2026-10-19",
-    note: "This is the Banana Republic Encore Mastercard. It earns 25 points per $1 at Gap Inc. brands, 15 at other eligible apparel stores and 5 elsewhere (Barclays calls these 5X, 3X and 1X). With 500 points per $1 reward, that is about 5%, 3% and 1% back, redeemable only at Gap Inc. brands or in the Encore Market. The welcome offer is 20% off your first purchase at Banana Republic with the new card, not a cash bonus. The 33.49% variable purchase APR makes carrying a balance expensive.",
+    reviewed: "2026-11-16",
+    note: "This is the Banana Republic Encore Mastercard. It earns 25 points per $1 at Gap Inc. brands, 15 at other eligible apparel stores and 5 elsewhere (Barclays calls these 5X, 3X and 1X). With 500 points per $1 reward, that is about 5%, 3% and 1% back, redeemable only at Gap Inc. brands or in the Encore Market. The welcome offer is 20% off your first purchase at Banana Republic with the new card, not a cash bonus. The 33.49% variable purchase APR makes carrying a balance expensive. It uses the same Encore program as the Old Navy, Gap and Athleta Encore cards; the main difference is the first-purchase discount. Spending $600 a year at Gap Inc. brands earns 15,000 points, or $30 in rewards, versus $12 on a flat 2% cash-back card.",
   },
   "chase-united-explorer": {
     reviewed: "2026-10-19",
