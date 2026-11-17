@@ -17,6 +17,7 @@ import { getCardEditorial } from "@/lib/card-editorial";
 import { buildCardAnalysis, applicableRules, knownNoForeignFee } from "@/lib/card-analysis";
 import { cardSeoMeta } from "@/lib/card-seo";
 import { getEditorNote } from "@/lib/card-notes";
+import CardAccessLinks from "@/app/components/CardAccessLinks";
 import CardAnalysisSection from "@/app/components/CardAnalysisSection";
 import { getReferralOfferForCard } from "@/lib/referrals";
 import { formatVariableOffer, formatWelcomeBonus, welcomeBonusKind } from "@/lib/welcome-offer";
@@ -787,6 +788,8 @@ export default async function CardDetailPage({ params }: Props) {
               )}
             </section>
           )}
+
+          <CardAccessLinks card={card} lang={lang} l={l} />
 
           {/* Sources */}
           {card.sources?.length > 0 && (
