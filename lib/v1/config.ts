@@ -29,6 +29,8 @@ export const v1Config = {
   goldTtlMinutes: () => intEnv("V1_GOLD_TTL_MIN", 1440, 1, 525600),
   evidenceMaxAgeMs: 7 * 24 * 3600_000,
   evidenceClockSkewMs: 5 * 60_000,
+  /** TBD(beta): placeholder ceiling on reputation/weight; tune after closed-beta observation. */
+  reputationScoreCap: 1,
   initialScore: 0.5, // probation's low score IS its frozen votes.weight
   statusCheckEnabled: () => process.env.V1_STATUS_CHECK_ENABLED === "true",
   /** How long a task handed out by GET /cards stays answerable by that agent. */

@@ -76,7 +76,7 @@ export async function POST(req: Request) {
         : { status: s.status, reason: s.reason, evidence: s.evidence };
       await tx.query(
         `INSERT INTO votes (vote_id, task_id, agent_id, result, weight, outcome) VALUES ($1, $2, $3, $4::jsonb, $5, $6)`,
-        [voteId, s.task_id, agent.agent_id, JSON.stringify(stored), Number(snapshot.rows[0].score), s.status === "verified" ? "pending" : "unable"],
+        [voteId, s.task_id, agent.agent_id, JSON.stringify(stored), Math.min(v1Config.reputationScoreCap, Math.max(0, Number(snapshot.rows[0].score))), s.status === "verified" ? "pending" : "unable"],
       );
 
       let provisional = 0;

@@ -86,15 +86,15 @@ describe("Phase 1 dispatch, frozen consensus and immutable settlement", () => {
     }
   };
 
-  it("a high reputation minority outweighs two low weights; snapshots survive later score changes", async () => {
-    await quorum("weighted", [95, 95, 100], [1, 1, 5]);
+  it("bounded reputation snapshots survive later score changes", async () => {
+    await quorum("weighted", [95, 95, 100], [0.2, 0.2, 1]);
     await pg.query(`UPDATE agents SET score = 0 WHERE agent_id = 'a2'`);
     const s = await settle(db);
     assert.equal(s.agreed, 1);
     assert.equal(s.disagreed, 2);
     const suggestions = (await pg.query<{ suggested_value: { annual_fee: number }; support: { confidence: number; evidence: unknown[] } }>(`SELECT * FROM consensus_suggestions WHERE task_id = 'weighted'`)).rows;
     assert.equal(suggestions[0].suggested_value.annual_fee, 100);
-    assert.equal(suggestions[0].support.confidence, 5 / 7);
+    assert.equal(suggestions[0].support.confidence, 1 / 1.4);
     assert.equal(suggestions[0].support.evidence.length, 1);
     const count = (await pg.query(`SELECT * FROM credit_ledger`)).rows.length;
     assert.equal((await settle(db)).settled_tasks, 0);
@@ -117,11 +117,23 @@ describe("Phase 1 dispatch, frozen consensus and immutable settlement", () => {
     assert.equal((await settle(db)).disputed_tasks, 2);
     assert.equal((await pg.query(`SELECT * FROM consensus_suggestions WHERE task_id IN ('split','zero')`)).rows.length, 0);
     assert.equal((await getBalances(db, "a0")).pending, 0);
+    assert.equal((await pg.query(`SELECT 1 FROM votes WHERE task_id IN ('split','zero') AND outcome = 'pending'`)).rows.length, 0);
+    assert.equal((await pg.query(`SELECT 1 FROM votes WHERE task_id IN ('split','zero') AND outcome = 'disputed'`)).rows.length, 6);
+    const snapshot = await pg.query(`SELECT score, tasks_completed FROM agents ORDER BY agent_id`);
+    const ledger = await pg.query(`SELECT * FROM credit_ledger ORDER BY entry_id`);
+    assert.equal((await settle(db)).disputed_tasks, 0);
+    assert.deepEqual((await pg.query(`SELECT score, tasks_completed FROM agents ORDER BY agent_id`)).rows, snapshot.rows);
+    assert.deepEqual((await pg.query(`SELECT * FROM credit_ledger ORDER BY entry_id`)).rows, ledger.rows);
   });
 
   it("requires exactly three votes and a confidence strictly above the configured threshold", async () => {
     await quorum("short", [1, 1], [1, 1]);
-    assert.equal((await settle(db)).settled_tasks, 0);
+    const short = await settle(db);
+    assert.equal(short.settled_tasks, 0);
+    assert.equal(short.expired_tasks, 1);
+    assert.equal(short.expired_votes, 2);
+    assert.equal((await pg.query<{ state: string }>(`SELECT state FROM tasks WHERE task_id = 'short'`)).rows[0].state, "expired");
+    assert.equal((await getBalances(db, "a0")).pending, 0);
     await quorum("threshold", [1, 1, 2], [1, 1, 1]);
     process.env.V1_CONFIDENCE_PERCENT = "80";
     try { assert.equal((await settle(db)).disputed_tasks, 1); }

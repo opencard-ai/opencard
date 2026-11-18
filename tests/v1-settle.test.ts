@@ -83,9 +83,10 @@ describe("v1 whitelist globs, evidence policy and offline settlement", () => {
   });
 
   it("gold grading: right vote confirms reward, wrong vote is clawed back; tiers move", async () => {
-    const good = await newAgent(); const bad = await newAgent();
+    const good = await newAgent(); const bad = await newAgent(); const third = await newAgent();
     assert.equal((await verify(good.key, fee("t_fake_fee_d", 7123))).status, 202); // fixture gold: 777123 % 10000 is not the gold value
     assert.equal((await verify(bad.key, fee("t_fake_fee_d", 1))).status, 202);
+    assert.equal((await verify(third.key, fee("t_fake_fee_d", 7123))).status, 202);
     // Make the fixture gold comparable (fixture carries an extra marker key that canonical() ignores).
     await pg.query(`UPDATE task_gold_answers SET gold_answer = jsonb_set(gold_answer, '{annual_fee}', '7123') WHERE task_id = 't_fake_fee_d'`);
     const s = await settle(db);
@@ -103,15 +104,19 @@ describe("v1 whitelist globs, evidence policy and offline settlement", () => {
     DEFAULT_TIER_CONFIG.standard_min_gold = 1;
     DEFAULT_TIER_CONFIG.restrict_min_gold = 1;
     await pg.query(`UPDATE task_gold_answers SET gold_answer = jsonb_set(gold_answer, '{annual_fee}', '1') WHERE task_id = 't_fake_fee_d'`);
-    await pg.query(`UPDATE tasks SET state = 'open' WHERE task_id = 't_fake_fee_d'`);
-    const c = await newAgent();
-    await verify(c.key, fee("t_fake_fee_d", 1));
-    await settle(db);
+    // Each fresh gold task must reach a full quorum before tier evaluation.
+    const gradeNew = async (id: string, value: number) => {
+      await pg.query(`INSERT INTO tasks (task_id,card_id,field,type,instructions_code,allowed_sources,blind,is_gold,origin,expires_at)
+        SELECT $1,card_id,field,type,instructions_code,allowed_sources,blind,is_gold,origin,expires_at FROM tasks WHERE task_id = 't_fake_fee_d'`, [id]);
+      await pg.query(`INSERT INTO task_gold_answers (task_id,gold_answer) VALUES ($1,'{"annual_fee":1}')`, [id]);
+      const agents = [await newAgent(), await newAgent(), await newAgent()];
+      for (const agent of agents) assert.equal((await verify(agent.key, fee(id, value))).status, 202);
+      await settle(db);
+      return agents[0];
+    };
+    const c = await gradeNew("gold-tier-pass", 1);
     assert.equal((await ag(c.id)).tier, "standard");
-    await pg.query(`UPDATE tasks SET state = 'open' WHERE task_id = 't_fake_fee_d'`);
-    const d = await newAgent();
-    assert.equal((await verify(d.key, fee("t_fake_fee_d", 2))).status, 202);
-    await settle(db);
+    const d = await gradeNew("gold-tier-fail", 2);
     assert.equal((await ag(d.id)).tier, "restricted");
     Object.assign(DEFAULT_TIER_CONFIG, oldPolicy);
   });
