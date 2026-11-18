@@ -1,3 +1,4 @@
+// Server-only: imports lib/cards, which uses fs.
 /**
  * Search-snippet title + meta description for card detail pages.
  *
@@ -7,6 +8,7 @@
  * than none. "No foreign transaction fee" is only claimed via
  * knownNoForeignFee() (a 0 in the record alone is not evidence).
  */
+import { isClosedToNewApplicants } from "@/lib/cards";
 import type { CreditCard, EarningRate } from "@/lib/cards";
 import { cardRateProfile, knownNoForeignFee, shortCardName } from "@/lib/card-analysis";
 
@@ -281,7 +283,42 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
   },
 };
 
-export function cardSeoMeta(card: CreditCard, lang: string, closed: boolean): { title: string; description: string } {
+// Product history only: transferred records must never use fee/rate snippets.
+const TRANSFERRED: Record<string, { name: string; event: "amazon" | "sears" }> = {
+  "amex-amazon-biz": { name: "Amazon Business American Express Card", event: "amazon" },
+  "amex-amazon-biz-prime": { name: "Amazon Business Prime American Express Card", event: "amazon" },
+  "synchrony-sears-mastercard": { name: "Sears Mastercard", event: "sears" },
+};
+const TRANSFER_COPY: Record<Lang, Record<"amazon" | "sears", { title: string; description: string }>> = {
+  en: {
+    amazon: { title: "Transferred to U.S. Bank, No Longer Issued by Amex", description: "This card is no longer issued by American Express and was replaced by U.S. Bank's Amazon business card on 2026-08-14." },
+    sears: { title: "Renamed Citi ThankYou Mastercard, No Longer Offered", description: "Citi renamed this card the Citi ThankYou Mastercard on 2025-04-12; the Sears Mastercard is no longer offered." },
+  },
+  zh: {
+    amazon: { title: "已轉由 U.S. Bank 發行、Amex 不再發行", description: "American Express 已不再發行此卡，並於 2026-08-14 由 U.S. Bank 的 Amazon 商業信用卡取代。" },
+    sears: { title: "已更名為 Citi ThankYou Mastercard、不再提供", description: "Citi 於 2025-04-12 將此卡更名為 Citi ThankYou Mastercard，Sears Mastercard 已不再提供。" },
+  },
+  "zh-cn": {
+    amazon: { title: "已转由 U.S. Bank 发行、Amex 不再发行", description: "American Express 已不再发行此卡，并于 2026-08-14 由 U.S. Bank 的 Amazon 商业信用卡取代。" },
+    sears: { title: "已更名为 Citi ThankYou Mastercard、不再提供", description: "Citi 于 2025-04-12 将此卡更名为 Citi ThankYou Mastercard，Sears Mastercard 已不再提供。" },
+  },
+  es: {
+    amazon: { title: "Transferida a U.S. Bank, Amex ya no la emite", description: "American Express ya no emite esta tarjeta; fue reemplazada por la tarjeta Amazon para empresas de U.S. Bank el 2026-08-14." },
+    sears: { title: "Renombrada Citi ThankYou Mastercard, ya no disponible", description: "Citi cambió el nombre de esta tarjeta a Citi ThankYou Mastercard el 2025-04-12; la Sears Mastercard ya no está disponible." },
+  },
+};
+
+export function cardSeoMeta(card: CreditCard, lang: string, closed: boolean = isClosedToNewApplicants(card)): { title: string; description: string } {
+  if (card.status === "transferred") {
+    const locale = (lang in COPY ? lang : "en") as Lang;
+    const history = TRANSFERRED[card.card_id];
+    if (history) {
+      const copy = TRANSFER_COPY[locale][history.event];
+      return { title: `${history.name}: ${copy.title} | OpenCard`, description: `${history.name} — ${copy.description}` };
+    }
+    const status = COPY[locale].closed;
+    return { title: `${searchCardName(card)}: ${status} | OpenCard`, description: `${searchCardName(card)} — ${status}.` };
+  }
   if (lang === "en" && !closed && OVERRIDES[card.card_id]) return OVERRIDES[card.card_id];
 
   const c = COPY[(lang in COPY ? lang : "en") as Lang];

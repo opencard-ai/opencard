@@ -126,7 +126,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, card_id } = await params;
   const card = getCardById(card_id);
   if (!card) return { title: t("status.noResults", lang as any) };
-  const seo = cardSeoMeta(card, lang, isClosedToNewApplicants(card));
+  const seo = cardSeoMeta(card, lang);
   return {
     title: seo.title,
     description: seo.description,

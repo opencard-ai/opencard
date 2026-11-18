@@ -69,16 +69,24 @@ const nextConfig: NextConfig = {
       ["us-bank-altitude-go-biz", "us-bank-biz-essentials"],
     ] as const;
 
-    // Card pages removed without a direct successor land on the cards list.
-    const removedCardRedirects = [
-      // robinhood-gold removed 2026-11-05 (owner request).
-      "robinhood-gold",
+    // clear renames found in git history 2026-11-16
+    const clearCardRenames = [
+      ["capital-one-savor-one", "capital-one-savorone"],
+      ["usbank-cash-plus", "us-bank-cash-plus"],
+      ["wellsfargo-autograph", "wells-fargo-autograph"],
+      ["wellsfargo-active-cash", "wells-fargo-active-cash"],
+      ["usbank-altitude-go", "us-bank-altitude-go"],
+      ["usbank-altitude-connect", "us-bank-altitude-connect"],
+      ["usbank-altitude-reserve", "us-bank-altitude-reserve"],
+      ["discover-it-student", "discover-it-student-cash-back"],
+      ["discover-it-cash-back", "discover-it"],
+      ["citi-premier", "citi-strata-premier"],
     ] as const;
 
     return [
-      ...removedCardRedirects.flatMap((from) => [
-        { source: `/:lang/cards/${from}`, destination: `/:lang/cards`, permanent: true },
-        { source: `/cards/${from}`, destination: `/cards`, permanent: true },
+      ...clearCardRenames.flatMap(([from, to]) => [
+        { source: `/:lang/cards/${from}`, destination: `/:lang/cards/${to}`, statusCode: 301 as const },
+        { source: `/cards/${from}`, destination: `/cards/${to}`, statusCode: 301 as const },
       ]),
       ...legacyCardRedirects.flatMap(([from, to]) => [
       {
