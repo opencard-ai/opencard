@@ -307,31 +307,27 @@
     },
     {
       "path": "offer-watch/daily-state.json",
-      "source": ".openclaw/state/opencard-offer-watch/daily-state.json",
-      "mac_sha256": "bc18d744a877354bf383843df3bb9496cdde84b46390b9151df0220d7d9f3863",
-      "sha256": "bc18d744a877354bf383843df3bb9496cdde84b46390b9151df0220d7d9f3863",
-      "size": 146,
-      "modified": false,
-      "urls_stripped": 0
+      "sha256": "2724cb889f92c9dbe0ac98262c5b2dc874fbf3b42b67546ba335a7a79b4b9c38",
+      "size": 211
     },
     {
       "path": "offer-watch/history.jsonl",
-      "source": ".openclaw/state/opencard-offer-watch/history.jsonl",
-      "mac_sha256": "50966b9000c63fbd3f613e0b0a06e3f70da1aa102914dcf4e195ca4785b44900",
-      "sha256": "202edbaf68f1a43d54a310bb5f7381e3cbab46c247cd03120536b4cad03a9215",
-      "size": 31244,
-      "modified": true,
-      "urls_stripped": 3
+      "sha256": "b0754e62e5b5059ab75eddda058ebcf8beb04d7676c58121985c4dd212d4eaeb",
+      "size": 32376
     },
     {
       "path": "offer-watch/ledger.json",
-      "source": ".openclaw/state/opencard-offer-watch/ledger.json",
-      "mac_sha256": "795c115bf403060f2fcb7440f80a4ec86714c7502e931b15f66a9f1e8e6102b1",
-      "sha256": "795c115bf403060f2fcb7440f80a4ec86714c7502e931b15f66a9f1e8e6102b1",
-      "size": 32270,
-      "modified": false,
-      "urls_stripped": 0
+      "sha256": "fbb5150a54852a2bdd72f5857b3b466cd88c99f19d82466f81a2d483ce4775b3",
+      "size": 32270
     }
   ],
-  "runs": {}
+  "runs": {
+    "offer": {
+      "last_run_id": "44218917523",
+      "last_run_attempt": "1",
+      "pt_date": "2026-11-17",
+      "writer_epoch": "offer-20261115-1",
+      "base_sha": "e75a0acdcb7a2cd833c325969fb7198fdccfad3b"
+    }
+  }
 }
