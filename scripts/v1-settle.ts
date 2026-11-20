@@ -1,0 +1,15 @@
+/**
+ * Offline settlement job: grades gold votes, runs consensus, settles credits, updates tiers.
+ * Usage: npx tsx scripts/v1-settle.ts   (prints counts only)
+ */
+import { getV1Db } from "../lib/v1/db";
+import { logFailure, configureAdminDatabaseUrl } from "../lib/v1-settle/admin";
+import { settle } from "../lib/v1-settle/scoring";
+
+async function main() {
+  configureAdminDatabaseUrl();
+  const s = await settle(await getV1Db());
+  console.log(JSON.stringify(s));
+  process.exit(0);
+}
+main().catch((e) => { logFailure("settle", e); process.exit(1); });
