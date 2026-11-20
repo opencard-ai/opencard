@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: "Track credit-card credits, certificates, passes, and their expiration dates privately in your browser.",
     robots: lang === "en" ? { index: true, follow: true } : { index: false, follow: true },
     // English-only page: self canonical + en/x-default hreflang (matches card-page pattern).
-    alternates: localizedAlternates("en", "/benefit-expiration-tracker", ["en"]),
+    alternates: localizedAlternates(lang, "/benefit-expiration-tracker", ["en"]),
   };
 }
 
