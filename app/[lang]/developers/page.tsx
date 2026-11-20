@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: "OpenCard for Developers: Card Data API and MCP Server",
     description: "Read-only access to OpenCard's US credit card data: JSON API, OpenAPI 3.1 spec, and an MCP server with search_cards, get_card and current_welcome_offers.",
-    alternates: localizedAlternates(lang, "/developers"),
+    alternates: localizedAlternates(lang, "/developers", ["en"]),
     // Developer docs are English-only; translated URLs stay out of the index.
     robots: lang === "en" ? undefined : { index: false, follow: true },
   };

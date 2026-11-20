@@ -14,7 +14,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  return { alternates: localizedAlternates(lang, "/privacy") };
+  const copy: Record<string, { title: string; description: string }> = {
+    en: { title: "Privacy Policy | OpenCard", description: "Read OpenCard's privacy policy for saved cards, benefit reminders, cookies, data handling, and privacy requests." },
+    zh: { title: "隱私權政策 | OpenCard", description: "了解 OpenCard 如何處理已儲存卡片、福利提醒、Cookie 與使用資料，以及如何提出隱私權請求。" },
+    "zh-cn": { title: "隐私政策 | OpenCard", description: "了解 OpenCard 如何处理已保存卡片、权益提醒、Cookie 与使用数据，以及如何提出隐私请求。" },
+    es: { title: "Política de privacidad | OpenCard", description: "Consulta la política de OpenCard sobre tarjetas guardadas, recordatorios, cookies, tratamiento de datos y solicitudes de privacidad." },
+  };
+  return { ...(copy[lang] ?? copy.en), alternates: localizedAlternates(lang, "/privacy") };
 }
 
 export default async function PrivacyPage({ params }: Props) {

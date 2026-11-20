@@ -8,6 +8,13 @@ import { BEST_CATEGORIES } from "@/lib/best-categories";
 
 const baseUrl = "https://opencardai.com";
 
+/** Omit unknown/invalid dates rather than claiming a fresh content update. */
+function lastModified(value?: string): { lastModified?: Date } {
+  if (!value) return {};
+  const date = new Date(value);
+  return Number.isFinite(date.getTime()) ? { lastModified: date } : {};
+}
+
 /** Absolute hreflang map for a path, limited to locales that render it. */
 function languageAlternates(path: string, available: readonly string[]) {
   const languages: Record<string, string> = {};
@@ -20,12 +27,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const cards = getAllCards();
 
   // Note: baseUrl (opencardai.com/) is excluded - it redirects via middleware, not indexable
-  const now = new Date();
-
   const tier = (path: string, priority: number, changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]) =>
     locales.map((lang) => ({
       url: `${baseUrl}/${lang}${path}`,
-      lastModified: now,
       changeFrequency,
       priority,
       alternates: languageAlternates(path, locales),
@@ -38,7 +42,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...tier("/guides", 0.75, "weekly"),
     {
       url: `${baseUrl}/en/benefit-expiration-tracker`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.75,
       alternates: languageAlternates("/benefit-expiration-tracker", ["en"]),
@@ -47,7 +50,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...tier("/methodology", 0.5, "monthly"),
     {
       url: `${baseUrl}/en/developers`,
-      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.4,
       alternates: languageAlternates("/developers", ["en"]),
@@ -65,7 +67,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const available = locales.filter((l) => hasLocalizedGuide(guide, l));
       guidePages.push({
         url: `${baseUrl}/${lang}/guides/${guide.slug}`,
-        lastModified: new Date(guide.updated),
+        ...lastModified(guide.updated),
         changeFrequency: "monthly",
         priority: lang === "en" ? 0.7 : 0.6,
         alternates: languageAlternates(`/guides/${guide.slug}`, available),
@@ -80,22 +82,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((card) => isIndexableCard(card))
     .map((card) => ({
       url: `${baseUrl}/en/cards/${card.card_id}`,
-      lastModified: card.last_updated ? new Date(card.last_updated) : now,
+      ...lastModified(card.last_updated),
       changeFrequency: "weekly" as const,
       priority: 0.7,
       // Mirror the page's own hreflang (en + x-default) so sitemap and HTML agree.
       alternates: languageAlternates(`/cards/${card.card_id}`, ["en"]),
     }));
 
-  const BEST_VERIFIED = BEST_CATEGORIES.map((c) => c.verified).sort().at(-1) ?? "2026-11-16";
-  const bestPages: MetadataRoute.Sitemap = ["/best", ...BEST_CATEGORIES.map(({ slug }) => `/best/${slug}`)]
-    .flatMap((path) => ["en", "zh"].map((lang) => ({
-      url: `${baseUrl}/${lang}${path}`,
-      lastModified: new Date(BEST_VERIFIED),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-      alternates: languageAlternates(path, ["en", "zh"]),
-    })));
+  const bestPages: MetadataRoute.Sitemap = [
+    { path: "/best", verified: BEST_CATEGORIES.map((c) => c.verified).sort().at(-1) },
+    ...BEST_CATEGORIES.map(({ slug, verified }) => ({ path: `/best/${slug}`, verified })),
+  ].flatMap(({ path, verified }) => ["en", "zh"].map((lang) => ({
+    url: `${baseUrl}/${lang}${path}`,
+    ...lastModified(verified),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+    alternates: languageAlternates(path, ["en", "zh"]),
+  })));
 
   return [...staticPages, ...guidePages, ...cardPages, ...bestPages];
 }

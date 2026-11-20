@@ -33,13 +33,3 @@ export const metadata: Metadata = {
     images: [`${baseUrl}/og-image.png`],
   },
 };
-
-export const alternates = {
-  canonical: "https://opencardai.com/en",
-  languages: {
-    en: "https://opencardai.com/en",
-    zh: "https://opencardai.com/zh",
-    es: "https://opencardai.com/es",
-    "x-default": "https://opencardai.com/en",
-  },
-};
