@@ -1,6 +1,23 @@
 {
   "items": [
     {
+      "title": "BeFrugal: $40 Referral Bonus",
+      "url": "https://www.doctorofcredit.com/befrugal-40-referral-bonus-3/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "befrugal",
+        "shopping portals"
+      ],
+      "ts": "2026-11-21T14:00:31.000Z",
+      "title_en": "BeFrugal: $40 Referral Bonus",
+      "summary_en": "",
+      "title_zh": "BeFrugal：40 美元推薦獎金",
+      "summary_zh": "透過 BeFrugal 推薦計畫可獲得 40 美元的推薦獎金。",
+      "title_es": "BeFrugal: bonificación de $40 por referidos",
+      "summary_es": "BeFrugal ofrece una bonificación de $40 por，推荐Clients."
+    },
+    {
       "title": "Topcashback: 120% Back On Private Internet Access",
       "url": "https://www.doctorofcredit.com/topcashback-100-back-on-private-internet-access-plans-vpn-1-2-3-years/",
       "source": "Doctor of Credit",
@@ -240,23 +257,7 @@
       "summary_zh": "Bank of America 針對指定客戶提高 Atmos 信用卡點數獎勵，125k Summit 客戶可獲 125,000 點，90k Ascent 客戶可獲 90,000 點。",
       "title_es": "[Dirigida] Aumento de ofertas de Bank of America Atmos (125 mil Summit, 90 mil Ascent)",
       "summary_es": "Los clientes seleccionados de Bank of America pueden recibir ofertas mejoradas en las tarjetas Summit y Ascent, con beneficios de 125.000 y 90.000 puntos, respectivamente."
-    },
-    {
-      "title": "Rakuten: Earn 100%/100x On OneRep & Many More",
-      "url": "https://www.doctorofcredit.com/rakuten-earn-100-100x-on-onerep-many-more/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "rakuten"
-      ],
-      "ts": "2026-11-20T16:07:40.000Z",
-      "title_en": "Rakuten: Earn 100%/100x On OneRep & Many More",
-      "summary_en": "",
-      "title_zh": "Rakuten：於 OneRep 等商品賺取 100% 回饋／100 倍點數",
-      "summary_zh": "在 Rakuten 購買 OneRep 及部分指定商品，可賺取 100% 回饋或 100 倍點數。",
-      "title_es": "Rakuten: Gana 100%/100x en OneRep y muchos más",
-      "summary_es": "Rakuten ofrece un reembolso del 100% o un multiplicador de 100x en compras elegibles de OneRep y otras Participating."
     }
   ],
-  "fetched": "2026-11-21T02:09:45.000Z"
+  "fetched": "2026-11-21T16:44:49.000Z"
 }
