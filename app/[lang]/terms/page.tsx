@@ -14,7 +14,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  return { alternates: localizedAlternates(lang, "/terms") };
+  const copy: Record<string, { title: string; description: string }> = {
+    en: { title: "Terms of Service | OpenCard", description: "Read OpenCard's terms of service, financial information disclaimer, affiliate disclosures, and responsibilities when using the site." },
+    zh: { title: "服務條款 | OpenCard", description: "閱讀 OpenCard 的服務條款、財務資訊免責聲明、聯盟連結揭露，以及使用本站時的責任與限制。" },
+    "zh-cn": { title: "服务条款 | OpenCard", description: "阅读 OpenCard 的服务条款、财务信息免责声明、联盟链接披露，以及使用本站时的责任与限制。" },
+    es: { title: "Términos de servicio | OpenCard", description: "Lee los términos de OpenCard, el aviso sobre información financiera, las divulgaciones de afiliados y las responsabilidades de uso." },
+  };
+  return { ...(copy[lang] ?? copy.en), alternates: localizedAlternates(lang, "/terms") };
 }
 
 export default async function TermsPage({ params }: Props) {

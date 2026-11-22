@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { localizedAlternates } from "@/lib/seo";
 import Link from "next/link";
 import { getCardById } from "@/lib/cards";
 import { getCardstayPlace, getPlaceVerdict } from "@/lib/cardstay/data";
@@ -23,7 +24,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = await params;
   const copy = getStayCopy(lang as Locale);
   const place = getCardstayPlace(slug);
-  return { title: place ? `${place.name} — CardStay — ${copy.beta}` : `CardStay — ${copy.beta}` };
+  return {
+    title: place ? `${place.name} — CardStay — ${copy.beta}` : `CardStay — ${copy.beta}`,
+    description: place?.summary ?? copy.hotelFallback,
+    alternates: localizedAlternates(lang, `/stay/hotel/${slug}`, []),
+    ...(!place ? { robots: { index: false, follow: true } } : {}),
+  };
 }
 
 export default async function HotelPage({ params }: Props) {
