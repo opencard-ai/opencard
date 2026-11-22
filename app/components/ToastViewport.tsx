@@ -27,6 +27,7 @@ export default function ToastViewport() {
 
   return (
     <div
+      data-toast-viewport=""
       className="fixed left-1/2 -translate-x-1/2 bottom-20 sm:bottom-6 z-[60] flex flex-col items-center gap-2 pointer-events-none w-full max-w-sm px-3"
       role="region"
       aria-live="polite"
