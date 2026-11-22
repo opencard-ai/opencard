@@ -198,12 +198,22 @@ function l(key: string, locale: string): string {
 
 export default function CardGrid({ cards, issuers, tags, locale }: CardGridProps) {
   const searchParams = useSearchParams();
+  const pathname = usePathname();
   const [selectedSort, setSelectedSort] = useState(() => searchParams.get("sort") || "name");
 
   return (
     <div id="cards-section" style={{ scrollMarginTop: "73px" }}>
       <FilterBar issuers={issuers} tags={tags} locale={locale} selectedSort={selectedSort} setSelectedSort={setSelectedSort} />
-      <CardList cards={cards} tags={tags} locale={locale} selectedSort={selectedSort} />
+      <CardList cards={cards} tags={tags} locale={locale} lang={pathname.split("/")[1] || "en"} selectedSort={selectedSort} searchParams={searchParams} />
+    </div>
+  );
+}
+
+// No request or navigation hooks: this list can render in the static fallback.
+export function DefaultCardGrid({ cards, tags, locale }: Pick<CardGridProps, "cards" | "tags" | "locale">) {
+  return (
+    <div id="cards-section" style={{ scrollMarginTop: "73px" }}>
+      <CardList cards={cards} tags={tags} locale={locale} lang={locale} selectedSort="name" searchParams={new URLSearchParams()} />
     </div>
   );
 }
@@ -314,9 +324,7 @@ function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort }: { i
   );
 }
 
-function CardList({ cards, tags, locale, selectedSort }: { cards: CreditCard[]; tags: string[]; locale: string; selectedSort: string }) {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
+function CardList({ cards, tags, locale, lang, selectedSort, searchParams }: { cards: CreditCard[]; tags: string[]; locale: string; lang: string; selectedSort: string; searchParams: Pick<URLSearchParams, "get"> }) {
   const [compareIds, setCompareIds] = useState<string[]>([]);
   const [expandedTiers, setExpandedTiers] = useState<Set<Tier>>(new Set());
 
@@ -324,8 +332,6 @@ function CardList({ cards, tags, locale, selectedSort }: { cards: CreditCard[]; 
   const selectedTag = searchParams.get("tag") || "";
   const selectedAf = searchParams.get("af") || "";
   const search = searchParams.get("search") || "";
-
-  const lang = pathname.split("/")[1] || "en";
 
   const toggleTier = useCallback((t: Tier) => {
     setExpandedTiers((prev) => {
@@ -439,7 +445,7 @@ function CardList({ cards, tags, locale, selectedSort }: { cards: CreditCard[]; 
                   });
                 if (inTier.length === 0) return null;
                 const expanded = expandedTiers.has(tier);
-                const visible = expanded ? inTier : inTier.slice(0, DEFAULT_PER_TIER);
+                const extraCardsId = `cards-${tier}-extra`;
                 return (
                   <section key={tier}>
                     <div className="flex items-baseline justify-between mb-3 px-1">
@@ -451,6 +457,9 @@ function CardList({ cards, tags, locale, selectedSort }: { cards: CreditCard[]; 
                       </h2>
                       {inTier.length > DEFAULT_PER_TIER && (
                         <button
+                          type="button"
+                          aria-expanded={expanded}
+                          aria-controls={extraCardsId}
                           onClick={() => toggleTier(tier)}
                           className="text-sm text-blue-600 hover:text-blue-800 hover:underline shrink-0"
                         >
@@ -461,8 +470,19 @@ function CardList({ cards, tags, locale, selectedSort }: { cards: CreditCard[]; 
                       )}
                     </div>
                     <div className="space-y-2">
-                      {visible.map(renderRow)}
+                      {inTier.slice(0, DEFAULT_PER_TIER).map(renderRow)}
                     </div>
+                    {/* Keep every row and its link in the initial HTML. Only
+                        collapse the viewport; inert prevents focus on clipped controls. */}
+                    {inTier.length > DEFAULT_PER_TIER && (
+                      <div
+                        id={extraCardsId}
+                        inert={!expanded}
+                        className={expanded ? "mt-2 space-y-2" : "max-h-0 overflow-hidden space-y-2"}
+                      >
+                        {inTier.slice(DEFAULT_PER_TIER).map(renderRow)}
+                      </div>
+                    )}
                   </section>
                 );
               })}
