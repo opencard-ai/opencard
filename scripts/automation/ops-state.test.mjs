@@ -19,7 +19,7 @@ function snapshot(d) {
   manifest.files.sort((a, b) => a.path.localeCompare(b.path));
   write(d, 'MANIFEST.json', JSON.stringify(manifest)); return manifest;
 }
-for (const job of ['offer', 'audit']) test(`owner matrix: ${job}`, () => {
+for (const job of ['offer', 'audit', 'gsc']) test(`owner matrix: ${job}`, () => {
   const base = { ownerDoc: { version: 1, [job]: { owner: 'github-actions', productionEnabled: true, epoch: 'test-1' } }, job, expectedEpoch: 'test-1', eventName: 'schedule', ref: 'refs/heads/main' };
   assert.equal(decideMode(base).mode, 'write');
   for (const eventName of ['pull_request', 'pull_request_target', undefined]) assert.equal(decideMode({ ...base, eventName }).mode, 'shadow');
@@ -149,7 +149,7 @@ test('injected git runner verifies state transformation, outputs, idempotency an
     if (argv[0] === 'rev-parse') return head;
     if (argv[0] === 'status') return '';
     if (argv[0] === 'fetch') throw new Error('synthetic unavailable fetch');
-    if (argv[0] === 'add') { assert.deepEqual(argv, ['add', '-A', 'offer-watch', 'audit', 'MANIFEST.json']); return ''; }
+    if (argv[0] === 'add') { assert.deepEqual(argv, ['add', '-A', 'offer-watch', 'audit', 'gsc', 'MANIFEST.json']); return ''; }
     if (argv[0] === 'commit') { assert.equal(env.GIT_COMMITTER_NAME, 'github-actions[bot]'); head = committed; return ''; }
     if (argv[0] === 'push') { assert.deepEqual(argv, ['push', 'origin', 'HEAD:refs/heads/ops-state']); if (failPush) throw new Error('synthetic non-ff https://user:token@example.invalid/repo http://other:secret@example.invalid/other'); return ''; }
     assert.fail(`unexpected git command ${argv}`);
@@ -399,7 +399,7 @@ for (const endpoint of ['base', 'tip']) for (const files of [undefined, null, {}
   assert.equal(concurrentChangeIsSafe(f.repo, 'offer', base, tip), false);
 });
 test('both commit-state ops-state checkouts fetch full history', () => {
-  for (const name of ['offer-watch-cloud', 'weekly-audit-cloud']) {
+  for (const name of ['offer-watch-cloud', 'weekly-audit-cloud', 'gsc-cloud']) {
     const workflow = fs.readFileSync(new URL(`../../.github/workflows/${name}.yml`, import.meta.url), 'utf8');
     const job = workflow.split('\n  commit-state:')[1].split(/\n  [\w-]+:/)[0];
     const checkouts = job.split(/\n      - /).filter(step => /uses: actions\/checkout@/.test(step) && /\n          ref: ops-state\n/.test(step));
@@ -407,4 +407,71 @@ test('both commit-state ops-state checkouts fetch full history', () => {
     assert.match(checkouts[0], /\n          path: ops-state\n/);
     assert.match(checkouts[0], /\n          fetch-depth: 0\n/);
   }
+});
+
+function gscIncoming(dir, weekly = false) {
+  for (const name of ['history.json', 'cohort-baseline.json', '2026-11-15-daily.json', '2026-11-15-daily.md', ...(weekly ? ['2026-11-15-weekly.json', '2026-11-15-weekly.md'] : [])]) write(dir, name, name.endsWith('.json') ? '{}' : 'synthetic report');
+}
+test('gsc first-run pull needs no prior history; later pull copies only persistent state', t => {
+  const d = temp(t), src = path.join(d, 'src'); snapshot(src);
+  const empty = path.join(d, 'empty'); pull({ src, job: 'gsc', out: empty });
+  assert.deepEqual(fs.readdirSync(empty), []);
+  const m = manifestAt(src);
+  for (const name of ['history.json', 'cohort-baseline.json', '2026-11-14-daily.json']) {
+    write(src, `gsc/${name}`, '{}'); m.files.push({ path: `gsc/${name}`, sha256: sha256('{}'), size: 2 });
+  }
+  write(src, 'gsc/unlisted.json', '{}'); write(src, 'MANIFEST.json', JSON.stringify(m));
+  const out = path.join(d, 'out'); pull({ src, job: 'gsc', out });
+  assert.deepEqual(fs.readdirSync(out).sort(), ['cohort-baseline.json', 'history.json']);
+  assert.throws(() => pull({ src, job: 'gsc', out }), /pristine/);
+});
+test('gsc incoming requires all daily and state files, paired optional weekly files, valid JSON and today names', t => {
+  const d = temp(t), dir = path.join(d, 'incoming');
+  const reset = () => { fs.rmSync(dir, { recursive: true, force: true }); gscIncoming(dir); };
+  reset(); assert.equal(incoming(dir, 'gsc', '2026-11-15').length, 4);
+  gscIncoming(dir, true); assert.equal(incoming(dir, 'gsc', '2026-11-15').length, 6);
+  for (const name of ['history.json', 'cohort-baseline.json', '2026-11-15-daily.json', '2026-11-15-daily.md']) {
+    reset(); fs.unlinkSync(path.join(dir, name)); assert.throws(() => incoming(dir, 'gsc', '2026-11-15'), /missing/);
+  }
+  for (const [name, bytes] of [['2026-11-14-weekly.md', 'synthetic'], ['2026-11-15-notes.md', 'synthetic'], ['history.json', '{'], ['2026-11-15-daily.json', '{']]) {
+    reset(); write(dir, name, bytes); assert.throws(() => incoming(dir, 'gsc', '2026-11-15'));
+  }
+  reset(); write(dir, '2026-11-15-weekly.json', '{}'); assert.throws(() => incoming(dir, 'gsc', '2026-11-15'), /incomplete/);
+  reset(); fs.unlinkSync(path.join(dir, 'history.json')); fs.symlinkSync(path.join(dir, 'cohort-baseline.json'), path.join(dir, 'history.json'));
+  assert.throws(() => incoming(dir, 'gsc', '2026-11-15'), /regular/);
+});
+test('gsc commit subject and single retry preserve both offer and audit writers', t => {
+  const f = repoFixture(t);
+  const offer = commitState(f.a, f.runner);
+  const audit = auditCommit(f, f.repo, '456', offer.commit_sha);
+  const repo = clone(f, 'gsc-clone'), from = path.join(f.d, 'gsc-incoming'); gscIncoming(from, true);
+  assert.equal(concurrentChangeIsSafe(repo, 'gsc', f.base, audit.commit_sha, f.runner), true);
+  const result = commitState({ ...f.a, repo, from, job: 'gsc', epoch: 'gsc-test' }, f.runner);
+  assert.equal(result.rebased, true);
+  assert.equal(gitRunner(repo, ['rev-parse', 'HEAD^']), audit.commit_sha);
+  assert.equal(gitRunner(repo, ['log', '-1', '--format=%s']), 'state(gsc): 2026-11-15 run 123 attempt 1');
+  const m = manifestAt(repo);
+  assert.equal(m.runs.gsc.rebased_onto, audit.commit_sha);
+  assert.equal(m.runs.offer.last_run_id, '123'); assert.equal(m.runs.audit.last_run_id, '456');
+  assert.equal(m.files.filter(f => f.path.startsWith('gsc/')).length, 6);
+});
+for (const mode of ['own-dir', 'own-run', 'wrong-label', 'cross-directory']) test(`gsc concurrent conflict ${mode} is unsafe`, t => {
+  const f = repoFixture(t);
+  const tip = concurrentCommit(f, repo => {
+    const m = manifestAt(repo);
+    if (mode === 'own-dir') write(repo, 'gsc/history.json', '{}');
+    if (mode === 'own-run') { m.runs.gsc = { last_run_id: '999' }; write(repo, 'MANIFEST.json', JSON.stringify(m)); }
+    if (mode === 'wrong-label') write(repo, 'offer-watch/new.md', 'synthetic');
+    if (mode === 'cross-directory') gitRunner(repo, ['mv', 'offer-watch/ledger.json', 'audit/moved.json']);
+  });
+  assert.equal(concurrentChangeIsSafe(f.repo, 'gsc', f.base, tip, f.runner), false);
+});
+test('offer safely retries after gsc state writer', t => {
+  const f = repoFixture(t), from = path.join(f.d, 'gsc-incoming'); gscIncoming(from);
+  const gsc = commitState({ ...f.a, from, job: 'gsc' }, f.runner);
+  const repo = clone(f, 'offer-clone');
+  const result = commitState({ ...f.a, repo }, f.runner);
+  assert.equal(result.rebased, true);
+  assert.equal(gitRunner(repo, ['rev-parse', 'HEAD^']), gsc.commit_sha);
+  assert.equal(manifestAt(repo).runs.gsc.last_run_id, '123');
 });

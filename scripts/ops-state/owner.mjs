@@ -1,11 +1,11 @@
 import fs from 'node:fs';
 import { pathToFileURL } from 'node:url';
-import { args, outputs } from './core.mjs';
+import { args, outputs, jobs } from './core.mjs';
 export function decideMode({ ownerDoc, job, expectedEpoch, eventName, ref } = {}) {
   let reason = 'ownership verified';
   if (typeof eventName !== 'string' || eventName.startsWith('pull_request')) reason = 'PR or missing event';
   else if (ref !== 'refs/heads/main') reason = 'not main';
-  else if (!['offer', 'audit'].includes(job)) reason = 'invalid job';
+  else if (!Object.hasOwn(jobs, job)) reason = 'invalid job';
   else if (!ownerDoc || ownerDoc.version !== 1) reason = 'missing or invalid owner document';
   else if (ownerDoc[job]?.owner !== 'github-actions') reason = 'cloud is not owner';
   else if (ownerDoc[job]?.productionEnabled !== true) reason = 'production disabled';

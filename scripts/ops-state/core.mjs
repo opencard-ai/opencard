@@ -1,6 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
+export const jobs = { offer: { dir: 'offer-watch', label: 'offer-watch' }, audit: { dir: 'audit', label: 'weekly-audit' }, gsc: { dir: 'gsc', label: 'gsc' } };
+export const gscFiles = ['history.json', 'cohort-baseline.json'];
+export const gscPattern = /^\d{4}-\d{2}-\d{2}-(daily|weekly)\.(json|md)$/;
 export const offerFiles = ['ledger.json', 'history.jsonl', 'daily-state.json'];
 export const auditPattern = /^\d{4}-\d{2}-\d{2}-(db-audit\.json|db-audit\.md|url-check\.json)$/;
 export const sha256 = b => createHash('sha256').update(b).digest('hex');
@@ -13,22 +16,26 @@ export function manifestAt(src) {
   if (!Array.isArray(manifest.files) || !manifest.files.length) throw new Error('manifest has no files');
   const seen = new Set();
   for (const f of manifest.files) {
-    if (!f || !/^(offer-watch\/[A-Za-z0-9._-]+|audit\/[A-Za-z0-9._-]+)$/.test(f.path) || ['.', '..'].includes(path.basename(f.path)) || seen.has(f.path)) throw new Error('bad or duplicate manifest path');
+    if (!f || !/^(offer-watch\/[A-Za-z0-9._-]+|audit\/[A-Za-z0-9._-]+|gsc\/[A-Za-z0-9._-]+)$/.test(f.path) || ['.', '..'].includes(path.basename(f.path)) || seen.has(f.path)) throw new Error('bad or duplicate manifest path');
+    if (f.path.startsWith('gsc/') && !gscFiles.includes(path.basename(f.path)) && !gscPattern.test(path.basename(f.path))) throw new Error('disallowed gsc manifest path');
     seen.add(f.path);
     directory(path.join(src, path.dirname(f.path)));
     const b = regular(path.join(src, f.path));
+    if (f.path.startsWith('gsc/') && f.path.endsWith('.json')) JSON.parse(b);
     if (sha256(b) !== f.sha256 || b.length !== f.size) throw new Error(`sha256/size mismatch: ${f.path}`);
   }
   return manifest;
 }
 export function incoming(src, job, today) {
   directory(src);
-  if (!['offer', 'audit'].includes(job) || !validDate(today)) throw new Error('invalid job/date');
+  if (!Object.hasOwn(jobs, job) || !validDate(today)) throw new Error('invalid job/date');
   const names = fs.readdirSync(src).sort();
   if (!names.length) throw new Error('no incoming state');
   if (job === 'offer' && offerFiles.some(f => !names.includes(f))) throw new Error('missing offer state');
+  if (job === 'gsc' && [...gscFiles, `${today}-daily.json`, `${today}-daily.md`].some(f => !names.includes(f))) throw new Error('missing gsc state');
+  if (job === 'gsc' && names.some(n => n.includes('-weekly.')) && ['json', 'md'].some(ext => !names.includes(`${today}-weekly.${ext}`))) throw new Error('incomplete weekly state');
   return names.map(name => {
-    if (!(job === 'offer' ? offerFiles.includes(name) : auditPattern.test(name) && name.slice(0, 10) === today)) throw new Error(`disallowed state name: ${name}`);
+    if (!(job === 'offer' ? offerFiles.includes(name) : job === 'gsc' ? gscFiles.includes(name) || gscPattern.test(name) && name.slice(0, 10) === today : auditPattern.test(name) && name.slice(0, 10) === today)) throw new Error(`disallowed state name: ${name}`);
     const bytes = regular(path.join(src, name));
     if (name.endsWith('.json')) JSON.parse(bytes);
     if (name.endsWith('.jsonl')) for (const line of bytes.toString().split('\n')) if (line.trim()) JSON.parse(line);

@@ -3,8 +3,9 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { execFileSync } from 'node:child_process';
+import { execFileSync, spawnSync } from 'node:child_process';
 import { sanitize } from './ops-notify-core.mjs';
+const execResult = (script, env) => spawnSync('bash', ['-c', script], { env, encoding: 'utf8', timeout: 5000 });
 const runScripts = block => [...block.matchAll(/^        run: \|\n((?:^          .*\n|^\n)*)/gm)].map(m => m[1].replace(/^          /gm, ''));
 const read = p => fs.readFileSync(new URL(`../../${p}`, import.meta.url), 'utf8');
 const owners = JSON.parse(read('ops/runner-owner.json'));
@@ -14,7 +15,7 @@ const pins = {
   'upload-artifact': 'ea165f8d65b6e75b540449e92b4886f43607fa02',
   'download-artifact': 'd3f86a106a0bac45b974a628896c90dbdf5c8093',
 };
-for (const [job, slug, cron] of [['offer', 'offer-watch', '39 19 * * *'], ['audit', 'weekly-audit', '47 18 * * 1']]) test(`${job} cloud ownership, workflow permissions and transport invariants`, () => {
+for (const [job, slug, cron] of [['offer', 'offer-watch', '39 19 * * *'], ['audit', 'weekly-audit', '47 18 * * 1'], ['gsc', 'gsc', '30 17 * * *']]) test(`${job} cloud ownership, workflow permissions and transport invariants`, () => {
   const w = read(`.github/workflows/${slug}-cloud.yml`);
   assert.deepEqual([...w.matchAll(/- cron: '([^']+)'/g)].map(m => m[1]), [cron]);
   assert.doesNotMatch(w, /^\s*timezone:/m); assert.match(w, /2027-03-14/); assert.match(w, /2027-11-07/);
@@ -59,13 +60,13 @@ for (const [job, slug, cron] of [['offer', 'offer-watch', '39 19 * * *'], ['audi
   assert.doesNotMatch(w, /--force|push -f|\+refs/);
   if (job === 'offer') { assert.match(w, /--no-publish/); assert.doesNotMatch(w, /--publish\b/); }
   const secrets = [...new Set([...w.matchAll(/secrets\.([A-Z_]+)/g)].map(m => m[1]))].sort();
-  assert.deepEqual(secrets, ['AGENTMAIL_API_KEY', 'AGENTMAIL_FROM_INBOX', 'OWNER_EMAIL']); assert.doesNotMatch(w, /secrets: inherit/);
-  for (const block of [jobs.notify, jobs['failure-notify']]) for (const secret of secrets) assert.ok(block.includes(`${secret}: ` + '$' + `{{ !startsWith(github.event_name, 'pull_request') && secrets.${secret} || '' }}`));
+  assert.deepEqual(secrets, ['AGENTMAIL_API_KEY', 'AGENTMAIL_FROM_INBOX', ...(job === 'gsc' ? ['GSC_SERVICE_ACCOUNT_JSON'] : []), 'OWNER_EMAIL']); assert.doesNotMatch(w, /secrets: inherit/);
+  for (const block of [jobs.notify, jobs['failure-notify']]) for (const secret of secrets.filter(s => s !== 'GSC_SERVICE_ACCOUNT_JSON')) assert.ok(block.includes(`${secret}: ` + '$' + `{{ !startsWith(github.event_name, 'pull_request') && secrets.${secret} || '' }}`));
   const send = jobs.notify.match(/^      send: (.*)$/m)[1];
   for (const gate of ["mode == 'write'", "needs.commit-state.outputs.committed == 'true'", "github.ref == 'refs/heads/main'", "!startsWith(github.event_name, 'pull_request')"]) assert.ok(send.includes(gate));
   assert.match(jobs.notify, /permissions:\n      contents: read/);
   assert.match(w, new RegExp(`${job.toUpperCase()}_EPOCH: ${owners[job].epoch}`));
-  assert.deepEqual(owners[job], { owner: 'github-actions', productionEnabled: true, epoch: `${job}-20261115-1` });
+  assert.deepEqual(owners[job], { owner: 'github-actions', productionEnabled: job !== 'gsc', epoch: job === 'gsc' ? 'gsc-20261121-1' : `${job}-20261115-1` });
   for (const m of w.matchAll(/uses: actions\/([^@\s]+)@([^\s]+)/g)) assert.equal(m[2], pins[m[1]], m[1]);
   for (const action of Object.keys(pins)) assert.ok(w.includes(`actions/${action}@${pins[action]}`));
   assert.match(jobs.run, /persist-credentials: false/);
@@ -79,7 +80,7 @@ for (const [job, slug, cron] of [['offer', 'offer-watch', '39 19 * * *'], ['audi
   assert.ok(jobs.verdict.includes('test "$DAILY_OK" = true'));
 });
 
-for (const slug of ['offer-watch', 'weekly-audit']) test(`${slug} fixed failure mail guards, content and producer attempt`, () => {
+for (const slug of ['offer-watch', 'weekly-audit', 'gsc']) test(`${slug} fixed failure mail guards, content and producer attempt`, () => {
   const w = read(`.github/workflows/${slug}-cloud.yml`);
   const summary = w.split('  failure-summary:\n')[1].split('  failure-notify:\n')[0];
   const notify = w.split('  failure-notify:\n')[1].split('  verdict:\n')[0];
@@ -115,7 +116,7 @@ for (const slug of ['offer-watch', 'weekly-audit']) test(`${slug} fixed failure 
   assert.doesNotMatch(notify, /continue-on-error/);
 });
 
-for (const slug of ['offer-watch', 'weekly-audit']) test(`${slug} fixed failure builder behavior`, () => {
+for (const slug of ['offer-watch', 'weekly-audit', 'gsc']) test(`${slug} fixed failure builder behavior`, () => {
   // Execute only the isolated fixed-text builder, never workflow computation or network commands.
   const summary = read(`.github/workflows/${slug}-cloud.yml`).split('  failure-summary:\n')[1].split('  failure-notify:\n')[0];
   const scripts = runScripts(summary);
@@ -152,7 +153,7 @@ test('notification previews distinguish normal summaries from failure summaries'
   assert.ok(read('.github/workflows/ops-notify.yml').includes("name: ops-notify-preview-${{ github.run_id }}-${{ github.run_attempt }}-${{ inputs.summary_file || 'summary.txt' }}"));
 });
 
-for (const slug of ['offer-watch', 'weekly-audit']) test(`${slug} every verdict failure triggers the failure condition`, () => {
+for (const slug of ['offer-watch', 'weekly-audit', 'gsc']) test(`${slug} every verdict failure triggers the failure condition`, () => {
   const w = read(`.github/workflows/${slug}-cloud.yml`);
   const summary = w.split('  failure-summary:\n')[1].split('  failure-notify:\n')[0];
   const [prefix, condition] = summary.match(/^    if: (.*)$/m)[1].split("github.run_attempt == '1' && ");
@@ -181,4 +182,58 @@ test('runner ownership preserves news and compact JSON format', () => {
 
 test('card validation runs automation tests immediately after unit tests', () => {
   assert.match(read('.github/workflows/validate-cards.yml'), /- name: Unit tests\n        run: npm test\n\n      - name: Automation tests\n        run: npm run test:automation\n/);
+});
+
+test('gsc live compute gates, weekly artifacts, alert exit handling and credential-free PR path', () => {
+  const w = read('.github/workflows/gsc-cloud.yml');
+  const block = w.split('      - name: Compute daily summary\n')[1].split('      - name: Assert read-only checkout')[0];
+  assert.ok(block.includes("GSC_SERVICE_ACCOUNT_JSON: ${{ github.ref == 'refs/heads/main' && !startsWith(github.event_name, 'pull_request') && secrets.GSC_SERVICE_ACCOUNT_JSON || '' }}"));
+  assert.equal([...w.matchAll(/secrets\.GSC_SERVICE_ACCOUNT_JSON/g)].length, 1);
+  assert.match(w, /force_weekly:\n[^]*?type: boolean/);
+  assert.match(block, /TZ=America\/Los_Angeles date \+%u/);
+  assert.match(w, /steps\.daily\.outcome == 'success' && !startsWith\(github.event_name, 'pull_request'\)/);
+  assert.doesNotMatch(w, /Discord|set -x|GSC_CLIENT_SECRET:|\.gsc-token\.json/);
+  const script = runScripts(block)[0];
+  assert.ok(script);
+  for (const scenario of ['pr', 'empty', 'clean', 'alert', 'failed', 'bad-exit', 'weekly', 'monday', 'weekly-missing']) {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'gsc-workflow-'));
+    try {
+      fs.mkdirSync(path.join(dir, 'bin')); fs.mkdirSync(path.join(dir, 'out')); fs.mkdirSync(path.join(dir, 'gsc'));
+      fs.writeFileSync(path.join(dir, 'bin/date'), '#!/bin/bash\n[[ "$TZ" == America/Los_Angeles && "$1" == +%u ]] || exit 1\nif [[ "$FIXTURE_SCENARIO" == monday ]]; then echo 1; else echo 7; fi\n', { mode: 0o755 });
+      // Only substitute the report/test invocation; run the workflow's JSON validation verbatim.
+      fs.writeFileSync(path.join(dir, 'bin/node'), `#!${process.execPath}
+const args = process.argv.slice(2);
+if (args.includes('--input-type=module')) {
+  const { spawnSync } = require('node:child_process');
+  const r = spawnSync(${JSON.stringify(process.execPath)}, args, { stdio: 'inherit' }); process.exit(r.status ?? 1);
+}
+const fs = require('node:fs');
+fs.writeFileSync(process.env.RUNNER_TEMP + '/invoked.json', JSON.stringify(args));
+if (args.includes('--test')) process.exit(0);
+const dir = process.env.RUNNER_TEMP + '/gsc/' + process.env.TODAY;
+const scenario = process.env.FIXTURE_SCENARIO;
+if (scenario === 'failed') process.exit(1);
+const alerts = scenario === 'alert' ? ['⚠️ synthetic alert'] : [];
+fs.writeFileSync(dir + '-daily.json', JSON.stringify({ alerts }));
+fs.writeFileSync(dir + '-daily.md', 'synthetic report');
+if (args.includes('--weekly') && scenario !== 'weekly-missing') {
+  fs.writeFileSync(dir + '-weekly.md', 'synthetic weekly');
+  fs.writeFileSync(dir + '-weekly.json', '{}');
+}
+console.log(alerts.length ? alerts[0] : 'synthetic report');
+process.exit(scenario === 'bad-exit' ? 2 : alerts.length ? 1 : 0);
+`, { mode: 0o755 });
+      const result = execResult(script, { ...process.env, PATH: `${dir}/bin:${process.env.PATH}`, RUNNER_TEMP: dir, GITHUB_EVENT_NAME: scenario === 'pr' ? 'pull_request' : 'workflow_dispatch', GITHUB_REF: 'refs/heads/main', TODAY: '2026-11-15', FORCE_WEEKLY: String(['weekly', 'weekly-missing'].includes(scenario)), GSC_SERVICE_ACCOUNT_JSON: ['empty', 'pr'].includes(scenario) ? '' : '{}', FIXTURE_SCENARIO: scenario });
+      assert.equal(result.status === 0, !['empty', 'failed', 'bad-exit', 'weekly-missing'].includes(scenario), `${scenario}: ${result.stderr}`);
+      if (scenario === 'empty') { assert.match(result.stderr, /GSC_SERVICE_ACCOUNT_JSON is required/); assert.equal(fs.existsSync(path.join(dir, 'invoked.json')), false); }
+      if (scenario === 'pr') {
+        assert.ok(JSON.parse(fs.readFileSync(path.join(dir, 'invoked.json'))).includes('--test'));
+        assert.deepEqual(fs.readdirSync(path.join(dir, 'gsc')), []);
+      }
+      if (['pr', 'clean', 'weekly', 'monday'].includes(scenario)) assert.equal(fs.readFileSync(path.join(dir, 'out/summary.txt'), 'utf8'), 'NO_REPLY\n');
+      if (scenario === 'clean') assert.equal(fs.existsSync(path.join(dir, 'out/2026-11-15-weekly.md')), false);
+      if (scenario === 'alert') assert.match(fs.readFileSync(path.join(dir, 'out/summary.txt'), 'utf8'), /⚠️ synthetic alert/);
+      if (['weekly', 'monday'].includes(scenario)) assert.equal(fs.readFileSync(path.join(dir, 'out/2026-11-15-weekly.md'), 'utf8'), 'synthetic weekly');
+    } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+  }
 });

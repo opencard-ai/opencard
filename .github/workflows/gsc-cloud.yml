@@ -1,0 +1,351 @@
+name: gsc cloud
+on:
+  schedule:
+    # Explicit UTC: GitHub ignores timezone: in this repo (see news-cloud-publish.yml).
+    # Schedules only fire from the default branch; this takes effect only when merged.
+    # 09:30 PST; from 2027-03-14 this drifts to 10:30 PDT until 2027-11-07.
+    # Mac job 6b894994 remains at 09:30 PT; keep it enabled through verified cutover.
+    - cron: '30 17 * * *'
+  workflow_dispatch:
+    inputs:
+      force_shadow:
+        description: 'Force read-only shadow mode'
+        type: boolean
+        default: false
+      force_weekly:
+        description: 'Also emit a finalized seven-day weekly summary'
+        type: boolean
+        default: false
+  pull_request:
+    paths:
+      - .github/workflows/gsc-cloud.yml
+      - scripts/ops-state/**
+      - scripts/gsc-*.ts
+      - scripts/ops-shadow/**
+      - ops/runner-owner.json
+      - scripts/automation/ops-state*.mjs
+permissions:
+  contents: read
+concurrency:
+  group: gsc-cloud-${{ github.ref }}
+  cancel-in-progress: false
+env:
+  GSC_EPOCH: gsc-20261121-1
+jobs:
+  run:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    permissions:
+      contents: read
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    outputs:
+      attempt: ${{ github.run_attempt }}
+      mode: ${{ steps.mode.outputs.mode }}
+      today: ${{ steps.mode.outputs.today }}
+      ops_state_sha: ${{ steps.mode.outputs.ops_state_sha }}
+      daily_ok: ${{ steps.daily.outcome == 'success' }}
+      state_ready: ${{ steps.stage.outcome == 'success' }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Decide mode
+        id: mode
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FORCE_SHADOW: ${{ inputs.force_shadow == true }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/out"
+          TODAY=$(TZ=America/Los_Angeles date +%F)
+          echo "today=$TODAY" >> "$GITHUB_OUTPUT"
+          if [[ "$GITHUB_EVENT_NAME" == pull_request* || "$FORCE_SHADOW" == true ]]; then
+            echo 'mode=shadow' >> "$GITHUB_OUTPUT"
+            echo 'reason=PR or forced shadow; checkout owner doc is not authoritative' >> "$GITHUB_OUTPUT"
+          else
+            # Failure or invalid JSON fails closed to shadow in owner.mjs.
+            gh api "repos/$GITHUB_REPOSITORY/contents/ops/runner-owner.json?ref=main" --jq '.content' \
+              | base64 --decode > "$RUNNER_TEMP/owner.json" || printf '{}' > "$RUNNER_TEMP/owner.json"
+            node scripts/ops-state/owner.mjs --file "$RUNNER_TEMP/owner.json" --job gsc \
+              --epoch "$GSC_EPOCH" --event "$GITHUB_EVENT_NAME" --ref "$GITHUB_REF"
+          fi
+          if git config --get-regexp '^http\..*\.extraheader' >/dev/null; then
+            echo 'persisted credentials; refusing' >&2; exit 1
+          fi
+          git remote set-url --push origin no-push://ops-state-reader
+          sha=$(git ls-remote origin refs/heads/ops-state | cut -f1)
+          [[ "$sha" =~ ^[0-9a-f]{40}$ ]] || { echo 'missing ops-state head' >&2; exit 2; }
+          echo "ops_state_sha=$sha" >> "$GITHUB_OUTPUT"
+          echo "$sha" > "$RUNNER_TEMP/ops-state-head-before"
+      - name: Load verified state anonymously
+        id: load
+        env:
+          STATE_SHA: ${{ steps.mode.outputs.ops_state_sha }}
+          TODAY: ${{ steps.mode.outputs.today }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin "$STATE_SHA"
+          mkdir -p "$RUNNER_TEMP/ops-state"
+          git archive "$STATE_SHA" | tar -x -C "$RUNNER_TEMP/ops-state"
+          node scripts/ops-state/pull.mjs --src "$RUNNER_TEMP/ops-state" --job gsc --out "$RUNNER_TEMP/gsc" --today "$TODAY"
+          cp -R "$RUNNER_TEMP/gsc" "$RUNNER_TEMP/gsc-before"
+      - name: Compute daily summary
+        id: daily
+        continue-on-error: true
+        shell: bash
+        env:
+          TODAY: ${{ steps.mode.outputs.today }}
+          FORCE_WEEKLY: ${{ inputs.force_weekly == true }}
+          GSC_STATE_DIR: ${{ runner.temp }}/gsc
+          GSC_SERVICE_ACCOUNT_JSON: ${{ github.ref == 'refs/heads/main' && !startsWith(github.event_name, 'pull_request') && secrets.GSC_SERVICE_ACCOUNT_JSON || '' }}
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_EVENT_NAME" == pull_request* ]]; then
+            node --import tsx --test scripts/gsc-daily.test.ts scripts/gsc-cohorts.test.ts scripts/gsc-auth.test.ts
+            printf 'NO_REPLY\n' > "$RUNNER_TEMP/out/summary.txt"
+            exit 0
+          fi
+          [[ "$GITHUB_REF" == refs/heads/main ]] || { echo 'live GSC runs require main' >&2; exit 1; }
+          [[ -n "$GSC_SERVICE_ACCOUNT_JSON" ]] || { echo 'GSC_SERVICE_ACCOUNT_JSON is required for scheduled/dispatch runs on main' >&2; exit 1; }
+          weekly=()
+          if [[ "$(TZ=America/Los_Angeles date +%u)" == 1 || "$FORCE_WEEKLY" == true ]]; then weekly=(--weekly); fi
+          set +e
+          node --import tsx scripts/gsc-daily.ts --out-dir "$RUNNER_TEMP/gsc" "${weekly[@]}" > "$RUNNER_TEMP/out/report.txt"
+          code=$?
+          set -e
+          # Exit 1 is also the legacy alert signal. Accept only a completed alert report.
+          EXPECT_WEEKLY=${#weekly[@]} GSC_EXIT=$code node --input-type=module -e '
+            import fs from "node:fs";
+            const root = process.env.RUNNER_TEMP;
+            const r = JSON.parse(fs.readFileSync(`${root}/gsc/${process.env.TODAY}-daily.json`, "utf8"));
+            const code = Number(process.env.GSC_EXIT);
+            if (code !== 0 && !(code === 1 && r.alerts?.length > 0)) process.exit(1);
+            if (process.env.EXPECT_WEEKLY !== "0") for (const ext of ["md", "json"]) {
+              if (!fs.existsSync(`${root}/gsc/${process.env.TODAY}-weekly.${ext}`)) process.exit(1);
+            }
+            fs.copyFileSync(`${root}/gsc/${process.env.TODAY}-daily.md`, `${root}/out/${process.env.TODAY}-daily.md`);
+            const weekly = `${root}/gsc/${process.env.TODAY}-weekly.md`;
+            if (fs.existsSync(weekly)) fs.copyFileSync(weekly, `${root}/out/${process.env.TODAY}-weekly.md`);
+            fs.writeFileSync(`${root}/out/summary.txt`, r.alerts.length ? fs.readFileSync(`${root}/out/report.txt`) : "NO_REPLY\n");
+          '
+      - name: Assert read-only checkout
+        if: always()
+        run: bash scripts/ops-shadow/assert-readonly.sh
+      - name: Stage validated state
+        id: stage
+        # Failed computation never stages state; failure-summary handles owner notification.
+        if: always() && steps.load.outcome == 'success' && steps.daily.outcome == 'success' && !startsWith(github.event_name, 'pull_request')
+        continue-on-error: true
+        env:
+          TODAY: ${{ steps.mode.outputs.today }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/candidate"
+          cp -P "$RUNNER_TEMP/gsc/$TODAY"-* "$RUNNER_TEMP/gsc/history.json" "$RUNNER_TEMP/gsc/cohort-baseline.json" "$RUNNER_TEMP/candidate/"
+          node scripts/ops-state/stage.mjs --from "$RUNNER_TEMP/candidate" --job gsc --today "$TODAY" --out "$RUNNER_TEMP/state-out"
+      - name: Preserve summary and logs
+        if: always()
+        env:
+          DAILY_OK: ${{ steps.daily.outcome == 'success' }}
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/out"
+          if [ ! -s "$RUNNER_TEMP/out/summary.txt" ]; then
+            printf 'gsc computation produced no summary; daily_ok=%s; inspect run logs.\n' "$DAILY_OK" > "$RUNNER_TEMP/out/summary.txt"
+          fi
+          cat "$RUNNER_TEMP/out/summary.txt" >> "$GITHUB_STEP_SUMMARY"
+          if [[ -f "$RUNNER_TEMP/out/report.txt" ]]; then cat "$RUNNER_TEMP/out/report.txt" >> "$GITHUB_STEP_SUMMARY"; fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: gsc-summary-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/out/summary.txt
+          retention-days: 30
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: gsc-state-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/state-out/
+            ${{ runner.temp }}/out/
+          retention-days: 30
+  commit-state:
+    needs: run
+    if: (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) && needs.run.outputs.mode == 'write' && needs.run.outputs.daily_ok == 'true' && needs.run.outputs.state_ready == 'true' && github.ref == 'refs/heads/main' && !startsWith(github.event_name, 'pull_request')
+    permissions:
+      contents: write
+    concurrency:
+      group: ops-state-write
+      cancel-in-progress: false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      committed: ${{ steps.commit.outputs.committed }}
+      commit_sha: ${{ steps.commit.outputs.commit_sha }}
+    steps:
+      # This job runs scripts from main only, never PR code.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          path: src
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ops-state
+          path: ops-state
+          fetch-depth: 0
+          # Required only here for the fast-forward state push using the job token.
+          persist-credentials: true
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: gsc-state-${{ github.run_id }}-${{ needs.run.outputs.attempt }}
+          path: incoming
+      - name: Commit and fast-forward push state
+        id: commit
+        env:
+          TODAY: ${{ needs.run.outputs.today }}
+          BASE_SHA: ${{ needs.run.outputs.ops_state_sha }}
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Recheck main ownership immediately before writing; rollback can revoke write mode.
+          gh api "repos/$GITHUB_REPOSITORY/contents/ops/runner-owner.json?ref=main" --jq '.content' \
+            | base64 --decode > "$RUNNER_TEMP/commit-owner.json" || printf '{}' > "$RUNNER_TEMP/commit-owner.json"
+          mode=$(node src/scripts/ops-state/owner.mjs --file "$RUNNER_TEMP/commit-owner.json" --job gsc \
+            --epoch "$GSC_EPOCH" --event "$GITHUB_EVENT_NAME" --ref "$GITHUB_REF")
+          [[ "$mode" == write ]] || { echo 'ownership no longer permits write; refusing state commit' >&2; exit 1; }
+          node src/scripts/ops-state/commit.mjs --repo ops-state --job gsc --from incoming/state-out \
+            --run-id "$GITHUB_RUN_ID" --attempt "$GITHUB_RUN_ATTEMPT" --pt-date "$TODAY" --epoch "$GSC_EPOCH" --base-sha "$BASE_SHA"
+  notify:
+    needs: [run, commit-state]
+    if: always() && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) && needs.run.result == 'success' && (needs.commit-state.result == 'success' || needs.commit-state.result == 'skipped')
+    permissions:
+      contents: read
+    uses: ./.github/workflows/ops-notify.yml
+    with:
+      job: gsc
+      pt_date: ${{ needs.run.outputs.today }}
+      summary_artifact: gsc-summary-${{ github.run_id }}-${{ needs.run.outputs.attempt }}
+      summary_file: summary.txt
+      # Failure mail is handled separately in shadow and write mode.
+      # ops-notify also suppresses NO_REPLY. Only a successful new commit permits mail.
+      send: ${{ needs.run.outputs.mode == 'write' && needs.commit-state.outputs.committed == 'true' && github.ref == 'refs/heads/main' && !startsWith(github.event_name, 'pull_request') }}
+    secrets:
+      AGENTMAIL_API_KEY: ${{ !startsWith(github.event_name, 'pull_request') && secrets.AGENTMAIL_API_KEY || '' }}
+      AGENTMAIL_FROM_INBOX: ${{ !startsWith(github.event_name, 'pull_request') && secrets.AGENTMAIL_FROM_INBOX || '' }}
+      OWNER_EMAIL: ${{ !startsWith(github.event_name, 'pull_request') && secrets.OWNER_EMAIL || '' }}
+  failure-summary:
+    needs: [run, commit-state, notify]
+    if: always() && github.ref == 'refs/heads/main' && !startsWith(github.event_name, 'pull_request') && github.run_attempt == '1' && (needs.run.result != 'success' || needs.run.outputs.daily_ok != 'true' || needs.run.outputs.state_ready != 'true' || (needs.commit-state.result != 'success' && needs.commit-state.result != 'skipped') || needs.notify.result != 'success')
+    permissions:
+      contents: read
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      pt_date: ${{ steps.summary.outputs.pt_date }}
+      attempt: ${{ steps.summary.outputs.attempt }}
+    steps:
+      - name: Mark failed computation in a successful run job
+        if: needs.run.result == 'success' && needs.run.outputs.daily_ok != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          touch "$RUNNER_TEMP/failure-compute-stage"
+      - name: Build fixed failure summary
+        id: summary
+        env:
+          RUN_RESULT: ${{ needs.run.result }}
+          DAILY_OK: ${{ needs.run.outputs.daily_ok }}
+          STATE_READY: ${{ needs.run.outputs.state_ready }}
+          COMMIT_RESULT: ${{ needs.commit-state.result }}
+          NOTIFY_RESULT: ${{ needs.notify.result }}
+          MODE: ${{ needs.run.outputs.mode }}
+          TODAY: ${{ needs.run.outputs.today }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$MODE" =~ ^(shadow|write)$ ]] || MODE=unknown
+          if [[ -z "$TODAY" ]]; then TODAY=$(TZ=America/Los_Angeles date +%F); fi
+          [[ "$TODAY" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || TODAY=unknown
+          PT_DATE=$TODAY
+          if [[ "$PT_DATE" == unknown ]]; then PT_DATE=$(TZ=America/Los_Angeles date +%F); fi
+          [[ "$DAILY_OK" =~ ^(true|false)$ ]] || DAILY_OK=unknown
+          [[ "$STATE_READY" =~ ^(true|false)$ ]] || STATE_READY=unknown
+          stages=()
+          results=("$RUN_RESULT" "$COMMIT_RESULT" "$NOTIFY_RESULT")
+          names=(run commit-state notify)
+          for i in 0 1 2; do
+            result=${results[$i]}
+            [[ "$result" =~ ^(success|failure|cancelled|skipped)$ ]] || result=unknown
+            if [[ "$result" == failure || "$result" == cancelled || ( "$i" == 0 && "$result" == skipped ) ]]; then
+              stages+=("${names[$i]}")
+            fi
+          done
+          if [[ -f "$RUNNER_TEMP/failure-compute-stage" ]]; then stages+=("run (compute step)"); fi
+          if [[ "$RUN_RESULT" == success && "$DAILY_OK" == true && "$STATE_READY" != true ]]; then stages+=("run (stage step)"); fi
+          stage_list=unknown
+          if (( ${#stages[@]} )); then
+            stage_list=$(printf '%s, ' "${stages[@]}")
+            stage_list=${stage_list%, }
+          fi
+          mkdir -p "$RUNNER_TEMP/failure-summary"
+          printf 'FAILED: gsc cloud run (mode %s), PT %s.\nFailed stage(s): %s.\nSee the run link for details.\n' \
+            "$MODE" "$TODAY" "$stage_list" > "$RUNNER_TEMP/failure-summary/failure.txt"
+          printf 'pt_date=%s\nattempt=%s\n' "$PT_DATE" "$GITHUB_RUN_ATTEMPT" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: gsc-failure-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/failure-summary/failure.txt
+          if-no-files-found: error
+          retention-days: 30
+  failure-notify:
+    # Guard here too: a failed-job rerun can reuse a successful failure-summary from attempt 1.
+    needs: failure-summary
+    if: always() && needs.failure-summary.result == 'success' && github.ref == 'refs/heads/main' && !startsWith(github.event_name, 'pull_request') && github.run_attempt == '1'
+    permissions:
+      contents: read
+    uses: ./.github/workflows/ops-notify.yml
+    with:
+      job: gsc
+      pt_date: ${{ needs.failure-summary.outputs.pt_date }}
+      summary_artifact: gsc-failure-${{ github.run_id }}-${{ needs.failure-summary.outputs.attempt }}
+      summary_file: failure.txt
+      kind: failure
+      send: ${{ github.ref == 'refs/heads/main' && !startsWith(github.event_name, 'pull_request') }}
+    secrets:
+      AGENTMAIL_API_KEY: ${{ !startsWith(github.event_name, 'pull_request') && secrets.AGENTMAIL_API_KEY || '' }}
+      AGENTMAIL_FROM_INBOX: ${{ !startsWith(github.event_name, 'pull_request') && secrets.AGENTMAIL_FROM_INBOX || '' }}
+      OWNER_EMAIL: ${{ !startsWith(github.event_name, 'pull_request') && secrets.OWNER_EMAIL || '' }}
+  verdict:
+    needs: [run, commit-state, notify]
+    if: always() && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+    permissions:
+      contents: read
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      DAILY_OK: ${{ needs.run.outputs.daily_ok }}
+      STATE_READY: ${{ needs.run.outputs.state_ready }}
+      RUN_RESULT: ${{ needs.run.result }}
+      COMMIT_RESULT: ${{ needs.commit-state.result }}
+      NOTIFY_RESULT: ${{ needs.notify.result }}
+    steps:
+      - name: Report final verdict after state and notification
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == pull_request* && "$RUN_RESULT" == success && "$DAILY_OK" == true && "$NOTIFY_RESULT" == success ]]; then exit 0; fi
+          test "$DAILY_OK" = true
+          test "$STATE_READY" = true
+          test "$RUN_RESULT" = success
+          [[ "$COMMIT_RESULT" == success || "$COMMIT_RESULT" == skipped ]]
+          test "$NOTIFY_RESULT" = success

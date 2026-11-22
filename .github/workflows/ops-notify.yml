@@ -12,7 +12,7 @@ on:
   workflow_call:
     inputs:
       job:
-        description: 'offer-watch, weekly-audit or ops-watchdog'
+        description: 'offer-watch, weekly-audit, gsc or ops-watchdog'
         type: string
         required: true
       kind:

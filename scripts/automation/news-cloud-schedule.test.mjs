@@ -176,7 +176,8 @@ test('cloud workflow: explicit UTC schedule, read-only token permissions, pinned
   assert.equal(owner.version, 1);
   assert.deepEqual(owner.news, { owner: 'github-actions', productionEnabled: true, epoch: 'news-20261113-1' });
   for (const job of ['offer', 'audit']) assert.deepEqual(owner[job], { owner: 'github-actions', productionEnabled: true, epoch: `${job}-20261115-1` });
-  assert.deepEqual(Object.keys(owner).sort(), ['audit', 'news', 'offer', 'version']);
+  assert.deepEqual(Object.keys(owner).sort(), ['audit', 'gsc', 'news', 'offer', 'version']);
+  assert.deepEqual(owner.gsc, { owner: 'github-actions', productionEnabled: false, epoch: 'gsc-20261121-1' });
   // GitHub ignored `timezone:` (run 43540487976 fired 01:25Z); cron is explicit UTC = 01:08/13:08 PST.
   assert.equal([...workflow.matchAll(/- cron: '([^']+)'/g)].map(m => m[1]).join(), '8 9,21 * * *');
   assert.doesNotMatch(workflow, /^\s+timezone:/m);
