@@ -3,13 +3,13 @@ import { Suspense } from "react";
 import { Star } from "lucide-react";
 import HeroButtons from "@/app/components/HeroButtons";
 import { getOpenCards, getAllIssuers, getAllTags } from "@/lib/cards";
-import CardGrid from "@/app/components/CardGrid";
+import CardGrid, { DefaultCardGrid } from "@/app/components/CardGrid";
 import NewsFeed from "@/app/components/NewsFeed";
 import { t, locales } from "@/lib/i18n";
 import { getLocalizedGuides } from "@/lib/guides";
 
-// Homepage pre-rendered at build time for stability
-// Card data is static; NewsFeed refreshes client-side
+// Homepage prerenders at build time; the default tier list supplies crawlable
+// card links while query-dependent browsing hydrates on the client.
 
 import type { Metadata } from "next";
 import { localizedAlternates } from "@/lib/seo";
@@ -105,9 +105,7 @@ export default async function HomePage({ params }: Props) {
 
       <Suspense
         fallback={
-          <div className="text-center py-12 text-slate-500">
-            {t("status.loading", locale)}
-          </div>
+          <DefaultCardGrid cards={cards} tags={tags} locale={locale} />
         }
       >
         <CardGrid cards={cards} issuers={issuers} tags={tags} locale={locale} />

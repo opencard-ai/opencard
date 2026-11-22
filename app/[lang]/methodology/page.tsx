@@ -1,4 +1,4 @@
-import { localizedAlternates } from "@/lib/seo";
+import { localizedAlternates, pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { locales } from "@/lib/i18n";
@@ -18,11 +18,11 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  return {
+  return pageMetadata(lang, "/methodology", {
     title: lang === "zh" ? "OpenCard 編輯方法與資料標準" : lang === "zh-cn" ? "OpenCard 编辑方法与资料标准" : lang === "es" ? "Metodología editorial y estándares de datos" : "OpenCard Editorial Methodology and Data Standards",
-    description: "How OpenCard sources, reviews, updates, values, and corrects US credit card information and editorial recommendations.",
+    description: lang === "zh" ? "了解 OpenCard 如何蒐集、審核、更新與修正美國信用卡資料，以及評估回饋價值與編輯推薦。" : lang === "zh-cn" ? "了解 OpenCard 如何收集、审核、更新和修正美国信用卡数据，以及评估奖励价值与编辑推荐。" : lang === "es" ? "Conoce cómo OpenCard obtiene, revisa, actualiza, valora y corrige la información sobre tarjetas de crédito de EE. UU. y sus recomendaciones editoriales." : "How OpenCard sources, reviews, updates, values, and corrects US credit card information and editorial recommendations.",
     alternates: localizedAlternates(lang, "/methodology"),
-  };
+  });
 }
 
 export default async function MethodologyPage({ params }: Props) {

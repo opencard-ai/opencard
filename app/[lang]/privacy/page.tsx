@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { localizedAlternates } from "@/lib/seo";
+import { localizedAlternates, pageMetadata } from "@/lib/seo";
 import { locales } from "@/lib/i18n";
 
 export const dynamic = "force-static";
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     "zh-cn": { title: "隐私政策 | OpenCard", description: "了解 OpenCard 如何处理已保存卡片、权益提醒、Cookie 与使用数据，以及如何提出隐私请求。" },
     es: { title: "Política de privacidad | OpenCard", description: "Consulta la política de OpenCard sobre tarjetas guardadas, recordatorios, cookies, tratamiento de datos y solicitudes de privacidad." },
   };
-  return { ...(copy[lang] ?? copy.en), alternates: localizedAlternates(lang, "/privacy") };
+  return pageMetadata(lang, "/privacy", { ...(copy[lang] ?? copy.en), alternates: localizedAlternates(lang, "/privacy") });
 }
 
 export default async function PrivacyPage({ params }: Props) {

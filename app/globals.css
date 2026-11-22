@@ -167,12 +167,42 @@ html.oc-consent-set [data-cookie-banner] {
   display: none;
 }
 
+/* Reserve space only while choices are visible, including without JavaScript.
+   ResizeObserver supplies the exact height after hydration and when expanded. */
+html:not(.oc-consent-set) body:has([data-cookie-banner]) {
+  padding-bottom: var(--oc-consent-height, 120px);
+  --card-cookie-height: var(--oc-consent-height, 120px);
+}
+html:not(.oc-consent-set) body:has([data-cookie-banner]) [data-floating-buttons] {
+  bottom: calc(var(--oc-consent-height, 120px) + 1.5rem);
+  transition: none;
+}
+
+html:not(.oc-consent-set) body:has([data-cookie-banner]) [data-toast-viewport] {
+  bottom: calc(var(--oc-consent-height, 120px) + 1rem);
+}
+
+/* Separate selectors keep the hydrated fallback working without :has support. */
+html.oc-consent-open body {
+  padding-bottom: var(--oc-consent-height, 120px);
+  --card-cookie-height: var(--oc-consent-height, 120px);
+}
+html.oc-consent-open [data-floating-buttons] {
+  bottom: calc(var(--oc-consent-height, 120px) + 1.5rem);
+  transition: none;
+}
+html.oc-consent-open [data-toast-viewport] {
+  bottom: calc(var(--oc-consent-height, 120px) + 1rem);
+}
+
 @media (max-width: 639px) {
-  /* Measured bar heights already include their safe-area padding. */
-  body:has([data-mobile-card-cta]) {
+  /* Match the consent selectors' specificity so both bars reserve space.
+     Measured bar heights already include their safe-area padding. */
+  html:root body:has([data-mobile-card-cta]) {
     padding-bottom: calc(var(--card-cta-height, calc(68px + env(safe-area-inset-bottom))) + var(--card-cookie-height, 0px));
   }
-  body:has([data-mobile-card-cta]) [data-floating-buttons] {
+  html:root body:has([data-mobile-card-cta]) [data-floating-buttons],
+  html:root body:has([data-mobile-card-cta]) [data-toast-viewport] {
     bottom: calc(var(--card-cta-height, 68px) + var(--card-cookie-height, 0px) + 1rem);
   }
   body:has([data-mobile-card-cta]) :is(a, button, input, select, textarea, [tabindex]) {

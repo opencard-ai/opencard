@@ -5,7 +5,7 @@
  * validate the MDX setup and AdSense compatibility. Additional guides are
  * registered in lib/guides.ts.
  */
-import { localizedAlternates } from "@/lib/seo";
+import { localizedAlternates, pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getLocalizedGuides } from "@/lib/guides";
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : ("en" as Locale);
   const title = `${t("guides.kicker", safeLang)} — OpenCard`;
   const description = t("guides.description", safeLang);
-  return {
+  return pageMetadata(lang, "/guides", {
     title,
     description,
     alternates: localizedAlternates(lang, "/guides"),
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       type: "website",
     },
-  };
+  });
 }
 
 export default async function GuidesIndex({ params }: Props) {

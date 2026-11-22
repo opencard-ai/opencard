@@ -1,4 +1,4 @@
-import { localizedAlternates } from "@/lib/seo";
+import { localizedAlternates, pageMetadata } from "@/lib/seo";
 import { getOpenCards } from "@/lib/cards";
 import { toOfferListCard } from "@/lib/client-card-fields";
 import ElevatedOffersList from "@/app/components/ElevatedOffersList";
@@ -21,16 +21,18 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const titles: Record<string, string> = {
+    "zh-cn": "高额开卡奖励 — OpenCard",
     en: "Top welcome offers — OpenCard",
     zh: "高額開卡禮 — OpenCard",
     es: "Mejores bonos de bienvenida — OpenCard",
   };
   const descs: Record<string, string> = {
+    "zh-cn": "按估算价值排序，查看目前市场上价值最高的开卡奖励。",
     en: "Highest-value sign-up bonuses on the market right now, ranked by estimated value.",
     zh: "目前市場上最有價值的開卡獎勵,按估值排序。",
     es: "Los bonos de inscripción de mayor valor disponibles ahora.",
   };
-  return { title: titles[lang] || titles.en, description: descs[lang] || descs.en, alternates: localizedAlternates(lang, "/elevated-offers") };
+  return pageMetadata(lang, "/elevated-offers", { title: titles[lang] || titles.en, description: descs[lang] || descs.en, alternates: localizedAlternates(lang, "/elevated-offers") });
 }
 
 export default async function ElevatedOffersPage({ params }: Props) {

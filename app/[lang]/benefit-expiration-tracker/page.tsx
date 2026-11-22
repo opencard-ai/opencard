@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BenefitExpirationTracker from "@/app/components/BenefitExpirationTracker";
-import { localizedAlternates } from "@/lib/seo";
+import { localizedAlternates, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  return {
-    title: "Credit Card Benefit Expiration Tracker — OpenCard",
-    description: "Track credit-card credits, certificates, passes, and their expiration dates privately in your browser.",
+  return pageMetadata(lang, "/benefit-expiration-tracker", {
+    title: lang === "zh" ? "信用卡福利到期追蹤工具 — OpenCard" : lang === "zh-cn" ? "信用卡权益到期追踪工具 — OpenCard" : lang === "es" ? "Seguimiento del vencimiento de beneficios — OpenCard" : "Credit Card Benefit Expiration Tracker — OpenCard",
+    description: lang === "zh" ? "在瀏覽器中私下記錄信用卡抵用額、住宿券、通行證及到期日。" : lang === "zh-cn" ? "在浏览器中私密记录信用卡抵扣额度、住宿券、通行证及到期日。" : lang === "es" ? "Lleva un registro privado en tu navegador de los créditos, certificados, pases y fechas de vencimiento de tus tarjetas." : "Track credit-card credits, certificates, passes, and their expiration dates privately in your browser.",
     robots: lang === "en" ? { index: true, follow: true } : { index: false, follow: true },
     // English-only page: self canonical + en/x-default hreflang (matches card-page pattern).
     alternates: localizedAlternates(lang, "/benefit-expiration-tracker", ["en"]),
-  };
+  });
 }
 
 export default async function BenefitExpirationTrackerPage({ params }: { params: Promise<{ lang: string }> }) {

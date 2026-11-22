@@ -10,22 +10,17 @@ export default function MobileCardCTA({ target, label, disclosureLabel }: {
 }) {
   const bar = useRef<HTMLDivElement>(null);
   useEffect(() => {
+    // CookieConsentBanner owns the shared consent height, including SSR CSS fallback.
     const root = document.documentElement;
-    const banner = document.querySelector<HTMLElement>("[data-cookie-banner]");
     const update = () => {
       root.style.setProperty("--card-cta-height", `${bar.current?.getBoundingClientRect().height ?? 0}px`);
-      root.style.setProperty("--card-cookie-height", `${banner?.isConnected ? banner.getBoundingClientRect().height : 0}px`);
     };
     const observer = new ResizeObserver(update);
     if (bar.current) observer.observe(bar.current);
-    if (banner) observer.observe(banner);
     update();
-    window.addEventListener("opencard-cookie-consent", update);
     return () => {
       observer.disconnect();
-      window.removeEventListener("opencard-cookie-consent", update);
       root.style.removeProperty("--card-cta-height");
-      root.style.removeProperty("--card-cookie-height");
     };
   }, []);
 

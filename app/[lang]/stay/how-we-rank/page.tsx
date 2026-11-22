@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { localizedAlternates } from "@/lib/seo";
+import { localizedAlternates, pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { locales, type Locale } from "@/lib/i18n";
 import { getStayCopy } from "@/lib/cardstay/copy";
@@ -15,11 +15,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const copy = getStayCopy(lang as Locale);
-  return {
+  return pageMetadata(lang, "/stay/how-we-rank", {
     title: `CardStay — ${copy.beta} — ${copy.howWeRankTitle}`,
     description: copy.howWeRankPoints[0],
     alternates: localizedAlternates(lang, "/stay/how-we-rank", []),
-  };
+  });
 }
 
 export default async function HowWeRankPage({ params }: Props) {
