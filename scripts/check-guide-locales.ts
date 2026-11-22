@@ -1,6 +1,7 @@
 #!/usr/bin/env tsx
 import { existsSync, readdirSync, readFileSync } from "fs";
 import path from "path";
+import { getGuide, hasLocalizedGuide } from "../lib/guides";
 import guideLocalizationData from "../data/guide-localizations.json";
 
 const slugs = Object.keys(guideLocalizationData);
@@ -11,6 +12,14 @@ const legacyGeneratedSlugs = new Set([
   "credit-card-points-valuation-guide",
   "premium-card-overlap-hidden-costs",
 ]);
+// Reviewed English fallbacks for the eight links whose translations do not exist.
+const englishFallbacks: Record<string, readonly string[]> = {
+  "zh/credit-card-application-sequencing": ["chase-5-24-rule", "welcome-offer-strategy"],
+  "zh-cn/credit-card-application-sequencing": ["chase-5-24-rule", "welcome-offer-strategy"],
+  "es/credit-card-application-sequencing": ["chase-5-24-rule", "welcome-offer-strategy"],
+  "zh/transfer-credit-card-points-guide": ["transferable-points-101"],
+  "es/transfer-credit-card-points-guide": ["transferable-points-101"],
+};
 const locales = ["en", "zh", "zh-cn", "es"];
 const minWords: Record<string, number> = { en: 900, es: 900 };
 const minCjkChars: Record<string, number> = { zh: 1400, "zh-cn": 1400 };
@@ -47,9 +56,25 @@ for (const locale of locales) {
       console.error(`repeated long paragraphs ${locale}/${slug}: ${duplicateLongLines.length}`);
       failed = true;
     }
-    if (locale !== "en" && text.includes("](/en/guides/")) {
-      console.error(`wrong-locale guide link ${locale}/${slug}`);
-      failed = true;
+    if (locale !== "en") {
+      // Explicitly labeled English fallbacks are valid only when no translation exists.
+      // Keep rejecting accidental English links when localized content is available.
+      const labeledFallbacks = new Set(
+        [...text.matchAll(/\[([^\]]+)\]\(\/en\/guides\/([a-z0-9-]+)\)/g)]
+          .filter(([, label, target]) => {
+            const guide = getGuide(target);
+            return englishFallbacks[`${locale}/${slug}`]?.includes(target) &&
+              guide && !hasLocalizedGuide(guide, locale) &&
+              existsSync(fileFor("en", target)) &&
+              (locale === "es" ? /en inglés/i : /英文/).test(label);
+          }).map((match) => match.index! + match[0].indexOf("](/en/guides/")),
+      );
+      for (const match of text.matchAll(/\]\(\/en\/guides\//g)) {
+        if (!labeledFallbacks.has(match.index!)) {
+          console.error(`wrong-locale or unlabeled guide link ${locale}/${slug}`);
+          failed = true;
+        }
+      }
     }
     if (locale in minCjkChars) {
       if (cjkChars < minCjkChars[locale]) {

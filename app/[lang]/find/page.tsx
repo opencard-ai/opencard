@@ -1,4 +1,4 @@
-import { localizedAlternates } from "@/lib/seo";
+import { localizedAlternates, pageMetadata } from "@/lib/seo";
 import { getOpenCards } from "@/lib/cards";
 import { toFindCard } from "@/lib/client-card-fields";
 import FindWizard from "@/app/components/FindWizard";
@@ -21,16 +21,18 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const titles: Record<string, string> = {
+    "zh-cn": "挑卡精灵 — OpenCard",
     en: "Find your card — OpenCard",
     zh: "挑卡精靈 — OpenCard",
     es: "Encuentra tu tarjeta — OpenCard",
   };
   const descs: Record<string, string> = {
+    "zh-cn": "回答 3 个问题，获取 5 张信用卡推荐。",
     en: "Three quick questions, five card recommendations.",
     zh: "回答 3 題,推薦 5 張卡。",
     es: "Tres preguntas, cinco recomendaciones.",
   };
-  return { title: titles[lang] || titles.en, description: descs[lang] || descs.en, alternates: localizedAlternates(lang, "/find") };
+  return pageMetadata(lang, "/find", { title: titles[lang] || titles.en, description: descs[lang] || descs.en, alternates: localizedAlternates(lang, "/find") });
 }
 
 export default async function FindPage({ params }: Props) {

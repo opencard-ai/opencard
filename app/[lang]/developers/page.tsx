@@ -1,4 +1,4 @@
-import { localizedAlternates } from "@/lib/seo";
+import { localizedAlternates, pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { locales, type Locale } from "@/lib/i18n";
@@ -20,13 +20,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  return {
-    title: "OpenCard for Developers: Card Data API and MCP Server",
-    description: "Read-only access to OpenCard's US credit card data: JSON API, OpenAPI 3.1 spec, and an MCP server with search_cards, get_card and current_welcome_offers.",
+  return pageMetadata(lang, "/developers", {
+    title: lang === "zh" ? "OpenCard 開發者資源：信用卡資料 API 與 MCP 伺服器" : lang === "zh-cn" ? "OpenCard 开发者资源：信用卡数据 API 与 MCP 服务器" : lang === "es" ? "OpenCard para desarrolladores: API de tarjetas y servidor MCP" : "OpenCard for Developers: Card Data API and MCP Server",
+    description: lang === "zh" ? "以唯讀方式存取 OpenCard 的美國信用卡資料：JSON API、OpenAPI 3.1 規格，以及提供信用卡搜尋、卡片查詢與目前開卡禮的 MCP 伺服器。" : lang === "zh-cn" ? "以只读方式访问 OpenCard 的美国信用卡数据：JSON API、OpenAPI 3.1 规范，以及提供信用卡搜索、卡片查询和当前开卡奖励的 MCP 服务器。" : lang === "es" ? "Accede en modo de solo lectura a los datos de tarjetas de EE. UU. de OpenCard: API JSON, especificación OpenAPI 3.1 y servidor MCP para buscar tarjetas, consultar sus datos y ver bonos de bienvenida actuales." : "Read-only access to OpenCard's US credit card data: JSON API, OpenAPI 3.1 spec, and an MCP server with search_cards, get_card and current_welcome_offers.",
     alternates: localizedAlternates(lang, "/developers", ["en"]),
     // Developer docs are English-only; translated URLs stay out of the index.
     robots: lang === "en" ? undefined : { index: false, follow: true },
-  };
+  });
 }
 
 const MCP_CONFIG = `{

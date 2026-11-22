@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -25,11 +26,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, card_id } = await params;
   const card = getRemovedCard(card_id);
   const copy = removedCardCopy[getLocale(lang)];
-  return {
+  return pageMetadata(lang, `/cards/${card_id}`, {
     title: copy.title,
     description: card ? copy.description(card.name) : undefined,
     robots: { index: false, follow: true },
-  };
+  });
 }
 
 export default async function RemovedCardPage({ params }: Props) {

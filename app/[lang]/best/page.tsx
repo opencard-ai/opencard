@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import BestMethodology from "@/app/components/BestMethodology";
 import { BEST_CATEGORIES } from "@/lib/best-categories";
-import { localizedAlternates } from "@/lib/seo";
+import { localizedAlternates, pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   if (lang !== "en" && lang !== "zh") notFound();
-  return {
+  return pageMetadata(lang, "/best", {
     title: lang === "zh"
       ? "依類別挑信用卡：商務卡、商店卡（對照官網） | OpenCard"
       : "Credit Cards by Category: Business & Store Cards Compared | OpenCard",
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? "商務卡、商店卡分類比較，每張都對照過發卡機構官網，寫清楚挑選標準，沒有推薦連結。"
       : "Category picks for business and store credit cards, each checked against the issuer's own pages, with the criteria we used and no affiliate links.",
     alternates: localizedAlternates(lang, "/best", ["en", "zh"]),
-  };
+  });
 }
 
 export default async function BestPage({ params }: Props) {

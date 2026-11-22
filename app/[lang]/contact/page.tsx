@@ -1,4 +1,4 @@
-import { localizedAlternates } from "@/lib/seo";
+import { localizedAlternates, pageMetadata } from "@/lib/seo";
 import { locales } from "@/lib/i18n";
 import type { Metadata } from "next";
 
@@ -14,11 +14,11 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  return {
+  return pageMetadata(lang, "/contact", {
     title: lang === "zh" ? "聯絡 OpenCard 與回報資料修正" : lang === "zh-cn" ? "联系 OpenCard 与反馈资料修正" : lang === "es" ? "Contactar a OpenCard y enviar correcciones" : "Contact OpenCard and Report Corrections",
-    description: "Contact OpenCard for support, card-data corrections, privacy requests, or partnership questions.",
+    description: lang === "zh" ? "聯絡 OpenCard，取得使用協助、回報信用卡資料錯誤、提出隱私權請求，或洽詢合作事宜。" : lang === "zh-cn" ? "联系 OpenCard，获取使用帮助、反馈信用卡数据错误、提出隐私请求或咨询合作事宜。" : lang === "es" ? "Contacta con OpenCard para obtener ayuda, corregir datos de tarjetas, realizar solicitudes de privacidad o consultar sobre colaboraciones." : "Contact OpenCard for support, card-data corrections, privacy requests, or partnership questions.",
     alternates: localizedAlternates(lang, "/contact"),
-  };
+  });
 }
 
 export default async function ContactPage({ params }: Props) {
