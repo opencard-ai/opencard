@@ -151,7 +151,7 @@ export default function ReportErrorModal({ cardId, cardName, lang, trigger, clas
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className={className || "text-xs text-slate-400 hover:text-red-500 transition-colors"}
+        className={className || "text-xs text-slate-500 hover:text-red-500 transition-colors"}
       >
         {t.trigger}
       </button>

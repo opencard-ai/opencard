@@ -135,6 +135,6 @@ test("CORS, preflight, cache headers, license", async () => {
 
 test("sitemap and footer include /developers", () => {
   assert.ok(sitemap().some((e) => e.url === "https://opencardai.com/en/developers"));
-  assert.match(fs.readFileSync("app/[lang]/layout.tsx", "utf8"), /\/developers`/);
+  assert.match(fs.readFileSync("app/components/FTCDisclosure.tsx", "utf8"), /\/developers`/);
   assert.match(fs.readFileSync("app/[lang]/developers/page.tsx", "utf8"), /CC BY 4\.0/);
 });

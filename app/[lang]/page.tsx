@@ -41,7 +41,7 @@ export default async function HomePage({ params }: Props) {
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-slate-900 mb-1">{t("home.title", lang as any)}</h1>
         <p className="text-slate-500 text-sm">{t("home.subtitle", lang as any, { count: cards.length })}</p>
-        <p className="text-xs text-slate-400 mt-1">
+        <p className="text-xs text-slate-500 mt-1">
           {lang === "zh" ? "📌 本站僅涵蓋美國信用卡，優惠資訊以美國居民為主" : lang === "zh-cn" ? "📌 本站仅涵盖美国信用卡，优惠信息以美国居民为主" : lang === "es" ? "📌 Este sitio cubre solo tarjetas de crédito de EE.UU." : "📌 This site covers US credit cards only"}
         </p>
       </div>
@@ -97,7 +97,7 @@ export default async function HomePage({ params }: Props) {
       {/* Divider */}
       <div className="flex items-center gap-4 mb-6 mt-2">
         <div className="flex-1 h-px bg-slate-200" />
-        <span className="text-sm text-slate-400 font-medium">{t("home.cardsAvailable", lang as any, { count: cards.length })}</span>
+        <span className="text-sm text-slate-500 font-medium">{t("home.cardsAvailable", lang as any, { count: cards.length })}</span>
         <div className="flex-1 h-px bg-slate-200" />
       </div>
 
@@ -137,7 +137,7 @@ export default async function HomePage({ params }: Props) {
             <a key={guide.slug} href={`/${lang}/guides/${guide.slug}`} className="rounded-lg border border-slate-200 p-3 hover:border-amber-300 hover:bg-amber-50 transition-colors dark:border-slate-800 dark:hover:bg-amber-950/20">
               <h3 className="text-sm font-semibold text-slate-900 dark:text-white line-clamp-2">{guide.title}</h3>
               <p className="text-xs text-slate-500 mt-1 line-clamp-2">{guide.summary}</p>
-              <div className="text-[11px] text-slate-400 mt-2">
+              <div className="text-[11px] text-slate-500 mt-2">
                 {lang === "zh" ? "已更新" : lang === "zh-cn" ? "已更新" : lang === "es" ? "Actualizado" : "Updated"} {guide.updated} · {guide.word_count.toLocaleString()} {lang === "es" ? "palabras" : "words"}
               </div>
             </a>

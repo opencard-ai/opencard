@@ -6,7 +6,7 @@ export default function CardStayPlaceCard({ lang, place }: { lang: string; place
     <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wide text-slate-400">{place.city}</div>
+          <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">{place.city}</div>
           <h3 className="text-lg font-bold text-slate-900">{place.name}</h3>
           <p className="mt-1 text-sm text-slate-600">{place.summary}</p>
         </div>

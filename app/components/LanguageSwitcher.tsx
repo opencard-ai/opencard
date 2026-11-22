@@ -20,6 +20,7 @@ export default function LanguageSwitcher() {
   return (
     <div className="relative inline-block">
       <select
+        aria-label={{ en: "Language", zh: "語言", "zh-cn": "语言", es: "Idioma" }[currentLocale] || "Language"}
         value={currentLocale}
         onChange={(e) => switchLocale(e.target.value as Locale)}
         className="appearance-none max-w-[6.75rem] sm:max-w-none bg-transparent border border-slate-200 dark:border-slate-700 rounded-lg px-2 py-1 pr-6 sm:pr-7 text-xs sm:text-sm text-slate-600 dark:text-slate-300 cursor-pointer hover:border-slate-300 dark:hover:border-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 whitespace-nowrap"
@@ -30,7 +31,7 @@ export default function LanguageSwitcher() {
           </option>
         ))}
       </select>
-      <span className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-xs">
+      <span className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500 text-xs">
         ▾
       </span>
     </div>

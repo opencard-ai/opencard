@@ -171,6 +171,7 @@ html.oc-consent-set [data-cookie-banner] {
    ResizeObserver supplies the exact height after hydration and when expanded. */
 html:not(.oc-consent-set) body:has([data-cookie-banner]) {
   padding-bottom: var(--oc-consent-height, 120px);
+  --card-cookie-height: var(--oc-consent-height, 120px);
 }
 html:not(.oc-consent-set) body:has([data-cookie-banner]) [data-floating-buttons] {
   bottom: calc(var(--oc-consent-height, 120px) + 1.5rem);
@@ -184,6 +185,7 @@ html:not(.oc-consent-set) body:has([data-cookie-banner]) [data-toast-viewport] {
 /* Separate selectors keep the hydrated fallback working without :has support. */
 html.oc-consent-open body {
   padding-bottom: var(--oc-consent-height, 120px);
+  --card-cookie-height: var(--oc-consent-height, 120px);
 }
 html.oc-consent-open [data-floating-buttons] {
   bottom: calc(var(--oc-consent-height, 120px) + 1.5rem);
@@ -191,4 +193,50 @@ html.oc-consent-open [data-floating-buttons] {
 }
 html.oc-consent-open [data-toast-viewport] {
   bottom: calc(var(--oc-consent-height, 120px) + 1rem);
+}
+
+@media (max-width: 639px) {
+  /* Match the consent selectors' specificity so both bars reserve space.
+     Measured bar heights already include their safe-area padding. */
+  html:root body:has([data-mobile-card-cta]) {
+    padding-bottom: calc(var(--card-cta-height, calc(68px + env(safe-area-inset-bottom))) + var(--card-cookie-height, 0px));
+  }
+  html:root body:has([data-mobile-card-cta]) [data-floating-buttons],
+  html:root body:has([data-mobile-card-cta]) [data-toast-viewport] {
+    bottom: calc(var(--card-cta-height, 68px) + var(--card-cookie-height, 0px) + 1rem);
+  }
+  body:has([data-mobile-card-cta]) :is(a, button, input, select, textarea, [tabindex]) {
+    scroll-margin-top: 5rem;
+    scroll-margin-bottom: calc(var(--card-cta-height, 68px) + var(--card-cookie-height, 0px) + 1rem);
+  }
+  /* Let keyboard users see any focused page control behind fixed overlays. */
+  body:has(main :focus-visible:not([data-mobile-card-cta] *), footer :focus-visible) [data-mobile-card-cta] {
+    visibility: hidden;
+  }
+}
+
+/* On phones each comparison row has a full-width label over two narrow values.
+   Desktop retains the existing table; a third card stays in the same row. */
+@media (max-width: 639px) {
+  .mobile-compare-table { table-layout: fixed; }
+  .mobile-compare-table :is(thead, tbody) { display: block; }
+  .mobile-compare-table tr {
+    display: grid;
+    grid-template-columns: repeat(var(--compare-count), minmax(0, 1fr));
+  }
+  .mobile-compare-table tr > :first-child {
+    grid-column: 1 / -1;
+    position: static;
+    width: auto;
+    min-width: 0;
+    padding: 0.5rem;
+  }
+  .mobile-compare-table tr > :not(:first-child) {
+    min-width: 0;
+    padding: 0.5rem;
+    overflow-wrap: anywhere;
+  }
+  .mobile-compare-table th > div { padding: 0.5rem; }
+  .mobile-compare-table th .text-base { font-size: 0.875rem; }
+  .mobile-compare-table td .flex { flex-wrap: wrap; }
 }

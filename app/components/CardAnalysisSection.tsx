@@ -35,27 +35,6 @@ export default function CardAnalysisSection({
         </div>
       )}
 
-      {(analysis.whoFor.length > 0 || analysis.skipIf.length > 0) && (
-        <div className="grid gap-4 sm:grid-cols-2 mt-5">
-          {analysis.whoFor.length > 0 && (
-            <div className="rounded-lg bg-emerald-50 border border-emerald-100 p-4">
-              <h3 className="text-sm font-semibold text-emerald-900 mb-2">Who it&apos;s for</h3>
-              <ul className="space-y-1.5 text-xs text-emerald-900">
-                {analysis.whoFor.map((item) => <li key={item}>✓ {item}</li>)}
-              </ul>
-            </div>
-          )}
-          {analysis.skipIf.length > 0 && (
-            <div className="rounded-lg bg-amber-50 border border-amber-100 p-4">
-              <h3 className="text-sm font-semibold text-amber-900 mb-2">Who should skip it</h3>
-              <ul className="space-y-1.5 text-xs text-amber-900">
-                {analysis.skipIf.map((item) => <li key={item}>— {item}</li>)}
-              </ul>
-            </div>
-          )}
-        </div>
-      )}
-
       <div className="mt-5 rounded-lg border border-slate-200 bg-slate-50 p-4">
         <h3 className="text-sm font-semibold text-slate-900">First-year value estimate</h3>
         <div className="mt-3 grid gap-3 grid-cols-2 sm:grid-cols-4">

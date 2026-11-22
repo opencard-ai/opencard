@@ -186,6 +186,24 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
         </button>
       </div>
 
+      <div className="sm:hidden px-3 pb-2 flex justify-end">
+        <button
+          type="button"
+          onClick={onCompareClick}
+          aria-pressed={isCompared}
+          disabled={isMaxed && !isCompared}
+          className={`min-h-11 text-xs px-3 py-2 rounded-full border transition-colors ${
+            isCompared
+              ? "bg-blue-600 border-blue-600 text-white"
+              : isMaxed
+              ? "bg-slate-50 border-slate-200 text-slate-300 cursor-not-allowed"
+              : "bg-white border-slate-300 text-slate-600 hover:border-blue-400 hover:text-blue-600"
+          }`}
+        >
+          <Scale className="w-3 h-3 inline mr-1 -mt-0.5" /> {isCompared ? t.inCompare : t.compare}
+        </button>
+      </div>
+
       {expanded && (
         <div className="px-4 pb-4 pt-0 border-t border-slate-100 space-y-3">
           {(bonusValue || bonusLabel) && (
@@ -230,8 +248,9 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
             <button
               type="button"
               onClick={onCompareClick}
+              aria-pressed={isCompared}
               disabled={isMaxed && !isCompared}
-              className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
+              className={`hidden sm:inline-flex items-center text-xs px-3 py-1.5 rounded-full border transition-colors ${
                 isCompared
                   ? "bg-blue-600 border-blue-600 text-white"
                   : isMaxed
