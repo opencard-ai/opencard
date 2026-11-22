@@ -28,7 +28,7 @@ function SourceIcon({ source }: { source: string }) {
   if (source === "Doctor of Credit") return (
     <span title="Doctor of Credit — leading US credit card news & offers" className="text-emerald-500 font-bold text-xs cursor-help">DoC</span>
   );
-  return <span className="text-slate-400 text-xs">{source}</span>;
+  return <span className="text-slate-500 text-xs">{source}</span>;
 }
 
 const NEWS_CAT_TRANSLATIONS: Record<string, Record<string, string>> = {
@@ -167,7 +167,7 @@ export default function NewsFeed({ lang }: Props) {
 
       <div className="bg-white rounded-xl border border-slate-200 divide-y divide-slate-100 overflow-hidden shadow-sm">
         {loading && items.length === 0 ? (
-          <div className="p-8 text-center text-slate-400 text-sm">
+          <div className="p-8 text-center text-slate-500 text-sm">
             <div className="w-5 h-5 mx-auto mb-2 animate-spin border-2 border-blue-500 border-t-transparent rounded-full"></div>
             {t("feed.loading", lang as any)}
           </div>
@@ -177,7 +177,7 @@ export default function NewsFeed({ lang }: Props) {
             <button onClick={fetchNews} className="mt-2 text-sm text-blue-600 hover:underline">Retry</button>
           </div>
         ) : displayItems.length === 0 ? (
-          <div className="p-6 text-center text-slate-400 text-sm">{t("feed.noItems", lang as any)}</div>
+          <div className="p-6 text-center text-slate-500 text-sm">{t("feed.noItems", lang as any)}</div>
         ) : (
           displayItems.map((item, idx) => (
             <div key={`${item.url}-${idx}`} className="p-4 hover:bg-slate-50 transition group">
@@ -188,7 +188,7 @@ export default function NewsFeed({ lang }: Props) {
                     {item.categories?.slice(0, 2).map((cat) => (
                       <CategoryBadge key={cat} cat={cat} lang={lang} />
                     ))}
-                    <span className="text-xs text-slate-400">{timeAgo(item.ts)}</span>
+                    <span className="text-xs text-slate-500">{timeAgo(item.ts)}</span>
                   </div>
                   <a
                     href={item.url}

@@ -166,7 +166,7 @@ export default function FindWizard({ cards, lang }: Props) {
       {!done && (
         <>
           <div className="flex items-center justify-between mb-6">
-            <div className="text-xs font-semibold tracking-wide text-slate-400 uppercase">
+            <div className="text-xs font-semibold tracking-wide text-slate-500 uppercase">
               {t.step} {step + 1} {t.of} {totalSteps}
             </div>
             <div className="flex gap-1">

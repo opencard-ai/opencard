@@ -252,9 +252,9 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
 
             <div className="flex-1 overflow-y-auto pr-1 space-y-1">
               {!loaded ? (
-                <div className="text-center py-8 text-slate-400 text-sm">Loading...</div>
+                <div className="text-center py-8 text-slate-500 text-sm">Loading...</div>
               ) : filteredIssuers.length === 0 ? (
-                <div className="text-center py-8 text-slate-400 text-sm">
+                <div className="text-center py-8 text-slate-500 text-sm">
                   {search ? m.empty : m.noResults}
                 </div>
               ) : (
@@ -312,7 +312,7 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
                                   <span className="text-xs leading-snug whitespace-normal break-words">{card.name}</span>
                                 </div>
                                 {card.annual_fee > 0 && (
-                                  <span className={`text-[10px] ml-2 shrink-0 ${isSelected ? "text-white/60" : "text-slate-400"}`}>
+                                  <span className={`text-[10px] ml-2 shrink-0 ${isSelected ? "text-white/60" : "text-slate-500"}`}>
                                     ${card.annual_fee}
                                   </span>
                                 )}
@@ -329,7 +329,7 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
 
             {selectedCards.length > 0 && (
               <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between shrink-0">
-                <div className="text-xs text-slate-400">
+                <div className="text-xs text-slate-500">
                   {selectedCards.length} {m.selected}
                 </div>
                 <button onClick={clearAll} className="text-xs text-red-500 font-medium hover:text-red-600 transition-colors">

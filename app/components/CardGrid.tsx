@@ -237,6 +237,7 @@ function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort }: { i
           className="flex-1 min-w-[220px] border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
         <select
+          aria-label={l("allIssuers", locale)}
           value={selectedIssuer}
           onChange={(e) => updateParam("issuer", e.target.value)}
           className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden sm:block max-w-[150px]"
@@ -247,6 +248,7 @@ function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort }: { i
           ))}
         </select>
         <select
+          aria-label={l("allTags", locale)}
           value={selectedTag}
           onChange={(e) => updateParam("tag", e.target.value)}
           className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden sm:block max-w-[150px]"
@@ -257,6 +259,7 @@ function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort }: { i
           ))}
         </select>
         <select
+          aria-label={l("allAf", locale)}
           value={selectedAf}
           onChange={(e) => updateParam("af", e.target.value)}
           className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white hidden sm:block max-w-[140px]"
@@ -290,6 +293,7 @@ function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort }: { i
       {/* Mobile filters */}
       <div className="flex flex-wrap gap-2 sm:hidden mb-3">
         <select
+          aria-label={l("allIssuers", locale)}
           value={selectedIssuer}
           onChange={(e) => updateParam("issuer", e.target.value)}
           className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm bg-white flex-1 min-w-[120px]"
@@ -300,6 +304,7 @@ function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort }: { i
           ))}
         </select>
         <select
+          aria-label={l("allTags", locale)}
           value={selectedTag}
           onChange={(e) => updateParam("tag", e.target.value)}
           className="border border-slate-200 rounded-lg px-3 py-2.5 text-sm bg-white flex-1 min-w-[120px]"
@@ -445,7 +450,7 @@ function CardList({ cards, tags, locale, selectedSort }: { cards: CreditCard[]; 
                     <div className="flex items-baseline justify-between mb-3 px-1">
                       <h2 className="text-lg font-bold text-slate-800">
                         {TIER_LABELS[tier][locale] ?? TIER_LABELS[tier].en}
-                        <span className="ml-2 text-sm font-normal text-slate-400">
+                        <span className="ml-2 text-sm font-normal text-slate-500">
                           {inTier.length} {l("cardsCount", locale)}
                         </span>
                       </h2>

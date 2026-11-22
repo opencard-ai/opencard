@@ -85,6 +85,7 @@ export default function FloatingButtons({ lang }: FloatingButtonsProps) {
   // column so the pills don't drift far away from the page on wide displays.
   return (
     <div
+      data-floating-buttons=""
       onPointerDownCapture={bump}
       className={`fixed inset-x-0 z-50 pointer-events-none transition-all duration-300 ${
         compareBarVisible ? "bottom-[71px]" : "bottom-6"

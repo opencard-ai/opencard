@@ -51,7 +51,7 @@ export default function CompareBar({ selected, onRemove, onClear, lang }: Compar
                 <span className="truncate max-w-[120px] font-medium text-slate-700">{card.name}</span>
                 <button
                   onClick={() => onRemove(card.card_id)}
-                  className="text-slate-400 hover:text-red-500 ml-1 transition-colors"
+                  className="text-slate-500 hover:text-red-500 ml-1 transition-colors"
                   title={l.remove}
                 >
                   ✕
@@ -59,7 +59,7 @@ export default function CompareBar({ selected, onRemove, onClear, lang }: Compar
               </div>
             ))}
             {selected.length < 3 && (
-              <span className="text-xs text-slate-400 shrink-0">{l.max}</span>
+              <span className="text-xs text-slate-500 shrink-0">{l.max}</span>
             )}
           </div>
 

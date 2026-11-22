@@ -1,3 +1,4 @@
+import MobileCardCTA from "@/app/components/MobileCardCTA";
 import Link from "next/link";
 import RenewalCalculator from "@/app/components/RenewalCalculator";
 import { notFound } from "next/navigation";
@@ -157,6 +158,8 @@ export default async function CardDetailPage({ params }: Props) {
   const analysis = lang === "en" && isIndexableCard(card)
     ? buildCardAnalysis(card, getAllCards(), editorial?.alternatives.map((a) => a.cardId) || [])
     : undefined;
+  const bestFor = editorial?.bestFor ?? analysis?.whoFor ?? [];
+  const notFor = editorial?.notFor ?? analysis?.skipIf ?? [];
   const editorNote = analysis ? getEditorNote(card.card_id) : undefined;
   const shownRules = applicableRules(card);
   const closed = isClosedToNewApplicants(card);
@@ -176,17 +179,24 @@ export default async function CardDetailPage({ params }: Props) {
   );
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
+    <div className="max-w-3xl mx-auto px-4 py-4 sm:py-8">
+      {!closed && (referralOffer || affiliateUrl || officialSource) && (
+        <MobileCardCTA
+          target={referralOffer ? "card-referral-disclosure" : affiliateUrl ? "card-apply-disclosure" : "card-official-terms"}
+          label={referralOffer ? (lang === "zh" || lang === "zh-cn" ? "查看 Referral Offers" : lang === "es" ? "Ver ofertas" : "View Referral Offers") : affiliateUrl ? t("affiliate.apply", locale) : (lang === "zh" ? "查看發卡銀行官方條款" : lang === "zh-cn" ? "查看发卡银行官方条款" : lang === "es" ? "Consultar condiciones del emisor" : "Check issuer terms")}
+          disclosureLabel={lang === "zh" ? "優惠與揭露" : lang === "zh-cn" ? "优惠与披露" : lang === "es" ? "Oferta y divulgación" : "Offer & disclosure"}
+        />
+      )}
       {/* Back */}
       <BackToCards lang={lang} label={l("detail.backToList")} />
 
       {/* Header */}
-      <div className="bg-white rounded-xl border border-slate-200 p-6 mb-6">
-        <div className="flex items-start gap-5 flex-wrap mb-4">
-          <CardArt cardId={card.card_id} issuer={card.issuer} size="lg" className="shrink-0" />
-          <div className="flex-1 min-w-[200px] flex items-start justify-between gap-3 flex-wrap">
+      <div className="bg-white rounded-xl border border-slate-200 p-4 sm:p-6 mb-6">
+        <div className="flex items-start gap-3 sm:gap-5 mb-3">
+          <CardArt cardId={card.card_id} issuer={card.issuer} size="lg" className="w-20 h-auto sm:w-60" />
+          <div className="flex-1 min-w-0 flex items-start justify-between gap-3 flex-wrap">
             <div>
-              <h1 className="text-2xl font-bold text-slate-900">{card.name}</h1>
+              <h1 className="text-lg sm:text-2xl font-bold text-slate-900">{card.name}</h1>
               <p className="text-slate-500 mt-1">{card.issuer}</p>
             </div>
             <div className="text-right">
@@ -200,43 +210,6 @@ export default async function CardDetailPage({ params }: Props) {
               <div className="text-xs text-slate-500">{l("card.annualFee")}</div>
             </div>
           </div>
-        </div>
-
-        <div className="flex flex-wrap gap-2 mb-4">
-          <span className="text-xs bg-slate-100 text-slate-700 rounded-full px-3 py-1">
-            {card.network}
-          </span>
-          <span className="text-xs bg-slate-100 text-slate-700 rounded-full px-3 py-1" title={l("detail.creditRequired")}>
-            {creditLabel(card.credit_required)}
-          </span>
-          {knownNoForeignFee(card) && (
-            <span className="text-xs bg-emerald-100 text-emerald-700 rounded-full px-3 py-1">
-              {l("detail.noForeignFee")}
-            </span>
-          )}
-          {card.tags.map((tag) => (
-            <span
-              key={tag}
-              className="text-xs bg-blue-50 text-blue-700 rounded-full px-3 py-1"
-            >
-              {tag}
-            </span>
-          ))}
-          {freshness && (
-            <span
-              className={`text-xs rounded-full px-3 py-1 inline-flex items-center gap-1 ${
-                freshness.tone === "fresh"
-                  ? "bg-emerald-50 text-emerald-700"
-                  : freshness.tone === "ok"
-                  ? "bg-slate-100 text-slate-600"
-                  : "bg-amber-50 text-amber-700"
-              }`}
-              title={`${l("detail.lastUpdated")}: ${freshness.absolute}`}
-            >
-              {freshness.tone === "fresh" ? <Check className="w-3 h-3" strokeWidth={2.5} /> : freshness.tone === "stale" ? <AlertTriangle className="w-3 h-3" /> : null}
-              {freshness.label}
-            </span>
-          )}
         </div>
 
         {/* Closed to new applicants */}
@@ -317,39 +290,8 @@ export default async function CardDetailPage({ params }: Props) {
           </div>
         )}
 
-        {officialSource && !closed && (
-          <a href={officialSource.url} target="_blank" rel="noopener noreferrer" data-issuer-outbound="official_terms" data-card-id={card.card_id} className="mt-4 inline-flex rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">
-            {lang === "zh" ? "查看發卡銀行官方條款" : lang === "zh-cn" ? "查看发卡银行官方条款" : lang === "es" ? "Consultar condiciones del emisor" : "Check issuer terms"} ↗
-          </a>
-        )}
-
-        {/* Affiliate CTA — dormant: renders nothing unless the flag is on AND the card has affiliate_url. */}
-        {affiliateUrl && !closed && (
-          <div className="mt-3">
-            <AffiliateLink
-              href={affiliateUrl}
-              cardId={card.card_id}
-              placement="card_detail"
-              lang={locale}
-              className="inline-flex rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700"
-            >
-              {t("affiliate.apply", locale)} ↗
-            </AffiliateLink>
-          </div>
-        )}
-
-        {/* CTA Row: Add to My Cards + AI Assistant */}
-        <div className="flex flex-row gap-2 mt-4">
-          <div className="flex-1">
-            <AddToMyCardsButton cardId={card.card_id} cardName={card.name} lang={lang} />
-          </div>
-          <div className="flex-1">
-            <ChatWidget cardName={card.name} cardId={card.card_id} locale={locale} />
-          </div>
-        </div>
-
         {referralOffer && (
-          <div className="mt-4 rounded-lg border border-blue-200 bg-blue-50 p-4">
+          <div id="card-referral-disclosure" tabIndex={-1} className="scroll-mt-20 mt-4 rounded-lg border border-blue-200 bg-blue-50 p-4">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <div className="text-sm font-semibold text-blue-900">
@@ -433,29 +375,138 @@ export default async function CardDetailPage({ params }: Props) {
             </div>
           </div>
         )}
+        {officialSource && !closed && (
+          <a id="card-official-terms" href={officialSource.url} target="_blank" rel="noopener noreferrer" data-issuer-outbound="official_terms" data-card-id={card.card_id} className="mt-4 inline-flex rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">
+            {lang === "zh" ? "查看發卡銀行官方條款" : lang === "zh-cn" ? "查看发卡银行官方条款" : lang === "es" ? "Consultar condiciones del emisor" : "Check issuer terms"} ↗
+          </a>
+        )}
+
+        {/* Affiliate CTA — dormant: renders nothing unless the flag is on AND the card has affiliate_url. */}
+        {affiliateUrl && !closed && (
+          <div id="card-apply-disclosure" tabIndex={-1} className="scroll-mt-20 mt-3">
+            <AffiliateLink
+              href={affiliateUrl}
+              cardId={card.card_id}
+              placement="card_detail"
+              lang={locale}
+              className="inline-flex rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700"
+            >
+              {t("affiliate.apply", locale)} ↗
+            </AffiliateLink>
+          </div>
+        )}
+
+        {/* CTA Row: Add to My Cards + AI Assistant */}
+        <div className="flex flex-row gap-2 mt-4">
+          <div className="flex-1">
+            <AddToMyCardsButton cardId={card.card_id} cardName={card.name} lang={lang} />
+          </div>
+          <div className="flex-1">
+            <ChatWidget cardName={card.name} cardId={card.card_id} locale={locale} />
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-2 mb-4">
+          <span className="text-xs bg-slate-100 text-slate-700 rounded-full px-3 py-1">
+            {card.network}
+          </span>
+          <span className="text-xs bg-slate-100 text-slate-700 rounded-full px-3 py-1" title={l("detail.creditRequired")}>
+            {creditLabel(card.credit_required)}
+          </span>
+          {knownNoForeignFee(card) && (
+            <span className="text-xs bg-emerald-100 text-emerald-700 rounded-full px-3 py-1">
+              {l("detail.noForeignFee")}
+            </span>
+          )}
+          {card.tags.map((tag) => (
+            <span
+              key={tag}
+              className="text-xs bg-blue-50 text-blue-700 rounded-full px-3 py-1"
+            >
+              {tag}
+            </span>
+          ))}
+          {freshness && (
+            <span
+              className={`text-xs rounded-full px-3 py-1 inline-flex items-center gap-1 ${
+                freshness.tone === "fresh"
+                  ? "bg-emerald-50 text-emerald-700"
+                  : freshness.tone === "ok"
+                  ? "bg-slate-100 text-slate-600"
+                  : "bg-amber-50 text-amber-700"
+              }`}
+              title={`${l("detail.lastUpdated")}: ${freshness.absolute}`}
+            >
+              {freshness.tone === "fresh" ? <Check className="w-3 h-3" strokeWidth={2.5} /> : freshness.tone === "stale" ? <AlertTriangle className="w-3 h-3" /> : null}
+              {freshness.label}
+            </span>
+          )}
+        </div>
+
       </div>
 
       <div className="space-y-6">
+          {lang === "en" && (bestFor.length > 0 || notFor.length > 0) && (
+            <section data-card-section="suitability" className="bg-white rounded-xl border border-blue-200 p-4 sm:p-6">
+              <h2 className="text-lg font-bold text-slate-900 mb-3">Good for / Not good for</h2>
+              <div className="grid gap-3 sm:grid-cols-2" lang="en">
+                {bestFor.length > 0 && (
+                  <div className="rounded-lg bg-emerald-50 border border-emerald-100 p-3">
+                    <h3 className="text-sm font-semibold text-emerald-900 mb-2">Best for</h3>
+                    <ul className="space-y-1.5 text-xs text-emerald-900">
+                      {bestFor.map(item => <li key={item}>✓ {item}</li>)}
+                    </ul>
+                  </div>
+                )}
+                {notFor.length > 0 && (
+                  <div className="rounded-lg bg-amber-50 border border-amber-100 p-3">
+                    <h3 className="text-sm font-semibold text-amber-900 mb-2">Not ideal for</h3>
+                    <ul className="space-y-1.5 text-xs text-amber-900">
+                      {notFor.map(item => <li key={item}>— {item}</li>)}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </section>
+          )}
+          {/* Earning Rates */}
+          <section data-card-section="rewards" className="bg-white rounded-xl border border-slate-200 p-6">
+            <h2 className="text-lg font-bold text-slate-900 mb-4">{l("detail.earningRates")}</h2>
+            <div className="space-y-2">
+              {card.earning_rates.map((rate, i) => (
+                <div
+                  key={i}
+                  className="flex items-center justify-between py-2 border-b border-slate-100 last:border-0"
+                >
+                  <div>
+                    <span className="text-blue-600 font-bold text-lg">
+                      {rate.rate}×
+                    </span>
+                    <span className="text-slate-700 ml-2 capitalize">
+                      {translateCategory(rate.category, lang as "en" | "zh" | "es")}
+                    </span>
+                    {rate.notes && (
+                      <span className="text-xs text-slate-500 block">
+                        {rate.notes}
+                      </span>
+                    )}
+                  </div>
+                  {rate.program && (
+                    <span className="text-xs text-slate-500">
+                      {rate.program}
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+
+
           {editorial && (
             <section className="bg-white rounded-xl border border-blue-200 p-6">
               <div className="text-xs font-semibold uppercase tracking-wide text-blue-600 mb-2">OpenCard editorial analysis</div>
               <h2 className="text-lg font-bold text-slate-900 mb-3">Our take</h2>
               <p className="text-sm text-slate-600 leading-relaxed">{editorial.take}</p>
-
-              <div className="grid gap-4 sm:grid-cols-2 mt-5">
-                <div className="rounded-lg bg-emerald-50 border border-emerald-100 p-4">
-                  <h3 className="text-sm font-semibold text-emerald-900 mb-2">Best for</h3>
-                  <ul className="space-y-1.5 text-xs text-emerald-900">
-                    {editorial.bestFor.map((item) => <li key={item}>✓ {item}</li>)}
-                  </ul>
-                </div>
-                <div className="rounded-lg bg-amber-50 border border-amber-100 p-4">
-                  <h3 className="text-sm font-semibold text-amber-900 mb-2">Not ideal for</h3>
-                  <ul className="space-y-1.5 text-xs text-amber-900">
-                    {editorial.notFor.map((item) => <li key={item}>— {item}</li>)}
-                  </ul>
-                </div>
-              </div>
 
               <div className="mt-5">
                 <h3 className="text-sm font-semibold text-slate-900 mb-1">Conservative break-even test</h3>
@@ -491,38 +542,6 @@ export default async function CardDetailPage({ params }: Props) {
               reviewedDate={card.last_updated ? new Date(card.last_updated).toISOString().slice(0, 10) : undefined}
             />
           )}
-
-          {/* Earning Rates */}
-          <section className="bg-white rounded-xl border border-slate-200 p-6">
-            <h2 className="text-lg font-bold text-slate-900 mb-4">{l("detail.earningRates")}</h2>
-            <div className="space-y-2">
-              {card.earning_rates.map((rate, i) => (
-                <div
-                  key={i}
-                  className="flex items-center justify-between py-2 border-b border-slate-100 last:border-0"
-                >
-                  <div>
-                    <span className="text-blue-600 font-bold text-lg">
-                      {rate.rate}×
-                    </span>
-                    <span className="text-slate-700 ml-2 capitalize">
-                      {translateCategory(rate.category, lang as "en" | "zh" | "es")}
-                    </span>
-                    {rate.notes && (
-                      <span className="text-xs text-slate-400 block">
-                        {rate.notes}
-                      </span>
-                    )}
-                  </div>
-                  {rate.program && (
-                    <span className="text-xs text-slate-500">
-                      {rate.program}
-                    </span>
-                  )}
-                </div>
-              ))}
-            </div>
-          </section>
 
           {/* Dynamic / User-Activated Reward Structures */}
           {(card.selectable_rewards || card.relationship_bonus || card.rotating_categories) && (
@@ -648,7 +667,7 @@ export default async function CardDetailPage({ params }: Props) {
                           {credit.description}
                         </p>
                       )}
-                      <span className="text-xs text-slate-400">
+                      <span className="text-xs text-slate-500">
                         {credit.frequency === 'annual' || credit.frequency === 'cardmember_year' ? '/year' :
                          credit.frequency === 'quarterly' ? '/quarter' :
                          credit.frequency === 'monthly' ? '/month' :
@@ -811,7 +830,7 @@ export default async function CardDetailPage({ params }: Props) {
                 ))}
               </ul>
               <div className="flex items-center justify-between mt-3">
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-slate-500">
                   {l("detail.lastUpdated")}: {freshness?.absolute || card.last_updated}
                 </p>
                 <ReportErrorModal cardId={card.card_id} cardName={card.name} lang={lang} />

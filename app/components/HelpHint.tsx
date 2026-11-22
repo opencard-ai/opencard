@@ -56,7 +56,7 @@ export default function HelpHint({ text, label, icon, className }: Props) {
         title={text}
         className={
           className ||
-          "ml-1 inline-flex items-center justify-center w-3.5 h-3.5 rounded-full text-[9px] text-slate-400 hover:text-slate-700 hover:bg-slate-200 leading-none"
+          "ml-1 inline-flex items-center justify-center w-3.5 h-3.5 rounded-full text-[9px] text-slate-500 hover:text-slate-700 hover:bg-slate-200 leading-none"
         }
       >
         {icon ?? "ⓘ"}

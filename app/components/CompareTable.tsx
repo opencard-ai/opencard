@@ -126,8 +126,8 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
 
   return (
     <div className="overflow-x-auto">
-      <div className="md:hidden text-xs text-slate-400 mb-2 px-1">{l.swipeHint}</div>
-      <table className="w-full border-collapse text-sm">
+      <div className="hidden sm:block md:hidden text-xs text-slate-500 mb-2 px-1">{l.swipeHint}</div>
+      <table className="mobile-compare-table w-full border-collapse text-sm" style={{ "--compare-count": cards.length } as React.CSSProperties}>
         <thead>
           <tr className="border-b-2 border-slate-200">
             <th className="text-left py-3 pr-4 font-semibold text-slate-600 w-44 sticky left-0 bg-slate-50 z-10 min-w-[140px]">
@@ -162,7 +162,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
           <tr className="bg-blue-50/40">
             <td className="py-3 pr-4 sticky left-0 bg-blue-50/40 z-10">
               <div className="font-medium text-slate-700">{l.firstYearValue}</div>
-              <div className="text-[10px] text-slate-400 mt-0.5 leading-tight">{l.firstYearHint}</div>
+              <div className="text-[10px] text-slate-600 mt-0.5 leading-tight">{l.firstYearHint}</div>
             </td>
             {cards.map((card) => {
               const fyv = firstYearValue(card);
@@ -210,7 +210,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                 ) : card.foreign_transaction_fee > 0 ? (
                   <span className="text-red-500">{card.foreign_transaction_fee}%</span>
                 ) : (
-                  <span className="text-slate-400">{l.fxNotListed}</span>
+                  <span className="text-slate-500">{l.fxNotListed}</span>
                 )}
               </td>
             ))}
@@ -232,19 +232,19 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                     ) : formatVariableOffer(card.welcome_offer, lang) ? (
                       <div className="font-bold text-amber-700">{formatVariableOffer(card.welcome_offer, lang)}</div>
                     ) : (
-                      <span className="text-slate-400 text-xs">{l.none}</span>
+                      <span className="text-slate-500 text-xs">{l.none}</span>
                     )}
                     {card.welcome_offer.description && (
                       <div className="text-xs text-slate-500 mt-0.5">{card.welcome_offer.description}</div>
                     )}
                     {card.welcome_offer.spending_requirement && (
-                      <div className="text-xs text-slate-400 mt-0.5">
+                      <div className="text-xs text-slate-500 mt-0.5">
                         Spend ${card.welcome_offer.spending_requirement.toLocaleString()} in {card.welcome_offer.time_period_months || 3} mo
                       </div>
                     )}
                   </div>
                 ) : (
-                  <span className="text-slate-400 text-xs">{l.none}</span>
+                  <span className="text-slate-500 text-xs">{l.none}</span>
                 )}
               </td>
             ))}
@@ -279,7 +279,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                       <div className="flex items-center gap-2">
                         <RateBar rate={rate.rate} maxRate={maxRate} />
                         {rate.notes && (
-                          <span className="text-xs text-slate-400 truncate max-w-[100px]">{rate.notes.split(".")[0]}</span>
+                          <span className="text-xs text-slate-500 truncate max-w-[100px]">{rate.notes.split(".")[0]}</span>
                         )}
                       </div>
                     ) : (
@@ -309,7 +309,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                           .map((rc: RecurringCredit, i: number) => (
                             <li key={i} className="text-slate-700">
                               {rc.name}{rc.is_free_night ? <span className="ml-1 text-[10px] uppercase font-semibold text-amber-600">FNA</span> : null}
-                              {rc.description && <span className="text-slate-400"> - {rc.description.split(".")[0]}</span>}
+                              {rc.description && <span className="text-slate-500"> - {rc.description.split(".")[0]}</span>}
                             </li>
                           ))}
                       </ul>
@@ -361,7 +361,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                    !card.travel_benefits?.hotel_status?.length &&
                    !card.travel_benefits?.lounge_access &&
                    !otherBenefits.length ? (
-                    <span className="text-slate-400">—</span>
+                    <span className="text-slate-500">—</span>
                   ) : null}
                 </div>
               </td>
