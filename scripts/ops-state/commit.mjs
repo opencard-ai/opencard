@@ -3,35 +3,38 @@ import path from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
-import { args, manifestAt, incoming, directory, sha256, outputs } from './core.mjs';
+import { args, jobs, manifestAt, incoming, directory, sha256, outputs } from './core.mjs';
 export function gitRunner(repo, argv, env = {}) {
   const r = spawnSync('git', ['-C', repo, ...argv], { encoding: 'utf8', env: { ...process.env, ...env } });
   if (r.error || r.status !== 0) throw new Error(`git ${argv[0]} failed (status ${r.status}, signal ${r.signal}): ${r.error?.message || r.stderr}`);
   return r.stdout.trim();
 }
 export function concurrentChangeIsSafe(repo, job, base, tip, git = gitRunner) {
-  if (!['offer', 'audit'].includes(job) || base === tip) return false;
-  const otherJob = job === 'offer' ? 'audit' : 'offer';
-  const otherDir = job === 'offer' ? 'audit' : 'offer-watch';
+  if (!Object.hasOwn(jobs, job) || base === tip) return false;
+  const others = Object.entries(jobs).filter(([key]) => key !== job);
+  const otherPath = p => others.some(([, value]) => p.startsWith(`${value.dir}/`));
   try {
     git(repo, ['merge-base', '--is-ancestor', base, tip]);
     if (git(repo, ['rev-list', '--merges', `${base}..${tip}`])) return false;
     const paths = git(repo, ['diff', '--no-renames', '--name-only', base, tip]).split('\n').filter(Boolean);
-    if (paths.some(p => p !== 'MANIFEST.json' && !p.startsWith(`${otherDir}/`))) return false;
-    const stripped = sha => {
+    if (paths.some(p => p !== 'MANIFEST.json' && !otherPath(p))) return false;
+    const stripped = (sha, omit = others) => {
       const m = JSON.parse(git(repo, ['show', `${sha}:MANIFEST.json`]));
       if (!Array.isArray(m.files)) throw new Error('manifest lacks files array');
-      m.files = m.files.filter(f => !f.path.startsWith(`${otherDir}/`));
+      m.files = m.files.filter(f => !omit.some(([, value]) => f.path.startsWith(`${value.dir}/`)));
       m.runs ??= {};
-      if (m.runs) delete m.runs[otherJob];
+      for (const [key] of omit) delete m.runs[key];
       return m;
     };
     if (!isDeepStrictEqual(stripped(base), stripped(tip))) return false;
-    const prefix = `state(${job === 'offer' ? 'weekly-audit' : 'offer-watch'}): `;
     const botEmail = '41898282+github-actions[bot]@users.noreply.github.com';
-    return git(repo, ['log', '--format=%ae%x09%ce%x09%s', `${base}..${tip}`]).split('\n').every(line => {
-      const [author, committer, subject] = line.split('\t');
-      return author === botEmail && committer === botEmail && subject?.startsWith(prefix);
+    return git(repo, ['log', '--format=%H%x09%ae%x09%ce%x09%s', `${base}..${tip}`]).split('\n').every(line => {
+      const [sha, author, committer, subject] = line.split('\t');
+      const writer = others.find(([, value]) => subject?.startsWith(`state(${value.label}): `));
+      if (!writer || author !== botEmail || committer !== botEmail) return false;
+      const changed = git(repo, ['diff', '--no-renames', '--name-only', `${sha}^`, sha]).split('\n').filter(Boolean);
+      if (changed.some(p => p !== 'MANIFEST.json' && !p.startsWith(`${writer[1].dir}/`))) return false;
+      return isDeepStrictEqual(stripped(`${sha}^`, [writer]), stripped(sha, [writer]));
     });
   } catch { return false; }
 }
@@ -39,7 +42,7 @@ export function concurrentChangeIsSafe(repo, job, base, tip, git = gitRunner) {
 // Both initial writes and retries validate the tip manifest and apply only this job's incoming state.
 function writeCommit(a, files, rebasedOnto, git) {
   const repo = a.repo, manifest = manifestAt(repo);
-  const ownDir = a.job === 'offer' ? 'offer-watch' : 'audit';
+  const ownDir = jobs[a.job].dir;
   fs.mkdirSync(path.join(repo, ownDir), { recursive: true }); directory(path.join(repo, ownDir));
   for (const { name, bytes } of files) {
     const rel = `${ownDir}/${name}`, dest = path.join(repo, rel);
@@ -54,11 +57,11 @@ function writeCommit(a, files, rebasedOnto, git) {
   manifest.files.sort((a, b) => a.path.localeCompare(b.path));
   manifest.runs = { ...manifest.runs, [a.job]: { last_run_id: a['run-id'], last_run_attempt: a.attempt, pt_date: a['pt-date'], writer_epoch: a.epoch, base_sha: a['base-sha'], ...(rebasedOnto ? { rebased_onto: rebasedOnto } : {}) } };
   fs.writeFileSync(path.join(repo, 'MANIFEST.json'), `${JSON.stringify(manifest, null, 2)}\n`);
-  // Ensure both allowlisted directories exist for git's pathspec, even on a minimal seed.
-  for (const d of ['offer-watch', 'audit']) fs.mkdirSync(path.join(repo, d), { recursive: true });
-  git(repo, ['add', '-A', 'offer-watch', 'audit', 'MANIFEST.json']);
+  // Ensure all allowlisted directories exist for git's pathspec, even on a minimal seed.
+  for (const d of ['offer-watch', 'audit', 'gsc']) fs.mkdirSync(path.join(repo, d), { recursive: true });
+  git(repo, ['add', '-A', 'offer-watch', 'audit', 'gsc', 'MANIFEST.json']);
   const identity = { GIT_AUTHOR_NAME: 'github-actions[bot]', GIT_AUTHOR_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com', GIT_COMMITTER_NAME: 'github-actions[bot]', GIT_COMMITTER_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com' };
-  git(repo, ['commit', '-m', `state(${a.job === 'offer' ? 'offer-watch' : 'weekly-audit'}): ${a['pt-date']} run ${a['run-id']} attempt ${a.attempt}`], identity);
+  git(repo, ['commit', '-m', `state(${jobs[a.job].label}): ${a['pt-date']} run ${a['run-id']} attempt ${a.attempt}`], identity);
   return git(repo, ['rev-parse', 'HEAD']);
 }
 export function commitState(a, git = gitRunner) {

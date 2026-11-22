@@ -251,3 +251,13 @@ test('watchdog missed subjects and date-only keys dedupe repeated dispatches', (
   assert.equal(first.key, second.key); assert.equal(alreadySent([first.key], second.key), true);
   assert.equal(buildMessage({ ...input, summary: 'NO_REPLY' }).skip, true);
 });
+
+
+test('gsc notification uses the existing silent, summary and failure paths', () => {
+  const base = { job: 'gsc', ptDate: '2026-11-21', runId: '123' };
+  assert.equal(buildMessage({ ...base, summary: 'NO_REPLY' }).skip, true);
+  const alert = buildMessage({ ...base, summary: '⚠️ synthetic GSC alert' });
+  assert.match(alert.subject, /OpenCard GSC/);
+  assert.match(alert.text, /⚠️ synthetic GSC alert/);
+  assert.match(buildMessage({ ...base, summary: 'synthetic failure', kind: 'failure' }).subject, /^\[FAILED\]/);
+});

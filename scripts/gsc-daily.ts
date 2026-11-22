@@ -6,6 +6,7 @@
  */
 
 import { google } from 'googleapis';
+import { loadGscAuth } from './gsc-auth';
 import fs from 'fs';
 import path from 'path';
 import generateSitemap from '../app/sitemap';
@@ -13,9 +14,9 @@ import { getAllCards } from '../lib/cards';
 import { GUIDES } from '../lib/guides';
 import { Baseline, COHORT_LABELS, Cohort, IndexPolicy, classifyPolicy, compareCohorts, normalizeUrl, cardIdsFromRecords } from './gsc-cohorts';
 
-const TOKEN_PATH = path.join(process.cwd(), '.gsc-token.json');
-const REPORT_PATH = path.join(process.cwd(), '.gsc-report-history.json');
-const BASELINE_PATH = path.join(process.cwd(), '.gsc-cohort-baseline.json');
+const STATE_DIR = process.env.GSC_STATE_DIR;
+const REPORT_PATH = path.join(STATE_DIR || process.cwd(), STATE_DIR ? 'history.json' : '.gsc-report-history.json');
+const BASELINE_PATH = path.join(STATE_DIR || process.cwd(), STATE_DIR ? 'cohort-baseline.json' : '.gsc-cohort-baseline.json');
 const SITE_URL = 'https://opencardai.com';
 
 interface SearchMetric {
@@ -70,18 +71,6 @@ function percentageChange(current: number, previous: number): number | null {
   return ((current - previous) / previous) * 100;
 }
 
-async function getAuthenticatedClient() {
-  const oauth2Client = new google.auth.OAuth2(
-    process.env.GSC_CLIENT_ID,
-    process.env.GSC_CLIENT_SECRET,
-    process.env.GSC_REDIRECT_URI || 'http://localhost:8080/oauth/callback',
-  );
-
-  const tokens = JSON.parse(fs.readFileSync(TOKEN_PATH, 'utf8'));
-  oauth2Client.setCredentials(tokens);
-  return oauth2Client;
-}
-
 function metricFromRow(row: any): SearchMetric {
   return {
     clicks: Number(row?.clicks || 0),
@@ -92,7 +81,8 @@ function metricFromRow(row: any): SearchMetric {
 }
 
 async function fetchDailyReport(): Promise<{ report: GSCReport; alerts: string[] }> {
-  const auth = await getAuthenticatedClient();
+  const { auth, siteUrl } = loadGscAuth(google);
+  if (STATE_DIR) fs.mkdirSync(STATE_DIR, { recursive: true });
   const searchConsole = google.searchconsole({ version: 'v1', auth });
 
   // Search Console data is normally finalized with a two-day delay.
@@ -115,7 +105,7 @@ async function fetchDailyReport(): Promise<{ report: GSCReport; alerts: string[]
     if (dimensions?.length) requestBody.dimensions = dimensions;
 
     const response = await searchConsole.searchanalytics.query({
-      siteUrl: SITE_URL,
+      siteUrl,
       requestBody,
     });
     return response.data.rows || [];
@@ -127,7 +117,7 @@ async function fetchDailyReport(): Promise<{ report: GSCReport; alerts: string[]
     queryAnalytics(currentStart, currentEnd, ['page'], 25000),
     queryAnalytics(previousStart, previousEnd, ['page'], 25000),
     queryAnalytics(currentStart, currentEnd, ['query', 'page'], 1000),
-    searchConsole.sitemaps.list({ siteUrl: SITE_URL }),
+    searchConsole.sitemaps.list({ siteUrl }),
   ]);
 
   const current = metricFromRow(currentRows[0]);
@@ -187,7 +177,7 @@ async function fetchDailyReport(): Promise<{ report: GSCReport; alerts: string[]
   );
 
   const report: GSCReport = {
-    date: dateString(new Date()),
+    date: new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date()),
     period: { startDate: dateString(currentStart), endDate: dateString(currentEnd) },
     previousPeriod: {
       startDate: dateString(previousStart),
@@ -280,11 +270,32 @@ function formatReport(report: GSCReport, alerts: string[]): string {
 
 async function main() {
   try {
+    const argv = process.argv?.slice(2) || [];
+    let outDir: string | undefined;
+    let weekly = false;
+    for (let i = 0; i < argv.length; i++) {
+      if (argv[i] === '--weekly') weekly = true;
+      else if (argv[i] === '--out-dir' && argv[i + 1] && !argv[i + 1].startsWith('--')) outDir = argv[++i];
+      else throw new Error('Invalid arguments');
+    }
+    if (weekly && !outDir) throw new Error('--weekly requires --out-dir');
     const { report, alerts } = await fetchDailyReport();
-    console.log(formatReport(report, alerts));
+    const message = formatReport(report, alerts);
+    if (outDir) {
+      fs.mkdirSync(outDir, { recursive: true });
+      const write = (kind: string, text: string, data: unknown) => {
+        fs.writeFileSync(path.join(outDir!, `${report.date}-${kind}.md`), text + '\n');
+        fs.writeFileSync(path.join(outDir!, `${report.date}-${kind}.json`), JSON.stringify(data, null, 2) + '\n');
+      };
+      write('daily', message, { ...report, alerts });
+      // The finalized seven-day report already contains comparison, cohorts and short
+      // lists of alerts, top pages and opportunities; reuse those same metrics.
+      if (weekly) write('weekly', message.replace('GSC Daily Report', 'GSC Weekly Summary'), { ...report, alerts, kind: 'weekly' });
+    }
+    console.log(message);
     if (alerts.length) process.exitCode = 1;
   } catch (error: any) {
-    console.error('❌ GSC Report Error:', error.message);
+    console.error('❌ GSC Report Error: report failed; check configuration, state and GSC access');
     process.exitCode = 1;
   }
 }

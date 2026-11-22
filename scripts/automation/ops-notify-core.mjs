@@ -1,7 +1,7 @@
 // Pure helpers for ops job notifications (offer watcher / weekly audit) per the PR #94 design (option B1).
 // No network, env or filesystem access here: the CLI injects everything. Sending is decided by gateSend().
 
-export const JOBS = Object.freeze({ 'offer-watch': 'OpenCard 優惠監測', 'weekly-audit': 'OpenCard 每週資料庫稽核', 'ops-watchdog': 'OpenCard ops watchdog' });
+export const JOBS = Object.freeze({ 'offer-watch': 'OpenCard 優惠監測', 'weekly-audit': 'OpenCard 每週資料庫稽核', 'ops-watchdog': 'OpenCard ops watchdog', gsc: 'OpenCard GSC' });
 export const MAX_CHARS = 3000;
 export const MAX_LINES = 80;
 const DEFAULT_ALLOWED_EMAILS = ['opencard@opencardai.com'];
