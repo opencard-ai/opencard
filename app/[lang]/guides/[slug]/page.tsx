@@ -12,7 +12,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getGuidesForLocale, getGuide, getLocalizedGuide, hasLocalizedGuide } from "@/lib/guides";
 import { locales, t, type Locale } from "@/lib/i18n";
-import { localizedAlternates } from "@/lib/seo";
+import { localizedAlternates, pageMetadata } from "@/lib/seo";
 import { getGuideCardLinks } from "@/lib/guide-cards";
 
 type Props = {
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : ("en" as Locale);
   if (!hasLocalizedGuide(guide, safeLang)) return {};
   const localizedGuide = getLocalizedGuide(guide, safeLang);
-  return {
+  return pageMetadata(lang, `/guides/${slug}`, {
     title: `${localizedGuide.title} — OpenCard`,
     description: localizedGuide.summary,
     // Every locale that renders a translated article body is indexable.
@@ -54,13 +54,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locales.filter((l) => hasLocalizedGuide(guide, l)),
     ),
     openGraph: {
-      title: localizedGuide.title,
-      description: localizedGuide.summary,
       type: "article",
       publishedTime: guide.published,
       modifiedTime: guide.updated,
     },
-  };
+  });
 }
 
 export default async function GuidePage({ params }: Props) {

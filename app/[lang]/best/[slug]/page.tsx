@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import BestMethodology from "@/app/components/BestMethodology";
 import { BEST_CATEGORIES, getBestCategory } from "@/lib/best-categories";
 import { getAllCards } from "@/lib/cards";
-import { localizedAlternates } from "@/lib/seo";
+import { localizedAlternates, pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ lang: string; slug: string }> };
 
@@ -19,11 +19,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (lang !== "en" && lang !== "zh") notFound();
   const category = getBestCategory(slug);
   if (!category) notFound();
-  return {
+  return pageMetadata(lang, `/best/${slug}`, {
     title: `${category.title[lang]} | OpenCard`,
     description: category.metaDescription[lang],
     alternates: localizedAlternates(lang, `/best/${slug}`, ["en", "zh"]),
-  };
+  });
 }
 
 export default async function BestCategoryPage({ params }: Props) {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { localizedAlternates } from "@/lib/seo";
+import { localizedAlternates, pageMetadata } from "@/lib/seo";
 import { locales } from "@/lib/i18n";
 
 export const dynamic = "force-static";
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     "zh-cn": { title: "服务条款 | OpenCard", description: "阅读 OpenCard 的服务条款、财务信息免责声明、联盟链接披露，以及使用本站时的责任与限制。" },
     es: { title: "Términos de servicio | OpenCard", description: "Lee los términos de OpenCard, el aviso sobre información financiera, las divulgaciones de afiliados y las responsabilidades de uso." },
   };
-  return { ...(copy[lang] ?? copy.en), alternates: localizedAlternates(lang, "/terms") };
+  return pageMetadata(lang, "/terms", { ...(copy[lang] ?? copy.en), alternates: localizedAlternates(lang, "/terms") });
 }
 
 export default async function TermsPage({ params }: Props) {

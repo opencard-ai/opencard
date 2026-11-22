@@ -1,4 +1,4 @@
-import { localizedAlternates } from "@/lib/seo";
+import { localizedAlternates, pageMetadata } from "@/lib/seo";
 import { t, locales } from "@/lib/i18n";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -21,11 +21,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const title = lang === "zh" ? "關於 OpenCard AI 與編輯團隊" : lang === "zh-cn" ? "关于 OpenCard AI 与编辑团队" : lang === "es" ? "Sobre OpenCard AI y su equipo editorial" : "About OpenCard AI and Our Editorial Team";
-  return {
+  return pageMetadata(lang, "/about", {
     title,
-    description: "Learn who maintains OpenCard, why the site exists, and how its credit card guides and data are reviewed.",
+    description: lang === "zh" ? "了解 OpenCard 的維護團隊、成立理念，以及信用卡指南與資料的審核方式。" : lang === "zh-cn" ? "了解 OpenCard 的维护团队、创立初衷，以及信用卡指南与数据的审核方式。" : lang === "es" ? "Conoce quién mantiene OpenCard, por qué existe el sitio y cómo se revisan sus guías y datos de tarjetas de crédito." : "Learn who maintains OpenCard, why the site exists, and how its credit card guides and data are reviewed.",
     alternates: localizedAlternates(lang, "/about"),
-  };
+  });
 }
 
 export default async function AboutPage({ params }: Props) {

@@ -12,7 +12,7 @@ import type { Metadata } from "next";
 import { locales, t } from "@/lib/i18n";
 import { translateCategory } from "@/lib/category-translations";
 import { isIndexableCard } from "@/lib/indexable-cards";
-import { localizedAlternates } from "@/lib/seo";
+import { localizedAlternates, pageMetadata } from "@/lib/seo";
 import { getCardEditorial } from "@/lib/card-editorial";
 import { buildCardAnalysis, applicableRules, knownNoForeignFee } from "@/lib/card-analysis";
 import { cardSeoMeta } from "@/lib/card-seo";
@@ -127,7 +127,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const card = getCardById(card_id);
   if (!card) return { title: t("status.noResults", lang as any) };
   const seo = cardSeoMeta(card, lang);
-  return {
+  return pageMetadata(lang, `/cards/${card_id}`, {
     title: seo.title,
     description: seo.description,
     robots: lang === "en" && isIndexableCard(card)
@@ -136,7 +136,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // Card data is English-only: translated card pages stay noindex and are
     // not advertised as hreflang alternates.
     alternates: localizedAlternates(lang, `/cards/${card.card_id}`, isIndexableCard(card) ? ["en"] : []),
-  };
+  });
 }
 
 export default async function CardDetailPage({ params }: Props) {
