@@ -37,7 +37,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ card_id:
     const cost = v1Config.queryCost;
     const out = await db.transaction(async (tx) => {
       // Serialize spending per agent so concurrent requests cannot overdraw.
-      await tx.query(`SELECT agent_id FROM agents WHERE agent_id = $1 FOR UPDATE`, [agent.agent_id]);
+      await tx.query(`SELECT score, tier FROM public.v1_lock_agent($1)`, [agent.agent_id]);
       const before = await getBalances(tx, agent.agent_id);
       const tasks = await pickTasks(tx, agent.agent_id, v1Config.maxTasksAttached(), Math.random, networkGroup(clientIp(req)));
       if (before.balance < cost) return { paid: false as const, before, tasks };

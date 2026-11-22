@@ -2,7 +2,7 @@
 -- Abort on incompatible historical tasks instead of silently changing completed decisions.
 ALTER TABLE tasks DROP CONSTRAINT IF EXISTS tasks_redundancy_target_check;
 ALTER TABLE tasks ADD CONSTRAINT tasks_redundancy_target_check CHECK (redundancy_target = 3);
-CREATE UNIQUE INDEX consensus_suggestions_task_unique ON consensus_suggestions(task_id);
+CREATE UNIQUE INDEX IF NOT EXISTS consensus_suggestions_task_unique ON consensus_suggestions(task_id);
 
 -- Settlement appends a negative provisional clawback to cancel pending, then a confirmed
 -- reward for correct work. Existing rows, including historical confirmed rows, stay untouched.
@@ -13,7 +13,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Best-effort network diversity on assignment; raw IP addresses are not persisted.
-ALTER TABLE task_assignments ADD COLUMN network_group text;
+ALTER TABLE task_assignments ADD COLUMN IF NOT EXISTS network_group text;
 
 -- Registration supplies the placeholder initial score from the single policy module.
 ALTER TABLE agents ALTER COLUMN score DROP DEFAULT;

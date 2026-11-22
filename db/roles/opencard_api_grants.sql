@@ -7,7 +7,9 @@ REVOKE CREATE ON SCHEMA public FROM opencard_api;
 GRANT USAGE ON SCHEMA public TO opencard_api;
 
 GRANT SELECT, INSERT          ON agents            TO opencard_api;
-GRANT UPDATE (contact_email)  ON agents            TO opencard_api; -- needed only for SELECT ... FOR UPDATE row locks
+-- Table-level REVOKE ALL does not remove old column-level grants.
+REVOKE UPDATE (contact_email) ON agents            FROM opencard_api;
+GRANT EXECUTE ON FUNCTION public.v1_lock_agent(text) TO opencard_api;
 GRANT SELECT, INSERT          ON credit_ledger     TO opencard_api;
 GRANT SELECT                  ON sources_whitelist TO opencard_api;
 GRANT SELECT                  ON tasks             TO opencard_api;

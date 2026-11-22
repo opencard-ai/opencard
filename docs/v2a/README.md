@@ -2,6 +2,8 @@
 
 Implements architecture v0.2 §§0, 4–6, 8–9, 11–12. The existing `lib/v1` skeleton, `pg` DB abstraction, migrations and PGlite tests are retained. New dependencies/services: none. All V2A routes return 404 unless `V1_API_ENABLED=true`. Public HTML and `GET /api/cards` receive no V2A gating or edits.
 
+The frozen §9.5 vote outcome list is amended by [the Phase 1 spec amendment](spec-amendment-vote-outcomes.md) to include terminal `disputed` and `expired` outcomes.
+
 ## Frozen API
 
 | Method | Path | Behavior |
@@ -22,7 +24,11 @@ Dispatch selects gold independently at `V1_HONEYPOT_PERCENT` (10–20%, placehol
 1. Provision the existing Neon/Postgres database. Create the non-owner `opencard_api` login separately with a generated password. Do not put credentials in commands, commits or logs.
 2. On the operator's machine only, create `~/.opencard-v1-private/admin.env` with mode **600**, containing `V1_ADMIN_DATABASE_URL=<owner URL>`. The owner URL is read **only** from this file, never from process/Vercel env. Never upload this file to Vercel or copy it into the repository.
 3. Run `npx tsx scripts/v1-migrate.ts`. Migrations 0001–0005 create the five frozen tables plus `consensus_suggestions`, isolated `task_gold_answers`, assignments, invites and historical scoring metadata. 0004 enforces exactly three votes, a unique suggestion per task, immutable ledger rows and network diversity metadata. Incompatible old quorum values abort migration for operator review. 0005 adds terminal disputed vote outcomes, repairs existing disputed votes, and restricts API task updates to open → quorum; the offline role retains settlement transitions.
-4. Apply `db/roles/opencard_api_grants.sql` as the owner using your local DB client (after every migration). The API role cannot read gold answers, scoring metadata, migration state or suggestions, and cannot delete/truncate tables. Do not use an owner URL for the runtime.
+4. Apply `db/roles/opencard_api_grants.sql` as the owner using your local DB client (after every migration). The API role cannot read gold answers, scoring metadata, migration state or suggestions, and cannot delete/truncate tables. Do not use an owner URL for the runtime. Agent contact email is insert-only for the API; no `agents` UPDATE privilege is granted. `public.v1_lock_agent(text)` is an owner-created, fixed-search-path `SECURITY DEFINER` function that only locks the matching agent row and returns its public score/tier snapshot, preserving serialized spending and vote snapshots without profile writes. Its execution is revoked from PUBLIC and granted only to the API role.
+
+   The expected permission role is `opencard_api`. To use a differently named runtime login, create it as a non-owner with `INHERIT` and run `GRANT opencard_api TO runtime_login` as the owner, then use that login in `V1_DATABASE_URL`. The transition guard checks `pg_has_role(..., 'USAGE')`: the API role itself, logins that directly or indirectly inherit its privileges, and logins that issue `SET ROLE opencard_api` are limited to open → quorum. The settle/admin role used by `V1_ADMIN_DATABASE_URL` must not hold a USAGE grant of `opencard_api` (direct or inherited), and must not `SET ROLE` to it. On PostgreSQL 16+, a CREATEROLE owner's automatic ADMIN grant has INHERIT FALSE by default (`createrole_self_grant=''`), so it does not confer USAGE and does not block settlement. The grants script continues to target the permission role, so changing the login requires no migration edits.
+
+   Migrations 0004 and 0005 may also be reapplied by hand, in order, as the owner; their index, column, constraint, function and trigger definitions tolerate reruns. Reapply the grants script afterward as usual.
 5. Load the supplied private reference data, without copying it into git:
 
    ```sh

@@ -55,7 +55,9 @@ describe("v1 review fixes: DB role, probation weight, expiry, excerpt limits, sa
       await assert.rejects(pg.query(`CREATE TABLE x_evil (a int)`), /permission denied/);
       await pg.query(`SELECT task_id, card_id FROM tasks LIMIT 1`);
       await pg.query(`SELECT pattern FROM sources_whitelist WHERE dispatchable LIMIT 1`);
-      await pg.query(`SELECT agent_id FROM agents LIMIT 1 FOR UPDATE`);
+      await assert.rejects(pg.query(`UPDATE agents SET contact_email = 'changed@example.com'`), /permission denied/);
+      await assert.rejects(pg.query(`SELECT agent_id FROM agents LIMIT 1 FOR UPDATE`), /permission denied/);
+      await pg.query(`SELECT * FROM public.v1_lock_agent((SELECT agent_id FROM agents LIMIT 1))`);
       const rolsuper = await pg.query<{ owner: string }>(`SELECT tableowner AS owner FROM pg_tables WHERE tablename = 'tasks'`);
       assert.notEqual(rolsuper.rows[0].owner, "opencard_api");
     } finally {

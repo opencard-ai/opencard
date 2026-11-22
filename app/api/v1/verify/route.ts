@@ -67,7 +67,7 @@ export async function POST(req: Request) {
       const dup = await tx.query(`SELECT 1 FROM votes WHERE task_id = $1 AND agent_id = $2`, [s.task_id, agent.agent_id]);
       if (dup.rows.length) return new Reject(409, "already_submitted");
 
-      const snapshot = await tx.query<{ score: string | number; tier: string }>(`SELECT score, tier FROM agents WHERE agent_id = $1 FOR UPDATE`, [agent.agent_id]);
+      const snapshot = await tx.query<{ score: string | number; tier: string }>(`SELECT score, tier FROM public.v1_lock_agent($1)`, [agent.agent_id]);
       if (snapshot.rows[0].tier === "restricted") return new Reject(403, "agent_restricted");
       const voteId = newId("v");
       // Evidence keeps only url, retrieved_at, excerpt, content_hash (parseSubmission drops anything else).

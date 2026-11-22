@@ -1,7 +1,7 @@
 import { after, before, describe, it } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { makeTestDb, evidence, assignAll } from "./v1-harness";
+import { makeTestDb, seedFixtures, evidence, assignAll } from "./v1-harness";
 import type { V1Db } from "@/lib/v1/db";
 import { setV1DbForTesting } from "@/lib/v1/db";
 import type { PGlite } from "@electric-sql/pglite";
@@ -12,6 +12,8 @@ import { generateApiKey, newId } from "@/lib/v1/keys";
 import { pickTasks } from "@/lib/v1/tasks";
 import { v1Config } from "@/lib/v1/config";
 import { POST as verify } from "@/app/api/v1/verify/route";
+import { getAllCards } from "@/lib/cards";
+import { GET as getCard } from "@/app/api/v1/cards/[card_id]/route";
 import { GET as me } from "@/app/api/v1/agents/me/route";
 
 const wl = { entries: [{ pattern: "https://issuer.example/cards/**", issuer: "Synthetic", kind: "official", fields: ["annual_fee", "sources[].url"], dispatchable: true }] };
@@ -194,17 +196,57 @@ describe("review 1 regression coverage", () => {
     const pair = await taskPair(false), a = await agent();
     await submit(a.key, pair.regular, pair.source);
     await pg.query(`UPDATE tasks SET state = 'disputed' WHERE task_id = $1`, [pair.regular]);
-    await pg.exec(`DROP TRIGGER tasks_api_transition_guard ON tasks`);
     await pg.exec(readFileSync(new URL("../db/migrations/0005_review_settlement_guards.sql", import.meta.url), "utf8"));
     assert.equal((await pg.query<{ outcome: string }>(`SELECT outcome FROM votes WHERE task_id = $1`, [pair.regular])).rows[0].outcome, "disputed");
   });
 
-  it("DB trigger allows only API open -> quorum while retaining locks and privileged settlement", async () => {
+  it("migrations 0004 and 0005 tolerate repeated manual application", async () => {
+    for (let repeat = 0; repeat < 2; repeat++) {
+      for (const file of ["0004_phase1_invariants.sql", "0005_review_settlement_guards.sql"]) {
+        await pg.exec(readFileSync(new URL(`../db/migrations/${file}`, import.meta.url), "utf8"));
+      }
+    }
     const pair = await taskPair(false);
-    await pg.exec(`CREATE ROLE opencard_api NOLOGIN`);
-    await pg.exec(readFileSync(new URL("../db/roles/opencard_api_grants.sql", import.meta.url), "utf8"));
-    await pg.exec(`SET ROLE opencard_api`);
+    await assert.rejects(pg.query(`UPDATE tasks SET redundancy_target = 4 WHERE task_id = $1`, [pair.regular]), /tasks_redundancy_target_check/);
+    await assert.rejects(pg.query(`UPDATE credit_ledger SET delta = delta + 1`), /append-only/);
+    assert.equal((await pg.query(`SELECT 1 FROM pg_trigger WHERE tgname = 'tasks_api_transition_guard'`)).rows.length, 1);
+  });
+
+  it("CREATEROLE owner can settle despite its automatic ADMIN-only API membership", async () => {
+    const { pg: ownerPg } = await makeTestDb();
     try {
+      await seedFixtures(ownerPg);
+      await ownerPg.exec(`CREATE ROLE settle_owner LOGIN NOSUPERUSER CREATEROLE;
+        ALTER TABLE tasks OWNER TO settle_owner;
+        SET ROLE settle_owner;
+        SET createrole_self_grant = '';
+        CREATE ROLE opencard_api NOLOGIN`);
+      assert.deepEqual((await ownerPg.query(`SELECT rolsuper, rolcreaterole,
+        pg_has_role(current_user, 'opencard_api', 'MEMBER') AS member,
+        pg_has_role(current_user, 'opencard_api', 'USAGE') AS usage
+        FROM pg_roles WHERE rolname = current_user`)).rows,
+        [{ rolsuper: false, rolcreaterole: true, member: true, usage: false }]);
+      const task = (await ownerPg.query<{ task_id: string }>(`SELECT task_id FROM tasks LIMIT 1`)).rows[0].task_id;
+      for (const [start, end] of [["quorum", "settled"], ["quorum", "disputed"], ["quorum", "expired"], ["open", "expired"]]) {
+        await ownerPg.query(`UPDATE tasks SET state = $2 WHERE task_id = $1`, [task, start]);
+        await ownerPg.query(`UPDATE tasks SET state = $2 WHERE task_id = $1`, [task, end]);
+        assert.equal((await ownerPg.query<{ state: string }>(`SELECT state FROM tasks WHERE task_id = $1`, [task])).rows[0].state, end);
+      }
+    } finally { await ownerPg.close(); }
+  });
+
+  for (const role of ["opencard_api", "runtime_login", "noinherit_login"]) it(`DB trigger restricts ${role} to open -> quorum and preserves offline settlement`, async () => {
+    const pair = await taskPair(false);
+    await pg.exec(`DO $$ BEGIN IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'opencard_api') THEN CREATE ROLE opencard_api NOLOGIN; END IF; END $$`);
+    if (role === "runtime_login") await pg.exec(`CREATE ROLE runtime_login NOLOGIN INHERIT; GRANT opencard_api TO runtime_login`);
+    await pg.exec(readFileSync(new URL("../db/roles/opencard_api_grants.sql", import.meta.url), "utf8"));
+    if (role === "noinherit_login") await pg.exec(`CREATE ROLE noinherit_login NOLOGIN NOINHERIT; GRANT opencard_api TO noinherit_login`);
+    await pg.exec(`SET ROLE ${role}`);
+    try {
+      if (role === "noinherit_login") {
+        await assert.rejects(pg.query(`UPDATE tasks SET state = 'quorum' WHERE task_id = $1`, [pair.regular]), /permission denied/);
+        await pg.exec(`SET ROLE opencard_api`);
+      }
       await pg.query(`SELECT task_id FROM tasks WHERE task_id = $1 FOR UPDATE`, [pair.regular]);
       for (const state of ["settled", "disputed", "expired", "open"]) await assert.rejects(pg.query(`UPDATE tasks SET state = $2 WHERE task_id = $1`, [pair.regular, state]), /API task transition/);
       await pg.query(`UPDATE tasks SET state = 'quorum' WHERE task_id = $1`, [pair.regular]);
@@ -213,4 +255,29 @@ describe("review 1 regression coverage", () => {
     await pg.query(`UPDATE tasks SET state = 'settled' WHERE task_id = $1`, [pair.regular]);
     assert.equal((await pg.query<{ state: string }>(`SELECT state FROM tasks WHERE task_id = $1`, [pair.regular])).rows[0].state, "settled");
   });
+  it("revokes legacy contact updates while serving billed cards and vote snapshots as a member login", async () => {
+    const pair = await taskPair(false), a = await agent();
+    await assignAll(pg);
+    await pg.query(`INSERT INTO credit_ledger (entry_id,agent_id,delta,reason,state) VALUES ($1,$2,3,'probation_grant','confirmed')`, [newId("cl"), a.id]);
+    // Simulate the previous grants, then prove applying the new file removes them.
+    await pg.exec(`GRANT UPDATE (contact_email) ON agents TO opencard_api`);
+    for (let i = 0; i < 2; i++) await pg.exec(readFileSync(new URL("../db/roles/opencard_api_grants.sql", import.meta.url), "utf8"));
+    await pg.exec(`CREATE ROLE no_api_privileges NOLOGIN; SET ROLE no_api_privileges`);
+    try {
+      await assert.rejects(pg.query(`SELECT * FROM public.v1_lock_agent($1)`, [a.id]), /permission denied/);
+    } finally { await pg.exec(`RESET ROLE`); }
+    await pg.exec(`SET ROLE runtime_login`);
+    try {
+      await assert.rejects(pg.query(`UPDATE agents SET contact_email = 'changed@example.com' WHERE agent_id = $1`, [a.id]), /permission denied/);
+      await assert.rejects(pg.query(`SELECT score FROM agents WHERE agent_id = $1 FOR UPDATE`, [a.id]), /permission denied/);
+      assert.deepEqual((await pg.query(`SELECT * FROM public.v1_lock_agent($1)`, [a.id])).rows, [{ score: '0.5', tier: 'probation' }]);
+      const cardId = getAllCards()[0].card_id;
+      const r = await getCard(new Request(`http://localhost/api/v1/cards/${cardId}`, { headers: { authorization: `Bearer ${a.key}` } }), { params: Promise.resolve({ card_id: cardId }) });
+      assert.equal(r.status, 200, JSON.stringify(await r.json()));
+      assert.equal((await status(a.key)).credits.balance, 2);
+      await submit(a.key, pair.regular, pair.source);
+      assert.equal((await status(a.key)).credits.pending, 1);
+    } finally { await pg.exec(`RESET ROLE`); }
+  });
+
 });
