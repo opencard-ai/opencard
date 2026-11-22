@@ -143,21 +143,15 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
   return (
     <div className={`bg-white rounded-xl border transition-colors ${isCompared ? "ring-2 ring-blue-500 border-blue-500" : "border-slate-200"}`}>
       <div
-        role="button"
-        tabIndex={0}
-        onClick={() => setExpanded((v) => !v)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            setExpanded((v) => !v);
-          }
-        }}
-        aria-expanded={expanded}
-        className="w-full flex items-start sm:items-center gap-3 px-3 py-3 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-xl"
+        className="w-full flex items-start sm:items-center gap-3 px-3 py-3 text-left rounded-xl"
       >
         <CardArt cardId={card.card_id} issuer={card.issuer} size="sm" />
         <div className="flex-1 min-w-0">
-          <h3 className="text-sm font-semibold text-slate-900 leading-snug whitespace-normal break-words">{card.name}</h3>
+          <h3 className="text-sm font-semibold text-slate-900 leading-snug whitespace-normal break-words">
+            <Link href={`/${lang}/cards/${card.card_id}`} className="hover:underline">
+              {card.name}
+            </Link>
+          </h3>
           <div className="mt-1">
             <IssuerChip issuer={card.issuer} />
           </div>
@@ -178,10 +172,18 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
         >
           {saved ? <Check className="w-4 h-4" strokeWidth={2.5} /> : <Bookmark className="w-4 h-4" />}
         </button>
-        <ChevronRight
-          aria-hidden
-          className={`shrink-0 w-4 h-4 text-slate-400 transition-transform duration-200 ${expanded ? "rotate-90" : ""}`}
-        />
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          aria-expanded={expanded}
+          aria-label={`${expanded ? t.collapse : t.expand}: ${card.name}`}
+          className="shrink-0 w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          <ChevronRight
+            aria-hidden
+            className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${expanded ? "rotate-90" : ""}`}
+          />
+        </button>
       </div>
 
       {expanded && (
