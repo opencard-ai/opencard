@@ -34,7 +34,6 @@
       "bonus_points": 85000,
       "spending_requirement": 5000,
       "time_period_months": 6,
-      "statement_credit": 150,
       "description": "Earn 85,000 Marriott Bonvoy bonus points after spending $5,000 on purchases in the first 6 months.",
       "point_program": "Marriott Bonvoy",
       "estimated_value": 646,
@@ -44,8 +43,10 @@
       "notes": [
         "2026-10-01 safety-check: elevated 125k+$150 ended 2026-09-30; official Marriott pages show 85k after $5k/6 months, no statement credit."
       ],
-      "source_conflicts": [],
-      "last_verified": "2026-10-01"
+      "source_conflicts": [
+        "2026-11-23 official full GET verification: Amex product page (rendered 200) advertises 85,000 Marriott Bonvoy Bonus Points after $5,000 in 6 months, with no statement credit or offer expiry stated. Marriott Bevy product page (GET 200) advertises 150k Bonus Points plus a $250 statement credit after $5K in 6 months; \"Offer ends 1/13/2027.\" The January 13, 2027 expiry belongs to the different Marriott offer and is not applied to the Amex 85,000-point offer. Offer-watch source_conflicts holds are retained for manual review."
+      ],
+      "last_verified": "2026-11-23"
     }
   },
   "citations": {
