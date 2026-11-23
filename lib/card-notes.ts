@@ -11,6 +11,18 @@ const NOTES: Record<string, EditorNote> = {
     reviewed: "2026-11-16",
     note: "This is the Ulta Beauty Rewards Mastercard, issued by Comenity Capital Bank (Bread Financial). Correction: our record previously listed 4x at Ulta and 2x on gas and dining; Ulta's official page shows 2 points per $1 at Ulta Beauty and 1 point per $3 everywhere else, so we fixed it. There's no annual fee. Points are redeemed for savings at Ulta Beauty, so it makes sense if you already shop there often — as an everyday card, 1 point per $3 is weak. Apply, log-in and bill-pay links are in the fees section below.",
   },
+  "capital-one-quicksilver": {
+    reviewed: "2026-11-23",
+    note: "Searching for a Capital One cash-back card, sometimes typed as 'capital 1 cash card'? This page covers Quicksilver Rewards: unlimited 1.5% cash back on every purchase, with no annual or foreign transaction fees. That search phrase is not the current product name. QuicksilverOne is a separate fair-credit card with a $39 annual fee; Quicksilver Secured has no annual fee but requires a minimum $200 refundable deposit. For dining, groceries, entertainment and streaming, compare Savor below; for a higher flat rate, read our Quicksilver vs. Wells Fargo Active Cash guide.",
+  },
+  "capital-one-savor": {
+    reviewed: "2026-11-23",
+    note: "Searching for SavorOne rewards? Capital One currently offers both Savor Rewards and SavorOne Rewards, so check which product you mean. This is Savor, the $0 annual-fee card. The current SavorOne is a separate fair-credit card with a $39 annual fee, not a discontinued page or an interchangeable name for this card. Savor earns unlimited 3% cash back at grocery stores (excluding superstores like Walmart and Target), on dining, entertainment and popular streaming services, and 1% on other purchases. There are no foreign transaction fees. Compare Quicksilver's flat 1.5% if most of your spending falls outside those categories.",
+  },
+  "boa-biz-advantage-travel": {
+    reviewed: "2026-11-23",
+    note: "Bank of America's Business Advantage Travel Rewards World Mastercard earns 1.5 points per $1 on everyday purchases and 3 points per $1 on travel purchases made at BofA Travel. It has no annual fee or international transaction fees. Points can offset travel and dining purchases as statement credits, or be redeemed for travel with no blackout dates at BofA Travel. The 3-point rate depends on booking through that platform. Read our Business Advantage Travel vs. Unlimited Cash guide below to compare redemption options and Preferred Rewards for Business tiers before choosing points over cash.",
+  },
   "amex-biz-platinum": {
     reviewed: "2026-10-18",
     note: "The as-high-as welcome offer is the headline, but it requires $20,000 in purchases in three months — a pace only real business spending supports. The 5x rates apply to flights and prepaid hotels booked on AmexTravel.com, and everyday business spending earns 2x only in key business categories or on purchases of $5,000 or more. After year one, the $895 fee rests on credits such as the semiannual hotel credit and the quarterly Indeed credit, which only count if your business already spends there.",
@@ -60,8 +72,8 @@ const NOTES: Record<string, EditorNote> = {
     note: "Don't apply for this card. Spirit Airlines stopped flying in May 2026, and Bank of America's page for this card was no longer available when we checked. The miles, companion and fee figures in our record describe the old product and no longer apply. If you already hold it, watch for mail from Bank of America about what your account becomes, and check any autopays or saved card numbers before the account changes.",
   },
   "barclays-banana-republic-rewards-mastercard": {
-    reviewed: "2026-11-16",
-    note: "This is the Banana Republic Encore Mastercard. It earns 25 points per $1 at Gap Inc. brands, 15 at other eligible apparel stores and 5 elsewhere (Barclays calls these 5X, 3X and 1X). With 500 points per $1 reward, that is about 5%, 3% and 1% back, redeemable only at Gap Inc. brands or in the Encore Market. The welcome offer is 20% off your first purchase at Banana Republic with the new card, not a cash bonus. The 33.49% variable purchase APR makes carrying a balance expensive. It uses the same Encore program as the Old Navy, Gap and Athleta Encore cards; the main difference is the first-purchase discount. Spending $600 a year at Gap Inc. brands earns 15,000 points, or $30 in rewards, versus $12 on a flat 2% cash-back card.",
+    reviewed: "2026-11-23",
+    note: "This is the Banana Republic Encore Mastercard. It earns 25 points per $1 at Gap Inc. brands, 15 at other eligible apparel stores and 5 elsewhere (Barclays calls these 5X, 3X and 1X). With 500 points per $1 reward, that is about 5%, 3% and 1% back, redeemable only at Gap Inc. brands or in the Encore Market. The welcome offer is 20% off your first purchase at Banana Republic with the new card, not a cash bonus. The 33.49% variable purchase APR makes carrying a balance expensive. It uses the same Encore program as the Old Navy, Gap and Athleta Encore cards; the main difference is the first-purchase discount. Spending $600 a year at Gap Inc. brands earns 15,000 points, or $30 in rewards, versus $12 on a flat 2% cash-back card. Benefits also include free standard shipping on eligible online orders of $35 or more paid with the card. Our Old Navy vs. Banana Republic Credit Card guide below explains the benefits, redemption limits and Mastercard versus store-card versions.",
   },
   "chase-united-explorer": {
     reviewed: "2026-10-19",

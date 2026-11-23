@@ -192,7 +192,7 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
   },
   "capital-one-savor": {
     title: "Capital One Savor: No Annual Fee, 3% Dining & Groceries | OpenCard",
-    description: "Capital One Savor Cash Rewards: $0 annual fee, unlimited 3% cash back on dining, groceries, entertainment and select streaming, plus 8% on Capital One Entertainment and no foreign transaction fees.",
+    description: "Looking for SavorOne rewards? Compare current $0-fee Savor with $39-fee SavorOne. Savor earns 3% on dining, eligible groceries, entertainment and popular streaming.",
   },
   "marriott-bonvoy-bold": {
     title: "Marriott Bonvoy Bold: No Annual Fee & Silver Elite Status | OpenCard",
@@ -233,12 +233,12 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
     description: "American Express Blue Business Plus: $0 annual fee and 2x Membership Rewards points on the first $50,000 of purchases each year (1x after). Transferable points for a business that wants rewards it can use, not just cash back.",
   },
   "boa-biz-advantage-travel": {
-    title: "BofA Business Advantage Travel Rewards (WorldPoints): No Annual Fee | OpenCard",
-    description: "Bank of America's Business Advantage Travel Rewards World Mastercard: $0 annual fee, 1.5 points per $1 everywhere and 3x through the BofA Travel Center. Also searched as WorldPoints Travel Rewards for Business.",
+    title: "Bank of America Business Travel Rewards: Fees & Points | OpenCard",
+    description: "Business Advantage Travel Rewards: no annual or international transaction fees, 1.5 points per $1 on everyday purchases and 3 points on travel through BofA Travel.",
   },
   "barclays-gap-good-rewards-mastercard": {
-    title: "Gap Encore Mastercard: No Annual Fee & 25% Off First Purchase | OpenCard",
-    description: "Barclays' Gap Encore Mastercard works anywhere Mastercard is accepted. No annual fee, points at Gap and other Gap Inc. brands, and 25% off your first Gap purchase. Same rewards family as Old Navy, Banana Republic and Athleta.",
+    title: "Gap Encore Mastercard: No Annual Fee, Rewards & Benefits | OpenCard",
+    description: "Barclays' Gap Encore Mastercard works anywhere Mastercard is accepted. No annual fee and points at Gap and other Gap Inc. brands. Check the current first-purchase discount with Barclays. Same rewards family as Old Navy, Banana Republic and Athleta.",
   },
   "barclays-banana-republic-rewards-mastercard": {
     title: "Banana Republic Encore Mastercard: No Annual Fee & 20% Off First Purchase | OpenCard",
