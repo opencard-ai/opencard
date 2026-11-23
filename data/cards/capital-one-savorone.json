@@ -14,7 +14,7 @@
     "point_program": "Cash Back",
     "description": "No welcome bonus is listed on the official SavorOne Rewards page.",
     "confidence": "high",
-    "last_verified": "2026-10-02"
+    "last_verified": "2026-11-23"
   },
   "earning_rates": [
     {
@@ -73,14 +73,13 @@
   },
   "tags": [
     "cash-back",
-    "no-annual-fee",
     "no-foreign-transaction-fee"
   ],
   "recurring_credits": [],
   "sources": [
     {
       "url": "https://www.capitalone.com/credit-cards/savorone/",
-      "notes": "Official Capital One page checked 2026-10-02: SavorOne Rewards is now a fair-credit card with a $39 annual fee; 3% grocery/dining/entertainment/streaming, 5% Capital One Travel, 8% Capital One Entertainment, 1% other. The $0 excellent-credit card is now Capital One Savor (see capital-one-savor)."
+      "notes": "Official Capital One page checked 2026-10-02: SavorOne Rewards is now a fair-credit card with a $39 annual fee; 3% grocery/dining/entertainment/streaming, 5% Capital One Travel, 8% Capital One Entertainment, 1% other. The $0 excellent-credit card is now Capital One Savor (see capital-one-savor). | Official product page checked 2026-11-23: \"Fair credit\" and \"$39 annual fee\"; no welcome bonus is listed."
     },
     {
       "url": "https://www.bankrate.com/credit-cards/news/capital-one-savorone-changes/",
@@ -88,10 +87,10 @@
     },
     {
       "url": "https://www.capitalone.com/learn-grow/money-management/everything-about-savorone/",
-      "notes": "Capital One SavorOne overview confirming earning categories and $200 welcome bonus | Official card page: No foreign transaction fees: There are no foreign transaction fees on purchases made outsi (checked 2026-10-19)."
+      "notes": "Historical Capital One SavorOne overview; not evidence of a current welcome bonus. Official SavorOne product page checked 2026-11-23 lists no welcome bonus. | Official card page: No foreign transaction fees (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-11-23",
   "hotel_program": null,
   "application_rules": {
     "rules": []
