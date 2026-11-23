@@ -72,13 +72,13 @@
       "notes": "Ulta Beauty official credit card page checked 2026-11-16: 20% off first qualifying purchase; 500 Welcome Bonus Points after $500 outside Ulta Beauty in the first 90 days (Mastercard only); 2 points per $1 at Ulta Beauty; 1 point per $3 elsewhere (Mastercard); $0 annual fee. No insurance or purchase-protection benefits are listed."
     },
     {
-      "url": "https://d.comenity.net/legaldocs/ultabeautyrewards/legal-documents/schumerbox-cca",
-      "notes": "Comenity Capital Bank Rate and Fee Summary checked 2026-11-16: Annual Fee None; Foreign Transaction fee 3.0% of each transaction in U.S. dollars (Ulta Beauty Rewards Mastercard column; N/A for the store-only card)."
+      "url": "https://d.comenity.net/legaldocs/ultabeautyrewardsmastercard/legal-documents/schumerbox-cca",
+      "notes": "Comenity Capital Bank Mastercard-specific Rate and Fee Summary and agreement linked by Ulta footnote 3, full GET 200 checked 2026-11-23; terms also confirmed in embedded LegalDocsServerApp-state JSON: Annual Fee None; Foreign Transaction fee 3.0% of each transaction in U.S. dollars (Mastercard column). Late fee $30.00 if no late fee was charged during the prior six billing periods; otherwise $41.00, not exceeding the amount permitted by law."
     }
   ],
-  "last_updated": "2026-11-16",
+  "last_updated": "2026-11-23",
   "status": "active",
-  "notes": "Ulta Beauty Rewards Mastercard issued by Comenity Capital Bank (Bread Financial); usable anywhere Mastercard is accepted. 2 points per $1 at Ulta Beauty (base member level), 1 point per $3 elsewhere. 3% foreign transaction fee. Applicants not approved for the Mastercard may be considered for the store-only Ulta Beauty Rewards Credit Card.",
+  "notes": "Ulta Beauty Rewards Mastercard issued by Comenity Capital Bank (Bread Financial); usable anywhere Mastercard is accepted. 2 points per $1 at Ulta Beauty (base member level), 1 point per $3 elsewhere. 3% foreign transaction fee. Applicants not approved for the Mastercard may be considered for the store-only Ulta Beauty Rewards Credit Card. Late fee up to $30; up to $41 if a late fee was charged during the prior six billing periods, subject to legal limits.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -88,5 +88,7 @@
   "next_review": "2026-07-15T13:41:49.998000+00:00",
   "deprecated": true,
   "deprecated_reason": "Store-card retail co-brand. Users searching OpenCard generally aren't shopping for retailer-specific cards. Excluded from main listings.",
-  "deprecated_bucket": "B_store_card"
+  "deprecated_bucket": "B_store_card",
+  "late_fee": 30,
+  "late_fee_max": 41
 }
