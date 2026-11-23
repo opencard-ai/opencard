@@ -16,6 +16,17 @@ export const removedCards: readonly {
       "chase-freedom-unlimited",
     ],
   },
+  {
+    id: "barclays-ubereats",
+    name: "Uber Visa Card",
+    removedOn: "2026-11-23",
+    alternatives: [
+      "citi-double-cash",
+      "wells-fargo-active-cash",
+      "fidelity-rewards-visa-signature",
+      "chase-freedom-unlimited",
+    ],
+  },
 ];
 
 export function getRemovedCard(id: string) {
