@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { assessCandidate, expiryReport, emptyLedger, normalizeDate, updateLedger, isClosedToNewApplicants, DEFAULT_OFFICIAL_DOMAINS, type Candidate, type Confirmation } from './gate';
 import { applyPlanToCard, confirmationsFor, planApply, sanityCheck, schemaCheck } from './apply-core';
-import { autoExpiringEntries, buildCandidate, currentBonusVisible, extractValues, htmlToText, isErrorPage, reviewSignals, samePage, stripQuery, type WatchEntry } from './collect';
+import { autoExpiringEntries, buildCandidate, currentBonusVisible, extractValues, htmlToText, isErrorPage, renderPollFinished, reviewSignals, samePage, stripQuery, type WatchEntry } from './collect';
 import { readFileSync, mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
@@ -129,6 +129,22 @@ assert.deepEqual(sanityCheck('welcome_offer.time_period_months', 3, 30, today), 
     appendHistory([heldHistoryEvent(heldPlan.held[0], today), heldHistoryEvent(noPublishHold, today)], history);
     assert.deepEqual(readHistory(history).map(e => e.changes?.[0].old_value), [0, 0]);
   } finally { rmSync(dir, { recursive: true, force: true }); }
+}
+
+// A slow Amex shell must not become a failed fetch at the old five-second cutoff.
+{
+  const patterns = [/AS HIGH AS 175,000/, /after you spend \$12,000/];
+  assert.equal(renderPollFinished('Loading', patterns, 6000, 25000), false);
+  assert.equal(renderPollFinished('', patterns, 24000, 25000), false);
+  assert.equal(renderPollFinished('AS HIGH AS 175,000', patterns, 12000, 25000), false);
+  const offer = 'AS HIGH AS 175,000 Membership Rewards points after you spend $12,000';
+  assert.equal(renderPollFinished(offer, patterns, 15000, 25000), true);
+  assert.equal(renderPollFinished('Loading', patterns, 25000, 25000), true);
+  assert.equal(isErrorPage('Loading'), true); // Exhausted short shells still fail final validation.
+  assert.equal(renderPollFinished('Access Denied', patterns, 4000, 25000), false);
+  assert.equal(renderPollFinished('Access Denied', patterns, 6000, 25000), true);
+  assert.equal(renderPollFinished('Loading', [], 6000, 8000), false);
+  assert.equal(renderPollFinished('Loading', [], 8000, 8000), true);
 }
 
 // ---------- planApply end to end on a Morgan-Stanley-like card

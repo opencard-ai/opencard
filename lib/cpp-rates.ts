@@ -94,13 +94,24 @@ function isCashProgram(program: string | null | undefined): boolean {
  *      program name OR by magnitude heuristic (< 1000 is too small to be
  *      a real points promo).
  * Returns null when inputs are insufficient.
+ * An explicit bonus_type takes precedence over those legacy conventions:
+ * cash is already dollars, discounts have no fixed dollar value, and points
+ * require a valuation in RULES (never the unknown-program default).
  */
 export function recomputeEstimatedValue(
   bonusPoints: number | null | undefined,
   pointProgram: string | null | undefined,
+  bonusType?: "points" | "cash" | "percent_discount" | null,
 ): number | null {
   if (!Number.isFinite(Number(bonusPoints)) || Number(bonusPoints) <= 0) return null;
   const pts = Number(bonusPoints);
+  if (bonusType === "percent_discount") return null;
+  if (bonusType === "cash") return pts;
+  if (bonusType === "points") {
+    const program = (pointProgram ?? "").toLowerCase().trim();
+    const rule = RULES.find((rule) => rule.match(program));
+    return rule ? Math.round((pts * rule.cpp) / 100) : null;
+  }
   if (isCashProgram(pointProgram)) return pts;
   // Real point welcome promos start at ~10k. Anything under 1000 is a
   // miscategorised dollar amount in the catalog.

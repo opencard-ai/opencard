@@ -261,9 +261,10 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
     description: "The Business Platinum Card from American Express: $895 annual fee, 5x points on flights and prepaid hotels booked on AmexTravel.com, 2x on key business purchases, and no foreign transaction fees. See which credits are worth it.",
   },
   // CTR batch 5 (2026-11-16): Ulta + top-query pages. Facts re-checked on issuer pages 2026-11-16.
+  // CTR test 2026-11-23: Ulta "ulta credit card" 0-click / high-impression page. Facts re-checked on ulta.com/rewards/credit-card 2026-11-23.
   "comenity-ulta-beauty-mastercard": {
-    title: "Ulta Credit Card: $0 Fee, 2 Points per $1, Login & Pay Links | OpenCard",
-    description: "Ulta Beauty Rewards Mastercard from Comenity Capital Bank: $0 annual fee, 2 points per $1 at Ulta Beauty and 1 point per $3 everywhere else. Plus links to Ulta's official apply page and the Comenity login to pay your bill.",
+    title: "Ulta Credit Card: 20% Off First Purchase, 2 pts per $1 | OpenCard",
+    description: "Comenity Ulta Beauty Rewards Mastercard: 20% off your first Ulta purchase, $0 annual fee, 2 points per $1 at Ulta Beauty, 1 point per $3 elsewhere.",
   },
   "capital-one-spark-cash-plus": {
     title: "Spark Cash Plus: 2% Cash Back, 2.99% Late Fee, Refundable $150 Fee | OpenCard",

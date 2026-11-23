@@ -40,7 +40,12 @@
   "tags": [
     "no-annual-fee"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.synchrony.com/amazon",
+      "notes": "Official Synchrony issuer page, full GET 200 verified 2026-11-23: \"Your Amazon Store Card or Amazon Secured Card is issued by Synchrony Bank.\""
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
