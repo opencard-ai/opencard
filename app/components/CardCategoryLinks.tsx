@@ -17,8 +17,8 @@ const RELATED: Record<string, RelatedLink[]> = {
     { path: "guides/old-navy-vs-banana-republic-credit-card", en: "Banana Republic benefits & Old Navy comparison", zh: "Banana Republic 福利與 Old Navy 比較" },
   ],
   "boa-biz-advantage-travel": [
-    { path: "guides/boa-business-advantage-travel-vs-unlimited-cash", en: "Business Travel Rewards vs. Unlimited Cash", zh: "商業 Travel Rewards 和 Unlimited Cash 怎麼選" },
-    { path: "best/business-credit-cards", en: "Compare Chase & Capital One business cards", zh: "比較 Chase 和 Capital One 商業卡" },
+    { path: "guides/boa-business-advantage-travel-vs-unlimited-cash", en: "Business Travel Rewards vs. Unlimited Cash", zh: "商務 Travel Rewards 和 Unlimited Cash 怎麼選" },
+    { path: "best/business-credit-cards", en: "Compare Chase & Capital One business cards", zh: "比較 Chase 和 Capital One 商務卡" },
   ],
 };
 

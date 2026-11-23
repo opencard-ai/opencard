@@ -1,7 +1,7 @@
 /**
  * Short hand-written editor's notes for high-visibility card pages.
  * Each note was checked against the card record and the issuer's official
- * page on 2026-10-18 (first ten), 2026-10-19, or 2026-11-16 (Ulta). Keep notes factual; avoid temporary offer amounts
+ * page on 2026-10-18 (first ten), 2026-10-19, 2026-11-16 (Ulta), or 2026-11-23. Keep notes factual; avoid temporary offer amounts
  * unless the record carries them.
  */
 export type EditorNote = { note: string; reviewed: string };
@@ -21,7 +21,7 @@ const NOTES: Record<string, EditorNote> = {
   },
   "boa-biz-advantage-travel": {
     reviewed: "2026-11-23",
-    note: "Bank of America's Business Advantage Travel Rewards World Mastercard earns 1.5 points per $1 on everyday purchases and 3 points per $1 on travel purchases made at BofA Travel. It has no annual fee or international transaction fees. Points can offset travel and dining purchases as statement credits, or be redeemed for travel with no blackout dates at BofA Travel. The 3-point rate depends on booking through that platform. Read our Business Advantage Travel vs. Unlimited Cash guide below to compare redemption options and Preferred Rewards for Business tiers before choosing points over cash.",
+    note: "Bank of America's Business Advantage Travel Rewards World Mastercard earns 1.5 points per $1 on everyday purchases and 3 points per $1 on travel purchases made at BofA Travel. It has no annual fee or international transaction fees. Points can offset travel and dining purchases as statement credits, or be redeemed for travel with no blackout dates at BofA Travel. Only travel booked at BofA Travel earns 3 points per $1. Read our Business Advantage Travel vs. Unlimited Cash guide below to compare redemption options and Preferred Rewards for Business tiers before choosing points over cash.",
   },
   "amex-biz-platinum": {
     reviewed: "2026-10-18",

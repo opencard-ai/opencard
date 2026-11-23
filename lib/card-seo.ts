@@ -234,7 +234,7 @@ const OVERRIDES: Record<string, { title: string; description: string }> = {
   },
   "boa-biz-advantage-travel": {
     title: "Bank of America Business Travel Rewards: Fees & Points | OpenCard",
-    description: "Business Advantage Travel Rewards: no annual or international transaction fees, 1.5 points per $1 on everyday purchases and 3 points on travel through BofA Travel.",
+    description: "Business Advantage Travel Rewards (WorldPoints): no annual or international transaction fees, 1.5 points per $1 on everyday purchases and 3 points on travel through BofA Travel.",
   },
   "barclays-gap-good-rewards-mastercard": {
     title: "Gap Encore Mastercard: No Annual Fee, Rewards & Benefits | OpenCard",
