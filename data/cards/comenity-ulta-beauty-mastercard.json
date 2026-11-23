@@ -7,10 +7,10 @@
   "foreign_transaction_fee": 3,
   "credit_required": "Fair to Good",
   "welcome_offer": {
-    "spending_requirement": 0,
-    "time_period_months": 0,
-    "bonus_points": 0,
-    "bonus_type": "percent_discount",
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": 500,
+    "bonus_type": "points",
     "discount_percent": 20,
     "estimated_value": 0,
     "point_program": "Ulta Beauty Rewards",
@@ -18,9 +18,9 @@
     "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Official ulta.com/rewards/credit-card page checked 2026-11-16: \"20% off your first qualifying purchase at Ulta Beauty when you open and use your card\" (footnote 1: valid one time only) and \"Enjoy 500 Welcome Bonus Points when you spend $500 in the first 90 days outside of Ulta Beauty\" (footnote 5: valid one time only; exclusive to Ulta Beauty Rewards Mastercard holders enrolled in Ulta Beauty Rewards). The 500-point bonus is kept in the description only; no dollar value is assigned because Ulta point value depends on redemption."
+      "Official Ulta Beauty co-brand page https://www.ulta.com/rewards/credit-card, full GET HTTP 200, fetched 2026-11-23 09:41:18 PST (PT): \"Enjoy 500 Welcome Bonus Points when you spend $500 in the first 90 days outside of Ulta Beauty\". Footnote 5: \"Valid one time only. Offer is exclusive to Ulta Beauty Rewards® Mastercard® Credit Card holders enrolled in the Ulta Beauty Rewards® program.\" Ulta.com accepted as an official offer source per OpenCard lead decision. The 90-day period is normalized to 3 months; qualifying spend must be outside Ulta Beauty. The 20% first-purchase discount is retained. No dollar value is assigned because Ulta point value depends on redemption."
     ],
-    "last_verified": "2026-11-16"
+    "last_verified": "2026-11-23"
   },
   "earning_rates": [
     {
@@ -69,7 +69,7 @@
   "sources": [
     {
       "url": "https://www.ulta.com/rewards/credit-card",
-      "notes": "Ulta Beauty official credit card page checked 2026-11-16: 20% off first qualifying purchase; 500 Welcome Bonus Points after $500 outside Ulta Beauty in the first 90 days (Mastercard only); 2 points per $1 at Ulta Beauty; 1 point per $3 elsewhere (Mastercard); $0 annual fee. No insurance or purchase-protection benefits are listed."
+      "notes": "Ulta Beauty official credit card page checked 2026-11-16: 20% off first qualifying purchase; 500 Welcome Bonus Points after $500 outside Ulta Beauty in the first 90 days (Mastercard only); 2 points per $1 at Ulta Beauty; 1 point per $3 elsewhere (Mastercard); $0 annual fee. No insurance or purchase-protection benefits are listed. | Official Ulta Beauty co-brand page https://www.ulta.com/rewards/credit-card, full GET HTTP 200, fetched 2026-11-23 09:41:18 PST (PT): \"Enjoy 500 Welcome Bonus Points when you spend $500 in the first 90 days outside of Ulta Beauty\". Footnote 5: \"Valid one time only. Offer is exclusive to Ulta Beauty Rewards® Mastercard® Credit Card holders enrolled in the Ulta Beauty Rewards® program.\""
     },
     {
       "url": "https://d.comenity.net/legaldocs/ultabeautyrewardsmastercard/legal-documents/schumerbox-cca",
