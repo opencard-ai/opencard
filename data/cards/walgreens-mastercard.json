@@ -49,7 +49,12 @@
   "tags": [
     "no-annual-fee"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://www.synchrony.com/partner/walgreens",
+      "notes": "Official Synchrony issuer page, full GET 200 verified 2026-11-23: \"Your myWalgreens™ Credit Card, or myWalgreens™ Mastercard® is issued by Synchrony Bank.\""
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
