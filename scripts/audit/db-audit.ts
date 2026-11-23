@@ -140,7 +140,7 @@ for (const c of cards) {
   // ---- value vs points*cpp
   const ev = wo.estimated_value ?? wo.bonus_value;
   if (!closed(c) && typeof bp === 'number' && bp > 0 && typeof ev === 'number' && ev > 0) {
-    const expect = recomputeEstimatedValue(bp, wo.point_program);
+    const expect = recomputeEstimatedValue(bp, wo.point_program, wo.bonus_type);
     if (expect && (ev / expect > 2 || ev / expect < 0.5)) add(c, 'value_inconsistent', 'low', `estimated_value=${ev} vs ${bp} ${wo.point_program ?? '(no program)'} ≈ $${expect}`, 'welcome_offer.estimated_value');
   }
   if (closed(c) && typeof bp === 'number' && bp > 0) add(c, 'discontinued_with_offer', 'high', `closed card still has bonus_points=${bp}`, 'welcome_offer');

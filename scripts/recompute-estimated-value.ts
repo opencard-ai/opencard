@@ -6,9 +6,9 @@
  *   --dry  show diffs only, no writes (default)
  *   --apply  write the new values into the JSON files
  *
- * Skips cards without:
- *   - welcome_offer.bonus_points (can't multiply)
- *   - point_program (defaults to 1.0 cpp; still computes but flagged)
+ * Skips offers without positive bonus_points, percent discounts, and explicit
+ * points offers without a known CPP valuation (including merchant loyalty points).
+ * Untyped offers retain the legacy cash/program heuristics.
  */
 import * as fs from "fs";
 import * as path from "path";
@@ -38,7 +38,7 @@ function main() {
     const card = JSON.parse(raw);
     const wo = card.welcome_offer;
     if (!wo) continue;
-    const newEv = recomputeEstimatedValue(wo.bonus_points, wo.point_program);
+    const newEv = recomputeEstimatedValue(wo.bonus_points, wo.point_program, wo.bonus_type);
     if (newEv == null) continue;
     const oldEv = typeof wo.estimated_value === "number" ? wo.estimated_value : null;
     if (oldEv === newEv) continue;
