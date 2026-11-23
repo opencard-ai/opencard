@@ -17,6 +17,17 @@ export const removedCards: readonly {
     ],
   },
   {
+    id: "barclays-uber",
+    name: "Uber Visa Card (Legacy)",
+    removedOn: "2026-11-23",
+    alternatives: [
+      "citi-double-cash",
+      "wells-fargo-active-cash",
+      "fidelity-rewards-visa-signature",
+      "chase-freedom-unlimited",
+    ],
+  },
+  {
     id: "barclays-ubereats",
     name: "Uber Visa Card",
     removedOn: "2026-11-23",
