@@ -17,7 +17,7 @@ const DOC_RSS_URL = "https://www.doctorofcredit.com/feed/";
 function fetchHttps(url: string): Promise<string> {
   return new Promise((resolve, reject) => {
     get(url, { headers: { "User-Agent": "OpenCard/1.0 (credit card research bot)", Accept: "*/*" } }, (res) => {
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+      if (res.statusCode !== undefined && res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
         fetchHttps(res.headers.location).then(resolve).catch(reject);
         return;
       }
