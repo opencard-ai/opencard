@@ -113,6 +113,13 @@ export const htmlToText = (html: string) => html.replace(/<!--[\s\S]*?-->/g, ' '
 /** Issuer bot-block / outage pages (served with HTTP 200 by some issuers). Only consulted when nothing was extracted. */
 export const ERROR_PAGE = /Sorry, we are unable to load this page|Access Denied|Request unsuccessful|unusual (?:activity|traffic)|are you a robot|verify you are (?:a )?human|temporarily unavailable/i;
 export const isErrorPage = (text: string) => ERROR_PAGE.test(text) || text.trim().length < 400;
+/** A short body can still be a client-rendered loading shell. Give it the full settle budget;
+ * only an explicit issuer error may end polling early. Final validation still rejects short pages. */
+export function renderPollFinished(text: string, regexes: RegExp[], elapsedMs: number, maxMs: number): boolean {
+  return elapsedMs >= maxMs || (regexes.length > 0 && regexes.every(re => re.test(text)))
+    || (elapsedMs > 5000 && ERROR_PAGE.test(text));
+}
+
 /** Tracking parameters change between runs; keep errors stable for ledger dedup. */
 export const stripQuery = (url: string) => url.replace(/[?#].*$/, '');
 /** Same page = same host + path (trailing slash and query ignored). A redirect elsewhere means the product page moved/closed. */
@@ -146,7 +153,7 @@ async function fetchRendered(source: WatchSource) {
     const regexes = [...source.patterns.map(p => p.regex), ...(source.review_signals || []).map(s => s.regex)].map(r => new RegExp(r, 'i'));
     const started = Date.now();
     let text = await readText();
-    while (Date.now() - started < max && !(regexes.length && regexes.every(re => re.test(text))) && !(Date.now() - started > 5000 && isErrorPage(text))) {
+    while (!renderPollFinished(text, regexes, Date.now() - started, max)) {
       await new Promise(resolve => setTimeout(resolve, 1000));
       text = await readText();
     }
