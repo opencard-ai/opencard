@@ -61,7 +61,12 @@
   "tags": [
     "no-annual-fee"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2018/2018-barclays-plc-annual-report.pdf",
+      "notes": "Official Barclays 2018 annual report, full GET 200 verified 2026-11-23: \"Our Uber Visa card and our JetBlue Plus Card appeared in U.S. News & World Report’s list of Best Travel Rewards Credit Cards.\" Historical product identity only; this report does not confirm current terms, closure or conversion timing."
+    }
+  ],
   "hotel_program": null,
   "application_rules": {
     "rules": [],
