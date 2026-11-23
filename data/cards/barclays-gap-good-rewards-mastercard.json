@@ -11,17 +11,18 @@
     "time_period_months": 0,
     "bonus_points": 0,
     "bonus_type": "percent_discount",
-    "discount_percent": 25,
+    "discount_percent": 20,
     "estimated_value": 0,
     "point_program": "Points",
-    "description": "Receive 25% off your first purchase with your new card at Gap.",
+    "description": "Receive 20% off your first purchase with your new card at Gap.",
     "confidence": "high",
     "notes": [
       "Official Barclays page checked 2026-10-02; now marketed as the Gap Encore Mastercard (formerly Gap Rewards/Good Rewards).",
       "Official Barclays page 2026-10-19: \"Receive 20% Off your first purchase with your new card at Gap\".",
-      "Official Barclays page 2026-11-16: \"Receive 25% off your first purchase with your new card at Gap\". Apply by 11:59 p.m. PT on 2026-11-19 for the 25% offer; applicants approved after the offer ends receive 20%. Discount code expires fourteen days after account opening."
+      "Official Barclays page 2026-11-16: \"Receive 25% off your first purchase with your new card at Gap\". Apply by 11:59 p.m. PT on 2026-11-19 for the 25% offer; applicants approved after the offer ends receive 20%. Discount code expires fourteen days after account opening.",
+      "Official Barclays page checked 2026-11-23: \"Receive 20% off your first purchase with your new card at Gap\". The previously recorded 25% offer required applying by 2026-11-19 and has ended."
     ],
-    "last_verified": "2026-11-16"
+    "last_verified": "2026-11-23"
   },
   "earning_rates": [
     {
@@ -70,7 +71,7 @@
   "sources": [
     {
       "url": "https://cards.barclaycardus.com/banking/cards/gap-encore-mastercard/",
-      "notes": "Official Barclays page checked 2026-10-02: 5X Gap Inc. family of brands, 3X eligible retail apparel brands, 1X everywhere else; no annual fee. | Official Barclays page 2026-10-19: 20% off first Gap purchase. | Official Barclays page 2026-11-16: \"Receive 25% off your first purchase with your new card at Gap\". Apply by 11:59 p.m. PT on 2026-11-19 for the 25% offer; applicants approved after the offer ends receive 20%. Discount code expires fourteen days after account opening."
+      "notes": "Official Barclays page checked 2026-10-02: 5X Gap Inc. family of brands, 3X eligible retail apparel brands, 1X everywhere else; no annual fee. | Official Barclays page 2026-10-19: 20% off first Gap purchase. | Official Barclays page 2026-11-16: \"Receive 25% off your first purchase with your new card at Gap\". Apply by 11:59 p.m. PT on 2026-11-19 for the 25% offer; applicants approved after the offer ends receive 20%. Discount code expires fourteen days after account opening. | Official Barclays page checked 2026-11-23: \"Receive 20% off your first purchase with your new card at Gap\"; current offer replaces the expired 25% offer."
     },
     {
       "url": "maxrewards.com"
@@ -82,7 +83,7 @@
       "url": "upgradedpoints.com"
     }
   ],
-  "last_updated": "2026-11-16",
+  "last_updated": "2026-11-23",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
