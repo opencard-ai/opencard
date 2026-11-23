@@ -210,6 +210,12 @@
       "official": "https://www.capitalone.com/credit-cards/savor/"
     }
   },
+  "capital-one-savor-good-credit": {
+    "issuer": "capital_one",
+    "sources": {
+      "official": "https://www.capitalone.com/credit-cards/savor-good-credit/"
+    }
+  },
   "capital-one-savorone": {
     "issuer": "capital_one",
     "sources": {
