@@ -111,8 +111,8 @@ export const GUIDES: GuideSummary[] = [
     title: "Old Navy vs. Banana Republic Credit Card: Is Either Worth It?",
     summary: "Barclays' Old Navy, Banana Republic, Gap and Athleta Encore Mastercards earn the same rewards at every Gap Inc. brand: about 5% back, paid as store credit. What that's worth and when one makes sense.",
     published: "2026-10-19",
-    updated: "2026-10-19",
-    word_count: 1291,
+    updated: "2026-11-23",
+    word_count: 2105,
     tags: ["store cards", "comparison", "no annual fee"],
     localized: {
       zh: {
@@ -140,11 +140,11 @@ export const GUIDES: GuideSummary[] = [
   },
   {
     slug: "boa-business-advantage-travel-vs-unlimited-cash",
-    title: "BofA Business Advantage Travel vs Unlimited Cash (WorldPoints Explained)",
+    title: "Bank of America Business Travel Rewards vs. Unlimited Cash (WorldPoints Explained)",
     summary: "Bank of America's Business Advantage Travel Rewards card is the one people still search as WorldPoints. It earns 1.5 points per $1 with no annual fee. How it compares to Unlimited Cash — and when either makes sense.",
     published: "2026-10-26",
-    updated: "2026-10-26",
-    word_count: 1110,
+    updated: "2026-11-23",
+    word_count: 1634,
     tags: ["business cards", "comparison", "Bank of America", "no annual fee"],
     localized: {
       zh: {
