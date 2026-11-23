@@ -49,7 +49,12 @@
   "tags": [
     "no-annual-fee"
   ],
-  "sources": [],
+  "sources": [
+    {
+      "url": "https://home.barclays/content/dam/home-barclays/documents/investor-relations/reports-and-events/annual-reports/2018/2018-barclays-plc-annual-report.pdf",
+      "notes": "Official Barclays 2018 annual report, full GET 200 verified 2026-11-23 mentions \"Our Uber Visa card\". Historical source for the Uber Visa Card named in this legacy record; does not establish a separate Uber Eats product, current terms, closure or conversion timing."
+    }
+  ],
   "last_updated": "2026-04-16T13:41:49.953Z",
   "travel_benefits": {
     "hotel_status": [],
