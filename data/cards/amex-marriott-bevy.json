@@ -25,9 +25,10 @@
       "Elevated offer expired 2026-09-30; official Marriott pages show 85k after $5k/6 months with no statement credit, applied as public/standard. Safety-check manual apply 2026-10-01."
     ],
     "source_conflicts": [
-      "Some Marriott-family pages/secondary sources mention extra 50k paths; keep Bevy production conservative at the Amex public 85k baseline unless issuer flow confirms extra tier."
+      "Some Marriott-family pages/secondary sources mention extra 50k paths; keep Bevy production conservative at the Amex public 85k baseline unless issuer flow confirms extra tier.",
+      "2026-11-23 official full GET verification: Amex product page (rendered 200) advertises 85,000 Marriott Bonvoy Bonus Points after $5,000 in 6 months, with no statement credit or offer expiry stated. Marriott Bevy product page (GET 200) advertises 150k Bonus Points plus a $250 statement credit after $5K in 6 months; \"Offer ends 1/13/2027.\" The January 13, 2027 expiry belongs to the different Marriott offer and is not applied to the Amex 85,000-point offer. Offer-watch source_conflicts holds are retained for manual review."
     ],
-    "last_verified": "2026-10-01"
+    "last_verified": "2026-11-23"
   },
   "earning_rates": [
     {
@@ -124,7 +125,7 @@
       "notes": "Amex Card Member Agreement (06/30/2026): Foreign Transaction fee None (checked 2026-10-19)."
     }
   ],
-  "last_updated": "2026-11-09",
+  "last_updated": "2026-11-23",
   "hotel_program": {
     "program": "Marriott Bonvoy",
     "tier": "Gold Elite",
