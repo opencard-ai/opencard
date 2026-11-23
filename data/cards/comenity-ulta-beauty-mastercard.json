@@ -7,10 +7,10 @@
   "foreign_transaction_fee": 3,
   "credit_required": "Fair to Good",
   "welcome_offer": {
-    "spending_requirement": 0,
-    "time_period_months": 0,
-    "bonus_points": 0,
-    "bonus_type": "percent_discount",
+    "spending_requirement": 500,
+    "time_period_months": 3,
+    "bonus_points": 500,
+    "bonus_type": "points",
     "discount_percent": 20,
     "estimated_value": 0,
     "point_program": "Ulta Beauty Rewards",
@@ -18,9 +18,9 @@
     "offer_status": "public",
     "confidence": "high",
     "notes": [
-      "Official ulta.com/rewards/credit-card page checked 2026-11-16: \"20% off your first qualifying purchase at Ulta Beauty when you open and use your card\" (footnote 1: valid one time only) and \"Enjoy 500 Welcome Bonus Points when you spend $500 in the first 90 days outside of Ulta Beauty\" (footnote 5: valid one time only; exclusive to Ulta Beauty Rewards Mastercard holders enrolled in Ulta Beauty Rewards). The 500-point bonus is kept in the description only; no dollar value is assigned because Ulta point value depends on redemption."
+      "Official Ulta Beauty co-brand page https://www.ulta.com/rewards/credit-card, full GET HTTP 200, fetched 2026-11-23 09:41:18 PST (PT): \"Enjoy 500 Welcome Bonus Points when you spend $500 in the first 90 days outside of Ulta Beauty\". Footnote 5: \"Valid one time only. Offer is exclusive to Ulta Beauty Rewards® Mastercard® Credit Card holders enrolled in the Ulta Beauty Rewards® program.\" Ulta.com accepted as an official offer source per OpenCard lead decision. The 90-day period is normalized to 3 months; qualifying spend must be outside Ulta Beauty. The 20% first-purchase discount is retained. No dollar value is assigned because Ulta point value depends on redemption."
     ],
-    "last_verified": "2026-11-16"
+    "last_verified": "2026-11-23"
   },
   "earning_rates": [
     {
@@ -69,16 +69,16 @@
   "sources": [
     {
       "url": "https://www.ulta.com/rewards/credit-card",
-      "notes": "Ulta Beauty official credit card page checked 2026-11-16: 20% off first qualifying purchase; 500 Welcome Bonus Points after $500 outside Ulta Beauty in the first 90 days (Mastercard only); 2 points per $1 at Ulta Beauty; 1 point per $3 elsewhere (Mastercard); $0 annual fee. No insurance or purchase-protection benefits are listed."
+      "notes": "Ulta Beauty official credit card page checked 2026-11-16: 20% off first qualifying purchase; 500 Welcome Bonus Points after $500 outside Ulta Beauty in the first 90 days (Mastercard only); 2 points per $1 at Ulta Beauty; 1 point per $3 elsewhere (Mastercard); $0 annual fee. No insurance or purchase-protection benefits are listed. | Official Ulta Beauty co-brand page https://www.ulta.com/rewards/credit-card, full GET HTTP 200, fetched 2026-11-23 09:41:18 PST (PT): \"Enjoy 500 Welcome Bonus Points when you spend $500 in the first 90 days outside of Ulta Beauty\". Footnote 5: \"Valid one time only. Offer is exclusive to Ulta Beauty Rewards® Mastercard® Credit Card holders enrolled in the Ulta Beauty Rewards® program.\""
     },
     {
-      "url": "https://d.comenity.net/legaldocs/ultabeautyrewards/legal-documents/schumerbox-cca",
-      "notes": "Comenity Capital Bank Rate and Fee Summary checked 2026-11-16: Annual Fee None; Foreign Transaction fee 3.0% of each transaction in U.S. dollars (Ulta Beauty Rewards Mastercard column; N/A for the store-only card)."
+      "url": "https://d.comenity.net/legaldocs/ultabeautyrewardsmastercard/legal-documents/schumerbox-cca",
+      "notes": "Comenity Capital Bank Mastercard-specific Rate and Fee Summary and agreement linked by Ulta footnote 3, full GET 200 checked 2026-11-23; terms also confirmed in embedded LegalDocsServerApp-state JSON: Annual Fee None; Foreign Transaction fee 3.0% of each transaction in U.S. dollars (Mastercard column). Late fee $30.00 if no late fee was charged during the prior six billing periods; otherwise $41.00, not exceeding the amount permitted by law."
     }
   ],
-  "last_updated": "2026-11-16",
+  "last_updated": "2026-11-23",
   "status": "active",
-  "notes": "Ulta Beauty Rewards Mastercard issued by Comenity Capital Bank (Bread Financial); usable anywhere Mastercard is accepted. 2 points per $1 at Ulta Beauty (base member level), 1 point per $3 elsewhere. 3% foreign transaction fee. Applicants not approved for the Mastercard may be considered for the store-only Ulta Beauty Rewards Credit Card.",
+  "notes": "Ulta Beauty Rewards Mastercard issued by Comenity Capital Bank (Bread Financial); usable anywhere Mastercard is accepted. 2 points per $1 at Ulta Beauty (base member level), 1 point per $3 elsewhere. 3% foreign transaction fee. Applicants not approved for the Mastercard may be considered for the store-only Ulta Beauty Rewards Credit Card. Late fee up to $30; up to $41 if a late fee was charged during the prior six billing periods, subject to legal limits.",
   "hotel_program": null,
   "application_rules": {
     "rules": [],
@@ -88,5 +88,7 @@
   "next_review": "2026-07-15T13:41:49.998000+00:00",
   "deprecated": true,
   "deprecated_reason": "Store-card retail co-brand. Users searching OpenCard generally aren't shopping for retailer-specific cards. Excluded from main listings.",
-  "deprecated_bucket": "B_store_card"
+  "deprecated_bucket": "B_store_card",
+  "late_fee": 30,
+  "late_fee_max": 41
 }
