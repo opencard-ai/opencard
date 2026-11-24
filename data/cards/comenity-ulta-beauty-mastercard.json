@@ -72,8 +72,8 @@
       "notes": "Ulta Beauty official credit card page checked 2026-11-16: 20% off first qualifying purchase; 500 Welcome Bonus Points after $500 outside Ulta Beauty in the first 90 days (Mastercard only); 2 points per $1 at Ulta Beauty; 1 point per $3 elsewhere (Mastercard); $0 annual fee. No insurance or purchase-protection benefits are listed. | Official Ulta Beauty co-brand page https://www.ulta.com/rewards/credit-card, full GET HTTP 200, fetched 2026-11-23 09:41:18 PST (PT): \"Enjoy 500 Welcome Bonus Points when you spend $500 in the first 90 days outside of Ulta Beauty\". Footnote 5: \"Valid one time only. Offer is exclusive to Ulta Beauty Rewards® Mastercard® Credit Card holders enrolled in the Ulta Beauty Rewards® program.\""
     },
     {
-      "url": "https://d.comenity.net/legaldocs/ultabeautyrewardsmastercard/legal-documents/schumerbox-cca",
-      "notes": "Comenity Capital Bank Mastercard-specific Rate and Fee Summary and agreement linked by Ulta footnote 3, full GET 200 checked 2026-11-23; terms also confirmed in embedded LegalDocsServerApp-state JSON: Annual Fee None; Foreign Transaction fee 3.0% of each transaction in U.S. dollars (Mastercard column). Late fee $30.00 if no late fee was charged during the prior six billing periods; otherwise $41.00, not exceeding the amount permitted by law."
+      "url": "https://d.comenity.net/legaldocs/ultabeautyrewards/legal-documents/schumerbox-cca",
+      "notes": "Comenity Capital Bank Rate and Fee Summary and agreement covering Ulta Beauty Rewards Mastercard, World Mastercard and store-card accounts; Ulta footnote 3 redirects to this renamed path, full GET 200 checked 2026-11-24; terms also confirmed in embedded LegalDocsServerApp-state JSON: Annual Fee None; Foreign Transaction fee 3.0% of each transaction in U.S. dollars (Mastercard column). Late fee $30.00 if no late fee was charged during the prior six billing periods; otherwise $41.00, not exceeding the amount permitted by law."
     }
   ],
   "last_updated": "2026-11-23",
