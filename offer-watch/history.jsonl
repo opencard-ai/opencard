@@ -190,3 +190,9 @@
 {"ts":"2026-11-23T00:35:27.097Z","type":"expiry_review","card_id":"amex-delta-gold-biz","reasons":["welcome_offer_detect_only_manual_review","variable_as_high_as_offer"]}
 {"ts":"2026-11-23T00:35:27.097Z","type":"expiry_review","card_id":"amex-delta-skymiles-platinum-biz","reasons":["welcome_offer_detect_only_manual_review","variable_as_high_as_offer"]}
 {"ts":"2026-11-23T00:35:27.097Z","type":"expiry_review","card_id":"amex-delta-skymiles-reserve-biz","reasons":["welcome_offer_detect_only_manual_review","variable_as_high_as_offer"]}
+{"ts":"2026-11-24T04:33:23.617Z","type":"held","card_id":"amex-marriott-bevy","changes":[{"field":"welcome_offer.expiry","old_value":null,"new_value":"2027-01-13"}],"reasons":["source_conflicts"]}
+{"ts":"2026-11-24T04:33:23.617Z","type":"held","card_id":"amex-blue-cash-preferred","reasons":["not_marked_official"]}
+{"ts":"2026-11-24T04:33:23.617Z","type":"expiry_review","card_id":"amex-delta-reserve","reasons":["welcome_offer_detect_only_manual_review","variable_as_high_as_offer"]}
+{"ts":"2026-11-24T04:33:23.617Z","type":"expiry_review","card_id":"amex-delta-gold-biz","reasons":["welcome_offer_detect_only_manual_review","variable_as_high_as_offer"]}
+{"ts":"2026-11-24T04:33:23.617Z","type":"expiry_review","card_id":"amex-delta-skymiles-platinum-biz","reasons":["welcome_offer_detect_only_manual_review","variable_as_high_as_offer"]}
+{"ts":"2026-11-24T04:33:23.617Z","type":"expiry_review","card_id":"amex-delta-skymiles-reserve-biz","reasons":["welcome_offer_detect_only_manual_review","variable_as_high_as_offer"]}
