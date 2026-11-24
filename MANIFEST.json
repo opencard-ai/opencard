@@ -336,8 +336,8 @@
     },
     {
       "path": "gsc/history.json",
-      "sha256": "6f3be70d497cd508cb0306892de34eebcaee082b39d96fe7d73d9085501e92db",
-      "size": 140467
+      "sha256": "616c4ea4e1fedfad1ab93b6cfef29cf1190577c7cad0169936eb8edf4cfb3ebb",
+      "size": 141050
     },
     {
       "path": "offer-watch/daily-state.json",
@@ -364,11 +364,11 @@
       "base_sha": "27e9bbbfbc05979475f72ba08eca38b449fda65a"
     },
     "gsc": {
-      "last_run_id": "45302467648",
+      "last_run_id": "45319368502",
       "last_run_attempt": "1",
       "pt_date": "2026-11-23",
       "writer_epoch": "gsc-20261121-1",
-      "base_sha": "00c974962813f5537391347d803d11314c918844"
+      "base_sha": "2ed0ac852da0d142f1aec7509b88ebdcafd888f7"
     }
   }
 }
