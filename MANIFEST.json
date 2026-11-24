@@ -319,6 +319,24 @@
       "path": "offer-watch/ledger.json",
       "sha256": "1f5ab0895364ed4ef8439ecf7a0a5cf23a1b0ef3d3e4cc282238c7a5b151425b",
       "size": 32270
+    },
+    {
+      "path": "gsc/history.json",
+      "source": "Mac metrics export 2026-11-23: history.json",
+      "mac_sha256": "78135174b847f4cf42214e9d3cf60a61dfb85c11056f401f23ee3ca00848e86e",
+      "sha256": "78135174b847f4cf42214e9d3cf60a61dfb85c11056f401f23ee3ca00848e86e",
+      "size": 135715,
+      "modified": false,
+      "urls_stripped": 0
+    },
+    {
+      "path": "gsc/cohort-baseline.json",
+      "source": "Mac metrics export 2026-11-23: cohort-baseline.json",
+      "mac_sha256": "3d3921934d09d847d09b6a034d66823a3515ebcf1b3cd528e137b4a1551fbb0d",
+      "sha256": "3d3921934d09d847d09b6a034d66823a3515ebcf1b3cd528e137b4a1551fbb0d",
+      "size": 4442,
+      "modified": false,
+      "urls_stripped": 0
     }
   ],
   "runs": {
