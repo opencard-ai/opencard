@@ -306,6 +306,40 @@
       "urls_stripped": 63
     },
     {
+      "path": "gsc/2026-11-23-daily.json",
+      "sha256": "1f0a826db52fab4996fd5132824ba75f73bfd8b5610ec5c03187eff3da49a968",
+      "size": 4404
+    },
+    {
+      "path": "gsc/2026-11-23-daily.md",
+      "sha256": "8d9e96a94604a2638577ac1a918519a1ced2534b67fd1497db6647c79a2d1fe3",
+      "size": 2380
+    },
+    {
+      "path": "gsc/2026-11-23-weekly.json",
+      "sha256": "61d09464769a9690821ad16d79815da8295baa13f5f307885a8e3460b8746591",
+      "size": 4424
+    },
+    {
+      "path": "gsc/2026-11-23-weekly.md",
+      "sha256": "e51ae27b887b86fe37b7875bd0bdfb736eebfe93b7b6231fb944690dfe0f2e28",
+      "size": 2382
+    },
+    {
+      "path": "gsc/cohort-baseline.json",
+      "source": "Mac metrics export 2026-11-23: cohort-baseline.json",
+      "mac_sha256": "3d3921934d09d847d09b6a034d66823a3515ebcf1b3cd528e137b4a1551fbb0d",
+      "sha256": "3d3921934d09d847d09b6a034d66823a3515ebcf1b3cd528e137b4a1551fbb0d",
+      "size": 4442,
+      "modified": false,
+      "urls_stripped": 0
+    },
+    {
+      "path": "gsc/history.json",
+      "sha256": "6f3be70d497cd508cb0306892de34eebcaee082b39d96fe7d73d9085501e92db",
+      "size": 140467
+    },
+    {
       "path": "offer-watch/daily-state.json",
       "sha256": "6e8eaf100f3b3e46b69cdc25e4f2667609e747b38d5713da6bacfb311fb148d9",
       "size": 146
@@ -319,24 +353,6 @@
       "path": "offer-watch/ledger.json",
       "sha256": "1f5ab0895364ed4ef8439ecf7a0a5cf23a1b0ef3d3e4cc282238c7a5b151425b",
       "size": 32270
-    },
-    {
-      "path": "gsc/history.json",
-      "source": "Mac metrics export 2026-11-23: history.json",
-      "mac_sha256": "78135174b847f4cf42214e9d3cf60a61dfb85c11056f401f23ee3ca00848e86e",
-      "sha256": "78135174b847f4cf42214e9d3cf60a61dfb85c11056f401f23ee3ca00848e86e",
-      "size": 135715,
-      "modified": false,
-      "urls_stripped": 0
-    },
-    {
-      "path": "gsc/cohort-baseline.json",
-      "source": "Mac metrics export 2026-11-23: cohort-baseline.json",
-      "mac_sha256": "3d3921934d09d847d09b6a034d66823a3515ebcf1b3cd528e137b4a1551fbb0d",
-      "sha256": "3d3921934d09d847d09b6a034d66823a3515ebcf1b3cd528e137b4a1551fbb0d",
-      "size": 4442,
-      "modified": false,
-      "urls_stripped": 0
     }
   ],
   "runs": {
@@ -346,6 +362,13 @@
       "pt_date": "2026-11-22",
       "writer_epoch": "offer-20261115-1",
       "base_sha": "27e9bbbfbc05979475f72ba08eca38b449fda65a"
+    },
+    "gsc": {
+      "last_run_id": "45302467648",
+      "last_run_attempt": "1",
+      "pt_date": "2026-11-23",
+      "writer_epoch": "gsc-20261121-1",
+      "base_sha": "00c974962813f5537391347d803d11314c918844"
     }
   }
 }
