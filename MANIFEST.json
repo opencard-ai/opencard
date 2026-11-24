@@ -306,6 +306,21 @@
       "urls_stripped": 63
     },
     {
+      "path": "audit/2026-11-23-db-audit.json",
+      "sha256": "a76b0122d53afa8132e7305e545bc330c92bf076f31ea12262aeac92b9d82da1",
+      "size": 96329
+    },
+    {
+      "path": "audit/2026-11-23-db-audit.md",
+      "sha256": "8ccf2f228698254f8c33bf5505b48209557f8e1f3d495f3fb4b42d6f8b4d6060",
+      "size": 2465
+    },
+    {
+      "path": "audit/2026-11-23-url-check.json",
+      "sha256": "ecebf8881e6c21dca31eb3983f46c42d3d1128ea95639df4a868d3b3a57d9c02",
+      "size": 141639
+    },
+    {
       "path": "gsc/2026-11-23-daily.json",
       "sha256": "1f0a826db52fab4996fd5132824ba75f73bfd8b5610ec5c03187eff3da49a968",
       "size": 4404
@@ -369,6 +384,13 @@
       "pt_date": "2026-11-23",
       "writer_epoch": "gsc-20261121-1",
       "base_sha": "2ed0ac852da0d142f1aec7509b88ebdcafd888f7"
+    },
+    "audit": {
+      "last_run_id": "45324000809",
+      "last_run_attempt": "1",
+      "pt_date": "2026-11-23",
+      "writer_epoch": "audit-20261115-1",
+      "base_sha": "96ce4fd35d400f0fb23cdda6bc73f9220931e939"
     }
   }
 }
