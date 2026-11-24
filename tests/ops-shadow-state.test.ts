@@ -29,11 +29,17 @@ function entry(rel: string, body: string): ManifestFile {
 }
 function snapshot(t: TestContext) {
   const dir = temp(t), src = path.join(dir, 'src');
-  const files = Object.fromEntries([
-    ...OFFER_STATE_FILES.map(f => [`offer-watch/${f}`, f === 'history.jsonl' ? '' : '{}']),
+  const files = Object.fromEntries<string>([
+    ...OFFER_STATE_FILES.map((f): [string, string] => [`offer-watch/${f}`, f === 'history.jsonl' ? '' : '{}']),
     ['audit/2026-11-12-db-audit.json', '{"findings":[]}'],
     ['audit/2026-11-12-db-audit.md', 'synthetic report'],
     ['audit/2026-11-12-url-check.json', '[]'],
+    ['gsc/history.json', '[]'],
+    ['gsc/cohort-baseline.json', '{}'],
+    ['gsc/2026-11-12-daily.json', '{}'],
+    ['gsc/2026-11-12-daily.md', 'synthetic daily'],
+    ['gsc/2026-11-09-weekly.json', '{}'],
+    ['gsc/2026-11-09-weekly.md', 'synthetic weekly'],
   ]);
   for (const [rel, body] of Object.entries(files)) write(src, rel, body);
   const manifest = Object.entries(files).map(([rel, body]) => entry(rel, body));
@@ -53,7 +59,7 @@ const cli = (script: string, args: string[]) => {
 
 test('checkManifest verifies synthetic bytes including an empty file', t => {
   const { src, manifest } = snapshot(t);
-  assert.deepEqual(checkManifest(manifest, rel => fs.readFileSync(path.join(src, rel))), { ok: true, problems: [], verified: 6 });
+  assert.deepEqual(checkManifest(manifest, rel => fs.readFileSync(path.join(src, rel))), { ok: true, problems: [], verified: 12 });
 });
 for (const mode of ['sha', 'size', 'missing'] as const) {
   test(`checkManifest rejects ${mode} mismatch`, t => {
@@ -62,11 +68,11 @@ for (const mode of ['sha', 'size', 'missing'] as const) {
     if (mode === 'size') manifest[0].size++;
     const r = checkManifest(manifest, rel => mode === 'missing' && rel === manifest[0].path ? null : fs.readFileSync(path.join(src, rel)));
     assert.equal(r.ok, false);
-    assert.equal(r.verified, 5);
+    assert.equal(r.verified, 11);
     assert.match(r.problems[0], mode === 'missing' ? /missing:/ : /sha256\/size mismatch:/);
   });
 }
-for (const rel of ['../x', 'audit/../x', 'other/x', 'audit/.', 'audit/..']) {
+for (const rel of ['../x', 'audit/../x', 'other/x', 'audit/.', 'audit/..', 'gsc/../x', 'gsc/.', 'gsc/..', 'gsc/nested/history.json', 'gsc/token.json', 'gsc/notes.txt', 'gsc/2026-11-12-daily.txt']) {
   test(`checkManifest rejects bad path ${rel} before reading`, () => {
     const r = checkManifest([entry(rel, 'x')], () => { assert.fail('must not read a bad path'); });
     assert.equal(r.ok, false);
@@ -88,10 +94,10 @@ test('load-state CLI copies only listed offer state and audit reports', t => {
   assert.equal(r.status, 0, r.stderr);
   assert.deepEqual(fs.readdirSync(offer).sort(), [...OFFER_STATE_FILES].sort());
   assert.deepEqual(fs.readdirSync(audit).sort(), Object.keys(f.files).filter(p => p.startsWith('audit/')).map(p => path.basename(p)).sort());
-  for (const [rel, body] of Object.entries(f.files)) {
+  for (const [rel, body] of Object.entries(f.files).filter(([rel]) => !rel.startsWith('gsc/'))) {
     assert.equal(fs.readFileSync(path.join(rel.startsWith('audit/') ? audit : offer, path.basename(rel)), 'utf8'), body);
   }
-  assert.match(r.stdout, /manifest verified: 7 files/);
+  assert.match(r.stdout, /manifest verified: 13 files/);
 });
 test('load-state CLI copies only audit files strictly before --today', t => {
   const f = snapshot(t), today = '2026-11-15';

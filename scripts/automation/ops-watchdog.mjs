@@ -18,8 +18,8 @@ function successes(input, now) {
     return run.head_branch === 'main' && ['schedule', 'workflow_dispatch'].includes(run.event) && run.status === 'completed' && run.conclusion === 'success';
   }).map(run => timestamp(run.created_at)).filter(time => time <= now).sort((a, b) => b - a);
 }
-export function evaluate({ offerRuns, auditRuns, now }) {
-  const time = timestamp(now), offers = successes(offerRuns, time), audits = successes(auditRuns, time);
+export function evaluate({ offerRuns, auditRuns, gscRuns, now }) {
+  const time = timestamp(now), offers = successes(offerRuns, time), audits = successes(auditRuns, time), gscSuccesses = successes(gscRuns, time);
   const week = new Date(time); week.setUTCHours(0, 0, 0, 0);
   week.setUTCDate(week.getUTCDate() - (week.getUTCDay() + 6) % 7);
   const weekStart = week.toISOString(), slotTime = +week + (18 * 60 + 47) * 60000;
@@ -30,17 +30,22 @@ export function evaluate({ offerRuns, auditRuns, now }) {
   // before alarming, and require a success created in this UTC week, not last week's run.
   // A missed audit re-alerts daily until a success.
   const audit = time < slotTime + 20 * HOUR ? 'pending' : audits.some(t => t >= +week) ? 'ok' : 'missed';
+  // GSC is daily at 17:30Z. As for offer-watch, allow 36h between successes
+  // (24h cadence plus 12h grace for GitHub scheduling delays).
+  const gsc = gscSuccesses.some(t => t > time - 36 * HOUR) ? 'ok' : 'missed';
+  const latestGscSuccess = gscSuccesses.length ? new Date(gscSuccesses[0]).toISOString() : null;
   const latestOfferSuccess = offers.length ? new Date(offers[0]).toISOString() : null;
   const lines = [];
   if (offer === 'missed') lines.push(`- offer-watch: no successful scheduled/dispatched run on main in the last 36h (latest success: ${latestOfferSuccess || 'none'}).`);
   if (audit === 'missed') lines.push(`- weekly-audit: no successful run on main since ${weekStart} (slot ${slot} + 20h grace passed).`);
+  if (gsc === 'missed') lines.push(`- gsc: no successful scheduled/dispatched run on main in the last 36h (daily slot 17:30Z; latest success: ${latestGscSuccess || 'none'}).`);
   const text = lines.length ? `[MISSED] OpenCard ops watchdog ${ptDate}\n${lines.join('\n')}\nNo automatic catch-up was started. See the run link.\n` : 'NO_REPLY';
-  return { offer, audit, pt_date: ptDate, weekStart, slot, latestOfferSuccess, text };
+  return { offer, audit, gsc, latestGscSuccess, pt_date: ptDate, weekStart, slot, latestOfferSuccess, text };
 }
 export function main(argv = process.argv.slice(2)) {
   try {
     const a = args(argv);
-    const result = evaluate({ offerRuns: JSON.parse(fs.readFileSync(a['offer-runs'], 'utf8')), auditRuns: JSON.parse(fs.readFileSync(a['audit-runs'], 'utf8')), now: a.now });
+    const result = evaluate({ offerRuns: JSON.parse(fs.readFileSync(a['offer-runs'], 'utf8')), auditRuns: JSON.parse(fs.readFileSync(a['audit-runs'], 'utf8')), gscRuns: JSON.parse(fs.readFileSync(a['gsc-runs'], 'utf8')), now: a.now });
     fs.mkdirSync(a['out-dir'], { recursive: true });
     fs.writeFileSync(path.join(a['out-dir'], 'watchdog.txt'), result.text);
     fs.writeFileSync(path.join(a['out-dir'], 'watchdog.json'), `${JSON.stringify(result, null, 2)}\n`);
