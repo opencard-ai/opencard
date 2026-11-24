@@ -38,11 +38,12 @@ jobs:
         run: |
           gh api "repos/$GITHUB_REPOSITORY/actions/workflows/offer-watch-cloud.yml/runs?branch=main&per_page=50" > "$RUNNER_TEMP/offer.json"
           gh api "repos/$GITHUB_REPOSITORY/actions/workflows/weekly-audit-cloud.yml/runs?branch=main&per_page=50" > "$RUNNER_TEMP/audit.json"
+          gh api "repos/$GITHUB_REPOSITORY/actions/workflows/gsc-cloud.yml/runs?branch=main&per_page=50" > "$RUNNER_TEMP/gsc.json"
       - name: Check freshness
         id: check
         if: ${{ !startsWith(github.event_name, 'pull_request') }}
         run: |
-          node scripts/automation/ops-watchdog.mjs --offer-runs "$RUNNER_TEMP/offer.json" --audit-runs "$RUNNER_TEMP/audit.json" --now "$(date -u +%Y-%m-%dT%H:%M:%SZ)" --out-dir "$RUNNER_TEMP/watchdog"
+          node scripts/automation/ops-watchdog.mjs --offer-runs "$RUNNER_TEMP/offer.json" --audit-runs "$RUNNER_TEMP/audit.json" --gsc-runs "$RUNNER_TEMP/gsc.json" --now "$(date -u +%Y-%m-%dT%H:%M:%SZ)" --out-dir "$RUNNER_TEMP/watchdog"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: ${{ !startsWith(github.event_name, 'pull_request') }}
         with:

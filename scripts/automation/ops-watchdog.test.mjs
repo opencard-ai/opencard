@@ -10,27 +10,27 @@ import { evaluate, main } from './ops-watchdog.mjs';
 const now = '2026-11-17T15:23:00Z';
 const run = (created_at, patch = {}) => ({ id: 123, head_branch: 'main', event: 'schedule', status: 'completed', conclusion: 'success', created_at, ...patch });
 const runs = (...workflow_runs) => ({ workflow_runs });
-const good = { offerRuns: runs(run('2026-11-16T19:23:00Z')), auditRuns: runs(run('2026-11-16T19:00:00Z')), now };
+const good = { gscRuns: runs(run('2026-11-16T17:30:00Z')), offerRuns: runs(run('2026-11-16T19:23:00Z')), auditRuns: runs(run('2026-11-16T19:00:00Z')), now };
 test('offer 20h ago and Monday audit success produce exact NO_REPLY', () => {
   const r = evaluate(good);
-  assert.equal(r.offer, 'ok'); assert.equal(r.audit, 'ok'); assert.equal(r.text, 'NO_REPLY'); assert.equal(r.pt_date, '2026-11-17');
+  assert.equal(r.offer, 'ok'); assert.equal(r.audit, 'ok'); assert.equal(r.gsc, 'ok'); assert.equal(r.text, 'NO_REPLY'); assert.equal(r.pt_date, '2026-11-17');
 });
 for (const patch of [{ conclusion: 'failure' }, { conclusion: 'cancelled' }, { event: 'pull_request' }, { head_branch: 'topic' }, { status: 'in_progress', conclusion: null }]) test(`nonqualifying run ${JSON.stringify(patch)}`, () => {
   const bad = runs(run('2026-11-16T19:23:00Z', patch));
-  const r = evaluate({ ...good, offerRuns: bad, auditRuns: bad });
-  assert.equal(r.offer, 'missed'); assert.equal(r.audit, 'missed');
+  const r = evaluate({ ...good, offerRuns: bad, auditRuns: bad, gscRuns: bad });
+  assert.equal(r.offer, 'missed'); assert.equal(r.audit, 'missed'); assert.equal(r.gsc, 'missed');
 });
 test('offer is missed at exactly 36h and counts success at now; dispatch success counts for both jobs', () => {
   for (const hours of [36, 37]) assert.equal(evaluate({ ...good, offerRuns: runs(run(new Date(Date.parse(now) - hours * 3600000).toISOString())) }).offer, 'missed');
   assert.equal(evaluate({ ...good, offerRuns: runs(run(now)) }).offer, 'ok');
   assert.equal(evaluate({ ...good, offerRuns: runs(run('2026-11-18T00:00:00Z')) }).offer, 'missed');
-  const r = evaluate({ ...good, offerRuns: runs(run(now, { event: 'workflow_dispatch' })), auditRuns: runs(run(now, { event: 'workflow_dispatch' })) });
-  assert.equal(r.offer, 'ok'); assert.equal(r.audit, 'ok');
+  const r = evaluate({ ...good, offerRuns: runs(run(now, { event: 'workflow_dispatch' })), auditRuns: runs(run(now, { event: 'workflow_dispatch' })), gscRuns: runs(run(now, { event: 'workflow_dispatch' })) });
+  assert.equal(r.offer, 'ok'); assert.equal(r.audit, 'ok'); assert.equal(r.gsc, 'ok');
 });
 test('malformed created_at on a nonqualifying run is ignored', () => {
   const nonqualifying = run('bad', { event: 'pull_request' });
-  const r = evaluate({ ...good, offerRuns: runs(nonqualifying, ...good.offerRuns.workflow_runs), auditRuns: runs(nonqualifying, ...good.auditRuns.workflow_runs) });
-  assert.equal(r.offer, 'ok'); assert.equal(r.audit, 'ok');
+  const r = evaluate({ ...good, offerRuns: runs(nonqualifying, ...good.offerRuns.workflow_runs), auditRuns: runs(nonqualifying, ...good.auditRuns.workflow_runs), gscRuns: runs(nonqualifying, ...good.gscRuns.workflow_runs) });
+  assert.equal(r.offer, 'ok'); assert.equal(r.audit, 'ok'); assert.equal(r.gsc, 'ok');
 });
 test('Monday 23:30Z audit success counts at Tuesday 15:23Z', () => {
   assert.equal(evaluate({ ...good, auditRuns: runs(run('2026-11-16T23:30:00Z')) }).audit, 'ok');
@@ -55,9 +55,11 @@ test('malformed inputs fail closed', () => {
 test('CLI writes exact NO_REPLY and statuses, malformed input exits 2 without summary', t => {
   const d = fs.mkdtempSync(path.join(os.tmpdir(), 'ops-watchdog-'));
   t.after(() => fs.rmSync(d, { recursive: true, force: true }));
+  const gsc = path.join(d, 'gsc.json');
+  fs.writeFileSync(gsc, JSON.stringify(good.gscRuns));
   const offer = path.join(d, 'offer.json'), audit = path.join(d, 'audit.json'), out = path.join(d, 'out');
   fs.writeFileSync(offer, JSON.stringify(good.offerRuns)); fs.writeFileSync(audit, JSON.stringify(good.auditRuns));
-  const argv = ['--offer-runs', offer, '--audit-runs', audit, '--now', now, '--out-dir', out];
+  const argv = ['--gsc-runs', gsc, '--offer-runs', offer, '--audit-runs', audit, '--now', now, '--out-dir', out];
   assert.equal(main(argv), 0); assert.equal(fs.readFileSync(path.join(out, 'watchdog.txt'), 'utf8'), 'NO_REPLY');
   assert.equal(JSON.parse(fs.readFileSync(path.join(out, 'watchdog.json'))).audit, 'ok');
   fs.rmSync(out, { recursive: true });
@@ -80,8 +82,35 @@ test('workflow has UTC schedule, read permissions, pinned actions and guarded no
   assert.match(notify, /send: \$\{\{ github.ref == 'refs\/heads\/main' && !startsWith\(github.event_name, 'pull_request'\) \}\}/);
   for (const name of ['AGENTMAIL_API_KEY', 'AGENTMAIL_FROM_INBOX', 'OWNER_EMAIL']) assert.ok(notify.includes(`${name}: \${{ !startsWith(github.event_name, 'pull_request') && secrets.${name} || '' }}`));
   assert.match(notify, /job: ops-watchdog/); assert.match(notify, /kind: missed/); assert.match(notify, /summary_file: watchdog.txt/);
-  assert.ok(wf.includes('runs?branch=main&per_page=50'));
+  for (const [workflow, file] of [['offer-watch', 'offer'], ['weekly-audit', 'audit'], ['gsc', 'gsc']]) {
+    assert.ok(wf.includes(`actions/workflows/${workflow}-cloud.yml/runs?branch=main&per_page=50`));
+    assert.ok(wf.includes(`--${file}-runs "$RUNNER_TEMP/${file}.json"`));
+  }
   const pr = wf.split('  pull_request:')[1].split('permissions:')[0];
   for (const file of ['.github/workflows/ops-watchdog.yml', 'scripts/automation/ops-watchdog.mjs', 'scripts/automation/ops-watchdog.test.mjs']) assert.ok(pr.includes(file));
   assert.match(wf, /run: node --test scripts\/automation\/ops-watchdog.test.mjs/);
+});
+
+test('GSC daily grace boundary, empty history, future successes and isolated missed alert', () => {
+  const atAge = hours => runs(run(new Date(Date.parse(now) - hours * 3600000).toISOString()));
+  assert.equal(evaluate({ ...good, gscRuns: atAge(35.999) }).gsc, 'ok');
+  for (const gscRuns of [atAge(36), atAge(48), runs(), runs(run('2026-11-18T00:00:00Z'))]) {
+    const r = evaluate({ ...good, gscRuns });
+    assert.equal(r.gsc, 'missed');
+    assert.equal(r.offer, 'ok'); assert.equal(r.audit, 'ok');
+    assert.match(r.text, /- gsc:.*36h.*17:30Z/);
+    assert.doesNotMatch(r.text, /- offer-watch:|- weekly-audit:/);
+  }
+  assert.equal(evaluate({ ...good, gscRuns: runs(run(now)) }).gsc, 'ok');
+  assert.equal(evaluate({ ...good, gscRuns: runs() }).latestGscSuccess, null);
+});
+test('GSC malformed or missing input fails closed', () => {
+  for (const gscRuns of [undefined, null, [], {}, runs(null), runs({}), runs(run('bad'))]) {
+    assert.throws(() => evaluate({ ...good, gscRuns }));
+  }
+});
+test('all three missed jobs share the existing notification', () => {
+  const r = evaluate({ ...good, offerRuns: runs(), auditRuns: runs(), gscRuns: runs() });
+  assert.match(r.text, /- offer-watch:/); assert.match(r.text, /- weekly-audit:/); assert.match(r.text, /- gsc:/);
+  assert.match(r.text, /latest success: none/);
 });

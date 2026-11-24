@@ -66,7 +66,7 @@ for (const [job, slug, cron] of [['offer', 'offer-watch', '39 19 * * *'], ['audi
   for (const gate of ["mode == 'write'", "needs.commit-state.outputs.committed == 'true'", "github.ref == 'refs/heads/main'", "!startsWith(github.event_name, 'pull_request')"]) assert.ok(send.includes(gate));
   assert.match(jobs.notify, /permissions:\n      contents: read/);
   assert.match(w, new RegExp(`${job.toUpperCase()}_EPOCH: ${owners[job].epoch}`));
-  assert.deepEqual(owners[job], { owner: 'github-actions', productionEnabled: job !== 'gsc', epoch: job === 'gsc' ? 'gsc-20261121-1' : `${job}-20261115-1` });
+  assert.deepEqual(owners[job], { owner: 'github-actions', productionEnabled: true, epoch: job === 'gsc' ? 'gsc-20261121-1' : `${job}-20261115-1` });
   for (const m of w.matchAll(/uses: actions\/([^@\s]+)@([^\s]+)/g)) assert.equal(m[2], pins[m[1]], m[1]);
   for (const action of Object.keys(pins)) assert.ok(w.includes(`actions/${action}@${pins[action]}`));
   assert.match(jobs.run, /persist-credentials: false/);

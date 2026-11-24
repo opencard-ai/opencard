@@ -14,12 +14,13 @@ export const AUDIT_FILE_RE = /^\d{4}-\d{2}-\d{2}-(db-audit\.json|db-audit\.md|ur
 export interface ManifestFile { path: string; sha256: string; size: number }
 export interface ManifestCheck { ok: boolean; problems: string[]; verified: number }
 /** Every file listed in MANIFEST.json must exist with the recorded sha256 and size; listed paths must stay inside
- * offer-watch/ or audit/ (no traversal). Callers copy only listed files. */
+ * offer-watch/, audit/ or allowlisted gsc/ files (no traversal). Callers copy only listed files. */
 export function checkManifest(files: ManifestFile[], read: (rel: string) => Buffer | null): ManifestCheck {
   const problems: string[] = [];
   let verified = 0;
   for (const f of files) {
-    if (!/^(offer-watch\/[A-Za-z0-9._-]+|audit\/[A-Za-z0-9._-]+)$/.test(f.path) || ['.', '..'].includes(f.path.split('/')[1])) { problems.push(`bad path in manifest: ${f.path}`); continue; }
+    if (!/^(offer-watch\/[A-Za-z0-9._-]+|audit\/[A-Za-z0-9._-]+|gsc\/[A-Za-z0-9._-]+)$/.test(f.path) || ['.', '..'].includes(f.path.split('/')[1])) { problems.push(`bad path in manifest: ${f.path}`); continue; }
+    if (f.path.startsWith('gsc/') && !/^gsc\/(history\.json|cohort-baseline\.json|\d{4}-\d{2}-\d{2}-(daily|weekly)\.(json|md))$/.test(f.path)) { problems.push(`bad path in manifest: ${f.path}`); continue; }
     const b = read(f.path);
     if (!b) { problems.push(`missing: ${f.path}`); continue; }
     const sha = createHash('sha256').update(b).digest('hex');
