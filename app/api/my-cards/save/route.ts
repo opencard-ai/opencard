@@ -1,3 +1,4 @@
+import { normalizeCardInstances, addCardInstance, type UserCardInstance } from "@/lib/card-instances";
 import { NextRequest, NextResponse } from "next/server";
 
 const Redis = (await import("@upstash/redis")).Redis;
@@ -24,42 +25,6 @@ function isValidCardId(cardId: string): boolean {
   return /^[a-z0-9][a-z0-9-]{0,60}$/.test(cardId);
 }
 
-interface UserCardInstance {
-  instance_id: string;
-  card_id: string;
-  nickname?: string;
-  last4?: string;
-  created_at: number;
-  status: "active" | "closed";
-}
-
-function normalizeInstances(userData: Record<string, unknown>): UserCardInstance[] {
-  const raw = userData.card_instances;
-  if (Array.isArray(raw)) {
-    return raw
-      .filter((x): x is Record<string, unknown> => !!x && typeof x === "object")
-      .map((x) => ({
-        instance_id: String(x.instance_id || x.card_id || ""),
-        card_id: String(x.card_id || x.instance_id || ""),
-        ...(x.nickname ? { nickname: String(x.nickname) } : {}),
-        ...(x.last4 ? { last4: String(x.last4).slice(-4) } : {}),
-        created_at: Number(x.created_at || Date.now()),
-        status: (x.status === "closed" ? "closed" : "active") as "active" | "closed",
-      }))
-      .filter((x) => isValidCardId(x.card_id) && /^[a-z0-9][a-z0-9-]{0,80}$/.test(x.instance_id));
-  }
-  const legacyCards = Array.isArray(userData.cards) ? (userData.cards as string[]) : [];
-  return legacyCards
-    .filter(isValidCardId)
-    .map((card_id) => ({ instance_id: card_id, card_id, created_at: Number(userData.created_at || Date.now()), status: "active" }));
-}
-
-function makeInstanceId(cardId: string, existing: UserCardInstance[]): string {
-  const count = existing.filter((x) => x.card_id === cardId).length + 1;
-  const suffix = `${Date.now().toString(36)}-${count}`;
-  return `${cardId}-${suffix}`.slice(0, 80);
-}
-
 export async function POST(req: NextRequest) {
   try {
     const { email, card_id, nickname, last4 } = await req.json();
@@ -79,10 +44,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "User not subscribed" }, { status: 404 });
     }
 
-    const instances = normalizeInstances(userData);
+    const instances = normalizeCardInstances(userData.card_instances, userData.cards);
     const now = Date.now();
     const instance: UserCardInstance = {
-      instance_id: makeInstanceId(card_id, instances),
+      instance_id: addCardInstance([], card_id)[0].instance_id,
       card_id,
       ...(typeof nickname === "string" && nickname.trim() ? { nickname: nickname.trim().slice(0, 80) } : {}),
       ...(typeof last4 === "string" && /^\d{1,4}$/.test(last4.trim()) ? { last4: last4.trim().slice(-4) } : {}),

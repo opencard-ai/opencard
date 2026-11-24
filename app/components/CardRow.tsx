@@ -9,6 +9,8 @@ import { formatVariableOffer, formatWelcomeBonus, welcomeBonusKind } from "@/lib
 import IssuerChip from "./IssuerChip";
 import CardArt from "./CardArt";
 
+import { normalizeCardInstances, addCardInstance, cardProductIds } from "@/lib/card-instances";
+
 const STORAGE_KEY = "opencard_existing_cards";
 
 interface Props {
@@ -92,7 +94,7 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
     const read = () => {
       try {
         const ids = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-        setSaved(Array.isArray(ids) && ids.includes(card.card_id));
+        setSaved(cardProductIds(ids).includes(card.card_id));
       } catch {
         setSaved(false);
       }
@@ -100,7 +102,7 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
     read();
     const handler = (e: Event) => {
       const detail = (e as CustomEvent<string[] | undefined>).detail;
-      if (Array.isArray(detail)) setSaved(detail.includes(card.card_id));
+      if (Array.isArray(detail)) setSaved(cardProductIds(detail).includes(card.card_id));
       else read();
     };
     window.addEventListener("opencard_cards_updated", handler);
@@ -110,15 +112,15 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
   const toggleSaved = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
     e.preventDefault();
-    let ids: string[];
+    let ids: ReturnType<typeof normalizeCardInstances>;
     try {
       const raw = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-      ids = Array.isArray(raw) ? raw : [];
+      ids = normalizeCardInstances(raw);
     } catch {
       ids = [];
     }
-    const has = ids.includes(card.card_id);
-    const next = has ? ids.filter((id) => id !== card.card_id) : [...ids, card.card_id];
+    const has = ids.some(row => row.card_id === card.card_id);
+    const next = has ? ids.filter(row => row.card_id !== card.card_id) : addCardInstance(ids, card.card_id);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
     window.dispatchEvent(new CustomEvent("opencard_cards_updated", { detail: next }));
     setSaved(!has);

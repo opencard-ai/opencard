@@ -1,5 +1,7 @@
 "use client";
 
+import { cardProductIds } from "@/lib/card-instances";
+
 import { useState, useEffect, useRef } from "react";
 import { Sparkles, X } from "lucide-react";
 import { CARD_OPTIONS } from "@/lib/constants";
@@ -110,13 +112,13 @@ export default function RecommendWidget({ lang = "en", expanded = true }: { lang
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) setSelectedCards(JSON.parse(saved));
+      if (saved) setSelectedCards(cardProductIds(JSON.parse(saved)));
     } catch {}
     setStorageLoaded(true);
 
     const handleSync = (e: Event) => {
       const detail = (e as CustomEvent<string[]>).detail;
-      if (Array.isArray(detail)) setSelectedCards(detail);
+      if (Array.isArray(detail)) setSelectedCards(cardProductIds(detail));
     };
     window.addEventListener("opencard_cards_updated", handleSync);
     return () => window.removeEventListener("opencard_cards_updated", handleSync);

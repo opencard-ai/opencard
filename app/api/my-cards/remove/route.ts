@@ -1,3 +1,4 @@
+import { normalizeCardInstances, cardProductIds } from "@/lib/card-instances";
 import { NextRequest, NextResponse } from "next/server";
 
 const Redis = (await import("@upstash/redis")).Redis;
@@ -25,12 +26,12 @@ function isValidCardId(cardId: string): boolean {
 
 export async function POST(req: NextRequest) {
   try {
-    const { email, card_id } = await req.json();
+    const { email, card_id, instance_id } = await req.json();
 
     if (!email || !isValidEmail(email)) {
       return NextResponse.json({ error: "Valid email is required" }, { status: 400 });
     }
-    if (!card_id || !isValidCardId(card_id)) {
+    if (instance_id ? (typeof instance_id !== "string" || !/^[a-z0-9][a-z0-9-]{0,80}$/.test(instance_id)) : (!card_id || !isValidCardId(card_id))) {
       return NextResponse.json({ error: "Invalid card_id" }, { status: 400 });
     }
 
@@ -42,15 +43,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "User not subscribed" }, { status: 404 });
     }
 
-    const existingCards = (userData.cards as string[]) || [];
-    const updatedCards = existingCards.filter((id: string) => id !== card_id);
+    const instances = normalizeCardInstances(userData.card_instances, userData.cards);
+    const updatedInstances = instances.filter(row => instance_id ? row.instance_id !== instance_id : row.card_id !== card_id);
+    const updatedCards = cardProductIds(updatedInstances);
 
     await redis.hset(userKey, {
       cards: updatedCards,
+      card_instances: updatedInstances,
       updated_at: Date.now(),
     });
 
-    return NextResponse.json({ success: true, cards: updatedCards });
+    return NextResponse.json({ success: true, cards: updatedCards, card_instances: updatedInstances });
   } catch (err) {
     console.error("Remove card error:", err);
     return NextResponse.json({ error: "Failed to remove card" }, { status: 500 });
