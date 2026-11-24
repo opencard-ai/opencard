@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { CreditCard, Plus, X } from 'lucide-react';
 import { trackCardAdded } from '@/lib/analytics';
+import { normalizeCardInstances, addCardInstance } from '@/lib/card-instances';
 
 interface AddToMyCardsButtonProps {
   cardId: string;
@@ -66,7 +67,9 @@ export default function AddToMyCardsButton({ cardId, lang }: AddToMyCardsButtonP
         if (res.ok) {
           const data = await res.json();
           setAdded(false);
-          window.dispatchEvent(new CustomEvent('opencard_cards_updated', { detail: data.cards || [] }));
+          const next = normalizeCardInstances(data.card_instances, data.cards);
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+          window.dispatchEvent(new CustomEvent('opencard_cards_updated', { detail: next }));
           setSaving(false);
           return;
         }
@@ -74,8 +77,8 @@ export default function AddToMyCardsButton({ cardId, lang }: AddToMyCardsButtonP
     }
 
     // Fallback: localStorage
-    const myCards: string[] = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-    const updated = myCards.filter((id: string) => id !== cardId);
+    const myCards = normalizeCardInstances(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'));
+    const updated = myCards.filter(row => row.card_id !== cardId);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
     setAdded(false);
     window.dispatchEvent(new CustomEvent('opencard_cards_updated', { detail: updated }));
@@ -110,14 +113,11 @@ export default function AddToMyCardsButton({ cardId, lang }: AddToMyCardsButtonP
     }
 
     // Fallback: localStorage
-    const myCards: string[] = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-    if (!myCards.includes(cardId)) {
-      myCards.push(cardId);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(myCards));
-      setAdded(true);
-      trackCardAdded(cardId);
-      window.dispatchEvent(new CustomEvent('opencard_cards_updated', { detail: myCards }));
-    }
+    const next = addCardInstance(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'), cardId);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    setAdded(true);
+    trackCardAdded(cardId);
+    window.dispatchEvent(new CustomEvent('opencard_cards_updated', { detail: next }));
     setSaving(false);
   };
 

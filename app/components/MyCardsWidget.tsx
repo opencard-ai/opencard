@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { CreditCard, X, Cloud } from "lucide-react";
 import { trackCardAdded, trackEvent } from "@/lib/analytics";
-import { resolveCardIds } from "@/lib/card-aliases";
+import { normalizeCardInstances, cardProductIds, selectCardProducts } from "@/lib/card-instances";
 
 const STORAGE_KEY = "opencard_existing_cards";
 const SUBSCRIBED_EMAIL_KEY = "opencard_subscribed_email";
@@ -111,8 +111,8 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
           const res = await fetch(`/api/my-cards?email=${encodeURIComponent(email)}`);
           if (res.ok) {
             const data = await res.json();
-            const cloudCards: string[] = resolveCardIds(data.cards || []);
-            setSelectedCards(cloudCards);
+            const cloudCards = normalizeCardInstances(data.card_instances, data.cards);
+            setSelectedCards(cardProductIds(cloudCards));
             localStorage.setItem(STORAGE_KEY, JSON.stringify(cloudCards));
             setSubscribedEmail(email);
             return;
@@ -125,7 +125,9 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
       if (stored) {
         try {
           const parsed = JSON.parse(stored);
-          setSelectedCards(Array.isArray(parsed) && parsed.every(x => typeof x === "string") ? resolveCardIds(parsed) : parsed);
+          const instances = normalizeCardInstances(parsed);
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(instances));
+          setSelectedCards(cardProductIds(instances));
         } catch {}
       }
     };
@@ -143,7 +145,7 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
   // Listen for external save events (from CardGrid save buttons)
   useEffect(() => {
     const handler = (e: CustomEvent<string[]>) => {
-      setSelectedCards(e.detail);
+      setSelectedCards(cardProductIds(e.detail));
     };
     window.addEventListener("opencard_cards_updated", handler as EventListener);
     return () => window.removeEventListener("opencard_cards_updated", handler as EventListener);
@@ -151,13 +153,15 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
 
   // Sync to cloud when subscribed, always update localStorage
   const syncCards = useCallback(async (next: string[]) => {
+    let previous: unknown = [];
     try {
-      const previous = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+      previous = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
       const previousIds = Array.isArray(previous) ? previous.map(item => typeof item === "string" ? item : item?.card_id) : [];
       for (const id of next) if (!previousIds.includes(id)) trackCardAdded(id);
     } catch { /* Corrupt saved data must not block the picker. */ }
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-    window.dispatchEvent(new CustomEvent("opencard_cards_updated", { detail: next }));
+    const instances = selectCardProducts(previous, next);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(instances));
+    window.dispatchEvent(new CustomEvent("opencard_cards_updated", { detail: instances }));
 
     const email = localStorage.getItem(SUBSCRIBED_EMAIL_KEY);
     if (email) {
@@ -166,7 +170,7 @@ export default function MyCardsWidget({ lang = "en", expanded = true }: { lang?:
         await fetch("/api/my-cards/subscribe", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, cards: next }),
+          body: JSON.stringify({ email, cards: next, card_instances: instances }),
         });
       } catch {
         // Cloud failed — localStorage is already saved

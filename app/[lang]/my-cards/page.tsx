@@ -13,7 +13,7 @@ import HelpHint from "@/app/components/HelpHint";
 import CardArt from "@/app/components/CardArt";
 import MyCardsAssistant from "@/app/components/MyCardsAssistant";
 import { toast } from "@/lib/toast";
-import { resolveCardId } from "@/lib/card-aliases";
+import { normalizeCardInstances, type UserCardInstance } from "@/lib/card-instances";
 
 const STORAGE_KEY = "opencard_existing_cards";
 const SUBSCRIBED_EMAIL_KEY = "opencard_subscribed_email";
@@ -251,15 +251,6 @@ interface Card {
   image_url?: string;
 }
 
-interface UserCardInstance {
-  instance_id: string;
-  card_id: string;
-  nickname?: string;
-  last4?: string;
-  created_at?: number;
-  status?: "active" | "closed";
-}
-
 interface CardView extends Card {
   instance_id: string;
   product_card_id: string;
@@ -340,45 +331,6 @@ function formatFrequency(freq: string, lang: string): string {
   return labels[lang]?.[freq] || `/${freq}`;
 }
 
-function normalizeCardInstances(input: unknown): UserCardInstance[] {
-  if (!Array.isArray(input)) return [];
-  const now = Date.now();
-  const seen = new Map<string, number>();
-
-  return input
-    .map((entry, index): UserCardInstance | null => {
-      if (typeof entry === "string") {
-        // Instance ids stay as saved; card_id resolves retired (merged) ids.
-        const cardId = resolveCardId(entry);
-        const count = (seen.get(cardId) || 0) + 1;
-        seen.set(cardId, count);
-        const instanceId = count === 1 ? cardId : `${cardId}-${now.toString(36)}-${index}`;
-        return { instance_id: count === 1 ? entry : instanceId, card_id: cardId, created_at: now + index, status: "active" };
-      }
-      if (entry && typeof entry === "object") {
-        const obj = entry as Record<string, unknown>;
-        const cardId = String(obj.card_id || obj.instance_id || "");
-        const baseInstanceId = String(obj.instance_id || cardId);
-        if (!cardId || !baseInstanceId) return null;
-
-        const count = (seen.get(baseInstanceId) || 0) + 1;
-        seen.set(baseInstanceId, count);
-        const instanceId = count === 1 ? baseInstanceId : `${baseInstanceId}-${now.toString(36)}-${index}`;
-
-        return {
-          instance_id: instanceId,
-          card_id: resolveCardId(cardId),
-          ...(obj.nickname ? { nickname: String(obj.nickname) } : {}),
-          ...(obj.last4 ? { last4: String(obj.last4).slice(-4) } : {}),
-          created_at: Number(obj.created_at || now + index),
-          status: obj.status === "closed" ? "closed" : "active",
-        };
-      }
-      return null;
-    })
-    .filter(Boolean) as UserCardInstance[];
-}
-
 function instanceDisplayLabel(instance: UserCardInstance, all: UserCardInstance[]): string {
   if (instance.nickname) return instance.nickname;
   if (instance.last4) return `•••• ${instance.last4}`;
@@ -436,6 +388,7 @@ export default function MyCardsPage({
       try { return normalizeCardInstances(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]")); }
       catch { return [] as UserCardInstance[]; }
     })();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cached));
     if (cached.length > 0) {
       setCardInstances(cached);
       setSelectedCards(cached.map((x) => x.card_id));
@@ -679,6 +632,26 @@ export default function MyCardsPage({
     window.addEventListener('opencard_cards_updated', handleUpdate);
     return () => window.removeEventListener('opencard_cards_updated', handleUpdate);
   }, []);
+
+  const removeInstance = async (instanceId: string) => {
+    if (isSubscribed) {
+      try {
+        const res = await fetch('/api/my-cards/remove', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, instance_id: instanceId }),
+        });
+        if (!res.ok) throw new Error('Remove failed');
+      } catch {
+        toast.error(MESSAGES[lang].toastSyncFailed);
+        return;
+      }
+    }
+    const next = cardInstances.filter(row => row.instance_id !== instanceId);
+    setCardInstances(next);
+    setSelectedCards(next.map(row => row.card_id));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    window.dispatchEvent(new CustomEvent('opencard_cards_updated', { detail: next }));
+  };
 
   const m = MESSAGES[lang];
 
@@ -976,6 +949,9 @@ export default function MyCardsPage({
                         </div>
                       </div>
                     </div>
+                    <button type="button" onClick={() => removeInstance(instanceId)} className="text-xs text-red-500 hover:text-red-700">
+                      {lang === "zh" ? "移除此卡" : lang === "zh-cn" ? "移除此卡" : lang === "es" ? "Quitar tarjeta" : "Remove card"}
+                    </button>
                     {cardTotal > 0 && (
                       <div className="text-right shrink-0 tabular-nums whitespace-nowrap">
                         <span className="text-sm font-semibold text-emerald-700">${cardRemaining.toLocaleString('en-US', { maximumFractionDigits: 2 })}</span>
