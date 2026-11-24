@@ -106,8 +106,8 @@
       "notes": "Barclays official Premier card page. | Official pricing/terms: foreign transaction fee None/0% (checked 2026-10-19)."
     },
     {
-      "url": "https://www.wyndhamhotels.com/wyndham-rewards/redeem/reward-tier-updates",
-      "notes": "Official Wyndham Rewards redemption tier update effective 2026-09-15; relevant to point-value caveat."
+      "url": "https://www.wyndhamhotels.com/wyndham-rewards/terms",
+      "notes": "Official Wyndham Rewards terms, full GET 200 checked 2026-11-24: standard free-night tiers of 5,000, 15,000, 30,000 and 45,000 points and Premier 25% redemption discount. Replaces the retired tier-update page; supports the point-value caveat, but does not restate the historical 2026-09-15 effective date."
     }
   ],
   "hotel_program": {
