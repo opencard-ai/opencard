@@ -102,6 +102,7 @@ function liveMock(result, options = {}) {
       return ok(++creationLists >= (options.creationLag ?? 1) ? [{ number: 7 }] : []);
     }
     if (args[1] === 'create') return ok(options.createdUrl ?? '');
+    if (args[1] === 'view' && args.at(-1) === 'headRefOid,files,state,commits') { const p = (options.open ?? []).find(x => String(x.number) === args[2]); return ok(options.changedBeforeClose ? { ...p, commits: [...p.commits, p.commits[0]] } : p); }
     if (args[1] === 'view' && args.at(-1) === 'state') return ok({ state: options.closeUnconfirmed ? 'OPEN' : 'CLOSED' });
     if (args[1] === 'checks') return ok(['validate', 'gitleaks'].map(name => ({ name, bucket: options.pending ? 'pending' : 'pass', state: options.pending ? 'PENDING' : 'SUCCESS' })));
     if (args[1] === 'view') return ok(args.at(-1) === 'state,mergeCommit' ? { state: 'MERGED', mergeCommit: { oid: mergeSha } } : { headRefOid: head, state: 'OPEN', baseRefName: 'main', isDraft: false, commits: [{ authors: [{ email: 'opencard@opencardai.com' }] }], files: [{ path: 'data/news.json' }] });
@@ -264,6 +265,13 @@ test('preflight rejects any ineligible stale PR or four PRs before closing or wr
   assert.equal(m.calls.some(c => c[2] === 'close'), false);
 });
 
+test('superseding stops if the stale PR gains a commit between list and close', async () => {
+  const result = await prepare();
+  const m = liveMock(result, { open: [eligibleStale], changedBeforeClose: true });
+  await assert.rejects(publishMock(result, m), e => e.reason === 'stale_pr_not_supersedable');
+  assert.equal(m.calls.some(c => c[2] === 'close' || c[2] === 'create' || c.includes('push')), false);
+});
+
 test('superseding stops if authority changes or the close receipt is not CLOSED', async () => {
   const result = await prepare();
   const m = liveMock(result, { open: [eligibleStale], closeUnconfirmed: true });
@@ -316,7 +324,7 @@ test('PR creation uses only a validated URL or bounded eventually-consistent hea
     assert.ok(sleeps.every(ms => ms === 2000));
     if (!options.creationLag) assert.equal(m.calls.filter(c => c[2] === 'list').length, 2);
     const create = m.calls.find(c => c[2] === 'create');
-    assert.equal(create.at(-1), `Automated news sync for slot ${result.plan.slotKey}. Changes only data/news.json. Auto-merges only when the PR has exactly 1 commit, touches only data/news.json, and the required checks (validate, gitleaks) pass; otherwise it is left open for review.`);
+    assert.equal(create.at(-1), `Automated news sync for slot ${result.plan.slotKey}. Changes only data/news.json. Auto-merges only when the PR has exactly 1 commit, touches only data/news.json, and the required checks (validate, gitleaks) pass; otherwise it is left open for review (a later scheduled run may close an untouched, unmerged bot news PR as superseded).`);
   }
   const m = liveMock(result, { creationLag: 9 }), sleeps = [];
   await assert.rejects(publishMock(result, m, { sleep: async ms => sleeps.push(ms) }), e => e.reason === 'pr_creation_unconfirmed');

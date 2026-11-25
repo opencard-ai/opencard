@@ -80,6 +80,9 @@ export async function publishPortableNews({ plan, proposed, repoPath, publish = 
   if (existing.some(p => p.state === 'OPEN' && !stale.some(s => s.number === p.number))) throw publishError('another_news_pr_blocking', 'same-slot PR missing from open news query');
   if (reconcileExisting && stale.length) throw publishError('another_news_pr_blocking', 'another news PR is open; reconciliation cannot supersede');
   for (const pr of stale) {
+    // Re-read just before closing: a commit/file added after the list query makes the PR ineligible.
+    const fresh = await query(['pr', 'view', String(pr.number), '--repo', REPO, '--json', 'headRefOid,files,state,commits']);
+    if (fresh.state !== 'OPEN' || fresh.headRefOid !== pr.headRefOid || !eligible({ ...pr, ...fresh })) throw publishError('stale_pr_not_supersedable', 'stale news PR changed before closure');
     await authorize();
     await command('gh', ['pr', 'close', String(pr.number), '--repo', REPO, '--delete-branch', '--comment', `Superseded by slot ${plan.slotKey}. News is regenerated from current main; no content lost.`]);
     const closed = await query(['pr', 'view', String(pr.number), '--repo', REPO, '--json', 'state']);
@@ -104,7 +107,7 @@ export async function publishPortableNews({ plan, proposed, repoPath, publish = 
   await authorize();
   await git(['push', 'origin', `HEAD:refs/heads/${branch}`]);
   await authorize();
-  const createdUrl = (await command('gh', ['pr', 'create', '--repo', REPO, '--base', 'main', '--head', branch, '--title', 'chore: automated news sync', '--body', `Automated news sync for slot ${plan.slotKey}. Changes only data/news.json. Auto-merges only when the PR has exactly 1 commit, touches only data/news.json, and the required checks (validate, gitleaks) pass; otherwise it is left open for review.`])).trim();
+  const createdUrl = (await command('gh', ['pr', 'create', '--repo', REPO, '--base', 'main', '--head', branch, '--title', 'chore: automated news sync', '--body', `Automated news sync for slot ${plan.slotKey}. Changes only data/news.json. Auto-merges only when the PR has exactly 1 commit, touches only data/news.json, and the required checks (validate, gitleaks) pass; otherwise it is left open for review (a later scheduled run may close an untouched, unmerged bot news PR as superseded).`])).trim();
   const match = /^https:\/\/github\.com\/opencard-ai\/opencard\/pull\/([1-9][0-9]*)$/.exec(createdUrl);
   let number = match ? Number(match[1]) : undefined;
   if (!Number.isSafeInteger(number)) {
