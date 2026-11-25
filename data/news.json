@@ -1,90 +1,165 @@
 {
   "items": [
     {
-      "title": "UberEats: Promo Codes, Discounts & Other Savings: $11.25 off $18+",
-      "url": "https://www.doctorofcredit.com/ubereats-promo-codes-discounts-other-savings/",
+      "title": "(Targeted) Paypal Rewards: Get 25% Back On Purchases With Pay-in-4, Up To $25 Back (11/23-12/6)",
+      "url": "https://www.doctorofcredit.com/targeted-paypal-rewards-get-25-back-on-purchases-with-pay-in-4-up-to-25-back-11-23-12-6/",
       "source": "Doctor of Credit",
       "categories": [
         "Deals",
-        "Food Delivery",
-        "UberEATS"
+        "paypal"
       ],
-      "ts": "2026-11-22T23:40:06.000Z",
-      "title_en": "UberEats: Promo Codes, Discounts & Other Savings: $11.25 off $18+",
+      "ts": "2026-11-23T20:34:07.000Z",
+      "title_en": "(Targeted) Paypal Rewards: Get 25% Back On Purchases With Pay-in-4, Up To $25 Back (11/23-12/6)",
       "summary_en": "",
-      "title_zh": "UberEats：促銷碼、折扣及其他優惠：消費滿 18 美元立省 11.25 美元",
-      "summary_zh": "UberEats 提供促銷碼、折扣及其他節省優惠，消費滿 18 美元可立省 11.25 美元。",
-      "title_es": "UberEats: códigos promocionales, descuentos y otros ahorros: $11.25 de descuento en compras de $18 o más",
-      "summary_es": "UberEats ofrece un descuento de $11.25 en pedidos de $18 o más mediante códigos promocionales y ofertas."
+      "title_zh": "（指定地區）PayPal Rewards：使用 Pay-in-4 消費享 25% 退款，最高可獲 25 美元（11/23－12/6）",
+      "summary_zh": "指定地區用戶透過 PayPal Rewards 使用 Pay-in-4 付款，可享 25% 退款，上限為 25 美元。",
+      "title_es": "(Dirigido) PayPal Rewards: obtén un 25% de devolución en compras con pago en 4 cuotas, hasta $25 de devolución (11/23-12/6)",
+      "summary_es": "La promoción de PayPal Rewards ofrece un 25% de devolución en compras elegibles pagadas en cuatro cuotas, hasta un máximo de $25."
     },
     {
-      "title": "Clear Street 3% Brokerage Match (5 Year Hold)",
-      "url": "https://www.doctorofcredit.com/clear-street-3-brokerage-match-5-year-hold/",
+      "title": "Rakuten Adds More Citi Cards To Portal (Up To $175)",
+      "url": "https://www.doctorofcredit.com/rakuten-adds-more-citi-cards-to-portal/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "big",
+        "Citi",
+        "rakuten",
+        "rakuten citi"
+      ],
+      "ts": "2026-11-23T20:30:01.000Z",
+      "title_en": "Rakuten Adds More Citi Cards To Portal (Up To $175)",
+      "summary_en": "",
+      "title_zh": "Rakuten 為獎勵頁面新增更多 Citi 信用卡（最高 175 美元）",
+      "summary_zh": "Rakuten 獎勵頁面新增多款 Citi 信用卡，最高可提供 175 美元回饋。",
+      "title_es": "Rakuten agrega más tarjetas Citi a su portal (hasta $175)",
+      "summary_es": "Rakuten amplía su selección de tarjetas Citi con ofertas de recompensas de hasta $175."
+    },
+    {
+      "title": "[Nationwide] Skyla Credit Union Visa Signature: $250 Signup Bonus + 4% Cashback On All Purchases (11/22-12/5)",
+      "url": "https://www.doctorofcredit.com/nationwide-skyla-credit-union-visa-signature-250-bonus-4-cashback-on-all-purchases-11-22-12-5/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "big",
+        "signup bonus"
+      ],
+      "ts": "2026-11-23T20:01:10.000Z",
+      "title_en": "[Nationwide] Skyla Credit Union Visa Signature: $250 Signup Bonus + 4% Cashback On All Purchases (11/22-12/5)",
+      "summary_en": "",
+      "title_zh": "[全美] Skyla Credit Union Visa Signature：250 美元開戶獎金，所有消費另享 4% 現金回饋（11/22－12/5）",
+      "summary_zh": "Skyla Credit Union 推出 Visa Signature 信用卡，提供 250 美元開戶獎金及所有消費 4% 現金回饋。",
+      "title_es": "[Nacional] Tarjeta Visa Signature de Skyla Credit Union: $250 de bonificación por Apertura + 4% de devolución en efectivo en todas las compras (11/22-12/5)",
+      "summary_es": "La cuenta de Skyla Credit Union en todo el país ofrece $250 por Apertura y un 4% de devolución en todas las compras."
+    },
+    {
+      "title": "Dunkin Donuts: Free Hot Or Iced Coffee On 11/30",
+      "url": "https://www.doctorofcredit.com/dunkin-donuts-free-hot-or-iced-coffee-on-11-30/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "dunkin",
+        "dunkin donuts",
+        "free drinks",
+        "freebies"
+      ],
+      "ts": "2026-11-23T19:56:35.000Z",
+      "title_en": "Dunkin Donuts: Free Hot Or Iced Coffee On 11/30",
+      "summary_en": "",
+      "title_zh": "Dunkin’ Donuts：11/30 可免費獲得熱咖啡或冰咖啡",
+      "summary_zh": "11 月 30 日在 Dunkin’ Donuts 消費可免費獲得一杯熱咖啡或冰咖啡。",
+      "title_es": "Dunkin' Donuts: café caliente o con hielo gratis el 11/30",
+      "summary_es": "Los clientes de Dunkin' pueden obtener un café caliente o con hielo gratis el 30 de noviembre."
+    },
+    {
+      "title": "BeFrugal: Spend $15, Receive $3 Bonus",
+      "url": "https://www.doctorofcredit.com/befrugal-spend-15-receive-3-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "befrugal",
+        "shopping portals"
+      ],
+      "ts": "2026-11-23T19:51:45.000Z",
+      "title_en": "BeFrugal: Spend $15, Receive $3 Bonus",
+      "summary_en": "",
+      "title_zh": "BeFrugal：消費 15 美元，可獲 3 美元獎金",
+      "summary_zh": "透過 BeFrugal 消費滿 15 美元，即可收到 3 美元獎金。",
+      "title_es": "BeFrugal: gasta $15 y recibe un bono de $3",
+      "summary_es": "BeFrugal ofrece un bono de $3 por realizar compras por un valor de al menos $15."
+    },
+    {
+      "title": "(Update) U.S. Bank Altitude Connect Card Adding New GigSky Benefit With Free Mobile Data In 125+ Countries",
+      "url": "https://www.doctorofcredit.com/u-s-bank-adding-new-benefits-to-altitude-connect-card-with-gigsky-mobile-data-in-125-countries/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Credit Cards",
+        "u.s. bank altitude connect"
+      ],
+      "ts": "2026-11-23T18:30:03.000Z",
+      "title_en": "(Update) U.S. Bank Altitude Connect Card Adding New GigSky Benefit With Free Mobile Data In 125+ Countries",
+      "summary_en": "",
+      "title_zh": "（更新）美國銀行 Altitude Connect 卡新增 GigSky 福利，125 個以上國家可享免費行動數據",
+      "summary_zh": "美國銀行為 Altitude Connect 卡加入 GigSky 福利，可於超過 125 個國家使用免費行動數據。",
+      "title_es": "(Actualización) La tarjeta U.S. Bank Altitude Connect suma un nuevo beneficio de GigSky con datos móviles gratuitos en más de 125 países",
+      "summary_es": "La tarjeta U.S. Bank Altitude Connect incorpora datos móviles gratuitos de GigSky en más de 125 países."
+    },
+    {
+      "title": "Major Retailers: Apple Airpods Pro 3 for $149 (reg. $249)",
+      "url": "https://www.doctorofcredit.com/major-retailers-apple-airpods-pro-3-for-149-reg-249/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "airpods pro",
+        "apple"
+      ],
+      "ts": "2026-11-23T16:56:12.000Z",
+      "title_en": "Major Retailers: Apple Airpods Pro 3 for $149 (reg. $249)",
+      "summary_en": "",
+      "title_zh": "大型零售通路：Apple AirPods Pro 3 售價 149 美元（原價 249 美元）",
+      "summary_zh": "Apple AirPods Pro 3 在各大零售通路降價至 149 美元，較原價 249 美元節省 100 美元。",
+      "title_es": "Grandes comercios: AirPods Pro 3 de Apple por $149 (precio regular: $249)",
+      "summary_es": "Las principales cadenas de comercios ofrecen los AirPods Pro 3 de Apple por $149 en lugar de $249."
+    },
+    {
+      "title": "Truist: Pay With Paze & Get $10 off $20 (Limit 1)",
+      "url": "https://www.doctorofcredit.com/truist-pay-with-paze-get-10-off-20-limit-1/",
       "source": "Doctor of Credit",
       "categories": [
         "Bank Accounts",
-        "clearstreet"
+        "Credit Cards",
+        "Deals",
+        "paze",
+        "truist"
       ],
-      "ts": "2026-11-22T20:44:50.000Z",
-      "title_en": "Clear Street 3% Brokerage Match (5 Year Hold)",
+      "ts": "2026-11-23T16:40:39.000Z",
+      "title_en": "Truist: Pay With Paze & Get $10 off $20 (Limit 1)",
       "summary_en": "",
-      "title_zh": "Clear Street：3% 券商配對（持有 5 年）",
-      "summary_zh": "透過 Clear Street 投資並持有五年，可享受 3% 的券商配對。",
-      "title_es": "Clear Street: reembolso del 3% de las comisiones de intermediación (mantenimiento durante 5 años)",
-      "summary_es": "Clear Street ofrece un reembolso del 3% de las comisiones de intermediación si la cuenta se mantiene durante cinco años."
+      "title_zh": "Truist：使用 Paze 付款，消費 20 美元立减 10 美元（限 1 次）",
+      "summary_zh": "在 Truist 使用 Paze 付款，滿 20 美元可減 10 美元，每位用戶限享一次。",
+      "title_es": "Truist: paga con Paze y obtén $10 de descuento en $20 (límite: 1)",
+      "summary_es": "Truist ofrece un descuento de $10 al pagar $20 con Paze, limitado a una transacción."
     },
     {
-      "title": "Family Dollar: 15% Off Almost Everything On December 5-6",
-      "url": "https://www.doctorofcredit.com/family-dollar-15-off-almost-everything-on-december-5-6/",
+      "title": "AmEx Offers: Save 35% On Sam’s Club Membership",
+      "url": "https://www.doctorofcredit.com/amex-offers-save-35-on-sams-club-membership/",
       "source": "Doctor of Credit",
       "categories": [
         "Deals",
-        "family dollar"
+        "amex offers",
+        "sam's",
+        "sam's club"
       ],
-      "ts": "2026-11-22T20:16:11.000Z",
-      "title_en": "Family Dollar: 15% Off Almost Everything On December 5-6",
+      "ts": "2026-11-23T16:30:16.000Z",
+      "title_en": "AmEx Offers: Save 35% On Sam’s Club Membership",
       "summary_en": "",
-      "title_zh": "Family Dollar：12 月 5 日至 6 日近乎所有商品均享 85 折",
-      "summary_zh": "Family Dollar 於 12 月 5 日至 6 日提供近乎所有商品 85 折優惠。",
-      "title_es": "Family Dollar: 15% de descuento en casi todo el 5 y 6 de diciembre",
-      "summary_es": "Family Dollar ofrece un 15% de descuento en la mayoría de sus productos durante los días 5 y 6 de diciembre."
+      "title_zh": "AmEx 優惠：Sam’s Club 會員費節省 35%",
+      "summary_zh": "使用 American Express 信用卡購買 Sam’s Club 會員，可節省 35% 費用。",
+      "title_es": "Ofertas de AmEx: ahorra un 35% en la membresía de Sam's Club",
+      "summary_es": "Los titulares de tarjetas American Express pueden obtener un 35% de descuento en la membresía de Sam's Club."
     },
     {
-      "title": "Amazon Music Unlimited: Free 3-Month Subscription",
-      "url": "https://www.doctorofcredit.com/free-3-months-amazon-music-unlimited-subscription/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "amazon",
-        "amazon music unlimited"
-      ],
-      "ts": "2026-11-22T19:30:36.000Z",
-      "title_en": "Amazon Music Unlimited: Free 3-Month Subscription",
-      "summary_en": "",
-      "title_zh": "Amazon Music Unlimited：免費訂閱 3 個月",
-      "summary_zh": "Amazon Music Unlimited 提供免費三個月訂閱。",
-      "title_es": "Amazon Music Unlimited: suscripción gratuita de 3 meses",
-      "summary_es": "Amazon Music Unlimited regala una suscripción de tres meses."
-    },
-    {
-      "title": "Office Depot/Max Stores: Buy $300 In Mastercard Giftcards & Get $15 Instant Discount (11/22-11/28)",
-      "url": "https://www.doctorofcredit.com/office-depot-max-stores-buy-300-in-mastercard-giftcards-get-15-instant-discount-2-13-2-19/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Manufactured Spending",
-        "mastercard gift cards",
-        "office depot/max"
-      ],
-      "ts": "2026-11-22T18:08:43.000Z",
-      "title_en": "Office Depot/Max Stores: Buy $300 In Mastercard Giftcards & Get $15 Instant Discount (11/22-11/28)",
-      "summary_en": "",
-      "title_zh": "Office Depot／Max Stores：購買 300 美元 Mastercard  gift 卡，即享 15 美元即時折扣（11/22–11/28）",
-      "summary_zh": "於 11 月 22 日至 28 日在 Office Depot／Max Stores 購買 300 美元的 Mastercard 禮品卡，可立即減免 15 美元。",
-      "title_es": "Office Depot/Max Stores: compra $300 en tarjetas de regalo Mastercard y obtén un descuento instantáneo de $15 (22/11-28/11)",
-      "summary_es": "Entre el 22 y el 28 de noviembre, comprar $300 en tarjetas de regalo Mastercard en Office Depot o Max Stores permite obtener un descuento instantáneo de $15."
-    },
-    {
-      "title": "Chase/U.S. Bank Offers: Get 5-7% Back At Food Lion (Up To $5/$7 Back)",
+      "title": "Amex/Chase/U.S. Bank Offers: Get 5-7% Back At Food Lion (Up To $5/$7 Back)",
       "url": "https://www.doctorofcredit.com/citi-offers-get-3-back-at-food-lion/",
       "source": "Doctor of Credit",
       "categories": [
@@ -92,119 +167,101 @@
         "citi offers",
         "food lion"
       ],
-      "ts": "2026-11-22T16:25:18.000Z",
-      "title_en": "Chase/U.S. Bank Offers: Get 5-7% Back At Food Lion (Up To $5/$7 Back)",
+      "ts": "2026-11-23T16:25:18.000Z",
+      "title_en": "Amex/Chase/U.S. Bank Offers: Get 5-7% Back At Food Lion (Up To $5/$7 Back)",
       "summary_en": "",
-      "title_zh": "Chase／美國銀行優惠：在 Food Lion 消費可享 5%–7% 現金回饋（最高 $5／$7）",
-      "summary_zh": "使用 Chase 或美國銀行卡於 Food Lion 消費，可依優惠活動獲得 5% 至 7% 回饷，最高分別為 5 美元或 7 美元。",
-      "title_es": "Chase/U.S. Bank ofrece un reembolso del 5-7 % en Food Lion (hasta $5/$7 de reembolso)",
-      "summary_es": "Las tarjetas de Chase y U.S. Bank ofrecen entre un 5 % y un 7 % de reembolso en compras elegibles de Food Lion."
+      "title_zh": "AmEx／Chase／美國銀行優惠：於 Food Lion 消費可享 5% 至 7% 退款（最高分別為 5／7 美元）",
+      "summary_zh": "使用指定 American Express、Chase 或美國銀行信用卡於 Food Lion 消費，可依卡片享有 5% 至 7% 退款。",
+      "title_es": "Ofertas de AmEx/Chase/U.S. Bank: obtén un 5-7% de devolución en Food Lion (hasta $5/$7 de devolución)",
+      "summary_es": "Las tarjetas AmEx, Chase y U.S. Bank ofrecen un 5% o 7% de devolución en compras en Food Lion, con un máximo de $5 o $7."
     },
     {
-      "title": "Stop&Shop/Giant/Martin’s: 3x Fuel Points on Mastercard Gift Cards (11/20-11/26)",
-      "url": "https://www.doctorofcredit.com/giant-stopshop-martins-3x-fuel-points-on-mastercard-gift-cards-10-8-10-14/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Manufactured Spending",
-        "fuel points",
-        "giant",
-        "Giant Stop and Shop Gas Deals Visa Gift Card Points",
-        "martin's",
-        "Stop&Shop"
-      ],
-      "ts": "2026-11-22T16:00:02.000Z",
-      "title_en": "Stop&Shop/Giant/Martin’s: 3x Fuel Points on Mastercard Gift Cards (11/20-11/26)",
-      "summary_en": "",
-      "title_zh": "Stop & Shop／Giant／Martin’s：Mastercard 禮品卡享 3 倍燃料點數（11/20–11/26）",
-      "summary_zh": "於 11 月 20 日至 26 日期間購買 Mastercard 禮品卡，可在 Stop & Shop、Giant 或 Martin’s 加油站累積三倍燃料點數。",
-      "title_es": "Stop & Shop, Giant y Martin’s: 3 veces puntos de combustible con tarjetas de regalo Mastercard (del 20/11 al 26/11)",
-      "summary_es": "Las compras con tarjetas de regalo Mastercard en Stop & Shop, Giant y Martin’s otorgan tres veces más puntos de combustible durante la promoción."
-    },
-    {
-      "title": "Staples: No Purchase Fee On $200 Visa Gift Cards (11/15/26 – 1/2/27)",
-      "url": "https://www.doctorofcredit.com/staples-no-purchase-fee-on-200-visa-gift-cards-10-31-11-6-limit-5/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Manufactured Spending",
-        "staples",
-        "visa gift cards"
-      ],
-      "ts": "2026-11-22T05:01:28.000Z",
-      "title_en": "Staples: No Purchase Fee On $200 Visa Gift Cards (11/15/26 – 1/2/27)",
-      "summary_en": "",
-      "title_zh": "Staples：$200 Visa 禮品卡免手續費（11/15/26–1/2/27）",
-      "summary_zh": "於 2026 年 11 月 15 日至 2027 年 1 月 2 日期間購買售價 200 美元的 Staples Visa 禮品卡，可免收購買手續費。",
-      "title_es": "Staples: sin comisión de compra en tarjetas de regalo Visa de $200 (del 15/11/26 al 2/1/27)",
-      "summary_es": "Staples ofrece tarjetas de regalo Visa de $200 sin comisión de compra durante el período promotionado."
-    },
-    {
-      "title": "[Expired] 7-Eleven 7NOW App Promo Codes: $25 off $50+,  FRIENDS",
-      "url": "https://www.doctorofcredit.com/7-eleven-7now-app-promo-codes/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Deals",
-        "7-Eleven 7NOW"
-      ],
-      "ts": "2026-11-21T21:15:41.000Z",
-      "title_en": "[Expired] 7-Eleven 7NOW App Promo Codes: $25 off $50+,  FRIENDS",
-      "summary_en": "",
-      "title_zh": "[已過期] 7-Eleven 7NOW App 促銷碼：消費滿 50 美元立省 25 美元，FRIENDS",
-      "summary_zh": "7-Eleven 7NOW App 的 FRIENDS 促銷碼可讓消費者消費滿 50 美元立省 25 美元，但此優惠已過期。",
-      "title_es": "[Expirado] 7-Eleven: códigos promocionales de la app 7NOW: $25 de descuento en compras de $50 o más, FRIENDS",
-      "summary_es": "La promoción de 7-Eleven ofrecía un descuento de $25 en compras de $50 o más mediante códigos promocionales de la app 7NOW, pero ya ha expirado."
-    },
-    {
-      "title": "Hilton Timeshare Offer – Get 3 Nights + 125k Points For $199",
-      "url": "https://www.doctorofcredit.com/hilton-timeshare-offer-get-3-nights-100k-points-for-149/",
-      "source": "Doctor of Credit",
-      "categories": [
-        "Travel",
-        "hilton",
-        "timeshare"
-      ],
-      "ts": "2026-11-21T20:07:03.000Z",
-      "title_en": "Hilton Timeshare Offer – Get 3 Nights + 125k Points For $199",
-      "summary_en": "",
-      "title_zh": "希爾頓分時度假優惠：199 美元可享 3 晚住宿及 12.5 萬點數",
-      "summary_zh": "支付 199 美元即可獲得 3 晚希爾頓分時度假住宿及 12.5 萬點獎勵點數。",
-      "title_es": "Oferta de tiempo compartido de Hilton: 3 noches + 125 mil puntos por $199",
-      "summary_es": "Reserva tres noches y recibe 125 mil puntos de Hilton por $199."
-    },
-    {
-      "title": "[CA Only] Heritage Community Credit Union $500 Checking Bonus",
-      "url": "https://www.doctorofcredit.com/ca-only-heritage-community-credit-union-500-checking-bonus/",
+      "title": "Netspend $200 Checking Bonus",
+      "url": "https://www.doctorofcredit.com/netspend-200-checking-bonus/",
       "source": "Doctor of Credit",
       "categories": [
         "Bank Accounts",
-        "ca bank bonuses",
         "direct deposit required",
+        "nationwide bank bonuses",
+        "no credit card funding",
         "soft pull"
       ],
-      "ts": "2026-11-21T17:00:27.000Z",
-      "title_en": "[CA Only] Heritage Community Credit Union $500 Checking Bonus",
+      "ts": "2026-11-23T16:00:19.000Z",
+      "title_en": "Netspend $200 Checking Bonus",
       "summary_en": "",
-      "title_zh": "[僅限加州] Heritage Community Credit Union 支票帳戶 500 美元bonus獎勵",
-      "summary_zh": "僅限加州居民申請 Heritage Community Credit Union 支票帳戶，可獲 500 美元bonus獎勵。",
-      "title_es": "[Solo en California] Bono de $500 en la cuenta corriente de Heritage Community Credit Union",
-      "summary_es": "Los miembros de Heritage Community Credit Union en California pueden recibir un bono de $500 al abrir una cuenta corriente."
+      "title_zh": "Netspend 支票帳戶 200 美元獎金",
+      "summary_zh": "Netspend 支票帳戶提供 200 美元獎金優惠。",
+      "title_es": "Bono de $200 por cuenta corriente de Netspend",
+      "summary_es": "Netspend ofrece un bono de $200 por abrir una cuenta corriente."
     },
     {
-      "title": "BeFrugal: $40 Referral Bonus",
-      "url": "https://www.doctorofcredit.com/befrugal-40-referral-bonus-3/",
+      "title": "AmEx Offers (Platinum): Walmart.com, $20 Off $60 (2x) Or 25% Back (Up to $25)",
+      "url": "https://www.doctorofcredit.com/amex-offers-platinum-walmart-com-20-off-60-2x-or-25-back-up-to-25/",
       "source": "Doctor of Credit",
       "categories": [
         "Deals",
-        "befrugal",
-        "shopping portals"
+        "amex offers",
+        "walmart",
+        "walmart.com"
       ],
-      "ts": "2026-11-21T14:00:31.000Z",
-      "title_en": "BeFrugal: $40 Referral Bonus",
+      "ts": "2026-11-23T15:59:30.000Z",
+      "title_en": "AmEx Offers (Platinum): Walmart.com, $20 Off $60 (2x) Or 25% Back (Up to $25)",
       "summary_en": "",
-      "title_zh": "BeFrugal：40 美元推薦獎金",
-      "summary_zh": "透過 BeFrugal 推薦計畫可獲得 40 美元的推薦獎金。",
-      "title_es": "BeFrugal: bonificación de $40 por referidos",
-      "summary_es": "BeFrugal ofrece una bonificación de $40 por，推荐Clients."
+      "title_zh": "AmEx 優惠（白金卡）：Walmart.com 滿 60 美元減 20 美元（2 次）或享 25% 退款（最高 25 美元）",
+      "summary_zh": "AmEx 白金卡用戶於 Walmart.com 消費滿 60 美元，可享減 20 美元的兩次優惠或 25% 退款，上限為 25 美元。",
+      "title_es": "Ofertas AmEx (Platinum): Walmart.com, $20 de descuento en $60 (2x) o 25% de devolución (hasta $25)",
+      "summary_es": "Los titulares de tarjetas AmEx Platinum pueden recibir $20 de descuento en compras de $60 en Walmart.com o un 25% de devolución, hasta $25."
+    },
+    {
+      "title": "Lili (Fintech) $300 Business Checking Bonus",
+      "url": "https://www.doctorofcredit.com/lili-fintech-300-business-checking-bonus/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Bank Accounts",
+        "business bank",
+        "business bank bonuses",
+        "nationwide bank bonuses",
+        "soft pull"
+      ],
+      "ts": "2026-11-23T15:00:03.000Z",
+      "title_en": "Lili (Fintech) $300 Business Checking Bonus",
+      "summary_en": "",
+      "title_zh": "Lili（金融科技公司）商家支票帳戶 300 美元獎金",
+      "summary_zh": "Lili 為商家支票帳戶提供 300 美元獎金。",
+      "title_es": "Bono de $300 en una cuenta corriente empresarial de Lili (fintech)",
+      "summary_es": "Lili ofrece un bono de $300 por abrir una cuenta corriente empresarial."
+    },
+    {
+      "title": "Chase Offers/USB: Get Up To 10% Back at Kroger Brands, Harris Teeter ($9 Cashback Max)",
+      "url": "https://www.doctorofcredit.com/chase-offers-get-10-back-at-kroger-up-to-7-cashback/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Deals",
+        "kroger"
+      ],
+      "ts": "2026-11-23T14:30:57.000Z",
+      "title_en": "Chase Offers/USB: Get Up To 10% Back at Kroger Brands, Harris Teeter ($9 Cashback Max)",
+      "summary_en": "",
+      "title_zh": "Chase／美國銀行優惠：於 Kroger 品牌及 Harris Teeter 消費最高享 10% 退款（現金回饋上限 9 美元）",
+      "summary_zh": "使用指定 Chase 或美國銀行信用卡於 Kroger 品牌商店及 Harris Teeter 消費，最高可享 10% 退款，現金回饋上限為 9 美元。",
+      "title_es": "Ofertas de Chase/U.S. Bank: obtén hasta un 10% de devolución en marcas Kroger y Harris Teeter ($9 de devolución como máximo)",
+      "summary_es": "Las tarjetas Chase y U.S. Bank ofrecen hasta un 10% de devolución en compras participating en Kroger y Harris Teeter, con un máximo de $9."
+    },
+    {
+      "title": "Best Posts Last Week: Refreshed Alaska Airlines Card, $5 Off Amazon With One Text & More",
+      "url": "https://www.doctorofcredit.com/best-posts-last-week-refreshed-alaska-airlines-card-5-off-amazon-with-one-text-more/",
+      "source": "Doctor of Credit",
+      "categories": [
+        "Sunday Roundup"
+      ],
+      "ts": "2026-11-23T14:00:32.000Z",
+      "title_en": "Best Posts Last Week: Refreshed Alaska Airlines Card, $5 Off Amazon With One Text & More",
+      "summary_en": "",
+      "title_zh": "上週最佳文章：更新版 Alaska Airlines 信用卡、簡訊即可享 Amazon 減 5 美元等優惠",
+      "summary_zh": "上週熱門內容包括更新後的 Alaska Airlines 信用卡、傳送簡訊即可享 Amazon 滿額減 5 美元等優惠。",
+      "title_es": "Las mejores publicaciones de la semana: tarjeta Alaska Airlines actualizada, $5 de descuento en Amazon con un mensaje de texto y más",
+      "summary_es": "Resumen de las mejores ofertas de la semana, incluida una tarjeta Alaska Airlines actualizada y un descuento de $5 en Amazon al enviar un mensaje de texto."
     }
   ],
-  "fetched": "2026-11-23T01:36:54.000Z"
+  "fetched": "2026-11-23T21:15:46.000Z"
 }
