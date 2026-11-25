@@ -94,7 +94,9 @@ test('official Vercel adapter filters production/exact SHA and redacts failures,
   let request;
   const read = createVercelDeploymentReader({ token: 'synthetic', fetchImpl: async url => { request = new URL(url); return { ok: true, json: async () => ({ deployments: [] }) }; } });
   assert.deepEqual(await read(head), []);
-  assert.equal(request.pathname, '/v7/deployments'); assert.equal(request.searchParams.get('sha'), head); assert.equal(request.searchParams.get('target'), 'production');
+  assert.equal(request.pathname, '/v7/deployments');
+  assert.equal(request.searchParams.get('projectId'), 'opencard');
+  assert.equal(request.searchParams.get('slug'), 'opencard-ais-projects'); assert.equal(request.searchParams.get('sha'), head); assert.equal(request.searchParams.get('target'), 'production');
   await assert.rejects(createVercelDeploymentReader({ token: 'synthetic-private', fetchImpl: async () => { throw new Error('synthetic-private'); } })(head), error => !error.message.includes('synthetic-private'));
   assert.throws(() => createVercelDeploymentReader({ token: '' }), /promotion blocked/);
 });

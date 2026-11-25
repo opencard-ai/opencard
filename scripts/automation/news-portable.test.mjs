@@ -9,7 +9,7 @@ import { NEWS_SOURCES, runNewsSync } from '../sync-news.mjs';
 import { parseRSS } from '../news-sync-core.mjs';
 import { createMiniMaxTranslator } from '../news-provider.mjs';
 import { preparePortableNews, jsonHash, writeShadowArtifacts } from './news-portable.mjs';
-import { publishPortableNews, observeNewsDeployment } from './news-publish.mjs';
+import { publishPortableNews, observeNewsDeployment, observeNewsDeploymentDetailed } from './news-publish.mjs';
 import { mergeVerifiedNewsPr } from './pr-merge-guard.mjs';
 import { parsePublishOptions } from './news-publish-cli.mjs';
 
@@ -57,7 +57,7 @@ test('source failure and truncated RSS abort real pipeline before translations/o
 });
 test('re-reading head also re-reads checks; a newly pending check prevents merge', async () => {
   let checks = 0, merged = false;
-  const pr = { headRefOid: head, state: 'OPEN', baseRefName: 'main', isDraft: false, files: [{ path: 'data/news.json' }] };
+  const pr = { headRefOid: head, state: 'OPEN', baseRefName: 'main', isDraft: false, commits: [{ authors: [{ email: 'opencard@opencardai.com' }] }], files: [{ path: 'data/news.json' }] };
   await assert.rejects(mergeVerifiedNewsPr({ prNumber: 1, expectedHead: head, write: true, run: async (_, args) => {
     if (args[1] === 'merge') { merged = true; throw new Error('must not merge'); }
     if (args[1] === 'checks') return { code: 0, stdout: JSON.stringify([{ name: 'validate', state: ++checks === 1 ? 'SUCCESS' : 'PENDING', bucket: checks === 1 ? 'pass' : 'pending' }]) };
@@ -68,7 +68,7 @@ test('re-reading head also re-reads checks; a newly pending check prevents merge
 
 function liveMock(result, options = {}) {
   const calls = [], scratch = [];
-  let prLists = 0, ownerReads = 0;
+  let creationLists = 0, ownerReads = 0;
   const run = async (cmd, args) => {
     calls.push([cmd, ...args]);
     const ok = value => ({ code: 0, stdout: typeof value === 'string' ? value : JSON.stringify(value) });
@@ -84,7 +84,7 @@ function liveMock(result, options = {}) {
     }
     if (cmd === 'git') {
       if (args.includes('remote')) return ok('https://github.com/opencard-ai/opencard.git');
-      if (args.includes('ls-remote')) return ok('');
+      if (args.includes('ls-remote')) return ok(options.orphan ? 'remote-head' : '');
       if (args.includes('worktree')) {
         if (args.includes('add')) { const dir = args.at(-2); scratch.push(path.dirname(dir)); fs.mkdirSync(path.join(dir, 'data'), { recursive: true }); }
         else fs.rmSync(args.at(-1), { recursive: true, force: true });
@@ -97,12 +97,14 @@ function liveMock(result, options = {}) {
       return ok('');
     }
     if (args[1] === 'list') {
-      prLists++;
-      if (options.existing && prLists === 1) return ok([{ number: 7, state: 'OPEN', headRefOid: head }]);
-      return ok(prLists === 3 ? [{ number: 7 }] : []);
+      if (args.includes('all')) return ok(options.existingPrs ?? (options.existing ? [{ number: 7, state: 'OPEN', headRefOid: head }] : []));
+      if (!args.includes('--head')) return ok(options.open ?? []);
+      return ok(++creationLists >= (options.creationLag ?? 1) ? [{ number: 7 }] : []);
     }
+    if (args[1] === 'create') return ok(options.createdUrl ?? '');
+    if (args[1] === 'view' && args.at(-1) === 'state') return ok({ state: options.closeUnconfirmed ? 'OPEN' : 'CLOSED' });
     if (args[1] === 'checks') return ok(['validate', 'gitleaks'].map(name => ({ name, bucket: options.pending ? 'pending' : 'pass', state: options.pending ? 'PENDING' : 'SUCCESS' })));
-    if (args[1] === 'view') return ok(args.at(-1) === 'state,mergeCommit' ? { state: 'MERGED', mergeCommit: { oid: mergeSha } } : { headRefOid: head, state: 'OPEN', baseRefName: 'main', isDraft: false, files: [{ path: 'data/news.json' }] });
+    if (args[1] === 'view') return ok(args.at(-1) === 'state,mergeCommit' ? { state: 'MERGED', mergeCommit: { oid: mergeSha } } : { headRefOid: head, state: 'OPEN', baseRefName: 'main', isDraft: false, commits: [{ authors: [{ email: 'opencard@opencardai.com' }] }], files: [{ path: 'data/news.json' }] });
     return ok('');
   };
   const fetchLive = async () => ({ status: 200, data: { items: result.proposed.items.map(i => ({ ...i, title: i.title_en || i.title, summary: i.summary_en || '' })), fetched: result.proposed.fetched } });
@@ -157,7 +159,7 @@ test('deployment mismatch/timeout/API errors never count as verified or trigger 
     assert.equal(await observeNewsDeployment({ mergeSha, proposed: result.proposed, run, fetchLive: async () => { throw new Error('unexpected'); } }), 'UNCONFIRMED');
   }
   const m = liveMock(result);
-  assert.equal(await observeNewsDeployment({ mergeSha, proposed: result.proposed, run: m.run, fetchDeployment: m.fetchDeployment, fetchLive: async () => { throw new Error('timeout'); } }), 'UNCONFIRMED');
+  assert.equal(await observeNewsDeployment({ mergeSha, proposed: result.proposed, run: m.run, fetchDeployment: m.fetchDeployment, fetchLive: async () => { throw new Error('timeout'); }, timeoutMs: 1, pollMs: 1, sleep: async () => {} }), 'UNCONFIRMED');
 });
 test('clean shadow CLI imports actual sync without env reads or remote/model writes', () => {
   const repo = fileURLToPath(new URL('../..', import.meta.url));
@@ -200,7 +202,7 @@ test('scratch under repository is rejected and explicit required checks are enfo
   let merged = false;
   await assert.rejects(mergeVerifiedNewsPr({ prNumber: 1, expectedHead: head, write: true, requiredChecks: ['validate', 'gitleaks'], run: async (_, args) => {
     if (args[1] === 'merge') { merged = true; throw new Error('forbidden'); }
-    return { code: 0, stdout: JSON.stringify(args[1] === 'checks' ? [{ name: 'validate', state: 'SUCCESS', bucket: 'pass' }] : { headRefOid: head, state: 'OPEN', baseRefName: 'main', isDraft: false, files: [{ path: 'data/news.json' }] }) };
+    return { code: 0, stdout: JSON.stringify(args[1] === 'checks' ? [{ name: 'validate', state: 'SUCCESS', bucket: 'pass' }] : { headRefOid: head, state: 'OPEN', baseRefName: 'main', isDraft: false, commits: [{ authors: [{ email: 'opencard@opencardai.com' }] }], files: [{ path: 'data/news.json' }] }) };
   } }), /required check/);
   assert.equal(merged, false);
 });
@@ -212,4 +214,156 @@ test('manual publish CLI parses explicit epoch and reconcile independently and d
   assert.deepEqual(parsePublishOptions(base), { repoPath: '/fixture/repo', artifactDir: '/fixture/plan', ownerEpoch: 'epoch-1', reconcileExisting: false });
   assert.equal(parsePublishOptions([...base, '--reconcile-existing', 'true']).reconcileExisting, true);
   assert.equal(parsePublishOptions([...base, '--reconcile-existing', 'true']).ownerEpoch, 'epoch-1');
+});
+
+const botCommit = { authors: [{ email: 'opencard@opencardai.com' }] };
+const eligibleStale = { number: 21, headRefName: `bot/news-sync/${'d'.repeat(24)}`, headRefOid: head,
+  state: 'OPEN', baseRefName: 'main', isDraft: false, isCrossRepository: false,
+  author: { login: 'opencard-ai' }, files: [{ path: 'data/news.json' }], commits: [botCommit] };
+const publishMock = (result, m, extra = {}) => publishPortableNews({ ...result, ...m, repoPath: '/fixture/repo',
+  publish: true, productionEnable: true, ownerEpoch: 'fixture-epoch', sleep: async () => {}, ...extra });
+
+test('eligible stale PRs are closed, branch deleted, and regenerated news proceeds; same-slot open also superseded', async () => {
+  const result = await prepare();
+  for (const sameSlot of [false, true]) {
+    const stale = { ...eligibleStale, headRefName: sameSlot ? `bot/news-sync/${jsonHash(result.plan.slotKey).slice(0, 24)}` : eligibleStale.headRefName };
+    const m = liveMock(result, { open: [stale], existingPrs: sameSlot ? [stale] : [] });
+    const receipt = await publishMock(result, m);
+    assert.deepEqual(receipt.superseded, [21]);
+    assert.equal(receipt.state, 'MERGED');
+    const closeAt = m.calls.findIndex(c => c[2] === 'close');
+    const close = m.calls[closeAt];
+    assert.ok(close.includes('--delete-branch'));
+    assert.equal(close[3], '21');
+    assert.match(close.at(-1), new RegExp(`Superseded by slot ${result.plan.slotKey}`));
+    assert.match(close.at(-1), /current main; no content lost/);
+    assert.ok(m.calls[closeAt - 2][2].includes('ops/runner-owner.json'));
+    assert.ok(m.calls[closeAt - 1][2].includes('git/ref/heads/main'));
+    assert.equal(m.calls[closeAt + 1].at(-1), 'state');
+    assert.ok(m.calls.findIndex(c => c[2] === 'create') > closeAt);
+    assert.equal(m.calls.some(c => c[2] === 'merge' && c[3] === '21'), false);
+  }
+});
+
+test('preflight rejects any ineligible stale PR or four PRs before closing or writing anything', async () => {
+  const result = await prepare();
+  const invalid = [
+    { commits: [botCommit, botCommit] }, { commits: [{ authors: [{ email: 'other@example.test' }] }] },
+    { files: [{ path: 'data/news.json' }, { path: 'README.md' }] }, { author: { login: 'someone' } },
+    { headRefName: 'bot/news-sync/unexpected' }, { baseRefName: 'other' }, { isDraft: true },
+    { isCrossRepository: true }, { state: 'CLOSED' }, { commits: undefined },
+  ].map(change => [eligibleStale, { ...eligibleStale, number: 22, ...change }]);
+  invalid.push(Array.from({ length: 4 }, (_, i) => ({ ...eligibleStale, number: 21 + i })));
+  for (const open of invalid) {
+    const m = liveMock(result, { open });
+    await assert.rejects(publishMock(result, m), e => e.reason === 'stale_pr_not_supersedable');
+    assert.equal(m.calls.some(c => ['close', 'create', 'merge'].includes(c[2]) || c.includes('push') || c.includes('add')), false);
+  }
+  const m = liveMock(result, { open: [eligibleStale] });
+  await assert.rejects(publishMock(result, m, { reconcileExisting: true }), e => e.reason === 'another_news_pr_blocking');
+  assert.equal(m.calls.some(c => c[2] === 'close'), false);
+});
+
+test('superseding stops if authority changes or the close receipt is not CLOSED', async () => {
+  const result = await prepare();
+  const m = liveMock(result, { open: [eligibleStale], closeUnconfirmed: true });
+  await assert.rejects(publishMock(result, m), e => e.reason === 'stale_pr_not_supersedable');
+  assert.equal(m.calls.some(c => c[2] === 'create' || c.includes('push')), false);
+  const revoked = liveMock(result, { open: [eligibleStale] });
+  const run = async (cmd, args) => {
+    if (cmd === 'gh' && args[0] === 'api' && args[1].includes('ops/runner-owner') && revoked.calls.some(c => c[2] === 'list')) {
+      return { code: 0, stdout: JSON.stringify({ content: Buffer.from('{}').toString('base64') }) };
+    }
+    return revoked.run(cmd, args);
+  };
+  await assert.rejects(publishMock(result, { ...revoked, run }), e => e.reason === 'owner_denied');
+  assert.equal(revoked.calls.some(c => c[2] === 'close'), false);
+});
+
+test('same-slot merged is a success no-op; closed PR with deleted branch is ignored; orphan still blocks', async () => {
+  const result = await prepare();
+  for (const existingPrs of [[{ number: 7, state: 'MERGED' }], [{ number: 6, state: 'CLOSED' }, { number: 7, state: 'MERGED' }]]) {
+    const m = liveMock(result, { existingPrs });
+    const receipt = await publishMock(result, m);
+    assert.equal(receipt.state, 'SLOT_ALREADY_PUBLISHED');
+    assert.equal(m.calls.some(c => ['close', 'create', 'merge'].includes(c[2]) || c.includes('push')), false);
+  }
+  const m = liveMock(result, { existingPrs: [{ number: 6, state: 'CLOSED' }] });
+  assert.equal((await publishMock(result, m)).state, 'MERGED');
+  const orphan = liveMock(result, { orphan: true });
+  await assert.rejects(publishMock(result, orphan), e => e.reason === 'orphan_branch');
+  assert.equal(orphan.calls.some(c => c.includes('push')), false);
+  const closedOrphan = liveMock(result, { existingPrs: [{ number: 6, state: 'CLOSED' }], orphan: true });
+  assert.equal((await publishMock(result, closedOrphan)).state, 'EXISTING_PR_RECONCILE');
+  const resume = liveMock(result, { existingPrs: [{ number: 6, state: 'CLOSED' }, { number: 7, state: 'OPEN', headRefOid: head }] });
+  assert.equal((await publishMock(result, resume, { reconcileExisting: true })).state, 'MERGED');
+  assert.equal(resume.calls.some(c => ['close', 'create'].includes(c[2])), false);
+  const wrongPayload = liveMock(result, { existing: true });
+  const run = async (cmd, args) => args[1]?.includes('contents/data/news.json')
+    ? { code: 0, stdout: JSON.stringify({ content: Buffer.from('{"items":[]}').toString('base64') }) }
+    : wrongPayload.run(cmd, args);
+  await assert.rejects(publishMock(result, { ...wrongPayload, run }, { reconcileExisting: true }), e => e.reason === 'payload_changed');
+});
+
+test('PR creation uses only a validated URL or bounded eventually-consistent head listing; body states exact merge policy', async () => {
+  const result = await prepare();
+  for (const options of [{ createdUrl: 'https://github.com/opencard-ai/opencard/pull/7' }, { creationLag: 3 },
+    { createdUrl: 'https://github.com/other/repo/pull/7', creationLag: 2 }]) {
+    const m = liveMock(result, options), sleeps = [];
+    const receipt = await publishMock(result, m, { sleep: async ms => sleeps.push(ms) });
+    assert.equal(receipt.state, 'MERGED');
+    assert.equal(sleeps.length, (options.creationLag ?? 1) - 1);
+    assert.ok(sleeps.every(ms => ms === 2000));
+    if (!options.creationLag) assert.equal(m.calls.filter(c => c[2] === 'list').length, 2);
+    const create = m.calls.find(c => c[2] === 'create');
+    assert.equal(create.at(-1), `Automated news sync for slot ${result.plan.slotKey}. Changes only data/news.json. Auto-merges only when the PR has exactly 1 commit, touches only data/news.json, and the required checks (validate, gitleaks) pass; otherwise it is left open for review.`);
+  }
+  const m = liveMock(result, { creationLag: 9 }), sleeps = [];
+  await assert.rejects(publishMock(result, m, { sleep: async ms => sleeps.push(ms) }), e => e.reason === 'pr_creation_unconfirmed');
+  assert.equal(sleeps.length, 4);
+  assert.equal(m.calls.some(c => c[2] === 'merge'), false);
+});
+
+test('superseded identities survive pending checks for the workflow summary', async () => {
+  const result = await prepare(), m = liveMock(result, { open: [eligibleStale], pending: true });
+  await assert.rejects(publishMock(result, m), e => e.code === 'CHECKS_PENDING' && e.superseded[0] === 21);
+});
+
+test('observer allows 130s deployments, retries all transient readers, and times out at eight minutes', async () => {
+  const proposed = { items: [], fetched: 'fixed' };
+  const ready = { name: 'opencard', target: 'production', meta: { githubCommitSha: mergeSha }, readyState: 'READY' };
+  const goodStatus = { code: 0, stdout: JSON.stringify({ sha: mergeSha, statuses: [{ context: 'Vercel', state: 'success' }] }) };
+  for (const flaky of ['slow', 'gh_exit', 'gh_throw', 'deployment', 'live', 'timeout']) {
+    let clock = 0, reads = 0;
+    const opts = { mergeSha, proposed, now: () => clock, sleep: async ms => { clock += ms; },
+      run: async () => {
+        reads++;
+        if (reads === 1 && flaky === 'gh_exit') return { code: 1, stdout: '' };
+        if (reads === 1 && flaky === 'gh_throw') throw new Error('synthetic-private');
+        return goodStatus;
+      },
+      fetchDeployment: async () => {
+        if (clock === 0 && flaky === 'deployment') throw new Error('synthetic-private');
+        return flaky === 'timeout' || (flaky === 'slow' && clock < 130000) ? [] : [ready];
+      },
+      fetchLive: async () => {
+        if (clock === 0 && flaky === 'live') throw new Error('synthetic-private');
+        return { status: 200, data: proposed };
+      },
+    };
+    const evidence = await observeNewsDeploymentDetailed(opts);
+    assert.equal(evidence.status, flaky === 'timeout' ? 'UNCONFIRMED' : 'VERIFIED');
+    assert.equal(evidence.reason, flaky === 'timeout' ? 'timeout' : 'verified');
+    assert.ok(evidence.attempts > 1);
+    assert.equal(clock, flaky === 'timeout' ? 480000 : flaky === 'slow' ? 130000 : 10000);
+  }
+  for (const state of ['failure', 'error']) {
+    const evidence = await observeNewsDeploymentDetailed({ mergeSha, proposed,
+      run: async () => ({ code: 0, stdout: JSON.stringify({ sha: mergeSha, statuses: [{ context: 'Vercel', state }] }) }),
+      fetchDeployment: async () => { throw new Error('must not read'); },
+      sleep: async () => { throw new Error('must not wait'); },
+    });
+    assert.deepEqual(evidence, { status: 'UNCONFIRMED', reason: 'deployment_failed', attempts: 1 });
+  }
+  assert.deepEqual(await observeNewsDeploymentDetailed({ mergeSha: 'bad' }), { status: 'UNCONFIRMED', reason: 'invalid_sha', attempts: 0 });
 });

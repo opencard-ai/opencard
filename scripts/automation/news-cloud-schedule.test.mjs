@@ -8,11 +8,11 @@ import { fileURLToPath } from 'node:url';
 import { assertMergeable, CHECKS_PENDING, mergeVerifiedNewsPr } from './pr-merge-guard.mjs';
 import { countTranslationCalls, describeFailure, MAX_TRANSLATION_CALLS, retryTranslation, StageError } from './news-portable.mjs';
 import { createMiniMaxTranslator, TranslationError } from '../news-provider.mjs';
-import { EXIT_CHECKS_PENDING, pendingChecksResult, publicationExitCode } from './news-publish-cli.mjs';
+import { EXIT_CHECKS_PENDING, pendingChecksResult, publicationExitCode, failedPublicationResult, PUBLISH_FAILURE_REASONS } from './news-publish-cli.mjs';
 import { runNewsSync } from '../sync-news.mjs';
 
 const head = 'a'.repeat(40);
-const pr = { headRefOid: head, files: [{ path: 'data/news.json' }], state: 'OPEN', baseRefName: 'main', isDraft: false };
+const pr = { headRefOid: head, files: [{ path: 'data/news.json' }], state: 'OPEN', baseRefName: 'main', isDraft: false, commits: [{ authors: [{ email: 'opencard@opencardai.com' }] }] };
 const ok = (name, state = 'SUCCESS', bucket = 'pass') => ({ name, state, bucket });
 const gate = checks => assertMergeable({ pr, checks, expectedHead: head, allowedFile: f => f === 'data/news.json', requiredChecks: ['validate', 'gitleaks'] });
 const codeOf = fn => { try { fn(); return 'PASSED'; } catch (error) { return error.code ?? 'HARD'; } };
@@ -43,7 +43,7 @@ test('CLI maps only a fully identified pending rejection to exit 75; everything 
   assert.deepEqual(pendingChecksResult(error), { state: CHECKS_PENDING, pr: 12, branch: 'bot/news-sync/0123456789abcdef01234567', head });
   assert.equal(EXIT_CHECKS_PENDING, 75);
   for (const bad of [new Error('x'), { ...error, code: 'OTHER' }, { ...error, pr: 0 }, { ...error, branch: 'bot/news-sync/20261112-0108' }, { ...error, head: 'short' }, Object.assign(new Error('no checks'), { code: CHECKS_PENDING })]) assert.equal(pendingChecksResult(bad), null);
-  assert.equal(publicationExitCode({ state: 'NO_CHANGE' }), 0);
+  for (const state of ['NO_CHANGE', 'SUPERSEDED', 'SLOT_ALREADY_PUBLISHED']) assert.equal(publicationExitCode({ state }), 0);
   assert.equal(publicationExitCode({ state: 'MERGED', deployment: 'UNCONFIRMED' }), 1);
 });
 
@@ -192,7 +192,7 @@ test('cloud workflow: explicit UTC schedule, read-only token permissions, pinned
   assert.match(workflow, /workflow_dispatch:/);
   assert.match(workflow, /permissions:\n\s+contents: read\n/);
   assert.match(workflow, /group: news-publish\n\s+cancel-in-progress: false/);
-  assert.match(workflow, /timeout-minutes: 30/); assert.match(workflow, /runs-on: ubuntu-24\.04/);
+  assert.match(workflow, /timeout-minutes: 40/); assert.match(workflow, /runs-on: ubuntu-24\.04/);
   assert.match(workflow, /environment: news-production/);
   assert.match(workflow, new RegExp(`NEWS_EPOCH: ${owner.news.epoch}\\n`));
   assert.equal([...workflow.matchAll(/--owner-epoch "\$NEWS_EPOCH"/g)].length, 2);
@@ -202,9 +202,14 @@ test('cloud workflow: explicit UTC schedule, read-only token permissions, pinned
   assert.match(workflow, /MINIMAX_API_KEY: \$\{\{ secrets\.MINIMAX_API_KEY \}\}/);
   assert.match(workflow, /--source public --provider minimax/);
   assert.equal(new Set([...workflow.matchAll(/secrets\.([A-Z_]+)/g)].map(m => m[1])).size, 3);
-  assert.doesNotMatch(workflow, /pull_request_target|contents: write|--auto|--force|--admin|set -x|upload-artifact|git push/);
+  assert.doesNotMatch(workflow, /pull_request|contents: write|--auto|--force|--admin|set -x|upload-artifact|git push/);
   assert.match(workflow, /"\$code" -eq 75/);
   assert.match(workflow, /--reconcile-existing true/);
+  assert.match(workflow, /SUPERSEDED\|SLOT_ALREADY_PUBLISHED\|NO_CHANGE\) exit 0/);
+  assert.match(workflow, /Superseded stale PRs/);
+  assert.equal([...workflow.matchAll(/jq -r '\.reason \/\/ empty'/g)].length, 2);
+  assert.match(workflow, /deploymentReason/);
+  assert.match(workflow, /is MERGED\. This does NOT block the next scheduled run/);
 });
 
 test('gh "no checks reported" (exit 1) and pending exit 8 become pending; other non-zero exits stay hard', async () => {
@@ -214,7 +219,9 @@ test('gh "no checks reported" (exit 1) and pending exit 8 become pending; other 
     return { code: 0, stdout: JSON.stringify(pr) };
   };
   const call = r => mergeVerifiedNewsPr({ prNumber: 3, expectedHead: head, write: true, requiredChecks: ['validate', 'gitleaks'], run: runWith(r) });
-  await assert.rejects(call({ code: 1, stdout: '', stderr: "no checks reported on the 'bot/news-sync/x' branch" }), e => e.code === CHECKS_PENDING);
+  for (const stderr of ["no checks reported on the 'bot/news-sync/x' branch", 'no commit found on the pull request', 'Could not resolve to a PullRequest', 'Could not resolve to a node']) {
+    await assert.rejects(call({ code: 1, stdout: '', stderr }), e => e.code === CHECKS_PENDING);
+  }
   await assert.rejects(call({ code: 8, stdout: JSON.stringify([ok('validate', 'PENDING', 'pending')]) }), e => e.code === CHECKS_PENDING);
   for (const hard of [{ code: 1, stdout: '', stderr: 'HTTP 502' }, { code: 1, stdout: '[]' }, { code: 8, stdout: 'not json' }, { code: 8, stdout: '{}' }, { code: 2, stdout: '', stderr: 'unknown error' }]) {
     await assert.rejects(call(hard), e => e.code !== CHECKS_PENDING);
@@ -230,4 +237,42 @@ test('every run step that tolerates expected non-zero exits disables errexit exp
     const stepStart = workflow.lastIndexOf('run: |', at);
     assert.match(workflow.slice(stepStart, at), /set \+e/);
   }
+});
+
+test('first gate retries only known PR not-found errors with a bounded injectable sleep', async () => {
+  for (const permanent of [false, true]) {
+    let reads = 0, merges = 0;
+    const sleeps = [];
+    await assert.rejects(mergeVerifiedNewsPr({ prNumber: 7, expectedHead: head, write: true,
+      sleep: async ms => sleeps.push(ms),
+      run: async (_, args) => {
+        if (args[1] === 'merge') merges++;
+        if (args[1] === 'view' && ++reads <= (permanent ? 10 : 2)) return { code: 1, stderr: 'Could not resolve to a PullRequest', stdout: '' };
+        return { code: 0, stdout: JSON.stringify(args[1] === 'checks' ? [] : pr) };
+      },
+    }), e => permanent ? e.reason === 'github_query_failed' : e.code === CHECKS_PENDING);
+    assert.equal(sleeps.length, permanent ? 4 : 2);
+    assert.ok(sleeps.every(ms => ms === 2000));
+    assert.equal(merges, 0);
+  }
+  let calls = 0;
+  await assert.rejects(mergeVerifiedNewsPr({ prNumber: 7, expectedHead: head, write: true,
+    sleep: async () => { throw new Error('must not sleep'); },
+    run: async () => { calls++; return { code: 1, stderr: 'HTTP 502' }; },
+  }), e => e.reason === 'github_query_failed');
+  assert.equal(calls, 1);
+});
+
+test('publish CLI failures expose only allowlisted codes, never arbitrary messages or properties', () => {
+  for (const reason of PUBLISH_FAILURE_REASONS) {
+    assert.deepEqual(failedPublicationResult({ reason, message: 'Bearer synthetic-private', stderr: 'synthetic-private' }), { state: 'FAILED', reason });
+  }
+  for (const error of [new Error('https://user:synthetic-private@example.test'), { reason: 'Bearer synthetic-private' }, null]) {
+    assert.deepEqual(failedPublicationResult(error), { state: 'FAILED', reason: 'unexpected' });
+  }
+  const cli = fileURLToPath(new URL('./news-publish-cli.mjs', import.meta.url));
+  const r = spawnSync(process.execPath, [cli], { encoding: 'utf8', env: { PATH: process.env.PATH } });
+  assert.equal(r.status, 1);
+  assert.deepEqual(JSON.parse(r.stdout), { state: 'FAILED', reason: 'unexpected' });
+  assert.match(r.stderr, /Portable news publish stopped/);
 });
