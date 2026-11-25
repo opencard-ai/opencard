@@ -1,187 +1,5 @@
 [
   {
-    "date": "2026-10-25",
-    "period": {
-      "startDate": "2026-10-17",
-      "endDate": "2026-10-23"
-    },
-    "previousPeriod": {
-      "startDate": "2026-10-10",
-      "endDate": "2026-10-16",
-      "clicks": 1,
-      "impressions": 319,
-      "ctr": 0.3134796238244514,
-      "position": 22.109717868338556
-    },
-    "clicks": 5,
-    "impressions": 975,
-    "ctr": 0.5128205128205128,
-    "position": 18.545641025641025,
-    "sitemap": {
-      "submitted": 347,
-      "indexed": 0,
-      "errors": 0,
-      "warnings": 0,
-      "lastDownloaded": "2026-10-25T01:43:35.024Z"
-    },
-    "cohortBaseline": "2026-09-15T02:54:38.789Z",
-    "cohorts": {
-      "retained": {
-        "current": {
-          "clicks": 4,
-          "impressions": 574,
-          "ctr": 0.6968641114982579,
-          "position": 10.721254355400697,
-          "pages": 17
-        },
-        "previous": {
-          "clicks": 1,
-          "impressions": 158,
-          "ctr": 0.6329113924050633,
-          "position": 16.360759493670887,
-          "pages": 15
-        }
-      },
-      "excluded": {
-        "current": {
-          "clicks": 0,
-          "impressions": 98,
-          "ctr": 0,
-          "position": 33.01020408163265,
-          "pages": 27
-        },
-        "previous": {
-          "clicks": 0,
-          "impressions": 101,
-          "ctr": 0,
-          "position": 27.81188118811881,
-          "pages": 28
-        }
-      },
-      "new": {
-        "current": {
-          "clicks": 1,
-          "impressions": 313,
-          "ctr": 0.3194888178913738,
-          "position": 28.089456869009584,
-          "pages": 50
-        },
-        "previous": {
-          "clicks": 0,
-          "impressions": 74,
-          "ctr": 0,
-          "position": 23.64864864864865,
-          "pages": 20
-        }
-      },
-      "unknown": {
-        "current": {
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0,
-          "position": 3.5,
-          "pages": 1
-        },
-        "previous": {
-          "clicks": 0,
-          "impressions": 0,
-          "ctr": 0,
-          "position": 0,
-          "pages": 0
-        }
-      }
-    },
-    "pageCoverage": {
-      "current": 95,
-      "previous": 63,
-      "rowLimit": 25000
-    },
-    "topPages": [
-      {
-        "url": "https://opencardai.com/en",
-        "policy": "indexable",
-        "clicks": 3,
-        "impressions": 517,
-        "ctr": 0.5802707930367506,
-        "position": 10.825918762088975
-      },
-      {
-        "url": "https://opencardai.com/en/cards/chase-united-club-infinite",
-        "policy": "indexable",
-        "clicks": 0,
-        "impressions": 38,
-        "ctr": 0,
-        "position": 29.236842105263158
-      },
-      {
-        "url": "https://opencardai.com/en/cards/amex-blue-biz-plus",
-        "policy": "indexable",
-        "clicks": 0,
-        "impressions": 31,
-        "ctr": 0,
-        "position": 23.193548387096776
-      },
-      {
-        "url": "https://opencardai.com/en/cards/boa-biz-advantage-travel",
-        "policy": "indexable",
-        "clicks": 0,
-        "impressions": 29,
-        "ctr": 0,
-        "position": 44.793103448275865
-      },
-      {
-        "url": "https://opencardai.com/zh/cards/navy-federal-go-rewards",
-        "policy": "noindex",
-        "clicks": 0,
-        "impressions": 19,
-        "ctr": 0,
-        "position": 40.21052631578947
-      }
-    ],
-    "opportunities": [
-      {
-        "query": "credit cards",
-        "url": "https://opencardai.com/en",
-        "clicks": 0,
-        "impressions": 433,
-        "ctr": 0,
-        "position": 7.785219399538106
-      },
-      {
-        "query": "how do premium card memberships compare?",
-        "url": "https://opencardai.com/en/guides/premium-travel-card-comparison-framework",
-        "clicks": 0,
-        "impressions": 6,
-        "ctr": 0,
-        "position": 9.166666666666666
-      },
-      {
-        "query": "united club visa benefits",
-        "url": "https://opencardai.com/en/cards/chase-united-club-infinite",
-        "clicks": 0,
-        "impressions": 3,
-        "ctr": 0,
-        "position": 19.333333333333332
-      },
-      {
-        "query": "compare travel savings between regular accounts and those with premium subscriptions.",
-        "url": "https://opencardai.com/en/guides/premium-travel-card-comparison-framework",
-        "clicks": 0,
-        "impressions": 2,
-        "ctr": 0,
-        "position": 8
-      },
-      {
-        "query": "visa infinite chase",
-        "url": "https://opencardai.com/en/cards/chase-united-club-infinite",
-        "clicks": 0,
-        "impressions": 2,
-        "ctr": 0,
-        "position": 17.5
-      }
-    ]
-  },
-  {
     "date": "2026-10-26",
     "period": {
       "startDate": "2026-10-18",
@@ -5456,6 +5274,188 @@
         "impressions": 36,
         "ctr": 0,
         "position": 10.583333333333334
+      }
+    ]
+  },
+  {
+    "date": "2026-11-24",
+    "period": {
+      "startDate": "2026-11-17",
+      "endDate": "2026-11-23"
+    },
+    "previousPeriod": {
+      "startDate": "2026-11-10",
+      "endDate": "2026-11-16",
+      "clicks": 4,
+      "impressions": 11619,
+      "ctr": 0.03442637059987951,
+      "position": 19.62647387899131
+    },
+    "clicks": 7,
+    "impressions": 21599,
+    "ctr": 0.03240890781980647,
+    "position": 12.065975276633177,
+    "sitemap": {
+      "submitted": 359,
+      "indexed": 0,
+      "errors": 0,
+      "warnings": 0,
+      "lastDownloaded": "2026-11-24T17:14:43.126Z"
+    },
+    "cohortBaseline": "2026-09-15T02:54:38.789Z",
+    "cohorts": {
+      "retained": {
+        "current": {
+          "clicks": 0,
+          "impressions": 1008,
+          "ctr": 0,
+          "position": 14.19047619047619,
+          "pages": 22
+        },
+        "previous": {
+          "clicks": 0,
+          "impressions": 888,
+          "ctr": 0,
+          "position": 16.63063063063063,
+          "pages": 20
+        }
+      },
+      "excluded": {
+        "current": {
+          "clicks": 0,
+          "impressions": 163,
+          "ctr": 0,
+          "position": 13.613496932515337,
+          "pages": 4
+        },
+        "previous": {
+          "clicks": 0,
+          "impressions": 147,
+          "ctr": 0,
+          "position": 12.523809523809526,
+          "pages": 2
+        }
+      },
+      "new": {
+        "current": {
+          "clicks": 8,
+          "impressions": 20548,
+          "ctr": 0.03893322951138797,
+          "position": 12.084436441502822,
+          "pages": 114
+        },
+        "previous": {
+          "clicks": 4,
+          "impressions": 10703,
+          "ctr": 0.037372699243202835,
+          "position": 20.107072783331777,
+          "pages": 119
+        }
+      },
+      "unknown": {
+        "current": {
+          "clicks": 0,
+          "impressions": 464,
+          "ctr": 0,
+          "position": 17.030172413793103,
+          "pages": 11
+        },
+        "previous": {
+          "clicks": 0,
+          "impressions": 370,
+          "ctr": 0,
+          "position": 18.237837837837837,
+          "pages": 12
+        }
+      }
+    },
+    "pageCoverage": {
+      "current": 151,
+      "previous": 153,
+      "rowLimit": 25000
+    },
+    "topPages": [
+      {
+        "url": "https://opencardai.com/en/cards/comenity-ulta-beauty-mastercard",
+        "policy": "indexable",
+        "clicks": 0,
+        "impressions": 8051,
+        "ctr": 0,
+        "position": 4.998012669233636
+      },
+      {
+        "url": "https://opencardai.com/en/cards/barclays-old-navy-navyist-rewards-mastercard",
+        "policy": "indexable",
+        "clicks": 2,
+        "impressions": 2233,
+        "ctr": 0.08956560680698611,
+        "position": 10.06806986117331
+      },
+      {
+        "url": "https://opencardai.com/en/guides/old-navy-vs-banana-republic-credit-card",
+        "policy": "indexable",
+        "clicks": 0,
+        "impressions": 689,
+        "ctr": 0,
+        "position": 12.981132075471699
+      },
+      {
+        "url": "https://opencardai.com/en/cards/capital-one-quicksilver",
+        "policy": "indexable",
+        "clicks": 0,
+        "impressions": 617,
+        "ctr": 0,
+        "position": 11.897893030794165
+      },
+      {
+        "url": "https://opencardai.com/en/cards/chase-ink-biz-unlimited",
+        "policy": "indexable",
+        "clicks": 0,
+        "impressions": 611,
+        "ctr": 0,
+        "position": 21.57937806873977
+      }
+    ],
+    "opportunities": [
+      {
+        "query": "capital 1 cash card",
+        "url": "https://opencardai.com/en/cards/capital-one-quicksilver",
+        "clicks": 0,
+        "impressions": 108,
+        "ctr": 0,
+        "position": 9.287037037037036
+      },
+      {
+        "query": "bank of america business travel rewards",
+        "url": "https://opencardai.com/en/guides/boa-business-advantage-travel-vs-unlimited-cash",
+        "clicks": 0,
+        "impressions": 52,
+        "ctr": 0,
+        "position": 6.1923076923076925
+      },
+      {
+        "query": "bank of america business travel rewards",
+        "url": "https://opencardai.com/en/cards/boa-biz-advantage-travel",
+        "clicks": 0,
+        "impressions": 50,
+        "ctr": 0,
+        "position": 4.26
+      },
+      {
+        "query": "bank of america business travel card",
+        "url": "https://opencardai.com/en/cards/boa-biz-advantage-travel",
+        "clicks": 0,
+        "impressions": 45,
+        "ctr": 0,
+        "position": 5.222222222222222
+      },
+      {
+        "query": "chase ink cash",
+        "url": "https://opencardai.com/en/cards/chase-ink-biz-cash",
+        "clicks": 0,
+        "impressions": 40,
+        "ctr": 0,
+        "position": 17.85
       }
     ]
   }
