@@ -27,7 +27,7 @@ on:
         type: choice
         options: [auto, morning, evening]
       reconcile_existing:
-        description: 'Resume an open PR for this slot. Regenerated payload must hash-match exactly (new fetched time makes this almost always fail closed); prefer protocol section 9'
+        description: 'Resume an open PR for this slot. Regenerated payload must hash-match exactly (new fetched time makes this almost always fail closed); fresh phase 1 safely supersedes eligible stale bot news PRs'
         required: false
         default: false
         type: boolean
@@ -40,7 +40,7 @@ jobs:
   publish:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 40
     environment: news-production
     env:
       NEWS_EPOCH: news-20261113-1
@@ -123,12 +123,19 @@ jobs:
           echo "code=$code" >> "$GITHUB_OUTPUT"
           echo "state=$state" >> "$GITHUB_OUTPUT"
           echo "- phase 1: exit $code, state \`${state:-none}\`" >> "$GITHUB_STEP_SUMMARY"
+          reason=$(jq -r '.reason // empty' "$RUNNER_TEMP/phase1.json" 2>/dev/null || true)
+          if [ -n "$reason" ]; then echo "- reason: $reason" >> "$GITHUB_STEP_SUMMARY"; fi
+          superseded=$(jq -r '(.superseded // []) | map(tostring) | join(", #")' "$RUNNER_TEMP/phase1.json" 2>/dev/null || true)
+          if [ -n "$superseded" ]; then echo "- Superseded stale PRs: #$superseded (closed; news regenerated from current main)." >> "$GITHUB_STEP_SUMMARY"; fi
+          case "$state" in
+            SUPERSEDED|SLOT_ALREADY_PUBLISHED|NO_CHANGE) exit 0 ;;
+          esac
           if [ "$code" -eq 75 ] && [ "$state" = CHECKS_PENDING ]; then
             echo "pr=$(jq -r .pr "$RUNNER_TEMP/phase1.json")" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           if [ "$code" -ne 0 ]; then
-            echo "**Reconciliation required**: phase 1 failed (exit $code). No retry was attempted; check open bot/news-sync PRs." >> "$GITHUB_STEP_SUMMARY"
+            echo "**Review required**: phase 1 stopped (exit $code); inspect the state and sanitized reason above. Eligible stale PRs can be superseded by the next scheduled run; ineligible PRs need human review." >> "$GITHUB_STEP_SUMMARY"
           fi
           exit "$code"
       - name: Wait for PR checks (bounded)
@@ -172,7 +179,15 @@ jobs:
           state=$(jq -r '.state // empty' "$RUNNER_TEMP/phase2.json" 2>/dev/null || true)
           deployment=$(jq -r '.deployment // empty' "$RUNNER_TEMP/phase2.json" 2>/dev/null || true)
           echo "- phase 2: exit $code, state \`${state:-none}\`, deployment \`${deployment:-none}\`, PR #$PR" >> "$GITHUB_STEP_SUMMARY"
+          reason=$(jq -r '.reason // empty' "$RUNNER_TEMP/phase2.json" 2>/dev/null || true)
+          deployment_reason=$(jq -r '.deploymentReason // empty' "$RUNNER_TEMP/phase2.json" 2>/dev/null || true)
+          if [ -n "$reason" ]; then echo "- reason: $reason" >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ -n "$deployment_reason" ]; then echo "- deployment reason: $deployment_reason" >> "$GITHUB_STEP_SUMMARY"; fi
           if [ "$code" -ne 0 ]; then
-            echo "**Reconciliation required**: PR #$PR still open or deployment UNCONFIRMED (exit $code). Follow the cutover protocol section 9; do not blindly re-run." >> "$GITHUB_STEP_SUMMARY"
+            if [ "$state" = MERGED ]; then
+              echo "**Deployment unverified**: PR #$PR is MERGED. This does NOT block the next scheduled run. No rollback was attempted." >> "$GITHUB_STEP_SUMMARY"
+            else
+              echo "**Review required**: PR #$PR was not confirmed merged (exit $code). Eligible stale bot news PRs will be superseded by a fresh scheduled run; ineligible PRs need human review." >> "$GITHUB_STEP_SUMMARY"
+            fi
             exit 1
           fi

@@ -25,7 +25,20 @@ export const EXIT_CHECKS_PENDING = 75;
 export function pendingChecksResult(error) {
   if (error?.code !== CHECKS_PENDING || !Number.isSafeInteger(error.pr) || error.pr <= 0
     || !/^bot\/news-sync\/[0-9a-f]{24}$/.test(error.branch ?? '') || !/^[0-9a-f]{40}$/.test(error.head ?? '')) return null;
-  return { state: CHECKS_PENDING, pr: error.pr, branch: error.branch, head: error.head };
+  const result = { state: CHECKS_PENDING, pr: error.pr, branch: error.branch, head: error.head };
+  if (Array.isArray(error.superseded) && error.superseded.every(n => Number.isSafeInteger(n) && n > 0)) result.superseded = error.superseded;
+  return result;
+}
+// Only these fixed codes may cross the CLI boundary; never echo upstream error text.
+export const PUBLISH_FAILURE_REASONS = Object.freeze([
+  'owner_denied', 'base_changed', 'another_news_pr_blocking', 'stale_pr_not_supersedable',
+  'pr_creation_unconfirmed', 'checks_failed', 'file_allowlist', 'commit_count', 'commit_author',
+  'head_changed', 'merge_failed', 'merge_unconfirmed', 'github_query_failed', 'orphan_branch',
+  'worktree_cleanup', 'unexpected', 'invalid_plan', 'repository_mismatch', 'payload_changed',
+  'existing_pr_reconcile', 'pr_not_ready',
+]);
+export function failedPublicationResult(error) {
+  return { state: 'FAILED', reason: PUBLISH_FAILURE_REASONS.includes(error?.reason) ? error.reason : 'unexpected' };
 }
 export function publicationExitCode(result) {
   return result.deployment === 'UNCONFIRMED' || result.state === 'EXISTING_PR_RECONCILE' ? 1 : 0;
@@ -46,7 +59,7 @@ async function main() {
   });
   console.log(JSON.stringify(result));
   if (publicationExitCode(result) !== 0) {
-    console.error('News publication/deployment requires reconciliation; no rollback was attempted.');
+    console.error(result.state === 'MERGED' ? 'News PR is MERGED; deployment unverified. This does NOT block the next scheduled run.' : 'News publication stopped for human review; no merge confirmed.');
     process.exitCode = 1;
   }
 }
@@ -59,6 +72,7 @@ if (process.argv[1] && fs.realpathSync(fileURLToPath(import.meta.url)) === fs.re
       process.exitCode = EXIT_CHECKS_PENDING;
       return;
     }
+    console.log(JSON.stringify(failedPublicationResult(error)));
     console.error('Portable news publish stopped; disabled, denied, stale, pending, or unconfirmed. Reconcile GitHub before any retry.'); process.exitCode = 1;
   });
 }

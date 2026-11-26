@@ -10,7 +10,7 @@ import { callOfferPrHelper } from './offer-transport.mjs';
 import { prepareNewsDryRun } from './news-dry-run-core.mjs';
 
 const head = 'a'.repeat(40), merged = 'b'.repeat(40);
-const pr = { headRefOid: head, files: [{ path: 'data/news.json' }], state: 'OPEN', baseRefName: 'main', isDraft: false };
+const pr = { headRefOid: head, files: [{ path: 'data/news.json' }], state: 'OPEN', baseRefName: 'main', isDraft: false, commits: [{ authors: [{ email: 'opencard@opencardai.com' }] }] };
 const checks = [{ name: 'validate', state: 'SUCCESS', bucket: 'pass' }];
 const gate = (p = pr, c = checks) => assertMergeable({ pr: p, checks: c, expectedHead: head, allowedFile: f => f === 'data/news.json' });
 const fixture = JSON.parse(fs.readFileSync(new URL('./fixtures/news.json', import.meta.url), 'utf8'));
@@ -52,6 +52,9 @@ test('no implicit write; successful merge is SHA-bound, confirmed, never auto-me
   const merge = fake.calls.find(c => c[2] === 'merge');
   assert.equal(merge.at(-1), head);
   assert.ok(merge.includes('--match-head-commit'));
+  assert.equal(merge[merge.indexOf('--author-email') + 1], 'opencard@opencardai.com');
+  assert.ok(merge.includes('--squash'));
+  assert.ok(merge.includes('--delete-branch'));
   assert.ok(!merge.includes('--auto'));
   const pending = fakeRunner({ receipt: false });
   await assert.rejects(mergeVerifiedNewsPr({ ...pending, prNumber: 123, expectedHead: head, write: true }), /unconfirmed/);
@@ -101,4 +104,25 @@ test('manual cloud workflow is read-only, contains no schedule, secrets, or publ
   assert.match(workflow, /persist-credentials: false/);
   for (const action of ['checkout', 'setup-node', 'upload-artifact']) assert.match(workflow, new RegExp(`actions/${action}@[0-9a-f]{40}`));
   assert.doesNotMatch(workflow, /schedule:|pull_request_target|secrets\.|contents: write|pull-requests: write|sync-news\.mjs|news-publish|--publish|production-enable|gh pr|git push|vercel/);
+});
+
+test('green checks cannot override commit count, commit author, or cross-repository merge guards', async () => {
+  for (const [change, reason] of [
+    [{ commits: [...pr.commits, ...pr.commits] }, 'commit_count'],
+    [{ commits: [] }, 'commit_count'], [{ commits: undefined }, 'commit_count'],
+    [{ commits: [{ authors: [{ email: 'other@example.test' }] }] }, 'commit_author'],
+    [{ commits: [{ authors: [] }] }, 'commit_author'],
+    [{ isCrossRepository: true }, 'pr_not_ready'],
+  ]) {
+    assert.throws(() => gate({ ...pr, ...change }), e => e.reason === reason && !e.code);
+    let views = 0, writes = 0;
+    await assert.rejects(mergeVerifiedNewsPr({ prNumber: 7, expectedHead: head, write: true,
+      run: async (_, args) => {
+        if (args[1] === 'merge') { writes++; return { code: 0, stdout: '' }; }
+        const value = args[1] === 'checks' ? checks : ++views === 1 ? pr : { ...pr, ...change };
+        return { code: 0, stdout: JSON.stringify(value) };
+      },
+    }), e => e.reason === reason);
+    assert.equal(writes, 0, 'fresh merge-time read also enforces commit/author guards');
+  }
 });

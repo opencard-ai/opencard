@@ -1,10 +1,9 @@
-# Portable news pipeline — implementation, still no production cutover
+# Portable news pipeline — shadow and guarded cloud publication
 
-This change is stacked on phase-1 PR #57. It connects the **actual**
-`scripts/sync-news.mjs` / `news-sync-core.mjs` pipeline to a portable runner;
-it is not another fixture-only alternative implementation. No Mac task, owner
-file, permission, secret, schedule or production environment has been changed.
-No live RSS/model/publishing run has been performed in this work.
+The portable runner shares the legacy RSS/translation pipeline. The production
+workflow is `.github/workflows/news-cloud-publish.yml`; its scheduled runs are
+serialized by concurrency group `news-publish`. Local acceptance uses injected
+GitHub/Vercel readers and writers, with no live publication.
 
 ## Executable paths now implemented
 
@@ -30,11 +29,10 @@ No live RSS/model/publishing run has been performed in this work.
   a possibly dirty working file, then calls **the same real `runNewsSync`**.
   Repo path, source SHA, clock, slot, attempt and scratch root are explicit;
   output is always a fresh private directory, never arbitrary production paths.
-- `news-publish-cli.mjs` is a separate, fixed repo entrypoint for eventual manual
-  publication. It invokes the implemented `publishPortableNews`, not an arbitrary
-  helper/command path. It is absent from all workflows and is disabled without
-  explicit manual publish + production-enable flags and owner epoch **and** fresh
-  remote production authority. It has not been executed in this work.
+- `news-publish-cli.mjs` is the fixed publication entrypoint used by the cloud
+  workflow. It requires publish + production-enable flags, matching owner epoch,
+  fresh remote authority, and unchanged main. Its stdout is machine JSON; errors
+  contain only an allowlisted reason code and stderr uses static messages.
 
 ## Safe local / clean-runner shadow acceptance
 
@@ -62,11 +60,12 @@ process environment, not an env file. Those are implemented paths, **not paths
 executed in this PR's acceptance tests**. Keep fixture/fixture for no-cost testing.
 All RSS/provider calls in tests are local/mocked; keys in tests are synthetic.
 
-The workflow remains `workflow_dispatch` only, fixed fixture/fixture, with
-`contents: read`, no persisted checkout credential, no secret reference, no
-publishing step and no schedule. It uses Node 24 and full commit-SHA pins resolved
-from the official actions checkout/setup-node/upload-artifact v4 refs. No workflow
-was dispatched by this implementation. Synthetic output artifacts expire in 7 days.
+The separate isolated dry-run workflow remains manual and read-only. The cloud
+publish workflow uses the existing UTC schedule and `news-production` environment;
+its token permissions remain `contents: read`. It invokes public RSS + MiniMax
+planning, publication, a bounded 15-minute checks wait, and same-plan reconciliation.
+The job timeout is 40 minutes to cover the checks and deployment windows. No
+workflow dispatch or production API call is needed for local acceptance.
 
 `slotKey = news:<America/Los_Angeles date>:<morning|evening>`;
 `sourceSha` is separate metadata, so a main change cannot create a second slot.
@@ -75,7 +74,7 @@ one another. Timestamp, source SHA and fixture/provider inputs must match for a
 meaningful comparison. This is now actual shared-path validation, but it still
 is **not** live Mac-output parity or an approved cutover test.
 
-## Portable publication code and gates (mock-tested, NOT enabled)
+## Portable publication code and gates
 
 The writer requires all of:
 
@@ -88,45 +87,68 @@ The writer requires all of:
 3. Current remote main SHA must still equal the plan source SHA. A stale plan
    fails closed and requires regeneration, not a silent rebase of old news.
 
-A Vercel read-only credential is also required by the manual CLI before any writes;
-no value is provided, read, created or provisioned in this work. Once authorized, the real code checks deterministic slot branch/PR dedup (stable across source SHA changes) and no
-other open news PR, refuses an orphan remote branch, makes a clean temporary
-worktree, writes **only** `data/news.json`, checks one commit and author, pushes a
-new `bot/news-sync/<slot hash>` branch and creates a PR. No home paths,
-node_modules symlinks or Mac script are needed. Gate reads repeat before push,
-PR creation and merge. No force push, direct-main push or auto-merge is used.
+The CLI requires a Vercel read credential. Slot identity is a deterministic
+`bot/news-sync/<24 hex hash>` branch, stable across main SHA changes. A merged
+same-slot PR returns `SLOT_ALREADY_PUBLISHED` successfully, including when closed
+superseded attempts exist in that slot's history. A closed unmerged attempt with
+no remote branch is ignored; orphan remote branches are never overwritten.
 
-The actual required check list is explicitly `validate` + `gitleaks`, and *all*
-reported checks must be explicit SUCCESS/pass. Checks are re-read after the
-fresh PR/head read, rather than reusing old success. Empty/unknown/pending/failed/
-cancelled states or API errors stop. The merge command is SHA-bound and requires
-a confirmed MERGED receipt. GitHub branch protections still enforce check/base
-rules at the final merge boundary; these reads alone cannot eliminate all races.
+A fresh phase-1 create run preflights **all** open `bot/news-sync/*` PRs. At most
+three may be superseded, and each must have the exact hashed branch format,
+base main, OPEN state, non-draft and same-repository identity, bot login
+`opencard-ai`, exactly `data/news.json`, and exactly one commit with bot author
+email `opencard@opencardai.com`. Any ineligible PR or excess count stops before
+any close. Eligible PRs are closed with a slot explanation and branch deletion,
+never merged; fresh news is regenerated from current main. Authority/base are
+rechecked before each close and CLOSED is verified afterward. The workflow's
+serialized runs ensure these are earlier finished/failed jobs, not active jobs.
+The `superseded` number array is included in successful/pending publication JSON
+and the workflow summary.
 
-There is deliberately **no long-lived poller**: if new PR checks are pending,
-the command stops and leaves the PR open. A later explicit manual invocation
-with the same plan and `--reconcile-existing true` can resume that exact open PR
-without pushing/creating again, only after verifying its head news blob equals
-the plan's proposed hash and rechecking authority/checks. Without that parameter,
-an existing slot returns reconciliation-required, not success. Orphan branches,
-closed PRs, uncertain merges, changed main and changed payloads require operator
-reconciliation; they are never blindly replayed. This is not yet an unattended
-scheduler/queue. CI-trigger behavior of the eventual publishing identity still
-needs authorization and acceptance before replacing the Mac wrapper.
+The writer refuses orphan branches, creates a clean temporary worktree, writes
+only `data/news.json`, checks one commit and author, and pushes a new slot branch.
+Authority/base reads repeat before push, PR creation, and merge. PR creation uses
+the validated GitHub PR URL from stdout, with up to five head-list reads separated
+by two seconds if the URL is unavailable. Known initial PR-view not-found errors
+receive the same bounded retry; known initial checks-not-found responses mean
+pending. Other GitHub failures stop with a sanitized reason.
 
-After a confirmed merge, bounded read-only polling checks the **actual merge SHA**'s
-GitHub Vercel status plus official GET `/v7/deployments` (project, production target,
-exact meta.githubCommitSha, READY), then the public
-`/en/api/daily-digest?lang=en` JSON against the proposal. Preview/other SHA/building
-records cannot count as success. Default polling is bounded to two minutes with
-request deadlines and an attempt cap. Pending status, API failure, timeout, newer
-live content or mismatch return UNCONFIRMED, and the CLI returns **nonzero** with
-an explicit reconciliation/no-rollback message. No deployment or automatic
-rollback is issued; existing GitHub→Vercel integration may deploy a real merge.
-Temporary generated worktrees are removed in finally (including failed runs);
-cleanup failure is itself nonzero and requires reconciliation before retry.
+Merge gates require exactly one commit with the bot author email, same repository
+when reported, exact expected head, main base, non-draft OPEN state, and only the
+news file. Required checks are `validate` + `gitleaks`, and **all** reported checks
+must be SUCCESS/pass. Both PR metadata and checks are freshly read again before
+merge. The command uses `--squash --delete-branch --match-head-commit <sha>
+--author-email opencard@opencardai.com`, followed by a confirmed MERGED receipt.
+No force push, direct-main push, or `--auto` is used.
+
+Pending checks produce exit 75 with the PR identity. The workflow waits up to
+15 minutes and invokes phase 2 with the exact same artifacts and
+`--reconcile-existing true`. Reconciliation checks the open PR's news blob hash
+against the proposal, and never supersedes a PR. Failed/unknown checks and any
+changed guard stop for review. Fresh scheduled phase 1 can supersede eligible
+leftover PRs. `NO_CHANGE`, `SLOT_ALREADY_PUBLISHED`, and any `SUPERSEDED` terminal
+result are success paths without a checks wait or phase 2; normal superseding
+continues on to create fresh news in the same invocation.
+
+After merge, read-only observation allows **eight minutes**, polling every ten
+seconds with request deadlines and an attempt cap. Verification requires all of:
+Vercel commit status success for the exact merge SHA; official GET `/v7/deployments`
+showing name/project `opencard`, team slug `opencard-ais-projects`, production target,
+exact `meta.githubCommitSha`, and READY; and deep equality of the public
+`/en/api/daily-digest?lang=en` JSON with the localized proposal. Preview, wrong SHA,
+building, and mismatching live payloads never verify. Transient GitHub/Vercel/live
+read failures are retried until the deadline. Vercel status failure/error ends
+observation immediately with `deployment_failed`.
+
+`observeNewsDeployment` preserves its `VERIFIED`/`UNCONFIRMED` string API;
+`observeNewsDeploymentDetailed` also returns a sanitized reason and attempt count.
+Publication JSON exposes `deploymentReason`, while thrown failures become
+`{state:"FAILED",reason:"<allowlisted code>"}` without raw stderr or credentials.
+A full-window timeout remains nonzero with reason `timeout`: the PR is already
+**MERGED**, deployment is unverified, and this does **not** block the next scheduled
+run. No rollback is attempted. Worktree cleanup runs even on failed publication;
+cleanup failures also stop with a reason code.
 Official API: https://vercel.com/docs/rest-api/deployments/list-deployments .
-No real merge or authenticated Vercel request was performed.
 
 Remote owner rechecks are not a distributed lock. An in-flight old Mac job can
 still write after a flag changes; use the drain/fencing/cutover protocol from
@@ -146,7 +168,7 @@ model call is made by tests.
 Still pending: real workflow dispatch acceptance (not approved here), eventual
 live provider/Vercel read credential provisioning (variable names MINIMAX_API_KEY and VERCEL_TOKEN;
 no values read/added), publishing identity and CI/protection behavior, owner/fencing
-protocol on both sides, autonomous bounded reconcile scheduling, shadow-vs-Mac
+protocol on both sides, shadow-vs-Mac
 live parity and approved cutover. News has no new private operational schema.
 
 Next smallest offer step: replace its local patch/home-bound helper with a repo
