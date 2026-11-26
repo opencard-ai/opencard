@@ -178,15 +178,22 @@ test('cloud workflow: explicit UTC schedule, read-only token permissions, pinned
   for (const job of ['offer', 'audit']) assert.deepEqual(owner[job], { owner: 'github-actions', productionEnabled: true, epoch: `${job}-20261115-1` });
   assert.deepEqual(Object.keys(owner).sort(), ['audit', 'gsc', 'news', 'offer', 'version']);
   assert.deepEqual(owner.gsc, { owner: 'github-actions', productionEnabled: true, epoch: 'gsc-20261121-1' });
-  // GitHub ignored `timezone:` (run 43540487976 fired 01:25Z); cron is explicit UTC = 01:08/13:08 PST.
-  assert.equal([...workflow.matchAll(/- cron: '([^']+)'/g)].map(m => m[1]).join(), '8 9,21 * * *');
+  // GitHub ignored `timezone:` (run 43540487976 fired 01:25Z); primary and backup use explicit UTC.
+  assert.deepEqual([...workflow.matchAll(/^\s+- cron: '([^']+)'\s*$/gm)].map(m => m[1]), ['8 9,21 * * *', '8 11,23 * * *']);
+  assert.equal([...workflow.matchAll(/^\s*-?\s*cron:/gm)].length, 2);
   assert.doesNotMatch(workflow, /^\s+timezone:/m);
   assert.match(workflow, /2027-03-14/);
   assert.match(workflow, /hour=\$\(TZ=America\/Los_Angeles date \+%H\)/);
   const ptHour = iso => Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', hour: '2-digit', hourCycle: 'h23' }).format(new Date(iso)));
   const slotOf = iso => ptHour(iso) < 12 ? 'morning' : 'evening';
-  // PST now and PDT after 2027-03-14 (unchanged cron): slots stay correct, including +3h scheduler delay.
-  for (const [iso, hour, slot] of [['2026-11-14T09:08:00Z', 1, 'morning'], ['2026-11-14T21:08:00Z', 13, 'evening'], ['2027-07-01T09:08:00Z', 2, 'morning'], ['2027-07-01T21:08:00Z', 14, 'evening'], ['2026-11-14T12:08:00Z', 4, 'morning'], ['2026-11-15T00:08:00Z', 16, 'evening']]) {
+  // PST now and PDT after 2027-03-14 (unchanged crons): primary, backup and +3h delay keep the same slots.
+  for (const [iso, hour, slot] of [
+    ['2026-11-14T09:08:00Z', 1, 'morning'], ['2026-11-14T21:08:00Z', 13, 'evening'],
+    ['2026-11-14T11:08:00Z', 3, 'morning'], ['2026-11-14T23:08:00Z', 15, 'evening'],
+    ['2027-07-01T09:08:00Z', 2, 'morning'], ['2027-07-01T21:08:00Z', 14, 'evening'],
+    ['2027-07-01T11:08:00Z', 4, 'morning'], ['2027-07-01T23:08:00Z', 16, 'evening'],
+    ['2026-11-14T12:08:00Z', 4, 'morning'], ['2026-11-15T00:08:00Z', 16, 'evening'],
+  ]) {
     assert.equal(ptHour(iso), hour, iso); assert.equal(slotOf(iso), slot, iso);
   }
   assert.match(workflow, /workflow_dispatch:/);

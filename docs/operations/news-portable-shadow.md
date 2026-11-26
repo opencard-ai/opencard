@@ -61,8 +61,18 @@ executed in this PR's acceptance tests**. Keep fixture/fixture for no-cost testi
 All RSS/provider calls in tests are local/mocked; keys in tests are synthetic.
 
 The separate isolated dry-run workflow remains manual and read-only. The cloud
-publish workflow uses the existing UTC schedule and `news-production` environment;
-its token permissions remain `contents: read`. It invokes public RSS + MiniMax
+publish workflow uses primary 09:08 / 21:08 UTC and backup 11:08 / 23:08 UTC
+schedules with the `news-production` environment. In PST these are primary
+01:08 / 13:08 and backup 03:08 / 15:08; from 2027-03-14, unchanged crons mean
+primary 02:08 / 14:08 and backup 04:08 / 16:08 PDT. If the primary is retimed to
+`8 8,20 * * *`, move the backup to `8 10,22 * * *` too; restore both to
+`8 9,21 * * *` / `8 11,23 * * *` on 2027-11-07. The backup is a safety net for a
+dropped/late primary, not a second news slot: America/Los_Angeles hour < 12 still
+selects morning, otherwise evening. A backup for an already-published
+`news:<PT-date>:(morning|evening)` slot returns `SLOT_ALREADY_PUBLISHED` as a no-op
+success, with no new PR or second merge. The `news-publish` concurrency group
+with `cancel-in-progress: false` makes a backup wait for an in-flight primary.
+The workflow's token permissions remain `contents: read`. It invokes public RSS + MiniMax
 planning, publication, a bounded 15-minute checks wait, and same-plan reconciliation.
 The job timeout is 40 minutes to cover the checks and deployment windows. No
 workflow dispatch or production API call is needed for local acceptance.
