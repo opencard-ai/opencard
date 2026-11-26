@@ -1,6 +1,9 @@
 {
-  "updated": "2026-11-25T03:17:23.432Z",
+  "updated": "2026-11-26T02:33:39.653Z",
   "fetch_failures": {
+    "amex-gold": [
+      "issuer_error_or_block_page"
+    ],
     "amex-platinum": [
       "issuer_error_or_block_page"
     ],
