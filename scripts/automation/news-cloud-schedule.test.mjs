@@ -17,6 +17,16 @@ const ok = (name, state = 'SUCCESS', bucket = 'pass') => ({ name, state, bucket 
 const gate = checks => assertMergeable({ pr, checks, expectedHead: head, allowedFile: f => f === 'data/news.json', requiredChecks: ['validate', 'gitleaks'] });
 const codeOf = fn => { try { fn(); return 'PASSED'; } catch (error) { return error.code ?? 'HARD'; } };
 
+test('broad open-PR preflight stays below the GraphQL node cap; slot dedup query stays lightweight', () => {
+  const source = fs.readFileSync(new URL('./news-publish.mjs', import.meta.url), 'utf8');
+  const openList = source.match(/const open = await query\(\[([^\n]+)\]\)/)?.[1];
+  assert.ok(openList);
+  assert.match(openList, /'--state', 'open', '--limit', '1000'/);
+  assert.match(openList, /'--json', 'number,headRefName,baseRefName,isDraft,isCrossRepository,author,headRefOid,state'/);
+  assert.doesNotMatch(openList, /files|commits|authors/);
+  assert.match(source, /'--head', branch, '--state', 'all', '--limit', '1000', '--json', 'number,state,headRefOid,mergeCommit'/);
+});
+
 test('pending vs hard failure classification stays fail-closed', () => {
   assert.equal(codeOf(() => gate([ok('validate'), ok('gitleaks')])), 'PASSED');
   // Pending (resumable): empty list, any pending bucket, required check not yet registered.
