@@ -13,11 +13,17 @@ on:
   schedule:
     # Explicit UTC. The documented `timezone: 'America/Los_Angeles'` key was ignored for this repo:
     # '8 1,13 * * *' first fired 2026-11-14T01:25Z (17:25 PST), i.e. as UTC (run 43540487976).
-    # 09:08 / 21:08 UTC = 01:08 / 13:08 PST (UTC-8, valid until 2027-03-14).
-    # DST: from 2027-03-14 this fires at 02:08 / 14:08 PDT unless changed to '8 8,20 * * *'
-    # (and back to '8 9,21 * * *' on 2027-11-07). Slot auto-detection (PT hour < 12 = morning)
-    # is correct for both: 01/02 -> morning, 13/14 -> evening.
+    # Primary 09:08 / 21:08 UTC; backup 11:08 / 23:08 UTC (two hours later).
+    # PST (now through 2027-03-14): primary 01:08 / 13:08, backup 03:08 / 15:08.
+    # PDT (from 2027-03-14, unchanged crons): primary 02:08 / 14:08, backup 04:08 / 16:08.
+    # If retimed for DST, move primary to '8 8,20 * * *' AND backup to '8 10,22 * * *';
+    # on 2027-11-07 restore primary '8 9,21 * * *' AND backup '8 11,23 * * *'.
+    # Backup is a safety net for a dropped/late primary, not a second news slot.
+    # Slot auto-detection uses America/Los_Angeles hour < 12 = morning for both schedules:
+    # 01/02/03/04 -> morning, 13/14/15/16 -> evening. An already-published
+    # news:<PT-date>:(morning|evening) slot is a no-op success on the second run.
     - cron: '8 9,21 * * *'
+    - cron: '8 11,23 * * *'
   workflow_dispatch:
     inputs:
       slot:
