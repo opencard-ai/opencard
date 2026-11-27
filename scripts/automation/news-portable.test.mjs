@@ -98,10 +98,11 @@ function liveMock(result, options = {}) {
     }
     if (args[1] === 'list') {
       if (args.includes('all')) return ok(options.existingPrs ?? (options.existing ? [{ number: 7, state: 'OPEN', headRefOid: head }] : []));
-      if (!args.includes('--head')) return ok(options.open ?? []);
+      if (!args.includes('--head')) return ok((options.open ?? []).map(p => Object.fromEntries(args.at(-1).split(',').map(field => [field, p[field]]))));
       return ok(++creationLists >= (options.creationLag ?? 1) ? [{ number: 7 }] : []);
     }
     if (args[1] === 'create') return ok(options.createdUrl ?? '');
+    if (args[1] === 'view' && args.at(-1) === 'number,headRefName,baseRefName,isDraft,isCrossRepository,author,files,commits,headRefOid,state') return ok((options.preflightPrs ?? options.open ?? []).find(p => String(p.number) === args[2]));
     if (args[1] === 'view' && args.at(-1) === 'headRefOid,files,state,commits') { const p = (options.open ?? []).find(x => String(x.number) === args[2]); return ok(options.changedBeforeClose ? { ...p, commits: [...p.commits, p.commits[0]] } : p); }
     if (args[1] === 'view' && args.at(-1) === 'state') return ok({ state: options.closeUnconfirmed ? 'OPEN' : 'CLOSED' });
     if (args[1] === 'checks') return ok(['validate', 'gitleaks'].map(name => ({ name, bucket: options.pending ? 'pending' : 'pass', state: options.pending ? 'PENDING' : 'SUCCESS' })));
@@ -232,6 +233,9 @@ test('eligible stale PRs are closed, branch deleted, and regenerated news procee
     const receipt = await publishMock(result, m);
     assert.deepEqual(receipt.superseded, [21]);
     assert.equal(receipt.state, 'MERGED');
+    const list = m.calls.find(c => c[2] === 'list' && !c.includes('--head'));
+    assert.equal(list[list.indexOf('--limit') + 1], '1000');
+    assert.deepEqual(list.at(-1).split(','), ['number', 'headRefName', 'baseRefName', 'isDraft', 'isCrossRepository', 'author', 'headRefOid', 'state']);
     const closeAt = m.calls.findIndex(c => c[2] === 'close');
     const close = m.calls[closeAt];
     assert.ok(close.includes('--delete-branch'));
@@ -240,10 +244,29 @@ test('eligible stale PRs are closed, branch deleted, and regenerated news procee
     assert.match(close.at(-1), /current main; no content lost/);
     assert.ok(m.calls[closeAt - 2][2].includes('ops/runner-owner.json'));
     assert.ok(m.calls[closeAt - 1][2].includes('git/ref/heads/main'));
+    assert.equal(m.calls[closeAt - 3].at(-1), 'headRefOid,files,state,commits');
+    assert.ok(m.calls.findIndex(c => c[2] === 'view' && c.at(-1).startsWith('number,headRefName,')) < closeAt - 3);
     assert.equal(m.calls[closeAt + 1].at(-1), 'state');
     assert.ok(m.calls.findIndex(c => c[2] === 'create') > closeAt);
     assert.equal(m.calls.some(c => c[2] === 'merge' && c[3] === '21'), false);
   }
+});
+
+test('preflight uses per-PR files, commits and author email and reads only news candidates', async () => {
+  const result = await prepare();
+  for (const change of [
+    { files: [{ path: 'README.md' }] }, { files: undefined },
+    { commits: [botCommit, botCommit] }, { commits: undefined },
+    { commits: [{ authors: [{ email: 'other@example.test' }] }] },
+  ]) {
+    const m = liveMock(result, { open: [eligibleStale], preflightPrs: [{ ...eligibleStale, ...change }] });
+    await assert.rejects(publishMock(result, m), e => e.reason === 'stale_pr_not_supersedable');
+    assert.equal(m.calls.some(c => ['close', 'create', 'merge'].includes(c[2]) || c.includes('push')), false);
+    assert.equal(m.calls.filter(c => c[2] === 'view').length, 1);
+  }
+  const m = liveMock(result, { open: [eligibleStale, { number: 99, headRefName: 'feature/unrelated' }] });
+  assert.equal((await publishMock(result, m)).state, 'MERGED');
+  assert.equal(m.calls.some(c => c[2] === 'view' && c[3] === '99'), false);
 });
 
 test('preflight rejects any ineligible stale PR or four PRs before closing or writing anything', async () => {

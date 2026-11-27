@@ -66,9 +66,10 @@ export async function publishPortableNews({ plan, proposed, repoPath, publish = 
   }
   if (existing.some(p => !['OPEN', 'CLOSED'].includes(p.state)) || existing.filter(p => p.state === 'OPEN').length > 1) return { state: 'EXISTING_PR_RECONCILE', reason: 'existing_pr_reconcile', branch };
   if (existing.length && existing.every(p => p.state === 'CLOSED') && (await command('git', ['-C', repoPath, 'ls-remote', '--heads', 'origin', branch])).trim()) return { state: 'EXISTING_PR_RECONCILE', reason: 'existing_pr_reconcile', branch };
-  const open = await query(['pr', 'list', '--repo', REPO, '--state', 'open', '--limit', '1000', '--json', 'number,headRefName,baseRefName,isDraft,isCrossRepository,author,files,commits,headRefOid,state']);
+  // Keep the broad list lightweight: commits/authors at this limit exceed GitHub's node cap.
+  const open = await query(['pr', 'list', '--repo', REPO, '--state', 'open', '--limit', '1000', '--json', 'number,headRefName,baseRefName,isDraft,isCrossRepository,author,headRefOid,state']);
   if (!Array.isArray(open) || open.length >= 1000) throw publishError('github_query_failed', 'open PR query incomplete');
-  const stale = open.filter(p => p.headRefName?.startsWith('bot/news-sync/'));
+  const candidates = open.filter(p => p.headRefName?.startsWith('bot/news-sync/'));
   // Preflight the entire set before any close: unexpected work always needs a human.
   const eligible = p => /^bot\/news-sync\/[0-9a-f]{24}$/.test(p.headRefName ?? '')
     && Number.isSafeInteger(p.number) && p.number > 0 && p.state === 'OPEN' && p.baseRefName === 'main'
@@ -76,7 +77,14 @@ export async function publishPortableNews({ plan, proposed, repoPath, publish = 
     && Array.isArray(p.files) && p.files.length === 1 && p.files[0].path === 'data/news.json'
     && Array.isArray(p.commits) && p.commits.length === 1
     && p.commits[0].authors?.some(a => a.email === 'opencard@opencardai.com');
-  if (stale.length > 3 || stale.some(p => !eligible(p))) throw publishError('stale_pr_not_supersedable', 'stale news PRs require human review');
+  if (candidates.length > 3) throw publishError('stale_pr_not_supersedable', 'stale news PRs require human review');
+  const stale = [];
+  for (const candidate of candidates) {
+    if (!Number.isSafeInteger(candidate.number) || candidate.number <= 0) throw publishError('stale_pr_not_supersedable', 'stale news PRs require human review');
+    const pr = await query(['pr', 'view', String(candidate.number), '--repo', REPO, '--json', 'number,headRefName,baseRefName,isDraft,isCrossRepository,author,files,commits,headRefOid,state']);
+    if (pr.number !== candidate.number || !eligible(pr)) throw publishError('stale_pr_not_supersedable', 'stale news PRs require human review');
+    stale.push(pr);
+  }
   if (existing.some(p => p.state === 'OPEN' && !stale.some(s => s.number === p.number))) throw publishError('another_news_pr_blocking', 'same-slot PR missing from open news query');
   if (reconcileExisting && stale.length) throw publishError('another_news_pr_blocking', 'another news PR is open; reconciliation cannot supersede');
   for (const pr of stale) {
