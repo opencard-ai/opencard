@@ -386,27 +386,27 @@
     },
     {
       "path": "offer-watch/daily-state.json",
-      "sha256": "bef876d5a9b7b5a81e87c8987c30db1d8733e2d3bf07bdccc797a365c8e8fd73",
-      "size": 272
+      "sha256": "2abe695f9693cdc5f24790f75b9311ee8331e784475cf4a330c4ad76116229e8",
+      "size": 146
     },
     {
       "path": "offer-watch/history.jsonl",
-      "sha256": "9b09b0acb528c84f51d3358884f2c3d418cce858b71b25e69e7c8af6a66c35c8",
-      "size": 40996
+      "sha256": "e92e294db90b3f1f09a7b7a3b1597e019a0dc0d7dc52ca686962def03d14e4a4",
+      "size": 42020
     },
     {
       "path": "offer-watch/ledger.json",
-      "sha256": "897d49a4711282a79707072d28578e6ec0f03c877920e6cbd1bc40513bd5b015",
+      "sha256": "27d01f9d42c759bf30411c8a3c08ad0fbf218817779dfa2edc60e017abaaa21b",
       "size": 32270
     }
   ],
   "runs": {
     "offer": {
-      "last_run_id": "45742355747",
+      "last_run_id": "45928066852",
       "last_run_attempt": "1",
-      "pt_date": "2026-11-25",
+      "pt_date": "2026-11-26",
       "writer_epoch": "offer-20261115-1",
-      "base_sha": "7a97db8fd3316d1131f1cc719e58b8ed34701cce"
+      "base_sha": "c7049afba8e30b926cd9e4580ada404305d434d3"
     },
     "gsc": {
       "last_run_id": "45920605684",

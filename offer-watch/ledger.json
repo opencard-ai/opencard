@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-26T02:33:39.405Z",
+  "updated_at": "2026-11-27T02:31:21.239Z",
   "entries": {
     "327642fe7d1ae8e053c08ef0623beece1084c4037c82b142ea1920d3961a80a8": {
       "card_id": "amex-morgan-stanley-platinum",
@@ -249,7 +249,7 @@
       "audience": "public",
       "status": "unchanged",
       "first_seen": "2026-10-20T18:36:50.467Z",
-      "last_seen": "2026-11-26T02:33:38.736Z",
+      "last_seen": "2026-11-27T02:31:20.790Z",
       "last_notified": "2026-10-20T18:36:50.467Z"
     },
     "405c794fd7c330e4241d5b542586f1bbb45aee0b2aba60b2df018312bd627824": {
@@ -259,7 +259,7 @@
       "audience": "public",
       "status": "unchanged",
       "first_seen": "2026-10-20T18:36:50.467Z",
-      "last_seen": "2026-11-26T02:33:38.736Z",
+      "last_seen": "2026-11-27T02:31:20.790Z",
       "last_notified": "2026-10-20T18:36:50.467Z"
     },
     "9d84f0c3427681972d4626e51783732cd14db8341b40bc8e2d9f876698d4bdb7": {
@@ -269,7 +269,7 @@
       "audience": "public",
       "status": "unchanged",
       "first_seen": "2026-10-20T18:36:50.467Z",
-      "last_seen": "2026-11-26T02:33:38.736Z",
+      "last_seen": "2026-11-27T02:31:20.790Z",
       "last_notified": "2026-10-20T18:36:50.467Z"
     },
     "d37def1bc70c291551dfeba6033aa6f8a087f0e61eee87d1455a10491ee7a5d9": {
@@ -279,7 +279,7 @@
       "audience": "public",
       "status": "unchanged",
       "first_seen": "2026-10-20T18:36:50.467Z",
-      "last_seen": "2026-11-26T02:33:38.736Z",
+      "last_seen": "2026-11-27T02:31:20.790Z",
       "last_notified": "2026-10-20T18:36:50.467Z"
     },
     "7d6535f7a64ee0977db9c1b4478f3a94b7b1124f31ac7a70e1739476b7460847": {
@@ -289,7 +289,7 @@
       "audience": "public",
       "status": "unchanged",
       "first_seen": "2026-10-20T18:36:50.467Z",
-      "last_seen": "2026-11-26T02:33:38.736Z",
+      "last_seen": "2026-11-27T02:31:20.790Z",
       "last_notified": "2026-10-20T18:36:50.467Z"
     },
     "54b5293902b5e3db0994366285055d51e0fe94e85ba35149d3110db538580e4d": {
@@ -299,7 +299,7 @@
       "audience": "public",
       "status": "unchanged",
       "first_seen": "2026-10-20T18:36:50.467Z",
-      "last_seen": "2026-11-26T02:33:38.736Z",
+      "last_seen": "2026-11-27T02:31:20.790Z",
       "last_notified": "2026-10-20T18:36:50.467Z"
     },
     "db4599fe9e3e0652670c5329e82e88e4bd58b59c5fec4692c69fef5cca87a6b6": {
@@ -407,7 +407,7 @@
       "audience": "public",
       "status": "needs_verification",
       "first_seen": "2026-10-24T18:36:13.886Z",
-      "last_seen": "2026-11-26T02:33:38.736Z",
+      "last_seen": "2026-11-27T02:31:20.790Z",
       "last_notified": "2026-10-24T18:36:13.886Z"
     },
     "f6b5e924bea7f84e6f8381a026d118fb5cecbee261a62f11e3e3640170abe95e": {
@@ -417,7 +417,7 @@
       "audience": "public",
       "status": "needs_verification",
       "first_seen": "2026-10-24T18:36:14.107Z",
-      "last_seen": "2026-11-26T02:33:39.405Z",
+      "last_seen": "2026-11-27T02:31:21.239Z",
       "last_notified": null,
       "reasons": [
         "not_marked_official"
@@ -511,7 +511,7 @@
       "audience": "public",
       "status": "unchanged",
       "first_seen": "2026-11-02T19:36:52.200Z",
-      "last_seen": "2026-11-26T02:33:38.736Z",
+      "last_seen": "2026-11-27T02:31:20.790Z",
       "last_notified": "2026-11-02T19:36:52.200Z"
     },
     "6858d7058ae6da1cc0bc92bb42501e0e2edb7907f780decb6b6a91664ffb7b07": {
@@ -521,7 +521,7 @@
       "audience": "public",
       "status": "unchanged",
       "first_seen": "2026-11-02T19:36:52.200Z",
-      "last_seen": "2026-11-26T02:33:38.736Z",
+      "last_seen": "2026-11-27T02:31:20.790Z",
       "last_notified": "2026-11-02T19:36:52.200Z"
     },
     "462eee32636883b9f88be0cbbeca14f0e8d520f0b54323481c40746392c5daaf": {
@@ -551,7 +551,7 @@
       "audience": "public",
       "status": "unchanged",
       "first_seen": "2026-11-04T00:52:44.520Z",
-      "last_seen": "2026-11-26T02:33:38.736Z",
+      "last_seen": "2026-11-27T02:31:20.790Z",
       "last_notified": "2026-11-04T00:52:44.520Z"
     },
     "a7f3088113eedd2aba110f74e744fc09f1688619a571b09a4c7e555921f05702": {
@@ -812,7 +812,7 @@
       "audience": "public",
       "status": "needs_verification",
       "first_seen": "2026-11-11T19:39:29.688Z",
-      "last_seen": "2026-11-26T02:33:39.405Z",
+      "last_seen": "2026-11-27T02:31:21.239Z",
       "last_notified": null,
       "reasons": [
         "welcome_offer_detect_only_manual_review",
@@ -829,7 +829,7 @@
       "audience": "public",
       "status": "needs_verification",
       "first_seen": "2026-11-12T19:39:30.903Z",
-      "last_seen": "2026-11-26T02:33:39.405Z",
+      "last_seen": "2026-11-27T02:31:21.239Z",
       "last_notified": "2026-11-12T19:39:30.903Z",
       "reasons": [
         "source_conflicts"
@@ -845,7 +845,7 @@
       "audience": "public",
       "status": "needs_verification",
       "first_seen": "2026-11-16T19:36:57.214Z",
-      "last_seen": "2026-11-26T02:33:39.405Z",
+      "last_seen": "2026-11-27T02:31:21.239Z",
       "last_notified": null,
       "reasons": [
         "welcome_offer_detect_only_manual_review",
@@ -862,7 +862,7 @@
       "audience": "public",
       "status": "needs_verification",
       "first_seen": "2026-11-16T19:36:57.214Z",
-      "last_seen": "2026-11-26T02:33:39.405Z",
+      "last_seen": "2026-11-27T02:31:21.239Z",
       "last_notified": null,
       "reasons": [
         "welcome_offer_detect_only_manual_review",
@@ -879,7 +879,7 @@
       "audience": "public",
       "status": "needs_verification",
       "first_seen": "2026-11-16T19:36:57.214Z",
-      "last_seen": "2026-11-26T02:33:39.405Z",
+      "last_seen": "2026-11-27T02:31:21.239Z",
       "last_notified": null,
       "reasons": [
         "welcome_offer_detect_only_manual_review",
