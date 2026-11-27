@@ -15,7 +15,7 @@ interface CompareTableProps {
 }
 
 function formatCurrency(amount: number): string {
-  return amount === 0 ? "—" : `$${amount.toLocaleString()}`;
+  return !Number.isFinite(amount) || amount === 0 ? "—" : `$${amount.toLocaleString("en-US")}`;
 }
 
 function RateBar({ rate, maxRate }: { rate: number; maxRate: number }) {
@@ -130,11 +130,11 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
       <table className="mobile-compare-table w-full border-collapse text-sm" style={{ "--compare-count": cards.length } as React.CSSProperties}>
         <thead>
           <tr className="border-b-2 border-slate-200">
-            <th className="text-left py-3 pr-4 font-semibold text-slate-600 w-44 sticky left-0 bg-slate-50 z-10 min-w-[140px]">
+            <th scope="col" className="text-left py-3 pr-4 font-semibold text-slate-600 w-44 sticky left-0 bg-slate-50 z-10 min-w-[140px]">
               {l.earningRates}
             </th>
             {cards.map((card) => (
-              <th key={card.card_id} className="text-left py-3 px-4 min-w-[180px]">
+              <th scope="col" key={card.card_id} className="text-left py-3 px-4 min-w-[180px]">
                 <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
                   <div className="text-base font-bold text-slate-900 leading-tight">{card.name}</div>
                   <div className="text-xs text-slate-500 mt-1">{card.issuer}</div>
@@ -160,16 +160,16 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
 
           {/* First-year net value (welcome + credits - AF) */}
           <tr className="bg-blue-50/40">
-            <td className="py-3 pr-4 sticky left-0 bg-blue-50/40 z-10">
+            <th scope="row" className="text-left font-normal py-3 pr-4 sticky left-0 bg-blue-50/40 z-10">
               <div className="font-medium text-slate-700">{l.firstYearValue}</div>
               <div className="text-[10px] text-slate-600 mt-0.5 leading-tight">{l.firstYearHint}</div>
-            </td>
+            </th>
             {cards.map((card) => {
-              const fyv = firstYearValue(card);
+              const fyv = Number.isFinite(card.annual_fee) ? firstYearValue(card) : NaN;
               return (
                 <td key={card.card_id} className="py-3 px-4">
                   <span className={`text-lg font-bold tabular-nums ${fyv > 0 ? "text-emerald-600" : fyv < 0 ? "text-red-500" : "text-slate-500"}`}>
-                    {fyv >= 0 ? `+$${fyv.toLocaleString()}` : `−$${Math.abs(fyv).toLocaleString()}`}
+                    {!Number.isFinite(fyv) ? "—" : fyv >= 0 ? `+$${fyv.toLocaleString("en-US")}` : `−$${Math.abs(fyv).toLocaleString("en-US")}`}
                   </span>
                 </td>
               );
@@ -178,7 +178,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
 
           {/* Annual Fee */}
           <tr>
-            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10">{l.annualFee}</td>
+            <th scope="row" className="text-left py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10">{l.annualFee}</th>
             {cards.map((card) => (
               <td key={card.card_id} className="py-3 px-4">
                 <span className={`font-bold ${card.annual_fee === 0 ? "text-emerald-600" : "text-slate-800"}`}>
@@ -190,7 +190,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
 
           {/* Credit Required */}
           <tr className="bg-slate-50/50">
-            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-slate-50/50 z-10">{l.creditRequired}</td>
+            <th scope="row" className="text-left py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-slate-50/50 z-10">{l.creditRequired}</th>
             {cards.map((card) => (
               <td key={card.card_id} className="py-3 px-4 text-sm">
                 <span className="bg-slate-100 text-slate-700 rounded-full px-2 py-0.5">
@@ -202,7 +202,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
 
           {/* Foreign Fee */}
           <tr>
-            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10">{l.foreignFee}</td>
+            <th scope="row" className="text-left py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10">{l.foreignFee}</th>
             {cards.map((card) => (
               <td key={card.card_id} className="py-3 px-4">
                 {knownNoForeignFee(card) ? (
@@ -218,7 +218,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
 
           {/* Welcome Offer */}
           <tr className="bg-amber-50/50">
-            <td className="py-3 pr-4 font-medium text-amber-700 sticky left-0 bg-amber-50/50 z-10">{l.welcomeBonus}</td>
+            <th scope="row" className="text-left py-3 pr-4 font-medium text-amber-700 sticky left-0 bg-amber-50/50 z-10">{l.welcomeBonus}</th>
             {cards.map((card) => (
               <td key={card.card_id} className="py-3 px-4">
                 {card.welcome_offer ? (
@@ -239,7 +239,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                     )}
                     {card.welcome_offer.spending_requirement && (
                       <div className="text-xs text-slate-500 mt-0.5">
-                        Spend ${card.welcome_offer.spending_requirement.toLocaleString()} in {card.welcome_offer.time_period_months || 3} mo
+                        Spend ${card.welcome_offer.spending_requirement.toLocaleString("en-US")} in {card.welcome_offer.time_period_months || 3} mo
                       </div>
                     )}
                   </div>
@@ -252,7 +252,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
 
           {/* Network */}
           <tr className="bg-slate-50/50">
-            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-slate-50/50 z-10">{l.network}</td>
+            <th scope="row" className="text-left py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-slate-50/50 z-10">{l.network}</th>
             {cards.map((card) => (
               <td key={card.card_id} className="py-3 px-4 text-sm">{card.network}</td>
             ))}
@@ -260,17 +260,17 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
 
           {/* Earning Rates Section Header */}
           <tr>
-            <td className="py-2 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-wide bg-slate-100 sticky left-0 z-10 border-y border-slate-200" colSpan={cards.length + 1}>
+            <th scope="row" className="text-left py-2 pr-4 text-xs font-semibold text-slate-500 uppercase tracking-wide bg-slate-100 sticky left-0 z-10 border-y border-slate-200" colSpan={cards.length + 1}>
               {l.earningRates}
-            </td>
+            </th>
           </tr>
 
           {/* Earning category rows */}
           {allCategories.map((cat) => (
             <tr key={cat} className="hover:bg-slate-50/50">
-              <td className="py-2 pr-4 text-xs text-slate-500 sticky left-0 bg-white z-10 border-l-2 border-transparent pl-3">
+              <th scope="row" className="text-left font-normal py-2 pr-4 text-xs text-slate-500 sticky left-0 bg-white z-10 border-l-2 border-transparent pl-3">
                 {cat}
-              </td>
+              </th>
               {cards.map((card) => {
                 const rate = card.earning_rates.find((r) => r.category === cat);
                 return (
@@ -293,7 +293,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
 
           {/* Benefits & Credits (MERGED: Annual Credits + Travel Benefits) */}
           <tr>
-            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10 align-top">{l.benefitsCredits}</td>
+            <th scope="row" className="text-left py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-white z-10 align-top">{l.benefitsCredits}</th>
             {cards.map((card) => {
               const otherBenefits = normalizeOtherBenefits(card.travel_benefits?.other_benefits);
               return (
@@ -329,19 +329,13 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
                   ) : null}
 
                   {/* Lounge Access */}
-                  {card.travel_benefits?.lounge_access ? (
-                    Object.entries(card.travel_benefits.lounge_access).filter(([, v]) => v).length > 0 ? (
-                      <div>
-                        <div className="text-xs font-semibold text-slate-500 uppercase mb-1">{l.loungeAccess}</div>
-                        {Object.entries(card.travel_benefits.lounge_access)
-                          .filter(([, v]) => v)
-                          .map(([key]) => (
-                            <div key={key} className="text-slate-700">
-                              {key.replace(/_/g, " ").replace(/\b\w/g, (x) => x.toUpperCase())}
-                            </div>
-                          ))}
-                      </div>
-                    ) : null
+                  {card.travel_benefits?.lounge_access?.length ? (
+                    <div>
+                      <div className="text-xs font-semibold text-slate-500 uppercase mb-1">{l.loungeAccess}</div>
+                      {card.travel_benefits.lounge_access.map((lounge, i) => (
+                        <div key={i} className="text-slate-700">{lounge.name}</div>
+                      ))}
+                    </div>
                   ) : null}
 
                   {/* Other Benefits */}
@@ -359,7 +353,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
 
                   {!card.recurring_credits?.length &&
                    !card.travel_benefits?.hotel_status?.length &&
-                   !card.travel_benefits?.lounge_access &&
+                   !card.travel_benefits?.lounge_access?.length &&
                    !otherBenefits.length ? (
                     <span className="text-slate-500">—</span>
                   ) : null}
@@ -371,7 +365,7 @@ export default function CompareTable({ cards, lang }: CompareTableProps) {
 
           {/* Insurance */}
           <tr className="bg-slate-50/50">
-            <td className="py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-slate-50/50 z-10 align-top">{l.insurance}</td>
+            <th scope="row" className="text-left py-3 pr-4 font-medium text-slate-600 sticky left-0 bg-slate-50/50 z-10 align-top">{l.insurance}</th>
             {cards.map((card) => (
               <td key={card.card_id} className="py-3 px-4">
                 <div className="grid grid-cols-2 gap-1">

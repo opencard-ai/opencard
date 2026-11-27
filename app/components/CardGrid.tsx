@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { useState, useCallback, useEffect, useMemo } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { Bookmark, Scale } from "lucide-react";
 import CompareBar from "./CompareBar";
 import CardRow from "./CardRow";
@@ -70,7 +70,7 @@ function cardMatchesTag(card: CreditCard, tagValue: string, allTags: string[]): 
   // Check if it's a group key
   const group = TAG_GROUPS[tagValue];
   if (group) {
-    return group.tags.some((t) => card.tags.includes(t));
+    return group.tags.some((t) => (card.tags || []).includes(t));
   }
 
   // Only predefined tag groups are valid filter values; no individual tag fallback
@@ -242,6 +242,7 @@ function FilterBar({ issuers, tags, locale, selectedSort, setSelectedSort }: { i
         <input
           type="text"
           placeholder={l("searchPlaceholder", locale)}
+          aria-label={l("searchPlaceholder", locale)}
           defaultValue={search}
           onChange={(e) => updateParam("search", e.target.value)}
           className="flex-1 min-w-[220px] border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -368,8 +369,8 @@ function CardList({ cards, tags, locale, lang, selectedSort, searchParams }: { c
         const q = search.toLowerCase();
         if (
           !card.name.toLowerCase().includes(q) &&
-          !card.issuer.toLowerCase().includes(q) &&
-          !card.tags.some((t) => t.toLowerCase().includes(q))
+          !(card.issuer || "").toLowerCase().includes(q) &&
+          !(card.tags || []).some((t) => t.toLowerCase().includes(q))
         )
           return false;
       }

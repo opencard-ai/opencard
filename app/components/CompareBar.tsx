@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import type { CreditCard } from "@/lib/cards";
 
 type CompareBarCard = Pick<CreditCard, "card_id" | "name">;
@@ -14,7 +13,6 @@ interface CompareBarProps {
 }
 
 export default function CompareBar({ selected, onRemove, onClear, lang }: CompareBarProps) {
-  const [justAdded, setJustAdded] = useState<string | null>(null);
   // `visible` is purely derived from props; previously stored in state and
   // synced via useEffect, which made the bar render the wrong way for a
   // tick whenever `selected` changed and tripped react-hooks/set-state-
@@ -53,6 +51,7 @@ export default function CompareBar({ selected, onRemove, onClear, lang }: Compar
                   onClick={() => onRemove(card.card_id)}
                   className="text-slate-500 hover:text-red-500 ml-1 transition-colors"
                   title={l.remove}
+                  aria-label={`${l.remove}: ${card.name}`}
                 >
                   ✕
                 </button>

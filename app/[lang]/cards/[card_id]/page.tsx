@@ -26,6 +26,7 @@ import { getAffiliateUrl } from "@/lib/affiliate";
 import AffiliateLink from "@/app/components/AffiliateLink";
 import { normalizeOtherBenefits } from "@/lib/other-benefits";
 import CardCategoryLinks from "@/app/components/CardCategoryLinks";
+import { toPublicSources } from "@/lib/public-card";
 
 const CREDIT_LABELS: Record<string, string> = {
   "Excellent": "Excellent",
@@ -145,7 +146,8 @@ export default async function CardDetailPage({ params }: Props) {
   const locale = lang as any;
   const card = getCardById(card_id);
   if (!card) notFound();
-  const officialSource = card.sources?.find(source => {
+  const sources = toPublicSources(card.sources);
+  const officialSource = sources.find(source => {
     try {
       const url = new URL(source.url);
       return url.protocol === "https:" && ["americanexpress.com", "chase.com", "citi.com", "capitalone.com", "wellsfargo.com", "bankofamerica.com", "usbank.com", "barclaycardus.com", "discover.com", "synchrony.com"].some(domain => url.hostname === domain || url.hostname === `www.${domain}` || url.hostname === `creditcards.${domain}`);
@@ -205,7 +207,7 @@ export default async function CardDetailPage({ params }: Props) {
                   card.annual_fee === 0 ? "text-emerald-600" : "text-slate-900"
                 }`}
               >
-                {card.annual_fee === 0 ? l("card.annualFeeWaived") : `$${card.annual_fee}`}
+                {card.annual_fee === 0 ? l("card.annualFeeWaived") : Number.isFinite(card.annual_fee) ? `$${card.annual_fee}` : "—"}
               </div>
               <div className="text-xs text-slate-500">{l("card.annualFee")}</div>
             </div>
@@ -215,9 +217,9 @@ export default async function CardDetailPage({ params }: Props) {
         {/* Closed to new applicants */}
         {closed && (
           <div role="status" data-testid="closed-to-new-applicants" className="bg-slate-50 border border-slate-300 rounded-lg p-4 mt-4">
-            <h3 className="text-sm font-semibold text-slate-900 mb-1 flex items-center gap-1.5">
+            <h2 className="text-sm font-semibold text-slate-900 mb-1 flex items-center gap-1.5">
               <AlertTriangle className="w-4 h-4 text-amber-600" /> {closedText.title}
-            </h3>
+            </h2>
             <p className="text-sm text-slate-700">{closedText.body}</p>
             {card.discontinued_date && /^\d{4}-\d{2}-\d{2}$/.test(card.discontinued_date) && (
               <p className="text-xs text-slate-500 mt-1">{closedText.since}: {card.discontinued_date}</p>
@@ -228,9 +230,9 @@ export default async function CardDetailPage({ params }: Props) {
         {/* Welcome Offer (hidden for cards closed to new applicants) */}
         {card.welcome_offer && !closed && (
           <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-4">
-            <h3 className="text-sm font-semibold text-amber-800 mb-1 flex items-center gap-1.5">
+            <h2 className="text-sm font-semibold text-amber-800 mb-1 flex items-center gap-1.5">
               <Gift className="w-4 h-4" /> {l("detail.welcomeBonus")}
-            </h3>
+            </h2>
             <div className="text-sm text-amber-900">
               {(() => {
                 const w = card.welcome_offer;
@@ -539,7 +541,7 @@ export default async function CardDetailPage({ params }: Props) {
               cardName={card.name.replace(/[®™℠]/g, "")}
               analysis={analysis}
               editorNote={editorNote}
-              reviewedDate={card.last_updated ? new Date(card.last_updated).toISOString().slice(0, 10) : undefined}
+              reviewedDate={freshness ? new Date(card.last_updated).toISOString().slice(0, 10) : undefined}
             />
           )}
 
@@ -812,11 +814,11 @@ export default async function CardDetailPage({ params }: Props) {
           <CardAccessLinks card={card} lang={lang} l={l} />
 
           {/* Sources */}
-          {card.sources?.length > 0 && (
+          {sources.length > 0 && (
             <section className="bg-white rounded-xl border border-slate-200 p-6">
               <h2 className="text-lg font-bold text-slate-900 mb-3">{l("detail.sources")}</h2>
               <ul className="space-y-1">
-                {card.sources.map((src, i) => (
+                {sources.map((src, i) => (
                   <li key={i}>
                     <a
                       href={src.url}

@@ -1,4 +1,4 @@
-"use client";
+import Link from "next/link";
 
 interface BackToCardsProps {
   lang: string;
@@ -6,17 +6,12 @@ interface BackToCardsProps {
 }
 
 export default function BackToCards({ lang, label }: BackToCardsProps) {
-  const handleBack = () => {
-    // Just navigate to homepage with hash — CardGrid's useEffect handles the scroll adjustment
-    window.location.href = `/${lang}#cards-section`;
-  };
-
   return (
-    <button
-      onClick={handleBack}
+    <Link
+      href={`/${lang}#cards-section`}
       className="inline-flex items-center gap-1 text-sm text-slate-500 hover:text-slate-800 mb-6 transition-colors bg-none border-0 cursor-pointer"
     >
       {label}
-    </button>
+    </Link>
   );
 }

@@ -78,9 +78,9 @@ type Lang = keyof typeof STR;
 
 function formatBonusValue(v: number | string | undefined | null): string | null {
   if (v == null) return null;
-  if (typeof v === "number") return `$${v.toLocaleString()}`;
+  if (typeof v === "number") return Number.isFinite(v) ? `$${v.toLocaleString("en-US")}` : null;
   const parsed = parseFloat(String(v).replace(/[^0-9.]/g, ""));
-  return isFinite(parsed) ? `$${parsed.toLocaleString()}` : null;
+  return isFinite(parsed) ? `$${parsed.toLocaleString("en-US")}` : null;
 }
 
 export default function CardRow({ card, lang, locale, isCompared, isMaxed, onToggleCompare }: Props) {
@@ -160,7 +160,7 @@ export default function CardRow({ card, lang, locale, isCompared, isMaxed, onTog
         </div>
         <div className="text-right shrink-0 tabular-nums whitespace-nowrap">
           <div className={`text-sm font-medium ${card.annual_fee === 0 ? "text-emerald-600" : "text-slate-800"}`}>
-            {card.annual_fee === 0 ? t.noFee : `$${card.annual_fee.toLocaleString()}${t.perYr}`}
+            {card.annual_fee === 0 ? t.noFee : Number.isFinite(card.annual_fee) ? `$${card.annual_fee.toLocaleString("en-US")}${t.perYr}` : "—"}
           </div>
         </div>
         <button

@@ -7,12 +7,25 @@ export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  // Default to full data (true), use ?summary=1 for grouped issuer summary
+  // Preserve the legacy shape: grouped by default, flat records for summary=1.
   const summary = searchParams.get("summary") === "1";
   const issuer = searchParams.get("issuer");
   const cardId = searchParams.get("card_id");
   const idsParam = searchParams.get("ids");
+  const validId = /^[a-z0-9][a-z0-9-]{0,80}$/;
+  if (cardId !== null && !validId.test(cardId)) {
+    return NextResponse.json({ error: "Invalid card_id" }, { status: 400 });
+  }
+  if (searchParams.has("summary") && !["0", "1"].includes(searchParams.get("summary")!)) {
+    return NextResponse.json({ error: "summary must be 0 or 1" }, { status: 400 });
+  }
+  if (idsParam !== null && idsParam.split(",").some(id => !validId.test(id.trim()))) {
+    return NextResponse.json({ error: "ids must contain comma-separated card IDs" }, { status: 400 });
+  }
   const cards = getAllCards();
+  if (cards.length === 0) {
+    return NextResponse.json({ error: "Card catalog unavailable" }, { status: 503 });
+  }
 
   // Filter by card_id if provided - always returns full data
   if (cardId) {
@@ -31,7 +44,6 @@ export async function GET(request: Request) {
       idsParam
         .split(",")
         .map(s => s.trim())
-        .filter(s => /^[a-z0-9][a-z0-9-]{0,80}$/.test(s))
         // Retired ids (merged duplicates) resolve to the canonical card.
         .map(resolveCardId),
     );
@@ -44,11 +56,11 @@ export async function GET(request: Request) {
 
   // Filter by issuer if provided
   const filtered = issuer
-    ? cards.filter(c => c.issuer.toLowerCase() === issuer.toLowerCase())
+    ? cards.filter(c => c.issuer?.toLowerCase() === issuer.toLowerCase())
     : cards;
 
   if (summary) {
-    // Full mode: return complete card data for all filtered cards
+    // Flat mode: return the legacy summary field selection.
     const result = filtered.map(card => ({
       card_id: card.card_id,
       name: card.name,

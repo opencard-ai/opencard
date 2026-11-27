@@ -35,7 +35,7 @@ export default function CardArt({ cardId, issuer, size = "sm", className = "" }:
       preserveAspectRatio="xMidYMid slice"
       className={`shrink-0 rounded-md shadow-sm ${className}`}
       role="img"
-      aria-label={`${issuer} card art`}
+      aria-label={issuer ? `${issuer} card art` : "Credit card art"}
     >
       <defs>
         <linearGradient id={gradientId} gradientTransform={`rotate(${angle}, 0.5, 0.5)`}>

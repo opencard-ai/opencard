@@ -27,7 +27,7 @@ export default function CardAccessLinks({ card, lang, l }: {
     <section className="bg-white rounded-xl border border-slate-200 p-6" aria-labelledby="fees-and-links">
       <h2 id="fees-and-links" className="text-lg font-bold text-slate-900 mb-4">{l("detail.feesAndLinks")}</h2>
       <ul className="list-disc pl-5 space-y-2 text-sm text-slate-600">
-        <li>{l("card.annualFee")}: {card.annual_fee === 0 ? l("detail.noAnnualFee") : `$${card.annual_fee.toLocaleString("en-US")}`}</li>
+        <li>{l("card.annualFee")}: {card.annual_fee === 0 ? l("detail.noAnnualFee") : Number.isFinite(card.annual_fee) ? `$${card.annual_fee.toLocaleString("en-US")}` : "—"}</li>
         {knownNoForeignFee(card) ? (
           <li>{l("detail.foreignFee")}: {l("detail.none")}</li>
         ) : card.foreign_transaction_fee > 0 ? (

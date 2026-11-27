@@ -65,13 +65,13 @@ type SortKey = "value" | "points" | "lowaf";
 
 function formatPoints(p?: number): string {
   if (!p) return "—";
-  return p.toLocaleString();
+  return p.toLocaleString("en-US");
 }
 
 function formatValue(v?: number | string): string {
   if (v == null || v === "") return "—";
   const n = typeof v === "number" ? v : parseFloat(String(v).replace(/[^0-9.]/g, ""));
-  return Number.isFinite(n) ? `$${n.toLocaleString()}` : "—";
+  return Number.isFinite(n) ? `$${n.toLocaleString("en-US")}` : "—";
 }
 
 export default function ElevatedOffersList({ cards, lang }: Props) {
@@ -134,11 +134,11 @@ export default function ElevatedOffersList({ cards, lang }: Props) {
           <div className="mt-1 flex items-center gap-2 text-xs">
             <IssuerChip issuer={card.issuer} />
             <span className="text-slate-400">·</span>
-            <span className="text-slate-500 tabular-nums">{t.afShort} ${card.annual_fee.toLocaleString()}</span>
+            <span className="text-slate-500 tabular-nums">{t.afShort} {Number.isFinite(card.annual_fee) ? `$${card.annual_fee.toLocaleString("en-US")}` : "—"}</span>
             {w.spending_requirement && (
               <>
                 <span className="text-slate-400">·</span>
-                <span className="text-slate-500 tabular-nums whitespace-nowrap">{t.spend} ${w.spending_requirement.toLocaleString()}/{w.time_period_months || 3}{t.months}</span>
+                <span className="text-slate-500 tabular-nums whitespace-nowrap">{t.spend} ${w.spending_requirement.toLocaleString("en-US")}/{w.time_period_months || 3}{t.months}</span>
               </>
             )}
           </div>
@@ -179,6 +179,7 @@ export default function ElevatedOffersList({ cards, lang }: Props) {
           <ArrowUpDown className="w-3 h-3 text-slate-400" />
           <select
             value={sort}
+            aria-label={t.sortValue}
             onChange={(e) => setSort(e.target.value as SortKey)}
             className="bg-white border border-slate-200 rounded-md px-2 py-1.5 text-slate-700"
           >
@@ -188,6 +189,7 @@ export default function ElevatedOffersList({ cards, lang }: Props) {
           </select>
           <select
             value={issuer}
+            aria-label={t.filterIssuer}
             onChange={(e) => setIssuer(e.target.value)}
             className="bg-white border border-slate-200 rounded-md px-2 py-1.5 text-slate-700"
           >
