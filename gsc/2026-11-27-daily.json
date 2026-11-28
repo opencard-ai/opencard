@@ -1,0 +1,183 @@
+{
+  "date": "2026-11-27",
+  "period": {
+    "startDate": "2026-11-20",
+    "endDate": "2026-11-26"
+  },
+  "previousPeriod": {
+    "startDate": "2026-11-13",
+    "endDate": "2026-11-19",
+    "clicks": 8,
+    "impressions": 20974,
+    "ctr": 0.03814246209592829,
+    "position": 12.847573185849146
+  },
+  "clicks": 2,
+  "impressions": 19490,
+  "ctr": 0.01026167265264238,
+  "position": 13.40415597742432,
+  "sitemap": {
+    "submitted": 359,
+    "indexed": 0,
+    "errors": 0,
+    "warnings": 0,
+    "lastDownloaded": "2026-11-26T23:45:35.220Z"
+  },
+  "cohortBaseline": "2026-09-15T02:54:38.789Z",
+  "cohorts": {
+    "retained": {
+      "current": {
+        "clicks": 0,
+        "impressions": 592,
+        "ctr": 0,
+        "position": 17.97635135135135,
+        "pages": 21
+      },
+      "previous": {
+        "clicks": 0,
+        "impressions": 1364,
+        "ctr": 0,
+        "position": 12.5791788856305,
+        "pages": 22
+      }
+    },
+    "excluded": {
+      "current": {
+        "clicks": 0,
+        "impressions": 155,
+        "ctr": 0,
+        "position": 15.109677419354838,
+        "pages": 3
+      },
+      "previous": {
+        "clicks": 0,
+        "impressions": 183,
+        "ctr": 0,
+        "position": 11.081967213114755,
+        "pages": 4
+      }
+    },
+    "new": {
+      "current": {
+        "clicks": 2,
+        "impressions": 19890,
+        "ctr": 0.01005530417295123,
+        "position": 13.276923076923078,
+        "pages": 118
+      },
+      "previous": {
+        "clicks": 9,
+        "impressions": 19488,
+        "ctr": 0.046182266009852216,
+        "position": 12.976857553366173,
+        "pages": 119
+      }
+    },
+    "unknown": {
+      "current": {
+        "clicks": 0,
+        "impressions": 403,
+        "ctr": 0,
+        "position": 15.935483870967742,
+        "pages": 11
+      },
+      "previous": {
+        "clicks": 0,
+        "impressions": 548,
+        "ctr": 0,
+        "position": 15.841240875912408,
+        "pages": 12
+      }
+    }
+  },
+  "pageCoverage": {
+    "current": 153,
+    "previous": 157,
+    "rowLimit": 25000
+  },
+  "topPages": [
+    {
+      "url": "https://opencardai.com/en/cards/comenity-ulta-beauty-mastercard",
+      "policy": "indexable",
+      "clicks": 0,
+      "impressions": 5386,
+      "ctr": 0,
+      "position": 4.373746750835499
+    },
+    {
+      "url": "https://opencardai.com/en/cards/barclays-old-navy-navyist-rewards-mastercard",
+      "policy": "indexable",
+      "clicks": 0,
+      "impressions": 2594,
+      "ctr": 0,
+      "position": 12.019660755589822
+    },
+    {
+      "url": "https://opencardai.com/en/guides/old-navy-vs-banana-republic-credit-card",
+      "policy": "indexable",
+      "clicks": 0,
+      "impressions": 1668,
+      "ctr": 0,
+      "position": 10.191846522781775
+    },
+    {
+      "url": "https://opencardai.com/en/cards/capital-one-quicksilver",
+      "policy": "indexable",
+      "clicks": 0,
+      "impressions": 691,
+      "ctr": 0,
+      "position": 11.806078147612157
+    },
+    {
+      "url": "https://opencardai.com/en/cards/chase-ink-biz-unlimited",
+      "policy": "indexable",
+      "clicks": 0,
+      "impressions": 612,
+      "ctr": 0,
+      "position": 23.070261437908496
+    }
+  ],
+  "opportunities": [
+    {
+      "query": "capital 1 cash card",
+      "url": "https://opencardai.com/en/cards/capital-one-quicksilver",
+      "clicks": 0,
+      "impressions": 164,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "query": "bank of america business advantage card",
+      "url": "https://opencardai.com/en/cards/boa-biz-advantage-unlimited-cash",
+      "clicks": 0,
+      "impressions": 48,
+      "ctr": 0,
+      "position": 8.270833333333332
+    },
+    {
+      "query": "bank of america cash rewards business card",
+      "url": "https://opencardai.com/en/cards/boa-biz-advantage-customized-cash",
+      "clicks": 0,
+      "impressions": 48,
+      "ctr": 0,
+      "position": 9.875
+    },
+    {
+      "query": "bank of america business travel card",
+      "url": "https://opencardai.com/en/cards/boa-biz-advantage-travel",
+      "clicks": 0,
+      "impressions": 46,
+      "ctr": 0,
+      "position": 5.391304347826087
+    },
+    {
+      "query": "bank of america business travel rewards",
+      "url": "https://opencardai.com/en/cards/boa-biz-advantage-travel",
+      "clicks": 0,
+      "impressions": 44,
+      "ctr": 0,
+      "position": 4.181818181818182
+    }
+  ],
+  "alerts": []
+}

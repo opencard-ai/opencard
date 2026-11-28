@@ -371,6 +371,16 @@
       "size": 2406
     },
     {
+      "path": "gsc/2026-11-27-daily.json",
+      "sha256": "60acdc9d05d3660d1256c9f9074b8629a31db9f416e1bcf2fe5f699c4a95ef69",
+      "size": 4415
+    },
+    {
+      "path": "gsc/2026-11-27-daily.md",
+      "sha256": "70fad20e40c6d19bfcc49d49a2850047f1a15f1b80565df20041342ac1cba9a9",
+      "size": 2423
+    },
+    {
       "path": "gsc/cohort-baseline.json",
       "source": "Mac metrics export 2026-11-23: cohort-baseline.json",
       "mac_sha256": "3d3921934d09d847d09b6a034d66823a3515ebcf1b3cd528e137b4a1551fbb0d",
@@ -381,8 +391,8 @@
     },
     {
       "path": "gsc/history.json",
-      "sha256": "ecfcf35f51513723db5278d13edcc0b7680d04c296f25e3f4f89c01471fe2dcd",
-      "size": 141611
+      "sha256": "6c0f55ef80f5519d73d3d59f27c06646021937658e9f950c63ed51782820d0a8",
+      "size": 141821
     },
     {
       "path": "offer-watch/daily-state.json",
@@ -409,11 +419,11 @@
       "base_sha": "c7049afba8e30b926cd9e4580ada404305d434d3"
     },
     "gsc": {
-      "last_run_id": "45920605684",
+      "last_run_id": "46088966214",
       "last_run_attempt": "1",
-      "pt_date": "2026-11-26",
+      "pt_date": "2026-11-27",
       "writer_epoch": "gsc-20261121-1",
-      "base_sha": "37bc17eb32a2dfc5ad5f1e7764750ae12aee1c3e"
+      "base_sha": "f931b8aa9f10f7b1f6b75a9d2dc391bfda8d121c"
     },
     "audit": {
       "last_run_id": "45324000809",
